@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 01:41+0000\n"
+"POT-Creation-Date: 2024-05-04 01:54+0000\n"
 "PO-Revision-Date: 2024-04-22 17:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1026,7 +1026,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:98
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
@@ -3563,7 +3563,7 @@ msgid "Author:"
 msgstr "作者："
 
 #: core/app/views/stack/welcomepageview.cpp:273
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:156
 #, kde-format
 msgid "Location:"
 msgstr "地點："
@@ -8995,7 +8995,7 @@ msgid "Frost Glass"
 msgstr "毛玻璃"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:118
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:88
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
 #, kde-format
 msgid "Mosaic"
 msgstr "馬賽克"
@@ -11868,8 +11868,8 @@ msgstr[0] "<p>%1 個字元。</p>"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:400
 #: core/libs/widgets/text/dtextedit.cpp:400
 #, kde-format
@@ -12310,7 +12310,7 @@ msgstr "輸入影像的標題。這個欄位沒有限制。文字會用 UTF8 編
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "同步 JFIF 註解部份"
@@ -12364,8 +12364,8 @@ msgid "Sync IPTC creation date"
 msgstr "同步 IPTC 建立日期"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:131
 #, kde-format
 msgid "Set creation date to today"
 msgstr "將建立日期設為今天"
@@ -12425,8 +12425,8 @@ msgid "Digitization sub-second"
 msgstr "數位化次秒"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:110
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "將數位化日期設為今天"
@@ -13337,33 +13337,33 @@ msgid ""
 msgstr "在這裡選擇圖片拍攝時相機使用的白平衡模式設定。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:68
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "內容的識別主題 (最多 3 個字元)："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the category ID"
 msgstr "在這裡設定連絡的國家。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:73
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr "在這裡設定內容的類別。這個欄位限制為 3 個字元。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:76
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "參考分類："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:80
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the extra category"
@@ -13381,16 +13381,16 @@ msgstr "在這裡輸入內容的參考分類。這個欄位限制為 32 個 ASCI
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:74
 #, kde-format
 msgid "&Add"
 msgstr "新增(&A)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:75
 #: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
@@ -13398,8 +13398,8 @@ msgstr "刪除(&D)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
 #: core/utilities/setup/album/setupcategory.cpp:93
 #, kde-format
 msgid "&Replace"
@@ -13410,9 +13410,9 @@ msgstr "取代(&R)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
@@ -13432,7 +13432,7 @@ msgstr ""
 "字串大小。使用內容說明來取得詳細資訊。</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:70
 #, kde-format
 msgid "Headline:"
 msgstr "大標題："
@@ -13459,7 +13459,7 @@ msgid "Caption:"
 msgstr "標題描述："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Comment"
@@ -13481,7 +13481,7 @@ msgid ""
 msgstr "輸入內容描述。這個欄位限制為 2000 個 ASCII 字元。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
 #, kde-format
 msgid "Caption Writer:"
 msgstr "標題作者："
@@ -13492,7 +13492,7 @@ msgid "Enter the name of the caption author."
 msgstr "輸入標題作者的姓名。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
 #, kde-format
@@ -13521,7 +13521,7 @@ msgid "Byline:"
 msgstr "姓名標示："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:85
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "在這裡設定內容創作者的姓名。"
@@ -13532,13 +13532,13 @@ msgid "Byline Title:"
 msgstr "職稱標示："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:92
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "在這裡設定內容創作者的職稱。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:165
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
 #, kde-format
@@ -13546,7 +13546,7 @@ msgid "Credit:"
 msgstr "授權："
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:167
 #, kde-format
 msgid "Set here the content provider."
 msgstr "在這裡設定內容提供者。"
@@ -13560,7 +13560,7 @@ msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr "在這裡設定提供者。這個欄位限制為 32 個 ASCII 字元。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:171
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
@@ -13656,7 +13656,7 @@ msgid "Envelope"
 msgstr "封裝"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title"
@@ -13664,7 +13664,7 @@ msgid "Content Information"
 msgstr "組成元件資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Content Information<br/><i>Use this panel to describe the visual "
@@ -13674,7 +13674,7 @@ msgid "Describe the visual content of the item"
 msgstr "<qt>內容資訊<br/><i>使用這個面板來描述此影像的視覺內容</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:197
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
@@ -13682,7 +13682,7 @@ msgid "Origin Information"
 msgstr "剪裁資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Origin Information<br/><i>Use this panel for formal descriptive "
@@ -13692,7 +13692,7 @@ msgid "Formal descriptive information about the item"
 msgstr "<qt>來源資訊<br/><i>使用這個面板來取得此影像正式的描述資訊</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
@@ -13700,7 +13700,7 @@ msgid "Credit Information"
 msgstr "剪裁資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Credit Information<br/><i>Use this panel to record copyright "
@@ -13710,7 +13710,7 @@ msgid "Record copyright information about the item"
 msgstr "<qt>授權資訊<br/><i>使用這個面板來記錄此影像的著作權資訊</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -13718,7 +13718,7 @@ msgid "Subject Information"
 msgstr "中繼資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -13728,7 +13728,7 @@ msgid "Record subject information about the item"
 msgstr "<qt>主題資訊<br/><i>使用這個面板來記錄此影像的主題資訊</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Import Information"
 msgctxt "@title"
@@ -13736,7 +13736,7 @@ msgid "Keyword Information"
 msgstr "匯入資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Keyword Information<br/><i>Use this panel to record keywords relevant "
@@ -13746,7 +13746,7 @@ msgid "Record keywords relevant to the item"
 msgstr "<qt>關鍵字資訊<br/><i>使用這個面板來記錄與此影像相關的關鍵字</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
@@ -13754,7 +13754,7 @@ msgid "Category Information"
 msgstr "標題資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Category Information<br/><i>Use this panel to record categories "
@@ -13764,7 +13764,7 @@ msgid "Record categories relevant to the item"
 msgstr "<qt>類別資訊<br/><i>使用這個面板來記錄與此影像相關的類別</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:222
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -13772,7 +13772,7 @@ msgid "Status Information"
 msgstr "中繼資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Video Information"
 msgctxt "@title"
@@ -13780,7 +13780,7 @@ msgid "Record workflow information"
 msgstr "影像資訊"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title"
@@ -13788,7 +13788,7 @@ msgid "Status Properties"
 msgstr "項目屬性"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title"
@@ -14098,7 +14098,7 @@ msgid ""
 msgstr "在這裡設定封裝識別碼。這個欄位限制為 8 個 ASCII 字元。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:169
 #, kde-format
 msgid "Priority:"
 msgstr "優先順序："
@@ -14128,7 +14128,7 @@ msgid "8: Low"
 msgstr "8：低"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
@@ -14182,7 +14182,7 @@ msgid "Set here the time zone when the service sent the material."
 msgstr "在這裡設定服務寄出材料的時間。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:65
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "使用資訊檢索詞："
@@ -14198,78 +14198,78 @@ msgstr "在這裡輸入新的關鍵字。"
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "在這裡輸入新的關鍵字。這個欄位最多只能有 64 個字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:128
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Digitization date"
 msgstr "數位化日期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
 #, kde-format
 msgid "Digitization time"
 msgstr "數位化時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:142
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:112
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "在這裡設定用數字表示的建立日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:120
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "在這裡設定用數字表示的建立時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:114
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "在這裡設定用數字表示的建立時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:121
 #, kde-format
 msgid "Creation date"
 msgstr "建立日期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
 #, kde-format
 msgid "Creation time"
 msgstr "建立時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif creation date"
 msgstr "同步 EXIF 建立日期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "在這裡設定知識內容的建立日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:147
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "在這裡設定知識內容的建立時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:173
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:158
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "在這裡設定知識內容的建立時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "在這裡設定內容引用的國家完整名稱。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:161
 #: core/libs/template/templatepanel.cpp:216
 #: core/libs/template/templatepanel.cpp:280
 #: core/libs/template/templateviewer.cpp:132
@@ -14278,13 +14278,13 @@ msgstr "在這裡設定內容引用的國家完整名稱。"
 msgid "City:"
 msgstr "城市："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the city of the content"
 msgstr "在這裡選擇內容的場景種類。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the city of content origin. This field is limited to 32 ASCII "
@@ -14293,21 +14293,21 @@ msgid ""
 "Set here the city of content origin. This field is limited to 32 characters."
 msgstr "在這裡設定內容來源的城市。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:168
 #: core/libs/template/templatepanel.cpp:226
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "轄區："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content location"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content location within city. This field is limited to 32 "
@@ -14317,9 +14317,9 @@ msgid ""
 "characters."
 msgstr "在這裡設定內容所在的城市。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #: core/libs/template/templatepanel.cpp:236
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -14327,13 +14327,13 @@ msgstr "在這裡設定內容所在的城市。這個欄位限制為 32 個 ASCI
 msgid "State/Province:"
 msgstr "州/省："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the Province or State of the content"
 msgstr "在這裡選擇內容的場景種類。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Province or State of content origin. This field is limited "
@@ -14343,9 +14343,9 @@ msgid ""
 "32 characters."
 msgstr "在這裡設定內容來源的省份或州。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:182
 #: core/libs/template/templatepanel.cpp:246
 #: core/libs/template/templatepanel.cpp:290
 #: core/libs/template/templateviewer.cpp:138
@@ -14354,169 +14354,169 @@ msgstr "在這裡設定內容來源的省份或州。這個欄位限制為 32 �
 msgid "Country:"
 msgstr "國家："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "在這裡選擇內容來源的國家名稱。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:105
 #, kde-format
 msgid "Release date"
 msgstr "發佈日期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
 #, kde-format
 msgid "Release time"
 msgstr "發佈時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, kde-format
 msgid "Set release date to today"
 msgstr "將發佈日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:119
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最早日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:121
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最早時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:123
 #, fuzzy, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最早時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:130
 #, kde-format
 msgid "Expiration date"
 msgstr "到期日期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
 msgid "Expiration time"
 msgstr "到期時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "將到期日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:144
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最晚日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:146
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最晚時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:148
 #, fuzzy, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr "在這裡設定知識內容預期可用的最晚時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:155
 #, kde-format
 msgid "Language:"
 msgstr "語言："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgid "Select here the language of content."
 msgstr "在這裡選擇內容的語言。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:171
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr "0：無"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr "1：高"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:176
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr "5：普通"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr "8：低"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr "在這裡選擇內容的編輯緊迫性。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:185
 #, kde-format
 msgid "Cycle:"
 msgstr "週期："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:187
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "早上"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "下午"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "晚上"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
 #, fuzzy, kde-format
 #| msgid "Select here the editorial cycle of content."
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "在這裡設定內容的編輯週期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content type"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:200
 #, kde-format
 msgid "News"
 msgstr "新聞"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
 #, kde-format
 msgid "Data"
 msgstr "資料"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
 #, kde-format
 msgid "Advisory"
 msgstr "諮詢"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "在這裡選擇內容的編輯類型。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the editorial type description of content. This field is limited "
@@ -14526,18 +14526,18 @@ msgid ""
 "64 characters."
 msgstr "在這裡選擇內容的編輯類型描述。這個欄位限制為 64 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
 #, kde-format
 msgid "Reference:"
 msgstr "參考："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content reference"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original content transmission reference. This field is "
@@ -14547,19 +14547,19 @@ msgid ""
 "to 32 characters."
 msgstr "在這裡設定原始內容辦理事項偏好設定。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:64
 #, kde-format
 msgctxt "image title"
 msgid "Title:"
 msgstr "標題："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:67
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content title"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the shorthand reference of content. This field is limited to 64 "
@@ -14569,18 +14569,18 @@ msgid ""
 "characters."
 msgstr "在這裡設定內容的簡略偏好設定。這個欄位限制為 64 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:73
 #, kde-format
 msgid "Edit Status:"
 msgstr "編輯狀態："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:76
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the content status"
 msgstr "在這裡設定連絡的城市。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the title of content status. This field is limited to 64 ASCII "
@@ -14589,18 +14589,18 @@ msgid ""
 "Set here the title of content status. This field is limited to 64 characters."
 msgstr "在這裡輸入內容狀態的標題。這個欄位限制為 64 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:82
 #, kde-format
 msgid "Job Identifier:"
 msgstr "作業識別碼："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Set here the contact URL."
 msgid "Set here the job ID"
 msgstr "在這裡設定連絡的網址。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the string that identifies content that recurs. This field is "
@@ -14610,19 +14610,19 @@ msgid ""
 "limited to 32 characters."
 msgstr "在這裡設定辨識內容重現的字串。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:82
 #, kde-format
 msgid "Special Instructions:"
 msgstr "特別須知："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:94
 #, fuzzy, kde-format
 #| msgid "Set here the content's city of origin."
 msgid "Set here the content instructions"
 msgstr "在這裡設定內容的城市來源。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the editorial usage instructions. This field is limited to 256 "
@@ -14748,275 +14748,275 @@ msgctxt "@action"
 msgid "Edit Metadata..."
 msgstr "編輯中繼資料..."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:81
 #, kde-format
 msgid "Enter here a new supplemental category of content."
 msgstr "在這裡輸入內容的新參考分類。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:72
 #, fuzzy, kde-format
 #| msgid "Enter here the content synopsis."
 msgid "Set here the content synopsis."
 msgstr "在這裡輸入內容的簡單介紹。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:76
 #, kde-format
 msgctxt "content description"
 msgid "Captions:"
 msgstr "標題描述："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content descriptions."
 msgstr "在這裡輸入內容描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
 msgid "Default Language Caption Options"
 msgstr "預設語言標題選項"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, fuzzy, kde-format
 #| msgid "Enter the name of the caption author."
 msgid "Set here the name of the caption author."
 msgstr "輸入標題作者的姓名。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the necessary copyright notice."
 msgstr "輸入必要的著作權聲明。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Copyright"
 msgstr "同步 EXIF 註解"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:103
 #: core/libs/template/templatepanel.cpp:151
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "使用條款："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the list of instructions on how a resource can be legally used here."
 msgid "Set here the instructions on how a resource can be legally used here."
 msgstr "在這裡輸入資源合法使用的須知清單。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:84
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgctxt "@option: name of content creator"
 msgid "Creator:"
 msgstr "我的行事曆"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:86
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif Artist"
 msgstr "同步 EXIF 建立日期"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:90
 #, fuzzy, kde-format
 #| msgid "Projection"
 msgid "Creator Title:"
 msgstr "投影"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:96
 #: core/libs/template/templatepanel.cpp:392
 #: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
 msgstr "連絡資料"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:99
 #, kde-format
 msgctxt "contact email address"
 msgid "E-mail:"
 msgstr "電子信箱："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:102
 #, kde-format
 msgid "Set here the contact e-mail."
 msgstr "在這裡設定連絡的電子信箱。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:104
 #: core/libs/template/templatepanel.cpp:350
 #: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
 msgstr "網址："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:107
 #, kde-format
 msgid "Set here the contact URL."
 msgstr "在這裡設定連絡的網址。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:109
 #: core/libs/template/templatepanel.cpp:340
 #: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
 msgstr "電話："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the contact 'phone number."
 msgstr "在這裡設定連絡的電話號碼。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:114
 #, kde-format
 msgctxt "Street address"
 msgid "Address:"
 msgstr "地址："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
 #, kde-format
 msgid "Set here the contact address."
 msgstr "在這裡設定連絡的地址。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Postal code:"
 msgstr "郵遞區號："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:122
 #, kde-format
 msgid "Set here the contact postal code."
 msgstr "在這裡設定連絡的郵遞區號。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:127
 #, kde-format
 msgid "Set here the contact city."
 msgstr "在這裡設定連絡的城市。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:132
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the contact state/province."
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:137
 #, kde-format
 msgid "Set here the contact country."
 msgstr "在這裡設定連絡的國家。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:173
 #, kde-format
 msgid "Set here the original owner of content."
 msgstr "在這裡設定內容的原擁有者。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
 #, kde-format
 msgctxt "@item: xmp content"
 msgid "Content"
 msgstr "內容"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:97
 #, kde-format
 msgctxt "@item"
 msgid "Origin"
 msgstr "來源"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:101
 #, kde-format
 msgctxt "@item"
 msgid "Credits"
 msgstr "致謝"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:105
 #, kde-format
 msgctxt "@item"
 msgid "Subjects"
 msgstr "主題"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
 #, kde-format
 msgctxt "@item"
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:113
 #, kde-format
 msgctxt "@item"
 msgid "Categories"
 msgstr "分類"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:117
 #, kde-format
 msgctxt "@item"
 msgid "Status"
 msgstr "狀態"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:121
 #: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Properties"
 msgstr "屬性"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:69
 #, kde-format
 msgid "Set here a new keyword"
 msgstr "在這裡設定新的關鍵字"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, kde-format
 msgid "Video date"
 msgstr "影片日期"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
 #, kde-format
 msgid "Set video date to today"
 msgstr "將影片日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:152
 #, fuzzy, kde-format
 #| msgid "Set here the creation date of intellectual content."
 msgid "Set here the video date of intellectual content."
 msgstr "在這裡設定知識內容的建立日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr "在這裡設定內容的城市來源。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr "在這裡設定城市裡內容的位置。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "在這裡設定內容的省份或州來源。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:51
 #, fuzzy, kde-format
 #| msgid "Headshot"
 msgctxt "@item: scene code"
 msgid "Headshot"
 msgstr "頭像"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:52
 #, fuzzy, kde-format
 #| msgid "Half-length"
 msgctxt "@item: scene code"
 msgid "Half-length"
 msgstr "半身"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:53
 #, fuzzy, kde-format
 #| msgid "Full-length"
 msgctxt "@item: scene code"
 msgid "Full-length"
 msgstr "全身"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -15024,252 +15024,252 @@ msgctxt "@item: side view of a person"
 msgid "Profile"
 msgstr "簡介"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:55
 #, fuzzy, kde-format
 #| msgid "Rear view"
 msgctxt "@item: scene code"
 msgid "Rear view"
 msgstr "後視圖"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:56
 #, fuzzy, kde-format
 #| msgid "Single"
 msgctxt "@item: scene code"
 msgid "Single"
 msgstr "單視角"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:57
 #, fuzzy, kde-format
 #| msgid "Couple"
 msgctxt "@item: scene code"
 msgid "Couple"
 msgstr "情侶"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:58
 #, fuzzy, kde-format
 #| msgid "Two"
 msgctxt "@item: scene code"
 msgid "Two"
 msgstr "雙視角"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:59
 #, fuzzy, kde-format
 #| msgid "Group"
 msgctxt "@item: group of people"
 msgid "Group"
 msgstr "群組"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:60
 #, fuzzy, kde-format
 #| msgid "General view"
 msgctxt "@item: scene code"
 msgid "General view"
 msgstr "普通視角"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:61
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@item: scene code"
 msgid "Panoramic view"
 msgstr "全景"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
 #, fuzzy, kde-format
 #| msgid "Aerial view"
 msgctxt "@item: scene code"
 msgid "Aerial view"
 msgstr "鳥瞰圖"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
 #, fuzzy, kde-format
 #| msgid "Under-water"
 msgctxt "@item: scene code"
 msgid "Under-water"
 msgstr "水底"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
 #, fuzzy, kde-format
 #| msgid "Night scene"
 msgctxt "@item: scene code"
 msgid "Night scene"
 msgstr "夜景"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgctxt "@item: scene code"
 msgid "Satellite"
 msgstr "衛星"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
 #, fuzzy, kde-format
 #| msgid "Exterior view"
 msgctxt "@item: scene code"
 msgid "Exterior view"
 msgstr "室外"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
 #, fuzzy, kde-format
 #| msgid "Interior view"
 msgctxt "@item: scene code"
 msgid "Interior view"
 msgstr "室內"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@item: scene code"
 msgid "Close-up"
 msgstr "特寫"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
 #, fuzzy, kde-format
 #| msgid "Action"
 msgctxt "@item: scene code"
 msgid "Action"
 msgstr "動作"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
 #, fuzzy, kde-format
 #| msgid "Performing"
 msgctxt "@item: scene code"
 msgid "Performing"
 msgstr "表演"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
 #, fuzzy, kde-format
 #| msgid "Posing"
 msgctxt "@item: scene code"
 msgid "Posing"
 msgstr "姿勢"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
 #, fuzzy, kde-format
 #| msgid "Symbolic"
 msgctxt "@item: scene code"
 msgid "Symbolic"
 msgstr "象徵"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
 #, fuzzy, kde-format
 #| msgid "Off-beat"
 msgctxt "@item: scene code"
 msgid "Off-beat"
 msgstr "離奇"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Movie scene"
 msgstr "電影場景"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
 #, kde-format
 msgctxt "@item: type code"
 msgid "Advisory"
 msgstr "諮詢"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
 #, kde-format
 msgctxt "@item: type code"
 msgid "Alert"
 msgstr "警戒"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
 #, kde-format
 msgctxt "@item: type code"
 msgid "Catalog"
 msgstr "目錄"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
 #, kde-format
 msgctxt "@item: type code"
 msgid "Data"
 msgstr "資料"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
 #, kde-format
 msgctxt "@item: type is a document"
 msgid "Document"
 msgstr "文件"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
 #, kde-format
 msgctxt "@item: type code"
 msgid "DTD"
 msgstr "DTD"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
 #, kde-format
 msgctxt "@item: type code"
 msgid "Maintenance"
 msgstr "維護"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
 #, kde-format
 msgctxt "@item: type code"
 msgid "News"
 msgstr "新聞"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
 #, kde-format
 msgctxt "@item: type code"
 msgid "News Management Mode"
 msgstr "新聞管理模式"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
 #, fuzzy, kde-format
 #| msgid "Package"
 msgctxt "@item: type code"
 msgid "Package"
 msgstr "包裝"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:86
 #, kde-format
 msgctxt "@item: type code"
 msgid "Schema"
 msgstr "摘要"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
 #, kde-format
 msgctxt "@item: type code"
 msgid "Topic"
 msgstr "主題"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
 #, kde-format
 msgctxt "@item: type code"
 msgid "Topic Set"
 msgstr "主題集"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:132
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@option"
 msgid "Language:"
 msgstr "語言："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:133
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info"
 msgid "Select here the language of content."
 msgstr "在這裡選擇內容的語言。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:147
 #, fuzzy, kde-format
 #| msgid "Priority:"
 msgctxt "@option"
 msgid "Priority:"
 msgstr "優先順序："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:149
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "0: None"
 msgstr "0：無"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "1: High"
@@ -15277,7 +15277,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "1: High"
 msgstr "1：高"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "5: Normal"
@@ -15285,7 +15285,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "5: Normal"
 msgstr "5：普通"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "8: Low"
@@ -15293,7 +15293,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "8: Low"
 msgstr "8：低"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "editorial urgency of content"
 #| msgid "9: User-defined"
@@ -15301,70 +15301,70 @@ msgctxt "@item: editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: 使用者定義"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the editorial urgency of content."
 msgctxt "@info"
 msgid "@info: Select here the editorial urgency of content."
 msgstr "在這裡選擇內容的編輯緊迫性。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:163
 #, fuzzy, kde-format
 #| msgid "Scene:"
 msgctxt "@option"
 msgid "Scene:"
 msgstr "場景："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:164
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgctxt "@info"
 msgid "Select here the scene type of the content."
 msgstr "在這裡選擇內容的場景種類。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:178
 #, fuzzy, kde-format
 #| msgid "Type:"
 msgctxt "@option"
 msgid "Type:"
 msgstr "類型："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:179
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of the content."
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
 msgstr "在這裡選擇內容的編輯類型。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:194
 #, fuzzy, kde-format
 #| msgid "Attribute:"
 msgctxt "@option"
 msgid "Attribute:"
 msgstr "屬性："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:199
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
 msgstr "在這裡設定內容的編輯屬性描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:200
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
 msgstr "在這裡設定內容的編輯屬性描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:202
 #, fuzzy, kde-format
 #| msgid "Select here the editorial attribute of the content."
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
 msgstr "在這裡選擇內容的編輯屬性。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Current"
@@ -15372,7 +15372,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Current"
 msgstr "目前"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Analysis"
@@ -15380,7 +15380,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Analysis"
 msgstr "分析"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Archive material"
@@ -15388,7 +15388,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Archive material"
 msgstr "檔案材料"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
@@ -15396,7 +15396,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Background"
 msgstr "背景"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -15404,7 +15404,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Feature"
 msgstr "專題"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Forecast"
@@ -15412,14 +15412,14 @@ msgctxt "@item: editorial content attribute"
 msgid "Forecast"
 msgstr "預報"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:209
 #, fuzzy, kde-format
 #| msgid "History"
 msgctxt "@item: editorial content attribute"
 msgid "History"
 msgstr "歷史"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Obituary"
@@ -15427,7 +15427,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Obituary"
 msgstr "訃聞"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Opinion"
@@ -15435,7 +15435,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Opinion"
 msgstr "意見"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Polls & Surveys"
@@ -15443,7 +15443,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
 msgstr "投票和調查"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -15451,13 +15451,13 @@ msgctxt "@item: editorial content attribute"
 msgid "Profile"
 msgstr "簡介"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
 msgstr "結果表格"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Side bar & Supporting information"
@@ -15465,7 +15465,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
 msgstr "側邊欄和支援資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Summary"
@@ -15473,7 +15473,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Summary"
 msgstr "摘要"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Transcript & Verbatim"
@@ -15481,7 +15481,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Transcript & Verbatim"
 msgstr "謄本和逐字稿"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Interview"
@@ -15489,7 +15489,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Interview"
 msgstr "訪談"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "From the Scene"
@@ -15497,7 +15497,7 @@ msgctxt "@item: editorial content attribute"
 msgid "From the Scene"
 msgstr "現場"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Retrospective"
@@ -15505,19 +15505,19 @@ msgctxt "@item: editorial content attribute"
 msgid "Retrospective"
 msgstr "回顧"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Statistics"
 msgstr "統計"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Update"
 msgstr "更新"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Wrap-up"
@@ -15525,7 +15525,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Wrap-up"
 msgstr "特寫鏡頭"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Press Release"
@@ -15533,72 +15533,72 @@ msgctxt "@item: editorial content attribute"
 msgid "Press Release"
 msgstr "新聞稿"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@option"
 msgid "Reference:"
 msgstr "參考："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@info"
 msgid "Set here the content reference"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
 #, fuzzy, kde-format
 #| msgid "Set here the original content transmission reference."
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
 msgstr "在這裡設定原始內容辦理項目偏好設定。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:64
 #, kde-format
 msgctxt "short title for the content"
 msgid "Title:"
 msgstr "標題："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:65
 #, kde-format
 msgid "Set here a shorthand reference for the content."
 msgstr "在這裡設定內容的簡略偏好設定。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:69
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:118
 #, kde-format
 msgid "Nickname:"
 msgstr "暱稱："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgid "Set here a short informal name"
 msgstr "在這裡設定連絡的電子信箱。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "A short informal name for the resource."
 msgstr "資源的簡短非正式名稱。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
 #, kde-format
 msgid "Identifiers:"
 msgstr "辨識碼："
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:78
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
 msgstr "在這裡設定辨識內容重現的字串。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgid "Set here the editorial usage instructions"
 msgstr "輸入編輯使用須知。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
 msgid "Enter the editorial usage instructions."
 msgstr "輸入編輯使用須知。"
@@ -15681,7 +15681,7 @@ msgid "Adjust Time and Date"
 msgstr "調整時間與日期"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
 msgctxt "@action"
@@ -15689,21 +15689,21 @@ msgid "Cancel"
 msgstr "取消"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消目前動作"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "關閉"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
 msgid "Close window"
@@ -15793,17 +15793,17 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "調整時間與日期..."
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
 #, kde-format
 msgid "Create Calendar"
 msgstr "建立行事曆"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
 #, kde-format
 msgid "A tool to create calendar from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:63
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -15813,12 +15813,12 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
 #, kde-format
 msgid "Former Author"
 msgstr "前任作者"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
@@ -15827,7 +15827,7 @@ msgstr "前任作者"
 msgid "Developer and Maintainer"
 msgstr "開發者與維護者"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -15902,7 +15902,7 @@ msgstr "總頁數"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
 #, kde-format
 msgid "Create Template for Calendar"
 msgstr "為行事曆建立範本"
@@ -16028,87 +16028,87 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "建立行事曆"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
 #, kde-format
 msgid "Welcome to Calendar Tool"
 msgstr "歡迎使用行事曆工具"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "選擇在月曆上顯示的事件"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
 #, kde-format
 msgid "Print Calendar"
 msgstr "列印行事曆"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
 #, kde-format
 msgid "Printing in Progress"
 msgstr "列印進行中"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
 #, kde-format
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "行事曆資料檔案 (*.ics)"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "選擇行事曆資料檔案"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr "沒有選擇有效的影像給月份<br/>點擊返回選擇影像"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:235
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
 "year in the past."
 msgstr "請注意您正在製作今年或往年的月曆。"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:242
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
 "year %1:<br/>"
 msgstr "點擊下一步開始列印<br/><br/>下列月份會列印在年份 %1：<br/>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "列印行事曆"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
 #, kde-format
 msgid "Printing Cancelled"
 msgstr "已取消列印"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:309
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
 #, kde-format
 msgid "Create calendar"
 msgstr "建立行事曆"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:359
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "列印月曆第 %1 頁，共 %2 頁"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:369
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
 #, kde-format
 msgid "Printing Complete"
 msgstr "列印已完成"
@@ -16216,19 +16216,19 @@ msgstr "目標檔案"
 msgid "Camera"
 msgstr "相機"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "DNG 轉換工具"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "批次轉換 RAW 相機影像成 DNG 格式的工具"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:63
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16239,7 +16239,7 @@ msgid ""
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -16329,13 +16329,13 @@ msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
 msgstr "對比："
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:119
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:106
 #, kde-format
 msgctxt "@option:check Enfuse setting"
 msgid "Automatic Local/Global Image Features Balance (Levels)"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -16343,7 +16343,7 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:123
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:110
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -16352,13 +16352,13 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:126
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:113
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:131
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -16366,7 +16366,7 @@ msgid ""
 "number)."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:133
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the number of levels for pyramid blending. A low number trades off "
@@ -16381,19 +16381,19 @@ msgstr ""
 "設定金字塔型混合（pyramid blending）的等級數。等級數較少，則執行速度較快，用"
 "的記憶體較少，但品質相對較低。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Hard Mask"
 msgstr "硬遮罩"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:140
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Useful only for focus stack to improve sharpness."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:129
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -16402,19 +16402,19 @@ msgid ""
 "sharpness at the expense of increased noise."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:147
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:134
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of well exposed pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:154
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the exposure contribution for the blending process. Higher values "
@@ -16425,19 +16425,19 @@ msgid ""
 "Higher values will favor well-exposed pixels."
 msgstr "設定混合過程中要使用的曝光程度。數值越高表示傾向使用曝光較多的像素。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:157
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:144
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly saturated pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:165
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -16445,19 +16445,19 @@ msgid ""
 "the final output."
 msgstr "增加此值會在最後輸出中傾向使用較高飽和度的像素。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:168
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:155
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly contrasted pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:176
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -16468,14 +16468,14 @@ msgstr ""
 "設定高對比像素的相對比重。增加此比重會在最後輸出中傾向使用與相鄰像素對比較高"
 "的像素。特別在焦距堆疊（focus stacks）中有用。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:167
 #, fuzzy, kde-format
 #| msgid "Use Color Appearance Modelling"
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
 msgstr "使用色彩外觀模型"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:182
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -16483,7 +16483,7 @@ msgid ""
 "instead of RGB."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:171
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -16494,63 +16494,63 @@ msgid ""
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:179
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:169
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:170
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgctxt "@title:column Output file name"
 msgid "Output"
 msgstr "輸出裝置"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:181
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:171
 #, fuzzy, kde-format
 msgctxt "@title:column Source file names"
 msgid "Selected Inputs"
 msgstr "選擇項目"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:207
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:197
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Remove item"
 msgstr "移除項目"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:216
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:206
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Clear all"
 msgstr "清除全部"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:113
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "曝光時間"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:122
 #, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "儲存(&S)"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "用影像編輯器開啟選擇的項目。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:128
 #, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "預覽(&P)"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Process a preview of bracketed images stack with current settings."
@@ -16558,21 +16558,21 @@ msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "以目前的設定處理影像堆疊預覽。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "預設(&D)"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
 msgstr "將目前設定重設為預設值。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
 #, fuzzy, kde-format
 #| msgid "Details"
@@ -16580,86 +16580,86 @@ msgctxt "@action:button"
 msgid "Details..."
 msgstr "詳細資料"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Enfuse Settings"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:186
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:172
 #, fuzzy, kde-format
 #| msgid "Save theme"
 msgctxt "@title"
 msgid "Save Result"
 msgstr "儲存佈景主題"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:196
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@label: textbox"
 msgid "File Name Template: "
 msgstr "檔名過濾："
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:555
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
 #, fuzzy, kde-format
 #| msgid "Processing preview of bracketed images..."
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "處理括弧內的影像預覽中..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:562
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
 #, fuzzy, kde-format
 #| msgid "Processing targets of bracketed images..."
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "處理括弧內的影像目標中..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:589
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "載入影像失敗"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:599
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "從相機取回檔案 %1 失敗。"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:610
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
 msgstr "從相機取回檔案 %1 失敗。"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgid "Exposure Blending"
 msgstr "曝光時間"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Related Images"
 msgid "A tool to blend bracketed images"
 msgstr "相關影像"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:71
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to blend bracketed images together to create "
@@ -16670,17 +16670,17 @@ msgid ""
 "for merging pixels by pixels.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -20682,19 +20682,19 @@ msgstr "影片設定"
 msgid "Generating Video Slideshow"
 msgstr "忽略群組"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "Export as wallpaper"
 msgstr "匯出工具"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:60
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
 msgid "A tool to set image as wallpaper"
 msgstr "轉換影像色彩空間。"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:65
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -20702,7 +20702,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
@@ -20773,36 +20773,36 @@ msgstr ""
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "桌布設定"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
 #| msgid "Adjust"
 msgid "Adjusted"
 msgstr "調整"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Adjusted with Aspect ratio"
 msgstr "回傳此圖片的外觀比例"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
 #, kde-format
 msgid "Adjusted and cropped"
 msgstr "已調整並裁剪"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Center"
 msgid "Centered"
@@ -36370,28 +36370,28 @@ msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "永不"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:183
+#: core/libs/onlineversion/onlineversionchecker.cpp:188
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:198
+#: core/libs/onlineversion/onlineversionchecker.cpp:203
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "不支援的系統架構：%1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:225
+#: core/libs/onlineversion/onlineversionchecker.cpp:231
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:248
+#: core/libs/onlineversion/onlineversionchecker.cpp:255
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:280
+#: core/libs/onlineversion/onlineversionchecker.cpp:288
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
@@ -36989,7 +36989,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1961
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -58569,158 +58569,158 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "預覽模式"
 
-#: core/utilities/import/backend/cameracontroller.cpp:411
+#: core/utilities/import/backend/cameracontroller.cpp:415
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "連線到相機..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:420
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection established."
 msgstr "連線已建立。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:424
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection failed."
 msgstr "連線失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:449
+#: core/utilities/import/backend/cameracontroller.cpp:453
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "從相機取回檔案 %1 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:463
+#: core/utilities/import/backend/cameracontroller.cpp:467
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "從相機取回檔案 %1 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:477
+#: core/utilities/import/backend/cameracontroller.cpp:481
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "從相機取回檔案 %1 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:491
+#: core/utilities/import/backend/cameracontroller.cpp:495
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:507
+#: core/utilities/import/backend/cameracontroller.cpp:511
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:560
+#: core/utilities/import/backend/cameracontroller.cpp:564
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:578
+#: core/utilities/import/backend/cameracontroller.cpp:582
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:633
-#: core/utilities/import/backend/cameracontroller.cpp:1004
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/backend/cameracontroller.cpp:637
+#: core/utilities/import/backend/cameracontroller.cpp:1008
+#: core/utilities/import/main/importui.cpp:2478
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file <filename>%1</filename>."
 msgid "Failed to download <filename>%1</filename>"
 msgstr "下載檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:731
+#: core/utilities/import/backend/cameracontroller.cpp:735
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:779
+#: core/utilities/import/backend/cameracontroller.cpp:783
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:796
+#: core/utilities/import/backend/cameracontroller.cpp:800
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:816
+#: core/utilities/import/backend/cameracontroller.cpp:820
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:890
+#: core/utilities/import/backend/cameracontroller.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:897
+#: core/utilities/import/backend/cameracontroller.cpp:901
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1012
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "下載檔案 <b>%1</b> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1016
+#: core/utilities/import/backend/cameracontroller.cpp:1020
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "下載檔案 <b>%1</b> 失敗。您要繼續嗎？"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1033
+#: core/utilities/import/backend/cameracontroller.cpp:1037
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1041
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "上傳檔案 \"%1\" 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1045
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1060
+#: core/utilities/import/backend/cameracontroller.cpp:1064
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1068
+#: core/utilities/import/backend/cameracontroller.cpp:1072
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "刪除檔案 \"%1\" 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1072
+#: core/utilities/import/backend/cameracontroller.cpp:1076
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1088
+#: core/utilities/import/backend/cameracontroller.cpp:1092
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1096
+#: core/utilities/import/backend/cameracontroller.cpp:1100
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1100
+#: core/utilities/import/backend/cameracontroller.cpp:1104
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。您要繼續嗎？"
@@ -59336,13 +59336,13 @@ msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "正在從相機中斷連線，請稍候..."
 
-#: core/utilities/import/main/importui.cpp:1038
+#: core/utilities/import/main/importui.cpp:1040
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "已就緒"
 
-#: core/utilities/import/main/importui.cpp:1095
+#: core/utilities/import/main/importui.cpp:1097
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59350,13 +59350,13 @@ msgid ""
 "and turned on."
 msgstr "連線到相機失敗。請確定相機已正確連線且已開啟。"
 
-#: core/utilities/import/main/importui.cpp:1189
+#: core/utilities/import/main/importui.cpp:1191
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "選擇要更新的影像"
 
-#: core/utilities/import/main/importui.cpp:1224
+#: core/utilities/import/main/importui.cpp:1226
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59370,7 +59370,7 @@ msgstr ""
 "需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:1279
+#: core/utilities/import/main/importui.cpp:1281
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59380,13 +59380,13 @@ msgstr ""
 "相機資料夾 \"%1\" 已經包含項目 \"%2\"。\n"
 "請輸入一個新的檔案名稱 (不含副檔名)："
 
-#: core/utilities/import/main/importui.cpp:1283
+#: core/utilities/import/main/importui.cpp:1285
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "檔案已存在"
 
-#: core/utilities/import/main/importui.cpp:1352
+#: core/utilities/import/main/importui.cpp:1354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59394,7 +59394,7 @@ msgid ""
 "settings..."
 msgstr "您自訂的目標相簿日期格式不合法。請檢查您的設定。"
 
-#: core/utilities/import/main/importui.cpp:1392
+#: core/utilities/import/main/importui.cpp:1394
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59405,7 +59405,7 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1401
+#: core/utilities/import/main/importui.cpp:1403
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59414,7 +59414,7 @@ msgid ""
 msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿。請在相機設定裡選擇另一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1426
+#: core/utilities/import/main/importui.cpp:1428
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59422,7 +59422,7 @@ msgid ""
 "camera pictures into."
 msgstr "請選擇要匯入相機圖片到 digiKam 相簿櫃之中的哪一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1459
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59437,18 +59437,18 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1511
+#: core/utilities/import/main/importui.cpp:1513
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "移動 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:1518
+#: core/utilities/import/main/importui.cpp:1520
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:1955
+#: core/utilities/import/main/importui.cpp:1958
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59459,7 +59459,7 @@ msgstr ""
 "下面列出的項目已被相機鎖定 (只能讀取)。這些項目不會被刪除。如果您想要刪除這些"
 "項目，請將它們解除鎖定後重試一次。"
 
-#: core/utilities/import/main/importui.cpp:1966
+#: core/utilities/import/main/importui.cpp:1969
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59473,19 +59473,19 @@ msgid_plural ""
 msgstr[0] ""
 "將要刪除 %1 張影像。<warning>刪除的檔案無法復原</warning>。您確定嗎？"
 
-#: core/utilities/import/main/importui.cpp:1976
+#: core/utilities/import/main/importui.cpp:1979
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:2020
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "磁碟空間不足"
 
-#: core/utilities/import/main/importui.cpp:2021
+#: core/utilities/import/main/importui.cpp:2024
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59502,15 +59502,15 @@ msgstr ""
 "估計的需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:2294
-#: core/utilities/import/main/importui.cpp:2322
+#: core/utilities/import/main/importui.cpp:2292
+#: core/utilities/import/main/importui.cpp:2318
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/utilities/import/main/importui.cpp:2314
+#: core/utilities/import/main/importui.cpp:2311
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -59518,30 +59518,30 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (第 %2 張，共 %3 張)"
 
-#: core/utilities/import/main/importui.cpp:2333
+#: core/utilities/import/main/importui.cpp:2328
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/utilities/import/main/importui.cpp:2416
+#: core/utilities/import/main/importui.cpp:2413
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2438
+#: core/utilities/import/main/importui.cpp:2435
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "重新命名檔案到 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2461
+#: core/utilities/import/main/importui.cpp:2458
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "儲存 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:2538
+#: core/utilities/import/main/importui.cpp:2535
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -59553,13 +59553,13 @@ msgid ""
 "are auto-rotated"
 msgstr "影像已下載完成，您可以取下您的相機。影像將會自動旋轉"
 
-#: core/utilities/import/main/importui.cpp:2546
+#: core/utilities/import/main/importui.cpp:2543
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "影像已下載"
 
-#: core/utilities/import/main/importui.cpp:2572
+#: core/utilities/import/main/importui.cpp:2569
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -59567,7 +59567,7 @@ msgstr ""
 "在資料夾 <resource>%2</resource> 中已經存在相同名稱的檔案 (<filename>%1</"
 "filename>)。"
 
-#: core/utilities/import/main/importui.cpp:2585
+#: core/utilities/import/main/importui.cpp:2582
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

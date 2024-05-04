@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 01:41+0000\n"
+"POT-Creation-Date: 2024-05-04 01:54+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1073,7 +1073,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:98
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
@@ -3702,7 +3702,7 @@ msgid "Author:"
 msgstr "Συγγραφέας"
 
 #: core/app/views/stack/welcomepageview.cpp:273
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:156
 #, kde-format
 msgid "Location:"
 msgstr "Τοποθεσία:"
@@ -9568,7 +9568,7 @@ msgid "Frost Glass"
 msgstr "Παγωμένο γυαλί"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:118
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:88
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
 #, kde-format
 msgid "Mosaic"
 msgstr "Μωσαϊκό"
@@ -12681,8 +12681,8 @@ msgstr[1] "<p>%1 χαρακτήρες.</p>"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:400
 #: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
@@ -13153,7 +13153,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "Συγχρονισμός τμήματος σχολίων JFIF"
@@ -13209,8 +13209,8 @@ msgid "Sync IPTC creation date"
 msgstr "Συγχρονισμός της ημερομηνία δημιουργίας IPTC"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:131
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Ορισμός ημερομηνίας δημιουργίας στο σήμερα"
@@ -13276,8 +13276,8 @@ msgid "Digitization sub-second"
 msgstr "Υπο-δευτερόλεπτο ψηφιοποίησης"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:110
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Ορισμός ημερομηνίας ψηφιοποίησης στο σήμερα"
@@ -14244,20 +14244,20 @@ msgstr ""
 "μηχανή κατά τη σύλληψη της φωτογραφίας."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:68
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "Θέμα του περιεχομένου (μεγ. 3 χαρακτήρες):"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the category ID"
 msgstr "Ορίστε εδώ τη χώρα της επαφής."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:73
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
@@ -14266,13 +14266,13 @@ msgstr ""
 "χαρακτήρες."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:76
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "Πρόσθετες κατηγορίες:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:80
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the extra category"
@@ -14292,16 +14292,16 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:74
 #, kde-format
 msgid "&Add"
 msgstr "&Προσθήκη"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:75
 #: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
@@ -14309,8 +14309,8 @@ msgstr "&Διαγραφή"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
 #: core/utilities/setup/album/setupcategory.cpp:93
 #, kde-format
 msgid "&Replace"
@@ -14321,9 +14321,9 @@ msgstr "&Αντικατάσταση"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
@@ -14344,7 +14344,7 @@ msgstr ""
 "σχετική βοήθεια για λεπτομέρειες.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:70
 #, kde-format
 msgid "Headline:"
 msgstr "Υπέρτιτλος:"
@@ -14373,7 +14373,7 @@ msgid "Caption:"
 msgstr "Τίτλος:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Comment"
@@ -14397,7 +14397,7 @@ msgstr ""
 "χαρακτήρες ASCII."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
 #, kde-format
 msgid "Caption Writer:"
 msgstr "Συγγραφέας τίτλου:"
@@ -14408,7 +14408,7 @@ msgid "Enter the name of the caption author."
 msgstr "Εισαγάγετε το όνομα του συγγραφέα του τίτλου."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
 #, kde-format
@@ -14439,7 +14439,7 @@ msgid "Byline:"
 msgstr "Συντάκτης:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:85
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "Ορίστε εδώ το όνομα δημιουργού του περιεχομένου."
@@ -14450,13 +14450,13 @@ msgid "Byline Title:"
 msgstr "Τίτλος συντάκτη:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:92
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "Ορίστε εδώ τον τίτλο του δημιουργού του περιεχομένου."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:165
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
 #, kde-format
@@ -14464,7 +14464,7 @@ msgid "Credit:"
 msgstr "Προσωπική αναγνώριση:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:167
 #, kde-format
 msgid "Set here the content provider."
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
@@ -14480,7 +14480,7 @@ msgstr ""
 "χαρακτήρες ASCII."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:171
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
@@ -14579,7 +14579,7 @@ msgid "Envelope"
 msgstr "Φάκελος"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title"
@@ -14587,7 +14587,7 @@ msgid "Content Information"
 msgstr "Πληροφορίες συστατικών"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Content Information<br/><i>Use this panel to describe the visual "
@@ -14599,7 +14599,7 @@ msgstr ""
 "περιγραφή του οπτικού περιεχομένου της εικόνας</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:197
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
@@ -14607,7 +14607,7 @@ msgid "Origin Information"
 msgstr "Αποκοπή πληροφοριών"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Origin Information<br/><i>Use this panel for formal descriptive "
@@ -14619,7 +14619,7 @@ msgstr ""
 "περιγραφή προέλευσης της εικόνας</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
@@ -14627,7 +14627,7 @@ msgid "Credit Information"
 msgstr "Αποκοπή πληροφοριών"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Credit Information<br/><i>Use this panel to record copyright "
@@ -14639,7 +14639,7 @@ msgstr ""
 "εισαγωγή πληροφοριών πνευματικών δικαιωμάτων της εικόνας</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -14647,7 +14647,7 @@ msgid "Subject Information"
 msgstr "Πληροφορίες μεταδεδομένων"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -14659,7 +14659,7 @@ msgstr ""
 "εισαγωγή των θεμάτων της εικόνας</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Import Information"
 msgctxt "@title"
@@ -14667,7 +14667,7 @@ msgid "Keyword Information"
 msgstr "Πληροφορίες εισαγωγής"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Keyword Information<br/><i>Use this panel to record keywords relevant "
@@ -14679,7 +14679,7 @@ msgstr ""
 "την εισαγωγή λέξεων κλειδιών σχετικών με την εικόνα</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
@@ -14687,7 +14687,7 @@ msgid "Category Information"
 msgstr "Πληροφορίες τίτλου"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Category Information<br/><i>Use this panel to record categories "
@@ -14699,7 +14699,7 @@ msgstr ""
 "εισαγωγή των κατηγοριών στις οποίες ανήκει η εικόνα</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:222
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -14707,7 +14707,7 @@ msgid "Status Information"
 msgstr "Πληροφορίες μεταδεδομένων"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Video Information"
 msgctxt "@title"
@@ -14715,7 +14715,7 @@ msgid "Record workflow information"
 msgstr "Πληροφορίες βίντεο"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title"
@@ -14723,7 +14723,7 @@ msgid "Status Properties"
 msgstr "Ιδιότητες αντικειμένου"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title"
@@ -15049,7 +15049,7 @@ msgstr ""
 "χαρακτήρες ASCII."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:169
 #, kde-format
 msgid "Priority:"
 msgstr "Προτεραιότητα:"
@@ -15079,7 +15079,7 @@ msgid "8: Low"
 msgstr "8: Χαμηλή"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
@@ -15133,7 +15133,7 @@ msgid "Set here the time zone when the service sent the material."
 msgstr "Ορίστε εδώ την ώρα αποστολής του υλικού από την υπηρεσία."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:65
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "Χρήση λέξεων ανάκτησης πληροφορίας:"
@@ -15153,78 +15153,78 @@ msgstr ""
 "Εισάγετε εδώ μια νέα λέξη κλειδί. Το πεδίο περιορίζεται σε 64 χαρακτήρες "
 "ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:128
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Digitization date"
 msgstr "Ημερομηνία ψηφιοποίησης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
 #, kde-format
 msgid "Digitization time"
 msgstr "Ώρα ψηφιοποίησης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:142
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:112
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "Ορίστε εδώ την ημερομηνία δημιουργίας της ψηφιακής αναπαράστασης."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:120
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "Ορίστε εδώ την ώρα δημιουργίας της ψηφιακής αναπαράστασης."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:114
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "Ορίστε εδώ την ώρα δημιουργίας της ψηφιακής αναπαράστασης."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:121
 #, kde-format
 msgid "Creation date"
 msgstr "Ημερομηνία δημιουργίας"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
 #, kde-format
 msgid "Creation time"
 msgstr "Ώρα δημιουργίας"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif creation date"
 msgstr "Συγχρονισμός ημερομηνία δημιουργίας EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "Ορίστε εδώ την ημερομηνία δημιουργίας του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:147
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "Ορίστε εδώ την ώρα δημιουργίας του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:173
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:158
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "Ορίστε εδώ την ώρα δημιουργίας του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "Ορίστε εδώ το πλήρες όνομα της χώρας του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:161
 #: core/libs/template/templatepanel.cpp:216
 #: core/libs/template/templatepanel.cpp:280
 #: core/libs/template/templateviewer.cpp:132
@@ -15233,13 +15233,13 @@ msgstr "Ορίστε εδώ το πλήρες όνομα της χώρας το�
 msgid "City:"
 msgstr "Πόλη:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the city of the content"
 msgstr "Επιλέξτε εδώ τον τύπο σκηνής του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the city of content origin. This field is limited to 32 ASCII "
@@ -15250,21 +15250,21 @@ msgstr ""
 "Ορίστε εδώ την πόλη του περιεχόμενου. Το πεδίο έχει περιορισμό τους 32 "
 "χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:168
 #: core/libs/template/templatepanel.cpp:226
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "Δημοτικό διαμέρισμα:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content location"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content location within city. This field is limited to 32 "
@@ -15276,9 +15276,9 @@ msgstr ""
 "Ορίστε εδώ την τοποθεσία του περιεχόμενου στην κλίμακα της πόλης που "
 "βρίσκεται. Το πεδίο έχει περιορισμό τους 32 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #: core/libs/template/templatepanel.cpp:236
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -15286,13 +15286,13 @@ msgstr ""
 msgid "State/Province:"
 msgstr "Πολιτεία/επαρχία:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the Province or State of the content"
 msgstr "Επιλέξτε εδώ τον τύπο σκηνής του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Province or State of content origin. This field is limited "
@@ -15304,9 +15304,9 @@ msgstr ""
 "Ορίστε εδώ την επαρχεία ή την πολιτεία του περιεχομένου. Το πεδίο έχει "
 "περιορισμό τους 32 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:182
 #: core/libs/template/templatepanel.cpp:246
 #: core/libs/template/templatepanel.cpp:290
 #: core/libs/template/templateviewer.cpp:138
@@ -15315,175 +15315,175 @@ msgstr ""
 msgid "Country:"
 msgstr "Χώρα:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "Επιλέξτε εδώ το όνομα της χώρας του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:105
 #, kde-format
 msgid "Release date"
 msgstr "Ημερομηνία έκδοσης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
 #, kde-format
 msgid "Release time"
 msgstr "Ώρα έκδοσης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, kde-format
 msgid "Set release date to today"
 msgstr "Ορισμός ημερομηνίας έκδοσης στο σήμερα"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:119
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr ""
 "Ορίστε εδώ τη ενωρίτερη χρήσιμη ημερομηνία του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:121
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr "Ορίστε εδώ τη ενωρίτερη χρήσιμη ώρα του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:123
 #, fuzzy, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr "Ορίστε εδώ τη ενωρίτερη χρήσιμη ώρα του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:130
 #, kde-format
 msgid "Expiration date"
 msgstr "Ημερομηνία λήξης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
 msgid "Expiration time"
 msgstr "Ώρα λήξης"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "Ορισμός ημερομηνίας λήξης στο σήμερα"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:144
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr ""
 "Ορίστε εδώ την αργότερη χρήσιμη ημερομηνία του πνευματικού περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:146
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr "Ορίστε εδώ την αργότερη χρήσιμη ώρα του πνευματικού περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:148
 #, fuzzy, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr "Ορίστε εδώ την αργότερη χρήσιμη ώρα του πνευματικού περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:155
 #, kde-format
 msgid "Language:"
 msgstr "Γλώσσα:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgid "Select here the language of content."
 msgstr "Επιλέξτε εδώ τη γλώσσα του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:171
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr "0: Καμία"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr "1: Υψηλή"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:176
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Κανονική"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Χαμηλή"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr ""
 "Επιλέξτε εδώ την επείγουσα ή μη προτεραιότητα σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:185
 #, kde-format
 msgid "Cycle:"
 msgstr "Κύκλος:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:187
 #, fuzzy, kde-format
 #| msgid "Morning"
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "Πρωί"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #, fuzzy, kde-format
 #| msgid "Afternoon"
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "Απόγευμα"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
 #, fuzzy, kde-format
 #| msgid "Evening"
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "Βράδυ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
 #, fuzzy, kde-format
 #| msgid "Select here the editorial cycle of content."
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "Επιλέξτε εδώ τον κύκλο σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content type"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:200
 #, kde-format
 msgid "News"
 msgstr "Ειδήσεις"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
 #, kde-format
 msgid "Data"
 msgstr "Δεδομένα"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
 #, kde-format
 msgid "Advisory"
 msgstr "Συμβουλή"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "Επιλέξτε εδώ τον τύπο σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the editorial type description of content. This field is limited "
@@ -15495,18 +15495,18 @@ msgstr ""
 "Ορίστε εδώ τον τύπο σύνταξης του περιεχομένου. Το πεδίο έχει περιορισμό τους "
 "64 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
 #, kde-format
 msgid "Reference:"
 msgstr "Αναφορά:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content reference"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original content transmission reference. This field is "
@@ -15518,19 +15518,19 @@ msgstr ""
 "Ορίστε εδώ την αρχική αναφορά μετάδοσης του περιεχομένου. Το πεδίο έχει "
 "περιορισμό τους 32 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:64
 #, kde-format
 msgctxt "image title"
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:67
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content title"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the shorthand reference of content. This field is limited to 64 "
@@ -15542,18 +15542,18 @@ msgstr ""
 "Ορίστε εδώ τη συντομογραφία του περιεχομένου. Το πεδίο έχει περιορισμό τους "
 "64 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:73
 #, kde-format
 msgid "Edit Status:"
 msgstr "Επεξεργασία κατάστασης:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:76
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the content status"
 msgstr "Ορίστε εδώ την πόλη της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the title of content status. This field is limited to 64 ASCII "
@@ -15564,18 +15564,18 @@ msgstr ""
 "Ορίστε εδώ τον τίτλο του περιεχόμενου. Το πεδίο έχει περιορισμό τους 64 "
 "χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:82
 #, kde-format
 msgid "Job Identifier:"
 msgstr "Αναγνωριστικό εργασίας:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Set here the contact URL."
 msgid "Set here the job ID"
 msgstr "Ορίστε εδώ το URL της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the string that identifies content that recurs. This field is "
@@ -15587,19 +15587,19 @@ msgstr ""
 "Ορίστε εδώ τη συμβολοσειρά που υποδεικνύει περιεχόμενο που επαναλαμβάνεται. "
 "Το πεδίο περιορίζεται σε 32 χαρακτήρες ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:82
 #, kde-format
 msgid "Special Instructions:"
 msgstr "Ειδικές οδηγίες:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:94
 #, fuzzy, kde-format
 #| msgid "Set here the content's city of origin."
 msgid "Set here the content instructions"
 msgstr "Ορίστε εδώ την πόλη προέλευσης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the editorial usage instructions. This field is limited to 256 "
@@ -15736,219 +15736,219 @@ msgctxt "@action"
 msgid "Edit Metadata..."
 msgstr "Επεξεργασία μεταδεδομένων"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:81
 #, kde-format
 msgid "Enter here a new supplemental category of content."
 msgstr "Εισάγετε εδώ μια πρόσθετη κατηγορία περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:72
 #, fuzzy, kde-format
 #| msgid "Enter here the content synopsis."
 msgid "Set here the content synopsis."
 msgstr "Ορίστε εδώ το τη σύνοψη του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:76
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgctxt "content description"
 msgid "Captions:"
 msgstr "Επιγραφές:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content descriptions."
 msgstr "Εισάγετε την περιγραφή του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
 msgid "Default Language Caption Options"
 msgstr "Επιλογές προκαθορισμένες γλώσσας τίτλου"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, fuzzy, kde-format
 #| msgid "Enter the name of the caption author."
 msgid "Set here the name of the caption author."
 msgstr "Εισαγάγετε το όνομα του συγγραφέα του τίτλου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the necessary copyright notice."
 msgstr "Εισάγετε την απαραίτητη σημείωση πνευματικών δικαιωμάτων."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Copyright"
 msgstr "Συγχρονισμός σχολίου EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:103
 #: core/libs/template/templatepanel.cpp:151
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "Όροι ορθής χρήσης:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the list of instructions on how a resource can be legally used here."
 msgid "Set here the instructions on how a resource can be legally used here."
 msgstr "Δώστε εδώ τη λίστα οδηγιών για τη νομικά ορθή χρήση ενός πόρου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:84
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@option: name of content creator"
 msgid "Creator:"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:86
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif Artist"
 msgstr "Συγχρονισμός ημερομηνία δημιουργίας EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:90
 #, fuzzy, kde-format
 #| msgid "Projection"
 msgid "Creator Title:"
 msgstr "Προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:96
 #: core/libs/template/templatepanel.cpp:392
 #: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
 msgstr "Επικοινωνία:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:99
 #, kde-format
 msgctxt "contact email address"
 msgid "E-mail:"
 msgstr "E-mail:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:102
 #, kde-format
 msgid "Set here the contact e-mail."
 msgstr "Ορίστε εδώ το e-mail της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:104
 #: core/libs/template/templatepanel.cpp:350
 #: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
 msgstr "URL:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:107
 #, kde-format
 msgid "Set here the contact URL."
 msgstr "Ορίστε εδώ το URL της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:109
 #: core/libs/template/templatepanel.cpp:340
 #: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
 msgstr "Τηλέφωνο:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the contact 'phone number."
 msgstr "Ορίστε εδώ τον αριθμό τηλεφώνου της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:114
 #, kde-format
 msgctxt "Street address"
 msgid "Address:"
 msgstr "Διεύθυνση:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
 #, kde-format
 msgid "Set here the contact address."
 msgstr "Ορίστε εδώ τη διεύθυνση της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Postal code:"
 msgstr "Ταχυδρομικός κώδικας:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:122
 #, kde-format
 msgid "Set here the contact postal code."
 msgstr "Ορίστε εδώ τον ταχυδρομικό κώδικα της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:127
 #, kde-format
 msgid "Set here the contact city."
 msgstr "Ορίστε εδώ την πόλη της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:132
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the contact state/province."
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:137
 #, kde-format
 msgid "Set here the contact country."
 msgstr "Ορίστε εδώ τη χώρα της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:173
 #, kde-format
 msgid "Set here the original owner of content."
 msgstr "Ορίστε εδώ τον αρχικό ιδιοκτήτη του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@item: xmp content"
 msgid "Content"
 msgstr "Περιεχόμενο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item"
 msgid "Origin"
 msgstr "Προέλευση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item"
 msgid "Credits"
 msgstr "Αναγνώριση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item"
 msgid "Subjects"
 msgstr "Θέματα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item"
 msgid "Keywords"
 msgstr "Λέξεις κλειδιά"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@item"
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item"
 msgid "Status"
 msgstr "Κατάσταση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:121
 #: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Properties"
@@ -15956,67 +15956,67 @@ msgctxt "@item"
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:69
 #, fuzzy, kde-format
 #| msgid "Enter here a new keyword."
 msgid "Set here a new keyword"
 msgstr "Εισάγετε εδώ μια νέα λέξη κλειδί."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgid "Video date"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
 #, fuzzy, kde-format
 #| msgid "Set creation date to today"
 msgid "Set video date to today"
 msgstr "Ορισμός ημερομηνίας δημιουργίας στο σήμερα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:152
 #, fuzzy, kde-format
 #| msgid "Set here the creation date of intellectual content."
 msgid "Set here the video date of intellectual content."
 msgstr "Ορίστε εδώ την ημερομηνία δημιουργίας του πνευματικού περιεχόμενου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr "Ορίστε εδώ την πόλη προέλευσης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "Επιλέξτε εδώ την επαρχία ή πολιτεία της προέλευσης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:51
 #, fuzzy, kde-format
 #| msgid "Headshot"
 msgctxt "@item: scene code"
 msgid "Headshot"
 msgstr "Πρόσοψη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:52
 #, fuzzy, kde-format
 #| msgid "Half-length"
 msgctxt "@item: scene code"
 msgid "Half-length"
 msgstr "Μισό μήκος"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:53
 #, fuzzy, kde-format
 #| msgid "Full-length"
 msgctxt "@item: scene code"
 msgid "Full-length"
 msgstr "Πλήρες μήκος"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -16024,175 +16024,175 @@ msgctxt "@item: side view of a person"
 msgid "Profile"
 msgstr "Προφίλ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:55
 #, fuzzy, kde-format
 #| msgid "Rear view"
 msgctxt "@item: scene code"
 msgid "Rear view"
 msgstr "Πλάγια προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:56
 #, fuzzy, kde-format
 #| msgid "Single"
 msgctxt "@item: scene code"
 msgid "Single"
 msgstr "Μόνος"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:57
 #, fuzzy, kde-format
 #| msgid "Couple"
 msgctxt "@item: scene code"
 msgid "Couple"
 msgstr "Ζευγάρι"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:58
 #, fuzzy, kde-format
 #| msgid "Two"
 msgctxt "@item: scene code"
 msgid "Two"
 msgstr "Δύο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:59
 #, fuzzy, kde-format
 #| msgid "Group"
 msgctxt "@item: group of people"
 msgid "Group"
 msgstr "Ομάδα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:60
 #, fuzzy, kde-format
 #| msgid "General view"
 msgctxt "@item: scene code"
 msgid "General view"
 msgstr "Γενική προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:61
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@item: scene code"
 msgid "Panoramic view"
 msgstr "Πανοραμική προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
 #, fuzzy, kde-format
 #| msgid "Aerial view"
 msgctxt "@item: scene code"
 msgid "Aerial view"
 msgstr "Αεροφωτογραφία"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
 #, fuzzy, kde-format
 #| msgid "Under-water"
 msgctxt "@item: scene code"
 msgid "Under-water"
 msgstr "Υποβρύχια"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
 #, fuzzy, kde-format
 #| msgid "Night scene"
 msgctxt "@item: scene code"
 msgid "Night scene"
 msgstr "Νυχτερινός"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgctxt "@item: scene code"
 msgid "Satellite"
 msgstr "Δορυφορική"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
 #, fuzzy, kde-format
 #| msgid "Exterior view"
 msgctxt "@item: scene code"
 msgid "Exterior view"
 msgstr "Εξωτερική προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
 #, fuzzy, kde-format
 #| msgid "Interior view"
 msgctxt "@item: scene code"
 msgid "Interior view"
 msgstr "Εσωτερική προβολή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@item: scene code"
 msgid "Close-up"
 msgstr "Κοντινό"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
 #, fuzzy, kde-format
 #| msgid "Action"
 msgctxt "@item: scene code"
 msgid "Action"
 msgstr "Ενέργεια"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
 #, fuzzy, kde-format
 #| msgid "Performing"
 msgctxt "@item: scene code"
 msgid "Performing"
 msgstr "Ερμηνεία"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
 #, fuzzy, kde-format
 #| msgid "Posing"
 msgctxt "@item: scene code"
 msgid "Posing"
 msgstr "Στάση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
 #, fuzzy, kde-format
 #| msgid "Symbolic"
 msgctxt "@item: scene code"
 msgid "Symbolic"
 msgstr "Συμβολικό"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
 #, fuzzy, kde-format
 #| msgid "Off-beat"
 msgctxt "@item: scene code"
 msgid "Off-beat"
 msgstr "Εκτός ρυθμού"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
 #, fuzzy, kde-format
 #| msgid "Movie scene"
 msgctxt "@item: scene code"
 msgid "Movie scene"
 msgstr "Σκηνή ταινίας"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
 #, fuzzy, kde-format
 #| msgid "Advisory"
 msgctxt "@item: type code"
 msgid "Advisory"
 msgstr "Συμβουλή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
 #, fuzzy, kde-format
 #| msgid "Alert"
 msgctxt "@item: type code"
 msgid "Alert"
 msgstr "Συναγερμός"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
 #, fuzzy, kde-format
 #| msgid "Catalog"
 msgctxt "@item: type code"
 msgid "Catalog"
 msgstr "Κατάλογος"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
 #, fuzzy, kde-format
 #| msgid "Data"
 msgctxt "@item: type code"
 msgid "Data"
 msgstr "Δεδομένα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
@@ -16200,84 +16200,84 @@ msgctxt "@item: type is a document"
 msgid "Document"
 msgstr "Έγγραφο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
 #, fuzzy, kde-format
 #| msgid "DTD"
 msgctxt "@item: type code"
 msgid "DTD"
 msgstr "DTD"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@item: type code"
 msgid "Maintenance"
 msgstr "Συντήρηση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@item: type code"
 msgid "News"
 msgstr "Ειδήσεις"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
 #, fuzzy, kde-format
 #| msgid "News Management Mode"
 msgctxt "@item: type code"
 msgid "News Management Mode"
 msgstr "Λειτουργία διαχείρισης ειδήσεων"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
 #, fuzzy, kde-format
 #| msgid "Package"
 msgctxt "@item: type code"
 msgid "Package"
 msgstr "Πακέτο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:86
 #, fuzzy, kde-format
 #| msgid "Schema"
 msgctxt "@item: type code"
 msgid "Schema"
 msgstr "Σχήμα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
 #, fuzzy, kde-format
 #| msgid "Topic"
 msgctxt "@item: type code"
 msgid "Topic"
 msgstr "Θέμα"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
 #, fuzzy, kde-format
 #| msgid "Topic Set"
 msgctxt "@item: type code"
 msgid "Topic Set"
 msgstr "Σύνολο θέματος"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:132
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@option"
 msgid "Language:"
 msgstr "Γλώσσα:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:133
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info"
 msgid "Select here the language of content."
 msgstr "Επιλέξτε εδώ τη γλώσσα του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:147
 #, fuzzy, kde-format
 #| msgid "Priority:"
 msgctxt "@option"
 msgid "Priority:"
 msgstr "Προτεραιότητα:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "0: None"
@@ -16285,7 +16285,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "0: None"
 msgstr "0: Καμία"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "1: High"
@@ -16293,7 +16293,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "1: High"
 msgstr "1: Υψηλή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "5: Normal"
@@ -16301,7 +16301,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Κανονική"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "8: Low"
@@ -16309,7 +16309,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Χαμηλή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "editorial urgency of content"
 #| msgid "9: User-defined"
@@ -16317,7 +16317,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Ορισμένη από το χρήστη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the editorial urgency of content."
 msgctxt "@info"
@@ -16325,63 +16325,63 @@ msgid "@info: Select here the editorial urgency of content."
 msgstr ""
 "Επιλέξτε εδώ την επείγουσα ή μη προτεραιότητα σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:163
 #, fuzzy, kde-format
 #| msgid "Scene:"
 msgctxt "@option"
 msgid "Scene:"
 msgstr "Σκηνή:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:164
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgctxt "@info"
 msgid "Select here the scene type of the content."
 msgstr "Επιλέξτε εδώ τον τύπο σκηνής του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:178
 #, fuzzy, kde-format
 #| msgid "Type:"
 msgctxt "@option"
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:179
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of the content."
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
 msgstr "Επιλέξτε εδώ τον τύπο σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:194
 #, fuzzy, kde-format
 #| msgid "Attribute:"
 msgctxt "@option"
 msgid "Attribute:"
 msgstr "Ιδιότητα:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:199
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
 msgstr "Ορίστε εδώ την περιγραφή ιδιότητας σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:200
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
 msgstr "Ορίστε εδώ την περιγραφή ιδιότητας σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:202
 #, fuzzy, kde-format
 #| msgid "Select here the editorial attribute of the content."
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
 msgstr "Επιλέξτε εδώ την ιδιότητα σύνταξης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Current"
@@ -16389,7 +16389,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Current"
 msgstr "Τρέχον"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Analysis"
@@ -16397,7 +16397,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Analysis"
 msgstr "Ανάλυση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Archive material"
@@ -16405,7 +16405,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Archive material"
 msgstr "Υλικό αρχειοθήκης"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
@@ -16413,7 +16413,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Background"
 msgstr "Φόντο"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -16421,7 +16421,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Feature"
 msgstr "Χαρακτηριστικό"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Forecast"
@@ -16429,14 +16429,14 @@ msgctxt "@item: editorial content attribute"
 msgid "Forecast"
 msgstr "Πρόβλεψη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:209
 #, fuzzy, kde-format
 #| msgid "History"
 msgctxt "@item: editorial content attribute"
 msgid "History"
 msgstr "Ιστορικό"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Obituary"
@@ -16444,7 +16444,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Obituary"
 msgstr "Αναγγελία θανάτου"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Opinion"
@@ -16452,7 +16452,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Opinion"
 msgstr "Άποψη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Polls & Surveys"
@@ -16460,7 +16460,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
 msgstr "Δημοσκοπήσεις & ερωτηματολόγια"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -16468,7 +16468,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Profile"
 msgstr "Προφίλ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Results Listings & Table"
@@ -16476,7 +16476,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
 msgstr "Λίστες αποτελεσμάτων & πίνακας"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Side bar & Supporting information"
@@ -16484,7 +16484,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
 msgstr "Πλευρική στήλη & πληροφορίες υποστήριξης"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Summary"
@@ -16492,7 +16492,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Summary"
 msgstr "Περίληψη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Transcript & Verbatim"
@@ -16500,7 +16500,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Transcript & Verbatim"
 msgstr "Απομαγνητοφώνηση & πρακτικά"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Interview"
@@ -16508,7 +16508,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Interview"
 msgstr "Συνέντευξη"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "From the Scene"
@@ -16516,7 +16516,7 @@ msgctxt "@item: editorial content attribute"
 msgid "From the Scene"
 msgstr "Από τη σκηνή"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Retrospective"
@@ -16524,7 +16524,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Retrospective"
 msgstr "Ανασκόπηση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Statistics"
@@ -16532,7 +16532,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Statistics"
 msgstr "Στατιστική"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -16540,7 +16540,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Update"
 msgstr "Ενημέρωση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Wrap-up"
@@ -16548,7 +16548,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Wrap-up"
 msgstr "Ολοκλήρωση"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Press Release"
@@ -16556,74 +16556,74 @@ msgctxt "@item: editorial content attribute"
 msgid "Press Release"
 msgstr "Συνέντευξη τύπου"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@option"
 msgid "Reference:"
 msgstr "Αναφορά:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@info"
 msgid "Set here the content reference"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
 #, fuzzy, kde-format
 #| msgid "Set here the original content transmission reference."
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
 msgstr "Ορίστε εδώ την αρχική αναφορά μετάδοσης του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:64
 #, kde-format
 msgctxt "short title for the content"
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:65
 #, kde-format
 msgid "Set here a shorthand reference for the content."
 msgstr "Ορίστε εδώ την στενογραφική αναφορά του περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:69
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:118
 #, kde-format
 msgid "Nickname:"
 msgstr "Ψευδώνυμο:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgid "Set here a short informal name"
 msgstr "Ορίστε εδώ το e-mail της επαφής."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "A short informal name for the resource."
 msgstr "Ένα σύντομο ανεπίσημο όνομα για τον πόρο."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
 #, kde-format
 msgid "Identifiers:"
 msgstr "Αναγνωριστικά:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:78
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
 msgstr ""
 "Ορίστε εδώ τις συμβολοσειρές που υποδεικνύουν την επανεμφάνιση του "
 "περιεχομένου."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgid "Set here the editorial usage instructions"
 msgstr "Εισάγετε τις οδηγίες χρήσης από τη σύνταξη."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
 msgid "Enter the editorial usage instructions."
 msgstr "Εισάγετε τις οδηγίες χρήσης από τη σύνταξη."
@@ -16718,7 +16718,7 @@ msgid "Adjust Time and Date"
 msgstr "Προσαρμογή:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
 #| msgid "Cancel"
@@ -16727,7 +16727,7 @@ msgid "Cancel"
 msgstr "Ακύρωση"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgctxt "@info"
@@ -16735,7 +16735,7 @@ msgid "Cancel current operation"
 msgstr "Ακύρωση αυτής της λειτουργίας."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action"
@@ -16743,7 +16743,7 @@ msgid "Close"
 msgstr "&Κλείσιμο"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@info"
@@ -16837,19 +16837,19 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "Προσαρμογή ισορροπίας λευκού."
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Create Calendar"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgid "A tool to create calendar from images"
 msgstr "Εργαλείο όξυνσης εικόνων"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:63
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -16859,13 +16859,13 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Former Author"
 msgstr "Συγγραφέας"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
@@ -16874,7 +16874,7 @@ msgstr "Συγγραφέας"
 msgid "Developer and Maintainer"
 msgstr "Κύριος προγραμματιστής και συντονιστής"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -16988,7 +16988,7 @@ msgstr "Σύνολο αντικειμένων"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
 #, fuzzy, kde-format
 #| msgid "Create Database Folder Failed"
 msgid "Create Template for Calendar"
@@ -17127,59 +17127,59 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
 msgid "Welcome to Calendar Tool"
 msgstr "Καλώς ήλθατε στο Εργαλείο μίξης επιπέδων έκθεσης"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "Επιλέξτε τα γεγονότα που θα εμφανίζονται στο ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Print Calendar"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
 #, fuzzy, kde-format
 #| msgid "Printing and Proofing"
 msgid "Printing in Progress"
 msgstr "Εκτύπωση και εμφάνιση"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
 #, fuzzy, kde-format
 #| msgid "%1|Camera RAW files"
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "%1|RAW αρχεία φωτογραφικής"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "%1 - Επιλογή φακέλου φωτογραφικής"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
 "Δεν επιλέχθηκαν έγκυρες εικόνες για τους μήνες<br/>Κάντε κλικ στο "
 "προηγούμενο για να επιλέξετε εικόνες"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:235
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
@@ -17188,7 +17188,7 @@ msgstr ""
 "Παρακαλώ σημειώστε ότι δημιουργείτε ένα ημερολόγιο <br/>για το τρέχον έτος ή "
 "κάποιο έτος στο παρελθόν."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:242
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
@@ -17197,31 +17197,31 @@ msgstr ""
 "Κάντε κλικ στο Επόμενο για να ξεκινήσετε την εκτύπωση<br/><br/>Θα εκτυπωθούν "
 "οι ακόλουθοι μήνες για το έτος %1:<br/>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Printing Cancelled"
 msgstr "Η επεξεργασία ακυρώθηκε..."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:309
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Create calendar"
 msgstr "Ημερολόγιο"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:359
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "Εκτύπωση της σελίδας ημερολογίου %1 από %2"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:369
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
 #, fuzzy, kde-format
 msgid "Printing Complete"
 msgstr "Προηγούμενη εικόνα"
@@ -17342,20 +17342,20 @@ msgstr "Κατά φάκελο"
 msgid "Camera"
 msgstr "Κάμερα"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "Μετατροπή"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "Μετατροπή εικόνων σε τύπο PNG."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:63
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17366,7 +17366,7 @@ msgid ""
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
@@ -17466,13 +17466,13 @@ msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
 msgstr "Αντίθεση:"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:119
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:106
 #, kde-format
 msgctxt "@option:check Enfuse setting"
 msgid "Automatic Local/Global Image Features Balance (Levels)"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17480,7 +17480,7 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:123
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:110
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -17489,13 +17489,13 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:126
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:113
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:131
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17503,7 +17503,7 @@ msgid ""
 "number)."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:133
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the number of levels for pyramid blending. A low number trades off "
@@ -17519,20 +17519,20 @@ msgstr ""
 "την ποιότητα των αποτελεσμάτων για ταχύτερο χρόνο εκτέλεσης και λιγότερη "
 "χρήση μνήμης."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:125
 #, fuzzy, kde-format
 #| msgid "Unsharp Mask"
 msgctxt "@option:check"
 msgid "Hard Mask"
 msgstr "Μάσκα αναίρεσης όξυνσης"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:140
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Useful only for focus stack to improve sharpness."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:129
 #, fuzzy, kde-format
 #| msgid ""
 #| "Force hard blend masks and no averaging on finest scale. This is "
@@ -17549,19 +17549,19 @@ msgstr ""
 "αντίθεσης χαρακτηριστικά, βελτιώνει την οξύτητα εις βάρος της αύξησης του "
 "θορύβου."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:147
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:134
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of well exposed pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:154
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the exposure contribution for the blending process. Higher values "
@@ -17574,19 +17574,19 @@ msgstr ""
 "Ρύθμιση της συμβολής της έκθεσης για τη διαδικασία μίξης. Υψηλότερες τιμές "
 "θα είναι υπέρ των υψηλής έκθεσης εικονοστοιχείων."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:157
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:144
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly saturated pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:165
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing this value makes pixels with high saturation contribute more "
@@ -17599,19 +17599,19 @@ msgstr ""
 "Με αύξηση της τιμής αυτής τα υψηλότερου κορεσμού εικονοστοιχεία συνεισφέρουν "
 "περισσότερο στο τελικό αποτέλεσμα."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:168
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:155
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly contrasted pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:176
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sets the relative weight of high-contrast pixels. Increasing this weight "
@@ -17628,14 +17628,14 @@ msgstr ""
 "χρώματος συνεισφέρουν περισσότερο στο τελικό αποτέλεσμα. Ιδιαίτερα χρήσιμο "
 "για επεξεργασία με στοίβες εστίασης για καλύτερο βάθος πεδίου."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:167
 #, fuzzy, kde-format
 #| msgid "Use Color Appearance Modelling"
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
 msgstr "Χρήση υποδείγματος χρωματικής αντίληψης"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:182
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17643,7 +17643,7 @@ msgid ""
 "instead of RGB."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:171
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use Color Appearance Modelling (CIECAM02) to render detailed colors. Your "
@@ -17667,73 +17667,73 @@ msgstr ""
 "χρωματικής μίξης είναι ελάχιστη και θα γίνει αρκετά εμφανής όταν χρειαστεί "
 "να αναμίξετε επιφάνειες με διαφορετικά πρωτεύοντα χρώματα."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:179
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:169
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:170
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgctxt "@title:column Output file name"
 msgid "Output"
 msgstr "Συσκευή εξόδου"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:181
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:171
 #, fuzzy, kde-format
 msgctxt "@title:column Source file names"
 msgid "Selected Inputs"
 msgstr "Επιλογή αντικειμένου"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:207
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:197
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgctxt "@item:inmenu"
 msgid "Remove item"
 msgstr "Αφαίρεση αντικειμένου"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:216
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:206
 #, fuzzy, kde-format
 #| msgid "Clear all"
 msgctxt "@item:inmenu"
 msgid "Clear all"
 msgstr "Καθάρισμα όλων"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:113
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "Χρόνος έκθεσης"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:122
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "Αποθήκευση;"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Άνοιγμα του επιλεγμένου αντικειμένου στον επεξεργαστή εικόνας."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:128
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "Προεπισκόπηση"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
 #, fuzzy, kde-format
 #| msgid "Process a preview of bracketed images stack with current settings."
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "Επεξεργασία προεπισκόπησης ομάδας εικόνων με τρέχουσες ρυθμίσεις."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, fuzzy, kde-format
 #| msgid "Default"
@@ -17741,7 +17741,7 @@ msgctxt "@action: button"
 msgid "&Default"
 msgstr "Προκαθορισμένο"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, fuzzy, kde-format
 #| msgid "Reset current tool settings to default values."
@@ -17750,7 +17750,7 @@ msgid "Revert current settings to default values."
 msgstr ""
 "Επαναφορά ρυθμίσεων του τρέχοντος εργαλείου στις προκαθορισμένες τιμές."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
 #, fuzzy, kde-format
 #| msgid "Details"
@@ -17758,85 +17758,85 @@ msgctxt "@action:button"
 msgid "Details..."
 msgstr "Λεπτομέρειες"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:160
 #, fuzzy, kde-format
 #| msgid "Lens Settings"
 msgctxt "@title"
 msgid "Enfuse Settings"
 msgstr "Ρυθμίσεις φακού"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:186
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:172
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Save Result"
 msgstr "Αποθήκευση νέας έκδοσης ως..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:196
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@label: textbox"
 msgid "File Name Template: "
 msgstr "Φίλτρο ονόματος αρχείου:"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Προηγούμενη εικόνα"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:555
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
 #, fuzzy, kde-format
 #| msgid "Processing preview of bracketed images..."
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "Προεπισκόπηση επεξεργασίας για ομάδες εικόνων..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:562
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
 #, fuzzy, kde-format
 #| msgid "Processing targets of bracketed images..."
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "Προορισμοί επεξεργασίας για ομάδα εικόνων..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:589
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:599
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "Αποτυχία ανάκτησης του αρχείου %1 από τη φωτογραφική μηχανή."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:610
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
 msgstr "Αποτυχία ανάκτησης του αρχείου %1 από τη φωτογραφική μηχανή."
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgid "Exposure Blending"
 msgstr "Χρόνος έκθεσης"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:62
 #, fuzzy, kde-format
 #| msgid "A tool to blur images"
 msgid "A tool to blend bracketed images"
 msgstr "Εργαλείο θαμπώματος εικόνων"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:71
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to blend bracketed images together to create "
@@ -17847,18 +17847,18 @@ msgid ""
 "for merging pixels by pixels.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Author and maintainer"
 msgid "Author and Maintainer"
 msgstr "Συγγραφέας και συντηρητής"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -22030,19 +22030,19 @@ msgstr "Ρυθμίσεις προβολής σλάιντ"
 msgid "Generating Video Slideshow"
 msgstr "Αγνόηση ομαδοποίησης"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "Export as wallpaper"
 msgstr "Εργαλεία εξαγωγής"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:60
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
 msgid "A tool to set image as wallpaper"
 msgstr "Μετατροπή εικόνας σε έναν χρωματικό χώρο."
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:65
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -22050,7 +22050,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
@@ -22122,37 +22122,37 @@ msgstr ""
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:55
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Τοπικές ρυθμίσεις"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
 #| msgid "Adjust"
 msgid "Adjusted"
 msgstr "Προσαρμογή"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Adjusted with Aspect ratio"
 msgstr "Επιστροφή φωτογραφιών με την αναλογία διαστάσεων"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgid "Adjusted and cropped"
 msgstr "Προσαρμογή:"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Center"
 msgid "Centered"
@@ -38683,28 +38683,28 @@ msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:183
+#: core/libs/onlineversion/onlineversionchecker.cpp:188
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:198
+#: core/libs/onlineversion/onlineversionchecker.cpp:203
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, fuzzy, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Άγνωστος τύπος αποθήκευσης"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:225
+#: core/libs/onlineversion/onlineversionchecker.cpp:231
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:248
+#: core/libs/onlineversion/onlineversionchecker.cpp:255
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:280
+#: core/libs/onlineversion/onlineversionchecker.cpp:288
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
@@ -39329,7 +39329,7 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1961
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -62872,160 +62872,160 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Έξοδος από λειτουργία προεπισκόπησης"
 
-#: core/utilities/import/backend/cameracontroller.cpp:411
+#: core/utilities/import/backend/cameracontroller.cpp:415
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Σύνδεση με τη φωτογραφική..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:420
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection established."
 msgstr "Επίτευξη σύνδεσης."
 
-#: core/utilities/import/backend/cameracontroller.cpp:424
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection failed."
 msgstr "Η σύνδεση απέτυχε."
 
-#: core/utilities/import/backend/cameracontroller.cpp:449
+#: core/utilities/import/backend/cameracontroller.cpp:453
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Αποτυχία ανάκτησης του αρχείου %1 από τη φωτογραφική μηχανή."
 
-#: core/utilities/import/backend/cameracontroller.cpp:463
+#: core/utilities/import/backend/cameracontroller.cpp:467
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Αποτυχία ανάκτησης του αρχείου %1 από τη φωτογραφική μηχανή."
 
-#: core/utilities/import/backend/cameracontroller.cpp:477
+#: core/utilities/import/backend/cameracontroller.cpp:481
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Αποτυχία ανάκτησης του αρχείου %1 από τη φωτογραφική μηχανή."
 
-#: core/utilities/import/backend/cameracontroller.cpp:491
+#: core/utilities/import/backend/cameracontroller.cpp:495
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:507
+#: core/utilities/import/backend/cameracontroller.cpp:511
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:560
+#: core/utilities/import/backend/cameracontroller.cpp:564
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:578
+#: core/utilities/import/backend/cameracontroller.cpp:582
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:633
-#: core/utilities/import/backend/cameracontroller.cpp:1004
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/backend/cameracontroller.cpp:637
+#: core/utilities/import/backend/cameracontroller.cpp:1008
+#: core/utilities/import/main/importui.cpp:2478
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:731
+#: core/utilities/import/backend/cameracontroller.cpp:735
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:779
+#: core/utilities/import/backend/cameracontroller.cpp:783
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:796
+#: core/utilities/import/backend/cameracontroller.cpp:800
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:816
+#: core/utilities/import/backend/cameracontroller.cpp:820
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:890
+#: core/utilities/import/backend/cameracontroller.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:897
+#: core/utilities/import/backend/cameracontroller.cpp:901
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1012
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Αποτυχία λήψης του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1016
+#: core/utilities/import/backend/cameracontroller.cpp:1020
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1033
+#: core/utilities/import/backend/cameracontroller.cpp:1037
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1041
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Αποτυχία αποστολής του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1045
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1060
+#: core/utilities/import/backend/cameracontroller.cpp:1064
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1068
+#: core/utilities/import/backend/cameracontroller.cpp:1072
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Αποτυχία διαγραφής του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1072
+#: core/utilities/import/backend/cameracontroller.cpp:1076
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Το αρχικό αρχείο (<filename>%1</filename>) δεν είναι αυτήν τη στιγμή "
 "διαθέσιμο"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1088
+#: core/utilities/import/backend/cameracontroller.cpp:1092
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1096
+#: core/utilities/import/backend/cameracontroller.cpp:1100
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Αποτυχία εναλλαγής κλειδώματος του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1100
+#: core/utilities/import/backend/cameracontroller.cpp:1104
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
@@ -63677,13 +63677,13 @@ msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Αποσύνδεση από τη φωτογραφική, παρακαλώ περιμένετε..."
 
-#: core/utilities/import/main/importui.cpp:1038
+#: core/utilities/import/main/importui.cpp:1040
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: core/utilities/import/main/importui.cpp:1095
+#: core/utilities/import/main/importui.cpp:1097
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63693,13 +63693,13 @@ msgstr ""
 "Αποτυχία σύνδεσης με τη φωτογραφική μηχανή. Παρακαλώ σιγουρευτείτε ότι είναι "
 "συνδεδεμένη κανονικά και ανοικτή. Θέλετε να ξαναπροσπαθήσετε;"
 
-#: core/utilities/import/main/importui.cpp:1189
+#: core/utilities/import/main/importui.cpp:1191
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Επιλογή εικόνας για αποστολή"
 
-#: core/utilities/import/main/importui.cpp:1224
+#: core/utilities/import/main/importui.cpp:1226
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63714,7 +63714,7 @@ msgstr ""
 "Απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:1279
+#: core/utilities/import/main/importui.cpp:1281
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63724,13 +63724,13 @@ msgstr ""
 "Ο φάκελος φωτογραφικής <b>%1</b> περιέχει ήδη το αντικείμενο <b>%2</b><br/> "
 "Παρακαλώ, εισάγετε ένα νέο όνομα (χωρίς επέκταση):"
 
-#: core/utilities/import/main/importui.cpp:1283
+#: core/utilities/import/main/importui.cpp:1285
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Το αρχείο υπάρχει ήδη"
 
-#: core/utilities/import/main/importui.cpp:1352
+#: core/utilities/import/main/importui.cpp:1354
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63740,7 +63740,7 @@ msgstr ""
 "Η μορφή ημερομηνίας του προσαρμοσμένου λευκώματος δεν είναι έγκυρη. Ελέγξτε "
 "τις ρυθμίσεις σας..."
 
-#: core/utilities/import/main/importui.cpp:1392
+#: core/utilities/import/main/importui.cpp:1394
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63752,7 +63752,7 @@ msgstr ""
 "από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
 "διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1401
+#: core/utilities/import/main/importui.cpp:1403
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63763,7 +63763,7 @@ msgstr ""
 "μηχανή δεν είναι διαθέσιμο. Επιλέξτε ένα άλλο από το διάλογο διαμόρφωσης της "
 "φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1426
+#: core/utilities/import/main/importui.cpp:1428
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63773,7 +63773,7 @@ msgstr ""
 "<p>Παρακαλώ, επιλέξτε το λεύκωμα προορισμού από τη βιβλιοθήκη digiKam για "
 "την εισαγωγή σε αυτό φωτογραφιών από τη φωτογραφική μηχανή.</p>"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1459
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63784,19 +63784,19 @@ msgstr ""
 "από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
 "διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1511
+#: core/utilities/import/main/importui.cpp:1513
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1518
+#: core/utilities/import/main/importui.cpp:1520
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1955
+#: core/utilities/import/main/importui.cpp:1958
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63809,7 +63809,7 @@ msgstr ""
 "επιθυμείτε πραγματικά τη διαγραφή τους, παρακαλώ ξεκλειδώστε τα πρώτα και "
 "ξαναπροσπαθήστε."
 
-#: core/utilities/import/main/importui.cpp:1966
+#: core/utilities/import/main/importui.cpp:1969
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63827,20 +63827,20 @@ msgstr[1] ""
 "Αυτές οι %1 εικόνες πρόκειται να διαγραφούν. Η διαγραφή αρχείων είναι "
 "οριστική. Είστε σίγουροι;"
 
-#: core/utilities/import/main/importui.cpp:1976
+#: core/utilities/import/main/importui.cpp:1979
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/import/main/importui.cpp:2020
+#: core/utilities/import/main/importui.cpp:2023
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Μη επαρκής χώρος στο δίσκο"
 
-#: core/utilities/import/main/importui.cpp:2021
+#: core/utilities/import/main/importui.cpp:2024
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63858,8 +63858,8 @@ msgstr ""
 "Εκτιμώμενος απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:2294
-#: core/utilities/import/main/importui.cpp:2322
+#: core/utilities/import/main/importui.cpp:2292
+#: core/utilities/import/main/importui.cpp:2318
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -63867,7 +63867,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/utilities/import/main/importui.cpp:2314
+#: core/utilities/import/main/importui.cpp:2311
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -63875,7 +63875,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 από %3)"
 
-#: core/utilities/import/main/importui.cpp:2333
+#: core/utilities/import/main/importui.cpp:2328
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -63883,25 +63883,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/1 αντικείμενο επιλεγμένο"
 msgstr[1] "%2/%1 αντικείμενα επιλεγμένα"
 
-#: core/utilities/import/main/importui.cpp:2416
+#: core/utilities/import/main/importui.cpp:2413
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2438
+#: core/utilities/import/main/importui.cpp:2435
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2461
+#: core/utilities/import/main/importui.cpp:2458
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2538
+#: core/utilities/import/main/importui.cpp:2535
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -63911,19 +63911,19 @@ msgstr ""
 "Η λήψη εικόνων ολοκληρώθηκε, τώρα μπορείτε να αποσυνδέσετε την κάμερα καθώς "
 "θα πραγματοποιείται η αυτόματη περιστροφή των εικόνων"
 
-#: core/utilities/import/main/importui.cpp:2546
+#: core/utilities/import/main/importui.cpp:2543
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Η λήψη εικόνων ολοκληρώθηκε"
 
-#: core/utilities/import/main/importui.cpp:2572
+#: core/utilities/import/main/importui.cpp:2569
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ένα αρχείο με το ίδιο όνομα (%1) υπάρχει ήδη στο φάκελο %2."
 
-#: core/utilities/import/main/importui.cpp:2585
+#: core/utilities/import/main/importui.cpp:2582
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 01:41+0000\n"
+"POT-Creation-Date: 2024-05-04 01:54+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1137,7 +1137,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:98
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
@@ -3911,7 +3911,7 @@ msgid "Author:"
 msgstr "Ophavsmand:"
 
 #: core/app/views/stack/welcomepageview.cpp:273
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:156
 #, kde-format
 msgid "Location:"
 msgstr "Sted:"
@@ -9664,7 +9664,7 @@ msgid "Frost Glass"
 msgstr "Matteret glas"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:118
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:88
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
 #, kde-format
 msgid "Mosaic"
 msgstr "Mosaik"
@@ -12737,8 +12737,8 @@ msgstr[1] "<p>%1 tegn.</p>"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:400
 #: core/libs/widgets/text/dtextedit.cpp:400
 #, fuzzy, kde-format
@@ -13204,7 +13204,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "Synkronisér JFIF-kommentarafsnit"
@@ -13258,8 +13258,8 @@ msgid "Sync IPTC creation date"
 msgstr "Synkronisér IPTC oprettet dato"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:131
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Sæt oprettelsesdato til idag"
@@ -13325,8 +13325,8 @@ msgid "Digitization sub-second"
 msgstr "Digitaliseringssekunddel"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:110
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Sæt digitaliseringsdato til idag"
@@ -14276,33 +14276,33 @@ msgstr ""
 "Vælg hvidbalancetilstand indstillet af kameraet efter billedet er taget her."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:68
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "Identificér indholdets motiv (maksimalt tre tegn):"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the category ID"
 msgstr "Angiv her kontaktpersonens land."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:73
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr "Angiv kategorien for indholdet. Dette felt er begrænset til 3 tegn."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:76
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "Supplerende kategorier:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:80
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the extra category"
@@ -14322,16 +14322,16 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:74
 #, kde-format
 msgid "&Add"
 msgstr "&Tilføj"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:75
 #: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
@@ -14339,8 +14339,8 @@ msgstr "&Slet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
 #: core/utilities/setup/album/setupcategory.cpp:93
 #, kde-format
 msgid "&Replace"
@@ -14351,9 +14351,9 @@ msgstr "&Erstat"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
 #| msgid ""
@@ -14373,7 +14373,7 @@ msgstr ""
 "tegn og begrænser tekstlængden. Brug konteksthjælp for detaljer.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:70
 #, kde-format
 msgid "Headline:"
 msgstr "Overskrift:"
@@ -14402,7 +14402,7 @@ msgid "Caption:"
 msgstr "Billedtekst:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:83
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Comment"
@@ -14425,7 +14425,7 @@ msgstr ""
 "Angiv beskrivelsen af indholdet. Dette felt er begrænset til 2000 ASCII-tegn."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:92
 #, kde-format
 msgid "Caption Writer:"
 msgstr "Billedtekstforfatter:"
@@ -14436,7 +14436,7 @@ msgid "Enter the name of the caption author."
 msgstr "Angiv navnet på billedtekstens forfatter."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:98
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
 #, kde-format
@@ -14466,7 +14466,7 @@ msgid "Byline:"
 msgstr "Byline:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:85
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "Angiv navnet på indholdets ophavsmand."
@@ -14477,13 +14477,13 @@ msgid "Byline Title:"
 msgstr "Byline titel:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:92
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "Angiv ophavsmandens titel."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:165
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
 #, kde-format
@@ -14491,7 +14491,7 @@ msgid "Credit:"
 msgstr "Anerkendelse:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:167
 #, kde-format
 msgid "Set here the content provider."
 msgstr "Angiv her indholdsleverandøren."
@@ -14507,7 +14507,7 @@ msgstr ""
 "tegn."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:171
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
@@ -14606,7 +14606,7 @@ msgid "Envelope"
 msgstr "Envelope"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title"
@@ -14614,7 +14614,7 @@ msgid "Content Information"
 msgstr "Information om komponenter"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Content Information<br/><i>Use this panel to describe the visual "
@@ -14626,7 +14626,7 @@ msgstr ""
 "indhold i billedet</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:197
 #, fuzzy, kde-format
 #| msgid "Login Information"
 msgctxt "@title"
@@ -14634,7 +14634,7 @@ msgid "Origin Information"
 msgstr "Login-information"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Origin Information<br/><i>Use this panel for formal descriptive "
@@ -14646,7 +14646,7 @@ msgstr ""
 "information om billedet</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
@@ -14654,7 +14654,7 @@ msgid "Credit Information"
 msgstr "Information om beskæring"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Credit Information<br/><i>Use this panel to record copyright "
@@ -14666,7 +14666,7 @@ msgstr ""
 "information om billedet</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -14674,7 +14674,7 @@ msgid "Subject Information"
 msgstr "Metadata-information"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -14686,7 +14686,7 @@ msgstr ""
 "i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Import Information"
 msgctxt "@title"
@@ -14694,7 +14694,7 @@ msgid "Keyword Information"
 msgstr "Importinformation"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Keyword Information<br/><i>Use this panel to record keywords relevant "
@@ -14706,7 +14706,7 @@ msgstr ""
 "beskriver billedet</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
@@ -14714,7 +14714,7 @@ msgid "Category Information"
 msgstr "Information om billedtekst"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Category Information<br/><i>Use this panel to record categories "
@@ -14726,7 +14726,7 @@ msgstr ""
 "kategorier for billedet</i></qt>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:222
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgctxt "@title"
@@ -14734,7 +14734,7 @@ msgid "Status Information"
 msgstr "Metadata-information"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Video Information"
 msgctxt "@title"
@@ -14742,7 +14742,7 @@ msgid "Record workflow information"
 msgstr "Videoinformation"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
 #, fuzzy, kde-format
 #| msgid "Items Properties"
 msgctxt "@title"
@@ -14750,7 +14750,7 @@ msgid "Status Properties"
 msgstr "Egenskaber for elementer"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title"
@@ -15068,7 +15068,7 @@ msgstr ""
 "Angiv envelope-identifikator her. Dette felt er begrænset til 8 ASCII-tegn."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:169
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritet:"
@@ -15098,7 +15098,7 @@ msgid "8: Low"
 msgstr "8: Lav"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
@@ -15152,7 +15152,7 @@ msgid "Set here the time zone when the service sent the material."
 msgstr "Angiv her tidspunktet hvor tjenesten afsendte materialet."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:65
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "Brug informationssøgningsord:"
@@ -15170,78 +15170,78 @@ msgstr "Angiv her et nyt nøgleord."
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "Angiv et nyt nøgleord her. Dette felt er begrænset til 64 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:128
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Digitization date"
 msgstr "Digitaliseringsdato"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
 #, kde-format
 msgid "Digitization time"
 msgstr "Digitaliseringstid"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:142
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:112
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "Angiv dato den digitale repræsentation oprettedes her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:120
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "Angiv tid den digitale repræsentation oprettedes her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:114
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "Angiv tid den digitale repræsentation oprettedes her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:121
 #, kde-format
 msgid "Creation date"
 msgstr "Oprettelsesdato"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
 #, kde-format
 msgid "Creation time"
 msgstr "Oprettelsestidspunkt"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif creation date"
 msgstr "Synkronisér EXIF oprettet dato"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "Angiv oprettelsesdato for det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:147
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "Angiv tid det ophavsretslige indholdet oprettedes her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:173
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:158
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "Angiv tid det ophavsretslige indholdet oprettedes her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "Angiv her det fuldstændige landenavn som indholdet refererer til."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:161
 #: core/libs/template/templatepanel.cpp:216
 #: core/libs/template/templatepanel.cpp:280
 #: core/libs/template/templateviewer.cpp:132
@@ -15250,13 +15250,13 @@ msgstr "Angiv her det fuldstændige landenavn som indholdet refererer til."
 msgid "City:"
 msgstr "By:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the city of the content"
 msgstr "Angiv scenetype for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the city of content origin. This field is limited to 32 ASCII "
@@ -15267,21 +15267,21 @@ msgstr ""
 "Angiv byen for indholdets oprindelse her. Dette felt er begrænset til 32 "
 "ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:168
 #: core/libs/template/templatepanel.cpp:226
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "Underlokalitet:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content location"
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content location within city. This field is limited to 32 "
@@ -15292,9 +15292,9 @@ msgid ""
 msgstr ""
 "Angiv indholdets sted inde i byen. Dette felt er begrænset til 32 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #: core/libs/template/templatepanel.cpp:236
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -15302,13 +15302,13 @@ msgstr ""
 msgid "State/Province:"
 msgstr "Delstat/Landsdel:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the Province or State of the content"
 msgstr "Angiv scenetype for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Province or State of content origin. This field is limited "
@@ -15320,9 +15320,9 @@ msgstr ""
 "Angiv provins eller stat for indholdets oprindelse her. Dette felt er "
 "begrænset til 32 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:182
 #: core/libs/template/templatepanel.cpp:246
 #: core/libs/template/templatepanel.cpp:290
 #: core/libs/template/templateviewer.cpp:138
@@ -15331,175 +15331,175 @@ msgstr ""
 msgid "Country:"
 msgstr "Land:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "Angiv landenavnet for indholdets oprindelse her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:105
 #, kde-format
 msgid "Release date"
 msgstr "Udgivelsesdato"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
 #, kde-format
 msgid "Release time"
 msgstr "Udgivelsestidspunkt"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, kde-format
 msgid "Set release date to today"
 msgstr "Sæt udgivelsesdato til idag"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:119
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr "Angiv tidligste beregnede dato for brug af det ophavsretslige indhold."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:121
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr ""
 "Angiv tidligste beregnede tid til brug for det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:123
 #, fuzzy, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr ""
 "Angiv tidligste beregnede tid til brug for det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:130
 #, kde-format
 msgid "Expiration date"
 msgstr "Udløbsdato"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
 msgid "Expiration time"
 msgstr "Udløbstid"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "Sæt udløbsdato til idag"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:144
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr ""
 "Angiv senest beregnede dato for brug af det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:146
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr "Angiv senest beregnede tid for brug af det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:148
 #, fuzzy, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr "Angiv senest beregnede tid for brug af det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:155
 #, kde-format
 msgid "Language:"
 msgstr "Sprog:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgid "Select here the language of content."
 msgstr "Vælg her indoldets sprog."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:171
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr "0: Ingen"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr "1: Høj"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:176
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Normal"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Lav"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr "Vælg hvor meget indholdet haster redaktionelt."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:185
 #, kde-format
 msgid "Cycle:"
 msgstr "Cyklus:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:187
 #, fuzzy, kde-format
 #| msgid "Morning"
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "Morgen"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #, fuzzy, kde-format
 #| msgid "Afternoon"
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "Eftermiddag"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
 #, fuzzy, kde-format
 #| msgid "Evening"
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "Aften"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
 #, fuzzy, kde-format
 #| msgid "Select here the editorial cycle of content."
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "Angiv den redaktionelle cyklus for indholdet."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content type"
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:200
 #, kde-format
 msgid "News"
 msgstr "Nyheder"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
 #, kde-format
 msgid "Data"
 msgstr "Data"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
 #, kde-format
 msgid "Advisory"
 msgstr "Rådgivende"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "Angiv den redaktionelle type for indholdet."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the editorial type description of content. This field is limited "
@@ -15511,18 +15511,18 @@ msgstr ""
 "Angiv indeholdets redaktionelle type her. Dette felt er begrænset til 64 "
 "ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
 #, kde-format
 msgid "Reference:"
 msgstr "Reference:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:216
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content reference"
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:244
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original content transmission reference. This field is "
@@ -15534,19 +15534,19 @@ msgstr ""
 "Angiv referencen til overførsel af originalt indhold her. Dette felt er "
 "begrænset til 32 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:64
 #, kde-format
 msgctxt "image title"
 msgid "Title:"
 msgstr "Titel:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:67
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content title"
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the shorthand reference of content. This field is limited to 64 "
@@ -15558,18 +15558,18 @@ msgstr ""
 "Angiv den kortfattede reference til indholdet. Dette felt er begrænset til "
 "64 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:73
 #, kde-format
 msgid "Edit Status:"
 msgstr "Redigeringsstatus:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:76
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the content status"
 msgstr "Angiv her kontaktpersonens by."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the title of content status. This field is limited to 64 ASCII "
@@ -15579,18 +15579,18 @@ msgid ""
 msgstr ""
 "Angiv indholdets status her. Dette felt er begrænset til 64 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:82
 #, kde-format
 msgid "Job Identifier:"
 msgstr "Jobidentifikation:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Set here the contact URL."
 msgid "Set here the job ID"
 msgstr "Angiv her kontaktpersonens URL."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the string that identifies content that recurs. This field is "
@@ -15602,19 +15602,19 @@ msgstr ""
 "Angiv strengen som identificerer gentaget indhold her. Dette felt er "
 "begrænset til 32 ASCII-tegn."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:82
 #, kde-format
 msgid "Special Instructions:"
 msgstr "Særlige instruktioner:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:94
 #, fuzzy, kde-format
 #| msgid "Set here the content's city of origin."
 msgid "Set here the content instructions"
 msgstr "Angiv indholdets oprindelsesby her."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the editorial usage instructions. This field is limited to 256 "
@@ -15745,219 +15745,219 @@ msgctxt "@action"
 msgid "Edit Metadata..."
 msgstr "Redigér metadata..."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:81
 #, kde-format
 msgid "Enter here a new supplemental category of content."
 msgstr "Angiv en ny kompletterende kategori for indholdet."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:72
 #, fuzzy, kde-format
 #| msgid "Enter here the content synopsis."
 msgid "Set here the content synopsis."
 msgstr "Angiv indholdssynopsis her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:76
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgctxt "content description"
 msgid "Captions:"
 msgstr "Billedtekster: "
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:77
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content descriptions."
 msgstr "Angiv indholdsbeskrivelsen."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:79
 #, kde-format
 msgid "Default Language Caption Options"
 msgstr "Billedtekst-indstillinger for standardsprog"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, fuzzy, kde-format
 #| msgid "Enter the name of the caption author."
 msgid "Set here the name of the caption author."
 msgstr "Angiv navnet på billedtekstens forfatter."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:99
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the necessary copyright notice."
 msgstr "Angiv den nødvendige notits om ophavsret."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:101
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Copyright"
 msgstr "Synkronisér EXIF-kommentar"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:103
 #: core/libs/template/templatepanel.cpp:151
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "Betingelser for brugsret:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the list of instructions on how a resource can be legally used here."
 msgid "Set here the instructions on how a resource can be legally used here."
 msgstr "Angiv instruktioner i hvordan en ressource kan bruges retmæssigt, her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:84
 #, fuzzy, kde-format
 #| msgid "Creator"
 msgctxt "@option: name of content creator"
 msgid "Creator:"
 msgstr "Ophavsmand"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:86
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif Artist"
 msgstr "Synkronisér EXIF oprettet dato"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:90
 #, fuzzy, kde-format
 #| msgid "Projection"
 msgid "Creator Title:"
 msgstr "Projekt&titel:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:96
 #: core/libs/template/templatepanel.cpp:392
 #: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
 msgstr "Kontakt"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:99
 #, kde-format
 msgctxt "contact email address"
 msgid "E-mail:"
 msgstr "E-mail:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:102
 #, kde-format
 msgid "Set here the contact e-mail."
 msgstr "Angiv her kontaktpersonens e-mailadresse."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:104
 #: core/libs/template/templatepanel.cpp:350
 #: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
 msgstr "URL:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:107
 #, kde-format
 msgid "Set here the contact URL."
 msgstr "Angiv her kontaktpersonens URL."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:109
 #: core/libs/template/templatepanel.cpp:340
 #: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the contact 'phone number."
 msgstr "Angiv kontaktpersonens telefonnummer her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:114
 #, kde-format
 msgctxt "Street address"
 msgid "Address:"
 msgstr "Adresse:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
 #, kde-format
 msgid "Set here the contact address."
 msgstr "Angiv her kontaktpersonens adresse."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Postal code:"
 msgstr "Postnummer:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:122
 #, kde-format
 msgid "Set here the contact postal code."
 msgstr "Angiv her kontaktpersonens postnummer."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:127
 #, kde-format
 msgid "Set here the contact city."
 msgstr "Angiv her kontaktpersonens by."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:132
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the contact state/province."
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:137
 #, kde-format
 msgid "Set here the contact country."
 msgstr "Angiv her kontaktpersonens land."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:173
 #, kde-format
 msgid "Set here the original owner of content."
 msgstr "Angiv her den originale ejer af indholdet."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@item: xmp content"
 msgid "Content"
 msgstr "Indhold"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item"
 msgid "Origin"
 msgstr "Oprindelse"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item"
 msgid "Credits"
 msgstr "Medvirkende"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item"
 msgid "Subjects"
 msgstr "Motiver"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item"
 msgid "Keywords"
 msgstr "Nøgleord"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@item"
 msgid "Categories"
 msgstr "Kategorier"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item"
 msgid "Status"
 msgstr "Status"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:121
 #: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Properties"
@@ -15965,67 +15965,67 @@ msgctxt "@item"
 msgid "Properties"
 msgstr "Egenskaber"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:69
 #, fuzzy, kde-format
 #| msgid "Enter here a new keyword."
 msgid "Set here a new keyword"
 msgstr "Angiv her et nyt nøgleord."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgid "Video date"
 msgstr "Videocodec"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
 #, fuzzy, kde-format
 #| msgid "Set creation date to today"
 msgid "Set video date to today"
 msgstr "Sæt oprettelsesdato til idag"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:152
 #, fuzzy, kde-format
 #| msgid "Set here the creation date of intellectual content."
 msgid "Set here the video date of intellectual content."
 msgstr "Angiv oprettelsesdato for det ophavsretslige indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr "Angiv indholdets oprindelsesby her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr "Angiv indholdets adresse i byen her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "Angiv indholdets oprindelsesprovins eller -stat her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:51
 #, fuzzy, kde-format
 #| msgid "Headshot"
 msgctxt "@item: scene code"
 msgid "Headshot"
 msgstr "Headshot"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:52
 #, fuzzy, kde-format
 #| msgid "Half-length"
 msgctxt "@item: scene code"
 msgid "Half-length"
 msgstr "Halv længde"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:53
 #, fuzzy, kde-format
 #| msgid "Full-length"
 msgctxt "@item: scene code"
 msgid "Full-length"
 msgstr "Fuld længde"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -16033,175 +16033,175 @@ msgctxt "@item: side view of a person"
 msgid "Profile"
 msgstr "Profil"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:55
 #, fuzzy, kde-format
 #| msgid "Rear view"
 msgctxt "@item: scene code"
 msgid "Rear view"
 msgstr "Bagfra"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:56
 #, fuzzy, kde-format
 #| msgid "Single"
 msgctxt "@item: scene code"
 msgid "Single"
 msgstr "Enkelt"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:57
 #, fuzzy, kde-format
 #| msgid "Couple"
 msgctxt "@item: scene code"
 msgid "Couple"
 msgstr "Par"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:58
 #, fuzzy, kde-format
 #| msgid "Two"
 msgctxt "@item: scene code"
 msgid "Two"
 msgstr "To"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:59
 #, fuzzy, kde-format
 #| msgid "Group"
 msgctxt "@item: group of people"
 msgid "Group"
 msgstr "Gruppe"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:60
 #, fuzzy, kde-format
 #| msgid "General view"
 msgctxt "@item: scene code"
 msgid "General view"
 msgstr "Generel"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:61
 #, fuzzy, kde-format
 #| msgid "Panoramic view"
 msgctxt "@item: scene code"
 msgid "Panoramic view"
 msgstr "Panoramisk"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:62
 #, fuzzy, kde-format
 #| msgid "Aerial view"
 msgctxt "@item: scene code"
 msgid "Aerial view"
 msgstr "Fra luften"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:63
 #, fuzzy, kde-format
 #| msgid "Under-water"
 msgctxt "@item: scene code"
 msgid "Under-water"
 msgstr "Under vandet"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
 #, fuzzy, kde-format
 #| msgid "Night scene"
 msgctxt "@item: scene code"
 msgid "Night scene"
 msgstr "Natlig scene"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgctxt "@item: scene code"
 msgid "Satellite"
 msgstr "Satellit"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:66
 #, fuzzy, kde-format
 #| msgid "Exterior view"
 msgctxt "@item: scene code"
 msgid "Exterior view"
 msgstr "Udendørs"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:67
 #, fuzzy, kde-format
 #| msgid "Interior view"
 msgctxt "@item: scene code"
 msgid "Interior view"
 msgstr "Indendørs"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:68
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@item: scene code"
 msgid "Close-up"
 msgstr "Nærbillede"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:69
 #, fuzzy, kde-format
 #| msgid "Action"
 msgctxt "@item: scene code"
 msgid "Action"
 msgstr "Action"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:70
 #, fuzzy, kde-format
 #| msgid "Performing"
 msgctxt "@item: scene code"
 msgid "Performing"
 msgstr "Performing"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:71
 #, fuzzy, kde-format
 #| msgid "Posing"
 msgctxt "@item: scene code"
 msgid "Posing"
 msgstr "Poserende"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:72
 #, fuzzy, kde-format
 #| msgid "Symbolic"
 msgctxt "@item: scene code"
 msgid "Symbolic"
 msgstr "Symbolsk"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:73
 #, fuzzy, kde-format
 #| msgid "Off-beat"
 msgctxt "@item: scene code"
 msgid "Off-beat"
 msgstr "Off-beat"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:74
 #, fuzzy, kde-format
 #| msgid "Movie scene"
 msgctxt "@item: scene code"
 msgid "Movie scene"
 msgstr "Film-scene"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:76
 #, fuzzy, kde-format
 #| msgid "Advisory"
 msgctxt "@item: type code"
 msgid "Advisory"
 msgstr "Rådgivende"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:77
 #, fuzzy, kde-format
 #| msgid "Alert"
 msgctxt "@item: type code"
 msgid "Alert"
 msgstr "Opmærksom"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
 #, fuzzy, kde-format
 #| msgid "Catalog"
 msgctxt "@item: type code"
 msgid "Catalog"
 msgstr "Katalog"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
 #, fuzzy, kde-format
 #| msgid "Data"
 msgctxt "@item: type code"
 msgid "Data"
 msgstr "Data"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
@@ -16209,84 +16209,84 @@ msgctxt "@item: type is a document"
 msgid "Document"
 msgstr "Dokument"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:81
 #, fuzzy, kde-format
 #| msgid "DTD"
 msgctxt "@item: type code"
 msgid "DTD"
 msgstr "DTD"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@item: type code"
 msgid "Maintenance"
 msgstr "Vedligeholdelse"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
 #, fuzzy, kde-format
 #| msgid "News"
 msgctxt "@item: type code"
 msgid "News"
 msgstr "Nyheder"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
 #, fuzzy, kde-format
 #| msgid "News Management Mode"
 msgctxt "@item: type code"
 msgid "News Management Mode"
 msgstr "Nyhedshåndteringstilstand"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:85
 #, fuzzy, kde-format
 #| msgid "Package"
 msgctxt "@item: type code"
 msgid "Package"
 msgstr "Pakke"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:86
 #, fuzzy, kde-format
 #| msgid "Schema"
 msgctxt "@item: type code"
 msgid "Schema"
 msgstr "Skema"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
 #, fuzzy, kde-format
 #| msgid "Topic"
 msgctxt "@item: type code"
 msgid "Topic"
 msgstr "Emne"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
 #, fuzzy, kde-format
 #| msgid "Topic Set"
 msgctxt "@item: type code"
 msgid "Topic Set"
 msgstr "Emnesæt"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:132
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@option"
 msgid "Language:"
 msgstr "Sprog:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:133
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info"
 msgid "Select here the language of content."
 msgstr "Vælg her indoldets sprog."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:147
 #, fuzzy, kde-format
 #| msgid "Priority:"
 msgctxt "@option"
 msgid "Priority:"
 msgstr "Prioritet:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "0: None"
@@ -16294,7 +16294,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "0: None"
 msgstr "0: Ingen"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:150
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "1: High"
@@ -16302,7 +16302,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "1: High"
 msgstr "1: Høj"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:154
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "5: Normal"
@@ -16310,7 +16310,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Normal"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "priority for the envelope"
 #| msgid "8: Low"
@@ -16318,7 +16318,7 @@ msgctxt "@item: editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Lav"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "editorial urgency of content"
 #| msgid "9: User-defined"
@@ -16326,70 +16326,70 @@ msgctxt "@item: editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Brugerdefineret"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the editorial urgency of content."
 msgctxt "@info"
 msgid "@info: Select here the editorial urgency of content."
 msgstr "Vælg hvor meget indholdet haster redaktionelt."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:163
 #, fuzzy, kde-format
 #| msgid "Scene:"
 msgctxt "@option"
 msgid "Scene:"
 msgstr "Scene:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:164
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgctxt "@info"
 msgid "Select here the scene type of the content."
 msgstr "Angiv scenetype for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:178
 #, fuzzy, kde-format
 #| msgid "Type:"
 msgctxt "@option"
 msgid "Type:"
 msgstr "Type:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:179
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of the content."
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
 msgstr "Angiv den redaktionelle type for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:194
 #, fuzzy, kde-format
 #| msgid "Attribute:"
 msgctxt "@option"
 msgid "Attribute:"
 msgstr "Attribut:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:199
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
 msgstr "Angiv den redaktionelle attributbeskrivelse for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:200
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
 msgstr "Angiv den redaktionelle attributbeskrivelse for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:202
 #, fuzzy, kde-format
 #| msgid "Select here the editorial attribute of the content."
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
 msgstr "Vælg indholdets redaktionelle attribut her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Current"
@@ -16397,7 +16397,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Current"
 msgstr "Nuværende"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Analysis"
@@ -16405,7 +16405,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Analysis"
 msgstr "Analyse"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Archive material"
@@ -16413,7 +16413,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Archive material"
 msgstr "Arkivmateriale"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:206
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Background"
@@ -16421,7 +16421,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Background"
 msgstr "Baggrund"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -16429,7 +16429,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Feature"
 msgstr "Hovednyhed"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Forecast"
@@ -16437,14 +16437,14 @@ msgctxt "@item: editorial content attribute"
 msgid "Forecast"
 msgstr "Udsigt"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:209
 #, fuzzy, kde-format
 #| msgid "History"
 msgctxt "@item: editorial content attribute"
 msgid "History"
 msgstr "Historik"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Obituary"
@@ -16452,7 +16452,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Obituary"
 msgstr "Nekrolog"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Opinion"
@@ -16460,7 +16460,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Opinion"
 msgstr "Mening"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Polls & Surveys"
@@ -16468,7 +16468,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
 msgstr "Opinionsundersøgelser"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
@@ -16476,7 +16476,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Profile"
 msgstr "Profil"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Results Listings & Table"
@@ -16484,7 +16484,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
 msgstr "Resultatliste og -tabel"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:215
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Side bar & Supporting information"
@@ -16492,7 +16492,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
 msgstr "Sidepanel og understøttende informationer"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Summary"
@@ -16500,7 +16500,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Summary"
 msgstr "Oversigt"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:217
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Transcript & Verbatim"
@@ -16508,7 +16508,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Transcript & Verbatim"
 msgstr "Transkription og ordret nedskrivning"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Interview"
@@ -16516,7 +16516,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Interview"
 msgstr "Interview"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "From the Scene"
@@ -16524,7 +16524,7 @@ msgctxt "@item: editorial content attribute"
 msgid "From the Scene"
 msgstr "Fra scenen"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Retrospective"
@@ -16532,7 +16532,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Retrospective"
 msgstr "Tilbageblik"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Statistics"
@@ -16540,7 +16540,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Statistics"
 msgstr "Statistik"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Update"
@@ -16548,7 +16548,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Update"
 msgstr "Opdatering"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:234
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Wrap-up"
@@ -16556,7 +16556,7 @@ msgctxt "@item: editorial content attribute"
 msgid "Wrap-up"
 msgstr "Afslutning"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Press Release"
@@ -16564,72 +16564,72 @@ msgctxt "@item: editorial content attribute"
 msgid "Press Release"
 msgstr "Pressemeddelelse"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:239
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@option"
 msgid "Reference:"
 msgstr "Reference:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:242
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@info"
 msgid "Set here the content reference"
 msgstr "Angiv her indholdsleverandøren."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:243
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:232
 #, fuzzy, kde-format
 #| msgid "Set here the original content transmission reference."
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
 msgstr "Angiv referencen til overførsel af originalt indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:64
 #, kde-format
 msgctxt "short title for the content"
 msgid "Title:"
 msgstr "Titel:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:65
 #, kde-format
 msgid "Set here a shorthand reference for the content."
 msgstr "Angiv en shorthand-reference for indholdet her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:69
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:118
 #, kde-format
 msgid "Nickname:"
 msgstr "Kaldenavn:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgid "Set here a short informal name"
 msgstr "Angiv her kontaktpersonens e-mailadresse."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "A short informal name for the resource."
 msgstr "Et kort uformelt navn på ressourcen."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
 #, kde-format
 msgid "Identifiers:"
 msgstr "Identifikatorer:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:78
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
 msgstr "Angiv de strenge som identificerer gentaget indhold her."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgid "Set here the editorial usage instructions"
 msgstr "Angiv redaktionel brugsinstruktion."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
 msgid "Enter the editorial usage instructions."
 msgstr "Angiv redaktionel brugsinstruktion."
@@ -16723,7 +16723,7 @@ msgid "Adjust Time and Date"
 msgstr "Justering:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
 #| msgid "Cancel"
@@ -16732,7 +16732,7 @@ msgid "Cancel"
 msgstr "Annullér"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgctxt "@info"
@@ -16740,7 +16740,7 @@ msgid "Cancel current operation"
 msgstr "Annullér denne operation."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@action"
@@ -16748,7 +16748,7 @@ msgid "Close"
 msgstr "Luk"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, fuzzy, kde-format
 #| msgid "Close window"
 msgctxt "@info"
@@ -16843,19 +16843,19 @@ msgctxt "@action"
 msgid "Adjust Time && Date..."
 msgstr "Justér hvidbalance."
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Create Calendar"
 msgstr "Min kalender"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:54
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgid "A tool to create calendar from images"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:63
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to compose items and create a calendar with your "
@@ -16865,13 +16865,13 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:80
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Former Author"
 msgstr "Tidligere hovedudvikler"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
@@ -16880,7 +16880,7 @@ msgstr "Tidligere hovedudvikler"
 msgid "Developer and Maintainer"
 msgstr "Udvikler og vedligeholder"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -16991,7 +16991,7 @@ msgstr "Elementer i alt"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:98
 #, fuzzy, kde-format
 #| msgid "Create Database Folder Failed"
 msgid "Create Template for Calendar"
@@ -17121,46 +17121,46 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:90
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Min kalender"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:93
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
 msgid "Welcome to Calendar Tool"
 msgstr "Velkommen til værktøjet Exposure Blending"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:108
 #, kde-format
 msgid "Choose events to show on the Calendar"
 msgstr "Vælg begivenheder der vises i kalenderen"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Print Calendar"
 msgstr "Min kalender"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:127
 #, fuzzy, kde-format
 #| msgid "Printing and Proofing"
 msgid "Printing in Progress"
 msgstr "Udskrift og proofing"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:135
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:139
 #, fuzzy, kde-format
 #| msgid "%1|Camera RAW files"
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
 msgstr "%1|Kamera-RAW-filer"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:136
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "@title:window %1: name of the camera"
 #| msgid "%1 - Select Camera Folder"
@@ -17168,14 +17168,14 @@ msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "%1 - Vælg kameramappe"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:200
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
 "Ingen gyldige billeder valgt til måneder<br/>Tryk tilbage for at vælge "
 "billeder"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:235
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:215
 #, kde-format
 msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
@@ -17183,7 +17183,7 @@ msgid ""
 msgstr ""
 "Bemærk at du laver en kalender for<br/>indeværende år eller et tidligere år."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:242
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:222
 #, kde-format
 msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
@@ -17192,31 +17192,31 @@ msgstr ""
 "Tryk på Næste for at starte udskrift<br/><br/>Følgende måneder udskrives for "
 "året %1:<br/>"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:273
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Min kalender"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:281
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Printing Cancelled"
 msgstr "Proces annulleret..."
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:309
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:293
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Create calendar"
 msgstr "Min kalender"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:359
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:343
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
 msgstr "Udskriver kalenderside for %1 ud af %2"
 
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:369
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Processing images"
@@ -17343,20 +17343,20 @@ msgstr "Målmappe"
 msgid "Camera"
 msgstr "Kamera"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "DNG Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:54
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr "Konvertér billeder til PNG-format."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:63
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17367,7 +17367,7 @@ msgid ""
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:97
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
@@ -17466,13 +17466,13 @@ msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
 msgstr "Kontrast:"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:119
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:106
 #, kde-format
 msgctxt "@option:check Enfuse setting"
 msgid "Automatic Local/Global Image Features Balance (Levels)"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17480,7 +17480,7 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:123
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:110
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -17489,13 +17489,13 @@ msgid ""
 "possible."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:126
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:113
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:131
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17503,7 +17503,7 @@ msgid ""
 "number)."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:133
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the number of levels for pyramid blending. A low number trades off "
@@ -17519,20 +17519,20 @@ msgstr ""
 "kvaliteten af resultaterne til fordel for hurtigere udførselstid og lavere "
 "hukommelsesforbrug."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:125
 #, fuzzy, kde-format
 #| msgid "Unsharp Mask"
 msgctxt "@option:check"
 msgid "Hard Mask"
 msgstr "Uskarphedsmaske"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:140
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Useful only for focus stack to improve sharpness."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:129
 #, fuzzy, kde-format
 #| msgid ""
 #| "Force hard blend masks and no averaging on finest scale. This is "
@@ -17548,19 +17548,19 @@ msgstr ""
 "skala. Dette er særligt nyttig til at fokusere stakke med med tynde og høje "
 "kontrasttræk, forbedrer skarphed på bekostning af forøget støj."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:147
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:134
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of well exposed pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:154
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the exposure contribution for the blending process. Higher values "
@@ -17573,19 +17573,19 @@ msgstr ""
 "Sæt eksponeringsbidraget for blandingsprocessen. Højere værdier vil "
 "favorisere veleksponerede pixels."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:157
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:144
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly saturated pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:165
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing this value makes pixels with high saturation contribute more "
@@ -17598,19 +17598,19 @@ msgstr ""
 "Forøgelse af denne værdi får pixels med høj mætning til at bidrage mere til "
 "det endelige output."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:168
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:155
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly contrasted pixels to the blending process."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:176
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sets the relative weight of high-contrast pixels. Increasing this weight "
@@ -17626,14 +17626,14 @@ msgstr ""
 "vægtning får pixels der er nabo til pixels med andre farver til at bidrage "
 "mere til det endelige output. Især nyttigt til at fokusere stakke."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:167
 #, fuzzy, kde-format
 #| msgid "Use Color Appearance Modelling"
 msgctxt "@option:check"
 msgid "Use Color Appearance Model (CIECAM02)"
 msgstr "Brug modellering efter farvefremtoning"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:182
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -17641,7 +17641,7 @@ msgid ""
 "instead of RGB."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:171
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use Color Appearance Modelling (CIECAM02) to render detailed colors. Your "
@@ -17665,44 +17665,44 @@ msgstr ""
 "meget lille, og vil være mest synlig når du skal blande områder med "
 "forskelllige primærfarver sammen."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:179
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:169
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:180
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:170
 #, kde-format
 msgctxt "@title:column Output file name"
 msgid "Output"
 msgstr "Output"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:181
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:171
 #, fuzzy, kde-format
 msgctxt "@title:column Source file names"
 msgid "Selected Inputs"
 msgstr "Markér element"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:207
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:197
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Remove item"
 msgstr "Fjern element"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:216
+#: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:206
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Clear all"
 msgstr "Ryd alt"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:113
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "Eksponeringstid"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:122
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Save"
@@ -17710,14 +17710,14 @@ msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Gem"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:124
 #, fuzzy, kde-format
 #| msgid "Open the selected item."
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Åbn det valgte element."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:128
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Preview"
@@ -17725,7 +17725,7 @@ msgctxt "@action:button"
 msgid "&Preview"
 msgstr "&Forhåndsvisning"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:130
 #, fuzzy, kde-format
 #| msgid "Process a preview of bracketed images stack with current settings."
 msgctxt "@info:tooltip, button"
@@ -17734,7 +17734,7 @@ msgstr ""
 "Behandl en forhåndsvisning af en stak billeder med bracket med nuværende "
 "indstillinger."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
@@ -17743,7 +17743,7 @@ msgctxt "@action: button"
 msgid "&Default"
 msgstr "Stan&dard"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, fuzzy, kde-format
 #| msgid "Reset current tool settings to default values."
@@ -17751,35 +17751,35 @@ msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
 msgstr "Nulstil aktuelle værktøjsindstillinger til standardværdier."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
 msgstr "Detaljer..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:174
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:160
 #, fuzzy, kde-format
 #| msgid "Lens Settings"
 msgctxt "@title"
 msgid "Enfuse Settings"
 msgstr "Objektivindstillinger"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:186
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:172
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgctxt "@title"
 msgid "Save Result"
 msgstr "Gem som..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:196
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@label: textbox"
 msgid "File Name Template: "
 msgstr "Filnavnsfilter:"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Processing images"
@@ -17787,59 +17787,59 @@ msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Behandler billeder"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:498
 #, fuzzy, kde-format
 #| msgid "Failed to save image to %1."
 msgctxt "@info"
 msgid "Failed to save image to %1."
 msgstr "Kunne ikke gemme billede til %1."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:555
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:541
 #, fuzzy, kde-format
 #| msgid "Processing preview of bracketed images..."
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
 msgstr "Behandler forhåndsvisning af billeder med bracket..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:562
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:548
 #, fuzzy, kde-format
 #| msgid "Processing targets of bracketed images..."
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
 msgstr "Behandler mål for billeder med bracket..."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:589
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@info"
 msgid "Failed to load processed image."
 msgstr "Kunne ikke indlæse billede"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:599
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:585
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
 msgstr "Kunne ikke hente filen %1 fra kameraet."
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:610
+#: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:596
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
 msgstr "Kunne ikke hente filen %1 fra kameraet."
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgid "Exposure Blending"
 msgstr "Eksponeringstid"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:62
 #, fuzzy, kde-format
 #| msgid "A tool to blur images"
 msgid "A tool to blend bracketed images"
 msgstr "Et værktøj til at sløre billeder"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:71
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to blend bracketed images together to create "
@@ -17850,17 +17850,17 @@ msgid ""
 "for merging pixels by pixels.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "Forfatter og vedligeholder"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -22027,19 +22027,19 @@ msgstr "Videoindstillinger"
 msgid "Generating Video Slideshow"
 msgstr "Ignorér gruppering"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:41
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "Export as wallpaper"
 msgstr "Eksportværktøjer"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:60
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:56
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
 msgid "A tool to set image as wallpaper"
 msgstr "Konvertér billeder til et farverum."
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:65
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool changes background wallpaper to selected image for all desktops."
@@ -22047,7 +22047,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgctxt "@action"
@@ -22120,38 +22120,38 @@ msgstr ""
 msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:55
 #, fuzzy, kde-format
 #| msgid "Local Settings"
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Lokale indstillinger"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Wallpaper Layout:"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
 #| msgid "Adjust"
 msgid "Adjusted"
 msgstr "Justér"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Adjusted with Aspect ratio"
 msgstr "Returnér billeder med aspektforhold"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:80
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgid "Adjusted and cropped"
 msgstr "Justering:"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:89
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Center"
 msgid "Centered"
@@ -38626,31 +38626,31 @@ msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:183
+#: core/libs/onlineversion/onlineversionchecker.cpp:188
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "No data returned from the remote connection."
 msgstr "Ugyldigt svar fra ekstern Piwigo"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:198
+#: core/libs/onlineversion/onlineversionchecker.cpp:203
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, fuzzy, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Ikke understøttet format: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:225
+#: core/libs/onlineversion/onlineversionchecker.cpp:231
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid file name format returned from the remote connection."
 msgstr "Ugyldigt svar fra ekstern Piwigo"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:248
+#: core/libs/onlineversion/onlineversionchecker.cpp:255
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid pre-release date from the remote list."
 msgstr "Ugyldigt svar fra ekstern Piwigo"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:280
+#: core/libs/onlineversion/onlineversionchecker.cpp:288
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid format returned from the remote connection."
@@ -39286,7 +39286,7 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1961
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -62768,157 +62768,157 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Forhåndsvisningstilstand"
 
-#: core/utilities/import/backend/cameracontroller.cpp:411
+#: core/utilities/import/backend/cameracontroller.cpp:415
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Forbinder til kamera..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:420
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection established."
 msgstr "Forbindelse oprettet."
 
-#: core/utilities/import/backend/cameracontroller.cpp:424
+#: core/utilities/import/backend/cameracontroller.cpp:428
 #, kde-format
 msgid "Connection failed."
 msgstr "Forbindelse mislykkedes."
 
-#: core/utilities/import/backend/cameracontroller.cpp:449
+#: core/utilities/import/backend/cameracontroller.cpp:453
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Kunne ikke hente filen %1 fra kameraet."
 
-#: core/utilities/import/backend/cameracontroller.cpp:463
+#: core/utilities/import/backend/cameracontroller.cpp:467
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Kunne ikke hente filen %1 fra kameraet."
 
-#: core/utilities/import/backend/cameracontroller.cpp:477
+#: core/utilities/import/backend/cameracontroller.cpp:481
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Kunne ikke hente filen %1 fra kameraet."
 
-#: core/utilities/import/backend/cameracontroller.cpp:491
+#: core/utilities/import/backend/cameracontroller.cpp:495
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:507
+#: core/utilities/import/backend/cameracontroller.cpp:511
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:560
+#: core/utilities/import/backend/cameracontroller.cpp:564
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:578
+#: core/utilities/import/backend/cameracontroller.cpp:582
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:633
-#: core/utilities/import/backend/cameracontroller.cpp:1004
-#: core/utilities/import/main/importui.cpp:2481
+#: core/utilities/import/backend/cameracontroller.cpp:637
+#: core/utilities/import/backend/cameracontroller.cpp:1008
+#: core/utilities/import/main/importui.cpp:2478
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Download af <filename>%1</filename> mislykkedes"
 
-#: core/utilities/import/backend/cameracontroller.cpp:731
+#: core/utilities/import/backend/cameracontroller.cpp:735
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:779
+#: core/utilities/import/backend/cameracontroller.cpp:783
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:796
+#: core/utilities/import/backend/cameracontroller.cpp:800
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:816
+#: core/utilities/import/backend/cameracontroller.cpp:820
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:890
+#: core/utilities/import/backend/cameracontroller.cpp:894
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:897
+#: core/utilities/import/backend/cameracontroller.cpp:901
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1012
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Mislykkedes at downloade filen \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1016
+#: core/utilities/import/backend/cameracontroller.cpp:1020
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Kunne ikke downloade filen <filename>%1</filename>. Vil du fortsætte?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1033
+#: core/utilities/import/backend/cameracontroller.cpp:1037
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1041
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Mislykkedes at uploade filen \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1045
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>. Vil du fortsætte?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1060
+#: core/utilities/import/backend/cameracontroller.cpp:1064
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Kunne ikke slette filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1068
+#: core/utilities/import/backend/cameracontroller.cpp:1072
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Mislykkedes at slette filen \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1072
+#: core/utilities/import/backend/cameracontroller.cpp:1076
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Kunne ikke slette filen <filename>%1</filename>. Vil du fortsætte?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1088
+#: core/utilities/import/backend/cameracontroller.cpp:1092
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1096
+#: core/utilities/import/backend/cameracontroller.cpp:1100
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Kunne ikke slå låsefilen <filename>%1</filename> til/fra."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1100
+#: core/utilities/import/backend/cameracontroller.cpp:1104
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
@@ -63580,7 +63580,7 @@ msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Afbryder forbindelse til kameraet. Vent venligst..."
 
-#: core/utilities/import/main/importui.cpp:1038
+#: core/utilities/import/main/importui.cpp:1040
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -63588,7 +63588,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Klar"
 
-#: core/utilities/import/main/importui.cpp:1095
+#: core/utilities/import/main/importui.cpp:1097
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63598,13 +63598,13 @@ msgstr ""
 "Mislykkedes at forbinde til kameraet. Sørg for at kameraet er tændt og "
 "korrekt forbundet."
 
-#: core/utilities/import/main/importui.cpp:1189
+#: core/utilities/import/main/importui.cpp:1191
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Markér billede til upload"
 
-#: core/utilities/import/main/importui.cpp:1224
+#: core/utilities/import/main/importui.cpp:1226
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63618,7 +63618,7 @@ msgstr ""
 "Krævet plads: %1\n"
 "Ledig plads: %2"
 
-#: core/utilities/import/main/importui.cpp:1279
+#: core/utilities/import/main/importui.cpp:1281
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63628,7 +63628,7 @@ msgstr ""
 "Kameramappen <resource>%1</resource> indeholder allerede elementet <resource>"
 "%2</resource>.<nl>Angiv et nyt filnavn (uden filendelse):"
 
-#: core/utilities/import/main/importui.cpp:1283
+#: core/utilities/import/main/importui.cpp:1285
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -63636,7 +63636,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Filen findes allerede"
 
-#: core/utilities/import/main/importui.cpp:1352
+#: core/utilities/import/main/importui.cpp:1354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63646,7 +63646,7 @@ msgstr ""
 "Datoformatet for dit brugerdefinerede målalbum er ikke gyldigt. Tjek dine "
 "indstillinger..."
 
-#: core/utilities/import/main/importui.cpp:1392
+#: core/utilities/import/main/importui.cpp:1394
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63658,7 +63658,7 @@ msgstr ""
 "fra kameraenheden, er ikke tilgængelig. Vælg en anden fra "
 "konfigurationsdialogen for kamera."
 
-#: core/utilities/import/main/importui.cpp:1401
+#: core/utilities/import/main/importui.cpp:1403
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63668,7 +63668,7 @@ msgstr ""
 "Dit standard målalbum til behandling af download fra kameraenheden, er ikke "
 "tilgængeligt. Vælg et andet fra konfigurationsdialogen for kamera."
 
-#: core/utilities/import/main/importui.cpp:1426
+#: core/utilities/import/main/importui.cpp:1428
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -63681,7 +63681,7 @@ msgid ""
 msgstr ""
 "<p>Vælg venligst det rigtige album at importere billeder fra kameraet i.</p>"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1459
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -63697,19 +63697,19 @@ msgstr ""
 "fra kameraenheden, er ikke tilgængelig. Vælg en anden fra "
 "konfigurationsdialogen for kamera."
 
-#: core/utilities/import/main/importui.cpp:1511
+#: core/utilities/import/main/importui.cpp:1513
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:1518
+#: core/utilities/import/main/importui.cpp:1520
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:1955
+#: core/utilities/import/main/importui.cpp:1958
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63721,7 +63721,7 @@ msgstr ""
 "billeder bliver ikke slettet. Lås dem op og forsøg igen, hvis du virkelig "
 "vil slette disse elementer."
 
-#: core/utilities/import/main/importui.cpp:1966
+#: core/utilities/import/main/importui.cpp:1969
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63739,20 +63739,20 @@ msgstr[1] ""
 "Du er ved at slette disse %1 billeder. <warning>Slettede filer kan ikke "
 "genskabes.</warning> Er du sikker?"
 
-#: core/utilities/import/main/importui.cpp:1976
+#: core/utilities/import/main/importui.cpp:1979
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Advarsel"
 
-#: core/utilities/import/main/importui.cpp:2020
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Utilstrækkelig diskplads"
 
-#: core/utilities/import/main/importui.cpp:2021
+#: core/utilities/import/main/importui.cpp:2024
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -63770,8 +63770,8 @@ msgstr ""
 "Estimeret pladskrav: %1\n"
 "Ledig plads: %2"
 
-#: core/utilities/import/main/importui.cpp:2294
-#: core/utilities/import/main/importui.cpp:2322
+#: core/utilities/import/main/importui.cpp:2292
+#: core/utilities/import/main/importui.cpp:2318
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -63779,7 +63779,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/utilities/import/main/importui.cpp:2314
+#: core/utilities/import/main/importui.cpp:2311
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -63787,7 +63787,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 af %3)"
 
-#: core/utilities/import/main/importui.cpp:2333
+#: core/utilities/import/main/importui.cpp:2328
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -63795,25 +63795,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 element valgt"
 msgstr[1] "%2/%1 elementer valgt"
 
-#: core/utilities/import/main/importui.cpp:2416
+#: core/utilities/import/main/importui.cpp:2413
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2438
+#: core/utilities/import/main/importui.cpp:2435
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2461
+#: core/utilities/import/main/importui.cpp:2458
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2538
+#: core/utilities/import/main/importui.cpp:2535
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -63827,13 +63827,13 @@ msgstr ""
 "Download af billeder gennemført. Du kan nu frakoble dit kamera mens "
 "billederne bliver autoroteret"
 
-#: core/utilities/import/main/importui.cpp:2546
+#: core/utilities/import/main/importui.cpp:2543
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Download af billeder gennemført"
 
-#: core/utilities/import/main/importui.cpp:2572
+#: core/utilities/import/main/importui.cpp:2569
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -63841,7 +63841,7 @@ msgstr ""
 "En fil med samme navn (<filename>%1</filename>) findes allerede i mappen "
 "<resource>%2</resource>."
 
-#: core/utilities/import/main/importui.cpp:2585
+#: core/utilities/import/main/importui.cpp:2582
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
