@@ -96,8 +96,8 @@ BUGFIXES:
 070 ==> 486132 - XMP file is not created if directory contains non-ascii UTF-8 chars.
 071 ==> 485973 - Metadata (DateTimeOriginal) not read from MTS video files.
 072 ==> 486418 - Only part of the selected pictures are imported.
-073 ==> 
-074 ==> 
+073 ==> 484360 - digiKam 8.3 No Video Sound on MacOS.
+074 ==> 486388 - Video playing without sound.
 075 ==> 
 076 ==> 
 077 ==> 
