@@ -38,22 +38,22 @@ void DXmlGuiWindow::readFullScreenSettings(const KConfigGroup& group)
 {
     if (d->fsOptions & FS_TOOLBARS)
     {
-        d->fullScreenHideToolBars  = group.readEntry(s_configFullScreenHideToolBarsEntry,  false);
+        d->fullScreenHideToolBars  = group.readEntry(configFullScreenHideToolBarsEntry(),  false);
     }
 
     if (d->fsOptions & FS_THUMBBAR)
     {
-        d->fullScreenHideThumbBar  = group.readEntry(s_configFullScreenHideThumbBarEntry,  true);
+        d->fullScreenHideThumbBar  = group.readEntry(configFullScreenHideThumbBarEntry(),  true);
     }
 
     if (d->fsOptions & FS_SIDEBARS)
     {
-        d->fullScreenHideSideBars  = group.readEntry(s_configFullScreenHideSideBarsEntry,  false);
+        d->fullScreenHideSideBars  = group.readEntry(configFullScreenHideSideBarsEntry(),  false);
     }
 
     if (d->fsOptions & FS_STATUSBAR)
     {
-        d->fullScreenHideStatusBar = group.readEntry(s_configFullScreenHideStatusBarEntry, false);
+        d->fullScreenHideStatusBar = group.readEntry(configFullScreenHideStatusBarEntry(), false);
     }
 }
 

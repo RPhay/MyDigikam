@@ -77,10 +77,6 @@ enum StdActionType
     StdForwardAction
 };
 
-static const QString s_configFullScreenHideToolBarsEntry(QLatin1String("FullScreen Hide ToolBars"));
-static const QString s_configFullScreenHideThumbBarEntry(QLatin1String("FullScreen Hide ThumbBar"));
-static const QString s_configFullScreenHideSideBarsEntry(QLatin1String("FullScreen Hide SideBars"));
-static const QString s_configFullScreenHideStatusBarEntry(QLatin1String("FullScreen Hide StatusBar"));
 
 /**
  * Generi class to use with all main window.
@@ -183,6 +179,14 @@ public:
      * If we have some local breeze icon resource, prefer it.
      */
     static void setupIconTheme();
+
+    /**
+     * Shared with FullScreenSettings.
+     */
+    static QString configFullScreenHideToolBarsEntry()  { return QLatin1String("FullScreen Hide ToolBars");  };
+    static QString configFullScreenHideThumbBarEntry()  { return QLatin1String("FullScreen Hide ThumbBar");  };
+    static QString configFullScreenHideSideBarsEntry()  { return QLatin1String("FullScreen Hide SideBars");  };
+    static QString configFullScreenHideStatusBarEntry() { return QLatin1String("FullScreen Hide StatusBar"); };
 
 protected:
 

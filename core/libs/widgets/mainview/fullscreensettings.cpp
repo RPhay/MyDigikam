@@ -106,22 +106,22 @@ void FullScreenSettings::readSettings(const KConfigGroup& group)
 {
     if (d->options & FS_TOOLBARS)
     {
-        d->hideToolBars->setChecked(group.readEntry(s_configFullScreenHideToolBarsEntry,   false));
+        d->hideToolBars->setChecked(group.readEntry(DXmlGuiWindow::configFullScreenHideToolBarsEntry(),   false));
     }
 
     if (d->options & FS_THUMBBAR)
     {
-        d->hideThumbBar->setChecked(group.readEntry(s_configFullScreenHideThumbBarEntry,   true));
+        d->hideThumbBar->setChecked(group.readEntry(DXmlGuiWindow::configFullScreenHideThumbBarEntry(),   true));
     }
 
     if (d->options & FS_SIDEBARS)
     {
-        d->hideSideBars->setChecked(group.readEntry(s_configFullScreenHideSideBarsEntry,   false));
+        d->hideSideBars->setChecked(group.readEntry(DXmlGuiWindow::configFullScreenHideSideBarsEntry(),   false));
     }
 
     if (d->options & FS_STATUSBAR)
     {
-        d->hideStatusBar->setChecked(group.readEntry(s_configFullScreenHideStatusBarEntry, false));
+        d->hideStatusBar->setChecked(group.readEntry(DXmlGuiWindow::configFullScreenHideStatusBarEntry(), false));
     }
 }
 
@@ -129,22 +129,22 @@ void FullScreenSettings::saveSettings(KConfigGroup& group)
 {
     if (d->options & FS_TOOLBARS)
     {
-        group.writeEntry(s_configFullScreenHideToolBarsEntry,  d->hideToolBars->isChecked());
+        group.writeEntry(DXmlGuiWindow::configFullScreenHideToolBarsEntry(),  d->hideToolBars->isChecked());
     }
 
     if (d->options & FS_THUMBBAR)
     {
-        group.writeEntry(s_configFullScreenHideThumbBarEntry,  d->hideThumbBar->isChecked());
+        group.writeEntry(DXmlGuiWindow::configFullScreenHideThumbBarEntry(),  d->hideThumbBar->isChecked());
     }
 
     if (d->options & FS_SIDEBARS)
     {
-        group.writeEntry(s_configFullScreenHideSideBarsEntry,  d->hideSideBars->isChecked());
+        group.writeEntry(DXmlGuiWindow::configFullScreenHideSideBarsEntry(),  d->hideSideBars->isChecked());
     }
 
     if (d->options & FS_STATUSBAR)
     {
-        group.writeEntry(s_configFullScreenHideStatusBarEntry, d->hideStatusBar->isChecked());
+        group.writeEntry(DXmlGuiWindow::configFullScreenHideStatusBarEntry(), d->hideStatusBar->isChecked());
     }
 
     group.sync();
