@@ -40,11 +40,6 @@ class Q_DECL_HIDDEN HTMLIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption  (nullptr),
-        hbox            (nullptr),
-        wizard          (nullptr),
-        info            (nullptr),
-        iface           (nullptr)
     {
         wizard = dynamic_cast<HTMLWizard*>(dialog);
 
@@ -55,11 +50,11 @@ public:
         }
     }
 
-    QComboBox*       imageGetOption;
-    DHBox*           hbox;
-    HTMLWizard*      wizard;
-    GalleryInfo*     info;
-    DInfoInterface*  iface;
+    QComboBox*       imageGetOption = nullptr;
+    DHBox*           hbox           = nullptr;
+    HTMLWizard*      wizard         = nullptr;
+    GalleryInfo*     info           = nullptr;
+    DInfoInterface*  iface          = nullptr;
 };
 
 HTMLIntroPage::HTMLIntroPage(QWizard* const dialog, const QString& title)

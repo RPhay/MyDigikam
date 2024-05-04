@@ -43,18 +43,12 @@ class Q_DECL_HIDDEN HTMLOutputPage::Private
 {
 public:
 
-    explicit Private()
-      : destUrl             (nullptr),
-        openInBrowser       (nullptr),
-        titleLabel          (nullptr),
-        imageSelectionTitle (nullptr)
-    {
-    }
+    Private() = default;
 
-    DFileSelector* destUrl;
-    QComboBox*     openInBrowser;
-    QLabel*        titleLabel;
-    DTextEdit*     imageSelectionTitle;
+    DFileSelector* destUrl              = nullptr;
+    QComboBox*     openInBrowser        = nullptr;
+    QLabel*        titleLabel           = nullptr;
+    DTextEdit*     imageSelectionTitle  = nullptr;
 };
 
 HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)

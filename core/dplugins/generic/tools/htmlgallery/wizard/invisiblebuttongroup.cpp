@@ -33,12 +33,9 @@ class Q_DECL_HIDDEN InvisibleButtonGroup::Private
 {
 public:
 
-    explicit Private()
-      : group(nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup* group;
+    QButtonGroup* group = nullptr;
 };
 
 InvisibleButtonGroup::InvisibleButtonGroup(QWidget* const parent)

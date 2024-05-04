@@ -38,14 +38,10 @@ class Q_DECL_HIDDEN HTMLThemePage::Private
 {
 public:
 
-    explicit Private()
-      : themeList(nullptr),
-        themeInfo(nullptr)
-    {
-    }
+    Private() = default;
 
-    QListWidget*  themeList;
-    QTextBrowser* themeInfo;
+    QListWidget*  themeList = nullptr;
+    QTextBrowser* themeInfo = nullptr;
 };
 
 HTMLThemePage::HTMLThemePage(QWizard* const dialog, const QString& title)

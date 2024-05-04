@@ -46,12 +46,9 @@ class Q_DECL_HIDDEN HTMLImageSettingsPage::Private
 {
 public:
 
-    explicit Private()
-      : kcfg_thumbnailSquare(nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox* kcfg_thumbnailSquare;
+    QCheckBox* kcfg_thumbnailSquare = nullptr;
 };
 
 HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QString& title)
@@ -290,7 +287,9 @@ void HTMLImageSettingsPage::initializePage()
     HTMLWizard* const wizard      = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryTheme::Ptr theme       = wizard->galleryTheme();
     bool allowNonsquareThumbnails = theme->allowNonsquareThumbnails();

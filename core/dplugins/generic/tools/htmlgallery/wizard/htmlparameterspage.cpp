@@ -44,13 +44,10 @@ class Q_DECL_HIDDEN HTMLParametersPage::Private
 {
 public:
 
-    explicit Private()
-      : content(nullptr)
-    {
-    }
+    Private() = default;
 
     QMap<QByteArray, QWidget*> themePrmWdgtList;
-    QWidget*                   content;
+    QWidget*                   content = nullptr;
 };
 
 HTMLParametersPage::HTMLParametersPage(QWizard* const dialog, const QString& title)
@@ -123,7 +120,7 @@ void HTMLParametersPage::initializePage()
     QGridLayout* const layout = new QGridLayout(d->content);
     layout->setContentsMargins(QMargins());
     layout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                            QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // Create widgets
 

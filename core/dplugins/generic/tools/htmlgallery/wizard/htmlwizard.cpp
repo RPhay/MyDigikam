@@ -52,29 +52,18 @@ class Q_DECL_HIDDEN HTMLWizard::Private
 {
 public:
 
-    explicit Private()
-      : info                (nullptr),
-        configManager       (nullptr),
-        introPage           (nullptr),
-        selectionPage       (nullptr),
-        themePage           (nullptr),
-        parametersPage      (nullptr),
-        imageSettingsPage   (nullptr),
-        outputPage          (nullptr),
-        finalPage           (nullptr)
-    {
-    }
+    Private() = default;
 
-    GalleryInfo*           info;
-    DConfigDlgMngr*        configManager;
+    GalleryInfo*           info                 = nullptr;
+    DConfigDlgMngr*        configManager        = nullptr;
 
-    HTMLIntroPage*         introPage;
-    HTMLSelectionPage*     selectionPage;
-    HTMLThemePage*         themePage;
-    HTMLParametersPage*    parametersPage;
-    HTMLImageSettingsPage* imageSettingsPage;
-    HTMLOutputPage*        outputPage;
-    HTMLFinalPage*         finalPage;
+    HTMLIntroPage*         introPage            = nullptr;
+    HTMLSelectionPage*     selectionPage        = nullptr;
+    HTMLThemePage*         themePage            = nullptr;
+    HTMLParametersPage*    parametersPage       = nullptr;
+    HTMLImageSettingsPage* imageSettingsPage    = nullptr;
+    HTMLOutputPage*        outputPage           = nullptr;
+    HTMLFinalPage*         finalPage            = nullptr;
 };
 
 HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
@@ -125,7 +114,7 @@ bool HTMLWizard::validateCurrentPage()
         GalleryTheme::ParameterList::ConstIterator it  = parameterList.constBegin();
         GalleryTheme::ParameterList::ConstIterator end = parameterList.constEnd();
 
-        for (; it != end ; ++it)
+        for ( ; it != end ; ++it)
         {
             AbstractThemeParameter* const themeParameter = *it;
             QByteArray parameterInternalName             = themeParameter->internalName();
@@ -150,7 +139,7 @@ int HTMLWizard::nextId() const
     {
         GalleryTheme::Ptr theme = galleryTheme();
 
-        if (theme && theme->parameterList().size() > 0)
+        if (theme && (theme->parameterList().size() > 0))
         {
             // Enable theme parameters page as next page if there is any parameter.
 

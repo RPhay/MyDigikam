@@ -34,13 +34,6 @@ class Q_DECL_HIDDEN HTMLSelectionPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport    (false),
-        albumSelector   (nullptr),
-        imageList       (nullptr),
-        stack           (nullptr),
-        wizard          (nullptr),
-        info            (nullptr),
-        iface           (nullptr)
     {
         wizard = dynamic_cast<HTMLWizard*>(dialog);
 
@@ -51,13 +44,13 @@ public:
         }
     }
 
-    bool             albumSupport;
-    QWidget*         albumSelector;
-    DItemsList*      imageList;
-    QStackedWidget*  stack;
-    HTMLWizard*      wizard;
-    GalleryInfo*     info;
-    DInfoInterface*  iface;
+    bool             albumSupport   = false;
+    QWidget*         albumSelector  = nullptr;
+    DItemsList*      imageList      = nullptr;
+    QStackedWidget*  stack          = nullptr;
+    HTMLWizard*      wizard         = nullptr;
+    GalleryInfo*     info           = nullptr;
+    DInfoInterface*  iface          = nullptr;
 };
 
 HTMLSelectionPage::HTMLSelectionPage(QWizard* const dialog, const QString& title)
@@ -102,7 +95,6 @@ HTMLSelectionPage::~HTMLSelectionPage()
 {
     delete d;
 }
-
 
 void HTMLSelectionPage::setItemsList(const QList<QUrl>& urls)
 {

@@ -49,16 +49,11 @@ class Q_DECL_HIDDEN HTMLFinalPage::Private
 {
 public:
 
-    explicit Private()
-      : progressView(nullptr),
-        progressBar (nullptr),
-        complete    (false)
-    {
-    }
+    Private() = default;
 
-    DHistoryView* progressView;
-    DProgressWdg* progressBar;
-    bool          complete;
+    DHistoryView* progressView  = nullptr;
+    DProgressWdg* progressBar   = nullptr;
+    bool          complete      = false;
 };
 
 HTMLFinalPage::HTMLFinalPage(QWizard* const dialog, const QString& title)
@@ -88,7 +83,9 @@ HTMLFinalPage::~HTMLFinalPage()
 void HTMLFinalPage::initializePage()
 {
     d->complete = false;
+
     Q_EMIT completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -189,6 +186,7 @@ void HTMLFinalPage::slotProcess()
     }
 
     d->complete = true;
+
     Q_EMIT completeChanged();
 }
 
