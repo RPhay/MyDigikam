@@ -52,46 +52,36 @@ public:
 
     Private() = default;
 
-    static const QString  configGroupName;
-    static const QString  configUseThemeBackgroundColorEntry;
-    static const QString  configBackgroundColorEntry;
-    static const QString  configUnderExposureColorEntry;
-    static const QString  configOverExposureColorEntry;
-    static const QString  configUnderExposurePercentsEntry;
-    static const QString  configOverExposurePercentsEntry;
-    static const QString  configExpoIndicatorModeEntry;
-    static const QString  configRestoreSettingsEntry;
+    const QString configGroupName                       = QLatin1String("ImageViewer Settings");
+    const QString configUseThemeBackgroundColorEntry    = QLatin1String("UseThemeBackgroundColor");
+    const QString configBackgroundColorEntry            = QLatin1String("BackgroundColor");
+    const QString configUnderExposureColorEntry         = QLatin1String("UnderExposureColor");
+    const QString configOverExposureColorEntry          = QLatin1String("OverExposureColor");
+    const QString configUnderExposurePercentsEntry      = QLatin1String("UnderExposurePercentsEntry");
+    const QString configOverExposurePercentsEntry       = QLatin1String("OverExposurePercentsEntry");
+    const QString configExpoIndicatorModeEntry          = QLatin1String("ExpoIndicatorMode");
+    const QString configRestoreSettingsEntry            = QLatin1String("RestoreToolSettings");
 
-    QCheckBox*            themebackgroundColor  = nullptr;
-    QCheckBox*            expoIndicatorMode     = nullptr;
-    QCheckBox*            restoreSettings       = nullptr;
+    QCheckBox*            themebackgroundColor          = nullptr;
+    QCheckBox*            expoIndicatorMode             = nullptr;
+    QCheckBox*            restoreSettings               = nullptr;
 
-    QLabel*               expoPreview           = nullptr;
+    QLabel*               expoPreview                   = nullptr;
 
-    DHBox*                colorBox              = nullptr;
-    DColorSelector*       backgroundColor       = nullptr;
-    DColorSelector*       underExposureColor    = nullptr;
-    DColorSelector*       overExposureColor     = nullptr;
+    DHBox*                colorBox                      = nullptr;
+    DColorSelector*       backgroundColor               = nullptr;
+    DColorSelector*       underExposureColor            = nullptr;
+    DColorSelector*       overExposureColor             = nullptr;
 
-    HistogramWidget*      expoPreviewHisto      = nullptr;
+    HistogramWidget*      expoPreviewHisto              = nullptr;
 
-    FullScreenSettings*   fullScreenSettings    = nullptr;
+    FullScreenSettings*   fullScreenSettings            = nullptr;
 
     DImg                  preview;
 
-    DDoubleNumInput*      underExposurePcents   = nullptr;
-    DDoubleNumInput*      overExposurePcents    = nullptr;
+    DDoubleNumInput*      underExposurePcents           = nullptr;
+    DDoubleNumInput*      overExposurePcents            = nullptr;
 };
-
-const QString SetupEditorIface::Private::configGroupName(QLatin1String("ImageViewer Settings"));
-const QString SetupEditorIface::Private::configUseThemeBackgroundColorEntry(QLatin1String("UseThemeBackgroundColor"));
-const QString SetupEditorIface::Private::configBackgroundColorEntry(QLatin1String("BackgroundColor"));
-const QString SetupEditorIface::Private::configUnderExposureColorEntry(QLatin1String("UnderExposureColor"));
-const QString SetupEditorIface::Private::configOverExposureColorEntry(QLatin1String("OverExposureColor"));
-const QString SetupEditorIface::Private::configUnderExposurePercentsEntry(QLatin1String("UnderExposurePercentsEntry"));
-const QString SetupEditorIface::Private::configOverExposurePercentsEntry(QLatin1String("OverExposurePercentsEntry"));
-const QString SetupEditorIface::Private::configExpoIndicatorModeEntry(QLatin1String("ExpoIndicatorMode"));
-const QString SetupEditorIface::Private::configRestoreSettingsEntry(QLatin1String("RestoreToolSettings"));
 
 // --------------------------------------------------------
 

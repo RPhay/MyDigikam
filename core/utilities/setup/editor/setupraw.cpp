@@ -50,30 +50,25 @@ public:
 
     Private() = default;
 
-    static const QString  configGroupName;
-    static const QString  configUseRawImportToolEntry;
-    static const QString  configRawImportToolIidEntry;
-    static const QString  nativeRawImportToolIid;
+    const QString configGroupName               = QLatin1String("ImageViewer Settings");
+    const QString configUseRawImportToolEntry   = QLatin1String("UseRawImportTool");
+    const QString configRawImportToolIidEntry   = QLatin1String("RawImportToolIid");
+    const QString nativeRawImportToolIid        = QLatin1String("org.kde.digikam.plugin.rawimport.Native");
 
-    QTabWidget*           tab           = nullptr;
+    QTabWidget*           tab                   = nullptr;
 
-    QWidget*              behaviorPanel = nullptr;
-    QWidget*              settingsPanel = nullptr;
+    QWidget*              behaviorPanel         = nullptr;
+    QWidget*              settingsPanel         = nullptr;
 
-    QRadioButton*         openSimple    = nullptr;
-    QRadioButton*         openDefault   = nullptr;
-    QRadioButton*         openTool      = nullptr;
+    QRadioButton*         openSimple            = nullptr;
+    QRadioButton*         openDefault           = nullptr;
+    QRadioButton*         openTool              = nullptr;
 
-    QComboBox*            rawImportTool = nullptr;
-    QPushButton*          toolAbout     = nullptr;
+    QComboBox*            rawImportTool         = nullptr;
+    QPushButton*          toolAbout             = nullptr;
 
-    DRawDecoderWidget*    rawSettings   = nullptr;
+    DRawDecoderWidget*    rawSettings           = nullptr;
 };
-
-const QString SetupRaw::Private::configGroupName(QLatin1String("ImageViewer Settings"));
-const QString SetupRaw::Private::configUseRawImportToolEntry(QLatin1String("UseRawImportTool"));
-const QString SetupRaw::Private::configRawImportToolIidEntry(QLatin1String("RawImportToolIid"));
-const QString SetupRaw::Private::nativeRawImportToolIid(QLatin1String("org.kde.digikam.plugin.rawimport.Native"));
 
 SetupRaw::SetupRaw(QTabWidget* const tab)
     : QObject(tab),

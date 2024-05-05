@@ -59,7 +59,7 @@ public:
 
 SetupDatabase::SetupDatabase(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

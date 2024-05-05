@@ -44,11 +44,10 @@ public:
 
     Private() = default;
 
-    static const QString configGroupName;
-    static const QString configAutoSyncPreviewEntry;
-    static const QString configAutoLoadRightPanelEntry;
-    static const QString configLoadFullImagesizeEntry;
-    static const QString configClearOnCloseEntry;
+    const QString configGroupName               = QLatin1String("LightTable Settings");
+    const QString configAutoSyncPreviewEntry    = QLatin1String("Auto Sync Preview");
+    const QString configAutoLoadRightPanelEntry = QLatin1String("Auto Load Right Panel");
+    const QString configClearOnCloseEntry       = QLatin1String("Clear On Close");
 
     QCheckBox*           autoSyncPreview        = nullptr;
     QCheckBox*           autoLoadOnRightPanel   = nullptr;
@@ -56,11 +55,6 @@ public:
 
     FullScreenSettings*  fullScreenSettings     = nullptr;
 };
-
-const QString SetupLightTable::Private::configGroupName(QLatin1String("LightTable Settings"));
-const QString SetupLightTable::Private::configAutoSyncPreviewEntry(QLatin1String("Auto Sync Preview"));
-const QString SetupLightTable::Private::configAutoLoadRightPanelEntry(QLatin1String("Auto Load Right Panel"));
-const QString SetupLightTable::Private::configClearOnCloseEntry(QLatin1String("Clear On Close"));
 
 // --------------------------------------------------------
 

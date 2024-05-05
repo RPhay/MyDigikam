@@ -49,8 +49,8 @@ public:
 
     Private() = default;
 
-    static const QString     configGroupName;
-    static const QString     configLastAddedCollectionPath;
+    const QString configGroupName               = QLatin1String("Collection Settings");
+    const QString configLastAddedCollectionPath = QLatin1String("LastAddedCollectionPath");
 
     bool                     rootsPathChanged   = false;
 
@@ -62,9 +62,6 @@ public:
     QTabWidget*              tab                = nullptr;
     QLabel*                  ignoreLabel        = nullptr;
 };
-
-const QString SetupCollections::Private::configGroupName(QLatin1String("Collection Settings"));
-const QString SetupCollections::Private::configLastAddedCollectionPath(QLatin1String("LastAddedCollectionPath"));
 
 SetupCollections::SetupCollections(QWidget* const parent)
     : QScrollArea(parent),
