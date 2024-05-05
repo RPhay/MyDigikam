@@ -683,66 +683,66 @@ void QueueSettingsView::slotSettingsChanged()
 
     if (d->jpgSettings)
     {
-        settings.ioFileSettings.JPEGCompression     = d->jpgSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->settings()[QLatin1String("subsampling")].toInt();
+        settings.ioFileSettings.JPEGCompression     = d->jpgSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->settings().value(QLatin1String("subsampling")).toInt();
     }
 
     // ---
 
     if (d->pngSettings)
     {
-        settings.ioFileSettings.PNGCompression      = d->pngSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.PNGCompression      = d->pngSettings->settings().value(QLatin1String("quality")).toInt();
     }
 
     // ---
 
     if (d->tifSettings)
     {
-        settings.ioFileSettings.TIFFCompression     = d->tifSettings->settings()[QLatin1String("compress")].toBool();
+        settings.ioFileSettings.TIFFCompression     = d->tifSettings->settings().value(QLatin1String("compress")).toBool();
     }
 
 #ifdef HAVE_JASPER
 
     if (d->j2kSettings)
     {
-        settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
 #endif // HAVE_JASPER
 
     if (d->pgfSettings)
     {
-        settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.PGFLossLess         = d->pgfSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.PGFLossLess         = d->pgfSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
 #ifdef HAVE_X265
 
     if (d->heifSettings)
     {
-        settings.ioFileSettings.HEIFCompression     = d->heifSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.HEIFCompression     = d->heifSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
 #endif // HAVE_X265
 
     if (d->jxlSettings)
     {
-        settings.ioFileSettings.JXLCompression  = d->jxlSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.JXLLossLess     = d->jxlSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.JXLCompression  = d->jxlSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.JXLLossLess     = d->jxlSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
     if (d->webpSettings)
     {
-        settings.ioFileSettings.WEBPCompression  = d->webpSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.WEBPLossLess     = d->webpSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.WEBPCompression  = d->webpSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.WEBPLossLess     = d->webpSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
     if (d->avifSettings)
     {
-        settings.ioFileSettings.AVIFCompression = d->avifSettings->settings()[QLatin1String("quality")].toInt();
-        settings.ioFileSettings.AVIFLossLess    = d->avifSettings->settings()[QLatin1String("lossless")].toBool();
+        settings.ioFileSettings.AVIFCompression = d->avifSettings->settings().value(QLatin1String("quality")).toInt();
+        settings.ioFileSettings.AVIFLossLess    = d->avifSettings->settings().value(QLatin1String("lossless")).toBool();
     }
 
     Q_EMIT signalSettingsChanged(settings);
