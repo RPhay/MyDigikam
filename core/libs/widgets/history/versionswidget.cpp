@@ -64,10 +64,8 @@ public:
     QToolButton*             treeModeButton     = nullptr;
     QToolButton*             combinedModeButton = nullptr;
 
-    static const QString     configCurrentMode;
+    const QString configCurrentMode             = QLatin1String("Version Properties View Mode");
 };
-
-const QString VersionsWidget::Private::configCurrentMode(QLatin1String("Version Properties View Mode"));
 
 VersionsWidget::VersionsWidget(QWidget* const parent)
     : QWidget(parent),

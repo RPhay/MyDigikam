@@ -89,7 +89,7 @@ VersionNameCreator::VersionNameCreator(const VersionFileInfo& lFile,
       loadedFile            (lFile),
       resolvedInitialHistory(rInitHisto),
       currentHistory        (cHisto),
-      q                       (qq)
+      q                     (qq)
 {
     loadedFile.format   = lFile.format.toUpper();
     fromRaw             = (lFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format

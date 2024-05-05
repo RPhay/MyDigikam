@@ -61,26 +61,21 @@ class Q_DECL_HIDDEN DMediaServerMngr::Private
 {
 public:
 
-    explicit Private()
-        : server(nullptr)
-    {
-    }
+    Private() = default;
 
     /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
     /// Server instance pointer.
-    DMediaServer*        server;
+    DMediaServer*        server                     = nullptr;
 
     /// The current albums collection to share.
     MediaServerMap       collectionMap;
 
-    static const QString configGroupName;
-    static const QString configStartServerOnStartupEntry;
+    const QString configGroupName                   = QLatin1String("DLNA Settings");
+    const QString configStartServerOnStartupEntry   = QLatin1String("Start MediaServer At Startup");
 };
 
-const QString DMediaServerMngr::Private::configGroupName(QLatin1String("DLNA Settings"));
-const QString DMediaServerMngr::Private::configStartServerOnStartupEntry(QLatin1String("Start MediaServer At Startup"));
 
 DMediaServerMngr* DMediaServerMngr::instance()
 {
@@ -278,10 +273,15 @@ bool DMediaServerMngr::save()
     }
 
     QTextStream stream(&file);
+
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
     // In Qt5 only. Qt6 uses UTF-8 by default.
+
     stream.setCodec(QTextCodec::codecForName("UTF-8"));
+
 #endif
+
     stream.setAutoDetectUnicode(true);
     stream << doc.toString(4);
     file.close();

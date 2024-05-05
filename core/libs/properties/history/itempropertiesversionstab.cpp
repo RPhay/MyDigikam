@@ -53,10 +53,8 @@ public:
     DImageHistory         history;
     ItemInfo              info;
 
-    static const QString  configActiveTab;
+    const QString configActiveTab               = QLatin1String("Version Properties Tab");
 };
-
-const QString ItemPropertiesVersionsTab::Private::configActiveTab(QLatin1String("Version Properties Tab"));
 
 ItemPropertiesVersionsTab::ItemPropertiesVersionsTab(QWidget* const parent)
     : QTabWidget(parent),

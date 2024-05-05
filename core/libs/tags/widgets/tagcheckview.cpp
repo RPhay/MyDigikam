@@ -43,7 +43,7 @@ public:
 
     Private() = default;
 
-    static const QString         configToggleAutoTagsEntry;
+    const QString configToggleAutoTagsEntry             = QLatin1String("Toggle Auto Tags");
 
     TagCheckView::ToggleAutoTags toggleAutoTags         = TagCheckView::NoToggleAuto;
     bool                         checkNewTags           = false;
@@ -54,8 +54,6 @@ public:
     QAction*                     toggleParentsAction    = nullptr;
     QAction*                     toggleBothAction       = nullptr;
 };
-
-const QString TagCheckView::Private::configToggleAutoTagsEntry(QLatin1String("Toggle Auto Tags"));
 
 // --------------------------------------------------------
 

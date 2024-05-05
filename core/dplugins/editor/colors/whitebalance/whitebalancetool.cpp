@@ -48,27 +48,18 @@ class Q_DECL_HIDDEN WhiteBalanceTool::Private
 {
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName              = QLatin1String("whitebalance Tool");
+    const QString configHistogramChannelEntry  = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry    = QLatin1String("Histogram Scale");
 
-    WBSettings*          settingsView;
+    WBSettings*          settingsView          = nullptr;
 
-    ImageRegionWidget*   previewWidget;
+    ImageRegionWidget*   previewWidget         = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings          = nullptr;
 };
-
-const QString WhiteBalanceTool::Private::configGroupName(QLatin1String("whitebalance Tool"));
-const QString WhiteBalanceTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString WhiteBalanceTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 

@@ -61,20 +61,16 @@ class Q_DECL_HIDDEN MjpegServerMngr::Private
 {
 public:
 
-    explicit Private()
-      : server(nullptr),
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
     /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
     /// MJPEG Server instance pointer.
-    MjpegServer*         server;
+    MjpegServer*         server                     = nullptr;
 
     /// Frames generateur thread.
-    MjpegFrameThread*    thread;
+    MjpegFrameThread*    thread                     = nullptr;
 
     /// The current albums collection to share.
     MjpegServerMap       collectionMap;
@@ -82,12 +78,9 @@ public:
     /// The MJPEG stream settings.
     MjpegStreamSettings  settings;
 
-    static const QString configGroupName;
-    static const QString configStartServerOnStartupEntry;
+    const QString configGroupName                   = QLatin1String("MJPEG Settings");
+    const QString configStartServerOnStartupEntry   = QLatin1String("Start MjpegServer At Startup");
 };
-
-const QString MjpegServerMngr::Private::configGroupName(QLatin1String("MJPEG Settings"));
-const QString MjpegServerMngr::Private::configStartServerOnStartupEntry(QLatin1String("Start MjpegServer At Startup"));
 
 MjpegServerMngr* MjpegServerMngr::instance()
 {
@@ -309,8 +302,11 @@ bool MjpegServerMngr::save()
     QTextStream stream(&file);
 
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
     // In Qt5 only. Qt6 uses UTF-8 by default.
+
     stream.setCodec(QTextCodec::codecForName("UTF-8"));
+
 #endif
 
     stream.setAutoDetectUnicode(true);

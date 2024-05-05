@@ -51,26 +51,17 @@ class Q_DECL_HIDDEN AdjustCurvesTool::Private
 {
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("adjustcurves Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    CurvesSettings*      settingsView;
-    ImageRegionWidget*   previewWidget;
+    CurvesSettings*      settingsView           = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString AdjustCurvesTool::Private::configGroupName(QLatin1String("adjustcurves Tool"));
-const QString AdjustCurvesTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString AdjustCurvesTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -98,6 +89,7 @@ AdjustCurvesTool::AdjustCurvesTool(QObject* const parent)
                                 EditorToolSettings::Cancel);
 
     // we don't need to use the Gradient widget in this tool
+
     d->gboxSettings->histogramBox()->setGradientVisible(false);
 
     // -------------------------------------------------------------
