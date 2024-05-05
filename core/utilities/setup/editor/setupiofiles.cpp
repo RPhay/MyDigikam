@@ -279,66 +279,66 @@ void SetupIOFiles::applySettings()
 
     if (d->JPEGOptions)
     {
-        group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
+        group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->settings().value(QLatin1String("subsampling")).toInt());
     }
 
     // ---
 
     if (d->PNGOptions)
     {
-        group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings().value(QLatin1String("quality")).toInt());
     }
 
     // ---
 
     if (d->TIFFOptions)
     {
-        group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
+        group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->settings().value(QLatin1String("compress")).toBool());
     }
 
 #ifdef HAVE_JASPER
 
     if (d->JPEG2000Options)
     {
-        group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->settings().value(QLatin1String("lossless")).toBool());
     }
 
 #endif // HAVE_JASPER
 
     if (d->PGFOptions)
     {
-        group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
 #ifdef HAVE_X265
 
     if (d->HEIFOptions)
     {
-        group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
 #endif // HAVE_X265
 
     if (d->JXLOptions)
     {
-        group.writeEntry(d->configJXLCompressionEntry,      d->JXLOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configJXLLossLessEntry,         d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configJXLCompressionEntry,      d->JXLOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configJXLLossLessEntry,         d->JXLOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     if (d->WEBPOptions)
     {
-        group.writeEntry(d->configWEBPCompressionEntry,     d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configWEBPLossLessEntry,        d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configWEBPCompressionEntry,     d->WEBPOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configWEBPLossLessEntry,        d->WEBPOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     if (d->AVIFOptions)
     {
-        group.writeEntry(d->configAVIFCompressionEntry,     d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configAVIFLossLessEntry,        d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configAVIFCompressionEntry,     d->AVIFOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(d->configAVIFLossLessEntry,        d->AVIFOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     group.writeEntry(d->configShowImageSettingsDialog,      d->showImageSettingsDialog->isChecked());
