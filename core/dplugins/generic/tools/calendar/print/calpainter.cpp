@@ -98,7 +98,7 @@ void CalPainter::paint(int month)
     // FIXME: magic number 42
 
     int days[42];
-    int startDayOffset = QLocale().weekdays().first();
+    int startDayOffset = QLocale().weekdays().constFirst();
 
     for (int i = 0 ; i < 42 ; ++i)
     {

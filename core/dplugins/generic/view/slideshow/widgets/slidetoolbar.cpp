@@ -45,32 +45,20 @@ class Q_DECL_HIDDEN SlideToolBar::Private
 {
 public:
 
-    explicit Private()
-      : playBtn         (nullptr),
-        prevBtn         (nullptr),
-        nextBtn         (nullptr),
-        stopBtn         (nullptr),
-        delayBtn        (nullptr),
-        deleteBtn       (nullptr),
-        setupBtn        (nullptr),
-        screenSelectBtn (nullptr),
-        currentlyPause  (false),
-        settings        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QToolButton*          playBtn;
-    QToolButton*          prevBtn;
-    QToolButton*          nextBtn;
-    QToolButton*          stopBtn;
-    QToolButton*          delayBtn;
-    QToolButton*          deleteBtn;
-    QToolButton*          setupBtn;
-    QToolButton*          screenSelectBtn;
+    QToolButton*          playBtn           = nullptr;
+    QToolButton*          prevBtn           = nullptr;
+    QToolButton*          nextBtn           = nullptr;
+    QToolButton*          stopBtn           = nullptr;
+    QToolButton*          delayBtn          = nullptr;
+    QToolButton*          deleteBtn         = nullptr;
+    QToolButton*          setupBtn          = nullptr;
+    QToolButton*          screenSelectBtn   = nullptr;
 
-    bool                  currentlyPause;
+    bool                  currentlyPause    = false;
 
-    SlideShowSettings*    settings;
+    SlideShowSettings*    settings          = nullptr;
 };
 
 SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)

@@ -45,7 +45,7 @@ class SlideShowSettings
 public:
 
     explicit SlideShowSettings();
-    ~SlideShowSettings();
+    ~SlideShowSettings() = default;
 
     void readFromConfig();
     void writeToConfig();

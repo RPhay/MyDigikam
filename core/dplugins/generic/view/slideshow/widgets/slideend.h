@@ -34,7 +34,7 @@ class SlideEnd : public QWidget
 public:
 
     explicit SlideEnd(QWidget* const parent = nullptr);
-    ~SlideEnd() override;
+    ~SlideEnd() override = default;
 };
 
 } // namespace DigikamGenericSlideShowPlugin

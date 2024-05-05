@@ -35,12 +35,9 @@ class Q_DECL_HIDDEN SlideError::Private
 
 public:
 
-    explicit Private()
-      : errorMsg(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel* errorMsg;
+    QLabel* errorMsg = nullptr;
 };
 
 SlideError::SlideError(QWidget* const parent)

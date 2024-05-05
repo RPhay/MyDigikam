@@ -42,17 +42,13 @@ class Q_DECL_HIDDEN SlideProperties::Private
 {
 public:
 
-    explicit Private()
-        : maxStringLen(80),
-          settings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    const int                maxStringLen;
+    const int                maxStringLen   = 80;
 
     QUrl                     url;
 
-    SlideShowSettings*       settings;
+    SlideShowSettings*       settings       = nullptr;
 
     DInfoInterface::DInfoMap infoMap;
 };

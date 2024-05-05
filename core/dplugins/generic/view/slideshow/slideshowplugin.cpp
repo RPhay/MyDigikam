@@ -45,10 +45,6 @@ SlideShowPlugin::SlideShowPlugin(QObject* const parent)
 {
 }
 
-SlideShowPlugin::~SlideShowPlugin()
-{
-}
-
 QString SlideShowPlugin::name() const
 {
     return i18n("SlideShow");
@@ -142,7 +138,7 @@ QList<DPluginAuthor> SlideShowPlugin::authors() const
                              QString::fromUtf8("(C) 2004-2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2023"))
+                             QString::fromUtf8("(C) 2005-2024"))
             << DPluginAuthor(QString::fromUtf8("Minh Nghia Duong"),
                              QString::fromUtf8("minhnghiaduong997 at gmail dot com"),
                              QString::fromUtf8("(C) 2019-2021"))
@@ -340,7 +336,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     {
         if (!settings->iface->currentSelectedItems().isEmpty())
         {
-            slide->setCurrentItem(settings->iface->currentSelectedItems()[0]);
+            slide->setCurrentItem(settings->iface->currentSelectedItems().constFirst());
         }
         else
         {

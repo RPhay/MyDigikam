@@ -40,7 +40,7 @@ class SlideImage : public QWidget
 public:
 
     explicit SlideImage(QWidget* const parent);
-    ~SlideImage() override;
+    ~SlideImage()                   override;
 
     void setPreviewSettings(const PreviewSettings& settings);
     void setLoadUrl(const QUrl& url);
@@ -56,7 +56,7 @@ private Q_SLOTS:
 
 private:
 
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
     void updatePixmap();
 
 private:

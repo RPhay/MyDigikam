@@ -82,10 +82,6 @@ SlideShowSettings::SlideShowSettings()
 {
 }
 
-SlideShowSettings::~SlideShowSettings()
-{
-}
-
 void SlideShowSettings::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();

@@ -79,10 +79,6 @@ SlideEnd::SlideEnd(QWidget* const parent)
     grid->setSpacing(spacing);
 }
 
-SlideEnd::~SlideEnd()
-{
-}
-
 } // namespace DigikamGenericSlideShowPlugin
 
 #include "moc_slideend.cpp"

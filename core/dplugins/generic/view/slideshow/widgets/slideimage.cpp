@@ -37,11 +37,7 @@ class Q_DECL_HIDDEN SlideImage::Private
 
 public:
 
-    explicit Private()
-      : previewThread       (nullptr),
-        previewPreloadThread(nullptr)
-    {
-    }
+    Private() = default;
 
     PreviewSettings     previewSettings;
 
@@ -50,8 +46,8 @@ public:
     QUrl                currentImage;
 
     DImg                preview;
-    PreviewLoadThread*  previewThread;
-    PreviewLoadThread*  previewPreloadThread;
+    PreviewLoadThread*  previewThread           = nullptr;
+    PreviewLoadThread*  previewPreloadThread    = nullptr;
 };
 
 SlideImage::SlideImage(QWidget* const parent)

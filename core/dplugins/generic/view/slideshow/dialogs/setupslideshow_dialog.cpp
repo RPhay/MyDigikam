@@ -49,53 +49,31 @@ class Q_DECL_HIDDEN SetupSlideShowDialog::Private
 {
 public:
 
-    explicit Private()
-      : startWithCurrent    (nullptr),
-        loopMode            (nullptr),
-        suffleMode          (nullptr),
-        showName            (nullptr),
-        showDate            (nullptr),
-        showApertureFocal   (nullptr),
-        showExpoSensitivity (nullptr),
-        showMakeModel       (nullptr),
-        showLensModel       (nullptr),
-        showLabels          (nullptr),
-        showRating          (nullptr),
-        showComment         (nullptr),
-        showTitle           (nullptr),
-        showTags            (nullptr),
-        showCapIfNoTitle    (nullptr),
-        showProgress        (nullptr),
-        screenPlacement     (nullptr),
-        captionFont         (nullptr),
-        delayInput          (nullptr),
-        settings            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*         startWithCurrent;
-    QCheckBox*         loopMode;
-    QCheckBox*         suffleMode;
-    QCheckBox*         showName;
-    QCheckBox*         showDate;
-    QCheckBox*         showApertureFocal;
-    QCheckBox*         showExpoSensitivity;
-    QCheckBox*         showMakeModel;
-    QCheckBox*         showLensModel;
-    QCheckBox*         showLabels;
-    QCheckBox*         showRating;
-    QCheckBox*         showComment;
-    QCheckBox*         showTitle;
-    QCheckBox*         showTags;
-    QCheckBox*         showCapIfNoTitle;
-    QCheckBox*         showProgress;
+    QCheckBox*         startWithCurrent     = nullptr;
+    QCheckBox*         loopMode             = nullptr;
+    QCheckBox*         suffleMode           = nullptr;
+    QCheckBox*         showName             = nullptr;
+    QCheckBox*         showDate             = nullptr;
+    QCheckBox*         showApertureFocal    = nullptr;
+    QCheckBox*         showExpoSensitivity  = nullptr;
+    QCheckBox*         showMakeModel        = nullptr;
+    QCheckBox*         showLensModel        = nullptr;
+    QCheckBox*         showLabels           = nullptr;
+    QCheckBox*         showRating           = nullptr;
+    QCheckBox*         showComment          = nullptr;
+    QCheckBox*         showTitle            = nullptr;
+    QCheckBox*         showTags             = nullptr;
+    QCheckBox*         showCapIfNoTitle     = nullptr;
+    QCheckBox*         showProgress         = nullptr;
 
-    QComboBox*         screenPlacement;
+    QComboBox*         screenPlacement      = nullptr;
 
-    DFontSelect*       captionFont;
-    DIntNumInput*      delayInput;
+    DFontSelect*       captionFont          = nullptr;
+    DIntNumInput*      delayInput           = nullptr;
 
-    SlideShowSettings* settings;
+    SlideShowSettings* settings             = nullptr;
 };
 
 // --------------------------------------------------------

@@ -64,43 +64,26 @@ class Q_DECL_HIDDEN SlideShowLoader::Private
 
 public:
 
-    explicit Private()
-        : fileIndex         (-1),
-          screenSaverCookie (-1),
-          mouseMoveTimer    (nullptr),
-          imageView         (nullptr),
+    Private() = default;
+
+    int                    fileIndex            = -1;
+    int                    screenSaverCookie    = -1;
+
+    QTimer*                mouseMoveTimer       = nullptr;  ///< To hide cursor when not moved.
+
+    SlideImage*            imageView            = nullptr;
 
 #ifdef HAVE_MEDIAPLAYER
 
-          videoView         (nullptr),
+    SlideVideo*            videoView            = nullptr;
 
 #endif
 
-          errorView         (nullptr),
-          endView           (nullptr),
-          osd               (nullptr),
-          settings          (nullptr)
-    {
-    }
+    SlideError*            errorView            = nullptr;
+    SlideEnd*              endView              = nullptr;
+    SlideOSD*              osd                  = nullptr;
 
-    int                    fileIndex;
-    int                    screenSaverCookie;
-
-    QTimer*                mouseMoveTimer;  ///< To hide cursor when not moved.
-
-    SlideImage*            imageView;
-
-#ifdef HAVE_MEDIAPLAYER
-
-    SlideVideo*            videoView;
-
-#endif
-
-    SlideError*            errorView;
-    SlideEnd*              endView;
-    SlideOSD*              osd;
-
-    SlideShowSettings*     settings;
+    SlideShowSettings*     settings             = nullptr;
 
     QMap<QString, QString> shortcutPrefixes;
 };

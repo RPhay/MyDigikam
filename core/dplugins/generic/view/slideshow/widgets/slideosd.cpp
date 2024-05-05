@@ -45,46 +45,28 @@ class Q_DECL_HIDDEN SlideOSD::Private
 {
 public:
 
-    explicit Private()
-      : paused          (false),
-        video           (false),
-        blink           (false),
-        ready           (false),
-        refresh         (1000),       ///< Progress bar refresh in ms
-        progressBar     (nullptr),
-        progressTimer   (nullptr),
-        labelsBox       (nullptr),
-        progressBox     (nullptr),
-        parent          (nullptr),
-        slideProps      (nullptr),
-        toolBar         (nullptr),
-        ratingWidget    (nullptr),
-        clWidget        (nullptr),
-        plWidget        (nullptr),
-        settings        (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                paused;
-    bool                video;
-    bool                blink;
-    bool                ready;
+    bool                paused          = false;
+    bool                video           = false;
+    bool                blink           = false;
+    bool                ready           = false;
 
-    int const           refresh;
+    int const           refresh         = 1000;     ///< Progress bar refresh in ms
 
-    QProgressBar*       progressBar;
-    QTimer*             progressTimer;
+    QProgressBar*       progressBar     = nullptr;
+    QTimer*             progressTimer   = nullptr;
 
-    DHBox*              labelsBox;
-    DHBox*              progressBox;
+    DHBox*              labelsBox       = nullptr;
+    DHBox*              progressBox     = nullptr;
 
-    SlideShowLoader*    parent;
-    SlideProperties*    slideProps;
-    SlideToolBar*       toolBar;
-    RatingWidget*       ratingWidget;
-    ColorLabelSelector* clWidget;
-    PickLabelSelector*  plWidget;
-    SlideShowSettings*  settings;
+    SlideShowLoader*    parent          = nullptr;
+    SlideProperties*    slideProps      = nullptr;
+    SlideToolBar*       toolBar         = nullptr;
+    RatingWidget*       ratingWidget    = nullptr;
+    ColorLabelSelector* clWidget        = nullptr;
+    PickLabelSelector*  plWidget        = nullptr;
+    SlideShowSettings*  settings        = nullptr;
 };
 
 SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent)
