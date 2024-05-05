@@ -14,10 +14,6 @@
 
 #include "vidslidesettings.h"
 
-// Qt includes
-
-#include <QStandardPaths>
-
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -29,30 +25,6 @@
 
 namespace Digikam
 {
-
-VidSlideSettings::VidSlideSettings()
-    : selMode       (IMAGES),
-      transition    (TransitionMngr::None),
-      imgFrames     (125),
-      abitRate      (64000),
-      vbitRate      (VBR12),
-      vStandard     (PAL),
-      vType         (BLUERAY),
-      vCodec        (X264),
-      vFormat       (MP4),
-      vEffect       (EffectMngr::None),
-      conflictRule  (FileSaveConflictBox::OVERWRITE),
-      outputDir     (QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)),
-      outputPlayer  (INTERNAL),
-      equalize      (false),
-      strength      (5),
-      iface         (nullptr)
-{
-}
-
-VidSlideSettings::~VidSlideSettings()
-{
-}
 
 void VidSlideSettings::readSettings(KConfigGroup& group)
 {

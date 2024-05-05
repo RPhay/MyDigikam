@@ -24,6 +24,7 @@
 #include <QSize>
 #include <QMap>
 #include <QTime>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -185,8 +186,8 @@ public:
 
 public:
 
-    explicit VidSlideSettings();
-    ~VidSlideSettings();
+    VidSlideSettings()  = default;
+    ~VidSlideSettings() = default;
 
     /**
      * Read and write settings in config file between sessions.
@@ -217,47 +218,54 @@ public:
 
 public:
 
-    Selection                         selMode;          ///< Items selection mode
+    Selection                         selMode           = IMAGES;               ///< Items selection mode
 
     // -- Generator settings ------
 
-    QList<QUrl>                       inputImages;      ///< Images stream.
-    QString                           audioTrack;       ///< Soundtrack stream.
+    QList<QUrl>                       inputImages;                              ///< Images stream.
+    QString                           audioTrack;                               ///< Soundtrack stream.
 
-    TransitionMngr::TransType         transition;       ///< Transition type between images.
+    TransitionMngr::TransType         transition        = TransitionMngr::None; ///< Transition type between images.
 
-    int                               imgFrames;        ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
+    int                               imgFrames         = 125;                  ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
 
-    int                               abitRate;         ///< Encoded Audio stream bit rate in bit/s.
-    VidBitRate                        vbitRate;         ///< Encoded Video stream bit rate in bit/s.
-    VidStd                            vStandard;        ///< Encoded Video standard => frame rate in img/s.
-    VidType                           vType;            ///< Encoded video type.
-    VidCodec                          vCodec;           ///< Encoded video codec.
-    VidFormat                         vFormat;          ///< Encoded video container format.
-    EffectMngr::EffectType            vEffect;          ///< Encoded video effect while displaying images.
+    int                               abitRate          = 64000;                ///< Encoded Audio stream bit rate in bit/s.
+    VidBitRate                        vbitRate          = VBR12;                ///< Encoded Video stream bit rate in bit/s.
+    VidStd                            vStandard         = PAL;                  ///< Encoded Video standard => frame rate in img/s.
+    VidType                           vType             = BLUERAY;              ///< Encoded video type.
+    VidCodec                          vCodec            = X264;                 ///< Encoded video codec.
+    VidFormat                         vFormat           = MP4;                  ///< Encoded video container format.
+    EffectMngr::EffectType            vEffect           = EffectMngr::None;     ///< Encoded video effect while displaying images.
 
-    FileSaveConflictBox::ConflictRule conflictRule;     ///< Rule to follow if video file already exists.
-    QString                           outputDir;        ///< Encoded video stream directory.
+    /**
+     * Rule to follow if video file already exists.
+     */
+    FileSaveConflictBox::ConflictRule conflictRule      = FileSaveConflictBox::OVERWRITE;
+
+    /**
+     * Encoded video stream directory.
+     */
+    QString                           outputDir         = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
 
     // ---------------------
 
-    QString                           tempDir;          ///< To store temporary frames.
-    QString                           outputFile;       ///< Path to encoded video.
-    QString                           filesList;        ///< Path to list of frame files to encode.
-    QString                           outputVideo;      ///< Target video file encoded at end.
-    VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
-    QString                           ffmpegPath;       ///< Path to FFmpeg binary.
-    bool                              equalize;         ///< Equalize filter to applying while encoding video from frames.
-    int                               strength;         ///< Equalization strength factor.
+    QString                           tempDir;                                  ///< To store temporary frames.
+    QString                           outputFile;                               ///< Path to encoded video.
+    QString                           filesList;                                ///< Path to list of frame files to encode.
+    QString                           outputVideo;                              ///< Target video file encoded at end.
+    VidPlayer                         outputPlayer      = INTERNAL;             ///< Open video stream in player at end.
+    QString                           ffmpegPath;                               ///< Path to FFmpeg binary.
+    bool                              equalize          = false;                ///< Equalize filter to applying while encoding video from frames.
+    int                               strength          = 5;                    ///< Equalization strength factor.
 
     // -- FFMpeg features --------
 
-    QMap<QString, QString>            ffmpegCodecs;     ///< Map of FFmpeg codec names and features.
-    QMap<QString, QString>            ffmpegFormats;    ///< Map of FFmpeg format names and features.
-    QTime                             soundtrackLength; ///< Duration of the soundtrack.
+    QMap<QString, QString>            ffmpegCodecs;                             ///< Map of FFmpeg codec names and features.
+    QMap<QString, QString>            ffmpegFormats;                            ///< Map of FFmpeg format names and features.
+    QTime                             soundtrackLength;                         ///< Duration of the soundtrack.
 
-    FrameOsdSettings                  osdSettings;      ///< On Screen Display parameters.
-    DInfoInterface*                   iface;            ///< Plugin host interface to handle item properties.
+    FrameOsdSettings                  osdSettings;                              ///< On Screen Display parameters.
+    DInfoInterface*                   iface             = nullptr;              ///< Plugin host interface to handle item properties.
 };
 
 } // namespace Digikam
