@@ -26,38 +26,6 @@
 namespace Digikam
 {
 
-MetaEngineSettingsContainer::MetaEngineSettingsContainer()
-    : exifRotate            (true),
-      exifSetOrientation    (true),
-      saveComments          (false),
-      saveDateTime          (false),
-      savePickLabel         (false),
-      saveColorLabel        (false),
-      saveRating            (false),
-      saveTemplate          (false),
-      saveTags              (false),
-      saveFaceTags          (false),
-      savePosition          (false),
-      writeWithExifTool     (false),
-      writeRawFiles         (false),
-      writeDngFiles         (false),
-      updateFileTimeStamp   (true),
-      rescanImageIfModified (false),
-      useXMPSidecar4Reading (false),
-      useCompatibleFileName (false),
-      useLazySync           (false),
-      useFastScan           (false),
-      metadataWritingMode   (MetaEngine::WRITE_TO_FILE_ONLY),
-      rotationBehavior      (RotatingFlags | RotateByLosslessRotation),
-      albumDateFrom         (OldestItemDate),
-      sidecarExtensions     (QStringList())
-{
-}
-
-MetaEngineSettingsContainer::~MetaEngineSettingsContainer()
-{
-}
-
 void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
 {
     exifRotate            = group.readEntry("EXIF Rotate",                              true);

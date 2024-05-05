@@ -73,8 +73,8 @@ public:
 
 public:
 
-    explicit MetaEngineSettingsContainer();
-    ~MetaEngineSettingsContainer();
+    MetaEngineSettingsContainer()  = default;
+    ~MetaEngineSettingsContainer() = default;
 
 public:
 
@@ -85,35 +85,35 @@ public:
 
 public:
 
-    bool                            exifRotate;
-    bool                            exifSetOrientation;
+    bool                            exifRotate              = true;
+    bool                            exifSetOrientation      = true;
 
-    bool                            saveComments;
-    bool                            saveDateTime;
-    bool                            savePickLabel;
-    bool                            saveColorLabel;
-    bool                            saveRating;
+    bool                            saveComments            = false;
+    bool                            saveDateTime            = false;
+    bool                            savePickLabel           = false;
+    bool                            saveColorLabel          = false;
+    bool                            saveRating              = false;
 
-    bool                            saveTemplate;
-    bool                            saveTags;
-    bool                            saveFaceTags;
-    bool                            savePosition;
+    bool                            saveTemplate            = false;
+    bool                            saveTags                = false;
+    bool                            saveFaceTags            = false;
+    bool                            savePosition            = false;
 
-    bool                            writeWithExifTool;
-    bool                            writeRawFiles;
-    bool                            writeDngFiles;
-    bool                            updateFileTimeStamp;
-    bool                            rescanImageIfModified;
-    bool                            useXMPSidecar4Reading;
-    bool                            useCompatibleFileName;
-    bool                            useLazySync;
-    bool                            useFastScan;
+    bool                            writeWithExifTool       = false;
+    bool                            writeRawFiles           = false;
+    bool                            writeDngFiles           = false;
+    bool                            updateFileTimeStamp     = true;
+    bool                            rescanImageIfModified   = false;
+    bool                            useXMPSidecar4Reading   = false;
+    bool                            useCompatibleFileName   = false;
+    bool                            useLazySync             = false;
+    bool                            useFastScan             = false;
 
-    MetaEngine::MetadataWritingMode metadataWritingMode;
+    MetaEngine::MetadataWritingMode metadataWritingMode     = MetaEngine::WRITE_TO_FILE_ONLY;
 
-    RotationBehaviorFlags           rotationBehavior;
+    RotationBehaviorFlags           rotationBehavior        = RotationBehaviorFlags(RotatingFlags | RotateByLosslessRotation);
 
-    AlbumDateSource                 albumDateFrom;
+    AlbumDateSource                 albumDateFrom           = OldestItemDate;
 
     QStringList                     sidecarExtensions;
 
