@@ -66,7 +66,7 @@ protected:
 
     static int      m_numKBEffectRepeated;
     bool            m_needFadeIn  = false;
-    KBImage*        m_img[2];;
+    KBImage*        m_img[2];
 
 private:
 

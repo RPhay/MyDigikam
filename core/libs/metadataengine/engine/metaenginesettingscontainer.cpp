@@ -91,7 +91,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
 
     sidecarExtensions     = group.readEntry("Custom Sidecar Extensions",   QStringList());
 
-    exifToolPath          = group.readEntry("ExifTool Path",               defaultExifToolSearchPaths().first());
+    exifToolPath          = group.readEntry("ExifTool Path",               defaultExifToolSearchPaths().constFirst());
 
     if (group.readEntry("Rotate By Internal Flag", true))
     {
