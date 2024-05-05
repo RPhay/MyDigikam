@@ -300,50 +300,50 @@ void FileSaveOptionsBox::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
-    group.writeEntry(QLatin1String("JPEGCompression"),     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
+    group.writeEntry(QLatin1String("JPEGCompression"),     d->JPEGOptions->settings().value(QLatin1String("quality")).toInt());
+    group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->settings().value(QLatin1String("subsampling")).toInt());
 
     // ---
 
-    group.writeEntry(QLatin1String("PNGCompression"),      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(QLatin1String("PNGCompression"),      d->PNGOptions->settings().value(QLatin1String("quality")).toInt());
 
     // ---
 
-    group.writeEntry(QLatin1String("TIFFCompression"),     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
+    group.writeEntry(QLatin1String("TIFFCompression"),     d->TIFFOptions->settings().value(QLatin1String("compress")).toBool());
 
 #ifdef HAVE_JASPER
 
-    group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
+    group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->settings().value(QLatin1String("quality")).toInt());
+    group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->settings().value(QLatin1String("lossless")).toBool());
 
 #endif // HAVE_JASPER
 
-    group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
+    group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->settings().value(QLatin1String("quality")).toInt());
+    group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->settings().value(QLatin1String("lossless")).toBool());
 
 #ifdef HAVE_X265
 
-    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
+    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings().value(QLatin1String("quality")).toInt());
+    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings().value(QLatin1String("lossless")).toBool());
 
 #endif // HAVE_X265
 
     if (d->JXLOptions)
     {
-        group.writeEntry(QLatin1String("JXLCompression"),  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(QLatin1String("JXLLossLess"),     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(QLatin1String("JXLCompression"),  d->JXLOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(QLatin1String("JXLLossLess"),     d->JXLOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     if (d->WEBPOptions)
     {
-        group.writeEntry(QLatin1String("WEBPCompression"), d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(QLatin1String("WEBPLossLess"),    d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(QLatin1String("WEBPCompression"), d->WEBPOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(QLatin1String("WEBPLossLess"),    d->WEBPOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     if (d->AVIFOptions)
     {
-        group.writeEntry(QLatin1String("AVIFCompression"),  d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(QLatin1String("AVIFLossLess"),     d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(QLatin1String("AVIFCompression"),  d->AVIFOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(QLatin1String("AVIFLossLess"),     d->AVIFOptions->settings().value(QLatin1String("lossless")).toBool());
     }
 
     config->sync();
