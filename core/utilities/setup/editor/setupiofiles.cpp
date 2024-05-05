@@ -52,24 +52,24 @@ public:
 
 public:
 
-    static const QString configGroupName;
-    static const QString configJPEGCompressionEntry;
-    static const QString configJPEGSubSamplingEntry;
-    static const QString configPNGCompressionEntry;
-    static const QString configTIFFCompressionEntry;
-    static const QString configJPEG2000CompressionEntry;
-    static const QString configJPEG2000LossLessEntry;
-    static const QString configPGFCompressionEntry;
-    static const QString configPGFLossLessEntry;
-    static const QString configHEIFCompressionEntry;
-    static const QString configHEIFLossLessEntry;
-    static const QString configShowImageSettingsDialog;
-    static const QString configJXLCompressionEntry;
-    static const QString configJXLLossLessEntry;
-    static const QString configWEBPCompressionEntry;
-    static const QString configWEBPLossLessEntry;
-    static const QString configAVIFCompressionEntry;
-    static const QString configAVIFLossLessEntry;
+    const QString configGroupName                   = QLatin1String("ImageViewer Settings");
+    const QString configJPEGCompressionEntry        = QLatin1String("JPEGCompression");
+    const QString configJPEGSubSamplingEntry        = QLatin1String("JPEGSubSampling");
+    const QString configPNGCompressionEntry         = QLatin1String("PNGCompression");
+    const QString configTIFFCompressionEntry        = QLatin1String("TIFFCompression");
+    const QString configJPEG2000CompressionEntry    = QLatin1String("JPEG2000Compression");
+    const QString configJPEG2000LossLessEntry       = QLatin1String("JPEG2000LossLess");
+    const QString configPGFCompressionEntry         = QLatin1String("PGFCompression");
+    const QString configPGFLossLessEntry            = QLatin1String("PGFLossLess");
+    const QString configHEIFCompressionEntry        = QLatin1String("HEIFCompression");
+    const QString configHEIFLossLessEntry           = QLatin1String("HEIFLossLess");
+    const QString configShowImageSettingsDialog     = QLatin1String("ShowImageSettingsDialog");
+    const QString configJXLCompressionEntry         = QLatin1String("JXLCompression");
+    const QString configJXLLossLessEntry            = QLatin1String("JXLLossLess");
+    const QString configWEBPCompressionEntry        = QLatin1String("WEBPCompression");
+    const QString configWEBPLossLessEntry           = QLatin1String("WEBPLossLess");
+    const QString configAVIFCompressionEntry        = QLatin1String("AVIFCompression");
+    const QString configAVIFLossLessEntry           = QLatin1String("AVIFLossLess");
 
     DImgLoaderSettings*  JPEGOptions                = nullptr;
     DImgLoaderSettings*  PNGOptions                 = nullptr;
@@ -94,25 +94,6 @@ public:
     DImgLoaderSettings*  AVIFOptions                = nullptr;
     QCheckBox*           showImageSettingsDialog    = nullptr;
 };
-
-const QString SetupIOFiles::Private::configGroupName(QLatin1String("ImageViewer Settings"));
-const QString SetupIOFiles::Private::configJPEGCompressionEntry(QLatin1String("JPEGCompression"));
-const QString SetupIOFiles::Private::configJPEGSubSamplingEntry(QLatin1String("JPEGSubSampling"));
-const QString SetupIOFiles::Private::configPNGCompressionEntry(QLatin1String("PNGCompression"));
-const QString SetupIOFiles::Private::configTIFFCompressionEntry(QLatin1String("TIFFCompression"));
-const QString SetupIOFiles::Private::configJPEG2000CompressionEntry(QLatin1String("JPEG2000Compression"));
-const QString SetupIOFiles::Private::configJPEG2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
-const QString SetupIOFiles::Private::configPGFCompressionEntry(QLatin1String("PGFCompression"));
-const QString SetupIOFiles::Private::configPGFLossLessEntry(QLatin1String("PGFLossLess"));
-const QString SetupIOFiles::Private::configHEIFCompressionEntry(QLatin1String("HEIFCompression"));
-const QString SetupIOFiles::Private::configHEIFLossLessEntry(QLatin1String("HEIFLossLess"));
-const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String("ShowImageSettingsDialog"));
-const QString SetupIOFiles::Private::configJXLCompressionEntry(QLatin1String("JXLCompression"));
-const QString SetupIOFiles::Private::configJXLLossLessEntry(QLatin1String("JXLLossLess"));
-const QString SetupIOFiles::Private::configWEBPCompressionEntry(QLatin1String("WEBPCompression"));
-const QString SetupIOFiles::Private::configWEBPLossLessEntry(QLatin1String("WEBPLossLess"));
-const QString SetupIOFiles::Private::configAVIFCompressionEntry(QLatin1String("AVIFCompression"));
-const QString SetupIOFiles::Private::configAVIFLossLessEntry(QLatin1String("AVIFLossLess"));
 
 // --------------------------------------------------------
 
