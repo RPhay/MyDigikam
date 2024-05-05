@@ -22,6 +22,7 @@
 #include <QColor>
 #include <QString>
 #include <QFont>
+#include <QFontDatabase>
 #include <QUrl>
 
 // Local includes
@@ -44,7 +45,7 @@ class SlideShowSettings
 
 public:
 
-    explicit SlideShowSettings();
+    SlideShowSettings()  = default;
     ~SlideShowSettings() = default;
 
     void readFromConfig();
@@ -62,102 +63,102 @@ public:
     /**
      * Start Slide with current selected item
      */
-    bool                         startWithCurrent;
+    bool                         startWithCurrent           = false;
 
     /**
      * Auto-rotate image accordingly with Exif Rotation tag
      */
-    bool                         exifRotate;
+    bool                         exifRotate                 = true;
 
     /**
      * Print picture file name while slide
      */
-    bool                         printName;
+    bool                         printName                  = true;
 
     /**
      * Print picture creation date while slide
      */
-    bool                         printDate;
+    bool                         printDate                  = false;
 
     /**
      * Print camera Aperture and Focal while slide
      */
-    bool                         printApertureFocal;
+    bool                         printApertureFocal         = false;
 
     /**
      * Print camera Make and Model while slide
      */
-    bool                         printMakeModel;
+    bool                         printMakeModel             = false;
 
     /**
      * Print camera Lens model while slide
      */
-    bool                         printLensModel;
+    bool                         printLensModel             = false;
 
     /**
      * Print camera Exposure and Sensitivity while slide
      */
-    bool                         printExpoSensitivity;
+    bool                         printExpoSensitivity       = false;
 
     /**
      * Print picture comment while slide
      */
-    bool                         printComment;
+    bool                         printComment               = false;
 
     /**
      * Print image title while slide
      */
-    bool                         printTitle;
+    bool                         printTitle                 = false;
 
     /**
      * Print image captions if no title available while slide
      */
-    bool                         printCapIfNoTitle;
+    bool                         printCapIfNoTitle          = false;
 
     /**
      * Print tag names while slide
      */
-    bool                         printTags;
+    bool                         printTags                  = false;
 
     /**
      * Print color label and pick label while slide
      */
-    bool                         printLabels;
+    bool                         printLabels                = false;
 
     /**
      * Print rating while slide
      */
-    bool                         printRating;
+    bool                         printRating                = false;
 
     /**
      * Slide pictures in loop
      */
-    bool                         loop;
+    bool                         loop                       = false;
 
     /**
      * Suffle pictures
      */
-    bool                         suffle;
+    bool                         suffle                     = false;
 
     /**
      * Delay in seconds
      */
-    int                          delay;
+    int                          delay                      = 5;
 
     /**
      * Whether to enable the auto-move feature.
      */
-    bool                         autoPlayEnabled;
+    bool                         autoPlayEnabled            = true;
 
     /**
      * Screen to use in case of multi-monitor computer.
      */
-    int                          slideScreen;
+    int                          slideScreen                = -2;
 
     /**
      * Show progress indicator
      */
-    bool                         showProgressIndicator;
+    bool                         showProgressIndicator      = true;
 
     /**
      * Load images (previews) in full size, not reduced version
@@ -182,40 +183,40 @@ public:
     /**
      * Font for the display of caption text
      */
-    QFont                        captionFont;
+    QFont                        captionFont                = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     /**
      * Interface to access to host application data
      */
-    DInfoInterface*              iface;
+    DInfoInterface*              iface                      = nullptr;
 
     /**
      * The plugin instance.
      */
-    DPluginGeneric*              plugin;
+    DPluginGeneric*              plugin                     = nullptr;
 
 private:
 
-    static const QString         configGroupName;
-    static const QString         configSlideShowStartCurrentEntry;
-    static const QString         configSlideShowDelayEntry;
-    static const QString         configSlideShowLoopEntry;
-    static const QString         configSlideShowSuffleEntry;
-    static const QString         configSlideShowPrintApertureFocalEntry;
-    static const QString         configSlideShowPrintCommentEntry;
-    static const QString         configSlideShowPrintTitleEntry;
-    static const QString         configSlideShowPrintCapIfNoTitleEntry;
-    static const QString         configSlideShowPrintDateEntry;
-    static const QString         configSlideShowPrintExpoSensitivityEntry;
-    static const QString         configSlideShowPrintMakeModelEntry;
-    static const QString         configSlideShowPrintLensModelEntry;
-    static const QString         configSlideShowPrintNameEntry;
-    static const QString         configSlideShowPrintTagsEntry;
-    static const QString         configSlideShowPrintLabelsEntry;
-    static const QString         configSlideShowPrintRatingEntry;
-    static const QString         configSlideShowProgressIndicatorEntry;
-    static const QString         configSlideShowCaptionFontEntry;
-    static const QString         configSlideScreenEntry;
+    const QString configGroupName                           = QLatin1String("ImageViewer Settings");
+    const QString configSlideShowStartCurrentEntry          = QLatin1String("SlideShowStartCurrent");
+    const QString configSlideShowDelayEntry                 = QLatin1String("SlideShowDelay");
+    const QString configSlideShowLoopEntry                  = QLatin1String("SlideShowLoop");
+    const QString configSlideShowSuffleEntry                = QLatin1String("SlideShowSuffle");
+    const QString configSlideShowPrintApertureFocalEntry    = QLatin1String("SlideShowPrintApertureFocal");
+    const QString configSlideShowPrintCommentEntry          = QLatin1String("SlideShowPrintComment");
+    const QString configSlideShowPrintTitleEntry            = QLatin1String("SlideShowPrintTitle");
+    const QString configSlideShowPrintCapIfNoTitleEntry     = QLatin1String("SlideShowPrintCapIfNoTitle");
+    const QString configSlideShowPrintDateEntry             = QLatin1String("SlideShowPrintDate");
+    const QString configSlideShowPrintExpoSensitivityEntry  = QLatin1String("SlideShowPrintExpoSensitivity");
+    const QString configSlideShowPrintMakeModelEntry        = QLatin1String("SlideShowPrintMakeModel");
+    const QString configSlideShowPrintLensModelEntry        = QLatin1String("SlideShowPrintLensModel");
+    const QString configSlideShowPrintNameEntry             = QLatin1String("SlideShowPrintName");
+    const QString configSlideShowPrintTagsEntry             = QLatin1String("SlideShowPrintTags");
+    const QString configSlideShowPrintLabelsEntry           = QLatin1String("SlideShowPrintLabels");
+    const QString configSlideShowPrintRatingEntry           = QLatin1String("SlideShowPrintRating");
+    const QString configSlideShowProgressIndicatorEntry     = QLatin1String("SlideShowProgressIndicator");
+    const QString configSlideShowCaptionFontEntry           = QLatin1String("SlideShowCaptionFont");
+    const QString configSlideScreenEntry                    = QLatin1String("SlideScreen");
 };
 
 } // namespace DigikamGenericSlideShowPlugin

@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QFontDatabase>
 #include <QRandomGenerator>
 
 // KDE includes
@@ -33,54 +32,6 @@ using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
-
-const QString SlideShowSettings::configGroupName(QLatin1String("ImageViewer Settings"));
-const QString SlideShowSettings::configSlideShowStartCurrentEntry(QLatin1String("SlideShowStartCurrent"));
-const QString SlideShowSettings::configSlideShowDelayEntry(QLatin1String("SlideShowDelay"));
-const QString SlideShowSettings::configSlideShowLoopEntry(QLatin1String("SlideShowLoop"));
-const QString SlideShowSettings::configSlideShowSuffleEntry(QLatin1String("SlideShowSuffle"));
-const QString SlideShowSettings::configSlideShowPrintApertureFocalEntry(QLatin1String("SlideShowPrintApertureFocal"));
-const QString SlideShowSettings::configSlideShowPrintCommentEntry(QLatin1String("SlideShowPrintComment"));
-const QString SlideShowSettings::configSlideShowPrintTitleEntry(QLatin1String("SlideShowPrintTitle"));
-const QString SlideShowSettings::configSlideShowPrintCapIfNoTitleEntry(QLatin1String("SlideShowPrintCapIfNoTitle"));
-const QString SlideShowSettings::configSlideShowPrintDateEntry(QLatin1String("SlideShowPrintDate"));
-const QString SlideShowSettings::configSlideShowPrintExpoSensitivityEntry(QLatin1String("SlideShowPrintExpoSensitivity"));
-const QString SlideShowSettings::configSlideShowPrintMakeModelEntry(QLatin1String("SlideShowPrintMakeModel"));
-const QString SlideShowSettings::configSlideShowPrintLensModelEntry(QLatin1String("SlideShowPrintLensModel"));
-const QString SlideShowSettings::configSlideShowPrintNameEntry(QLatin1String("SlideShowPrintName"));
-const QString SlideShowSettings::configSlideShowPrintTagsEntry(QLatin1String("SlideShowPrintTags"));
-const QString SlideShowSettings::configSlideShowPrintLabelsEntry(QLatin1String("SlideShowPrintLabels"));
-const QString SlideShowSettings::configSlideShowPrintRatingEntry(QLatin1String("SlideShowPrintRating"));
-const QString SlideShowSettings::configSlideShowProgressIndicatorEntry(QLatin1String("SlideShowProgressIndicator"));
-const QString SlideShowSettings::configSlideShowCaptionFontEntry(QLatin1String("SlideShowCaptionFont"));
-const QString SlideShowSettings::configSlideScreenEntry(QLatin1String("SlideScreen"));
-
-SlideShowSettings::SlideShowSettings()
-    : startWithCurrent      (false),
-      exifRotate            (true),
-      printName             (true),
-      printDate             (false),
-      printApertureFocal    (false),
-      printMakeModel        (false),
-      printLensModel        (false),
-      printExpoSensitivity  (false),
-      printComment          (false),
-      printTitle            (false),
-      printCapIfNoTitle     (false),
-      printTags             (false),
-      printLabels           (false),
-      printRating           (false),
-      loop                  (false),
-      suffle                (false),
-      delay                 (5),
-      autoPlayEnabled       (true),
-      slideScreen           (-2),
-      showProgressIndicator (true),
-      captionFont           (QFontDatabase::systemFont(QFontDatabase::GeneralFont)),
-      iface                 (nullptr),
-      plugin                (nullptr)
-{
-}
 
 void SlideShowSettings::readFromConfig()
 {
