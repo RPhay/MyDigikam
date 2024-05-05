@@ -35,7 +35,7 @@ MimeFilter::MimeFilter(QWidget* const parent)
     insertItem(TIFFiles,       i18n("TIFF Files"));
     insertItem(PGFFiles,       i18n("PGF Files"));
     insertItem(HEIFFiles,      i18n("HEIF Files"));
-    insertItem(HEIFFiles,      i18n("AVIF Files"));
+    insertItem(AVIFFiles,      i18n("AVIF Files"));
     insertItem(DNGFiles,       i18n("DNG Files"));
     insertItem(RAWFiles,       i18n("RAW Files"));
     insertItem(MoviesFiles,    i18n("Video Files"));
