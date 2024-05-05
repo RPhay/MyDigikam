@@ -75,7 +75,7 @@ public:
 
     FacePipelineFaceTagsIface()  = default;
     explicit FacePipelineFaceTagsIface(const FaceTagsIface& face);
-    ~FacePipelineFaceTagsIface() override = default;
+    ~FacePipelineFaceTagsIface() = default;
 
     FacePipelineFaceTagsIface& operator=(const FacePipelineFaceTagsIface& other);
 
