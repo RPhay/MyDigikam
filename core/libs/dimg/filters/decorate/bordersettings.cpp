@@ -49,24 +49,24 @@ public:
 
     Private() = default;
 
-    static const QString configBorderTypeEntry;
-    static const QString configBorderPercentEntry;
-    static const QString configBorderWidthEntry;
-    static const QString configPreserveAspectRatioEntry;
-    static const QString configSolidColorEntry;
-    static const QString configNiepceBorderColorEntry;
-    static const QString configNiepceLineColorEntry;
-    static const QString configBevelUpperLeftColorEntry;
-    static const QString configBevelLowerRightColorEntry;
-    static const QString configDecorativeFirstColorEntry;
-    static const QString configDecorativeSecondColorEntry;
+    const QString configBorderTypeEntry             = QLatin1String("Border Type");
+    const QString configBorderPercentEntry          = QLatin1String("Border Percent");
+    const QString configBorderWidthEntry            = QLatin1String("Border Width");
+    const QString configPreserveAspectRatioEntry    = QLatin1String("Preserve Aspect Ratio");
+    const QString configSolidColorEntry             = QLatin1String("Solid Color");
+    const QString configNiepceBorderColorEntry      = QLatin1String("Niepce Border Color");
+    const QString configNiepceLineColorEntry        = QLatin1String("Niepce Line Color");
+    const QString configBevelUpperLeftColorEntry    = QLatin1String("Bevel Upper Left Color");
+    const QString configBevelLowerRightColorEntry   = QLatin1String("Bevel Lower Right Color");
+    const QString configDecorativeFirstColorEntry   = QLatin1String("Decorative First Color");
+    const QString configDecorativeSecondColorEntry  = QLatin1String("Decorative Second Color");
 
-    QCheckBox*           preserveAspectRatio    = nullptr;
+    QCheckBox*           preserveAspectRatio        = nullptr;
 
-    QLabel*              labelBackground        = nullptr;
-    QLabel*              labelBorderPercent     = nullptr;
-    QLabel*              labelBorderWidth       = nullptr;
-    QLabel*              labelForeground        = nullptr;
+    QLabel*              labelBackground            = nullptr;
+    QLabel*              labelBorderPercent         = nullptr;
+    QLabel*              labelBorderWidth           = nullptr;
+    QLabel*              labelForeground            = nullptr;
 
     QColor               bevelLowerRightColor;
     QColor               bevelUpperLeftColor;
@@ -76,25 +76,13 @@ public:
     QColor               niepceLineColor;
     QColor               solidColor;
 
-    DColorSelector*      firstColorButton       = nullptr;
-    DColorSelector*      secondColorButton      = nullptr;
+    DColorSelector*      firstColorButton           = nullptr;
+    DColorSelector*      secondColorButton          = nullptr;
 
-    DComboBox*           borderType             = nullptr;
-    DIntNumInput*        borderPercent          = nullptr;
-    DIntNumInput*        borderWidth            = nullptr;
+    DComboBox*           borderType                 = nullptr;
+    DIntNumInput*        borderPercent              = nullptr;
+    DIntNumInput*        borderWidth                = nullptr;
 };
-
-const QString BorderSettings::Private::configBorderTypeEntry(QLatin1String("Border Type"));
-const QString BorderSettings::Private::configBorderPercentEntry(QLatin1String("Border Percent"));
-const QString BorderSettings::Private::configBorderWidthEntry(QLatin1String("Border Width"));
-const QString BorderSettings::Private::configPreserveAspectRatioEntry(QLatin1String("Preserve Aspect Ratio"));
-const QString BorderSettings::Private::configSolidColorEntry(QLatin1String("Solid Color"));
-const QString BorderSettings::Private::configNiepceBorderColorEntry(QLatin1String("Niepce Border Color"));
-const QString BorderSettings::Private::configNiepceLineColorEntry(QLatin1String("Niepce Line Color"));
-const QString BorderSettings::Private::configBevelUpperLeftColorEntry(QLatin1String("Bevel Upper Left Color"));
-const QString BorderSettings::Private::configBevelLowerRightColorEntry(QLatin1String("Bevel Lower Right Color"));
-const QString BorderSettings::Private::configDecorativeFirstColorEntry(QLatin1String("Decorative First Color"));
-const QString BorderSettings::Private::configDecorativeSecondColorEntry(QLatin1String("Decorative Second Color"));
 
 // --------------------------------------------------------
 

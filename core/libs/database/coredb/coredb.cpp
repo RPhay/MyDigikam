@@ -41,8 +41,8 @@ public:
 
     Private() = default;
 
-    static const QString configGroupName;
-    static const QString configRecentlyUsedTags;
+    const QString configGroupName           = QLatin1String("CoreDB Settings");
+    const QString configRecentlyUsedTags    = QLatin1String("Recently Used Tags");
 
     CoreDbBackend*       db                 = nullptr;
     QList<int>           recentlyAssignedTags;
@@ -54,9 +54,6 @@ public:
     QString constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean);
     QList<qlonglong> execRelatedImagesQuery(DbEngineSqlQuery& query, qlonglong id, DatabaseRelation::Type type);
 };
-
-const QString CoreDB::Private::configGroupName(QLatin1String("CoreDB Settings"));
-const QString CoreDB::Private::configRecentlyUsedTags(QLatin1String("Recently Used Tags"));
 
 QString CoreDB::Private::constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean)
 {

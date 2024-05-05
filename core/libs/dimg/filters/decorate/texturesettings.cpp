@@ -49,15 +49,12 @@ public:
 
     Private() = default;
 
-    static const QString configTextureTypeEntry;
-    static const QString configBlendGainEntry;
+    const QString configTextureTypeEntry    = QLatin1String("TextureType");
+    const QString configBlendGainEntry      = QLatin1String("BlendGain");
 
-    DComboBox*           textureType = nullptr;
-    DIntNumInput*        blendGain   = nullptr;
+    DComboBox*           textureType        = nullptr;
+    DIntNumInput*        blendGain          = nullptr;
 };
-
-const QString TextureSettings::Private::configTextureTypeEntry(QLatin1String("TextureType"));
-const QString TextureSettings::Private::configBlendGainEntry(QLatin1String("BlendGain"));
 
 // --------------------------------------------------------
 

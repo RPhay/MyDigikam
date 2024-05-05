@@ -70,9 +70,9 @@ public:
 
     Private() = default;
 
-    static const QString         configUseWholeAlbumsEntry;
-    static const QString         configUseWholeTagsEntry;
-    static const QString         configAlbumTypeEntry;
+    const QString configUseWholeAlbumsEntry                 = QLatin1String("UseWholeAlbumsEntry");
+    const QString configUseWholeTagsEntry                   = QLatin1String("UseWholeTagsEntry");
+    const QString configAlbumTypeEntry                      = QLatin1String("AlbumTypeEntry");
 
     QString                      configName;
 
@@ -94,10 +94,6 @@ public:
 
     bool                         allowRecursive             = false;
 };
-
-const QString AlbumSelectors::Private::configUseWholeAlbumsEntry(QLatin1String("UseWholeAlbumsEntry"));
-const QString AlbumSelectors::Private::configUseWholeTagsEntry(QLatin1String("UseWholeTagsEntry"));
-const QString AlbumSelectors::Private::configAlbumTypeEntry(QLatin1String("AlbumTypeEntry"));
 
 AlbumSelectors::AlbumSelectors(const QString& label,
                                const QString& configName,

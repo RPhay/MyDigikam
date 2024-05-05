@@ -57,13 +57,11 @@ public:
 
     Private() = default;
 
-    static const QString configCurveEntry;
+    const QString configCurveEntry      = QLatin1String("AdjustCurves");
 
-    int                  histoSegments = 0;
-    CurvesBox*           curvesBox     = nullptr;
+    int                  histoSegments  = 0;
+    CurvesBox*           curvesBox      = nullptr;
 };
-
-const QString CurvesSettings::Private::configCurveEntry(QLatin1String("AdjustCurves"));
 
 // --------------------------------------------------------
 

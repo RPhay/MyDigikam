@@ -39,21 +39,16 @@ public:
 
     Private() = default;
 
-    static const QString configCCAEntry;
-    static const QString configVignettingEntry;
-    static const QString configDistortionEntry;
-    static const QString configGeometryEntry;
+    const QString configCCAEntry        = QLatin1String("CCA");
+    const QString configVignettingEntry = QLatin1String("Vignetting");
+    const QString configDistortionEntry = QLatin1String("Distortion");
+    const QString configGeometryEntry   = QLatin1String("Geometry");
 
-    QCheckBox*           filterCCA = nullptr;
-    QCheckBox*           filterVIG = nullptr;
-    QCheckBox*           filterDST = nullptr;
-    QCheckBox*           filterGEO = nullptr;
+    QCheckBox*           filterCCA      = nullptr;
+    QCheckBox*           filterVIG      = nullptr;
+    QCheckBox*           filterDST      = nullptr;
+    QCheckBox*           filterGEO      = nullptr;
 };
-
-const QString LensFunSettings::Private::configCCAEntry(QLatin1String("CCA"));
-const QString LensFunSettings::Private::configVignettingEntry(QLatin1String("Vignetting"));
-const QString LensFunSettings::Private::configDistortionEntry(QLatin1String("Distortion"));
-const QString LensFunSettings::Private::configGeometryEntry(QLatin1String("Geometry"));
 
 // --------------------------------------------------------
 

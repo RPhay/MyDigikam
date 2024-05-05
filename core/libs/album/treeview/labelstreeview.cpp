@@ -68,16 +68,11 @@ public:
 
     QHash<Labels, QList<int> > selectedLabels;
 
-    static const QString       configRatingSelectionEntry;
-    static const QString       configPickSelectionEntry;
-    static const QString       configColorSelectionEntry;
-    static const QString       configExpansionEntry;
+    const QString configRatingSelectionEntry                = QLatin1String("RatingSelection");
+    const QString configPickSelectionEntry                  = QLatin1String("PickSelection");
+    const QString configColorSelectionEntry                 = QLatin1String("ColorSelection");
+    const QString configExpansionEntry                      = QLatin1String("Expansion");
 };
-
-const QString LabelsTreeView::Private::configRatingSelectionEntry(QLatin1String("RatingSelection"));
-const QString LabelsTreeView::Private::configPickSelectionEntry(QLatin1String("PickSelection"));
-const QString LabelsTreeView::Private::configColorSelectionEntry(QLatin1String("ColorSelection"));
-const QString LabelsTreeView::Private::configExpansionEntry(QLatin1String("Expansion"));
 
 LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     : QTreeWidget      (parent),

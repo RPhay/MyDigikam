@@ -164,13 +164,13 @@ public:
 
     Private() = default;
 
-    static const QString configGroupName;
-    static const QString configUseFileMetadata;
-    static const QString configTrunHighQualityThumbs;
-    static const QString configUseDefaultTargetAlbum;
-    static const QString configDefaultTargetAlbumId;
-    static const QString configFileSaveConflictRule;
-    static const QString importFiltersConfigGroupName;
+    const QString configGroupName                   = QLatin1String("Camera Settings");
+    const QString configUseFileMetadata             = QLatin1String("UseFileMetadata");
+    const QString configTrunHighQualityThumbs       = QLatin1String("TurnHighQualityThumbs");
+    const QString configUseDefaultTargetAlbum       = QLatin1String("UseDefaultTargetAlbum");
+    const QString configDefaultTargetAlbumId        = QLatin1String("DefaultTargetAlbumId");
+    const QString configFileSaveConflictRule        = QLatin1String("FileSaveConflictRule");
+    const QString importFiltersConfigGroupName      = QLatin1String("Import Filters");
 
     QPushButton*         addButton                  = nullptr;
     QPushButton*         removeButton               = nullptr;
@@ -222,13 +222,6 @@ public:
     FullScreenSettings*  fullScreenSettings         = nullptr;
 };
 
-const QString SetupCamera::Private::configGroupName(QLatin1String("Camera Settings"));
-const QString SetupCamera::Private::configUseFileMetadata(QLatin1String("UseFileMetadata"));
-const QString SetupCamera::Private::configTrunHighQualityThumbs(QLatin1String("TurnHighQualityThumbs"));
-const QString SetupCamera::Private::configUseDefaultTargetAlbum(QLatin1String("UseDefaultTargetAlbum"));
-const QString SetupCamera::Private::configDefaultTargetAlbumId(QLatin1String("DefaultTargetAlbumId"));
-const QString SetupCamera::Private::configFileSaveConflictRule(QLatin1String("FileSaveConflictRule"));
-const QString SetupCamera::Private::importFiltersConfigGroupName(QLatin1String("Import Filters"));
 
 SetupCamera::SetupCamera(QWidget* const parent)
     : QScrollArea(parent),

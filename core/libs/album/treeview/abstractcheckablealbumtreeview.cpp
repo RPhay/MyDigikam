@@ -35,17 +35,13 @@ public:
 
     Private() = default;
 
-    static const QString configCheckedAlbumsEntry;
-    static const QString configPartiallyCheckedAlbumsEntry;
-    static const QString configRestoreCheckedEntry;
+    const QString configCheckedAlbumsEntry          = QLatin1String("Checked");
+    const QString configPartiallyCheckedAlbumsEntry = QLatin1String("PartiallyChecked");
+    const QString configRestoreCheckedEntry         = QLatin1String("RestoreChecked");
 
     QList<int>           checkedAlbumIds;
     QList<int>           partiallyCheckedAlbumIds;
 };
-
-const QString AbstractCheckableAlbumTreeView::Private::configCheckedAlbumsEntry(QLatin1String("Checked"));
-const QString AbstractCheckableAlbumTreeView::Private::configPartiallyCheckedAlbumsEntry(QLatin1String("PartiallyChecked"));
-const QString AbstractCheckableAlbumTreeView::Private::configRestoreCheckedEntry(QLatin1String("RestoreChecked"));
 
 // --------------------------------------------------------
 
