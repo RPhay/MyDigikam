@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 01:54+0000\n"
+"POT-Creation-Date: 2024-05-05 01:42+0000\n"
 "PO-Revision-Date: 2024-04-24 21:42+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1014,7 +1014,7 @@ msgstr "Data:"
 #: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -2884,7 +2884,7 @@ msgid "Show Fullscreen"
 msgstr "Mostra a schermo intero"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
@@ -5203,15 +5203,15 @@ msgid "Same as input"
 msgstr "Uguale a quello di input"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:102
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9247,7 +9247,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Impostazioni dell'immagine"
@@ -11791,25 +11791,25 @@ msgstr "Modifica la geolocalizzazione..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Impossibile leggere l'immagine «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Il formato dell'immagine «%1» è sconosciuto"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Errore nel caricamento dell'immagine «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Impossibile salvare l'immagine «%1» in «%2»"
@@ -14630,8 +14630,8 @@ msgid "Select here the envelope priority."
 msgstr "Seleziona qui la priorità della busta."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
 #, kde-format
 msgid "Format:"
 msgstr "Formato:"
@@ -16210,7 +16210,7 @@ msgid "Former Author"
 msgstr "Autore precedente"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
@@ -17131,13 +17131,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Unisci immagini sovrapposte..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:325
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:920
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:949
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -17148,19 +17148,19 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Benvenuto allo strumento Immagini sovrapposte"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Benvenuto allo strumento Immagini sovrapposte"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17170,7 +17170,7 @@ msgstr ""
 "Questo strumento fonde immagini raggruppate con differenti esposizioni per "
 "creare un'immagine pseudo HDR"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17180,7 +17180,7 @@ msgstr ""
 "Può essere utilizzato anche per fondere una pila di immagini raggruppate per "
 "ottenere una singola immagine con profondità di campo aumentata."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17190,7 +17190,7 @@ msgstr ""
 "Questo assistente ti aiuterà a configurare l'importazione delle immagini "
 "prima di unirle in un'immagine singola."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17200,32 +17200,32 @@ msgstr ""
 "Le immagini raggruppate devono essere scattate con la stessa fotocamera, "
 "nelle stesse condizioni e possibilmente con un treppiede."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr "Per maggiori informazioni, dai un'occhiata a"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "questa pagina"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
 msgstr "Binari miscelazione di esposizione"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "Imposta le immagini raggruppate"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17235,82 +17235,82 @@ msgstr ""
 "Imposta qui l'elenco delle immagini raggruppate da fondere. Rispetta queste "
 "condizioni"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr ""
 "Devono essere aggiunte alla pila almeno due immagini dello stesso soggetto."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr "Non mettere insieme immagini con profondità di colore diverse."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr "Tutte le immagini devono avere la stessa dimensione."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "Esposizione (EV)"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "La pre-elaborazione è completa"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "La pre-elaborazione delle immagini raggruppate è completa"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr "Congratulazioni. Le tue immagini sono pronte per essere fuse."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program from will be used."
 msgstr "Per eseguire questa operazione sarà utilizzato il programma Enblend."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr "Premi «Fine» per fondere gli elementi e creare un'immagine pseudo HDR."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:81
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
 msgstr "Pre-elaborazione delle immagini raggruppate in corso"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:84
 #, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
 msgstr "Allinea le immagini raggruppate"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
 "Ora le immagini raggruppate saranno pre-elaborate prima di essere fuse."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:142
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17321,7 +17321,7 @@ msgstr ""
 "devi eseguire l'allineamento. Le operazioni di allineamento possono durare "
 "un po' di tempo."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:143
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
 #, kde-format
 msgctxt "@info"
@@ -17333,21 +17333,21 @@ msgstr ""
 "immagini RAW verranno convertite in immagini sRGB a 16 bit con gamma "
 "automatica."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "Premi il pulsante «Successivo» per iniziare la pre-elaborazione."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "La pre-elaborazione è in corso, attendi."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
 #, kde-format
@@ -17355,20 +17355,20 @@ msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Questa fase potrà durare un po'..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
 msgstr "La pre-elaborazione non è riuscita."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
 #, kde-format
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
 msgstr "Verifica la pila delle tue immagini raggruppate."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
 #, kde-format
@@ -17376,34 +17376,34 @@ msgctxt "@info"
 msgid "See processing messages below."
 msgstr "Vedi i messaggi di elaborazione sottostanti."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Strumento per le immagini sovrapposte"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
 #, kde-format
 msgid "Error loading RAW image '%1'"
 msgstr "Errore nel caricamento dell'immagine RAW «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Impossibile salvare la miniatura per l'immagine «%1» in «%2»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "non disponibile"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, kde-format
 msgid "Could not open file '%1' for writing"
 msgstr "Impossibile aprire il file «%1» per la scrittura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "Impossibile salvare l'immagine nel file «%1»"
@@ -17486,173 +17486,173 @@ msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Impossibile aprire «%1» per la scrittura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:406
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Scaricamento dei file remoti per «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:423
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Impossibile aprire il file temporaneo"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:438
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Impossibile scaricare %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Precedente"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Successivo"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Elenco degli album"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Immagine originale"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Vai su"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Crea"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Modello"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Orientazione dell'immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Risoluzione X dell'immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Risoluzione Y dell'immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Unità di risoluzione dell'immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Data e ora dell'immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Posizionamento YCBCR"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Tempo di esposizione"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Numero F"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Indice di esposizione"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Velocità ISO"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Valore di velocità dell'otturatore"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Diaframma"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Lunghezza focale"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "Altitudine GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "Latitudine GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "Longitudine GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:43
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
 #, kde-format
 msgid "Html Gallery"
 msgstr "Galleria HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr "Strumento per generare una galleria HTML dalle immagini"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -17667,18 +17667,18 @@ msgstr ""
 "utilizzare un modello HTML con supporto dei temi, con layout differenti, per "
 "assemblare i file in una galleria.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Autore precedente e responsabile"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
 msgstr "Crea galleria HTML..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
@@ -17688,92 +17688,92 @@ msgstr "Crea galleria HTML..."
 msgid "Internal Error"
 msgstr "Errore interno"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:112
 #, kde-format
 msgid "Starting to generate gallery..."
 msgstr "Inizio della generazione della galleria..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "%1 album da elaborare:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 elementi da elaborare"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr "Cartella di output: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:151
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "La galleria è stata completata ma sono presenti alcuni avvisi."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery completed."
 msgstr "Galleria completata."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:168
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr "Apertura della galleria col browser desktop predefinito..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:177
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "Apertura della galleria col browser interno..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "Proprietà dell'immagine intera:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
 #, kde-format
 msgid "Save image"
 msgstr "Salva immagine"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:100
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:181
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
 #, kde-format
 msgid "Quality:"
 msgstr "Qualità:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
 #, kde-format
 msgid "Max size:"
 msgstr "Dimensione massima:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "Includi le immagini originali a dimensione intera per lo scaricamento"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
 #, kde-format
 msgid "Use original image"
 msgstr "Usa immagine originale"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "Proprietà miniatura:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
 #, kde-format
 msgid "Square thumbnails"
 msgstr "Miniature quadrate"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to HTML Gallery tool</b></h1></p><p>This assistant "
@@ -17789,7 +17789,7 @@ msgstr ""
 "HTML'>standard HTML e CSS</a></p><p>e il file risultante può essere "
 "personalizzato con dei simpatici temi.</p></qt>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
@@ -17798,7 +17798,7 @@ msgstr ""
 msgid "&Choose image selection method:"
 msgstr "Scegli il metodo di selezione delle immagini:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
@@ -17808,19 +17808,19 @@ msgstr "Scegli il metodo di selezione delle immagini:"
 msgid "Images"
 msgstr "Immagini"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:72
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:66
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "Titolo della galleria:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:76
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Cartella di destinazione:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
@@ -17829,7 +17829,7 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Cartella di destinazione"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
@@ -17837,25 +17837,25 @@ msgstr "Apri nel browser:"
 
 # ML XXX Controllare!
 # se si riferisce a "Sotto-campionatura cromatica:" ci vuole "Nessuna"
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:90
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Nessuna"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "Interno"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:98
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "Predefinito dal desktop"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:63
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -17864,61 +17864,61 @@ msgstr ""
 "In questa pagina puoi cambiare alcuni parametri del tema. Sono disponibili "
 "parametri diversi a seconda del tema."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:141
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
 #, kde-format
 msgid "can be customized"
 msgstr "può essere personalizzato"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
 #, kde-format
 msgid "no customization available"
 msgstr "nessuna personalizzazione disponibile"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, kde-format
 msgid "Author: %1<br/><br/>"
 msgstr "Autore: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Crea galleria HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Benvenuto allo strumento Galleria HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, kde-format
 msgid "Items Selection"
 msgstr "Selezione degli elementi"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "Selezione del tema"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Parametri del tema"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Impostazioni del risultato"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Generazione della galleria"

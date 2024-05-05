@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 01:54+0000\n"
+"POT-Creation-Date: 2024-05-05 01:42+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1070,7 +1070,7 @@ msgstr "Päiväys:"
 #: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -2959,7 +2959,7 @@ msgid "Show Fullscreen"
 msgstr "Näytä koko näytöllä"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
@@ -5375,15 +5375,15 @@ msgid "Same as input"
 msgstr "Sama kuin syöte"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:102
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9478,7 +9478,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "Kuvan asetukset"
@@ -11942,25 +11942,25 @@ msgstr "Muokkaa maantieteellistä sijaintia…"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Kuvaa ”%1” ei voitu lukea"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Tiedoston ”%1” kuvamuoto on tuntematon"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Virhe ladattaessa kuvaa ”%1”"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Ei voitu tallentaa kuvaa ”%1” kohteeseen ”%2”"
@@ -14828,8 +14828,8 @@ msgid "Select here the envelope priority."
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
 #, kde-format
 msgid "Format:"
 msgstr "Tiedostomuoto:"
@@ -16446,7 +16446,7 @@ msgid "Former Author"
 msgstr "Aiempi tekijä"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
@@ -17355,13 +17355,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Luo skeema…"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:325
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "tuntematon"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:920
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:949
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -17372,19 +17372,19 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "<b>Tervetuloa panoraamatyökaluun</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "<b>Tervetuloa panoraamatyökaluun</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17392,7 +17392,7 @@ msgid ""
 "Image"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17400,7 +17400,7 @@ msgid ""
 "with increased depth of field."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17408,7 +17408,7 @@ msgid ""
 "merging them to a single one."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17416,27 +17416,27 @@ msgid ""
 "and if possible using a tripod."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "tämä sivu"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
 msgstr "Valotuksen ilmaisimet"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Set Panorama Images</b>"
@@ -17444,7 +17444,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "<b>Aseta panoraamakuvat</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17452,38 +17452,38 @@ msgid ""
 "conditions"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "Pinoon pitää lisätä vähintään kaksi samanaiheista kuvaa."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr "Älä yhdistä eri värisyvyyden kuvia"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr "Kaikkien kuvien mittojen on oltava samat."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "Valotusaika (EV)"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "Esikäsittely on valmis"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Pre-Processing is Complete"
@@ -17491,25 +17491,25 @@ msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "Esikäsittely on valmis"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr "Onnea! Kuvasi ovat valmiina sulautettaviksi yhteen."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program from will be used."
 msgstr "Toimenpiteen suorittamiseen käytetään Enblend-ohjelmaa."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:81
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Pre-Processing Images</b>"
@@ -17517,19 +17517,19 @@ msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
 msgstr "<b>Kuvien esikäsittely</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:84
 #, fuzzy, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
 msgstr "Valitse kuvia"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:142
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17537,7 +17537,7 @@ msgid ""
 "images. Alignment operations can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:143
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
 #, kde-format
 msgctxt "@info"
@@ -17546,21 +17546,21 @@ msgid ""
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "Esikäsittely on meneillään, odota."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
 #, kde-format
@@ -17568,21 +17568,21 @@ msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Tämä voi kestää hetken…"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
 msgstr "Esikäsittely epäonnistui."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
 #, fuzzy, kde-format
 #| msgid "Please check your credentials and try again."
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
 msgstr "Tarkista tunnistautumistietosi ja yritä uudelleen."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
 #, fuzzy, kde-format
@@ -17591,35 +17591,35 @@ msgctxt "@info"
 msgid "See processing messages below."
 msgstr "Edellinen kuva"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
 #, fuzzy, kde-format
 #| msgid "Images Tools"
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Kuvatyökalut"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
 #, kde-format
 msgid "Error loading RAW image '%1'"
 msgstr "Virhe ladattaessa RAW-kuvaa ”%1”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Kuvan ”%1” pienoiskuvaa ei voitu tallentaa tiedostoon ”%2”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "ei saatavilla"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, kde-format
 msgid "Could not open file '%1' for writing"
 msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "Kuvaa ei voitu tallentaa tiedostoon ”%1”"
@@ -17702,55 +17702,55 @@ msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:406
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Ladataan etätiedostoja kohteelle ”%1”"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:423
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Väliaikaistiedostoa ei voitu avata"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:438
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Ei voitu ladata: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Edellinen"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Seuraava"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Albumiluettelo"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Alkuperäinen kuva"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Siirry ylemmäs"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -17758,120 +17758,120 @@ msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Merkki:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Malli"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Kuvan suunta"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Kuvan x-tarkkuus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Kuvan y-tarkkuus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Kuvan tarkkuuden yksikkö"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Kuvan aika ja päivä"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Asema:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Valotusaika"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "F-luku"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Valotusindeksi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO-nopeuslukemat"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Sulkimen nopeuden arvo"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Aukon arvo"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Polttoväli"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS-korkeustieto"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS-leveysastetieto"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "GPS-pituusastetieto"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:43
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
 #, kde-format
 msgid "Html Gallery"
 msgstr "HTML-galleria"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr "Työkalu HTML-kuvagallerian luomiseksi kuvista"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to share items on the local network through a DLNA "
@@ -17889,18 +17889,18 @@ msgstr ""
 "albumivalinnan kautta.</p> <p>Monet laitteet kuten tabletit, matkapuhelimet, "
 "TV:t jne. tukevat DLNA:ta.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Aiempi tekijä ja ylläpitäjä"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
 msgstr "Luo HTML-galleria…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
@@ -17910,92 +17910,92 @@ msgstr "Luo HTML-galleria…"
 msgid "Internal Error"
 msgstr "Sisäinen virhe"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:112
 #, kde-format
 msgid "Starting to generate gallery..."
 msgstr "Aletaan luoda kuvagalleriaa…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "%1 albumia käsiteltävänä:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 käsiteltävää kohdetta"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr "Tuloskansio: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:151
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "Kuvagalleria on valmis, mutta joitakin varoituksia ilmeni."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery completed."
 msgstr "Kuvagalleria on valmis."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:168
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr "Avataan galleriaa oletusselaimeen…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:177
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "Avaa galleria sisäiseen selaimeen…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "Täyden kuvan ominaisuudet:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
 #, kde-format
 msgid "Save image"
 msgstr "Tallenna kuva"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:100
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:181
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
 #, kde-format
 msgid "Quality:"
 msgstr "Laatu:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
 #, kde-format
 msgid "Max size:"
 msgstr "Enimmäiskoko:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "Sisällytä ladattaviksi täyskokoiset alkuperäiskuvat"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
 #, kde-format
 msgid "Use original image"
 msgstr "Käytä alkuperäistä kuvaa"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "Pienoiskuvan ominaisuudet:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
 #, kde-format
 msgid "Square thumbnails"
 msgstr "Neliömäiset pienoiskuvat"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to HTML Gallery tool</b></h1></p><p>This assistant "
@@ -18010,7 +18010,7 @@ msgstr ""
 "yhteensopiva <a href='https://fi.wikipedia.org/wiki/HTML'>HTML- ja CSS-"
 "standardien</a></p><p>kanssa, ja sitä voi mukauttaa teemoin.</p></qt>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
@@ -18019,7 +18019,7 @@ msgstr ""
 msgid "&Choose image selection method:"
 msgstr "&Valitse kuvanvalintatapa:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
@@ -18029,19 +18029,19 @@ msgstr "&Valitse kuvanvalintatapa:"
 msgid "Images"
 msgstr "Kuvat"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:72
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:66
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "Gallerian otsikko:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:76
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Kohdekansio:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
@@ -18050,31 +18050,31 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Kohdekansio"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "Avaa selaimeen:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:90
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Ei mikään"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "Sisäinen"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:98
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "Työpöydän oletus"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:63
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -18083,61 +18083,61 @@ msgstr ""
 "Tällä sivulla voi muuttaa joitakin teeman parametreja. Riippuu teemasta, "
 "mitä parametreja on tarjolla."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:141
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
 #, kde-format
 msgid "can be customized"
 msgstr "voi mukauttaa"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
 #, kde-format
 msgid "no customization available"
 msgstr "mukautus ei käytettävissä"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, kde-format
 msgid "Author: %1<br/><br/>"
 msgstr "Tekijä: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Luo HTML-galleria"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Tervetuloa HTML-kuvagalleriatyökaluun"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, kde-format
 msgid "Items Selection"
 msgstr "Kohteiden valinta"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "Teeman valinta"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Teeman parametrit"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Ulostuloasetukset"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Luodaan galleriaa"

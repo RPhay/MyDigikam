@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 01:54+0000\n"
+"POT-Creation-Date: 2024-05-05 01:42+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1020,7 +1020,7 @@ msgstr "मिति:"
 #: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -2857,7 +2857,7 @@ msgid "Show Fullscreen"
 msgstr "पूरा पर्दा मोडमा उपकरणपट्टी लुकाउनुहोस्"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
@@ -5009,15 +5009,15 @@ msgid "Same as input"
 msgstr ""
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:102
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, fuzzy, kde-format
 msgid "JPEG"
 msgstr "जेपीईजी २००० गुणस्तर:"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr ""
@@ -8755,7 +8755,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "छवि सेटिङ"
@@ -11155,26 +11155,26 @@ msgstr "चयन"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "रङ गहिराइ:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -13882,8 +13882,8 @@ msgid "Select here the envelope priority."
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
 #, fuzzy, kde-format
 msgid "Format:"
 msgstr "छवि मिति"
@@ -15375,7 +15375,7 @@ msgid "Former Author"
 msgstr "लेखक:"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
@@ -16233,14 +16233,14 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:325
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
 #, fuzzy, kde-format
 #| msgid "unknown"
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "अज्ञात"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:920
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:949
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -16248,19 +16248,19 @@ msgid ""
 " %2"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16268,7 +16268,7 @@ msgid ""
 "Image"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16276,7 +16276,7 @@ msgid ""
 "with increased depth of field."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16284,7 +16284,7 @@ msgid ""
 "merging them to a single one."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16292,34 +16292,34 @@ msgid ""
 "and if possible using a tripod."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, fuzzy, kde-format
 #| msgid "Exposure Indicators"
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
 msgstr "प्रर्दशन सूचक"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:52
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16327,83 +16327,83 @@ msgid ""
 "conditions"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, fuzzy, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "स्वत: प्रर्दशन"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program from will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:81
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
 #, fuzzy, kde-format
 #| msgid "Print Image..."
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:84
 #, fuzzy, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:142
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16411,7 +16411,7 @@ msgid ""
 "images. Alignment operations can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:143
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
 #, kde-format
 msgctxt "@info"
@@ -16420,21 +16420,21 @@ msgid ""
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "क्यामेराबाट जडान विच्छेदन गर्दैछ, कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
 #, kde-format
@@ -16442,20 +16442,20 @@ msgctxt "@info"
 msgid "This can take a while..."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
 msgstr "चलचित्र फाइल"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
 msgstr "क्यामेराबाट %1 फाइल पुन: प्राप्त गर्न असफल"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
 #, fuzzy, kde-format
@@ -16464,36 +16464,36 @@ msgctxt "@info"
 msgid "See processing messages below."
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "रङ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
 #, fuzzy, kde-format
 msgid "Error loading RAW image '%1'"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "%1 का लागि थम्बनेल सिर्जना गर्न सकिदैन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "उपलब्ध छैन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not open file '%1' for writing"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, fuzzy, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -16579,178 +16579,178 @@ msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:406
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:423
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, fuzzy, kde-format
 #| msgid "Failed to delete file \"%1\"."
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "\"%1\" फाइल मेट्न असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:438
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "रङ गहिराइ:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "गएको हप्ता"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "एल्बम"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "मौलिक"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgid "Make:"
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "निर्माण:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "नमुना"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "छवि स्थान:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "छवि आयाम देखाउनुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "छवि आयाम देखाउनुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "छवि आयाम देखाउनुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "मिति र समय थप्नुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "छवि स्थान:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "स्वत: प्रर्दशन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "नाम:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "स्वत: प्रर्दशन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "स्याचुरेसन:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "प्वाल/फोकल:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "स्थानिय सेटिङ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "<b>प्वाल</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "<b>प्वाल</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "<b>मोडल</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:43
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
 #, fuzzy, kde-format
 msgid "Html Gallery"
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to create "
@@ -16759,18 +16759,18 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
@@ -16780,97 +16780,97 @@ msgstr "छवि लोड हुँदैछ..."
 msgid "Internal Error"
 msgstr "व्यतिरेक:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:112
 #, fuzzy, kde-format
 msgid "Starting to generate gallery..."
 msgstr "छवि लोड हुँदैछ..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
 #, fuzzy, kde-format
 msgid "%1 albums to process:"
 msgstr "अनुकूल"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, fuzzy, kde-format
 msgid "%1 items to process"
 msgstr "अनुकूल"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, fuzzy, kde-format
 msgid "Output directory: %1"
 msgstr "एल्बम पुन: नामकरण गर्न असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:151
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, fuzzy, kde-format
 #| msgid "Listing folders is complete..."
 msgid "Gallery completed."
 msgstr "फोल्डर सूचीकरण समाप्त भयो..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:168
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening gallery with default desktop browser..."
 msgstr "फोल्डर खोल्नुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:177
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening gallery with internal browser..."
 msgstr "फोल्डर खोल्नुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Full Image Properties:"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Save image"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:100
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:181
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
 #, fuzzy, kde-format
 msgid "Quality:"
 msgstr "जेपीईजी गुणस्तर:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
 #, fuzzy, kde-format
 msgid "Max size:"
 msgstr "फाइल साइज देखाउनुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
 #, fuzzy, kde-format
 msgid "Use original image"
 msgstr "मौलिक"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
 #, fuzzy, kde-format
 msgid "Thumbnail Properties:"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
 #, fuzzy, kde-format
 msgid "Square thumbnails"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to HTML Gallery tool</b></h1></p><p>This assistant "
@@ -16880,7 +16880,7 @@ msgid ""
 "can be customized with a nice theme.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
@@ -16889,7 +16889,7 @@ msgstr ""
 msgid "&Choose image selection method:"
 msgstr "वस्तु चयन गरेको छैन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
@@ -16899,20 +16899,20 @@ msgstr "वस्तु चयन गरेको छैन"
 msgid "Images"
 msgstr "छवि"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:72
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:66
 #, fuzzy, kde-format
 #| msgid "Camera Title"
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "क्यामेरा शीर्षक"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:76
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "वर्णन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
@@ -16921,97 +16921,97 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "वर्णन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:88
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "फोल्डर खोल्नुहोस्"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:90
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "कुनै होइन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, fuzzy, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "VNG इन्टरपोलेसन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:98
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:63
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
 "different parameters are available."
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:141
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
 #, fuzzy, kde-format
 msgid "can be customized"
 msgstr "अनुकूलन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
 #, fuzzy, kde-format
 msgid "no customization available"
 msgstr "विकल्प उपलब्ध छैन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, fuzzy, kde-format
 #| msgid "Author:"
 msgid "Author: %1<br/><br/>"
 msgstr "लेखक:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "फोल्डर सिर्जना असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
 msgstr "चयन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Theme Selection"
 msgstr "चयन"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, fuzzy, kde-format
 msgid "Theme Parameters"
 msgstr "मूल"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "साधारण सेटिङ"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgid "Generating Gallery"

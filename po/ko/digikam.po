@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 01:54+0000\n"
+"POT-Creation-Date: 2024-05-05 01:42+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -988,7 +988,7 @@ msgstr "날짜:"
 #: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -2837,7 +2837,7 @@ msgid "Show Fullscreen"
 msgstr "전체 화면 표시"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
@@ -5219,15 +5219,15 @@ msgid "Same as input"
 msgstr "입력과 동일"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:102
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9326,7 +9326,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Image Settings"
 msgstr "이미지 설정"
@@ -11805,25 +11805,25 @@ msgstr "지리적 위치 편집..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:113
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:122
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "사진 '%1'의 형식을 알 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:133
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "사진 '%1'을(를) '%2'(으)로 저장할 수 없음"
@@ -14675,8 +14675,8 @@ msgid "Select here the envelope priority."
 msgstr "엔빌로프 우선 순위를 설정하십시오."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
 #, kde-format
 msgid "Format:"
 msgstr "형식:"
@@ -16275,7 +16275,7 @@ msgid "Former Author"
 msgstr "이전 작성자"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
@@ -17228,13 +17228,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "스택된 이미지 혼합..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:325
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:334
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "알 수 없음"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:920
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:949
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -17245,13 +17245,13 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "스택된 이미지 도구에 오신 것을 환영합니다"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Welcome to Stacked Images Tool"
@@ -17259,7 +17259,7 @@ msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "스택된 이미지 도구에 오신 것을 환영합니다"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17267,7 +17267,7 @@ msgid ""
 "Image"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17275,7 +17275,7 @@ msgid ""
 "with increased depth of field."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17283,7 +17283,7 @@ msgid ""
 "merging them to a single one."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17291,13 +17291,13 @@ msgid ""
 "and if possible using a tripod."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, fuzzy, kde-format
 #| msgid "Next page"
@@ -17305,13 +17305,13 @@ msgctxt "@info"
 msgid "this page"
 msgstr "다음 쪽"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
 msgstr "노출 혼합 이진 파일"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Set Bracketed Images</b>"
@@ -17319,7 +17319,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "<b>브래킷된 이미지 설정</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17327,38 +17327,38 @@ msgid ""
 "conditions"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
 msgstr "노출(EV)"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "전처리가 완료되었습니다"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Pre-Processing is Complete"
@@ -17366,25 +17366,25 @@ msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
 msgstr "전처리가 완료되었습니다"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program from will be used."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:81
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "<b>Pre-Processing Bracketed Images</b>"
@@ -17392,7 +17392,7 @@ msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
 msgstr "<b>브래킷된 이미지 전처리</b>"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Align bracketed images"
@@ -17400,13 +17400,13 @@ msgctxt "@option: check"
 msgid "Align bracketed images"
 msgstr "브래킷된 이미지 정렬"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:142
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17414,7 +17414,7 @@ msgid ""
 "images. Alignment operations can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:143
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
 #, kde-format
 msgctxt "@info"
@@ -17423,21 +17423,21 @@ msgid ""
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
 #, kde-format
@@ -17445,7 +17445,7 @@ msgctxt "@info"
 msgid "This can take a while..."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
 #, fuzzy, kde-format
 #| msgid "Processing Failed"
@@ -17453,14 +17453,14 @@ msgctxt "@info"
 msgid "Pre-processing has failed."
 msgstr "처리 실패"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:207
 #, fuzzy, kde-format
 #| msgid "Please check your credentials and try again."
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
 msgstr "인증 정보를 확인하고 다시 시도하십시오."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
 #, fuzzy, kde-format
@@ -17469,7 +17469,7 @@ msgctxt "@info"
 msgid "See processing messages below."
 msgstr "RAW 그림"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Stacked Images Tool"
@@ -17477,28 +17477,28 @@ msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "스택된 이미지 도구"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:102
 #, kde-format
 msgid "Error loading RAW image '%1'"
 msgstr "RAW 이미지 '%1' 불러오기 오류"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "이미지 '%1'의 섬네일을 '%2'(으)로 저장할 수 없습니다."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "사용할 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, kde-format
 msgid "Could not open file '%1' for writing"
 msgstr "파일 '%1'에 쓰려고 열 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "파일 '%1'에 이미지를 저장할 수 없음"
@@ -17590,185 +17590,185 @@ msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "'%1에 쓰려고 열 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:406
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "\"%1\"의 원격 파일 다운로드 중"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:423
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "임시 파일을 열 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:438
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, fuzzy, kde-format
 #| msgid "Could not download %1"
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "%1을(를) 다운로드할 수 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "이전"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "다음"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Album List"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "앨범 목록"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 #| msgid "Original Image"
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "원본 이미지"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, fuzzy, kde-format
 #| msgid "Go Up"
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "위로 이동"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgid "Make"
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "제조사"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "모델"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "그림 방향"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 #| msgid "Image X Resolution"
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "이미지 X 해상도"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 #| msgid "Image Y Resolution"
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "이미지 Y 해상도"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 #| msgid "Image Resolution Unit"
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "이미지 해상도 단위"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "그림 날짜와 시간"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "YCBCR 배열"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "노출 시간"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "F 번호"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "노출 지수"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO 감도"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, fuzzy, kde-format
 #| msgid "Shutter Speed Value"
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "셔터 속도 값"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "조리개 값"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "초점 거리"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS 고도"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS 위도"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
 msgstr "GPS 경도"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:43
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:39
 #, kde-format
 msgid "Html Gallery"
 msgstr "HTML 갤러리"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:54
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
 msgstr "이미지에서 HTML 갤러리를 생성하는 도구"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to back-process items (as resize) before to create "
@@ -17787,18 +17787,18 @@ msgstr ""
 "다.</p><p>다양한 레이아웃의 HTML 템플릿에 테마를 적용할 수 있으며 파일을 갤러"
 "리 형태로 모아 볼 수 있습니다.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:80
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "이전 작성자 및 관리자"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
 msgstr "HTML 갤러리 만들기..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:101
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
@@ -17808,92 +17808,92 @@ msgstr "HTML 갤러리 만들기..."
 msgid "Internal Error"
 msgstr "내부 오류"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:112
 #, kde-format
 msgid "Starting to generate gallery..."
 msgstr "갤러리 생성을 시작하는 중..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "처리할 앨범 %1개:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, kde-format
 msgid "%1 items to process"
 msgstr "처리할 항목 %1개"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
 msgstr "출력 디렉터리: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:151
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "갤러리가 완료되었지만, 일부 경고가 발생했습니다."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
 msgid "Gallery completed."
 msgstr "갤러리 완료."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:168
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr "기본 데스크톱 브라우저로 갤러리를 여는 중..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:177
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "내부 브라우저로 갤러리를 여는 중..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "전체 이미지 속성:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
 #, kde-format
 msgid "Save image"
 msgstr "이미지 저장"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:100
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:181
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
 #, kde-format
 msgid "Quality:"
 msgstr "품질:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
 #, kde-format
 msgid "Max size:"
 msgstr "최대 크기:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "다운로드할 실제 크기의 원본 이미지 포함"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
 #, kde-format
 msgid "Use original image"
 msgstr "원본 이미지 사용"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "섬네일 속성:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
 #, kde-format
 msgid "Square thumbnails"
 msgstr "사각형 섬네일"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to HTML Gallery tool</b></h1></p><p>This assistant "
@@ -17908,7 +17908,7 @@ msgstr ""
 "HTML'>HTML 및 CSS 표준</a>을 완벽하게 준수하며</p><p>멋진 테마로 출력을 사용"
 "자 정의할 수 있습니다.</p></qt>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
@@ -17917,7 +17917,7 @@ msgstr ""
 msgid "&Choose image selection method:"
 msgstr "이미지 선택 방법 선택(&C):"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
@@ -17927,21 +17927,21 @@ msgstr "이미지 선택 방법 선택(&C):"
 msgid "Images"
 msgstr "이미지"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:72
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:66
 #, fuzzy, kde-format
 #| msgid "Gallery Title:"
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "갤러리 제목:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:76
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "대상 폴더:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
@@ -17951,33 +17951,33 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "대상 폴더"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:88
 #, fuzzy, kde-format
 #| msgid "Open in Browser:"
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "브라우저에서 열기:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:90
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "없음"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:97
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "내부"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:98
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "데스크톱 기본값"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:63
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -17986,62 +17986,62 @@ msgstr ""
 "이 페이지에서 일부 테마 인자를 변경할 수 있습니다. 테마에 따라 다른 인자를 사"
 "용할 수 있습니다."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:141
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
 #, kde-format
 msgid "can be customized"
 msgstr "사용자 정의 가능"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
 #, kde-format
 msgid "no customization available"
 msgstr "사용자 정의할 수 있는 항목 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, kde-format
 msgid "Author: %1<br/><br/>"
 msgstr "작성자: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
 #, fuzzy, kde-format
 #| msgid "Create HTML Gallery"
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "HTML 갤러리 만들기"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "HTML 갤러리 도구에 오신 것을 환영합니다"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, kde-format
 msgid "Items Selection"
 msgstr "항목 선택"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Theme Selection"
 msgstr "테마 선택"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #, kde-format
 msgid "Theme Parameters"
 msgstr "테마 인자"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "출력 설정"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Generating Gallery"
 msgstr "갤러리 생성 중"
