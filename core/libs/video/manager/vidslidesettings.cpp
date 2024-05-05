@@ -85,7 +85,7 @@ void VidSlideSettings::readSettings(KConfigGroup& group)
     outputPlayer = (VidPlayer)group.readEntry("OutputPlayer",
                    (int)INTERNAL);
     ffmpegPath   = group.readEntry("FFmpegPath",
-                   defaultFFmpegSearchPaths().first());
+                   defaultFFmpegSearchPaths().constFirst());
     equalize     = group.readEntry("Equalize",
                    false);
     strength     = group.readEntry("Strength",
