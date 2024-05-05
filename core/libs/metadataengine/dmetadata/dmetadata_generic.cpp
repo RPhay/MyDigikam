@@ -171,10 +171,11 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Title:
         {
-            QString str = getItemTitles()[QLatin1String("x-default")].caption;
+            QString str = getItemTitles().value(QLatin1String("x-default")).caption;
 
             if (str.isEmpty())
             {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 return QVariant(QMetaType(QMetaType::QVariantMap));
