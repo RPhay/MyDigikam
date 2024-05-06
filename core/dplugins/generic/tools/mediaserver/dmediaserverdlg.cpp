@@ -48,40 +48,23 @@ class Q_DECL_HIDDEN DMediaServerDlg::Private
 {
 public:
 
-    explicit Private()
-      : dirty           (false),
-        mngr            (DMediaServerMngr::instance()),
-        srvButton       (nullptr),
-        srvStatus       (nullptr),
-        progress        (nullptr),
-        aStats          (nullptr),
-        separator       (nullptr),
-        iStats          (nullptr),
-        startOnStartup  (nullptr),
-        albumSupport    (false),
-        albumSelector   (nullptr),
-        listView        (nullptr),
-        iface           (nullptr),
-        page            (nullptr),
-        buttons         (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                dirty;
-    DMediaServerMngr*   mngr;
-    QPushButton*        srvButton;
-    QLabel*             srvStatus;
-    WorkingWidget*      progress;
-    QLabel*             aStats;
-    QLabel*             separator;
-    QLabel*             iStats;
-    QCheckBox*          startOnStartup;
-    bool                albumSupport;
-    QWidget*            albumSelector;
-    DItemsList*         listView;
-    DInfoInterface*     iface;
-    QWidget*            page;
-    QDialogButtonBox*   buttons;
+    bool                dirty           = false;
+    DMediaServerMngr*   mngr            = DMediaServerMngr::instance();
+    QPushButton*        srvButton       = nullptr;
+    QLabel*             srvStatus       = nullptr;
+    WorkingWidget*      progress        = nullptr;
+    QLabel*             aStats          = nullptr;
+    QLabel*             separator       = nullptr;
+    QLabel*             iStats          = nullptr;
+    QCheckBox*          startOnStartup  = nullptr;
+    bool                albumSupport    = false;
+    QWidget*            albumSelector   = nullptr;
+    DItemsList*         listView        = nullptr;
+    DInfoInterface*     iface           = nullptr;
+    QWidget*            page            = nullptr;
+    QDialogButtonBox*   buttons         = nullptr;
 };
 
 DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
@@ -144,7 +127,7 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     // -------------------
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->startOnStartup         = new QCheckBox(i18nc("@option", "Start Server at Startup"));
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the DLNA server at application start-up automatically"));

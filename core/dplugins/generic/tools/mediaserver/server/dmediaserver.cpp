@@ -104,19 +104,16 @@ class Q_DECL_HIDDEN DMediaServer::Private
 {
 public:
 
-    explicit Private()
-      : upnp        (nullptr),
-        logHandler  (nullptr),
-        serverHolder(nullptr)
+    Private()
     {
         NPT_LogManager::GetDefault().Configure("plist:.level=INFO;.handlers=CustomHandler;");
         NPT_LogHandler::Create("digiKam", "CustomHandler", logHandler);
         logHandler->SetCustomHandlerFunction(&UPnPLogger);
     }
 
-    PLT_UPnP*                   upnp;
-    NPT_LogHandler*             logHandler;
-    CDeviceHostReferenceHolder* serverHolder;
+    PLT_UPnP*                   upnp            = nullptr;
+    NPT_LogHandler*             logHandler      = nullptr;
+    CDeviceHostReferenceHolder* serverHolder    = nullptr;
 };
 
 DMediaServer::DMediaServer(QObject* const parent)

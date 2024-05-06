@@ -37,16 +37,12 @@ class Q_DECL_HIDDEN DLNAMediaServerDelegate::Private
 {
 public:
 
-    explicit Private()
-      : filterUnknownOut(false),
-        useCache        (false)
-    {
-    }
+    Private() = default;
 
     NPT_String                                                          urlRoot;
     NPT_String                                                          fileRoot;
-    bool                                                                filterUnknownOut;
-    bool                                                                useCache;
+    bool                                                                filterUnknownOut = false;
+    bool                                                                useCache         = false;
 
     MediaServerMap                                                      map;
 
@@ -411,7 +407,7 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
         // if we're passed an interface where we received the request from
         // move the ip to the top so that it is used for the first resource
 
-        if (context.GetLocalAddress().GetIpAddress().ToString() != "0.0.0.0")
+        if      (context.GetLocalAddress().GetIpAddress().ToString() != "0.0.0.0")
         {
             ips.Remove(context.GetLocalAddress().GetIpAddress());
             ips.Insert(ips.GetFirstItem(), context.GetLocalAddress().GetIpAddress());
@@ -612,6 +608,7 @@ NPT_Result DLNAMediaServerDelegate::OnSearchContainer(PLT_ActionReference&      
 
         qCDebug(DIGIKAM_MEDIASRV_LOG) << "No such container" << dir.GetChars();
         action->SetError(710, "No such container");
+
         return NPT_FAILURE;
     }
 

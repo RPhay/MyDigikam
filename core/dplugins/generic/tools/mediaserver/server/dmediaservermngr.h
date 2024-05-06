@@ -70,7 +70,6 @@ public:
     int  itemsShared()                        const;
 
     /// Config properties methods.
-
     QString configGroupName()                 const;
     QString configStartServerOnStartupEntry() const;
 
@@ -85,6 +84,7 @@ public:
 private:
 
     // Disable
+
     DMediaServerMngr();
     explicit DMediaServerMngr(QObject*) = delete;
     ~DMediaServerMngr() override;

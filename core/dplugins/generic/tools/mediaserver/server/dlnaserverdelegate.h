@@ -60,7 +60,7 @@ public:
     /// Constructor and destructor
     explicit DLNAMediaServerDelegate(const char* url_root,
                                      bool use_cache = false);
-    ~DLNAMediaServerDelegate() override;
+    ~DLNAMediaServerDelegate()                                                  override;
 
     /// Class methods
     static NPT_String BuildSafeResourceUri(const NPT_HttpUrl& base_uri,

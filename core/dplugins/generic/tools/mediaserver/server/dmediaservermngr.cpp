@@ -76,7 +76,6 @@ public:
     const QString configStartServerOnStartupEntry   = QLatin1String("Start MediaServer At Startup");
 };
 
-
 DMediaServerMngr* DMediaServerMngr::instance()
 {
     return &creator->object;
