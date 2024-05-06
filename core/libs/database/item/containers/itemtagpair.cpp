@@ -29,7 +29,7 @@
 namespace Digikam
 {
 
-typedef QSharedDataPointer<ItemTagPairPriv> ItemTagPairPrivSharedPointer;
+typedef QExplicitlySharedDataPointer<ItemTagPairPriv> ItemTagPairPrivSharedPointer;
 
 // NOTE: do not use Q_DECL_HIDDEN hidden here to prevent export symbols warnings under Windows.
 
@@ -62,7 +62,7 @@ class Q_DECL_HIDDEN ItemTagPairPrivSharedNull : public ItemTagPairPrivSharedPoin
 public:
 
     ItemTagPairPrivSharedNull()
-        : QSharedDataPointer<ItemTagPairPriv>(new ItemTagPairPriv)
+        : QExplicitlySharedDataPointer<ItemTagPairPriv>(new ItemTagPairPriv)
     {
     }
 };
