@@ -213,6 +213,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
     }
 
     std::sort(list.begin(), list.end(), DPluginAction::pluginActionLessThan);
+
     return list;
 }
 

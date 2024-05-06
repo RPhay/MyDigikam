@@ -42,10 +42,6 @@ DPluginAuthor::DPluginAuthor(const QString& _name,
 {
 }
 
-DPluginAuthor::~DPluginAuthor()
-{
-}
-
 QString DPluginAuthor::toString() const
 {
     return (

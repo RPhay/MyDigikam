@@ -28,10 +28,6 @@ DPluginConfViewEditor::DPluginConfViewEditor(QWidget* const parent)
     this->loadPlugins();
 }
 
-DPluginConfViewEditor::~DPluginConfViewEditor()
-{
-}
-
 void DPluginConfViewEditor::loadPlugins()
 {
     DPluginLoader* const loader = DPluginLoader::instance();

@@ -57,7 +57,7 @@ public:
 public:
 
     explicit DInfoInterface(QObject* const parent);
-    ~DInfoInterface() override;
+    ~DInfoInterface() override = default;
 
 public:
 
@@ -197,9 +197,9 @@ class DIGIKAM_EXPORT DItemInfo
 
 public:
 
-    DItemInfo();
+    DItemInfo()  = default;
     explicit DItemInfo(const DInfoInterface::DInfoMap&);
-    ~DItemInfo();
+    ~DItemInfo() = default;
 
     DInfoInterface::DInfoMap infoMap() const;
 
@@ -270,7 +270,7 @@ class DIGIKAM_EXPORT DAlbumInfo
 public:
 
     explicit DAlbumInfo(const DInfoInterface::DInfoMap&);
-    ~DAlbumInfo();
+    ~DAlbumInfo() = default;
 
 public:
 

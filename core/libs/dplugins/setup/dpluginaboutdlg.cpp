@@ -199,10 +199,6 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     resize(400, 500);
 }
 
-DPluginAboutDlg::~DPluginAboutDlg()
-{
-}
-
 void DPluginAboutDlg::slotOnlineHandbook()
 {
     openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());

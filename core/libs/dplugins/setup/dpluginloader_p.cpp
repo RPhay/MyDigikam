@@ -192,15 +192,19 @@ void DPluginLoader::Private::loadPlugins()
             continue;
         }
 
-        if ((qApp->applicationName() == QLatin1String("showfoto")) &&
-            (info.baseName().startsWith(QLatin1String("Bqm_"))))
+        if (
+            (qApp->applicationName() == QLatin1String("showfoto")) &&
+            (info.baseName().startsWith(QLatin1String("Bqm_")))
+           )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring specific digiKam BQM plugin in Showfoto" << info.filePath();
             continue;
         }
 
-        if ((qApp->applicationName() == QLatin1String("digikam")) &&
-            (DKBlacklist.contains(info.baseName())))
+        if (
+            (qApp->applicationName() == QLatin1String("digikam")) &&
+            (DKBlacklist.contains(info.baseName()))
+           )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring specific Showfoto plugin in digiKam" << info.filePath();
 

@@ -46,7 +46,7 @@ public:
     /**
      * Destructor
      */
-    ~DPluginDImg()                                                                     override;
+    ~DPluginDImg()                                                                     override = default;
 
 public:
 

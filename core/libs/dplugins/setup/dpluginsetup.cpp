@@ -61,7 +61,7 @@ DPluginSetup::DPluginSetup(QWidget* const parent)
       d      (new Private)
 {
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->grid                   = new QGridLayout(this);
     d->pluginFilter           = new SearchTextBar(this, QLatin1String("PluginsSearchBar"));
@@ -128,6 +128,7 @@ void DPluginSetup::slotAboutPlugin(QTreeWidgetItem* item, int)
 
     QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->pluginsList->plugin(item));
     dlg->exec();
+
     delete dlg;
 }
 

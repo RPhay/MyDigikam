@@ -35,10 +35,6 @@ DPluginDImg::DPluginDImg(QObject* const parent)
 {
 }
 
-DPluginDImg::~DPluginDImg()
-{
-}
-
 QMap<QString, QStringList> DPluginDImg::extraAboutData() const
 {
     QMap<QString, QStringList> map;

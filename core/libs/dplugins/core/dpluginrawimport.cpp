@@ -31,10 +31,6 @@ DPluginRawImport::DPluginRawImport(QObject* const parent)
 {
 }
 
-DPluginRawImport::~DPluginRawImport()
-{
-}
-
 QString DPluginRawImport::getRawProgram() const
 {
     return QString();

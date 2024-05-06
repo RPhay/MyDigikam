@@ -39,7 +39,7 @@ public:
                   const QString& _year,
                   const QString& _role);
 
-    ~DPluginAuthor();
+    ~DPluginAuthor() = default;
 
     /**
      * Return author details as string.

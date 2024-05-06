@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DPluginConfViewGeneric : public DPluginConfView
 public:
 
     explicit DPluginConfViewGeneric(QWidget* const parent = nullptr);
-    ~DPluginConfViewGeneric() override;
+    ~DPluginConfViewGeneric() override = default;
 
     void loadPlugins()        override;
 };

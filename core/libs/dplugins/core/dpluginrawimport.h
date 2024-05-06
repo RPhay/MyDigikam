@@ -40,7 +40,7 @@ public:
     /**
      * Destructor
      */
-    ~DPluginRawImport() override;
+    ~DPluginRawImport() override = default;
 
 public:
 

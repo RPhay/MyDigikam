@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DPluginAboutDlg : public QDialog
 public:
 
     explicit DPluginAboutDlg(DPlugin* const tool, QWidget* const parent = nullptr);
-    ~DPluginAboutDlg() override;
+    ~DPluginAboutDlg() override = default;
 
 private Q_SLOTS:
 

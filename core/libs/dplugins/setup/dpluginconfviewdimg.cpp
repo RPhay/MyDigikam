@@ -40,10 +40,6 @@ DPluginConfViewDImg::DPluginConfViewDImg(QWidget* const parent)
     this->loadPlugins();
 }
 
-DPluginConfViewDImg::~DPluginConfViewDImg()
-{
-}
-
 void DPluginConfViewDImg::loadPlugins()
 {
     DPluginLoader* const loader = DPluginLoader::instance();

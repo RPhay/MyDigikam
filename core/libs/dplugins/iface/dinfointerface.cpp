@@ -34,10 +34,6 @@ DInfoInterface::DInfoInterface(QObject* const parent)
 {
 }
 
-DInfoInterface::~DInfoInterface()
-{
-}
-
 void DInfoInterface::slotDateTimeForUrl(const QUrl& /*url*/, const QDateTime& /*dt*/, bool /*updModDate*/)
 {
 }
@@ -154,20 +150,12 @@ void DInfoInterface::openSetupPage(SetupPage)
 
 // -----------------------------------------------------------------
 
-DItemInfo::DItemInfo()
-{
-}
-
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
 {
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << m_info;
 */
-}
-
-DItemInfo::~DItemInfo()
-{
 }
 
 DInfoInterface::DInfoMap DItemInfo::infoMap() const
@@ -470,10 +458,6 @@ void DItemInfo::setCopyrightNotices(const MetaEngine::AltLangMap& map)
 
 DAlbumInfo::DAlbumInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
-{
-}
-
-DAlbumInfo::~DAlbumInfo()
 {
 }
 

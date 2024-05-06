@@ -29,7 +29,7 @@ class Q_DECL_HIDDEN DPluginLoader::Private
 {
 public:
 
-    explicit Private();
+    Private();
     ~Private() = default;
 
     /**

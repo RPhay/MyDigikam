@@ -35,10 +35,6 @@ DPluginAction::DPluginAction(QObject* const parent)
 {
 }
 
-DPluginAction::~DPluginAction()
-{
-}
-
 DPluginAction::ActionType DPluginAction::actionType() const
 {
     switch (actionCategory())
