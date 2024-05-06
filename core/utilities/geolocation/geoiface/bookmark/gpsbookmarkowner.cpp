@@ -20,6 +20,7 @@
 #include <QStandardItemModel>
 #include <QStandardPaths>
 #include <QPointer>
+#include <QApplication>
 
 // KDE includes
 
@@ -125,7 +126,7 @@ void GPSBookmarkOwner::slotShowBookmarksDialog()
     }
     else
     {
-        d->bookmarksDialog = new BookmarksDialog(d->parent, d->bookmarkManager);
+        d->bookmarksDialog = new BookmarksDialog(qApp->activeWindow()), d->bookmarkManager);
         d->bookmarksDialog->show();
         d->bookmarksDialog->raise();
     }
