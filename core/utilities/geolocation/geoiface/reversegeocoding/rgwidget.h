@@ -59,7 +59,7 @@ public:
 private Q_SLOTS:
 
     void slotButtonRGSelected();
-    void slotRGReady(QList<RGInfo>& returnedRGList);
+    void slotRGReady(const QList<RGInfo>& returnedRGList);
     void slotHideOptions();
     void updateUIState();
     void slotAddCustomizedSpacer();

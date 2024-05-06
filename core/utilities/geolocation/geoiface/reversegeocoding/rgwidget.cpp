@@ -337,8 +337,8 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
 
     for (int i = 0 ; i < d->backendRGList.count() ; ++i)
     {
-        connect(d->backendRGList[i], SIGNAL(signalRGReady(QList<RGInfo>&)),
-                this, SLOT(slotRGReady(QList<RGInfo>&)));
+        connect(d->backendRGList[i], SIGNAL(signalRGReady(QList<RGInfo>)),
+                this, SLOT(slotRGReady(QList<RGInfo>)));
     }
 
     int currentServiceIndex = d->serviceComboBox->currentIndex();
@@ -446,7 +446,7 @@ void RGWidget::slotHideOptions()
  * The data has returned from backend and now it's processed here.
  * @param returnedRGList Contains the data returned by backend.
  */
-void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
+void RGWidget::slotRGReady(const QList<RGInfo>& returnedRGList)
 {
     const QString errorString = d->currentBackend->getErrorMessage();
 

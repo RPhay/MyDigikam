@@ -45,7 +45,7 @@ Q_SIGNALS:
     /**
      * @brief Emitted whenever some items are ready
      */
-    void signalRGReady(QList<RGInfo>&);
+    void signalRGReady(const QList<RGInfo>&);
 };
 
 } // namespace Digikam
