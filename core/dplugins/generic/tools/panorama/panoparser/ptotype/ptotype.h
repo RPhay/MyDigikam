@@ -85,7 +85,7 @@ struct PTOType
         QRect          crop                     = QRect(0, 0, 0, 0);
         ProjectionType projection               = RECTILINEAR;
         double         fieldOfView              = 0.0;
-        FileFormat     fileFormat               = ;
+        FileFormat     fileFormat;
         double         exposure                 = 0.0;
         bool           hdr                      = false;
         BitDepth       bitDepth                 = UINT8;
@@ -193,7 +193,7 @@ struct PTOType
         struct LensParameter
         {
             LensParameter()
-              : value(T()),
+              : value(T())
             {
             }
 
@@ -238,7 +238,33 @@ struct PTOType
             PROPORTIONNALFLATFIELD = 6
         } VignettingMode;
 
-        Image() = default;
+        Image()
+          : fieldOfView               (0.0),
+            lensBarrelCoefficientA    (0.0),
+            lensBarrelCoefficientB    (0.0),
+            lensBarrelCoefficientC    (0.0),
+            lensCenterOffsetX         (0),
+            lensCenterOffsetY         (0),
+            lensShearX                (0),
+            lensShearY                (0),
+            exposure                  (0.0),
+            whiteBalanceRed           (1.0),
+            whiteBalanceBlue          (1.0),
+            vignettingMode            (PANO_NONE),
+            vignettingCorrectionI     (0.0),
+            vignettingCorrectionJ     (0.0),
+            vignettingCorrectionK     (0.0),
+            vignettingCorrectionL     (0.0),
+            vignettingOffsetX         (0),
+            vignettingOffsetY         (0),
+            photometricEMoRA          (0.0),
+            photometricEMoRB          (0.0),
+            photometricEMoRC          (0.0),
+            photometricEMoRD          (0.0),
+            photometricEMoRE          (0.0),
+            stackNumber               (0)
+        {
+        }
 
         QStringList                   previousComments;
         QSize                         size                          = QSize(0, 0);
@@ -246,40 +272,40 @@ struct PTOType
         QList<Mask>                   masks;
         QList<Optimization>           optimizationParameters;
         LensProjection                lensProjection                = RECTILINEAR;
-        LensParameter<double>         fieldOfView                   = 0.0;
+        LensParameter<double>         fieldOfView;
         double                        yaw                           = 0.0;
         double                        pitch                         = 0.0;
         double                        roll                          = 0.0;
-        LensParameter<double>         lensBarrelCoefficientA        = 0.0;
-        LensParameter<double>         lensBarrelCoefficientB        = 0.0;
-        LensParameter<double>         lensBarrelCoefficientC        = 0.0;
-        LensParameter<int>            lensCenterOffsetX             = 0;
-        LensParameter<int>            lensCenterOffsetY             = 0;
-        LensParameter<int>            lensShearX                    = 0;
-        LensParameter<int>            lensShearY                    = 0;
-        LensParameter<double>         exposure                      = 0.0;
-        LensParameter<double>         whiteBalanceRed               = 1.0;
-        LensParameter<double>         whiteBalanceBlue              = 1.0;
-        LensParameter<VignettingMode> vignettingMode                = PANO_NONE;
-        LensParameter<double>         vignettingCorrectionI         = 0.0;          ///< Va
-        LensParameter<double>         vignettingCorrectionJ         = 0.0;          ///< Vb
-        LensParameter<double>         vignettingCorrectionK         = 0.0;          ///< Vc
-        LensParameter<double>         vignettingCorrectionL         = 0.0;          ///< Vd
-        LensParameter<int>            vignettingOffsetX             = 0;
-        LensParameter<int>            vignettingOffsetY             = 0;
+        LensParameter<double>         lensBarrelCoefficientA;
+        LensParameter<double>         lensBarrelCoefficientB;
+        LensParameter<double>         lensBarrelCoefficientC;
+        LensParameter<int>            lensCenterOffsetX;
+        LensParameter<int>            lensCenterOffsetY;
+        LensParameter<int>            lensShearX;
+        LensParameter<int>            lensShearY;
+        LensParameter<double>         exposure;
+        LensParameter<double>         whiteBalanceRed;
+        LensParameter<double>         whiteBalanceBlue;
+        LensParameter<VignettingMode> vignettingMode;
+        LensParameter<double>         vignettingCorrectionI;          ///< Va
+        LensParameter<double>         vignettingCorrectionJ;          ///< Vb
+        LensParameter<double>         vignettingCorrectionK;          ///< Vc
+        LensParameter<double>         vignettingCorrectionL;          ///< Vd
+        LensParameter<int>            vignettingOffsetX;
+        LensParameter<int>            vignettingOffsetY;
         QString                       vignettingFlatfieldImageName;
-        LensParameter<double>         photometricEMoRA              = 0.0;
-        LensParameter<double>         photometricEMoRB              = 0.0;
-        LensParameter<double>         photometricEMoRC              = 0.0;
-        LensParameter<double>         photometricEMoRD              = 0.0;
-        LensParameter<double>         photometricEMoRE              = 0.0;
+        LensParameter<double>         photometricEMoRA;
+        LensParameter<double>         photometricEMoRB;
+        LensParameter<double>         photometricEMoRC;
+        LensParameter<double>         photometricEMoRD;
+        LensParameter<double>         photometricEMoRE;
         double                        mosaicCameraPositionX         = 0.0;
         double                        mosaicCameraPositionY         = 0.0;
         double                        mosaicCameraPositionZ         = 0.0;
         double                        mosaicProjectionPlaneYaw      = 0.0;
         double                        mosaicProjectionPlanePitch    = 0.0;
         QRect                         crop                          = QRect(0, 0, 0, 0);
-        LensParameter<int>            stackNumber                   = 0;
+        LensParameter<int>            stackNumber;
         QString                       fileName;
         QStringList                   unmatchedParameters;
     };
