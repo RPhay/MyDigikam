@@ -23,25 +23,24 @@ namespace DigikamGenericJAlbumPlugin
 
 JAlbumSettings::JAlbumSettings(DInfoInterface* const iface)
 {
-    m_iface     = iface;
-    m_getOption = IMAGES;
+    m_iface       = iface;
 
     QString dfltAlbumPath;
 
 #ifdef Q_OS_WIN
+
     dfltAlbumPath = QLatin1String(qgetenv("HOMEDRIVE").constData());
     dfltAlbumPath.append(QLatin1String(qgetenv("HOMEPATH").constData()));
     dfltAlbumPath.append(QLatin1String("\\Documents\\My Albums"));
+
 #else
+
     dfltAlbumPath = QLatin1String(qgetenv("HOME").constData());
     dfltAlbumPath.append(QLatin1String("/Documents/My Albums"));
+
 #endif
 
     m_destPath = dfltAlbumPath;
-}
-
-JAlbumSettings::~JAlbumSettings()
-{
 }
 
 void JAlbumSettings::readSettings(KConfigGroup& group)

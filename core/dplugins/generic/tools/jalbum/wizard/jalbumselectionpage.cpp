@@ -34,13 +34,6 @@ class Q_DECL_HIDDEN JAlbumSelectionPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
-        albumSelector(nullptr),
-        imageList(nullptr),
-        stack(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<JAlbumWizard*>(dialog);
 
@@ -51,18 +44,18 @@ public:
         }
     }
 
-    bool            albumSupport;
-    QWidget*        albumSelector;
-    DItemsList*     imageList;
-    QStackedWidget* stack;
-    JAlbumWizard*   wizard;
-    JAlbumSettings* settings;
-    DInfoInterface* iface;
+    bool            albumSupport    = false;
+    QWidget*        albumSelector   = nullptr;
+    DItemsList*     imageList       = nullptr;
+    QStackedWidget* stack           = nullptr;
+    JAlbumWizard*   wizard          = nullptr;
+    JAlbumSettings* settings        = nullptr;
+    DInfoInterface* iface           = nullptr;
 };
 
 JAlbumSelectionPage::JAlbumSelectionPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("AlbumSelectorPage"));
 
@@ -140,7 +133,9 @@ bool JAlbumSelectionPage::validatePage()
     else
     {
         if (d->imageList->imageUrls().isEmpty())
+        {
             return false;
+        }
 
         d->settings->m_imageList = d->imageList->imageUrls();
     }
@@ -153,7 +148,9 @@ bool JAlbumSelectionPage::isComplete() const
     if (d->stack->currentIndex() == JAlbumSettings::ALBUMS)
     {
         if (!d->albumSupport)
+        {
             return false;
+        }
 
         return (!d->iface->albumChooserItems().isEmpty());
     }

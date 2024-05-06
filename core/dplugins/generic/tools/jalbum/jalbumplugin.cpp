@@ -34,10 +34,6 @@ JAlbumPlugin::JAlbumPlugin(QObject* const parent)
 {
 }
 
-JAlbumPlugin::~JAlbumPlugin()
-{
-}
-
 QString JAlbumPlugin::name() const
 {
     return i18n("jAlbum Export");

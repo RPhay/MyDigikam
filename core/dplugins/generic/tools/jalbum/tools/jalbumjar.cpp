@@ -40,10 +40,6 @@ JalbumJar::JalbumJar(QObject* const)
     setup();
 }
 
-JalbumJar::~JalbumJar()
-{
-}
-
 bool JalbumJar::checkDirForPath(const QString& possibleDir)
 {
     QString possiblePath = path(possibleDir);
@@ -61,6 +57,7 @@ bool JalbumJar::checkDirForPath(const QString& possibleDir)
     }
 
     Q_EMIT signalBinaryValid();
+
     return ret;
 }
 

@@ -48,21 +48,16 @@ class Q_DECL_HIDDEN JAlbumFinalPage::Private
 {
 public:
 
-    explicit Private()
-      : progressView(nullptr),
-        progressBar(nullptr),
-        complete(false)
-    {
-    }
+    Private() = default;
 
-    DHistoryView* progressView;
-    DProgressWdg* progressBar;
-    bool          complete;
+    DHistoryView* progressView  = nullptr;
+    DProgressWdg* progressBar   = nullptr;
+    bool          complete      = false;
 };
 
 JAlbumFinalPage::JAlbumFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("FinalPage"));
 
@@ -87,7 +82,9 @@ JAlbumFinalPage::~JAlbumFinalPage()
 void JAlbumFinalPage::initializePage()
 {
     d->complete = false;
+
     Q_EMIT completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -158,6 +155,7 @@ void JAlbumFinalPage::slotProcess()
     }
 
     d->complete = true;
+
     Q_EMIT completeChanged();
 }
 

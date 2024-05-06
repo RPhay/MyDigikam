@@ -34,10 +34,6 @@ JalbumJava::JalbumJava(QObject* const)
     setup();
 }
 
-JalbumJava::~JalbumJava()
-{
-}
-
 } // namespace DigikamGenericJAlbumPlugin
 
 #include "moc_jalbumjava.cpp"

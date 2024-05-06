@@ -45,12 +45,6 @@ class Q_DECL_HIDDEN JAlbumIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(nullptr),
-        hbox(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        iface(nullptr),
-        binSearch(nullptr)
     {
         wizard = dynamic_cast<JAlbumWizard*>(dialog);
 
@@ -61,19 +55,19 @@ public:
         }
     }
 
-    QComboBox*       imageGetOption;
-    DHBox*           hbox;
-    JAlbumWizard*    wizard;
-    JAlbumSettings*  settings;
-    DInfoInterface*  iface;
-    DBinarySearch*   binSearch;
+    QComboBox*       imageGetOption = nullptr;
+    DHBox*           hbox           = nullptr;
+    JAlbumWizard*    wizard         = nullptr;
+    JAlbumSettings*  settings       = nullptr;
+    DInfoInterface*  iface          = nullptr;
+    DBinarySearch*   binSearch      = nullptr;
     JalbumJar        jalbumBin;
     JalbumJava       jalbumJava;
 };
 
 JAlbumIntroPage::JAlbumIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);

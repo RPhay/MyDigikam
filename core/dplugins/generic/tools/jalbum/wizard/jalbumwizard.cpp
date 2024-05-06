@@ -48,31 +48,24 @@ class Q_DECL_HIDDEN JAlbumWizard::Private
 {
 public:
 
-    explicit Private()
-      : settings(nullptr),
-        introPage(nullptr),
-        selectionPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr)
-    {
-    }
+    Private() = default;
 
-    JAlbumSettings*        settings;
+    JAlbumSettings*        settings         = nullptr;
 
-    JAlbumIntroPage*       introPage;
-    JAlbumSelectionPage*   selectionPage;
-    JAlbumOutputPage*      outputPage;
-    JAlbumFinalPage*       finalPage;
+    JAlbumIntroPage*       introPage        = nullptr;
+    JAlbumSelectionPage*   selectionPage    = nullptr;
+    JAlbumOutputPage*      outputPage       = nullptr;
+    JAlbumFinalPage*       finalPage        = nullptr;
 };
 
 JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("jAlbum Album Creation Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Create jAlbum Album"));
 
-    d->settings          = new JAlbumSettings(iface);
+    d->settings             = new JAlbumSettings(iface);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group(QLatin1String("jAlbum tool"));

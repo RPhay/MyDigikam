@@ -44,26 +44,18 @@ class Q_DECL_HIDDEN JAlbumGenerator::Private
 {
 public:
 
-    explicit Private()
-      : that    (nullptr),
-        settings(nullptr),
-        warnings(false),
-        cancel  (false),
-        pview   (nullptr),
-        pbar    (nullptr)
-    {
-    }
+    Private() = default;
 
-    JAlbumGenerator* that;
-    JAlbumSettings*  settings;
+    JAlbumGenerator* that       = nullptr;
+    JAlbumSettings*  settings   = nullptr;
     QList<QUrl>      urls;
 
     // State settings
-    bool             warnings;
+    bool             warnings   = false;
 
-    bool             cancel;
-    DHistoryView*    pview;
-    DProgressWdg*    pbar;
+    bool             cancel     = false;
+    DHistoryView*    pview      = nullptr;
+    DProgressWdg*    pbar       = nullptr;
 
 public:
 
@@ -232,7 +224,9 @@ JAlbumGenerator::~JAlbumGenerator()
 bool JAlbumGenerator::run()
 {
     if (!d->init())
+    {
         return false;
+    }
 
     QString destDir = d->settings->m_destPath;
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << destDir;
@@ -247,7 +241,9 @@ bool JAlbumGenerator::run()
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << projDir;
 
     if (!d->createDir(projDir))
+    {
         return false;
+    }
 
     bool result = d->createUrlsList();
 

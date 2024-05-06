@@ -35,7 +35,7 @@ class JAlbumPlugin : public DPluginGeneric
 public:
 
     explicit JAlbumPlugin(QObject* const parent = nullptr);
-    ~JAlbumPlugin()                      override;
+    ~JAlbumPlugin()                      override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

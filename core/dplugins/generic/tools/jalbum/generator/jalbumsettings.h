@@ -49,26 +49,28 @@ public:
 public:
 
     explicit JAlbumSettings(DInfoInterface* const iface = nullptr);
-    ~JAlbumSettings();
+    ~JAlbumSettings() = default;
 
-    // Read and write settings in config file between sessions.
+    /**
+     * Read and write settings in config file between sessions.
+     */
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
 
 public:
 
     QString                   m_destPath;
-    QString                   m_jalbumPath;          // jAlbum java archive path.
-    QString                   m_javaPath;            // Java executable path.
-    QString                   m_imageSelectionTitle; // Jalbum title to use for JAlbumSettings::ImageGetOption::IMAGES selection.
+    QString                   m_jalbumPath;          ///< jAlbum java archive path.
+    QString                   m_javaPath;            ///< Java executable path.
+    QString                   m_imageSelectionTitle; ///< Jalbum title to use for JAlbumSettings::ImageGetOption::IMAGES selection.
 
-    ImageGetOption            m_getOption;           // Type of image selection (albums or images list).
+    ImageGetOption            m_getOption = IMAGES;  ///< Type of image selection (albums or images list).
 
-    DInfoInterface::DAlbumIDs m_albumList;           // Albums list for ImageGetOption::ALBUMS selection.
+    DInfoInterface::DAlbumIDs m_albumList;           ///< Albums list for ImageGetOption::ALBUMS selection.
 
-    QList<QUrl>               m_imageList;           // Images list for ImageGetOption::IMAGES selection.
+    QList<QUrl>               m_imageList;           ///< Images list for ImageGetOption::IMAGES selection.
 
-    DInfoInterface*           m_iface;               // Interface to handle items information.
+    DInfoInterface*           m_iface     = nullptr; ///< Interface to handle items information.
 };
 
 //! qDebug() stream operator. Writes property @a t to the debug output in a nicely formatted way.

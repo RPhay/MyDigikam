@@ -31,7 +31,7 @@ class JalbumJava : public DBinaryIface
 public:
 
     explicit JalbumJava(QObject* const parent = nullptr);
-    ~JalbumJava() override;
+    ~JalbumJava() override = default;
 };
 
 } // namespace DigikamGenericJAlbumPlugin

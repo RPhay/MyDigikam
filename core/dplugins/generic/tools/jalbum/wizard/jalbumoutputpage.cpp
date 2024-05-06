@@ -43,16 +43,11 @@ class Q_DECL_HIDDEN JAlbumOutputPage::Private
 {
 public:
 
-    explicit Private()
-      : destUrl             (nullptr),
-        titleLabel          (nullptr),
-        imageSelectionTitle (nullptr)
-    {
-    }
+    Private() = default;
 
-    DFileSelector*  destUrl;
-    QLabel*         titleLabel;
-    DPlainTextEdit* imageSelectionTitle;
+    DFileSelector*  destUrl             = nullptr;
+    QLabel*         titleLabel          = nullptr;
+    DPlainTextEdit* imageSelectionTitle = nullptr;
 };
 
 JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
@@ -122,7 +117,9 @@ void JAlbumOutputPage::initializePage()
     JAlbumWizard* const wizard = dynamic_cast<JAlbumWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     JAlbumSettings* const info  = wizard->settings();
 
@@ -133,15 +130,21 @@ void JAlbumOutputPage::initializePage()
 bool JAlbumOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     if (d->imageSelectionTitle->text().isEmpty())
+    {
         return false;
+    }
 
     JAlbumWizard* const wizard  = dynamic_cast<JAlbumWizard*>(assistant());
 
     if (!wizard)
+    {
         return false;
+    }
 
     JAlbumSettings* const settings  = wizard->settings();
     settings->m_destPath            = d->destUrl->fileDlgPath();
@@ -155,7 +158,9 @@ bool JAlbumOutputPage::isComplete() const
     JAlbumWizard* const wizard = dynamic_cast<JAlbumWizard*>(assistant());
 
     if (!wizard)
+    {
         return false;
+    }
 
     bool b = !d->destUrl->fileDlgPath().isEmpty();
     b      = b && !d->imageSelectionTitle->text().isEmpty();

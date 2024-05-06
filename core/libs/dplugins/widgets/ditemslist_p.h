@@ -76,9 +76,7 @@ public:
         setIcon(icon);
     }
 
-    ~CtrlButton() override
-    {
-    }
+    ~CtrlButton() override = default;
 };
 
 } // namespace Digikam
