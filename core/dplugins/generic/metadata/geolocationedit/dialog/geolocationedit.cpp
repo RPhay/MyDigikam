@@ -238,9 +238,9 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->undoStack     = new QUndoStack(this);
     d->stackedWidget = new QStackedWidget();
     d->searchWidget  = new SearchResultWidget(d->bookmarkOwner,
-                                        d->imageModel,
-                                        d->selectionModel,
-                                        d->stackedWidget);
+                                              d->imageModel,
+                                              d->selectionModel,
+                                              d->stackedWidget);
 
     GPSItemContainer::setHeaderData(d->imageModel);
     d->mapModelHelper      = new GPSGeoIfaceModelHelper(d->imageModel, d->selectionModel, this);
@@ -609,7 +609,7 @@ void GeolocationEdit::setItems(const QList<GPSItemContainer*>& items)
 void GeolocationEdit::slotFileMetadataLoaded(int beginIndex, int endIndex)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << beginIndex << endIndex;
-    d->fileIOCountDone += (endIndex-beginIndex);
+    d->fileIOCountDone += (endIndex - beginIndex);
     slotProgressChanged(d->fileIOCountDone);
 
     if (d->fileIOCountDone == d->fileIOCountTotal)
@@ -705,7 +705,7 @@ void GeolocationEdit::readSettings()
 void GeolocationEdit::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(QLatin1String("Geolocation Edit Settings"));
+    KConfigGroup group        = config->group(QLatin1String("Geolocation Edit Settings"));
 
     // --------------------------
 
@@ -792,8 +792,7 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
         const int chosenAction = DMessageBox::showYesNo(QMessageBox::Warning,
                                                         this,
                                                         i18nc("@title:window", "Unsaved Changes"),
-                                                        i18nc("@info", "%1 Would you like to save the changes you made to them?", message)
-                                                       );
+                                                        i18nc("@info", "%1 Would you like to save the changes you made to them?", message));
 
         if (chosenAction == QMessageBox::No)
         {
@@ -928,7 +927,7 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << beginIndex << endIndex;
 
-    d->fileIOCountDone += (endIndex-beginIndex);
+    d->fileIOCountDone += (endIndex - beginIndex);
     slotProgressChanged(d->fileIOCountDone);
 
     if (d->fileIOCountDone == d->fileIOCountTotal)
