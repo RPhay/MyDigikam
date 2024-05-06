@@ -127,6 +127,7 @@ void GPSBookmarkOwner::slotShowBookmarksDialog()
     {
         d->bookmarksDialog = new BookmarksDialog(d->parent, d->bookmarkManager);
         d->bookmarksDialog->show();
+        d->bookmarksDialog->raise();
     }
 }
 
