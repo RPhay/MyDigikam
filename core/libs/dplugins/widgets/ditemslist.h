@@ -291,10 +291,10 @@ Q_SIGNALS:
     void signalFoundRAWImages(bool);
     void signalItemClicked(QTreeWidgetItem*);
     void signalContextMenuRequested();
-    void signalXMLSaveItem(QXmlStreamWriter&, int);
-    void signalXMLLoadImageElement(QXmlStreamReader&);
-    void signalXMLCustomElements(QXmlStreamWriter&);
-    void signalXMLCustomElements(QXmlStreamReader&);
+    void signalXMLSaveItem(QXmlStreamWriter&, int);         // clazy:exclude=signal-with-return-value
+    void signalXMLLoadImageElement(QXmlStreamReader&);      // clazy:exclude=signal-with-return-value
+    void signalXMLCustomElements(QXmlStreamWriter&);        // clazy:exclude=signal-with-return-value
+    void signalXMLCustomElements(QXmlStreamReader&);        // clazy:exclude=signal-with-return-value
 
 public Q_SLOTS:
 
