@@ -68,7 +68,7 @@ public:
 public:
 
     explicit TextConverterList(QWidget* const parent = nullptr);
-    ~TextConverterList();
+    ~TextConverterList() = default;
 
 public Q_SLOTS:
 

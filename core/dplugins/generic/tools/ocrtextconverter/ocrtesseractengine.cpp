@@ -51,7 +51,7 @@ public:
 
 OcrTesseractEngine::OcrTesseractEngine(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 

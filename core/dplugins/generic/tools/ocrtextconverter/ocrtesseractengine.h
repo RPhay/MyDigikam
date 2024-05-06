@@ -58,7 +58,7 @@ public:
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
-    OcrOptions ocrOptions() const;
+    OcrOptions ocrOptions()      const;
     void setOcrOptions(const OcrOptions& opt);
 
 public:

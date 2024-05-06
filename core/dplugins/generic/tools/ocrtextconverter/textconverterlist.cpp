@@ -34,9 +34,7 @@ class TextConverterListViewItem::Private
 {
 public:
 
-    Private()
-    {
-    }
+    Private() = default;
 
     QString destFileName;
     QString recognizedWords;
@@ -91,10 +89,6 @@ TextConverterList::TextConverterList(QWidget* const parent)
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Words"),       true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"), true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),      true);
-}
-
-TextConverterList::~TextConverterList()
-{
 }
 
 void TextConverterList::slotAddImages(const QList<QUrl>& list)

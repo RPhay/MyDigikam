@@ -26,21 +26,6 @@
 namespace DigikamGenericTextConverterPlugin
 {
 
-OcrOptions::OcrOptions()
-    : psm             (int(PageSegmentationModes::DEFAULT)),
-      oem             (int(EngineModes::DEFAULT)),
-      dpi             (300),
-      isSaveTextFile  (true),
-      isSaveXMP       (true),
-      iface           (nullptr),
-      multicores      (false)
-{
-}
-
-OcrOptions::~OcrOptions()
-{
-}
-
 QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString> > OcrOptions::psmNames()
 {
     QMap<PageSegmentationModes,  QPair<QString, QString> > psm;

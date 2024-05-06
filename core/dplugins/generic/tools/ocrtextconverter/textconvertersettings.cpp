@@ -47,35 +47,25 @@ class Q_DECL_HIDDEN TextConverterSettings::Private
 {
 public:
 
-    explicit Private()
-      : ocrTesseractLanguageMode(nullptr),
-        ocrTesseractPSMMode     (nullptr),
-        ocrTesseractOEMMode     (nullptr),
-        ocrTesseractDpi         (nullptr),
-        saveTextFile            (nullptr),
-        saveXMP                 (nullptr),
-        localizeList            (nullptr),
-        multicores              (nullptr)
-    {
-    }
+    Private() = default;
 
     // Tesseract options
 
-    DComboBox*            ocrTesseractLanguageMode;
+    DComboBox*            ocrTesseractLanguageMode  = nullptr;
 
-    DComboBox*            ocrTesseractPSMMode;
+    DComboBox*            ocrTesseractPSMMode       = nullptr;
 
-    DComboBox*            ocrTesseractOEMMode;
+    DComboBox*            ocrTesseractOEMMode       = nullptr;
 
-    DIntNumInput*         ocrTesseractDpi;
+    DIntNumInput*         ocrTesseractDpi           = nullptr;
 
-    QCheckBox*            saveTextFile;
+    QCheckBox*            saveTextFile              = nullptr;
 
-    QCheckBox*            saveXMP;
+    QCheckBox*            saveXMP                   = nullptr;
 
-    LocalizeSelectorList* localizeList;
+    LocalizeSelectorList* localizeList              = nullptr;
 
-    QCheckBox*            multicores;
+    QCheckBox*            multicores                = nullptr;
 };
 
 TextConverterSettings::TextConverterSettings(QWidget* const parent)

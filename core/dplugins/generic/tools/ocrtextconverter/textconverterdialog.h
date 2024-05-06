@@ -41,7 +41,7 @@ class TextConverterDialog : public DPluginDialog
 public:
 
     explicit TextConverterDialog(QWidget* const parent, DInfoInterface* const iface);
-    ~TextConverterDialog() override;
+    ~TextConverterDialog()                                    override;
 
    void addItems(const QList<QUrl>& itemList);
 
@@ -57,7 +57,7 @@ private:
     void processingFailed(const QUrl& url, int result);
     void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);
 
-    int  calculateNumberOfWords(const QString& text) const;
+    int  calculateNumberOfWords(const QString& text)    const;
 
     void plugProcessMenu();
     void unplugProcessMenu();

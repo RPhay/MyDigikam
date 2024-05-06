@@ -73,47 +73,34 @@ public:
 
 public:
 
-    Private()
-      : busy                (false),
-        progressBar         (nullptr),
-        thread              (nullptr),
-        iface               (nullptr),
-        listView            (nullptr),
-        ocrSettings         (nullptr),
-        textedit            (nullptr),
-        saveTextButton      (nullptr),
-        currentSelectedItem (nullptr),
-        binWidget           (nullptr),
-        tabView             (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                              busy;
+    bool                              busy                  = false;
 
     QList<QUrl>                       fileList;
 
     QMap<QUrl, QString>               textEditList;
 
-    DProgressWdg*                     progressBar;
+    DProgressWdg*                     progressBar           = nullptr;
 
-    TextConverterActionThread*        thread;
+    TextConverterActionThread*        thread                = nullptr;
 
-    DInfoInterface*                   iface;
+    DInfoInterface*                   iface                 = nullptr;
 
-    TextConverterList*                listView;
+    TextConverterList*                listView              = nullptr;
 
-    TextConverterSettings*            ocrSettings;
+    TextConverterSettings*            ocrSettings           = nullptr;
 
-    DTextEdit*                        textedit;
+    DTextEdit*                        textedit              = nullptr;
 
-    QPushButton*                      saveTextButton;
+    QPushButton*                      saveTextButton        = nullptr;
 
-    TextConverterListViewItem*        currentSelectedItem;
+    TextConverterListViewItem*        currentSelectedItem   = nullptr;
 
     TesseractBinary                   tesseractBin;
-    DBinarySearch*                    binWidget;
+    DBinarySearch*                    binWidget             = nullptr;
 
-    QTabWidget*                       tabView;
+    QTabWidget*                       tabView               = nullptr;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)

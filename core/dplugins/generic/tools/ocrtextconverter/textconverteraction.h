@@ -41,15 +41,10 @@ class TextConverterActionData
 
 public:
 
-    TextConverterActionData()
-      : starting(false),
-        result  (OcrTesseractEngine::PROCESS_COMPLETE),
-        action  (NONE)
-    {
-    }
+    TextConverterActionData() = default;
 
-    bool                 starting;
-    int                  result;
+    bool                 starting   = false;
+    int                  result     = OcrTesseractEngine::PROCESS_COMPLETE;
 
     QString              destPath;
     QString              message;
@@ -60,7 +55,7 @@ public:
 
     QUrl                 fileUrl;
 
-    TextConverterAction  action;
+    TextConverterAction  action     = NONE;
 };
 
 }  // namespace DigikamGenericTextConverterPlugin

@@ -35,7 +35,7 @@ class TesseractBinary : public DBinaryIface
 public:
 
     explicit TesseractBinary(QObject* const parent = nullptr);
-    ~TesseractBinary()                      override;
+    ~TesseractBinary()                     override = default;
 
     QStringList tesseractLanguages() const;
 };

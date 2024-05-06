@@ -47,10 +47,6 @@ TesseractBinary::TesseractBinary(QObject* const)
     setup();
 }
 
-TesseractBinary::~TesseractBinary()
-{
-}
-
 QStringList TesseractBinary::tesseractLanguages() const
 {
     /*

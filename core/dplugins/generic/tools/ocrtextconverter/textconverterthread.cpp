@@ -29,9 +29,7 @@ class TextConverterActionThread::Private
 {
 public:
 
-    Private()
-    {
-    }
+    Private() = default;
 
     OcrOptions opt;
 };

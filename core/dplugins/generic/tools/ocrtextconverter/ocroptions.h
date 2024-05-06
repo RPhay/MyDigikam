@@ -79,8 +79,8 @@ public:
 
 public:
 
-    explicit OcrOptions();
-    ~OcrOptions();
+    OcrOptions()  = default;
+    ~OcrOptions() = default;
 
 public:
 
@@ -94,11 +94,11 @@ public:
 
 public:
 
-    int             psm;                ///< Page segmentation mode.
-    int             oem;                ///< OCR Engine mode
-    int             dpi;                ///< Dot per inch.of input images.
-    bool            isSaveTextFile;     ///< If true, save recognized text to text file.
-    bool            isSaveXMP;          ///< If true, save recognized text to image XMP metadata alternative language tags.
+    int             psm             = int(PageSegmentationModes::DEFAULT); ///< Page segmentation mode.
+    int             oem             = int(EngineModes::DEFAULT);           ///< OCR Engine mode
+    int             dpi             = 300;                                 ///< Dot per inch.of input images.
+    bool            isSaveTextFile  = true;                                ///< If true, save recognized text to text file.
+    bool            isSaveXMP       = true;                                ///< If true, save recognized text to image XMP metadata alternative language tags.
 
     /**
      * ISO 639-2 3 letters Language code to use while performing OCR on images.
@@ -106,13 +106,13 @@ public:
      */
     QString         language;
 
-    QString         tesseractPath;      ///< Path to tesseract binary program.
+    QString         tesseractPath;              ///< Path to tesseract binary program.
 
-    QStringList     translations;       ///< List of translation codes to localize recognized text.
+    QStringList     translations;               ///< List of translation codes to localize recognized text.
 
-    DInfoInterface* iface;              ///< Host application interface.
+    DInfoInterface* iface           = nullptr;  ///< Host application interface.
 
-    bool            multicores;         ///< Process files in parallel.
+    bool            multicores      = false;    ///< Process files in parallel.
 };
 
 } // namespace DigikamGenericTextConverterPlugin

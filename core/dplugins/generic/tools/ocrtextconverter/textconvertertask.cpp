@@ -34,15 +34,12 @@ class TextConverterTask::Private
 {
 public:
 
-    Private()
-      : action (TextConverterAction())
-    {
-    }
+    Private() = default;
 
     OcrOptions                   opt;
 
     QUrl                         url;
-    TextConverterAction          action;
+    TextConverterAction          action = TextConverterAction();
 
     QPointer<OcrTesseractEngine> ocrEngine;
 };
