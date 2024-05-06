@@ -81,6 +81,9 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
                    Qt::Window                    |
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
+
+    setModal(true);
+
     setWindowTitle(i18nc("@title:window", "Add Bookmark"));
     setObjectName(QLatin1String("AddBookmarkDialog"));
     resize(350, 300);
