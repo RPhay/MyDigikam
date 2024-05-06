@@ -54,20 +54,13 @@ struct PTOType
                 DEFLATE
             } CompressionMethod;
 
-            FileType          fileType;
-            unsigned char     quality;            ///< for JPEG
-            CompressionMethod compressionMethod;  ///< for TIFF
-            bool              cropped;            ///< for TIFF
-            bool              savePositions;      ///< for TIFF
+            FileFormat() = default;
 
-            FileFormat()
-              : fileType         (JPEG),
-                quality          (90),
-                compressionMethod(LZW),
-                cropped          (false),
-                savePositions    (false)
-            {
-            }
+            FileType          fileType          = JPEG;
+            unsigned char     quality           = 90;       ///< for JPEG
+            CompressionMethod compressionMethod = LZW;      ///< for TIFF
+            bool              cropped           = false;    ///< for TIFF
+            bool              savePositions     = false;    ///< for TIFF
         };
 
         typedef enum
@@ -85,29 +78,19 @@ struct PTOType
             FLOAT
         } BitDepth;
 
-        QStringList    previousComments;
-        QSize          size;
-        QRect          crop;
-        ProjectionType projection;
-        double         fieldOfView;
-        FileFormat     fileFormat;
-        double         exposure;
-        bool           hdr;
-        BitDepth       bitDepth;
-        int            photometricReferenceId;
-        QStringList    unmatchedParameters;
+        Project() = default;
 
-        Project()
-          : size                  (0, 0),
-            crop                  (0, 0, 0, 0),
-            projection            (RECTILINEAR),
-            fieldOfView           (0),
-            exposure              (0),
-            hdr                   (false),
-            bitDepth              (UINT8),
-            photometricReferenceId(0)
-        {
-        }
+        QStringList    previousComments;
+        QSize          size                     = QSize(0, 0);
+        QRect          crop                     = QRect(0, 0, 0, 0);
+        ProjectionType projection               = RECTILINEAR;
+        double         fieldOfView              = 0.0;
+        FileFormat     fileFormat               = ;
+        double         exposure                 = 0.0;
+        bool           hdr                      = false;
+        BitDepth       bitDepth                 = UINT8;
+        int            photometricReferenceId   = 0;
+        QStringList    unmatchedParameters;
     };
 
     // --------------------------------------------------------------------------------------
@@ -133,22 +116,15 @@ struct PTOType
             FAST   = 2
         } SpeedUp;
 
-        QStringList  previousComments;
-        double       gamma;
-        Interpolator interpolator;
-        SpeedUp      speedUp;
-        double       huberSigma;
-        double       photometricHuberSigma;
-        QStringList  unmatchedParameters;
+        Stitcher() = default;
 
-        Stitcher()
-          : gamma                (1),
-            interpolator         (POLY3),
-            speedUp              (FAST),
-            huberSigma           (0),
-            photometricHuberSigma(0)
-        {
-        }
+        QStringList  previousComments;
+        double       gamma                  = 1.0;
+        Interpolator interpolator           = POLY3;
+        SpeedUp      speedUp                = FAST;
+        double       huberSigma             = 0.0;
+        double       photometricHuberSigma  = 0.0;
+        QStringList  unmatchedParameters;
     };
 
     // --------------------------------------------------------------------------------------
@@ -164,8 +140,10 @@ struct PTOType
             NEGATIVELENS  = 4
         } MaskType;
 
+        Mask() = default;
+
         QStringList   previousComments;
-        MaskType      type;
+        MaskType      type = NEGATIVE;
         QList<QPoint> hull;
     };
 
@@ -201,8 +179,10 @@ struct PTOType
             UNKNOWN
         } Parameter;
 
+        Optimization() = default;
+
         QStringList previousComments;
-        Parameter   parameter;
+        Parameter   parameter = UNKNOWN;
     };
 
     // --------------------------------------------------------------------------------------
@@ -213,19 +193,17 @@ struct PTOType
         struct LensParameter
         {
             LensParameter()
-              : value      (T()),
-                referenceId(-1)
+              : value(T()),
             {
             }
 
             explicit LensParameter(const T& v)
-              : value      (v),
-                referenceId(-1)
+              : value(v)
             {
             }
 
             T   value;
-            int referenceId;
+            int referenceId = -1;
 
             friend QTextStream& operator<<(QTextStream& qts, const LensParameter<T>& p)
             {
@@ -260,88 +238,50 @@ struct PTOType
             PROPORTIONNALFLATFIELD = 6
         } VignettingMode;
 
+        Image() = default;
+
         QStringList                   previousComments;
-        QSize                         size;
-        int                           id;
+        QSize                         size                          = QSize(0, 0);
+        int                           id                            = 0;
         QList<Mask>                   masks;
         QList<Optimization>           optimizationParameters;
-        LensProjection                lensProjection;
-        LensParameter<double>         fieldOfView;
-        double                        yaw;
-        double                        pitch;
-        double                        roll;
-        LensParameter<double>         lensBarrelCoefficientA;
-        LensParameter<double>         lensBarrelCoefficientB;
-        LensParameter<double>         lensBarrelCoefficientC;
-        LensParameter<int>            lensCenterOffsetX;
-        LensParameter<int>            lensCenterOffsetY;
-        LensParameter<int>            lensShearX;
-        LensParameter<int>            lensShearY;
-        LensParameter<double>         exposure;
-        LensParameter<double>         whiteBalanceRed;
-        LensParameter<double>         whiteBalanceBlue;
-        LensParameter<VignettingMode> vignettingMode;
-        LensParameter<double>         vignettingCorrectionI;      ///< Va
-        LensParameter<double>         vignettingCorrectionJ;      ///< Vb
-        LensParameter<double>         vignettingCorrectionK;      ///< Vc
-        LensParameter<double>         vignettingCorrectionL;      ///< Vd
-        LensParameter<int>            vignettingOffsetX;
-        LensParameter<int>            vignettingOffsetY;
+        LensProjection                lensProjection                = RECTILINEAR;
+        LensParameter<double>         fieldOfView                   = 0.0;
+        double                        yaw                           = 0.0;
+        double                        pitch                         = 0.0;
+        double                        roll                          = 0.0;
+        LensParameter<double>         lensBarrelCoefficientA        = 0.0;
+        LensParameter<double>         lensBarrelCoefficientB        = 0.0;
+        LensParameter<double>         lensBarrelCoefficientC        = 0.0;
+        LensParameter<int>            lensCenterOffsetX             = 0;
+        LensParameter<int>            lensCenterOffsetY             = 0;
+        LensParameter<int>            lensShearX                    = 0;
+        LensParameter<int>            lensShearY                    = 0;
+        LensParameter<double>         exposure                      = 0.0;
+        LensParameter<double>         whiteBalanceRed               = 1.0;
+        LensParameter<double>         whiteBalanceBlue              = 1.0;
+        LensParameter<VignettingMode> vignettingMode                = PANO_NONE;
+        LensParameter<double>         vignettingCorrectionI         = 0.0;          ///< Va
+        LensParameter<double>         vignettingCorrectionJ         = 0.0;          ///< Vb
+        LensParameter<double>         vignettingCorrectionK         = 0.0;          ///< Vc
+        LensParameter<double>         vignettingCorrectionL         = 0.0;          ///< Vd
+        LensParameter<int>            vignettingOffsetX             = 0;
+        LensParameter<int>            vignettingOffsetY             = 0;
         QString                       vignettingFlatfieldImageName;
-        LensParameter<double>         photometricEMoRA;
-        LensParameter<double>         photometricEMoRB;
-        LensParameter<double>         photometricEMoRC;
-        LensParameter<double>         photometricEMoRD;
-        LensParameter<double>         photometricEMoRE;
-        double                        mosaicCameraPositionX;
-        double                        mosaicCameraPositionY;
-        double                        mosaicCameraPositionZ;
-        double                        mosaicProjectionPlaneYaw;
-        double                        mosaicProjectionPlanePitch;
-        QRect                         crop;
-        LensParameter<int>            stackNumber;
+        LensParameter<double>         photometricEMoRA              = 0.0;
+        LensParameter<double>         photometricEMoRB              = 0.0;
+        LensParameter<double>         photometricEMoRC              = 0.0;
+        LensParameter<double>         photometricEMoRD              = 0.0;
+        LensParameter<double>         photometricEMoRE              = 0.0;
+        double                        mosaicCameraPositionX         = 0.0;
+        double                        mosaicCameraPositionY         = 0.0;
+        double                        mosaicCameraPositionZ         = 0.0;
+        double                        mosaicProjectionPlaneYaw      = 0.0;
+        double                        mosaicProjectionPlanePitch    = 0.0;
+        QRect                         crop                          = QRect(0, 0, 0, 0);
+        LensParameter<int>            stackNumber                   = 0;
         QString                       fileName;
         QStringList                   unmatchedParameters;
-
-        Image()
-          : size                      (0, 0),
-            id                        (0),
-            lensProjection            (RECTILINEAR),
-            fieldOfView               (0),
-            yaw                       (0),
-            pitch                     (0),
-            roll                      (0),
-            lensBarrelCoefficientA    (0),
-            lensBarrelCoefficientB    (0),
-            lensBarrelCoefficientC    (0),
-            lensCenterOffsetX         (0),
-            lensCenterOffsetY         (0),
-            lensShearX                (0),
-            lensShearY                (0),
-            exposure                  (0),
-            whiteBalanceRed           (1),
-            whiteBalanceBlue          (1),
-            vignettingMode            (PANO_NONE),
-            vignettingCorrectionI     (0),
-            vignettingCorrectionJ     (0),
-            vignettingCorrectionK     (0),
-            vignettingCorrectionL     (0),
-            vignettingOffsetX         (0),
-            vignettingOffsetY         (0),
-            photometricEMoRA          (0),
-            photometricEMoRB          (0),
-            photometricEMoRC          (0),
-            photometricEMoRD          (0),
-            photometricEMoRE          (0),
-            mosaicCameraPositionX     (0),
-            mosaicCameraPositionY     (0),
-            mosaicCameraPositionZ     (0),
-            mosaicProjectionPlaneYaw  (0),
-            mosaicProjectionPlanePitch(0),
-            crop                      (0, 0, 0, 0),
-            stackNumber               (0)
-        {
-        }
     };
 
     // --------------------------------------------------------------------------------------
@@ -349,13 +289,13 @@ struct PTOType
     struct ControlPoint
     {
         QStringList previousComments;
-        int         image1Id;
-        int         image2Id;
-        double      p1_x;
-        double      p1_y;
-        double      p2_x;
-        double      p2_y;
-        int         type;                   // FIXME: change that for an enum if possible
+        int         image1Id            = 0;
+        int         image2Id            = 0;
+        double      p1_x                = 0.0;
+        double      p1_y                = 0.0;
+        double      p2_x                = 0.0;
+        double      p2_y                = 0.0;
+        int         type                = 0;             // FIXME: change that for an enum if possible
         QStringList unmatchedParameters;
     };
 

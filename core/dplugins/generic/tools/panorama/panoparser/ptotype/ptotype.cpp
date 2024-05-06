@@ -77,15 +77,21 @@ bool PTOType::createFile(const QString& filepath)
     switch (project.bitDepth)
     {
         case Project::UINT16:
+        {
             out << " T\"UINT16\"";
             break;
+        }
 
         case Project::FLOAT:
+        {
             out << " T\"FLOAT\"";
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     if (project.crop.height() > 1 && project.crop.width() > 1)
@@ -137,16 +143,22 @@ bool PTOType::createFile(const QString& filepath)
             switch (project.fileFormat.compressionMethod)
             {
                 case Project::FileFormat::PANO_NONE:
+                {
                     out << "PANO_NONE";
                     break;
+                }
 
                 case Project::FileFormat::LZW:
+                {
                     out << "LZW";
                     break;
+                }
 
                 case Project::FileFormat::DEFLATE:
+                {
                     out << "DEFLATE";
                     break;
+                }
             }
 
             if (project.fileFormat.savePositions)
@@ -291,101 +303,150 @@ bool PTOType::createFile(const QString& filepath)
             switch (optim.parameter)
             {
                 case Optimization::LENSA:
+                {
                     out << 'a';
                     break;
+                }
 
                 case Optimization::LENSB:
+                {
                     out << 'b';
                     break;
+                }
 
                 case Optimization::LENSC:
+                {
                     out << 'c';
                     break;
+                }
 
                 case Optimization::LENSD:
+                {
                     out << 'd';
                     break;
+                }
 
                 case Optimization::LENSE:
+                {
                     out << 'e';
                     break;
+                }
 
                 case Optimization::LENSHFOV:
+                {
                     out << 'v';
                     break;
+                }
 
                 case Optimization::LENSYAW:
+                {
                     out << 'y';
                     break;
+                }
 
                 case Optimization::LENSPITCH:
+                {
                     out << 'p';
                     break;
+                }
 
                 case Optimization::LENSROLL:
+                {
                     out << 'r';
                     break;
+                }
 
                 case Optimization::EXPOSURE:
+                {
                     out << "Eev";
                     break;
+                }
 
                 case Optimization::WBR:
+                {
                     out << "Er";
                     break;
+                }
 
                 case Optimization::WBB:
+                {
                     out << "Eb";
                     break;
+                }
 
                 case Optimization::VA:
+                {
                     out << "Va";
                     break;
+                }
 
                 case Optimization::VB:
+                {
                     out << "Vb";
                     break;
+                }
 
                 case Optimization::VC:
+                {
                     out << "Vc";
                     break;
+                }
 
                 case Optimization::VD:
+                {
                     out << "Vd";
                     break;
+                }
 
                 case Optimization::VX:
+                {
                     out << "Vx";
                     break;
+                }
 
                 case Optimization::VY:
+                {
                     out << "Vy";
                     break;
+                }
 
                 case Optimization::RA:
+                {
                     out << "Ra";
                     break;
+                }
 
                 case Optimization::RB:
+                {
                     out << "Rb";
                     break;
+                }
 
                 case Optimization::RC:
+                {
                     out << "Rc";
                     break;
+                }
 
                 case Optimization::RD:
+                {
                     out << "Rd";
                     break;
+                }
 
                 case Optimization::RE:
+                {
                     out << "Re";
                     break;
+                }
 
                 case Optimization::UNKNOWN:
+                {
                     qCCritical(DIGIKAM_GENERAL_LOG) << "Unknown optimization parameter!";
                     file.close();
+
                     return false;
+                }
             }
 
             out << id << Qt::endl;

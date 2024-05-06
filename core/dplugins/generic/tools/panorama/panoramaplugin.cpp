@@ -34,10 +34,6 @@ PanoramaPlugin::PanoramaPlugin(QObject* const parent)
 {
 }
 
-PanoramaPlugin::~PanoramaPlugin()
-{
-}
-
 void PanoramaPlugin::cleanUp()
 {
     if (PanoManager::isCreated())
@@ -94,7 +90,7 @@ QList<DPluginAuthor> PanoramaPlugin::authors() const
                              QString::fromUtf8("(C) 2011-2016"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2020"),
+                             QString::fromUtf8("(C) 2009-2024"),
                              i18n("Author and Maintainer"))
             ;
 }

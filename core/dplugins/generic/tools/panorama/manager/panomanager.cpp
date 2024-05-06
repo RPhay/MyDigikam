@@ -48,20 +48,7 @@ class Q_DECL_HIDDEN PanoManager::Private
 {
 public:
 
-    explicit Private()
-      : basePtoData                 (nullptr),
-        cpFindPtoData               (nullptr),
-        cpCleanPtoData              (nullptr),
-        autoOptimisePtoData         (nullptr),
-        viewAndCropOptimisePtoData  (nullptr),
-        previewPtoData              (nullptr),
-        panoPtoData                 (nullptr),
-        hugin2015                   (false),
-        thread                      (nullptr),
-        plugin                      (nullptr),
-        wizard                      (nullptr),
-        config                      (KSharedConfig::openConfig()),
-        group                       (config->group(QLatin1String("Panorama Settings")))
+    Private()
     {
         gPano    = group.readEntry("GPano", false);
 /*
@@ -83,26 +70,26 @@ public:
     QList<QUrl>                    inputUrls;
 
     QUrl                           basePtoUrl;
-    QSharedPointer<PTOType>        basePtoData;
+    QSharedPointer<PTOType>        basePtoData                  = nullptr;
     QUrl                           cpFindPtoUrl;
-    QSharedPointer<PTOType>        cpFindPtoData;
+    QSharedPointer<PTOType>        cpFindPtoData                = nullptr;
     QUrl                           cpCleanPtoUrl;
-    QSharedPointer<PTOType>        cpCleanPtoData;
+    QSharedPointer<PTOType>        cpCleanPtoData               = nullptr;
     QUrl                           autoOptimisePtoUrl;
-    QSharedPointer<PTOType>        autoOptimisePtoData;
+    QSharedPointer<PTOType>        autoOptimisePtoData          = nullptr;
     QUrl                           viewAndCropOptimisePtoUrl;
-    QSharedPointer<PTOType>        viewAndCropOptimisePtoData;
+    QSharedPointer<PTOType>        viewAndCropOptimisePtoData   = nullptr;
     QUrl                           previewPtoUrl;
-    QSharedPointer<PTOType>        previewPtoData;
+    QSharedPointer<PTOType>        previewPtoData               = nullptr;
     QUrl                           panoPtoUrl;
-    QSharedPointer<PTOType>        panoPtoData;
+    QSharedPointer<PTOType>        panoPtoData                  = nullptr;
 
     QUrl                           previewMkUrl;
     QUrl                           previewUrl;
     QUrl                           mkUrl;
     QUrl                           panoUrl;
 
-    bool                           hugin2015;
+    bool                           hugin2015                    = false;
     bool                           gPano;
 /*
     bool                           hdr;
@@ -112,9 +99,9 @@ public:
 
     PanoramaItemUrlsMap            preProcessedUrlsMap;
 
-    PanoActionThread*              thread;
+    PanoActionThread*              thread                       = nullptr;
 
-    DPlugin*                       plugin;
+    DPlugin*                       plugin                       = nullptr;
 
     AutoOptimiserBinary            autoOptimiserBinary;
     CPCleanBinary                  cpCleanBinary;
@@ -126,12 +113,12 @@ public:
     Pto2MkBinary                   pto2MkBinary;
     HuginExecutorBinary            huginExecutorBinary;
 
-    PanoWizard*                    wizard;
+    PanoWizard*                    wizard                       = nullptr;
 
 private:
 
-    KSharedConfigPtr               config;
-    KConfigGroup                   group;
+    KSharedConfigPtr               config                       = KSharedConfig::openConfig();
+    KConfigGroup                   group                        = config->group(QLatin1String("Panorama Settings"));
 };
 
 QPointer<PanoManager> PanoManager::internalPtr = QPointer<PanoManager>();

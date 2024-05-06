@@ -50,6 +50,7 @@ int panoScriptParserReset(void)
      * There should not be anything allocated in script
      */
     panoScriptParserSetDefaults(&script);
+
     return TRUE;
 }
 

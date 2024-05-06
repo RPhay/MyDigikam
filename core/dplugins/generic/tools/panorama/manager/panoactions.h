@@ -82,22 +82,16 @@ typedef QMap<QUrl, PanoramaPreprocessedUrls> PanoramaItemUrlsMap;   ///< Map bet
 
 struct PanoActionData
 {
-    PanoActionData()
-        : starting(false),
-          success (false),
-          id      (0),
-          action  (PANO_NONE)
-    {
-    }
+    PanoActionData() = default;
 
-    bool                starting;
-    bool                success;
+    bool                starting    = false;
+    bool                success     = false;
 
-    QString             message;        ///< Usually, an error message
+    QString             message;    ///< Usually, an error message
 
-    int                 id;
+    int                 id          = 0;
 
-    PanoAction          action;
+    PanoAction          action      = PANO_NONE;
 };
 
 } // namespace DigikamGenericPanoramaPlugin
