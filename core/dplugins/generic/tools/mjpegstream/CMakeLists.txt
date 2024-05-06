@@ -20,7 +20,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 set(libmjpegstream_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_server.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_views.cpp

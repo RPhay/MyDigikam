@@ -44,7 +44,7 @@ class Q_DECL_HIDDEN MjpegServer::Private : public QObject
 public:
 
     explicit Private(QObject* const parent);
-    ~Private();
+    ~Private() = default;
 
     /**
      * Handle maximum clients connected to the server.
@@ -91,15 +91,15 @@ public:
 
 public:
 
-    QTcpServer*        server;       ///< main tcp/ip server.
-    int                rate;         ///< stream frames rate per secs [1...30].
-    int                delay;        ///< delay between frames in us (1E6/rate).
-    QList<QTcpSocket*> clients;      ///< list of client connected sockets.
-    QByteArray         lastFrame;    ///< the current JPEG frame to dispatch to all connected clients.
-    QFuture<void>      srvTask;      ///< server threaded task used to stream on clients.
-    QMutex             mutexClients; ///< to protect current clients list.
-    QMutex             mutexFrame;   ///< to protect current frame data.
-    QStringList        blackList;    ///< Clients Ip address list to ban.
+    QTcpServer*        server   = nullptr;  ///< main tcp/ip server.
+    int                rate     = 15;       ///< stream frames rate per secs [1...30].
+    int                delay    = 40000;    ///< delay between frames in us (1E6/rate).
+    QList<QTcpSocket*> clients;             ///< list of client connected sockets.
+    QByteArray         lastFrame;           ///< the current JPEG frame to dispatch to all connected clients.
+    QFuture<void>      srvTask;             ///< server threaded task used to stream on clients.
+    QMutex             mutexClients;        ///< to protect current clients list.
+    QMutex             mutexFrame;          ///< to protect current frame data.
+    QStringList        blackList;           ///< Clients Ip address list to ban.
 
 private Q_SLOTS:
 

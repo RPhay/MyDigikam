@@ -74,40 +74,40 @@ public:
 
 public:
 
-    explicit Private();
-    ~Private();
+    Private()  = default;
+    ~Private() = default;
 
 public:
 
-    bool                dirty;
-    MjpegServerMngr*    mngr;
-    QPushButton*        srvButton;
-    QLabel*             srvStatus;
-    QPushButton*        srvPreview;
-    WorkingWidget*      progress;
-    QLabel*             aStats;
-    QLabel*             separator;
-    QLabel*             iStats;
-    QCheckBox*          startOnStartup;
-    int                 spacing;
-    bool                albumSupport;
-    QWidget*            albumSelector;
-    DItemsList*         listView;
-    QDialogButtonBox*   buttons;
-    QWidget*            streamSettings;
-    DIntNumInput*       srvPort;
-    DIntNumInput*       delay;
-    DIntNumInput*       rate;
-    DIntNumInput*       quality;
-    QCheckBox*          streamLoop;
-    DComboBox*          typeVal;
-    DComboBox*          effVal;
-    EffectPreview*      effPreview;
-    DComboBox*          transVal;
+    bool                dirty           = false;
+    MjpegServerMngr*    mngr            = MjpegServerMngr::instance();
+    QPushButton*        srvButton       = nullptr;
+    QLabel*             srvStatus       = nullptr;
+    QPushButton*        srvPreview      = nullptr;
+    WorkingWidget*      progress        = nullptr;
+    QLabel*             aStats          = nullptr;
+    QLabel*             separator       = nullptr;
+    QLabel*             iStats          = nullptr;
+    QCheckBox*          startOnStartup  = nullptr;
+    int                 spacing         = 0;
+    bool                albumSupport    = false;
+    QWidget*            albumSelector   = nullptr;
+    DItemsList*         listView        = nullptr;
+    QDialogButtonBox*   buttons         = nullptr;
+    QWidget*            streamSettings  = nullptr;
+    DIntNumInput*       srvPort         = nullptr;
+    DIntNumInput*       delay           = nullptr;
+    DIntNumInput*       rate            = nullptr;
+    DIntNumInput*       quality         = nullptr;
+    QCheckBox*          streamLoop      = nullptr;
+    DComboBox*          typeVal         = nullptr;
+    DComboBox*          effVal          = nullptr;
+    EffectPreview*      effPreview      = nullptr;
+    DComboBox*          transVal        = nullptr;
     TransitionPreview*  transPreview;
-    QTabWidget*         tabView;
+    QTabWidget*         tabView         = nullptr;
 
-    FrameOsdWidget*     frameOsdWidget;
+    FrameOsdWidget*     frameOsdWidget  = nullptr;
 
     MjpegStreamSettings settings;
 };

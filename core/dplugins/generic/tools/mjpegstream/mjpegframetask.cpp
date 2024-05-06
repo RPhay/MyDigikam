@@ -42,8 +42,7 @@ class Q_DECL_HIDDEN MjpegFrameTask::Private
 public:
 
     explicit Private(const MjpegStreamSettings& set)
-        : settings    (set),
-          failedToLoad(false)
+        : settings(set)
     {
         VidSlideSettings::VidType type = (VidSlideSettings::VidType)settings.outSize;
 
@@ -55,10 +54,10 @@ public:
         endImg    = QIcon::fromTheme(QLatin1String("window-close")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
     }
 
-    MjpegStreamSettings settings;     ///< The MJPEG stream settings.
-    QImage              brokenImg;    ///< Image to push as frame if current item from list cannot be loaded.
-    QImage              endImg;       ///< Image to push as frame when stream is complete.
-    bool                failedToLoad; ///< determinate if image is loaded
+    MjpegStreamSettings settings;               ///< The MJPEG stream settings.
+    QImage              brokenImg;              ///< Image to push as frame if current item from list cannot be loaded.
+    QImage              endImg;                 ///< Image to push as frame when stream is complete.
+    bool                failedToLoad = false;   ///< determinate if image is loaded
 };
 
 MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& settings)
@@ -231,6 +230,7 @@ void MjpegFrameTask::run()
                                 QLatin1String("End of stream"));
 
     Q_EMIT signalFrameChanged(imageToJPEGArray(d->endImg));
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: end of stream";
 
     Q_EMIT signalDone();

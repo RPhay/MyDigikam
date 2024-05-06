@@ -45,14 +45,7 @@ namespace DigikamGenericMjpegStreamPlugin
 {
 
 MjpegServer::Private::Private(QObject* const parent)
-    : QObject(parent),
-      server (nullptr),
-      rate   (15),
-      delay  (40000)
-{
-}
-
-MjpegServer::Private::~Private()
+    : QObject(parent)
 {
 }
 

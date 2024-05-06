@@ -35,7 +35,7 @@ class MjpegStreamPlugin : public DPluginGeneric
 public:
 
     explicit MjpegStreamPlugin(QObject* const parent = nullptr);
-    ~MjpegStreamPlugin()                 override;
+    ~MjpegStreamPlugin()                 override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

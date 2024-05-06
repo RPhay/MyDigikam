@@ -25,6 +25,7 @@
 
 // Local includes
 
+#include "vidslidesettings.h"
 #include "mjpegserver.h"
 #include "dinfointerface.h"
 #include "effectmngr.h"
@@ -43,8 +44,8 @@ class MjpegStreamSettings
 
 public:
 
-    explicit MjpegStreamSettings();
-    ~MjpegStreamSettings();
+    MjpegStreamSettings()  = default;
+    ~MjpegStreamSettings() = default;
 
     /**
      * Helper method to compute urlsList from a set of albms selected by end-users from GUI.
@@ -63,16 +64,16 @@ public:
 
     // ---
 
-    int                         port;                    ///< IP port to use with MJPEG Server.
-    bool                        loop;                    ///< Image stream as loop.
-    int                         quality;                 ///< Jpeg compression [1...100].
-    int                         delay;                   ///< Delay in seconds between inages.
-    QList<QUrl>                 inputImages;             ///< Ordered list of images to stream.
-    int                         outSize;                 ///< Output JPEG size ID.
-    int                         rate;                    ///< Number of frames by seconds.
-    TransitionMngr::TransType   transition;              ///< Transition type between images.
-    EffectMngr::EffectType      effect;                  ///< Effect while displaying images.
-    DInfoInterface*             iface;                   ///< Plugin host interface to handle item properties.
+    int                         port        = 8080;                         ///< IP port to use with MJPEG Server.
+    bool                        loop        = true;                         ///< Image stream as loop.
+    int                         quality     = 75;                           ///< Jpeg compression [1...100].
+    int                         delay       = 5;                            ///< Delay in seconds between inages.
+    QList<QUrl>                 inputImages;                                ///< Ordered list of images to stream.
+    int                         outSize     = VidSlideSettings::BLUERAY;    ///< Output JPEG size ID.
+    int                         rate        = 10;                           ///< Number of frames by seconds.
+    TransitionMngr::TransType   transition  = TransitionMngr::None;         ///< Transition type between images.
+    EffectMngr::EffectType      effect      = EffectMngr::None;             ///< Effect while displaying images.
+    DInfoInterface*             iface       = nullptr;                      ///< Plugin host interface to handle item properties.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

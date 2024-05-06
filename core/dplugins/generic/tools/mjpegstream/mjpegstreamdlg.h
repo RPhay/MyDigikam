@@ -54,7 +54,6 @@ private Q_SLOTS:
 
 private:
 
-
     void readSettings();
     void saveSettings();
 

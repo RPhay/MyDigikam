@@ -39,10 +39,6 @@ MjpegStreamPlugin::MjpegStreamPlugin(QObject* const parent)
     MjpegServerMngr::instance()->loadAtStartup();
 }
 
-MjpegStreamPlugin::~MjpegStreamPlugin()
-{
-}
-
 void MjpegStreamPlugin::cleanUp()
 {
     // Stop the MJPEG Server if necessary

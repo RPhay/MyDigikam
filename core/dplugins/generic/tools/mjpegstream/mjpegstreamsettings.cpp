@@ -23,29 +23,8 @@
 
 #include <kconfiggroup.h>
 
-// Local includes
-
-#include "vidslidesettings.h"
-
 namespace DigikamGenericMjpegStreamPlugin
 {
-
-MjpegStreamSettings::MjpegStreamSettings()
-    : port                  (8080),
-      loop                  (true),
-      quality               (75),
-      delay                 (5),
-      outSize               (VidSlideSettings::BLUERAY),
-      rate                  (10),
-      transition            (TransitionMngr::None),
-      effect                (EffectMngr::None),
-      iface                 (nullptr)
-{
-}
-
-MjpegStreamSettings::~MjpegStreamSettings()
-{
-}
 
 void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 {
