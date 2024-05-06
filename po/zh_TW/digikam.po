@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-05 01:42+0000\n"
+"POT-Creation-Date: 2024-05-06 01:43+0000\n"
 "PO-Revision-Date: 2024-04-22 17:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1030,7 +1030,7 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:110
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
@@ -1113,7 +1113,7 @@ msgid "Aperture/Focal:"
 msgstr "光圈/焦距："
 
 #: core/app/items/utils/tooltipfiller.cpp:238
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
@@ -2837,7 +2837,7 @@ msgstr "全螢幕顯示"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
@@ -7361,7 +7361,7 @@ msgctxt "@title"
 msgid "Tagged Image Format"
 msgstr "工作空間檔案格式"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:256
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:248
 #, kde-format
 msgid "Adjust Curve"
 msgstr "調整曲線"
@@ -8015,8 +8015,8 @@ msgctxt "@action"
 msgid "Color Management is disabled..."
 msgstr "色彩管理已停用..."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
-#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
+#: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
 #: core/utilities/searchwindow/searchfields_createfield.cpp:553
 #, kde-format
 msgid "White Balance"
@@ -9635,7 +9635,7 @@ msgstr "在這裡設定新影像的高度。"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:149
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:137
 #, kde-format
 msgid "Width (%):"
 msgstr "寬度 (%)："
@@ -16671,7 +16671,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
@@ -17257,7 +17257,7 @@ msgid "Create Html gallery..."
 msgstr "建立 HTML 相簿…"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
@@ -17272,13 +17272,13 @@ msgid "Starting to generate gallery..."
 msgstr "開始建立相簿..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:122
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:119
 #, kde-format
 msgid "%1 albums to process:"
 msgstr "%1 本要處理的相簿："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, fuzzy, kde-format
 #| msgid "Custom process"
@@ -17286,7 +17286,7 @@ msgid "%1 items to process"
 msgstr "自訂處理"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:134
 #, fuzzy, kde-format
 msgid "Output directory: %1"
 msgstr "建立目錄失敗。"
@@ -17363,7 +17363,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
@@ -17372,7 +17372,7 @@ msgid "&Choose image selection method:"
 msgstr "選擇影像選取方式(&C)："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
@@ -17470,7 +17470,7 @@ msgid "Welcome to HTML Gallery Tool"
 msgstr "歡迎來到 HTML 相簿工具"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:75
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Items Selection"
@@ -17498,50 +17498,50 @@ msgstr "輸出設定"
 msgid "Generating Gallery"
 msgstr "建立相簿中"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:82
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:74
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgid "Create directories"
 msgstr "忽略群組"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:86
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:78
 #, fuzzy, kde-format
 msgid "Could not create folder '%1'"
 msgstr "無法儲存影像「%1」到「%2」"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:118
 #, kde-format
 msgid "Create jAlbum project files"
 msgstr "建立 jAlbum 專案檔案"
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:134
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create project files"
 msgstr "建立檔案失敗..."
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:151
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to create settings file"
 msgstr "建立檔案失敗..."
 
-#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:165
+#: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
 #, kde-format
 msgid "Launch jAlbum with new project files"
 msgstr "用新專案檔案啟動 jAlbum"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:39
 #, kde-format
 msgid "jAlbum Export"
 msgstr "jAlbum 匯出"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:58
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:54
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:63
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to export items to jAlbum html gallery generator.</"
@@ -17550,7 +17550,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:92
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -17562,22 +17562,22 @@ msgstr "建立 jAlbum 相簿..."
 msgid "jAlbum Gallery Generator."
 msgstr "jAlbum 相簿產生工具。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:114
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:111
 #, kde-format
 msgid "Starting to generate jAlbum..."
 msgstr "開始產生 jAlbum 相簿..."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:148
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr "Jalbum 已完成，但出現了一些警告。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:153
 #, kde-format
 msgid "Jalbum completed."
 msgstr "Jalbum 已完成。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:77
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17585,56 +17585,56 @@ msgid ""
 "project.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:97
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
 msgstr "jAlbum 執行檔"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:65
 #, fuzzy, kde-format
 #| msgid "Projection"
 msgid "Project Title:"
 msgstr "投影"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:74
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:69
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the project title"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:76
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Projects folder:"
 msgstr "依資料夾"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "依資料夾"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "建立 jAlbum 相簿"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:74
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
 msgid "Welcome to jAlbum Export Tool"
 msgstr "歡迎使用曝光混合工具"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Paths Selection"
 msgstr "選擇區域"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:84
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Generating jAlbum"
 msgstr "正在產生 jAlbum 相簿"
@@ -17814,24 +17814,24 @@ msgstr ""
 msgid "%1 Media Server"
 msgstr "%1 媒體伺服器"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:159
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, fuzzy, kde-format
 #| msgid "The folders have been listed."
 msgid "Media Server have been started"
 msgstr "已經列出資料夾。"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:160
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:177
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:170
 #, fuzzy, kde-format
 #| msgid "The folders have been listed."
 msgid "MJPEG Server have been started"
 msgstr "已經列出資料夾。"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:178
+#: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
 #, fuzzy, kde-format
 #| msgid "The folders have been listed."
 msgid "MJPEG Server cannot be started!"
@@ -17992,7 +17992,7 @@ msgstr "串流"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:75
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:72
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:108
 #, fuzzy, kde-format
 #| msgid "Type:"
@@ -21590,7 +21590,7 @@ msgid "Presentation..."
 msgstr "任意旋轉..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:229
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgctxt "@title:window"
@@ -21598,20 +21598,20 @@ msgid "Specify Delay for Slide Show"
 msgstr "忽略群組"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
 #, kde-format
 msgid "Delay:"
 msgstr "延遲："
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:255
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "刪除影像"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "您要從收藏清單中移除此收藏「%1」嗎？"
@@ -21692,13 +21692,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "斑點"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:119
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "投影片"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21706,52 +21706,52 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "正在準備投影片放映"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "投影片設定"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:98
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between images:"
 msgstr "影像間的延遲(&D)："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:102
 #, kde-format
 msgid "The delay, in seconds, between images."
 msgstr "影像之間延遲的秒數。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:104
 #, kde-format
 msgid "Start with current image"
 msgstr "從目前影像開始"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:105
 #, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "image selected in the images list."
 msgstr "如果啟用這個選項，投影片放映會從目前在影像清單中選擇的影像開始。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:108
 #, kde-format
 msgid "Slideshow runs in a loop"
 msgstr "投影片放映循環執行"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #, kde-format
 msgid "Run the slideshow in a loop."
 msgstr "循環執行投影片放映。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:111
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgid "Shuffle images"
 msgstr "選擇影像"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "If this option is enabled, newly-loaded images will be sorted in "
@@ -21759,202 +21759,202 @@ msgstr "選擇影像"
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr "如果停用這個選項，新載入的影像會用遞減次序排列。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:114
 #, fuzzy, kde-format
 msgid "Show progress indicator"
 msgstr "顯示詳情進度對視窗"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:115
 #, kde-format
 msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:117
 #, kde-format
 msgid "Show image file name"
 msgstr "顯示影像檔案名稱"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
 #, kde-format
 msgid "Show the image file name at the bottom of the screen."
 msgstr "在螢幕下方顯示影像檔案名稱。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Show image creation date"
 msgstr "顯示影像建立日期"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:121
 #, kde-format
 msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "在螢幕下方顯示影像的建立時間/日期。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:123
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "顯示相機光圈和焦距"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "在螢幕下方顯示相機的光圈與焦距。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "顯示相機的曝光和靈敏度"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:149
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "在螢幕下方顯示相機的曝光與靈敏度。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:129
 #: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "顯示相機的製造商和型號"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:152
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Show the camera make and model at the bottom of the screen."
 msgstr "在螢幕下方顯示相機的製造商與型號。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
 #, kde-format
 msgid "Show camera lens model"
 msgstr "顯示相機鏡頭製造商"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:155
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
 msgstr "在螢幕下方顯示相機鏡頭製造商。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
 #, kde-format
 msgid "Show image caption"
 msgstr "顯示影像標題描述"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:158
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
 msgid "Show the image caption at the bottom of the screen."
 msgstr "在螢幕下方顯示影像標題描述。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:160
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:138
 #, kde-format
 msgid "Show image title"
 msgstr "顯示影像標題"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:161
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show the image title at the bottom of the screen."
 msgstr "在螢幕下方顯示影像標題"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, fuzzy, kde-format
 #| msgid "Show image caption if it hasn't title"
 msgid "Show image caption if it has not title"
 msgstr "若沒有標題則顯示影像標題描述"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
 msgstr "若是沒有標題的話，則在螢幕下方顯示影像標題描述。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:166
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
 msgid "Show image tags"
 msgstr "顯示影像標籤"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
 #, fuzzy, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
 msgstr "在螢幕下方顯示影像檔案名稱。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:147
 #, kde-format
 msgid "Show image labels"
 msgstr "顯示影像標籤"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:170
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #, kde-format
 msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
 "screen."
 msgstr "在螢幕下方顯示 digiKam 的色彩旗標與挑選旗標。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:150
 #, kde-format
 msgid "Show image rating"
 msgstr "顯示影像評等"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #, fuzzy, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "在螢幕下方顯示影像檔案名稱。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:175
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:153
 #, kde-format
 msgid "Caption font:"
 msgstr "標題描述字型："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:176
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgid "Select here the font used to display text in the slideshow."
 msgstr "在這裡選擇樹狀檢視中顯示文字的字型。"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, fuzzy, kde-format
 msgid "Screen placement:"
 msgstr "位置："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:181
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:159
 #, kde-format
 msgid ""
 "In case of multi-screen computer, select here the monitor to slide contents."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:184
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:162
 #, fuzzy, kde-format
 msgctxt "@label:listbox The current screen, for the presentation mode"
 msgid "Current Screen"
 msgstr "目前搜尋"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:185
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
 #, fuzzy, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "預設設定"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:190
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:168
 #, fuzzy, kde-format
 msgctxt "@label:listbox %1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
 msgstr "綠（%）："
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:196
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:174
 #, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the F2 key.</b>"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
 msgid "SlideShow"
 msgstr "投影片"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:69
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:65
 #, kde-format
 msgid "A tool to render slideshow"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
 #, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
@@ -21981,29 +21981,29 @@ msgid ""
 "td></tr></table>"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "投影片放映"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
 #: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "投影片放映"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:172
 #, kde-format
 msgid "Play All"
 msgstr "播放全部"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:181
 #, kde-format
 msgid "Play Selection"
 msgstr "播放已選"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:190
 #, fuzzy, kde-format
 #| msgid "With All Sub-Albums"
 msgid "Play With Sub-Albums"
@@ -22020,19 +22020,19 @@ msgstr ""
 "點擊滑鼠離開\n"
 "或按 ESC..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:77
 #, fuzzy, kde-format
 msgid ""
 "An error has occurred to show item\n"
 "%1"
 msgstr "媒體播放程式發生一個錯誤...."
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:128
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:116
 #, fuzzy, kde-format
 msgid "Switch Screen"
 msgstr "側邊切換頻率："
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:141
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:129
 #, fuzzy, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -27319,115 +27319,115 @@ msgstr "掃描臉孔"
 msgid "Should sub-albums be scanned too?"
 msgstr "要掃描子相簿嗎？"
 
-#: core/libs/album/treeview/labelstreeview.cpp:92
+#: core/libs/album/treeview/labelstreeview.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "旗標"
 
-#: core/libs/album/treeview/labelstreeview.cpp:360
+#: core/libs/album/treeview/labelstreeview.cpp:355
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "評等"
 
-#: core/libs/album/treeview/labelstreeview.cpp:365
+#: core/libs/album/treeview/labelstreeview.cpp:360
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "無評等"
 
-#: core/libs/album/treeview/labelstreeview.cpp:401
+#: core/libs/album/treeview/labelstreeview.cpp:396
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "挑選"
 
-#: core/libs/album/treeview/labelstreeview.cpp:406
+#: core/libs/album/treeview/labelstreeview.cpp:401
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "無挑選"
 
-#: core/libs/album/treeview/labelstreeview.cpp:407
+#: core/libs/album/treeview/labelstreeview.cpp:402
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "已拒絕項目"
 
-#: core/libs/album/treeview/labelstreeview.cpp:408
+#: core/libs/album/treeview/labelstreeview.cpp:403
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "待處理項目"
 
-#: core/libs/album/treeview/labelstreeview.cpp:409
+#: core/libs/album/treeview/labelstreeview.cpp:404
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "已接受項目"
 
-#: core/libs/album/treeview/labelstreeview.cpp:429
+#: core/libs/album/treeview/labelstreeview.cpp:424
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "顏色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:434
+#: core/libs/album/treeview/labelstreeview.cpp:429
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "無顏色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:446
+#: core/libs/album/treeview/labelstreeview.cpp:441
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Red"
 msgstr "紅色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:446
+#: core/libs/album/treeview/labelstreeview.cpp:441
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Orange"
 msgstr "橘色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:447
+#: core/libs/album/treeview/labelstreeview.cpp:442
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Yellow"
 msgstr "黃色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:447
+#: core/libs/album/treeview/labelstreeview.cpp:442
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Green"
 msgstr "綠色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:448
+#: core/libs/album/treeview/labelstreeview.cpp:443
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Blue"
 msgstr "藍色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:448
+#: core/libs/album/treeview/labelstreeview.cpp:443
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Magenta"
 msgstr "紫紅色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:444
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Gray"
 msgstr "灰色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:444
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Black"
 msgstr "黑色"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:445
 #, kde-format
 msgctxt "@item: color tree"
 msgid "White"
@@ -27628,94 +27628,94 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "選擇相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:130
-#: core/libs/album/widgets/albumselectors.cpp:538
+#: core/libs/album/widgets/albumselectors.cpp:126
+#: core/libs/album/widgets/albumselectors.cpp:534
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "相簿（全部）"
 
-#: core/libs/album/widgets/albumselectors.cpp:133
+#: core/libs/album/widgets/albumselectors.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "標籤 (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:165
+#: core/libs/album/widgets/albumselectors.cpp:161
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "所有相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:166
-#: core/libs/album/widgets/albumselectors.cpp:226
+#: core/libs/album/widgets/albumselectors.cpp:162
+#: core/libs/album/widgets/albumselectors.cpp:222
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "遞迴"
 
-#: core/libs/album/widgets/albumselectors.cpp:167
-#: core/libs/album/widgets/albumselectors.cpp:227
+#: core/libs/album/widgets/albumselectors.cpp:163
+#: core/libs/album/widgets/albumselectors.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "遞迴選取。"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:173
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "選擇要處理的所有相簿。"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "沒有選擇任何相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:188
+#: core/libs/album/widgets/albumselectors.cpp:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "重設選取的相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:225
+#: core/libs/album/widgets/albumselectors.cpp:221
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "所有標籤"
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/album/widgets/albumselectors.cpp:240
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "沒有選擇任何標籤"
 
-#: core/libs/album/widgets/albumselectors.cpp:244
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "重設選取的標籤"
 
-#: core/libs/album/widgets/albumselectors.cpp:539
+#: core/libs/album/widgets/albumselectors.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "相簿 (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:542
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "標籤 (全部)"
 
-#: core/libs/album/widgets/albumselectors.cpp:543
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -30814,26 +30814,26 @@ msgstr "重設"
 msgid "Adjust Curves"
 msgstr "調整曲線"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:238
+#: core/libs/dimg/filters/curves/curvessettings.cpp:236
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "選擇要載入的 Gimp 曲線檔案"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:250
+#: core/libs/dimg/filters/curves/curvessettings.cpp:248
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "無法從此 Gimp 曲線純文字檔載入。"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:259
+#: core/libs/dimg/filters/curves/curvessettings.cpp:257
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "要儲存的 Gimp 曲線檔案"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:271
+#: core/libs/dimg/filters/curves/curvessettings.cpp:269
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "無法儲存到此 Gimp 曲線純文字檔。"
@@ -30873,109 +30873,109 @@ msgstr ""
 msgid "Border Tool"
 msgstr "邊框工具"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:112
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:100
 #, kde-format
 msgctxt "solid border type"
 msgid "Solid"
 msgstr "純色"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:118
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:106
 #, kde-format
 msgctxt "beveled border type"
 msgid "Beveled"
 msgstr "斜面"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:119
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:107
 #, kde-format
 msgid "Decorative Pine"
 msgstr "裝飾松木"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:120
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:108
 #, kde-format
 msgid "Decorative Wood"
 msgstr "裝飾木材"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:121
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:109
 #, kde-format
 msgid "Decorative Paper"
 msgstr "裝飾紙張"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:110
 #, kde-format
 msgid "Decorative Parquet"
 msgstr "裝飾鑲木"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:123
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:111
 #, kde-format
 msgid "Decorative Ice"
 msgstr "裝飾冰塊"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:112
 #, kde-format
 msgid "Decorative Leaf"
 msgstr "裝飾葉子"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:125
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:113
 #, kde-format
 msgid "Decorative Marble"
 msgstr "裝飾大理石"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:126
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:114
 #, kde-format
 msgid "Decorative Rain"
 msgstr "裝飾雨水"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:127
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:115
 #, kde-format
 msgid "Decorative Craters"
 msgstr "裝飾火山口"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:128
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:116
 #, kde-format
 msgid "Decorative Dried"
 msgstr "裝飾乾燥"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:129
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:117
 #, kde-format
 msgid "Decorative Pink"
 msgstr "裝飾粉紅"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:130
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:118
 #, kde-format
 msgid "Decorative Stone"
 msgstr "裝飾石頭"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:119
 #, kde-format
 msgid "Decorative Chalk"
 msgstr "裝飾白堊"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:120
 #, kde-format
 msgid "Decorative Granite"
 msgstr "裝飾花崗石"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:133
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:121
 #, kde-format
 msgid "Decorative Rock"
 msgstr "裝飾岩石"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:134
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #, kde-format
 msgid "Decorative Wall"
 msgstr "裝飾牆壁"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:136
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
 #, kde-format
 msgid "Select the border type to add around the image here."
 msgstr "在這裡選擇要加入影像周圍的邊框樣式。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
 #, kde-format
 msgid "Preserve Aspect Ratio"
 msgstr "維持外觀比例"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:144
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
 #, kde-format
 msgid ""
 "Enable this option if you want to preserve the aspect ratio of image. If "
@@ -30985,69 +30985,69 @@ msgstr ""
 "如果您想要保持影像的外觀比例請啟用這個選項。如果啟用，邊框寬度會變成影像大小"
 "的百分比，否則邊框寬度的單位都為像素。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:153
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:141
 #, kde-format
 msgid "Set here the border width as a percentage of the image size."
 msgstr "在這裡以影像大小的百分比來設定邊框寬度。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:155
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
 #, kde-format
 msgid "Width (pixels):"
 msgstr "寬度 (像素)："
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:159
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:147
 #, kde-format
 msgid "Set here the border width in pixels to add around the image."
 msgstr "在這裡選擇要加入影像周圍的邊框寬度，單位為像素。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:405
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:393
 #, kde-format
 msgctxt "first color for border effect"
 msgid "First:"
 msgstr "第一："
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:406
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:394
 #, kde-format
 msgctxt "second color for border effect"
 msgid "Second:"
 msgstr "第二："
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:407
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:395
 #, kde-format
 msgid "Set here the foreground color of the border."
 msgstr "在這裡設定邊框的前景顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:408
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:396
 #, kde-format
 msgid "Set here the Background color of the border."
 msgstr "在這裡設定邊框的背景顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:427
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:415
 #, kde-format
 msgid "Set here the color of the main border."
 msgstr "在這裡設定主要邊框的顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:428
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:416
 #, kde-format
 msgid "Set here the color of the line."
 msgstr "在這裡設定線條顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:436
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:424
 #, kde-format
 msgid "Set here the color of the upper left area."
 msgstr "在這裡設定左上區域的顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:437
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:425
 #, kde-format
 msgid "Set here the color of the lower right area."
 msgstr "在這裡設定右下區域的顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:460
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:448
 #, kde-format
 msgid "Set here the color of the first line."
 msgstr "在這裡設定第一條線的顏色。"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:461
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:449
 #, kde-format
 msgid "Set here the color of the second line."
 msgstr "在這裡設定第二條線的顏色。"
@@ -31057,133 +31057,133 @@ msgstr "在這裡設定第二條線的顏色。"
 msgid "Texture Filter"
 msgstr "紋理濾鏡"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:77
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:74
 #, fuzzy, kde-format
 #| msgid "Paper"
 msgctxt "@item: texture type"
 msgid "Paper"
 msgstr "紙張"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:78
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:75
 #, fuzzy, kde-format
 #| msgid "Paper 2"
 msgctxt "@item: texture type"
 msgid "Paper 2"
 msgstr "紙張 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:76
 #, fuzzy, kde-format
 #| msgid "Fabric"
 msgctxt "@item: texture type"
 msgid "Fabric"
 msgstr "布料"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:80
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:77
 #, fuzzy, kde-format
 #| msgid "Burlap"
 msgctxt "@item: texture type"
 msgid "Burlap"
 msgstr "麻布"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:78
 #, fuzzy, kde-format
 #| msgid "Bricks"
 msgctxt "@item: texture type"
 msgid "Bricks"
 msgstr "磚塊"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
 #, fuzzy, kde-format
 #| msgid "Bricks 2"
 msgctxt "@item: texture type"
 msgid "Bricks 2"
 msgstr "磚塊 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:80
 #, fuzzy, kde-format
 #| msgid "Canvas"
 msgctxt "@item: texture type"
 msgid "Canvas"
 msgstr "畫布"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
 #, fuzzy, kde-format
 #| msgid "Marble"
 msgctxt "@item: texture type"
 msgid "Marble"
 msgstr "大理石"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgctxt "@item: texture type"
 msgid "Marble 2"
 msgstr "大理石 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
 #, fuzzy, kde-format
 #| msgid "Blue Jean"
 msgctxt "@item: texture type"
 msgid "Blue Jean"
 msgstr "藍色牛仔褲"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
 #, fuzzy, kde-format
 #| msgid "Cell Wood"
 msgctxt "@item: texture type"
 msgid "Cell Wood"
 msgstr "微晶木"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
 #, fuzzy, kde-format
 #| msgid "Metal Wire"
 msgctxt "@item: texture type"
 msgid "Metal Wire"
 msgstr "金屬線"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
 #, fuzzy, kde-format
 #| msgid "Modern"
 msgctxt "@item: texture type"
 msgid "Modern"
 msgstr "現代"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:90
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
 #, fuzzy, kde-format
 #| msgid "Wall"
 msgctxt "@item: texture type"
 msgid "Wall"
 msgstr "牆壁"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
 #, fuzzy, kde-format
 #| msgid "Moss"
 msgctxt "@item: texture type"
 msgid "Moss"
 msgstr "苔蘚"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:92
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
 #, fuzzy, kde-format
 #| msgid "Stone"
 msgctxt "@item: texture type"
 msgid "Stone"
 msgstr "石頭"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:94
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
 #, fuzzy, kde-format
 #| msgid "Set here the texture type to apply to image."
 msgctxt "@info"
 msgid "Set here the texture type to apply to image."
 msgstr "在這裡選擇要套用到影像的紋理類型。"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:98
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:95
 #, fuzzy, kde-format
 #| msgid "Relief:"
 msgctxt "@label"
 msgid "Relief:"
 msgstr "浮雕："
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:102
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:99
 #, fuzzy, kde-format
 #| msgid "Set here the relief gain used to merge texture and image."
 msgctxt "@info"
@@ -32419,17 +32419,17 @@ msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr "GEO 修正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:64
 #, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr "要套用的鏡頭修正："
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:65
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr "色像差"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:66
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
@@ -32438,12 +32438,12 @@ msgstr ""
 "色像差 (Chromatic Aberration) 多半被公認是影像角落的色散情形。CA (色像差) 是"
 "因不同顏色的鏡頭焦點成像處不同所導致。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, kde-format
 msgid "Vignetting"
 msgstr "暈映"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -32453,12 +32453,12 @@ msgstr ""
 "暈映 (Vignetting) 是指影像變暗，大部份是在角落。光學和自然暈映可用這個選項來"
 "抵消，但是機械暈映不會被矯正。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:73
 #, kde-format
 msgid "Distortion"
 msgstr "扭曲"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -32468,12 +32468,12 @@ msgstr ""
 "扭曲是指一種影像變形，大部份在角落附近比較明顯。這些賽德像差 (Seidel "
 "aberrations) 被稱為枕狀和桶狀變形。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
 #, kde-format
 msgid "Geometry"
 msgstr "幾何"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
@@ -32481,7 +32481,7 @@ msgid ""
 msgstr ""
 "在這裡控制四種幾何：直線 (所有鏡頭的百分之九十九)、魚眼、圓柱、平面投影。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
 #, fuzzy, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -35177,114 +35177,114 @@ msgstr "影像 %1 無法重新命名"
 msgid "Could not restore file %1 from trash"
 msgstr "無法從垃圾桶還原檔案 %1"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:856
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:857
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Unspecified"
 msgstr "未指定"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:862
 #, kde-format
 msgctxt "@info: rotation of an unrotated image"
 msgid "Normal"
 msgstr "普通"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:866
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:867
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
 msgstr "已水平翻轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:872
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
 msgstr "已旋轉 180 度"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:877
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
 msgstr "已垂直翻轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:882
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
 msgstr "已水平翻轉並向左旋轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:887
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
 msgstr "已向左旋轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:892
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
 msgstr "已垂直翻轉並向左旋轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:897
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
 msgstr "已向右旋轉"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:902
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:986
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:987
 #, kde-format
 msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1012
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1028
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1013
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1029
 #, kde-format
 msgctxt "@info: For use in longitude coordinate"
 msgid "West"
 msgstr "西"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1013
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1029
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1014
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1030
 #, kde-format
 msgctxt "@info: For use in longitude coordinate"
 msgid "East"
 msgstr "東"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1048
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1064
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1049
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1065
 #, kde-format
 msgctxt "@info: For use in latitude coordinate"
 msgid "North"
 msgstr "北"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1049
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1065
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1050
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1066
 #, kde-format
 msgctxt "@info: For use in latitude coordinate"
 msgid "South"
 msgstr "南"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1078
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1079
 #, no-c-format, kde-format
 msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1m"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1254
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "已開啟閃光"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
 #, fuzzy, kde-format
 #| msgid "Flash with red-eye reduction mode"
 msgctxt "@info"
@@ -37103,38 +37103,38 @@ msgstr "已使用濾鏡"
 msgid "Remove filter"
 msgstr "移除濾鏡"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:66
+#: core/libs/properties/history/itempropertiesversionstab.cpp:64
 #, kde-format
 msgctxt "@title"
 msgid "Versions"
 msgstr "版本"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:69
+#: core/libs/properties/history/itempropertiesversionstab.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
 msgstr "已使用濾鏡"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:149
+#: core/libs/properties/history/itempropertiesversionstab.cpp:147
 #, kde-format
 msgctxt "@action: open image"
 msgid "Open"
 msgstr "開啟"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:150
+#: core/libs/properties/history/itempropertiesversionstab.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open file"
 msgstr "開啟檔案"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:159
+#: core/libs/properties/history/itempropertiesversionstab.cpp:157
 #, fuzzy, kde-format
 #| msgid "Go To Albums"
 msgctxt "@action: go to album"
 msgid "Go To Albums"
 msgstr "前往相簿"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:160
+#: core/libs/properties/history/itempropertiesversionstab.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go to the album of this image"
@@ -39332,30 +39332,30 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:73
+#: core/libs/tags/widgets/tagcheckview.cpp:71
 #, kde-format
 msgid "Toggle Auto"
 msgstr "切換自動"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:74
+#: core/libs/tags/widgets/tagcheckview.cpp:72
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "無"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:76
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "子層"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:77
+#: core/libs/tags/widgets/tagcheckview.cpp:75
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "母層"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:78
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
@@ -40485,481 +40485,481 @@ msgid ""
 "video."
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:497
+#: core/libs/video/manager/vidslidesettings.cpp:469
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320x180 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:498
+#: core/libs/video/manager/vidslidesettings.cpp:470
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
 msgstr "VCD - 352x240 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:499
+#: core/libs/video/manager/vidslidesettings.cpp:471
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
 msgstr "VCD - 352x288 - 6:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:500
+#: core/libs/video/manager/vidslidesettings.cpp:472
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
 msgstr "CVD - 352x480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:501
+#: core/libs/video/manager/vidslidesettings.cpp:473
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
 msgstr "CVD - 352x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:502
+#: core/libs/video/manager/vidslidesettings.cpp:474
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480x270 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:503
+#: core/libs/video/manager/vidslidesettings.cpp:475
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
 msgstr "SVCD - 480x480 - 1:1"
 
-#: core/libs/video/manager/vidslidesettings.cpp:504
+#: core/libs/video/manager/vidslidesettings.cpp:476
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
 msgstr "SDTV - 528x480 - 11:10"
 
-#: core/libs/video/manager/vidslidesettings.cpp:505
+#: core/libs/video/manager/vidslidesettings.cpp:477
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
 msgstr "SDTV - 544x480 - 17:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:506
+#: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
 msgstr "EDTV - 544x576 - 17:18"
 
-#: core/libs/video/manager/vidslidesettings.cpp:507
+#: core/libs/video/manager/vidslidesettings.cpp:479
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
 msgstr "SVCD - 480x576 - 5:6"
 
-#: core/libs/video/manager/vidslidesettings.cpp:508
+#: core/libs/video/manager/vidslidesettings.cpp:480
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
 msgstr "EGA - 640x350 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:509
+#: core/libs/video/manager/vidslidesettings.cpp:481
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
 msgstr "VGA - 640x480 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:510
+#: core/libs/video/manager/vidslidesettings.cpp:482
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
 msgstr "SDTV - 704x480 - 22:15"
 
-#: core/libs/video/manager/vidslidesettings.cpp:511
+#: core/libs/video/manager/vidslidesettings.cpp:483
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
 msgstr "EDTV - 704x576 - 11:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:512
+#: core/libs/video/manager/vidslidesettings.cpp:484
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
 msgstr "DVD - 720x480 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:513
+#: core/libs/video/manager/vidslidesettings.cpp:485
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
 msgstr "DVD - 720x576 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:514
+#: core/libs/video/manager/vidslidesettings.cpp:486
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800x450 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:515
+#: core/libs/video/manager/vidslidesettings.cpp:487
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
 msgstr "SVGA - 800x600 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:516
+#: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
 msgstr "DVGA - 960x640 - 3:2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:517
+#: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
 msgstr "XVGA - 1024x576 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:518
+#: core/libs/video/manager/vidslidesettings.cpp:490
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280x720 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:519
+#: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
 msgstr "WXGA - 1280x768 - 5:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:520
+#: core/libs/video/manager/vidslidesettings.cpp:492
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
 msgstr "WXGA - 1280x800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:521
+#: core/libs/video/manager/vidslidesettings.cpp:493
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
 msgstr "SXGA - 1280x1024 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:522
+#: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
 msgstr "SXGAPLUS - 1400x1050 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:523
+#: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
 msgstr "WSXGA - 1440x900 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:524
+#: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
 msgstr "HDPLUS - 1600x900 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:525
+#: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
 msgstr "WSXGAPLUS - 1680x1050 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:526
+#: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
 msgstr "UXGA - 1600x1200 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:527
+#: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "藍光 - 1920x1080 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:528
+#: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
 msgstr "WUXGA - 1920x1200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:529
+#: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
 msgstr "TXGA - 1920x1440 - 7:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:530
+#: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
 msgstr "QXGA - 2048x1536 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:531
+#: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
 msgstr "UWFHD - 2560x1080 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:532
+#: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
 msgstr "WQHD - 2560x1440 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:533
+#: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
 msgstr "WQXGA - 2560x1600 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:534
+#: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
 msgstr "QSXGA - 2560x2048 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:535
+#: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
 msgstr "QSXGAPLUS - 2800x2100 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:536
+#: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
 msgstr "WQXGAPLUS - 3200x1800 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:537
+#: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
 msgstr "WQSXGA - 3200x2048 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:538
+#: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
 msgstr "QUXGA - 3200x2400 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:539
+#: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840x2160 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:540
+#: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
 msgstr "WQUXGA - 3840x2400 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:541
+#: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
 msgstr "HXGA - 4096x3072 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:542
+#: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
 msgstr "UHD5K - 5120x2880 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:543
+#: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
 msgstr "WHXGA - 5120x3200 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:544
+#: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
 msgstr "HSXGA - 5120x4096 - 5:4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:545
+#: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
 msgstr "UHD6K - 6016x3384 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:546
+#: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
 msgstr "WHSXGA - 6400x4096 - 25:16"
 
-#: core/libs/video/manager/vidslidesettings.cpp:547
+#: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
 msgstr "HUXGA - 6400x4800 - 4:3"
 
-#: core/libs/video/manager/vidslidesettings.cpp:548
+#: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
 msgstr "UHD8K - 7680x4320 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:549
+#: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
 msgstr "WHUXGA - 7680x4800 - 8:5"
 
-#: core/libs/video/manager/vidslidesettings.cpp:550
+#: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
 msgstr "UW10K - 10240x4320 - 21:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:551
+#: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
 msgstr "UW16K - 15360x8640 - 16:9"
 
-#: core/libs/video/manager/vidslidesettings.cpp:774
+#: core/libs/video/manager/vidslidesettings.cpp:746
 #, kde-format
 msgctxt "Video Bit Rate 400000"
 msgid "400k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:775
+#: core/libs/video/manager/vidslidesettings.cpp:747
 #, kde-format
 msgctxt "Video Bit Rate 500000"
 msgid "500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:776
+#: core/libs/video/manager/vidslidesettings.cpp:748
 #, kde-format
 msgctxt "Video Bit Rate 1000000"
 msgid "1000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:777
+#: core/libs/video/manager/vidslidesettings.cpp:749
 #, kde-format
 msgctxt "Video Bit Rate 1200000"
 msgid "1200k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:778
+#: core/libs/video/manager/vidslidesettings.cpp:750
 #, kde-format
 msgctxt "Video Bit Rate 1500000"
 msgid "1500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:779
+#: core/libs/video/manager/vidslidesettings.cpp:751
 #, kde-format
 msgctxt "Video Bit Rate 2000000"
 msgid "2000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:780
+#: core/libs/video/manager/vidslidesettings.cpp:752
 #, kde-format
 msgctxt "Video Bit Rate 2500000"
 msgid "2500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:781
+#: core/libs/video/manager/vidslidesettings.cpp:753
 #, kde-format
 msgctxt "Video Bit Rate 3000000"
 msgid "3000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:782
+#: core/libs/video/manager/vidslidesettings.cpp:754
 #, kde-format
 msgctxt "Video Bit Rate 4000000"
 msgid "4000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:783
+#: core/libs/video/manager/vidslidesettings.cpp:755
 #, kde-format
 msgctxt "Video Bit Rate 4500000"
 msgid "4500k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:784
+#: core/libs/video/manager/vidslidesettings.cpp:756
 #, kde-format
 msgctxt "Video Bit Rate 5000000"
 msgid "5000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:785
+#: core/libs/video/manager/vidslidesettings.cpp:757
 #, kde-format
 msgctxt "Video Bit Rate 6000000"
 msgid "6000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:786
+#: core/libs/video/manager/vidslidesettings.cpp:758
 #, kde-format
 msgctxt "Video Bit Rate 8000000"
 msgid "8000k"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:795
+#: core/libs/video/manager/vidslidesettings.cpp:767
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
 msgstr "PAL - 25 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:796
+#: core/libs/video/manager/vidslidesettings.cpp:768
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
 msgstr "NTSC - 29.97 FPS"
 
-#: core/libs/video/manager/vidslidesettings.cpp:808
+#: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
 msgctxt "Video Codec X264"
 msgid "High Quality H.264 AVC/MPEG-4 AVC"
 msgstr "高品質 H.264 AVC/MPEG-4 AVC"
 
-#: core/libs/video/manager/vidslidesettings.cpp:809
+#: core/libs/video/manager/vidslidesettings.cpp:781
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
 msgstr "DivX/XVid/MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:810
+#: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
 msgctxt "Video Codec MPEG2"
 msgid "MPEG-2 Video"
 msgstr "MPEG-2 影片"
 
-#: core/libs/video/manager/vidslidesettings.cpp:827
+#: core/libs/video/manager/vidslidesettings.cpp:799
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
 msgstr ""
 
-#: core/libs/video/manager/vidslidesettings.cpp:828
+#: core/libs/video/manager/vidslidesettings.cpp:800
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
 msgstr "MKV - Matroska"
 
-#: core/libs/video/manager/vidslidesettings.cpp:829
+#: core/libs/video/manager/vidslidesettings.cpp:801
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
 msgstr "MP4 - MPEG-4"
 
-#: core/libs/video/manager/vidslidesettings.cpp:830
+#: core/libs/video/manager/vidslidesettings.cpp:802
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
 msgstr "MPG - MPEG-2"
 
-#: core/libs/video/manager/vidslidesettings.cpp:839
+#: core/libs/video/manager/vidslidesettings.cpp:811
 #, kde-format
 msgctxt "Video Effect NOPLAYER"
 msgid "None"
 msgstr "無"
 
-#: core/libs/video/manager/vidslidesettings.cpp:840
+#: core/libs/video/manager/vidslidesettings.cpp:812
 #, kde-format
 msgctxt "Video Standard INTERNAL"
 msgid "Internal"
 msgstr "內部"
 
-#: core/libs/video/manager/vidslidesettings.cpp:841
+#: core/libs/video/manager/vidslidesettings.cpp:813
 #, kde-format
 msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
@@ -41258,19 +41258,19 @@ msgid "If Target File Exists:"
 msgstr "如果目標檔案已存在："
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:63
-#: core/utilities/setup/camera/setupcamera.cpp:333
+#: core/utilities/setup/camera/setupcamera.cpp:326
 #, kde-format
 msgid "Store as a different name"
 msgstr "以不同名稱儲存"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:64
-#: core/utilities/setup/camera/setupcamera.cpp:334
+#: core/utilities/setup/camera/setupcamera.cpp:327
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "自動覆寫"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:65
-#: core/utilities/setup/camera/setupcamera.cpp:335
+#: core/utilities/setup/camera/setupcamera.cpp:328
 #, kde-format
 msgid "Skip automatically"
 msgstr "自動略過"
@@ -41521,17 +41521,17 @@ msgstr "載入影像失敗"
 msgid "Pan the image to a region"
 msgstr "平移影像到一個區域"
 
-#: core/libs/widgets/history/versionswidget.cpp:82
+#: core/libs/widgets/history/versionswidget.cpp:80
 #, kde-format
 msgid "Show available versions in a list"
 msgstr "在清單中顯示可用的版本"
 
-#: core/libs/widgets/history/versionswidget.cpp:88
+#: core/libs/widgets/history/versionswidget.cpp:86
 #, kde-format
 msgid "Show available versions as a tree"
 msgstr "在樹狀圖中顯示可用的版本"
 
-#: core/libs/widgets/history/versionswidget.cpp:94
+#: core/libs/widgets/history/versionswidget.cpp:92
 #, kde-format
 msgid "Show available versions and the applied filters in a combined list"
 msgstr "在組合式清單中顯示可用的版本與套用的濾鏡"
@@ -49567,7 +49567,7 @@ msgid "&Show image Format"
 msgstr "顯示影像格式(&S)"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:147
-#: core/utilities/setup/camera/setupcamera.cpp:444
+#: core/utilities/setup/camera/setupcamera.cpp:437
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "設定這個選項會在影像縮圖上顯示檔案格式。"
@@ -49578,7 +49578,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "地理位置濾鏡"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:149
-#: core/utilities/setup/camera/setupcamera.cpp:447
+#: core/utilities/setup/camera/setupcamera.cpp:440
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "啟用這個選項會顯示影像外觀比例。"
@@ -52696,8 +52696,8 @@ msgstr "地理位置"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:217
 #: core/utilities/setup/album/setupcategory.cpp:92
-#: core/utilities/setup/camera/setupcamera.cpp:277
-#: core/utilities/setup/camera/setupcamera.cpp:399
+#: core/utilities/setup/camera/setupcamera.cpp:270
+#: core/utilities/setup/camera/setupcamera.cpp:392
 #: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Remove"
@@ -60193,7 +60193,7 @@ msgid "Show item on right panel"
 msgstr "將項目顯示在右邊面板"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:465
+#: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Open With Default Application"
 msgstr "在預設應用程式開啟"
@@ -61222,7 +61222,7 @@ msgstr ""
 "處理。"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:212
-#: core/utilities/setup/camera/setupcamera.cpp:352
+#: core/utilities/setup/camera/setupcamera.cpp:345
 #, kde-format
 msgid "Behavior"
 msgstr "行為"
@@ -62525,37 +62525,37 @@ msgid "Advanced Search"
 msgstr "進階搜尋"
 
 #: core/utilities/setup/album/setupalbumview.cpp:118
-#: core/utilities/setup/camera/setupcamera.cpp:427
+#: core/utilities/setup/camera/setupcamera.cpp:420
 #, kde-format
 msgid "Show file&name"
 msgstr "顯示檔案名稱(&N)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:119
-#: core/utilities/setup/camera/setupcamera.cpp:428
+#: core/utilities/setup/camera/setupcamera.cpp:421
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "設定這個選項會在影像縮圖下方顯示檔案名稱。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:121
-#: core/utilities/setup/camera/setupcamera.cpp:430
+#: core/utilities/setup/camera/setupcamera.cpp:423
 #, kde-format
 msgid "Show file si&ze"
 msgstr "顯示檔案大小(&Z)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:122
-#: core/utilities/setup/camera/setupcamera.cpp:431
+#: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "設定這個選項會在影像縮圖下方顯示檔案大小。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:124
-#: core/utilities/setup/camera/setupcamera.cpp:433
+#: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "顯示相機建立日期(&D)"
 
 #: core/utilities/setup/album/setupalbumview.cpp:125
-#: core/utilities/setup/camera/setupcamera.cpp:434
+#: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
@@ -62628,7 +62628,7 @@ msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "設定這個選項會在影像縮圖下方顯示 digiKam 標題描述。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:152
-#: core/utilities/setup/camera/setupcamera.cpp:449
+#: core/utilities/setup/camera/setupcamera.cpp:442
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "顯示 digiKam 標籤(&T)"
@@ -62675,7 +62675,7 @@ msgid ""
 msgstr "設定這個選項會在影像縮圖下方顯示 digiKam 標籤。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
-#: core/utilities/setup/camera/setupcamera.cpp:457
+#: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "顯示旋轉覆蓋按鈕"
@@ -62703,7 +62703,7 @@ msgid ""
 msgstr "設定這個選項會在影像縮圖上顯示全螢幕顯示的覆蓋按鈕。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
-#: core/utilities/setup/camera/setupcamera.cpp:446
+#: core/utilities/setup/camera/setupcamera.cpp:439
 #, fuzzy, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "地理位置濾鏡"
@@ -62719,7 +62719,7 @@ msgid ""
 msgstr "設定這個選項會在影像縮圖上顯示旋轉影像的覆蓋按鈕。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:179
-#: core/utilities/setup/camera/setupcamera.cpp:461
+#: core/utilities/setup/camera/setupcamera.cpp:454
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "縮圖點擊動作："
@@ -62745,13 +62745,13 @@ msgid "Open with Default Application"
 msgstr "用影像編輯器開啟選擇的項目。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:185
-#: core/utilities/setup/camera/setupcamera.cpp:466
+#: core/utilities/setup/camera/setupcamera.cpp:459
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "選擇當您點擊縮圖時應該執行什麼動作。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
-#: core/utilities/setup/camera/setupcamera.cpp:468
+#: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Icon View font:"
 msgstr "圖示檢視字型："
@@ -62914,13 +62914,13 @@ msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr "若取消勾選此選項，在影像預覽時您看不到圖示與文字。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:299
-#: core/utilities/setup/camera/setupcamera.cpp:505
+#: core/utilities/setup/camera/setupcamera.cpp:498
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "在預覽上顯示圖示與文字"
 
 #: core/utilities/setup/album/setupalbumview.cpp:300
-#: core/utilities/setup/camera/setupcamera.cpp:506
+#: core/utilities/setup/camera/setupcamera.cpp:499
 #, fuzzy, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
@@ -62979,8 +62979,8 @@ msgid ""
 msgstr "您可以在這裡加入或移除相簿的類別類型，以便加強 digiKam 對相簿的排序。"
 
 #: core/utilities/setup/album/setupcategory.cpp:91
-#: core/utilities/setup/camera/setupcamera.cpp:275
-#: core/utilities/setup/camera/setupcamera.cpp:397
+#: core/utilities/setup/camera/setupcamera.cpp:268
+#: core/utilities/setup/camera/setupcamera.cpp:390
 #: core/utilities/setup/setuptemplate.cpp:106
 #, kde-format
 msgid "&Add..."
@@ -63385,117 +63385,117 @@ msgstr "選擇您要此過濾器過濾哪些 MIME 型態。"
 msgid "Select Mime Types"
 msgstr "選擇 MIME 型態"
 
-#: core/utilities/setup/camera/setupcamera.cpp:254
+#: core/utilities/setup/camera/setupcamera.cpp:247
 #, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
 "interface."
 msgstr "您可以在這裡看到 digiKam 透過 Gphoto 介面所用的數位相機清單。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:258
+#: core/utilities/setup/camera/setupcamera.cpp:251
 #, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "標題"
 
-#: core/utilities/setup/camera/setupcamera.cpp:259
+#: core/utilities/setup/camera/setupcamera.cpp:252
 #, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "型號"
 
-#: core/utilities/setup/camera/setupcamera.cpp:260
+#: core/utilities/setup/camera/setupcamera.cpp:253
 #, kde-format
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "連接埠"
 
-#: core/utilities/setup/camera/setupcamera.cpp:261
+#: core/utilities/setup/camera/setupcamera.cpp:254
 #, kde-format
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "路徑"
 
-#: core/utilities/setup/camera/setupcamera.cpp:279
-#: core/utilities/setup/camera/setupcamera.cpp:401
+#: core/utilities/setup/camera/setupcamera.cpp:272
+#: core/utilities/setup/camera/setupcamera.cpp:394
 #, kde-format
 msgid "&Edit..."
 msgstr "編輯(&E)..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:281
+#: core/utilities/setup/camera/setupcamera.cpp:274
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "自動偵測(&D)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:292
+#: core/utilities/setup/camera/setupcamera.cpp:285
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "造訪 Gphoto 專案網站"
 
-#: core/utilities/setup/camera/setupcamera.cpp:315
+#: core/utilities/setup/camera/setupcamera.cpp:308
 #, kde-format
 msgid "Devices"
 msgstr "裝置"
 
-#: core/utilities/setup/camera/setupcamera.cpp:322
+#: core/utilities/setup/camera/setupcamera.cpp:315
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr "使用檔案的中繼資料（連線時間會變慢）"
 
-#: core/utilities/setup/camera/setupcamera.cpp:323
+#: core/utilities/setup/camera/setupcamera.cpp:316
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr "開啟高畫質縮圖載入功能（載入較慢）"
 
-#: core/utilities/setup/camera/setupcamera.cpp:324
+#: core/utilities/setup/camera/setupcamera.cpp:317
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr "從相機下載時使用預設的目標相簿"
 
-#: core/utilities/setup/camera/setupcamera.cpp:330
+#: core/utilities/setup/camera/setupcamera.cpp:323
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
 msgid "If target file exists when downloaded from camera"
 msgstr "如果目標檔案已存在："
 
-#: core/utilities/setup/camera/setupcamera.cpp:371
+#: core/utilities/setup/camera/setupcamera.cpp:364
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
 msgstr "在這裡您可以看到在匯入對話框中用於過濾檔案用的過濾器。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:384
+#: core/utilities/setup/camera/setupcamera.cpp:377
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:390
+#: core/utilities/setup/camera/setupcamera.cpp:383
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/setup/camera/setupcamera.cpp:387
 #, kde-format
 msgid "Always ignore"
 msgstr "總是忽略"
 
-#: core/utilities/setup/camera/setupcamera.cpp:395
+#: core/utilities/setup/camera/setupcamera.cpp:388
 #, kde-format
 msgid "Ignored file names:"
 msgstr "忽略檔案名稱："
 
-#: core/utilities/setup/camera/setupcamera.cpp:396
+#: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid "Ignored file extensions:"
 msgstr "忽略副檔名："
 
-#: core/utilities/setup/camera/setupcamera.cpp:416
+#: core/utilities/setup/camera/setupcamera.cpp:409
 #, kde-format
 msgid "Import Filters"
 msgstr "匯入過濾器"
 
-#: core/utilities/setup/camera/setupcamera.cpp:424
+#: core/utilities/setup/camera/setupcamera.cpp:417
 #, kde-format
 msgid "Icon-View Options"
 msgstr "圖示檢視選項"
@@ -63504,59 +63504,59 @@ msgstr "圖示檢視選項"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
 msgid "Show image Format"
 msgstr "顯示影像格式"
 
-#: core/utilities/setup/camera/setupcamera.cpp:450
+#: core/utilities/setup/camera/setupcamera.cpp:443
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr "設定這個選項會在影像縮圖下方顯示 digiKam 標籤。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:453
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, kde-format
 msgid "Show item &rating"
 msgstr "顯示項目評等(&R)"
 
-#: core/utilities/setup/camera/setupcamera.cpp:454
+#: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr "設定這個選項會在影像縮圖下方顯示項目評等。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:451
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
 "rotation."
 msgstr "設定這個選項會在影像縮圖上顯示旋轉影像的覆蓋按鈕。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:463
+#: core/utilities/setup/camera/setupcamera.cpp:456
 #, kde-format
 msgid "Show embedded preview"
 msgstr "顯示內嵌的預覽"
 
-#: core/utilities/setup/camera/setupcamera.cpp:464
+#: core/utilities/setup/camera/setupcamera.cpp:457
 #, kde-format
 msgid "Start image editor"
 msgstr "啟動影像編輯器"
 
-#: core/utilities/setup/camera/setupcamera.cpp:469
+#: core/utilities/setup/camera/setupcamera.cpp:462
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "在這裡選擇圖示檢視中顯示文字的字型。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:491
+#: core/utilities/setup/camera/setupcamera.cpp:484
 #, kde-format
 msgid "Preview Options"
 msgstr "預覽選項"
 
-#: core/utilities/setup/camera/setupcamera.cpp:494
+#: core/utilities/setup/camera/setupcamera.cpp:487
 #, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr "內嵌的預覽載入原始大小影像"
 
-#: core/utilities/setup/camera/setupcamera.cpp:495
+#: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -63570,35 +63570,35 @@ msgstr ""
 "備註：</b>若是 Raw 影像，則會載入 Raw 資料的一半尺寸版本，而不是內嵌的 JPEG "
 "預覽。</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:502
+#: core/utilities/setup/camera/setupcamera.cpp:495
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr "下載時預覽每個項目"
 
-#: core/utilities/setup/camera/setupcamera.cpp:503
+#: core/utilities/setup/camera/setupcamera.cpp:496
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>設定此選項會在下載時預覽每個項目。</p>"
 
-#: core/utilities/setup/camera/setupcamera.cpp:525
+#: core/utilities/setup/camera/setupcamera.cpp:518
 #, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "匯入視窗"
 
-#: core/utilities/setup/camera/setupcamera.cpp:789
+#: core/utilities/setup/camera/setupcamera.cpp:782
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr "沒有選擇從相機下載時預設的目標相簿。請選擇一個相簿。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:877
+#: core/utilities/setup/camera/setupcamera.cpp:870
 #, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "正在進行裝置偵測，請稍候..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:888
+#: core/utilities/setup/camera/setupcamera.cpp:881
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -63608,35 +63608,35 @@ msgstr ""
 "自動偵測相機失敗。\n"
 "請確定相機已正確連線，並已開啟，或是試著進行手動設定。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:903
+#: core/utilities/setup/camera/setupcamera.cpp:896
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "相機「%1」(%2)已經在清單中。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:907
+#: core/utilities/setup/camera/setupcamera.cpp:900
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "找到了相機「%1」(%2)並將其加入到了清單。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:923
+#: core/utilities/setup/camera/setupcamera.cpp:916
 #, kde-format
 msgid "Untitled"
 msgstr "未命名"
 
-#: core/utilities/setup/camera/setupcamera.cpp:987
+#: core/utilities/setup/camera/setupcamera.cpp:980
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr "要開啟此選項，必須先關閉全尺寸預覽。"
 
-#: core/utilities/setup/camera/setupcamera.cpp:998
+#: core/utilities/setup/camera/setupcamera.cpp:991
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
 "each item while download."
 msgstr "若是開啟全尺寸預覽，會影響到在下載時預覽每個影像的速度。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:87
+#: core/utilities/setup/collections/setupcollections.cpp:84
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Below are the locations of your root albums used to store your images. "
@@ -63656,7 +63656,7 @@ msgstr ""
 "權限。</p><p>備註：支援抽取式媒體 (例如 USB 隨身碟或 DVD 光碟) 和遠端檔案系"
 "統 (例如 NFS 或以 cifs/smbfs 掛載的 Samba)。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:100
+#: core/utilities/setup/collections/setupcollections.cpp:97
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -63666,12 +63666,12 @@ msgstr ""
 "<p>下面是用來儲存您的影像的根相簿位置。為了能編輯這些相簿中的影像必須有寫入的"
 "權限。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:114
+#: core/utilities/setup/collections/setupcollections.cpp:111
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:117
+#: core/utilities/setup/collections/setupcollections.cpp:114
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -63679,14 +63679,14 @@ msgid ""
 "activate album monitoring.</b>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:130
+#: core/utilities/setup/collections/setupcollections.cpp:127
 #, fuzzy, kde-format
 #| msgid "Root Album Folders"
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "根相簿資料夾"
 
-#: core/utilities/setup/collections/setupcollections.cpp:137
+#: core/utilities/setup/collections/setupcollections.cpp:134
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -63699,7 +63699,7 @@ msgid ""
 "default prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:155
+#: core/utilities/setup/collections/setupcollections.cpp:152
 #, fuzzy, kde-format
 #| msgid ""
 #| "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -63709,19 +63709,19 @@ msgid ""
 "directories</a>):"
 msgstr "附加的影像檔案擴充套件 (<a href='image'>目前已支援的類型</a>)(&I)："
 
-#: core/utilities/setup/collections/setupcollections.cpp:160
+#: core/utilities/setup/collections/setupcollections.cpp:157
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:176
+#: core/utilities/setup/collections/setupcollections.cpp:173
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "忽略目錄"
 
-#: core/utilities/setup/collections/setupcollections.cpp:247
+#: core/utilities/setup/collections/setupcollections.cpp:244
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Files with these extensions will be recognized as movie files and "
@@ -64066,89 +64066,89 @@ msgctxt "@title:tab"
 msgid "Save Settings"
 msgstr "儲存設定"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:112
-#: core/utilities/setup/setuplighttable.cpp:82
+#: core/utilities/setup/editor/setupeditoriface.cpp:102
+#: core/utilities/setup/setuplighttable.cpp:76
 #, kde-format
 msgid "Interface Options"
 msgstr "介面選項"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:115
+#: core/utilities/setup/editor/setupeditoriface.cpp:105
 #, kde-format
 msgid "&Use theme background color"
 msgstr "使用佈景主題背景顏色(&U)"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:118
+#: core/utilities/setup/editor/setupeditoriface.cpp:108
 #, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
 "area."
 msgstr "啟用這個選項讓影像編輯器區域使用背景主題的顏色。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:122
+#: core/utilities/setup/editor/setupeditoriface.cpp:112
 #, kde-format
 msgid "&Background color:"
 msgstr "背景顏色(&B)："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:125
+#: core/utilities/setup/editor/setupeditoriface.cpp:115
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
 msgstr "自訂影像編輯器區域的背景顏色。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:139
+#: core/utilities/setup/editor/setupeditoriface.cpp:129
 #, kde-format
 msgid "Exposure Indicators"
 msgstr "曝光指標"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:142
+#: core/utilities/setup/editor/setupeditoriface.cpp:132
 #, fuzzy, kde-format
 msgid "&Under-exposure color: "
 msgstr "曝光不足顏色(&U)："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:145
+#: core/utilities/setup/editor/setupeditoriface.cpp:135
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr "自訂用在影像編輯器辨識曝光不足像素的顏色。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:148
+#: core/utilities/setup/editor/setupeditoriface.cpp:138
 #, fuzzy, kde-format
 msgid "Under-exposure percents: "
 msgstr "曝光不足百分比："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:154
+#: core/utilities/setup/editor/setupeditoriface.cpp:144
 #, kde-format
 msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
 "check under exposed pixels."
 msgstr "調整影像長條圖底部的百分比，該百分比會用於在已曝光像素下檢查。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:157
+#: core/utilities/setup/editor/setupeditoriface.cpp:147
 #, kde-format
 msgid "&Over-exposure color: "
 msgstr "過度曝光顏色(&O)："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:160
+#: core/utilities/setup/editor/setupeditoriface.cpp:150
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr "自訂用在影像編輯器辨識曝光過度像素的顏色。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:163
+#: core/utilities/setup/editor/setupeditoriface.cpp:153
 #, fuzzy, kde-format
 msgid "Over-exposure percents: "
 msgstr "過曝百分比："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:169
+#: core/utilities/setup/editor/setupeditoriface.cpp:159
 #, kde-format
 msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
 "check over exposed pixels."
 msgstr "調整影像長條圖頂部的百分比，該百分比會用於在已曝光像素上檢查。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:172
+#: core/utilities/setup/editor/setupeditoriface.cpp:162
 #, kde-format
 msgid "Indicate exposure as pure color"
 msgstr "將曝光指示為純色"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:173
+#: core/utilities/setup/editor/setupeditoriface.cpp:163
 #, kde-format
 msgid ""
 "If this option is enabled, over- and under-exposure indicators will be "
@@ -64160,34 +64160,34 @@ msgstr ""
 "時，才會顯示過曝或低曝的指示器。否則，當有一個顏色組件符合條件時即會顯示指示"
 "器。"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:178
+#: core/utilities/setup/editor/setupeditoriface.cpp:168
 #, kde-format
 msgid "Example:"
 msgstr "範例："
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:211
+#: core/utilities/setup/editor/setupeditoriface.cpp:201
 #, kde-format
 msgid "Tool Options"
 msgstr "工具選項"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:214
+#: core/utilities/setup/editor/setupeditoriface.cpp:204
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:216
+#: core/utilities/setup/editor/setupeditoriface.cpp:206
 #, kde-format
 msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:201
+#: core/utilities/setup/editor/setupiofiles.cpp:182
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr "儲存影像檔時顯示設定值對話框"
 
-#: core/utilities/setup/editor/setupiofiles.cpp:202
+#: core/utilities/setup/editor/setupiofiles.cpp:183
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "
@@ -64197,7 +64197,7 @@ msgstr ""
 "<ul><li>勾選：儲存影像檔時使用在對話框中變更的設定值</li><li>未勾選：儲存影像"
 "檔時使用預設的設定值</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:91
+#: core/utilities/setup/editor/setupraw.cpp:86
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -64208,49 +64208,49 @@ msgstr ""
 "<emphasis>原始影像檔</emphasis>包含了從數位相機中的影像感知器裡的處理資料。"
 "<nl/>開啟原始影像檔會需要額外的資料解譯與處理。"
 
-#: core/utilities/setup/editor/setupraw.cpp:109
+#: core/utilities/setup/editor/setupraw.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "在影像編輯器開啟原始檔案。"
 
-#: core/utilities/setup/editor/setupraw.cpp:112
+#: core/utilities/setup/editor/setupraw.cpp:107
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "快速而簡單的，8 位元影像"
 
-#: core/utilities/setup/editor/setupraw.cpp:114
+#: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "使用預設值，16 位元"
 
-#: core/utilities/setup/editor/setupraw.cpp:116
+#: core/utilities/setup/editor/setupraw.cpp:111
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "總是開啟 Raw 匯入工具來自訂設定值"
 
-#: core/utilities/setup/editor/setupraw.cpp:131
+#: core/utilities/setup/editor/setupraw.cpp:126
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr "（預設）"
 
-#: core/utilities/setup/editor/setupraw.cpp:159
+#: core/utilities/setup/editor/setupraw.cpp:154
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "關於這個 Raw 匯入工具…"
 
-#: core/utilities/setup/editor/setupraw.cpp:193
+#: core/utilities/setup/editor/setupraw.cpp:188
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "RAW 行為"
 
-#: core/utilities/setup/editor/setupraw.cpp:194
+#: core/utilities/setup/editor/setupraw.cpp:189
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -66472,36 +66472,36 @@ msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "影像品質排序器"
 
-#: core/utilities/setup/setuplighttable.cpp:85
+#: core/utilities/setup/setuplighttable.cpp:79
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "自動同步面板"
 
-#: core/utilities/setup/setuplighttable.cpp:86
+#: core/utilities/setup/setuplighttable.cpp:80
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr "設定這個選項以在影像有相同大小時自動同步左右兩邊面板的顯示縮放和平移。"
 
-#: core/utilities/setup/setuplighttable.cpp:90
+#: core/utilities/setup/setuplighttable.cpp:84
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "選擇一個縮圖項目載入影像到右邊面板"
 
-#: core/utilities/setup/setuplighttable.cpp:92
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr "設定這個選項會在選取縮圖列上對應的項目時將影像自動載入到右側面板中。"
 
-#: core/utilities/setup/setuplighttable.cpp:95
+#: core/utilities/setup/setuplighttable.cpp:89
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "關閉時清空數位光桌"
 
-#: core/utilities/setup/setuplighttable.cpp:96
+#: core/utilities/setup/setuplighttable.cpp:90
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "
