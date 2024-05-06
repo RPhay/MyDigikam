@@ -103,7 +103,6 @@ Q_SIGNALS:
     void signalAddPhotoSucceeded(const QString&);
     void signalAddPhotoSetSucceeded();
     void signalListPhotoSetsSucceeded();
-    void signalListPhotoSetsFailed(QString& msg);
     void signalAddPhotoFailed(const QString& msg);
     void signalListPhotoSetsFailed(const QString& msg);
     void signalLinkingSucceeded();
