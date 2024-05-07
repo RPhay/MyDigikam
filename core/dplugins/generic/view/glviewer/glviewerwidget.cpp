@@ -73,44 +73,7 @@ public:
 
 public:
 
-    explicit Private()
-      :
-        file_idx                (0),                    ///< index of picture to be displayed
-
-        texture                 (nullptr),
-        ratio_view_y            (0.0F),
-        ratio_view_x            (0.0F),
-        delta                   (0.0F),
-        vertex_height           (0.0F),
-        vertex_width            (0.0F),
-        vertex_left             (0.0F),
-        vertex_top              (0.0F),
-        vertex_right            (0.0F),
-        vertex_bottom           (0.0F),
-        wheelAction             (zoomImage),
-        firstImage              (true),
-
-        /**
-         * while zooming is performed, the image is downsampled to d->zoomsize. This seems to
-         * be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
-         * not be necessary anymore
-         */
-        zoomsize                (QSize(1024, 768)),
-
-        /// load cursors for zooming and panning
-        moveCursor              (QCursor(Qt::PointingHandCursor)),
-        zoomCursor              (QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64))),
-
-        /// define zoomfactors for one zoom step
-        zoomfactor_scrollwheel  (1.1F),
-        zoomfactor_mousemove    (1.03F),
-        zoomfactor_keyboard     (1.05F),
-
-        /// get path of nullImage in case QImage can't load the image
-        nullImage               (QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256)),
-
-        iface                   (nullptr),
-        plugin                  (nullptr)
+    Private()
     {
         for (int i = 0 ; i < CACHESIZE ; ++i)
         {
@@ -120,36 +83,52 @@ public:
     }
 
     QStringList      files;
-    unsigned int     file_idx;
-    Cache            cache[CACHESIZE];
-    GLViewerTexture* texture;
 
-    float            ratio_view_y;
-    float            ratio_view_x;
-    float            delta;
-    float            vertex_height;
-    float            vertex_width;
-    float            vertex_left;
-    float            vertex_top;
-    float            vertex_right;
-    float            vertex_bottom;
+    /// index of picture to be displayed
+    unsigned int     file_idx               = 0;
+
+    Cache            cache[CACHESIZE];
+    GLViewerTexture* texture                = nullptr;
+
+    float            ratio_view_y           = 0.0F;
+    float            ratio_view_x           = 0.0F;
+    float            delta                  = 0.0F;
+    float            vertex_height          = 0.0F;
+    float            vertex_width           = 0.0F;
+    float            vertex_left            = 0.0F;
+    float            vertex_top             = 0.0F;
+    float            vertex_right           = 0.0F;
+    float            vertex_bottom          = 0.0F;
 
     QPoint           startdrag;
     QPoint           previous_pos;
-    WheelAction      wheelAction;
-    bool             firstImage;
-    QSize            zoomsize;
+    WheelAction      wheelAction            = zoomImage;
+    bool             firstImage             = true;
+
+    /**
+     * while zooming is performed, the image is downsampled to d->zoomsize. This seems to
+     * be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
+     * not be necessary anymore
+     */
+    QSize            zoomsize               = QSize(1024, 768);
+
     QTimer           timerMouseMove;
-    QCursor          moveCursor;
-    QCursor          zoomCursor;
-    float            zoomfactor_scrollwheel;
-    float            zoomfactor_mousemove;
-    float            zoomfactor_keyboard;
-    QPixmap          nullImage;
+
+    /// load cursors for zooming and panning
+    QCursor          moveCursor             = QCursor(Qt::PointingHandCursor);
+    QCursor          zoomCursor             = QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64));
+
+    /// define zoomfactors for one zoom step
+    float            zoomfactor_scrollwheel = 1.1F;
+    float            zoomfactor_mousemove   = 1.03F;
+    float            zoomfactor_keyboard    = 1.05F;
+
+    /// get path of nullImage in case QImage can't load the image
+    QPixmap          nullImage              = QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256);
     QSize            screenSize;
 
-    DInfoInterface*  iface;
-    DPlugin*         plugin;
+    DInfoInterface*  iface                  = nullptr;
+    DPlugin*         plugin                 = nullptr;
 };
 
 GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const iface,

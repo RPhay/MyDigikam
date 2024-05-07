@@ -34,10 +34,6 @@ VideoSlideShowPlugin::VideoSlideShowPlugin(QObject* const parent)
 {
 }
 
-VideoSlideShowPlugin::~VideoSlideShowPlugin()
-{
-}
-
 QString VideoSlideShowPlugin::name() const
 {
     return i18n("Video Slideshow");

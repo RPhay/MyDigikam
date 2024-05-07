@@ -49,7 +49,7 @@ public:
                             DInfoInterface* const iface,
                             const QList<QUrl>& myfiles,
                             const QString& selectedImage);
-    ~GLViewerWidget() override;
+    ~GLViewerWidget()                                override;
 
     void prevImage();
     void nextImage();

@@ -36,10 +36,6 @@ GLViewerPlugin::GLViewerPlugin(QObject* const parent)
 {
 }
 
-GLViewerPlugin::~GLViewerPlugin()
-{
-}
-
 QString GLViewerPlugin::name() const
 {
     return i18n("OpenGL Viewer");

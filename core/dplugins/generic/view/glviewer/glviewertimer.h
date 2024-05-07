@@ -28,7 +28,7 @@ class GLViewerTimer
 
 public:
 
-    explicit GLViewerTimer();
+    GLViewerTimer();
     ~GLViewerTimer();
 
     void start();
