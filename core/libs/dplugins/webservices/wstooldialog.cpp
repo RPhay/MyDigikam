@@ -93,7 +93,7 @@ void WSToolDialog::setMainWidget(QWidget* const widget)
 
 void WSToolDialog::setRejectButtonMode(QDialogButtonBox::StandardButton button)
 {
-    if (button == QDialogButtonBox::Close)
+    if      (button == QDialogButtonBox::Close)
     {
         m_buttons->button(QDialogButtonBox::Close)->setText(i18n("Close"));
         m_buttons->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("window-close")));

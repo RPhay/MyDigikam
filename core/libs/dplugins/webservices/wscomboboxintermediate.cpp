@@ -56,7 +56,7 @@ WSComboBoxIntermediate::~WSComboBoxIntermediate()
 
 void WSComboBoxIntermediate::setIntermediate(bool state)
 {
-    if ((state) && (!d->isIntermediate))
+    if      ((state) && (!d->isIntermediate))
     {
         // If the combobox should be set to intermediate and is not yet done so,
         // append a separator and the intermediate text.

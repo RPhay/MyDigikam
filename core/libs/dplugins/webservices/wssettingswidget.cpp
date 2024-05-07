@@ -316,6 +316,7 @@ WSSettingsWidget::~WSSettingsWidget()
 QString WSSettingsWidget::getDestinationPath() const
 {
     QUrl url = d->iface->uploadUrl();
+
     return url.toLocalFile();
 }
 

@@ -32,8 +32,8 @@ class DIGIKAM_EXPORT WSToolUtils
 {
 public:
 
-    explicit WSToolUtils() {};
-    ~WSToolUtils()         {};
+    WSToolUtils()  = default;
+    ~WSToolUtils() = default;
 
     static QString decodeKey(const QString& key);
 

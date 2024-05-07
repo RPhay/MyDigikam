@@ -75,22 +75,22 @@ public:
         setText(4, auth.join(QString::fromLatin1(", ")));
     };
 
-    ~DPluginCB() override
-    {
-    };
+    ~DPluginCB() override = default;
 
     bool contains(const QString& txt, Qt::CaseSensitivity cs) const
     {
-        return (text(0).contains(txt, cs) ||
+        return (
+                text(0).contains(txt, cs) ||
                 text(1).contains(txt, cs) ||
                 text(2).contains(txt, cs) ||
                 text(3).contains(txt, cs) ||
-                text(4).contains(txt, cs));
+                text(4).contains(txt, cs)
+               );
     };
 
 public:
 
-    DPlugin* m_plugin;
+    DPlugin* m_plugin = nullptr;
 
 private:
 
