@@ -645,7 +645,7 @@ void RegionFrameItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 
     if (d->movingHandle == CH_Content)
     {
-        d->lastMouseMovePos = mapToParent(event->pos());
+        d->lastMouseMovePos = event->scenePos();
     }
 
     // Update to hide handles
@@ -656,7 +656,7 @@ void RegionFrameItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     const QSizeF maxSize = parentDImgItem()->boundingRect().size();
-    const QPointF point  = mapToParent(event->pos());
+    const QPointF point  = event->scenePos();
     qreal posX           = qBound<qreal>(0., point.x(), maxSize.width());
     qreal posY           = qBound<qreal>(0., point.y(), maxSize.height());
     QRectF r             = rect();
@@ -734,7 +734,7 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         QPointF delta       = point - d->lastMouseMovePos;
         r.adjust(delta.x(), delta.y(), delta.x(), delta.y());
-        d->lastMouseMovePos = mapToParent(event->pos());
+        d->lastMouseMovePos = event->scenePos();
     }
 
     setRect(d->keepRectInsideImage(r));
