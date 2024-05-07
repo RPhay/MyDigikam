@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QPointer>
+#include <QApplication>
 
 // KDE includes
 
@@ -109,7 +110,7 @@ void TimeAdjustPlugin::setup(QObject* const parent)
 
 void TimeAdjustPlugin::slotTimeAdjust()
 {
-    QPointer<TimeAdjustDialog> dialog = new TimeAdjustDialog(nullptr, infoIface(sender()));
+    QPointer<TimeAdjustDialog> dialog = new TimeAdjustDialog(qApp->activeWindow(), infoIface(sender()));
     dialog->setPlugin(this);
     dialog->exec();
     delete dialog;

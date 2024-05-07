@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QPointer>
+#include <QApplication>
 
 // KDE includes
 
@@ -107,7 +108,7 @@ void GeolocationEditPlugin::setup(QObject* const parent)
 
 void GeolocationEditPlugin::slotEditGeolocation()
 {
-    QPointer<GeolocationEdit> dialog = new GeolocationEdit(nullptr, infoIface(sender()));
+    QPointer<GeolocationEdit> dialog = new GeolocationEdit(qApp->activeWindow(), infoIface(sender()));
     dialog->setPlugin(this);
     dialog->exec();
     delete dialog;
