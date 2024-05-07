@@ -34,10 +34,6 @@ ClawsMailBinary::ClawsMailBinary(QObject* const)
     setup();
 }
 
-ClawsMailBinary::~ClawsMailBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_clawsmailbinary.cpp"

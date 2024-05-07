@@ -41,10 +41,6 @@ ImageResizeJob::ImageResizeJob(int* count)
 {
 }
 
-ImageResizeJob::~ImageResizeJob()
-{
-}
-
 void ImageResizeJob::run()
 {
     Q_EMIT signalStarted();

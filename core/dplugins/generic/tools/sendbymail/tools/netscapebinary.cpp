@@ -34,10 +34,6 @@ NetscapeBinary::NetscapeBinary(QObject* const)
     setup();
 }
 
-NetscapeBinary::~NetscapeBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_netscapebinary.cpp"

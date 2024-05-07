@@ -36,10 +36,6 @@ KmailBinary::KmailBinary(QObject* const)
     setup();
 }
 
-KmailBinary::~KmailBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_kmailbinary.cpp"

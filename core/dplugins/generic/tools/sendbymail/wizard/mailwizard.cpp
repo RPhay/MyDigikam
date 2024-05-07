@@ -47,29 +47,20 @@ class Q_DECL_HIDDEN MailWizard::Private
 {
 public:
 
-    explicit Private()
-      : iface(nullptr),
-        introPage(nullptr),
-        albumsPage(nullptr),
-        imagesPage(nullptr),
-        settingsPage(nullptr),
-        finalPage(nullptr),
-        settings(nullptr)
-    {
-    }
+    explicit Private() = default;
 
-    DInfoInterface*     iface;
-    MailIntroPage*      introPage;
-    MailAlbumsPage*     albumsPage;
-    MailImagesPage*     imagesPage;
-    MailSettingsPage*   settingsPage;
-    MailFinalPage*      finalPage;
-    MailSettings*       settings;
+    DInfoInterface*     iface           = nullptr;
+    MailIntroPage*      introPage       = nullptr;
+    MailAlbumsPage*     albumsPage      = nullptr;
+    MailImagesPage*     imagesPage      = nullptr;
+    MailSettingsPage*   settingsPage    = nullptr;
+    MailFinalPage*      finalPage       = nullptr;
+    MailSettings*       settings        = nullptr;
 };
 
 MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("Email Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Send by Email"));

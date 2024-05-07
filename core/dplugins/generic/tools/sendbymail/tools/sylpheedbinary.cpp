@@ -34,10 +34,6 @@ SylpheedBinary::SylpheedBinary(QObject* const)
     setup();
 }
 
-SylpheedBinary::~SylpheedBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_sylpheedbinary.cpp"

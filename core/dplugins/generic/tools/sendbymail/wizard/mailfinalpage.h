@@ -35,11 +35,11 @@ class MailFinalPage : public DWizardPage
 public:
 
     explicit MailFinalPage(QWizard* const dialog, const QString& title);
-    ~MailFinalPage() override;
+    ~MailFinalPage()        override;
 
-    void initializePage() override;
+    void initializePage()   override;
     bool isComplete() const override;
-    void cleanupPage() override;
+    void cleanupPage()      override;
 
 private Q_SLOTS:
 

@@ -38,7 +38,7 @@ class ImageResizeJob : public ActionJob
 public:
 
     explicit ImageResizeJob(int* count = nullptr);
-    ~ImageResizeJob() override;
+    ~ImageResizeJob() override = default;
 
 public:
 

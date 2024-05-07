@@ -53,11 +53,6 @@ class Q_DECL_HIDDEN MailIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(nullptr),
-        hbox(nullptr),
-        wizard(nullptr),
-        iface(nullptr),
-        binSearch(nullptr)
     {
         wizard = dynamic_cast<MailWizard*>(dialog);
 
@@ -67,11 +62,11 @@ public:
         }
     }
 
-    QComboBox*        imageGetOption;
-    DHBox*            hbox;
-    MailWizard*       wizard;
-    DInfoInterface*   iface;
-    DBinarySearch*    binSearch;
+    QComboBox*        imageGetOption    = nullptr;
+    DHBox*            hbox              = nullptr;
+    MailWizard*       wizard            = nullptr;
+    DInfoInterface*   iface             = nullptr;
+    DBinarySearch*    binSearch         = nullptr;
     BalsaBinary       balsaBin;
     ClawsMailBinary   clawsBin;
     EvolutionBinary   evoluBin;
@@ -84,7 +79,7 @@ public:
 
 MailIntroPage::MailIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);

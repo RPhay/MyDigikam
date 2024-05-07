@@ -31,7 +31,7 @@ class ThunderbirdBinary : public DBinaryIface
 public:
 
     explicit ThunderbirdBinary(QObject* const parent = nullptr);
-    ~ThunderbirdBinary() override;
+    ~ThunderbirdBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

@@ -34,10 +34,6 @@ BalsaBinary::BalsaBinary(QObject* const)
     setup();
 }
 
-BalsaBinary::~BalsaBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_balsabinary.cpp"

@@ -31,7 +31,7 @@ class ClawsMailBinary : public DBinaryIface
 public:
 
     explicit ClawsMailBinary(QObject* const parent = nullptr);
-    ~ClawsMailBinary() override;
+    ~ClawsMailBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

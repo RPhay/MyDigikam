@@ -31,10 +31,6 @@ class Q_DECL_HIDDEN MailAlbumsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
-        albumSelector(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<MailWizard*>(dialog);
 
@@ -44,15 +40,15 @@ public:
         }
     }
 
-    bool             albumSupport;
-    QWidget*         albumSelector;
-    MailWizard*      wizard;
-    DInfoInterface*  iface;
+    bool             albumSupport   = false;
+    QWidget*         albumSelector  = nullptr;
+    MailWizard*      wizard         = nullptr;
+    DInfoInterface*  iface          = nullptr;
 };
 
 MailAlbumsPage::MailAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     if (d->iface)
     {

@@ -47,13 +47,6 @@ class Q_DECL_HIDDEN MailFinalPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : progressView(nullptr),
-        progressBar(nullptr),
-        complete(false),
-        processor(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<MailWizard*>(dialog);
 
@@ -64,18 +57,18 @@ public:
         }
     }
 
-    DHistoryView*     progressView;
-    DProgressWdg*     progressBar;
-    bool              complete;
-    MailProcess*      processor;
-    MailWizard*       wizard;
-    MailSettings*     settings;
-    DInfoInterface*   iface;
+    DHistoryView*     progressView  = nullptr;
+    DProgressWdg*     progressBar   = nullptr;
+    bool              complete      = false;
+    MailProcess*      processor     = nullptr;
+    MailWizard*       wizard        = nullptr;
+    MailSettings*     settings      = nullptr;
+    DInfoInterface*   iface         = nullptr;
 };
 
 MailFinalPage::MailFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox = new DVBox(this);
     d->progressView   = new DHistoryView(vbox);
@@ -103,13 +96,16 @@ MailFinalPage::~MailFinalPage()
 void MailFinalPage::initializePage()
 {
     d->complete = false;
+
     Q_EMIT completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
 void MailFinalPage::slotDone()
 {
     d->complete = true;
+
     Q_EMIT completeChanged();
 }
 

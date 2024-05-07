@@ -23,23 +23,6 @@
 namespace DigikamGenericSendByMailPlugin
 {
 
-MailSettings::MailSettings()
-    : selMode(IMAGES),
-      addFileProperties(false),
-      imagesChangeProp(false),
-      removeMetadata(false),
-      imageCompression(75),
-      attLimitInMbytes(17),
-      mailProgram(THUNDERBIRD),
-      imageSize(1024),
-      imageFormat(JPEG)
-{
-}
-
-MailSettings::~MailSettings()
-{
-}
-
 void MailSettings::readSettings(KConfigGroup& group)
 {
     selMode           = (Selection)group.readEntry("SelMode",

@@ -30,7 +30,7 @@ class OutlookBinary : public DBinaryIface
 public:
 
     explicit OutlookBinary(QObject* const parent = nullptr);
-    ~OutlookBinary() override;
+    ~OutlookBinary() override = default;
 };
 
 } // namespace Digikam

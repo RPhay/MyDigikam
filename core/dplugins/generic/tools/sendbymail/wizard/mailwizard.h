@@ -38,10 +38,10 @@ class MailWizard : public DWizardDlg
 public:
 
     explicit MailWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~MailWizard() override;
+    ~MailWizard()                    override;
 
     bool validateCurrentPage()       override;
-    int  nextId() const              override;
+    int  nextId()              const override;
 
     DInfoInterface* iface()    const;
     MailSettings*   settings() const;

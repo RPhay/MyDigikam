@@ -34,10 +34,6 @@ ThunderbirdBinary::ThunderbirdBinary(QObject* const)
     setup();
 }
 
-ThunderbirdBinary::~ThunderbirdBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_thunderbirdbinary.cpp"

@@ -47,17 +47,6 @@ class Q_DECL_HIDDEN MailSettingsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : mailAgentName(nullptr),
-        imageFormat(nullptr),
-        changeImagesProp(nullptr),
-        addFileProperties(nullptr),
-        removeMetadata(nullptr),
-        imageCompression(nullptr),
-        attachmentlimit(nullptr),
-        imageResize(nullptr),
-        wizard(nullptr),
-        iface(nullptr),
-        settings(nullptr)
     {
         wizard = dynamic_cast<MailWizard*>(dialog);
 
@@ -68,29 +57,29 @@ public:
         }
     }
 
-    QComboBox*      mailAgentName;
-    QComboBox*      imageFormat;
+    QComboBox*      mailAgentName       = nullptr;
+    QComboBox*      imageFormat         = nullptr;
 
-    QCheckBox*      changeImagesProp;
-    QCheckBox*      addFileProperties;
-    QCheckBox*      removeMetadata;
+    QCheckBox*      changeImagesProp    = nullptr;
+    QCheckBox*      addFileProperties   = nullptr;
+    QCheckBox*      removeMetadata      = nullptr;
 
-    QSpinBox*       imageCompression;
-    QSpinBox*       attachmentlimit;
-    QSpinBox*       imageResize;
+    QSpinBox*       imageCompression    = nullptr;
+    QSpinBox*       attachmentlimit     = nullptr;
+    QSpinBox*       imageResize         = nullptr;
 
-    MailWizard*     wizard;
-    DInfoInterface* iface;
-    MailSettings*   settings;
+    MailWizard*     wizard              = nullptr;
+    DInfoInterface* iface               = nullptr;
+    MailSettings*   settings            = nullptr;
 };
 
 MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     QWidget* const main = new QWidget(this);
     const int spacing   = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                               QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // --------------------
 

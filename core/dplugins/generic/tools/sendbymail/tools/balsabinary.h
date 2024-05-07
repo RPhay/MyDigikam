@@ -31,7 +31,7 @@ class BalsaBinary : public DBinaryIface
 public:
 
     explicit BalsaBinary(QObject* const parent = nullptr);
-    ~BalsaBinary() override;
+    ~BalsaBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

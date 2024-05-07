@@ -38,9 +38,6 @@ class Q_DECL_HIDDEN MailImagesPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageList(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
     {
         wizard = dynamic_cast<MailWizard*>(dialog);
 
@@ -50,14 +47,14 @@ public:
         }
     }
 
-    DItemsList*     imageList;
-    MailWizard*     wizard;
-    DInfoInterface* iface;
+    DItemsList*     imageList   = nullptr;
+    MailWizard*     wizard      = nullptr;
+    DInfoInterface* iface       = nullptr;
 };
 
 MailImagesPage::MailImagesPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);

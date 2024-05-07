@@ -31,7 +31,7 @@ class NetscapeBinary : public DBinaryIface
 public:
 
     explicit NetscapeBinary(QObject* const parent = nullptr);
-    ~NetscapeBinary() override;
+    ~NetscapeBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

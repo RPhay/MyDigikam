@@ -31,12 +31,8 @@ OutlookBinary::OutlookBinary(QObject* const)
                    QStringList(),
                    i18n("Outlook Mail Client.")
                   )
- {
-     setup();
- }
-
-OutlookBinary::~OutlookBinary()
 {
+    setup();
 }
 
 } // namespace Digikam

@@ -31,7 +31,7 @@ class SylpheedBinary : public DBinaryIface
 public:
 
     explicit SylpheedBinary(QObject* const parent = nullptr);
-    ~SylpheedBinary() override;
+    ~SylpheedBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

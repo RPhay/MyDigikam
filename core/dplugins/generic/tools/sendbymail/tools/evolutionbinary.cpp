@@ -34,10 +34,6 @@ EvolutionBinary::EvolutionBinary(QObject* const)
     setup();
 }
 
-EvolutionBinary::~EvolutionBinary()
-{
-}
-
 } // namespace DigikamGenericSendByMailPlugin
 
 #include "moc_evolutionbinary.cpp"

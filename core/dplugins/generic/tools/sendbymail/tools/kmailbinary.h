@@ -31,7 +31,7 @@ class KmailBinary : public DBinaryIface
 public:
 
     explicit KmailBinary(QObject* const parent = nullptr);
-    ~KmailBinary() override;
+    ~KmailBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin

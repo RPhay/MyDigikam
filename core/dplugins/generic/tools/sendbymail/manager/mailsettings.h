@@ -64,8 +64,8 @@ public:
 
 public:
 
-    explicit MailSettings();
-    ~MailSettings();
+    MailSettings()  = default;
+    ~MailSettings() = default;
 
     /**
      * Read and write settings in config file between sessions.
@@ -91,30 +91,30 @@ public:
 
 public:
 
-    Selection                 selMode;              ///< Items selection mode
+    Selection                 selMode           = IMAGES;    ///< Items selection mode
 
-    QList<QUrl>               inputImages;          ///< Selected items to send.
+    QList<QUrl>               inputImages;      ///< Selected items to send.
 
-    bool                      addFileProperties;
-    bool                      imagesChangeProp;
+    bool                      addFileProperties = false;
+    bool                      imagesChangeProp  = false;
 
-    bool                      removeMetadata;
+    bool                      removeMetadata    = false;
 
-    int                       imageCompression;
+    int                       imageCompression  = 75;
 
-    qint64                    attLimitInMbytes;
+    qint64                    attLimitInMbytes  = 17;
 
     QString                   tempPath;
 
-    MailClient                mailProgram;
+    MailClient                mailProgram       = THUNDERBIRD;
 
-    int                       imageSize;
+    int                       imageSize         = 1024;
 
-    ImageFormat               imageFormat;
+    ImageFormat               imageFormat       = JPEG;
 
-    QMap<QUrl, QUrl>          itemsList;            ///< Map of original item and attached item (can be resized).
+    QMap<QUrl, QUrl>          itemsList;        ///< Map of original item and attached item (can be resized).
 
-    QMap<MailClient, QString> binPaths;             ///< Map of paths for all mail clients.
+    QMap<MailClient, QString> binPaths;         ///< Map of paths for all mail clients.
 };
 
 } // namespace DigikamGenericSendByMailPlugin

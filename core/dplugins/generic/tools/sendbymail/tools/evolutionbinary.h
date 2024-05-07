@@ -31,7 +31,7 @@ class EvolutionBinary : public DBinaryIface
 public:
 
     explicit EvolutionBinary(QObject* const parent = nullptr);
-    ~EvolutionBinary() override;
+    ~EvolutionBinary() override = default;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
