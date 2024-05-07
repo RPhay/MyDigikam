@@ -71,6 +71,7 @@ TemplateIcon::~TemplateIcon()
 void TemplateIcon::begin()
  {
     // compute scaling values
+
     d->iconSize.rwidth() = (int)(float(d->iconSize.height()) *
                             float(d->paperSize.width()) / float(d->paperSize.height()));
     d->scaleWidth        = float(d->iconSize.width())   / float(d->paperSize.width());
@@ -99,7 +100,7 @@ void TemplateIcon::begin()
     d->painter->drawRect(d->pixmap->rect());
 }
 
-void TemplateIcon::fillRect( int x, int y, int w, int h, const QColor& color )
+void TemplateIcon::fillRect(int x, int y, int w, int h, const QColor& color)
 {
 
 #ifdef DEBUG_OUTPUT

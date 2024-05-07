@@ -48,10 +48,6 @@ GimpBinary::GimpBinary(QObject* const)
     setup();
 }
 
-GimpBinary::~GimpBinary()
-{
-}
-
 } // namespace DigikamGenericPrintCreatorPlugin
 
 #include "moc_gimpbinary.cpp"

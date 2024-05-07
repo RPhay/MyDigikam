@@ -132,20 +132,20 @@ public:
     int                     m_thumbnailSize;
 
     /// Region to crop while print from original image.
-    QRect                   m_cropRegion;
+    QRect                   m_cropRegion            = QRect(-1, -1, -1, -1);
 
     /// To get first copy quickly.
-    bool                    m_first;
+    bool                    m_first                 = false;
 
     /// Number of copies while printing stage.
-    int                     m_copies;
+    int                     m_copies                = 1;
 
     /// Rotation angle in degrees.
-    int                     m_rotation;
+    int                     m_rotation              = 0;
 
-    AdvPrintAdditionalInfo* m_pAddInfo;
-    AdvPrintCaptionInfo*    m_pAdvPrintCaptionInfo;
-    DInfoInterface*         m_iface;
+    AdvPrintAdditionalInfo* m_pAddInfo              = nullptr;
+    AdvPrintCaptionInfo*    m_pAdvPrintCaptionInfo  = nullptr;
+    DInfoInterface*         m_iface                 = nullptr;
 
 private:
 
@@ -153,8 +153,8 @@ private:
 
 private:
 
-    DImg*                   m_thumbnail;
-    QSize*                  m_size;
+    DImg*                   m_thumbnail             = nullptr;
+    QSize*                  m_size                  = nullptr;
 };
 
 } // Namespace Digikam

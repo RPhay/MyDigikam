@@ -87,7 +87,7 @@ public:
 
 public:
 
-    explicit AdvPrintSettings();
+    AdvPrintSettings() = default;
     ~AdvPrintSettings();
 
     /// Read and write settings in config file between sessions.
@@ -105,29 +105,34 @@ public:
 
 public:
 
-    Selection                         selMode;       ///< Items selection mode
+    /// Items selection mode
+    Selection                         selMode            = IMAGES;
 
     QList<QUrl>                       inputImages;
 
-    QString                           printerName;
+    QString                           printerName        = outputName(FILES);
 
-    QSizeF                            pageSize;      ///< Page Size in mm
+    /// Page Size in mm
+    /// Select a different page to force a refresh in initPhotoSizes.
+    QSizeF                            pageSize           = QSizeF(-1.0, -1.0);
 
     QList<AdvPrintPhoto*>             photos;
     QList<AdvPrintPhotoSize*>         photosizes;
 
     /// Caption management.
-    CaptionType                       captionType;
-    QColor                            captionColor;
-    QFont                             captionFont;
-    int                               captionSize;
-    QString                           captionTxt;    ///< String use to customize caption with CUSTOM mode.
+    CaptionType                       captionType        = NONE;
+    QColor                            captionColor       = Qt::yellow;
+    QFont                             captionFont        = QFont(QLatin1String("Sans Serif"));
+    int                               captionSize        = 4;
 
-    int                               currentPreviewPage;
+    /// String use to customize caption with CUSTOM mode.
+    QString                           captionTxt;
+
+    int                               currentPreviewPage = 0;
 
     /// Crop management
-    int                               currentCropPhoto;
-    bool                              disableCrop;
+    int                               currentCropPhoto   = 0;
+    bool                              disableCrop        = false;
 
     /// For Print to Gimp only
     QString                           tempPath;
@@ -136,14 +141,19 @@ public:
     QString                           savedPhotoSize;
 
     /// For print to image files only.
-    ImageFormat                       imageFormat;
-    FileSaveConflictBox::ConflictRule conflictRule;  ///< Rule if output image files already exists.
-    QUrl                              outputDir;     ///< Directory where to store output images.
-    bool                              openInFileBrowser;
+    ImageFormat                       imageFormat        = JPEG;
+
+    /// Rule if output image files already exists.
+    FileSaveConflictBox::ConflictRule conflictRule       = FileSaveConflictBox::OVERWRITE;
+
+    /// Directory where to store output images.
+    QUrl                              outputDir;
+
+    bool                              openInFileBrowser  = true;
 
     /// Generic data used by printing thread.
-    AdvPrintPhotoSize*                outputLayouts;
-    QPrinter*                         outputPrinter;
+    AdvPrintPhotoSize*                outputLayouts      = nullptr;
+    QPrinter*                         outputPrinter      = nullptr;
     QString                           outputPath;
 };
 

@@ -46,18 +46,13 @@ class Q_DECL_HIDDEN AdvPrintTask::Private
 {
 public:
 
-    explicit Private()
-      : settings (nullptr),
-        mode     (AdvPrintTask::PRINT),
-        sizeIndex(0)
-    {
-    }
+    Private() = default;
 
 public:
 
-    AdvPrintSettings* settings;
+    AdvPrintSettings* settings  = nullptr;
 
-    PrintMode         mode;
+    PrintMode         mode      = AdvPrintTask::PRINT;
     QSize             size;
 
     int               sizeIndex;
@@ -81,6 +76,7 @@ AdvPrintTask::AdvPrintTask(AdvPrintSettings* const settings,
 AdvPrintTask::~AdvPrintTask()
 {
     cancel();
+
     delete d;
 }
 
@@ -89,22 +85,28 @@ void AdvPrintTask::run()
     switch (d->mode)
     {
         case PREPAREPRINT:
-
+        {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start prepare to print";
             preparePrint();
+
             Q_EMIT signalDone(!m_cancel);
+
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Prepare to print is done";
 
             break;
+        }
 
         case PRINT:
-
+        {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start to print";
 
-            if ((d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
-                (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
+            if (
+                (d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
+                (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP))
+               )
             {
                 printPhotos();
+
                 Q_EMIT signalDone(!m_cancel);
             }
             else
@@ -122,9 +124,10 @@ void AdvPrintTask::run()
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Print is done";
 
             break;
+        }
 
         default:    // PREVIEW
-
+        {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start to compute preview";
 
             QImage img(d->size, QImage::Format_ARGB32_Premultiplied);
@@ -148,6 +151,7 @@ void AdvPrintTask::run()
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview computation is done";
 
             break;
+        }
     }
 }
 
@@ -170,11 +174,13 @@ void AdvPrintTask::preparePrint()
         }
 
         photoIndex++;
+
         Q_EMIT signalProgress(photoIndex);
 
         if (m_cancel)
         {
             Q_EMIT signalMessage(i18n("Printing canceled"), true);
+
             return;
         }
     }
@@ -213,12 +219,15 @@ void AdvPrintTask::printPhotos()
         }
 
         pageCount++;
+
         Q_EMIT signalProgress(current);
 
         if (m_cancel)
         {
             printer->abort();
+
             Q_EMIT signalMessage(i18n("Printing canceled"), true);
+
             return;
         }
     }
@@ -270,8 +279,10 @@ QStringList AdvPrintTask::printPhotosToFile()
                            QString::number(pageCount) +
                            QLatin1Char('.') + ext;
 
-        if (QFile::exists(filename) &&
-            (d->settings->conflictRule != FileSaveConflictBox::OVERWRITE))
+        if (
+            QFile::exists(filename) &&
+            (d->settings->conflictRule != FileSaveConflictBox::OVERWRITE)
+           )
         {
             filename = DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filename)).toLocalFile();
         }
@@ -289,20 +300,24 @@ QStringList AdvPrintTask::printPhotosToFile()
         if (!image.save(filename, nullptr, 100))
         {
             Q_EMIT signalMessage(i18n("Could not save file %1", filename), true);
+
             break;
         }
         else
         {
             files.append(filename);
+
             Q_EMIT signalMessage(i18n("Page %1 saved as %2", pageCount, filename), false);
         }
 
         pageCount++;
+
         Q_EMIT signalProgress(current);
 
         if (m_cancel)
         {
             Q_EMIT signalMessage(i18n("Printing canceled"), true);
+
             break;
         }
     }
@@ -475,8 +490,10 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         p.setWindow(rectWindow);
         p.setBrushOrigin(point);
 
-        if (photo->m_pAdvPrintCaptionInfo &&
-            (photo->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE))
+        if (
+            photo->m_pAdvPrintCaptionInfo &&
+            (photo->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE)
+           )
         {
             p.save();
             QString caption = AdvPrintCaptionPage::captionFormatter(photo);
@@ -647,8 +664,10 @@ void AdvPrintTask::printCaption(QPainter& p,
         for (currIndex = captionIndex ;
              (currIndex < caption.length()) && !breakLine ; ++currIndex)
         {
-            if ((caption[currIndex] == QLatin1Char('\n')) ||
-                caption[currIndex].isSpace())
+            if (
+                (caption[currIndex] == QLatin1Char('\n')) ||
+                caption[currIndex].isSpace()
+               )
             {
                 breakLine = true;
             }

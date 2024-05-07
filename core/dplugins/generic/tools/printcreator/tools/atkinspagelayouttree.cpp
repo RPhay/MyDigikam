@@ -37,6 +37,11 @@ AtkinsPageLayoutTree::AtkinsPageLayoutTree(double aspectRatioPage,
 {
 }
 
+AtkinsPageLayoutTree::~AtkinsPageLayoutTree()
+{
+    delete m_root;
+}
+
 AtkinsPageLayoutTree::AtkinsPageLayoutTree(const AtkinsPageLayoutTree& other)
 {
     (*this) = other;
@@ -54,11 +59,6 @@ AtkinsPageLayoutTree& AtkinsPageLayoutTree::operator=(const AtkinsPageLayoutTree
     }
 
     return *this;
-}
-
-AtkinsPageLayoutTree::~AtkinsPageLayoutTree()
-{
-    delete m_root;
 }
 
 int AtkinsPageLayoutTree::addImage(double aspectRatio,

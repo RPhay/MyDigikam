@@ -77,17 +77,8 @@ AdvPrintCaptionInfo::AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other)
 // -----------------------------
 
 AdvPrintPhoto::AdvPrintPhoto(int thumbnailSize, DInfoInterface* const iface)
-    : m_url                 (QUrl()),
-      m_thumbnailSize       (thumbnailSize),
-      m_cropRegion          (QRect(-1, -1, -1, -1)),
-      m_first               (false),
-      m_copies              (1),
-      m_rotation            (0),
-      m_pAddInfo            (nullptr),
-      m_pAdvPrintCaptionInfo(nullptr),
-      m_iface               (iface),
-      m_thumbnail           (nullptr),
-      m_size                (nullptr)
+    : m_thumbnailSize(thumbnailSize),
+      m_iface        (iface)
 {
 }
 
@@ -185,9 +176,11 @@ double AdvPrintPhoto::scaleHeight(double unitToInches)
 {
     Q_ASSERT(m_pAddInfo != nullptr);
 
-    m_cropRegion = QRect(0, 0,
+    m_cropRegion = QRect(
+                         0, 0,
                          (int)(m_pAddInfo->m_printWidth  * unitToInches),
-                         (int)(m_pAddInfo->m_printHeight * unitToInches));
+                         (int)(m_pAddInfo->m_printHeight * unitToInches)
+                        );
 
     return (m_pAddInfo->m_printHeight * unitToInches);
 }
@@ -204,9 +197,13 @@ QTransform AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRo
 
         if (autoRotate)
         {
-            if ((m_rotation == 0) &&
-                (((woutlay > houtlay) && (thmSize.height() > thmSize.width())) ||
-                 ((houtlay > woutlay) && (thmSize.width()  > thmSize.height()))))
+            if (
+                (m_rotation == 0) &&
+                (
+                 ((woutlay > houtlay) && (thmSize.height() > thmSize.width())) ||
+                 ((houtlay > woutlay) && (thmSize.width()  > thmSize.height()))
+                )
+               )
             {
                 // We will perform a rotation
 
@@ -256,9 +253,11 @@ QTransform AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRo
 
     if (resetCropRegion)
     {
-        m_cropRegion = QRect((imgRect.width()  / 2) - (w / 2),
+        m_cropRegion = QRect(
+                             (imgRect.width()  / 2) - (w / 2),
                              (imgRect.height() / 2) - (h / 2),
-                             w, h);
+                             w, h
+                            );
     }
 
     return matrix;

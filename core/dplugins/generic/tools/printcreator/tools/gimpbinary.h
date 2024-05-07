@@ -31,7 +31,7 @@ class GimpBinary : public DBinaryIface
 public:
 
     explicit GimpBinary(QObject* const parent = nullptr);
-    ~GimpBinary() override;
+    ~GimpBinary() override = default;
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin

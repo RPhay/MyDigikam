@@ -30,28 +30,6 @@
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-AdvPrintSettings::AdvPrintSettings()
-    : selMode           (IMAGES),
-      printerName       (outputName(FILES)),
-
-      /// Select a different page to force a refresh in initPhotoSizes.
-      pageSize          (QSizeF(-1, -1)),
-
-      captionType       (NONE),
-      captionColor      (QColor(Qt::yellow)),
-      captionFont       (QFont(QLatin1String("Sans Serif"))),
-      captionSize       (4),
-      currentPreviewPage(0),
-      currentCropPhoto  (0),
-      disableCrop       (false),
-      imageFormat       (JPEG),
-      conflictRule      (FileSaveConflictBox::OVERWRITE),
-      openInFileBrowser (true),
-      outputLayouts     (nullptr),
-      outputPrinter     (nullptr)
-{
-}
-
 AdvPrintSettings::~AdvPrintSettings()
 {
     for (int i = 0 ; i < photos.count() ; ++i)
