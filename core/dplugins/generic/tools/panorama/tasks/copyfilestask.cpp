@@ -40,17 +40,13 @@ CopyFilesTask::CopyFilesTask(const QString& workDirPath,
                              const PanoramaItemUrlsMap& urls,
                              bool sPTO,
                              bool GPlusMetadata)
-    : PanoTask(PANO_COPY, workDirPath),
-      panoUrl(panoUrl),
-      finalPanoUrl(finalPanoUrl),
-      ptoUrl(ptoUrl),
-      urlList(&urls),
-      savePTO(sPTO),
+    : PanoTask        (PANO_COPY, workDirPath),
+      panoUrl         (panoUrl),
+      finalPanoUrl    (finalPanoUrl),
+      ptoUrl          (ptoUrl),
+      urlList         (&urls),
+      savePTO         (sPTO),
       addGPlusMetadata(GPlusMetadata)
-{
-}
-
-CopyFilesTask::~CopyFilesTask()
 {
 }
 

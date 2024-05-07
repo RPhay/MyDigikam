@@ -32,7 +32,7 @@ public:
                               bool  levelHorizon,
                               bool  gPano,
                               const QString& autooptimiserPath);
-    ~OptimisationTask() override;
+    ~OptimisationTask() override = default;
 
 protected:
 

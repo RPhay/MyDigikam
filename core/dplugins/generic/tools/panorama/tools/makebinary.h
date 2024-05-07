@@ -31,7 +31,7 @@ class MakeBinary : public DBinaryIface
 public:
 
     explicit MakeBinary(QObject* const parent = nullptr);
-    ~MakeBinary() override;
+    ~MakeBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

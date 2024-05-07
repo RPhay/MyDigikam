@@ -33,10 +33,6 @@ class PreProcessTask : public PanoTask
 {
 public:
 
-    const int id;
-
-public:
-
     explicit PreProcessTask(const QString& workDirPath,
                             int id,
                             PanoramaPreprocessedUrls& targetUrls,
@@ -44,6 +40,10 @@ public:
     ~PreProcessTask()                       override;
 
     void requestAbort()                     override;
+
+public:
+
+    const int id;
 
 protected:
 

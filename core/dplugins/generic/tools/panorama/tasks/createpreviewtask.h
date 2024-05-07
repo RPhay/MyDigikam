@@ -38,7 +38,7 @@ public:
                                QSharedPointer<const PTOType> inputPTO,
                                QUrl& previewPtoUrl,
                                const PanoramaItemUrlsMap& preProcessedUrlsMap);
-    ~CreatePreviewTask() override;
+    ~CreatePreviewTask() override = default;
 
 protected:
 

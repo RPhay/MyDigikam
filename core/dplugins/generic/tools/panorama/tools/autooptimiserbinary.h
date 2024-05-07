@@ -31,7 +31,7 @@ class AutoOptimiserBinary : public DBinaryIface
 public:
 
     explicit AutoOptimiserBinary(QObject* const parent = nullptr);
-    ~AutoOptimiserBinary() override;
+    ~AutoOptimiserBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

@@ -29,9 +29,9 @@ CompileMKStepTask::CompileMKStepTask(const QString& workDirPath, int id, const Q
                                      const QString& nonaPath, const QString& enblendPath,
                                      const QString& makePath, bool preview)
     : CommandTask(preview ? PANO_NONAFILEPREVIEW : PANO_NONAFILE, workDirPath, makePath),
-      id(id),
-      mkUrl(mkUrl),
-      nonaPath(nonaPath),
+      id         (id),
+      mkUrl      (mkUrl),
+      nonaPath   (nonaPath),
       enblendPath(enblendPath)
 {
 }
@@ -40,7 +40,10 @@ void CompileMKStepTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     QFileInfo fi(mkUrl.toLocalFile());
 
-    QString mkFile = fi.completeBaseName() + QString::number(id).rightJustified(4, QLatin1Char('0')) + QLatin1String(".tif");
+    QString mkFile = fi.completeBaseName()                                   + 
+                     QString::number(id).rightJustified(4, QLatin1Char('0')) + 
+                     QLatin1String(".tif");
+
     QStringList args;
     args << QLatin1String("-f");
     args << mkUrl.toLocalFile();

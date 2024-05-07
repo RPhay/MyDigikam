@@ -31,7 +31,7 @@ class EnblendBinary : public DBinaryIface
 public:
 
     explicit EnblendBinary(QObject* const parent = nullptr);
-    ~EnblendBinary() override;
+    ~EnblendBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

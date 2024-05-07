@@ -41,10 +41,6 @@ MakeBinary::MakeBinary(QObject* const)
     setup();
 }
 
-MakeBinary::~MakeBinary()
-{
-}
-
 } // namespace DigikamGenericPanoramaPlugin
 
 #include "moc_makebinary.cpp"

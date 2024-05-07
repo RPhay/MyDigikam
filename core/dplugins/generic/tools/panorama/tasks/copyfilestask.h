@@ -40,7 +40,7 @@ public:
                            const PanoramaItemUrlsMap& urls,
                            bool sPTO,
                            bool GPlusMetadata);
-    ~CopyFilesTask() override;
+    ~CopyFilesTask() override = default;
 
 protected:
 

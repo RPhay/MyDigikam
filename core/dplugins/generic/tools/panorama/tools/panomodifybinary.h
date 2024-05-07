@@ -31,7 +31,7 @@ class PanoModifyBinary : public DBinaryIface
 public:
 
     explicit PanoModifyBinary(QObject* const parent = nullptr);
-    ~PanoModifyBinary() override;
+    ~PanoModifyBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

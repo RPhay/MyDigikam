@@ -23,16 +23,11 @@ EnblendBinary::EnblendBinary(QObject* const)
                    QLatin1String("enblend "),
                    0,
                    QLatin1String("Hugin"),
-                   QLatin1String("http://hugin.sourceforge.net/download/"),         // krazy:exclude=insecurenet
+                   QLatin1String("https://hugin.sourceforge.net/download/"),
                    QLatin1String("Panorama"),
-                   QStringList(QLatin1String("-V"))
-                  )
+                   QStringList(QLatin1String("-V")))
 {
     setup();
-}
-
-EnblendBinary::~EnblendBinary()
-{
 }
 
 } // namespace DigikamGenericPanoramaPlugin

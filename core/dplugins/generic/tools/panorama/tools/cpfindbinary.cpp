@@ -21,6 +21,22 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
+CPFindBinary::CPFindBinary(QObject* const parent)
+    : DBinaryIface(QLatin1String("cpfind"),
+                   QLatin1String("2010.4"),
+                   QString(),
+                   0,
+                   QLatin1String("Hugin"),
+                   QLatin1String("https://hugin.sourceforge.net/download/"),
+                   QLatin1String("Panorama"),
+                   QStringList(QLatin1String("--version"))),
+      headerRegExp(QLatin1String("^Hugin'?s cpfind( Pre-Release)? (\\d+\\.\\d+(\\.\\d+)?)(\\D.*)?$"))
+{
+    Q_UNUSED(parent);
+
+    setup();
+}
+
 bool CPFindBinary::parseHeader(const QString& output)
 {
     QStringList lines    = output.split(QLatin1Char('\n'));
@@ -50,6 +66,5 @@ bool CPFindBinary::parseHeader(const QString& output)
 }
 
 } // namespace DigikamGenericPanoramaPlugin
-
 
 #include "moc_cpfindbinary.cpp"

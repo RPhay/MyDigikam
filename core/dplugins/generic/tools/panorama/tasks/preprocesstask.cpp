@@ -45,17 +45,15 @@ class Q_DECL_HIDDEN PreProcessTask::Private
 public:
 
     // cppcheck-suppress constParameter
-    explicit Private(PanoramaPreprocessedUrls& urls,
-                     const QUrl& url)
+    Private(PanoramaPreprocessedUrls& urls, const QUrl& url)
         : fileUrl        (url),
-          preProcessedUrl(urls),
-          observer       (nullptr)
+          preProcessedUrl(urls)
     {
     }
 
     const QUrl                fileUrl;
     PanoramaPreprocessedUrls& preProcessedUrl;
-    PanoObserver*             observer;
+    PanoObserver*             observer          = nullptr;
 };
 
 class Q_DECL_HIDDEN PanoObserver : public DImgLoaderObserver
@@ -68,9 +66,7 @@ public:
     {
     }
 
-    ~PanoObserver() override
-    {
-    }
+    ~PanoObserver() override = default;
 
     bool continueQuery() override
     {
@@ -79,7 +75,7 @@ public:
 
 private:
 
-    PreProcessTask* const parent;
+    PreProcessTask* const parent = nullptr;
 };
 
 PreProcessTask::PreProcessTask(const QString& workDirPath,
@@ -87,14 +83,15 @@ PreProcessTask::PreProcessTask(const QString& workDirPath,
                                PanoramaPreprocessedUrls& targetUrls,
                                const QUrl& sourceUrl)
     : PanoTask(PANO_PREPROCESS_INPUT, workDirPath),
-      id(id),
-      d (new Private(targetUrls, sourceUrl))
+      id      (id),
+      d       (new Private(targetUrls, sourceUrl))
 {
     d->observer = new PanoObserver(this);
 }
 
 PreProcessTask::~PreProcessTask()
 {
+    delete d;
 }
 
 void PreProcessTask::requestAbort()

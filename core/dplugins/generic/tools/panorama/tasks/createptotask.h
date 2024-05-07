@@ -40,7 +40,7 @@ public:
                            const PanoramaItemUrlsMap& preProcessedMap,
                            bool addGPlusMetadata,
                            const QString& huginVersion);
-    ~CreatePtoTask() override;
+    ~CreatePtoTask() override = default;
 
 protected:
 

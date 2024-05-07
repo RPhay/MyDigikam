@@ -31,7 +31,7 @@ class CPCleanBinary : public DBinaryIface
 public:
 
     explicit CPCleanBinary(QObject* const parent = nullptr);
-    ~CPCleanBinary() override;
+    ~CPCleanBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

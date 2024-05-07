@@ -31,7 +31,7 @@ class NonaBinary : public DBinaryIface
 public:
 
     explicit NonaBinary(QObject* const parent = nullptr);
-    ~NonaBinary() override;
+    ~NonaBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

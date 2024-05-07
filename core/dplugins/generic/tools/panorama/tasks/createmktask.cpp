@@ -29,14 +29,10 @@ CreateMKTask::CreateMKTask(const QString& workDirPath, const QUrl& input, QUrl& 
                            QUrl& panoUrl, PanoramaFileType fileType,
                            const QString& pto2mkPath, bool preview)
     : CommandTask(preview ? PANO_CREATEMKPREVIEW : PANO_CREATEMK, workDirPath, pto2mkPath),
-      ptoUrl(input),
-      mkUrl(mkUrl),
-      panoUrl(panoUrl),
-      fileType(fileType)
-{
-}
-
-CreateMKTask::~CreateMKTask()
+      ptoUrl     (input),
+      mkUrl      (mkUrl),
+      panoUrl    (panoUrl),
+      fileType   (fileType)
 {
 }
 
@@ -50,16 +46,22 @@ void CreateMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     switch (fileType)
     {
         case JPEG:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".jpg"));
             break;
+        }
 
         case TIFF:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".tif"));
             break;
+        }
 
         case HDR:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".hdr"));
             break;
+        }
     }
 
     QStringList args;

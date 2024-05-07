@@ -23,9 +23,9 @@ namespace DigikamGenericPanoramaPlugin
 
 CpCleanTask::CpCleanTask(const QString& workDirPath, const QUrl& input,
                          QUrl& cpCleanPtoUrl, const QString& cpCleanPath)
-    : CommandTask(PANO_CPCLEAN, workDirPath, cpCleanPath),
+    : CommandTask  (PANO_CPCLEAN, workDirPath, cpCleanPath),
       cpCleanPtoUrl(cpCleanPtoUrl),
-      cpFindPtoUrl(input)
+      cpFindPtoUrl (input)
 {
 }
 

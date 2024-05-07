@@ -29,14 +29,10 @@ CreateFinalPtoTask::CreateFinalPtoTask(const QString& workDirPath,
                                        QSharedPointer<const PTOType> ptoData,
                                        QUrl& finalPtoUrl,
                                        const QRect& crop)
-    : PanoTask(PANO_CREATEFINALPTO, workDirPath),
-      ptoData(*ptoData),
+    : PanoTask   (PANO_CREATEFINALPTO, workDirPath),
+      ptoData    (*ptoData),
       finalPtoUrl(finalPtoUrl),
-      crop(crop)
-{
-}
-
-CreateFinalPtoTask::~CreateFinalPtoTask()
+      crop       (crop)
 {
 }
 

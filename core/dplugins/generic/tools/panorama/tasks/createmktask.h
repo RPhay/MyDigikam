@@ -33,7 +33,7 @@ public:
                           PanoramaFileType fileType,
                           const QString& pto2mkPath,
                           bool preview);
-    ~CreateMKTask() override;
+    ~CreateMKTask() override = default;
 
 protected:
 

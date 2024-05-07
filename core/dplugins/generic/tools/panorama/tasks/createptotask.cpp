@@ -33,18 +33,13 @@ CreatePtoTask::CreatePtoTask(const QString& workDirPath,
                              const PanoramaItemUrlsMap& preProcessedMap,
                              bool addGPlusMetadata,
                              const QString& huginVersion)
-    : PanoTask(PANO_CREATEPTO,
-      workDirPath),
-      ptoUrl(ptoUrl),
-      preProcessedMap(&preProcessedMap),
-      fileType(addGPlusMetadata ? JPEG : fileType),
-      inputFiles(inputFiles),
+    : PanoTask        (PANO_CREATEPTO, workDirPath),
+      ptoUrl          (ptoUrl),
+      preProcessedMap (&preProcessedMap),
+      fileType        (addGPlusMetadata ? JPEG : fileType),
+      inputFiles      (inputFiles),
       addGPlusMetadata(addGPlusMetadata),
-      huginVersion(huginVersion)
-{
-}
-
-CreatePtoTask::~CreatePtoTask()
+      huginVersion    (huginVersion)
 {
 }
 

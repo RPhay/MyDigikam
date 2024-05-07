@@ -29,13 +29,9 @@ HuginExecutorTask::HuginExecutorTask(const QString& workDirPath,
                                      const QString& huginExecutorPath,
                                      bool preview)
     : CommandTask(preview ? PANO_HUGINEXECUTORPREVIEW : PANO_HUGINEXECUTOR, workDirPath, huginExecutorPath),
-      ptoUrl(input),
-      panoUrl(panoUrl),
-      fileType(fileType)
-{
-}
-
-HuginExecutorTask::~HuginExecutorTask()
+      ptoUrl     (input),
+      panoUrl    (panoUrl),
+      fileType   (fileType)
 {
 }
 
@@ -47,16 +43,22 @@ void HuginExecutorTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     switch (fileType)
     {
         case JPEG:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".jpg"));
             break;
+        }
 
         case TIFF:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".tif"));
             break;
+        }
 
         case HDR:
+        {
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".hdr"));
             break;
+        }
     }
 
     QStringList args;

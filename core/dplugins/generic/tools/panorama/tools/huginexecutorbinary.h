@@ -31,7 +31,7 @@ class HuginExecutorBinary : public DBinaryIface
 public:
 
     explicit HuginExecutorBinary(QObject* const parent = nullptr);
-    ~HuginExecutorBinary() override;
+    ~HuginExecutorBinary() override = default;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

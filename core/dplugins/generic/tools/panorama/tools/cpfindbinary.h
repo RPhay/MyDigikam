@@ -34,25 +34,8 @@ class CPFindBinary : public DBinaryIface
 
 public:
 
-    explicit CPFindBinary(QObject* const parent = nullptr)
-        : DBinaryIface(QLatin1String("cpfind"),
-                       QLatin1String("2010.4"),
-                       QString(),
-                       0,
-                       QLatin1String("Hugin"),
-                       QLatin1String("http://hugin.sourceforge.net/download/"),     // krazy:exclude=insecurenet
-                       QLatin1String("Panorama"),
-                       QStringList(QLatin1String("--version"))
-                      ),
-          headerRegExp(QLatin1String("^Hugin'?s cpfind( Pre-Release)? (\\d+\\.\\d+(\\.\\d+)?)(\\D.*)?$"))
-        {
-            Q_UNUSED(parent);
-            setup();
-        }
-
-    ~CPFindBinary() override
-    {
-    }
+    explicit CPFindBinary(QObject* const parent = nullptr);
+    ~CPFindBinary() override = default;
 
 protected:
 

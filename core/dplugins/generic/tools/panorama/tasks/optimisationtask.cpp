@@ -24,15 +24,11 @@ namespace DigikamGenericPanoramaPlugin
 OptimisationTask::OptimisationTask(const QString& workDirPath, const QUrl& input,
                                    QUrl& autoOptimiserPtoUrl, bool levelHorizon, bool gPano,
                                    const QString& autooptimiserPath)
-    : CommandTask(PANO_OPTIMIZE, workDirPath, autooptimiserPath),
+    : CommandTask        (PANO_OPTIMIZE, workDirPath, autooptimiserPath),
       autoOptimiserPtoUrl(autoOptimiserPtoUrl),
-      ptoUrl(input),
-      levelHorizon(levelHorizon),
-      buildGPano(gPano)
-{
-}
-
-OptimisationTask::~OptimisationTask()
+      ptoUrl             (input),
+      levelHorizon       (levelHorizon),
+      buildGPano         (gPano)
 {
 }
 
