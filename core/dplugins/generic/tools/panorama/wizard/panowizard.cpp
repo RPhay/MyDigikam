@@ -38,29 +38,20 @@ class Q_DECL_HIDDEN PanoWizard::Private
 {
 public:
 
-    explicit Private()
-      : mngr             (nullptr),
-        introPage        (nullptr),
-        itemsPage        (nullptr),
-        preProcessingPage(nullptr),
-        optimizePage     (nullptr),
-        previewPage      (nullptr),
-        lastPage         (nullptr)
-    {
-    }
+    Private() = default;
 
-    PanoManager*           mngr;
-    PanoIntroPage*         introPage;
-    PanoItemsPage*         itemsPage;
-    PanoPreProcessPage*    preProcessingPage;
-    PanoOptimizePage*      optimizePage;
-    PanoPreviewPage*       previewPage;
-    PanoLastPage*          lastPage;
+    PanoManager*           mngr                 = nullptr;
+    PanoIntroPage*         introPage            = nullptr;
+    PanoItemsPage*         itemsPage            = nullptr;
+    PanoPreProcessPage*    preProcessingPage    = nullptr;
+    PanoOptimizePage*      optimizePage         = nullptr;
+    PanoPreviewPage*       previewPage          = nullptr;
+    PanoLastPage*          lastPage             = nullptr;
 };
 
 PanoWizard::PanoWizard(PanoManager* const mngr, QWidget* const parent)
     : DWizardDlg(parent, QLatin1String("Panorama Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setModal(false);
     setWindowTitle(i18nc("@title:window", "Panorama Creator Wizard"));

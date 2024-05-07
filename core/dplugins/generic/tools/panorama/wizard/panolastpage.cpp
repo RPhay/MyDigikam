@@ -49,29 +49,19 @@ class Q_DECL_HIDDEN PanoLastPage::Private
 {
 public:
 
-    explicit Private()
-      : copyDone             (false),
-        title                (nullptr),
-        saveSettingsGroupBox (nullptr),
-        fileTemplateQLineEdit(nullptr),
-        savePtoCheckBox      (nullptr),
-        warningLabel         (nullptr),
-        errorLabel           (nullptr),
-        mngr                 (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool         copyDone;
+    bool         copyDone               = false;
 
-    QLabel*      title;
+    QLabel*      title                  = nullptr;
 
-    QGroupBox*   saveSettingsGroupBox;
-    QLineEdit*   fileTemplateQLineEdit;
-    QCheckBox*   savePtoCheckBox;
-    QLabel*      warningLabel;
-    QLabel*      errorLabel;
+    QGroupBox*   saveSettingsGroupBox   = nullptr;
+    QLineEdit*   fileTemplateQLineEdit  = nullptr;
+    QCheckBox*   savePtoCheckBox        = nullptr;
+    QLabel*      warningLabel           = nullptr;
+    QLabel*      errorLabel             = nullptr;
 
-    PanoManager* mngr;
+    PanoManager* mngr                   = nullptr;
 };
 
 PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
@@ -173,10 +163,14 @@ QString PanoLastPage::panoFileName(const QString& fileTemplate) const
     {
         default:
         case JPEG:
+        {
             return fileTemplate + QLatin1String(".jpg");
+        }
 
         case TIFF:
+        {
             return fileTemplate + QLatin1String(".tif");
+        }
     }
 }
 
@@ -321,7 +315,9 @@ void PanoLastPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAction
                                this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
 
                     d->copyDone = true;
+
                     Q_EMIT signalCopyFinished();
+
                     break;
                 }
 

@@ -41,15 +41,11 @@ class Q_DECL_HIDDEN PanoItemsPage::Private
 {
 public:
 
-    explicit Private()
-      : list(nullptr),
-        mngr(nullptr)
-    {
-    }
+    Private() = default;
 
-    DItemsList*  list;
+    DItemsList*  list = nullptr;
 
-    PanoManager* mngr;
+    PanoManager* mngr = nullptr;
 };
 
 PanoItemsPage::PanoItemsPage(PanoManager* const mngr, QWizard* const dlg)
@@ -115,6 +111,7 @@ bool PanoItemsPage::validatePage()
 void PanoItemsPage::slotImageListChanged()
 {
     setComplete(d->list->imageUrls().count() > 1);
+
     Q_EMIT completeChanged();
 }
 

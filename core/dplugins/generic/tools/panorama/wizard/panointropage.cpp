@@ -55,37 +55,24 @@ class Q_DECL_HIDDEN PanoIntroPage::Private
 public:
 
     explicit Private(PanoManager* const m)
-        : mngr                    (m),
-/*
-          addGPlusMetadataCheckBox(0),
-*/
-/*
-          // TODO HDR
-          hdrCheckBox             (0),
-*/
-          formatGroupBox          (nullptr),
-          settingsGroupBox        (nullptr),
-          jpegRadioButton         (nullptr),
-          tiffRadioButton         (nullptr),
-          hdrRadioButton          (nullptr),
-          binariesWidget          (nullptr)
+        : mngr(m)
     {
     }
 
-    PanoManager*    mngr;
+    PanoManager*    mngr                        = nullptr;
 /*
-    QCheckBox*      addGPlusMetadataCheckBox;
+    QCheckBox*      addGPlusMetadataCheckBox    = nullptr;
 */
 /*
     // TODO HDR
-    QCheckBox*      hdrCheckBox;
+    QCheckBox*      hdrCheckBox                 = nullptr;
 */
-    QGroupBox*      formatGroupBox;
-    QGroupBox*      settingsGroupBox;
-    QRadioButton*   jpegRadioButton;
-    QRadioButton*   tiffRadioButton;
-    QRadioButton*   hdrRadioButton;
-    DBinarySearch*  binariesWidget;
+    QGroupBox*      formatGroupBox              = nullptr;
+    QGroupBox*      settingsGroupBox            = nullptr;
+    QRadioButton*   jpegRadioButton             = nullptr;
+    QRadioButton*   tiffRadioButton             = nullptr;
+    QRadioButton*   hdrRadioButton              = nullptr;
+    DBinarySearch*  binariesWidget              = nullptr;
 };
 
 PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
@@ -220,19 +207,25 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     switch (d->mngr->format())
     {
         case JPEG:
+        {
             d->jpegRadioButton->setChecked(true);
             break;
+        }
 
         case TIFF:
+        {
             d->tiffRadioButton->setChecked(true);
             break;
+        }
 
         case HDR:
+        {
 /*
             // TODO HDR
             d->hdrRadioButton->setChecked(true);
 */
             break;
+        }
     }
 
     setPageWidget(vbox);
@@ -293,6 +286,7 @@ void PanoIntroPage::slotChangeFileFormat(QAbstractButton* button)
 void PanoIntroPage::slotBinariesChanged(bool found)
 {
     setComplete(found);
+
     Q_EMIT completeChanged();
 }
 
@@ -316,6 +310,7 @@ void PanoIntroPage::slotShowFileFormat(int state)
 void PanoIntroPage::initializePage()
 {
     setComplete(d->binariesWidget->allBinariesFound());
+
     Q_EMIT completeChanged();
 }
 

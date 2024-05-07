@@ -36,7 +36,7 @@ class PanoPreviewPage : public DWizardPage
 public:
 
     explicit PanoPreviewPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoPreviewPage() override;
+    ~PanoPreviewPage()      override;
 
 private:
 

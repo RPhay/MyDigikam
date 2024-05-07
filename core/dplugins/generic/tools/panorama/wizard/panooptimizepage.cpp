@@ -53,46 +53,28 @@ class Q_DECL_HIDDEN PanoOptimizePage::Private
 {
 public:
 
-    explicit Private()
-      : progressCount               (0),
-        progressLabel               (nullptr),
-        progressTimer               (nullptr),
-        optimisationDone            (false),
-        canceled                    (false),
-        title                       (nullptr),
-/*
-        preprocessResults           (0),
-*/
-        horizonCheckbox             (nullptr),
-/*
-        projectionAndSizeCheckbox   (0),
-*/
-        detailsText                 (nullptr),
-        progressPix                 (nullptr),
-        mngr                        (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                        progressCount;
-    QLabel*                    progressLabel;
-    QTimer*                    progressTimer;
-    QMutex                     progressMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
-    bool                       optimisationDone;
-    bool                       canceled;
+    int             progressCount               = 0;
+    QLabel*         progressLabel               = nullptr;
+    QTimer*         progressTimer               = nullptr;
+    QMutex          progressMutex;              ///< This is a precaution in case the user does a back / next action at the wrong moment
+    bool            optimisationDone            = false;
+    bool            canceled                    = false;
 
-    QLabel*                    title;
+    QLabel*         title                       = nullptr;
 /*
-    QLabel*                    preprocessResults;
+    QLabel*         preprocessResults           = nullptr;
 */
-    QCheckBox*                 horizonCheckbox;
+    QCheckBox*      horizonCheckbox             = nullptr;
 /*
-    QCheckBox*                 projectionAndSizeCheckboxs;
+    QCheckBox*      projectionAndSizeCheckboxs  = nullptr;
 */
-    QTextBrowser*              detailsText;
+    QTextBrowser*   detailsText                 = nullptr;
 
-    DWorkingPixmap*            progressPix;
+    DWorkingPixmap* progressPix                 = nullptr;
 
-    PanoManager*               mngr;
+    PanoManager*    mngr                        = nullptr;
 };
 
 PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
@@ -238,6 +220,7 @@ void PanoOptimizePage::initializePage()
     d->optimisationDone = false;
 
     setComplete(true);
+
     Q_EMIT completeChanged();
 }
 
@@ -336,6 +319,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                         d->detailsText->setText(ad.message);
 
                         setComplete(false);
+
                         Q_EMIT completeChanged();
                     }
 
@@ -371,6 +355,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                     d->optimisationDone = true;
 
                     Q_EMIT signalOptimized();
+
                     initializePage();
 
                     break;

@@ -56,40 +56,27 @@ class Q_DECL_HIDDEN PanoPreProcessPage::Private
 {
 public:
 
-    explicit Private()
-      : progressCount       (0),
-        progressLabel       (nullptr),
-        progressTimer       (nullptr),
-        preprocessingDone   (false),
-        canceled            (false),
-        nbFilesProcessed    (0),
-        title               (nullptr),
-        celesteCheckBox     (nullptr),
-        detailsText         (nullptr),
-        progressPix         (nullptr),
-        mngr                (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                        progressCount;
-    QLabel*                    progressLabel;
-    QTimer*                    progressTimer;
-    QMutex                     progressMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
-    bool                       preprocessingDone;
-    bool                       canceled;
+    int             progressCount           = 0;
+    QLabel*         progressLabel           = nullptr;
+    QTimer*         progressTimer           = nullptr;
+    QMutex          progressMutex;          ///< This is a precaution in case the user does a back / next action at the wrong moment
+    bool            preprocessingDone       = false;
+    bool            canceled                = false;
 
-    int                        nbFilesProcessed;
-    QMutex                     nbFilesProcessed_mutex;
+    int             nbFilesProcessed        = 0;
+    QMutex          nbFilesProcessed_mutex;
 
-    QLabel*                    title;
+    QLabel*         title                   = nullptr;
 
-    QCheckBox*                 celesteCheckBox;
+    QCheckBox*      celesteCheckBox         = nullptr;
 
-    QTextBrowser*              detailsText;
+    QTextBrowser*   detailsText             = nullptr;
 
-    DWorkingPixmap*            progressPix;
+    DWorkingPixmap* progressPix             = nullptr;
 
-    PanoManager*               mngr;
+    PanoManager*    mngr                    = nullptr;
 };
 
 PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const dlg)
@@ -211,6 +198,7 @@ void PanoPreProcessPage::initializePage()
     d->preprocessingDone = false;
 
     setComplete(true);
+
     Q_EMIT completeChanged();
 }
 
@@ -308,9 +296,10 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                         d->detailsText->setText(ad.message);
 
                         setComplete(false);
-                        Q_EMIT completeChanged();
 
+                        Q_EMIT completeChanged();
                     }
+
                     break;
                 }
 
@@ -354,6 +343,7 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                     d->preprocessingDone = true;
 
                     Q_EMIT signalPreProcessed();
+
                     initializePage();
 
                     break;

@@ -49,47 +49,35 @@ class Q_DECL_HIDDEN PanoPreviewPage::Private
 {
 public:
 
-    explicit Private(PanoManager* const m)
-      : title           (nullptr),
-        previewWidget   (nullptr),
-        previewBusy     (false),
-        previewDone     (false),
-        stitchingBusy   (false),
-        stitchingDone   (false),
-        postProcessing  (nullptr),
-        progressBar     (nullptr),
-        curProgress     (0),
-        totalProgress   (0),
-        canceled        (false),
-        mngr            (m),
-        dlg             (nullptr)
+    Private(PanoManager* const m)
+        : mngr(m)
     {
     }
 
-    QLabel*                title;
+    QLabel*                title            = nullptr;
 
-    DPreviewManager*       previewWidget;
-    bool                   previewBusy;
-    bool                   previewDone;
-    bool                   stitchingBusy;
-    bool                   stitchingDone;
-    DHistoryView*          postProcessing;
-    DProgressWdg*          progressBar;
-    int                    curProgress;
-    int                    totalProgress;
+    DPreviewManager*       previewWidget    = nullptr;
+    bool                   previewBusy      = false;
+    bool                   previewDone      = false;
+    bool                   stitchingBusy    = false;
+    bool                   stitchingDone    = false;
+    DHistoryView*          postProcessing   = nullptr;
+    DProgressWdg*          progressBar      = nullptr;
+    int                    curProgress      = 0;
+    int                    totalProgress    = 0;
     QMutex                 previewBusyMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
-    bool                   canceled;
+    bool                   canceled         = false;
 
     QString                output;
 
-    PanoManager*           mngr;
+    PanoManager*           mngr             = nullptr;
 
-    QWizard*               dlg;
+    QWizard*               dlg              = nullptr;
 };
 
 PanoPreviewPage::PanoPreviewPage(PanoManager* const mngr, QWizard* const dlg)
     : DWizardPage(dlg, i18nc("@title:window", "<b>Preview and Post-Processing</b>")),
-      d(new Private(mngr))
+      d          (new Private(mngr))
 {
     d->dlg            = dlg;
 
@@ -166,7 +154,9 @@ void PanoPreviewPage::startStitching()
     {
         // The real beginning of the stitching starts after preview has finished / failed
 
-        connect(this, SIGNAL(signalPreviewFinished()), this, SLOT(slotStartStitching()));
+        connect(this, SIGNAL(signalPreviewFinished()),
+                this, SLOT(slotStartStitching()));
+
         cleanupPage(lock);
 
         return;
@@ -352,7 +342,9 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     if (!d->previewBusy)
                     {
                         lock.unlock();
+
                         Q_EMIT signalPreviewFinished();
+
                         return;
                     }
 
@@ -373,9 +365,11 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->previewWidget->setSelectionAreaPossible(false);
 
                     setComplete(false);
+
                     Q_EMIT completeChanged();
 
                     lock.unlock();
+
                     Q_EMIT signalPreviewFinished();
 
                     break;
@@ -405,6 +399,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
+
                     Q_EMIT completeChanged();
 
                     break;
@@ -434,6 +429,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
+
                     Q_EMIT completeChanged();
 
                     break;
@@ -465,6 +461,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
+
                     Q_EMIT completeChanged();
 
                     break;
@@ -494,6 +491,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Enblend call failed";
 
                     setComplete(false);
+
                     Q_EMIT completeChanged();
 
                     break;
@@ -517,6 +515,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                 case PANO_CREATEMK:
                 {
                     // Nothing to do yet, a step is finished, that's all
+
                     break;
                 }
 
@@ -536,6 +535,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->previewDone = true;
 
                     lock.unlock();
+
                     Q_EMIT signalPreviewFinished();
 
                     d->title->setText(i18n("<qt>"
@@ -604,6 +604,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->stitchingDone = true;
 
                     Q_EMIT signalStitchingFinished();
+
                     preInitializePage();
 
                     break;
