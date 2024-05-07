@@ -56,15 +56,6 @@ class Q_DECL_HIDDEN AdvPrintFinalPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : FONT_HEIGHT_RATIO(0.8F),
-        progressView     (nullptr),
-        progressBar      (nullptr),
-        wizard           (nullptr),
-        settings         (nullptr),
-        printThread      (nullptr),
-        photoPage        (nullptr),
-        iface            (nullptr),
-        complete         (false)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -75,16 +66,16 @@ public:
         }
     }
 
-    const float        FONT_HEIGHT_RATIO;
+    const float        FONT_HEIGHT_RATIO = 0.8F;
 
-    DHistoryView*      progressView;
-    DProgressWdg*      progressBar;
-    AdvPrintWizard*    wizard;
-    AdvPrintSettings*  settings;
-    AdvPrintThread*    printThread;
-    AdvPrintPhotoPage* photoPage;
-    DInfoInterface*    iface;
-    bool               complete;
+    DHistoryView*      progressView      = nullptr;
+    DProgressWdg*      progressBar       = nullptr;
+    AdvPrintWizard*    wizard            = nullptr;
+    AdvPrintSettings*  settings          = nullptr;
+    AdvPrintThread*    printThread       = nullptr;
+    AdvPrintPhotoPage* photoPage         = nullptr;
+    DInfoInterface*    iface             = nullptr;
+    bool               complete          = false;
 };
 
 AdvPrintFinalPage::AdvPrintFinalPage(QWizard* const dialog, const QString& title)
@@ -321,8 +312,10 @@ bool AdvPrintFinalPage::print()
 {
     // Real printer to use.
 
-    if ((d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
-        (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
+    if (
+        (d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
+        (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP))
+       )
     {
         // tell him again!
 

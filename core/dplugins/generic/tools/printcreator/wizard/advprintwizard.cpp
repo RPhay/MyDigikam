@@ -64,33 +64,20 @@ class Q_DECL_HIDDEN AdvPrintWizard::Private
 {
 public:
 
-    explicit Private()
-      : introPage    (nullptr),
-        albumsPage   (nullptr),
-        photoPage    (nullptr),
-        captionPage  (nullptr),
-        cropPage     (nullptr),
-        outputPage   (nullptr),
-        finalPage    (nullptr),
-        settings     (nullptr),
-        previewThread(nullptr),
-        iface        (nullptr),
-        tempPath     (nullptr)
-    {
-    }
+    Private() = default;
 
-    AdvPrintIntroPage*   introPage;
-    AdvPrintAlbumsPage*  albumsPage;
-    AdvPrintPhotoPage*   photoPage;
-    AdvPrintCaptionPage* captionPage;
-    AdvPrintCropPage*    cropPage;
-    AdvPrintOutputPage*  outputPage;
-    AdvPrintFinalPage*   finalPage;
-    AdvPrintSettings*    settings;
-    AdvPrintThread*      previewThread;
-    DInfoInterface*      iface;
+    AdvPrintIntroPage*   introPage      = nullptr;
+    AdvPrintAlbumsPage*  albumsPage     = nullptr;
+    AdvPrintPhotoPage*   photoPage      = nullptr;
+    AdvPrintCaptionPage* captionPage    = nullptr;
+    AdvPrintCropPage*    cropPage       = nullptr;
+    AdvPrintOutputPage*  outputPage     = nullptr;
+    AdvPrintFinalPage*   finalPage      = nullptr;
+    AdvPrintSettings*    settings       = nullptr;
+    AdvPrintThread*      previewThread  = nullptr;
+    DInfoInterface*      iface          = nullptr;
 
-    QTemporaryDir*       tempPath;
+    QTemporaryDir*       tempPath       = nullptr;
 };
 
 AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const iface)
@@ -308,7 +295,7 @@ void AdvPrintWizard::previewPhotos()
         int currentPage = 0;
 
         for (QList<AdvPrintPhoto*>::iterator it = d->settings->photos.begin() ;
-            it != d->settings->photos.end() ; ++it)
+             it != d->settings->photos.end() ; ++it)
         {
             AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
 
@@ -379,10 +366,12 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
     {
         QKeyEvent* const k = (QKeyEvent*)e;
 
-        if ((k->key() == Qt::Key_PageUp)   ||
+        if (
+            (k->key() == Qt::Key_PageUp)   ||
             (k->key() == Qt::Key_PageDown) ||
             (k->key() == Qt::Key_Up)       ||
-            (k->key() == Qt::Key_Down))
+            (k->key() == Qt::Key_Down)
+           )
         {
             if (currentPage() == d->cropPage)
             {

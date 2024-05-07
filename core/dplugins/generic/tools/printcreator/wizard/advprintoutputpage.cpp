@@ -44,13 +44,6 @@ class Q_DECL_HIDDEN AdvPrintOutputPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : labelImagesFormat(nullptr),
-        destUrl          (nullptr),
-        conflictBox      (nullptr),
-        imagesFormat     (nullptr),
-        fileBrowserCB    (nullptr),
-        wizard           (nullptr),
-        settings         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -60,13 +53,13 @@ public:
         }
     }
 
-    QLabel*              labelImagesFormat;
-    DFileSelector*       destUrl;
-    FileSaveConflictBox* conflictBox;
-    QComboBox*           imagesFormat;
-    QCheckBox*           fileBrowserCB;
-    AdvPrintWizard*      wizard;
-    AdvPrintSettings*    settings;
+    QLabel*              labelImagesFormat  = nullptr;
+    DFileSelector*       destUrl            = nullptr;
+    FileSaveConflictBox* conflictBox        = nullptr;
+    QComboBox*           imagesFormat       = nullptr;
+    QCheckBox*           fileBrowserCB      = nullptr;
+    AdvPrintWizard*      wizard             = nullptr;
+    AdvPrintSettings*    settings           = nullptr;
 };
 
 AdvPrintOutputPage::AdvPrintOutputPage(QWizard* const dialog, const QString& title)

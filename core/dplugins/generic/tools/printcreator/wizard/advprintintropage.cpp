@@ -43,10 +43,6 @@ class Q_DECL_HIDDEN AdvPrintIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(nullptr),
-        hbox          (nullptr),
-        binSearch     (nullptr),
-        iface         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -56,12 +52,12 @@ public:
         }
     }
 
-    QComboBox*      imageGetOption;
-    DHBox*          hbox;
+    QComboBox*      imageGetOption  = nullptr;
+    DHBox*          hbox            = nullptr;
     GimpBinary      gimpBin;
-    DBinarySearch*  binSearch;
-    AdvPrintWizard* wizard;
-    DInfoInterface* iface;
+    DBinarySearch*  binSearch       = nullptr;
+    AdvPrintWizard* wizard          = nullptr;
+    DInfoInterface* iface           = nullptr;
 };
 
 AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title)

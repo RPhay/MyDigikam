@@ -38,14 +38,14 @@ class AdvPrintCropPage : public DWizardPage
 public:
 
     explicit AdvPrintCropPage(QWizard* const wizard, const QString& title);
-    ~AdvPrintCropPage() override;
+    ~AdvPrintCropPage()             override;
 
     Ui_AdvPrintCropPage* ui() const;
 
     void setBtnCropEnabled();
 
-    void initializePage() override;
-    bool validatePage() override;
+    void initializePage()           override;
+    bool validatePage()             override;
 
 private Q_SLOTS:
 

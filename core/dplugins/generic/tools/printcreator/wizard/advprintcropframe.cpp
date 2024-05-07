@@ -42,27 +42,18 @@ class Q_DECL_HIDDEN AdvPrintCropFrame::Private
 {
 public:
 
-    explicit Private()
-      : photo    (nullptr),
-        mouseDown(false),
-        image    (nullptr),
-        imageX   (0),
-        imageY   (0),
-        color    (Qt::red),
-        drawRec  (true)
-    {
-    }
+    Private() = default;
 
-    AdvPrintPhoto* photo;
-    bool           mouseDown;
+    AdvPrintPhoto* photo        = nullptr;
+    bool           mouseDown    = false;
     QImage         image;
-    int            imageX;
-    int            imageY;
+    int            imageX       = 0;
+    int            imageY       = 0;
 
-    QColor         color;
+    QColor         color        = Qt::red;
 
     QRect          cropRegion;
-    bool           drawRec;
+    bool           drawRec      = true;
 
     QTransform     matrix;
 };

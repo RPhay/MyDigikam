@@ -44,7 +44,8 @@ public:
 
     template <class Ui_Class>
 
-    class Q_DECL_HIDDEN WizardUI : public QWidget, public Ui_Class
+    class Q_DECL_HIDDEN WizardUI : public QWidget,
+                                   public Ui_Class
     {
     public:
 
@@ -60,8 +61,6 @@ public:
 public:
 
     explicit Private(QWizard* const dialog)
-      : settings(nullptr),
-        iface   (nullptr)
     {
         captionUi = new CaptionUI(dialog);
         wizard    = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -73,10 +72,10 @@ public:
         }
     }
 
-    CaptionUI*        captionUi;
-    AdvPrintWizard*   wizard;
-    AdvPrintSettings* settings;
-    DInfoInterface*   iface;
+    CaptionUI*        captionUi = nullptr;
+    AdvPrintWizard*   wizard    = nullptr;
+    AdvPrintSettings* settings  = nullptr;
+    DInfoInterface*   iface     = nullptr;
 };
 
 AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& title)

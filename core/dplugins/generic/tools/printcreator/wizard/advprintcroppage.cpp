@@ -41,7 +41,8 @@ public:
 
     template <class Ui_Class>
 
-    class Q_DECL_HIDDEN WizardUI : public QWidget, public Ui_Class
+    class Q_DECL_HIDDEN WizardUI : public QWidget,
+                                   public Ui_Class
     {
     public:
 
@@ -57,8 +58,6 @@ public:
 public:
 
     explicit Private(QWizard* const dialog)
-      : settings(nullptr),
-        iface   (nullptr)
     {
         cropUi = new CropUI(dialog);
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -70,10 +69,10 @@ public:
         }
     }
 
-    CropUI*           cropUi;
-    AdvPrintWizard*   wizard;
-    AdvPrintSettings* settings;
-    DInfoInterface*   iface;
+    CropUI*           cropUi    = nullptr;
+    AdvPrintWizard*   wizard    = nullptr;
+    AdvPrintSettings* settings  = nullptr;
+    DInfoInterface*   iface     = nullptr;
 };
 
 AdvPrintCropPage::AdvPrintCropPage(QWizard* const wizard, const QString& title)

@@ -49,10 +49,6 @@ AdvPrintCustomLayoutDlg::AdvPrintCustomLayoutDlg(QWidget* const parent)
                                   "with camera orientation information"));
 }
 
-AdvPrintCustomLayoutDlg:: ~AdvPrintCustomLayoutDlg()
-{
-}
-
 void AdvPrintCustomLayoutDlg::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();

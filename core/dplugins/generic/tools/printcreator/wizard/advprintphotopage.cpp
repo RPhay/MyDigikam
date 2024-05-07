@@ -90,11 +90,6 @@ public:
 public:
 
     explicit Private(QWizard* const dialog)
-      : pageSetupDlg(nullptr),
-        printer     (nullptr),
-        wizard      (nullptr),
-        settings    (nullptr),
-        iface       (nullptr)
     {
         photoUi = new PhotoUI(dialog);
         wizard  = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -106,14 +101,14 @@ public:
         }
     }
 
-    PhotoUI*            photoUi;
-    QPageSetupDialog*   pageSetupDlg;
-    QPrinter*           printer;
+    PhotoUI*            photoUi         = nullptr;
+    QPageSetupDialog*   pageSetupDlg    = nullptr;
+    QPrinter*           printer         = nullptr;
     QList<QPrinterInfo> printerList;
 
-    AdvPrintWizard*     wizard;
-    AdvPrintSettings*   settings;
-    DInfoInterface*     iface;
+    AdvPrintWizard*     wizard          = nullptr;
+    AdvPrintSettings*   settings        = nullptr;
+    DInfoInterface*     iface           = nullptr;
 };
 
 AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title)
@@ -997,8 +992,10 @@ void AdvPrintPhotoPage::slotListPhotoSizesSelected()
 
             static const float round_value = 0.01F;
 
-            if (((height > (size.height() + round_value)) ||
-                (width  > (size.width()  + round_value))))
+            if (
+                ((height > (size.height() + round_value)) ||
+                (width   > (size.width()  + round_value)))
+               )
             {
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "photo size "
                                              << QSizeF(width, height)
@@ -1177,6 +1174,7 @@ void AdvPrintPhotoPage::slotPageSetup()
                                      << " to:   "
                                      << d->printer->toPage();
 #endif
+
     }
 
     // Fix the page size dialog and preview PhotoPage
@@ -1405,11 +1403,11 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                                    QLatin1String("mm"));
 
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << e.tagName()
-                                             << QLatin1String(" name=")
-                                             << e.attribute(QLatin1String("name"),
-                                                            QLatin1String("??"))
-                                             << " size= " << size
-                                             << " unit= " << unit;
+                                                     << QLatin1String(" name=")
+                                                     << e.attribute(QLatin1String("name"),
+                                                                    QLatin1String("??"))
+                                                     << " size= " << size
+                                                     << " unit= " << unit;
 
                 if ((size == QSizeF(0.0, 0.0)) && (size == pageSize))
                 {
@@ -1423,30 +1421,32 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                 {
                     // convert to mm
 
-                    if ((unit == QLatin1String("inches")) ||
-                        (unit == QLatin1String("inch")))
+                    if (
+                        (unit == QLatin1String("inches")) ||
+                        (unit == QLatin1String("inch"))
+                       )
                     {
                         size      *= 25.4;
                         scaleValue = 1000;
                         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "template size "
-                                                     << size
-                                                     << " page size "
-                                                     << pageSize;
+                                                             << size
+                                                             << " page size "
+                                                             << pageSize;
                     }
                     else if (unit == QLatin1String("cm"))
                     {
                         size      *= 10;
                         scaleValue = 100;
                         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "template size "
-                                                     << size
-                                                     << " page size "
-                                                     << pageSize;
+                                                             << size
+                                                             << " page size "
+                                                             << pageSize;
                     }
                     else
                     {
                         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Wrong unit "
-                                                       << unit
-                                                       << " skipping layout";
+                                                               << unit
+                                                               << " skipping layout";
                         n = n.nextSibling();
                         continue;
                     }
@@ -1454,19 +1454,23 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
 
                 static const float round_value = 0.01F;
 
-                if (size == QSizeF(0, 0))
+                if      (size == QSizeF(0, 0))
                 {
                     size = pageSize;
                     unit = QLatin1String("mm");
                 }
-                else if ((pageSize != QSizeF(0, 0)) &&
-                         ((size.height() > (pageSize.height() + round_value)) ||
-                          (size.width()  > (pageSize.width()  + round_value))))
+                else if (
+                         (pageSize != QSizeF(0, 0)) &&
+                         (
+                          (size.height() > (pageSize.height() + round_value)) ||
+                          (size.width()  > (pageSize.width()  + round_value))
+                         )
+                        )
                 {
                     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "skipping size "
-                                                 << size
-                                                 << " page size "
-                                                 << pageSize;
+                                                         << size
+                                                         << " page size "
+                                                         << pageSize;
                     // skipping layout it can't fit
 
                     n = n.nextSibling();
@@ -1476,9 +1480,9 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                 // Next templates are good
 
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "layout size "
-                                             << size
-                                             << " page size "
-                                             << pageSize;
+                                                     << size
+                                                     << " page size "
+                                                     << pageSize;
                 QDomNode np = e.firstChild();
 
                 while (!np.isNull())
@@ -1494,12 +1498,14 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
 
                             // set page size
 
-                            if (pageSize == QSizeF(0, 0))
+                            if      (pageSize == QSizeF(0, 0))
                             {
                                 sizeManaged = size * scaleValue;
                             }
-                            else if ((unit == QLatin1String("inches")) ||
-                                     (unit == QLatin1String("inch")))
+                            else if (
+                                     (unit == QLatin1String("inches")) ||
+                                     (unit == QLatin1String("inch"))
+                                    )
                             {
                                 sizeManaged = pageSize * scaleValue / 25.4;
                             }
@@ -1529,7 +1535,7 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                                                       << desktopFileName);
 
                             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Template desktop files list: "
-                                                         << list;
+                                                                 << list;
 
                             QStringList::ConstIterator it  = list.constBegin();
                             QStringList::ConstIterator end = list.constEnd();
@@ -1542,8 +1548,9 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                             else
                             {
                                 p->m_label = ep.attribute(QLatin1String("name"), QLatin1String("XXX"));
+
                                 qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "missed template translation "
-                                                               << desktopFileName;
+                                                                       << desktopFileName;
                             }
 
                             p->m_dpi        = ep.attribute(QLatin1String("dpi"),
@@ -1559,7 +1566,7 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
 
                                 if (!et.isNull())
                                 {
-                                    if (et.tagName() == QLatin1String("photo"))
+                                    if      (et.tagName() == QLatin1String("photo"))
                                     {
                                         float value = et.attribute(QLatin1String("width"),
                                                                    QLatin1String("0")).toFloat();
@@ -1620,7 +1627,7 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                                     else
                                     {
                                         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "    "
-                                                                     <<  et.tagName();
+                                                                             <<  et.tagName();
                                     }
                                 }
 
@@ -1634,10 +1641,10 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
                         else
                         {
                             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "? "
-                                                         <<  ep.tagName()
-                                                         << " attr="
-                                                         << ep.attribute(QLatin1String("name"),
-                                                                         QLatin1String("??"));
+                                                                 <<  ep.tagName()
+                                                                 << " attr="
+                                                                 << ep.attribute(QLatin1String("name"),
+                                                                                 QLatin1String("??"));
                         }
                     }
 
@@ -1647,9 +1654,10 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
             else
             {
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "??"
-                                             << e.tagName()
-                                             << " name="
-                                             << e.attribute(QLatin1String("name"), QLatin1String("??"));
+                                                     << e.tagName()
+                                                     << " name="
+                                                     << e.attribute(QLatin1String("name"),
+                                                                    QLatin1String("??"));
             }
         }
 

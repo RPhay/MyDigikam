@@ -42,10 +42,10 @@ public:
     ~AdvPrintWizard()                   override;
 
     void setItemsList(const QList<QUrl>& fileList = QList<QUrl>());
-    QList<QUrl> itemsList()      const;
+    QList<QUrl> itemsList()       const;
 
-    DInfoInterface*   iface()    const;
-    AdvPrintSettings* settings() const;
+    DInfoInterface*   iface()     const;
+    AdvPrintSettings* settings()  const;
 
     /**
      * Update the pages to be printed and preview first/last pages.
@@ -54,7 +54,7 @@ public:
 
     void updateCropFrame(AdvPrintPhoto* const, int);
 
-    int  nextId()                const override;
+    int  nextId()                 const override;
 
     static int normalizedInt(double n);
 
