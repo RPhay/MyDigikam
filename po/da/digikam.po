@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 01:43+0000\n"
+"POT-Creation-Date: 2024-05-07 01:42+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -7331,8 +7331,8 @@ msgstr "Vis billedformat"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:54
+#: core/libs/dplugins/core/dplugindimg.cpp:66
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can read file format"
@@ -7354,8 +7354,8 @@ msgstr "ja"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:61
-#: core/libs/dplugins/core/dplugindimg.cpp:73
+#: core/libs/dplugins/core/dplugindimg.cpp:57
+#: core/libs/dplugins/core/dplugindimg.cpp:69
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can write file format"
@@ -7365,8 +7365,8 @@ msgstr "ja"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:62
-#: core/libs/dplugins/core/dplugindimg.cpp:74
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
@@ -7588,8 +7588,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot read file format"
@@ -11951,14 +11951,14 @@ msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Vil du gemme ændringerne du har foretaget på dem?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:910
 #, fuzzy, kde-format
 #| msgid "Saving changes - %p%"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Gemmer ændringer - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -12002,14 +12002,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Fejl"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Kunne ikke gemme visse informationer:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1008
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -16773,7 +16773,7 @@ msgstr "Tidsstempler"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Status"
@@ -16873,8 +16873,8 @@ msgstr "Tidligere hovedudvikler"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
@@ -17328,7 +17328,7 @@ msgid "Raw File"
 msgstr "RAW-filer"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, fuzzy, kde-format
 #| msgid "Target Folder"
@@ -17735,7 +17735,7 @@ msgstr ""
 "indstillinger."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Default"
@@ -17744,7 +17744,7 @@ msgid "&Default"
 msgstr "Stan&dard"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:126
 #, fuzzy, kde-format
 #| msgid "Reset current tool settings to default values."
 msgctxt "@info:tooltip"
@@ -17852,7 +17852,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
@@ -18873,14 +18873,14 @@ msgstr "Markering"
 msgid "Generating jAlbum"
 msgstr "Eksport af album"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:92
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "Start billededitor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:149
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, fuzzy, kde-format
 #| msgid "Custom list"
@@ -18888,7 +18888,7 @@ msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "Brugertilpasset liste"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
 #, fuzzy, kde-format
 #| msgid "Set this option to add the camera name."
 msgctxt "@info"
@@ -18897,7 +18897,7 @@ msgid ""
 "automatically"
 msgstr "Aktivér denne indstilling for at tilføje kameranavnet."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:167
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18909,9 +18909,9 @@ msgid ""
 "discover the server on client devices can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:225
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:300
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:313
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, fuzzy, kde-format
@@ -18920,7 +18920,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Median: "
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:226
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18928,14 +18928,14 @@ msgid ""
 "server with this contents?"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:263
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:264
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, fuzzy, kde-format
 #| msgid "No album ids passed"
@@ -18945,7 +18945,7 @@ msgid_plural "%1 albums shared"
 msgstr[0] "Ingen album-IDer angivet"
 msgstr[1] "Ingen album-IDer angivet"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:266
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, fuzzy, kde-format
 #| msgid "1 item"
@@ -18956,7 +18956,7 @@ msgid_plural "%1 items shared"
 msgstr[0] "1 element"
 msgstr[1] "%1 elementer"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, fuzzy, kde-format
 #| msgid "Stop"
@@ -18964,14 +18964,14 @@ msgctxt "@action: button"
 msgid "Stop"
 msgstr "Stop"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:274
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:278
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, fuzzy, kde-format
 #| msgid "Start"
@@ -18979,7 +18979,7 @@ msgctxt "@action: button"
 msgid "Start"
 msgstr "Start"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:301
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
@@ -18987,7 +18987,7 @@ msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "Der er ingen elementer at behandle i køerne."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
@@ -18995,7 +18995,7 @@ msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "Der er ingen elementer at behandle i køerne."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:319
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
@@ -19004,7 +19004,7 @@ msgctxt "@info"
 msgid "Shared Items"
 msgstr "&Sortér elementer"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:339
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, fuzzy, kde-format
 #| msgid "Start image editor"
@@ -19012,7 +19012,7 @@ msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Start billededitor"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
@@ -19020,18 +19020,18 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "En fejl opstod med medieafspilleren..."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "DLNA Export"
 msgstr "Eksportér"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:74
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -19040,25 +19040,25 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:144
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "%1 Media Server"
 msgstr "Start billededitor"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
 #, fuzzy, kde-format
 #| msgid "The folders have been listed."
 msgid "Media Server have been started"
 msgstr "Mapper er blevet listet."
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr ""
@@ -19279,18 +19279,18 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr "OSM"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:55
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgid "A tool to export items as MJPEG Stream"
 msgstr "Sortér efter karakter"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -19306,7 +19306,7 @@ msgid ""
 "same time.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:122
@@ -19324,76 +19324,76 @@ msgstr ""
 msgid "Developer"
 msgstr "Udvikler"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr "Sætter størrelsen på hver flisekant."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:62
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr "Sætter størrelsen på hver flisekant."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:65
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr "Sætter størrelsen på hver flisekant."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes as a New Version"
@@ -19401,19 +19401,19 @@ msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr "Gem ændringer som en ny version"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -19421,28 +19421,28 @@ msgid ""
 "Tesseract-specific."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, fuzzy, kde-format
 #| msgid "Leaf tags only"
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr "Kun yderste niveau af mærker"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
 #, fuzzy, kde-format
 #| msgid "Leaf tags only"
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr "Kun yderste niveau af mærker"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:96
 #, fuzzy, kde-format
 #| msgid "Leaf tags only"
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr "Kun yderste niveau af mærker"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
@@ -19455,14 +19455,14 @@ msgid ""
 "systems."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Start"
@@ -19470,7 +19470,7 @@ msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "&Start"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -19479,14 +19479,14 @@ msgid ""
 "installed on your system."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:200
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Ansigtsgenkendelse"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19495,62 +19495,62 @@ msgid ""
 "to record your changes."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, fuzzy, kde-format
 #| msgid "Save"
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Gem"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:221
 #, fuzzy, kde-format
 #| msgid "Text Filter"
 msgctxt "@title"
 msgid "Text Review"
 msgstr "Tekstfilter"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:366
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "Gem i fil"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:437
 #, fuzzy, kde-format
 #| msgid "Processing Failed"
 msgctxt "@info"
 msgid "Process failed"
 msgstr "Behandling mislykkedes"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:443
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Proces annulleret..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:451
 #, fuzzy, kde-format
 #| msgid "Internal Error"
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Intern fejl"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:502
 #, fuzzy, kde-format
 #| msgid "Public access"
 msgctxt "@info"
 msgid "Success"
 msgstr "Offentlig adgang"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:566
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:567
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19558,28 +19558,28 @@ msgid ""
 "them."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:578
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action"
 msgid "&Abort"
 msgstr "&Afbryd"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:652
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Databasekonvertering annulleret."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:657
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Start"
@@ -19587,8 +19587,8 @@ msgctxt "@action"
 msgid "&Start OCR"
 msgstr "&Start"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:658
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:697
 #, fuzzy, kde-format
 #| msgid "Generate a Raw image preview using current settings."
 msgctxt "@info"
@@ -19596,7 +19596,7 @@ msgid "Start OCR using the current settings."
 msgstr ""
 "Generér en forhåndsvisning af et RAW-billede med nuværende indstillinger."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:701
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgctxt "@info"
@@ -19605,40 +19605,40 @@ msgid ""
 "are not installed on your system."
 msgstr "OpenGL-understøttelse er ikke til rådighed på dette system."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:734
 #, fuzzy, kde-format
 #| msgid "Process Items"
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Behandl elementer"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:736
 #, fuzzy, kde-format
 #| msgid "Process Items"
 msgctxt "@action"
 msgid "Process Selected Items"
 msgstr "Behandl elementer"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "Words"
 msgstr "Nøgleord"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
 msgstr "Konvertér billeder til PNG-format."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19652,21 +19652,21 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "Konvertering af farverum"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:85
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@label"
 msgid "Languages:"
 msgstr "Sprog:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19680,87 +19680,87 @@ msgid ""
 "languagemodule if available."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "Målmappe"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:112
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
 #, fuzzy, kde-format
 #| msgid "Exposure mode:"
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "Eksponeringstilstand:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
 #, fuzzy, kde-format
 #| msgid "Leaf tags only"
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr "Kun yderste niveau af mærker"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
 #, fuzzy, kde-format
 #| msgid "Resolution:"
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "Opløsning:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
 #, fuzzy, kde-format
 #| msgid "Text Filter"
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "Tekstfilter"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, fuzzy, kde-format
 #| msgid "Sync XMP creation date"
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr "Synkronisér XMP oprettetelsesdato"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
 #, fuzzy, kde-format
 #| msgid "Sync XMP creation date"
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr "Synkronisér XMP oprettetelsesdato"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "If this option is enabled, the preview area will not be split into two."
@@ -19770,7 +19770,7 @@ msgstr ""
 "Hvis denne indstilling aktiveres, vil forhåndsvisningsområdet ikke blive "
 "opdelt i to."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "default theme name"
 #| msgid "Default"
@@ -19778,32 +19778,32 @@ msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "Standard"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:295
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
 msgid "Translate with %1:"
 msgstr "Karakter lig med %1."
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:51
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Create Panorama"
 msgstr "Opret skema..."
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:66
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:62
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "A tool to create panorama"
 msgstr "Opret skema..."
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:71
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to assemble images together to create large "
@@ -19814,7 +19814,7 @@ msgid ""
 "memory to be processed.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -21180,7 +21180,7 @@ msgid "Add again"
 msgstr "Tilføj igen"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:352
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
 #, kde-format
@@ -35515,91 +35515,91 @@ msgid ""
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:94
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "Eksportér"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:98
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "Importér"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:102
 #, fuzzy, kde-format
 #| msgid "Tool"
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "Værktøj"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:106
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:114
+#: core/libs/dplugins/core/dpluginaction.cpp:110
 #, fuzzy, kde-format
 #| msgid "View"
 msgctxt "@action: dplugin"
 msgid "View"
 msgstr "Vis"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:115
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "Fil"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:119
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "Farve"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:123
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "Forbedr"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:127
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "Transformér"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "Dekorér"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:139
+#: core/libs/dplugins/core/dpluginaction.cpp:135
 #, fuzzy, kde-format
 #| msgid "Effects"
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "Effekter"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:148
+#: core/libs/dplugins/core/dpluginaction.cpp:144
 #, fuzzy, kde-format
 #| msgid "Invalid"
 msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr "Ugyldig"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:52
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -35607,7 +35607,7 @@ msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "1 billede"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:85
+#: core/libs/dplugins/core/dplugindimg.cpp:81
 #, fuzzy, kde-format
 #| msgctxt "File extension"
 #| msgid "Extension"
@@ -35615,14 +35615,14 @@ msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "Filendelse"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:86
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:87
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -35630,14 +35630,14 @@ msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "Klar"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:88
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
 #| msgid "Writable: "
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "Skrivbar: "
 
-#: core/libs/dplugins/core/dplugindimg.cpp:93
+#: core/libs/dplugins/core/dplugindimg.cpp:89
 #, fuzzy, kde-format
 #| msgid "Selenium Filter"
 msgctxt "@title"
@@ -35799,7 +35799,7 @@ msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Ryd"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:154
+#: core/libs/dplugins/setup/dpluginsetup.cpp:155
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -35809,7 +35809,7 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "1 KIPI-plugin fundet"
 msgstr[1] "%1 KIPI-plugins fundet"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:158
+#: core/libs/dplugins/setup/dpluginsetup.cpp:159
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -35817,7 +35817,7 @@ msgctxt "@info"
 msgid "No plugin installed"
 msgstr "1 KIPI-plugin fundet"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:165
+#: core/libs/dplugins/setup/dpluginsetup.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "%1: number of plugins activated"
 #| msgid "(%1 activated)"
@@ -35828,7 +35828,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "(%1 aktiveret)"
 msgstr[1] "(%1 aktiveret)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:180
+#: core/libs/dplugins/setup/dpluginsetup.cpp:181
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -35838,7 +35838,7 @@ msgid_plural "%1 plugins found"
 msgstr[0] "1 KIPI-plugin fundet"
 msgstr[1] "%1 KIPI-plugins fundet"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:184
+#: core/libs/dplugins/setup/dpluginsetup.cpp:185
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -56503,38 +56503,38 @@ msgstr "Databasekonvertering annulleret."
 msgid "Unknown title"
 msgstr "Ukendt titel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:81
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
 #, fuzzy, kde-format
 #| msgid "Add Bookmark"
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Tilføj bogmærke"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:86
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:93
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
 #, fuzzy, kde-format
 #| msgid "Bookmark selected"
 msgid "Bookmark title"
 msgstr "Bogmærke valgt"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:98
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
 #, fuzzy, kde-format
 #| msgid "Bookmark selected"
 msgid "Bookmark comment"
 msgstr "Bogmærke valgt"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:195
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Geo-lokalisering"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:217
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:92
 #: core/utilities/setup/camera/setupcamera.cpp:270
 #: core/utilities/setup/camera/setupcamera.cpp:392
@@ -56543,24 +56543,24 @@ msgstr "Geo-lokalisering"
 msgid "&Remove"
 msgstr "&Fjern"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:220
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
 #, kde-format
 msgid "Add Folder"
 msgstr "Tilføj mappe"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:411
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
 #, kde-format
 msgid "New Folder"
 msgstr "Ny mappe"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Farvehåndtering"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:430
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -56673,12 +56673,12 @@ msgstr "Redigér bogmærker"
 msgid "Error saving bookmarks"
 msgstr "Bogmærker"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:153
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Redigér bogmærker"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:159
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Tilføj bogmærke..."

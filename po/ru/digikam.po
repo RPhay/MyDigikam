@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 01:43+0000\n"
+"POT-Creation-Date: 2024-05-07 01:42+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -7084,8 +7084,8 @@ msgstr "Высокоэффективное кодирование изображ
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:54
+#: core/libs/dplugins/core/dplugindimg.cpp:66
 #, kde-format
 msgctxt "@info: can read file format"
 msgid "yes"
@@ -7106,8 +7106,8 @@ msgstr "да"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:61
-#: core/libs/dplugins/core/dplugindimg.cpp:73
+#: core/libs/dplugins/core/dplugindimg.cpp:57
+#: core/libs/dplugins/core/dplugindimg.cpp:69
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "yes"
@@ -7116,8 +7116,8 @@ msgstr "да"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:62
-#: core/libs/dplugins/core/dplugindimg.cpp:74
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, kde-format
 msgctxt "@info: cannot write file format"
 msgid "no"
@@ -7374,8 +7374,8 @@ msgstr ""
 "para>"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, kde-format
 msgctxt "@info: cannot read file format"
 msgid "no"
@@ -11632,13 +11632,13 @@ msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Сохранить изменения, внесённые в них?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:910
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Сохранение изменений —"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11682,13 +11682,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Ошибка"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Не удалось сохранить некоторую информацию:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1008
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -16070,7 +16070,7 @@ msgstr "Новая метка времени"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Status"
@@ -16173,8 +16173,8 @@ msgstr "Бывший автор"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
@@ -16588,7 +16588,7 @@ msgid "Raw File"
 msgstr "Файл цифрового негатива"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
@@ -16964,14 +16964,14 @@ msgstr ""
 "брекетингом с текущими параметрами"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "По &умолчанию"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
@@ -17074,7 +17074,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
@@ -18027,20 +18027,20 @@ msgstr "Выбор путей"
 msgid "Generating jAlbum"
 msgstr "Создание jAlbum"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:92
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "Публикация файлов по протоколу DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:149
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "Запускать сервер при запуске программы"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18048,7 +18048,7 @@ msgid ""
 "automatically"
 msgstr "Автоматически включать сервер DLNA при запуске приложения"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:167
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18068,9 +18068,9 @@ msgstr ""
 "потребоваться некоторое время; это зависит от характеристик сети и её "
 "конфигурации."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:225
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:300
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:313
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, kde-format
@@ -18078,7 +18078,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Содержимое сервера DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:226
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18088,14 +18088,14 @@ msgstr ""
 "Изменился список объектов, к которым будет предоставлен общий доступ. "
 "Запустить сервер DLNA с этим содержимым?"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:263
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
 msgstr "Сервер работает"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:264
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, kde-format
 msgctxt "@info"
@@ -18106,7 +18106,7 @@ msgstr[1] "Опубликовано %1 альбома"
 msgstr[2] "Опубликовано %1 альбомов"
 msgstr[3] "Опубликован %1 альбом"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:266
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, kde-format
 msgctxt "@info"
@@ -18119,73 +18119,73 @@ msgstr[3] "Опубликован %1 объект"
 
 # BUGME: please split --aspotashev
 # BUGME: "Стоп"? --aspotashev
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Остановить"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:274
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
 msgstr "Сервер не работает"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:278
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Запустить"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:301
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "В выделенном отсутствуют коллекции для публикации..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "В выделенном отсутствуют изображения для публикации..."
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:319
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Shared Items"
 msgstr "Опубликованные объекты"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:339
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Запуск медиасервера"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "Ошибка при запуске медиасервера..."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
 #, kde-format
 msgid "DLNA Export"
 msgstr "Экспорт по протоколу DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr "Инструмент для экспорта на устройства, совместимые со стандартом DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:74
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -18200,23 +18200,23 @@ msgstr ""
 "электронными устройствами (планшеты, сотовые телефоны, телевизоры и так "
 "далее).</p>"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr "Опубликовать по протоколу DLNA..."
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:144
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
 #, kde-format
 msgid "%1 Media Server"
 msgstr "Сервер DLNA %1"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
 #, kde-format
 msgid "Media Server have been started"
 msgstr "Запущен сервер DLNA"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr "Не удалось запустить сервер DLNA."
@@ -18443,17 +18443,17 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr "Индикатор на экране"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:55
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr "Сервер потока MJPEG"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
 msgstr "Инструмент для экспорта в поток MJPEG"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -18481,7 +18481,7 @@ msgstr ""
 "сервера MJPEG, а порт — это тот порт, который указан в диалоге настройки. К "
 "серверу MJPEG одновременно может быть подключено несколько компьютеров.</p>"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:122
@@ -18499,91 +18499,91 @@ msgstr ""
 msgid "Developer"
 msgstr "Разработчик"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr "Опубликовать с использованием сервера MJPEG..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr "Только Orientation and script detection (OSD)."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr "Автоматическая сегментация страниц с помощью OSD."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr "Автоматическая сегментация страниц без OSD или OCR. (не реализовано)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
 msgstr "Полная автоматическая сегментация страниц с OSD. (По умолчанию)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr "Предположить, что один столбец текста имеет переменные размеры."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
 msgstr "Предположить, что это единый блок вертикально выровненного текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr "Предположить, что это единый блок текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr "Рассматривать изображение как одну текстовую строку."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr "Рассматривать изображение как одно слово."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr "Рассматривать изображение как одно слово в кругу."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr "Рассматривать изображение как один символ."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
 msgstr "Редкий текст. Найти как можно больше текста в произвольном порядке."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr "Разреженный текст с OSD."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -18593,25 +18593,25 @@ msgstr ""
 "Простая строка. Рассматривать изображение как одну текстовую строку, минуя "
 "области, относящиеся к Tesseract."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr "Только для устаревшего движка."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr "Только движок нейронных сетей LSTM."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr "Устаревшие движки + LSTM."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
@@ -18626,19 +18626,19 @@ msgstr ""
 "Tesseract — это механизм оптического распознавания символов для различных "
 "операционных систем."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Преобразователь распознанного текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:120
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "&Распознать текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18650,13 +18650,13 @@ msgstr ""
 "выполнения распознавания текста. В системе должна быть установлена программа "
 "Tesseract и необходимые модули языков."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Распознавание текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18669,55 +18669,55 @@ msgstr ""
 "и исправить ошибки, если это необходимо. Чтобы сохранить изменения, нажмите "
 "кнопку «Сохранить»."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Сохранить"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
 msgstr "Просмотр шрифта"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:366
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "Обработка %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:437
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "Ошибка обработки"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:443
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Обработка отменена"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:451
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Внутренняя ошибка"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:502
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Готово"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Преобразователь текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:567
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18726,38 +18726,38 @@ msgid ""
 msgstr ""
 "Список не содержит цифровых файлов для обработки. Необходимо их выбрать."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:578
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Преобразователь текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "&Прервать"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:652
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Прервать распознавание текста в RAW-файлах."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:657
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "&Распознать текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:658
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:697
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "Начать распознавание текста с текущими параметрами."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:701
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18767,30 +18767,30 @@ msgstr ""
 "Программа Tesseract или модули языка\n"
 "не установлены в системе."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:734
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Обработать все объекты"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:736
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
 msgstr "Обработать выбранные объекты"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
 #, kde-format
 msgid "Words"
 msgstr "Слова"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "Преобразователь распознанного текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
@@ -18798,7 +18798,7 @@ msgstr ""
 "Инструмент для пакетного преобразования изображений в текстовые документы с "
 "помощью распознавателя текста"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18821,19 +18821,19 @@ msgstr ""
 "\n"
 "Подробнее о Tesseract: %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "Преобразователь распознанного текста..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:85
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
 msgstr "Языки:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18855,113 +18855,113 @@ msgstr ""
 "использовать режим обнаружения ориентации и сценария или определённый\n"
 "языковой модуль, если он доступен."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "Режим сегментации:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:112
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr "Укажите режим сегментации страницы."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "Режим движка:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr "Определить режим движка распознавания текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "Разрешение Dpi:"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr "Укажите DPI входного изображения"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr "Хранить результат в : "
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "Текстовый файл"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr "Хранить результат распознавания в отдельном текстовом файле"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "Метаданные"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr "Хранить результат распознавания в метаданных XMP"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr "Использовать многоядерные процессоры"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
 msgstr "Если эта функция включена, файлы будут обрабатываться параллельно"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:295
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr "Orientation and Script Detection"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
 msgstr "Перевести с %1"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:51
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:47
 #, kde-format
 msgid "Create Panorama"
 msgstr "Создать панораму…"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:66
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:62
 #, kde-format
 msgid "A tool to create panorama"
 msgstr "Инструмент создания панорам"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:71
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to assemble images together to create large "
@@ -18979,7 +18979,7 @@ msgstr ""
 "количества совмещаемых снимков увеличивается и размер целевого изображения; "
 "для его обработки потребуется большое количество памяти.</p>"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
@@ -20244,7 +20244,7 @@ msgid "Add again"
 msgstr "Добавить ещё раз"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:352
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
 #, kde-format
@@ -34047,111 +34047,111 @@ msgstr ""
 "метаданных Без ExifTool DNG не будет включать все свойства начального "
 "цифрового негатива."
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "Экспорт"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:98
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "Импорт"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:102
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "Инструменты"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:106
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "Метаданные"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:114
+#: core/libs/dplugins/core/dpluginaction.cpp:110
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "View"
 msgstr "Просмотр"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:115
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "Файл"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:119
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "Цвет"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:123
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "Улучшить"
 
 # i18n: file ./showfoto/showfotoui.rc line 22
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:127
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "Преобразовать"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "Оформить"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:139
+#: core/libs/dplugins/core/dpluginaction.cpp:135
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "Эффекты"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:148
+#: core/libs/dplugins/core/dpluginaction.cpp:144
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr "Недопустимо"
 
 # i18n: file ./digikam/digikamui.rc line 39
-#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:52
 #, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "Изображение %1"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:85
+#: core/libs/dplugins/core/dplugindimg.cpp:81
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "Расширение"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:86
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "Описание"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:87
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "Чтение"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:88
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "Запись"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:93
+#: core/libs/dplugins/core/dplugindimg.cpp:89
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
@@ -34292,7 +34292,7 @@ msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Очистить"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:154
+#: core/libs/dplugins/setup/dpluginsetup.cpp:155
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -34302,13 +34302,13 @@ msgstr[1] "Установлены %1 модуля"
 msgstr[2] "Установлены %1 модулей"
 msgstr[3] "Установлен %1 модуль"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:158
+#: core/libs/dplugins/setup/dpluginsetup.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Модули не установлены"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:165
+#: core/libs/dplugins/setup/dpluginsetup.cpp:166
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -34318,7 +34318,7 @@ msgstr[1] "(активировано %1)"
 msgstr[2] "(активировано %1)"
 msgstr[3] "(активирован %1)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:180
+#: core/libs/dplugins/setup/dpluginsetup.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
@@ -34328,7 +34328,7 @@ msgstr[1] "Найдены %1 модуля"
 msgstr[2] "Найдено %1 модулей"
 msgstr[3] "Найден %1 модуль"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:184
+#: core/libs/dplugins/setup/dpluginsetup.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
@@ -53244,7 +53244,7 @@ msgstr "Этот файл не является файлом формата XBEL
 msgid "Unknown title"
 msgstr "Неизвестное название"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:81
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add Bookmark"
@@ -53252,29 +53252,29 @@ msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Добавить закладку"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:86
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr "Введите название и описание для закладки и выберите, где её сохранить."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:93
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
 #, kde-format
 msgid "Bookmark title"
 msgstr "Название закладки"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:98
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
 #, kde-format
 msgid "Bookmark comment"
 msgstr "Описание закладки"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:195
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Редактирование закладок местоположения"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:217
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:92
 #: core/utilities/setup/camera/setupcamera.cpp:270
 #: core/utilities/setup/camera/setupcamera.cpp:392
@@ -53283,24 +53283,24 @@ msgstr "Редактирование закладок местоположени
 msgid "&Remove"
 msgstr "&Удалить"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:220
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
 #, kde-format
 msgid "Add Folder"
 msgstr "Создать папку"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:411
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
 #, kde-format
 msgid "New Folder"
 msgstr "Новая папка"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Управление цветом"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:430
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -53401,12 +53401,12 @@ msgstr "Редактирование закладки"
 msgid "Error saving bookmarks"
 msgstr "Не удалось сохранить закладки."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:153
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Редактировать закладки..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:159
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Добавить закладку..."

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-06 01:43+0000\n"
+"POT-Creation-Date: 2024-05-07 01:42+0000\n"
 "PO-Revision-Date: 2024-04-22 17:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -6743,8 +6743,8 @@ msgstr "顯示影像格式"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:54
+#: core/libs/dplugins/core/dplugindimg.cpp:66
 #, kde-format
 msgctxt "@info: can read file format"
 msgid "yes"
@@ -6765,8 +6765,8 @@ msgstr "是"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:61
-#: core/libs/dplugins/core/dplugindimg.cpp:73
+#: core/libs/dplugins/core/dplugindimg.cpp:57
+#: core/libs/dplugins/core/dplugindimg.cpp:69
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "yes"
@@ -6775,8 +6775,8 @@ msgstr "是"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:62
-#: core/libs/dplugins/core/dplugindimg.cpp:74
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, kde-format
 msgctxt "@info: cannot write file format"
 msgid "no"
@@ -6995,8 +6995,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, kde-format
 msgctxt "@info: cannot read file format"
 msgid "no"
@@ -11127,13 +11127,13 @@ msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您要儲存您所做的變更嗎？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:910
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "儲存變更中 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11177,13 +11177,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "儲存某些資訊時失敗："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1008
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -15727,7 +15727,7 @@ msgstr "時間"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Status"
@@ -15820,8 +15820,8 @@ msgstr "前任作者"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
@@ -16202,7 +16202,7 @@ msgid "Raw File"
 msgstr "Raw 檔案"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
@@ -16559,14 +16559,14 @@ msgid "Process a preview of bracketed images stack with current settings."
 msgstr "以目前的設定處理影像堆疊預覽。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:134
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "預設(&D)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
@@ -16672,7 +16672,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
@@ -17639,14 +17639,14 @@ msgstr "選擇區域"
 msgid "Generating jAlbum"
 msgstr "正在產生 jAlbum 相簿"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:92
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:75
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "啟動影像編輯器"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:149
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, fuzzy, kde-format
 #| msgid "Custom list"
@@ -17654,7 +17654,7 @@ msgctxt "@option"
 msgid "Start Server at Startup"
 msgstr "自訂清單"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
 #, fuzzy, kde-format
 #| msgid "Set this option to display the item name."
 msgctxt "@info"
@@ -17663,7 +17663,7 @@ msgid ""
 "automatically"
 msgstr "設定此選項會顯示項目的名稱。"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:167
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17675,9 +17675,9 @@ msgid ""
 "discover the server on client devices can take a while."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:225
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:300
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:313
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:208
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:283
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, fuzzy, kde-format
@@ -17686,7 +17686,7 @@ msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "中值："
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:226
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17694,14 +17694,14 @@ msgid ""
 "server with this contents?"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:263
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:246
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:264
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
 #, kde-format
 msgctxt "@info"
@@ -17709,7 +17709,7 @@ msgid "1 album shared"
 msgid_plural "%1 albums shared"
 msgstr[0] "已分享 %1 本相簿"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:266
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
 #, fuzzy, kde-format
 #| msgid "1 item"
@@ -17719,7 +17719,7 @@ msgid "1 item shared"
 msgid_plural "%1 items shared"
 msgstr[0] "%1 個項目"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
 #, fuzzy, kde-format
 #| msgid "Stop"
@@ -17727,14 +17727,14 @@ msgctxt "@action: button"
 msgid "Stop"
 msgstr "停止"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:274
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:257
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:278
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
@@ -17743,7 +17743,7 @@ msgctxt "@action: button"
 msgid "Start"
 msgstr "起始值："
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:301
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
@@ -17751,7 +17751,7 @@ msgctxt "@info"
 msgid "There is no collection to share with the current selection..."
 msgstr "在佇列中沒有要處理的項目。"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:297
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:78
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
@@ -17759,7 +17759,7 @@ msgctxt "@info"
 msgid "There is no item to share with the current selection..."
 msgstr "在佇列中沒有要處理的項目。"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:319
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:302
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
@@ -17768,7 +17768,7 @@ msgctxt "@info"
 msgid "Shared Items"
 msgstr "項目排序(&S)"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:339
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, fuzzy, kde-format
 #| msgid "Start image editor"
@@ -17776,7 +17776,7 @@ msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "啟動影像編輯器"
 
-#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
+#: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
@@ -17784,17 +17784,17 @@ msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
 msgstr "媒體播放程式發生一個錯誤...."
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
 #, kde-format
 msgid "DLNA Export"
 msgstr "DLNA 匯出"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:65
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:74
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:70
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a DLNA "
@@ -17803,24 +17803,24 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:144
+#: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:141
 #, kde-format
 msgid "%1 Media Server"
 msgstr "%1 媒體伺服器"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:153
 #, fuzzy, kde-format
 #| msgid "The folders have been listed."
 msgid "Media Server have been started"
 msgstr "已經列出資料夾。"
 
-#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:155
+#: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:154
 #, kde-format
 msgid "Media Server cannot be started!"
 msgstr ""
@@ -18038,17 +18038,17 @@ msgctxt "@title: On Screen Display"
 msgid "OSD"
 msgstr "OSM"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:55
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
 #, kde-format
 msgid "MJPEG Stream Server"
 msgstr "MJPEG 串流伺服器"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:66
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
 msgstr "將項目作為 MJPEG 串流匯出的工具"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:82
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -18064,7 +18064,7 @@ msgid ""
 "same time.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:99
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:107
 #: core/libs/widgets/mainview/daboutdata.cpp:122
@@ -18082,76 +18082,76 @@ msgstr ""
 msgid "Developer"
 msgstr "開發人員"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr "作為 MJPEG 串流分享..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr "設定每個拼貼邊框的大小。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:62
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr "設定每個拼貼邊框的大小。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:65
 #, fuzzy, kde-format
 #| msgid "Sets the size of each tile border."
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr "設定每個拼貼邊框的大小。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes as a New Version"
@@ -18159,19 +18159,19 @@ msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr "將變更存成新版本"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -18179,25 +18179,25 @@ msgid ""
 "Tesseract-specific."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr "僅舊式引擎。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr "僅類神經網路 LSTM 引擎。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr "舊式引擎 + LSTM 引擎。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
@@ -18210,14 +18210,14 @@ msgid ""
 "systems."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:110
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "轉換"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
@@ -18225,7 +18225,7 @@ msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "起始值："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18234,13 +18234,13 @@ msgid ""
 "installed on your system."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "文字辨識"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18249,56 +18249,56 @@ msgid ""
 "to record your changes."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "儲存"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:221
 #, fuzzy, kde-format
 #| msgid "Text Filter"
 msgctxt "@title"
 msgid "Text Review"
 msgstr "文字過濾器"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:366
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "正在處理 %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:437
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "處理失敗"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:443
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "已取消處理"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:451
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "內部錯誤"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:502
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "成功"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:566
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "文字轉換器"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:567
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18306,26 +18306,26 @@ msgid ""
 "them."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:578
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "文字轉換器"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "放棄(&A)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:652
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "資料庫轉換已取消。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:657
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
@@ -18333,15 +18333,15 @@ msgctxt "@action"
 msgid "&Start OCR"
 msgstr "起始值："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:658
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:697
 #, fuzzy, kde-format
 #| msgid "Generate a Raw image preview using current settings."
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "使用目前設定值生成 Raw 影像的預覽。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:701
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18351,38 +18351,38 @@ msgstr ""
 "Tesseract 程式本身或是語言模組\n"
 "未安裝於您的系統上。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:734
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "處理所有項目"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:736
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
 msgstr "處理選取的項目"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:89
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "Words"
 msgstr "關鍵字"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "OCR Text Converter"
 msgstr "轉換"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:55
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
 msgstr "將影像轉換成 PNG 格式。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:64
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18396,20 +18396,20 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:90
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "OCR Text Converter..."
 msgstr "色彩空間轉換"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:85
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:75
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
 msgstr "語言："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18423,118 +18423,118 @@ msgid ""
 "languagemodule if available."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
 msgstr "分頁模式："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:112
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
 msgstr "指定頁面分割模式。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:106
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
 msgstr "引擎模式："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:120
 #, fuzzy, kde-format
 #| msgid "Write to image only"
 msgctxt "@info"
 msgid "Specify OCR engine mode."
 msgstr "只寫入影像"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:124
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
 msgstr "解析度 DPI："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
 msgstr "指定輸入影像的 DPI。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:133
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
 msgstr "結果儲存方式："
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "文字檔案"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:135
 #, fuzzy, kde-format
 #| msgid "Sync XMP creation date"
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr "同步 XMP 建立日期"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:138
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:139
 #, fuzzy, kde-format
 #| msgid "Sync XMP creation date"
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
 msgstr "同步 XMP 建立日期"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
 msgstr "使用多核心"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
 msgstr "啟用此選項時，檔案會利用多核心平行處理"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:279
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "預設"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:295
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:285
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
 msgstr "方向與書寫系統偵測"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
+#: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:304
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
 msgstr "使用 %1 翻譯："
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:51
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:47
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Create Panorama"
 msgstr "建立綱要..."
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:66
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:62
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "A tool to create panorama"
 msgstr "建立綱要..."
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:71
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:67
 #, kde-format
 msgid ""
 "<p>This tool allows users to assemble images together to create large "
@@ -18545,7 +18545,7 @@ msgid ""
 "memory to be processed.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:102
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -19858,7 +19858,7 @@ msgid "Add again"
 msgstr "加入膠片顆粒"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:352
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
 #, kde-format
@@ -33512,101 +33512,101 @@ msgstr ""
 "警告：處理中繼資料用的 ExifTool 工具不可用。若未安裝 ExifTool，則 DNG 就不會"
 "包含所有 RAW 來源的屬性。"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "匯出"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:98
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "匯入"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:102
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "工具"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:106
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:114
+#: core/libs/dplugins/core/dpluginaction.cpp:110
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@action: dplugin"
 msgid "View"
 msgstr "檢視"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:115
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "檔案"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:119
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "顏色"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:123
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "增強"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:127
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "變形"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "裝飾"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:139
+#: core/libs/dplugins/core/dpluginaction.cpp:135
 #, fuzzy, kde-format
 #| msgid "Effects"
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "效果"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:148
+#: core/libs/dplugins/core/dpluginaction.cpp:144
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr "無效"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:52
 #, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "%1 張影像"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:85
+#: core/libs/dplugins/core/dplugindimg.cpp:81
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "副檔名"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:86
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "描述"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:87
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -33614,14 +33614,14 @@ msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "已就緒"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:88
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
 #| msgid "Writable: "
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "可寫入："
 
-#: core/libs/dplugins/core/dplugindimg.cpp:93
+#: core/libs/dplugins/core/dplugindimg.cpp:89
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
@@ -33766,20 +33766,20 @@ msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "清除"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:154
+#: core/libs/dplugins/setup/dpluginsetup.cpp:155
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
 msgid_plural "%1 plugins installed"
 msgstr[0] "已安裝 %1 個外掛程式"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:158
+#: core/libs/dplugins/setup/dpluginsetup.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "未安裝外掛程式"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:165
+#: core/libs/dplugins/setup/dpluginsetup.cpp:166
 #, fuzzy, kde-format
 #| msgid "1 active filter"
 #| msgid_plural "%1 active filters"
@@ -33788,14 +33788,14 @@ msgid "(%1 activated)"
 msgid_plural "(%1 activated)"
 msgstr[0] "%1 個作用中的濾鏡"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:180
+#: core/libs/dplugins/setup/dpluginsetup.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
 msgid_plural "%1 plugins found"
 msgstr[0] "找到 %1 個外掛程式"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:184
+#: core/libs/dplugins/setup/dpluginsetup.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
@@ -52666,35 +52666,35 @@ msgstr "資料庫轉換已取消。"
 msgid "Unknown title"
 msgstr "未知標題"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:81
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "加入書籤"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:86
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:93
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
 #, kde-format
 msgid "Bookmark title"
 msgstr "書籤標題"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:98
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
 #, kde-format
 msgid "Bookmark comment"
 msgstr "書籤註解"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:195
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "地理位置"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:217
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:92
 #: core/utilities/setup/camera/setupcamera.cpp:270
 #: core/utilities/setup/camera/setupcamera.cpp:392
@@ -52703,24 +52703,24 @@ msgstr "地理位置"
 msgid "&Remove"
 msgstr "移除(&R)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:220
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
 #, kde-format
 msgid "Add Folder"
 msgstr "新增資料夾"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:411
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:417
 #, kde-format
 msgid "New Folder"
 msgstr "新資料夾"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:435
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "色彩管理"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:430
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:436
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -52828,13 +52828,13 @@ msgstr "書籤"
 msgid "Error saving bookmarks"
 msgstr "書籤"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:153
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "Edit Bookmarks"
 msgstr "書籤"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:159
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgid "Add Bookmark..."
