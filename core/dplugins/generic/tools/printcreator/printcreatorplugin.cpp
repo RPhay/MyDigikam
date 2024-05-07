@@ -34,10 +34,6 @@ PrintCreatorPlugin::PrintCreatorPlugin(QObject* const parent)
 {
 }
 
-PrintCreatorPlugin::~PrintCreatorPlugin()
-{
-}
-
 QString PrintCreatorPlugin::name() const
 {
     return i18n("Print Creator");

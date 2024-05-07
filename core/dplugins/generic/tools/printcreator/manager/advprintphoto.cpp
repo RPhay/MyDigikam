@@ -35,9 +35,7 @@ namespace DigikamGenericPrintCreatorPlugin
 {
 
 AdvPrintPhotoSize::AdvPrintPhotoSize()
-    : m_label     (i18n("Unsupported Paper Size")),
-      m_dpi       (0),
-      m_autoRotate(false)
+    : m_label(i18n("Unsupported Paper Size"))
 {
 }
 
@@ -51,23 +49,7 @@ AdvPrintPhotoSize::AdvPrintPhotoSize(const AdvPrintPhotoSize& other)
 {
 }
 
-AdvPrintPhotoSize::~AdvPrintPhotoSize()
-{
-}
-
 // -----------------------------
-
-AdvPrintAdditionalInfo::AdvPrintAdditionalInfo()
-    : m_unit                (0),
-      m_printPosition       (0),
-      m_scaleMode           (0),
-      m_keepRatio           (true),
-      m_autoRotate          (true),
-      m_printWidth          (0.0),
-      m_printHeight         (0.0),
-      m_enlargeSmallerImages(false)
-{
-}
 
 AdvPrintAdditionalInfo::AdvPrintAdditionalInfo(const AdvPrintAdditionalInfo& other)
     : m_unit                (other.m_unit),
@@ -81,20 +63,7 @@ AdvPrintAdditionalInfo::AdvPrintAdditionalInfo(const AdvPrintAdditionalInfo& oth
 {
 }
 
-AdvPrintAdditionalInfo::~AdvPrintAdditionalInfo()
-{
-}
-
 // -----------------------------
-
-AdvPrintCaptionInfo::AdvPrintCaptionInfo()
-    : m_captionType (AdvPrintSettings::NONE),
-      m_captionFont (QLatin1String("Sans Serif")),
-      m_captionColor(Qt::yellow),
-      m_captionSize (2),
-      m_captionText (QLatin1String(""))
-{
-}
 
 AdvPrintCaptionInfo::AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other)
     : m_captionType (other.m_captionType),
@@ -102,10 +71,6 @@ AdvPrintCaptionInfo::AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other)
       m_captionColor(other.m_captionColor),
       m_captionSize (other.m_captionSize),
       m_captionText (other.m_captionText)
-{
-}
-
-AdvPrintCaptionInfo::~AdvPrintCaptionInfo()
 {
 }
 

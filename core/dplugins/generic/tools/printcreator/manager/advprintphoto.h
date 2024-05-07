@@ -44,16 +44,16 @@ class AdvPrintPhotoSize
 {
 public:
 
-    explicit AdvPrintPhotoSize();
+    AdvPrintPhotoSize();
     AdvPrintPhotoSize(const AdvPrintPhotoSize& other);
-    ~AdvPrintPhotoSize();
+    ~AdvPrintPhotoSize() = default;
 
 public:
 
     QString       m_label;
-    int           m_dpi;
-    bool          m_autoRotate;
-    QList<QRect*> m_layouts;     ///< first element is page size
+    int           m_dpi         = 0;
+    bool          m_autoRotate  = false;
+    QList<QRect*> m_layouts;    ///< first element is page size
     QIcon         m_icon;
 };
 
@@ -63,20 +63,20 @@ class AdvPrintAdditionalInfo
 {
 public:
 
-    explicit AdvPrintAdditionalInfo();
+    AdvPrintAdditionalInfo()  = default;
     AdvPrintAdditionalInfo(const AdvPrintAdditionalInfo& other);
-    ~AdvPrintAdditionalInfo();
+    ~AdvPrintAdditionalInfo() = default;
 
 public:
 
-    int    m_unit;
-    int    m_printPosition;
-    int    m_scaleMode;
-    bool   m_keepRatio;
-    bool   m_autoRotate;
-    double m_printWidth;
-    double m_printHeight;
-    bool   m_enlargeSmallerImages;
+    int    m_unit                   = 0;
+    int    m_printPosition          = 0;
+    int    m_scaleMode              = 0;
+    bool   m_keepRatio              = true;
+    bool   m_autoRotate             = true;
+    double m_printWidth             = 0.0;
+    double m_printHeight            = 0.0;
+    bool   m_enlargeSmallerImages   = false;
 };
 
 // -----------------------------------------------------------
@@ -86,18 +86,18 @@ class AdvPrintCaptionInfo
 
 public:
 
-    explicit AdvPrintCaptionInfo();
+    AdvPrintCaptionInfo()  = default;
 
     /// Copy constructor to get old photo info.
     AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other);
-    ~AdvPrintCaptionInfo();
+    ~AdvPrintCaptionInfo() = default;
 
 public:
 
-    AdvPrintSettings::CaptionType m_captionType;
-    QFont                         m_captionFont;
-    QColor                        m_captionColor;
-    int                           m_captionSize;
+    AdvPrintSettings::CaptionType m_captionType     = AdvPrintSettings::NONE;
+    QFont                         m_captionFont     = QFont(QLatin1String("Sans Serif"));
+    QColor                        m_captionColor    = Qt::yellow;
+    int                           m_captionSize     = 2;
     QString                       m_captionText;
 };
 
