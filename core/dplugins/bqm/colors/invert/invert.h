@@ -31,7 +31,7 @@ class Invert : public BatchTool
 public:
 
     explicit Invert(QObject* const parent = nullptr);
-    ~Invert()                                               override;
+    ~Invert()                                               override = default;
 
     BatchToolSettings defaultSettings()                     override;
 

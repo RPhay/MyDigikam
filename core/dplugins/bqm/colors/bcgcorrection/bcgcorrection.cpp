@@ -31,12 +31,7 @@ namespace DigikamBqmBCGCorrectionPlugin
 {
 
 BCGCorrection::BCGCorrection(QObject* const parent)
-    : BatchTool(QLatin1String("BCGCorrection"), ColorTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-BCGCorrection::~BCGCorrection()
+    : BatchTool(QLatin1String("BCGCorrection"), ColorTool, parent)
 {
 }
 

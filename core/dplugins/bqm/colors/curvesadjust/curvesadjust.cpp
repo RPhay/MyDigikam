@@ -36,17 +36,11 @@ namespace DigikamBqmCurvesAdjustPlugin
 {
 
 CurvesAdjust::CurvesAdjust(QObject* const parent)
-    : BatchTool     (QLatin1String("CurvesAdjust"), ColorTool, parent),
-      m_channelCB   (nullptr),
-      m_settingsView(nullptr)
+    : BatchTool(QLatin1String("CurvesAdjust"), ColorTool, parent)
 {
     setToolTitle(i18nc("@title", "Curves Adjust"));
     setToolDescription(i18nc("@info", "Perform curves adjustments."));
     setToolIconName(QLatin1String("adjustcurves"));
-}
-
-CurvesAdjust::~CurvesAdjust()
-{
 }
 
 BatchTool* CurvesAdjust::clone(QObject* const parent) const

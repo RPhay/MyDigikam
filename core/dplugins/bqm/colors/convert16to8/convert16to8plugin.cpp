@@ -37,10 +37,6 @@ Convert16To8Plugin::Convert16To8Plugin(QObject* const parent)
 {
 }
 
-Convert16To8Plugin::~Convert16To8Plugin()
-{
-}
-
 QString Convert16To8Plugin::name() const
 {
     return i18nc("@info", "Convert to 8 bits");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> Convert16To8Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2022"))
+                             QString::fromUtf8("(C) 2010-2024"))
             ;
 }
 

@@ -31,17 +31,12 @@ namespace DigikamBqmColorBalancePlugin
 {
 
 ColorBalance::ColorBalance(QObject* const parent)
-    : BatchTool(QLatin1String("ColorBalance"), ColorTool, parent),
-      m_settingsView(nullptr)
+    : BatchTool(QLatin1String("ColorBalance"), ColorTool, parent)
 {
 
     setToolTitle(i18n("Color Balance"));
     setToolDescription(i18n("Adjust color balance."));
     setToolIconName(QLatin1String("adjustrgb"));
-}
-
-ColorBalance::~ColorBalance()
-{
 }
 
 BatchTool* ColorBalance::clone(QObject* const parent) const

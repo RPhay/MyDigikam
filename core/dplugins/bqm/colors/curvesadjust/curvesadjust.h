@@ -34,7 +34,7 @@ class CurvesAdjust : public BatchTool
 public:
 
     explicit CurvesAdjust(QObject* const parent = nullptr);
-    ~CurvesAdjust()                                         override;
+    ~CurvesAdjust()                                         override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -60,8 +60,8 @@ private Q_SLOTS:
 private:
 
     DImg            m_preview;
-    QComboBox*      m_channelCB;
-    CurvesSettings* m_settingsView;
+    QComboBox*      m_channelCB     = nullptr;
+    CurvesSettings* m_settingsView  = nullptr;
 };
 
 } // namespace DigikamBqmCurvesAdjustPlugin

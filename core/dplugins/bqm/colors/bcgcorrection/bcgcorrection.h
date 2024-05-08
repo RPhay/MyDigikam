@@ -32,7 +32,7 @@ class BCGCorrection : public BatchTool
 public:
 
     explicit BCGCorrection(QObject* const parent = nullptr);
-    ~BCGCorrection()                                        override;
+    ~BCGCorrection()                                        override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    BCGSettings* m_settingsView;
+    BCGSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmBCGCorrectionPlugin

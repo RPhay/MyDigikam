@@ -33,7 +33,7 @@ class AutoCorrection : public BatchTool
 public:
 
     explicit AutoCorrection(QObject* const parent = nullptr);
-    ~AutoCorrection()                                       override;
+    ~AutoCorrection()                                       override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -61,7 +61,7 @@ private:
         AutoExposureCorrection
     };
 
-    QComboBox* m_comboBox;
+    QComboBox* m_comboBox = nullptr;
 };
 
 } // namespace DigikamBqmAutoCorrectionPlugin

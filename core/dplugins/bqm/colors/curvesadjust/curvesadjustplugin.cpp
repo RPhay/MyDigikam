@@ -37,10 +37,6 @@ CurvesAdjustPlugin::CurvesAdjustPlugin(QObject* const parent)
 {
 }
 
-CurvesAdjustPlugin::~CurvesAdjustPlugin()
-{
-}
-
 QString CurvesAdjustPlugin::name() const
 {
     return i18nc("@title", "Curves Adjust");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> CurvesAdjustPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2022"))
+                             QString::fromUtf8("(C) 2010-2024"))
             ;
 }
 

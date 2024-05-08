@@ -32,7 +32,7 @@ class BWConvert : public BatchTool
 public:
 
     explicit BWConvert(QObject* const parent = nullptr);
-    ~BWConvert()                                            override;
+    ~BWConvert()                                            override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -56,7 +56,7 @@ private Q_SLOTS:
 private:
 
     DImg             m_preview;
-    BWSepiaSettings* m_settingsView;
+    BWSepiaSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmBWConvertPlugin

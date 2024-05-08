@@ -32,7 +32,7 @@ class IccConvert : public BatchTool
 public:
 
     explicit IccConvert(QObject* const parent = nullptr);
-    ~IccConvert()                                           override;
+    ~IccConvert()                                           override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    IccProfilesSettings* m_settingsView;
+    IccProfilesSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmIccConvertPlugin

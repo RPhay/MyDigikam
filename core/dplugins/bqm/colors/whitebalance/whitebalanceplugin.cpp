@@ -37,10 +37,6 @@ WhiteBalancePlugin::WhiteBalancePlugin(QObject* const parent)
 {
 }
 
-WhiteBalancePlugin::~WhiteBalancePlugin()
-{
-}
-
 QString WhiteBalancePlugin::name() const
 {
     return i18nc("@title", "White Balance");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> WhiteBalancePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2022"))
+                             QString::fromUtf8("(C) 2010-2024"))
             ;
 }
 

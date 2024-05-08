@@ -37,12 +37,7 @@ namespace DigikamBqmIccConvertPlugin
 {
 
 IccConvert::IccConvert(QObject* const parent)
-    : BatchTool(QLatin1String("IccConvert"), ColorTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-IccConvert::~IccConvert()
+    : BatchTool(QLatin1String("IccConvert"), ColorTool, parent)
 {
 }
 

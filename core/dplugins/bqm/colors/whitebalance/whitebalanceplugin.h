@@ -35,7 +35,7 @@ class WhiteBalancePlugin : public DPluginBqm
 public:
 
     explicit WhiteBalancePlugin(QObject* const parent = nullptr);
-    ~WhiteBalancePlugin()                override;
+    ~WhiteBalancePlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

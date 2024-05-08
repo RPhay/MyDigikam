@@ -32,7 +32,7 @@ class WhiteBalance : public BatchTool
 public:
 
     explicit WhiteBalance(QObject* const parent = nullptr);
-    ~WhiteBalance()                                         override;
+    ~WhiteBalance()                                         override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    WBSettings* m_settingsView;
+    WBSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmWhiteBalancePlugin

@@ -32,7 +32,7 @@ class ChannelMixer : public BatchTool
 public:
 
     explicit ChannelMixer(QObject* const parent = nullptr);
-    ~ChannelMixer()                                         override;
+    ~ChannelMixer()                                         override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    MixerSettings* m_settingsView;
+    MixerSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmChannelMixerPlugin

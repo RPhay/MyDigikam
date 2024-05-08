@@ -32,7 +32,7 @@ class ColorBalance : public BatchTool
 public:
 
     explicit ColorBalance(QObject* const parent = nullptr);
-    ~ColorBalance()                                         override;
+    ~ColorBalance()                                         override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    CBSettings* m_settingsView;
+    CBSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmColorBalancePlugin

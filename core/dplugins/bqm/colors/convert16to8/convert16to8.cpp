@@ -34,10 +34,6 @@ Convert16to8::Convert16to8(QObject* const parent)
     setToolIconName(QLatin1String("depth16to8"));
 }
 
-Convert16to8::~Convert16to8()
-{
-}
-
 BatchToolSettings Convert16to8::defaultSettings()
 {
     return BatchToolSettings();

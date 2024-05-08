@@ -35,10 +35,6 @@ Invert::Invert(QObject* const parent)
 {
 }
 
-Invert::~Invert()
-{
-}
-
 BatchToolSettings Invert::defaultSettings()
 {
     return BatchToolSettings();

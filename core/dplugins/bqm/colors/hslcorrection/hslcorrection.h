@@ -32,7 +32,7 @@ class HSLCorrection : public BatchTool
 public:
 
     explicit HSLCorrection(QObject* const parent = nullptr);
-    ~HSLCorrection()                                        override;
+    ~HSLCorrection()                                        override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    HSLSettings* m_settingsView;
+    HSLSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmHSLCorrectionPlugin

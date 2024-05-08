@@ -31,7 +31,7 @@ class Convert16to8 : public BatchTool
 public:
 
     explicit Convert16to8(QObject* const parent = nullptr);
-    ~Convert16to8()                                         override;
+    ~Convert16to8()                                         override = default;
 
     BatchToolSettings defaultSettings()                     override;
 

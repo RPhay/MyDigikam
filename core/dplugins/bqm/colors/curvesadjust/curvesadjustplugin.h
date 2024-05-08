@@ -35,7 +35,7 @@ class CurvesAdjustPlugin : public DPluginBqm
 public:
 
     explicit CurvesAdjustPlugin(QObject* const parent = nullptr);
-    ~CurvesAdjustPlugin()                override;
+    ~CurvesAdjustPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

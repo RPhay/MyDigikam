@@ -31,12 +31,7 @@ namespace DigikamBqmBWConvertPlugin
 {
 
 BWConvert::BWConvert(QObject* const parent)
-    : BatchTool(QLatin1String("BWConvert"), ColorTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-BWConvert::~BWConvert()
+    : BatchTool(QLatin1String("BWConvert"), ColorTool, parent)
 {
 }
 
