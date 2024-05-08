@@ -32,12 +32,7 @@ namespace DigikamBqmAntiVignettingPlugin
 {
 
 AntiVignetting::AntiVignetting(QObject* const parent)
-    : BatchTool(QLatin1String("AntiVignetting"), EnhanceTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-AntiVignetting::~AntiVignetting()
+    : BatchTool(QLatin1String("AntiVignetting"), EnhanceTool, parent)
 {
 }
 

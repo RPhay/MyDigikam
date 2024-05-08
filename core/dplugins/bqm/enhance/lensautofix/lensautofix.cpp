@@ -43,17 +43,12 @@ class Q_DECL_HIDDEN LensAutoFix::Private
 {
 public:
 
-    explicit Private()
-        : settingsView  (nullptr),
-          cameraSelector(nullptr),
-          changeSettings(true)
-    {
-    }
+    Private() = default;
 
-    LensFunSettings*       settingsView;
-    LensFunCameraSelector* cameraSelector;
+    LensFunSettings*       settingsView   = nullptr;
+    LensFunCameraSelector* cameraSelector = nullptr;
 
-    bool                   changeSettings;
+    bool                   changeSettings = true;
 };
 
 LensAutoFix::LensAutoFix(QObject* const parent)

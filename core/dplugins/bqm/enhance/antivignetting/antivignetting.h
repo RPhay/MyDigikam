@@ -32,7 +32,7 @@ class AntiVignetting : public BatchTool
 public:
 
     explicit AntiVignetting(QObject* const parent = nullptr);
-    ~AntiVignetting()                                       override;
+    ~AntiVignetting()                                       override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    AntiVignettingSettings* m_settingsView;
+    AntiVignettingSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmAntiVignettingPlugin

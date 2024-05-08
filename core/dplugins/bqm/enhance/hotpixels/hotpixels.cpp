@@ -33,12 +33,7 @@ namespace DigikamBqmHotPixelsPlugin
 {
 
 HotPixels::HotPixels(QObject* const parent)
-    : BatchTool(QLatin1String("HotPixels"), EnhanceTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-HotPixels::~HotPixels()
+    : BatchTool(QLatin1String("HotPixels"), EnhanceTool, parent)
 {
 }
 

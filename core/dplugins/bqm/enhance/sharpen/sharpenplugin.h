@@ -35,7 +35,7 @@ class SharpenPlugin : public DPluginBqm
 public:
 
     explicit SharpenPlugin(QObject* const parent = nullptr);
-    ~SharpenPlugin()                     override;
+    ~SharpenPlugin()                     override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

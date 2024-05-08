@@ -32,7 +32,7 @@ class HotPixels : public BatchTool
 public:
 
     explicit HotPixels(QObject* const parent = nullptr);
-    ~HotPixels()                                            override;
+    ~HotPixels()                                            override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    HotPixelSettings* m_settingsView;
+    HotPixelSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmHotPixelsPlugin

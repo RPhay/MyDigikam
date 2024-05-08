@@ -35,7 +35,7 @@ class HotPixelsPlugin : public DPluginBqm
 public:
 
     explicit HotPixelsPlugin(QObject* const parent = nullptr);
-    ~HotPixelsPlugin()                   override;
+    ~HotPixelsPlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

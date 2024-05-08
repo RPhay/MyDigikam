@@ -32,12 +32,7 @@ namespace DigikamBqmNoiseReductionPlugin
 {
 
 NoiseReduction::NoiseReduction(QObject* const parent)
-    : BatchTool     (QLatin1String("NoiseReduction"), EnhanceTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-NoiseReduction::~NoiseReduction()
+    : BatchTool     (QLatin1String("NoiseReduction"), EnhanceTool, parent)
 {
 }
 

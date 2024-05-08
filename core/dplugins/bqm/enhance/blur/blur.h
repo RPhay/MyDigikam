@@ -30,7 +30,7 @@ class Blur : public BatchTool
 public:
 
     explicit Blur(QObject* const parent = nullptr);
-    ~Blur()                                                 override;
+    ~Blur()                                                 override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -49,8 +49,8 @@ private Q_SLOTS:
 
 private:
 
-    DIntNumInput* m_radiusInput;
-    bool          m_changeSettings;
+    DIntNumInput* m_radiusInput     = nullptr;
+    bool          m_changeSettings  = true;
 };
 
 } // namespace DigikamBqmBlurPlugin

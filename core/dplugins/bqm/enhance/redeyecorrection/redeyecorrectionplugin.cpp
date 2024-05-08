@@ -37,10 +37,6 @@ RedEyeCorrectionPlugin::RedEyeCorrectionPlugin(QObject* const parent)
 {
 }
 
-RedEyeCorrectionPlugin::~RedEyeCorrectionPlugin()
-{
-}
-
 QString RedEyeCorrectionPlugin::name() const
 {
     return i18nc("@title", "Red Eye Correction");

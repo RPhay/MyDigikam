@@ -33,7 +33,7 @@ class RedEyeCorrection : public BatchTool
 public:
 
     explicit RedEyeCorrection(QObject* const parent = nullptr);
-    ~RedEyeCorrection()                                     override;
+    ~RedEyeCorrection()                                     override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -54,8 +54,8 @@ private Q_SLOTS:
 
 private:
 
-    RedEyeCorrectionFilter*   m_redEyeCFilter;
-    RedEyeCorrectionSettings* m_settingsView;
+    RedEyeCorrectionFilter*   m_redEyeCFilter = nullptr;
+    RedEyeCorrectionSettings* m_settingsView  = nullptr;
 };
 
 } // namespace DigikamBqmRedEyeCorrectionPlugin

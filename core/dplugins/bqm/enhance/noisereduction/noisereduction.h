@@ -32,7 +32,7 @@ class NoiseReduction : public BatchTool
 public:
 
     explicit NoiseReduction(QObject* const parent = nullptr);
-    ~NoiseReduction()                                       override;
+    ~NoiseReduction()                                       override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    NRSettings* m_settingsView;
+    NRSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmNoiseReductionPlugin

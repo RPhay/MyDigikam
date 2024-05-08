@@ -31,13 +31,7 @@ namespace DigikamBqmRedEyeCorrectionPlugin
 {
 
 RedEyeCorrection::RedEyeCorrection(QObject* const parent)
-    : BatchTool(QLatin1String("RedEyeCorrection"), EnhanceTool, parent),
-      m_redEyeCFilter(nullptr),
-      m_settingsView (nullptr)
-{
-}
-
-RedEyeCorrection::~RedEyeCorrection()
+    : BatchTool(QLatin1String("RedEyeCorrection"), EnhanceTool, parent)
 {
 }
 

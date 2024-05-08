@@ -31,7 +31,7 @@ class Sharpen : public BatchTool
 public:
 
     explicit Sharpen(QObject* const parent = nullptr);
-    ~Sharpen()                                              override;
+    ~Sharpen()                                              override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -50,7 +50,7 @@ private Q_SLOTS:
 
 private:
 
-    SharpSettings* m_settingsView;
+    SharpSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmSharpenPlugin

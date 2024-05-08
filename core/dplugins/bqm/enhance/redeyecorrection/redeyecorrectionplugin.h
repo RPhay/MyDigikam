@@ -35,7 +35,7 @@ class RedEyeCorrectionPlugin : public DPluginBqm
 public:
 
     explicit RedEyeCorrectionPlugin(QObject* const parent = nullptr);
-    ~RedEyeCorrectionPlugin()            override;
+    ~RedEyeCorrectionPlugin()            override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

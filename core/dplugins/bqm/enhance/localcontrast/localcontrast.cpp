@@ -32,12 +32,7 @@ namespace DigikamBqmLocalContrastPlugin
 {
 
 LocalContrast::LocalContrast(QObject* const parent)
-    : BatchTool(QLatin1String("LocalContrast"), EnhanceTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-LocalContrast::~LocalContrast()
+    : BatchTool(QLatin1String("LocalContrast"), EnhanceTool, parent)
 {
 }
 

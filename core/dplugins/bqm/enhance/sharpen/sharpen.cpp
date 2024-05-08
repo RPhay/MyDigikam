@@ -39,12 +39,7 @@ namespace DigikamBqmSharpenPlugin
 {
 
 Sharpen::Sharpen(QObject* const parent)
-    : BatchTool(QLatin1String("Sharpen"), EnhanceTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-Sharpen::~Sharpen()
+    : BatchTool(QLatin1String("Sharpen"), EnhanceTool, parent)
 {
 }
 

@@ -37,10 +37,6 @@ SharpenPlugin::SharpenPlugin(QObject* const parent)
 {
 }
 
-SharpenPlugin::~SharpenPlugin()
-{
-}
-
 QString SharpenPlugin::name() const
 {
     return i18nc("@title", "Sharpen Image");
@@ -89,7 +85,7 @@ QList<DPluginAuthor> SharpenPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2022"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 

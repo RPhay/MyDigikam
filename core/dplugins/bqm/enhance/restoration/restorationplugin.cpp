@@ -37,10 +37,6 @@ RestorationPlugin::RestorationPlugin(QObject* const parent)
 {
 }
 
-RestorationPlugin::~RestorationPlugin()
-{
-}
-
 QString RestorationPlugin::name() const
 {
     return i18nc("@title", "Restoration");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> RestorationPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2023"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 

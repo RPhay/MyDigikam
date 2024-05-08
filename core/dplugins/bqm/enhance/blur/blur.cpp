@@ -35,13 +35,7 @@ namespace DigikamBqmBlurPlugin
 {
 
 Blur::Blur(QObject* const parent)
-    : BatchTool(QLatin1String("Blur"), EnhanceTool, parent),
-      m_radiusInput   (nullptr),
-      m_changeSettings(true)
-{
-}
-
-Blur::~Blur()
+    : BatchTool(QLatin1String("Blur"), EnhanceTool, parent)
 {
 }
 

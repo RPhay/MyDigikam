@@ -32,7 +32,7 @@ class LocalContrast : public BatchTool
 public:
 
     explicit LocalContrast(QObject* const parent = nullptr);
-    ~LocalContrast()                                        override;
+    ~LocalContrast()                                        override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    LocalContrastSettings* m_settingsView;
+    LocalContrastSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmLocalContrastPlugin

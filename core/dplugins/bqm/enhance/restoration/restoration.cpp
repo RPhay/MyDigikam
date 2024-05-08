@@ -35,13 +35,7 @@ namespace DigikamBqmRestorationPlugin
 {
 
 Restoration::Restoration(QObject* const parent)
-    : BatchTool(QLatin1String("Restoration"), EnhanceTool, parent),
-      m_comboBox (nullptr),
-      m_cimgIface(nullptr)
-{
-}
-
-Restoration::~Restoration()
+    : BatchTool(QLatin1String("Restoration"), EnhanceTool, parent)
 {
 }
 

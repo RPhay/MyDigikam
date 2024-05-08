@@ -34,7 +34,7 @@ class Restoration : public BatchTool
 public:
 
     explicit Restoration(QObject* const parent = nullptr);
-    ~Restoration()                                          override;
+    ~Restoration()                                          override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -62,9 +62,9 @@ private:
         ReduceTexturing
     };
 
-    QComboBox*            m_comboBox;
+    QComboBox*            m_comboBox  = nullptr;
 
-    GreycstorationFilter* m_cimgIface;
+    GreycstorationFilter* m_cimgIface = nullptr;
 };
 
 } // namespace DigikamBqmRestorationPlugin
