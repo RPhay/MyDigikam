@@ -81,69 +81,40 @@ public:
 
 public:
 
-    explicit Private()
-      : textSettingsGroupBox                      (nullptr),
-        imageSettingsGroupBox                     (nullptr),
-        useAbsoluteImageSizeGroupBox              (nullptr),
-        useImageRadioButton                       (nullptr),
-        ignoreWatermarkAspectCheckBox             (nullptr),
-        addTransparencyToWatermarkImageCheckBox   (nullptr),
-        useAbsoluteSizeCheckBox                   (nullptr),
-        useBackgroundCheckBox                     (nullptr),
-        denseRepetitionCheckBox                   (nullptr),
-        randomizeRotationCheckBox                 (nullptr),
-        useTextRadioButton                        (nullptr),
-        imageFileUrlRequester                     (nullptr),
-        textEdit                                  (nullptr),
-        placementPositionComboBox                 (nullptr),
-        placementTypeComboBox                     (nullptr),
-        rotationComboBox                          (nullptr),
-        sparsityFactorSpinBox                     (nullptr),
-        extendedFontChooserWidget                 (nullptr),
-        fontColorButton                           (nullptr),
-        backgroundColorButton                     (nullptr),
-        textOpacity                               (nullptr),
-        backgroundOpacity                         (nullptr),
-        xMarginInput                              (nullptr),
-        yMarginInput                              (nullptr),
-        waterMarkSizePercent                      (nullptr),
-        waterMarkOpacityPercent                   (nullptr),
-        changeSettings                            (true)
-    {
-    }
+    Private() = default;
 
-    QGroupBox*       textSettingsGroupBox;
-    QGroupBox*       imageSettingsGroupBox;
-    QGroupBox*       useAbsoluteImageSizeGroupBox ;
-    QRadioButton*    useImageRadioButton;
-    QCheckBox*       ignoreWatermarkAspectCheckBox;
-    QCheckBox*       addTransparencyToWatermarkImageCheckBox;
-    QCheckBox*       useAbsoluteSizeCheckBox;
-    QCheckBox*       useBackgroundCheckBox;
-    QCheckBox*       denseRepetitionCheckBox;
-    QCheckBox*       randomizeRotationCheckBox;
-    QRadioButton*    useTextRadioButton;
+    QGroupBox*       textSettingsGroupBox                       = nullptr;
+    QGroupBox*       imageSettingsGroupBox                      = nullptr;
+    QGroupBox*       useAbsoluteImageSizeGroupBox               = nullptr;
+    QRadioButton*    useImageRadioButton                        = nullptr;
+    QCheckBox*       ignoreWatermarkAspectCheckBox              = nullptr;
+    QCheckBox*       addTransparencyToWatermarkImageCheckBox    = nullptr;
+    QCheckBox*       useAbsoluteSizeCheckBox                    = nullptr;
+    QCheckBox*       useBackgroundCheckBox                      = nullptr;
+    QCheckBox*       denseRepetitionCheckBox                    = nullptr;
+    QCheckBox*       randomizeRotationCheckBox                  = nullptr;
+    QRadioButton*    useTextRadioButton                         = nullptr;
 
-    DFileSelector*   imageFileUrlRequester;
-    DTextEdit*       textEdit;
+    DFileSelector*   imageFileUrlRequester                      = nullptr;
+    DTextEdit*       textEdit                                   = nullptr;
 
-    QComboBox*       placementPositionComboBox;
-    QComboBox*       placementTypeComboBox;
-    QComboBox*       rotationComboBox;
-    QDoubleSpinBox*  sparsityFactorSpinBox;
-    DFontProperties* extendedFontChooserWidget;
+    QComboBox*       placementPositionComboBox                  = nullptr;
+    QComboBox*       placementTypeComboBox                      = nullptr;
+    QComboBox*       rotationComboBox                           = nullptr;
+    QDoubleSpinBox*  sparsityFactorSpinBox                      = nullptr;
+    DFontProperties* extendedFontChooserWidget                  = nullptr;
 
-    DColorSelector*  fontColorButton;
-    DColorSelector*  backgroundColorButton;
+    DColorSelector*  fontColorButton                            = nullptr;
+    DColorSelector*  backgroundColorButton                      = nullptr;
 
-    DIntNumInput*    textOpacity;
-    DIntNumInput*    backgroundOpacity;
-    DIntNumInput*    xMarginInput;
-    DIntNumInput*    yMarginInput;
-    DIntNumInput*    waterMarkSizePercent;
-    DIntNumInput*    waterMarkOpacityPercent;
+    DIntNumInput*    textOpacity                                = nullptr;
+    DIntNumInput*    backgroundOpacity                          = nullptr;
+    DIntNumInput*    xMarginInput                               = nullptr;
+    DIntNumInput*    yMarginInput                               = nullptr;
+    DIntNumInput*    waterMarkSizePercent                       = nullptr;
+    DIntNumInput*    waterMarkOpacityPercent                    = nullptr;
 
-    bool             changeSettings;
+    bool             changeSettings                             = true;
 };
 
 WaterMark::WaterMark(QObject* const parent)
@@ -663,7 +634,7 @@ bool WaterMark::toolOperations()
     double opacity                               = settings()[QLatin1String("Opacity")].toInt()/100.0;
     bool addTransparency                         = settings()[QLatin1String("Add transparency")].toBool();
 
-    DImg::ANGLE rotationAngle = (rotationIndex == 1) ? DImg::ANGLE::ROT90 :
+    DImg::ANGLE rotationAngle = (rotationIndex == 1) ? DImg::ANGLE::ROT90  :
                                 (rotationIndex == 2) ? DImg::ANGLE::ROT180 :
                                 (rotationIndex == 3) ? DImg::ANGLE::ROT270 :
                                                        DImg::ANGLE::ROTNONE;

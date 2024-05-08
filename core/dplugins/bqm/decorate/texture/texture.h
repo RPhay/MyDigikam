@@ -32,7 +32,7 @@ class Texture : public BatchTool
 public:
 
     explicit Texture(QObject* const parent = nullptr);
-    ~Texture()                                              override;
+    ~Texture()                                              override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    TextureSettings* m_settingsView;
+    TextureSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmTexturePlugin

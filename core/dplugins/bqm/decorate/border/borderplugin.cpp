@@ -37,10 +37,6 @@ BorderPlugin::BorderPlugin(QObject* const parent)
 {
 }
 
-BorderPlugin::~BorderPlugin()
-{
-}
-
 QString BorderPlugin::name() const
 {
     return i18nc("@title", "Add Border");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> BorderPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2022"))
+                             QString::fromUtf8("(C) 2010-2024"))
             ;
 }
 

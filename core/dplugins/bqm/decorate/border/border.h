@@ -32,7 +32,7 @@ class Border : public BatchTool
 public:
 
     explicit Border(QObject* const parent = nullptr);
-    ~Border()                                               override;
+    ~Border()                                               override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    BorderSettings* m_settingsView;
+    BorderSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmBorderPlugin

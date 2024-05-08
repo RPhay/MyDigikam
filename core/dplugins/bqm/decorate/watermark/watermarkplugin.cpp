@@ -37,10 +37,6 @@ WaterMarkPlugin::WaterMarkPlugin(QObject* const parent)
 {
 }
 
-WaterMarkPlugin::~WaterMarkPlugin()
-{
-}
-
 QString WaterMarkPlugin::name() const
 {
     return i18nc("@title", "Add Watermark");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> WaterMarkPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2022"))
+                             QString::fromUtf8("(C) 2009-2024"))
             << DPluginAuthor(QString::fromUtf8("Mikkel Baekhoej Christensen"),
                              QString::fromUtf8("mbc at baekhoej dot dk"),
                              QString::fromUtf8("(C) 2010"))

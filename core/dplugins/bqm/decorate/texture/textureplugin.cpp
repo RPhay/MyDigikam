@@ -37,10 +37,6 @@ TexturePlugin::TexturePlugin(QObject* const parent)
 {
 }
 
-TexturePlugin::~TexturePlugin()
-{
-}
-
 QString TexturePlugin::name() const
 {
     return i18nc("@title", "Add Texture");
@@ -89,7 +85,7 @@ QList<DPluginAuthor> TexturePlugin::authors() const
                              QString::fromUtf8("(C) 2006-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2022"))
+                             QString::fromUtf8("(C) 2005-2024"))
             ;
 }
 

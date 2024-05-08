@@ -32,12 +32,7 @@ namespace DigikamBqmTexturePlugin
 {
 
 Texture::Texture(QObject* const parent)
-    : BatchTool(QLatin1String("Texture"), DecorateTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-Texture::~Texture()
+    : BatchTool(QLatin1String("Texture"), DecorateTool, parent)
 {
 }
 

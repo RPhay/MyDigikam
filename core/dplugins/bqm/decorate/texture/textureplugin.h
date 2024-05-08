@@ -35,7 +35,7 @@ class TexturePlugin : public DPluginBqm
 public:
 
     explicit TexturePlugin(QObject* const parent = nullptr);
-    ~TexturePlugin()                     override;
+    ~TexturePlugin()                     override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

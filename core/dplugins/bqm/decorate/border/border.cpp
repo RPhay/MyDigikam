@@ -32,12 +32,7 @@ namespace DigikamBqmBorderPlugin
 {
 
 Border::Border(QObject* const parent)
-    : BatchTool(QLatin1String("Border"), DecorateTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-Border::~Border()
+    : BatchTool(QLatin1String("Border"), DecorateTool, parent)
 {
 }
 
