@@ -37,10 +37,6 @@ UserScriptPlugin::UserScriptPlugin(QObject* const parent)
 {
 }
 
-UserScriptPlugin::~UserScriptPlugin()
-{
-}
-
 QString UserScriptPlugin::name() const
 {
     return i18nc("@title", "User Shell Script");

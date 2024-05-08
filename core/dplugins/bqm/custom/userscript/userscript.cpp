@@ -61,17 +61,12 @@ public:
 
 public:
 
-    explicit Private()
-      : comboBox      (nullptr),
-        textEdit      (nullptr),
-        changeSettings(true)
-    {
-    }
+    Private() = default;
 
-    DComboBox*      comboBox;
-    QPlainTextEdit* textEdit;
+    DComboBox*      comboBox        = nullptr;
+    QPlainTextEdit* textEdit        = nullptr;
 
-    bool            changeSettings;
+    bool            changeSettings  = true;
 };
 
 UserScript::UserScript(QObject* const parent)
