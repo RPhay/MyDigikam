@@ -41,7 +41,6 @@ namespace DigikamGenericPresentationPlugin
 PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent,
                                                PresentationContainer* const sharedData)
     : QWidget     (parent),
-      m_canHide   (true),
       m_sharedData(sharedData)
 {
     setupUi(this);
@@ -86,10 +85,6 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent,
             this, SLOT(slotMoveToTrash()));
 
     slotPlayButtonToggled();
-}
-
-PresentationCtrlWidget::~PresentationCtrlWidget()
-{
 }
 
 bool PresentationCtrlWidget::canHide() const

@@ -40,8 +40,6 @@ KBEffect::KBEffect(PresentationKB* const parent, bool needFadeIn)
     : m_needFadeIn (needFadeIn),
       m_slideWidget(parent)
 {
-    m_img[0] = nullptr;
-    m_img[1] = nullptr;
 }
 
 void KBEffect::setupNewImage(int img)
@@ -91,10 +89,6 @@ FadeKBEffect::FadeKBEffect(PresentationKB* const parent, bool needFadeIn)
     m_img[0] = image(0);
 }
 
-FadeKBEffect::~FadeKBEffect()
-{
-}
-
 bool FadeKBEffect::done()
 {
     if (m_img[0]->m_pos >= 1.0)
@@ -136,11 +130,6 @@ BlendKBEffect::BlendKBEffect(PresentationKB* const parent, bool needFadeIn)
     : KBEffect(parent, needFadeIn)
 {
     m_img[0] = image(0);
-    m_img[1] = nullptr;
-}
-
-BlendKBEffect::~BlendKBEffect()
-{
 }
 
 bool BlendKBEffect::done()

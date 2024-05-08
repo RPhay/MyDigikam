@@ -39,10 +39,10 @@ public:
 
     explicit PresentationCtrlWidget(QWidget* const parent,
                                     PresentationContainer* const sharedData);
-    ~PresentationCtrlWidget()            override;
+    ~PresentationCtrlWidget()             override = default;
 
-    bool canHide()  const;
-    bool isPaused() const;
+    bool canHide()                  const;
+    bool isPaused()                 const;
     void setPaused(bool val);
 
     void setEnabledPlay(bool val);
@@ -71,8 +71,8 @@ private Q_SLOTS:
 
 private:
 
-    bool                    m_canHide;
-    PresentationContainer*  m_sharedData;
+    bool                    m_canHide       = true;
+    PresentationContainer*  m_sharedData    = nullptr;
 
     friend class PresentationWidget;
     friend class PresentationGL;

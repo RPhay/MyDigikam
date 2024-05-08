@@ -34,7 +34,7 @@ public:
 
     explicit PresentationAdvPage(QWidget* const parent,
                                  PresentationContainer* const sharedData);
-    ~PresentationAdvPage() override;
+    ~PresentationAdvPage() override = default;
 
     void readSettings();
     void saveSettings();

@@ -67,117 +67,72 @@ class Q_DECL_HIDDEN PresentationWidget::Private
 
 public:
 
-    explicit Private()
-      : sharedData      (nullptr),
-        imageLoader     (nullptr),
+    Private() = default;
 
-#ifdef HAVE_MEDIAPLAYER
-
-        playbackWidget  (nullptr),
-        videoView       (nullptr),
-
-#endif
-
-        timer           (nullptr),
-        fileIndex       (0),
-        effect          (nullptr),
-        effectRunning   (false),
-        x               (0),
-        y               (0),
-        w               (0),
-        h               (0),
-        dx              (0),
-        dy              (0),
-        ix              (0),
-        iy              (0),
-        i               (0),
-        j               (0),
-        subType         (0),
-        x0              (0),
-        y0              (0),
-        x1              (0),
-        y1              (0),
-        wait            (0),
-        fx              (0),
-        fy              (0),
-        alpha           (0),
-        fd              (0),
-        intArray        (nullptr),
-        pdone           (0),
-        pixelMatrix     (nullptr),
-        slideCtrlWidget (nullptr),
-        mouseMoveTimer  (nullptr),
-        deskX           (0),
-        deskY           (0),
-        deskWidth       (0),
-        deskHeight      (0)
-    {
-    }
-
-    PresentationContainer*      sharedData;
+    PresentationContainer*      sharedData      = nullptr;
 
     // -------------------------
 
     QMap<QString, EffectMethod> Effects;
 
-    PresentationLoader*         imageLoader;
+    PresentationLoader*         imageLoader     = nullptr;
     QPixmap                     currImage;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    PresentationAudioWidget*    playbackWidget;
-    SlideVideo*                 videoView;
+    PresentationAudioWidget*    playbackWidget  = nullptr;
+    SlideVideo*                 videoView       = nullptr;
 
 #endif
 
-    QTimer*                     timer;
-    int                         fileIndex;
+    QTimer*                     timer           = nullptr;
+    int                         fileIndex       = 0;
 
-    EffectMethod                effect;
-    bool                        effectRunning;
+    EffectMethod                effect          = nullptr;
+    bool                        effectRunning   = false;
     QString                     effectName;
 
     /// values for state of various effects
-    int                         x;
-    int                         y;
-    int                         w;
-    int                         h;
-    int                         dx;
-    int                         dy;
-    int                         ix;
-    int                         iy;
-    int                         i;
-    int                         j;
-    int                         subType;
-    int                         x0;
-    int                         y0;
-    int                         x1;
-    int                         y1;
-    int                         wait;
-    double                      fx;
-    double                      fy;
-    double                      alpha;
-    double                      fd;
-    int*                        intArray;
-    bool                        pdone;
-    bool**                      pixelMatrix;
+    int                         x               = 0;
+    int                         y               = 0;
+    int                         w               = 0;
+    int                         h               = 0;
+    int                         dx              = 0;
+    int                         dy              = 0;
+    int                         ix              = 0;
+    int                         iy              = 0;
+    int                         i               = 0;
+    int                         j               = 0;
+    int                         subType         = 0;
+    int                         x0              = 0;
+    int                         y0              = 0;
+    int                         x1              = 0;
+    int                         y1              = 0;
+    int                         wait            = 0;
+    double                      fx              = 0.0;
+    double                      fy              = 0.0;
+    double                      alpha           = 0.0;
+    double                      fd              = 0.0;
+    int*                        intArray        = nullptr;
+    bool                        pdone           = false;
+    bool**                      pixelMatrix     = nullptr;
 
     /// static
     QPolygon                    pa;
 
-    PresentationCtrlWidget*     slideCtrlWidget;
-    QTimer*                     mouseMoveTimer;
+    PresentationCtrlWidget*     slideCtrlWidget = nullptr;
+    QTimer*                     mouseMoveTimer  = nullptr;
 
-    int                         deskX;
-    int                         deskY;
-    int                         deskWidth;
-    int                         deskHeight;
+    int                         deskX           = 0;
+    int                         deskY           = 0;
+    int                         deskWidth       = 0;
+    int                         deskHeight      = 0;
+    QRandomGenerator*           randomGenerator = QRandomGenerator::global();
 };
 
 PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     : QWidget(),
-      d      (new Private),
-      randomGenerator(QRandomGenerator::global())
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -277,10 +232,6 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     d->effect        = nullptr;
     d->effectRunning = false;
     d->intArray      = nullptr;
-    m_endOfShow      = false;
-    m_simplyShow     = false;
-    m_startPainter   = false;
-    m_firstPainter   = true;
     d->timer         = new QTimer(this);
 
     connect(d->timer, SIGNAL(timeout()),
@@ -739,8 +690,10 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
 
     QPoint pos(e->pos());
 
-    if ((pos.y() > 20)                     &&
-        (pos.y() < (d->deskHeight - 20 - 1)))
+    if (
+        (pos.y() > 20)                     &&
+        (pos.y() < (d->deskHeight - 20 - 1))
+       )
     {
         if (!d->slideCtrlWidget->canHide()
 
@@ -797,7 +750,8 @@ void PresentationWidget::slotMouseMoveTimeOut()
 {
     QPoint pos(QCursor::pos());
 
-    if ((pos.y() < 20)                       ||
+    if (
+        (pos.y() < 20)                       ||
         (pos.y() > (d->deskHeight - 20 - 1)) ||
         !d->timer->isActive()                ||
         d->slideCtrlWidget->underMouse()
@@ -1114,7 +1068,7 @@ PresentationWidget::EffectMethod PresentationWidget::getRandomEffect()
     QStringList effs = d->Effects.keys();
     effs.removeAt(effs.indexOf(QLatin1String("None")));
 
-    int i            = randomGenerator->bounded(effs.count());
+    int i            = d->randomGenerator->bounded(effs.count());
     QString key      = effs[i];
     d->effectName    = key;
 
@@ -1205,7 +1159,7 @@ int PresentationWidget::effectMeltdown(bool aInit)
 
         d->pdone = false;
 
-        if (randomGenerator->bounded(16U) < 6)
+        if (d->randomGenerator->bounded(16U) < 6)
         {
             continue;
         }
@@ -1240,7 +1194,7 @@ int PresentationWidget::effectSweep(bool aInit)
         // subtype: 0=sweep right to left, 1=sweep left to right
         //          2=sweep bottom to top, 3=sweep top to bottom
 
-        d->subType = randomGenerator->bounded(4);
+        d->subType = d->randomGenerator->bounded(4);
         d->w       = width();
         d->h       = height();
         d->dx      = ((d->subType == 1) ? 16 : -16);
@@ -1253,7 +1207,7 @@ int PresentationWidget::effectSweep(bool aInit)
     {
         // horizontal sweep
 
-        if (((d->subType == 0) && (d->x < -64)) || ((d->subType == 1) && (d->x > d->w + 64)))
+        if (((d->subType == 0) && (d->x < -64)) || ((d->subType == 1) && (d->x > (d->w + 64))))
         {
             showCurrentImage();
             return -1;
@@ -1345,9 +1299,9 @@ int PresentationWidget::effectMosaic(bool aInit)
 
     QPainter bufferPainter(&m_buffer);
 
-    for (int x = 0 ; x < w ; x += randomGenerator->bounded(margin, margin+dim))
+    for (int x = 0 ; x < w ; x += d->randomGenerator->bounded(margin, margin+dim))
     {
-        for (int y = 0 ; y < h ; y += randomGenerator->bounded(margin, margin+dim))
+        for (int y = 0 ; y < h ; y += d->randomGenerator->bounded(margin, margin+dim))
         {
             if (d->pixelMatrix[x][y] == true)
             {
@@ -1397,16 +1351,16 @@ int PresentationWidget::effectCubism(bool aInit)
     QPainterPath painterPath;
     QPainter bufferPainter(&m_buffer);
 
-    d->x   = randomGenerator->bounded(d->w);
-    d->y   = randomGenerator->bounded(d->h);
-    int r  = randomGenerator->bounded(100, 200);
+    d->x   = d->randomGenerator->bounded(d->w);
+    d->y   = d->randomGenerator->bounded(d->h);
+    int r  = d->randomGenerator->bounded(100, 200);
     m_px   = d->x - r;
     m_py   = d->y - r;
     m_psx  = r;
     m_psy  = r;
 
     QTransform transform;
-    transform.rotate(randomGenerator->bounded(-10, 10));
+    transform.rotate(d->randomGenerator->bounded(-10, 10));
     QRect rect(m_px, m_py, m_psx, m_psy);
     bufferPainter.setTransform(transform);
     bufferPainter.fillRect(rect, QBrush(d->currImage));
@@ -1561,7 +1515,7 @@ int PresentationWidget::effectMultiCircleOut(bool aInit)
         d->pa.setPoint(0, d->w >> 1, d->h >> 1);
         d->pa.setPoint(3, d->w >> 1, d->h >> 1);
         d->fy    = sqrt((double)d->w * d->w + d->h * d->h) / 2;
-        d->i     = randomGenerator->bounded(2, 17);
+        d->i     = d->randomGenerator->bounded(2, 17);
         d->fd    = M_PI * 2 / d->i;
         d->alpha = d->fd;
         d->wait  = 10 * d->i;
@@ -1737,9 +1691,9 @@ int PresentationWidget::effectBlobs(bool aInit)
         return -1;
     }
 
-    d->x   = randomGenerator->bounded(d->w);
-    d->y   = randomGenerator->bounded(d->h);
-    r      = randomGenerator->bounded(50, 250);
+    d->x   = d->randomGenerator->bounded(d->w);
+    d->y   = d->randomGenerator->bounded(d->h);
+    r      = d->randomGenerator->bounded(50, 250);
     m_px   = d->x - r;
     m_py   = d->y - r;
     m_psx  = r;

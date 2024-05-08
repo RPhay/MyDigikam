@@ -39,10 +39,6 @@ PresentationCaptionPage::PresentationCaptionPage(QWidget* const parent,
     m_fontSampleLbl->setAutoFillBackground(true);
 }
 
-PresentationCaptionPage::~PresentationCaptionPage()
-{
-}
-
 void PresentationCaptionPage::readSettings()
 {
     connect(m_commentsFontColor, SIGNAL(signalColorSelected(QColor)),

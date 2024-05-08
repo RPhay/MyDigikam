@@ -72,88 +72,52 @@ class Q_DECL_HIDDEN PresentationGL::Private
 
 public:
 
-    explicit Private()
-      : timer           (nullptr),
-        fileIndex       (0),
-        imageLoader     (nullptr),
-        tex1First       (true),
-        curr            (0),
-        width           (0),
-        height          (0),
-        xMargin         (0),
-        yMargin         (0),
-        effect          (nullptr),
-        effectRunning   (false),
-        timeout         (0),
-        random          (false),
-        endOfShow       (false),
-        i               (0),
-        dir             (0),
-        slideCtrlWidget (nullptr),
-
-#ifdef HAVE_MEDIAPLAYER
-
-        playbackWidget  (nullptr),
-
-#endif
-
-        mouseMoveTimer  (nullptr),
-        deskX           (0),
-        deskY           (0),
-        deskWidth       (0),
-        deskHeight      (0),
-        sharedData      (nullptr),
-        randomGenerator (QRandomGenerator::global())
-    {
-        texture[0] = nullptr;
-        texture[1] = nullptr;
-        texture[2] = nullptr;
-    }
+    Private() = default;
 
     QMap<QString, EffectMethod>       effects;
 
-    QTimer*                           timer;
-    int                               fileIndex;
+    QTimer*                           timer             = nullptr;
+    int                               fileIndex         = 0;
 
-    PresentationLoader*               imageLoader;
-    QOpenGLTexture*                   texture[3];
-    bool                              tex1First;
-    int                               curr;
+    PresentationLoader*               imageLoader       = nullptr;
+    QOpenGLTexture*                   texture[3]        = { nullptr };
+    bool                              tex1First         = true;
+    int                               curr              = 0;
 
-    int                               width;
-    int                               height;
-    int                               xMargin;
-    int                               yMargin;
+    int                               width             = 0;
+    int                               height            = 0;
+    int                               xMargin           = 0;
+    int                               yMargin           = 0;
 
 
-    EffectMethod                      effect;
-    bool                              effectRunning;
-    int                               timeout;
-    bool                              random;
-    bool                              endOfShow;
+    EffectMethod                      effect            = nullptr;
+    bool                              effectRunning     = false;
+    int                               timeout           = 0;
+    bool                              random            = false;
+    bool                              endOfShow         = false;
 
-    int                               i;
-    int                               dir;
+    int                               i                 = 0;
+    int                               dir               = 0;
     float                             points[40][40][3] = { { { 0.0 } } };
 
-    PresentationCtrlWidget*           slideCtrlWidget;
+    PresentationCtrlWidget*           slideCtrlWidget   = nullptr;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    PresentationAudioWidget*          playbackWidget;
+    PresentationAudioWidget*          playbackWidget    = nullptr;
 
 #endif
 
-    QTimer*                           mouseMoveTimer;
+    QTimer*                           mouseMoveTimer    = nullptr;
 
-    int                               deskX;
-    int                               deskY;
-    int                               deskWidth;
-    int                               deskHeight;
+    int                               deskX             = 0;
+    int                               deskY             = 0;
+    int                               deskWidth         = 0;
+    int                               deskHeight        = 0;
 
-    PresentationContainer*            sharedData;
+    PresentationContainer*            sharedData        = nullptr;
 
-    QRandomGenerator*                 randomGenerator;
+    QRandomGenerator*                 randomGenerator   = QRandomGenerator::global();
 };
 
 PresentationGL::PresentationGL(PresentationContainer* const sharedData)
@@ -238,8 +202,8 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
     // -- Margin -------------------------------------------
 
-    d->xMargin      = int (d->deskWidth / d->width);
-    d->yMargin      = int (d->deskWidth / d->height);
+    d->xMargin      = int(d->deskWidth / d->width);
+    d->yMargin      = int(d->deskWidth / d->height);
 
     // ------------------------------------------------------------------
 

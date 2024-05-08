@@ -62,9 +62,7 @@ public:
     {
     }
 
-    ~LoadThread() override
-    {
-    }
+    ~LoadThread() override = default;
 
 protected:
 
@@ -111,13 +109,13 @@ private:
 
 private:
 
-    QMutex*       m_imageLock;
-    LoadedImages* m_loadedImages;
-    QWidget*      m_display;
+    QMutex*       m_imageLock       = nullptr;
+    LoadedImages* m_loadedImages    = nullptr;
+    QWidget*      m_display         = nullptr;
     QUrl          m_path;
     QString       m_filename;
-    int           m_swidth;
-    int           m_sheight;
+    int           m_swidth          = 0;
+    int           m_sheight         = 0;
 };
 
 typedef QMap<QUrl, LoadThread*> LoadingThreads;
@@ -129,30 +127,19 @@ class Q_DECL_HIDDEN PresentationLoader::Private
 
 public:
 
-    explicit Private()
-      : sharedData      (nullptr),
-        loadingThreads  (nullptr),
-        loadedImages    (nullptr),
-        imageLock       (nullptr),
-        threadLock      (nullptr),
-        cacheSize       (0),
-        currIndex       (0),
-        swidth          (0),
-        sheight         (0)
-    {
-    }
+    Private() = default;
 
-    PresentationContainer* sharedData;
-    LoadingThreads*        loadingThreads;
-    LoadedImages*          loadedImages;
+    PresentationContainer* sharedData       = nullptr;
+    LoadingThreads*        loadingThreads   = nullptr;
+    LoadedImages*          loadedImages     = nullptr;
 
-    QMutex*                imageLock;
-    QMutex*                threadLock;
+    QMutex*                imageLock        = nullptr;
+    QMutex*                threadLock       = nullptr;
 
-    uint                   cacheSize;
-    int                    currIndex;
-    int                    swidth;
-    int                    sheight;
+    uint                   cacheSize        = 0;
+    int                    currIndex        = 0;
+    int                    swidth           = 0;
+    int                    sheight          = 0;
 };
 
 PresentationLoader::PresentationLoader(PresentationContainer* const sharedData,
@@ -227,8 +214,13 @@ PresentationLoader::~PresentationLoader()
 
 void PresentationLoader::next()
 {
-    int victim   = (d->currIndex - (d->cacheSize % 2 == 0 ? (d->cacheSize / 2) - 1
-                                                          :  int(d->cacheSize / 2))) % d->sharedData->urlList.count();
+    int victim   = (
+                    d->currIndex - 
+                    (
+                     ((d->cacheSize % 2) == 0) ? (d->cacheSize / 2) - 1
+                                               : int(d->cacheSize / 2)
+                    )
+                   ) % d->sharedData->urlList.count();
 
     int newBorn  = (d->currIndex + int(d->cacheSize / 2) + 1) % d->sharedData->urlList.count();
     d->currIndex = (d->currIndex + 1) % d->sharedData->urlList.count();
@@ -270,8 +262,13 @@ void PresentationLoader::next()
 void PresentationLoader::prev()
 {
     int victim   = (d->currIndex + int(d->currIndex / 2)) % d->sharedData->urlList.count();
-    int newBorn  = (d->currIndex - ((d->cacheSize & 2) == 0 ? (d->cacheSize / 2)
-                                                            : int(d->cacheSize / 2) + 1)) % d->sharedData->urlList.count();
+    int newBorn  = (
+                    d->currIndex -
+                    (
+                     ((d->cacheSize & 2) == 0) ? (d->cacheSize / 2)
+                                               : int(d->cacheSize / 2) + 1
+                    )
+                   ) % d->sharedData->urlList.count();
 
     d->currIndex = d->currIndex > 0 ? d->currIndex - 1 : d->sharedData->urlList.count() - 1;
 

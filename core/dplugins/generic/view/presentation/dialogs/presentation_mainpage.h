@@ -51,7 +51,7 @@ public:
 
     void removeImageFromList(const QUrl& url);
 
-Q_SIGNALS :
+Q_SIGNALS:
 
     void signalTotalTimeChanged(const QTime&);
 

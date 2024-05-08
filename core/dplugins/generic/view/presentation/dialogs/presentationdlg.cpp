@@ -53,18 +53,12 @@ class Q_DECL_HIDDEN PresentationDlg::Private
 
 public:
 
-    explicit Private()
-      : buttonBox   (nullptr),
-        startButton (nullptr),
-        tab         (nullptr),
-        sharedData  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox*      buttonBox;
-    QPushButton*           startButton;
-    QTabWidget*            tab;
-    PresentationContainer* sharedData;
+    QDialogButtonBox*      buttonBox    = nullptr;
+    QPushButton*           startButton  = nullptr;
+    QTabWidget*            tab          = nullptr;
+    PresentationContainer* sharedData   = nullptr;
 };
 
 PresentationDlg::PresentationDlg(QWidget* const parent,

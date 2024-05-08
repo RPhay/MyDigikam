@@ -66,7 +66,7 @@ protected:
 
     static int      m_numKBEffectRepeated;
     bool            m_needFadeIn  = false;
-    KBImage*        m_img[2];
+    KBImage*        m_img[2]      = { nullptr };
 
 private:
 
@@ -85,7 +85,7 @@ class FadeKBEffect: public KBEffect
 public:
 
     explicit FadeKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    ~FadeKBEffect()              override;
+    ~FadeKBEffect()              override = default;
 
     Type type()                  override
     {
@@ -108,7 +108,7 @@ class BlendKBEffect: public KBEffect
 public:
 
     explicit BlendKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    ~BlendKBEffect()             override;
+    ~BlendKBEffect()             override = default;
 
     Type type()                  override
     {

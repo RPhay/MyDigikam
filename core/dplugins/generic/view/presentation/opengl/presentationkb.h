@@ -52,9 +52,9 @@ class KBViewTrans
 
 public:
 
+    KBViewTrans()  = default;
     KBViewTrans(bool zoomIn, float relAspect);
-    KBViewTrans();
-    ~KBViewTrans();
+    ~KBViewTrans() = default;
 
     float transX(float pos) const;
     float transY(float pos) const;
@@ -70,14 +70,15 @@ private:
 private:
 
     /// delta and scale values (begin to end) and the needed offsets
-    double m_deltaX;
-    double m_deltaY;
-    double m_deltaScale;
-    double m_baseScale;
-    double m_baseX;
-    double m_baseY;
-    float  m_xScale;
-    float  m_yScale;
+
+    double m_deltaX     = 0.0;
+    double m_deltaY     = 0.0;
+    double m_deltaScale = 0.0;
+    double m_baseScale  = 0.0;
+    double m_baseX      = 0.0;
+    double m_baseY      = 0.0;
+    float  m_xScale     = 0.0F;
+    float  m_yScale     = 0.0F;
 };
 
 // -------------------------------------------------------------------------
@@ -92,12 +93,12 @@ public:
 
 public:
 
-    KBViewTrans*    m_viewTrans;
-    float           m_aspect;
-    float           m_pos;
-    float           m_opacity;
-    bool            m_paint;
-    QOpenGLTexture* m_texture;
+    KBViewTrans*    m_viewTrans = nullptr;
+    float           m_aspect    = 0.0F;
+    float           m_pos       = 0.0F;
+    float           m_opacity   = 0.0F;
+    bool            m_paint     = false;
+    QOpenGLTexture* m_texture   = nullptr;
 };
 
 // -------------------------------------------------------------------------

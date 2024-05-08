@@ -86,14 +86,14 @@ protected:
 
 protected:
 
-    bool    m_simplyShow;
-    bool    m_startPainter;
-    bool    m_firstPainter;
-    int     m_px;
-    int     m_py;
-    int     m_psx;
-    int     m_psy;
-    bool    m_endOfShow;
+    bool    m_simplyShow    = false;
+    bool    m_startPainter  = false;
+    bool    m_firstPainter  = true;
+    int     m_px            = 0;
+    int     m_py            = 0;
+    int     m_psx           = 0;
+    int     m_psy           = 0;
+    bool    m_endOfShow     = false;
     QPixmap m_buffer;
 
 private Q_SLOTS:
@@ -135,7 +135,6 @@ private:
 
     class Private;
     Private* const d = nullptr;
-    QRandomGenerator *randomGenerator;
 };
 
 } // namespace DigikamGenericPresentationPlugin

@@ -44,14 +44,6 @@ namespace DigikamGenericPresentationPlugin
 {
 
 KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
-    : m_deltaX      (0.0),
-      m_deltaY      (0.0),
-      m_deltaScale  (0.0),
-      m_baseScale   (0.0),
-      m_baseX       (0.0),
-      m_baseY       (0.0),
-      m_xScale      (0.0),
-      m_yScale      (0.0)
 {
     int i        = 0;
 
@@ -82,7 +74,7 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     double y[2]       = { 0.0 };
     double xMargin[2] = { 0.0 };
     double yMargin[2] = { 0.0 };
-    double bestDist   = 0.0;;
+    double bestDist   = 0.0;
     double sx         = 0.0;
     double sy         = 0.0;
 
@@ -131,22 +123,6 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     while ((bestDist < 0.3) && (++i < 10));
 }
 
-KBViewTrans::KBViewTrans()
-    : m_deltaX      (0.0),
-      m_deltaY      (0.0),
-      m_deltaScale  (0.0),
-      m_baseScale   (0.0),
-      m_baseX       (0.0),
-      m_baseY       (0.0),
-      m_xScale      (0.0),
-      m_yScale      (0.0)
-{
-}
-
-KBViewTrans::~KBViewTrans()
-{
-}
-
 float KBViewTrans::transX(float pos) const
 {
     return (m_baseX + m_deltaX * pos);
@@ -185,11 +161,8 @@ double KBViewTrans::rndSign() const
 // -------------------------------------------------------------------------
 
 KBImage::KBImage(KBViewTrans* const viewTrans, float aspect)
-    : m_viewTrans   (viewTrans),
-      m_aspect      (aspect),
-      m_pos         (0.0),
-      m_opacity     (0.0),
-      m_texture     (nullptr)
+    : m_viewTrans(viewTrans),
+      m_aspect   (aspect)
 {
     m_paint = (m_viewTrans) ? true : false;
 }
@@ -463,6 +436,7 @@ void PresentationKB::startSlideShowOnce()
 {
     // when the image loader thread is ready, it will already have loaded
     // the first image
+
     if ((d->initialized == false) && d->imageLoadThread->ready())
     {
         setupNewImage(0);                      // setup the first image and
@@ -731,8 +705,10 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
 
     QPoint pos(e->pos());
 
-    if ((pos.y() > 20)                     &&
-        (pos.y() < (d->deskHeight - 20 - 1)))
+    if (
+        (pos.y() > 20)                     &&
+        (pos.y() < (d->deskHeight - 20 - 1))
+       )
     {
         if (d->playbackWidget->isHidden())
         {
@@ -760,8 +736,10 @@ void PresentationKB::slotMouseMoveTimeOut()
 {
     QPoint pos(QCursor::pos());
 
-    if ((pos.y() < 20)                    ||
-        (pos.y() > (d->deskHeight - 20 - 1))
+    if (
+        (pos.y() < 20)                    ||
+        (pos.y() > (d->deskHeight - 20 - 1)
+       )
 
 #ifdef HAVE_MEDIAPLAYER
 

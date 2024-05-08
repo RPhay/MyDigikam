@@ -45,7 +45,7 @@ public:
 
     explicit SoundtrackPreview(QWidget* const,
                                const QList<QUrl>&, PresentationContainer* const);
-    ~SoundtrackPreview() override;
+    ~SoundtrackPreview() override = default;
 
 private:
 

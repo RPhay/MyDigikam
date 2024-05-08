@@ -50,7 +50,8 @@ using namespace Digikam;
 namespace DigikamGenericPresentationPlugin
 {
 
-class PresentationAudioListItem : public QObject, public QListWidgetItem
+class PresentationAudioListItem : public QObject,
+                                  public QListWidgetItem
 {
     Q_OBJECT
 

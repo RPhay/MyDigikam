@@ -69,7 +69,6 @@ set(presentationplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/presentationctrlwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/presentationwidget.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/common/presentationcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/common/presentationloader.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/presentationdlg.cpp

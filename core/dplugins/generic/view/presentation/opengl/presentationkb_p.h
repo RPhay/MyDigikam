@@ -54,67 +54,39 @@ class Q_DECL_HIDDEN PresentationKB::Private
 
 public:
 
-    explicit Private()
-      : deskX               (0),
-        deskY               (0),
-        deskWidth           (0),
-        deskHeight          (0),
-        endTexture          (nullptr),
-        imageLoadThread     (nullptr),
-        mouseMoveTimer      (nullptr),
-        timer               (nullptr),
-        haveImages          (true),
-        effect              (nullptr),
-        numKBEffectRepeated (0),
-        initialized         (false),
-        step                (0.0),
-        stepSameSpeed       (0.0),
-        endOfShow           (false),
-        showingEnd          (false),
-        delay               (0),
-        disableFadeInOut    (false),
-        disableCrossFade    (false),
-        enableSameSpeed     (false),
-        forceFrameRate      (0),
-        sharedData          (nullptr),
-        playbackWidget      (nullptr)
-    {
-        zoomIn   = (QRandomGenerator::global()->bounded(2U) == 0);
-        image[0] = nullptr;
-        image[1] = nullptr;
-    }
+    Private() = default;
 
-    int                      deskX;
-    int                      deskY;
-    int                      deskWidth;
-    int                      deskHeight;
+    int                      deskX                  = 0;
+    int                      deskY                  = 0;
+    int                      deskWidth              = 0;
+    int                      deskHeight             = 0;
 
-    QOpenGLTexture*          endTexture;
-    KBImageLoader*           imageLoadThread;
-    QTimer*                  mouseMoveTimer;
-    QTimer*                  timer;
-    bool                     haveImages;
+    QOpenGLTexture*          endTexture             = nullptr;
+    KBImageLoader*           imageLoadThread        = nullptr;
+    QTimer*                  mouseMoveTimer         = nullptr;
+    QTimer*                  timer                  = nullptr;
+    bool                     haveImages             = true;
 
-    KBImage*                 image[2];
-    KBEffect*                effect;
-    int                      numKBEffectRepeated;
-    bool                     zoomIn;
-    bool                     initialized;
-    float                    step;
-    float                    stepSameSpeed;
+    KBImage*                 image[2]               = { nullptr };
+    KBEffect*                effect                 = nullptr;
+    int                      numKBEffectRepeated    = 0;
+    bool                     zoomIn                 = (QRandomGenerator::global()->bounded(2U) == 0);
+    bool                     initialized            = false;
+    float                    step                   = 0.0F;
+    float                    stepSameSpeed          = 0.0F;
 
-    bool                     endOfShow;
-    bool                     showingEnd;
+    bool                     endOfShow              = false;
+    bool                     showingEnd             = false;
 
-    int                      delay;
-    bool                     disableFadeInOut;
-    bool                     disableCrossFade;
-    bool                     enableSameSpeed;
-    unsigned                 forceFrameRate;
+    int                      delay                  = 0;
+    bool                     disableFadeInOut       = false;
+    bool                     disableCrossFade       = false;
+    bool                     enableSameSpeed        = false;
+    unsigned                 forceFrameRate         = 0;
 
-    PresentationContainer*   sharedData;
+    PresentationContainer*   sharedData             = nullptr;
 
-    PresentationAudioWidget* playbackWidget;
+    PresentationAudioWidget* playbackWidget         = nullptr;
 };
 
 } // namespace DigikamGenericPresentationPlugin

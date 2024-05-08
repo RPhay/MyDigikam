@@ -54,10 +54,6 @@ SoundtrackPreview::SoundtrackPreview(QWidget* const parent,
     setLayout(layout);
 }
 
-SoundtrackPreview::~SoundtrackPreview()
-{
-}
-
 // ------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN PresentationAudioPage::Private

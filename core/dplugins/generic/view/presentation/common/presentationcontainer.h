@@ -48,70 +48,74 @@ class PresentationContainer
 
 public:
 
-    explicit PresentationContainer();
-    ~PresentationContainer();
+    PresentationContainer() = default;
+
+    ~PresentationContainer()
+    {
+        delete captionFont;
+    };
 
 public:
 
-    int                      delayMsMaxValue;
-    int                      delayMsMinValue;
-    int                      delayMsLineStep;
+    int                      delayMsMaxValue                = 0;
+    int                      delayMsMinValue                = 0;
+    int                      delayMsLineStep                = 0;
 
     QList<QUrl>              urlList;
 
-    PresentationMainPage*    mainPage;
-    PresentationCaptionPage* captionPage;
+    PresentationMainPage*    mainPage                       = nullptr;
+    PresentationCaptionPage* captionPage                    = nullptr;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    PresentationAudioPage*   soundtrackPage;
+    PresentationAudioPage*   soundtrackPage                 = nullptr;
 
 #endif
 
-    PresentationAdvPage*     advancedPage;
+    PresentationAdvPage*     advancedPage                   = nullptr;
 
     // Config file data
 
     /// Main page
-    bool                     opengl;
-    bool                     openGlFullScale;
-    int                      delay;
-    bool                     printFileName;
-    bool                     printProgress;
-    bool                     printFileComments;
-    bool                     loop;
-    bool                     shuffle;
-    bool                     offAutoDelay;
+    bool                     opengl                         = false;
+    bool                     openGlFullScale                = false;
+    int                      delay                          = 0;
+    bool                     printFileName                  = false;
+    bool                     printProgress                  = false;
+    bool                     printFileComments              = false;
+    bool                     loop                           = false;
+    bool                     shuffle                        = false;
+    bool                     offAutoDelay                   = false;
     QString                  effectName;
     QString                  effectNameGL;
 
     /// Captions page
-    uint                     commentsFontColor;
-    uint                     commentsBgColor;
-    bool                     commentsDrawOutline;
-    uint                     bgOpacity;
-    int                      commentsLinesLength;
-    QFont*                   captionFont;
+    uint                     commentsFontColor              = 0;
+    uint                     commentsBgColor                = 0;
+    bool                     commentsDrawOutline            = false;
+    uint                     bgOpacity                      = 10;
+    int                      commentsLinesLength            = 0;
+    QFont*                   captionFont                    = nullptr;
 
     /// Soundtrack page
-    bool                     soundtrackLoop;
-    bool                     soundtrackPlay;
-    bool                     soundtrackRememberPlaylist;
-    bool                     soundtrackPlayListNeedsUpdate;
+    bool                     soundtrackLoop                 = false;
+    bool                     soundtrackPlay                 = false;
+    bool                     soundtrackRememberPlaylist     = false;
+    bool                     soundtrackPlayListNeedsUpdate  = false;
     QUrl                     soundtrackPath;
     QList<QUrl>              soundtrackUrls;
 
     /// Advanced page
-    bool                     useMilliseconds;
-    bool                     enableMouseWheel;
-    bool                     enableCache;
-    bool                     kbDisableFadeInOut;
-    bool                     kbDisableCrossFade;
-    bool                     kbEnableSameSpeed;
-    uint                     cacheSize;
+    bool                     useMilliseconds                = false;
+    bool                     enableMouseWheel               = false;
+    bool                     enableCache                    = false;
+    bool                     kbDisableFadeInOut             = false;
+    bool                     kbDisableCrossFade             = false;
+    bool                     kbEnableSameSpeed              = false;
+    uint                     cacheSize                      = 0;
 
-    QWidget*                 display;
-    DInfoInterface*          iface;
+    QWidget*                 display                        = nullptr;
+    DInfoInterface*          iface                          = nullptr;
 };
 
 } // namespace DigikamGenericPresentationPlugin

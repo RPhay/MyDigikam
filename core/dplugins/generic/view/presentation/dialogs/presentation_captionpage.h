@@ -34,7 +34,7 @@ public:
 
     explicit PresentationCaptionPage(QWidget* const parent,
                                      PresentationContainer* const sharedData);
-    ~PresentationCaptionPage() override;
+    ~PresentationCaptionPage() override = default;
 
     void readSettings();
     void saveSettings();

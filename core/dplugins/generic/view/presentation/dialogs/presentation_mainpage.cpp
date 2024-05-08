@@ -59,18 +59,13 @@ class Q_DECL_HIDDEN PresentationMainPage::Private
 
 public:
 
-    explicit Private()
-      : sharedData        (nullptr),
-        imagesFilesListBox(nullptr),
-        ICON_SIZE         (256)
-    {
-    }
+    Private() = default;
 
-    PresentationContainer* sharedData;
+    PresentationContainer* sharedData           = nullptr;
     QTime                  totalTime;
-    DItemsList*            imagesFilesListBox;
+    DItemsList*            imagesFilesListBox   = nullptr;
 
-    const int              ICON_SIZE;
+    const int              ICON_SIZE            = 256;
 };
 
 PresentationMainPage::PresentationMainPage(QWidget* const parent,
@@ -378,8 +373,9 @@ bool PresentationMainPage::updateUrlList()
 
         if (!QFile::exists(item->url().toLocalFile()))
         {
-            QMessageBox::critical(this, i18nc("@title:window", "Error"), i18n("Cannot access file %1. Please check the path is correct.",
-                                                            item->url().toLocalFile()));
+            QMessageBox::critical(this, i18nc("@title:window", "Error"),
+                                  i18n("Cannot access file %1. Please check the path is correct.",
+                                       item->url().toLocalFile()));
             return false;
         }
 
@@ -497,6 +493,7 @@ void PresentationMainPage::slotUseMillisecondsToggled()
 void PresentationMainPage::slotPortfolioDurationChanged(int)
 {
     showNumberImages();
+
     Q_EMIT signalTotalTimeChanged(d->totalTime);
 }
 

@@ -36,7 +36,7 @@ public:
 
     explicit PresentationDlg(QWidget* const parent,
                              PresentationContainer* const sharedData);
-    ~PresentationDlg() override;
+    ~PresentationDlg()              override;
 
 Q_SIGNALS:
 

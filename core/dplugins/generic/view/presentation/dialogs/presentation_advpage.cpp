@@ -54,10 +54,6 @@ PresentationAdvPage::PresentationAdvPage(QWidget* const parent,
 
 }
 
-PresentationAdvPage::~PresentationAdvPage()
-{
-}
-
 void PresentationAdvPage::readSettings()
 {
     m_enableMouseWheelCheckBox->setChecked(m_sharedData->enableMouseWheel);

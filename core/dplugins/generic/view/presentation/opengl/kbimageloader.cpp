@@ -43,35 +43,24 @@ class Q_DECL_HIDDEN KBImageLoader::Private
 
 public:
 
-    explicit Private()
-      : sharedData      (nullptr),
-        fileIndex       (0),
-        width           (0),
-        height          (0),
-        initialized     (false),
-        needImage       (true),
-        haveImages      (false),
-        quitRequested   (false),
-        textureAspect   (0.0)
-    {
-    }
+    Private() = default;
 
-    PresentationContainer* sharedData;
-    int                    fileIndex;
+    PresentationContainer* sharedData       = nullptr;
+    int                    fileIndex        = 0;
 
-    int                    width;
-    int                    height;
+    int                    width            = 0;
+    int                    height           = 0;
 
     QWaitCondition         imageRequest;
     QMutex                 condLock;
     QMutex                 imageLock;
 
-    bool                   initialized;
-    bool                   needImage;
-    bool                   haveImages;
-    bool                   quitRequested;
+    bool                   initialized      = false;
+    bool                   needImage        = true;
+    bool                   haveImages       = false;
+    bool                   quitRequested    = false;
 
-    float                  textureAspect;
+    float                  textureAspect    = 0.0F;
     QImage                 texture;
 
     IccProfile             iccProfile;
