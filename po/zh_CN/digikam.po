@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 01:42+0000\n"
+"POT-Creation-Date: 2024-05-08 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2811,8 +2811,8 @@ msgstr "全屏显示"
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
@@ -6268,7 +6268,7 @@ msgid ""
 msgstr "<para>用于移除图像的 EXIF、IPTC、XMP 元数据的批处理工具。</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -9832,7 +9832,7 @@ msgstr "新图像宽度："
 #: core/dplugins/editor/transform/shear/sheartool.cpp:125
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
@@ -11105,19 +11105,19 @@ msgstr "应用"
 msgid "Details changed"
 msgstr "详情已更改"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "地理位置编辑"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "对项目的元数据进行编辑"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11142,7 +11142,7 @@ msgstr ""
 "此工具还可以从设备读取 GPS 信息，并与没有内建 GPS 功能的相机拍摄的照片进行关"
 "联处理。"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -15334,13 +15334,13 @@ msgstr "无效"
 msgid "Please wait ..."
 msgstr "请稍候 ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "调整项目的日期时间"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15359,7 +15359,7 @@ msgstr ""
 "元数据时间戳可被调整或者保护。调整操作既可以基于时间偏移量，也可以基于特定日"
 "期和时间。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -15397,7 +15397,7 @@ msgstr "前任开发人员"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "开发人员与项目负责人"
@@ -16168,7 +16168,7 @@ msgid "Revert current settings to default values."
 msgstr "重置当前设置为默认值。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -16262,8 +16262,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -16345,7 +16345,7 @@ msgid "For more information, please take a look at"
 msgstr "更多相关信息请访问"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -16378,7 +16378,7 @@ msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "至少添加同一被摄主体的 2 张图像到合成堆栈中。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
@@ -16455,7 +16455,7 @@ msgstr ""
 "处理，这将需要一段时间。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16466,29 +16466,29 @@ msgstr ""
 "像。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "点击“下一步”按钮开始预处理。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "正在处理，请稍候。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "这可能需要一段时间..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -16501,8 +16501,8 @@ msgid "Please check your bracketed images stack..."
 msgstr "请检查您的包围 (阶段) 曝光图像堆栈..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -16809,8 +16809,8 @@ msgstr "创建 HTML 相册..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
@@ -16830,7 +16830,7 @@ msgstr "%1 个待处理相册："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 个待处理项目"
@@ -16918,8 +16918,8 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -16927,8 +16927,8 @@ msgstr "图像选择方式(&C)："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -16948,7 +16948,7 @@ msgid "Destination folder:"
 msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
@@ -18093,34 +18093,34 @@ msgstr "<b>已取消</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>无法执行 %1：</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, kde-format
 msgid "Temporary panorama file does not exists."
 msgstr "临时全景文件不存在。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "名为 <filename>%1</filename> 的全景图文件已经存在。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "临时工程文件不存在。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
 msgstr "名为 <filename>%1</filename> 的工程文件已经存在。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:169
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
 msgstr ""
 "无法将全景图从 <filename>%1</filename> 移动到 <filename>%2</filename>。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -18128,7 +18128,7 @@ msgid ""
 msgstr ""
 "无法将工程文件从 <filename>%1</filename> 移动到 <filename>%2</filename>。"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -18137,56 +18137,56 @@ msgstr ""
 "无法将转换后的图像文件从 <filename>%1</filename> 复制到 <filename>%2</"
 "filename>。"
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:48
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
 msgstr "PTO 文件已被创建到临时目录。"
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:59
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
 msgstr "PTO 文件无法被创建到临时目录。"
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
 msgstr "工程文件解析失败。"
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "工程文件包含未知输入文件：<filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "输入文件无法加载以生成预览。"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "TIFF 图像创建失败。"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "RAW 文件转换失败。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "欢迎使用全景图拼接工具"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "欢迎使用全景图拼接工具"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18194,7 +18194,7 @@ msgid ""
 "seam between images not visible."
 msgstr "用于拼接多张图像为一张全景图，原始图像之间不会留下明显接缝。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18202,37 +18202,37 @@ msgid ""
 "stitching them into a panorama."
 msgstr "此向导程序将引导您配置导入图像以拼接为一张全景图。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "图像必须从同一视角进行拍摄。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "要了解更多信息，请访问"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "全景图拼接所需外挂程序"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "文件格式"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG 输出"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18240,7 +18240,7 @@ msgid ""
 "size)."
 msgstr "选择压缩率为 90% 的 JPEG 输出方式 (有损压缩，文件体积较小)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18251,13 +18251,13 @@ msgstr ""
 "“JPEG 输出”：使用 JPEG 输出时将生成体积较小的全景图文件，但代价是画质将因为有"
 "损压缩而变差。此格式在分享成品或在影像店打印时最为便利。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF 输出"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18265,7 +18265,7 @@ msgid ""
 "compression, bigger size)."
 msgstr "选择使用 LZW 算法压缩的 TIFF 输出方式 (无损压缩，文件尺寸较大)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18275,13 +18275,13 @@ msgstr ""
 "“TIFF 输出”：使用 TIFF 输出时将获得与原始照片 RAW 图像相同的色彩深度，但代价"
 "是生成的全景图文件体积庞大。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:56
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
 msgstr "设置全景图素材图像"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18289,19 +18289,19 @@ msgid ""
 "these conditions:"
 msgstr "在此设置用于拼合为全景图的素材图像。素材图像应满足以下条件："
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:71
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
 msgstr "图像应从同一视角进行拍摄。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
 msgstr "图像应使用同一相机和镜头进行拍摄。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18309,31 +18309,31 @@ msgid ""
 "be the image that will be in the center of the panorama."
 msgstr "提示：对于 360 度全景图，列表中的首张图像将位于全景图的中间。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
 msgstr "全景图拼接结果"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
 msgstr "保存设置"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
 msgstr "文件名模板："
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name of the panorama file (without its extension)."
 msgstr "全景图文件名 (不包括扩展名)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:93
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18347,19 +18347,19 @@ msgstr ""
 "用 JPEG 输出，那么该全景图将保存为“panorama.jpg”。如果您同时选择保存工程文"
 "件，它将被保存为“panorama.pto”。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Save project file"
 msgstr "保存工程文件"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
 msgstr "保存工程文件以在 Hugin 软件界面中进一步处理。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18372,20 +18372,20 @@ msgstr ""
 "程序打开编辑它们，对投影方式、地平线、全景图中心、控制点等进行调整以获得更加"
 "效果。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:213
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "该文件已经存在。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18393,31 +18393,31 @@ msgid ""
 "the copying process)"
 msgstr "已转换 RAW 文件已经存在 (它们在复制过程中将被跳过)"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "全景图拼接已完成"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr "您的图像已被拼接为一张全景图。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:269
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "您的全景图将被创建到此目录："
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
 msgstr "点击“完成”后它将使用下方设置的名称进行保存。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:272
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18428,31 +18428,31 @@ msgstr ""
 "如果您选择保存工程文件，且如果您的图像是 RAW 图像，那么拼接过程中使用的已转换"
 "图像将被同时复制 (它们是 TIFF 格式文件，体积可能较大)。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
 #, kde-format
 msgctxt "@label"
 msgid "Error"
 msgstr "错误"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "优化"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "校平地平线"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:115
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr "检测地平线并对其进行校平，确保投影结果为水平。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18461,20 +18461,20 @@ msgid ""
 msgstr ""
 "“校平地平线”：检测地平线并对其进行校平，确保全景图的最终投影结果为水平。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "正在进行优化，请稍候。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
 msgstr "已准备好执行您设置的优化步骤。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18482,37 +18482,37 @@ msgid ""
 "automatic projection selection and size."
 msgstr "此步骤可以包括校平地平线、自动调整投影选区和大小等。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:224
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr "将使用“%1”程序执行此操作。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
 msgstr "点击“下一步”按钮执行优化。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "无法完成优化。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "预处理图像"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "检测天空动态"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18520,7 +18520,7 @@ msgid ""
 "images due to moving clouds."
 msgstr "自动检测云彩移动情况以防止在图像之间发生匹配错误。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:114
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18532,13 +18532,13 @@ msgstr ""
 "“检测天空动态”：勾选此项后，在控制点的选择和匹配过程中将丢弃所有可能与云彩有"
 "关的控制点。这将有助于防止移动的云彩干扰控制点匹配过程。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr "现在我们将在拼接图像之前对它们进行预处理。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18548,57 +18548,57 @@ msgstr ""
 "预处理过程还包括对某些控制点进行计算以匹配图像的重叠区域，这需要使用“%1”程"
 "序。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>预览和后期处理</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:141
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "正在处理全景图预览..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:220
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>全景图后期处理</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "全景图后期处理"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:308
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "预览处理已取消。"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:370
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>错误</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:402
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Here a makefile is a script for GNU Make"
 msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
 msgstr "<p><b>无法创建 makefile 文件：</b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:431
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>无法创建工程文件：</b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:460
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "<p><b>正在处理文件 %1 / %2：</b></p><p>%3</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:492
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
@@ -18626,19 +18626,19 @@ msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "全景图编译"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:641
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "正在处理文件 %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:653
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
 msgstr "全景图编译"
 
-#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:66
+#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Creator Wizard"
@@ -18649,106 +18649,106 @@ msgstr "全景图拼接工具向导"
 msgid "Unsupported Paper Size"
 msgstr "不支持的纸张尺寸"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:107
 #, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "打印为图像文件"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:111
 #, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "打印为 PDF 文件"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "通过 GIMP 进行打印"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:138
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "无说明文字"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "图像文件名称"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:151
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "EXIF 日期-时间"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:152
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "项目注释"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:153
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "自定义格式"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:177
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:221
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:305
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
 #, kde-format
 msgid "Printing canceled"
 msgstr "打印已取消"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:202
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:279
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
 #, kde-format
 msgid "Processing page %1"
 msgstr "正在处理页面 %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:291
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
 #, kde-format
 msgid "Could not save file %1"
 msgstr "无法保存文件 %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:297
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "页面 %1 已保存为 %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
 #, kde-format
 msgid "Print Creator"
 msgstr "打印创建工具"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "对图像进行汇编排版以便创建打印任务"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:63
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -18759,18 +18759,18 @@ msgstr ""
 "<p>用于在打印前对图像进行汇编和排版的工具。</p><p>要处理的项目可按张或者按组"
 "在相册中选择。</p><p>可以使用多种纸张尺寸预设和布局方式来处理图像文件。</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Author"
 msgstr "开发人员"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
 #, kde-format
 msgid "Contributor"
 msgstr "贡献人员"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -18997,7 +18997,7 @@ msgstr "照片尺寸"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:961
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
 #, kde-format
 msgid "cm"
 msgstr "厘米"
@@ -19010,7 +19010,7 @@ msgstr "毫米"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:951
 #, kde-format
 msgid "inches"
 msgstr "英寸"
@@ -19105,7 +19105,7 @@ msgstr "下一页"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:123
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -19170,63 +19170,63 @@ msgid ""
 "information"
 msgstr "配合布局自动按照相机方向信息旋转照片"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
 msgid "No page to print..."
 msgstr "没有要打印的页面..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:141
 #, kde-format
 msgid "Starting to pre-process files..."
 msgstr "开始预处理文件..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:179
 #, kde-format
 msgid "Printing process aborted..."
 msgstr "打印过程已中止..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:220
 #, kde-format
 msgid "Printing process is not completed"
 msgstr "打印过程未完成。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:225
 #, kde-format
 msgid "Printing process completed."
 msgstr "打印过程已完成。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
 msgid "Open destination directory in file-browser."
 msgstr "在文件浏览器中打开目标目录。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:255
 #, kde-format
 msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr "启动外部 GIMP 程序时出错。请确保它已被正确安装到了本机。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
 msgstr "无法移除 GIMP 的临时文件。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
 msgid ""
 "Unable to create a temporary folder. Please make sure you have proper "
 "permissions to this folder and try again."
 msgstr "无法创建临时文件夹。请确保您具备此文件夹的相应权限然后重试。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "打印创建工具"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Print Creator</b></h1></p><p>This assistant will "
@@ -19238,44 +19238,44 @@ msgstr ""
 "以打印为相册、拼贴或镶框照片。</p><p>您还可以使用它基于 Atkins 算法的自适应照"
 "片集合页面布局。</p></qt>"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
 msgstr "可选的 GIMP 可执行程序"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
 msgstr "图像格式："
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:86
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, kde-format
 msgid "Select your preferred format to export printing as image."
 msgstr "选择想要导出打印结果图像的格式。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "目标文件夹："
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "输出目标路径"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
 msgid "The image output file name will be generated automatically."
 msgstr "图像输出文件名将自动生成。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:121
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
 #, kde-format
 msgid "Open in File Browser"
 msgstr "在文件浏览器中打开"
@@ -19286,18 +19286,18 @@ msgctxt "@info layout page"
 msgid "Custom"
 msgstr "自定义"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:131
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "选择打印的输出方式。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:501
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:496
 #, kde-format
 msgid "Add again"
 msgstr "再次添加"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
@@ -19305,94 +19305,94 @@ msgstr "再次添加"
 msgid "Remove"
 msgstr "移除"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1114
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "自定义布局"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "所选自定义照片尺寸无法应用于该纸张尺寸。"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
 #, kde-format
 msgid ""
 "Custom\n"
 "layout"
 msgstr "自定义布局"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:110
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "欢迎使用打印创建工具"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
 msgstr "相册选择"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:112
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Select Page Layout"
 msgstr "选择页面布局"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Caption Settings"
 msgstr "说明文字设置"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "裁剪和旋转照片"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Images Output Settings"
 msgstr "图像输出设置"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Render Printing"
 msgstr "正在生成打印图像"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:253
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "第 %1 张，共 %2 张"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:352
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:364
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "第 %1 页，共 %2 页"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
 #, kde-format
 msgid "Error opening input file"
 msgstr "打开输入文件出错"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "打开临时文件夹出错"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "无法调整图像尺寸。正在中止操作。"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "无法保存调整尺寸后的图像 (JPEG)。正在中止操作。"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "无法保存调整尺寸后的图像 (PNG)。正在中止操作。"
@@ -19520,55 +19520,55 @@ msgstr "在通过电子邮件发送图像之后..."
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "点击“完成”按钮以清理临时文件。"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
 msgctxt "Mail client: BALSA"
 msgid "Balsa"
 msgstr "Balsa"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:115
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:98
 #, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
 msgstr "Clawsmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:116
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
 msgstr "Evolution"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:117
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
 #, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
 msgstr "Kmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:118
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
 msgctxt "Mail client: NETSCAPE"
 msgid "Netscape Messenger"
 msgstr "Netscape Messenger"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:119
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:102
 #, kde-format
 msgctxt "Mail client: OUTLOOK"
 msgid "Outlook"
 msgstr "Outlook"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:120
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:103
 #, kde-format
 msgctxt "Mail client: SYLPHEED"
 msgid "Sylpheed"
 msgstr "Sylpheed"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:121
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:104
 #, kde-format
 msgctxt "Mail client: THUNDERBIRD"
 msgid "Thunderbird"
 msgstr "Thunderbird"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
@@ -19576,7 +19576,7 @@ msgctxt "Image format: JPEG"
 msgid "Jpeg"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
@@ -19584,17 +19584,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
 #, kde-format
 msgid "Send by Email"
 msgstr "通过电子邮件发送"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "通过电子邮件发送图像"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -19606,7 +19606,7 @@ msgstr ""
 "按张或者按组在相册中选择。</p><p>可以使用多种电子邮件客户端来处理发送的图像文"
 "件。</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -19644,23 +19644,23 @@ msgstr "Outlook 电子邮件客户端。"
 msgid "Mozilla Foundation Mail Client."
 msgstr "Mozilla 基金会的邮件客户端。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
 #, kde-format
 msgid "Preparing file to export by mail..."
 msgstr "正在准备通过电子邮件导出的文件..."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, kde-format
 msgid "%1 input items to process"
 msgstr "%1 个输入项目需要处理"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:64
+#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:61
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr "<p>此视图列出了所有要通过电子邮件导出的项目。</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:94
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -19672,54 +19672,54 @@ msgstr ""
 "电子邮件客户端发送项目。</p><p>您可以在导出内容之前按照电子邮件服务提供商的要"
 "求调整项目的属性。</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
 msgstr "电子邮件客户端可执行程序"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:88
 #, kde-format
 msgid "Mail program:"
 msgstr "电子邮件程序："
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:92
 #, kde-format
 msgid "Select your preferred external mail client program here."
 msgstr "在此选择您想要使用的电子邮件客户端外部程序。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:107
 #, kde-format
 msgid "Attach a file with items properties"
 msgstr "添加项目属性为附件"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:108
 #, kde-format
 msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
 "will be added as an attached file."
 msgstr "勾选此项后，项目的所有属性，如注释、评分、标签等都将被添加为一个附件。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:120
 #, kde-format
 msgid "Maximum email size limit:"
 msgstr "电子邮件体积限制："
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "调整图像属性"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
@@ -19728,14 +19728,14 @@ msgid ""
 "recompressed."
 msgstr "勾选此项后，可以对所有发送的图像进行尺寸调整和重新压缩。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "图像属性"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
@@ -19744,27 +19744,27 @@ msgid ""
 "preserved."
 msgstr "设置要发送图像的边长上限，调整时将保持宽高比。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "图像边长："
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "选择图像要转换的格式。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>待发送 JPEG 图像的新压缩率数值：</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
 #, kde-format
 msgid ""
@@ -19775,21 +19775,21 @@ msgstr ""
 "<p><b>1</b>：极高压缩率<br/><b>25</b>：较高压缩率<br/><b>50</b>：中等压缩率"
 "<br/><b>75</b>：较低压缩率 (默认值)<br/><b>100</b>：无压缩</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "图像画质："
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "移除所有元数据"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
@@ -19798,45 +19798,45 @@ msgid ""
 "removed."
 msgstr "勾选此选项后，所有元数据包括 EXIF、IPTC、XMP 等将被移除。"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "通过电子邮件发送"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "欢迎使用电子邮件发送工具"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
 msgstr "图像列表"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
 #, kde-format
 msgid "Email Settings"
 msgstr "电子邮件设置"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Export by Email"
 msgstr "导出到电子邮件"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
 #, kde-format
 msgid "Video Slideshow"
 msgstr "视频幻灯片"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "用图像创建视频幻灯片"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -19847,7 +19847,7 @@ msgstr ""
 "<p>用于将图像制作为视频格式幻灯片的工具。</p><p>要处理的项目可按张或者按组在"
 "相册中选择。</p><p>图像切换时可以应用多种视觉过渡效果。</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -20244,17 +20244,17 @@ msgstr "拉伸并裁剪"
 msgid "Centered"
 msgstr "居中"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:41
 #, kde-format
 msgid "OpenGL Viewer"
 msgstr "OpenGL 图像查看器"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, kde-format
 msgid "A tool to preview image with OpenGL"
 msgstr "使用 OpenGL 特效预览图像"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:65
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
@@ -20298,25 +20298,25 @@ msgstr ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL 图像查看器"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
 #, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL 错误"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:192
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr "本机系统不支持 GL_ARB_texture_rectangle OpenGL 扩展"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
 msgid "No OpenGL context has been found"
 msgstr "没有找到 OpenGL 环境"

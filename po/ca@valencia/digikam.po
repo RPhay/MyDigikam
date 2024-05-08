@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 01:42+0000\n"
+"POT-Creation-Date: 2024-05-08 01:50+0000\n"
 "PO-Revision-Date: 2024-04-21 08:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2871,8 +2871,8 @@ msgstr "Mostra a pantalla completa"
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
@@ -6538,7 +6538,7 @@ msgstr ""
 "IPTC o XMP de les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -10360,7 +10360,7 @@ msgstr "Amplària nova:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:125
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
@@ -11677,19 +11677,19 @@ msgstr "Aplica"
 msgid "Details changed"
 msgstr "Els detalls han canviat"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Editeu la geolocalització"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Una eina per a editar elements de geolocalització"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11717,7 +11717,7 @@ msgstr ""
 "sincronitzar la geolocalització d'elements si la càmera no té cap dispositiu "
 "GPS incrustat."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -16066,13 +16066,13 @@ msgstr "no vàlid"
 msgid "Please wait ..."
 msgstr "Espereu un moment..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Una eina per a ajustar els elements de data i hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16093,7 +16093,7 @@ msgstr ""
 "Es poden ajustar moltes metadades de marques de temps o deixar-les sense "
 "modificar. L'ajust pot ser un desplaçament o una data específica."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -16133,7 +16133,7 @@ msgstr "Autoria antic"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Desenvolupador i mantenidor"
@@ -16937,7 +16937,7 @@ msgid "Revert current settings to default values."
 msgstr "Revertix la configuració actual als valors predeterminats."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17034,8 +17034,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -17123,7 +17123,7 @@ msgid "For more information, please take a look at"
 msgstr "Per a més informació, consulteu"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -17159,7 +17159,7 @@ msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "Almenys s'han d'afegir a la pila 2 imatges amb el mateix motiu."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
@@ -17238,7 +17238,7 @@ msgstr ""
 "de fer l'alineació. Les operacions d'alineació poden tardar una mica."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17250,29 +17250,29 @@ msgstr ""
 "automàtica."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "Premeu el botó «Següent» per a iniciar el preprocessament."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "El preprocessament està en curs, espereu."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Açò pot tardar una estona..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -17285,8 +17285,8 @@ msgid "Please check your bracketed images stack..."
 msgstr "Comproveu la pila de les imatges amb bràqueting..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -17596,8 +17596,8 @@ msgstr "Crea una galeria HTML..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
@@ -17617,7 +17617,7 @@ msgstr "%1 àlbums que s'han de processar:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 elements que s'han de processar"
@@ -17708,8 +17708,8 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17717,8 +17717,8 @@ msgstr "Es&colliu el mètode de selecció de la imatge:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -17738,7 +17738,7 @@ msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
@@ -18947,27 +18947,27 @@ msgstr "<b>Cancel·lat</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>No s'ha pogut executar <i>%1</i>:</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, kde-format
 msgid "Temporary panorama file does not exists."
 msgstr "El fitxer temporal de panorama no existix."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "Ja existix un fitxer de panorama anomenat <filename>%1</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "El fitxer temporal de projecte no existix."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
 msgstr "Ja existix un fitxer de projecte anomenat <filename>%1</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:169
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
@@ -18975,7 +18975,7 @@ msgstr ""
 "No s'ha pogut moure el panorama des de <filename>%1</filename> a <filename>"
 "%2</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -18984,7 +18984,7 @@ msgstr ""
 "No s'ha pogut moure el fitxer de projecte des de <filename>%1</filename> a "
 "<filename>%2</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -18993,59 +18993,59 @@ msgstr ""
 "No s'ha pogut copiar el fitxer d'imatge convertit des de <filename>%1</"
 "filename> a <filename>%2</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:48
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
 msgstr "El fitxer PTO ja s'ha creat en el directori temporal."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:59
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
 msgstr "El fitxer PTO no s'ha pogut crear en el directori temporal."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
 msgstr "L'anàlisi del fitxer de projecte ha fallat."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 "Fitxer d'entrada desconegut en el fitxer de projecte: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 "La imatge d'entrada no s'ha pogut carregar per a la generació de la vista "
 "prèvia."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "No s'ha pogut crear la imatge TIFF."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Ha fallat la conversió del fitxer RAW."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Us donem la benvinguda a l'eina «Panorama»"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Us donem la benvinguda a l'eina «Panorama»"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19055,7 +19055,7 @@ msgstr ""
 "Esta eina unix diverses imatges per a crear un panorama, fent que no siga "
 "visible la unió entre les imatges."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19065,37 +19065,37 @@ msgstr ""
 "Este assistent vos ajudarà a configurar com importar les imatges abans "
 "d'unir-les en un panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Les imatges han d'estar preses des del mateix punt de vista."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Per a més informació, consulteu "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Executables de «panorama»"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Format de fitxer"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Eixida JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19105,7 +19105,7 @@ msgstr ""
 "Selecciona una eixida JPEG amb una taxa de compressió del 90% (de compressió "
 "amb pèrdua, una mida més xicoteta)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19118,13 +19118,13 @@ msgstr ""
 "forma més senzilla de compartir el resultat, o imprimir-lo en línia o en una "
 "botiga."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Eixida TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19134,7 +19134,7 @@ msgstr ""
 "Selecciona una eixida TIFF comprimida utilitzant l'algoritme LZW (compressió "
 "sense pèrdua, una mida més gran)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19145,13 +19145,13 @@ msgstr ""
 "de color que a les fotografies originals utilitzant imatges RAW, amb el cost "
 "d'un fitxer de panorama més gran."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:56
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
 msgstr "Establiu les imatges del panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19161,19 +19161,19 @@ msgstr ""
 "Establiu ací la llista de les imatges per a fusionar-les en un panorama. "
 "Seguiu estes condicions:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:71
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
 msgstr "Les imatges estan preses des del mateix punt de vista."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
 msgstr "Les imatges estan preses amb la mateixa càmera (i lent)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19183,31 +19183,31 @@ msgstr ""
 "Cal recordar que, en el cas d'un panorama de 360°, la primera imatge de la "
 "llista serà la imatge que estarà al centre del panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
 msgstr "Unió del panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
 msgstr "Guarda la configuració"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
 msgstr "Plantilla del nom de fitxer:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name of the panorama file (without its extension)."
 msgstr "Nom de fitxer del panorama (sense extensió)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:93
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19222,13 +19222,13 @@ msgstr ""
 "eixida JPEG, llavors el panorama es guardarà amb el nom «panorama.jpg». Si "
 "també decidiu guardar el fitxer del projecte, el seu nom serà «panorama.pto»."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Save project file"
 msgstr "Guarda el fitxer del projecte"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
@@ -19236,7 +19236,7 @@ msgstr ""
 "Guarda el fitxer del projecte per al seu posterior processament amb la "
 "interfície gràfica d'usuari Hugin."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19251,20 +19251,20 @@ msgstr ""
 "centrat del panorama, o modificar els punts de control per a obtindre "
 "millors resultats."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:213
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "Este fitxer ja existix"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -19274,31 +19274,31 @@ msgstr ""
 "Un o més fitxers RAW convertits ja existixen (seran omesos durant el procés "
 "de còpia)"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "S'ha finalitzat la unió del panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr "Felicitats. Les imatges s'han unit en un panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:269
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "El panorama es crearà en el directori:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
 msgstr "una vegada premeu el botó «Finalitza», amb el nom establit davall."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:272
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19310,32 +19310,32 @@ msgstr ""
 "llavors les imatges convertides emprades durant el procés d'unió també es "
 "copiaran (estes són els fitxers TIFF que poden ser grans)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
 #, kde-format
 msgctxt "@label"
 msgid "Error"
 msgstr "S'ha produït un error"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "Optimització"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "Nivell de l'horitzó"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:115
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr "Detecta l'horitzó i adapta el projecte perquè siga horitzontal."
 
 # skip-rule: punctuation-period-no
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19345,13 +19345,13 @@ msgstr ""
 "«Nivell de l'horitzó»: Detecta l'horitzó i adapta la projecció de manera que "
 "l'horitzó detectat siga una línia horitzontal en el panorama final."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "L'optimització està en curs, espereu."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19360,7 +19360,7 @@ msgstr ""
 "El pas d'optimització d'acord amb la vostra configuració està a punt per a "
 "realitzar-se."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19370,37 +19370,37 @@ msgstr ""
 "Este pas pot incloure un anivellament automàtic de l'horitzó, i també una "
 "selecció automàtica de la projecció i mida."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:224
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr "Per a realitzar esta operació, s'utilitzarà el programa «%1»."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
 msgstr "Premeu el botó «Següent» per a executar l'optimització."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "No s'ha pogut fer l'optimització."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "Preprocessament de les imatges"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "Detecta el moviment del cel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19410,7 +19410,7 @@ msgstr ""
 "Detecta automàticament els núvols per a evitar el joc de punts clau "
 "incorrecte entre les imatges a causa de núvols en moviment."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:114
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19424,13 +19424,13 @@ msgstr ""
 "possible núvol. Açò és útil per a evitar que el moviment dels núvols alteri "
 "el procés de coincidència amb punts de control."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr "Ara, preprocessarem les imatges abans d'unir-les."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19441,57 +19441,57 @@ msgstr ""
 "fer coincidir les superposicions entre les imatges. Per a açò, s'utilitzarà "
 "el programa «%1»."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Vista prèvia i postprocés</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:141
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "S'està processant la vista prèvia del panorama..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:220
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Postprocés del panorama</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Postprocessament del panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:308
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "S'ha cancel·lat el processament de la vista prèvia."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:370
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Error</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:402
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Here a makefile is a script for GNU Make"
 msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
 msgstr "<p><b>No s'ha pogut crear el «makefile»: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:431
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>No s'ha pogut crear el fitxer de projecte: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:460
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "<p><b>Es processa el fitxer %1 / %2: </b></p><p>%3</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:492
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
@@ -19520,19 +19520,19 @@ msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Compilació de «Panorama»"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:641
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Es processa el fitxer %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:653
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
 msgstr "Compilació de «Panorama»"
 
-#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:66
+#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Creator Wizard"
@@ -19543,106 +19543,106 @@ msgstr "Assistent del creador de panorames"
 msgid "Unsupported Paper Size"
 msgstr "Mida del paper no acceptada"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:107
 #, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Imprimix a un fitxer d'imatge"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:111
 #, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "Imprimix a PDF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Imprimix amb Gimp"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:138
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Sense llegenda"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Noms dels fitxers d'imatge"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:151
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Data-hora Exif"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:152
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Comentaris d'element"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:153
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Format personalitzat"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:177
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:221
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:305
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
 #, kde-format
 msgid "Printing canceled"
 msgstr "S'ha cancel·lat la impressió"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:202
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:279
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
 #, kde-format
 msgid "Processing page %1"
 msgstr "S'està processant la pàgina %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:291
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
 #, kde-format
 msgid "Could not save file %1"
 msgstr "No s'ha pogut guardar el fitxer %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:297
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Pàgina %1 guardada com a %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
 #, kde-format
 msgid "Print Creator"
 msgstr "Creador d'impressió"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Una eina per a crear una composició d'impressió a partir d'imatges"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:63
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19656,18 +19656,18 @@ msgstr ""
 "p><p>Es poden utilitzar mides de paper predefinides i disposicions diferents "
 "per a processar els fitxers.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Author"
 msgstr "Autoria"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
 #, kde-format
 msgid "Contributor"
 msgstr "Col·laborador"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -19898,7 +19898,7 @@ msgstr "Mida de les fotografies"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:961
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -19911,7 +19911,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:951
 #, kde-format
 msgid "inches"
 msgstr "polzades"
@@ -20006,7 +20006,7 @@ msgstr "Pàgina següent"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:123
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -20074,37 +20074,37 @@ msgstr ""
 "Gira automàticament la fotografia amb la disposició d'acord amb la "
 "informació d'orientació de la càmera"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
 msgid "No page to print..."
 msgstr "Cap pàgina per a imprimir..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:141
 #, kde-format
 msgid "Starting to pre-process files..."
 msgstr "S'està començant a preprocessar els fitxers..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:179
 #, kde-format
 msgid "Printing process aborted..."
 msgstr "S'ha interromput el procés d'impressió..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:220
 #, kde-format
 msgid "Printing process is not completed"
 msgstr "El procés d'impressió no s'ha completat"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:225
 #, kde-format
 msgid "Printing process completed."
 msgstr "El procés d'impressió s'ha completat."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
 msgid "Open destination directory in file-browser."
 msgstr "Obri el directori de destinació en el gestor de fitxers."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:255
 #, kde-format
 msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
@@ -20113,12 +20113,12 @@ msgstr ""
 "S'ha produït un error en iniciar el programa Gimp extern. Assegureu-vos que "
 "està instal·lat correctament."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
 msgstr "No s'han pogut eliminar els fitxers temporals de GIMP."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
 msgid ""
 "Unable to create a temporary folder. Please make sure you have proper "
@@ -20127,14 +20127,14 @@ msgstr ""
 "No s'ha pogut crear una carpeta temporal. Assegureu-vos que teniu els "
 "permisos necessaris per a esta carpeta i torneu-ho a provar."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Creador d'impressió"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Print Creator</b></h1></p><p>This assistant will "
@@ -20149,44 +20149,44 @@ msgstr ""
 "adaptativa per a la col·lecció de fotografies, basada en l'algorisme Atkins."
 "</p></qt>"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
 msgstr "Executables opcionals de Gimp"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
 msgstr "Format de la imatge:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:86
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, kde-format
 msgid "Select your preferred format to export printing as image."
 msgstr "Seleccioneu el format preferit en exportar la impressió com a imatge."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Camí de destinació de l'eixida"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
 msgid "The image output file name will be generated automatically."
 msgstr "El nom del fitxer d'eixida d'imatge es generarà automàticament."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:121
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
 #, kde-format
 msgid "Open in File Browser"
 msgstr "Obri en el navegador de fitxers"
@@ -20197,18 +20197,18 @@ msgctxt "@info layout page"
 msgid "Custom"
 msgstr "Personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:131
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Seleccioneu l'eixida d'impressió preferida."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:501
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:496
 #, kde-format
 msgid "Add again"
 msgstr "Afig altra vegada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
@@ -20216,20 +20216,20 @@ msgstr "Afig altra vegada"
 msgid "Remove"
 msgstr "Elimina"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1114
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Disposició personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "La mida personalitzada seleccionada de la fotografia no es pot aplicar a la "
 "mida del paper."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
 #, kde-format
 msgid ""
 "Custom\n"
@@ -20238,76 +20238,76 @@ msgstr ""
 "Disposició\n"
 "personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:110
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Us donem la benvinguda al creador d'impressió"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
 msgstr "Seleccioneu àlbums"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:112
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Seleccioneu la disposició de la pàgina"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Caption Settings"
 msgstr "Configureu la llegenda"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Escapça i gira les fotografies"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Configureu l'eixida de les imatges"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Render Printing"
 msgstr "Renderització de la impressió"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:253
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Fotografia %1 de %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:352
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:364
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Pàgina %1 de %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
 #, kde-format
 msgid "Error opening input file"
 msgstr "S'ha produït un error en obrir el fitxer d'entrada"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "S'ha produït un error en obrir la carpeta temporal"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "No s'ha pogut redimensionar la imatge. S'interromp."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "No s'ha pogut guardar la imatge redimensionada (JPEG). S'interromp."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "No s'ha pogut guardar la imatge redimensionada (PNG). S'interromp."
@@ -20437,55 +20437,55 @@ msgstr "Després d'enviar les imatges per correu electrònic..."
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "Premeu el botó «Finalitza» per a netejar els fitxers temporals"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
 msgctxt "Mail client: BALSA"
 msgid "Balsa"
 msgstr "Balsa"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:115
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:98
 #, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
 msgstr "Clawsmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:116
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
 msgstr "Evolution"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:117
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
 #, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
 msgstr "Kmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:118
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
 msgctxt "Mail client: NETSCAPE"
 msgid "Netscape Messenger"
 msgstr "Netscape Messenger"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:119
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:102
 #, kde-format
 msgctxt "Mail client: OUTLOOK"
 msgid "Outlook"
 msgstr "Outlook"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:120
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:103
 #, kde-format
 msgctxt "Mail client: SYLPHEED"
 msgid "Sylpheed"
 msgstr "Sylpheed"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:121
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:104
 #, kde-format
 msgctxt "Mail client: THUNDERBIRD"
 msgid "Thunderbird"
 msgstr "Thunderbird"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
@@ -20493,7 +20493,7 @@ msgctxt "Image format: JPEG"
 msgid "Jpeg"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
@@ -20501,17 +20501,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
 #, kde-format
 msgid "Send by Email"
 msgstr "Envia per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Una eina per a enviar imatges per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20525,7 +20525,7 @@ msgstr ""
 "d'una selecció d'àlbums.</p><p>Es poden utilitzar aplicacions de client de "
 "correu diferents per a processar els fitxers a la xarxa.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20563,24 +20563,24 @@ msgstr "Client de correu Outlook."
 msgid "Mozilla Foundation Mail Client."
 msgstr "Client de correu de la Fundació Mozilla."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
 #, kde-format
 msgid "Preparing file to export by mail..."
 msgstr "S'està preparant el fitxer per a exportar per correu..."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, kde-format
 msgid "%1 input items to process"
 msgstr "%1 elements d'entrada que s'han de processar"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:64
+#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:61
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
 "<p>Esta vista llista tots els elements que s'exportaran per correu.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:94
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20594,28 +20594,28 @@ msgstr ""
 "propietats dels annexos d'acord amb les capacitats del vostre servei de "
 "correu.</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
 msgstr "Executables d'aplicacions de client de correu"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:88
 #, kde-format
 msgid "Mail program:"
 msgstr "Programa de correu:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:92
 #, kde-format
 msgid "Select your preferred external mail client program here."
 msgstr "Seleccioneu ací el vostre programa client de correu extern preferit."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:107
 #, kde-format
 msgid "Attach a file with items properties"
 msgstr "Adjunta un fitxer amb les propietats dels elements"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:108
 #, kde-format
 msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
@@ -20624,26 +20624,26 @@ msgstr ""
 "Si marqueu esta opció, totes les propietats de l'element com els comentaris, "
 "valoració o etiquetes s'afegiran com un fitxer adjunt."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:120
 #, kde-format
 msgid "Maximum email size limit:"
 msgstr "Límit de la mida màxima del correu electrònic:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Ajusta les propietats de les imatges"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
@@ -20654,14 +20654,14 @@ msgstr ""
 "Si marqueu esta opció, totes les imatges que s'enviaran es podran "
 "redimensionar i tornar a comprimir."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Propietats de la imatge"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
@@ -20672,27 +20672,27 @@ msgstr ""
 "Seleccioneu la grandària de les imatges que s'enviaran. Es manté la relació "
 "d'aspecte."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Grandària de la imatge:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "Seleccioneu el format preferit al qual convertir les imatges."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>El valor nou de compressió de les imatges JPEG que s'enviaran:</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
 #, kde-format
 msgid ""
@@ -20704,21 +20704,21 @@ msgstr ""
 "b>: compressió mitjana<br/><b>75</b>: compressió baixa (valor predeterminat) "
 "<br/><b>100</b>: sense compressió</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Qualitat de la imatge:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Elimina totes les metadades"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
@@ -20729,40 +20729,40 @@ msgstr ""
 "Si marqueu esta opció, totes les metadades com l'Exif, IPTC, i XMP "
 "s'eliminaran."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Enviament per correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Us donem la benvinguda a l'eina de correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
 msgstr "Llista d'imatges"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
 #, kde-format
 msgid "Email Settings"
 msgstr "Configureu el correu electrònic"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Export by Email"
 msgstr "Exporta per correu electrònic"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Vídeo de presentació de diapositives"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr ""
@@ -20770,7 +20770,7 @@ msgstr ""
 "d'imatges"
 
 # skip-rule: common-diferent_a
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20784,7 +20784,7 @@ msgstr ""
 "selecció d'àlbums.</p><p>Es poden aplicar efectes visuals diferents a les "
 "imatges per a fer transicions en renderitzar el vídeo final.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21206,17 +21206,17 @@ msgstr "Ajustada i escapçada"
 msgid "Centered"
 msgstr "Centrada"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:41
 #, kde-format
 msgid "OpenGL Viewer"
 msgstr "Visor OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, kde-format
 msgid "A tool to preview image with OpenGL"
 msgstr "Una eina per a previsualitzar una imatge amb OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:65
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
@@ -21265,26 +21265,26 @@ msgstr ""
 "colspan=\"2\"><nobr><center><b><h1>Altres</h1></b></center></nobr></td></"
 "tr><tr><td>Mostra esta ajuda:</td><td>Tecla <i>F1</i></td></tr></table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "Visor d'imatges OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
 #, kde-format
 msgid "OpenGL Error"
 msgstr "S'ha produït un error d'OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:192
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 "No s'accepta l'extensió GL_ARB_texture_rectangle d'OpenGL en este sistema"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
 msgid "No OpenGL context has been found"
 msgstr "No s'ha trobat el context d'OpenGL"

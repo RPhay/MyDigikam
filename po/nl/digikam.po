@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 01:42+0000\n"
+"POT-Creation-Date: 2024-05-08 01:50+0000\n"
 "PO-Revision-Date: 2024-04-21 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2918,8 +2918,8 @@ msgstr "Volledig scherm tonen"
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
@@ -6576,7 +6576,7 @@ msgstr ""
 "of Xmp uit afbeeldingen verwijderen.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -10400,7 +10400,7 @@ msgstr "Nieuwe breedte:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:125
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
@@ -11723,19 +11723,19 @@ msgstr "Toepassen"
 msgid "Details changed"
 msgstr "Details gewijzigd"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Bewerken van geolocatie"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Een hulpmiddel om items met geolocatie te bewerken"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11763,7 +11763,7 @@ msgstr ""
 "om geo-locatie van items te synchroniseren als uw camera geen ingebed GPS-"
 "apparaat heeft."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -16101,13 +16101,13 @@ msgstr "ongeldig"
 msgid "Please wait ..."
 msgstr "Een ogenblik geduld ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Een hulpmiddel om items datum-tijd te bewerken"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16129,7 +16129,7 @@ msgstr ""
 "gelaten. De aanpassing kan een offset van de tijd zijn of een specifieke "
 "datum."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -16170,7 +16170,7 @@ msgstr "Voormalig auteur"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Ontwikkelaar en onderhouder"
@@ -16977,7 +16977,7 @@ msgid "Revert current settings to default values."
 msgstr "Huidige instellingen terugzetten naar hun standaard waarden."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -17074,8 +17074,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -17164,7 +17164,7 @@ msgid "For more information, please take a look at"
 msgstr "Voor meer informatie, kijk op"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -17201,7 +17201,7 @@ msgstr ""
 "de stapel."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
@@ -17284,7 +17284,7 @@ msgstr ""
 "tussen haakjes te nemen. Uitlijnbewerking kan even duren."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17295,29 +17295,29 @@ msgstr ""
 "worden tot 16-bit sRGB afbeeldingen met automatische gamma."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "Op de knop \"Volgende\" drukken om voorbewerking te starten."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "Voorbewerking is bezig, even geduld."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Dit kan even duren..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -17330,8 +17330,8 @@ msgid "Please check your bracketed images stack..."
 msgstr "Controleer uw stapel met afbeeldingen tussen haakjes."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -17641,8 +17641,8 @@ msgstr "HTML-galerij aanmaken..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
@@ -17662,7 +17662,7 @@ msgstr "%1 albums te verwerken:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 items te verwerken:"
@@ -17753,8 +17753,8 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17762,8 +17762,8 @@ msgstr "&Kies de selectiemethode van afbeeldingen:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -17783,7 +17783,7 @@ msgid "Destination folder:"
 msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
@@ -18994,27 +18994,27 @@ msgstr "<b>Geannuleerd</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>Kan <i>%1</i> niet uitvoeren:</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, kde-format
 msgid "Temporary panorama file does not exists."
 msgstr "Tijdelijk panoramabestand bestaat niet."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "Een panorama met de naam <filename>%1</filename> bestaat reeds."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "Tijdelijk projectbestand bestaat niet."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
 msgstr "Een projectbestand met de naam <filename>%1</filename> bestaat reeds."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:169
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
@@ -19022,7 +19022,7 @@ msgstr ""
 "Kan panorama niet van <filename>%1</filename> naar <filename>%2</filename> "
 "verplaatsen."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -19031,7 +19031,7 @@ msgstr ""
 "Kan projectbestand niet van <filename>%1</filename> naar <filename>%2</"
 "filename> verplaatsen."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -19040,58 +19040,58 @@ msgstr ""
 "Kan geconverteerde afbeelding niet van <filename>%1</filename> naar "
 "<filename>%2</filename> kopiëren."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:48
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
 msgstr "PTO-bestand is al aangemaakt in de tijdelijke map."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:59
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
 msgstr "PTO-bestand kan niet worden aangemaakt in de tijdelijke map."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
 msgstr "Projectbestand heeft een verkeerde structuur."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Onbekend invoerbestand in het projectbestand: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 "Afbeelding voor invoer kan niet geladen worden voor het aanmaken van het "
 "voorbeeld."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Aanmaken van tiff-bestand is mislukt."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "De conversie van het raw-bestand is mislukt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Welkom bij het Panoramahulpmiddel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Welkom bij het Panoramahulpmiddel"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19101,7 +19101,7 @@ msgstr ""
 "Dit hulpmiddel plakt verschillende afbeeldingen samen om een panorama te "
 "maken, waarbij de naad tussen afbeeldingen onzichtbaar is."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19111,37 +19111,37 @@ msgstr ""
 "Deze assistent helpt u bij het configureren over hoe afbeeldingen te "
 "importeren voor het samen plakken ervan in een panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Afbeeldingen moeten vanuit hetzelfde gezichtspunt genomen worden."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Voor meer informatie, kijk op "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Binaire programma's voor Panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Bestandsformaat"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG-uitvoer"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19151,7 +19151,7 @@ msgstr ""
 "Selecteert JPEG-uitvoer met 90% compressie (compressie met verlies, kleinere "
 "grootte)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19164,13 +19164,13 @@ msgstr ""
 "gemakkelijkste manier om het resultaat te delen of online af te drukken of "
 "in een winkel."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF-uitvoer"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19180,7 +19180,7 @@ msgstr ""
 "Selecteert TIFF-uitvoer gecomprimeerd met het LZW-algorithme (compressie "
 "zonder verlies, groter bestand)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19191,13 +19191,13 @@ msgstr ""
 "originele foto's met raw-afbeeldingen ten koste van een groter panorama-"
 "bestand."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:56
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
 msgstr "De panorama-afbeeldingen instellen"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19207,19 +19207,19 @@ msgstr ""
 "Stel hier de lijst in van uw afbeeldingen om samen te voegen in een "
 "panorama. Voldoe aan deze voorwaarden:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:71
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
 msgstr "Afbeeldingen zijn vanuit hetzelfde gezichtspunt genomen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
 msgstr "Afbeeldingen zijn met dezelfde camera (en lens) genomen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19229,31 +19229,31 @@ msgstr ""
 "Merk op dat de eerste afbeelding in de reeks als centrale foto in het "
 "panorama zal worden gebruikt, in het geval van een 360° panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
 msgstr "Aan elkaar geplakt panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
 msgstr "Instellingen opslaan"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
 msgstr "Bestandsnaam van sjabloon: "
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name of the panorama file (without its extension)."
 msgstr "Bestandsnaam van panorama (zonder extensie)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:93
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19269,19 +19269,19 @@ msgstr ""
 "\"panorama.jpg\". Als u ook er voor kiest om het projectbestand op te slaan, "
 "dan zal het de naam \"panorama.pto\" krijgen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Save project file"
 msgstr "Projectbestand opslaan"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
 msgstr "Het projectbestand opslaan voor verdere verwerking in de Hugin-GUI."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19296,20 +19296,20 @@ msgstr ""
 "of het centrum van het panorama wilt wijzigen of de aanstuurpunten wilt "
 "wijzigen om een beter resultaat te krijgen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:213
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "Dit bestand bestaat al"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -19319,26 +19319,26 @@ msgstr ""
 "Een of meer van de geconverteerde raw-bestanden bestaan al (ze zullen "
 "overgeslagen worden bij het proces van kopiëren."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "Panorama aan elkaar plakken is gereed"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr ""
 "Gefeliciteerd. Uw afbeeldingen zijn aan elkaar geplakt in een panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:269
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "Uw panorama zal aangemaakt worden in de map:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
@@ -19346,7 +19346,7 @@ msgstr ""
 "nadat u op de knop \"Voltooien\" drukt, met de naam zoals onderstaand "
 "ingesteld."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:272
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19359,32 +19359,32 @@ msgstr ""
 "gebruikt bij het aan elkaar plakken, tegelijk worden gekopieerd (dat zijn "
 "TIFF-bestanden die groot kunnen zijn)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
 #, kde-format
 msgctxt "@label"
 msgid "Error"
 msgstr "Fout"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "Optimalisatie"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "Zet de horizon recht"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:115
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr ""
 "Detecteer de horizon en pas het project aan om het horizontaal te maken."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19395,13 +19395,13 @@ msgstr ""
 "de gedetecteerde horizon een horizontale lijn is in het uiteindelijke "
 "panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "Optimalisatie is onderweg, even geduld a.u.b."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19410,7 +19410,7 @@ msgstr ""
 "De optimalisatiestap volgens uw instellingen is klaar om uitgevoerd te "
 "worden."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19420,38 +19420,38 @@ msgstr ""
 "Deze stap kan een automatische instelling van de horizon bevatten en ook een "
 "automatische selectie van de projectie en afmetingen."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:224
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr ""
 "Om deze verwerking uit te voeren zal het programma \"%1\" worden gebruikt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
 msgstr "Op de knop \"Volgende\" drukken om de optimalisatie uit te voeren."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "Optimalisatie is mislukt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "Voorbewerking van afbeeldingen"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "Bewegende luchten detecteren"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19462,7 +19462,7 @@ msgstr ""
 "referentiepunten tussen de afbeeldingen worden gebruikt vanwege bewegende "
 "wolken."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:114
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19476,14 +19476,14 @@ msgstr ""
 "wolken zijn gekoppeld. Dit is zinnig om te voorkomen dat bewegende wolken "
 "het vinden van referentiepunten kan beïnvloeden."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr ""
 "Nu zullen we afbeeldingen voorbewerken alvorens ze aan elkaar te plakken."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19494,57 +19494,57 @@ msgstr ""
 "tussen afbeeldingen overeen te laten komen. Daarvoor zal het programma "
 "\"%1\" worden gebruikt."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Voorbeeld en nabewerking</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:141
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Bezig met de bewerking van het voorbeeld..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:220
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Nabewerking van het panorama</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Nabewerking van het panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:308
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Bewerking voor voorbeeld is geannuleerd."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:370
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Fout</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:402
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Here a makefile is a script for GNU Make"
 msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
 msgstr "<p><b>Kan makefile niet aanmaken: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:431
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Kan projectbestand niet aanmaken: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:460
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "<p><b>Verwerken van bestand %1 / %2: </b></p><p>%3</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:492
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
@@ -19573,19 +19573,19 @@ msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Samenstellen van een panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:641
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Verwerken van bestand %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:653
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
 msgstr "Samenstellen van een panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:66
+#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Creator Wizard"
@@ -19596,106 +19596,106 @@ msgstr "Assistent voor het aanmaken van een panorama"
 msgid "Unsupported Paper Size"
 msgstr "Niet-ondersteunde papiergrootte"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:107
 #, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Afdrukken naar afbeeldingsbestand"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:111
 #, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "Afdrukken naar PDF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Met Gimp afdrukken"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:138
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Geen opschrift"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Afbeeldingsbestandsnamen"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:151
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif datum-tijd"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:152
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Toelichting bij item"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:153
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Aangepaste opmaak"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:177
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:221
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:305
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
 #, kde-format
 msgid "Printing canceled"
 msgstr "Afdrukken geannuleerd"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:202
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:279
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
 #, kde-format
 msgid "Processing page %1"
 msgstr "Pagina %1 wordt bewerkt"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:291
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
 #, kde-format
 msgid "Could not save file %1"
 msgstr "Kon bestand %1 niet opslaan"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:297
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Pagina %1 opgeslagen als %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
 #, kde-format
 msgid "Print Creator"
 msgstr "Maker van afdrukken"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Een hulpmiddel om uit afbeeldingen een afdrukcompositie aan te maken"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:63
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19709,18 +19709,18 @@ msgstr ""
 "p><p>Verschillende voorgedefinieerde papierafmetingen en indelingen kunnen "
 "gebruikt worden om bestanden te bewerken.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Author"
 msgstr "Auteur"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
 #, kde-format
 msgid "Contributor"
 msgstr "Medewerker"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -19951,7 +19951,7 @@ msgstr "Fotoafmetingen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:961
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -19964,7 +19964,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:951
 #, kde-format
 msgid "inches"
 msgstr "inches"
@@ -20059,7 +20059,7 @@ msgstr "Volgende pagina"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:123
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -20126,37 +20126,37 @@ msgstr ""
 "Draait de foto automatisch op indeling volgens de oriëntatie van de camera-"
 "informatie"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
 msgid "No page to print..."
 msgstr "Geen pagina af te drukken..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:141
 #, kde-format
 msgid "Starting to pre-process files..."
 msgstr "Beginnen met bestanden voor voorbewerking..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:179
 #, kde-format
 msgid "Printing process aborted..."
 msgstr "Afdrukproces afgebroken..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:220
 #, kde-format
 msgid "Printing process is not completed"
 msgstr "Afdrukproces is niet voltooid"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:225
 #, kde-format
 msgid "Printing process completed."
 msgstr "Afdrukproces is voltooid."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
 msgid "Open destination directory in file-browser."
 msgstr "Bestemmingsmap in bestandsbrowser openen."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:255
 #, kde-format
 msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
@@ -20165,12 +20165,12 @@ msgstr ""
 "Het opstarten van het externe Gimp programma gaf een fout. Verzeker u ervan "
 "dat dit programma juist is geïnstalleerd."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
 msgstr "Het verwijderen van de tijdelijke bestanden van The Gimp is mislukt."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
 msgid ""
 "Unable to create a temporary folder. Please make sure you have proper "
@@ -20179,14 +20179,14 @@ msgstr ""
 "Het aanmaken van een tijdelijke map is mislukt. Verzeker u ervan dat u de "
 "benodigde rechten hebt voor deze map en probeer het opnieuw."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Maker van afdrukken"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Print Creator</b></h1></p><p>This assistant will "
@@ -20200,46 +20200,46 @@ msgstr ""
 "p><p>Een aan te passen paginaindeling met fotoverzameling kan ook gebruikt "
 "worden, gebaseerd op het Atkins algoritme.</p></qt>"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
 msgstr "Optionele Gimp uitvoerbare programma's"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
 msgstr "Afbeeldingsformaat:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:86
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, kde-format
 msgid "Select your preferred format to export printing as image."
 msgstr ""
 "Selecteer uw voorkeursformaat voor exporteren van afdrukken als afbeelding."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Doelmap:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Uitvoerbestemmingspad"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
 msgid "The image output file name will be generated automatically."
 msgstr ""
 "De bestandsnaam van de afbeeldingsuitvoer zal automatisch worden gegenereerd."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:121
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
 #, kde-format
 msgid "Open in File Browser"
 msgstr "In bestandenbrowser openen"
@@ -20250,18 +20250,18 @@ msgctxt "@info layout page"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:131
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Selecteer uw voorkeur voor afdrukuitvoer."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:501
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:496
 #, kde-format
 msgid "Add again"
 msgstr "Opnieuw toevoegen"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
@@ -20269,20 +20269,20 @@ msgstr "Opnieuw toevoegen"
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1114
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Aangepaste indeling"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "De geselecteerde aangepaste grootte van de foto kan niet toegepast worden op "
 "de grootte van het papier"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
 #, kde-format
 msgid ""
 "Custom\n"
@@ -20291,76 +20291,76 @@ msgstr ""
 "Aangepaste\n"
 "indeling"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:110
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Welkom bij het hulpmiddel Maker van afdrukken"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
 msgstr "Selectie van albums"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:112
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Paginaopmaak selecteren"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Caption Settings"
 msgstr "Instellingen voor opschrift"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Foto's bijsnijden en draaien"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Instellingen voor afbeeldingsuitvoer"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Render Printing"
 msgstr "Afdrukken renderen"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:253
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Foto %1 van %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:352
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:364
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Pagina %1 van %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
 #, kde-format
 msgid "Error opening input file"
 msgstr "Fout bij openen van invoerbestand"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Fout bij openen van tijdelijke map"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Kan afbeeldingsgrootte niet wijzigen. Gestopt."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "Kan gewijzigde JPEG-afbeelding niet opslaan. Gestopt."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "Kan gewijzigde PNG-afbeelding niet opslaan. Gestopt"
@@ -20490,55 +20490,55 @@ msgstr "Nadat uw afbeeldingen per e-mail zijn verzonden..."
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "Druk op de knop 'Eindigen' om de tijdelijke bestanden op te ruimen"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
 msgctxt "Mail client: BALSA"
 msgid "Balsa"
 msgstr "Balsa"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:115
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:98
 #, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
 msgstr "Clawsmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:116
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
 msgstr "Evolution"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:117
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
 #, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
 msgstr "KMail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:118
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
 msgctxt "Mail client: NETSCAPE"
 msgid "Netscape Messenger"
 msgstr "Netscape Messenger"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:119
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:102
 #, kde-format
 msgctxt "Mail client: OUTLOOK"
 msgid "Outlook"
 msgstr "Outlook"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:120
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:103
 #, kde-format
 msgctxt "Mail client: SYLPHEED"
 msgid "Sylpheed"
 msgstr "Sylpheed"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:121
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:104
 #, kde-format
 msgctxt "Mail client: THUNDERBIRD"
 msgid "Thunderbird"
 msgstr "Thunderbird"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
@@ -20546,7 +20546,7 @@ msgctxt "Image format: JPEG"
 msgid "Jpeg"
 msgstr "Jpeg"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
@@ -20554,17 +20554,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "Png"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
 #, kde-format
 msgid "Send by Email"
 msgstr "Met e-mail verzenden"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Een hulpmiddel om afbeeldingen per e-mail te verzenden"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20578,7 +20578,7 @@ msgstr ""
 "selectie van albums.</p><p>Verschillende e-mailclients kunnen gebruikt "
 "worden voor het verzenden via het netwerk.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20616,24 +20616,24 @@ msgstr "E-mailclient Outlook."
 msgid "Mozilla Foundation Mail Client."
 msgstr "Mozilla Foundation e-mailclient."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
 #, kde-format
 msgid "Preparing file to export by mail..."
 msgstr "Bezig bestand te exporteren per e-mail..."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, kde-format
 msgid "%1 input items to process"
 msgstr "%1 te verwerken invoeritems"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:64
+#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:61
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
 "<p>Deze weergave geeft een lijst met alle per e-mail te exporteren items.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:94
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20647,28 +20647,28 @@ msgstr ""
 "van bijlagen aan te passen in overeenstemming met de mogelijkheden van uw e-"
 "mailservice.</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
 msgstr "Uitvoerbare programma's van e-mailclienttoepassing"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:88
 #, kde-format
 msgid "Mail program:"
 msgstr "E-mailprogramma:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:92
 #, kde-format
 msgid "Select your preferred external mail client program here."
 msgstr "Selecteer uw externe e-mailclientprogramma van voorkeur hier."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:107
 #, kde-format
 msgid "Attach a file with items properties"
 msgstr "Voeg een bestand bij met itemseigenschappen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:108
 #, kde-format
 msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
@@ -20677,26 +20677,26 @@ msgstr ""
 "Als u deze optie inschakelt worden alle itemseigenschappen als Commentaar, "
 "Waardering of Tags, toegevoegd als een bijgevoegd bestand."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:120
 #, kde-format
 msgid "Maximum email size limit:"
 msgstr "Maximale e-mailgrootte:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Afbeeldingseigenschappen aanpassen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
@@ -20707,14 +20707,14 @@ msgstr ""
 "Als u deze optie aanzet, kan de grootte van de te verzenden afbeeldingen "
 "worden aangepast en opnieuw gecomprimeerd."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Afbeeldingseigenschappen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
@@ -20725,28 +20725,28 @@ msgstr ""
 "Selecteer de lengte van de afbeeldingen die verzonden moeten worden. De "
 "beeldverhouding blijft behouden."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Afbeeldingslengte:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "Selecteer uw voorkeursformaat voor conversie van een afbeelding."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr ""
 "<p>De nieuwe compressiewaarde voor de te verzenden JPEG-afbeeldingen:</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
 #, kde-format
 msgid ""
@@ -20758,21 +20758,21 @@ msgstr ""
 "b>: gemiddelde compressie<br/><b>75</b>:lage compressie (standaardwaarde)<br/"
 "><b>100</b>:geen compressie</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Afbeeldingskwaliteit:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Alle metagegevens verwijderen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
@@ -20783,46 +20783,46 @@ msgstr ""
 "Als u deze optie activeert, zullen alle metagegevens zoals Exif, Iptc en Xmp "
 "worden verwijderd."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Met e-mail verzenden"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Welkom bij het hulpmiddel E-mail"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
 msgstr "Lijst met afbeeldingen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
 #, kde-format
 msgid "Email Settings"
 msgstr "E-mailinstellingen"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Export by Email"
 msgstr "Exporteren per e-mail"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Diashow met video's"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr ""
 "Een hulpmiddel om een diashow met video's uit afbeeldingen aan te maken"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20836,7 +20836,7 @@ msgstr ""
 "</p><p>Verschillende visuele effecten kunnen worden toegepast op "
 "afbeeldingen om overgangen te maken bij het maken van de  doelvideo.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21258,17 +21258,17 @@ msgstr "Bijgesteld en bijgesneden"
 msgid "Centered"
 msgstr "Gecentreerd"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:41
 #, kde-format
 msgid "OpenGL Viewer"
 msgstr "OpenGL-viewer"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, kde-format
 msgid "A tool to preview image with OpenGL"
 msgstr "Een hulpmiddel om afbeeldingen te bekijken met OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:65
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
@@ -21316,19 +21316,19 @@ msgstr ""
 "colspan=\"2\"><nobr><center><b><h1>Overig</h1></b></center></nobr></td></"
 "tr><tr><td>Deze help tonen:</td><td>toets <i>F1</i></td></tr></table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL-afbeeldingsviewer"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
 #, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL-fout"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:192
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
@@ -21336,7 +21336,7 @@ msgstr ""
 "De OpenGL- optie GL_ARB_texture_rectangle wordt op uw systeem niet "
 "ondersteund"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
 msgid "No OpenGL context has been found"
 msgstr "Geen OpenGL-context gevonden"

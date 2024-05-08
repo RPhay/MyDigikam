@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-07 01:42+0000\n"
+"POT-Creation-Date: 2024-05-08 01:50+0000\n"
 "PO-Revision-Date: 2024-04-23 21:12+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -2868,8 +2868,8 @@ msgstr "Montri Plenekranon"
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
@@ -6478,7 +6478,7 @@ msgstr ""
 "Iptc aŭ Xmp de bildoj.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -10202,7 +10202,7 @@ msgstr "Nova larĝo:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:125
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
@@ -11500,19 +11500,19 @@ msgstr "Apliki"
 msgid "Details changed"
 msgstr "Detaloj ŝanĝiĝis"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Geolokigo Redakti"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Ilo por redakti erojn geolokigon"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11538,7 +11538,7 @@ msgstr ""
 "Fine, ĉi tiu ilo kapablas legi GPS-spuron de aparato por sinkronigi. geo-"
 "loko de eroj se vi fotilo ne havas enigitan GPS-aparaton."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -15848,13 +15848,13 @@ msgstr "ne validas"
 msgid "Please wait ..."
 msgstr "Bonvolu atendi ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Ilo por ĝustigi erojn dato-tempo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15874,7 +15874,7 @@ msgstr ""
 "Multaj metadatumaj tempomarkoj povas esti ĝustigitaj. aŭ lasita netuŝita. La "
 "alĝustigo povas esti kompenso de tempo aŭ specifa dato."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -15914,7 +15914,7 @@ msgstr "Iama Aŭtoro"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:87
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:100
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Ellaboranto kaj Prizorganto"
@@ -16711,7 +16711,7 @@ msgid "Revert current settings to default values."
 msgstr "Reverti nunajn agordojn al defaŭltaj valoroj."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
@@ -16807,8 +16807,8 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:96
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:80
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:94
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:86
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:83
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:85
 #, kde-format
 msgid "Author and Maintainer"
@@ -16896,7 +16896,7 @@ msgid "For more information, please take a look at"
 msgstr "Por pliaj informoj, bonvolu rigardi"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "this page"
@@ -16931,7 +16931,7 @@ msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "Almenaŭ 2 bildoj de la sama temo devas esti aldonitaj al la stako."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:68
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
@@ -17010,7 +17010,7 @@ msgstr ""
 "bildojn. Alineaj operacioj povas daŭri iom da tempo."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:133
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17021,29 +17021,29 @@ msgstr ""
 "konvertitaj al 16-bitaj sRGB-bildoj kun aŭtomata gamma."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:134
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr "Premu la butonon \"Sekva\" por komenci antaŭtraktadon."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:146
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
 msgstr "Antaŭtraktado estas en progreso, bonvolu atendi."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:147
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:158
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:170
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
 msgstr "Ĉi tio povas daŭri iom da tempo..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:206
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
@@ -17056,8 +17056,8 @@ msgid "Please check your bracketed images stack..."
 msgstr "Bonvolu kontroli vian enkrampitajn bildojn-stakon..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:208
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:311
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
@@ -17366,8 +17366,8 @@ msgstr "Krei HTML-galerion..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:98
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
@@ -17387,7 +17387,7 @@ msgstr "%1 albumoj prilaborendaj:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 eroj por procesi"
@@ -17476,8 +17476,8 @@ msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:81
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
@@ -17485,8 +17485,8 @@ msgstr "&Elekti bildo-elektan metodon:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
@@ -17506,7 +17506,7 @@ msgid "Destination folder:"
 msgstr "Cela dosierujo:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
@@ -18697,27 +18697,27 @@ msgstr "<b>Nuligite</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>Ne povas ruli <i>%1</i>:</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
 #, kde-format
 msgid "Temporary panorama file does not exists."
 msgstr "Provizora panorama dosiero ne ekzistas."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "Panorama dosiero nomata <filename>%1</filename> jam ekzistas."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "Provizora projektdosiero ne ekzistas."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
 msgstr "Projekta dosiero nomata <filename>%1</filename> jam ekzistas."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:169
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
@@ -18725,7 +18725,7 @@ msgstr ""
 "Ne povas movi panoramon de <filename>%1</filename> al <filename>%2</"
 "filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -18734,7 +18734,7 @@ msgstr ""
 "Ne povas movi projektdosieron de <filename>%1</filename> al <filename>%2</"
 "filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -18743,56 +18743,56 @@ msgstr ""
 "Ne povas kopii konvertitan bilddosieron de <filename>%1</filename> al "
 "<filename>%2</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:48
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
 msgstr "PTO-dosiero jam kreita en la provizora dosierujo."
 
-#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:59
-#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
+#: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
+#: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
 msgstr "PTO-dosiero ne povas esti kreita en la provizora dosierujo."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
 msgstr "Projektdosiero-analizado malsukcesis."
 
-#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
+#: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Nekonata enigdosiero en la projektdosiero: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Eniga bildo ne povas esti ŝargita por antaŭprezentogenerado."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:205
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Kreado de Tiff-bildo malsukcesis."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:234
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Malsukcesa konvertiĝo de kruda dosiero."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:79
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Bonvenon al Panorama Ilo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Bonvenon al Panorama Ilo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18802,7 +18802,7 @@ msgstr ""
 "Ĉi tiu ilo kunigas plurajn bildojn por krei panoramon, igante la kudron "
 "inter bildoj ne videbla."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18812,37 +18812,37 @@ msgstr ""
 "Ĉi tiu asistanto helpos vin agordi kiel importi bildojn antaŭ kudri ilin en "
 "panoramon."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Bildoj devas esti prenitaj el la sama vidpunkto."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Por pliaj informoj, bonvolu rigardi"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:104
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panoramaj Binaroj"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Dosierformato"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:173
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "JPEG eligo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:178
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18852,7 +18852,7 @@ msgstr ""
 "Elektas JPEG-eligon kun 90% kunprema indico (perda kunpremo, pli malgranda "
 "grandeco)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:180
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18864,13 +18864,13 @@ msgstr ""
 "koste de informperdo dum kunpremado. Ĉi tio estas la plej facila maniero "
 "dividi la rezulton aŭ presi ĝin interrete aŭ en butiko."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "TIFF eligo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:187
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18880,7 +18880,7 @@ msgstr ""
 "Elektas TIFF-produktaĵon kunpremitan per la LZW-algoritmo (senperda "
 "kunpremo, pli granda grandeco)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:189
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -18891,13 +18891,13 @@ msgstr ""
 "viaj originalaj fotoj uzante RAW-bildojn koste de pli granda panorama "
 "dosiero."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:56
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
 msgstr "Agordi Panoramajn Bildojn"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18907,19 +18907,19 @@ msgstr ""
 "Fiksu ĉi tie la liston de viaj bildoj por miksi en panoramon. Bonvolu sekvi "
 "ĉi tiujn kondiĉojn:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:71
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
 msgstr "Bildoj estas prenitaj el la sama vidpunkto."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
 msgstr "Bildoj estas prenitaj per la sama fotilo (kaj lenso)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
+#: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18929,31 +18929,31 @@ msgstr ""
 "Notu ke, en la kazo de 360° panoramo, la unua bildo en la listo estos la "
 "bildo kiu estos en la centro de la panoramo."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:78
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
 msgstr "Panoramo Kudrita"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
 msgstr "Konservi Agordojn"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:98
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
 msgstr "Dosiernomo ŝablono:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name of the panorama file (without its extension)."
 msgstr "Nomo de la panorama dosiero (sen ĝia etendaĵo)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:93
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18969,19 +18969,19 @@ msgstr ""
 "\"panoramo.jpg\". Se vi elektas konservi ankaŭ la projektdosieron, ĝi havos "
 "la nomon \"panorama.pto\"."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Save project file"
 msgstr "Konservi projektodosieron"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
 msgstr "Konservi la projektdosieron por plua prilaborado ene de Hugin GUI."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18996,20 +18996,20 @@ msgstr ""
 "centron de la panoramo, aŭ modifi la kontrolpunktojn por akiri pli bonajn "
 "rezultojn."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:206
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:215
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
 msgstr "Averto"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:213
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:207
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
 msgstr "Ĉi tiu dosiero jam ekzistas"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:216
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -19019,31 +19019,31 @@ msgstr ""
 "Unu aŭ pluraj konvertitaj krudaj dosieroj jam ekzistas (ili estos "
 "preterlasitaj dum la kopiado)"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
 msgstr "Panorama kudrado estas Finita"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:262
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
 msgstr "Gratulon. Viaj bildoj estas kunmetitaj en panoramon."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:269
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
 msgstr "Via panoramo estos kreita al la dosierujo:"
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:265
 #, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
 msgstr "post kiam vi premas la butonon \"Fini\", kun la nomo fiksita sube."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:272
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19055,32 +19055,32 @@ msgstr ""
 "bildoj, tiam la konvertitaj bildoj uzataj dum la kudrado estos kopiitaj "
 "samtempe (tiuj estas TIFF-dosieroj kiuj povas esti grandaj)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
+#: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:295
 #, kde-format
 msgctxt "@label"
 msgid "Error"
 msgstr "Eraro"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:81
 #, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
 msgstr "Optimumigo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:113
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:95
 #, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
 msgstr "Ebena horizonto"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:115
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:97
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr ""
 "Detekti la horizonton kaj adaptu la projekton por fari ĝin horizontala."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:98
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19090,20 +19090,20 @@ msgstr ""
 "\"Nivelhorizonto\": Detekti la horizonton kaj adaptu la projekcion tiel ke "
 "la detektita horizonto estu horizontala linio en la fina panoramo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
 msgstr "Optimumigo estas en progreso, bonvolu atendi."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
 msgstr "La optimumiga paŝo laŭ viaj agordoj estas preta por esti farita."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:222
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:204
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19113,37 +19113,37 @@ msgstr ""
 "Ĉi tiu paŝo povas inkluzivi aŭtomatan ebenigon de la horizonto, kaj ankaŭ "
 "aŭtomatan projekcian elekton kaj grandecon."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:224
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:206
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
 msgstr "Por plenumi ĉi tiun operacion, la programo \"%1\" estos uzata."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:208
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
 msgstr "Premu la butonon \"Sekva\" por ruli la optimumigon."
 
-#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
+#: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
 msgstr "Optimumigo malsukcesis."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:83
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
 msgstr "Antaŭ-traktado de bildoj"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:97
 #, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
 msgstr "Detekti moviĝantajn ĉielojn"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:112
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:99
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19153,7 +19153,7 @@ msgstr ""
 "Aŭtomata detekto de nuboj por malhelpi malĝustajn ŝlosilpunktojn "
 "kongruantajn inter bildoj pro moviĝantaj nuboj."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:114
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:101
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19167,13 +19167,13 @@ msgstr ""
 "Ĉi tio estas utila por malhelpi moviĝantajn nubojn ŝanĝante la procezon de "
 "kongruaj kontrolpunktoj."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:186
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr "Nun ni antaŭtraktos bildojn antaŭ kudri ilin."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:202
+#: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:189
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19184,57 +19184,57 @@ msgstr ""
 "egali interkovrojn inter bildoj. Por tiu celo, la programo \"%1\" estos "
 "uzata."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Antaŭrigardo kaj Posttraktado</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:141
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:129
 #, kde-format
 msgid "Processing Panorama Preview..."
 msgstr "Prilaborado de Panorama Antaŭrigardo..."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:220
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:210
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
 msgstr "<qt><p><h1>Panorama Posttraktado</h1></p></qt>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:226
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:216
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
 msgstr "Panorama Post-traktado"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:308
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:298
 #, kde-format
 msgid "Preview Processing Cancelled."
 msgstr "Antaŭrigarda traktado Nuligis."
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:370
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:362
 #, kde-format
 msgid "<h1><b>Error</b></h1><p>%1</p>"
 msgstr "<h1><b>Eraro</b></h1><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:402
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:396
 #, kde-format
 msgctxt "Here a makefile is a script for GNU Make"
 msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
 msgstr "<p><b>Ne povas krei makedosieron: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:431
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:426
 #, kde-format
 msgctxt "a project file is a .pto file, as given to hugin to build a panorama"
 msgid "<p><b>Cannot create project file: </b></p><p>%1</p>"
 msgstr "<p><b>Ne povas krei projektdosieron: </b></p><p>%1</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:460
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:456
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
 msgstr "<p><b>Pretiganta dosieron %1 / %2: </b></p><p>%3</p>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:492
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:489
 #, kde-format
 msgctxt "Error message for panorama compilation"
 msgid "<p><b>Panorama compilation: </b></p><p>%1</p>"
@@ -19263,19 +19263,19 @@ msgctxt "Success for panorama compilation"
 msgid "Panorama compilation"
 msgstr "Panorama kompilo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:641
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:642
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
 msgstr "Prilaborado de dosiero %1 / %2"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:653
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:654
 #, kde-format
 msgctxt "Panorama compilation started"
 msgid "Panorama compilation"
 msgstr "Panorama kompilo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:66
+#: core/dplugins/generic/tools/panorama/wizard/panowizard.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Creator Wizard"
@@ -19286,106 +19286,106 @@ msgstr "Sorĉisto de Panorama Kreinto"
 msgid "Unsupported Paper Size"
 msgstr "Nesubtenata Papera Grandeco"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:129
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:107
 #, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
 msgstr "Presi al Bilda Dosiero"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:133
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:111
 #, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
 msgstr "Presi al PDF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:137
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:115
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
 msgstr "Presi per Gimp"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:160
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:138
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:161
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:139
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:162
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:140
 #, kde-format
 msgctxt "Image format: TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:171
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:149
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
 msgstr "Neniu bildoteksto"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:172
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:150
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
 msgstr "Bildaj dosiernomoj"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:173
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:151
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
 msgstr "Exif dato-tempo"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:174
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:152
 #, kde-format
 msgctxt "Caption type: COMMENT"
 msgid "Item comments"
 msgstr "Eroj komentoj"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:175
+#: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:153
 #, kde-format
 msgctxt "Caption type: CUSTOM"
 msgid "Custom format"
 msgstr "Propra formato"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:177
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:221
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:305
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:182
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:229
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:319
 #, kde-format
 msgid "Printing canceled"
 msgstr "Presado nuligita"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:202
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:279
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:208
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:290
 #, kde-format
 msgid "Processing page %1"
 msgstr "Prilaboranta paĝon %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:291
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:302
 #, kde-format
 msgid "Could not save file %1"
 msgstr "Ne eblis konservi dosieron %1"
 
-#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:297
+#: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:310
 #, kde-format
 msgid "Page %1 saved as %2"
 msgstr "Paĝo %1 konservita kiel %2"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:39
 #, kde-format
 msgid "Print Creator"
 msgstr "Presa Kreinto"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:54
 #, kde-format
 msgid "A tool to create print composition from images"
 msgstr "Ilo por krei presan komponadon el bildoj"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:63
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as assemble) before to "
@@ -19398,18 +19398,18 @@ msgstr ""
 "de albumoj.</p><p> p>Malsamaj antaŭdifinitaj papergrandoj kaj aranĝoj povas "
 "esti uzataj por prilabori dosierojn.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
 #: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Author"
 msgstr "Aŭtoro"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:87
 #, kde-format
 msgid "Contributor"
 msgstr "Kontribuanto"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -19637,7 +19637,7 @@ msgstr "Fotograndeco"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:961
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -19650,7 +19650,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:956
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:951
 #, kde-format
 msgid "inches"
 msgstr "colojn"
@@ -19745,7 +19745,7 @@ msgstr "Sekva paĝo"
 msgid ">"
 msgstr ">"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:123
+#: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:122
 #, kde-format
 msgctxt "@title: column"
 msgid "Caption"
@@ -19811,37 +19811,37 @@ msgid ""
 msgstr ""
 "Rotacii foton aŭtomate laŭ aranĝo laŭe kun fotilaj informoj pri orientiĝo"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
 msgid "No page to print..."
 msgstr "Neniu paĝo por presi..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:141
 #, kde-format
 msgid "Starting to pre-process files..."
 msgstr "Komencante antaŭprilabori dosierojn..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:179
 #, kde-format
 msgid "Printing process aborted..."
 msgstr "Presa procezo ĉesigita..."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:220
 #, kde-format
 msgid "Printing process is not completed"
 msgstr "Presa procezo ne estas finita"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:225
 #, kde-format
 msgid "Printing process completed."
 msgstr "Presa procezo finiĝis."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
 msgid "Open destination directory in file-browser."
 msgstr "Malfermi celdosierujon en dosier-retumilo."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:255
 #, kde-format
 msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
@@ -19850,12 +19850,12 @@ msgstr ""
 "Okazis eraro por lanĉi la eksteran Gimp-programon. Bonvolu certigi, ke ĝi "
 "estas ĝuste instalita."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
 msgstr "Ne eblis forigi la provizorajn dosierojn de GIMP."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:299
 #, kde-format
 msgid ""
 "Unable to create a temporary folder. Please make sure you have proper "
@@ -19864,14 +19864,14 @@ msgstr ""
 "Ne eblas krei provizoran dosierujon. Bonvolu certigi, ke vi havas taŭgajn "
 "permesojn al ĉi tiu dosierujo kaj provu denove."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:347
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:87
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Presa Kreinto"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:72
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Print Creator</b></h1></p><p>This assistant will "
@@ -19884,44 +19884,44 @@ msgstr ""
 "Fotoalbumo, Foto. Kolaĝo, aŭ Kadrita Foto.</p><p>Ankaŭ povas esti uzata "
 "adapta fotokolekta paĝa aranĝo, bazita sur Atkins-algoritmo.</p></qt>"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
+#: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
 msgstr "Laŭvola Gimp Binaroj"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:172
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
 msgstr "Bilda Formato:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:86
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:79
 #, kde-format
 msgid "Select your preferred format to export printing as image."
 msgstr "Elektu vian preferatan formaton por eksporti presadon kiel bildon."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Cela dosierujo:"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Eligo Destinita Vojo"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #, kde-format
 msgid "The image output file name will be generated automatically."
 msgstr "La bildo eligo dosiernomo estos generita aŭtomate."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:121
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:114
 #, kde-format
 msgid "Open in File Browser"
 msgstr "Malfermi en Dosiera Retumilo"
@@ -19932,18 +19932,18 @@ msgctxt "@info layout page"
 msgid "Custom"
 msgstr "Propra"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:131
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Elektu vian preferatan presan eligon."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:501
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:496
 #, kde-format
 msgid "Add again"
 msgstr "Aldoni denove"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
@@ -19951,19 +19951,19 @@ msgstr "Aldoni denove"
 msgid "Remove"
 msgstr "Forigi"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1114
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Propra Aranĝo"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1115
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "La elektita propra fotograndeco ne povas esti aplikata al la papera grandeco."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1341
 #, kde-format
 msgid ""
 "Custom\n"
@@ -19972,76 +19972,76 @@ msgstr ""
 "Propra\n"
 "aranĝo"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:110
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:97
 #, kde-format
 msgid "Welcome to Print Creator"
 msgstr "Bonvenon al Print Creator"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:111
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:85
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
 msgstr "Elekto de Albumoj"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:112
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Select Page Layout"
 msgstr "Elekti Paĝan Aranĝon"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
 msgid "Caption Settings"
 msgstr "Agordoj de titoloj"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Crop and Rotate Photos"
 msgstr "Tondi kaj Rotacii Fotojn"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:102
 #, kde-format
 msgid "Images Output Settings"
 msgstr "Bildaj Eligo-Agordoj"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:103
 #, kde-format
 msgid "Render Printing"
 msgstr "Bildigi Preson"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:253
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:240
 #, kde-format
 msgid "Photo %1 of %2"
 msgstr "Foto %1 de %2"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:352
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:364
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:339
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:351
 #, kde-format
 msgid "Page %1 of %2"
 msgstr "Paĝo %1 el %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:93
 #, kde-format
 msgid "Error opening input file"
 msgstr "Eraro dum malfermo de eniga dosiero"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:104
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Eraro dum malfermado de provizora dosierujo"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:127
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Ne povas regrandigi bildon. Abortante."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:140
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "Ne povas konservi regrandigan bildon (JPEG). Abortante."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:148
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "Ne povas konservi regrandigan bildon (PNG). Abortante."
@@ -20171,55 +20171,55 @@ msgstr "Post sendi viajn bildojn retpoŝte..."
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "Premu la butonon \"Fini\" por purigi provizorajn dosierojn"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:97
 #, kde-format
 msgctxt "Mail client: BALSA"
 msgid "Balsa"
 msgstr "Balsa"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:115
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:98
 #, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
 msgstr "Ungegoj Poŝto"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:116
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, kde-format
 msgctxt "Mail client: EVOLUTION"
 msgid "Evolution"
 msgstr "Evolucio"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:117
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:100
 #, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
 msgstr "Kmail"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:118
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:101
 #, kde-format
 msgctxt "Mail client: NETSCAPE"
 msgid "Netscape Messenger"
 msgstr "Netscape Messenger"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:119
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:102
 #, kde-format
 msgctxt "Mail client: OUTLOOK"
 msgid "Outlook"
 msgstr "Perspektivo"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:120
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:103
 #, kde-format
 msgctxt "Mail client: SYLPHEED"
 msgid "Sylpheed"
 msgstr "Silfedo"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:121
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:104
 #, kde-format
 msgctxt "Mail client: THUNDERBIRD"
 msgid "Thunderbird"
 msgstr "Tondrobirdo"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:113
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
 #: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
@@ -20227,7 +20227,7 @@ msgctxt "Image format: JPEG"
 msgid "Jpeg"
 msgstr "Jpeg"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
+#: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
 #: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
@@ -20235,17 +20235,17 @@ msgctxt "Image format: PNG"
 msgid "Png"
 msgstr "Png"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:39
 #, kde-format
 msgid "Send by Email"
 msgstr "Sendi per Retpoŝto"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:54
 #, kde-format
 msgid "A tool to send images by E-mail"
 msgstr "Ilo por sendi bildojn per Retpoŝto"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process items (as resize) before to send "
@@ -20258,7 +20258,7 @@ msgstr ""
 "per elekto de albumoj.</p><p>Malsama retpoŝtklienta aplikaĵo povas esti "
 "uzata por prilabori dosierojn en la reto.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20296,23 +20296,23 @@ msgstr "Outlook Poŝtkliento."
 msgid "Mozilla Foundation Mail Client."
 msgstr "Mozilla Foundation Poŝtkliento."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
 #, kde-format
 msgid "Preparing file to export by mail..."
 msgstr "Preparante dosieron por eksporti poŝte..."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
 #, kde-format
 msgid "%1 input items to process"
 msgstr "%1 enigeblaj eroj prilaborendaj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:64
+#: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:61
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr "<p>Ĉi tiu vido listigas ĉiujn aĵojn por eksporti poŝte.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:94
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:89
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will guide "
@@ -20325,28 +20325,28 @@ msgstr ""
 "eksporti enhavon, vi povos ĝustigi aldonaĵajn proprietojn laŭ viaj retpoŝtaj "
 "servoj.</p></qt>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
+#: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:111
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
 msgstr "Poŝtklienta aplikaĵo Binaroj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:88
 #, kde-format
 msgid "Mail program:"
 msgstr "Poŝtprogramo:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:103
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:92
 #, kde-format
 msgid "Select your preferred external mail client program here."
 msgstr "Elektu vian preferatan eksteran retpoŝtklientan programon ĉi tie."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:107
 #, kde-format
 msgid "Attach a file with items properties"
 msgstr "Aldoni dosieron kun elementtrajtoj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:108
 #, kde-format
 msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
@@ -20355,26 +20355,26 @@ msgstr ""
 "Se vi ebligas ĉi tiun opcion, ĉiuj objektoj kiel Komentoj, Taksado aŭ "
 "Etikedoj estos aldonitaj kiel kuna dosiero."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:195
 #, kde-format
 msgid " MB"
 msgstr " MB"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:120
 #, kde-format
 msgid "Maximum email size limit:"
 msgstr "Maksimuma retpoŝta grandeco limo:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Alĝustigi bildotrajtojn"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
@@ -20385,14 +20385,14 @@ msgstr ""
 "Se vi ebligas ĉi tiun opcion, ĉiuj sendotaj bildoj povas esti regrandigitaj "
 "kaj rekunpremitaj."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:154
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Bildaj Propraĵoj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:161
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
@@ -20402,27 +20402,27 @@ msgid ""
 msgstr ""
 "Elektu la longecon de la sendotaj bildoj. La proporcio estas konservita."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Longo de bildo:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:176
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "Elektu vian preferatan formaton por konverti bildon."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>La nova kunprema valoro de JPEG-bildoj sendotaj:</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
 #, kde-format
 msgid ""
@@ -20434,21 +20434,21 @@ msgstr ""
 "meza kunpremo<br/><b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</"
 "b>: neniu kunpremo</p>"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:194
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Bilda kvalito:"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:199
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Forigi ĉiujn metadatumojn"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
+#: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:200
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
@@ -20459,45 +20459,45 @@ msgstr ""
 "Se vi ebligas ĉi tiun opcion, ĉiuj metadatenoj kiel Exif, Iptc kaj Xmp estos "
 "forigitaj."
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Sendi per Retpoŝto"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Welcome to Email Tool"
 msgstr "Bonvenon al Retpoŝta Ilo"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
 msgstr "Listo de Bildoj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:78
 #, kde-format
 msgid "Email Settings"
 msgstr "Retpoŝtaj Agordoj"
 
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:79
 #, kde-format
 msgid "Export by Email"
 msgstr "Eksporti per Retpoŝto"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:39
 #, kde-format
 msgid "Video Slideshow"
 msgstr "Video Slideshow"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:54
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr "Ilo por krei videoprezenton el bildoj"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:59
 #, kde-format
 msgid ""
 "<p>This tool allows users to back-process image as frame to create video "
@@ -20510,7 +20510,7 @@ msgstr ""
 "grupe per elekto de albumoj.</p> <p>Malsamaj vidaj efikoj povas esti "
 "aplikataj al bildoj por fari transirojn dum por bildi celitan filmeton.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -20921,17 +20921,17 @@ msgstr "Alĝustigita kaj tranĉita"
 msgid "Centered"
 msgstr "Centrita"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:41
 #, kde-format
 msgid "OpenGL Viewer"
 msgstr "OpenGL-Vidilo"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
 #, kde-format
 msgid "A tool to preview image with OpenGL"
 msgstr "Ilo por antaŭrigardi bildon kun OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:65
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
 #, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
@@ -20979,26 +20979,26 @@ msgstr ""
 "colspan=\"2\"><nobr><center><b><h1>Aliaj</h1></b></center></nobr></td></"
 "tr><tr><td>Montri ĉi tiun helpon:</td><td><i>F1</i> klavo</td></tr></table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL Bild-Vidilo"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:195
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:204
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:191
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:200
 #, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL-eraro"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:196
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:192
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
 msgstr ""
 "OpenGL-etendo GL_ARB_texture_rectangle ne estas subtenata sur via sistemo"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:205
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
 msgid "No OpenGL context has been found"
 msgstr "Trovis neniun OpenGL-kuntekston"
