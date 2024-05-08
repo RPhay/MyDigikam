@@ -97,7 +97,7 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
         if (face.roles & FacePipelineFaceTagsIface::ForTraining)
         {
             FaceTagsIface dbFace = face;
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Test1 FaceTagsIface:" << dbFace.imageId() << dbFace.tagId();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Test3 FaceTagsIface:" << dbFace.imageId() << dbFace.tagId();
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 

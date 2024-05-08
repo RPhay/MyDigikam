@@ -113,6 +113,9 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 
         for (it = package->databaseFaces.begin() ; it != package->databaseFaces.end() ; ++it)
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Test1 FaceTagsIface:" << (*it).imageId() << (*it).tagId() << it->roles << it->isNull()
+                                                                   << it->assignedRegion.isValid() << FaceTags::isPerson(it->assignedTagId);
+
             if      (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
                 FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
@@ -147,6 +150,9 @@ void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
                 it->roles &= ~FacePipelineFaceTagsIface::ForEditing;
                 it->roles |= FacePipelineFaceTagsIface::Edited;
             }
+
+            if (!add.isEmpty())
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Test2 FaceTagsIface:" << add.last().imageId() << add.last().tagId();
 
             // Training is done by trainerWorker
         }
