@@ -35,7 +35,7 @@ class FilmGrainPlugin : public DPluginBqm
 public:
 
     explicit FilmGrainPlugin(QObject* const parent = nullptr);
-    ~FilmGrainPlugin()                   override;
+    ~FilmGrainPlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -24,12 +24,7 @@ namespace DigikamBqmColorFXPlugin
 {
 
 ColorFX::ColorFX(QObject* const parent)
-    : BatchTool(QLatin1String("ColorFX"), FiltersTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-ColorFX::~ColorFX()
+    : BatchTool(QLatin1String("ColorFX"), FiltersTool, parent)
 {
 }
 

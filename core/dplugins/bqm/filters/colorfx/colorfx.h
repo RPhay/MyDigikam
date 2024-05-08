@@ -32,7 +32,7 @@ class ColorFX : public BatchTool
 public:
 
     explicit ColorFX(QObject* const parent = nullptr);
-    ~ColorFX()                                              override;
+    ~ColorFX()                                              override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    ColorFXSettings* m_settingsView;
+    ColorFXSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmColorFXPlugin

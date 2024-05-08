@@ -32,7 +32,7 @@ class FilmGrain : public BatchTool
 public:
 
     explicit FilmGrain(QObject* const parent = nullptr);
-    ~FilmGrain()                                            override;
+    ~FilmGrain()                                            override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    FilmGrainSettings* m_settingsView;
+    FilmGrainSettings* m_settingsView = nullptr;
 };
 
 } // namespace DigikamBqmFilmGrainPlugin

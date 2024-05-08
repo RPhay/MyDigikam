@@ -37,10 +37,6 @@ ColorFXPlugin::ColorFXPlugin(QObject* const parent)
 {
 }
 
-ColorFXPlugin::~ColorFXPlugin()
-{
-}
-
 QString ColorFXPlugin::name() const
 {
     return i18nc("@title", "Color Effects");

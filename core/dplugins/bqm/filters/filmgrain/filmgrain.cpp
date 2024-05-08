@@ -33,12 +33,7 @@ namespace DigikamBqmFilmGrainPlugin
 {
 
 FilmGrain::FilmGrain(QObject* const parent)
-    : BatchTool(QLatin1String("FilmGrain"), FiltersTool, parent),
-      m_settingsView(nullptr)
-{
-}
-
-FilmGrain::~FilmGrain()
+    : BatchTool(QLatin1String("FilmGrain"), FiltersTool, parent)
 {
 }
 
