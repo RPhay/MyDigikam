@@ -35,7 +35,7 @@ class ConvertToAvifPlugin : public DPluginBqm
 public:
 
     explicit ConvertToAvifPlugin(QObject* const parent = nullptr);
-    ~ConvertToAvifPlugin()                override;
+    ~ConvertToAvifPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

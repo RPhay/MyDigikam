@@ -35,7 +35,7 @@ class ConvertToHeifPlugin : public DPluginBqm
 public:
 
     explicit ConvertToHeifPlugin(QObject* const parent = nullptr);
-    ~ConvertToHeifPlugin()               override;
+    ~ConvertToHeifPlugin()               override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

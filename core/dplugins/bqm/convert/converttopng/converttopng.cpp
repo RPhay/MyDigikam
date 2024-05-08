@@ -37,12 +37,7 @@ namespace DigikamBqmConvertToPngPlugin
 {
 
 ConvertToPNG::ConvertToPNG(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToPNG::~ConvertToPNG()
+    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent)
 {
 }
 

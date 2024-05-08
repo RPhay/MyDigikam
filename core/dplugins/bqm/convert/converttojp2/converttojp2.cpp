@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToJp2Plugin
 {
 
 ConvertToJP2::ConvertToJP2(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToJP2"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToJP2::~ConvertToJP2()
+    : BatchTool(QLatin1String("ConvertToJP2"), ConvertTool, parent)
 {
 }
 

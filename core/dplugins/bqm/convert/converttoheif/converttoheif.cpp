@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToHeifPlugin
 {
 
 ConvertToHEIF::ConvertToHEIF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToHEIF"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToHEIF::~ConvertToHEIF()
+    : BatchTool(QLatin1String("ConvertToHEIF"), ConvertTool, parent)
 {
 }
 

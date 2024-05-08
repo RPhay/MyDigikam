@@ -31,7 +31,7 @@ class ConvertToTIFF : public BatchTool
 public:
 
     explicit ConvertToTIFF(QObject* const parent = nullptr);
-    ~ConvertToTIFF()                                        override;
+    ~ConvertToTIFF()                                        override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToTiffPlugin

@@ -35,7 +35,7 @@ class ConvertToDngPlugin : public DPluginBqm
 public:
 
     explicit ConvertToDngPlugin(QObject* const parent = nullptr);
-    ~ConvertToDngPlugin()                override;
+    ~ConvertToDngPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

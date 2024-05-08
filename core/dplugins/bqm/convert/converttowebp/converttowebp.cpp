@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToWebpPlugin
 {
 
 ConvertToWEBP::ConvertToWEBP(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToWEBP"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToWEBP::~ConvertToWEBP()
+    : BatchTool(QLatin1String("ConvertToWEBP"), ConvertTool, parent)
 {
 }
 

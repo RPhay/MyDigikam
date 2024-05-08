@@ -37,10 +37,6 @@ ConvertToTiffPlugin::ConvertToTiffPlugin(QObject* const parent)
 {
 }
 
-ConvertToTiffPlugin::~ConvertToTiffPlugin()
-{
-}
-
 QString ConvertToTiffPlugin::name() const
 {
     return i18nc("@title", "Convert To TIFF");
@@ -88,7 +84,7 @@ QList<DPluginAuthor> ConvertToTiffPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2022"))
+                             QString::fromUtf8("(C) 2008-2024"))
             ;
 }
 

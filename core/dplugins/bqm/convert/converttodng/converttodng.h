@@ -33,7 +33,7 @@ class ConvertToDNG : public BatchTool
 public:
 
     explicit ConvertToDNG(QObject* const parent = nullptr);
-    ~ConvertToDNG() override;
+    ~ConvertToDNG()                                         override = default;
 
     void cancel()                                           override;
     QString outputSuffix()                            const override;

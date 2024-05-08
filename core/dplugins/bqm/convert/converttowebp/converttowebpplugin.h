@@ -35,7 +35,7 @@ class ConvertToWebpPlugin : public DPluginBqm
 public:
 
     explicit ConvertToWebpPlugin(QObject* const parent = nullptr);
-    ~ConvertToWebpPlugin()               override;
+    ~ConvertToWebpPlugin()               override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

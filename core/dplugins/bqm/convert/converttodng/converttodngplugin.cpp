@@ -37,10 +37,6 @@ ConvertToDngPlugin::ConvertToDngPlugin(QObject* const parent)
 {
 }
 
-ConvertToDngPlugin::~ConvertToDngPlugin()
-{
-}
-
 QString ConvertToDngPlugin::name() const
 {
     return i18nc("@title", "Convert RAW To DNG");

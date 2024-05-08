@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToJxlPlugin
 {
 
 ConvertToJXL::ConvertToJXL(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToJXL"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToJXL::~ConvertToJXL()
+    : BatchTool(QLatin1String("ConvertToJXL"), ConvertTool, parent)
 {
 }
 

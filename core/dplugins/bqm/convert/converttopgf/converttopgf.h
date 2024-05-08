@@ -31,7 +31,7 @@ class ConvertToPGF : public BatchTool
 public:
 
     explicit ConvertToPGF(QObject* const parent = nullptr);
-    ~ConvertToPGF()                                         override;
+    ~ConvertToPGF()                                         override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToPgfPlugin

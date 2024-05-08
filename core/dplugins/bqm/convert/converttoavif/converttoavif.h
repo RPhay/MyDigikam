@@ -31,7 +31,7 @@ class ConvertToAVIF : public BatchTool
 public:
 
     explicit ConvertToAVIF(QObject* const parent = nullptr);
-    ~ConvertToAVIF()                                        override;
+    ~ConvertToAVIF()                                        override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToAvifPlugin

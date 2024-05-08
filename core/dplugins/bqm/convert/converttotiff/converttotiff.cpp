@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToTiffPlugin
 {
 
 ConvertToTIFF::ConvertToTIFF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToTIFF"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToTIFF::~ConvertToTIFF()
+    : BatchTool(QLatin1String("ConvertToTIFF"), ConvertTool, parent)
 {
 }
 

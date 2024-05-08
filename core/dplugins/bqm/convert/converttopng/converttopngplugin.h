@@ -35,7 +35,7 @@ class ConvertToPngPlugin : public DPluginBqm
 public:
 
     explicit ConvertToPngPlugin(QObject* const parent = nullptr);
-    ~ConvertToPngPlugin()                override;
+    ~ConvertToPngPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

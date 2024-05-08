@@ -31,7 +31,7 @@ class ConvertToJP2 : public BatchTool
 public:
 
     explicit ConvertToJP2(QObject* const parent = nullptr);
-    ~ConvertToJP2()                                         override;
+    ~ConvertToJP2()                                         override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToJp2Plugin

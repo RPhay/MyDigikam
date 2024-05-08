@@ -31,7 +31,7 @@ class ConvertToJXL : public BatchTool
 public:
 
     explicit ConvertToJXL(QObject* const parent = nullptr);
-    ~ConvertToJXL()                                         override;
+    ~ConvertToJXL()                                         override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToJxlPlugin

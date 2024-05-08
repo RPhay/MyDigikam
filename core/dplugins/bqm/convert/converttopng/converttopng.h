@@ -31,7 +31,7 @@ class ConvertToPNG : public BatchTool
 public:
 
     explicit ConvertToPNG(QObject* const parent = nullptr);
-    ~ConvertToPNG()                                         override;
+    ~ConvertToPNG()                                         override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToPngPlugin

@@ -37,10 +37,6 @@ ConvertToJp2Plugin::ConvertToJp2Plugin(QObject* const parent)
 {
 }
 
-ConvertToJp2Plugin::~ConvertToJp2Plugin()
-{
-}
-
 QString ConvertToJp2Plugin::name() const
 {
     return i18nc("@title", "Convert To JP2");
@@ -88,7 +84,7 @@ QList<DPluginAuthor> ConvertToJp2Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2022"))
+                             QString::fromUtf8("(C) 2008-2024"))
             ;
 }
 

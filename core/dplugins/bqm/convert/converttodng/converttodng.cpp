@@ -36,10 +36,6 @@ ConvertToDNG::ConvertToDNG(QObject* const parent)
 {
 }
 
-ConvertToDNG::~ConvertToDNG()
-{
-}
-
 BatchTool* ConvertToDNG::clone(QObject* const parent) const
 {
     return new ConvertToDNG(parent);

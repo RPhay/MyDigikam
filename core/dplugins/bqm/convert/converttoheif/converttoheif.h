@@ -31,7 +31,7 @@ class ConvertToHEIF : public BatchTool
 public:
 
     explicit ConvertToHEIF(QObject* const parent = nullptr);
-    ~ConvertToHEIF()                                        override;
+    ~ConvertToHEIF()                                        override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToHeifPlugin

@@ -31,7 +31,7 @@ class ConvertToJPEG : public BatchTool
 public:
 
     explicit ConvertToJPEG(QObject* const parent = nullptr);
-    ~ConvertToJPEG()                                        override;
+    ~ConvertToJPEG()                                        override = default;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -51,7 +51,7 @@ private:
 
 private:
 
-    bool m_changeSettings;
+    bool m_changeSettings = true;
 };
 
 } // namespace DigikamBqmConvertToJpegPlugin

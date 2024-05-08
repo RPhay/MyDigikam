@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToAvifPlugin
 {
 
 ConvertToAVIF::ConvertToAVIF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToAVIF"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToAVIF::~ConvertToAVIF()
+    : BatchTool(QLatin1String("ConvertToAVIF"), ConvertTool, parent)
 {
 }
 

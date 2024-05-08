@@ -35,7 +35,7 @@ class ConvertToJxlPlugin : public DPluginBqm
 public:
 
     explicit ConvertToJxlPlugin(QObject* const parent = nullptr);
-    ~ConvertToJxlPlugin()                override;
+    ~ConvertToJxlPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

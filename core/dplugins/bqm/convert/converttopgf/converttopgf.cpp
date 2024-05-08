@@ -34,12 +34,7 @@ namespace DigikamBqmConvertToPgfPlugin
 {
 
 ConvertToPGF::ConvertToPGF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToPGF"), ConvertTool, parent),
-      m_changeSettings(true)
-{
-}
-
-ConvertToPGF::~ConvertToPGF()
+    : BatchTool(QLatin1String("ConvertToPGF"), ConvertTool, parent)
 {
 }
 

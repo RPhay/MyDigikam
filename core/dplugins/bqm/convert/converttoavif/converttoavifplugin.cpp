@@ -37,10 +37,6 @@ ConvertToAvifPlugin::ConvertToAvifPlugin(QObject* const parent)
 {
 }
 
-ConvertToAvifPlugin::~ConvertToAvifPlugin()
-{
-}
-
 QString ConvertToAvifPlugin::name() const
 {
     return i18nc("@title", "Convert To AVIF");
@@ -89,7 +85,7 @@ QList<DPluginAuthor> ConvertToAvifPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2022"))
+                             QString::fromUtf8("(C) 2022-2024"))
             ;
 }
 
