@@ -35,7 +35,7 @@ class NoiseReductionToolPlugin : public DPluginEditor
 public:
 
     explicit NoiseReductionToolPlugin(QObject* const parent = nullptr);
-    ~NoiseReductionToolPlugin()           override;
+    ~NoiseReductionToolPlugin()           override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -50,25 +50,16 @@ class Q_DECL_HIDDEN LocalContrastTool::Private
 {
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString   configGroupName;
-    static const QString   configHistogramChannelEntry;
-    static const QString   configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("localcontrast Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    LocalContrastSettings* settingsView;
-    ImageRegionWidget*     previewWidget;
-    EditorToolSettings*    gboxSettings;
+    LocalContrastSettings* settingsView         = nullptr;
+    ImageRegionWidget*     previewWidget        = nullptr;
+    EditorToolSettings*    gboxSettings         = nullptr;
 };
-
-const QString LocalContrastTool::Private::configGroupName(QLatin1String("localcontrast Tool"));
-const QString LocalContrastTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString LocalContrastTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -134,6 +125,7 @@ void LocalContrastTool::slotResetSettings()
 void LocalContrastTool::preparePreview()
 {
     // See bug #235601 : we cannot use downscaled image to render preview. It will differs than final rendering.
+
     DImg image = d->previewWidget->getOriginalRegionImage(false);
     setFilter(new LocalContrastFilter(&image, this, d->settingsView->settings()));
 }

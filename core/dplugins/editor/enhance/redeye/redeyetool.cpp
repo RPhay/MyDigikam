@@ -54,25 +54,16 @@ class Q_DECL_HIDDEN RedEyeTool::Private
 
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString      configGroupName;
-    static const QString      configHistogramChannelEntry;
-    static const QString      configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("redeye Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    RedEyeCorrectionSettings* settingsView;
-    ImageRegionWidget*        previewWidget;
-    EditorToolSettings*       gboxSettings;
+    RedEyeCorrectionSettings* settingsView      = nullptr;
+    ImageRegionWidget*        previewWidget     = nullptr;
+    EditorToolSettings*       gboxSettings      = nullptr;
 };
-
-const QString RedEyeTool::Private::configGroupName(QLatin1String("redeye Tool"));
-const QString RedEyeTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString RedEyeTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 

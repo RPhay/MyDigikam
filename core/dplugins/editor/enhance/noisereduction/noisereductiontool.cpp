@@ -43,19 +43,13 @@ class Q_DECL_HIDDEN NoiseReductionTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName(QLatin1String("noisereduction Tool")),
-        nrSettings     (nullptr),
-        previewWidget  (nullptr),
-        gboxSettings  (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString       configGroupName;
+    const QString       configGroupName = QLatin1String("noisereduction Tool");
 
-    NRSettings*         nrSettings;
-    ImageRegionWidget*  previewWidget;
-    EditorToolSettings* gboxSettings;
+    NRSettings*         nrSettings      = nullptr;
+    ImageRegionWidget*  previewWidget   = nullptr;
+    EditorToolSettings* gboxSettings    = nullptr;
 };
 
 NoiseReductionTool::NoiseReductionTool(QObject* const parent)
@@ -159,7 +153,11 @@ void NoiseReductionTool::slotEstimateNoise()
 void NoiseReductionTool::analyserCompleted()
 {
     NREstimate* const tool = dynamic_cast<NREstimate*>(analyser());
-    if (!tool) return;
+
+    if (!tool)
+    {
+        return;
+    }
 
     d->nrSettings->setSettings(tool->settings());
     qApp->restoreOverrideCursor();
