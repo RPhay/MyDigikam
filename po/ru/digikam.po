@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 01:50+0000\n"
+"POT-Creation-Date: 2024-05-09 01:50+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1071,7 +1071,7 @@ msgid "Date:"
 msgstr "Дата:"
 
 #: core/app/items/utils/tooltipfiller.cpp:90
-#: core/dplugins/bqm/transform/crop/crop.cpp:111
+#: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
@@ -4536,7 +4536,7 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Поддерживаемые расширения"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
@@ -4544,21 +4544,21 @@ msgstr "Поддерживаемые расширения"
 msgid "Auto Levels"
 msgstr "Автоматические уровни"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
 #, kde-format
 msgid "Normalize"
 msgstr "Нормализация"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
 #, kde-format
 msgid "Equalize"
 msgstr "Выравнивание распределения цветов"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:63
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
@@ -4566,7 +4566,7 @@ msgstr "Выравнивание распределения цветов"
 msgid "Stretch Contrast"
 msgstr "Растяжение контрастности"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:64
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
@@ -4574,28 +4574,28 @@ msgstr "Растяжение контрастности"
 msgid "Auto Exposure"
 msgstr "Автоэкспозиция"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "Фильтр:"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
 msgstr "Автокоррекция цвета"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix colors automatically"
 msgstr "Инструмент для автоматической коррекции цветов"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4605,21 +4605,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для автоматической "
 "коррекции цветов.</para>"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
 msgstr "Коррекция яркости/контрастности/гаммы"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "Инструмент для исправления яркости, контрастности и гаммы"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4629,20 +4629,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для автоматической "
 "регулировки яркости, контрастности и гаммы.</para>"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
 msgstr "Преобразование в чёрно-белое"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
 msgstr "Инструмент для преобразования в чёрно-белое изображение"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4652,21 +4652,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для преобразования "
 "изображения в чёрно-белое.</para>"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
 msgstr "Микшер каналов"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:61
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
 msgstr "Инструмент смешивания каналов цветов"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4676,33 +4676,33 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для смешивания "
 "каналов цветов.</para>"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
 #: core/dplugins/editor/colors/film/filmtool.cpp:222
 #, kde-format
 msgid "Color Balance"
 msgstr "Цветовой баланс"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, kde-format
 msgid "Adjust color balance."
 msgstr "Настройка цветового баланса"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Balance"
 msgstr "Цветовой баланс"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
 msgstr "Инструмент для настройки цветового баланса"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4722,20 +4722,20 @@ msgstr "Преобразовать в 8 бит"
 msgid "Convert color depth from 16 to 8 bits."
 msgstr "Преобразование 16-битных изображений в 8-битные."
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:46
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
 msgstr "Преобразовать в 8 бит"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
 msgstr "Инструмент для изменения глубины цвета изображения до 8-бит"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4745,21 +4745,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для преобразования "
 "глубины цвета изображений в 8 бит.</para>"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
 msgstr "Преобразовать в 16 бит"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:61
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
 msgstr "Инструмент для преобразования глубины цвета изображения в 16 бит"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4769,75 +4769,75 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для преобразования "
 "глубины цвета изображений в 16 бит.</para>"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
 msgstr "Корректировка кривых"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
 msgstr "Корректировка кривых."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:56
 #, kde-format
 msgctxt "@label: colcor properties"
 msgid "Channel:"
 msgstr "Канал:"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:65
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:59
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
 msgstr "Яркость"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:60
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Red"
 msgstr "Красный"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:67
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:61
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Green"
 msgstr "Зелёный"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:68
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Blue"
 msgstr "Синий"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:63
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Alpha"
 msgstr "Альфа"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:75
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
 #, kde-format
 msgctxt "@action: open file dialog"
 msgid "Load..."
 msgstr "Загрузить..."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:77
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:71
 #, kde-format
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
 msgstr "Загрузить все параметры из файла."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
 msgstr "Инструмент для настройки цвета кривыми"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4847,21 +4847,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для настройки "
 "уровней цветов.</para>"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
 msgstr "Коррекция HSL"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "Инструмент для исправления HSL (тона, насыщенности и светлоты)"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -4871,20 +4871,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для исправления "
 "тона, насыщенности и светлоты.</para>"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Color Profile Conversion"
 msgstr "Преобразование цветового профиля"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to a color space"
 msgstr "Инструмент для преобразования цветового пространства изображений"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4894,21 +4894,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для изменения "
 "цветового пространства изображений.</para>"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Invert Colors"
 msgstr "Инвертирование цвета"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:61
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
 msgstr "Инструмент для инвертирования цветов изображений"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4917,21 +4917,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для инвертирования "
 "цветов изображений.</para>"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
 msgstr "Баланс белого"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
 msgstr "Инструмент для настройка баланса белого"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4941,19 +4941,19 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для настройки "
 "баланса белого.</para>"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To AVIF"
 msgstr "Преобразовать в AVIF"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
 msgstr "Инструмент для преобразования изображений в формат AVIF"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4970,20 +4970,20 @@ msgstr ""
 "para><para>Подробные сведения об этом формате доступны на <a href='https://"
 "ru.wikipedia.org/wiki/AVIF'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert RAW To DNG"
 msgstr "Преобразовать RAW в DNG"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
 msgstr ""
 "Инструмент для преобразование цифровых негативов RAW в формат контейнера DNG"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4998,19 +4998,19 @@ msgstr ""
 "para><para>Подробные сведения об этом формате доступны на <a href='https://"
 "ru.wikipedia.org/wiki/DNG_'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To HEIF"
 msgstr "Преобразовать в HEIF"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
 msgstr "Инструмент для преобразования изображений в формат HEIF"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5038,19 +5038,19 @@ msgstr ""
 "доступны на веб-странице <a href='https://ru.wikipedia.org/wiki/HEIF'>HEIF</"
 "a>.</para>"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:46
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
 msgstr "Преобразовать в JP2"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:61
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
 msgstr "Инструмент для преобразования изображений в формат JPEG-2000"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5071,19 +5071,19 @@ msgstr ""
 "преобразовании.</para><para>Подробные сведения об этом формате доступны на "
 "<a href='https://ru.wikipedia.org/wiki/JPEG_2000'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JPEG"
 msgstr "Преобразовать в JPEG"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
 msgstr "Инструмент для преобразования изображений в формат JPEG"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5102,19 +5102,19 @@ msgstr ""
 "para><para>Подробные сведения об этом формате доступны на <a href='https://"
 "ru.wikipedia.org/wiki/JPEG'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JXL"
 msgstr "Преобразовать в JXL"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
 msgstr "Инструмент для преобразования изображений в формат JXL"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5134,19 +5134,19 @@ msgstr ""
 "приведена на <a href='https://ru.wikipedia.org/wiki/JPEG_XL'>этой странице</"
 "a>.</para>"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
 msgstr "Преобразовать в PGF"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
 msgstr "Инструмент для преобразования изображений в формат PGF"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5163,7 +5163,7 @@ msgstr ""
 "приведена на <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:59
+#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
 msgid ""
 "<b>If conversion to PNG fails, this may be due to the color profile check. "
@@ -5174,19 +5174,19 @@ msgstr ""
 "профиля. Просто вставьте инструмент преобразования цветового профиля перед "
 "этим инструментом и выберите желаемый цветовой профиль.</b>"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
 msgstr "Преобразовать в PNG"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
 msgstr "Инструмент для преобразования изображений в формат PNG"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5202,19 +5202,19 @@ msgstr ""
 "para><para>Дополнительная информация об этом формате доступна на <a "
 "href='https://ru.wikipedia.org/wiki/PNG'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:46
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
 msgstr "Преобразовать в TIFF"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:61
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
 msgstr "Инструмент для преобразования изображений в формат TIFF"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5232,19 +5232,19 @@ msgstr ""
 "сведения об этом формате доступны на <a href='https://ru.wikipedia.org/wiki/"
 "TIFF'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To WEBP"
 msgstr "Преобразовать в WEBP"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:61
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
 msgstr "Инструмент для преобразования изображений в формат WEBP"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5265,66 +5265,66 @@ msgstr ""
 "para><para>Подробная информация об этом формате доступна на <a href='https://"
 "ru.wikipedia.org/wiki/WebP'>этой странице</a>.</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "Тип выходного файла:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "Совпадает с входным"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
 #, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "JPEG XL"
 msgstr "JPEG-XL"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "Shell Script:"
 msgstr "Сценарий оболочки:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:111
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5336,7 +5336,7 @@ msgstr ""
 "специальных символов). Переменные будут заменены значениями перед "
 "выполнением сценария."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:114
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5345,59 +5345,59 @@ msgstr ""
 "<b>Примечание:</b> доступны переменные среды TITLE, COMMENTS, COLORLABEL, "
 "PICKLABEL, RATING и TAGSPATH (разделённые точкой с запятой (;))."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
 msgid "User Script: No script."
 msgstr "Пользовательский сценарий: сценарий отсутствует."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Пользовательский сценарий: ошибка открытия файла."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Пользовательский сценарий: превышено время ожидания данных."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:317
 #, kde-format
 msgid "User Script: No error."
 msgstr "Пользовательский сценарий: ошибки отсуствуют."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Пользовательский сценарий: не удалось запустить сценарий."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Пользовательский сценарий: ошибка процесса сценария."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Пользовательский сценарий: команда не найдена."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:339
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Пользовательский сценарий: получен код ошибки %1."
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
 msgstr "Пользовательский сценарий оболочки"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:61
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
 msgstr "Инструмент для выполнения пользовательского сценария оболочки"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5416,20 +5416,20 @@ msgstr ""
 "b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> и <b>$TAGSPATH</b> "
 "для обработки свойств digiKam.</para>"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:46
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Add Border"
 msgstr "Добавить рамку"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around images"
 msgstr "Инструмент для добавления рамки вокруг изображений"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5439,19 +5439,19 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для добавления рамки "
 "вокруг изображений.</para>"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Add Texture"
 msgstr "Добавить текстуру"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over images"
 msgstr "Инструмент для наложения текстуры на изображение"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:66
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5460,7 +5460,7 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет накладывать "
 "текстуру на изображения.</para>"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
 msgid ""
 "Check this if you want the watermark to use the given size of the font or "
@@ -5470,44 +5470,44 @@ msgstr ""
 "размер шрифта или изображения без каких-либо корректировок относительно "
 "реального изображения."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
 msgstr "Использовать абсолютный размер"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, kde-format
 msgid "Watermark type: "
 msgstr "Тип водяного знака: "
 
 # i18n: file ./digikam/digikamui.rc line 39
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:178
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:548
 #, kde-format
 msgid "Image"
 msgstr "Изображение"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:208
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:179
 #, kde-format
 msgid "Text"
 msgstr "Текст"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
 #, kde-format
 msgid "Image settings"
 msgstr "Параметры изображения"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Click to select watermark image."
 msgstr "Выберите изображение для водяного знака."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, kde-format
 msgid "Watermark image: "
 msgstr "Изображение для водяного знака: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
@@ -5516,67 +5516,67 @@ msgstr ""
 "Включите этот параметр, если в водяном знаке должны игнорироваться "
 "собственные пропорции и использоваться пропорции изображения."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:210
 #, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "Игнорировать соотношение сторон водяного знака"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:220
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
 msgstr "Установите этот флажок, чтобы водяной знак был прозрачным."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, kde-format
 msgid "Add transparency to watermark image"
 msgstr "Добавить прозрачность изображению для водяного знака"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid "Opacity of watermark"
 msgstr "Непрозрачность водяного знака"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
 #, kde-format
 msgid "Opacity (%): "
 msgstr "Непрозрачность (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
 msgid "Text settings"
 msgstr "Параметры текста"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:250
 #, kde-format
 msgid "Enter your watermark string here."
 msgstr "Введите здесь текст водяного знака."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
 #, kde-format
 msgid "Watermark text: "
 msgstr "Текст водяного знака: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr "Выберите тип и стиль шрифта. Размер рассчитывается автоматически."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
 msgid "Set the font color to use here."
 msgstr "Настройка цвета шрифта"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
 #, kde-format
 msgid "Font color: "
 msgstr "Цвет шрифта: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
 msgid "Text opacity: "
 msgstr "Непрозрачность текста: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
@@ -5585,32 +5585,32 @@ msgstr ""
 "Укажите прозрачность текста водяного знака. 100 — полная непрозрачность, 0 — "
 "полная прозрачность."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
 msgstr "Добавление заливки фона за текстом"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, kde-format
 msgid "Use background"
 msgstr "Использовать фон"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, kde-format
 msgid "Choose the color of the watermark background."
 msgstr "Выберите цвет фона водяного знака"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
 msgid "Background color: "
 msgstr "Цвет фона: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
 #, kde-format
 msgid "Background opacity: "
 msgstr "Непрозрачность фона: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:303
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
@@ -5619,27 +5619,27 @@ msgstr ""
 "Укажите прозрачность фона водяного знака. 100 — полная непрозрачность, 0 — "
 "полная прозрачность."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
 msgid "Specific Location"
 msgstr "Заданное положение"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:316
 #, kde-format
 msgid "Systematic Repetition"
 msgstr "Систематическое повторение"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
 #, kde-format
 msgid "Random Repetition"
 msgstr "Случайное повторение"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
 #, kde-format
 msgid "Placement Type: "
 msgstr "Тип расположения: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:326
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
@@ -5648,14 +5648,14 @@ msgstr ""
 "Использовать ли повторение водяного знака при выборе многократного повтора в "
 "поле со списком вариантов расположения водяного знака."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
 msgstr ""
 "Плотность повторения водяного знака (отключено в режиме «Заданное положение»)"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -5666,7 +5666,7 @@ msgstr ""
 "градусов при выборе случайного размещения в поле со списком вариантов "
 "расположения водяного знака."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
@@ -5674,7 +5674,7 @@ msgstr ""
 "Случайная ориентация водяного знака (включено только в режиме «Случайное "
 "повторение»)"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:358
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -5686,120 +5686,120 @@ msgstr ""
 "водяные знаки. Значение следует указывать в виде числа с плавающей запятой "
 "(обычно от 1,0 до 3,0). Также значение может быть меньше 1,0."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
 #, kde-format
 msgid "Sparsity Factor: "
 msgstr "Коэффициент разрежённости: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:367
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "Слева вверху"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:368
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "Справа вверху"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "Слева внизу"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:370
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "Справа внизу"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:371
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "По центру"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:372
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
 msgstr "Вверху по центру"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:373
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
 msgstr "Нижний центр"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:375
 #, kde-format
 msgid "Placement Position: "
 msgstr "Размещение: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
 #, kde-format
 msgid "0 degrees"
 msgstr "0 градусов"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:381
 #, kde-format
 msgid "90 degrees CW"
 msgstr "90 градусов по ЧС"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:382
 #, kde-format
 msgid "180 degrees"
 msgstr "180 градусов"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:383
 #, kde-format
 msgid "270 degrees CW"
 msgstr "270 градусов по ЧС"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
 #, kde-format
 msgid "Rotation: "
 msgstr "Поворот: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Размер водяного знака в процентах от помеченного изображения."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
 #, kde-format
 msgid "Size (%): "
 msgstr "Размер (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "Отступ от края по оси Х в процентах от ширины помеченного изображения"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
 msgid "X margin (%): "
 msgstr "Отступ по оси Х (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:407
 #, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "Отступ от края по оси Y в процентах от длины помеченного изображения"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:408
 #, kde-format
 msgid "Y margin (%): "
 msgstr "Отступ по оси Y (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
 msgstr "Добавить водяной знак"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
@@ -5807,7 +5807,7 @@ msgstr ""
 "Инструмент для наложения изображения или текста в качестве видимого водяного "
 "знака"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:66
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5818,19 +5818,19 @@ msgstr ""
 "изображения или текста в качестве видимого водяного знака на изображения.</"
 "para>"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
 msgstr "Компенсация виньетирования"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
 msgstr "Инструмент для настройки виньетирования на фотографии"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:66
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5840,13 +5840,13 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для добавления или "
 "удаления эффекта виньетирования на изображения.</para>"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:59
+#: core/dplugins/bqm/enhance/blur/blur.cpp:53
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
 msgstr "Размер матрицы:"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:63
+#: core/dplugins/bqm/enhance/blur/blur.cpp:57
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
 #, kde-format
 msgid ""
@@ -5856,19 +5856,19 @@ msgstr ""
 "Размер 0 (0×0) не оказывает никакого эффекта, 1 (2×2) и более указывают "
 "размерность матрицы, которая определяет степень размытия изображения."
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Blur Image"
 msgstr "Размытие изображения"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
 msgstr "Инструмент для размывания изображений"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
@@ -5876,21 +5876,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для размытия "
 "изображений.</para>"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "«Горячие» пикселы"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:61
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix hot pixels"
 msgstr "Инструмент для удаления «горячих» пикселов"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:66
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5899,19 +5899,19 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для исправления "
 "«горячих» пикселов в изображениях.</para>"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Автокоррекция объектива"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:59
 #, kde-format
 msgid "Fix automatically lens distortions"
 msgstr "Автоматическое исправление искажений объектива"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:84
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
@@ -5920,27 +5920,27 @@ msgstr ""
 "Параметр <b>Использовать метаданные</b> обрабатывает информацию изображений "
 "в очереди в поисках подходящих возможностей объектива."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
 "Не удалось найти полную информацию об объективе для проведения автокоррекции"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction"
 msgstr "Автокоррекция объектива"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
 msgstr "Инструмент для автоматического исправления искажений объектива"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5950,21 +5950,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для автоматического "
 "исправления искажений объектива.</para>"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Local Contrast"
 msgstr "Локальный контраст"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:61
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
 msgstr "Инструмент для эмуляции тональной компрессии"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5974,21 +5974,21 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для эмуляции "
 "тональной компрессии.</para>"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "Подавление шума"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:61
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
 msgstr "Инструмент для удаления шум с помощью вейвлетов"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
@@ -5996,13 +5996,13 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для удаления шума с "
 "изображений с помощью вейвлетов.</para>"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Red Eye Correction"
 msgstr "Коррекция красного цвета в глазах"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
@@ -6010,7 +6010,7 @@ msgid "A tool to automatically detect and correct red eye effect"
 msgstr ""
 "Инструмент для автоматического определения и удаления эффекта «красных глаз»"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6020,32 +6020,32 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для автоматического "
 "определения и удаления эффекта «красных глаз».</para>"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "Посетить веб-сайт библиотеки CImg"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "Уменьшить однородный шум"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:65
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "Уменьшить артефакты JPEG"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "Уменьшить текстурирование"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:67
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -6063,14 +6063,14 @@ msgstr ""
 "текстурирование</b>: удаление таких артефактов, как текстура бумаги или муар "
 "на отсканированных изображениях.</p>"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:46
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Restoration"
 msgstr "Восстановление"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:61
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
@@ -6078,7 +6078,7 @@ msgstr ""
 "Инструмент для восстановления изображений, использующий алгоритм "
 "Greystoration"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6088,19 +6088,19 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для восстановления "
 "изображений с использованием алгоритма GREYCstoration.</para>"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Sharpen Image"
 msgstr "Увеличение резкости изображения"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:61
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to sharp images"
 msgstr "Инструмент для увеличения резкости изображений"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:66
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
@@ -6108,20 +6108,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для увеличения "
 "резкости изображений.</para>"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Effects"
 msgstr "Эффекты цвета"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:61
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
 msgstr "Инструмент для применения эффектов цвета"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6131,20 +6131,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для применения "
 "эффектов цвета.</para>"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Film Grain"
 msgstr "Зернистость плёнки"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:61
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
 msgstr "Инструмент для добавления эффекта зернистости плёнки"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6186,14 +6186,14 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
 msgstr "Применить шаблон метаданных"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Applying metadata"
 msgctxt "@title"
 msgid "Apply Metadata"
 msgstr "Применение метаданных"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "A tool to apply metadata template to images"
@@ -6201,7 +6201,7 @@ msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
 msgstr "Инструмент для применения шаблона метаданных к изображению"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -6215,36 +6215,36 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет записывать в "
 "изображения метаданные на основе шаблона.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
 #, kde-format
 msgid "Titles:"
 msgstr "Названия:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Введите здесь название."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
 msgid "Captions:"
 msgstr "Подписи:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Введите здесь подпись."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Очистить и перезаписать метаданные"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6256,19 +6256,19 @@ msgstr ""
 "новыми значениями,\n"
 "в противном случае старые значения будут объединены с новыми значениями."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
 msgstr "Назначить подписи"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
 msgstr "Инструмент для применения подписей метаданных к изображению"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6278,34 +6278,34 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет присвоить "
 "альтернативные значения метаданных заголовка и описания.</para>"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
 msgid "Pick Label:"
 msgstr "Ярлык отбора: "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
 #, kde-format
 msgid "Color Label:"
 msgstr "Цветовой ярлык: "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
 #, kde-format
 msgid "Rating:"
 msgstr "Оценка:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
 msgstr "Присвоить ярлыки"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
 msgstr "Инструмент для применения ярлыков метаданных к изображению"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6414,19 +6414,19 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет присвоить "
 "изображениям иерархию ключевых слов.</para>"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Apply Metadata Template"
 msgstr "Применить шаблон метаданных"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
 msgstr "Инструмент для применения шаблона метаданных к изображению"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6436,20 +6436,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки позволяет записывать в "
 "изображения метаданные на основе шаблона.</para>"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
 msgstr "Сортировка изображений по качеству"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
 msgstr ""
 "Инструмент для применения ярлыков отбора метаданных по качеству изображения"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6460,67 +6460,67 @@ msgstr ""
 "отбора значения метаданных на основе анализа изображения и оценки его "
 "качества.</para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "EXIF:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Все данные"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Дата"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Комментарий и описание"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Все данные"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Дата"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Заголовок"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6528,32 +6528,32 @@ msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Предварительный просмотр изображения"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Все данные"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Дата"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "Свойства digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@item: xmp namespace"
 #| msgid "DigiKam image history"
@@ -6561,7 +6561,7 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "История изменения изображения DigiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6569,25 +6569,25 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "Предварительный просмотр изображения"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Дублинское ядро"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "EXIF"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Видеозаписи"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@item: xmp namespace"
 #| msgid "Caption, Comment and Description"
@@ -6595,25 +6595,25 @@ msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Заголовок, комментарий и описание"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
 msgstr "Удалить метаданные: не последний инструмент в списке."
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Remove Metadata"
 msgstr "Удалить метаданные"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
 msgstr "Инструмент для удаления из снимков метаданных EXIF, IPTC, или XMP"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6623,20 +6623,20 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для удаления из "
 "снимков метаданных EXIF, IPTC, или XMP.</para>"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
 msgstr "Коррекция времени"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:61
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
 msgstr "Инструмент для изменения метки даты и времени изображений"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
@@ -6644,55 +6644,55 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для изменения метки "
 "времени изображений.</para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:103
+#: core/dplugins/bqm/metadata/translate/translate.cpp:93
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Название"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:104
+#: core/dplugins/bqm/metadata/translate/translate.cpp:94
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Заголовок"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:105
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Авторские права"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:106
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Условия использования"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Перевести на:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:147
+#: core/dplugins/bqm/metadata/translate/translate.cpp:137
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
 msgstr "Записи для перевода с %1:"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Translate Metadata"
 msgstr "Перевод метаданных"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
 msgstr "Инструмент для перевода строк из метаданных изображения"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6702,12 +6702,12 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки способен перевести "
 "альтернативные языковые строки в метаданных Xmp из изображений.</para>"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
 msgid "Auto-Crop"
 msgstr "Автоматическое кадрирование"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:93
+#: core/dplugins/bqm/transform/crop/crop.cpp:85
 #, kde-format
 msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
@@ -6715,46 +6715,46 @@ msgid ""
 msgstr ""
 "Автоматически рассчитать область обрезки на основе анализа краёв изображения."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:96
+#: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "Положение:"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:100
-#: core/dplugins/bqm/transform/crop/crop.cpp:105
+#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:97
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:352
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:357
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr "Укажите расположение верхнего левого угла для рамки кадрирования."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:115
+#: core/dplugins/bqm/transform/crop/crop.cpp:107
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr "Укажите ширину рамки кадрирования."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:120
+#: core/dplugins/bqm/transform/crop/crop.cpp:112
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr "Укажите высоту рамки кадрирования."
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Crop"
 msgstr "Кадрирование"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:61
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
 msgstr "Инструмент кадрирования изображения до указанной области"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
@@ -6762,37 +6762,37 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для кадрирования "
 "изображений по заданной области.</para>"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:58
+#: core/dplugins/bqm/transform/flip/flip.cpp:53
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Horizontal"
 msgstr "Горизонтально"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:59
+#: core/dplugins/bqm/transform/flip/flip.cpp:54
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Vertical"
 msgstr "Вертикально"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:60
+#: core/dplugins/bqm/transform/flip/flip.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Flip:"
 msgstr "Отразить:"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Flip"
 msgstr "Отразить"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:61
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
 msgstr "Инструмент для отражения изображений по вертикали или горизонтали"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6802,12 +6802,12 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для вызова "
 "пользовательского сценария командной строки.</para>"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, kde-format
 msgid "Preset Length:"
 msgstr "Предустановленная длина:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:143
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
@@ -6816,7 +6816,7 @@ msgstr[1] "Крошечный (%1 пиксела)"
 msgstr[2] "Крошечный (%1 пикселов)"
 msgstr[3] "Крошечный (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:153
+#: core/dplugins/bqm/transform/resize/resize.cpp:144
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
@@ -6825,7 +6825,7 @@ msgstr[1] "Маленький (%1 пиксела)"
 msgstr[2] "Маленький (%1 пикселов)"
 msgstr[3] "Маленький (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:145
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
@@ -6834,7 +6834,7 @@ msgstr[1] "Средний (%1 пиксела)"
 msgstr[2] "Средний (%1 пикселов)"
 msgstr[3] "Средний (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:155
+#: core/dplugins/bqm/transform/resize/resize.cpp:146
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
@@ -6843,7 +6843,7 @@ msgstr[1] "Большой (%1 пиксела)"
 msgstr[2] "Большой (%1 пикселов)"
 msgstr[3] "Большой (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:156
+#: core/dplugins/bqm/transform/resize/resize.cpp:147
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
@@ -6852,7 +6852,7 @@ msgstr[1] "Очень большой (%1 пиксела)"
 msgstr[2] "Очень большой (%1 пикселов)"
 msgstr[3] "Очень большой (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:157
+#: core/dplugins/bqm/transform/resize/resize.cpp:148
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
@@ -6861,40 +6861,40 @@ msgstr[1] "Огромный (%1 пиксела)"
 msgstr[2] "Огромный (%1 пикселов)"
 msgstr[3] "Огромный (1 пиксел)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:159
+#: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, kde-format
 msgid "Not enlarge small images"
 msgstr "Увеличивать изображения с меньшими размерами"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:160
+#: core/dplugins/bqm/transform/resize/resize.cpp:151
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Использовать выбранную длину"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:161
+#: core/dplugins/bqm/transform/resize/resize.cpp:152
 #, kde-format
 msgid "Use Percentage"
 msgstr "Использовать проценты"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:163
-#: core/dplugins/bqm/transform/resize/resize.cpp:243
+#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:234
 #, kde-format
 msgid " Pixels"
 msgstr " пикселов"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:46
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Resize"
 msgstr "Изменить размер"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:61
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
 msgstr "Инструмент для изменения размера изображений с указанной шириной"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
@@ -6902,55 +6902,55 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для изменения "
 "размера изображений.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Использовать ориентацию из EXIF"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:90
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:91
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:92
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 градусов"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:93
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Другое"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:95
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
 msgstr "Угол:"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:46
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Rotate"
 msgstr "Повернуть"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:61
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
 msgstr "Инструмент для поворота изображений"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
@@ -11640,7 +11640,7 @@ msgstr "Сохранение изменений —"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -21332,7 +21332,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Предварительное прослушивание звуковой дорожки"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:95
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -21341,42 +21341,42 @@ msgstr ""
 "Если параметр включён, звуковое сопровождение текущего альбома будет "
 "автоматически сохранено и восстановлено при следующем запуске."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Переместить выбранную дорожку выше по списку воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Переместить выбранную дорожку ниже по списку воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Добавить новые звуковые дорожки в список воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Удалить выбранную звуковую дорожку из списка воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Загрузить список воспроизведения из файла"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Сохранить список воспроизведения в файл"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Очистить список воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:255
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -21386,7 +21386,7 @@ msgstr[1] "%1 звуковые дорожки [%2]"
 msgstr[2] "%1 звуковых дорожек [%2]"
 msgstr[3] "одна звуковая дорожка [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:283
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -21394,46 +21394,46 @@ msgstr ""
 "Время показа слайдов превышает время звукового сопровождения. Предложение: "
 "увеличьте количество звуковых файлов."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:353
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Выбор звуковых файлов"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:421
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Можно перемещать вверх только по одному файлу за раз."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:459
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Можно перемещать вниз только по одному файлу за раз."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:480
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Загрузка списка воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Списки воспроизведения (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:539
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Сохранение списка воспроизведения"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:600
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "Файл «%1» недоступен, проверьте путь к этому файлу."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:610
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr ""
@@ -21744,7 +21744,7 @@ msgid "Background color:"
 msgstr "Цвет фона:"
 
 # i18n: file ./digikam/digikamui.rc line 39
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
@@ -21754,7 +21754,7 @@ msgstr[2] "%1 изображений [%2]"
 msgstr[3] "одно изображение [%2]"
 
 # i18n: file ./digikam/digikamui.rc line 39
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
 #, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
@@ -21763,30 +21763,30 @@ msgstr[1] "%1 изображения"
 msgstr[2] "%1 изображений"
 msgstr[3] "%1 изображение"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr "Файл %1 недоступен, проверьте путь к этому файлу."
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "Изображение №%1"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:683
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
 #, kde-format
 msgid "Ken Burns"
 msgstr "Кен Бёрнс"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:480
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
 #, kde-format
 msgid "Delay between images (ms):"
 msgstr "Задержка между изображениями (мс):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:487
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
 #, kde-format
 msgid "Delay between images (s):"
@@ -21880,125 +21880,125 @@ msgstr "Эффект:"
 msgid "Use Open&GL transitions"
 msgstr "Использовать переходы Open&GL"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Презентация"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:82
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:76
 #, kde-format
 msgctxt "@action: play presentation"
 msgid "Start"
 msgstr "Запустить"
 
 # BUGME: why setText when the button already has a name? --aspotashev
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:83
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "Начать презентацию"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
 #, kde-format
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
 msgstr "Основные параметры"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:93
 #, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "Название"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:106
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
 #, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
 msgstr "Звуковое сопровождение"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:113
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
 #, kde-format
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Дополнительно"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:565
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1020
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Не использовать эффект перехода"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Изгиб"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Плавный переход"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Куб"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Затемнение"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Порхание"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Вход-выход"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Вращение"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Скольжение"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Случайный эффект"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:875
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:866
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Показ слайдов завершён"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:876
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:636
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Щёлкните, чтобы выйти..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:635
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Показ слайдов завершён"
@@ -22013,19 +22013,19 @@ msgstr "Нет изображений для показа."
 msgid "OpenGL support is not available on your system."
 msgstr "Ваша система не поддерживает OpenGL."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Presentation"
 msgstr "Презентация"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
 msgstr "Инструмент для обработки презентаций"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22045,105 +22045,105 @@ msgstr ""
 "Возможно добавить фоновую музыку, которая будет воспроизводиться во время "
 "слайд-шоу."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
 msgstr "Презентация..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:229
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Время задержки для слайд-шоу"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
 #, kde-format
 msgid "Delay:"
 msgstr "Задержка:"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:255
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Удаление изображения"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Переместить это изображение в корзину?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Шахматная доска"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Стекание вниз"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Полёт"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Мозаика"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
 #, kde-format
 msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Кубизм"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Увеличение"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Горизонтальные линии"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Вертикальные линии"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Круг"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Несколько кругов"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Спираль"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"

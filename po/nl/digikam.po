@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 01:50+0000\n"
+"POT-Creation-Date: 2024-05-09 01:50+0000\n"
 "PO-Revision-Date: 2024-04-21 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1052,7 +1052,7 @@ msgid "Date:"
 msgstr "Datum:"
 
 #: core/app/items/utils/tooltipfiller.cpp:90
-#: core/dplugins/bqm/transform/crop/crop.cpp:111
+#: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
@@ -4485,7 +4485,7 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Ondersteunde extensies"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
@@ -4493,21 +4493,21 @@ msgstr "Ondersteunde extensies"
 msgid "Auto Levels"
 msgstr "Autoniveaus"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
 #, kde-format
 msgid "Normalize"
 msgstr "Normaliseren"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
 #, kde-format
 msgid "Equalize"
 msgstr "Normaliseren"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:63
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
@@ -4515,7 +4515,7 @@ msgstr "Normaliseren"
 msgid "Stretch Contrast"
 msgstr "Contrast uitrekken"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:64
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
@@ -4523,28 +4523,28 @@ msgstr "Contrast uitrekken"
 msgid "Auto Exposure"
 msgstr "Autobelichting"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "Filter:"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
 msgstr "Automatische kleurcorrectie"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix colors automatically"
 msgstr "Een hulpmiddel om automatisch kleuren te repareren"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4554,21 +4554,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheerder kan kleuren automatisch in "
 "afbeeldingen aanpassen.</para>"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
 msgstr "BCG-correctie"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "Een hulpmiddel om helderheid / contrast / gamma te repareren."
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4578,20 +4578,20 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheerder kan Helderheid / Contrast / "
 "Gamma in afbeeldingen aanpassen.</para>"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
 msgstr "Conversie naar zwart en wit"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
 msgstr "Een hulpmiddel om naar zwart en wit te converteren"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4601,21 +4601,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen naar zwart en wit "
 "converteren.</para>"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
 msgstr "Kanaalmixer"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:61
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
 msgstr "kleuren hulpmiddel om kleurkanalen te mengen"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4625,33 +4625,33 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan kleurkanalen van afbeeldingen "
 "mengen.</para>"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
 #: core/dplugins/editor/colors/film/filmtool.cpp:222
 #, kde-format
 msgid "Color Balance"
 msgstr "Kleurbalans"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, kde-format
 msgid "Adjust color balance."
 msgstr "Kleurbalans aanpassen."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Balance"
 msgstr "Kleurbalans"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
 msgstr "Eeen hulpmiddel om de kleurbalans aan te passen."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4671,20 +4671,20 @@ msgstr "Converteren naar 8 bits"
 msgid "Convert color depth from 16 to 8 bits."
 msgstr "Kleurdiepte van 16 naar 8 bits converteren."
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:46
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
 msgstr "Converteren naar 8 bits"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
 msgstr "Een hulpmiddel om kleurdiepte naar 8 bits te converteren."
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4694,21 +4694,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan kleurdiepte converteren naar 8 "
 "bits.</para>"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
 msgstr "Converteren naar 16 bits"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:61
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
 msgstr "Een hulpmiddel om kleurdiepte naar 16 bits te converteren"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4718,75 +4718,75 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan kleurdiepte naar 16 bits "
 "converteren.</para>"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
 msgstr "Curves aanpassen"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
 msgstr "Curves aanpassen."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:56
 #, kde-format
 msgctxt "@label: colcor properties"
 msgid "Channel:"
 msgstr "Kanaal:"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:65
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:59
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
 msgstr "Lichtkracht"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:60
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Red"
 msgstr "Rood"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:67
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:61
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Green"
 msgstr "Groen"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:68
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Blue"
 msgstr "Blauw"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:63
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Alpha"
 msgstr "Alfa"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:75
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
 #, kde-format
 msgctxt "@action: open file dialog"
 msgid "Load..."
 msgstr "Laden..."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:77
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:71
 #, kde-format
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
 msgstr "Laad alle parameters uit een instellingentekstbestand."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
 msgstr "Een hulpmiddel om kleurkrommen aan te passen"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4796,21 +4796,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan de kleurkrommen van "
 "afbeeldingen aanpassen.</para>"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
 msgstr "HSL-correctie"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "Een hulpmiddel om tint / verzadiging / helderheid op te knappen"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -4820,20 +4820,20 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan tint / verzadiging / helderheid "
 "van afbeeldingen aanpassen.</para>"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Color Profile Conversion"
 msgstr "Kleurprofielconversie"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to a color space"
 msgstr "Een hulpmiddel om afbeeldingen naar een kleurruimte te converteren."
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4843,21 +4843,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen naar een andere "
 "kleurruimte converteren.</para>"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Invert Colors"
 msgstr "Kleuren omkeren"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:61
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
 msgstr "Een hulpmiddel om de kleur van afbeelding te inverteren."
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4866,21 +4866,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan kleuren van afbeeldingen "
 "inverteren.</para>"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
 msgstr "Witbalans"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
 msgstr "Een hulpmiddel om witbalans aan te passen."
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4890,19 +4890,19 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan de witbalans van afbeeldingen "
 "aanpassen.</para>"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To AVIF"
 msgstr "Naar AVIF converteren"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
 msgstr "Een hulpmiddel om afbeeldingen naar AVIF-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4919,19 +4919,19 @@ msgstr ""
 "para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
 "wiki/AVIF'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert RAW To DNG"
 msgstr "RAW converteren naar DNG"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
 msgstr "Een hulpmiddel om RAW-afbeeldingen naar DNG-container te converteren."
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4946,19 +4946,19 @@ msgstr ""
 "formaat uit <a href='https://en.wikipedia.org/wiki/Digital_Negative'>deze "
 "pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To HEIF"
 msgstr "Converteren naar HEIF"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
 msgstr "Een hulpmiddel om afbeeldingen naar HEIF-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4986,19 +4986,19 @@ msgstr ""
 "High_Efficiency_Image_File_Format'>High Efficiency Image bestandsformaat</a>."
 "</para>"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:46
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
 msgstr "Converteren naar JP2"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:61
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
 msgstr "Een hulpmiddel om afbeeldingen naar JPEG-2000 te converteren."
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5019,19 +5019,19 @@ msgstr ""
 "para><para>Zie details over dit formaat in <a href='https://en.wikipedia.org/"
 "wiki/JPEG_2000'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JPEG"
 msgstr "Converteren naar JPEG"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
 msgstr "Een hulpmiddel om afbeeldingen naar het JPEG-formaat te converteren."
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5049,19 +5049,19 @@ msgstr ""
 "digitale fotografie.</para><para>Zie details over dit formaat in <a "
 "href='https://nl.wikipedia.org/wiki/JPEG'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JXL"
 msgstr "Converteren naar JXL"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
 msgstr "Een hulpmiddel om afbeeldingen naar het JXL-formaat te converteren."
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5078,19 +5078,19 @@ msgstr ""
 "para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
 "wiki/JPEG_XL'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
 msgstr "Converteren naar PGF"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
 msgstr "Een hulpmiddel om afbeeldingen naar het PGF-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5107,7 +5107,7 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>deze pagina</"
 "a>.</para>"
 
-#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:59
+#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
 msgid ""
 "<b>If conversion to PNG fails, this may be due to the color profile check. "
@@ -5118,19 +5118,19 @@ msgstr ""
 "kleurprofiel. Voeg eenvoudig het hulpmiddel voor kleurprofielconversie in "
 "voor dit hulpmiddel en selecteer het gewenste kleurprofiel.</b>"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
 msgstr "Converteren naar PNG"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
 msgstr "Een hulpmiddel om afbeeldingen naar het PNG-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5146,19 +5146,19 @@ msgstr ""
 "para><para>Zie details over dit formaat op <a href='https://en.wikipedia.org/"
 "wiki/Portable_Network_Graphics'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:46
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
 msgstr "Converteren naar TIFF"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:61
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
 msgstr "Een hulpmiddel om afbeeldingen naar TIFF-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5175,19 +5175,19 @@ msgstr ""
 "industrie en fotografen.</para><para>Zie details over dit formaat op <a "
 "href='https://en.wikipedia.org/wiki/TIFF'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To WEBP"
 msgstr "Naar WEBP converteren"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:61
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
 msgstr "Een hulpmiddel om afbeeldingen naar het WEBP-formaat te converteren"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5208,66 +5208,66 @@ msgstr ""
 "transparantie.</para><para>Zie details over dit formaat op <a href='https://"
 "en.wikipedia.org/iki/WebP'>deze pagina</a>.</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "Type uitvoerbestand:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "Zelfde als invoer"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
 #, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "JPEG XL"
 msgstr "JPEG XL"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shell-script:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:111
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5278,7 +5278,7 @@ msgstr ""
 "van invoer / uitvoer (met speciale tekens escaped). Deze zullen "
 "gesubstitueerd worden voor uitvoeren van de shell."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:114
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5287,59 +5287,59 @@ msgstr ""
 "<b>Opmerking:</b> Omgevingsvariabelen TITLE, COMMENTS, COLORLABEL, "
 "PICKLABEL, RATING en TAGSPATH (gescheiden door ;) zijn beschikbaar."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
 msgid "User Script: No script."
 msgstr "Script van gebruiker: geen script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Script van gebruiker: fout bij openen van bestand."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Script van gebruiker: time-out uit script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:317
 #, kde-format
 msgid "User Script: No error."
 msgstr "Script van gebruiker: geen fout."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Script van gebruiker: opstarten van script is mislukt."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Script van gebruiker: scriptproces is gecrasht."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Script van gebruiker: commando niet gevonden."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:339
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Script van gebruiker: teruggekregen foutcode %1."
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
 msgstr "Shell-script van gebruiker"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:61
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
 msgstr "Een hulpmiddel om een eigen shell-script uit te voeren"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5358,20 +5358,20 @@ msgstr ""
 "$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> en <b>"
 "$TAGSPATH</b> om eigenschappen van digiKam te behandelen.</para>"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:46
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Add Border"
 msgstr "Rand toevoegen"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around images"
 msgstr "Een hulpmiddel om een rand rondom afbeeldingen aan te brengen"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5381,19 +5381,19 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan een decoratieve rand rond "
 "afbeeldingen aanbrengen.</para>"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Add Texture"
 msgstr "Textuur toevoegen"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over images"
 msgstr "Een hulpmiddel om textuur over afbeeldingen aan te brengen"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:66
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5402,7 +5402,7 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan een textuur over afbeeldingen "
 "aanbrengen.</para>"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
 msgid ""
 "Check this if you want the watermark to use the given size of the font or "
@@ -5412,43 +5412,43 @@ msgstr ""
 "lettertype of de afbeelding moet gebruiken zonder aanpassen aan de actuele "
 "afbeelding."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
 msgstr "Absolute grootte gebruiken"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, kde-format
 msgid "Watermark type: "
 msgstr "Watermerktype: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:178
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:548
 #, kde-format
 msgid "Image"
 msgstr "Afbeelding"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:208
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:179
 #, kde-format
 msgid "Text"
 msgstr "Tekst"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
 #, kde-format
 msgid "Image settings"
 msgstr "Instellingen voor afbeeldingen"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Click to select watermark image."
 msgstr "Klik om een watermerkafbeelding te selecteren."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, kde-format
 msgid "Watermark image: "
 msgstr "Watermerkafbeelding: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
@@ -5458,67 +5458,67 @@ msgstr ""
 "negeren en in plaats daarvan de beeldverhouding van de afbeelding moet "
 "gebruiken."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:210
 #, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "Beeldverhouding van watermerk negeren"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:220
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
 msgstr "Activeer dit als u het watermerk transparant wilt hebben."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, kde-format
 msgid "Add transparency to watermark image"
 msgstr "Transparantie toevoegen aan de watermerkafbeelding"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid "Opacity of watermark"
 msgstr "Dekking van het watermerk"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
 #, kde-format
 msgid "Opacity (%): "
 msgstr "Dekking (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
 msgid "Text settings"
 msgstr "Tekstinstellingen"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:250
 #, kde-format
 msgid "Enter your watermark string here."
 msgstr "Voer hier de tekst van uw watermerk in."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
 #, kde-format
 msgid "Watermark text: "
 msgstr "Watermerktekst: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr "Kies het type lettertype en stijl. Grootte wordt automatisch berekend."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
 msgid "Set the font color to use here."
 msgstr "Selecteer hier de te gebruiken tekstkleur."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
 #, kde-format
 msgid "Font color: "
 msgstr "Tekstkleur: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
 msgid "Text opacity: "
 msgstr "Tekstdekking: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
@@ -5527,32 +5527,32 @@ msgstr ""
 "Stel de dekking van de watermerktekst in. 100 is volledig ondoorzichtig, 0 "
 "is volledig transparant."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
 msgstr "Activeer dit als u de achtergrond achter de tekst gevuld wilt hebben."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, kde-format
 msgid "Use background"
 msgstr "Achtergrond gebruiken"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, kde-format
 msgid "Choose the color of the watermark background."
 msgstr "Kies hier de kleur van de achtergrond van het watermerk.."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
 msgid "Background color: "
 msgstr "Achtergrondkleur: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
 #, kde-format
 msgid "Background opacity: "
 msgstr "Achtergronddekking: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:303
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
@@ -5561,27 +5561,27 @@ msgstr ""
 "Stel de dekking in van de achtergrond van het watermerk. 100 is volledig "
 "ondoorzichtig, 0 is volledig transparant."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
 msgid "Specific Location"
 msgstr "Specifieke locatie"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:316
 #, kde-format
 msgid "Systematic Repetition"
 msgstr "Systematische herhaling"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
 #, kde-format
 msgid "Random Repetition"
 msgstr "Willekeurige herhaling"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
 #, kde-format
 msgid "Placement Type: "
 msgstr "Type plaatsing: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:326
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
@@ -5590,7 +5590,7 @@ msgstr ""
 "Wanneer u er voor kiest om het watermerk vele malen te herhalen in de "
 "keuzelijst voor herhalen, dan kunt u hier specificeren of de herhaling."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
@@ -5598,7 +5598,7 @@ msgstr ""
 "Dichtheid van herhaling van watermerk (Uitgeschakeld in modus \"Specifieke "
 "locatie\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -5609,7 +5609,7 @@ msgstr ""
 "in de keuzelijst voor plaatsing, dan kunt u hier specificeren om het "
 "watermerk willekeurig (0, 90, 180, 270 graden) te draaien."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
@@ -5617,7 +5617,7 @@ msgstr ""
 "Maak oriëntatie van watermerk willekeurig (Alleen ingeschakeld in modus "
 "\"Willekeurige herhaling\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:358
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -5629,125 +5629,125 @@ msgstr ""
 "krijgt. Gebruik drijvende-komma waarden, typisch tussen 1.0 en 3.0. Het kan "
 "ook kleiner zijn dan 1.0"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
 #, kde-format
 msgid "Sparsity Factor: "
 msgstr "Spreidingsfactor: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:367
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "Linksboven"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:368
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "Rechtsboven"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "Linksonder"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:370
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "Rechtsonder"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:371
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "Gecentreerd"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:372
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
 msgstr "Middenboven"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:373
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
 msgstr "Middenonder"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:375
 #, kde-format
 msgid "Placement Position: "
 msgstr "Positie voor plaatsing: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
 #, kde-format
 msgid "0 degrees"
 msgstr "0 graden"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:381
 #, kde-format
 msgid "90 degrees CW"
 msgstr "90 graden CW"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:382
 #, kde-format
 msgid "180 degrees"
 msgstr "180 graden"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:383
 #, kde-format
 msgid "270 degrees CW"
 msgstr "270 graden CW"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
 #, kde-format
 msgid "Rotation: "
 msgstr "Rotatie: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr ""
 "Afmeting van het watermerk als percentage van de gemarkeerde afbeelding."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
 #, kde-format
 msgid "Size (%): "
 msgstr "Grootte (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr ""
 "Marge vanaf de rand in de X-richting als percentage van de gemarkeerde "
 "afbeelding."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
 msgid "X margin (%): "
 msgstr "X-marge (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:407
 #, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr ""
 "Marge vanaf de rand in de Y-richting als percentage van de gemarkeerde ."
 "afbeelding"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:408
 #, kde-format
 msgid "Y margin (%): "
 msgstr "Y-marge (%): "
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
 msgstr "Watermerk toevoegen"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
@@ -5755,7 +5755,7 @@ msgstr ""
 "Een hulpmiddel om een afbeelding of tekst als zichtbaar watermerk aan te "
 "brengen"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:66
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5765,19 +5765,19 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan een tekstwatermerk over "
 "afbeeldingen aanbrengen.</para>"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
 msgstr "Anti-vignettering"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
 msgstr "Een hulpmiddel om vignettering aan te passen op een foto."
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:66
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5787,13 +5787,13 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer verwijdert of brengt aan "
 "vignetteringen van afbeeldingen.</para>"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:59
+#: core/dplugins/bqm/enhance/blur/blur.cpp:53
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
 msgstr "Gladheid:"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:63
+#: core/dplugins/bqm/enhance/blur/blur.cpp:57
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
 #, kde-format
 msgid ""
@@ -5803,40 +5803,40 @@ msgstr ""
 "Een gladheid van 0 heeft geen effect, 1 en hoger bepaalt de Gaussiaanse "
 "vervagingsmatrixstraal die bepaalt hoeveel de afbeelding vager zal worden."
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Blur Image"
 msgstr "Afbeelding vervagen"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
 msgstr "Een hulpmiddel om afbeeldingen te vervagen"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen vervagen.</para>"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "Hotpixels"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:61
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix hot pixels"
 msgstr "Een hulpmiddel om hot-pixels te repareren"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:66
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5845,19 +5845,19 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheerder kan vaste pixels repareren in "
 "afbeeldingen.</para>"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Automatische lenscorrectie"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:59
 #, kde-format
 msgid "Fix automatically lens distortions"
 msgstr "Automatisch corrigeren van lensvervorming."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:84
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
@@ -5867,26 +5867,26 @@ msgstr ""
 "het moment dat de wachtrij wordt uitgevoerd om relevante eigenschappen van "
 "de lens te vinden."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr "Kan geen lensinformatie vinden om automatische lenscorrecties te doen"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction"
 msgstr "Automatische lenscorrectie"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
 msgstr "Een hulpmiddel om automatisch lensvervorming te repareren"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5896,21 +5896,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan automatisch lensartifacts op "
 "afbeeldingen repareren.</para>"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Local Contrast"
 msgstr "Lokaal contrast"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:61
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
 msgstr "Een hulp om tonen overeen laten komen"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5920,21 +5920,21 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan toonwijziging emuleren in "
 "afbeeldingen.</para>"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "Ruisreductie"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:61
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
 msgstr "Een hulpmiddel om fotografische ruis te verwijderen met wavelets."
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
@@ -5942,13 +5942,13 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan ruis verminderen in "
 "afbeeldingen.</para>"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Red Eye Correction"
 msgstr "Rode-ogen-correctie"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
@@ -5957,7 +5957,7 @@ msgstr ""
 "Een hulpmiddel om automatisch het rode-ogen-effect te detecteren en te "
 "corrigeren"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5967,32 +5967,32 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan het rode-ogen-effect in "
 "afbeeldingen verminderen.</para>"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "Bezoek de website van de CImg-bibliotheek"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "Uniforme ruis reduceren"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:65
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "JPEG-artefacten reduceren"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "Texturing reduceren"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:67
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -6010,21 +6010,21 @@ msgstr ""
 "mozaïek.</p><p><b>Textuur reduceren</b>: reduceert afbeeldingsartefacten, "
 "zoals papiertextuur of moirépatronen in ingescande afbeeldingen.</p>"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:46
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Restoration"
 msgstr "Restaureren"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:61
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
 msgstr ""
 "Een hulpmiddel om afbeeldingen te herstellen met het Greystoration algoritme"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6034,39 +6034,39 @@ msgstr ""
 "<para>Dit hulpmiddel  verminderen kan afbeeldingen herstellen met het "
 "Greystoration algoritme.</para>"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Sharpen Image"
 msgstr "Afbeeldingen verscherpen"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:61
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to sharp images"
 msgstr "Een hulpmiddel om afbeeldingen te verscherpen"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:66
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen verscherpen.</para>"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Effects"
 msgstr "Kleureffecten"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:61
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
 msgstr "Een hulpmiddel om kleureffecten toe te passen"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6076,20 +6076,20 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan kleureffecten op afbeeldingen "
 "toepassen.</para>"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Film Grain"
 msgstr "Filmkorrels"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:61
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
 msgstr "Een hulpmiddel om filmkorrel toe te voegen"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6132,13 +6132,13 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
 msgstr "Metagegevens toepassen: ExifTool rapporteerde een fout."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
 msgstr "Metagegevens toepassen"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
@@ -6146,7 +6146,7 @@ msgstr ""
 "Een hulpmiddel om metagegevens uit een afbeelding of JSON-bestand toe te "
 "passen met ExifTool."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6156,36 +6156,36 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan een metagegevens uit een "
 "afbeelding of JSON-bestand toepassen met ExifTool.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
 #, kde-format
 msgid "Titles:"
 msgstr "Titels:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Titeltekst hier invoeren."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
 msgid "Captions:"
 msgstr "Opschriften:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Voer hier de titeltekst in."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Opschonen en overschrijven van metagegevens"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6197,19 +6197,19 @@ msgstr ""
 "vervangen worden door de nieuwe waarden,\n"
 "anders zullen oude waarden gemengd worden met nieuwe waarden."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
 msgstr "Opschriften toekennen"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
 msgstr "Een hulpmiddel om opschriftmetagegevens aan afbeeldingen toe te kennen"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6219,34 +6219,34 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer zal titel en "
 "beschrijvingsmetagegevenswaarden aan afbeeldingen toekennen.</para>"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
 msgid "Pick Label:"
 msgstr "Keuzelabel:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
 #, kde-format
 msgid "Color Label:"
 msgstr "Kleurlabel:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
 #, kde-format
 msgid "Rating:"
 msgstr "Waardering: "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
 msgstr "Labels toewijzen"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
 msgstr "Een hulpmiddel om label-metagegevens aan afbeeldingen toe te kennen"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6372,19 +6372,19 @@ msgstr ""
 "voor sleutelwoordhiërarchieën aan afbeeldingen toekennen met gebruik van "
 "deep-learning-engine.</para>"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Apply Metadata Template"
 msgstr "Pas het metagegevenssjabloon toe"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
 msgstr "Een hulpmiddel om metagegevenssjabloon toe te passen op afbeeldingen"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6394,13 +6394,13 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan een metagegevenssjabloon op "
 "afbeeldingen toepassen.</para>"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
 msgstr "Sorteren op kwaliteit van afbeeldingen"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
@@ -6408,7 +6408,7 @@ msgstr ""
 "Een hulpmiddel om pick-label-metagegevens op kwaliteit van afbeeldingen toe "
 "te kennen"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6419,145 +6419,145 @@ msgstr ""
 "waarde toekennen door de afbeeldingen te ontleden en de kwaliteit te "
 "schatten.</para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Volledig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Datum"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Commentaar en beschrijving"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "Iptc:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Volledig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Datum"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Opschrift"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Voorbeeldweergave afbeelding"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "Xmp:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Volledig"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Datum"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "Geheel digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Afbeeldingsgeschiedenis van digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "Voorbeeldweergave van digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin-kern"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Video"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Opschrift, commentaar en beschrijving"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
 msgstr "Metagegevens verwijderen: niet het laatst hulpmiddel in de lijst."
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Remove Metadata"
 msgstr "Metagegevens verwijderen"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
@@ -6565,7 +6565,7 @@ msgstr ""
 "Een hulpmiddel om Exif-, Iptc- en Xmp-metagegevens uit afbeeldingen te "
 "verwijderen"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6575,20 +6575,20 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan metagegevens zoals Exif, Iptc "
 "of Xmp uit afbeeldingen verwijderen.</para>"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
 msgstr "Tijdbijstelling"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:61
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
 msgstr "Een hulpmiddel om datum en tijdstempels van afbeeldingen aan te passen"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
@@ -6596,55 +6596,55 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheerder kan tijd in afbeeldingen "
 "aanpassen.</para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:103
+#: core/dplugins/bqm/metadata/translate/translate.cpp:93
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titel"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:104
+#: core/dplugins/bqm/metadata/translate/translate.cpp:94
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Opschrift"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:105
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Copyrights"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:106
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Bepalingen voor gebruik"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Vertalen naar:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:147
+#: core/dplugins/bqm/metadata/translate/translate.cpp:137
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
 msgstr "Te vertalen items met %1:"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Translate Metadata"
 msgstr "Metagegevens vertalen"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
 msgstr "Een hulpmiddel om metagegevens in afbeeldingen te vertalen"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6654,12 +6654,12 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan alternatieve taaltekenreeksen "
 "in XMP-metagegevens uit afbeeldingen vertalen.</para>"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
 msgid "Auto-Crop"
 msgstr "Automatisch bijsnijden"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:93
+#: core/dplugins/bqm/transform/crop/crop.cpp:85
 #, kde-format
 msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
@@ -6668,46 +6668,46 @@ msgstr ""
 "Bereken automatisch instellingen voor bijsnijgebied door zwarte gaten in "
 "randen van de afbeelding te analyseren."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:96
+#: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "Positie:"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:100
-#: core/dplugins/bqm/transform/crop/crop.cpp:105
+#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:97
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:352
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:357
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr "Stel hier voor het bijsnijden de positie in van de linkerbovenhoek."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:115
+#: core/dplugins/bqm/transform/crop/crop.cpp:107
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr "Stel hier de breedte in voor het bijsnijden."
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:120
+#: core/dplugins/bqm/transform/crop/crop.cpp:112
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr "Stel hier de hoogte in voor het bijsnijden."
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Crop"
 msgstr "Bijsnijden"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:61
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
 msgstr "Een hulpmiddel om afbeeldingen bij te snijden naar een gebied"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
@@ -6715,37 +6715,37 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen afsnijden naar een "
 "gebied.</para>"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:58
+#: core/dplugins/bqm/transform/flip/flip.cpp:53
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Horizontal"
 msgstr "Horizontaal"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:59
+#: core/dplugins/bqm/transform/flip/flip.cpp:54
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Vertical"
 msgstr "Verticaal"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:60
+#: core/dplugins/bqm/transform/flip/flip.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Flip:"
 msgstr "Spiegelen:"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Flip"
 msgstr "Omdraaien"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:61
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
 msgstr "Een hulpmiddel om afbeeldingen horizontaal of verticaal te spiegelen"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6755,81 +6755,81 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan shellscripts van gebruikers "
 "uitvoeren als workflow stappen.</para>"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, kde-format
 msgid "Preset Length:"
 msgstr "Voorinstelling van de lengte:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:143
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "Zeer klein (1 pixel)"
 msgstr[1] "Zeer klein (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:153
+#: core/dplugins/bqm/transform/resize/resize.cpp:144
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "Klein (1 pixel)"
 msgstr[1] "Klein (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:145
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "Middel (1 pixel)"
 msgstr[1] "Middel (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:155
+#: core/dplugins/bqm/transform/resize/resize.cpp:146
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "Groot (1 pixel)"
 msgstr[1] "Groot (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:156
+#: core/dplugins/bqm/transform/resize/resize.cpp:147
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "Zeer groot (1 pixel)"
 msgstr[1] "Zeer groot (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:157
+#: core/dplugins/bqm/transform/resize/resize.cpp:148
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "Enorm groot (1 pixel)"
 msgstr[1] "Enorm groot (%1 pixels)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:159
+#: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, kde-format
 msgid "Not enlarge small images"
 msgstr "Kleinere afbeeldingen niet vergroten"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:160
+#: core/dplugins/bqm/transform/resize/resize.cpp:151
 #, kde-format
 msgid "Use Custom Length"
 msgstr "Aangepaste lengte gebruiken"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:161
+#: core/dplugins/bqm/transform/resize/resize.cpp:152
 #, kde-format
 msgid "Use Percentage"
 msgstr "Percentages gebruiken"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:163
-#: core/dplugins/bqm/transform/resize/resize.cpp:243
+#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:234
 #, kde-format
 msgid " Pixels"
 msgstr " Pixels"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:46
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Resize"
 msgstr "Grootte wijzigen"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:61
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
@@ -6837,7 +6837,7 @@ msgstr ""
 "Een hulpmiddel om afmetingen van afbeeldingen wijzigen te met aangepaste "
 "lengte"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
@@ -6845,55 +6845,55 @@ msgstr ""
 "<para>Dit hulpmiddel Takenwachtrijbeheer kan afbeeldingen van grootte "
 "wijzigen.</para>"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Exif-oriëntatie gebruiken"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:90
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 graden"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:91
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 graden"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:92
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 graden"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:93
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:95
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
 msgstr "Hoek:"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:46
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Rotate"
 msgstr "Draaien"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:61
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
 msgstr "Een hulpmiddel om afbeeldingen te draaien"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
@@ -11613,7 +11613,7 @@ msgstr "Wijzigingen opslaan -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -21347,7 +21347,7 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Soundtrack voorspelen"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:95
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -21356,42 +21356,42 @@ msgstr ""
 "Indien ingesteld zal de geluidstrack van het huidige album worden opgeslagen "
 "en automatisch hersteld worden bij de volgende keer opstarten."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Verplaats de huidige track naar boven in de afspeellijst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Verplaats de huidige track naar beneden in de afspeellijst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Voeg nieuwe tracks toe aan de afspeellijst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Verwijder de geselecteerde track uit de afspeellijst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Laad de afspeellijst uit een bestand."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Sla de afspeellijst op in een bestand."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Wis de afspeellijst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:255
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -21399,7 +21399,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "1 track [%2]"
 msgstr[1] "%1 tracks [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:283
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -21407,47 +21407,47 @@ msgstr ""
 "De diatijd is langer dan de soundtracktijd. Suggestie: voeg meer "
 "geluidsbestanden toe."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:353
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Geluidsbestanden selecteren"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:421
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Er kan maar één afbeelding per keer omhoog worden verplaatst."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:459
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "U kunt maar één bestand tegelijk omlaag verplaatsen."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:480
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Afspeellijst laden"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Afspeellijst (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:539
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Afspeellijst opslaan"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:600
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 "Geen toegang tot bestand \"%1\". Controleer of het pad er naartoe juist is."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:610
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "Een voorbeeld maken van een lege bestandenlijst is niet mogelijk."
@@ -21746,45 +21746,45 @@ msgstr "Tekstkleur:"
 msgid "Background color:"
 msgstr "Achtergrondkleur:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
 msgstr[0] "%1 afbeelding [%2]"
 msgstr[1] "%1 afbeeldingen [%2]"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
 #, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
 msgstr[0] "%1 afbeelding"
 msgstr[1] "%1 afbeeldingen"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
 "Geen toegang tot bestand %1. Controleer of het pad er naartoe juist is."
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "Afbeelding #%1"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:683
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:480
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
 #, kde-format
 msgid "Delay between images (ms):"
 msgstr "Vertraging tussen afbeeldingen (ms):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:487
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
 #, kde-format
 msgid "Delay between images (s):"
@@ -21875,124 +21875,124 @@ msgstr "Effect :"
 msgid "Use Open&GL transitions"
 msgstr "Open&GL-overgangen gebruiken"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Presentatie"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:82
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:76
 #, kde-format
 msgctxt "@action: play presentation"
 msgid "Start"
 msgstr "Begin"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:83
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "Presentatie starten"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
 #, kde-format
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
 msgstr "Hoofdinstellingen"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:93
 #, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "Opschrift"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:106
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
 #, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
 msgstr "Soundtrack"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:113
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
 #, kde-format
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Geavanceerd"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:565
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1020
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Geen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Buigen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Vermengen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Kubus"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Vervagen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Trillen"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "In-uit"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Draaien"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Verschuiven"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Willekeurig"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:875
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:866
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Diavoorstelling voltooid."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:876
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:636
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Klik om af te sluiten..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:635
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Diavoorstelling voltooid."
@@ -22007,19 +22007,19 @@ msgstr "Er zijn geen afbeeldingen voor de diavoorstelling beschikbaar."
 msgid "OpenGL support is not available on your system."
 msgstr "OpenGL-ondersteuning is niet beschikbaar op uw computer"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Presentation"
 msgstr "Presentatie"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
 msgstr "Een hulpmiddel om een presentatie te renderen"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -22037,105 +22037,105 @@ msgstr ""
 "\n"
 "U kunt een geluidsspoor in de achtergrond toevoegen tijdens uw presentatie."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
 msgstr "Presentatie..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:229
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Vertragingstijd voor een diashow specificeren"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
 #, kde-format
 msgid "Delay:"
 msgstr "Vertragingstijd:"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:255
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Afbeelding verwijderen"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Wilt u deze afbeelding naar de prullenbak verplaatsen?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Schaakbord"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Afsmelten"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Vegen"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Mozaïek"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
 #, kde-format
 msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Kubistisch"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Groeiend"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Horizontale lijnen"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Verticale lijnen"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Uitwaaieren"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Meervoudig uitwaaieren"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Spiraalsgewijs naar binnen bewegen"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"

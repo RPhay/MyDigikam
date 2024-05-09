@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 01:50+0000\n"
+"POT-Creation-Date: 2024-05-09 01:50+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1099,7 +1099,7 @@ msgid "Date:"
 msgstr "ਮਿਤੀ:"
 
 #: core/app/items/utils/tooltipfiller.cpp:90
-#: core/dplugins/bqm/transform/crop/crop.cpp:111
+#: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
@@ -4598,7 +4598,7 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "ਫਾਇਲ ਨਾਂ ਬਦਲਣਾ ਜਾਰੀ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
@@ -4606,21 +4606,21 @@ msgstr "ਫਾਇਲ ਨਾਂ ਬਦਲਣਾ ਜਾਰੀ"
 msgid "Auto Levels"
 msgstr "ਆਟੋ ਲੈਵਲ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
 #, kde-format
 msgid "Normalize"
 msgstr "ਇਕਸਾਰ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
 #, kde-format
 msgid "Equalize"
 msgstr "ਸਮੀਕਰਨ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:63
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
@@ -4628,7 +4628,7 @@ msgstr "ਸਮੀਕਰਨ"
 msgid "Stretch Contrast"
 msgstr "ਵੱਖਰੇਵਾਂ ਖਿੱਚੋ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:64
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
@@ -4636,21 +4636,21 @@ msgstr "ਵੱਖਰੇਵਾਂ ਖਿੱਚੋ"
 msgid "Auto Exposure"
 msgstr "ਆਟੋ ਐਕਸਪੋਜ਼ਰ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "ਫਿਲਟਰ:"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
 msgstr "ਰੰਗ ਸੋਧ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Adjust all levels automatically."
@@ -4658,7 +4658,7 @@ msgctxt "@info"
 msgid "A tool to fix colors automatically"
 msgstr "ਸਭ ਲੈਵਲ ਆਟੋਮੈਟਿਕ ਹੀ ਅਡਜੱਸਟ ਕਰੋ।"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4667,7 +4667,7 @@ msgid ""
 msgstr ""
 "ਇਹ ਚੋਣ ਚਿੱਤਰ ਭਾਗ ਨੂੰ ਫੈਲਾਉਣ ਲਈ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ। ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਚਿੱਤਰ ਖੇਤਰ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "BCG Correction"
@@ -4675,7 +4675,7 @@ msgctxt "@title"
 msgid "BCG Correction"
 msgstr "BCG ਸੋਧ"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Brightness/Contrast/Gamma"
@@ -4683,7 +4683,7 @@ msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "ਚਮਕ/ਭਿੰਨਤਾ/ਗਾਮਾ"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4692,14 +4692,14 @@ msgid ""
 msgstr ""
 "ਇਹ ਚੋਣ ਚਿੱਤਰ ਭਾਗ ਨੂੰ ਫੈਲਾਉਣ ਲਈ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ। ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਚਿੱਤਰ ਖੇਤਰ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Black and White"
 msgctxt "@title"
 msgid "Black and White Convert"
 msgstr "ਕਾਲਾ ਅਤੇ ਚਿੱਟਾ"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Color Space"
@@ -4707,7 +4707,7 @@ msgctxt "@info"
 msgid "A tool to convert to black and white"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4716,7 +4716,7 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Channel Mixer"
@@ -4724,14 +4724,14 @@ msgctxt "@title"
 msgid "Channel Mixer"
 msgstr "ਚੈਨਲ ਮਿਕਸਰ"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:61
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4740,19 +4740,19 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
 #: core/dplugins/editor/colors/film/filmtool.cpp:222
 #, kde-format
 msgid "Color Balance"
 msgstr "ਰੰਗ ਸੰਤੁਲਨ"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, fuzzy, kde-format
 msgid "Adjust color balance."
 msgstr "ਰੰਗ ਸੰਤੁਲਨ..."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Color Balance"
@@ -4760,14 +4760,14 @@ msgctxt "@title"
 msgid "Color Balance"
 msgstr "ਰੰਗ ਸੰਤੁਲਨ"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
 msgstr "ਰੰਗ ਸੰਤੁਲਨ..."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4786,20 +4786,20 @@ msgstr "ਬਦਲੋ"
 msgid "Convert color depth from 16 to 8 bits."
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:46
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
 msgstr "ਬਦਲੋ"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4808,21 +4808,21 @@ msgid ""
 "</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
 msgstr "ਬਦਲੋ"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:61
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4831,75 +4831,75 @@ msgid ""
 "bits.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
 msgstr "ਕਰਵ ਅਡਜੱਸਟ..."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:42
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
 msgstr "ਆਟੋ ਐਕਸਪੋਜਰ ਅਡਜੱਸਟਮੈਂਟ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:56
 #, fuzzy, kde-format
 #| msgid "Channel:"
 msgctxt "@label: colcor properties"
 msgid "Channel:"
 msgstr "ਚੈਨਲ:"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:65
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:59
 #, fuzzy, kde-format
 #| msgid "Luminosity"
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
 msgstr "ਲੁਮਿਨੋਸਟੀ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:60
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@item: colcor properties"
 msgid "Red"
 msgstr "ਲਾਲ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:67
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:61
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@item: colcor properties"
 msgid "Green"
 msgstr "ਹਰਾ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:68
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: colcor properties"
 msgid "Blue"
 msgstr "ਨੀਲਾ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:63
 #, fuzzy, kde-format
 #| msgid "Alpha"
 msgctxt "@item: colcor properties"
 msgid "Alpha"
 msgstr "ਐਲਫਾ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:75
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
 #, fuzzy, kde-format
 #| msgid "Load..."
 msgctxt "@action: open file dialog"
 msgid "Load..."
 msgstr "ਲੋਡ..."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:77
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:71
 #, fuzzy, kde-format
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
 msgstr "<p>ਸੈਟਿੰਗ ਪਾਠ ਫਾਇਲ ਤੋਂ ਸਭ ਫਿਲਟਰ ਮੁੱਲ ਲੋਡ ਕਰੋ।"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Add film grain"
@@ -4907,7 +4907,7 @@ msgctxt "@info"
 msgid "A tool to adjust color curves"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਿਲ"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4916,14 +4916,14 @@ msgid ""
 "</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
 msgstr "ਲੈਨਜ਼ ਆਟੋ-ਸੋਧ"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Hue/Saturation/Lightness..."
@@ -4931,7 +4931,7 @@ msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "ਰੰਗਤ/ਸਤ੍ਰਿਪਤਾ/ਚਮਕ..."
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -4940,7 +4940,7 @@ msgid ""
 msgstr ""
 "ਇਹ ਚੋਣ ਚਿੱਤਰ ਭਾਗ ਨੂੰ ਫੈਲਾਉਣ ਲਈ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ। ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਚਿੱਤਰ ਖੇਤਰ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
 #, fuzzy, kde-format
 #| msgid "Color Profile Conversion"
@@ -4948,13 +4948,13 @@ msgctxt "@title"
 msgid "Color Profile Conversion"
 msgstr "ਰੰਗ ਪਰੋਫਾਇਲ ਡਾਇਰੈਕਟਰੀ"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to a color space"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4963,7 +4963,7 @@ msgid ""
 "space.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Invert Colors"
@@ -4971,7 +4971,7 @@ msgctxt "@title"
 msgid "Invert Colors"
 msgstr "ਉਲਟ ਰੰਗ"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:61
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Invert image colors."
@@ -4979,7 +4979,7 @@ msgctxt "@info"
 msgid "A tool to invert image colors"
 msgstr "ਉਲਟ ਚਿੱਤਰ ਰੰਗ।"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -4987,7 +4987,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "White Balance"
@@ -4995,14 +4995,14 @@ msgctxt "@title"
 msgid "White Balance"
 msgstr "ਚਿੱਟਾ ਸੰਤੁਲਨ"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
 msgstr "ਚਿੱਟਾ ਸੰਤੁਲਨ"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5011,20 +5011,20 @@ msgid ""
 "</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To TIFF"
 msgctxt "@title"
 msgid "Convert To AVIF"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5035,19 +5035,19 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Convert RAW To DNG"
 msgstr "PNG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
 msgstr "%1 ਨੂੰ ਲੂਜ਼ਲਿਸ ਫਾਇਲ ਫਾਰਮੈਟ 'ਚ ਬਦਲਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5057,20 +5057,20 @@ msgid ""
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To TIFF"
 msgctxt "@title"
 msgid "Convert To HEIF"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5086,20 +5086,20 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:46
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JP2"
 msgctxt "@title"
 msgid "Convert To JP2"
 msgstr "JP2 ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:61
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
 msgstr "JPEG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5112,20 +5112,20 @@ msgid ""
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JPEG"
 msgctxt "@title"
 msgid "Convert To JPEG"
 msgstr "JPEG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
 msgstr "JPEG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5137,20 +5137,20 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JP2"
 msgctxt "@title"
 msgid "Convert To JXL"
 msgstr "JP2 ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
 msgstr "JPEG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5162,19 +5162,19 @@ msgid ""
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
 msgstr "PNG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
 msgstr "%1 ਨੂੰ ਲੂਜ਼ਲਿਸ ਫਾਇਲ ਫਾਰਮੈਟ 'ਚ ਬਦਲਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5185,7 +5185,7 @@ msgid ""
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:59
+#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
 msgid ""
 "<b>If conversion to PNG fails, this may be due to the color profile check. "
@@ -5193,20 +5193,20 @@ msgid ""
 "select the desired color profile.</b>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To PNG"
 msgctxt "@title"
 msgid "Convert To PNG"
 msgstr "PNG ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
 msgstr "%1 ਨੂੰ ਲੂਜ਼ਲਿਸ ਫਾਇਲ ਫਾਰਮੈਟ 'ਚ ਬਦਲਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5217,20 +5217,20 @@ msgid ""
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:46
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To TIFF"
 msgctxt "@title"
 msgid "Convert To TIFF"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:61
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
 msgstr "TIFF ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5242,20 +5242,20 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JP2"
 msgctxt "@title"
 msgid "Convert To WEBP"
 msgstr "JP2 ਲਈ ਬਦਲੋ"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:61
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
 msgstr "%1 ਨੂੰ ਲੂਜ਼ਲਿਸ ਫਾਇਲ ਫਾਰਮੈਟ 'ਚ ਬਦਲਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5268,18 +5268,18 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, fuzzy, kde-format
 #| msgid "Output device profile:"
 msgid "Output file type:"
 msgstr "ਆਉਟਪੁੱਟ ਜੰਤਰ ਪਰੋਫਾਇਲ:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, fuzzy, kde-format
@@ -5288,7 +5288,7 @@ msgstr ""
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, fuzzy, kde-format
@@ -5297,48 +5297,48 @@ msgstr "JPEG"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG 2000"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
 msgid "JPEG XL"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #, kde-format
 msgid "AVIF"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "HEIF"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "WEBP"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "Shell Script:"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:111
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5346,68 +5346,68 @@ msgid ""
 "before shell execution."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:114
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
 msgid "User Script: No script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "User Script: File open error."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:317
 #, kde-format
 msgid "User Script: No error."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
 msgid "User Script: Command not found."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:339
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:61
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਿਲ"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5419,7 +5419,7 @@ msgid ""
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:46
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Add Border"
@@ -5427,13 +5427,13 @@ msgctxt "@title"
 msgid "Add Border"
 msgstr "ਹਾਸ਼ੀਆ ਸ਼ਾਮਿਲ"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5442,21 +5442,21 @@ msgid ""
 "</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Texture"
 msgctxt "@title"
 msgid "Add Texture"
 msgstr "ਟੈਕਸਟਰ"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to apply a texture over images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:66
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5464,195 +5464,195 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
 msgid ""
 "Check this if you want the watermark to use the given size of the font or "
 "the image without any adjustment to the actual image."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, fuzzy, kde-format
 #| msgid "Watermark type:"
 msgid "Watermark type: "
 msgstr "ਵਾਟਰਮਾਰਕ ਕਿਸਮ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:178
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:548
 #, kde-format
 msgid "Image"
 msgstr "ਚਿੱਤਰ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:208
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:179
 #, kde-format
 msgid "Text"
 msgstr "ਟੈਕਸਟ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
 #, kde-format
 msgid "Image settings"
 msgstr "ਚਿੱਤਰ ਸੈਟਿੰਗ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Click to select watermark image."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, fuzzy, kde-format
 #| msgid "Watermark image:"
 msgid "Watermark image: "
 msgstr "ਵਾਟਰਮਾਰਕ ਚਿੱਤਰ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
 "the image's aspect ratio instead."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:210
 #, fuzzy, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "ਮੌਜੂਦਾ ਚਿੱਤਰ ਆਕਾਰ ਅਨੁਪਾਤ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:220
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, fuzzy, kde-format
 msgid "Add transparency to watermark image"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid "Opacity of watermark"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
 #, fuzzy, kde-format
 msgid "Opacity (%): "
 msgstr "ਕੰਪੈਸਟੀ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
 msgid "Text settings"
 msgstr "ਟੈਕਸਟ ਸੈਟਿੰਗ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:250
 #, fuzzy, kde-format
 msgid "Enter your watermark string here."
 msgstr "ਆਪਣਾ ਪਾਠ ਇੱਥੇ ਦਿਓ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
 #, fuzzy, kde-format
 #| msgid "Watermark text:"
 msgid "Watermark text: "
 msgstr "ਵਾਟਰਮਾਰਕ ਟੈਕਸਟ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, fuzzy, kde-format
 msgid "Set the font color to use here."
 msgstr "ਵਰਤਣ ਲਈ ਫੋਂਟ ਰੰਗ ਸੈੱਟ ਕਰੋ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
 #, fuzzy, kde-format
 #| msgid "Font color:"
 msgid "Font color: "
 msgstr "ਫੋਂਟ ਰੰਗ: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, fuzzy, kde-format
 msgid "Text opacity: "
 msgstr "ਕੰਪੈਸਟੀ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, kde-format
 msgid "Use background"
 msgstr "ਬੈਕਗਰਾਊਂਡ ਵਰਤੋਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, fuzzy, kde-format
 msgid "Choose the color of the watermark background."
 msgstr "ਮੁੱਖ ਬਾਰਡਰ ਦਾ ਰੰਗ ਇੱਥੇ ਦਿਓ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, fuzzy, kde-format
 msgid "Background color: "
 msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ(&B):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
 #, fuzzy, kde-format
 msgid "Background opacity: "
 msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ(&B):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:303
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Specific Location"
 msgstr "ਟਿਕਾਣਾ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:316
 #, fuzzy, kde-format
 #| msgid "Mask Settings"
 msgid "Systematic Repetition"
 msgstr "ਮਾਸਕ ਸੈਟਿੰਗ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
 #, fuzzy, kde-format
 msgid "Random Repetition"
 msgstr "ਨਾਂ ਬਦਲਣ ਚੋਣਾਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
 #, fuzzy, kde-format
 msgid "Placement Type: "
 msgstr "ਫੀ-ਸਦੀ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:326
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
 "combo box, you can specify here whether the repetition."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -5660,13 +5660,13 @@ msgid ""
 "180, 270 degrees)."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:358
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -5674,139 +5674,139 @@ msgid ""
 "typically between 1.0 and 3.0. It can also be less than 1.0"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
 #, fuzzy, kde-format
 #| msgid "Start Color: "
 msgid "Sparsity Factor: "
 msgstr "ਸ਼ੁਰੂਆਤੀ ਰੰਗ: "
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:367
 #, fuzzy, kde-format
 #| msgid "Top left"
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "ਉੱਤੇ ਖੱਬੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:368
 #, fuzzy, kde-format
 #| msgid "Top right"
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "ਉੱਤੇ ਸੱਜੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, fuzzy, kde-format
 #| msgid "Bottom left"
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "ਹੇਠਾਂ ਖੱਬੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:370
 #, fuzzy, kde-format
 #| msgid "Bottom right"
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "ਹੇਠਾਂ ਸੱਜੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:371
 #, fuzzy, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "ਸੈਂਟੀਮੀਟਰ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:372
 #, fuzzy, kde-format
 #| msgid "Top left"
 msgctxt "@item: placement position"
 msgid "Top center"
 msgstr "ਉੱਤੇ ਖੱਬੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:373
 #, fuzzy, kde-format
 #| msgid "Bottom left"
 msgctxt "@item: placement position"
 msgid "Bottom center"
 msgstr "ਹੇਠਾਂ ਖੱਬੇ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:375
 #, fuzzy, kde-format
 msgid "Placement Position: "
 msgstr "ਫੀ-ਸਦੀ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
 #, fuzzy, kde-format
 #| msgid "90 degrees"
 msgid "0 degrees"
 msgstr "90 ਡਿਗਰੀ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:381
 #, fuzzy, kde-format
 #| msgid "90 degrees"
 msgid "90 degrees CW"
 msgstr "90 ਡਿਗਰੀ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:382
 #, kde-format
 msgid "180 degrees"
 msgstr "180 ਡਿਗਰੀਆਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:383
 #, fuzzy, kde-format
 #| msgid "270 degrees"
 msgid "270 degrees CW"
 msgstr "270 ਡਿਗਰੀਆਂ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: "
 msgstr "ਘੁੰਮਾਉ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
 #, fuzzy, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr "<p>ਇੱਥੇ ਚਿੱਤਰ ਦੇ ਦੁਆਲੇ ਲੱਗਣ ਵਾਲੇ ਹਾਸ਼ੀਏ ਦੀ ਕਿਸਮ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
 #, fuzzy, kde-format
 #| msgid "Size (%):"
 msgid "Size (%): "
 msgstr "ਆਕਾਰ (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, fuzzy, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "ਇੱਥੇ ਚਿੱਤਰ ਦੇ ਦੁਆਲੇ ਲੱਗਣ ਵਾਲੇ ਬਾਰਡਰ ਚੌੜਾਈ ਦੀ ਫੀਸਦੀ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
 msgid "X margin (%): "
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:407
 #, fuzzy, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "ਇੱਥੇ ਚਿੱਤਰ ਦੇ ਦੁਆਲੇ ਲੱਗਣ ਵਾਲੇ ਬਾਰਡਰ ਚੌੜਾਈ ਦੀ ਫੀਸਦੀ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:408
 #, kde-format
 msgid "Y margin (%): "
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add Watermark"
 msgctxt "@title"
 msgid "Add Watermark"
 msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:66
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5815,19 +5815,19 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
 msgstr "ਵਿਗਨੈਟਿੰਗ"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:66
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5836,13 +5836,13 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:59
+#: core/dplugins/bqm/enhance/blur/blur.cpp:53
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
 msgstr "ਮੁਲਾਇਮ:"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:63
+#: core/dplugins/bqm/enhance/blur/blur.cpp:57
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
 #, kde-format
 msgid ""
@@ -5850,28 +5850,28 @@ msgid ""
 "matrix radius that determines how much to blur the image."
 msgstr ""
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Blur Image"
 msgctxt "@title"
 msgid "Blur Image"
 msgstr "ਬਲਰ ਚਿੱਤਰ"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to blur images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
@@ -5879,7 +5879,7 @@ msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "ਹਾਟ ਪਿਕਸਲ"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:61
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Color Space"
@@ -5887,7 +5887,7 @@ msgctxt "@info"
 msgid "A tool to fix hot pixels"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:66
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5895,31 +5895,31 @@ msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "ਲੈਨਜ਼ ਆਟੋ-ਸੋਧ"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:59
 #, fuzzy, kde-format
 msgid "Fix automatically lens distortions"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:84
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
 "to find relevant lens features."
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction"
@@ -5927,14 +5927,14 @@ msgctxt "@title"
 msgid "Lens Auto-Correction"
 msgstr "ਲੈਨਜ਼ ਆਟੋ-ਸੋਧ"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5943,7 +5943,7 @@ msgid ""
 "over images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Local Contrast"
@@ -5951,14 +5951,14 @@ msgctxt "@title"
 msgid "Local Contrast"
 msgstr "ਲੋਕਲ ਭਿੰਨਤਾ"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:61
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
 msgstr "ਦਾਨ ਪਾਤਰ..."
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -5967,7 +5967,7 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Noise Reduction"
@@ -5975,28 +5975,28 @@ msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "ਨੋਵਾਇਸ ਘਟਾਓ"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:61
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Red Eyes Correction"
 msgctxt "@title"
 msgid "Red Eye Correction"
 msgstr "ਲਾਲ ਅੱਖ ਸੋਧ"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Automatically detect and open a connected gphoto2 camera"
@@ -6004,7 +6004,7 @@ msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
 msgstr "ਇੱਕ ਕੁਨੈਕਟ ਹੋਏ gphoto2 ਕੈਮਰਾ ਆਟੋਮੈਟਿਕ ਖੋਜੋ ਅਤੇ ਖੋਲ੍ਹੋ"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6013,32 +6013,32 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "CImg ਲਾਇਬਰੇਰੀ ਵੈੱਬਸਾਇਟ ਖੋਲ੍ਹੋ"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:65
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
 #, kde-format
 msgid "Reduce Texturing"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:67
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -6049,7 +6049,7 @@ msgid ""
 "artifacts, such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:46
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Restoration"
@@ -6057,14 +6057,14 @@ msgctxt "@title"
 msgid "Restoration"
 msgstr "ਰੀ-ਸਟੋਰੇਸ਼ਨ"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:61
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਿਲ"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6072,27 +6072,27 @@ msgid ""
 "algorithm.</para>"
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Sharpen Image"
 msgstr "ਚਿੱਤਰ ਸੰਭਾਲੋ"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:61
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to sharp images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:66
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Color Effects"
@@ -6100,13 +6100,13 @@ msgctxt "@title"
 msgid "Color Effects"
 msgstr "ਰੰਗ ਪਰਭਾਵ"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:61
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
 msgstr "ਰੰਗ ਪਰਭਾਵ"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6115,7 +6115,7 @@ msgid ""
 "para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Film Grain"
@@ -6123,14 +6123,14 @@ msgctxt "@title"
 msgid "Film Grain"
 msgstr "ਫਿਲਮ ਗਰੇਨ"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:61
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@info"
 msgid "A tool to add film grain"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਿਲ"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6170,21 +6170,21 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
 msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Applying metadata"
 msgctxt "@title"
 msgid "Apply Metadata"
 msgstr "ਮੇਟਾਡਾਟਾ ਲਾਗੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Setting Metadata tags to file %1..."
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
 msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6193,14 +6193,14 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
 #| msgid "Title:"
 msgid "Titles:"
 msgstr "ਟਾਈਟਲ:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, fuzzy, kde-format
 #| msgid "Enter title here."
@@ -6208,13 +6208,13 @@ msgctxt "@info"
 msgid "Enter title text here."
 msgstr "ਟਾਈਟਲ ਇੱਥੇ ਦਿਉ।"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgid "Captions:"
 msgstr "ਸੁਰਖੀ:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
@@ -6222,12 +6222,12 @@ msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "ਆਪਣੀ ਸੁਰਖੀ ਇੱਥੇ ਦਿਓ।"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "ਮੀਟਰਿੰਗ ਮੋਡ"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6236,20 +6236,20 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Assign Rating"
 msgctxt "@title"
 msgid "Assign Captions"
 msgstr "ਰੇਟਿੰਗ ਦਿਓ"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6258,35 +6258,35 @@ msgid ""
 "metadata alternative values to images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, fuzzy, kde-format
 msgid "Pick Label:"
 msgstr "ਪਿਕਸਲ: "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
 #, fuzzy, kde-format
 msgid "Color Label:"
 msgstr "ਰੰਗ ਮੋਡ: "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
 #, kde-format
 msgid "Rating:"
 msgstr "ਰੇਟਿੰਗ:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Assign Labels"
 msgctxt "@title"
 msgid "Assign Labels"
 msgstr "ਲੇਬਲ ਦਿਓ"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6385,20 +6385,20 @@ msgid ""
 "values to images automatically using deep-learning engine.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Apply Metadata Template"
 msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Setting Metadata tags to file %1..."
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
 msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6407,19 +6407,19 @@ msgid ""
 "</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
 msgstr "<p>ਇਹ ਚੋਣ ਸਥਿਤੀ ਲਈ ਆਟੋਮੈਟਿਕ ਸੈਟਿੰਗ ਯੋਗ ਕਰਦੀ ਹੈ।"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6428,72 +6428,72 @@ msgid ""
 "by parsing image and estimate the quality.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, fuzzy, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "ਭਾਗ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, fuzzy, kde-format
 #| msgid "Enter keywords here..."
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "ਸ਼ਬਦ ਇੱਥੇ ਦਿਓ..."
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "ਵੇਰਵਾ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, fuzzy, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "ਭਾਗ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "ਸੁਰਖੀ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6501,33 +6501,33 @@ msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "ਚਿੱਤਰ ਝਲਕ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "ਭਾਗ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "ਡਿਜਿਕੈਮ ਵਿਸ਼ੇਸ਼ਤਾ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -6535,7 +6535,7 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "ਚਿੱਤਰ ਅਤੀਤ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "Preview Image"
@@ -6543,52 +6543,52 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "ਚਿੱਤਰ ਝਲਕ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "ਵੀਡੀਓ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, fuzzy, kde-format
 #| msgid "Caption, Comment, Title"
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "ਸੁਰਖੀ, ਟਿੱਪਣੀ, ਟਾਈਟਲ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Remove Metadata"
 msgstr "ਮੈਟਾ-ਡਾਟਾ ਵਰਤੋਂ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6597,7 +6597,7 @@ msgid ""
 "Xmp from images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
@@ -6606,76 +6606,76 @@ msgctxt "@title"
 msgid "Time Adjust"
 msgstr "ਅਡਜੱਸਟ"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:61
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:103
+#: core/dplugins/bqm/metadata/translate/translate.cpp:93
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "ਟਾਈਟਲ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:104
+#: core/dplugins/bqm/metadata/translate/translate.cpp:94
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "ਸੁਰਖੀ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:105
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "ਕਾਪੀਰਾਈਟ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:106
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, fuzzy, kde-format
 #| msgid "Usages:"
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "ਵਰਤੋਂ:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:99
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "ਰੇਟਿੰਗ %1 ਦੇ ਬਰਾਬਰ ਹੈ।"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:147
+#: core/dplugins/bqm/metadata/translate/translate.cpp:137
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
 msgstr "ਭਾਸ਼ਾ ਕੋਡ ਇੱਥੇ ਚੁਣੋ।"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Use Metadata"
 msgctxt "@title"
 msgid "Translate Metadata"
 msgstr "ਮੈਟਾ-ਡਾਟਾ ਵਰਤੋਂ"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6684,100 +6684,100 @@ msgid ""
 "strings in Xmp metadata from images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, fuzzy, kde-format
 msgid "Auto-Crop"
 msgstr "ਆਟੋ-ਫੈਲਾ:"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:93
+#: core/dplugins/bqm/transform/crop/crop.cpp:85
 #, kde-format
 msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
 "borders."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:96
+#: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "ਸਥਿਤੀ:"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:100
-#: core/dplugins/bqm/transform/crop/crop.cpp:105
+#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:97
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:352
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:357
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:115
+#: core/dplugins/bqm/transform/crop/crop.cpp:107
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr "ਕਰੋਪਿੰਗ ਲਈ ਚੌੜਾਈ ਚੋਣ ਇੱਥੇ ਸੈੱਟ ਕਰੋ।"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:120
+#: core/dplugins/bqm/transform/crop/crop.cpp:112
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr "ਕਰੋਪਿੰਗ ਲਈ ਉਚਾਈ ਚੋਣ ਇੱਥੇ ਦਿਓ।"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Crop"
 msgctxt "@title"
 msgid "Crop"
 msgstr "ਕਰੋਪ"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:61
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
 msgstr "ਬਿਨਾਂ ਟੈਗ ਦੇ ਚਿੱਤਰ ਵੇਖਾਉ।"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:58
+#: core/dplugins/bqm/transform/flip/flip.cpp:53
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "@item: orientation"
 msgid "Horizontal"
 msgstr "ਹਰੀਜ਼ੱਟਲ"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:59
+#: core/dplugins/bqm/transform/flip/flip.cpp:54
 #, fuzzy, kde-format
 #| msgid "Vertical"
 msgctxt "@item: orientation"
 msgid "Vertical"
 msgstr "ਵਰਟੀਕਲ"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:60
+#: core/dplugins/bqm/transform/flip/flip.cpp:55
 #, fuzzy, kde-format
 #| msgid "Flip:"
 msgctxt "@label"
 msgid "Flip:"
 msgstr "ਝਟਕੋ:"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@title"
 msgid "Flip"
 msgstr "ਪਲਟੋ"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:61
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
 msgstr "ਹਰੀਜ਼ੱਟਲ ਝਟਕੋ"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -6786,155 +6786,155 @@ msgid ""
 "stage.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, kde-format
 msgid "Preset Length:"
 msgstr "ਪ੍ਰੀ-ਸੈੱਟ ਲੰਬਾਈ:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:143
 #, fuzzy, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 msgstr[1] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:153
+#: core/dplugins/bqm/transform/resize/resize.cpp:144
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "ਛੋਟਾ (1 ਪਿਕਸਲ)"
 msgstr[1] "ਛੋਟਾ (%1 ਪਿਕਸਲ)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:145
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "ਮੱਧਮ (1 ਪਿਕਸਲ)"
 msgstr[1] "ਮੱਧਮ (%1 ਪਿਕਸਲ)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:155
+#: core/dplugins/bqm/transform/resize/resize.cpp:146
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "ਵੱਡਾ (1 ਪਿਕਸਲ)"
 msgstr[1] "ਵੱਡਾ (%1 ਪਿਕਸਲ)"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:156
+#: core/dplugins/bqm/transform/resize/resize.cpp:147
 #, fuzzy, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 msgstr[1] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:157
+#: core/dplugins/bqm/transform/resize/resize.cpp:148
 #, fuzzy, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 msgstr[1] "ਚੌੜਾਈ (ਪਿਕਸਲ):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:159
+#: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, fuzzy, kde-format
 #| msgid "Enlarge smaller images"
 msgid "Not enlarge small images"
 msgstr "ਛੋਟੇ ਚਿੱਤਰ ਵੱਡੇ ਕਰੋ"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:160
+#: core/dplugins/bqm/transform/resize/resize.cpp:151
 #, kde-format
 msgid "Use Custom Length"
 msgstr "ਪਸੰਦੀਦਾ ਲੰਬਾਈ ਵਰਤੋਂ"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:161
+#: core/dplugins/bqm/transform/resize/resize.cpp:152
 #, fuzzy, kde-format
 #| msgid "Percent:"
 msgid "Use Percentage"
 msgstr "ਫੀ-ਸਦੀ:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:163
-#: core/dplugins/bqm/transform/resize/resize.cpp:243
+#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:234
 #, fuzzy, kde-format
 #| msgid "Pixels:"
 msgid " Pixels"
 msgstr "ਪਿਕਸਲ:"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:46
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Resize"
 msgctxt "@title"
 msgid "Resize"
 msgstr "ਮੁੜ-ਸਾਈਜ਼"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:61
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, fuzzy, kde-format
 #| msgid "Use Exif Orientation"
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "Exif ਸਥਿਤੀ ਵਰਤੋਂ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:90
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
 #, fuzzy, kde-format
 #| msgid "90 degrees"
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 ਡਿਗਰੀ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:91
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, fuzzy, kde-format
 #| msgid "180 degrees"
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 ਡਿਗਰੀਆਂ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:92
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, fuzzy, kde-format
 #| msgid "270 degrees"
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 ਡਿਗਰੀਆਂ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:93
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "ਕਸਟਮ"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:95
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
 #, fuzzy, kde-format
 #| msgid "Angle:"
 msgctxt "@label"
 msgid "Angle:"
 msgstr "ਕੋਣ:"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:46
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@title"
 msgid "Rotate"
 msgstr "ਘੁੰਮਾਓ"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:61
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@info"
 msgid "A tool to rotate images"
 msgstr "ਰੰਗ ਥਾਂ"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Color Space"
 msgctxt "@info"
@@ -11386,7 +11386,7 @@ msgstr "ਚਿੱਤਰ ਸੰਭਾਲੇ ਜਾ ਰਹੇ ਹਨ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -20940,54 +20940,54 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "ਝਲਕ ਖੋਲ੍ਹੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:95
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgid "Move the selected track up in the playlist."
 msgstr "ਚੁਣੇ ਚਿੱਤਰਾਂ ਐਲਬਮ ਵਿੱਚ ਭੇਜੋ।"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
 #, fuzzy, kde-format
 #| msgid "Move selected images into a new album."
 msgid "Move the selected track down in the playlist."
 msgstr "ਚੁਣੇ ਚਿੱਤਰ ਨਵੀਂ ਐਲਬਮ ਵਿੱਚ ਭੇਜੋ।"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgid "Add new tracks to the playlist."
 msgstr "ਲਿਸਟ ਵਿੱਚ ਨਵਾਂ ਮੁੱਲ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, fuzzy, kde-format
 #| msgid "Move selected images into a new album."
 msgid "Delete the selected track from the playlist."
 msgstr "ਚੁਣੇ ਚਿੱਤਰ ਨਵੀਂ ਐਲਬਮ ਵਿੱਚ ਭੇਜੋ।"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Load playlist from a file."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, fuzzy, kde-format
 msgid "Save playlist to a file."
 msgstr "ਫਾਇਲਾਂ ਇੰਝ ਸੰਭਾਲੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgid "Clear the playlist."
 msgstr "ਲਿਸਟ ਸਾਫ਼ ਕਰੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:255
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -20995,55 +20995,55 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:283
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:353
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:421
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:459
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:480
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "ਪਲੇਅਲਿਸਟ ਲੋਡ ਕਰੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:539
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
 #, fuzzy, kde-format
 #| msgid "Save theme"
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "ਥੀਮ ਸੰਭਾਲੋ"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:600
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:610
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr ""
@@ -21359,14 +21359,14 @@ msgstr "ਫੋਂਟ ਰੰਗ: "
 msgid "Background color:"
 msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ(&B):"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
 #, fuzzy, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
 msgstr[0] "1 ਚਿੱਤਰ"
 msgstr[1] "1 ਚਿੱਤਰ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -21375,32 +21375,32 @@ msgid_plural "%1 images"
 msgstr[0] "1 ਚਿੱਤਰ"
 msgstr[1] "%1 ਚਿੱਤਰ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
 #, fuzzy, kde-format
 #| msgid "Images on %1"
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "%1 ਵਿੱਚ ਚਿੱਤਰ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:683
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
 #, kde-format
 msgid "Ken Burns"
 msgstr "ਕੇਨ ਬਰਾਉਨਜ਼"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:480
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
 msgid "Delay between images (ms):"
 msgstr "ਚਿੱਤਰਾਂ ਵਿੱਚ ਅੰਤਰਾਲ(&D):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:487
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
 #, fuzzy, kde-format
 #| msgid "&Delay between images:"
@@ -21501,14 +21501,14 @@ msgstr "ਪਰਭਾਵ"
 msgid "Use Open&GL transitions"
 msgstr "Exif ਸਥਿਤੀ ਵਰਤੋਂ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:69
 #, fuzzy, kde-format
 #| msgid "Presentation View"
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "ਪੇਸ਼ਕਾਰੀ ਝਲਕ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:82
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
@@ -21516,121 +21516,121 @@ msgctxt "@action: play presentation"
 msgid "Start"
 msgstr "ਸ਼ੁਰੂ:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:83
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, fuzzy, kde-format
 #| msgid "Presentation View"
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "ਪੇਸ਼ਕਾਰੀ ਝਲਕ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
 #, fuzzy, kde-format
 #| msgid "Mask Settings"
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
 msgstr "ਮਾਸਕ ਸੈਟਿੰਗ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:93
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "ਸੁਰਖੀ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:106
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
 #, fuzzy, kde-format
 #| msgid "Soundtrack"
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
 msgstr "Soundtrack"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:113
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
 #, fuzzy, kde-format
 #| msgid "Advanced"
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "ਤਕਨੀਕੀ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:565
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1020
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "ਕੋਈ ਨਹੀਂ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "ਬੈਂਡ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "ਕੈਲੰਡਰ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "ਘਣ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "ਫਿੱਕਾ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "ਅੰਦਰ ਬਾਹਰ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "ਘੁੰਮਾਓ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "ਸਲਾਇਡ ਸ਼ੋ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "ਰਲਵੇਂ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:875
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:866
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "ਸਲਾਇਡ ਸ਼ੋ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:876
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:636
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
 #, fuzzy, kde-format
 #| msgid "Click To Exit..."
 msgid "Click to Exit..."
 msgstr "ਬਾਹਰ ਜਾਣ ਲਈ ਕਲਿੱਕ ਕਰੋ..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:635
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -21647,21 +21647,21 @@ msgstr "ਇਹ ਫੋਲਡਰ 'ਚ ਕੋਈ ਤਸਵੀਰ ਨਹੀਂ ਹ�
 msgid "OpenGL support is not available on your system."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Presentation View"
 msgctxt "@title"
 msgid "Presentation"
 msgstr "ਪੇਸ਼ਕਾਰੀ ਝਲਕ"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@info"
 msgid "A tool to render presentation"
 msgstr "ਸਕੀਮਾ ਬਣਾਓ..."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -21673,27 +21673,27 @@ msgid ""
 "You can add a sound-track in background while your presentation."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid "Free Rotation..."
 msgctxt "@action"
 msgid "Presentation..."
 msgstr "ਮੁਕਤ ਘੁੰਮਾਉ..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:229
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "ਇਹ ਟੈਗ ਅਣਡਿੱਠਾ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:255
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
@@ -21701,38 +21701,38 @@ msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "ਟੈਗ ਹਟਾਓ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "ਸਤਰੰਜ ਬੋਰਡ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "ਹੇਠਾਂ ਭੇਜੋ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "ਸਵੀਪ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
 #, fuzzy, kde-format
 #| msgid "Mosaic"
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "ਰੰਗੀਲਾ ਚਿੱਤਰ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -21740,45 +21740,45 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "ਘਣਕਾਰ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "ਹਰੀਜ਼ੱਟਲ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, fuzzy, kde-format
 #| msgid "Vertically first"
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "ਵਰਟੀਕਲ ਪਹਿਲਾਂ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "ਚੱਕਰ ਬਾਹਰ ਨੂੰ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "ਕਈ ਚੱਕਰ ਬਾਹਰ ਨੂੰ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "ਅੰਦਰ ਸਮੇਟੋ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"

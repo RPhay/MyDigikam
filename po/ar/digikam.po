@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-08 01:50+0000\n"
+"POT-Creation-Date: 2024-05-09 01:50+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -1053,7 +1053,7 @@ msgid "Date:"
 msgstr "التّاريخ:"
 
 #: core/app/items/utils/tooltipfiller.cpp:90
-#: core/dplugins/bqm/transform/crop/crop.cpp:111
+#: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
@@ -4482,7 +4482,7 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "الامتدادات المدعومة"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
@@ -4490,21 +4490,21 @@ msgstr "الامتدادات المدعومة"
 msgid "Auto Levels"
 msgstr "مستويات آليّة"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
 #, kde-format
 msgid "Normalize"
 msgstr "تطبيع"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
 #, kde-format
 msgid "Equalize"
 msgstr "متوازن"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:63
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
@@ -4512,7 +4512,7 @@ msgstr "متوازن"
 msgid "Stretch Contrast"
 msgstr ""
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:64
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
@@ -4520,21 +4520,21 @@ msgstr ""
 msgid "Auto Exposure"
 msgstr "تعريض آليّ"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
+#: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:56
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "المرشّح:"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Add a new editor tool to detect and fix red-eyes automatically;"
@@ -4542,7 +4542,7 @@ msgctxt "@info"
 msgid "A tool to fix colors automatically"
 msgstr "إضافة أداة جديدة في المحرّر لاكتشاف العين الحمراء وإصلاحها آليًّا،"
 
-#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4551,21 +4551,21 @@ msgid ""
 "images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "الإضاءة التباين جاما"
 
-#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
@@ -4574,21 +4574,21 @@ msgid ""
 "from images.</para>"
 msgstr "يمكن استخدام هذا الخيار لاقتصاص الصّورة آليًّا."
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Black && White..."
 msgctxt "@title"
 msgid "Black and White Convert"
 msgstr "أبيض وأسود..."
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4596,21 +4596,21 @@ msgid ""
 "para>"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
 msgstr "مازج القنوات"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:61
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
+#: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4619,26 +4619,26 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
 #: core/dplugins/editor/colors/film/filmtool.cpp:222
 #, kde-format
 msgid "Color Balance"
 msgstr "توازن الألوان"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
+#: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #, kde-format
 msgid "Adjust color balance."
 msgstr "اضبط توازن الألوان."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Balance"
 msgstr "توازن الألوان"
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Adjust color balance."
@@ -4646,7 +4646,7 @@ msgctxt "@info"
 msgid "A tool to adjust color balance"
 msgstr "اضبط توازن الألوان."
 
-#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4665,13 +4665,13 @@ msgstr "حوّل إلى 8 بتّ"
 msgid "Convert color depth from 16 to 8 bits."
 msgstr "حوّل عمق الألوان من 16 إلى 8 بتّ."
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:46
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
 msgstr "حوّل إلى 8 بتّ"
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "Convert color depth from 16 to 8 bits."
@@ -4679,7 +4679,7 @@ msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
 msgstr "حوّل عمق الألوان من 16 إلى 8 بتّ."
 
-#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
+#: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4687,14 +4687,14 @@ msgid ""
 "</para>"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
 msgstr "حوّل إلى 16 بتّ"
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:61
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Convert color depth from 8 to 16 bits."
@@ -4702,7 +4702,7 @@ msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
 msgstr "حوّل عمق الألوان من 8 إلى 16 بتّ."
 
-#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
+#: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4710,75 +4710,75 @@ msgid ""
 "bits.</para>"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
 msgstr "اضبط المنحنيات"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:42
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
 msgstr "تلقائي"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:56
 #, kde-format
 msgctxt "@label: colcor properties"
 msgid "Channel:"
 msgstr "القناة:"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:65
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:59
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
 msgstr "الضياء"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:60
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Red"
 msgstr "أحمر"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:67
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:61
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Green"
 msgstr "أخضر"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:68
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Blue"
 msgstr "أزرق"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:63
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Alpha"
 msgstr "ألفا"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:75
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:69
 #, kde-format
 msgctxt "@action: open file dialog"
 msgid "Load..."
 msgstr "حمّل..."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:77
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:71
 #, kde-format
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
 msgstr "حمّل كلّ المعاملات من ملفّ الإعدادات النّصّيّ."
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
 msgstr "تعديل مستويات اللون"
 
-#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
+#: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4787,21 +4787,21 @@ msgid ""
 "</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "التدرج الإشباع الخفة."
 
-#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
+#: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
@@ -4810,7 +4810,7 @@ msgid ""
 "from images.</para>"
 msgstr "يمكن استخدام هذا الخيار لاقتصاص الصّورة آليًّا."
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
 #, fuzzy, kde-format
 #| msgid "Profile Version"
@@ -4818,14 +4818,14 @@ msgctxt "@title"
 msgid "Color Profile Conversion"
 msgstr "إصدارة اللاحة"
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:61
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
 msgctxt "@info"
 msgid "A tool to convert images to a color space"
 msgstr "حوّل الصّورة إلى فضاء لونيّ."
 
-#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:66
+#: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4833,14 +4833,14 @@ msgid ""
 "space.</para>"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Invert Colors"
 msgstr "اعكس الألوان"
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:61
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Invert image colors."
@@ -4848,7 +4848,7 @@ msgctxt "@info"
 msgid "A tool to invert image colors"
 msgstr "اعكس ألوان الصّورة."
 
-#: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
+#: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4856,14 +4856,14 @@ msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
 msgstr "توازن الأبيض"
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:61
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Adjust White Balance."
@@ -4871,7 +4871,7 @@ msgctxt "@info"
 msgid "A tool to adjust white balance"
 msgstr "اضبط توازن الأبيض."
 
-#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
+#: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -4880,21 +4880,21 @@ msgid ""
 "</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To TIFF"
 msgctxt "@title"
 msgid "Convert To AVIF"
 msgstr "حوّل إلى TIFF"
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to TIFF format."
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
 msgstr "حوّل الصّور إلى نسق TIFF."
 
-#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4905,21 +4905,21 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert RAW To DNG"
 msgctxt "@title"
 msgid "Convert RAW To DNG"
 msgstr "حوّل RAW إلى DNG"
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert RAW images to DNG container."
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
 msgstr "حوّل صور RAW إلى حاويات DNG."
 
-#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4929,21 +4929,21 @@ msgid ""
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To TIFF"
 msgctxt "@title"
 msgid "Convert To HEIF"
 msgstr "حوّل إلى TIFF"
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:61
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to TIFF format."
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
 msgstr "حوّل الصّور إلى نسق TIFF."
 
-#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
+#: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4959,20 +4959,20 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:46
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
 msgstr "حوّل إلى JP2"
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:61
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to JPEG-2000 format."
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
 msgstr "حوّل الصّور إلى نسق JPEG-2000."
 
-#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
+#: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -4985,20 +4985,20 @@ msgid ""
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To JPEG"
 msgstr "حوّل إلى JPEG"
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to JPEG format."
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
 msgstr "حوّل الصّور إلى نسق JPEG."
 
-#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5010,21 +5010,21 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:46
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JP2"
 msgctxt "@title"
 msgid "Convert To JXL"
 msgstr "حوّل إلى JP2"
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:61
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to JPEG format."
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
 msgstr "حوّل الصّور إلى نسق JPEG."
 
-#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
+#: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5036,20 +5036,20 @@ msgid ""
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
 msgstr "حوّل إلى PGF"
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to PGF format."
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
 msgstr "حوّل الصّور إلى نسق PGF."
 
-#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5060,7 +5060,7 @@ msgid ""
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:59
+#: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
 msgid ""
 "<b>If conversion to PNG fails, this may be due to the color profile check. "
@@ -5068,20 +5068,20 @@ msgid ""
 "select the desired color profile.</b>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:46
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
 msgstr "حوّل إلى PNG"
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:61
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to PNG format."
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
 msgstr "حوّل الصّور إلى نسق PNG."
 
-#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
+#: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5092,20 +5092,20 @@ msgid ""
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:46
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
 msgstr "حوّل إلى TIFF"
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:61
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to TIFF format."
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
 msgstr "حوّل الصّور إلى نسق TIFF."
 
-#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
+#: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5117,21 +5117,21 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Convert To JP2"
 msgctxt "@title"
 msgid "Convert To WEBP"
 msgstr "حوّل إلى JP2"
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:61
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Convert images to PGF format."
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
 msgstr "حوّل الصّور إلى نسق PGF."
 
-#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
+#: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5144,71 +5144,71 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "نوع ملفّ الخرج:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "مثل الدّخل"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG 2000"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, fuzzy, kde-format
 #| msgid "JPEG"
 msgid "JPEG XL"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #, kde-format
 msgid "AVIF"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "HEIF"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "WEBP"
 msgid "WEBP"
 msgstr "ويب بي"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "Shell Script:"
 msgstr "سكربت شل:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:111
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5216,69 +5216,69 @@ msgid ""
 "before shell execution."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:114
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:231
 #, kde-format
 msgid "User Script: No script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
 #, fuzzy, kde-format
 #| msgid "File write error."
 msgid "User Script: File open error."
 msgstr "خطأ كتابة الملف."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:317
 #, fuzzy, kde-format
 #| msgid "File write error."
 msgid "User Script: No error."
 msgstr "خطأ كتابة الملف."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:321
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:327
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:333
 #, kde-format
 msgid "User Script: Command not found."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:339
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Shell Script:"
 msgctxt "@title"
 msgid "User Shell Script"
 msgstr "سكربت شل:"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:61
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
 msgstr "نفّذ سكربت صدفة مخصّصة"
 
-#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
+#: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5290,21 +5290,21 @@ msgid ""
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:46
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Add Border"
 msgstr "أضف حدّا"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Add a border around images"
 msgctxt "@info"
 msgid "A tool to add a border around images"
 msgstr "أضف حدًّا حول الصّور"
 
-#: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
+#: core/dplugins/bqm/decorate/border/borderplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5313,20 +5313,20 @@ msgid ""
 "</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Add street"
 msgctxt "@title"
 msgid "Add Texture"
 msgstr "أضف الشّارع"
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over images"
 msgstr "A صورة ملحق إلى تطبيق a النسيج إلى صورة."
 
-#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:66
+#: core/dplugins/bqm/decorate/texture/textureplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5334,126 +5334,126 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
 msgid ""
 "Check this if you want the watermark to use the given size of the font or "
 "the image without any adjustment to the actual image."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:162
 #, kde-format
 msgid "Use Absolute Size"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:168
 #, fuzzy, kde-format
 #| msgid "Watermark type:"
 msgid "Watermark type: "
 msgstr "نوع العلامة المائيّة:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:178
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:548
 #, kde-format
 msgid "Image"
 msgstr "صورة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:208
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:179
 #, kde-format
 msgid "Text"
 msgstr "النص"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
 #, kde-format
 msgid "Image settings"
 msgstr "إعدادات الصّورة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Click to select watermark image."
 msgstr "انقر لاختيار صورة للعلامة المائيّة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:198
 #, fuzzy, kde-format
 #| msgid "Watermark image:"
 msgid "Watermark image: "
 msgstr "صورة العلامة المائيّة:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:206
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
 "the image's aspect ratio instead."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:210
 #, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "إبقاء النّاحية النسبة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:220
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text"
 msgid "Check this if you want watermark to be transparent."
 msgstr "أشّر على هذا إن أردت ملء الخلفيّة خلف النّصّ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, fuzzy, kde-format
 #| msgid "Click to select watermark image."
 msgid "Add transparency to watermark image"
 msgstr "انقر لاختيار صورة للعلامة المائيّة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid "Opacity of watermark"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:236
 #, fuzzy, kde-format
 #| msgid "Opacity (%):"
 msgid "Opacity (%): "
 msgstr "الشّفافيّة (٪):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
 msgid "Text settings"
 msgstr "إعدادات النص"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:250
 #, kde-format
 msgid "Enter your watermark string here."
 msgstr "أدخل هنا نصّ العلامة المائيّة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
 #, fuzzy, kde-format
 #| msgid "Watermark text:"
 msgid "Watermark text: "
 msgstr "نصّ العلامة المائيّة:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, fuzzy, kde-format
 #| msgid "Set the font color to use here"
 msgid "Set the font color to use here."
 msgstr "اختر هنا لون الخطّ الذي سيُستخدم."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:266
 #, fuzzy, kde-format
 #| msgid "Font color:"
 msgid "Font color: "
 msgstr "لون الخطّ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, fuzzy, kde-format
 #| msgid "Text opacity:"
 msgid "Text opacity: "
 msgstr "شفافيّة النّصّ:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, fuzzy, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
@@ -5462,80 +5462,80 @@ msgstr ""
 "اضبط هنا شفافيّة نصّ العلامة المائيّة. 100 تعني مطلق العتمة، و0 تعني مطلق "
 "الشّفافيّة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text"
 msgid "Check this if you want a background fill behind the text."
 msgstr "أشّر على هذا إن أردت ملء الخلفيّة خلف النّصّ"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, kde-format
 msgid "Use background"
 msgstr "استخدم خلفيّة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, fuzzy, kde-format
 #| msgid "Choose the color of the watermark background"
 msgid "Choose the color of the watermark background."
 msgstr "اختر لون خلفيّة العلامة المائيّة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, fuzzy, kde-format
 #| msgid "Background color:"
 msgid "Background color: "
 msgstr "لون الخلفيّة:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
 #, fuzzy, kde-format
 #| msgid "Background opacity:"
 msgid "Background opacity: "
 msgstr "شفافيّة الخلفيّة:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:303
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Specific Location"
 msgstr "المكان"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:316
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Systematic Repetition"
 msgstr "التعيينات"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
 #, fuzzy, kde-format
 #| msgid "Read Options"
 msgid "Random Repetition"
 msgstr "خيارات القراءة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
 #, fuzzy, kde-format
 #| msgid "Placement:"
 msgid "Placement Type: "
 msgstr "المكان:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:326
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
 "combo box, you can specify here whether the repetition."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -5543,13 +5543,13 @@ msgid ""
 "180, 270 degrees)."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:358
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -5557,134 +5557,134 @@ msgid ""
 "typically between 1.0 and 3.0. It can also be less than 1.0"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
 #, fuzzy, kde-format
 #| msgid "Separator:"
 msgid "Sparsity Factor: "
 msgstr "الفاصل:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:367
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "أعلى اليسار"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:368
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "أعلى اليمين"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "أسفل اليسار"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:370
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "أسفل اليمين"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:371
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "الوسط"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:372
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
 msgstr "أعلى الوسط"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:373
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
 msgstr "أسفل الوسط"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:375
 #, fuzzy, kde-format
 #| msgid "Placement:"
 msgid "Placement Position: "
 msgstr "المكان:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
 #, kde-format
 msgid "0 degrees"
 msgstr "0 درجة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:381
 #, fuzzy, kde-format
 #| msgid "90 degrees"
 msgid "90 degrees CW"
 msgstr "90 درجة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:382
 #, kde-format
 msgid "180 degrees"
 msgstr "180 درجة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:383
 #, fuzzy, kde-format
 #| msgid "270 degrees"
 msgid "270 degrees CW"
 msgstr "270 درجة"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
 #, fuzzy, kde-format
 #| msgid "Rotation:"
 msgid "Rotation: "
 msgstr "التّدوير:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
 #, fuzzy, kde-format
 #| msgid "Size (%):"
 msgid "Size (%): "
 msgstr "الحجم (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, fuzzy, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "اضبط هنا عرض الحدّ كنسبة من حجم الصّورة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, fuzzy, kde-format
 #| msgid "X margin (%):"
 msgid "X margin (%): "
 msgstr "الهامش السّينيّ (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:407
 #, fuzzy, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "اضبط هنا عرض الحدّ كنسبة من حجم الصّورة."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:408
 #, fuzzy, kde-format
 #| msgid "Y margin (%):"
 msgid "Y margin (%): "
 msgstr "الهامش الصّاديّ (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
 msgstr "أضف علامة مائيّة"
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:57
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:66
+#: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5693,13 +5693,13 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
 msgstr "مضادّ التظليل الخوارزميات"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "A tool to adjust lens distortions"
@@ -5707,7 +5707,7 @@ msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
 msgstr "أداة لضبط تشوه العدسات"
 
-#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:66
+#: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5716,13 +5716,13 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:59
+#: core/dplugins/bqm/enhance/blur/blur.cpp:53
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
 msgstr "الصقل:"
 
-#: core/dplugins/bqm/enhance/blur/blur.cpp:63
+#: core/dplugins/bqm/enhance/blur/blur.cpp:57
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
 #, kde-format
 msgid ""
@@ -5730,7 +5730,7 @@ msgid ""
 "matrix radius that determines how much to blur the image."
 msgstr ""
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -5738,20 +5738,20 @@ msgctxt "@title"
 msgid "Blur Image"
 msgstr "لا صور"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
+#: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Pixels:"
@@ -5759,14 +5759,14 @@ msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "البكسلات:"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:61
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to fix hot pixels"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:66
+#: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5774,31 +5774,31 @@ msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:59
 #, kde-format
 msgid "Fix automatically lens distortions"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:84
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
 "to find relevant lens features."
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Auto-Correction..."
@@ -5806,14 +5806,14 @@ msgctxt "@title"
 msgid "Lens Auto-Correction"
 msgstr "تصحيح آليّ..."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
+#: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5822,21 +5822,21 @@ msgid ""
 "over images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Local Contrast"
 msgstr "زيادة التباين"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:61
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
 msgstr "إضافة تحبب"
 
-#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
+#: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5845,34 +5845,34 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "خفض الضّجيج"
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:61
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
+#: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Red Eye Correction"
 msgstr "أحمر العين التصحيح الأداة"
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid "Automatically detect and correct RedEye effect."
@@ -5880,7 +5880,7 @@ msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
 msgstr "اكتشف آليًّا تأثير العين الحمراء وأصلح."
 
-#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
+#: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5889,32 +5889,32 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "زُر موقع مكتبة CImg"
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:65
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
 #, kde-format
 msgid "Reduce Texturing"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restoration.cpp:67
+#: core/dplugins/bqm/enhance/restoration/restoration.cpp:61
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -5925,20 +5925,20 @@ msgid ""
 "artifacts, such as paper texture, or Moire patterns on scanned images.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:46
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Restoration"
 msgstr "الاستصلاح"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:61
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
 msgstr "إضافة تحبب"
 
-#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:66
+#: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -5946,40 +5946,40 @@ msgid ""
 "algorithm.</para>"
 msgstr "A صورة ملحق إلى صورة."
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgctxt "@title"
 msgid "Sharpen Image"
 msgstr "حفظ الصّور"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:61
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to sharp images"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:66
+#: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Color Effects"
 msgstr "تأثيرات الألوان"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:61
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
+#: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -5988,20 +5988,20 @@ msgid ""
 "para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Film Grain"
 msgstr "غشاوة"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:61
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
 msgstr "إضافة تحبب"
 
-#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
+#: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6042,20 +6042,20 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
 msgstr "افتح محرّر قوالب البيانات الوصفيّة"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Applying metadata"
 msgctxt "@title"
 msgid "Apply Metadata"
 msgstr "يطبّق البيانات الوصفيّة"
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
 msgstr "الإعداد بيانات فوقية إلى ملفّ."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6064,14 +6064,14 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
 #| msgid "Title:"
 msgid "Titles:"
 msgstr "العنوان:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:91
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, fuzzy, kde-format
 #| msgid "Enter title here."
@@ -6079,14 +6079,14 @@ msgctxt "@info"
 msgid "Enter title text here."
 msgstr "أدخل العنوان هنا."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "content description"
 #| msgid "Captions:"
 msgid "Captions:"
 msgstr "الواصفات: "
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
@@ -6094,14 +6094,14 @@ msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "أدخل نصّ الواصفة هنا."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Reading and Writing Metadata"
 msgid "Clean up and overwrite metadata"
 msgstr "قراءة البيانات الوصفيّة وكتابتها"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6110,19 +6110,19 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
 msgstr "تعيين التقييم"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6131,35 +6131,35 @@ msgid ""
 "metadata alternative values to images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
 msgid "Pick Label:"
 msgstr "اختر لصيقة:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:94
 #, kde-format
 msgid "Color Label:"
 msgstr "اللصيقة اللونيّة:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
+#: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:99
 #, kde-format
 msgid "Rating:"
 msgstr "التّقييم:"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Assign tools"
 msgctxt "@title"
 msgid "Assign Labels"
 msgstr "أسند الأدوات"
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
+#: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6261,20 +6261,20 @@ msgid ""
 "values to images automatically using deep-learning engine.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Open metadata template editor"
 msgctxt "@title"
 msgid "Apply Metadata Template"
 msgstr "افتح محرّر قوالب البيانات الوصفيّة"
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
 msgstr "الإعداد بيانات فوقية إلى ملفّ."
 
-#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
+#: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6283,20 +6283,20 @@ msgid ""
 "</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "PGF quality:"
 msgctxt "@title"
 msgid "Image Quality Sort"
 msgstr "جودة PGF:"
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
+#: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6305,13 +6305,13 @@ msgid ""
 "by parsing image and estimate the quality.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6319,39 +6319,39 @@ msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "المكوّن"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:99
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "التاريخ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "جي‌بي‌إس"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "الكلمات المفتاحيّة"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:102
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "الوصف"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6359,31 +6359,31 @@ msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "المكوّن"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "التاريخ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "الوصف"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "الصورة السابقة"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
@@ -6391,20 +6391,20 @@ msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "المكوّن"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "التاريخ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
 msgstr "خصائص «دِجي‌كام»"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -6412,57 +6412,57 @@ msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "تأريخ الصّورة"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
 msgstr "الصورة السابقة"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "دبلن كور"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "فيديو"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, fuzzy, kde-format
 #| msgid "Caption, Comment, Title"
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "الواصفة، والتّعليق والعنوان"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Remove Metadata"
 msgstr "أزل البيانات الوصفيّة"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:61
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Remove Exif, Iptc, or Xmp metadata from images."
 msgctxt "@info"
 msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
 msgstr "أزل بيانات Exif، أو Iptc أو Xmp الوصفيّة من الصّور."
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:66
+#: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6471,7 +6471,7 @@ msgid ""
 "Xmp from images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Curves Adjust"
@@ -6479,32 +6479,32 @@ msgctxt "@title"
 msgid "Time Adjust"
 msgstr "اضبط المنحنيات"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:61
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
+#: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:103
+#: core/dplugins/bqm/metadata/translate/translate.cpp:93
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "العنوان"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:104
+#: core/dplugins/bqm/metadata/translate/translate.cpp:94
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "الوصف"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:105
+#: core/dplugins/bqm/metadata/translate/translate.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "@item: icc profile properties"
 #| msgid "Copyright"
@@ -6512,39 +6512,39 @@ msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "حقوق النسخ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:106
+#: core/dplugins/bqm/metadata/translate/translate.cpp:96
 #, fuzzy, kde-format
 #| msgid "Right Usage Terms:"
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "شروط الاستخدام الصّحيح:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "ترجم إلى:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:147
+#: core/dplugins/bqm/metadata/translate/translate.cpp:137
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
 msgstr "الهنغارية"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:42
 #, fuzzy, kde-format
 #| msgid "Use Metadata"
 msgctxt "@title"
 msgid "Translate Metadata"
 msgstr "استخدم البيانات الوصفيّة"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
+#: core/dplugins/bqm/metadata/translate/translateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6553,96 +6553,96 @@ msgid ""
 "strings in Xmp metadata from images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
 msgid "Auto-Crop"
 msgstr "اقتصّ آليًّا"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:93
+#: core/dplugins/bqm/transform/crop/crop.cpp:85
 #, kde-format
 msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
 "borders."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:96
+#: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "الموقع:"
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:100
-#: core/dplugins/bqm/transform/crop/crop.cpp:105
+#: core/dplugins/bqm/transform/crop/crop.cpp:92
+#: core/dplugins/bqm/transform/crop/crop.cpp:97
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:352
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:357
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:115
+#: core/dplugins/bqm/transform/crop/crop.cpp:107
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/crop.cpp:120
+#: core/dplugins/bqm/transform/crop/crop.cpp:112
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr ""
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Crop"
 msgstr "اقتصّ"
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:61
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Crop images to a region."
 msgctxt "@info"
 msgid "A tool to crop images to a region"
 msgstr "اقتصّ الصّور إلى منطقة."
 
-#: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
+#: core/dplugins/bqm/transform/crop/cropplugin.cpp:62
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:58
+#: core/dplugins/bqm/transform/flip/flip.cpp:53
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Horizontal"
 msgstr "أفقي"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:59
+#: core/dplugins/bqm/transform/flip/flip.cpp:54
 #, kde-format
 msgctxt "@item: orientation"
 msgid "Vertical"
 msgstr "عمودي"
 
-#: core/dplugins/bqm/transform/flip/flip.cpp:60
+#: core/dplugins/bqm/transform/flip/flip.cpp:55
 #, kde-format
 msgctxt "@label"
 msgid "Flip:"
 msgstr "اعكس:"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Flip"
 msgstr "اعكس"
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:61
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
 #, fuzzy, kde-format
 #| msgid "Flip images horizontally or vertically."
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
 msgstr "اعكس الصّور أفقيًّا أو رأسيًّا."
 
-#: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
+#: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -6651,12 +6651,12 @@ msgid ""
 "stage.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:150
+#: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, fuzzy, kde-format
 msgid "Preset Length:"
 msgstr "طول معرّف:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:152
+#: core/dplugins/bqm/transform/resize/resize.cpp:143
 #, fuzzy, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
@@ -6667,7 +6667,7 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:153
+#: core/dplugins/bqm/transform/resize/resize.cpp:144
 #, fuzzy, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
@@ -6678,7 +6678,7 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:145
 #, fuzzy, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
@@ -6689,7 +6689,7 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:155
+#: core/dplugins/bqm/transform/resize/resize.cpp:146
 #, fuzzy, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
@@ -6700,7 +6700,7 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:156
+#: core/dplugins/bqm/transform/resize/resize.cpp:147
 #, fuzzy, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
@@ -6711,7 +6711,7 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:157
+#: core/dplugins/bqm/transform/resize/resize.cpp:148
 #, fuzzy, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
@@ -6722,96 +6722,96 @@ msgstr[3] "العرض (بالبكسل):"
 msgstr[4] "العرض (بالبكسل):"
 msgstr[5] "العرض (بالبكسل):"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:159
+#: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, kde-format
 msgid "Not enlarge small images"
 msgstr ""
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:160
+#: core/dplugins/bqm/transform/resize/resize.cpp:151
 #, kde-format
 msgid "Use Custom Length"
 msgstr "استخدم طولًا مخصّصًا"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:161
+#: core/dplugins/bqm/transform/resize/resize.cpp:152
 #, fuzzy, kde-format
 msgid "Use Percentage"
 msgstr "المئوية:"
 
-#: core/dplugins/bqm/transform/resize/resize.cpp:163
-#: core/dplugins/bqm/transform/resize/resize.cpp:243
+#: core/dplugins/bqm/transform/resize/resize.cpp:154
+#: core/dplugins/bqm/transform/resize/resize.cpp:234
 #, kde-format
 msgid " Pixels"
 msgstr "بيكسل"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:46
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Resize"
 msgstr "غيّر الحجم"
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:61
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
 msgstr "غيّر حجم الصّور بطول مخصّص."
 
-#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
+#: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr "إضافة أداة جديدة إلى مدير الدّفعات لضبط بيانات الوقت والتّاريخ الوصفيّة،"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, fuzzy, kde-format
 #| msgid "Use Exif Orientation"
 msgctxt "@title"
 msgid "Use Exif Orientation"
 msgstr "استخدم اتّجاه Exif"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:90
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:83
 #, kde-format
 msgctxt "@item: angle"
 msgid "90 degrees"
 msgstr "90 درجة"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:91
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:84
 #, kde-format
 msgctxt "@item: angle"
 msgid "180 degrees"
 msgstr "180 درجة"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:92
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:85
 #, kde-format
 msgctxt "@item: angle"
 msgid "270 degrees"
 msgstr "270 درجة"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:93
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
 msgstr "مخصّصة"
 
-#: core/dplugins/bqm/transform/rotate/rotate.cpp:95
+#: core/dplugins/bqm/transform/rotate/rotate.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Angle:"
 msgstr "الزاوية:"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:46
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Rotate"
 msgstr "دوّر"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:61
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:57
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
 msgstr "فراغ اللون"
 
-#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
+#: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:62
 #, fuzzy, kde-kuit-format
 #| msgid "Add a new batch queue manager tool to adjust time and date metadata;"
 msgctxt "@info"
@@ -11164,7 +11164,7 @@ msgstr "يحفظ الصّور -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:969
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:376
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:244
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
@@ -20828,49 +20828,49 @@ msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "معزوفة موسيقية"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:95
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:91
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:112
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "انقل المقطوعة المحدّدة لأعلى في قائمة التّشغيل."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:113
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "انقل المقطوعة المحدّدة لأسفل في قائمة التّشغيل."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:114
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "أضف مقوطعات جديدة إلى قائمة التّشغيل."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:115
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "احذف المقطوعة المحدّدة من قائمة التّشغيل."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "حمّل قائمة تشغيل من ملفّ."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "احفظ قائمة تشغيل في ملفّ."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Clear the playlist."
 msgstr "امسح قائمة التّشغيل."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:255
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:251
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -20882,55 +20882,55 @@ msgstr[3] "%1 مقطوعات [%2]"
 msgstr[4] "%1 مقطوعة [%2]"
 msgstr[5] "%1 مقطوعة [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:283
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:279
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:353
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:349
 #, fuzzy, kde-format
 #| msgid "Select audio files"
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "حدّد ملفّات الصّوت"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:421
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:417
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:459
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:455
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:480
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:476
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "حمّل قائمة تشغيل"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:477
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:536
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "قائمة تشغيل (*.m3u*)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:539
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:535
 #, fuzzy, kde-format
 #| msgid "Save playlist"
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "احفظ قائمة التّشغيل"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:600
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:596
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "تعذّر الوصول إلى الملفّ ”%1“. افحص صحّة المسار."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:610
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:606
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "لا يمكن إنشاء معاينة من قائمة ملفّات فارغة."
@@ -21237,7 +21237,7 @@ msgstr "لون الخطّ:"
 msgid "Background color:"
 msgstr "لون الخلفيّة:"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:269
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
@@ -21248,7 +21248,7 @@ msgstr[3] "%1 صور [%2]"
 msgstr[4] "%1 صورة [%2]"
 msgstr[5] "%1 صورة [%2]"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:273
 #, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
@@ -21259,30 +21259,30 @@ msgstr[3] "%1 صور"
 msgstr[4] "%1 صورة"
 msgstr[5] "%1 صورة"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:377
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr "تعذّر الوصول إلى الملفّ %1. افحص صحّة المسار."
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:415
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
 msgstr "صورة #%1"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:683
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:449
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:657
 #, kde-format
 msgid "Ken Burns"
 msgstr "كين بيرنز"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:480
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:476
 #, kde-format
 msgid "Delay between images (ms):"
 msgstr "التّأخير بين الصّور (بالملّي ثانية):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:487
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:483
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
 #, kde-format
 msgid "Delay between images (s):"
@@ -21377,7 +21377,7 @@ msgstr "التّأثير:"
 msgid "Use Open&GL transitions"
 msgstr "استخدم انتقالات «أوبن‌جي‌إل»"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Presentation"
@@ -21385,119 +21385,119 @@ msgctxt "@title:window"
 msgid "Presentation"
 msgstr "عرض تقديمي"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:82
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:76
 #, kde-format
 msgctxt "@action: play presentation"
 msgid "Start"
 msgstr "ابدأ"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:83
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "ابدأ العرض"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:88
 #, fuzzy, kde-format
 #| msgid "Main Settings"
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
 msgstr "الإعدادات الرّئيسيّة"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:93
 #, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
 msgstr "الوصف"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:106
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:100
 #, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
 msgstr "معزوفة موسيقية"
 
-#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:113
+#: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:107
 #, kde-format
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "متقدّم"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:565
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1020
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:529
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:974
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "بلا"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:530
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "لوي"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:531
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "مزج"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:532
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "مكعّب"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:533
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "تبهيت"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:534
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "فلاتر"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "داخل خارج"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:536
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "دوّر"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:537
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "أزْلِق"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:538
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:987
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "عشوائيّ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:875
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:866
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:839
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:820
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "اكتمل عرض الشّرائح"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:876
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:636
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:840
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:610
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:821
 #, kde-format
 msgid "Click to Exit..."
 msgstr "انقل للخروج..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:635
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:609
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "اكتمل عرض الشّرائح"
@@ -21512,13 +21512,13 @@ msgstr "لا صور لعرضها."
 msgid "OpenGL support is not available on your system."
 msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Presentation"
 msgstr "عرض تقديمي"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Create Calendar..."
@@ -21526,7 +21526,7 @@ msgctxt "@info"
 msgid "A tool to render presentation"
 msgstr "أنشئ تقويمًا..."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -21538,13 +21538,13 @@ msgid ""
 "You can add a sound-track in background while your presentation."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
 msgstr "عرض تقديمي..."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:229
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:236
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
@@ -21552,13 +21552,13 @@ msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "تجاهل التّجميع"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:230
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:237
 #, kde-format
 msgid "Delay:"
 msgstr "التأخير:"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:255
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:399
 #, fuzzy, kde-format
 #| msgid "Delete image"
@@ -21566,7 +21566,7 @@ msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "احذف الصورة"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
+#: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:400
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
@@ -21575,73 +21575,73 @@ msgstr "احذف الصورة"
 msgid "Do you want to move this image to the trash?"
 msgstr "لا شيء لإزالته."
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:975
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "رقعة شطرنج"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:976
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:977
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "اجتياح"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:978
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "فسيفساء"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:979
 #, kde-format
 msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "تكعيبية"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:980
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:981
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "خطوط أفقيّة"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:982
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "خطوط رأسيّة"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:983
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:984
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:985
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "حلزوني"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:986
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
