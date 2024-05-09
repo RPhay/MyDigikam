@@ -35,10 +35,6 @@ CBToolPlugin::CBToolPlugin(QObject* const parent)
 {
 }
 
-CBToolPlugin::~CBToolPlugin()
-{
-}
-
 QString CBToolPlugin::name() const
 {
     return i18nc("@title", "Color Balance");
@@ -84,7 +80,7 @@ QList<DPluginAuthor> CBToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 

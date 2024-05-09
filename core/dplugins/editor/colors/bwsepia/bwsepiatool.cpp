@@ -46,16 +46,11 @@ class Q_DECL_HIDDEN BWSepiaTool::Private
 
 public:
 
-    explicit Private()
-      : bwsepiaSettings(nullptr),
-        previewWidget  (nullptr),
-        gboxSettings   (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("convertbw Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
     BWSepiaSettings*     bwsepiaSettings;
 
@@ -63,10 +58,6 @@ public:
 
     EditorToolSettings*  gboxSettings;
 };
-
-const QString BWSepiaTool::Private::configGroupName(QLatin1String("convertbw Tool"));
-const QString BWSepiaTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString BWSepiaTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // -----------------------------------------------------------------------------------
 
@@ -124,6 +115,7 @@ void BWSepiaTool::readSettings()
 
 
     // we need to call the set methods here, otherwise the curve will not be updated correctly
+
     d->gboxSettings->histogramBox()->setChannel((ChannelType)group.readEntry(d->configHistogramChannelEntry,
             (int)LuminosityChannel));
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,
@@ -184,7 +176,9 @@ void BWSepiaTool::prepareFinal()
 void BWSepiaTool::setFinalImage()
 {
     ImageIface iface;
-    iface.setOriginal(i18n("Convert to Black and White"), filter()->filterAction(), filter()->getTargetImage());
+    iface.setOriginal(i18n("Convert to Black and White"),
+                      filter()->filterAction(),
+                      filter()->getTargetImage());
 }
 
 void BWSepiaTool::slotLoadSettings()

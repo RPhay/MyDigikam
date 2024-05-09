@@ -49,20 +49,15 @@ class Q_DECL_HIDDEN ProfileConversionTool::Private
 {
 public:
 
-    explicit Private()
-      : profilesBox  (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configProfileEntry;
+    const QString configGroupName       = QLatin1String("Profile Conversion Tool");
+    const QString configProfileEntry    = QLatin1String("Profile");
 
-    IccProfilesSettings* profilesBox;
+    IccProfilesSettings* profilesBox    = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget  = nullptr;
+    EditorToolSettings*  gboxSettings   = nullptr;
 
     IccProfile           currentProfile;
 
@@ -72,9 +67,6 @@ public:
 
     static IccTransform getTransform(const IccProfile& in, const IccProfile& out);
 };
-
-const QString ProfileConversionTool::Private::configGroupName(QLatin1String("Profile Conversion Tool"));
-const QString ProfileConversionTool::Private::configProfileEntry(QLatin1String("Profile"));
 
 IccTransform ProfileConversionTool::Private::getTransform(const IccProfile& in, const IccProfile& out)
 {
@@ -103,7 +95,7 @@ ProfileConversionTool::ProfileConversionTool(QObject* const parent)
     ImageIface iface;
     d->currentProfile = iface.originalIccProfile();
 
-    d->gboxSettings = new EditorToolSettings(nullptr);
+    d->gboxSettings   = new EditorToolSettings(nullptr);
     d->gboxSettings->setButtons(EditorToolSettings::Ok|
                                 EditorToolSettings::Cancel);
 

@@ -35,7 +35,7 @@ class WhiteBalanceToolPlugin : public DPluginEditor
 public:
 
     explicit WhiteBalanceToolPlugin(QObject* const parent = nullptr);
-    ~WhiteBalanceToolPlugin()            override;
+    ~WhiteBalanceToolPlugin()            override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

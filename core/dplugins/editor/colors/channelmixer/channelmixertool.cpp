@@ -54,26 +54,18 @@ class Q_DECL_HIDDEN ChannelMixerTool::Private
 {
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("channelmixer Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    MixerSettings*       settingsView;
+    MixerSettings*       settingsView           = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
 
-const QString ChannelMixerTool::Private::configGroupName(QLatin1String("channelmixer Tool"));
-const QString ChannelMixerTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString ChannelMixerTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -178,6 +170,7 @@ void ChannelMixerTool::readSettings()
     d->settingsView->readSettings(group);
 
     // we need to call these methods here, otherwise the histogram will not be updated correctly
+
     d->gboxSettings->histogramBox()->setChannel((ChannelType)group.readEntry(d->configHistogramChannelEntry,
             (int)RedChannel));
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,

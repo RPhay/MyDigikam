@@ -35,7 +35,7 @@ class InvertToolPlugin : public DPluginEditor
 public:
 
     explicit InvertToolPlugin(QObject* const parent = nullptr);
-    ~InvertToolPlugin()                  override;
+    ~InvertToolPlugin()                  override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

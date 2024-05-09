@@ -44,25 +44,16 @@ class Q_DECL_HIDDEN HSLTool::Private
 {
 public:
 
-    explicit Private()
-      : hslSettings  (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("hsladjust Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    HSLSettings*         hslSettings;
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    HSLSettings*         hslSettings            = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString HSLTool::Private::configGroupName(QLatin1String("hsladjust Tool"));
-const QString HSLTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString HSLTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 

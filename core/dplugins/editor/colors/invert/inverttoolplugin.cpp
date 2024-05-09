@@ -35,10 +35,6 @@ InvertToolPlugin::InvertToolPlugin(QObject* const parent)
 {
 }
 
-InvertToolPlugin::~InvertToolPlugin()
-{
-}
-
 QString InvertToolPlugin::name() const
 {
     return i18nc("@title", "Invert Colors");
@@ -84,7 +80,7 @@ QList<DPluginAuthor> InvertToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2024"))
             ;
 }
 
@@ -94,7 +90,9 @@ void InvertToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Invert"));
     ac->setObjectName(QLatin1String("editorwindow_color_invert"));
+
     // NOTE: Photoshop 7 use CTRL+I.
+
     ac->setShortcut(Qt::CTRL | Qt::Key_I);
     ac->setActionCategory(DPluginAction::EditorColors);
 

@@ -35,10 +35,6 @@ BWSepiaToolPlugin::BWSepiaToolPlugin(QObject* const parent)
 {
 }
 
-BWSepiaToolPlugin::~BWSepiaToolPlugin()
-{
-}
-
 QString BWSepiaToolPlugin::name() const
 {
     return i18nc("@title", "Black and White");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> BWSepiaToolPlugin::authors() const
                              QString::fromUtf8("(C) 2004-2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2024"))
             ;
 }
 

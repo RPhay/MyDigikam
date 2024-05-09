@@ -43,25 +43,16 @@ class Q_DECL_HIDDEN CBTool::Private
 {
 public:
 
-    explicit Private()
-      : cbSettings   (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("colorbalance Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    CBSettings*          cbSettings;
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    CBSettings*          cbSettings             = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString CBTool::Private::configGroupName(QLatin1String("colorbalance Tool"));
-const QString CBTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString CBTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 

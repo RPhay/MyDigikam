@@ -35,10 +35,6 @@ FilmToolPlugin::FilmToolPlugin(QObject* const parent)
 {
 }
 
-FilmToolPlugin::~FilmToolPlugin()
-{
-}
-
 QString FilmToolPlugin::name() const
 {
     return i18nc("@title", "Color Negative Film");

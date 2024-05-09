@@ -35,7 +35,7 @@ class Convert16To8ToolPlugin : public DPluginEditor
 public:
 
     explicit Convert16To8ToolPlugin(QObject* const parent = nullptr);
-    ~Convert16To8ToolPlugin()            override;
+    ~Convert16To8ToolPlugin()            override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

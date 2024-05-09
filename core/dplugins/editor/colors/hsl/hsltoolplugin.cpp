@@ -35,10 +35,6 @@ HSLToolPlugin::HSLToolPlugin(QObject* const parent)
 {
 }
 
-HSLToolPlugin::~HSLToolPlugin()
-{
-}
-
 QString HSLToolPlugin::name() const
 {
     return i18nc("@title", "HSL Correction");
@@ -84,7 +80,7 @@ QList<DPluginAuthor> HSLToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 
@@ -94,7 +90,9 @@ void HSLToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Hue/Saturation/Lightness..."));
     ac->setObjectName(QLatin1String("editorwindow_color_hsl"));
+
     // NOTE: Photoshop 7 use CTRL+U.
+
     ac->setShortcut(Qt::CTRL | Qt::Key_U);
     ac->setActionCategory(DPluginAction::EditorColors);
 

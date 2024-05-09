@@ -35,7 +35,7 @@ class CBToolPlugin : public DPluginEditor
 public:
 
     explicit CBToolPlugin(QObject* const parent = nullptr);
-    ~CBToolPlugin()                      override;
+    ~CBToolPlugin()                      override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -69,79 +69,51 @@ public:
 
 public:
 
-    explicit Private()
-      : histoSegments(0),
-        resetButton(nullptr),
-        pickWhitePoint(nullptr),
-        autoButton(nullptr),
-        exposureInput(nullptr),
-        gammaInput(nullptr),
-        cnType(nullptr),
-        colorBalanceInput(nullptr),
-        levelsHistogramWidget(nullptr),
-        redInputLevels(nullptr),
-        greenInputLevels(nullptr),
-        blueInputLevels(nullptr),
-        previewWidget(nullptr),
-        levels(nullptr),
-        originalImage(nullptr),
-        gboxSettings(nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configGammaInputEntry;
-    static const QString configExposureEntry;
-    static const QString configFilmProfileEntry;
-    static const QString configFilmProfileName;
-    static const QString configWhitePointEntry;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
-    static const QString configApplyColorBalance;
+    const QString configGroupName               = QLatin1String("film Tool");
+    const QString configGammaInputEntry         = QLatin1String("GammaInput");
+    const QString configExposureEntry           = QLatin1String("Exposure");
+    const QString configFilmProfileEntry        = QLatin1String("FilmProfile");
+    const QString configFilmProfileName         = QLatin1String("FilmProfileName");
+    const QString configWhitePointEntry         = QLatin1String("WhitePoint_%1");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
+    const QString configApplyColorBalance       = QLatin1String("Apply Color Balance");
 
-    int                  histoSegments;
+    int                  histoSegments          = 0;
 
-    QPushButton*         resetButton;
-    QToolButton*         pickWhitePoint;
-    QToolButton*         autoButton;
+    QPushButton*         resetButton            = nullptr;
+    QToolButton*         pickWhitePoint         = nullptr;
+    QToolButton*         autoButton             = nullptr;
 
     FilmContainer        filmContainer;
 
-    DDoubleNumInput*     exposureInput;
-    DDoubleNumInput*     gammaInput;
-    QListWidget*         cnType;
-    QCheckBox*           colorBalanceInput;
+    DDoubleNumInput*     exposureInput          = nullptr;
+    DDoubleNumInput*     gammaInput             = nullptr;
+    QListWidget*         cnType                 = nullptr;
+    QCheckBox*           colorBalanceInput      = nullptr;
 
-    HistogramWidget*     levelsHistogramWidget;
+    HistogramWidget*     levelsHistogramWidget  = nullptr;
 
-    DGradientSlider*     redInputLevels;
-    DGradientSlider*     greenInputLevels;
-    DGradientSlider*     blueInputLevels;
+    DGradientSlider*     redInputLevels         = nullptr;
+    DGradientSlider*     greenInputLevels       = nullptr;
+    DGradientSlider*     blueInputLevels        = nullptr;
 
-    ImageRegionWidget*   previewWidget;
+    ImageRegionWidget*   previewWidget          = nullptr;
 
-    ImageLevels*         levels;
+    ImageLevels*         levels                 = nullptr;
 
-    DImg*                originalImage;
+    DImg*                originalImage          = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString FilmTool::Private::configGroupName(QLatin1String("film Tool"));
-const QString FilmTool::Private::configGammaInputEntry(QLatin1String("GammaInput"));
-const QString FilmTool::Private::configExposureEntry(QLatin1String("Exposure"));
-const QString FilmTool::Private::configFilmProfileEntry(QLatin1String("FilmProfile"));
-const QString FilmTool::Private::configFilmProfileName(QLatin1String("FilmProfileName"));
-const QString FilmTool::Private::configWhitePointEntry(QLatin1String("WhitePoint_%1"));
-const QString FilmTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString FilmTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
-const QString FilmTool::Private::configApplyColorBalance(QLatin1String("Apply Color Balance"));
 
 // --------------------------------------------------------
 
 FilmTool::FilmTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("film"));
     setToolName(i18n("Color Negative Film"));
@@ -596,6 +568,7 @@ void FilmTool::readSettings()
     ChannelType ch = (ChannelType)group.readEntry(d->configHistogramChannelEntry, (int)ColorChannels);
 
     // restore the previous channel
+
     d->gboxSettings->histogramBox()->setChannel(ch);
 
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,
@@ -675,10 +648,12 @@ bool FilmTool::eventFilter(QObject* obj, QEvent* ev)
 
     if ((obj == d->redInputLevels) || (obj == d->greenInputLevels) || (obj == d->blueInputLevels))
     {
-        if ((ev->type() == QEvent::MouseButtonPress)   ||
+        if (
+            (ev->type() == QEvent::MouseButtonPress)   ||
             (ev->type() == QEvent::MouseButtonRelease) ||
             (ev->type() == QEvent::MouseMove)          ||
-            (ev->type() == QEvent::MouseButtonDblClick))
+            (ev->type() == QEvent::MouseButtonDblClick)
+           )
         {
             return true;
         }

@@ -41,10 +41,6 @@ ProfileConversionToolPlugin::ProfileConversionToolPlugin(QObject* const parent)
 {
 }
 
-ProfileConversionToolPlugin::~ProfileConversionToolPlugin()
-{
-}
-
 QString ProfileConversionToolPlugin::name() const
 {
     return i18nc("@title", "Color Profile Conversion");
@@ -93,7 +89,7 @@ QList<DPluginAuthor> ProfileConversionToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 
