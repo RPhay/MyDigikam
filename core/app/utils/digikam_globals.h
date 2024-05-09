@@ -193,7 +193,7 @@ DIGIKAM_EXPORT bool isRunningInAppImageBundle();
 /**
  * Return true if application run on native KDE desktop.
  */
-DIGIKAM_EXPORT bool isRunningNativeKDE();
+DIGIKAM_EXPORT bool isRunningOnNativeKDE();
 
 /**
  * If digiKam run into AppImage, return a cleaned environment for QProcess to execute a

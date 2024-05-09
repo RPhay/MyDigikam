@@ -32,7 +32,7 @@ bool isRunningInAppImageBundle()
     return false;
 }
 
-bool isRunningNativeKDE()
+bool isRunningOnNativeKDE()
 {
 
 #ifdef Q_OS_LINUX
