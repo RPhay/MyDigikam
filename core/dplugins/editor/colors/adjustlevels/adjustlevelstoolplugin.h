@@ -35,7 +35,7 @@ class AdjustLevelsToolPlugin : public DPluginEditor
 public:
 
     explicit AdjustLevelsToolPlugin(QObject* const parent = nullptr);
-    ~AdjustLevelsToolPlugin()            override;
+    ~AdjustLevelsToolPlugin()            override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

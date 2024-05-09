@@ -35,7 +35,7 @@ class AutoCorrectionToolPlugin : public DPluginEditor
 public:
 
     explicit AutoCorrectionToolPlugin(QObject* const parent = nullptr);
-    ~AutoCorrectionToolPlugin()          override;
+    ~AutoCorrectionToolPlugin()          override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

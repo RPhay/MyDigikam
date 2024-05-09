@@ -73,80 +73,49 @@ public:
 
 public:
 
-    explicit Private()
-      : histoSegments        (0),
-        pickerBox            (nullptr),
-        resetButton          (nullptr),
-        autoButton           (nullptr),
-        pickBlack            (nullptr),
-        pickGray             (nullptr),
-        pickWhite            (nullptr),
-        pickerType           (nullptr),
-        minInput             (nullptr),
-        maxInput             (nullptr),
-        minOutput            (nullptr),
-        maxOutput            (nullptr),
-        gammaInput           (nullptr),
-        levelsHistogramWidget(nullptr),
-        inputLevels          (nullptr),
-        outputLevels         (nullptr),
-        previewWidget        (nullptr),
-        levels               (nullptr),
-        originalImage        (nullptr),
-        gboxSettings         (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configGammaChannelEntry;
-    static const QString configLowInputChannelEntry;
-    static const QString configLowOutputChannelEntry;
-    static const QString configHighInputChannelEntry;
-    static const QString configHighOutputChannelEntry;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("adjustlevels Tool");
+    const QString configGammaChannelEntry       = QLatin1String("GammaChannel%1");
+    const QString configLowInputChannelEntry    = QLatin1String("LowInputChannel%1");
+    const QString configLowOutputChannelEntry   = QLatin1String("LowOutputChannel%1");
+    const QString configHighInputChannelEntry   = QLatin1String("HighInputChannel%1");
+    const QString configHighOutputChannelEntry  = QLatin1String("HighOutputChannel%1");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    int                  histoSegments;
+    int                  histoSegments          = 0;
 
-    QWidget*             pickerBox;
+    QWidget*             pickerBox              = nullptr;
 
-    QPushButton*         resetButton;
-    QToolButton*         autoButton;
-    QToolButton*         pickBlack;
-    QToolButton*         pickGray;
-    QToolButton*         pickWhite;
+    QPushButton*         resetButton            = nullptr;
+    QToolButton*         autoButton             = nullptr;
+    QToolButton*         pickBlack              = nullptr;
+    QToolButton*         pickGray               = nullptr;
+    QToolButton*         pickWhite              = nullptr;
 
-    QButtonGroup*        pickerType;
+    QButtonGroup*        pickerType             = nullptr;
 
-    DIntNumInput*        minInput;
-    DIntNumInput*        maxInput;
-    DIntNumInput*        minOutput;
-    DIntNumInput*        maxOutput;
+    DIntNumInput*        minInput               = nullptr;
+    DIntNumInput*        maxInput               = nullptr;
+    DIntNumInput*        minOutput              = nullptr;
+    DIntNumInput*        maxOutput              = nullptr;
 
-    DDoubleNumInput*     gammaInput;
+    DDoubleNumInput*     gammaInput             = nullptr;
 
-    HistogramWidget*     levelsHistogramWidget;
+    HistogramWidget*     levelsHistogramWidget  = nullptr;
 
-    DGradientSlider*     inputLevels;
-    DGradientSlider*     outputLevels;
+    DGradientSlider*     inputLevels            = nullptr;
+    DGradientSlider*     outputLevels           = nullptr;
 
-    ImageRegionWidget*   previewWidget;
+    ImageRegionWidget*   previewWidget          = nullptr;
 
-    ImageLevels*         levels;
+    ImageLevels*         levels                 = nullptr;
 
-    DImg*                originalImage;
+    DImg*                originalImage          = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString AdjustLevelsTool::Private::configGroupName(QLatin1String("adjustlevels Tool"));
-const QString AdjustLevelsTool::Private::configGammaChannelEntry(QLatin1String("GammaChannel%1"));
-const QString AdjustLevelsTool::Private::configLowInputChannelEntry(QLatin1String("LowInputChannel%1"));
-const QString AdjustLevelsTool::Private::configLowOutputChannelEntry(QLatin1String("LowOutputChannel%1"));
-const QString AdjustLevelsTool::Private::configHighInputChannelEntry(QLatin1String("HighInputChannel%1"));
-const QString AdjustLevelsTool::Private::configHighOutputChannelEntry(QLatin1String("HighOutputChannel%1"));
-const QString AdjustLevelsTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString AdjustLevelsTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -528,7 +497,9 @@ void AdjustLevelsTool::slotSpotColorChanged(const DColor& color)
         else
         {
             for (int i = RedChannel ; i <= BlueChannel ; ++i)
+            {
                 d->levels->levelsWhiteToneAdjustByColors(i, color);
+            }
         }
     }
     else
@@ -560,7 +531,9 @@ void AdjustLevelsTool::slotGammaInputchanged(double val)
     ChannelType channel = d->gboxSettings->histogramBox()->channel();
 
     if (channel == ColorChannels)
+    {
         channel = LuminosityChannel;
+    }
 
     blockSignals(true);
     d->levels->setLevelGammaValue(channel, val);
@@ -638,7 +611,9 @@ void AdjustLevelsTool::adjustSliders(int minIn, double gamIn, int maxIn, int min
     ChannelType channel = d->gboxSettings->histogramBox()->channel();
 
     if (channel == ColorChannels)
+    {
         channel = LuminosityChannel;
+    }
 
     d->inputLevels->blockSignals(true);
     d->gammaInput->blockSignals(true);
@@ -665,7 +640,9 @@ void AdjustLevelsTool::slotResetCurrentChannel()
     ChannelType channel = d->gboxSettings->histogramBox()->channel();
 
     if (channel == ColorChannels)
+    {
         channel = LuminosityChannel;
+    }
 
     d->levels->levelsChannelReset(channel);
 
@@ -696,29 +673,39 @@ void AdjustLevelsTool::slotChannelChanged()
     d->levelsHistogramWidget->setChannelType(channel);
 
     if (channel == ColorChannels)
+    {
         channel = LuminosityChannel;
+    }
 
     switch (channel)
     {
         case RedChannel:
+        {
             d->inputLevels->setColors(QColor("black"), QColor("red"));
             d->outputLevels->setColors(QColor("black"), QColor("red"));
             break;
+        }
 
         case GreenChannel:
+        {
             d->inputLevels->setColors(QColor("black"), QColor("green"));
             d->outputLevels->setColors(QColor("black"), QColor("green"));
             break;
+        }
 
         case BlueChannel:
+        {
             d->inputLevels->setColors(QColor("black"), QColor("blue"));
             d->outputLevels->setColors(QColor("black"), QColor("blue"));
             break;
+        }
 
         default:
+        {
             d->inputLevels->setColors(QColor("black"), QColor("white"));
             d->outputLevels->setColors(QColor("black"), QColor("white"));
             break;
+        }
     }
 
     adjustSlidersAndSpinboxes(d->levels->getLevelLowInputValue(channel),
@@ -779,7 +766,9 @@ void AdjustLevelsTool::readSettings()
     // if ColorChannels was set, make sure to take values from LuminosityChannel
 
     if (ch == ColorChannels)
+    {
         ch = LuminosityChannel;
+    }
 
     // This is mandatory here to set spinbox values because slot connections
     // can be not set completely at tool startup.

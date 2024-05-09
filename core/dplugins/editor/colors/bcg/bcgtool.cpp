@@ -45,25 +45,17 @@ class Q_DECL_HIDDEN BCGTool::Private
 {
 public:
 
-    explicit Private()
-      : settingsView (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("bcgadjust Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    BCGSettings*         settingsView;
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    BCGSettings*         settingsView           = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
 
-const QString BCGTool::Private::configGroupName(QLatin1String("bcgadjust Tool"));
-const QString BCGTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString BCGTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 

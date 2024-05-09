@@ -57,28 +57,18 @@ public:
 
 public:
 
-    explicit Private()
-      : correctionTools(nullptr),
-        previewWidget  (nullptr),
-        gboxSettings   (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
-    static const QString configAutoCorrectionFilterEntry;
+    const QString configGroupName                   = QLatin1String("autocorrection Tool");
+    const QString configHistogramChannelEntry       = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry         = QLatin1String("Histogram Scale");
+    const QString configAutoCorrectionFilterEntry   = QLatin1String("Auto Correction Filter");
 
-    PreviewList*         correctionTools;
+    PreviewList*         correctionTools            = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget              = nullptr;
+    EditorToolSettings*  gboxSettings               = nullptr;
 };
-
-const QString AutoCorrectionTool::Private::configGroupName(QLatin1String("autocorrection Tool"));
-const QString AutoCorrectionTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString AutoCorrectionTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
-const QString AutoCorrectionTool::Private::configAutoCorrectionFilterEntry(QLatin1String("Auto Correction Filter"));
 
 // --------------------------------------------------------
 
@@ -259,24 +249,34 @@ void AutoCorrectionTool::setFinalImage()
     switch (type)
     {
         case Private::AutoLevelsCorrection:
+        {
             name = i18n("Auto Levels");
             break;
+        }
 
         case Private::NormalizeCorrection:
+        {
             name = i18n("Normalize");
             break;
+        }
 
         case Private::EqualizeCorrection:
+        {
             name = i18n("Equalize");
             break;
+        }
 
         case Private::StretchContrastCorrection:
+        {
             name = i18n("Stretch Contrast");
             break;
+        }
 
         case Private::AutoExposureCorrection:
+        {
             name = i18n("Auto Exposure");
             break;
+        }
     }
 
     ImageIface iface;
