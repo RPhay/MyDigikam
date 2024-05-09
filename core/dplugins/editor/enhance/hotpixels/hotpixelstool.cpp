@@ -49,16 +49,11 @@ class Q_DECL_HIDDEN HotPixelsTool::Private
 {
 public:
 
-    explicit Private()
-      : previewWidget(nullptr),
-        gboxSettings (nullptr),
-        hpSettings   (nullptr)
-    {
-    }
+    Private() = default;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
-    HotPixelSettings*    hpSettings;
+    ImageRegionWidget*   previewWidget  = nullptr;
+    EditorToolSettings*  gboxSettings   = nullptr;
+    HotPixelSettings*    hpSettings     = nullptr;
 };
 
 // --------------------------------------------------------

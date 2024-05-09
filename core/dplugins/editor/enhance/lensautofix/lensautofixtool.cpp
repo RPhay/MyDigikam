@@ -50,30 +50,20 @@ class Q_DECL_HIDDEN LensAutoFixTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName (QLatin1String("Lens Auto-Correction Tool")),
-        configShowGrid  (QLatin1String("Show Grid")),
-        maskPreviewLabel(nullptr),
-        showGrid        (nullptr),
-        settingsView    (nullptr),
-        cameraSelector  (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString          configGroupName;
-    const QString          configShowGrid;
+    const QString          configGroupName  = QLatin1String("Lens Auto-Correction Tool");
+    const QString          configShowGrid   = QLatin1String("Show Grid");
 
-    QLabel*                maskPreviewLabel;
+    QLabel*                maskPreviewLabel = nullptr;
 
-    QCheckBox*             showGrid;
+    QCheckBox*             showGrid         = nullptr;
 
-    LensFunSettings*       settingsView;
-    LensFunCameraSelector* cameraSelector;
+    LensFunSettings*       settingsView     = nullptr;
+    LensFunCameraSelector* cameraSelector   = nullptr;
 
-    ImageGuideWidget*      previewWidget;
-    EditorToolSettings*    gboxSettings;
+    ImageGuideWidget*      previewWidget    = nullptr;
+    EditorToolSettings*    gboxSettings     = nullptr;
 };
 
 LensAutoFixTool::LensAutoFixTool(QObject* const parent)
@@ -182,6 +172,7 @@ void LensAutoFixTool::slotResetSettings()
 void LensAutoFixTool::preparePreview()
 {
     // Settings information must be get before to disable settings view.
+
     LensFunContainer settings = d->cameraSelector->settings();
     d->settingsView->assignFilterSettings(settings);
     ImageIface* const iface   = d->previewWidget->imageIface();
@@ -209,6 +200,7 @@ void LensAutoFixTool::preparePreview()
         DColorComposer::MultiplicationFlags flags = DColorComposer::NoMultiplication;
 
         // Do alpha blending of template on dest image
+
         preview.bitBlendImage(composer, &grid, 0, 0, preview.width(), preview.height(), 0, 0, flags);
 
         delete composer;
@@ -220,6 +212,7 @@ void LensAutoFixTool::preparePreview()
 void LensAutoFixTool::prepareFinal()
 {
     // Settings information must be handle before to disable settings view.
+
     LensFunContainer settings = d->cameraSelector->settings();
     d->settingsView->assignFilterSettings(settings);
     ImageIface iface;
@@ -241,6 +234,7 @@ void LensAutoFixTool::setFinalImage()
 
     // Note: there are certain situations in the editor where these metadata changes may be undone.
     // Ignore for now, as they are not critical.
+
     LensFunFilter* const fltr = dynamic_cast<LensFunFilter*>(filter());
 
     if (fltr)

@@ -35,10 +35,6 @@ HotPixelsToolPlugin::HotPixelsToolPlugin(QObject* const parent)
 {
 }
 
-HotPixelsToolPlugin::~HotPixelsToolPlugin()
-{
-}
-
 QString HotPixelsToolPlugin::name() const
 {
     return i18nc("@title", "Hot Pixels");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> HotPixelsToolPlugin::authors() const
                              QString::fromUtf8("(C) 2005-2006"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2024"))
             ;
 }
 

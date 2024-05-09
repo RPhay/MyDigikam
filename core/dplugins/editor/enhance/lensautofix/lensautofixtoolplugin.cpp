@@ -35,10 +35,6 @@ LensAutoFixToolPlugin::LensAutoFixToolPlugin(QObject* const parent)
 {
 }
 
-LensAutoFixToolPlugin::~LensAutoFixToolPlugin()
-{
-}
-
 QString LensAutoFixToolPlugin::name() const
 {
     return i18nc("@title", "Lens Auto-Correction");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> LensAutoFixToolPlugin::authors() const
                              QString::fromUtf8("(C) 2008"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2024"))
             ;
 }
 

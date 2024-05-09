@@ -36,10 +36,6 @@ HealingCloneToolPlugin::HealingCloneToolPlugin(QObject* const parent)
 {
 }
 
-HealingCloneToolPlugin::~HealingCloneToolPlugin()
-{
-}
-
 QString HealingCloneToolPlugin::name() const
 {
     return i18nc("@title", "Healing Clone Tool");

@@ -48,19 +48,13 @@ class Q_DECL_HIDDEN AntiVignettingTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName(QLatin1String("antivignetting Tool")),
-        settingsView   (nullptr),
-        previewWidget  (nullptr),
-        gboxSettings   (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString           configGroupName;
+    const QString           configGroupName = QLatin1String("antivignetting Tool");
 
-    AntiVignettingSettings* settingsView;
-    ImageGuideWidget*       previewWidget;
-    EditorToolSettings*     gboxSettings;
+    AntiVignettingSettings* settingsView    = nullptr;
+    ImageGuideWidget*       previewWidget   = nullptr;
+    EditorToolSettings*     gboxSettings    = nullptr;
 };
 
 AntiVignettingTool::AntiVignettingTool(QObject* const parent)

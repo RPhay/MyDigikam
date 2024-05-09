@@ -42,23 +42,16 @@ class Q_DECL_HIDDEN BlurTool::Private
 {
 public:
 
-    explicit Private()
-      : radiusInput  (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configRadiusAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("gaussianblur Tool");
+    const QString configRadiusAdjustmentEntry   = QLatin1String("RadiusAdjustment");
 
-    DIntNumInput*        radiusInput;
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    DIntNumInput*        radiusInput            = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
 
-const QString BlurTool::Private::configGroupName(QLatin1String("gaussianblur Tool"));
-const QString BlurTool::Private::configRadiusAdjustmentEntry(QLatin1String("RadiusAdjustment"));
 
 // --------------------------------------------------------
 

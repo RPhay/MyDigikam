@@ -52,47 +52,32 @@ class Q_DECL_HIDDEN HealingCloneTool::Private
 
 public:
 
-    explicit Private()
-      : btnSize             (QSize(50, 50)),
-        iconSize            (QSize(30, 30)),
-        radiusInput         (nullptr),
-        blurPercent         (nullptr),
-        previewWidget       (nullptr),
-        gboxSettings        (nullptr),
-        srcButton           (nullptr),
-        lassoButton         (nullptr),
-        moveButton          (nullptr),
-        undoCloneButton     (nullptr),
-        redoCloneButton     (nullptr),
-        resetLassoPoint     (true),
-        insideLassoOperation(false)
-    {
-    }
+    Private() = default;
 
-    static const QString                 configGroupName;
-    static const QString                 configRadiusAdjustmentEntry;
-    static const QString                 configBlurAdjustmentEntry;
+    const QString configGroupName                               = QLatin1String("Healing Clone Tool");
+    const QString configRadiusAdjustmentEntry                   = QLatin1String("RadiusAdjustment");
+    const QString configBlurAdjustmentEntry                     = QLatin1String("BlurAdjustment");
 
-    const QSize                          btnSize;
-    const QSize                          iconSize;
+    const QSize                          btnSize                = QSize(50, 50);
+    const QSize                          iconSize               = QSize(30, 30);
 
-    DIntNumInput*                        radiusInput;
-    DDoubleNumInput*                     blurPercent;
-    HealingCloneToolWidget*              previewWidget;
-    EditorToolSettings*                  gboxSettings;
-    QPushButton*                         srcButton;
-    QPushButton*                         lassoButton;
-    QPushButton*                         moveButton;
-    QPushButton*                         undoCloneButton;
-    QPushButton*                         redoCloneButton;
+    DIntNumInput*                        radiusInput            = nullptr;
+    DDoubleNumInput*                     blurPercent            = nullptr;
+    HealingCloneToolWidget*              previewWidget          = nullptr;
+    EditorToolSettings*                  gboxSettings           = nullptr;
+    QPushButton*                         srcButton              = nullptr;
+    QPushButton*                         lassoButton            = nullptr;
+    QPushButton*                         moveButton             = nullptr;
+    QPushButton*                         undoCloneButton        = nullptr;
+    QPushButton*                         redoCloneButton        = nullptr;
 
     DImg                                 cloneImg;
 
     std::stack<DImg>                     undoStack;
     std::stack<DImg>                     redoStack;
 
-    bool                                 resetLassoPoint;
-    bool                                 insideLassoOperation;
+    bool                                 resetLassoPoint        = true;
+    bool                                 insideLassoOperation   = false;
 
     QPoint                               previousLassoPoint;
     QPoint                               startLassoPoint;
@@ -105,9 +90,6 @@ public:
     std::map<std::pair<int,int>, DColor> lassoColorsMap;
 };
 
-const QString HealingCloneTool::Private::configGroupName(QLatin1String("Healing Clone Tool"));
-const QString HealingCloneTool::Private::configRadiusAdjustmentEntry(QLatin1String("RadiusAdjustment"));
-const QString HealingCloneTool::Private::configBlurAdjustmentEntry(QLatin1String("BlurAdjustment"));
 
 // --------------------------------------------------------
 

@@ -35,7 +35,7 @@ class BlurToolPlugin : public DPluginEditor
 public:
 
     explicit BlurToolPlugin(QObject* const parent = nullptr);
-    ~BlurToolPlugin()                    override;
+    ~BlurToolPlugin()                    override = default;
 
     QString name()                 const override;
     QString iid()                  const override;
