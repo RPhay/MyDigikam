@@ -32,15 +32,16 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url,
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
 
-    d->provider    = new ImageDialogIconProvider();
+//  d->provider    = new ImageDialogIconProvider();
     d->dlg         = new DFileDialog(parent);
     d->dlg->setWindowTitle(caption);
     d->dlg->setDirectoryUrl(url);
-    d->dlg->setIconProvider(d->provider);
+//  d->dlg->setIconProvider(d->provider);
     d->dlg->setNameFilters(d->fileFormats);
     d->dlg->selectNameFilter(d->fileFormats.last());
     d->dlg->setAcceptMode(QFileDialog::AcceptOpen);
-    d->dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile : QFileDialog::ExistingFiles);
+    d->dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile
+                                     : QFileDialog::ExistingFiles);
 
     for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
     {
@@ -61,7 +62,7 @@ ImageDialog::~ImageDialog()
 {
     delete d->toolTip;
     delete d->dlg;
-    delete d->provider;
+//  delete d->provider;
     delete d;
 }
 

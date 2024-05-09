@@ -65,7 +65,7 @@ public:
     QList<QUrl>               urls;
     DFileDialog*              dlg           = nullptr;
     ImageDialogIconProvider*  provider      = nullptr;
-    bool                      showToolTips  = true;;
+    bool                      showToolTips  = true;
     QTimer*                   toolTipTimer  = nullptr;
     ImageDialogToolTip*       toolTip       = nullptr;
     QAbstractItemView*        toolTipView   = nullptr;
