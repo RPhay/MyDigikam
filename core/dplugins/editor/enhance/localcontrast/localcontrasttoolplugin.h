@@ -35,7 +35,7 @@ class LocalContrastToolPlugin : public DPluginEditor
 public:
 
     explicit LocalContrastToolPlugin(QObject* const parent = nullptr);
-    ~LocalContrastToolPlugin()           override;
+    ~LocalContrastToolPlugin()           override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

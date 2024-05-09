@@ -61,55 +61,33 @@ public:
 
 public:
 
-    explicit Private()
-      : mainTab             (nullptr),
-        restorationTypeCB   (nullptr),
-        settingsWidget      (nullptr),
-        previewWidget       (nullptr),
-        gboxSettings        (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString    configGroupName;
-    static const QString    configPresetEntry;
-    static const QString    configFastApproxEntry;
-    static const QString    configInterpolationEntry;
-    static const QString    configAmplitudeEntry;
-    static const QString    configSharpnessEntry;
-    static const QString    configAnisotropyEntry;
-    static const QString    configAlphaEntry;
-    static const QString    configSigmaEntry;
-    static const QString    configGaussPrecEntry;
-    static const QString    configDlEntry;
-    static const QString    configDaEntry;
-    static const QString    configIterationEntry;
-    static const QString    configTileEntry;
-    static const QString    configBTileEntry;
+    const QString configGroupName               = QLatin1String("restoration Tool");
+    const QString configPresetEntry             = QLatin1String("Preset");
+    const QString configFastApproxEntry         = QLatin1String("FastApprox");
+    const QString configInterpolationEntry      = QLatin1String("Interpolation");
+    const QString configAmplitudeEntry          = QLatin1String("Amplitude");
+    const QString configSharpnessEntry          = QLatin1String("Sharpness");
+    const QString configAnisotropyEntry         = QLatin1String("Anisotropy");
+    const QString configAlphaEntry              = QLatin1String("Alpha");
+    const QString configSigmaEntry              = QLatin1String("Sigma");
+    const QString configGaussPrecEntry          = QLatin1String("GaussPrec");
+    const QString configDlEntry                 = QLatin1String("Dl");
+    const QString configDaEntry                 = QLatin1String("Da");
+    const QString configIterationEntry          = QLatin1String("Iteration");
+    const QString configTileEntry               = QLatin1String("Tile");
+    const QString configBTileEntry              = QLatin1String("BTile");
 
-    QTabWidget*             mainTab;
+    QTabWidget*             mainTab             = nullptr;
 
-    QComboBox*              restorationTypeCB;
+    QComboBox*              restorationTypeCB   = nullptr;
 
-    GreycstorationSettings* settingsWidget;
-    ImageRegionWidget*      previewWidget;
-    EditorToolSettings*     gboxSettings;
+    GreycstorationSettings* settingsWidget      = nullptr;
+    ImageRegionWidget*      previewWidget       = nullptr;
+    EditorToolSettings*     gboxSettings        = nullptr;
 };
 
-const QString RestorationTool::Private::configGroupName(QLatin1String("restoration Tool"));
-const QString RestorationTool::Private::configPresetEntry(QLatin1String("Preset"));
-const QString RestorationTool::Private::configFastApproxEntry(QLatin1String("FastApprox"));
-const QString RestorationTool::Private::configInterpolationEntry(QLatin1String("Interpolation"));
-const QString RestorationTool::Private::configAmplitudeEntry(QLatin1String("Amplitude"));
-const QString RestorationTool::Private::configSharpnessEntry(QLatin1String("Sharpness"));
-const QString RestorationTool::Private::configAnisotropyEntry(QLatin1String("Anisotropy"));
-const QString RestorationTool::Private::configAlphaEntry(QLatin1String("Alpha"));
-const QString RestorationTool::Private::configSigmaEntry(QLatin1String("Sigma"));
-const QString RestorationTool::Private::configGaussPrecEntry(QLatin1String("GaussPrec"));
-const QString RestorationTool::Private::configDlEntry(QLatin1String("Dl"));
-const QString RestorationTool::Private::configDaEntry(QLatin1String("Da"));
-const QString RestorationTool::Private::configIterationEntry(QLatin1String("Iteration"));
-const QString RestorationTool::Private::configTileEntry(QLatin1String("Tile"));
-const QString RestorationTool::Private::configBTileEntry(QLatin1String("BTile"));
 
 // --------------------------------------------------------
 
@@ -302,7 +280,9 @@ void RestorationTool::slotResetSettings()
         }
 
         default: // Custom
+        {
             break;
+        }
     }
 
     d->settingsWidget->setSettings(settings);

@@ -50,41 +50,26 @@ class Q_DECL_HIDDEN LensDistortionTool::Private
 {
 public:
 
-    explicit Private()
-      : maskPreviewLabel(nullptr),
-        mainInput       (nullptr),
-        edgeInput       (nullptr),
-        rescaleInput    (nullptr),
-        brightenInput   (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString config2ndOrderDistortionEntry;
-    static const QString config4thOrderDistortionEntry;
-    static const QString configZoomFactorEntry;
-    static const QString configBrightenEntry;
+    const QString configGroupName               = QLatin1String("lensdistortion Tool");
+    const QString config2ndOrderDistortionEntry = QLatin1String("2nd Order Distortion");
+    const QString config4thOrderDistortionEntry = QLatin1String("4th Order Distortion");
+    const QString configZoomFactorEntry         = QLatin1String("Zoom Factor");
+    const QString configBrightenEntry           = QLatin1String("Brighten");
 
-    QLabel*              maskPreviewLabel;
+    QLabel*              maskPreviewLabel       = nullptr;
 
-    DDoubleNumInput*     mainInput;
-    DDoubleNumInput*     edgeInput;
-    DDoubleNumInput*     rescaleInput;
-    DDoubleNumInput*     brightenInput;
+    DDoubleNumInput*     mainInput              = nullptr;
+    DDoubleNumInput*     edgeInput              = nullptr;
+    DDoubleNumInput*     rescaleInput           = nullptr;
+    DDoubleNumInput*     brightenInput          = nullptr;
 
     DImg                 previewRasterImage;
 
-    ImageGuideWidget*    previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageGuideWidget*    previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString LensDistortionTool::Private::configGroupName(QLatin1String("lensdistortion Tool"));
-const QString LensDistortionTool::Private::config2ndOrderDistortionEntry(QLatin1String("2nd Order Distortion"));
-const QString LensDistortionTool::Private::config4thOrderDistortionEntry(QLatin1String("4th Order Distortion"));
-const QString LensDistortionTool::Private::configZoomFactorEntry(QLatin1String("Zoom Factor"));
-const QString LensDistortionTool::Private::configBrightenEntry(QLatin1String("Brighten"));
 
 // --------------------------------------------------------
 

@@ -35,7 +35,7 @@ class RestoreToolPlugin : public DPluginEditor
 public:
 
     explicit RestoreToolPlugin(QObject* const parent = nullptr);
-    ~RestoreToolPlugin()                 override;
+    ~RestoreToolPlugin()                 override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

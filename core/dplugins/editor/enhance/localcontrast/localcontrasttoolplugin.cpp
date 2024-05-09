@@ -35,10 +35,6 @@ LocalContrastToolPlugin::LocalContrastToolPlugin(QObject* const parent)
 {
 }
 
-LocalContrastToolPlugin::~LocalContrastToolPlugin()
-{
-}
-
 QString LocalContrastToolPlugin::name() const
 {
     return i18nc("@title", "Local Contrast");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> LocalContrastToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 

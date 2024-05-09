@@ -35,10 +35,6 @@ LensDistortionToolPlugin::LensDistortionToolPlugin(QObject* const parent)
 {
 }
 
-LensDistortionToolPlugin::~LensDistortionToolPlugin()
-{
-}
-
 QString LensDistortionToolPlugin::name() const
 {
     return i18nc("@title", "Lens Distortion");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> LensDistortionToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 
