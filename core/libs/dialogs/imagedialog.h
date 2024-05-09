@@ -101,8 +101,10 @@ private:
 
 // ------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ImageDialogIconProvider : public QFileIconProvider
+class DIGIKAM_EXPORT ImageDialogIconProvider : public QObject,
+                                               public QFileIconProvider
 {
+    Q_OBJECT
 
 public:
 
@@ -120,6 +122,14 @@ public:
 #endif
 
     QIcon icon(const QFileInfo& info)                    const override;
+
+Q_SIGNALS:
+
+    void signalThumbnailRefresh();
+
+private Q_SLOTS:
+
+    void slotThumbnailLoaded(const LoadingDescription& desc, const QImage& img);
 
 private:
 

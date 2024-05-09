@@ -22,33 +22,44 @@ class Q_DECL_HIDDEN ImageDialogIconProvider::Private
 
 public:
 
-    explicit Private()
-      : catcher     (nullptr),
-        thread      (nullptr)
-    {
-    }
+    Private() = default;
 
-    ThumbnailImageCatcher* catcher;           ///< Thumbnail thread catcher from main process.
-    ThumbnailLoadThread*   thread;            ///< The separated thread to render thumbnail images.
+    QMutex               mutex;
+
+    QTimer*              timer     = nullptr;
+    ThumbnailLoadThread* thread    = nullptr;    ///< The separated thread to render thumbnail images.
+
+    QHash<QString, QIcon> iconHash;
 };
 
 ImageDialogIconProvider::ImageDialogIconProvider()
-    : QFileIconProvider(),
+    : QObject          (),
+      QFileIconProvider(),
       d                (new Private)
 {
-    d->thread  = new ThumbnailLoadThread;
+    d->timer  = new QTimer(this);
+    d->timer->setInterval(100);
+    d->timer->setSingleShot(true);
+
+    d->thread = new ThumbnailLoadThread;
+    d->thread->setPixmapRequested(true);
     d->thread->setThumbnailSize(256);
-    d->thread->setPixmapRequested(false);
-    d->catcher = new ThumbnailImageCatcher(d->thread);
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SIGNAL(signalThumbnailRefresh()));
+
+    connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+            this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)));
+
 }
 
 ImageDialogIconProvider::~ImageDialogIconProvider()
 {
-    d->catcher->thread()->stopAllTasks();
-    d->catcher->cancel();
+    d->thread->stopAllTasks();
+    d->thread->wait();
+    d->timer->stop();
 
-    delete d->catcher->thread();
-    delete d->catcher;
+    delete d->thread;
     delete d;
 }
 
@@ -56,57 +67,40 @@ QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
 {
     // We will only process image files
 
-    if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+    if (info.isFile() && !info.isSymLink() && !info.isRoot())
     {
-        QString path    = info.absoluteFilePath();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
+        QString path = info.absoluteFilePath();
 
-        QString mimeType = QMimeDatabase().mimeTypeForFile(path).name();
-        QString suffix   = info.suffix().toUpper();
-
-        if (mimeType.startsWith(QLatin1String("image/")) ||
-            (suffix == QLatin1String("PGF"))             ||
-            (suffix == QLatin1String("JXL"))             ||
-            (suffix == QLatin1String("AVIF"))            ||
-            (suffix == QLatin1String("KRA"))             ||
-            (suffix == QLatin1String("CR3"))             ||
-            (suffix == QLatin1String("HIF"))             ||
-            (suffix == QLatin1String("HEIC"))            ||
-            (suffix == QLatin1String("HEIF")))
+        if (!path.isEmpty())
         {
-            // --- Critical section.
+            {
+                QMutexLocker locker(&d->mutex);
 
-            // NOTE: this part run in separated thread.
-            //       Do not use QPixmap here, as it's not re-entrant with X11 under Linux.
-
-            d->catcher->setActive(true);    // ---
-
-                d->catcher->thread()->find(ThumbnailIdentifier(path));
-                d->catcher->enqueue();
-                QList<QImage> images = d->catcher->waitForThumbnails();
-
-                if (!images.isEmpty())
+                if (d->iconHash.contains(path))
                 {
-                    // resize and center pixmap on target icon.
-
-                    QPixmap pix = QPixmap::fromImage(images.first());
-                    pix         = pix.scaled(QSize(256, 256),
-                                             Qt::KeepAspectRatio,
-                                             Qt::FastTransformation);
-
-                    QPixmap icon(QSize(256, 256));
-                    icon.fill(Qt::transparent);
-                    QPainter p(&icon);
-                    p.drawPixmap((icon.width()  - pix.width() )  / 2,
-                                 (icon.height() - pix.height())  / 2,
-                                 pix);
-
-                    return icon;
+                    return d->iconHash.value(path);
                 }
+            }
 
-            // --- End of critical section.
+            QString mimeType = QMimeDatabase().mimeTypeForFile(path).name();
+            QString suffix   = info.suffix().toUpper();
 
-            d->catcher->setActive(false);   // ---
+            if (
+                mimeType.startsWith(QLatin1String("image/")) ||
+                (suffix == QLatin1String("PGF"))             ||
+                (suffix == QLatin1String("JXL"))             ||
+                (suffix == QLatin1String("AVIF"))            ||
+                (suffix == QLatin1String("KRA"))             ||
+                (suffix == QLatin1String("CR3"))             ||
+                (suffix == QLatin1String("HIF"))             ||
+                (suffix == QLatin1String("HEIC"))            ||
+                (suffix == QLatin1String("HEIF"))
+               )
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
+
+                d->thread->find(ThumbnailIdentifier(path));
+            }
         }
     }
 
@@ -127,6 +121,41 @@ QIcon ImageDialogIconProvider::icon(IconType type) const
 
 {
     return QFileIconProvider::icon(type);
+}
+
+void ImageDialogIconProvider::slotThumbnailLoaded(const LoadingDescription& desc, const QImage& img)
+{
+    // resize and center pixmap on target icon.
+
+    if (!img.isNull())
+    {
+        QPixmap pix = QPixmap::fromImage(img);
+        pix         = pix.scaled(QSize(256, 256),
+                             Qt::KeepAspectRatio,
+                             Qt::FastTransformation);
+
+        QPixmap icon(QSize(256, 256));
+        icon.fill(Qt::transparent);
+        QPainter p(&icon);
+        p.drawPixmap((icon.width()  - pix.width() )  / 2,
+                     (icon.height() - pix.height())  / 2,
+                     pix);
+
+        QMutexLocker locker(&d->mutex);
+
+        d->iconHash.insert(desc.filePath, icon);
+    }
+    else
+    {
+        QMutexLocker locker(&d->mutex);
+
+        d->iconHash.insert(desc.filePath, QIcon::fromTheme(QLatin1String("image-missing")));
+    }
+
+    if (!d->timer->isActive())
+    {
+        d->timer->start();
+    }
 }
 
 } // namespace Digikam

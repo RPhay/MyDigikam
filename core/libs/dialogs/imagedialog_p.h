@@ -29,6 +29,7 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QScopedPointer>
+#include <QMutexLocker>
 #include <QToolTip>
 #include <QDir>
 #include <QTimer>
