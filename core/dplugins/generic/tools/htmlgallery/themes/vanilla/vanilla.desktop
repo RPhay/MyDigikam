@@ -138,6 +138,7 @@ Name[tr]=Yazar
 Name[uk]=Автор
 Name[x-test]=xxAuthorxx
 Name[zh_CN]=作者
+Name[zh_TW]=作者
 Type=string
 Default=
 
@@ -175,6 +176,7 @@ Name[tr]=Yazar E-postası
 Name[uk]=Адреса ел. пошти автора
 Name[x-test]=xxAuthor Emailxx
 Name[zh_CN]=作者邮箱
+Name[zh_TW]=作者電子郵件
 Type=string
 Default=
 
@@ -211,6 +213,7 @@ Name[tr]=Sayfa başına satır
 Name[uk]=Кількість рядків на сторінку
 Name[x-test]=xxRows per pagexx
 Name[zh_CN]=每夜行数
+Name[zh_TW]=每頁列數
 Type=int
 Default=3
 
@@ -247,6 +250,7 @@ Name[tr]=Sayfa başına sütun
 Name[uk]=Кількість стовпчиків на сторінку
 Name[x-test]=xxColumns per pagexx
 Name[zh_CN]=每夜列数
+Name[zh_TW]=每頁欄數
 Type=int
 Default=3
 
@@ -290,6 +294,7 @@ Name[tr]=Biçem
 Name[uk]=Стиль
 Name[x-test]=xxStylexx
 Name[zh_CN]=样式
+Name[zh_TW]=風格
 Type=list
 Default=graphite.css
 Value-0=charcoal.css
@@ -342,6 +347,7 @@ Name[tr]=Görsel numaralarını göster
 Name[uk]=Показувати номери зображень
 Name[x-test]=xxShow image numbersxx
 Name[zh_CN]=显示图片编号
+Name[zh_TW]=顯示影像編號
 Type=list
 Default=inherit
 Value-0=inherit
@@ -420,6 +426,7 @@ Name[tr]=Küçük görsel kenar boşluğu
 Name[uk]=Поле мініатюр
 Name[x-test]=xxThumbnail marginxx
 Name[zh_CN]=缩略图边距
+Name[zh_TW]=縮圖邊界
 Type=int
 Default=25
 

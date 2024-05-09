@@ -95,6 +95,7 @@ Name[tr]=Simon Kuss
 Name[uk]=Simon Kuss
 Name[x-test]=xxSimon Kussxx
 Name[zh_CN]=Simon Kuss
+Name[zh_TW]=Simon Kuss
 Url=mailto:sjk281@iinet.net.au
 
 [X-HTMLGallery Parameter delay]
@@ -168,6 +169,7 @@ Name[tr]=Denetimlerin konumu
 Name[uk]=Розташування засобів керування
 Name[x-test]=xxLocation of controlsxx
 Name[zh_CN]=控件的位置
+Name[zh_TW]=控制元件的位置
 Type=list
 Default=top
 Value-0=top

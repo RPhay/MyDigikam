@@ -15,6 +15,7 @@ Name[tr]=DxO Photolab 7
 Name[uk]=DxO Photolab 7
 Name[x-test]=xxDxO Photolab 7xx
 Name[zh_CN]=DxO Photolab 7
+Name[zh_TW]=DxO Photolab 7
 X-Exec="%ProgramFiles%/DxO/DxO PhotoLab 7/DxO.PhotoLab.exe" %f
 X-Icon="%ProgramFiles%/DxO/DxO PhotoLab 7/DxO.PhotoLab.exe"
 MimeType=image/jpg;image/raw

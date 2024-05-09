@@ -108,6 +108,7 @@ Name[tr]=Elizabeth Marmorstein
 Name[uk]=Elizabeth Marmorstein
 Name[x-test]=xxElizabeth Marmorsteinxx
 Name[zh_CN]=Elizabeth Marmorstein
+Name[zh_TW]=Elizabeth Marmorstein
 Url=mailto:purplegamba@cox.net
 
 [X-HTMLGallery Preview]
@@ -189,6 +190,7 @@ Name[tr]=Biçem
 Name[uk]=Стиль
 Name[x-test]=xxStylexx
 Name[zh_CN]=样式
+Name[zh_TW]=風格
 Type=list
 Default=pink.css
 Value-0=pink.css

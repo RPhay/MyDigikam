@@ -34,6 +34,7 @@ Name[tr]=Yalın
 Name[uk]=Проста
 Name[x-test]=xxSimplexx
 Name[zh_CN]=简洁
+Name[zh_TW]=簡單
 Comment=A simple and light theme
 Comment[be]=Простая і светлая тэма
 Comment[bg]=Проста и лека тема
@@ -68,6 +69,7 @@ Comment[tr]=Yalın ve hafif bir tema
 Comment[uk]=Проста і легка тема
 Comment[x-test]=xxA simple and light themexx
 Comment[zh_CN]=简洁明快的主题
+Comment[zh_TW]=簡單的亮色主題
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
@@ -106,6 +108,7 @@ Name[tr]=Aurélien Gâteau
 Name[uk]=Aurélien Gâteau
 Name[x-test]=xxAurélien Gâteauxx
 Name[zh_CN]=Aurélien Gâteau
+Name[zh_TW]=Aurélien Gâteau
 Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter style]
@@ -148,6 +151,7 @@ Name[tr]=Biçem
 Name[uk]=Стиль
 Name[x-test]=xxStylexx
 Name[zh_CN]=样式
+Name[zh_TW]=風格
 Type=list
 Default=natural.css
 Value-0=natural.css
@@ -190,4 +194,5 @@ Name[tr]=Yalın
 Name[uk]=Проста
 Name[x-test]=xxSimplexx
 Name[zh_CN]=简洁
+Name[zh_TW]=簡單
 Url=preview.png

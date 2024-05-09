@@ -34,6 +34,7 @@ Name[tr]=Tarih Çerçeveleri
 Name[uk]=Рамки дат
 Name[x-test]=xxDate Framesxx
 Name[zh_CN]=日期型 Frames
+Name[zh_TW]=日期框架
 Comment=A frame theme based on Ruediger Bente's frame theme
 Comment[be]=Тэма на аснове тэмы ад Ruediger Bente
 Comment[bg]=Тема за рамки, базирана на темата за рамки на Рюдигер Бенте
@@ -106,6 +107,7 @@ Name[tr]=Elizabeth Marmorstein
 Name[uk]=Elizabeth Marmorstein
 Name[x-test]=xxElizabeth Marmorsteinxx
 Name[zh_CN]=Elizabeth Marmorstein
+Name[zh_TW]=Elizabeth Marmorstein
 Url=mailto:purplegamba@cox.net
 
 [X-HTMLGallery Preview]
@@ -143,6 +145,7 @@ Name[tr]=Tarih Çerçeveleri
 Name[uk]=Рамки дат
 Name[x-test]=xxDate Framesxx
 Name[zh_CN]=日期型 Frames
+Name[zh_TW]=日期框架
 Url=preview.png
 
 [X-HTMLGallery Parameter color1]
@@ -182,6 +185,7 @@ Name[tr]=Küçük Görsel Arka Planı
 Name[uk]=Тло мініатюр
 Name[x-test]=xxThumbnail Backgroundxx
 Name[zh_CN]=缩略图背景
+Name[zh_TW]=縮圖背景
 Type=color
 Default=#FFFFFF
 
@@ -299,6 +303,7 @@ Name[tr]=Galeri Tanıtımı
 Name[uk]=Вступ до галереї
 Name[x-test]=xxGallery Introductionxx
 Name[zh_CN]=相册介绍
+Name[zh_TW]=相簿介紹
 Type=caption
 Default=Welcome to my web gallery!
 

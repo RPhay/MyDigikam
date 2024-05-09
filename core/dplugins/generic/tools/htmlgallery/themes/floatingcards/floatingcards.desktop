@@ -34,6 +34,7 @@ Name[tr]=Yüzen Kartlar
 Name[uk]=Картки, що плавають
 Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
+Name[zh_TW]=浮動卡片
 Comment=A dark theme with floating thumbnail/description cards. Fast navigation through the gallery.
 Comment[be]=Цёмная тэма з выплыўнымі карткамі з мініяцюрамі альбо апісаннем, праз якія можна хутка перамяшчацца па галерэі.
 Comment[bg]=Тъмна тема с плаващи карти с миниатюри/описания. Бърза навигация из галерията.
@@ -68,6 +69,7 @@ Comment[tr]=Yüzen küçük görsel/açıklama kartları ile koyu bir tema. Gale
 Comment[uk]=Темна тема з картками мініатюр або описів, що неначебто плавають панеллю. Пришвидшує орієнтування у галереї.
 Comment[x-test]=xxA dark theme with floating thumbnail/description cards. Fast navigation through the gallery.xx
 Comment[zh_CN]=一款深色主题，显示浮动的缩略图和描述卡片，能快速在相册中进行导航。
+Comment[zh_TW]=提供浮動縮圖/描述卡片的暗色主題。提供圖庫的快速瀏覽。
 
 [X-HTMLGallery Author]
 Name=Jiří Boháč
@@ -104,6 +106,7 @@ Name[tr]=Jiří Boháč
 Name[uk]=Jiří Boháč
 Name[x-test]=xxJiří Boháčxx
 Name[zh_CN]=Jiří Boháč
+Name[zh_TW]=Jiří Boháč
 Url=mailto:jiri@boha.cz
 
 [X-HTMLGallery Preview]
@@ -141,6 +144,7 @@ Name[tr]=Yüzen Kartlar
 Name[uk]=Картки, що плавають
 Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
+Name[zh_TW]=浮動卡片
 Url=preview.png
 
 [X-HTMLGallery Options]
@@ -179,6 +183,7 @@ Name[tr]=Klavye ve kaydırma dolaşımı
 Name[uk]=Навігація за допомогою клавіатури і дотику
 Name[x-test]=xxKeyboard & swipe navigationxx
 Name[zh_CN]=键盘和滑动手势导航
+Name[zh_TW]=鍵盤與滑動瀏覽
 Type=list
 Default=1
 Value-0=1
@@ -229,6 +234,7 @@ Name[tr]=Önyükleme
 Name[uk]=Попереднє завантаження
 Name[x-test]=xxPreloadxx
 Name[zh_CN]=预加载
+Name[zh_TW]=預先載入
 Type=list
 Default=1
 Value-0=1

@@ -15,6 +15,7 @@ Name[tr]=GIMP
 Name[uk]=Gimp
 Name[x-test]=xxGimpxx
 Name[zh_CN]=GIMP
+Name[zh_TW]=GIMP
 X-Exec="%ProgramFiles%/GIMP 2/bin/gimp-2.10.exe" %f
 X-Icon="%ProgramFiles%/GIMP 2/bin/gimp-2.10.exe"
 MimeType=image/jpg;image/raw

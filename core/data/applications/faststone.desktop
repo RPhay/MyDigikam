@@ -15,6 +15,7 @@ Name[tr]=FastStone Image Viewer
 Name[uk]=FastStone Image Viewer
 Name[x-test]=xxFastStone Image Viewerxx
 Name[zh_CN]=FastStone 图像查看器
+Name[zh_TW]=FastStone 影像檢視器
 X-Exec=FSViewer.exe %f
 X-Icon=FSViewer.exe
 MimeType=image/jpg;image/bmp;image/png

@@ -35,6 +35,7 @@ Name[tr]=Kar
 Name[uk]=Сніг
 Name[x-test]=xxSnowxx
 Name[zh_CN]=冰雪
+Name[zh_TW]=雪花
 Comment=A perfect match for your mountain holidays
 Comment[be]=Вельмі пасуе для горнага адпачынку
 Comment[bg]=Перфектно съчетание за вашата почивка в планината
@@ -69,6 +70,7 @@ Comment[tr]=Dağ tatilleriniz için mükemmel bir eşleşme
 Comment[uk]=Прекрасно пасує до вашої відпустки в горах
 Comment[x-test]=xxA perfect match for your mountain holidaysxx
 Comment[zh_CN]=一个完美契合雪山假日美景的主题
+Comment[zh_TW]=非常適合假日上山的照片
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
@@ -107,6 +109,7 @@ Name[tr]=Aurélien Gâteau
 Name[uk]=Aurélien Gâteau
 Name[x-test]=xxAurélien Gâteauxx
 Name[zh_CN]=Aurélien Gâteau
+Name[zh_TW]=Aurélien Gâteau
 Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Preview]
@@ -145,4 +148,5 @@ Name[tr]=Kar
 Name[uk]=Сніг
 Name[x-test]=xxSnowxx
 Name[zh_CN]=冰雪
+Name[zh_TW]=雪花
 Url=preview.png

@@ -72,6 +72,7 @@ Name[tr]=Ayrıntılar
 Name[uk]=Подробиці
 Name[x-test]=xxDetailsxx
 Name[zh_CN]=细节
+Name[zh_TW]=詳細資料
 
 [X-HTMLGallery Author]
 Name=Gianluca Urgese
@@ -109,6 +110,7 @@ Name[tr]=Gianluca Urgese
 Name[uk]=Gianluca Urgese
 Name[x-test]=xxGianluca Urgesexx
 Name[zh_CN]=Gianluca Urgese
+Name[zh_TW]=Gianluca Urgese
 Url=mailto:g.urgese@jaone.it
 
 [X-HTMLGallery Preview]
@@ -145,6 +147,7 @@ Name[tr]=Ayrıntılar ekran görüntüsü
 Name[uk]=Знімок вікна подробиць
 Name[x-test]=xxDetails screenshotxx
 Name[zh_CN]=细节主题的截图
+Name[zh_TW]=詳細資料截圖
 Url=preview.png
 
 [X-HTMLGallery Parameter footer]

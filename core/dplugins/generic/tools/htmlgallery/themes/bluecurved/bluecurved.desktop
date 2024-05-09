@@ -36,6 +36,7 @@ Name[tr]=Mavi eğriler
 Name[uk]=Сині криві
 Name[x-test]=xxBlue curvesxx
 Name[zh_CN]=蓝色曲线
+Name[zh_TW]=藍色曲線
 Comment=A stylised theme
 Comment[be]=Стылізаваная тэма
 Comment[bg]=Стилизирана тема
@@ -71,6 +72,7 @@ Comment[tr]=Stilleştirilmiş bir tema
 Comment[uk]=Стилізована тема
 Comment[x-test]=xxA stylised themexx
 Comment[zh_CN]=一个时尚美观的相册主题
+Comment[zh_TW]=一個很有個性的主題
 
 [X-HTMLGallery Preview]
 Name=Blue curves
@@ -109,6 +111,7 @@ Name[tr]=Mavi eğriler
 Name[uk]=Сині криві
 Name[x-test]=xxBlue curvesxx
 Name[zh_CN]=蓝色曲线
+Name[zh_TW]=藍色曲線
 Url=preview.png
 
 [X-HTMLGallery Author]
@@ -147,6 +150,7 @@ Name[tr]=Vincent Deroo Blanquart
 Name[uk]=Vincent Deroo Blanquart
 Name[x-test]=xxVincent Deroo Blanquartxx
 Name[zh_CN]=Vincent Deroo Blanquart
+Name[zh_TW]=Vincent Deroo Blanquart
 Url=mailto:vincent.deroo@free.fr
 
 [X-HTMLGallery Parameter TitleOfPage]
@@ -186,6 +190,7 @@ Name[tr]=Galeri Tanıtımı
 Name[uk]=Вступ до галереї
 Name[x-test]=xxGallery Introductionxx
 Name[zh_CN]=相册介绍
+Name[zh_TW]=相簿介紹
 Type=caption
 Default=Title of my web gallery
 
@@ -227,6 +232,7 @@ Name[tr]=Satır başına küçük görsel
 Name[uk]=Мініатюр на ряд
 Name[x-test]=xxThumbnails per rowxx
 Name[zh_CN]=每行缩略图
+Name[zh_TW]=每列縮圖數
 Type=int
 Default=4
 Min=1

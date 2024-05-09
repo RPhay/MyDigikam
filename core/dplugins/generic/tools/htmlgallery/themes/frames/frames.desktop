@@ -36,6 +36,7 @@ Name[tr]=Çerçeveler
 Name[uk]=Рамки
 Name[x-test]=xxFramesxx
 Name[zh_CN]=Frames 相框
+Name[zh_TW]=Frames
 Comment=A frame theme
 Comment[be]=Тэма з рамкамі
 Comment[bg]=Тема с рамка
@@ -70,6 +71,7 @@ Comment[tr]=Bir çerçeve teması
 Comment[uk]=Тема рамок
 Comment[x-test]=xxA frame themexx
 Comment[zh_CN]=一个相框主题
+Comment[zh_TW]=一個框架主題
 
 [X-HTMLGallery Author]
 Name=Ruediger Bente
@@ -107,6 +109,7 @@ Name[tr]=Ruediger Bente
 Name[uk]=Ruediger Bente
 Name[x-test]=xxRuediger Bentexx
 Name[zh_CN]=Ruediger Bente
+Name[zh_TW]=Ruediger Bente
 Url=mailto:ruediger.bente@gmx.de
 
 [X-HTMLGallery Preview]
@@ -146,4 +149,5 @@ Name[tr]=Çerçeveler
 Name[uk]=Рамки
 Name[x-test]=xxFramesxx
 Name[zh_CN]=Frames 相框
+Name[zh_TW]=Frames
 Url=preview.png

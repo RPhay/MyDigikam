@@ -15,6 +15,7 @@ Name[tr]=XnView
 Name[uk]=XnView
 Name[x-test]=xxXnViewxx
 Name[zh_CN]=XnView
+Name[zh_TW]=XnView
 X-Exec=%ProgramFiles(x86)%/XnView/xnview.exe %f
 X-Icon=%ProgramFiles(x86)%/XnView/xnview.exe
 MimeType=image/jpg;image/bmp;image/png

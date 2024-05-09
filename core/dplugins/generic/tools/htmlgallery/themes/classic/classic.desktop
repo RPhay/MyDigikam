@@ -37,6 +37,7 @@ Name[tr]=Klasik
 Name[uk]=Класична
 Name[x-test]=xxClassicxx
 Name[zh_CN]=经典
+Name[zh_TW]=經典
 Comment=A port of the old HTML Export plugin theme
 Comment[be]=Порт старой тэмы для экспарту ў HTML
 Comment[bg]=Пренасяне на старата тема на плъгина за износ на HTML
@@ -71,6 +72,7 @@ Comment[tr]=Eski HTML Dışa Aktar eklenti temasının bir aktarımı
 Comment[uk]=Портування старої теми додатка експорту HTML
 Comment[x-test]=xxA port of the old HTML Export plugin themexx
 Comment[zh_CN]=移植自旧版 HTML 导出插件主题
+Comment[zh_TW]=經典 HTML 匯出外掛程式主題的移植
 
 [X-HTMLGallery Preview]
 Name=Classic
@@ -110,6 +112,7 @@ Name[tr]=Klasik
 Name[uk]=Класична
 Name[x-test]=xxClassicxx
 Name[zh_CN]=经典
+Name[zh_TW]=經典
 Url=preview.png
 
 [X-HTMLGallery Author]
@@ -149,6 +152,7 @@ Name[tr]=Aurélien Gâteau
 Name[uk]=Aurélien Gâteau
 Name[x-test]=xxAurélien Gâteauxx
 Name[zh_CN]=Aurélien Gâteau
+Name[zh_TW]=Aurélien Gâteau
 Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter thumbnailPerRow]
@@ -188,6 +192,7 @@ Name[tr]=Satır başına küçük görsel
 Name[uk]=Мініатюр на ряд
 Name[x-test]=xxThumbnails per rowxx
 Name[zh_CN]=每行缩略图
+Name[zh_TW]=每列縮圖數
 Type=int
 Default=4
 Min=1
@@ -233,6 +238,7 @@ Name[tr]=Arka Plan Rengi
 Name[uk]=Колір тла
 Name[x-test]=xxBackground Colorxx
 Name[zh_CN]=背景色
+Name[zh_TW]=背景色
 Type=color
 Default=#333333
 
@@ -276,6 +282,7 @@ Name[tr]=Ön Plan Rengi
 Name[uk]=Колір тексту
 Name[x-test]=xxForeground Colorxx
 Name[zh_CN]=前景色
+Name[zh_TW]=前景色
 Type=color
 Default=#d0ffd0
 
@@ -319,6 +326,7 @@ Name[tr]=Yazıtipi Boyutu
 Name[uk]=Розмір шрифту
 Name[x-test]=xxFont Sizexx
 Name[zh_CN]=字体大小
+Name[zh_TW]=字型大小
 Type=int
 Default=14
 Min=1
@@ -452,6 +460,7 @@ Name[tr]=Bağlantı Rengi
 Name[uk]=Колір посилання
 Name[x-test]=xxLink Colorxx
 Name[zh_CN]=链接颜色
+Name[zh_TW]=連結顏色
 Type=color
 Default=#b3b3b3
 
@@ -492,5 +501,6 @@ Name[tr]=Ziyaret Edilmiş Bağlantı Rengi
 Name[uk]=Колір відвіданого посилання
 Name[x-test]=xxVisited Link Colorxx
 Name[zh_CN]=已访问链接颜色
+Name[zh_TW]=造訪過的連結顏色
 Type=color
 Default=#b3b3b3

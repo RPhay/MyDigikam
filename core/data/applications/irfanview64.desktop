@@ -15,6 +15,7 @@ Name[tr]=IrfanView 64 bit
 Name[uk]=64-бітовий Irfan View
 Name[x-test]=xxIrfan View 64-bitxx
 Name[zh_CN]=Irfan View 64 位
+Name[zh_TW]=Irfan View 64-bit
 X-Exec=%ProgramFiles%/IrfanView/i_view64.exe %f
 X-Icon=%ProgramFiles%/IrfanView/i_view64.exe
 MimeType=image/jpg;image/bmp;image/png
