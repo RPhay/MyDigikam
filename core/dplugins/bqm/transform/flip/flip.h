@@ -33,7 +33,7 @@ class Flip : public BatchTool
 public:
 
     explicit Flip(QObject* const parent = nullptr);
-    ~Flip()                                                 override;
+    ~Flip()                                                 override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -52,7 +52,7 @@ private Q_SLOTS:
 
 private:
 
-    QComboBox* m_comboBox;
+    QComboBox* m_comboBox = nullptr;
 };
 
 } // namespace DigikamBqmFlipPlugin

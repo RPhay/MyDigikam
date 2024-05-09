@@ -36,12 +36,7 @@ namespace DigikamBqmFlipPlugin
 {
 
 Flip::Flip(QObject* const parent)
-    : BatchTool(QLatin1String("Flip"), TransformTool, parent),
-      m_comboBox(nullptr)
-{
-}
-
-Flip::~Flip()
+    : BatchTool(QLatin1String("Flip"), TransformTool, parent)
 {
 }
 

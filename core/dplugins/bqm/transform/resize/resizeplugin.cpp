@@ -37,10 +37,6 @@ ResizePlugin::ResizePlugin(QObject* const parent)
 {
 }
 
-ResizePlugin::~ResizePlugin()
-{
-}
-
 QString ResizePlugin::name() const
 {
     return i18nc("@title", "Resize");
@@ -89,7 +85,7 @@ QList<DPluginAuthor> ResizePlugin::authors() const
                              QString::fromUtf8("(C) 2019"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2022"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 

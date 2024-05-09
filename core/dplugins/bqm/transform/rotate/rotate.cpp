@@ -43,24 +43,17 @@ class Q_DECL_HIDDEN Rotate::Private
 {
 public:
 
-    explicit Private()
-      : CUSTOM_ANGLE(DImg::ROT270 + 1),
-        label       (nullptr),
-        useExif     (nullptr),
-        comboBox    (nullptr),
-        frSettings  (nullptr)
-    {
-    }
+    Private() = default;
 
-    const int             CUSTOM_ANGLE;
+    const int             CUSTOM_ANGLE  = DImg::ROT270 + 1;
 
-    QLabel*               label;
+    QLabel*               label         = nullptr;
 
-    QCheckBox*            useExif;
+    QCheckBox*            useExif       = nullptr;
 
-    DComboBox*            comboBox;
+    DComboBox*            comboBox      = nullptr;
 
-    FreeRotationSettings* frSettings;
+    FreeRotationSettings* frSettings    = nullptr;
 };
 
 Rotate::Rotate(QObject* const parent)

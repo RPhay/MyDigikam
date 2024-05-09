@@ -42,26 +42,18 @@ class Q_DECL_HIDDEN Crop::Private
 {
 public:
 
-    explicit Private()
-      : autoCrop      (nullptr),
-        heightInput   (nullptr),
-        widthInput    (nullptr),
-        xInput        (nullptr),
-        yInput        (nullptr),
-        changeSettings(true)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QCheckBox*    autoCrop;
+    QCheckBox*    autoCrop       = nullptr;
 
-    DIntNumInput* heightInput;
-    DIntNumInput* widthInput;
-    DIntNumInput* xInput;
-    DIntNumInput* yInput;
+    DIntNumInput* heightInput    = nullptr;
+    DIntNumInput* widthInput     = nullptr;
+    DIntNumInput* xInput         = nullptr;
+    DIntNumInput* yInput         = nullptr;
 
-    bool          changeSettings;
+    bool          changeSettings = true;
 };
 
 Crop::Crop(QObject* const parent)

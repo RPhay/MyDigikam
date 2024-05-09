@@ -52,32 +52,23 @@ public:
 
 public:
 
-    explicit Private()
-      : labelPreset   (nullptr),
-        useCustom     (nullptr),
-        scaleDown     (nullptr),
-        usePercent    (nullptr),
-        customLength  (nullptr),
-        presetCBox    (nullptr),
-        changeSettings(true)
-    {
-    }
+    Private() = default;
 
     int presetLengthValue(WidthPreset preset);
 
 public:
 
-    QLabel*       labelPreset;
+    QLabel*       labelPreset       = nullptr;
 
-    QCheckBox*    useCustom;
-    QCheckBox*    scaleDown;
-    QCheckBox*    usePercent;
+    QCheckBox*    useCustom         = nullptr;
+    QCheckBox*    scaleDown         = nullptr;
+    QCheckBox*    usePercent        = nullptr;
 
-    DIntNumInput* customLength;
+    DIntNumInput* customLength      = nullptr;
 
-    QComboBox*    presetCBox;
+    QComboBox*    presetCBox        = nullptr;
 
-    bool          changeSettings;
+    bool          changeSettings    = true;
 };
 
 int Resize::Private::presetLengthValue(WidthPreset preset)
