@@ -37,10 +37,6 @@ TranslatePlugin::TranslatePlugin(QObject* const parent)
 {
 }
 
-TranslatePlugin::~TranslatePlugin()
-{
-}
-
 QString TranslatePlugin::name() const
 {
     return i18nc("@title", "Translate Metadata");
@@ -86,7 +82,7 @@ QList<DPluginAuthor> TranslatePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2021-2022"))
+                             QString::fromUtf8("(C) 2021-2024"))
             ;
 }
 

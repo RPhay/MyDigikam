@@ -35,7 +35,7 @@ class ApplyMetadataPlugin : public DPluginBqm
 public:
 
     explicit ApplyMetadataPlugin(QObject* const parent = nullptr);
-    ~ApplyMetadataPlugin()               override;
+    ~ApplyMetadataPlugin()               override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

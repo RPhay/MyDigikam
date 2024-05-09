@@ -37,10 +37,6 @@ ApplyMetadataPlugin::ApplyMetadataPlugin(QObject* const parent)
 {
 }
 
-ApplyMetadataPlugin::~ApplyMetadataPlugin()
-{
-}
-
 QString ApplyMetadataPlugin::name() const
 {
     return i18nc("@title", "Apply Metadata");

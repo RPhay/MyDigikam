@@ -48,25 +48,17 @@ class Q_DECL_HIDDEN AssignCaptions::Private
 {
 public:
 
-    explicit Private()
-      : setTitles     (nullptr),
-        titlesWidget  (nullptr),
-        setCaptions   (nullptr),
-        captionsWidget(nullptr),
-        cleanupCB     (nullptr),
-        changeSettings(true)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*          setTitles;
-    AltLangStrEdit*     titlesWidget;
+    QCheckBox*          setTitles       = nullptr;
+    AltLangStrEdit*     titlesWidget    = nullptr;
 
-    QCheckBox*          setCaptions;
-    CaptionEdit*        captionsWidget;
+    QCheckBox*          setCaptions     = nullptr;
+    CaptionEdit*        captionsWidget  = nullptr;
 
-    QCheckBox*          cleanupCB;
+    QCheckBox*          cleanupCB       = nullptr;
 
-    bool                changeSettings;
+    bool                changeSettings  = true;
 };
 
 AssignCaptions::AssignCaptions(QObject* const parent)

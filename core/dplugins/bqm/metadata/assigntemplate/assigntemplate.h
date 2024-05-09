@@ -33,7 +33,7 @@ class AssignTemplate : public BatchTool
 public:
 
     explicit AssignTemplate(QObject* const parent = nullptr);
-    ~AssignTemplate()                                       override;
+    ~AssignTemplate()                                       override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -52,8 +52,8 @@ private Q_SLOTS:
 
 private:
 
-    TemplateSelector* m_templateSelector;
-    TemplateViewer*   m_templateViewer;
+    TemplateSelector* m_templateSelector = nullptr;
+    TemplateViewer*   m_templateViewer   = nullptr;
 };
 
 } // namespace DigikamBqmAssignTemplatePlugin

@@ -32,7 +32,7 @@ class TimeAdjust : public BatchTool
 public:
 
     explicit TimeAdjust(QObject* const parent = nullptr);
-    ~TimeAdjust()                                           override;
+    ~TimeAdjust()                                           override = default;
 
     BatchToolSettings defaultSettings()                     override;
 
@@ -51,8 +51,8 @@ private Q_SLOTS:
 
 private:
 
-    TimeAdjustSettings* m_taWidget;
-    int                 m_changeSettings;
+    TimeAdjustSettings* m_taWidget       = nullptr;
+    bool                m_changeSettings = true;
 };
 
 } // namespace DigikamBqmTimeAdjustPlugin

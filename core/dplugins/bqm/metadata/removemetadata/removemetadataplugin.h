@@ -35,7 +35,7 @@ class RemoveMetadataPlugin : public DPluginBqm
 public:
 
     explicit RemoveMetadataPlugin(QObject* const parent = nullptr);
-    ~RemoveMetadataPlugin()              override;
+    ~RemoveMetadataPlugin()              override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

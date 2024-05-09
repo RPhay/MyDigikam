@@ -35,7 +35,7 @@ class TranslatePlugin : public DPluginBqm
 public:
 
     explicit TranslatePlugin(QObject* const parent = nullptr);
-    ~TranslatePlugin()              override;
+    ~TranslatePlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

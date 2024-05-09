@@ -52,17 +52,12 @@ class Q_DECL_HIDDEN QualitySort::Private
 {
 public:
 
-    explicit Private()
-      : qualitySelector(nullptr),
-        imgqsort       (nullptr),
-        changeSettings (true)
-    {
-    }
+    Private() = default;
 
-    ImageQualityConfSelector* qualitySelector;
-    ImageQualityParser*       imgqsort;
+    ImageQualityConfSelector* qualitySelector   = nullptr;
+    ImageQualityParser*       imgqsort          = nullptr;
 
-    bool                      changeSettings;
+    bool                      changeSettings    = true;
 };
 
 QualitySort::QualitySort(QObject* const parent)

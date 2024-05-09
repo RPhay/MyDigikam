@@ -48,27 +48,18 @@ class Q_DECL_HIDDEN AssignLabels::Private
 {
 public:
 
-    explicit Private()
-      : setRating         (nullptr),
-        ratingWidget      (nullptr),
-        setColor          (nullptr),
-        colorLabelSelector(nullptr),
-        setPick           (nullptr),
-        pickLabelSelector (nullptr),
-        changeSettings    (true)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*          setRating;
-    RatingWidget*       ratingWidget;
+    QCheckBox*          setRating           = nullptr;
+    RatingWidget*       ratingWidget        = nullptr;
 
-    QCheckBox*          setColor;
-    ColorLabelSelector* colorLabelSelector;
+    QCheckBox*          setColor            = nullptr;
+    ColorLabelSelector* colorLabelSelector  = nullptr;
 
-    QCheckBox*          setPick;
-    PickLabelSelector*  pickLabelSelector;
+    QCheckBox*          setPick             = nullptr;
+    PickLabelSelector*  pickLabelSelector   = nullptr;
 
-    bool                changeSettings;
+    bool                changeSettings      = true;
 };
 
 AssignLabels::AssignLabels(QObject* const parent)

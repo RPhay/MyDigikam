@@ -35,7 +35,7 @@ class QualitySortPlugin : public DPluginBqm
 public:
 
     explicit QualitySortPlugin(QObject* const parent = nullptr);
-    ~QualitySortPlugin()                 override;
+    ~QualitySortPlugin()                 override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

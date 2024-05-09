@@ -35,7 +35,7 @@ class AssignCaptionsPlugin : public DPluginBqm
 public:
 
     explicit AssignCaptionsPlugin(QObject* const parent = nullptr);
-    ~AssignCaptionsPlugin()              override;
+    ~AssignCaptionsPlugin()              override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -35,7 +35,7 @@ class AssignLabelsPlugin : public DPluginBqm
 public:
 
     explicit AssignLabelsPlugin(QObject* const parent = nullptr);
-    ~AssignLabelsPlugin()                override;
+    ~AssignLabelsPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

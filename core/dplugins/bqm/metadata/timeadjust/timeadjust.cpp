@@ -37,13 +37,7 @@ namespace DigikamBqmTimeAdjustPlugin
 {
 
 TimeAdjust::TimeAdjust(QObject* const parent)
-    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent),
-      m_taWidget      (nullptr),
-      m_changeSettings(true)
-{
-}
-
-TimeAdjust::~TimeAdjust()
+    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent)
 {
 }
 
@@ -329,8 +323,10 @@ bool TimeAdjust::toolOperations()
 
             if      (it.key().startsWith(QLatin1String("Exif.")))
             {
-                if (!prm.updIfAvailable ||
-                    !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
+                if (
+                    !prm.updIfAvailable ||
+                    !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty()
+                   )
                 {
                     meta->setExifTagString(it.key().toLatin1().constData(),
                                            dt.toString(exifDateTimeFormat));
@@ -340,8 +336,10 @@ bool TimeAdjust::toolOperations()
             }
             else if (it.key().startsWith(QLatin1String("Iptc.")))
             {
-                if (!prm.updIfAvailable ||
-                    !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
+                if (
+                    !prm.updIfAvailable ||
+                    !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty()
+                   )
                 {
                     if      (it.key().contains(QLatin1String("Date")))
                     {
@@ -361,8 +359,10 @@ bool TimeAdjust::toolOperations()
             }
             else if (it.key().startsWith(QLatin1String("Xmp.")) && meta->supportXmp())
             {
-                if (!prm.updIfAvailable ||
-                    !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
+                if (
+                    !prm.updIfAvailable ||
+                    !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty()
+                   )
                 {
                     meta->setXmpTagString(it.key().toLatin1().constData(),
                                           dt.toString(xmpDateTimeFormat));

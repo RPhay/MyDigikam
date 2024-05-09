@@ -35,7 +35,7 @@ class AssignTemplatePlugin : public DPluginBqm
 public:
 
     explicit AssignTemplatePlugin(QObject* const parent = nullptr);
-    ~AssignTemplatePlugin()              override;
+    ~AssignTemplatePlugin()              override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

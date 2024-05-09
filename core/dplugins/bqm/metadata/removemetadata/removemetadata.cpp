@@ -59,26 +59,17 @@ public:
 
 public:
 
-    explicit Private()
-      : removeExif      (nullptr),
-        removeIptc      (nullptr),
-        removeXmp       (nullptr),
-        exifComboBox    (nullptr),
-        iptcComboBox    (nullptr),
-        xmpComboBox     (nullptr),
-        changeSettings  (true)
-    {
-    }
+    Private() = default;
 
-    QCheckBox* removeExif;
-    QCheckBox* removeIptc;
-    QCheckBox* removeXmp;
+    QCheckBox* removeExif       = nullptr;
+    QCheckBox* removeIptc       = nullptr;
+    QCheckBox* removeXmp        = nullptr;
 
-    QComboBox* exifComboBox;
-    QComboBox* iptcComboBox;
-    QComboBox* xmpComboBox;
+    QComboBox* exifComboBox     = nullptr;
+    QComboBox* iptcComboBox     = nullptr;
+    QComboBox* xmpComboBox      = nullptr;
 
-    bool       changeSettings;
+    bool       changeSettings   = true;
 };
 
 RemoveMetadata::RemoveMetadata(QObject* const parent)
@@ -104,18 +95,18 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeExif            = new QCheckBox(i18nc("@title", "Exif:"), panel);
     d->exifComboBox          = new QComboBox(panel);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Completely"),              Private::ALL);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Date"),                    Private::DATE);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "GPS"),                     Private::GPS);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "XPKeywords"),              Private::XPKEYWORDS);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Comment and description"), Private::COMMENT);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Completely"),                     Private::ALL);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Date"),                           Private::DATE);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "GPS"),                            Private::GPS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "XPKeywords"),                     Private::XPKEYWORDS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Comment and description"),        Private::COMMENT);
 
     d->removeIptc            = new QCheckBox(i18nc("@title", "Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"),    Private::ALL);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),          Private::DATE);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Caption"),       Private::COMMENT);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Preview image"), Private::PREVIEW);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"),                     Private::ALL);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),                           Private::DATE);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Caption"),                        Private::COMMENT);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Preview image"),                  Private::PREVIEW);
 
     d->removeXmp             = new QCheckBox(i18nc("@title", "Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);

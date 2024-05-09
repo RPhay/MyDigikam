@@ -53,29 +53,19 @@ public:
 
 public:
 
-    explicit Private()
-      : titleCB       (nullptr),
-        captionCB     (nullptr),
-        copyrightsCB  (nullptr),
-        usageTermsCB  (nullptr),
-        trLabel       (nullptr),
-        tagsLabel     (nullptr),
-        trSelectorList(nullptr),
-        changeSettings(true)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*            titleCB;
-    QCheckBox*            captionCB;
-    QCheckBox*            copyrightsCB;
-    QCheckBox*            usageTermsCB;
+    QCheckBox*            titleCB           = nullptr;
+    QCheckBox*            captionCB         = nullptr;
+    QCheckBox*            copyrightsCB      = nullptr;
+    QCheckBox*            usageTermsCB      = nullptr;
 
-    QLabel*               trLabel;
-    QLabel*               tagsLabel;
+    QLabel*               trLabel           = nullptr;
+    QLabel*               tagsLabel         = nullptr;
 
-    LocalizeSelectorList* trSelectorList;
+    LocalizeSelectorList* trSelectorList    = nullptr;
 
-    bool                  changeSettings;
+    bool                  changeSettings    = true;
 };
 
 Translate::Translate(QObject* const parent)

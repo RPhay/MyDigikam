@@ -37,10 +37,6 @@ AssignCaptionsPlugin::AssignCaptionsPlugin(QObject* const parent)
 {
 }
 
-AssignCaptionsPlugin::~AssignCaptionsPlugin()
-{
-}
-
 QString AssignCaptionsPlugin::name() const
 {
     return i18nc("@title", "Assign Captions");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> AssignCaptionsPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2021-2022"))
+                             QString::fromUtf8("(C) 2021-2024"))
             ;
 }
 
