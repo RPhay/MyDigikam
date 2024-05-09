@@ -191,6 +191,11 @@ DIGIKAM_EXPORT QString toolButtonStyleSheet();
 DIGIKAM_EXPORT bool isRunningInAppImageBundle();
 
 /**
+ * Return true if application run on native KDE desktop.
+ */
+DIGIKAM_EXPORT bool isRunningNativeKDE();
+
+/**
  * If digiKam run into AppImage, return a cleaned environment for QProcess to execute a
  * program outside the bundle without broken run-time dependencies.
  * Use case : system based Hugin CLI tools called by Panorama wizard.

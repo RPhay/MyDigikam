@@ -32,6 +32,23 @@ bool isRunningInAppImageBundle()
     return false;
 }
 
+bool isRunningNativeKDE()
+{
+
+#ifdef Q_OS_LINUX
+
+    const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
+
+    return (!isRunningInAppImageBundle() && (xdgCurrentDesktop.toUpper() == "KDE"));
+
+#else
+
+    return false;
+
+#endif
+
+}
+
 QProcessEnvironment adjustedEnvironmentForAppImage()
 {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
