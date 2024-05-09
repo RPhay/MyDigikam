@@ -60,62 +60,37 @@ class Q_DECL_HIDDEN InsertTextTool::Private
 {
 public:
 
-    explicit Private()
-      : alignTextMode       (0),
-        defaultSizeFont     (0),
-        borderText          (nullptr),
-        transparentText     (nullptr),
-        alignButtonGroup    (nullptr),
-        textRotation        (nullptr),
-        textOpacity         (nullptr),
-        fontColorButton     (nullptr),
-        fontChooserWidget   (nullptr),
-        textEdit            (nullptr),
-        previewWidget       (nullptr),
-        gboxSettings        (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configTextRotationEntry;
-    static const QString configFontColorEntry;
-    static const QString configTextOpacity;
-    static const QString configTextStringEntry;
-    static const QString configFontPropertiesEntry;
-    static const QString configTextAlignmentEntry;
-    static const QString configBorderTextEntry;
-    static const QString configTransparentTextEntry;
-    static const QString configPositionHintEntry;
+    const QString configGroupName               = QLatin1String("inserttext Tool");
+    const QString configTextRotationEntry       = QLatin1String("Text Rotation");
+    const QString configFontColorEntry          = QLatin1String("Font Color");
+    const QString configTextOpacity             = QLatin1String("Text Opacity");
+    const QString configTextStringEntry         = QLatin1String("Enter your text here.");
+    const QString configFontPropertiesEntry     = QLatin1String("Font Properties");
+    const QString configTextAlignmentEntry      = QLatin1String("Text Alignment");
+    const QString configBorderTextEntry         = QLatin1String("Border Text");
+    const QString configTransparentTextEntry    = QLatin1String("Transparent Text");
+    const QString configPositionHintEntry       = QLatin1String("Position Hint");
 
-    int                  alignTextMode;
-    int                  defaultSizeFont;
+    int                  alignTextMode          = 0;
+    int                  defaultSizeFont        = 0;
 
-    QCheckBox*           borderText;
-    QCheckBox*           transparentText;
+    QCheckBox*           borderText             = nullptr;
+    QCheckBox*           transparentText        = nullptr;
 
-    QButtonGroup*        alignButtonGroup;
+    QButtonGroup*        alignButtonGroup       = nullptr;
     QFont                textFont;
 
-    QComboBox*           textRotation;
-    DIntNumInput*        textOpacity;
-    DColorSelector*      fontColorButton;
-    DFontProperties*     fontChooserWidget;
-    DTextEdit*           textEdit;
+    QComboBox*           textRotation           = nullptr;
+    DIntNumInput*        textOpacity            = nullptr;
+    DColorSelector*      fontColorButton        = nullptr;
+    DFontProperties*     fontChooserWidget      = nullptr;
+    DTextEdit*           textEdit               = nullptr;
 
-    InsertTextWidget*    previewWidget;
-    EditorToolSettings*  gboxSettings;
+    InsertTextWidget*    previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString InsertTextTool::Private::configGroupName(QLatin1String("inserttext Tool"));
-const QString InsertTextTool::Private::configTextRotationEntry(QLatin1String("Text Rotation"));
-const QString InsertTextTool::Private::configFontColorEntry(QLatin1String("Font Color"));
-const QString InsertTextTool::Private::configTextOpacity(QLatin1String("Text Opacity"));
-const QString InsertTextTool::Private::configTextStringEntry(QLatin1String("Enter your text here."));
-const QString InsertTextTool::Private::configFontPropertiesEntry(QLatin1String("Font Properties"));
-const QString InsertTextTool::Private::configTextAlignmentEntry(QLatin1String("Text Alignment"));
-const QString InsertTextTool::Private::configBorderTextEntry(QLatin1String("Border Text"));
-const QString InsertTextTool::Private::configTransparentTextEntry(QLatin1String("Transparent Text"));
-const QString InsertTextTool::Private::configPositionHintEntry(QLatin1String("Position Hint"));
 
 // --------------------------------------------------------
 
@@ -385,29 +360,39 @@ void InsertTextTool::slotAlignModeChanged(int mode)
     switch (d->alignTextMode)
     {
         case InsertTextWidget::ALIGN_LEFT:
+        {
             d->textEdit->setAlignment(Qt::AlignLeft);
             break;
+        }
 
         case InsertTextWidget::ALIGN_RIGHT:
+        {
             d->textEdit->setAlignment(Qt::AlignRight);
             break;
+        }
 
         case InsertTextWidget::ALIGN_CENTER:
+        {
             d->textEdit->setAlignment(Qt::AlignHCenter);
             break;
+        }
 
         case InsertTextWidget::ALIGN_BLOCK:
+        {
             d->textEdit->setAlignment(Qt::AlignJustify);
             break;
+        }
     }
 
     d->textEdit->textCursor().clearSelection();
+
     Q_EMIT signalUpdatePreview();
 }
 
 void InsertTextTool::slotFontPropertiesChanged(const QFont& font)
 {
     d->textFont = font;
+
     Q_EMIT signalUpdatePreview();
 }
 

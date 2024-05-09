@@ -43,19 +43,13 @@ class Q_DECL_HIDDEN BorderTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName(QLatin1String("border Tool")),
-        gboxSettings   (nullptr),
-        previewWidget  (nullptr),
-        settingsView   (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString       configGroupName;
+    const QString       configGroupName = QLatin1String("border Tool");
 
-    EditorToolSettings* gboxSettings;
-    ImageGuideWidget*   previewWidget;
-    BorderSettings*     settingsView;
+    EditorToolSettings* gboxSettings    = nullptr;
+    ImageGuideWidget*   previewWidget   = nullptr;
+    BorderSettings*     settingsView    = nullptr;
 };
 
 BorderTool::BorderTool(QObject* const parent)

@@ -35,7 +35,7 @@ class BorderToolPlugin : public DPluginEditor
 public:
 
     explicit BorderToolPlugin(QObject* const parent = nullptr);
-    ~BorderToolPlugin()                  override;
+    ~BorderToolPlugin()                  override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

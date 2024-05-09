@@ -44,19 +44,13 @@ class Q_DECL_HIDDEN TextureTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName(QLatin1String("texture Tool")),
-        settingsView   (nullptr),
-        previewWidget  (nullptr),
-        gboxSettings   (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString       configGroupName;
+    const QString       configGroupName = QLatin1String("texture Tool");
 
-    TextureSettings*    settingsView;
-    ImageRegionWidget*  previewWidget;
-    EditorToolSettings* gboxSettings;
+    TextureSettings*    settingsView    = nullptr;
+    ImageRegionWidget*  previewWidget   = nullptr;
+    EditorToolSettings* gboxSettings    = nullptr;
 };
 
 // --------------------------------------------------------

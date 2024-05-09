@@ -75,9 +75,9 @@ public:
 public:
 
     explicit InsertTextWidget(int w, int h, QWidget* const parent = nullptr);
-    ~InsertTextWidget() override;
+    ~InsertTextWidget()                       override;
 
-    ImageIface* imageIface() const;
+    ImageIface* imageIface()            const;
     DImg        makeInsertText();
 
     /** Set background color for pixmap
@@ -90,15 +90,15 @@ public:
     void   resetEdit();
 
     void  setPositionHint(const QRect& hint);
-    QRect getPositionHint() const;
+    QRect getPositionHint()             const;
 
 protected:
 
-    void paintEvent(QPaintEvent*)           override;
-    void resizeEvent(QResizeEvent*)         override;
-    void mousePressEvent(QMouseEvent*)      override;
-    void mouseReleaseEvent(QMouseEvent*)    override;
-    void mouseMoveEvent(QMouseEvent*)       override;
+    void paintEvent(QPaintEvent*)             override;
+    void resizeEvent(QResizeEvent*)           override;
+    void mousePressEvent(QMouseEvent*)        override;
+    void mouseReleaseEvent(QMouseEvent*)      override;
+    void mouseMoveEvent(QMouseEvent*)         override;
 
     void makePixmap();
     QRect composeImage(DImg* const image, QPainter* const destPainter,

@@ -35,7 +35,7 @@ class TextureToolPlugin : public DPluginEditor
 public:
 
     explicit TextureToolPlugin(QObject* const parent = nullptr);
-    ~TextureToolPlugin()                 override;
+    ~TextureToolPlugin()                 override = default;
 
     QString name()                 const override;
     QString iid()                  const override;
