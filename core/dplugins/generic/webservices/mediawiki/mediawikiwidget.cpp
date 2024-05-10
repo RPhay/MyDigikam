@@ -59,91 +59,54 @@ class Q_DECL_HIDDEN MediaWikiWidget::Private
 {
 public:
 
-    explicit Private()
-    {
-        fileBox            = nullptr;
-        titleEdit          = nullptr;
-        descEdit           = nullptr;
-        dateEdit           = nullptr;
-        longitudeEdit      = nullptr;
-        latitudeEdit       = nullptr;
-        categoryEdit       = nullptr;
-        loginHeaderLbl     = nullptr;
-        nameEdit           = nullptr;
-        passwdEdit         = nullptr;
-        newWikiSv          = nullptr;
-        newWikiNameEdit    = nullptr;
-        newWikiUrlEdit     = nullptr;
-        wikiSelect         = nullptr;
-        authorEdit         = nullptr;
-        sourceEdit         = nullptr;
-        genCatEdit         = nullptr;
-        genTxtEdit         = nullptr;
-        genComEdit         = nullptr;
-        headerLbl          = nullptr;
-        wikiNameDisplayLbl = nullptr;
-        userNameDisplayLbl = nullptr;
-        changeUserBtn      = nullptr;
-        resizeChB          = nullptr;
-        dimensionSpB       = nullptr;
-        imageQualitySpB    = nullptr;
-        removeMetaChB      = nullptr;
-        removeGeoChB       = nullptr;
-        licenseComboBox    = nullptr;
-        progressBar        = nullptr;
-        iface              = nullptr;
-        imgList            = nullptr;
-        defaultMessage     = i18nc("@info", "Select an image");
-        loginGBox          = nullptr;
-        userGBox           = nullptr;
-    }
+    Private() = default;
 
-    QWidget*                                 fileBox;
-    DTextEdit*                               titleEdit;
-    DTextEdit*                               descEdit;
-    QLineEdit*                               dateEdit;
-    QLineEdit*                               longitudeEdit;
-    QLineEdit*                               latitudeEdit;
-    DTextEdit*                               categoryEdit;
+    QWidget*                                 fileBox            = nullptr;
+    DTextEdit*                               titleEdit          = nullptr;
+    DTextEdit*                               descEdit           = nullptr;
+    QLineEdit*                               dateEdit           = nullptr;
+    QLineEdit*                               longitudeEdit      = nullptr;
+    QLineEdit*                               latitudeEdit       = nullptr;
+    DTextEdit*                               categoryEdit       = nullptr;
 
-    QLabel*                                  loginHeaderLbl;
-    QLineEdit*                               nameEdit;
-    QLineEdit*                               passwdEdit;
-    QScrollArea*                             newWikiSv;
-    QLineEdit*                               newWikiNameEdit;
-    QLineEdit*                               newWikiUrlEdit;
-    QComboBox*                               wikiSelect;
+    QLabel*                                  loginHeaderLbl     = nullptr;
+    QLineEdit*                               nameEdit           = nullptr;
+    QLineEdit*                               passwdEdit         = nullptr;
+    QScrollArea*                             newWikiSv          = nullptr;
+    QLineEdit*                               newWikiNameEdit    = nullptr;
+    QLineEdit*                               newWikiUrlEdit     = nullptr;
+    QComboBox*                               wikiSelect         = nullptr;
 
-    QLineEdit*                               authorEdit;
-    QLineEdit*                               sourceEdit;
+    QLineEdit*                               authorEdit         = nullptr;
+    QLineEdit*                               sourceEdit         = nullptr;
 
-    DTextEdit*                               genCatEdit;
-    DTextEdit*                               genTxtEdit;
-    DTextEdit*                               genComEdit;
+    DTextEdit*                               genCatEdit         = nullptr;
+    DTextEdit*                               genTxtEdit         = nullptr;
+    DTextEdit*                               genComEdit         = nullptr;
 
-    QLabel*                                  headerLbl;
-    QLabel*                                  wikiNameDisplayLbl;
-    QLabel*                                  userNameDisplayLbl;
-    QPushButton*                             changeUserBtn;
+    QLabel*                                  headerLbl          = nullptr;
+    QLabel*                                  wikiNameDisplayLbl = nullptr;
+    QLabel*                                  userNameDisplayLbl = nullptr;
+    QPushButton*                             changeUserBtn      = nullptr;
 
-    QCheckBox*                               resizeChB;
-    QSpinBox*                                dimensionSpB;
-    QSpinBox*                                imageQualitySpB;
-    QCheckBox*                               removeMetaChB;
-    QCheckBox*                               removeGeoChB;
-    QComboBox*                               licenseComboBox;
+    QCheckBox*                               resizeChB          = nullptr;
+    QSpinBox*                                dimensionSpB       = nullptr;
+    QSpinBox*                                imageQualitySpB    = nullptr;
+    QCheckBox*                               removeMetaChB      = nullptr;
+    QCheckBox*                               removeGeoChB       = nullptr;
+    QComboBox*                               licenseComboBox    = nullptr;
 
-    QGroupBox*                               loginGBox;
-    QGroupBox*                               userGBox;
+    QGroupBox*                               loginGBox          = nullptr;
+    QGroupBox*                               userGBox           = nullptr;
 
-    DProgressWdg*                            progressBar;
-    DInfoInterface*                          iface;
-    DItemsList*                              imgList;
+    DProgressWdg*                            progressBar        = nullptr;
+    DInfoInterface*                          iface              = nullptr;
+    DItemsList*                              imgList            = nullptr;
 
     QStringList                              WikisHistory;
     QStringList                              UrlsHistory;
 
-    QString                                  defaultMessage;
+    QString                                  defaultMessage     = i18nc("@info", "Select an image");
 
     QMap <QString, QMap <QString, QString> > imagesDescInfo;
 };
@@ -610,7 +573,10 @@ void MediaWikiWidget::readSettings(KConfigGroup& group)
     d->WikisHistory = group.readEntry("Wikis history",         QStringList());
     d->UrlsHistory  = group.readEntry("Urls history",          QStringList());
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UrlHistory.size: " << d->UrlsHistory.size() << "; WikisHistory.size:" << d->WikisHistory.size();
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UrlHistory.size: "
+                                     << d->UrlsHistory.size()
+                                     << "; WikisHistory.size:"
+                                     << d->WikisHistory.size();
 
     for (int i = 0 ; i < d->UrlsHistory.size() && i < d->WikisHistory.size() ; ++i)
     {
@@ -804,10 +770,12 @@ void MediaWikiWidget::clearEditFields()
 void MediaWikiWidget::slotLoadImagesDesc(QTreeWidgetItem* item)
 {
     QList<QTreeWidgetItem*> selectedItems = d->imgList->listView()->selectedItems();
-    DItemsListViewItem* const l_item     = dynamic_cast<DItemsListViewItem*>(item);
+    DItemsListViewItem* const l_item      = dynamic_cast<DItemsListViewItem*>(item);
 
     if (!l_item)
+    {
         return;
+    }
 
     QMap<QString, QString> imageMetaData;
 
@@ -871,7 +839,9 @@ void MediaWikiWidget::slotRestoreExtension()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -917,7 +887,9 @@ void MediaWikiWidget::slotApplyTitle()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -957,7 +929,9 @@ void MediaWikiWidget::slotApplyDate()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -979,7 +953,9 @@ void MediaWikiWidget::slotApplyCategories()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -1001,7 +977,9 @@ void MediaWikiWidget::slotApplyDescription()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -1024,7 +1002,9 @@ void MediaWikiWidget::slotApplyLatitude()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)
@@ -1046,7 +1026,9 @@ void MediaWikiWidget::slotApplyLongitude()
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
+        {
             urls.append(l_item->url());
+        }
     }
 
     for (int i = 0 ; i < urls.size() ; ++i)

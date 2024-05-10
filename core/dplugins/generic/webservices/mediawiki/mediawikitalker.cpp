@@ -46,15 +46,11 @@ class Q_DECL_HIDDEN MediaWikiTalker::Private
 {
 public:
 
-    explicit Private()
-    {
-        interface = nullptr;
-        MediaWiki = nullptr;
-    }
+    Private() = default;
 
     QList<QUrl>                              urls;
-    DInfoInterface*                          interface;
-    Iface*                                   MediaWiki;
+    DInfoInterface*                          interface      = nullptr;
+    Iface*                                   MediaWiki      = nullptr;
     QString                                  error;
     QString                                  currentFile;
     QMap <QString, QMap <QString, QString> > imageDesc;
@@ -96,6 +92,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
     if (j != nullptr)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Upload error" << j->error() << j->errorString() << j->errorText();
+
         Q_EMIT signalUploadProgress(100);
 
         disconnect(j, SIGNAL(result(KJob*)),
@@ -258,6 +255,7 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 void MediaWikiTalker::slotUploadProgress(KJob* job, unsigned long percent)
 {
     Q_UNUSED(job)
+
     Q_EMIT signalUploadProgress((int)percent);
 }
 

@@ -37,7 +37,7 @@ class MediaWikiPlugin : public DPluginGeneric
 public:
 
     explicit MediaWikiPlugin(QObject* const parent = nullptr);
-    ~MediaWikiPlugin()                   override;
+    ~MediaWikiPlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

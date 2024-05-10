@@ -63,13 +63,7 @@ class Q_DECL_HIDDEN MediaWikiWindow::Private
 {
 public:
 
-    explicit Private()
-    {
-        widget       = nullptr;
-        MediaWiki    = nullptr;
-        iface        = nullptr;
-        uploadTalker = nullptr;
-    }
+    Private() = default;
 
     QString          tmpDir;
     QString          tmpPath;
@@ -78,10 +72,10 @@ public:
     QString          wikiName;
     QUrl             wikiUrl;
 
-    MediaWikiWidget* widget;
-    Iface*           MediaWiki;
-    DInfoInterface*  iface;
-    MediaWikiTalker* uploadTalker;
+    MediaWikiWidget* widget         = nullptr;
+    Iface*           MediaWiki      = nullptr;
+    DInfoInterface*  iface          = nullptr;
+    MediaWikiTalker* uploadTalker   = nullptr;
 };
 
 MediaWikiWindow::MediaWikiWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
@@ -216,7 +210,7 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
 
         int maxDim = d->widget->dimension();
 
-        if (d->widget->resize() && (image.width() > maxDim || image.height() > maxDim))
+        if (d->widget->resize() && ((image.width() > maxDim) || (image.height() > maxDim)))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Resizing to" << maxDim;
             image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
@@ -228,6 +222,7 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
     else
     {
         // file is copied with its embedded metadata
+
         if (!DFileOperations::copyFile(imgPath, d->tmpPath))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "File copy error from:" << imgPath << "to" << d->tmpPath;
@@ -367,12 +362,11 @@ bool MediaWikiWindow::eventFilter(QObject* /*obj*/, QEvent* event)
     {
         QKeyEvent* const c = dynamic_cast<QKeyEvent *>(event);
 
-        if (c && c->key() == Qt::Key_Return)
+        if (c && (c->key() == Qt::Key_Return))
         {
             event->ignore();
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Key event pass";
             return false;
-
         }
     }
 

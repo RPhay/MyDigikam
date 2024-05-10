@@ -34,10 +34,6 @@ MediaWikiPlugin::MediaWikiPlugin(QObject* const parent)
 {
 }
 
-MediaWikiPlugin::~MediaWikiPlugin()
-{
-}
-
 void MediaWikiPlugin::cleanUp()
 {
     delete m_toolDlg;
@@ -94,7 +90,7 @@ QList<DPluginAuthor> MediaWikiPlugin::authors() const
                              QString::fromUtf8("(C) 2013"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2011-2021"))
+                             QString::fromUtf8("(C) 2011-2024"))
             ;
 }
 
