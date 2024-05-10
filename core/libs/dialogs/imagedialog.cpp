@@ -105,9 +105,9 @@ bool ImageDialog::acceptToolTip(const QUrl& url) const
     {
         QFileInfo info(url.toLocalFile());
 
-        if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+        if (info.isFile() && !info.isSymLink() && !info.isRoot())
         {
-            return true;
+            return (!info.absoluteFilePath().isEmpty());
         }
     }
 
