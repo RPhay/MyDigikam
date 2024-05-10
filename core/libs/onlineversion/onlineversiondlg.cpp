@@ -70,8 +70,10 @@ public:
 
     QString                curVersion;
     QDateTime              curBuildDt;
-    QDateTime              onlineDt;         ///< Build date for pre-release only.
-    QString                newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
+
+    QDateTime              onlineDt;        ///< Build date for pre-release only.
+    QString                newVersion;      ///< For stable => version IDs ; for pre-release => build ISO date.
+
     QProgressBar*          bar              = nullptr;
     QLabel*                label            = nullptr;
     QWidget*               stats            = nullptr;

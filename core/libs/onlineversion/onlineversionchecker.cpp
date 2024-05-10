@@ -161,6 +161,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
        )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
+
         Q_EMIT signalNewVersionCheckError(reply->errorString());
 
         return;

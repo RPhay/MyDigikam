@@ -198,8 +198,10 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     reply->deleteLater();
     d->reply = nullptr;
 
-    if ((reply->error() != QNetworkReply::NoError)             &&
-        (reply->error() != QNetworkReply::InsecureRedirectError))
+    if (
+        (reply->error() != QNetworkReply::NoError)             &&
+        (reply->error() != QNetworkReply::InsecureRedirectError)
+       )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
         Q_EMIT signalDownloadError(reply->errorString());
@@ -209,9 +211,11 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
 
     QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 
-    if (redirectUrl.isValid()         &&
+    if (
+        redirectUrl.isValid()         &&
         (reply->url() != redirectUrl) &&
-        (d->redirects < 10))
+        (d->redirects < 10)
+       )
     {
         download(redirectUrl);
 
@@ -260,6 +264,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if (data.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded file is empty";
+
         Q_EMIT signalDownloadError(i18n("Downloaded file is empty."));
 
         return;
@@ -292,6 +297,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if (d->checksums != hash)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Checksums error";
+
         Q_EMIT signalDownloadError(i18n("Checksums error."));
 
         return;
@@ -319,6 +325,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open " << path;
+
         Q_EMIT signalDownloadError(i18n("Cannot open target file."));
     }
 }
