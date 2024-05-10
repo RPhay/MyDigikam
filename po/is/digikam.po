@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 01:50+0000\n"
-"PO-Revision-Date: 2024-02-05 11:46+0000\n"
+"POT-Creation-Date: 2024-05-10 01:43+0000\n"
+"PO-Revision-Date: 2024-05-09 09:44+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1370,6 +1370,9 @@ msgid ""
 "correctly. Go to the digiKam settings and check the availability of the "
 "ExifTool binary file in the metadata section."
 msgstr ""
+"ExifTool er ekki tiltækt í digiKam-uppsetningunni þinni eða er ekki að virka "
+"rétt. Farðu í stillingar digiKam og athugaðu í lýsigagnahlutanum hvort "
+"keyrsluskrár ExifTool séu aðgengilegar."
 
 #: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -1515,17 +1518,15 @@ msgid "Images found in %1"
 msgstr "Myndir fundust í %1"
 
 #: core/app/main/digikamapp_config.cpp:119
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Þú hefur valið ljóst litastef. Við skiptum yfir í dökkt táknmyndaþema. "
-"Táknmyndaþeman verður tiltæk eftir að digiKam hefur verið endurræst."
+"Við skiptum yfir í táknmyndaþema kerfisins. Litir táknmyndanna verða "
+"aðlagaðir sjálfvirkt á Plasma 6 skjáborðum. Táknmyndaþeman verður tiltæk "
+"eftir að digiKam hefur verið endurræst."
 
 #: core/app/main/digikamapp_config.cpp:135
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -4353,7 +4354,7 @@ msgstr "LibOpenCV"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
-msgstr ""
+msgstr "Qt SQL reklar"
 
 #: core/app/views/utils/componentsinfodlg.cpp:198
 #, kde-format
@@ -4386,10 +4387,9 @@ msgstr "Myndmerkisafkóðarar"
 #: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
 #: core/libs/dialogs/libsinfodlg.cpp:626
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "no entry"
-msgstr "Land"
+msgstr "engin færsla"
 
 #: core/app/views/utils/componentsinfodlg.cpp:234
 #, kde-format
@@ -4416,38 +4416,38 @@ msgid "Supported Extensions"
 msgstr "Studdar skráarending"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:109
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:253
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
 #, kde-format
 msgid "Auto Levels"
 msgstr "Sjálfvirk tíðnidreifing"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:117
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:259
 #, kde-format
 msgid "Normalize"
 msgstr "Samræma"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:265
 #, kde-format
 msgid "Equalize"
 msgstr "Jafna"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:139
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:271
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
 #, kde-format
 msgid "Stretch Contrast"
 msgstr "Teygja birtuskil"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
 #, kde-format
 msgid "Auto Exposure"
@@ -4461,14 +4461,14 @@ msgid "Filter:"
 msgstr "Sía:"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
 msgstr "Sjálfvirk litleiðrétting"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix colors automatically"
@@ -4485,14 +4485,14 @@ msgstr ""
 "myndum.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
 msgstr "BCG-litleiðrétting"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
@@ -4515,7 +4515,7 @@ msgid "Black and White Convert"
 msgstr "Umbreyta í svarthvítt"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
@@ -4532,14 +4532,14 @@ msgstr ""
 "</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
 msgstr "Rásablandari"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
@@ -4556,8 +4556,8 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
-#: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:222
+#: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
+#: core/dplugins/editor/colors/film/filmtool.cpp:194
 #, kde-format
 msgid "Color Balance"
 msgstr "Litavægi"
@@ -4568,14 +4568,14 @@ msgid "Adjust color balance."
 msgstr "Stilla litajafnvægi."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Color Balance"
 msgstr "Litavægi"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
@@ -4608,7 +4608,7 @@ msgid "Convert to 8 bits"
 msgstr "Umbreyta í 8 bita"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:56
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
@@ -4625,14 +4625,14 @@ msgstr ""
 "bita.</para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
 msgstr "Umbreyta í 16 bita"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
@@ -4710,7 +4710,7 @@ msgid "Load all parameters from settings text file."
 msgstr "Hlaða inn öllum gildum úr textaskrá."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
@@ -4727,14 +4727,14 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
 msgstr "HSL-birtuleiðrétting"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
@@ -4751,7 +4751,7 @@ msgstr ""
 "ljósleika í myndum.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Color Profile Conversion"
@@ -4774,14 +4774,14 @@ msgstr ""
 "litrýmd</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Invert Colors"
 msgstr "Snúa við litum"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
@@ -4797,14 +4797,14 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "White Balance"
 msgstr "Hvítvægi"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
@@ -5286,7 +5286,7 @@ msgstr ""
 "eiginleika í digiKam.</para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Add Border"
@@ -5707,13 +5707,13 @@ msgstr ""
 "hornskyggingu (vignetting) í myndum.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:77
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
 msgstr "Mýking:"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:57
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:81
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:74
 #, kde-format
 msgid ""
 "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -5742,14 +5742,14 @@ msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur gert myndir móskulegar.</para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "Skemmdir dílar"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix hot pixels"
@@ -5765,8 +5765,8 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Sjálfvirk aðlögun linsu"
@@ -5793,14 +5793,14 @@ msgstr ""
 "linsuskekkjur"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction"
 msgstr "Sjálfvirk aðlögun linsu"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
@@ -5817,14 +5817,14 @@ msgstr ""
 "linsutruflanir í myndum.</para>"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Local Contrast"
 msgstr "Staðbundin birtuskil"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
@@ -5841,14 +5841,14 @@ msgstr ""
 "(tone mapping) í myndum.</para>"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "Truflanasía"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
@@ -5871,7 +5871,7 @@ msgid "Red Eye Correction"
 msgstr "Laga rauð augu"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
@@ -5888,26 +5888,26 @@ msgstr ""
 "para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:119
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "Heimsækja vefsvæði CImg forritasafns"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:124
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "Minnka reglubundar truflanir"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:125
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "Minnka JPEG aukamyndanir"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "Minnka mynstur"
@@ -5931,7 +5931,7 @@ msgstr ""
 "p>"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Restoration"
@@ -6024,61 +6024,54 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Veldu mynd eða JSON-skrá studda af ExifTool til að beita lýsigögnum "
+"skrárinnar á myndirnar."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "Virkja lýsigögn: Engin mynd eða JSON-skrá valin."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Virkja lýsigögn: ExifTool er ekki tiltækt."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
-msgstr ""
+msgstr "Virkja lýsigögn: Skráarheiti er ekki til staðar í JSON-skrá."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Beita forsniði lýsigagna"
+msgstr "Virkja lýsigögn: ExifTool tilkynnti villu."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "Vista lýsigögn"
+msgstr "Virkja lýsigögn"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "Verkfæri til að setja forsnið lýsigagna á myndir"
+msgstr "Verkfæri til að virkja lýsigögn úr mynd eða JSON-skrá með ExifTool"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
-"<para>Þetta verkfæri magnvinnslustjórans getur virkjað sniðmát fyrir "
-"lýsigögn á myndir.</para>"
+"<para>Þetta verkfæri magnvinnslustjórans getur virkjað lýsigögn úr mynd eða "
+"JSON-skrá með ExifTool.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:89
 #, kde-format
@@ -6223,28 +6216,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "kind of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6285,12 +6257,10 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
 #: core/utilities/maintenance/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
-msgstr "Þýða yfir á:"
+msgstr "Þýða merki yfir á:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -6446,27 +6416,22 @@ msgid "Date"
 msgstr "Dagsetning"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "digiKam eiginleikar"
+msgstr "digiKam alveg"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr "Ferill myndar í DigiKam"
+msgstr "Ferill myndar í digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Forskoðun myndar"
+msgstr "digiKam-forskoðun myndar"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
@@ -6487,9 +6452,7 @@ msgid "Video"
 msgstr "Myndskeið"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Skýringatexti, athugasemd og lýsing"
@@ -7622,110 +7585,110 @@ msgstr "Tagged Image Format"
 msgid "Adjust Curve"
 msgstr "Laga litferil"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:44
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Adjust Curves"
 msgstr "Laga litferla"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:64
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað litferla í myndum."
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Laga litferla..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
-#: core/dplugins/editor/colors/film/filmtool.cpp:183
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/film/filmtool.cpp:155
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
 "image."
 msgstr "Þetta er litatíðni valinnar litrásar í upprunalegu myndinni."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Veldu hér styrk á inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
 #, kde-format
 msgid "Input intensity."
 msgstr "Styrkur inntaksgildis."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:208
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Veldu hér styrk á inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
 #, kde-format
 msgid "Output intensity."
 msgstr "Styrkur úttaksgildis."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:215
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Veldu hér lágmarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:216
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Lágmarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
-#: core/dplugins/editor/colors/film/filmtool.cpp:275
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/film/filmtool.cpp:247
 #, kde-format
 msgid "Gamma input value."
 msgstr "Litrófsgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Veldu hér inntaksgildi litrófs."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Hámarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Veldu hér hámarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:234
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Lágmarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Veldu hér lágmarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:240
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Hámarks inntaksgildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:241
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Veldu hér hámarks inntaksgildi litatíðniritsins."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:250
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
 #: core/libs/dimg/filters/curves/curvesbox.cpp:158
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Litaplokkari sem tekur lágtóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:251
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7736,13 +7699,13 @@ msgstr ""
 "til að stilla gildi <b>lágtóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:258
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
 #: core/libs/dimg/filters/curves/curvesbox.cpp:166
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Litaplokkari sem tekur miðtóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7753,13 +7716,13 @@ msgstr ""
 "til að stilla gildi <b>miðtóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
 #: core/libs/dimg/filters/curves/curvesbox.cpp:174
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Litaplokkari sem tekur hátóna á öllum rásum"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -7770,12 +7733,12 @@ msgstr ""
 "til að stilla gildi <b>hátóna</b> tíðnistigs á Rauð-, Græn-, Blá-, og "
 "Birtustigsrásum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:290
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Stilla öll litatíðnistig sjálfvirkt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:291
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
@@ -7783,20 +7746,20 @@ msgstr ""
 "Ef þú styður á þennan hnapp, verður tíðnistig allra litrása stillt "
 "sjálfvirkt."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:294
-#: core/dplugins/editor/colors/film/filmtool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/film/filmtool.cpp:210
 #: core/libs/dimg/filters/curves/curvesbox.cpp:196
 #: core/libs/dimg/filters/curves/curvesbox.cpp:203
 #, kde-format
 msgid "&Reset"
 msgstr "F&rumstilla"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:296
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Stilla litferlana aftur á upphafleg gildi."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:297
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -7805,58 +7768,58 @@ msgstr ""
 "Ef þú styður á þennan hnapp, verður gildi allra tíðnistiga á núverandi "
 "litrás frumstillt aftur á upphaflegu gildin."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Laga littíðnistig"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Veldu Gimp-littaíðniskrá til að hlaða inn"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Get ekki hlaðið inn littíðnistigum úr Gimp textaskrá."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp-litatíðniskrá sem á að vista"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Get ekki vistað littíðnistig inn í Gimp textaskrá."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:44
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Adjust Levels"
 msgstr "Laga littíðnistig"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:59
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color levels"
 msgstr "Verkfæri til að laga litatíðnidreifingu"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:64
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað litatíðnistig (levels) í myndum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
 msgstr "Laga litatíðnistig..."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:120
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:110
 #, kde-format
 msgid ""
 "<b>Auto Levels</b>:<p>This option maximizes the tonal range in the Red, "
@@ -7868,7 +7831,7 @@ msgstr ""
 "grænum, og bláum litrásum. Þetta skoðar skugga og mikið lýst svæði og lagar "
 "ferla rauðu, grænu og bláu litrásanna að heildarsviði litatíðniritsins.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:118
 #, kde-format
 msgid ""
 "<b>Normalize</b>:<p>This option scales brightness values across the active "
@@ -7881,7 +7844,7 @@ msgstr ""
 "liturinn verði eins ljós og hægt er án þess að breyta um litarraft. Þetta er "
 "oft \"galdraredding\" fyrir dökkar og undirlýstar myndir.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:138
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
 #, kde-format
 msgid ""
 "<b>Equalize</b>:<p>This option adjusts the brightness of colors across the "
@@ -7899,7 +7862,7 @@ msgstr ""
 "birtuskil (contrast) í myndum. Stundum gefur hún bara drasl. Semsagt; mjög "
 "öflug aðgerð sem annaðhvort bjargar mynd eða eyðileggur hana.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:150
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:140
 #, kde-format
 msgid ""
 "<b>Stretch Contrast</b>:<p>This option enhances the contrast and brightness "
@@ -7910,7 +7873,7 @@ msgstr ""
 "gilda myndar með því að teygja lægstu og hæstu gildin út í ystu mörk "
 "litsviðs og aðlaga önnur gildi þar á milli.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:158
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:148
 #, kde-format
 msgid ""
 "<b>Auto Exposure</b>:<p>This option enhances the contrast and brightness of "
@@ -7921,24 +7884,24 @@ msgstr ""
 "gilda myndar með því að reikna bestað hlutfall lýsingar og svarta "
 "litsviðsins út frá litatíðniriti myndar.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr "Þetta myndvinnsluverkfæri getur sjálfvirkt aðlagað liti í myndum."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
 msgstr "Sjálfvirk litleiðrétting..."
 
-#: core/dplugins/editor/colors/bcg/bcgtool.cpp:169
+#: core/dplugins/editor/colors/bcg/bcgtool.cpp:161
 #, kde-format
 msgid "Brightness / Contrast / Gamma"
 msgstr "Birtustig / Birtuskil / Litlróf"
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:64
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -7947,89 +7910,89 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur aðlagað birtustig / birtuskil / litróf í "
 "myndum."
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "Birtustig/Birtuskil/Litlróf..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:187
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:179
 #, kde-format
 msgid "Convert to Black and White"
 msgstr "Breyta í svarthvítt"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:44
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Black and White"
 msgstr "Svarthvítt"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:64
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litmynd í svarthvíta mynd."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
 msgstr "Svart && hvítt..."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:170
+#: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:162
 #, kde-format
 msgid "Channel Mixer"
 msgstr "Rásablandari"
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:64
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "Þetta myndvinnsluverkfæri getur blandað litrásir í myndum."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
 msgstr "Rásablandari..."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:64
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað jafnvægi lita í myndum."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
 msgstr "Litavægi..."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:45
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 8 bits"
 msgstr "Umbreyta í 8 bita"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:65
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litadýpt mynda í 8 bita."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "Umbreyta í 8 bita"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "Þessi mynd notar nú þegar litadýpt með 8 bitum / lit / díl."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8038,45 +8001,45 @@ msgid ""
 msgstr ""
 "Að framkvæma þessa aðgerð mun minnka litgæði myndarinnar. Viltu halda áfram?"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:64
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litadýpt mynda í 16 bita."
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "Umbreyta í 16 bita"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Þessi mynd notar nú þegar litadýpt með 16 bitum / lit / díl."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:147
+#: core/dplugins/editor/colors/film/filmtool.cpp:119
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Negatíf litfilma"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:193
+#: core/dplugins/editor/colors/film/filmtool.cpp:165
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Inntakssvið rauðrar litrásar."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:198
+#: core/dplugins/editor/colors/film/filmtool.cpp:170
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Inntakssvið grænnar litrásar."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:203
+#: core/dplugins/editor/colors/film/filmtool.cpp:175
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Inntakssvið blárrar litrásar."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:224
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8085,12 +8048,12 @@ msgstr ""
 "Merktu við til að beita innbyggðu litajafnvægi filmusniðsins, Taktu merkið "
 "af ef þú vilt eiga sjálfur við litajafnvægið."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:232
+#: core/dplugins/editor/colors/film/filmtool.cpp:204
 #, kde-format
 msgid "White point color picker"
 msgstr "Litplokkari fyrir hvítpunkt"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:233
+#: core/dplugins/editor/colors/film/filmtool.cpp:205
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8103,23 +8066,23 @@ msgstr ""
 "negatífunnar, eða dekksta svarta litartóninn í pósitívu myndinni eftir "
 "umbreytingu. Þetta er einnig viðmiðunargildi fyrir beitingu filmusniðsins."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #, kde-format
 msgid "Reset white point."
 msgstr "Endurstilla hvítpunkt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:241
+#: core/dplugins/editor/colors/film/filmtool.cpp:213
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr ""
 "Ef þú styður á þennan hnapp, verður hvítpunktsgildið sett á hreint hvítt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:246
+#: core/dplugins/editor/colors/film/filmtool.cpp:218
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Breyta hvítpunkti sjálfvirkt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:219
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8130,12 +8093,12 @@ msgstr ""
 "frá myndgögnunum. Aðgerðin krefst þess að eitthvað sjáist af appelsínugula "
 "maskanum umhverfis negatífu myndina."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:267
+#: core/dplugins/editor/colors/film/filmtool.cpp:239
 #, kde-format
 msgid "Exposure correction."
 msgstr "Leiðrétting á lýsingu."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:268
+#: core/dplugins/editor/colors/film/filmtool.cpp:240
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8146,7 +8109,7 @@ msgstr ""
 "klippa af neinni af litrásunum. Notaðu litatíðniritið til að meta hverja "
 "litrás fyrir sig."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:276
+#: core/dplugins/editor/colors/film/filmtool.cpp:248
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8155,43 +8118,43 @@ msgstr ""
 "Línulegar hráskannanir negatífrar filmu krefjast aðlögunar litrófsferilsins. "
 "Stöðluð gildi eru 1.8 eða 2.2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:669
+#: core/dplugins/editor/colors/film/filmtool.cpp:642
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Film"
 msgstr "Filma"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:44
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Color Negative Film"
 msgstr "Negatíf litfilma"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:59
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate color negative film"
 msgstr "Verkfæri til að líkja eftir negatívri litfilmu"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:64
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ""
 "Þetta myndvinnsluverkfæri getur líkt eftir negatívri litfilmu í myndum."
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
 msgstr "Litnegatíva..."
 
-#: core/dplugins/editor/colors/hsl/hsltool.cpp:164
+#: core/dplugins/editor/colors/hsl/hsltool.cpp:155
 #, kde-format
 msgid "HSL Adjustments"
 msgstr "LML stillingar (HSL)"
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8200,31 +8163,31 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur aðlagað litblæ / litmettun / ljósleika í "
 "myndum."
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
 msgstr "Litblær/Mettun/Ljósleiki..."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:64
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
 msgstr "Þetta myndvinnsluverkfæri getur snúið við litum í myndum."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Invert"
 msgstr "Umhverfa"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Invert"
 msgstr "Umhverfa"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:118
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:110
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:71
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:262
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:278
@@ -8233,49 +8196,49 @@ msgstr "Umhverfa"
 msgid "Info..."
 msgstr "Upplýsingar..."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:121
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:113
 #, kde-format
 msgid "Current Color Space:"
 msgstr "Núverandi litrýmd:"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:224
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:252
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:216
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:244
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:50
 #, kde-format
 msgid "Color Profile Conversion"
 msgstr "Umbreyting litasniðs"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:65
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
 msgstr "Verkfæri til að umbreyta myndum í tiltekið litarými"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:70
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt myndum í aðra litrýmd."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "Litrýmdir"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "Umbreyting litrýmdar..."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "Þessi mynd er ekki litastýrð."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
@@ -8288,32 +8251,32 @@ msgstr "Litastýring er óvirk..."
 msgid "White Balance"
 msgstr "Hvítvægi"
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:64
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
 msgstr ""
 "Þetta myndvinnsluverkfæri getur lagað hvítvægi (white balance) í myndum."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "White Balance..."
 msgstr "Hvítvægi..."
 
-#: core/dplugins/editor/decorate/border/bordertool.cpp:66
-#: core/dplugins/editor/decorate/border/bordertool.cpp:162
+#: core/dplugins/editor/decorate/border/bordertool.cpp:60
+#: core/dplugins/editor/decorate/border/bordertool.cpp:156
 #, kde-format
 msgid "Add Border"
 msgstr "Bæta við ramma"
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:59
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around image"
 msgstr "Verkfæri til að setja jaðar í kringum myndir"
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:64
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
@@ -8321,13 +8284,13 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur sett ramma eða jaðar til skrauts í kringum "
 "myndir."
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Add Border..."
 msgstr "Bæta við ramma..."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:136
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:111
 #, kde-format
 msgid ""
 "This previews the text inserted in the image. You can use the mouse to move "
@@ -8336,244 +8299,244 @@ msgstr ""
 "Þetta er forskoðun á myndinni með textanum innsettum. Þú getur notað músina "
 "til að draga textann á réttan stað á myndinni."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:145
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:120
 #, kde-format
 msgid "Here, enter the text you want to insert in your image."
 msgstr "Settu hér texta sem setja á inn á myndina."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:151
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:126
 #, kde-format
 msgid "Here you can choose the font to be used."
 msgstr "Hér velur þú letrið sem á að nota."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:164
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:139
 #, kde-format
 msgid "Align text to the left"
 msgstr "Hliðra texta til vinstri"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:170
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:145
 #, kde-format
 msgid "Align text to the right"
 msgstr "Hliðra texta til hægri"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:151
 #, kde-format
 msgid "Align text to center"
 msgstr "Miðja texta"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:182
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:157
 #, kde-format
 msgid "Align text to a block"
 msgstr "Jafna bil texta innan ramma"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:170
 #, kde-format
 msgid "Rotation:"
 msgstr "Snúningur:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:172
 #, kde-format
 msgctxt "no rotation"
 msgid "None"
 msgstr "Ekkert"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:198
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:173
 #, kde-format
 msgid "90 Degrees"
 msgstr "90 gráður"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:174
 #, kde-format
 msgid "180 Degrees"
 msgstr "180 gráður"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:175
 #, kde-format
 msgid "270 Degrees"
 msgstr "270 gráður"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:201
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
 #, kde-format
 msgid "Select the text rotation to use here."
 msgstr "Veldu hér snúning á texta."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:205
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:180
 #, kde-format
 msgctxt "font color"
 msgid "Color:"
 msgstr "Litur:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:208
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:183
 #, kde-format
 msgid "Set here the font color to use."
 msgstr "Veldu hér lit á letur."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:212
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:187
 #, kde-format
 msgctxt "text opacity"
 msgid "Opacity:"
 msgstr "Ógegnsæi:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:217
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:192
 #, kde-format
 msgid "Select the text opacity to use here."
 msgstr "Veldu gegnsæi texta til að nota hér."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:221
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:196
 #, kde-format
 msgid "Add border"
 msgstr "Bæta við ramma"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:222
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
 msgid "Add a solid border around text using current text color"
 msgstr "Bæta við lituðum ramma í kringum texta með núverandi völdum lit leturs"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:224
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
 #, kde-format
 msgid "Semi-transparent"
 msgstr "Hálfgagnsær"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:225
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
 #, kde-format
 msgid "Use semi-transparent text background under image"
 msgstr "Nota hálfgagnsæann bakgrunn undir textann á myndinni"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:301
 #, kde-format
 msgid "Enter your text here."
 msgstr "Settu inn textann þinn hér."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:420
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "Setja inn texta"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:433
 #, kde-format
 msgid "Insert Text"
 msgstr "Setja inn texta"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:44
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Insert Text"
 msgstr "Setja inn texta"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:59
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to insert text over an image"
 msgstr "Verkfæri til að setja texta yfir á mynd"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:64
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
 msgstr "Þetta myndvinnsluverkfæri getur sett texta yfir á mynd."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Insert Text..."
 msgstr "Setja inn texta..."
 
-#: core/dplugins/editor/decorate/texture/texturetool.cpp:138
+#: core/dplugins/editor/decorate/texture/texturetool.cpp:132
 #, kde-format
 msgid "Texture"
 msgstr "Efnisáferð"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:44
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Texture"
 msgstr "Efnisáferð"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:59
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over an image"
 msgstr "Verkfæri til að setja efnisáferð á mynd"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:64
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "Þetta myndvinnsluverkfæri getur sett efnisáferð á mynd."
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
 msgstr "Setja efnisáferð..."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:71
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:159
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:65
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
 #, kde-format
 msgid "Vignetting Correction"
 msgstr "Laga linsuskyggingu í hornum"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Vignetting Correction"
 msgstr "Laga linsuskyggingu í hornum"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to correct vignetting"
 msgstr "Verkfæri til að lagfæra hornskyggingu"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool correct vignetting from an image."
 msgstr ""
 "Þetta myndvinnsluverkfæri lagfærir hornskyggingu (vignetting) á myndum."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Laga linsuskyggingu í hornum..."
 
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:157
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
 msgid "Gaussian Blur"
 msgstr "Gauss mýking"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Blur"
 msgstr "Móða"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur an image"
 msgstr "Verkfæri til að móða myndir"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "Þetta myndvinnsluverkfæri getur afskerpt myndir."
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Blur..."
 msgstr "Mýkja..."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:131
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:113
 #, kde-format
 msgid "Brush Radius:"
 msgstr "Radíus pensils:"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:135
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:138
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:117
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:120
 #, kde-format
 msgid ""
 "A radius of 0 has no effect, 1 and above determine the brush radius that "
@@ -8584,12 +8547,12 @@ msgstr ""
 "aftur ákvarðar stærð hlutanna sem afritaðir eru í myndinni. \n"
 "Flýtilykill:: [ og ]"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:146
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:128
 #, kde-format
 msgid "Radial Blur Percent:"
 msgstr "Prósenta hringafskerpingar:"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:150
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:132
 #, kde-format
 msgid ""
 "A percent of 0 has no effect, values above 0 represent a factor for mixing "
@@ -8602,8 +8565,8 @@ msgstr ""
 "s. innri hluti pensilgeira er alfarið frá upprunalit og er smám saman "
 "blandað við úttakslit í litstigli þar til ytri mörkum hrings er náð."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:164
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:165
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:146
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:147
 #, kde-format
 msgid ""
 "Select Source Point.\n"
@@ -8612,8 +8575,8 @@ msgstr ""
 "Veldu útgangspunkt.\n"
 "Flýtilykill: S"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:173
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:176
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:155
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:158
 #, kde-format
 msgid ""
 "Polygon Selection With Lasso.\n"
@@ -8626,8 +8589,8 @@ msgstr ""
 "Til að halda áfram með marghyrning, ýttu á L eða tvísmelltu\n"
 "Til að hætta við, ýttu á ESC"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:186
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:187
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
 #, kde-format
 msgid ""
 "Move Image.\n"
@@ -8636,8 +8599,8 @@ msgstr ""
 "Flytja mynd.\n"
 "Flýtilykill: M"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:195
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:196
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:177
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:178
 #, kde-format
 msgid ""
 "Undo clone operation.\n"
@@ -8646,8 +8609,8 @@ msgstr ""
 "Afturkalla klónunaraðgerð.\n"
 "Flýtilykill: CTRL+Z"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:204
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:205
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:186
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:187
 #, kde-format
 msgid ""
 "Redo clone operation.\n"
@@ -8656,7 +8619,7 @@ msgstr ""
 "Endurtaka klónunaraðgerð.\n"
 "Flýtilykill: CTRL+Y"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:209
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
 #, kde-format
 msgid ""
 "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection mode, "
@@ -8678,24 +8641,24 @@ msgstr ""
 "til að loka jaðri myndvalsins.<br/>* Þegar verið er í valsnöruham er "
 "einungis klónað það sem er innan myndvalsins.</p>"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:342
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
 #, kde-format
 msgid "healingClone"
 msgstr "ViðgerðarKlón"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:45
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "Healing Clone Tool"
 msgstr "Viðgerðar-klónunarverkfæri"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:60
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:56
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix image artifacts"
 msgstr "Verkfæri til að laga myndtruflanir"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:65
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can fix image artifacts by cloning area."
@@ -8703,13 +8666,13 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur sjálfvirkt lagað myndtruflanir með því að "
 "klóna fleti."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "Viðgerðar-klónun..."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8718,39 +8681,39 @@ msgstr ""
 "Þessi sía er notuð til að klóna hluta úr mynd til að geta þurrkað út svæði "
 "sem ekki er óskað eftir."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:71
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:66
 #, kde-format
 msgid "Hot Pixels"
 msgstr "Skemmdir dílar"
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:169
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:164
 #, kde-format
 msgid "Hot Pixels Correction"
 msgstr "Laga skemmda díla"
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:64
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað skemmda díla í myndum."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "Skemmdir dílar..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:96
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Show grid"
 msgstr "Sýna möskva"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:97
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr "Veldu þetta til að skoða hnitanet breytinganna sem verður beitt."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8758,13 +8721,13 @@ msgid ""
 msgstr ""
 "Þetta myndvinnsluverkfæri getur sjálfvirkt lagað linsutruflanir í myndum."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Lens Auto-Correction..."
 msgstr "Sjálfvirk aðlögun linsu..."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:109
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:94
 #, kde-format
 msgid ""
 "You can see here a thumbnail preview of the distortion correction applied to "
@@ -8773,13 +8736,13 @@ msgstr ""
 "Þú getur séð hér forsýnda smámynd af því hvernig skekkjuleiðréttingin kemur "
 "út á rúðustrikuðum fleti."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:114
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:99
 #, kde-format
 msgctxt "value for amount of distortion"
 msgid "Main:"
 msgstr "Aðal:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:120
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:105
 #, kde-format
 msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
@@ -8788,12 +8751,12 @@ msgstr ""
 "Þetta gildi stýrir magni afskekkingar. Neikvæð gildi toga saman um miðju, á "
 "meðan jákvæð gildi láta hornin skreppa saman."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:126
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
 #, kde-format
 msgid "Edge:"
 msgstr "Brún:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:117
 #, kde-format
 msgid ""
 "This value controls in the same manner as the Main control, but has more "
@@ -8802,61 +8765,61 @@ msgstr ""
 "Þetta gildi stýrir á svipaðan hátt og aðalleiðréttingin, en hefur meiri "
 "áhrif nálægt útjöðrunum en í miðjunni."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:137
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:122
 #, kde-format
 msgid "Zoom:"
 msgstr "Stækkun:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:143
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:128
 #, kde-format
 msgid "This value rescales the overall image size."
 msgstr "Þetta gildi endurreiknar heildarstærð myndarinnar."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:147
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
 #, kde-format
 msgid "Brighten:"
 msgstr "Lýsa:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:153
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
 #, kde-format
 msgid "This value adjusts the brightness in image corners."
 msgstr "Þetta gildi lagar birtumun út til horna myndarinnar."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:309
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:294
 #, kde-format
 msgid "Lens Distortion"
 msgstr "Linsuskekkja"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:44
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Lens Distortion"
 msgstr "Linsuskekkja"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:59
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust lens distortions"
 msgstr "Verkfæri til að leiðrétta sjálfvirkt linsuskekkjur"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:64
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað linsuskekkingar í myndum."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Distortion..."
 msgstr "Bjögun..."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttool.cpp:160
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttool.cpp:152
 #, kde-format
 msgid "Local Contrast"
 msgstr "Staðbundin birtuskil"
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:64
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
@@ -8864,31 +8827,31 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur líkt eftir litbrigðavörpun (tone mapping) í "
 "myndum."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Local Contrast..."
 msgstr "Staðbundin birtuskil..."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:66
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:140
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:60
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:134
 #, kde-format
 msgid "Noise Reduction"
 msgstr "Truflanasía"
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:64
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "Þetta myndvinnsluverkfæri getur minnkað truflanasuð í myndum."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
 msgstr "Truflanasía..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:87
+#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:78
 #, kde-format
 msgid ""
 "Here you can see the image selection preview with red eye reduction applied."
@@ -8896,30 +8859,30 @@ msgstr ""
 "Hér geturðu séð forsýndar breytingar á mynd þegar rauðaugnabaninn hefur "
 "unnið sitt starf."
 
-#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:176
+#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:167
 #, kde-format
 msgid "Red Eyes Correction"
 msgstr "Laga rauð augu"
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:44
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Red Eye"
 msgstr "Rauð augu"
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:64
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað rauð augu í myndum."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "Rauð augu..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8929,23 +8892,23 @@ msgstr ""
 "Þessa síu er hægt að nota til að laga rauð augu í mynd. Veldu svæði sem "
 "inniheldur augun til að nota í þessu skyni."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:137
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:115
 #, kde-format
 msgid "Preset"
 msgstr "Forgildi"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:143
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
 #, kde-format
 msgid "Filtering type:"
 msgstr "Tegund síunar:"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:149
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
 #, kde-format
 msgctxt "custom restoration settings"
 msgid "Custom"
 msgstr "Sérsniðið"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:150
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -8964,45 +8927,45 @@ msgstr ""
 "p><p><b>Sérsniðið</b>: Setur stillingar á algengustu gildin, hægt að "
 "sérsníða til fulls.</p>"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:339
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:319
 #, kde-format
 msgid "Restoration"
 msgstr "Viðgerðir"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:324
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Stillingaskrá ljósmyndaviðgerða til að hlaða inn"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:340
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
 msgstr "\"%1\" er ekki textaskrá fyrir stillingar ljósmyndaviðgerða."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:371
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:351
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "Get ekki hlaðið inn stillingum úr textaskrá ljósmyndaviðgerða."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:363
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Stillingaskrá ljósmyndaviðgerða til að vista"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:381
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr "Get ekki vistað stillingar í textaskrá ljósmyndaviðgerða."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to restore an image using Greystoration algorithm"
 msgstr "Verkfæri til að hreinsa ljósmynd með grátónasíun (Greystoration)"
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -9011,7 +8974,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur hreinsað ljósmyndir með grátónasíun "
 "(Greystoration)."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
@@ -9028,32 +8991,32 @@ msgstr "Skerpa"
 msgid "Unsharp Mask"
 msgstr "Afskerping maska"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
+#: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:130
 #, kde-format
 msgid "Refocus"
 msgstr "Endurfókusera"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:44
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Sharpen"
 msgstr "Skerpa"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:59
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to sharp an image"
 msgstr "Verkfæri til að skerpa mynd"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:64
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "Þetta myndvinnsluverkfæri getur skerpt myndir."
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Sharpen..."
@@ -11631,10 +11594,9 @@ msgid "Creation of picture '%1'"
 msgstr "Bjó til mynd '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:223
-#, fuzzy, kde-format
-#| msgid "Failed to Fetch Photoset information from %1. %2\n"
+#, kde-format
 msgid "Cannot get GPS Information from %1 file."
-msgstr "Tókst ekki að ná í upplýsingar um myndasett frá %1. %2\n"
+msgstr "Tókst ekki að ná í GPS-upplýsingar úr %1 skrá."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:312
 #, kde-format
@@ -15876,11 +15838,9 @@ msgid "Failed to update file timestamp"
 msgstr "Gat ekki uppfært tímamerki skráar"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgid "ExifTool reported an error"
-msgstr "Beita forsniði lýsigagna"
+msgstr "ExifTool tilkynnti villu"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
@@ -29702,12 +29662,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Upplýsingar um litasnið - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:207
+#: core/libs/dialogs/imagedialog.cpp:215
 #, kde-format
 msgid "Select an Item"
 msgstr "Veldu atriði"
 
-#: core/libs/dialogs/imagedialog.cpp:221
+#: core/libs/dialogs/imagedialog.cpp:229
 #, kde-format
 msgid "Select Items"
 msgstr "Veldu atriði"
@@ -40471,13 +40431,12 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Uppfæra tímamerki með ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:241
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image file size."
+#, kde-format
 msgid "Use this option primarily with video files"
-msgstr "Veldu þetta til að sýna stærð myndskrár."
+msgstr "Notaðu þetta aðallega með myndskeiðasskrám"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:242
 #, kde-format
@@ -41734,10 +41693,9 @@ msgid "Choose..."
 msgstr "Velja..."
 
 #: core/libs/widgets/fonts/dfontselect.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select a month"
+#, kde-format
 msgid "Select a Font"
-msgstr "Veldu mánuð"
+msgstr "Veldu leturgerð"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, kde-format
@@ -60549,28 +60507,7 @@ msgstr ""
 "merki.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -63868,15 +63805,7 @@ msgid "Download Error"
 msgstr "Villa við að sækja gögn"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -65701,7 +65630,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
 msgid "Initially select the first item in the album"
-msgstr ""
+msgstr "Byrjaður á að velja fyrsta atriðið í albúminu"
 
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format

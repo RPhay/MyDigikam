@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 01:50+0000\n"
+"POT-Creation-Date: 2024-05-10 01:43+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -4760,38 +4760,38 @@ msgid "Supported Extensions"
 msgstr "Ikke understøttet filendelse"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:55
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:109
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:253
 #: core/libs/dimg/filters/auto/autolevelsfilter.cpp:53
 #, kde-format
 msgid "Auto Levels"
 msgstr "Autoniveauer"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:56
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:117
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:259
 #, kde-format
 msgid "Normalize"
 msgstr "Normalisér"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:57
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:270
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:127
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:265
 #, kde-format
 msgid "Equalize"
 msgstr "Udjævn"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:149
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:274
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:139
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:271
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
 #, kde-format
 msgid "Stretch Contrast"
 msgstr "Stræk kontrast"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:59
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:278
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:147
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:277
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
 #, kde-format
 msgid "Auto Exposure"
@@ -4805,7 +4805,7 @@ msgid "Filter:"
 msgstr "Filter:"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Color Auto-correction"
 msgctxt "@title"
@@ -4813,7 +4813,7 @@ msgid "Color Auto-Correction"
 msgstr "Autokorrektion af farver"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Adjust all levels automatically."
 msgctxt "@info"
@@ -4830,7 +4830,7 @@ msgid ""
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "BCG Correction"
 msgctxt "@title"
@@ -4838,7 +4838,7 @@ msgid "BCG Correction"
 msgstr "BCG-korrigering"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to fix Brightness/Contrast/Gamma."
 msgctxt "@info"
@@ -4862,7 +4862,7 @@ msgid "Black and White Convert"
 msgstr "Sort-hvid"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:57
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info"
@@ -4879,7 +4879,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Channel Mixer"
 msgctxt "@title"
@@ -4887,7 +4887,7 @@ msgid "Channel Mixer"
 msgstr "Kanalmikser"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Mix color channel."
 msgctxt "@info"
@@ -4904,8 +4904,8 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
-#: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
-#: core/dplugins/editor/colors/film/filmtool.cpp:222
+#: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
+#: core/dplugins/editor/colors/film/filmtool.cpp:194
 #, kde-format
 msgid "Color Balance"
 msgstr "Farvebalance"
@@ -4916,7 +4916,7 @@ msgid "Adjust color balance."
 msgstr "Justér farvebalance."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:42
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Color Balance"
 msgctxt "@title"
@@ -4924,7 +4924,7 @@ msgid "Color Balance"
 msgstr "Farvebalance"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:57
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:59
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Adjust color balance."
 msgctxt "@info"
@@ -4958,7 +4958,7 @@ msgid "Convert to 8 bits"
 msgstr "Konvertér til 8-bit"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:57
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:56
 #, fuzzy, kde-format
 #| msgid "Convert color depth from 16 to 8 bits."
 msgctxt "@info"
@@ -4975,7 +4975,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Convert to 16 bits"
 msgctxt "@title"
@@ -4983,7 +4983,7 @@ msgid "Convert to 16 bits"
 msgstr "Konvertér til 16-bit"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:57
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Convert color depth from 8 to 16 bits."
 msgctxt "@info"
@@ -5071,7 +5071,7 @@ msgid "Load all parameters from settings text file."
 msgstr "Indlæs alle parametre fra tekstfil med indstillinger."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:57
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to add film grain"
 msgctxt "@info"
@@ -5088,7 +5088,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "HSL Correction"
 msgctxt "@title"
@@ -5096,7 +5096,7 @@ msgid "HSL Correction"
 msgstr "HSL-korrigering"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:57
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to fix Hue/Saturation/Lightness."
 msgctxt "@info"
@@ -5113,7 +5113,7 @@ msgid ""
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Color Profile Conversion"
 msgctxt "@title"
@@ -5137,7 +5137,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Invert Colors"
 msgctxt "@title"
@@ -5145,7 +5145,7 @@ msgid "Invert Colors"
 msgstr "Invertér farver"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:57
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:59
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Invert image colors."
 msgctxt "@info"
@@ -5161,7 +5161,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "White Balance"
 msgctxt "@title"
@@ -5169,7 +5169,7 @@ msgid "White Balance"
 msgstr "Hvidbalance"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:57
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:59
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Adjust White Balance."
 msgctxt "@info"
@@ -5598,7 +5598,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Add Border"
 msgctxt "@title"
@@ -6044,13 +6044,13 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:77
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:70
 #, kde-format
 msgid "Smoothness:"
 msgstr "Glathed:"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:57
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:81
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:74
 #, kde-format
 msgid ""
 "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
@@ -6081,7 +6081,7 @@ msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgctxt "@title"
@@ -6089,7 +6089,7 @@ msgid "Hot Pixels"
 msgstr "Hot Pixels"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:57
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
@@ -6105,8 +6105,8 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Autokorrektion af objektiv"
@@ -6133,7 +6133,7 @@ msgstr ""
 "objektiv"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:42
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction"
 msgctxt "@title"
@@ -6141,7 +6141,7 @@ msgid "Lens Auto-Correction"
 msgstr "Autokorrektion af objektiv"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:57
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Fix automatically lens distortions"
 msgctxt "@info"
@@ -6158,7 +6158,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Local Contrast"
 msgctxt "@title"
@@ -6166,7 +6166,7 @@ msgid "Local Contrast"
 msgstr "Lokal kontrast"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Emulate tone mapping."
 msgctxt "@info"
@@ -6183,7 +6183,7 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Noise Reduction"
 msgctxt "@title"
@@ -6191,7 +6191,7 @@ msgid "Noise Reduction"
 msgstr "Støjreducering"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:57
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Remove photograph noise using wavelets."
 msgctxt "@info"
@@ -6213,7 +6213,7 @@ msgid "Red Eye Correction"
 msgstr "Korrektion af røde øjne"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Automatically detect and open a connected gphoto2 camera"
 msgctxt "@info"
@@ -6230,26 +6230,26 @@ msgid ""
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:119
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
 msgstr "Besøg CImg-bibliotekets webside"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:58
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:124
 #, kde-format
 msgid "Reduce Uniform Noise"
 msgstr "Reducér ensformet støj"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:59
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:125
 #, kde-format
 msgid "Reduce JPEG Artifacts"
 msgstr "Reducér JPEG-artefakter"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:148
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:126
 #, kde-format
 msgid "Reduce Texturing"
 msgstr "Reducér tekstur"
@@ -6273,7 +6273,7 @@ msgstr ""
 "papirtekstur eller et scannet billedes moiré-mønster.</p>"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:42
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@title"
@@ -7975,112 +7975,112 @@ msgstr "Filformat for arbejdsområde"
 msgid "Adjust Curve"
 msgstr "Justér kurve"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:44
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Adjust Curves"
 msgctxt "@title"
 msgid "Adjust Curves"
 msgstr "Justér kurver"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:64
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
 msgstr "Kurvejustering..."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
-#: core/dplugins/editor/colors/film/filmtool.cpp:183
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:161
+#: core/dplugins/editor/colors/film/filmtool.cpp:155
 #, kde-format
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
 "image."
 msgstr "Dette er histogrammet for den valgte kanal fra originalbilledet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:169
 #, kde-format
 msgid "Select the input intensity of the histogram here."
 msgstr "Vælg histogrammets input-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:170
 #, kde-format
 msgid "Input intensity."
 msgstr "Input-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:208
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:177
 #, kde-format
 msgid "Select the output intensity of the histogram here."
 msgstr "Vælg histogrammets output-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:178
 #, kde-format
 msgid "Output intensity."
 msgstr "Output-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:215
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:184
 #, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
 msgstr "Vælg histogrammets minimale værdi for input-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:216
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:185
 #, kde-format
 msgid "Minimal input intensity."
 msgstr "Minimal input-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
-#: core/dplugins/editor/colors/film/filmtool.cpp:275
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:191
+#: core/dplugins/editor/colors/film/filmtool.cpp:247
 #, kde-format
 msgid "Gamma input value."
 msgstr "Værdi for gamma-input"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
 #, kde-format
 msgid "Select the gamma input value here."
 msgstr "Vælg her værdien for gamma-input."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:197
 #, kde-format
 msgid "Maximal input intensity."
 msgstr "Maksimal input-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:198
 #, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
 msgstr "Vælg histogrammets maksimale værdi for input-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:234
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:203
 #, kde-format
 msgid "Minimal output intensity."
 msgstr "Minimal output-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:204
 #, kde-format
 msgid "Select the minimal output intensity value of the histogram here."
 msgstr "Vælg histogrammets minimale værdi for output-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:240
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
 #, kde-format
 msgid "Maximal output intensity."
 msgstr "Maksimal output-intensitet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:241
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:210
 #, kde-format
 msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Vælg histogrammets maksimale værdi for output-intensitet her."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:250
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:219
 #: core/libs/dimg/filters/curves/curvesbox.cpp:158
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Farvevælger for alle kanalers skyggetoner"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:251
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:220
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8091,13 +8091,13 @@ msgstr ""
 "at sætte input-niveau af <b>skyggetone</b> for kanalerne rød, grøn, blå og "
 "lysstyrke."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:258
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:227
 #: core/libs/dimg/filters/curves/curvesbox.cpp:166
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Farvevælger for alle kanalers mellemtone"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8108,13 +8108,13 @@ msgstr ""
 "at sætte input-niveau af <b>middeltone</b> for kanalerne rød, grøn, blå og "
 "lysstyrke."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
 #: core/libs/dimg/filters/curves/curvesbox.cpp:174
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Farvevælger for alle kanalers lyse toner"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:236
 #, kde-format
 msgid ""
 "With this button, you can pick the color from the original image used to set "
@@ -8125,32 +8125,32 @@ msgstr ""
 "at sætte input-niveau af <b>fremhævet tone</b> for kanalerne rød, grøn, blå "
 "og lysstyrke."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:290
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
 #, kde-format
 msgid "Adjust all levels automatically."
 msgstr "Justér alle niveauer automatisk."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:291
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:260
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
 msgstr ""
 "Hvis du trykker på denne knap, justeres alle kanalens niveauer automatisk."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:294
-#: core/dplugins/editor/colors/film/filmtool.cpp:238
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:263
+#: core/dplugins/editor/colors/film/filmtool.cpp:210
 #: core/libs/dimg/filters/curves/curvesbox.cpp:196
 #: core/libs/dimg/filters/curves/curvesbox.cpp:203
 #, kde-format
 msgid "&Reset"
 msgstr "&Nulstil"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:296
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:265
 #, kde-format
 msgid "Reset current channel levels' values."
 msgstr "Nulstil niveauværdier for nuværende kanal."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:297
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #, kde-format
 msgid ""
 "If you press this button, all levels' values from the currently selected "
@@ -8159,63 +8159,63 @@ msgstr ""
 "Hvis du trykker på denne knap, nulstilles alle niveauers værdier fra den "
 "aktuelt markerede kanal til standardværdier."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:893
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:882
 #, kde-format
 msgid "Adjust Levels"
 msgstr "Justér niveauer"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:900
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:889
 #, fuzzy, kde-format
 #| msgid "Select Gimp Levels File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Vælg Gimp niveau-fil til indlæsning"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:901
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
 msgstr "Kan ikke indlæse fra Gimp niveau-tekstfil."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:916
 #, fuzzy, kde-format
 #| msgid "Gimp Levels File to Save"
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp niveaufil at gemme"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:928
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
 msgstr "Kan ikke gemme til Gimp niveau-tekstfil."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:44
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Adjust Levels"
 msgctxt "@title"
 msgid "Adjust Levels"
 msgstr "Justér niveauer"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:59
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Adjust color balance."
 msgctxt "@info"
 msgid "A tool to adjust color levels"
 msgstr "Justér farvebalance."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:64
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
 msgstr "Justering af niveauer..."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:120
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:110
 #, kde-format
 msgid ""
 "<b>Auto Levels</b>:<p>This option maximizes the tonal range in the Red, "
@@ -8228,7 +8228,7 @@ msgstr ""
 "grænseværdierne og justerer de røde, grønne og blå kanaler til et fuldt "
 "histrogramområde..</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:118
 #, kde-format
 msgid ""
 "<b>Normalize</b>:<p>This option scales brightness values across the active "
@@ -8241,7 +8241,7 @@ msgstr ""
 "lyst som muligt uden at ændre dets farvetone. Dette er ofte en \"mirakelkur"
 "\" for billeder som er matte eller udvaskede.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:138
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
 #, kde-format
 msgid ""
 "<b>Equalize</b>:<p>This option adjusts the brightness of colors across the "
@@ -8260,7 +8260,7 @@ msgstr ""
 "kraftfuld handling, som enten kan udføre mirakler med et billede eller "
 "ødelægge det.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:150
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:140
 #, kde-format
 msgid ""
 "<b>Stretch Contrast</b>:<p>This option enhances the contrast and brightness "
@@ -8271,7 +8271,7 @@ msgstr ""
 "for et billedes RGB-værdier ved at udstrække de laveste og højeste værdier "
 "til deres fuldstændige område, og justere alting derimellem.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:158
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:148
 #, kde-format
 msgid ""
 "<b>Auto Exposure</b>:<p>This option enhances the contrast and brightness of "
@@ -8282,26 +8282,26 @@ msgstr ""
 "for et billedes RGB-værdier for at beregne optimal eksponering og sort-"
 "niveau ved at bruge billedets histogramegenskaber.</p>"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:91
 #, fuzzy, kde-format
 #| msgid "Color Auto-correction"
 msgctxt "@action"
 msgid "Color Auto-Correction..."
 msgstr "Autokorrektion af farver"
 
-#: core/dplugins/editor/colors/bcg/bcgtool.cpp:169
+#: core/dplugins/editor/colors/bcg/bcgtool.cpp:161
 #, kde-format
 msgid "Brightness / Contrast / Gamma"
 msgstr "Lys / kontrast / gamma"
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:64
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@title"
@@ -8309,96 +8309,96 @@ msgid ""
 "This Image Editor tool can adjust Brightness / Contrast / Gamma from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
 msgstr "Lys / Kontrast / Gamma..."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:187
+#: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:179
 #, kde-format
 msgid "Convert to Black and White"
 msgstr "Konvertér til sort-hvid"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:44
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Black and White"
 msgctxt "@title"
 msgid "Black and White"
 msgstr "Sort-hvid"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:64
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
 msgstr "Sort-hvid..."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:170
+#: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:162
 #, kde-format
 msgid "Channel Mixer"
 msgstr "Kanalmikser"
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:64
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
 msgstr "Kanalblander..."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:64
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
 msgstr "Farvebalance..."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:45
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:41
 #, fuzzy, kde-format
 #| msgid "Convert to 8 bits"
 msgctxt "@title"
 msgid "Convert to 8 bits"
 msgstr "Konvertér til 8-bit"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:65
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:61
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "Konvertér til 8-bit"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:110
 #, fuzzy, kde-format
 #| msgid "This image is already using a depth of 8 bits / color / pixel."
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "Dette billede bruger allerede en dybde på 8 bits pr farve pr pixel."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
 #, fuzzy, kde-format
 #| msgid ""
 #| "Performing this operation will reduce image color quality. Do you want to "
@@ -8411,47 +8411,47 @@ msgstr ""
 "At udføre denne handling vil reducere billedets farvekvalitet. Vil du "
 "fortsætte?"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:64
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "Konvertér til 16-bit"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:108
 #, fuzzy, kde-format
 #| msgid "This image is already using a depth of 16 bits / color / pixel."
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
 msgstr "Dette billede bruger allerede en dybe på 16 bits pr farve pr pixel."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:147
+#: core/dplugins/editor/colors/film/filmtool.cpp:119
 #, kde-format
 msgid "Color Negative Film"
 msgstr "Farvenegativ film"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:193
+#: core/dplugins/editor/colors/film/filmtool.cpp:165
 #, kde-format
 msgid "Input range of red color channel."
 msgstr "Input-område for rødfarve-kanalen"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:198
+#: core/dplugins/editor/colors/film/filmtool.cpp:170
 #, kde-format
 msgid "Input range of green color channel."
 msgstr "Input-område for grønfarve-kanalen"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:203
+#: core/dplugins/editor/colors/film/filmtool.cpp:175
 #, kde-format
 msgid "Input range of blue color channel."
 msgstr "Input-område for blåfarve-kanalen"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:224
+#: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
 msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
@@ -8460,12 +8460,12 @@ msgstr ""
 "Markér for at anvende den indbyggede farvebalance fra filmprofilen. Afmarkér "
 "hvis du vil anvende en farvebalance manuelt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:232
+#: core/dplugins/editor/colors/film/filmtool.cpp:204
 #, kde-format
 msgid "White point color picker"
 msgstr "Hvidpunkt-farvevælger"
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:233
+#: core/dplugins/editor/colors/film/filmtool.cpp:205
 #, kde-format
 msgid ""
 "With this button, you can pick the color of the orange mask of the scanned "
@@ -8478,22 +8478,22 @@ msgstr ""
 "sorte tone i det positive billede efter invertering. Det er også et "
 "referencepunkt til anvendelse af filmprofilen."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:240
+#: core/dplugins/editor/colors/film/filmtool.cpp:212
 #, kde-format
 msgid "Reset white point."
 msgstr "Nulstil hvidpunkt."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:241
+#: core/dplugins/editor/colors/film/filmtool.cpp:213
 #, kde-format
 msgid "If you press this button, the white point is reset to pure white."
 msgstr "Hvis du trykker på denne knap, nulstilles hvidpunktet til ren hvid."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:246
+#: core/dplugins/editor/colors/film/filmtool.cpp:218
 #, kde-format
 msgid "Adjust white point automatically."
 msgstr "Justér hvidpunkt automatisk."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:247
+#: core/dplugins/editor/colors/film/filmtool.cpp:219
 #, kde-format
 msgid ""
 "If you press this button, the white point is calculated from the image data "
@@ -8504,12 +8504,12 @@ msgstr ""
 "billeddata. Denne funktion kræver at have nogen residual orange maske omring "
 "det eksponerede område af negativet."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:267
+#: core/dplugins/editor/colors/film/filmtool.cpp:239
 #, kde-format
 msgid "Exposure correction."
 msgstr "Eksponeringskorrektion."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:268
+#: core/dplugins/editor/colors/film/filmtool.cpp:240
 #, kde-format
 msgid ""
 "Move the slider to higher values until maximum brightness is achieved "
@@ -8520,7 +8520,7 @@ msgstr ""
 "afklippe nogen farvekanal. Brug output-histogrammet til at evaluere hver "
 "kanal."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:276
+#: core/dplugins/editor/colors/film/filmtool.cpp:248
 #, kde-format
 msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
@@ -8529,45 +8529,45 @@ msgstr ""
 "Lineære rå scanninger af filmnegativer kræver anvendelse af en gamma-kurve. "
 "Standardværdierne er 1.8 eller 2.2."
 
-#: core/dplugins/editor/colors/film/filmtool.cpp:669
+#: core/dplugins/editor/colors/film/filmtool.cpp:642
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Film"
 msgstr "Film"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:44
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Color Negative Film"
 msgctxt "@title"
 msgid "Color Negative Film"
 msgstr "Farvenegativ film"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:59
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to add film grain"
 msgctxt "@info"
 msgid "A tool to emulate color negative film"
 msgstr "Et værktøj til at tilføje filmkorn"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:64
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
 msgstr "Farvenegativ..."
 
-#: core/dplugins/editor/colors/hsl/hsltool.cpp:164
+#: core/dplugins/editor/colors/hsl/hsltool.cpp:155
 #, kde-format
 msgid "HSL Adjustments"
 msgstr "TML-justeringer"
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
@@ -8575,33 +8575,33 @@ msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
 msgstr "Farvetone / Mætning / Lys..."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:64
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Invert"
 msgstr "Invertér"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:112
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@title"
 msgid "Invert"
 msgstr "Invertér"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:118
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:110
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:71
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:262
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:278
@@ -8610,54 +8610,54 @@ msgstr "Invertér"
 msgid "Info..."
 msgstr "Info..."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:121
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:113
 #, kde-format
 msgid "Current Color Space:"
 msgstr "Aktuelt farverum:"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:224
-#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:252
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:216
+#: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:244
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:50
 #, kde-format
 msgid "Color Profile Conversion"
 msgstr "Konvertering af farveprofil"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:65
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:61
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
 msgstr "Konvertér billeder til et farverum."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:70
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
 #, fuzzy, kde-format
 #| msgid "A tool to convert to black and white."
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "Et værktøj til at konvertere billeder til sort-hvid."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:108
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "Farverum"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:116
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "Konvertering af farverum"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:137
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:154
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@action"
@@ -8671,46 +8671,46 @@ msgstr "Farvehåndtering er deaktiveret..."
 msgid "White Balance"
 msgstr "Hvidbalance"
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:64
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "White Balance..."
 msgstr "Hvidbalance..."
 
-#: core/dplugins/editor/decorate/border/bordertool.cpp:66
-#: core/dplugins/editor/decorate/border/bordertool.cpp:162
+#: core/dplugins/editor/decorate/border/bordertool.cpp:60
+#: core/dplugins/editor/decorate/border/bordertool.cpp:156
 #, kde-format
 msgid "Add Border"
 msgstr "Tilføj kant"
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:59
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Add a border around images"
 msgctxt "@info"
 msgid "A tool to add a border around image"
 msgstr "Filføj en kant rundt om billeder"
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:64
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Add Border..."
 msgstr "Tilføj kant..."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:136
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:111
 #, kde-format
 msgid ""
 "This previews the text inserted in the image. You can use the mouse to move "
@@ -8719,257 +8719,257 @@ msgstr ""
 "Dette er forhåndsvisningen af teksten indsat i billedet. Du kan flytte "
 "teksten til det rigtige sted med musen."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:145
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:120
 #, kde-format
 msgid "Here, enter the text you want to insert in your image."
 msgstr "Angiv den tekst, du vil sætte ind i dit billede her."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:151
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:126
 #, kde-format
 msgid "Here you can choose the font to be used."
 msgstr "Her kan du vælge den skrifttype der skal bruges"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:164
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:139
 #, kde-format
 msgid "Align text to the left"
 msgstr "Justér tekst til venstre"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:170
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:145
 #, kde-format
 msgid "Align text to the right"
 msgstr "Justér tekst til højre"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:151
 #, kde-format
 msgid "Align text to center"
 msgstr "Centrér tekst"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:182
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:157
 #, kde-format
 msgid "Align text to a block"
 msgstr "Justér tekst til en rude"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:170
 #, kde-format
 msgid "Rotation:"
 msgstr "Rotation:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:172
 #, kde-format
 msgctxt "no rotation"
 msgid "None"
 msgstr "Ingen"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:198
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:173
 #, kde-format
 msgid "90 Degrees"
 msgstr "90 grader"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:174
 #, kde-format
 msgid "180 Degrees"
 msgstr "180 grader"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:175
 #, kde-format
 msgid "270 Degrees"
 msgstr "270 grader"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:201
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
 #, kde-format
 msgid "Select the text rotation to use here."
 msgstr "Vælg her den tekstrotation der skal bruges."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:205
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:180
 #, kde-format
 msgctxt "font color"
 msgid "Color:"
 msgstr "Farve:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:208
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:183
 #, kde-format
 msgid "Set here the font color to use."
 msgstr "Sæt skrifttypefarven der skal bruges her."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:212
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:187
 #, kde-format
 msgctxt "text opacity"
 msgid "Opacity:"
 msgstr "Ugennemsigtighed:"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:217
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:192
 #, fuzzy, kde-format
 #| msgid "Select the text rotation to use here."
 msgid "Select the text opacity to use here."
 msgstr "Vælg her den tekstrotation der skal bruges."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:221
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:196
 #, kde-format
 msgid "Add border"
 msgstr "Tilføj kant"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:222
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
 msgid "Add a solid border around text using current text color"
 msgstr "Tilføj en heltegnet kant omkring teksten med nuværende tekstfarve"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:224
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
 #, kde-format
 msgid "Semi-transparent"
 msgstr "Halvgennemsigtig"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:225
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
 #, kde-format
 msgid "Use semi-transparent text background under image"
 msgstr "Brug halvgennemsigtig tekstbaggrund under billedet"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:326
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:301
 #, kde-format
 msgid "Enter your text here."
 msgstr "Angiv din tekst her."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:435
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:420
 #, kde-format
 msgid "Insert Text Tool"
 msgstr "Indsæt tekst-værktøj"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:448
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:433
 #, kde-format
 msgid "Insert Text"
 msgstr "Indsæt tekst"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:44
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Insert Text"
 msgctxt "@title"
 msgid "Insert Text"
 msgstr "Indsæt tekst"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:59
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
 msgid "A tool to insert text over an image"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:64
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Insert Text..."
 msgstr "Indsæt tekst..."
 
-#: core/dplugins/editor/decorate/texture/texturetool.cpp:138
+#: core/dplugins/editor/decorate/texture/texturetool.cpp:132
 #, kde-format
 msgid "Texture"
 msgstr "Tekstur:"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:44
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Texture"
 msgctxt "@title"
 msgid "Texture"
 msgstr "Tekstur:"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:59
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
 msgid "A tool to apply a texture over an image"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:64
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
 msgstr "Anvend tekstur..."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:71
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:159
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:65
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
 #, kde-format
 msgid "Vignetting Correction"
 msgstr "Korrektion af vignettering"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Vignetting Correction"
 msgctxt "@title"
 msgid "Vignetting Correction"
 msgstr "Korrektion af vignettering"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
 msgid "A tool to correct vignetting"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool correct vignetting from an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Korrektion af vignettering..."
 
-#: core/dplugins/editor/enhance/blur/blurtool.cpp:157
+#: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
 msgid "Gaussian Blur"
 msgstr "Gaussisk sløring"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:44
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Blur"
 msgctxt "@title"
 msgid "Blur"
 msgstr "Slør"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to blur images"
 msgctxt "@info"
 msgid "A tool to blur an image"
 msgstr "Et værktøj til at sløre billeder"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Blur..."
 msgstr "Slør..."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:131
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:113
 #, fuzzy, kde-format
 #| msgid "Radius:"
 msgid "Brush Radius:"
 msgstr "Radius:"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:135
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:138
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:117
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -8982,13 +8982,13 @@ msgstr ""
 "En skarphed på 0 har ingen effekt. 1 og derover bestemmer radius "
 "påskærpningsmatrix der afgør hvor meget billedet skal skærpes."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:146
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:128
 #, fuzzy, kde-format
 #| msgid "Radial Blur"
 msgid "Radial Blur Percent:"
 msgstr "Radiær sløring"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:150
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:132
 #, kde-format
 msgid ""
 "A percent of 0 has no effect, values above 0 represent a factor for mixing "
@@ -8997,8 +8997,8 @@ msgid ""
 "is done gradually till the outer part of the circle."
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:164
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:165
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:146
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:147
 #, fuzzy, kde-format
 #| msgid "Set Point 1"
 msgid ""
@@ -9006,8 +9006,8 @@ msgid ""
 "Shortcut: S"
 msgstr "Sæt punkt 1"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:173
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:176
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:155
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:158
 #, kde-format
 msgid ""
 "Polygon Selection With Lasso.\n"
@@ -9016,31 +9016,31 @@ msgid ""
 "To Cancel, press ESC"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:186
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:187
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
 #, kde-format
 msgid ""
 "Move Image.\n"
 "Shortcut: M"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:195
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:196
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:177
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:178
 #, kde-format
 msgid ""
 "Undo clone operation.\n"
 "Shortcut: CTRL+Z"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:204
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:205
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:186
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:187
 #, kde-format
 msgid ""
 "Redo clone operation.\n"
 "Shortcut: CTRL+Y"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:209
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:191
 #, kde-format
 msgid ""
 "<p>How To Use:<br/><br/>* Press <b>s</b> to switch to source-selection mode, "
@@ -9053,40 +9053,40 @@ msgid ""
 "can clone only inside the lasso region.</p>"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:342
+#: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:324
 #, kde-format
 msgid "healingClone"
 msgstr ""
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:45
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:41
 #, fuzzy, kde-format
 #| msgid "Close Tool"
 msgctxt "@title"
 msgid "Healing Clone Tool"
 msgstr "Luk værktøjet"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:60
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:56
 #, fuzzy, kde-format
 #| msgid "A tool to blur images"
 msgctxt "@info"
 msgid "A tool to fix image artifacts"
 msgstr "Et værktøj til at sløre billeder"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:65
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:61
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can fix image artifacts by cloning area."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Close Tool"
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "Luk værktøjet"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:97
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to in-paint a part in a photo. To use this "
@@ -9098,42 +9098,42 @@ msgstr ""
 "Dette filter kan bruges til at indfylde en del af et foto. Vælg et område "
 "til indfyldning for at bruge dette."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:71
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:66
 #, kde-format
 msgid "Hot Pixels"
 msgstr "Hot Pixels"
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:169
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:164
 #, kde-format
 msgid "Hot Pixels Correction"
 msgstr "Korrektion af hot pixels"
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:64
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "Hot pixels..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:96
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Show grid"
 msgstr "Vis gitter"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:97
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr ""
 "Aktivér denne indstilling for at visualisere det korrektionsgitter, der skal "
 "anvendes."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
@@ -9141,14 +9141,14 @@ msgid ""
 "This Image Editor tool can fix automatically lens artifacts over an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:94
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction"
 msgctxt "@action"
 msgid "Lens Auto-Correction..."
 msgstr "Autokorrektion af objektiv"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:109
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:94
 #, kde-format
 msgid ""
 "You can see here a thumbnail preview of the distortion correction applied to "
@@ -9157,13 +9157,13 @@ msgstr ""
 "Her kan du se en miniature-forhåndsvisning af forvrængninskorrektionen "
 "anvendt på et krydsmønster."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:114
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:99
 #, kde-format
 msgctxt "value for amount of distortion"
 msgid "Main:"
 msgstr "Generel:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:120
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:105
 #, kde-format
 msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
@@ -9173,12 +9173,12 @@ msgstr ""
 "korrigerer tøndeforvrængning, mens positive værdier korrigerer "
 "nålepudeforvrængning."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:126
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
 #, kde-format
 msgid "Edge:"
 msgstr "Kant:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:117
 #, kde-format
 msgid ""
 "This value controls in the same manner as the Main control, but has more "
@@ -9187,96 +9187,96 @@ msgstr ""
 "Denne værdi kontrollerer på samme måde som den generelle kontrol, men har "
 "mere effekt i kanterne af billedet end i centrum."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:137
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:122
 #, kde-format
 msgid "Zoom:"
 msgstr "Zoom:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:143
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:128
 #, kde-format
 msgid "This value rescales the overall image size."
 msgstr "Denne værdi reskalerer den samlede billedstørrelse."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:147
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
 #, kde-format
 msgid "Brighten:"
 msgstr "Gør lysere:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:153
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
 #, kde-format
 msgid "This value adjusts the brightness in image corners."
 msgstr "Denne værdi justerer lysstyrken i billedets hjørner."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:309
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:294
 #, kde-format
 msgid "Lens Distortion"
 msgstr "Objektivforvrængning"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:44
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Lens Distortion"
 msgctxt "@title"
 msgid "Lens Distortion"
 msgstr "Objektivforvrængning"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:59
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "Fix automatically lens distortions"
 msgctxt "@info"
 msgid "A tool to adjust lens distortions"
 msgstr "Korrigér objektivforvrængninger automatisk"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:64
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Distortion..."
 msgstr "Forvrængning..."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttool.cpp:160
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttool.cpp:152
 #, kde-format
 msgid "Local Contrast"
 msgstr "Lokal kontrast"
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:64
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Local Contrast..."
 msgstr "Lokal kontrast..."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:66
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:140
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:60
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:134
 #, kde-format
 msgid "Noise Reduction"
 msgstr "Støjreducering"
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:64
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
 msgstr "Støjreducering..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:87
+#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:78
 #, kde-format
 msgid ""
 "Here you can see the image selection preview with red eye reduction applied."
@@ -9284,32 +9284,32 @@ msgstr ""
 "Her kan du se en forhåndsvisning af billedudsnittet med anvendt reducering "
 "af røde øjne."
 
-#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:176
+#: core/dplugins/editor/enhance/redeye/redeyetool.cpp:167
 #, kde-format
 msgid "Red Eyes Correction"
 msgstr "Korrektion af røde øjne"
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:44
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Red Eye"
 msgctxt "@title"
 msgid "Red Eye"
 msgstr "Røde øjne"
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:64
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "Røde øjne..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:100
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to correct red eyes in a photo. Select a region "
@@ -9322,23 +9322,23 @@ msgstr ""
 "Dette filter kan bruges til at korrigere for røde øjne på et billede. Vælg "
 "et område der indeholder øjnene for at bruge dette tilvalg."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:137
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:115
 #, kde-format
 msgid "Preset"
 msgstr "Forudindstil"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:143
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
 #, kde-format
 msgid "Filtering type:"
 msgstr "Filtreringstype:"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:149
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:127
 #, kde-format
 msgctxt "custom restoration settings"
 msgid "Custom"
 msgstr "Brugerdefineret"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:150
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:128
 #, kde-format
 msgid ""
 "<p>Select the filter preset to use for photograph restoration here:</"
@@ -9357,51 +9357,51 @@ msgstr ""
 "scannet billedes moiré-mønster.<br/><b>Brugerdefineret</b>: Sætter "
 "indstillinger til de mest almindelige værdier, fuldt brugerdefinerbart.</p>"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:339
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:319
 #, kde-format
 msgid "Restoration"
 msgstr "Restaurering"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:324
 #, fuzzy, kde-format
 #| msgid "Photograph Restoration Settings File to Load"
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Indstillingsfil til restaurering af fotos der skal indlæses"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:340
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
 msgstr ""
 "\"%1\" er ikke en tekstfil med indstillinger til restaurering af fotos."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:371
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:351
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr ""
 "Kan ikke indlæse indstillinger fra tekstfilen for restaurering af fotografi."
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:363
 #, fuzzy, kde-format
 #| msgid "Photograph Restoration Settings File to Save"
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Indstillingsfil til restaurering af fotos der skal gemmes"
 
-#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
+#: core/dplugins/editor/enhance/restoration/restorationtool.cpp:381
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr ""
 "Kan ikke gemme indstillinger i tekstfilen for restaurering af fotografi."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:59
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
 msgid "A tool to restore an image using Greystoration algorithm"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:64
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
@@ -9409,7 +9409,7 @@ msgid ""
 "This Image Editor tool can restore an image using Greystoration algorithm."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
@@ -9426,35 +9426,35 @@ msgstr "Skærp"
 msgid "Unsharp Mask"
 msgstr "Uskarphedsmaske"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
+#: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:130
 #, kde-format
 msgid "Refocus"
 msgstr "Omfokusér"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:44
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Sharpen"
 msgctxt "@title"
 msgid "Sharpen"
 msgstr "Skærp"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:59
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:55
 #, fuzzy, kde-format
 #| msgid "A tool to sharpen images"
 msgctxt "@info"
 msgid "A tool to sharp an image"
 msgstr "Et værktøj til at skærpe billeder"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:64
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:60
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Sharpen..."
@@ -31344,12 +31344,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Farveprofil-info - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:207
+#: core/libs/dialogs/imagedialog.cpp:215
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "Markér element"
 
-#: core/libs/dialogs/imagedialog.cpp:221
+#: core/libs/dialogs/imagedialog.cpp:229
 #, kde-format
 msgid "Select Items"
 msgstr "Markér elementer"
