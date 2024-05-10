@@ -44,27 +44,19 @@ using namespace Digikam;
 namespace DigikamGenericImgUrPlugin
 {
 
-static const QString imgur_auth_url       = QLatin1String("https://api.imgur.com/oauth2/authorize"),
-imgur_token_url                           = QLatin1String("https://api.imgur.com/oauth2/token");
-static const uint16_t imgur_redirect_port = 8000; // Redirect URI is http://127.0.0.1:8000      // krazy:exclude=insecurenet
 
 class Q_DECL_HIDDEN ImgurTalker::Private
 {
 public:
 
-    explicit Private()
-      : client_id       (QLatin1String("bd2572bce74b73d")),
-        client_secret   (QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1")),
-        workTimer       (0),
-        reply           (nullptr),
-        image           (nullptr),
-        netMngr         (nullptr)
-    {
-    }
+    Private() = default;
 
     /// API key and secret
-    QString                   client_id;
-    QString                   client_secret;
+    const QString             client_id             = QLatin1String("bd2572bce74b73d");
+    const QString             client_secret         = QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1");
+    const QString             imgur_auth_url        = QLatin1String("https://api.imgur.com/oauth2/authorize");
+    const QString             imgur_token_url       = QLatin1String("https://api.imgur.com/oauth2/token");
+    const uint16_t            imgur_redirect_port   = 8000; // Redirect URI is http://127.0.0.1:8000      // krazy:exclude=insecurenet
 
     /// Handler for OAuth 2 related requests.
     O2                        auth;
@@ -73,16 +65,16 @@ public:
     QQueue<ImgurTalkerAction> workQueue;
 
     /// ID of timer triggering on idle (0ms).
-    int                       workTimer;
+    int                       workTimer             = 0;
 
     /// Current QNetworkReply instance.
-    QNetworkReply*            reply;
+    QNetworkReply*            reply                 = nullptr;
 
     /// Current image being uploaded.
-    QFile*                    image;
+    QFile*                    image                 = nullptr;
 
     /// The QNetworkAccessManager instance used for connections.
-    QNetworkAccessManager*    netMngr;
+    QNetworkAccessManager*    netMngr               = nullptr;
 };
 
 ImgurTalker::ImgurTalker(QObject* const parent)
@@ -93,10 +85,10 @@ ImgurTalker::ImgurTalker(QObject* const parent)
 
     d->auth.setClientId(d->client_id);
     d->auth.setClientSecret(d->client_secret);
-    d->auth.setRequestUrl(imgur_auth_url);
-    d->auth.setTokenUrl(imgur_token_url);
-    d->auth.setRefreshTokenUrl(imgur_token_url);
-    d->auth.setLocalPort(imgur_redirect_port);
+    d->auth.setRequestUrl(d->imgur_auth_url);
+    d->auth.setTokenUrl(d->imgur_token_url);
+    d->auth.setRefreshTokenUrl(d->imgur_token_url);
+    d->auth.setLocalPort(d->imgur_redirect_port);
     d->auth.setLocalhostPolicy(QString());
 
     QSettings* const settings    = WSToolUtils::getOauthSettings(this);
@@ -177,7 +169,7 @@ void ImgurTalker::slotOauthAuthorized()
     }
 
     Q_EMIT signalAuthorized(success,
-                          d->auth.extraTokens()[QLatin1String("account_username")].toString());
+                            d->auth.extraTokens()[QLatin1String("account_username")].toString());
 }
 
 void ImgurTalker::slotOauthRequestPin(const QUrl& url)
@@ -189,6 +181,7 @@ void ImgurTalker::slotOauthRequestPin(const QUrl& url)
 void ImgurTalker::slotOauthFailed()
 {
     cancelAllWork();
+
     Q_EMIT signalAuthError(i18n("Could not authorize"));
 }
 
@@ -237,6 +230,7 @@ void ImgurTalker::slotReplyFinished()
         {
             case ImgurTalkerActionType::IMG_UPLOAD:
             case ImgurTalkerActionType::ANON_IMG_UPLOAD:
+            {
                 result.image.animated    = data[QLatin1String("animated")].toBool();
                 result.image.bandwidth   = data[QLatin1String("bandwidth")].toInt();
                 result.image.datetime    = data[QLatin1String("datetime")].toInt();
@@ -252,16 +246,21 @@ void ImgurTalker::slotReplyFinished()
                 result.image.views       = data[QLatin1String("views")].toInt();
                 result.image.width       = data[QLatin1String("width")].toInt();
                 break;
+            }
 
             case ImgurTalkerActionType::ACCT_INFO:
+            {
                 result.account.username = data[QLatin1String("url")].toString();
                 // TODO: Other fields.
                 break;
+            }
 
             default:
+            {
                 qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Unexpected action";
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << response.toJson();
                 break;
+            }
         }
 
         Q_EMIT signalSuccess(result);
@@ -319,6 +318,7 @@ void ImgurTalker::startWorkTimer()
     if (!d->workQueue.isEmpty() && d->workTimer == 0)
     {
         d->workTimer = QObject::startTimer(0);
+
         Q_EMIT signalBusy(true);
     }
     else
@@ -386,6 +386,7 @@ void ImgurTalker::doWork()
                 d->image = nullptr;
 
                 // Failed.
+
                 Q_EMIT signalError(i18n("Could not open file"), d->workQueue.first());
 
                 d->workQueue.dequeue();

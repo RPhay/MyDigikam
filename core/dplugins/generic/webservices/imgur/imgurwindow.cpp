@@ -43,20 +43,13 @@ class Q_DECL_HIDDEN ImgurWindow::Private
 {
 public:
 
-    explicit Private()
-      : list             (nullptr),
-        api              (nullptr),
-        forgetButton     (nullptr),
-        uploadAnonButton (nullptr),
-        userLabel        (nullptr)
-    {
-    }
+    Private() = default;
 
-    ImgurImagesList* list;
-    ImgurTalker*     api;
-    QPushButton*     forgetButton;
-    QPushButton*     uploadAnonButton;
-    QLabel*          userLabel;
+    ImgurImagesList* list               = nullptr;
+    ImgurTalker*     api                = nullptr;
+    QPushButton*     forgetButton       = nullptr;
+    QPushButton*     uploadAnonButton   = nullptr;
+    QLabel*          userLabel          = nullptr;
 
     /// Contains the imgur username if API authorized, else is null.
     QString          username;

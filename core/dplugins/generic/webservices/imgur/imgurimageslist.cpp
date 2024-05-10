@@ -176,8 +176,10 @@ void ImgurImagesList::slotContextMenuRequested()
 {
     if (
         listView()->topLevelItemCount()                                    &&
-        ((listView()->currentIndex().column() == ImgurImagesList::URL)     ||
-         (listView()->currentIndex().column() == ImgurImagesList::DeleteURL))
+        (
+         (listView()->currentIndex().column() == ImgurImagesList::URL)     ||
+         (listView()->currentIndex().column() == ImgurImagesList::DeleteURL)
+        )
        )
     {
         listView()->blockSignals(true);
@@ -211,14 +213,18 @@ void ImgurImagesList::slotCopyImurgURL()
 
         if (item)
         {
-            if ((listView()->currentIndex().column() == ImgurImagesList::URL) &&
-                !item->ImgurUrl().isEmpty())
+            if (
+                (listView()->currentIndex().column() == ImgurImagesList::URL) &&
+                !item->ImgurUrl().isEmpty()
+               )
             {
                 copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurUrl()));
             }
 
-            if ((listView()->currentIndex().column() == ImgurImagesList::DeleteURL) &&
-                !item->ImgurDeleteUrl().isEmpty())
+            if (
+                (listView()->currentIndex().column() == ImgurImagesList::DeleteURL) &&
+                !item->ImgurDeleteUrl().isEmpty()
+               )
             {
                copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurDeleteUrl()));
             }
