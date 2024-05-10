@@ -46,47 +46,29 @@ class Q_DECL_HIDDEN ShearTool::Private
 {
 public:
 
-    explicit Private()
-      : newWidthLabel       (nullptr),
-        newHeightLabel      (nullptr),
-        antialiasInput      (nullptr),
-        mainHAngleInput     (nullptr),
-        mainVAngleInput     (nullptr),
-        fineHAngleInput     (nullptr),
-        fineVAngleInput     (nullptr),
-        previewWidget       (nullptr),
-        gboxSettings        (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configAntiAliasingEntry;
-    static const QString configMainHAngleEntry;
-    static const QString configMainVAngleEntry;
-    static const QString configFineHAngleEntry;
-    static const QString configFineVAngleEntry;
+    const QString configGroupName           = QLatin1String("shear Tool");
+    const QString configAntiAliasingEntry   = QLatin1String("Anti Aliasing");
+    const QString configMainHAngleEntry     = QLatin1String("Main HAngle");
+    const QString configMainVAngleEntry     = QLatin1String("Main VAngle");
+    const QString configFineHAngleEntry     = QLatin1String("Fine HAngle");
+    const QString configFineVAngleEntry     = QLatin1String("Fine VAngle");
 
-    QLabel*              newWidthLabel;
-    QLabel*              newHeightLabel;
+    QLabel*              newWidthLabel      = nullptr;
+    QLabel*              newHeightLabel     = nullptr;
 
-    QCheckBox*           antialiasInput;
+    QCheckBox*           antialiasInput     = nullptr;
 
-    DIntNumInput*        mainHAngleInput;
-    DIntNumInput*        mainVAngleInput;
+    DIntNumInput*        mainHAngleInput    = nullptr;
+    DIntNumInput*        mainVAngleInput    = nullptr;
 
-    DDoubleNumInput*     fineHAngleInput;
-    DDoubleNumInput*     fineVAngleInput;
+    DDoubleNumInput*     fineHAngleInput    = nullptr;
+    DDoubleNumInput*     fineVAngleInput    = nullptr;
 
-    ImageGuideWidget*    previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageGuideWidget*    previewWidget      = nullptr;
+    EditorToolSettings*  gboxSettings       = nullptr;
 };
-
-const QString ShearTool::Private::configGroupName(QLatin1String("shear Tool"));
-const QString ShearTool::Private::configAntiAliasingEntry(QLatin1String("Anti Aliasing"));
-const QString ShearTool::Private::configMainHAngleEntry(QLatin1String("Main HAngle"));
-const QString ShearTool::Private::configMainVAngleEntry(QLatin1String("Main VAngle"));
-const QString ShearTool::Private::configFineHAngleEntry(QLatin1String("Fine HAngle"));
-const QString ShearTool::Private::configFineVAngleEntry(QLatin1String("Fine VAngle"));
 
 // --------------------------------------------------------
 
@@ -222,10 +204,12 @@ void ShearTool::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
+
     //    d->mainHAngleInput->setValue(group.readEntry(d->configMainHAngleEntry, d->mainHAngleInput->defaultValue()));
     //    d->mainVAngleInput->setValue(group.readEntry(d->configMainVAngleEntry, d->mainVAngleInput->defaultValue()));
     //    d->fineHAngleInput->setValue(group.readEntry(d->configFineHAngleEntry, d->fineHAngleInput->defaultValue()));
     //    d->fineVAngleInput->setValue(group.readEntry(d->configFineVAngleEntry, d->fineVAngleInput->defaultValue()));
+
     d->antialiasInput->setChecked(group.readEntry(d->configAntiAliasingEntry, true));
     slotPreview();
 }
@@ -234,10 +218,12 @@ void ShearTool::writeSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
+
     //    group.writeEntry(d->configMainHAngleEntry, d->mainHAngleInput->value());
     //    group.writeEntry(d->configMainVAngleEntry, d->mainVAngleInput->value());
     //    group.writeEntry(d->configFineHAngleEntry, d->fineHAngleInput->value());
     //    group.writeEntry(d->configFineVAngleEntry, d->fineVAngleInput->value());
+
     group.writeEntry(d->configAntiAliasingEntry, d->antialiasInput->isChecked());
 
     config->sync();

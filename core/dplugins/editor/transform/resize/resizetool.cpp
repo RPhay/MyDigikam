@@ -100,79 +100,60 @@ public:
         Millimeters
     };
 
-    explicit Private()
-      : orgWidth            (0),
-        orgHeight           (0),
-        prevW               (0),
-        prevH               (0),
-        prevWP              (0.0),
-        prevHP              (0.0),
-        restorationTips     (nullptr),
-        presetCBox          (nullptr),
-        units               (nullptr),
-        preserveRatioBox    (nullptr),
-        useGreycstorationBox(nullptr),
-        mainTab             (nullptr),
-        cimgLogoLabel       (nullptr),
-        previewWidget       (nullptr),
-        wInput              (nullptr),
-        hInput              (nullptr),
-        resolution          (nullptr),
-        wpInput             (nullptr),
-        hpInput             (nullptr),
-        gboxSettings        (nullptr),
-        settingsWidget      (nullptr)
-    {
-    }
+public:
+
+    Private() = default;
 
     QSize presetLengthValue(WidthPreset preset);
 
-    static const QString    configGroupName;
-    static const QString    configFastApproxEntry;
-    static const QString    configInterpolationEntry;
-    static const QString    configAmplitudeEntry;
-    static const QString    configSharpnessEntry;
-    static const QString    configAnisotropyEntry;
-    static const QString    configAlphaEntry;
-    static const QString    configSigmaEntry;
-    static const QString    configGaussPrecEntry;
-    static const QString    configDlEntry;
-    static const QString    configDaEntry;
-    static const QString    configIterationEntry;
-    static const QString    configTileEntry;
-    static const QString    configBTileEntry;
+public:
 
-    int                     orgWidth;
-    int                     orgHeight;
-    int                     prevW;
-    int                     prevH;
+    const QString configGroupName                   = QLatin1String("resize Tool");
+    const QString configFastApproxEntry             = QLatin1String("FastApprox");
+    const QString configInterpolationEntry          = QLatin1String("Interpolation");
+    const QString configAmplitudeEntry              = QLatin1String("Amplitude");
+    const QString configSharpnessEntry              = QLatin1String("Sharpness");
+    const QString configAnisotropyEntry             = QLatin1String("Anisotropy");
+    const QString configAlphaEntry                  = QLatin1String("Alpha");
+    const QString configSigmaEntry                  = QLatin1String("Sigma");
+    const QString configGaussPrecEntry              = QLatin1String("GaussPrec");
+    const QString configDlEntry                     = QLatin1String("Dl");
+    const QString configDaEntry                     = QLatin1String("Da");
+    const QString configIterationEntry              = QLatin1String("Iteration");
+    const QString configTileEntry                   = QLatin1String("Tile");
+    const QString configBTileEntry                  = QLatin1String("BTile");
 
-    double                  prevWP;
-    double                  prevHP;
+    int                     orgWidth                = 0;
+    int                     orgHeight               = 0;
+    int                     prevW                   = 0;
+    int                     prevH                   = 0;
 
-    QLabel*                 restorationTips;
+    double                  prevWP                  = 0.0;
+    double                  prevHP                  = 0.0;
 
-    QComboBox*              presetCBox;
-    QComboBox*              units;
+    QLabel*                 restorationTips         = nullptr;
 
-    QCheckBox*              preserveRatioBox;
-    QCheckBox*              useGreycstorationBox;
+    QComboBox*              presetCBox              = nullptr;
+    QComboBox*              units                   = nullptr;
 
-    QTabWidget*             mainTab;
+    QCheckBox*              preserveRatioBox        = nullptr;
+    QCheckBox*              useGreycstorationBox    = nullptr;
 
-    DActiveLabel*           cimgLogoLabel;
+    QTabWidget*             mainTab                 = nullptr;
 
-    ImageGuideWidget*       previewWidget;
+    DActiveLabel*           cimgLogoLabel           = nullptr;
 
-    DDoubleNumInput*        wInput;
-    DDoubleNumInput*        hInput;
-    DIntNumInput*           resolution;
+    ImageGuideWidget*       previewWidget           = nullptr;
 
-    DDoubleNumInput*        wpInput;
-    DDoubleNumInput*        hpInput;
+    DDoubleNumInput*        wInput                  = nullptr;
+    DDoubleNumInput*        hInput                  = nullptr;
+    DIntNumInput*           resolution              = nullptr;
 
-    EditorToolSettings*     gboxSettings;
-    GreycstorationSettings* settingsWidget;
+    DDoubleNumInput*        wpInput                 = nullptr;
+    DDoubleNumInput*        hpInput                 = nullptr;
+
+    EditorToolSettings*     gboxSettings            = nullptr;
+    GreycstorationSettings* settingsWidget          = nullptr;
 };
 
 QSize ResizeTool::Private::presetLengthValue(WidthPreset preset)
@@ -182,87 +163,105 @@ QSize ResizeTool::Private::presetLengthValue(WidthPreset preset)
     switch (preset)
     {
         case Private::Original:
+        {
             size = QSize(orgWidth, orgHeight);
             break;
+        }
 
         case Private::Tiny:
+        {
             size = QSize(320, 200);
             break;
+        }
 
         case Private::Small:
+        {
             size = QSize(640, 480);
             break;
+        }
 
         case Private::Medium:
+        {
             size = QSize(960, 640);
             break;
+        }
 
         case Private::Big:
+        {
             size = QSize(1024, 768);
             break;
+        }
 
         case Private::Large:
+        {
             size = QSize(1280, 720);
             break;
+        }
 
         case Private::Huge:
+        {
             size = QSize(1920, 1080);
             break;
+        }
 
         case Private::UHD4K:
+        {
             size = QSize(3840, 2160);
             break;
+        }
 
         case Private::A3:
+        {
             size = QSize(3508, 4961);
             break;
+        }
 
         case Private::A4:
+        {
             size = QSize(2480, 3508);
             break;
+        }
 
         case Private::A6:
+        {
             size = QSize(1240, 1748);
             break;
+        }
 
         case Private::Letter:
+        {
             size = QSize(2550, 3300);
             break;
+        }
 
         case Private::Print1:
+        {
             size = QSize(1200, 1800);
             break;
+        }
 
         case Private::Print2:
+        {
             size = QSize(1500, 2100);
             break;
+        }
 
         case Private::Print3:
+        {
             size = QSize(2400, 3000);
             break;
+        }
 
         default:
+        {
             size = QSize(3300, 4200);
             break;
+        }
     }
 
     return size;
 }
 
-const QString ResizeTool::Private::configGroupName(QLatin1String("resize Tool"));
-const QString ResizeTool::Private::configFastApproxEntry(QLatin1String("FastApprox"));
-const QString ResizeTool::Private::configInterpolationEntry(QLatin1String("Interpolation"));
-const QString ResizeTool::Private::configAmplitudeEntry(QLatin1String("Amplitude"));
-const QString ResizeTool::Private::configSharpnessEntry(QLatin1String("Sharpness"));
-const QString ResizeTool::Private::configAnisotropyEntry(QLatin1String("Anisotropy"));
-const QString ResizeTool::Private::configAlphaEntry(QLatin1String("Alpha"));
-const QString ResizeTool::Private::configSigmaEntry(QLatin1String("Sigma"));
-const QString ResizeTool::Private::configGaussPrecEntry(QLatin1String("GaussPrec"));
-const QString ResizeTool::Private::configDlEntry(QLatin1String("Dl"));
-const QString ResizeTool::Private::configDaEntry(QLatin1String("Da"));
-const QString ResizeTool::Private::configIterationEntry(QLatin1String("Iteration"));
-const QString ResizeTool::Private::configTileEntry(QLatin1String("Tile"));
-const QString ResizeTool::Private::configBTileEntry(QLatin1String("BTile"));
 
 // -------------------------------------------------------------
 
@@ -568,6 +567,7 @@ void ResizeTool::slotPresetsChanged()
         case Private::A3:
         case Private::A4:
         case Private::A6:
+        {
             d->units->setCurrentIndex(d->units->findData(Private::Millimeters));
 
             if (d->orgWidth > d->orgHeight)
@@ -576,12 +576,14 @@ void ResizeTool::slotPresetsChanged()
             }
 
             break;
+        }
 
         case Private::Letter:
         case Private::Print1:
         case Private::Print2:
         case Private::Print3:
         case Private::Print4:
+        {
             d->units->setCurrentIndex(d->units->findData(Private::Inches));
 
             if (d->orgWidth > d->orgHeight)
@@ -590,10 +592,13 @@ void ResizeTool::slotPresetsChanged()
             }
 
             break;
+        }
 
         default:
+        {
             d->units->setCurrentIndex(d->units->findData(Private::Pixels));
             break;
+        }
     }
 
     slotUnitsChanged();
@@ -625,31 +630,37 @@ void ResizeTool::slotUnitsChanged()
     switch ((Private::Units)d->units->currentData().toInt())
     {
         case Private::Pixels:
+        {
             decimals = 0;
             suffix   = i18nc("Pixels", "px");
-
             break;
+        }
 
         case Private::Inches:
+        {
             decimals = 1;
             suffix   = i18nc("Inches", "in");
-
             break;
+        }
 
         case Private::Millimeters:
+        {
             decimals = 1;
             suffix   = i18nc("Millimeters", "mm");
-
             break;
+        }
 
         case Private::Centimeters:
+        {
             decimals = 2;
             suffix   = i18nc("Centimeters", "cm");
-
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     d->wInput->setRange(1.0, pixelsToUnits(qMax(d->orgWidth * 10, 15000)), 1.0);
@@ -676,19 +687,27 @@ int ResizeTool::unitsToPixels(double val)
     switch (units)
     {
         case Private::Inches:
+        {
             pixel = pixel * res;
             break;
+        }
 
         case Private::Millimeters:
+        {
             pixel = qRound(pixel * res / 25.4);
             break;
+        }
 
         case Private::Centimeters:
+        {
             pixel = qRound(pixel * res / 2.54);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return pixel;
@@ -703,19 +722,27 @@ double ResizeTool::pixelsToUnits(int pix)
     switch (units)
     {
         case Private::Inches:
+        {
             val = val / (double)res;
             break;
+        }
 
         case Private::Millimeters:
+        {
             val = (val * 25.4) / (double)res;
             break;
+        }
 
         case Private::Centimeters:
+        {
             val = (val * 2.54) / (double)res;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return val;
@@ -727,7 +754,7 @@ void ResizeTool::slotValuesChanged()
 
     QString s(sender()->objectName());
 
-    if (s == QLatin1String("wInput"))
+    if      (s == QLatin1String("wInput"))
     {
         double val  = unitsToPixels(d->wInput->value());
         double pval = val / (double)(d->orgWidth) * 100.0;
@@ -805,8 +832,10 @@ void ResizeTool::preparePreview()
     int h = unitsToPixels(d->hInput->value());
     int w = unitsToPixels(d->wInput->value());
 
-    if (d->prevW  != d->wInput->value()  || d->prevH  != d->hInput->value() ||
-        d->prevWP != d->wpInput->value() || d->prevHP != d->hpInput->value())
+    if (
+        (d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value())
+       )
     {
         slotValuesChanged();
     }
@@ -827,6 +856,7 @@ void ResizeTool::preparePreview()
     {
         // See bug #152192: CImg resize() sound like defective or unadapted
         // to resize image without good quality.
+
         DImgBuiltinFilter resize(DImgBuiltinFilter::Resize, QSize(w, h));
         setFilter(resize.createThreadedFilter(imTemp, this));
     }
@@ -837,8 +867,10 @@ void ResizeTool::prepareFinal()
     int h = unitsToPixels(d->hInput->value());
     int w = unitsToPixels(d->wInput->value());
 
-    if (d->prevW  != d->wInput->value()  || d->prevH  != d->hInput->value() ||
-        d->prevWP != d->wpInput->value() || d->prevHP != d->hpInput->value())
+    if (
+        (d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value())
+       )
     {
         slotValuesChanged();
     }
@@ -861,6 +893,7 @@ void ResizeTool::prepareFinal()
     {
         // See bug #152192: CImg resize() sound like defective or unadapted
         // to resize image without good quality.
+
         DImgBuiltinFilter resize(DImgBuiltinFilter::Resize, QSize(w, h));
         setFilter(resize.createThreadedFilter(iface.original(), this));
     }

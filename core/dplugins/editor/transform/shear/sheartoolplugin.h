@@ -35,7 +35,7 @@ class ShearToolPlugin : public DPluginEditor
 public:
 
     explicit ShearToolPlugin(QObject* const parent = nullptr);
-    ~ShearToolPlugin()                   override;
+    ~ShearToolPlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

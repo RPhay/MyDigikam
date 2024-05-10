@@ -35,7 +35,7 @@ class ResizeToolPlugin : public DPluginEditor
 public:
 
     explicit ResizeToolPlugin(QObject* const parent = nullptr);
-    ~ResizeToolPlugin()                  override;
+    ~ResizeToolPlugin()                  override = default;
 
     QString name()                 const override;
     QString iid()                  const override;
