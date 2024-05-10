@@ -61,23 +61,14 @@ public:
      */
     struct PhotoUploadRequest
     {
-        PhotoUploadRequest()
-            : m_observationId(-1),
-              m_totalImages  (0),
-              m_updateIds    (false),
-              m_rescale      (false),
-              m_maxDim       (-1),
-              m_quality      (-1)
-        {
-        }
+        PhotoUploadRequest() = default;
 
         PhotoUploadRequest(const QList<QUrl>& imgs,
                            bool updId,
                            bool resize,
                            int mxDim,
                            int q, const QString& userName)
-            : m_observationId(-1),
-              m_totalImages  (imgs.count()),
+            : m_totalImages  (imgs.count()),
               m_images       (imgs),
               m_user         (userName),
               m_updateIds    (updId),
@@ -87,15 +78,15 @@ public:
         {
         }
 
-        int         m_observationId;
-        int         m_totalImages;
+        int         m_observationId = -1;
+        int         m_totalImages   = 0;
         QList<QUrl> m_images;
         QString     m_apiKey;
         QString     m_user;
-        bool        m_updateIds;
-        bool        m_rescale;
-        int         m_maxDim;
-        int         m_quality;
+        bool        m_updateIds     = false;
+        bool        m_rescale       = false;
+        int         m_maxDim        = -1;
+        int         m_quality       = -1;
     };
 
     /**
@@ -103,11 +94,7 @@ public:
      */
     struct PhotoUploadResult
     {
-        PhotoUploadResult()
-            : m_observationPhotoId(-1),
-              m_photoId           (-1)
-        {
-        }
+        PhotoUploadResult() = default;
 
         PhotoUploadResult(const PhotoUploadRequest& req, int obsPhId, int phId)
             : m_request           (req),
@@ -117,24 +104,13 @@ public:
         }
 
         PhotoUploadRequest m_request;
-        int                m_observationPhotoId;
-        int                m_photoId;
+        int                m_observationPhotoId = -1;
+        int                m_photoId            = -1;
     };
 
     struct NearbyObservation
     {
-
-        NearbyObservation()
-            : m_observationId     (-1),
-              m_latitude          (0.0),
-              m_longitude         (0.0),
-              m_distanceMeters    (-1.0),
-              m_obscured          (false),
-              m_referenceTaxon    (0),
-              m_referenceLatitude (0.0),
-              m_referenceLongitude(0.0)
-        {
-        }
+        NearbyObservation() = default;
 
         NearbyObservation(int id,
                           double latitude,
@@ -171,14 +147,14 @@ public:
             return (m_observationId != -1);
         }
 
-        int    m_observationId;
-        double m_latitude;
-        double m_longitude;
-        double m_distanceMeters;
-        bool   m_obscured;
-        uint   m_referenceTaxon;
-        double m_referenceLatitude;
-        double m_referenceLongitude;
+        int    m_observationId      = -1;
+        double m_latitude           = 0.0;
+        double m_longitude          = 0.0;
+        double m_distanceMeters     = -1.0;
+        bool   m_obscured           = false;
+        uint   m_referenceTaxon     = 0;
+        double m_referenceLatitude  = 0.0;
+        double m_referenceLongitude = 0.0;
     };
 
     INatTalker(QWidget* const parent,
@@ -270,7 +246,7 @@ public:
 
 public:
 
-    QProgressDialog* m_authProgressDlg;
+    QProgressDialog* m_authProgressDlg = nullptr;
 
 Q_SIGNALS:
 

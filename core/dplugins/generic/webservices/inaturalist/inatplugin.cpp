@@ -34,10 +34,6 @@ INatPlugin::INatPlugin(QObject* const parent)
 {
 }
 
-INatPlugin::~INatPlugin()
-{
-}
-
 void INatPlugin::cleanUp()
 {
     delete m_toolDlg;

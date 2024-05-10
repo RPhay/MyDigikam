@@ -68,9 +68,7 @@ public:
     {
     }
 
-    ~InatBrowserCookieJar()
-    {
-    }
+    ~InatBrowserCookieJar() = default;
 
     QList<QNetworkCookie> getAllCookies() const
     {
@@ -84,31 +82,25 @@ class Q_DECL_HIDDEN INatBrowserDlg::Private
 {
 public:
 
-    explicit Private()
-        : home       (QLatin1String("https://www.inaturalist.org/users/api_token")),
-          browser    (nullptr),
-          toolbar    (nullptr),
-          apiKeyFound(false)
-    {
-    }
+    Private() = default;
 
 public:
 
-    const QUrl                        home;
+    const QUrl                        home          = QUrl(QLatin1String("https://www.inaturalist.org/users/api_token"));
 
 #ifdef HAVE_QWEBENGINE
 
-    QWebEngineView*                   browser;
+    QWebEngineView*                   browser       = nullptr;
 
 #else
 
-    QWebView*                         browser;
+    QWebView*                         browser       = nullptr;
 
 #endif
 
     QString                           username;
-    QToolBar*                         toolbar;
-    bool                              apiKeyFound;
+    QToolBar*                         toolbar       = nullptr;
+    bool                              apiKeyFound   = false;
 
     QHash<QByteArray, QNetworkCookie> cookies;
 };
@@ -267,8 +259,10 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
 #endif
 
     }
-    else if (!d->username.isEmpty() &&
-             (url == QLatin1String("https://www.inaturalist.org/users/sign_in")))
+    else if (
+             !d->username.isEmpty() &&
+             (url == QLatin1String("https://www.inaturalist.org/users/sign_in"))
+            )
     {
         QString script = QString(QLatin1String("document.getElementById(\"user_"
                                                "email\").value=\"%1\";")).
@@ -294,8 +288,10 @@ void INatBrowserDlg::slotWebText(const QString& text)
     QJsonParseError err;
     QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8(), &err);
 
-    if ((err.error == QJsonParseError::NoError) && doc.isObject() &&
-        doc.object().contains(key))
+    if (
+        (err.error == QJsonParseError::NoError) && doc.isObject() &&
+        doc.object().contains(key)
+       )
     {
 
 #ifdef HAVE_QWEBENGINE

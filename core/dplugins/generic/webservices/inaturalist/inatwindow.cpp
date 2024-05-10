@@ -74,56 +74,22 @@ enum
 static const QString xmpNameSpaceURI    = QLatin1String("https://inaturalist.org/ns/1.0/");
 static const QString xmpNameSpacePrefix = QLatin1String("iNaturalist");
 
-
 class Q_DECL_HIDDEN INatWindow::Private
 {
 public:
 
-    explicit Private()
-        : changeUserButton        (nullptr),
-          accountIcon             (nullptr),
-          removeAccount           (nullptr),
-          resizeCheckBox          (nullptr),
-          dimensionSpinBox        (nullptr),
-          imageQualitySpinBox     (nullptr),
-          userNameDisplayLabel    (nullptr),
-          authProgressDlg         (nullptr),
-          identificationImage     (nullptr),
-          identificationLabel     (nullptr),
-          identificationFromVision(false),
-          closestKnownObservation (nullptr),
-          observationDescription  (nullptr),
-          identificationEdit      (nullptr),
-          taxonPopup              (nullptr),
-          placesComboBox          (nullptr),
-          moreOptionsButton       (nullptr),
-          moreOptionsWidget       (nullptr),
-          photoMaxTimeDiffSpB     (nullptr),
-          photoMaxDistanceSpB     (nullptr),
-          closestObservationMaxSpB(nullptr),
-          widget                  (nullptr),
-          talker                  (nullptr),
-          imglst                  (nullptr),
-          latLonValid             (false),
-          latitude                (0.0),
-          longitude               (0.0),
-          inCancel                (false),
-          xmpNameSpace            (false),
-          selectUser              (nullptr),
-          iface                   (nullptr)
-    {
-    }
+    Private() = default;
 
     QString                 serviceName;
 
-    QPushButton*            changeUserButton;
-    QLabel*                 accountIcon;
-    QPushButton*            removeAccount;
+    QPushButton*            changeUserButton            = nullptr;
+    QLabel*                 accountIcon                 = nullptr;
+    QPushButton*            removeAccount               = nullptr;
 
-    QCheckBox*              resizeCheckBox;
+    QCheckBox*              resizeCheckBox              = nullptr;
 
-    QSpinBox*               dimensionSpinBox;
-    QSpinBox*               imageQualitySpinBox;
+    QSpinBox*               dimensionSpinBox            = nullptr;
+    QSpinBox*               imageQualitySpinBox         = nullptr;
 
     // account info
 
@@ -131,46 +97,46 @@ public:
     QString                 name;
     QUrl                    iconUrl;
     QTimer                  apiTokenExpiresTimer;
-    QLabel*                 userNameDisplayLabel;
-    QProgressDialog*        authProgressDlg;
+    QLabel*                 userNameDisplayLabel        = nullptr;
+    QProgressDialog*        authProgressDlg             = nullptr;
 
     // identification
 
-    QLabel*                 identificationImage;
-    QLabel*                 identificationLabel;
-    bool                    identificationFromVision;
-    QLabel*                 closestKnownObservation;
-    DPlainTextEdit*         observationDescription;
-    TaxonEdit*              identificationEdit;
-    SuggestTaxonCompletion* taxonPopup;
-    QComboBox*              placesComboBox;
+    QLabel*                 identificationImage         = nullptr;
+    QLabel*                 identificationLabel         = nullptr;
+    bool                    identificationFromVision    = false;
+    QLabel*                 closestKnownObservation     = nullptr;
+    DPlainTextEdit*         observationDescription      = nullptr;
+    TaxonEdit*              identificationEdit          = nullptr;
+    SuggestTaxonCompletion* taxonPopup                  = nullptr;
+    QComboBox*              placesComboBox              = nullptr;
 
     // additional options
 
-    QPushButton*            moreOptionsButton;
-    QWidget*                moreOptionsWidget;
-    QSpinBox*               photoMaxTimeDiffSpB;
-    QSpinBox*               photoMaxDistanceSpB;
-    QSpinBox*               closestObservationMaxSpB;
+    QPushButton*            moreOptionsButton           = nullptr;
+    QWidget*                moreOptionsWidget           = nullptr;
+    QSpinBox*               photoMaxTimeDiffSpB         = nullptr;
+    QSpinBox*               photoMaxDistanceSpB         = nullptr;
+    QSpinBox*               closestObservationMaxSpB    = nullptr;
 
-    INatWidget*             widget;
-    INatTalker*             talker;
+    INatWidget*             widget                      = nullptr;
+    INatTalker*             talker                      = nullptr;
 
-    DItemsList*             imglst;
+    DItemsList*             imglst                      = nullptr;
 
     // observation
 
     Taxon                   identification;
-    bool                    latLonValid;
-    double                  latitude;
-    double                  longitude;
+    bool                    latLonValid                 = false;
+    double                  latitude                    = 0.0;
+    double                  longitude                   = 0.0;
     QDateTime               observationDateTime;
 
     QList<QString>          editedPlaces;
-    bool                    inCancel;
-    bool                    xmpNameSpace;
-    WSSelectUserDlg*        selectUser;
-    DInfoInterface*         iface;
+    bool                    inCancel                    = false;
+    bool                    xmpNameSpace                = false;
+    WSSelectUserDlg*        selectUser                  = nullptr;
+    DInfoInterface*         iface                       = nullptr;
 };
 
 INatWindow::INatWindow(DInfoInterface* const iface,
@@ -178,7 +144,7 @@ INatWindow::INatWindow(DInfoInterface* const iface,
                        const QString& serviceName)
     : WSToolDialog(nullptr, QString::fromLatin1("%1 Export Dialog").
                    arg(serviceName)),
-       d(new Private)
+       d          (new Private)
 {
     d->iface       = iface;
     d->serviceName = serviceName;
@@ -378,8 +344,10 @@ void INatWindow::switchUser(bool restoreToken)
 
     // If we have a username, restore api token and cookies.
 
-    if (!userName.isEmpty() &&
-        d->talker->restoreApiToken(userName, cookies, restoreToken))
+    if (
+        !userName.isEmpty() &&
+        d->talker->restoreApiToken(userName, cookies, restoreToken)
+       )
     {
         // Done if api token has been restored, browser is not called anymore.
 
@@ -773,12 +741,14 @@ void INatWindow::updateProgressBarMaximum(unsigned diff)
  */
 void INatWindow::slotUser1()
 {
-    if (d->imglst->imageUrls().isEmpty()                          ||
+    if (
+        d->imglst->imageUrls().isEmpty()                          ||
         !d->latLonValid                                           ||
         d->inCancel                                               ||
         (d->imglst->imageUrls().count() > MAX_OBSERVATION_PHOTOS) ||
         !d->observationDateTime.isValid()                         ||
-        !d->identification.isValid())
+        !d->identification.isValid()
+       )
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "NOT uploading observation.";
         return;
@@ -806,6 +776,7 @@ void INatWindow::slotUser1()
     }
 
     QString placeName = d->placesComboBox->currentText().simplified();
+
     if (placeName != d->placesComboBox->currentText())
     {
         d->placesComboBox->setEditText(placeName);
@@ -902,9 +873,11 @@ void INatWindow::slotPhotoUploaded(const INatTalker::PhotoUploadResult& result)
         const QUrl& fileUrl = request.m_images.front();
         DMetadata meta;
 
-        if (meta.supportXmp()                       &&
+        if (
+            meta.supportXmp()                       &&
             meta.canWriteXmp(fileUrl.toLocalFile()) &&
-            meta.load(fileUrl.toLocalFile()))
+            meta.load(fileUrl.toLocalFile())
+           )
         {
             if (!d->xmpNameSpace)
             {
@@ -1131,9 +1104,11 @@ void INatWindow::slotImageListChanged()
         item->setText(ItemLocation, gps);
     }
 
-    if ((d->latLonValid != latLonValid) ||
+    if (
+        (d->latLonValid != latLonValid) ||
         (d->latitude != latitude)       ||
-        (d->longitude != longitude))
+        (d->longitude != longitude)
+       )
     {
         if (latLonValid)
         {

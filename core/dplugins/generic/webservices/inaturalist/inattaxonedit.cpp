@@ -26,10 +26,6 @@ TaxonEdit::TaxonEdit(QWidget* const)
 {
 }
 
-TaxonEdit::~TaxonEdit()
-{
-}
-
 void TaxonEdit::focusInEvent(QFocusEvent* e)
 {
     QLineEdit::focusInEvent(e);

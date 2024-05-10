@@ -242,17 +242,21 @@ QString localizedTaxonomicRank(const QString& rank)
 
 QString localizedLocation(double latitude, double longitude, int precision)
 {
-    return (locale.toString(latitude, 'f', precision) +
+    return (
+            locale.toString(latitude, 'f', precision) +
             QLatin1String(", ")                       +
-            locale.toString(longitude, 'f', precision));
+            locale.toString(longitude, 'f', precision)
+           );
 }
 
 QString localizedDistance(double distMeters, char format, int precision)
 {
     if (locale.measurementSystem() == QLocale::ImperialUSSystem)
     {
-        if (locale.toString(distMeters * meterInMiles, format, precision) ==
-            locale.toString(0.0, format, precision))
+        if (
+            locale.toString(distMeters * meterInMiles, format, precision) ==
+            locale.toString(0.0, format, precision)
+           )
         {
             return locale.toString(distMeters * meterInFeet, format, precision) +
                    QLatin1String(" ft");

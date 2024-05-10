@@ -57,41 +57,24 @@ class Q_DECL_HIDDEN INatWidget::Private
 {
 public:
 
-    explicit Private()
-        : removeAccount           (nullptr),
-          accountIcon             (nullptr),
-          identificationImage     (nullptr),
-          identificationLabel     (nullptr),
-          closestKnownObservation (nullptr),
-          observationDescription  (nullptr),
-          identificationEdit      (nullptr),
-          taxonPopup              (nullptr),
-          photoMaxTimeDiffSpB     (nullptr),
-          photoMaxDistanceSpB     (nullptr),
-          closestObservationMaxSpB(nullptr),
-          placesComboBox          (nullptr),
-          moreOptionsButton       (nullptr),
-          moreOptionsWidget       (nullptr),
-          imglst                  (nullptr)
-    {
-    }
+    Private() = default;
 
     QString                 serviceName;
-    QPushButton*            removeAccount;
-    QLabel*                 accountIcon;
-    QLabel*                 identificationImage;
-    QLabel*                 identificationLabel;
-    QLabel*                 closestKnownObservation;
-    DPlainTextEdit*         observationDescription;
-    TaxonEdit*              identificationEdit;
-    SuggestTaxonCompletion* taxonPopup;
-    QSpinBox*               photoMaxTimeDiffSpB;
-    QSpinBox*               photoMaxDistanceSpB;
-    QSpinBox*               closestObservationMaxSpB;
-    QComboBox*              placesComboBox;
-    QPushButton*            moreOptionsButton;
-    QWidget*                moreOptionsWidget;
-    DItemsList*             imglst;
+    QPushButton*            removeAccount               = nullptr;
+    QLabel*                 accountIcon                 = nullptr;
+    QLabel*                 identificationImage         = nullptr;
+    QLabel*                 identificationLabel         = nullptr;
+    QLabel*                 closestKnownObservation     = nullptr;
+    DPlainTextEdit*         observationDescription      = nullptr;
+    TaxonEdit*              identificationEdit          = nullptr;
+    SuggestTaxonCompletion* taxonPopup                  = nullptr;
+    QSpinBox*               photoMaxTimeDiffSpB         = nullptr;
+    QSpinBox*               photoMaxDistanceSpB         = nullptr;
+    QSpinBox*               closestObservationMaxSpB    = nullptr;
+    QComboBox*              placesComboBox              = nullptr;
+    QPushButton*            moreOptionsButton           = nullptr;
+    QWidget*                moreOptionsWidget           = nullptr;
+    DItemsList*             imglst                      = nullptr;
 };
 
 } // namespace DigikamGenericINatPlugin

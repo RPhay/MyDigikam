@@ -49,8 +49,8 @@ struct TaxonAndFlags
     }
 
     Taxon m_taxon;
-    bool  m_seenNearby;
-    bool  m_visuallySimilar;
+    bool  m_seenNearby      = false;
+    bool  m_visuallySimilar = false;
 };
 
 struct Completions
@@ -62,7 +62,7 @@ struct Completions
 
     Taxon                m_commonAncestor;
     QList<TaxonAndFlags> m_taxa;
-    bool                 m_fromVision;
+    bool                 m_fromVision       = false;
 };
 
 // ----------------------------------------------------------------------------
@@ -71,18 +71,12 @@ class Q_DECL_HIDDEN SuggestTaxonCompletion::Private
 {
 public:
 
-    Private()
-        : editor    (nullptr),
-          talker    (nullptr),
-          popup     (nullptr),
-          fromVision(false)
-    {
-    }
+    Private() = default;
 
-    TaxonEdit*                    editor;
-    INatTalker*                   talker;
-    QTreeWidget*                  popup;
-    bool                          fromVision;
+    TaxonEdit*                    editor            = nullptr;
+    INatTalker*                   talker            = nullptr;
+    QTreeWidget*                  popup             = nullptr;
+    bool                          fromVision        = false;
     QVector<Taxon>                completionTaxa;
     QTimer                        timer;
     QHash<QUrl, QTreeWidgetItem*> url2item;
@@ -131,6 +125,7 @@ SuggestTaxonCompletion::~SuggestTaxonCompletion()
 void SuggestTaxonCompletion::slotTextEdited(const QString&)
 {
     Q_EMIT signalTaxonDeselected();
+
     d->timer.start();
 }
 
@@ -154,6 +149,7 @@ void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
 void SuggestTaxonCompletion::slotInFocus()
 {
     Q_EMIT signalTaxonDeselected();
+
     d->timer.start();
 }
 

@@ -39,7 +39,7 @@ public:
 
     INatBrowserDlg(const QString& username, const QList<QNetworkCookie>&,
                    QWidget* const parent);
-    ~INatBrowserDlg() override;
+    ~INatBrowserDlg()                                   override;
 
     static bool filterCookie(const QNetworkCookie& cookie,
                              bool keepSessionCookies, const QDateTime&);
@@ -66,7 +66,7 @@ private Q_SLOTS:
 
 protected:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)                       override;
 
 private:
 

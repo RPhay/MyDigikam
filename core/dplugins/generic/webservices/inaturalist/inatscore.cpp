@@ -30,19 +30,13 @@ class Q_DECL_HIDDEN ComputerVisionScore::Private
 {
 public:
 
-    Private()
-        : frequencyScore(0.0),
-          visionScore   (0.0),
-          combinedScore (0.0)
-    {
-    }
+    Private() = default;
 
-    double frequencyScore;
-    double visionScore;
-    double combinedScore;
+    double frequencyScore   = 0.0;
+    double visionScore      = 0.0;
+    double combinedScore    = 0.0;
     Taxon  taxon;
 };
-
 
 ComputerVisionScore::ComputerVisionScore(double frequencyScore,
                                          double visionScore,

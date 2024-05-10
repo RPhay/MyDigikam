@@ -211,26 +211,22 @@ class Q_DECL_HIDDEN Request
 {
 public:
 
-    Request()
-        : m_startTime(QDateTime::currentMSecsSinceEpoch())
-    {
-    }
-
-    virtual ~Request()
-    {
-    }
+    Request()          = default;
+    virtual ~Request() = default;
 
     static bool networkErrorRetry(QNetworkReply::NetworkError code)
     {
-        return (code == QNetworkReply::ConnectionRefusedError       ||
-                code == QNetworkReply::RemoteHostClosedError        ||
-                code == QNetworkReply::HostNotFoundError            ||
-                code == QNetworkReply::TimeoutError                 ||
-                code == QNetworkReply::TemporaryNetworkFailureError ||
-                code == QNetworkReply::NetworkSessionFailedError    ||
-                code == QNetworkReply::InternalServerError          ||
-                code == QNetworkReply::ServiceUnavailableError      ||
-                code == QNetworkReply::UnknownServerError);
+        return (
+                (code == QNetworkReply::ConnectionRefusedError)       ||
+                (code == QNetworkReply::RemoteHostClosedError)        ||
+                (code == QNetworkReply::HostNotFoundError)            ||
+                (code == QNetworkReply::TimeoutError)                 ||
+                (code == QNetworkReply::TemporaryNetworkFailureError) ||
+                (code == QNetworkReply::NetworkSessionFailedError)    ||
+                (code == QNetworkReply::InternalServerError)          ||
+                (code == QNetworkReply::ServiceUnavailableError)      ||
+                (code == QNetworkReply::UnknownServerError)
+               );
     }
 
     virtual void reportError(INatTalker&, QNetworkReply::NetworkError,
@@ -243,7 +239,7 @@ public:
 
     bool isTimeout() const
     {
-        return (durationMilliSecs() > 1000 * RESPONSE_TIMEOUT_SECS);
+        return (durationMilliSecs() > (1000 * RESPONSE_TIMEOUT_SECS));
     }
 
     // How long did it take?
@@ -255,7 +251,7 @@ public:
 
 private:
 
-    qint64 m_startTime;
+    qint64 m_startTime = QDateTime::currentMSecsSinceEpoch();
 
 private:
 
@@ -268,22 +264,7 @@ class Q_DECL_HIDDEN INatTalker::Private
 {
 public:
 
-    explicit Private()
-        : parent          (nullptr),
-          netMngr         (nullptr),
-          timer           (nullptr),
-          settings        (nullptr),
-          iface           (nullptr),
-          store           (nullptr),
-          apiTokenExpires (0)
-    {
-        QString cryptId(QLatin1String("119b0b8a57644341fe03eca486a341"));
-
-        apiUrl     = QLatin1String("https://api.inaturalist.org/v1/");
-        keyToken   = QString(QLatin1String(O2_KEY_TOKEN)).arg(cryptId);
-        keyExpires = QString(QLatin1String(O2_KEY_EXPIRES)).arg(cryptId);
-        keyCookies = QString(QLatin1String("cookies.%1")).arg(cryptId);
-    }
+    Private() = default;
 
     void clear()
     {
@@ -291,24 +272,25 @@ public:
         apiToken        = QString();
     }
 
-    QWidget*                          parent;
-    QNetworkAccessManager*            netMngr;
-    QTimer*                           timer;
-    QSettings*                        settings;
-    DInfoInterface*                   iface;
-    O0SettingsStore*                  store;
+    QWidget*                          parent            = nullptr;
+    QNetworkAccessManager*            netMngr           = nullptr;
+    QTimer*                           timer             = nullptr;
+    QSettings*                        settings          = nullptr;
+    DInfoInterface*                   iface             = nullptr;
+    O0SettingsStore*                  store             = nullptr;
 
     QString                           serviceName;
-    QString                           apiUrl;
+    const QString                     cryptId           = QLatin1String("119b0b8a57644341fe03eca486a341");
+    const QString                     apiUrl            = QLatin1String("https://api.inaturalist.org/v1/");
 
     /// keys used in O0SettingsStore
-    QString                           keyToken;
-    QString                           keyExpires;
-    QString                           keyCookies;
+    const QString                     keyToken          = QString(QLatin1String(O2_KEY_TOKEN)).arg(cryptId);
+    const QString                     keyExpires        = QString(QLatin1String(O2_KEY_EXPIRES)).arg(cryptId);
+    const QString                     keyCookies        = QString(QLatin1String("cookies.%1")).arg(cryptId);
 
     /// the api token and its expiration time in seconds since January 1st, 1970
     QString                           apiToken;
-    uint                              apiTokenExpires;
+    uint                              apiTokenExpires   = 0;
 
     /// this hash table allows us to serve multiple requests concurrently
     QHash<QNetworkReply*, Request*>   pendingRequests;
@@ -451,6 +433,7 @@ void INatTalker::slotApiToken(const QString& apiToken,
     if (apiToken.isEmpty())
     {
         Q_EMIT signalLinkingFailed(QLatin1String("no api token"));
+
         return;
     }
     else
@@ -485,7 +468,7 @@ public:
                                          << "after" << durationMilliSecs() << "msecs.";
 
         Q_EMIT talker.signalLinkingFailed(QLatin1String("user-info request "
-                                                      "failed"));
+                                                        "failed"));
     }
 
     void parseResponse(INatTalker& talker,
@@ -497,9 +480,11 @@ public:
         {
             QJsonObject result = json[RESULTS].toArray()[0].toObject();
             QString username(result[LOGIN].toString());
+
             Q_EMIT talker.signalLinkingSucceeded(username,
                                                result[NAME].toString(),
                                                QUrl(result[ICON].toString()));
+
             talker.d->store->setGroupKey(talker.d->serviceName + username);
 
             // save api token
@@ -536,7 +521,7 @@ public:
         else
         {
             Q_EMIT talker.signalLinkingFailed(QLatin1String("user-info request "
-                                            "failed"));
+                                                            "failed"));
         }
 
         if (talker.m_authProgressDlg)
@@ -630,7 +615,7 @@ public:
 private:
 
     QUrl m_url;
-    int  m_retries;
+    int  m_retries = 0;
 
 private:
 
@@ -827,13 +812,7 @@ private:
 
     struct Place
     {
-        QString m_name;
-        double  m_bboxArea;
-
-        Place()
-            : m_bboxArea(0.0)
-        {
-        }
+        Place() = default;
 
         Place(const QString& n, double ba)
             : m_name    (n),
@@ -845,12 +824,15 @@ private:
         {
             return (m_bboxArea < other.m_bboxArea);
         }
+
+        QString m_name;
+        double  m_bboxArea = 0.0;
     };
 
 private:
 
-    double  m_latitude;
-    double  m_longitude;
+    double  m_latitude  = 0.0;
+    double  m_longitude = 0.0;
     QString m_query;
 
 private:
@@ -1047,10 +1029,10 @@ public:
 
 private:
 
-    uint    m_taxon;
-    double  m_latitude;
-    double  m_longitude;
-    double  m_radiusKm;
+    uint    m_taxon     = 0;
+    double  m_latitude  = 0.0;
+    double  m_longitude = 0.0;
+    double  m_radiusKm  = 0.0;
     QString m_query;
 
 private:
@@ -1354,10 +1336,12 @@ public:
         QJsonObject json          = parseJsonResponse(data);
         int         observationId = -1;
 
-        if (json.contains(TOTAL_RESULTS) &&
+        if (
+            json.contains(TOTAL_RESULTS) &&
             json.contains(PER_PAGE)      &&
             json.contains(RESULTS)       &&
-            json.contains(PAGE))
+            json.contains(PAGE)
+           )
         {
             int        totalResults = json[TOTAL_RESULTS].toInt();
             int        perPage      = json[PER_PAGE].toInt();
@@ -1371,10 +1355,12 @@ public:
             {
                 QJsonObject result = results[i].toObject();
 
-                if (result.contains(OBSERVED_ON_STRING)                    &&
-                    result.contains(TAXON)                                 &&
-                    result[OBSERVED_ON_STRING].toString() == m_observed_on &&
-                    result[TAXON].toObject()[ID].toInt()  == m_taxon_id)
+                if (
+                    result.contains(OBSERVED_ON_STRING)                      &&
+                    result.contains(TAXON)                                   &&
+                    (result[OBSERVED_ON_STRING].toString() == m_observed_on) &&
+                    (result[TAXON].toObject()[ID].toInt()  == m_taxon_id)
+                   )
                 {
                     observationId = result[ID].toInt();
                     break;
@@ -1420,8 +1406,8 @@ private:
     QByteArray                     m_parameters;
     INatTalker::PhotoUploadRequest m_uploadRequest;
     QString                        m_observed_on;
-    int                            m_taxon_id;
-    int                            m_retries;
+    int                            m_taxon_id       = 0;
+    int                            m_retries        = 0;
 
 private:
 
@@ -1597,9 +1583,11 @@ public:
         int lastObservationPhotoId = -1;
         int lastPhotoId            = -1;
 
-        if (json.contains(TOTAL_RESULTS)     &&
+        if (
+            json.contains(TOTAL_RESULTS)     &&
             json.contains(RESULTS)           &&
-            (json[TOTAL_RESULTS].toInt() == 1))
+            (json[TOTAL_RESULTS].toInt() == 1)
+           )
         {
             QJsonObject result = json[RESULTS].toArray()[0].toObject();
 
@@ -1609,10 +1597,10 @@ public:
 
                 if (noPhotos >= 1)
                 {
-                    QJsonObject obsPhoto = result[OBSERVATION_PHOTOS].
-                                           toArray()[noPhotos-1].toObject();
+                    QJsonObject obsPhoto   = result[OBSERVATION_PHOTOS].
+                                             toArray()[noPhotos-1].toObject();
                     lastObservationPhotoId = obsPhoto[ID].toInt();
-                    lastPhotoId = obsPhoto[PHOTO].toObject()[ID].toInt();
+                    lastPhotoId            = obsPhoto[PHOTO].toObject()[ID].toInt();
                 }
             }
 
@@ -1621,13 +1609,11 @@ public:
                                              << "photos to upload," << m_request.m_totalImages
                                              << "total photos, checked in" << durationMilliSecs() << "msecs.";
 
-            if      ((noPhotos + m_request.m_images.count()) ==
-                     m_request.m_totalImages)
+            if      ((noPhotos + m_request.m_images.count()) == m_request.m_totalImages)
             {
                 talker.uploadNextPhoto(m_request);
             }
-            else if ((noPhotos + m_request.m_images.count()) ==
-                     (m_request.m_totalImages + 1))
+            else if ((noPhotos + m_request.m_images.count()) == (m_request.m_totalImages + 1))
             {
                 INatTalker::PhotoUploadResult uploadResult(m_request,
                                                            lastObservationPhotoId,
@@ -1646,7 +1632,7 @@ public:
 private:
 
     INatTalker::PhotoUploadRequest m_request;
-    int                            m_retries;
+    int                            m_retries = 0;
 
 private:
 
@@ -1742,8 +1728,10 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
     QString tmpImage;
     QString path = request.m_images.front().toLocalFile();
 
-    bool isJpeg = (path.endsWith(QLatin1String(".jpg"), Qt::CaseInsensitive) ||
-                   path.endsWith(QLatin1String(".jpeg"), Qt::CaseInsensitive));
+    bool isJpeg = (
+                   path.endsWith(QLatin1String(".jpg"), Qt::CaseInsensitive) ||
+                   path.endsWith(QLatin1String(".jpeg"), Qt::CaseInsensitive)
+                  );
 
     if (request.m_rescale || !isJpeg)
     {
@@ -1759,8 +1747,10 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
         {
             tmpImage = tmpFileName(path);
 
-            if ((image.width()  > request.m_maxDim) ||
-                (image.height() > request.m_maxDim))
+            if (
+                (image.width()  > request.m_maxDim) ||
+                (image.height() > request.m_maxDim)
+               )
             {
                 image = image.scaled(request.m_maxDim, request.m_maxDim,
                                      Qt::KeepAspectRatio,
@@ -1837,8 +1827,8 @@ public:
 private:
 
     QString m_apiKey;
-    int     m_observationId;
-    int     m_retries;
+    int     m_observationId = 0;
+    int     m_retries       = 0;
 
 private:
 
@@ -1868,6 +1858,7 @@ void INatTalker::cancel()
     }
 
     d->clear();
+
     Q_EMIT signalBusy(false);
 }
 

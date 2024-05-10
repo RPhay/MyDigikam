@@ -25,18 +25,13 @@ class Q_DECL_HIDDEN Taxon::Private
 {
 public:
 
-    Private()
-        : id       (-1),
-          parentId (-1),
-          rankLevel(-1.0)
-    {
-    }
+    Private() = default;
 
-    int          id;
-    int          parentId;
+    int          id         = -1;
+    int          parentId   = -1;
     QString      name;
     QString      rank;
-    double       rankLevel;
+    double       rankLevel  = -1.0;
     QString      commonName;
     QString      matchedTerm;
     QUrl         squareUrl;
@@ -136,8 +131,10 @@ QString Taxon::htmlName() const
 
     QStringList split = name().split(blank);
 
-    if (split.count() == 3 &&
-        ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid)))
+    if (
+        (split.count() == 3) &&
+        ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid))
+       )
     {
         QString txt = (rank() == subspecies) ? QLatin1String(" ssp. ")
                                              : (rank() == variety) ? QLatin1String(" var. ")
