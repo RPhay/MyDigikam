@@ -54,37 +54,25 @@ class Q_DECL_HIDDEN FreeRotationTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName     (QLatin1String("freerotation Tool")),
-        newHeightLabel      (nullptr),
-        newWidthLabel       (nullptr),
-        autoAdjustBtn       (nullptr),
-        autoAdjustPoint1Btn (nullptr),
-        autoAdjustPoint2Btn (nullptr),
-        settingsView        (nullptr),
-        expanderBox         (nullptr),
-        gboxSettings        (nullptr),
-        previewWidget       (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString         configGroupName;
+    const QString         configGroupName       = QLatin1String("freerotation Tool");
 
-    QLabel*               newHeightLabel;
-    QLabel*               newWidthLabel;
+    QLabel*               newHeightLabel        = nullptr;
+    QLabel*               newWidthLabel         = nullptr;
 
     QPoint                autoAdjustPoint1;
     QPoint                autoAdjustPoint2;
 
-    QPushButton*          autoAdjustBtn;
-    QPushButton*          autoAdjustPoint1Btn;
-    QPushButton*          autoAdjustPoint2Btn;
+    QPushButton*          autoAdjustBtn         = nullptr;
+    QPushButton*          autoAdjustPoint1Btn   = nullptr;
+    QPushButton*          autoAdjustPoint2Btn   = nullptr;
 
-    FreeRotationSettings* settingsView;
+    FreeRotationSettings* settingsView          = nullptr;
 
-    DExpanderBox*         expanderBox;
-    EditorToolSettings*   gboxSettings;
-    ImageGuideWidget*     previewWidget;
+    DExpanderBox*         expanderBox           = nullptr;
+    EditorToolSettings*   gboxSettings          = nullptr;
+    ImageGuideWidget*     previewWidget         = nullptr;
 };
 
 FreeRotationTool::FreeRotationTool(QObject* const parent)
@@ -385,13 +373,11 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 
         if (diff != 0)
         {
-            // too long?
-            if      (tmp.count() > maxLength)
+            if      (tmp.count() > maxLength)   // too long?
             {
                 tmp.chop(diff);
             }
-            // too short?
-            else if (tmp.count() < maxLength)
+            else if (tmp.count() < maxLength)   // too short?
             {
                 tmp.append(delimiter.repeated(diff));
             }

@@ -35,10 +35,6 @@ AutoCropToolPlugin::AutoCropToolPlugin(QObject* const parent)
 {
 }
 
-AutoCropToolPlugin::~AutoCropToolPlugin()
-{
-}
-
 QString AutoCropToolPlugin::name() const
 {
     return i18nc("@title", "Auto-Crop");
@@ -88,7 +84,7 @@ QList<DPluginAuthor> AutoCropToolPlugin::authors() const
                              QString::fromUtf8("(C) 2013"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2013-2021"))
+                             QString::fromUtf8("(C) 2013-2024"))
             ;
 }
 

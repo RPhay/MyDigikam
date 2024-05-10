@@ -62,95 +62,56 @@ public:
 
 public:
 
-    explicit Private()
-      : orgWidth            (0),
-        orgHeight           (0),
-        prevW               (0),
-        prevH               (0),
-        prevWP              (0.0),
-        prevHP              (0.0),
-        preserveRatioBox    (nullptr),
-        weightMaskBox       (nullptr),
-        preserveSkinTones   (nullptr),
-        previewWidget       (nullptr),
-        gboxSettings        (nullptr),
-        wInput              (nullptr),
-        hInput              (nullptr),
-        stepInput           (nullptr),
-        maskPenSize         (nullptr),
-        sideSwitchInput     (nullptr),
-        wpInput             (nullptr),
-        hpInput             (nullptr),
-        mixedRescaleInput   (nullptr),
-        rigidityInput       (nullptr),
-        funcInput           (nullptr),
-        resizeOrderInput    (nullptr),
-        expanderBox         (nullptr),
-        redMaskTool         (nullptr),
-        greenMaskTool       (nullptr),
-        eraseMaskTool       (nullptr),
-        maskGroup           (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configStepEntry;
-    static const QString configSideSwitchEntry;
-    static const QString configRigidityEntry;
-    static const QString configFunctionEntry;
-    static const QString configOrderEntry;
-    static const QString configMixedRescaleValueEntry;
-    static const QString configBrushSizeEntry;
-    static const QString configPreserveTonesEntry;
+    const QString configGroupName               = QLatin1String("liquidrescale Tool");
+    const QString configStepEntry               = QLatin1String("Step");
+    const QString configSideSwitchEntry         = QLatin1String("SideSwitch");
+    const QString configRigidityEntry           = QLatin1String("Rigidity");
+    const QString configFunctionEntry           = QLatin1String("Function");
+    const QString configOrderEntry              = QLatin1String("Order");
+    const QString configMixedRescaleValueEntry  = QLatin1String("MixedRescaleValue");
+    const QString configBrushSizeEntry          = QLatin1String("BrushSize");
+    const QString configPreserveTonesEntry      = QLatin1String("PreserveTones");
 
-    int                  orgWidth;
-    int                  orgHeight;
-    int                  prevW;
-    int                  prevH;
+    int                  orgWidth               = 0;
+    int                  orgHeight              = 0;
+    int                  prevW                  = 0;
+    int                  prevH                  = 0;
 
-    double               prevWP;
-    double               prevHP;
+    double               prevWP                 = 0.0;
+    double               prevHP                 = 0.0;
 
-    QCheckBox*           preserveRatioBox;
-    QCheckBox*           weightMaskBox;
-    QCheckBox*           preserveSkinTones;
+    QCheckBox*           preserveRatioBox       = nullptr;
+    QCheckBox*           weightMaskBox          = nullptr;
+    QCheckBox*           preserveSkinTones      = nullptr;
 
-    ImageGuideWidget*    previewWidget;
+    ImageGuideWidget*    previewWidget          = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings           = nullptr;
 
-    DIntNumInput*        wInput;
-    DIntNumInput*        hInput;
-    DIntNumInput*        stepInput;
-    DIntNumInput*        maskPenSize;
-    DIntNumInput*        sideSwitchInput;
+    DIntNumInput*        wInput                 = nullptr;
+    DIntNumInput*        hInput                 = nullptr;
+    DIntNumInput*        stepInput              = nullptr;
+    DIntNumInput*        maskPenSize            = nullptr;
+    DIntNumInput*        sideSwitchInput        = nullptr;
 
-    DDoubleNumInput*     wpInput;
-    DDoubleNumInput*     hpInput;
-    DDoubleNumInput*     mixedRescaleInput;
-    DDoubleNumInput*     rigidityInput;
+    DDoubleNumInput*     wpInput                = nullptr;
+    DDoubleNumInput*     hpInput                = nullptr;
+    DDoubleNumInput*     mixedRescaleInput      = nullptr;
+    DDoubleNumInput*     rigidityInput          = nullptr;
 
-    DComboBox*           funcInput;
-    DComboBox*           resizeOrderInput;
+    DComboBox*           funcInput              = nullptr;
+    DComboBox*           resizeOrderInput       = nullptr;
 
-    DExpanderBox*        expanderBox;
+    DExpanderBox*        expanderBox            = nullptr;
 
-    QToolButton*         redMaskTool;
-    QToolButton*         greenMaskTool;
-    QToolButton*         eraseMaskTool;
+    QToolButton*         redMaskTool            = nullptr;
+    QToolButton*         greenMaskTool          = nullptr;
+    QToolButton*         eraseMaskTool          = nullptr;
 
-    QButtonGroup*        maskGroup;
+    QButtonGroup*        maskGroup              = nullptr;
 };
-
-const QString ContentAwareResizeTool::Private::configGroupName(QLatin1String("liquidrescale Tool"));
-const QString ContentAwareResizeTool::Private::configStepEntry(QLatin1String("Step"));
-const QString ContentAwareResizeTool::Private::configSideSwitchEntry(QLatin1String("SideSwitch"));
-const QString ContentAwareResizeTool::Private::configRigidityEntry(QLatin1String("Rigidity"));
-const QString ContentAwareResizeTool::Private::configFunctionEntry(QLatin1String("Function"));
-const QString ContentAwareResizeTool::Private::configOrderEntry(QLatin1String("Order"));
-const QString ContentAwareResizeTool::Private::configMixedRescaleValueEntry(QLatin1String("MixedRescaleValue"));
-const QString ContentAwareResizeTool::Private::configBrushSizeEntry(QLatin1String("BrushSize"));
-const QString ContentAwareResizeTool::Private::configPreserveTonesEntry(QLatin1String("PreserveTones"));
 
 // --------------------------------------------------------
 
@@ -668,8 +629,10 @@ void ContentAwareResizeTool::contentAwareResizeCore(DImg* const image, int targe
 
 void ContentAwareResizeTool::preparePreview()
 {
-    if ((d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
-        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value()))
+    if (
+        (d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value())
+       )
     {
         slotValuesChanged();
     }
@@ -704,8 +667,10 @@ void ContentAwareResizeTool::preparePreview()
 
 void ContentAwareResizeTool::prepareFinal()
 {
-    if ((d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
-        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value()))
+    if (
+        (d->prevW  != d->wInput->value())  || (d->prevH  != d->hInput->value()) ||
+        (d->prevWP != d->wpInput->value()) || (d->prevHP != d->hpInput->value())
+       )
     {
         slotValuesChanged();
     }

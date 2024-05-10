@@ -35,7 +35,7 @@ class ContentAwareResizeToolPlugin : public DPluginEditor
 public:
 
     explicit ContentAwareResizeToolPlugin(QObject* const parent = nullptr);
-    ~ContentAwareResizeToolPlugin()      override;
+    ~ContentAwareResizeToolPlugin()      override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

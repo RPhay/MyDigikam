@@ -35,7 +35,7 @@ class FreeRotationToolPlugin : public DPluginEditor
 public:
 
     explicit FreeRotationToolPlugin(QObject* const parent = nullptr);
-    ~FreeRotationToolPlugin()            override;
+    ~FreeRotationToolPlugin()            override = default;
 
     QString name()                 const override;
     QString iid()                  const override;
