@@ -46,21 +46,14 @@ class Q_DECL_HIDDEN BOXWindow::Private
 {
 public:
 
-    explicit Private()
-      : imagesCount(0),
-        imagesTotal(0),
-        widget     (nullptr),
-        albumDlg   (nullptr),
-        talker     (nullptr)
-    {
-    }
+    Private() = default;
 
-    unsigned int    imagesCount;
-    unsigned int    imagesTotal;
+    unsigned int    imagesCount         = 0;
+    unsigned int    imagesTotal         = 0;
 
-    BOXWidget*      widget;
-    BOXNewAlbumDlg* albumDlg;
-    BOXTalker*      talker;
+    BOXWidget*      widget              = nullptr;
+    BOXNewAlbumDlg* albumDlg            = nullptr;
+    BOXTalker*      talker              = nullptr;
 
     QString         currentAlbumName;
     QList<QUrl>     transferQueue;

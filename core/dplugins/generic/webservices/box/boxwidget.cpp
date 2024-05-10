@@ -33,10 +33,6 @@ BOXWidget::BOXWidget(QWidget* const parent,
     getSizeBox()->hide();
 }
 
-BOXWidget::~BOXWidget()
-{
-}
-
 void BOXWidget::updateLabels(const QString& name, const QString& url)
 {
     QString web(QLatin1String("https://www.box.com/"));

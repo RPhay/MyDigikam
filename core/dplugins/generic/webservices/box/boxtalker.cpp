@@ -62,39 +62,26 @@ public:
 
 public:
 
-    explicit Private()
-      : clientId(QLatin1String("yvd43v8av9zgg9phig80m2dc3r7mks4t")),
-        clientSecret(QLatin1String("KJkuMjvzOKDMyp3oxweQBEYixg678Fh5")),
-        authUrl(QLatin1String("https://account.box.com/api/oauth2/authorize")),
-        tokenUrl(QLatin1String("https://api.box.com/oauth2/token")),
-        redirectUrl(QLatin1String("https://app.box.com")),
-        state(BOX_USERNAME),
-        parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
-        settings(nullptr),
-        o2(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QString                         clientId;
-    QString                         clientSecret;
-    QString                         authUrl;
-    QString                         tokenUrl;
-    QString                         redirectUrl;
+    QString                         clientId        = QLatin1String("yvd43v8av9zgg9phig80m2dc3r7mks4t");
+    QString                         clientSecret    = QLatin1String("KJkuMjvzOKDMyp3oxweQBEYixg678Fh5");
+    QString                         authUrl         = QLatin1String("https://account.box.com/api/oauth2/authorize");
+    QString                         tokenUrl        = QLatin1String("https://api.box.com/oauth2/token");
+    QString                         redirectUrl     = QLatin1String("https://app.box.com");
 
-    State                           state;
+    State                           state           = BOX_USERNAME;
 
-    QWidget*                        parent;
+    QWidget*                        parent          = nullptr;
 
-    QNetworkAccessManager*          netMngr;
-    QNetworkReply*                  reply;
+    QNetworkAccessManager*          netMngr         = nullptr;
+    QNetworkReply*                  reply           = nullptr;
 
-    QSettings*                      settings;
+    QSettings*                      settings        = nullptr;
 
-    O2*                             o2;
+    O2*                             o2              = nullptr;
 
     QList<QPair<QString, QString> > foldersList;
 };
@@ -180,6 +167,7 @@ void BOXTalker::slotLinkingSucceeded()
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Box ok";
+
     Q_EMIT signalLinkingSucceeded();
 }
 
@@ -379,6 +367,7 @@ void BOXTalker::slotFinished(QNetworkReply* reply)
         if (d->state != Private::BOX_CREATEFOLDER)
         {
             Q_EMIT signalBusy(false);
+
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18nc("@title:window", "Error"), reply->errorString());
             reply->deleteLater();
@@ -391,27 +380,37 @@ void BOXTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case Private::BOX_LISTFOLDERS:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In BOX_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+        }
 
         case Private::BOX_CREATEFOLDER:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In BOX_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+        }
 
         case Private::BOX_ADDPHOTO:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In BOX_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+        }
 
         case Private::BOX_USERNAME:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In BOX_USERNAME";
             parseResponseUserName(buffer);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -422,6 +421,7 @@ void BOXTalker::parseResponseAddPhoto(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("total_count"));
+
     Q_EMIT signalBusy(false);
 
     if (!success)
@@ -438,6 +438,7 @@ void BOXTalker::parseResponseUserName(const QByteArray& data)
 {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     QString name      = doc.object()[QLatin1String("name")].toString();
+
     Q_EMIT signalBusy(false);
     Q_EMIT signalSetUserName(name);
 }
@@ -451,6 +452,7 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
+
         return;
     }
 
@@ -493,6 +495,7 @@ void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+
         Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else

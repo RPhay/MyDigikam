@@ -31,10 +31,6 @@ BOXNewAlbumDlg::BOXNewAlbumDlg(QWidget* const parent, const QString& toolName)
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-BOXNewAlbumDlg::~BOXNewAlbumDlg()
-{
-}
-
 void BOXNewAlbumDlg::getFolderTitle(BOXFolder& folder)
 {
     folder.title = QLatin1Char('/') + getTitleEdit()->text();

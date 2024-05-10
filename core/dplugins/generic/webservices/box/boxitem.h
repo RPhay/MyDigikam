@@ -26,9 +26,7 @@ class BOXPhoto
 {
 public:
 
-    BOXPhoto()
-    {
-    }
+    BOXPhoto() = default;
 
     QString title;
 };
@@ -37,9 +35,7 @@ class BOXFolder
 {
 public:
 
-    BOXFolder()
-    {
-    }
+    BOXFolder() = default;
 
     QString title;
 };
