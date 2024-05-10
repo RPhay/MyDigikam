@@ -43,28 +43,18 @@ class Q_DECL_HIDDEN CharcoalTool::Private
 {
 public:
 
-    explicit Private()
-      : pencilInput  (nullptr),
-        smoothInput  (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configPencilAdjustmentEntry;
-    static const QString configSmoothAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("charcoal Tool");
+    const QString configPencilAdjustmentEntry   = QLatin1String("PencilAdjustment");
+    const QString configSmoothAdjustmentEntry   = QLatin1String("SmoothAdjustment");
 
-    DIntNumInput*        pencilInput;
-    DIntNumInput*        smoothInput;
+    DIntNumInput*        pencilInput            = nullptr;
+    DIntNumInput*        smoothInput            = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString CharcoalTool::Private::configGroupName(QLatin1String("charcoal Tool"));
-const QString CharcoalTool::Private::configPencilAdjustmentEntry(QLatin1String("PencilAdjustment"));
-const QString CharcoalTool::Private::configSmoothAdjustmentEntry(QLatin1String("SmoothAdjustment"));
 
 // --------------------------------------------------------
 

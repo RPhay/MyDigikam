@@ -43,23 +43,15 @@ class Q_DECL_HIDDEN EmbossTool::Private
 {
 public:
 
-    explicit Private()
-      : depthInput   (nullptr),
-        previewWidget(nullptr),
-        gboxSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configDepthAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("emboss Tool");
+    const QString configDepthAdjustmentEntry    = QLatin1String("DepthAdjustment");
 
-    DIntNumInput*        depthInput;
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    DIntNumInput*        depthInput             = nullptr;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString EmbossTool::Private::configGroupName(QLatin1String("emboss Tool"));
-const QString EmbossTool::Private::configDepthAdjustmentEntry(QLatin1String("DepthAdjustment"));
 
 // --------------------------------------------------------
 

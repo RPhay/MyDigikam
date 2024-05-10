@@ -46,41 +46,26 @@ class Q_DECL_HIDDEN BlurFXTool::Private
 {
 public:
 
-    explicit Private()
-      : effectTypeLabel (nullptr),
-        distanceLabel   (nullptr),
-        levelLabel      (nullptr),
-        effectType      (nullptr),
-        distanceInput   (nullptr),
-        levelInput      (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configEffectTypeEntry;
-    static const QString configDistanceAdjustmentEntry;
-    static const QString configLevelAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("blurfx Tool");
+    const QString configEffectTypeEntry         = QLatin1String("EffectType");
+    const QString configDistanceAdjustmentEntry = QLatin1String("DistanceAdjustment");
+    const QString configLevelAdjustmentEntry    = QLatin1String("LevelAdjustment");
 
-    QLabel*              effectTypeLabel;
-    QLabel*              distanceLabel;
-    QLabel*              levelLabel;
+    QLabel*              effectTypeLabel        = nullptr;
+    QLabel*              distanceLabel          = nullptr;
+    QLabel*              levelLabel             = nullptr;
 
-    DComboBox*           effectType;
+    DComboBox*           effectType             = nullptr;
 
-    DIntNumInput*        distanceInput;
-    DIntNumInput*        levelInput;
+    DIntNumInput*        distanceInput          = nullptr;
+    DIntNumInput*        levelInput             = nullptr;
 
-    ImageRegionWidget*   previewWidget;
+    ImageRegionWidget*   previewWidget          = nullptr;
 
-    EditorToolSettings*  gboxSettings;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString BlurFXTool::Private::configGroupName(QLatin1String("blurfx Tool"));
-const QString BlurFXTool::Private::configEffectTypeEntry(QLatin1String("EffectType"));
-const QString BlurFXTool::Private::configDistanceAdjustmentEntry(QLatin1String("DistanceAdjustment"));
-const QString BlurFXTool::Private::configLevelAdjustmentEntry(QLatin1String("LevelAdjustment"));
 
 // --------------------------------------------------------
 
@@ -158,7 +143,7 @@ BlurFXTool::BlurFXTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    const int spacing = d->gboxSettings->spacingHint();
+    const int spacing             = d->gboxSettings->spacingHint();
 
     QGridLayout* const mainLayout = new QGridLayout;
     mainLayout->addWidget(d->effectTypeLabel, 0, 0, 1, 2);
@@ -243,38 +228,51 @@ void BlurFXTool::slotEffectTypeChanged(int type)
     switch (type)
     {
         case BlurFXFilter::ZoomBlur:
+        {
             break;
+        }
 
         case BlurFXFilter::RadialBlur:
         case BlurFXFilter::FrostGlass:
+        {
             d->distanceInput->setRange(0, 10, 1);
             d->distanceInput->setValue(3);
             break;
+        }
 
         case BlurFXFilter::FarBlur:
+        {
             d->distanceInput->setRange(0, 20, 1);
             d->distanceInput->setValue(10);
             break;
+        }
 
         case BlurFXFilter::MotionBlur:
         case BlurFXFilter::FocusBlur:
+        {
             d->distanceInput->setRange(0, 100, 1);
             d->distanceInput->setValue(20);
             d->levelInput->setEnabled(true);
             d->levelLabel->setEnabled(true);
             break;
+        }
 
         case BlurFXFilter::SoftenerBlur:
+        {
             d->distanceInput->setEnabled(false);
             d->distanceLabel->setEnabled(false);
             break;
+        }
 
         case BlurFXFilter::ShakeBlur:
+        {
             d->distanceInput->setRange(0, 100, 1);
             d->distanceInput->setValue(20);
             break;
+        }
 
         case BlurFXFilter::SmartBlur:
+        {
             d->distanceInput->setRange(0, 20, 1);
             d->distanceInput->setValue(3);
             d->levelInput->setEnabled(true);
@@ -282,11 +280,14 @@ void BlurFXTool::slotEffectTypeChanged(int type)
             d->levelInput->setRange(0, 255, 1);
             d->levelInput->setValue(128);
             break;
+        }
 
         case BlurFXFilter::Mosaic:
+        {
             d->distanceInput->setRange(0, 50, 1);
             d->distanceInput->setValue(3);
             break;
+        }
     }
 
     blockWidgetSignals(false);
@@ -316,8 +317,10 @@ void BlurFXTool::preparePreview()
         case BlurFXFilter::SmartBlur:
         case BlurFXFilter::FrostGlass:
         case BlurFXFilter::Mosaic:
+        {
             image = d->previewWidget->getOriginalRegionImage();
             break;
+        }
     }
 
     int type  = d->effectType->currentIndex();
@@ -352,6 +355,7 @@ void BlurFXTool::setPreviewImage()
             d->previewWidget->setPreviewImage(destImg);
             break;
         }
+
         case BlurFXFilter::FarBlur:
         case BlurFXFilter::MotionBlur:
         case BlurFXFilter::SoftenerBlur:
@@ -359,8 +363,10 @@ void BlurFXTool::setPreviewImage()
         case BlurFXFilter::SmartBlur:
         case BlurFXFilter::FrostGlass:
         case BlurFXFilter::Mosaic:
+        {
             d->previewWidget->setPreviewImage(filter()->getTargetImage());
             break;
+        }
     }
 }
 

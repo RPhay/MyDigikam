@@ -35,7 +35,7 @@ class CharcoalToolPlugin : public DPluginEditor
 public:
 
     explicit CharcoalToolPlugin(QObject* const parent = nullptr);
-    ~CharcoalToolPlugin()                override;
+    ~CharcoalToolPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

@@ -35,10 +35,6 @@ DistortionFXToolPlugin::DistortionFXToolPlugin(QObject* const parent)
 {
 }
 
-DistortionFXToolPlugin::~DistortionFXToolPlugin()
-{
-}
-
 QString DistortionFXToolPlugin::name() const
 {
     return i18nc("@title", "Distortion Effects");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> DistortionFXToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2024"))
             ;
 }
 

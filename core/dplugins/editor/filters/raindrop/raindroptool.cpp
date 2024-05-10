@@ -44,32 +44,20 @@ class Q_DECL_HIDDEN RainDropTool::Private
 {
 public:
 
-    explicit Private()
-      : dropInput       (nullptr),
-        amountInput     (nullptr),
-        coeffInput      (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configDropAdjustmentEntry;
-    static const QString configAmountAdjustmentEntry;
-    static const QString configCoeffAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("raindrops Tool");
+    const QString configDropAdjustmentEntry     = QLatin1String("DropAdjustment");
+    const QString configAmountAdjustmentEntry   = QLatin1String("AmountAdjustment");
+    const QString configCoeffAdjustmentEntry    = QLatin1String("CoeffAdjustment");
 
-    DIntNumInput*        dropInput;
-    DIntNumInput*        amountInput;
-    DIntNumInput*        coeffInput;
+    DIntNumInput*        dropInput              = nullptr;
+    DIntNumInput*        amountInput            = nullptr;
+    DIntNumInput*        coeffInput             = nullptr;
 
-    ImageGuideWidget*    previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageGuideWidget*    previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString RainDropTool::Private::configGroupName(QLatin1String("raindrops Tool"));
-const QString RainDropTool::Private::configDropAdjustmentEntry(QLatin1String("DropAdjustment"));
-const QString RainDropTool::Private::configAmountAdjustmentEntry(QLatin1String("AmountAdjustment"));
-const QString RainDropTool::Private::configCoeffAdjustmentEntry(QLatin1String("CoeffAdjustment"));
 
 // --------------------------------------------------------
 
@@ -195,6 +183,7 @@ void RainDropTool::preparePreview()
     ImageIface* const iface = d->previewWidget->imageIface();
 
     // Selected data from the image
+
     QRect selection         = iface->selectionRect();
 
     setFilter(new RainDropFilter(iface->original(), this, drop, amount, coeff, selection));
@@ -209,6 +198,7 @@ void RainDropTool::prepareFinal()
     ImageIface iface;
 
     // Selected data from the image
+
     QRect selection = iface.selectionRect();
 
     setFilter(new RainDropFilter(iface.original(), this, drop, amount, coeff, selection));

@@ -62,8 +62,10 @@ public:
 
         if      (scaleMode == PrintOptionsPage::ScaleToPage)
         {
-            bool imageBiggerThanPaper = (size.width()  > viewportSize.width()) ||
-                                        (size.height() > viewportSize.height());
+            bool imageBiggerThanPaper = (
+                                         (size.width()  > viewportSize.width()) ||
+                                         (size.height() > viewportSize.height())
+                                        );
 
             if (imageBiggerThanPaper || optionsPage->enlargeSmallerImages())
             {
@@ -82,7 +84,7 @@ public:
         {
             // No scale
 
-            const double INCHES_PER_METER = 100. / 2.54;
+            const double INCHES_PER_METER = 100.0 / 2.54;
             QImage img                    = doc.copyQImage();
             int dpmX                      = img.dotsPerMeterX();
             int dpmY                      = img.dotsPerMeterY();
@@ -172,7 +174,8 @@ void PrintHelper::print(DImg& doc)
     if (list.isEmpty())
     {
         QMessageBox::warning(d->parent, i18nc("@title:window", "No Printer Available"),
-                             i18nc("@info", "No printer is installed on your system. Please install one at least."));
+                             i18nc("@info", "No printer is installed on your system. "
+                                            "Please install one at least."));
 
         return;
     }

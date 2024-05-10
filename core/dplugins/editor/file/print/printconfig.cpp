@@ -25,16 +25,16 @@ namespace DigikamEditorPrintToolPlugin
 
 class Q_DECL_HIDDEN PrintConfigHelper
 {
-    public:
+public:
 
-        PrintConfigHelper() = default;
+    PrintConfigHelper() = default;
 
-        ~PrintConfigHelper()
-        {
-            delete q;
-        }
+    ~PrintConfigHelper()
+    {
+        delete q;
+    }
 
-        PrintConfig* q = nullptr;
+    PrintConfig* q = nullptr;
 };
 
 Q_GLOBAL_STATIC(PrintConfigHelper, s_globalPrintConfig)

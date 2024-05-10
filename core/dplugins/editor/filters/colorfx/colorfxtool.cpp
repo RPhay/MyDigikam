@@ -55,25 +55,16 @@ class Q_DECL_HIDDEN ColorFxTool::Private
 
 public:
 
-    explicit Private()
-      : previewWidget(nullptr),
-        gboxSettings (nullptr),
-        settingsView (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configHistogramChannelEntry;
-    static const QString configHistogramScaleEntry;
+    const QString configGroupName               = QLatin1String("coloreffect Tool");
+    const QString configHistogramChannelEntry   = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry     = QLatin1String("Histogram Scale");
 
-    ImageRegionWidget*  previewWidget;
-    EditorToolSettings* gboxSettings;
-    ColorFXSettings*    settingsView;
+    ImageRegionWidget*  previewWidget           = nullptr;
+    EditorToolSettings* gboxSettings            = nullptr;
+    ColorFXSettings*    settingsView            = nullptr;
 };
-
-const QString ColorFxTool::Private::configGroupName(QLatin1String("coloreffect Tool"));
-const QString ColorFxTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString ColorFxTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -165,8 +156,10 @@ void ColorFxTool::preparePreview()
 
     // See bug #237719 : we cannot use downscaled image to render preview.
 
-    if (prm.colorFXType == ColorFXFilter::Neon ||
-        prm.colorFXType == ColorFXFilter::FindEdges)
+    if (
+        prm.colorFXType == ColorFXFilter::Neon ||
+        prm.colorFXType == ColorFXFilter::FindEdges
+       )
     {
         useDownscaledImage = false;
     }
@@ -204,24 +197,34 @@ void ColorFxTool::setFinalImage()
     switch (d->settingsView->settings().colorFXType)
     {
         case ColorFXFilter::Solarize:
+        {
             name = i18nc("@title: filter", "Solarize");
             break;
+        }
 
         case ColorFXFilter::Vivid:
+        {
             name = i18nc("@title: filter", "Vivid");
             break;
+        }
 
         case ColorFXFilter::Neon:
+        {
             name = i18nc("@title: filter", "Neon");
             break;
+        }
 
         case ColorFXFilter::FindEdges:
+        {
             name = i18nc("@title: filter", "Find Edges");
             break;
+        }
 
         case ColorFXFilter::Lut3D:
+        {
             name = i18nc("@title: filter", "Lut3D");
             break;
+        }
     }
 
     iface.setOriginal(name, filter()->filterAction(), filter()->getTargetImage());

@@ -168,15 +168,15 @@ private:
 
 private:
 
-    int    mPrintPosition;
-    int    mPrintScaleMode;
-    bool   mPrintEnlargeSmallerImages;
-    double mPrintWidth;
-    double mPrintHeight;
-    int    mPrintUnit;
-    bool   mPrintKeepRatio;
-    bool   mPrintColorManaged;
-    bool   mPrintAutoRotate;
+    int    mPrintPosition               = Qt::AlignHCenter | Qt::AlignVCenter;
+    int    mPrintScaleMode              = PrintOptionsPage::ScaleToPage;
+    bool   mPrintEnlargeSmallerImages   = false;
+    double mPrintWidth                  = 15.0;
+    double mPrintHeight                 = 10.0;
+    int    mPrintUnit                   = PrintOptionsPage::Centimeters;
+    bool   mPrintKeepRatio              = true;
+    bool   mPrintColorManaged           = false;
+    bool   mPrintAutoRotate             = false;
 
     friend class PrintConfigHelper;
 };

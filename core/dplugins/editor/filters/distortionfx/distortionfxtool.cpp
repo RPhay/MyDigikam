@@ -50,40 +50,25 @@ class Q_DECL_HIDDEN DistortionFXTool::Private
 {
 public:
 
-    explicit Private()
-      : effectTypeLabel (nullptr),
-        levelLabel      (nullptr),
-        iterationLabel  (nullptr),
-        effectType      (nullptr),
-        levelInput      (nullptr),
-        iterationInput  (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configEffectTypeEntry;
-    static const QString configIterationAdjustmentEntry;
-    static const QString configLevelAdjustmentEntry;
+    const QString configGroupName                   = QLatin1String("distortionfx Tool");
+    const QString configEffectTypeEntry             = QLatin1String("EffectType");
+    const QString configIterationAdjustmentEntry    = QLatin1String("IterationAdjustment");
+    const QString configLevelAdjustmentEntry        = QLatin1String("LevelAdjustment");
 
-    QLabel*              effectTypeLabel;
-    QLabel*              levelLabel;
-    QLabel*              iterationLabel;
+    QLabel*              effectTypeLabel            = nullptr;
+    QLabel*              levelLabel                 = nullptr;
+    QLabel*              iterationLabel             = nullptr;
 
-    DComboBox*           effectType;
+    DComboBox*           effectType                 = nullptr;
 
-    DIntNumInput*        levelInput;
-    DIntNumInput*        iterationInput;
+    DIntNumInput*        levelInput                 = nullptr;
+    DIntNumInput*        iterationInput             = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget              = nullptr;
+    EditorToolSettings*  gboxSettings               = nullptr;
 };
-
-const QString DistortionFXTool::Private::configGroupName(QLatin1String("distortionfx Tool"));
-const QString DistortionFXTool::Private::configEffectTypeEntry(QLatin1String("EffectType"));
-const QString DistortionFXTool::Private::configIterationAdjustmentEntry(QLatin1String("IterationAdjustment"));
-const QString DistortionFXTool::Private::configLevelAdjustmentEntry(QLatin1String("LevelAdjustment"));
 
 // --------------------------------------------------------
 
@@ -253,23 +238,29 @@ void DistortionFXTool::slotEffectTypeChanged(int type)
     switch (type)
     {
         case DistortionFXFilter::Twirl:
+        {
             d->levelInput->setRange(-50, 50, 1);
             d->levelInput->setValue(10);
             break;
+        }
 
         case DistortionFXFilter::FishEye:
         case DistortionFXFilter::CilindricalHor:
         case DistortionFXFilter::CilindricalVert:
         case DistortionFXFilter::CilindricalHV:
         case DistortionFXFilter::Caricature:
+        {
             d->levelInput->setRange(0, 200, 1);
             d->levelInput->setValue(50);
             break;
+        }
 
         case DistortionFXFilter::MultipleCorners:
+        {
             d->levelInput->setRange(1, 10, 1);
             d->levelInput->setValue(4);
             break;
+        }
 
         case DistortionFXFilter::WavesHorizontal:
         case DistortionFXFilter::WavesVertical:
@@ -278,17 +269,21 @@ void DistortionFXTool::slotEffectTypeChanged(int type)
         case DistortionFXFilter::CircularWaves1:
         case DistortionFXFilter::CircularWaves2:
         case DistortionFXFilter::Tile:
+        {
             d->iterationInput->setEnabled(true);
             d->iterationLabel->setEnabled(true);
             d->iterationInput->setRange(0, 200, 1);
             d->iterationInput->setValue(10);
             break;
+        }
 
         case DistortionFXFilter::PolarCoordinates:
         case DistortionFXFilter::UnpolarCoordinates:
+        {
             d->levelInput->setEnabled(false);
             d->levelLabel->setEnabled(false);
             break;
+        }
     }
 
     blockWidgetSignals(false);
@@ -298,9 +293,9 @@ void DistortionFXTool::preparePreview()
 {
     d->gboxSettings->setEnabled(false);
 
-    int l                   = d->levelInput->value();
-    int f                   = d->iterationInput->value();
-    int e                   = d->effectType->currentIndex();
+    int l      = d->levelInput->value();
+    int f      = d->iterationInput->value();
+    int e      = d->effectType->currentIndex();
 
     ImageIface iface;
     DImg image = *iface.original();

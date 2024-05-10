@@ -35,7 +35,7 @@ class FilmGrainToolPlugin : public DPluginEditor
 public:
 
     explicit FilmGrainToolPlugin(QObject* const parent = nullptr);
-    ~FilmGrainToolPlugin()               override;
+    ~FilmGrainToolPlugin()               override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

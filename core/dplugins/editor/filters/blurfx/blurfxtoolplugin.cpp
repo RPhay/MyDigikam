@@ -35,10 +35,6 @@ BlurFXToolPlugin::BlurFXToolPlugin(QObject* const parent)
 {
 }
 
-BlurFXToolPlugin::~BlurFXToolPlugin()
-{
-}
-
 QString BlurFXToolPlugin::name() const
 {
     return i18nc("@title", "Blur Effects");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> BlurFXToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2024"))
             ;
 }
 

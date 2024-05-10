@@ -36,10 +36,6 @@ PrintToolPlugin::PrintToolPlugin(QObject* const parent)
 {
 }
 
-PrintToolPlugin::~PrintToolPlugin()
-{
-}
-
 QString PrintToolPlugin::name() const
 {
     return i18nc("@title", "Print Image");

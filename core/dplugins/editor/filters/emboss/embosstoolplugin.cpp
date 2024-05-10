@@ -35,10 +35,6 @@ EmbossToolPlugin::EmbossToolPlugin(QObject* const parent)
 {
 }
 
-EmbossToolPlugin::~EmbossToolPlugin()
-{
-}
-
 QString EmbossToolPlugin::name() const
 {
     return i18nc("@title", "Emboss");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> EmbossToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 

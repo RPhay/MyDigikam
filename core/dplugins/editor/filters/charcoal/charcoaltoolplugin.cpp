@@ -35,10 +35,6 @@ CharcoalToolPlugin::CharcoalToolPlugin(QObject* const parent)
 {
 }
 
-CharcoalToolPlugin::~CharcoalToolPlugin()
-{
-}
-
 QString CharcoalToolPlugin::name() const
 {
     return i18nc("@title", "Charcoal Drawing");
@@ -84,7 +80,7 @@ QList<DPluginAuthor> CharcoalToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 

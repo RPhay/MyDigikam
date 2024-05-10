@@ -46,20 +46,14 @@ class Q_DECL_HIDDEN FilmGrainTool::Private
 {
 public:
 
-    explicit Private()
-      : configGroupName (QLatin1String("filmgrain Tool")),
-        settingsView    (nullptr),
-        previewWidget   (nullptr),
-        gboxSettings    (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString       configGroupName;
+    const QString       configGroupName = QLatin1String("filmgrain Tool");
 
-    FilmGrainSettings*  settingsView;
+    FilmGrainSettings*  settingsView    = nullptr;
 
-    ImageRegionWidget*  previewWidget;
-    EditorToolSettings* gboxSettings;
+    ImageRegionWidget*  previewWidget   = nullptr;
+    EditorToolSettings* gboxSettings    = nullptr;
 };
 
 FilmGrainTool::FilmGrainTool(QObject* const parent)

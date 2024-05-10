@@ -44,28 +44,18 @@ class Q_DECL_HIDDEN OilPaintTool::Private
 {
 public:
 
-    explicit Private()
-      : brushSizeInput(nullptr),
-        smoothInput   (nullptr),
-        previewWidget (nullptr),
-        gboxSettings  (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configBrushSizeEntry;
-    static const QString configSmoothAdjustmentEntry;
+    const QString configGroupName               = QLatin1String("oilpaint Tool");
+    const QString configBrushSizeEntry          = QLatin1String("BrushSize");
+    const QString configSmoothAdjustmentEntry   = QLatin1String("SmoothAdjustment");
 
-    DIntNumInput*        brushSizeInput;
-    DIntNumInput*        smoothInput;
+    DIntNumInput*        brushSizeInput         = nullptr;
+    DIntNumInput*        smoothInput            = nullptr;
 
-    ImageRegionWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    ImageRegionWidget*   previewWidget          = nullptr;
+    EditorToolSettings*  gboxSettings           = nullptr;
 };
-
-const QString OilPaintTool::Private::configGroupName(QLatin1String("oilpaint Tool"));
-const QString OilPaintTool::Private::configBrushSizeEntry(QLatin1String("BrushSize"));
-const QString OilPaintTool::Private::configSmoothAdjustmentEntry(QLatin1String("SmoothAdjustment"));
 
 // --------------------------------------------------------
 
