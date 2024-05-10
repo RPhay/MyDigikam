@@ -34,10 +34,6 @@ ImageShackPlugin::ImageShackPlugin(QObject* const parent)
 {
 }
 
-ImageShackPlugin::~ImageShackPlugin()
-{
-}
-
 void ImageShackPlugin::cleanUp()
 {
     delete m_toolDlg;

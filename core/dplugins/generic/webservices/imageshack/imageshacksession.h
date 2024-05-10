@@ -28,7 +28,7 @@ class ImageShackSession
 
 public:
 
-    explicit ImageShackSession();
+    ImageShackSession();
     ~ImageShackSession();
 
 public:

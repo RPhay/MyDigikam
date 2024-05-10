@@ -38,10 +38,6 @@ ImageShackNewAlbumDlg::ImageShackNewAlbumDlg(QWidget* const parent, const QStrin
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-ImageShackNewAlbumDlg::~ImageShackNewAlbumDlg()
-{
-}
-
 QString ImageShackNewAlbumDlg::getAlbumTitle()
 {
     return getTitleEdit()->text();

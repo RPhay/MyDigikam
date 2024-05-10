@@ -28,9 +28,7 @@ class ImageShackGallery
 
 public:
 
-    explicit ImageShackGallery()
-    {
-    }
+    ImageShackGallery() = default;
 
     QString m_user;
     QString m_server;
@@ -46,9 +44,7 @@ class ImageShackPhoto
 
 public:
 
-    explicit ImageShackPhoto()
-    {
-    }
+    ImageShackPhoto() = default;
 
     QString m_server;
     QString m_name;

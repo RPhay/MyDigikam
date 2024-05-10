@@ -25,21 +25,13 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "wstoolutils.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericImageShackPlugin
 {
 
 ImageShackMPForm::ImageShackMPForm()
-    : m_boundary(WSToolUtils::randomString(42 + 13).toLatin1())
 {
     reset();
-}
-
-ImageShackMPForm::~ImageShackMPForm()
-{
 }
 
 void ImageShackMPForm::reset()
@@ -74,6 +66,7 @@ void ImageShackMPForm::addPair(const QString& name, const QString& value)
         str += name.toLatin1();
         str += "\"\r\n";
     }
+
     str += "\r\n";
     str += value.toUtf8();
     str += "\r\n";
@@ -88,12 +81,16 @@ bool ImageShackMPForm::addFile(const QString& name, const QString& path)
     QString mime = ptr.name();
 
     if (mime.isEmpty())
+    {
         return false;
+    }
 
     QFile imageFile(path);
 
     if (!imageFile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QByteArray imageData = imageFile.readAll();
 

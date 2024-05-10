@@ -36,12 +36,9 @@ class Q_DECL_HIDDEN ImageShackSession::Private
 
 public:
 
-    explicit Private()
-    {
-        loggedIn = false;
-    }
+    Private() = default;
 
-    bool    loggedIn;
+    bool    loggedIn = false;
 
     QString authToken;
     QString username;
@@ -135,7 +132,9 @@ void ImageShackSession::readSettings()
     static bool bLoaded = false;
 
     if (bLoaded)
+    {
         return;
+    }
 
     bLoaded = true;
 

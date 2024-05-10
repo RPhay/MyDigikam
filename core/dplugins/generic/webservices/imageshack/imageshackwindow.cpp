@@ -61,36 +61,27 @@ class Q_DECL_HIDDEN ImageShackWindow::Private
 {
 public:
 
-    explicit Private()
-    {
-        imagesCount = 0;
-        imagesTotal = 0;
-        session     = nullptr;
-        widget      = nullptr;
-        talker      = nullptr;
-        albumDlg    = nullptr;
-        iface       = nullptr;
-    }
+    Private() = default;
 
-    unsigned int           imagesCount;
-    unsigned int           imagesTotal;
+    unsigned int           imagesCount      = 0;
+    unsigned int           imagesTotal      = 0;
     QString                newAlbmTitle;
 
     QList<QUrl>            transferQueue;
 
-    ImageShackSession*     session;
-    ImageShackWidget*      widget;
-    ImageShackTalker*      talker;
+    ImageShackSession*     session          = nullptr;
+    ImageShackWidget*      widget           = nullptr;
+    ImageShackTalker*      talker           = nullptr;
 
-    ImageShackNewAlbumDlg* albumDlg;
+    ImageShackNewAlbumDlg* albumDlg         = nullptr;
 
-    DInfoInterface*        iface;
+    DInfoInterface*        iface            = nullptr;
 };
 
 ImageShackWindow::ImageShackWindow(DInfoInterface* const iface,
                                    QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("ImageShack Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->session = new ImageShackSession();
     d->iface   = iface;
@@ -263,6 +254,7 @@ void ImageShackWindow::slotChangeRegistrantionCode()
 void ImageShackWindow::authenticate()
 {
     Q_EMIT signalBusy(true);
+
     d->widget->progressBar()->show();
     d->widget->d->progressBar->setValue(0);
     d->widget->d->progressBar->setMaximum(4);
@@ -369,6 +361,7 @@ void ImageShackWindow::uploadNextItem()
     }
 
     // tags
+
     if (!d->widget->d->tagsFld->text().isEmpty())
     {
         QString str = d->widget->d->tagsFld->text();
@@ -386,15 +379,23 @@ void ImageShackWindow::uploadNextItem()
     switch (gidx)
     {
         case 0:
+        {
             d->talker->uploadItem(imgPath, opts);
             break;
+        }
+
         case 1:
+        {
             opts[QLatin1String("album")] = d->newAlbmTitle;
             d->talker->uploadItemToGallery(imgPath, d->newAlbmTitle, opts);
             break;
+        }
+
         default:
+        {
             opts[QLatin1String("album")] = d->widget->d->galleriesCob->itemData(gidx).toString();
             d->talker->uploadItemToGallery(imgPath, d->widget->d->galleriesCob->itemData(gidx).toString(), opts);
+        }
     }
 }
 

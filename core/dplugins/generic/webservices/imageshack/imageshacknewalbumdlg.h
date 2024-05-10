@@ -40,7 +40,7 @@ class ImageShackNewAlbumDlg : public WSNewAlbumDialog
 public:
 
     explicit ImageShackNewAlbumDlg(QWidget* const parent, const QString& toolName);
-    ~ImageShackNewAlbumDlg() override;
+    ~ImageShackNewAlbumDlg() override = default;
 
     QString getAlbumTitle();
 };

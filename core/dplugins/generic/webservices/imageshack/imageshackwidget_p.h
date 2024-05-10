@@ -56,40 +56,26 @@ class Q_DECL_HIDDEN ImageShackWidget::Private
 {
 public:
 
-    Private()
-    {
-        imgList            = nullptr;
-        iface              = nullptr;
-        session            = nullptr;
-        headerLbl          = nullptr;
-        accountNameLbl     = nullptr;
-        tagsFld            = nullptr;
-        privateImagesChb   = nullptr;
-        remBarChb          = nullptr;
-        chgRegCodeBtn      = nullptr;
-        reloadGalleriesBtn = nullptr;
-        galleriesCob       = nullptr;
-        progressBar        = nullptr;
-    }
+    Private() = default;
 
-    DItemsList*        imgList;
-    DInfoInterface*    iface;
-    ImageShackSession* session;
+    DItemsList*        imgList              = nullptr;
+    DInfoInterface*    iface                = nullptr;
+    ImageShackSession* session              = nullptr;
 
-    QLabel*            headerLbl;
-    QLabel*            accountNameLbl;
+    QLabel*            headerLbl            = nullptr;
+    QLabel*            accountNameLbl       = nullptr;
 
-    DTextEdit*         tagsFld;
+    DTextEdit*         tagsFld              = nullptr;
 
-    QCheckBox*         privateImagesChb;
-    QCheckBox*         remBarChb;
+    QCheckBox*         privateImagesChb     = nullptr;
+    QCheckBox*         remBarChb            = nullptr;
 
-    QPushButton*       chgRegCodeBtn;
-    QPushButton*       reloadGalleriesBtn;
+    QPushButton*       chgRegCodeBtn        = nullptr;
+    QPushButton*       reloadGalleriesBtn   = nullptr;
 
-    QComboBox*         galleriesCob;
+    QComboBox*         galleriesCob         = nullptr;
 
-    DProgressWdg*      progressBar;
+    DProgressWdg*      progressBar          = nullptr;
 };
 
 } // namespace DigikamGenericImageShackPlugin

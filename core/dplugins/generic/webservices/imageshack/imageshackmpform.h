@@ -21,6 +21,12 @@
 #include <QByteArray>
 #include <QString>
 
+// Local includes
+
+#include "wstoolutils.h"
+
+using namespace Digikam;
+
 namespace DigikamGenericImageShackPlugin
 {
 
@@ -29,8 +35,8 @@ class ImageShackMPForm
 
 public:
 
-    explicit ImageShackMPForm();
-    ~ImageShackMPForm();
+    ImageShackMPForm();
+    ~ImageShackMPForm() = default;
 
     void finish();
     void reset();
@@ -45,7 +51,8 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary;
+    QByteArray m_boundary = WSToolUtils::randomString(42 + 13).toLatin1();
+
 };
 
 } // namespace DigikamGenericImageShackPlugin
