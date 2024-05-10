@@ -52,13 +52,13 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url,
                 d->dlg->setIconProvider(d->provider);
             }
         );
-    }
 
-    for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << item;
-        item->installEventFilter(this);
-        item->setMouseTracking(true);
+        for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << item;
+            item->installEventFilter(this);
+            item->setMouseTracking(true);
+        }
     }
 
     d->dlg->exec();
