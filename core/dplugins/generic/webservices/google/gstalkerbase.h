@@ -71,8 +71,8 @@ protected:
 
     QString                       m_serviceName;
 
-    QNetworkReply*                m_reply;
-    QOAuth2AuthorizationCodeFlow* m_service;
+    QNetworkReply*                m_reply       = nullptr;
+    QOAuth2AuthorizationCodeFlow* m_service     = nullptr;
 
 private:
 

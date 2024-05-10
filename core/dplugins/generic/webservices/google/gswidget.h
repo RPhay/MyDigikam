@@ -50,7 +50,7 @@ public:
                       DInfoInterface* const iface,
                       const GoogleService& service,
                       const QString& serviceName);
-    ~GSWidget() override;
+    ~GSWidget() override = default;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;
@@ -58,7 +58,7 @@ public:
 private:
 
     GoogleService m_service;
-    QButtonGroup* m_tagsBGrp;
+    QButtonGroup* m_tagsBGrp = nullptr;
 
     friend class GSWindow;
 };

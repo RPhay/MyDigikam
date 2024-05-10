@@ -44,39 +44,24 @@ class Q_DECL_HIDDEN ReplaceDialog::Private
 {
 public:
 
-    explicit Private()
-      : bAdd            (nullptr),
-        bAddAll         (nullptr),
-        bReplace        (nullptr),
-        bReplaceAll     (nullptr),
-        iface           (nullptr),
-        lbSrc           (nullptr),
-        lbDest          (nullptr),
-        netMngr         (nullptr),
-        progressPix     (nullptr),
-        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
-        progressCount   (0),
-        progressTimer   (nullptr),
-        result          (-1)
-    {
-    }
+    Private() = default;
 
-    QPushButton*           bAdd;
-    QPushButton*           bAddAll;
-    QPushButton*           bReplace;
-    QPushButton*           bReplaceAll;
+    QPushButton*           bAdd             = nullptr;
+    QPushButton*           bAddAll          = nullptr;
+    QPushButton*           bReplace         = nullptr;
+    QPushButton*           bReplaceAll      = nullptr;
     QUrl                   src;
     QUrl                   dest;
-    DInfoInterface*        iface;
-    QLabel*                lbSrc;
-    QLabel*                lbDest;
-    QNetworkAccessManager* netMngr;
+    DInfoInterface*        iface            = nullptr;
+    QLabel*                lbSrc            = nullptr;
+    QLabel*                lbDest           = nullptr;
+    QNetworkAccessManager* netMngr          = nullptr;
     QPixmap                mimePix;
-    DWorkingPixmap*        progressPix;
-    ThumbnailLoadThread*   thumbLoadThread;
-    int                    progressCount;
-    QTimer*                progressTimer;
-    int                    result;
+    DWorkingPixmap*        progressPix      = nullptr;
+    ThumbnailLoadThread*   thumbLoadThread  = ThumbnailLoadThread::defaultThread();
+    int                    progressCount    = 0;
+    QTimer*                progressTimer    = nullptr;
+    int                    result           = -1;
 };
 
 ReplaceDialog::ReplaceDialog(QWidget* const parent,

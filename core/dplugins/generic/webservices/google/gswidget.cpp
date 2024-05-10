@@ -42,8 +42,7 @@ GSWidget::GSWidget(QWidget* const parent,
                    const GoogleService& service,
                    const QString& serviceName)
     : WSSettingsWidget(parent, iface, serviceName),
-      m_service       (service),
-      m_tagsBGrp      (nullptr)
+      m_service       (service)
 {
     QGroupBox* const leafBox = new QGroupBox(QLatin1String(""), getSettingsBox());
 
@@ -77,32 +76,34 @@ GSWidget::GSWidget(QWidget* const parent,
     switch (m_service)
     {
         case GoogleService::GPhotoImport:
+        {
             getNewAlbmBtn()->hide();
             getOptionsBox()->hide();
             imagesList()->hide();
             leafBox->hide();
             getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization
             break;
+        }
 
         case GoogleService::GDrive:
+        {
             getOriginalCheckBox()->show();
             getUploadBox()->hide();
             getSizeBox()->hide();
             leafBox->hide();
             break;
+        }
 
         default:
+        {
             getOriginalCheckBox()->show();
             getUploadBox()->hide();
             getSizeBox()->hide();
             leafBox->hide();    // Google has removed this function in the current API V3.
             getPhotoIdCheckBox()->show();
             break;
+        }
     }
-}
-
-GSWidget::~GSWidget()
-{
 }
 
 void GSWidget::updateLabels(const QString& name, const QString& url)

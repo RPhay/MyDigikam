@@ -58,35 +58,23 @@ class Q_DECL_HIDDEN GSWindow::Private
 {
 public:
 
-    explicit Private()
-      : imagesCount   (0),
-        imagesTotal   (0),
-        renamingOpt   (0),
-        service       (GoogleService::GPhotoImport),
-        widget        (nullptr),
-        albumDlg      (nullptr),
-        gphotoAlbumDlg(nullptr),
-        talker        (nullptr),
-        gphotoTalker  (nullptr),
-        iface         (nullptr)
-    {
-    }
+    Private() = default;
 
-    unsigned int                  imagesCount;
-    unsigned int                  imagesTotal;
-    int                           renamingOpt;
+    unsigned int                  imagesCount       = 0;
+    unsigned int                  imagesTotal       = 0;
+    int                           renamingOpt       = 0;
 
     QString                       serviceName;
     QString                       toolName;
-    GoogleService                 service;
+    GoogleService                 service           = GoogleService::GPhotoImport;
     QString                       tmp;
 
-    GSWidget*                     widget;
-    GSNewAlbumDlg*                albumDlg;
-    GSNewAlbumDlg*                gphotoAlbumDlg;
+    GSWidget*                     widget            = nullptr;
+    GSNewAlbumDlg*                albumDlg          = nullptr;
+    GSNewAlbumDlg*                gphotoAlbumDlg    = nullptr;
 
-    GDTalker*                     talker;
-    GPTalker*                     gphotoTalker;
+    GDTalker*                     talker            = nullptr;
+    GPTalker*                     gphotoTalker      = nullptr;
 
     QString                       currentAlbumId;
     QString                       newFolderTitle;
@@ -94,7 +82,7 @@ public:
     QList< QPair<QUrl, GSPhoto> > transferQueue;
     QList< QPair<QUrl, GSPhoto> > uploadQueue;
 
-    DInfoInterface*               iface;
+    DInfoInterface*               iface             = nullptr;
 };
 
 GSWindow::GSWindow(DInfoInterface* const iface,
@@ -281,12 +269,16 @@ void GSWindow::readSettings()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             grp = config->group(QLatin1String("Google Drive Settings"));
             break;
+        }
 
         default:
+        {
             grp = config->group(QLatin1String("Google Photo Settings"));
             break;
+        }
     }
 
     d->currentAlbumId = grp.readEntry("Current Album", QString());
@@ -321,12 +313,16 @@ void GSWindow::writeSettings()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             grp = config->group(QLatin1String("Google Drive Settings"));
             break;
+        }
 
         default:
+        {
             grp = config->group(QLatin1String("Google Photo Settings"));
             break;
+        }
     }
 
     grp.writeEntry("Current Album",   d->currentAlbumId);
@@ -505,7 +501,9 @@ void GSWindow::slotStartTransfer()
         }
 
         case GoogleService::GPhotoImport:
+        {
             break;
+        }
     }
 
     switch (d->service)
@@ -593,11 +591,14 @@ void GSWindow::slotStartTransfer()
         switch (d->service)
         {
             case GoogleService::GDrive:
+            {
                 temp.title       = info.title();
                 temp.description = info.comment().section(QLatin1String("\n"), 0, 0);
                 break;
+            }
 
             default:
+            {
                 temp.title = info.name();
 
                 // Google Photo doesn't support image titles. Include it in descriptions if needed.
@@ -614,6 +615,7 @@ void GSWindow::slotStartTransfer()
                 temp.description.replace(QLatin1Char('"'), QLatin1String("\\\""));
                 temp.description         = temp.description.left(1000);
                 break;
+            }
         }
 
         temp.gpsLat.setNum(info.latitude());
@@ -635,16 +637,20 @@ void GSWindow::slotStartTransfer()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             d->widget->progressBar()->progressScheduled(i18nc("@info", "Google Drive export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme(QLatin1String("dk-googledrive")).pixmap(22, 22));
             break;
+        }
 
         default:
+        {
             d->widget->progressBar()->progressScheduled(i18nc("@info", "Google Photo export"), true, true);
             d->widget->progressBar()->progressThumbnailChanged(
                 QIcon::fromTheme((QLatin1String("dk-googlephoto"))).pixmap(22, 22));
             break;
+        }
     }
 
     uploadNextPhoto();
@@ -707,12 +713,16 @@ void GSWindow::uploadNextPhoto()
                 switch (d->renamingOpt)
                 {
                     case PWR_ADD_ALL:
+                    {
                         bAdd = true;
                         break;
+                    }
 
                     case PWR_REPLACE_ALL:
+                    {
                         bAdd = false;
                         break;
+                    }
 
                     default:
                     {
@@ -724,25 +734,35 @@ void GSWindow::uploadNextPhoto()
                         switch (dlg->getResult())
                         {
                             case PWR_ADD_ALL:
+                            {
                                 d->renamingOpt = PWR_ADD_ALL;
                                 break;
+                            }
 
                             case PWR_ADD:
+                            {
                                 bAdd = true;
                                 break;
+                            }
 
                             case PWR_REPLACE_ALL:
+                            {
                                 d->renamingOpt = PWR_REPLACE_ALL;
                                 break;
+                            }
 
                             case PWR_REPLACE:
+                            {
                                 bAdd = false;
                                 break;
+                            }
 
                             case PWR_CANCEL:
                             default:
+                            {
                                 bCancel = true;
                                 break;
+                            }
                         }
 
                         delete dlg;
@@ -847,7 +867,9 @@ void GSWindow::uploadNextPhoto()
         }
 
         case GoogleService::GPhotoImport:
+        {
             break;
+        }
     }
 
     if (!res)
@@ -1013,6 +1035,7 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
     }
 
     Q_EMIT updateHostApp(newUrl);
+
     downloadNextPhoto();
 }
 
@@ -1106,11 +1129,13 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
 
             QScopedPointer<DMetadata> meta(new DMetadata);
 
-            if (d->widget->getPhotoIdCheckBox()->isChecked() &&
+            if (
+                d->widget->getPhotoIdCheckBox()->isChecked() &&
                 meta->supportXmp()                           &&
                 meta->canWriteXmp(fileUrl.toLocalFile())     &&
                 meta->load(fileUrl.toLocalFile())            &&
-                !photoId.isEmpty())
+                !photoId.isEmpty()
+               )
             {
                 meta->setXmpTagString("Xmp.digiKam.picasawebGPhotoId", photoId);
                 meta->save(fileUrl.toLocalFile());
@@ -1120,6 +1145,7 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
         if (!d->widget->imagesList()->imageUrls().isEmpty())
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "continue to upload";
+
             Q_EMIT d->gphotoTalker->signalReadyToUpload();
         }
     }
@@ -1177,13 +1203,17 @@ void GSWindow::slotReloadAlbumsRequest()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             d->talker->listFolders();
             break;
+        }
 
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
+        {
             d->gphotoTalker->listAlbums();
             break;
+        }
     }
 }
 
@@ -1192,13 +1222,17 @@ void GSWindow::slotAccessTokenObtained()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             d->talker->listFolders();
             break;
+        }
 
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
+        {
             d->gphotoTalker->getLoggedInUser();
             break;
+        }
     }
 }
 
@@ -1268,13 +1302,17 @@ void GSWindow::slotTransferCancel()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             d->talker->cancel();
             break;
+        }
 
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
+        {
             d->gphotoTalker->cancel();
             break;
+        }
     }
 }
 
@@ -1301,17 +1339,21 @@ void GSWindow::slotUserChangeRequest()
         switch (d->service)
         {
             case GoogleService::GDrive:
+            {
                 d->talker->unlink();
                 while(d->talker->authenticated());
                 d->talker->doOAuth();
                 break;
+            }
 
             case GoogleService::GPhotoImport:
             case GoogleService::GPhotoExport:
+            {
                 d->gphotoTalker->unlink();
                 while(d->gphotoTalker->authenticated());
                 d->gphotoTalker->doOAuth();
                 break;
+            }
         }
     }
 

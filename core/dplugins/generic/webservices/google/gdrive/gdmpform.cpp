@@ -27,24 +27,16 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
-#include "wstoolutils.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericGoogleServicesPlugin
 {
 
 GDMPForm::GDMPForm()
-    : m_boundary(WSToolUtils::randomString(42 + 13).toLatin1())
 {
     reset();
-}
-
-GDMPForm::~GDMPForm()
-{
 }
 
 void GDMPForm::reset()
@@ -79,6 +71,7 @@ void GDMPForm::addPair(const QString& name,
                                  << " " << mime;
 
     // Generate JSON
+
     QJsonObject photoInfo;
     photoInfo.insert(QLatin1String("title"),       QJsonValue(name));
     photoInfo.insert(QLatin1String("description"), QJsonValue(description));
@@ -94,6 +87,7 @@ void GDMPForm::addPair(const QString& name,
     QByteArray json = doc.toJson();
 
     // Append to the multipart
+
     QByteArray str;
     str += "--";
     str += m_boundary;

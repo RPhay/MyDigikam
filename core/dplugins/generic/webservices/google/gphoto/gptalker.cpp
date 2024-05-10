@@ -83,28 +83,20 @@ public:
 
 public:
 
-    explicit Private()
-      : apiVersion(QLatin1String("v1")),
-        userInfoUrl(QString::fromLatin1("https://www.googleapis.com/plus/%1/people/me").arg(apiVersion)),
-        apiUrl(QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion)),
-        state(GP_LOGOUT),
-        albumIdToUpload(QLatin1String("-1")),
-        previousImageId(QLatin1String("-1"))
-    {
-    }
+    Private() = default;
 
 public:
 
-    QString                apiVersion;
+    QString                apiVersion       = QLatin1String("v1");
 
-    QString                userInfoUrl;
-    QString                apiUrl;
+    QString                userInfoUrl      = QString::fromLatin1("https://www.googleapis.com/plus/%1/people/me").arg(apiVersion);
+    QString                apiUrl           = QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion);
 
-    State                  state;
+    State                  state            = GP_LOGOUT;
 
-    QString                albumIdToUpload;
+    QString                albumIdToUpload  = QLatin1String("-1");
     QString                albumIdToImport;
-    QString                previousImageId;
+    QString                previousImageId  = QLatin1String("-1");
     QString                currDescription;
 
     QStringList            descriptionList;
@@ -271,11 +263,13 @@ void GPTalker::createAlbum(const GSFolder& album)
     }
 
     // Create body in json
+
     QByteArray data;
     data += "{\"album\": ";
     data += "{\"title\": \"";
     data += album.title.toUtf8();
     data += "\"}}";
+
     // qCDebug(DIGIKAM_WEBSERVICES_LOG) << data;
 
     QUrl url(d->apiUrl.arg(QLatin1String("albums")));
@@ -308,6 +302,7 @@ bool GPTalker::addPhoto(const QString& photoPath,
     QUrl url(d->apiUrl.arg(QLatin1String("uploads")));
 
     // Save album ID and description to upload
+
     d->currDescription = info.description;
     d->albumIdToUpload = albumId;
 
@@ -351,6 +346,7 @@ bool GPTalker::addPhoto(const QString& photoPath,
     }
 
     // Create the body for temporary upload
+
     QFile imageFile(path);
 
     if (!imageFile.open(QIODevice::ReadOnly))
@@ -483,60 +479,112 @@ void GPTalker::slotError(const QString& error)
     int     errorNo = 0;
 
     if (!error.isEmpty())
+    {
         errorNo = error.toInt();
+    }
 
     switch (errorNo)
     {
         case 2:
+        {
             transError=i18n("No photo specified");
             break;
+        }
+
         case 3:
+        {
             transError=i18n("General upload failure");
             break;
+        }
+
         case 4:
+        {
             transError=i18n("File-size was zero");
             break;
+        }
+
         case 5:
+        {
             transError=i18n("File-type was not recognized");
             break;
+        }
+
         case 6:
+        {
             transError=i18n("User exceeded upload limit");
             break;
+        }
+
         case 96:
+        {
             transError=i18n("Invalid signature");
             break;
+        }
+
         case 97:
+        {
             transError=i18n("Missing signature");
             break;
+        }
+
         case 98:
+        {
             transError=i18n("Login failed / Invalid auth token");
             break;
+        }
+
         case 100:
+        {
             transError=i18n("Invalid API Key");
             break;
+        }
+
         case 105:
+        {
             transError=i18n("Service currently unavailable");
             break;
+        }
+
         case 108:
+        {
             transError=i18n("Invalid Frob");
             break;
+        }
+
         case 111:
+        {
             transError=i18n("Format \"xxx\" not found");
             break;
+        }
+
         case 112:
+        {
             transError=i18n("Method \"xxx\" not found");
             break;
+        }
+
         case 114:
+        {
             transError=i18n("Invalid SOAP envelope");
             break;
+        }
+
         case 115:
+        {
             transError=i18n("Invalid XML-RPC Method Call");
             break;
+        }
+
         case 116:
+        {
             transError=i18n("The POST method is now required for all setters.");
             break;
+        }
+
         default:
+        {
             transError=i18n("Unknown error");
+        }
     };
 
     QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"),
@@ -578,28 +626,52 @@ void GPTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case (Private::GP_LOGOUT):
+        {
             break;
+        }
+
         case (Private::GP_GETUSER):
+        {
             parseResponseGetLoggedInUser(buffer);
             break;
+        }
+
         case (Private::GP_CREATEALBUM):
+        {
             parseResponseCreateAlbum(buffer);
             break;
+        }
+
         case (Private::GP_LISTALBUMS):
+        {
             parseResponseListAlbums(buffer);
             break;
+        }
+
         case (Private::GP_LISTPHOTOS):
+        {
             parseResponseListPhotos(buffer);
             break;
+        }
+
         case (Private::GP_ADDPHOTO):
+        {
             parseResponseAddPhoto(buffer);
             break;
+        }
+
         case (Private::GP_UPDATEPHOTO):
+        {
             Q_EMIT signalAddPhotoDone(1, QString());
             break;
+        }
+
         case (Private::GP_UPLOADPHOTO):
+        {
             parseResponseUploadPhoto(buffer);
             break;
+        }
+
         case (Private::GP_GETPHOTO):
         {
             // all we get is data of the image
@@ -609,9 +681,11 @@ void GPTalker::slotFinished(QNetworkReply* reply)
             QStringList headerList = header.split(QLatin1Char(';'));
             QString fileName;
 
-            if (headerList.count() > 1                          &&
-                headerList.at(0) == QLatin1String("attachment") &&
-                headerList.at(1).contains(QLatin1String("filename=")))
+            if (
+                (headerList.count() > 1)                          &&
+                (headerList.at(0) == QLatin1String("attachment")) &&
+                headerList.at(1).contains(QLatin1String("filename="))
+               )
             {
                 fileName = headerList.at(1).section(QLatin1Char('"'), 1, 1);
             }
@@ -724,13 +798,14 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
-                                                                         .arg(err.errorString()),
-                                  QList<GSFolder>());
+                                                                           .arg(err.errorString()),
+                                    QList<GSFolder>());
         return;
     }
 
     QJsonObject jsonObject  = doc.object();
     QJsonArray jsonArray    = jsonObject[QLatin1String("albums")].toArray();
+
     // qCDebug(DIGIKAM_WEBSERVICES_LOG) << "json array " << doc;
 
     /**
@@ -766,6 +841,7 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
     }
 
     std::sort(d->albumList.begin(), d->albumList.end(), gphotoLessThan);
+
     Q_EMIT signalListAlbumsDone(1, QLatin1String(""), d->albumList);
 }
 
@@ -780,6 +856,7 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListPhotosDone(0, i18n("Failed to fetch photo-set list"), QList<GSPhoto>());
+
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code:" << err.error
                                          << ", msg:" << err.errorString();
         return;
@@ -814,6 +891,7 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
         }
 
         photo.originalURL    = QUrl(photo.baseUrl + option);
+
         // qCDebug(DIGIKAM_WEBSERVICES_LOG) << photo.originalURL;
 
         d->photoList.append(photo);
@@ -841,8 +919,8 @@ void GPTalker::parseResponseCreateAlbum(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalCreateAlbumDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
-                                                                          .arg(err.errorString()),
-                                   QString());
+                                                                            .arg(err.errorString()),
+                                     QString());
         return;
     }
 
@@ -885,7 +963,8 @@ void GPTalker::parseResponseGetLoggedInUser(const QByteArray& data)
     listAlbums();
 }
 
-//TODO: Parse and return photoID
+// TODO: Parse and return photoID
+
 void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseUploadPhoto";
@@ -899,6 +978,7 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalUploadPhotoDone(0, err.errorString(), QStringList());
+
         return;
     }
 

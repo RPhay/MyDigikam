@@ -68,22 +68,14 @@ public:
 
 public:
 
-    explicit Private()
-      : apiUrl(QLatin1String("https://www.googleapis.com/drive/v2/%1")),
-        uploadUrl(QLatin1String("https://www.googleapis.com/upload/drive/v2/files")),
-        rootid(QLatin1String("root")),
-        rootfoldername(QLatin1String("GoogleDrive Root")),
-        state(GD_LOGOUT),
-        listPhotoId(QStringList())
-    {
-    }
+    Private() = default;
 
 public:
 
-    QString                apiUrl;
-    QString                uploadUrl;
-    QString                rootid;
-    QString                rootfoldername;
+    QString                apiUrl           = QLatin1String("https://www.googleapis.com/drive/v2/%1");
+    QString                uploadUrl        = QLatin1String("https://www.googleapis.com/upload/drive/v2/files");
+    QString                rootid           = QLatin1String("root");
+    QString                rootfoldername   = QLatin1String("GoogleDrive Root");
     QString                username;
     State                  state;
     QStringList            listPhotoId;
@@ -91,7 +83,7 @@ public:
 
 GDTalker::GDTalker(QWidget* const parent)
     : GSTalkerBase(parent, QStringList(QLatin1String("https://www.googleapis.com/auth/drive")), QLatin1String("GoogleDrive")),
-      d(new Private)
+      d           (new Private)
 {
     connect(m_service->networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -214,7 +206,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
         path = WSToolUtils::makeTemporaryDir("google").filePath(QFileInfo(imgPath)
                                              .baseName().trimmed() + QLatin1String(".jpg"));
 
-        if (rescale && (image.width() > maxDim || image.height() > maxDim))
+        if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
         {
             image = image.scaled(maxDim,maxDim,Qt::KeepAspectRatio,Qt::SmoothTransformation);
         }
@@ -286,25 +278,42 @@ void GDTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case (Private::GD_LOGOUT):
+        {
             break;
+        }
+
         case (Private::GD_LISTFOLDERS):
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In Private::GD_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+        }
+
         case (Private::GD_CREATEFOLDER):
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In Private::GD_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+        }
+
         case (Private::GD_ADDPHOTO):
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In Private::GD_ADDPHOTO"; // << buffer;
             parseResponseAddPhoto(buffer);
             break;
+        }
+
         case (Private::GD_USERNAME):
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In Private::GD_USERNAME"; // << buffer;
             parseResponseUserName(buffer);
             break;
+        }
+
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -313,6 +322,7 @@ void GDTalker::slotFinished(QNetworkReply* reply)
 void GDTalker::slotUploadPhoto()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << d->listPhotoId.join(QLatin1String(", "));
+
     Q_EMIT signalUploadPhotoDone(1, QString(), d->listPhotoId);
 }
 
@@ -324,6 +334,7 @@ void GDTalker::parseResponseUserName(const QByteArray& data)
     if (err.error != QJsonParseError::NoError)
     {
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -348,6 +359,7 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsDone(0,i18n("Failed to list folders"),QList<GSFolder>());
+
         return;
     }
 
@@ -365,6 +377,7 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
         QJsonObject obj      = value.toObject();
 
         // Verify if album is in trash
+
         QJsonObject labels   = obj[QLatin1String("labels")].toObject();
         bool        trashed  = labels[QLatin1String("trashed")].toBool();
 
@@ -374,6 +387,7 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
         /* Verify if album is visualized in a folder inside My Drive
          * If parents is empty, album is shared by another person and not added to My Drive yet
          */
+
         QJsonArray  parents  = obj[QLatin1String("parents")].toArray();
 
         fps.id          = obj[QLatin1String("id")].toString();
@@ -399,6 +413,7 @@ void GDTalker::parseResponseCreateFolder(const QByteArray& data)
     if (err.error != QJsonParseError::NoError)
     {
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -407,7 +422,9 @@ void GDTalker::parseResponseCreateFolder(const QByteArray& data)
     bool success           = false;
 
     if (!(QString::compare(temp, QLatin1String(""), Qt::CaseInsensitive) == 0))
+    {
         success = true;
+    }
 
     Q_EMIT signalBusy(false);
 
@@ -429,6 +446,7 @@ void GDTalker::parseResponseAddPhoto(const QByteArray& data)
     if (err.error != QJsonParseError::NoError)
     {
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -438,7 +456,9 @@ void GDTalker::parseResponseAddPhoto(const QByteArray& data)
     bool success           = false;
 
     if (!(QString::compare(altLink, QLatin1String(""), Qt::CaseInsensitive) == 0))
+    {
         success = true;
+    }
 
     Q_EMIT signalBusy(false);
 
@@ -449,6 +469,7 @@ void GDTalker::parseResponseAddPhoto(const QByteArray& data)
     else
     {
         d->listPhotoId << photoId;
+
         Q_EMIT signalAddPhotoDone(1, QString());
     }
 }

@@ -40,17 +40,12 @@ class Q_DECL_HIDDEN GSNewAlbumDlg::Private
 {
 public:
 
-    explicit Private()
-      : publicRBtn   (nullptr),
-        unlistedRBtn (nullptr),
-        protectedRBtn(nullptr)
-    {
-    }
+    Private() = default;
 
     QString        serviceName;
-    QRadioButton*  publicRBtn;
-    QRadioButton*  unlistedRBtn;
-    QRadioButton*  protectedRBtn;
+    QRadioButton*  publicRBtn       = nullptr;
+    QRadioButton*  unlistedRBtn     = nullptr;
+    QRadioButton*  protectedRBtn    = nullptr;
 };
 
 GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,

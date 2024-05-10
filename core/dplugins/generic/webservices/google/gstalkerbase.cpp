@@ -39,33 +39,23 @@ class Q_DECL_HIDDEN GSTalkerBase::Private
 {
 public:
 
-    explicit Private()
-      : linked    (false),
-        authUrl   (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
-        tokenUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        identity  (QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
-                                 "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn")),
-        sharedKey (QLatin1String("Bg0AFxUean8WJi8UOAN9MWMwFAJnBxwvEHcVGBE+DggwPQs=")),
-        netMngr   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   linked;
+    bool                   linked       = false;
 
-    QString                authUrl;
-    QString                tokenUrl;
-    QString                identity;
-    QString                sharedKey;
+    QString                authUrl      = QLatin1String("https://accounts.google.com/o/oauth2/auth");
+    QString                tokenUrl     = QLatin1String("https://accounts.google.com/o/oauth2/token");
+    QString                identity     = QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
+                                                        "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn");
+    QString                sharedKey    = QLatin1String("Bg0AFxUean8WJi8UOAN9MWMwFAJnBxwvEHcVGBE+DggwPQs=");
 
-    QNetworkAccessManager* netMngr;
+    QNetworkAccessManager* netMngr      = nullptr;
 };
 
 GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, const QString& serviceName)
     : QObject      (parent),
       m_scope      (scope),
       m_serviceName(serviceName),
-      m_reply      (nullptr),
-      m_service    (nullptr),
       d            (new Private)
 {
     d->netMngr = NetworkManager::instance()->getNetworkManager(this);

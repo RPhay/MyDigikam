@@ -38,17 +38,11 @@ class GSPhoto
 {
 public:
 
-    GSPhoto()
-      : id          (QLatin1String("-1")),
-        gpsLon      (QLatin1String("")),
-        gpsLat      (QLatin1String("")),
-        canComment  (true)
-    {
-    }
+    GSPhoto() = default;
 
 public:
 
-    QString     id;
+    QString     id              = QLatin1String("-1");
     QString     title;
     QString     description;
 
@@ -59,7 +53,7 @@ public:
     QString     gpsLon;
     QString     gpsLat;
 
-    bool        canComment;
+    bool        canComment      = true;
     QStringList tags;
 
     QString     width;
@@ -78,23 +72,17 @@ class GSFolder
 {
 public:
 
-    GSFolder()
-      : id          (QLatin1String("-1")),
-        title       (QLatin1String("<auto-create>")),
-        canComment  (true),
-        isWriteable (true)
-    {
-    }
+    GSFolder() = default;
 
 public:
 
-    QString     id;
-    QString     title;
+    QString     id          = QLatin1String("-1");
+    QString     title       = QLatin1String("<auto-create>");
     QString     timestamp;
     QString     description;
     QString     location;
-    bool        canComment;
-    bool        isWriteable;
+    bool        canComment  = true;
+    bool        isWriteable = true;
     QStringList tags;
     QString     url;
 };

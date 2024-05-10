@@ -22,23 +22,8 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 
-//local includes
-
-#include "wstoolutils.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericGoogleServicesPlugin
 {
-
-GPMPForm::GPMPForm()
-    : m_boundary(QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1())
-{
-}
-
-GPMPForm::~GPMPForm()
-{
-}
 
 void GPMPForm::reset()
 {
@@ -101,13 +86,16 @@ bool GPMPForm::addFile(const QString& name, const QString& path)
     {
         // if we ourselves can't determine the mime of the local file,
         // very unlikely the remote site will be able to identify it
+
         return false;
     }
 
     QFile imageFile(path);
 
     if (!imageFile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QByteArray imageData = imageFile.readAll();
     imageFile.close();

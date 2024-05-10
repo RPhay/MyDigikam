@@ -21,6 +21,12 @@
 #include <QByteArray>
 #include <QString>
 
+// Local insludes
+
+#include "wstoolutils.h"
+
+using namespace Digikam;
+
 namespace DigikamGenericGoogleServicesPlugin
 {
 
@@ -28,8 +34,8 @@ class GDMPForm
 {
 public:
 
-    explicit GDMPForm();
-    ~GDMPForm();
+    GDMPForm();
+    ~GDMPForm() = default;
 
     void finish();
     void reset();
@@ -49,7 +55,8 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary;
+    QByteArray m_boundary = WSToolUtils::randomString(42 + 13).toLatin1();
+
     QString    m_file_size;
 };
 
