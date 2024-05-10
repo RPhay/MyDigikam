@@ -31,8 +31,11 @@ FCThread::FCThread(QObject* const parent)
 FCThread::~FCThread()
 {
     // cancel the thread
+
     cancel();
+
     // wait for the thread to finish
+
     wait();
 }
 

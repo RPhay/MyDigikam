@@ -48,43 +48,27 @@ public:
 
 public:
 
-    FCContainer()
-      : iface                (nullptr),
-        behavior             (CopyFile),
-        imageFormat          (JPEG),
-        imageResize          (1024),
-        imageCompression     (75),
-        sidecars             (false),
-        writeMetadataToFile  (false),
-        overwrite            (false),
-        albumPath            (false),
-        removeMetadata       (false),
-        changeImageProperties(false)
-    {
-    };
-
-    ~FCContainer()
-    {
-    };
+    FCContainer()  = default;
+    ~FCContainer() = default;
 
 public:
 
 
-    DInfoInterface* iface;
+    DInfoInterface* iface                   = nullptr;
 
     QUrl            destUrl;
 
-    int             behavior;
-    int             imageFormat;
-    int             imageResize;
-    int             imageCompression;
+    int             behavior                = CopyFile;
+    int             imageFormat             = JPEG;
+    int             imageResize             = 1024;
+    int             imageCompression        = 75;
 
-    bool            sidecars;
-    bool            writeMetadataToFile;
-    bool            overwrite;
-    bool            albumPath;
-    bool            removeMetadata;
-    bool            changeImageProperties;
+    bool            sidecars                = false;
+    bool            writeMetadataToFile     = false;
+    bool            overwrite               = false;
+    bool            albumPath               = false;
+    bool            removeMetadata          = false;
+    bool            changeImageProperties   = false;
 };
 
 } // namespace DigikamGenericFileCopyPlugin

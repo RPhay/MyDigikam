@@ -43,9 +43,7 @@ class Q_DECL_HIDDEN FCTask::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QUrl        srcUrl;
     FCContainer settings;
@@ -253,7 +251,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
                            QLatin1Char('/') +
                            destInfo.completeBaseName();
 
-        if (d->settings.imageFormat == FCContainer::JPEG)
+        if      (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpg"));
             destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
@@ -323,8 +321,10 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
 
 QUrl FCTask::getUrlOrDelete(const QUrl& fileUrl) const
 {
-    if (d->settings.overwrite              &&
-        QFile::exists(fileUrl.toLocalFile()))
+    if (
+        d->settings.overwrite              &&
+        QFile::exists(fileUrl.toLocalFile())
+       )
     {
         QFile::remove(fileUrl.toLocalFile());
 

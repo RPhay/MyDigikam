@@ -48,50 +48,31 @@ class Q_DECL_HIDDEN FCExportWidget::Private
 {
 public:
 
-    explicit Private()
-      : iface               (nullptr),
-        selector            (nullptr),
-        imageList           (nullptr),
-        sidecars            (nullptr),
-        writeMetadataToFile (nullptr),
-        overwrite           (nullptr),
-        albumPath           (nullptr),
-        targetButtonGroup   (nullptr),
-        fileCopyButton      (nullptr),
-        symLinkButton       (nullptr),
-        relativeButton      (nullptr),
-        imageChangeGroupBox (nullptr),
-        changeImagesProp    (nullptr),
-        removeMetadataProp  (nullptr),
-        imageCompression    (nullptr),
-        imageResize         (nullptr),
-        imageFormat         (nullptr)
-    {
-    }
+    Private() = default;
 
-    DInfoInterface* iface;
-    DFileSelector*  selector;
-    DItemsList*     imageList;
+    DInfoInterface* iface                   = nullptr;
+    DFileSelector*  selector                = nullptr;
+    DItemsList*     imageList               = nullptr;
 
-    QCheckBox*      sidecars;
-    QCheckBox*      writeMetadataToFile;
-    QCheckBox*      overwrite;
-    QCheckBox*      albumPath;
+    QCheckBox*      sidecars                = nullptr;
+    QCheckBox*      writeMetadataToFile     = nullptr;
+    QCheckBox*      overwrite               = nullptr;
+    QCheckBox*      albumPath               = nullptr;
 
-    QButtonGroup*   targetButtonGroup;
-    QRadioButton*   fileCopyButton;
-    QRadioButton*   symLinkButton;
-    QRadioButton*   relativeButton;
+    QButtonGroup*   targetButtonGroup       = nullptr;
+    QRadioButton*   fileCopyButton          = nullptr;
+    QRadioButton*   symLinkButton           = nullptr;
+    QRadioButton*   relativeButton          = nullptr;
 
     QUrl            targetUrl;
 
-    QGroupBox*      imageChangeGroupBox;
-    QCheckBox*      changeImagesProp;
-    QCheckBox*      removeMetadataProp;
+    QGroupBox*      imageChangeGroupBox     = nullptr;
+    QCheckBox*      changeImagesProp        = nullptr;
+    QCheckBox*      removeMetadataProp      = nullptr;
 
-    QSpinBox*       imageCompression;
-    QSpinBox*       imageResize;
-    QComboBox*      imageFormat;
+    QSpinBox*       imageCompression        = nullptr;
+    QSpinBox*       imageResize             = nullptr;
+    QComboBox*      imageFormat             = nullptr;
 };
 
 FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const parent)
@@ -217,6 +198,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     //---------------------------------------------
 
     // setup image list
+
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
     d->imageList->setIface(d->iface);
@@ -226,6 +208,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
                                                 "to the specified target."));
 
     // layout dialog
+
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(hbox);
@@ -332,7 +315,7 @@ void FCExportWidget::slotFileCopyButtonChanged(bool enabled)
 
     d->changeImagesProp->setEnabled(enabled);
 
-     // The changeImagesProp is by default and on each change unchecked
+    // The changeImagesProp is by default and on each change unchecked
 
     d->imageChangeGroupBox->setEnabled(false);
 }

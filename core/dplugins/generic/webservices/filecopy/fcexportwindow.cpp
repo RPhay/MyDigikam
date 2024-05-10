@@ -43,43 +43,25 @@ class Q_DECL_HIDDEN FCExportWindow::Private
 {
 public:
 
-    explicit Private()
-      : exportWidget(nullptr),
-        thread      (nullptr)
-    {
-    }
+    Private() = default;
 
-    const static QString TARGET_URL_PROPERTY;
-    const static QString TARGET_SIDECARS;
-    const static QString TARGET_WRITE_METADATA_TO_FILE;
-    const static QString TARGET_OVERWRITE;
-    const static QString TARGET_ALBUMPATH;
-    const static QString TARGET_BEHAVIOR;
-    const static QString CONFIG_GROUP;
+    const QString TARGET_URL_PROPERTY           = QLatin1String("targetUrl");
+    const QString TARGET_SIDECARS               = QLatin1String("sidecars");
+    const QString TARGET_WRITE_METADATA_TO_FILE = QLatin1String("writeMetadataToFile");
+    const QString TARGET_OVERWRITE              = QLatin1String("overwrite");
+    const QString TARGET_ALBUMPATH              = QLatin1String("albumPath");
+    const QString TARGET_BEHAVIOR               = QLatin1String("targetBehavior");
+    const QString CONFIG_GROUP                  = QLatin1String("FileCopyExport");
 
-    const static QString CHANGE_IMAGE_PROPERTIES;
-    const static QString IMAGE_RESIZE;
-    const static QString IMAGE_FORMAT;
-    const static QString IMAGE_COMPRESSION;
-    const static QString REMOVE_METADATA;
+    const QString CHANGE_IMAGE_PROPERTIES       = QLatin1String("changeImageProperties");
+    const QString IMAGE_RESIZE                  = QLatin1String("imageResize");
+    const QString IMAGE_FORMAT                  = QLatin1String("imageFormat");
+    const QString IMAGE_COMPRESSION             = QLatin1String("imageCompression");
+    const QString REMOVE_METADATA               = QLatin1String("removeMetadata");
 
-    FCExportWidget*      exportWidget;
-    FCThread*            thread;
+    FCExportWidget*      exportWidget           = nullptr;
+    FCThread*            thread                 = nullptr;
 };
-
-const QString FCExportWindow::Private::TARGET_URL_PROPERTY           = QLatin1String("targetUrl");
-const QString FCExportWindow::Private::TARGET_SIDECARS               = QLatin1String("sidecars");
-const QString FCExportWindow::Private::TARGET_WRITE_METADATA_TO_FILE = QLatin1String("writeMetadataToFile");
-const QString FCExportWindow::Private::TARGET_OVERWRITE              = QLatin1String("overwrite");
-const QString FCExportWindow::Private::TARGET_ALBUMPATH              = QLatin1String("albumPath");
-const QString FCExportWindow::Private::TARGET_BEHAVIOR               = QLatin1String("targetBehavior");
-const QString FCExportWindow::Private::CONFIG_GROUP                  = QLatin1String("FileCopyExport");
-
-const QString FCExportWindow::Private::CHANGE_IMAGE_PROPERTIES       = QLatin1String("changeImageProperties");
-const QString FCExportWindow::Private::IMAGE_RESIZE                  = QLatin1String("imageResize");
-const QString FCExportWindow::Private::IMAGE_FORMAT                  = QLatin1String("imageFormat");
-const QString FCExportWindow::Private::IMAGE_COMPRESSION             = QLatin1String("imageCompression");
-const QString FCExportWindow::Private::REMOVE_METADATA               = QLatin1String("removeMetadata");
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("FileCopy Export Dialog")),
