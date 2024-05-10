@@ -46,7 +46,7 @@ public:
     explicit DBWidget(QWidget* const parent,
                       DInfoInterface* const iface,
                       const QString& toolName);
-    ~DBWidget() override;
+    ~DBWidget() override = default;
 
     void updateLabels(const QString& name = QString(), const QString& url = QString()) override;
 

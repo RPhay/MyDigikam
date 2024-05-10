@@ -70,39 +70,28 @@ public:
 public:
 
     explicit Private(QWidget* const p)
+        : parent(p)
     {
-        apikey   = QLatin1String("mv2pk07ym9bx3r8");
-        secret   = QLatin1String("f33sflc8jhiozqu");
-
-        authUrl  = QLatin1String("https://www.dropbox.com/oauth2/authorize");
-        tokenUrl = QLatin1String("https://api.dropboxapi.com/oauth2/token");
-
-        state    = DB_USERNAME;
-        settings = nullptr;
-        netMngr  = nullptr;
-        reply    = nullptr;
-        o2       = nullptr;
-        parent   = p;
     }
 
 public:
 
-    QString                         apikey;
-    QString                         secret;
-    QString                         authUrl;
-    QString                         tokenUrl;
+    QString                         apikey      = QLatin1String("mv2pk07ym9bx3r8");
+    QString                         secret      = QLatin1String("f33sflc8jhiozqu");
+    QString                         authUrl     = QLatin1String("https://www.dropbox.com/oauth2/authorize");
+    QString                         tokenUrl    = QLatin1String("https://api.dropboxapi.com/oauth2/token");
     QList<QPair<QString, QString> > folderList;
 
-    QWidget*                        parent;
-    QNetworkAccessManager*          netMngr;
+    QWidget*                        parent      = nullptr;
+    QNetworkAccessManager*          netMngr     = nullptr;
 
-    QNetworkReply*                  reply;
+    QNetworkReply*                  reply       = nullptr;
 
-    QSettings*                      settings;
+    QSettings*                      settings    = nullptr;
 
-    State                           state;
+    State                           state       = DB_USERNAME;
 
-    O2*                             o2;
+    O2*                             o2          = nullptr;
 };
 
 DBTalker::DBTalker(QWidget* const parent)
@@ -152,6 +141,7 @@ DBTalker::~DBTalker()
 void DBTalker::link()
 {
     Q_EMIT signalBusy(true);
+
     d->o2->link();
 }
 
@@ -177,6 +167,7 @@ void DBTalker::reauthenticate()
 void DBTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Dropbox fail";
+
     Q_EMIT signalBusy(false);
 }
 
@@ -185,11 +176,14 @@ void DBTalker::slotLinkingSucceeded()
     if (!d->o2->linked())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Dropbox ok";
+
         Q_EMIT signalBusy(false);
+
         return;
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Dropbox ok";
+
     Q_EMIT signalLinkingSucceeded();
 }
 
@@ -222,6 +216,7 @@ void DBTalker::createFolder(const QString& path)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::DB_CREATEFOLDER;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -237,6 +232,7 @@ void DBTalker::getUserName()
     d->reply = d->netMngr->post(netRequest, QByteArray());
 
     d->state = Private::DB_USERNAME;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -265,6 +261,7 @@ void DBTalker::listFolders(const QString& cursor)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::DB_LISTFOLDERS;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -295,6 +292,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
         if (image.isNull())
         {
             Q_EMIT signalBusy(false);
+
             return false;
         }
 
@@ -324,6 +322,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
     if (!form.addFile(path))
     {
         Q_EMIT signalBusy(false);
+
         return false;
     }
 
@@ -368,6 +367,7 @@ void DBTalker::slotFinished(QNetworkReply* reply)
         if (d->state != Private::DB_CREATEFOLDER)
         {
             Q_EMIT signalBusy(false);
+
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18nc("@title:window", "Error"), reply->errorString());
 
@@ -381,23 +381,37 @@ void DBTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case Private::DB_LISTFOLDERS:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In DB_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+        }
+
         case Private::DB_CREATEFOLDER:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In DB_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+        }
+
         case Private::DB_ADDPHOTO:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In DB_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+        }
+
         case Private::DB_USERNAME:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In DB_USERNAME";
             parseResponseUserName(buffer);
             break;
+        }
+
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -408,6 +422,7 @@ void DBTalker::parseResponseAddPhoto(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("size"));
+
     Q_EMIT signalBusy(false);
 
     if (!success)
@@ -440,6 +455,7 @@ void DBTalker::parseResponseListFolders(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
+
         return;
     }
 

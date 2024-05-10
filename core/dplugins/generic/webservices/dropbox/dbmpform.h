@@ -28,8 +28,8 @@ class DBMPForm
 
 public:
 
-    explicit DBMPForm();
-    ~DBMPForm();
+    DBMPForm()  = default;
+    ~DBMPForm() = default;
 
     bool addFile(const QString& imgPath);
     QByteArray formData() const;

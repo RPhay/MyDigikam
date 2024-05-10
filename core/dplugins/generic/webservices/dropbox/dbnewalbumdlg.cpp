@@ -32,10 +32,6 @@ DBNewAlbumDlg::DBNewAlbumDlg(QWidget* const parent, const QString& toolName)
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-DBNewAlbumDlg::~DBNewAlbumDlg()
-{
-}
-
 void DBNewAlbumDlg::getFolderTitle(DBFolder& folder)
 {
     folder.title = QLatin1Char('/') + getTitleEdit()->text();

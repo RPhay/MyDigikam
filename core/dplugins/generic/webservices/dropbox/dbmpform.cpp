@@ -28,14 +28,6 @@
 namespace DigikamGenericDropBoxPlugin
 {
 
-DBMPForm::DBMPForm()
-{
-}
-
-DBMPForm::~DBMPForm()
-{
-}
-
 bool DBMPForm::addFile(const QString& imgPath)
 {
     QFile file(imgPath);

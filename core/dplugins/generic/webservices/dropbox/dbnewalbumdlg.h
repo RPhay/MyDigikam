@@ -34,7 +34,7 @@ class DBNewAlbumDlg : public WSNewAlbumDialog
 public:
 
     explicit DBNewAlbumDlg(QWidget* const parent, const QString& toolName);
-    ~DBNewAlbumDlg() override;
+    ~DBNewAlbumDlg() override = default;
 
     void getFolderTitle(DBFolder& folder);
 };

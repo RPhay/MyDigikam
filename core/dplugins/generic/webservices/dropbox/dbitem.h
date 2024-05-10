@@ -28,9 +28,7 @@ class DBPhoto
 
 public:
 
-    DBPhoto()
-    {
-    }
+    DBPhoto() = default;
 
     QString title;
 };
@@ -40,9 +38,7 @@ class DBFolder
 
 public:
 
-    DBFolder()
-    {
-    }
+    DBFolder() = default;
 
     QString title;
 };

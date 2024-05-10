@@ -34,10 +34,6 @@ DBPlugin::DBPlugin(QObject* const parent)
 {
 }
 
-DBPlugin::~DBPlugin()
-{
-}
-
 void DBPlugin::cleanUp()
 {
     delete m_toolDlg;

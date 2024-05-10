@@ -37,10 +37,6 @@ DBWidget::DBWidget(QWidget* const parent,
     getSizeBox()->hide();
 }
 
-DBWidget::~DBWidget()
-{
-}
-
 void DBWidget::updateLabels(const QString& name, const QString& url)
 {
     QString web(QLatin1String("https://www.dropbox.com/"));
