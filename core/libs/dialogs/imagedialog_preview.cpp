@@ -21,26 +21,21 @@ class Q_DECL_HIDDEN ImageDialogPreview::Private
 {
 public:
 
-    explicit Private()
-      : imageLabel     (nullptr),
-        infoLabel      (nullptr),
-        thumbLoadThread(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*              imageLabel;
-    QLabel*              infoLabel;
+    QLabel*              imageLabel      = nullptr;
+    QLabel*              infoLabel       = nullptr;
 
     QUrl                 currentURL;
 
-    ThumbnailLoadThread* thumbLoadThread;
+    ThumbnailLoadThread* thumbLoadThread = nullptr;
 };
 
 ImageDialogPreview::ImageDialogPreview(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
+    d->thumbLoadThread       = ThumbnailLoadThread::defaultThread();
 
     QVBoxLayout* const vlay  = new QVBoxLayout(this);
     d->imageLabel            = new QLabel(this);

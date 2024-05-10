@@ -21,19 +21,14 @@ class Q_DECL_HIDDEN ImageDialogToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view        (nullptr),
-        catcher     (nullptr),
-        thread      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QAbstractItemView*     view;
+    QAbstractItemView*     view    = nullptr;
     QModelIndex            index;
     QUrl                   url;
     QImage                 preview;
-    ThumbnailImageCatcher* catcher;
-    ThumbnailLoadThread*   thread;
+    ThumbnailImageCatcher* catcher = nullptr;
+    ThumbnailLoadThread*   thread  = nullptr;
 };
 
 ImageDialogToolTip::ImageDialogToolTip()
