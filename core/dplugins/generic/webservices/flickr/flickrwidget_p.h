@@ -55,46 +55,29 @@ class Q_DECL_HIDDEN FlickrWidget::Private
 {
 public:
 
-    explicit Private()
-      : removeAccount               (nullptr),
-        extendedTagsButton          (nullptr),
-        extendedPublicationButton   (nullptr),
-        exportHostTagsCheckBox      (nullptr),
-        stripSpaceTagsCheckBox      (nullptr),
-        addExtraTagsCheckBox        (nullptr),
-        familyCheckBox              (nullptr),
-        friendsCheckBox             (nullptr),
-        publicCheckBox              (nullptr),
-        extendedTagsBox             (nullptr),
-        extendedPublicationBox      (nullptr),
-        tagsLineEdit                (nullptr),
-        contentTypeComboBox         (nullptr),
-        safetyLevelComboBox         (nullptr),
-        imglst                      (nullptr)
-    {
-    }
+    Private() = default;
 
     QString                 serviceName;
-    QPushButton*            removeAccount;
-    QPushButton*            extendedTagsButton;
-    QPushButton*            extendedPublicationButton;
+    QPushButton*            removeAccount               = nullptr;
+    QPushButton*            extendedTagsButton          = nullptr;
+    QPushButton*            extendedPublicationButton   = nullptr;
 
-    QCheckBox*              exportHostTagsCheckBox;
-    QCheckBox*              stripSpaceTagsCheckBox;
-    QCheckBox*              addExtraTagsCheckBox;
-    QCheckBox*              familyCheckBox;
-    QCheckBox*              friendsCheckBox;
-    QCheckBox*              publicCheckBox;
+    QCheckBox*              exportHostTagsCheckBox      = nullptr;
+    QCheckBox*              stripSpaceTagsCheckBox      = nullptr;
+    QCheckBox*              addExtraTagsCheckBox        = nullptr;
+    QCheckBox*              familyCheckBox              = nullptr;
+    QCheckBox*              friendsCheckBox             = nullptr;
+    QCheckBox*              publicCheckBox              = nullptr;
 
-    QGroupBox*              extendedTagsBox;
-    QGroupBox*              extendedPublicationBox;
+    QGroupBox*              extendedTagsBox             = nullptr;
+    QGroupBox*              extendedPublicationBox      = nullptr;
 
-    DTextEdit*              tagsLineEdit;
+    DTextEdit*              tagsLineEdit                = nullptr;
 
-    WSComboBoxIntermediate* contentTypeComboBox;
-    WSComboBoxIntermediate* safetyLevelComboBox;
+    WSComboBoxIntermediate* contentTypeComboBox         = nullptr;
+    WSComboBoxIntermediate* safetyLevelComboBox         = nullptr;
 
-    FlickrList*             imglst;
+    FlickrList*             imglst                      = nullptr;
 };
 
 } // namespace DigikamGenericFlickrPlugin

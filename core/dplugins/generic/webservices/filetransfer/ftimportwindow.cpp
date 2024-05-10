@@ -40,14 +40,10 @@ class Q_DECL_HIDDEN FTImportWindow::Private
 {
 public:
 
-    explicit Private()
-    {
-        importWidget = nullptr;
-        iface        = nullptr;
-    }
+    Private() = default;
 
-    FTImportWidget* importWidget;
-    DInfoInterface* iface;
+    FTImportWidget* importWidget    = nullptr;
+    DInfoInterface* iface           = nullptr;
 };
 
 FTImportWindow::FTImportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)

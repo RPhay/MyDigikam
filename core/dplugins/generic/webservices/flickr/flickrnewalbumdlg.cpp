@@ -38,10 +38,6 @@ FlickrNewAlbumDlg::FlickrNewAlbumDlg(QWidget* const parent, const QString& toolN
     getMainWidget()->setMinimumSize(350,0);
 }
 
-FlickrNewAlbumDlg::~FlickrNewAlbumDlg()
-{
-}
-
 void FlickrNewAlbumDlg::getFolderProperties(FPhotoSet& folder)
 {
     folder.title       = getTitleEdit()->text();

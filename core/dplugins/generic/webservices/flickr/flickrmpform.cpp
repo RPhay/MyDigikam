@@ -28,21 +28,9 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "wstoolutils.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericFlickrPlugin
 {
-
-FlickrMPForm::FlickrMPForm()
-    : m_boundary(QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1())
-{
-}
-
-FlickrMPForm::~FlickrMPForm()
-{
-}
 
 void FlickrMPForm::reset()
 {

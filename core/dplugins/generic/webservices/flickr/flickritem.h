@@ -33,27 +33,19 @@ class FPhotoInfo
 
 public:
 
-    FPhotoInfo()
-      : is_public   (false),
-        is_friend   (false),
-        is_family   (false),
-        size        (0),
-        safety_level(FlickrList::SAFE),
-        content_type(FlickrList::PHOTO)
-    {
-    }
+    FPhotoInfo() = default;
 
-    bool                    is_public;
-    bool                    is_friend;
-    bool                    is_family;
+    bool                    is_public       = false;
+    bool                    is_friend       = false;
+    bool                    is_family       = false;
 
     QString                 title;
     QString                 description;
-    qlonglong               size;
+    qlonglong               size            = 0;
     QStringList             tags;
 
-    FlickrList::SafetyLevel safety_level;
-    FlickrList::ContentType content_type;
+    FlickrList::SafetyLevel safety_level    = FlickrList::SAFE;
+    FlickrList::ContentType content_type    = FlickrList::PHOTO;
 };
 
 // -------------------------------------------------------------
@@ -63,12 +55,9 @@ class FPhotoSet
 
 public:
 
-    FPhotoSet()
-      : id(QLatin1String("-1"))
-    {
-    }
+    FPhotoSet() = default;
 
-    QString id;
+    QString id          = QLatin1String("-1");
     QString primary;    ///< "2483"
     QString secret;     ///< "abcdef"
     QString server;

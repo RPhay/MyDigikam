@@ -74,58 +74,37 @@ class Q_DECL_HIDDEN FlickrTalker::Private
 {
 public:
 
-    explicit Private()
-      : parent      (nullptr),
-        netMngr     (nullptr),
-        reply       (nullptr),
-        settings    (nullptr),
-        state       (FE_LOGOUT),
-        iface       (nullptr),
-        o1          (nullptr),
-        store       (nullptr),
-        requestor   (nullptr),
-        browser     (nullptr)
-    {
-        apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
-        authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
-        tokenUrl    = QLatin1String("https://www.flickr.com/services/oauth/request_token");
-        accessUrl   = QLatin1String("https://www.flickr.com/services/oauth/access_token");
-        uploadUrl   = QLatin1String("https://up.flickr.com/services/upload/");
-        callbackUrl = QLatin1String("https://www.flickr.com");
+    Private() = default;
 
-        apikey      = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
-        secret      = QLatin1String("537d58e3ead2d6d5");
-    }
-
-    QWidget*               parent;
+    QWidget*               parent           = nullptr;
 
     QString                serviceName;
-    QString                apiUrl;
-    QString                authUrl;
-    QString                tokenUrl;
-    QString                accessUrl;
-    QString                uploadUrl;
-    QString                callbackUrl;
-    QString                apikey;
-    QString                secret;
+    QString                apiUrl           = QLatin1String("https://www.flickr.com/services/rest/");
+    QString                authUrl          = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
+    QString                tokenUrl         = QLatin1String("https://www.flickr.com/services/oauth/request_token");
+    QString                accessUrl        = QLatin1String("https://www.flickr.com/services/oauth/access_token");
+    QString                uploadUrl        = QLatin1String("https://up.flickr.com/services/upload/");
+    QString                callbackUrl      = QLatin1String("https://www.flickr.com");
+    QString                apikey           = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
+    QString                secret           = QLatin1String("537d58e3ead2d6d5");
     QString                maxSize;
     QString                username;
     QString                userId;
     QString                lastTmpFile;
 
-    QNetworkAccessManager* netMngr;
-    QNetworkReply*         reply;
+    QNetworkAccessManager* netMngr          = nullptr;
+    QNetworkReply*         reply            = nullptr;
 
-    QSettings*             settings;
+    QSettings*             settings         = nullptr;
 
-    State                  state;
+    State                  state            = FE_LOGOUT;
 
-    DInfoInterface*        iface;
+    DInfoInterface*        iface            = nullptr;
 
-    O1*                    o1;
-    O0SettingsStore*       store;
-    O1Requestor*           requestor;
-    WebBrowserDlg*         browser;
+    O1*                    o1               = nullptr;
+    O0SettingsStore*       store            = nullptr;
+    O1Requestor*           requestor        = nullptr;
+    WebBrowserDlg*         browser          = nullptr;
 };
 
 FlickrTalker::FlickrTalker(QWidget* const parent,
@@ -246,6 +225,7 @@ void FlickrTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr fail";
     d->username = QString();
+
     Q_EMIT signalBusy(false);
 }
 
@@ -325,6 +305,7 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
     if (textDlg->exec() != QDialog::Accepted)
     {
         Q_EMIT signalBusy(false);
+
         delete textDlg;
 
         return;
@@ -403,6 +384,7 @@ void FlickrTalker::listPhotoSets()
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_LISTPHOTOSETS;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -438,6 +420,7 @@ void FlickrTalker::getPhotoProperty(const QString& method, const QStringList& ar
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_GETPHOTOPROPERTY;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -478,6 +461,7 @@ void FlickrTalker::createPhotoSet(const QString& /*albumName*/, const QString& a
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_CREATEPHOTOSET;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -525,6 +509,7 @@ void FlickrTalker::addPhotoToPhotoSet(const QString& photoId,
         d->reply = d->requestor->post(netRequest, reqParams, postData);
 
         d->state = FE_ADDPHOTOTOPHOTOSET;
+
         Q_EMIT signalBusy(true);
     }
 }
@@ -744,72 +729,106 @@ void FlickrTalker::slotError(const QString& error)
     switch (errorNo)
     {
         case 2:
+        {
             transError = i18n("No photo specified");
             break;
+        }
 
         case 3:
+        {
             transError = i18n("General upload failure");
             break;
+        }
 
         case 4:
+        {
             transError = i18n("Filesize was zero");
             break;
+        }
 
         case 5:
+        {
             transError = i18n("Filetype was not recognized");
             break;
+        }
 
         case 6:
+        {
             transError = i18n("User exceeded upload limit");
             break;
+        }
 
         case 96:
+        {
             transError = i18n("Invalid signature");
             break;
+        }
 
         case 97:
+        {
             transError = i18n("Missing signature");
             break;
+        }
 
         case 98:
+        {
             transError = i18n("Login Failed / Invalid auth token");
             break;
+        }
 
         case 100:
+        {
             transError = i18n("Invalid API Key");
             break;
+        }
 
         case 105:
+        {
             transError = i18n("Service currently unavailable");
             break;
+        }
 
         case 108:
+        {
             transError = i18n("Invalid Frob");
             break;
+        }
 
         case 111:
+        {
             transError = i18n("Format \"xxx\" not found");
             break;
+        }
 
         case 112:
+        {
             transError = i18n("Method \"xxx\" not found");
             break;
+        }
 
         case 114:
+        {
             transError = i18n("Invalid SOAP envelope");
             break;
+        }
 
         case 115:
+        {
             transError = i18n("Invalid XML-RPC Method Call");
             break;
+        }
 
         case 116:
+        {
             transError = i18n("The POST method is now required for all setters");
             break;
+        }
 
         default:
+        {
             transError = i18n("Unknown error");
             break;
+        }
     };
 
     QMessageBox::critical(QApplication::activeWindow(),
@@ -850,45 +869,65 @@ void FlickrTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case (FE_LOGIN):
+        {
 /*
             parseResponseLogin(buffer);
 */
             break;
+        }
 
         case (FE_LISTPHOTOSETS):
+        {
             parseResponseListPhotoSets(buffer);
             break;
+        }
 
         case (FE_LISTPHOTOS):
+        {
             parseResponseListPhotos(buffer);
             break;
+        }
 
         case (FE_GETPHOTOPROPERTY):
+        {
             parseResponsePhotoProperty(buffer);
             break;
+        }
 
         case (FE_ADDPHOTO):
+        {
             parseResponseAddPhoto(buffer);
             break;
+        }
 
         case (FE_ADDPHOTOTOPHOTOSET):
+        {
             parseResponseAddPhotoToPhotoSet(buffer);
             break;
+        }
 
         case (FE_CREATEPHOTOSET):
+        {
             parseResponseCreatePhotoSet(buffer);
             break;
+        }
 
         case (FE_GETMAXSIZE):
+        {
             parseResponseMaxSize(buffer);
             break;
+        }
 
         case (FE_SETGEO):
+        {
             parseResponseSetGeoLocation(buffer);
             break;
+        }
 
         default:  // FR_LOGOUT
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -993,6 +1032,7 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
             m_selectedPhotoSet.id = new_id;
 
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "PhotoSet created successfully with id" << new_id;
+
             Q_EMIT signalAddPhotoSetSucceeded();
         }
 
@@ -1088,6 +1128,7 @@ void FlickrTalker::parseResponseListPhotoSets(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
+
             Q_EMIT signalError(code);
         }
 
@@ -1103,6 +1144,7 @@ void FlickrTalker::parseResponseListPhotoSets(const QByteArray& data)
     else
     {
         Q_EMIT signalListPhotoSetsSucceeded();
+
         maxAllowedFileSize();
     }
 }
@@ -1171,6 +1213,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
+
             Q_EMIT signalError(code);
         }
 
@@ -1188,6 +1231,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
         if (photoSetId == QLatin1String("-1"))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "PhotoSet Id not set, not adding the photo to any photoset";
+
             Q_EMIT signalAddPhotoSucceeded(photoId);
         }
         else
@@ -1228,6 +1272,7 @@ void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
+
             Q_EMIT signalError(code);
         }
 
@@ -1249,12 +1294,14 @@ void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
 void FlickrTalker::parseResponseAddPhotoToPhotoSet(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseListPhotosets" << data;
+
     Q_EMIT signalAddPhotoSucceeded(QLatin1String(""));
 }
 
 void FlickrTalker::parseResponseSetGeoLocation(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseSetGeoLocation" << data;
+
     Q_EMIT signalAddPhotoSucceeded(QLatin1String(""));
 }
 

@@ -55,86 +55,55 @@ class Q_DECL_HIDDEN FlickrWindow::Private
 {
 public:
 
-    explicit Private()
-      : uploadCount                 (0),
-        uploadTotal                 (0),
-        newAlbumBtn                 (nullptr),
-        changeUserButton            (nullptr),
-        removeAccount               (nullptr),
-        albumsListComboBox          (nullptr),
-        publicCheckBox              (nullptr),
-        familyCheckBox              (nullptr),
-        friendsCheckBox             (nullptr),
-        exportHostTagsCheckBox      (nullptr),
-        stripSpaceTagsCheckBox      (nullptr),
-        addExtraTagsCheckBox        (nullptr),
-        originalCheckBox            (nullptr),
-        resizeCheckBox              (nullptr),
-        dimensionSpinBox            (nullptr),
-        imageQualitySpinBox         (nullptr),
-        extendedPublicationButton   (nullptr),
-        extendedTagsButton          (nullptr),
-        contentTypeComboBox         (nullptr),
-        safetyLevelComboBox         (nullptr),
-        userNameDisplayLabel        (nullptr),
-        authProgressDlg             (nullptr),
-        tagsLineEdit                (nullptr),
-        widget                      (nullptr),
-        talker                      (nullptr),
-        imglst                      (nullptr),
-        select                      (nullptr),
-        albumDlg                    (nullptr),
-        iface                       (nullptr)
-    {
-    }
+    Private() = default;
 
-    unsigned int                     uploadCount;
-    unsigned int                     uploadTotal;
+    unsigned int                     uploadCount                    = 0;
+    unsigned int                     uploadTotal                    = 0;
 
     QString                          serviceName;
 
-    QPushButton*                     newAlbumBtn;
-    QPushButton*                     changeUserButton;
-    QPushButton*                     removeAccount;
+    QPushButton*                     newAlbumBtn                    = nullptr;
+    QPushButton*                     changeUserButton               = nullptr;
+    QPushButton*                     removeAccount                  = nullptr;
 
-    QComboBox*                       albumsListComboBox;
-    QCheckBox*                       publicCheckBox;
-    QCheckBox*                       familyCheckBox;
-    QCheckBox*                       friendsCheckBox;
-    QCheckBox*                       exportHostTagsCheckBox;
-    QCheckBox*                       stripSpaceTagsCheckBox;
-    QCheckBox*                       addExtraTagsCheckBox;
-    QCheckBox*                       originalCheckBox;
-    QCheckBox*                       resizeCheckBox;
+    QComboBox*                       albumsListComboBox             = nullptr;
+    QCheckBox*                       publicCheckBox                 = nullptr;
+    QCheckBox*                       familyCheckBox                 = nullptr;
+    QCheckBox*                       friendsCheckBox                = nullptr;
+    QCheckBox*                       exportHostTagsCheckBox         = nullptr;
+    QCheckBox*                       stripSpaceTagsCheckBox         = nullptr;
+    QCheckBox*                       addExtraTagsCheckBox           = nullptr;
+    QCheckBox*                       originalCheckBox               = nullptr;
+    QCheckBox*                       resizeCheckBox                 = nullptr;
 
-    QSpinBox*                        dimensionSpinBox;
-    QSpinBox*                        imageQualitySpinBox;
+    QSpinBox*                        dimensionSpinBox               = nullptr;
+    QSpinBox*                        imageQualitySpinBox            = nullptr;
 
-    QPushButton*                     extendedPublicationButton;
-    QPushButton*                     extendedTagsButton;
-    WSComboBoxIntermediate*          contentTypeComboBox;
-    WSComboBoxIntermediate*          safetyLevelComboBox;
+    QPushButton*                     extendedPublicationButton      = nullptr;
+    QPushButton*                     extendedTagsButton             = nullptr;
+    WSComboBoxIntermediate*          contentTypeComboBox            = nullptr;
+    WSComboBoxIntermediate*          safetyLevelComboBox            = nullptr;
 
     QString                          username;
     QString                          userId;
     QString                          lastSelectedAlbum;
 
-    QLabel*                          userNameDisplayLabel;
+    QLabel*                          userNameDisplayLabel           = nullptr;
 
-    QProgressDialog*                 authProgressDlg;
+    QProgressDialog*                 authProgressDlg                = nullptr;
 
     QList< QPair<QUrl, FPhotoInfo> > uploadQueue;
 
-    DTextEdit*                       tagsLineEdit;
+    DTextEdit*                       tagsLineEdit                   = nullptr;
 
-    FlickrWidget*                    widget;
-    FlickrTalker*                    talker;
+    FlickrWidget*                    widget                         = nullptr;
+    FlickrTalker*                    talker                         = nullptr;
 
-    FlickrList*                      imglst;
-    WSSelectUserDlg*                 select;
-    FlickrNewAlbumDlg*               albumDlg;
+    FlickrList*                      imglst                         = nullptr;
+    WSSelectUserDlg*                 select                         = nullptr;
+    FlickrNewAlbumDlg*               albumDlg                       = nullptr;
 
-    DInfoInterface*                  iface;
+    DInfoInterface*                  iface                          = nullptr;
 };
 
 FlickrWindow::FlickrWindow(DInfoInterface* const iface,

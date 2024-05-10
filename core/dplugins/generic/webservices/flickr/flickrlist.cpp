@@ -38,27 +38,19 @@ class Q_DECL_HIDDEN FlickrList::Private
 {
 public:
 
-    explicit Private()
-      : isPublic        (Qt::Unchecked),
-        isFamily        (Qt::Unchecked),
-        isFriends       (Qt::Unchecked),
-        safetyLevel     (FlickrList::SAFE),
-        contentType     (FlickrList::PHOTO),
-        userIsEditing   (false)
-    {
-    }
+    Private() = default;
 
-    Qt::CheckState          isPublic;
-    Qt::CheckState          isFamily;
-    Qt::CheckState          isFriends;
-    FlickrList::SafetyLevel safetyLevel;
-    FlickrList::ContentType contentType;
+    Qt::CheckState          isPublic        = Qt::Unchecked;
+    Qt::CheckState          isFamily        = Qt::Unchecked;
+    Qt::CheckState          isFriends       = Qt::Unchecked;
+    FlickrList::SafetyLevel safetyLevel     = FlickrList::SAFE;
+    FlickrList::ContentType contentType     = FlickrList::PHOTO;
 
     /**
      * Used to separate the ImagesList::itemChanged signals that were caused
      * programmatically from those caused by the user.
      */
-    bool                    userIsEditing;
+    bool                    userIsEditing   = false;
 };
 
 FlickrList::FlickrList(QWidget* const parent)
@@ -240,9 +232,11 @@ void FlickrList::singlePermissionChanged(QTreeWidgetItem* item, int column)
 
                 if (titem)
                 {
-                    if (((column == PUBLIC)  && (titem->isPublic())) ||
+                    if (
+                        ((column == PUBLIC)  && (titem->isPublic())) ||
                         ((column == FAMILY)  && (titem->isFamily())) ||
-                        ((column == FRIENDS) && (titem->isFriends())))
+                        ((column == FRIENDS) && (titem->isFriends()))
+                       )
                     {
                         numChecked += 1;
                     }
@@ -354,12 +348,14 @@ void FlickrList::singleComboBoxChanged(QTreeWidgetItem* item, int column)
                 {
                     SafetyLevel safetyLevel = static_cast<SafetyLevel>(i.key());
                     setSafetyLevels(safetyLevel);
+
                     Q_EMIT signalSafetyLevelChanged(safetyLevel);
                 }
                 else if (column == CONTENTTYPE)
                 {
                     ContentType contentType = static_cast<ContentType>(i.key());
                     setContentTypes(contentType);
+
                     Q_EMIT signalContentTypeChanged(contentType);
                 }
             }
@@ -371,11 +367,13 @@ void FlickrList::singleComboBoxChanged(QTreeWidgetItem* item, int column)
                 if      (column == SAFETYLEVEL)
                 {
                     setSafetyLevels(MIXEDLEVELS);
+
                     Q_EMIT signalSafetyLevelChanged(MIXEDLEVELS);
                 }
                 else if (column == CONTENTTYPE)
                 {
                     setContentTypes(MIXEDTYPES);
+
                     Q_EMIT signalContentTypeChanged(MIXEDTYPES);
                 }
             }
@@ -451,27 +449,19 @@ class Q_DECL_HIDDEN FlickrListViewItem::Private
 {
 public:
 
-    explicit Private()
-      : isPublic   (true),
-        isFamily   (true),
-        isFriends  (true),
-        safetyLevel(FlickrList::SAFE),
-        contentType(FlickrList::PHOTO),
-        tagLineEdit(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                    isPublic;
-    bool                    isFamily;
-    bool                    isFriends;
+    bool                    isPublic        = true;
+    bool                    isFamily        = true;
+    bool                    isFriends       = true;
 
-    FlickrList::SafetyLevel safetyLevel;
-    FlickrList::ContentType contentType;
+    FlickrList::SafetyLevel safetyLevel     = FlickrList::SAFE;
+    FlickrList::ContentType contentType     = FlickrList::PHOTO;
 
     /**
      * LineEdit used for extra tags per image.
      */
-    DTextEdit*              tagLineEdit;
+    DTextEdit*              tagLineEdit     = nullptr;
 };
 
 FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
@@ -482,7 +472,7 @@ FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
                                        FlickrList::SafetyLevel safetyLevel = FlickrList::SAFE,
                                        FlickrList::ContentType contentType = FlickrList::PHOTO)
     : DItemsListViewItem(view, url),
-      d(new Private)
+      d                 (new Private)
 {
     /*
      * Initialize the FlickrListViewItem with the ImagesListView and a QUrl

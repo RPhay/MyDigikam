@@ -43,21 +43,14 @@ class Q_DECL_HIDDEN FTExportWindow::Private
 {
 public:
 
-    explicit Private()
-    {
-        exportWidget = nullptr;
-    }
+    Private() = default;
 
-    const static QString TARGET_URL_PROPERTY;
-    const static QString HISTORY_URL_PROPERTY;
-    const static QString CONFIG_GROUP;
+    const QString TARGET_URL_PROPERTY   = QLatin1String("targetUrl");
+    const QString HISTORY_URL_PROPERTY  = QLatin1String("historyUrls");
+    const QString CONFIG_GROUP          = QLatin1String("KioExport");
 
-    FTExportWidget* exportWidget;
+    FTExportWidget* exportWidget        = nullptr;
 };
-
-const QString FTExportWindow::Private::TARGET_URL_PROPERTY  = QLatin1String("targetUrl");
-const QString FTExportWindow::Private::HISTORY_URL_PROPERTY = QLatin1String("historyUrls");
-const QString FTExportWindow::Private::CONFIG_GROUP         = QLatin1String("KioExport");
 
 FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Kio Export Dialog")),
@@ -144,6 +137,7 @@ void FTExportWindow::slotImageListChanged()
 void FTExportWindow::slotTargetUrlChanged(const QUrl& target)
 {
     Q_UNUSED(target);
+
     updateUploadButton();
 }
 

@@ -37,16 +37,11 @@ class Q_DECL_HIDDEN FTImportWidget::Private
 {
 public:
 
-    explicit Private()
-    {
-        imageList       = nullptr;
-        uploadWidget    = nullptr;
-        importSearchBtn = nullptr;
-    }
+    Private() = default;
 
-    DItemsList*  imageList;
-    QWidget*     uploadWidget;
-    QPushButton* importSearchBtn;
+    DItemsList*  imageList          = nullptr;
+    QWidget*     uploadWidget       = nullptr;
+    QPushButton* importSearchBtn    = nullptr;
 };
 
 FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const iface)

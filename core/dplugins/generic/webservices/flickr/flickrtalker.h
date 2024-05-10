@@ -92,7 +92,7 @@ public:
 
 public:
 
-    QProgressDialog*  m_authProgressDlg;
+    QProgressDialog*  m_authProgressDlg  = nullptr;
     QList<FPhotoSet>* m_photoSetsList;
     FPhotoSet         m_selectedPhotoSet;
 

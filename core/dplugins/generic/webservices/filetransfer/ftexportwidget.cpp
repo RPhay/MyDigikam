@@ -44,17 +44,12 @@ class Q_DECL_HIDDEN FTExportWidget::Private
 {
 public:
 
-    explicit Private()
-      : targetLabel        (nullptr),
-        targetSearchButton (nullptr),
-        imageList          (nullptr)
-    {
-    }
+    Private() = default;
 
-    KUrlComboRequester* targetLabel;
-    QPushButton*        targetSearchButton;
+    KUrlComboRequester* targetLabel         = nullptr;
+    QPushButton*        targetSearchButton  = nullptr;
     QUrl                targetUrl;
-    DItemsList*         imageList;
+    DItemsList*         imageList           = nullptr;
 };
 
 FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const parent)
