@@ -73,69 +73,53 @@ public:
         ResizingBottomRight
     };
 
-    explicit Private()
-      : drawGoldenSection       (false),
-        drawGoldenSpiralSection (false),
-        drawGoldenSpiral        (false),
-        drawGoldenTriangle      (false),
-        flipHorGoldenGuide      (false),
-        flipVerGoldenGuide      (false),
-        moving                  (false),
-        autoOrientation         (false),
-        preciseCrop             (false),
-        isDrawingSelection      (false),
-        guideLinesType          (0),
-        guideSize               (1),
-        currentAspectRatioType  (0),
-        currentResizing         (ResizingNone),
-        currentOrientation      (0),
-        currentWidthRatioValue  (0),
-        currentHeightRatioValue (0),
-        pixmap                  (nullptr),
-        iface                   (nullptr)
-    {
-    }
+public:
+
+    Private() = default;
 
     // Golden guide types.
-    bool        drawGoldenSection;
-    bool        drawGoldenSpiralSection;
-    bool        drawGoldenSpiral;
-    bool        drawGoldenTriangle;
+
+    bool        drawGoldenSection       = false;
+    bool        drawGoldenSpiralSection = false;
+    bool        drawGoldenSpiral        = false;
+    bool        drawGoldenTriangle      = false;
 
     // Golden guide translations.
-    bool        flipHorGoldenGuide;
-    bool        flipVerGoldenGuide;
 
-    bool        moving;
-    bool        autoOrientation;
-    bool        preciseCrop;
+    bool        flipHorGoldenGuide      = false;
+    bool        flipVerGoldenGuide      = false;
 
-    bool        isDrawingSelection;
+    bool        moving                  = false;
+    bool        autoOrientation         = false;
+    bool        preciseCrop             = false;
 
-    int         guideLinesType;
-    int         guideSize;
+    bool        isDrawingSelection      = false;
 
-    int         currentAspectRatioType;
-    int         currentResizing;
-    int         currentOrientation;
+    int         guideLinesType          = 0;
+    int         guideSize               = 1;
 
-    float       currentWidthRatioValue;
-    float       currentHeightRatioValue;
+    int         currentAspectRatioType  = 0;
+    int         currentResizing         = ResizingNone;
+    int         currentOrientation      = 0;
+
+    float       currentWidthRatioValue  = 0.0;
+    float       currentHeightRatioValue = 0.0;
 
     QPoint      lastPos;
 
     QRect       rect;
-    QRect       image;                   // Real image dimension.
-    QRect       regionSelection;         // Real size image selection.
-    QRect       localRegionSelection;    // Local size selection.
+    QRect       image;                  // Real image dimension.
+    QRect       regionSelection;        // Real size image selection.
+    QRect       localRegionSelection;   // Local size selection.
 
     // Draggable local region selection corners.
+
     QRect       localTopLeftCorner;
     QRect       localBottomLeftCorner;
     QRect       localTopRightCorner;
     QRect       localBottomRightCorner;
 
-    QPixmap*    pixmap;
+    QPixmap*    pixmap                  = nullptr;
     QPixmap     grayOverLay;
     QPixmap     previewPixmap;
 
@@ -144,7 +128,7 @@ public:
 
     DImg        preview;
 
-    ImageIface* iface;
+    ImageIface* iface                   = nullptr;
 };
 
 RatioCropWidget::RatioCropWidget(int w, int h, QWidget* const parent)
@@ -641,10 +625,12 @@ void RatioCropWidget::reverseRatioValues()
 {
     // Reverse ratio values if needed
 
-    if (((d->currentWidthRatioValue > d->currentHeightRatioValue)  &&
+    if (
+        ((d->currentWidthRatioValue > d->currentHeightRatioValue)  &&
          (d->currentOrientation == Portrait))                      ||
          ((d->currentHeightRatioValue > d->currentWidthRatioValue) &&
-          (d->currentOrientation == Landscape)))
+          (d->currentOrientation == Landscape))
+       )
     {
         float tmp                  = d->currentWidthRatioValue;
         d->currentWidthRatioValue  = d->currentHeightRatioValue;

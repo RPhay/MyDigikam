@@ -40,9 +40,9 @@ private:
 
 private:
 
-    float m_a;
-    float m_b;
-    float m_c;
+    float m_a = 0.0F;
+    float m_b = 0.0F;
+    float m_c = 0.0F;
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin

@@ -29,7 +29,7 @@ public:
      *
      * Initializes matrix to the identity matrix.
      */
-    explicit PerspectiveMatrix();
+    PerspectiveMatrix();
 
     /**
      * translate:
@@ -91,7 +91,7 @@ public:
      *
      * The 3x3 matrix data
      */
-    double coeff[3][3];
+    double coeff[3][3] = { { 0.0 } };
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin

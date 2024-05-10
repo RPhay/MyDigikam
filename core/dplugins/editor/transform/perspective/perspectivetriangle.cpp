@@ -34,23 +34,25 @@ PerspectiveTriangle::PerspectiveTriangle(const QPoint& A, const QPoint& B, const
 
 float PerspectiveTriangle::angleABC() const
 {
-    return ( RADIAN2DEGREE( acos( (m_b*m_b - m_a*m_a - m_c*m_c ) / (-2*m_a*m_c ) ) ) );
+    return (RADIAN2DEGREE( acos( (m_b*m_b - m_a*m_a - m_c*m_c ) / (-2*m_a*m_c ) ) ));
 }
 
 float PerspectiveTriangle::angleACB() const
 {
-    return ( RADIAN2DEGREE( acos( (m_c*m_c - m_a*m_a - m_b*m_b ) / (-2*m_a*m_b ) ) ) );
+    return (RADIAN2DEGREE( acos( (m_c*m_c - m_a*m_a - m_b*m_b ) / (-2*m_a*m_b ) ) ));
 }
 
 float PerspectiveTriangle::angleBAC() const
 {
-    return ( RADIAN2DEGREE( acos( (m_a*m_a - m_b*m_b - m_c*m_c ) / (-2*m_b*m_c ) ) ) );
+    return (RADIAN2DEGREE( acos( (m_a*m_a - m_b*m_b - m_c*m_c ) / (-2*m_b*m_c ) ) ));
 }
 
 float PerspectiveTriangle::distanceP2P(const QPoint& p1, const QPoint& p2) const
 {
-    return (sqrt( abs( p2.x()-p1.x() ) * abs( p2.x()-p1.x() ) +
-                  abs( p2.y()-p1.y() ) * abs( p2.y()-p1.y() ) ));
+    return (
+            sqrt(abs( p2.x()-p1.x() ) * abs( p2.x()-p1.x() ) +
+                 abs( p2.y()-p1.y() ) * abs( p2.y()-p1.y() ) )
+           );
 }
 
 } // namespace DigikamEditorPerspectiveToolPlugin

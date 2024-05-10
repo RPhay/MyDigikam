@@ -35,10 +35,6 @@ RatioCropToolPlugin::RatioCropToolPlugin(QObject* const parent)
 {
 }
 
-RatioCropToolPlugin::~RatioCropToolPlugin()
-{
-}
-
 QString RatioCropToolPlugin::name() const
 {
     return i18nc("@title", "Aspect Ratio Crop");
@@ -90,7 +86,7 @@ QList<DPluginAuthor> RatioCropToolPlugin::authors() const
                              QString::fromUtf8("(C) 2008"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2021"))
+                             QString::fromUtf8("(C) 2004-2024"))
             ;
 }
 

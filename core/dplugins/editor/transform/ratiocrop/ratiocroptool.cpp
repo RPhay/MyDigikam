@@ -60,141 +60,78 @@ class Q_DECL_HIDDEN RatioCropTool::Private
 {
 public:
 
-    explicit Private()
-      : originalIsLandscape     (false),
-        customLabel             (nullptr),
-        orientLabel             (nullptr),
-        colorGuideLabel         (nullptr),
-        resLabel                (nullptr),
-        centerWidth             (nullptr),
-        centerHeight            (nullptr),
-        goldenSectionBox        (nullptr),
-        goldenSpiralSectionBox  (nullptr),
-        goldenSpiralBox         (nullptr),
-        goldenTriangleBox       (nullptr),
-        flipHorBox              (nullptr),
-        flipVerBox              (nullptr),
-        autoOrientation         (nullptr),
-        preciseCrop             (nullptr),
-        ratioCB                 (nullptr),
-        orientCB                (nullptr),
-        guideLinesCB            (nullptr),
-        customRatioDInput       (nullptr),
-        customRatioNInput       (nullptr),
-        guideSize               (nullptr),
-        heightInput             (nullptr),
-        widthInput              (nullptr),
-        xInput                  (nullptr),
-        yInput                  (nullptr),
-        guideColorBt            (nullptr),
-        ratioCropWidget         (nullptr),
-        expbox                  (nullptr),
-        gboxSettings            (nullptr),
-        histogramBox            (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString  configGroupName;
-    static const QString  configHorOrientedAspectRatioEntry;
-    static const QString  configHorOrientedAspectRatioOrientationEntry;
-    static const QString  configHorOrientedCustomAspectRatioNumEntry;
-    static const QString  configHorOrientedCustomAspectRatioDenEntry;
-    static const QString  configHorOrientedCustomAspectRatioXposEntry;
-    static const QString  configHorOrientedCustomAspectRatioYposEntry;
-    static const QString  configHorOrientedCustomAspectRatioWidthEntry;
-    static const QString  configHorOrientedCustomAspectRatioHeightEntry;
-    static const QString  configVerOrientedAspectRatioEntry;
-    static const QString  configVerOrientedAspectRatioOrientationEntry;
-    static const QString  configVerOrientedCustomAspectRatioNumEntry;
-    static const QString  configVerOrientedCustomAspectRatioDenEntry;
-    static const QString  configVerOrientedCustomAspectRatioXposEntry;
-    static const QString  configVerOrientedCustomAspectRatioYposEntry;
-    static const QString  configVerOrientedCustomAspectRatioWidthEntry;
-    static const QString  configVerOrientedCustomAspectRatioHeightEntry;
-    static const QString  configPreciseAspectRatioCropEntry;
-    static const QString  configAutoOrientationEntry;
-    static const QString  configGuideLinesTypeEntry;
-    static const QString  configGoldenSectionEntry;
-    static const QString  configGoldenSpiralSectionEntry;
-    static const QString  configGoldenSpiralEntry;
-    static const QString  configGoldenTriangleEntry;
-    static const QString  configGoldenFlipHorizontalEntry;
-    static const QString  configGoldenFlipVerticalEntry;
-    static const QString  configGuideColorEntry;
-    static const QString  configGuideWidthEntry;
-    static const QString  configHistogramChannelEntry;
-    static const QString  configHistogramScaleEntry;
+    const QString configGroupName                                   = QLatin1String("aspectratiocrop Tool");
+    const QString configHorOrientedAspectRatioEntry                 = QLatin1String("Hor.Oriented Aspect Ratio");
+    const QString configHorOrientedAspectRatioOrientationEntry      = QLatin1String("Hor.Oriented Aspect Ratio Orientation");
+    const QString configHorOrientedCustomAspectRatioNumEntry        = QLatin1String("Hor.Oriented Custom Aspect Ratio Num");
+    const QString configHorOrientedCustomAspectRatioDenEntry        = QLatin1String("Hor.Oriented Custom Aspect Ratio Den");
+    const QString configHorOrientedCustomAspectRatioXposEntry       = QLatin1String("Hor.Oriented Custom Aspect Ratio Xpos");
+    const QString configHorOrientedCustomAspectRatioYposEntry       = QLatin1String("Hor.Oriented Custom Aspect Ratio Ypos");
+    const QString configHorOrientedCustomAspectRatioWidthEntry      = QLatin1String("Hor.Oriented Custom Aspect Ratio Width");
+    const QString configHorOrientedCustomAspectRatioHeightEntry     = QLatin1String("Hor.Oriented Custom Aspect Ratio Height");
+    const QString configVerOrientedAspectRatioEntry                 = QLatin1String("Ver.Oriented Aspect Ratio");
+    const QString configVerOrientedAspectRatioOrientationEntry      = QLatin1String("Ver.Oriented Aspect Ratio Orientation");
+    const QString configVerOrientedCustomAspectRatioNumEntry        = QLatin1String("Ver.Oriented Custom Aspect Ratio Num");
+    const QString configVerOrientedCustomAspectRatioDenEntry        = QLatin1String("Ver.Oriented Custom Aspect Ratio Den");
+    const QString configVerOrientedCustomAspectRatioXposEntry       = QLatin1String("Ver.Oriented Custom Aspect Ratio Xpos");
+    const QString configVerOrientedCustomAspectRatioYposEntry       = QLatin1String("Ver.Oriented Custom Aspect Ratio Ypos");
+    const QString configVerOrientedCustomAspectRatioWidthEntry      = QLatin1String("Ver.Oriented Custom Aspect Ratio Width");
+    const QString configVerOrientedCustomAspectRatioHeightEntry     = QLatin1String("Ver.Oriented Custom Aspect Ratio Height");
+    const QString configPreciseAspectRatioCropEntry                 = QLatin1String("Precise Aspect Ratio Crop");
+    const QString configAutoOrientationEntry                        = QLatin1String("Auto Orientation");
+    const QString configGuideLinesTypeEntry                         = QLatin1String("Guide Lines Type");
+    const QString configGoldenSectionEntry                          = QLatin1String("Golden Section");
+    const QString configGoldenSpiralSectionEntry                    = QLatin1String("Golden Spiral Section");
+    const QString configGoldenSpiralEntry                           = QLatin1String("Golden Spiral");
+    const QString configGoldenTriangleEntry                         = QLatin1String("Golden Triangle");
+    const QString configGoldenFlipHorizontalEntry                   = QLatin1String("Golden Flip Horizontal");
+    const QString configGoldenFlipVerticalEntry                     = QLatin1String("Golden Flip Vertical");
+    const QString configGuideColorEntry                             = QLatin1String("Guide Color");
+    const QString configGuideWidthEntry                             = QLatin1String("Guide Width");
+    const QString configHistogramChannelEntry                       = QLatin1String("Histogram Channel");
+    const QString configHistogramScaleEntry                         = QLatin1String("Histogram Scale");
 
-    bool                  originalIsLandscape;
+    bool                  originalIsLandscape                       = false;
 
-    QLabel*               customLabel;
-    QLabel*               orientLabel;
-    QLabel*               colorGuideLabel;
-    QLabel*               resLabel;
+    QLabel*               customLabel                               = nullptr;
+    QLabel*               orientLabel                               = nullptr;
+    QLabel*               colorGuideLabel                           = nullptr;
+    QLabel*               resLabel                                  = nullptr;
 
-    QToolButton*          centerWidth;
-    QToolButton*          centerHeight;
+    QToolButton*          centerWidth                               = nullptr;
+    QToolButton*          centerHeight                              = nullptr;
 
-    QCheckBox*            goldenSectionBox;
-    QCheckBox*            goldenSpiralSectionBox;
-    QCheckBox*            goldenSpiralBox;
-    QCheckBox*            goldenTriangleBox;
-    QCheckBox*            flipHorBox;
-    QCheckBox*            flipVerBox;
-    QCheckBox*            autoOrientation;
-    QCheckBox*            preciseCrop;
+    QCheckBox*            goldenSectionBox                          = nullptr;
+    QCheckBox*            goldenSpiralSectionBox                    = nullptr;
+    QCheckBox*            goldenSpiralBox                           = nullptr;
+    QCheckBox*            goldenTriangleBox                         = nullptr;
+    QCheckBox*            flipHorBox                                = nullptr;
+    QCheckBox*            flipVerBox                                = nullptr;
+    QCheckBox*            autoOrientation                           = nullptr;
+    QCheckBox*            preciseCrop                               = nullptr;
 
-    DComboBox*            ratioCB;
-    DComboBox*            orientCB;
-    DComboBox*            guideLinesCB;
+    DComboBox*            ratioCB                                   = nullptr;
+    DComboBox*            orientCB                                  = nullptr;
+    DComboBox*            guideLinesCB                              = nullptr;
 
-    DIntNumInput*         customRatioDInput;
-    DIntNumInput*         customRatioNInput;
-    DIntNumInput*         guideSize;
-    DIntNumInput*         heightInput;
-    DIntNumInput*         widthInput;
-    DIntNumInput*         xInput;
-    DIntNumInput*         yInput;
+    DIntNumInput*         customRatioDInput                         = nullptr;
+    DIntNumInput*         customRatioNInput                         = nullptr;
+    DIntNumInput*         guideSize                                 = nullptr;
+    DIntNumInput*         heightInput                               = nullptr;
+    DIntNumInput*         widthInput                                = nullptr;
+    DIntNumInput*         xInput                                    = nullptr;
+    DIntNumInput*         yInput                                    = nullptr;
 
-    DColorSelector*       guideColorBt;
+    DColorSelector*       guideColorBt                              = nullptr;
 
-    RatioCropWidget*      ratioCropWidget;
-    DExpanderBox*         expbox;
-    EditorToolSettings*   gboxSettings;
-    HistogramBox*         histogramBox;
+    RatioCropWidget*      ratioCropWidget                           = nullptr;
+    DExpanderBox*         expbox                                    = nullptr;
+    EditorToolSettings*   gboxSettings                              = nullptr;
+    HistogramBox*         histogramBox                              = nullptr;
     DImg                  imageSelection;
 };
-
-const QString RatioCropTool::Private::configGroupName(QLatin1String("aspectratiocrop Tool"));
-const QString RatioCropTool::Private::configHorOrientedAspectRatioEntry(QLatin1String("Hor.Oriented Aspect Ratio"));
-const QString RatioCropTool::Private::configHorOrientedAspectRatioOrientationEntry(QLatin1String("Hor.Oriented Aspect Ratio Orientation"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioNumEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Num"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioDenEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Den"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioXposEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Xpos"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioYposEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Ypos"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioWidthEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Width"));
-const QString RatioCropTool::Private::configHorOrientedCustomAspectRatioHeightEntry(QLatin1String("Hor.Oriented Custom Aspect Ratio Height"));
-const QString RatioCropTool::Private::configVerOrientedAspectRatioEntry(QLatin1String("Ver.Oriented Aspect Ratio"));
-const QString RatioCropTool::Private::configVerOrientedAspectRatioOrientationEntry(QLatin1String("Ver.Oriented Aspect Ratio Orientation"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioNumEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Num"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioDenEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Den"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioXposEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Xpos"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioYposEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Ypos"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioWidthEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Width"));
-const QString RatioCropTool::Private::configVerOrientedCustomAspectRatioHeightEntry(QLatin1String("Ver.Oriented Custom Aspect Ratio Height"));
-const QString RatioCropTool::Private::configPreciseAspectRatioCropEntry(QLatin1String("Precise Aspect Ratio Crop"));
-const QString RatioCropTool::Private::configAutoOrientationEntry(QLatin1String("Auto Orientation"));
-const QString RatioCropTool::Private::configGuideLinesTypeEntry(QLatin1String("Guide Lines Type"));
-const QString RatioCropTool::Private::configGoldenSectionEntry(QLatin1String("Golden Section"));
-const QString RatioCropTool::Private::configGoldenSpiralSectionEntry(QLatin1String("Golden Spiral Section"));
-const QString RatioCropTool::Private::configGoldenSpiralEntry(QLatin1String("Golden Spiral"));
-const QString RatioCropTool::Private::configGoldenTriangleEntry(QLatin1String("Golden Triangle"));
-const QString RatioCropTool::Private::configGoldenFlipHorizontalEntry(QLatin1String("Golden Flip Horizontal"));
-const QString RatioCropTool::Private::configGoldenFlipVerticalEntry(QLatin1String("Golden Flip Vertical"));
-const QString RatioCropTool::Private::configGuideColorEntry(QLatin1String("Guide Color"));
-const QString RatioCropTool::Private::configGuideWidthEntry(QLatin1String("Guide Width"));
-const QString RatioCropTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
-const QString RatioCropTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------
 
@@ -890,10 +827,12 @@ void RatioCropTool::slotSelectionOrientationChanged(int newOrientation)
 
     // Reverse custom values
 
-    if ((d->customRatioNInput->value() < d->customRatioDInput->value() &&
+    if (
+        (d->customRatioNInput->value() < d->customRatioDInput->value() &&
          newOrientation == RatioCropWidget::Landscape)            ||
         (d->customRatioNInput->value() > d->customRatioDInput->value() &&
-         newOrientation == RatioCropWidget::Portrait))
+         newOrientation == RatioCropWidget::Portrait)
+       )
     {
         d->customRatioNInput->blockSignals(true);
         d->customRatioDInput->blockSignals(true);
@@ -937,6 +876,7 @@ void RatioCropTool::slotOrientChanged(int o)
     d->ratioCropWidget->setSelectionOrientation(o);
 
     // Reset selection area.
+
     slotResetSelection();
 }
 
@@ -951,6 +891,7 @@ void RatioCropTool::slotRatioChanged(int a)
     applyRatioChanges(a);
 
     // Reset selection area.
+
     slotResetSelection();
 }
 
@@ -958,7 +899,7 @@ void RatioCropTool::applyRatioChanges(int a)
 {
     d->ratioCropWidget->setSelectionAspectRatioType(a);
 
-    if (a == RatioCropWidget::RATIOCUSTOM)
+    if      (a == RatioCropWidget::RATIOCUSTOM)
     {
         d->customLabel->setEnabled(true);
         d->customRatioNInput->setEnabled(true);
@@ -1003,17 +944,22 @@ void RatioCropTool::slotGuideTypeChanged(int t)
     switch (t)
     {
         case RatioCropWidget::GuideNone:
+        {
             d->colorGuideLabel->setEnabled(false);
             d->guideColorBt->setEnabled(false);
             d->guideSize->setEnabled(false);
             break;
+        }
 
         case RatioCropWidget::HarmoniousTriangles:
+        {
             d->flipHorBox->setEnabled(true);
             d->flipVerBox->setEnabled(true);
             break;
+        }
 
         case RatioCropWidget::GoldenMean:
+        {
             d->flipHorBox->setEnabled(true);
             d->flipVerBox->setEnabled(true);
             d->goldenSectionBox->setEnabled(true);
@@ -1021,6 +967,7 @@ void RatioCropTool::slotGuideTypeChanged(int t)
             d->goldenSpiralBox->setEnabled(true);
             d->goldenTriangleBox->setEnabled(true);
             break;
+        }
     }
 
     d->ratioCropWidget->setGoldenGuideTypes(d->goldenSectionBox->isChecked(),
@@ -1041,10 +988,12 @@ void RatioCropTool::slotCustomNRatioChanged(int a)
 {
     if (!d->autoOrientation->isChecked())
     {
-        if ((d->orientCB->currentIndex() == RatioCropWidget::Portrait  &&
+        if (
+            (d->orientCB->currentIndex() == RatioCropWidget::Portrait  &&
              d->customRatioDInput->value() < a)                             ||
             (d->orientCB->currentIndex() == RatioCropWidget::Landscape &&
-             d->customRatioDInput->value() > a))
+             d->customRatioDInput->value() > a)
+           )
         {
             d->customRatioDInput->blockSignals(true);
             d->customRatioDInput->setValue(a);
@@ -1059,10 +1008,12 @@ void RatioCropTool::slotCustomDRatioChanged(int a)
 {
     if (!d->autoOrientation->isChecked())
     {
-        if ((d->orientCB->currentIndex() == RatioCropWidget::Landscape &&
+        if (
+            (d->orientCB->currentIndex() == RatioCropWidget::Landscape &&
              d->customRatioNInput->value() < a)                             ||
             (d->orientCB->currentIndex() == RatioCropWidget::Portrait  &&
-             d->customRatioNInput->value() > a))
+             d->customRatioNInput->value() > a)
+           )
         {
             d->customRatioNInput->blockSignals(true);
             d->customRatioNInput->setValue(a);
@@ -1078,6 +1029,7 @@ void RatioCropTool::slotCustomRatioChanged()
     d->ratioCropWidget->setSelectionAspectRatioValue(d->customRatioNInput->value(), d->customRatioDInput->value());
 
     // Reset selection area.
+
     slotResetSelection();
 }
 

@@ -59,40 +59,23 @@ public:
 
 public:
 
-    explicit Private()
-      : antiAliasing            (false),
-        drawWhileMoving         (true),
-        drawGrid                (false),
-        inverseTransformation   (false),
-        validPerspective        (true),
-        data                    (nullptr),
-        width                   (0),
-        height                  (0),
-        origW                   (0),
-        origH                   (0),
-        currentResizing         (ResizingNone),
-        guideSize               (1),
-        guideColor              (Qt::red),
-        pixmap                  (nullptr),
-        iface                   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool        antiAliasing;
-    bool        drawWhileMoving;
-    bool        drawGrid;
-    bool        inverseTransformation;
-    bool        validPerspective;
+    bool        antiAliasing            = false;
+    bool        drawWhileMoving         = true;
+    bool        drawGrid                = false;
+    bool        inverseTransformation   = false;
+    bool        validPerspective        = true;
 
-    uint*       data;
-    int         width;
-    int         height;
-    int         origW;
-    int         origH;
+    uint*       data                    = nullptr;
+    int         width                   = 0;
+    int         height                  = 0;
+    int         origW                   = 0;
+    int         origH                   = 0;
 
-    int         currentResizing;
+    int         currentResizing         = ResizingNone;
 
-    int         guideSize;
+    int         guideSize               = 1;
 
     QRect       rect;
 
@@ -113,16 +96,16 @@ public:
     QPoint      bottomRightPoint;
     QPoint      spot;
 
-    QColor      guideColor;
-    QColor      bgColor;
+    QColor      guideColor              = Qt::red;
+    QColor      bgColor                 = Qt::black;
 
     // 60 points will be stored to compute a grid of 15x15 lines.
 
     QPolygon    grid;
 
-    QPixmap*    pixmap;
+    QPixmap*    pixmap                  = nullptr;
 
-    ImageIface* iface;
+    ImageIface* iface                   = nullptr;
     DImg        preview;
 };
 
@@ -172,7 +155,7 @@ void PerspectiveWidget::resizeEvent(QResizeEvent* e)
 
     d->pixmap            = new QPixmap(w, h);
     QRect oldRect        = d->rect;
-    d->rect              = QRect(w/2-d->width/2, h/2-d->height/2, d->width, d->height);
+    d->rect              = QRect(w / 2 - d->width / 2, h / 2 - d->height / 2, d->width, d->height);
 
     float xFactor        = (float)d->rect.width()  / (float)(oldRect.width());
     float yFactor        = (float)d->rect.height() / (float)(oldRect.height());
@@ -427,8 +410,10 @@ void PerspectiveWidget::updatePixmap()
 
     // if we are resizing with the mouse, compute and draw only if drawWhileMoving is set
 
-    else if (((d->currentResizing == Private::ResizingNone) || d->drawWhileMoving) &&
-             d->validPerspective)
+    else if (
+             ((d->currentResizing == Private::ResizingNone) || d->drawWhileMoving) &&
+             d->validPerspective
+            )
     {
         // Create preview image
 
@@ -760,7 +745,7 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
 
             for (i = 0 ; i < coords ; ++i)
             {
-                if (tw[i] == 1.0)
+                if      (tw[i] == 1.0)
                 {
                     u[i] = tu[i];
                     v[i] = tv[i];
@@ -980,7 +965,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            if ( d->currentResizing == Private::ResizingTopLeft )
+            if      (d->currentResizing == Private::ResizingTopLeft)
             {
                 d->topLeftPoint = pm - d->rect.topLeft();
                 setCursor( Qt::SizeFDiagCursor );
@@ -1001,7 +986,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            else if ( d->currentResizing == Private::ResizingTopRight )
+            else if (d->currentResizing == Private::ResizingTopRight)
             {
                 d->topRightPoint = pm - d->rect.topLeft();
                 setCursor( Qt::SizeBDiagCursor );
@@ -1022,7 +1007,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            else if ( d->currentResizing == Private::ResizingBottomLeft  )
+            else if (d->currentResizing == Private::ResizingBottomLeft)
             {
                 d->bottomLeftPoint = pm - d->rect.topLeft();
                 setCursor( Qt::SizeBDiagCursor );
@@ -1043,7 +1028,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            else if ( d->currentResizing == Private::ResizingBottomRight )
+            else if (d->currentResizing == Private::ResizingBottomRight)
             {
                 d->bottomRightPoint = pm - d->rect.topLeft();
                 setCursor( Qt::SizeFDiagCursor );
@@ -1099,28 +1084,36 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        if      ( d->topLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) ||
-                  d->bottomRightCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) )
+        if      (
+                 d->topLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) ||
+                 d->bottomRightCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() )
+                )
         {
             setCursor( Qt::SizeFDiagCursor );
         }
 
-        else if ( d->topRightCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) ||
-                  d->bottomLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) )
+        else if (
+                 d->topRightCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) ||
+                 d->bottomLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() )
+                )
         {
             setCursor( Qt::SizeBDiagCursor );
         }
 
 #else
 
-        if      ( d->topLeftCorner.contains( e->x(), e->y() ) ||
-                  d->bottomRightCorner.contains( e->x(), e->y() ) )
+        if      (
+                 d->topLeftCorner.contains( e->x(), e->y() ) ||
+                 d->bottomRightCorner.contains( e->x(), e->y() )
+                )
         {
             setCursor( Qt::SizeFDiagCursor );
         }
 
-        else if ( d->topRightCorner.contains( e->x(), e->y() ) ||
-                  d->bottomLeftCorner.contains( e->x(), e->y() ) )
+        else if (
+                 d->topRightCorner.contains( e->x(), e->y() ) ||
+                 d->bottomLeftCorner.contains( e->x(), e->y() )
+                )
         {
             setCursor( Qt::SizeBDiagCursor );
         }

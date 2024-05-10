@@ -48,45 +48,27 @@ class Q_DECL_HIDDEN PerspectiveTool::Private
 {
 public:
 
-    explicit Private()
-      : newWidthLabel           (nullptr),
-        newHeightLabel          (nullptr),
-        topLeftAngleLabel       (nullptr),
-        topRightAngleLabel      (nullptr),
-        bottomLeftAngleLabel    (nullptr),
-        bottomRightAngleLabel   (nullptr),
-        drawWhileMovingCheckBox (nullptr),
-        drawGridCheckBox        (nullptr),
-        inverseTransformation   (nullptr),
-        previewWidget           (nullptr),
-        gboxSettings            (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupName;
-    static const QString configDrawWhileMovingEntry;
-    static const QString configDrawGridEntry;
-    static const QString configInverseTransformationEntry;
+    const QString configGroupName                   = QLatin1String("perspective Tool");
+    const QString configDrawWhileMovingEntry        = QLatin1String("Draw While Moving");
+    const QString configDrawGridEntry               = QLatin1String("Draw Grid");
+    const QString configInverseTransformationEntry  = QLatin1String("Inverse Transformation");
 
-    QLabel*              newWidthLabel;
-    QLabel*              newHeightLabel;
-    QLabel*              topLeftAngleLabel;
-    QLabel*              topRightAngleLabel;
-    QLabel*              bottomLeftAngleLabel;
-    QLabel*              bottomRightAngleLabel;
+    QLabel*              newWidthLabel              = nullptr;
+    QLabel*              newHeightLabel             = nullptr;
+    QLabel*              topLeftAngleLabel          = nullptr;
+    QLabel*              topRightAngleLabel         = nullptr;
+    QLabel*              bottomLeftAngleLabel       = nullptr;
+    QLabel*              bottomRightAngleLabel      = nullptr;
 
-    QCheckBox*           drawWhileMovingCheckBox;
-    QCheckBox*           drawGridCheckBox;
-    QCheckBox*           inverseTransformation;
+    QCheckBox*           drawWhileMovingCheckBox    = nullptr;
+    QCheckBox*           drawGridCheckBox           = nullptr;
+    QCheckBox*           inverseTransformation      = nullptr;
 
-    PerspectiveWidget*   previewWidget;
-    EditorToolSettings*  gboxSettings;
+    PerspectiveWidget*   previewWidget              = nullptr;
+    EditorToolSettings*  gboxSettings               = nullptr;
 };
-
-const QString PerspectiveTool::Private::configGroupName(QLatin1String("perspective Tool"));
-const QString PerspectiveTool::Private::configDrawWhileMovingEntry(QLatin1String("Draw While Moving"));
-const QString PerspectiveTool::Private::configDrawGridEntry(QLatin1String("Draw Grid"));
-const QString PerspectiveTool::Private::configInverseTransformationEntry(QLatin1String("Inverse Transformation"));
 
 // --------------------------------------------------------
 
