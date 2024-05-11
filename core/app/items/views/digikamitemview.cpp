@@ -420,12 +420,15 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        faces << d->faceDelegate->face(index);
-        infos << ItemModel::retrieveItemInfo(index);
-
-        if (needFastRemove)
+        if (index.isValid())
         {
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            faces << d->faceDelegate->face(index);
+            infos << ItemModel::retrieveItemInfo(index);
+
+            if (needFastRemove)
+            {
+                sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+            }
         }
     }
 
@@ -447,9 +450,12 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        faces         << d->faceDelegate->face(index);
-        infos         << ItemModel::retrieveItemInfo(index);
-        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        if (index.isValid())
+        {
+            faces         << d->faceDelegate->face(index);
+            infos         << ItemModel::retrieveItemInfo(index);
+            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        }
     }
 
     for (int i = 0 ; i < infos.size() ; ++i)
@@ -470,9 +476,12 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        faces         << d->faceDelegate->face(index);
-        infos         << ItemModel::retrieveItemInfo(index);
-        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        if (index.isValid())
+        {
+            faces         << d->faceDelegate->face(index);
+            infos         << ItemModel::retrieveItemInfo(index);
+            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        }
     }
 
     for (int i = 0 ; i < infos.size() ; ++i)
@@ -494,9 +503,12 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        faces         << d->faceDelegate->face(index);
-        infos         << ItemModel::retrieveItemInfo(index);
-        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        if (index.isValid())
+        {
+            faces         << d->faceDelegate->face(index);
+            infos         << ItemModel::retrieveItemInfo(index);
+            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        }
     }
 
     for (int i = 0 ; i < infos.size() ; ++i)
@@ -534,9 +546,12 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        faces         << d->faceDelegate->face(index);
-        infos         << ItemModel::retrieveItemInfo(index);
-        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        if (index.isValid())
+        {
+            faces         << d->faceDelegate->face(index);
+            infos         << ItemModel::retrieveItemInfo(index);
+            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        }
     }
 
     for (int i = 0 ; i < infos.size() ; ++i)
@@ -556,7 +571,10 @@ QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
 
     Q_FOREACH (const QModelIndex& index, indexes)
     {
-        ids << d->faceDelegate->face(index).tagId();
+        if (index.isValid())
+        {
+            ids << d->faceDelegate->face(index).tagId();
+        }
     }
 
     return ids;
