@@ -426,7 +426,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                                        QStringList() << QLatin1String("Xmp.audio.TrackLang"));
 
             // --------------
-
+/*
             data = s_setXmpTagStringFromEntry(this,
                                               QStringList() << QLatin1String("creation_time"),                  // Generic.
                                               ameta);
@@ -437,7 +437,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 setXmpTagString("Xmp.audio.TrackCreateDate",
                                 QString::number(s_secondsSinceJanuary1904(dt)));
             }
-
+*/
             // --------------
 
             s_setXmpTagStringFromEntry(this,
@@ -753,7 +753,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                                        QStringList() << QLatin1String("Xmp.video.Language"));
 
             // --------------
-
+/*
             data = s_setXmpTagStringFromEntry(this,
                                               QStringList() << QLatin1String("creation_time")                   // Generic.
                                                             << QLatin1String("_STATISTICS_WRITING_DATE_UTC"),   // MKV files.
@@ -767,7 +767,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
                 setXmpTagString("Xmp.xmpDM.shotDate", dt.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")));
             }
-
+*/
             // --------------
 
             s_setXmpTagStringFromEntry(this,
@@ -1588,7 +1588,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                                QStringList() << QLatin1String("Xmp.video.Year"));
 
     // --------------
-
+/*
     s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("ICRD")                                           // Riff files
                                              << QLatin1String("DATE_DIGITIZED"),                                // MKV files
@@ -1622,15 +1622,16 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
         else if (
-                 !((rmeta.contains(QLatin1String("com.android.model")))                                        ||
-                   (rmeta.contains(QLatin1String("com.android.version")))                                      ||
-                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                                  ||
-                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                                 ||
-                   (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))          ||
+                 !((rmeta.contains(QLatin1String("com.android.model")))                                        || ///< Android
+                   (rmeta.contains(QLatin1String("com.android.version")))                                      || ///< Android
+                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                                  || ///< Android
+                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                                 || ///< Android
+                   (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))          || ///< Canon
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isom3gp4"))       ||
-                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("mp42avc1niko"))   ||
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("mp42avc1niko"))   || ///< Nikon
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("mp42avc1CAEP"))   || ///< Canon
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isomiso2mp41"))   ||
-                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("XAVCmp42nrasiso6")))
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("XAVCmp42nrasiso6"))) ///< Casio
                  )
         {
             if (rmeta[QLatin1String("creation_time")].endsWith(QLatin1Char('Z')))
@@ -1683,7 +1684,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         setXmpTagString("Xmp.video.MediaCreateDate",
                         QString::number(s_secondsSinceJanuary1904(dt)));
     }
-
+*/
     // --------------
 
     // GPS info as string. ex: "+44.8511-000.6229/"
