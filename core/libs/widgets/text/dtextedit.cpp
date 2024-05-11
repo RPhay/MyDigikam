@@ -208,6 +208,18 @@ QString DTextEdit::currentLanguage() const
 
 }
 
+void DTextEdit::focusOutEvent(QFocusEvent* e)
+{
+    Qt::FocusReason reason = e->reason();
+
+    if (reason != Qt::PopupFocusReason)
+    {
+        Q_EMIT editingFinished();
+    }
+
+    return QTextEdit::focusOutEvent(e);
+}
+
 void DTextEdit::keyPressEvent(QKeyEvent* e)
 {
     if ((d->maxLength > 0) && (text().length() >= d->maxLength))

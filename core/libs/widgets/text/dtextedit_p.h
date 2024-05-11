@@ -34,6 +34,7 @@
 #include <QScrollBar>
 #include <QUrl>
 #include <QToolTip>
+#include <QEvent>
 
 // KDE includes
 

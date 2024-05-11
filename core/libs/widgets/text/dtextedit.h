@@ -143,11 +143,13 @@ Q_SIGNALS:
      */
     void returnPressed();
     void textEdited(const QString&);
+    void editingFinished();
 
 protected:
 
     void insertFromMimeData(const QMimeData* source) override;
     void keyPressEvent(QKeyEvent* e)                 override;
+    void focusOutEvent(QFocusEvent* e)               override;
 
 private Q_SLOTS:
 
