@@ -37,11 +37,11 @@ namespace MediaWiki
 
 class Q_DECL_HIDDEN UploadPrivate : public JobPrivate
 {
+
 public:
 
     explicit UploadPrivate(Iface& MediaWiki)
-        : JobPrivate(MediaWiki),
-          file(nullptr)
+        : JobPrivate(MediaWiki)
     {
     }
 
@@ -74,7 +74,7 @@ public:
         return  ret + (int)Upload::InternalError ;
     }
 
-    QIODevice* file;
+    QIODevice* file     = nullptr;
     QString    filename;
     QString    comment;
     QString    text;
@@ -86,31 +86,31 @@ Upload::Upload(Iface& MediaWiki, QObject* const parent)
 {
 }
 
-Upload::~Upload()
-{
-}
-
 void Upload::setFilename(const QString& param)
 {
     Q_D(Upload);
+
     d->filename = param;
 }
 
 void Upload::setFile(QIODevice* const file)
 {
     Q_D(Upload);
+
     d->file = file;
 }
 
 void Upload::setComment(const QString& param)
 {
     Q_D(Upload);
+
     d->comment = param;
 }
 
 void Upload::setText(const QString& text)
 {
     Q_D(Upload);
+
     d->text = text;
 }
 
@@ -253,6 +253,7 @@ void Upload::doWorkProcessReply()
         d->reply->deleteLater();
 
         emitResult();
+
         return;
     }
 
@@ -279,8 +280,10 @@ void Upload::doWorkProcessReply()
                 this->setError(UploadPrivate::error(attrs.value(QStringLiteral("code")).toString()));
             }
         }
-        else if ((token          == QXmlStreamReader::Invalid) &&
-                 (reader.error() != QXmlStreamReader::PrematureEndOfDocumentError))
+        else if (
+                 (token          == QXmlStreamReader::Invalid) &&
+                 (reader.error() != QXmlStreamReader::PrematureEndOfDocumentError)
+                )
         {
             this->setError(this->XmlError);
         }

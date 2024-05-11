@@ -115,7 +115,7 @@ public:
     /**
      * @brief Destroys the Login job.
      */
-    ~Login()     override;
+    ~Login()     override = default;
 
     /**
      * @brief Starts the job asynchronously.

@@ -39,7 +39,7 @@ public:
 
     QueryImagesPrivate(Iface& MediaWiki, const QString& limit)
         : JobPrivate(MediaWiki),
-          limit(limit)
+          limit     (limit)
     {
     }
 
@@ -53,19 +53,17 @@ QueryImages::QueryImages(Iface& MediaWiki, QObject* const parent)
 {
 }
 
-QueryImages::~QueryImages()
-{
-}
-
 void QueryImages::setTitle(const QString& title)
 {
     Q_D(QueryImages);
+
     d->title = title;
 }
 
 void QueryImages::setLimit(unsigned int limit)
 {
     Q_D(QueryImages);
+
     d->limit = QString::number(limit);
 }
 
@@ -79,6 +77,7 @@ void QueryImages::doWorkSendRequest()
     Q_D(QueryImages);
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"),  QStringLiteral("xml"));
@@ -86,19 +85,24 @@ void QueryImages::doWorkSendRequest()
     query.addQueryItem(QStringLiteral("titles"),  d->title);
     query.addQueryItem(QStringLiteral("prop"),    QStringLiteral("images"));
     query.addQueryItem(QStringLiteral("imlimit"), d->limit);
+
     if (!d->imcontinue.isNull())
     {
         query.addQueryItem(QStringLiteral("imcontinue"), d->imcontinue);
     }
+
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
+
     connect(d->reply, SIGNAL(finished()),
             this, SLOT(doWorkProcessReply()));
 }
@@ -119,9 +123,10 @@ void QueryImages::doWorkProcessReply()
         while (!reader.atEnd() && !reader.hasError())
         {
             QXmlStreamReader::TokenType token = reader.readNext();
+
             if (token == QXmlStreamReader::StartElement)
             {
-                if (reader.name() == QLatin1String("images"))
+                if      (reader.name() == QLatin1String("images"))
                 {
                     if (reader.attributes().value(QStringLiteral("imcontinue")).isNull())
                     {

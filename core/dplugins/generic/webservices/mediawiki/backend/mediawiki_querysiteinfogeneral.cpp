@@ -49,10 +49,6 @@ QuerySiteInfoGeneral::QuerySiteInfoGeneral(Iface& MediaWiki, QObject* const /*pa
 {
 }
 
-QuerySiteInfoGeneral::~QuerySiteInfoGeneral()
-{
-}
-
 void QuerySiteInfoGeneral::start()
 {
     QTimer::singleShot(0, this, SLOT(doWorkSendRequest()));
@@ -63,6 +59,7 @@ void QuerySiteInfoGeneral::doWorkSendRequest()
     Q_D(QuerySiteInfoGeneral);
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
@@ -72,10 +69,12 @@ void QuerySiteInfoGeneral::doWorkSendRequest()
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
 
@@ -108,7 +107,7 @@ void QuerySiteInfoGeneral::doWorkProcessReply()
 
         if (token == QXmlStreamReader::StartElement)
         {
-            if (reader.name() == QLatin1String("general"))
+            if      (reader.name() == QLatin1String("general"))
             {
                 generalinfo.setMainPage(reader.attributes().value(QStringLiteral("mainpage")).toString());
                 generalinfo.setUrl(QUrl::fromEncoded(reader.attributes().value(QStringLiteral("base")).toString().toLocal8Bit()));
@@ -152,6 +151,7 @@ void QuerySiteInfoGeneral::doWorkProcessReply()
     else
     {
         Q_EMIT result(generalinfo);
+
         this->setError(Job::NoError);
     }
 

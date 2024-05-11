@@ -62,7 +62,7 @@ public:
     };
 
     explicit Parse(Iface& MediaWiki, QObject* const parent = nullptr);
-    ~Parse() override;
+    ~Parse()        override = default;
 
     void setText(const QString& param);
 
@@ -72,9 +72,9 @@ public:
 
     void setUseLang(const QString& param);
 
-    void start() override;
+    void start()    override;
 
-    Q_SIGNALS:
+Q_SIGNALS:
 
     void result(const QString& text);
 

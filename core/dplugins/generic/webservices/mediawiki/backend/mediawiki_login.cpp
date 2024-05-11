@@ -43,8 +43,8 @@ public:
 
     LoginPrivate(Iface& MediaWiki, const QString& login, const QString& password)
         : JobPrivate(MediaWiki),
-          login(login),
-          password(password)
+          login     (login),
+          password  (password)
     {
     }
 
@@ -86,10 +86,6 @@ Login::Login(Iface& MediaWiki, const QString& login, const QString& password, QO
 {
 }
 
-Login::~Login()
-{
-}
-
 void Login::start()
 {
     QTimer::singleShot(0, this, SLOT(doWorkSendRequest()));
@@ -100,6 +96,7 @@ void Login::doWorkSendRequest()
     Q_D(Login);
 
     // Set the url
+
     QUrl url   = d->MediaWiki.url();
     d->baseUrl = url;
 
@@ -110,11 +107,13 @@ void Login::doWorkSendRequest()
     query.addQueryItem(QStringLiteral("lgpassword"), d->password);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader(QByteArrayLiteral("User-Agent"), d->MediaWiki.userAgent().toUtf8());
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
 
     // Send the request
+
     d->reply = d->manager->post(request, query.toString().toUtf8());
 
     connect(d->reply, SIGNAL(finished()),
@@ -143,13 +142,13 @@ void Login::doWorkProcessReply()
     {
         QXmlStreamReader::TokenType token = reader.readNext();
 
-        if (token == QXmlStreamReader::StartElement)
+        if      (token == QXmlStreamReader::StartElement)
         {
             QXmlStreamAttributes attrs = reader.attributes();
 
-            if (reader.name() == QLatin1String("login"))
+            if      (reader.name() == QLatin1String("login"))
             {
-                if (attrs.value(QStringLiteral("result")).toString() == QLatin1String("Success"))
+                if      (attrs.value(QStringLiteral("result")).toString() == QLatin1String("Success"))
                 {
                     this->setError(Job::NoError);
                     d->lgtoken     = attrs.value(QStringLiteral("lgtoken")).toString();
@@ -239,6 +238,7 @@ void Login::doWorkProcessReply()
             return;
         }
     }
+
     d->reply->close();
     d->reply->deleteLater();
 
@@ -252,12 +252,14 @@ void Login::doWorkProcessReply()
     query.addQueryItem(QStringLiteral("lgtoken"), (d->lgtoken).replace(QStringLiteral("+"), QStringLiteral("%2B")));
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
     request.setRawHeader("Cookie", d->manager->cookieJar()->cookiesForUrl(d->MediaWiki.url()).at(0).toRawForm());
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
 
     // Send the request
+
     d->reply = d->manager->post(request, query.toString().toUtf8());
     connectReply();
 

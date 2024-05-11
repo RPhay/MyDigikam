@@ -26,10 +26,10 @@ class Q_DECL_HIDDEN Revision::Private
 {
 public:
 
-    int       revId;
-    int       parentId;
-    int       size;
-    bool      minorRevision;
+    int       revId         = -1;
+    int       parentId      = -1;
+    int       size          = -1;
+    bool      minorRevision = false;
     QString   user;
     QDateTime timestamp;
     QString   comment;
@@ -41,10 +41,6 @@ public:
 Revision::Revision()
     : d(new Private)
 {
-    d->minorRevision = false;
-    d->revId         = -1;
-    d->parentId      = -1;
-    d->size          = -1;
 }
 
 Revision::~Revision()

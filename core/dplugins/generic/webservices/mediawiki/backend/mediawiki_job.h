@@ -77,7 +77,7 @@ protected:
     /**
      * @brief The private d pointer.
      */
-    JobPrivate* const d_ptr;
+    JobPrivate* const d_ptr = nullptr;
 
 private Q_SLOTS:
 

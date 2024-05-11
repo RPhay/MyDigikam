@@ -44,13 +44,13 @@ public:
     explicit QueryImageinfoPrivate(Iface& MediaWiki)
         : JobPrivate(MediaWiki)
     {
-        onlyOneSignal = false;
     }
 
     static inline qint64 toQInt64(const QString& qstring)
     {
         bool   ok;
         qint64 result = qstring.toLongLong(&ok);
+
         return (ok ? result : -1);
     }
 
@@ -64,7 +64,7 @@ public:
 
 public:
 
-    bool    onlyOneSignal;
+    bool    onlyOneSignal = false;
 
     QString title;
     QString iiprop;
@@ -82,13 +82,10 @@ QueryImageinfo::QueryImageinfo(Iface& MediaWiki, QObject* const parent)
     Q_UNUSED(d);
 }
 
-QueryImageinfo::~QueryImageinfo()
-{
-}
-
 void QueryImageinfo::setTitle(const QString& title)
 {
     Q_D(QueryImageinfo);
+
     d->title = title;
 }
 
@@ -102,30 +99,37 @@ void QueryImageinfo::setProperties(Properties properties)
     {
         iiprop.append(QStringLiteral("timestamp|"));
     }
+
     if (properties & QueryImageinfo::User)
     {
         iiprop.append(QStringLiteral("user|"));
     }
+
     if (properties & QueryImageinfo::Comment)
     {
         iiprop.append(QStringLiteral("comment|"));
     }
+
     if (properties & QueryImageinfo::Url)
     {
         iiprop.append(QStringLiteral("url|"));
     }
+
     if (properties & QueryImageinfo::Size)
     {
         iiprop.append(QStringLiteral("size|"));
     }
+
     if (properties & QueryImageinfo::Sha1)
     {
         iiprop.append(QStringLiteral("sha1|"));
     }
+
     if (properties & QueryImageinfo::Mime)
     {
         iiprop.append(QStringLiteral("mime|"));
     }
+
     if (properties & QueryImageinfo::Metadata)
     {
         iiprop.append(QStringLiteral("metadata|"));
@@ -138,36 +142,42 @@ void QueryImageinfo::setProperties(Properties properties)
 void QueryImageinfo::setLimit(unsigned int limit)
 {
     Q_D(QueryImageinfo);
+
     d->limit = (limit > 0u) ? QString::number(limit) : QString();
 }
 
 void QueryImageinfo::setOnlyOneSignal(bool onlyOneSignal)
 {
     Q_D(QueryImageinfo);
+
     d->onlyOneSignal = onlyOneSignal;
 }
 
 void QueryImageinfo::setBeginTimestamp(const QDateTime& begin)
 {
     Q_D(QueryImageinfo);
+
     d->begin = begin.toString(QStringLiteral("yyyy-MM-dd'T'hh:mm:ss'Z'"));
 }
 
 void QueryImageinfo::setEndTimestamp(const QDateTime& end)
 {
     Q_D(QueryImageinfo);
+
     d->end = end.toString(QStringLiteral("yyyy-MM-dd'T'hh:mm:ss'Z'"));
 }
 
 void QueryImageinfo::setWidthScale(unsigned int width)
 {
     Q_D(QueryImageinfo);
+
     d->width = (width > 0u) ? QString::number(width) : QString();
 }
 
 void QueryImageinfo::setHeightScale(unsigned int height)
 {
     Q_D(QueryImageinfo);
+
     d->height = (height > 0u) ? QString::number(height) : QString();
 
     if (d->width.isNull())
@@ -186,16 +196,19 @@ void QueryImageinfo::doWorkSendRequest()
     Q_D(QueryImageinfo);
 
     // Requirements.
+
     if (d->title.isEmpty())
     {
         setError(QueryImageinfo::MissingMandatoryParameter);
         setErrorText(i18n("You cannot query the information of an "
                           "image if you do not provide the title of that image."));
         emitResult();
+
         return;
     }
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
@@ -211,10 +224,12 @@ void QueryImageinfo::doWorkSendRequest()
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
 
@@ -241,9 +256,9 @@ void QueryImageinfo::doWorkProcessReply()
         {
             QXmlStreamReader::TokenType token = reader.readNext();
 
-            if (token == QXmlStreamReader::StartElement)
+            if      (token == QXmlStreamReader::StartElement)
             {
-                if (reader.name() == QLatin1String("imageinfo"))
+                if      (reader.name() == QLatin1String("imageinfo"))
                 {
                     if (!reader.attributes().value(QStringLiteral("iistart")).isNull())
                     {

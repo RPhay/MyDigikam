@@ -49,10 +49,6 @@ Logout::Logout(Iface& MediaWiki, QObject* const parent)
 {
 }
 
-Logout::~Logout()
-{
-}
-
 void Logout::start()
 {
     QTimer::singleShot(0, this, SLOT(doWorkSendRequest()));

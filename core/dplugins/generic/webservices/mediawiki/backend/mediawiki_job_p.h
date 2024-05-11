@@ -30,14 +30,13 @@ public:
 
     explicit JobPrivate(Iface& MediaWiki)
         : MediaWiki(MediaWiki),
-          manager  (MediaWiki.manager()),
-          reply    (nullptr)
+          manager  (MediaWiki.manager())
     {
     }
 
     Iface&                       MediaWiki;
-    QNetworkAccessManager* const manager;
-    QNetworkReply*               reply;
+    QNetworkAccessManager* const manager    = nullptr;
+    QNetworkReply*               reply      = nullptr;
 };
 
 } // namespace MediaWiki

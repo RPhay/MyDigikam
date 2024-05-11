@@ -51,10 +51,6 @@ QueryRevision::QueryRevision(Iface& MediaWiki, QObject* const parent)
 {
 }
 
-QueryRevision::~QueryRevision()
-{
-}
-
 void QueryRevision::start()
 {
     QTimer::singleShot(0, this, SLOT(doWorkSendRequest()));
@@ -63,12 +59,14 @@ void QueryRevision::start()
 void QueryRevision::setPageName(const QString& pageName)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("titles")] = pageName;
 }
 
 void QueryRevision::setProperties(Properties properties)
 {
     Q_D(QueryRevision);
+
     QString buff;
 
     if (properties & QueryRevision::Ids)
@@ -142,54 +140,63 @@ void QueryRevision::setProperties(Properties properties)
 void QueryRevision::setPageId(unsigned int pageId)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("pageids")] = QString::number(pageId);
 }
 
 void QueryRevision::setRevisionId(unsigned int revisionId)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("revids")] = QString::number(revisionId);
 }
 
 void QueryRevision::setLimit(int limit)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvlimit")] = QString::number(limit);
 }
 
 void QueryRevision::setStartId(int startId)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvstartid")] = QString::number(startId);
 }
 
 void QueryRevision::setEndId(int endId)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvendid")] = QString::number(endId);
 }
 
 void QueryRevision::setStartTimestamp(const QDateTime& start)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvstart")] = start.toString(QStringLiteral("yyyy-MM-ddThh:mm:ssZ"));
 }
 
 void QueryRevision::setEndTimestamp(const QDateTime& end)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvend")] = end.toString(QStringLiteral("yyyy-MM-ddThh:mm:ssZ"));
 }
 
 void QueryRevision::setUser(const QString& user)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvuser")] = user;
 }
 
 void QueryRevision::setExcludeUser(const QString& excludeUser)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvexcludeuser")] = excludeUser;
 }
 
@@ -220,6 +227,7 @@ void QueryRevision::setGenerateXML(bool generateXML)
 void QueryRevision::setSection(int section)
 {
     Q_D(QueryRevision);
+
     d->requestParameter[QStringLiteral("rvsection")] = QString::number(section);
 }
 
@@ -307,8 +315,10 @@ void QueryRevision::doWorkProcessReply()
 
                 while (count < 2)
                 {
-                    if ((replytmp[i]   == QLatin1Char('"')) &&
-                        (replytmp[i-1] != QLatin1Char('\\')))
+                    if (
+                        (replytmp[i]   == QLatin1Char('"')) &&
+                        (replytmp[i-1] != QLatin1Char('\\'))
+                       )
                     {
                         count++;
                     }
@@ -343,7 +353,7 @@ void QueryRevision::doWorkProcessReply()
 
                 if (reader.name() == QLatin1String("rev"))
                 {
-                    if (d->requestParameter.contains(QStringLiteral("rvprop")))
+                    if      (d->requestParameter.contains(QStringLiteral("rvprop")))
                     {
                         QString rvprop = d->requestParameter[QStringLiteral("rvprop")];
 
@@ -415,12 +425,16 @@ void QueryRevision::doWorkProcessReply()
 
                         d->reply->close();
                         d->reply->deleteLater();
+
                         //Q_EMIT revision(QList<Revision>());
+
                         emitResult();
+
                         return;
                     }
               }
         }
+
         if (!reader.hasError())
         {
             setError(KJob::NoError);
@@ -432,6 +446,7 @@ void QueryRevision::doWorkProcessReply()
             }
 
             Q_EMIT revision(results);
+
             setPercent(100); // Response parsed successfully.
         }
         else

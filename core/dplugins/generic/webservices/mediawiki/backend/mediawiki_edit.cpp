@@ -41,12 +41,9 @@ class Q_DECL_HIDDEN Result
 {
 public:
 
-    explicit Result()
-      : m_captchaId(-1)
-    {
-    }
+    Result() = default;
 
-    unsigned int m_captchaId;
+    unsigned int m_captchaId        = -1;
     QVariant     m_captchaQuestion;
     QString      m_captchaAnswer;
 };
@@ -108,18 +105,21 @@ Edit::Edit(Iface& media, QObject* const parent)
 void Edit::setUndoAfter(int undoafter)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("undoafter")] = QString::number(undoafter);
 }
 
 void Edit::setUndo(int undo)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("undo")] = QString::number(undo);
 }
 
 void Edit::setPrependText(const QString& prependText)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("prependtext")] = prependText;
     d->requestParameter[QStringLiteral("md5")]         = QString();
 }
@@ -127,6 +127,7 @@ void Edit::setPrependText(const QString& prependText)
 void Edit::setAppendText(const QString& appendText)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("appendtext")] = appendText;
     d->requestParameter[QStringLiteral("md5")]        = QString();
 }
@@ -134,30 +135,35 @@ void Edit::setAppendText(const QString& appendText)
 void Edit::setPageName(const QString& pageName)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("title")] = pageName;
 }
 
 void Edit::setToken(const QString& token)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("token")] = token;
 }
 
 void Edit::setBaseTimestamp(const QDateTime& baseTimestamp)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("basetimestamp")] = baseTimestamp.toString(QStringLiteral("yyyy-MM-ddThh:mm:ssZ"));
 }
 
 void Edit::setStartTimestamp(const QDateTime& startTimestamp)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("starttimestamp")] = startTimestamp.toString(QStringLiteral("yyyy-MM-ddThh:mm:ssZ"));
 }
 
 void Edit::setText(const QString& text)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("text")] = text;
     d->requestParameter[QStringLiteral("md5")]  = QString();
 }
@@ -212,12 +218,14 @@ void Edit::setMinor(bool minor)
 void Edit::setSection(const QString& section)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("section")] = section;
 }
 
 void Edit::setSummary(const QString& summary)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("summary")] = summary;
 }
 
@@ -228,30 +236,35 @@ void Edit::setWatchList(Edit::Watchlist watchlist)
     switch (watchlist)
     {
         case Edit::watch:
+        {
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("watch"));
             break;
+        }
 
         case Edit::unwatch:
+        {
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("unwatch"));
             break;
+        }
 
         case Edit::nochange:
+        {
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("nochange"));
             break;
+        }
 
         case Edit::preferences:
+        {
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("preferences"));
             break;
+        }
     }
-}
-
-Edit::~Edit()
-{
 }
 
 void Edit::start()
 {
     Q_D(Edit);
+
     QueryInfo* const info = new QueryInfo(d->MediaWiki,this);
     info->setPageName(d->requestParameter[QStringLiteral("title")]);
     info->setToken(QStringLiteral("tokens"));
@@ -265,6 +278,7 @@ void Edit::start()
 void Edit::doWorkSendRequest(const Page& page)
 {
     Q_D(Edit);
+
     d->requestParameter[QStringLiteral("token")] = page.pageEditToken();
 
     // Set the url
@@ -431,12 +445,14 @@ void Edit::finishedEdit()
 
     d->reply->close();
     d->reply->deleteLater();
+
     Q_EMIT resultCaptcha(d->result.m_captchaQuestion);
 }
 
 void Edit::finishedCaptcha(const QString& captcha)
 {
     Q_D(Edit);
+
     d->result.m_captchaAnswer = captcha;
     QUrl url                  = d->baseUrl;
     QUrlQuery query;

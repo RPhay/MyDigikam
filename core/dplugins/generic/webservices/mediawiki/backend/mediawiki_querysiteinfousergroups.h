@@ -49,7 +49,7 @@ public:
     /**
      * @brief Destroys the UserGroups job.
      */
-    ~QuerySiteinfoUsergroups() override;
+    ~QuerySiteinfoUsergroups() override = default;
 
     /**
      * @brief If true number of users of each user group is included

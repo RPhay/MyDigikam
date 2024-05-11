@@ -26,7 +26,7 @@ class Q_DECL_HIDDEN UserGroup::Private
 {
 public:
 
-    unsigned int   number;
+    unsigned int   number = -1;
 
     QString        name;
 
@@ -36,7 +36,6 @@ public:
 UserGroup::UserGroup()
     : d(new Private)
 {
-    d->number = -1;
 }
 
 UserGroup::UserGroup(const UserGroup& other)

@@ -50,7 +50,7 @@ public:
 
     const QUrl                   url;
     const QString                userAgent;
-    QNetworkAccessManager* const manager;
+    QNetworkAccessManager* const manager         = nullptr;
 };
 
 const QString Iface::Private::POSTFIX_USER_AGENT = QString::fromUtf8("MediaWiki-silk");

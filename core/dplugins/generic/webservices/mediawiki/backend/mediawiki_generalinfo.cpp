@@ -75,34 +75,37 @@ Generalinfo::~Generalinfo()
 Generalinfo& Generalinfo::operator=(const Generalinfo& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Generalinfo::operator==(const Generalinfo& other) const
 {
-    return mainPage()             == other.mainPage()             &&
-           url()                  == other.url()                  &&
-           siteName()             == other.siteName()             &&
-           generator()            == other.generator()            &&
-           phpVersion()           == other.phpVersion()           &&
-           phpApi()               == other.phpApi()               &&
-           dataBaseType()         == other.dataBaseType()         &&
-           dataBaseVersion()      == other.dataBaseVersion()      &&
-           rev()                  == other.rev()                  &&
-           cas()                  == other.cas()                  &&
-           license()              == other.license()              &&
-           language()             == other.language()             &&
-           fallBack8bitEncoding() == other.fallBack8bitEncoding() &&
-           writeApi()             == other.writeApi()             &&
-           timeZone()             == other.timeZone()             &&
-           timeOffset()           == other.timeOffset()           &&
-           articlePath()          == other.articlePath()          &&
-           scriptPath()           == other.scriptPath()           &&
-           script()               == other.script()               &&
-           variantArticlePath()   == other.variantArticlePath()   &&
-           serverUrl()            == other.serverUrl()            &&
-           wikiId()               == other.wikiId()               &&
-           time()                 == other.time();
+    return (
+            (mainPage()             == other.mainPage())             &&
+            (url()                  == other.url())                  &&
+            (siteName()             == other.siteName())             &&
+            (generator()            == other.generator())            &&
+            (phpVersion()           == other.phpVersion())           &&
+            (phpApi()               == other.phpApi())               &&
+            (dataBaseType()         == other.dataBaseType())         &&
+            (dataBaseVersion()      == other.dataBaseVersion())      &&
+            (rev()                  == other.rev())                  &&
+            (cas()                  == other.cas())                  &&
+            (license()              == other.license())              &&
+            (language()             == other.language())             &&
+            (fallBack8bitEncoding() == other.fallBack8bitEncoding()) &&
+            (writeApi()             == other.writeApi())             &&
+            (timeZone()             == other.timeZone())             &&
+            (timeOffset()           == other.timeOffset())           &&
+            (articlePath()          == other.articlePath())          &&
+            (scriptPath()           == other.scriptPath())           &&
+            (script()               == other.script())               &&
+            (variantArticlePath()   == other.variantArticlePath())   &&
+            (serverUrl()            == other.serverUrl())            &&
+            (wikiId()               == other.wikiId())               &&
+            (time()                 == other.time())
+           );
 }
 
 QString Generalinfo::mainPage() const

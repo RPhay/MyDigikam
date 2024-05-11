@@ -53,31 +53,31 @@ QueryInfo::QueryInfo(Iface& MediaWiki, QObject* const parent)
 {
 }
 
-QueryInfo::~QueryInfo()
-{
-}
-
 void QueryInfo::setPageName(const QString& title)
 {
     Q_D(QueryInfo);
+
     d->requestParameter[QStringLiteral("titles")] = title;
 }
 
 void QueryInfo::setToken(const QString& token)
 {
     Q_D(QueryInfo);
+
     d->requestParameter[QStringLiteral("meta")] = token;
 }
 
 void QueryInfo::setPageId(unsigned int id)
 {
     Q_D(QueryInfo);
+
     d->requestParameter[QStringLiteral("pageids")] = QString::number(id);
 }
 
 void QueryInfo::setRevisionId(unsigned int id)
 {
     Q_D(QueryInfo);
+
     d->requestParameter[QStringLiteral("revids")] = QString::number(id);
 }
 
@@ -217,9 +217,11 @@ void QueryInfo::doWorkProcessReply()
                 }
             }
         }
+
         if (!reader.hasError())
         {
             setError(KJob::NoError);
+
             Q_EMIT protection(protect);
             Q_EMIT page(d->page);
         }

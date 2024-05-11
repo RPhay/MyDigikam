@@ -32,11 +32,11 @@ public:
     QUrl                     url;
     QUrl                     descriptionUrl;
     QUrl                     thumbUrl;
-    qint64                   thumbWidth;
-    qint64                   thumbHeight;
-    qint64                   size;
-    qint64                   width;
-    qint64                   height;
+    qint64                   thumbWidth     = -1;
+    qint64                   thumbHeight    = -1;
+    qint64                   size           = -1;
+    qint64                   width          = -1;
+    qint64                   height         = -1;
     QString                  sha1;
     QString                  mime;
     QHash<QString, QVariant> metadata;
@@ -45,11 +45,6 @@ public:
 Imageinfo::Imageinfo()
     : d(new Private)
 {
-    d->thumbWidth  = -1;
-    d->thumbHeight = -1;
-    d->size        = -1;
-    d->width       = -1;
-    d->height      = -1;
 }
 
 Imageinfo::Imageinfo(const Imageinfo& other)

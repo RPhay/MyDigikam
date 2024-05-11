@@ -27,12 +27,9 @@ class Q_DECL_HIDDEN Image::Private
 {
 public:
 
-    Private()
-      : namespaceId(-1)
-    {
-    }
+    Private() = default;
 
-    qint64  namespaceId;
+    qint64  namespaceId = -1;
     QString title;
 };
 

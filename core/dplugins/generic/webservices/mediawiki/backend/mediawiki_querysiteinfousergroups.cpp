@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN QuerySiteinfoUsergroupsPrivate : public JobPrivate
 public:
 
     QuerySiteinfoUsergroupsPrivate(Iface& MediaWiki, bool includeNumber)
-            : JobPrivate(MediaWiki),
+            : JobPrivate   (MediaWiki),
               includeNumber(includeNumber)
     {
     }
@@ -51,13 +51,10 @@ QuerySiteinfoUsergroups::QuerySiteinfoUsergroups(Iface& MediaWiki, QObject* cons
 {
 }
 
-QuerySiteinfoUsergroups::~QuerySiteinfoUsergroups()
-{
-}
-
 void QuerySiteinfoUsergroups::setIncludeNumber(bool includeNumber)
 {
     Q_D(QuerySiteinfoUsergroups);
+
     d->includeNumber = includeNumber;
 }
 
@@ -71,6 +68,7 @@ void QuerySiteinfoUsergroups::doWorkSendRequest()
     Q_D(QuerySiteinfoUsergroups);
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
@@ -86,10 +84,12 @@ void QuerySiteinfoUsergroups::doWorkSendRequest()
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
 
@@ -116,9 +116,9 @@ void QuerySiteinfoUsergroups::doWorkProcessReply()
         {
             QXmlStreamReader::TokenType token = reader.readNext();
 
-            if (token == QXmlStreamReader::StartElement)
+            if      (token == QXmlStreamReader::StartElement)
             {
-                if (reader.name() == QLatin1String("group"))
+                if      (reader.name() == QLatin1String("group"))
                 {
                     name = reader.attributes().value(QStringLiteral("name")).toString();
 
@@ -158,6 +158,7 @@ void QuerySiteinfoUsergroups::doWorkProcessReply()
         if (!reader.hasError())
         {
             setError(Job::NoError);
+
             Q_EMIT usergroups(results);
         }
         else

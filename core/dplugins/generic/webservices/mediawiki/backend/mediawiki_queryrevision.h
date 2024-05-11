@@ -131,7 +131,7 @@ public:
     /**
      * @brief Destroys the QueryRevision job.
      */
-    ~QueryRevision() override;
+    ~QueryRevision() override = default;
 
     /**
      * @brief Starts the job asynchronously.

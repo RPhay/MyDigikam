@@ -29,12 +29,12 @@ class Q_DECL_HIDDEN Page::Private
 {
 public:
 
-    unsigned int m_pageid;
-    unsigned int m_ns;
-    unsigned int m_lastrevid;
-    unsigned int m_counter;
-    unsigned int m_length;
-    unsigned int m_talkid;
+    unsigned int m_pageid       = 0;
+    unsigned int m_ns           = 0;
+    unsigned int m_lastrevid    = 0;
+    unsigned int m_counter      = 0;
+    unsigned int m_length       = 0;
+    unsigned int m_talkid       = 0;
     QString      m_edittoken;
     QString      m_title;
     QString      m_readable;

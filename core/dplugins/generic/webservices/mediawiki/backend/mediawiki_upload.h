@@ -126,7 +126,7 @@ public:
     /**
      * @brief Destroys the Upload job.
      */
-    ~Upload() override;
+    ~Upload() override = default;
 
     /**
      * @brief Starts the job asynchronously.

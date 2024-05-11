@@ -187,7 +187,7 @@ public:
     /**
      * @brief Destroys the Edit job.
      */
-    ~Edit() override;
+    ~Edit() override = default;
 
     /**
      * @brief Starts the job asynchronously.

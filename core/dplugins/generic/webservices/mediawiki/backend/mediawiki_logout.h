@@ -47,7 +47,7 @@ public:
     /**
      * @brief Destroys the Logout job.
      */
-    ~Logout()    override;
+    ~Logout()    override = default;
 
     /**
      * @brief Starts the job asynchronously.

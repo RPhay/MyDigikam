@@ -71,7 +71,7 @@ public:
     /**
      * @brief Destroys a query images job.
      */
-    ~QueryImages() override;
+    ~QueryImages() override = default;
 
     /**
      * @brief Set the title.
