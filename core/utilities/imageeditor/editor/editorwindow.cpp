@@ -807,7 +807,6 @@ void EditorWindow::applyStandardSettings()
 
     KConfigGroup group = KSharedConfig::openConfig()->group(configGroupName());
 
-    d->legacyUpdateSplitterState(group);
     m_splitter->restoreState(group);
     readFullScreenSettings(group);
 

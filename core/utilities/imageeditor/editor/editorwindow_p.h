@@ -153,7 +153,6 @@ public:
     Private()  = default;
     ~Private() = default;
 
-    void legacyUpdateSplitterState(KConfigGroup& group);
     void plugNewVersionInFormatAction(EditorWindow* const q,
                                       QMenu* const menuAction,
                                       const QString& text,
@@ -179,7 +178,6 @@ public:
     const QString                configWebpLossLessEntry            = QLatin1String("WEBPLossLess");
     const QString                configAvifCompressionEntry         = QLatin1String("AVIFCompression");
     const QString                configAvifLossLessEntry            = QLatin1String("AVIFLossLess");
-    const QString                configSplitterStateEntry           = QLatin1String("SplitterState");
     const QString                configUnderExposureColorEntry      = QLatin1String("UnderExposureColor");
     const QString                configUnderExposureIndicatorEntry  = QLatin1String("UnderExposureIndicator");
     const QString                configUnderExposurePercentsEntry   = QLatin1String("UnderExposurePercentsEntry");
@@ -240,65 +238,6 @@ public:
     QMap<QString, KService::Ptr> servicesMap;
     QMap<QString, DServiceInfo>  newServicesMap;
 };
-
-
-void EditorWindow::Private::legacyUpdateSplitterState(KConfigGroup& group)
-{
-    // Check if the thumbnail size in the config file is splitter based (the
-    // old method), and convert to dock based if needed.
-
-    if (group.hasKey(configSplitterStateEntry))
-    {
-        // Read splitter state from config file
-
-        QByteArray state;
-        state = QByteArray::fromBase64(group.readEntry(configSplitterStateEntry, state));
-
-        // Do a cheap check: a splitter state with 3 windows is always 34 bytes.
-
-        if (state.count() == 34)
-        {
-            // Read the state in streamwise fashion.
-
-            QDataStream stream(state);
-
-            // The first 8 bytes are resp. the magic number and the version
-            // (which should be 0, otherwise it's not saved with an older
-            // digiKam version). Then follows the list of window sizes.
-
-            qint32     marker;
-            qint32     version = -1;
-            QList<int> sizesList;
-
-            stream >> marker;
-            stream >> version;
-
-            if (version == 0)
-            {
-                stream >> sizesList;
-
-                if (sizesList.count() == 3)
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "Found splitter based config, converting to dockbar";
-
-                    // Remove the first entry (the thumbbar) and write the rest
-                    // back. Then it should be fine.
-
-                    sizesList.removeFirst();
-                    QByteArray newData;
-                    QDataStream newStream(&newData, QIODevice::WriteOnly);
-                    newStream << marker;
-                    newStream << version;
-                    newStream << sizesList;
-                    char s[24];
-                    int numBytes = stream.readRawData(s, 24);
-                    newStream.writeRawData(s, numBytes);
-                    group.writeEntry(configSplitterStateEntry, newData.toBase64());
-                }
-            }
-        }
-    }
-}
 
 void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
                                                          QMenu* const menuAction,
