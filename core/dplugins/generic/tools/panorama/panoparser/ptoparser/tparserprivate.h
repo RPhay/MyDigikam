@@ -33,7 +33,7 @@ int  panoScriptParserInit(const char* const filename);
 void panoScriptParserClose(void);
 
 int  panoScriptScannerGetNextChar(char* b, int maxBuffer);
-void panoScriptScannerTokenBegin(char* t);
+void panoScriptScannerTokenBegin(char const* t);
 
 #ifndef _MSC_VER   // krazy:exclude=cpp
 

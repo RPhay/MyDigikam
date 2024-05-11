@@ -161,7 +161,7 @@ int panoScriptScannerGetNextChar(char* b, int maxBuffer)
     return (b[0] == 0 ? 0 : 1);
 }
 
-void panoScriptScannerTokenBegin(char* t)
+void panoScriptScannerTokenBegin(char const* t)
 {
     /* Record where a token begins */
 
