@@ -93,7 +93,7 @@ public:
     /**
      * Return the info interface instance.
      */
-    DInfoInterface* infoIface() const;
+    DInfoInterface* infoIface()                         const;
 
 private:
 

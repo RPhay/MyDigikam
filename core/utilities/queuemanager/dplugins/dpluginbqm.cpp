@@ -125,7 +125,7 @@ QStringList DPluginBqm::categories() const
 
 bool DPluginBqm::hasVisibilityProperty() const
 {
-    // NOTE: all BQM plugins are not yet configurable.
+    // NOTE: all BQM plugins are not configurable.
     // Code is missing in BQM to check workflow tools list validity if a plugin is disabled from setup dialog.
 
     return false;
