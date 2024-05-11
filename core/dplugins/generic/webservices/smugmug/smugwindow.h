@@ -46,7 +46,7 @@ public:
                         QWidget* const parent,
                         bool import = false,
                         const QString& nickName = QString());
-    ~SmugWindow() override;
+    ~SmugWindow()                   override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -60,7 +60,7 @@ Q_SIGNALS:
 
 protected:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private Q_SLOTS:
 

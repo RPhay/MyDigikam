@@ -56,46 +56,32 @@ class Q_DECL_HIDDEN SmugWindow::Private
 {
 public:
 
-    explicit Private()
-      : import           (false),
-        imagesCount      (0),
-        imagesTotal      (0),
-        anonymousImport  (false),
-        currentAlbumID   (0),
-        currentTmplID    (0),
-        currentCategoryID(0),
-        loginDlg         (nullptr),
-        talker           (nullptr),
-        widget           (nullptr),
-        albumDlg         (nullptr),
-        iface            (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool             import;
-    unsigned int     imagesCount;
-    unsigned int     imagesTotal;
+    bool             import             = false;
+    unsigned int     imagesCount        = 0;
+    unsigned int     imagesTotal        = 0;
     QString          tmpDir;
     QString          tmpPath;
 
-    bool             anonymousImport;
+    bool             anonymousImport    = false;
     QString          anonymousNick;
     QString          email;
     QString          password;
-    qint64           currentAlbumID;
+    qint64           currentAlbumID     = 0;
     QString          currentAlbumKey;
-    qint64           currentTmplID;
-    qint64           currentCategoryID;
+    qint64           currentTmplID      = 0;
+    qint64           currentCategoryID  = 0;
 
-    WSLoginDialog*   loginDlg;
+    WSLoginDialog*   loginDlg           = nullptr;
 
     QList<QUrl>      transferQueue;
 
-    SmugTalker*      talker;
-    SmugWidget*      widget;
-    SmugNewAlbumDlg* albumDlg;
+    SmugTalker*      talker             = nullptr;
+    SmugWidget*      widget             = nullptr;
+    SmugNewAlbumDlg* albumDlg           = nullptr;
 
-    DInfoInterface*  iface;
+    DInfoInterface*  iface              = nullptr;
 };
 
 SmugWindow::SmugWindow(DInfoInterface* const iface,
@@ -828,8 +814,10 @@ bool SmugWindow::prepareImageForUpload(const QString& imgPath) const
 
     int maxDim = d->widget->m_dimensionSpB->value();
 
-    if (d->widget->m_resizeChB->isChecked() &&
-        ((image.width() > maxDim) || (image.height() > maxDim)))
+    if (
+        d->widget->m_resizeChB->isChecked() &&
+        ((image.width() > maxDim) || (image.height() > maxDim))
+       )
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Resizing to " << maxDim;
         image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio,
@@ -970,6 +958,7 @@ void SmugWindow::slotGetPhotoDone(int errCode,
         else
         {
             imgFile.close();
+
             Q_EMIT updateHostApp(QUrl::fromLocalFile(imgPath));
         }
 

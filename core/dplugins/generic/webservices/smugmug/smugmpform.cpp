@@ -26,21 +26,9 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "wstoolutils.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericSmugPlugin
 {
-
-SmugMPForm::SmugMPForm()
-    : m_boundary(QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1())
-{
-}
-
-SmugMPForm::~SmugMPForm()
-{
-}
 
 void SmugMPForm::reset()
 {

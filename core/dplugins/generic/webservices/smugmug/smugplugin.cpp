@@ -34,10 +34,6 @@ SmugPlugin::SmugPlugin(QObject* const parent)
 {
 }
 
-SmugPlugin::~SmugPlugin()
-{
-}
-
 void SmugPlugin::cleanUp()
 {
     delete m_toolDlgExport;
@@ -95,7 +91,7 @@ QList<DPluginAuthor> SmugPlugin::authors() const
                              QString::fromUtf8("(C) 2017-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2024"))
             ;
 }
 

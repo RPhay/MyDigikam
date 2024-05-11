@@ -29,10 +29,7 @@ class SmugUser
 
 public:
 
-    explicit SmugUser()
-      : fileSizeLimit(0)
-    {
-    }
+    SmugUser() = default;
 
     void clear()
     {
@@ -55,7 +52,7 @@ public:
     QString userUri;
     QString nodeUri;
     QString folderUri;
-    int     fileSizeLimit;
+    int     fileSizeLimit   = 0;
 };
 
 // ---------------------------------------------------------------------------------
@@ -65,20 +62,11 @@ class SmugAlbum
 
 public:
 
-    explicit SmugAlbum()
-      : id           (-1),
-        categoryID   (-1),
-        subCategoryID(-1),
-        isPublic     (true),
-        canShare     (true),
-        imageCount   (0),
-        tmplID       (-1)
-    {
-    }
+    SmugAlbum() = default;
 
 public:
 
-    qint64  id;
+    qint64  id              = -1;
     QString nodeID;
 
     QString name;
@@ -87,21 +75,21 @@ public:
     QString description;
     QString keywords;
 
-    qint64  categoryID;
+    qint64  categoryID      = -1;
     QString category;
 
-    qint64  subCategoryID;
+    qint64  subCategoryID   = -1;
     QString subCategory;
 
-    bool    isPublic;
+    bool    isPublic        = true;
     QString password;
-    bool    canShare;
+    bool    canShare        = true;
     QString passwordHint;
 
-    int     imageCount;
+    int     imageCount      = 0;
 
     /// below fields only used by createAlbum (and not by listAlbums)
-    qint64  tmplID;
+    qint64  tmplID          = -1;
     QString tmpl;
 
     static bool lessThan(SmugAlbum& a, SmugAlbum& b)
@@ -117,14 +105,11 @@ class SmugPhoto
 
 public:
 
-    explicit SmugPhoto()
-      : id(-1)
-    {
-    }
+    SmugPhoto() = default;
 
 public:
 
-    qint64  id;
+    qint64  id          = -1;
 
     QString key;
     QString caption;
@@ -141,19 +126,15 @@ class SmugAlbumTmpl
 
 public:
 
-    explicit SmugAlbumTmpl()
-      : id(-1),
-        isPublic(true)
-    {
-    }
+    SmugAlbumTmpl() = default;
 
 public:
 
-    qint64  id;
+    qint64  id          = -1;
     QString name;
     QString uri;
 
-    bool    isPublic;
+    bool    isPublic    = true;
     QString password;
     QString passwordHint;
 };
@@ -165,14 +146,11 @@ class SmugCategory
 
 public:
 
-    explicit SmugCategory()
-      : id(-1)
-    {
-    }
+    SmugCategory() = default;
 
 public:
 
-    qint64  id;
+    qint64  id  = -1;
     QString name;
 };
 

@@ -89,56 +89,36 @@ public:
 
 public:
 
-    explicit Private()
-      : parent(nullptr),
-        userAgent(QString::fromLatin1("digiKam/%1 (digikamdeveloper@gmail.com)").arg(digiKamVersion())),
-        apiURL(QLatin1String("https://api.smugmug.com%1")),
-        uploadUrl(QLatin1String("https://upload.smugmug.com/")),
-        requestTokenUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getRequestToken")),
-        authUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/authorize")),
-        accessTokenUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getAccessToken")),
-        apiVersion(QLatin1String("v2")),
-        apikey(QLatin1String("xKp43CXF8MHgjhgGdgdgfgc7cWjqQcck")),
-        clientSecret(QLatin1String("3CKcLcWx64Rm8HVRwX3bf4HCtJpnGrwnk9xSn4DK8wRhGLVsRBBFktD95W4HTRHD")),
-        iface(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
-        state(SMUG_LOGOUT),
-        settings(nullptr),
-        requestor(nullptr),
-        o1(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QWidget*               parent;
+    QWidget*               parent           = nullptr;
 
-    QString                userAgent;
+    QString                userAgent        = QString::fromLatin1("digiKam/%1 (digikamdeveloper@gmail.com)").arg(digiKamVersion());
+    QString                apiURL           = QLatin1String("https://api.smugmug.com%1");
+    QString                uploadUrl        = QLatin1String("https://upload.smugmug.com/");
+    QString                requestTokenUrl  = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getRequestToken");
+    QString                authUrl          = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/authorize");
+    QString                accessTokenUrl   = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getAccessToken");
+    QString                apiVersion       = QLatin1String("v2");
+    QString                apikey           = QLatin1String("xKp43CXF8MHgjhgGdgdgfgc7cWjqQcck");
+    QString                clientSecret     = QLatin1String("3CKcLcWx64Rm8HVRwX3bf4HCtJpnGrwnk9xSn4DK8wRhGLVsRBBFktD95W4HTRHD");
 
-    QString                apiURL;
-    QString                uploadUrl;
-    QString                requestTokenUrl;
-    QString                authUrl;
-    QString                accessTokenUrl;
-
-    QString                apiVersion;
-    QString                apikey;
-    QString                clientSecret;
     QString                sessionID;
 
     SmugUser               user;
-    DInfoInterface*        iface;
+    DInfoInterface*        iface            = nullptr;
 
-    QNetworkAccessManager* netMngr;
+    QNetworkAccessManager* netMngr          = nullptr;
 
-    QNetworkReply*         reply;
+    QNetworkReply*         reply            = nullptr;
 
-    State                  state;
+    State                  state            = SMUG_LOGOUT;
 
-    QSettings*             settings;
-    O1Requestor*           requestor;
-    O1SmugMug*             o1;
+    QSettings*             settings         = nullptr;
+    O1Requestor*           requestor        = nullptr;
+    O1SmugMug*             o1               = nullptr;
 };
 
 SmugTalker::SmugTalker(DInfoInterface* const iface, QWidget* const parent)
@@ -212,7 +192,9 @@ SmugTalker::~SmugTalker()
 */
 
     if (d->reply)
+    {
         d->reply->abort();
+    }
 
     delete d;
 }
@@ -252,7 +234,9 @@ bool SmugTalker::loggedIn() const
 void SmugTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Smug fail";
+
     Q_EMIT signalBusy(false);
+
     getLoginedUser();
 }
 
@@ -275,6 +259,7 @@ void SmugTalker::slotLinkingSucceeded()
         d->state = Private::SMUG_LOGOUT;
 
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -681,24 +666,34 @@ QString SmugTalker::errorToText(int errCode, const QString& errMsg) const
     switch (errCode)
     {
         case 0:
+        {
             transError = QString();
             break;
+        }
 
         case 1:
+        {
             transError = i18n("Login failed");
             break;
+        }
 
         case 4:
+        {
             transError = i18n("Invalid user/nick/password");
             break;
+        }
 
         case 18:
+        {
             transError = i18n("Invalid API key");
             break;
+        }
 
         default:
+        {
             transError = errMsg;
             break;
+        }
     }
 
     return transError;
@@ -724,6 +719,7 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
 
             Q_EMIT signalBusy(false);
             Q_EMIT signalLoginDone(reply->error(), reply->errorString());
+
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code : " << reply->error() << "error text " << reply->errorString();
         }
         else if (d->state == Private::SMUG_ADDPHOTO)
@@ -739,6 +735,7 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
         else
         {
             Q_EMIT signalBusy(false);
+
             QMessageBox::critical(QApplication::activeWindow(),
                                 i18nc("@title:window", "Error"), reply->errorString());
         }
@@ -752,47 +749,66 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case (Private::SMUG_LOGIN):
+        {
             parseResponseLogin(buffer);
             break;
+        }
 
         case (Private::SMUG_LISTALBUMS):
+        {
             parseResponseListAlbums(buffer);
             break;
+        }
 
         case (Private::SMUG_LISTPHOTOS):
+        {
             parseResponseListPhotos(buffer);
             break;
+        }
 
         case (Private::SMUG_LISTALBUMTEMPLATES):
+        {
             parseResponseListAlbumTmpl(buffer);
             break;
+        }
 /*
         case (Private::SMUG_LISTCATEGORIES):
+        {
             parseResponseListCategories(buffer);
             break;
+        }
 
         case (Private::SMUG_LISTSUBCATEGORIES):
+        {
             parseResponseListSubCategories(buffer);
             break;
+        }
 */
         case (Private::SMUG_CREATEALBUM):
+        {
             parseResponseCreateAlbum(buffer);
             break;
+        }
 
         case (Private::SMUG_ADDPHOTO):
+        {
             parseResponseAddPhoto(buffer);
             break;
+        }
 
         case (Private::SMUG_GETPHOTO):
-
+        {
             // all we get is data of the image
 
             Q_EMIT signalBusy(false);
             Q_EMIT signalGetPhotoDone(0, QString(), buffer);
             break;
+        }
 
         default: // Private::SMUG_LOGIN
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -810,8 +826,10 @@ void SmugTalker::parseResponseLogin(const QByteArray& data)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "failed to parse to json";
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "errCode " << err.error;
+
         Q_EMIT signalLoginDone(err.error, errorToText(err.error, err.errorString()));
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -902,7 +920,6 @@ void SmugTalker::parseResponseLogout(const QByteArray& data)
  *
  * Since all we care about is success or not, we can just check the rsp stat.
  */
-
 void SmugTalker::parseResponseAddPhoto(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhoto";
@@ -916,6 +933,7 @@ void SmugTalker::parseResponseAddPhoto(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoDone(err.error, errorToText(err.error, err.errorString()));
+
         return;
     }
 
@@ -959,6 +977,7 @@ void SmugTalker::parseResponseListAlbums(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsDone(err.error,i18n("Failed to list albums"), QList<SmugAlbum>());
+
         return;
     }
 
@@ -1017,6 +1036,7 @@ void SmugTalker::parseResponseListPhotos(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListPhotosDone(err.error, errorToText(err.error, err.errorString()), QList<SmugPhoto>());
+
         return;
     }
 
@@ -1044,7 +1064,6 @@ void SmugTalker::parseResponseListPhotos(const QByteArray& data)
                                          << ", keywords: "  << photo.keywords
                                          << ", ThumbnailUrl " << photo.thumbURL
                                          << ", originalURL "  << photo.originalURL;
-
     }
 
     Q_EMIT signalBusy(false);
@@ -1062,6 +1081,7 @@ void SmugTalker::parseResponseListAlbumTmpl(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumTmplDone(err.error,i18n("Failed to list album template"), QList<SmugAlbumTmpl>());
+
         return;
     }
 

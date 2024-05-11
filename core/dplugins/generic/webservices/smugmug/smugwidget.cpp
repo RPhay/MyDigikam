@@ -256,10 +256,6 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     }
 }
 
-SmugWidget::~SmugWidget()
-{
-}
-
 DItemsList* SmugWidget::imagesList() const
 {
     return m_imgList;

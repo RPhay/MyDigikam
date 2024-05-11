@@ -37,7 +37,7 @@ class SmugPlugin : public DPluginGeneric
 public:
 
     explicit SmugPlugin(QObject* const parent = nullptr);
-    ~SmugPlugin()                        override;
+    ~SmugPlugin()                        override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

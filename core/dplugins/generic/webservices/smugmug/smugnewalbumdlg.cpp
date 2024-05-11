@@ -45,36 +45,22 @@ class Q_DECL_HIDDEN SmugNewAlbumDlg::Private
 {
 public:
 
-    explicit Private()
-      : templateCoB(nullptr),
-/*
-        categCoB(nullptr)
-        subCategCoB(nullptr),
-*/
-        privBox(nullptr),
-        titleEdt(nullptr),
-        passwdEdt(nullptr),
-        hintEdt(nullptr),
-        descEdt(nullptr),
-        publicRBtn(nullptr),
-        unlistedRBtn(nullptr)
-    {
-    }
+    Private() = default;
 
-    QComboBox*    templateCoB;
+    QComboBox*    templateCoB   = nullptr;
 
 /*  Categories are deprecated
-    QComboBox*    categCoB;
-    QComboBox*    subCategCoB;
+    QComboBox*    categCoB      = nullptr;
+    QComboBox*    subCategCoB   = nullptr;
 */
 
-    QGroupBox*    privBox;
-    DTextEdit*    titleEdt;
-    QLineEdit*    passwdEdt;
-    QLineEdit*    hintEdt;
-    DTextEdit*    descEdt;
-    QRadioButton* publicRBtn;
-    QRadioButton* unlistedRBtn;
+    QGroupBox*    privBox       = nullptr;
+    DTextEdit*    titleEdt      = nullptr;
+    QLineEdit*    passwdEdt     = nullptr;
+    QLineEdit*    hintEdt       = nullptr;
+    DTextEdit*    descEdt       = nullptr;
+    QRadioButton* publicRBtn    = nullptr;
+    QRadioButton* unlistedRBtn  = nullptr;
 };
 
 SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)

@@ -21,6 +21,12 @@
 #include <QByteArray>
 #include <QString>
 
+// Local includes
+
+#include "wstoolutils.h"
+
+using namespace Digikam;
+
 namespace DigikamGenericSmugPlugin
 {
 
@@ -29,8 +35,8 @@ class SmugMPForm
 
 public:
 
-    explicit SmugMPForm();
-    ~SmugMPForm();
+    SmugMPForm()  = default;
+    ~SmugMPForm() = default;
 
 public:
 
@@ -51,7 +57,7 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary;
+    QByteArray m_boundary = QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1();
 };
 
 } // namespace DigikamGenericSmugPlugin

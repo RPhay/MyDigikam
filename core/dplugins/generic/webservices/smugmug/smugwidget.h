@@ -48,7 +48,7 @@ public:
     explicit SmugWidget(QWidget* const parent,
                         DInfoInterface* const iface,
                         bool import);
-    ~SmugWidget() override;
+    ~SmugWidget() override = default;
 
 public:
 
@@ -81,37 +81,37 @@ private Q_SLOTS:
 
 private:
 
-    QLabel*         m_headerLbl;
-    QLabel*         m_userNameLbl;
-    QLabel*         m_userName;
-    QLabel*         m_emailLbl;
-    QLabel*         m_email;
-    QLabel*         m_nickNameLbl;
-    QLabel*         m_sitePasswordLbl;
-    QLabel*         m_albumPasswordLbl;
+    QLabel*         m_headerLbl         = nullptr;
+    QLabel*         m_userNameLbl       = nullptr;
+    QLabel*         m_userName          = nullptr;
+    QLabel*         m_emailLbl          = nullptr;
+    QLabel*         m_email             = nullptr;
+    QLabel*         m_nickNameLbl       = nullptr;
+    QLabel*         m_sitePasswordLbl   = nullptr;
+    QLabel*         m_albumPasswordLbl  = nullptr;
 
-    QRadioButton*   m_anonymousRBtn;
-    QRadioButton*   m_accountRBtn;
+    QRadioButton*   m_anonymousRBtn     = nullptr;
+    QRadioButton*   m_accountRBtn       = nullptr;
 
-    QCheckBox*      m_resizeChB;
+    QCheckBox*      m_resizeChB         = nullptr;
 
-    QSpinBox*       m_dimensionSpB;
-    QSpinBox*       m_imageQualitySpB;
+    QSpinBox*       m_dimensionSpB      = nullptr;
+    QSpinBox*       m_imageQualitySpB   = nullptr;
 
-    QComboBox*      m_albumsCoB;
+    QComboBox*      m_albumsCoB         = nullptr;
 
-    QPushButton*    m_newAlbumBtn;
-    QPushButton*    m_reloadAlbumsBtn;
-    QPushButton*    m_changeUserBtn;
+    QPushButton*    m_newAlbumBtn       = nullptr;
+    QPushButton*    m_reloadAlbumsBtn   = nullptr;
+    QPushButton*    m_changeUserBtn     = nullptr;
 
-    QLineEdit*      m_albumPasswordEdt;
-    QLineEdit*      m_nickNameEdt;
-    QLineEdit*      m_sitePasswordEdt;
+    QLineEdit*      m_albumPasswordEdt  = nullptr;
+    QLineEdit*      m_nickNameEdt       = nullptr;
+    QLineEdit*      m_sitePasswordEdt   = nullptr;
 
-    DInfoInterface* m_iface;
-    DProgressWdg*   m_progressBar;
-    DItemsList*     m_imgList;
-    QWidget*        m_uploadWidget;
+    DInfoInterface* m_iface             = nullptr;
+    DProgressWdg*   m_progressBar       = nullptr;
+    DItemsList*     m_imgList           = nullptr;
+    QWidget*        m_uploadWidget      = nullptr;
 
 private:
 
