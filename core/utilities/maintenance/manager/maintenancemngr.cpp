@@ -357,7 +357,8 @@ void MaintenanceMngr::stage8()
         list << d->settings.albums;
         list << d->settings.tags;
 
-        d->imageQualitySorter = new ImageQualitySorter((ImageQualitySorter::QualityScanMode)d->settings.qualityScanMode, list, d->settings.quality);
+        d->imageQualitySorter = new ImageQualitySorter((ImageQualitySorter::QualityScanMode)d->settings.qualityScanMode,
+                                                       list, d->settings.quality);
         d->imageQualitySorter->setNotificationEnabled(false);
         d->imageQualitySorter->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
         d->imageQualitySorter->start();

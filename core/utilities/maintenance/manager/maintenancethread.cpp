@@ -381,6 +381,7 @@ int MaintenanceThread::getChunkSize(int elementCount)
     }
 
     // add a factor to the chunk size (do it dynamically depending on free mem?)
+
     chunkSize = chunkSize * 0.5;
 
     return chunkSize;
