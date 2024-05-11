@@ -63,51 +63,33 @@ public:
 
 public:
 
-    explicit Private()
-      : state   (OD_USERNAME),
-        parent  (nullptr),
-        netMngr (nullptr),
-        reply   (nullptr),
-        settings(nullptr),
-        browser (nullptr)
-    {
-        clientId     = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
-        clientSecret = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
-
-        authUrl      = QLatin1String("https://login.live.com/oauth20_authorize.srf");
-        tokenUrl     = QLatin1String("https://login.live.com/oauth20_token.srf");
-        scope        = QLatin1String("Files.ReadWrite User.Read");
-        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
-        serviceName  = QLatin1String("Onedrive");
-        serviceTime  = QLatin1String("token_time");
-        serviceKey   = QLatin1String("access_token");
-    }
+    Private() = default;
 
 public:
 
-    QString                         clientId;
-    QString                         clientSecret;
-    QString                         authUrl;
-    QString                         tokenUrl;
-    QString                         scope;
-    QString                         redirectUrl;
+    QString                         clientId        = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
+    QString                         clientSecret    = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
+    QString                         authUrl         = QLatin1String("https://login.live.com/oauth20_authorize.srf");;
+    QString                         tokenUrl        = QLatin1String("https://login.live.com/oauth20_token.srf");
+    QString                         scope           = QLatin1String("Files.ReadWrite User.Read");
+    QString                         redirectUrl     = QLatin1String("https://login.live.com/oauth20_desktop.srf");
+    QString                         serviceName     = QLatin1String("Onedrive");
+    QString                         serviceTime     = QLatin1String("token_time");
+    QString                         serviceKey      = QLatin1String("access_token");
     QString                         accessToken;
-    QString                         serviceName;
-    QString                         serviceTime;
-    QString                         serviceKey;
 
     QDateTime                       expiryTime;
 
-    State                           state;
+    State                           state           = OD_USERNAME;
 
-    QWidget*                        parent;
+    QWidget*                        parent          = nullptr;
 
-    QNetworkAccessManager*          netMngr;
-    QNetworkReply*                  reply;
+    QNetworkAccessManager*          netMngr         = nullptr;
+    QNetworkReply*                  reply           = nullptr;
 
-    QSettings*                      settings;
+    QSettings*                      settings        = nullptr;
 
-    WebBrowserDlg*                  browser;
+    WebBrowserDlg*                  browser         = nullptr;
 
     QList<QPair<QString, QString> > folderList;
     QList<QString>                  nextFolder;
@@ -195,6 +177,7 @@ void ODTalker::slotCatchUrl(const QUrl& url)
         writeSettings();
 
         qDebug(DIGIKAM_WEBSERVICES_LOG) << "Access token received";
+
         Q_EMIT oneDriveLinkingSucceeded();
     }
     else
@@ -206,6 +189,7 @@ void ODTalker::slotCatchUrl(const QUrl& url)
 void ODTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Onedrive fail";
+
     Q_EMIT signalBusy(false);
 }
 
@@ -214,7 +198,9 @@ void ODTalker::slotLinkingSucceeded()
     if (d->accessToken.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Onedrive";
+
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -271,6 +257,7 @@ void ODTalker::createFolder(QString& path)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::OD_CREATEFOLDER;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -284,6 +271,7 @@ void ODTalker::getUserName()
 
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::OD_USERNAME;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -314,6 +302,7 @@ void ODTalker::listFolders(const QString& folder)
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::OD_LISTFOLDERS;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -339,6 +328,7 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
         if (image.isNull())
         {
             Q_EMIT signalBusy(false);
+
             return false;
         }
 
@@ -366,6 +356,7 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
     if (!form.addFile(path))
     {
         Q_EMIT signalBusy(false);
+
         return false;
     }
 
@@ -397,10 +388,12 @@ void ODTalker::slotFinished(QNetworkReply* reply)
         if (d->state != Private::OD_CREATEFOLDER)
         {
             Q_EMIT signalTransferCancel();
+
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18nc("@title:window", "Error"), reply->errorString());
 
             reply->deleteLater();
+
             return;
         }
     }
@@ -410,27 +403,37 @@ void ODTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case Private::OD_LISTFOLDERS:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+        }
 
         case Private::OD_CREATEFOLDER:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+        }
 
         case Private::OD_ADDPHOTO:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+        }
 
         case Private::OD_USERNAME:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_USERNAME";
             parseResponseUserName(buffer);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -456,6 +459,7 @@ void ODTalker::parseResponseUserName(const QByteArray& data)
 {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     QString name      = doc.object()[QLatin1String("displayName")].toString();
+
     Q_EMIT signalBusy(false);
     Q_EMIT signalSetUserName(name);
 }
@@ -469,6 +473,7 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
+
         return;
     }
 
@@ -540,6 +545,7 @@ void ODTalker::parseResponseCreateFolder(const QByteArray& data)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+
         Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
@@ -577,6 +583,7 @@ void ODTalker::readSettings()
     else
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Already Linked";
+
         Q_EMIT oneDriveLinkingSucceeded();
     }
 }

@@ -31,16 +31,14 @@ ODWidget::ODWidget(QWidget* const parent,
     getSizeBox()->hide();
 }
 
-ODWidget::~ODWidget()
-{
-}
-
 void ODWidget::updateLabels(const QString& name, const QString& url)
 {
     QString web(QLatin1String("https://www.onedrive.com/"));
 
     if (!url.isEmpty())
+    {
         web = url;
+    }
 
     getHeaderLbl()->setText(QString::fromLatin1(
         "<b><h2><a href='%1'>"

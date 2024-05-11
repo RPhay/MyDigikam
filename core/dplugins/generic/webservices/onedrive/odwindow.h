@@ -40,7 +40,7 @@ class ODWindow : public WSToolDialog
 public:
 
     explicit ODWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~ODWindow() override;
+    ~ODWindow()                     override;
 
     void reactivate();
 
@@ -54,7 +54,7 @@ private:
     void uploadNextPhoto();
 
     void buttonStateChange(bool state);
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private Q_SLOTS:
 

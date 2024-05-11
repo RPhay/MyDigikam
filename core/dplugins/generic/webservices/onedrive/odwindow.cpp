@@ -46,21 +46,14 @@ class Q_DECL_HIDDEN ODWindow::Private
 {
 public:
 
-    explicit Private()
-    {
-        imagesCount = 0;
-        imagesTotal = 0;
-        widget      = nullptr;
-        albumDlg    = nullptr;
-        talker      = nullptr;
-    }
+    Private() = default;
 
-    unsigned int   imagesCount;
-    unsigned int   imagesTotal;
+    unsigned int   imagesCount  = 0;
+    unsigned int   imagesTotal  = 0;
 
-    ODWidget*      widget;
-    ODNewAlbumDlg* albumDlg;
-    ODTalker*      talker;
+    ODWidget*      widget       = nullptr;
+    ODNewAlbumDlg* albumDlg     = nullptr;
+    ODTalker*      talker       = nullptr;
 
     QString        currentAlbumName;
     QList<QUrl>    transferQueue;
@@ -278,8 +271,8 @@ void ODWindow::slotStartTransfer()
     d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "StartTransfer:" << d->currentAlbumName
                                      << "INDEX: " << d->widget->getAlbumsCoB()->currentIndex();
-    d->imagesTotal = d->transferQueue.count();
-    d->imagesCount = 0;
+    d->imagesTotal      = d->transferQueue.count();
+    d->imagesCount      = 0;
 
     d->widget->progressBar()->setFormat(i18nc("@info: progress bar", "%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);

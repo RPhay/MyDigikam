@@ -27,8 +27,8 @@ class ODMPForm
 
 public:
 
-    explicit ODMPForm();
-    ~ODMPForm();
+    ODMPForm()  = default;
+    ~ODMPForm() = default;
 
     bool addFile(const QString& imgPath);
     QByteArray formData() const;

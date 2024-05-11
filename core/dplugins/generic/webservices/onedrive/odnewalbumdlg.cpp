@@ -31,10 +31,6 @@ ODNewAlbumDlg::ODNewAlbumDlg(QWidget* const parent, const QString& toolName)
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-ODNewAlbumDlg::~ODNewAlbumDlg()
-{
-}
-
 void ODNewAlbumDlg::getFolderTitle(ODFolder& folder)
 {
     folder.title = QLatin1Char('/') + getTitleEdit()->text();

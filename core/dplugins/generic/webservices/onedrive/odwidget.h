@@ -41,7 +41,7 @@ public:
     explicit ODWidget(QWidget* const parent,
                       DInfoInterface* const iface,
                       const QString& toolName);
-    ~ODWidget() override;
+    ~ODWidget() override = default;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

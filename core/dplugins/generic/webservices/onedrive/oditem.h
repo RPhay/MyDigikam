@@ -26,9 +26,7 @@ class ODPhoto
 {
 public:
 
-    ODPhoto()
-    {
-    }
+    ODPhoto() = default;
 
     QString title;
 };
@@ -37,9 +35,7 @@ class ODFolder
 {
 public:
 
-    ODFolder()
-    {
-    }
+    ODFolder() = default;
 
     QString title;
 };

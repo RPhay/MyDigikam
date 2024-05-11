@@ -25,14 +25,6 @@
 namespace DigikamGenericOneDrivePlugin
 {
 
-ODMPForm::ODMPForm()
-{
-}
-
-ODMPForm::~ODMPForm()
-{
-}
-
 bool ODMPForm::addFile(const QString& imgPath)
 {
     QFile file(imgPath);

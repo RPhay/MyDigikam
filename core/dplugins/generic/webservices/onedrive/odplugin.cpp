@@ -34,10 +34,6 @@ ODPlugin::ODPlugin(QObject* const parent)
 {
 }
 
-ODPlugin::~ODPlugin()
-{
-}
-
 void ODPlugin::cleanUp()
 {
     delete m_toolDlg;
