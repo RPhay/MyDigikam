@@ -391,6 +391,7 @@ void CameraController::run()
             }
         }
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (command)
         {
             executeCommand(command);
@@ -440,6 +441,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             d->camera->cameraAbout(about);
 
             Q_EMIT signalCameraInformation(summary, manual, about);
+
             break;
         }
 
@@ -455,6 +457,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             }
 
             Q_EMIT signalFreeSpace(bytesSize, bytesAvail);
+
             break;
         }
 
@@ -469,6 +472,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             }
 
             Q_EMIT signalPreview(preview);
+
             break;
         }
 
@@ -483,6 +487,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             }
 
             Q_EMIT signalUploaded(itemInfo);
+
             break;
         }
 
@@ -1061,6 +1066,7 @@ void CameraController::slotUploadFailed(const QString& folder, const QString& fi
 void CameraController::slotDeleteFailed(const QString& folder, const QString& file)
 {
     Q_EMIT signalDeleted(folder, file, false);
+
     sendLogMsg(xi18n("Failed to delete <filename>%1</filename>", file),
                DHistoryView::ErrorEntry, folder, file);
 
