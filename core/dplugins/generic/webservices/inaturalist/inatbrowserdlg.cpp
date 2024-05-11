@@ -59,7 +59,7 @@ namespace DigikamGenericINatPlugin
 /**
  * Derived class that exposes protected function allCookies().
  */
-class InatBrowserCookieJar : public QNetworkCookieJar
+class Q_DECL_HIDDEN InatBrowserCookieJar : public QNetworkCookieJar
 {
 public:
 

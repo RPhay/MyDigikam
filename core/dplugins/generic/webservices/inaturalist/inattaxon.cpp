@@ -131,10 +131,10 @@ QString Taxon::htmlName() const
 
     QStringList split = name().split(blank);
 
-    if (
-        (split.count() == 3) &&
-        ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid))
-       )
+    if      (
+             (split.count() == 3) &&
+             ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid))
+            )
     {
         QString txt = (rank() == subspecies) ? QLatin1String(" ssp. ")
                                              : (rank() == variety) ? QLatin1String(" var. ")

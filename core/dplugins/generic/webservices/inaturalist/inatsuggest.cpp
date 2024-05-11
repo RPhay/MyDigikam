@@ -37,7 +37,7 @@ enum
     ITEM_NAME_IDX  = 1
 };
 
-struct TaxonAndFlags
+struct Q_DECL_HIDDEN TaxonAndFlags
 {
     explicit TaxonAndFlags(const Taxon& taxon,
                            bool visuallySimilar = false,
@@ -53,7 +53,7 @@ struct TaxonAndFlags
     bool  m_visuallySimilar = false;
 };
 
-struct Completions
+struct Q_DECL_HIDDEN Completions
 {
     explicit Completions(bool fromVision)
         : m_fromVision(fromVision)
