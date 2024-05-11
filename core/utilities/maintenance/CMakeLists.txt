@@ -8,32 +8,43 @@
 APPLY_COMMON_POLICIES()
 
 set(libmaintenance_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/iteminfojob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/iteminfoalbumsjob.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedata.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/iteminfojob.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/iteminfoalbumsjob.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadataremovetask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadataremover.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadatasynctask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadatasynchronizer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/duplicatesfinder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/databasetask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dbcleaner.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/newitemsfinder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/thumbsgenerator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/thumbstask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/facesdetector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprintsgenerator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/fingerprintstask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitysorter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitytask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancetool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancemngr.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancetool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancesettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancethread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/autotagsassignment.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/autotagsassignmenttask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/metaremover/metadataremovetask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/metaremover/metadataremover.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/metasync/metadatasynctask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/metasync/metadatasynchronizer.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/duplicates/duplicatesfinder.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbcleaner/databasetask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbcleaner/dbcleaner.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/dbscan/newitemsfinder.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/thumbs/thumbsgenerator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/thumbs/thumbstask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/facesmanagement/facesdetector.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/fingerprints/fingerprintsgenerator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/fingerprints/fingerprintstask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/imgqsort/imagequalitysorter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/imgqsort/imagequalitytask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignment.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autotags/autotagsassignmenttask.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
