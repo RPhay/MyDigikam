@@ -167,24 +167,6 @@ void ImageWindow::setupUserArea()
     hlay->setContentsMargins(QMargins());
     hlay->setSpacing(0);
 
-    // Code to check for the now depreciated HorizontalThumbar directive. It
-    // is found, it is honored and deleted. The state will from than on be saved
-    // by d->viewContainers built-in mechanism.
-
-    Qt::DockWidgetArea dockArea = Qt::LeftDockWidgetArea;
-
-    if (group.hasKey(d->configHorizontalThumbbarEntry))
-    {
-        if (group.readEntry(d->configHorizontalThumbbarEntry, true))
-        {
-            // Horizontal thumbbar layout
-
-            dockArea    = Qt::TopDockWidgetArea;
-        }
-
-        group.deleteEntry(d->configHorizontalThumbbarEntry);
-    }
-
     d->imageInfoModel   = new ItemListModel(this);
 
     d->imageFilterModel = new ItemFilterModel(this);
@@ -213,11 +195,9 @@ void ImageWindow::setupUserArea()
     d->thumbBar->setModels(d->imageInfoModel, d->imageFilterModel);
 
     d->thumbBarDock->setWidget(d->thumbBar);
-    d->viewContainer->addDockWidget(dockArea, d->thumbBarDock);
+    d->viewContainer->addDockWidget(Qt::LeftDockWidgetArea, d->thumbBarDock);
     d->thumbBarDock->setFloating(false);
-/*
-    d->thumbBar->slotDockLocationChanged(dockArea);
-*/
+
     setCentralWidget(widget);
 }
 

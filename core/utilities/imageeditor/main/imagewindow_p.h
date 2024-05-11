@@ -240,7 +240,6 @@ public:
 public:
 
     const QString                configShowThumbbarEntry                = QLatin1String("Show Thumbbar");
-    const QString                configHorizontalThumbbarEntry          = QLatin1String("HorizontalThumbbar");
 
     QMainWindow*                 viewContainer                          = nullptr;
 
