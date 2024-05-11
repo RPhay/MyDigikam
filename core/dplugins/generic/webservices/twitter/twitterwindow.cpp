@@ -46,26 +46,18 @@ class Q_DECL_HIDDEN TwWindow::Private
 {
 public:
 
-    explicit Private()
-      : imagesCount(0),
-        imagesTotal(0),
-        widget     (nullptr),
-        albumDlg   (nullptr),
-        talker     (nullptr)
-    {
-    }
+    Private() = default;
 
-    unsigned int   imagesCount;
-    unsigned int   imagesTotal;
+    unsigned int   imagesCount          = 0;
+    unsigned int   imagesTotal          = 0;
 
-    TwWidget*      widget;
-    TwNewAlbumDlg* albumDlg;
-    TwTalker*      talker;
+    TwWidget*      widget               = nullptr;
+    TwNewAlbumDlg* albumDlg             = nullptr;
+    TwTalker*      talker               = nullptr;
 
     QString        currentAlbumName;
     QList<QUrl>    transferQueue;
 };
-
 
 TwWindow::TwWindow(DInfoInterface* const iface,
                    QWidget* const /*parent*/)

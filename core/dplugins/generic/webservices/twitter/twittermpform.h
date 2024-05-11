@@ -22,7 +22,13 @@
 #include <QString>
 #include <QList>
 
+// Local includes
+
+#include "wstoolutils.h"
+
 #define MAX_MEDIA_SIZE 1048576
+
+using namespace Digikam;
 
 namespace DigikamGenericTwitterPlugin
 {
@@ -32,8 +38,8 @@ class TwMPForm
 
 public:
 
-    explicit TwMPForm();
-    ~TwMPForm();
+    TwMPForm();
+    ~TwMPForm() = default;
 
     void reset();
     QByteArray fileHeader(const QString& imgPath);
@@ -55,7 +61,7 @@ private:
 private:
 
     QByteArray        m_buffer;
-    QByteArray        m_boundary;
+    QByteArray        m_boundary = QByteArray("00TwDK") + WSToolUtils::randomString(42 + 13).toLatin1() + QByteArray("KDwT99");
     QList<QByteArray> m_chunks;
 };
 

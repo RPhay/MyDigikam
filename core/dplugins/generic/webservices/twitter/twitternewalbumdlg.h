@@ -39,7 +39,7 @@ class TwNewAlbumDlg : public WSNewAlbumDialog
 public:
 
      explicit TwNewAlbumDlg(QWidget* const parent, const QString& toolName);
-     ~TwNewAlbumDlg() override;
+     ~TwNewAlbumDlg() override = default;;
 
      void getAlbumProperties(TwAlbum& album);
 

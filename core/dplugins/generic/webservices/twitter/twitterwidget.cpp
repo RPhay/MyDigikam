@@ -38,10 +38,6 @@ TwWidget::TwWidget(QWidget* const parent,
     getAlbumBox()->hide();
 }
 
-TwWidget::~TwWidget()
-{
-}
-
 void TwWidget::updateLabels(const QString& name, const QString& url)
 {
     QString web(QLatin1String("https://www.twitter.com/"));

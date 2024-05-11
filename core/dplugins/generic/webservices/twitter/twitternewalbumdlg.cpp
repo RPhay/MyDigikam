@@ -31,10 +31,6 @@ TwNewAlbumDlg::TwNewAlbumDlg(QWidget* const parent, const QString& toolName)
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-TwNewAlbumDlg::~TwNewAlbumDlg()
-{
-}
-
 void TwNewAlbumDlg::getAlbumProperties(TwAlbum& album)
 {
     album.title       = getTitleEdit()->text();

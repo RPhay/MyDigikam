@@ -38,7 +38,7 @@ public:
     explicit TwWidget(QWidget* const parent,
                       DInfoInterface* const iface,
                       const QString& toolName);
-    ~TwWidget() override;
+    ~TwWidget() override = default;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;

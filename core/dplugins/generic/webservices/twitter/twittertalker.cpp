@@ -80,60 +80,42 @@ public:
 
 public:
 
-    explicit Private()
-      : clientId        (QLatin1String("lkRgRsucipXsUEvKh0ECblreC")),
-        clientSecret    (QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe")),
-        authUrl         (QLatin1String("https://api.twitter.com/oauth/authenticate")),
-        requestTokenUrl (QLatin1String("https://api.twitter.com/oauth/request_token")),
-        accessTokenUrl  (QLatin1String("https://api.twitter.com/oauth/access_token")),
-/*
-        scope           (QLatin1String("User.Read Files.ReadWrite")),
-*/
-        redirectUrl     (QLatin1String("http://127.0.0.1:8000")),                            // krazy:exclude=insecurenet
-        uploadUrl       (QLatin1String("https://upload.twitter.com/1.1/media/upload.json")),
-        segmentIndex    (0),
-        parent          (nullptr),
-        netMngr         (nullptr),
-        reply           (nullptr),
-        state           (TW_USERNAME),
-        settings        (nullptr),
-        o1Twitter       (nullptr),
-        requestor       (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QString                clientId;
-    QString                clientSecret;
-    QString                authUrl;
-    QString                requestTokenUrl;
-    QString                accessTokenUrl;
-    QString                scope;
-    QString                redirectUrl;
+    QString                clientId             = QLatin1String("lkRgRsucipXsUEvKh0ECblreC");
+    QString                clientSecret         = QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe");
+    QString                authUrl              = QLatin1String("https://api.twitter.com/oauth/authenticate");
+    QString                requestTokenUrl      = QLatin1String("https://api.twitter.com/oauth/request_token");
+    QString                accessTokenUrl       = QLatin1String("https://api.twitter.com/oauth/access_token");
+    QString                redirectUrl          = QLatin1String("http://127.0.0.1:8000");                            // krazy:exclude=insecurenet
+    QString                uploadUrl            = QLatin1String("https://upload.twitter.com/1.1/media/upload.json");
+/*
+    QString                scope                = QLatin1String("User.Read Files.ReadWrite");
+*/
     QString                accessToken;
-    QString                uploadUrl;
     QString                mediaUploadedPath;
     QString                mediaId;
 
-    int                    segmentIndex;
+    int                    segmentIndex         = 0;
 
-    QWidget*               parent;
+    QWidget*               parent               = nullptr;
 
-    QNetworkAccessManager* netMngr;
+    QNetworkAccessManager* netMngr              = nullptr;
 
-    QNetworkReply*         reply;
+    QNetworkReply*         reply                = nullptr;
 
-    State                  state;
+    State                  state                = TW_USERNAME;
 
     QMap<QString, QString> urlParametersMap;
 /*
-    QWebEngineView*        view;
+    QWebEngineView*        view                 = nullptr;
 */
-    QSettings*             settings;
+    QSettings*             settings             = nullptr;
 
-    O1Twitter*             o1Twitter;
-    O1Requestor*           requestor;
+    O1Twitter*             o1Twitter            = nullptr;
+    O1Requestor*           requestor            = nullptr;
 };
 
 TwTalker::TwTalker(QWidget* const parent)
@@ -183,6 +165,7 @@ void TwTalker::link()
 {
 /*
     Q_EMIT signalBusy(true);
+
     QUrl url(d->requestTokenUrl);
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
@@ -191,8 +174,8 @@ void TwTalker::link()
     QNetworkReply* reply;
     reply = requestMngr.post(netRequest);
 
-    if (reply->error() != QNetworkReply::NoError){
-
+    if (reply->error() != QNetworkReply::NoError)
+    {
     }
 
     QByteArray buffer;
@@ -202,6 +185,7 @@ void TwTalker::link()
     QMultiMap<QString, QString> headers;
 
     // Discard the first line
+
     response = response.mid(response.indexOf('\n') + 1).trimmed();
 
     Q_FOREACH (QString line, response.split('\n'))
@@ -233,6 +217,7 @@ void TwTalker::link()
 */
 
     Q_EMIT signalBusy(true);
+
     d->o1Twitter->link();
 }
 
@@ -241,6 +226,7 @@ void TwTalker::unLink()
 /*
     d->accessToken = QString();
     d->view->page()->profile()->cookieStore()->deleteAllCookies();
+
     Q_EMIT oneDriveLinkingSucceeded();
 */
 
@@ -349,8 +335,10 @@ bool TwTalker::addPhoto(const QString& imgPath,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << imgFileInfo.suffix();
 
-    if ((imgFileInfo.suffix() != QLatin1String("gif")) &&
-        (imgFileInfo.suffix() != QLatin1String("mp4")))
+    if (
+        (imgFileInfo.suffix() != QLatin1String("gif")) &&
+        (imgFileInfo.suffix() != QLatin1String("mp4"))
+       )
     {
         QImage image     = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
         qint64 imageSize = QFileInfo(imgPath).size();
@@ -360,6 +348,7 @@ bool TwTalker::addPhoto(const QString& imgPath,
         if (image.isNull())
         {
             Q_EMIT signalBusy(false);
+
             return false;
         }
 
@@ -401,6 +390,7 @@ bool TwTalker::addPhoto(const QString& imgPath,
 bool TwTalker::addPhotoSingleUpload(const QString& imgPath)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "addPhotoSingleUpload";
+
     Q_EMIT signalBusy(true);
 
     TwMPForm form;
@@ -439,6 +429,7 @@ bool TwTalker::addPhotoSingleUpload(const QString& imgPath)
 bool TwTalker::addPhotoInit(const QString& imgPath)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "addPhotoInit";
+
     Q_EMIT signalBusy(true);
 
     TwMPForm form;
@@ -491,6 +482,7 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
         {
             Q_EMIT signalBusy(false);
             Q_EMIT signalAddPhotoFailed(i18n("File too big to upload"));
+
             return false;
         }
 
@@ -501,6 +493,7 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoFailed(i18n("Media format is not supported yet"));
+
         return false;
     }
 
@@ -538,6 +531,7 @@ bool TwTalker::addPhotoAppend(const QString& mediaId, int segmentIndex)
         form.addFile(d->mediaUploadedPath, true);
         d->segmentIndex = form.numberOfChunks() - 1;
     }
+
     QByteArray data(form.formData());
     data.append(form.createPair("segment_index", QString::number(segmentIndex).toLatin1()));
     data.append(form.createPair("media", form.getChunk(segmentIndex)));
@@ -673,54 +667,74 @@ void TwTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case Private::TW_LISTFOLDERS:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+        }
 
         case Private::TW_CREATEFOLDER:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+        }
 
         case Private::TW_ADDPHOTO:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+        }
 
         case Private::TW_USERNAME:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_USERNAME";
             parseResponseUserName(buffer);
             break;
+        }
 
         case Private::TW_CREATETWEET:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_CREATETWEET";
             parseResponseCreateTweet(buffer);
             break;
+        }
 
         case Private::TW_UPLOADINIT:
+        {
             segmentIndex = 0;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADINIT";
             parseResponseAddPhotoInit(buffer);
             break;
+        }
 
         case Private::TW_UPLOADAPPEND:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADAPPEND (at index " << segmentIndex << ")";
             segmentIndex++;
             parseResponseAddPhotoAppend(buffer, segmentIndex);
             break;
+        }
 
         case Private::TW_UPLOADSTATUSCHECK:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADSTATUSCHECK";
             parseCheckUploadStatus(buffer);
             break;
+        }
 
         case Private::TW_UPLOADFINALIZE:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADFINALIZE";
             parseResponseAddPhotoFinalize(buffer);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -736,6 +750,7 @@ void TwTalker::parseResponseAddPhoto(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
+
         return;
     }
 
@@ -758,6 +773,7 @@ void TwTalker::parseResponseAddPhotoInit(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
+
         return;
     }
 
@@ -836,6 +852,7 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
+
         return;
     }
 
@@ -850,6 +867,7 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
     else if (state == QLatin1String("failed"))
     {
         QJsonObject error = processingInfo[QLatin1String("error")].toObject();
+
         Q_EMIT signalBusy(false);
         Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo\n"
                                        "Code: %1, name: %2, message: %3",
@@ -875,6 +893,7 @@ void TwTalker::parseResponseUserName(const QByteArray& data)
     if (err.error != QJsonParseError::NoError)
     {
         Q_EMIT signalBusy(false);
+
         return;
     }
 
@@ -903,6 +922,7 @@ void TwTalker::parseResponseCreateTweet(const QByteArray& data)
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Tweet posted successfully!";
+
     Q_EMIT signalBusy(false);
     Q_EMIT signalAddPhotoSucceeded();
 }

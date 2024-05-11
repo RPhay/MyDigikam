@@ -25,19 +25,13 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "wstoolutils.h"
 
 namespace DigikamGenericTwitterPlugin
 {
 
 TwMPForm::TwMPForm()
-    : m_boundary(QByteArray("00TwDK") + Digikam::WSToolUtils::randomString(42 + 13).toLatin1() + QByteArray("KDwT99"))
 {
     reset();
-}
-
-TwMPForm::~TwMPForm()
-{
 }
 
 void TwMPForm::reset()
