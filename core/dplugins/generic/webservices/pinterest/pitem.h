@@ -26,9 +26,7 @@ class PPhoto
 {
 public:
 
-    PPhoto()
-    {
-    }
+    PPhoto() = default;
 
     QString title;
 };
@@ -38,9 +36,7 @@ class PFolder
 
 public:
 
-    PFolder()
-    {
-    }
+    PFolder() = default;
 
     QString title;
 };

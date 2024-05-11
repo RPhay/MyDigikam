@@ -33,7 +33,7 @@ class PNewAlbumDlg : public WSNewAlbumDialog
 public:
 
     explicit PNewAlbumDlg(QWidget* const parent, const QString& toolName);
-    ~PNewAlbumDlg() override;
+    ~PNewAlbumDlg() override = default;
 
     void getFolderTitle(PFolder& folder);
 };

@@ -40,7 +40,7 @@ class PWindow : public WSToolDialog
 public:
 
     explicit PWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~PWindow() override;
+    ~PWindow()                      override;
 
     void reactivate();
 
@@ -54,7 +54,7 @@ private:
     void uploadNextPhoto();
 
     void buttonStateChange(bool state);
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private Q_SLOTS:
 

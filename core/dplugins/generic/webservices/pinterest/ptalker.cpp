@@ -63,50 +63,34 @@ public:
 
 public:
 
-    explicit Private()
-      : parent  (nullptr),
-        netMngr (nullptr),
-        reply   (nullptr),
-        settings(nullptr),
-        state   (P_USERNAME),
-        browser (nullptr)
-    {
-        clientId     = QLatin1String("1477112");
-        clientSecret = QLatin1String("69dc00477dd1c59430b15675d92ff30136126dcb");
-
-        authUrl      = QLatin1String("https://www.pinterest.com/oauth/");
-        tokenUrl     = QLatin1String("https://api.pinterest.com/v5/oauth/token");
-        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
-        scope        = QLatin1String("boards:read,boards:write,pins:read,pins:write,user_accounts:read");
-        serviceName  = QLatin1String("Pinterest");
-        serviceKey   = QLatin1String("access_token");
-    }
+    Private() = default;
 
 public:
 
-    QString                clientId;
-    QString                clientSecret;
-    QString                authUrl;
-    QString                tokenUrl;
-    QString                redirectUrl;
+    QString                clientId         = QLatin1String("1477112");
+    QString                clientSecret     = QLatin1String("69dc00477dd1c59430b15675d92ff30136126dcb");
+    QString                authUrl          = QLatin1String("https://www.pinterest.com/oauth/");
+    QString                tokenUrl         = QLatin1String("https://api.pinterest.com/v5/oauth/token");
+    QString                redirectUrl      = QLatin1String("https://login.live.com/oauth20_desktop.srf");
+    QString                scope            = QLatin1String("boards:read,boards:write,pins:read,pins:write,user_accounts:read");
+    QString                serviceName      = QLatin1String("Pinterest");
+    QString                serviceKey       = QLatin1String("access_token");
+
     QString                accessToken;
-    QString                scope;
     QString                userName;
-    QString                serviceName;
-    QString                serviceKey;
 
-    QWidget*               parent;
+    QWidget*               parent           = nullptr;
 
-    QNetworkAccessManager* netMngr;
-    QNetworkReply*         reply;
+    QNetworkAccessManager* netMngr          = nullptr;
+    QNetworkReply*         reply            = nullptr;
 
-    QSettings*             settings;
+    QSettings*             settings         = nullptr;
 
-    State                  state;
+    State                  state            = P_USERNAME;
 
     QMap<QString, QString> urlParametersMap;
 
-    WebBrowserDlg*         browser;
+    WebBrowserDlg*         browser          = nullptr;
 };
 
 PTalker::PTalker(QWidget* const parent)
@@ -238,6 +222,7 @@ QMap<QString, QString> PTalker::ParseUrlParameters(const QString& url)
 void PTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Pinterest fail";
+
     Q_EMIT signalBusy(false);
 }
 
@@ -246,12 +231,15 @@ void PTalker::slotLinkingSucceeded()
     if (d->accessToken.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Pinterest ok";
+
         Q_EMIT signalBusy(false);
+
         return;
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Pinterest ok";
     writeSettings();
+
     Q_EMIT signalLinkingSucceeded();
 }
 
@@ -285,6 +273,7 @@ void PTalker::createBoard(QString& boardName)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::P_CREATEBOARD;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -297,6 +286,7 @@ void PTalker::getUserName()
 
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::P_USERNAME;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -313,6 +303,7 @@ void PTalker::listBoards(const QString& /*path*/)
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::P_LISTBOARDS;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -335,6 +326,7 @@ bool PTalker::addPin(const QString& imgPath,
     if (image.isNull())
     {
         Q_EMIT signalBusy(false);
+
         return false;
     }
 
@@ -404,6 +396,7 @@ void PTalker::slotFinished(QNetworkReply* reply)
         if (d->state != Private::P_CREATEBOARD)
         {
             Q_EMIT signalBusy(false);
+
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18nc("@title:window", "Error"), reply->errorString());
 /*
@@ -458,7 +451,9 @@ void PTalker::slotFinished(QNetworkReply* reply)
         }
 
         default:
+        {
             break;
+        }
     }
 
     reply->deleteLater();
@@ -488,6 +483,7 @@ void PTalker::parseResponseAddPin(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("id"));
+
     Q_EMIT signalBusy(false);
 
     if (!success)
@@ -519,6 +515,7 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
     {
         Q_EMIT signalBusy(false);
         Q_EMIT signalListBoardsFailed(i18n("Failed to list boards"));
+
         return;
     }
 
@@ -586,6 +583,7 @@ void PTalker::readSettings()
     else
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Already Linked";
+
         Q_EMIT pinterestLinkingSucceeded();
     }
 }

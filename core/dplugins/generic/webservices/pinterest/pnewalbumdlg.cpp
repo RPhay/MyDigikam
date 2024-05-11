@@ -31,10 +31,6 @@ PNewAlbumDlg::PNewAlbumDlg(QWidget* const parent, const QString& toolName)
     getMainWidget()->setMinimumSize(300, 0);
 }
 
-PNewAlbumDlg::~PNewAlbumDlg()
-{
-}
-
 void PNewAlbumDlg::getFolderTitle(PFolder& folder)
 {
     folder.title = getTitleEdit()->text();

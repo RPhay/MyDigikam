@@ -34,10 +34,6 @@ PPlugin::PPlugin(QObject* const parent)
 {
 }
 
-PPlugin::~PPlugin()
-{
-}
-
 void PPlugin::cleanUp()
 {
     delete m_toolDlg;

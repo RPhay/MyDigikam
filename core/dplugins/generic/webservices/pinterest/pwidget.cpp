@@ -31,10 +31,6 @@ PWidget::PWidget(QWidget* const parent,
     getSizeBox()->hide();
 }
 
-PWidget::~PWidget()
-{
-}
-
 void PWidget::updateLabels(const QString& name, const QString& url)
 {
     QString web(QLatin1String("https://www.pinterest.com/"));

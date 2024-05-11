@@ -46,21 +46,14 @@ class Q_DECL_HIDDEN PWindow::Private
 {
 public:
 
-    explicit Private()
-      : imagesCount(0),
-        imagesTotal(0),
-        widget     (nullptr),
-        albumDlg   (nullptr),
-        talker     (nullptr)
-    {
-    }
+    Private() = default;
 
-    unsigned int  imagesCount;
-    unsigned int  imagesTotal;
+    unsigned int  imagesCount       = 0;
+    unsigned int  imagesTotal       = 0;
 
-    PWidget*      widget;
-    PNewAlbumDlg* albumDlg;
-    PTalker*      talker;
+    PWidget*      widget            = nullptr;
+    PNewAlbumDlg* albumDlg          = nullptr;
+    PTalker*      talker            = nullptr;
 
     QString       currentAlbumName;
     QList<QUrl>   transferQueue;
