@@ -57,7 +57,7 @@ public:
 
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     bool             active = true;
 

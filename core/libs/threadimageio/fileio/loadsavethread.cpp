@@ -30,12 +30,7 @@ class Q_DECL_HIDDEN LoadSaveThread::Private
 {
 public:
 
-    explicit Private()
-      : running          (true),
-        blockNotification(false),
-        lastTask         (nullptr)
-    {
-    }
+    Private() = default;
 
     bool                             running            = true;
     bool                             blockNotification  = false;

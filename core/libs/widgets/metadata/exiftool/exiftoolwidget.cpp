@@ -86,7 +86,7 @@ public:
 
 public:
 
-    explicit Private()
+    Private()
     {
         for (int i = 0 ; QLatin1String(StandardExifToolEntryList[i]) != QLatin1String("-1") ; ++i)
         {

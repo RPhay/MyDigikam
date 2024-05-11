@@ -32,7 +32,7 @@ class Q_DECL_HIDDEN AbstractMarkerTiler::Private
 {
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     QScopedPointer<AbstractMarkerTiler::Tile> rootTile;
     bool                                      isDirty = true;

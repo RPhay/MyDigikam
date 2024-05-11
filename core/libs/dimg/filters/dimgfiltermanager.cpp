@@ -95,13 +95,8 @@ class Q_DECL_HIDDEN DImgFilterManager::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
-
-    ~Private()
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
     void setupCoreGenerators();
     void setupFilterIcons();
@@ -122,6 +117,7 @@ public:
 void DImgFilterManager::Private::setupCoreGenerators()
 {
     // Please keep this list sorted alphabetically
+
     coreGenerators
             << ImgFilterPtr(new BasicDImgFilterGenerator<AntiVignettingFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<AutoExpoFilter>())
@@ -188,7 +184,8 @@ void DImgFilterManager::Private::setupCoreGenerators()
 
 void DImgFilterManager::Private::setupFilterIcons()
 {
-    //Please keep this list sorted alphabetically
+    // Please keep this list sorted alphabetically
+
     filterIcons.insert(QLatin1String("digikam:AntiVignettingFilter"),   QLatin1String("antivignetting"));
     filterIcons.insert(QLatin1String("digikam:AutoExpoFilter"),         QLatin1String("autocorrection"));
     filterIcons.insert(QLatin1String("digikam:AutoLevelsfilter"),       QLatin1String("autocorrection"));

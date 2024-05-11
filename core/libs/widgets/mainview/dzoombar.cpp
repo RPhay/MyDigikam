@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN DZoomBar::Private
 {
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     QToolButton*    zoomToFitButton = nullptr;
     QToolButton*    zoomTo100Button = nullptr;

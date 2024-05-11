@@ -25,7 +25,7 @@ public:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
-    explicit Private()
+    Private()
         : extraFlags                          (),                       // why this difference between Qt5 and 6 ?
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 
@@ -34,7 +34,7 @@ public:
 
 #else
 
-    explicit Private()
+    Private()
         : extraFlags                          (nullptr),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 

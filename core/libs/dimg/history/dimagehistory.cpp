@@ -35,7 +35,7 @@ class Q_DECL_HIDDEN DImageHistory::Private : public QSharedData
 {
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     QList<DImageHistory::Entry> entries;
 };

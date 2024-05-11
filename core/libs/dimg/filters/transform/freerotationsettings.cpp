@@ -46,25 +46,21 @@ class Q_DECL_HIDDEN FreeRotationSettings::Private
 {
 public:
 
-    explicit Private() = default;
-
-    static const QString configAutoCropTypeEntry;
-    static const QString configAntiAliasingEntry;
-    static const QString configBackgroundColorEntry;
+    Private() = default;
 
 public:
 
-    QCheckBox*       antialiasInput     = nullptr;
+    const QString configAutoCropTypeEntry       = QLatin1String("Auto Crop Type");
+    const QString configAntiAliasingEntry       = QLatin1String("Anti Aliasing");
+    const QString configBackgroundColorEntry    = QLatin1String("Background Color");
 
-    DIntNumInput*    angleInput         = nullptr;
-    DDoubleNumInput* fineAngleInput     = nullptr;
-    DComboBox*       autoCropCB         = nullptr;
-    DColorSelector*  backgroundColor    = nullptr;
+    QCheckBox*       antialiasInput             = nullptr;
+
+    DIntNumInput*    angleInput                 = nullptr;
+    DDoubleNumInput* fineAngleInput             = nullptr;
+    DComboBox*       autoCropCB                 = nullptr;
+    DColorSelector*  backgroundColor            = nullptr;
 };
-
-const QString FreeRotationSettings::Private::configAutoCropTypeEntry(QLatin1String("Auto Crop Type"));
-const QString FreeRotationSettings::Private::configAntiAliasingEntry(QLatin1String("Anti Aliasing"));
-const QString FreeRotationSettings::Private::configBackgroundColorEntry(QLatin1String("Background Color"));
 
 // --------------------------------------------------------
 

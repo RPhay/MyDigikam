@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN DatabasePage::Private
 {
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     DatabaseSettingsWidget* dbsettingswidget = nullptr;
 };

@@ -23,52 +23,31 @@ class Q_DECL_HIDDEN DItemsList::Private
 {
 public:
 
-    explicit Private()
-      : allowRAW             (true),
-        allowDuplicate       (false),
-        controlButtonsEnabled(true),
-        iconSize             (48),
-        addButton            (nullptr),
-        removeButton         (nullptr),
-        moveUpButton         (nullptr),
-        moveDownButton       (nullptr),
-        clearButton          (nullptr),
-        loadButton           (nullptr),
-        saveButton           (nullptr),
-        extraWidget          (nullptr),
-        progressPix          (nullptr),
-        progressCount        (0),
-        progressTimer        (nullptr),
-        listView             (nullptr),
-        iface                (nullptr),
-        isLessThan           (nullptr)
-    {
-        thumbLoadThread = ThumbnailLoadThread::defaultThread();
-    }
+    Private() = default;
 
-    bool                        allowRAW;
-    bool                        allowDuplicate;
-    bool                        controlButtonsEnabled;
-    int                         iconSize;
+    bool                        allowRAW                = true;
+    bool                        allowDuplicate          = false;
+    bool                        controlButtonsEnabled   = true;
+    int                         iconSize                = 48;
 
-    CtrlButton*                 addButton;
-    CtrlButton*                 removeButton;
-    CtrlButton*                 moveUpButton;
-    CtrlButton*                 moveDownButton;
-    CtrlButton*                 clearButton;
-    CtrlButton*                 loadButton;
-    CtrlButton*                 saveButton;
-    QWidget*                    extraWidget;        ///< Extra widget append to the end of control buttons layout.
+    CtrlButton*                 addButton               = nullptr;
+    CtrlButton*                 removeButton            = nullptr;
+    CtrlButton*                 moveUpButton            = nullptr;
+    CtrlButton*                 moveDownButton          = nullptr;
+    CtrlButton*                 clearButton             = nullptr;
+    CtrlButton*                 loadButton              = nullptr;
+    CtrlButton*                 saveButton              = nullptr;
+    QWidget*                    extraWidget             = nullptr;   ///< Extra widget append to the end of control buttons layout.
 
     QList<QUrl>                 processItems;
-    DWorkingPixmap*             progressPix;
-    int                         progressCount;
-    QTimer*                     progressTimer;
+    DWorkingPixmap*             progressPix             = nullptr;
+    int                         progressCount           = 0;
+    QTimer*                     progressTimer           = nullptr;
 
-    DItemsListView*             listView;
-    ThumbnailLoadThread*        thumbLoadThread;
+    DItemsListView*             listView                = nullptr;
+    ThumbnailLoadThread*        thumbLoadThread         = ThumbnailLoadThread::defaultThread();
 
-    DInfoInterface*             iface;
+    DInfoInterface*             iface                   = nullptr;
     DItemsListIsLessThanHandler isLessThan;
 };
 

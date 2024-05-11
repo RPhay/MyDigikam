@@ -15,7 +15,9 @@ namespace Marble
 class Q_DECL_HIDDEN TileLevelRangeWidget::Private
 {
 public:
-    explicit Private( QWidget * const parent );
+
+    explicit Private(QWidget* const parent);
+
     Ui::TileLevelRangeWidget m_ui;
 };
 

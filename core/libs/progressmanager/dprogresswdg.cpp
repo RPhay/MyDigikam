@@ -30,7 +30,7 @@ class Q_DECL_HIDDEN DProgressWdg::Private
 {
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     ProgressItem* findProgressItem() const
     {

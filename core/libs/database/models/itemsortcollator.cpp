@@ -30,17 +30,15 @@ class Q_DECL_HIDDEN ItemSortCollator::Private
 {
 public:
 
-    explicit Private()
-      : versionStr(QLatin1String("_v")),
-        versionExp(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(.+)?")))
+    Private()
     {
         itemCollator.setNumericMode(true);
         albumCollator.setNumericMode(true);
         albumCollator.setIgnorePunctuation(false);
     }
 
-    const QString            versionStr;
-    const QRegularExpression versionExp;
+    const QString            versionStr     = QLatin1String("_v");
+    const QRegularExpression versionExp     = QRegularExpression(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(.+)?")));
 
     QCollator                itemCollator;
     QCollator                albumCollator;
