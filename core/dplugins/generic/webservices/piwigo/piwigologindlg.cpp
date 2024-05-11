@@ -43,19 +43,13 @@ class Q_DECL_HIDDEN PiwigoLoginDlg::Private
 {
 public:
 
-    explicit Private()
-      : pUrlEdit     (nullptr),
-        pUsernameEdit(nullptr),
-        pPasswordEdit(nullptr),
-        pPiwigo      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLineEdit*     pUrlEdit;
-    QLineEdit*     pUsernameEdit;
-    QLineEdit*     pPasswordEdit;
+    QLineEdit*     pUrlEdit         = nullptr;
+    QLineEdit*     pUsernameEdit    = nullptr;
+    QLineEdit*     pPasswordEdit    = nullptr;
 
-    PiwigoSession* pPiwigo;
+    PiwigoSession* pPiwigo          = nullptr;
 };
 
 PiwigoLoginDlg::PiwigoLoginDlg(QWidget* const pParent,

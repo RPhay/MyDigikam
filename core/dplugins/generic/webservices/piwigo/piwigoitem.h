@@ -30,11 +30,7 @@ class PiwigoAlbum
 {
 public:
 
-    explicit PiwigoAlbum()
-      : m_refNum      (-1),
-        m_parentRefNum(-1)
-    {
-    }
+    PiwigoAlbum() = default;
 
     bool operator<(const PiwigoAlbum& rhs) const
     {
@@ -48,10 +44,10 @@ public:
 
 public:
 
-    int     m_refNum;         ///< album reference number
-    int     m_parentRefNum;   ///< parent's album reference number
+    int     m_refNum        = -1;   ///< album reference number
+    int     m_parentRefNum  = -1;   ///< parent's album reference number
 
-    QString m_name;           ///< Album name
+    QString m_name;                 ///< Album name
 };
 
 } // namespace DigikamGenericPiwigoPlugin

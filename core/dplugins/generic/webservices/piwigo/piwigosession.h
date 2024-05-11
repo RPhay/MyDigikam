@@ -31,7 +31,7 @@ class PiwigoSession
 
 public:
 
-    explicit PiwigoSession();
+    PiwigoSession();
     ~PiwigoSession();
 
 public:

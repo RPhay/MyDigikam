@@ -34,10 +34,6 @@ PiwigoPlugin::PiwigoPlugin(QObject* const parent)
 {
 }
 
-PiwigoPlugin::~PiwigoPlugin()
-{
-}
-
 void PiwigoPlugin::cleanUp()
 {
     delete m_toolDlg;
@@ -97,7 +93,7 @@ QList<DPluginAuthor> PiwigoPlugin::authors() const
                              QString::fromUtf8("(C) 2010-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2023"))
+                             QString::fromUtf8("(C) 2006-2024"))
             ;
 }
 

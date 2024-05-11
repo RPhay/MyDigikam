@@ -66,58 +66,43 @@ public:
     explicit Private(PiwigoWindow* const parent,
                      DInfoInterface* const interface);
 
-    QWidget*                       widget;
+public:
 
-    QTreeWidget*                   albumView;
+    QWidget*                       widget           = nullptr;
 
-    QPushButton*                   confButton;
-    QPushButton*                   reloadButton;
+    QTreeWidget*                   albumView        = nullptr;
 
-    QCheckBox*                     resizeCheckBox;
-    QSpinBox*                      widthSpinBox;
-    QSpinBox*                      heightSpinBox;
-    QSpinBox*                      qualitySpinBox;
+    QPushButton*                   confButton       = nullptr;
+    QPushButton*                   reloadButton     = nullptr;
+
+    QCheckBox*                     resizeCheckBox   = nullptr;
+    QSpinBox*                      widthSpinBox     = nullptr;
+    QSpinBox*                      heightSpinBox    = nullptr;
+    QSpinBox*                      qualitySpinBox   = nullptr;
 
     QHash<QString, PiwigoAlbum>    albumDict;
 
-    PiwigoTalker*                  talker;
-    PiwigoSession*                 pPiwigo;
-    DInfoInterface*                iface;
-    DItemsList*                    imageList;
-    DProgressWdg*                  progressBar;
+    PiwigoTalker*                  talker           = nullptr;
+    PiwigoSession*                 pPiwigo          = nullptr;
+    DInfoInterface*                iface            = nullptr;
+    DItemsList*                    imageList        = nullptr;
+    DProgressWdg*                  progressBar      = nullptr;
 
-    unsigned int                   uploadCount;
-    unsigned int                   uploadTotal;
+    unsigned int                   uploadCount      = 0;
+    unsigned int                   uploadTotal      = 0;
     QStringList                    pUploadList;
     QString                        currPhotoPath;
 
-    QLabel*                        userNameLbl;
-    QLabel*                        userName;
-    QLabel*                        urlLbl;
-    QLabel*                        url;
+    QLabel*                        userNameLbl      = nullptr;
+    QLabel*                        userName         = nullptr;
+    QLabel*                        urlLbl           = nullptr;
+    QLabel*                        url              = nullptr;
 };
 
 PiwigoWindow::Private::Private(PiwigoWindow* const parent,
                                DInfoInterface* const interface)
-    : widget        (new QWidget(parent)),
-      albumView     (nullptr),
-      confButton    (nullptr),
-      reloadButton  (nullptr),
-      resizeCheckBox(nullptr),
-      widthSpinBox  (nullptr),
-      heightSpinBox (nullptr),
-      qualitySpinBox(nullptr),
-      talker        (nullptr),
-      pPiwigo       (nullptr),
-      iface         (interface),
-      imageList     (nullptr),
-      progressBar   (nullptr),
-      uploadCount   (0),
-      uploadTotal   (0),
-      userNameLbl   (nullptr),
-      userName      (nullptr),
-      urlLbl        (nullptr),
-      url           (nullptr)
+    : widget(new QWidget(parent)),
+      iface (interface)
 {
     parent->setMainWidget(widget);
     parent->setModal(false);
@@ -286,7 +271,7 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 
     // we need to let d->talker work..
 
-    d->talker      = new PiwigoTalker(iface, d->widget);
+    d->talker  = new PiwigoTalker(iface, d->widget);
 
     // connect functions
 

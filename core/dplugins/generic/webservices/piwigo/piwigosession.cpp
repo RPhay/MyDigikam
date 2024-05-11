@@ -38,9 +38,7 @@ class Q_DECL_HIDDEN PiwigoSession::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QString url;
     QString username;

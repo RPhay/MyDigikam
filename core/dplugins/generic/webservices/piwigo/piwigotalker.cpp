@@ -50,43 +50,30 @@ class Q_DECL_HIDDEN PiwigoTalker::Private
 {
 public:
 
-    explicit Private()
-      : parent      (nullptr),
-        state       (PG_LOGOUT),
-        netMngr     (nullptr),
-        reply       (nullptr),
-        loggedIn    (false),
-        chunkId     (0),
-        nbOfChunks  (0),
-        version     (-1),
-        albumId     (0),
-        photoId     (0),
-        iface       (nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget*               parent;
-    State                  state;
+    QWidget*               parent           = nullptr;
+    State                  state            = PG_LOGOUT;
     QString                cookie;
     QUrl                   url;
-    QNetworkAccessManager* netMngr;
-    QNetworkReply*         reply;
-    bool                   loggedIn;
+    QNetworkAccessManager* netMngr          = nullptr;
+    QNetworkReply*         reply            = nullptr;
+    bool                   loggedIn         = false;
     QByteArray             talker_buffer;
-    uint                   chunkId;
-    uint                   nbOfChunks;
-    int                    version;
+    uint                   chunkId          = 0;
+    uint                   nbOfChunks       = 0;
+    int                    version          = -1;
 
     QByteArray             md5sum;
     QString                path;
-    QString                tmpPath;    ///< If set, contains a temporary file which must be deleted
-    int                    albumId;
-    int                    photoId;    ///< Filled when the photo already exist
-    QString                comment;    ///< Synchronized with Piwigo comment
-    QString                title;      ///< Synchronized with Piwigo name
-    QString                author;     ///< Synchronized with Piwigo author
-    QDateTime              date;       ///< Synchronized with Piwigo date
-    DInfoInterface*        iface;
+    QString                tmpPath;                     ///< If set, contains a temporary file which must be deleted
+    int                    albumId          = 0;
+    int                    photoId          = 0;        ///< Filled when the photo already exist
+    QString                comment;                     ///< Synchronized with Piwigo comment
+    QString                title;                       ///< Synchronized with Piwigo name
+    QString                author;                      ///< Synchronized with Piwigo author
+    QDateTime              date;                        ///< Synchronized with Piwigo date
+    DInfoInterface*        iface            = nullptr;
 };
 
 QString PiwigoTalker::s_authToken = QLatin1String("");
@@ -219,9 +206,11 @@ bool PiwigoTalker::addPhoto(int   albumId,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << mediaPath << " " << d->md5sum.toHex();
 
-    if (mediaPath.endsWith(QLatin1String(".mp4"))  || mediaPath.endsWith(QLatin1String(".MP4"))  ||
+    if (
+        mediaPath.endsWith(QLatin1String(".mp4"))  || mediaPath.endsWith(QLatin1String(".MP4"))  ||
         mediaPath.endsWith(QLatin1String(".ogg"))  || mediaPath.endsWith(QLatin1String(".OGG"))  ||
-        mediaPath.endsWith(QLatin1String(".webm")) || mediaPath.endsWith(QLatin1String(".WEBM")))
+        mediaPath.endsWith(QLatin1String(".webm")) || mediaPath.endsWith(QLatin1String(".WEBM"))
+       )
     {
         // Video management
         // Nothing to do
@@ -366,9 +355,11 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
 
             listAlbums();
         }
-        else if ((state == PG_CHECKPHOTOEXIST) || (state == PG_GETINFO)       ||
+        else if (
+                 (state == PG_CHECKPHOTOEXIST) || (state == PG_GETINFO)       ||
                  (state == PG_SETINFO)         || (state == PG_ADDPHOTOCHUNK) ||
-                 (state == PG_ADDPHOTOSUMMARY))
+                 (state == PG_ADDPHOTOSUMMARY)
+                )
         {
             deleteTemporaryFile();
             Q_EMIT signalAddPhotoFailed(reply->errorString());
@@ -450,6 +441,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
     }
 
     Q_EMIT signalBusy(false);
+
     reply->deleteLater();
 }
 
@@ -470,8 +462,10 @@ void PiwigoTalker::parseResponseLogin(const QByteArray& data)
         {
             foundResponse = true;
 
-            if ((ts.name() == QLatin1String("rsp")) &&
-                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
+            if (
+                (ts.name() == QLatin1String("rsp")) &&
+                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok"))
+               )
             {
                 d->loggedIn = true;
 
@@ -528,8 +522,10 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
         {
             foundResponse = true;
 
-            if ((ts.name() == QLatin1String("rsp")) &&
-                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
+            if (
+                (ts.name() == QLatin1String("rsp")) &&
+                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok"))
+               )
             {
                 QString v                     = ts.readElementText();
                 QRegularExpressionMatch match = verrx.match(v);
@@ -551,6 +547,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
     if (d->version < PIWIGO_VER_2_4)
     {
         d->loggedIn = false;
+
         Q_EMIT signalLoginFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
 
         return;
@@ -582,8 +579,10 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 
         if (ts.isStartElement())
         {
-            if ((ts.name() == QLatin1String("rsp")) &&
-                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
+            if (
+                (ts.name() == QLatin1String("rsp")) &&
+                (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok"))
+               )
             {
                 foundResponse = true;
             }
