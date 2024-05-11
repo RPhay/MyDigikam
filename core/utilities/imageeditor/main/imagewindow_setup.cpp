@@ -142,7 +142,7 @@ void ImageWindow::setupUserArea()
     QHBoxLayout* const hlay = new QHBoxLayout(widget);
     m_splitter              = new SidebarSplitter(widget);
 
-    d->viewContainer        = new KMainWindow(widget, Qt::Widget);
+    d->viewContainer        = new QMainWindow(widget, Qt::Widget);
     m_splitter->addWidget(d->viewContainer);
     m_stackView             = new EditorStackView(d->viewContainer);
     m_canvas                = new Canvas(m_stackView);

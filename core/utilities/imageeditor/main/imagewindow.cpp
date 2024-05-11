@@ -77,12 +77,17 @@ ImageWindow::ImageWindow()
     readSettings();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
+
     applyMainWindowSettings(group);
-    d->thumbBarDock->setShouldBeVisible(group.readEntry(d->configShowThumbbarEntry, false));
-    setAutoSaveSettings(configGroupName(), true);
-    d->viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
 
     d->thumbBarDock->reInitialize();
+    d->thumbBarDock->setShouldBeVisible(group.readEntry(d->configShowThumbbarEntry, false));
+
+    QByteArray thumbbarState;
+    thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
+    d->viewContainer->restoreState(QByteArray::fromBase64(thumbbarState));
+
+    setAutoSaveSettings(configGroupName(), true);
 
     //-------------------------------------------------------------
 
@@ -131,6 +136,8 @@ void ImageWindow::closeEvent(QCloseEvent* e)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
+
+    group.writeEntry(QLatin1String("ThumbbarState"), d->viewContainer->saveState().toBase64());
     d->rightSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Right Sidebar")));
     d->rightSideBar->saveState();
     saveSettings();
