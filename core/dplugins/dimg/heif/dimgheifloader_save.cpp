@@ -54,7 +54,8 @@ namespace Digikam
 {
 
 static struct heif_error heifQIODeviceWriter(struct heif_context* /* ctx */,
-                                             const void* data, size_t size, void* userdata)
+                                             const void* data, size_t size, void* userdata)  // cppcheck-suppress constParameterCallback
+
 {
     QFile saveFile(QString::fromUtf8(static_cast<const char*>(userdata)));
     heif_error error;

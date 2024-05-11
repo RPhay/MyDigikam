@@ -44,7 +44,7 @@ class Q_DECL_HIDDEN PreProcessTask::Private
 {
 public:
 
-    // cppcheck-suppress constParameter
+    // cppcheck-suppress [constParameter, constParameterCallback]
     Private(PanoramaPreprocessedUrls& urls, const QUrl& url)
         : fileUrl        (url),
           preProcessedUrl(urls)

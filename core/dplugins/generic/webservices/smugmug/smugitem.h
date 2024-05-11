@@ -92,6 +92,7 @@ public:
     qint64  tmplID          = -1;
     QString tmpl;
 
+    // cppcheck-suppress constParameterCallback
     static bool lessThan(SmugAlbum& a, SmugAlbum& b)
     {
         return a.title.toLower() < b.title.toLower();
