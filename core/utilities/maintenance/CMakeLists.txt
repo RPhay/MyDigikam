@@ -11,13 +11,14 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/iteminfojob.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/iteminfoalbumsjob.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedata.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancethread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancetool.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg_settings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancemngr.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/maintenancedata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/maintenancethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/maintenancetool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/maintenancemngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/maintenancesettings.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/maintenancedlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/maintenancedlg_settings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/metaremover/metadataremovetask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/metaremover/metadataremover.cpp
