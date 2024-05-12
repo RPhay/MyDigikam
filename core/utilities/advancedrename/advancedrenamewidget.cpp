@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 #include "advancedrenameinput.h"
 #include "defaultrenameparser.h"
@@ -389,10 +390,7 @@ void AdvancedRenameWidget::setupWidgets()
         mainLayout->setColumnStretch(2, 10);
     }
 
-    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+    const int cmargin = layoutMargin();
 
     mainLayout->setSpacing(cmargin);
     mainLayout->setContentsMargins(QMargins(cmargin, cmargin, cmargin, cmargin));

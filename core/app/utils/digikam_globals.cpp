@@ -233,6 +233,19 @@ int layoutSpacing()
            );
 }
 
+int layoutMargin()
+{
+    return (
+            qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                 qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                      qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                           QApplication::style()->pixelMetric(QStyle::PM_LayoutBottomMargin)
+                          )
+                     )
+                )
+           );
+}
+
 QDateTime startOfDay(const QDate& date)
 {
     return date.startOfDay();

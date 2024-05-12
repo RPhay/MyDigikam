@@ -36,6 +36,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -327,10 +328,7 @@ void DNotificationPopup::setView(QWidget* child)
 
     if (d->popupStyle == Balloon)
     {
-        const int margin = 2 * qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                                    qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                         qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                              style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+        const int margin = 2 * layoutMargin();
         d->topLayout->setContentsMargins(margin, margin, margin, margin);
     }
 

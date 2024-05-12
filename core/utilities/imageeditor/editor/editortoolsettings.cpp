@@ -310,17 +310,12 @@ QSize EditorToolSettings::minimumSizeHint() const
 
 int EditorToolSettings::marginHint()
 {
-    const int cmargin = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                                qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                    qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
-    return cmargin;
+    return layoutMargin();
 }
 
 int EditorToolSettings::spacingHint()
 {
     return layoutSpacing();
-
 }
 
 QWidget* EditorToolSettings::plainPage() const

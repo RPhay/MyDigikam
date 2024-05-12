@@ -174,10 +174,7 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     autoDescr->setAlignment(Qt::AlignJustify);
     autoDescr->setWordWrap(true);
 
-    const int cmargin = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                             qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                  qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                       QApplication::style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+    const int cmargin = layoutMargin();
 
     containerLayout2->addWidget(autoDescr,              0, 0, 1, -1);
     containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1,  1);

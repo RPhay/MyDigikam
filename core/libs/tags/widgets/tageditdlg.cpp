@@ -218,10 +218,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     // --------------------------------------------------------
 
     const int spacing = layoutSpacing();
-    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+    const int cmargin = layoutMargin();
 
     grid->addWidget(logo,               0, 0, 1, 1);
     grid->addWidget(d->topLabel,        0, 1, 1, 4);

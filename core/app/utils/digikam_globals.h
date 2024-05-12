@@ -188,6 +188,11 @@ DIGIKAM_EXPORT QString toolButtonStyleSheet();
  */
 DIGIKAM_EXPORT int layoutSpacing();
 
+/**
+ * Default margin to use in layout.
+ */
+DIGIKAM_EXPORT int layoutMargin();
+
 // --- Static functions for the bundles ---
 
 /**
