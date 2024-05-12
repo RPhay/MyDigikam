@@ -58,57 +58,45 @@ public:
 
     Private() = default;
 
-    static const QString configSharpenMethodEntry;
-    static const QString configSimpleSharpRadiusAdjustmentEntry;
-    static const QString configUnsharpMaskRadiusAdjustmentEntry;
-    static const QString configUnsharpMaskAmountAdjustmentEntry;
-    static const QString configUnsharpMaskThresholdAdjustmentEntry;
-    static const QString configUnsharpMaskLumaEntry;
-    static const QString configRefocusRadiusAdjustmentEntry;
-    static const QString configRefocusCorrelationAdjustmentEntry;
-    static const QString configRefocusNoiseAdjustmentEntry;
-    static const QString configRefocusGaussAdjustmentEntry;
-    static const QString configRefocusMatrixSizeEntry;
+    const QString configSharpenMethodEntry                  = QLatin1String("SharpenMethod");
+    const QString configSimpleSharpRadiusAdjustmentEntry    = QLatin1String("SimpleSharpRadiusAdjustment");
+    const QString configUnsharpMaskRadiusAdjustmentEntry    = QLatin1String("UnsharpMaskRadiusAdjustment");
+    const QString configUnsharpMaskAmountAdjustmentEntry    = QLatin1String("UnsharpMaskAmountAdjustment");
+    const QString configUnsharpMaskThresholdAdjustmentEntry = QLatin1String("UnsharpMaskThresholdAdjustment");
+    const QString configUnsharpMaskLumaEntry                = QLatin1String("UnsharpMaskApplyOnLumaOnLy");
+    const QString configRefocusRadiusAdjustmentEntry        = QLatin1String("RefocusRadiusAdjustment");
+    const QString configRefocusCorrelationAdjustmentEntry   = QLatin1String("RefocusCorrelationAdjustment");
+    const QString configRefocusNoiseAdjustmentEntry         = QLatin1String("RefocusNoiseAdjustment");
+    const QString configRefocusGaussAdjustmentEntry         = QLatin1String("RefocusGaussAdjustment");
+    const QString configRefocusMatrixSizeEntry              = QLatin1String("RefocusMatrixSize");
 
-    QStackedWidget*      stack          = nullptr;
+    QStackedWidget*      stack                              = nullptr;
 
-    DComboBox*           sharpMethod    = nullptr;
+    DComboBox*           sharpMethod                        = nullptr;
 
     // Simple sharp.
 
-    DIntNumInput*        radiusInput    = nullptr;
+    DIntNumInput*        radiusInput                        = nullptr;
 
 #ifdef HAVE_EIGEN3
 
     // Refocus.
 
-    DDoubleNumInput*     radius         = nullptr;
-    DDoubleNumInput*     correlation    = nullptr;
-    DDoubleNumInput*     noise          = nullptr;
-    DDoubleNumInput*     gauss          = nullptr;
-    DIntNumInput*        matrixSize     = nullptr;
+    DDoubleNumInput*     radius                             = nullptr;
+    DDoubleNumInput*     correlation                        = nullptr;
+    DDoubleNumInput*     noise                              = nullptr;
+    DDoubleNumInput*     gauss                              = nullptr;
+    DIntNumInput*        matrixSize                         = nullptr;
 
 #endif // HAVE_EIGEN3
 
     // Unsharp mask.
 
-    DDoubleNumInput*     radiusInput2   = nullptr;
-    DDoubleNumInput*     amountInput    = nullptr;
-    DDoubleNumInput*     thresholdInput = nullptr;
-    QCheckBox*           luma           = nullptr;
+    DDoubleNumInput*     radiusInput2                       = nullptr;
+    DDoubleNumInput*     amountInput                        = nullptr;
+    DDoubleNumInput*     thresholdInput                     = nullptr;
+    QCheckBox*           luma                               = nullptr;
 };
-
-const QString SharpSettings::Private::configSharpenMethodEntry(QLatin1String("SharpenMethod"));
-const QString SharpSettings::Private::configSimpleSharpRadiusAdjustmentEntry(QLatin1String("SimpleSharpRadiusAdjustment"));
-const QString SharpSettings::Private::configUnsharpMaskRadiusAdjustmentEntry(QLatin1String("UnsharpMaskRadiusAdjustment"));
-const QString SharpSettings::Private::configUnsharpMaskAmountAdjustmentEntry(QLatin1String("UnsharpMaskAmountAdjustment"));
-const QString SharpSettings::Private::configUnsharpMaskThresholdAdjustmentEntry(QLatin1String("UnsharpMaskThresholdAdjustment"));
-const QString SharpSettings::Private::configUnsharpMaskLumaEntry(QLatin1String("UnsharpMaskApplyOnLumaOnLy"));
-const QString SharpSettings::Private::configRefocusRadiusAdjustmentEntry(QLatin1String("RefocusRadiusAdjustment"));
-const QString SharpSettings::Private::configRefocusCorrelationAdjustmentEntry(QLatin1String("RefocusCorrelationAdjustment"));
-const QString SharpSettings::Private::configRefocusNoiseAdjustmentEntry(QLatin1String("RefocusNoiseAdjustment"));
-const QString SharpSettings::Private::configRefocusGaussAdjustmentEntry(QLatin1String("RefocusGaussAdjustment"));
-const QString SharpSettings::Private::configRefocusMatrixSizeEntry(QLatin1String("RefocusMatrixSize"));
 
 // --------------------------------------------------------
 
@@ -117,7 +105,6 @@ SharpSettings::SharpSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const label1    = new QLabel(i18n("Method:"));

@@ -59,23 +59,22 @@ public:
 
     Private() = default;
 
-    static const QString  configLowSaturationEntry;
-    static const QString  configHighSaturationEntry;
-    static const QString  configPower1Entry;
-    static const QString  configBlur1Entry;
-    static const QString  configPower2Entry;
-    static const QString  configBlur2Entry;
-    static const QString  configPower3Entry;
-    static const QString  configBlur3Entry;
-    static const QString  configPower4Entry;
-    static const QString  configBlur4Entry;
-    static const QString  configStretchContrastEntry;
-    static const QString  configFastModeEntry;
-    static const QString  configStageOneEntry;
-    static const QString  configStageTwoEntry;
-    static const QString  configStageThreeEntry;
-    static const QString  configStageFourEntry;
-    static const QString  configFunctionInputEntry;
+    const QString configLowSaturationEntry      = QLatin1String("LowSaturation");
+    const QString configHighSaturationEntry     = QLatin1String("HighSaturation");
+    const QString configPower1Entry             = QLatin1String("Power1");
+    const QString configBlur1Entry              = QLatin1String("Blur1");
+    const QString configPower2Entry             = QLatin1String("Power2");
+    const QString configBlur2Entry              = QLatin1String("Blur2");
+    const QString configPower3Entry             = QLatin1String("Power3");
+    const QString configBlur3Entry              = QLatin1String("Blur3");
+    const QString configPower4Entry             = QLatin1String("Power4");
+    const QString configBlur4Entry              = QLatin1String("Blur4");
+    const QString configStretchContrastEntry    = QLatin1String("StretchContrast");
+    const QString configStageOneEntry           = QLatin1String("StageOne");
+    const QString configStageTwoEntry           = QLatin1String("StageTwo");
+    const QString configStageThreeEntry         = QLatin1String("StageThree");
+    const QString configStageFourEntry          = QLatin1String("StageFour");
+    const QString configFunctionInputEntry      = QLatin1String("FunctionInput");
 
     QCheckBox*            stretchContrastCheck  = nullptr;
 
@@ -105,23 +104,6 @@ public:
     DExpanderBox*         expanderBox           = nullptr;
 };
 
-const QString LocalContrastSettings::Private::configLowSaturationEntry(QLatin1String("LowSaturation"));
-const QString LocalContrastSettings::Private::configHighSaturationEntry(QLatin1String("HighSaturation"));
-const QString LocalContrastSettings::Private::configPower1Entry(QLatin1String("Power1"));
-const QString LocalContrastSettings::Private::configBlur1Entry(QLatin1String("Blur1"));
-const QString LocalContrastSettings::Private::configPower2Entry(QLatin1String("Power2"));
-const QString LocalContrastSettings::Private::configBlur2Entry(QLatin1String("Blur2"));
-const QString LocalContrastSettings::Private::configPower3Entry(QLatin1String("Power3"));
-const QString LocalContrastSettings::Private::configBlur3Entry(QLatin1String("Blur3"));
-const QString LocalContrastSettings::Private::configPower4Entry(QLatin1String("Power4"));
-const QString LocalContrastSettings::Private::configBlur4Entry(QLatin1String("Blur4"));
-const QString LocalContrastSettings::Private::configStretchContrastEntry(QLatin1String("StretchContrast"));
-const QString LocalContrastSettings::Private::configStageOneEntry(QLatin1String("StageOne"));
-const QString LocalContrastSettings::Private::configStageTwoEntry(QLatin1String("StageTwo"));
-const QString LocalContrastSettings::Private::configStageThreeEntry(QLatin1String("StageThree"));
-const QString LocalContrastSettings::Private::configStageFourEntry(QLatin1String("StageFour"));
-const QString LocalContrastSettings::Private::configFunctionInputEntry(QLatin1String("FunctionInput"));
-
 // --------------------------------------------------------
 
 LocalContrastSettings::LocalContrastSettings(QWidget* const parent)
@@ -129,8 +111,6 @@ LocalContrastSettings::LocalContrastSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing        = layoutSpacing();
-
-
     QGridLayout* const grid  = new QGridLayout(parent);
 
     QWidget* const firstPage = new QWidget();

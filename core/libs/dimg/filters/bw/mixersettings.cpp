@@ -53,55 +53,40 @@ public:
 
     Private() = default;
 
-    static const QString  configMonochromeEntry;
-    static const QString  configPreserveLuminosityEntry;
-    static const QString  configRedRedGainEntry;
-    static const QString  configRedGreenGainEntry;
-    static const QString  configRedBlueGainEntry;
-    static const QString  configGreenRedGainEntry;
-    static const QString  configGreenGreenGainEntry;
-    static const QString  configGreenBlueGainEntry;
-    static const QString  configBlueRedGainEntry;
-    static const QString  configBlueGreenGainEntry;
-    static const QString  configBlueBlueGainEntry;
-    static const QString  configBlackRedGainEntry;
-    static const QString  configBlackGreenGainEntry;
-    static const QString  configBlackBlueGainEntry;
+    const QString configMonochromeEntry         = QLatin1String("Monochrome");
+    const QString configPreserveLuminosityEntry = QLatin1String("PreserveLuminosity");
+    const QString configRedRedGainEntry         = QLatin1String("RedRedGain");
+    const QString configRedGreenGainEntry       = QLatin1String("RedGreenGain");
+    const QString configRedBlueGainEntry        = QLatin1String("RedBlueGain");
+    const QString configGreenRedGainEntry       = QLatin1String("GreenRedGain");
+    const QString configGreenGreenGainEntry     = QLatin1String("GreenGreenGain");
+    const QString configGreenBlueGainEntry      = QLatin1String("GreenBlueGain");
+    const QString configBlueRedGainEntry        = QLatin1String("BlueRedGain");
+    const QString configBlueGreenGainEntry      = QLatin1String("BlueGreenGain");
+    const QString configBlueBlueGainEntry       = QLatin1String("BlueBlueGain");
+    const QString configBlackRedGainEntry       = QLatin1String("BlackRedGain");
+    const QString configBlackGreenGainEntry     = QLatin1String("BlackGreenGain");
+    const QString configBlackBlueGainEntry      = QLatin1String("BlackBlueGain");
 
-    int                   currentChannel     = RedChannel;
+    int                   currentChannel        = RedChannel;
 
-    QLabel*               monochromeTips     = nullptr;
-    QLabel*               totalPercents      = nullptr;
-    QLabel*               outChannelLabel    = nullptr;
+    QLabel*               monochromeTips        = nullptr;
+    QLabel*               totalPercents         = nullptr;
+    QLabel*               outChannelLabel       = nullptr;
 
-    QPushButton*          resetButton        = nullptr;
+    QPushButton*          resetButton           = nullptr;
 
-    QCheckBox*            preserveLuminosity = nullptr;
-    QCheckBox*            monochrome         = nullptr;
+    QCheckBox*            preserveLuminosity    = nullptr;
+    QCheckBox*            monochrome            = nullptr;
 
-    QComboBox*            outChannelCB       = nullptr;
+    QComboBox*            outChannelCB          = nullptr;
 
     MixerContainer        mixerSettings;
 
-    DDoubleNumInput*      redGain            = nullptr;
-    DDoubleNumInput*      greenGain          = nullptr;
-    DDoubleNumInput*      blueGain           = nullptr;
+    DDoubleNumInput*      redGain               = nullptr;
+    DDoubleNumInput*      greenGain             = nullptr;
+    DDoubleNumInput*      blueGain              = nullptr;
 };
-
-const QString MixerSettings::Private::configMonochromeEntry(QLatin1String("Monochrome"));
-const QString MixerSettings::Private::configPreserveLuminosityEntry(QLatin1String("PreserveLuminosity"));
-const QString MixerSettings::Private::configRedRedGainEntry(QLatin1String("RedRedGain"));
-const QString MixerSettings::Private::configRedGreenGainEntry(QLatin1String("RedGreenGain"));
-const QString MixerSettings::Private::configRedBlueGainEntry(QLatin1String("RedBlueGain"));
-const QString MixerSettings::Private::configGreenRedGainEntry(QLatin1String("GreenRedGain"));
-const QString MixerSettings::Private::configGreenGreenGainEntry(QLatin1String("GreenGreenGain"));
-const QString MixerSettings::Private::configGreenBlueGainEntry(QLatin1String("GreenBlueGain"));
-const QString MixerSettings::Private::configBlueRedGainEntry(QLatin1String("BlueRedGain"));
-const QString MixerSettings::Private::configBlueGreenGainEntry(QLatin1String("BlueGreenGain"));
-const QString MixerSettings::Private::configBlueBlueGainEntry(QLatin1String("BlueBlueGain"));
-const QString MixerSettings::Private::configBlackRedGainEntry(QLatin1String("BlackRedGain"));
-const QString MixerSettings::Private::configBlackGreenGainEntry(QLatin1String("BlackGreenGain"));
-const QString MixerSettings::Private::configBlackBlueGainEntry(QLatin1String("BlackBlueGain"));
 
 // --------------------------------------------------------
 
@@ -110,8 +95,6 @@ MixerSettings::MixerSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(this);
 
     d->outChannelLabel = new QLabel(i18nc("@label", "Output Channel:"));
