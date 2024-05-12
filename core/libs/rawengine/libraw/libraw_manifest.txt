@@ -1,2 +1,2 @@
-+LIBRAW Snapshoot 2024-05-05
-libraw:c2e8a908d0c221ce0e4b0f0b114abca605da2310
++LIBRAW Snapshoot 2024-05-12
+libraw:393dc925d43adee1a58fc80b32b6c742d345e821

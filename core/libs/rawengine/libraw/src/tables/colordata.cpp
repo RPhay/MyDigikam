@@ -544,7 +544,7 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
 	{ LIBRAW_CAMERAMAKER_Fujifilm, "X-T2", 0, 0,  // same CMs: X-T2, X-T20
 	  { 11434,-4948,-1210,-3746,12042,1903,-666,1479,5235 } },
 	{ LIBRAW_CAMERAMAKER_Fujifilm, "X-T3", 0, 0,   // same CMs: X-T3, X-T30, "X-T30 II"
-	  { 13426,-6334,-1177,-4244,12136,2371,580,1303,5980 } }, // v.2
+	  { 13426,-6334,-1177,-4244,12136,2371, -580,1303,5980 } }, // v.2
 	{ LIBRAW_CAMERAMAKER_Fujifilm, "X-T4", 0, 0,
 	  { 13426,-6334,-1177,-4244,12136,2371,580,1303,5980 } },
     { LIBRAW_CAMERAMAKER_Fujifilm, "X-T5", 0, 0,
@@ -1211,8 +1211,6 @@ int LibRaw::adobe_coeff(unsigned make_idx, const char *t_model,
       { 9186,-2678,-907,-8693,16517,2260,-1129,1094,8524 } },
     { LIBRAW_CAMERAMAKER_Pentax, "K-m", 0, 0,
       { 9730,-2989,-970,-8527,16258,2381,-1060,970,8362 } },
-    { LIBRAW_CAMERAMAKER_Pentax, "KP", 0, 0,
-      { 7825,-2160,-1403,-4841,13555,1349,-1559,2449,5814 } },
     { LIBRAW_CAMERAMAKER_Pentax, "K-x", 0, 0,
       { 8843,-2837,-625,-5025,12644,2668,-411,1234,7410 } },
     { LIBRAW_CAMERAMAKER_Pentax, "K-r", 0, 0,
