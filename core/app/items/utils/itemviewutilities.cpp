@@ -486,13 +486,29 @@ void ItemViewUtilities::createGroupByFilenameFromInfoList(const ItemInfoList& it
 
         it = it2;
 
-        if (group.count() > 1)
+        if (group.size() > 1)
         {
             // sort by filesize and take smallest as leader
 
             std::stable_sort(group.begin(), group.end(), lowerThanBySizeForItemInfo);
-            const ItemInfo& leader = group.takeFirst();
-            FileActionMngr::instance()->addToGroup(leader, group);
+            int rawCount = 0;
+
+            for (int i = 0 ; i < group.size() ; ++i)
+            {
+                if (group.at(i).format().startsWith(QLatin1String("RAW")))
+                {
+                    ++rawCount;
+
+                    if (i < group.size() - 1)
+                    {
+                        continue;
+                    }
+                }
+
+                const ItemInfo& leader = group.takeAt((rawCount == group.size()) ? 0 : i);
+                FileActionMngr::instance()->addToGroup(leader, group);
+                break;
+            }
         }
     }
 }
