@@ -49,35 +49,26 @@ public:
 
     Private() = default;
 
-    static const QString  configAddVignettingAdjustmentEntry;
-    static const QString  configDensityAdjustmentEntry;
-    static const QString  configPowerAdjustmentEntry;
-    static const QString  configInnerRadiusAdjustmentEntry;
-    static const QString  configOuterRadiusAdjustmentEntry;
-    static const QString  configAddVignettingEntry;
-    static const QString  configXOffsetEntry;
-    static const QString  configYOffsetEntry;
+    const QString configAddVignettingAdjustmentEntry    = QLatin1String("AddVignettingAdjustment");
+    const QString configDensityAdjustmentEntry          = QLatin1String("DensityAdjustment");
+    const QString configPowerAdjustmentEntry            = QLatin1String("PowerAdjustment");
+    const QString configInnerRadiusAdjustmentEntry      = QLatin1String("InnerRadiusAdjustment");
+    const QString configOuterRadiusAdjustmentEntry      = QLatin1String("OuterRadiusAdjustment");
+    const QString configAddVignettingEntry              = QLatin1String("AddVignetting");
+    const QString configXOffsetEntry                    = QLatin1String("XOffset");
+    const QString configYOffsetEntry                    = QLatin1String("YOffset");
 
-    QCheckBox*            addVignettingCheck    = nullptr;
+    QCheckBox*            addVignettingCheck            = nullptr;
 
-    QLabel*               maskPreviewLabel      = nullptr;
+    QLabel*               maskPreviewLabel              = nullptr;
 
-    DDoubleNumInput*      densityInput          = nullptr;
-    DDoubleNumInput*      powerInput            = nullptr;
-    DDoubleNumInput*      innerRadiusInput      = nullptr;
-    DDoubleNumInput*      outerRadiusInput      = nullptr;
-    DDoubleNumInput*      xOffsetInput          = nullptr;
-    DDoubleNumInput*      yOffsetInput          = nullptr;
+    DDoubleNumInput*      densityInput                  = nullptr;
+    DDoubleNumInput*      powerInput                    = nullptr;
+    DDoubleNumInput*      innerRadiusInput              = nullptr;
+    DDoubleNumInput*      outerRadiusInput              = nullptr;
+    DDoubleNumInput*      xOffsetInput                  = nullptr;
+    DDoubleNumInput*      yOffsetInput                  = nullptr;
 };
-
-const QString AntiVignettingSettings::Private::configAddVignettingAdjustmentEntry(QLatin1String("AddVignettingAdjustment"));
-const QString AntiVignettingSettings::Private::configDensityAdjustmentEntry(QLatin1String("DensityAdjustment"));
-const QString AntiVignettingSettings::Private::configPowerAdjustmentEntry(QLatin1String("PowerAdjustment"));
-const QString AntiVignettingSettings::Private::configInnerRadiusAdjustmentEntry(QLatin1String("InnerRadiusAdjustment"));
-const QString AntiVignettingSettings::Private::configOuterRadiusAdjustmentEntry(QLatin1String("OuterRadiusAdjustment"));
-const QString AntiVignettingSettings::Private::configAddVignettingEntry(QLatin1String("AddVignetting"));
-const QString AntiVignettingSettings::Private::configXOffsetEntry(QLatin1String("XOffset"));
-const QString AntiVignettingSettings::Private::configYOffsetEntry(QLatin1String("YOffset"));
 
 // --------------------------------------------------------
 
@@ -86,8 +77,6 @@ AntiVignettingSettings::AntiVignettingSettings(QWidget* parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     d->addVignettingCheck   = new QCheckBox(i18n("Add vignetting"));

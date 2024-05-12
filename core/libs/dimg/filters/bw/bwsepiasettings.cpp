@@ -66,13 +66,13 @@ public:
 
     Private() = default;
 
-    static const QString       configSettingsTabEntry;
-    static const QString       configBWFilterEntry;
-    static const QString       configBWFilmEntry;
-    static const QString       configBWToneEntry;
-    static const QString       configContrastAdjustmentEntry;
-    static const QString       configStrengthAdjustmentEntry;
-    static const QString       configCurveEntry;
+    const QString configSettingsTabEntry        = QLatin1String("Settings Tab");
+    const QString configBWFilterEntry           = QLatin1String("BW Filter");
+    const QString configBWFilmEntry             = QLatin1String("BW Film");
+    const QString configBWToneEntry             = QLatin1String("BW Tone");
+    const QString configContrastAdjustmentEntry = QLatin1String("ContrastValueAdjustment");
+    const QString configStrengthAdjustmentEntry = QLatin1String("StrengthAdjustment");
+    const QString configCurveEntry              = QLatin1String("BWSepiaCurve");
 
     PreviewList*               bwFilters        = nullptr;
     PreviewList*               bwFilm           = nullptr;
@@ -93,13 +93,6 @@ public:
                              BWSepiaContainer::BlackWhiteConversionType type);
 };
 
-const QString BWSepiaSettings::Private::configSettingsTabEntry(QLatin1String("Settings Tab"));
-const QString BWSepiaSettings::Private::configBWFilterEntry(QLatin1String("BW Filter"));
-const QString BWSepiaSettings::Private::configBWFilmEntry(QLatin1String("BW Film"));
-const QString BWSepiaSettings::Private::configBWToneEntry(QLatin1String("BW Tone"));
-const QString BWSepiaSettings::Private::configContrastAdjustmentEntry(QLatin1String("ContrastValueAdjustment"));
-const QString BWSepiaSettings::Private::configStrengthAdjustmentEntry(QLatin1String("StrengthAdjustment"));
-const QString BWSepiaSettings::Private::configCurveEntry(QLatin1String("BWSepiaCurve"));
 
 PreviewListItem* BWSepiaSettings::Private::addItem(PreviewList* const list,
                                                    const QString& name,
@@ -107,6 +100,7 @@ PreviewListItem* BWSepiaSettings::Private::addItem(PreviewList* const list,
 {
     BWSepiaFilter* const filter = new BWSepiaFilter(&thumbImage, nullptr, BWSepiaContainer(type));
     PreviewListItem* const item = list->addItem(filter, name, type);
+
     return item;
 }
 
@@ -128,15 +122,13 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
         d->thumbImage      = DImg(backGround).smoothScale(128, 128, Qt::KeepAspectRatio);
     }
 
-    const int spacing = layoutSpacing();
-
-
+    const int spacing       = layoutSpacing();
     QGridLayout* const grid = new QGridLayout(parent);
 
     d->tab = new DExpanderBoxExclusive(this);
 
-    PreviewListItem* item;
-    d->bwFilm = new PreviewList;
+    PreviewListItem* item   = nullptr;
+    d->bwFilm               = new PreviewList;
 
     item = d->addItem(d->bwFilm, i18nc("generic black and white film", "Generic"), BWSepiaContainer::BWGeneric);
     item->setWhatsThis(i18n("<b>Generic</b>:"
@@ -318,7 +310,7 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
 
     // -------------------------------------------------------------
 
-    QWidget* lumBox = new QWidget();
+    QWidget* const lumBox = new QWidget();
 
     // NOTE: add a method to be able to use curves widget without image data as simple curve editor.
 

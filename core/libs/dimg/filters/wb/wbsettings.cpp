@@ -97,16 +97,15 @@ public:
 
 public:
 
-    static const QString    configDarkInputEntry;
-    static const QString    configBlackInputEntry;
-    static const QString    configMainExposureEntry;
-    static const QString    configFineExposureEntry;
-    static const QString    configGammaInputEntry;
-    static const QString    configSaturationInputEntry;
-    static const QString    configGreenInputEntry;
-    static const QString    configTemperatureInputEntry;
 
-public:
+    const QString configDarkInputEntry              = QLatin1String("Dark");
+    const QString configBlackInputEntry             = QLatin1String("Black");
+    const QString configMainExposureEntry           = QLatin1String("MainExposure");
+    const QString configFineExposureEntry           = QLatin1String("FineExposure");
+    const QString configGammaInputEntry             = QLatin1String("Gamma");
+    const QString configSaturationInputEntry        = QLatin1String("Saturation");
+    const QString configGreenInputEntry             = QLatin1String("Green");
+    const QString configTemperatureInputEntry       = QLatin1String("Temperature");
 
     const int               DefaultTemperature      = DaylightD65;
 
@@ -137,15 +136,6 @@ public:
     DDoubleNumInput*        greenInput              = nullptr;
 };
 
-const QString WBSettings::Private::configDarkInputEntry(QLatin1String("Dark"));
-const QString WBSettings::Private::configBlackInputEntry(QLatin1String("Black"));
-const QString WBSettings::Private::configMainExposureEntry(QLatin1String("MainExposure"));
-const QString WBSettings::Private::configFineExposureEntry(QLatin1String("FineExposure"));
-const QString WBSettings::Private::configGammaInputEntry(QLatin1String("Gamma"));
-const QString WBSettings::Private::configSaturationInputEntry(QLatin1String("Saturation"));
-const QString WBSettings::Private::configGreenInputEntry(QLatin1String("Green"));
-const QString WBSettings::Private::configTemperatureInputEntry(QLatin1String("Temperature"));
-
 // --------------------------------------------------------
 
 WBSettings::WBSettings(QWidget* const parent)
@@ -153,8 +143,6 @@ WBSettings::WBSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(parent);
     d->temperatureLabel     = new QLabel(QString::fromUtf8("<a href='https://en.wikipedia.org/wiki/Color_temperature'>%1</a> (K): ")
                                          .arg(i18nc("@title: WB", "Color Temperature")));
