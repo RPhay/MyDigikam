@@ -445,8 +445,8 @@ public:
     // Readonly; A mouse press shows the popup; Cursor is the pointing hand.
 
     explicit TreeViewComboBoxLineEdit(QComboBox* const box)
-        : m_box    (box),
-          QLineEdit(box)
+        : QLineEdit(box),
+          m_box    (box)
     {
         setReadOnly(true);
         setCursor(Qt::PointingHandCursor);
