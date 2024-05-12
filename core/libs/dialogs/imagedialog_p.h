@@ -60,7 +60,7 @@ class Q_DECL_HIDDEN ImageDialog::Private
 
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
     QStringList               fileFormats;
     QList<QUrl>               urls;

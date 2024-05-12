@@ -509,7 +509,7 @@ class Q_DECL_HIDDEN ThemeManager::Private
 {
 public:
 
-    explicit Private();
+    Private();
 
     QPixmap createSchemePreviewIcon(const KSharedConfigPtr& config) const;
 

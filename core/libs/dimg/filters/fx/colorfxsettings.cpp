@@ -48,32 +48,26 @@ public:
 
     Private() = default;
 
-    static const QString configEffectTypeEntry;
-    static const QString configLevelAdjustmentEntry;
-    static const QString configIterationAdjustmentEntry;
-    static const QString configLut3DFilterEntry;
-    static const QString configLut3DIntensityEntry;
+    const QString configEffectTypeEntry             = QLatin1String("EffectType");
+    const QString configLevelAdjustmentEntry        = QLatin1String("LevelAdjustment");
+    const QString configIterationAdjustmentEntry    = QLatin1String("IterationAdjustment");
+    const QString configLut3DFilterEntry            = QLatin1String("Lut3D Color Correction Filter");
+    const QString configLut3DIntensityEntry         = QLatin1String("Lut3D Color Correction Intensity");
 
-    QStackedWidget* stack           = nullptr;
+    QStackedWidget* stack                           = nullptr;
 
-    DComboBox*      effectType      = nullptr;
+    DComboBox*      effectType                      = nullptr;
 
-    DIntNumInput*   levelInput      = nullptr;
-    DIntNumInput*   iterationInput  = nullptr;
-    DIntNumInput*   intensityInput  = nullptr;
+    DIntNumInput*   levelInput                      = nullptr;
+    DIntNumInput*   iterationInput                  = nullptr;
+    DIntNumInput*   intensityInput                  = nullptr;
 
-    QLabel*         iterationLabel  = nullptr;
+    QLabel*         iterationLabel                  = nullptr;
 
-    PreviewList*    correctionTools = nullptr;
+    PreviewList*    correctionTools                 = nullptr;
 
     QStringList     luts;
 };
-
-const QString ColorFXSettings::Private::configEffectTypeEntry(QLatin1String("EffectType"));
-const QString ColorFXSettings::Private::configLevelAdjustmentEntry(QLatin1String("LevelAdjustment"));
-const QString ColorFXSettings::Private::configIterationAdjustmentEntry(QLatin1String("IterationAdjustment"));
-const QString ColorFXSettings::Private::configLut3DFilterEntry(QLatin1String("Lut3D Color Correction Filter"));
-const QString ColorFXSettings::Private::configLut3DIntensityEntry(QLatin1String("Lut3D Color Correction Intensity"));
 
 // --------------------------------------------------------
 
@@ -100,9 +94,7 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
 
     // -------------------------------------------------------------
 
-    const int spacing = layoutSpacing();
-
-
+    const int spacing             = layoutSpacing();
     QGridLayout* const grid       = new QGridLayout(parent);
 
     QLabel* const effectTypeLabel = new QLabel(i18nc("@label", "Type:"), parent);

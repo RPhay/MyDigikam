@@ -155,7 +155,7 @@ public:
 
 private:
 
-    ItemDescEditTab* q = nullptr;
+    ItemDescEditTab* const q = nullptr;
 };
 
 } // namespace Digikam

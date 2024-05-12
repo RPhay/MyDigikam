@@ -50,7 +50,7 @@ class Q_DECL_HIDDEN IccSettings::Private
 {
 public:
 
-    explicit Private();
+    Private();
 
     QList<IccProfile>    scanDirectories(const QStringList& dirs);
     void                 scanDirectory(const QString& path, const QStringList& filter, QList<IccProfile>* const profiles);

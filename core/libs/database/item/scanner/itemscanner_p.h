@@ -128,7 +128,7 @@ class Q_DECL_HIDDEN ItemScanner::Private
 {
 public:
 
-    explicit Private();
+    Private();
     ~Private();
 
 public:

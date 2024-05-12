@@ -46,19 +46,15 @@ public:
 
     Private() = default;
 
-    static const QString configBrightnessAdjustmentEntry;
-    static const QString configContrastAdjustmentEntry;
-    static const QString configGammaAdjustmentEntry;
+    const QString configBrightnessAdjustmentEntry   = QLatin1String("BrightnessAdjustment");
+    const QString configContrastAdjustmentEntry     = QLatin1String("ContrastAdjustment");
+    const QString configGammaAdjustmentEntry        = QLatin1String("GammaAdjustment");
 
-    DIntNumInput*        bInput = nullptr;
-    DIntNumInput*        cInput = nullptr;
+    DIntNumInput*        bInput                     = nullptr;
+    DIntNumInput*        cInput                     = nullptr;
 
-    DDoubleNumInput*     gInput = nullptr;
+    DDoubleNumInput*     gInput                     = nullptr;
 };
-
-const QString BCGSettings::Private::configBrightnessAdjustmentEntry(QLatin1String("BrightnessAdjustment"));
-const QString BCGSettings::Private::configContrastAdjustmentEntry(QLatin1String("ContrastAdjustment"));
-const QString BCGSettings::Private::configGammaAdjustmentEntry(QLatin1String("GammaAdjustment"));
 
 // --------------------------------------------------------
 
@@ -67,8 +63,6 @@ BCGSettings::BCGSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const label2 = new QLabel(i18n("Brightness:"));

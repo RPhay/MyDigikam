@@ -54,8 +54,8 @@ class Q_DECL_HIDDEN ImageQualityParser::Private
 public:
 
     explicit Private()
+        : calculator(new ImageQualityCalculator())
     {
-        calculator = new ImageQualityCalculator();
     }
 
     ~Private()

@@ -48,7 +48,7 @@ class Q_DECL_HIDDEN FacialRecognitionWrapper::Private
 {
 public:
 
-    explicit Private();
+    Private();
     ~Private();
 
 public:

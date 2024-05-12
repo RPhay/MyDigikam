@@ -89,9 +89,6 @@ QByteArray DatabaseBlob::write(Haar::SignatureData& data)
 
 // -----------------------------------------------------------------------------------------------------
 
-const QString HaarIface::Private::signatureQuery = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
-const Haar::WeightBin HaarIface::Private::weightBin;
-
 HaarIface::Private::Private()
     : m_data(new Haar::ImageData)
 {

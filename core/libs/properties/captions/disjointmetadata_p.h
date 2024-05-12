@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN DisjointMetadata::Private : public DisjointMetadataDataField
 {
 public:
 
-    explicit Private();
+    Private();
 
     // use the automatic copy constructor
 

@@ -50,26 +50,20 @@ public:
 
     Private() = default;
 
-    static const QString configGroupName;
-    static const QString configAllBlackFrameFilesEntry;
-    static const QString configCurrentBlackFrameFileEntry;
-    static const QString configHotPixelsListEntry;
-    static const QString configFilterMethodEntry;
+    const QString configGroupName                   = QLatin1String("hotpixels Tool");
+    const QString configAllBlackFrameFilesEntry     = QLatin1String("All Black Frame Files");
+    const QString configCurrentBlackFrameFileEntry  = QLatin1String("Current Black Frame File");
+    const QString configHotPixelsListEntry          = QLatin1String("Hot Pixels List");
+    const QString configFilterMethodEntry           = QLatin1String("Filter Method");
 
-    QPushButton*         blackFrameButton   = nullptr;
-    DComboBox*           filterMethodCombo  = nullptr;
-    BlackFrameListView*  blackFrameListView = nullptr;
+    QPushButton*         blackFrameButton           = nullptr;
+    DComboBox*           filterMethodCombo          = nullptr;
+    BlackFrameListView*  blackFrameListView         = nullptr;
 
     QList<HotPixelProps> hotPixelsList;
     QUrl                 currentBlackFrameUrl;
     QList<QUrl>          allBlackFrameUrls;
 };
-
-const QString HotPixelSettings::Private::configGroupName(QLatin1String("hotpixels Tool"));
-const QString HotPixelSettings::Private::configAllBlackFrameFilesEntry(QLatin1String("All Black Frame Files"));
-const QString HotPixelSettings::Private::configCurrentBlackFrameFileEntry(QLatin1String("Current Black Frame File"));
-const QString HotPixelSettings::Private::configHotPixelsListEntry(QLatin1String("Hot Pixels List"));
-const QString HotPixelSettings::Private::configFilterMethodEntry(QLatin1String("Filter Method"));
 
 // --------------------------------------------------------
 
@@ -78,7 +72,6 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing               = layoutSpacing();
-
     QGridLayout* const grid         = new QGridLayout(parent);
 
     QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);

@@ -96,7 +96,7 @@ class Q_DECL_HIDDEN HaarIface::Private
 {
 public:
 
-    explicit Private();
+    Private();
     ~Private() = default;
 
 public:
@@ -118,8 +118,8 @@ public:
 
 public:
 
-    const static QString            signatureQuery;
-    const static Haar::WeightBin    weightBin;
+    const QString                   signatureQuery = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
+    const Haar::WeightBin           weightBin;
 
 private:
 

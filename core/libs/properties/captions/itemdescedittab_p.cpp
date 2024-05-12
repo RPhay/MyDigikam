@@ -26,7 +26,6 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
     : q(tab)
 {
     spacing = layoutSpacing();
-
 }
 
 void ItemDescEditTab::Private::setupConnections()
