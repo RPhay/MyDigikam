@@ -167,8 +167,8 @@ QBoxLayout* DItemsList::setControlButtonsPlacement(ControlButtonPlacement placem
     delete layout();
 
     QBoxLayout* lay               = nullptr;        // Layout instance to return;
-    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing             = layoutSpacing();
+
 
     QGridLayout* const mainLayout = new QGridLayout;
     mainLayout->addWidget(d->listView, 1, 1, 1, 1);

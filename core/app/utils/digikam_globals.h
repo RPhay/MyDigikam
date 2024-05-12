@@ -183,6 +183,11 @@ DIGIKAM_EXPORT void showRawCameraList();
  */
 DIGIKAM_EXPORT QString toolButtonStyleSheet();
 
+/**
+ * Default spacing to use in layout.
+ */
+DIGIKAM_EXPORT int layoutSpacing();
+
 // --- Static functions for the bundles ---
 
 /**

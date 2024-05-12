@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "albummanager.h"
 #include "albumselectiontreeview.h"
@@ -62,8 +63,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F1));
     d->albumModificationHelper = albumModificationHelper;
 
-    const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing          = layoutSpacing();
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     d->albumFolderView         = new AlbumSelectionTreeView(this, model, d->albumModificationHelper);

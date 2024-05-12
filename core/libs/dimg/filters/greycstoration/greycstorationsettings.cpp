@@ -86,8 +86,8 @@ GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)
       d      (new Private)
 {
     d->parent         = parent;
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     // -------------------------------------------------------------
 

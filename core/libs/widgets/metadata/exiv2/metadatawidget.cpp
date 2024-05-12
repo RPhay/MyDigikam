@@ -54,6 +54,7 @@
 #include "searchtextbar.h"
 #include "setup.h"
 #include "dfiledialog.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -99,8 +100,8 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
 {
     setObjectName(name);
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
     d->mainLayout     = new QGridLayout(this);
 
     // -----------------------------------------------------------------
@@ -500,8 +501,7 @@ void MetadataWidget::setFileName(const QString& fileName)
 void MetadataWidget::setUserAreaWidget(QWidget* const w)
 {
     QVBoxLayout* const vLayout = new QVBoxLayout();
-    vLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vLayout->setSpacing(layoutSpacing());
     vLayout->addWidget(w);
     vLayout->addStretch();
     d->mainLayout->addLayout(vLayout, 3, 0, 1, 5);

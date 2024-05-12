@@ -36,6 +36,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "MarbleConfigView.h"
 #include "geolocationsettings.h"
 #include "digikam_debug.h"
@@ -89,8 +90,8 @@ SetupGeolocation::SetupGeolocation(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
+
 
     QVBoxLayout* const vbl  = new QVBoxLayout();
     panel->setLayout(vbl);

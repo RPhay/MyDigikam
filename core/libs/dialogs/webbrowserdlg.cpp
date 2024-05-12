@@ -47,6 +47,7 @@
 #include "searchtextbar.h"
 #include "dxmlguiwindow.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -146,8 +147,8 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     // ----------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->addWidget(d->toolbar,     0, 0, 1, 1);
     grid->addWidget(d->searchbar,   0, 2, 1, 1);
     grid->addWidget(d->browser,     1, 0, 1, 3);

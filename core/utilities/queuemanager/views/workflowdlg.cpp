@@ -115,8 +115,8 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     grid->addWidget(d->titleEdit, 2, 1, 1, 1);
     grid->addWidget(descLabel,    3, 0, 1, 1, Qt::AlignLeft | Qt::AlignTop);
     grid->addWidget(d->descEdit,  3, 1, 1, 1);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->setContentsMargins(QMargins());
     page->setLayout(grid);
 

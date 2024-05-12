@@ -43,6 +43,7 @@
 #include "imagecurves.h"
 #include "imagehistogram.h"
 #include "dimg.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -221,8 +222,7 @@ void CurvesBox::setup()
     mainLayout->addLayout(l3,       1, 0, 1, 1);
     mainLayout->setRowStretch(2, 10);
     mainLayout->setContentsMargins(QMargins());
-    mainLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    mainLayout->setSpacing(layoutSpacing());
     setLayout(mainLayout);
 
     // default: disable all control widgets

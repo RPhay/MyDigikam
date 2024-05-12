@@ -82,8 +82,8 @@ WSFinalPage::WSFinalPage(QWizard* const dialog, const QString& title)
 
     vbox->setStretchFactor(d->progressBar, 10);
     vbox->setContentsMargins(QMargins());
-    vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vbox->setSpacing(layoutSpacing());
+
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("WS_send")));

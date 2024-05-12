@@ -46,10 +46,13 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "statusprogressbar.h"
 #include "searchtextbar.h"
 #include "dxmlguiwindow.h"
 #include "digikam_debug.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericINatPlugin
 {
@@ -185,8 +188,7 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     // ----------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
     grid->addWidget(d->toolbar, 0, 0, 1, 1);
     grid->addWidget(d->browser, 1, 0, 1, 3);
     grid->setColumnStretch(1, 10);

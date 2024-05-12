@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "mailwizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
@@ -78,8 +79,7 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
       d          (new Private(dialog))
 {
     QWidget* const main = new QWidget(this);
-    const int spacing   = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                               QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing   = layoutSpacing();
 
     // --------------------
 

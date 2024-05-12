@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "thememanager.h"
 
@@ -497,8 +498,8 @@ DLabelExpander::DLabelExpander(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
+
 
     d->grid                 = new QGridLayout(this);
     d->line                 = new DLineWidget(Qt::Horizontal, this);
@@ -764,8 +765,8 @@ DExpanderBox::DExpanderBox(QWidget* const parent)
     setWidgetResizable(true);
     QWidget* const main = new QWidget(viewport());
     d->vbox             = new QVBoxLayout(main);
-    d->vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    d->vbox->setSpacing(layoutSpacing());
+
     d->vbox->setContentsMargins(QMargins());
     setWidget(main);
 

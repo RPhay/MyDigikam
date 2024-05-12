@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "imagequalitysettings.h"
 
@@ -57,8 +58,8 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     d->selButtonGroup       = new QButtonGroup(this);
     d->selButtonGroup->setExclusive(true);

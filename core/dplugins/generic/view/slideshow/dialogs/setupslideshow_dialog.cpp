@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "dnuminput.h"
 #include "dfontselect.h"
@@ -91,8 +92,7 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QWidget* const panel      = new QWidget(this);
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
 
     DHBox* const hbox1        = new DHBox(panel);
     new QLabel(i18n("Delay between images:"), hbox1);

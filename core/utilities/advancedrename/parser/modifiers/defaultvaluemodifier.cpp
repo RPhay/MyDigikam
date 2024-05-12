@@ -28,14 +28,18 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
 DefaultValueDialog::DefaultValueDialog(Rule* parent)
     : RuleDialog(parent)
 {
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
+
 
     QString defaultValueStr = i18n("Default Value");
 

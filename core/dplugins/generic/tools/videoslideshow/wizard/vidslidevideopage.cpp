@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "vidslidewizard.h"
 #include "transitionpreview.h"
 #include "effectpreview.h"
@@ -187,8 +188,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     d->effPreview              = new EffectPreview(effGrp);
     QGridLayout* const effGrid = new QGridLayout(effGrp);
-    effGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    effGrid->setSpacing(layoutSpacing());
     effGrid->addWidget(effLabel,      0, 0, 1, 1);
     effGrid->addWidget(d->effVal,     0, 1, 1, 1);
     effGrid->addWidget(effNote,       1, 0, 1, 2);
@@ -224,8 +224,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     d->transPreview              = new TransitionPreview(transGrp);
     QGridLayout* const transGrid = new QGridLayout(transGrp);
-    transGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    transGrid->setSpacing(layoutSpacing());
+
     transGrid->addWidget(transLabel,      0, 0, 1, 1);
     transGrid->addWidget(d->transVal,     0, 1, 1, 1);
     transGrid->addWidget(transNote,       1, 0, 1, 2);
@@ -240,8 +240,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->addWidget(framesLabel,     0, 0, 1, 1);
     grid->addWidget(d->framesVal,    0, 1, 1, 1);
     grid->addWidget(stdLabel,        1, 0, 1, 1);

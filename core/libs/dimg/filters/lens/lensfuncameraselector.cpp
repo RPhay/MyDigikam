@@ -34,6 +34,7 @@
 #include "squeezedcombobox.h"
 #include "dnuminput.h"
 #include "dexpanderbox.h"
+#include "digikam_globals.h"
 
 // Disable deprecated API from Lensfun.
 #if defined(Q_CC_GNU)
@@ -185,8 +186,7 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     grid->addWidget(d->aperture,   8, 1, 1, 2);
     grid->addWidget(d->distLabel,  9, 0, 1, 1);
     grid->addWidget(d->distance,   9, 1, 1, 2);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
     grid->setContentsMargins(QMargins());
 
     connect(d->metadataUsage, SIGNAL(toggled(bool)),

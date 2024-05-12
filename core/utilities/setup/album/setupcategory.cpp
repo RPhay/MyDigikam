@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "thumbnailsize.h"
 #include "dtextedit.h"
@@ -67,8 +68,8 @@ SetupCategory::SetupCategory(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
+
     QGridLayout* const grid = new QGridLayout(panel);
 
     QLabel* const explanationLabel = new QLabel(panel);

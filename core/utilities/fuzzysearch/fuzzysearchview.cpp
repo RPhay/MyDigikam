@@ -29,8 +29,8 @@ FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
 {
     d->settings                 = ApplicationSettings::instance();
 
-    const int spacing           = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing           = layoutSpacing();
+
 
     d->thumbLoadThread          = ThumbnailLoadThread::defaultThread();
     d->searchModel              = searchModel;

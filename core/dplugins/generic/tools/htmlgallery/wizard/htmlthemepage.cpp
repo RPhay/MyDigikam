@@ -27,6 +27,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "galleryinfo.h"
 #include "htmlwizard.h"
 #include "dlayoutbox.h"
@@ -59,8 +60,7 @@ HTMLThemePage::HTMLThemePage(QWizard* const dialog, const QString& title)
     d->themeInfo->setObjectName(QLatin1String("ThemeInfo"));
 
     hbox->setContentsMargins(QMargins());
-    hbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    hbox->setSpacing(layoutSpacing());
 
     connect(d->themeList, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotThemeSelectionChanged()));

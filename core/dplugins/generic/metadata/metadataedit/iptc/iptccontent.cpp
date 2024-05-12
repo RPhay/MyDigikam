@@ -30,6 +30,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "multistringsedit.h"
 #include "dexpanderbox.h"
@@ -119,8 +120,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
 
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);

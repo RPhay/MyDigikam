@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "mediaplayerview.h"
 
 namespace Digikam
@@ -51,8 +52,8 @@ VidPlayerDlg::VidPlayerDlg(const QString& file, QWidget* const parent)
     // ----------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->addWidget(d->player, 0, 0, 1, 1);
     grid->setColumnStretch(0, 10);
     setLayout(grid);

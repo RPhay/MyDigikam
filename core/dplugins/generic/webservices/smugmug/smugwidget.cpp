@@ -46,8 +46,8 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
 {
     setObjectName(QLatin1String("SmugWidget"));
 
-    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing             = layoutSpacing();
+
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
 
     // -------------------------------------------------------------------

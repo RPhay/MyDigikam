@@ -30,6 +30,7 @@
 
 #include "dexpanderbox.h"
 #include "metaenginesettings.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -70,8 +71,8 @@ MetadataStatusBar::MetadataStatusBar(QWidget* const parent)
 
     vlay->addWidget(d->applyBtn);
     vlay->addWidget(d->info);
-    vlay->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vlay->setSpacing(layoutSpacing());
+
     vlay->setContentsMargins(QMargins());
     vlay->setStretchFactor(d->info, 10);
 

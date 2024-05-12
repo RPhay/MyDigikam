@@ -25,8 +25,8 @@ namespace Digikam
 ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
     : q(tab)
 {
-    spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    spacing = layoutSpacing();
+
 }
 
 void ItemDescEditTab::Private::setupConnections()

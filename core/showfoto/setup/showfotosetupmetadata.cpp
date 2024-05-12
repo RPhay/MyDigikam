@@ -36,6 +36,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "metaengine.h"
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
@@ -70,8 +71,7 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing             = layoutSpacing();
 
     QWidget* const panel          = new QWidget(d->tab);
     QVBoxLayout* const mainLayout = new QVBoxLayout(panel);

@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dcursortracker.h"
 #include "parsesettings.h"
 #include "parser.h"
@@ -89,8 +90,8 @@ RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraT
 
     QGridLayout* const mainLayout  = new QGridLayout(this);
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     // ----------------------------------------------------------------
 

@@ -25,6 +25,10 @@
 #include <QScrollArea>
 #include <QWizard>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -52,8 +56,8 @@ DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
 {
     setTitle(title);
 
-    const int spacing     = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing     = layoutSpacing();
+
 
     QScrollArea* const sv = new QScrollArea(this);
     QWidget* const panel  = new QWidget(sv->viewport());

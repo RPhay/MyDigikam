@@ -49,6 +49,7 @@
 #include "localizesettings.h"
 #include "localizeselector.h"
 #include "dexpanderbox.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {

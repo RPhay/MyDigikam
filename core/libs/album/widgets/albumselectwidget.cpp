@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "album.h"
 #include "albummodificationhelper.h"
@@ -163,8 +164,8 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
     grid->addWidget(d->newAlbumBtn,   1, 1, 1, 1);
     grid->setRowStretch(0, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
 
     // ------------------------------------------------------------------------------------
 

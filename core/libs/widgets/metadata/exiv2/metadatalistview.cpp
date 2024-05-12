@@ -31,6 +31,7 @@
 
 #include "mdkeylistviewitem.h"
 #include "metadatalistviewitem.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -44,8 +45,8 @@ MetadataListView::MetadataListView(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setIndentation(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                        QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    setIndentation(layoutSpacing());
+
     header()->setSectionResizeMode(QHeaderView::Stretch);
     header()->hide();
 

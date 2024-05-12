@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "invisiblebuttongroup.h"
 #include "galleryinfo.h"
 #include "htmlwizard.h"
@@ -57,8 +58,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 {
     setObjectName(QLatin1String("ImageSettingsPage"));
 
-    const int spacing   = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                               QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing   = layoutSpacing();
 
     QWidget* const box  = new QWidget(this);
 

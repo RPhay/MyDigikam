@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "metadatacheckbox.h"
 #include "squeezedcombobox.h"
 #include "dtextedit.h"
@@ -149,8 +150,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(4, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
 
     // --------------------------------------------------------
 

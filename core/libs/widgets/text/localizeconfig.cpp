@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "localizesettings.h"
 #include "altlangstredit.h"
 #include "digikam_debug.h"
@@ -205,8 +206,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
 
     QGridLayout* const grid = new QGridLayout(this);
 

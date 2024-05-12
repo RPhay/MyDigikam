@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "wallpaperplugin.h"
 
 namespace DigikamGenericWallpaperPlugin
@@ -66,8 +67,7 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
 
     // -------------------
 
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
 
     QGridLayout* const grid = new QGridLayout(d->page);
     QLabel* const lbl       = new QLabel(i18n("Wallpaper Layout:"), d->page);

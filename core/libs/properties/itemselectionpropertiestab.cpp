@@ -29,6 +29,7 @@
 
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -61,8 +62,8 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     QWidget* const w1                    = new QWidget(this);
     QGridLayout* const glay1             = new QGridLayout(w1);

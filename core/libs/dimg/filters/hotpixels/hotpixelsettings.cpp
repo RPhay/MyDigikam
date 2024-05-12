@@ -77,8 +77,8 @@ HotPixelSettings::HotPixelSettings(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing               = layoutSpacing();
+
     QGridLayout* const grid         = new QGridLayout(parent);
 
     QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), this);

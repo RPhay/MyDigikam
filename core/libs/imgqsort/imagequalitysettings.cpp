@@ -91,8 +91,8 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     DHBox* const hlay1        = new DHBox(this);
 

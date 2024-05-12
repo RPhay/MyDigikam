@@ -31,8 +31,9 @@
 
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
+#include "digikam_globals.h"
 #include "smugitem.h"
 #include "dtextedit.h"
 
@@ -74,8 +75,7 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
 
     // ------------------------------------------------------------------------
 
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
 
     QGroupBox* const albumBox = new QGroupBox(i18n("Album"), this);
     albumBox->setWhatsThis(i18n("These are basic settings for the new SmugMug album."));

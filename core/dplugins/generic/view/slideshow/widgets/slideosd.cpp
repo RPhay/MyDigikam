@@ -188,8 +188,8 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     grid->setRowStretch(0, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
 
     // ---------------------------------------------------------------
 

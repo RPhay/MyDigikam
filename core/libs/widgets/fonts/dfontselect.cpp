@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 
 namespace Digikam
@@ -76,8 +77,8 @@ DFontSelect::DFontSelect(const QString& text, QWidget* const parent)
     d->chooseFontButton = new QPushButton(i18n("Choose..."), this);
     d->desc             = new DAdjustableLabel(this);
 
-    setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    setSpacing(layoutSpacing());
+
     setContentsMargins(0, 0, 0, 0);
     setStretchFactor(d->space, 10);
 

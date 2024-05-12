@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -253,8 +254,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     optionsBoxLayout->addWidget(m_detailEdit,   6, 1, 1, 4);
     optionsBoxLayout->setColumnStretch(4, 10);
     optionsBoxLayout->setContentsMargins(QMargins());
-    optionsBoxLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    optionsBoxLayout->setSpacing(layoutSpacing());
+
     d->optionsBox->setLayout(optionsBoxLayout);
 
     // --------------------------------------------------------
@@ -271,8 +272,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     mainLayout->setRowStretch(6, 10);
     mainLayout->setColumnStretch(2, 1);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
+
 
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     mainLayout->setSpacing(spacing);

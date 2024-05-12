@@ -95,9 +95,9 @@ void ActionCategorizedView::adjustGridSize()
         }
     }
 /*
-    grid += QSize(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)), qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid += QSize(layoutSpacing();
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)), layoutSpacing();
+
 */
     setGridSize(grid);
 }

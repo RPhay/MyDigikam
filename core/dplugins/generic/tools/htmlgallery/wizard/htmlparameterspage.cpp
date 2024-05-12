@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "htmlwizard.h"
 #include "galleryinfo.h"
 #include "abstractthemeparameter.h"
@@ -83,8 +84,7 @@ HTMLParametersPage::HTMLParametersPage(QWizard* const dialog, const QString& tit
     mScrollArea->setWidget(d->content);
 
     vbox->setContentsMargins(QMargins());
-    vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vbox->setSpacing(layoutSpacing());
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("text-css")));
@@ -119,8 +119,7 @@ void HTMLParametersPage::initializePage()
 
     QGridLayout* const layout = new QGridLayout(d->content);
     layout->setContentsMargins(QMargins());
-    layout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                            QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    layout->setSpacing(layoutSpacing());
 
     // Create widgets
 

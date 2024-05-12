@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "metadatacheckbox.h"
 #include "dexpanderbox.h"
@@ -331,8 +332,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     grid->setColumnStretch(5, 10);
     grid->setRowStretch(16, 10);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
 
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);

@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "systemsettings.h"
 #include "filesdownloader.h"
@@ -66,8 +67,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     QGridLayout* const layout = new QGridLayout(this);
 

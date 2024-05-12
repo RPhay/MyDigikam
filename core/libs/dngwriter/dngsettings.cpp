@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dcombobox.h"
 #include "dngwriter.h"
 #include "exiftoolerrorview.h"
@@ -63,8 +64,8 @@ DNGSettings::DNGSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing                    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing                    = layoutSpacing();
+
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
 

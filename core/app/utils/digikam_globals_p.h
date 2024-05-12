@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QDir>
 #include <QList>
+#include <QStyle>
 #include <QTimeZone>
 #include <QImageReader>
 #include <QImageWriter>

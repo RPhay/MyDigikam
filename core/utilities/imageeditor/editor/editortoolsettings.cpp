@@ -319,8 +319,8 @@ int EditorToolSettings::marginHint()
 
 int EditorToolSettings::spacingHint()
 {
-    return qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    return layoutSpacing();
+
 }
 
 QWidget* EditorToolSettings::plainPage() const

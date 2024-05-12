@@ -117,8 +117,8 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     QScrollArea* const sv3   = new QScrollArea(this);
     DVBox* const vbox3       = new DVBox(sv3->viewport());

@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 
@@ -99,8 +100,7 @@ MultiValuesEdit::MultiValuesEdit(QWidget* const parent, const QString& title, co
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(4, 100);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
 
     // --------------------------------------------------------
 

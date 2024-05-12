@@ -175,8 +175,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    const int spacing      = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                  QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing      = layoutSpacing();
+
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
                                          i18nc("go to previous image", "Back"),   this);

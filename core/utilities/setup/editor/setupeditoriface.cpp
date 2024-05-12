@@ -89,8 +89,8 @@ SetupEditorIface::SetupEditorIface(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing    = layoutSpacing();
+
     QWidget* const panel = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);

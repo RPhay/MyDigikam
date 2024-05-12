@@ -36,6 +36,10 @@
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -255,8 +259,8 @@ int DMessageBox::createMessageBox(QDialog* const dialog,
                                   const QString& ask,
                                   bool* checkboxReturn)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     QWidget* const mainWidget     = new QWidget(dialog);
     QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);

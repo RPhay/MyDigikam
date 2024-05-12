@@ -25,8 +25,7 @@ void SetupMetadata::appendBehaviorTab()
     QWidget* const panel            = new QWidget;
     QVBoxLayout* const mainLayout   = new QVBoxLayout;
 
-    const int spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                           QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing               = layoutSpacing();
 
     d->fieldsGroup                  = new QGroupBox;
     QGridLayout* const fieldsLayout = new QGridLayout;

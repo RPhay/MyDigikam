@@ -61,25 +61,31 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 
     Q_FOREACH (const QByteArray& frm, supported)
     {
-        if (QString::fromLatin1(frm).contains(QLatin1String("tif"),  Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("tiff"), Qt::CaseInsensitive))
+        if (
+            QString::fromLatin1(frm).contains(QLatin1String("tif"),  Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("tiff"), Qt::CaseInsensitive)
+           )
         {
             continue;
         }
 
-        if (QString::fromLatin1(frm).contains(QLatin1String("jpg"),  Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("jpeg"), Qt::CaseInsensitive))
+        if (
+            QString::fromLatin1(frm).contains(QLatin1String("jpg"),  Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("jpeg"), Qt::CaseInsensitive)
+           )
         {
             continue;
         }
 
 #ifdef HAVE_JASPER
 
-        if (QString::fromLatin1(frm).contains(QLatin1String("jp2"),  Qt::CaseInsensitive) ||
+        if (
+            QString::fromLatin1(frm).contains(QLatin1String("jp2"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("j2k"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("jpx"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("jpc"),  Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("pgx"),  Qt::CaseInsensitive))
+            QString::fromLatin1(frm).contains(QLatin1String("pgx"),  Qt::CaseInsensitive)
+           )
         {
             continue;
         }
@@ -88,9 +94,11 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 
 #ifdef HAVE_X265
 
-        if (QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
+        if (
+            QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("hif"),  Qt::CaseInsensitive))
+            QString::fromLatin1(frm).contains(QLatin1String("hif"),  Qt::CaseInsensitive)
+           )
         {
             continue;
         }
@@ -99,9 +107,11 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 
 #ifdef HAVE_IMAGE_MAGICK
 
-        if (QString::fromLatin1(frm).contains(QLatin1String("fts"),  Qt::CaseInsensitive) ||
+        if (
+            QString::fromLatin1(frm).contains(QLatin1String("fts"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("fit"),  Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("fits"), Qt::CaseInsensitive))
+            QString::fromLatin1(frm).contains(QLatin1String("fits"), Qt::CaseInsensitive)
+           )
         {
             continue;
         }
@@ -164,14 +174,16 @@ bool isReadableImageFile(const QString& filePath)
         // Add extra check of the image extensions that are still
         // unknown in older Qt versions or have an application mime type.
 
-        if (mtype.name().startsWith(QLatin1String("image/")) ||
+        if (
+            mtype.name().startsWith(QLatin1String("image/")) ||
             (suffix == QLatin1String("PGF"))                 ||
             (suffix == QLatin1String("KRA"))                 ||
             (suffix == QLatin1String("CR3"))                 ||
             (suffix == QLatin1String("HIF"))                 ||
             (suffix == QLatin1String("HEIC"))                ||
             (suffix == QLatin1String("HEIF"))                ||
-            DRawDecoder::rawFiles().contains(suffix))
+            DRawDecoder::rawFiles().contains(suffix)
+           )
         {
             return true;
         }
@@ -211,6 +223,14 @@ QString toolButtonStyleSheet()
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
                          "  stop: 0 rgba(40, 40, 40, 50%), "
                          "  stop: 1 rgba(50, 50, 50, 50%)); }");
+}
+
+int layoutSpacing()
+{
+    return (
+            qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing))
+           );
 }
 
 QDateTime startOfDay(const QDate& date)

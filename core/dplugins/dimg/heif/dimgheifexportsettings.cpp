@@ -30,6 +30,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dnuminput.h"
 
 namespace Digikam
@@ -55,8 +56,7 @@ DImgHEIFExportSettings::DImgHEIFExportSettings(QWidget* const parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
 
     d->HEIFGrid     = new QGridLayout(this);
     d->HEIFLossLess = new QCheckBox(i18n("Lossless HEIF files"), this);

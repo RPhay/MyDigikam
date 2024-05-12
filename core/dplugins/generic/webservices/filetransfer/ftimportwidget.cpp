@@ -73,8 +73,8 @@ FTImportWidget::FTImportWidget(QWidget* const parent, DInfoInterface* const ifac
     layout->addWidget(d->imageList);
     layout->addWidget(d->uploadWidget);
     layout->setContentsMargins(QMargins());
-    layout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    layout->setSpacing(layoutSpacing());
+
 
     connect(d->importSearchBtn, SIGNAL(clicked(bool)),
             this, SLOT(slotShowImportDialogClicked(bool)));

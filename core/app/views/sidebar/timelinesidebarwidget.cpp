@@ -40,6 +40,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "albumpointer.h"
 #include "albummodificationhelper.h"
@@ -103,8 +104,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     d->timer                    = new QTimer(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
     QFrame* const panel     = new QFrame(this);

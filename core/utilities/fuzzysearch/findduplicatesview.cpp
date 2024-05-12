@@ -96,8 +96,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->settings       = ApplicationSettings::instance();
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     // ---------------------------------------------------------------
 

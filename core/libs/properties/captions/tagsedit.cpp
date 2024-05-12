@@ -73,8 +73,8 @@ TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
 {
     d->hub      = hub;
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
+
 
     setFrameStyle(QFrame::NoFrame);
     setWidgetResizable(true);

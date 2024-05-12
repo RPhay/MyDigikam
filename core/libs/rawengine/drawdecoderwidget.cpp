@@ -68,6 +68,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "drawdecoder.h"
 #include "dnuminput.h"
 #include "dcombobox.h"
@@ -463,8 +464,8 @@ void DRawDecoderWidget::setup(int advSettings)
         d->whitePointSpinBox->hide();
     }
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     whiteBalanceLayout->addWidget(d->whiteBalanceLabel,              0,  0, 1, 1);
     whiteBalanceLayout->addWidget(d->whiteBalanceComboBox,           0,  1, 1, 2);

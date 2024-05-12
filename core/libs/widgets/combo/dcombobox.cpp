@@ -27,6 +27,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -59,8 +63,8 @@ DComboBox::DComboBox(QWidget* const parent)
     hlay->addWidget(d->resetButton);
     hlay->setStretchFactor(d->combo, 10);
     hlay->setContentsMargins(QMargins());
-    hlay->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    hlay->setSpacing(layoutSpacing());
+
 
     // -------------------------------------------------------------
 

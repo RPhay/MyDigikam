@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
@@ -123,8 +124,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(7, 10);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
 
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);

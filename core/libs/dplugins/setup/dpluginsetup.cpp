@@ -33,6 +33,7 @@
 
 #include "dpluginconfview.h"
 #include "dpluginaboutdlg.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -60,8 +61,8 @@ DPluginSetup::DPluginSetup(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     d->grid                   = new QGridLayout(this);
     d->pluginFilter           = new SearchTextBar(this, QLatin1String("PluginsSearchBar"));

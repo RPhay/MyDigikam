@@ -122,8 +122,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->page);

@@ -114,8 +114,8 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     QVBoxLayout* const vlay = new QVBoxLayout(panel);
     vlay->addWidget(d->settingsExpander);
 
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = layoutSpacing();
+
 
     // -- Settings View Used Timestamps ---------------------------------------------------------
 

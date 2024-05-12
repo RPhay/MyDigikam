@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "tooltipdialog.h"
 #include "digikam_debug.h"
@@ -68,8 +69,8 @@ AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     d->tooltipDialog = new TooltipDialog(this);
     d->tooltipDialog->setTooltip(i18nc("@info",

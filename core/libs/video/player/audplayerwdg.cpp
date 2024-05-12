@@ -39,6 +39,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 #include "digikam_debug.h"
 
@@ -126,8 +127,8 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
 
     QGridLayout* const grid      = new QGridLayout(this);
     grid->setContentsMargins(QMargins(0, 0, 0, 0));
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->addWidget(d->playPauseBtn,     0, 0, 1, 1);
     grid->addWidget(d->stopBtn,          0, 1, 1, 1);
     grid->addWidget(d->elapsedTimeLabel, 0, 2, 1, 1);

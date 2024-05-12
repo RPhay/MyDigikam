@@ -47,6 +47,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "advancedmetadatatab.h"
 #include "applicationsettings.h"
 #include "dactivelabel.h"

@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dtextedit.h"
 #include "htmlwizard.h"
 #include "galleryinfo.h"
@@ -96,8 +97,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
     grid->addWidget(d->titleLabel,          0, 0, 1, 1);
     grid->addWidget(d->imageSelectionTitle, 0, 1, 1, 1);
     grid->addWidget(textLabel1,             1, 0, 1, 1);

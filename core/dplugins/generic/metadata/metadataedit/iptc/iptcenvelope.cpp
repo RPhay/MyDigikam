@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
@@ -286,8 +287,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(11, 10);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
 
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);

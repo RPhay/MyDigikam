@@ -46,8 +46,8 @@ BatchTool* Blur::clone(QObject* const parent) const
 
 void Blur::registerSettingsWidget()
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     m_settingsWidget = new QWidget;
     QLabel* label    = new QLabel(i18n("Smoothness:"));

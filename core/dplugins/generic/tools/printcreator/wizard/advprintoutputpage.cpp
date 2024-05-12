@@ -116,8 +116,8 @@ AdvPrintOutputPage::AdvPrintOutputPage(QWizard* const dialog, const QString& tit
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
+
     grid->addWidget(d->labelImagesFormat, 0, 0, 1, 1);
     grid->addWidget(d->imagesFormat,      0, 1, 1, 2);
     grid->addWidget(fileLabel,            1, 0, 1, 1);

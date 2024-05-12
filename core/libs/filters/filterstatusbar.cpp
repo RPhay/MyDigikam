@@ -28,6 +28,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 
 namespace Digikam
@@ -91,8 +92,8 @@ FilterStatusBar::FilterStatusBar(QWidget* const parent)
     vlay->addWidget(d->info);
     vlay->addWidget(d->resetBtn);
     vlay->addWidget(d->settingsBtn);
-    vlay->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vlay->setSpacing(layoutSpacing());
+
     vlay->setContentsMargins(QMargins());
     vlay->setStretchFactor(d->info, 10);
 

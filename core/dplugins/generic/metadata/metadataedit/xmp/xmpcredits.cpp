@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "multistringsedit.h"
 #include "dtextedit.h"
 
@@ -154,8 +155,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
     grid2->addWidget(d->countryEdit,        7, 1, 1, 2);
     grid2->setColumnStretch(2, 10);
 
-    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = layoutSpacing();
 
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);

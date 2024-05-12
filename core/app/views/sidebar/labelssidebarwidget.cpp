@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
@@ -56,8 +57,7 @@ LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     setObjectName(QLatin1String("Labels Sidebar"));
     setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F3));
 
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 

@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "abstractthemeparameter.h"
 #include "gallerygenerator.h"
@@ -68,8 +69,7 @@ HTMLFinalPage::HTMLFinalPage(QWizard* const dialog, const QString& title)
 
     vbox->setStretchFactor(d->progressBar, 10);
     vbox->setContentsMargins(QMargins());
-    vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vbox->setSpacing(layoutSpacing());
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("system-run")));

@@ -37,8 +37,8 @@ void DatabaseSettingsWidget::setupMainArea()
 
     // --------------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     QGroupBox* const dbConfigBox    = new QGroupBox(i18n("Database Configuration"), this);
     QVBoxLayout* const vlay         = new QVBoxLayout(dbConfigBox);

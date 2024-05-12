@@ -118,8 +118,8 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     QWidget* w1               = new QWidget(this);
     QGridLayout* glay1        = new QGridLayout(w1);

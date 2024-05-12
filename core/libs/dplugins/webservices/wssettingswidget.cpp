@@ -134,8 +134,8 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
 
     //----------------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
 

@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "dfileselector.h"
 #include "digikam_debug.h"
@@ -96,8 +97,8 @@ CollectionPage::CollectionPage(QWizard* const dlg)
     vlayout->addWidget(textLabel1);
     vlayout->addWidget(d->rootAlbumPathRequester);
     vlayout->setContentsMargins(QMargins());
-    vlayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vlayout->setSpacing(layoutSpacing());
+
 
     setPageWidget(widget);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-pictures")));

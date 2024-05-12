@@ -87,8 +87,8 @@ AdvPrintFinalPage::AdvPrintFinalPage(QWizard* const dialog, const QString& title
     d->progressBar    = new DProgressWdg(vbox);
 
     vbox->setStretchFactor(d->progressBar, 10);
-    vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    vbox->setSpacing(layoutSpacing());
+
     vbox->setContentsMargins(QMargins());
 
     setPageWidget(vbox);

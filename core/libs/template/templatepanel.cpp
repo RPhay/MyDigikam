@@ -35,6 +35,7 @@
 #include "dtextedit.h"
 #include "altlangstredit.h"
 #include "countryselector.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -185,8 +186,8 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setSpacing(spacing);

@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dfontselect.h"
 #include "showfotosettings.h"
 
@@ -75,8 +76,7 @@ ShowfotoSetupToolTip::ShowfotoSetupToolTip(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
 
     QVBoxLayout* const layout = new QVBoxLayout(panel);
     d->showToolTipsBox        = new QCheckBox(i18n("Show Items' Toolti&ps With Thumbbar and Folder-View"), panel);

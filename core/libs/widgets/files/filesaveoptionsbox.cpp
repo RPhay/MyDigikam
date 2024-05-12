@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "dpluginloader.h"
 
@@ -84,8 +85,8 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
     d->noneOptions               = new QWidget(this);
     d->noneGrid                  = new QGridLayout(d->noneOptions);
-    d->noneGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    d->noneGrid->setSpacing(layoutSpacing());
+
     d->noneOptions->setLayout(d->noneGrid);
     d->labelNone                 = new QLabel(i18n("No options available"), d->noneOptions);
     d->noneGrid->addWidget(d->labelNone, 0, 0, 0, 1);

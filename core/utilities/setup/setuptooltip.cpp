@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "applicationsettings.h"
 #include "importsettings.h"
@@ -122,8 +123,8 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing        = layoutSpacing();
+
 
     QVBoxLayout* const vlay  = new QVBoxLayout(panel);
 

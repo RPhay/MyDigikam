@@ -126,8 +126,8 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
 
     // -------------------
 
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing         = layoutSpacing();
+
 
     d->startOnStartup         = new QCheckBox(i18nc("@option", "Start Server at Startup"));
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the DLNA server at application start-up automatically"));

@@ -73,8 +73,8 @@ BatchTool* ApplyMetadata::clone(QObject* const parent) const
 
 void ApplyMetadata::registerSettingsWidget()
 {
-    const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing    = layoutSpacing();
+
 
     DVBox* const vbox    = new DVBox;
 

@@ -48,6 +48,7 @@
 #include "exiftoolloadingview.h"
 #include "searchtextbar.h"
 #include "dfiledialog.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -157,8 +158,8 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     // -----------------------------------------------------------------
 
-    const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing        = layoutSpacing();
+
     d->metadataView          = new QWidget(this);
     QGridLayout* const grid2 = new QGridLayout(d->metadataView);
 

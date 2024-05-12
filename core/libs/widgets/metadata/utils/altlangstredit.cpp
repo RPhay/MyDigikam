@@ -49,8 +49,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     d->grid->addWidget(d->valueEdit,        1, 0, 1, -1);
     d->grid->setColumnStretch(1, 10);
     d->grid->setContentsMargins(QMargins());
-    d->grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    d->grid->setSpacing(layoutSpacing());
 
     populateLangAltListEntries();
 

@@ -135,8 +135,8 @@ BatchTool* WaterMark::clone(QObject* const parent) const
 
 void WaterMark::registerSettingsWidget()
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
+
 
     DVBox* const vbox = new DVBox;
     vbox->setContentsMargins(spacing, spacing, spacing, spacing);
