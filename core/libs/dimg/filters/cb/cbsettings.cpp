@@ -46,18 +46,14 @@ public:
 
     Private() = default;
 
-    static const QString configRedAdjustmentEntry;
-    static const QString configGreenAdjustmentEntry;
-    static const QString configBlueAdjustmentEntry;
+    const QString configRedAdjustmentEntry      = QLatin1String("RedAdjustment");
+    const QString configGreenAdjustmentEntry    = QLatin1String("GreenAdjustment");
+    const QString configBlueAdjustmentEntry     = QLatin1String("BlueAdjustment");
 
-    DIntNumInput*        rInput = nullptr;
-    DIntNumInput*        gInput = nullptr;
-    DIntNumInput*        bInput = nullptr;
+    DIntNumInput* rInput                        = nullptr;
+    DIntNumInput* gInput                        = nullptr;
+    DIntNumInput* bInput                        = nullptr;
 };
-
-const QString CBSettings::Private::configRedAdjustmentEntry(QLatin1String("RedAdjustment"));
-const QString CBSettings::Private::configGreenAdjustmentEntry(QLatin1String("GreenAdjustment"));
-const QString CBSettings::Private::configBlueAdjustmentEntry(QLatin1String("BlueAdjustment"));
 
 // --------------------------------------------------------
 
@@ -66,8 +62,6 @@ CBSettings::CBSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing          = layoutSpacing();
-
-
     QGridLayout* const grid    = new QGridLayout(parent);
 
     QLabel* const labelCyan    = new QLabel(i18nc("@label: color", "Cyan"));

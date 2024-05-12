@@ -47,12 +47,10 @@ public:
 
     Private() = default;
 
-    static const QString configRedToAvgRatioAdjustmentEntry;
+    const QString configRedToAvgRatioAdjustmentEntry = QLatin1String("RedToAvgRatioAdjustment");
 
     DDoubleNumInput* redtoavgratioInput = nullptr;
 };
-
-const QString RedEyeCorrectionSettings::Private::configRedToAvgRatioAdjustmentEntry(QLatin1String("RedToAvgRatioAdjustment"));
 
 // --------------------------------------------------------
 
@@ -61,8 +59,6 @@ RedEyeCorrectionSettings::RedEyeCorrectionSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const label2    = new QLabel(i18n("Red Level:"));

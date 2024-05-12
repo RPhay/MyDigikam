@@ -45,25 +45,20 @@ public:
 
     Private() = default;
 
-    static const QString    configHueAdjustmentEntry;
-    static const QString    configSaturationAdjustmentEntry;
-    static const QString    configVibranceAdjustmentEntry;
-    static const QString    configLighnessAdjustmentEntry;
+    const QString configHueAdjustmentEntry          = QLatin1String("HueAdjustment");
+    const QString configSaturationAdjustmentEntry   = QLatin1String("SaturationAdjustment");
+    const QString configVibranceAdjustmentEntry     = QLatin1String("VibranceAdjustment");
+    const QString configLighnessAdjustmentEntry     = QLatin1String("LighnessAdjustment");
 
-    DHueSaturationSelector* HSSelector  = nullptr;
+    DHueSaturationSelector* HSSelector              = nullptr;
 
-    DDoubleNumInput*        hInput      = nullptr;
-    DDoubleNumInput*        sInput      = nullptr;
-    DDoubleNumInput*        vInput      = nullptr;
-    DDoubleNumInput*        lInput      = nullptr;
+    DDoubleNumInput*        hInput                  = nullptr;
+    DDoubleNumInput*        sInput                  = nullptr;
+    DDoubleNumInput*        vInput                  = nullptr;
+    DDoubleNumInput*        lInput                  = nullptr;
 
-    HSPreviewWidget*        HSPreview   = nullptr;
+    HSPreviewWidget*        HSPreview               = nullptr;
 };
-
-const QString HSLSettings::Private::configHueAdjustmentEntry(QLatin1String("HueAdjustment"));
-const QString HSLSettings::Private::configSaturationAdjustmentEntry(QLatin1String("SaturationAdjustment"));
-const QString HSLSettings::Private::configVibranceAdjustmentEntry(QLatin1String("VibranceAdjustment"));
-const QString HSLSettings::Private::configLighnessAdjustmentEntry(QLatin1String("LighnessAdjustment"));
 
 // --------------------------------------------------------
 
@@ -72,7 +67,6 @@ HSLSettings::HSLSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     d->HSSelector = new DHueSaturationSelector();

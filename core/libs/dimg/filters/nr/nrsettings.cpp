@@ -49,37 +49,29 @@ public:
 
     Private() = default;
 
-    static const QString configThrLumInputAdjustmentEntry;
-    static const QString configSoftLumInputAdjustmentEntry;
-    static const QString configThrCrInputAdjustmentEntry;
-    static const QString configSoftCrInputAdjustmentEntry;
-    static const QString configThrCbInputAdjustmentEntry;
-    static const QString configSoftCbInputAdjustmentEntry;
-    static const QString configCheckAutoEstimationEntry;
+    const QString configThrLumInputAdjustmentEntry  = QLatin1String("ThrLumAdjustment");
+    const QString configSoftLumInputAdjustmentEntry = QLatin1String("SoftLumAdjustment");
+    const QString configThrCrInputAdjustmentEntry   = QLatin1String("ThrCrAdjustment");
+    const QString configSoftCrInputAdjustmentEntry  = QLatin1String("SoftCrAdjustment");
+    const QString configThrCbInputAdjustmentEntry   = QLatin1String("ThrCbAdjustment");
+    const QString configSoftCbInputAdjustmentEntry  = QLatin1String("SoftCbAdjustment");
+    const QString configCheckAutoEstimationEntry    = QLatin1String("AutoNRAdjustment");
 
-    QWidget*             luminanceBox           = nullptr;
-    QWidget*             chrominanceRedBox      = nullptr;
-    QWidget*             chrominanceBlueBox     = nullptr;
+    QWidget*             luminanceBox               = nullptr;
+    QWidget*             chrominanceRedBox          = nullptr;
+    QWidget*             chrominanceBlueBox         = nullptr;
 
-    QCheckBox*           checkAutoEst           = nullptr;
+    QCheckBox*           checkAutoEst               = nullptr;
 
-    DExpanderBox*        advExpanderBox         = nullptr;
+    DExpanderBox*        advExpanderBox             = nullptr;
 
-    DDoubleNumInput*     thrLumInput            = nullptr;
-    DDoubleNumInput*     softLumInput           = nullptr;
-    DDoubleNumInput*     thrCrInput             = nullptr;
-    DDoubleNumInput*     softCrInput            = nullptr;
-    DDoubleNumInput*     thrCbInput             = nullptr;
-    DDoubleNumInput*     softCbInput            = nullptr;
+    DDoubleNumInput*     thrLumInput                = nullptr;
+    DDoubleNumInput*     softLumInput               = nullptr;
+    DDoubleNumInput*     thrCrInput                 = nullptr;
+    DDoubleNumInput*     softCrInput                = nullptr;
+    DDoubleNumInput*     thrCbInput                 = nullptr;
+    DDoubleNumInput*     softCbInput                = nullptr;
 };
-
-const QString NRSettings::Private::configThrLumInputAdjustmentEntry(QLatin1String("ThrLumAdjustment"));
-const QString NRSettings::Private::configSoftLumInputAdjustmentEntry(QLatin1String("SoftLumAdjustment"));
-const QString NRSettings::Private::configThrCrInputAdjustmentEntry(QLatin1String("ThrCrAdjustment"));
-const QString NRSettings::Private::configSoftCrInputAdjustmentEntry(QLatin1String("SoftCrAdjustment"));
-const QString NRSettings::Private::configThrCbInputAdjustmentEntry(QLatin1String("ThrCbAdjustment"));
-const QString NRSettings::Private::configSoftCbInputAdjustmentEntry(QLatin1String("SoftCbAdjustment"));
-const QString NRSettings::Private::configCheckAutoEstimationEntry(QLatin1String("AutoNRAdjustment"));
 
 // --------------------------------------------------------
 
@@ -88,8 +80,6 @@ NRSettings::NRSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = layoutSpacing();
-
-
     QGridLayout* const grid = new QGridLayout(parent);
 
     QString thHelp = i18n("<b>Threshold</b>: Adjusts the threshold for denoising of "

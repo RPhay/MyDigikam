@@ -50,12 +50,11 @@ public:
         favoriteProfiles.setMaxCost(10);
     }
 
-    static const QString  configRecentlyUsedProfilesEntry;
+    const QString configRecentlyUsedProfilesEntry = QLatin1String("Recently Used Profiles");
+
     QCache<QString, bool> favoriteProfiles;
     IccProfilesComboBox*  profilesBox = nullptr;
 };
-
-const QString IccProfilesSettings::Private::configRecentlyUsedProfilesEntry(QLatin1String("Recently Used Profiles"));
 
 // --------------------------------------------------------
 
@@ -99,6 +98,7 @@ void IccProfilesSettings::slotNewProfInfo()
 void IccProfilesSettings::slotProfileChanged()
 {
     d->favoriteProfiles.insert(d->profilesBox->currentProfile().filePath(), new bool(true));
+
     Q_EMIT signalSettingsChanged();
 }
 
