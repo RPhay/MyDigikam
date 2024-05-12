@@ -53,8 +53,8 @@ public:
 
     Private() = default;
 
-    static const QString configGroupName;
-    static const QString configExpandedStateEntry;
+    const QString configGroupName                   = QLatin1String("AdvancedRename Widget");
+    const QString configExpandedStateEntry          = QLatin1String("Options are expanded");
 
     bool                 configExpandedStateDefault = true;
 
@@ -74,9 +74,6 @@ public:
     CWMask               controlWidgetsMask         = AdvancedRenameWidget::DefaultControls;
     LStyle               layoutStyle                = AdvancedRenameWidget::LayoutNormal;
 };
-
-const QString AdvancedRenameWidget::Private::configGroupName(QLatin1String("AdvancedRename Widget"));
-const QString AdvancedRenameWidget::Private::configExpandedStateEntry(QLatin1String("Options are expanded"));
 
 // --------------------------------------------------------
 

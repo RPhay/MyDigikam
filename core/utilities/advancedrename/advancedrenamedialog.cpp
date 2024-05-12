@@ -140,9 +140,9 @@ public:
 
     Private() = default;
 
-    static const QString   configGroupName;
-    static const QString   configLastUsedRenamePatternEntry;
-    static const QString   configDialogSizeEntry;
+    const QString configGroupName                   = QLatin1String("AdvancedRename Dialog");
+    const QString configLastUsedRenamePatternEntry  = QLatin1String("Last Used Rename Pattern");
+    const QString configDialogSizeEntry             = QLatin1String("Dialog Size");
 
     QString                singleFileModeOldFilename;
 
@@ -166,10 +166,6 @@ public:
     AdvancedRenameWidget*  advancedRenameWidget     = nullptr;
     NewNamesList           newNamesList;
 };
-
-const QString AdvancedRenameDialog::Private::configGroupName(QLatin1String("AdvancedRename Dialog"));
-const QString AdvancedRenameDialog::Private::configLastUsedRenamePatternEntry(QLatin1String("Last Used Rename Pattern"));
-const QString AdvancedRenameDialog::Private::configDialogSizeEntry(QLatin1String("Dialog Size"));
 
 // --------------------------------------------------------
 

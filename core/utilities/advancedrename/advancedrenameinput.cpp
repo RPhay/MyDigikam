@@ -32,16 +32,6 @@
 
 #include "highlighter.h"
 
-// Constants
-
-namespace
-{
-
-static const quint8 INVALID = -1;
-static const QString DUMMY_TEXT(QLatin1String("DUMMY_TEXT_y_fjqp|"));
-
-}
-
 namespace Digikam
 {
 
@@ -50,6 +40,9 @@ class Q_DECL_HIDDEN AdvancedRenameLineEdit::Private
 public:
 
     Private() = default;
+
+    const quint8 INVALID            = -1;
+    const QString DUMMY_TEXT        = QLatin1String("DUMMY_TEXT_y_fjqp|");
 
     bool    allowDirectoryCreation  = false;
     int     verticalSliderPosition  = INVALID;
@@ -84,7 +77,7 @@ void AdvancedRenameLineEdit::setupWidgets()
     setPalette(qApp->palette());
 
     QFontMetrics fm = fontMetrics();
-    int textHeight  = fm.boundingRect(DUMMY_TEXT).height();
+    int textHeight  = fm.boundingRect(d->DUMMY_TEXT).height();
     document()->setDocumentMargin(1);
     setFixedHeight(textHeight + 8);
 
@@ -99,7 +92,7 @@ void AdvancedRenameLineEdit::setupWidgets()
     // layout widget correctly by setting a dummy text and calling ensureCursorVisible().
     // Save the scrollbar position now, to avoid scrolling of the text when selecting with the mouse
 
-    setPlainText(DUMMY_TEXT);
+    setPlainText(d->DUMMY_TEXT);
     ensureCursorVisible();
     d->verticalSliderPosition = verticalScrollBar()->value();
     clear();
@@ -145,7 +138,9 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Return:
         {
             slotParseTimer();
+
             Q_EMIT signalReturnPressed();
+
             break;
         }
 
@@ -205,7 +200,7 @@ void AdvancedRenameLineEdit::scrollContentsBy(int dx, int dy)
     Q_UNUSED(dx)
     Q_UNUSED(dy)
 
-    if (d->verticalSliderPosition != INVALID)
+    if (d->verticalSliderPosition != d->INVALID)
     {
         verticalScrollBar()->setValue(d->verticalSliderPosition);
     }
@@ -221,8 +216,8 @@ void AdvancedRenameLineEdit::slotCursorPositionChanged()
     {
         ParseSettings settings;
         settings.parseString = toPlainText();
-        int start            = INVALID;
-        int length           = INVALID;
+        int start            = d->INVALID;
+        int length           = d->INVALID;
         int pos              = textCursor().position();
         found                = d->parser->tokenAtPosition(settings, pos, start, length);
         found                = found && ((start + length) == pos);
@@ -249,19 +244,16 @@ public:
 
     Private() = default;
 
-    static const QString    configGroupName;
-    static const QString    configPatternHistoryListEntry;
+    const QString configGroupName               = QLatin1String("AdvancedRename Input");
+    const QString configPatternHistoryListEntry = QLatin1String("Pattern History List");
 
-    const int               maxVisibleItems = 10;
-    const int               maxHistoryItems = 30;
+    const int               maxVisibleItems     = 10;
+    const int               maxHistoryItems     = 30;
 
-    AdvancedRenameLineEdit* lineEdit        = nullptr;
-    ProxyLineEdit*          proxy           = nullptr;
-    Highlighter*            highlighter     = nullptr;
+    AdvancedRenameLineEdit* lineEdit            = nullptr;
+    ProxyLineEdit*          proxy               = nullptr;
+    Highlighter*            highlighter         = nullptr;
 };
-
-const QString AdvancedRenameInput::Private::configGroupName(QLatin1String("AdvancedRename Input"));
-const QString AdvancedRenameInput::Private::configPatternHistoryListEntry(QLatin1String("Pattern History List"));
 
 // --------------------------------------------------------
 

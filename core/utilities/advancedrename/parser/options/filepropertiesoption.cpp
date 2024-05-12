@@ -25,10 +25,12 @@
 
 namespace
 {
+
 static const QString KEY_FILE(QLatin1String("[file]"));
 static const QString KEY_EXT(QLatin1String("[ext]"));
 static const QString KEY_USER(QLatin1String("[user]"));
 static const QString KEY_GROUP(QLatin1String("[group]"));
+
 }
 
 namespace Digikam
