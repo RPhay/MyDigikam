@@ -261,8 +261,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     grid->addWidget(d->logo,        0, 0, 1, 1);
     grid->addWidget(d->title,       0, 1, 1, 1);
     grid->addWidget(d->expanderBox, 5, 0, 3, 2);
-    grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(5, 10);

@@ -42,6 +42,9 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_globals.h"
 #include "dtextedit.h"
 
 namespace Digikam
@@ -216,8 +219,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
 
     QVBoxLayout* const topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins(QMargins());
-    const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                 style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacingHint        = layoutSpacing();
     int checkBoxGap              = spacingHint / 2;
 
     // The splitter contains font attribute widgets in the top part,

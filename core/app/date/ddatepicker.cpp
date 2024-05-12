@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "ddatetable_p.h"
 #include "dpopupframe.h"
 
@@ -56,9 +57,7 @@ DDatePicker::DDatePicker(const QDate& dt, QWidget* const parent)
 
 void DDatePicker::initWidget(const QDate& dt)
 {
-    const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                 style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
+    const int spacingHint       = layoutSpacing();
     QBoxLayout* const topLayout = new QVBoxLayout(this);
     topLayout->setSpacing(0);
     topLayout->setContentsMargins(QMargins());
@@ -564,8 +563,7 @@ void DDatePicker::setCloseButton(bool enable)
         d->closeButton        = new QToolButton(this);
         d->closeButton->setAutoRaise(true);
 
-        const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+        const int spacingHint = layoutSpacing();
 
         d->navigationLayout->addSpacing(spacingHint);
         d->navigationLayout->addWidget(d->closeButton);

@@ -217,8 +217,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     // --------------------------------------------------------
 
-    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
     const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                              qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                   qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
@@ -518,8 +517,7 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
     setModal(true);
     setWindowTitle(i18nc("@title:window", "Tag Creation Error"));
 
-    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
     const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                              qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                   qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),

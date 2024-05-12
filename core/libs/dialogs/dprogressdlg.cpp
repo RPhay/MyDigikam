@@ -30,6 +30,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 
 namespace Digikam
@@ -82,8 +83,7 @@ DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)
     grid->addWidget(d->actionLabel, 1, 2, 1, 1);
     grid->addWidget(d->progress,    2, 1, 1, 2);
     grid->addWidget(d->title,       3, 1, 1, 2);
-    grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setSpacing(layoutSpacing());
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
 

@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "searchtextbar.h"
 #include "album.h"
@@ -74,8 +75,7 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                   style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
     const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                              qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                   qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),

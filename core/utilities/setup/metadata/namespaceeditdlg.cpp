@@ -363,8 +363,7 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->fiveStars  = new QSpinBox(this);
     d->fiveStars->setValue(5);
 
-    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing = layoutSpacing();
     const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                              qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                   qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
