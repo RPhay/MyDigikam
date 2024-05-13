@@ -66,7 +66,7 @@ class Q_DECL_HIDDEN CtrlButton : public QPushButton
 
 public:
 
-    explicit CtrlButton(const QIcon& icon, QWidget* parent = nullptr)
+    explicit CtrlButton(const QIcon& icon, QWidget* const parent = nullptr)
        : QPushButton(parent)
     {
         const int btnSize = 32;

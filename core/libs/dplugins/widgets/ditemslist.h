@@ -138,7 +138,7 @@ public:
 public:
 
     explicit DItemsListView(DItemsList* const parent);
-    ~DItemsListView()                                     override;
+    ~DItemsListView()                                     override = default;
 
     void setColumnLabel(ColumnType column, const QString& label);
     void setColumnEnabled(ColumnType column, bool enable);

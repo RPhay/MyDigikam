@@ -62,10 +62,6 @@ DItemsListView::DItemsListView(DItemsList* const parent)
             this, &DItemsListView::slotItemClicked);
 }
 
-DItemsListView::~DItemsListView()
-{
-}
-
 DInfoInterface* DItemsListView::iface() const
 {
     DItemsList* const p = dynamic_cast<DItemsList*>(parent());

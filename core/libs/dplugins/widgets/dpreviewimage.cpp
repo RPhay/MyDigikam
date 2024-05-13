@@ -132,11 +132,12 @@ void DSelectionItem::setMaxBottom(qreal maxY)
 
 DSelectionItem::Intersects DSelectionItem::intersects(QPointF& point)
 {
-
-    if ((point.x() < (d->rect.left()   - d->selMargin)) ||
+    if (
+        (point.x() < (d->rect.left()   - d->selMargin)) ||
         (point.x() > (d->rect.right()  + d->selMargin)) ||
         (point.y() < (d->rect.top()    - d->selMargin)) ||
-        (point.y() > (d->rect.bottom() + d->selMargin)))
+        (point.y() > (d->rect.bottom() + d->selMargin))
+       )
     {
         d->showAnchors = false;
         update();
@@ -546,6 +547,7 @@ bool DPreviewImage::setImage(const QImage& img) const
         d->pixmapItem->setPixmap(QPixmap::fromImage(img));
         d->pixmapItem->setShapeMode(QGraphicsPixmapItem::BoundingRectShape);
         d->scene->setSceneRect(0, 0, img.width(), img.height());
+
         return true;
     }
 
@@ -567,7 +569,9 @@ void DPreviewImage::setSelectionArea(const QRectF& rectangle)
     d->selection->setRect(rectangle);
 
     if (!d->selection->isVisible())
+    {
         d->selection->setVisible(true);
+    }
 }
 
 bool DPreviewImage::load(const QUrl& file) const
@@ -662,10 +666,12 @@ void DPreviewImage::slotSetBRY(float ratio)
 void DPreviewImage::slotSetSelection(float tl_x, float tl_y, float br_x, float br_y)
 {
     QRectF rect;
-    rect.setCoords(tl_x * d->scene->width(),
+    rect.setCoords(
+                   tl_x * d->scene->width(),
                    tl_y * d->scene->height(),
                    br_x * d->scene->width(),
-                   br_y * d->scene->height());
+                   br_y * d->scene->height()
+                  );
 
     d->selection->setRect(rect);
     updateSelVisibility();
@@ -681,44 +687,58 @@ void DPreviewImage::slotSetHighlightArea(float tl_x, float tl_y, float br_x, flo
 {
     QRectF rect;
 
-    // Left  reason for rect: setCoords(x1,y1,x2,y2) != setRect(x1,x2, width, height)
+    // Left [reason for rect: setCoords(x1,y1,x2,y2) != setRect(x1,x2, width, height)]
 
-    rect.setCoords(0,
+    rect.setCoords(
+                   0,
                    0,
                    tl_x * d->scene->width(),
-                   d->scene->height());
+                   d->scene->height()
+                  );
+
     d->highLightLeft->setRect(rect);
 
     // Right
 
-    rect.setCoords(br_x * d->scene->width(),
+    rect.setCoords(
+                   br_x * d->scene->width(),
                    0,
                    d->scene->width(),
-                   d->scene->height());
+                   d->scene->height()
+                  );
+
     d->highLightRight->setRect(rect);
 
     // Top
 
-    rect.setCoords(tl_x * d->scene->width(),
+    rect.setCoords(
+                   tl_x * d->scene->width(),
                    0,
                    br_x * d->scene->width(),
-                   tl_y * d->scene->height());
+                   tl_y * d->scene->height()
+                  );
+
     d->highLightTop->setRect(rect);
 
     // Bottom
 
-    rect.setCoords(tl_x * d->scene->width(),
+    rect.setCoords(
+                   tl_x * d->scene->width(),
                    br_y * d->scene->height(),
                    br_x * d->scene->width(),
-                   d->scene->height());
+                   d->scene->height()
+                  );
+
     d->highLightBottom->setRect(rect);
 
     // Area
 
-    rect.setCoords(tl_x * d->scene->width(),
+    rect.setCoords(
+                   tl_x * d->scene->width(),
                    tl_y* d->scene->height(),
                    br_x * d->scene->width(),
-                   br_y* d->scene->height());
+                   br_y* d->scene->height()
+                  );
 
     d->highLightArea->setRect(rect);
 
@@ -813,9 +833,11 @@ void DPreviewImage::mousePressEvent(QMouseEvent* e)
                 d->selection->setRect(QRectF(scenePoint, QSizeF(0, 0)));
                 d->mouseZone = DSelectionItem::BottomRight;
             }
-            else if (d->selection->isVisible() &&
+            else if (
+                     d->selection->isVisible() &&
                      d->mouseZone != DSelectionItem::None &&
-                     d->mouseZone != DSelectionItem::Move)
+                     d->mouseZone != DSelectionItem::Move
+                    )
             {
                 // Modification of the selection area
 
@@ -851,8 +873,10 @@ void DPreviewImage::mouseReleaseEvent(QMouseEvent* e)
             // Stop and setup the selection area
             // Only one case: small rectangle that we drop
 
-            if ((d->selection->rect().width()  < 0.001) ||
-                (d->selection->rect().height() < 0.001))
+            if (
+                (d->selection->rect().width()  < 0.001) ||
+                (d->selection->rect().height() < 0.001)
+               )
             {
                 slotClearActiveSelection();
             }
@@ -925,9 +949,11 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 #endif
 
         }
-        else if (d->mouseDragAction == Private::DRAWSELECTION  ||
-                 d->mouseDragAction == Private::EXPANDORSHRINK ||
-                 d->mouseDragAction == Private::MOVESELECTION)
+        else if (
+                 (d->mouseDragAction == Private::DRAWSELECTION)  ||
+                 (d->mouseDragAction == Private::EXPANDORSHRINK) ||
+                 (d->mouseDragAction == Private::MOVESELECTION)
+                )
         {
             ensureVisible(QRectF(scenePoint, QSizeF(0, 0)), 1, 1);
             QRectF rect = d->selection->rect();
@@ -1252,7 +1278,7 @@ void DPreviewImage::leaveEvent(QEvent*)
 
 bool DPreviewImage::eventFilter(QObject* obj, QEvent* ev)
 {
-    if (obj == d->toolBar)
+    if      (obj == d->toolBar)
     {
         if      (ev->type() == QEvent::Enter)
         {
@@ -1310,10 +1336,14 @@ void DPreviewImage::resizeEvent(QResizeEvent* e)
 
 void DPreviewImage::updateSelVisibility()
 {
-    if ((d->selection->rect().width()                       > 0.001) &&
+    if (
+        (d->selection->rect().width()                       > 0.001) &&
         (d->selection->rect().height()                      > 0.001) &&
-        ((d->scene->width() - d->selection->rect().width()  > 0.1) ||
-        (d->scene->height() - d->selection->rect().height() > 0.1)))
+        (
+         (d->scene->width() - d->selection->rect().width()  > 0.1) ||
+         (d->scene->height() - d->selection->rect().height() > 0.1)
+        )
+       )
     {
         d->selection->setVisible(true);
     }
@@ -1333,34 +1363,46 @@ void DPreviewImage::updateHighlight()
 
         // Left
 
-        rect.setCoords(0,
+        rect.setCoords(
+                       0,
                        0,
                        d->selection->rect().left(),
-                       d->scene->height());
+                       d->scene->height()
+                      );
+
         d->highLightLeft->setRect(rect);
 
         // Right
 
-        rect.setCoords(d->selection->rect().right(),
+        rect.setCoords(
+                       d->selection->rect().right(),
                        0,
                        d->scene->width(),
-                       d->scene->height());
+                       d->scene->height()
+                      );
+
         d->highLightRight->setRect(rect);
 
         // Top
 
-        rect.setCoords(d->selection->rect().left(),
+        rect.setCoords(
+                       d->selection->rect().left(),
                        0,
                        d->selection->rect().right(),
-                       d->selection->rect().top());
+                       d->selection->rect().top()
+                      );
+
         d->highLightTop->setRect(rect);
 
         // Bottom
 
-        rect.setCoords(d->selection->rect().left(),
+        rect.setCoords(
+                       d->selection->rect().left(),
                        d->selection->rect().bottom(),
                        d->selection->rect().right(),
-                       d->scene->height());
+                       d->scene->height()
+                      );
+
         d->highLightBottom->setRect(rect);
 
         d->highLightLeft->show();
