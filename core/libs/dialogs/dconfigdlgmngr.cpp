@@ -503,6 +503,7 @@ void DConfigDlgMngr::updateSettings()
     if (changed)
     {
         d->conf->save();
+
         Q_EMIT settingsChanged();
     }
 }

@@ -252,7 +252,7 @@ public:
     /**
      * Destroys the page widget model.
      */
-    ~DConfigDlgWdgModel() override;
+    ~DConfigDlgWdgModel() override = default;
 
     /**
      * Adds a new top level page to the model.

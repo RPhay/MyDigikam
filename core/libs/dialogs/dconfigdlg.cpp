@@ -42,6 +42,7 @@ protected:
     void init()
     {
         Q_Q(DConfigDlg);
+
         delete q->layout();
 
         QVBoxLayout* const layout = new QVBoxLayout;
@@ -92,6 +93,7 @@ DConfigDlg::DConfigDlg(QWidget* const parent, Qt::WindowFlags flags)
       d_ptr  (new DConfigDlgPrivate(this))
 {
     Q_D(DConfigDlg);
+
     d->mPageWidget = new DConfigDlgWdg(this);
     d->mPageWidget->layout()->setContentsMargins(QMargins());
 
@@ -108,6 +110,7 @@ DConfigDlg::DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::W
 {
     Q_D(DConfigDlg);
     Q_ASSERT(widget);
+
     widget->setParent(this);
     d->mPageWidget = widget;
     d->mButtonBox  = new QDialogButtonBox(this);

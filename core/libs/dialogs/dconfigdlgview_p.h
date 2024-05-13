@@ -88,21 +88,21 @@ protected:
 
 protected:
 
-    DConfigDlgView*          q_ptr;
+    DConfigDlgView*          q_ptr          = nullptr;
 
     // data
 
-    QAbstractItemModel*      model;
-    DConfigDlgView::FaceType faceType;
+    QAbstractItemModel*      model          = nullptr;
+    DConfigDlgView::FaceType faceType       = DConfigDlgView::Auto;
 
     // gui
 
-    QGridLayout*             layout;
-    DConfigDlgStackedWidget* stack;
-    DConfigDlgTitle*         titleWidget;
-    QWidget*                 defaultWidget;
+    QGridLayout*             layout         = nullptr;
+    DConfigDlgStackedWidget* stack          = nullptr;
+    DConfigDlgTitle*         titleWidget    = nullptr;
+    QWidget*                 defaultWidget  = nullptr;
 
-    QAbstractItemView*       view;
+    QAbstractItemView*       view           = nullptr;
 
 private:
 
@@ -149,7 +149,7 @@ class Q_DECL_HIDDEN DConfigDlgListView : public QListView
 public:
 
     explicit DConfigDlgListView(QWidget* const parent = nullptr);
-    ~DConfigDlgListView() override;
+    ~DConfigDlgListView() override = default;
 
     void setModel(QAbstractItemModel* model) override;
 
@@ -247,7 +247,7 @@ class Q_DECL_HIDDEN DConfigDlgListViewProxy : public QAbstractProxyModel
 public:
 
     explicit DConfigDlgListViewProxy(QObject* const parent = nullptr);
-    ~DConfigDlgListViewProxy() override;
+    ~DConfigDlgListViewProxy() override = default;
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const                           override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const                        override;

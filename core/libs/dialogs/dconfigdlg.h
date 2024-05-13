@@ -255,7 +255,7 @@ protected:
 
 protected:
 
-    DConfigDlgPrivate* const d_ptr;
+    DConfigDlgPrivate* const d_ptr = nullptr;
 };
 
 } // namespace Digikam

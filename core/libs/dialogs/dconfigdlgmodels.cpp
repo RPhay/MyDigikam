@@ -266,7 +266,7 @@ PageItem* PageItem::findChild(const DConfigDlgWdgItem* item)
 
     for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
-        PageItem* const pageItem = mChildItems[ i ]->findChild(item);
+        PageItem* const pageItem = mChildItems[i]->findChild(item);
 
         if (pageItem)
         {
@@ -300,10 +300,6 @@ void PageItem::dump(int indent)
 
 DConfigDlgWdgModel::DConfigDlgWdgModel(QObject* const parent)
     : DConfigDlgModel(*new DConfigDlgWdgModelPrivate, parent)
-{
-}
-
-DConfigDlgWdgModel::~DConfigDlgWdgModel()
 {
 }
 

@@ -345,20 +345,14 @@ void DConfigDlgViewPrivate::_k_dataChanged(const QModelIndex&, const QModelIndex
 }
 
 DConfigDlgViewPrivate::DConfigDlgViewPrivate(DConfigDlgView* const _parent)
-    : q_ptr         (_parent),
-      model         (nullptr),
-      faceType      (DConfigDlgView::Auto),
-      layout        (nullptr),
-      stack         (nullptr),
-      titleWidget   (nullptr),
-      defaultWidget (nullptr),
-      view          (nullptr)
+    : q_ptr(_parent)
 {
 }
 
 void DConfigDlgViewPrivate::init()
 {
     Q_Q(DConfigDlgView);
+
     layout      = new QGridLayout(q);
     stack       = new DConfigDlgStackedWidget(q);
     titleWidget = new DConfigDlgTitle(q);
@@ -442,6 +436,7 @@ QAbstractItemModel* DConfigDlgView::model() const
 void DConfigDlgView::setFaceType(FaceType faceType)
 {
     Q_D(DConfigDlgView);
+
     d->faceType = faceType;
     d->_k_rebuildGui();
 }
@@ -574,6 +569,7 @@ QAbstractItemView* DConfigDlgView::createView()
 bool DConfigDlgView::showPageHeader() const
 {
     Q_D(const DConfigDlgView);
+
     FaceType faceType = d->faceType;
 
     if (faceType == Auto)
@@ -594,6 +590,7 @@ bool DConfigDlgView::showPageHeader() const
 Qt::Alignment DConfigDlgView::viewPosition() const
 {
     Q_D(const DConfigDlgView);
+
     FaceType faceType = d->faceType;
 
     if (faceType == Auto)

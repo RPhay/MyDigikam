@@ -92,10 +92,6 @@ DConfigDlgWdg::DConfigDlgWdg(QWidget* const parent)
             this, &DConfigDlgWdg::pageToggled);
 }
 
-DConfigDlgWdg::~DConfigDlgWdg()
-{
-}
-
 DConfigDlgWdgItem* DConfigDlgWdg::addPage(QWidget* widget, const QString& name)
 {
     // force layout margin to zero so that it aligns well with title widget
@@ -216,8 +212,10 @@ bool DConfigDlgTitle::eventFilter(QObject* object, QEvent* event)
 {
     // Hide message label on click
 
-    if ((d->autoHideTimeout > 0) &&
-        (event->type() == QEvent::MouseButtonPress))
+    if (
+        (d->autoHideTimeout > 0) &&
+        (event->type() == QEvent::MouseButtonPress)
+       )
     {
         QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
 
@@ -248,6 +246,7 @@ QString DConfigDlgTitle::comment() const
 
 QPixmap DConfigDlgTitle::pixmap() const
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     return d->imageLabel->pixmap(Qt::ReturnByValue);
@@ -257,6 +256,7 @@ QPixmap DConfigDlgTitle::pixmap() const
     return *d->imageLabel->pixmap();
 
 #endif
+
 }
 
 void DConfigDlgTitle::setBuddy(QWidget* const buddy)

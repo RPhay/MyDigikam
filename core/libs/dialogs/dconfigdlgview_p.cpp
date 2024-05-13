@@ -98,10 +98,6 @@ DConfigDlgListView::DConfigDlgListView(QWidget* const parent)
     setItemDelegate(new DConfigDlgListViewDelegate(this));
 }
 
-DConfigDlgListView::~DConfigDlgListView()
-{
-}
-
 void DConfigDlgListView::setModel(QAbstractItemModel* model)
 {
 /*
@@ -424,6 +420,7 @@ static int layoutText(QTextLayout* layout, int maxWidth)
     }
 
     layout->endLayout();
+
     return textWidth;
 }
 
@@ -519,7 +516,8 @@ QSize DConfigDlgListViewDelegate::sizeHint(const QStyleOptionViewItem& option, c
     int wt = layoutText(&iconTextLayout, qMax(3 * wp, 8 * fm.height()));
     int ht = iconTextLayout.boundingRect().height();
 
-    int width, height;
+    int width  = 0;
+    int height = 0;
 
     if (text.isEmpty())
     {
@@ -544,10 +542,12 @@ void DConfigDlgListViewDelegate::drawFocus(QPainter* painter, const QStyleOption
         o.QStyleOption::operator = (option);
         o.rect                   = rect;
         o.state                 |= QStyle::State_KeyboardFocusChange;
-        QPalette::ColorGroup cg  = (option.state & QStyle::State_Enabled)
-                                   ? QPalette::Normal : QPalette::Disabled;
-        o.backgroundColor        = option.palette.color(cg, (option.state & QStyle::State_Selected)
-                                   ? QPalette::Highlight : QPalette::Window);
+        QPalette::ColorGroup cg  = (option.state & QStyle::State_Enabled) ? QPalette::Normal
+                                                                          : QPalette::Disabled;
+        o.backgroundColor        = option.palette.color(
+                                                        cg, (option.state & QStyle::State_Selected) ? QPalette::Highlight
+                                                                                                    : QPalette::Window
+                                                       );
 
         QApplication::style()->drawPrimitive(QStyle::PE_FrameFocusRect, &o, painter);
     }
@@ -557,10 +557,6 @@ void DConfigDlgListViewDelegate::drawFocus(QPainter* painter, const QStyleOption
 
 DConfigDlgListViewProxy::DConfigDlgListViewProxy(QObject* const parent)
     : QAbstractProxyModel(parent)
-{
-}
-
-DConfigDlgListViewProxy::~DConfigDlgListViewProxy()
 {
 }
 

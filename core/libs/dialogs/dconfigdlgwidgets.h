@@ -52,7 +52,7 @@ public:
     /**
      * Destroys the page widget.
      */
-    ~DConfigDlgWdg() override;
+    ~DConfigDlgWdg() override = default;
 
     /**
      * Adds a new top level page to the widget.
