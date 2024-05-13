@@ -113,8 +113,11 @@ void DWizardDlg::restoreDialogSize()
         }
 
         QRect srect = screen->availableGeometry();
-        resize((800 <= srect.width())  ? 800 : srect.width(),
-               (750 <= srect.height()) ? 750 : srect.height());
+
+        resize(
+               (800 <= srect.width())  ? 800 : srect.width(),
+               (750 <= srect.height()) ? 750 : srect.height()
+              );
     }
 }
 

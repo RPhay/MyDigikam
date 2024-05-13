@@ -72,18 +72,16 @@ class DIGIKAM_EXPORT AlbumSimplified
 
 public:
 
-    explicit AlbumSimplified()
-    {
-    }
+    AlbumSimplified() = default;
 
     explicit AlbumSimplified(const QString& title)
-      : title(title)
+        : title(title)
     {
     }
 
     explicit AlbumSimplified(const QString& title, bool uploadable)
-      : title     (title),
-        uploadable(uploadable)
+        : title     (title),
+          uploadable(uploadable)
     {
     }
 
