@@ -28,10 +28,6 @@ DNGWriterHost::DNGWriterHost(DNGWriter::Private* const priv,
 {
 }
 
-DNGWriterHost::~DNGWriterHost()
-{
-}
-
 void DNGWriterHost::SniffForAbort()
 {
     if (m_priv->cancel)

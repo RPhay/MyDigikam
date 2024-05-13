@@ -29,7 +29,7 @@ class DIGIKAM_EXPORT DNGWriterHost : public dng_host
 public:
 
     explicit DNGWriterHost(DNGWriter::Private* const priv, dng_memory_allocator* const allocator=nullptr);
-    ~DNGWriterHost();
+    ~DNGWriterHost() = default;
 
 private:
 
