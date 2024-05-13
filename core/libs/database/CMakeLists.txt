@@ -204,6 +204,14 @@ target_compile_definitions(digikamdatabase_obj
                            digikamdatabase_EXPORTS
 )
 
+# Specific settings with C++20 required by Qt 6.7 and later for history classes based on Boost.
+set_target_properties(digikamdatabase_obj
+                      PROPERTIES
+                      CXX_STANDARD 17
+                      CXX_STANDARD_REQUIRED YES
+                      CXX_EXTENSIONS NO
+)
+
 ### For digikamgui target - Symbols exported with DIGIKAM_EXPORT macro ############################
 
 set(libdatabasemain_SRCS
