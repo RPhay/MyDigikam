@@ -48,10 +48,6 @@ FileSaveOptionsDlg::FileSaveOptionsDlg(QWidget* const parent, FileSaveOptionsBox
             this, SLOT(reject()));
 }
 
-FileSaveOptionsDlg::~FileSaveOptionsDlg()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_filesaveoptionsdlg.cpp"

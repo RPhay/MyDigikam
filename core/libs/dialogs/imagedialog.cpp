@@ -177,11 +177,13 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
                     }
                 }
             }
-            else if ((ev->type() == QEvent::HoverLeave) ||
+            else if (
+                     (ev->type() == QEvent::HoverLeave) ||
                      (ev->type() == QEvent::FocusOut)   ||
                      (ev->type() == QEvent::Wheel)      ||
                      (ev->type() == QEvent::KeyPress)   ||
-                     (ev->type() == QEvent::Paint))
+                     (ev->type() == QEvent::Paint)
+                    )
             {
                 hideToolTip();
                 return false;

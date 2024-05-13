@@ -270,8 +270,10 @@ QString ImageDialogPreview::identifyItem(const QUrl& url, const QImage& preview)
     identify += cnt.cellBeg + i18n("<i>Exposure:</i>")          + cnt.cellMid + exposureTime        + cnt.cellEnd;
     identify += cnt.cellBeg + i18n("<i>Sensitivity:</i>")       + cnt.cellMid + sensitivity         + cnt.cellEnd;
 
-    if (QMimeDatabase().mimeTypeForFile(url.toLocalFile()).name().startsWith(QLatin1String("video/")) &&
-        !videoInfo.isEmpty())
+    if (
+        QMimeDatabase().mimeTypeForFile(url.toLocalFile()).name().startsWith(QLatin1String("video/")) &&
+        !videoInfo.isEmpty()
+       )
     {
         identify += cnt.cellBeg + i18n("<i>AspectRatio:</i>")       + cnt.cellMid + aspectRatio         + cnt.cellEnd;
         identify += cnt.cellBeg + i18n("<i>AudioBitRate:</i>")      + cnt.cellMid + audioBitRate        + cnt.cellEnd;

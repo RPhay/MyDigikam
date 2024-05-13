@@ -209,12 +209,14 @@ void WebBrowserDlg::closeEvent(QCloseEvent* e)
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
     Q_EMIT closeView(false);
+
     e->accept();
 }
 
 void WebBrowserDlg::slotUrlChanged(const QUrl& url)
 {
     d->progressbar->setText(url.toString());
+
     Q_EMIT urlChanged(url);
 }
 

@@ -64,10 +64,6 @@ ICCProfileInfoDlg::ICCProfileInfoDlg(QWidget* const parent, const QString& profi
             this, SLOT(slotHelp()));
 }
 
-ICCProfileInfoDlg::~ICCProfileInfoDlg()
-{
-}
-
 void ICCProfileInfoDlg::slotHelp()
 {
     openOnlineDocumentation(QLatin1String("color_management"));

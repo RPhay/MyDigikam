@@ -327,8 +327,10 @@ void SolidHardwareDlg::slotSearchTextChanged(const SearchTextSettings& settings)
     {
         QTreeWidgetItem* const item  = *it;
 
-        if (item->text(0).toLower().contains(search, settings.caseSensitive) ||
-            item->text(1).toLower().contains(search, settings.caseSensitive))
+        if (
+            item->text(0).toLower().contains(search, settings.caseSensitive) ||
+            item->text(1).toLower().contains(search, settings.caseSensitive)
+           )
         {
             ++results;
             query = true;

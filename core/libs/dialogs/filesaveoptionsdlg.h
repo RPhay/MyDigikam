@@ -37,7 +37,7 @@ class DIGIKAM_EXPORT FileSaveOptionsDlg : public QDialog
 public:
 
     FileSaveOptionsDlg(QWidget* const parent, FileSaveOptionsBox* const options);
-    ~FileSaveOptionsDlg();
+    ~FileSaveOptionsDlg() = default;
 };
 
 } // namespace Digikam

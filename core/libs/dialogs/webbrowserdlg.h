@@ -41,7 +41,7 @@ public:
     explicit WebBrowserDlg(const QUrl& url,
                            QWidget* const parent,
                            bool hideDeskBrowser = false);
-    ~WebBrowserDlg() override;
+    ~WebBrowserDlg()                override;
 
 Q_SIGNALS:
 
@@ -61,7 +61,7 @@ private Q_SLOTS:
 
 protected:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private:
 

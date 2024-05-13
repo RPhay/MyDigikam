@@ -137,8 +137,8 @@ void ImageDialogIconProvider::slotThumbnailLoaded(const LoadingDescription& desc
         QPixmap icon(QSize(256, 256));
         icon.fill(Qt::transparent);
         QPainter p(&icon);
-        p.drawPixmap((icon.width()  - pix.width() )  / 2,
-                     (icon.height() - pix.height())  / 2,
+        p.drawPixmap((icon.width()  - pix.width() ) / 2,
+                     (icon.height() - pix.height()) / 2,
                      pix);
 
         QMutexLocker locker(&d->mutex);

@@ -352,21 +352,29 @@ QIcon DMessageBox::createIcon(QMessageBox::Icon icon)
     switch (icon)
     {
         case QMessageBox::Warning:
+        {
             tmpIcon = qApp->style()->standardIcon(QStyle::SP_MessageBoxWarning, nullptr, qApp->activeWindow());
             break;
+        }
 
         case QMessageBox::Critical:
+        {
             tmpIcon = qApp->style()->standardIcon(QStyle::SP_MessageBoxCritical, nullptr, qApp->activeWindow());
             break;
+        }
 
         case QMessageBox::Question:
+        {
             tmpIcon = qApp->style()->standardIcon(QStyle::SP_MessageBoxQuestion, nullptr, qApp->activeWindow());
             break;
+        }
 
         case QMessageBox::Information:
         default:
+        {
             tmpIcon = qApp->style()->standardIcon(QStyle::SP_MessageBoxInformation, nullptr, qApp->activeWindow());
             break;
+        }
     }
 
     int iconSize = qApp->style()->pixelMetric(QStyle::PM_MessageBoxIconSize, nullptr, qApp->activeWindow());
