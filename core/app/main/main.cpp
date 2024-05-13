@@ -123,7 +123,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
                                    system.useHighDpiPixmaps);
 
-
     if (system.useHighDpiScaling)
     {
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -247,8 +246,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #ifdef Q_OS_WIN
 
-    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
-        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    if (
+        QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64"))
+       )
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),
@@ -287,8 +288,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     // Check if Qt database plugins are available.
 
-    if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()) &&
-        !QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
+    if (
+        !QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()) &&
+        !QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType())
+       )
     {
         if (QSqlDatabase::drivers().isEmpty())
         {
@@ -448,6 +451,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     }
 
     // If application cache place in home directory to save cached files do not exist, create it.
+
     if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)))
     {
         QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
@@ -501,6 +505,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 #ifdef Q_OS_WIN
 
     // Necessary to open native open with dialog on windows
+
     CoUninitialize();
 
 #endif

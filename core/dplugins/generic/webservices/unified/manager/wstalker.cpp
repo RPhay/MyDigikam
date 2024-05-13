@@ -38,7 +38,7 @@ namespace Digikam
 
 bool operator< (const WSAlbum& first, const WSAlbum& second)
 {
-    return first.title < second.title;
+    return (first.title < second.title);
 }
 
 } // namespace Digikam
@@ -88,9 +88,11 @@ WSTalker::~WSTalker()
     delete m_reply;
     delete m_netMngr;
 
-    /* Verify if m_settings is initialized by wstalker constructor or it is already initialized in wizard.
+    /*
+     * Verify if m_settings is initialized by wstalker constructor or it is already initialized in wizard.
      * if not by wizard, we have to delete it.
      */
+
     if (!m_wizard)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "delete m_settings";
@@ -145,9 +147,11 @@ void WSTalker::authenticate()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "username chosen: " << m_userName;
     bool authenticateValide = loadUserAccount(m_userName);
 
-    /* If user account already exists and doesn't expire yet (authenticateValide == true), linking to his account
+    /*
+     * If user account already exists and doesn't expire yet (authenticateValide == true), linking to his account
      * Otherwise, unlink() current account and link to new account
      */
+
     if (authenticateValide)
     {
         link();
@@ -165,6 +169,7 @@ void WSTalker::reauthenticate()
     unlink();
 
     // Wait until user account is unlinked completely
+
     while(linked());
 
     link();
@@ -234,9 +239,11 @@ bool WSTalker::loadUserAccount(const QString& userName)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "loadUserAccount with user name : " << userName;
 
-    /* User logins using new account, return false so that we can unlink() current account,
+    /*
+     * User logins using new account, return false so that we can unlink() current account,
      * before link() to new account
      */
+
     if (userName.isEmpty())
     {
         return false;
@@ -251,6 +258,7 @@ bool WSTalker::loadUserAccount(const QString& userName)
      *
      * However, if it happens, INSPECTATION is obligated!!!
      */
+
     if (map.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "WARNING: Something strange happens with getUserAccountInfo";
@@ -265,12 +273,13 @@ bool WSTalker::loadUserAccount(const QString& userName)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "current time : " << QDateTime::currentMSecsSinceEpoch() / 1000;
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "access_token: " << accessToken;
 
-    /* If access token is not expired yet, retrieve all tokens and return true so that we can link()
+    /*
+     * If access token is not expired yet, retrieve all tokens and return true so that we can link()
      * directly to new account.
      * Otherwise, return false so that user can relogin.
      */
 
-    if (expire.toLongLong() > QDateTime::currentMSecsSinceEpoch() / 1000)
+    if (expire.toLongLong() > (QDateTime::currentMSecsSinceEpoch() / 1000))
     {
         resetTalker(expire, accessToken, refreshToken);
         return true;

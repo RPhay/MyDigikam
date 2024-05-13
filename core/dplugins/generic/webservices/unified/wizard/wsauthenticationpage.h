@@ -72,7 +72,7 @@ public:
 
 #endif // #ifdef HAVE_QWEBENGINE
 
-    virtual ~WSAuthenticationPage();
+    virtual ~WSAuthenticationPage() = default;
 
     void setCallbackUrl(const QString& url);
 
@@ -116,7 +116,7 @@ public:
     explicit WSAuthenticationPageView(QWidget* const parent,
                                       WSAuthentication* const wsAuth,
                                       const QString& callbackUrl);
-    ~WSAuthenticationPageView();
+    ~WSAuthenticationPageView() = default;
 
     bool authenticationComplete() const;
 
@@ -139,7 +139,7 @@ private Q_SLOTS:
 
 private:
 
-    WSAuthentication*   m_WSAuthentication;
+    WSAuthentication* m_WSAuthentication = nullptr;
 };
 
 // -------------------------------------------------------------------

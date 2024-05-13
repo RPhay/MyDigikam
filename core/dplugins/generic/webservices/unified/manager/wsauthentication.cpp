@@ -50,33 +50,24 @@ class Q_DECL_HIDDEN WSAuthentication::Private
 {
 public:
 
-    explicit Private()
-      : wizard(0),
-        iface(0),
-        talker(0),
-        ws(WSSettings::WebService::FLICKR),
-        albumDlg(0),
-        imagesCount(0),
-        imagesTotal(0)
-    {
-    }
+    Private() = default;
 
-    WSWizard*               wizard;
-    DInfoInterface*         iface;
+    WSWizard*               wizard          = nullptr;
+    DInfoInterface*         iface           = nullptr;
 
-    WSTalker*               talker;
+    WSTalker*               talker          = nullptr;
 
-    WSSettings::WebService  ws;
+    WSSettings::WebService  ws              = WSSettings::WebService::FLICKR;
     QString                 serviceName;
 
-    WSNewAlbumDialog*       albumDlg;
+    WSNewAlbumDialog*       albumDlg        = nullptr;
     QString                 currentAlbumId;
     WSAlbum                 baseAlbum;
 
     QStringList             tmpPath;
     QString                 tmpDir;
-    unsigned int            imagesCount;
-    unsigned int            imagesTotal;
+    unsigned int            imagesCount     = 0;
+    unsigned int            imagesTotal     = 0;
     QMap<QString, QString>  imagesCaption;
 
     QList<QUrl>             transferQueue;
@@ -119,27 +110,47 @@ void WSAuthentication::createTalker(WSSettings::WebService ws, const QString& se
     switch (ws)
     {
         case WSSettings::WebService::FLICKR:
+        {
             //d->talker = new DigikamGenericFlickrPlugin::FlickrTalker(d->wizard, serviceName, d->iface);
             break;
+        }
+
         case WSSettings::WebService::DROPBOX:
+        {
             //d->talker = new DigikamGenericDropBoxPlugin::DBTalker(d->wizard);
             break;
+        }
+
         case WSSettings::WebService::IMGUR:
+        {
             //d->talker = new DigikamGenericImgUrPlugin::ImgurTalker(d->wizard);
             break;
+        }
+
         case WSSettings::WebService::FACEBOOK:
+        {
             //d->albumDlg = new DigikamGenericFaceBookPlugin::FbNewAlbumDlg(d->wizard, d->serviceName);
             //d->talker   = new DigikamGenericFaceBookPlugin::FbTalker(d->wizard, d->albumDlg);
             break;
+        }
+
         case WSSettings::WebService::SMUGMUG:
+        {
             //d->talker = new DigikamGenericSmugMugPlugin::SmugTalker(d->iface, d->wizard);
             break;
+        }
+
         case WSSettings::WebService::GDRIVE:
+        {
             //d->talker = new DigikamGenericGoogleServicesPlugin::GDTalker(d->wizard);
             break;
+        }
+
         case WSSettings::WebService::GPHOTO:
+        {
             //d->talker = new DigikamGenericGoogleServicesPlugin::GPTalker(d->wizard);
             break;
+        }
     }
 
     connect(d->talker, SIGNAL(signalOpenBrowser(QUrl)),
@@ -249,6 +260,7 @@ void WSAuthentication::prepareForUpload()
     if (d->transferQueue.isEmpty())
     {
         Q_EMIT signalMessage(QLatin1String("transferQueue is empty"), true);
+
         return;
     }
 
@@ -272,13 +284,16 @@ void WSAuthentication::prepareForUpload()
             if (image.isNull())
             {
                 Q_EMIT d->talker->signalAddPhotoDone(666, i18n("Cannot open image at %1\n", imgPath));
+
                 return;
             }
 
             // get temporary file name
+
             d->tmpPath << d->tmpDir + QFileInfo(imgPath).baseName().trimmed() + d->wizard->settings()->format();
 
             // rescale image if requested
+
             int maxDim = d->wizard->settings()->imageSize;
 
             if (image.width() > maxDim || image.height() > maxDim)
@@ -292,6 +307,7 @@ void WSAuthentication::prepareForUpload()
             image.save(d->tmpPath.last(), "JPEG", d->wizard->settings()->imageCompression);
 
             // copy meta data to temporary image and get caption for image
+
             QScopedPointer<DMetadata> meta(new DMetadata);
             QString caption = QLatin1String("");
 
@@ -319,6 +335,7 @@ void WSAuthentication::uploadNextPhoto()
     if (d->transferQueue.isEmpty())
     {
         Q_EMIT signalDone();
+
         return;
     }
 
@@ -348,10 +365,13 @@ void WSAuthentication::startTransfer()
 void WSAuthentication::slotCancel()
 {
     // First we cancel talker
+
     cancelTalker();
 
     // Then the folder containing all temporary photos to upload will be removed after all.
+
     QDir tmpDir(d->tmpDir);
+
     if (tmpDir.exists())
     {
         tmpDir.removeRecursively();
@@ -408,9 +428,11 @@ void WSAuthentication::slotAddPhotoDone(int errCode, const QString& errMsg)
     if (errCode == 0)
     {
         Q_EMIT signalMessage(QDir::toNativeSeparators(d->transferQueue.first().toLocalFile()), false);
+
         d->transferQueue.removeFirst();
 
         d->imagesCount++;
+
         Q_EMIT signalProgress(d->imagesCount);
     }
     else

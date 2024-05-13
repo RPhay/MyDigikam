@@ -41,6 +41,7 @@
 #ifdef HAVE_IMAGE_MAGICK
 
 // Pragma directives to reduce warnings from ImageMagick header files.
+
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
 #       pragma GCC diagnostic ignored "-Wignored-qualifiers"
@@ -54,9 +55,11 @@
 #   endif
 
 #   include <Magick++.h>
+
 using namespace Magick;
 
 // Restore warnings
+
 #   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic pop
 #   endif
@@ -168,6 +171,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 #ifdef Q_OS_MACOS
 
     // See bug #461734
+
     app.setAttribute(Qt::AA_DontShowIconsInMenus, true);
 
 #endif
@@ -180,7 +184,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     KAboutData aboutData(QLatin1String("showfoto"),     // component name
                          i18nc("@title", "Showfoto"),   // display name
-                                             digiKamVersion());             // NOTE: showFoto version = digiKam version
+                         digiKamVersion());             // NOTE: showFoto version = digiKam version
 
     aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);
@@ -221,8 +225,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #ifdef Q_OS_WIN
 
-    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
-        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    if (
+        QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64"))
+       )
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),

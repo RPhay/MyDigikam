@@ -30,10 +30,6 @@ UnifiedPlugin::UnifiedPlugin(QObject* const parent)
 {
 }
 
-UnifiedPlugin::~UnifiedPlugin()
-{
-}
-
 void UnifiedPlugin::cleanUp()
 {
     delete m_toolDlg;
@@ -86,7 +82,7 @@ QList<DPluginAuthor> UnifiedPlugin::authors() const
                              QString::fromUtf8("(C) 2018-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2018-2021"))
+                             QString::fromUtf8("(C) 2018-2024"))
             ;
 }
 

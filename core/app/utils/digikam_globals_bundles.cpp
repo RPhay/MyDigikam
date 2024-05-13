@@ -21,10 +21,12 @@ bool isRunningInAppImageBundle()
 {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
-    if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
+    if (
+        env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
         env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
         env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH")))
+        env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH"))
+       )
     {
         return true;
     }
@@ -164,7 +166,6 @@ void tryInitDrMingw()
 
     if (drmingwEnv.isEmpty())
     {
-
         qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 /*
         // Windows version check for DrMinGW 0.9.2. It's not necessary with new DrMinGW 0.9.4 version.

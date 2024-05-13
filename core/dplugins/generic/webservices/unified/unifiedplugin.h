@@ -39,7 +39,7 @@ class UnifiedPlugin : public DPluginGeneric
 public:
 
     explicit UnifiedPlugin(QObject* const parent = 0);
-    ~UnifiedPlugin()                     override;
+    ~UnifiedPlugin()                     override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

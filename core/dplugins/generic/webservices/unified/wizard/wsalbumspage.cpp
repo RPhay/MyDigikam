@@ -31,10 +31,6 @@ class Q_DECL_HIDDEN WSAlbumsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
-        albumSelector(0),
-        wizard(0),
-        iface(0)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -44,15 +40,15 @@ public:
         }
     }
 
-    bool             albumSupport;
-    QWidget*         albumSelector;
-    WSWizard*        wizard;
-    DInfoInterface*  iface;
+    bool             albumSupport   = false;
+    QWidget*         albumSelector  = nullptr;
+    WSWizard*        wizard         = nullptr;
+    DInfoInterface*  iface          = nullptr;
 };
 
 WSAlbumsPage::WSAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     if (d->iface)
     {
@@ -78,14 +74,19 @@ WSAlbumsPage::~WSAlbumsPage()
 bool WSAlbumsPage::validatePage()
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     if (d->iface->albumChooserItems().isEmpty())
+    {
         return false;
+    }
 
     d->wizard->settings()->inputImages.clear();
 
     // update image list with album contents.
+
     Q_FOREACH (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
@@ -97,7 +98,9 @@ bool WSAlbumsPage::validatePage()
 bool WSAlbumsPage::isComplete() const
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     return (!d->iface->albumChooserItems().isEmpty());
 }

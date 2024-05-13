@@ -44,14 +44,14 @@ namespace DigikamGenericUnifiedPlugin
 
 WSAuthenticationPage::WSAuthenticationPage(QObject* const parent, QWebEngineProfile* profile, const QString& callbackUrl)
     : QWebEnginePage(profile, parent),
-      m_callbackUrl(callbackUrl)
+      m_callbackUrl (callbackUrl)
 {
 }
 
 #else
 
 WSAuthenticationPage::WSAuthenticationPage(QObject* const parent, const QString& callbackUrl)
-    : QWebPage(parent),
+    : QWebPage     (parent),
       m_callbackUrl(callbackUrl)
 {
     connect(mainFrame(), SIGNAL(urlChanged(QUrl)),
@@ -59,10 +59,6 @@ WSAuthenticationPage::WSAuthenticationPage(QObject* const parent, const QString&
 }
 
 #endif // #ifdef HAVE_QWEBENGINE
-
-WSAuthenticationPage::~WSAuthenticationPage()
-{
-}
 
 void WSAuthenticationPage::setCallbackUrl(const QString& url)
 {
@@ -86,11 +82,14 @@ bool WSAuthenticationPage::slotUrlChanged(const QUrl& url)
     /*
      * Condition to verify that the url loaded on page is the one containing access token
      */
-    if (m_callbackUrl.length() > 0                   &&
-        urlString.length() >= m_callbackUrl.length() &&
-        urlString.left(m_callbackUrl.length()) == m_callbackUrl)
+    if (
+        (m_callbackUrl.length() > 0)                   &&
+        (urlString.length() >= m_callbackUrl.length()) &&
+        (urlString.left(m_callbackUrl.length()) == m_callbackUrl)
+       )
     {
         Q_EMIT callbackCatched(urlString);
+
         return false;
     }
 
@@ -104,7 +103,7 @@ bool WSAuthenticationPage::slotUrlChanged(const QUrl& url)
 WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
                                                    WSAuthentication* const wsAuth,
                                                    const QString& callbackUrl)
-    : QWebEngineView(parent),
+    : QWebEngineView    (parent),
       m_WSAuthentication(wsAuth)
 
 #else
@@ -112,7 +111,7 @@ WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
 WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
                                                    WSAuthentication* const wsAuth,
                                                    const QString& callbackUrl)
-    : QWebView(parent),
+    : QWebView          (parent),
       m_WSAuthentication(wsAuth)
 
 #endif // #ifdef HAVE_QWEBENGINE
@@ -147,11 +146,8 @@ WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
      * If user has to login, we will show the browser again. Otherwise,
      * we will keep it hiding to improve page's looking.
      */
-    hide();
-}
 
-WSAuthenticationPageView::~WSAuthenticationPageView()
-{
+    hide();
 }
 
 bool WSAuthenticationPageView::authenticationComplete() const
@@ -209,6 +205,7 @@ void WSAuthenticationPageView::slotCallbackCatched(const QString& callbackUrl)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "url fragment: " << url.fragment();
 
     QMap<QString, QString> res = parseUrlFragment(url.fragment());
+
     Q_EMIT m_WSAuthentication->signalResponseTokenReceived(res);
 }
 
@@ -219,13 +216,7 @@ class Q_DECL_HIDDEN WSAuthenticationWizard::Private
 public:
 
     explicit Private(QWizard* const dialog, const QString& callback)
-      : wizard(0),
-        iface(0),
-        wsAuth(0),
-        wsAuthView(0),
-        vbox(0),
-        text(0),
-        callbackUrl(callback)
+        : callbackUrl(callback)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -240,12 +231,12 @@ public:
         }
     }
 
-    WSWizard*                   wizard;
-    DInfoInterface*             iface;
-    WSAuthentication*           wsAuth;
-    WSAuthenticationPageView*   wsAuthView;
-    DVBox*                      vbox;
-    QLabel*                     text;
+    WSWizard*                   wizard      = nullptr;
+    DInfoInterface*             iface       = nullptr;
+    WSAuthentication*           wsAuth      = nullptr;
+    WSAuthenticationPageView*   wsAuthView  = nullptr;
+    DVBox*                      vbox        = nullptr;
+    QLabel*                     text        = nullptr;
     QString                     callbackUrl;
 };
 
@@ -253,7 +244,7 @@ WSAuthenticationWizard::WSAuthenticationWizard(QWizard* const dialog,
                                                const QString& title,
                                                const QString& callback)
     : DWizardPage(dialog, title),
-      d(new Private(dialog, callback))
+      d          (new Private(dialog, callback))
 {
     d->wsAuth  = d->wizard->wsAuth();
 
@@ -292,6 +283,7 @@ void WSAuthenticationWizard::initializePage()
      * This guarantees an appropriate authentication page, even when user goes back to
      * intro page and choose a different account or different web service.
      */
+
     d->text->hide();
     d->wsAuthView                                 = new WSAuthenticationPageView(d->vbox, d->wsAuth, d->callbackUrl);
     QMap<WSSettings::WebService, QString> wsNames = WSSettings::webServiceNames();
