@@ -48,12 +48,6 @@ class Q_DECL_HIDDEN WSFinalPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : progressView(0),
-        progressBar(0),
-        complete(false),
-        wizard(0),
-        iface(0),
-        wsAuth(0)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -64,17 +58,17 @@ public:
         }
     }
 
-    DHistoryView*     progressView;
-    DProgressWdg*     progressBar;
-    bool              complete;
-    WSWizard*         wizard;
-    DInfoInterface*   iface;
-    WSAuthentication* wsAuth;
+    DHistoryView*     progressView  = nullptr;
+    DProgressWdg*     progressBar   = nullptr;
+    bool              complete      = false;
+    WSWizard*         wizard        = nullptr;
+    DInfoInterface*   iface         = nullptr;
+    WSAuthentication* wsAuth        = nullptr;
 };
 
 WSFinalPage::WSFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox = new DVBox(this);
     d->progressView   = new DHistoryView(vbox);
@@ -83,7 +77,6 @@ WSFinalPage::WSFinalPage(QWizard* const dialog, const QString& title)
     vbox->setStretchFactor(d->progressBar, 10);
     vbox->setContentsMargins(QMargins());
     vbox->setSpacing(layoutSpacing());
-
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("WS_send")));
@@ -111,13 +104,16 @@ WSFinalPage::~WSFinalPage()
 void WSFinalPage::initializePage()
 {
     d->complete = false;
+
     Q_EMIT completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
 void WSFinalPage::slotDone()
 {
     d->complete = true;
+
     Q_EMIT completeChanged();
 }
 

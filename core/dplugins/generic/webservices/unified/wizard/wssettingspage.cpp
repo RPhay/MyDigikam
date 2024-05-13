@@ -48,17 +48,6 @@ class Q_DECL_HIDDEN WSSettingsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : labelImagesResize(0),
-        labelImagesFormat(0),
-        labelImageCompression(0),
-        imagesFormat(0),
-        changeImagesProp(0),
-        removeMetadata(0),
-        imageCompression(0),
-        imagesResize(0),
-        wizard(0),
-        iface(0),
-        settings(0)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -69,26 +58,26 @@ public:
         }
     }
 
-    QLabel*         labelImagesResize;
-    QLabel*         labelImagesFormat;
-    QLabel*         labelImageCompression;
+    QLabel*         labelImagesResize       = nullptr;
+    QLabel*         labelImagesFormat       = nullptr;
+    QLabel*         labelImageCompression   = nullptr;
 
-    QComboBox*      imagesFormat;
+    QComboBox*      imagesFormat            = nullptr;
 
-    QCheckBox*      changeImagesProp;
-    QCheckBox*      removeMetadata;
+    QCheckBox*      changeImagesProp        = nullptr;
+    QCheckBox*      removeMetadata          = nullptr;
 
-    QSpinBox*       imageCompression;
-    QSpinBox*       imagesResize;
+    QSpinBox*       imageCompression        = nullptr;
+    QSpinBox*       imagesResize            = nullptr;
 
-    WSWizard*       wizard;
-    DInfoInterface* iface;
-    WSSettings*     settings;
+    WSWizard*       wizard                  = nullptr;
+    DInfoInterface* iface                   = nullptr;
+    WSSettings*     settings                = nullptr;
 };
 
 WSSettingsPage::WSSettingsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     QWidget* const main = new QWidget(this);
 
@@ -188,13 +177,12 @@ WSSettingsPage::WSSettingsPage(QWizard* const dialog, const QString& title)
 
     setPageWidget(main);
 
-    /* We should use another icon here, because it's not for mail attachment.
+    /*
+     * We should use another icon here, because it's not for mail attachment.
      * Therefore, I comment this line.
      *
      * setLeftBottomPix(QIcon::fromTheme(QLatin1String("mail-attachment")));
      */
-
-    //---------------------------------------------
 
     connect(d->imagesFormat, SIGNAL(activated(int)),
             this, SLOT(slotImagesFormatChanged(int)));

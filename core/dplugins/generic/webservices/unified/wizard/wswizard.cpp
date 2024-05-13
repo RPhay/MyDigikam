@@ -50,35 +50,24 @@ class Q_DECL_HIDDEN WSWizard::Private
 {
 public:
 
-    explicit Private()
-      : iface(0),
-        settings(0),
-        introPage(0),
-        authPage(0),
-        albumsPage(0),
-        imagesPage(0),
-        settingsPage(0),
-        finalPage(0),
-        wsAuth(0)
-    {
-    }
+    Private() = default;
 
-    DInfoInterface*             iface;
+    DInfoInterface*             iface           = nullptr;
 
-    WSSettings*                 settings;
-    WSIntroPage*                introPage;
-    WSAuthenticationWizard*     authPage;
-    WSAlbumsPage*               albumsPage;
-    WSImagesPage*               imagesPage;
-    WSSettingsPage*             settingsPage;
-    WSFinalPage*                finalPage;
+    WSSettings*                 settings        = nullptr;
+    WSIntroPage*                introPage       = nullptr;
+    WSAuthenticationWizard*     authPage        = nullptr;
+    WSAlbumsPage*               albumsPage      = nullptr;
+    WSImagesPage*               imagesPage      = nullptr;
+    WSSettingsPage*             settingsPage    = nullptr;
+    WSFinalPage*                finalPage       = nullptr;
 
-    WSAuthentication*           wsAuth;
+    WSAuthentication*           wsAuth          = nullptr;
 };
 
 WSWizard::WSWizard(DInfoInterface* const iface, QWidget* const parent)
     : DWizardDlg(parent, QLatin1String("Web Services Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOptions(QWizard::NoBackButtonOnStartPage | QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18nc("@title:window", "Export to Web Services"));
@@ -142,7 +131,9 @@ O0SettingsStore* WSWizard::oauthSettingsStore() const
 bool WSWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     return true;
 }

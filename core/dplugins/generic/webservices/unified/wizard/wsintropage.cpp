@@ -47,12 +47,6 @@ class Q_DECL_HIDDEN WSIntroPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageGetOption(0),
-        hbox(0),
-        wizard(0),
-        iface(0),
-        wsOption(0),
-        accountOption(0)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -61,21 +55,20 @@ public:
             iface    = wizard->iface();
             settings = wizard->settings();
         }
-
     }
 
-    QComboBox*      imageGetOption;
-    DHBox*          hbox;
-    WSWizard*       wizard;
-    WSSettings*     settings;
-    DInfoInterface* iface;
-    QComboBox*      wsOption;
-    QComboBox*      accountOption;
+    QComboBox*      imageGetOption  = nullptr;
+    DHBox*          hbox            = nullptr;
+    WSWizard*       wizard          = nullptr;
+    WSSettings*     settings        = nullptr;
+    DInfoInterface* iface           = nullptr;
+    QComboBox*      wsOption        = nullptr;
+    QComboBox*      accountOption   = nullptr;
 };
 
 WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);
@@ -90,7 +83,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
                        "according to your remote Web service capabilities.</p>"
                        "</qt>"));
 
-    /* --------------------
+    /*
      * ComboBox for image selection method
      */
 
@@ -104,7 +97,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
     connect(d->imageGetOption, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotImageGetOptionChanged(int)));
 
-    /* --------------------
+    /*
      * ComboBox for web service selection
      */
 
@@ -127,7 +120,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
     connect(d->wsOption, SIGNAL(currentTextChanged(QString)),
             this, SLOT(slotWebServiceOptionChanged(QString)));
 
-    /* --------------------
+    /*
      * ComboBox for user account selection
      *
      * An empty option is added to accounts, so that user can choose to login with new account
@@ -147,7 +140,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
 
     accountLabel->setBuddy(d->accountOption);
 
-    /* --------------------
+    /*
      * Place widget in the view
      */
 
@@ -175,6 +168,7 @@ void WSIntroPage::slotImageGetOptionChanged(int index)
      * index == 0 <=> Export
      * index == 1 <=> Import, for now we only have Google Photo and Smugmug in this option
      */
+
     if (index == 0)
     {
         QMap<WSSettings::WebService, QString>::const_iterator it = map.constBegin();
@@ -182,7 +176,7 @@ void WSIntroPage::slotImageGetOptionChanged(int index)
         while (it != map.constEnd())
         {
             QString wsName = it.value().toLower();
-            QIcon icon = QIcon::fromTheme(wsName.remove(QLatin1Char(' ')));
+            QIcon icon     = QIcon::fromTheme(wsName.remove(QLatin1Char(' ')));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << wsName.remove(QLatin1Char(' '));
             d->wsOption->addItem(icon, it.value(), (int)it.key());
             ++it;
@@ -204,6 +198,7 @@ void WSIntroPage::slotWebServiceOptionChanged(const QString& serviceName)
     d->accountOption->clear();
 
     // An empty option is added to accounts, so that user can choose to login with new account
+
     QStringList accounts = QStringList(QString())
                            << d->settings->allUserNames(serviceName);
 

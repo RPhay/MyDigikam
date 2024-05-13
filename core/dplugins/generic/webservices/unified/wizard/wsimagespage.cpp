@@ -47,13 +47,6 @@ class Q_DECL_HIDDEN WSImagesPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : imageList(0),
-        albumView(0),
-        newAlbumBtn(0),
-        reloadAlbumsBtn(0),
-        wizard(0),
-        iface(0),
-        wsAuth(0)
     {
         wizard = dynamic_cast<WSWizard*>(dialog);
 
@@ -64,21 +57,21 @@ public:
         }
     }
 
-    DItemsList*      imageList;
+    DItemsList*       imageList         = nullptr;
 
-    QTreeWidget*      albumView;
+    QTreeWidget*      albumView         = nullptr;
     QString           currentAlbumId;
-    QPushButton*      newAlbumBtn;
-    QPushButton*      reloadAlbumsBtn;
+    QPushButton*      newAlbumBtn       = nullptr;
+    QPushButton*      reloadAlbumsBtn   = nullptr;
 
-    WSWizard*         wizard;
-    DInfoInterface*   iface;
-    WSAuthentication* wsAuth;
+    WSWizard*         wizard            = nullptr;
+    DInfoInterface*   iface             = nullptr;
+    WSAuthentication* wsAuth            = nullptr;
 };
 
 WSImagesPage::WSImagesPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DHBox* const hbox       = new DHBox(this);
 
@@ -97,7 +90,7 @@ WSImagesPage::WSImagesPage(QWizard* const dialog, const QString& title)
     connect(d->imageList, SIGNAL(signalImageListChanged()),
             this, SIGNAL(completeChanged()));
 
-    /* --------------------
+    /*
      * User albums list
      */
 
@@ -112,6 +105,7 @@ WSImagesPage::WSImagesPage(QWizard* const dialog, const QString& title)
     DHBox* const buttonBox  = new DHBox(vboxAlbum);
 
     // Disable New Album button for now, because creating album on facebook is encountering a strange error
+
     d->newAlbumBtn          = new QPushButton(QLatin1String("New Album"), buttonBox);
     //d->newAlbumBtn->setDisabled(true);
 
@@ -132,7 +126,7 @@ WSImagesPage::WSImagesPage(QWizard* const dialog, const QString& title)
     connect(d->wsAuth, SIGNAL(signalListAlbumsDone(QMap<QString,AlbumSimplified>,QStringList,QString)),
             this, SLOT(slotListAlbumsDone(QMap<QString,AlbumSimplified>,QStringList,QString)));
 
-    /* --------------------
+    /*
      * General settings for imagespage
      */
 
@@ -165,15 +159,18 @@ void WSImagesPage::initializePage()
     d->imageList->listView()->clear();
 
     // List current albums in user account
+
     Q_EMIT signalListAlbumsRequest();
 }
 
 bool WSImagesPage::validatePage()
 {
-    /* If user album is not empty, get id for album to upload photos from currentItem on the list.
+    /*
+     * If user album is not empty, get id for album to upload photos from currentItem on the list.
      * Otherwise, set album id as empty string and uploading to empty album will be handled in
      * specific talker of each web service
      */
+
     if (d->albumView->currentItem())
     {
         setCurrentAlbumId(d->albumView->currentItem()->data(0, Qt::AccessibleDescriptionRole).toString());
@@ -213,7 +210,8 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
         item->setText(0, albumTree[albumId].title);
         item->setData(0, Qt::AccessibleDescriptionRole, albumId);
 
-        /* Verify if album is editable. If yes, let it enable on view for albums list and
+        /*
+         * Verify if album is editable. If yes, let it enable on view for albums list and
          * add a description for that. Otherwise, disable it and add description.
          *
          * However, in case of Facebook, GET album may return False for uploadable, but
@@ -221,6 +219,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
          *
          * Hence, this functionality needs a more particular solution.
          */
+
         if (albumTree[albumId].uploadable)
         {
             item->setWhatsThis(0, QLatin1String("Albums that can be uploaded."));
@@ -235,6 +234,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
          * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points
          * to the same album as before
          */
+
         if (albumId == d->currentAlbumId)
         {
             d->albumView->setCurrentItem(item);
@@ -271,7 +271,8 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
         item->setText(0, albumTree[albumId].title);
         item->setData(0, Qt::AccessibleDescriptionRole, albumId); // set ID hidden, so that we can use it for uploading photos to album
 
-        /* Verify if album is editable. If yes, let it enable on view for albums list and
+        /*
+         * Verify if album is editable. If yes, let it enable on view for albums list and
          * add a description for that. Otherwise, disable it and add description.
          *
          * However, in case of Facebook, GET album may return False for uploadable, but
@@ -279,6 +280,7 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
          *
          * Hence, this functionality needs a more particular solution.
          */
+
         if (albumTree[albumId].uploadable)
         {
             item->setWhatsThis(0, QLatin1String("Albums that can be uploaded."));
@@ -293,6 +295,7 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
          * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points
          * to the same album as before
          */
+
         if (d->currentAlbumId == albumId)
         {
             d->albumView->setCurrentItem(item);
@@ -313,9 +316,11 @@ void WSImagesPage::slotCreateAlbumDone(int errCode, const QString& errMsg, const
     }
 
     // Pre-set currentAlbumId so that after refreshing, new album will be pre-selected
+
     setCurrentAlbumId(newAlbumId);
 
     // We need to refresh albums view
+
     Q_EMIT signalListAlbumsRequest();
 }
 

@@ -59,51 +59,51 @@ public:
     explicit WSTalker(QWidget* const parent);
     ~WSTalker();
 
-    /*
+    /**
      * Get ID of an existent user account saved when he logged in before,
      * knowing user name.
      */
     QString getUserID(const QString& userName);
 
-    /*
+    /**
      * Link user account (login).
      */
     virtual void link();
 
-    /*
+    /**
      * Unlink user account (logout).
      */
     virtual void unlink();
 
-    /*
+    /**
      * Return true if account is linked.
      */
     virtual bool linked() const;
 
-    /*
+    /**
      * This method load account that user chooses to login. If it exists and doesn't expire yet,
      * then obtain the saved token and pass the authentication process. Otherwise, relogin.
      */
     virtual void authenticate();
 
-    /*
+    /**
      * Force user to login on web service login page.
      */
     void reauthenticate();
 
-    /*
+    /**
      * Abort any network request realizing at the moment.
      */
     void cancel();
 
 protected:
 
-    /*
+    /**
      * Return a map of all information stored in the previous login of userName account.
      */
     QMap<QString, QVariant> getUserAccountInfo(const QString& userName);
 
-    /*
+    /**
      * Save all necessary information of user account to disk. That information will be retrieved
      * by getUserAccountInfo(userName) when needed.
      */
@@ -113,24 +113,24 @@ protected:
                          const QString& accessToken,
                          const QString& refreshToken = QString());
 
-    /*
+    /**
      * Remove all information of user account that was stored by saveUserAccount(...)
      * TODO: this method should be called when user uninstalls digiKam.
      */
     void removeUserAccount(const QString& userName);
 
-    /*
+    /**
      * Save as removeUserAccount(userName), but for all accounts.
      */
     void removeAllAccounts();
 
-    /*
+    /**
      * A wrapper method of getUserAccountInfo(userName), but perform further verification
      * on account's validation and further operation in case that account is expired.
      */
     bool loadUserAccount(const QString& userName);
 
-    /*
+    /**
      * This method can be (and must be) reimplemented in derived class. Indeed, it will hard code
      * (at runtime) O2's settings (i.e accessToken, refreshToken, expired date and value of linked state).
      * It forces O2 to link to another account according to user's selection. Otherwise, O2 will
@@ -139,12 +139,12 @@ protected:
      */
     virtual void resetTalker(const QString& expire, const QString& accessToken, const QString& refreshToken);
 
-    /*
+    /**
      * Sort list of albums by ascending order of titles.
      */
     virtual void sortAlbumsList(QList<WSAlbum>& albumsList);
 
-    /*
+    /**
      * These methods are reimplemented in derived class and used to parse response of network requests
      * for user's information or APIs of web service. They will be called asynchronously when responses
      * for net request are received.
@@ -154,7 +154,7 @@ protected:
     virtual void parseResponseCreateAlbum(const QByteArray& data);
     virtual void parseResponseAddPhoto(const QByteArray& data);
 
-    /*
+    /**
      * This method is called when authentication is complete. It should be reimplemented in derived class
      * and call saveUserAccount(...) inside. Here, we implement a minimised version so that derived class
      * can call it if needed.
@@ -163,7 +163,7 @@ protected:
 
 public:
 
-    /*
+    /**
      * These methods are reimplemented in derived class, and will be used to make network requests
      * for user's information or APIs of web service.
      */
@@ -184,7 +184,7 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
 
-    /*
+    /**
      * Slots for signals from O2 authentication flow
      */
     void slotFinished(QNetworkReply* reply);
@@ -193,7 +193,7 @@ protected Q_SLOTS:
     virtual void slotLinkingFailed();
     virtual void slotLinkingSucceeded();
 
-    /*
+    /**
      * This is a particular slot, only used in case that digiKam will intercept O2 authentication flow,
      * catch all navigation from web service, and the final url whose fragment contains accessToken
      * and other necessary information. digiKam then parses the response to get accessToken and join back to
@@ -206,17 +206,17 @@ protected Q_SLOTS:
 
 protected:
 
-    QNetworkAccessManager*  m_netMngr;
-    QNetworkReply*          m_reply;
+    QNetworkAccessManager*  m_netMngr   = nullptr;
+    QNetworkReply*          m_reply     = nullptr;
 
-    State                   m_state;
+    State                   m_state     = WSTalker::DEFAULT;
 
-    QSettings*              m_settings;
-    O0SettingsStore*        m_store;
+    QSettings*              m_settings  = nullptr;
+    O0SettingsStore*        m_store     = nullptr;
 
     QString                 m_userName;
 
-    WSWizard*               m_wizard;
+    WSWizard*               m_wizard    = nullptr;
 };
 
 } // namespace DigikamGenericUnifiedPlugin

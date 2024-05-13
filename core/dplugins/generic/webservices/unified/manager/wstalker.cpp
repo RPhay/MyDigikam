@@ -48,13 +48,7 @@ namespace DigikamGenericUnifiedPlugin
 
 WSTalker::WSTalker(QWidget* const parent)
     : QObject(parent),
-      m_netMngr(new QNetworkAccessManager(this)),
-      m_reply(0),
-      m_state(WSTalker::DEFAULT),
-      m_settings(0),
-      m_store(0),
-      m_userName(QString()),
-      m_wizard(0)
+      m_netMngr(new QNetworkAccessManager(this))
 {
     m_wizard = dynamic_cast<WSWizard*>(parent);
 
