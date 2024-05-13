@@ -32,11 +32,14 @@ class Q_DECL_HIDDEN Iface::Private
 
 public:
 
-    Private(const QUrl& url, const QString& userAgent, QNetworkAccessManager* const manager)
-        : url      (url),
-          userAgent(userAgent),
-          manager  (manager)
+    Private(const QUrl& _url, const QString& _userAgent, QNetworkAccessManager* const _manager)
+        : url      (_url),
+          manager  (_manager)
     {
+        userAgent = (
+                     _userAgent.isEmpty() ? QString()
+                                          : QString(_userAgent + QLatin1String("-"))
+                    ) + POSTFIX_USER_AGENT;
     }
 
     ~Private()
@@ -46,14 +49,12 @@ public:
 
 public:
 
-    static const QString         POSTFIX_USER_AGENT;
+    const QString POSTFIX_USER_AGENT        = QString::fromUtf8("MediaWiki-silk");
 
     const QUrl                   url;
-    const QString                userAgent;
-    QNetworkAccessManager* const manager         = nullptr;
+    QString                      userAgent;
+    QNetworkAccessManager* const manager    = nullptr;
 };
-
-const QString Iface::Private::POSTFIX_USER_AGENT = QString::fromUtf8("MediaWiki-silk");
 
 } // namespace MediaWiki
 

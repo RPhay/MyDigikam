@@ -22,12 +22,7 @@ namespace MediaWiki
 {
 
 Iface::Iface(const QUrl& url, const QString& customUserAgent)
-    : d(new Private(url,
-            (customUserAgent.isEmpty() ? QString()
-                                       : QString(customUserAgent +
-                                         QStringLiteral("-")))   +
-                                         Private::POSTFIX_USER_AGENT,
-            new QNetworkAccessManager()))
+    : d(new Private(url, customUserAgent, new QNetworkAccessManager()))
 {
 }
 

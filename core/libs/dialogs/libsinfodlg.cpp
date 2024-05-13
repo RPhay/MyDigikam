@@ -164,7 +164,9 @@ extern "C"
 // defined in OpenCV core/private.hpp
 namespace cv
 {
+
 const char* currentParallelFramework();
+
 }
 
 namespace Digikam
@@ -175,9 +177,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 {
     setWindowTitle(i18nc("@title:window", "Shared Libraries and Components Information"));
 
-    static const char* CONTEXT         = "@item: Component information, see help->components";
-    static const QString SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");
-    static const QString SUPPORTED_NO  = i18nc("@item: component is not available/supported", "No");
+    const char* const CONTEXT   = "@item: Component information, see help->components";
+    const QString SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");
+    const QString SUPPORTED_NO  = i18nc("@item: component is not available/supported", "No");
 
     listView()->setHeaderLabels(QStringList() << QLatin1String("Properties") << QLatin1String("Value")); // Hidden header -> no i18n
     listView()->setSortingEnabled(true);
@@ -682,10 +684,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     {
         new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Threads features availability") << SUPPORTED_NO);
     }
-}
-
-LibsInfoDlg::~LibsInfoDlg()
-{
 }
 
 QString LibsInfoDlg::checkTriState(int value) const

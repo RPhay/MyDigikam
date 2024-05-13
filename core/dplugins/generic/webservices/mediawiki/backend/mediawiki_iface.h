@@ -51,19 +51,19 @@ public:
      * @brief Returns the url api of the wiki.
      * @returns the url api of the wiki
      */
-    QUrl url() const;
+    QUrl url()                          const;
 
     /**
      * @brief Returns the user agent of the wiki.
      * @return the user agent of the wiki
      */
-    QString userAgent() const;
+    QString userAgent()                 const;
 
     /**
      * @brief Returns the network manager instance of the wiki.
      * @return the network manager instance of the wiki
      */
-    QNetworkAccessManager* manager() const;
+    QNetworkAccessManager* manager()    const;
 
 private:
 
