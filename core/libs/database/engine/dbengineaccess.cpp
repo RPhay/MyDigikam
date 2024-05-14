@@ -45,7 +45,7 @@ bool DbEngineAccess::checkReadyForUse(QString& error)
 
     // Checking for QSQLITE driver
 
-    if (internalServerParameters.SQLiteDatabaseType() == QLatin1String("QSQLITE"))
+    if      (internalServerParameters.SQLiteDatabaseType() == QLatin1String("QSQLITE"))
     {
         if (!drivers.contains(QLatin1String("QSQLITE")))
         {

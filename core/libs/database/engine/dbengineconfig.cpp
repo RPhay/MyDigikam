@@ -28,10 +28,14 @@
 namespace Digikam
 {
 
-Q_GLOBAL_STATIC_WITH_ARGS(DbEngineConfigSettingsLoader,
+Q_GLOBAL_STATIC_WITH_ARGS(
+                          DbEngineConfigSettingsLoader,
                           dbcoreloader,
-                          (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/database/dbconfig.xml")),
-                           dbcoreconfig_xml_version)
+                          (
+                           QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                  QLatin1String("digikam/database/dbconfig.xml")),
+                           dbcoreconfig_xml_version
+                          )
                          )
 
 DbEngineConfigSettings DbEngineConfig::element(const QString& databaseType)

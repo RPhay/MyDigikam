@@ -290,10 +290,12 @@ bool BdEngineBackendPrivate::isSQLiteLockError(const DbEngineSqlQuery& query) co
 {
     return (
             parameters.isSQLite() &&
-            ((query.lastError().nativeErrorCode() == QLatin1String("5"))   /*SQLITE_BUSY*/             ||
+            (
+             (query.lastError().nativeErrorCode() == QLatin1String("5"))   /*SQLITE_BUSY*/             ||
              (query.lastError().nativeErrorCode() == QLatin1String("6"))   /*SQLITE_LOCKED*/           ||
              (query.lastError().nativeErrorCode() == QLatin1String("517")) /*SQLITE_BUSY_SNAPSHOT*/    ||
-             (query.lastError().nativeErrorCode() == QLatin1String("262")) /*SQLITE_LOCKED_SHAREDCACHE*/)
+             (query.lastError().nativeErrorCode() == QLatin1String("262")) /*SQLITE_LOCKED_SHAREDCACHE*/
+            )
            );
 }
 
@@ -349,7 +351,8 @@ bool BdEngineBackendPrivate::checkRetrySQLiteLockError(int retries)
     {
         if (retries > (isInUIThread() ? uiMaxRetries : maxRetries))
         {
-            qCWarning(DIGIKAM_DBENGINE_LOG) << "Detected locked database file. There is an active transaction. Waited but giving up now.";
+            qCWarning(DIGIKAM_DBENGINE_LOG) << "Detected locked database file. There is an active transaction. "
+                                               "Waited but giving up now.";
 
             return false;
         }
@@ -444,7 +447,9 @@ bool BdEngineBackendPrivate::checkOperationStatus()
     return false;
 }
 
-/// Returns true if the query shall be retried
+/**
+ * Returns true if the query shall be retried.
+ */
 bool BdEngineBackendPrivate::handleWithErrorHandler(const DbEngineSqlQuery* const query)
 {
     if (errorHandler)
@@ -1346,7 +1351,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                     QMap<QString, QVariant> placeHolderMap = value.toMap();
                     QMap<QString, QVariant>::const_iterator iterator;
 
-                    for (iterator = placeHolderMap.constBegin(); iterator != placeHolderMap.constEnd(); ++iterator)
+                    for (iterator = placeHolderMap.constBegin() ; iterator != placeHolderMap.constEnd() ; ++iterator)
                     {
                         const QString& key     = iterator.key();
                         const QVariant& value2 = iterator.value();
@@ -1365,11 +1370,11 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                else if ( value.typeId() == QVariant::List )
+                else if (value.typeId() == QVariant::List)
 
 #else
 
-                else if ( value.type() == QVariant::List )
+                else if (value.type() == QVariant::List)
 
 #endif
 
@@ -1393,7 +1398,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
                         // Add a semicolon to the statement, if we are not on the last entry
 
-                        if ((iterator+1) != placeHolderList.constEnd())
+                        if ((iterator + 1) != placeHolderList.constEnd())
                         {
                             replaceStr.append(QLatin1String(", "));
                         }
@@ -1402,11 +1407,11 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                else if (value.typeId() == QVariant::StringList )
+                else if (value.typeId() == QVariant::StringList)
 
 #else
 
-                else if (value.type() == QVariant::StringList )
+                else if (value.type() == QVariant::StringList)
 
 #endif
 

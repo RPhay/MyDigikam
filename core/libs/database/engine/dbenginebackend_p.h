@@ -93,7 +93,9 @@ public:
     void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status);
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
-    /// called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
+    /**
+     * called by DbEngineErrorHandler, implementing DbEngineErrorAnswer.
+     */
     void connectionErrorContinueQueries()                                  override;
     void connectionErrorAbortQueries()                                     override;
 

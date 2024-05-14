@@ -34,9 +34,10 @@ class DIGIKAM_EXPORT DbEngineAccess
 {
 public:
 
-    /** Checks the availability of drivers. Must be used in children class.
-     *  Return true if low level drivers are ready to use, else false with
-     *  an error string of the problem.
+    /**
+     * Checks the availability of drivers. Must be used in children class.
+     * Return true if low level drivers are ready to use, else false with
+     * an error string of the problem.
      */
     static bool checkReadyForUse(QString& error);
 };

@@ -123,7 +123,7 @@ void DbEngineConfigSettingsLoader::readDBActions(const QDomElement& sqlStatement
 {
     QDomElement dbActionElement = sqlStatementElements.firstChildElement(QLatin1String("dbaction"));
 
-    for ( ; !dbActionElement.isNull();  dbActionElement=dbActionElement.nextSiblingElement(QLatin1String("dbaction")))
+    for ( ; !dbActionElement.isNull() ;  dbActionElement=dbActionElement.nextSiblingElement(QLatin1String("dbaction")))
     {
         if (!dbActionElement.hasAttribute(QLatin1String("name")))
         {
@@ -142,7 +142,7 @@ void DbEngineConfigSettingsLoader::readDBActions(const QDomElement& sqlStatement
 
         QDomElement databaseElement = dbActionElement.firstChildElement(QLatin1String("statement"));
 
-        for ( ; !databaseElement.isNull() ;  databaseElement = databaseElement.nextSiblingElement(QLatin1String("statement")))
+        for ( ; !databaseElement.isNull() ; databaseElement = databaseElement.nextSiblingElement(QLatin1String("statement")))
         {
             if (!databaseElement.hasAttribute(QLatin1String("mode")))
             {
@@ -236,7 +236,7 @@ bool DbEngineConfigSettingsLoader::readConfig(const QString& filepath, int xmlVe
 */
     QDomElement databaseElement = element.firstChildElement(QLatin1String("database"));
 
-    for ( ; !databaseElement.isNull(); databaseElement=databaseElement.nextSiblingElement(QLatin1String("database")))
+    for ( ; !databaseElement.isNull() ; databaseElement=databaseElement.nextSiblingElement(QLatin1String("database")))
     {
         DbEngineConfigSettings l_DBCfgElement = readDatabase(databaseElement);
         databaseConfigs.insert(l_DBCfgElement.databaseID, l_DBCfgElement);

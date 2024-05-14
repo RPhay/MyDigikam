@@ -221,9 +221,11 @@ public:
      * Queries by the specified parameters mustn't have named parameters.
      * The result values (if any) are stored within the values list.
      */
-    QueryState execDBAction(const DbEngineAction& action, QList<QVariant>* const values = nullptr, QVariant* const lastInsertId = nullptr);
+    QueryState execDBAction(const DbEngineAction& action, QList<QVariant>* const values = nullptr,
+                            QVariant* const lastInsertId = nullptr);
 
-    QueryState execDBAction(const QString& action, QList<QVariant>* const values = nullptr, QVariant* const lastInsertId = nullptr);
+    QueryState execDBAction(const QString& action, QList<QVariant>* const values = nullptr,
+                            QVariant* const lastInsertId = nullptr);
 
     /**
      * Performs the database action on the current database.
