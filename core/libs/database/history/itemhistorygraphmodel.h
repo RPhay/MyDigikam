@@ -81,7 +81,9 @@ public:
     bool hasImage(const ItemInfo& info);
     ItemInfo imageInfo(const QModelIndex& index)                                              const;
 
-    /// Note: There may be multiple indexes for an info. The index found first is returned.
+    /**
+     * Note: There may be multiple indexes for an info. The index found first is returned.
+     */
     QModelIndex indexForInfo(const ItemInfo& info)                                            const;
 
     bool isFilterAction(const QModelIndex& index)                                             const;

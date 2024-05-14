@@ -296,9 +296,7 @@ public:
     {
     }
 
-    virtual ~Graph()
-    {
-    }
+    virtual ~Graph() = default;
 
     Graph& operator=(const Graph& other)
     {
@@ -470,6 +468,7 @@ public:
         InboundEdges  = 1 << 1,
 
         /// These resolve to one of the flags above, depending on MeaningOfDirection
+
         EdgesToLeaf   = 1 << 2,
         EdgesToRoot   = 1 << 3,
         AllEdges      = InboundEdges | OutboundEdges
@@ -505,6 +504,7 @@ public:
     }
 
     /// NOTE: for "hasAdjacentVertices", simply use hasEdges(v, flags)
+
     int vertexCount() const
     {
         return (int)boost::num_vertices(graph);
@@ -1312,11 +1312,15 @@ protected:
 
             try
             {
-                boost::dag_shortest_paths(graph, v,
+                boost::dag_shortest_paths(
+                                          graph, v,
+
                                           /// we provide a constant weight of 1
+
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
 
                                           /// Store distance and predecessors in QMaps, wrapped to serve as property maps
+
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
                                          );
@@ -1334,17 +1338,23 @@ protected:
 
             try
             {
-                boost::dag_shortest_paths(graph, v,
+                boost::dag_shortest_paths(
+                                          graph, v,
+
                                           /// we provide a constant weight of 1
+
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
 
                                           /// Invert the default compare method: With greater, we get the longest path
+
                                           distance_compare(std::greater<int>()).
 
                                           /// will be returned if a node is unreachable
+
                                           distance_inf(-1).
 
                                           /// Store distance and predecessors in QMaps, wrapped to serve as property maps
+
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
                                          );
@@ -1548,7 +1558,9 @@ protected:
             VertexLessThan   vertexLessThan;
         };
 
-        /// This is boost's simple, old, recursive DFS algorithm adapted with lessThan
+        /**
+         * This is boost's simple, old, recursive DFS algorithm adapted with lessThan.
+         */
         template <class IncidenceGraph, class DFSVisitor, class ColorMap, typename LessThan>
         void depth_first_search_sorted(const IncidenceGraph& g,
                                        Vertex u,
@@ -1683,7 +1695,7 @@ protected:
 protected:
 
     GraphContainer     graph;
-    MeaningOfDirection direction;
+    MeaningOfDirection direction = ParentToChild;
 };
 
 } // namespace Digikam

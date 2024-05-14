@@ -49,7 +49,7 @@ public:
 
 public:
 
-    explicit HistoryTreeItem();
+    HistoryTreeItem();
     virtual ~HistoryTreeItem();
 
     virtual HistoryTreeItemType type()  const
@@ -396,7 +396,8 @@ void ItemHistoryGraphModel::Private::build()
 
 void ItemHistoryGraphModel::Private::buildImagesList()
 {
-    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(), sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
+    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
+                                                                                   sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
 
     Q_FOREACH (const HistoryGraph::Vertex& v, verticesOrdered)
     {
@@ -406,9 +407,10 @@ void ItemHistoryGraphModel::Private::buildImagesList()
 
 void ItemHistoryGraphModel::Private::buildImagesTree()
 {
-    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(), sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
+    QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(),
+                                                                                   sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
 
-    QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());                              // clazy:exclude=missing-typeinfo
+    QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());                // clazy:exclude=missing-typeinfo
 
 
     QList<HistoryGraph::Vertex> sources;                            // clazy:exclude=missing-typeinfo
