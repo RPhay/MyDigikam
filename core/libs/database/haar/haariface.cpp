@@ -300,7 +300,7 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
 
             // if the new entry has a higher score, put it in the list and remove that last one
 
-            if (score < worstScore)
+            if      (score < worstScore)
             {
                 bestMatches.erase(last);
                 bestMatches.insert(score, id);
@@ -447,9 +447,11 @@ bool HaarIface::fulfillsRestrictions(qlonglong imageId, int albumId,
     }
     else if (targetAlbums.isEmpty() || targetAlbums.contains(albumId))
     {
-        return ( searchResultRestriction == None)                                            ||
-               ((searchResultRestriction == SameAlbum)      && (originalAlbumId == albumId)) ||
-               ((searchResultRestriction == DifferentAlbum) && (originalAlbumId != albumId));
+        return (
+                (searchResultRestriction == None)                                             ||
+                ((searchResultRestriction == SameAlbum)      && (originalAlbumId == albumId)) ||
+                ((searchResultRestriction == DifferentAlbum) && (originalAlbumId != albumId))
+               ) ;
     }
     else
     {
@@ -818,7 +820,11 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             // the list will usually contain one image: the original. Filter out.
 
-            if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
+            if (
+                !(duplicates.isEmpty())     &&
+                !((duplicates.count() == 1) &&
+                (duplicates.first() == *images2ScanIterator))
+               )
             {
                 DEBUG_DUPLICATES("\tHas duplicates");
 
@@ -831,8 +837,10 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 qlonglong refFileSize   = 0;
                 qlonglong reference     = *images2ScanIterator;
 
-                const bool useReferenceImages = ((refImageSelectionMethod == RefImageSelMethod::PreferFolder) ||
-                                                 (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder));
+                const bool useReferenceImages = (
+                                                 (refImageSelectionMethod == RefImageSelMethod::PreferFolder) ||
+                                                 (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)
+                                                );
 
                 bool referenceFound = false;
 
@@ -864,9 +872,11 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                     }
                 }
 
-                if (!useReferenceImages                                                               ||
+                if (
+                    !useReferenceImages                                                               ||
                     (!referenceFound && (refImageSelectionMethod == RefImageSelMethod::PreferFolder)) ||
-                    (referenceFound  && (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)))
+                    (referenceFound  && (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder))
+                   )
                 {
                     DEBUG_DUPLICATES("\tChecking Duplicates")
 
@@ -915,22 +925,36 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             }
                         }
 
-                        const bool preferFolderCond  = (referenceFound && (refImageSelectionMethod == RefImageSelMethod::PreferFolder));
+                        const bool preferFolderCond  = (
+                                                        referenceFound &&
+                                                        (refImageSelectionMethod == RefImageSelMethod::PreferFolder)
+                                                       );
 
-                        const bool excludeFolderCond = (!referenceFound && (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder));
+                        const bool excludeFolderCond = (
+                                                        !referenceFound &&
+                                                        (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)
+                                                       );
 
-                        const bool newerCreationCond = ((refImageSelectionMethod == RefImageSelMethod::NewerCreationDate) &&
-                                                        (!refDateTime.isValid() || (info.dateTime() >  refDateTime)));
+                        const bool newerCreationCond = (
+                                                        (refImageSelectionMethod == RefImageSelMethod::NewerCreationDate) &&
+                                                        (!refDateTime.isValid() || (info.dateTime() >  refDateTime))
+                                                       );
 
-                        const bool newerModCond      = ((refImageSelectionMethod == RefImageSelMethod::NewerModificationDate) &&
-                                                        (!refModDateTime.isValid() || (info.modDateTime() >  refModDateTime)));
+                        const bool newerModCond      = (
+                                                        (refImageSelectionMethod == RefImageSelMethod::NewerModificationDate) &&
+                                                        (!refModDateTime.isValid() || (info.modDateTime() >  refModDateTime))
+                                                       );
 
-                        const bool olderOrLargerCond = ((refImageSelectionMethod == RefImageSelMethod::OlderOrLarger)          &&
+                        const bool olderOrLargerCond = (
+                                                        (refImageSelectionMethod == RefImageSelMethod::OlderOrLarger)          &&
                                                         (!refDateTime.isValid()                                                ||
                                                         (infoPixelSize   >  refPixelSize)                                      ||
                                                         ((infoPixelSize  == refPixelSize) && (info.fileSize() >  refFileSize)) ||
-                                                        ((infoPixelSize  == refPixelSize) && (info.fileSize() == refFileSize)  &&
-                                                        (info.dateTime() <  refDateTime))));
+                                                        (
+                                                         (infoPixelSize  == refPixelSize) && (info.fileSize() == refFileSize)  &&
+                                                         (info.dateTime() <  refDateTime))
+                                                        )
+                                                       );
 
                         if (preferFolderCond || excludeFolderCond || newerCreationCond || newerModCond || olderOrLargerCond)
                         {

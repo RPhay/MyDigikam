@@ -50,7 +50,8 @@ static const float s_haar_weights[2][6][3] =
     // For scanned picture (sketch=0):
     //       Y      I      Q         idx    total       occurs
 
-    {   { 5.00F, 19.21F, 34.37F },   // 0   58.58       1 (`DC' component)
+    {
+        { 5.00F, 19.21F, 34.37F },   // 0   58.58       1 (`DC' component)
         { 0.83F,  1.26F,  0.36F },   // 1    2.45       3
         { 1.01F,  0.44F,  0.45F },   // 2    1.90       5
         { 0.52F,  0.53F,  0.14F },   // 3    1.19       7
@@ -61,7 +62,8 @@ static const float s_haar_weights[2][6][3] =
     // For handdrawn/painted sketch (sketch=1):
     //       Y      I      Q
 
-    {   { 4.04F, 15.14F, 22.62F },
+    {
+        { 4.04F, 15.14F, 22.62F },
         { 0.78F,  0.92F,  0.40F },
         { 0.46F,  0.53F,  0.63F },
         { 0.42F,  0.26F,  0.25F },
@@ -195,7 +197,7 @@ class WeightBin
 {
 public:
 
-    explicit WeightBin();
+    WeightBin();
 
     unsigned char bin(int index)    const
     {
@@ -262,7 +264,7 @@ public:
 
 private:
 
-    SketchType m_type;
+    SketchType m_type = ScannedSketch;
 };
 
 // ---------------------------------------------------------------------------------
