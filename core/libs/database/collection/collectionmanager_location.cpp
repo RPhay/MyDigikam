@@ -314,8 +314,10 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
                 {
                     QUrl otherUrl(otherLocation->identifier);
 
-                    if ((otherUrl.scheme() == QLatin1String("volumeid")) &&
-                        (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == volume.label))
+                    if (
+                        (otherUrl.scheme() == QLatin1String("volumeid")) &&
+                        (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == volume.label)
+                       )
                     {
                         hasOtherLocation = true;
                         break;

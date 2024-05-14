@@ -75,7 +75,7 @@ class DIGIKAM_DATABASE_EXPORT Album
 {
 public:
 
-    Album();
+    Album() = default;
     Album(int albumRootId, int albumId);
 
     bool isNull()                       const;
@@ -84,8 +84,8 @@ public:
 
 public:
 
-    int albumRootId;
-    int albumId;
+    int albumRootId = 0;
+    int albumId     = 0;
 };
 
 // ---------------------------------------------------------------------------
@@ -94,7 +94,7 @@ class DIGIKAM_DATABASE_EXPORT DstPath
 {
 public:
 
-    DstPath();
+    DstPath() = default;
     DstPath(int albumRootId, const QString& relativePath);
 
     bool isNull()                         const;
@@ -103,7 +103,7 @@ public:
 
 public:
 
-    int     albumRootId;
+    int     albumRootId = 0;
     QString relativePath;
 };
 
@@ -113,7 +113,7 @@ class DIGIKAM_DATABASE_EXPORT Item
 {
 public:
 
-    Item();
+    Item() = default;
     explicit Item(qlonglong id);
 
     bool isNull()                      const;
@@ -122,8 +122,10 @@ public:
 
 public:
 
-    qlonglong id;
+    qlonglong id = 0;
 };
+
+// ---------------------------------------------------------------------------
 
 inline QT_HASH_TYPE qHash(const Album& src)
 {
@@ -153,7 +155,7 @@ public:
      * and a destination to which this album is expected to be
      * copied, moved or renamed.
      */
-    AlbumCopyMoveHint();
+    AlbumCopyMoveHint() = default;
     AlbumCopyMoveHint(int srcAlbumRootId, int srcAlbum,
                       int dstAlbumRootId, const QString& dstRelativePath);
 
@@ -222,7 +224,7 @@ public:
      * In the new album, the items will have the filenames given in dstNames.
      */
 
-    ItemCopyMoveHint();
+    ItemCopyMoveHint() = default;
     ItemCopyMoveHint(const QList<qlonglong>& srcIds,
                      int dstAlbumRootId,
                      int albumId,
@@ -285,7 +287,7 @@ public:
 
 public:
 
-    ItemChangeHint();
+    ItemChangeHint() = default;
     explicit ItemChangeHint(const QList<qlonglong>& srcIds,
                             ChangeType type = ItemModified);
 
@@ -313,7 +315,7 @@ public:
 protected:
 
     QList<qlonglong>  m_ids;
-    ChangeType        m_type;
+    ChangeType        m_type = ItemModified;
 };
 
 // ---------------------------------------------------------------------------
@@ -338,7 +340,7 @@ public:
 
 public:
 
-    ItemMetadataAdjustmentHint();
+    ItemMetadataAdjustmentHint() = default;
     explicit ItemMetadataAdjustmentHint(qlonglong id,
                                         AdjustmentStatus status,
                                         const QDateTime& modificationDateOnDisk,
@@ -373,10 +375,10 @@ public:
 
 protected:
 
-    qlonglong         m_id;
-    AdjustmentStatus  m_status;
+    qlonglong         m_id                  = 0;
+    AdjustmentStatus  m_status              = AboutToEditMetadata;
     QDateTime         m_modificationDate;
-    qlonglong         m_fileSize;
+    qlonglong         m_fileSize            = 0;
 };
 
 inline QT_HASH_TYPE qHash(const Digikam::AlbumCopyMoveHint& hint)

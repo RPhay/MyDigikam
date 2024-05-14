@@ -637,8 +637,10 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
             for (it2 = albumList.constBegin() ; it2 != albumList.constEnd() ; ++it2)
             {
-                if ((it2->albumRootId  == it.key().albumRootId) &&
-                    (it2->relativePath == it.key().relativePath))
+                if (
+                    (it2->albumRootId  == it.key().albumRootId) &&
+                    (it2->relativePath == it.key().relativePath)
+                   )
                 {
                     toBeDeletedIndex = -1;
                     break;
@@ -835,8 +837,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                     if (itemDate.isValid())
                     {
-                        if ((settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
-                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
+                        if (
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate)
+                           )
                         {
                             // Change album date only if the item date is newer.
 
@@ -847,8 +851,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                             }
                         }
 
-                        if ((settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate) ||
-                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
+                        if (
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate) ||
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate)
+                           )
                         {
                             // Change album date only if the item date is older.
 
@@ -966,8 +972,10 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
 
     // if the date is null, this signals a full rescan
 
-    if (scanInfo.modificationDate.isNull() ||
-        (hasAnyHint && d->hints->hasRescanHint(scanInfo.id)))
+    if      (
+             scanInfo.modificationDate.isNull() ||
+             (hasAnyHint && d->hints->hasRescanHint(scanInfo.id))
+            )
     {
         if (hasAnyHint)
         {
@@ -1014,8 +1022,10 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     {
         // if the file need not be scanned because of modification, update the hash
 
-        if (s_modificationDateEquals(modificationDate, scanInfo.modificationDate) &&
-            (fi.size() == scanInfo.fileSize))
+        if (
+            s_modificationDateEquals(modificationDate, scanInfo.modificationDate) &&
+            (fi.size() == scanInfo.fileSize)
+           )
         {
             scanFileUpdateHashReuseThumbnail(fi, scanInfo, false);
 
@@ -1048,8 +1058,10 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
         }
     }
 
-    if (!s_modificationDateEquals(modificationDate, scanInfo.modificationDate) ||
-        (fi.size() != scanInfo.fileSize))
+    if (
+        !s_modificationDateEquals(modificationDate, scanInfo.modificationDate) ||
+        (fi.size() != scanInfo.fileSize)
+       )
     {
         if (settings.rescanImageIfModified)
         {

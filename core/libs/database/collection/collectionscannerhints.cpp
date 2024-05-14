@@ -22,12 +22,6 @@
 namespace Digikam
 {
 
-CollectionScannerHints::Album::Album()
-    : albumRootId(0),
-      albumId    (0)
-{
-}
-
 CollectionScannerHints::Album::Album(int albumRootId, int albumId)
     : albumRootId(albumRootId),
       albumId    (albumId)
@@ -36,14 +30,18 @@ CollectionScannerHints::Album::Album(int albumRootId, int albumId)
 
 bool CollectionScannerHints::Album::isNull() const
 {
-    return ((albumRootId == 0) ||
-            (albumId     == 0));
+    return (
+            (albumRootId == 0) ||
+            (albumId     == 0)
+           );
 }
 
 bool CollectionScannerHints::Album::operator==(const Album& other) const
 {
-    return ((albumRootId == other.albumRootId) ||
-            (albumId     == other.albumId));
+    return (
+            (albumRootId == other.albumRootId) ||
+            (albumId     == other.albumId)
+           );
 }
 
 QT_HASH_TYPE CollectionScannerHints::Album::qHash() const
@@ -51,10 +49,7 @@ QT_HASH_TYPE CollectionScannerHints::Album::qHash() const
     return (::qHash(albumRootId) ^ ::qHash(albumId));
 }
 
-CollectionScannerHints::DstPath::DstPath()
-    : albumRootId(0)
-{
-}
+// ---------------------------------------------------------------------
 
 CollectionScannerHints::DstPath::DstPath(int albumRootId, const QString& relativePath)
     : albumRootId (albumRootId),
@@ -64,14 +59,18 @@ CollectionScannerHints::DstPath::DstPath(int albumRootId, const QString& relativ
 
 bool CollectionScannerHints::DstPath::isNull() const
 {
-    return ((albumRootId == 0) ||
-            relativePath.isNull());
+    return (
+            (albumRootId == 0) ||
+            relativePath.isNull()
+           );
 }
 
 bool CollectionScannerHints::DstPath::operator==(const DstPath& other) const
 {
-    return ((albumRootId  == other.albumRootId) ||
-            (relativePath == other.relativePath));
+    return (
+            (albumRootId  == other.albumRootId) ||
+            (relativePath == other.relativePath)
+           );
 }
 
 QT_HASH_TYPE CollectionScannerHints::DstPath::qHash() const
@@ -79,10 +78,7 @@ QT_HASH_TYPE CollectionScannerHints::DstPath::qHash() const
     return (::qHash(albumRootId) ^ ::qHash(relativePath));
 }
 
-CollectionScannerHints::Item::Item()
-    : id(0)
-{
-}
+// ---------------------------------------------------------------------
 
 CollectionScannerHints::Item::Item(qlonglong id)
     : id(id)
@@ -106,10 +102,6 @@ QT_HASH_TYPE CollectionScannerHints::Item::qHash() const
 
 // -----------------------------------------------------------------------------------
 
-AlbumCopyMoveHint::AlbumCopyMoveHint()
-{
-}
-
 AlbumCopyMoveHint::AlbumCopyMoveHint(int srcAlbumRootId,
                                      int srcAlbum,
                                      int dstAlbumRootId,
@@ -131,8 +123,10 @@ int AlbumCopyMoveHint::albumIdSrc() const
 
 bool AlbumCopyMoveHint::isSrcAlbum(int albumRootId, int albumId) const
 {
-    return ((m_src.albumRootId == albumRootId) &&
-            (m_src.albumId     == albumId));
+    return (
+            (m_src.albumRootId == albumRootId) &&
+            (m_src.albumId     == albumId)
+           );
 }
 
 int AlbumCopyMoveHint::albumRootIdDst() const
@@ -147,14 +141,18 @@ QString AlbumCopyMoveHint::relativePathDst() const
 
 bool AlbumCopyMoveHint::isDstAlbum(int albumRootId, const QString& relativePath) const
 {
-    return ((m_dst.albumRootId  == albumRootId) &&
-            (m_dst.relativePath == relativePath));
+    return (
+            (m_dst.albumRootId  == albumRootId) &&
+            (m_dst.relativePath == relativePath)
+           );
 }
 
 QT_HASH_TYPE AlbumCopyMoveHint::qHash() const
 {
-    return (::qHash(m_src.albumRootId) ^ ::qHash(m_src.albumId) ^
-            ::qHash(m_dst.albumRootId) ^ ::qHash(m_dst.relativePath));
+    return (
+            ::qHash(m_src.albumRootId) ^ ::qHash(m_src.albumId) ^
+            ::qHash(m_dst.albumRootId) ^ ::qHash(m_dst.relativePath)
+           );
 }
 
 #ifdef HAVE_DBUS
@@ -182,10 +180,6 @@ const AlbumCopyMoveHint& AlbumCopyMoveHint::operator>>(QDBusArgument& argument) 
 #endif
 
 // -----------------------------------------------------------------------------------------
-
-ItemCopyMoveHint::ItemCopyMoveHint()
-{
-}
 
 ItemCopyMoveHint::ItemCopyMoveHint(const QList<qlonglong>& srcIds,
                                    int dstItemRootId,
@@ -219,8 +213,10 @@ int ItemCopyMoveHint::albumIdDst() const
 
 bool ItemCopyMoveHint::isDstAlbum(int albumRootId, int albumId) const
 {
-    return ((m_dst.albumRootId == albumRootId) &&
-            (m_dst.albumId     == albumId));
+    return (
+            (m_dst.albumRootId == albumRootId) &&
+            (m_dst.albumId     == albumId)
+           );
 }
 
 QStringList ItemCopyMoveHint::dstNames() const
@@ -267,11 +263,6 @@ const ItemCopyMoveHint& ItemCopyMoveHint::operator>>(QDBusArgument& argument) co
 #endif
 
 // ---------------------------------------------------------------------------------------
-
-ItemChangeHint::ItemChangeHint()
-    : m_type(ItemModified)
-{
-}
 
 ItemChangeHint::ItemChangeHint(const QList<qlonglong>& ids, ChangeType type)
     : m_ids(ids),
@@ -322,15 +313,9 @@ const ItemChangeHint& ItemChangeHint::operator>>(QDBusArgument& argument) const
 
 // ---------------------------------------------------------------------------------------
 
-ItemMetadataAdjustmentHint::ItemMetadataAdjustmentHint()
-    : m_id      (0),
-      m_status  (AboutToEditMetadata),
-      m_fileSize(0)
-{
-}
-
 ItemMetadataAdjustmentHint::ItemMetadataAdjustmentHint(qlonglong id, AdjustmentStatus status,
-                                                       const QDateTime& modificationDateOnDisk, qlonglong fileSize)
+                                                       const QDateTime& modificationDateOnDisk,
+                                                       qlonglong fileSize)
     : m_id              (id),
       m_status          (status),
       m_modificationDate(modificationDateOnDisk),

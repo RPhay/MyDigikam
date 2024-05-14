@@ -113,7 +113,7 @@ void CollectionScannerHintContainerImplementation::recordHints(const QList<Album
 
     Q_FOREACH (const AlbumCopyMoveHint& hint, hints)
     {
-        // automagic casting to src and dst
+        // auto-magic casting to src and dst
 
         albumHints[hint] = hint;
     }
@@ -165,7 +165,8 @@ void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadata
 
         if (!
             (s_modificationDateEquals(hint.modificationDate(), info.modDateTime()) &&
-             (hint.fileSize() == info.fileSize()))
+             (hint.fileSize() == info.fileSize())
+            )
            )
         {
             // refuse to create a hint as a rescan is required already before any metadata edit

@@ -345,7 +345,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         }
     }
 
-    if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
+    if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
     {
         Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
@@ -503,7 +503,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForUrl(const QUrl& fileUrl
     QString path    = fileUrl.toLocalFile() + QLatin1Char('/');
     int volumeMatch = 0;
 
-    //FIXME: Network shares! Here we get only the volume of the mount path...
+    // FIXME: Network shares! Here we get only the volume of the mount path...
     // This is probably not really clean. But Solid does not help us.
 
     Q_FOREACH (const SolidVolumeInfo& v, volumes)
@@ -543,9 +543,13 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
         // make sure filePathUrl is neither a child nor a parent
         // of an existing collection
 
-        if (!locationPathUrl.isEmpty() &&
-            (filePathUrl.isParentOf(locationPathUrl) ||
-             locationPathUrl.isParentOf(filePathUrl)))
+        if (
+            !locationPathUrl.isEmpty() &&
+            (
+             filePathUrl.isParentOf(locationPathUrl) ||
+             locationPathUrl.isParentOf(filePathUrl)
+            )
+           )
         {
             bool isDeleted = false;
 
@@ -669,11 +673,13 @@ bool CollectionManager::Private::checkCollectionUUID(AlbumRootLocation* const lo
     }
 
     writeFile.close();
-    writeFile.setPermissions(QFileDevice::ReadOwner  |
+    writeFile.setPermissions(
+                             QFileDevice::ReadOwner  |
                              QFileDevice::ReadGroup  |
                              QFileDevice::ReadOther  |
                              QFileDevice::WriteOwner |
-                             QFileDevice::WriteGroup);
+                             QFileDevice::WriteGroup
+                            );
 
     QUrlQuery q(url);
     q.removeQueryItem(uuidQuery);

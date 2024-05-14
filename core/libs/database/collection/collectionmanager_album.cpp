@@ -135,7 +135,7 @@ QString CollectionManager::album(const QString& filePath)
 
         QString album = filePath.mid(rootPath.length());
 
-        if      (album.isEmpty() ||( album == QLatin1String("/")))
+        if      (album.isEmpty() || (album == QLatin1String("/")))
         {
             return QLatin1String("/");
         }
