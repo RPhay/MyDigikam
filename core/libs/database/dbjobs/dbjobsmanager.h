@@ -78,7 +78,7 @@ public:
 private:
 
     // Disable
-    DBJobsManager();
+    DBJobsManager() = default;
     explicit DBJobsManager(QObject*) = delete;
 
     friend class DBJobsManagerCreator;

@@ -59,7 +59,7 @@ class DIGIKAM_DATABASE_EXPORT AlbumsDBJobInfo : public DBJobInfo
 {
 public:
 
-    explicit AlbumsDBJobInfo();
+    AlbumsDBJobInfo();
 
     void setAlbumRootId(int id);
     int  albumRootId();
@@ -79,7 +79,7 @@ class DIGIKAM_DATABASE_EXPORT TagsDBJobInfo : public DBJobInfo
 {
 public:
 
-    explicit TagsDBJobInfo();
+    TagsDBJobInfo();
 
     void setFaceFoldersJob();
     bool isFaceFoldersJob()         const;
@@ -103,7 +103,7 @@ class DIGIKAM_DATABASE_EXPORT GPSDBJobInfo : public DBJobInfo
 {
 public:
 
-    explicit GPSDBJobInfo();
+    GPSDBJobInfo();
 
     void setDirectQuery();
     bool isDirectQuery()            const;
@@ -178,7 +178,7 @@ class DIGIKAM_DATABASE_EXPORT DatesDBJobInfo : public DBJobInfo
 {
 public:
 
-    explicit DatesDBJobInfo();
+    DatesDBJobInfo();
 
     void setStartDate(const QDate& date);
     QDate startDate()   const;

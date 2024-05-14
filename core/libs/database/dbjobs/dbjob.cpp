@@ -33,19 +33,11 @@ DBJob::DBJob()
 {
 }
 
-DBJob::~DBJob()
-{
-}
-
 // ----------------------------------------------
 
 AlbumsJob::AlbumsJob(const AlbumsDBJobInfo& jobInfo)
     : DBJob    (),
       m_jobInfo(jobInfo)
-{
-}
-
-AlbumsJob::~AlbumsJob()
 {
 }
 
@@ -78,10 +70,6 @@ void AlbumsJob::run()
 DatesJob::DatesJob(const DatesDBJobInfo& jobInfo)
     : DBJob    (),
       m_jobInfo(jobInfo)
-{
-}
-
-DatesJob::~DatesJob()
 {
 }
 
@@ -146,10 +134,6 @@ GPSJob::GPSJob(const GPSDBJobInfo& jobInfo)
 {
 }
 
-GPSJob::~GPSJob()
-{
-}
-
 void GPSJob::run()
 {
     if (m_jobInfo.isDirectQuery())
@@ -190,10 +174,6 @@ void GPSJob::run()
 TagsJob::TagsJob(const TagsDBJobInfo& jobInfo)
     : DBJob    (),
       m_jobInfo(jobInfo)
-{
-}
-
-TagsJob::~TagsJob()
 {
 }
 
@@ -296,10 +276,6 @@ SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo,
       m_begin  (begin),
       m_end    (end),
       m_iface  (iface)
-{
-}
-
-SearchesJob::~SearchesJob()
 {
 }
 

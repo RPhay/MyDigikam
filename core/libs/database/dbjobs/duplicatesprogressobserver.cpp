@@ -22,7 +22,7 @@ namespace Digikam
 
 DuplicatesProgressObserver::DuplicatesProgressObserver(SearchesJob* const thread)
     : HaarProgressObserver(),
-      m_job(thread)
+      m_job               (thread)
 {
 }
 

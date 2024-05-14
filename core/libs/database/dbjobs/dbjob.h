@@ -34,8 +34,8 @@ class DIGIKAM_DATABASE_EXPORT DBJob : public ActionJob
 
 protected:
 
-    explicit DBJob();
-    ~DBJob()        override;
+    DBJob();
+    ~DBJob() override = default;
 
 Q_SIGNALS:
 
@@ -57,7 +57,7 @@ class DIGIKAM_DATABASE_EXPORT AlbumsJob : public DBJob
 public:
 
     explicit AlbumsJob(const AlbumsDBJobInfo& jobInfo);
-    ~AlbumsJob()    override;
+    ~AlbumsJob()    override = default;
 
 protected:
 
@@ -86,7 +86,7 @@ class DIGIKAM_DATABASE_EXPORT DatesJob : public DBJob
 public:
 
     explicit DatesJob(const DatesDBJobInfo& jobInfo);
-    ~DatesJob()     override;
+    ~DatesJob()     override = default;
 
 protected:
 
@@ -115,7 +115,7 @@ class DIGIKAM_DATABASE_EXPORT GPSJob : public DBJob
 public:
 
     explicit GPSJob(const GPSDBJobInfo& jobInfo);
-    ~GPSJob()       override;
+    ~GPSJob()       override = default;
 
 protected:
 
@@ -144,7 +144,7 @@ class DIGIKAM_DATABASE_EXPORT TagsJob : public DBJob
 public:
 
     explicit TagsJob(const TagsDBJobInfo& jobInfo);
-    ~TagsJob()      override;
+    ~TagsJob()      override = default;
 
 protected:
 
@@ -179,7 +179,7 @@ public:
                 const QSet<qlonglong>::const_iterator& end,
                 HaarIface* iface);
 
-    ~SearchesJob()  override;
+    ~SearchesJob()  override = default;
 
     bool isCanceled() const;
 

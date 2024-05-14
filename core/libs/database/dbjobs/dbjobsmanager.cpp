@@ -31,10 +31,6 @@ Q_GLOBAL_STATIC(DBJobsManagerCreator, creator)
 
 // -----------------------------------------------
 
-DBJobsManager::DBJobsManager()
-{
-}
-
 DBJobsManager* DBJobsManager::instance()
 {
     return &creator->object;

@@ -29,10 +29,6 @@ DBJobsThread::DBJobsThread(QObject* const parent)
     setObjectName(QLatin1String("DBJobsThread"));
 }
 
-DBJobsThread::~DBJobsThread()
-{
-}
-
 bool DBJobsThread::hasErrors()
 {
     return !m_errorsList.isEmpty();
@@ -64,10 +60,6 @@ AlbumsDBJobsThread::AlbumsDBJobsThread(QObject* const parent)
 {
 }
 
-AlbumsDBJobsThread::~AlbumsDBJobsThread()
-{
-}
-
 void AlbumsDBJobsThread::albumsListing(const AlbumsDBJobInfo& info)
 {
     AlbumsJob* const j = new AlbumsJob(info);
@@ -95,10 +87,6 @@ void AlbumsDBJobsThread::albumsListing(const AlbumsDBJobInfo& info)
 
 TagsDBJobsThread::TagsDBJobsThread(QObject* const parent)
     : DBJobsThread(parent)
-{
-}
-
-TagsDBJobsThread::~TagsDBJobsThread()
 {
 }
 
@@ -137,10 +125,6 @@ DatesDBJobsThread::DatesDBJobsThread(QObject* const parent)
 {
 }
 
-DatesDBJobsThread::~DatesDBJobsThread()
-{
-}
-
 void DatesDBJobsThread::datesListing(const DatesDBJobInfo& info)
 {
     DatesJob* const j = new DatesJob(info);
@@ -171,10 +155,6 @@ GPSDBJobsThread::GPSDBJobsThread(QObject* const parent)
 {
 }
 
-GPSDBJobsThread::~GPSDBJobsThread()
-{
-}
-
 void GPSDBJobsThread::GPSListing(const GPSDBJobInfo& info)
 {
     GPSJob* const j = new GPSJob(info);
@@ -202,10 +182,6 @@ void GPSDBJobsThread::GPSListing(const GPSDBJobInfo& info)
 
 SearchesDBJobsThread::SearchesDBJobsThread(QObject* const parent)
     : DBJobsThread(parent)
-{
-}
-
-SearchesDBJobsThread::~SearchesDBJobsThread()
 {
 }
 
