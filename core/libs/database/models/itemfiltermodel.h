@@ -179,8 +179,8 @@ public:
      */
     void setSendItemInfoSignals(bool sendSignals);
 
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
-    ItemFilterModel* imageFilterModel()                                             const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                     const override;
+    ItemFilterModel* imageFilterModel()                                                     const override;
 
 public Q_SLOTS:
 

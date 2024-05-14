@@ -555,8 +555,11 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
             }
 
 #if __GNUC__ >= 7       // krazy:exclude=cpp
+
             [[fallthrough]];
+
 #endif
+
         }
 
         default:

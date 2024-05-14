@@ -84,8 +84,10 @@ int ItemSortCollator::itemCompare(const QString& a, const QString& b,
 
         if (a.contains(d->versionStr) || b.contains(d->versionStr))
         {
-            hasVersion = (d->versionExp.match(a).hasMatch() ||
-                          d->versionExp.match(b).hasMatch());
+            hasVersion = (
+                          d->versionExp.match(a).hasMatch() ||
+                          d->versionExp.match(b).hasMatch()
+                         );
         }
 
         d->itemCollator.setCaseSensitivity(caseSensitive);

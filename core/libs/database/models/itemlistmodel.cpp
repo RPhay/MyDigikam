@@ -33,10 +33,6 @@ ItemListModel::ItemListModel(QWidget* const parent)
             this, SLOT(slotCollectionImageChange(CollectionImageChangeset)));
 }
 
-ItemListModel::~ItemListModel()
-{
-}
-
 void ItemListModel::slotCollectionImageChange(const CollectionImageChangeset& changeset)
 {
     if (isEmpty())

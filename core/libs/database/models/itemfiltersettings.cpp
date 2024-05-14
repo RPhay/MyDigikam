@@ -38,10 +38,6 @@
 namespace Digikam
 {
 
-ItemFilterSettings::ItemFilterSettings()
-{
-}
-
 DatabaseFields::Set ItemFilterSettings::watchFlags() const
 {
     DatabaseFields::Set set;
@@ -647,6 +643,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         default:
         {
             // All Files: do nothing...
+
             break;
         }
     }
@@ -686,27 +683,33 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
         // Image name
 
-        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
+        if (
+            (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
             (textRegExp.match(info.name()).hasMatch()                               ||
-            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
+            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+           )
         {
             textMatch = true;
         }
 
         // Image title
 
-        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
+        if (
+            (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
             (textRegExp.match(info.title()).hasMatch()                               ||
-            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
+            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+           )
         {
             textMatch = true;
         }
 
         // Image comment
 
-        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
+        if (
+            (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
             (textRegExp.match(info.comment()).hasMatch()                               ||
-            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
+            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+           )
         {
             textMatch = true;
         }
@@ -715,9 +718,11 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
         Q_FOREACH (int id, info.tagIds())
         {
-            if ((m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
+            if (
+                (m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
                 (textRegExp.match(m_tagNameHash.value(id)).hasMatch()                 ||
-                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
+                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+               )
             {
                 textMatch = true;
             }
@@ -725,9 +730,11 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
         // Album names
 
-        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
+        if (
+            (m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
             (textRegExp.match(m_albumNameHash.value(info.albumId())).hasMatch()     ||
-            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
+            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+           )
         {
             textMatch = true;
         }
@@ -739,7 +746,10 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             QRegularExpression expRatio (QLatin1String("^\\d+:\\d+$"));
             QRegularExpression expFloat (QLatin1String("^\\d+(.\\d+)?$"));
 
-            if      (m_textFilterSettings.text.contains(expRatio) && m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+"))))
+            if      (
+                     m_textFilterSettings.text.contains(expRatio) &&
+                     m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+")))
+                    )
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
                 QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), Qt::SkipEmptyParts);
@@ -785,18 +795,24 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             int pixelSize = size.height()*size.width();
             QString text  = m_textFilterSettings.text;
 
-            if      (text.contains(QRegularExpression(QLatin1String("^>\\d{1,15}$"))) &&
-                (pixelSize > (text.remove(0, 1)).toInt()))
+            if      (
+                     text.contains(QRegularExpression(QLatin1String("^>\\d{1,15}$"))) &&
+                     (pixelSize > (text.remove(0, 1)).toInt())
+                    )
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegularExpression(QLatin1String("^<\\d{1,15}$"))) &&
-                     (pixelSize < (text.remove(0, 1)).toInt()))
+            else if (
+                     text.contains(QRegularExpression(QLatin1String("^<\\d{1,15}$"))) &&
+                     (pixelSize < (text.remove(0, 1)).toInt())
+                    )
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegularExpression(QLatin1String("^\\d+$"))) &&
-                     (pixelSize == text.toInt()))
+            else if (
+                     text.contains(QRegularExpression(QLatin1String("^\\d+$"))) &&
+                     (pixelSize == text.toInt())
+                    )
             {
                 textMatch = true;
             }
@@ -850,10 +866,6 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
 // -------------------------------------------------------------------------------------------------
 
-VersionItemFilterSettings::VersionItemFilterSettings()
-{
-}
-
 VersionItemFilterSettings::VersionItemFilterSettings(const VersionManagerSettings& settings)
 {
     setVersionManagerSettings(settings);
@@ -861,8 +873,10 @@ VersionItemFilterSettings::VersionItemFilterSettings(const VersionManagerSetting
 
 bool VersionItemFilterSettings::operator==(const VersionItemFilterSettings& other) const
 {
-    return ((m_excludeTagFilter == other.m_excludeTagFilter) &&
-            (m_exceptionLists   == other.m_exceptionLists));
+    return (
+            (m_excludeTagFilter == other.m_excludeTagFilter) &&
+            (m_exceptionLists   == other.m_exceptionLists)
+           );
 }
 
 bool VersionItemFilterSettings::matches(const ItemInfo& info) const
@@ -967,7 +981,7 @@ void VersionItemFilterSettings::setExceptionList(const QList<qlonglong>& idList,
 
 bool VersionItemFilterSettings::isFiltering() const
 {
-    return !m_excludeTagFilter.isEmpty();
+    return (!m_excludeTagFilter.isEmpty());
 }
 
 bool VersionItemFilterSettings::isFilteringByTags() const
@@ -976,10 +990,6 @@ bool VersionItemFilterSettings::isFilteringByTags() const
 }
 
 // -------------------------------------------------------------------------------------------------
-
-GroupItemFilterSettings::GroupItemFilterSettings()
-{
-}
 
 bool GroupItemFilterSettings::operator==(const GroupItemFilterSettings& other) const
 {

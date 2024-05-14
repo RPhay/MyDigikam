@@ -111,7 +111,7 @@ public:
 
 public:
 
-    explicit ItemFilterSettings();
+    ItemFilterSettings() = default;
 
     /**
      *  Returns true if the given ItemInfo matches the filter criteria.
@@ -257,7 +257,7 @@ class DIGIKAM_DATABASE_EXPORT VersionItemFilterSettings
 {
 public:
 
-    VersionItemFilterSettings();
+    VersionItemFilterSettings() = default;
     explicit VersionItemFilterSettings(const VersionManagerSettings& settings);
 
     bool operator==(const VersionItemFilterSettings& other) const;
@@ -301,7 +301,7 @@ class DIGIKAM_DATABASE_EXPORT GroupItemFilterSettings
 {
 public:
 
-    explicit GroupItemFilterSettings();
+    GroupItemFilterSettings() = default;
 
     bool operator==(const GroupItemFilterSettings& other)   const;
 

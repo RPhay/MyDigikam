@@ -133,14 +133,17 @@ ItemModel::ItemModel(QObject* const parent)
       d                 (new Private)
 {
     // --- NOTE: use dynamic binding as slotAlbumChange() is a virtual slot which can be re-implemented in derived classes.
+
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const AlbumChangeset&)>(&CoreDbWatch::albumChange),
             this, &ItemModel::slotAlbumChange);
 
     // --- NOTE: use dynamic binding as slotImageChange() is a virtual slot which can be re-implemented in derived classes.
+
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageChangeset&)>(&CoreDbWatch::imageChange),
             this, &ItemModel::slotImageChange);
 
     // --- NOTE: use dynamic binding as slotImageTagChange() is a virtual slot which can be re-implemented in derived classes.
+
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageTagChangeset&)>(&CoreDbWatch::imageTagChange),
             this, &ItemModel::slotImageTagChange);
 }
@@ -337,7 +340,7 @@ int ItemModel::numberOfIndexesForImageId(qlonglong id) const
     int count = 0;
     QMultiHash<qlonglong, int>::const_iterator it;
 
-    for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
+    for (it = d->idHash.constFind(id) ; (it != d->idHash.constEnd()) && (it.key() == id) ; ++it)
     {
         ++count;
     }
@@ -346,6 +349,7 @@ int ItemModel::numberOfIndexesForImageId(qlonglong id) const
 }
 
 // static method
+
 ItemInfo ItemModel::retrieveItemInfo(const QModelIndex& index)
 {
     if (!index.isValid())
@@ -365,6 +369,7 @@ ItemInfo ItemModel::retrieveItemInfo(const QModelIndex& index)
 }
 
 // static method
+
 qlonglong ItemModel::retrieveImageId(const QModelIndex& index)
 {
     if (!index.isValid())
@@ -533,6 +538,7 @@ void ItemModel::addItemInfosSynchronously(const QList<ItemInfo>& infos, const QL
     }
 
     publiciseInfos(infos, extraValues);
+
     Q_EMIT processAdded(infos, extraValues);
 }
 
@@ -632,7 +638,7 @@ bool ItemModel::hasImage(qlonglong id, const QVariant& extraValue) const
 
     QMultiHash<qlonglong, int>::const_iterator it;
 
-    for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
+    for (it = d->idHash.constFind(id) ; (it != d->idHash.constEnd()) && (it.key() == id) ; ++it)
     {
         if (d->extraValues.at(it.value()) == extraValue)
         {
@@ -675,6 +681,7 @@ void ItemModel::emitDataChangedForAll()
 
     QModelIndex first = createIndex(0, 0);
     QModelIndex last  = createIndex(d->infos.size() - 1, 0);
+
     Q_EMIT dataChanged(first, last);
 }
 
@@ -727,6 +734,7 @@ void ItemModel::appendInfos(const QList<ItemInfo>& infos, const QList<QVariant>&
     if (d->preprocessor)
     {
         d->reAdding = true;
+
         Q_EMIT preprocess(infos, extraValues);
     }
     else
@@ -1170,11 +1178,11 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
             bool found           = false;
             QMultiHash<qlonglong, int>::iterator it;
 
-            for (it = oldIds.find(info.id()) ; it != oldIds.end() && it.key() == info.id() ; ++it)
+            for (it = oldIds.find(info.id()) ; (it != oldIds.end()) && (it.key() == info.id()) ; ++it)
             {
                 // first check is for bug #262596. Not sure if needed.
 
-                if (it.value() < oldExtraValues.size() && extraValues.at(i) == oldExtraValues.at(it.value()))
+                if ((it.value() < oldExtraValues.size()) && (extraValues.at(i) == oldExtraValues.at(it.value())))
                 {
                     found = true;
                     break;
@@ -1213,7 +1221,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
 
         Q_FOREACH (const IntPair& pair, list)
         {
-            const int begin = pair.first - offset;
+            const int begin = pair.first  - offset;
             const int end   = pair.second - offset; // inclusive
             removedRows     = end - begin + 1;
 
@@ -1429,7 +1437,7 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
 
                     if (index != -1)
                     {
-                        const ItemInfo& info = d->infos.at(index);
+                        const ItemInfo& info             = d->infos.at(index);
                         d->filePathHash[info.filePath()] = id;
                     }
                 }
@@ -1453,6 +1461,7 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
         if (!items.isEmpty())
         {
             emitDataChangedForSelection(items);
+
             Q_EMIT imageChange(changeset, items);
         }
     }

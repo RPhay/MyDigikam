@@ -387,8 +387,10 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
                 return i18nc("@item: filter model", "No face");
             }
 
-            if      ((face.type() == FaceTagsIface::UnknownName) ||
-                     (face.type() == FaceTagsIface::IgnoredName))
+            if      (
+                     (face.type() == FaceTagsIface::UnknownName) ||
+                     (face.type() == FaceTagsIface::IgnoredName)
+                    )
             {
                 return FaceTags::faceNameForTag(face.tagId());
             }
@@ -405,8 +407,10 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
         case GroupIsOpenRole:
         {
-            return (d->groupFilter.isAllOpen() ||
-                    d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id()));
+            return (
+                    d->groupFilter.isAllOpen() ||
+                    d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id())
+                   );
         }
 
         case ItemFilterModelPointerRole:
@@ -442,6 +446,7 @@ DatabaseFields::Set ItemFilterModel::suggestedWatchFlags() const
 void ItemFilterModel::setDayFilter(const QList<QDateTime>& days)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setDayFilter(days);
     setItemFilterSettings(d->filter);
 }
@@ -451,6 +456,7 @@ void ItemFilterModel::setTagFilter(const QList<int>& includedTags, const QList<i
                                    bool showUnTagged, const QList<int>& clTagIds, const QList<int>& plTagIds)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setTagFilter(includedTags, excludedTags, matchingCond, showUnTagged, clTagIds, plTagIds);
     setItemFilterSettings(d->filter);
 }
@@ -458,6 +464,7 @@ void ItemFilterModel::setTagFilter(const QList<int>& includedTags, const QList<i
 void ItemFilterModel::setRatingFilter(int rating, ItemFilterSettings::RatingCondition ratingCond, bool isUnratedExcluded)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setRatingFilter(rating, ratingCond, isUnratedExcluded);
     setItemFilterSettings(d->filter);
 }
@@ -465,6 +472,7 @@ void ItemFilterModel::setRatingFilter(int rating, ItemFilterSettings::RatingCond
 void ItemFilterModel::setUrlWhitelist(const QList<QUrl>& urlList, const QString& id)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setUrlWhitelist(urlList, id);
     setItemFilterSettings(d->filter);
 }
@@ -472,6 +480,7 @@ void ItemFilterModel::setUrlWhitelist(const QList<QUrl>& urlList, const QString&
 void ItemFilterModel::setIdWhitelist(const QList<qlonglong>& idList, const QString& id)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setIdWhitelist(idList, id);
     setItemFilterSettings(d->filter);
 }
@@ -479,6 +488,7 @@ void ItemFilterModel::setIdWhitelist(const QList<qlonglong>& idList, const QStri
 void ItemFilterModel::setMimeTypeFilter(int mimeTypeFilter)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setMimeTypeFilter(mimeTypeFilter);
     setItemFilterSettings(d->filter);
 }
@@ -486,6 +496,7 @@ void ItemFilterModel::setMimeTypeFilter(int mimeTypeFilter)
 void ItemFilterModel::setGeolocationFilter(const ItemFilterSettings::GeolocationCondition& condition)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setGeolocationFilter(condition);
     setItemFilterSettings(d->filter);
 }
@@ -493,6 +504,7 @@ void ItemFilterModel::setGeolocationFilter(const ItemFilterSettings::Geolocation
 void ItemFilterModel::setTextFilter(const SearchTextFilterSettings& settings)
 {
     Q_D(ItemFilterModel);
+
     d->filter.setTextFilter(settings);
     setItemFilterSettings(d->filter);
 }
@@ -534,6 +546,7 @@ void ItemFilterModel::setItemFilterSettings(const ItemFilterSettings& settings)
 void ItemFilterModel::setVersionManagerSettings(const VersionManagerSettings& settings)
 {
     Q_D(ItemFilterModel);
+
     d->versionFilter.setVersionManagerSettings(settings);
     setVersionItemFilterSettings(d->versionFilter);
 }
@@ -541,6 +554,7 @@ void ItemFilterModel::setVersionManagerSettings(const VersionManagerSettings& se
 void ItemFilterModel::setExceptionList(const QList<qlonglong>& idList, const QString& id)
 {
     Q_D(ItemFilterModel);
+
     d->versionFilter.setExceptionList(idList, id);
     setVersionItemFilterSettings(d->versionFilter);
 }
@@ -548,6 +562,7 @@ void ItemFilterModel::setExceptionList(const QList<qlonglong>& idList, const QSt
 void ItemFilterModel::setVersionItemFilterSettings(const VersionItemFilterSettings& settings)
 {
     Q_D(ItemFilterModel);
+
     d->versionFilter = settings;
     slotUpdateFilter();
 }
@@ -569,6 +584,7 @@ bool ItemFilterModel::isAllGroupsOpen() const
 void ItemFilterModel::setGroupOpen(qlonglong group, bool open)
 {
     Q_D(ItemFilterModel);
+
     d->groupFilter.setOpen(group, open);
     setGroupItemFilterSettings(d->groupFilter);
 }
@@ -581,6 +597,7 @@ void ItemFilterModel::toggleGroupOpen(qlonglong group)
 void ItemFilterModel::setAllGroupsOpen(bool open)
 {
     Q_D(ItemFilterModel);
+
     d->groupFilter.setAllOpen(open);
     setGroupItemFilterSettings(d->groupFilter);
 }
@@ -588,6 +605,7 @@ void ItemFilterModel::setAllGroupsOpen(bool open)
 void ItemFilterModel::setGroupItemFilterSettings(const GroupItemFilterSettings& settings)
 {
     Q_D(ItemFilterModel);
+
     d->groupFilter = settings;
     slotUpdateFilter();
 }
@@ -595,6 +613,7 @@ void ItemFilterModel::setGroupItemFilterSettings(const GroupItemFilterSettings& 
 void ItemFilterModel::slotUpdateFilter()
 {
     Q_D(ItemFilterModel);
+
     setItemFilterSettings(d->filter);
 }
 
@@ -838,9 +857,11 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     {
         Q_FOREACH (const ItemInfo& info, package.infos)
         {
-            package.filterResults[info.id()] = (localFilter.matches(info)        &&
+            package.filterResults[info.id()] = (
+                                                localFilter.matches(info)        &&
                                                 localVersionFilter.matches(info) &&
-                                                localGroupFilter.matches(info));
+                                                localGroupFilter.matches(info)
+                                               );
         }
     }
     else if (hasOneMatch)
@@ -849,9 +870,11 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 
         Q_FOREACH (const ItemInfo& info, package.infos)
         {
-            package.filterResults[info.id()] = (localFilter.matches(info, &matchForText) &&
+            package.filterResults[info.id()] = (
+                                                localFilter.matches(info, &matchForText) &&
                                                 localVersionFilter.matches(info)         &&
-                                                localGroupFilter.matches(info));
+                                                localGroupFilter.matches(info)
+                                               );
 
             if (matchForText)
             {
@@ -865,9 +888,11 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 
         Q_FOREACH (const ItemInfo& info, package.infos)
         {
-            result                           = (localFilter.matches(info, &matchForText) &&
+            result                           = (
+                                                localFilter.matches(info, &matchForText) &&
                                                 localVersionFilter.matches(info)         &&
-                                                localGroupFilter.matches(info));
+                                                localGroupFilter.matches(info)
+                                               );
 
             package.filterResults[info.id()] = result;
 
@@ -1098,7 +1123,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
     }
 
     qlonglong groupedImageId = i.groupImageId();
-    ItemInfo info = (groupedImageId == -1) ? i : ItemInfo(groupedImageId);
+    ItemInfo info            = (groupedImageId == -1) ? i : ItemInfo(groupedImageId);
 
     switch (d->sorter.categorizationMode)
     {
@@ -1149,8 +1174,10 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
                 // Region is Confirmed. Appending TagId,
                 // to prevent multiple Confirmed categories.
 
-                return QLatin1String("CONFIRMED_FACE") +
-                       fastNumberToString(face.tagId());
+                return (
+                        QLatin1String("CONFIRMED_FACE") +
+                        fastNumberToString(face.tagId())
+                       );
             }
 
             // Suggested Name exists for Region.
@@ -1159,8 +1186,10 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
             if (!map.value(face.region().toXml()).isEmpty())
             {
-                return map.value(face.region().toXml()) +
-                       fastNumberToString(face.tagId());
+                return (
+                        map.value(face.region().toXml()) +
+                        fastNumberToString(face.tagId())
+                       );
             }
 
             return QLatin1String("NO_FACE");
@@ -1200,11 +1229,13 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
     // do we filter at all?
 
-    if (!d->versionFilter.isFilteringByTags() &&
+    if (
+        !d->versionFilter.isFilteringByTags() &&
         !d->filter.isFilteringByTags()        &&
         !d->filter.isFilteringByText()        &&
         !d->filter.isFilteringByPickLabels()  &&
-        !d->filter.isFilteringByColorLabels())
+        !d->filter.isFilteringByColorLabels()
+       )
     {
         return;
     }
@@ -1304,8 +1335,10 @@ bool NoDuplicatesItemFilterModel::filterAcceptsRow(int source_row, const QModelI
         return true;
     }
 
-    if (sourceItemModel()->imageId(mapFromDirectSourceToSourceItemModel(index)) ==
-        sourceItemModel()->imageId(mapFromDirectSourceToSourceItemModel(previousIndex)))
+    if (
+        sourceItemModel()->imageId(mapFromDirectSourceToSourceItemModel(index)) ==
+        sourceItemModel()->imageId(mapFromDirectSourceToSourceItemModel(previousIndex))
+       )
     {
         return false;
     }
@@ -1333,7 +1366,7 @@ void NoDuplicatesItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& pa
 {
     bool needInvalidate = false;
 
-    for (int i = begin; i<=end; ++i)
+    for (int i = begin ; i <= end ; ++i)
     {
         QModelIndex index = sourceModel()->index(i, 0, parent);
 

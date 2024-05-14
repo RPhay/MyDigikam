@@ -33,7 +33,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListModel : public ItemThumbnailModel
 public:
 
     explicit ItemListModel(QWidget* const parent);
-    ~ItemListModel() override;
+    ~ItemListModel() override = default;
 
     // NOTE: necessary methods to add and remove ItemInfos to the model are inherited from ItemModel
 
