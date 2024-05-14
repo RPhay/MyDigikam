@@ -94,9 +94,10 @@ void ItemLister::listDateRange(ItemListerReceiver* const receiver,
     }
 
     QSet<int> albumRoots = albumRootsToList();
-    int       width, height;
+    int       width      = 0;
+    int       height     = 0;
 
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         ItemListerRecord record;
 

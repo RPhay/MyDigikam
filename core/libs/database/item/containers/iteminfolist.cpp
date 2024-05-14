@@ -21,10 +21,6 @@
 namespace Digikam
 {
 
-ItemInfoList::ItemInfoList()
-{
-}
-
 ItemInfoList::ItemInfoList(const QList<ItemInfo>& list)
     : QList<ItemInfo>(list)
 {

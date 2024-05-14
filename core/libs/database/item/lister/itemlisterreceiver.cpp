@@ -59,7 +59,6 @@ ItemListerJobPartsSendingReceiver::ItemListerJobPartsSendingReceiver(DBJob* cons
     : ItemListerJobReceiver(job),
       m_limit              (limit)
 {
-
 }
 
 void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord& record)

@@ -92,8 +92,10 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
     qCDebug(DIGIKAM_DATABASE_LOG) << "Search result:" << values.size() / 14;
 
     QSet<int> albumRoots = albumRootsToList();
-    int       width, height;
-    double    lat, lon;
+    int       width      = 0;
+    int       height     = 0;
+    double    lat        = 0.0;
+    double    lon        = 0.0;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
     {
@@ -199,7 +201,10 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
     {
         // Get the target albums, i.e. the albums in which the similar images must be located.
 
-        if ((element == SearchXml::Field) && (albumsReader.fieldName().compare(QLatin1String("noeffect_targetAlbums")) == 0))
+        if (
+            (element == SearchXml::Field) &&
+            (albumsReader.fieldName().compare(QLatin1String("noeffect_targetAlbums")) == 0)
+           )
         {
             targetAlbums = albumsReader.valueToIntList();
 /*
@@ -346,7 +351,8 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         return;
     }
 
-    int width, height;
+    int width  = 0;
+    int height = 0;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
@@ -417,7 +423,8 @@ void ItemLister::listAreaRange(ItemListerReceiver* const receiver,
     qCDebug(DIGIKAM_DATABASE_LOG) << "Results:" << values.size() / 14;
 
     QSet<int> albumRoots = albumRootsToList();
-    double    lat, lon;
+    double    lat        = 0.0;
+    double    lon        = 0.0;
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {

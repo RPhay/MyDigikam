@@ -38,7 +38,7 @@ class DIGIKAM_DATABASE_EXPORT ItemInfoList : public QList<ItemInfo>
 {
 public:
 
-    ItemInfoList();
+    ItemInfoList() = default;
     explicit ItemInfoList(const QList<ItemInfo>& list);
     explicit ItemInfoList(const QList<qlonglong>& idList);
 

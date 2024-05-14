@@ -93,7 +93,6 @@ HistoryImageId ItemInfo::historyImageId() const
     return id;
 }
 
-
 bool ItemInfo::hasDerivedImages() const
 {
     if (!m_data)

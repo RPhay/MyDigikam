@@ -160,7 +160,7 @@ double ItemPosition::latitudeNumber() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->latitudeNumber.toDouble();
@@ -170,7 +170,7 @@ double ItemPosition::longitudeNumber() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->longitudeNumber.toDouble();
@@ -220,7 +220,7 @@ double ItemPosition::altitude() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->altitude.toDouble();
@@ -240,7 +240,7 @@ double ItemPosition::orientation() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->orientation.toDouble();
@@ -250,7 +250,7 @@ double ItemPosition::tilt() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->tilt.toDouble();
@@ -260,7 +260,7 @@ double ItemPosition::roll() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->roll.toDouble();
@@ -270,7 +270,7 @@ double ItemPosition::accuracy() const
 {
     if (!d)
     {
-        return 0;
+        return 0.0;
     }
 
     return d->accuracy.toDouble();

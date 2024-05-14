@@ -314,9 +314,11 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
                 (*it)->imageSizeCached = false;
             }
 
-            if (changes & DatabaseFields::LatitudeNumber  ||
-                changes & DatabaseFields::LongitudeNumber ||
-                changes & DatabaseFields::Altitude)
+            if (
+                (changes & DatabaseFields::LatitudeNumber)  ||
+                (changes & DatabaseFields::LongitudeNumber) ||
+                (changes & DatabaseFields::Altitude)
+               )
             {
                 (*it)->positionsCached = false;
             }

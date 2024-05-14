@@ -43,7 +43,9 @@ public:
      * short-lived object, it does not listen to external database changes.
      */
 
-    /// Creates a null pair
+    /**
+     * Creates a null pair.
+     */
     ItemTagPair();
 
     /**
