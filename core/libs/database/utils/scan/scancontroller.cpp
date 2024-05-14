@@ -194,7 +194,7 @@ void ScanController::run()
             else if (!d->completeScanDeferredAlbums.isEmpty() && d->finishScanAllowed && !d->scanSuspended)
             {
                 // d->completeScanDeferredAlbums is only accessed from the thread, no need to copy
-   
+
              doFinishScan  = true;
             }
             else if (!d->scanTasks.isEmpty() && !d->scanSuspended)
@@ -210,7 +210,7 @@ void ScanController::run()
             }
         }
 
-        if (doInit)
+        if      (doInit)
         {
             d->continueInitialization = true;
 

@@ -35,7 +35,7 @@ class DIGIKAM_GUI_EXPORT ItemGPS : public GPSItemContainer
 public:
 
     explicit ItemGPS(const ItemInfo& info);
-    ~ItemGPS()            override;
+    ~ItemGPS()            override = default;
 
     QString saveChanges() override;
     bool loadImageData()  override;

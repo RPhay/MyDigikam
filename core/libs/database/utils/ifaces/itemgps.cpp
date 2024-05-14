@@ -34,10 +34,6 @@ ItemGPS::ItemGPS(const ItemInfo& info)
 {
 }
 
-ItemGPS::~ItemGPS()
-{
-}
-
 bool ItemGPS::loadImageData()
 {
     // In first, we try to get GPS info from database.

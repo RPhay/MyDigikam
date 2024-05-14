@@ -54,17 +54,12 @@ class DIGIKAM_EXPORT ThumbsDbInfo
 
 public:
 
-    explicit ThumbsDbInfo()
-        : id             (-1),
-          type           (DatabaseThumbnail::UndefinedType),
-          orientationHint(0)
-    {
-    }
+    ThumbsDbInfo() = default;
 
-    int                     id;
-    DatabaseThumbnail::Type type;
+    int                     id                  = -1;
+    DatabaseThumbnail::Type type                = DatabaseThumbnail::UndefinedType;
     QDateTime               modificationDate;
-    int                     orientationHint;
+    int                     orientationHint     = 0;
     QByteArray              data;
 };
 

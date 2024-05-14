@@ -110,7 +110,7 @@ protected:
 
 private:
 
-    explicit ScanController();
+    ScanController();
     ~ScanController() override;
 
     void setInitializationMessage();

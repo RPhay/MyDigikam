@@ -176,6 +176,7 @@ public:
             Q_FOREACH (int imageId, list)
             {
                 ItemInfo imageInfo(imageId);
+
                 if (imageInfo.isVisible())
                 {
                     // if the image is visible, i.e. existent and not deleted,

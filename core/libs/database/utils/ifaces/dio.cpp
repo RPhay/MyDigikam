@@ -79,10 +79,6 @@ DIO::DIO()
     qRegisterMetaType<QMap<QString,int>>("QMap<QString,int>");
 }
 
-DIO::~DIO()
-{
-}
-
 void DIO::cleanUp()
 {
 }
@@ -267,16 +263,20 @@ void DIO::processJob(IOJobData* const data)
 {
     const int operation = data->operation();
 
-    if      ((operation == IOJobData::CopyImage) ||
-             (operation == IOJobData::MoveImage))
+    if      (
+             (operation == IOJobData::CopyImage) ||
+             (operation == IOJobData::MoveImage)
+            )
     {
         // this is a fast db operation, do here
 
         GroupedImagesFinder finder(data->itemInfos());
         data->setItemInfos(finder.infos);
     }
-    else if ((operation == IOJobData::Trash) ||
-             (operation == IOJobData::Delete))
+    else if (
+             (operation == IOJobData::Trash) ||
+             (operation == IOJobData::Delete)
+            )
     {
         SidecarFinder finder(data->sourceUrls());
         data->setSourceUrls(finder.localFiles);
@@ -323,10 +323,12 @@ void DIO::createJob(IOJobData* const data)
 
     const int operation = data->operation();
 
-    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
+    if (
+        (operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
         (operation == IOJobData::CopyFiles) || (operation == IOJobData::CopyToExt) ||
         (operation == IOJobData::MoveImage) || (operation == IOJobData::MoveAlbum) ||
-        (operation == IOJobData::MoveFiles))
+        (operation == IOJobData::MoveFiles)
+       )
     {
         CollectionLocation location         = CollectionManager::instance()->locationForUrl(data->destUrl());
         Qt::CaseSensitivity caseSensitivity = location.asQtCaseSensitivity();
@@ -414,8 +416,10 @@ void DIO::createJob(IOJobData* const data)
                 this, SIGNAL(signalRenameFinished()));
     }
 
-    if ((operation == IOJobData::Empty) ||
-        (operation == IOJobData::Restore))
+    if (
+        (operation == IOJobData::Empty) ||
+        (operation == IOJobData::Restore)
+       )
     {
         connect(jobThread, SIGNAL(signalFinished()),
                 this, SIGNAL(signalTrashFinished()));
@@ -455,8 +459,10 @@ void DIO::slotResult()
     }
     else
     {
-        if ((operation == IOJobData::CopyImage) ||
-            (operation == IOJobData::MoveImage))
+        if (
+            (operation == IOJobData::CopyImage) ||
+            (operation == IOJobData::MoveImage)
+           )
         {
             if (data->destAlbum())
             {
@@ -464,9 +470,11 @@ void DIO::slotResult()
             }
         }
 
-        if ((operation == IOJobData::Trash)  ||
+        if (
+            (operation == IOJobData::Trash)  ||
             (operation == IOJobData::Delete) ||
-            (operation == IOJobData::MoveImage))
+            (operation == IOJobData::MoveImage)
+           )
         {
             Q_FOREACH (int albumID, data->srcAlbumIds())
             {
@@ -476,17 +484,21 @@ void DIO::slotResult()
 
         if (data->errorOrCancel())
         {
-            if ((operation == IOJobData::CopyAlbum) ||
-                (operation == IOJobData::MoveAlbum))
+            if (
+                (operation == IOJobData::CopyAlbum) ||
+                (operation == IOJobData::MoveAlbum)
+               )
             {
                 QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
                 ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
             }
         }
 
-        if ((operation == IOJobData::Trash) ||
+        if (
+            (operation == IOJobData::Trash) ||
             (operation == IOJobData::Empty) ||
-            (operation == IOJobData::Restore))
+            (operation == IOJobData::Restore)
+           )
         {
             buildCollectionTrashCounters();
         }
@@ -607,9 +619,9 @@ void DIO::slotOneProccessed(const QUrl& url)
                     QString relativePath = access.db()->getAlbumRelativePath(albumId);
                     relativePath         = relativePath.section(basePath, 1, -1);
                     relativePath         = destPath + newName + relativePath;
+                    int copyId           = access.db()->addAlbum(data->srcAlbum()->albumRootId(),
+                                                                 relativePath, QString(), QDate(), QString());
 
-                    int copyId = access.db()->addAlbum(data->srcAlbum()->albumRootId(),
-                                                       relativePath, QString(), QDate(), QString());
                     access.db()->copyAlbumProperties(albumId, copyId);
                     const QList<qlonglong>& imageIds = access.db()->getItemIDsInAlbum(albumId);
 

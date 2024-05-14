@@ -318,7 +318,9 @@ BdEngineBackend::QueryState ThumbsDb::renameByFilePath(const QString& oldPath, c
 BdEngineBackend::QueryState ThumbsDb::replaceThumbnail(const ThumbsDbInfo& info)
 {
     return d->db->execSql(QLatin1String("REPLACE INTO Thumbnails (id, type, modificationDate, orientationHint, data) VALUES(?, ?, ?, ?, ?);"),
-                          QList<QVariant>() << info.id << info.type << asDateTimeLocal(info.modificationDate) << info.orientationHint << info.data);
+                          QList<QVariant>() << info.id << info.type
+                                            << asDateTimeLocal(info.modificationDate)
+                                            << info.orientationHint << info.data);
 }
 
 BdEngineBackend::QueryState ThumbsDb::updateModificationDate(int thumbId, const QDateTime& modificationDate)
@@ -346,7 +348,10 @@ bool ThumbsDb::integrityCheck()
         {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
-            return ((values.size() == 1) && (values.first().toString().toLower().compare(QLatin1String("ok")) == 0));
+            return (
+                    (values.size() == 1) &&
+                    (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
+                   );
         }
 
         case BdEngineBackend::DbType::MySQL:

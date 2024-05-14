@@ -124,7 +124,7 @@ private:
     // Disable
     DIO();
     explicit DIO(QObject*) = delete;
-    ~DIO() override;
+    ~DIO() override = default;
 
 private:
 

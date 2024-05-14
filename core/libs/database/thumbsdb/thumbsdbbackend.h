@@ -34,7 +34,7 @@ public:
 
     explicit ThumbsDbBackend(DbEngineLocking* const locking,
                              const QString& backendName = QLatin1String("thumbnailDatabase-"));
-    ~ThumbsDbBackend() override;
+    ~ThumbsDbBackend() override = default;
 
     /**
      * Initialize the database schema to the current version,

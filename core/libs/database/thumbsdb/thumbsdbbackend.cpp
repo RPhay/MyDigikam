@@ -27,10 +27,6 @@ ThumbsDbBackend::ThumbsDbBackend(DbEngineLocking* const locking, const QString& 
 {
 }
 
-ThumbsDbBackend::~ThumbsDbBackend()
-{
-}
-
 bool ThumbsDbBackend::initSchema(ThumbsDbSchemaUpdater* const updater)
 {
     Q_D(BdEngineBackend);

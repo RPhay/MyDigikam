@@ -159,7 +159,7 @@ bool ThumbsDbSchemaUpdater::startUpdates()
         {
             // trying to open a database with a more advanced than this ThumbsDbSchemaUpdater supports
 
-            if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
+            if (!versionRequired.isEmpty() && (versionRequired.toInt() <= schemaVersion()))
             {
                 // version required may be less than current version
 
@@ -234,9 +234,11 @@ bool ThumbsDbSchemaUpdater::makeUpdates()
 
 bool ThumbsDbSchemaUpdater::createDatabase()
 {
-    if (createTables()  &&
+    if (
+        createTables()  &&
         createIndices() &&
-        createTriggers())
+        createTriggers()
+       )
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 1;
