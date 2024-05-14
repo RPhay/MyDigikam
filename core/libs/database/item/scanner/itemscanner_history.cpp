@@ -67,7 +67,7 @@ bool ItemScanner::resolveImageHistory(qlonglong id, QList<qlonglong>* needTaggin
 }
 
 bool ItemScanner::resolveImageHistory(qlonglong imageId, const QString& historyXml,
-                                       QList<qlonglong>* needTaggingIds)
+                                      QList<qlonglong>* needTaggingIds)
 {
     // Stage 2 of history scanning.
 
@@ -271,24 +271,30 @@ bool ItemScanner::sameReferredImage(const HistoryImageId& id1, const HistoryImag
         return (id1.m_uuid == id2.m_uuid);
     }
 
-    if (id1.hasUniqueHashIdentifier()          &&
+    if (
+        id1.hasUniqueHashIdentifier()          &&
         (id1.m_uniqueHash == id2.m_uniqueHash) &&
-        (id1.m_fileSize   == id2.m_fileSize))
+        (id1.m_fileSize   == id2.m_fileSize)
+       )
     {
         return true;
     }
 
-    if (id1.hasFileName()                      &&
+    if (
+        id1.hasFileName()                      &&
         id1.hasCreationDate()                  &&
         (id1.m_fileName     == id2.m_fileName) &&
-        (id1.m_creationDate == id2.m_creationDate))
+        (id1.m_creationDate == id2.m_creationDate)
+       )
     {
         return true;
     }
 
-    if (id1.hasFileOnDisk()                    &&
+    if (
+        id1.hasFileOnDisk()                    &&
         (id1.m_filePath == id2.m_filePath)     &&
-        (id1.m_fileName == id2.m_fileName))
+        (id1.m_fileName == id2.m_fileName)
+       )
     {
         return true;
     }

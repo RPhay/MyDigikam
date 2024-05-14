@@ -43,7 +43,8 @@ ItemScanner::ItemScanner(qlonglong imageid)
 
     QString albumRootPath = CollectionManager::instance()->albumRootPath(shortInfo.albumRootID);
     d->fileInfo           = QFileInfo(CoreDbUrl::fromAlbumAndName(shortInfo.itemName,
-                                      shortInfo.album, QUrl::fromLocalFile(albumRootPath), shortInfo.albumRootID).fileUrl().toLocalFile());
+                                      shortInfo.album, QUrl::fromLocalFile(albumRootPath),
+                                      shortInfo.albumRootID).fileUrl().toLocalFile());
 }
 
 ItemScanner::~ItemScanner()
@@ -84,6 +85,7 @@ bool ItemScanner::lessThanForIdentity(const ItemScanInfo& a, const ItemScanInfo&
     else
     {
         // Second: sort by modification date, descending
+
         return a.modificationDate > b.modificationDate;
     }
 }
@@ -133,8 +135,10 @@ void ItemScanner::loadFromDisk()
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
     QDateTime modificationDate           = asDateTimeUTC(d->fileInfo.lastModified());
 
-    if (settings.useXMPSidecar4Reading              &&
-        DMetadata::hasSidecar(d->fileInfo.filePath()))
+    if (
+        settings.useXMPSidecar4Reading              &&
+        DMetadata::hasSidecar(d->fileInfo.filePath())
+       )
     {
         QString filePath      = DMetadata::sidecarPath(d->fileInfo.filePath());
         QDateTime sidecarDate = asDateTimeUTC(QFileInfo(filePath).lastModified());

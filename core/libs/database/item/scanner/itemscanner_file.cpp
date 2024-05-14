@@ -31,7 +31,8 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
                                                     DatabaseFields::ModificationDate |
                                                     DatabaseFields::FileSize);
 
-        imageInformationFields = access.db()->getItemInformation(imageid,
+        imageInformationFields = access.db()->getItemInformation(
+                                                                 imageid,
                                                                  DatabaseFields::Rating           |
                                                                  DatabaseFields::CreationDate     |
                                                                  DatabaseFields::DigitizationDate |
@@ -40,7 +41,8 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
                                                                  DatabaseFields::Height           |
                                                                  DatabaseFields::Format           |
                                                                  DatabaseFields::ColorDepth       |
-                                                                 DatabaseFields::ColorModel);
+                                                                 DatabaseFields::ColorModel
+                                                                );
     }
 
     // We are already checking the field size in the CoreDB.
@@ -236,8 +238,10 @@ void ItemScanner::scanFile(ScanMode mode)
                 scanBalooInfo();
             }
         }
-        else if ((d->scanInfo.category == DatabaseItem::Video) ||
-                 (d->scanInfo.category == DatabaseItem::Audio))
+        else if (
+                 (d->scanInfo.category == DatabaseItem::Video) ||
+                 (d->scanInfo.category == DatabaseItem::Audio)
+                )
         {
             scanVideoInformation();
 

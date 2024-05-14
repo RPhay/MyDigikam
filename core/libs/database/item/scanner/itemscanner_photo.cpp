@@ -152,7 +152,6 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
         {
             return QString();
         }
-
     }
 }
 

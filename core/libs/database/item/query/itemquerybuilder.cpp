@@ -804,10 +804,12 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         sql += QString::fromUtf8(" (ImagePositions.latitudeNumber IS NULL AND ImagePositions.longitudeNumber IS NULL) ");
     }
-    else if ((name == QLatin1String("provinceState")) ||
+    else if (
+             (name == QLatin1String("provinceState")) ||
              (name == QLatin1String("location"))      ||
              (name == QLatin1String("country"))       ||
-             (name == QLatin1String("city")))
+             (name == QLatin1String("city"))
+            )
     {
         if (relation == SearchXml::OneOf)
         {
@@ -1217,16 +1219,19 @@ void ItemQueryBuilder::addSqlOperator(QString& sql, SearchXml::Operator op, bool
             sql += QLatin1String("AND");
             break;
         }
+
         case SearchXml::Or:
         {
             sql += QLatin1String("OR");
             break;
         }
+
         case SearchXml::AndNot:
         {
             sql += QLatin1String("AND NOT");
             break;
         }
+
         case SearchXml::OrNot:
         {
             sql += QLatin1String("OR NOT");
@@ -1245,41 +1250,49 @@ void ItemQueryBuilder::addSqlRelation(QString& sql, SearchXml::Relation rel)
             sql += QLatin1Char('=');
             break;
         }
+
         case SearchXml::Unequal:
         {
             sql += QLatin1String("<>");
             break;
         }
+
         case SearchXml::Like:
         {
             sql += QLatin1String("LIKE");
             break;
         }
+
         case SearchXml::NotLike:
         {
             sql += QLatin1String("NOT LIKE");
             break;
         }
+
         case SearchXml::LessThan:
         {
             sql += QLatin1Char('<');
             break;
         }
+
         case SearchXml::GreaterThan:
         {
             sql += QLatin1Char('>');
             break;
         }
+
         case SearchXml::LessThanOrEqual:
         {
             sql += QLatin1String("<=");
             break;
         }
+
         case SearchXml::GreaterThanOrEqual:
         {
             sql += QLatin1String(">=");
             break;
         }
+
         case SearchXml::OneOf:
         {
             sql += QLatin1String("IN");
@@ -1300,6 +1313,7 @@ void ItemQueryBuilder::addNoEffectContent(QString& sql, SearchXml::Operator op)
             sql += QLatin1String(" 1 ");
             break;
         }
+
         case SearchXml::AndNot:
         case SearchXml::OrNot:
         {
@@ -1681,8 +1695,10 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
 
         for (int i = 1 ; i <= 12 ; ++i)
         {
-            if ((str.toLower() == m_shortMonths[i-1]) ||
-                (str.toLower() == m_longMonths[i-1]))
+            if (
+                (str.toLower() == m_shortMonths[i-1]) ||
+                (str.toLower() == m_longMonths[i-1])
+               )
             {
                 QString monGlob;
                 monGlob = QString().asprintf("%.2d", i);

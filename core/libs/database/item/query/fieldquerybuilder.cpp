@@ -170,9 +170,13 @@ void FieldQueryBuilder::addStringField(const QString& name)
     sql += QLatin1String(" (") + name + QLatin1Char(' ');
     ItemQueryBuilder::addSqlRelation(sql, relation);
 
-    if (CoreDbAccess::parameters().isSQLite() &&
-        ((relation == SearchXml::Like)        ||
-         (relation == SearchXml::NotLike)))
+    if (
+        CoreDbAccess::parameters().isSQLite() &&
+        (
+         (relation == SearchXml::Like)        ||
+         (relation == SearchXml::NotLike)
+        )
+       )
     {
         sql += QLatin1String(" ? ESCAPE '\\') ");
     }

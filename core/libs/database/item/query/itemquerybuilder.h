@@ -37,7 +37,7 @@ class DIGIKAM_DATABASE_EXPORT ItemQueryBuilder
 {
 public:
 
-    explicit ItemQueryBuilder();
+    ItemQueryBuilder();
 
     QString buildQuery(const QString& q, QList<QVariant>* boundValues, ItemQueryPostHooks* const hooks) const;
     QString buildQueryFromUrl(const QUrl& url, QList<QVariant>* boundValues) const;

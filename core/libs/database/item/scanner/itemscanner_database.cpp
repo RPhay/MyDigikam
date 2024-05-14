@@ -62,7 +62,7 @@ void ItemScanner::commit()
         commitItemInformation();
     }
 
-    if (d->commit.commitImageMetadata)
+    if      (d->commit.commitImageMetadata)
     {
         commitImageMetadata();
     }
@@ -207,7 +207,8 @@ bool ItemScanner::commitAddImage()
     // otherwise, create a new item.
 
     qlonglong imageId = CoreDbAccess().db()->findImageId(-1, d->scanInfo.itemName, DatabaseItem::Status::Trashed,
-                                                         d->scanInfo.category, d->scanInfo.fileSize, d->scanInfo.uniqueHash);
+                                                         d->scanInfo.category, d->scanInfo.fileSize,
+                                                         d->scanInfo.uniqueHash);
 
     if (imageId != -1 && (d->commit.copyImageAttributesId == -1))
     {
