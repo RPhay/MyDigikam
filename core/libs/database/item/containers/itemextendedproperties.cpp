@@ -68,7 +68,7 @@ double ItemExtendedProperties::similarityTo(const qlonglong imageId)
 
     double similarity = SimilarityDbAccess().db()->getImageSimilarity(m_id, imageId);
 
-    return (similarity > 0) ? similarity : 0.0;
+    return ((similarity > 0) ? similarity : 0.0);
 }
 
 void ItemExtendedProperties::setSimilarityTo(const qlonglong imageId, const double value)

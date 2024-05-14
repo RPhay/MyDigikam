@@ -394,7 +394,11 @@ void ItemComments::addComment(const QString& comment,
 
         // some extra considerations on replacing
 
-        if ((info.type == type) && (info.type == DatabaseComment::Comment) && (info.language == language))
+        if (
+            (info.type == type)                     &&
+            (info.type == DatabaseComment::Comment) &&
+            (info.language == language)
+           )
         {
             if (!multipleCommentsPerLanguage || (info.author == author))
             {
@@ -409,9 +413,14 @@ void ItemComments::addComment(const QString& comment,
         // simulate unique restrictions of db.
         // There is a problem that a NULL value is never unique, see #189080
 
-        if ((info.type == type)         &&
+        if (
+            (info.type == type)         &&
             (info.language == language) &&
-            ((info.author == author) || (info.author.isEmpty() && author.isEmpty())))
+            (
+             (info.author == author) ||
+             (info.author.isEmpty() && author.isEmpty())
+            )
+           )
         {
             info.comment = comment;
             info.date    = date;
