@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 01:47+0000\n"
+"POT-Creation-Date: 2024-05-14 01:45+0000\n"
 "PO-Revision-Date: 2024-04-21 08:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2642,7 +2642,7 @@ msgstr "A&juda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2652,34 +2652,34 @@ msgstr "Barra d'eines principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
+#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer, Joan Maspons Ventura"
 
-#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com, joanmaspons@gmail.com"
 
-#: core/app/main/main.cpp:219
+#: core/app/main/main.cpp:218
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Obri el diàleg de la càmera al «camí»"
 
-#: core/app/main/main.cpp:222
+#: core/app/main/main.cpp:221
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Obri el diàleg de càmera per al dispositiu amb UDI de Solid «udi»"
 
-#: core/app/main/main.cpp:225
+#: core/app/main/main.cpp:224
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detecta i obri automàticament una càmera gphoto2 connectada"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:226
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2687,12 +2687,12 @@ msgstr ""
 "Inicia digiKam amb el fitxer de base de dades SQLite trobat en el directori "
 "«dir»"
 
-#: core/app/main/main.cpp:230
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Inicia digiKam amb el fitxer de configuració «config»"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2703,7 +2703,7 @@ msgstr ""
 "bits.</p><p>Instal·leu la versió de 64 bits de digiKam per a obtindre una "
 "experiència millor.</p>"
 
-#: core/app/main/main.cpp:297
+#: core/app/main/main.cpp:300
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2714,7 +2714,7 @@ msgstr ""
 "no està disponible. Instal·leu-lo.\n"
 "No hi ha cap connector de base de dades instal·lat en l'ordinador."
 
-#: core/app/main/main.cpp:306
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2726,7 +2726,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats en el vostre ordinador es "
 "llisten a continuació."
 
-#: core/app/main/main.cpp:350
+#: core/app/main/main.cpp:353
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -4409,8 +4409,8 @@ msgstr "Descodificadors de vídeo"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
-#: core/libs/dialogs/libsinfodlg.cpp:626
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, kde-format
 msgid "no entry"
 msgstr "sense entrada"
@@ -10362,7 +10362,7 @@ msgstr "Amplària nova:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
 #, kde-format
 msgid " px"
 msgstr " px"
@@ -11602,7 +11602,7 @@ msgstr "Es guarden els canvis -"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
@@ -17599,7 +17599,7 @@ msgstr "Crea una galeria HTML…"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
 #, kde-format
 msgid "Internal Error"
 msgstr "S'ha produït un error intern"
@@ -20158,7 +20158,7 @@ msgstr "Executables opcionals de Gimp"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid "Image Format:"
 msgstr "Format de la imatge:"
@@ -20246,7 +20246,7 @@ msgstr "Us donem la benvinguda al creador d'impressió"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, kde-format
 msgid "Albums Selection"
 msgstr "Seleccioneu àlbums"
@@ -20569,7 +20569,7 @@ msgid "Preparing file to export by mail..."
 msgstr "S'està preparant el fitxer per a exportar per correu…"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
 #, kde-format
 msgid "%1 input items to process"
 msgstr "%1 elements d'entrada que s'han de processar"
@@ -20638,14 +20638,14 @@ msgstr "Límit de la mida màxima del correu electrònic:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Ajusta les propietats de les imatges"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
 #, kde-format
 msgid ""
 "If you enable this option, all images to be sent can be resized and "
@@ -20656,14 +20656,14 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
 #, kde-format
 msgid "Image Properties"
 msgstr "Propietats de la imatge"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -20674,26 +20674,26 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
 #, kde-format
 msgid "Image Length:"
 msgstr "Grandària de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "Seleccioneu el format preferit al qual convertir les imatges."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr "<p>El valor nou de compressió de les imatges JPEG que s'enviaran:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -20706,21 +20706,21 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
 #, kde-format
 msgid "Image quality:"
 msgstr "Qualitat de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Elimina totes les metadades"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, kde-format
 msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
@@ -20742,7 +20742,7 @@ msgstr "Us donem la benvinguda a l'eina de correu electrònic"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, kde-format
 msgid "Images List"
 msgstr "Llista d'imatges"
@@ -22669,7 +22669,7 @@ msgstr "Exporta cap a Box"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:905
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:320
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:418
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
@@ -26531,25 +26531,25 @@ msgstr ""
 "La crida a Twitter ha fallat:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:274
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:286
 #, kde-format
 msgid "Cannot open image at %1\n"
 msgstr "No s'ha pogut obrir la imatge a %1\n"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:394
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:414
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "La crida a %1 ha fallat"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:349
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:311
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:415
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:352
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:314
 #, kde-format
 msgid "Code: %1. %2"
 msgstr "Codi: %1. %2"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:441
 #, kde-format
 msgid ""
 "Failed to upload photo: %1\n"
@@ -26558,19 +26558,19 @@ msgstr ""
 "No s'ha pogut pujar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:44
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Unified"
 msgstr "Unificada"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:59
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export items to web-services"
 msgstr "Una eina per a exportar elements als serveis web"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:64
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26582,13 +26582,13 @@ msgstr ""
 "\n"
 "Esta és una eina unificada, que agrupa moltes eines en una."
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Exporta cap als serveis web…"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:325
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:317
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
@@ -26597,7 +26597,7 @@ msgstr ""
 "<qt><p><h1><b>Autenticació amb èxit!</b></h1></p><p><h3>S'ha aconseguit la "
 "vinculació amb el compte!</h3></p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:332
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:324
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -26606,33 +26606,33 @@ msgstr ""
 "<qt><p><h1><b>Autenticació amb èxit!</b></h1></p><p><h3>Ha fallat la "
 "vinculació amb el compte!</h3></p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
 #, kde-format
 msgid "Preparing files..."
 msgstr "S'estan preparant els fitxers…"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:141
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
 #, kde-format
 msgid "Start transferring process..."
 msgstr "S'està començant el procés de transferència…"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:91
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:84
 #, kde-format
 msgid "<h3>This view lists all items to export.</h3>"
 msgstr "<h3>Esta vista llista tots els elements que s'exportaran.</h3>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:107
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:100
 #, kde-format
 msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>Esta vista llista tots els elements de l'usuari.</h3>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:313
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "%1 - No s'ha pogut crear l'àlbum"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:78
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Web Services Tool</b></h1></p><p>This assistant "
@@ -26646,53 +26646,53 @@ msgstr ""
 "el contingut, caldrà ajustar les propietats dels elements d'acord amb les "
 "capacitats del servei web remot.</p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:91
 #, kde-format
 msgid "&Choose operation:"
 msgstr "Es&colliu l'operació:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:93
 #, kde-format
 msgid "Export to web services"
 msgstr "Exporta cap als serveis web"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:94
 #, kde-format
 msgid "Import from web services"
 msgstr "Importa des dels serveis web"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:105
 #, kde-format
 msgid "&Choose remote Web Service:"
 msgstr "Sele&cciona el servei web remot:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:130
 #, kde-format
 msgid "&Choose account:"
 msgstr "Sele&cciona un compte:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "Exporteu cap als serveis web"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
 #, kde-format
 msgid "Welcome to Web Services Tool"
 msgstr "Us donem la benvinguda a l'eina de serveis web"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:96
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:85
 #, kde-format
 msgid "Authentication dialog"
 msgstr "Diàleg d'autenticació"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:88
 #, kde-format
 msgid "Web Service Settings"
 msgstr "Configureu el servei web"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:89
 #, kde-format
 msgid "Export by Web Service"
 msgstr "Exporta per al servei web"
@@ -30055,12 +30055,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Informació del perfil de color - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:219
+#: core/libs/dialogs/imagedialog.cpp:221
 #, kde-format
 msgid "Select an Item"
 msgstr "Selecciona un element"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:235
 #, kde-format
 msgid "Select Items"
 msgstr "Selecciona els elements"
@@ -30105,42 +30105,42 @@ msgstr "<i>Exposició:</i>"
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>Sensibilitat:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:276
+#: core/libs/dialogs/imagedialog_preview.cpp:278
 #, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "<i>Relació d'aspecte:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:277
+#: core/libs/dialogs/imagedialog_preview.cpp:279
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>Taxa de bits de l'àudio:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>Tipus de canal d'àudio:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<i>Còdec d'àudio:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<i>Duració:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>Velocitat dels fotogrames:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:176
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30164,67 +30164,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Llista d'elements"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:180
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:194
+#: core/libs/dialogs/libsinfodlg.cpp:196
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Característiques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:223
+#: core/libs/dialogs/libsinfodlg.cpp:225
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:335
+#: core/libs/dialogs/libsinfodlg.cpp:337
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:438
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:464
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:498
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configureu l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:697
+#: core/libs/dialogs/libsinfodlg.cpp:695
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:702
+#: core/libs/dialogs/libsinfodlg.cpp:700
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:707
+#: core/libs/dialogs/libsinfodlg.cpp:705
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30292,7 +30292,7 @@ msgid "Refresh"
 msgstr "Actualitza"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:389
+#: core/libs/dialogs/solidhardwaredlg.cpp:391
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -30308,7 +30308,7 @@ msgid "empty"
 msgstr "buit"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
@@ -30328,21 +30328,21 @@ msgid "Vendor"
 msgstr "Fabricant"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "Producte"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Descripció"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
@@ -30354,40 +30354,40 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr "Informació no portable"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:382
+#: core/libs/dialogs/solidhardwaredlg.cpp:384
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "S'ha afegit un dispositiu nou"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "cap"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "Fabricant"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr "buit"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:414
+#: core/libs/dialogs/solidhardwaredlg.cpp:416
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Dispositiu extret"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:417
+#: core/libs/dialogs/solidhardwaredlg.cpp:419
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -30404,7 +30404,7 @@ msgid "Open Home page with default desktop Web browser"
 msgstr ""
 "Obri la pàgina d'inici amb el navegador Web predeterminat de l'escriptori"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:244
+#: core/libs/dialogs/webbrowserdlg.cpp:246
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "No s'ha pogut carregar la pàgina %1"
@@ -34072,67 +34072,67 @@ msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "Exporta"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:99
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "Importa"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:104
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "Eina"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:109
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "Metadades"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:114
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "View"
 msgstr "Vista"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:115
+#: core/libs/dplugins/core/dpluginaction.cpp:121
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "Fitxer"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:126
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "Color"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "Millora"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:136
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "Transforma"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:141
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "Decora"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:146
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "Efectes"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:144
+#: core/libs/dplugins/core/dpluginaction.cpp:157
 #, kde-format
 msgctxt "@action: dplugin"
 msgid "Invalid"
@@ -34768,37 +34768,37 @@ msgstr "Manual en línia…"
 msgid "About..."
 msgstr "Quant a…"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Amplia"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Amplia"
-
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
-#, kde-format
-msgctxt "@action"
-msgid "Zoom Out"
-msgstr "Reduïx"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Reduïx"
+
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Reduïx"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Zoom fins que ajuste"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
@@ -49563,19 +49563,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Carpetes"
 
-#: core/showfoto/main/main.cpp:182
+#: core/showfoto/main/main.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:200
+#: core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Fitxers o carpetes que s'han d'obrir"
 
-#: core/showfoto/main/main.cpp:229
+#: core/showfoto/main/main.cpp:235
 #, kde-format
 msgctxt "#info"
 msgid ""

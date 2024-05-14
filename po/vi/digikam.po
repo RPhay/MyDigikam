@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 01:47+0000\n"
+"POT-Creation-Date: 2024-05-14 01:45+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -2655,7 +2655,7 @@ msgstr "Trợ g&iúp"
 msgid "Main Toolbar"
 msgstr "Thanh công cụ chính"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2665,46 +2665,46 @@ msgstr "Thanh công cụ chính"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
+#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Nhóm Việt hoá KDE"
 
-#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-vi@kde.org"
 
-#: core/app/main/main.cpp:219
+#: core/app/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Mở hộp thoại máy ảnh tại <đường dẫn>"
 
-#: core/app/main/main.cpp:222
+#: core/app/main/main.cpp:221
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:225
+#: core/app/main/main.cpp:224
 #, fuzzy, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Tự động phát hiện và mở máy ảnh"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:226
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Khởi chạy digiKam với <đường dẫn> gốc của tập ảnh"
 
-#: core/app/main/main.cpp:230
+#: core/app/main/main.cpp:229
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Khởi chạy digiKam với <đường dẫn> gốc của tập ảnh"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2712,7 +2712,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:297
+#: core/app/main/main.cpp:300
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2720,7 +2720,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:306
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2728,7 +2728,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:350
+#: core/app/main/main.cpp:353
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -4322,8 +4322,8 @@ msgstr "Tệp âm thanh"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
-#: core/libs/dialogs/libsinfodlg.cpp:626
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, fuzzy, kde-format
 msgid "no entry"
 msgstr "Đếm:"
@@ -9945,7 +9945,7 @@ msgstr "Rộng mới:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
 #, kde-format
 msgid " px"
 msgstr " px"
@@ -11179,7 +11179,7 @@ msgstr "Lưu ảnh"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
@@ -16978,7 +16978,7 @@ msgstr "Vẽ biếm hoạ"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
 #, fuzzy, kde-format
 msgid "Internal Error"
 msgstr "Bước tích phân:"
@@ -19387,7 +19387,7 @@ msgstr "Ô xem thử RAW nhanh"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, fuzzy, kde-format
 msgid "Image Format:"
 msgstr "Hiện đánh giá ảnh"
@@ -19475,7 +19475,7 @@ msgstr "%1 — Chọn thư mục máy ảnh"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, fuzzy, kde-format
 msgid "Albums Selection"
 msgstr "Tập hợp tập ảnh"
@@ -19797,7 +19797,7 @@ msgid "Preparing file to export by mail..."
 msgstr "Đang tải tệp %1 lên máy ảnh..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
 #, fuzzy, kde-format
 msgid "%1 input items to process"
 msgstr "Tự chọn"
@@ -19858,14 +19858,14 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
 #, fuzzy, kde-format
 msgid "Adjust image properties"
 msgstr "Thuộc tính tệp"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
 msgid ""
@@ -19875,14 +19875,14 @@ msgstr "<p>Nếu bạn bật chạy tuỳ chọn này, bạn sẽ xem ảnh đí
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "Thuộc tính"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -19891,26 +19891,26 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
 #, fuzzy, kde-format
 msgid "Image Length:"
 msgstr "Bộ sửa ảnh"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, fuzzy, kde-format
 msgid "Select your preferred format to convert image."
 msgstr "<p>Ở đây hãy đặt giá trị độ bão hoà."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -19920,21 +19920,21 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "Bộ sửa ảnh"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
 #, fuzzy, kde-format
 msgid "Remove all metadata"
 msgstr "Siêu dữ liệu"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 #| msgid "<p>If you enable this option, you will see the target image."
 msgid ""
@@ -19955,7 +19955,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, fuzzy, kde-format
 msgid "Images List"
 msgstr "Bộ sửa ảnh"
@@ -21751,7 +21751,7 @@ msgstr "Chỉ mục bắt đầu :"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:905
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:320
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:418
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
@@ -25539,25 +25539,25 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:274
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:286
 #, fuzzy, kde-format
 msgid "Cannot open image at %1\n"
 msgstr "Gặp lỗi khi lưu tệp"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:394
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:414
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "Tệp RAW"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:349
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:311
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:415
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:352
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:314
 #, fuzzy, kde-format
 msgid "Code: %1. %2"
 msgstr "Máy ảnh « %1 »"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:441
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo: %1\n"
@@ -25566,19 +25566,19 @@ msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:44
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Unified"
 msgstr "Sửa đổi:"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:59
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:55
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to export items to web-services"
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:64
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -25587,53 +25587,53 @@ msgid ""
 "This is a unified tool, grouping many tools in one."
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:325
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:317
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
 "succeeded!</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:332
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:324
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
 "</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
 #, fuzzy, kde-format
 msgid "Preparing files..."
 msgstr "Đang chuẩn bị chiếu ảnh. Hãy đợi..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:141
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
 #, fuzzy, kde-format
 msgid "Start transferring process..."
 msgstr "Vẽ biếm hoạ"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:91
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:84
 #, kde-format
 msgid "<h3>This view lists all items to export.</h3>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:107
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:100
 #, kde-format
 msgid "<h3>This view lists user albums.</h3>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:313
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "Lỗi tạo thư mục"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:78
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Web Services Tool</b></h1></p><p>This assistant "
@@ -25642,54 +25642,54 @@ msgid ""
 "items' properties according to your remote Web service capabilities.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:91
 #, fuzzy, kde-format
 msgid "&Choose operation:"
 msgstr "Thông tin máy ảnh"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:93
 #, fuzzy, kde-format
 msgid "Export to web services"
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:94
 #, fuzzy, kde-format
 msgid "Import from web services"
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:105
 #, kde-format
 msgid "&Choose remote Web Service:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:130
 #, fuzzy, kde-format
 msgid "&Choose account:"
 msgstr "Điểm ảnh:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:73
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
 #, fuzzy, kde-format
 msgid "Welcome to Web Services Tool"
 msgstr "%1 — Chọn thư mục máy ảnh"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:96
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgid "Authentication dialog"
 msgstr "Thiết lập..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:88
 #, fuzzy, kde-format
 msgid "Web Service Settings"
 msgstr "Thiết lập chung"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:89
 #, fuzzy, kde-format
 msgid "Export by Web Service"
 msgstr "Lần lặp lại:"
@@ -28776,12 +28776,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Thông tin hồ sơ màu"
 
-#: core/libs/dialogs/imagedialog.cpp:219
+#: core/libs/dialogs/imagedialog.cpp:221
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "Chọ&n mục mới"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:235
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "Chọ&n mục mới"
@@ -28826,42 +28826,42 @@ msgstr "<b>Phơi năng</b>:"
 msgid "<i>Sensitivity:</i>"
 msgstr "<b>Độ nhạy</b>:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:276
+#: core/libs/dialogs/imagedialog_preview.cpp:278
 #, fuzzy, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "Tỉ lệ hình thể:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:277
+#: core/libs/dialogs/imagedialog_preview.cpp:279
 #, fuzzy, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<b>Tạo</b>:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, fuzzy, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>chưa đổi</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, fuzzy, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<b>Mô hình</b>:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, fuzzy, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<li>đánh giá</li>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, fuzzy, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<b>Tạo</b>:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, fuzzy, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>Mô hình</b>:"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:176
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:178
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28884,72 +28884,72 @@ msgstr ""
 msgid "Items List"
 msgstr "Bộ sửa ảnh"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Có"
 
-#: core/libs/dialogs/libsinfodlg.cpp:180
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Không"
 
-#: core/libs/dialogs/libsinfodlg.cpp:194
+#: core/libs/dialogs/libsinfodlg.cpp:196
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Tự nhiên"
 
-#: core/libs/dialogs/libsinfodlg.cpp:223
+#: core/libs/dialogs/libsinfodlg.cpp:225
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Đường dẫn thư viện tập ảnh"
 
-#: core/libs/dialogs/libsinfodlg.cpp:335
+#: core/libs/dialogs/libsinfodlg.cpp:337
 #, fuzzy, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:438
 #, fuzzy, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:464
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:498
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Cấu hình máy ảnh"
 
-#: core/libs/dialogs/libsinfodlg.cpp:697
+#: core/libs/dialogs/libsinfodlg.cpp:695
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Có"
 
-#: core/libs/dialogs/libsinfodlg.cpp:702
+#: core/libs/dialogs/libsinfodlg.cpp:700
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Không"
 
-#: core/libs/dialogs/libsinfodlg.cpp:707
+#: core/libs/dialogs/libsinfodlg.cpp:705
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -29009,7 +29009,7 @@ msgid "Refresh"
 msgstr "Cập nhật"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:389
+#: core/libs/dialogs/solidhardwaredlg.cpp:391
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -29025,7 +29025,7 @@ msgid "empty"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
 #, fuzzy, kde-format
 #| msgid "Parents"
 msgctxt "@item: parent device ID"
@@ -29046,14 +29046,14 @@ msgid "Vendor"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: device description"
@@ -29061,7 +29061,7 @@ msgid "Description"
 msgstr "Mô tả"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, fuzzy, kde-format
 msgctxt "@item: device status"
 msgid "States"
@@ -29073,40 +29073,40 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:382
+#: core/libs/dialogs/solidhardwaredlg.cpp:384
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "Hạng thiết bị"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, fuzzy, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "Không có"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:414
+#: core/libs/dialogs/solidhardwaredlg.cpp:416
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Hạng thiết bị"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:417
+#: core/libs/dialogs/solidhardwaredlg.cpp:419
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -29123,7 +29123,7 @@ msgstr "Mở thư mục"
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:244
+#: core/libs/dialogs/webbrowserdlg.cpp:246
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display picture\n"
@@ -32747,70 +32747,70 @@ msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "Xuất"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:99
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "Nhập"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:104
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "&Công cụ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:109
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "Siêu dữ liệu"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:114
 #, fuzzy, kde-format
 #| msgid "&View"
 msgctxt "@action: dplugin"
 msgid "View"
 msgstr "&Xem"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:115
+#: core/libs/dplugins/core/dpluginaction.cpp:121
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "&Tệp"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:126
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "Màu sắc"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "&Tăng cường"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:136
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "Chuyể&n dạng"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:141
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "T&rang trí"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:146
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "Hiệu ứng che mờ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:144
+#: core/libs/dplugins/core/dpluginaction.cpp:157
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@action: dplugin"
@@ -33472,42 +33472,42 @@ msgstr "Sổ tay phần bổ sung Kipi"
 msgid "About..."
 msgstr "Giới thiệu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Phóng to"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Phóng to"
-
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
-#, fuzzy, kde-format
-#| msgid "Zoom Out"
-msgctxt "@action"
-msgid "Zoom Out"
-msgstr "Thu nhỏ"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Thu nhỏ"
+
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#, fuzzy, kde-format
+#| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Thu nhỏ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@info"
@@ -48111,20 +48111,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Theo thư mục"
 
-#: core/showfoto/main/main.cpp:182
+#: core/showfoto/main/main.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:200
+#: core/showfoto/main/main.cpp:204
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Các tệp/thư mục cần mở"
 
-#: core/showfoto/main/main.cpp:229
+#: core/showfoto/main/main.cpp:235
 #, kde-format
 msgctxt "#info"
 msgid ""

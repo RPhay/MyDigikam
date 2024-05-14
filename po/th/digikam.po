@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 01:47+0000\n"
+"POT-Creation-Date: 2024-05-14 01:45+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2793,7 +2793,7 @@ msgstr "&ช่วยเหลือ"
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2803,47 +2803,47 @@ msgstr "แถบเครื่องมือหลัก"
 msgid "digiKam"
 msgstr "ดิจิแคม"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
+#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: core/app/main/main.cpp:219
+#: core/app/main/main.cpp:218
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "เปิดกล่องกล้องที่ <path>"
 
-#: core/app/main/main.cpp:222
+#: core/app/main/main.cpp:221
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "เปิดกล่องกล้องสำหรับอุปกรณ์พร้อมด้วยค่า Solid UDI <udi>"
 
-#: core/app/main/main.cpp:225
+#: core/app/main/main.cpp:224
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "ตรวจจับอุปกรณ์กล้องที่เชื่อมต่อผ่าน gphoto2 และเปิดอัตโนมัติ"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:226
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:230
+#: core/app/main/main.cpp:229
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:255
+#: core/app/main/main.cpp:256
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2851,7 +2851,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:297
+#: core/app/main/main.cpp:300
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2861,7 +2861,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "ทั้งนี้ยังไม่พบว่ามีการติดตั้งมอดูลสำหรับใช้งานฐานข้อมูลใด ๆ บนเครื่องของคุณ"
 
-#: core/app/main/main.cpp:306
+#: core/app/main/main.cpp:309
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2871,7 +2871,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "มอดูลสำหรับใช้งานฐานข้อมูลต่าง ๆ ที่ถูกติดตั้งไว้แล้วคือ:"
 
-#: core/app/main/main.cpp:350
+#: core/app/main/main.cpp:353
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -4502,8 +4502,8 @@ msgstr "แฟ้มเสียง"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
-#: core/libs/dialogs/libsinfodlg.cpp:626
+#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
+#: core/libs/dialogs/libsinfodlg.cpp:628
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "no entry"
@@ -10222,7 +10222,7 @@ msgstr "ความกว้างใหม่:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:306
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:141
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:101
 #, kde-format
 msgid " px"
 msgstr " พิกเซล"
@@ -11470,7 +11470,7 @@ msgstr "บันทึกภาพ"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1006
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:656
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:240
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:351
 #: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "Error"
@@ -17643,7 +17643,7 @@ msgstr "จับภาพ..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
 #, fuzzy, kde-format
 msgid "Internal Error"
 msgstr "ระดับขั้นเชิงอินทีกรัล:"
@@ -20137,7 +20137,7 @@ msgstr "มุมมองพานอรามา"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:75
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, fuzzy, kde-format
 msgid "Image Format:"
 msgstr "แสดงระดับความชื่นชอบของภาพ"
@@ -20230,7 +20230,7 @@ msgstr "ยินดีต้อนรับสู่ 'ดิจิแคม' (d
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, fuzzy, kde-format
 #| msgid "Show album collection"
 msgid "Albums Selection"
@@ -20562,7 +20562,7 @@ msgid "Preparing file to export by mail..."
 msgstr "กำลังอัปโหลดแฟ้ม %1 ไปยังกล้อง..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:132
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:134
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input items to process"
@@ -20626,7 +20626,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:125
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:127
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:86
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgid "Adjust image properties"
@@ -20634,7 +20634,7 @@ msgstr "เพิ่มคุณสมบัติของแฟ้ม"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:127
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:129
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:88
 #, fuzzy, kde-format
 #| msgid "If you enable this option, you will see the target image."
 msgid ""
@@ -20644,14 +20644,14 @@ msgstr "หากคุณเปิดใช้ตัวเลือกนี้
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:135
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:92
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "คุณสมบัติ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:141
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
 #, kde-format
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
@@ -20660,27 +20660,27 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:144
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:105
 #, fuzzy, kde-format
 msgid "Image Length:"
 msgstr "เครื่องมือแก้ไขภาพ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
 msgid "Select your preferred format to convert image."
 msgstr "เลือกโพรไฟล์ของขอบเขตสีที่จะแปลงไป"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:174
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:135
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:136
 #, kde-format
 msgid ""
 "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
@@ -20690,21 +20690,21 @@ msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:183
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:144
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "เครื่องมือแก้ไขภาพ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:188
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:180
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:149
 #, fuzzy, kde-format
 msgid "Remove all metadata"
 msgstr "ใช้ข้อมูลกำกับภาพ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:189
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:181
-#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
+#: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:150
 #, fuzzy, kde-format
 #| msgid "If you enable this option, you will see the target image."
 msgid ""
@@ -20726,7 +20726,7 @@ msgstr "ยินดีต้อนรับสู่ 'ดิจิแคม' (d
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, fuzzy, kde-format
 msgid "Images List"
 msgstr "เครื่องมือแก้ไขภาพ"
@@ -22581,7 +22581,7 @@ msgstr "ลำดับเริ่มต้น:"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:638
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:905
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:320
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:418
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:440
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
@@ -26500,26 +26500,26 @@ msgid ""
 "%1"
 msgstr "ไม่มีการหาระดับความสูง"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:274
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:286
 #, fuzzy, kde-format
 msgid "Cannot open image at %1\n"
 msgstr "ไม่สามารถบันทึกแฟ้ม \"%1\" ได้"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:394
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:414
 #, fuzzy, kde-format
 #| msgid "All Files"
 msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "แฟ้มทั้งหมด"
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:349
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:311
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:415
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:352
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:314
 #, fuzzy, kde-format
 msgid "Code: %1. %2"
 msgstr "กล้อง \"%1\""
 
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:441
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo: %1\n"
@@ -26528,20 +26528,20 @@ msgstr ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:44
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgctxt "@title"
 msgid "Unified"
 msgstr "ไม่ระบุ"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:59
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:55
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to export items to web-services"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:64
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:60
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -26550,54 +26550,54 @@ msgid ""
 "This is a unified tool, grouping many tools in one."
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:325
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:317
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
 "succeeded!</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:332
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:324
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
 "</h3></p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:135
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:131
 #, fuzzy, kde-format
 msgid "Preparing files..."
 msgstr "กำลังเตรียมการนำเสนอ โปรดรอ..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:141
+#: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:137
 #, fuzzy, kde-format
 msgid "Start transferring process..."
 msgstr "จับภาพ..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:91
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:84
 #, kde-format
 msgid "<h3>This view lists all items to export.</h3>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:107
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:100
 #, kde-format
 msgid "<h3>This view lists user albums.</h3>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
+#: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:313
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder Failed"
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "การสร้างโฟลเดอร์ของรากอัลบั้มล้มเหลว"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:78
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Web Services Tool</b></h1></p><p>This assistant "
@@ -26606,56 +26606,56 @@ msgid ""
 "items' properties according to your remote Web service capabilities.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:98
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:91
 #, fuzzy, kde-format
 msgid "&Choose operation:"
 msgstr "ข้อมูลกล้อง"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:93
 #, fuzzy, kde-format
 msgid "Export to web services"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:94
 #, fuzzy, kde-format
 msgid "Import from web services"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:112
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:105
 #, kde-format
 msgid "&Choose remote Web Service:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:137
+#: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:130
 #, fuzzy, kde-format
 msgid "&Choose account:"
 msgstr "จำนวนพิกเซล: "
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:73
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
 #, fuzzy, kde-format
 #| msgid "Welcome to digiKam %1"
 msgid "Welcome to Web Services Tool"
 msgstr "ยินดีต้อนรับสู่ 'ดิจิแคม' (digiKam %1)"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:96
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgid "Authentication dialog"
 msgstr "ตั้งค่าต่าง ๆ ..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:99
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:88
 #, fuzzy, kde-format
 #| msgid "Capture Device Settings"
 msgid "Web Service Settings"
 msgstr "การตั้งค่าอุปกรณ์จับภาพ"
 
-#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:100
+#: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:89
 #, fuzzy, kde-format
 msgid "Export by Web Service"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
@@ -29917,12 +29917,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "ข้อมูลโพรไฟล์สี - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:219
+#: core/libs/dialogs/imagedialog.cpp:221
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "เลือกรายการ"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:235
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "เลือกรายการ"
@@ -29968,42 +29968,42 @@ msgstr "<i>ความไวชัตเตอร์:</i>"
 msgid "<i>Sensitivity:</i>"
 msgstr "<i>ความไวแสง:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:276
+#: core/libs/dialogs/imagedialog_preview.cpp:278
 #, fuzzy, kde-format
 msgid "<i>AspectRatio:</i>"
 msgstr "สัดส่วนภาพ:"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:277
+#: core/libs/dialogs/imagedialog_preview.cpp:279
 #, fuzzy, kde-format
 msgid "<i>AudioBitRate:</i>"
 msgstr "<i>สร้างเมื่อ:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:278
+#: core/libs/dialogs/imagedialog_preview.cpp:280
 #, fuzzy, kde-format
 msgid "<i>AudioChannelType:</i>"
 msgstr "<i>ไม่เปลี่ยนแปลง</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:279
+#: core/libs/dialogs/imagedialog_preview.cpp:281
 #, fuzzy, kde-format
 msgid "<i>AudioCodec:</i>"
 msgstr "<i>รุ่น:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:280
+#: core/libs/dialogs/imagedialog_preview.cpp:282
 #, fuzzy, kde-format
 msgid "<i>Duration:</i>"
 msgstr "<li>ระดับความชื่นชอบ</li>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:281
+#: core/libs/dialogs/imagedialog_preview.cpp:283
 #, fuzzy, kde-format
 msgid "<i>FrameRate:</i>"
 msgstr "<i>สร้างเมื่อ:</i>"
 
-#: core/libs/dialogs/imagedialog_preview.cpp:282
+#: core/libs/dialogs/imagedialog_preview.cpp:284
 #, fuzzy, kde-format
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>รุ่น:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:176
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:178
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30028,21 +30028,21 @@ msgstr "<font size=\"5\">%1</font><br/><b>รุ่น %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:179
+#: core/libs/dialogs/libsinfodlg.cpp:181
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:180
+#: core/libs/dialogs/libsinfodlg.cpp:182
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "ไม่ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:194
+#: core/libs/dialogs/libsinfodlg.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -30050,14 +30050,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "สารคดีพิเศษ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:223
+#: core/libs/dialogs/libsinfodlg.cpp:225
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "คลังอัลบั้ม"
 
-#: core/libs/dialogs/libsinfodlg.cpp:335
+#: core/libs/dialogs/libsinfodlg.cpp:337
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30065,7 +30065,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:436
+#: core/libs/dialogs/libsinfodlg.cpp:438
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30073,34 +30073,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:464
+#: core/libs/dialogs/libsinfodlg.cpp:466
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:498
+#: core/libs/dialogs/libsinfodlg.cpp:500
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "การปรับแต่งค่ากล้อง"
 
-#: core/libs/dialogs/libsinfodlg.cpp:697
+#: core/libs/dialogs/libsinfodlg.cpp:695
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:702
+#: core/libs/dialogs/libsinfodlg.cpp:700
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ไม่ใช่"
 
-#: core/libs/dialogs/libsinfodlg.cpp:707
+#: core/libs/dialogs/libsinfodlg.cpp:705
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -30165,7 +30165,7 @@ msgid "Refresh"
 msgstr "ปรับปรุงใหม่"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:268
-#: core/libs/dialogs/solidhardwaredlg.cpp:389
+#: core/libs/dialogs/solidhardwaredlg.cpp:391
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
@@ -30181,7 +30181,7 @@ msgid "empty"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:271
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
 #, fuzzy, kde-format
 #| msgid "Parents"
 msgctxt "@item: parent device ID"
@@ -30205,7 +30205,7 @@ msgid "Vendor"
 msgstr "อันดอร์รา"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:277
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
 #, fuzzy, kde-format
 #| msgid "Product ID:"
 msgctxt "@item: device name"
@@ -30213,7 +30213,7 @@ msgid "Product"
 msgstr "ค่าประจำตัวของผลิตภัณฑ์:"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:280
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: device description"
@@ -30221,7 +30221,7 @@ msgid "Description"
 msgstr "รายละเอียด"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:283
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: device status"
@@ -30234,15 +30234,15 @@ msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:382
+#: core/libs/dialogs/solidhardwaredlg.cpp:384
 #, fuzzy, kde-format
 #| msgid "Device model (*):"
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "รุ่นของอุปกรณ์ (*):"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:392
-#: core/libs/dialogs/solidhardwaredlg.cpp:404
+#: core/libs/dialogs/solidhardwaredlg.cpp:394
+#: core/libs/dialogs/solidhardwaredlg.cpp:406
 #, fuzzy, kde-format
 #| msgctxt "none of the paths"
 #| msgid "none"
@@ -30250,29 +30250,29 @@ msgctxt "@info: device property"
 msgid "none"
 msgstr "ไม่มี"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
 #, fuzzy, kde-format
 #| msgid "Andorra"
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "อันดอร์รา"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:395
-#: core/libs/dialogs/solidhardwaredlg.cpp:398
-#: core/libs/dialogs/solidhardwaredlg.cpp:401
+#: core/libs/dialogs/solidhardwaredlg.cpp:397
+#: core/libs/dialogs/solidhardwaredlg.cpp:400
+#: core/libs/dialogs/solidhardwaredlg.cpp:403
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:414
+#: core/libs/dialogs/solidhardwaredlg.cpp:416
 #, fuzzy, kde-format
 #| msgid "Device model (*):"
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "รุ่นของอุปกรณ์ (*):"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:417
+#: core/libs/dialogs/solidhardwaredlg.cpp:419
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
@@ -30289,7 +30289,7 @@ msgstr "เปิดใน Konqueror"
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:244
+#: core/libs/dialogs/webbrowserdlg.cpp:246
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -33888,27 +33888,27 @@ msgctxt "@action: dplugin"
 msgid "Export"
 msgstr "ส่งออก"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:98
+#: core/libs/dplugins/core/dpluginaction.cpp:99
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: dplugin"
 msgid "Import"
 msgstr "นำเข้า"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:102
+#: core/libs/dplugins/core/dpluginaction.cpp:104
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Tool"
 msgstr "เ&ครื่องมือ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:106
+#: core/libs/dplugins/core/dpluginaction.cpp:109
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@action: dplugin"
 msgid "Metadata"
 msgstr "ข้อมูลกำกับภาพ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:110
+#: core/libs/dplugins/core/dpluginaction.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "View the selected image"
 #| msgid "View"
@@ -33916,48 +33916,48 @@ msgctxt "@action: dplugin"
 msgid "View"
 msgstr "แสดงภาพ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:115
+#: core/libs/dplugins/core/dpluginaction.cpp:121
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@action: dplugin"
 msgid "File"
 msgstr "แฟ้ม"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:119
+#: core/libs/dplugins/core/dpluginaction.cpp:126
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@action: dplugin"
 msgid "Color"
 msgstr "สี"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:123
+#: core/libs/dplugins/core/dpluginaction.cpp:131
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@action: dplugin"
 msgid "Enhance"
 msgstr "ปรับแก้ภาพ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:127
+#: core/libs/dplugins/core/dpluginaction.cpp:136
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@action: dplugin"
 msgid "Transform"
 msgstr "แปลงภาพ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:131
+#: core/libs/dplugins/core/dpluginaction.cpp:141
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@action: dplugin"
 msgid "Decorate"
 msgstr "ตกแต่งภาพ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:135
+#: core/libs/dplugins/core/dpluginaction.cpp:146
 #, fuzzy, kde-format
 msgctxt "@action: dplugin"
 msgid "Effects"
 msgstr "ทำภาพเบลอ"
 
-#: core/libs/dplugins/core/dpluginaction.cpp:144
+#: core/libs/dplugins/core/dpluginaction.cpp:157
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@action: dplugin"
@@ -34649,42 +34649,42 @@ msgstr "คู่มือของส่วนเสริม Kipi"
 msgid "About..."
 msgstr "เกี่ยวกับ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "ขยายภาพ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:500
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "ขยายภาพ"
-
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
-#, fuzzy, kde-format
-#| msgid "Zoom Out"
-msgctxt "@action"
-msgid "Zoom Out"
-msgstr "ย่อภาพ"
 
 #: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "ย่อภาพ"
+
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:507
+#, fuzzy, kde-format
+#| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "ย่อภาพ"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "ลดขนาด"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:514
 #, fuzzy, kde-format
 #| msgid "Zoom out"
 msgctxt "@info"
@@ -50320,20 +50320,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "โฟลเดอร์: "
 
-#: core/showfoto/main/main.cpp:182
+#: core/showfoto/main/main.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:200
+#: core/showfoto/main/main.cpp:204
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "แฟ้มหรือโฟลเดอร์ที่จะเปิด"
 
-#: core/showfoto/main/main.cpp:229
+#: core/showfoto/main/main.cpp:235
 #, kde-format
 msgctxt "#info"
 msgid ""
