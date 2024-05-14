@@ -38,10 +38,12 @@ TagRegion::TagRegion(const QString& descriptor)
     {
         if (reader.name() == QLatin1String("rect"))
         {
-            QRect r(reader.attributes().value(QLatin1String("x")).toString().toInt(),
+            QRect r(
+                    reader.attributes().value(QLatin1String("x")).toString().toInt(),
                     reader.attributes().value(QLatin1String("y")).toString().toInt(),
                     reader.attributes().value(QLatin1String("width")).toString().toInt(),
-                    reader.attributes().value(QLatin1String("height")).toString().toInt());
+                    reader.attributes().value(QLatin1String("height")).toString().toInt()
+                   );
 
             if (r.isValid())
             {
@@ -200,10 +202,12 @@ QRect TagRegion::mapToOriginalSize(const QSize& fullImageSize, const QSize& redu
     double ratioWidth  = double(fullImageSize.width())  / double(reducedImageSize.width());
     double ratioHeight = double(fullImageSize.height()) / double(reducedImageSize.height());
 
-    return QRectF(reducedSizeDetail.x()      * ratioWidth,
+    return QRectF(
+                  reducedSizeDetail.x()      * ratioWidth,
                   reducedSizeDetail.y()      * ratioHeight,
                   reducedSizeDetail.width()  * ratioWidth,
-                  reducedSizeDetail.height() * ratioHeight).toRect();
+                  reducedSizeDetail.height() * ratioHeight
+                 ).toRect();
 }
 
 QRect TagRegion::mapFromOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& fullSizeDetail)
@@ -216,10 +220,12 @@ QRect TagRegion::mapFromOriginalSize(const QSize& fullImageSize, const QSize& re
     double ratioWidth  = double(reducedImageSize.width())  / double(fullImageSize.width());
     double ratioHeight = double(reducedImageSize.height()) / double(fullImageSize.height());
 
-    return QRectF(fullSizeDetail.x()      * ratioWidth,
+    return QRectF(
+                  fullSizeDetail.x()      * ratioWidth,
                   fullSizeDetail.y()      * ratioHeight,
                   fullSizeDetail.width()  * ratioWidth,
-                  fullSizeDetail.height() * ratioHeight).toRect();
+                  fullSizeDetail.height() * ratioHeight
+                 ).toRect();
 }
 
 QRect TagRegion::mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail)
@@ -234,10 +240,12 @@ QRect TagRegion::mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& 
 
 QRect TagRegion::relativeToAbsolute(const QRectF& region, const QSize& fullSize)
 {
-    return QRectF(region.x()      * fullSize.width(),
+    return QRectF(
+                  region.x()      * fullSize.width(),
                   region.y()      * fullSize.height(),
                   region.width()  * fullSize.width(),
-                  region.height() * fullSize.height()).toRect();
+                  region.height() * fullSize.height()
+                 ).toRect();
 }
 
 QRect TagRegion::relativeToAbsolute(const QRectF& region, const DImg& reducedSizeImage)
@@ -247,19 +255,23 @@ QRect TagRegion::relativeToAbsolute(const QRectF& region, const DImg& reducedSiz
 
 QRectF TagRegion::absoluteToRelative(const QRect& region, const QSize& fullSize)
 {
-    return QRectF((qreal)region.x()      / (qreal)fullSize.width(),
+    return QRectF(
+                  (qreal)region.x()      / (qreal)fullSize.width(),
                   (qreal)region.y()      / (qreal)fullSize.height(),
                   (qreal)region.width()  / (qreal)fullSize.width(),
-                  (qreal)region.height() / (qreal)fullSize.height());
+                  (qreal)region.height() / (qreal)fullSize.height()
+                 );
 }
 
 QSize TagRegion::adjustToOrientation(QRect& region, int rotation, const QSize& fullSize)
 {
     QSize size = fullSize;
 
-    if      ((rotation == MetaEngine::ORIENTATION_ROT_90)       ||
+    if      (
+             (rotation == MetaEngine::ORIENTATION_ROT_90)       ||
              (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
-             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+            )
     {
         region.moveTo(size.height() - region.y() - region.height(), region.x());
         region.setSize(region.size().transposed());
@@ -278,13 +290,17 @@ QSize TagRegion::adjustToOrientation(QRect& region, int rotation, const QSize& f
         size.transpose();
     }
 
-    if ((rotation == MetaEngine::ORIENTATION_HFLIP) ||
-        (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP))
+    if      (
+             (rotation == MetaEngine::ORIENTATION_HFLIP) ||
+             (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP)
+            )
     {
         region.moveTo(size.width() - region.x() - region.width(), region.y());
     }
-    else if ((rotation == MetaEngine::ORIENTATION_VFLIP) ||
-             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+    else if (
+             (rotation == MetaEngine::ORIENTATION_VFLIP) ||
+             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+            )
     {
         region.moveTo(region.x(), size.height() - region.y() - region.height());
     }

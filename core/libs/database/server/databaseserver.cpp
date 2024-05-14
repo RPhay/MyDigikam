@@ -369,8 +369,10 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
         // If actual does not yet exist it was initialised with datetime 0
         // so it will get updated too
 
-        if ((QFileInfo(d->globalConfig).lastModified() > QFileInfo(actualFile).lastModified()) ||
-            (QFileInfo(localConfig).lastModified()     > QFileInfo(actualFile).lastModified()))
+        if (
+            (QFileInfo(d->globalConfig).lastModified() > QFileInfo(actualFile).lastModified()) ||
+            (QFileInfo(localConfig).lastModified()     > QFileInfo(actualFile).lastModified())
+           )
         {
             confShouldUpdate = true;
 
@@ -407,8 +409,10 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
         if      (confUpdate)
         {
             const QFile::Permissions allowedPerms = actualFile.permissions() &
-                                                    (QFile::ReadOwner | QFile::WriteOwner |
-                                                     QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther);
+                                                    (
+                                                     QFile::ReadOwner | QFile::WriteOwner |
+                                                     QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther
+                                                    );
 
             if (allowedPerms != actualFile.permissions())
             {
@@ -458,8 +462,7 @@ void DatabaseServer::copyAndRemoveMysqlLogs() const
 {
     // Move mysql error log file out of the way
 
-    const QFileInfo errorLog(d->dataDir,
-                             QLatin1String("mysql.err"));
+    const QFileInfo errorLog(d->dataDir, QLatin1String("mysql.err"));
 
     if (errorLog.exists())
     {

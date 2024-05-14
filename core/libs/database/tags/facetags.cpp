@@ -66,7 +66,11 @@ QString FaceTagsHelper::tagPath(const QString& name, int parentId)
     QString faceParentTagPath = TagsCache::instance()->tagPath(parentId,
                                                                TagsCache::NoLeadingSlash);
 
-    if ((faceParentTagPath).contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
+    if (
+        faceParentTagPath.contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|"
+                                                                    "/_Digikam_root_tag_|"
+                                                                    "_Digikam_root_tag_)")))
+       )
     {
         return  (QLatin1Char('/') + name);
     }
@@ -77,6 +81,7 @@ QString FaceTagsHelper::tagPath(const QString& name, int parentId)
 void FaceTagsHelper::makeFaceTag(int tagId, const QString& fullName)
 {
     QString faceEngineName  = fullName;
+
     /*
      *    // find a unique FacesEngineId
      *    for (int i = 0 ; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId) ; ++i)
@@ -84,6 +89,7 @@ void FaceTagsHelper::makeFaceTag(int tagId, const QString& fullName)
      *        FacesEngineId = fullName + QString::fromUtf8(" (%1)").arg(i);
      *    }
      */
+
     TagProperties props(tagId);
     props.setProperty(TagPropertyName::person(),         fullName);
     props.setProperty(TagPropertyName::faceEngineName(), faceEngineName);
@@ -132,7 +138,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Candidate with set full name:" << id << fullName;
 
-        if (parentId == -1)
+        if      (parentId == -1)
         {
             return id;
         }
@@ -163,7 +169,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     {
         // Is this tag already a person tag?
 
-        if (FaceTags::isPerson(id))
+        if      (FaceTags::isPerson(id))
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Found tag with name" << name << "is already a person." << id;
 
@@ -332,7 +338,10 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
 
     if (!attributes.value(QLatin1String("uuid")).isEmpty())
     {
-        if ((tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::faceEngineUuid(), attributes.value(QLatin1String("uuid")))))
+        if (
+            (tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::faceEngineUuid(),
+                                                              attributes.value(QLatin1String("uuid"))))
+           )
         {
             return tagId;
         }
@@ -342,7 +351,10 @@ int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attri
 
     if (!attributes.value(QLatin1String("fullName")).isEmpty())
     {
-        if ((tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::person(), attributes.value(QLatin1String("fullName")))))
+        if (
+            (tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::person(),
+                                                              attributes.value(QLatin1String("fullName"))))
+           )
         {
             return tagId;
         }
@@ -466,8 +478,10 @@ int FaceTags::unknownPersonTagId()
 
     int unknownPersonTagId = TagsCache::instance()->getOrCreateTag(
                                         FaceTagsHelper::tagPath(
-                                        i18nc("The list of detected faces from the collections but not recognized", "Unknown"),
+                                        i18nc("The list of detected faces from the collections but not recognized",
+                                              "Unknown"),
                                         personParentTag()));
+
     TagProperties props(unknownPersonTagId);
     props.setProperty(TagPropertyName::person(),        QString()); // no name associated
     props.setProperty(TagPropertyName::unknownPerson(), QString()); // special property
@@ -486,8 +500,10 @@ int FaceTags::unconfirmedPersonTagId()
 
     int unknownPersonTagId = TagsCache::instance()->getOrCreateTag(
                                         FaceTagsHelper::tagPath(
-                                        i18nc("The list of recognized faces from the collections but not confirmed", "Unconfirmed"),
+                                        i18nc("The list of recognized faces from the collections but not confirmed",
+                                              "Unconfirmed"),
                                         personParentTag()));
+
     TagProperties props(unknownPersonTagId);
     props.setProperty(TagPropertyName::person(),            QString()); // no name associated
     props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // special property
@@ -506,8 +522,10 @@ int FaceTags::ignoredPersonTagId()
 
     int ignoredPersonTagId = TagsCache::instance()->getOrCreateTag(
                                         FaceTagsHelper::tagPath(
-                                        i18nc("List of detected faces that need not be recognized", "Ignored"),
+                                        i18nc("List of detected faces that need not be recognized",
+                                              "Ignored"),
                                         personParentTag()));
+
     TagProperties props(ignoredPersonTagId);
     props.setProperty(TagPropertyName::person(),        QString());
     props.setProperty(TagPropertyName::ignoredPerson(), QString());

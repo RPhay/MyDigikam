@@ -92,6 +92,7 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("SelectSimilarityLegacySetting")),
                                                    parameters, &values);
+
     qCDebug(DIGIKAM_SIMILARITYDB_LOG) << "SimilarityDb SelectSimilaritySetting val ret = "
                                       << (BdEngineBackend::QueryStateEnum)queryStateResult;
 
@@ -206,8 +207,10 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
             {
                 QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
-                if ((modDateTime             != imageInfo.modDateTime()) ||
-                    (values.at(1).toString() != imageInfo.uniqueHash()))
+                if (
+                    (modDateTime             != imageInfo.modDateTime()) ||
+                    (values.at(1).toString() != imageInfo.uniqueHash())
+                   )
                 {
                     return true;
                 }
@@ -247,8 +250,10 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
                 {
                     QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
-                    if ((modDateTime             != info.modDateTime()) ||
-                        (values.at(1).toString() != info.uniqueHash()))
+                    if (
+                        (modDateTime             != info.modDateTime()) ||
+                        (values.at(1).toString() != info.uniqueHash())
+                       )
                     {
                         itemIDs << info.id();
                     }
@@ -289,8 +294,10 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
                 {
                     QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
-                    if ((modDateTime             != info.modDateTime()) ||
-                        (values.at(1).toString() != info.uniqueHash()))
+                    if (
+                        (modDateTime             != info.modDateTime()) ||
+                        (values.at(1).toString() != info.uniqueHash())
+                       )
                     {
                         urls << info.filePath();
                     }
@@ -317,7 +324,7 @@ void SimilarityDb::copySimilarityAttributes(qlonglong srcId, qlonglong dstId)
 void SimilarityDb::removeImageFingerprint(qlonglong imageID,
                                           FuzzyAlgorithm algorithm)
 {
-    if (algorithm == FuzzyAlgorithm::Haar)
+    if      (algorithm == FuzzyAlgorithm::Haar)
     {
         d->db->execSql(QString::fromUtf8("DELETE FROM ImageHaarMatrix WHERE imageid=?;"),
                        imageID);
@@ -359,8 +366,7 @@ double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, 
     // Also, no disjunction is necessary in the query.
 
     QPair<qlonglong, qlonglong> orderedIds = orderIds(imageID1, imageID2);
-
-    QString similarityValueString = getImageSimilarityOrdered(orderedIds.first, orderedIds.second, algorithm);
+    QString similarityValueString          = getImageSimilarityOrdered(orderedIds.first, orderedIds.second, algorithm);
 
     // If the similarity is non-null
 
@@ -383,7 +389,7 @@ double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, 
 
     // Return the info that there is no value.
 
-    return -1;
+    return (-1);
 }
 
 void SimilarityDb::setImageSimilarity(qlonglong imageID1, qlonglong imageID2, double value, FuzzyAlgorithm algorithm)
@@ -491,8 +497,12 @@ bool SimilarityDb::integrityCheck()
         {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
-            return ((values.size() == 1) && (values.first().toString().toLower().compare(QLatin1String("ok")) == 0));
+            return (
+                    (values.size() == 1) &&
+                    (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
+                   );
         }
+
         case BdEngineBackend::DbType::MySQL:
         {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
@@ -534,6 +544,7 @@ bool SimilarityDb::integrityCheck()
 
             return true;
         }
+
         default:
         {
             return false;

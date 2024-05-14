@@ -36,11 +36,12 @@ class DIGIKAM_DATABASE_EXPORT SimilarityDbAccess
 {
 public:
 
-    /** This class is written in analogy to CoreDbAccess
-     *  (some features stripped off).
-     *  For documentation, see coredbaccess.h
+    /**
+     * This class is written in analogy to CoreDbAccess
+     * (some features stripped off).
+     * For documentation, see coredbaccess.h
      */
-    explicit SimilarityDbAccess();
+    SimilarityDbAccess();
     ~SimilarityDbAccess();
 
     SimilarityDb*        db()        const;

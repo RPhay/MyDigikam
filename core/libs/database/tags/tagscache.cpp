@@ -290,7 +290,10 @@ public:
 
         for (it = nameHash.constBegin() ; it != nameHash.constEnd() ; ++it)
         {
-            if ((!excludeHiddenTags || !internalTags.contains(it.value())) && (it.key().*stringFunction)(fragment, caseSensitivity))
+            if (
+                (!excludeHiddenTags || !internalTags.contains(it.value())) &&
+                (it.key().*stringFunction)(fragment, caseSensitivity)
+               )
             {
                 idsMap.insert(it.key(), it.value());
             }
@@ -616,9 +619,11 @@ int TagsCache::tagForPath(const QString& path) const
     // if only a tag exists, we can assign it to this.
     // Otherwise we recreate it in the root.
 
-    if ((tagID == 0)               &&
+    if (
+        (tagID == 0)               &&
         (tagHierarchy.size() == 1) &&
-        (possibleTagIds.size() == 1))
+        (possibleTagIds.size() == 1)
+       )
     {
         tagID = possibleTagIds.first();
     }
@@ -854,7 +859,7 @@ QStringList TagsCache::propertyValues(int tagId, const QString& property) const
         {
             // the list is ordered by property, after id
 
-            for ( ; it != range.second && it->property == property ; ++it)
+            for ( ; (it != range.second) && (it->property == property) ; ++it)
             {
                 values << it->value;
             }

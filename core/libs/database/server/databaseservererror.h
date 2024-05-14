@@ -55,7 +55,7 @@ public:
     explicit DatabaseServerError(DatabaseServerErrorEnum errorType = NoErrors,
                                  const QString& errorText = QString());
     DatabaseServerError(const DatabaseServerError& dbServerError);
-    ~DatabaseServerError();
+    ~DatabaseServerError() = default;
 
     DatabaseServerErrorEnum getErrorType() const;
     void                    setErrorType(DatabaseServerErrorEnum errorType);

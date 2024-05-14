@@ -41,8 +41,8 @@ class DIGIKAM_DATABASE_EXPORT FaceTagsEditor
 {
 public:
 
-    FaceTagsEditor();
-    virtual ~FaceTagsEditor();
+    FaceTagsEditor()          = default;
+    virtual ~FaceTagsEditor() = default;
 
     // --- Read from database -----------------------------------------------------------------------------------------
 

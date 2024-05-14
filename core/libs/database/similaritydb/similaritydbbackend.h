@@ -35,7 +35,7 @@ public:
 
     explicit SimilarityDbBackend(DbEngineLocking* const locking,
                                  const QString& backendName = QLatin1String("similarityDatabase-"));
-    ~SimilarityDbBackend() override;
+    ~SimilarityDbBackend() override = default;
 
     /**
      * Initialize the database schema to the current version,

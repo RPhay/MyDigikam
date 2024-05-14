@@ -30,10 +30,6 @@ DatabaseServerError::DatabaseServerError(const DatabaseServerError& dbServerErro
 {
 }
 
-DatabaseServerError::~DatabaseServerError()
-{
-}
-
 DatabaseServerError::DatabaseServerErrorEnum DatabaseServerError::getErrorType() const
 {
     return m_ErrorType;

@@ -228,10 +228,12 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 
         if ((list.size() == 4) || (list.size() == 5))
         {
-            return FaceTagsIface((Type)list.at(0).toInt(),
+            return FaceTagsIface(
+                                 (Type)list.at(0).toInt(),
                                  list.at(1).toLongLong(),
                                  list.at(2).toInt(),
-                                 TagRegion::fromVariant(list.at(3)));
+                                 TagRegion::fromVariant(list.at(3))
+                                );
         }
     }
 
@@ -267,20 +269,24 @@ FaceTagsIface FaceTagsIface::fromListing(qlonglong imageId, const QList<QVariant
 /*
     qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
 */
-    return FaceTagsIface(attribute,
-                        imageId, tagId,
-                        TagRegion(value));
+    return FaceTagsIface(
+                         attribute,
+                         imageId, tagId,
+                         TagRegion(value)
+                        );
 }
 
 QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return (QString::number(tagId())                 +
+        return (
+                QString::number(tagId())                 +
                 QLatin1Char(',')                         +
                 ImageTagPropertyName::autodetectedFace() +
                 QLatin1Char(',')                         +
-                (TagRegion(region().toRect())).toXml());
+                (TagRegion(region().toRect())).toXml()
+               );
     }
     else
     {

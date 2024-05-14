@@ -30,19 +30,9 @@
 namespace Digikam
 {
 
-// --- Constructor / Destructor -------------------------------------------------------------------------------------
-
-FaceTagsEditor::FaceTagsEditor()
-{
-}
-
-FaceTagsEditor::~FaceTagsEditor()
-{
-}
-
 // --- Read from database -----------------------------------------------------------------------------------
 
-int FaceTagsEditor::faceCountForPersonInImage(qlonglong imageid, int tagId ) const
+int FaceTagsEditor::faceCountForPersonInImage(qlonglong imageid, int tagId) const
 {
     ItemTagPair pair(imageid, tagId);
 
@@ -188,18 +178,22 @@ FaceTagsIface FaceTagsEditor::unknownPersonEntry(qlonglong imageId, const TagReg
 
 FaceTagsIface FaceTagsEditor::unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region)
 {
-    return FaceTagsIface(FaceTagsIface::UnconfirmedName,
+    return FaceTagsIface(
+                         FaceTagsIface::UnconfirmedName,
                          imageId,
                          (tagId == -1) ? FaceTags::unknownPersonTagId() : tagId,
-                         region);
+                         region
+                        );
 }
 
 FaceTagsIface FaceTagsEditor::confirmedEntry(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion)
 {
-    return FaceTagsIface(FaceTagsIface::ConfirmedName,
+    return FaceTagsIface(
+                         FaceTagsIface::ConfirmedName,
                          face.imageId(),
                          (tagId == -1) ? face.tagId() : tagId,
-                         confirmedRegion.isValid() ? confirmedRegion : face.region());
+                         confirmedRegion.isValid() ? confirmedRegion : face.region()
+                        );
 }
 
 FaceTagsIface FaceTagsEditor::addManually(const FaceTagsIface& face)
@@ -238,8 +232,10 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
 
     // Add the image to the face to the unconfirmed tag, if it is not the unknown or unconfirmed tag.
 
-    if (!FaceTags::isTheUnknownPerson(unconfirmedNameTagId) &&
-        !FaceTags::isTheUnconfirmedPerson(unconfirmedNameTagId))
+    if (
+        !FaceTags::isTheUnknownPerson(unconfirmedNameTagId) &&
+        !FaceTags::isTheUnconfirmedPerson(unconfirmedNameTagId)
+       )
     {
         ItemTagPair unconfirmedAssociation(newEntry.imageId(),
                                            FaceTags::unconfirmedPersonTagId());
@@ -286,9 +282,11 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face,
 {
     FaceTagsIface newEntry = confirmedEntry(face, tagId, confirmedRegion);
 
-    if (FaceTags::isTheUnknownPerson(newEntry.tagId())     ||
+    if (
+        FaceTags::isTheUnknownPerson(newEntry.tagId())     ||
         FaceTags::isTheUnconfirmedPerson(newEntry.tagId()) ||
-        FaceTags::isTheIgnoredPerson(newEntry.tagId()))
+        FaceTags::isTheIgnoredPerson(newEntry.tagId())
+       )
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Refusing to confirm tag on face";
 
@@ -429,6 +427,7 @@ void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
         {
             continue;
         }
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Test4 FaceTagsIface:" << face.imageId() << face.tagId();
         ItemTagPair pair(face.imageId(), face.tagId());
         removeFaceAndTag(pair, face, true);
@@ -456,15 +455,19 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
 
     // Tag assigned and no other entry left?
 
-    if      (touchTags            &&
+    if      (
+             touchTags            &&
              pair.isAssigned()    &&
-             !pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
+             !pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName))
+            )
     {
         removeNormalTag(face.imageId(), pair.tagId());
     }
-    else if (touchTags                                           &&
+    else if (
+             touchTags                                           &&
              (face.type() != FaceTagsIface::FaceForTraining)     &&
-             pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
+             pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName))
+            )
     {
         // The tag exists several times, we write it again
         // to trigger the writing of the metadata.

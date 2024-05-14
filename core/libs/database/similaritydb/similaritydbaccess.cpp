@@ -87,7 +87,7 @@ public:
 
 public:
 
-    SimilarityDbAccessStaticPriv* const d;
+    SimilarityDbAccessStaticPriv* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------

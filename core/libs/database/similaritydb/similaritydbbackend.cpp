@@ -28,10 +28,6 @@ SimilarityDbBackend::SimilarityDbBackend(DbEngineLocking* const locking, const Q
 {
 }
 
-SimilarityDbBackend::~SimilarityDbBackend()
-{
-}
-
 bool SimilarityDbBackend::initSchema(SimilarityDbSchemaUpdater* const updater)
 {
     Q_D(BdEngineBackend);
