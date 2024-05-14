@@ -101,7 +101,7 @@ public:
 
 public:
 
-    CoreDbAccessStaticPriv* const d;
+    CoreDbAccessStaticPriv* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------
@@ -326,6 +326,7 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
 
         access.setLastError(updater.getLastErrorMessage());
         d->initializing = false;
+
         return false;
     }
 

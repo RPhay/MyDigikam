@@ -138,7 +138,7 @@ public:
     /**
      * Create an invalid database URL
      */
-    CoreDbUrl();
+    CoreDbUrl() = default;
 
     /**
      * These test for the protocol of this URL.

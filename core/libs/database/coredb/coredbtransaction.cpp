@@ -24,7 +24,6 @@ namespace Digikam
 {
 
 CoreDbTransaction::CoreDbTransaction()
-    : m_access(nullptr)
 {
     CoreDbAccess access;
     access.backend()->beginTransaction();

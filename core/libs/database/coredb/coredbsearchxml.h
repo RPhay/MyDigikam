@@ -78,27 +78,27 @@ bool testRelation(T v1, T v2, Relation rel)
 {
     if      (rel == Equal)
     {
-        return v1 == v2;
+        return (v1 == v2);
     }
     else if (rel == Unequal)
     {
-        return v1 != v2;
+        return (v1 != v2);
     }
     else if (rel == LessThan)
     {
-        return v1 < v2;
+        return (v1 < v2);
     }
     else if (rel == LessThanOrEqual)
     {
-        return v1 <= v2;
+        return (v1 <= v2);
     }
     else if (rel == GreaterThan)
     {
-        return v1 > v2;
+        return (v1 > v2);
     }
     else if (rel == GreaterThanOrEqual)
     {
-        return v1 >= v2;
+        return (v1 >= v2);
     }
 
     return false;
@@ -400,13 +400,13 @@ public:
 
 protected:
 
-    SearchXml::Operator m_groupOperator;
+    SearchXml::Operator m_groupOperator = SearchXml::And;
     QString             m_groupCaption;
-    SearchXml::Operator m_fieldOperator;
+    SearchXml::Operator m_fieldOperator = SearchXml::And;
     QString             m_fieldName;
-    SearchXml::Relation m_fieldRelation;
+    SearchXml::Relation m_fieldRelation = SearchXml::Equal;
     QVariant            m_value;
-    bool                m_readValue;
+    bool                m_readValue     = false;
 };
 
 } // namespace Digikam

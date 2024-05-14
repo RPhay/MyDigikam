@@ -43,8 +43,8 @@ public:
 
 public:
 
-    CoreDbCopyManager();
-    ~CoreDbCopyManager() override;
+    CoreDbCopyManager()           = default;
+    ~CoreDbCopyManager() override = default;
 
     void copyDatabases(const DbEngineParameters& fromDBParameters,
                        const DbEngineParameters& toDBParameters);
@@ -75,7 +75,7 @@ private:
 
 private:
 
-    volatile bool m_isStopProcessing;
+    volatile bool m_isStopProcessing = false;
 };
 
 } // namespace Digikam

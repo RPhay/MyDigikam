@@ -30,7 +30,7 @@ class DIGIKAM_DATABASE_EXPORT CoreDbPrivilegesChecker
 public:
 
     explicit CoreDbPrivilegesChecker(const DbEngineParameters& parameters);
-    ~CoreDbPrivilegesChecker();
+    ~CoreDbPrivilegesChecker() = default;
 
     bool checkPrivileges(QStringList& insufficientRights);
     bool checkPriv(CoreDbBackend& dbBackend, const QString& dbActionName);

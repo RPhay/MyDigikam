@@ -33,7 +33,9 @@ namespace Digikam
 {
 
 #ifdef HAVE_DBUS
+
 class DBusSignalListenerThread;
+
 #endif
 
 class Q_DECL_HIDDEN CoreDbWatch::Private
@@ -369,8 +371,10 @@ void CoreDbWatch::slotImageChangeDBus(const QString& databaseIdentifier,
                                       const QString& applicationIdentifier,
                                       const ImageChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT imageChange(changeset);
     }
@@ -380,8 +384,10 @@ void CoreDbWatch::slotImageTagChangeDBus(const QString& databaseIdentifier,
                                          const QString& applicationIdentifier,
                                          const ImageTagChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT imageTagChange(changeset);
     }
@@ -391,8 +397,10 @@ void CoreDbWatch::slotCollectionImageChangeDBus(const QString& databaseIdentifie
                                                 const QString& applicationIdentifier,
                                                 const CollectionImageChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT collectionImageChange(changeset);
     }
@@ -402,8 +410,10 @@ void CoreDbWatch::slotAlbumChangeDBus(const QString& databaseIdentifier,
                                       const QString& applicationIdentifier,
                                       const AlbumChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT albumChange(changeset);
     }
@@ -413,8 +423,10 @@ void CoreDbWatch::slotTagChangeDBus(const QString& databaseIdentifier,
                                     const QString& applicationIdentifier,
                                     const TagChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT tagChange(changeset);
     }
@@ -424,8 +436,10 @@ void CoreDbWatch::slotAlbumRootChangeDBus(const QString& databaseIdentifier,
                                           const QString& applicationIdentifier,
                                           const AlbumRootChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT albumRootChange(changeset);
     }
@@ -435,8 +449,10 @@ void CoreDbWatch::slotSearchChangeDBus(const QString& databaseIdentifier,
                                        const QString& applicationIdentifier,
                                        const SearchChangeset& changeset)
 {
-    if ((applicationIdentifier != d->applicationId) &&
-        (databaseIdentifier    == d->databaseId))
+    if (
+        (applicationIdentifier != d->applicationId) &&
+        (databaseIdentifier    == d->databaseId)
+       )
     {
         Q_EMIT searchChange(changeset);
     }

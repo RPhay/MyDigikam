@@ -35,6 +35,7 @@ CoreDbBackend::~CoreDbBackend()
 void CoreDbBackend::setCoreDbWatch(CoreDbWatch* watch)
 {
     Q_D(CoreDbBackend);
+
     d->watch = watch;
 }
 
@@ -74,36 +75,42 @@ void CoreDbBackend::recordChangeset(const ImageChangeset& changeset)
 void CoreDbBackend::recordChangeset(const ImageTagChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->imageTagChangesetContainer.recordChangeset(changeset);
 }
 
 void CoreDbBackend::recordChangeset(const CollectionImageChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->collectionImageChangesetContainer.recordChangeset(changeset);
 }
 
 void CoreDbBackend::recordChangeset(const AlbumChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->albumChangesetContainer.recordChangeset(changeset);
 }
 
 void CoreDbBackend::recordChangeset(const TagChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->tagChangesetContainer.recordChangeset(changeset);
 }
 
 void CoreDbBackend::recordChangeset(const AlbumRootChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->albumRootChangesetContainer.recordChangeset(changeset);
 }
 
 void CoreDbBackend::recordChangeset(const SearchChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     d->searchChangesetContainer.recordChangeset(changeset);
 }
 

@@ -87,7 +87,9 @@ CoreDbUrl CoreDbUrl::fromAlbumAndName(const QString& name,
     url.setScheme(QLatin1String("digikamalbums"));
 
     if (path != QLatin1String("/"))
+    {
         path += QLatin1Char('/');
+    }
 
     url.setPath(path + name);
 
@@ -109,6 +111,7 @@ CoreDbUrl CoreDbUrl::albumUrl(const DbEngineParameters& parameters)
     url.setParameters(parameters);
 
     qCDebug(DIGIKAM_COREDB_LOG) << "CoreDbUrl::albumUrl : " << url.toDisplayString();
+
     return url;
 }
 
@@ -229,10 +232,6 @@ CoreDbUrl::CoreDbUrl(const CoreDbUrl& url)
 {
 }
 
-CoreDbUrl::CoreDbUrl()
-{
-}
-
 CoreDbUrl& CoreDbUrl::operator=(const QUrl& digikamalbumsUrl)
 {
     QUrl::operator=(digikamalbumsUrl);
@@ -335,6 +334,7 @@ QString CoreDbUrl::album() const
 QString CoreDbUrl::name() const
 {
     // do not ignore trailing slash in the path - albums have a trailing slash
+
     return fileName();
 }
 

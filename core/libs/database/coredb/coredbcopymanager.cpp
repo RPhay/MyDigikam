@@ -36,15 +36,6 @@
 namespace Digikam
 {
 
-CoreDbCopyManager::CoreDbCopyManager()
-    : m_isStopProcessing(false)
-{
-}
-
-CoreDbCopyManager::~CoreDbCopyManager()
-{
-}
-
 void CoreDbCopyManager::stopProcessing()
 {
     m_isStopProcessing = true;
@@ -82,7 +73,9 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
         << QLatin1String("AlbumRoots")
         << QLatin1String("Albums")
         << QLatin1String("Images")
+
         // Virtual table used to allow population of Albums.icon after Images migration
+
         << QLatin1String("AlbumsExtra")
         << QLatin1String("ImageInformation")
         << QLatin1String("ImageMetadata")
@@ -90,7 +83,9 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
         << QLatin1String("ImageComments")
         << QLatin1String("ImageCopyright")
         << QLatin1String("Tags")
+
         // Virtual table used to allow population of Tags.icon after Images migration
+
         << QLatin1String("TagsExtra")
         << QLatin1String("TagsTree")
         << QLatin1String("TagProperties")
@@ -123,13 +118,16 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     for (int i = (tablesSize - 1) ; i >= 0 ; --i)
     {
-        if (m_isStopProcessing ||
+        if (
+            m_isStopProcessing ||
             (toDBbackend.execDirectSql(QString::fromUtf8("DROP TABLE IF EXISTS %1;").arg(tables[i])) != BdEngineBackend::NoErrors)
            )
         {
             Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while scrubbing the target database."));
+
             fromDBbackend.close();
             toDBbackend.close();
+
             return;
         }
     }
@@ -159,12 +157,14 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
         // Now perform the copy action
 
-        if (m_isStopProcessing ||
+        if (
+            m_isStopProcessing ||
             !copyTable(fromDBbackend, QString::fromUtf8("Migrate_Read_%1").arg(tables[i]),
                        toDBbackend, QString::fromUtf8("Migrate_Write_%1").arg(tables[i]))
            )
         {
             handleClosing(m_isStopProcessing, fromDBbackend, toDBbackend);
+
             return;
         }
     }
@@ -187,6 +187,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
     QMap<QString, QVariant> bindingMap;
 
     // now perform the copy action
+
     QList<QString> columnNames;
     QSqlQuery      result        = fromDBbackend.execDBActionQuery(fromDBbackend.getDBAction(fromActionName), bindingMap) ;
     int            resultSize    = -1;

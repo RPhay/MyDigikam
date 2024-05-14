@@ -63,7 +63,7 @@ public:
      * The schema will not be checked, use checkReadyForUse()
      * for a full opening process including schema update and error messages.
      */
-    explicit CoreDbAccess();
+    CoreDbAccess();
     ~CoreDbAccess();
 
     /**
@@ -161,7 +161,7 @@ public:
 
 private:
 
-    int count;
+    int count = 0;
 };
 
 } // namespace Digikam

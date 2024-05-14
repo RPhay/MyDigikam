@@ -908,7 +908,7 @@ static QStringList cleanUserFilterString(const QString& filterString)
     QChar sep(QLatin1Char(';'));
     int i = filterString.indexOf( sep );
 
-    if ( i == -1 && filterString.indexOf(QLatin1Char(' ')) != -1 )
+    if ((i == -1) && (filterString.indexOf(QLatin1Char(' ')) != -1))
     {
         sep = QChar(QLatin1Char(' '));
     }
@@ -1150,7 +1150,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
 
     SearchInfo::List sList = d->albumDB->scanSearches();
 
-    for (SearchInfo::List::const_iterator it = sList.constBegin(); it != sList.constEnd(); ++it)
+    for (SearchInfo::List::const_iterator it = sList.constBegin() ; it != sList.constEnd() ; ++it)
     {
         QUrl url((*it).query);
 
@@ -1393,7 +1393,7 @@ void CoreDbSchemaUpdater::preAlpha010Update1()
 
     SearchInfo::List sList = d->albumDB->scanSearches();
 
-    for (SearchInfo::List::const_iterator it = sList.constBegin(); it != sList.constEnd(); ++it)
+    for (SearchInfo::List::const_iterator it = sList.constBegin() ; it != sList.constEnd() ; ++it)
     {
         QUrl url((*it).query);
 

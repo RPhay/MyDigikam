@@ -609,9 +609,11 @@ void CoreDB::setTagIcon(int tagID, const QString& iconKDE, qlonglong iconID)
     qlonglong dbIconID = iconKDE.isEmpty() ? iconID : 0;
     QString dbIconKDE  = iconKDE;
 
-    if (iconKDE.isEmpty()                            ||
+    if (
+        iconKDE.isEmpty()                            ||
         (iconKDE.toLower() == QLatin1String("tag"))  ||
-        (iconKDE.toLower() == QLatin1String("smiley")))
+        (iconKDE.toLower() == QLatin1String("smiley"))
+       )
     {
         dbIconKDE.clear();
     }
@@ -1590,13 +1592,15 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
         // For some reason REAL values may come as QString QVariants. Convert here.
 
         if (values.size() == fieldNames.size() &&
-            ((fields & DatabaseFields::LatitudeNumber)      ||
+            (
+             (fields & DatabaseFields::LatitudeNumber)      ||
              (fields & DatabaseFields::LongitudeNumber)     ||
              (fields & DatabaseFields::Altitude)            ||
              (fields & DatabaseFields::PositionOrientation) ||
              (fields & DatabaseFields::PositionTilt)        ||
              (fields & DatabaseFields::PositionRoll)        ||
-             (fields & DatabaseFields::PositionAccuracy))
+             (fields & DatabaseFields::PositionAccuracy)
+            )
            )
         {
             for (int i = 0 ; i < values.size() ; ++i)
@@ -1604,21 +1608,23 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (values.at(i).typeId() == QVariant::String &&
+                if ((values.at(i).typeId() == QVariant::String) &&
 
 #else
 
-                if (values.at(i).type() == QVariant::String &&
+                if ((values.at(i).type() == QVariant::String) &&
 
 #endif
 
-                    (fieldNames.at(i) == QLatin1String("latitudeNumber")  ||
-                     fieldNames.at(i) == QLatin1String("longitudeNumber") ||
-                     fieldNames.at(i) == QLatin1String("altitude")        ||
-                     fieldNames.at(i) == QLatin1String("orientation")     ||
-                     fieldNames.at(i) == QLatin1String("tilt")            ||
-                     fieldNames.at(i) == QLatin1String("roll")            ||
-                     fieldNames.at(i) == QLatin1String("accuracy"))
+                    (
+                     (fieldNames.at(i) == QLatin1String("latitudeNumber"))  ||
+                     (fieldNames.at(i) == QLatin1String("longitudeNumber")) ||
+                     (fieldNames.at(i) == QLatin1String("altitude"))        ||
+                     (fieldNames.at(i) == QLatin1String("orientation"))     ||
+                     (fieldNames.at(i) == QLatin1String("tilt"))            ||
+                     (fieldNames.at(i) == QLatin1String("roll"))            ||
+                     (fieldNames.at(i) == QLatin1String("accuracy"))
+                    )
                    )
                 {
                     if (!values.at(i).isNull())
@@ -1655,14 +1661,17 @@ QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, Database
 
         // For some reason REAL values may come as QString QVariants. Convert here.
 
-        if (values.size() == fieldNames.size() &&
-            (fields & DatabaseFields::LatitudeNumber      ||
-             fields & DatabaseFields::LongitudeNumber     ||
-             fields & DatabaseFields::Altitude            ||
-             fields & DatabaseFields::PositionOrientation ||
-             fields & DatabaseFields::PositionTilt        ||
-             fields & DatabaseFields::PositionRoll        ||
-             fields & DatabaseFields::PositionAccuracy)
+        if (
+            (values.size() == fieldNames.size()) &&
+            (
+             (fields & DatabaseFields::LatitudeNumber)      ||
+             (fields & DatabaseFields::LongitudeNumber)     ||
+             (fields & DatabaseFields::Altitude)            ||
+             (fields & DatabaseFields::PositionOrientation) ||
+             (fields & DatabaseFields::PositionTilt)        ||
+             (fields & DatabaseFields::PositionRoll)        ||
+             (fields & DatabaseFields::PositionAccuracy)
+            )
            )
         {
             for (int i = 0 ; i < values.size() ; ++i)
@@ -1670,21 +1679,23 @@ QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, Database
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                if (values.at(i).typeId() == QVariant::String &&
+                if ((values.at(i).typeId() == QVariant::String) &&
 
 #else
 
-                if (values.at(i).type() == QVariant::String &&
+                if ((values.at(i).type() == QVariant::String) &&
 
 #endif
 
-                    (fieldNames.at(i) == QLatin1String("latitudeNumber")  ||
-                     fieldNames.at(i) == QLatin1String("longitudeNumber") ||
-                     fieldNames.at(i) == QLatin1String("altitude")        ||
-                     fieldNames.at(i) == QLatin1String("orientation")     ||
-                     fieldNames.at(i) == QLatin1String("tilt")            ||
-                     fieldNames.at(i) == QLatin1String("roll")            ||
-                     fieldNames.at(i) == QLatin1String("accuracy"))
+                    (
+                     (fieldNames.at(i) == QLatin1String("latitudeNumber"))  ||
+                     (fieldNames.at(i) == QLatin1String("longitudeNumber")) ||
+                     (fieldNames.at(i) == QLatin1String("altitude"))        ||
+                     (fieldNames.at(i) == QLatin1String("orientation"))     ||
+                     (fieldNames.at(i) == QLatin1String("tilt"))            ||
+                     (fieldNames.at(i) == QLatin1String("roll"))            ||
+                     (fieldNames.at(i) == QLatin1String("accuracy"))
+                    )
                    )
                 {
                     if (!values.at(i).isNull())
@@ -2628,8 +2639,10 @@ QStringList CoreDB::getItemsURLsWithTag(int tagId) const
                                     "INNER JOIN Albums ON Albums.id=Images.album "
                                     " WHERE Images.status=1 AND Images.category=1 AND "));
 
-    if ((tagId == TagsCache::instance()->tagForPickLabel(NoPickLabel)) ||
-        (tagId == TagsCache::instance()->tagForColorLabel(NoColorLabel)))
+    if (
+        (tagId == TagsCache::instance()->tagForPickLabel(NoPickLabel)) ||
+        (tagId == TagsCache::instance()->tagForColorLabel(NoColorLabel))
+       )
     {
         query += QString::fromUtf8("( ImageTags.tagid=? OR ImageTags.tagid "
                                    "NOT BETWEEN ? AND ? OR ImageTags.tagid IS NULL );");
@@ -3410,8 +3423,8 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
 
 QPair<int, int> CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
 {
-    int items  = 0;
-    int albums = 0;
+    int items    = 0;
+    int albums   = 0;
     QVariantList values;
 
     int rootId   = getAlbumRootId(albumID);
@@ -4418,7 +4431,7 @@ void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelati
     int albumRoot        = getAlbumRootId(albumID);
     QString relativePath = getAlbumRelativePath(albumID);
 
-    if (relativePath == newRelativePath && albumRoot == newAlbumRoot)
+    if ((relativePath == newRelativePath) && (albumRoot == newAlbumRoot))
     {
         return;
     }

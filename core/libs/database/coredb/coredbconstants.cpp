@@ -150,6 +150,7 @@ QLatin1String TagPropertyName::ignoredPerson()
 QLatin1String TagPropertyName::faceEngineName()
 {
     // kept at its historical value for compatibility
+
     return QLatin1String("faceEngineId");
 }
 

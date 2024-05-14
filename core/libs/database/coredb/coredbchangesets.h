@@ -44,7 +44,7 @@ public:
      * It is described by a list of affected image ids, and a set of affected database fields.
      * There is no guarantee that information in the database has actually been changed.
      */
-    ImageChangeset();
+    ImageChangeset() = default;
     ImageChangeset(const QList<qlonglong>& ids, const DatabaseFields::Set& changes);
     ImageChangeset(qlonglong id, const DatabaseFields::Set& changes);
 
@@ -89,7 +89,7 @@ public:
 
 public:
 
-    ImageTagChangeset();
+    ImageTagChangeset() = default;
     ImageTagChangeset(const QList<qlonglong>& ids, const QList<int>& tags, Operation operation);
     ImageTagChangeset(qlonglong id, const QList<int>& tags, Operation operation);
     ImageTagChangeset(qlonglong id, int tag, Operation operation);
@@ -134,7 +134,7 @@ private:
 
     QList<qlonglong>    m_ids;
     QList<int>          m_tags;
-    Operation           m_operation;
+    Operation           m_operation = Unknown;
 };
 
 // ----------------------------------------------------------------------------
@@ -209,7 +209,7 @@ public:
      * Images with the "Removed" status are now irreversibly deleted.
      * ids() and/or albums() may be empty (this means information is not available).
      */
-    CollectionImageChangeset();
+    CollectionImageChangeset() = default;
     CollectionImageChangeset(const QList<qlonglong>& ids, const QList<int>& albums, Operation operation);
     CollectionImageChangeset(const QList<qlonglong>& ids, int album, Operation operation);
     CollectionImageChangeset(qlonglong id, int album, Operation operation);
@@ -244,7 +244,7 @@ private:
 
     QList<qlonglong>    m_ids;
     QList<int>          m_albums;
-    Operation           m_operation;
+    Operation           m_operation = Unknown;
 };
 
 // ----------------------------------------------------------------------------
@@ -264,7 +264,7 @@ public:
 
 public:
 
-    AlbumChangeset();
+    AlbumChangeset() = default;
     AlbumChangeset(int albumId, Operation operation);
 
     int albumId()                                             const;
@@ -279,8 +279,8 @@ public:
 
 private:
 
-    int       m_id;
-    Operation m_operation;
+    int       m_id          = -1;
+    Operation m_operation   = Unknown;
 };
 
 // ----------------------------------------------------------------------------
@@ -303,7 +303,7 @@ public:
 
 public:
 
-    TagChangeset();
+    TagChangeset() = default;
     TagChangeset(int tagId, Operation operation);
 
     int tagId()                                             const;
@@ -318,8 +318,8 @@ public:
 
 private:
 
-    int       m_id;
-    Operation m_operation;
+    int       m_id          = -1;
+    Operation m_operation   = Unknown;
 };
 
 // ----------------------------------------------------------------------------
@@ -338,7 +338,7 @@ public:
 
 public:
 
-    AlbumRootChangeset();
+    AlbumRootChangeset() = default;
     AlbumRootChangeset(int albumRootId, Operation operation);
 
     int albumRootId()                                             const;
@@ -353,8 +353,8 @@ public:
 
 private:
 
-    int       m_id;
-    Operation m_operation;
+    int       m_id          = -1;
+    Operation m_operation   = Unknown;
 };
 
 // ----------------------------------------------------------------------------
@@ -373,7 +373,7 @@ public:
 
 public:
 
-    SearchChangeset();
+    SearchChangeset() = default;
     SearchChangeset(int searchId, Operation operation);
 
     int searchId()                                             const;
@@ -388,8 +388,8 @@ public:
 
 private:
 
-    int       m_id;
-    Operation m_operation;
+    int       m_id          = -1;
+    Operation m_operation   = Unknown;
 };
 
 } // namespace Digikam

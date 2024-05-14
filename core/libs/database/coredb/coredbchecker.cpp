@@ -31,10 +31,6 @@ CoreDbPrivilegesChecker::CoreDbPrivilegesChecker(const DbEngineParameters& param
 {
 }
 
-CoreDbPrivilegesChecker::~CoreDbPrivilegesChecker()
-{
-}
-
 bool CoreDbPrivilegesChecker::checkPrivileges(QStringList& insufficientRights)
 {
     bool result = true;
@@ -91,9 +87,11 @@ bool CoreDbPrivilegesChecker::checkPriv(CoreDbBackend& dbBackend, const QString&
 {
     BdEngineBackend::QueryState queryStateResult = dbBackend.execDBAction(dbActionName);
 
-    if (queryStateResult != BdEngineBackend::NoErrors       &&
-        dbBackend.lastSQLError().isValid()                  &&
-        !dbBackend.lastSQLError().nativeErrorCode().isEmpty())
+    if (
+        (queryStateResult != BdEngineBackend::NoErrors)       &&
+        dbBackend.lastSQLError().isValid()                    &&
+        !dbBackend.lastSQLError().nativeErrorCode().isEmpty()
+       )
     {
         qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while creating a trigger. Details:"
                                     << dbBackend.lastSQLError();

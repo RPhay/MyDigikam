@@ -46,7 +46,7 @@ public:
 
 private:
 
-    CoreDbAccess* m_access;
+    CoreDbAccess* m_access = nullptr;
 };
 
 } // namespace Digikam

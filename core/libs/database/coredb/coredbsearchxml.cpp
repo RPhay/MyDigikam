@@ -39,7 +39,7 @@ SearchXml::Element SearchXmlReader::readNext()
 
         if (isEndElement())
         {
-            if (isGroupElement())
+            if      (isGroupElement())
             {
                 return SearchXml::GroupEnd;
             }
@@ -51,10 +51,12 @@ SearchXml::Element SearchXmlReader::readNext()
 
         if (isStartElement())
         {
-            if (isGroupElement())
+            if      (isGroupElement())
             {
                 // get possible default operator
+
                 m_defaultFieldOperator = readOperator(QLatin1String("fieldoperator"), SearchXml::standardFieldOperator());
+
                 return SearchXml::Group;
             }
             else if (isFieldElement())
@@ -271,7 +273,7 @@ QList<int> SearchXmlReader::valueToIntOrIntList()
 
     while (!atEnd())
     {
-        if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
+        if ((token != QXmlStreamReader::StartElement) || (name() != QLatin1String("listitem")))
         {
             break;
         }
@@ -306,7 +308,7 @@ QList<double> SearchXmlReader::valueToDoubleOrDoubleList()
 
     while (!atEnd())
     {
-        if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
+        if ((token != QXmlStreamReader::StartElement) || (name() != QLatin1String("listitem")))
         {
             break;
         }
@@ -341,7 +343,7 @@ QList<QString> SearchXmlReader::valueToStringOrStringList()
 
     while (!atEnd())
     {
-        if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
+        if ((token != QXmlStreamReader::StartElement) || (name() != QLatin1String("listitem")))
         {
             break;
         }
@@ -456,6 +458,7 @@ SearchXml::Relation SearchXmlReader::readRelation(const QString& attributeName,
 bool SearchXmlReader::readToStartOfElement(const QString& elementName)
 {
     // go to next start element
+
     Q_FOREVER
     {
         bool atStart = isStartElement();
@@ -581,7 +584,7 @@ void SearchXmlReader::readToFirstField()
         {
             hasGroup = true;
         }
-        else if (hasGroup && element == SearchXml::Field)
+        else if (hasGroup && (element == SearchXml::Field))
         {
             return;
         }
@@ -1140,11 +1143,7 @@ QString KeywordSearchWriter::xml(const QStringList& keywordList)
 // ---------------------------------------------------------------------------------
 
 SearchXmlCachingReader::SearchXmlCachingReader(const QString& xml)
-    : SearchXmlReader(xml),
-      m_groupOperator(SearchXml::And),
-      m_fieldOperator(SearchXml::And),
-      m_fieldRelation(SearchXml::Equal),
-      m_readValue(false)
+    : SearchXmlReader(xml)
 {
 }
 
