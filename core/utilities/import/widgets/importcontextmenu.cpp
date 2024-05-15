@@ -384,6 +384,7 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
         if (list.size() == 1)
         {
             SHELLEXECUTEINFO sei = {};
+            memset(&sei, 0, sizeof(sei));
             sei.cbSize           = sizeof(sei);
             sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
             sei.nShow            = SW_SHOWNORMAL;
