@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-14 01:45+0000\n"
+"POT-Creation-Date: 2024-05-15 01:43+0000\n"
 "PO-Revision-Date: 2024-05-09 07:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3207,7 +3207,7 @@ msgid "Selection"
 msgstr "選擇區域"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -26372,7 +26372,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "垃圾桶"
@@ -26967,7 +26967,7 @@ msgid "Context menu"
 msgstr "右鍵功能表"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空垃圾桶"
@@ -27584,7 +27584,7 @@ msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "抱歉，digiKam 不支援將遠端網址作為收藏。"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:247
-#: core/libs/database/collection/collectionmanager_location.cpp:450
+#: core/libs/database/collection/collectionmanager_location.cpp:452
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "選擇的資料夾不存在或無法讀取"
@@ -27604,7 +27604,7 @@ msgstr "儲存媒體能被唯一辨識。"
 msgid "The collection is located on your harddisk"
 msgstr "此收藏放置在您的硬碟上"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:334
+#: core/libs/database/collection/collectionmanager_location.cpp:336
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -27618,7 +27618,7 @@ msgstr ""
 "在最上層目錄中這兩個項目會區分為兩個檔案，所以請不要附加檔案到此 CD，否則將無"
 "法辨識。往後如果要在 digiKam 使用請將您的 CD 和 DVD 設定唯一的標籤。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:349
+#: core/libs/database/collection/collectionmanager_location.cpp:351
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -27628,14 +27628,14 @@ msgstr ""
 "這是一片 CD/DVD。會經由 CD 燒錄程式設定之標籤 (「%1」) 來辨識光碟。如果以後您"
 "要建立給 digikam 使用的 CD，請記得給予光碟一個唯一的標籤。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:365
+#: core/libs/database/collection/collectionmanager_location.cpp:367
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
 "(\"%1\")"
 msgstr "這是一個抽取式儲存媒體會經由媒體之標籤 (「%1」) 來辨識"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:381
+#: core/libs/database/collection/collectionmanager_location.cpp:383
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -27645,7 +27645,7 @@ msgstr ""
 "這個條目只會經由在您的系統 (「%1」) 上找到之路徑來辨識。沒有更具體之辨識方法 "
 "(UUID、標籤) 可用。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:398
+#: core/libs/database/collection/collectionmanager_location.cpp:400
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -27655,7 +27655,7 @@ msgstr ""
 "您的系統上不可能辨識這個路徑的儲存媒體。它會使用檔案路徑作為唯一辨識被加入。"
 "這會讓您的本機硬碟運作良好。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:423
+#: core/libs/database/collection/collectionmanager_location.cpp:425
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -27663,7 +27663,7 @@ msgid ""
 msgstr ""
 "您必須在本機上掛載您的 Samba 分享。抱歉，digiKam 目前不支援 smb:// 網址。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:428
+#: core/libs/database/collection/collectionmanager_location.cpp:430
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your network storage must be set up to be accessible as files and folders "
@@ -27675,12 +27675,12 @@ msgstr ""
 "您的網路儲存必須設定為可經由作業系統存取的檔案和資料夾。DigiKam 不支援遠端網"
 "址。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:465
+#: core/libs/database/collection/collectionmanager_location.cpp:467
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr "已經有一個以相同路徑作為網路分享的收藏。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:478
+#: core/libs/database/collection/collectionmanager_location.cpp:480
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -27725,38 +27725,38 @@ msgstr ""
 "開啟資料庫後端時發生錯誤。\n"
 "%1 "
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:62
+#: core/libs/database/coredb/coredbcopymanager.cpp:53
 #, kde-format
 msgid "Error while opening the source database."
 msgstr "開啟來源資料庫時發生錯誤。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:72
+#: core/libs/database/coredb/coredbcopymanager.cpp:63
 #, kde-format
 msgid "Error while opening the target database."
 msgstr "開啟目標資料庫時發生錯誤。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:119
+#: core/libs/database/coredb/coredbcopymanager.cpp:114
 #, fuzzy, kde-format
 #| msgid "Error while opening the target database."
 msgid "Error while preparing the target database."
 msgstr "開啟目標資料庫時發生錯誤。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:130
+#: core/libs/database/coredb/coredbcopymanager.cpp:126
 #, kde-format
 msgid "Error while scrubbing the target database."
 msgstr "清除目標資料庫時發生錯誤。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:142
+#: core/libs/database/coredb/coredbcopymanager.cpp:140
 #, kde-format
 msgid "Create Schema..."
 msgstr "建立綱要..."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:146
+#: core/libs/database/coredb/coredbcopymanager.cpp:144
 #, kde-format
 msgid "Error while creating the database schema."
 msgstr "建立資料庫綱要時發生錯誤。"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:288
+#: core/libs/database/coredb/coredbcopymanager.cpp:289
 #, fuzzy, kde-format
 msgid ""
 "Error while converting the database.\n"
@@ -28073,7 +28073,7 @@ msgid ""
 msgstr ""
 "找到較舊版的設定檔案 <b>%1</b>。請確保已安裝與執行中 digiKam 一同釋出的版本。"
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:206
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -28082,7 +28082,7 @@ msgstr ""
 "開啟資料庫時發生錯誤。\n"
 "digiKam 會試著自動重新連線到此資料庫。"
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:238
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -28091,43 +28091,43 @@ msgstr ""
 "<p><b>發生資料庫錯誤。</b></p>詳細資訊：\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:448
+#: core/libs/database/history/itemhistorygraphmodel.cpp:450
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "來源影像"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:477
+#: core/libs/database/history/itemhistorygraphmodel.cpp:479
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "影像歷史紀錄"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:560
+#: core/libs/database/history/itemhistorygraphmodel.cpp:562
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "衍生影像"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:570
+#: core/libs/database/history/itemhistorygraphmodel.cpp:572
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "相關影像"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:577
+#: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "完全相同的影像"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:633
+#: core/libs/database/history/itemhistorygraphmodel.cpp:635
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "中介步驟："
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:847
+#: core/libs/database/history/itemhistorygraphmodel.cpp:849
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28137,7 +28137,7 @@ msgstr ""
 "%1\n"
 "（原始影像）"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:852
+#: core/libs/database/history/itemhistorygraphmodel.cpp:854
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28147,7 +28147,7 @@ msgstr ""
 "%1\n"
 "（來源影像）"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:196
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -28166,7 +28166,7 @@ msgctxt "@item: filter model"
 msgid "No face"
 msgstr "沒有臉孔"
 
-#: core/libs/database/models/itemfiltermodel.cpp:398
+#: core/libs/database/models/itemfiltermodel.cpp:400
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -28219,7 +28219,7 @@ msgstr "在伺服器組態設定裡沒有 mysqld 設定的路徑。"
 msgid "Cannot create directory %1"
 msgstr "建立目錄失敗。"
 
-#: core/libs/database/server/databaseserver.cpp:428
+#: core/libs/database/server/databaseserver.cpp:432
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -28235,35 +28235,35 @@ msgstr ""
 "這表示無法讀取預設的組態設定檔 (mysql-global.conf) 或者目標檔案 (mysql.conf) "
 "無法寫入。"
 
-#: core/libs/database/server/databaseserver.cpp:450
+#: core/libs/database/server/databaseserver.cpp:454
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "找不到 MySQL 伺服器預設的組態設定 (mysql-global.conf)。"
 
-#: core/libs/database/server/databaseserver.cpp:498
+#: core/libs/database/server/databaseserver.cpp:501
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:546
+#: core/libs/database/server/databaseserver.cpp:549
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:609
+#: core/libs/database/server/databaseserver.cpp:612
 #, kde-format
 msgid "Could not start database server."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:651
+#: core/libs/database/server/databaseserver.cpp:654
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:682
+#: core/libs/database/server/databaseserver.cpp:685
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28272,30 +28272,30 @@ msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "資料庫處理在初始化校正期間意外地停止。<p>可執行檔：%1</p>”<p>處理錯誤：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:688
+#: core/libs/database/server/databaseserver.cpp:691
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:721
+#: core/libs/database/server/databaseserver.cpp:724
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "建立資料庫失敗<p>查詢錯誤：%1</p><p>資料庫錯誤：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:745
+#: core/libs/database/server/databaseserver.cpp:748
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "進行裝置偵測，請稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:789
+#: core/libs/database/server/databaseserver.cpp:792
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "無法啟動資料庫伺服器。"
 
-#: core/libs/database/server/databaseserver.cpp:825
+#: core/libs/database/server/databaseserver.cpp:828
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28327,25 +28327,25 @@ msgstr ""
 "要。(這表示這個 digiKam 版本太舊，或者資料庫不是最新的格式) 請使用 digikam 較"
 "新的版本。"
 
-#: core/libs/database/tags/facetags.cpp:405
+#: core/libs/database/tags/facetags.cpp:417
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:469
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/database/tags/facetags.cpp:489
+#: core/libs/database/tags/facetags.cpp:504
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未確認"
 
-#: core/libs/database/tags/facetags.cpp:509
+#: core/libs/database/tags/facetags.cpp:526
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28361,13 +28361,13 @@ msgstr ""
 "此資料庫無效：此 \"DBThumbnailsVersion\" 設定值不存在。無法校驗目前的資料庫網"
 "要版本。試著以空白資料庫啟動。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "檔案衝突"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28380,55 +28380,55 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動重新命名"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動略過"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, kde-format
 msgid "Copy Album"
 msgstr "複製相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Images"
 msgstr "複製影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Copy Files"
 msgstr "複製檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Album"
 msgstr "移動相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Images"
 msgstr "移動影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Files"
 msgstr "移動檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "修復"

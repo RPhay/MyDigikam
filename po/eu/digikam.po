@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-14 01:45+0000\n"
+"POT-Creation-Date: 2024-05-15 01:43+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3299,7 +3299,7 @@ msgid "Selection"
 msgstr "Hautapena"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -27291,7 +27291,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Kolore-espazioaren bihurketa"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Zakarrontzia"
@@ -27920,7 +27920,7 @@ msgid "Context menu"
 msgstr "Testuinguruko menua"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -28620,7 +28620,7 @@ msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "digiKam-ek ez ditu urruneko URLak onartzen bilduma gisa."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:247
-#: core/libs/database/collection/collectionmanager_location.cpp:450
+#: core/libs/database/collection/collectionmanager_location.cpp:452
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "Hautatutako karpeta ez da existitzen edo ez da irakurgarria"
@@ -28640,7 +28640,7 @@ msgstr "Biltegiratzeko euskarria esklusiboki identifika daiteke."
 msgid "The collection is located on your harddisk"
 msgstr "Bilduma disko gogorrean kokatuta dago."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:334
+#: core/libs/database/collection/collectionmanager_location.cpp:336
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -28657,7 +28657,7 @@ msgstr ""
 "etiketa esklusiboak zure CD eta DVDei, hauek digiKam-ekin erabiltzeko asmoa "
 "baduzu bederen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:349
+#: core/libs/database/collection/collectionmanager_location.cpp:351
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -28669,7 +28669,7 @@ msgstr ""
 "digiKam-ekin erabiltzeko, gogoratu hauei etiketa esklusibo bat ematea baita "
 "ere."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:365
+#: core/libs/database/collection/collectionmanager_location.cpp:367
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -28678,7 +28678,7 @@ msgstr ""
 "Biltegiratze aldagarriaren euskarri bat da, bere etiketarengatik (\"%1\") "
 "identifikatuko dena."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:381
+#: core/libs/database/collection/collectionmanager_location.cpp:383
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -28689,7 +28689,7 @@ msgstr ""
 "identifikatuko da.Ez dago identifikatzeko (UUID, etiketa) zehaztasun "
 "gehiagorik."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:398
+#: core/libs/database/collection/collectionmanager_location.cpp:400
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -28700,7 +28700,7 @@ msgstr ""
 "identifikatzea. Fitxategiaren bide-izena erabiliko da soilik "
 "identifikatzaile gisa. Lokaleko disko-gogorrarekin ongi funtzionatuko du."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:423
+#: core/libs/database/collection/collectionmanager_location.cpp:425
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -28709,7 +28709,7 @@ msgstr ""
 "Samba-ren partekatzea lokalki muntatuta egon behar du. Oraingoz digiKam-ek "
 "ez du smb:// URLrik onartzen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:428
+#: core/libs/database/collection/collectionmanager_location.cpp:430
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your network storage must be set up to be accessible as files and folders "
@@ -28722,13 +28722,13 @@ msgstr ""
 "sistema eragilearen bidez atzitzeko. digiKam-ek ez du urruneko URLrik "
 "onartzen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:465
+#: core/libs/database/collection/collectionmanager_location.cpp:467
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr ""
 "Bide-izen berdinean badago lehendik ere sarean partekatutako bilduma bat."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:478
+#: core/libs/database/collection/collectionmanager_location.cpp:480
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -28775,37 +28775,37 @@ msgstr ""
 "Errorea datu-basearen bizkarraldekoa irekitzean.\n"
 "%1"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:62
+#: core/libs/database/coredb/coredbcopymanager.cpp:53
 #, kde-format
 msgid "Error while opening the source database."
 msgstr "Errorea sorburu datu-basea irekitzean."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:72
+#: core/libs/database/coredb/coredbcopymanager.cpp:63
 #, kde-format
 msgid "Error while opening the target database."
 msgstr "Errorea helburuko datu-basea irekitzean."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:119
+#: core/libs/database/coredb/coredbcopymanager.cpp:114
 #, kde-format
 msgid "Error while preparing the target database."
 msgstr "Errorea jomuga datu-basea prestatzean."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:130
+#: core/libs/database/coredb/coredbcopymanager.cpp:126
 #, kde-format
 msgid "Error while scrubbing the target database."
 msgstr "Errorea jomuga datu-basea garbitzean."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:142
+#: core/libs/database/coredb/coredbcopymanager.cpp:140
 #, kde-format
 msgid "Create Schema..."
 msgstr "Sortu eskema..."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:146
+#: core/libs/database/coredb/coredbcopymanager.cpp:144
 #, kde-format
 msgid "Error while creating the database schema."
 msgstr "Errorea datu-basearen eskema sortzean."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:288
+#: core/libs/database/coredb/coredbcopymanager.cpp:289
 #, kde-format
 msgid ""
 "Error while converting the database.\n"
@@ -29133,7 +29133,7 @@ msgstr ""
 "ibiltzen ari den digiKam bertsioarekin askatu zen bertsioa instalatua "
 "dagoela."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:206
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -29142,7 +29142,7 @@ msgstr ""
 "Errorea datu-basea irekitzean.\n"
 "digiKam datu-basearekin automatikoki birkonektatzen saiatuko da."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:238
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -29151,43 +29151,43 @@ msgstr ""
 "<p><b>Datu-base errore bat gertatu da.</b></p>Zehaztasunak:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:448
+#: core/libs/database/history/itemhistorygraphmodel.cpp:450
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Sorburu irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:477
+#: core/libs/database/history/itemhistorygraphmodel.cpp:479
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Irudi historia"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:560
+#: core/libs/database/history/itemhistorygraphmodel.cpp:562
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Eratorritako irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:570
+#: core/libs/database/history/itemhistorygraphmodel.cpp:572
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Zerikusia duten irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:577
+#: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Irudi berberak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:633
+#: core/libs/database/history/itemhistorygraphmodel.cpp:635
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Bitarteko urratsak:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:847
+#: core/libs/database/history/itemhistorygraphmodel.cpp:849
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29197,7 +29197,7 @@ msgstr ""
 "%1\n"
 "(jatorrizko irudia)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:852
+#: core/libs/database/history/itemhistorygraphmodel.cpp:854
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29207,7 +29207,7 @@ msgstr ""
 "%1\n"
 "(sorburu irudia)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:196
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -29228,7 +29228,7 @@ msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Pas de flash"
 
-#: core/libs/database/models/itemfiltermodel.cpp:398
+#: core/libs/database/models/itemfiltermodel.cpp:400
 #, fuzzy, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -29288,7 +29288,7 @@ msgstr ""
 msgid "Cannot create directory %1"
 msgstr "Ezin da sortu %1 direktorioa"
 
-#: core/libs/database/server/databaseserver.cpp:428
+#: core/libs/database/server/databaseserver.cpp:432
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -29299,45 +29299,45 @@ msgstr ""
 "du konfiguratzeko fitxategi lehenetsia</p><p>%1</p><p>ez dela irakurgarria "
 "edo helburu fitxategia</p><p>%2</p><p>ezin dela idatzi.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:450
+#: core/libs/database/server/databaseserver.cpp:454
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Ezin da aurkitu MySQL zerbitzariaren konfigurazio lehenetsia (mysql-global."
 "conf)."
 
-#: core/libs/database/server/databaseserver.cpp:498
+#: core/libs/database/server/databaseserver.cpp:501
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Gailuaren detekzioa lanean diardu. Itxaron..."
 
-#: core/libs/database/server/databaseserver.cpp:546
+#: core/libs/database/server/databaseserver.cpp:549
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Ezin izan da abiatu datu-base hasieratzailea."
 
-#: core/libs/database/server/databaseserver.cpp:609
+#: core/libs/database/server/databaseserver.cpp:612
 #, kde-format
 msgid "Could not start database server."
 msgstr "Ezin izan da abiarazi datu-base zerbitzaria."
 
-#: core/libs/database/server/databaseserver.cpp:651
+#: core/libs/database/server/databaseserver.cpp:654
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Datu-base objektu baliogabea datu-base zerbitzariaren abioan"
 
-#: core/libs/database/server/databaseserver.cpp:682
+#: core/libs/database/server/databaseserver.cpp:685
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Datu-base prozesua ustekabean amaitu da hasierako konexioan."
 
-#: core/libs/database/server/databaseserver.cpp:688
+#: core/libs/database/server/databaseserver.cpp:691
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ezin da konektatu datu-basera 60 segundoz saiatu ondoren."
 
-#: core/libs/database/server/databaseserver.cpp:721
+#: core/libs/database/server/databaseserver.cpp:724
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29345,19 +29345,19 @@ msgstr ""
 "Huts egin du datu-basea sortzea<p>Itaun errorea: %1</p><p>Datu-base errorea: "
 "%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:745
+#: core/libs/database/server/databaseserver.cpp:748
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Gailuaren detekzioa lanean diardu. Itxaron..."
 
-#: core/libs/database/server/databaseserver.cpp:789
+#: core/libs/database/server/databaseserver.cpp:792
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Ezin izan da abiarazi datu-base zerbitzaria."
 
-#: core/libs/database/server/databaseserver.cpp:825
+#: core/libs/database/server/databaseserver.cpp:828
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29388,25 +29388,25 @@ msgstr ""
 "bertsio hau zaharregia dela adierazten du, edo datu-basearen formatua "
 "berriegia dela. Erabili digiKamen bertsio berriagoa."
 
-#: core/libs/database/tags/facetags.cpp:405
+#: core/libs/database/tags/facetags.cpp:417
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Jendartea"
 
-#: core/libs/database/tags/facetags.cpp:469
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/libs/database/tags/facetags.cpp:489
+#: core/libs/database/tags/facetags.cpp:504
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Berretsi gabea"
 
-#: core/libs/database/tags/facetags.cpp:509
+#: core/libs/database/tags/facetags.cpp:526
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "List of detected faces that need not be recognized"
@@ -29424,13 +29424,13 @@ msgstr ""
 "existitzen. Uneko datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu "
 "datu-base huts batekin."
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Irudi berriaren fitxategi-izena"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29443,58 +29443,58 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiatu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiatu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiatu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Album"
 msgstr "Mugitu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Images"
 msgstr "Mugitu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Files"
 msgstr "Mugitu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"

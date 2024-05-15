@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-14 01:45+0000\n"
+"POT-Creation-Date: 2024-05-15 01:43+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -3403,7 +3403,7 @@ msgid "Selection"
 msgstr "Selecção"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:886
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -27058,7 +27058,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversão de RAW do UFRaw"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:891
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Lixo"
@@ -27675,7 +27675,7 @@ msgid "Context menu"
 msgstr "Menu de contexto"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:901
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr "Esvaziar o Lixo"
@@ -28300,7 +28300,7 @@ msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "Infelizmente, o digiKam não suporta os URL's remotos como colecções."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:247
-#: core/libs/database/collection/collectionmanager_location.cpp:450
+#: core/libs/database/collection/collectionmanager_location.cpp:452
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "A pasta seleccionada não existe ou não é legível"
@@ -28320,7 +28320,7 @@ msgstr "O dispositivo de armazenamento pode ser identificado univocamente."
 msgid "The collection is located on your harddisk"
 msgstr "A colecção localiza-se no seu disco rígido"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:334
+#: core/libs/database/collection/collectionmanager_location.cpp:336
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -28337,7 +28337,7 @@ msgstr ""
 "lembre-se de lhes atribuir uma legenda única aos seus CD's e DVD's se os "
 "pretender usar com o digiKam."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:349
+#: core/libs/database/collection/collectionmanager_location.cpp:351
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -28348,7 +28348,7 @@ msgstr ""
 "aplicação de gravação de CD's. Se criar mais CD's para usar no digikam no "
 "futuro, lembre-se de lhes atribuir também uma legenda única."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:365
+#: core/libs/database/collection/collectionmanager_location.cpp:367
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -28357,7 +28357,7 @@ msgstr ""
 "Este é um suporte de armazenamento removível que será identificado pela sua "
 "legenda (\"%1\")"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:381
+#: core/libs/database/collection/collectionmanager_location.cpp:383
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -28367,7 +28367,7 @@ msgstr ""
 "Este item só será identificado pela localização no seu sistema (\"%1\"). Não "
 "existem mais meios de identificação disponíveis ((UUID, legenda)."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:398
+#: core/libs/database/collection/collectionmanager_location.cpp:400
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -28378,7 +28378,7 @@ msgstr ""
 "seu sistema. Será adicionado com a localização do ficheiro como "
 "identificador. Isto irá funcionar bem para o seu disco rígido local."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:423
+#: core/libs/database/collection/collectionmanager_location.cpp:425
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -28387,7 +28387,7 @@ msgstr ""
 "Tem de montar localmente a sua partilha de Samba. Infelizmente, o digiKam "
 "não suporta de momento os URL's 'smb://'. "
 
-#: core/libs/database/collection/collectionmanager_location.cpp:428
+#: core/libs/database/collection/collectionmanager_location.cpp:430
 #, kde-format
 msgid ""
 "Your network storage must be set up to be accessible as files and folders "
@@ -28397,13 +28397,13 @@ msgstr ""
 "como ficheiros e pastas no sistema operativo. O digiKam não suporta URL's "
 "remotos."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:465
+#: core/libs/database/collection/collectionmanager_location.cpp:467
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr ""
 "Já existe uma colecção para uma partilha de rede com a mesma localização."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:478
+#: core/libs/database/collection/collectionmanager_location.cpp:480
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -28450,37 +28450,37 @@ msgstr ""
 "Erro ao aceder à infra-estrutura da base de dados.\n"
 "%1"
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:62
+#: core/libs/database/coredb/coredbcopymanager.cpp:53
 #, kde-format
 msgid "Error while opening the source database."
 msgstr "Ocorreu um erro ao aceder à base de dados de origem."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:72
+#: core/libs/database/coredb/coredbcopymanager.cpp:63
 #, kde-format
 msgid "Error while opening the target database."
 msgstr "Ocorreu um erro ao aceder à base de dados de destino."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:119
+#: core/libs/database/coredb/coredbcopymanager.cpp:114
 #, kde-format
 msgid "Error while preparing the target database."
 msgstr "Ocorreu um erro ao preparar a base de dados de destino."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:130
+#: core/libs/database/coredb/coredbcopymanager.cpp:126
 #, kde-format
 msgid "Error while scrubbing the target database."
 msgstr "Ocorreu um erro ao preparar a base de dados de destino."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:142
+#: core/libs/database/coredb/coredbcopymanager.cpp:140
 #, kde-format
 msgid "Create Schema..."
 msgstr "Criar o Esquema..."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:146
+#: core/libs/database/coredb/coredbcopymanager.cpp:144
 #, kde-format
 msgid "Error while creating the database schema."
 msgstr "Ocorreu um erro ao criar o esquema da base de dados."
 
-#: core/libs/database/coredb/coredbcopymanager.cpp:288
+#: core/libs/database/coredb/coredbcopymanager.cpp:289
 #, kde-format
 msgid ""
 "Error while converting the database.\n"
@@ -28808,7 +28808,7 @@ msgstr ""
 "Certifique-se por favor que está instalada a versão lançada com a versão em "
 "execução do digiKam. "
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:206
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -28817,7 +28817,7 @@ msgstr ""
 "Ocorreu um erro ao aceder à base de dados.\n"
 "O digiKam irá tentar ligar-se de novo à base de dados."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:238
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -28826,43 +28826,43 @@ msgstr ""
 "<p><b>Ocorreu um erro na base de dados.</b></p>Detalhes:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:448
+#: core/libs/database/history/itemhistorygraphmodel.cpp:450
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Imagens de Origem"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:477
+#: core/libs/database/history/itemhistorygraphmodel.cpp:479
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Histórico de Imagens"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:560
+#: core/libs/database/history/itemhistorygraphmodel.cpp:562
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Imagens Derivadas"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:570
+#: core/libs/database/history/itemhistorygraphmodel.cpp:572
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Imagens Relacionadas"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:577
+#: core/libs/database/history/itemhistorygraphmodel.cpp:579
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Imagens Idênticas"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:633
+#: core/libs/database/history/itemhistorygraphmodel.cpp:635
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Passos Intermédios:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:847
+#: core/libs/database/history/itemhistorygraphmodel.cpp:849
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28872,7 +28872,7 @@ msgstr ""
 "%1\n"
 "(Imagem Original)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:852
+#: core/libs/database/history/itemhistorygraphmodel.cpp:854
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28882,7 +28882,7 @@ msgstr ""
 "%1\n"
 "(Imagem de Origem)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:192
+#: core/libs/database/item/scanner/itemscanner.cpp:196
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -28902,7 +28902,7 @@ msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Sem cara"
 
-#: core/libs/database/models/itemfiltermodel.cpp:398
+#: core/libs/database/models/itemfiltermodel.cpp:400
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
@@ -28959,7 +28959,7 @@ msgstr ""
 msgid "Cannot create directory %1"
 msgstr "Não é possível criar a pasta %1"
 
-#: core/libs/database/server/databaseserver.cpp:428
+#: core/libs/database/server/databaseserver.cpp:432
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28971,50 +28971,50 @@ msgstr ""
 "p><p>não está acessível ou não foi possível gravar o ficheiro de destino</"
 "p><p>%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:450
+#: core/libs/database/server/databaseserver.cpp:454
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Não foi possível encontrar a configuração por omissão do servidor de MySQL "
 "(mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:498
+#: core/libs/database/server/databaseserver.cpp:501
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Está em curso o pré-processamento, espere por favor."
 
-#: core/libs/database/server/databaseserver.cpp:546
+#: core/libs/database/server/databaseserver.cpp:549
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Não foi possível iniciar o comando de inicialização da base de dados."
 
-#: core/libs/database/server/databaseserver.cpp:609
+#: core/libs/database/server/databaseserver.cpp:612
 #, kde-format
 msgid "Could not start database server."
 msgstr "Não foi possível iniciar o servidor de base de dados."
 
-#: core/libs/database/server/databaseserver.cpp:651
+#: core/libs/database/server/databaseserver.cpp:654
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "O objecto da base de dados lido é inválido no arranque do servidor de bases "
 "de dados"
 
-#: core/libs/database/server/databaseserver.cpp:682
+#: core/libs/database/server/databaseserver.cpp:685
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "O processo da base de dados terminou inesperadamente durante a ligação "
 "inicial."
 
-#: core/libs/database/server/databaseserver.cpp:688
+#: core/libs/database/server/databaseserver.cpp:691
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Não foi possível ligar-se à base de dados ao fim de 60 segundos."
 
-#: core/libs/database/server/databaseserver.cpp:721
+#: core/libs/database/server/databaseserver.cpp:724
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -29022,19 +29022,19 @@ msgstr ""
 "Não foi possível criar a base de dados<p>Erro da consulta: %1</p><p>Erro da "
 "base de dados: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:745
+#: core/libs/database/server/databaseserver.cpp:748
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Está em curso o pré-processamento, espere por favor."
 
-#: core/libs/database/server/databaseserver.cpp:789
+#: core/libs/database/server/databaseserver.cpp:792
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Não foi possível actualizar a base de dados."
 
-#: core/libs/database/server/databaseserver.cpp:825
+#: core/libs/database/server/databaseserver.cpp:828
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29066,25 +29066,25 @@ msgstr ""
 "o formato da base de dados é demasiado recente). Use por favor a versão mais "
 "recente do digikam que tiver usado anteriormente."
 
-#: core/libs/database/tags/facetags.cpp:405
+#: core/libs/database/tags/facetags.cpp:417
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Pessoas"
 
-#: core/libs/database/tags/facetags.cpp:469
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Desconhecidas"
 
-#: core/libs/database/tags/facetags.cpp:489
+#: core/libs/database/tags/facetags.cpp:504
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Sem Confirmação"
 
-#: core/libs/database/tags/facetags.cpp:509
+#: core/libs/database/tags/facetags.cpp:526
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29101,13 +29101,13 @@ msgstr ""
 "versão actual do esquema da base de dados não pôde ser verificada. Tente "
 "iniciar com uma base de dados vazia. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:344
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflito de Ficheiros"
 
-#: core/libs/database/utils/ifaces/dio.cpp:345
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29126,55 +29126,55 @@ msgstr ""
 "Substituir automaticamente: os ficheiros em conflito serão sobrepostos.\n"
 "Ignorar automaticamente: os ficheiros em conflito serão ignorados."
 
-#: core/libs/database/utils/ifaces/dio.cpp:354
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Mudar o Nome Automaticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Sobrepor Automaticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ignorar Automaticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:855
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, kde-format
 msgid "Copy Album"
 msgstr "Copiar o Álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:860
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Images"
 msgstr "Copiar as Imagens"
 
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Copy Files"
 msgstr "Copiar os Ficheiros"
 
-#: core/libs/database/utils/ifaces/dio.cpp:871
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Album"
 msgstr "Mover o Álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:876
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Images"
 msgstr "Mover as Imagens"
 
-#: core/libs/database/utils/ifaces/dio.cpp:881
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Files"
 msgstr "Mover os Ficheiros"
 
-#: core/libs/database/utils/ifaces/dio.cpp:896
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Restore Trash"
 msgstr "Repor o Lixo"
