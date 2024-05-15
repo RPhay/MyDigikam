@@ -38,10 +38,6 @@ ActionCategorizedView::ActionCategorizedView(QWidget* const parent, bool autoScr
     m_verticalScrollAnimation   = new QPropertyAnimation(verticalScrollBar(),   "value", this);
 }
 
-ActionCategorizedView::~ActionCategorizedView()
-{
-}
-
 void ActionCategorizedView::setupIconMode()
 {
     setViewMode(QListView::IconMode);

@@ -70,18 +70,18 @@ public:
     };
 
     explicit DCategorizedSortFilterProxyModel(QObject* const parent = nullptr);
-    ~DCategorizedSortFilterProxyModel() override;
+    ~DCategorizedSortFilterProxyModel()                                                   override;
 
     /**
      * Overridden from QSortFilterProxyModel. Sorts the source model using
      * @p column for the given @p order.
      */
-    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)                       override;
 
     /**
      * @return whether the model is categorized or not. Disabled by default.
      */
-    bool isCategorizedModel() const;
+    bool isCategorizedModel()                                                       const;
 
     /**
      * Enables or disables the categorization feature.
@@ -93,12 +93,12 @@ public:
     /**
      * @return the column being used for sorting.
      */
-    int sortColumn() const;
+    int sortColumn()                                                                const;
 
     /**
      * @return the sort order being used for sorting.
      */
-    Qt::SortOrder sortOrder() const;
+    Qt::SortOrder sortOrder()                                                       const;
 
     /**
      * Set if the sorting using CategorySortRole will use a natural comparison
@@ -112,7 +112,7 @@ public:
     /**
      * @return whether it is being used a natural comparison for sorting. Enabled by default.
      */
-    bool sortCategoriesByNaturalComparison() const;
+    bool sortCategoriesByNaturalComparison()                                        const;
 
 protected:
     /**
@@ -128,7 +128,7 @@ protected:
      * @warning You usually won't need to reimplement this method when subclassing
      *          from DCategorizedSortFilterProxyModel.
      */
-    bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right)                const override;
 
     /**
      * This method has a similar purpose as lessThan() has on QSortFilterProxyModel.

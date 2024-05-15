@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT ActionCategorizedView : public DCategorizedView
 public:
 
     explicit ActionCategorizedView(QWidget* const parent = nullptr, bool autoScroll = false);
-    ~ActionCategorizedView()            override;
+    ~ActionCategorizedView()            override = default;
 
     void setupIconMode();
     void adjustGridSize();
@@ -50,9 +50,9 @@ protected:
 
 protected:
 
-    QPropertyAnimation* m_verticalScrollAnimation;
-    QPropertyAnimation* m_horizontalScrollAnimation;
-    bool                m_autoScroll;
+    QPropertyAnimation* m_verticalScrollAnimation   = nullptr;
+    QPropertyAnimation* m_horizontalScrollAnimation = nullptr;
+    bool                m_autoScroll                = false;
 };
 
 } // namespace Digikam

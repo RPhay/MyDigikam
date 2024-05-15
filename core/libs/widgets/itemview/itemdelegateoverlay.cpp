@@ -34,13 +34,7 @@ namespace Digikam
 {
 
 ItemDelegateOverlay::ItemDelegateOverlay(QObject* const parent)
-    : QObject   (parent),
-      m_view    (nullptr),
-      m_delegate(nullptr)
-{
-}
-
-ItemDelegateOverlay::~ItemDelegateOverlay()
+    : QObject(parent)
 {
 }
 
@@ -170,9 +164,7 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
 // --------------------------------------------------------------------------------------------
 
 AbstractWidgetDelegateOverlay::AbstractWidgetDelegateOverlay(QObject* const parent)
-    : ItemDelegateOverlay         (parent),
-      m_widget                    (nullptr),
-      m_mouseButtonPressedOnWidget(false)
+    : ItemDelegateOverlay(parent)
 {
 }
 

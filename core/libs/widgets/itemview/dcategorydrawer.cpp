@@ -43,7 +43,6 @@ public:
     DCategorizedView* view = nullptr;
 };
 
-
 DCategoryDrawer::DCategoryDrawer(DCategorizedView* const view)
      : QObject(view),
        d      (new Private(view))
@@ -159,8 +158,8 @@ int DCategoryDrawer::categoryHeight(const QModelIndex& index, const QStyleOption
     font.setBold(true);
     QFontMetrics fontMetrics(font);
 
-    const int height = fontMetrics.height() + 1  /* 1 pixel-width gradient */
-                                            + 11 /* top and bottom separation */;
+    const int height = fontMetrics.height() + 1     // 1 pixel-width gradient
+                                            + 11;   // top and bottom separation
     return height;
 }
 

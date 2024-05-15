@@ -56,8 +56,8 @@ public:
 
     explicit SparseModelIndexVector(int rowCount, QAbstractItemModel* const model_, int column_)
         : QVector<QModelIndex>(rowCount),
-          model(model_),
-          column(column_)
+          model               (model_),
+          column              (column_)
     {
     }
 
@@ -95,7 +95,7 @@ class Q_DECL_HIDDEN DCategorizedView::Private
 public:
 
     explicit Private(DCategorizedView* const listView);
-    ~Private();
+    ~Private() = default;
 
     // Methods
 

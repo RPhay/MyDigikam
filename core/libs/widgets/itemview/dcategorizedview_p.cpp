@@ -24,10 +24,6 @@ DCategorizedView::Private::Private(DCategorizedView* const lv)
 {
 }
 
-DCategorizedView::Private::~Private()
-{
-}
-
 const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& rect)
 {
     QModelIndex index;
@@ -89,9 +85,8 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
         // If we passed next item, stop searching for hits
 
         if (
-            qMax(rect.bottomRight().y(),
-                 rect.topLeft().y()) < qMin(indexVisualRect.topLeft().y(),
-                                            indexVisualRect.bottomRight().y())
+            qMax(rect.bottomRight().y(), rect.topLeft().y()) <
+            qMin(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y())
            )
         {
             break;
@@ -156,8 +151,7 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
         itemHeight = listView->gridSize().height();
         itemWidth  = listView->gridSize().width();
     }
-    // cppcheck-suppress knownConditionTrueFalse
-    else if (listView->gridSize().isEmpty() && !leftToRightFlow)
+    else if (listView->gridSize().isEmpty() && !leftToRightFlow)        // cppcheck-suppress knownConditionTrueFalse
     {
         itemHeight = biggestItemSize.height();
         itemWidth  = listView->viewport()->width() - listView->spacing() * 2;
@@ -229,8 +223,8 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
             ++rowsInt;
         }
 
-        retRect.setTop(retRect.top() +
-                       (rowsInt * itemHeight) +
+        retRect.setTop(retRect.top()                                 +
+                       (rowsInt * itemHeight)                        +
                        categoryDrawer->categoryHeight(index, option) +
                        listView->spacing() * 2);
 
@@ -282,11 +276,13 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
                   listView->viewport()->width() - listView->spacing() * 2,
                   0);
 
-    if (!proxyModel                       ||
+    if (
+        !proxyModel                       ||
         !categoryDrawer                   ||
         !proxyModel->isCategorizedModel() ||
         !proxyModel->rowCount()           ||
-        !categories.contains(category))
+        !categories.contains(category)
+       )
     {
         return QRect();
     }
@@ -524,11 +520,11 @@ void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
 
 #else
 
-    option = listView->viewOptions();
+    option        = listView->viewOptions();
 
 #endif
 
-    option.state               &= ~QStyle::State_MouseOver;
+    option.state &= ~QStyle::State_MouseOver;
 
     Q_FOREACH (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
     {

@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT ItemDelegateOverlay : public QObject
 public:
 
     explicit ItemDelegateOverlay(QObject* const parent = nullptr);
-    ~ItemDelegateOverlay() override;
+    ~ItemDelegateOverlay() override = default;
 
     /**
      * Called when the overlay was installed and shall begin working,
@@ -96,8 +96,8 @@ protected:
 
 protected:
 
-    QAbstractItemView*     m_view;
-    QAbstractItemDelegate* m_delegate;
+    QAbstractItemView*     m_view       = nullptr;
+    QAbstractItemDelegate* m_delegate   = nullptr;
 };
 
 #define REQUIRE_DELEGATE(Delegate)                                                                                                           \
@@ -205,9 +205,9 @@ protected:
 
 protected:
 
-    QWidget* m_widget;
+    QWidget* m_widget                       = nullptr;
 
-    bool     m_mouseButtonPressedOnWidget;
+    bool     m_mouseButtonPressedOnWidget   = false;
 };
 
 // -------------------------------------------------------------------------------------------
@@ -225,7 +225,7 @@ public:
      */
     void setActive(bool active)                 override;
 
-    ItemViewHoverButton* button()                 const;
+    ItemViewHoverButton* button()         const;
 
 protected:
 
@@ -265,7 +265,7 @@ class DIGIKAM_EXPORT PersistentWidgetDelegateOverlay : public AbstractWidgetDele
 public:
 
     explicit PersistentWidgetDelegateOverlay(QObject* const parent);
-    ~PersistentWidgetDelegateOverlay() override;
+    ~PersistentWidgetDelegateOverlay()                                  override;
 
     void setActive(bool active)                                         override;
 
