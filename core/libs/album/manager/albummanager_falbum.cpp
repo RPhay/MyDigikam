@@ -33,7 +33,8 @@ void AlbumManager::personItemsCount()
 {
     if (d->personListJob)
     {
-        disconnect(d->personListJob, nullptr, this, nullptr);
+        disconnect(d->personListJob, nullptr,
+                   this, nullptr);
 
         d->personListJob->cancel();
         d->personListJob = nullptr;

@@ -77,6 +77,7 @@ bool AlbumManager::handleCollectionStatusChange(const CollectionLocation& locati
 
             break;
         }
+
         case CollectionLocation::LocationAvailable:
         {
             switch (location.status())
@@ -121,7 +122,7 @@ bool AlbumManager::handleCollectionStatusChange(const CollectionLocation& locati
         addAlbumRoot(location);
         return true;
     }
-    else if (action == Remove && d->albumRootAlbumHash.value(location.id()))
+    else if ((action == Remove) && d->albumRootAlbumHash.value(location.id()))
     {
         removeAlbumRoot(location);
         return true;
@@ -194,6 +195,7 @@ void AlbumManager::slotCollectionLocationPropertiesChanged(const CollectionLocat
         if (album->title() != newLabel)
         {
             album->setTitle(newLabel);
+
             Q_EMIT signalAlbumRenamed(album);
         }
     }

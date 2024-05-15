@@ -196,7 +196,7 @@ void AlbumManager::invalidateGuardedPointers(Album* album)
 
     QMultiHash<Album*, Album**>::iterator it = d->guardedPointers.find(album);
 
-    for ( ; it != d->guardedPointers.end() && it.key() == album ; ++it)
+    for ( ; (it != d->guardedPointers.end()) && (it.key() == album) ; ++it)
     {
         if (it.value())
         {
@@ -216,7 +216,8 @@ void AlbumManager::getAlbumItemsCount()
 
     if (d->albumListJob)
     {
-        disconnect(d->albumListJob, nullptr, this, nullptr);
+        disconnect(d->albumListJob, nullptr,
+                   this, nullptr);
 
         d->albumListJob->cancel();
         d->albumListJob = nullptr;

@@ -306,9 +306,8 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
     {
         if (album->isAlbumRoot())
         {
-            CollectionLocation location =
-                CollectionManager::instance()->
-                    locationForAlbumRootId(album->albumRootId());
+            CollectionLocation location = CollectionManager::instance()->
+                                          locationForAlbumRootId(album->albumRootId());
 
             if (!location.isNull())
             {

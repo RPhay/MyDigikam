@@ -320,6 +320,7 @@ QPixmap AlbumThumbnailLoader::getTagThumbnailDirectly(TAlbum* const album)
     if      (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
+
         AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
 
         if (it != d->thumbnailMap.constEnd())
@@ -488,9 +489,8 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                 d->iconTagThumbThread->setThumbnailSize(d->iconSize);
                 d->iconTagThumbThread->setSendSurrogatePixmap(false);
 
-                connect(d->iconTagThumbThread,
-                        SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-                        SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
+                connect(d->iconTagThumbThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+                        this, SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
                         Qt::QueuedConnection);
             }
 
@@ -500,9 +500,8 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                 d->iconFaceThumbThread->setThumbnailSize(d->faceSize);
                 d->iconFaceThumbThread->setSendSurrogatePixmap(false);
 
-                connect(d->iconFaceThumbThread,
-                        SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-                        SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
+                connect(d->iconFaceThumbThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+                        this, SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
                         Qt::QueuedConnection);
             }
 
@@ -523,9 +522,8 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                 d->iconAlbumThumbThread->setThumbnailSize(d->iconSize);
                 d->iconAlbumThumbThread->setSendSurrogatePixmap(false);
 
-                connect(d->iconAlbumThumbThread,
-                        SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-                        SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
+                connect(d->iconAlbumThumbThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+                        this, SLOT(slotGotThumbnailFromIcon(LoadingDescription,QPixmap)),
                         Qt::QueuedConnection);
             }
 
@@ -651,6 +649,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
                 if (album)
                 {
                     d->thumbnailMap.insert(album->globalID(), thumbnail);
+
                     Q_EMIT signalThumbnail(album, thumbnail);
                 }
             }

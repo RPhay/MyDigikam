@@ -51,8 +51,10 @@ void AlbumManager::scanPAlbums()
     {
         // check that location of album is available
 
-        if (d->showOnlyAvailableAlbums &&
-            !CollectionManager::instance()->locationForAlbumRootId(info.albumRootId).isAvailable())
+        if (
+            d->showOnlyAvailableAlbums &&
+            !CollectionManager::instance()->locationForAlbumRootId(info.albumRootId).isAvailable()
+           )
         {
             continue;
         }
@@ -223,7 +225,7 @@ void AlbumManager::updateChangedPAlbums()
                         QString parentPath = info.relativePath;
                         parentPath.chop(name.length());
 
-                        if (parentPath != album->m_parentPath || info.albumRootId != album->albumRootId())
+                        if      ((parentPath != album->m_parentPath) || (info.albumRootId != album->albumRootId()))
                         {
                             // Handle actual move operations: trigger ScanPAlbums
 
@@ -235,6 +237,7 @@ void AlbumManager::updateChangedPAlbums()
                         {
                             album->setTitle(name);
                             updateAlbumPathHash();
+
                             Q_EMIT signalAlbumRenamed(album);
                         }
                     }
@@ -250,6 +253,7 @@ void AlbumManager::updateChangedPAlbums()
                     if (album->m_iconId != info.iconId)
                     {
                         album->m_iconId = info.iconId;
+
                         Q_EMIT signalAlbumIconChanged(album);
                     }
                 }
@@ -308,7 +312,8 @@ PAlbum* AlbumManager::findPAlbum(const QUrl& url) const
         return nullptr;
     }
 
-    return d->albumPathHash.value(PAlbumPath(location.id(), CollectionManager::instance()->album(location, url)));
+    return d->albumPathHash.value(PAlbumPath(location.id(),
+                                  CollectionManager::instance()->album(location, url)));
 }
 
 PAlbum* AlbumManager::findPAlbum(int id) const
@@ -389,7 +394,8 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
         return nullptr;
     }
 
-    QString albumPath = parent->isAlbumRoot() ? QString(QLatin1Char('/') + name) : QString(parent->albumPath() + QLatin1Char('/') + name);
+    QString albumPath = parent->isAlbumRoot() ? QString(QLatin1Char('/') + name)
+                                              : QString(parent->albumPath() + QLatin1Char('/') + name);
     int albumRootId   = parent->albumRootId();
 
     // first check if we have a sibling album with the same name
@@ -519,12 +525,15 @@ bool AlbumManager::renamePAlbum(PAlbum* album, const QString& newName,
         {
             subAlbum->m_parentPath = newAlbumPath + subAlbum->m_parentPath.mid(oldAlbumPath.length());
             access.db()->renameAlbum(subAlbum->id(), album->albumRootId(), subAlbum->albumPath());
+
             Q_EMIT signalAlbumNewPath(subAlbum);
+
             ++it;
         }
     }
 
     updateAlbumPathHash();
+
     Q_EMIT signalAlbumRenamed(album);
 
     ScanController::instance()->resumeCollectionScan();
@@ -610,6 +619,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
     }
 
     Q_EMIT signalAlbumAboutToBeDeleted(album);
+
     d->albumPathHash.remove(PAlbumPath(album));
     d->allAlbumsIdHash.remove(album->globalID());
 
@@ -620,6 +630,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
         if (album == d->currentAlbums.first())
         {
             d->currentAlbums.clear();
+
             Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
         }
     }
@@ -630,6 +641,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
     }
 
     Q_EMIT signalAlbumDeleted(album);
+
     quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
     delete album;
 

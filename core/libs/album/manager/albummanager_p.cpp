@@ -19,10 +19,6 @@
 namespace Digikam
 {
 
-PAlbumPath::PAlbumPath()
-{
-}
-
 PAlbumPath::PAlbumPath(int albumRootId, const QString& albumPath)
     : albumRootId(albumRootId),
       albumPath  (albumPath)

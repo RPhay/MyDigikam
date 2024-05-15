@@ -74,6 +74,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     cleanUp();
 
     d->currentAlbums.clear();
+
     Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
     Q_EMIT signalAlbumsCleared();
 
@@ -110,12 +111,18 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
             databaseError = i18n("The MySQL database directory was not found.");
         }
         else if (
-                 (!QFileInfo::exists(params.internalServerMysqlUpgradeCmd)                        &&
-                  QStandardPaths::findExecutable(params.internalServerMysqlUpgradeCmd).isEmpty()) ||
-                 (!QFileInfo::exists(params.internalServerMysqlServerCmd)                         &&
-                  QStandardPaths::findExecutable(params.internalServerMysqlServerCmd).isEmpty())  ||
-                 (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                          &&
-                  QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
+                 (
+                  !QFileInfo::exists(params.internalServerMysqlUpgradeCmd)                        &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlUpgradeCmd).isEmpty()
+                 ) ||
+                 (
+                  !QFileInfo::exists(params.internalServerMysqlServerCmd)                         &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlServerCmd).isEmpty()
+                 ) ||
+                 (
+                 !QFileInfo::exists(params.internalServerMysqlAdminCmd)                           &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty()
+                 )
                 )
         {
             databaseError = i18n("The MySQL binary tools was not found.");

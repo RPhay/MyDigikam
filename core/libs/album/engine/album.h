@@ -314,9 +314,10 @@ protected:
 
 private:
 
-     // Disable
+    // Disable
     Album()                         = delete;
     Album& operator==(const Album&) = delete;
+
     Q_DISABLE_COPY(Album)
 
 private:
@@ -362,7 +363,7 @@ public:
 
     /// Constructor for Trash album
     PAlbum(const QString& parentPath, int albumRoot);
-    ~PAlbum() override;
+    ~PAlbum() override = default;
 
     void setCaption(const QString& caption);
     void setCategory(const QString& category);
@@ -395,7 +396,8 @@ private:
     int        m_albumRootId        = -1;
 
     QString    m_path;
-    QString    m_parentPath;
+    QString    m_parentPath         = QLatin1String("/");
+;
     QString    m_category;
     QString    m_caption;
     qlonglong  m_iconId             = 0;
@@ -415,7 +417,7 @@ class DIGIKAM_GUI_EXPORT TAlbum : public Album
 public:
 
     TAlbum(const QString& title, int id, bool root = false);
-    ~TAlbum() override;
+    ~TAlbum() override = default;
 
     /**
      * @return The tag path, e.g. "/People/Friend/John" if leadingSlash is true,
@@ -463,7 +465,7 @@ public:
 public:
 
     explicit DAlbum(const QDate& date, bool root = false, Range range = Month);
-    ~DAlbum() override;
+    ~DAlbum() override = default;
 
     QDate     date()        const;
     Range     range()       const;
@@ -488,7 +490,7 @@ class DIGIKAM_GUI_EXPORT SAlbum : public Album
 public:
 
     SAlbum(const QString& title, int id, bool root = false);
-    ~SAlbum() override;
+    ~SAlbum() override = default;
 
     CoreDbUrl            databaseUrl()        const override;
     QString              query()              const;
@@ -567,7 +569,7 @@ class DIGIKAM_GUI_EXPORT AlbumIterator
 public:
 
     explicit AlbumIterator(Album* const album);
-    ~AlbumIterator();
+    ~AlbumIterator() = default;
 
     AlbumIterator& operator++();
     Album*         operator*();
@@ -577,6 +579,7 @@ private:
 
     // Disable
     AlbumIterator() = delete;
+
     Q_DISABLE_COPY(AlbumIterator)
 
 private:

@@ -117,7 +117,7 @@ class Q_DECL_HIDDEN PAlbumPath
 {
 public:
 
-    PAlbumPath();
+    PAlbumPath() = default;
     PAlbumPath(int albumRootId, const QString& albumPath);
     explicit PAlbumPath(const PAlbum* const album);
 

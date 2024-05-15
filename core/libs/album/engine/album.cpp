@@ -372,18 +372,15 @@ void Album::setUsedByLabelsTree(bool isUsed)
 int PAlbum::m_uniqueTrashId = -2;
 
 PAlbum::PAlbum(const QString& title)
-    : Album       (Album::PHYSICAL, 0, true),
-      m_parentPath(QLatin1Char('/'))
+    : Album(Album::PHYSICAL, 0, true)
 {
     setTitle(title);
     m_path.clear();
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& label)
-    : Album             (Album::PHYSICAL, -1, false),
-      m_isAlbumRootAlbum(true),
-      m_albumRootId     (albumRoot),
-      m_parentPath      (QLatin1Char('/'))
+    : Album        (Album::PHYSICAL, -1, false),
+      m_albumRootId(albumRoot)
 {
     // set the id to -1 (line above). AlbumManager may change that later.
 
@@ -410,10 +407,6 @@ PAlbum::PAlbum(const QString& parentPath, int albumRoot)
       m_parentPath      (parentPath + QLatin1Char('/'))
 {
     setTitle(i18n("Trash"));
-}
-
-PAlbum::~PAlbum()
-{
 }
 
 bool PAlbum::isAlbumRoot() const
@@ -521,10 +514,6 @@ TAlbum::TAlbum(const QString& title, int id, bool root)
     : Album(Album::TAG, id, root)
 {
     setTitle(title);
-}
-
-TAlbum::~TAlbum()
-{
 }
 
 QString TAlbum::tagPath(bool leadingSlash) const
@@ -638,10 +627,6 @@ DAlbum::DAlbum(const QDate& date, bool root, Range range)
     setTitle(dateTitle);
 }
 
-DAlbum::~DAlbum()
-{
-}
-
 QDate DAlbum::date() const
 {
     return m_date;
@@ -668,10 +653,6 @@ SAlbum::SAlbum(const QString& title, int id, bool root)
     : Album(Album::SEARCH, id, root)
 {
     setTitle(title);
-}
-
-SAlbum::~SAlbum()
-{
 }
 
 void SAlbum::setSearch(DatabaseSearch::Type type, const QString& query)
@@ -769,7 +750,7 @@ QString SAlbum::displayTitle() const
 
             case DatabaseSearch::HaarSearch:
             {
-                if (title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))
+                if      (title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))
                 {
                     return i18n("Current Fuzzy Image Search");
                 }
@@ -874,10 +855,6 @@ QString SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSearchType haarType)
 AlbumIterator::AlbumIterator(Album* const album)
     : m_current(album ? album->firstChild() : nullptr),
       m_root   (album)
-{
-}
-
-AlbumIterator::~AlbumIterator()
 {
 }
 

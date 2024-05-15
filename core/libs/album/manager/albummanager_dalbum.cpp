@@ -201,9 +201,12 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
         if (!yAlbum)
         {
             yAlbum = new DAlbum(QDate(year, 1, 1), false, DAlbum::Year);
+
             Q_EMIT signalAlbumAboutToBeAdded(yAlbum, d->rootDAlbum, d->rootDAlbum->lastChild());
+
             yAlbum->setParent(d->rootDAlbum);
             d->allAlbumsIdHash.insert(yAlbum->globalID(), yAlbum);
+
             Q_EMIT signalAlbumAdded(yAlbum);
         }
 
@@ -226,7 +229,9 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
          it6 != mAlbumMap.constEnd() ; ++it6)
     {
         DAlbum* const album = it6.value();
+
         Q_EMIT signalAlbumAboutToBeDeleted(album);
+
         d->allAlbumsIdHash.remove(album->globalID());
 
         Q_EMIT signalAlbumDeleted(album);
@@ -241,7 +246,9 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
          it7 != yAlbumMap.constEnd() ; ++it7)
     {
         DAlbum* const album = it7.value();
+
         Q_EMIT signalAlbumAboutToBeDeleted(album);
+
         d->allAlbumsIdHash.remove(album->globalID());
 
         Q_EMIT signalAlbumDeleted(album);

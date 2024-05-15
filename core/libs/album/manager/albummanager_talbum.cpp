@@ -280,7 +280,6 @@ TAlbum* AlbumManager::findTAlbum(const QString& tagPath) const
     }
 
     return nullptr;
-
 }
 
 TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
@@ -445,6 +444,7 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
     }
 
     removeTAlbum(album);
+
     Q_EMIT signalAlbumsUpdated(Album::TAG);
 
     return true;
@@ -484,6 +484,7 @@ bool AlbumManager::renameTAlbum(TAlbum* album,
     ChangingDB changing(d);
     CoreDbAccess().db()->setTagName(album->id(), name);
     album->setTitle(name);
+
     Q_EMIT signalAlbumRenamed(album);
 
     askUserForWriteChangedTAlbumToFiles(album);
@@ -544,8 +545,8 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     }
 
     d->currentlyMovingAlbum = album;
-    Q_EMIT signalAlbumAboutToBeMoved(album);
 
+    Q_EMIT signalAlbumAboutToBeMoved(album);
     Q_EMIT signalAlbumAboutToBeDeleted(album);
 
     if (album->parent())
@@ -554,15 +555,16 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     }
 
     album->setParent(nullptr);
+
     Q_EMIT signalAlbumDeleted(album);
     Q_EMIT signalAlbumHasBeenDeleted(reinterpret_cast<quintptr>(album));
-
     Q_EMIT signalAlbumAboutToBeAdded(album, newParent, newParent->lastChild());
+
     ChangingDB changing(d);
     CoreDbAccess().db()->setTagParentID(album->id(), newParent->id());
     album->setParent(newParent);
-    Q_EMIT signalAlbumAdded(album);
 
+    Q_EMIT signalAlbumAdded(album);
     Q_EMIT signalAlbumMoved(album);
     Q_EMIT signalAlbumsUpdated(Album::TAG);
 
@@ -943,6 +945,7 @@ void AlbumManager::removeTAlbum(TAlbum* album)
     }
 
     Q_EMIT signalAlbumAboutToBeDeleted(album);
+
     d->allAlbumsIdHash.remove(album->globalID());
 
     if (!d->currentAlbums.isEmpty())
@@ -990,6 +993,7 @@ void AlbumManager::slotTagsJobData(const QHash<int, int>& tagsStatHash)
     }
 
     d->tAlbumsCount = tagsStatHash;
+
     Q_EMIT signalTAlbumsDirty(tagsStatHash);
 }
 
@@ -1098,8 +1102,10 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& i
 {
     MetaEngineSettings* const settings = MetaEngineSettings::instance();
 
-    if ((!settings->settings().saveTags &&
-         !settings->settings().saveFaceTags) || imageIds.isEmpty())
+    if (
+        (!settings->settings().saveTags && !settings->settings().saveFaceTags) ||
+        imageIds.isEmpty()
+       )
     {
         return;
     }

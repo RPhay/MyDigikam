@@ -42,8 +42,8 @@ AlbumManager::AlbumManager()
     qRegisterMetaType<QHash<int,int>>("QHash<int,int>");
     qRegisterMetaType<QMap<QString,QHash<int,int> >>("QMap<QString,QHash<int,int> >");
 
-    internalInstance = this;
-    d->albumWatch    = new AlbumWatch(this);
+    internalInstance    = this;
+    d->albumWatch       = new AlbumWatch(this);
 
     // these operations are pretty fast, no need for long queuing
 
@@ -111,6 +111,7 @@ AlbumManager::~AlbumManager()
     delete d->rootSAlbum;
 
     internalInstance = nullptr;
+
     delete d;
 }
 
@@ -120,7 +121,8 @@ void AlbumManager::cleanUp()
 
     if (d->dateListJob)
     {
-        disconnect(d->dateListJob, nullptr, this, nullptr);
+        disconnect(d->dateListJob, nullptr,
+                   this, nullptr);
 
         d->dateListJob->cancel();
         d->dateListJob = nullptr;
@@ -128,7 +130,8 @@ void AlbumManager::cleanUp()
 
     if (d->albumListJob)
     {
-        disconnect(d->albumListJob, nullptr, this, nullptr);
+        disconnect(d->albumListJob, nullptr,
+                   this, nullptr);
 
         d->albumListJob->cancel();
         d->albumListJob = nullptr;
@@ -136,7 +139,8 @@ void AlbumManager::cleanUp()
 
     if (d->tagListJob)
     {
-        disconnect(d->tagListJob, nullptr, this, nullptr);
+        disconnect(d->tagListJob, nullptr,
+                   this, nullptr);
 
         d->tagListJob->cancel();
         d->tagListJob = nullptr;
@@ -144,7 +148,8 @@ void AlbumManager::cleanUp()
 
     if (d->personListJob)
     {
-        disconnect(d->personListJob, nullptr, this, nullptr);
+        disconnect(d->personListJob, nullptr,
+                   this, nullptr);
 
         d->personListJob->cancel();
         d->personListJob = nullptr;
@@ -177,13 +182,19 @@ void AlbumManager::startScan()
     insertTAlbum(d->rootTAlbum, nullptr);
 
     d->rootSAlbum = new SAlbum(i18n("Searches"), 0, true);
+
     Q_EMIT signalAlbumAboutToBeAdded(d->rootSAlbum, nullptr, nullptr);
+
     d->allAlbumsIdHash[d->rootSAlbum->globalID()] = d->rootSAlbum;
+
     Q_EMIT signalAlbumAdded(d->rootSAlbum);
 
     d->rootDAlbum = new DAlbum(QDate(), true);
+
     Q_EMIT signalAlbumAboutToBeAdded(d->rootDAlbum, nullptr, nullptr);
+
     d->allAlbumsIdHash[d->rootDAlbum->globalID()] = d->rootDAlbum;
+
     Q_EMIT signalAlbumAdded(d->rootDAlbum);
 
     // Create albums for album roots. Reuse logic implemented in the method
@@ -300,7 +311,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
             if ((element == SearchXml::Field) && (reader.fieldName().compare(QLatin1String("imageid")) == 0))
             {
                 const auto list = reader.valueToLongLongList();
-                images = QSet<qlonglong>(list.begin(), list.end());
+                images          = QSet<qlonglong>(list.begin(), list.end());
             }
         }
 

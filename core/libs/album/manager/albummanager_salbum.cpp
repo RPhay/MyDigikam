@@ -70,9 +70,11 @@ void AlbumManager::scanSAlbums()
         {
             SAlbum* const album = oldSearches[info.id];
 
-            if ((info.name  != album->title())      ||
+            if (
+                (info.name  != album->title())      ||
                 (info.type  != album->searchType()) ||
-                (info.query != album->query()))
+                (info.query != album->query())
+               )
             {
                 QString oldName = album->title();
 
@@ -100,6 +102,7 @@ void AlbumManager::scanSAlbums()
     Q_FOREACH (SAlbum* const album, oldSearches)
     {
         Q_EMIT signalAlbumAboutToBeDeleted(album);
+
         d->allAlbumsIdHash.remove(album->globalID());
 
         Q_EMIT signalAlbumDeleted(album);
@@ -194,7 +197,9 @@ SAlbum* AlbumManager::createSAlbum(const QString& name,
     }
 
     album = new SAlbum(name, id);
+
     Q_EMIT signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
+
     album->setSearch(type, query);
     album->setParent(d->rootSAlbum);
 
@@ -292,9 +297,11 @@ void AlbumManager::slotSearchChange(const SearchChangeset& changeset)
             {
                 Album* const currentAlbum = d->currentAlbums.first();
 
-                if (currentAlbum                            &&
+                if (
+                    currentAlbum                            &&
                     (currentAlbum->type() == Album::SEARCH) &&
-                    (currentAlbum->id()   == changeset.searchId()))
+                    (currentAlbum->id()   == changeset.searchId())
+                   )
                 {
                     // the pointer is the same, but the contents changed
 

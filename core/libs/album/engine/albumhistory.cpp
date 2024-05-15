@@ -71,7 +71,9 @@ public:
         albums.append(a);
     }
 
-    HistoryItem(const QList<Album*>& a, QWidget* const w, const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
+    HistoryItem(const QList<Album*>& a, QWidget* const w,
+                const QHash<LabelsTreeView::Labels,
+                QList<int> >& selectedLabels)
         : widget(w),
           labels(selectedLabels)
     {
@@ -514,6 +516,7 @@ void AlbumHistory::slotAlbumSelected()
     if (d->historyPos.contains(albumList))
     {
         d->blockSelection = true;
+
         Q_EMIT signalSetCurrent(d->historyPos[albumList].current.id());
     }
 }
