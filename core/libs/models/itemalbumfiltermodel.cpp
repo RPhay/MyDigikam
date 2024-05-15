@@ -151,8 +151,10 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
                 return 0;
             }
 
-            if ((d->sorter.sortRole == ItemSortSettings::SortByCreationDate) ||
-                (d->sorter.sortRole == ItemSortSettings::SortByModificationDate))
+            if (
+                (d->sorter.sortRole == ItemSortSettings::SortByCreationDate) ||
+                (d->sorter.sortRole == ItemSortSettings::SortByModificationDate)
+               )
             {
                 // Here we want to sort the categories by album date if images are sorted by date.
                 // We must still make sure that categorization is unique!

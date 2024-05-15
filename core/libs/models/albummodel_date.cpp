@@ -49,9 +49,11 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
         // do not search through months if we are sure, that the year already
         // does not match
 
-        if (yearAlbum                            &&
+        if (
+            yearAlbum                            &&
             (yearAlbum->range() == DAlbum::Year) &&
-            (yearAlbum->date().year() != date.year()))
+            (yearAlbum->date().year() != date.year())
+           )
         {
             continue;
         }
@@ -63,10 +65,12 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
             QModelIndex month        = index(monthIndex, 0, year);
             DAlbum* const monthAlbum = albumForIndex(month);
 
-            if (monthAlbum                                  &&
+            if (
+                monthAlbum                                  &&
                 (monthAlbum->range() == DAlbum::Month)      &&
                 (monthAlbum->date().year() == date.year())  &&
-                (monthAlbum->date().month() == date.month()))
+                (monthAlbum->date().month() == date.month())
+               )
             {
                 return month;
             }

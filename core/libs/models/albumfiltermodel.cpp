@@ -408,7 +408,10 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
     if ((leftAlbum->type() == Album::TAG) && (rightAlbum->type() == Album::TAG))
     {
-        if ((leftAlbum->id() == FaceTags::unconfirmedPersonTagId()) != (rightAlbum->id() == FaceTags::unconfirmedPersonTagId()))
+        if (
+            (leftAlbum->id()  == FaceTags::unconfirmedPersonTagId()) !=
+            (rightAlbum->id() == FaceTags::unconfirmedPersonTagId())
+           )
         {
             // unconfirmed tag album go to the top, regardless of sort role
 
@@ -416,7 +419,10 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
                                                        : (leftAlbum->id() != FaceTags::unconfirmedPersonTagId());
         }
 
-        if ((leftAlbum->id() == FaceTags::unknownPersonTagId()) != (rightAlbum->id() == FaceTags::unknownPersonTagId()))
+        if (
+            (leftAlbum->id() == FaceTags::unknownPersonTagId()) !=
+            (rightAlbum->id() == FaceTags::unknownPersonTagId())
+           )
         {
             // unknown tag albums go to the top, regardless of sort role
 
@@ -426,7 +432,10 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
         // Verify this, to prevent auto-creation of Ignored Tag.
 
-        if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
+        if (
+            (leftAlbum->id() == FaceTags::ignoredPersonTagId()) !=
+            (rightAlbum->id() == FaceTags::ignoredPersonTagId())
+           )
         {
             // ignored tag albums go to the top, regardless of sort role
 
@@ -458,16 +467,20 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     {
         // trash albums go to the bottom, regardless of sort role
 
-        return (sortOrder() == Qt::AscendingOrder) ? !leftAlbum->isTrashAlbum()
-                                                   : leftAlbum->isTrashAlbum();
+        return (
+                (sortOrder() == Qt::AscendingOrder) ? !leftAlbum->isTrashAlbum()
+                                                    : leftAlbum->isTrashAlbum()
+               );
     }
 
     QVariant valLeft                        = dataForCurrentSortRole(leftAlbum);
     QVariant valRight                       = dataForCurrentSortRole(rightAlbum);
     ApplicationSettings::AlbumSortRole role = ApplicationSettings::instance()->getAlbumSortRole();
 
-    if (((role == ApplicationSettings::ByDate) || (role == ApplicationSettings::ByCategory)) &&
-        (valLeft == valRight))
+    if (
+        ((role == ApplicationSettings::ByDate) || (role == ApplicationSettings::ByCategory)) &&
+        (valLeft == valRight)
+       )
     {
         return QSortFilterProxyModel::lessThan(left, right);
     }

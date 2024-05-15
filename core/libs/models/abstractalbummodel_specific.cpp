@@ -63,6 +63,7 @@ void AbstractSpecificAlbumModel::slotGotThumbnailFromIcon(Album* album, const QP
     }
 
     QModelIndex index = indexForAlbum(album);
+
     Q_EMIT dataChanged(index, index);
 }
 
@@ -73,7 +74,7 @@ void AbstractSpecificAlbumModel::slotThumbnailLost(Album*)
 
 void AbstractSpecificAlbumModel::slotReloadThumbnails()
 {
-    // Q_EMIT dataChanged() for all albums
+    // Emit dataChanged() for all albums
 
     emitDataChangedForChildren(rootAlbum());
 }
@@ -93,7 +94,7 @@ void AbstractSpecificAlbumModel::emitDataChangedForChildren(Album* album)
 
             emitDataChangedForChildren(child);
 
-            // Q_EMIT signal for child
+            // Emit signal for child
 
             QModelIndex index = indexForAlbum(child);
 

@@ -173,6 +173,7 @@ void ItemAlbumModel::openAlbum(const QList<Album*>& albums)
     /**
      * Extra safety, ensure that no null pointers are added
      */
+
     Q_FOREACH (Album* const a, albums)
     {
         if (a)

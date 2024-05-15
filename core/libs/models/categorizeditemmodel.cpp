@@ -73,7 +73,7 @@ static QString adjustedActionText(const QAction* const action)
 
     while ((slashPos = text.indexOf(QLatin1Char('/'), slashPos + 1)) != -1)
     {
-        if ((slashPos == 0) || (slashPos == (text.length()-1)))
+        if ((slashPos == 0) || (slashPos == (text.length() - 1)))
         {
             continue;
         }
@@ -84,7 +84,7 @@ static QString adjustedActionText(const QAction* const action)
         }
 
         text.replace(slashPos, 1, QLatin1Char(','));
-        text.insert(slashPos+1, QLatin1Char(' '));
+        text.insert(slashPos + 1, QLatin1Char(' '));
     }
 
     return text;
@@ -153,7 +153,7 @@ protected:
     {
         Q_FOREACH (QAction* const a, w->actions())
         {
-            if (a->menu())
+            if      (a->menu())
             {
                 enumerateActions(a->menu(), a->menu()->menuAction());
             }

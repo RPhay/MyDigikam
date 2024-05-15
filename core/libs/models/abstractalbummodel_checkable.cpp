@@ -82,7 +82,7 @@ void AbstractCheckableAlbumModel::setCheckable(bool isCheckable)
 
 bool AbstractCheckableAlbumModel::isCheckable() const
 {
-    return d->extraFlags & Qt::ItemIsUserCheckable;
+    return (d->extraFlags & Qt::ItemIsUserCheckable);
 }
 
 void AbstractCheckableAlbumModel::setRootCheckable(bool isCheckable)
@@ -188,6 +188,7 @@ void AbstractCheckableAlbumModel::resetAllCheckedAlbums()
         if (it.value() != Qt::Unchecked)
         {
             QModelIndex index = indexForAlbum(it.key());
+
             Q_EMIT dataChanged(index, index, d->staticVectorContainingCheckStateRole);
             Q_EMIT checkStateChanged(it.key(), Qt::Unchecked);
         }
@@ -276,8 +277,10 @@ QVariant AbstractCheckableAlbumModel::albumData(Album* a, int role) const
 {
     if (role == Qt::CheckStateRole)
     {
-        if ((d->extraFlags & Qt::ItemIsUserCheckable) &&
-            (!a->isRoot() || d->rootIsCheckable))
+        if (
+            (d->extraFlags & Qt::ItemIsUserCheckable) &&
+            (!a->isRoot() || d->rootIsCheckable)
+           )
         {
             // with Qt::Unchecked as default, albums not in the hash (initially all)
             // are simply regarded as unchecked
@@ -333,7 +336,7 @@ Qt::ItemFlags AbstractCheckableAlbumModel::flags(const QModelIndex& index) const
         }
     }
 
-    return AbstractCountingAlbumModel::flags(index) | extraFlags;
+    return (AbstractCountingAlbumModel::flags(index) | extraFlags);
 }
 
 bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVariant& value, int role)
@@ -356,6 +359,7 @@ bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVaria
         qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
 */
         d->checkedAlbums.insert(album, state);
+
         Q_EMIT dataChanged(index, index);
         Q_EMIT checkStateChanged(album, state);
 

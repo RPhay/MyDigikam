@@ -498,7 +498,7 @@ Qt::ItemFlags AbstractAlbumModel::itemFlags(Album*) const
 
 bool AbstractAlbumModel::filterAlbum(Album* album) const
 {
-    return (album && album->type() == d->type);
+    return (album && (album->type() == d->type));
 }
 
 void AbstractAlbumModel::slotAlbumAboutToBeAdded(Album* album, Album* parent, Album* prev)
@@ -508,7 +508,7 @@ void AbstractAlbumModel::slotAlbumAboutToBeAdded(Album* album, Album* parent, Al
         return;
     }
 
-    if (album->isRoot() && d->rootBehavior == IgnoreRootAlbum)
+    if (album->isRoot() && (d->rootBehavior == IgnoreRootAlbum))
     {
         d->rootAlbum = album;
 
@@ -517,7 +517,7 @@ void AbstractAlbumModel::slotAlbumAboutToBeAdded(Album* album, Album* parent, Al
 
     // start inserting operation
 
-    int row                 = prev ? prev->rowFromAlbum()+1 : 0;
+    int row                 = prev ? prev->rowFromAlbum() + 1 : 0;
     QModelIndex parentIndex = indexForAlbum(parent);
     beginInsertRows(parentIndex, row, row);
 

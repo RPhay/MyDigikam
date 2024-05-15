@@ -37,7 +37,7 @@ public:
      * Create a model containing all physical albums
      */
     explicit AlbumModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
-    ~AlbumModel() override;
+    ~AlbumModel() override = default;
 
     PAlbum* albumForIndex(const QModelIndex& index) const;
 

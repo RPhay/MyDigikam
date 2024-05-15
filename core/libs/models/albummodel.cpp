@@ -34,10 +34,6 @@ AlbumModel::AlbumModel(RootAlbumBehavior rootBehavior, QObject* const parent)
     setCountHash(AlbumManager::instance()->getPAlbumsCount());
 }
 
-AlbumModel::~AlbumModel()
-{
-}
-
 PAlbum* AlbumModel::albumForIndex(const QModelIndex& index) const
 {
     return static_cast<PAlbum*>(AbstractCheckableAlbumModel::albumForIndex(index));
@@ -76,9 +72,11 @@ Album* AlbumModel::albumForId(int id) const
 
 QVariant AlbumModel::albumData(Album* a, int role) const
 {
-    if ((role == Qt::DisplayRole) &&
-         showCount()              &&
-         a->isTrashAlbum())
+    if (
+        (role == Qt::DisplayRole) &&
+        showCount()               &&
+        a->isTrashAlbum()
+       )
     {
         PAlbum* const palbum = static_cast<PAlbum*>(a->parent());
 

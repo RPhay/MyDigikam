@@ -43,10 +43,12 @@ TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
 
 QVariant TagModel::albumData(Album* a, int role) const
 {
-    if ((role == Qt::DisplayRole)                    &&
+    if (
+        (role == Qt::DisplayRole)                    &&
         !a->isRoot()                                 &&
         m_unconfirmedFaceCount.contains(a->id())     &&
-        (a->id() != FaceTags::unknownPersonTagId()))
+        (a->id() != FaceTags::unknownPersonTagId())
+       )
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
                       i18ncp("@info: unconfirmed faces in album", " (%1 new)", " (%1 new)",
@@ -97,8 +99,10 @@ QVariant TagModel::decorationRoleData(Album* album) const
 
 QVariant TagModel::fontRoleData(Album* a) const
 {
-    if (m_unconfirmedFaceCount.contains(a->id())  &&
-        (a->id() != FaceTags::unknownPersonTagId()))
+    if (
+        m_unconfirmedFaceCount.contains(a->id())  &&
+        (a->id() != FaceTags::unknownPersonTagId())
+       )
     {
         QFont font;
         font.setBold(true);
