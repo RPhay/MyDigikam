@@ -52,8 +52,8 @@ private:
 
 // ----------------------------------------------------------------------------------------
 
-PointTransformAffine operator* (const PointTransformAffine& lhs,
-                                const PointTransformAffine& rhs);
+PointTransformAffine operator*(const PointTransformAffine& lhs,
+                               const PointTransformAffine& rhs);
 
 // ----------------------------------------------------------------------------------------
 

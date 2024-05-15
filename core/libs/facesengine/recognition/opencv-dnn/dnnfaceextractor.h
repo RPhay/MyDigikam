@@ -40,7 +40,7 @@ class DIGIKAM_GUI_EXPORT DNNFaceExtractor
 
 public:
 
-    explicit DNNFaceExtractor();
+    DNNFaceExtractor();
     DNNFaceExtractor(const DNNFaceExtractor&);
     ~DNNFaceExtractor();
 

@@ -401,7 +401,7 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
 
     if      (method == DB)
     {
-        if (! FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
+        if (!FaceDbAccess().db()->insertToTreeDb(nodeId, nodePos))
         {
             qCWarning(DIGIKAM_FACEDB_LOG) << "Error insert face embedding";
 

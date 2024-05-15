@@ -119,8 +119,10 @@ template<class T>
 std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
                                        const std::vector<std::vector<T> >& v2)
 {
-    Q_ASSERT((v1.size()    == v2.size())     &&
-             (v1[0].size() == v2[0].size()));
+    Q_ASSERT(
+             (v1.size()    == v2.size())     &&
+             (v1[0].size() == v2[0].size())
+            );
 
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(),0));
 

@@ -39,13 +39,11 @@ namespace Digikam
 {
 
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
-    : DNNFaceDetectorBase(1.0F / 255.0F, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
+    : DNNFaceDetectorBase(1.0F / 255.0F,
+                          cv::Scalar(0.0, 0.0, 0.0),
+                          cv::Size(416, 416))
 {
     loadModels();
-}
-
-DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
-{
 }
 
 bool DNNFaceDetectorYOLO::loadModels()

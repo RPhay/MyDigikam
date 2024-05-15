@@ -23,14 +23,7 @@ class FaceDb::DataNode
 {
 public:
 
-    explicit DataNode()
-        : nodeID    (0),
-          label     (0),
-          splitAxis (0),
-          left      (-1),
-          right     (-1)
-    {
-    }
+    DataNode() = default;
 
     bool isNull() const
     {
@@ -39,11 +32,11 @@ public:
 
 public:
 
-    int     nodeID;
-    int     label;
-    int     splitAxis;
-    int     left;
-    int     right;
+    int     nodeID      = 0;
+    int     label       = 0;
+    int     splitAxis   = 0;
+    int     left        = -1;
+    int     right       = -1;
     cv::Mat position;
     cv::Mat minRange;
     cv::Mat maxRange;
@@ -198,6 +191,7 @@ int FaceDb::findParentTreeDb(const cv::Mat& nodePos, bool& leftChild, int& paren
             }
 
             qCWarning(DIGIKAM_FACEDB_LOG) << "Error query parent =" << parent << query.lastError();
+
             return -1;
         }
 
@@ -263,8 +257,10 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
 
     const float sqrdistanceToCurrentNode = KDNode::sqrDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128);
 
-    if ((sqrdistanceToCurrentNode < sqRange) &&
-        (KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold))
+    if (
+        (sqrdistanceToCurrentNode < sqRange) &&
+        (KDNode::cosDistance(position.ptr<float>(), subTree.position.ptr<float>(), 128) > cosThreshold)
+       )
     {
         neighborList[sqrdistanceToCurrentNode].append(subTree.label);
 

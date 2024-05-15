@@ -113,9 +113,11 @@ KDNode::KDNode(const cv::Mat& nodePos,
     : d(new Private(nodePos, identity, splitAxis, dimension))
 {
     Q_ASSERT(splitAxis < dimension);
-    Q_ASSERT((nodePos.rows   == 1)         &&
+    Q_ASSERT(
+             (nodePos.rows   == 1)         &&
              (nodePos.cols   == dimension) &&
-             (nodePos.type() == CV_32F));
+             (nodePos.type() == CV_32F)
+            );
 }
 
 KDNode::~KDNode()
@@ -125,9 +127,13 @@ KDNode::~KDNode()
 
 KDNode* KDNode::insert(const cv::Mat& nodePos, const int identity)
 {
-    if (!((nodePos.rows   == 1)              &&
+    if (
+        !(
+          (nodePos.rows   == 1)              &&
           (nodePos.cols   == d->nbDimension) &&
-          (nodePos.type() == CV_32F)))
+          (nodePos.type() == CV_32F)
+         )
+       )
     {
         return nullptr;
     }
@@ -186,8 +192,10 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
 
     // NOTE: both Euclidean distance and cosine distance can help to avoid error in similarity prediction
 
-    if ((sqrDistanceToCurrentNode < sqRange) &&
-        (cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension) > cosThreshold))
+    if (
+        (sqrDistanceToCurrentNode < sqRange) &&
+        (cosDistance(position.ptr<float>(), d->position.ptr<float>(), d->nbDimension) > cosThreshold)
+       )
     {
         neighborList[sqrDistanceToCurrentNode].append(d->identity);
 
@@ -316,9 +324,13 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
 
 void KDNode::updateRange(const cv::Mat& pos)
 {
-    if (!((pos.rows   == 1)              &&
+    if (
+        !(
+          (pos.rows   == 1)              &&
           (pos.cols   == d->nbDimension) &&
-          (pos.type() == CV_32F)))
+          (pos.type() == CV_32F)
+         )
+       )
     {
         return;
     }

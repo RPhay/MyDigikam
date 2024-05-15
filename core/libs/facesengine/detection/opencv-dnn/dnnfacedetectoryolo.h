@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT DNNFaceDetectorYOLO: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorYOLO();
-    ~DNNFaceDetectorYOLO()                                        override;
+    ~DNNFaceDetectorYOLO()                                        override = default;
 
     bool loadModels();
 

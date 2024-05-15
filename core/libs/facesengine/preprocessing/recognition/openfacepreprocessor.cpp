@@ -39,9 +39,9 @@ namespace Digikam
   * for matrix faceTemplate below.
   */
 static float FACE_TEMPLATE[3][2] = {
-                                       {18.639072F, 16.249624F},
-                                       {75.73048F,  15.18443F },
-                                       {47.515285F, 49.38637F }
+                                       { 18.639072F, 16.249624F },
+                                       { 75.73048F,  15.18443F  },
+                                       { 47.515285F, 49.38637F  }
                                    };
 
 // ---------------------------------------------------------------------------------------------------
@@ -49,11 +49,7 @@ static float FACE_TEMPLATE[3][2] = {
 OpenfacePreprocessor::OpenfacePreprocessor()
     : outImageSize          (cv::Size(96, 96)),
       faceTemplate          (cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
-      outerEyesNosePositions( {36, 45, 33} )
-{
-}
-
-OpenfacePreprocessor::~OpenfacePreprocessor()
+      outerEyesNosePositions( { 36, 45, 33 } )
 {
 }
 

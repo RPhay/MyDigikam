@@ -46,8 +46,10 @@ QString FaceDb::setting(const QString& keyword) const
 
     // TODO Should really check return status here
 
-    BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectFaceSetting")), parameters, &values);
-    qCDebug(DIGIKAM_FACEDB_LOG) << "FaceDB SelectFaceSetting val ret = " << (BdEngineBackend::QueryStateEnum)queryStateResult;
+    BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectFaceSetting")),
+                                                                       parameters, &values);
+    qCDebug(DIGIKAM_FACEDB_LOG) << "FaceDB SelectFaceSetting val ret = "
+                                << (BdEngineBackend::QueryStateEnum)queryStateResult;
 
     if (values.isEmpty())
     {
@@ -68,7 +70,8 @@ bool FaceDb::integrityCheck()
     {
         case BdEngineBackend::DbType::SQLite:
         {
-            // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
+            // For SQLite the integrity check returns a single row with one string column "ok"
+            // on success and multiple rows on error.
 
             return(
                     (values.size() == 1) &&
@@ -101,7 +104,8 @@ bool FaceDb::integrityCheck()
 
                 if (messageText.toLower().compare(QLatin1String("ok")) != 0)
                 {
-                    qCDebug(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table " << tableName << ". Reason:" << messageText;
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "Failed integrity check for table "
+                                                  << tableName << ". Reason:" << messageText;
                     return false;
                 }
                 else

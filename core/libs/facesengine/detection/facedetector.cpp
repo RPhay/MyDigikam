@@ -149,8 +149,8 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
         cv::Mat cvImage       = d->backend()->prepareForDetection(image, paddedSize);
         QList<QRect> absRects = d->backend()->detectFaces(cvImage, paddedSize);
         result                = toRelativeRects(absRects,
-                                                QSize(cvImage.cols - 2*paddedSize.width,
-                                                      cvImage.rows - 2*paddedSize.height));
+                                                QSize(cvImage.cols - 2 * paddedSize.width,
+                                                      cvImage.rows - 2 * paddedSize.height));
 
         return result;
     }
@@ -183,8 +183,8 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
         cv::Mat cvImage       = d->backend()->prepareForDetection(image, paddedSize);
         QList<QRect> absRects = d->backend()->detectFaces(cvImage, paddedSize);
         result                = toRelativeRects(absRects,
-                                                QSize(cvImage.cols - 2*paddedSize.width,
-                                                      cvImage.rows - 2*paddedSize.height));
+                                                QSize(cvImage.cols - 2 * paddedSize.width,
+                                                      cvImage.rows - 2 * paddedSize.height));
         return result;
     }
     catch (cv::Exception& e)
@@ -209,8 +209,8 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
         cv::Mat cvImage       = d->backend()->prepareForDetection(imagePath, paddedSize);
         QList<QRect> absRects = d->backend()->detectFaces(cvImage, paddedSize);
         result                = toRelativeRects(absRects,
-                                                QSize(cvImage.cols - 2*paddedSize.width,
-                                                      cvImage.rows - 2*paddedSize.height));
+                                                QSize(cvImage.cols - 2 * paddedSize.width,
+                                                      cvImage.rows - 2 * paddedSize.height));
     }
     catch (cv::Exception& e)
     {
@@ -269,10 +269,12 @@ QRectF FaceDetector::toRelativeRect(const QRect& abs, const QSize& s)
 
 QRect FaceDetector::toAbsoluteRect(const QRectF& rel, const QSize& s)
 {
-    return QRectF(rel.x()      * s.width(),
+    return QRectF(
+                  rel.x()      * s.width(),
                   rel.y()      * s.height(),
                   rel.width()  * s.width(),
-                  rel.height() * s.height()).toRect();
+                  rel.height() * s.height()
+                 ).toRect();
 }
 
 QList<QRectF> FaceDetector::toRelativeRects(const QList<QRect>& absoluteRects, const QSize& size)

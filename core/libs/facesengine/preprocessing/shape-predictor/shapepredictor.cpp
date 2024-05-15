@@ -177,9 +177,11 @@ void createShapeRelativeEncoding(const std::vector<float>& shape,
 PointTransformAffine findTformBetweenShapes(const std::vector<float>& from_shape,
                                             const std::vector<float>& to_shape)
 {
-    Q_ASSERT((from_shape.size() == to_shape.size()) &&
+    Q_ASSERT(
+             (from_shape.size() == to_shape.size()) &&
              ((from_shape.size() % 2) == 0)         &&
-             (from_shape.size() > 0));
+             (from_shape.size() > 0)
+            );
 
     std::vector<std::vector<float> > from_points, to_points;
     const unsigned long num = (unsigned long)from_shape.size() / 2;
@@ -277,8 +279,10 @@ bool pointContained(const cv::Rect& rect,
     int x = std::round(point[0]);
     int y = std::round(point[1]);
 
-    if ((x >= 0) && (x < rect.width)   &&
-        (y >= 0) && (y < rect.height))
+    if (
+        (x >= 0) && (x < rect.width)   &&
+        (y >= 0) && (y < rect.height)
+       )
     {
         return true;
     }

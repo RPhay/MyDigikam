@@ -242,7 +242,6 @@ std::vector<float> DNNFaceExtractor::decodeVector(const QJsonArray& json)
     return vector;
 }
 
-
 cv::Mat DNNFaceExtractor::alignFace(const cv::Mat& inputImage) const
 {
     return d->preprocessor->preprocess(inputImage);

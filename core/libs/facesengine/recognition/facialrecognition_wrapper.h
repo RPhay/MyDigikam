@@ -38,7 +38,7 @@ class DIGIKAM_GUI_EXPORT FacialRecognitionWrapper
 {
 public:
 
-    explicit FacialRecognitionWrapper();
+    FacialRecognitionWrapper();
     FacialRecognitionWrapper(const FacialRecognitionWrapper&);
 
     ~FacialRecognitionWrapper();
@@ -92,7 +92,7 @@ public:
      * Secondly, all unknown attributes are used.
      * Returns a null Identity if no match is possible or the map is empty.
      */
-    Identity findIdentity(const QMultiMap<QString, QString>& attributes)         const;
+    Identity findIdentity(const QMultiMap<QString, QString>& attributes)    const;
 
     /**
      * Adds a new identity with the specified attributes.

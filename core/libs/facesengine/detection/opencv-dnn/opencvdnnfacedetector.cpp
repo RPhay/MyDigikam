@@ -76,7 +76,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     }
 
     cv::Mat cvImage;
-    int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
+    int type               = (inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4);
     cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
     if (inputImage.hasAlpha())
@@ -158,8 +158,8 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& p
     // Resize image before padding to fit in neural net
 
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float k                 = qMin(inputImageSize.width  * 1.0 / cvImage.cols,
-                                   inputImageSize.height * 1.0 / cvImage.rows);
+    float k                 = qMin(inputImageSize.width  * 1.0F / cvImage.cols,
+                                   inputImageSize.height * 1.0F / cvImage.rows);
 
     int newWidth            = (int)(k * cvImage.cols);
     int newHeight           = (int)(k * cvImage.rows);

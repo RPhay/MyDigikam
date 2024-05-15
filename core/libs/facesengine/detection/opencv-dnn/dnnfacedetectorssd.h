@@ -29,7 +29,7 @@ class DIGIKAM_EXPORT DNNFaceDetectorSSD: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorSSD();
-    ~DNNFaceDetectorSSD()                                         override;
+    ~DNNFaceDetectorSSD()                                         override = default;
 
     bool loadModels();
 

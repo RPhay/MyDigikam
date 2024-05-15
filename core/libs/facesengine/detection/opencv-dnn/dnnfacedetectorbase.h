@@ -37,9 +37,9 @@ class DIGIKAM_EXPORT DNNFaceDetectorBase
 
 public:
 
-    DNNFaceDetectorBase() = default;
+    DNNFaceDetectorBase()          = default;
     explicit DNNFaceDetectorBase(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
-    virtual ~DNNFaceDetectorBase();
+    virtual ~DNNFaceDetectorBase() = default;
 
     virtual void detectFaces(const cv::Mat& inputImage,
                              const cv::Size& paddedSize,

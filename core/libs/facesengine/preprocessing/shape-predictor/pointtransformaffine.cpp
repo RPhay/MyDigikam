@@ -61,7 +61,6 @@ const std::vector<float> PointTransformAffine::operator() (const std::vector<flo
     return (m*p + b);
 }
 
-
 const std::vector<std::vector<float> >& PointTransformAffine::get_m() const
 {
     return m;

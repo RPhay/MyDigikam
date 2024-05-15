@@ -27,10 +27,6 @@ FullObjectDetection::FullObjectDetection(const cv::Rect& rect_,
 {
 }
 
-FullObjectDetection::FullObjectDetection()
-{
-}
-
 FullObjectDetection::FullObjectDetection(const cv::Rect& rect_)
     : rect(rect_)
 {

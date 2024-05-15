@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT FullObjectDetection
 {
 public:
 
-    FullObjectDetection();
+    FullObjectDetection() = default;
     explicit FullObjectDetection(const cv::Rect& rect_);
     FullObjectDetection(const cv::Rect& rect_,
                         const std::vector<std::vector<float> >& parts_);

@@ -37,8 +37,8 @@ class OpenfacePreprocessor
 
 public:
 
-    explicit OpenfacePreprocessor();
-    ~OpenfacePreprocessor();
+    OpenfacePreprocessor();
+    ~OpenfacePreprocessor() = default;
 
     /**
      * Load shapepredictor model for face alignment with 68 points of face landmark extraction.

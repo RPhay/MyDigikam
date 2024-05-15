@@ -54,19 +54,19 @@ public:
 
     Identity& operator=(const Identity& other);
 
-    bool isNull()                          const;
-    bool operator==(const Identity& other) const;
+    bool isNull()                               const;
+    bool operator==(const Identity& other)      const;
 
     /**
      * Id value accessor.
      */
-    int  id()                              const;
+    int  id()                                   const;
     void setId(int id);
 
     /**
      * Attribute value accessor.
      */
-    QString attribute(const QString& att)  const;
+    QString attribute(const QString& att)       const;
     void    setAttribute(const QString& att,
                          const QString& val);
 
