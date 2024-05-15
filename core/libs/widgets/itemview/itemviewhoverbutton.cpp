@@ -28,11 +28,7 @@ namespace Digikam
 {
 
 ItemViewHoverButton::ItemViewHoverButton(QAbstractItemView* const view)
-    : QAbstractButton(view->viewport()),
-      m_isHovered       (false),
-      m_fadingValue     (0),
-      m_icon            (),
-      m_fadingTimeLine  (nullptr)
+    : QAbstractButton(view->viewport())
 {
     m_fadingTimeLine = new QTimeLine(600, this);
     m_fadingTimeLine->setFrameRange(0, 255);

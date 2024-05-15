@@ -88,10 +88,10 @@ protected Q_SLOTS:
 protected:
 
     QPersistentModelIndex m_index;
-    bool                  m_isHovered;
-    int                   m_fadingValue;
+    bool                  m_isHovered       = false;
+    int                   m_fadingValue     = 0;
     QIcon                 m_icon;
-    QTimeLine*            m_fadingTimeLine;
+    QTimeLine*            m_fadingTimeLine  = nullptr;
 };
 
 } // namespace Digikam

@@ -98,6 +98,8 @@ Q_SIGNALS:
 
 protected:
 
+    ItemViewDelegate(ItemViewDelegatePrivate& dd, QWidget* const parent);
+
     /**
      * Use the tool methods for painting in subclasses
      */
@@ -139,8 +141,7 @@ protected:
 
 protected:
 
-    ItemViewDelegatePrivate* const d_ptr;
-    ItemViewDelegate(ItemViewDelegatePrivate& dd, QWidget* const parent);
+    ItemViewDelegatePrivate* const d_ptr = nullptr;
 
 private:
 

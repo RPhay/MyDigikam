@@ -250,7 +250,7 @@ void ItemViewCategorized::awayFromSelection()
     const QModelIndex first = model()->index(0, 0);
     const QModelIndex last  = model()->index(model()->rowCount() - 1, 0);
 
-    if (selection.contains(first) && selection.contains(last))
+    if      (selection.contains(first) && selection.contains(last))
     {
         QItemSelection remaining(first, last);
         remaining.merge(selection, QItemSelectionModel::Toggle);
@@ -401,7 +401,7 @@ void ItemViewCategorized::slotActivated(const QModelIndex& index)
 
     const bool shiftKeyPressed   = modifiers & Qt::ShiftModifier;
     const bool controlKeyPressed = modifiers & Qt::ControlModifier;
-    const bool rightClickPressed = buttons & Qt::RightButton;
+    const bool rightClickPressed = buttons   & Qt::RightButton;
 
     if (shiftKeyPressed || controlKeyPressed || rightClickPressed)
     {
@@ -842,7 +842,7 @@ void ItemViewCategorized::mousePressEvent(QMouseEvent* event)
 
     Qt::KeyboardModifiers modifiers = event->modifiers();
     const Qt::MouseButton button    = event->button();
-    const bool rightButtonPressed   = button & Qt::RightButton;
+    const bool rightButtonPressed   = button    & Qt::RightButton;
     const bool shiftKeyPressed      = modifiers & Qt::ShiftModifier;
     const bool controlKeyPressed    = modifiers & Qt::ControlModifier;
     d->mouseButtonPressed           = button;
@@ -910,8 +910,10 @@ void ItemViewCategorized::mouseMoveEvent(QMouseEvent* event)
     {
         indexVisualRect = visualRect(index);
 
-        if (d->usePointingHand &&
-            d->delegate->acceptsActivation(event->pos(), indexVisualRect, index))
+        if (
+            d->usePointingHand &&
+            d->delegate->acceptsActivation(event->pos(), indexVisualRect, index)
+           )
         {
             setCursor(Qt::PointingHandCursor);
         }
@@ -1105,7 +1107,7 @@ void ItemViewCategorized::showIndexNotification(const QModelIndex& index, const 
 
 #else
 
-    option = viewOptions();
+    option                      = viewOptions();
 
 #endif
 
@@ -1141,7 +1143,7 @@ QPixmap ItemViewCategorized::pixmapForDrag(const QList<QModelIndex>& indexes) co
 
 #else
 
-    option = viewOptions();
+    option                      = viewOptions();
 
 #endif
 

@@ -134,11 +134,13 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
             int key                    = static_cast<QKeyEvent*>(e)->key();
             Qt::KeyboardModifiers mody = static_cast<QKeyEvent*>(e)->modifiers();
 
-            if (!(mody & Qt::KeyboardModifierMask) &&
+            if (
+                !(mody & Qt::KeyboardModifierMask) &&
                 (key != Qt::Key_Shift)             &&
                 (key != Qt::Key_Control)           &&
                 (key != Qt::Key_Alt)               &&
-                (key != Qt::Key_Meta))
+                (key != Qt::Key_Meta)
+               )
             {
                 hide();
             }
@@ -169,19 +171,21 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
         case QEvent::MouseMove:
         {
             // needs mouse tracking, obviously
-            if ((o == d->view->viewport()) &&
+            if (
+                (o == d->view->viewport()) &&
                 !d->rect.isNull()          &&
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPosition().toPoint()))
+                !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPosition().toPoint())
 
 #else
 
-                !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPos()))
+                !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPos())
 
 #endif
 
+               )
             {
                 hide();
             }

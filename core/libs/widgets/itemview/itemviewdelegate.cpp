@@ -44,13 +44,6 @@ namespace Digikam
 {
 
 ItemViewDelegatePrivate::ItemViewDelegatePrivate()
-    : spacing      (0),
-      ratingPixmaps(QVector<QPixmap>(10)),
-      thumbSize    (ThumbnailSize(0)),
-      q            (nullptr),
-      displayWidget(nullptr),
-      radius       (3), // painting constants
-      margin       (5)
 {
     makeStarPolygon();
 }
@@ -98,6 +91,7 @@ ItemViewDelegate::~ItemViewDelegate()
     Q_D(ItemViewDelegate);
 
     removeAllOverlays();
+
     delete d;
 }
 

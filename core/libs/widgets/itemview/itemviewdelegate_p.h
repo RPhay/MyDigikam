@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT ItemViewDelegatePrivate
 {
 public:
 
-    explicit ItemViewDelegatePrivate();
+    ItemViewDelegatePrivate();
     virtual ~ItemViewDelegatePrivate() = default;
 
     void init(ItemViewDelegate* const _q, QWidget* const _widget);
@@ -56,7 +56,7 @@ public:
 
 public:
 
-    int                       spacing;
+    int                       spacing           = 0;
     QSize                     gridSize;
 
     QRect                     rect;
@@ -64,7 +64,7 @@ public:
 
     QPixmap                   regPixmap;
     QPixmap                   selPixmap;
-    QVector<QPixmap>          ratingPixmaps;
+    QVector<QPixmap>          ratingPixmaps     = QVector<QPixmap>(10);
 
     QFont                     font;
     QFont                     fontReg;
@@ -74,21 +74,22 @@ public:
     QPolygon                  starPolygon;
     QSize                     starPolygonSize;
 
-    ThumbnailSize             thumbSize;
+    ThumbnailSize             thumbSize         = ThumbnailSize(0);
 
     QPersistentModelIndex     editingRating;
 
-    ItemViewDelegate*         q;
+    ItemViewDelegate*         q                 = nullptr;
 
-    QWidget*                  displayWidget;
+    QWidget*                  displayWidget     = nullptr;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
     /// constant values for drawing
-    int                       radius;
-    int                       margin;
+
+    int                       radius            = 3;
+    int                       margin            = 5;
 
 private:
 
