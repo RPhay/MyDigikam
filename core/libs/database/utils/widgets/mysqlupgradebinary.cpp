@@ -36,10 +36,6 @@ MysqlUpgradeBinary::MysqlUpgradeBinary()
     setup();
 }
 
-MysqlUpgradeBinary::~MysqlUpgradeBinary()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_mysqlupgradebinary.cpp"

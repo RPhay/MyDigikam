@@ -30,7 +30,7 @@ class DIGIKAM_GUI_EXPORT MysqlUpgradeBinary : public DBinaryIface
 public:
 
     MysqlUpgradeBinary();
-    ~MysqlUpgradeBinary() override;
+    ~MysqlUpgradeBinary() override = default;
 
 private:
 

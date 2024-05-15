@@ -36,10 +36,6 @@ MysqlServerBinary::MysqlServerBinary()
     setup();
 }
 
-MysqlServerBinary::~MysqlServerBinary()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_mysqlserverbinary.cpp"

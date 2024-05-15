@@ -63,7 +63,9 @@ void SearchTextBarDb::setModel(QAbstractItemModel* model, int uniqueIdRole, int 
 
 void SearchTextBarDb::setModel(AbstractAlbumModel* const model)
 {
-    completerModel()->setItemModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
+    completerModel()->setItemModel(model,
+                                   AbstractAlbumModel::AlbumIdRole,
+                                   AbstractAlbumModel::AlbumTitleRole);
 }
 
 void SearchTextBarDb::setFilterModel(AlbumFilterModel* const filterModel)

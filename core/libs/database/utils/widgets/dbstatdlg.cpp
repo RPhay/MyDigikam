@@ -105,10 +105,6 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
     qApp->restoreOverrideCursor();
 }
 
-DBStatDlg::~DBStatDlg()
-{
-}
-
 int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString& title)
 {
     // get image format statistics
@@ -141,7 +137,9 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
 
     setInfoMap(map);
 
-    ti = new QTreeWidgetItem(listView(), QStringList() << i18nc("@info: total number of items", "total") << QString::number(total));
+    ti = new QTreeWidgetItem(listView(), QStringList()
+                                         << i18nc("@info: total number of items", "total")
+                                         << QString::number(total));
     ti->setFont(0, ft);
     ti->setFont(1, ft);
 
@@ -154,7 +152,9 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
 
 void DBStatDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_stats"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("database_settings"),
+                            QLatin1String("database_stats"));
 }
 
 } // namespace Digikam

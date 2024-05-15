@@ -51,7 +51,7 @@ void DatabaseSettingsWidget::setupMainArea()
     // --------- fill with default values ---------------------
 
     int dbTypeIdx               = 0;
-    d->dbType->addItem(i18n("SQLite"),                        SQlite);
+    d->dbType->addItem(i18n("SQLite"),         SQlite);
     d->dbTypeMap[SQlite]        = dbTypeIdx++;
 
 #ifdef HAVE_MYSQLSUPPORT
@@ -156,11 +156,13 @@ void DatabaseSettingsWidget::setupMainArea()
 #ifdef Q_OS_MACOS
 
     // Std Macports install
+
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/sbin"));
     d->dbBinariesWidget->addDirectory(QLatin1String("/opt/local/lib/mariadb/bin"));
 
     // digiKam Bundle PKG install
+
     d->dbBinariesWidget->addDirectory(macOSBundlePrefix() + QLatin1String("lib/mariadb/bin"));
 
 #endif
@@ -186,8 +188,8 @@ void DatabaseSettingsWidget::setupMainArea()
                                  "or the network computer\n"
                                  "name (or IP address) in case of remote computer."));
 
-    QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"https://doc.qt.io/qt-5/"
-                                                                       "qsqldatabase.html#setConnectOptions\">Connect options:</a>"));
+    QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"https://doc.qt.io/qt-6/"
+                                                                       "sql-driver.html#qmysql\">Connect options:</a>"));
     connectOptsLabel->setOpenExternalLinks(true);
     d->connectOpts                                   = new QLineEdit();
     d->connectOpts->setPlaceholderText(i18n("Set the database connection options"));
@@ -550,8 +552,10 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
                                    .arg(d->hostName->text());
     }
 
-    if (isNotEqualToThumbName(d->dbNameFace->text())   &&
-        (d->dbNameFace->text() != d->dbNameCore->text()))
+    if (
+        isNotEqualToThumbName(d->dbNameFace->text())   &&
+        (d->dbNameFace->text() != d->dbNameCore->text())
+       )
     {
         sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
                                    "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
@@ -561,9 +565,11 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
                                    .arg(d->hostName->text());
     }
 
-    if (isNotEqualToThumbName(d->dbNameSimilarity->text())     &&
+    if (
+        isNotEqualToThumbName(d->dbNameSimilarity->text())     &&
         (d->dbNameSimilarity->text() != d->dbNameCore->text()) &&
-        (d->dbNameSimilarity->text() != d->dbNameFace->text()))
+        (d->dbNameSimilarity->text() != d->dbNameFace->text())
+       )
     {
         sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
                                    "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
@@ -938,7 +944,7 @@ bool DatabaseSettingsWidget::isNotEqualToThumbName(const QString& name)
     QFileInfo thumbDB(d->dbNameThumbs->fileDlgPath());
     bool isDir = (thumbDB.exists() && thumbDB.isDir() && thumbDB.isAbsolute());
 
-    return (!isDir && (d->dbNameThumbs->fileDlgPath() !=  name));
+    return (!isDir && (d->dbNameThumbs->fileDlgPath() != name));
 }
 
 } // namespace Digikam

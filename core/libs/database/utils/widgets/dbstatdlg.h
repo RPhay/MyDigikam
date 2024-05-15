@@ -31,7 +31,7 @@ class DIGIKAM_GUI_EXPORT DBStatDlg : public InfoDlg
 public:
 
     explicit DBStatDlg(QWidget* const parent);
-    ~DBStatDlg()    override;
+    ~DBStatDlg()    override = default;
 
 private Q_SLOTS:
 

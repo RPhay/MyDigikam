@@ -30,7 +30,7 @@ class DIGIKAM_GUI_EXPORT MysqlAdminBinary : public DBinaryIface
 public:
 
     MysqlAdminBinary();
-    ~MysqlAdminBinary() override;
+    ~MysqlAdminBinary() override = default;
 
 private:
 
