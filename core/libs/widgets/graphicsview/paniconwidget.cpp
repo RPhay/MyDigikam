@@ -334,7 +334,7 @@ void PanIconWidget::setImage(const QImage& scaledPreviewImage, const QSize& full
 
     setFixedSize(d->width, d->height);
 
-    d->rect = QRect(width()/2-d->width/2, height()/2-d->height/2, d->width, d->height);
+    d->rect = QRect(width() / 2 - d->width / 2, height() / 2 - d->height / 2, d->width, d->height);
     update();
 }
 
@@ -451,14 +451,14 @@ void PanIconWidget::paintEvent(QPaintEvent*)
         r.setTop(0);
     }
 
-    if (r.right() > width()-2)
+    if (r.right() > (width() - 2))
     {
-        r.setRight(width()-2);
+        r.setRight(width() - 2);
     }
 
-    if (r.bottom() > height()-2)
+    if (r.bottom() > (height() - 2))
     {
-        r.setBottom(height()-2);
+        r.setBottom(height() - 2);
     }
 
     p.drawRect(r.x(), r.y(), r.width(), r.height());
@@ -503,6 +503,7 @@ void PanIconWidget::hideEvent(QHideEvent* e)
     {
         d->moveSelection = false;
         setCursor(Qt::ArrowCursor);
+
         Q_EMIT signalHidden();
     }
 }

@@ -122,7 +122,8 @@ RegionFrameItem::Private::Private(RegionFrameItem* const qq)
     : q(qq)
 {
 
-    cropHandleList << CH_Left       << CH_Right << CH_Top << CH_Bottom
+    cropHandleList << CH_Left       << CH_Right
+                   << CH_Top        << CH_Bottom
                    << CH_TopLeft    << CH_TopRight
                    << CH_BottomLeft << CH_BottomRight;
 }

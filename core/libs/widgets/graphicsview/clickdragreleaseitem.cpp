@@ -117,7 +117,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
 
 void ClickDragReleaseItem::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
 {
-    if (d->state == PressedState && d->isDrag(e))
+    if ((d->state == PressedState) && d->isDrag(e))
     {
         d->state = PressDragState;
         setCursor(Qt::SizeFDiagCursor);

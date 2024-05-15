@@ -130,7 +130,7 @@ void HidingStateChanger::slotPropertiesAssigned(bool visible)
         }
 
         Q_EMIT stateChanged();
- 
+
        show();
     }
     else
@@ -204,9 +204,9 @@ AnimationControl::AnimationControl(ItemVisibilityController* const q)
 }
 
 AnimationControl::AnimationControl(AnimationControl* const other, QObject* const object)
-    : m_state         (other->m_state),
-      m_situation     (IndependentControl),
-      m_q             (other->m_q)
+    : m_state    (other->m_state),
+      m_situation(IndependentControl),
+      m_q        (other->m_q)
 {
     other->moveTo(this, object);
 }
@@ -318,7 +318,7 @@ QAbstractAnimation* AnimationControl::takeItem(QObject* const item)
     {
         QAbstractAnimation* const anim = m_animation;
         disconnect(m_animation);
-        m_animation = nullptr;
+        m_animation                    = nullptr;
 
         return anim;
     }
@@ -360,7 +360,10 @@ bool AnimationControl::hasVisibleItems(ItemVisibilityController::IncludeFadingOu
     }
     else
     {
-        return ((m_state != ItemVisibilityController::Hidden) && (m_state != ItemVisibilityController::FadingOut));
+        return (
+                (m_state != ItemVisibilityController::Hidden) &&
+                (m_state != ItemVisibilityController::FadingOut)
+               );
     }
 }
 
@@ -374,7 +377,10 @@ void AnimationControl::setVisibleProperty(bool value)
 
 void AnimationControl::syncProperties(QObject* const o)
 {
-    if (m_state == ItemVisibilityController::Visible || m_state == ItemVisibilityController::FadingIn)
+    if (
+        (m_state == ItemVisibilityController::Visible) ||
+        (m_state == ItemVisibilityController::FadingIn)
+       )
     {
         o->setProperty("visible", true);
         o->setProperty("opacity", 1.0);
@@ -392,7 +398,10 @@ void AnimationControl::transitionToVisible(bool show, bool immediately)
 
     if (show)
     {
-        if ((m_state == ItemVisibilityController::Visible) || (m_state == ItemVisibilityController::FadingIn))
+        if (
+            (m_state == ItemVisibilityController::Visible) ||
+            (m_state == ItemVisibilityController::FadingIn)
+           )
         {
             return;
         }
