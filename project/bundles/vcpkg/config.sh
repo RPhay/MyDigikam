@@ -37,6 +37,9 @@ VCPKG_COMMON_OPTIONS=(
 
 VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
 
+# Do not enable binary cache of ports.
+export VCPKG_BINARY_SOURCES=clear
+
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code
