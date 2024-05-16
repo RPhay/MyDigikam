@@ -199,6 +199,7 @@ void SketchWidget::slotUndo()
         d->isClear = true;
         d->pixmap.fill(qRgb(255, 255, 255));
         update();
+
         Q_EMIT signalUndoRedoStateChanged(false, true);
     }
     else
@@ -319,8 +320,10 @@ bool SketchWidget::setSketchImageFromXML(const QString& xml)
     {
         element = reader.readNext();
 
-        if ((element == QXmlStreamReader::StartElement) &&
-            (reader.name() == QLatin1String("SketchImage")))
+        if (
+            (element       == QXmlStreamReader::StartElement) &&
+            (reader.name() == QLatin1String("SketchImage"))
+           )
         {
             return setSketchImageFromXML(reader);
         }
@@ -335,8 +338,10 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
 
     // We assume that the reader is positioned at the start element for our XML
 
-    if (!reader.isStartElement() ||
-        (reader.name() != QLatin1String("SketchImage")))
+    if (
+        !reader.isStartElement() ||
+        (reader.name() != QLatin1String("SketchImage"))
+       )
     {
         return false;
     }
@@ -378,6 +383,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     // apply events to our pixmap
 
     replayEvents(d->eventIndex);
+
     Q_EMIT signalUndoRedoStateChanged(d->eventIndex != -1, false);
 
     return true;

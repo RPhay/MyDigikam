@@ -68,6 +68,7 @@ FindDuplicatesAlbumItem::FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlb
         setText(Column::REFERENCE_DATE,  d->refImgInfo.dateTime().toString(Qt::ISODate));
 
         PAlbum* const physicalAlbum = AlbumManager::instance()->findPAlbum(d->refImgInfo.albumId());
+
         if (physicalAlbum)
         {
             setText(Column::REFERENCE_ALBUM, physicalAlbum->prettyUrl());
@@ -223,11 +224,11 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
 
     if      (column == Column::AVG_SIMILARITY)
     {
-        result = (text(column).toDouble() < other.text(column).toDouble()) ? -1 : 0;
+        result = ((text(column).toDouble() < other.text(column).toDouble()) ? -1 : 0);
     }
     else if (column == Column::RESULT_COUNT)
     {
-        result = (text(column).toInt() < other.text(column).toInt()) ? -1 : 0;
+        result = ((text(column).toInt() < other.text(column).toInt()) ? -1 : 0);
     }
     else
     {

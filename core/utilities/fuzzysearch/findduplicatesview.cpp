@@ -580,8 +580,11 @@ void FindDuplicatesView::slotApplicationSettingsChanged()
 void FindDuplicatesView::slotReferenceSelectionMethodChanged(int index)
 {
    auto method = static_cast<HaarIface::RefImageSelMethod>(d->refImageSelMethod->itemData(index).toInt());
-   d->refImageAlbumSelector->setVisible((method == HaarIface::RefImageSelMethod::ExcludeFolder) ||
-                                        (method == HaarIface::RefImageSelMethod::PreferFolder));
+
+   d->refImageAlbumSelector->setVisible(
+                                        (method == HaarIface::RefImageSelMethod::ExcludeFolder) ||
+                                        (method == HaarIface::RefImageSelMethod::PreferFolder)
+                                       );
 }
 
 void FindDuplicatesView::slotComplete()
@@ -620,7 +623,11 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 
 void FindDuplicatesView::slotCheckForValidSettings()
 {
-    bool valid = (d->albumSelectors->selectedAlbums().count() || d->albumSelectors->selectedTags().count());
+    bool valid = (
+                  d->albumSelectors->selectedAlbums().count() ||
+                  d->albumSelectors->selectedTags().count()
+                 );
+
     d->findDuplicatesBtn->setEnabled(valid);
 }
 

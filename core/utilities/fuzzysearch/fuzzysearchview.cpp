@@ -282,6 +282,7 @@ void FuzzySearchView::setActive(bool val)
                                "The Similarity Search Tools will not be operational "
                                "without pre-generated fingerprints. Please generate "
                                "the fingerprints first.");
+
             Q_EMIT signalNotificationError(msg, DNotificationWidget::Warning);
         }
 
