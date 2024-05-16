@@ -166,7 +166,6 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
     grid->setContentsMargins(QMargins());
     grid->setSpacing(layoutSpacing());
 
-
     // ------------------------------------------------------------------------------------
 
     PAlbum* select = albumToSelect;

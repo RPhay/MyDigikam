@@ -108,7 +108,8 @@ QString AlbumLabelsSearchHandler::generatedName() const
     return d->generatedAlbumName;
 }
 
-void AlbumLabelsSearchHandler::restoreSelectionFromHistory(const QHash<LabelsTreeView::Labels, QList<int> >& neededLabels)
+void AlbumLabelsSearchHandler::restoreSelectionFromHistory(const QHash<LabelsTreeView::Labels,
+                                                           QList<int> >& neededLabels)
 {
     d->restoringSelectionFromHistory = true;
     d->treeWidget->restoreSelectionFromHistory(neededLabels);
@@ -121,7 +122,8 @@ bool AlbumLabelsSearchHandler::isRestoringSelectionFromHistory() const
     return d->restoringSelectionFromHistory;
 }
 
-QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
+QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<LabelsTreeView::Labels,
+                                                               QList<int> >& selectedLabels)
 {
     SearchXmlWriter writer;
     writer.setFieldOperator(SearchXml::standardFieldOperator());
@@ -148,7 +150,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
         colorsAndPicks << TagsCache::instance()->tagForPickLabel(pick);
     }
 
-    d->currentXmlIsEmpty = (ratings.isEmpty() && colorsAndPicks.isEmpty()) ? true : false;
+    d->currentXmlIsEmpty = ((ratings.isEmpty() && colorsAndPicks.isEmpty()) ? true : false);
 
     int noColor          = TagsCache::instance()->tagForColorLabel(NoColorLabel);
     int noPick           = TagsCache::instance()->tagForPickLabel(NoPickLabel);

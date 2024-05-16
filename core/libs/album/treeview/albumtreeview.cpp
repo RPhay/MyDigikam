@@ -40,10 +40,6 @@ AlbumTreeView::AlbumTreeView(QWidget* const parent, Flags flags)
     }
 }
 
-AlbumTreeView::~AlbumTreeView()
-{
-}
-
 void AlbumTreeView::setAlbumModel(AlbumModel* const model)
 {
     // changing model is not implemented

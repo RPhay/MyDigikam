@@ -65,9 +65,7 @@ public:
     {
     }
 
-    ~AlbumDatePicker() override
-    {
-    }
+    ~AlbumDatePicker() override = default;
 
     void dateLineEnterPressed()
     {
@@ -105,7 +103,9 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     setWindowTitle(create ? i18nc("@title:window, album properties", "New Album")
                           : i18nc("@title:window, album properties", "Edit Album"));
 
-    d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help |
+                                               QDialogButtonBox::Ok   |
+                                               QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     d->album            = album;
@@ -472,7 +472,9 @@ void AlbumPropsEdit::slotDateAverageButtonClicked()
 
 void AlbumPropsEdit::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("albums_view"), QLatin1String("managing-albums"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("albums_view"),
+                            QLatin1String("managing-albums"));
 }
 
 } // namespace Digikam

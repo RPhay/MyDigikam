@@ -26,8 +26,7 @@ namespace Digikam
 {
 
 SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
-    : AbstractCheckableAlbumTreeView(parent, flags),
-      m_filteredModel               (nullptr)
+    : AbstractCheckableAlbumTreeView(parent, flags)
 {
     setRootIsDecorated(false);
 
@@ -40,10 +39,6 @@ SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
     {
         setAlbumFilterModel(new SearchFilterModel(this), albumFilterModel());
     }
-}
-
-SearchTreeView::~SearchTreeView()
-{
 }
 
 void SearchTreeView::setAlbumModel(SearchModel* const model)
@@ -78,7 +73,7 @@ SearchFilterModel* SearchTreeView::filteredModel() const
 
 SAlbum* SearchTreeView::currentAlbum() const
 {
-    return dynamic_cast<SAlbum*> (m_albumFilterModel->albumForIndex(currentIndex()));
+    return dynamic_cast<SAlbum*>(m_albumFilterModel->albumForIndex(currentIndex()));
 }
 
 void SearchTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)

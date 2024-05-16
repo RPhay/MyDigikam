@@ -73,7 +73,8 @@ void AbstractAlbumTreeView::setAlbumModel(AbstractSpecificAlbumModel* const mode
 
     if (m_albumModel)
     {
-        disconnect(m_albumModel, nullptr, this, nullptr);
+        disconnect(m_albumModel, nullptr,
+                   this, nullptr);
     }
 
     m_albumModel = model;

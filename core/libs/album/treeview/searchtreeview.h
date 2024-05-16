@@ -31,7 +31,7 @@ class SearchTreeView : public AbstractCheckableAlbumTreeView
 public:
 
     explicit SearchTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
-    ~SearchTreeView() override;
+    ~SearchTreeView() override = default;
 
     /// Note: not filtered by search type
     SearchModel* albumModel()          const;
@@ -50,7 +50,7 @@ public Q_SLOTS:
 
 protected:
 
-    SearchFilterModel* m_filteredModel;
+    SearchFilterModel* m_filteredModel = nullptr;
 };
 
 } // namespace Digikam

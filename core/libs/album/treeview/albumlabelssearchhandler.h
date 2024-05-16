@@ -71,7 +71,8 @@ private:
      * @param selectedLabels to generate XML for it
      * @return XML generated
      */
-    QString createXMLForCurrentSelection(const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels);
+    QString createXMLForCurrentSelection(const QHash<LabelsTreeView::Labels,
+                                         QList<int> >& selectedLabels);
 
     /**
      * @brief Passes the generated XML to CoreDB class

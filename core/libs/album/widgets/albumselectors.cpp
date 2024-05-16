@@ -176,7 +176,6 @@ void AlbumSelectors::initAlbumWidget()
     d->albumSelectCB->setNoSelectionText(i18nc("@info", "No Album Selected"));
 /*
     d->albumSelectCB->setAddExcludeTristate(true);
-
 */
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
@@ -269,7 +268,6 @@ void AlbumSelectors::initTagWidget()
     d->tagSelectCB->view()->setObjectName(d->configName);
     d->tagSelectCB->view()->setEntryPrefix(QLatin1String("TagComboBox-"));
     d->tagSelectCB->view()->setRestoreCheckState(true);
-
 }
 
 void AlbumSelectors::slotWholeAlbums(bool b)
