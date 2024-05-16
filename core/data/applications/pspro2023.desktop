@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Corel PaintShop Pro 2023 (64-bit)
+X-Exec="%ProgramFiles%/Corel/Corel PaintShop Pro 2023 (64-bit)/Corel PaintShop Pro.exe" %f
+X-Icon="%ProgramFiles%/Corel/Corel PaintShop Pro 2023 (64-bit)/Corel PaintShop Pro.exe"
+MimeType=image/jpg;image/bmp;image/png

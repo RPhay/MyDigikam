@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 01:43+0000\n"
+"POT-Creation-Date: 2024-05-16 02:06+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -27311,7 +27311,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -30615,17 +30615,17 @@ msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL δυαδικά αρχεία"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
 msgid "Host Name:"
 msgstr "Όνομα υπολογιστή:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Ρύθμιση του ονόματος του υπολογιστή"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the computer name running MySQL server.\n"
@@ -30641,24 +30641,24 @@ msgstr ""
 "του υπολογιστή στο δίκτυο (ή η IP διεύθυνση) σε περίπτωση απομακρυσμένου "
 "υπολογιστή."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
 #| "<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 #| "\">Connect options:</a>"
 msgid ""
-"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-"\">Connect options:</a>"
+"<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
+"a>"
 msgstr ""
 "<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Επιλογές σύνδεσης:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Ρύθμιση επιλογών σύνδεσης με τη βάση δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -30667,17 +30667,17 @@ msgstr ""
 "Ρύθμιση των επιλογών σύνδεσης με τον εξυπηρετητή MySQL.\n"
 "Για προχωρημένους χρήστες μόνο."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "User:"
 msgstr "Χρήστης:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
 #, kde-format
 msgid "Set the database account name"
 msgstr "Ρύθμιση του ονόματος του λογαριασμού της βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:202
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the MySQL server account name used\n"
@@ -30695,7 +30695,7 @@ msgstr ""
 "Αυτός ο λογαριασμός πρέπει να είναι διαθέσιμος στον απομακρυσμένο MySQL "
 "εξυπηρετητή όταν έχει δημιουργηθεί η βάση δεδομένων."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:209
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -30707,12 +30707,12 @@ msgstr ""
 "Αυτό το πεδίο μπορεί να μείνει κενό για χρήση του λογαριασμού χωρίς κωδικό "
 "πρόσβασης."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
 msgid "Host Port:"
 msgstr "Θύρα υπολογιστή:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:217
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -30722,12 +30722,12 @@ msgstr ""
 "Συνήθως, ο εξυπηρετητής MySQL χρησιμοποιεί τον προκαθορισμένο αριθμό θύρας "
 "3306"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
 #, kde-format
 msgid "Check Connection"
 msgstr "Έλεγχος σύνδεσης"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -30736,17 +30736,17 @@ msgstr ""
 "Εκτελέστε μια βασική σύνδεση στη βάση δεδομένων για να δείτε αν οι τρέχουσες "
 "ρυθμίσεις του εξυπηρετητή MySQL είναι κατάλληλες."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Όνομα πυρήνα βάσης:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
 #, kde-format
 msgid "Set the core database name"
 msgstr "Καθορίστε εδώ το όνομα του πυρήνα της βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -30755,19 +30755,19 @@ msgstr ""
 "Ο πυρήνας της βάσης δεδομένων είναι ο κύριος υποδοχέας του digiKan\n"
 "για την αποθήκευση λευκωμάτων, αντικειμένων και μεταδεδπμένων αναζητήσεων."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Όνομα Db εικόνων επισκόπησης:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Set the thumbnails database name"
 msgid "Set the thumbnails database name or folder"
 msgstr "Ρύθμιση του ονόματος της βάσης δεδομένων εικόνων επισκόπησης"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:242
 #, fuzzy, kde-format
 #| msgid ""
 #| "The thumbnails database is used by digiKam to host\n"
@@ -30786,17 +30786,17 @@ msgstr ""
 "μικροκυματομορφής. Μπορεί γρήγορα να καταναλώσει πολύ χώρο,\n"
 "ιδιαίτερα αν έχετε τεράστιες συλλογές."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Όνομα Db προσώπων:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
 #, kde-format
 msgid "Set the face database name"
 msgstr "Ρύθμιση του ονόματος της βάσης δεδομένων προσώπων."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:251
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -30809,48 +30809,48 @@ msgstr ""
 "Μπορεί γρήγορα να καταναλώσει πολύ χώρο, ιδιαίτερα αν έχετε\n"
 "πολλές εικόνες με πρόσωπα που έχουν εντοπιστεί και επισημανθεί."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity Db Name:"
 msgstr "Ομοιότητα:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
 #, fuzzy, kde-format
 #| msgid "Set the core database name"
 msgid "Set the similarity database name"
 msgstr "Καθορίστε εδώ το όνομα του πυρήνα της βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
 #, kde-format
 msgid "Default Settings"
 msgstr "Προκαθορισμένες ρυθμίσεις"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:265
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr ""
 "Επαναφορά των ρυθμίσεων ονομάτων βάσεων δεδομένων στις προκαθορισμένες τιμές "
 "τους."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:284
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Ρυθμίσεις απομακρυσμένου εξυπηρετητή"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Οδηγίες εξυπηρετητή βάσεων δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>digiKam expects that database is already created with a dedicated user "
@@ -30871,7 +30871,7 @@ msgstr ""
 "μπορείτε να χρησιμοποιήσετε τις ακόλουθες SQL εντολές (αφού αντικαταστήσετε "
 "τον <b><i>κωδικό πρόσβασης</i></b> με το σωστό κωδικό).<br>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Note: with a Linux server, a database can be initialized following the "
@@ -30901,17 +30901,17 @@ msgstr ""
 "mysql --max_allowed_packet=128M Ή στο my.ini ή στο ~/.my.cnf, αλλάξτε τις "
 "ρυθμίσεις</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
 msgid "Requirements"
 msgstr "Απαιτήσεις"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Τεχνικές λεπτομέρειες εξυπηρετητή βάσεων δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:333
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Use this configuration view to set all information to be connected to "
@@ -30970,84 +30970,84 @@ msgstr ""
 "έχουν προηγουμένως δημιουργηθεί στον απομακρυσμένο εξυπηρετητή από τον "
 "διαχειριστή. Κοιτάξτε στην καρτέλα <b>Απαιτήσεις</b> για λεπτομέρειες.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
 #, kde-format
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:590
 #, fuzzy, kde-format
 #| msgid "Thumbs Db Name:"
 msgid "Thumbs Db Folder:"
 msgstr "Όνομα Db εικόνων επισκόπησης:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
 #, fuzzy, kde-format
 #| msgid "Database Connection Test"
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Δοκιμή σύνδεσης με βάση δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:605
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Επιτυχής δοκιμή σύνδεσης με βάση δεδομένων."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:610
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "Η δοκιμή σύνδεσης με τη βάσης δεδομένων δεν ήταν επιτυχής. <p>Το σφάλμα "
 "ήταν: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Το όνομα υπολογιστή στον εξυπηρετητή είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:625
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Το όνομα χρήστη στον εξυπηρετητή είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:630
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Το όνομα της βάσης δεδομένων πυρήνα είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Το όνοαμ της βάσης δεδομένων εικόνων επισκόπησης είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Το όνομα της βάσης δεδομένων προσώπων είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:654
 #, fuzzy, kde-format
 #| msgid "The core database name is empty"
 msgid "The similarity database name is empty"
 msgstr "Το όνομα της βάσης δεδομένων πυρήνα είναι κενό"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:716
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 "Αυτή η διαδρομή ρυθμίστηκε ως επιλογή σε γραμμή εντολών (--database-"
 "directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, fuzzy, kde-format
 #| msgid "Database Configuration"
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Διαμόρφωση βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:850
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -31056,7 +31056,7 @@ msgstr ""
 "Η διαμόρφωση ονομάτων των βάσεων δεδομένων δεν είναι έγκυρη. Το σφάλμα είναι "
 "<br/><p>%1</p><br/>Ελέγξτε τη διαμόρφωση."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -31065,7 +31065,7 @@ msgstr ""
 "Αποτυχία δοκιμής σύνδεσης σε βάση δεδομένων με σφάλμα <br/><p>%1</p><br/"
 ">Ελέγξτε τη διαμόρφωση."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -31074,14 +31074,14 @@ msgstr ""
 "Πρέπει να επιλέξετε ένα φάκελο που θα χρησιμοποιηθεί από το digiKam για την "
 "αποθήκευση πληροφοριών και μεταδεδομένων σε ένα αρχείο βάσης δεδομένων."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Δημιουργία φακέλου βάσης δεδομένων;"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -31090,14 +31090,14 @@ msgstr ""
 "<p>Ο φάκελος της βάσης δεδομένων σας δεν φαίνεται να υπάρχει:</p><p><b>%1</"
 "b></p>Επιθυμείτε τη δημιουργία του από το digiKam;"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
 #, fuzzy, kde-format
 #| msgid "Create Database Folder Failed"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Αποτυχία δημιουργίας φακέλου της βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -31107,14 +31107,14 @@ msgstr ""
 "σας.\n"
 "Παρακαλώ επιλέξτε μια διαφορετική τοποθεσία.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, fuzzy, kde-format
 #| msgid "No Database Write Access"
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Χωρίς πρόσβαση εγγραφής στη βάση δεδομένων"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:926
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -31224,7 +31224,7 @@ msgstr "Όνομα Db προσώπων"
 msgid "Database locale"
 msgstr "Φάκελος βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "total"
 msgctxt "@info: total number of items"
@@ -38657,7 +38657,7 @@ msgctxt "@title"
 msgid "Tags"
 msgstr "Ετικέτες"
 
-#: core/libs/models/albummodel_tag.cpp:52
+#: core/libs/models/albummodel_tag.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "device label etc... (<formatted byte size>)"
 #| msgid " (%1)"
@@ -44879,7 +44879,7 @@ msgid_plural "%1 Images"
 msgstr[0] "1 εικόνα"
 msgstr[1] "%1 εικόνες"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:339
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "<i>Applying operation to<br/>the selected picture</i>"
@@ -44895,13 +44895,13 @@ msgstr[0] "<i>Η λειτουργία εφαρμόζεται στην<br/>επι
 msgstr[1] ""
 "<i>Η λειτουργία εφαρμόζεται στις <br/><b>%1</b> επιλεγμένες φωτογραφίες</i>"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:411
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
 #, fuzzy, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "Παρ.: %1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
@@ -44910,8 +44910,8 @@ msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:432
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:452
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
@@ -64398,7 +64398,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Απαίτηση:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:491
+#: core/utilities/import/widgets/importcontextmenu.cpp:492
 #, fuzzy, kde-format
 #| msgid "Assign Labels"
 msgctxt "@title:menu"

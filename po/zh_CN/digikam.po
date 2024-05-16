@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 01:43+0000\n"
+"POT-Creation-Date: 2024-05-16 02:06+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25049,7 +25049,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "显示在密码输入框旁的密码提示信息 (可选)。"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:141
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
@@ -28028,17 +28028,17 @@ msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL 可执行文件"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
 msgid "Host Name:"
 msgstr "主机名："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:185
 #, kde-format
 msgid "Set the host computer name"
 msgstr "设置主机名"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:186
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -28049,21 +28049,24 @@ msgstr ""
 "对于本地服务器而言它可能是“localhost”，\n"
 "对于远程计算机而言则可能是该计算机的网络名称或 IP 地址。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
-#, kde-format
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
+#, fuzzy, kde-format
+#| msgid ""
+#| "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+#| "\">Connect options:</a>"
 msgid ""
-"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-"\">Connect options:</a>"
+"<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
+"a>"
 msgstr ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions\">连接选"
 "项：</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
 msgid "Set the database connection options"
 msgstr "设置数据库连接选项"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -28072,17 +28075,17 @@ msgstr ""
 "设置 MySQL 服务器连接选项。\n"
 "仅适用于高级用户。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "User:"
 msgstr "用户："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:201
 #, kde-format
 msgid "Set the database account name"
 msgstr "设置数据库账户名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:202
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -28093,7 +28096,7 @@ msgstr ""
 "设置 digiKam 使用的 MySQL 服务器账户名称以连接到服务器。\n"
 "数据库创建后，此账户必须在远程 MySQL 服务器上可用。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:209
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -28103,12 +28106,12 @@ msgstr ""
 "设置 digiKam 使用的 MySQL 服务器账户密码以连接到服务器。\n"
 "如果使用无需密码的账户，请将此字段留空。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
 msgid "Host Port:"
 msgstr "主机端口："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:217
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -28117,29 +28120,29 @@ msgstr ""
 "设置目标计算机的主机端口。\n"
 "MySQL 服务器通常默认使用 3306 端口。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:222
 #, kde-format
 msgid "Check Connection"
 msgstr "检查连接"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:223
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
 "suitable."
 msgstr "执行一次基本数据库连接，以检查当前 MySQL 服务器设置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, kde-format
 msgid "Core Db Name:"
 msgstr "核心数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:232
 #, kde-format
 msgid "Set the core database name"
 msgstr "设置核心数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:233
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -28148,18 +28151,18 @@ msgstr ""
 "核心数据库是 digiKam 的首要数据容器，\n"
 "用于存储相册、项目和搜索元数据。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:237
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "缩略图数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:241
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "设置缩略图数据库名称或文件夹"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:242
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -28174,17 +28177,17 @@ msgstr ""
 "尤其是在相册集合规模庞大的时候。\n"
 "请为该 SQLite 数据库选择一个本地文件夹。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
 msgid "Face Db Name:"
 msgstr "人脸数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:250
 #, kde-format
 msgid "Set the face database name"
 msgstr "设置人脸数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:251
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -28197,17 +28200,17 @@ msgstr ""
 "此数据库将在短时间内占用大量空间，\n"
 "尤其是在大量图像中检测到了人脸并指定了人脸标签时。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "相似性数据库名称："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:259
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "设置相似性数据库名称"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:260
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -28216,27 +28219,27 @@ msgstr ""
 "相似性数据库用于存储 digiKam 生成的图像 Haar 矩阵数据。\n"
 "它们将被用于进行相似性搜索。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:264
 #, kde-format
 msgid "Default Settings"
 msgstr "默认设置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:265
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "重置所有数据库名称为常用的默认值。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:284
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "远程服务器设置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "数据库服务器使用说明"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:290
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -28249,7 +28252,7 @@ msgstr ""
 "它需要数据库的完全访问权限。<br/>如果该数据库尚未建立，您可以使用下面的 SQL\n"
 "命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:303
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -28271,17 +28274,17 @@ msgstr ""
 "合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
 "令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
 #, kde-format
 msgid "Requirements"
 msgstr "技术要求"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "数据库服务器技术详情"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:333
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28315,103 +28318,103 @@ msgstr ""
 "压缩。</p><p>远程数据库要由服务器管理员事先创建。请在<b>技术要求</b>标签页查"
 "看有关详情。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
 #, kde-format
 msgid "Documentation"
 msgstr "技术说明"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:590
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "缩略图数据库名文件夹："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:864
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "数据库连接测试"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:605
 #, kde-format
 msgid "Database connection test successful."
 msgstr "数据库连接测试成功。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:610
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "数据库连接测试失败。<p>错误：%1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "服务器主机名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:625
 #, kde-format
 msgid "The server user name is empty"
 msgstr "服务器用户名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:630
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, kde-format
 msgid "The core database name is empty"
 msgstr "核心数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "缩略图数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
 #, kde-format
 msgid "The face database name is empty"
 msgstr "人脸数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:654
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "相似性数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:716
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "此路径已被设置为命令行选项 (--database-directory)。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "数据库配置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:850
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr "数据库名称配置无效。错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:865
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr "数据库连接测试失败，错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr "您必须为 digiKam 选择一个文件夹，用于存储信息和元数据的数据库文件。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "您想要创建数据库文件夹吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -28420,13 +28423,13 @@ msgstr ""
 "<p>用于存储数据库的文件夹不存在：</p><p><b>%1</b></p>您想要让 digiKam 现在创"
 "建它吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:905
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "创建数据库文件夹失败"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:906
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -28435,13 +28438,13 @@ msgstr ""
 "<p>digiKam 无法创建用于存储数据库文件的文件夹。\n"
 " 请选择一个不同的位置。</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "没有数据库写入权限"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:926
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:932
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -28547,7 +28550,7 @@ msgstr "人脸数据库名称"
 msgid "Database locale"
 msgstr "数据库语言设置"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:141
 #, kde-format
 msgctxt "@info: total number of items"
 msgid "total"
@@ -35295,7 +35298,7 @@ msgctxt "@title"
 msgid "Tags"
 msgstr "标签"
 
-#: core/libs/models/albummodel_tag.cpp:52
+#: core/libs/models/albummodel_tag.cpp:54
 #, kde-format
 msgctxt "@info: unconfirmed faces in album"
 msgid " (%1 new)"
@@ -40887,7 +40890,7 @@ msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] "%1 张图像"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:339
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
 #, kde-format
 msgctxt "@info: item overlay"
 msgid ""
@@ -40900,13 +40903,13 @@ msgstr[0] ""
 "正在应用操作到\n"
 "“%1”张所选图像"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:411
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:405
 #, kde-format
 msgctxt "date of last image modification"
 msgid "Mod.: %1"
 msgstr "修改于：%1"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:427
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:421
 #: core/showfoto/main/showfoto.cpp:256
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
@@ -40915,8 +40918,8 @@ msgctxt "%1 width, %2 height, %3 mpixels"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:432
-#: core/libs/widgets/itemview/itemviewdelegate.cpp:452
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:426
+#: core/libs/widgets/itemview/itemviewdelegate.cpp:446
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
@@ -58256,7 +58259,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "需要："
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:491
+#: core/utilities/import/widgets/importcontextmenu.cpp:492
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
