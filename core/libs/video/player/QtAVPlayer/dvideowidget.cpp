@@ -196,10 +196,12 @@ void DVideoWidget::adjustVideoSize()
 {
     d->videoItem->resetTransform();
 
-    QSizeF nativeSize    = d->videoItem->nativeSize();
+    QSizeF nativeSize = d->videoItem->nativeSize();
 
-    if ((nativeSize.width()  < 1.0) ||
-        (nativeSize.height() < 1.0))
+    if (
+        (nativeSize.width()  < 1.0) ||
+        (nativeSize.height() < 1.0)
+       )
     {
         nativeSize = QSizeF(352.0, 288.0);
     }

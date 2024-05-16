@@ -21,6 +21,7 @@
 #include <QList>
 #include <QString>
 #include <QFont>
+#include <QFontDatabase>
 
 // Local includes
 
@@ -36,8 +37,8 @@ class DIGIKAM_EXPORT FrameOsdSettings
 
 public:
 
-    explicit FrameOsdSettings();
-    ~FrameOsdSettings();
+    FrameOsdSettings()  = default;
+    ~FrameOsdSettings() = default;
 
     /**
      * Read and write settings in config file between sessions.
@@ -58,7 +59,11 @@ public:
     bool                        printExpoSensitivity = false; ///< Print camera Exposure and Sensitivity while streaming
     bool                        printApertureFocal   = false; ///< Print camera Aperture and Focal while streaming
     bool                        printRating          = false; ///< Print rating while streaming
-    QFont                       osdFont;                      ///< Font for the display of osd text
+
+    /**
+     * Font for the display of osd text.
+     */
+    QFont                       osdFont              = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 };
 
 } // namespace Digikam

@@ -100,14 +100,18 @@ public:
         QSizeF nativeSize    = videoItem->nativeSize();
         int mediaOrientation = videoMediaOrientation();
 
-        if ((nativeSize.width()  < 1.0) ||
-            (nativeSize.height() < 1.0))
+        if (
+            (nativeSize.width()  < 1.0) ||
+            (nativeSize.height() < 1.0)
+           )
         {
             return;
         }
 
-        if ((mediaOrientation == 90) ||
-            (mediaOrientation == 270))
+        if (
+            (mediaOrientation == 90) ||
+            (mediaOrientation == 270)
+           )
         {
             nativeSize.transpose();
         }

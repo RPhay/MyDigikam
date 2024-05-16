@@ -15,10 +15,6 @@
 
 #include "frameosdsettings.h"
 
-// Qt includes
-
-#include <QFontDatabase>
-
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -26,29 +22,20 @@
 namespace Digikam
 {
 
-FrameOsdSettings::FrameOsdSettings()
-    : osdFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont))
-{
-}
-
-FrameOsdSettings::~FrameOsdSettings()
-{
-}
-
 void FrameOsdSettings::readSettings(const KConfigGroup& group)
 {
-    printName            = group.readEntry("FrameOsdPrintNameEntry",                        true);
-    printDate            = group.readEntry("FrameOsdPrintDateEntry",                        true);
-    printApertureFocal   = group.readEntry("FrameOsdPrintApertureFocalEntry",               false);
-    printExpoSensitivity = group.readEntry("FrameOsdPrintExpoSensitivityEntry",             false);
-    printMakeModel       = group.readEntry("FrameOsdPrintMakeModelEntry",                   false);
-    printLensModel       = group.readEntry("FrameOsdPrintLensModelEntry",                   false);
-    printComment         = group.readEntry("FrameOsdPrintCommentEntry",                     false);
-    printTitle           = group.readEntry("FrameOsdPrintTitleEntry",                       false);
-    printCapIfNoTitle    = group.readEntry("FrameOsdPrintCapIfNoTitleEntry",                false);
-    printTags            = group.readEntry("FrameOsdPrintTagsEntry",                        false);
-    printRating          = group.readEntry("FrameOsdPrintRatingEntry",                      false);
-    osdFont              = group.readEntry("FrameOsdCaptionFontEntry",                      QFontDatabase::systemFont(QFontDatabase::GeneralFont));
+    printName            = group.readEntry("FrameOsdPrintNameEntry",            true);
+    printDate            = group.readEntry("FrameOsdPrintDateEntry",            true);
+    printApertureFocal   = group.readEntry("FrameOsdPrintApertureFocalEntry",   false);
+    printExpoSensitivity = group.readEntry("FrameOsdPrintExpoSensitivityEntry", false);
+    printMakeModel       = group.readEntry("FrameOsdPrintMakeModelEntry",       false);
+    printLensModel       = group.readEntry("FrameOsdPrintLensModelEntry",       false);
+    printComment         = group.readEntry("FrameOsdPrintCommentEntry",         false);
+    printTitle           = group.readEntry("FrameOsdPrintTitleEntry",           false);
+    printCapIfNoTitle    = group.readEntry("FrameOsdPrintCapIfNoTitleEntry",    false);
+    printTags            = group.readEntry("FrameOsdPrintTagsEntry",            false);
+    printRating          = group.readEntry("FrameOsdPrintRatingEntry",          false);
+    osdFont              = group.readEntry("FrameOsdCaptionFontEntry",          QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 }
 
 void FrameOsdSettings::writeSettings(KConfigGroup& group)

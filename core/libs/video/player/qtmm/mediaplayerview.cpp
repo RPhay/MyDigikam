@@ -84,14 +84,20 @@ protected:
 
                 if (mplayer)
                 {
-                    if      ((mouseEvent->button() == Qt::LeftButton) &&
-                             ((singleClick && (event->type() == QEvent::MouseButtonPress)) ||
-                             (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
+                    if      (
+                             (mouseEvent->button() == Qt::LeftButton) &&
+                             (
+                              (singleClick  && (event->type() == QEvent::MouseButtonPress)) ||
+                              (!singleClick && (event->type() == QEvent::MouseButtonDblClick))
+                             )
+                            )
                     {
                         mplayer->slotEscapePressed();
                     }
-                    else if ((mouseEvent->button() == Qt::RightButton) &&
-                             (event->type() == QEvent::MouseButtonPress))
+                    else if (
+                             (mouseEvent->button() == Qt::RightButton) &&
+                             (event->type()        == QEvent::MouseButtonPress)
+                            )
                     {
                         mplayer->slotRotateVideo();
                     }
@@ -193,14 +199,18 @@ public:
         QSizeF nativeSize    = videoItem->nativeSize();
         int mediaOrientation = videoMediaOrientation();
 
-        if ((nativeSize.width()  < 1.0) ||
-            (nativeSize.height() < 1.0))
+        if (
+            (nativeSize.width()  < 1.0) ||
+            (nativeSize.height() < 1.0)
+           )
         {
             return;
         }
 
-        if ((mediaOrientation == 90) ||
-            (mediaOrientation == 270))
+        if (
+            (mediaOrientation == 90) ||
+            (mediaOrientation == 270)
+           )
         {
             nativeSize.transpose();
         }
@@ -731,8 +741,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
 {
-    if ((d->sliderTime < position)       &&
-        ((d->sliderTime + 100) > position))
+    if (
+        (d->sliderTime < position)       &&
+        ((d->sliderTime + 100) > position)
+       )
     {
         return;
     }

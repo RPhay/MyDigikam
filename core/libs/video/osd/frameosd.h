@@ -39,8 +39,8 @@ class DIGIKAM_EXPORT FrameOsd
 
 public:
 
-    explicit FrameOsd();
-    ~FrameOsd();
+    FrameOsd();
+    ~FrameOsd() = default;
 
 public:
 

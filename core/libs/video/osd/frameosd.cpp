@@ -42,10 +42,6 @@ FrameOsd::FrameOsd()
     m_descFnt.setBold(true);
 }
 
-FrameOsd::~FrameOsd()
-{
-}
-
 void FrameOsd::populateOSD(const QUrl& url,
                            const FrameOsdSettings& settings,
                            const DInfoInterface* const iface)
@@ -262,7 +258,6 @@ void FrameOsd::populateOSD(const QUrl& url,
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
-
 
     // Display rating
 

@@ -37,7 +37,7 @@ class DIGIKAM_EXPORT FFmpegLauncher : public ProcessLauncher
 public:
 
     explicit FFmpegLauncher(QObject* const parent = nullptr);
-    ~FFmpegLauncher() override;
+    ~FFmpegLauncher() override = default;
 
     /**
      * Set encoding frames settings.

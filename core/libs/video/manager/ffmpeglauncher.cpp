@@ -38,10 +38,6 @@ FFmpegLauncher::FFmpegLauncher(QObject* const parent)
 {
 }
 
-FFmpegLauncher::~FFmpegLauncher()
-{
-}
-
 void FFmpegLauncher::setSettings(VidSlideSettings* const settings)
 {
     m_settings = settings;
@@ -93,7 +89,7 @@ void FFmpegLauncher::encodeFrames()
     {
         args << QLatin1String("-vf")
              << QString::fromLatin1("tmidequalizer=sigma=%1")
-                    .arg(m_settings->strength / 10.0);
+                                    .arg(m_settings->strength / 10.0);
     }
 
     // Video encoding

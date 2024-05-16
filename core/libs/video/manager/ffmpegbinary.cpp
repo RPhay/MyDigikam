@@ -34,10 +34,6 @@ FFmpegBinary::FFmpegBinary(QObject* const)
     setup();
 }
 
-FFmpegBinary::~FFmpegBinary()
-{
-}
-
 QString FFmpegBinary::ffmpegToolBin()
 {
 

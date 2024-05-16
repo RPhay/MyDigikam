@@ -191,13 +191,17 @@ void AudPlayerWdg::slotPlay()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    if ((d->mediaObject->playbackState() != QMediaPlayer::PlayingState) ||
-        (d->mediaObject->playbackState() == QMediaPlayer::PausedState))
+    if (
+        (d->mediaObject->playbackState() != QMediaPlayer::PlayingState) ||
+        (d->mediaObject->playbackState() == QMediaPlayer::PausedState)
+       )
 
 #else
 
-    if ((d->mediaObject->state() != QAVPlayer::PlayingState) ||
-        (d->mediaObject->state() == QAVPlayer::PausedState))
+    if (
+        (d->mediaObject->state() != QAVPlayer::PlayingState) ||
+        (d->mediaObject->state() == QAVPlayer::PausedState)
+       )
 
 #endif
 

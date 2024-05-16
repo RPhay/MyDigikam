@@ -30,7 +30,7 @@ class DIGIKAM_EXPORT FFmpegBinary : public DBinaryIface
 public:
 
     explicit FFmpegBinary(QObject* const parent = nullptr);
-    ~FFmpegBinary() override;
+    ~FFmpegBinary() override = default;
 
     static QString ffmpegToolBin();
 };

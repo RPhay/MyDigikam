@@ -75,14 +75,20 @@ protected:
 
                 if (mplayer)
                 {
-                    if      ((mouseEvent->button() == Qt::LeftButton) &&
-                             ((singleClick && (event->type() == QEvent::MouseButtonPress)) ||
-                             (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
+                    if      (
+                             (mouseEvent->button() == Qt::LeftButton) &&
+                             (
+                              (singleClick  && (event->type() == QEvent::MouseButtonPress)) ||
+                              (!singleClick && (event->type() == QEvent::MouseButtonDblClick))
+                             )
+                            )
                     {
                         mplayer->slotEscapePressed();
                     }
-                    else if ((mouseEvent->button() == Qt::RightButton) &&
-                             (event->type() == QEvent::MouseButtonPress))
+                    else if (
+                             (mouseEvent->button() == Qt::RightButton) &&
+                             (event->type()        == QEvent::MouseButtonPress)
+                            )
                     {
                         mplayer->slotRotateVideo();
                     }
@@ -610,8 +616,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
 {
-    if ((d->sliderTime < position)       &&
-        ((d->sliderTime + 100) > position))
+    if (
+        (d->sliderTime < position)       &&
+        ((d->sliderTime + 100) > position)
+       )
     {
         return;
     }
