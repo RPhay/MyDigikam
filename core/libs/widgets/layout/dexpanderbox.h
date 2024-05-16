@@ -82,7 +82,7 @@ private:
     // Disabled methods from QLabel
     QString text() const { return QString(); }; ///< Use adjustedText() instead.
     void setText(const QString&) {};            ///< Use setAdjustedText(text) instead.
-    void clear() {};                            ///< Use setdjustedText(QString()) instead.
+    void clear()                 {};            ///< Use setdjustedText(QString()) instead.
 
 private:
 

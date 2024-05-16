@@ -40,7 +40,7 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterModelPrepareHook
 {
 public:
 
-    virtual ~ItemFilterModelPrepareHook() {};
+    virtual ~ItemFilterModelPrepareHook() = default;
     virtual void prepare(const QVector<ItemInfo>& infos) = 0;
 
 private:

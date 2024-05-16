@@ -48,7 +48,7 @@ public:
 public:
 
     explicit DHistoryView(QWidget* const parent);
-    ~DHistoryView()                     override;
+    ~DHistoryView()                     override = default;
 
     void addEntry(const QString& msg,
                   EntryType type,

@@ -63,10 +63,6 @@ DWorkingPixmap::DWorkingPixmap(QObject* const parent)
     }
 }
 
-DWorkingPixmap::~DWorkingPixmap()
-{
-}
-
 bool DWorkingPixmap::isEmpty() const
 {
     return m_frames.isEmpty();

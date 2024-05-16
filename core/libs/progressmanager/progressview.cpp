@@ -406,7 +406,7 @@ void ProgressView::slotTransactionAdded(ProgressItem* item)
 
 void ProgressView::slotTransactionCompleted(ProgressItem* item)
 {
-    if ( d->transactionsToListviewItems.contains( item ) )
+    if (d->transactionsToListviewItems.contains(item))
     {
         TransactionItem* const ti = d->transactionsToListviewItems[item];
         d->transactionsToListviewItems.remove( item );

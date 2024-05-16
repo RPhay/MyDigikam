@@ -422,7 +422,7 @@ QString ProgressManager::getUniqueID()
 
 ProgressManager* ProgressManager::instance()
 {
-    return creator.isDestroyed() ? nullptr : &creator->object;
+    return (creator.isDestroyed() ? nullptr : &creator->object);
 }
 
 ProgressItem* ProgressManager::createProgressItemImpl(ProgressItem* const parent,

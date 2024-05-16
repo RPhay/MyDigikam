@@ -51,7 +51,7 @@ public:
      */
     void setStatus(const QString&);
 
-    void setTotalSteps( int totalSteps );
+    void setTotalSteps(int totalSteps);
 
     ProgressItem* item() const;
 
@@ -82,7 +82,7 @@ class TransactionItemView : public QScrollArea
 public:
 
     explicit TransactionItemView(QWidget* const parent = nullptr, const QString& name=QString());
-    ~TransactionItemView() override {}
+    ~TransactionItemView() override = default;
 
     TransactionItem* addTransactionItem(ProgressItem* item, bool first);
 
@@ -114,10 +114,11 @@ class DIGIKAM_EXPORT ProgressView : public OverlayWidget
 
 public:
 
-    explicit ProgressView(QWidget* const alignWidget, QWidget* const parent, const QString& name = QString());
-    ~ProgressView() override;
+    explicit ProgressView(QWidget* const alignWidget, QWidget* const parent,
+                          const QString& name = QString());
+    ~ProgressView()                 override;
 
-    void setVisible(bool b) override;
+    void setVisible(bool b)         override;
 
 public Q_SLOTS:
 
@@ -143,7 +144,7 @@ protected Q_SLOTS:
 
 protected:
 
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private:
 

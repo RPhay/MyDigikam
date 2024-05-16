@@ -32,12 +32,12 @@ class DIGIKAM_EXPORT DLogoAction : public QWidgetAction
 
 public:
 
-    explicit DLogoAction(QObject* const parent, bool alignOnright=true);
-    ~DLogoAction() override;
+    explicit DLogoAction(QObject* const parent, bool alignOnright = true);
+    ~DLogoAction()                          override;
 
     void start();
     void stop();
-    bool running() const;
+    bool running()                    const;
 
 protected:
 

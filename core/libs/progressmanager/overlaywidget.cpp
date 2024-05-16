@@ -30,10 +30,6 @@ OverlayWidget::OverlayWidget(QWidget* const alignWidget, QWidget* const parent, 
     setAlignWidget(alignWidget);
 }
 
-OverlayWidget::~OverlayWidget()
-{
-}
-
 void OverlayWidget::reposition()
 {
     if (!mAlignWidget)
@@ -87,8 +83,10 @@ void OverlayWidget::setAlignWidget(QWidget* const w)
 
 bool OverlayWidget::eventFilter(QObject* o, QEvent* e)
 {
-    if ((o == mAlignWidget) &&
-        ((e->type() == QEvent::Move) || (e->type() == QEvent::Resize)))
+    if (
+        (o == mAlignWidget) &&
+        ((e->type() == QEvent::Move) || (e->type() == QEvent::Resize))
+       )
     {
         reposition();
     }

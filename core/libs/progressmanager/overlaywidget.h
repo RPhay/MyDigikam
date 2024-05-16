@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT OverlayWidget : public DHBox
 public:
 
     explicit OverlayWidget(QWidget* const alignWidget, QWidget* const parent, const QString& name = QString());
-    ~OverlayWidget() override;
+    ~OverlayWidget() override = default;
 
     QWidget* alignWidget() const;
     void     setAlignWidget(QWidget* const alignWidget);

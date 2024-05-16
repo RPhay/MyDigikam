@@ -205,7 +205,7 @@ void StatusbarProgressWidget::updateBusyMode()
 
         delete d->busyTimer;
         d->busyTimer = nullptr;
-        d->delayTimer->start( 1000 );
+        d->delayTimer->start(1000);
     }
     else
     {

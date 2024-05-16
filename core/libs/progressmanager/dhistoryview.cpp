@@ -139,10 +139,6 @@ DHistoryView::DHistoryView(QWidget* const parent)
             this, SLOT(slotContextMenu()));
 }
 
-DHistoryView::~DHistoryView()
-{
-}
-
 void DHistoryView::slotContextMenu()
 {
     QMenu popmenu(this);

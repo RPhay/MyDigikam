@@ -37,8 +37,8 @@ class Workflow
 {
 public:
 
-    explicit Workflow() {};
-    ~Workflow()         {};
+    Workflow()  = default;
+    ~Workflow() = default;
 
 public:
 
