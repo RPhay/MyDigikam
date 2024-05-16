@@ -40,10 +40,6 @@ FileActionProgress::FileActionProgress(const QString& name)
             this, SLOT(slotCancel()));
 }
 
-FileActionProgress::~FileActionProgress()
-{
-}
-
 void FileActionProgress::slotProgressValue(float v)
 {
     setProgress((int)(v*100.0));

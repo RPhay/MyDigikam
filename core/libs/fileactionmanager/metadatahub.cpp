@@ -793,7 +793,9 @@ void MetadataHub::loadTags(const QStringList& loadedTagPaths)
     else
     {
         // a simple intersection
+
         QStringList toBeAdded;
+
         for (QStringList::iterator it = d->tagList.begin(); it != d->tagList.end(); ++it)
         {
             if (loadedTagPaths.indexOf(*it) == -1)
@@ -801,6 +803,7 @@ void MetadataHub::loadTags(const QStringList& loadedTagPaths)
                 // it's not in the loadedTagPaths list. Remove it from intersection list.
                 it = d->tagList.erase(it);
             }
+
             // else, it is in both lists, so no need to change d->tagList, it's already added.
         }
     }

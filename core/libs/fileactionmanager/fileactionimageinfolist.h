@@ -65,13 +65,14 @@ protected:
 
 // -------------------------------------------------------------------------------------------------------------------
 
-class FileActionProgressItemContainer :public QObject, public TwoProgressItemsContainer
+class FileActionProgressItemContainer : public QObject,
+                                        public TwoProgressItemsContainer
 {
     Q_OBJECT
 
 public:
 
-    FileActionProgressItemContainer();
+    FileActionProgressItemContainer() = default;
     void schedulingForDB(int numberOfInfos, const QString& action, FileActionProgressItemCreator* const creator);
     void dbProcessed(int numberOfInfos);
     void dbFinished();
@@ -95,9 +96,7 @@ class FileActionItemInfoList : public QList<ItemInfo>
 {
 public:
 
-    FileActionItemInfoList()
-    {
-    }
+    FileActionItemInfoList()  = default;
 
     FileActionItemInfoList(const FileActionItemInfoList& copy)
         : QList    (copy),
@@ -105,9 +104,7 @@ public:
     {
     }
 
-    ~FileActionItemInfoList()
-    {
-    }
+    ~FileActionItemInfoList() = default;
 
 public:
 

@@ -62,6 +62,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
         else
         {
             Q_EMIT imageDataChanged(filePath, true, true);
+
             QUrl url = QUrl::fromLocalFile(filePath);
             ItemAttributesWatch::instance()->fileMetadataChanged(url);
         }
@@ -186,7 +187,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         if (isWritable && (behavior & MetaEngineSettingsContainer::RotatingPixels))
         {
-            if (format == QLatin1String("JPG") && JPEGUtils::isJpegImage(filePath))
+            if ((format == QLatin1String("JPG")) && JPEGUtils::isJpegImage(filePath))
             {
                 rotateAsJpeg = true;
             }

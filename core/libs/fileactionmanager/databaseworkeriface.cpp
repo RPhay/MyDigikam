@@ -124,8 +124,10 @@ void FileActionMngrDatabaseWorker::assignPickLabel(const FileActionItemInfoList&
             hub.setPickLabel(pickId);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
-                d->shallSendForWriting(info.id()))
+            if (
+                hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id())
+               )
             {
                 forWriting << info;
             }
@@ -171,8 +173,10 @@ void FileActionMngrDatabaseWorker::assignColorLabel(const FileActionItemInfoList
             hub.setColorLabel(colorId);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
-                d->shallSendForWriting(info.id()))
+            if (
+                hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id())
+               )
             {
                 forWriting << info;
             }
@@ -219,8 +223,10 @@ void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& in
             hub.setRating(rating);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
-                d->shallSendForWriting(info.id()))
+            if (
+                hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id())
+               )
             {
                 forWriting << info;
             }

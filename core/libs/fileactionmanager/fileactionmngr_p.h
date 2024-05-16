@@ -177,7 +177,7 @@ public:
 
     FileActionMngr*                       q             = nullptr;
 
-    DatabaseWorkerInterface*              dbWorker;
+    DatabaseWorkerInterface*              dbWorker      = nullptr;
     ParallelAdapter<FileWorkerInterface>* fileWorker;
 
     QTimer*                               sleepTimer    = nullptr;

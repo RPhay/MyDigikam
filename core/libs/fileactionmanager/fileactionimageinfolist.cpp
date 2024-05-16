@@ -65,10 +65,6 @@ void TwoProgressItemsContainer::advance(QAtomicPointer<ProgressItem>& ptr, int n
     }
 }
 
-FileActionProgressItemContainer::FileActionProgressItemContainer()
-{
-}
-
 void FileActionProgressItemContainer::schedulingForDB(int numberOfInfos,
                                                       const QString& action,
                                                       FileActionProgressItemCreator* const creator)
