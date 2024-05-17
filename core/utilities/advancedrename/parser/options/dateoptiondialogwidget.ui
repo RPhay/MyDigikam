@@ -67,7 +67,7 @@
         </font>
        </property>
        <property name="text">
-        <string notr="true" comment="KDE::DoNotExtract">placeholder</string>
+        <string notr="true">placeholder</string>
        </property>
       </widget>
      </item>
@@ -77,7 +77,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string notr="true" comment="KDE::DoNotExtract">placeholder</string>
+        <string notr="true">placeholder</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
