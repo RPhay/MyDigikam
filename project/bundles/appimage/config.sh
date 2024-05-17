@@ -51,6 +51,10 @@ DK_KP_VERSION="5.27.10"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.5"
 
+# KDE KF6 frameworks version.
+# See official release here: https://download.kde.org/stable/frameworks/
+DK_KDE_VERSION="v6.2.0"
+
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 

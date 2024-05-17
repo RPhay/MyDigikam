@@ -62,9 +62,9 @@ DK_KP_VERSION="5.27.8"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.1"
 
-# KDE KF5 frameworks version.
+# KDE KF6 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="master"
+DK_KDE_VERSION="v6.2.0"
 
 # Qt version to use in bundle and provided by VCPKG.
 DK_QTVERSION="6"
