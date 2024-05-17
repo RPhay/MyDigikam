@@ -101,9 +101,11 @@ QString DMetadata::getItemUniqueId() const
     // If the first 20 are zero, it's probably a counter,
     // the left 12 are sufficient for more then 10^14 clicks.
 
-    if (!exifUid.isEmpty()                                         &&
+    if (
+        !exifUid.isEmpty()                                         &&
         !exifUid.startsWith(QLatin1String("00000000000000000000")) &&
-        !getExifTagString("Exif.Image.Make").contains(QLatin1String("SAMSUNG"), Qt::CaseInsensitive))
+        !getExifTagString("Exif.Image.Make").contains(QLatin1String("SAMSUNG"), Qt::CaseInsensitive)
+       )
     {
         return exifUid;
     }

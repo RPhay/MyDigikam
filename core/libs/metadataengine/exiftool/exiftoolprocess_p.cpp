@@ -125,8 +125,10 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
     // Check if outputChannel and errorChannel are both ready
 
-    if (!(outReady[QProcess::StandardOutput] &&
-        outReady[QProcess::StandardError]))
+    if (
+        !(outReady[QProcess::StandardOutput] &&
+        outReady[QProcess::StandardError])
+       )
     {
 /*
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool read channels are not ready";

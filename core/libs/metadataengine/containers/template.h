@@ -37,8 +37,8 @@ class DIGIKAM_EXPORT Template
 {
 public:
 
-    explicit Template();
-    ~Template();
+    Template()  = default;
+    ~Template() = default;
 
     /**
      * Return true if Template title is null

@@ -90,9 +90,9 @@ public:
     ExifToolProcess::Action            cmdAction            = ExifToolProcess::NO_ACTION;
     QMap<int, ExifToolProcess::Result> resultMap;
 
-    int                                outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    bool                               outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray                         outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
+    int                                outAwait[2];         ///< [0] StandardOutput | [1] ErrorOutput
+    bool                               outReady[2];         ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray                         outBuff[2];          ///< [0] StandardOutput | [1] ErrorOutput
 
     bool                               writeChannelIsClosed = true;
 

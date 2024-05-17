@@ -131,8 +131,9 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
 
     try
     {
-        double num, den;
-        *altitude = 0.0;
+        double num = 0.0;
+        double den = 1.0;
+        *altitude  = 0.0;
 
         // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
 
@@ -218,7 +219,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
 
 QString MetaEngine::getGPSLatitudeString() const
 {
-    double latitude;
+    double latitude = 0.0;
 
     if (!getGPSLatitudeNumber(&latitude))
     {
@@ -230,7 +231,7 @@ QString MetaEngine::getGPSLatitudeString() const
 
 QString MetaEngine::getGPSLongitudeString() const
 {
-    double longitude;
+    double longitude = 0.0;
 
     if (!getGPSLongitudeNumber(&longitude))
     {
@@ -321,9 +322,11 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
             return false;
         }
 
-        char scratchBuf[100];
-        long int nom, denom;
-        long int deg, min;
+        char scratchBuf[100] = { 0 };
+        long int nom   = 0;
+        long int denom = 1;
+        long int deg   = 0;
+        long int min   = 0;
 
         // Now start adding data.
 
@@ -451,7 +454,8 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 
 bool MetaEngine::setGPSInfo(const double altitude, const QString& latitude, const QString& longitude)
 {
-    double longitudeValue, latitudeValue;
+    double longitudeValue = 0.0;
+    double latitudeValue  = 0.0;
 
     if (!convertFromGPSCoordinateString(latitude, &latitudeValue))
     {
@@ -485,7 +489,8 @@ bool MetaEngine::removeGPSInfo()
             }
         }
 
-        for (QStringList::const_iterator it2 = gpsTagsKeys.constBegin() ; it2 != gpsTagsKeys.constEnd() ; ++it2)
+        for (QStringList::const_iterator it2 = gpsTagsKeys.constBegin() ;
+             it2 != gpsTagsKeys.constEnd() ; ++it2)
         {
             Exiv2::ExifKey gpsKey((*it2).toLatin1().constData());
             Exiv2::ExifData::iterator it3 = d->exifMetadata().findKey(gpsKey);
@@ -725,24 +730,30 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
 
     // be relaxed with seconds of 0/0
 
-    if ((denSecs          == 0) &&
-        (numeratorSeconds == 0))
+    if (
+        (denSecs          == 0) &&
+        (numeratorSeconds == 0)
+       )
     {
         denSecs = 1;
     }
 
-    if      ((denominatorDegrees == 1) &&
+    if      (
+             (denominatorDegrees == 1) &&
              (denominatorMinutes == 1) &&
-             (denSecs            == 1))
+             (denSecs            == 1)
+            )
     {
         // use form DDD,MM,SSk
 
         coordinate = QLatin1String("%1,%2,%3%4");
         coordinate = coordinate.arg(numeratorDegrees).arg(numeratorMinutes).arg(numeratorSeconds).arg(directionReference);
     }
-    else if ((denominatorDegrees == 1)   &&
+    else if (
+             (denominatorDegrees == 1)   &&
              (denominatorMinutes == 100) &&
-             (denSecs            == 1))
+             (denSecs            == 1)
+            )
     {
         // use form DDD,MM.mmk
 
@@ -758,9 +769,11 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
 
         coordinate = coordinate.arg(numeratorDegrees).arg(minutesString).arg(directionReference);
     }
-    else if ((denominatorDegrees == 0) ||
+    else if (
+             (denominatorDegrees == 0) ||
              (denominatorMinutes == 0) ||
-             (denSecs            == 0))
+             (denSecs            == 0)
+            )
     {
         // Invalid. 1/0 is everything but 0. As is 0/0.
 
@@ -825,17 +838,17 @@ QString MetaEngine::convertToGPSCoordinateString(const bool isLatitude, double c
 
     // remove sign
 
-    coordinate     = fabs(coordinate);
+    coordinate       = fabs(coordinate);
 
-    int degrees    = (int)floor(coordinate);
+    int degrees      = (int)floor(coordinate);
 
     // get fractional part
 
-    coordinate     = coordinate - (double)(degrees);
+    coordinate       = coordinate - (double)(degrees);
 
     // To minutes
 
-    double minutes = coordinate * 60.0;
+    double minutes   = coordinate * 60.0;
 
     // use form DDD,MM.mmk
 

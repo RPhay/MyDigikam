@@ -73,10 +73,6 @@ MetaEngine::Private::Private(MetaEngine* const q)
     Exiv2::LogMsg::setHandler(MetaEngine::Private::printExiv2MessageHandler);
 }
 
-MetaEngine::Private::~Private()
-{
-}
-
 const Exiv2::ExifData& MetaEngine::Private::exifMetadata() const
 {
     return data.constData()->exifMetadata;

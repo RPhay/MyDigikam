@@ -45,10 +45,6 @@ DMetadata::DMetadata(const MetaEngineData& data)
     registerMetadataSettings();
 }
 
-DMetadata::~DMetadata()
-{
-}
-
 void DMetadata::registerMetadataSettings()
 {
     setSettings(MetaEngineSettings::instance()->settings());

@@ -216,9 +216,11 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
         // Exact value was not found,but rating is in range,
         // so we try to approximate it
 
-        if ((index == -1)                         &&
+        if (
+            (index == -1)                         &&
             (rating > entry.convertRatio.first()) &&
-            (rating < entry.convertRatio.last()))
+            (rating < entry.convertRatio.last())
+           )
         {
             for (int i = 0 ; i < entry.convertRatio.size() ; ++i)
             {

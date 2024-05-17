@@ -17,14 +17,6 @@
 namespace Digikam
 {
 
-Template::Template()
-{
-}
-
-Template::~Template()
-{
-}
-
 bool Template::isNull() const
 {
     return m_templateTitle.isNull();

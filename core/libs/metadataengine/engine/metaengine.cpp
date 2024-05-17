@@ -228,6 +228,7 @@ void MetaEngine::setData(const MetaEngineData& data)
     {
         // MetaEngineData can have a null pointer,
         // but we never want a null pointer in Private.
+
         d->data->clear();
     }
 }

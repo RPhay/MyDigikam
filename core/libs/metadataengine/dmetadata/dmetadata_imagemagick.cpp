@@ -260,10 +260,12 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                     val = val.section(QLatin1String(" / "), 0, 0);          // Drop tag description string on the right side (stage2).
                 }
 
-                if (key.isEmpty()                                 ||
+                if (
+                    key.isEmpty()                                 ||
                     key.startsWith(QLatin1String("comment"))      ||
                     key.startsWith(QLatin1String("date:create"))  ||
-                    key.startsWith(QLatin1String("date:modify")))
+                    key.startsWith(QLatin1String("date:modify"))
+                   )
                 {
                     // These tags are already handled with Exif or key or val are empty.
 
@@ -288,8 +290,10 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 
                 // Register XMP tags in container
 
-                if      (key == QLatin1String("Xmp.tiff.ImageDescription") ||
-                         key == QLatin1String("Xmp.exif.UserComment"))
+                if      (
+                         key == QLatin1String("Xmp.tiff.ImageDescription") ||
+                         key == QLatin1String("Xmp.exif.UserComment")
+                        )
                 {
                     setXmpTagStringLangAlt(key.toLatin1().constData(), val, QString());
                 }

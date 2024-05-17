@@ -41,9 +41,11 @@ FocusPoint create_af_point(float imageWidth,
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area before rotation:" << region;
 
-    if      ((orientation == MetaEngine::ORIENTATION_ROT_90)       ||
+    if      (
+             (orientation == MetaEngine::ORIENTATION_ROT_90)       ||
              (orientation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
-             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+            )
     {
         region.moveTo(size.height() - region.y() - region.height(), region.x());
         region.setSize(region.size().transposed());
@@ -60,13 +62,17 @@ FocusPoint create_af_point(float imageWidth,
         region.setSize(region.size().transposed());
     }
 
-    if      ((orientation == MetaEngine::ORIENTATION_HFLIP) ||
-             (orientation == MetaEngine::ORIENTATION_ROT_90_HFLIP))
+    if      (
+             (orientation == MetaEngine::ORIENTATION_HFLIP) ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_HFLIP)
+            )
     {
         region.moveTo(size.width() - region.x() - region.width(), region.y());
     }
-    else if ((orientation == MetaEngine::ORIENTATION_VFLIP) ||
-             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+    else if (
+             (orientation == MetaEngine::ORIENTATION_VFLIP) ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+            )
     {
         region.moveTo(region.x(), size.height() - region.y() - region.height());
     }

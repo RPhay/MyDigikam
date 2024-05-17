@@ -153,8 +153,10 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     QStringList afPointWidths  = findValue(TagNameRoot, QLatin1String("AFAreaWidths"),  true).toStringList();
     QStringList afPointHeights = findValue(TagNameRoot, QLatin1String("AFAreaHeights"), true).toStringList();
 
-    if (((afPointWidth.isNull())   || (afPointHeight.isNull())) &&
-        ((afPointWidths.isEmpty()) || (afPointHeights.isEmpty())))
+    if (
+        (afPointWidth.isNull()   || afPointHeight.isNull()) &&
+        (afPointWidths.isEmpty() || afPointHeights.isEmpty())
+       )
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from Canon makernotes.";
 
@@ -216,8 +218,10 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     int yDirection          = 1;
 
-    if ((cameraType == QLatin1String("COMPACT"))    ||
-        (cameraType == QLatin1String("EOS HIGH-END")))
+    if (
+        (cameraType == QLatin1String("COMPACT"))    ||
+        (cameraType == QLatin1String("EOS HIGH-END"))
+       )
     {
         yDirection = -1;
     }

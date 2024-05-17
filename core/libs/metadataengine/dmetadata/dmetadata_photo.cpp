@@ -284,8 +284,10 @@ QString DMetadata::getLensDescription() const
         QString canonCs = getExifTagString(canonLt.toLatin1().constData());
         QString exifMod = getExifTagString(lensModel.toLatin1().constData());
 
-        if ((exifMod == QLatin1String("RF70-200mm F2.8 L IS USM"))   &&
-            (canonCs == QLatin1String("Canon RF 70-200mm F4L IS USM")))
+        if (
+            (exifMod == QLatin1String("RF70-200mm F2.8 L IS USM"))   &&
+            (canonCs == QLatin1String("Canon RF 70-200mm F4L IS USM"))
+           )
         {
             return QLatin1String("Canon RF 70-200mm F2.8L IS USM");
         }
@@ -311,10 +313,12 @@ QString DMetadata::getLensDescription() const
         // To prevent undecoded tag values from Exiv2 as "(65535)"
         // or the value "----" from Exif.Photo.LensModel
 
-        if (!lens.isEmpty()                        &&
+        if (
+            !lens.isEmpty()                        &&
             (lens != QLatin1String("----"))        &&
             (lens != QLatin1String("65535"))       &&
-            !(lens.startsWith(QLatin1Char('('))    &&
+            !(
+              lens.startsWith(QLatin1Char('('))    &&
               lens.endsWith(QLatin1Char(')'))
              )
            )
@@ -552,7 +556,9 @@ double DMetadata::apexShutterSpeedToExposureTime(double shutterSpeed)
     {
         return 0.0005;    // 1/2000
     }
+
     // supplemental rules
+
     else if (shutterSpeed == 12.0)
     {
         return 0.00025;    // 1/4000

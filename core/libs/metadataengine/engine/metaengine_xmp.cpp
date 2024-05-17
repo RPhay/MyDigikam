@@ -37,6 +37,7 @@ bool MetaEngine::canWriteXmp(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
@@ -1005,11 +1006,17 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 case Exiv2::signedShort:
                 case Exiv2::signedLong:
                 {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
                     return QVariant((int)it->toInt64());
+
 #else
+
                     return QVariant((int)it->toLong());
+
 #endif
+
                 }
 
                 case Exiv2::unsignedRational:

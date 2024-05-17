@@ -21,14 +21,6 @@
 namespace Digikam
 {
 
-CaptionValues::CaptionValues()
-{
-}
-
-CaptionValues::~CaptionValues()
-{
-}
-
 bool CaptionValues::operator==(const CaptionValues& val) const
 {
     bool b1  = (author  == val.author);
@@ -51,14 +43,6 @@ QDebug operator<<(QDebug dbg, const CaptionValues& val)
 }
 
 // --------------------------------------------------------------------
-
-CaptionsMap::CaptionsMap()
-{
-}
-
-CaptionsMap::~CaptionsMap()
-{
-}
 
 void CaptionsMap::setData(const MetaEngine::AltLangMap& comments,
                           const MetaEngine::AltLangMap& authors,

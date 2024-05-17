@@ -33,9 +33,9 @@ class DIGIKAM_EXPORT PhotoInfoContainer
 
 public:
 
-    PhotoInfoContainer()                          = default;
-    PhotoInfoContainer(const PhotoInfoContainer&) = default;
-    ~PhotoInfoContainer()                         = default;
+    PhotoInfoContainer()                                     = default;
+    PhotoInfoContainer(const PhotoInfoContainer&)            = default;
+    ~PhotoInfoContainer()                                    = default;
 
     PhotoInfoContainer& operator=(const PhotoInfoContainer&) = default;
     PhotoInfoContainer& operator=(PhotoInfoContainer&&)      = default;

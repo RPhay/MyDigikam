@@ -21,14 +21,6 @@
 namespace Digikam
 {
 
-VideoInfoContainer::VideoInfoContainer()
-{
-}
-
-VideoInfoContainer::~VideoInfoContainer()
-{
-}
-
 bool VideoInfoContainer::operator==(const VideoInfoContainer& t) const
 {
     bool b1  = (aspectRatio        == t.aspectRatio);

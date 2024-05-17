@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT FFMpegConfigHelper
 public:
 
     /**
-     * Return a map of video Codec Name with a list of properties:
+     * Return a map of Video Codec Name with a list of properties:
      *    - Codecs description.
      *    - Read support.
      *    - Write support.
@@ -43,7 +43,7 @@ public:
     static FFMpegProperties getVideoCodecsProperties();
 
     /**
-     * Return a map of audio Codec Name with a list of properties:
+     * Return a map of Audio Codec Name with a list of properties:
      *    - Codecs description.
      *    - Read support.
      *    - Write support.
@@ -51,7 +51,7 @@ public:
     static FFMpegProperties getAudioCodecsProperties();
 
     /**
-     * Return a file extensions supported a list of properties:
+     * Return a map,of File extensions supported with a list of properties:
      *    - Format description.
      */
     static FFMpegProperties getExtensionsProperties();

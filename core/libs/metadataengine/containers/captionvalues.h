@@ -34,8 +34,8 @@ class DIGIKAM_EXPORT CaptionValues
 {
 public:
 
-    explicit CaptionValues();
-    ~CaptionValues();
+    CaptionValues()  = default;
+    ~CaptionValues() = default;
 
     bool operator==(const CaptionValues& val) const;
 
@@ -60,8 +60,8 @@ class DIGIKAM_EXPORT CaptionsMap : public QMap<QString, CaptionValues>
 {
 public:
 
-    explicit CaptionsMap();
-    ~CaptionsMap();
+    CaptionsMap()  = default;
+    ~CaptionsMap() = default;
 
     void setData(const MetaEngine::AltLangMap& comments,
                  const MetaEngine::AltLangMap& authors,

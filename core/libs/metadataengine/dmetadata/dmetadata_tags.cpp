@@ -31,7 +31,7 @@ namespace Digikam
 {
 
 bool DMetadata::getItemTagsPath(QStringList& tagsPath,
-                                 const DMetadataSettingsContainer& settings) const
+                                const DMetadataSettingsContainer& settings) const
 {
     Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()))
     {

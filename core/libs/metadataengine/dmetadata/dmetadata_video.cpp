@@ -61,6 +61,7 @@
 
 extern "C"
 {
+
 #include <libavformat/avformat.h>
 #include <libavutil/dict.h>
 #include <libavutil/pixdesc.h>
@@ -95,8 +96,10 @@ QString s_setXmpTagStringFromEntry(const DMetadata* const meta,
 
         if (it != map.end())
         {
-            if (meta &&                     // Protection.
-                !xmpTags.isEmpty())         // If xmpTags is empty, we only return the matching value from the map.
+            if (
+                meta &&                     // Protection.
+                !xmpTags.isEmpty()          // If xmpTags is empty, we only return the matching value from the map.
+               )
             {
                 Q_FOREACH (const QString& tag2, xmpTags)
                 {
@@ -625,8 +628,10 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 {
                     data = QLatin1String("24");
                 }
-                else if ((frameRate == 23.98) || (frameRate == 29.97) ||
-                         (frameRate == 30.0)  || (frameRate == 59.94))
+                else if (
+                         (frameRate == 23.98) || (frameRate == 29.97) ||
+                         (frameRate == 30.0)  || (frameRate == 59.94)
+                        )
                 {
                     data = QLatin1String("NTSC");
                 }

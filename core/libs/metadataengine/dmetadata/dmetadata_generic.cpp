@@ -216,6 +216,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
             // TODO: With Qt6.2.3, QMultiMap do not inherit of QMap as with Qt5 and QVariant do not handle QMultiMap.
             // We needs to find a way to support QVariant conversion from QMultiMap without to lost face entries,
             // or wait than Qt6 support QVariant(QMultiMap).
+
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Faces multimap to variant conversion is not yet supported with Qt6!";
 
 #else
@@ -394,6 +395,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         case MetadataInfo::WhiteBalanceColorTemperature:
         {
             //TODO: ??
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             return QVariant(QMetaType(QMetaType::Int));
@@ -494,6 +496,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         case MetadataInfo::PositionAccuracy:
         {
             // TODO or unsupported?
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 return QVariant(QMetaType(QMetaType::Double));
@@ -509,6 +512,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         case MetadataInfo::PositionDescription:
         {
             // TODO or unsupported?
+
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 return QVariant(QMetaType(QMetaType::QString));
@@ -919,6 +923,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         case MetadataInfo::Lens:
         {
             // heterogeneous source, non-standardized string
+
             return value.toString();
         }
 
@@ -1094,6 +1099,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         }
 
         // Lang Alt
+
         case MetadataInfo::IptcCoreCopyrightNotice:
         case MetadataInfo::IptcCoreRightsUsageTerms:
         case MetadataInfo::Description:
@@ -1146,6 +1152,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         }
 
         // List
+
         case MetadataInfo::IptcCoreCreator:
         case MetadataInfo::IptcCoreScene:
         case MetadataInfo::IptcCoreSubjectCode:
@@ -1154,6 +1161,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         }
 
         // Text
+
         case MetadataInfo::Comment:
         case MetadataInfo::CommentJfif:
         case MetadataInfo::CommentExif:
@@ -1252,9 +1260,12 @@ QMap<int, QString> DMetadata::possibleValuesForEnumField(MetadataInfo::Field fie
         {
             // This one is a bit special.
             // We return a bit mask for binary AND searching.
+
             map[0x1]  = i18nc("@info", "Flash has been fired");
             map[0x40] = i18nc("@info", "Flash with red-eye reduction mode");
+
             //more: TODO?
+
             return map;
         }
 

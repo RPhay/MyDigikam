@@ -435,7 +435,7 @@ void ExifToolProcess::changeExifToolProgram(const QString& etExePath)
 {
     d->etExePath = etExePath;
 
-    if      (d->etExePath.isEmpty() || d->etExePath == exifToolBin())
+    if      (d->etExePath.isEmpty() || (d->etExePath == exifToolBin()))
     {
 
 #ifdef Q_OS_WIN

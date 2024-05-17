@@ -607,7 +607,7 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
 
             case NamespaceEntry::EXIF:
             {
-                if (entry.namespaceName == QLatin1String("Exif.Image.XPTitle"))
+                if      (entry.namespaceName == QLatin1String("Exif.Image.XPTitle"))
                 {
                     if      (writeWithExifTool() && !defaultTitle.isEmpty())
                     {

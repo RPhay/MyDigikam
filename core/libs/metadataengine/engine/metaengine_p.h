@@ -126,7 +126,7 @@ class Q_DECL_HIDDEN MetaEngine::Private
 public:
 
     explicit Private(MetaEngine* const q);
-    ~Private();
+    ~Private() = default;
 
     void copyPrivateData(const Private* const other);
 

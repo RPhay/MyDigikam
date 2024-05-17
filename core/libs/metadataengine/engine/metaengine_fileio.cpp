@@ -132,8 +132,8 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
         return false;
     }
 
-    d->filePath      = filePath;
-    bool hasLoaded   = false;
+    d->filePath             = filePath;
+    bool hasLoaded          = false;
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -368,7 +368,8 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         }
     }
 
-    // NOTE: see B.K.O #137770 & #138540 : never touch the file if is read only.
+    // NOTE: see bugs #137770 & #138540 : never touch the file if is read only.
+
     QFileInfo finfo(regularFilePath);
     QFileInfo dinfo(finfo.path());
 

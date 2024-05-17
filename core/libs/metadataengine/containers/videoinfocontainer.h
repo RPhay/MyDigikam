@@ -33,8 +33,8 @@ class DIGIKAM_EXPORT VideoInfoContainer
 
 public:
 
-    explicit VideoInfoContainer();
-    ~VideoInfoContainer();
+    VideoInfoContainer()  = default;
+    ~VideoInfoContainer() = default;
 
     bool isEmpty()                                  const;
     bool isNull()                                   const;

@@ -197,8 +197,10 @@ bool MetaEngineRotation::isNoTransform() const
 
 MetaEngineRotation& MetaEngineRotation::operator*=(const MetaEngineRotation& ma)
 {
-    set(ma.m[0][0]*m[0][0] + ma.m[0][1]*m[1][0],  ma.m[0][0]*m[0][1] + ma.m[0][1]*m[1][1],
-        ma.m[1][0]*m[0][0] + ma.m[1][1]*m[1][0],  ma.m[1][0]*m[0][1] + ma.m[1][1]*m[1][1]);
+    set(
+        ma.m[0][0]*m[0][0] + ma.m[0][1]*m[1][0],  ma.m[0][0]*m[0][1] + ma.m[0][1]*m[1][1],
+        ma.m[1][0]*m[0][0] + ma.m[1][1]*m[1][0],  ma.m[1][0]*m[0][1] + ma.m[1][1]*m[1][1]
+       );
 
     return *this;
 }

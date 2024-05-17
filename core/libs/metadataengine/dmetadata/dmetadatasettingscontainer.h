@@ -144,7 +144,7 @@ class DIGIKAM_EXPORT DMetadataSettingsContainer
 {
 public:
 
-    explicit DMetadataSettingsContainer();
+    DMetadataSettingsContainer();
     DMetadataSettingsContainer(const DMetadataSettingsContainer& other);
     ~DMetadataSettingsContainer();
 

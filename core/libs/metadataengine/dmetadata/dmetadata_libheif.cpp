@@ -136,10 +136,12 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                     // The first 4 bytes indicate the
                     // offset to the start of the TIFF header of the Exif data.
 
-                    int skip = ((exifChunk.constData()[0] << 24) |
+                    int skip = (
+                                (exifChunk.constData()[0] << 24) |
                                 (exifChunk.constData()[1] << 16) |
                                 (exifChunk.constData()[2] << 8)  |
-                                 exifChunk.constData()[3]) + 4;
+                                 exifChunk.constData()[3]
+                               ) + 4;
 
                     if (exifChunk.size() > skip)
                     {
@@ -238,10 +240,12 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
         return false;
     }
 
-    if ((memcmp(&header.data()[4], "ftyp", 4) != 0) &&
+    if (
+        (memcmp(&header.data()[4], "ftyp", 4) != 0) &&
         (memcmp(&header.data()[8], "heic", 4) != 0) &&
         (memcmp(&header.data()[8], "heix", 4) != 0) &&
-        (memcmp(&header.data()[8], "mif1", 4) != 0))
+        (memcmp(&header.data()[8], "mif1", 4) != 0)
+       )
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: source file is not HEIF image.";
 

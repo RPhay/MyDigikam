@@ -68,6 +68,7 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
         if (!d->xmpMetadata().empty())
         {
             // Only create Xmp.xmp.CreatorTool if it do not exist.
+
             Exiv2::XmpData xmpData(d->xmpMetadata());
             Exiv2::XmpKey key("Xmp.xmp.CreatorTool");
             Exiv2::XmpData::const_iterator it = xmpData.findKey(key);
@@ -118,11 +119,17 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it != exifData.end()) && it->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             width = it->toInt64();
+
 #else
+
             width = it->toLong();
+
 #endif
+
         }
 
         Exiv2::ExifKey key2("Exif.Photo.PixelYDimension");
@@ -130,11 +137,17 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it2 != exifData.end()) && it2->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             height = it2->toInt64();
+
 #else
+
             height = it2->toLong();
+
 #endif
+
         }
 
         if ((width != -1) && (height != -1))
@@ -152,11 +165,17 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it3 != exifData.end()) && it3->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             width = it3->toInt64();
+
 #else
+
             width = it3->toLong();
+
 #endif
+
         }
 
         Exiv2::ExifKey key4("Exif.Image.ImageLength");
@@ -164,11 +183,17 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it4 != exifData.end()) && it4->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             height = it4->toInt64();
+
 #else
+
             height = it4->toLong();
+
 #endif
+
         }
 
         if ((width != -1) && (height != -1))
@@ -327,10 +352,15 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             orientation = it->toInt64();
+
 #else
+
             orientation = it->toLong();
+
 #endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs7D.Rotation =>" << (int)orientation;
@@ -358,10 +388,15 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             orientation = it->toInt64();
+
 #else
+
             orientation = it->toLong();
+
 #endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs5D.Rotation =>" << (int)orientation;
@@ -391,10 +426,15 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             orientation = it->toInt64();
+
 #else
+
             orientation = it->toLong();
+
 #endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.Image.Orientation =>" << (int)orientation;
@@ -497,6 +537,7 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
 
     if (!getExifTagLong("Exif.Photo.ColorSpace", exifColorSpace))
     {
+
 #ifdef _XMP_SUPPORT_
 
         QVariant var = getXmpTagVariant("Xmp.exif.ColorSpace");
@@ -507,6 +548,7 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
         }
 
 #endif // _XMP_SUPPORT_
+
     }
 
     if      (exifColorSpace == 1)
@@ -1059,8 +1101,10 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
         // We call this function from the FFmpeg parser and we don't have a filename yet.
         // Check getFilePath() for empty.
 
-        if (getFilePath().isEmpty() ||
-            QMimeDatabase().mimeTypeForFile(getFilePath()).name().startsWith(QLatin1String("video/")))
+        if (
+            getFilePath().isEmpty() ||
+            QMimeDatabase().mimeTypeForFile(getFilePath()).name().startsWith(QLatin1String("video/"))
+           )
         {
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeOriginal"), xmpTxtVal.get());
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateUTC"),          xmpTxtVal.get());

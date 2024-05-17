@@ -113,9 +113,13 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
             }
 
 #if EXIV2_TEST_VERSION(0,27,99)
+
             QByteArray data((const char*)c2.data(), c2.size());
+
 #else
+
             QByteArray data((const char*)c2.pData_, c2.size_);
+
 #endif
 
             return data;
@@ -554,8 +558,10 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
 
             // Also remove new values to avoid duplicates. They will be added again below.
 
-            if ((key == QLatin1String(iptcTagName)) &&
-                (oldvals.contains(val) || newvals.contains(val)))
+            if (
+                (key == QLatin1String(iptcTagName)) &&
+                (oldvals.contains(val) || newvals.contains(val))
+               )
             {
                 it2 = iptcData.erase(it2);
             }
@@ -662,7 +668,8 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
             // Also remove new keywords to avoid duplicates. They will be added again below.
 
-            if ((key == QLatin1String("Iptc.Application2.Keywords")) &&
+            if (
+                (key == QLatin1String("Iptc.Application2.Keywords")) &&
                 (oldKeywords.contains(val) || newKeywords.contains(val))
                )
             {

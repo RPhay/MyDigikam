@@ -232,7 +232,7 @@ bool GeodeticCalculator::checkOrthodromicDistance()
 {
     double check = m_ellipsoid.orthodromicDistance(toDegrees(m_long1), toDegrees(m_lat1),
                                                    toDegrees(m_long2), toDegrees(m_lat2));
-    check = fabs(m_distance - check);
+    check        = fabs(m_distance - check);
 
     return (check <= (m_distance+1) * m_TOLERANCE_CHECK);
 }
@@ -266,6 +266,7 @@ bool GeodeticCalculator::computeDestinationPoint()
      * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/forward.for
      *         subroutine DIRECT1
      */
+
     double TU  = fo * sin(lat1) / cos(lat1);
     double SF  = sin(azimuth);
     double CF  = cos(azimuth);
@@ -334,6 +335,7 @@ double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
      *
      * Ported from Fortran to Java by Daniele Franzoni.
      */
+
     double S1 = fabs(P1);
     double S2 = fabs(P2);
     double DA = (P2 - P1);
@@ -780,6 +782,7 @@ double Ellipsoid::orthodromicDistance(double x1, double y1, double x2, double y2
      * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
      *         subroutine INVER1
      */
+
     const int    MAX_ITERATIONS = 100;
     const double EPS            = 0.5E-13;
     const double F              = 1/m_inverseFlattening;

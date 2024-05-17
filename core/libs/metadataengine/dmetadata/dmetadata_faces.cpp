@@ -77,10 +77,12 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
             continue;
         }
 
-        QRectF rect(list.at(0).toFloat(),
+        QRectF rect(
+                    list.at(0).toFloat(),
                     list.at(1).toFloat(),
                     list.at(2).toFloat(),
-                    list.at(3).toFloat());
+                    list.at(3).toFloat()
+                   );
 
         faces.insert(person, rect);
     }
@@ -134,7 +136,8 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     return !faces.isEmpty();
 }
 
-bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size) const
+bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath,
+                                bool write, const QSize& size) const
 {
     QString qxmpTagName    = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
     QString nameTagKey     = qxmpTagName + QLatin1String("[%1]/mwg-rs:Name");

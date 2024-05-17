@@ -62,12 +62,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     QVariant imageWidth, imageHeight;
 
-    imageWidth = findValueFirstMatch(QStringList()
+    imageWidth = findValueFirstMatch(
+                                     QStringList()
                                      << QLatin1String("MakerNotes.Nikon.Camera.AFImageWidth")
                                      << QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth")
                                     );
 
-    imageHeight = findValueFirstMatch(QStringList()
+    imageHeight = findValueFirstMatch(
+                                      QStringList()
                                       << QLatin1String("MakerNotes.Nikon.Camera.AFImageHeight")
                                       << QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
                                      );

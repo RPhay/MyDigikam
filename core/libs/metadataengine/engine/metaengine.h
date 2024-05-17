@@ -1347,7 +1347,9 @@ private:
     // This methods was implemented to be able to pass this class or a derived version to signals and slots. This is very
     // Dangerous as virtual methods are present in this polymorphic class and is copyable.
     // Instead to use this class in signals and slots, use MetaEngineData container.
+
     // TODO: remove legacy implementations for these methods later if no side effect.
+
     MetaEngine(const MetaEngine& metadata);
     MetaEngine& operator=(const MetaEngine& metadata);
 
