@@ -80,7 +80,7 @@ void TestPrimitives::testParseXYStringToPoint()
     QCOMPARE(point, QPoint(52,6));
 
     // We used to expect integer string results, but floats are also possible.
-    // BKO 270624
+    // bug 270624
     // GeoIfaceHelperParseXYStringToPoint always rounds them to 0.
     QVERIFY(GeoIfaceHelperParseXYStringToPoint(QLatin1String("  ( 52.5, 6.5 )  "), &point));
     QCOMPARE(point, QPoint(52,6));

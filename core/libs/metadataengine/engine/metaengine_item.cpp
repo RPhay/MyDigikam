@@ -47,7 +47,7 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
 
         d->exifMetadata()["Exif.Image.ProcessingSoftware"] = std::string(software.toLatin1().constData());
 
-        // See B.K.O #142564: Check if Exif.Image.Software already exist. If yes, do not touch this tag.
+        // See bug #142564: Check if Exif.Image.Software already exist. If yes, do not touch this tag.
 
         if (!d->exifMetadata().empty())
         {
@@ -278,7 +278,7 @@ bool MetaEngine::setItemDimensions(const QSize& size) const
     {
         // Set Exif values.
 
-        // NOTE: see B.K.O #144604: need to cast to record an unsigned integer value.
+        // NOTE: see bug #144604: need to cast to record an unsigned integer value.
 
         d->exifMetadata()["Exif.Image.ImageWidth"]      = static_cast<uint32_t>(size.width());
         d->exifMetadata()["Exif.Image.ImageLength"]     = static_cast<uint32_t>(size.height());
