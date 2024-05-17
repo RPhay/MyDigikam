@@ -81,7 +81,7 @@ class Q_DECL_HIDDEN DRawDecoder::Private
 public:
 
     explicit Private(DRawDecoder* const p);
-    ~Private();
+    ~Private() = default;
 
 public:
 
