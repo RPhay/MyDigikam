@@ -38,7 +38,7 @@ if (MINGW)
 
         # Rolling-release code do not compile with MinGW
         # https://github.com/lensfun/lensfun/issues/2001
-        GIT_TAG v0.3.3
+        GIT_TAG v0.3.4
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_regex_mxe.patch
 
@@ -65,8 +65,6 @@ elseif (APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        # Git revision before deprecated functions removal (dec. 2023).
-        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -93,8 +91,6 @@ elseif(MSVC) # VCPKG
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        # Git revision before deprecated functions removal (dec. 2023).
-        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -120,8 +116,6 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        # Git revision before deprecated functions removal (dec. 2023).
-        GIT_TAG 03e4a1057b9a53b8f6c50df52137e7aac818b469
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
