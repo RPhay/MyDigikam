@@ -37,7 +37,6 @@
 #include "editortoolsettings.h"
 #include "imageiface.h"
 #include "imageguidewidget.h"
-#include "lensfuniface.h"
 #include "lensfunfilter.h"
 #include "lensfunsettings.h"
 #include "lensfuncameraselector.h"

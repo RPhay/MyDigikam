@@ -391,7 +391,7 @@ void LensFunCameraSelector::Private::populateLensCombo()
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Device is null!";
         return;
-    }   
+    }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "dev: " << dev->Maker
                               << " :: " << dev->Model
