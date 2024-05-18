@@ -43,12 +43,12 @@ public:
 
     Private() = default;
 
-    QString  metadataMatchDebugStr(MetadataMatch val)               const;
+    QString  metadataMatchDebugStr(MetadataMatch val)          const;
     LensList findLenses(const lfCamera* const camera,
                         const QString& lensDesc,
-                        const QString& lensMaker = QString())       const;
+                        const QString& lensMaker = QString())  const;
 
-    double checkSimilarity(const QString& a, const QString& b)      const;
+    double checkSimilarity(const QString& a, const QString& b) const;
 
 public:
 
@@ -130,7 +130,6 @@ double LensFunIface::Private::checkSimilarity(const QString& a, const QString& b
 
     const int chars = 3;
     int counter     = 0;
-
     QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
     QString aa      = spaces + a + spaces;
     QString bb      = spaces + b + spaces;
@@ -188,6 +187,7 @@ LensFunIface::LensFunIface()
     Q_FOREACH (const QString& lens, lensDir.entryList())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Load lens database file: " << lens;
+
         d->lfDb->Load(QFile::encodeName(lensDir.absoluteFilePath(lens)).constData());
     }
 
@@ -235,7 +235,8 @@ LensFunIface::LensPtr LensFunIface::usedLens() const
 void LensFunIface::setUsedLens(LensPtr lens)
 {
     d->usedLens            = lens;
-    d->settings.lensModel  = d->usedLens ? QLatin1String(d->usedLens->Model) : QString();
+    d->settings.lensModel  = d->usedLens ? QLatin1String(d->usedLens->Model)
+                                         : QString();
 }
 
 lfDatabase* LensFunIface::lensFunDataBase() const
@@ -286,14 +287,18 @@ LensFunIface::DevicePtr LensFunIface::findCamera(const QString& make, const QStr
             (QString::fromLatin1(cam->Model).toLower() == model.toLower())
            )
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> true";
+            qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera "
+                                      << make << "-"
+                                      << model << " ==> true";
             return cam;
         }
 
         ++cameras;
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> false";
+    qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera "
+                              << make << "-"
+                              << model << " ==> false";
 
     return nullptr;
 }
@@ -319,7 +324,6 @@ LensFunIface::LensPtr LensFunIface::findLens(const QString& model) const
 
     return nullptr;
 }
-
 
 LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* const meta)
 {
@@ -349,7 +353,8 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
     else
     {
         // NOTE: see bug #184156:
-        // Some rules to wrap unknown camera device from Lensfun database, which have equivalent in fact.
+        // Some rules to wrap unknown camera device from Lensfun database,
+        // which have equivalent in fact.
 
         if (d->makeDescription == QLatin1String("Canon"))
         {
@@ -412,9 +417,11 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
                 // STAGE 1, search in LensFun database as well.
 
                 lensList    = d->findLenses(d->usedCamera, d->lensDescription);
+
                 qCDebug(DIGIKAM_DIMG_LOG) << "* Check for lens by direct query ("
                                           << d->lensDescription << " : "
                                           << lensList.count() << ")";
+
                 lensMatches.append(lensList);
 
                 // STAGE 2, Adapt exiv2 strings to lensfun strings for Nikon.
@@ -427,15 +434,18 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
                     lensCutted.remove(QLatin1String("Zoom-"));
                     lensCutted.replace(QLatin1String("IF-ID"), QLatin1String("ED-IF"));
                     lensList = d->findLenses(d->usedCamera, lensCutted);
+
                     qCDebug(DIGIKAM_DIMG_LOG) << "* Check for Nikon lens ("
                                               << lensCutted << " : "
                                               << lensList.count() << ")";
+
                     lensMatches.append(lensList);
                 }
 
                 // TODO : Add here more specific lens maker rules.
 
-                // LAST STAGE, Adapt exiv2 strings to lensfun strings. Some lens description use something like that :
+                // LAST STAGE, Adapt exiv2 strings to lensfun strings.
+                // Some lens description use something like that :
                 // "10.0 - 20.0 mm". This must be adapted like this : "10-20mm"
 
                 lensCutted  = d->lensDescription;
@@ -443,9 +453,11 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
                 lensCutted.replace(QLatin1String(" - "), QLatin1String("-"));
                 lensCutted.replace(QLatin1String(" mm"), QLatin1String("mn"));
                 lensList    = d->findLenses(d->usedCamera, lensCutted);
+
                 qCDebug(DIGIKAM_DIMG_LOG) << "* Check for no maker lens ("
                                           << lensCutted << " : "
                                           << lensList.count() << ")";
+
                 lensMatches.append(lensList);
 
                 // Remove all duplicate lenses in the list by using QSet.
@@ -467,6 +479,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
                     qCDebug(DIGIKAM_DIMG_LOG) << "For the camera " << d->settings.cameraModel
                                               << " there is exactly one lens in the database: "
                                               << lensList.first()->Model;
+
                     lensMatches.append(lensList);
                 }
                 else
@@ -522,7 +535,9 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
         }
         else
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot find Lensfun camera device for (" << d->makeDescription << " - " << d->modelDescription << ")";
+            qCDebug(DIGIKAM_DIMG_LOG) << "Cannot find Lensfun camera device for ("
+                                      << d->makeDescription << " - "
+                                      << d->modelDescription << ")";
             exactMatch = false;
         }
     }
@@ -538,7 +553,9 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
         exactMatch = false;
     }
 
-    d->settings.focalLength = temp.mid(0, temp.length() - 3).toDouble(); // HACK: strip the " mm" at the end ...
+    // NOTE: strip the " mm" at the end ...
+    d->settings.focalLength = temp.mid(0, temp.length() - 3).toDouble();
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Focal Length   : " << d->settings.focalLength;
 
     // ------------------------------------------------------------------------------------------------
@@ -624,7 +641,6 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
     return ret;
 }
 
-
 bool LensFunIface::supportsDistortion() const
 {
     if (!d->usedLens)
@@ -670,10 +686,11 @@ bool LensFunIface::supportsGeometry() const
 
 QString LensFunIface::lensFunVersion()
 {
-    return QString::fromLatin1("%1.%2.%3-%4").arg(LF_VERSION_MAJOR)
-           .arg(LF_VERSION_MINOR)
-           .arg(LF_VERSION_MICRO)
-           .arg(LF_VERSION_BUGFIX);
+    return QString::fromLatin1("%1.%2.%3-%4")
+              .arg(LF_VERSION_MAJOR)
+              .arg(LF_VERSION_MINOR)
+              .arg(LF_VERSION_MICRO)
+              .arg(LF_VERSION_BUGFIX);
 }
 
 

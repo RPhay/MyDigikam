@@ -62,6 +62,8 @@ public:
     typedef const lfLens*   LensPtr;
     typedef QList<LensPtr>  LensList;
 
+public:
+
     enum MetadataMatch
     {
         MetadataUnavailable  = -2,
@@ -80,24 +82,13 @@ public:
     void             setSettings(const LensFunContainer& other);
     LensFunContainer settings()                                     const;
 
-    LensPtr usedLens()                                              const;
-    void    setUsedLens(LensPtr lens);
-
-    DevicePtr usedCamera()                                          const;
-    void      setUsedCamera(DevicePtr cam);
-
-    lfDatabase*            lensFunDataBase()                        const;
-    const lfCamera* const* lensFunCameras()                         const;
-
-    DevicePtr findCamera(const QString& make, const QString& model) const;
-    LensPtr   findLens(const QString& model)                        const;
-
     MetadataMatch findFromMetadata(const DMetadata* const meta);
 
     bool supportsDistortion()                                       const;
     bool supportsCCA()                                              const;
     bool supportsVig()                                              const;
     bool supportsGeometry()                                         const;
+
 
     /**
      * Return Camera maker string description found in metadata
@@ -115,6 +106,22 @@ public:
     QString lensDescription()                                       const;
 
     static QString lensFunVersion();
+
+public:
+
+    // Lensfun API based methods
+
+    LensPtr usedLens()                                              const;
+    void    setUsedLens(LensPtr lens);
+
+    DevicePtr usedCamera()                                          const;
+    void      setUsedCamera(DevicePtr cam);
+
+    lfDatabase*            lensFunDataBase()                        const;
+    const lfCamera* const* lensFunCameras()                         const;
+
+    DevicePtr findCamera(const QString& make, const QString& model) const;
+    LensPtr   findLens(const QString& model)                        const;
 
 private:
 
