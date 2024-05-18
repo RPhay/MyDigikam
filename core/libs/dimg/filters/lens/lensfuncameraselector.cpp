@@ -786,7 +786,7 @@ void LensFunCameraSelector::slotLensSelected()
 
 #if LENSFUN_TEST_VERSION(0,3,99)
 
-        qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using 1.0 default value."
+        qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using 1.0 default value.";
 
         settings.cropFactor = 1.0;
 
