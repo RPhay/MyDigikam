@@ -194,9 +194,9 @@ Qt::ItemFlags SimpleTreeModel::flags(const QModelIndex& index) const
 
 SimpleTreeModel::Item* SimpleTreeModel::addItem(SimpleTreeModel::Item* const parentItem, const int rowNumber)
 {
-    Item* const myParent = parentItem ? parentItem : d->rootItem;
-    Item* const newItem  = new Item();
-    newItem->parent      = myParent;
+    Item* const myParent    = parentItem ? parentItem : d->rootItem;
+    Item* const newItem     = new Item();
+    newItem->parent         = myParent;
 
     const int childrenCount = myParent->children.count();
     int targetRow           = rowNumber;

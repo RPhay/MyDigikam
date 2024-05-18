@@ -195,8 +195,10 @@ QModelIndex RGTagModel::fromSourceIndex(const QModelIndex& externalTagModelIndex
 
         for (int i = 0 ; i < subModelBranch->oldChildren.count() ; ++i)
         {
-            if ((level < parents.size()) &&
-                (subModelBranch->oldChildren[i]->sourceIndex == parents[level]))
+            if (
+                (level < parents.size()) &&
+                (subModelBranch->oldChildren[i]->sourceIndex == parents[level])
+               )
             {
                 where = i;
                 break;
@@ -386,7 +388,11 @@ void RGTagModel::addDataInTree(TreeBranch* currentBranch,
 
                     QPersistentModelIndex auxIndex;
 
-                    if (((currentBranch->type != TypeSpacer) || (currentBranch->data.indexOf(QLatin1String("{")) != 0)) ||
+                    if (
+                        (
+                         (currentBranch->type != TypeSpacer) ||
+                         (currentBranch->data.indexOf(QLatin1String("{")) != 0)
+                        ) ||
                         (d->auxIndexList.isEmpty()))
                     {
                         auxIndex = addNewTag(currentIndex, elementsData[j], addressElements[j]);
@@ -546,8 +552,10 @@ QModelIndex RGTagModel::index(int row, int column, const QModelIndex& parent) co
         return createIndex(row, column, parentBranch->spacerChildren[row]);
     }
     // cppcheck-suppress knownConditionTrueFalse
-    else if ((row >= parentBranch->spacerChildren.count()) &&
-             (row < (parentBranch->newChildren.count() + parentBranch->spacerChildren.count())))
+    else if (
+             (row >= parentBranch->spacerChildren.count()) &&
+             (row < (parentBranch->newChildren.count() + parentBranch->spacerChildren.count()))
+            )
     {
         return createIndex(row, column, parentBranch->newChildren[row-parentBranch->spacerChildren.count()]);
     }
@@ -806,7 +814,10 @@ void RGTagModel::deleteTag(const QModelIndex& currentIndex)
         return;
     }
 
-    if ((currentChildBranch->spacerChildren.count() > 0) || (currentChildBranch->newChildren.count() > 0))
+    if (
+        (currentChildBranch->spacerChildren.count() > 0) ||
+        (currentChildBranch->newChildren.count()    > 0)
+       )
     {
         beginMoveRows(currentIndex, 0, currentChildBranch->spacerChildren.count() - 1,
                       parentIndex, parentBranch->spacerChildren.count());
@@ -969,9 +980,7 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
                          tagAddressElements,
                          currentAddressElementIndex + 1);
             }
-
         }
-
     }
     else if (tagAddressElements[currentAddressElementIndex].tagType == TypeNewChild)
     {

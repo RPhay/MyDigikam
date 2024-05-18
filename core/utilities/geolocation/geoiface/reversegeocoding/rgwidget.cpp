@@ -969,6 +969,7 @@ void RGWidget::slotRGCanceled()
                 if (d->undoCommand)
                 {
                     Q_EMIT signalUndoCommand(d->undoCommand);
+
                     d->undoCommand = nullptr;
                 }
 
