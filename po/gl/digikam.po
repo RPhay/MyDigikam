@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 01:43+0000\n"
-"PO-Revision-Date: 2024-05-14 09:46+0200\n"
+"POT-Creation-Date: 2024-05-18 01:45+0000\n"
+"PO-Revision-Date: 2024-05-17 22:24+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1965,615 +1965,521 @@ msgid "Move to Trash"
 msgstr "Botar no lixo"
 
 #: core/app/main/digikamapp_setup.cpp:506
-#, fuzzy, kde-format
-#| msgid "Delete Permanently"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Eliminar permanentemente"
 
 #: core/app/main/digikamapp_setup.cpp:517
-#, fuzzy, kde-format
-#| msgid "Delete permanently without confirmation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Eliminar de xeito permanente sen pedir confirmación"
 
 #: core/app/main/digikamapp_setup.cpp:525
-#, fuzzy, kde-format
-#| msgid "Move to trash without confirmation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Botar no lixo sen confirmación"
 
 #: core/app/main/digikamapp_setup.cpp:532
-#, fuzzy, kde-format
-#| msgid "&Sort Albums"
+#, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Ordenar os álbums"
 
 #: core/app/main/digikamapp_setup.cpp:533
-#, fuzzy, kde-format
-#| msgid "Sort Albums in tree-view."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Ordenar os álbums na vista en árbore."
 
 #: core/app/main/digikamapp_setup.cpp:552
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Segundo o cartafol"
 
 #: core/app/main/digikamapp_setup.cpp:553
-#, fuzzy, kde-format
-#| msgid "By Category"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Segundo a categoría"
 
 #: core/app/main/digikamapp_setup.cpp:554
-#, fuzzy, kde-format
-#| msgid "By Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Segundo a data"
 
 #: core/app/main/digikamapp_setup.cpp:559
-#, fuzzy, kde-format
-#| msgid "Include Album Sub-Tree"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Incluír a subárbore do álbum"
 
 #: core/app/main/digikamapp_setup.cpp:561
-#, fuzzy, kde-format
-#| msgid "Activate this option to show all sub-albums below the current album."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
-"Escolla esta opción para mostrar todos os subálbums que haxa dentro do álbum "
+"Escolla esta opción para amosar todos os subálbums que haxa dentro do álbum "
 "actual."
 
 #: core/app/main/digikamapp_setup.cpp:566
-#, fuzzy, kde-format
-#| msgid "Include Tag Sub-Tree"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Incluír a subárbore da etiqueta"
 
 #: core/app/main/digikamapp_setup.cpp:568
-#, fuzzy, kde-format
-#| msgid ""
-#| "Activate this option to show all images marked by the given tag and all "
-#| "its sub-tags."
+#, kde-format
 msgctxt "@info: setup"
 msgid ""
 "Activate this option to show all images marked by the given tag and all its "
 "sub-tags."
 msgstr ""
-"Escolla esta opción para mostrar todas as imaxes marcadas pola etiqueta dada "
+"Escolla esta opción para amosar todas as imaxes marcadas pola etiqueta dada "
 "e todas as súas subetiquetas."
 
 #: core/app/main/digikamapp_setup.cpp:573
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Show Grouped Images"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
-msgstr "Mostrar as imaxes agrupadas"
+msgstr "Amosar todos os elementos agrupados como abertos"
 
 #: core/app/main/digikamapp_setup.cpp:575
-#, fuzzy, kde-format
-#| msgid "Activate this option to show all sub-albums below the current album."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
-"Escolla esta opción para mostrar todos os subálbums que haxa dentro do álbum "
-"actual."
+"Active esta opción para amosar todos os elementos agrupados como abertos."
 
 #: core/app/main/digikamapp_setup.cpp:581
-#, fuzzy, kde-format
-#| msgid "&Sort Items"
+#, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Ordenar os elementos"
 
 #: core/app/main/digikamapp_setup.cpp:582
-#, fuzzy, kde-format
-#| msgid ""
-#| "The value by which the images in one album are sorted in the thumbnail "
-#| "view"
+#, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "O valor polo que se ordenan as imaxes dun álbum na vista de miniaturas"
 
 #: core/app/main/digikamapp_setup.cpp:587
-#, fuzzy, kde-format
-#| msgid "By Name"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
-msgstr "Segundo o nome"
+msgstr "Por nome"
 
 #: core/app/main/digikamapp_setup.cpp:588
-#, fuzzy, kde-format
-#| msgid "By Path"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
-msgstr "Segundo a ruta"
+msgstr "Por ruta"
 
 #: core/app/main/digikamapp_setup.cpp:589
-#, fuzzy, kde-format
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Por data de creación"
 
 #: core/app/main/digikamapp_setup.cpp:590
-#, fuzzy, kde-format
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Por data de modificación"
 
 #: core/app/main/digikamapp_setup.cpp:591
-#, fuzzy, kde-format
-#| msgid "By File Size"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
-msgstr "Segundo o tamaño do ficheiro"
+msgstr "Por tamaño do ficheiro"
 
 #: core/app/main/digikamapp_setup.cpp:592
-#, fuzzy, kde-format
-#| msgid "By Rating"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
-msgstr "Segundo a cualificación"
+msgstr "Por cualificación"
 
 #: core/app/main/digikamapp_setup.cpp:593
-#, fuzzy, kde-format
-#| msgid "By Image Size"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
-msgstr "Segundo o tamaño da imaxe"
+msgstr "Por tamaño da imaxe"
 
 #: core/app/main/digikamapp_setup.cpp:594
-#, fuzzy, kde-format
-#| msgid "By Aspect Ratio"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
-msgstr "Segundo as proporcións"
+msgstr "Por proporcións"
 
 #: core/app/main/digikamapp_setup.cpp:595
-#, fuzzy, kde-format
-#| msgid "Image type"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
-msgstr "Tipo de imaxe"
+msgstr "Por tipo de cara"
 
 #: core/app/main/digikamapp_setup.cpp:596
-#, fuzzy, kde-format
-#| msgid "By Similarity"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Por semellanza"
 
 #: core/app/main/digikamapp_setup.cpp:597
-#, fuzzy, kde-format
-#| msgid "By Manual and Name"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Por manual e nome"
 
 #: core/app/main/digikamapp_setup.cpp:598
-#, fuzzy, kde-format
-#| msgid "By Manual and Date"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Por manual e data"
 
 #: core/app/main/digikamapp_setup.cpp:643
-#, fuzzy, kde-format
-#| msgid "Item Sort &Order"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sentido da &ordenación dos elementos"
 
 #: core/app/main/digikamapp_setup.cpp:644
-#, fuzzy, kde-format
-#| msgid "Defines whether images are sorted in ascending or descending manner."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Define se as imaxes se ordenan de xeito ascendente ou descendente."
 
 #: core/app/main/digikamapp_setup.cpp:648
 #: core/app/main/digikamapp_setup.cpp:703
-#, fuzzy, kde-format
-#| msgid "Ascending"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Ascendente"
 
 #: core/app/main/digikamapp_setup.cpp:650
 #: core/app/main/digikamapp_setup.cpp:705
-#, fuzzy, kde-format
-#| msgid "Descending"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Descendente"
 
 #: core/app/main/digikamapp_setup.cpp:660
-#, fuzzy, kde-format
-#| msgid "Separate Items"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Elementos separados"
 
 #: core/app/main/digikamapp_setup.cpp:661
-#, fuzzy, kde-format
-#| msgid ""
-#| "The categories in which the images in the thumbnail view are displayed"
+#, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
-msgstr "As categorías nas que se mostran as imaxes na vista de miniaturas"
+msgstr "As categorías nas que se amosan as imaxes na vista de miniaturas"
 
 #: core/app/main/digikamapp_setup.cpp:666
-#, fuzzy, kde-format
-#| msgid "Flat List"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Lista simple"
 
 #: core/app/main/digikamapp_setup.cpp:667
-#, fuzzy, kde-format
-#| msgid "By Album"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Por álbum"
 
 #: core/app/main/digikamapp_setup.cpp:668
-#, fuzzy, kde-format
-#| msgid "By Format"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Por formato"
 
 #: core/app/main/digikamapp_setup.cpp:669
-#, fuzzy, kde-format
-#| msgid "By Month"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Por mes"
 
 #: core/app/main/digikamapp_setup.cpp:670
-#, fuzzy, kde-format
-#| msgid "Detect Faces"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
-msgstr "Detectar caras"
+msgstr "Por caras"
 
 #: core/app/main/digikamapp_setup.cpp:698
-#, fuzzy, kde-format
-#| msgid "Item Separation Order"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Orde da separación dos elementos"
 
 #: core/app/main/digikamapp_setup.cpp:699
-#, fuzzy, kde-format
-#| msgid "The sort order of the groups of separated items"
+#, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "O sentido da ordenación dos grupos de elementos separados."
 
 #: core/app/main/digikamapp_setup.cpp:720
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Escoller todo"
 
 #: core/app/main/digikamapp_setup.cpp:727
-#, fuzzy, kde-format
-#| msgid "Select None"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Non escoller nada"
 
 #: core/app/main/digikamapp_setup.cpp:734
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Inverter a selección"
 
 #: core/app/main/digikamapp_setup.cpp:742
-#, fuzzy, kde-format
-#| msgid "Show Thumbbar"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
-msgstr "Mostrar a barra de miniaturas"
+msgstr "Amosar a barra de miniaturas"
 
 #: core/app/main/digikamapp_setup.cpp:773
-#, fuzzy, kde-format
-#| msgid "Zoom to 100%"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Ampliar ao 100%"
 
 #: core/app/main/digikamapp_setup.cpp:781
-#, fuzzy, kde-format
-#| msgid "Fit to &Window"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Axustar á &xanela"
 
 #: core/app/main/digikamapp_setup.cpp:794
-#, fuzzy, kde-format
-#| msgid "Color-Managed View"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Vista de cor xestionada"
 
 #: core/app/main/digikamapp_setup.cpp:812
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Buscar…"
 
 #: core/app/main/digikamapp_setup.cpp:820
-#, fuzzy, kde-format
-#| msgid "Advanced Search..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Busca avanzada…"
 
 #: core/app/main/digikamapp_setup.cpp:828
-#, fuzzy, kde-format
-#| msgid "Find Duplicates..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Atopar duplicadas…"
 
 #: core/app/main/digikamapp_setup.cpp:838
-#, fuzzy, kde-format
-#| msgid "Database Migration..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Migración da base de datos…"
 
 #: core/app/main/digikamapp_setup.cpp:847
-#, fuzzy, kde-format
-#| msgid "Maintenance..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Mantemento…"
 
 #: core/app/main/digikamapp_setup.cpp:854
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Examinar por novos elementos"
 
 #: core/app/main/digikamapp_setup.cpp:860
-#, fuzzy, kde-format
-#| msgid "Add Camera Manually..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Engadir unha cámara manualmente…"
 
 #: core/app/main/digikamapp_setup.cpp:871
-#, fuzzy, kde-format
-#| msgid "Loading cameras..."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Cargando as cámaras…"
 
 #: core/app/main/digikamapp_setup.cpp:905
-#, fuzzy, kde-format
-#| msgid "Exit Preview Mode"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Saír do modo de previsualización"
 
 #: core/app/main/digikamapp_setup.cpp:910
-#, fuzzy, kde-format
-#| msgid "Next Image"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imaxe seguinte"
 
 #: core/app/main/digikamapp_setup.cpp:916
-#, fuzzy, kde-format
-#| msgid "Previous Image"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Imaxe anterior"
 
 #: core/app/main/digikamapp_setup.cpp:922
-#, fuzzy, kde-format
-#| msgid "First Image"
+#, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Primeira imaxe"
 
 #: core/app/main/digikamapp_setup.cpp:927
-#, fuzzy, kde-format
-#| msgid "Last Image"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Última imaxe"
 
 #: core/app/main/digikamapp_setup.cpp:932
-#, fuzzy, kde-format
-#| msgid "Cu&t"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Cor&tar"
 
 #: core/app/main/digikamapp_setup.cpp:934
-#, fuzzy, kde-format
-#| msgid "Cut selection to clipboard"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Corta a selección e pona no portapapeis"
 
 #: core/app/main/digikamapp_setup.cpp:953
-#, fuzzy, kde-format
-#| msgid "Edit Titles"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Editar os títulos"
 
 #: core/app/main/digikamapp_setup.cpp:958
-#, fuzzy, kde-format
-#| msgid "Edit Comments"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Editar os comentarios"
 
 #: core/app/main/digikamapp_setup.cpp:963
-#, fuzzy, kde-format
-#| msgid "Show Assigned Tags"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
-msgstr "Mostrar as etiquetas asignadas"
+msgstr "Amosar as etiquetas asignadas"
 
 #: core/app/main/digikamapp_setup.cpp:972
-#, fuzzy, kde-format
-#| msgid "Adjust Exif Orientation Tag"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Axustar a etiqueta EXIF de orientación"
 
 #: core/app/main/digikamapp_setup.cpp:975
-#, fuzzy, kde-format
-#| msgid "Normal"
+#, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
 #: core/app/main/digikamapp_setup.cpp:977
-#, fuzzy, kde-format
-#| msgid "Flipped Horizontally"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Invertida na horizontal"
 
 #: core/app/main/digikamapp_setup.cpp:979
-#, fuzzy, kde-format
-#| msgid "Rotated Upside Down"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Rotada de riba para baixo"
 
 #: core/app/main/digikamapp_setup.cpp:981
-#, fuzzy, kde-format
-#| msgid "Flipped Vertically"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida na vertical"
 
 #: core/app/main/digikamapp_setup.cpp:983
-#, fuzzy, kde-format
-#| msgid "Rotated Right / Horiz. Flipped"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Rotada á dereita / Invertido en horizontal"
 
 #: core/app/main/digikamapp_setup.cpp:985
-#, fuzzy, kde-format
-#| msgid "Rotated Right"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Rotada á dereita"
 
 #: core/app/main/digikamapp_setup.cpp:987
-#, fuzzy, kde-format
-#| msgid "Rotated Right / Vert. Flipped"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Rotada á dereita / Invertido en vertical"
 
 #: core/app/main/digikamapp_setup.cpp:989
-#, fuzzy, kde-format
-#| msgid "Rotated Left"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Rotada á esquerda"
 
 #: core/app/main/digikamapp_setup.cpp:1050
-#, fuzzy, kde-format
-#| msgid "Rotate"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rotar"
 
 #: core/app/main/digikamapp_setup.cpp:1054
-#, fuzzy, kde-format
-#| msgctxt "rotate image left"
-#| msgid "Left"
+#, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Esquerda"
 
 #: core/app/main/digikamapp_setup.cpp:1061
-#, fuzzy, kde-format
-#| msgctxt "rotate image right"
-#| msgid "Right"
+#, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Dereita"
 
 #: core/app/main/digikamapp_setup.cpp:1071
-#, fuzzy, kde-format
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Inverter"
 
 #: core/app/main/digikamapp_setup.cpp:1075
-#, fuzzy, kde-format
-#| msgid "Horizontally"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontalmente"
 
 #: core/app/main/digikamapp_setup.cpp:1082
-#, fuzzy, kde-format
-#| msgid "Vertically"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Verticalmente"
 
 #: core/app/main/digikamapp_setup.cpp:1092
-#, fuzzy, kde-format
-#| msgid "Auto Rotate/Flip Using Exif Information"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Rotar/Inverter automaticamente usando a información de Exif"
 
 #: core/app/main/digikamapp_setup.cpp:1103
-#, fuzzy, kde-format
-#| msgid "Loading themes..."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Cargando os temas…"
 
 #: core/app/main/digikamapp_setup.cpp:1106
-#, fuzzy, kde-format
-#| msgid "&Themes"
+#, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temas"
 
 #: core/app/main/digikamapp_setup.cpp:1118
-#, fuzzy, kde-format
-#| msgid "Loading tools..."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "Cargando as ferramentas…"
@@ -2796,7 +2702,7 @@ msgstr "digiKam"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Adrian Chaves (Gallaecio)"
+msgstr "Adrián Chaves (Gallaecio)"
 
 #: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
 #, kde-format
@@ -2805,17 +2711,15 @@ msgid "Your emails"
 msgstr "adrian@chaves.io"
 
 #: core/app/main/main.cpp:218
-#, fuzzy, kde-format
-#| msgid "Open camera dialog at <path>"
+#, kde-format
 msgid "Open camera dialog at \"path\""
-msgstr "Abrir o diálogo da cámara en <path>"
+msgstr "Abrir o diálogo da cámara en «path»"
 
 #: core/app/main/main.cpp:221
-#, fuzzy, kde-format
-#| msgid "Open camera dialog for the device with Solid UDI <udi>"
+#, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
-"Abrir o diálogo de cámara para o dispositivo co identificador de Solid <udi>"
+"Abrir o diálogo de cámara para o dispositivo co identificador de Solid «udi»"
 
 #: core/app/main/main.cpp:224
 #, kde-format
@@ -2823,20 +2727,17 @@ msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detectar automaticamente e abrir unha cámara de gphoto2 conectada"
 
 #: core/app/main/main.cpp:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start digikam with the SQLite database file found in the directory <dir>"
+#, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Iniciar digiKam co ficheiro de base de datos SQLite atopado no directorio "
-"<dir>"
+"«dir»"
 
 #: core/app/main/main.cpp:229
-#, fuzzy, kde-format
-#| msgid "Start digikam with the configuration file <config>"
+#, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "Iniciar digiKam co ficheiro de configuración <config>"
+msgstr "Iniciar digiKam co ficheiro de configuración «config»"
 
 #: core/app/main/main.cpp:256
 #, kde-format
@@ -2845,6 +2746,9 @@ msgid ""
 "p><p>Please install the 64-bit version of digiKam to get a better experience "
 "with digiKam.</p>"
 msgstr ""
+"<p>Está a executar unha versión de 32 bits de digiKam nun Windows de 64 bits."
+"</p><p>Instale a versión de 64 bits de digiKam para unha mellor experiencia."
+"</p>"
 
 #: core/app/main/main.cpp:300
 #, kde-format
@@ -2913,7 +2817,7 @@ msgstr "Codificación de imaxe de gran eficiencia (*.heic *.heif)"
 #: core/app/utils/digikam_globals.cpp:149
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
-msgstr ""
+msgstr "FITS (*.fts *.fit *.fits)"
 
 #: core/app/utils/digikam_globals.cpp:156
 #, kde-format
@@ -2926,12 +2830,7 @@ msgid "All supported files (%1)"
 msgstr "Todos os ficheiros compatíbeis (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: irc.freenode.net - #digikam\n"
-#| "Feedback: digikam-user@kde.org\n"
-#| "\n"
-#| "Build date: %1 (target: %2)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2939,19 +2838,14 @@ msgid ""
 "\n"
 "Build date: %4 (target: %5)"
 msgstr ""
-"IRC: irc.freenode.net - #digikam\n"
-"Suxestións: digikam-user@kde.org\n"
+"IRC: %1 — #digikam\n"
+"Comentarios: %2\n"
+"Documentación: %3\n"
 "\n"
-"Data de construción: %1 (obxectivo: %2)"
+"Data de construción: %4 (obxectivo: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: irc.freenode.net - #digikam\n"
-#| "Feedback: digikam-user@kde.org\n"
-#| "\n"
-#| "Build date: %1 (target: %2)\n"
-#| "Rev.: %3"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2961,11 +2855,13 @@ msgid ""
 "Revision: %6\n"
 "Branch: %7"
 msgstr ""
-"IRC: irc.freenode.net - #digikam\n"
-"Suxestións: digikam-user@kde.org\n"
+"IRC: %1 — #digikam\n"
+"Comentarios: %2\n"
+"Documentación: %3\n"
 "\n"
-"Data de construción: : %1 (obxectivo: %2)\n"
-"Rev.: %3"
+"Data de construción: %4 (obxectivo: %5)\n"
+"Revisión: %6\n"
+"Rama: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -2994,10 +2890,9 @@ msgid "Clear all faces on this image"
 msgstr "Limpar todas as caras desta imaxe"
 
 #: core/app/views/preview/itempreviewview.cpp:184
-#, fuzzy, kde-format
-#| msgid "Mark As Face Tag"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Marcar como etiqueta de cara"
+msgstr "Marcar todas as caras sen confirmar como ignoradas"
 
 #: core/app/views/preview/itempreviewview.cpp:191
 #, kde-format
@@ -3007,13 +2902,12 @@ msgstr "Amosar as etiquetas de caras"
 #: core/app/views/preview/itempreviewview.cpp:196
 #, kde-format
 msgid "Add a focus point"
-msgstr ""
+msgstr "Engadir un punto de enfoque"
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Show youngest first"
+#, kde-format
 msgid "Show focus points"
-msgstr "Mostrar primeiro a foto máis recente"
+msgstr "Amosar os puntos de enfoque"
 
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
@@ -3075,18 +2969,18 @@ msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
+"Dámoslle a benvida á xestión de caras de digiKam. Se é a primeira vez que "
+"usa a funcionalidade, recomendámoslle usar a caixa de axuda do panel lateral "
+"da parte inferior esquerda."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face recognition is aborted, because there are no tags to recognize "
-#| "(except Unconfirmed and Unknown). Please add new tags."
+#, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
-"Interrompeuse o recoñecemento facial porque non hai etiquetas para recoñecer "
-"(salvo sen confirmar ou descoñecidas). Engada novas etiquetas."
+"Interrompeuse o recoñecemento facial porque non hai identidades para "
+"recoñecer. Engada novas identidades."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:217
 #, kde-format
@@ -3182,15 +3076,13 @@ msgstr ""
 "De usarse, todos os valores (grandes e pequenos) son visíbeis no gráfico.</p>"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "Linear"
+#, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Lineal"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "Logarithmic"
+#, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Logarítmica"
@@ -3250,8 +3142,7 @@ msgstr[0] "1 elemento"
 msgstr[1] "%1 elementos"
 
 #: core/app/views/stack/itemiconview.cpp:201
-#, fuzzy, kde-format
-#| msgid "Filters"
+#, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtros"
@@ -3267,6 +3158,8 @@ msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
+"Esta consulta de base de datos non obtivo resultados. Cambie a configuración "
+"de busca ou seleccione un álbum con contido."
 
 #: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
@@ -3291,10 +3184,9 @@ msgstr "Última busca"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
 #: core/app/views/stack/itemiconview_search.cpp:107
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "FacesDetector"
-msgstr "Detección de caras."
+msgstr "Detector de caras"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
 #: core/app/views/stack/itemiconview_search.cpp:109
@@ -3303,39 +3195,36 @@ msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
+"Xa hai unha tarefa de recoñecemento en execución. Só pode haber unha ao "
+"mesmo tempo. Agarde a que remate."
 
 #: core/app/views/stack/itemiconview_views.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<i>The storage location of this image<br/>is currently not available</i>"
+#, kde-format
 msgctxt "@info: item icon view"
 msgid ""
 "The storage location of this image\n"
 "is currently not available"
 msgstr ""
-"<i>O lugar de almacenamento desta imaxe<br/>non está dispoñíbel actualmente."
-"</i>"
+"O lugar de almacenamento desta imaxe\n"
+"non está dispoñíbel actualmente."
 
 #: core/app/views/stack/itemiconview_views.cpp:237
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Ferramentas"
 
 #: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:833
-#, fuzzy, kde-format
-#| msgid "&Help"
+#, kde-format
 msgid "Help"
-msgstr "A&xuda"
+msgstr "Axuda"
 
 #: core/app/views/stack/trashview.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Axuda de trash-bin en Internet"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
@@ -3345,7 +3234,7 @@ msgstr "Desfacer"
 #: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Restaurar só a última entrada en trash-bin."
 
 #: core/app/views/stack/trashview.cpp:123
 #, kde-format
@@ -3353,10 +3242,9 @@ msgid "Restore"
 msgstr "Restaurar"
 
 #: core/app/views/stack/trashview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Retirar da lista as imaxes seleccionadas"
+msgstr "Restaurar a selección de ficheiros de trash-bin."
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3367,6 +3255,8 @@ msgstr "Eliminar…"
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Eliminar permanentemente a selección de elementos ou todos os elementos de "
+"trash-bin."
 
 #: core/app/views/stack/trashview.cpp:135
 #, kde-format
@@ -3435,12 +3325,14 @@ msgstr "Seleccionou %1 de %2 elementos"
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr ""
+msgstr "Pecháronse máis de 650 informes de persoas usuarias en Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Adoptouse o código á infraestrutura Qt 6 (o código aínda é compatíbel coa "
+"API de Qt 5)."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
@@ -3448,22 +3340,28 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"Agora o instalador de Windows compílase de forma nativa coa cadea de "
+"ferramentas VCPKG de Microsoft e usa as infraestruturas Qt 6 e KF6."
 
 #: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
+"Engadíronse opcións de exportación de JPEG-XL, WEBP e AVIF en todas partes."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Engadíronse conversións aos formatos sen perda JPEG-XL, WEBP e AVIF ao "
+"importar dunha cámara."
 
 #: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Engadíronse conversores de JPEG-XL, WEBP e AVIF ao xestor da fila do lote."
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
@@ -3471,43 +3369,40 @@ msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
+"Versións: permitir JPEG-XL, HEIF, WEBP e AVIF como formatos de imaxe sen "
+"perdas para almacenar imaxes versionadas no editor."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Ergonomía: engadir un menú de hamburguesa á barra de ferramentas se o menú "
+"principal está agochado."
 
 #: core/app/views/stack/welcomepageview.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to save, as specified, metadata to XMP sidecar files."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Active esta opción para gardar, como se especifiquen, os metadatos nos "
-"ficheiros acompañantes de XMP."
+"Metadatos: engadir unha nova opción para escribir metadatos en ficheiros co "
+"motor ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW TIFF/EP files. This "
-#| "feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
-#| "experimental, and is disabled by default."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Active esta opción para escribir metadatos en ficheiros RAW TIFF/EP. Esta "
-"funcionalidade require a biblioteca compartida Exiv2 na versión >= 0.18.0. "
-"Aínda é experimental e está desactivada de maneira predeterminada."
+"Metadatos: as operacións opcionais de escritura de metadatos en ficheiros "
+"DNG e RAW agora deléganse ao motor ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Metadatos: optimizar a disposición do complemento de edición de metadatos "
+"para unha mellor ergonomía."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3515,6 +3410,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadatos: engadir novas opcións para gardar e cargar os perfís de "
+"configuración no panel de opcións avanzadas de metadatos."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -3522,11 +3419,15 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"Renomear avanzado: engadir un contador de ficheiro incremental ao desde da "
+"numeración secuencial coa opción [c] ou [c,paso]."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
+"Renomear avanzado: engadir numeración de secuencia de texto aleatoria coa "
+"opción [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
@@ -3534,28 +3435,31 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Renomear avanzado: engadir un primeiro carácter configurábel para o "
+"modificador único con {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Return items whose file name contains"
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Devolver os elementos que estean nun ficheiro que conteña"
+msgstr ""
+"Renomear avanzado: engadir busca de elementos por número de zonas de caras."
 
 #: core/app/views/stack/welcomepageview.cpp:150
-#, fuzzy, kde-format
-#| msgid "Return items with tag"
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Devolver os elementos coa etiqueta"
+msgstr "Renomear avanzado: engadir busca de elementos sen zonas de caras."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr ""
+msgstr "Coleccións: permitir rutas de rede multiplataforma."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Base de datos: permitir o modo WAL (rexistro de escritura adiantada) de "
+"SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3563,6 +3467,8 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Permitir comprobación ortográfica no trebello de texto de lenda co "
+"compoñente KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
@@ -3570,18 +3476,24 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"Engadir un panel de configuración de corrección ortográfica en "
+"«Configuración → Diversos» tanto en digiKam como en Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Permitir traducións por Internet no trebello de editor de texto de idioma "
+"alternativo."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
+"Engadir un panel de configuración de localización en «Configuración → "
+"Diversos» tanto en digiKam como en Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3589,12 +3501,16 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Engadir opcións para listar os idiomas preferidos alternativos ou de "
+"traducións no trebello de editor de texto."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Permitir usar a configuración de ordenación de calidade de imaxe "
+"personalizada ou global en todas partes."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3606,7 +3522,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
-msgstr ""
+msgstr "Permitir imaxes de 16 bits en coma flotante no cargador de TIFF."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3615,6 +3531,9 @@ msgid ""
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
+"Engadir unha nova ferramenta de mantemento para realizar <a href=\"https://"
+"community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">detección estética "
+"para clasificar imaxes cun modelo de aprendizaxe profunda</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
@@ -3622,6 +3541,9 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"Engadir unha nova ferramenta <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">para realizar recoñecemento óptico de "
+"caracteres (OCR) do texto escaneado</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3642,14 +3564,11 @@ msgstr ""
 "cualificación, marca e cor en lote."
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Active esta opción para asignar automaticamente as etiquetas de escolla "
-"baseándose na calidade da imaxe."
+"Xestor de colas: engadir unha nova ferramenta para asignar títulos e lendas "
+"en lote."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3657,6 +3576,8 @@ msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"Documentación: <a href=\" https://docs.digikam.org/en/index.html\">Rescribir "
+"o manual</a> de DocBook á infraestrutura Sphinx con reStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -38182,77 +38103,77 @@ msgstr "Non foi posíbel renomear a imaxe %1."
 msgid "Could not restore file %1 from trash"
 msgstr "Non se puido abrir o ficheiro «%1» para escribir nel"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:857
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgctxt "@info: rotation"
 msgid "Unspecified"
 msgstr "Sen especificar"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:862
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:866
 #, fuzzy, kde-format
 #| msgid "Normal"
 msgctxt "@info: rotation of an unrotated image"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:867
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
 msgstr "Invertida na horizontal"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:872
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
 #, fuzzy, kde-format
 #| msgid "Rotated by 180 Degrees"
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
 msgstr "Rotada 180 graus"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:877
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
 msgstr "Invertida na vertical"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:882
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally and Rotated Left"
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
 msgstr "Invertida na horizontal e rotada á esquerda"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:887
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@info: rotation"
 msgid "Rotated Left"
 msgstr "Rotada á esquerda"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:892
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically and Rotated Left"
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
 msgstr "Invertida na vertical e rotada á esquerda"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:897
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@info: rotation"
 msgid "Rotated Right"
 msgstr "Rotada á dereita"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:902
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:906
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "Descoñecida"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:987
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:992
 #, fuzzy, kde-format
 #| msgctxt "Temperature in Kelvin"
 #| msgid "%1 K"
@@ -38260,8 +38181,8 @@ msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1013
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1029
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1018
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1034
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "West"
@@ -38269,8 +38190,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "West"
 msgstr "Oeste"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1014
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1030
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1019
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1035
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "East"
@@ -38278,8 +38199,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "East"
 msgstr "Leste"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1049
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1065
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1054
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1070
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "North"
@@ -38287,8 +38208,8 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "North"
 msgstr "Norte"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1050
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1066
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1055
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1071
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "South"
@@ -38296,7 +38217,7 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "South"
 msgstr "Sur"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1079
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1084
 #, fuzzy, no-c-format, kde-format
 #| msgctxt "Height in meters"
 #| msgid "%1m"
@@ -38304,14 +38225,14 @@ msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1m"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1264
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "Disparouse o flash"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1265
 #, fuzzy, kde-format
 #| msgid "Flash with red-eye reduction mode"
 msgctxt "@info"
@@ -39455,7 +39376,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Etiqueta de cores"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -39473,7 +39394,7 @@ msgstr "O ficheiro non existe ou non é un ficheiro"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "O ficheiro non existe ou non é un ficheiro"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:150
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""
@@ -42326,8 +42247,7 @@ msgid "Todo"
 msgstr "Por facer"
 
 #: core/libs/settings/applicationsettings_p.cpp:56
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Diversos"
@@ -54137,8 +54057,7 @@ msgstr ""
 "que complementos se pode acceder desde a aplicación</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Diversos"
@@ -72051,8 +71970,7 @@ msgstr ""
 "acceder desde a aplicación</i></qt>"
 
 #: core/utilities/setup/setup.cpp:199
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversos"
