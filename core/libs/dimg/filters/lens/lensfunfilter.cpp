@@ -27,15 +27,20 @@
 #include "dmetadata.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
-// Disable deprecated API from Lensfun.
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
+// Disable deprecated API from older Lensfun.
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#if !LENSFUN_TEST_VERSION(0,3,99)
+
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
 #endif
 
 namespace Digikam
@@ -81,7 +86,17 @@ LensFunFilter::~LensFunFilter()
 
     if (d->modifier)
     {
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+
+        delete d->modifier;
+
+#else
+
         d->modifier->Destroy();
+
+#endif
+
     }
 
     delete d->iface;
@@ -202,6 +217,28 @@ void LensFunFilter::filterImage()
         return;
     }
 
+    // Init lensfun lib, we are working on the full image.
+
+    lfPixelFormat colorDepth = (m_orgImage.bytesDepth() == 4) ? LF_PF_U8 : LF_PF_U16;
+    double focalLength       = d->iface->settings().focalLength;
+    double cropFactor        = d->iface->settings().cropFactor;
+    focalLength              = (cropFactor > 1.0) ? (focalLength * cropFactor)
+                                                  : focalLength;
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+
+    d->modifier              = new lfModifier(
+                                              d->iface->usedLens(),
+                                              focalLength,
+                                              cropFactor,
+                                              m_orgImage.width(),
+                                              m_orgImage.height(),
+                                              colorDepth,
+                                              false                    // no inverse
+                                             );
+
+#else
+
     // Lensfun Modifier flags to process
 
     int modifyFlags = 0;
@@ -226,19 +263,10 @@ void LensFunFilter::filterImage()
         modifyFlags |= LF_MODIFY_VIGNETTING;
     }
 
-    // Init lensfun lib, we are working on the full image.
-
-    lfPixelFormat colorDepth = (m_orgImage.bytesDepth() == 4) ? LF_PF_U8 : LF_PF_U16;
-    double focalLength       = d->iface->settings().focalLength;
-    double cropFactor        = d->iface->settings().cropFactor;
-
     d->modifier              = lfModifier::Create(d->iface->usedLens(),
                                                   cropFactor,
                                                   m_orgImage.width(),
                                                   m_orgImage.height());
-
-    focalLength              = (cropFactor > 1.0) ? (focalLength * cropFactor)
-                                                  : focalLength;
 
     int modflags             = d->modifier->Initialize(
                                                        d->iface->usedLens(),
@@ -252,11 +280,46 @@ void LensFunFilter::filterImage()
                                                        0                /* no inverse */
                                                       );
 
+#endif
+
     if (!d->modifier)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "ERROR: cannot initialize LensFun Modifier.";
         return;
+
     }
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+
+    // Lensfun Modifier flags to process
+
+    int modflags = 0;
+    modflags    |= d->modifier->EnableScaling(1.0);             // no scaling
+
+    if (d->iface->settings().filterDST)
+    {
+        modflags |= d->modifier->EnableDistortionCorrection();
+    }
+
+    if (d->iface->settings().filterGEO)
+    {
+        modflags |= d->modifier->EnableProjectionTransform(LF_RECTILINEAR);
+    }
+
+    if (d->iface->settings().filterCCA)
+    {
+        modflags |= d->modifier->EnableTCACorrection();
+    }
+
+    if (d->iface->settings().filterVIG)
+    {
+        modflags |= d->modifier->EnableVignettingCorrection(
+                                                            d->iface->settings().aperture,
+                                                            d->iface->settings().subjectDistance
+                                                           );
+    }
+
+#endif
 
     // Calc necessary steps for progress bar
 
@@ -481,13 +544,18 @@ void LensFunFilter::readParameters(const Digikam::FilterAction& action)
 
 } // namespace Digikam
 
-// Restore warnings
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
+// Restore warnings with older Lensfun API
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
+#if !LENSFUN_TEST_VERSION(0,3,99)
+
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic pop
+#   endif
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
+
 #endif
 
 #include "moc_lensfunfilter.cpp"

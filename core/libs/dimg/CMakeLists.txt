@@ -167,10 +167,10 @@ if(LensFun_FOUND)
 
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfunsettings.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfunfilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfuncameraselector.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfuniface.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/filters/lens/lensfunsettings.cpp
     )
 
     include_directories(${LENSFUN_INCLUDE_DIRS})
