@@ -29,12 +29,13 @@
 
 // Local includes
 
-#include "dlayoutbox.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
+#include "lensfuniface.h"
+#include "dlayoutbox.h"
 #include "squeezedcombobox.h"
 #include "dnuminput.h"
 #include "dexpanderbox.h"
-#include "digikam_globals.h"
 
 // Disable deprecated API from Lensfun.
 #if defined(Q_CC_GNU)
@@ -549,12 +550,12 @@ LensFunCameraSelector::~LensFunCameraSelector()
     delete d->iface;
     delete d;
 }
-
+/*
 LensFunIface* LensFunCameraSelector::iface() const
 {
     return d->iface;
 }
-
+*/
 LensFunContainer LensFunCameraSelector::settings()
 {
     // Update settings in LensFun interface
@@ -820,6 +821,26 @@ void LensFunCameraSelector::slotDistanceChanged()
     d->iface->setSettings(settings);
 
     Q_EMIT signalLensSettingsChanged();
+}
+
+bool LensFunCameraSelector::supportsCCA() const
+{
+    return d->iface->supportsCCA();
+}
+
+bool LensFunCameraSelector::supportsVig() const
+{
+    return d->iface->supportsVig();
+}
+
+bool LensFunCameraSelector::supportsDistortion() const
+{
+    return d->iface->supportsDistortion();
+}
+
+bool LensFunCameraSelector::supportsGeometry() const
+{
+    return d->iface->supportsGeometry();
 }
 
 } // namespace Digikam

@@ -88,8 +88,8 @@ LensAutoFixTool::LensAutoFixTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    d->cameraSelector      = new LensFunCameraSelector(d->gboxSettings->plainPage());
-    DImg* const img        = d->previewWidget->imageIface()->original();
+    d->cameraSelector       = new LensFunCameraSelector(d->gboxSettings->plainPage());
+    DImg* const img         = d->previewWidget->imageIface()->original();
     d->cameraSelector->setMetadata(img->getMetadata());
     DLineWidget* const line = new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage());
 
@@ -130,10 +130,11 @@ LensAutoFixTool::~LensAutoFixTool()
 
 void LensAutoFixTool::slotLensChanged()
 {
-    d->settingsView->setEnabledCCA(d->cameraSelector->iface()->supportsCCA());
-    d->settingsView->setEnabledVig(d->cameraSelector->iface()->supportsVig());
-    d->settingsView->setEnabledDist(d->cameraSelector->iface()->supportsDistortion());
-    d->settingsView->setEnabledGeom(d->cameraSelector->iface()->supportsDistortion());
+    d->settingsView->setEnabledCCA(d->cameraSelector->supportsCCA());
+    d->settingsView->setEnabledVig(d->cameraSelector->supportsVig());
+    d->settingsView->setEnabledDist(d->cameraSelector->supportsDistortion());
+    d->settingsView->setEnabledGeom(d->cameraSelector->supportsGeometry());
+
     slotTimer();
 }
 

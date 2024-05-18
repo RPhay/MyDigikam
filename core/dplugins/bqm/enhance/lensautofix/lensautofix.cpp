@@ -152,10 +152,11 @@ void LensAutoFix::slotAssignSettings2Widget()
     d->settingsView->setFilterSettings(lfPrm);
 
     // Update checkbox options about Lens corrections available.
-    d->settingsView->setEnabledCCA(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->iface()->supportsCCA());
-    d->settingsView->setEnabledVig(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->iface()->supportsVig());
-    d->settingsView->setEnabledDist(d->cameraSelector->useMetadata() ? true : d->cameraSelector->iface()->supportsDistortion());
-    d->settingsView->setEnabledGeom(d->cameraSelector->useMetadata() ? true : d->cameraSelector->iface()->supportsGeometry());
+
+    d->settingsView->setEnabledCCA(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->supportsCCA());
+    d->settingsView->setEnabledVig(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->supportsVig());
+    d->settingsView->setEnabledDist(d->cameraSelector->useMetadata() ? true : d->cameraSelector->supportsDistortion());
+    d->settingsView->setEnabledGeom(d->cameraSelector->useMetadata() ? true : d->cameraSelector->supportsGeometry());
 
     d->changeSettings = true;
 }

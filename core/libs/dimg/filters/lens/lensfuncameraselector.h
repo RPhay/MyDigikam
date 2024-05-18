@@ -22,7 +22,6 @@
 #include "dmetadata.h"
 #include "digikam_export.h"
 #include "lensfunfilter.h"
-#include "lensfuniface.h"
 
 class KConfigGroup;
 
@@ -40,12 +39,12 @@ public:
 public:
 
     explicit LensFunCameraSelector(QWidget* const parent = nullptr);
-    ~LensFunCameraSelector() override;
+    ~LensFunCameraSelector()          override;
 
     void setEnabledUseMetadata(bool b);
 
     void setUseMetadata(bool b);
-    bool useMetadata()      const;
+    bool useMetadata()          const;
 
     LensFunContainer settings();
     void             setSettings(const LensFunContainer& settings);
@@ -60,9 +59,12 @@ public:
      */
     void setPassiveMetadataUsage(bool b);
 
-    LensFunIface* iface()   const;
-
     void setMetadata(const MetaEngineData&);
+
+    bool supportsCCA()          const;
+    bool supportsVig()          const;
+    bool supportsDistortion()   const;
+    bool supportsGeometry()     const;
 
 Q_SIGNALS:
 
