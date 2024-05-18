@@ -36,6 +36,21 @@
 
 #include <lensfun.h>
 
+/**
+ * Make an integer version number of Lensfun for comparison from a major, minor and a patch version number.
+ */
+#define LENSFUN_MAKE_VERSION(major, minor, patch) (((major) << 16) | ((minor) << 8) | (patch))
+
+/**
+ * The Lensfun version number of the library used at compile-time as an integer number for easy comparison.
+ */
+#define LENSFUN_VERSION LENSFUN_MAKE_VERSION(LF_VERSION_MAJOR, LF_VERSION_MINOR, LF_VERSION_MICRO)
+
+/**
+ * The Lensfun version test macro to branch codes depending of API.
+ */
+#define LENSFUN_TEST_VERSION(major,minor,patch) ( LENSFUN_VERSION >= LENSFUN_MAKE_VERSION(major,minor,patch) )
+
 // Restore warnings
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
