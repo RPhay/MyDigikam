@@ -39,7 +39,7 @@
 
 // Disable deprecated API from older Lensfun.
 
-//#if !LENSFUN_TEST_VERSION(0,3,99)
+#if !LENSFUN_TEST_VERSION(0,3,99)
 
 #   if defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
@@ -51,7 +51,7 @@
 #       pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #   endif
 
-//#endif
+#endif
 
 namespace Digikam
 {
@@ -555,12 +555,7 @@ LensFunCameraSelector::~LensFunCameraSelector()
     delete d->iface;
     delete d;
 }
-/*
-LensFunIface* LensFunCameraSelector::iface() const
-{
-    return d->iface;
-}
-*/
+
 LensFunContainer LensFunCameraSelector::settings()
 {
     // Update settings in LensFun interface
@@ -709,6 +704,7 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
             d->focal->setEnabled(false);
             d->aperture->setEnabled(false);
             d->distance->setEnabled(false);
+
             Q_EMIT signalLensSettingsChanged();
         }
         else
@@ -749,7 +745,6 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
     }
 }
 
-
 void LensFunCameraSelector::slotMakeSelected()
 {
     d->populateDeviceCombos();
@@ -788,9 +783,22 @@ void LensFunCameraSelector::slotLensSelected()
         (settings.cropFactor <= 0.0) // this should not happen
        )
     {
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+
+        qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using 1.0 default value."
+
+        settings.cropFactor = 1.0;
+
+#else
+
         qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using lens calibration data: "
                                   << d->iface->usedLens()->CropFactor;
+
         settings.cropFactor = d->iface->usedLens()->CropFactor;
+
+#endif
+
     }
 
     d->iface->setSettings(settings);
@@ -852,7 +860,7 @@ bool LensFunCameraSelector::supportsGeometry() const
 
 // Restore warnings with older Lensfun API
 
-//#if !LENSFUN_TEST_VERSION(0,3,99)
+#if !LENSFUN_TEST_VERSION(0,3,99)
 
 #   if defined(Q_CC_GNU)
 #       pragma GCC diagnostic pop
@@ -862,6 +870,6 @@ bool LensFunCameraSelector::supportsGeometry() const
 #       pragma clang diagnostic pop
 #   endif
 
-//#endif
+#endif
 
 #include "moc_lensfuncameraselector.cpp"
