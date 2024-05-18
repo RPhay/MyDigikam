@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 01:43+0000\n"
+"POT-Creation-Date: 2024-05-18 01:45+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -35518,81 +35518,81 @@ msgstr ""
 msgid "Could not restore file %1 from trash"
 msgstr "열 수 없음: %1"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:857
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Unspecified"
 msgstr "지정되지 않음"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:862
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:866
 #, fuzzy, kde-format
 #| msgid "Normal"
 msgctxt "@info: rotation of an unrotated image"
 msgid "Normal"
 msgstr "일반"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:867
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
 msgstr "수평으로 뒤집힘"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:872
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
 #, fuzzy, kde-format
 #| msgid "Rotate 180 degrees"
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
 msgstr "180도 회전"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:877
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
 msgstr "수직으로 뒤집힘"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:882
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
 msgstr "수평으로 뒤집힘"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:887
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@info: rotation"
 msgid "Rotated Left"
 msgstr "왼쪽으로 회전함"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:892
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
 msgstr "수직으로 뒤집힘"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:897
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@info: rotation"
 msgid "Rotated Right"
 msgstr "오른쪽으로 회전함"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:902
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:906
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:987
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:992
 #, kde-format
 msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1013
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1029
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1018
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1034
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "West"
@@ -35600,8 +35600,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "West"
 msgstr "서"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1014
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1030
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1019
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1035
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "East"
@@ -35609,8 +35609,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "East"
 msgstr "동"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1049
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1065
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1054
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1070
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "North"
@@ -35618,8 +35618,8 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "North"
 msgstr "북"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1050
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1066
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1055
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1071
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "South"
@@ -35627,7 +35627,7 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "South"
 msgstr "남"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1079
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1084
 #, fuzzy, no-c-format, kde-format
 #| msgctxt "Height in meters"
 #| msgid "%1m"
@@ -35635,13 +35635,13 @@ msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1분"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1264
 #, kde-format
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "플래시 발광됨"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1265
 #, kde-format
 msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
@@ -36879,7 +36879,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "색상 레이블"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -36895,7 +36895,7 @@ msgstr ""
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:150
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""

@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 01:43+0000\n"
+"POT-Creation-Date: 2024-05-18 01:45+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -34602,14 +34602,14 @@ msgstr ""
 msgid "Could not restore file %1 from trash"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:857
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgctxt "@info: rotation"
 msgid "Unspecified"
 msgstr "بەلگىلەنمىگەن"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:862
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:866
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -34617,63 +34617,63 @@ msgctxt "@info: rotation of an unrotated image"
 msgid "Normal"
 msgstr "نورمال"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:867
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
 msgstr "يانتۇ ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:872
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
 #, fuzzy, kde-format
 #| msgid "180 degrees"
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
 msgstr "180 گرادۇس"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:877
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
 msgstr "تىك ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:882
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
 msgstr "يانتۇ ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:887
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@info: rotation"
 msgid "Rotated Left"
 msgstr "سولغا ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:892
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
 msgstr "تىك ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:897
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@info: rotation"
 msgid "Rotated Right"
 msgstr "ئوڭغا ئايلاندۇر"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:902
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:906
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: rotation"
 msgid "Unknown"
 msgstr "نامەلۇم"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:987
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:992
 #, fuzzy, kde-format
 #| msgctxt "Temperature in Kelvin"
 #| msgid "%1 K"
@@ -34681,8 +34681,8 @@ msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
 msgstr "%1 K"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1013
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1029
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1018
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1034
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "West"
@@ -34690,8 +34690,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "West"
 msgstr "غەرب"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1014
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1030
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1019
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1035
 #, fuzzy, kde-format
 #| msgctxt "For use in longitude coordinate"
 #| msgid "East"
@@ -34699,8 +34699,8 @@ msgctxt "@info: For use in longitude coordinate"
 msgid "East"
 msgstr "شەرق"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1049
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1065
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1054
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1070
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "North"
@@ -34708,8 +34708,8 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "North"
 msgstr "شىمال"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1050
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1066
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1055
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1071
 #, fuzzy, kde-format
 #| msgctxt "For use in latitude coordinate"
 #| msgid "South"
@@ -34717,20 +34717,20 @@ msgctxt "@info: For use in latitude coordinate"
 msgid "South"
 msgstr "جەنۇب"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1079
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1084
 #, fuzzy, no-c-format, kde-format
 #| msgid "%1d"
 msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1d"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1264
 #, kde-format
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1265
 #, kde-format
 msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
@@ -35788,7 +35788,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "رەڭگى: "
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -35806,7 +35806,7 @@ msgstr "ھۆججەت مەۋجۇت ئەمەس"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "ھۆججەت مەۋجۇت ئەمەس"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:150
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""
