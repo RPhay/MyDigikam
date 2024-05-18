@@ -37,16 +37,21 @@
 #include "dnuminput.h"
 #include "dexpanderbox.h"
 
-// Disable deprecated API from Lensfun.
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
+// Disable deprecated API from older Lensfun.
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
+//#if !LENSFUN_TEST_VERSION(0,3,99)
+
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
+//#endif
 
 namespace Digikam
 {
@@ -796,8 +801,8 @@ void LensFunCameraSelector::slotLensSelected()
 void LensFunCameraSelector::slotFocalChanged()
 {
     LensFunContainer settings = d->iface->settings();
-    settings.focalLength      = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
-                                                                                         : d->focal->value();
+    settings.focalLength      = (d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? -1.0
+                                                                                           : d->focal->value();
     d->iface->setSettings(settings);
 
     Q_EMIT signalLensSettingsChanged();
@@ -845,14 +850,18 @@ bool LensFunCameraSelector::supportsGeometry() const
 
 } // namespace Digikam
 
-// Restore warnings
+// Restore warnings with older Lensfun API
 
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
+//#if !LENSFUN_TEST_VERSION(0,3,99)
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic pop
+#   endif
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
+
+//#endif
 
 #include "moc_lensfuncameraselector.cpp"

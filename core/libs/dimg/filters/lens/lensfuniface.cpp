@@ -23,15 +23,20 @@
 
 #include "digikam_debug.h"
 
-// Disable deprecated API from Lensfun.
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
+// Disable deprecated API from older Lensfun.
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#if !LENSFUN_TEST_VERSION(0,3,99)
+
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#   endif
+
 #endif
 
 namespace Digikam
@@ -154,7 +159,15 @@ double LensFunIface::Private::checkSimilarity(const QString& a, const QString& b
 LensFunIface::LensFunIface()
     : d(new Private)
 {
+#if LENSFUN_TEST_VERSION(0,3,99)
+
+    d->lfDb          = lf_db_create();
+
+#else
+
     d->lfDb          = lf_db_new();
+
+#endif
 
     // Lensfun host XML files in a dedicated sub-directory.
 
@@ -650,7 +663,15 @@ bool LensFunIface::supportsDistortion() const
 
     lfLensCalibDistortion res;
 
-    return d->usedLens->InterpolateDistortion(d->settings.focalLength, res);
+    return d->usedLens->InterpolateDistortion(
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+                                              d->settings.cropFactor,
+#endif
+                                              d->settings.focalLength,
+
+                                              res
+                                             );
 }
 
 bool LensFunIface::supportsCCA() const
@@ -662,7 +683,15 @@ bool LensFunIface::supportsCCA() const
 
     lfLensCalibTCA res;
 
-    return d->usedLens->InterpolateTCA(d->settings.focalLength, res);
+    return d->usedLens->InterpolateTCA(
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+                                       d->settings.cropFactor,
+#endif
+
+                                       d->settings.focalLength,
+                                       res
+                                      );
 }
 
 bool LensFunIface::supportsVig() const
@@ -674,9 +703,17 @@ bool LensFunIface::supportsVig() const
 
     lfLensCalibVignetting res;
 
-    return d->usedLens->InterpolateVignetting(d->settings.focalLength,
+    return d->usedLens->InterpolateVignetting(
+
+#if LENSFUN_TEST_VERSION(0,3,99)
+                                              d->settings.cropFactor,
+#endif
+
+                                              d->settings.focalLength,
                                               d->settings.aperture,
-                                              d->settings.subjectDistance, res);
+                                              d->settings.subjectDistance,
+                                              res
+                                             );
 }
 
 bool LensFunIface::supportsGeometry() const
@@ -693,15 +730,18 @@ QString LensFunIface::lensFunVersion()
               .arg(LF_VERSION_BUGFIX);
 }
 
+// Restore warnings with older Lensfun API
 
-// Restore warnings
+#if !LENSFUN_TEST_VERSION(0,3,99)
 
-#if defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
+#   if defined(Q_CC_GNU)
+#       pragma GCC diagnostic pop
+#   endif
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
+
 #endif
 
 } // namespace Digikam
