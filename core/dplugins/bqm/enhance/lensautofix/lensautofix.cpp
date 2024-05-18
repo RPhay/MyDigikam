@@ -197,8 +197,11 @@ bool LensAutoFix::toolOperations()
     }
 
     LensFunContainer prm;
-
-    bool useMeta = settings()[QLatin1String("UseMetadata")].toBool();
+    prm.filterCCA = settings()[QLatin1String("filterCCA")].toBool();
+    prm.filterVIG = settings()[QLatin1String("filterVIG")].toBool();
+    prm.filterDST = settings()[QLatin1String("filterDST")].toBool();
+    prm.filterGEO = settings()[QLatin1String("filterGEO")].toBool();
+    bool useMeta  = settings()[QLatin1String("UseMetadata")].toBool();
 
     if (useMeta)
     {
@@ -212,19 +215,9 @@ bool LensAutoFix::toolOperations()
             setErrorDescription(i18n("Cannot find all lens information to process lens auto-corrections"));
             return false;
         }
-
-        prm.filterCCA       = settings()[QLatin1String("filterCCA")].toBool();
-        prm.filterVIG       = settings()[QLatin1String("filterVIG")].toBool();
-        prm.filterDST       = settings()[QLatin1String("filterDST")].toBool();
-        prm.filterGEO       = settings()[QLatin1String("filterGEO")].toBool();
     }
     else
     {
-        prm.filterCCA       = settings()[QLatin1String("filterCCA")].toBool();
-        prm.filterVIG       = settings()[QLatin1String("filterVIG")].toBool();
-        prm.filterDST       = settings()[QLatin1String("filterDST")].toBool();
-        prm.filterGEO       = settings()[QLatin1String("filterGEO")].toBool();
-
         prm.cropFactor      = settings()[QLatin1String("cropFactor")].toDouble();
         prm.focalLength     = settings()[QLatin1String("focalLength")].toDouble();
         prm.aperture        = settings()[QLatin1String("aperture")].toDouble();
