@@ -54,51 +54,380 @@ class Q_DECL_HIDDEN LensFunCameraSelector::Private
 {
 public:
 
-    Private() = default;
+    Private(LensFunCameraSelector* const qq)
+        : q(qq)
+    {
+    }
 
-    bool                passiveMetadataUsage    = false;
+    LensFunIface::MetadataMatch findFromMetadata();
+    void refreshSettingsView();
+    void populateDeviceCombos();
+    void populateLensCombo();
 
-    QCheckBox*          metadataUsage           = nullptr;
-    QLabel*             metadataResult          = nullptr;
-    QLabel*             makeLabel               = nullptr;
-    QLabel*             modelLabel              = nullptr;
-    QLabel*             lensLabel               = nullptr;
-    QLabel*             focalLabel              = nullptr;
-    QLabel*             aperLabel               = nullptr;
-    QLabel*             distLabel               = nullptr;
+public:
 
-    const QString       configUseMetadata       = QLatin1String("UseMetadata");
-    const QString       configCameraModel       = QLatin1String("CameraModel");
-    const QString       configCameraMake        = QLatin1String("CameraMake");
-    const QString       configLensModel         = QLatin1String("LensModel");
-    const QString       configSubjectDistance   = QLatin1String("SubjectDistance");
-    const QString       configFocalLength       = QLatin1String("FocalLength");
-    const QString       configCropFactor        = QLatin1String("CropFactor");
-    const QString       configAperture          = QLatin1String("Aperture");
-    const QString       redStyle                = QLatin1String("QLabel {color: red;}");
-    const QString       orangeStyle             = QLatin1String("QLabel {color: orange;}");
-    const QString       greenStyle              = QLatin1String("QLabel {color: green;}");
+    bool                    passiveMetadataUsage    = false;
 
-    DAdjustableLabel*   lensDescription         = nullptr;
-    DAdjustableLabel*   makeDescription         = nullptr;
-    DAdjustableLabel*   modelDescription        = nullptr;
+    QCheckBox*              metadataUsage           = nullptr;
+    QLabel*                 metadataResult          = nullptr;
+    QLabel*                 makeLabel               = nullptr;
+    QLabel*                 modelLabel              = nullptr;
+    QLabel*                 lensLabel               = nullptr;
+    QLabel*                 focalLabel              = nullptr;
+    QLabel*                 aperLabel               = nullptr;
+    QLabel*                 distLabel               = nullptr;
 
-    SqueezedComboBox*   make                    = nullptr;
-    SqueezedComboBox*   model                   = nullptr;
-    SqueezedComboBox*   lens                    = nullptr;
+    const QString           configUseMetadata       = QLatin1String("UseMetadata");
+    const QString           configCameraModel       = QLatin1String("CameraModel");
+    const QString           configCameraMake        = QLatin1String("CameraMake");
+    const QString           configLensModel         = QLatin1String("LensModel");
+    const QString           configSubjectDistance   = QLatin1String("SubjectDistance");
+    const QString           configFocalLength       = QLatin1String("FocalLength");
+    const QString           configCropFactor        = QLatin1String("CropFactor");
+    const QString           configAperture          = QLatin1String("Aperture");
+    const QString           redStyle                = QLatin1String("QLabel {color: red;}");
+    const QString           orangeStyle             = QLatin1String("QLabel {color: orange;}");
+    const QString           greenStyle              = QLatin1String("QLabel {color: green;}");
 
-    DDoubleNumInput*    focal                   = nullptr;
-    DDoubleNumInput*    aperture                = nullptr;
-    DDoubleNumInput*    distance                = nullptr;
+    DAdjustableLabel*       lensDescription         = nullptr;
+    DAdjustableLabel*       makeDescription         = nullptr;
+    DAdjustableLabel*       modelDescription        = nullptr;
 
-    DMetadata*          metadata                = nullptr;
+    SqueezedComboBox*       make                    = nullptr;
+    SqueezedComboBox*       model                   = nullptr;
+    SqueezedComboBox*       lens                    = nullptr;
 
-    LensFunIface*       iface                   = nullptr;
+    DDoubleNumInput*        focal                   = nullptr;
+    DDoubleNumInput*        aperture                = nullptr;
+    DDoubleNumInput*        distance                = nullptr;
+
+    DMetadata*              metadata                = nullptr;
+
+    LensFunIface*           iface                   = nullptr;
+    LensFunCameraSelector*  q                       = nullptr;
 };
+
+LensFunIface::MetadataMatch LensFunCameraSelector::Private::findFromMetadata()
+{
+    LensFunIface::MetadataMatch ret = iface->findFromMetadata(metadata);
+    refreshSettingsView();
+    q->slotModelSelected();
+    q->slotLensSelected();
+
+    return ret;
+}
+
+void LensFunCameraSelector::Private::refreshSettingsView()
+{
+    make->blockSignals(true);
+    model->blockSignals(true);
+    lens->blockSignals(true);
+
+    makeLabel->setStyleSheet(qApp->styleSheet());
+    modelLabel->setStyleSheet(qApp->styleSheet());
+    lensLabel->setStyleSheet(qApp->styleSheet());
+    focalLabel->setStyleSheet(qApp->styleSheet());
+    aperLabel->setStyleSheet(qApp->styleSheet());
+    distLabel->setStyleSheet(qApp->styleSheet());
+
+    if (!passiveMetadataUsage)
+    {
+        makeDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(iface->makeDescription()));
+    }
+
+    int makerIdx = -1;
+
+    if (iface->usedCamera())
+    {
+        makerIdx = make->findOriginalText(iface->settings().cameraMake);
+        qCDebug(DIGIKAM_DIMG_LOG) << "makerIdx: "
+                                  << makerIdx << " ("
+                                  << iface->settings().cameraMake << ")";
+    }
+    else
+    {
+        int i = make->findOriginalText(iface->makeDescription());
+
+        if (i == -1)
+        {
+            i = make->findOriginalText(QLatin1String("Generic"));
+        }
+
+        if (i >= 0)
+        {
+            make->setCurrentIndex(i);
+            populateDeviceCombos();
+        }
+
+        if (!passiveMetadataUsage)
+        {
+            makeLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    if (makerIdx >= 0)
+    {
+        make->setCurrentIndex(makerIdx);
+        make->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            makeLabel->setStyleSheet(greenStyle);
+        }
+
+        populateDeviceCombos();
+    }
+
+    // ------------------------------------------------------------------------------------------------
+
+    if (!passiveMetadataUsage)
+    {
+        modelDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(iface->modelDescription()));
+    }
+
+    int modelIdx = -1;
+
+    if (iface->usedCamera())
+    {
+        modelIdx = model->findOriginalText(iface->settings().cameraModel);
+        qCDebug(DIGIKAM_DIMG_LOG) << "modelIdx: "
+                                  << modelIdx << " ("
+                                  << iface->settings().cameraModel << ")";
+    }
+
+    if (modelIdx >= 0)
+    {
+        model->setCurrentIndex(modelIdx);
+        model->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            modelLabel->setStyleSheet(greenStyle);
+        }
+
+        populateLensCombo();
+    }
+    else
+    {
+        if (!passiveMetadataUsage)
+        {
+            modelLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    // ------------------------------------------------------------------------------------------------
+
+    if (!passiveMetadataUsage)
+    {
+        lensDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(iface->lensDescription()));
+    }
+
+    int lensIdx = -1;
+
+    if (iface->usedLens())
+    {
+        lensIdx = lens->findOriginalText(iface->settings().lensModel);
+        qCDebug(DIGIKAM_DIMG_LOG) << "lensIdx: "
+                                  << lensIdx << " ("
+                                  << iface->settings().lensModel << ")";
+    }
+
+    if (lensIdx >= 0)
+    {
+        // found lens model directly, best case :)
+
+        lens->setCurrentIndex(lensIdx);
+        lens->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            lensLabel->setStyleSheet(greenStyle);
+        }
+    }
+    else
+    {
+        if (!passiveMetadataUsage)
+        {
+            lensLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    // ------------------------------------------------------------------------------------------------
+
+    if (iface->settings().focalLength != -1.0)
+    {
+        focal->setValue(iface->settings().focalLength);
+        focal->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            focalLabel->setStyleSheet(greenStyle);
+        }
+    }
+    else
+    {
+        if (!passiveMetadataUsage)
+        {
+            focalLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    if (iface->settings().aperture != -1.0)
+    {
+        aperture->setValue(iface->settings().aperture);
+        aperture->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            aperLabel->setStyleSheet(greenStyle);
+        }
+    }
+    else
+    {
+        if (!passiveMetadataUsage)
+        {
+            aperLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    if (iface->settings().subjectDistance != -1.0)
+    {
+        distance->setValue(iface->settings().subjectDistance);
+        distance->setEnabled(passiveMetadataUsage);
+
+        if (!passiveMetadataUsage)
+        {
+            distLabel->setStyleSheet(greenStyle);
+        }
+    }
+    else
+    {
+        if (!passiveMetadataUsage)
+        {
+            distLabel->setStyleSheet(orangeStyle);
+        }
+    }
+
+    make->blockSignals(false);
+    model->blockSignals(false);
+    lens->blockSignals(false);
+}
+
+void LensFunCameraSelector::Private::populateDeviceCombos()
+{
+    make->blockSignals(true);
+    model->blockSignals(true);
+
+    const lfCamera* const* it = iface->lensFunCameras();
+
+    // reset box
+
+    model->clear();
+
+    bool firstRun = false;
+
+    if (make->count() == 0)
+    {
+        firstRun = true;
+    }
+
+    while (*it)
+    {
+        if (firstRun)
+        {
+            // Maker DB does not change, so we fill it only once.
+
+            if ((*it)->Maker)
+            {
+                QString t = QLatin1String((*it)->Maker);
+
+                if (make->findOriginalText(t) < 0)
+                {
+                    make->addSqueezedItem(t);
+                }
+            }
+        }
+
+        // Fill models for current selected maker
+
+        if (
+            (*it)->Model &&
+            (QLatin1String((*it)->Maker) == make->itemHighlighted())
+           )
+        {
+            LensFunIface::DevicePtr dev = *it;
+            QVariant b                  = QVariant::fromValue(dev);
+
+            model->addSqueezedItem(QLatin1String(dev->Model), b);
+        }
+
+        ++it;
+    }
+
+    make->blockSignals(false);
+    model->blockSignals(false);
+}
+
+void LensFunCameraSelector::Private::populateLensCombo()
+{
+    lens->blockSignals(true);
+    lens->clear();
+    lens->blockSignals(false);
+
+    QVariant v = model->itemData(model->currentIndex());
+
+    if (!v.isValid() || v.isNull())
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Invalid variant value for device!";
+        return;
+    }
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "variant: " << v;
+
+    LensFunIface::DevicePtr dev = v.value<LensFunIface::DevicePtr>();
+
+    if (!dev)
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "Device is null!";
+        return;
+    }   
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "dev: " << dev->Maker
+                              << " :: " << dev->Model
+                              << " :: " << dev->CropFactor;
+
+    lens->blockSignals(true);
+    const lfLens** lenses     = iface->lensFunDataBase()->FindLenses(dev, nullptr, nullptr);
+    LensFunContainer settings = iface->settings();
+    settings.cropFactor       = dev ? dev->CropFactor : -1.0;
+    iface->setSettings(settings);
+
+    QMultiMap<QString, QVariant> lensMap;
+
+    while (lenses && *lenses)
+    {
+        LensFunIface::LensPtr lens = *lenses;
+        QVariant b                 = QVariant::fromValue(lens);
+
+        lensMap.insert(QLatin1String(lens->Model), b);
+        ++lenses;
+    }
+
+    QMultiMap<QString, QVariant>::ConstIterator it = lensMap.constBegin();
+
+    for ( ; it != lensMap.constEnd() ; ++it)
+    {
+        lens->addSqueezedItem(it.key(), it.value());
+    }
+
+    lens->blockSignals(false);
+}
+
+// ---------------------------------------------------------------------------
 
 LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     : QWidget(parent),
-      d      (new Private)
+      d      (new Private(this))
 {
     d->iface                = new LensFunIface();
 
@@ -210,8 +539,8 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     connect(d->distance, SIGNAL(valueChanged(double)),
             this, SLOT(slotDistanceChanged()));
 
-    populateDeviceCombos();
-    populateLensCombo();
+    d->populateDeviceCombos();
+    d->populateLensCombo();
 }
 
 LensFunCameraSelector::~LensFunCameraSelector()
@@ -248,7 +577,7 @@ void LensFunCameraSelector::setSettings(const LensFunContainer& settings)
     blockSignals(true);
 
     d->iface->setSettings(settings);
-    refreshSettingsView();
+    d->refreshSettingsView();
 
     blockSignals(false);
 }
@@ -321,7 +650,7 @@ void LensFunCameraSelector::setMetadata(const MetaEngineData& meta)
     else
     {
         setEnabledUseMetadata(true);
-        findFromMetadata();
+        d->findFromMetadata();
     }
 }
 
@@ -378,7 +707,7 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
         }
         else
         {
-            LensFunIface::MetadataMatch ret = findFromMetadata();
+            LensFunIface::MetadataMatch ret = d->findFromMetadata();
 
             switch (ret)
             {
@@ -414,326 +743,21 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
     }
 }
 
-LensFunIface::MetadataMatch LensFunCameraSelector::findFromMetadata()
-{
-    LensFunIface::MetadataMatch ret = d->iface->findFromMetadata(d->metadata);
-    refreshSettingsView();
-    slotModelSelected();
-    slotLensSelected();
-
-    return ret;
-}
-
-void LensFunCameraSelector::refreshSettingsView()
-{
-    d->make->blockSignals(true);
-    d->model->blockSignals(true);
-    d->lens->blockSignals(true);
-
-    d->makeLabel->setStyleSheet(qApp->styleSheet());
-    d->modelLabel->setStyleSheet(qApp->styleSheet());
-    d->lensLabel->setStyleSheet(qApp->styleSheet());
-    d->focalLabel->setStyleSheet(qApp->styleSheet());
-    d->aperLabel->setStyleSheet(qApp->styleSheet());
-    d->distLabel->setStyleSheet(qApp->styleSheet());
-
-    if (!d->passiveMetadataUsage)
-    {
-        d->makeDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(d->iface->makeDescription()));
-    }
-
-    int makerIdx = -1;
-
-    if (d->iface->usedCamera())
-    {
-        makerIdx = d->make->findOriginalText(d->iface->settings().cameraMake);
-        qCDebug(DIGIKAM_DIMG_LOG) << "makerIdx: " << makerIdx << " (" << d->iface->settings().cameraMake << ")";
-    }
-    else
-    {
-        int i = d->make->findOriginalText(d->iface->makeDescription());
-
-        if (i == -1)
-        {
-            i = d->make->findOriginalText(QLatin1String("Generic"));
-        }
-
-        if (i >= 0)
-        {
-            d->make->setCurrentIndex(i);
-            populateDeviceCombos();
-        }
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->makeLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    if (makerIdx >= 0)
-    {
-        d->make->setCurrentIndex(makerIdx);
-        d->make->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->makeLabel->setStyleSheet(d->greenStyle);
-        }
-
-        populateDeviceCombos();
-    }
-
-    // ------------------------------------------------------------------------------------------------
-
-    if (!d->passiveMetadataUsage)
-    {
-        d->modelDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(d->iface->modelDescription()));
-    }
-
-    int modelIdx = -1;
-
-    if (d->iface->usedCamera())
-    {
-        modelIdx = d->model->findOriginalText(d->iface->settings().cameraModel);
-        qCDebug(DIGIKAM_DIMG_LOG) << "modelIdx: " << modelIdx << " (" << d->iface->settings().cameraModel << ")";
-    }
-
-    if (modelIdx >= 0)
-    {
-        d->model->setCurrentIndex(modelIdx);
-        d->model->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->modelLabel->setStyleSheet(d->greenStyle);
-        }
-
-        populateLensCombo();
-    }
-    else
-    {
-        if (!d->passiveMetadataUsage)
-        {
-            d->modelLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    // ------------------------------------------------------------------------------------------------
-
-    if (!d->passiveMetadataUsage)
-    {
-        d->lensDescription->setAdjustedText(QString::fromLatin1("<i>%1</i>").arg(d->iface->lensDescription()));
-    }
-
-    int lensIdx = -1;
-
-    if (d->iface->usedLens())
-    {
-        lensIdx = d->lens->findOriginalText(d->iface->settings().lensModel);
-        qCDebug(DIGIKAM_DIMG_LOG) << "lensIdx: " << lensIdx << " (" << d->iface->settings().lensModel << ")";
-    }
-
-    if (lensIdx >= 0)
-    {
-        // found lens model directly, best case :)
-
-        d->lens->setCurrentIndex(lensIdx);
-        d->lens->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->lensLabel->setStyleSheet(d->greenStyle);
-        }
-    }
-    else
-    {
-        if (!d->passiveMetadataUsage)
-        {
-            d->lensLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    // ------------------------------------------------------------------------------------------------
-
-    if (d->iface->settings().focalLength != -1.0)
-    {
-        d->focal->setValue(d->iface->settings().focalLength);
-        d->focal->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->focalLabel->setStyleSheet(d->greenStyle);
-        }
-    }
-    else
-    {
-        if (!d->passiveMetadataUsage)
-        {
-            d->focalLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    if (d->iface->settings().aperture != -1.0)
-    {
-        d->aperture->setValue(d->iface->settings().aperture);
-        d->aperture->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->aperLabel->setStyleSheet(d->greenStyle);
-        }
-    }
-    else
-    {
-        if (!d->passiveMetadataUsage)
-        {
-            d->aperLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    if (d->iface->settings().subjectDistance != -1.0)
-    {
-        d->distance->setValue(d->iface->settings().subjectDistance);
-        d->distance->setEnabled(d->passiveMetadataUsage);
-
-        if (!d->passiveMetadataUsage)
-        {
-            d->distLabel->setStyleSheet(d->greenStyle);
-        }
-    }
-    else
-    {
-        if (!d->passiveMetadataUsage)
-        {
-            d->distLabel->setStyleSheet(d->orangeStyle);
-        }
-    }
-
-    d->make->blockSignals(false);
-    d->model->blockSignals(false);
-    d->lens->blockSignals(false);
-}
-
-void LensFunCameraSelector::populateDeviceCombos()
-{
-    d->make->blockSignals(true);
-    d->model->blockSignals(true);
-
-    const lfCamera* const* it = d->iface->lensFunCameras();
-
-    // reset box
-
-    d->model->clear();
-
-    bool firstRun = false;
-
-    if (d->make->count() == 0)
-    {
-        firstRun = true;
-    }
-
-    while (*it)
-    {
-        if (firstRun)
-        {
-            // Maker DB does not change, so we fill it only once.
-
-            if ((*it)->Maker)
-            {
-                QString t = QLatin1String((*it)->Maker);
-
-                if (d->make->findOriginalText(t) < 0)
-                {
-                    d->make->addSqueezedItem(t);
-                }
-            }
-        }
-
-        // Fill models for current selected maker
-
-        if ((*it)->Model &&
-            (QLatin1String((*it)->Maker) == d->make->itemHighlighted()))
-        {
-            LensFunIface::DevicePtr dev = *it;
-            QVariant b                  = QVariant::fromValue(dev);
-
-            d->model->addSqueezedItem(QLatin1String(dev->Model), b);
-        }
-
-        ++it;
-    }
-
-    d->make->blockSignals(false);
-    d->model->blockSignals(false);
-}
-
-void LensFunCameraSelector::populateLensCombo()
-{
-    d->lens->blockSignals(true);
-    d->lens->clear();
-    d->lens->blockSignals(false);
-
-    QVariant v = d->model->itemData(d->model->currentIndex());
-
-    if (!v.isValid() || v.isNull())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Invalid variant value for device!";
-        return;
-    }
-
-    qCDebug(DIGIKAM_DIMG_LOG) << "variant: " << v;
-
-    LensFunIface::DevicePtr dev = v.value<LensFunIface::DevicePtr>();
-
-    if (!dev)
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Device is null!";
-        return;
-    }
-
-    qCDebug(DIGIKAM_DIMG_LOG) << "dev: " << dev->Maker << " :: " << dev->Model << " :: " << dev->CropFactor;
-
-    d->lens->blockSignals(true);
-    const lfLens** lenses     = d->iface->lensFunDataBase()->FindLenses(dev, nullptr, nullptr);
-    LensFunContainer settings = d->iface->settings();
-    settings.cropFactor       = dev ? dev->CropFactor : -1.0;
-    d->iface->setSettings(settings);
-
-    QMultiMap<QString, QVariant> lensMap;
-
-    while (lenses && *lenses)
-    {
-        LensFunIface::LensPtr lens = *lenses;
-        QVariant b                 = QVariant::fromValue(lens);
-
-        lensMap.insert(QLatin1String(lens->Model), b);
-        ++lenses;
-    }
-
-    QMultiMap<QString, QVariant>::ConstIterator it = lensMap.constBegin();
-
-    for ( ; it != lensMap.constEnd() ; ++it)
-    {
-        d->lens->addSqueezedItem(it.key(), it.value());
-    }
-
-    d->lens->blockSignals(false);
-}
 
 void LensFunCameraSelector::slotMakeSelected()
 {
-    populateDeviceCombos();
+    d->populateDeviceCombos();
     slotModelSelected();
 
     // Fill Lens list for current Maker & Model and fire signalLensSettingsChanged().
 
-    populateLensCombo();
+    d->populateLensCombo();
     slotLensSelected();
 }
 
 void LensFunCameraSelector::slotModelChanged()
 {
-    populateLensCombo();
+    d->populateLensCombo();
     slotModelSelected();
 }
 
@@ -753,8 +777,10 @@ void LensFunCameraSelector::slotLensSelected()
 
     LensFunContainer settings = d->iface->settings();
 
-    if (d->iface->usedLens() &&
-        (settings.cropFactor <= 0.0)) // this should not happen
+    if (
+        d->iface->usedLens() &&
+        (settings.cropFactor <= 0.0) // this should not happen
+       )
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using lens calibration data: "
                                   << d->iface->usedLens()->CropFactor;

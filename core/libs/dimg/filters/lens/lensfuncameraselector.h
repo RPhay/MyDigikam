@@ -81,13 +81,6 @@ private Q_SLOTS:
 
 private:
 
-    LensFunIface::MetadataMatch findFromMetadata();
-    void refreshSettingsView();
-    void populateDeviceCombos();
-    void populateLensCombo();
-
-private:
-
     class Private;
     Private* const d = nullptr;
 };

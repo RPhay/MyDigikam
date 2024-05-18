@@ -228,7 +228,7 @@ void LensFunFilter::filterImage()
 
     // Init lensfun lib, we are working on the full image.
 
-    lfPixelFormat colorDepth = m_orgImage.bytesDepth() == 4 ? LF_PF_U8 : LF_PF_U16;
+    lfPixelFormat colorDepth = (m_orgImage.bytesDepth() == 4) ? LF_PF_U8 : LF_PF_U16;
     double focalLength       = d->iface->settings().focalLength;
     double cropFactor        = d->iface->settings().cropFactor;
 
@@ -237,18 +237,19 @@ void LensFunFilter::filterImage()
                                                   m_orgImage.width(),
                                                   m_orgImage.height());
 
-    focalLength              = cropFactor > 1.0 ? focalLength * cropFactor
-                                                : focalLength;
+    focalLength              = (cropFactor > 1.0) ? (focalLength * cropFactor)
+                                                  : focalLength;
 
-    int modflags             = d->modifier->Initialize(d->iface->usedLens(),
+    int modflags             = d->modifier->Initialize(
+                                                       d->iface->usedLens(),
                                                        colorDepth,
                                                        focalLength,
                                                        d->iface->settings().aperture,
                                                        d->iface->settings().subjectDistance,
-                                                       1.0, /* no scaling */
+                                                       1.0,             /* no scaling */
                                                        LF_RECTILINEAR,
                                                        modifyFlags,
-                                                       0    /*no inverse*/
+                                                       0                /* no inverse */
                                                       );
 
     if (!d->modifier)
@@ -285,7 +286,7 @@ void LensFunFilter::filterImage()
 
         QList <QFuture<void> > tasks;
 
-        for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
+        for (int j = 0 ; runningFlag() && (j < (vals.count() - 1)) ; ++j)
         {
             tasks.append(QtConcurrent::run(
 
@@ -299,8 +300,8 @@ void LensFunFilter::filterImage()
 
 #endif
 
-                                           vals[j],
-                                           vals[j+1])
+                                           vals[j    ],
+                                           vals[j + 1])
             );
         }
 
@@ -320,7 +321,7 @@ void LensFunFilter::filterImage()
     {
         QList <QFuture<void> > tasks;
 
-        for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
+        for (int j = 0 ; runningFlag() && (j < (vals.count() - 1)) ; ++j)
         {
             tasks.append(QtConcurrent::run(
 
@@ -334,8 +335,8 @@ void LensFunFilter::filterImage()
 
 #endif
 
-                                           vals[j],
-                                           vals[j+1])
+                                           vals[j    ],
+                                           vals[j + 1])
             );
         }
 
@@ -356,6 +357,7 @@ void LensFunFilter::filterImage()
         d->loop = 0;
 
         // we need a deep copy first
+
         d->tempImage = DImg(m_destImage.width(),
                             m_destImage.height(),
                             m_destImage.sixteenBit(),
@@ -365,7 +367,7 @@ void LensFunFilter::filterImage()
 
         QList <QFuture<void> > tasks;
 
-        for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
+        for (int j = 0 ; runningFlag() && (j < (vals.count() - 1)) ; ++j)
         {
             tasks.append(QtConcurrent::run(
 
@@ -379,8 +381,8 @@ void LensFunFilter::filterImage()
 
 #endif
 
-                                           vals[j],
-                                           vals[j+1])
+                                           vals[j    ],
+                                           vals[j + 1])
             );
         }
 

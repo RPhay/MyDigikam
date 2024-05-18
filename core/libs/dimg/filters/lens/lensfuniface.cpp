@@ -43,10 +43,21 @@ public:
 
     Private() = default;
 
+    QString  metadataMatchDebugStr(MetadataMatch val)               const;
+    LensList findLenses(const lfCamera* const camera,
+                        const QString& lensDesc,
+                        const QString& lensMaker = QString())       const;
+
+    double checkSimilarity(const QString& a, const QString& b)      const;
+
+public:
+
     // To be used for modification
+
     LensFunContainer       settings;
 
     // Database items
+
     lfDatabase*            lfDb         = nullptr;
     const lfCamera* const* lfCameras    = nullptr;
 
@@ -57,6 +68,89 @@ public:
     LensPtr                usedLens     = nullptr;
     DevicePtr              usedCamera   = nullptr;
 };
+
+QString LensFunIface::Private::metadataMatchDebugStr(MetadataMatch val) const
+{
+    QString ret;
+
+    switch (val)
+    {
+        case MetadataNoMatch:
+        {
+            ret = QLatin1String("No Match");
+            break;
+        }
+
+        case MetadataPartialMatch:
+        {
+            ret = QLatin1String("Partial Match");
+            break;
+        }
+
+        default:
+        {
+            ret = QLatin1String("Exact Match");
+            break;
+        }
+    }
+
+    return ret;
+}
+
+LensFunIface::LensList LensFunIface::Private::findLenses(const lfCamera* const lfCamera,
+                                                         const QString& lensDesc,
+                                                         const QString& lensMaker) const
+{
+    LensList lensList;
+
+    if (lfCamera)
+    {
+        const char* const maker     = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
+        const char* const model     = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
+        const lfLens* const *lfLens = lfDb->FindLenses(lfCamera, maker, model);
+
+        while (lfLens && *lfLens)
+        {
+            lensList << (*lfLens);
+            ++lfLens;
+        }
+    }
+
+    return lensList;
+}
+
+// Inspired by https://www.qtcentre.org/threads/49601-String-similarity-check
+
+double LensFunIface::Private::checkSimilarity(const QString& a, const QString& b) const
+{
+    if (a.isEmpty() || b.isEmpty())
+    {
+        return 0.0;
+    }
+
+    const int chars = 3;
+    int counter     = 0;
+
+    QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
+    QString aa      = spaces + a + spaces;
+    QString bb      = spaces + b + spaces;
+
+    for (int i = 0 ; i < (aa.count() - (chars - 1)) ; ++i)
+    {
+        QString part = aa.mid(i, chars);
+
+        if (bb.contains(part, Qt::CaseInsensitive))
+        {
+            ++counter;
+        }
+    }
+
+    QString s = (aa.length() < bb.length()) ? aa : bb;
+
+    return (100.0 * counter / (s.length() - (chars - 1)));
+}
+
+// -------------------------------------------------------------------------------
 
 LensFunIface::LensFunIface()
     : d(new Private)
@@ -184,10 +278,13 @@ LensFunIface::DevicePtr LensFunIface::findCamera(const QString& make, const QStr
     while (cameras && *cameras)
     {
         DevicePtr cam = *cameras;
-//      qCDebug(DIGIKAM_DIMG_LOG) << "Query camera:" << cam->Maker << "-" << cam->Model;
-
-        if ((QString::fromLatin1(cam->Maker).toLower() == make.toLower()) &&
-            (QString::fromLatin1(cam->Model).toLower() == model.toLower()))
+/*
+        qCDebug(DIGIKAM_DIMG_LOG) << "Query camera:" << cam->Maker << "-" << cam->Model;
+*/
+        if (
+            (QString::fromLatin1(cam->Maker).toLower() == make.toLower()) &&
+            (QString::fromLatin1(cam->Model).toLower() == model.toLower())
+           )
         {
             qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> true";
             return cam;
@@ -197,6 +294,7 @@ LensFunIface::DevicePtr LensFunIface::findCamera(const QString& make, const QStr
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> false";
+
     return nullptr;
 }
 
@@ -218,30 +316,10 @@ LensFunIface::LensPtr LensFunIface::findLens(const QString& model) const
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Search for lens " << model << " ==> false";
+
     return nullptr;
 }
 
-LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
-                                                const QString& lensDesc,
-                                                const QString& lensMaker) const
-{
-    LensList lensList;
-
-    if (lfCamera)
-    {
-        const char* const maker     = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
-        const char* const model     = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
-        const lfLens* const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
-
-        while (lfLens && *lfLens)
-        {
-            lensList << (*lfLens);
-            ++lfLens;
-        }
-    }
-
-    return lensList;
-}
 
 LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* const meta)
 {
@@ -333,7 +411,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
 
                 // STAGE 1, search in LensFun database as well.
 
-                lensList = findLenses(d->usedCamera, d->lensDescription);
+                lensList    = d->findLenses(d->usedCamera, d->lensDescription);
                 qCDebug(DIGIKAM_DIMG_LOG) << "* Check for lens by direct query ("
                                           << d->lensDescription << " : "
                                           << lensList.count() << ")";
@@ -341,14 +419,14 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
 
                 // STAGE 2, Adapt exiv2 strings to lensfun strings for Nikon.
 
-                lensCutted = d->lensDescription;
+                lensCutted  = d->lensDescription;
 
                 if (lensCutted.contains(QLatin1String("Nikon")))
                 {
                     lensCutted.remove(QLatin1String("Nikon "));
                     lensCutted.remove(QLatin1String("Zoom-"));
                     lensCutted.replace(QLatin1String("IF-ID"), QLatin1String("ED-IF"));
-                    lensList = findLenses(d->usedCamera, lensCutted);
+                    lensList = d->findLenses(d->usedCamera, lensCutted);
                     qCDebug(DIGIKAM_DIMG_LOG) << "* Check for Nikon lens ("
                                               << lensCutted << " : "
                                               << lensList.count() << ")";
@@ -360,11 +438,11 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
                 // LAST STAGE, Adapt exiv2 strings to lensfun strings. Some lens description use something like that :
                 // "10.0 - 20.0 mm". This must be adapted like this : "10-20mm"
 
-                lensCutted = d->lensDescription;
+                lensCutted  = d->lensDescription;
                 lensCutted.replace(QRegularExpression(QLatin1String("\\.[0-9]")), QLatin1String("")); //krazy:exclude=doublequote_chars
                 lensCutted.replace(QLatin1String(" - "), QLatin1String("-"));
                 lensCutted.replace(QLatin1String(" mm"), QLatin1String("mn"));
-                lensList   = findLenses(d->usedCamera, lensCutted);
+                lensList    = d->findLenses(d->usedCamera, lensCutted);
                 qCDebug(DIGIKAM_DIMG_LOG) << "* Check for no maker lens ("
                                           << lensCutted << " : "
                                           << lensList.count() << ")";
@@ -380,7 +458,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "Lens description string is empty or no match";
 
-                const LensList lensList = findLenses(d->usedCamera, QString());
+                const LensList lensList = d->findLenses(d->usedCamera, QString());
 
                 if (lensList.count() == 1)
                 {
@@ -420,7 +498,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
 
                 Q_FOREACH (const lfLens* const l, lensMatches)
                 {
-                    double result = checkSimilarity(d->lensDescription, QLatin1String(l->Model));
+                    double result = d->checkSimilarity(d->lensDescription, QLatin1String(l->Model));
 
                     if (result > percent)
                     {
@@ -541,38 +619,11 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* cons
 
     ret = exactMatch ? MetadataExactMatch : MetadataPartialMatch;
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Metadata match : " << metadataMatchDebugStr(ret);
+    qCDebug(DIGIKAM_DIMG_LOG) << "Metadata match : " << d->metadataMatchDebugStr(ret);
 
     return ret;
 }
 
-QString LensFunIface::metadataMatchDebugStr(MetadataMatch val) const
-{
-    QString ret;
-
-    switch (val)
-    {
-        case MetadataNoMatch:
-        {
-            ret = QLatin1String("No Match");
-            break;
-        }
-
-        case MetadataPartialMatch:
-        {
-            ret = QLatin1String("Partial Match");
-            break;
-        }
-
-        default:
-        {
-            ret = QLatin1String("Exact Match");
-            break;
-        }
-    }
-
-    return ret;
-}
 
 bool LensFunIface::supportsDistortion() const
 {
@@ -625,36 +676,6 @@ QString LensFunIface::lensFunVersion()
            .arg(LF_VERSION_BUGFIX);
 }
 
-// Inspired by https://www.qtcentre.org/threads/49601-String-similarity-check
-
-double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
-{
-    if (a.isEmpty() || b.isEmpty())
-    {
-        return 0.0;
-    }
-
-    const int chars = 3;
-    int counter     = 0;
-
-    QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
-    QString aa      = spaces + a + spaces;
-    QString bb      = spaces + b + spaces;
-
-    for (int i = 0 ; i < (aa.count() - (chars - 1)) ; ++i)
-    {
-        QString part = aa.mid(i, chars);
-
-        if (bb.contains(part, Qt::CaseInsensitive))
-        {
-            ++counter;
-        }
-    }
-
-    QString s = (aa.length() < bb.length()) ? aa : bb;
-
-    return (100.0 * counter / (s.length() - (chars - 1)));
-}
 
 // Restore warnings
 

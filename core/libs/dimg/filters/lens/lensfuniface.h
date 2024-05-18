@@ -72,7 +72,7 @@ public:
 
 public:
 
-    explicit LensFunIface();
+    LensFunIface();
     ~LensFunIface();
 
     void setFilterSettings(const LensFunContainer& other);
@@ -115,15 +115,6 @@ public:
     QString lensDescription()                                       const;
 
     static QString lensFunVersion();
-
-private:
-
-    QString  metadataMatchDebugStr(MetadataMatch val)               const;
-    LensList findLenses(const lfCamera* const camera,
-                        const QString& lensDesc,
-                        const QString& lensMaker=QString())         const;
-
-    double checkSimilarity(const QString& a, const QString& b)      const;
 
 private:
 
