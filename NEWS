@@ -100,7 +100,7 @@ BUGFIXES:
 074 ==> 486388 - Video playing without sound.
 075 ==> 486677 - Editor Visual glitch.
 076 ==> 486878 - Wrong date when downloading videos from Canon EOS R7.
-077 ==> 
+077 ==> 384094 - LensFun deprecated API removed: internal digiKam Lensfun interface do not compile anymore.
 078 ==> 
 079 ==> 
 080 ==> 
