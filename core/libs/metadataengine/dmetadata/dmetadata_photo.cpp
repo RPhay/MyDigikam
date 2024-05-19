@@ -156,7 +156,7 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
 
         if (photoInfo.focalLength.isEmpty())
         {
-            photoInfo.focalLength = getXmpTagString("Exif.Image.FocalLength");
+            photoInfo.focalLength = getExifTagString("Exif.Image.FocalLength");
         }
 
         if (photoInfo.focalLength.isEmpty())
@@ -185,8 +185,6 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         ISOSpeedTags << QLatin1String("Exif.Photo.ISOSpeedRatings");
         ISOSpeedTags << QLatin1String("Exif.Photo.ExposureIndex");
         ISOSpeedTags << QLatin1String("Exif.Image.ISOSpeedRatings");
-        ISOSpeedTags << QLatin1String("Xmp.exif.ISOSpeedRatings");
-        ISOSpeedTags << QLatin1String("Xmp.exif.ExposureIndex");
         ISOSpeedTags << QLatin1String("Exif.CanonSi.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.CanonCs.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.Nikon1.ISOSpeed");
@@ -209,6 +207,16 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         ISOSpeedTags << QLatin1String("Exif.Samsung2.ISO");
 
         photoInfo.sensitivity = getExifTagStringFromTagsList(ISOSpeedTags);
+
+        if (photoInfo.sensitivity.isEmpty())
+        {
+            photoInfo.sensitivity = getXmpTagString("Xmp.exif.ISOSpeedRatings");
+        }
+
+        if (photoInfo.sensitivity.isEmpty())
+        {
+            photoInfo.sensitivity = getXmpTagString("Xmp.exif.ExposureIndex");
+        }
 
         // -----------------------------------------------------------------------------------
 
