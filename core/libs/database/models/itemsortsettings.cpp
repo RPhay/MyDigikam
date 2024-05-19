@@ -395,7 +395,7 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         {
             // I have the feeling that inverting the sort order for rating is the natural order
 
-            return - compareByOrder(left.rating(), right.rating(), currentSortOrder);
+            return (- compareByOrder(left.rating(), right.rating(), currentSortOrder));
         }
 
         case SortByImageSize:
@@ -404,6 +404,7 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             QSize rightSize = right.dimensions();
             int leftPixels  = leftSize.width()  * leftSize.height();
             int rightPixels = rightSize.width() * rightSize.height();
+
             return compareByOrder(leftPixels, rightPixels, currentSortOrder);
         }
 
@@ -413,6 +414,7 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             QSize rightSize = right.dimensions();
             int leftAR      = (double(leftSize.width())  / double(leftSize.height()))  * 1000000;
             int rightAR     = (double(rightSize.width()) / double(rightSize.height())) * 1000000;
+
             return compareByOrder(leftAR, rightAR, currentSortOrder);
         }
 
@@ -423,8 +425,9 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
 
             // make sure that the original image has always the highest similarity.
 
-            double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
-            double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
+            double leftSimilarity           = (left.id()  == leftReferenceImageId ) ? 1.1 : left.currentSimilarity();
+            double rightSimilarity          = (right.id() == rightReferenceImageId) ? 1.1 : right.currentSimilarity();
+
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
         }
 

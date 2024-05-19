@@ -78,7 +78,7 @@ public:
 
     ItemSortSettings() = default;
 
-    bool operator==(const ItemSortSettings& other) const;
+    bool operator==(const ItemSortSettings& other)                              const;
 
     /**
      * Compares the categories of left and right.
@@ -88,14 +88,16 @@ public:
      * Face passed in to allow Categorization by Faces. Pass in an empty
      * Face if not needed.
      */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right,
-                          const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
+    int compareCategories(const ItemInfo& left,
+                          const ItemInfo& right,
+                          const FaceTagsIface& leftFace,
+                          const FaceTagsIface& rightFace)                       const;
 
     /**
      * Returns true if left is less than right.
      * Adheres to current sort role and sort order.
      */
-    bool lessThan(const ItemInfo& left, const ItemInfo& right) const;
+    bool lessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /**
      * Compares the ItemInfos left and right.
@@ -103,14 +105,14 @@ public:
      * and 0 if left equals right comparing the current sort role's value.
      * Adheres to set sort role and sort order.
      */
-    int compare(const ItemInfo& left, const ItemInfo& right) const;
+    int compare(const ItemInfo& left, const ItemInfo& right)                    const;
 
     /**
      * Returns true if left QVariant is less than right.
      * Adheres to current sort role and sort order.
      * Use for extraValue, if necessary.
      */
-    bool lessThan(const QVariant& left, const QVariant& right) const;
+    bool lessThan(const QVariant& left, const QVariant& right)                  const;
 
     void setSortRole(SortRole role);
     void setSortOrder(SortOrder order);
@@ -124,7 +126,7 @@ public:
     void setCategorizationSortOrder(SortOrder order);
 
 
-    bool isCategorized() const
+    bool isCategorized()                                                        const
     {
         return (categorizationMode >= CategoryByAlbum);
     }
@@ -145,7 +147,7 @@ public:
     /**
      * Returns database fields a change in which would affect the current sorting.
      */
-    DatabaseFields::Set watchFlags() const;
+    DatabaseFields::Set watchFlags()                                            const;
 
 public:
 
