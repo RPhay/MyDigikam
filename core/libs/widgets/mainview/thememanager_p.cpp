@@ -1290,6 +1290,18 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
         palette.setBrush(state, QPalette::ToolTipBase,     schemeTooltip.background());
         palette.setBrush(state, QPalette::ToolTipText,     schemeTooltip.foreground());
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        QBrush placeHolderText = schemeView.foreground();
+        QColor phtColor        = placeHolderText.color();
+
+        phtColor.setAlpha(128);
+        placeHolderText.setColor(phtColor);
+
+        palette.setBrush(state, QPalette::PlaceholderText, placeHolderText);
+
+#endif
+
         palette.setColor(state, QPalette::Light,           schemeWindow.shade(SchemeManager::LightShade));
         palette.setColor(state, QPalette::Midlight,        schemeWindow.shade(SchemeManager::MidlightShade));
         palette.setColor(state, QPalette::Mid,             schemeWindow.shade(SchemeManager::MidShade));
