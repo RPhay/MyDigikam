@@ -80,7 +80,7 @@ public:
         albums.append(a);
     }
 
-    bool operator==(const HistoryItem& item)
+    bool operator==(const HistoryItem& item) const
     {
         if (widget != item.widget)
         {
