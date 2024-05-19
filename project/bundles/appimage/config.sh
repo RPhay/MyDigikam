@@ -40,16 +40,16 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 # - 5:    stable Qt5 release.
 # - 6:    stable Qt6 release.
 
-#DK_QTVERSION="6"
+#DK_QTVERSION="5"
 DK_QTVERSION="6"
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="5.27.10"
+DK_KP_VERSION="v6.0.4"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="23.08.5"
+DK_KA_VERSION="24.02.2"
 
 # KDE KF6 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
@@ -83,6 +83,8 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     BUILDING_DIR="/b/$DK_VERSION"
 
     DK_KDE_VERSION="5.115"
+    DK_KP_VERSION="5.27.10"
+    DK_KA_VERSION="23.08.5"
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
@@ -93,7 +95,6 @@ else
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/mnt/data/b/$DK_VERSION"
 
-    DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
     DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 fi
