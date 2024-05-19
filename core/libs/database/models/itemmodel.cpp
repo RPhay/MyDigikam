@@ -745,7 +745,8 @@ void ItemModel::appendInfos(const QList<ItemInfo>& infos, const QList<QVariant>&
 
 void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)
 {
-    // This method does deduplication. It is private because in context of readding or refreshing it is of no use.
+    // This method does deduplication. It is private because in context of
+    // readding or refreshing it is of no use.
 
     if (extraValues.isEmpty())
     {
@@ -1182,7 +1183,10 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
             {
                 // first check is for bug #262596. Not sure if needed.
 
-                if ((it.value() < oldExtraValues.size()) && (extraValues.at(i) == oldExtraValues.at(it.value())))
+                if (
+                    (it.value() < oldExtraValues.size()) &&
+                    (extraValues.at(i) == oldExtraValues.at(it.value()))
+                   )
                 {
                     found = true;
                     break;

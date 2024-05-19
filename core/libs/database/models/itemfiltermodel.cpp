@@ -1037,7 +1037,8 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
 
     if (leftInfo == rightInfo)
     {
-        return d->sorter.lessThan(left.data(ItemModel::ExtraDataRole), right.data(ItemModel::ExtraDataRole));
+        return d->sorter.lessThan(left.data(ItemModel::ExtraDataRole),
+                                  right.data(ItemModel::ExtraDataRole));
     }
 
     // Check grouping
@@ -1085,8 +1086,10 @@ int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo
     return d->sorter.compareCategories(left, right, leftFace, rightFace);
 }
 
-int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
-                                            const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
+int ItemFilterModel::compareInfosCategories(const ItemInfo& left,
+                                            const ItemInfo& right,
+                                            const FaceTagsIface& leftFace,
+                                            const FaceTagsIface& rightFace) const
 {
     // Note: reimplemented in ItemAlbumFilterModel
 

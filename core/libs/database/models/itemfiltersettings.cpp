@@ -201,7 +201,9 @@ void ItemFilterSettings::setTagFilter(const QList<int>& includedTags,
     m_pickLabelTagFilter  = plTagIds;
 }
 
-void ItemFilterSettings::setRatingFilter(int rating, RatingCondition ratingCondition, bool isUnratedExcluded)
+void ItemFilterSettings::setRatingFilter(int rating,
+                                         RatingCondition ratingCondition,
+                                         bool isUnratedExcluded)
 {
     m_ratingFilter      = rating;
     m_ratingCond        = ratingCondition;
@@ -1043,7 +1045,7 @@ bool GroupItemFilterSettings::isAllOpen() const
 
 bool GroupItemFilterSettings::isFiltering() const
 {
-    return !m_allOpen;
+    return (!m_allOpen);
 }
 
 DatabaseFields::Set GroupItemFilterSettings::watchFlags() const
