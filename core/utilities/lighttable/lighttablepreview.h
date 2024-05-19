@@ -37,7 +37,7 @@ class LightTablePreview : public ItemPreviewView
 public:
 
     explicit LightTablePreview(QWidget* const parent = nullptr);
-    ~LightTablePreview()                              override;
+    ~LightTablePreview()                              override = default;
 
     void setDragAndDropEnabled(bool b);
     void showDragAndDropMessage();

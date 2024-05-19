@@ -165,8 +165,11 @@ void Task::run()
 
         // Only true if it is also the last tool
 
-        noWriteMetadata = ((set.name == QLatin1String("ApplyMetadata")) ||
-                           (set.name == QLatin1String("RemoveMetadata")));
+        noWriteMetadata = (
+                           (set.name == QLatin1String("ApplyMetadata")) ||
+                           (set.name == QLatin1String("RemoveMetadata"))
+                          );
+
         timeAdjust     |= (set.name == QLatin1String("TimeAdjust"));
         inUrl           = outUrl;
         index           = set.index + 1;
@@ -227,6 +230,7 @@ void Task::run()
         else if (!success)
         {
             emitActionData(ActionData::BatchFailed, errMsg);
+
             break;
         }
     }

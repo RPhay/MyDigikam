@@ -44,7 +44,7 @@ void LightTableWindow::slotEditItem(const ItemInfo& info)
     im->setFocus();
 }
 
-//FIXME
+// FIXME
 void LightTableWindow::slotLeftSlideShowManualFromCurrent()
 {
     QList<DPluginAction*> actions = DPluginLoader::instance()->

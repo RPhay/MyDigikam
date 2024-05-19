@@ -951,6 +951,7 @@ void LightTableWindow::slotOnlineVersionCheck()
 void LightTableWindow::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
+
     Q_EMIT signalWindowHasMoved();
 }
 
@@ -1107,23 +1108,33 @@ DInfoInterface* LightTableWindow::infoIface(DPluginAction* const ac)
     {
         case DPluginAction::GenericExport:
         case DPluginAction::GenericImport:
+        {
             aset = ApplicationSettings::ImportExport;
             break;
+        }
 
         case DPluginAction::GenericMetadata:
+        {
             aset = ApplicationSettings::Metadata;
             break;
+        }
 
         case DPluginAction::GenericTool:
+        {
             aset = ApplicationSettings::Tools;
             break;
+        }
 
         case DPluginAction::GenericView:
+        {
             aset = ApplicationSettings::Slideshow;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     DBInfoIface* const iface = new DBInfoIface(this, d->thumbView->allUrls(), aset);

@@ -349,7 +349,8 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     slay->setSpacing(spacing);
     slay->addStretch();
 
-    insertTab(Private::SAVE, sv4, QIcon::fromTheme(QLatin1String("document-save-all")), i18n("Saving Images"));
+    insertTab(Private::SAVE, sv4, QIcon::fromTheme(QLatin1String("document-save-all")),
+              i18n("Saving Images"));
 
     // --------------------------------------------------------
 

@@ -47,10 +47,6 @@ QueuePoolBar::QueuePoolBar(QWidget* const parent)
   setMouseTracking(true);
 }
 
-QueuePoolBar::~QueuePoolBar()
-{
-}
-
 void QueuePoolBar::dragEnterEvent(QDragEnterEvent* e)
 {
 
@@ -131,10 +127,6 @@ QueuePool::QueuePool(QWidget* const parent)
     // -- FileWatch connections ------------------------------
 
     LoadingCacheInterface::connectToSignalFileChanged(this, SLOT(slotFileChanged(QString)));
-}
-
-QueuePool::~QueuePool()
-{
 }
 
 void QueuePool::keyPressEvent(QKeyEvent* event)

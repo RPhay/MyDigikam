@@ -105,10 +105,6 @@ ToolListViewGroup::ToolListViewGroup(QTreeWidget* const parent, BatchTool::Batch
     }
 }
 
-ToolListViewGroup::~ToolListViewGroup()
-{
-}
-
 BatchTool::BatchToolGroup ToolListViewGroup::toolGroup() const
 {
     return m_group;
@@ -130,10 +126,6 @@ ToolListViewItem::ToolListViewItem(ToolListViewGroup* const parent, BatchTool* c
         setText(0, m_tool->toolTitle());
         setText(1, m_tool->toolDescription());
     }
-}
-
-ToolListViewItem::~ToolListViewItem()
-{
 }
 
 BatchTool* ToolListViewItem::tool() const
@@ -160,10 +152,6 @@ ToolsListView::ToolsListView(QWidget* const parent)
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu()));
-}
-
-ToolsListView::~ToolsListView()
-{
 }
 
 BatchToolsList ToolsListView::toolsList()

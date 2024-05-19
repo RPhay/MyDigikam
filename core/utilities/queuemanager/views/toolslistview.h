@@ -39,7 +39,7 @@ public:
 
     ToolListViewGroup(QTreeWidget* const parent,
                       BatchTool::BatchToolGroup group);
-    ~ToolListViewGroup()                        override;
+    ~ToolListViewGroup()                        override = default;
 
     BatchTool::BatchToolGroup toolGroup() const;
 
@@ -61,13 +61,13 @@ public:
 
     ToolListViewItem(ToolListViewGroup* const parent,
                      BatchTool* const tool);
-    ~ToolListViewItem()                         override;
+    ~ToolListViewItem()                         override = default;
 
     BatchTool* tool()                     const;
 
 private:
 
-    BatchTool* m_tool;
+    BatchTool* m_tool = nullptr;
 
 private:
 
@@ -83,7 +83,7 @@ class ToolsListView : public QTreeWidget
 public:
 
     explicit ToolsListView(QWidget* const parent);
-    ~ToolsListView()                                                               override;
+    ~ToolsListView()                                                               override = default;
 
     BatchToolsList toolsList();
 

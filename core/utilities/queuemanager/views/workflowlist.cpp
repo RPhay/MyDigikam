@@ -51,10 +51,6 @@ WorkflowItem::WorkflowItem(WorkflowList* const parent, const QString& title)
     setItem(title, q.desc, q.aTools.count());
 }
 
-WorkflowItem::~WorkflowItem()
-{
-}
-
 QString WorkflowItem::title() const
 {
     return text(0);
@@ -131,10 +127,6 @@ WorkflowList::WorkflowList(QWidget* const parent)
                                                         "version of a tool."),
                                          failed);
     }
-}
-
-WorkflowList::~WorkflowList()
-{
 }
 
 void WorkflowList::slotAddQueueSettings(const QString& title)
@@ -219,7 +211,7 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
 
         if (drag->target())
         {
-            m_lastAssignedTitel = item->title();
+            m_lastAssignedTitle = item->title();
         }
     }
 }
@@ -294,7 +286,7 @@ void WorkflowList::slotContextMenu()
     popmenu.addAction(propAction);
     popmenu.addAction(updAction);
 
-    if (m_lastAssignedTitel != item->title())
+    if (m_lastAssignedTitle != item->title())
     {
         popmenu.setDisabled(true);
     }
@@ -368,7 +360,8 @@ void WorkflowList::slotAssignQueueSettings()
         if (item)
         {
             Q_EMIT signalAssignQueueSettings(item->title());
-            m_lastAssignedTitel = item->title();
+
+            m_lastAssignedTitle = item->title();
         }
     }
 }

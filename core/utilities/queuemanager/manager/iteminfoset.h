@@ -33,7 +33,7 @@ class ItemInfoSet
 {
 public:
 
-    ItemInfoSet() = default;
+    ItemInfoSet()  = default;
 
     ItemInfoSet(int id, const ItemInfo& inf)
         : queueId(id),

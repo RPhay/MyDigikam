@@ -64,8 +64,4 @@ QueueSettings::QueueSettings()
     ioFileSettings.AVIFLossLess        = group.readEntry(QLatin1String("AVIFLossLess"),        true);
 }
 
-QueueSettings::~QueueSettings()
-{
-}
-
 } // namespace Digikam

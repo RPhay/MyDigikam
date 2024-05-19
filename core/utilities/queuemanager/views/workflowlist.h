@@ -40,7 +40,7 @@ class WorkflowItem : public QTreeWidgetItem
 public:
 
     WorkflowItem(WorkflowList* const parent, const QString& name);
-    ~WorkflowItem()                                                  override;
+    ~WorkflowItem()                                                  override = default;
 
     QString title()                                            const;
     int     count()                                            const;
@@ -62,7 +62,7 @@ class WorkflowList : public QTreeWidget
 public:
 
     explicit WorkflowList(QWidget* const parent);
-    ~WorkflowList()                                                  override;
+    ~WorkflowList()                                                  override = default;
 
 Q_SIGNALS:
 
@@ -101,7 +101,7 @@ private:
 
 private:
 
-    QString m_lastAssignedTitel;
+    QString m_lastAssignedTitle;
 };
 
 } // namespace Digikam

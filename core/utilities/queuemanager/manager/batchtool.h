@@ -350,7 +350,7 @@ protected:
     /**
      * Host settings widget instance.
      */
-    QWidget* m_settingsWidget;
+    QWidget* m_settingsWidget = nullptr;
 
 protected Q_SLOTS:
 

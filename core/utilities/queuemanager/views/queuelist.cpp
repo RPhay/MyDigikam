@@ -444,9 +444,11 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
+    if      (
+             DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
              DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
-             DTagListDrag::canDecode(e->mimeData()))
+             DTagListDrag::canDecode(e->mimeData())
+            )
     {
         if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
         {

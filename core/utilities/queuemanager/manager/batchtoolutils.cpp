@@ -28,10 +28,10 @@ namespace Digikam
 bool BatchToolSet::operator==(const BatchToolSet& set) const
 {
     return (
-             (index   == set.index)   &&
-             (version == set.version) &&
-             (name    == set.name )   &&
-             (group   == set.group)
+            (index   == set.index)   &&
+            (version == set.version) &&
+            (name    == set.name )   &&
+            (group   == set.group)
            );
 }
 

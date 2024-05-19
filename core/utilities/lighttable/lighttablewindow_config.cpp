@@ -44,7 +44,7 @@ void LightTableWindow::slotApplicationSettingsChanged()
     d->rightSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
 
     /// @todo Which part of the settings has to be reloaded?
-    //     d->rightSideBar->applySettings();
+    //d->rightSideBar->applySettings();
 
     d->previewView->setPreviewSettings(ApplicationSettings::instance()->getPreviewSettings());
 }

@@ -44,7 +44,10 @@ public:
 
     QGridLayout*       grid         = nullptr;
 
-    /// These labels are used to draw a frame around preview views to identify easily which item has the focus.
+    /**
+     * These labels are used to draw a frame around preview views to identify
+     * easily which item has the focus.
+     */
     QLabel*            leftFrame    = nullptr;
     QLabel*            rightFrame   = nullptr;
 
@@ -387,9 +390,11 @@ void LightTableView::slotRightPreviewLoaded(bool success)
 
 void LightTableView::checkForSyncPreview()
 {
-    if (!d->leftPreview->getItemInfo().isNull()  &&
+    if (
+        !d->leftPreview->getItemInfo().isNull()  &&
         !d->rightPreview->getItemInfo().isNull() &&
-        (d->leftPreview->previewItem()->image().size() == d->rightPreview->previewItem()->image().size()))
+        (d->leftPreview->previewItem()->image().size() == d->rightPreview->previewItem()->image().size())
+       )
     {
         d->syncPreview = true;
     }

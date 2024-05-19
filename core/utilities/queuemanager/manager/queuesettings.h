@@ -50,8 +50,8 @@ public:
 
 public:
 
-    explicit QueueSettings();
-    ~QueueSettings();
+    QueueSettings();
+    ~QueueSettings() = default;
 
 public:
 

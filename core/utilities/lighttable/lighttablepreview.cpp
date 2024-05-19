@@ -44,10 +44,6 @@ LightTablePreview::LightTablePreview(QWidget* const parent)
     showDragAndDropMessage();
 }
 
-LightTablePreview::~LightTablePreview()
-{
-}
-
 void LightTablePreview::setDragAndDropEnabled(bool b)
 {
     setAcceptDrops(b);
@@ -98,9 +94,11 @@ bool LightTablePreview::dragEventWrapper(const QMimeData* data) const
         QList<qlonglong> imageIDs;
         QList<QUrl>      urls;
 
-        if (DItemDrag::decode(data, urls, albumIDs, imageIDs) ||
+        if (
+            DItemDrag::decode(data, urls, albumIDs, imageIDs) ||
             DAlbumDrag::decode(data, urls, albumID)           ||
-            DTagListDrag::canDecode(data))
+            DTagListDrag::canDecode(data)
+           )
         {
             return true;
         }

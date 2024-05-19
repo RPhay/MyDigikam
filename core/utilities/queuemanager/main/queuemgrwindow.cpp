@@ -431,12 +431,16 @@ void QueueMgrWindow::refreshStatusBar()
     switch (pendingItems)
     {
         case 0:
+        {
             message.append(i18n("No items"));
             break;
+        }
 
         default:
+        {
             message.append(i18np("1 item", "%1 items", pendingItems));
             break;
+        }
     }
 
     message.append(QLatin1String(" / "));
@@ -444,12 +448,16 @@ void QueueMgrWindow::refreshStatusBar()
     switch (tasks)
     {
         case 0:
+        {
             message.append(i18n("No tasks"));
             break;
+        }
 
         default:
+        {
             message.append(i18np("1 task", "%1 tasks", tasks));
             break;
+        }
     }
 
     message.append(QLatin1String(" - ") + i18nc("#info: total number of items to process", "Total: "));
@@ -457,12 +465,16 @@ void QueueMgrWindow::refreshStatusBar()
     switch (totalItems)
     {
         case 0:
+        {
             message.append(i18n("No items"));
             break;
+        }
 
         default:
+        {
             message.append(i18np("1 item", "%1 items", totalItems));
             break;
+        }
     }
 
     message.append(QLatin1String(" / "));
@@ -470,12 +482,16 @@ void QueueMgrWindow::refreshStatusBar()
     switch (totalTasks)
     {
         case 0:
+        {
             message.append(i18n("No tasks"));
             break;
+        }
 
         default:
+        {
             message.append(i18np("1 task", "%1 tasks", totalTasks));
             break;
+        }
     }
 
     d->statusLabel->setText(message);
@@ -862,6 +878,7 @@ bool QueueMgrWindow::checkTargetAlbum(int queueId)
 void QueueMgrWindow::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
+
     Q_EMIT signalWindowHasMoved();
 }
 

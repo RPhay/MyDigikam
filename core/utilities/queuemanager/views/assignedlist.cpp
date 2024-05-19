@@ -74,10 +74,6 @@ AssignedListViewItem::AssignedListViewItem(QTreeWidget* const parent, QTreeWidge
     setFlags(Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | flags());
 }
 
-AssignedListViewItem::~AssignedListViewItem()
-{
-}
-
 void AssignedListViewItem::setToolSet(const BatchToolSet& set)
 {
     m_set                 = set;
@@ -132,10 +128,6 @@ AssignedListView::AssignedListView(QWidget* const parent)
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu()));
-}
-
-AssignedListView::~AssignedListView()
-{
 }
 
 void AssignedListView::keyPressEvent(QKeyEvent* e)
@@ -392,8 +384,10 @@ void AssignedListView::dragEnterEvent(QDragEnterEvent* e)
 
 void AssignedListView::dragMoveEvent(QDragMoveEvent* e)
 {
-    if (e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")) ||
-        e->mimeData()->formats().contains(QLatin1String("digikam/assignedbatchtool")))
+    if (
+        e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")) ||
+        e->mimeData()->formats().contains(QLatin1String("digikam/assignedbatchtool"))
+       )
     {
         QTreeWidget::dragMoveEvent(e);
         e->accept();
@@ -496,6 +490,7 @@ void AssignedListView::slotSelectionChanged()
     if (item)
     {
         BatchToolSet set = item->toolSet();
+
         Q_EMIT signalToolSelected(set);
     }
     else

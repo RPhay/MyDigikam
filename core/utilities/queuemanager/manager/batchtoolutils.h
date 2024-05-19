@@ -82,8 +82,8 @@ class AssignedBatchTools
 {
 public:
 
-    explicit AssignedBatchTools()                      = default;
-    ~AssignedBatchTools()                              = default;
+    AssignedBatchTools()  = default;
+    ~AssignedBatchTools() = default;
 
     QString targetSuffix(bool* const extSet = nullptr) const;
 

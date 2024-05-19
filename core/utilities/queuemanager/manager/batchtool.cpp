@@ -61,8 +61,8 @@ public:
     bool                          last                      = false;
 
     QString                       errorMessage;
-    QString                       toolTitle;          ///< User friendly tool title.
-    QString                       toolDescription;    ///< User friendly tool description.
+    QString                       toolTitle;                ///< User friendly tool title.
+    QString                       toolDescription;          ///< User friendly tool description.
     QIcon                         toolIcon;
 
     QUrl                          inputUrl;
@@ -99,9 +99,7 @@ public:
     {
     }
 
-    ~BatchToolObserver() override
-    {
-    }
+    ~BatchToolObserver() override = default;
 
     bool continueQuery() override
     {
@@ -119,7 +117,6 @@ BatchTool::BatchTool(const QString& name, BatchToolGroup group, QObject* const p
 {
     d->observer      = new BatchToolObserver(d);
     d->toolGroup     = group;
-    m_settingsWidget = nullptr;
     setObjectName(name);
 }
 

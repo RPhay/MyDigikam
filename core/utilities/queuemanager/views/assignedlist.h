@@ -38,7 +38,7 @@ public:
 
     explicit AssignedListViewItem(QTreeWidget* const parent);
     AssignedListViewItem(QTreeWidget* const parent, QTreeWidgetItem* const preceding);
-    ~AssignedListViewItem()                                             override;
+    ~AssignedListViewItem()                                             override = default;
 
     void setIndex(int index);
 
@@ -63,7 +63,7 @@ class AssignedListView : public QTreeWidget
 public:
 
     explicit AssignedListView(QWidget* const parent);
-    ~AssignedListView()                                                 override;
+    ~AssignedListView()                                                 override = default;
 
     int                assignedCount();
     AssignedBatchTools assignedList();

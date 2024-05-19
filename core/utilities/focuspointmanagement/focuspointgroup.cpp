@@ -160,9 +160,13 @@ void FocusPointGroup::load()
     }
 
     d->state      = LoadingPoints;
-    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate            ||
-                     ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
-                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
+    d->exifRotate = (
+                     MetaEngineSettings::instance()->settings().exifRotate            ||
+                     (
+                      (d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()
+                     )
+                    );
 
     if (d->info.isNull())
     {
@@ -236,8 +240,10 @@ void FocusPointGroup::slotAlbumRenamed(Album* const album)
 
     Q_FOREACH (FocusPointItem* const item, d->items)
     {
-        if (!item->point().isNull() &&
-            (item->point().tagId() == album->id()))
+        if (
+            !item->point().isNull() &&
+            (item->point().tagId() == album->id())
+           )
         {
             item->updateCurrentTag();
         }
@@ -294,7 +300,7 @@ void FocusPointGroup::slotAddItemFinished(const QRectF& rect)
     if (d->manuallyAddedItem)
     {
         d->manuallyAddedItem->setRectInSceneCoordinatesAdjusted(rect);
-        QRect pointRect            = d->manuallyAddedItem->originalRect();
+        QRect pointRect   = d->manuallyAddedItem->originalRect();
         DImg preview(d->view->previewItem()->image().copy());
 
         if (!d->exifRotate)

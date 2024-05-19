@@ -43,7 +43,7 @@ public:
     void loadItemInfos(const ItemInfoList& list, const ItemInfo& imageInfoCurrent, bool addTo);
     void setLeftRightItems(const ItemInfoList& list, bool addTo);
     void refreshView();
-    bool isEmpty() const;
+    bool isEmpty()                                const;
 
     void toggleTag(int tagID);
 
@@ -160,7 +160,7 @@ private:
 
 public Q_SLOTS:
 
-    void slotSetup() override;
+    void slotSetup()                                    override;
     void slotColorManagementOptionsChanged();
 
     void slotThemeChanged();
