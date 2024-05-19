@@ -208,6 +208,7 @@ if(BUILD_TESTING)
     # For CI runners to run tests, the following custom target serves to perform the download automatically.
     # If the directory "test-data" has already been created, the target becomes a "no-op".
     #
+    set(ENV{GIT_CLONE_PROTECTION_ACTIVE} "false")
     add_custom_command(OUTPUT ${CMAKE_SOURCE_DIR}/test-data 
                        COMMENT "Checkout unit-test data repository. Please wait..."
                        COMMAND git
