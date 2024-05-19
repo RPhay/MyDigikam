@@ -31,7 +31,7 @@ include:
 
       # --- Continuous Deployement Qt6 ---
 
-build-job:
+suse_tumbleweed_qt515:
   stage: build
   script:
     - echo "GIT_CLONE_PROTECTION_ACTIVE=false" >> build.env
