@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-18 01:45+0000\n"
+"POT-Creation-Date: 2024-05-19 01:45+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1064,7 +1064,7 @@ msgid "Make/Model:"
 msgstr "制造商/型号："
 
 #: core/app/items/utils/tooltipfiller.cpp:168
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:137
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
@@ -3018,8 +3018,8 @@ msgid "no item"
 msgstr "无项目"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -5589,7 +5589,7 @@ msgid ""
 msgstr "<para>用于修复图像的热像素瑕疵的批处理工具。</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
@@ -5609,7 +5609,7 @@ msgstr ""
 "勾选 <b>使用元数据</b> 选项后，程序将在队列执行时解析图像元数据以确定镜头的相"
 "关参数。"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr "无法找到充分的镜头信息以进行自动校正"
@@ -8392,12 +8392,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "热像素修复..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
 #, kde-format
 msgid "Show grid"
 msgstr "显示网格"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr "勾选此项后将显示网格，有助于观察畸变校正的效果。"
@@ -31343,18 +31343,18 @@ msgstr "Y 偏移 "
 msgid "Lens Distortion Tool"
 msgstr "镜头畸变工具"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:107
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:442
 #, kde-format
 msgid "Use Metadata"
 msgstr "使用元数据"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:113
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:448
 #, kde-format
 msgctxt "camera make"
 msgid "Make:"
 msgstr "制造商："
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:118
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:453
 #, kde-format
 msgid ""
 "This is the camera maker description string found in image meta-data. This "
@@ -31364,13 +31364,13 @@ msgstr ""
 "这是从图像元数据中获取的相机制造商描述字符串。它用于在 Lensfun 的数据库中查找"
 "匹配的相机设备信息。"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:125
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:460
 #, kde-format
 msgctxt "camera model"
 msgid "Model:"
 msgstr "型号："
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:130
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:465
 #, kde-format
 msgid ""
 "This is the camera model description string found in image meta-data. This "
@@ -31380,7 +31380,7 @@ msgstr ""
 "这是从图像元数据中获取的相机型号描述字符串。它用于在 Lensfun 的数据库中查找匹"
 "配的相机设备信息。"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:145
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:480
 #, kde-format
 msgid ""
 "This is the lens description string found in image meta-data. This one is "
@@ -31389,7 +31389,7 @@ msgstr ""
 "这是从图像元数据中获取的镜头描述字符串。它用于在 Lensfun 的数据库中查找匹配的"
 "镜头信息。"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:154
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:489
 #, kde-format
 msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
@@ -31398,120 +31398,120 @@ msgstr ""
 "勾选此项后，digiKam 将尝试从图像的 EXIF 或 XMP 元数据中猜测适用的相机/镜头设"
 "置。"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, kde-format
 msgid "Focal Length (mm):"
 msgstr "焦距 (毫米)："
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:158
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
 msgid "Aperture:"
 msgstr "光圈："
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:159
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:494
 #, kde-format
 msgid "Subject Distance (m):"
 msgstr "主体距离 (米)："
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:387
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, kde-format
 msgid "(no metadata available)"
 msgstr "(无可用元数据)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:394
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
 msgstr "(未找到匹配的设备)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:401
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
 msgstr "(已找到部分匹配的设备)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:408
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
 msgstr "(已找到完全匹配的设备)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "镜头畸变校正工具"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "相机：%1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "镜头：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "主体距离：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "光圈：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "焦距：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "焦距转换率：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "启用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "色差校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "禁用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "暗角校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "畸变校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -49044,7 +49044,7 @@ msgid "&Abort"
 msgstr "中止(&A)"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
 #, kde-format
 msgid "Processing..."
 msgstr "正在处理..."
@@ -58365,7 +58365,7 @@ msgstr "未选择脚本"
 msgid "Set here the script that is executed for every imported image."
 msgstr "在此设定为每个导入图像执行的脚本。"
 
-#: core/utilities/lighttable/lighttablepreview.cpp:61
+#: core/utilities/lighttable/lighttablepreview.cpp:57
 #, kde-format
 msgid "Drag and drop an image here"
 msgstr "拖放一张图像到此处"
@@ -59113,90 +59113,90 @@ msgstr "移除工具"
 msgid "Current Queue: "
 msgstr "当前队列："
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, kde-format
 msgid "No items"
 msgstr "无项目"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:452
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:486
 #, kde-format
 msgid "No tasks"
 msgstr "无任务"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "%1 项任务"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:463
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "总计："
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "待机"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:539
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "正在处理任务"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:540
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "批处理队列管理器正在执行任务。您想要取消当前任务吗？"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:639
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "没有可执行的批处理队列。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:643
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "当前队列中没有要处理的项目 (%1)。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr "当前队列的自定义重命名规则无效 (%1)。请修改规则。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr "当前队列的已指定工具为空 (%1)。请指定工具。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:686
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "队列中没有要处理的项目。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "已处理项目相册设置"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr "队列“%1”的已处理图像相册尚未设定。请从队列设置面板中选择一个相册。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -59204,27 +59204,27 @@ msgid ""
 msgstr ""
 "队列“%1”的已处理图像相册不可用或无法写入。请从队列设置面板中选择另一个相册。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
 #, kde-format
 msgid "Failed to process item..."
 msgstr "无法处理项目..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "处理已取消..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "项目“%1”来自队列“%2”：%3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
 #, kde-format
 msgid "Batch queue finished"
 msgstr "批处理队列执行完毕"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
 #, kde-format
 msgid "All batch queues finished"
 msgstr "所有批处理队列已完成"
@@ -59235,67 +59235,67 @@ msgstr "所有批处理队列已完成"
 msgid "&Queues"
 msgstr "队列(&Q)"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:172
+#: core/utilities/queuemanager/manager/batchtool.cpp:169
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "基本"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:177
+#: core/utilities/queuemanager/manager/batchtool.cpp:174
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "自定义"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:182
+#: core/utilities/queuemanager/manager/batchtool.cpp:179
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "颜色"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:187
+#: core/utilities/queuemanager/manager/batchtool.cpp:184
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "增强"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:192
+#: core/utilities/queuemanager/manager/batchtool.cpp:189
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "变形"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:197
+#: core/utilities/queuemanager/manager/batchtool.cpp:194
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "装饰"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:202
+#: core/utilities/queuemanager/manager/batchtool.cpp:199
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "滤镜"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:207
+#: core/utilities/queuemanager/manager/batchtool.cpp:204
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "转换"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:212
+#: core/utilities/queuemanager/manager/batchtool.cpp:209
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "元数据"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:221
+#: core/utilities/queuemanager/manager/batchtool.cpp:218
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "无效"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:632
+#: core/utilities/queuemanager/manager/batchtool.cpp:629
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
@@ -59306,38 +59306,38 @@ msgstr "无可用设置"
 msgid "Failed to find tool..."
 msgstr "无法找到工具..."
 
-#: core/utilities/queuemanager/manager/task.cpp:251
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, kde-format
 msgid "(overwritten)"
 msgstr "(已覆盖)"
 
-#: core/utilities/queuemanager/manager/task.cpp:256
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(重命名为 %1)"
 
-#: core/utilities/queuemanager/manager/task.cpp:261
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "项目已存在，已跳过"
 
-#: core/utilities/queuemanager/manager/task.cpp:286
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "无法创建附带文件..."
 
-#: core/utilities/queuemanager/manager/task.cpp:295
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "项目已完成处理 %1"
 
-#: core/utilities/queuemanager/manager/task.cpp:300
-#: core/utilities/queuemanager/manager/task.cpp:305
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, kde-format
 msgid "Failed to create file..."
 msgstr "无法创建文件..."
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:112
+#: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "已指定的批处理工具列表。"
@@ -59366,7 +59366,7 @@ msgctxt "@title: target item name"
 msgid "Target"
 msgstr "目标"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:440
+#: core/utilities/queuemanager/views/queuepool.cpp:432
 #, kde-format
 msgid ""
 "There is still 1 unprocessed item in \"%2\".\n"
@@ -59378,13 +59378,13 @@ msgstr[0] ""
 "队列“%2”仍有 %1 个未处理项。\n"
 "您想要关闭此队列吗？"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:506
+#: core/utilities/queuemanager/views/queuepool.cpp:498
 #, kde-format
 msgid ""
 "Custom renaming rules are invalid for Queues listed below. Please fix them."
 msgstr "下列队列的自定义重命名规则无效。请修改规则。"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:537
+#: core/utilities/queuemanager/views/queuepool.cpp:529
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -59462,7 +59462,7 @@ msgstr "启用此选项即可使用本机处理器的全部核心同时处理多
 msgid "Behavior"
 msgstr "行为"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:352
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, kde-format
 msgid "Saving Images"
 msgstr "保存图像"
@@ -59520,7 +59520,7 @@ msgctxt "@title: custom tools category"
 msgid "Custom Tools"
 msgstr "自定义工具"
 
-#: core/utilities/queuemanager/views/toolslistview.cpp:401
+#: core/utilities/queuemanager/views/toolslistview.cpp:389
 #, kde-format
 msgctxt "@action"
 msgid "Assign tools"
@@ -59594,31 +59594,31 @@ msgstr "描述："
 msgid "New Workflow"
 msgstr "新工作流程"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:104
+#: core/utilities/queuemanager/views/workflowlist.cpp:100
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:105
+#: core/utilities/queuemanager/views/workflowlist.cpp:101
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "工具"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:106
+#: core/utilities/queuemanager/views/workflowlist.cpp:102
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "描述"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:129
+#: core/utilities/queuemanager/views/workflowlist.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "批处理管理器"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:130
+#: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59626,37 +59626,37 @@ msgid ""
 "version of a tool."
 msgstr "某些工作流程无法从配置文件加载，因为工具版本不兼容。"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:288
+#: core/utilities/queuemanager/views/workflowlist.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "指定工作流程到当前队列"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:289
+#: core/utilities/queuemanager/views/workflowlist.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "编辑工作流程"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:290
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "更新工作流程"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:291
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "删除工作流程"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:343
+#: core/utilities/queuemanager/views/workflowlist.cpp:335
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "删除工作流程？"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:344
+#: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"

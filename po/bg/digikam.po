@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-18 01:45+0000\n"
+"POT-Creation-Date: 2024-05-19 01:45+0000\n"
 "PO-Revision-Date: 2024-05-17 17:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1108,7 +1108,7 @@ msgid "Make/Model:"
 msgstr "Марка и модел:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:137
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
@@ -3107,8 +3107,8 @@ msgid "no item"
 msgstr "няма елемент"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -5812,7 +5812,7 @@ msgstr ""
 "горещи пиксели в изображения.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
@@ -5833,7 +5833,7 @@ msgstr ""
 "време на изпълнение на обработката, за да намери съответните характеристики "
 "на обектива."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
@@ -8835,12 +8835,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "Горещи пиксели..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
 #, kde-format
 msgid "Show grid"
 msgstr "Показване на координатната мрежа"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr ""
@@ -32796,18 +32796,18 @@ msgstr "Отместване по Y "
 msgid "Lens Distortion Tool"
 msgstr "Инструмент за изкривяване на обектива"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:107
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:442
 #, kde-format
 msgid "Use Metadata"
 msgstr "Използване на метаданни"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:113
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:448
 #, kde-format
 msgctxt "camera make"
 msgid "Make:"
 msgstr "Производител:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:118
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:453
 #, kde-format
 msgid ""
 "This is the camera maker description string found in image meta-data. This "
@@ -32819,13 +32819,13 @@ msgstr ""
 "съответната информация за устройството на фотоапарата от базата данни на "
 "Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:125
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:460
 #, kde-format
 msgctxt "camera model"
 msgid "Model:"
 msgstr "Модел:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:130
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:465
 #, kde-format
 msgid ""
 "This is the camera model description string found in image meta-data. This "
@@ -32837,7 +32837,7 @@ msgstr ""
 "подходяща информация за устройството на фотоапарата от базата данни на "
 "Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:145
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:480
 #, kde-format
 msgid ""
 "This is the lens description string found in image meta-data. This one is "
@@ -32847,7 +32847,7 @@ msgstr ""
 "изображението. Той се използва за запитване и намиране на съответната "
 "информация за обектива от базата данни Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:154
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:489
 #, kde-format
 msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
@@ -32856,120 +32856,120 @@ msgstr ""
 "Задайте тази опция, за да се опитате да отгатнете правилните настройки на "
 "камерата/обектива от метаданните на изображението (като Exif или XMP)."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, kde-format
 msgid "Focal Length (mm):"
 msgstr "Фокусно разстояние (mm):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:158
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
 msgid "Aperture:"
 msgstr "Апертура:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:159
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:494
 #, kde-format
 msgid "Subject Distance (m):"
 msgstr "Разстояние до обекта (м):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:387
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, kde-format
 msgid "(no metadata available)"
 msgstr "(няма налични метаданни)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:394
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
 msgstr "(няма намерени съвпадения)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:401
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
 msgstr "(намерено е частично съвпадение)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:408
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
 msgstr "(намерено е точно съвпадение)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Инструмент за автоматична корекция на обектива"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Камера: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Обектив: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Разстояние до обекта: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Бленда: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Фокусно разстояние: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Фактор на изрязване: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "включен"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA корекция: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "изключено"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Корекция на винетирането: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST корекция: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -51010,7 +51010,7 @@ msgid "&Abort"
 msgstr "&Прекъсване"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
 #, kde-format
 msgid "Processing..."
 msgstr "Обработване…"
@@ -60641,7 +60641,7 @@ msgid "Set here the script that is executed for every imported image."
 msgstr ""
 "Задайте тук скрипта, който се изпълнява за всяко импортирано изображение."
 
-#: core/utilities/lighttable/lighttablepreview.cpp:61
+#: core/utilities/lighttable/lighttablepreview.cpp:57
 #, kde-format
 msgid "Drag and drop an image here"
 msgstr "Завлечете изображение тук"
@@ -61413,69 +61413,69 @@ msgstr "Премахване на инструмента"
 msgid "Current Queue: "
 msgstr "Текуща опашка: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, kde-format
 msgid "No items"
 msgstr "Без елементи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:452
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:486
 #, kde-format
 msgid "No tasks"
 msgstr "Няма задачи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 задача"
 msgstr[1] "%1 задачи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:463
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "Общо: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Готово"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:539
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Обработване в процес"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:540
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 "Мениджърът на пакетнa обработка работи. Искате ли да отмените текущото "
 "задание?"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:639
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "Няма опашка, която да бъде изпълнена."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:643
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Няма елемент за обработка в текущата опашка (%1)."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 "Правилото за потребителско преименуване е невалидно за текущата опашка (%1). "
 "Моля, поправете го."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
@@ -61484,19 +61484,19 @@ msgstr ""
 "Списъкът с инструменти за назначени партиди е празен за текущата опашка "
 "(%1). Моля, назначете инструменти."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:686
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Няма елементи за обработка в опашките."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Настройки на албума за обработените елементи"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61505,7 +61505,7 @@ msgstr ""
 "Албумът за приемане на обработени елементи от опашката \"%1\" не е зададен. "
 "Моля, изберете такъв от панела \"Настройки на опашката\"."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61515,27 +61515,27 @@ msgstr ""
 "не е наличен или не може да се записва. Моля, задайте друг от панела "
 "Настройки на опашката."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Неуспешна обработка на елемент..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Процесът е отменен..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Елемент \"%1\" от опашка \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Пакетно обработване завърши"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Всички задачи на пакетното обработване завършиха"
@@ -61546,67 +61546,67 @@ msgstr "Всички задачи на пакетното обработване
 msgid "&Queues"
 msgstr "&Опашки"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:172
+#: core/utilities/queuemanager/manager/batchtool.cpp:169
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "База"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:177
+#: core/utilities/queuemanager/manager/batchtool.cpp:174
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "Потребителска"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:182
+#: core/utilities/queuemanager/manager/batchtool.cpp:179
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Цветове"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:187
+#: core/utilities/queuemanager/manager/batchtool.cpp:184
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Подобрение"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:192
+#: core/utilities/queuemanager/manager/batchtool.cpp:189
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Преобразуване"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:197
+#: core/utilities/queuemanager/manager/batchtool.cpp:194
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "Декориране"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:202
+#: core/utilities/queuemanager/manager/batchtool.cpp:199
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Филтри"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:207
+#: core/utilities/queuemanager/manager/batchtool.cpp:204
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Преобразуване"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:212
+#: core/utilities/queuemanager/manager/batchtool.cpp:209
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Метаданни"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:221
+#: core/utilities/queuemanager/manager/batchtool.cpp:218
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Невалидно"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:632
+#: core/utilities/queuemanager/manager/batchtool.cpp:629
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
@@ -61617,38 +61617,38 @@ msgstr "Няма налични настройки"
 msgid "Failed to find tool..."
 msgstr "Неуспешно намиране на инструмент..."
 
-#: core/utilities/queuemanager/manager/task.cpp:251
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, kde-format
 msgid "(overwritten)"
 msgstr "(презаписано)"
 
-#: core/utilities/queuemanager/manager/task.cpp:256
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(преименувано в %1)"
 
-#: core/utilities/queuemanager/manager/task.cpp:261
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Елементът съществува и е пропуснат"
 
-#: core/utilities/queuemanager/manager/task.cpp:286
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Неуспех при създаване на съпътстващ файл..."
 
-#: core/utilities/queuemanager/manager/task.cpp:295
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Елементът е обработен успешно %1"
 
-#: core/utilities/queuemanager/manager/task.cpp:300
-#: core/utilities/queuemanager/manager/task.cpp:305
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Неуспех при създаване на файл..."
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:112
+#: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "Това е списък на зададените инструменти за пакетна обработка."
@@ -61677,7 +61677,7 @@ msgctxt "@title: target item name"
 msgid "Target"
 msgstr "Превод"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:440
+#: core/utilities/queuemanager/views/queuepool.cpp:432
 #, kde-format
 msgid ""
 "There is still 1 unprocessed item in \"%2\".\n"
@@ -61692,7 +61692,7 @@ msgstr[1] ""
 "Все още има %1 необработени елемента в \"%2\".\n"
 "Искате ли да затворите тази опашка?"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:506
+#: core/utilities/queuemanager/views/queuepool.cpp:498
 #, kde-format
 msgid ""
 "Custom renaming rules are invalid for Queues listed below. Please fix them."
@@ -61700,7 +61700,7 @@ msgstr ""
 "Правилата за потребителско преименуване са невалидни за опашките, изброени "
 "по-долу. Моля, поправете ги."
 
-#: core/utilities/queuemanager/views/queuepool.cpp:537
+#: core/utilities/queuemanager/views/queuepool.cpp:529
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -61786,7 +61786,7 @@ msgstr ""
 msgid "Behavior"
 msgstr "Поведение"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:352
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, kde-format
 msgid "Saving Images"
 msgstr "Запазване на изображения"
@@ -61845,7 +61845,7 @@ msgctxt "@title: custom tools category"
 msgid "Custom Tools"
 msgstr "Персонализирани инструменти"
 
-#: core/utilities/queuemanager/views/toolslistview.cpp:401
+#: core/utilities/queuemanager/views/toolslistview.cpp:389
 #, kde-format
 msgctxt "@action"
 msgid "Assign tools"
@@ -61920,31 +61920,31 @@ msgstr "Описание:"
 msgid "New Workflow"
 msgstr "Нов работен процес"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:104
+#: core/utilities/queuemanager/views/workflowlist.cpp:100
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Заглавие"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:105
+#: core/utilities/queuemanager/views/workflowlist.cpp:101
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:106
+#: core/utilities/queuemanager/views/workflowlist.cpp:102
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Описание"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:129
+#: core/utilities/queuemanager/views/workflowlist.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Пакетно обработване"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:130
+#: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61954,37 +61954,37 @@ msgstr ""
 "Някои работни потоци не могат да бъдат заредени от вашия конфигурационен "
 "файл поради несъвместима версия на инструмента."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:288
+#: core/utilities/queuemanager/views/workflowlist.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Присвояване на работния процес към текущата опашка"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:289
+#: core/utilities/queuemanager/views/workflowlist.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Редактиране на работния процес"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:290
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Актуализиране на работния процес"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:291
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Изтриване на работния процес"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:343
+#: core/utilities/queuemanager/views/workflowlist.cpp:335
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Да се изтрие ли работният процес?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:344
+#: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"

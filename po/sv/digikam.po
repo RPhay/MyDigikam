@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-18 01:45+0000\n"
+"POT-Creation-Date: 2024-05-19 01:45+0000\n"
 "PO-Revision-Date: 2024-05-04 14:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1118,7 +1118,7 @@ msgid "Make/Model:"
 msgstr "Märke och modell:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:137
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
@@ -3100,8 +3100,8 @@ msgid "no item"
 msgstr "inga objekt"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -5792,7 +5792,7 @@ msgstr ""
 "bilder.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
@@ -5812,7 +5812,7 @@ msgstr ""
 "Alternativet <b>Använd metadata</b> tolkar bildinformation vid kökörning för "
 "att hitta relevanta linsfunktioner."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
@@ -8740,12 +8740,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "Heta bildpunkter..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
 #, kde-format
 msgid "Show grid"
 msgstr "Visa rutnät"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr ""
@@ -32424,18 +32424,18 @@ msgstr "Y-förskjutning "
 msgid "Lens Distortion Tool"
 msgstr "Verktyg för linsförvrängning"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:107
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:442
 #, kde-format
 msgid "Use Metadata"
 msgstr "Använd metadata"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:113
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:448
 #, kde-format
 msgctxt "camera make"
 msgid "Make:"
 msgstr "Tillverkare:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:118
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:453
 #, kde-format
 msgid ""
 "This is the camera maker description string found in image meta-data. This "
@@ -32446,13 +32446,13 @@ msgstr ""
 "metadata. Den används för att efterfråga och hitta relevant information om "
 "kameran i Lensfuns databas."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:125
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:460
 #, kde-format
 msgctxt "camera model"
 msgid "Model:"
 msgstr "Modell:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:130
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:465
 #, kde-format
 msgid ""
 "This is the camera model description string found in image meta-data. This "
@@ -32463,7 +32463,7 @@ msgstr ""
 "metadata. Den används för att efterfråga och hitta relevant information om "
 "kameran i Lensfuns databas."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:145
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:480
 #, kde-format
 msgid ""
 "This is the lens description string found in image meta-data. This one is "
@@ -32473,7 +32473,7 @@ msgstr ""
 "används för att efterfråga och hitta relevant information om linsen i "
 "Lensfuns databas."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:154
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:489
 #, kde-format
 msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
@@ -32482,120 +32482,120 @@ msgstr ""
 "Aktivera alternativet för att låta verktyget gissa rätt kamera- och "
 "linsinställningar från bildens metadata (som EXIF eller XMP)."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, kde-format
 msgid "Focal Length (mm):"
 msgstr "Fokallängd (mm):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:158
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
 msgid "Aperture:"
 msgstr "Bländare:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:159
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:494
 #, kde-format
 msgid "Subject Distance (m):"
 msgstr "Avstånd till motivet (m):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:387
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, kde-format
 msgid "(no metadata available)"
 msgstr "(ingen metadata tillgänglig)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:394
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
 msgstr "(ingen träff hittades)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:401
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
 msgstr "(partiell träff hittades)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:408
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
 msgstr "(exakt träff hittades)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Verktyg för automatisk linskorrektion"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Kamera: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Lins: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Avstånd till motivet: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Bländare: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Fokallängd: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Beskärningsfaktor: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "aktiverad"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA-korrigering: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "inaktiverad"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG-korrigering: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST-korrigering: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -50486,7 +50486,7 @@ msgid "&Abort"
 msgstr "&Avbryt"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
 #, kde-format
 msgid "Processing..."
 msgstr "Behandlar..."
@@ -60047,7 +60047,7 @@ msgstr "Inga skript markerade"
 msgid "Set here the script that is executed for every imported image."
 msgstr "Ange skriptet som körs för varje importerad bild här."
 
-#: core/utilities/lighttable/lighttablepreview.cpp:61
+#: core/utilities/lighttable/lighttablepreview.cpp:57
 #, kde-format
 msgid "Drag and drop an image here"
 msgstr "Drag och släpp en bild här"
@@ -60816,66 +60816,66 @@ msgstr "Ta bort verktyg"
 msgid "Current Queue: "
 msgstr "Nuvarande kö: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, kde-format
 msgid "No items"
 msgstr "Inga objekt"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:452
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:486
 #, kde-format
 msgid "No tasks"
 msgstr "Inga aktiviteter"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 aktivitet"
 msgstr[1] "%1 aktiviteter"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:463
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "Totalt: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Klar"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:539
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Behandling pågår"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:540
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 "Köhantering för bakgrundsbehandling kör. Vill du avbryta pågående jobb?"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:639
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "Det finns ingen kö att köra."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:643
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Det finns inget objekt att behandla i aktuell kö (%1)."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr "Egna regler för namnbyte är ogiltiga för aktuell kö (%1). Rätta dem."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
@@ -60884,19 +60884,19 @@ msgstr ""
 "Listan med tilldelade bakgrundsverktyg är tom för aktuell kö (%1). Tilldela "
 "verktyg."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:686
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Det finns inga objekt att behandla i köerna."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Inställningar av album för behandlade objekt"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -60905,7 +60905,7 @@ msgstr ""
 "Album för att lagra behandlade objekt från kön \"%1\" har inte ställts in. "
 "Välj ett i köinställningsrutan."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -60914,27 +60914,27 @@ msgstr ""
 "Album för att lagra behandlade objekt från kön \"%1\" är inte tillgängligt "
 "eller inte skrivbart. Välj ett annat i köinställningsrutan."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Misslyckades behandla objekt..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Behandling avbruten..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Objekt \"%1\" från kö \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Bakgrundskön klar"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Alla bakgrundsköer klara"
@@ -60945,67 +60945,67 @@ msgstr "Alla bakgrundsköer klara"
 msgid "&Queues"
 msgstr "&Köer"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:172
+#: core/utilities/queuemanager/manager/batchtool.cpp:169
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "Bas"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:177
+#: core/utilities/queuemanager/manager/batchtool.cpp:174
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "Egen"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:182
+#: core/utilities/queuemanager/manager/batchtool.cpp:179
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Färger"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:187
+#: core/utilities/queuemanager/manager/batchtool.cpp:184
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Förbättra"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:192
+#: core/utilities/queuemanager/manager/batchtool.cpp:189
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Transformera"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:197
+#: core/utilities/queuemanager/manager/batchtool.cpp:194
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "Dekorera"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:202
+#: core/utilities/queuemanager/manager/batchtool.cpp:199
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Filter"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:207
+#: core/utilities/queuemanager/manager/batchtool.cpp:204
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Konvertera"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:212
+#: core/utilities/queuemanager/manager/batchtool.cpp:209
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:221
+#: core/utilities/queuemanager/manager/batchtool.cpp:218
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Ogiltig"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:632
+#: core/utilities/queuemanager/manager/batchtool.cpp:629
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
@@ -61016,38 +61016,38 @@ msgstr "Ingen inställning tillgänglig"
 msgid "Failed to find tool..."
 msgstr "Misslyckades hitta verktyg ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:251
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, kde-format
 msgid "(overwritten)"
 msgstr "(överskrivet)"
 
-#: core/utilities/queuemanager/manager/task.cpp:256
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(namn ändat till %1)"
 
-#: core/utilities/queuemanager/manager/task.cpp:261
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Objektet finns och hoppades över"
 
-#: core/utilities/queuemanager/manager/task.cpp:286
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Misslyckades skapa associerad fil..."
 
-#: core/utilities/queuemanager/manager/task.cpp:295
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Objekt behandlat med lyckat resultat %1"
 
-#: core/utilities/queuemanager/manager/task.cpp:300
-#: core/utilities/queuemanager/manager/task.cpp:305
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Misslyckades skapa fil..."
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:112
+#: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "Det här är listan med tilldelade bakgrundsverktyg."
@@ -61076,7 +61076,7 @@ msgctxt "@title: target item name"
 msgid "Target"
 msgstr "Resultat"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:440
+#: core/utilities/queuemanager/views/queuepool.cpp:432
 #, kde-format
 msgid ""
 "There is still 1 unprocessed item in \"%2\".\n"
@@ -61091,14 +61091,14 @@ msgstr[1] ""
 "Det finns fortfarande %1 obehandlade objekt i \"%2\".\n"
 "Vill du stänga kön?"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:506
+#: core/utilities/queuemanager/views/queuepool.cpp:498
 #, kde-format
 msgid ""
 "Custom renaming rules are invalid for Queues listed below. Please fix them."
 msgstr ""
 "Egna regler för namnbyte är ogiltiga för köerna som anges nedan. Rätta dem."
 
-#: core/utilities/queuemanager/views/queuepool.cpp:537
+#: core/utilities/queuemanager/views/queuepool.cpp:529
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -61182,7 +61182,7 @@ msgstr ""
 msgid "Behavior"
 msgstr "Beteende"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:352
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, kde-format
 msgid "Saving Images"
 msgstr "Spara bilder"
@@ -61240,7 +61240,7 @@ msgctxt "@title: custom tools category"
 msgid "Custom Tools"
 msgstr "Egna verktyg"
 
-#: core/utilities/queuemanager/views/toolslistview.cpp:401
+#: core/utilities/queuemanager/views/toolslistview.cpp:389
 #, kde-format
 msgctxt "@action"
 msgid "Assign tools"
@@ -61314,31 +61314,31 @@ msgstr "Beskrivning:"
 msgid "New Workflow"
 msgstr "Nytt arbetsflöde"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:104
+#: core/utilities/queuemanager/views/workflowlist.cpp:100
 #, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:105
+#: core/utilities/queuemanager/views/workflowlist.cpp:101
 #, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Verktyg"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:106
+#: core/utilities/queuemanager/views/workflowlist.cpp:102
 #, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Beskrivning"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:129
+#: core/utilities/queuemanager/views/workflowlist.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Köhantering för bakgrundsbehandling"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:130
+#: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61348,37 +61348,37 @@ msgstr ""
 "Vissa arbetsflöden kan inte läsas in från inställningsfilen på grund av en "
 "inkompatibel version av ett verktyg."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:288
+#: core/utilities/queuemanager/views/workflowlist.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Tilldela arbetsflöde till nuvarande kö"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:289
+#: core/utilities/queuemanager/views/workflowlist.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Redigera arbetsflöde"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:290
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Uppdatera arbetsflöde"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:291
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Ta bort arbetsflöde"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:343
+#: core/utilities/queuemanager/views/workflowlist.cpp:335
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Ta bort arbetsflöde?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:344
+#: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-18 01:45+0000\n"
+"POT-Creation-Date: 2024-05-19 01:45+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1138,7 +1138,7 @@ msgid "Make/Model:"
 msgstr "สร้างโดย/รุ่น:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:137
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:472
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
@@ -3227,8 +3227,8 @@ msgid "no item"
 msgstr "ไม่มีรายการใด ๆ"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -5821,7 +5821,7 @@ msgid ""
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:74
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
 #, kde-format
 msgid "Lens Auto-Correction"
@@ -5839,7 +5839,7 @@ msgid ""
 "to find relevant lens features."
 msgstr ""
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:211
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
@@ -8727,12 +8727,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "แก้จุดเสียของเซ็นเซอร์ (Hot Pixel)..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
 #, kde-format
 msgid "Show grid"
 msgstr "แสดงเส้นตารางกริด"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr "ตั้งค่าตัวเลือกนี้เพื่อให้แสดงเส้นตารางกริดที่จะช่วยปรับความถูกต้องได้ง่าย"
@@ -32629,18 +32629,18 @@ msgstr "ค่าเหลื่อมแนวแกน Y "
 msgid "Lens Distortion Tool"
 msgstr "ความบิดเบือนของเลนส์"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:107
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:442
 #, kde-format
 msgid "Use Metadata"
 msgstr "ใช้ข้อมูลกำกับภาพ"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:113
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:448
 #, kde-format
 msgctxt "camera make"
 msgid "Make:"
 msgstr "สร้างด้วย:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:118
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:453
 #, kde-format
 msgid ""
 "This is the camera maker description string found in image meta-data. This "
@@ -32648,13 +32648,13 @@ msgid ""
 "Lensfun database."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:125
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:460
 #, kde-format
 msgctxt "camera model"
 msgid "Model:"
 msgstr "รุ่น:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:130
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:465
 #, kde-format
 msgid ""
 "This is the camera model description string found in image meta-data. This "
@@ -32662,14 +32662,14 @@ msgid ""
 "Lensfun database."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:145
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:480
 #, kde-format
 msgid ""
 "This is the lens description string found in image meta-data. This one is "
 "used to query and found relevant lens information from Lensfun database."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:154
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:489
 #, kde-format
 msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
@@ -32678,121 +32678,121 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้เครื่องมือค้นหาการตั้งค่าที่ถูกต้องของกล้องและเลนส์ ขณะที่ใช้ถ่ายภาพ "
 "โดยดูจากข้อมูลกำกับภาพ (เช่น Exif หรือ XMP)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:492
 #, fuzzy, kde-format
 msgid "Focal Length (mm):"
 msgstr "ทางยาวโฟกัส:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:158
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:493
 #, kde-format
 msgid "Aperture:"
 msgstr "ขนาดรูรับแสง:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:159
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:494
 #, fuzzy, kde-format
 msgid "Subject Distance (m):"
 msgstr "ระยะห่างจากตัวแบบ:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:387
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, fuzzy, kde-format
 msgid "(no metadata available)"
 msgstr "ยังไม่มีการตั้งค่า"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:394
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
 msgid "(no match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:401
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:732
 #, kde-format
 msgid "(partial match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:408
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:739
 #, kde-format
 msgid "(exact match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:125
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "แก้ความบิดเบือนจากเลนส์โดยอัตโนมัติ"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:475
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "กล้อง \"%1\""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:477
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "เลนส์: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:479
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "ระยะห่างจากตัวแบบ:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:481
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "ขนาดรูรับแสง: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:483
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "ทางยาวโฟกัส:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:485
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "ความเปรียบต่าง:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:487
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:488
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:491
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:494
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:497
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:490
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:493
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:496
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -51832,7 +51832,7 @@ msgid "&Abort"
 msgstr "&ยุติ"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
 #, kde-format
 msgid "Processing..."
 msgstr "กำลังประมวลผล..."
@@ -61616,7 +61616,7 @@ msgstr "ยังไม่มีการเลือกป้ายกำกั
 msgid "Set here the script that is executed for every imported image."
 msgstr "ตั้งค่าปรับระดับแสงของภาพได้ที่นี่"
 
-#: core/utilities/lighttable/lighttablepreview.cpp:61
+#: core/utilities/lighttable/lighttablepreview.cpp:57
 #, kde-format
 msgid "Drag and drop an image here"
 msgstr "ลากและวางภาพไว้ที่นี่"
@@ -62351,62 +62351,62 @@ msgstr "เอาเครื่องมือออก"
 msgid "Current Queue: "
 msgstr "คิวปัจจุบัน: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
 #, kde-format
 msgid "No items"
 msgstr "ไม่มีรายการใด ๆ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:452
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:486
 #, kde-format
 msgid "No tasks"
 msgstr "ไม่มีงานใด ๆ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "%1 งาน"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:463
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "ทางยาวโฟกัส: %1 ม.ม.\n"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "พร้อม"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:539
 #, fuzzy, kde-format
 #| msgid "Printing and Proofing"
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "การพิมพ์และการตรวจพรู้ฟ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:540
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:639
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "ยังไม่มีรายการที่จะใช้ในการประมวลผลใด ๆ อยู่ในคิว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:643
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "There is no item to process in the current queue (%1)."
 msgstr "ยังไม่มีรายการที่จะใช้ในการประมวลผลใด ๆ อยู่ในคิว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
 #, fuzzy, kde-format
 #| msgid ""
 #| "Custom renaming rules are invalid for Queues listed below. Please fix "
@@ -62416,7 +62416,7 @@ msgstr ""
 "การเปลี่ยนชื่อกฎต่าง ๆ เองเพื่อใช้กับรายการคิวงานทางด้านล่างนี้ ใช้ไม่ได้หรือไม่ถูกต้อง "
 "โปรดทำการแก้ไขพวกมันก่อน"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
 #, fuzzy, kde-format
 #| msgid ""
 #| "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -62428,20 +62428,20 @@ msgstr ""
 "รายการเครื่องมือประมวลผลกลุ่มภาพที่จะใช้กับรายการคิวงานทางด้านล่างนี้ยังว่างอยู่ "
 "โปรดทำการกำหนดเครื่องมือต่าง ๆ ก่อน"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:686
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "ยังไม่มีรายการที่จะใช้ในการประมวลผลใด ๆ อยู่ในคิว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
 #, fuzzy, kde-format
 #| msgid "Processed items album settings"
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "ตั้งค่าต่าง ๆ ของอัลบั้มรายการต่าง ๆ ที่ผ่านการประมวลผลแล้ว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -62450,7 +62450,7 @@ msgstr ""
 "ยังไม่มีการตั้งค่าอัลบั้มที่จะใช้เก็บรายการที่ผ่านการประมวลผลแล้วจากคิว \"%1\" "
 "โปรดเลือกอัลบั้มใดอัลบั้มหนึ่งจากพาเนลการตั้งค่าคิว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -62459,27 +62459,27 @@ msgstr ""
 "อัลบั้มที่จะใช้เก็บรายการที่ผ่านการประมวลผลแล้วจากคิว \"%1\" ยังไม่มีให้ใช้ หรือไม่สามารถเขียนได้ "
 "โปรดตั้งเป็นอัลบั้มอื่นจากพาเนลการตั้งค่าคิว"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
 #, kde-format
 msgid "Failed to process item..."
 msgstr "ล้มเหลวในการประมวลผลรายการ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "การประมวลผลถูกยกเลิก..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
 #, fuzzy, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "รายการ \"%1\" จากคิว \"%2\" : %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
 #, fuzzy, kde-format
 msgid "Batch queue finished"
 msgstr "คิวประมวลผลกลุ่มภาพเสร็จสมบูรณ์.."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
 #, fuzzy, kde-format
 msgid "All batch queues finished"
 msgstr "คิวประมวลผลกลุ่มภาพเสร็จสมบูรณ์.."
@@ -62490,76 +62490,76 @@ msgstr "คิวประมวลผลกลุ่มภาพเสร็จ
 msgid "&Queues"
 msgstr "คิ&ว"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:172
+#: core/utilities/queuemanager/manager/batchtool.cpp:169
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:177
+#: core/utilities/queuemanager/manager/batchtool.cpp:174
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "กำหนดเอง"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:182
+#: core/utilities/queuemanager/manager/batchtool.cpp:179
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "สี"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:187
+#: core/utilities/queuemanager/manager/batchtool.cpp:184
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "ปรับแก้ภาพ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:192
+#: core/utilities/queuemanager/manager/batchtool.cpp:189
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "แปลงภาพ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:197
+#: core/utilities/queuemanager/manager/batchtool.cpp:194
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "ตกแต่งภาพ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:202
+#: core/utilities/queuemanager/manager/batchtool.cpp:199
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "ฟิลเตอร์"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:207
+#: core/utilities/queuemanager/manager/batchtool.cpp:204
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "แปลงรูปแบบภาพ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:212
+#: core/utilities/queuemanager/manager/batchtool.cpp:209
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "ข้อมูลกำกับภาพ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:221
+#: core/utilities/queuemanager/manager/batchtool.cpp:218
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "โพรไฟล์ไม่ถูกต้อง"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:632
+#: core/utilities/queuemanager/manager/batchtool.cpp:629
 #, fuzzy, kde-format
 #| msgid "No setting available"
 msgctxt "@label"
@@ -62571,38 +62571,38 @@ msgstr "ยังไม่มีการตั้งค่า"
 msgid "Failed to find tool..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:251
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, fuzzy, kde-format
 msgid "(overwritten)"
 msgstr "เขียนทับ"
 
-#: core/utilities/queuemanager/manager/task.cpp:256
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, fuzzy, kde-format
 msgid "(renamed to %1)"
 msgstr "รายการถูกเปลี่ยนชื่อเป็น %1..."
 
-#: core/utilities/queuemanager/manager/task.cpp:261
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/task.cpp:286
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:295
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "รายการถูกประมวลผลเสร็จเรียบร้อยแล้ว..."
 
-#: core/utilities/queuemanager/manager/task.cpp:300
-#: core/utilities/queuemanager/manager/task.cpp:305
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/views/assignedlist.cpp:112
+#: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format
 msgid "This is the list of batch tools assigned."
 msgstr "นี่เป็นรายการของเครื่องมือประมวลผลกลุ่มภาพที่ถูกกำหนดให้"
@@ -62635,7 +62635,7 @@ msgctxt "@title: target item name"
 msgid "Target"
 msgstr "ภาพเป้าหมาย"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:440
+#: core/utilities/queuemanager/views/queuepool.cpp:432
 #, fuzzy, kde-format
 msgid ""
 "There is still 1 unprocessed item in \"%2\".\n"
@@ -62647,7 +62647,7 @@ msgstr[0] ""
 "ยังมีรายการ %1 รายการที่ยังไม่ผ่านการประมวลผลอยู่ใน \"%2\" "
 "คุณต้องการจะทำการปิดคิวงานนี้จริงหรือไม่ ?"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:506
+#: core/utilities/queuemanager/views/queuepool.cpp:498
 #, kde-format
 msgid ""
 "Custom renaming rules are invalid for Queues listed below. Please fix them."
@@ -62655,7 +62655,7 @@ msgstr ""
 "การเปลี่ยนชื่อกฎต่าง ๆ เองเพื่อใช้กับรายการคิวงานทางด้านล่างนี้ ใช้ไม่ได้หรือไม่ถูกต้อง "
 "โปรดทำการแก้ไขพวกมันก่อน"
 
-#: core/utilities/queuemanager/views/queuepool.cpp:537
+#: core/utilities/queuemanager/views/queuepool.cpp:529
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -62735,7 +62735,7 @@ msgstr ""
 msgid "Behavior"
 msgstr "พฤติกรรม"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:352
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, fuzzy, kde-format
 msgid "Saving Images"
 msgstr "บันทึกภาพ"
@@ -62801,7 +62801,7 @@ msgctxt "@title: custom tools category"
 msgid "Custom Tools"
 msgstr "เครื่องมือที่กำหนดเอง"
 
-#: core/utilities/queuemanager/views/toolslistview.cpp:401
+#: core/utilities/queuemanager/views/toolslistview.cpp:389
 #, fuzzy, kde-format
 #| msgid "Assign tools"
 msgctxt "@action"
@@ -62877,34 +62877,34 @@ msgstr "รายละเอียด"
 msgid "New Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:104
+#: core/utilities/queuemanager/views/workflowlist.cpp:100
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "ชื่อ"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:105
+#: core/utilities/queuemanager/views/workflowlist.cpp:101
 #, fuzzy, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "เ&ครื่องมือ"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:106
+#: core/utilities/queuemanager/views/workflowlist.cpp:102
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "รายละเอียด"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:129
+#: core/utilities/queuemanager/views/workflowlist.cpp:125
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "จัดการคิวประมวลผลกลุ่มภาพ"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:130
+#: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62912,37 +62912,37 @@ msgid ""
 "version of a tool."
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:288
+#: core/utilities/queuemanager/views/workflowlist.cpp:280
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "เพิ่มเข้าไปยังคิวปัจจุบัน"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:289
+#: core/utilities/queuemanager/views/workflowlist.cpp:281
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:290
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:291
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "ลบทั้งหมด"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:343
+#: core/utilities/queuemanager/views/workflowlist.cpp:335
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "ลบทั้งหมด"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:344
+#: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
