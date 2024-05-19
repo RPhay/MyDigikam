@@ -112,10 +112,6 @@ cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 # Breeze style support
 cmake --build . --parallel --config RelWithDebInfo --target ext_breeze
 
-# Marble install shared lib at wrong place.
-mv $VCPKG_INSTALL_PREFIX/libmarble* $VCPKG_INSTALL_PREFIX/bin || true
-mv $VCPKG_INSTALL_PREFIX/libastro*  $VCPKG_INSTALL_PREFIX/bin || true
-
 #################################################################################################
 
 if [[ $DK_QTVERSION == 6 ]] ; then
