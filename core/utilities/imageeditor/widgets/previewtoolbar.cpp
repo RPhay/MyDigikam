@@ -188,7 +188,8 @@ PreviewToolBar::~PreviewToolBar()
 
 void PreviewToolBar::registerMenuActionGroup(EditorWindow* const editor)
 {
-    d->actionsMenu  = new QMenu(i18nc("@action Select image editor preview mode", "Preview Mode"), editor);
+    d->actionsMenu  = new QMenu(i18nc("@action Select image editor preview mode",
+                                      "Preview Mode"), editor);
     d->actionsGroup = new QActionGroup(d->actionsMenu);
 
     connect(d->actionsGroup, SIGNAL(triggered(QAction*)),
@@ -204,7 +205,8 @@ void PreviewToolBar::registerMenuActionGroup(EditorWindow* const editor)
         d->actionsMenu->addAction(ac);
     }
 
-    editor->actionCollection()->addAction(QLatin1String("editorwindow_previewmode"), d->actionsMenu->menuAction());
+    editor->actionCollection()->addAction(QLatin1String("editorwindow_previewmode"),
+                                          d->actionsMenu->menuAction());
 }
 
 void PreviewToolBar::slotActionTriggered(QAction* ac)
