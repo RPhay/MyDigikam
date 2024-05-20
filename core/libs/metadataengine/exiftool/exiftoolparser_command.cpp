@@ -523,6 +523,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
     d->prepareProcess();
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-m");
 
     cmdArgs << QByteArray("-wm") << wrtCmds;
     cmdArgs << QByteArray("-TagsFromFile");
