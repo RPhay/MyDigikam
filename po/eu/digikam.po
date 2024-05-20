@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -44465,7 +44465,7 @@ msgstr "Erakutsi koadro txikien barra"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "E&zkutatu tresna-barra pantaila osoko moduan"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

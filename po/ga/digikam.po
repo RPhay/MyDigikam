@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -43470,7 +43470,7 @@ msgstr "Taispeáin barra scála"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Fola&igh an barra uirlisí sa mhód lánscáileáin"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

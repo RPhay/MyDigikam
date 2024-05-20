@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -43878,7 +43878,7 @@ msgstr ""
 "す。"
 
 # Theme based on users' default color scheme
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

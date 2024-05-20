@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -42826,7 +42826,7 @@ msgstr "ਥੰਮਨੇਲਬਾਰ ਵੇਖੋ"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਟੂਲਬਾਰ ਓਹਲੇ(&i)"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

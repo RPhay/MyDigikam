@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -45429,7 +45429,7 @@ msgstr "Skjul minia&turelinje"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Skjul alle værktøjslinjer ved vinduesskift i fuldskærmstilstand."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
