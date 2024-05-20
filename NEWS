@@ -106,7 +106,7 @@ BUGFIXES:
 078 ==> 487239 - Add new option to exclude images from import.
 079 ==> 487272 - Crash while naming a new face tag.
 080 ==> 487285 - Date/Time correction tool applies corrections twice, and in seemingly random order.
-081 ==> 
+081 ==> 486755 - Images.album = NULL without reason (disappearing images in DK).
 082 ==> 
 083 ==> 
 084 ==> 
