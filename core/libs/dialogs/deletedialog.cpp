@@ -72,16 +72,20 @@ DeleteItem::DeleteItem(QTreeWidget* const parent, const QUrl& url)
     {
         if (CoreDbUrl(d->url).isAlbumUrl())
         {
-            setThumb(QIcon::fromTheme(QLatin1String("folder")).pixmap(parent->iconSize().width()));
+            setThumb(QIcon::fromTheme(QLatin1String("folder"))
+                                      .pixmap(parent->iconSize().width()));
         }
         else
         {
-            setThumb(QIcon::fromTheme(QLatin1String("tag")).pixmap(parent->iconSize().width()));
+            setThumb(QIcon::fromTheme(QLatin1String("tag"))
+                                      .pixmap(parent->iconSize().width()));
         }
     }
     else
     {
-        setThumb(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(parent->iconSize().width(), QIcon::Disabled), false);
+        setThumb(QIcon::fromTheme(QLatin1String("view-preview"))
+                                  .pixmap(parent->iconSize().width(),
+                 QIcon::Disabled), false);
     }
 
     setText(1, fileUrl());
@@ -204,7 +208,9 @@ void DeleteItemList::slotThumbnailLoaded(const LoadingDescription& desc, const Q
     }
 }
 
-void DeleteItemList::drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const
+void DeleteItemList::drawRow(QPainter* p,
+                             const QStyleOptionViewItem& opt,
+                             const QModelIndex& index) const
 {
     DeleteItem* const item = dynamic_cast<DeleteItem*>(itemFromIndex(index));
 
@@ -277,13 +283,13 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
 
     d->fileList        = new DeleteItemList(this);
     d->numFiles        = new QLabel(this);
-    d->numFiles->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    d->numFiles->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     d->numFiles->setWordWrap(false);
 
     d->shouldDelete    = new QCheckBox(d->checkBoxStack);
     d->shouldDelete->setGeometry(QRect(0, 0, 542, 32));
-    d->shouldDelete->setToolTip(i18n("If checked, files will be permanently removed instead of being placed "
-                                     "in the Trash."));
+    d->shouldDelete->setToolTip(i18n("If checked, files will be permanently removed instead of "
+                                     "being placed in the Trash."));
     d->shouldDelete->setWhatsThis(i18n("<p>If this box is checked, items will be "
                                        "<b>permanently removed</b> instead of "
                                        "being placed in the Trash.</p>"
@@ -465,7 +471,10 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
 {
     setModal(true);
 
-    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Apply  |
+                                                  QDialogButtonBox::Cancel |
+                                                  QDialogButtonBox::Help,
+                                                  this);
     d->buttons->button(QDialogButtonBox::Apply)->setDefault(true);
 
     d->page                = new DeleteWidget(this);
@@ -544,13 +553,17 @@ void DeleteDialog::slotUser1Clicked()
 
     if (d->saveDoNotShowAgainTrash)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "setShowTrashDeleteDialog " << !d->page->d->doNotShowAgain->isChecked();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "setShowTrashDeleteDialog"
+                                     << !d->page->d->doNotShowAgain->isChecked();
+
         settings->setShowTrashDeleteDialog(!d->page->d->doNotShowAgain->isChecked());
     }
 
     if (d->saveDoNotShowAgainPermanent)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "setShowPermanentDeleteDialog " << !d->page->d->doNotShowAgain->isChecked();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "setShowPermanentDeleteDialog"
+                                     << !d->page->d->doNotShowAgain->isChecked();
+
         settings->setShowPermanentDeleteDialog(!d->page->d->doNotShowAgain->isChecked());
     }
 
@@ -671,7 +684,9 @@ void DeleteDialog::keyPressEvent(QKeyEvent* e)
 
 void DeleteDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("image_view"),
+                            QLatin1String("deleting-photograph"));
 }
 
 } // namespace Digikam
