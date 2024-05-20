@@ -122,6 +122,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     // Build command (set metadata)
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-m");
     cmdArgs << QByteArray("-json");
 
     for (ExifToolParser::ExifToolData::const_iterator it = newTags.constBegin() ;
@@ -160,6 +161,7 @@ bool ExifToolParser::applyChanges(const QString& path,
 
     // QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-m");
 /*
     QString suffix = fileInfo.suffix().toUpper();
 
@@ -264,6 +266,7 @@ bool ExifToolParser::applyMetadataFile(const QString& path, const QString& meta)
     d->prepareProcess();
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-m");
 
     if (metaInfo.suffix().toUpper() == QLatin1String("JSON"))
     {
@@ -296,6 +299,7 @@ bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& date
     d->prepareProcess();
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-m");
     cmdArgs << QByteArray("-wm");
     cmdArgs << QByteArray("w");
 
