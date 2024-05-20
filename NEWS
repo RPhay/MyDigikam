@@ -104,7 +104,7 @@ BUGFIXES:
 076 ==> 486878 - Wrong date when downloading videos from Canon EOS R7.
 077 ==> 384094 - LensFun deprecated API removed: internal digiKam Lensfun interface do not compile anymore.
 078 ==> 487239 - Add new option to exclude images from import.
-079 ==> 
+079 ==> 487272 - Crash while naming a new face tag.
 080 ==> 
 081 ==> 
 082 ==> 
