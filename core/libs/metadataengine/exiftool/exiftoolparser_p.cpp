@@ -90,19 +90,19 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
 
 void ExifToolParser::Private::prepareFileAndSidecar(QByteArrayList& cmdArgs, const QFileInfo& fi)
 {
-    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
+//    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
 
-    if (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY)
-    {
+//    if (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY)
+//    {
         cmdArgs << filePathEncoding(fi);
-    }
+//    }
 
-    if (settings.metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY)
-    {
-        QFileInfo si(DMetadata::sidecarPath(fi.filePath()));
+//    if (settings.metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY)
+//    {
+//        QFileInfo si(DMetadata::sidecarPath(fi.filePath()));
 
-        cmdArgs << filePathEncoding(si);
-    }
+//        cmdArgs << filePathEncoding(si);
+//    }
 }
 
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
