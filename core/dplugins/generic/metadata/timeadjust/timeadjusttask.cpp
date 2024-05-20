@@ -104,6 +104,7 @@ void TimeAdjustTask::run()
 
         if (parser->exifToolAvailable())
         {
+/*
             QScopedPointer<DMetadata> qmeta(new DMetadata);
 
             if (qmeta->load(d->url.toLocalFile(), true))
@@ -115,7 +116,7 @@ void TimeAdjustTask::run()
                     adj = asDateTimeUTC(adj);
                 }
             }
-
+*/
             if (!parser->changeTimestamps(d->url.toLocalFile(), adj))
             {
                 status |= TimeAdjustList::EXIF_TOOL_ERROR;
