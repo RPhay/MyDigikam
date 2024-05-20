@@ -81,6 +81,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "libqt5webengine5"        # Qt 5 webengine module
                    "qtwebengine5-dev"        # Qt 5 webengine module
                    "libqt5networkauth5-dev"  # Qt 5 network authentification.
+                   "qtmultimedia5-dev"       # QT 5 Multimedia module
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
                    "libkf5xmlgui-dev"        # User configurable main windows
@@ -99,7 +100,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "liblcms2-dev"            # Little CMS 2 color management library
                    "libexpat1-dev"           # XML parsing C library
                    "libexiv2-dev"            # Metadata manipulation library
-                    )
+                  )
 
 
 for pkg in ${required_packages[@]}; do
