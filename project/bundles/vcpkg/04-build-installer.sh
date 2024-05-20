@@ -2,11 +2,13 @@
 
 # Script to bundle data using previously-built KDE and digiKam installation
 # and create a Windows installer file with NSIS application
+#
 # Dependencies:
+#
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - Mt from VSCommunity C++ Desktop tools.
-#   - ImageMagick for the rune-time dll.
+#   - ImageMagick for the run-time dlls.
 #   - Msys2/Rsync CLI tools for Windows.
 #
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>

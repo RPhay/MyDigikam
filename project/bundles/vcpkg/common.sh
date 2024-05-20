@@ -136,6 +136,9 @@ export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 UploadWithRetry()
 {
 
+# Disable errors expection handling
+set +e
+
 MAX_RETRIES=10
 i=0
 RC=1
@@ -156,5 +159,8 @@ while [[ $RC -ne 0 ]] ; do
     echo "rsync return code: $RC"
 
 done
+
+# Re-enable halt and catch errors
+set -eE
 
 }
