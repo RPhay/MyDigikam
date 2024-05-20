@@ -4,6 +4,7 @@ digiKam 8.4.0 - Release date: 2024-xx-xx
 NEW FEATURES:
 
 Auto-Tags: Add online translators support to internationalize generated keywords.
+Auto-Lens: Add support for new Lensfun library API version 0.4.
 RawEngine: Update internal libraw to last 20240512 upstream. New supported cameras:
            Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra.
            Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.
