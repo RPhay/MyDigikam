@@ -79,6 +79,7 @@ public:
     QTimer*               updateTimer   = nullptr;
 
     bool                  exitAfterOk   = false;
+    bool                  isProcessed   = false;
 
     DProgressWdg*         progressBar   = nullptr;
     TimeAdjustList*       listView      = nullptr;
@@ -333,15 +334,20 @@ void TimeAdjustDialog::slotUpdateTimestamps()
         d->thread->cancel();
         d->thread->wait();
     }
-
+    d->isProcessed = true;
     d->updateTimer->start();
 }
 
 void TimeAdjustDialog::slotOkExitTimestamps()
 {
+    if (d->isProcessed)
+    {
+        accept();
+    }
+
     d->exitAfterOk = true;
 
-   slotUpdateTimestamps();
+    slotUpdateTimestamps();
 }
 
 void TimeAdjustDialog::slotPreviewTimer()
@@ -378,6 +384,7 @@ void TimeAdjustDialog::slotCancelThread()
     }
 
     d->exitAfterOk = false;
+    d->isProcessed = false;
 
     if (m_buttons->button(QDialogButtonBox::Yes)->isEnabled())
     {
@@ -400,7 +407,7 @@ void TimeAdjustDialog::setBusy(bool busy)
         m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Close window"));
     }
 
-    m_buttons->button(QDialogButtonBox::Apply)->setEnabled(!busy);
+    m_buttons->button(QDialogButtonBox::Apply)->setEnabled(!d->isProcessed && !busy);
     m_buttons->button(QDialogButtonBox::Yes)->setEnabled(!busy);
     d->settingsView->setEnabled(!busy);
 }
@@ -415,6 +422,7 @@ void TimeAdjustDialog::slotPreviewReady(const QUrl& url,
                                         const QDateTime& adj)
 {
     d->listView->setStatus(url, org, adj);
+    d->isProcessed = false;
 }
 
 void TimeAdjustDialog::slotProcessEnded(const QUrl& url,
