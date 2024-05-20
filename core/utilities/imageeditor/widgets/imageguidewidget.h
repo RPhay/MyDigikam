@@ -66,7 +66,7 @@ public:
                               int guideSize = 1,
                               bool blink = false,
                               ImageIface::PreviewType type= ImageIface::FullImage);
-    ~ImageGuideWidget() override;
+    ~ImageGuideWidget()                             override;
 
     ImageIface* imageIface()                   const;
     QImage      getMask()                      const;
@@ -105,27 +105,30 @@ Q_SIGNALS:
 
 protected:
 
-    void   paintEvent(QPaintEvent*)         override;
-    void   resizeEvent(QResizeEvent*)       override;
-    void   timerEvent(QTimerEvent*)         override;
-    void   mousePressEvent(QMouseEvent*)    override;
-    void   mouseReleaseEvent(QMouseEvent*)  override;
-    void   mouseMoveEvent(QMouseEvent*)     override;
+    void   paintEvent(QPaintEvent*)                 override;
+    void   resizeEvent(QResizeEvent*)               override;
+    void   timerEvent(QTimerEvent*)                 override;
+    void   mousePressEvent(QMouseEvent*)            override;
+    void   mouseReleaseEvent(QMouseEvent*)          override;
+    void   mouseMoveEvent(QMouseEvent*)             override;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    void enterEvent(QEnterEvent*)           override;
+    void enterEvent(QEnterEvent*)                   override;
 
 #else
 
-    void enterEvent(QEvent*)                override;
+    void enterEvent(QEvent*)                        override;
 
 #endif
 
-    void   leaveEvent(QEvent*)              override;
+    void   leaveEvent(QEvent*)                      override;
     void   updatePixmap();
     void   drawLineTo(const QPoint& endPoint);
-    void   drawLineTo(int width, bool erase, const QColor& color, const QPoint& start, const QPoint& end);
+    void   drawLineTo(int width, bool erase,
+                      const QColor& color,
+                      const QPoint& start,
+                      const QPoint& end);
     QPoint translatePointPosition(const QPoint& point) const;
     void   drawText(QPainter* const p, const QPoint& corner, const QString& text);
     void   updateMaskCursor();

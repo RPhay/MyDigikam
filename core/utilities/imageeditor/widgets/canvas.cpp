@@ -143,7 +143,9 @@ void Canvas::reset()
 void Canvas::load(const QString& filename, IOFileSettings* const IOFileSettings)
 {
     reset();
+
     Q_EMIT signalPrepareToLoad();
+
     d->core->load(filename, IOFileSettings);
 }
 
@@ -461,7 +463,10 @@ void Canvas::slotSelectionMoved()
 
 QRect Canvas::calcSelectedArea() const
 {
-    int    x = 0, y = 0, w = 0, h = 0;
+    int    x = 0;
+    int    y = 0;
+    int    w = 0;
+    int    h = 0;
     double z = layout()->realZoomFactor();
 
     if (d->rubber && d->rubber->isVisible())
@@ -470,8 +475,10 @@ QRect Canvas::calcSelectedArea() const
 
         if (r.isValid())
         {
-            r.translate((int)d->rubber->x(),
-                        (int)d->rubber->y());
+            r.translate(
+                        (int)d->rubber->x(),
+                        (int)d->rubber->y()
+                       );
 
             x = (int)((double)r.x()      / z);
             y = (int)((double)r.y()      / z);
@@ -658,7 +665,12 @@ void Canvas::mousePressEvent(QMouseEvent* event)
         {
             QLatin1String className(item->metaObject()->className());
 
-            if (!(className == QLatin1String("Digikam::RubberItem") || className == QLatin1String("Digikam::ClickDragReleaseItem")))
+            if (
+                !(
+                  (className == QLatin1String("Digikam::RubberItem")) ||
+                  (className == QLatin1String("Digikam::ClickDragReleaseItem"))
+                 )
+               )
             {
                 if (d->rubber && d->rubber->isVisible())
                 {
