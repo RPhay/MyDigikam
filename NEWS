@@ -20,6 +20,7 @@ DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
 Bundles:   Update Exiftool to last 12.84.
 Bundles:   AppImage and Windows installer are now based on last Exiv2 0.28.2.
 Bundles:   AppImage and Windows installer are now based on Qt framework 6.7.0 and KDE framework 6.2.0.
+Bundles:   GMicQt Image Editor tool updated to last version 3.3.5.
 
 *****************************************************************************************************
 BUGFIXES:
