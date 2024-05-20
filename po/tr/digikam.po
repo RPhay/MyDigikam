@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
-"PO-Revision-Date: 2024-05-16 13:21+0300\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
+"PO-Revision-Date: 2024-05-20 00:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3619,7 +3619,7 @@ msgid ""
 msgstr ""
 "digiKam, sayısal görsellerinizi bilgisayarınıza içe aktarmak, düzenlemek, "
 "geliştirmek, aramak ve dışa aktarmak için tasarlanmış açık kaynaklı bir "
-"fotoğraf yönetim programıdır."
+"fotoğraf yönetimi programıdır."
 
 #: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
@@ -43069,7 +43069,7 @@ msgstr "Durum ç&ubuğunu gizle"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Pencere tam ekran kipine geçtiğinde durum çubuğunu gizleyin."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"

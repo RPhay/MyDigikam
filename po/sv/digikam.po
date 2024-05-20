@@ -43,15 +43,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-19 01:45+0000\n"
-"PO-Revision-Date: 2024-05-04 14:38+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"POT-Creation-Date: 2024-05-20 01:44+0000\n"
+"PO-Revision-Date: 2024-05-19 11:45+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -28988,15 +28988,12 @@ msgstr ""
 "nätverksnamn (eller IP-adress) i fallet med en annan dator."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-#| "\">Connect options:</a>"
+#, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
 "a>"
 msgstr ""
-"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+"<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql"
 "\">Anslutningsalternativ:</a>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
@@ -43020,7 +43017,7 @@ msgstr "Dölj st&atusrad"
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Dölj statusrad när fönstret byter till fullskärmsläge."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1310
+#: core/libs/widgets/mainview/thememanager_p.cpp:1322
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
