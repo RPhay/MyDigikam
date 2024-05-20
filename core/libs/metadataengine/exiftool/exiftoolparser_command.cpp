@@ -314,7 +314,7 @@ bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& date
 
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << QByteArray("@");
-    cmdArgs << QByteArray("-CaptionsDateTimeStamps<CaptionsDateTimeStamps");
+    cmdArgs << QByteArray("-xmp:CaptionsDateTimeStamps<xmp:CaptionsDateTimeStamps");
 
     cmdArgs << QByteArray("-overwrite_original");
     d->prepareFileAndSidecar(cmdArgs, fileInfo);
