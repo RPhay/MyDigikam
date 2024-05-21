@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 01:44+0000\n"
+"POT-Creation-Date: 2024-05-21 01:51+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -3822,7 +3822,7 @@ msgstr "नयाँ छवि फाइलनाम"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -10905,7 +10905,7 @@ msgstr "तेर्सो तरिकाले घुमाउनुहोस�
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
@@ -13215,7 +13215,7 @@ msgstr "थप्नुहोस्"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:574
+#: core/libs/dialogs/deletedialog.cpp:587
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "मेट्नुहोस्"
@@ -15213,33 +15213,33 @@ msgid ""
 "a standard XMP/NAA reference code."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "प्रत्येक फाइलमा मेटाडेटा लेख्नुहोस्"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "HSL समायोजन"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
@@ -15247,21 +15247,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "क्यामेरा सूचना"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "बन्द गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -28336,29 +28336,29 @@ msgstr ""
 "यो विकल्प छवि काँटछाँट गर्न प्रयोग गरिन्छ । यो कार्यलाई सक्षम पार्न छविको क्षेत्र चयन "
 "गर्नुहोस् ।"
 
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:173
+#: core/libs/dialogs/deletedialog.cpp:177
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "मेट्न लागेको फाइलको सूची"
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:178
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "यो मेट्न लागेको वस्तुको सूची हो ।"
 
-#: core/libs/dialogs/deletedialog.cpp:285
+#: core/libs/dialogs/deletedialog.cpp:291
 #, fuzzy, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "यदि चेक गरिएमा, फाइलहरू रद्दीटोकरीमा राख्नुको सट्टा सदाका लागि मेटिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:287
+#: core/libs/dialogs/deletedialog.cpp:293
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28371,73 +28371,73 @@ msgstr ""
 "    <p><em>यो विकल्प सावधानीपूर्वक प्रयोग गर्नुहोस्</em>: धेरै जसो फाइलप्रणालीले मेटेको "
 "फाइल फेरि फर्काउन सक्षम हुँदैनन् ।</p></qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:299
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "फाइलहरूलाई रद्दीटोरकीमा सार्नुको सट्टा तिनिहरूलाई मेट्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:300
+#: core/libs/dialogs/deletedialog.cpp:306
 #, kde-format
 msgid "Do not &ask again"
 msgstr "फेरि नसोध्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:359
+#: core/libs/dialogs/deletedialog.cpp:365
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:361
+#: core/libs/dialogs/deletedialog.cpp:367
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:366
+#: core/libs/dialogs/deletedialog.cpp:372
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:368
+#: core/libs/dialogs/deletedialog.cpp:374
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:380
+#: core/libs/dialogs/deletedialog.cpp:386
 #, fuzzy, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति वस्तुहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:392
 #, fuzzy, kde-format
 msgid "These items will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:388
+#: core/libs/dialogs/deletedialog.cpp:394
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/dialogs/deletedialog.cpp:401
+#: core/libs/dialogs/deletedialog.cpp:407
 #, fuzzy, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति एल्बमहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:413
 #, fuzzy, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:411
-#: core/libs/dialogs/deletedialog.cpp:438
+#: core/libs/dialogs/deletedialog.cpp:417
+#: core/libs/dialogs/deletedialog.cpp:444
 #, fuzzy, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -28448,7 +28448,7 @@ msgstr[1] ""
 "<b>१</b> एल्बम चयन गरिएको छ ।\n"
 "<b>%n</b> एल्बम चयन गरिएको छ ।"
 
-#: core/libs/dialogs/deletedialog.cpp:422
+#: core/libs/dialogs/deletedialog.cpp:428
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28459,7 +28459,7 @@ msgstr ""
 "सहायक एल्बम</b> समाविष्ट हुन्छन् र तिनिहरू पनि सदाका लागि मेटिनेछ भनी याद राख्नुहोस् ।</"
 "qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:431
+#: core/libs/dialogs/deletedialog.cpp:437
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28468,18 +28468,18 @@ msgstr ""
 "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।<br>यो सूचीमा <b>सबै सहायक एल्बम</b> समाविष्ट "
 "हुन्छन् र तिनिहरू पनि सदाका लागि रद्दीटोकरीमा सारिन्छ भनी याद राख्नुहोस् ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:575
+#: core/libs/dialogs/deletedialog.cpp:588
 #, fuzzy, kde-format
 msgid "&Move to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:635
+#: core/libs/dialogs/deletedialog.cpp:648
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "चयन गरेको फाइल मेट्ने बारेमा"
 
-#: core/libs/dialogs/deletedialog.cpp:642
+#: core/libs/dialogs/deletedialog.cpp:655
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -56710,37 +56710,37 @@ msgstr "ट्याग हटाउनुहोस्"
 msgid "Assign Labels"
 msgstr "प्रोफाइल मानाङ्कन गर्नुहोस्"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:162
+#: core/utilities/imageeditor/widgets/canvas.cpp:164
 #, fuzzy, kde-format
 msgid ""
 "Failed to load image\n"
 "\"%1\""
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
 #, fuzzy, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "पहिला"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, fuzzy, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "पछि"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
 #, kde-format
 msgid "Before"
 msgstr "पहिला"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
 #, kde-format
 msgid "After"
 msgstr "पछि"
@@ -56851,7 +56851,7 @@ msgstr ""
 msgid "Preview on mouse-over"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
 #, fuzzy, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"

@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 01:44+0000\n"
+"POT-Creation-Date: 2024-05-21 01:51+0000\n"
 "PO-Revision-Date: 2024-05-20 00:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3924,7 +3924,7 @@ msgstr "Dosya Adı"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -11392,7 +11392,7 @@ msgstr "İki harita - alt ve üst"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
@@ -13778,7 +13778,7 @@ msgstr "&Ekle"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:574
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&Sil"
@@ -15845,13 +15845,13 @@ msgstr ""
 "Konu Ayrıntısı Adını buraya girin. Standart bir XMP/NAA başvuru kodu "
 "seçtiyseniz İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Tarihi ve Zamanı Ayarla"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
@@ -15859,19 +15859,19 @@ msgstr ""
 "Her bir görsel için düzeltilmiş tarihi ve zamanı yaz ve iletişim kutusunu "
 "kapat"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Her bir görsel için düzeltilmiş tarihi ve zamanı yaz"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Tarihi ve zamanı ayarla"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
@@ -15879,21 +15879,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "İptal"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Geçerli işlemi iptal et"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Kapat"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -29600,22 +29600,22 @@ msgstr ""
 "Bu ikili dosya, veritabanını geçerli sunucu sürümüne yükseltmek için "
 "kullanılır."
 
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "Thumb"
 msgstr "Küçük Görsel"
 
-#: core/libs/dialogs/deletedialog.cpp:173
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Silinmek üzere olan ögelerin listesi."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:178
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Bu, silinmek üzere olan ögelerin listesidir."
 
-#: core/libs/dialogs/deletedialog.cpp:285
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29624,7 +29624,7 @@ msgstr ""
 "İşaretlenirse dosyalar, Çöp Kutusu'na atılmak yerine kalıcı olarak "
 "kaldırılır."
 
-#: core/libs/dialogs/deletedialog.cpp:287
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29635,17 +29635,17 @@ msgstr ""
 "olarak kaldırılır</b>.</p><p><em>Bu seçeneği dikkatli kullanın</em>: Çoğu "
 "dosya sistemi silinen ögeleri güvenilir bir şekilde geri alamıyor.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:299
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Ögeleri çöp kutusuna taşımak yerine &sil"
 
-#: core/libs/dialogs/deletedialog.cpp:300
+#: core/libs/dialogs/deletedialog.cpp:306
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Bir &daha sorma"
 
-#: core/libs/dialogs/deletedialog.cpp:359
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29654,7 +29654,7 @@ msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan ve "
 "kalıcı olarak silinirler."
 
-#: core/libs/dialogs/deletedialog.cpp:361
+#: core/libs/dialogs/deletedialog.cpp:367
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29663,7 +29663,7 @@ msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
 "doğrudan ve kalıcı olarak silinirler."
 
-#: core/libs/dialogs/deletedialog.cpp:366
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29672,7 +29672,7 @@ msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan Çöp "
 "Kutusu'na gönderilirler."
 
-#: core/libs/dialogs/deletedialog.cpp:368
+#: core/libs/dialogs/deletedialog.cpp:374
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29681,42 +29681,42 @@ msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
 "doğrudan Çöp Kutusu'na gönderilirler."
 
-#: core/libs/dialogs/deletedialog.cpp:380
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Bu öğeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Bu ögeler Çöp Kutusu'na taşınacaklar."
 
-#: core/libs/dialogs/deletedialog.cpp:388
+#: core/libs/dialogs/deletedialog.cpp:394
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> öge seçili."
 msgstr[1] "<b>%1</b> öge seçili."
 
-#: core/libs/dialogs/deletedialog.cpp:401
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:413
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Bu albümler Çöp Kutusu'na taşınacak."
 
-#: core/libs/dialogs/deletedialog.cpp:411
-#: core/libs/dialogs/deletedialog.cpp:438
+#: core/libs/dialogs/deletedialog.cpp:417
+#: core/libs/dialogs/deletedialog.cpp:444
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> albüm seçili."
 msgstr[1] "<b>%1</b> albüm seçili."
 
-#: core/libs/dialogs/deletedialog.cpp:422
+#: core/libs/dialogs/deletedialog.cpp:428
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29727,7 +29727,7 @@ msgstr ""
 "<b>Tüm alt albümlerin</b> de bu listede olduğunu ve onların da kalıcı olarak "
 "silineceğini not edin.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:431
+#: core/libs/dialogs/deletedialog.cpp:437
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29736,18 +29736,18 @@ msgstr ""
 "<p>Bu albümler Çöp Kutusu'na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
 "de bu listede olduğunu ve onların da Çöp Kutusu'na taşınacağını not edin.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:575
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Çöp Kutusu'na Taşı"
 
-#: core/libs/dialogs/deletedialog.cpp:635
+#: core/libs/dialogs/deletedialog.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Seçili Ögeler Silinmek Üzere"
 
-#: core/libs/dialogs/deletedialog.cpp:642
+#: core/libs/dialogs/deletedialog.cpp:655
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -58405,7 +58405,7 @@ msgstr "Künyeyi Kaldır"
 msgid "Assign Labels"
 msgstr "Etiketler Ata"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:162
+#: core/utilities/imageeditor/widgets/canvas.cpp:164
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -58414,30 +58414,30 @@ msgstr ""
 "Görsel yüklenemedi\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Öncesi"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Sonrası"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
 #, kde-format
 msgid "Before"
 msgstr "Öncesi"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
 #, kde-format
 msgid "After"
 msgstr "Sonrası"
@@ -58547,7 +58547,7 @@ msgstr ""
 msgid "Preview on mouse-over"
 msgstr "Fare ile üzerine gelindiğinde önizle"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
 #, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"

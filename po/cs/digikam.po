@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 01:44+0000\n"
-"PO-Revision-Date: 2024-04-26 11:00+0200\n"
+"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"PO-Revision-Date: 2024-05-20 10:43+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -3253,7 +3253,7 @@ msgstr "Vybráno %1/%2 položek"
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr ""
+msgstr "V Bugzille zavřeno více než 650 uživatelských hlášení."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3825,7 +3825,7 @@ msgstr "Název souboru"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -4276,7 +4276,7 @@ msgstr "LibOpenCV"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
-msgstr ""
+msgstr "Ovladače pro Qt SQL"
 
 #: core/app/views/utils/componentsinfodlg.cpp:198
 #, kde-format
@@ -4311,7 +4311,7 @@ msgstr "Dekodéry videa"
 #: core/libs/dialogs/libsinfodlg.cpp:628
 #, kde-format
 msgid "no entry"
-msgstr ""
+msgstr "žádný záznam"
 
 #: core/app/views/utils/componentsinfodlg.cpp:234
 #, kde-format
@@ -6140,7 +6140,7 @@ msgstr "Titulek"
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr ""
+msgstr "Náhled obrázku"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
@@ -6170,7 +6170,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr ""
+msgstr "Historie obrázků digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
@@ -10847,7 +10847,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
@@ -13206,7 +13206,7 @@ msgstr "Přid&at"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:574
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "S&mazat"
@@ -15241,31 +15241,31 @@ msgstr ""
 "Zadejte název podrobnosti subjektu. Pokud vyberete referenční kód standardu "
 "XMP/NAA, bude použit anglický jazyk."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Upravit datum a čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Upravit datum a čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
@@ -15273,21 +15273,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Zrušit aktuální operaci"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Zavřít"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -19919,17 +19919,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr ""
+msgstr "Vyberte zvukovou stopu"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
 #, kde-format
 msgid "Soundtrack Duration:"
-msgstr ""
+msgstr "Délka hudebního doprovodu:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
 #, kde-format
 msgid "Soundtrack Preview:"
-msgstr ""
+msgstr "Náhled hudebního doprovodu:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -19943,7 +19943,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
 #, kde-format
 msgid "Audio Track"
-msgstr ""
+msgstr "Audio stopa"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
@@ -26730,21 +26730,21 @@ msgstr "Značky (0)"
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
-msgstr ""
+msgstr "Všechna alba"
 
 #: core/libs/album/widgets/albumselectors.cpp:162
 #: core/libs/album/widgets/albumselectors.cpp:221
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
-msgstr ""
+msgstr "Rekurzivně"
 
 #: core/libs/album/widgets/albumselectors.cpp:163
 #: core/libs/album/widgets/albumselectors.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
-msgstr ""
+msgstr "Rekurzivní výběr."
 
 #: core/libs/album/widgets/albumselectors.cpp:173
 #, kde-format
@@ -26768,7 +26768,7 @@ msgstr "Obnovit vybraná alba"
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
-msgstr ""
+msgstr "Všechny značky"
 
 #: core/libs/album/widgets/albumselectors.cpp:232
 #, kde-format
@@ -27905,6 +27905,8 @@ msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
 "a>"
 msgstr ""
+"<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Možnosti připojení:"
+"</a>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
@@ -28445,22 +28447,22 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "Thumb"
 msgstr "Náhled"
 
-#: core/libs/dialogs/deletedialog.cpp:173
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Seznam položek, které budou smazány."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:178
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Toto je seznam položek, které budou smazány."
 
-#: core/libs/dialogs/deletedialog.cpp:285
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -28468,7 +28470,7 @@ msgid ""
 msgstr ""
 "Pokud je povoleno, budou soubory navždy odstraněny namísto přesunu do koše."
 
-#: core/libs/dialogs/deletedialog.cpp:287
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28479,17 +28481,17 @@ msgstr ""
 "aby byly přesunuty do koše.</p><p><em>Tuto volbu používejte opatrně</em>: na "
 "většině souborových systémů nelze smazané položky bezpečně obnovit.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:299
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Mazat položky místo přesunu do koše"
 
-#: core/libs/dialogs/deletedialog.cpp:300
+#: core/libs/dialogs/deletedialog.cpp:306
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Znovu se nedot&azovat"
 
-#: core/libs/dialogs/deletedialog.cpp:359
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28498,7 +28500,7 @@ msgstr ""
 "Při výběru volby se již tento dialog nebude zobrazovat a položky budou přímo "
 "a trvale odstraněny."
 
-#: core/libs/dialogs/deletedialog.cpp:361
+#: core/libs/dialogs/deletedialog.cpp:367
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28507,7 +28509,7 @@ msgstr ""
 "Pokud je toto políčko zaškrtnuto, tento dialog se již nebude zobrazovat a "
 "položky budou přímo a trvale odstraněny."
 
-#: core/libs/dialogs/deletedialog.cpp:366
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28516,7 +28518,7 @@ msgstr ""
 "Při výběru volby se již tento dialog nebude zobrazovat a položky se budou "
 "automaticky přesouvat do koše."
 
-#: core/libs/dialogs/deletedialog.cpp:368
+#: core/libs/dialogs/deletedialog.cpp:374
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28525,17 +28527,17 @@ msgstr ""
 "Pokud je toto políčko zaškrtnuto, tento dialog se již nebude zobrazovat a "
 "položky se budou automaticky přesouvat do koše."
 
-#: core/libs/dialogs/deletedialog.cpp:380
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Tyto položky budou <b>navždy smazány</b> z vašeho disku."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Tyto položky budou přesunuty do koše."
 
-#: core/libs/dialogs/deletedialog.cpp:388
+#: core/libs/dialogs/deletedialog.cpp:394
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -28543,18 +28545,18 @@ msgstr[0] "Vybrána <b>1</b> položka."
 msgstr[1] "Vybrány <b>%1</b> položky."
 msgstr[2] "Vybráno <b>%1</b> položek."
 
-#: core/libs/dialogs/deletedialog.cpp:401
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Tato alba budou <b>navždy smazána</b> z vašeho disku."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:413
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Tato alba budou přesunuta do koše."
 
-#: core/libs/dialogs/deletedialog.cpp:411
-#: core/libs/dialogs/deletedialog.cpp:438
+#: core/libs/dialogs/deletedialog.cpp:417
+#: core/libs/dialogs/deletedialog.cpp:444
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -28562,7 +28564,7 @@ msgstr[0] "Vybráno <b>1</b> album."
 msgstr[1] "Vybrána <b>%1</b> alba."
 msgstr[2] "Vybráno <b>%1</b> alb."
 
-#: core/libs/dialogs/deletedialog.cpp:422
+#: core/libs/dialogs/deletedialog.cpp:428
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28573,7 +28575,7 @@ msgstr ""
 "p><p>Nepřehlédněte, že do tohoto seznamu jsou zahrnuta i  <b>všechna "
 "podalba</b>a budou smazána také.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:431
+#: core/libs/dialogs/deletedialog.cpp:437
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28582,18 +28584,18 @@ msgstr ""
 "<p>Tato alba budou přesunuta do koše.</p> <p>Nepřehlédněte, že do tohoto "
 "seznamu jsou zahrnuta i  <b>všechna podalba</b> a budou vyhozena také.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:575
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Přesunout do koše"
 
-#: core/libs/dialogs/deletedialog.cpp:635
+#: core/libs/dialogs/deletedialog.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Smazat vybrané položky"
 
-#: core/libs/dialogs/deletedialog.cpp:642
+#: core/libs/dialogs/deletedialog.cpp:655
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -33714,7 +33716,7 @@ msgstr "Hodnocení menší nebo rovno %1."
 #: core/libs/filters/ratingfilter.cpp:229
 #, kde-format
 msgid "Items Without Rating"
-msgstr ""
+msgstr "Položky bez hodnocení"
 
 #: core/libs/filters/ratingfilter.cpp:233
 #, kde-format
@@ -39949,12 +39951,12 @@ msgstr ""
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "Kódování dokončeno"
 
 #: core/libs/video/manager/vidslidethread.cpp:137
 #, kde-format
 msgid "Error while encoding frames!"
-msgstr ""
+msgstr "Chyba při kódování rámců."
 
 #: core/libs/video/osd/frameosdwidget.cpp:58
 #, kde-format
@@ -40101,7 +40103,7 @@ msgstr "Písmo pro On Screen Display:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr ""
+msgstr "Zde zvolte písmo použité pro vypisování textu na obrazovce."
 
 #: core/libs/video/player/audplayerwdg.cpp:264
 #, kde-format
@@ -40460,7 +40462,7 @@ msgstr "Vybrat..."
 #: core/libs/widgets/fonts/dfontselect.cpp:146
 #, kde-format
 msgid "Select a Font"
-msgstr ""
+msgstr "Vyberte písmo"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, kde-format
@@ -41021,7 +41023,7 @@ msgstr "Projekt z rodiny KDE"
 #: core/libs/widgets/mainview/daboutdata.cpp:64
 #, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr ""
+msgstr "(c) 2001-2024, team vývojářů digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -47933,7 +47935,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
-msgstr ""
+msgstr "Geolokace"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
@@ -51223,7 +51225,7 @@ msgstr "Projekce"
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:68
 #, kde-format
 msgid "Export as..."
-msgstr ""
+msgstr "Exportovat jako..."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
 #: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
@@ -51406,7 +51408,7 @@ msgstr "Přidat záložku..."
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
 #, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr ""
+msgstr "<p>Autorská práva %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
@@ -52507,7 +52509,7 @@ msgstr "S"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
 #, kde-format
 msgid "Valley"
-msgstr ""
+msgstr "Údolí"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
@@ -52517,27 +52519,27 @@ msgstr "Kráter"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
 #, kde-format
 msgid "Sea"
-msgstr ""
+msgstr "Moře"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "Místo přistání lodi s lidskou posádkou"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
 msgid "Robotic Rover"
-msgstr ""
+msgstr "Robotické průzkumné vozítko"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Unmanned Soft Landing Site"
-msgstr ""
+msgstr "Místo měkkého přistání lodí bez lidské posádky"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Unmanned Hard Landing Site"
-msgstr ""
+msgstr "Místo tvrdého přistání lodí bez lidské posádky"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:323
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:341
@@ -52551,7 +52553,7 @@ msgstr "Hora"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:339
 #, kde-format
 msgid "Nation Capital"
-msgstr ""
+msgstr "Národní hlavní město"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:340
 #, kde-format
@@ -52587,12 +52589,12 @@ msgstr "Magnetický pól"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:347
 #, kde-format
 msgid "Ship Wreck"
-msgstr ""
+msgstr "Vrak lodi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:348
 #, kde-format
 msgid "Air Port"
-msgstr ""
+msgstr "Letiště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:349
 #, kde-format
@@ -52602,12 +52604,12 @@ msgstr "Observatoř"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:350
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "Vojensky nebezpečná oblast"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:351
 #, kde-format
 msgid "OSM Site"
-msgstr ""
+msgstr "Web OSM"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:352
 #, kde-format
@@ -52622,12 +52624,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:359
 #, kde-format
 msgid "Suburb"
-msgstr ""
+msgstr "Předměstí"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:360
 #, kde-format
 msgid "Hamlet"
-msgstr ""
+msgstr "Usedlost"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:361
 #, kde-format
@@ -52657,7 +52659,7 @@ msgstr "Voda"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
 msgid "Reef"
-msgstr ""
+msgstr "Útes"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:370
 #, kde-format
@@ -52667,17 +52669,17 @@ msgstr "Les"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Beach"
-msgstr ""
+msgstr "Beach"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Wetland"
-msgstr ""
+msgstr "Bažiny"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:373
 #, kde-format
 msgid "Glacier"
-msgstr ""
+msgstr "Ledovec"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:374
 #, kde-format
@@ -52692,7 +52694,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "Útes"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
@@ -52717,7 +52719,7 @@ msgstr "Kroky"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:381
 #, kde-format
 msgid "Unknown Road"
-msgstr ""
+msgstr "Neznámá cesta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:383
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:385
@@ -52744,7 +52746,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Road"
-msgstr ""
+msgstr "Silnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
@@ -52759,7 +52761,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Unclassified Road"
-msgstr ""
+msgstr "Silnice bez zařazení"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
@@ -52769,7 +52771,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:393
 #, kde-format
 msgid "Tertiary Road"
-msgstr ""
+msgstr "Silnice třetí třídy"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
@@ -52779,7 +52781,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Road"
-msgstr ""
+msgstr "Vedlejší silnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
@@ -52789,7 +52791,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Road"
-msgstr ""
+msgstr "Hlavní silnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
@@ -52804,7 +52806,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Road"
-msgstr ""
+msgstr "Páteřní komunikace"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
@@ -52824,7 +52826,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:404
 #, kde-format
 msgid "Building"
-msgstr ""
+msgstr "Budova"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:405
 #, kde-format
@@ -52834,7 +52836,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:406
 #, kde-format
 msgid "Hostel"
-msgstr ""
+msgstr "Hostel"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:407
 #, kde-format
@@ -52949,7 +52951,7 @@ msgstr "Banka"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:429
 #, kde-format
 msgid "Archaeological Site"
-msgstr ""
+msgstr "Archeologické naleziště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:430
 #, kde-format
@@ -52959,7 +52961,7 @@ msgstr "Ambasáda"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:431
 #, kde-format
 msgid "Emergency Phone"
-msgstr ""
+msgstr "Nouzový telefon"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:432
 #, kde-format
@@ -52974,52 +52976,52 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:434
 #, kde-format
 msgid "Community Centre"
-msgstr ""
+msgstr "Komunitní centrum"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:435
 #, kde-format
 msgid "Fountain"
-msgstr ""
+msgstr "Fontána"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:436
 #, kde-format
 msgid "Night Club"
-msgstr ""
+msgstr "Noční klub"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:437
 #, kde-format
 msgid "Bench"
-msgstr ""
+msgstr "Lavička"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:438
 #, kde-format
 msgid "Court House"
-msgstr ""
+msgstr "Budova soudu"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:439
 #, kde-format
 msgid "Fire Station"
-msgstr ""
+msgstr "Hasičská stanice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:440
 #, kde-format
 msgid "Hunting Stand"
-msgstr ""
+msgstr "Lovecké stanoviště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:441
 #, kde-format
 msgid "Police"
-msgstr ""
+msgstr "Policie"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:442
 #, kde-format
 msgid "Post Box"
-msgstr ""
+msgstr "Poštovní schránka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:443
 #, kde-format
 msgid "Post Office"
-msgstr ""
+msgstr "Pošta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:444
 #, kde-format
@@ -53029,7 +53031,7 @@ msgstr "Vězení"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:445
 #, kde-format
 msgid "Recycling"
-msgstr ""
+msgstr "Recyklace"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:446
 #, kde-format
@@ -53049,42 +53051,42 @@ msgstr "Toalety"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Town Hall"
-msgstr ""
+msgstr "Radnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
 msgid "Waste Basket"
-msgstr ""
+msgstr "Odpadkový koš"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:451
 #, kde-format
 msgid "Drinking Water"
-msgstr ""
+msgstr "Pitná voda"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Graveyard"
-msgstr ""
+msgstr "Hřbitov"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:453
 #, kde-format
 msgid "Charging Station"
-msgstr ""
+msgstr "Dobíjecí stanice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:454
 #, kde-format
 msgid "Car Wash"
-msgstr ""
+msgstr "Automyčka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Social Facility"
-msgstr ""
+msgstr "Sociální zařízení"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:456
 #, kde-format
 msgid "City Wall"
-msgstr ""
+msgstr "Městské opevnění"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:457
 #, kde-format
@@ -53120,17 +53122,17 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Beverages"
-msgstr ""
+msgstr "Pití"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:465
 #, kde-format
 msgid "Hifi"
-msgstr ""
+msgstr "Hifi"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Supermarket"
-msgstr ""
+msgstr "Supermarket"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
@@ -53145,12 +53147,12 @@ msgstr "Pekárna"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:469
 #, kde-format
 msgid "Butcher"
-msgstr ""
+msgstr "Řezník"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:470
 #, kde-format
 msgid "Confectionery"
-msgstr ""
+msgstr "Konfekce"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
@@ -53160,7 +53162,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:472
 #, kde-format
 msgid "Greengrocer"
-msgstr ""
+msgstr "Zelinářství"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
@@ -53175,7 +53177,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Kiosk"
-msgstr ""
+msgstr "Kiosek"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
@@ -53215,27 +53217,27 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "Drogerie"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "Cosmetics"
-msgstr ""
+msgstr "Kosmetika"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "Hairdresser"
-msgstr ""
+msgstr "Kadeřník"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:486
 #, kde-format
 msgid "Optician"
-msgstr ""
+msgstr "Optik"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "Parfumerie"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:488
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:490
@@ -53246,7 +53248,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Florist"
-msgstr ""
+msgstr "Květinářství"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:491
 #, kde-format
@@ -53281,7 +53283,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "Car Parts"
-msgstr ""
+msgstr "Náhradní součástky do auta"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
@@ -53336,22 +53338,22 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:508
 #, kde-format
 msgid "Laundry"
-msgstr ""
+msgstr "Prádelna"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Pet Shop"
-msgstr ""
+msgstr "Zverimex"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
 msgid "Toy Store"
-msgstr ""
+msgstr "Hračkářství"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:511
 #, kde-format
 msgid "Travel Agency"
-msgstr ""
+msgstr "Cestovní agentura"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
@@ -53361,12 +53363,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Tobacco Shop"
-msgstr ""
+msgstr "Tabák"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:514
 #, kde-format
 msgid "Tea Shop"
-msgstr ""
+msgstr "Čajovna"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
@@ -53391,27 +53393,27 @@ msgstr "Most"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:519
 #, kde-format
 msgid "Lighthouse"
-msgstr ""
+msgstr "Maják"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "Přístav"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "Vodní věž"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Wind Mill"
-msgstr ""
+msgstr "Větrný mlýn"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:523
 #, kde-format
 msgid "Communications Tower"
-msgstr ""
+msgstr "Komunikační věž"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
@@ -53446,12 +53448,12 @@ msgstr "Monument"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Museum"
-msgstr ""
+msgstr "Muzeum"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Ruin"
-msgstr ""
+msgstr "Ruina"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:532
 #, kde-format
@@ -53466,12 +53468,12 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:534
 #, kde-format
 msgid "View Point"
-msgstr ""
+msgstr "Vyhlídka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:535
 #, kde-format
 msgid "Zoo"
-msgstr ""
+msgstr "Zoo"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
@@ -53486,7 +53488,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:538
 #, kde-format
 msgid "Memorial"
-msgstr ""
+msgstr "Památník"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
@@ -53496,7 +53498,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Helipad"
-msgstr ""
+msgstr "Helipad"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
@@ -53506,32 +53508,32 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Runway"
-msgstr ""
+msgstr "Letištní přistávací a vzletová dráha"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "Letiště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
-msgstr ""
+msgstr "Letištní pojezdová dráha"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Terminal"
-msgstr ""
+msgstr "Letištní terminál"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Bus Station"
-msgstr ""
+msgstr "Autobusová stanice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:547
 #, kde-format
 msgid "Bus Stop"
-msgstr ""
+msgstr "Autobusová zastávka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
@@ -53541,7 +53543,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
 msgid "Gas Station"
-msgstr ""
+msgstr "Čerpací stanice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:550
 #, kde-format
@@ -53551,7 +53553,7 @@ msgstr "Parkování"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Parking Space"
-msgstr ""
+msgstr "Parkoviště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:552
 #, kde-format
@@ -53561,12 +53563,12 @@ msgstr "Platforma"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:553
 #, kde-format
 msgid "Bicycle Rental"
-msgstr ""
+msgstr "Půjčovna kol"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Car Rental"
-msgstr ""
+msgstr "Půjčovna vozů"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
@@ -53581,27 +53583,27 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Train Station"
-msgstr ""
+msgstr "Vlakové nádraží"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:558
 #, kde-format
 msgid "Tram Stop"
-msgstr ""
+msgstr "Zastávka tramvaje"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:559
 #, kde-format
 msgid "Bicycle Parking"
-msgstr ""
+msgstr "Stojan na kola"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Motorcycle Parking"
-msgstr ""
+msgstr "Parkoviště pro motocykly"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Subway Entrance"
-msgstr ""
+msgstr "Vstup do metra"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:562
 #, kde-format
@@ -53611,7 +53613,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Place Of Worship"
-msgstr ""
+msgstr "Modlitebna"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
@@ -53621,52 +53623,52 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
 msgid "Buddhist"
-msgstr ""
+msgstr "Budhistická"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Christian"
-msgstr ""
+msgstr "Křesťanská"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Muslim"
-msgstr ""
+msgstr "Muslimská"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:568
 #, kde-format
 msgid "Hindu"
-msgstr ""
+msgstr "Hinduistická"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Jain"
-msgstr ""
+msgstr "Jain"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Jewish"
-msgstr ""
+msgstr "Židovská"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:571
 #, kde-format
 msgid "Shinto"
-msgstr ""
+msgstr "Šintoistická"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Sikh"
-msgstr ""
+msgstr "Sikhská"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Taoist"
-msgstr ""
+msgstr "Taoistická"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:574
 #, kde-format
 msgid "Golf Course"
-msgstr ""
+msgstr "Golfové hřiště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:575
 #, kde-format
@@ -53691,17 +53693,17 @@ msgstr "Výška tónu"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "Sportovní středisko"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
 msgid "Stadium"
-msgstr ""
+msgstr "Stadion"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Swimming Pool"
-msgstr ""
+msgstr "Plavecký bazén"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
@@ -53731,27 +53733,27 @@ msgstr "Komerční"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Construction"
-msgstr ""
+msgstr "Staveniště"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:589
 #, kde-format
 msgid "Farmland"
-msgstr ""
+msgstr "Pole"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Farmyard"
-msgstr ""
+msgstr "Farma"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Garages"
-msgstr ""
+msgstr "Garáže"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "Trávník"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
@@ -53761,12 +53763,12 @@ msgstr "Industrial"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "Skládka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
 msgid "Meadow"
-msgstr ""
+msgstr "Louka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
@@ -53776,7 +53778,7 @@ msgstr "Vojenství"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "Lom"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
@@ -53786,12 +53788,12 @@ msgstr "Železniční trať"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Reservoir"
-msgstr ""
+msgstr "Nádrž"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Residential"
-msgstr ""
+msgstr "Obydlí"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:601
 #, kde-format
@@ -53801,28 +53803,28 @@ msgstr "Prodej"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Orchard"
-msgstr ""
+msgstr "Sad"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Vineyard"
-msgstr ""
+msgstr "Vinice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:604
 #, kde-format
 msgid "Rail"
-msgstr ""
+msgstr "Železnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Narrow Gauge"
-msgstr ""
+msgstr "Úzký rozchod"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:606
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:218
 #, kde-format
 msgid "Tram"
-msgstr ""
+msgstr "Tramvaj"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:607
 #, kde-format
@@ -53832,7 +53834,7 @@ msgstr "Light Rail"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Abandoned Railway"
-msgstr ""
+msgstr "Opuštěná železnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:609
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:217
@@ -53843,7 +53845,7 @@ msgstr "Podzemní dráha"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:610
 #, kde-format
 msgid "Preserved Railway"
-msgstr ""
+msgstr "Zachovalá železnice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
@@ -53858,7 +53860,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
 msgid "Monorail"
-msgstr ""
+msgstr "Jednokolejka"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
@@ -53868,7 +53870,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:615
 #, kde-format
 msgid "Power Tower"
-msgstr ""
+msgstr "Trafostanice"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:616
 #, kde-format
@@ -53889,7 +53891,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:619
 #, kde-format
 msgid "Gondola"
-msgstr ""
+msgstr "Gondola"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
@@ -54061,7 +54063,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Urban Area"
-msgstr ""
+msgstr "Obydlená oblast"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
@@ -54118,54 +54120,54 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "Door"
-msgstr ""
+msgstr "Dveře"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "Room"
-msgstr ""
+msgstr "Místnost"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:48
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:51
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:54
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:57
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:88
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:91
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:94
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:214
 #, kde-format
@@ -54190,7 +54192,7 @@ msgstr "Sběrnice"
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:220
 #, kde-format
 msgid "Trolley Bus"
-msgstr ""
+msgstr "Trolejbus"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:221
 #, kde-format
@@ -54200,7 +54202,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:222
 #, kde-format
 msgid "Mountainbike Route"
-msgstr ""
+msgstr "Trasa pro horské kolo"
 
 #: core/utilities/geolocation/marble/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
 #, kde-format
@@ -54787,7 +54789,7 @@ msgstr "Nástroj pro měření"
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:92
 #, kde-format
 msgid "&Measure Tool"
-msgstr ""
+msgstr "&Nástroj pro měření"
 
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureToolPlugin.cpp:107
 #, kde-format
@@ -55271,7 +55273,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
 msgid "Map Quality"
-msgstr ""
+msgstr "Kvalita mapy"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
 #, kde-format
@@ -55318,7 +55320,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
 #, kde-format
 msgid "During Animations:"
-msgstr ""
+msgstr "Během animací:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -55332,7 +55334,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
 msgid "Mouse Behavior"
-msgstr ""
+msgstr "Chování myši"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
 #, kde-format
@@ -55375,7 +55377,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
 msgid "Physical Memory:"
-msgstr ""
+msgstr "Fyzická paměť:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:196
@@ -55386,7 +55388,7 @@ msgstr "Vyprázdnit"
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:191
 #, kde-format
 msgid "Hard Disc:"
-msgstr ""
+msgstr "Pevný disk:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:207
 #, kde-format
@@ -55396,7 +55398,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:209
 #, kde-format
 msgid "Default Font:"
-msgstr ""
+msgstr "Výchozí písmo:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:211
 #, kde-format
@@ -55552,17 +55554,17 @@ msgstr "Stáhnout oblast"
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:229
 #, kde-format
 msgid "Tile type to be downloaded:"
-msgstr ""
+msgstr "Typ dlaždice, která má být stažena:"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:231
 #, kde-format
 msgid "Texture tiles"
-msgstr ""
+msgstr "Dlaždice textur"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:232
 #, kde-format
 msgid "Vector tiles"
-msgstr ""
+msgstr "Dlaždice vektorů"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:233
 #, kde-format
@@ -55577,7 +55579,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
-msgstr ""
+msgstr "Odhadovaná velikost dlaždic ke stažení"
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:541
 #, kde-format
@@ -56814,7 +56816,7 @@ msgstr "Odstranit značku"
 msgid "Assign Labels"
 msgstr "Přiřadit značky"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:162
+#: core/utilities/imageeditor/widgets/canvas.cpp:164
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -56823,30 +56825,30 @@ msgstr ""
 "Chyba při načítání obrázku\n"
 "\"%1\""
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Před"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Po"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
 #, kde-format
 msgid "Before"
 msgstr "Před"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
 #, kde-format
 msgid "After"
 msgstr "Po"
@@ -56955,7 +56957,7 @@ msgstr ""
 msgid "Preview on mouse-over"
 msgstr "Náhled při přejetí myší"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
 #, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
@@ -62236,7 +62238,7 @@ msgstr "Přidání sbírky"
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
-msgstr ""
+msgstr "Aktualizovat sbírku"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1626
 #, kde-format
@@ -64258,6 +64260,8 @@ msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
+"Nastavení prohlížecího stolku\n"
+"Přizpůsobení nástroje k porovnávání položek"
 
 #: core/utilities/setup/setup.cpp:181
 #, kde-format

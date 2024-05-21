@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 01:44+0000\n"
-"PO-Revision-Date: 2024-05-09 07:30+0900\n"
+"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -3795,7 +3795,7 @@ msgstr "檔名"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -10926,7 +10926,7 @@ msgstr "兩張地圖 - 上下"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
@@ -13264,7 +13264,7 @@ msgstr "新增(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:574
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "刪除(&D)"
@@ -15520,32 +15520,32 @@ msgid ""
 "a standard XMP/NAA reference code."
 msgstr "在這裡輸入主題詳細名稱。如果您選擇標準 XMP/NAA 參考代碼請使用英文。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "調整時間與日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "將中繼資料寫入到每個檔案"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "將校正後的日期與時間寫入各個影像"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "調整時間與日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
@@ -15553,21 +15553,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消目前動作"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "關閉"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -29196,29 +29196,29 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr "這個選項可將影像顯示縮放為目前選擇的區域。"
 
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "Thumb"
 msgstr "縮圖"
 
-#: core/libs/dialogs/deletedialog.cpp:173
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "將要刪除的項目清單。"
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:178
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "這份清單列出了將要刪除的項目。"
 
-#: core/libs/dialogs/deletedialog.cpp:285
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "若勾選此選項，將會永久移除檔案，而不是放置到垃圾桶。"
 
-#: core/libs/dialogs/deletedialog.cpp:287
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29228,78 +29228,78 @@ msgstr ""
 "<p>如果勾選這個方塊，這些項目會被<b>永久移除</b>而不會放到垃圾桶。</p><p><em>"
 "請謹慎使用這個選項</em>：大部分的檔案系統都無法可靠地復原被刪除的項目。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:299
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "刪除項目而不是移至垃圾桶(&D)"
 
-#: core/libs/dialogs/deletedialog.cpp:300
+#: core/libs/dialogs/deletedialog.cpp:306
 #, kde-format
 msgid "Do not &ask again"
 msgstr "不再詢問 (&A)"
 
-#: core/libs/dialogs/deletedialog.cpp:359
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr "如果勾選，將不再出現這個對話框，項目會直接永久刪除。"
 
-#: core/libs/dialogs/deletedialog.cpp:361
+#: core/libs/dialogs/deletedialog.cpp:367
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr "如果勾選這個方框，將不再出現這個對話框，項目會被直接永久刪除。"
 
-#: core/libs/dialogs/deletedialog.cpp:366
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "如果勾選，這個對話框將不再顯示，項目會直接移至垃圾桶。"
 
-#: core/libs/dialogs/deletedialog.cpp:368
+#: core/libs/dialogs/deletedialog.cpp:374
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr "如果勾選此選項，則將不會再出現此對話框，項目會被直接移至垃圾桶。"
 
-#: core/libs/dialogs/deletedialog.cpp:380
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "這些項目將從您的硬碟中<b>永久刪除</b>。"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "這些項目會移至垃圾桶。"
 
-#: core/libs/dialogs/deletedialog.cpp:388
+#: core/libs/dialogs/deletedialog.cpp:394
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "已選擇 <b>%1</b> 個項目。"
 
-#: core/libs/dialogs/deletedialog.cpp:401
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "此相簿將會自您的硬碟<b>永久刪除</b>。"
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:413
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "這些相簿將被移到垃圾桶。"
 
-#: core/libs/dialogs/deletedialog.cpp:411
-#: core/libs/dialogs/deletedialog.cpp:438
+#: core/libs/dialogs/deletedialog.cpp:417
+#: core/libs/dialogs/deletedialog.cpp:444
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "已選擇了 <b>%1</b> 本相簿。"
 
-#: core/libs/dialogs/deletedialog.cpp:422
+#: core/libs/dialogs/deletedialog.cpp:428
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29309,7 +29309,7 @@ msgstr ""
 "<p>此相簿將會從您的硬碟中<b>永久刪除</b>。</p><p>備註：<b>所有子相簿</b>也將"
 "一併永久刪除。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:431
+#: core/libs/dialogs/deletedialog.cpp:437
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29317,18 +29317,18 @@ msgid ""
 msgstr ""
 "<p>此相簿將移到垃圾桶。</p><p>備註：<b>所有子相簿</b>也將一併移到垃圾筒。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:575
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "移至垃圾桶(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:635
+#: core/libs/dialogs/deletedialog.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "即將刪除選擇的項目"
 
-#: core/libs/dialogs/deletedialog.cpp:642
+#: core/libs/dialogs/deletedialog.cpp:655
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -46980,7 +46980,7 @@ msgstr "泰國"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Timor-Leste"
-msgstr "帝汶"
+msgstr "東帝汶"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:260
 #, kde-format
@@ -58014,37 +58014,37 @@ msgstr "移除標籤"
 msgid "Assign Labels"
 msgstr "指定標記"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:162
+#: core/utilities/imageeditor/widgets/canvas.cpp:164
 #, kde-format
 msgid ""
 "Failed to load image\n"
 "\"%1\""
 msgstr "載入影像「%1」失敗"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "之前："
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "之後："
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
 #, kde-format
 msgid "Before"
 msgstr "之前："
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
 #, kde-format
 msgid "After"
 msgstr "之後："
@@ -58148,7 +58148,7 @@ msgstr "如果啟用這個選項，滑鼠在影像區域時會顯示原始影像
 msgid "Preview on mouse-over"
 msgstr "滑鼠懸停時預覽"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
 #, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"

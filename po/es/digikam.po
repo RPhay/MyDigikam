@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-20 01:44+0000\n"
+"POT-Creation-Date: 2024-05-21 01:51+0000\n"
 "PO-Revision-Date: 2024-05-16 11:55+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3990,7 +3990,7 @@ msgstr "Nombre de archivo"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -11537,7 +11537,7 @@ msgstr "Dos mapas (arriba y abajo)"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:105
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:66
@@ -13934,7 +13934,7 @@ msgstr "&Añadir"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:574
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&Borrar"
@@ -16021,32 +16021,32 @@ msgstr ""
 "Introduzca aquí el nombre detallado del tema. Se usará el inglés si ha "
 "seleccionado un código de referencia XMP/NAA estándar."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Ajustar fecha y hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr ""
 "Escribir la fecha y hora corregidas para cada imagen y cerrar el diálogo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Escribir la fecha y hora corregidas para cada imagen"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Ajustar fecha y hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
@@ -16054,21 +16054,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Cancelar la operación actual"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Cerrar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -29921,22 +29921,22 @@ msgstr ""
 "Este archivo binario se usa para actualizar la base de datos a la versión "
 "actual del servidor."
 
-#: core/libs/dialogs/deletedialog.cpp:170
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatura"
 
-#: core/libs/dialogs/deletedialog.cpp:173
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Lista de elementos que se van a borrar."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:178
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Esta es la lista de elementos que se van a borrar."
 
-#: core/libs/dialogs/deletedialog.cpp:285
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29945,7 +29945,7 @@ msgstr ""
 "Si marcado, los archivos se eliminarán permanentemente en vez de moverlos a "
 "la papelera."
 
-#: core/libs/dialogs/deletedialog.cpp:287
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29957,17 +29957,17 @@ msgstr ""
 "precaución</em>: la mayoría de los sistemas de archivos no son capaces de "
 "revertir el borrado.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:299
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Borrar los elementos en vez de moverlos a la papelera"
 
-#: core/libs/dialogs/deletedialog.cpp:300
+#: core/libs/dialogs/deletedialog.cpp:306
 #, kde-format
 msgid "Do not &ask again"
 msgstr "No volver &a preguntar"
 
-#: core/libs/dialogs/deletedialog.cpp:359
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29976,7 +29976,7 @@ msgstr ""
 "Si está marcado, no se mostrará más este diálogo y los elementos serán "
 "borrados directamente."
 
-#: core/libs/dialogs/deletedialog.cpp:361
+#: core/libs/dialogs/deletedialog.cpp:367
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29985,7 +29985,7 @@ msgstr ""
 "Si está marcado, no se mostrará más este diálogo y los elementos serán "
 "borrados directamente."
 
-#: core/libs/dialogs/deletedialog.cpp:366
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29994,7 +29994,7 @@ msgstr ""
 "Si está marcado, no se mostrará más este diálogo y los archivos se moverán "
 "directamente a la papelera."
 
-#: core/libs/dialogs/deletedialog.cpp:368
+#: core/libs/dialogs/deletedialog.cpp:374
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30003,43 +30003,43 @@ msgstr ""
 "Si está marcado, no se mostrará más este diálogo y los archivos se moverán "
 "directamente a la papelera."
 
-#: core/libs/dialogs/deletedialog.cpp:380
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Estos elementos serán <b>borrados permanentemente</b> de su disco duro."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Estos elementos se moverán a la papelera."
 
-#: core/libs/dialogs/deletedialog.cpp:388
+#: core/libs/dialogs/deletedialog.cpp:394
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> elemento seleccionado."
 msgstr[1] "<b>%1</b> elementos seleccionados."
 
-#: core/libs/dialogs/deletedialog.cpp:401
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Estos álbumes serán <b>borrados permanentemente</b> de su disco duro."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:413
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Estos álbumes se moverán a la papelera."
 
-#: core/libs/dialogs/deletedialog.cpp:411
-#: core/libs/dialogs/deletedialog.cpp:438
+#: core/libs/dialogs/deletedialog.cpp:417
+#: core/libs/dialogs/deletedialog.cpp:444
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> álbum seleccionado."
 msgstr[1] "<b>%1</b> álbumes seleccionados."
 
-#: core/libs/dialogs/deletedialog.cpp:422
+#: core/libs/dialogs/deletedialog.cpp:428
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30050,7 +30050,7 @@ msgstr ""
 "p><p>Note que <b>todos los sub-álbumes</b> están incluidos en esta lista y "
 "también serán borrados de forma permanente.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:431
+#: core/libs/dialogs/deletedialog.cpp:437
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30060,18 +30060,18 @@ msgstr ""
 "álbumes</b> están incluidos en esta lista y también serán movidos a la "
 "papelera.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:575
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Mover a la papelera"
 
-#: core/libs/dialogs/deletedialog.cpp:635
+#: core/libs/dialogs/deletedialog.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "A punto de borrar los elementos seleccionados"
 
-#: core/libs/dialogs/deletedialog.cpp:642
+#: core/libs/dialogs/deletedialog.cpp:655
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -58986,7 +58986,7 @@ msgstr "Eliminar una etiqueta"
 msgid "Assign Labels"
 msgstr "Asignar emblemas"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:162
+#: core/utilities/imageeditor/widgets/canvas.cpp:164
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -58995,30 +58995,30 @@ msgstr ""
 "No se ha podido cargar la imagen\n"
 "«%1»"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:88
 #, kde-format
 msgctxt "Preview image (before filter has been applied)"
 msgid "Before"
 msgstr "Antes"
 
-#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:44
+#: core/utilities/imageeditor/widgets/imageguidewidget.cpp:90
 #, kde-format
 msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Después"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:189
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:261
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:298
 #, kde-format
 msgid "Before"
 msgstr "Antes"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:190
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:227
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:265
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:302
 #, kde-format
 msgid "After"
 msgstr "Después"
@@ -59130,7 +59130,7 @@ msgstr ""
 msgid "Preview on mouse-over"
 msgstr "Vista previa al situar el ratón encima"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:192
 #, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
