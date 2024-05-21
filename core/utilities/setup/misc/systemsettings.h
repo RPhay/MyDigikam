@@ -64,6 +64,15 @@ public:
     bool enableLogging     = false;
     bool disableOpenCL     = true;
 
+    // Video Settings Windows
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    bool    disableHWConv  = false;
+    QString videoBackend   = QLatin1String("ffmpeg");
+
+#endif
+
     // Proxy Settings.
 
     QString proxyUrl;

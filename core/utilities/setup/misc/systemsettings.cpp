@@ -87,6 +87,15 @@ void SystemSettings::readSettings()
     enableLogging        = settings.value(QLatin1String("enableLogging"),     false).toBool();
     disableOpenCL        = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
 
+    // Video Settings Windows
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    disableHWConv        = settings.value(QLatin1String("disableHWConv"),     false).toBool();
+    videoBackend         = settings.value(QLatin1String("videoBackend"),      QLatin1String("ffmpeg")).toString();
+
+#endif
+
     // Proxy Settings
 
     proxyUrl             = settings.value(QLatin1String("proxyUrl"),          QString()).toString();
@@ -163,6 +172,13 @@ void SystemSettings::saveSettings()
     {
         settings.remove(QLatin1String("disableFaceEngine"));
     }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    settings.setValue(QLatin1String("disableHWConv"),     disableHWConv);
+    settings.setValue(QLatin1String("videoBackend"),      videoBackend);
+
+#endif
 
     settings.setValue(QLatin1String("proxyUrl"),          proxyUrl);
     settings.setValue(QLatin1String("proxyPort"),         proxyPort);

@@ -29,8 +29,9 @@
 
 // Local includes
 
-#include "digikam_globals.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
+#include "digikam_globals.h"
 #include "systemsettings.h"
 #include "filesdownloader.h"
 #include "ui_proxysettingswidget.h"
@@ -55,6 +56,13 @@ public:
     QCheckBox*              softwareOpenGLCheck    = nullptr;
     QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    QCheckBox*              disableHWConvCheck     = nullptr;
+    QComboBox*              videoBackendCBox       = nullptr;
+
+#endif
 
     QPushButton*            filesDownloadButton    = nullptr;
 
@@ -83,8 +91,20 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
-    d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    d->disableHWConvCheck     = new QCheckBox(i18n("fix AMD-GPU Vdeo decoding Problem"), this);
+
+    QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for Video:"), this);
+
+    d->videoBackendCBox       = new QComboBox(this);
+    d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"), QLatin1String("ffmpeg"));
+    d->videoBackendCBox->addItem(i18n("Windows (System)"), QLatin1String("windows"));
+
+#endif
+
+    d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
     d->filesDownloadButton    = new QPushButton(i18n("Download required binary data..."), this);
 
     // Proxy Settings
@@ -110,16 +130,25 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-    layout->addWidget(d->useHighDpiScalingCheck, row++, 0, 1, 1);
-    layout->addWidget(d->useHighDpiPixmapsCheck, row++, 0, 1, 1);
+    layout->addWidget(d->useHighDpiScalingCheck, row++, 0, 1, 2);
+    layout->addWidget(d->useHighDpiPixmapsCheck, row++, 0, 1, 2);
 
 #endif
 
-    layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 1);
-    layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 1);
-    layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 1);
-    layout->addWidget(d->filesDownloadButton,    row++, 0, 1, 1);
-    layout->addWidget(proxySettings,             row++, 0, 1, 1);
+    layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
+    layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 2);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    layout->addWidget(d->disableHWConvCheck,     row++, 0, 1, 2);
+    layout->addWidget(videoLabel,                row,   0, 1, 1);
+    layout->addWidget(d->videoBackendCBox,       row++, 1, 1, 1); 
+
+#endif
+
+    layout->addWidget(d->enableLoggingCheck,     row++, 0, 1, 2);
+    layout->addWidget(d->filesDownloadButton,    row++, 0, 1, 2);
+    layout->addWidget(proxySettings,             row++, 0, 1, 2);
     layout->addWidget(systemNote,                row++, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setRowStretch(row, 10);
@@ -148,6 +177,13 @@ void SystemSettingsWidget::readSettings()
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    d->disableHWConvCheck->setChecked(system.disableHWConv);
+    d->videoBackendCBox->setCurrentIndex(d->videoBackendCBox->findData(system.videoBackend));
+
+#endif
+
     // Proxy Settings
 
     d->uiProxySettings.kcfg_proxyUrl->setText(system.proxyUrl);
@@ -172,6 +208,13 @@ void SystemSettingsWidget::saveSettings()
     system.softwareOpenGL    = d->softwareOpenGLCheck->isChecked();
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+
+    system.disableHWConv     = d->disableHWConvCheck->isChecked();
+    system.videoBackend      = d->videoBackendCBox->currentData().toString();
+
+#endif
 
     system.proxyUrl          = d->uiProxySettings.kcfg_proxyUrl->text();
     system.proxyPort         = d->uiProxySettings.kcfg_proxyPort->value();
