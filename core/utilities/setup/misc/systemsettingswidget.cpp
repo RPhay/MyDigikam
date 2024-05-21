@@ -57,7 +57,7 @@ public:
     QCheckBox*              disableOpenCLCheck     = nullptr;
     QCheckBox*              enableLoggingCheck     = nullptr;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     QCheckBox*              disableHWConvCheck     = nullptr;
     QComboBox*              videoBackendCBox       = nullptr;
@@ -92,7 +92,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     d->softwareOpenGLCheck    = new QCheckBox(i18n("Force use of software OpenGL rendering"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     d->disableHWConvCheck     = new QCheckBox(i18n("fix AMD-GPU Vdeo decoding Problem"), this);
 
@@ -138,7 +138,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(d->softwareOpenGLCheck,    row++, 0, 1, 2);
     layout->addWidget(d->disableOpenCLCheck,     row++, 0, 1, 2);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     layout->addWidget(d->disableHWConvCheck,     row++, 0, 1, 2);
     layout->addWidget(videoLabel,                row,   0, 1, 1);
@@ -177,7 +177,7 @@ void SystemSettingsWidget::readSettings()
     d->enableLoggingCheck->setChecked(system.enableLogging);
     d->disableOpenCLCheck->setChecked(system.disableOpenCL);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     d->disableHWConvCheck->setChecked(system.disableHWConv);
     d->videoBackendCBox->setCurrentIndex(d->videoBackendCBox->findData(system.videoBackend));
@@ -209,7 +209,7 @@ void SystemSettingsWidget::saveSettings()
     system.enableLogging     = d->enableLoggingCheck->isChecked();
     system.disableOpenCL     = d->disableOpenCLCheck->isChecked();
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     system.disableHWConv     = d->disableHWConvCheck->isChecked();
     system.videoBackend      = d->videoBackendCBox->currentData().toString();

@@ -156,7 +156,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     if (system.disableHWConv)
     {

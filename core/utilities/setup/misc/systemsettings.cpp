@@ -89,7 +89,7 @@ void SystemSettings::readSettings()
 
     // Video Settings Windows
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     disableHWConv        = settings.value(QLatin1String("disableHWConv"),     false).toBool();
     videoBackend         = settings.value(QLatin1String("videoBackend"),      QLatin1String("ffmpeg")).toString();
@@ -173,7 +173,7 @@ void SystemSettings::saveSettings()
         settings.remove(QLatin1String("disableFaceEngine"));
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined Q_OS_WIN
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
     settings.setValue(QLatin1String("disableHWConv"),     disableHWConv);
     settings.setValue(QLatin1String("videoBackend"),      videoBackend);
