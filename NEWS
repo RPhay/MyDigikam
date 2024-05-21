@@ -108,8 +108,8 @@ BUGFIXES:
 080 ==> 487285 - Date/Time correction tool applies corrections twice, and in seemingly random order.
 081 ==> 486755 - Images.album = NULL without reason (disappearing images in DK).
 082 ==> 473157 - Improvement of unsharp mask.
-083 ==> 
-084 ==> 
+083 ==> 481011 - The metadata tabs disappear from the right sidebar.
+084 ==> 484371 - Disapearring sub tabs in Right Sidebar.
 085 ==> 
 086 ==> 
 087 ==> 
