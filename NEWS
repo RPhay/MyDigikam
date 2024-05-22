@@ -116,7 +116,7 @@ BUGFIXES:
 088 ==> 378392 - Implement custom LUT3D tables.
 089 ==> 406484 - Possibility to use *.cube 3D LUT.
 090 ==> 308141 - NR needs some updates and improvements.
-091 ==> 
+091 ==> 259562 - Ability to add elliptical vignetting.
 092 ==> 
 093 ==> 
 094 ==> 
