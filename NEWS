@@ -112,7 +112,7 @@ BUGFIXES:
 084 ==> 484371 - Disapearring sub tabs in Right Sidebar.
 085 ==> 325844 - Add access to watermark tool in Image editor.
 086 ==> 227946 - Adding frame in excentric position.
-087 ==> 
+087 ==> 342513 - Add support for fractional radius in blur and unsharp mask filters.
 088 ==> 
 089 ==> 
 090 ==> 
