@@ -134,12 +134,10 @@ void TagCompleter::update(const QString& fragment)
 
     d->model->clear();
 
+    QList<QStandardItem*> items;
     d->factory.setFragment(fragment);
 
-    QList<TaggingAction> actions    = d->factory.actions();
-    QList<QStandardItem*> items;
-
-    Q_FOREACH (const TaggingAction& action, actions)
+    Q_FOREACH (const TaggingAction& action, d->factory.actions())
     {
         QStandardItem* const item = new QStandardItem;
 
