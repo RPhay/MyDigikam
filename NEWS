@@ -117,7 +117,7 @@ BUGFIXES:
 089 ==> 406484 - Possibility to use *.cube 3D LUT.
 090 ==> 308141 - NR needs some updates and improvements.
 091 ==> 259562 - Ability to add elliptical vignetting.
-092 ==> 
+092 ==> 136770 - Hotpixel tool doesn't interpret black image correctly with stuck pixel.
 093 ==> 
 094 ==> 
 095 ==> 
