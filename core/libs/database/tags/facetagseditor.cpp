@@ -428,10 +428,8 @@ void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
             continue;
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Test4 FaceTagsIface:" << face.imageId() << face.tagId();
         ItemTagPair pair(face.imageId(), face.tagId());
         removeFaceAndTag(pair, face, true);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Test5 FaceTagsIface:" << face.imageId() << face.tagId();
     }
 }
 
