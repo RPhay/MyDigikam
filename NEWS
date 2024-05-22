@@ -114,7 +114,7 @@ BUGFIXES:
 086 ==> 227946 - Adding frame in excentric position.
 087 ==> 342513 - Add support for fractional radius in blur and unsharp mask filters.
 088 ==> 378392 - Implement custom LUT3D tables.
-089 ==> 
+089 ==> 406484 - Possibility to use *.cube 3D LUT.
 090 ==> 
 091 ==> 
 092 ==> 
