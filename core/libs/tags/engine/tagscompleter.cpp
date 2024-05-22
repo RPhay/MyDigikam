@@ -72,13 +72,12 @@ public:
 
 public:
 
-    TaggingActionFactory factory;
-
+    TagModel*            supportingModel    = nullptr;
+    AlbumFilterModel*    filterModel        = nullptr;
 
     QStandardItemModel*  model              = nullptr;
 
-    TagModel*            supportingModel    = nullptr;
-    AlbumFilterModel*    filterModel        = nullptr;
+    TaggingActionFactory factory;
 };
 
 TagCompleter::TagCompleter(QObject* const parent)
