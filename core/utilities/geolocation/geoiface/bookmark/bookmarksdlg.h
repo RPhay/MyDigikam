@@ -45,7 +45,7 @@ public:
 
 private Q_SLOTS:
 
-    void accept()         override;
+    void accept()        override;
 
 private:
 
@@ -61,7 +61,8 @@ class DIGIKAM_EXPORT BookmarksDialog : public QDialog
 
 public:
 
-    explicit BookmarksDialog(QWidget* const parent = nullptr, BookmarksManager* const mngr = nullptr);
+    explicit BookmarksDialog(QWidget* const parent = nullptr,
+                             BookmarksManager* const mngr = nullptr);
     ~BookmarksDialog()              override;
 
 private Q_SLOTS:

@@ -77,7 +77,9 @@ protected:
     virtual void postPopulated();
 
     /// put all of the children of parent into menu up to max
-    void createMenu(const QModelIndex& parent, int max, QMenu* parentMenu = nullptr, QMenu* menu = nullptr);
+    void createMenu(const QModelIndex& parent, int max,
+                    QMenu* parentMenu = nullptr,
+                    QMenu* menu = nullptr);
 
 private Q_SLOTS:
 
@@ -106,7 +108,8 @@ class BookmarksMenu : public ModelMenu
 
 public:
 
-    explicit BookmarksMenu(BookmarksManager* const mngr, QWidget* const parent = nullptr);
+    explicit BookmarksMenu(BookmarksManager* const mngr,
+                           QWidget* const parent = nullptr);
     ~BookmarksMenu() override;
 
     void setInitialActions(const QList<QAction*>& actions);
