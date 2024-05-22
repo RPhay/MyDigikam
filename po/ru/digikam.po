@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"POT-Creation-Date: 2024-05-22 01:47+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2733,7 +2733,7 @@ msgstr "&Справка"
 msgid "Main Toolbar"
 msgstr "Основная панель инструментов"
 
-#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2743,7 +2743,7 @@ msgstr "Основная панель инструментов"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
+#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2752,7 +2752,7 @@ msgstr ""
 "Гиздатов,Дмитрий Ашкадов,Александр Яворский,Ольга Миронова,Олеся Герасименко,"
 "Мария Шикунова"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
+#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2761,34 +2761,34 @@ msgstr ""
 "rustahm@gmail.com,dmitry.ashkadov@gmail.com,kekcuha@gmail.com,omiro@basealt."
 "ru,gammaray@basealt.ru,trasnslation-team@basealt.ru"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Открыть диалог камеры с папкой «path»"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Открыть диалог камеры для устройства с Solid UDI «udi»"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Автоматически определять и открывать камеру gphoto2"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:237
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Запустить digiKam с файлом базы данных SQLite, находящимся в каталоге «dir»"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустить digiKam с конфигурационным файлом «config»"
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:267
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2798,7 +2798,7 @@ msgstr ""
 "<p>Вы используете 32-битную версию digiKam в 64-х битной ОС Windows</p> "
 "<p>Рекомендуется использовать 64-х битную версию приложения.</p>"
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:311
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2809,7 +2809,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере не установлено ни одного модуля для работы с базами данных."
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:320
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2820,7 +2820,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере установлены следующие модули баз данных:"
 
-#: core/app/main/main.cpp:353
+#: core/app/main/main.cpp:364
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49572,19 +49572,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Папки"
 
-#: core/showfoto/main/main.cpp:186
+#: core/showfoto/main/main.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Открыть файл(ы) или каталог(и)"
 
-#: core/showfoto/main/main.cpp:235
+#: core/showfoto/main/main.cpp:246
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -66892,40 +66892,63 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Группировка"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 "Использовать масштабирование с высоким разрешением на основе коэффициента "
 "экранирования"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Использовать растровые изображения с высоким разрешением DPI"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Отключить аппаратное ускорение OpenCL"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:86
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
+msgid "fix AMD-GPU Vdeo decoding Problem"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid "Used decoding backend for Video:"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@item: default raw plugin"
+#| msgid " (default)"
+msgid "FFmpeg (Default)"
+msgstr " (по умолчанию)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Windows only"
+msgid "Windows (System)"
+msgstr "Только для Windows"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Включить внутреннее журналирование отладки"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgid "Download required binary data..."
 msgstr "Загрузить необходимые файлы"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -68408,9 +68431,6 @@ msgstr "Импорт"
 
 #~ msgid "OpenGL type"
 #~ msgstr "Тип OpenGL"
-
-#~ msgid "Windows only"
-#~ msgstr "Только для Windows"
 
 #~ msgid "OpenGLES is Used by DXVA Zero Copy"
 #~ msgstr "OpenGLES используется DXVA Zero Copy"

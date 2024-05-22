@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"POT-Creation-Date: 2024-05-22 01:47+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2793,7 +2793,7 @@ msgstr "&ช่วยเหลือ"
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2803,47 +2803,47 @@ msgstr "แถบเครื่องมือหลัก"
 msgid "digiKam"
 msgstr "ดิจิแคม"
 
-#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
+#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
+#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:229
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "เปิดกล่องกล้องที่ <path>"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "เปิดกล่องกล้องสำหรับอุปกรณ์พร้อมด้วยค่า Solid UDI <udi>"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "ตรวจจับอุปกรณ์กล้องที่เชื่อมต่อผ่าน gphoto2 และเปิดอัตโนมัติ"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:237
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:267
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2851,7 +2851,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:311
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2861,7 +2861,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "ทั้งนี้ยังไม่พบว่ามีการติดตั้งมอดูลสำหรับใช้งานฐานข้อมูลใด ๆ บนเครื่องของคุณ"
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:320
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2871,7 +2871,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "มอดูลสำหรับใช้งานฐานข้อมูลต่าง ๆ ที่ถูกติดตั้งไว้แล้วคือ:"
 
-#: core/app/main/main.cpp:353
+#: core/app/main/main.cpp:364
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -50320,20 +50320,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "โฟลเดอร์: "
 
-#: core/showfoto/main/main.cpp:186
+#: core/showfoto/main/main.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:215
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "แฟ้มหรือโฟลเดอร์ที่จะเปิด"
 
-#: core/showfoto/main/main.cpp:235
+#: core/showfoto/main/main.cpp:246
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -67254,38 +67254,59 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "กลุ่ม"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:86
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
+msgid "fix AMD-GPU Vdeo decoding Problem"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid "Used decoding backend for Video:"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgid "Default"
+msgid "FFmpeg (Default)"
+msgstr "ค่าปริยาย"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, kde-format
+msgid "Windows (System)"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Download required binary data..."
 msgstr "กำลังดาวน์โหลดแฟ้ม %1..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

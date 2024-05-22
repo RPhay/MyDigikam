@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"POT-Creation-Date: 2024-05-22 01:47+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2584,7 +2584,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2594,7 +2594,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
+#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2602,7 +2602,7 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
+#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2612,33 +2612,33 @@ msgstr ""
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "打开位于 \"path\" 的相机对话框"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "打开 Solid UDI 为 \"udi\" 设备的相机对话框"
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自动检测并打开已连接的 gphoto2 相机"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:237
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "启动 digiKam 时使用在 \"dir\" 目录中发现的 SQLite 数据库文件"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "启动 digiKam 时使用名为 \"config\" 的配置文件"
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:267
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2648,7 +2648,7 @@ msgstr ""
 "<p>您正在 64 位 Windows 操作系统中运行 32 位版本的 digiKam。</p><p>请安装 64 "
 "位版本的 digiKam 以获得更好的使用体验。</p>"
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:311
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2658,7 +2658,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机并未安装任何数据库插件。"
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:320
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2668,7 +2668,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机已安装的数据库插件如下："
 
-#: core/app/main/main.cpp:353
+#: core/app/main/main.cpp:364
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -47643,19 +47643,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:186
+#: core/showfoto/main/main.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要打开的文件或文件夹"
 
-#: core/showfoto/main/main.cpp:235
+#: core/showfoto/main/main.cpp:246
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -63864,37 +63864,59 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "分组"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "按照系统屏幕缩放比率进行高分辨率缩放"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "在高分辨率下使用像素映射"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr "强制使用 OpenGL 软件渲染"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "禁用 OpenCL 硬件加速"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:86
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
+msgid "fix AMD-GPU Vdeo decoding Problem"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid "Used decoding backend for Video:"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@item: default raw plugin"
+#| msgid " (default)"
+msgid "FFmpeg (Default)"
+msgstr " (默认)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, kde-format
+msgid "Windows (System)"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "启用内部调试日志"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Download required binary data..."
 msgstr "下载所需的软件包..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

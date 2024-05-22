@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"POT-Creation-Date: 2024-05-22 01:47+0000\n"
 "PO-Revision-Date: 2024-05-09 09:44+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -2644,7 +2644,7 @@ msgstr "&Hjálp"
 msgid "Main Toolbar"
 msgstr "Aðalverkfæraslá"
 
-#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2654,46 +2654,46 @@ msgstr "Aðalverkfæraslá"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
+#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sveinn í Felli"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
+#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sv1@fellsnet.is"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Opna samskiptaglugga myndavélar í \"path\""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Opna myndavélargluggann fyrir þetta tæki með Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Finna og opna tengda gphoto2 myndavél"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:237
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Ræsa digiKam með SQLite gagnagrunnsskránni sem fannst í möppunni \"dir\""
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Ræsa digiKam með stillingaskránni \"config\""
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:267
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2704,7 +2704,7 @@ msgstr ""
 "frekar upp 64-bita útgáfu digiKam til að sjá betur hvernig digiKam á að "
 "virka.</p>"
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:311
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2715,7 +2715,7 @@ msgstr ""
 "- endilega settu það upp.\n"
 "Það er engin gagnagrunnsviðbót uppsett á tölvunni þinni."
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:320
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2727,7 +2727,7 @@ msgstr ""
 "Gagnagrunnsviðbætur sem uppsettar eru á tölvunni þinni eru taldar upp hér að "
 "neðan."
 
-#: core/app/main/main.cpp:353
+#: core/app/main/main.cpp:364
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -48973,19 +48973,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Möppur"
 
-#: core/showfoto/main/main.cpp:186
+#: core/showfoto/main/main.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Skrár eða möppur til að opna"
 
-#: core/showfoto/main/main.cpp:235
+#: core/showfoto/main/main.cpp:246
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -65725,37 +65725,60 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Hópun"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr "Nota mikla kvörðun mynddíla úr skjáhlutföllum"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr "Nota pixmaps með háupplausn"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr "Þvinga notkun á hugbúnaðar-OpenGL til myndgerðar"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr "Gera OpenCL-vélbúnaðarhröðun óvirka"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:86
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
+msgid "fix AMD-GPU Vdeo decoding Problem"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid "Used decoding backend for Video:"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@item: default raw plugin"
+#| msgid " (default)"
+msgid "FFmpeg (Default)"
+msgstr " (sjálfgefið)"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, fuzzy, kde-format
+#| msgid "Windows only"
+msgid "Windows (System)"
+msgstr "Einungis fyrir Windows"
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr "Virkja innri villuskráningu"
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Download required binary data..."
 msgstr "Sæki nauðsynleg tvíundakerfisgögn..."
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
@@ -67225,9 +67248,6 @@ msgstr "Flytja inn hluti"
 
 #~ msgid "OpenGL type"
 #~ msgstr "OpenGL-tegund"
-
-#~ msgid "Windows only"
-#~ msgstr "Einungis fyrir Windows"
 
 #~ msgid "OpenGLES is Used by DXVA Zero Copy"
 #~ msgstr "OpenGLES er notað af DXVA Zero Copy"
