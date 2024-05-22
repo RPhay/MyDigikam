@@ -74,11 +74,8 @@ public:
 
     TaggingActionFactory factory;
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
     QStandardItemModel*  model              = nullptr;
-
-#endif
 
     TagModel*            supportingModel    = nullptr;
     AlbumFilterModel*    filterModel        = nullptr;
@@ -90,12 +87,8 @@ TagCompleter::TagCompleter(QObject* const parent)
 {
     d->factory.setNameMatchMode(TaggingActionFactory::MatchContainingFragment);
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
-    d->model = new QStandardItemModel(this);
+    d->model = new QStandardItemModel;
     setModel(d->model);
-
-#endif
 
     setCaseSensitivity(Qt::CaseInsensitive);
     setCompletionMode(PopupCompletion);
@@ -113,6 +106,7 @@ TagCompleter::TagCompleter(QObject* const parent)
 
 TagCompleter::~TagCompleter()
 {
+    delete d->model;
     delete d;
 }
 
@@ -139,17 +133,9 @@ void TagCompleter::update(const QString& fragment)
         return;
     }
 
-    d->factory.setFragment(fragment);
-
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
     d->model->clear();
 
-#else
-
-    QStandardItemModel* const model = new QStandardItemModel(this);
-
-#endif
+    d->factory.setFragment(fragment);
 
     QList<TaggingAction> actions    = d->factory.actions();
     QList<QStandardItem*> items;
@@ -198,14 +184,11 @@ void TagCompleter::update(const QString& fragment)
         items << item;
     }
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
     d->model->appendColumn(items);
 
-#else
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    model->appendColumn(items);
-    setModel(model);
+    setModel(d->model);
 
 #endif
 
