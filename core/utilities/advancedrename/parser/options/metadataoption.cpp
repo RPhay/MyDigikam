@@ -34,6 +34,7 @@
 #include "dmetadata.h"
 #include "metadatapanel.h"
 #include "metadataselector.h"
+#include "exiftoolparser.h"
 
 namespace Digikam
 {
@@ -180,6 +181,26 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
             {   // cppcheck-suppress useStlAlgorithm
                 result = dataMap[key];
                 break;
+            }
+        }
+
+        if (result.isEmpty())
+        {
+            QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
+
+            if (parser->exifToolAvailable() && parser->load(settings.fileUrl.toLocalFile()))
+            {
+                const ExifToolParser::ExifToolData& parsed = parser->currentData();
+                ExifToolParser::ExifToolData::const_iterator it;
+
+                for (it = parsed.constBegin() ; it != parsed.constEnd() ; ++it)
+                {
+                    if (it.key().toLower() == keyword)
+                    {
+                        result = it.value()[0].toString();
+                        break;
+                    }
+                }
             }
         }
     }
