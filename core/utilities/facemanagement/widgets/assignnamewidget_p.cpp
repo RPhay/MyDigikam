@@ -48,23 +48,41 @@ bool AssignNameWidget::Private::isValid() const
 
 void AssignNameWidget::Private::clearWidgets()
 {
-    delete comboBox;
-    comboBox      = nullptr;
+    if (comboBox)
+    {
+        comboBox->deleteLater();
+        comboBox      = nullptr;
+    }
 
-    delete lineEdit;
-    lineEdit      = nullptr;
+    if (lineEdit)
+    {
+        lineEdit->deleteLater();
+        lineEdit      = nullptr;
+    }
 
-    delete confirmButton;
-    confirmButton = nullptr;
+    if (confirmButton)
+    {
+        confirmButton->deleteLater();
+        confirmButton = nullptr;
+    }
 
-    delete rejectButton;
-    rejectButton  = nullptr;
+    if (rejectButton)
+    {
+        rejectButton->deleteLater();
+        rejectButton  = nullptr;
+    }
 
-    delete ignoreButton;
-    ignoreButton  = nullptr;
+    if (ignoreButton)
+    {
+        ignoreButton->deleteLater();
+        ignoreButton  = nullptr;
+    }
 
-    delete clickLabel;
-    clickLabel    = nullptr;
+    if (clickLabel)
+    {
+        clickLabel->deleteLater();
+        clickLabel    = nullptr;
+    }
 }
 
 QToolButton* AssignNameWidget::Private::createToolButton(const QIcon& icon,
