@@ -102,6 +102,10 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/dimgpreviewitem.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/graphicsdimgview.h
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/graphicsdimgitem.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/layout/statesavingobject.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/text/modelcompleter.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/text/searchtextbar.h
+              ${CMAKE_SOURCE_DIR}/core/libs/widgets/text/dtextedit.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewsettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewloadthread.h
