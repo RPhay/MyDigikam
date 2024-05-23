@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 01:47+0000\n"
-"PO-Revision-Date: 2024-05-20 00:11+0300\n"
+"PO-Revision-Date: 2024-05-22 13:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -65917,25 +65917,22 @@ msgstr "OpenCL donanım ivmelendirmesini devre dışı bırak"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "fix AMD-GPU Vdeo decoding Problem"
-msgstr ""
+msgstr "AMD GPU video kodlama sorununu düzelt"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for Video:"
-msgstr ""
+msgstr "Video için kullanılan kod çözme arka ucu:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (öntanımlı)"
+msgstr "FFmpeg (Öntanımlı)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Windows only"
+#, kde-format
 msgid "Windows (System)"
-msgstr "Yalnızca Windows"
+msgstr "Windows (Sistem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format

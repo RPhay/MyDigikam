@@ -63895,11 +63895,9 @@ msgid "Used decoding backend for Video:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (默认)"
+msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format

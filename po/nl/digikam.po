@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 01:47+0000\n"
-"PO-Revision-Date: 2024-05-16 09:33+0200\n"
+"PO-Revision-Date: 2024-05-22 14:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -66435,25 +66435,22 @@ msgstr "Hardware-versnelling OpenCL uitschakelen"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "fix AMD-GPU Vdeo decoding Problem"
-msgstr ""
+msgstr "probleem met videodecodering voor AMD-GPU reparatie"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for Video:"
-msgstr ""
+msgstr "Decoderingsbackend voor video gebruikt:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (standaard)"
+msgstr "FFmpeg (standaard)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Windows only"
+#, kde-format
 msgid "Windows (System)"
-msgstr "Alleen Windows"
+msgstr "Windows (systeem)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format

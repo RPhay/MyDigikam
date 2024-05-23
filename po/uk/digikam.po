@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-22 01:47+0000\n"
-"PO-Revision-Date: 2024-05-16 09:02+0300\n"
+"PO-Revision-Date: 2024-05-22 08:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -66743,25 +66743,22 @@ msgstr "Вимкнути апаратне прискорення OpenCL"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "fix AMD-GPU Vdeo decoding Problem"
-msgstr ""
+msgstr "виправляти проблему декодування на гр. процесорах AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for Video:"
-msgstr ""
+msgstr "Використаний модуль декодування для відео:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (типовий)"
+msgstr "FFmpeg (типовий)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Windows only"
+#, kde-format
 msgid "Windows (System)"
-msgstr "Лише Windows"
+msgstr "Windows (системний)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
