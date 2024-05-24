@@ -74,7 +74,6 @@ void LensAutoFix::registerSettingsWidget()
 {
     const int spacing  = layoutSpacing();
 
-
     m_settingsWidget   = new QWidget;
     QLabel* const note = new QLabel(i18n("<b>Use Metadata</b> option will parse images' information at "
                                          "queue run-time to find relevant lens features."));
