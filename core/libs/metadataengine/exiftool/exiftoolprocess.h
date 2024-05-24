@@ -137,17 +137,21 @@ public:
     ~ExifToolProcess();
 
     /**
-     * @brief internalPtr - singleton implementation
+     * @brief Q_GLOBAL_STATIC implementation
      */
-    static QPointer<ExifToolProcess> internalPtr;
-    static ExifToolProcess*          instance();
-    static bool                      isCreated();
+    static ExifToolProcess* instance();
+    static bool             isCreated();
 
     /**
      * Setup connections, apply Settings and start ExifTool process.
      * This function cannot be called from another thread.
      */
     void initExifTool();
+
+    /**
+     * Attempts to terminate the process.
+     */
+    void terminateExifTool();
 
 public:
 
@@ -214,11 +218,6 @@ private:
      * Restart exiftool in a new process.
      */
     void restartExifTool();
-
-    /**
-     * Attempts to terminate the process.
-     */
-    void terminateExifTool();
 
     /**
      * Kills the current process, causing it to exit immediately.

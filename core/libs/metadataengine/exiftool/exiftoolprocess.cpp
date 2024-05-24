@@ -20,7 +20,16 @@
 namespace Digikam
 {
 
-QPointer<ExifToolProcess> ExifToolProcess::internalPtr = QPointer<ExifToolProcess>();
+class Q_DECL_HIDDEN ExifToolProcessCreator
+{
+public:
+
+    ExifToolProcess object;
+};
+
+Q_GLOBAL_STATIC(ExifToolProcessCreator, exifToolProcessCreator)
+
+// -----------------------------------------------------------------------------------------------
 
 ExifToolProcess::ExifToolProcess()
     : QProcess(nullptr),
@@ -31,26 +40,19 @@ ExifToolProcess::ExifToolProcess()
 
 ExifToolProcess::~ExifToolProcess()
 {
-    internalPtr = nullptr;
-
-    terminateExifTool();
+    killExifTool();
 
     delete d;
 }
 
 bool ExifToolProcess::isCreated()
 {
-    return (!internalPtr.isNull());
+    return exifToolProcessCreator.exists();
 }
 
 ExifToolProcess* ExifToolProcess::instance()
 {
-    if (internalPtr.isNull())
-    {
-        internalPtr = new ExifToolProcess();
-    }
-
-    return internalPtr;
+    return &exifToolProcessCreator->object;
 }
 
 void ExifToolProcess::setExifToolProgram(const QString& etExePath)
@@ -185,9 +187,12 @@ void ExifToolProcess::terminateExifTool()
 
 void ExifToolProcess::killExifTool()
 {
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
+    if (state() == QProcess::Running)
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
 
-    kill();
+        kill();
+    }
 }
 
 bool ExifToolProcess::exifToolAvailable() const

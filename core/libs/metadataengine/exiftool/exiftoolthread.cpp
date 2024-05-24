@@ -49,7 +49,7 @@ void ExifToolThread::run()
         (ExifToolProcess::instance()->thread() == this)
        )
     {
-        delete ExifToolProcess::internalPtr;
+        ExifToolProcess::instance()->terminateExifTool();
     }
 }
 
