@@ -149,7 +149,8 @@ public:
     void initExifTool();
 
     /**
-     * Attempts to terminate the process.
+     * Attempts to terminate the ExifTool process.
+     * This function cannot be called from another thread.
      */
     void terminateExifTool();
 
