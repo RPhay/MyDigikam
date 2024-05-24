@@ -94,9 +94,9 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
-    d->disableHWConvCheck     = new QCheckBox(i18n("fix AMD-GPU Vdeo decoding Problem"), this);
+    d->disableHWConvCheck     = new QCheckBox(i18n("Fix AMD-GPU vdeo decoding issue"), this);
 
-    QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for Video:"), this);
+    QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for video:"), this);
 
     d->videoBackendCBox       = new QComboBox(this);
     d->videoBackendCBox->addItem(i18n("FFmpeg (Default)"), QLatin1String("ffmpeg"));
