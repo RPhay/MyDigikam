@@ -121,7 +121,7 @@ BUGFIXES:
 093 ==> 487396 - Metadata does not affect the filename.
 094 ==> 487440 - digiKam floods systemd journal with identical messages on exit.
 095 ==> 487465 - In digiKam 8.4.0 trash cans are no longer displayed as albums.
-096 ==> 
+096 ==> 487482 - It seems that in 8.4.0, the trash can is missing in the Album tree.
 097 ==> 
 098 ==> 
 099 ==> 
