@@ -120,7 +120,7 @@ BUGFIXES:
 092 ==> 136770 - Hotpixel tool doesn't interpret black image correctly with stuck pixel.
 093 ==> 487396 - Metadata does not affect the filename.
 094 ==> 487440 - digiKam floods systemd journal with identical messages on exit.
-095 ==> 
+095 ==> 487465 - In digiKam 8.4.0 trash cans are no longer displayed as albums.
 096 ==> 
 097 ==> 
 098 ==> 

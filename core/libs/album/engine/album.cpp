@@ -379,8 +379,9 @@ PAlbum::PAlbum(const QString& title)
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& label)
-    : Album        (Album::PHYSICAL, -1, false),
-      m_albumRootId(albumRoot)
+    : Album             (Album::PHYSICAL, -1, false),
+      m_isAlbumRootAlbum(true),
+      m_albumRootId     (albumRoot)
 {
     // set the id to -1 (line above). AlbumManager may change that later.
 
