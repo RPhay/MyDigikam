@@ -400,7 +400,7 @@ void ExifToolProcess::initExifTool()
     connect(this, &QProcess::started,
             this, &ExifToolProcess::slotStarted);
 
-#if QT_VERSION >= 0x060000
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(this, &QProcess::finished,
             this, &ExifToolProcess::slotFinished);
