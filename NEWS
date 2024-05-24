@@ -119,7 +119,7 @@ BUGFIXES:
 091 ==> 259562 - Ability to add elliptical vignetting.
 092 ==> 136770 - Hotpixel tool doesn't interpret black image correctly with stuck pixel.
 093 ==> 487396 - Metadata does not affect the filename.
-094 ==> 
+094 ==> 487440 - digiKam floods systemd journal with identical messages on exit.
 095 ==> 
 096 ==> 
 097 ==> 
