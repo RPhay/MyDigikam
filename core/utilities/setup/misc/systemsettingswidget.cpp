@@ -94,7 +94,7 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)) && defined(Q_OS_WIN)
 
-    d->disableHWConvCheck     = new QCheckBox(i18n("Fix AMD-GPU vdeo decoding issue"), this);
+    d->disableHWConvCheck     = new QCheckBox(i18n("Fix AMD-GPU video decoding issue"), this);
 
     QLabel* const videoLabel  = new QLabel(i18n("Used decoding backend for video:"), this);
 
