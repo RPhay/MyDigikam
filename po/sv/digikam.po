@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-24 01:47+0000\n"
+"POT-Creation-Date: 2024-05-25 01:46+0000\n"
 "PO-Revision-Date: 2024-05-19 11:45+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2886,7 +2886,7 @@ msgstr "Visa fullskärm"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2981,7 +2981,7 @@ msgid "No Tags Album"
 msgstr "Album utan etiketter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -5803,7 +5803,7 @@ msgstr "Automatisk linskorrektion"
 msgid "Fix automatically lens distortions"
 msgstr "Korrigera linsförvrängningar automatiskt"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:78
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
@@ -5812,7 +5812,7 @@ msgstr ""
 "Alternativet <b>Använd metadata</b> tolkar bildinformation vid kökörning för "
 "att hitta relevanta linsfunktioner."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:214
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
@@ -26675,38 +26675,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw konvertering av obehandlade bilder"
 
-#: core/libs/album/engine/album.cpp:409
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Papperskorg"
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Aktuell tidslinjesökning"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Aktuell inexakt bildsökning"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Aktuell inexakt skissökning"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Map Search"
 msgstr "Aktuell kartsökning"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Search"
 msgstr "Aktuell sökning"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Aktuell dubblettsökning"
@@ -36415,12 +36415,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binärdata %1 byte"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "Exiftool finns inte eller saknar körrättighet"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl finns inte eller saknar körrättighet"
@@ -65831,12 +65831,12 @@ msgstr "Inaktivera OpenCL hårdvaruacceleration"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
-msgid "fix AMD-GPU Vdeo decoding Problem"
+msgid "Fix AMD-GPU vdeo decoding issue"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
-msgid "Used decoding backend for Video:"
+msgid "Used decoding backend for video:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-24 01:47+0000\n"
+"POT-Creation-Date: 2024-05-25 01:46+0000\n"
 "PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2834,7 +2834,7 @@ msgstr "全螢幕顯示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2924,7 +2924,7 @@ msgid "No Tags Album"
 msgstr "沒有標籤的相簿"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -5552,7 +5552,7 @@ msgstr "鏡頭自動校正"
 msgid "Fix automatically lens distortions"
 msgstr "自動校正鏡頭失真。"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:78
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
@@ -5561,7 +5561,7 @@ msgstr ""
 "「<b>使用中繼資料</b>」選項會在執行期剖析佇列中的影像資訊，以便尋找相關鏡頭功"
 "能。"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:214
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr "無法找到所有用於處理鏡頭自動校正的資訊"
@@ -26371,38 +26371,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
-#: core/libs/album/engine/album.cpp:409
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "垃圾桶"
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "目前時間軸搜尋"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "目前的影像模糊搜尋"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "目前的模糊速寫搜尋"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Map Search"
 msgstr "目前的地圖搜尋"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Search"
 msgstr "目前搜尋"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "目前的重複項目搜尋"
@@ -36107,12 +36107,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool 不存在或缺乏執行權限"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "路徑不存在或缺乏執行權限"
@@ -65313,12 +65313,12 @@ msgstr "停用 OpenCL 硬體加速"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
-msgid "fix AMD-GPU Vdeo decoding Problem"
+msgid "Fix AMD-GPU vdeo decoding issue"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
-msgid "Used decoding backend for Video:"
+msgid "Used decoding backend for video:"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
