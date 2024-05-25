@@ -285,16 +285,13 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
     bookmark->url                = attributes().value(QLatin1String("href")).toString();
     QString date                 = attributes().value(QLatin1String("added")).toString();
     bookmark->dateAdded          = QDateTime::fromString(date, Qt::ISODate);
+    bookmark->desc               = attributes().value(QLatin1String("desc")).toString();
 
     while (readNextStartElement())
     {
         if      (name() == QLatin1String("title"))
         {
             readTitle(bookmark);
-        }
-        else if (name() == QLatin1String("desc"))
-        {
-            readDescription(bookmark);
         }
         else
         {
