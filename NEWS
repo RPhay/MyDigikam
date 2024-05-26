@@ -135,7 +135,7 @@ BUGFIXES:
 106 ==> 209184 - Crash after image resizing.
 107 ==> 131429 - Selection of target album is "batch resize" has strange behavior.
 108 ==> 147685 - Errors in error and "what's this" messages -- No way to select text in an error box.
-109 ==> 
+109 ==> 320362 - BQM Resize tool - improve tool settings.
 110 ==> 
 111 ==> 
 112 ==> 
