@@ -201,11 +201,20 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
-    d->imageList->setIface(d->iface);
-    d->imageList->loadImagesFromCurrentSelection();
-    d->imageList->setAllowRAW(true);
     d->imageList->listView()->setWhatsThis(i18n("This is the list of items to copy "
                                                 "to the specified target."));
+    d->imageList->setAllowRAW(true);
+    d->imageList->setIface(d->iface);
+
+    if (d->iface->forceAlbumSelection)
+    {
+        d->iface->forceAlbumSelection = false;
+        d->imageList->loadImagesFromCurrentAlbum();
+    }
+    else
+    {
+        d->imageList->loadImagesFromCurrentSelection();
+    }
 
     // layout dialog
 
