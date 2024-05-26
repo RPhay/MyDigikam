@@ -136,7 +136,7 @@ BUGFIXES:
 107 ==> 131429 - Selection of target album is "batch resize" has strange behavior.
 108 ==> 147685 - Errors in error and "what's this" messages -- No way to select text in an error box.
 109 ==> 320362 - BQM Resize tool - improve tool settings.
-110 ==> 
+110 ==> 320360 - Resize - add advanced options.
 111 ==> 
 112 ==> 
 113 ==> 
