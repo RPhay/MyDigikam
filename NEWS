@@ -131,8 +131,8 @@ BUGFIXES:
 102 ==> 159397 - Resize quality is really bad.
 103 ==> 091745 - New resize algorithm based on G'MIC.
 104 ==> 178677 - More batch resize tools.
-105 ==> 
-106 ==> 
+105 ==> 200629 - Crashed after resizing image size.
+106 ==> 209184 - Crash after image resizing.
 107 ==> 
 108 ==> 
 109 ==> 
