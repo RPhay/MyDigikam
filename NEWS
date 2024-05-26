@@ -138,7 +138,7 @@ BUGFIXES:
 109 ==> 320362 - BQM Resize tool - improve tool settings.
 110 ==> 320360 - Resize - add advanced options.
 111 ==> 152909 - Batch operation "resize" fails saying convert cannot be started correctly.
-112 ==> 
+112 ==> 093065 - Resizing images removes EXIF information.
 113 ==> 
 114 ==> 
 115 ==> 
