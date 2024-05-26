@@ -34,7 +34,6 @@
 #include "dmetadata.h"
 #include "metadatapanel.h"
 #include "metadataselector.h"
-#include "exiftoolparser.h"
 
 namespace Digikam
 {
@@ -88,6 +87,11 @@ MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
 
 // --------------------------------------------------------
 
+QHash<QUrl, ExifToolParser::ExifToolData> MetadataOption::m_exifToolMetadataCache;
+QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_exifMetadataCache;
+QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_iptcMetadataCache;
+QHash<QUrl, MetaEngine::MetaDataMap>      MetadataOption::m_xmpMetadataCache;
+
 MetadataOption::MetadataOption()
     : Option(i18n("Metadata..."),
              i18n("Add metadata information"))
@@ -103,6 +107,14 @@ MetadataOption::MetadataOption()
     QRegularExpression reg(QLatin1String("\\[meta(:(.*))\\]"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
+}
+
+MetadataOption::~MetadataOption()
+{
+    m_exifToolMetadataCache.clear();
+    m_exifMetadataCache.clear();
+    m_iptcMetadataCache.clear();
+    m_xmpMetadataCache.clear();
 }
 
 void MetadataOption::slotTokenTriggered(const QString& token)
@@ -156,51 +168,66 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         return result;
     }
 
-    QScopedPointer<DMetadata> meta(new DMetadata(settings.fileUrl.toLocalFile()));
+    // It only needs to check m_exifMetadataCache to contain
+    // the file url, all other caches also have the file url.
 
-    if (!meta->isEmpty())
+    if (!m_exifMetadataCache.contains(settings.fileUrl))
     {
-        MetaEngine::MetaDataMap dataMap;
+        QScopedPointer<DMetadata> meta(new DMetadata(settings.fileUrl.toLocalFile()));
 
-        if      (keyword.startsWith(QLatin1String("exif.")))
-        {
-            dataMap = meta->getExifTagsDataList(QStringList(), true);
-        }
-        else if (keyword.startsWith(QLatin1String("iptc.")))
-        {
-            dataMap = meta->getIptcTagsDataList(QStringList(), true);
-        }
-        else if (keyword.startsWith(QLatin1String("xmp.")))
-        {
-            dataMap = meta->getXmpTagsDataList(QStringList(), true);
-        }
+        m_exifMetadataCache.insert(settings.fileUrl,
+                                   meta->getExifTagsDataList(QStringList(), true));
+        m_iptcMetadataCache.insert(settings.fileUrl,
+                                   meta->getIptcTagsDataList(QStringList(), true));
+        m_xmpMetadataCache.insert(settings.fileUrl,
+                                  meta->getXmpTagsDataList(QStringList(), true));
+    }
 
-        Q_FOREACH (const QString& key, dataMap.keys())
-        {
-            if (key.toLower().contains(keyword))
-            {   // cppcheck-suppress useStlAlgorithm
-                result = dataMap[key];
-                break;
-            }
-        }
+    MetaEngine::MetaDataMap dataMap;
 
-        if (result.isEmpty())
+    if      (keyword.startsWith(QLatin1String("exif.")))
+    {
+        dataMap = m_exifMetadataCache.value(settings.fileUrl);
+    }
+    else if (keyword.startsWith(QLatin1String("iptc.")))
+    {
+        dataMap = m_iptcMetadataCache.value(settings.fileUrl);
+    }
+    else if (keyword.startsWith(QLatin1String("xmp.")))
+    {
+        dataMap = m_xmpMetadataCache.value(settings.fileUrl);
+    }
+
+    Q_FOREACH (const QString& key, dataMap.keys())
+    {
+        if (key.toLower().contains(keyword))
+        {   // cppcheck-suppress useStlAlgorithm
+            result = dataMap[key];
+            break;
+        }
+    }
+
+    if (result.isEmpty())
+    {
+        if (!m_exifToolMetadataCache.contains(settings.fileUrl))
         {
             QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
             if (parser->exifToolAvailable() && parser->load(settings.fileUrl.toLocalFile()))
             {
-                const ExifToolParser::ExifToolData& parsed = parser->currentData();
-                ExifToolParser::ExifToolData::const_iterator it;
+                m_exifToolMetadataCache.insert(settings.fileUrl, parser->currentData());
+            }
+        }
 
-                for (it = parsed.constBegin() ; it != parsed.constEnd() ; ++it)
-                {
-                    if (it.key().toLower() == keyword)
-                    {
-                        result = it.value()[0].toString();
-                        break;
-                    }
-                }
+        const ExifToolParser::ExifToolData& parsed = m_exifToolMetadataCache.value(settings.fileUrl);
+        ExifToolParser::ExifToolData::const_iterator it;
+
+        for (it = parsed.constBegin() ; it != parsed.constEnd() ; ++it)
+        {
+            if (it.key().toLower() == keyword)
+            {
+                result = it.value()[0].toString();
+                break;
             }
         }
     }

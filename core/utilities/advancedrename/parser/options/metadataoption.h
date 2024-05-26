@@ -23,6 +23,7 @@
 
 #include "option.h"
 #include "ruledialog.h"
+#include "exiftoolparser.h"
 
 class QLineEdit;
 
@@ -62,7 +63,7 @@ class MetadataOption : public Option
 public:
 
     MetadataOption();
-    ~MetadataOption()                                            override = default;
+    ~MetadataOption()                                            override;
 
 protected:
 
@@ -76,6 +77,13 @@ private Q_SLOTS:
 private:
 
     QString parseMetadata(const QString& token, ParseSettings& settings);
+
+private:
+
+    static QHash<QUrl, ExifToolParser::ExifToolData> m_exifToolMetadataCache;
+    static QHash<QUrl, MetaEngine::MetaDataMap>      m_exifMetadataCache;
+    static QHash<QUrl, MetaEngine::MetaDataMap>      m_iptcMetadataCache;
+    static QHash<QUrl, MetaEngine::MetaDataMap>      m_xmpMetadataCache;
 
 private:
 
