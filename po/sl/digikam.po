@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
-"PO-Revision-Date: 2024-05-22 08:56+0200\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"PO-Revision-Date: 2024-05-25 08:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -21101,7 +21101,7 @@ msgstr "napaka OpenGL"
 #, kde-format
 msgid ""
 "GL_ARB_texture_rectangle OpenGL extension is not supported on your system"
-msgstr "GL_ARB_texture_rectangle OpenGL razširitev ni podprta na vašem sistemu"
+msgstr "Razširitev GL_ARB_texture_rectangle OpenGL ni podprta na vašem sistemu"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:201
 #, kde-format
@@ -52785,7 +52785,7 @@ msgstr "Zaznamuj mapo"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Datoteka ni zvrsti XBEL verzije 1.0."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Neznan naslov"
@@ -65963,15 +65963,14 @@ msgstr "Onemogoči strojno pospeševanje OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
-msgid "Fix AMD-GPU vdeo decoding issue"
-msgstr "odpravi težavo z dekodiranjem Vdeo AMD-GPU"
+#| msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
+msgstr "Odpravi težavo z dekodiranjem AMD-GPU vdeo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for Video:"
+#, kde-format
 msgid "Used decoding backend for video:"
-msgstr "Uporabljeno zaledje za dekodiranje za Video:"
+msgstr "Uporabljeno zaledje dekodiranja za video:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format

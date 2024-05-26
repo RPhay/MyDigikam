@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
 "PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -52339,7 +52339,7 @@ msgstr "將資料夾加入書籤"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "資料庫轉換已取消。"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "未知標題"
@@ -65313,7 +65313,7 @@ msgstr "停用 OpenCL 硬體加速"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
-msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99

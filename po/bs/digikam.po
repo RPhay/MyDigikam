@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -56768,7 +56768,7 @@ msgstr "Zabilješke odabrane"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Konverzija baze podataka otkazana."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, fuzzy, kde-format
 #| msgid "Unknown filter"
 msgid "Unknown title"
@@ -70872,7 +70872,7 @@ msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
-msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99

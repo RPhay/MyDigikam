@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
-"PO-Revision-Date: 2024-05-22 13:27+0300\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"PO-Revision-Date: 2024-05-25 12:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -52721,7 +52721,7 @@ msgstr "Yer İmleri Klasörü"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Bu dosya XBEL sürüm 1.0 dosyası değil."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Bilinmeyen başlık"
@@ -65916,13 +65916,12 @@ msgstr "OpenCL donanım ivmelendirmesini devre dışı bırak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
-msgid "Fix AMD-GPU vdeo decoding issue"
-msgstr "AMD GPU video kodlama sorununu düzelt"
+#| msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
+msgstr "AMD GPU’larda video kodlaması sorununu düzelt"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for Video:"
+#, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Video için kullanılan kod çözme arka ucu:"
 

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
 "PO-Revision-Date: 2024-05-23 15:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -52601,7 +52601,7 @@ msgstr "Bókamerkjamappa"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Skráin er ekki gild XBEL-skrá af útgáfu 1.0."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Óþekktur titill"
@@ -65744,7 +65744,7 @@ msgstr "Gera OpenCL-vélbúnaðarhröðun óvirka"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "fix AMD-GPU Vdeo decoding Problem"
-msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
 msgstr "lagað vandamál í myndmerkiskóðun AMD-GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99

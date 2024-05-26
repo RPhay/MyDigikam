@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
-"PO-Revision-Date: 2024-05-22 09:33+0200\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"PO-Revision-Date: 2024-05-25 10:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -53244,7 +53244,7 @@ msgstr "Carpeta de punts"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "El fitxer no està en el format XBEL versió 1.0."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Títol desconegut"
@@ -66550,13 +66550,12 @@ msgstr "Desactiva l'acceleració de maquinari OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
-msgid "Fix AMD-GPU vdeo decoding issue"
-msgstr "Corregeix un problema de descodificació de vídeo de les AMD-GPU"
+#| msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
+msgstr "Corregeix un problema de descodificació de vídeo de les GPU AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for Video:"
+#, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Dorsal de descodificació usat pel vídeo:"
 

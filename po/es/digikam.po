@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
-"PO-Revision-Date: 2024-05-22 04:54+0200\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"PO-Revision-Date: 2024-05-26 02:05+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -53273,7 +53273,7 @@ msgstr "Marcar carpeta"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Este archivo no es de la versión 1.0 de XBEL."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Título desconocido"
@@ -66564,13 +66564,12 @@ msgstr "Desactivar la aceleración OpenCL por hardware"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
-msgid "Fix AMD-GPU vdeo decoding issue"
+#| msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
 msgstr "Corregir el problema de descodificación de vídeo de la GPU de AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for Video:"
+#, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Motor de descodificación usado para vídeo:"
 

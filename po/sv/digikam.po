@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-25 01:46+0000\n"
-"PO-Revision-Date: 2024-05-19 11:45+0200\n"
+"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"PO-Revision-Date: 2024-05-25 10:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -52659,7 +52659,7 @@ msgstr "Bokmärkeskatalog"
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Filen är inte en XBEL-fil med version 1.0."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Okänd rubrik"
@@ -65830,27 +65830,25 @@ msgid "Disable hardware acceleration OpenCL"
 msgstr "Inaktivera OpenCL hårdvaruacceleration"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, kde-format
-msgid "Fix AMD-GPU vdeo decoding issue"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Fix AMD-GPU vdeo decoding issue"
+msgid "Fix AMD-GPU video decoding issue"
+msgstr "Rätta problem med videoavkodning med AMD grafikprocessor"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for video:"
-msgstr ""
+msgstr "Använd avkodningsgränssnitt för video:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (förval)"
+msgstr "FFmpeg (förval)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Windows only"
+#, kde-format
 msgid "Windows (System)"
-msgstr "Bara Windows"
+msgstr "Windows (system)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
