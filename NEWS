@@ -139,7 +139,7 @@ BUGFIXES:
 110 ==> 320360 - Resize - add advanced options.
 111 ==> 152909 - Batch operation "resize" fails saying convert cannot be started correctly.
 112 ==> 093065 - Resizing images removes EXIF information.
-113 ==> 
+113 ==> 487589 - Cannot see the recycle bin.
 114 ==> 
 115 ==> 
 116 ==> 
