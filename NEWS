@@ -137,7 +137,7 @@ BUGFIXES:
 108 ==> 147685 - Errors in error and "what's this" messages -- No way to select text in an error box.
 109 ==> 320362 - BQM Resize tool - improve tool settings.
 110 ==> 320360 - Resize - add advanced options.
-111 ==> 
+111 ==> 152909 - Batch operation "resize" fails saying convert cannot be started correctly.
 112 ==> 
 113 ==> 
 114 ==> 
