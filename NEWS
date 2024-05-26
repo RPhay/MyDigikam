@@ -122,7 +122,7 @@ BUGFIXES:
 094 ==> 487440 - digiKam floods systemd journal with identical messages on exit.
 095 ==> 487465 - In digiKam 8.4.0 trash cans are no longer displayed as albums.
 096 ==> 487482 - It seems that in 8.4.0, the trash can is missing in the Album tree.
-097 ==> 
+097 ==> 338779 - Add new tool to embed hidden watermarking (based on wavelets or Fourier transforms).
 098 ==> 
 099 ==> 
 100 ==> 
