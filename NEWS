@@ -133,7 +133,7 @@ BUGFIXES:
 104 ==> 178677 - More batch resize tools.
 105 ==> 200629 - Crashed after resizing image size.
 106 ==> 209184 - Crash after image resizing.
-107 ==> 
+107 ==> 131429 - Selection of target album is "batch resize" has strange behavior.
 108 ==> 
 109 ==> 
 110 ==> 
