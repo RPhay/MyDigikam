@@ -125,7 +125,7 @@ BUGFIXES:
 096 ==> 487482 - It seems that in 8.4.0, the trash can is missing in the Album tree.
 097 ==> 338779 - Add new tool to embed hidden watermarking (based on wavelets or Fourier transforms).
 098 ==> 155312 - BQM Border tool: Allow to use independent horizontal and vertical border sizes.
-099 ==> 
+099 ==> 458620 - Batch Queue Manager does not offer a "Color Negative Film" tool.
 100 ==> 
 101 ==> 
 102 ==> 
