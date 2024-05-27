@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -22977,7 +22977,7 @@ msgstr ""
 "><b>9</b>: บีบข้อมูลสูง (จะมีขนาดแฟ้มเล็ก แต่จะใช้เวลาในการบีบข้อมูลมาก) </"
 "p><p><b>ข้อควรจำ: แฟ้มภาพแบบ PNG ตามปกติจะไม่มีการบีบข้อมูลหรือบีบข้อมูลน้อยมาก</b></p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of items to copy to the specified target."
@@ -52170,7 +52170,7 @@ msgid "Camera name"
 msgstr "ชื่อกล้อง"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "ตัวแยกคำค้น:"
@@ -52674,12 +52674,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "กลุ่ม"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "ข้อมูลกำกับภาพ..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "ขนาดส่วนข้อมูลกำกับภาพ"

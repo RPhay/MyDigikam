@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
-"PO-Revision-Date: 2024-05-17 13:51+0100\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"PO-Revision-Date: 2024-05-26 07:22+0200\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -7850,8 +7850,8 @@ msgstr ""
 "<b>Egaligi</b>:<p>Ĉi tiu opcio ĝustigas la brilecon de koloroj tra la aktiva "
 "bildo tiel ke la histogramo por la valorkanalo estu kiel eble plej ebena, "
 "tio estas, tiel ke ĉiu ebla brilvaloro aperu proksimume. la sama nombro da "
-"pikseloj kiel unu la alian valoron. Kelkfoje Equalize funkcias mirinde por "
-"plibonigi la kontrastojn en bildo. Alifoje ĝi donas rubon. Ĝi estas tre "
+"rastrumeroj kiel unu la alian valoron. Kelkfoje Equalize funkcias mirinde "
+"por plibonigi la kontrastojn en bildo. Alifoje ĝi donas rubon. Ĝi estas tre "
 "potenca operacio, kiu povas aŭ fari miraklojn sur bildo aŭ detrui ĝin.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:140
@@ -7983,7 +7983,7 @@ msgstr "Konverti al 8 bitoj"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
-msgstr "Ĉi tiu bildo jam uzas profundon de 8 bitoj/koloro/pikselo."
+msgstr "Ĉi tiu bildo jam uzas profundon de 8 bitoj / koloro / rastrumero."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
 #, kde-format
@@ -8013,7 +8013,7 @@ msgstr "Konverti al 16 bitoj"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
-msgstr "Ĉi tiu bildo jam uzas profundon de 16 bitoj/koloro/pikselo."
+msgstr "Ĉi tiu bildo jam uzas profundon de 16 bitoj / koloro / rastrumero."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:119
 #, kde-format
@@ -8678,7 +8678,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:66
 #, kde-format
 msgid "Hot Pixels"
-msgstr "Varmaj Pikseloj"
+msgstr "Varmaj Rastrumeroj"
 
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstool.cpp:164
 #, kde-format
@@ -21315,7 +21315,7 @@ msgstr "Uzi &milisekundojn anstataŭ sekundojn"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:51
 #, kde-format
 msgid "&Controls"
-msgstr "&Kontroloj"
+msgstr "Re&giloj"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_enableMouseWheelCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:63
@@ -22757,7 +22757,7 @@ msgstr ""
 "><b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</b>: neniu "
 "kunpremo</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Ĉi tio estas la listo de eroj por kopii al la specifita celo."
@@ -28499,7 +28499,7 @@ msgid ""
 "with an empty database. "
 msgstr ""
 "La datumbazo ne validas: la agordo \"DBSimilarityVersion\" ne ekzistas. La "
-"nuna datumbaza skemversio ne povas esti kontrolita. Provu komenci kun "
+"nuna datumbaza skemversio ne povas esti konfirmita. Provu komenci kun "
 "malplena datumbazo."
 
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
@@ -28549,7 +28549,7 @@ msgid ""
 "with an empty database. "
 msgstr ""
 "La datumbazo ne validas: la agordo \"DBThumbnailsVersion\" ne ekzistas. La "
-"nuna datumbaza skemversio ne povas esti kontrolita. Provu komenci kun "
+"nuna datumbaza skemversio ne povas esti konfirmita. Provu komenci kun "
 "malplena datumbazo."
 
 #: core/libs/database/utils/ifaces/dio.cpp:346
@@ -31033,7 +31033,7 @@ msgid ""
 msgstr ""
 "Ebligu ĉi tiun opcion se vi volas konservi la proporcion de bildo. Se "
 "enŝaltite, la randlarĝo estos procento de la bildograndeco, alie la "
-"randlarĝo estos en pikseloj."
+"randlarĝo estos en rastrumeroj."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:141
 #, kde-format
@@ -31043,12 +31043,13 @@ msgstr "Fiksu ĉi tie la randan larĝon kiel procenton de la bilda grandeco."
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:143
 #, kde-format
 msgid "Width (pixels):"
-msgstr "Larĝo (pikseloj):"
+msgstr "Larĝo (rastrumeroj):"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:147
 #, kde-format
 msgid "Set here the border width in pixels to add around the image."
-msgstr "Fiksu ĉi tie la randan larĝon en pikseloj por aldoni ĉirkaŭ la bildo."
+msgstr ""
+"Fiksu ĉi tie la randan larĝon en rastrumeroj por aldoni ĉirkaŭ la bildo."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:393
 #, kde-format
@@ -31408,7 +31409,7 @@ msgid ""
 "This value controls the number of iterations to use with the Neon and Find "
 "Edges effects."
 msgstr ""
-"Ĉi tiu valoro kontrolas la nombron da ripetoj por uzi kun la efikoj Neon kaj "
+"Ĉi tiu valoro mastrumas la nombron da ripetoj por uzi kun la efikoj Neon kaj "
 "Find Edges."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:175
@@ -31700,7 +31701,7 @@ msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
 "high value here, or the target image will be completely blurred."
 msgstr ""
-"Ĉi tiu valoro kontrolas la egalecon de glatigo al la bildo. Ne uzu altan "
+"Ĉi tiu valoro mastrumas la egalecon de glatigo al la bildo. Ne uzu altan "
 "valoron ĉi tie, aŭ la cela bildo estos tute malklara."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
@@ -31827,7 +31828,7 @@ msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
 "black frame file"
 msgid "Hot Pixels"
-msgstr "Varmaj Pikseloj"
+msgstr "Varmaj Rastrumeroj"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
 #, kde-format
@@ -31869,12 +31870,12 @@ msgstr "Seria Numero:"
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
 #, kde-format
 msgid "Hot Pixels:"
-msgstr "Varmaj Pikseloj:"
+msgstr "Varmaj Rastrumeroj:"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
 #, kde-format
 msgid "Hot Pixels Tool"
-msgstr "Varma Pikseloj Ilo"
+msgstr "Ilo por Varmaj Rastrumeroj"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:79
 #, kde-format
@@ -31921,17 +31922,17 @@ msgid ""
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
 "<p>Uzu ĉi tiun butonon por aldoni novan nigran kadran dosieron, kiu estos "
-"uzata de la foriga filtrilo de varmaj pikseloj.</p><p>La metodo de subtraho "
-"de Nigra Kadro estas la plej preciza \"Varmaj pikseloj\" kaj \"Stock Forigo "
-"de pikseloj\". Unue vi devas krei \"Nigra Kadro\" kiel referenco. Ĉi tio "
-"estas facile fari. Kiam vi finos fari viajn longajn elmetajn pafojn, metu "
-"lensĉapon sur la fotilon kaj prenu unu \"malhelan\" bildon kun la sama "
-"ekspontempo kiel la bildoj antaŭe. Ĉi tiu bildo estos tute malhela, sed kun "
-"proksima ekzameno vi vidos, ke ĝi havas la Varmajn kaj Ŝtelitajn Pikselojn "
-"(koloraj punktoj). Ĉi tiuj estas poziciigitaj en la samaj lokoj kiel ĉe viaj "
-"antaŭaj pafoj. Ĉi tiu ilo analizos nigran kadron, detektos varmajn pikselojn "
-"kaj kreos liston de pozicioj kie bildo devas esti korektita por forigi "
-"malĝustajn kolorojn en ĉi tiuj pikseloj.</p>"
+"uzata de la foriga filtrilo de varmaj rastrumeroj.</p><p>La metodo de "
+"subtraho de Nigra Kadro estas la plej preciza forigo de \"Varmaj Rastrumeroj"
+"\" kaj \"Blokitaj Rastrumeroj\". Unue vi devas krei \"Nigran Kadron\" kiel "
+"referenco. Ĉi tio estas facile fari. Kiam vi finos fari viajn longajn "
+"elmetajn pafojn, metu lensĉapon sur la fotilon kaj prenu unu \"malhelan\" "
+"bildon kun la sama ekspontempo kiel la bildoj antaŭe. Ĉi tiu bildo estos "
+"tute malhela, sed kun proksima ekzameno vi vidos, ke ĝi havas la Varmajn kaj "
+"Blokitajn Rastrumerojn (koloraj punktoj). Ĉi tiuj estas poziciigitaj en la "
+"samaj lokoj kiel ĉe viaj antaŭaj pafoj. Ĉi tiu ilo analizos nigran kadron, "
+"detektos varmajn rastrumerojn kaj kreos liston de pozicioj kie bildo devas "
+"esti korektita por forigi malĝustajn kolorojn en ĉi tiuj rastrumeroj.</p>"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
 #, kde-format
@@ -32235,7 +32236,7 @@ msgid ""
 "This value controls the degree of intensity of the filter at its point of "
 "maximum density."
 msgstr ""
-"Ĉi tiu valoro kontrolas la gradon da intenseco de la filtrilo ĉe sia punkto "
+"Ĉi tiu valoro mastrumas la gradon da intenseco de la filtrilo ĉe sia punkto "
 "de maksimuma denseco."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:107
@@ -32249,7 +32250,7 @@ msgid ""
 "This value is used as the exponent controlling the fall-off in density from "
 "the inner circle of the filter to the outer circle."
 msgstr ""
-"Tiu valoro estas utiligita kiel la eksponento kontrolanta la falon en "
+"Tiu valoro estas utiligita kiel la eksponento mastrumanta la falon en "
 "denseco de la interna cirklo de la filtrilo ĝis la ekstera cirklo."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
@@ -32718,7 +32719,7 @@ msgstr "Mezumo:"
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Pixels:"
-msgstr "Pikseloj:"
+msgstr "Rastrumeroj:"
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:566
 #, kde-format
@@ -33419,7 +33420,7 @@ msgctxt "@info: WB settings"
 msgid ""
 "Set here the green component to control the magenta color cast removal level."
 msgstr ""
-"Agordu ĉi tie la verdan komponanton por kontroli la nivelon de forigo de "
+"Agordu ĉi tie la verdan komponanton por mastrumi la nivelon de forigo de "
 "magenta koloro."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:247
@@ -34338,7 +34339,7 @@ msgid ""
 "empty database. "
 msgstr ""
 "La datumbazo ne validas: la agordo \"DBFaceVersion\" ne ekzistas. La nuna "
-"datumbaza skemversio ne povas esti kontrolita. Provu komenci kun malplena "
+"datumbaza skemversio ne povas esti konfirmita. Provu komenci kun malplena "
 "datumbazo."
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
@@ -35076,7 +35077,7 @@ msgid ""
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 "Ne eblis movi bildon %1 al kolektorubo.\n"
-"Kontroli la dosierpermeson en la rubujo \"%2\" en la bildkolekto."
+"Kontrolu la dosierpermeson en la rubujo \"%2\" en la bildkolekto."
 
 #: core/libs/iojobs/iojob.cpp:135
 #, kde-format
@@ -35140,7 +35141,7 @@ msgid ""
 "collection."
 msgstr ""
 "Ne eblis movi la dosierujon %1 al la rubujo.\n"
-"Kontroli la dosierpermeson sur la rubujo \".dtrash\" en la bildkolekto."
+"Kontrolu la dosierpermeson sur la rubujo \".dtrash\" en la bildkolekto."
 
 #: core/libs/iojobs/iojob.cpp:310
 #, kde-format
@@ -35150,7 +35151,7 @@ msgid ""
 "collection."
 msgstr ""
 "Ne eblis movi bildon %1 al kolektorubo.\n"
-"Kontroli la dosierpermeson en la rubujo \".dtrash\" en la bildkolekto."
+"Kontrolu la dosierpermeson en la rubujo \".dtrash\" en la bildkolekto."
 
 #: core/libs/iojobs/iojob.cpp:327
 #, kde-format
@@ -36421,7 +36422,7 @@ msgstr "ETA:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Reta Versio Kontrolilo - Antaŭ-Eldonaĵo"
+msgstr "Reta Versio-Kontrolilo - Antaŭ-Eldonaĵo"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:172
 #, kde-format
@@ -36432,7 +36433,7 @@ msgstr "Kontrolanta ĉu nova antaŭ-eldona versio disponeblas, bonvolu atendi...
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
-msgstr "Enreta Versio Kontrolilo - Stabila Versio"
+msgstr "Enreta Versio-Kontrolilo - Stabila Versio"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:177
 #, kde-format
@@ -36573,9 +36574,9 @@ msgid ""
 "%2\n"
 "in progress, please wait..."
 msgstr ""
-"Kontrolu Kontrolsumon por nova %1\n"
+"Konfirmado de Kontrolsumo por nova %1\n"
 "%2\n"
-"in progreso, bonvolu atendi..."
+"en progreso, bonvolu atendi..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
@@ -36584,7 +36585,7 @@ msgid ""
 "version %2\n"
 "in progress, please wait..."
 msgstr ""
-"Kontrolu kontrolsumon por %1\n"
+"Konfirmi kontrolsumon por %1\n"
 "versio %2\n"
 "en progreso, bonvolu atendi..."
 
@@ -36713,7 +36714,7 @@ msgstr ""
 #: core/libs/onlineversion/onlineversiondwnl.cpp:234
 #, kde-format
 msgid "Checksum file is empty."
-msgstr "Kontrolsumo dosiero estas malplena."
+msgstr "Kontrolsuma dosiero estas malplena."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:246
 #, kde-format
@@ -36728,7 +36729,7 @@ msgstr "Elŝutita dosiero estas malplena."
 #: core/libs/onlineversion/onlineversiondwnl.cpp:301
 #, kde-format
 msgid "Checksums error."
-msgstr "Kontrolsumoj eraro."
+msgstr "Eraro de kontrolsumoj."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:329
 #, kde-format
@@ -37532,7 +37533,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Pixels: "
-msgstr "Pikseloj:"
+msgstr "Rastrumeroj:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:162
 #, kde-format
@@ -37973,12 +37974,13 @@ msgid ""
 "with AHD quality method.</para>"
 msgstr ""
 "<title>Interpoli RGB kiel kvar kolorojn</title><para>La defaŭlto estas "
-"supozi ke ĉiuj verdaj pikseloj estas samaj. Se para-vicaj verdaj pikseloj "
-"estas pli sentemaj al ultraviola lumo ol nepara vico tiu diferenco kaŭzas "
-"maŝpadronon en la produktaĵo; uzado de ĉi tiu opcio solvas ĉi tiun problemon "
-"kun minimuma perdo de detaloj.</para><para>Por rekomenci, ĉi tiu opcio iom "
-"malklarigas la bildon, sed ĝi forigas falsajn 2x2 maŝajn ŝablonojn kun VNG-"
-"kvalita metodo aŭ labirintojn kun AHD-kvalita metodo.</para>"
+"supozi ke ĉiuj verdaj rastrumeroj estas samaj. Se para-vicaj verdaj "
+"rastrumeroj estas pli sentemaj al ultraviola lumo ol nepara vico tiu "
+"diferenco kaŭzas maŝ-ŝablonon en la produktaĵo; uzado de ĉi tiu opcio solvas "
+"ĉi tiun problemon kun minimuma perdo de detaloj.</para><para>Por rekomenci, "
+"ĉi tiu opcio iom malklarigas la bildon, sed ĝi forigas falsajn 2x2 maŝajn "
+"ŝablonojn kun VNG-kvalita metodo aŭ labirintojn kun AHD-kvalita metodo.</"
+"para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:214
 #, kde-format
@@ -37990,7 +37992,7 @@ msgstr "Viziti retejon de la projekto LibRaw"
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not stretch or rotate pixels"
-msgstr "Ne streĉi aŭ turni pikselojn"
+msgstr "Ne streĉi aŭ rotacii rastrumerojn"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:226
 #, kde-kuit-format
@@ -38002,10 +38004,11 @@ msgid ""
 "this option guarantees that each output pixel corresponds to one RAW pixel.</"
 "para>"
 msgstr ""
-"<title>Ne streĉi aŭ turni pikselojn</title><para>Por fotiloj Fuji Super CCD, "
-"montri la bildon klinitan 45 gradojn. Por fotiloj kun ne-kvadrataj pikseloj, "
-"ne etendi la bildon al ĝia ĝusta bildformato. Ĉiukaze, ĉi tiu opcio "
-"garantias, ke ĉiu eligo-pikselo respondas al unu RAW-pikselo.</para>"
+"<title>Ne streĉi aŭ rotacii rastrumerojn</title><para>Por fotiloj Fuji Super "
+"CCD, montri la bildon klinitan 45 gradojn. Por fotiloj kun ne-kvadrataj "
+"rastrumeroj, ne etendi la bildon al ĝia ĝusta bildformato. Ĉiukaze, ĉi tiu "
+"opcio garantias, ke ĉiu eligo-rastrumero respondas al unu RAW-rastrumero.</"
+"para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:234
 #, kde-format
@@ -38091,29 +38094,29 @@ msgstr ""
 "metodo por uzi dum malkodado de RAW bildoj. Demozaicing-algoritmo estas "
 "cifereca bildprocezo uzita por interpoli kompletan bildon de la partaj "
 "krudaj datenoj ricevitaj de la kolor-filtrita bildsensilo, interna al multaj "
-"diĝitkameraoj, en formo de matrico de koloraj pikseloj. Ankaŭ konata kiel "
+"diĝitkameraoj, en formo de matrico de koloraj rastrumeroj. Ankaŭ konata kiel "
 "CFA-interpolado aŭ kolorrekonstruo, alia ofta literumo estas demosaicing. La "
 "jenaj metodoj estas disponeblaj por montri RAW-bildojn:</"
 "para><para><list><item><emphasis strong='true'>Dulineara</emphasis>: uzu "
 "altrapidan sed malaltkvalitan dulinian interpoladon (defaŭlte - por "
-"malrapidaj komputiloj). En ĉi tiu metodo, la ruĝa valoro de neruĝa pikselo "
-"estas kalkulita kiel la mezumo de la apudaj ruĝaj pikseloj, kaj simile por "
-"blua kaj verda.</item><item><emphasis strong='true'>VNG</emphasis>: uzu la "
-"interpoladon de Variabla Nombro de Gradientoj. Ĉi tiu metodo kalkulas "
-"gradientojn proksime de la pikselo de intereso kaj uzas la pli malaltajn "
-"gradientojn (reprezentante pli glatajn kaj pli similajn partojn de la bildo) "
-"por fari takson.</item><item><emphasis strong='true'>PPG</emphasis> : uzu "
-"Patterned-Pixel-Groping interpoladon. Pixel Grouping uzas supozojn pri "
-"natura pejzaĝo por fari taksojn. Ĝi havas malpli da kolorartefaktoj sur "
-"naturaj bildoj ol la metodo de Variabla Nombro de Gradientaĵoj.</"
-"item><item><emphasis strong='true'>AHD</emphasis>: uzu Adaptive Homogeneity-"
-"Directed interpolation. Ĉi tiu metodo elektas la direkton de interpolado por "
-"maksimumigi homogenecan metrikon, tiel tipe minimumigante kolorartefaktojn.</"
-"item><item><emphasis strong='true'>DCB</emphasis>: DCB-interpolado de "
-"projekto linuxphoto.org. </item><item><emphasis strong='true'>DHT</"
-"emphasis>: DHT-interpolado.Vidu https://www.libraw.org/node/2306 por detaloj."
-"</item><item><emphasis strong='true'>AAHD</emphasis>: modifita AHD-"
-"interpolado.</item></list></para>"
+"malrapidaj komputiloj). En ĉi tiu metodo, la ruĝa valoro de neruĝa "
+"rastrumero estas kalkulita kiel la mezumo de la apudaj ruĝaj rastrumeroj, "
+"kaj simile por blua kaj verda.</item><item><emphasis strong='true'>VNG</"
+"emphasis>: uzu la interpoladon de Variabla Nombro de Gradientoj. Ĉi tiu "
+"metodo kalkulas gradientojn proksime de la rastrumero de intereso kaj uzas "
+"la pli malaltajn gradientojn (reprezentante pli glatajn kaj pli similajn "
+"partojn de la bildo) por fari takson.</item><item><emphasis "
+"strong='true'>PPG</emphasis> : uzu Patterned-Pixel-Groping interpoladon. "
+"Pixel Grouping uzas supozojn pri natura pejzaĝo por fari taksojn. Ĝi havas "
+"malpli da kolorartefaktoj sur naturaj bildoj ol la metodo de Variabla Nombro "
+"de Gradientaĵoj.</item><item><emphasis strong='true'>AHD</emphasis>: uzu "
+"Adaptive Homogeneity-Directed interpolation. Ĉi tiu metodo elektas la "
+"direkton de interpolado por maksimumigi homogenecan metrikon, tiel tipe "
+"minimumigante kolorartefaktojn.</item><item><emphasis strong='true'>DCB</"
+"emphasis>: DCB-interpolado de projekto linuxphoto.org. </"
+"item><item><emphasis strong='true'>DHT</emphasis>: DHT-interpolado.Vidu "
+"https://www.libraw.org/node/2306 por detaloj.</item><item><emphasis "
+"strong='true'>AAHD</emphasis>: modifita AHD-interpolado.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:297
 #, kde-format
@@ -49354,7 +49357,7 @@ msgstr "Ĝisdatigoj"
 #: core/utilities/setup/misc/setupmisc.cpp:119
 #, kde-format
 msgid "Check for new version:"
-msgstr "Kontrolu disponeblon de nova versio:"
+msgstr "Kontroli disponeblon de nova versio:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:121
@@ -49694,7 +49697,7 @@ msgstr "Montri bildajn dimensiojn"
 #: core/utilities/setup/setuptooltip.cpp:160
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
-msgstr "Agordu ĉi tiun opcion por montri la bildajn dimensiojn en pikseloj."
+msgstr "Agordu ĉi tiun opcion por montri la bildajn dimensiojn en rastrumeroj."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/setuptooltip.cpp:180
@@ -50723,7 +50726,7 @@ msgid "Camera name"
 msgstr "Fotila nomo"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Ŝlosilvorto apartigilo:"
@@ -51220,12 +51223,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grupo"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadatenoj..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Aldoni informojn pri metadatumoj"
@@ -51863,7 +51866,7 @@ msgid ""
 "your workflow.</p></qt>"
 msgstr ""
 "<qt><p><i>Noto:</i> la Kruda importa ilo estas desegnita por progresintaj "
-"uzantoj, kiuj volas havi la plej bonan kontrolon de la bildo. Ĉi tio "
+"uzantoj, kiuj volas havi la plej bonan superregon de la bildo. Ĉi tio "
 "postulas pli da tempo en via laborfluo.</p></qt>"
 
 #: core/utilities/firstrun/startscanpage.cpp:34
@@ -52330,7 +52333,7 @@ msgstr "Plumo:"
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:70
 #, kde-format
 msgid "Set here the brush size in pixels used to draw sketch."
-msgstr "Fiksu ĉi tie la penikgrandon en pikseloj uzataj por desegni skizon."
+msgstr "Fiksu ĉi tie la penikgrandon en rastrumeroj uzataj por desegni skizon."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:77
 #, kde-format
@@ -52415,17 +52418,17 @@ msgstr "Tereno"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:174
 #, kde-format
 msgid "Show Map Type Control"
-msgstr "Montri Kontrolon de Tipo de Mapo"
+msgstr "Montri Regilon de Maptipo"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
 msgid "Show Navigation Control"
-msgstr "Montri Navigada Kontrolo"
+msgstr "Montri Navigadan Regilon"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
 #, kde-format
 msgid "Show Scale Control"
-msgstr "Montri Skalan Kontrolon"
+msgstr "Montri Skalan Regilon"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #: core/utilities/setup/setupgeolocation.cpp:132
@@ -53025,7 +53028,7 @@ msgstr "Forigi rapidecon"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr "Kontroli mankantajn altitudajn valorojn"
+msgstr "Elserĉi mankantajn altecajn valorojn"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:420
 #, kde-format
@@ -53256,7 +53259,7 @@ msgstr "Forigi elektitan etikedon"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:208
 #, kde-format
 msgid "Remove all control tags below this tag"
-msgstr "Forigi ĉiujn kontroletikedojn sub ĉi tiu etikedo"
+msgstr "Forigi ĉiujn stir-etikedojn sub ĉi tiu etikedo"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
 #, kde-format
@@ -57495,7 +57498,8 @@ msgstr "Fiksu ĉi tie la koloron uzatan por desegni strekitajn gvidliniojn."
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr ""
-"Fiksu ĉi tie la larĝon en pikseloj uzataj por desegni strekitajn gvidliniojn."
+"Fiksu ĉi tie la larĝon en rastrumeroj uzataj por desegni strekitajn "
+"gvidliniojn."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
 #, kde-format
@@ -60593,7 +60597,7 @@ msgstr "Agordoj de atendovico"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
-msgstr "Kontrola Panelo"
+msgstr "Mastruma Panelo"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, kde-format
@@ -62324,7 +62328,7 @@ msgstr "Montri bildajn &dimensiojn"
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
-"Agordu ĉi tiun opcion por montri la grandecon de bildo en pikseloj sub la "
+"Agordu ĉi tiun opcion por montri la grandecon de bildo en rastrumeroj sub la "
 "bildeto."
 
 #: core/utilities/setup/album/setupalbumview.cpp:137
@@ -62528,8 +62532,8 @@ msgstr ""
 "Agordu ĉi tiun opcion por bildigi bildeton kun granda grandeco de bildeto, "
 "ekzemple se estas uzata 4K-ekrano.\n"
 "Defaŭlte ĉi tiu opcio estas malŝaltita kaj la maksimuma grandeco de bildeto "
-"estas limigita al 256x256 pikseloj. Kiam ĉi tiu opcio estas ebligita, "
-"bildetogrando povas esti etendita ĝis 512x512 pikseloj.\n"
+"estas limigita al 256x256 rastrumeroj. Kiam ĉi tiu opcio estas ebligita, "
+"bildetogrando povas esti etendita ĝis 512x512 rastrumeroj.\n"
 "Ĉi tiu opcio konservos pli da datumoj en bildetuma datumbazo kaj uzos pli da "
 "sistemmemoro. digiKam devas esti rekomencita por ekvalidi, kaj la opcio "
 "Rekonstrui Bildetojn de Prizorga ilo devas esti prilaborita en tutaj "
@@ -62552,8 +62556,8 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr ""
-"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la piktogramoj "
-"de Arbo-Vido en la flankaj bretoj de digiKam."
+"Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
+"piktogramoj de Arbo-Vido en la flankaj bretoj de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:243
 #, kde-format
@@ -62566,8 +62570,8 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
-"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la piktogramoj "
-"de Arbo-Vido en la flanka kolumno de homoj de digiKam."
+"Agordu ĉi tiun opcion por agordi la grandecon en rastrumeroj de la "
+"piktogramoj de Arbo-Vido en la flanka kolumno de homoj de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
@@ -64695,7 +64699,7 @@ msgid ""
 "metadata.</para> <para>Storing in metadata allows one to preserve this "
 "information when moving or sending the files to different systems.</para>"
 msgstr ""
-"<para>Krom la piksela enhavo, bilddosieroj kutime enhavas diversajn "
+"<para>Krom la rastrumera enhavo, bilddosieroj kutime enhavas diversajn "
 "metadatenojn. Multaj el la parametroj, kiujn vi povas uzi en digiKam por "
 "administri dosierojn, kiel taksadon aŭ komenton, povas esti skribitaj al la "
 "metadatumoj de la dosieroj.</para> <para>Konservado en metadatumoj permesas "
@@ -65033,7 +65037,7 @@ msgstr "Skribi flagon al metadatumoj se eble"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate files only by changing a flag, not touching the pixel data"
-msgstr "Rotacii dosierojn nur ŝanĝante flagon, ne tuŝante la pikselojn"
+msgstr "Rotacii dosierojn nur ŝanĝante flagon, ne tuŝante la rastrumerojn"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:52
 #, kde-kuit-format
@@ -65048,18 +65052,18 @@ msgid ""
 "outside digiKam.</para>"
 msgstr ""
 "<para>Dosiero povas esti rotaciita en du manieroj:<nl/> Vi povas ŝanĝi la "
-"enhavon, rearanĝante la individuajn pikselojn de la bildaj datumoj.<nl/> Aŭ "
-"vi povas agordi flagon, ke la dosiero devas esti turnita antaŭ ĝi. montriĝas."
-"</para> <para>Elektu ĉi tiun opcion se vi ĉiam volas agordi nur flagon. Ĉi "
-"tio estas malpli trudema, sed postulas subtenon se la dosiero estas alirita "
-"per alia programaro. Certigu permesi agordi la flagon en la metadatumoj se "
-"vi volas kunhavigi viajn dosierojn ekster digiKam.</para>"
+"enhavon, rearanĝante la individuajn rastrumerojn de la bildaj datumoj.<nl/> "
+"Aŭ vi povas agordi flagon, ke la dosiero devas esti rotaciita antaŭ esti "
+"montrata.</para> <para>Elektu ĉi tiun opcion se vi ĉiam volas agordi nur "
+"flagon. Ĉi tio estas malpli trudema, sed postulas subtenon se la dosiero "
+"estas alirita per alia programaro. Certigu permesi agordi la flagon en la "
+"metadatumoj se vi volas kunhavigi viajn dosierojn ekster digiKam.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "If possible rotate files by changing the pixel data"
-msgstr "Se eble turnu dosierojn ŝanĝante la pikselajn datumojn"
+msgstr "Se eble turnu dosierojn ŝanĝante la rastrumerajn datumojn"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:63
 #, kde-kuit-format
@@ -65074,13 +65078,13 @@ msgid ""
 "and other read-only formats, which will be rotated by flag only.</para>"
 msgstr ""
 "<para>Dosiero povas esti rotaciita en du manieroj:<nl/> Vi povas ŝanĝi la "
-"enhavon, rearanĝante la individuajn pikselojn de la bildaj datumoj.<nl/> Aŭ "
-"vi povas agordi flagon, ke la dosiero devas esti turnita antaŭ ĝi. montriĝas."
-"</para> <para>Elektu ĉi tiun opcion se vi volas, ke la dosiero estu turnita "
-"ŝanĝante la enhavon. Ĉi tio estas senperda operacio por JPEG-dosieroj. Por "
-"aliaj formatoj ĝi estas perda operacio, kiun vi devas eksplicite ebligi. Ĝi "
-"ne estas subtena por RAW kaj aliaj nurlegeblaj formatoj, kiuj estos "
-"rotaciitaj nur per flago.</para>"
+"enhavon, rearanĝante la individuajn rastrumerojn de la bildaj datumoj.<nl/> "
+"Aŭ vi povas agordi flagon, ke la dosiero devas esti rotaciita antaŭ esti "
+"montrata.</para> <para>Elektu ĉi tiun opcion se vi volas, ke la dosiero estu "
+"rotaciita ŝanĝante la enhavon. Ĉi tio estas senperda operacio por JPEG-"
+"dosieroj. Por aliaj formatoj ĝi estas perda operacio, kiun vi devas "
+"eksplicite ebligi. Ĝi ne estas subtena por RAW kaj aliaj nurlegeblaj "
+"formatoj, kiuj estos rotaciitaj nur per flago.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:73
 #, kde-format
@@ -65089,8 +65093,8 @@ msgid ""
 "Rotate files by changing the pixel data even if the operation will incur "
 "quality loss"
 msgstr ""
-"Rotaciu dosierojn ŝanĝante la pikselojn eĉ se la operacio provos perdon de "
-"kvalito"
+"Rotaciu dosierojn ŝanĝante la rastrumerojn eĉ se la operacio provos perdon "
+"de kvalito"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:75
 #, kde-format
@@ -65669,24 +65673,22 @@ msgstr "Malebligi aparatan akcelon OpenCL"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
-msgstr ""
+msgstr "Ripari AMD-GPU filmet-malkodigan problemon"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for video:"
-msgstr ""
+msgstr "Malkodiga backend uzata por filmeto:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr "(defaŭlte)"
+msgstr "FFmpeg (Defaŭlto)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "Vindozo (Sistemo)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
@@ -66074,8 +66076,8 @@ msgid ""
 msgstr ""
 "<p>Se bildo havas enigitan kolorprofilon ne kongruan kun la laborspaca "
 "profilo, digiKam konvertos la kolorinformojn de la bildo al la "
-"laborkolorspaco. Ĉi tio ŝanĝas la pikselojn, sed ne la aspekton de la bildo."
-"</p>"
+"laborkolorspaco. Ĉi tio ŝanĝas la rastrumerojn, sed ne la aspekton de la "
+"bildo.</p>"
 
 #: core/utilities/setup/setupicc.cpp:213
 #, kde-format

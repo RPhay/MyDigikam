@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -23171,7 +23171,7 @@ msgstr ""
 "mittlere Komprimierung<br/><b>75</b>: niedrige Komprimierung "
 "(Voreinstellung)<br/><b>100</b>: keine Komprimierung</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr ""
@@ -52012,7 +52012,7 @@ msgid "Camera name"
 msgstr "Kamera-Name"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Trennzeichen für Schlüsselwörter:"
@@ -52513,12 +52513,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Gruppe"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadaten ..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Metadaten-Informationen hinzufügen"

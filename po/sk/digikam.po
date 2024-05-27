@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2024-03-29 21:26+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -22694,7 +22694,7 @@ msgstr ""
 "trvanie kompresie)</p><p><b>Pozor: PNG je bezstratový kompresný formát.</b></"
 "p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, fuzzy, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
@@ -52187,7 +52187,7 @@ msgid "Camera name"
 msgstr "Názov priečinku:"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, fuzzy, kde-format
 msgid "Keyword separator:"
 msgstr "Vložiť oddeľovač"
@@ -52686,12 +52686,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Skupina"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadáta..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, fuzzy, kde-format
 msgid "Add metadata information"
 msgstr "Pridať informácie o &skladbe"

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -24062,7 +24062,7 @@ msgstr ""
 "μεγάλη διάρκεια συμπίεσης)</p><p><b>Σημείωση: Η PNG είναι πάντα ένας τύπος "
 "συμπίεσης εικόνας χωρίς απώλειες.</b></p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgid "This is the list of items to copy to the specified target."
@@ -54691,7 +54691,7 @@ msgid "Camera name"
 msgstr "Όνομα κάμερας"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Διαχωριστής λέξεων-κλειδιών"
@@ -55209,12 +55209,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Ομάδα"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Μεταδεδομένα..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Προσθήκη πληροφοριών μεταδεδομένων"

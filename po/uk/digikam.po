@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
-"PO-Revision-Date: 2024-05-25 08:24+0300\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"PO-Revision-Date: 2024-05-26 08:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -23194,7 +23194,7 @@ msgstr ""
 "невисокий рівень стиснення (типове значення)<br/><b>100</b>: без стиснення</"
 "p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Це список записів, які буде скопійовано за вказаною адресою."
@@ -51568,7 +51568,7 @@ msgid "Camera name"
 msgstr "Назва фотоапарата"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Роздільник ключових слів:"
@@ -52066,12 +52066,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Група"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Метадані…"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Додати метадані"
@@ -66741,8 +66741,7 @@ msgid "Disable hardware acceleration OpenCL"
 msgstr "Вимкнути апаратне прискорення OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Fix AMD-GPU vdeo decoding issue"
+#, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Виправити проблему декодування на гр. процесорах AMD"
 

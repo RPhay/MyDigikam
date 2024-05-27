@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -22136,7 +22136,7 @@ msgstr ""
 "(kích cỡ tệp nhỏ còn tiến trình nén dài)<p><b>Ghi chú : PNG luôn luôn là "
 "định dạng nén ảnh không mất gì.</b>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, fuzzy, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Đây là danh sách các mục sắp bị xoá."
@@ -49882,7 +49882,7 @@ msgid "Camera name"
 msgstr "Thêm tên máy ảnh"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr ""
@@ -50377,12 +50377,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "&Nhóm lại"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, fuzzy, kde-format
 msgid "Metadata..."
 msgstr "Siêu dữ liệu"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, fuzzy, kde-format
 msgid "Add metadata information"
 msgstr "Lọc nhiễu :"

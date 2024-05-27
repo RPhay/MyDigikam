@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
-"PO-Revision-Date: 2024-05-25 18:30+0200\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"PO-Revision-Date: 2024-05-26 08:56+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -22996,7 +22996,7 @@ msgstr ""
 "media<br/><b>75</b>: compresión baixa (predeterminada)<br/><b>100</b>: sen "
 "comprimir</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Esta é a lista dos elementos para copiar ao destino indicado."
@@ -31676,14 +31676,7 @@ msgid "Lut3D"
 msgstr "Lut3D"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:109
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select the effect type to apply to the image here.</p><p><b>Solarize</"
-#| "b>: simulates solarization of photograph.</p><p><b>Vivid</b>: simulates "
-#| "the Velvia(tm) slide film colors.</p><p><b>Neon</b>: coloring the edges "
-#| "in a photograph to reproduce a fluorescent light effect.</p><p><b>Find "
-#| "Edges</b>: detects the edges in a photograph and their strength.</"
-#| "p><p><b>Lut3D</b>: coloring images with Lut3D filters</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Select the effect type to apply to the image here.\n"
@@ -31695,12 +31688,13 @@ msgid ""
 "and their strength.\n"
 "\"Lut3D\": coloring images with Lut3D filters"
 msgstr ""
-"<p>Escolla aquí o tipo de efecto a aplicar na imaxe.</p><p><b>Solarizar</b>: "
-"simula a solarización da fotografía.</p><p><b>Vívido</b>: simula as cores do "
-"filme de diapositivas Velvia (tm).</p><p><b>Neon</b>: colora as arestas "
-"nunha foto para producir un efecto de luz fluorescente.</p><p><b>Atopar as "
-"arestas</b>: detecta as arestas nunha fotografía e a súa forza.</p> "
-"<p><b>Lut3D</b>: colora imaxes con filtros de Lut3D.</p>"
+"Escolla aquí o tipo de efecto a aplicar na imaxe.\n"
+"«Solarizar»: simula a solarización da fotografía.\n"
+"«Vívido»: simula as cores do filme de diapositivas Velvia (tm).\n"
+"«Neon»: colora as arestas nunha foto para producir un efecto de luz "
+"fluorescente.\n"
+"«Atopar as arestas»: detecta as arestas nunha fotografía e a súa forza.\n"
+"«Lut3D»: colora imaxes con filtros de Lut3D."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:133
 #, kde-format
@@ -32157,10 +32151,9 @@ msgid "Hot Pixels"
 msgstr "Píxeles queimados"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgid "Remove Black Frame"
-msgstr "Máscara…"
+msgstr "Eliminar a máscara"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
@@ -32169,22 +32162,19 @@ msgid "Clear List"
 msgstr "Limpar a lista"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
-#, fuzzy, kde-format
-#| msgid "Loading:"
+#, kde-format
 msgid "Loading Frame"
-msgstr "Cargando:"
+msgstr "Cargando o fotograma"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgid "Black Frame"
-msgstr "Máscara…"
+msgstr "Máscara"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgid "File Name:"
-msgstr "Nome do ficheiro"
+msgstr "Nome do ficheiro:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
 #, kde-format
@@ -32193,16 +32183,14 @@ msgid "Created:"
 msgstr "Creación:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Serial Number:"
-msgstr "Número:"
+msgstr "Número de serie:"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
-#, fuzzy, kde-format
-#| msgid "Hot Pixels"
+#, kde-format
 msgid "Hot Pixels:"
-msgstr "Píxeles queimados"
+msgstr "Píxeles queimados:"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelfixer.cpp:73
 #, kde-format
@@ -32253,6 +32241,17 @@ msgid ""
 "pixels, and create a list of positions where image must be corrected to "
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
+"<p>Use este botón para engadir un novo ficheiro de máscara para o filtro de "
+"eliminación de píxeles queimados.</p><p>O método de resta de máscara é a "
+"eliminación de «píxeles queimados» e «píxeles atascados» máis precisa. "
+"Primeiro ten que crear unha máscara de referencia. Cando remate de facer as "
+"capturas de exposicións longas, poña unha tapa na lente e saque unha foto "
+"«escura» co mesmo tempo de exposición que as imaxes anteriores. A imaxe "
+"estará completamente escura, pero repare en que ten os píxeles queimados e "
+"atascados (puntos colorados). Eses puntos colócanse nos mesmos puntos que "
+"nas capturas anteriores. A ferramenta analizará a máscara, detectará os "
+"píxeles queimados, e creará unha lista de posicións nas que a imaxe necesita "
+"unha corrección para eliminar as cores incorrectas deses píxeles.</p>"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:213
 #, kde-format
@@ -32260,16 +32259,15 @@ msgid "Select Black Frame Image"
 msgstr "Escolla unha imaxe completamente negra (máscara)"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:219
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
-msgstr "Máscara…"
+msgstr "Analizador de máscara"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
-msgstr ""
+msgstr "A imaxe de máscara xa está na lista de elementos analizados."
 
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:74
 #, kde-format
@@ -33478,11 +33476,10 @@ msgid "White Balance Tool"
 msgstr "Ferramenta de balance de brancos"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:148
-#, fuzzy, kde-format
-#| msgid "neutral color temperature"
+#, kde-format
 msgctxt "@title: WB"
 msgid "Color Temperature"
-msgstr "temperatura de cor neutral"
+msgstr "Temperatura da cor"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:151
 #, kde-format
@@ -33758,11 +33755,10 @@ msgstr ""
 "maxenta."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:247
-#, fuzzy, kde-format
-#| msgid "Exposure correction."
+#, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
-msgstr "Corrección da exposición."
+msgstr "Compensación da exposición"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:250
 #, kde-format
@@ -33881,6 +33877,8 @@ msgid ""
 "Warning: ExifTool is not available to post-process metadata. Without "
 "ExifTool, DNG will not include all RAW source properties."
 msgstr ""
+"Aviso: ExifTool non está dispoñíbel para post-procesar os metadatos. Sen "
+"ExifTool, DNG non incluirá todas as propiedades orixinais da imaxe en cru."
 
 #: core/libs/dplugins/core/dpluginaction.cpp:94
 #, kde-format
@@ -33955,12 +33953,10 @@ msgid "Invalid"
 msgstr "Incorrecto"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:52
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
-msgstr "Unha imaxe"
+msgstr "%1 imaxe"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:81
 #, kde-format
@@ -33975,19 +33971,16 @@ msgid "Description"
 msgstr "Descrición"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Ready"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
-msgstr "Listo"
+msgstr "Lectura"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:84
-#, fuzzy, kde-format
-#| msgid "Writable: "
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Write"
-msgstr "Permite escritura: "
+msgstr "Escritura"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:89
 #, kde-format
@@ -34059,25 +34052,22 @@ msgid "File Size"
 msgstr "Tamaño do ficheiro"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Data do ficheiro"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
-#, fuzzy, kde-format
-#| msgid "File name"
+#, kde-format
 msgctxt "@item"
 msgid "File Owner"
-msgstr "Nome de ficheiro"
+msgstr "Propiedade do ficheiro"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
-#, fuzzy, kde-format
-#| msgid "FileCopy"
+#, kde-format
 msgctxt "@item"
 msgid "File Group"
-msgstr "CopiaDeFicheiro"
+msgstr "Grupo do ficheiro"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, kde-format
@@ -34504,11 +34494,10 @@ msgid "Save the list."
 msgstr "Gardar a lista."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:554
-#, fuzzy, kde-format
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
-msgstr "Escolla a lista de ficheiros de imaxe que cargar"
+msgstr "Seleccione a lista de ficheiros de imaxe que cargar"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:555
 #: core/libs/dplugins/widgets/ditemslist.cpp:637
@@ -34518,11 +34507,10 @@ msgid "All Files (*)"
 msgstr "Todos os ficheiros (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:635
-#, fuzzy, kde-format
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
-msgstr "Escolla a lista de ficheiros de imaxe para gardar"
+msgstr "Seleccione a lista de ficheiros de imaxe para gardar"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:39
 #, kde-format
@@ -34574,11 +34562,10 @@ msgid "User6"
 msgstr "Usuario6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:68
-#, fuzzy, kde-format
-#| msgid "&Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
-msgstr "A&xuda"
+msgstr "Axuda"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:71
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
@@ -34666,11 +34653,10 @@ msgstr ""
 "non está comprimida.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:63
-#, fuzzy, kde-format
-#| msgid "&Help"
+#, kde-format
 msgctxt "@action:button"
 msgid "Help"
-msgstr "A&xuda"
+msgstr "Axuda"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
@@ -34984,22 +34970,19 @@ msgid "JPEG Files"
 msgstr "Ficheiros JPEG"
 
 #: core/libs/filters/mimefilter.cpp:31
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 image"
+#, kde-format
 msgid "JPEG-2000 Files"
-msgstr "Imaxe JPEG-2000"
+msgstr "Ficheiros JPEG-2000"
 
 #: core/libs/filters/mimefilter.cpp:32
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgid "JPEG-XL Files"
-msgstr "Ficheiros JPEG"
+msgstr "Ficheiros JPEG-XL"
 
 #: core/libs/filters/mimefilter.cpp:33
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgid "WEBP Files"
-msgstr "Ficheiros PNG"
+msgstr "Ficheiros WEBP"
 
 #: core/libs/filters/mimefilter.cpp:34
 #, kde-format
@@ -35022,10 +35005,9 @@ msgid "HEIF Files"
 msgstr "Ficheiros HEIF"
 
 #: core/libs/filters/mimefilter.cpp:38
-#, fuzzy, kde-format
-#| msgid "HEIF Files"
+#, kde-format
 msgid "AVIF Files"
-msgstr "Ficheiros HEIF"
+msgstr "Ficheiros AVIF"
 
 #: core/libs/filters/mimefilter.cpp:39
 #, kde-format
@@ -35096,10 +35078,9 @@ msgid "Rating less than or equal to %1."
 msgstr "Cualificación menor ou igual a %1."
 
 #: core/libs/filters/ratingfilter.cpp:229
-#, fuzzy, kde-format
-#| msgid "Exclude Items Without Rating"
+#, kde-format
 msgid "Items Without Rating"
-msgstr "Excluír os elementos sen cualificación"
+msgstr "Elementos sen cualificación"
 
 #: core/libs/filters/ratingfilter.cpp:233
 #, kde-format
@@ -35196,30 +35177,32 @@ msgid "Select All"
 msgstr "Escoller todo"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:67
-#, fuzzy, kde-format
-#| msgid "Revert to default settings"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
-msgstr "Reverter á configuración predeterminada"
+msgstr "Usar a configuración predeterminada."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
+"Usar os parámetros predeterminados de ordenación por calidade definidos no "
+"diálogo de configuración."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:75
-#, fuzzy, kde-format
-#| msgid "Use custom definition"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
-msgstr "Empregar unha definición personalizada"
+msgstr "Usar unha configuración personalizada."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
+"Usar parámetros personalizados para realizar a ordenación por calidade en "
+"vez dos predeterminados."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, kde-format
@@ -35273,7 +35256,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr ""
+msgstr "Detectar unha imaxe estética mediante aprendizaxe profunda"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
@@ -35282,12 +35265,15 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"Detectar se a imaxe ten valor estético.\n"
+"O motor de detección estética usa un modelo de aprendizaxe profunda para "
+"clasificar imaxes."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
-msgstr ""
+msgstr "Detectar a calidade mediante factores básicos"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
@@ -35296,6 +35282,8 @@ msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
 "exposure, and compression)."
 msgstr ""
+"Detectar se a imaxe está sabotando por catro factores básicos (desenfoque, "
+"ruído, exposición e compresión)."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, kde-format
@@ -35351,11 +35339,10 @@ msgstr "Detecta a cantidade de desenfoque das imaxes que se lle pasen."
 #: core/libs/imgqsort/imagequalitysettings.cpp:183
 #: core/libs/imgqsort/imagequalitysettings.cpp:193
 #: core/libs/imgqsort/imagequalitysettings.cpp:203
-#, fuzzy, kde-format
-#| msgid "Height:"
+#, kde-format
 msgctxt "@label"
 msgid "Weight:"
-msgstr "Altura:"
+msgstr "Tamaño:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:188
 #, kde-format
@@ -35422,10 +35409,9 @@ msgid "Album %1 does not exist anymore"
 msgstr "O álbum %1 xa non existe."
 
 #: core/libs/iojobs/iojob.cpp:99
-#, fuzzy, kde-format
-#| msgid "Could not read image '%1'"
+#, kde-format
 msgid "Could not overwrite image %1"
-msgstr "Non se puido ler a imaxe «%1»"
+msgstr "Non foi posíbel substituír a imaxe %1"
 
 #: core/libs/iojobs/iojob.cpp:107
 #, kde-format
@@ -35433,6 +35419,9 @@ msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
+"Non foi posíbel mover a imaxe %1 ao lixo da colección.\n"
+"Comprobe os permisos do ficheiro no cartafol do lixo «%2» da colección de "
+"imaxes."
 
 #: core/libs/iojobs/iojob.cpp:135
 #, kde-format
@@ -35454,10 +35443,9 @@ msgstr ""
 "copiouse."
 
 #: core/libs/iojobs/iojob.cpp:184
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Non se puido mover o ficheiro %1 ao álbum %2."
+msgstr "Non foi posíbel mover p acompañamento do ficheiro %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:190
 #, kde-format
@@ -35470,16 +35458,14 @@ msgid "Could not copy folder %1 to album %2"
 msgstr "Non foi posíbel copiar o cartafol %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:226
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to album %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Non se puido copiar o ficheiro %1 ao álbum %2."
+msgstr "Non foi posíbel copiar o acompañamento do ficheiro %1 ao cartafol %2."
 
 #: core/libs/iojobs/iojob.cpp:234
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to album %2"
+#, kde-format
 msgid "Could not copy file %1 to folder %2"
-msgstr "Non se puido copiar o ficheiro %1 ao álbum %2."
+msgstr "Non foi posíbel copiar o ficheiro %1 ao cartafol %2."
 
 #: core/libs/iojobs/iojob.cpp:239
 #, kde-format
@@ -35498,6 +35484,9 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Non foi posíbel mover o cartafol %1 ao lixo da colección.\n"
+"Comprobe os permisos do ficheiro no cartafol do lixo «.dtrash» da colección "
+"de imaxes."
 
 #: core/libs/iojobs/iojob.cpp:310
 #, kde-format
@@ -35506,6 +35495,9 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Non foi posíbel mover a imaxe %1 ao lixo da colección.\n"
+"Comprobe os permisos do ficheiro no cartafol do lixo «.dtrash» da colección "
+"de imaxes."
 
 #: core/libs/iojobs/iojob.cpp:327
 #, kde-format
@@ -35533,10 +35525,9 @@ msgid "Image %1 could not be renamed"
 msgstr "Non foi posíbel renomear a imaxe %1."
 
 #: core/libs/iojobs/iojob.cpp:493
-#, fuzzy, kde-format
-#| msgid "Could not open file '%1' for writing"
+#, kde-format
 msgid "Could not restore file %1 from trash"
-msgstr "Non se puido abrir o ficheiro «%1» para escribir nel"
+msgstr "Non foi posíbel restaurar o ficheiro %1 do lixo."
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:861
 #, kde-format
@@ -35872,7 +35863,7 @@ msgstr "Finlandés"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "Fixiano"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
@@ -36237,7 +36228,7 @@ msgstr "Occitano"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Oromo"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:417
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:565
@@ -36651,53 +36642,46 @@ msgstr "Etiqueta de cores"
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
-msgstr ""
+msgstr "%1 bytes de datos binarios"
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
-#, fuzzy, kde-format
-#| msgid "File does not exist or is not a file"
+#, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
-msgstr "O ficheiro non existe ou non é un ficheiro"
+msgstr "ExifTool non existe ou fáltanlle os permisos de execución."
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
-#, fuzzy, kde-format
-#| msgid "File does not exist or is not a file"
+#, kde-format
 msgid "Perl does not exists or exec permission is missing"
-msgstr "O ficheiro non existe ou non é un ficheiro"
+msgstr "Perl non existe ou fáltanlle os permisos de execución."
 
 #: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
-msgstr ""
+msgstr "Erro de sincronización das canles."
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
 msgctxt "Focus point type description"
 msgid "In Focus"
-msgstr ""
+msgstr "Enfocado"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "select tags menu"
-#| msgid "Select"
+#, kde-format
 msgctxt "Focus point type description"
 msgid "Selected"
-msgstr "Escoller"
+msgstr "Seleccionado"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@title:column Source file names"
-#| msgid "Selected Inputs"
+#, kde-format
 msgctxt "Focus point type description"
 msgid "Selected In Focus"
-msgstr "Entradas seleccionadas"
+msgstr "Seleccionado enfocado"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:126
-#, fuzzy, kde-format
-#| msgid "Relative"
+#, kde-format
 msgctxt "Focus point type description"
 msgid "Inactive"
-msgstr "Relativo"
+msgstr "Inactivo"
 
 #: core/libs/models/albummodel_tag.cpp:25
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:82
@@ -36707,14 +36691,12 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #: core/libs/models/albummodel_tag.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "device label etc... (<formatted byte size>)"
-#| msgid " (%1)"
+#, kde-format
 msgctxt "@info: unconfirmed faces in album"
 msgid " (%1 new)"
 msgid_plural " (%1 new)"
-msgstr[0] " (%1)"
-msgstr[1] " (%1)"
+msgstr[0] " (%1 nova)"
+msgstr[1] " (%1 novas)"
 
 #: core/libs/notificationmanager/dnotificationwidget_p.cpp:80
 #, kde-format
@@ -36730,101 +36712,91 @@ msgstr "Pechar a mensaxe"
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
-msgstr ""
+msgstr "nunca"
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:189
-#, fuzzy, kde-format
-#| msgid "Invalid response received from remote Piwigo"
+#, kde-format
 msgid "No data returned from the remote connection."
-msgstr "Recibiuse unha resposta incorrecta do Piwigo remoto"
+msgstr "A conexión remota non devolveu datos."
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:204
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgid "Unsupported Architecture: %1"
-msgstr "Formato incompatíbel"
+msgstr "Arquitectura incompatíbel: %1"
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:232
-#, fuzzy, kde-format
-#| msgid "Invalid response received from remote Piwigo"
+#, kde-format
 msgid "Invalid file name format returned from the remote connection."
-msgstr "Recibiuse unha resposta incorrecta do Piwigo remoto"
+msgstr "A conexión remota devolveu un formato incorrecto de nome de ficheiro."
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:256
-#, fuzzy, kde-format
-#| msgid "Invalid response received from remote Piwigo"
+#, kde-format
 msgid "Invalid pre-release date from the remote list."
-msgstr "Recibiuse unha resposta incorrecta do Piwigo remoto"
+msgstr "A data de pre-publicación da lista remota é incorrecta."
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:289
-#, fuzzy, kde-format
-#| msgid "Invalid response received from remote Piwigo"
+#, kde-format
 msgid "Invalid format returned from the remote connection."
-msgstr "Recibiuse unha resposta incorrecta do Piwigo remoto"
+msgstr "A conexión remota devolveu un formato incorrecto."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:157
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
-msgstr ""
+msgstr "Recibido:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:158
-#, fuzzy, kde-format
-#| msgid "Total: "
+#, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
-msgstr "Total: "
+msgstr "Total:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:159
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
-msgstr "Data:"
+msgstr "Velocidade:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:160
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
-msgstr ""
+msgstr "Tempo restante:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr ""
+msgstr "Comprobador de versión por Internet (pre-publicación)"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Scanning for new files, please wait..."
+#, kde-format
 msgid "Check for new pre-release version available, please wait..."
-msgstr "Buscando ficheiros novos…"
+msgstr ""
+"Comprobando se hai dispoñíbel unha nova versión pre-publicación, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
-msgstr ""
+msgstr "Comprobador de versión por Internet (versión estábel)"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Scanning for new files, please wait..."
+#, kde-format
 msgid "Check for new stable version available, please wait..."
-msgstr "Buscando ficheiros novos…"
+msgstr "Comprobando se hai dispoñíbel unha nova versión estábel, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:229
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Configure..."
-msgstr "Configurar"
+msgstr "Configurar…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:230
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
+"Abrir a páxina do diálogo de configuración para configurar as actualizacións."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:258
 #: core/utilities/setup/downloader/filesdownloader.cpp:138
@@ -51901,7 +51873,7 @@ msgid "Camera name"
 msgstr "Nome da cámara"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Separador das palabras clave:"
@@ -52402,12 +52374,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grupo"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadatos…"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Engadir a información dos metadatos"

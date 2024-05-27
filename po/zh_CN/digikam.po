@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -22042,7 +22042,7 @@ msgstr ""
 "><b>75</b>：较低压缩率，较好画质 (默认值)<br/><b>100</b>：最低压缩率，最好画"
 "质</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
@@ -49390,7 +49390,7 @@ msgid "Camera name"
 msgstr "相机名称"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "关键字分隔符："
@@ -49884,12 +49884,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "用户组"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "元数据..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "添加元数据信息"
@@ -63897,12 +63897,12 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
 msgid "FFmpeg (Default)"
-msgstr ""
+msgstr "FFmpeg (默认)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "Windows (系统)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format

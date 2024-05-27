@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2024-05-23 15:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -22773,7 +22773,7 @@ msgstr ""
 "þjöppun<br/><b>25</b>: mikil þjöppun<br/><b>50</b>: meðalþjöppun<br/><b>75</"
 "b>: lítil þjöppun (sjálfgefið)<br/><b>100</b>: engin þjöppun</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Þetta er listi yfir þau atriði sem á að senda á tilgreint úttak."
@@ -50795,7 +50795,7 @@ msgid "Camera name"
 msgstr "Nafn myndavélar"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Aðgreinir stikkorða:"
@@ -51290,12 +51290,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr " Hópur "
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Lýsigögn..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Bæta upplýsingum í lýsigögn"

@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
-"PO-Revision-Date: 2024-05-25 12:39+0300\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"PO-Revision-Date: 2024-05-26 21:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22885,7 +22885,7 @@ msgstr ""
 "sıkıştırma<br/><b>75</b>: Düşük sıkıştırma (öntanımlı değer)<br/><b>100</b>: "
 "Sıkıştırmasız</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Bu, belirtilen hedefe kopyalanacak ögelerin listesidir."
@@ -50914,7 +50914,7 @@ msgid "Camera name"
 msgstr "Kamera adı"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Anahtar sözcük ayırıcısı:"
@@ -51411,12 +51411,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grup"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr "Üst Veri..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr "Üst veri bilgisi ekle"
@@ -65915,8 +65915,7 @@ msgid "Disable hardware acceleration OpenCL"
 msgstr "OpenCL donanım ivmelendirmesini devre dışı bırak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Fix AMD-GPU vdeo decoding issue"
+#, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "AMD GPU’larda video kodlaması sorununu düzelt"
 

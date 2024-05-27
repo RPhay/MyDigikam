@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 01:41+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -22166,7 +22166,7 @@ msgid ""
 "no compression</p>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, fuzzy, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "ये चीज मन के सूची हे जऊन ल मेटाय जाही."
@@ -50508,7 +50508,7 @@ msgid "Camera name"
 msgstr "कैमरा नाम जोड़व"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:48
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr ""
@@ -51006,12 +51006,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "समूह (&G)"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, fuzzy, kde-format
 msgid "Metadata..."
 msgstr "मेटाडाटा"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:93
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, fuzzy, kde-format
 msgid "Add metadata information"
 msgstr "फोटू जानकारी आयातित"
