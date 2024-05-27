@@ -358,7 +358,7 @@ void FaceGroup::clear()
     cancelAddItem();
     d->visibilityController->clear();
 
-    Q_FOREACH (FaceItem* const item, d->items)
+    Q_FOREACH (RegionFrameItem* const item, d->items)
     {
         delete item;
     }
