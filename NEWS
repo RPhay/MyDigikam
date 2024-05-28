@@ -140,7 +140,7 @@ BUGFIXES:
 111 ==> 152909 - Batch operation "resize" fails saying convert cannot be started correctly.
 112 ==> 093065 - Resizing images removes EXIF information.
 113 ==> 487589 - Cannot see the recycle bin.
-114 ==> 
+114 ==> 485330 - Crash in Showfoto.
 115 ==> 
 116 ==> 
 117 ==> 
