@@ -73,6 +73,16 @@ CheckableAlbumFilterModel* AbstractCheckableAlbumTreeView::albumFilterModel() co
     return dynamic_cast<CheckableAlbumFilterModel*> (m_albumFilterModel);
 }
 
+void AbstractCheckableAlbumTreeView::setAlbumModel(AbstractCheckableAlbumModel* const model)
+{
+    AbstractCountingAlbumTreeView::setAlbumModel(model);
+}
+
+void AbstractCheckableAlbumTreeView::setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel)
+{
+    AbstractCountingAlbumTreeView::setAlbumFilterModel(filterModel);
+}
+
 void AbstractCheckableAlbumTreeView::setCheckOnMiddleClick(bool doThat)
 {
     m_checkOnMiddleClick = doThat;

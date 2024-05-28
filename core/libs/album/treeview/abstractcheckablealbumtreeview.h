@@ -80,6 +80,9 @@ protected:
     void middleButtonPressed(Album* a)                                    override;
     void rowsInserted(const QModelIndex& parent, int start, int end)      override;
 
+    void setAlbumModel(AbstractCheckableAlbumModel* const model);
+    void setAlbumFilterModel(CheckableAlbumFilterModel* const filterModel);
+
 private:
 
     void restoreCheckStateForHierarchy(const QModelIndex& index);
