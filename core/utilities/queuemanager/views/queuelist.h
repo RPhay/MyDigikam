@@ -96,6 +96,16 @@ class QueueListView : public QTreeWidget
 
 public:
 
+    enum ItemListType
+    {
+        Pending = 0,    ///< Items from the list not yet processed.
+        Selected,       ///< Items from the list selected.
+        All             ///< All items from the list.
+    };
+    Q_ENUM(ItemListType)
+
+public:
+
     explicit QueueListView(QWidget* const parent);
     ~QueueListView()                                                     override;
 
@@ -104,7 +114,7 @@ public:
     void removeItemByInfo(const ItemInfo& info);
     void removeItemById(qlonglong id);
 
-    ItemInfoList pendingItemsList();
+    ItemInfoList itemsList(ItemListType type);
     int          pendingItemsCount();
     int          pendingTasksCount();
 

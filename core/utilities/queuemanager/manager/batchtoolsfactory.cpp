@@ -20,7 +20,7 @@
 #include "digikam_debug.h"
 #include "dpluginloader.h"
 #include "dpluginbqm.h"
-#include "dbinfoiface.h"
+#include "bqminfoiface.h"
 
 namespace Digikam
 {
@@ -32,7 +32,7 @@ public:
 
     Private() = default;
 
-    DBInfoIface*   iface     = nullptr;
+    BqmInfoIface*  iface     = nullptr;
 
     BatchToolsList toolsList;
 };
@@ -58,7 +58,7 @@ BatchToolsFactory* BatchToolsFactory::instance()
 BatchToolsFactory::BatchToolsFactory()
     : d(new Private)
 {
-    d->iface                 = new DBInfoIface(this);
+    d->iface                 = new BqmInfoIface(this);
     DPluginLoader* const dpl = DPluginLoader::instance();
     bool hasJXLSupport       = dpl->canExport(QLatin1String("JXL"));
     bool hasWEBPSupport      = dpl->canExport(QLatin1String("WEBP"));
@@ -119,7 +119,7 @@ BatchToolsList BatchToolsFactory::toolsList() const
     return d->toolsList;
 }
 
-DInfoInterface* BatchToolsFactory::infoIface() const
+BqmInfoIface* BatchToolsFactory::infoIface() const
 {
     return d->iface;
 }

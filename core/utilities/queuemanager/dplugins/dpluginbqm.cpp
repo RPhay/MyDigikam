@@ -92,9 +92,9 @@ void DPluginBqm::addTool(BatchTool* const t)
     d->tools.append(t);
 }
 
-DInfoInterface* DPluginBqm::infoIface() const
+BqmInfoIface* DPluginBqm::infoIface() const
 {
-    DInfoInterface* const iface = BatchToolsFactory::instance()->infoIface();
+    BqmInfoIface* const iface = BatchToolsFactory::instance()->infoIface();
 
     if (iface)
     {

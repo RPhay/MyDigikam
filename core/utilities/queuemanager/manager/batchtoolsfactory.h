@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-class DInfoInterface;
+class BqmInfoIface;
 
 class BatchToolsFactory : public QObject
 {
@@ -42,7 +42,7 @@ public:
     void           registerTool(BatchTool* const tool);
     BatchTool*     findTool(const QString& name, BatchTool::BatchToolGroup group) const;
     BatchToolsList toolsList()                                                    const;
-    DInfoInterface* infoIface()                                                   const;
+    BqmInfoIface*  infoIface()                                                    const;
 
 private:
 

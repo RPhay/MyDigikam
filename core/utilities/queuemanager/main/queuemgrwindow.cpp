@@ -730,7 +730,8 @@ void QueueMgrWindow::processOneQueue()
     d->assignedList->reset();
 
     d->queuePool->setCurrentIndex(d->currentQueueToProcess);
-    QueuePoolItemsList itemsList = d->queuePool->queueItemsList(d->currentQueueToProcess);
+    QueuePoolItemsList itemsList = d->queuePool->itemsList(d->currentQueueToProcess,
+                                                           QueueListView::Pending);
     QueueSettings settings       = d->queuePool->currentQueue()->settings();
 
     if (!checkTargetAlbum(d->currentQueueToProcess))
@@ -1087,6 +1088,11 @@ DInfoInterface* QueueMgrWindow::infoIface(DPluginAction* const)
     // Reimplemented in BatchToolsFactory
 
     return nullptr;
+}
+
+QueuePool* QueueMgrWindow::queuePool() const
+{
+    return d->queuePool;
 }
 
 } // namespace Digikam

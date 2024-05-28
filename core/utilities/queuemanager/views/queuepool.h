@@ -65,19 +65,19 @@ class QueuePool : public QTabWidget
 public:
 
     explicit QueuePool(QWidget* const parent);
-    ~QueuePool()                                              override = default;
+    ~QueuePool()                                                  override = default;
 
-    QueueListView*     currentQueue()                    const;
-    QString            currentTitle()                    const;
-    QueueListView*     findQueueByIndex(int index)       const;
-    QueuePoolItemsList queueItemsList(int index)         const;
-    int                totalPendingItems()               const;
-    int                totalPendingTasks()               const;
-    QMap<int, QString> queuesMap()                       const;
-    QString            queueTitle(int index)             const;
-    bool               customRenamingRulesAreValid()     const;
-    bool               assignedBatchToolsListsAreValid() const;
-    bool               saveWorkflow()                    const;
+    QueueListView*     currentQueue()                       const;
+    QString            currentTitle()                       const;
+    QueueListView*     findQueueByIndex(int index)          const;
+    QueuePoolItemsList itemsList(int index, int type)       const;
+    int                totalPendingItems()                  const;
+    int                totalPendingTasks()                  const;
+    QMap<int, QString> queuesMap()                          const;
+    QString            queueTitle(int index)                const;
+    bool               customRenamingRulesAreValid()        const;
+    bool               assignedBatchToolsListsAreValid()    const;
+    bool               saveWorkflow()                       const;
 
     void setBusy(bool b);
     void setItemBusy(qlonglong id);

@@ -963,7 +963,7 @@ void QueueListView::cancelItems()
     }
 }
 
-ItemInfoList QueueListView::pendingItemsList()
+ItemInfoList QueueListView::itemsList(ItemListType type)
 {
     ItemInfoList list;
     QTreeWidgetItemIterator it(this);
@@ -972,9 +972,36 @@ ItemInfoList QueueListView::pendingItemsList()
     {
         QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
-        if (item && !item->isDone())
+        if (item)
         {
-            list.append(item->info());
+            switch (type)
+            {
+                case Pending:
+                {
+                    if (!item->isDone())
+                    {
+                        list.append(item->info());
+                    }
+
+                    break;
+                }
+
+                case Selected:
+                {
+                    if (!item->isSelected())
+                    {
+                        list.append(item->info());
+                    }
+
+                    break;
+                }
+
+                default:    // All
+                {
+                    list.append(item->info());
+                    break;
+                }
+            }
         }
 
         ++it;
@@ -985,7 +1012,7 @@ ItemInfoList QueueListView::pendingItemsList()
 
 int QueueListView::pendingItemsCount()
 {
-    return pendingItemsList().count();
+    return itemsList(Pending).count();
 }
 
 int QueueListView::pendingTasksCount()

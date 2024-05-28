@@ -38,6 +38,7 @@ class ActionData;
 class BatchToolsFactory;
 class AssignedBatchTools;
 class QueueListViewItem;
+class QueuePool;
 
 class QueueMgrWindow : public DXmlGuiWindow
 {
@@ -45,7 +46,7 @@ class QueueMgrWindow : public DXmlGuiWindow
 
 public:
 
-    ~QueueMgrWindow()                                   override;
+    ~QueueMgrWindow()                                     override;
 
     static QueueMgrWindow* queueManagerWindow();
     static bool            queueManagerWindowCreated();
@@ -60,14 +61,16 @@ public:
     /**
      * Return a map of all queues available from pool (index and title).
      */
-    QMap<int, QString> queuesMap()         const;
+    QMap<int, QString> queuesMap()                  const;
 
-    bool isBusy()                          const;
-    int  currentQueueId()                  const;
+    bool isBusy()                                   const;
+    int  currentQueueId()                           const;
 
-    bool queryClose()                                   override;
+    bool queryClose()                                     override;
 
-    DInfoInterface* infoIface(DPluginAction* const)     override;
+    DInfoInterface* infoIface(DPluginAction* const)       override;
+
+    QueuePool* queuePool()                          const;
 
 Q_SIGNALS:
 
@@ -76,7 +79,7 @@ Q_SIGNALS:
 
 protected:
 
-    void moveEvent(QMoveEvent* e)                       override;
+    void moveEvent(QMoveEvent* e)                         override;
 
 public Q_SLOTS:
 
@@ -88,8 +91,8 @@ public Q_SLOTS:
 
 private:
 
-    void customizedFullScreenMode(bool set)             override;
-    void closeEvent(QCloseEvent* e)                     override;
+    void customizedFullScreenMode(bool set)               override;
+    void closeEvent(QCloseEvent* e)                       override;
     void setupActions();
     void setupConnections();
     void setupUserArea();
@@ -112,10 +115,10 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetup()                                    override;
-    void slotComponentsInfo()                           override;
-    void slotDBStat()                                   override;
-    void slotOnlineVersionCheck()                       override;
+    void slotSetup()                                      override;
+    void slotComponentsInfo()                             override;
+    void slotDBStat()                                     override;
+    void slotOnlineVersionCheck()                         override;
     void slotAction(const Digikam::ActionData&);
     void slotHistoryEntryClicked(int, qlonglong);
     void slotAssignedToolsChanged(const AssignedBatchTools&);

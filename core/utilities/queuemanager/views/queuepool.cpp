@@ -238,7 +238,7 @@ void QueuePool::slotAddQueue()
     setCurrentIndex(index);
 }
 
-QueuePoolItemsList QueuePool::queueItemsList(int index) const
+QueuePoolItemsList QueuePool::itemsList(int index, int type) const
 {
     QueuePoolItemsList qpool;
 
@@ -246,7 +246,7 @@ QueuePoolItemsList QueuePool::queueItemsList(int index) const
 
     if (queue)
     {
-        ItemInfoList list = queue->pendingItemsList();
+        ItemInfoList list = queue->itemsList((QueueListView::ItemListType)type);
 
         for (ItemInfoList::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {

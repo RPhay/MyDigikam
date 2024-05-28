@@ -24,6 +24,7 @@
 #include "dplugin.h"
 #include "dpluginloader.h"
 #include "batchtool.h"
+#include "bqminfoiface.h"
 #include "digikam_export.h"
 
 namespace Digikam
@@ -93,7 +94,7 @@ public:
     /**
      * Return the info interface instance.
      */
-    DInfoInterface* infoIface()                         const;
+    BqmInfoIface* infoIface()                           const;
 
 private:
 
