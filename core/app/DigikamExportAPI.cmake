@@ -140,6 +140,7 @@ install(FILES
               # As part of DigikamGui
 
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/dplugins/dpluginbqm.h
+              ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/dplugins/bqminfoiface.h
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/manager/batchtool.h
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/manager/queuesettings.h
 
