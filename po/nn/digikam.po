@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-21 01:51+0000\n"
+"POT-Creation-Date: 2024-05-27 01:45+0000\n"
 "PO-Revision-Date: 2023-05-17 18:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -2623,7 +2623,7 @@ msgstr "&Hjelp"
 msgid "Main Toolbar"
 msgstr "Hovudverktøylinje"
 
-#: core/app/main/main.cpp:200 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2633,45 +2633,45 @@ msgstr "Hovudverktøylinje"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:209 core/showfoto/main/main.cpp:195
+#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Karl Ove Hufthammer"
 
-#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:196
+#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Opna kameravindauget ved «path»."
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Opna kameravindauget til eininga med Solid-UDI-en «udi»."
 
-#: core/app/main/main.cpp:224
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Oppdag automatisk og opna tilkopla gphoto2-kamera."
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:237
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "Start digiKam med SQLite-databasefila som finst i mappa «dir»."
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:240
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Start digiKam med oppsettfila «config»."
 
-#: core/app/main/main.cpp:256
+#: core/app/main/main.cpp:267
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2681,7 +2681,7 @@ msgstr ""
 "<p>Du køyrer digiKam i 32-bits versjon på 64-bits Windows.</p><p>Installer "
 "64-bits versjonen av digiKam for ei betre brukaroppleving.</p>"
 
-#: core/app/main/main.cpp:300
+#: core/app/main/main.cpp:311
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2692,7 +2692,7 @@ msgstr ""
 "installera det.\n"
 "Det finst ingen databasetillegg installerte på datamaskina."
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:320
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2703,7 +2703,7 @@ msgstr ""
 "installera det.\n"
 "Desse databasetillegga er alt installerte på maskina:"
 
-#: core/app/main/main.cpp:353
+#: core/app/main/main.cpp:364
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2838,7 +2838,7 @@ msgstr "Vis i fullskjerm"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2933,7 +2933,7 @@ msgid "No Tags Album"
 msgstr "Ingen albummerkelappar"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -5580,7 +5580,7 @@ msgstr "Automatisk objektivkorrigering"
 msgid "Fix automatically lens distortions"
 msgstr "Rett automatisk objektivforvrenging"
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:79
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:78
 #, kde-format
 msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
@@ -5589,7 +5589,7 @@ msgstr ""
 "Valet <b>Bruk metadata</b> vil lesa informasjon frå bileta for å automatisk "
 "finna rett informasjon om objektivet som vart brukt."
 
-#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:215
+#: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:214
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
@@ -21761,7 +21761,7 @@ msgid ""
 "no compression</p>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:207
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:204
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr ""
@@ -25406,38 +25406,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:409
+#: core/libs/album/engine/album.cpp:410
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Papirkorg"
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Gjeldande tidssøk"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Gjeldande uklare søk"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Gjeldande skissesøk"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Map Search"
 msgstr "Gjeldande kartsøk"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Search"
 msgstr "Gjeldande søk"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Gjeldande duplikatsøk"
@@ -34789,12 +34789,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""
@@ -46928,19 +46928,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:186
+#: core/showfoto/main/main.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:204
+#: core/showfoto/main/main.cpp:215
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:235
+#: core/showfoto/main/main.cpp:246
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -49130,12 +49130,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:91
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
 #, kde-format
 msgid "Metadata..."
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
 #, kde-format
 msgid "Add metadata information"
 msgstr ""
@@ -49257,71 +49257,71 @@ msgstr ""
 msgid "Applying face changes"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:182
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:221
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:197
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:533
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:579
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:580
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:617
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -50304,7 +50304,7 @@ msgstr ""
 msgid "The file is not an XBEL version 1.0 file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
 #, kde-format
 msgid "Unknown title"
 msgstr "Ukjend tittel"
@@ -62572,37 +62572,57 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:79
+#: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:80
+#: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:84
+#: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:85
+#: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:86
+#: core/utilities/setup/misc/systemsettingswidget.cpp:97
+#, kde-format
+msgid "Fix AMD-GPU video decoding issue"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:99
+#, kde-format
+msgid "Used decoding backend for video:"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:102
+#, kde-format
+msgid "FFmpeg (Default)"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#, kde-format
+msgid "Windows (System)"
+msgstr ""
+
+#: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:88
+#: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
 msgid "Download required binary data..."
 msgstr ""
 
-#: core/utilities/setup/misc/systemsettingswidget.cpp:103
+#: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
 msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "

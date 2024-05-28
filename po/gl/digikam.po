@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-27 01:45+0000\n"
-"PO-Revision-Date: 2024-05-26 08:56+0200\n"
+"POT-Creation-Date: 2024-05-28 01:42+0000\n"
+"PO-Revision-Date: 2024-05-27 12:49+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -36814,6 +36814,13 @@ msgid ""
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customize update options from setup dialog.</p>"
 msgstr ""
+"<p>A data da pre-publicación actual <b>%1</b> é <i>%2</i>.</p><p>Hai unha "
+"nova pre-publicación, construída o <i>%3</i>, dispoñíbel <a href='%4'>neste "
+"repositorio</a>.</p><p>Prema <b>Descargar</b> para obter o ficheiro…</"
+"p><p>Nota: No panel de «Configuración → Diversos» pode cambiar a comprobar "
+"só as versións estábeis.<br/>As versións estábeis poden usarse en produción "
+"de maneira segura.</p><p>Prema <b>Configurar</b> se quere personalizar as "
+"opcións de actualización desde o diálogo de configuración.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:284
 #, kde-format
@@ -52513,75 +52520,75 @@ msgstr "Non se atoparon entradas na axenda de enderezos."
 msgid "Applying face changes"
 msgstr "Aplicar os cambios faciais"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:182
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Aceptar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:183
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:221
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Retirar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:197
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:222
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Retirar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:533
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Quen é?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:579
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Perfil do monitor:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:580
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar como etiqueta de cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:617
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

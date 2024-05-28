@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"POT-Creation-Date: 2024-05-28 01:42+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -50649,8 +50649,8 @@ msgstr ""
 msgid "Applying face changes"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:182
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, fuzzy, kde-format
 #| msgid "OK"
@@ -50658,64 +50658,64 @@ msgctxt "@action"
 msgid "OK"
 msgstr "ठीक आहे"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:183
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "खात्री करा"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:221
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "काढून टाका (&R)"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:197
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:222
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:533
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:579
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:580
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:617
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
