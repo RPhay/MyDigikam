@@ -19,9 +19,10 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_export.h"
 #include "applicationsettings.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
@@ -37,51 +38,51 @@ public:
     explicit DBInfoIface(QObject* const parent,
                          const QList<QUrl>& lst = QList<QUrl>(),
                          const ApplicationSettings::OperationType type = ApplicationSettings::Unspecified);
-    ~DBInfoIface()                                                                        override;
+    ~DBInfoIface()                                                                 override;
+
+public Q_SLOTS:
+
+    void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate) override;
+    void slotMetadataChangedForUrl(const QUrl& url)                                override;
 
 public:
 
-    Q_SLOT void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate) override;
-    Q_SLOT void slotMetadataChangedForUrl(const QUrl& url)                                override;
+    QList<QUrl> currentSelectedItems()                                       const override;
+    QList<QUrl> currentAlbumItems()                                          const override;
+    void        parseAlbumItemsRecursive()                                         override;
 
-public:
+    QList<QUrl> albumItems(Album* const album)                               const;
+    QList<QUrl> albumItems(int id)                                           const override;
+    QList<QUrl> albumsItems(const DAlbumIDs&)                                const override;
+    QList<QUrl> allAlbumItems()                                              const override;
 
-    QList<QUrl> currentSelectedItems()                                              const override;
-    QList<QUrl> currentAlbumItems()                                                 const override;
-    void        parseAlbumItemsRecursive()                                                override;
+    DInfoMap    albumInfo(int)                                               const override;
 
-    QList<QUrl> albumItems(Album* const album)                                      const;
-    QList<QUrl> albumItems(int id)                                                  const override;
-    QList<QUrl> albumsItems(const DAlbumIDs&)                                       const override;
-    QList<QUrl> allAlbumItems()                                                     const override;
+    DInfoMap    itemInfo(const QUrl&)                                        const override;
+    void        setItemInfo(const QUrl&, const DInfoMap&)                          override;
 
-    DInfoMap    albumInfo(int)                                                      const override;
+    QWidget*    albumChooser(QWidget* const parent)                          const override;
+    DAlbumIDs   albumChooserItems()                                          const override;
+    bool        supportAlbums()                                              const override;
 
-    DInfoMap    itemInfo(const QUrl&)                                               const override;
-    void        setItemInfo(const QUrl&, const DInfoMap&)                                 override;
+    QWidget*    uploadWidget(QWidget* const parent)                          const override;
+    QUrl        uploadUrl()                                                  const override;
 
-    QWidget*    albumChooser(QWidget* const parent)                                 const override;
-    DAlbumIDs   albumChooserItems()                                                 const override;
-    bool        supportAlbums()                                                     const override;
+    QUrl        defaultUploadUrl()                                           const override;
 
-    QWidget*    uploadWidget(QWidget* const parent)                                 const override;
-    QUrl        uploadUrl()                                                         const override;
+    QAbstractItemModel* tagFilterModel()                                           override;
 
-    QUrl        defaultUploadUrl()                                                  const override;
+    void        deleteImage(const QUrl& url)                                       override;
 
-    QAbstractItemModel* tagFilterModel()                                                  override;
-
-    void        deleteImage(const QUrl& url)                                              override;
-
-    void        openSetupPage(SetupPage page)                                             override;
+    void        openSetupPage(SetupPage page)                                      override;
 
 #ifdef HAVE_GEOLOCATION
 
-    QList<GPSItemContainer*> currentGPSItems()                                      const override;
+    QList<GPSItemContainer*> currentGPSItems()                               const override;
 
 #endif
 
-    QMap<QString, QString> passShortcutActionsToWidget(QWidget* const wdg)          const override;
+    QMap<QString, QString> passShortcutActionsToWidget(QWidget* const wdg)   const override;
 
 private:
 

@@ -859,6 +859,7 @@ void DBInfoIface::openSetupPage(SetupPage page)
 
         default:
         {
+            break;
         }
     }
 }
