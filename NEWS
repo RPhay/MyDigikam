@@ -141,29 +141,29 @@ BUGFIXES:
 112 ==> 093065 - Resizing images removes EXIF information.
 113 ==> 487589 - Cannot see the recycle bin.
 114 ==> 485330 - Crash in Showfoto.
-115 ==> 
-116 ==> 
-117 ==> 
-118 ==> 
-119 ==> 
-120 ==> 
-121 ==> 
-122 ==> 
-123 ==> 
-124 ==> 
-125 ==> 
-126 ==> 
-127 ==> 
-128 ==> 
-129 ==> 
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
-135 ==> 
-136 ==> 
-137 ==> 
+115 ==> 098524 - digiKam crashes when right clicking image in image editor.
+116 ==> 114507 - After modifying the digiKam main toolbar, all the tools menu have disappeared.
+117 ==> 110393 - Context menu image rotate does not work as expected.
+118 ==> 113808 - Tags view: can not change the tag icon with the contextual menu "Edit Tag Properties..." after setting a photo as tag thumbnail.
+119 ==> 091217 - Right Mouse Button click on album does not give the album the selection focus.
+120 ==> 113913 - Image Editor: disable "remove tags" menu item when there are no common tags.
+121 ==> 114506 - Wrong menu label for "Set as Tag Thumbnail" Drag and Drop operation.
+122 ==> 094539 - Add keyboard shortcuts (bindings) to menu functions in digikam picture viewer.
+123 ==> 096369 - Album menu to import images.
+124 ==> 103246 - Usability: Clean up thumbnail Right Mouse Button menu.
+125 ==> 111798 - Disable "Remove tag" entry from the menu when none tag is assigned.
+126 ==> 091840 - "Generate all thumbnails" menu option.
+127 ==> 177231 - Rotate context menu in view mode.
+128 ==> 144648 - Ctrl-M doesn't toggle appearance of menu bar.
+129 ==> 145082 - F10 and Ctrl-F10 don't focus menu and context menu.
+130 ==> 108078 - Failed to download file from Camera/Browse Directory Menu.
+131 ==> 154971 - Closed menu-bar and toolbar can only be re-activated in config-file.
+132 ==> 091541 - Remove duplicate entry from Tools menu.
+133 ==> 210836 - Menu items have all words capitalized.
+134 ==> 166580 - Interface configuration options for friendlier digiKam.
+135 ==> 172776 - Usability: Combine Edit and Album menus, and other ideas.
+136 ==> 090040 - Copy image location from right menu.
+137 ==> 196627 - Right-click context menu for the Albums View.
 138 ==> 
 139 ==> 
 140 ==> 
