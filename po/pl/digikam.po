@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-27 01:45+0000\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -67,7 +67,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -3685,11 +3684,11 @@ msgstr "<li>%1</li><li>%2</li>"
 #: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid ""
-"digiKam has many powerful features which are described in the <a "
-"href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
+"digiKam has many powerful features which are described in the <a href="
+"\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"digiKam ma wiele rozbudowanych możliwości, które są opisane w <a "
-"href=\"https://docs.digikam.org/en/index.html\">dokumentacji</a>"
+"digiKam ma wiele rozbudowanych możliwości, które są opisane w <a href="
+"\"https://docs.digikam.org/en/index.html\">dokumentacji</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
@@ -5334,21 +5333,20 @@ msgstr "Narzędzie do wykonywania własnych skryptów powłoki"
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
-"stage.</para><para>Script variables:</para><para>Uses <b>$INPUT</b> and "
-"<b>$OUTPUT</b> for input / output filenames (with special characters "
-"escaped). These would be substituted before shell execution.</"
-"para><para>Uses <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, "
-"<b>$PICKLABEL</b>, <b>$RATING</b> and <b>$TAGSPATH</b> to handle digiKam "
-"properties.</para>"
+"stage.</para><para>Script variables:</para><para>Uses <b>$INPUT</b> and <b>"
+"$OUTPUT</b> for input / output filenames (with special characters escaped). "
+"These would be substituted before shell execution.</para><para>Uses <b>"
+"$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
+"$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
 "<para>To narzędzie do zarządzania kolejką wsadową może uruchamiać skrypty "
 "powłoki użytkownika jako etap w przebiegu pracy.</para><para>Zmienne skryptu:"
 "</para><para>Używa <b>$INPUT</b> oraz <b>$OUTPUT</b> jako nazwy plików "
 "wejściowych i wyjściowych (ze znakami szczególnymi poprzedzonymi znakami "
 "sterującymi). Zostaną one zastąpione przed wykonaniem w powłoce.</"
-"para><para>Używa <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, "
-"<b>$PICKLABEL</b>, <b>$RATING</b> oraz <b>$TAGSPATH</b> do obsługi "
-"właściwości digiKam.</para>"
+"para><para>Używa <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>"
+"$PICKLABEL</b>, <b>$RATING</b> oraz <b>$TAGSPATH</b> do obsługi właściwości "
+"digiKam.</para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
@@ -16099,8 +16097,8 @@ msgstr "Jeśli chcesz, to wskaż tu plik kalendarza ze świętami urzędowymi"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-"css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:italic;\">\n"
@@ -16115,8 +16113,8 @@ msgid ""
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-"css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:italic;\">\n"
@@ -16145,8 +16143,8 @@ msgid ""
 "This is fully optional. All the events from this calendar will be printed in "
 "green."
 msgstr ""
-"Możesz utworzyć taki kalendarz przy użyciu programu, który obsługuje <a "
-"href=\"https://en.wikipedia.org/wiki/ICalendar\">format iCalendar</a>.\n"
+"Możesz utworzyć taki kalendarz przy użyciu programu, który obsługuje <a href="
+"\"https://en.wikipedia.org/wiki/ICalendar\">format iCalendar</a>.\n"
 "Wskazanie tego kalendarza jest zupełnie dowolne. Wszystkie wydarzenia z tego "
 "kalendarza zostaną wydrukowane na zielono."
 
@@ -18904,14 +18902,14 @@ msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
 "filename>."
 msgstr ""
-"Nie można przenieść pliku projektu z <filename>%1</filename> do "
-"<filename>%2</filename>."
+"Nie można przenieść pliku projektu z <filename>%1</filename> do <filename>"
+"%2</filename>."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
 #, kde-format
 msgid ""
-"Cannot copy converted image file from <filename>%1</filename> to "
-"<filename>%2</filename>."
+"Cannot copy converted image file from <filename>%1</filename> to <filename>"
+"%2</filename>."
 msgstr ""
 "Nie można skopiować przekształconego pliku zdjęcia z <filename>%1</filename> "
 "do <filename>%2</filename>."
@@ -21125,9 +21123,9 @@ msgid ""
 "i> key</td></tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
-"down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-"td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
+"down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></td></"
+"tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
 "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom or "
 "change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
 "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original size:</"
@@ -21141,25 +21139,25 @@ msgid ""
 "table>"
 msgstr ""
 "<p>Narzędzie to może podejrzeć szereg rzeczy przy użyciu efektów OpenGL.</"
-"p><p><u>Sposób użycia:</u></p><table><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Dostęp do rzeczy</h1></b></center></"
-"nobr></td></tr><tr><td>Poprzednia rzecz:</td><td>Klawisz <i>w górę</i></td></"
+"p><p><u>Sposób użycia:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Dostęp do rzeczy</h1></b></center></nobr></td></"
+"tr><tr><td>Poprzednia rzecz:</td><td>Klawisz <i>w górę</i></td></"
 "tr><tr><td></td><td>Klawisz <i>PgUp</i></td></tr><tr><td></td><td>Klawisz "
 "<i>w lewo</i></td></tr><tr><td></td><td>Kółko myszy w górę</td></"
 "tr><tr><td>Next Item:</td><td>Klawisz <i>w dół</i></td></tr><tr><td></"
 "td><td>Klawisz <i>PgDown</i></td></tr><tr><td></td><td>Klawisz <i>w prawo</"
 "i></td></tr><tr><td></td><td>Kółko myszy w dół</td></tr><tr><td>Zakończ:</"
-"td><td>Klawisz <i>Esc</i></td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Wyświetlanie rzeczy</h1></b></center></"
-"nobr></td></tr><tr><td>Przełącz pomiędzy trybem pełnoekranowym, a zwyczajnym:"
-"</td><td>Klawisz <i>f</i></td></tr><tr><td>Przełącz działanie kółka myszy:</"
+"td><td>Klawisz <i>Esc</i></td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Wyświetlanie rzeczy</h1></b></center></nobr></"
+"td></tr><tr><td>Przełącz pomiędzy trybem pełnoekranowym, a zwyczajnym:</"
+"td><td>Klawisz <i>f</i></td></tr><tr><td>Przełącz działanie kółka myszy:</"
 "td><td>Klawisz <i>c</i> (albo powiększenie albo zmiana obrazu)</td></"
 "tr><tr><td>Obrót:</td><td>Klawisz <i>r</i></td></tr><tr><td>Zerowanie widoku:"
 "</td><td>dwukrotne naciśnięcie</td></tr><tr><td>Pierwotny rozmiar:</"
 "td><td>Klawisz <i>o</i></td></tr><tr><td>Powiększanie:</td><td>Przesuwaj "
 "myszy w górę/dół, mając naciśnięty prawy przycisk myszy</td></tr><tr><td></"
-"td><td>Klawisz <i>c</i> i kółko myszy</td></tr><tr><td></td><td>Klawisze "
-"<i>+</i> oraz <i>-</i></td></tr><tr><td></td><td>ctrl + kółko myszy</td></"
+"td><td>Klawisz <i>c</i> i kółko myszy</td></tr><tr><td></td><td>Klawisze <i>"
+"+</i> oraz <i>-</i></td></tr><tr><td></td><td>ctrl + kółko myszy</td></"
 "tr><tr><td>Przesuwanie:</td><td>Przesuwaj myszą, mając naciśnięty lewy "
 "przycisk myszy</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Inne</"
 "h1></b></center></nobr></td></tr><tr><td>Pokaż tę pomoc:</td><td>Klawisz "
@@ -22276,9 +22274,9 @@ msgid ""
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
 "td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
-"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22290,9 +22288,9 @@ msgstr ""
 "p><p>Można wyświetlać wiele właściwości obrazu na zasadzie nakładania tych "
 "informacji na obraz podczas trwania pokazu .</p><p>Narzędzie to może "
 "odtwarzać zawartość albumu w trybie rekursywnym wraz z albumami podrzędnymi, "
-"jeśli istnieją.</p><p><u>Sposób użycia:</u></p><table><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Dostęp do rzeczy</h1></b></center></"
-"nobr></td></tr><tr><td>Poprzednia rzecz:</td><td>Klawisz <i>w górę</i></td></"
+"jeśli istnieją.</p><p><u>Sposób użycia:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Dostęp do rzeczy</h1></b></center></nobr></td></"
+"tr><tr><td>Poprzednia rzecz:</td><td>Klawisz <i>w górę</i></td></"
 "tr><tr><td></td><td>Klawisz <i>PgUp</i></td></tr><tr><td></td><td>Klawisz "
 "<i>w lewo</i></td></tr><tr><td></td><td>Kółko myszy w górę</td></"
 "tr><tr><td></td><td>Lewy przycisk myszy</td></tr><tr><td>Następna rzecz:</"
@@ -22302,14 +22300,14 @@ msgstr ""
 "td></tr><tr><td>Wstrzymaj/Wznów:</td><td>Klawisz <i>spacji</i></td></"
 "tr><tr><td>Ustawienia pokazu slajdów:</td><td>Klawisz <i>F2</i></td></"
 "tr><tr><td>Ukryj/pokaż nakładki:</td><td>Klawisz <i>F4</i></td></"
-"tr><tr><td>Wyjdź:</td><td>Klawisz <i>Esc</i></td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Właściwości rzeczy</h1></b></center></"
-"nobr></td></tr><tr><td>Zmiana znaczników:</td><td>Użyj skrótów klawiszowych "
-"znaczników</td></tr><tr><td>Zmiana oceny:</td><td>Użyj skrótów klawiszowych "
-"oceny</td></tr><tr><td>Zmiana barwnej etykiety:</td><td>Użyj skrótów "
-"klawiszowych barwnej etykiety</td></tr><tr><td>Zmiana etykiety wyboru:</"
-"td><td>Użyj skrótów klawiszowych etykiety wyboru</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Inne</h1></b></center></nobr></td></"
+"tr><tr><td>Wyjdź:</td><td>Klawisz <i>Esc</i></td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Właściwości rzeczy</h1></b></center></nobr></td></"
+"tr><tr><td>Zmiana znaczników:</td><td>Użyj skrótów klawiszowych znaczników</"
+"td></tr><tr><td>Zmiana oceny:</td><td>Użyj skrótów klawiszowych oceny</td></"
+"tr><tr><td>Zmiana barwnej etykiety:</td><td>Użyj skrótów klawiszowych "
+"barwnej etykiety</td></tr><tr><td>Zmiana etykiety wyboru:</td><td>Użyj "
+"skrótów klawiszowych etykiety wyboru</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Inne</h1></b></center></nobr></td></"
 "tr><tr><td>Pokaż tę pomoc:</td><td>Klawisz <i>F1</i></td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:157
@@ -23252,8 +23250,8 @@ msgstr "Wpisz adres URL logowania na Flickr"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:298
 #, kde-format
 msgid ""
-"Copy the full URL from the external browser that contains the "
-"\"oauth_token\" entry:"
+"Copy the full URL from the external browser that contains the \"oauth_token"
+"\" entry:"
 msgstr ""
 "Skopiuj cały adres URL z zewnętrznej przeglądarki, który zawiera wpis "
 "\"oauth_token\":"
@@ -29140,14 +29138,14 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:191
 #, fuzzy, kde-format
 #| msgid ""
-#| "<a href=\"https://doc.qt.io/qt-5/qsqldatabase."
-#| "html#setConnectOptions\">Connect options:</a>"
+#| "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+#| "\">Connect options:</a>"
 msgid ""
 "<a href=\"https://doc.qt.io/qt-6/sql-driver.html#qmysql\">Connect options:</"
 "a>"
 msgstr ""
-"<a href=\"https://doc.qt.io/qt-5/qsqldatabase."
-"html#setConnectOptions\">Ustawienia połączenia:</a>"
+"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+"\">Ustawienia połączenia:</a>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:195
 #, kde-format
@@ -36763,8 +36761,8 @@ msgstr ""
 #: core/libs/onlineversion/onlineversiondlg.cpp:284
 #, kde-format
 msgid ""
-"<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
-"<i>%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
+"<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
+"%3</i> is available on this <a href='%4'>repository</a>.</p><p>Press "
 "<b>Download</b> to get the file...</p><p>Note: from Setup/Misc panel, you "
 "can switch to check for weekly pre-release.<br/>Pre-release versions are "
 "dedicated to test quickly new features.<br/>It's not recommended to use pre-"
@@ -39886,9 +39884,9 @@ msgstr ""
 "<p>Przy tworzeniu nowych znaczników możesz stosować następujące zasady:</"
 "p><p><ul><li>\"/\" służy do tworzenia hierarchii.<br/>Np.: <i>\"Kraj/Miasto/"
 "Warszawa\"</i></li> <li>\",\" służy do utworzenia więcej niż jednej "
-"hierarchii za jednym razem.<br/>Np.: <i>\"Miasto/Warszawa, Zabytek/"
-"Wilanów\"</i></li><li>Jeśli hierarchia zaczyna się od \"/\", jako rodzic "
-"zostanie użyty katalog podstawowy.</li></ul></p>"
+"hierarchii za jednym razem.<br/>Np.: <i>\"Miasto/Warszawa, Zabytek/Wilanów"
+"\"</i></li><li>Jeśli hierarchia zaczyna się od \"/\", jako rodzic zostanie "
+"użyty katalog podstawowy.</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
@@ -50708,7 +50706,7 @@ msgid "&Abort"
 msgstr "&Przerwij"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr "Przetwarzanie..."
@@ -51706,71 +51704,71 @@ msgstr "Nie znaleziono wpisów w książce adresowej"
 msgid "Applying face changes"
 msgstr "Stosowanie zmian twarzy"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:182
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "OK"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:183
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Potwierdź, że wybrana osoba jest pokazana tutaj"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Potwierdź"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:196
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:221
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Usuń"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:197
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:222
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Usuń ten obszar twarzy"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Odznacz tę twarz jako pomijaną"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:533
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Kto to jest?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:579
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Pomiń"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:580
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Pomiń tę twarz"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:612
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Oznacz twarz jako pomijaną"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:617
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -60250,18 +60248,17 @@ msgstr "Dostosuj"
 #: core/utilities/import/widgets/scriptingsettings.cpp:61
 #, kde-format
 msgid ""
-"<p>These expressions may be used to customize the command line:</"
-"p><p><b>%file</b>: full path of the imported file</p><p><b>%filename</b>: "
-"file name of the imported file</p><p><b>%path</b>: path of the imported "
-"file</p><p><b>%orgfilename</b>: original file name</p><p><b>%orgpath</b>: "
-"original path</p><p>If there are no expressions full path is added to the "
-"command.</p>"
+"<p>These expressions may be used to customize the command line:</p><p><b>"
+"%file</b>: full path of the imported file</p><p><b>%filename</b>: file name "
+"of the imported file</p><p><b>%path</b>: path of the imported file</p><p><b>"
+"%orgfilename</b>: original file name</p><p><b>%orgpath</b>: original path</"
+"p><p>If there are no expressions full path is added to the command.</p>"
 msgstr ""
-"<p>Wyrażenia te mogą zostać użyte do dostosowania wiersza poleceń:</"
-"p><p><b>%file</b>: pełna ścieżka importowanego pliku</p><p><b>%filename</b>: "
-"nazwa pliku importowanego pliku</p><p><b>%path</b>: ścieżka importowanego "
-"pliku</p><p><b>%orgfilename</b>: nazwa pierwotnego pliku</p><p><b>%orgpath</"
-"b>: pierwotna ścieżka </p><p>Jeśli nie ma żadnych wyrażeń, to do polecenia "
+"<p>Wyrażenia te mogą zostać użyte do dostosowania wiersza poleceń:</p><p><b>"
+"%file</b>: pełna ścieżka importowanego pliku</p><p><b>%filename</b>: nazwa "
+"pliku importowanego pliku</p><p><b>%path</b>: ścieżka importowanego pliku</"
+"p><p><b>%orgfilename</b>: nazwa pierwotnego pliku</p><p><b>%orgpath</b>: "
+"pierwotna ścieżka </p><p>Jeśli nie ma żadnych wyrażeń, to do polecenia "
 "dodawana jest pełna ścieżka.</p>"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:72
@@ -61149,14 +61146,14 @@ msgstr ""
 msgid "There are no items to process in the queues."
 msgstr "Nie ma rzeczy do obróbki w kolejkach."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Ustawienia albumu przetworzonych rzeczy"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61165,7 +61162,7 @@ msgstr ""
 "Album do hostowania przetworzonych rzeczy z kolejki \"%1\" jest "
 "nieustawiony. Wybierz jakiś z panelu ustawień kolejki."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61174,27 +61171,27 @@ msgstr ""
 "Album do hostowania przetworzonych rzeczy z kolejki \"%1\" jest niedostępny "
 "lub nie do odczytu. Wybierz inny z panelu ustawień kolejki."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Nie powiodło się przetworzenie rzeczy..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Porzucono przetwarzanie..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Rzecz \"%1\" z kolejki \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Ukończono kolejkę wsadową"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Ukończono wszystkie kolejki wsadowe"
@@ -63472,8 +63469,8 @@ msgstr ""
 #, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
-"drive when mounted<br/>on your desktop), please use<br/><a "
-"href=\"umscamera\">%1</a> from the camera list.</p>"
+"drive when mounted<br/>on your desktop), please use<br/><a href=\"umscamera"
+"\">%1</a> from the camera list.</p>"
 msgstr ""
 "<p>By ustawić aparat jako <b>pamięć masowa USB</b><br/>(który pojawi się "
 "jako napęd wymienny), <br/>użyj <a href=\"umscamera\">%1</a> z listy "
@@ -63926,8 +63923,8 @@ msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
 "code></p>"
 msgstr ""
-"<p>Katalogi zaczynające się od kropki będą domyślnie pomijane.<br/> "
-"<code>%1</code></p>"
+"<p>Katalogi zaczynające się od kropki będą domyślnie pomijane.<br/> <code>"
+"%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:109
 #, kde-format
@@ -64888,11 +64885,10 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 "<p>Aby utworzyć nowe przestrzenie nazw, musisz podać parametry:</"
-"p><p><ul><li>Przestrzeń nazw z kropkami.<br/>np.: <i>\"Xmp.digiKam."
-"TagsList\"</i></li><li>Parametr rozdzielacza używany w ścieżkach "
-"znaczników<br/>np.: \"Miasto/Paryż\" lub \"Miasto|Paryż\"</li><li>Podaj "
-"tylko wtedy, gdy zapisana musi być słowo kluczowe lub cała ścieżka.</li></"
-"ul></p>"
+"p><p><ul><li>Przestrzeń nazw z kropkami.<br/>np.: <i>\"Xmp.digiKam.TagsList"
+"\"</i></li><li>Parametr rozdzielacza używany w ścieżkach znaczników<br/>np.: "
+"\"Miasto/Paryż\" lub \"Miasto|Paryż\"</li><li>Podaj tylko wtedy, gdy "
+"zapisana musi być słowo kluczowe lub cała ścieżka.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
@@ -65732,8 +65728,8 @@ msgstr "Pliki przyboczne"
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
 #, kde-format
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-"css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
@@ -65741,8 +65737,8 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-"css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
@@ -68046,8 +68042,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
@@ -68128,8 +68124,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
@@ -68150,8 +68146,8 @@ msgstr "Rzeczy do zaimportowania"
 #~ "mouse pointer will follow the cursor exactly: As a result e.g. the north "
 #~ "pole will not stay at the top which can lead to confusion. By default "
 #~ "Marble makes sure that north is always up which results in a dragging "
-#~ "behaviour where the location below the mouse pointer slightly "
-#~ "\"detaches\" from the cursor. </p></body></html>"
+#~ "behaviour where the location below the mouse pointer slightly \"detaches"
+#~ "\" from the cursor. </p></body></html>"
 #~ msgstr ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
 #~ "TR/REC-html40/strict.dtd\">\n"
@@ -68186,8 +68182,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
@@ -68233,8 +68229,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
@@ -68300,8 +68296,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "
@@ -68462,8 +68458,8 @@ msgstr "Rzeczy do zaimportowania"
 #~| "font-weight:400; font-style:italic;\">\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#~| "calendar for your country from <a href=\"www.icalshare.com\"><span "
-#~| "style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
+#~| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
+#~| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
 #~| "span></a> or other sites.</p>\n"
 #~| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 #~| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully "

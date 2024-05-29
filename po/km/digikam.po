@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 01:42+0000\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -51835,7 +51835,7 @@ msgid "&Abort"
 msgstr "បោះបង់​"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr ""
@@ -62199,49 +62199,49 @@ msgstr ""
 msgid "There are no items to process in the queues."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, fuzzy, kde-format
 #| msgid "Process Items"
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "ដំណើរការ​ធាតុ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, fuzzy, kde-format
 msgid "Batch queue finished"
 msgstr "កម្មវិធី​គ្រប់គ្រង​ជួរ​ក្រុម"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, fuzzy, kde-format
 msgid "All batch queues finished"
 msgstr "កម្មវិធី​គ្រប់គ្រង​ជួរ​ក្រុម"

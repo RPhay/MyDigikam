@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 01:42+0000\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -52525,7 +52525,7 @@ msgid "&Abort"
 msgstr "中止(&A)"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr "処理中..."
@@ -63119,15 +63119,15 @@ msgstr ""
 msgid "There are no items to process in the queues."
 msgstr "処理するアイテムがキューにありません。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, fuzzy, kde-format
 #| msgid "Processed items album settings"
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "処理済みアイテムのアルバム設定"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -63136,7 +63136,7 @@ msgstr ""
 "キュー “%1” の処理済みアイテムを保存するアルバムが設定されていません。"
 "「キューの設定」で選択してください。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -63145,27 +63145,27 @@ msgstr ""
 "キュー “%1” の処理済みアイテムを保存するアルバムが利用できないか書き込み不可"
 "です。「キューの設定」で他のアルバムを選択してください。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr "アイテムを処理できませんでした..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "処理がキャンセルされました..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, fuzzy, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "キュー <resource>%2</resource> のアイテム <resource>%1</resource> : %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, kde-format
 msgid "Batch queue finished"
 msgstr "一括処理キューが完了しました"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, fuzzy, kde-format
 #| msgid "Batch queue finished"
 msgid "All batch queues finished"

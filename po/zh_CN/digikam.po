@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 01:42+0000\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -49045,7 +49045,7 @@ msgid "&Abort"
 msgstr "中止(&A)"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr "正在处理..."
@@ -59183,21 +59183,21 @@ msgstr "当前队列的已指定工具为空 (%1)。请指定工具。"
 msgid "There are no items to process in the queues."
 msgstr "队列中没有要处理的项目。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "已处理项目相册设置"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr "队列“%1”的已处理图像相册尚未设定。请从队列设置面板中选择一个相册。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -59205,27 +59205,27 @@ msgid ""
 msgstr ""
 "队列“%1”的已处理图像相册不可用或无法写入。请从队列设置面板中选择另一个相册。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr "无法处理项目..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "处理已取消..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "项目“%1”来自队列“%2”：%3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, kde-format
 msgid "Batch queue finished"
 msgstr "批处理队列执行完毕"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, kde-format
 msgid "All batch queues finished"
 msgstr "所有批处理队列已完成"

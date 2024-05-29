@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 01:42+0000\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
 "PO-Revision-Date: 2024-05-26 08:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -51192,7 +51192,7 @@ msgid "&Abort"
 msgstr "П&ерервати"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr "Виконання…"
@@ -61715,14 +61715,14 @@ msgstr ""
 msgid "There are no items to process in the queues."
 msgstr "У чергах немає записів завдань для обробки."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Параметри альбому оброблених записів"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61731,7 +61731,7 @@ msgstr ""
 "Альбом записів з черги «%1», яка обробляється на вашому комп'ютері, не "
 "вказано. Будь ласка, оберіть альбом за допомогою панелі параметрів черги."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61741,27 +61741,27 @@ msgstr ""
 "доступний або непридатний для запису. Будь ласка, оберіть інший альбом за "
 "допомогою панелі параметрів черги."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Не вдалося обробити запис…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Обробку скасовано…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Запис «%1» з черги «%2»: %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Всі завдання з черги виконано"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Виконання усіх черг пакетної обробки завершено"
