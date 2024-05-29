@@ -135,7 +135,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineaction.h
               ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineconfig.h
               ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineerrorhandler.h
-              ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineconfigsettings.h
+              ${CMAKE_SOURCE_DIR}/core/libs/database/utils/ifaces/dbinfoiface.h
 
               # As part of DigikamGui
 
