@@ -73,6 +73,7 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "albummanager.h"
 #include "applicationsettings.h"

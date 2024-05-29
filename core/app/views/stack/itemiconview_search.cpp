@@ -86,7 +86,7 @@ void ItemIconView::slotImageScanForFaces()
 
     // Remove possible duplicate ItemInfos.
 
-    Q_FOREACH (const ItemInfo& info, selectedInfoList(ApplicationSettings::Tools))
+    Q_FOREACH (const ItemInfo& info, selectedInfoList(ToolsOps))
     {
         if (!settings.infos.contains(info))
         {
@@ -126,7 +126,7 @@ void ItemIconView::slotImageRecognizeFaces()
 
     // Remove possible duplicate ItemInfos.
 
-    Q_FOREACH (const ItemInfo& info, selectedInfoList(ApplicationSettings::Tools))
+    Q_FOREACH (const ItemInfo& info, selectedInfoList(ToolsOps))
     {
         if (!settings.infos.contains(info))
         {
@@ -144,7 +144,7 @@ void ItemIconView::slotImageRecognizeFaces()
 
 void ItemIconView::slotImageRemoveAllFaces()
 {
-    const ItemInfoList& selected = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selected = selectedInfoList(MetadataOps);
     MetadataRemover* const tool  = new MetadataRemover(selected, MetadataRemover::Faces);
     tool->start();
 }

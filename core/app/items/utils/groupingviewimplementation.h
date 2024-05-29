@@ -19,6 +19,7 @@
 
 #include "applicationsettings.h"
 #include "digikam_export.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -41,7 +42,7 @@ public:
         return false;
     }
 
-    bool          needGroupResolving(ApplicationSettings::OperationType type,
+    bool          needGroupResolving(OperationType type,
                                      const ItemInfoList& infos)                 const;
 
     ItemInfoList resolveGrouping(const ItemInfoList& infos)                     const;

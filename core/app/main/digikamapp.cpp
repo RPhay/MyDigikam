@@ -1232,32 +1232,32 @@ void DigikamApp::slotColorManagementOptionsChanged()
 
 DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
 {
-    ApplicationSettings::OperationType aset = ApplicationSettings::Unspecified;
+    OperationType aset = UnspecifiedOps;
 
     switch (ac->actionCategory())
     {
         case DPluginAction::GenericExport:
         case DPluginAction::GenericImport:
         {
-            aset = ApplicationSettings::ImportExport;
+            aset = ImportExportOps;
             break;
         }
 
         case DPluginAction::GenericMetadata:
         {
-            aset = ApplicationSettings::Metadata;
+            aset = MetadataOps;
             break;
         }
 
         case DPluginAction::GenericTool:
         {
-            aset = ApplicationSettings::Tools;
+            aset = ToolsOps;
             break;
         }
 
         case DPluginAction::GenericView:
         {
-            aset = ApplicationSettings::Slideshow;
+            aset = SlideshowOps;
             break;
         }
 
@@ -1272,7 +1272,7 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
 
-    if (aset == ApplicationSettings::Slideshow)
+    if (aset == SlideshowOps)
     {
         connect(iface, SIGNAL(signalLastItemUrl(QUrl)),
                 d->view, SLOT(slotSetCurrentUrlWhenAvailable(QUrl)));

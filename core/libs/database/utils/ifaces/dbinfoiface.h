@@ -20,8 +20,8 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "digikam_export.h"
-#include "applicationsettings.h"
 #include "dinfointerface.h"
 
 namespace Digikam
@@ -37,7 +37,7 @@ public:
 
     explicit DBInfoIface(QObject* const parent,
                          const QList<QUrl>& lst = QList<QUrl>(),
-                         const ApplicationSettings::OperationType type = ApplicationSettings::Unspecified);
+                         const OperationType type = UnspecifiedOps);
     ~DBInfoIface()                                                                 override;
 
 public Q_SLOTS:

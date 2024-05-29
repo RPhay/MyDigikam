@@ -18,6 +18,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "itemcategorizedview.h"
 #include "itemviewutilities.h"
@@ -50,8 +51,8 @@ public:
     ItemInfoList  allItemInfos(bool grouping = false)                                        const;
     ItemInfoList  selectedItemInfos(bool grouping = false)                                   const;
     ItemInfoList  selectedItemInfosCurrentFirst(bool grouping = false)                       const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)       const;
-    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type)  const;
+    bool          allNeedGroupResolving(const OperationType type)       const;
+    bool          selectedNeedGroupResolving(const OperationType type)  const;
 
 public Q_SLOTS:
 
@@ -137,7 +138,7 @@ protected:
     bool hasHiddenGroupedImages(const ItemInfo& info)                    const override;
 
     ItemInfoList imageInfos(const QList<QModelIndex>& indexes,
-                            ApplicationSettings::OperationType type)     const;
+                            OperationType type)     const;
 
 private Q_SLOTS:
 

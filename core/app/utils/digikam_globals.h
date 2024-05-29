@@ -153,6 +153,23 @@ enum ChannelType
     ColorChannels
 };
 
+/**
+ * Types of operations for ApplicationSettings.
+ * Originally introduced for grouping to configure whether an operation
+ * should be done on all group members or only it's head.
+ */
+enum OperationType
+{
+    MetadataOps = 0,
+    ImportExportOps,
+    BQMOps,
+    LightTableOps,
+    SlideshowOps,
+    RenameOps,
+    ToolsOps,
+    UnspecifiedOps ///< This element must always come last
+};
+
 // --------------------------------------------------------
 
 /**

@@ -187,7 +187,7 @@ void ItemThumbnailBar::assignRating(const QList<QModelIndex>& indexes, int ratin
 {
     ItemInfoList infos(imageSortFilterModel()->imageInfos(indexes));
 
-    if (needGroupResolving(ApplicationSettings::Metadata, infos))
+    if (needGroupResolving(MetadataOps, infos))
     {
         infos = resolveGrouping(infos);
     }

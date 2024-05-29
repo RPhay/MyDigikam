@@ -35,7 +35,7 @@ QList<QUrl> ItemIconView::selectedUrls(bool grouping) const
     return selectedInfoList(false, grouping).toImageUrlList();
 }
 
-QList<QUrl> ItemIconView::selectedUrls(const ApplicationSettings::OperationType type) const
+QList<QUrl> ItemIconView::selectedUrls(const OperationType type) const
 {
     return selectedInfoList(type).toImageUrlList();
 }
@@ -180,7 +180,7 @@ void ItemIconView::slotDispatchImageSelected()
     // the list of ItemInfos of currently selected items, currentItem first
 
     ApplicationSettings::ApplyToEntireGroup applyAll =
-        ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
+        ApplicationSettings::instance()->getGroupingOperateOnAll(MetadataOps);
 
     const ItemInfoList& list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
     const ItemInfoList& allImages = allInfo(true);
@@ -225,14 +225,14 @@ void ItemIconView::slotDispatchImageSelected()
 
 void ItemIconView::slotImageWriteMetadata()
 {
-    const ItemInfoList& selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selected     = selectedInfoList(MetadataOps);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
     tool->start();
 }
 
 void ItemIconView::slotImageReadMetadata()
 {
-    const ItemInfoList& selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selected     = selectedInfoList(MetadataOps);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::ReadFromFileToDatabase);
     tool->setUseMultiCoreCPU(false);
     tool->start();
@@ -515,13 +515,13 @@ void ItemIconView::slotFocusAndNextImage()
 void ItemIconView::slotImageExifOrientation(int orientation)
 {
     FileActionMngr::instance()->setExifOrientation(
-                selectedInfoList(ApplicationSettings::Metadata), orientation);
+                selectedInfoList(MetadataOps), orientation);
 }
 
 void ItemIconView::imageTransform(MetaEngineRotation::TransformationAction transform)
 {
     FileActionMngr::instance()->transform(
-                selectedInfoList(ApplicationSettings::Metadata), transform);
+                selectedInfoList(MetadataOps), transform);
 }
 
 ItemInfo ItemIconView::currentInfo() const
@@ -597,7 +597,7 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
     }
 }
 
-ItemInfoList ItemIconView::selectedInfoList(const ApplicationSettings::OperationType type,
+ItemInfoList ItemIconView::selectedInfoList(const OperationType type,
                                             const bool currentFirst) const
 {
     return selectedInfoList(currentFirst, selectedNeedGroupResolving(type));
@@ -629,7 +629,7 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
     }
 }
 
-ItemInfoList ItemIconView::allInfo(const ApplicationSettings::OperationType type) const
+ItemInfoList ItemIconView::allInfo(const OperationType type) const
 {
     return allInfo(allNeedGroupResolving(type));
 }

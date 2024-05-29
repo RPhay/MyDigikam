@@ -26,6 +26,7 @@
 #include "applicationsettings.h"
 #include "dcategorizedsortfilterproxymodel.h"
 #include "digikam_export.h"
+#include "digikam_globals.h"
 #include "itemviewutilities.h"
 #include "iteminfo.h"
 #include "statesavingobject.h"
@@ -73,8 +74,8 @@ public:
     ItemInfoList allItemInfos(bool grouping = false)                                        const;
     ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
     ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
-    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    bool          allNeedGroupResolving(const OperationType type)      const;
+    bool          selectedNeedGroupResolving(const OperationType type) const;
 
 protected:
 

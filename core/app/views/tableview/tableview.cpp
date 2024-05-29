@@ -281,12 +281,12 @@ ItemInfoList TableView::allItemInfos(bool grouping) const
     return ItemInfoList(s->tableViewModel->allItemInfo());
 }
 
-bool TableView::allNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool TableView::allNeedGroupResolving(const OperationType type) const
 {
     return s->treeView->needGroupResolving(type, allItemInfos());
 }
 
-bool TableView::selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool TableView::selectedNeedGroupResolving(const OperationType type) const
 {
     return s->treeView->needGroupResolving(type, selectedItemInfos());
 }
@@ -632,7 +632,7 @@ void TableView::rename()
 {
     ItemInfoList infos = selectedItemInfos();
 
-    if (s->treeView->needGroupResolving(ApplicationSettings::Rename, infos))
+    if (s->treeView->needGroupResolving(RenameOps, infos))
     {
         infos = s->treeView->resolveGrouping(infos);
     }

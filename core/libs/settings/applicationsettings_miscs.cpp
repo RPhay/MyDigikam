@@ -364,7 +364,7 @@ int  ApplicationSettings::getDuplicatesSearchRestrictions() const
     return d->duplicatesSearchLastRestrictions;
 }
 
-void ApplicationSettings::setGroupingOperateOnAll(ApplicationSettings::OperationType type,
+void ApplicationSettings::setGroupingOperateOnAll(OperationType type,
                                                   ApplicationSettings::ApplyToEntireGroup applyAll)
 {
     if (!d->groupingOperateOnAll.contains(type))
@@ -378,14 +378,14 @@ void ApplicationSettings::setGroupingOperateOnAll(ApplicationSettings::Operation
 }
 
 ApplicationSettings::ApplyToEntireGroup ApplicationSettings::getGroupingOperateOnAll(
-        ApplicationSettings::OperationType type) const
+        OperationType type) const
 {
     if (!d->groupingOperateOnAll.contains(type))
     {
         throw std::invalid_argument("ApplicationSettings::getGroupingOperateOnAll: Invalid operation type.");
     }
 
-    if (type == ApplicationSettings::Unspecified)
+    if (type == UnspecifiedOps)
     {
         return ApplicationSettings::No;
     }
@@ -393,14 +393,14 @@ ApplicationSettings::ApplyToEntireGroup ApplicationSettings::getGroupingOperateO
     return d->groupingOperateOnAll[type];
 }
 
-bool ApplicationSettings::askGroupingOperateOnAll(ApplicationSettings::OperationType type)
+bool ApplicationSettings::askGroupingOperateOnAll(OperationType type)
 {
     if (!d->groupingOperateOnAll.contains(type))
     {
         throw std::invalid_argument("ApplicationSettings::askGroupingOperateOnAll: Invalid operation type.");
     }
 
-    if (type == ApplicationSettings::Unspecified)
+    if (type == UnspecifiedOps)
     {
         return false;
     }
@@ -434,41 +434,41 @@ bool ApplicationSettings::askGroupingOperateOnAll(ApplicationSettings::Operation
     return true;
 }
 
-QString ApplicationSettings::operationTypeTitle(ApplicationSettings::OperationType type)
+QString ApplicationSettings::operationTypeTitle(OperationType type)
 {
     switch (type)
     {
-        case ApplicationSettings::Metadata:
+        case MetadataOps:
         {
             return i18n("Metadata");
         }
 
-        case ApplicationSettings::LightTable:
+        case LightTableOps:
         {
             return i18n("Light Table");
         }
 
-        case ApplicationSettings::BQM:
+        case BQMOps:
         {
             return i18n("Batch Queue Manager");
         }
 
-        case ApplicationSettings::Slideshow:
+        case SlideshowOps:
         {
             return i18n("Slideshow");
         }
 
-        case ApplicationSettings::Rename:
+        case RenameOps:
         {
             return i18n("Renaming");
         }
 
-        case ApplicationSettings::ImportExport:
+        case ImportExportOps:
         {
             return i18n("Import/Export tools");
         }
 
-        case ApplicationSettings::Tools:
+        case ToolsOps:
         {
             return i18n("Tools (editor, panorama, stack blending, calendar, "
                         "external program)");
@@ -481,41 +481,41 @@ QString ApplicationSettings::operationTypeTitle(ApplicationSettings::OperationTy
     }
 }
 
-QString ApplicationSettings::operationTypeExplanation(ApplicationSettings::OperationType type)
+QString ApplicationSettings::operationTypeExplanation(OperationType type)
 {
     switch (type)
     {
-        case ApplicationSettings::Metadata:
+        case MetadataOps:
         {
             return i18n("Operations related to metadata, labels, ratings, tags, geolocation and rotation");
         }
 
-        case ApplicationSettings::LightTable:
+        case LightTableOps:
         {
             return i18n("Adding items to the Light Table");
         }
 
-        case ApplicationSettings::BQM:
+        case BQMOps:
         {
             return i18n("Adding items to the Batch Queue Manager");
         }
 
-        case ApplicationSettings::Slideshow:
+        case SlideshowOps:
         {
             return i18n("Opening items in the Slideshow");
         }
 
-        case ApplicationSettings::Rename:
+        case RenameOps:
         {
             return i18n("Renaming items");
         }
 
-        case ApplicationSettings::ImportExport:
+        case ImportExportOps:
         {
             return i18n("Passing items to import/export tools");
         }
 
-        case ApplicationSettings::Tools:
+        case ToolsOps:
         {
             return i18n("Several tools including the editor, panorama, stack blending, "
                         "calendar, html gallery and opening with external programs");

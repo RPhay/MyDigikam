@@ -23,7 +23,7 @@
 namespace Digikam
 {
 
-bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool ItemIconView::allNeedGroupResolving(const OperationType type) const
 {
     switch (viewMode())
     {
@@ -49,7 +49,7 @@ bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationTyp
     }
 }
 
-bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool ItemIconView::selectedNeedGroupResolving(const OperationType type) const
 {
     switch (viewMode())
     {

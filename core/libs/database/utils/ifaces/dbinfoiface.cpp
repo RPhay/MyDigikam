@@ -53,6 +53,7 @@
 #include "fileactionmngr.h"
 #include "tagsactionmngr.h"
 #include "setup.h"
+#include "applicationsettings.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "itemgps.h"
@@ -67,15 +68,15 @@ public:
 
     Private() = default;
 
-    AlbumManager*                      albumManager     = AlbumManager::instance();
-    AlbumSelectTabs*                   albumsChooser    = nullptr;
-    AlbumSelectWidget*                 albumSelector    = nullptr;
+    AlbumManager*        albumManager     = AlbumManager::instance();
+    AlbumSelectTabs*     albumsChooser    = nullptr;
+    AlbumSelectWidget*   albumSelector    = nullptr;
 
-    QList<QUrl>                        itemUrls;
+    QList<QUrl>          itemUrls;
 
-    ApplicationSettings::OperationType operationType    = ApplicationSettings::Unspecified;
-    bool                               withGroupedIsSet = false;
-    bool                               withGrouped      = false;
+    OperationType        operationType    = UnspecifiedOps;
+    bool                 withGroupedIsSet = false;
+    bool                 withGrouped      = false;
 
 public:
 
@@ -287,7 +288,7 @@ public:
 };
 
 DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
-                         const ApplicationSettings::OperationType type)
+                         const OperationType type)
     : DInfoInterface(parent),
       d             (new Private)
 {

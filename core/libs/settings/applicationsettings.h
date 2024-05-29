@@ -30,10 +30,11 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_export.h"
+#include "digikam_globals.h"
 #include "sidebar.h"
 #include "dbengineparameters.h"
 #include "versionmanager.h"
-#include "digikam_export.h"
 #include "haariface.h"
 
 class KConfigGroup;
@@ -82,23 +83,6 @@ public:
         Normal
     };
 
-    /**
-     * Types of operations
-     * Originally introduced for grouping to configure whether an operation
-     * should be done on all group members or only it's head.
-     */
-    enum OperationType
-    {
-        Metadata = 0,
-        ImportExport,
-        BQM,
-        LightTable,
-        Slideshow,
-        Rename,
-        Tools,
-        Unspecified ///< This element must always come last
-    };
-
     enum ApplyToEntireGroup
     {
         No = 0,
@@ -106,8 +90,8 @@ public:
         Ask
     };
 
-    typedef QHash<ApplicationSettings::OperationType, QString> OperationStrings;
-    typedef QHash<ApplicationSettings::OperationType, ApplicationSettings::ApplyToEntireGroup> OperationModes;
+    typedef QHash<OperationType, QString> OperationStrings;
+    typedef QHash<OperationType, ApplicationSettings::ApplyToEntireGroup> OperationModes;
 
 Q_SIGNALS:
 

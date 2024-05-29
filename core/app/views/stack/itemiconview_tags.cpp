@@ -31,7 +31,7 @@ void ItemIconView::setRecurseTags(bool recursive)
 void ItemIconView::toggleTag(int tagID)
 {
     ItemInfoList tagToRemove, tagToAssign;
-    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selectedList = selectedInfoList(MetadataOps);
 
     Q_FOREACH (const ItemInfo& info, selectedList)
     {
@@ -56,7 +56,7 @@ void ItemIconView::toggleTag(int tagID)
 
 void ItemIconView::slotAssignPickLabel(int pickId)
 {
-    const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyPickId               = NoPickLabel;
 
     Q_FOREACH (const ItemInfo& info, itemInfos)
@@ -73,7 +73,7 @@ void ItemIconView::slotAssignPickLabel(int pickId)
 
 void ItemIconView::slotAssignColorLabel(int colorId)
 {
-    const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyColorId              = NoColorLabel;
 
     Q_FOREACH (const ItemInfo& info, itemInfos)
@@ -90,7 +90,7 @@ void ItemIconView::slotAssignColorLabel(int colorId)
 
 void ItemIconView::slotAssignRating(int rating)
 {
-    const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& itemInfos = selectedInfoList(MetadataOps);
     int applyRating               = NoRating;
 
     Q_FOREACH (const ItemInfo& info, itemInfos)
@@ -107,12 +107,12 @@ void ItemIconView::slotAssignRating(int rating)
 
 void ItemIconView::slotAssignTag(int tagID)
 {
-    FileActionMngr::instance()->assignTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
+    FileActionMngr::instance()->assignTags(selectedInfoList(MetadataOps), QList<int>() << tagID);
 }
 
 void ItemIconView::slotRemoveTag(int tagID)
 {
-    FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
+    FileActionMngr::instance()->removeTags(selectedInfoList(MetadataOps), QList<int>() << tagID);
 
     /**
      * Implementation for Automatic Icon Removal of

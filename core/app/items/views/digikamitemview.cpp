@@ -263,12 +263,12 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
     imageFilterModel()->invalidate();
  }
 
-bool DigikamItemView::allNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool DigikamItemView::allNeedGroupResolving(const OperationType type) const
 {
     return needGroupResolving(type, allItemInfos());
 }
 
-bool DigikamItemView::selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const
+bool DigikamItemView::selectedNeedGroupResolving(const OperationType type) const
 {
     return needGroupResolving(type, selectedItemInfos());
 }
@@ -298,7 +298,7 @@ bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
-                                         ApplicationSettings::OperationType type) const
+                                         OperationType type) const
 {
     ItemInfoList infos = ItemCategorizedView::imageInfos(indexes);
 
@@ -656,7 +656,7 @@ void DigikamItemView::deleteSelectedDirectly(const ItemViewUtilities::DeleteMode
 
 void DigikamItemView::assignRating(const QList<QModelIndex>& indexes, int rating)
 {
-    ItemInfoList infos = imageInfos(indexes, ApplicationSettings::Metadata);
+    ItemInfoList infos = imageInfos(indexes, MetadataOps);
     FileActionMngr::instance()->assignRating(infos, rating);
 }
 
@@ -678,7 +678,7 @@ void DigikamItemView::rename()
 {
     ItemInfoList infos = selectedItemInfos();
 
-    if (needGroupResolving(ApplicationSettings::Rename, infos))
+    if (needGroupResolving(RenameOps, infos))
     {
         infos = resolveGrouping(infos);
     }
@@ -728,19 +728,19 @@ void DigikamItemView::rename()
 
 void DigikamItemView::slotRotateLeft(const QList<QModelIndex>& indexes)
 {
-    ItemInfoList infos = imageInfos(indexes, ApplicationSettings::Metadata);
+    ItemInfoList infos = imageInfos(indexes, MetadataOps);
     FileActionMngr::instance()->transform(infos, MetaEngineRotation::Rotate270);
 }
 
 void DigikamItemView::slotRotateRight(const QList<QModelIndex>& indexes)
 {
-    ItemInfoList infos = imageInfos(indexes, ApplicationSettings::Metadata);
+    ItemInfoList infos = imageInfos(indexes, MetadataOps);
     FileActionMngr::instance()->transform(infos, MetaEngineRotation::Rotate90);
 }
 
 void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
 {
-   QList<ItemInfo> infos = imageInfos(indexes, ApplicationSettings::Slideshow);
+   QList<ItemInfo> infos = imageInfos(indexes, SlideshowOps);
 
    if (infos.isEmpty())
    {

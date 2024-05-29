@@ -25,7 +25,7 @@
 namespace Digikam
 {
 
-bool GroupingViewImplementation::needGroupResolving(ApplicationSettings::OperationType type, const ItemInfoList& infos) const
+bool GroupingViewImplementation::needGroupResolving(OperationType type, const ItemInfoList& infos) const
 {
     ApplicationSettings::ApplyToEntireGroup applyAll = ApplicationSettings::instance()->getGroupingOperateOnAll(type);
 

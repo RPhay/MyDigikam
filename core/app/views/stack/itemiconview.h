@@ -26,6 +26,7 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "metaengine_rotation.h"
 #include "searchtextbar.h"
@@ -188,8 +189,8 @@ public:
      * all items in the currently active view should be performed on all
      * grouped items or just the first.
      */
-    bool allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
-    bool selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    bool allNeedGroupResolving(const OperationType type)      const;
+    bool selectedNeedGroupResolving(const OperationType type) const;
     void setAllGroupsOpen(bool open);
 
 public Q_SLOTS:
@@ -330,10 +331,10 @@ public:
      * Ideally only the latter (giving an operation) is used.
      */
     QList<QUrl>  selectedUrls(bool grouping = false)                               const;
-    QList<QUrl>  selectedUrls(const ApplicationSettings::OperationType type)       const;
+    QList<QUrl>  selectedUrls(const OperationType type)       const;
     ItemInfoList selectedInfoList(const bool currentFirst = false,
                                    const bool grouping = false)                    const;
-    ItemInfoList selectedInfoList(const ApplicationSettings::OperationType type,
+    ItemInfoList selectedInfoList(const OperationType type,
                                    const bool currentFirst = false)                const;
     /**
      * Get all items in the current view.
@@ -342,7 +343,7 @@ public:
      */
     QList<QUrl>  allUrls(bool grouping = false)                                    const;
     ItemInfoList allInfo(const bool grouping = false)                              const;
-    ItemInfoList allInfo(const ApplicationSettings::OperationType type)            const;
+    ItemInfoList allInfo(const OperationType type)            const;
 
     void imageTransform(MetaEngineRotation::TransformationAction transform);
 

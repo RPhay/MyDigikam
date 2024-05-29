@@ -310,12 +310,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     QHash<int, QLabel*> labels;
 
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
         labels.insert(i, new QLabel(ApplicationSettings::operationTypeTitle(
-                                    (ApplicationSettings::OperationType)i), groupingPanel));
+                                    (OperationType)i), groupingPanel));
         QString explanation = ApplicationSettings::operationTypeExplanation(
-                              (ApplicationSettings::OperationType)i);
+                              (OperationType)i);
 
         if (!explanation.isEmpty())
         {
@@ -333,7 +333,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     grid->addWidget(yesLabel,    1, 2, 1, 1);
     grid->addWidget(askLabel,    1, 3, 1, 1);
 
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
         grid->addWidget(labels.value(i),                        i+2, 0, 1, 1);
         grid->addWidget(d->groupingButtons.value(i)->button(0), i+2, 1, 1, 1);
@@ -451,9 +451,9 @@ void SetupMisc::applySettings()
                                  d->albumDateSource->itemData(d->albumDateSource->currentIndex()).toInt();
     MetaEngineSettings::instance()->setSettings(metaSettings);
 
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
-        settings->setGroupingOperateOnAll((ApplicationSettings::OperationType)i,
+        settings->setGroupingOperateOnAll((OperationType)i,
                                           (ApplicationSettings::ApplyToEntireGroup)d->groupingButtons.value(i)->checkedId());
     }
 
@@ -510,9 +510,9 @@ void SetupMisc::readSettings()
     d->albumDateSource->setCurrentIndex((int)metaSettings.albumDateFrom);
     d->useFastScan->setChecked(metaSettings.useFastScan);
 
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
-        d->groupingButtons.value(i)->button((int)settings->getGroupingOperateOnAll((ApplicationSettings::OperationType)i))->setChecked(true);
+        d->groupingButtons.value(i)->button((int)settings->getGroupingOperateOnAll((OperationType)i))->setChecked(true);
     }
 
 #ifdef HAVE_APPSTYLE_SUPPORT

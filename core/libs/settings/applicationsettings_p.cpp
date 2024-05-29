@@ -22,13 +22,13 @@ namespace Digikam
 ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfigGroupingOperateOnAll()
 {
     ApplicationSettings::OperationStrings out;
-    out.insert(ApplicationSettings::Metadata,     QLatin1String("Do metadata operations on all"));
-    out.insert(ApplicationSettings::ImportExport, QLatin1String("Do Import Export operations on all"));
-    out.insert(ApplicationSettings::BQM,          QLatin1String("Do BQM operations on all"));
-    out.insert(ApplicationSettings::LightTable,   QLatin1String("Do light table operations on all"));
-    out.insert(ApplicationSettings::Slideshow,    QLatin1String("Do slideshow operations on all"));
-    out.insert(ApplicationSettings::Rename,       QLatin1String("Rename all"));
-    out.insert(ApplicationSettings::Tools,        QLatin1String("Operate tools on all"));
+    out.insert(MetadataOps,     QLatin1String("Do metadata operations on all"));
+    out.insert(ImportExportOps, QLatin1String("Do Import Export operations on all"));
+    out.insert(BQMOps,          QLatin1String("Do BQM operations on all"));
+    out.insert(LightTableOps,   QLatin1String("Do light table operations on all"));
+    out.insert(SlideshowOps,    QLatin1String("Do slideshow operations on all"));
+    out.insert(RenameOps,       QLatin1String("Rename all"));
+    out.insert(ToolsOps,        QLatin1String("Operate tools on all"));
 
     return out;
 }
@@ -36,9 +36,9 @@ ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfig
 ApplicationSettings::Private::Private(ApplicationSettings* const qq)
     : q(qq)
 {
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
-        groupingOperateOnAll.insert((ApplicationSettings::OperationType)i,
+        groupingOperateOnAll.insert((OperationType)i,
                 ApplicationSettings::Ask);
     }
 }
@@ -56,9 +56,9 @@ void ApplicationSettings::Private::init()
     albumCategoryNames.append(i18nc("@item: album categories", "Miscellaneous"));
     albumCategoryNames.sort();
 
-    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
+    for (int i = 0 ; i != UnspecifiedOps ; ++i)
     {
-        groupingOperateOnAll.insert((ApplicationSettings::OperationType)i,
+        groupingOperateOnAll.insert((OperationType)i,
                                     ApplicationSettings::Ask);
     }
 

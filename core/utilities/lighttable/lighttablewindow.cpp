@@ -1102,32 +1102,32 @@ void LightTableWindow::slotToggleColorManagedView()
 
 DInfoInterface* LightTableWindow::infoIface(DPluginAction* const ac)
 {
-    ApplicationSettings::OperationType aset = ApplicationSettings::Unspecified;
+    OperationType aset = UnspecifiedOps;
 
     switch (ac->actionCategory())
     {
         case DPluginAction::GenericExport:
         case DPluginAction::GenericImport:
         {
-            aset = ApplicationSettings::ImportExport;
+            aset = ImportExportOps;
             break;
         }
 
         case DPluginAction::GenericMetadata:
         {
-            aset = ApplicationSettings::Metadata;
+            aset = MetadataOps;
             break;
         }
 
         case DPluginAction::GenericTool:
         {
-            aset = ApplicationSettings::Tools;
+            aset = ToolsOps;
             break;
         }
 
         case DPluginAction::GenericView:
         {
-            aset = ApplicationSettings::Slideshow;
+            aset = SlideshowOps;
             break;
         }
 
