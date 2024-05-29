@@ -76,6 +76,8 @@ DK_QTVERSION="6"
 DK_VERSION=master
 #DK_VERSION=qt5-maintenance
 
+#DK_REVISION=7d64840905ba968de186a9f30bc3ccff64c89224
+
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 DK_SUBVER=""
 
