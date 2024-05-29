@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 01:42+0000\n"
-"PO-Revision-Date: 2024-05-26 09:22+0200\n"
+"POT-Creation-Date: 2024-05-29 02:06+0000\n"
+"PO-Revision-Date: 2024-05-27 07:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -51365,7 +51365,7 @@ msgid "&Abort"
 msgstr "&Interrompre"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:922
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
 #, kde-format
 msgid "Processing..."
 msgstr "Traitement en cours…"
@@ -61914,14 +61914,14 @@ msgstr ""
 msgid "There are no items to process in the queues."
 msgstr "Il n'y a pas d'éléments à traiter dans les files d'attente."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:857
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:867
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Configuration de l'album d'éléments traités"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61931,7 +61931,7 @@ msgstr ""
 "d'attente « %1 » n'est pas défini. Veuillez en sélectionner un depuis le "
 "panneau « Paramètres des files d'attente »."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61941,27 +61941,27 @@ msgstr ""
 "d'attente « %1 » n'est pas disponible ou n'est pas inscriptible. Veuillez en "
 "définir un autre à partir du panneau « Paramètres des files d'attente »."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:947
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Impossible de traiter l'élément…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:960
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Traitement annulé…"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:980
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Élément « %1 » provenant de la file d'attente « %2 » : %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1009
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
 #, kde-format
 msgid "Batch queue finished"
 msgstr "La file d'attente par lots est terminée"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1013
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
 #, kde-format
 msgid "All batch queues finished"
 msgstr "Toutes les files d'attente par lots sont terminées"
@@ -66995,8 +66995,7 @@ msgid "Disable hardware acceleration OpenCL"
 msgstr "Désactiver l'accélération matérielle « OpenCL »"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
+#, kde-format
 msgid "Fix AMD-GPU video decoding issue"
 msgstr "Corriger le problème de décodage vidéo du processeur graphique AMD"
 
