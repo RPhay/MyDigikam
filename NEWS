@@ -165,7 +165,7 @@ BUGFIXES:
 136 ==> 090040 - Copy image location from right menu.
 137 ==> 196627 - Right-click context menu for the Albums View.
 138 ==> 283373 - digiKam shows splashscreen but won't start with no crash report generated.
-139 ==> 
+139 ==> 479675 - Missing Thumbnails with External Drive.
 140 ==> 
 141 ==> 
 142 ==> 
