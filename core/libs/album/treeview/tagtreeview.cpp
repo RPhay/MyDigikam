@@ -47,6 +47,10 @@ TagTreeView::TagTreeView(QWidget* const parent, Flags flags)
     }
 }
 
+TagTreeView::~TagTreeView()
+{
+}
+
 void TagTreeView::setAlbumFilterModel(TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
 {
     m_filteredModel = filteredModel;
