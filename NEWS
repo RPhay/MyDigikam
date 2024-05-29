@@ -166,7 +166,7 @@ BUGFIXES:
 137 ==> 196627 - Right-click context menu for the Albums View.
 138 ==> 283373 - digiKam shows splashscreen but won't start with no crash report generated.
 139 ==> 479675 - Missing Thumbnails with External Drive.
-140 ==> 
+140 ==> 478375 - Cannot update database with digikam mysql executables. Brew mysql executables work partially.
 141 ==> 
 142 ==> 
 143 ==> 
