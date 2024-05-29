@@ -19,7 +19,6 @@
 #include "queuemgrwindow.h"
 #include "queuepool.h"
 #include "queuelist.h"
-#include "iteminfoset.h"
 
 namespace Digikam
 {
@@ -30,34 +29,27 @@ BqmInfoIface::BqmInfoIface(QObject* const parent)
     setObjectName(QLatin1String("BqmInfoIface"));
 }
 
-QStringList BqmInfoIface::pendingItemPathsFromCurrentQueue() const
+QueuePoolItemsList BqmInfoIface::pendingItemInfoListFromCurrentQueue() const
 {
-    return itemPathsFromCurrentQueue(QueueListView::Pending);
+    return itemInfoListFromCurrentQueue(QueueListView::Pending);
 }
 
-QStringList BqmInfoIface::selectedItemPathsFromCurrentQueue() const
+QueuePoolItemsList BqmInfoIface::selectedItemInfoListFromCurrentQueue() const
 {
-    return itemPathsFromCurrentQueue(QueueListView::Selected);
+    return itemInfoListFromCurrentQueue(QueueListView::Selected);
 }
 
-QStringList BqmInfoIface::allItemPathsFromCurrentQueue() const
+QueuePoolItemsList BqmInfoIface::allItemInfoListFromCurrentQueue() const
 {
-    return itemPathsFromCurrentQueue(QueueListView::All);
+    return itemInfoListFromCurrentQueue(QueueListView::All);
 }
 
-QStringList BqmInfoIface::itemPathsFromCurrentQueue(int type) const
+QueuePoolItemsList BqmInfoIface::itemInfoListFromCurrentQueue(int type) const
 {
-    QStringList paths;
-
     QueuePool* const pool   = QueueMgrWindow::queueManagerWindow()->queuePool();
     QueuePoolItemsList list = pool->itemsList(pool->currentIndex(), type);
 
-    Q_FOREACH (const ItemInfoSet& item, list)
-    {
-        paths << item.info.filePath();
-    }
-
-    return paths;
+    return list;
 }
 
 } // namespace Digikam

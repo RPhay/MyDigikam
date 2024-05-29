@@ -21,6 +21,7 @@
 
 // Local includes
 
+#include "iteminfoset.h"
 #include "dbinfoiface.h"
 #include "digikam_export.h"
 
@@ -39,23 +40,23 @@ public:
 public:
 
     /**
-     * Return pending item paths from the current queue.
+     * Return pending item info list from the current queue.
      */
-    QStringList pendingItemPathsFromCurrentQueue()      const;
+    QueuePoolItemsList pendingItemInfoListFromCurrentQueue()      const;
 
     /**
-     * Return selected item paths from the current queue.
+     * Return selected item info list from the current queue.
      */
-    QStringList selectedItemPathsFromCurrentQueue()     const;
+    QueuePoolItemsList selectedItemInfoListFromCurrentQueue()     const;
 
     /**
-     * Return all item paths from the current queue.
+     * Return all item info list from the current queue.
      */
-    QStringList allItemPathsFromCurrentQueue()          const;
+    QueuePoolItemsList allItemInfoListFromCurrentQueue()          const;
 
 private:
 
-    QStringList itemPathsFromCurrentQueue(int type)     const;
+    QueuePoolItemsList itemInfoListFromCurrentQueue(int type)     const;
 };
 
 } // namespace Digikam

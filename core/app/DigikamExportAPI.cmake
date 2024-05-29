@@ -142,6 +142,7 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/dplugins/dpluginbqm.h
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/dplugins/bqminfoiface.h
+              ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/manager/iteminfoset.h
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/manager/batchtool.h
               ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/manager/queuesettings.h
 
