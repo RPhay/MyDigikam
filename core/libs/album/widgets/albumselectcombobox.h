@@ -159,7 +159,7 @@ protected:
 
 protected:
 
-    AbstractAlbumTreeView* m_treeView = nullptr;
+    AbstractAlbumTreeView* m_treeView;
 };
 
 // ------------------------------------------------------------------------------------

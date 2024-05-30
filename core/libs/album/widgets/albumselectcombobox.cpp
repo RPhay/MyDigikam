@@ -338,7 +338,8 @@ void AlbumSelectComboBox::updateText()
 // ---------------------------------------------------------------------------------------------------
 
 AbstractAlbumTreeViewSelectComboBox::AbstractAlbumTreeViewSelectComboBox(QWidget* const parent)
-    : AlbumSelectComboBox(parent)
+    : AlbumSelectComboBox(parent),
+      m_treeView         (nullptr)
 {
 }
 
