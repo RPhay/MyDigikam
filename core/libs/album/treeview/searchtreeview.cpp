@@ -41,10 +41,6 @@ SearchTreeView::SearchTreeView(QWidget* const parent, Flags flags)
     }
 }
 
-SearchTreeView::~SearchTreeView()
-{
-}
-
 void SearchTreeView::setAlbumModel(SearchModel* const model)
 {
     AbstractCheckableAlbumTreeView::setAlbumModel(model);
