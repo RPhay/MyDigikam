@@ -168,7 +168,7 @@ BUGFIXES:
 139 ==> 479675 - Missing Thumbnails with External Drive.
 140 ==> 478375 - Cannot update database with digikam mysql executables. Brew mysql executables work partially.
 141 ==> 282099 - Easier installation (compare to Building digiKam for Dummies on Ubuntu and other linux based distro´s).
-142 ==> 
+142 ==> 238587 - Hierarchal date based folder creation upon import of images.
 143 ==> 
 144 ==> 
 145 ==> 
