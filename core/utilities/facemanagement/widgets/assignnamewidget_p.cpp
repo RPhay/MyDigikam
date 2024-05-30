@@ -88,7 +88,13 @@ void AssignNameWidget::Private::updateModes()
         checkWidgets();
         updateIgnoreButton();
         updateLayout();
+
+#if !defined(Q_OS_WIN) || (QT_VERSION > QT_VERSION_CHECK(6, 7, 0))
+
         updateVisualStyle();
+
+#endif
+
     }
 }
 

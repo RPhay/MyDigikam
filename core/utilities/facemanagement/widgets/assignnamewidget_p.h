@@ -35,6 +35,7 @@
 
 #include "dexpanderbox.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "addtagscombobox.h"
 #include "addtagslineedit.h"
 #include "album.h"
