@@ -88,7 +88,13 @@ void AssignNameWidget::Private::updateModes()
         checkWidgets();
         updateIgnoreButton();
         updateLayout();
+
+#if !defined(Q_OS_WIN) || (QT_VERSION > QT_VERSION_CHECK(6, 7, 0))
+
         updateVisualStyle();
+
+#endif
+
     }
 }
 
@@ -450,8 +456,6 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "                    stop:1 rgba(255, 255, 255, 0)); "
                     "} "
 
-#if !defined(Q_OS_WIN) || (QT_VERSION > QT_VERSION_CHECK(6, 7, 0))
-
                     "QComboBox { "
                     "  color: white; "
                     "  background-color: transparent; "
@@ -461,8 +465,6 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "  color: white; "
                     "  background-color: rgba(0, 0, 0, 80%); "
                     "} "
-
-#endif
 
                     "QLabel { "
                     "  color: white; background-color: transparent; border: none; "
