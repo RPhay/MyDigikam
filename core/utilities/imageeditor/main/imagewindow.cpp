@@ -1386,7 +1386,6 @@ DInfoInterface* ImageWindow::infoIface(DPluginAction* const ac)
     }
 
     DBInfoIface* const iface = new DBInfoIface(this, d->thumbBar->allUrls(), aset);
-    iface->setObjectName(QLatin1String("EditorInfoIface"));
 
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));

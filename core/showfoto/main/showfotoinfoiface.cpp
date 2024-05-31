@@ -30,7 +30,6 @@ namespace ShowFoto
 ShowfotoInfoIface::ShowfotoInfoIface(QObject* const parent, const QList<QUrl>& lst)
     : DMetaInfoIface(parent, lst)
 {
-    setObjectName(QLatin1String("ShowfotoInfoIface"));
 }
 
 void ShowfotoInfoIface::openSetupPage(SetupPage page)
