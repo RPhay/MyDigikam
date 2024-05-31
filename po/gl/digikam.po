@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-29 02:06+0000\n"
-"PO-Revision-Date: 2024-05-29 09:18+0200\n"
+"POT-Creation-Date: 2024-05-31 01:56+0000\n"
+"PO-Revision-Date: 2024-05-30 19:51+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -36849,6 +36849,8 @@ msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
+"O seu soporte lóxico está ao día.\n"
+"A pre-publicación de %1 construída o %2 é a versión máis recente dispoñíbel."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:319
 #, kde-format
@@ -36856,6 +36858,8 @@ msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
+"O seu soporte lóxico está ao día.\n"
+"A versión estábel %2 de %1 é a versión máis recente dispoñíbel."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:327
 #, kde-format
@@ -36863,67 +36867,76 @@ msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
+"Produciuse un erro ao intentar comprobar se hai unha nova versión de %1:\n"
+"«%2»"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:337
 #: core/libs/onlineversion/onlineversiondlg.cpp:379
 #, kde-format
 msgid "built on %1 with debug symbols"
-msgstr ""
+msgstr "construída o %1 con símbolos de depuración"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:338
 #: core/libs/onlineversion/onlineversiondlg.cpp:380
 #, kde-format
 msgid "built on %1"
-msgstr ""
+msgstr "construída o %1"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:340
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Downloading new %1\n"
 "%2\n"
 "in progress, please wait..."
-msgstr "Detectando o dispositivo; agarde un anaco…"
+msgstr ""
+"Descargando unha nova %1\n"
+"%2\n"
+"en progreso, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:346
 #: core/libs/onlineversion/onlineversiondlg.cpp:388
 #, kde-format
 msgid "version %1 with debug symbols"
-msgstr ""
+msgstr "versión %1 con símbolos de depuración"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:347
 #: core/libs/onlineversion/onlineversiondlg.cpp:389
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgid "version %1"
-msgstr "Versión"
+msgstr "versión %1"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:349
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Downloading new %1\n"
 "version %2\n"
 "in progress, please wait..."
-msgstr "Detectando o dispositivo; agarde un anaco…"
+msgstr ""
+"Descargando unha nova %1\n"
+"versión %2\n"
+"en progreso, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:382
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
 "%2\n"
 "in progress, please wait..."
-msgstr "Detectando o dispositivo; agarde un anaco…"
+msgstr ""
+"Verificar a suma de comprobación da nova %1\n"
+"%2\n"
+"en progreso, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:391
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Verify checksum for %1\n"
 "version %2\n"
 "in progress, please wait..."
-msgstr "Detectando o dispositivo; agarde un anaco…"
+msgstr ""
+"Verificar a suma de comprobación de %1\n"
+"versión %2\n"
+"en progreso, agarde…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:418
 #, kde-format
@@ -36942,6 +36955,13 @@ msgid ""
 "\n"
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
+"A nova pre-publicación de %1\n"
+"construída o %2\n"
+"descargouse en:\n"
+"\n"
+"%3\n"
+"\n"
+"Prema «Abrir» para amosar o arquivo no xestor de ficheiros…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:438
 #, kde-format
@@ -36954,11 +36974,18 @@ msgid ""
 "\n"
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
+"A nova versión estábel de %1\n"
+"%2\n"
+"descargouse en:\n"
+"\n"
+"%3\n"
+"\n"
+"Prema «Abrir» para amosar o arquivo no xestor de ficheiros…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:449
 #, kde-format
 msgid "Install..."
-msgstr ""
+msgstr "Instalar…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:454
 #, kde-format
@@ -36971,6 +36998,13 @@ msgid ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
+"A nova pre-publicación %1\n"
+"construída o %2\n"
+"descargouse en:\n"
+"\n"
+"%3\n"
+"\n"
+"Prema «Instalar» para pechar a sesión actual e anovar…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:463
 #, kde-format
@@ -36983,71 +37017,73 @@ msgid ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
+"A nova versión estábel de %1\n"
+"%2\n"
+"descargouse en:\n"
+"\n"
+"%3\n"
+"\n"
+"Prema «Instalar» para pechar a sesión actual e anovar…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:487
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error when loading bookmarks on line %1, column %2:\n"
-#| "%3"
+#, kde-format
 msgid ""
 "Error while trying to download %1\n"
 "pre-release built on %2:\n"
 "\n"
 "\"%3\""
 msgstr ""
-"Erro ao cargar os marcadores na liña %1, columna %2:\n"
-"%3"
+"Produciuse un erro ao intentar descargar a pre-publicación de %1\n"
+"construída o %2:\n"
+"\n"
+"«%3»"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:494
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error when loading bookmarks on line %1, column %2:\n"
-#| "%3"
+#, kde-format
 msgid ""
 "Error while trying to download %1\n"
 "stable version %2:\n"
 "\n"
 "\"%3\""
 msgstr ""
-"Erro ao cargar os marcadores na liña %1, columna %2:\n"
-"%3"
+"Produciuse un erro ao intentar descargar a versión estábel de %1\n"
+"%2:\n"
+"\n"
+"«%3»"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:586
-#, fuzzy, kde-format
-#| msgid "Cannot open file"
+#, kde-format
 msgid ""
 "Cannot start installer:\n"
 "%1"
-msgstr "Non se pode abrir o ficheiro"
+msgstr ""
+"Non é posíbel iniciar o instalador:\n"
+"%1"
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:234
-#, fuzzy, kde-format
-#| msgid "File is empty."
+#, kde-format
 msgid "Checksum file is empty."
-msgstr "O ficheiro está baleiro."
+msgstr "O ficheiro de suma de comprobación está baleiro."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:246
 #, kde-format
 msgid "Checksum is invalid."
-msgstr ""
+msgstr "A suma de comprobación non é válida."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:268
-#, fuzzy, kde-format
-#| msgid "File is empty."
+#, kde-format
 msgid "Downloaded file is empty."
-msgstr "O ficheiro está baleiro."
+msgstr "O ficheiro descargado está baleiro."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:301
-#, fuzzy, kde-format
-#| msgid "Session error"
+#, kde-format
 msgid "Checksums error."
-msgstr "Produciuse un erro na sesión"
+msgstr "Produciuse un erro coa suma de comprobación."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:329
-#, fuzzy, kde-format
-#| msgid "Cannot open file"
+#, kde-format
 msgid "Cannot open target file."
-msgstr "Non se pode abrir o ficheiro"
+msgstr "Non é posíbel abrir o ficheiro de destino."
 
 #: core/libs/progressmanager/dlogoaction.cpp:138
 #, kde-format
@@ -37157,14 +37193,12 @@ msgid "Do you want to apply your changes?"
 msgstr "Quere aplicar todos os cambios?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:320
-#, fuzzy, kde-format
-#| msgid "<p>You have edited the metadata of the image: </p><p><ul>"
-#| msgid_plural "<p>You have edited the metadata of %1 images: </p><p><ul>"
+#, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] "<p>Editou os metadatos da imaxe: </p><p><ul>"
-msgstr[1] "<qt><p>Editou os metadatos de %1 imaxes: </p><p><ul>"
+msgstr[0] "<p>Editou os metadatos da imaxe:</p>"
+msgstr[1] "<p>Editou os metadatos de %1 imaxes:</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
 #, kde-format
@@ -37221,8 +37255,7 @@ msgid "Always apply changes without confirmation"
 msgstr "Aplicar sempre os cambios sen pedir confirmación"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
-#, fuzzy, kde-format
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Quere aplicar os cambios?"
@@ -37265,11 +37298,10 @@ msgid "Read metadata from each file to database"
 msgstr "Ler os metadatos de cada ficheiro para a base de datos"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:539
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
-msgstr "Asignar as etiquetas aos elementos &seleccionados"
+msgstr "Unificar as etiquetas dos elementos seleccionados"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:36
 #, kde-format
@@ -37351,11 +37383,10 @@ msgid "Information"
 msgstr "Información"
 
 #: core/libs/properties/captions/itemdescedittab_p.cpp:209
-#, fuzzy, kde-format
-#| msgid "Select item language here."
+#, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
-msgstr "Seleccione o idioma do elemento."
+msgstr "Os elementos seleccionados teñen un texto distinto aquí."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
 #: core/libs/properties/captions/tagsedit.cpp:92
@@ -37406,13 +37437,16 @@ msgid "No Recently Assigned Tags"
 msgstr "Non hai etiquetas asignadas recentemente"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
-#, fuzzy, kde-format
-#| msgid "Position Information (GPS)"
+#, kde-format
 msgid ""
 "No Geolocation\n"
 "Information\n"
 "Available"
-msgstr "Información sobre a posición (GPS)"
+msgstr ""
+"Non hai\n"
+"información de\n"
+"xeolocalización\n"
+"dispoñíbel"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
 #, kde-format
@@ -37739,11 +37773,10 @@ msgid "unknown"
 msgstr "descoñecido"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:334
-#, fuzzy, kde-format
-#| msgid "<i>unchanged</i>"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
-msgstr "<i>sen cambios</i>"
+msgstr "sen cambios"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
@@ -38065,7 +38098,7 @@ msgstr "%1x%2 (%3Mpx)"
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
-msgstr ""
+msgstr "Ligazón simbólica: "
 
 #: core/libs/properties/itempropertiestab.cpp:40
 #, kde-format
@@ -38107,7 +38140,7 @@ msgstr "Acompañante: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -38158,18 +38191,16 @@ msgid "Rating: "
 msgstr "Cualificación: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Versión"
+msgstr "Con versión: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Agrupar"
+msgstr "Con grupo: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -38178,18 +38209,16 @@ msgid "digiKam Properties"
 msgstr "Propiedades de digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Palabras clave"
+msgstr "Palabras clave: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Persoas"
+msgstr "Persoas: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
 #, kde-format
@@ -38238,22 +38267,19 @@ msgid "Size: "
 msgstr "Tamaño: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:73
-#, fuzzy, kde-format
-#| msgid "Count: "
+#, kde-format
 msgid "Total Count: "
-msgstr "Cantidade: "
+msgstr "Cantidade total: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:74
-#, fuzzy, kde-format
-#| msgid "Total: "
+#, kde-format
 msgid "Total Size: "
-msgstr "Total: "
+msgstr "Tamaño total: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:99
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgid "Selection Properties"
-msgstr "Propiedades do ficheiro"
+msgstr "Propiedades da selección"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-format
@@ -39184,28 +39210,24 @@ msgid "Leica Digital Camera Raw Image Format"
 msgstr "Formato de imaxe en cru de cámaras dixitais de Leica"
 
 #: core/libs/rawengine/drawfiles.cpp:133
-#, fuzzy, kde-format
-#| msgid "Samnsung Raw Image Format"
+#, kde-format
 msgid "Samsung Raw Image Format"
-msgstr "Formato de imaxe en cru de Samnsung"
+msgstr "Formato de imaxe en cru de Samsung"
 
 #: core/libs/rawengine/drawfiles.cpp:138
-#, fuzzy, kde-format
-#| msgid "Canon Digital Camera RAW Image Format version 2.0"
+#, kde-format
 msgid "Canon Digital Camera RAW Image Format version 3.0"
-msgstr "Formato de imaxe en cru de cámaras dixitais de Canon, versión 2.0"
+msgstr "Formato de imaxe en cru de cámaras dixitais de Canon, versión 3.0"
 
 #: core/libs/rawengine/drawfiles.cpp:148 core/libs/rawengine/drawfiles.cpp:154
-#, fuzzy, kde-format
-#| msgid "Pentax Digital Camera Raw Image Format"
+#, kde-format
 msgid "Phase One Digital Camera Raw Image Format"
-msgstr "Formato de imaxe en cru de cámaras dixitais de Pentax"
+msgstr "Formato de imaxe en cru de cámaras dixitais de Phase One"
 
 #: core/libs/rawengine/drawfiles.cpp:153
-#, fuzzy, kde-format
-#| msgid "Fuji Digital Camera Raw Image Format"
+#, kde-format
 msgid "Arriflex Camera Raw Image Format"
-msgstr "Formato de imaxe en cru de cámaras dixitais de Fuji"
+msgstr "Formato de imaxe en cru de cámaras de Arriflex"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
@@ -39414,15 +39436,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Desexa eliminar a(s) etiqueta(s) «%1»?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:570
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Deleting it will also "
-#| "delete the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Deleting it will also "
-#| "delete the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -39433,11 +39447,11 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] ""
 "A etiqueta de cara «%2» ten polo menos unha etiqueta subordinada de cara. "
-"Eliminala tamén eliminará as subordinadas.\n"
+"Retirala tamén retirará as subordinadas.\n"
 "Quere continuar?"
 msgstr[1] ""
 "As etiquetas de cara «%2» teñen polo menos unha etiqueta subordinada de "
-"cara. Eliminalas tamén eliminará as subordinadas.\n"
+"cara. Retiralas tamén retirará as subordinadas.\n"
 "Quere continuar?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:592
@@ -39550,10 +39564,9 @@ msgstr "Expandir a árbore da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
 #: core/libs/tags/manager/tagsmanager.cpp:720
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse Tag Tree"
-msgstr "Copiar o álbum"
+msgstr "Pregar a árbore da etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
 #: core/libs/tags/manager/tagsmanager.cpp:723
@@ -39602,18 +39615,15 @@ msgstr "Ata&llo:"
 #, kde-format
 msgctxt "@label"
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to "
-#| "items.</p>"
+#, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
-"<p><b>Nota</b>: este atallo pódese empregar para asignar ou anular a "
-"asignación de etiquetas aos elementos.</p>"
+"Este atallo pódese usar para asignar ou anular a asignación de etiquetas aos "
+"elementos."
 
 #: core/libs/tags/manager/tagpropwidget.cpp:153
 #, kde-format
@@ -39742,10 +39752,9 @@ msgid "Create Tag from Address Book"
 msgstr "Crear unha etiqueta a partir da axenda de enderezos"
 
 #: core/libs/tags/manager/tagsmanager.cpp:708
-#, fuzzy, kde-format
-#| msgid "Delete Unassigned Tags"
+#, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "Eliminar as etiquetas sen asignar"
+msgstr "Marcar as etiquetas sen asignar"
 
 #: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
@@ -39775,12 +39784,9 @@ msgstr ""
 "múltiplas."
 
 #: core/libs/tags/manager/tagsmanager.cpp:740
-#, fuzzy, kde-format
-#| msgid "Delete all tags that are not assigned to images. Use with caution."
+#, kde-format
 msgid "Mark all tags that are not assigned to images."
-msgstr ""
-"Eliminar todas as etiquetas que non estean asignadas a imaxes. Úsese con "
-"coidado."
+msgstr "Marcar todas as etiquetas que non estean asignadas a imaxes."
 
 #: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
@@ -39793,16 +39799,14 @@ msgid "Selected items will be expanded"
 msgstr "Os elementos escollidos hanse expandir"
 
 #: core/libs/tags/manager/tagsmanager.cpp:747
-#, fuzzy, kde-format
-#| msgid "Expand tag tree by one level"
+#, kde-format
 msgid "Expand tag tree completely"
-msgstr "Expandir a árbore de etiquetas un nivel"
+msgstr "Expandir a árbore de etiquetas completamente"
 
 #: core/libs/tags/manager/tagsmanager.cpp:749
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgid "Collapse tag tree completely"
-msgstr "A copia non se completou"
+msgstr "Pregar a árbore de etiquetas completamente"
 
 #: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
@@ -39851,7 +39855,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Axuda de xestión de etiquetas en Internet"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:71
 #, kde-format
@@ -39951,8 +39955,7 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Propiedades da etiqueta<br/>«%1»</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Produciuse un erro ao crear a etiqueta"
@@ -39968,16 +39971,14 @@ msgid "Tag Path"
 msgstr "Ruta á etiqueta"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:138
-#, fuzzy, kde-format
-#| msgid "Expand Tag Tree"
+#, kde-format
 msgid "Expand all Tags"
-msgstr "Expandir a árbore da etiqueta"
+msgstr "Expandir todas as etiquetas"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:143
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse all Tags"
-msgstr "Copiar o álbum"
+msgstr "Pregar todas as etiquetas"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:231
 #, kde-format
@@ -40114,15 +40115,7 @@ msgstr ""
 "separadores."
 
 #: core/libs/template/templatepanel.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This field should contain the names of the persons who created the "
-#| "photograph. If it is not appropriate to add the name of the photographer "
-#| "(for example, if the identity of the photographer needs to be protected) "
-#| "the name of a company or organization can also be used. Once saved, this "
-#| "field should not be changed by anyone.</p><p>To enter more than one name, "
-#| "use <b>semi-colons as separators</b>.</p><p>With IPTC, this field is "
-#| "limited to 32 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>This field should contain the names of the persons who created the "
 "photograph. If it is not appropriate to add the name of the photographer "
@@ -40136,8 +40129,8 @@ msgstr ""
 "é axeitado engadir o nome do fotógrafo (por exemplo, se debe protexer a "
 "identidade do fotógrafo) tamén pode usar o nome da empresa ou organización. "
 "Cando o garde, este campo non debera cambiarse por ninguén. </p><p>Para "
-"inserir máis dun nome empregue o <b>punto e coma como separador</b>.</"
-"p><p>Con IPTC, este campo só pode ter 32 caracteres ASCII.</p>"
+"inserir máis dun nome use o <b>punto e coma como separador</b>.</p><p>Con "
+"IPTC, este campo só pode ter 32 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:103
 #, kde-format
@@ -40150,13 +40143,7 @@ msgid "Enter the job titles of the authors here."
 msgstr "Insira aquí o cargo que teñen autores."
 
 #: core/libs/template/templatepanel.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This field should contain the job titles of the authors. Examples "
-#| "might include titles such as: Staff Photographer, Freelance Photographer, "
-#| "or Independent Commercial Photographer. Since this is a qualifier for the "
-#| "Author field, the Author field must also be filled out.</p><p>With IPTC, "
-#| "this field is limited to 32 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>This field should contain the job titles of the authors. Examples might "
 "include titles such as: Staff Photographer, Freelance Photographer, or "
@@ -40168,7 +40155,7 @@ msgstr ""
 "exemplos poderían incluír cargos como: fotógrafo de empresa, fotógrafo "
 "autónomo ou fotógrafo comercial independente. Dado que isto é un "
 "cualificador para o campo Autor, estoutro tamén debería preencherse.</"
-"p><p>Con IPTC, este campo só pode ter 32 caracteres ASCII.</p>"
+"p><p>Con IPTC, este campo só pode ter 32 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:117
 #, kde-format
@@ -40176,16 +40163,7 @@ msgid "Enter the photograph credit here."
 msgstr "Insira aquí os créditos da fotografía."
 
 #: core/libs/template/templatepanel.cpp:119
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>(synonymous to Provider): Use the Provider field to identify who is "
-#| "providing the photograph. This does not necessarily have to be the "
-#| "author. If a photographer is working for a news agency such as Reuters or "
-#| "the Associated Press, these organizations could be listed here as they "
-#| "are \"providing\" the image for use by others. If the image is a stock "
-#| "photograph, then the group (agency) involved in supplying the image "
-#| "should be listed here.</p><p>With IPTC, this field is limited to 32 ASCII "
-#| "characters.</p>"
+#, kde-format
 msgid ""
 "<p>(synonymous to Provider): Use the Provider field to identify who is "
 "providing the photograph. This does not necessarily have to be the author. "
@@ -40201,7 +40179,7 @@ msgstr ""
 "Associated Press, estas compañías poderían citarse aquí como o «fornecedor» "
 "da imaxe para o seu uso por terceiros. Se a imaxe é dun catálogo, entón o "
 "grupo (axencia) involucrado en subministrala debe citarse aquí.</p><p>Con "
-"IPTC, este campo está limitado a 32 caracteres ASCII.</p>"
+"IPTC, este campo está limitado a 32 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:131
 #, kde-format
@@ -40213,30 +40191,7 @@ msgstr ""
 "dos dereitos."
 
 #: core/libs/template/templatepanel.cpp:132
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The Copyright Notice should contain any necessary copyright notice for "
-#| "claiming the intellectual property, and should identify the current "
-#| "owner(s) of the copyright for the photograph. Usually, this would be the "
-#| "photographer, but if the image was done by an employee or as work-for-"
-#| "hire, then the agency or company should be listed. Use the form "
-#| "appropriate to your country. USA: &copy; {date of first publication} name "
-#| "of copyright owner, as in \"&copy;2005 John Doe.\" Note, the word "
-#| "\"copyright\" or the abbreviation \"copr\" may be used in place of the "
-#| "&copy; symbol. In some foreign countries only the copyright symbol is "
-#| "recognized and the abbreviation does not work. Furthermore the copyright "
-#| "symbol must be a full circle with a \"c\" inside; using something like "
-#| "(c) where the parentheses form a partial circle is not sufficient. For "
-#| "additional protection worldwide, use of the phrase, \"all rights reserved"
-#| "\" following the notice above is encouraged. \n"
-#| "In Europe you would use: Copyright {Year} {Copyright owner}, all rights "
-#| "reserved. \n"
-#| "In Japan, for maximum protection, the following three items should appear "
-#| "in the copyright field of the IPTC Core: (a) the word, Copyright; (b) "
-#| "year of the first publication; and (c) name of the author. You may also "
-#| "wish to include the phrase \"all rights reserved\".</p><p>With XMP, you "
-#| "can include more than one copyright string using different languages.</"
-#| "p><p>With IPTC, this field is limited to 128 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>The Copyright Notice should contain any necessary copyright notice for "
 "claiming the intellectual property, and should identify the current owner(s) "
@@ -40265,15 +40220,15 @@ msgstr ""
 "precisa para reclamar a propiedade intelectual, e debe identificar aos "
 "actuais donos dos dereitos de autor da fotografía. Polo xeral, isto será o "
 "fotógrafo, pero se a imaxe foi feita por un empregado ou un contratado, "
-"entón a axencia ou a empresa deben citarse. Empregue a forma axeitada para o "
-"seu país. USA: &copy; {data da primeira publicación} nome do proprietario "
-"dos dereitos, como en «&copy;2005 John Doe.» Lembre que pode usar a palabra "
+"entón a axencia ou a empresa deben citarse. Use a forma axeitada para o seu "
+"país. USA: &copy; {data da primeira publicación} nome do proprietario dos "
+"dereitos, como en «&copy;2005 John Doe.» Lembre que pode usar a palabra "
 "«copyright» ou a abreviación «copr» no canto do símbolo &copy;. Nalgúns "
 "outros países só se recoñece o símbolo de copyright e non se acepta a "
 "abreviatura. Alén disto, o símbolo de copyright debe ser un círculo completo "
 "cun «c» dentro; usar algo como (c) onde os parénteses forman un círculo "
-"parcial non abonda. Para unha protección mundial adicional, recoméndase "
-"empregar a frase «all rights reserved» despois da nota anterior. \n"
+"parcial non abonda. Para unha protección mundial adicional, recoméndase usar "
+"a frase «all rights reserved» despois da nota anterior. \n"
 "En Europa debera usar: Copyright {Ano} {Dono dos dereitos de autor}, all "
 "rights reserved. \n"
 "No Xapón, para a máxima protección, deben aparecer os seguintes tres "
@@ -40281,7 +40236,7 @@ msgstr ""
 "o ano da primeira publicación; e (c) o nome do autor. Tamén pode incluír a "
 "frase «all rights reserved.»</p><p>Con XPM pódese incluír máis dunha cadea "
 "de dereitos e copia en idiomas distintos.</p><p>Con IPTC, este campo está "
-"limitado a 128 caracteres ASCII.</p>"
+"limitado a 128 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -40317,19 +40272,7 @@ msgid "Enter the original owner of the photograph here."
 msgstr "Insira aquí o propietario orixinal da fotografía."
 
 #: core/libs/template/templatepanel.cpp:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The Source field should be used to identify the original owner or "
-#| "copyright holder of the photograph. The value of this field should never "
-#| "be changed after the information is entered following the image's "
-#| "creation. While not yet enforced by the custom panels, you should "
-#| "consider this to be a \"write-once\" field. The source could be an "
-#| "individual, an agency, or a member of an agency. To aid in later "
-#| "searches, it is suggested to separate any slashes \"/\" with a blank "
-#| "space. Use the form \"photographer / agency\" rather than \"photographer/"
-#| "agency.\" Source may also be different from Creator and from the names "
-#| "listed in the Copyright Notice.</p><p>With IPTC, this field is limited to "
-#| "32 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>The Source field should be used to identify the original owner or "
 "copyright holder of the photograph. The value of this field should never be "
@@ -40351,7 +40294,7 @@ msgstr ""
 "suxíreselle que separe calquera barra «/» cun espazo en branco. Use a forma "
 "«fotógrafo / axencia» no canto de «fotógrafo/axencia». A fonte pode ser "
 "distinta do Creador e dos nomes citados na nota de Dereitos de Autor.</"
-"p><p>Con IPTC, este campo está limitado a 32 caracteres ASCII.</p>"
+"p><p>Con IPTC, este campo está limitado a 32 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:179
 #: core/libs/template/templateviewer.cpp:114
@@ -40365,19 +40308,15 @@ msgid "Enter the editorial notice here."
 msgstr "Insira aquí o aviso editorial."
 
 #: core/libs/template/templatepanel.cpp:183
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The Instructions field should be used to list editorial instructions "
-#| "concerning the use of photograph.</p><p>With IPTC, this field is limited "
-#| "to 256 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>The Instructions field should be used to list editorial instructions "
 "concerning the use of photograph.</p><p>With IPTC, this field is limited to "
 "256 characters.</p>"
 msgstr ""
-"<p>O campo de instrucións emprégase para enumerar as instrucións editoriais "
+"<p>O campo de instrucións úsase para enumerar as instrucións editoriais "
 "relacionadas co uso da fotografía.</p><p>Con IPTC, este campo está limitado "
-"a 256 caracteres ASCII.</p>"
+"a 256 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:209
 #: core/libs/template/templateviewer.cpp:127
@@ -40626,11 +40565,10 @@ msgid "Cannot create thumbnail for %1"
 msgstr "Non é posíbel crear a miniatura de %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
-msgstr "Non se puido inicializar a base de datos de miniaturas."
+msgstr "Non foi posíbel inicializar a base de datos de miniaturas."
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
 #, kde-format
@@ -40731,22 +40669,19 @@ msgid "XMP: created"
 msgstr "XMP: creado"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:162
-#, fuzzy, kde-format
-#| msgid "EXIF: created"
+#, kde-format
 msgid "EXIF: created (fuzzy)"
-msgstr "EXIF: creado"
+msgstr "EXIF: creado (aproximación)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:163
-#, fuzzy, kde-format
-#| msgid "EXIF: original"
+#, kde-format
 msgid "EXIF: original (fuzzy)"
-msgstr "EXIF: orixinal"
+msgstr "EXIF: orixinal (aproximación)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:164
-#, fuzzy, kde-format
-#| msgid "EXIF: digitized"
+#, kde-format
 msgid "EXIF: digitized (fuzzy)"
-msgstr "EXIF: dixitalizado"
+msgstr "EXIF: dixitalizado (aproximación)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, kde-format
@@ -40772,11 +40707,10 @@ msgid "Subtract"
 msgstr "Restar"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:212
-#, fuzzy, kde-format
-#| msgid "Internal"
+#, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
-msgstr "Interna"
+msgstr "Intervalo"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:218
 #, kde-format
@@ -40800,13 +40734,12 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Actualizar as marcas de tempo con ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:241
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image file size."
+#, kde-format
 msgid "Use this option primarily with video files"
-msgstr "Escolla esta opción para amosar o tamaño do ficheiro coa imaxe."
+msgstr "Use esta opción principalmente con ficheiros de vídeo."
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:242
 #, kde-format
@@ -41056,6 +40989,8 @@ msgid ""
 "A complete, cross-platform solution to record, convert and stream audio and "
 "video."
 msgstr ""
+"Unha solución completa e multiplataforma para gravar, converter e emitir son "
+"e vídeo."
 
 #: core/libs/video/manager/vidslidesettings.cpp:469
 #, kde-format
@@ -41064,36 +40999,28 @@ msgid "QVGA - 320x180 - 16:9"
 msgstr "QVGA - 320×180 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:470
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VCD"
-#| msgid "VCD - 352x240"
+#, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
-msgstr "VCD - 352×240"
+msgstr "VCD — 352×240 — 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:471
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VCD"
-#| msgid "VCD - 352x288"
+#, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
-msgstr "VCD - 352×288"
+msgstr "VCD — 352×288 — 6:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:472
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VCD"
-#| msgid "VCD - 352x240"
+#, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
-msgstr "VCD - 352×240"
+msgstr "CVD — 352x480 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:473
-#, fuzzy, kde-format
-#| msgctxt "Video Type: XVGA"
-#| msgid "XVGA - 1024x576 - 16:9"
+#, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
-msgstr "XVGA - 1024×576 - 16:9"
+msgstr "CVD — 352x576 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:474
 #, kde-format
@@ -41102,92 +41029,70 @@ msgid "HVGA - 480x270 - 16:9"
 msgstr "HVGA - 480×270 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:475
-#, fuzzy, kde-format
-#| msgctxt "Video Type: SVCD"
-#| msgid "SVCD - 480x480"
+#, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
-msgstr "SVCD - 480×480"
+msgstr "SVCD — 480×480 — 1:1"
 
 #: core/libs/video/manager/vidslidesettings.cpp:476
-#, fuzzy, kde-format
-#| msgctxt "Video Type: SVCD"
-#| msgid "SVCD - 480x480"
+#, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
-msgstr "SVCD - 480×480"
+msgstr "SDTV — 528×480 — 11:10"
 
 #: core/libs/video/manager/vidslidesettings.cpp:477
-#, fuzzy, kde-format
-#| msgctxt "Video Type: SVCD"
-#| msgid "SVCD - 480x480"
+#, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
-msgstr "SVCD - 480×480"
+msgstr "SDTV — 544×480 — 17:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
-#, fuzzy, kde-format
-#| msgctxt "Video Type: XVGA"
-#| msgid "XVGA - 1024x576 - 16:9"
+#, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
-msgstr "XVGA - 1024×576 - 16:9"
+msgstr "EDTV — 544×576 — 17:18"
 
 #: core/libs/video/manager/vidslidesettings.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "Video Type: SVCD"
-#| msgid "SVCD - 480x576"
+#, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
-msgstr "SVCD - 480×576"
+msgstr "SVCD — 480×576 — 5:6"
 
 #: core/libs/video/manager/vidslidesettings.cpp:480
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VGA"
-#| msgid "VGA - 640x360 - 16:9"
+#, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
-msgstr "VGA - 640×360 - 16:9"
+msgstr "EGA — 640×350 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:481
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VGA"
-#| msgid "VGA - 640x360 - 16:9"
+#, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
-msgstr "VGA - 640×360 - 16:9"
+msgstr "VGA - 640×480 - 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:482
-#, fuzzy, kde-format
-#| msgctxt "Video Type: DVD"
-#| msgid "DVD - 720x480"
+#, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
-msgstr "DVD - 720×480"
+msgstr "SDTV — 704×480 — 22:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "Video Type: DVD"
-#| msgid "DVD - 720x576"
+#, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
-msgstr "DVD - 720×576"
+msgstr "EDTV — 704×576 — 11:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "Video Type: DVD"
-#| msgid "DVD - 720x480"
+#, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
-msgstr "DVD - 720×480"
+msgstr "DVD — 720×480 — 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:485
-#, fuzzy, kde-format
-#| msgctxt "Video Type: DVD"
-#| msgid "DVD - 720x576"
+#, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
-msgstr "DVD - 720×576"
+msgstr "DVD — 720×576 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:486
 #, kde-format
@@ -41196,20 +41101,16 @@ msgid "WVGA - 800x450 - 16:9"
 msgstr "WVGA - 800×450 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "SVGA — 800×600 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:488
-#, fuzzy, kde-format
-#| msgctxt "Video Type: DVD"
-#| msgid "DVD - 720x480"
+#, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
-msgstr "DVD - 720×480"
+msgstr "DVGA — 960×640 — 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
@@ -41224,68 +41125,52 @@ msgid "HDTV - 1280x720 - 16:9"
 msgstr "HDTV - 1280×720 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "Video Type: XVGA"
-#| msgid "XVGA - 1024x576 - 16:9"
+#, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
-msgstr "XVGA - 1024×576 - 16:9"
+msgstr "WXGA — 1280×768 — 5:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:492
-#, fuzzy, kde-format
-#| msgctxt "Video Type: WVGA"
-#| msgid "WVGA - 800x450 - 16:9"
+#, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
-msgstr "WVGA - 800×450 - 16:9"
+msgstr "WXGA — 1280×800 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:493
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "SXGA — 1280×1024 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:494
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "SXGAPLUS — 1400×1050 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:495
-#, fuzzy, kde-format
-#| msgctxt "Video Type: WVGA"
-#| msgid "WVGA - 800x450 - 16:9"
+#, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
-msgstr "WVGA - 800×450 - 16:9"
+msgstr "WSXGA — 1440×900 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "Video Type: HDTV"
-#| msgid "HDTV - 1280x720 - 16:9"
+#, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
-msgstr "HDTV - 1280×720 - 16:9"
+msgstr "HDPLUS — 1600×900 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:497
-#, fuzzy, kde-format
-#| msgctxt "Video Type: WVGA"
-#| msgid "WVGA - 800x450 - 16:9"
+#, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
-msgstr "WVGA - 800×450 - 16:9"
+msgstr "WSXGAPLUS — 1680×1050 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "UXGA — 1600×1200 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
@@ -41294,92 +41179,70 @@ msgid "BLUERAY - 1920x1080 - 16:9"
 msgstr "BLUERAY - 1920×1080 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "WUXGA — 1920×1200 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "TXGA — 1920×1440 — 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:502
-#, fuzzy, kde-format
-#| msgctxt "Video Type: XVGA"
-#| msgid "XVGA - 1024x576 - 16:9"
+#, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
-msgstr "XVGA - 1024×576 - 16:9"
+msgstr "QXGA — 2048×1536 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "UWFHD — 2560×1080 — 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:504
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "WQHD — 2560×1440 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "WQXGA — 2560×1600 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:506
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "QSXGA — 2560×2048 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:507
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "QSXGAPLUS — 2800×2100 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:508
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "WQXGAPLUS — 3200×1800 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:509
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "WQSXGA — 3200×2048 — 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "QUXGA — 3200×2400 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
@@ -41388,100 +41251,76 @@ msgid "UHD4K - 3840x2160 - 16:9"
 msgstr "UHD4K - 3840×2160 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "WQUXGA — 3840×2400 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:513
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "HXGA — 4096×3072 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:514
-#, fuzzy, kde-format
-#| msgctxt "Video Type: HDTV"
-#| msgid "HDTV - 1280x720 - 16:9"
+#, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
-msgstr "HDTV - 1280×720 - 16:9"
+msgstr "UHD5K - 5120×2880 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:515
-#, fuzzy, kde-format
-#| msgctxt "Video Type: BLUERAY"
-#| msgid "BLUERAY - 1920x1080 - 16:9"
+#, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
-msgstr "BLUERAY - 1920×1080 - 16:9"
+msgstr "WHXGA — 5120×3200 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:516
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "HSXGA — 5120×4096 — 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:517
-#, fuzzy, kde-format
-#| msgctxt "Video Type: UHD4K"
-#| msgid "UHD4K - 3840x2160 - 16:9"
+#, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
-msgstr "UHD4K - 3840×2160 - 16:9"
+msgstr "UHD6K — 6016×3384 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "WHSXGA — 6400×4096 — 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "Video Type: VGA"
-#| msgid "VGA - 640x360 - 16:9"
+#, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
-msgstr "VGA - 640×360 - 16:9"
+msgstr "HUXGA — 6400×4800 — 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:520
-#, fuzzy, kde-format
-#| msgctxt "Video Type: UHD4K"
-#| msgid "UHD4K - 3840x2160 - 16:9"
+#, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
-msgstr "UHD4K - 3840×2160 - 16:9"
+msgstr "UHD8K — 7680×4320 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "Video Type: WVGA"
-#| msgid "WVGA - 800x450 - 16:9"
+#, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
-msgstr "WVGA - 800×450 - 16:9"
+msgstr "WHUXGA — 7680×4800 — 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "Video Type: UHD4K"
-#| msgid "UHD4K - 3840x2160 - 16:9"
+#, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
-msgstr "UHD4K - 3840×2160 - 16:9"
+msgstr "UW10K — 10240×4320 — 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "Video Type: QVGA"
-#| msgid "QVGA - 320x180 - 16:9"
+#, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
-msgstr "QVGA - 320×180 - 16:9"
+msgstr "UW16K — 15360×8640 — 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:746
 #, kde-format
@@ -41634,33 +41473,29 @@ msgid "Default from Desktop"
 msgstr "Predeterminado do escritorio"
 
 #: core/libs/video/manager/vidslidetask.cpp:194
-#, fuzzy, kde-format
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Xerando ficheiros para «%1»"
+msgstr "Completouse a xeración de fotogramas de %1"
 
 #: core/libs/video/manager/vidslidethread.cpp:63
-#, fuzzy, kde-format
-#| msgid "Cannot create a temporary directory"
+#, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "Non é posíbel crear un directorio temporal"
+msgstr "Produciuse un erro ao crear o cartafol temporal %1."
 
 #: core/libs/video/manager/vidslidethread.cpp:95
-#, fuzzy, kde-format
-#| msgid "Loading cameras..."
+#, kde-format
 msgid "Encoding frames..."
-msgstr "Cargando as cámaras…"
+msgstr "Codificando os fotogramas…"
 
 #: core/libs/video/manager/vidslidethread.cpp:133
 #, kde-format
 msgid "Encoding done."
-msgstr ""
+msgstr "Completouse a codificación."
 
 #: core/libs/video/manager/vidslidethread.cpp:137
-#, fuzzy, kde-format
-#| msgid "Error while opening the source database."
+#, kde-format
 msgid "Error while encoding frames!"
-msgstr "Produciuse un erro ao abrir a orixe da base de datos."
+msgstr "Produciuse un erro ao codificar os fotogramas."
 
 #: core/libs/video/osd/frameosdwidget.cpp:58
 #, kde-format
@@ -41723,18 +41558,16 @@ msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Amosar o fabricante e o modelo no fondo da pantalla."
 
 #: core/libs/video/osd/frameosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera lens model"
-msgstr "Mostrar o fabricante e modelo da cámara"
+msgstr "Amosar o modelo da lente da cámara."
 
 #: core/libs/video/osd/frameosdwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Mostrar o fabricante e o modelo no fondo da pantalla."
+msgstr "Amosar o modelo da lente da cámara no fondo da pantalla."
 
 #: core/libs/video/osd/frameosdwidget.cpp:76
 #, kde-format
@@ -41801,36 +41634,29 @@ msgstr ""
 "pantalla."
 
 #: core/libs/video/osd/frameosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
+#, kde-format
 msgctxt "@option"
 msgid "On Screen Display Font:"
-msgstr "Situación na pantalla:"
+msgstr "Fonte da visualización na pantalla:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Escolla aquí o tipo de letra empregado nos textos das vistas en árbore."
+"Seleccione aquí o tipo de letra empregado nos textos na visualización da "
+"pantalla."
 
 #: core/libs/video/player/audplayerwdg.cpp:264
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
-msgstr "Produciuse un erro co reprodutor multimedia…"
+msgstr "Produciuse un erro ao reproducir: o contido multimedia non é válido"
 
 #: core/libs/video/player/audplayerwdg.cpp:293
 #: core/libs/video/player/audplayerwdg.cpp:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
-msgstr ""
-"Produciuse un erro ao intentar amosar o elemento:\n"
-"%1"
+msgstr "Produciuse un erro ao reproducir: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:280
@@ -41856,7 +41682,7 @@ msgstr "Produciuse un erro co reprodutor multimedia…"
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:329
 #, kde-format
 msgid "Toggle playing in a loop"
-msgstr ""
+msgstr "Conmutar a reprodución en bucle"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -41934,7 +41760,7 @@ msgstr "Cambiar"
 #: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
-msgstr ""
+msgstr "O ficheiro executábel atopado non parece funcionar correctamente."
 
 #: core/libs/widgets/files/dfileselector.cpp:53
 #, kde-format
@@ -42108,12 +41934,10 @@ msgid "Relative"
 msgstr "Relativo"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:405
-#, fuzzy, kde-format
-#| msgid "Font size<br /><i>fixed</i> or <i>relative</i><br />to environment"
+#, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
-msgstr ""
-"Tamaño de tipo de letra <br/><i>fixo</i> ou <i>relativo</i><br/> ao ambiente"
+msgstr "Tamaño de letra «fixo» ou «relativo» ao contorno."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:406
 #, kde-format
@@ -42183,10 +42007,9 @@ msgid "Choose..."
 msgstr "Escoller…"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:146
-#, fuzzy, kde-format
-#| msgid "Select a month"
+#, kde-format
 msgid "Select a Font"
-msgstr "Escoller un mes"
+msgstr "Seleccionar unha fonte"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, kde-format
@@ -42482,19 +42305,7 @@ msgid "The ICC profile color management flags"
 msgstr "Os indicadores de xestión de cor do perfil ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This area contains a CIE or chromaticity diagram. A CIE diagram is a "
-#| "representation of all the colors that a person with normal vision can "
-#| "see. This is represented by the colored sail-shaped area. In addition you "
-#| "will see a triangle that is superimposed on the diagram outlined in "
-#| "white. This triangle represents the outer boundaries of the color space "
-#| "of the device that is characterized by the inspected profile. This is "
-#| "called the device gamut.</p><p>In addition there are black dots and "
-#| "yellow lines on the diagram. Each black dot represents one of the "
-#| "measurement points that were used to create this profile. The yellow line "
-#| "represents the amount that each point is corrected by the profile, and "
-#| "the direction of this correction.</p>"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid ""
 "This area contains a CIE or chromaticity diagram.\n"
@@ -42511,16 +42322,19 @@ msgid ""
 "amount that each point is corrected by the profile, and the\n"
 "direction of this correction."
 msgstr ""
-"<p>Esta área contén un diagrama CIE ou de cromaticidade. Un diagrama CIE é "
-"unha representación de todas as cores que unha persoa con vista normal pode "
-"ver. Isto represéntase coa área coloreada con forma de vela. Alén disto vese "
-"un triángulo sobreposto ao diagrama trazado en branco. Este triángulo "
-"representa os límites externos do espazo de cores do dispositivo que se "
-"caracteriza polo perfil inspeccionado. Isto chámase gama do dispositivo.</"
-"p><p>Ademais, no diagrama hai puntos negros e liñas marelas. Cada punto "
-"negro representa un dos puntos de medida que se usaron para crear este "
-"perfil. A liña amarela representa a cantidade en que cada un dos puntos é "
-"corrixido polo perfil, e a dirección desta corrección.</p>"
+"Esta área contén un diagrama CIE ou de cromaticidade. Un\n"
+"diagrama CIE é unha representación de todas as cores que unha\n"
+"persoa con vista normal pode ver. Isto represéntase coa área\n"
+"coloreada con forma de vela. Alén disto vese un triángulo\n"
+"sobreposto ao diagrama trazado en branco. Este triángulo\n"
+"representa os límites externos do espazo de cores do\n"
+"dispositivo que se caracteriza polo perfil inspeccionado. Isto\n"
+"chámase gama do dispositivo.Ademais, no diagrama hai puntos negros e liñas "
+"marelas. Cada\n"
+"punto negro representa un dos puntos de medida que se usaron\n"
+"para crear este perfil. A liña amarela representa a cantidade en\n"
+"que cada un dos puntos é corrixido polo perfil, e a dirección\n"
+"desta corrección."
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:243
 #, kde-format
@@ -42689,10 +42503,7 @@ msgstr[0] "Unha imaxe"
 msgstr[1] "%1 imaxes"
 
 #: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "<i>Applying operation to<br/>the selected picture</i>"
-#| msgid_plural "<i>Applying operation to <br/><b>%1</b> selected pictures</i>"
+#, kde-format
 msgctxt "@info: item overlay"
 msgid ""
 "Applying operation to\n"
@@ -42700,8 +42511,12 @@ msgid ""
 msgid_plural ""
 "Applying operation to \n"
 "\"%1\" selected pictures"
-msgstr[0] "<i>A lle aplicar a operación á<br/>imaxe escollida</i>"
-msgstr[1] "<i>A lle aplicar a operación ás<br/><b>%1</b> imaxes escollidas</i>"
+msgstr[0] ""
+"Aplicando a operación\n"
+"á imaxe seleccionada."
+msgstr[1] ""
+"Aplicando a operación\n"
+"ás «%1» imaxes seleccionadas."
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:405
 #, kde-format
@@ -42762,10 +42577,9 @@ msgid "A KDE Family Project"
 msgstr "Un proxecto da familia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:64
-#, fuzzy, kde-format
-#| msgid "(c) 2002-2019, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
-msgstr "© 2002-2019 Equipo de desenvolvedores de digiKam"
+msgstr "© 2001-2024 Equipo de desenvolvedores de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
@@ -42816,17 +42630,14 @@ msgid "Thanh Trung Dinh"
 msgstr "Thanh Trung Dinh"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Port web-service tools to OAuth, factoring web service tools, and port "
-#| "faces recognition engine to OpenCV neural network"
+#, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
-"Migrar as ferramentas de servizos web a OAuth, facer melloras internos nas "
-"ferramentas de servizos web, e migrar o motor de recoñecemento de caras á "
-"rede neuronal de OpenCV"
+"Mentorización, migrar as ferramentas de servizos web a OAuth, facer melloras "
+"internos nas ferramentas de servizos web, e migrar o motor de recoñecemento "
+"de caras á rede neuronal de OpenCV."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:121
 #, kde-format
@@ -42859,21 +42670,19 @@ msgid "Releases Manager"
 msgstr "Xestión das publicacións."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:146
-#, fuzzy, kde-format
-#| msgid "Pankaj Kumar"
+#, kde-format
 msgid "Anjani Kumar"
-msgstr "Pankaj Kumar"
+msgstr "Anjani Kumar"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:147
-#, fuzzy, kde-format
-#| msgid "Port to Qt5 and KF5;"
+#, kde-format
 msgid "Port to Qt6,"
-msgstr "Adaptación a Qt5 e KF5."
+msgstr "Adaptación a Qt 6."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:152
 #, kde-format
 msgid "Phuoc Khanh LE"
-msgstr ""
+msgstr "Phuoc Khanh LE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
@@ -42882,40 +42691,47 @@ msgid ""
 "Extraction, Aesthetic Detection to classify images using deep learning model,"
 "Slideshow and Presentation tools improvement"
 msgstr ""
+"Nova implementación dos algoritmos de ordenación por calidade da imaxe e "
+"extracción de información de enfoque das fotos, detección estética para "
+"clasificar as imaxes mediante un modelo de aprendizaxe profunda, e mellora "
+"das ferramentas de presentación."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:160
 #, kde-format
 msgid "Quốc Hưng Trần"
-msgstr ""
+msgstr "Quốc Hưng Trần"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:161
 #, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
+"Complemento MJPEGStream, complemento de conversión de texto mediante OCR, "
+"motor de asignación automática de etiquetas."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid "Minh Nghĩa Duong"
-msgstr ""
+msgstr "Minh Nghĩa Duong"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:167
-#, fuzzy, kde-format
-#| msgid "Video Slideshow completed."
+#, kde-format
 msgid ""
 "Clustering support and improvement for Face Engine, Port Slideshow tool to "
 "plugins interface"
-msgstr "Completouse a presentación en vídeo."
+msgstr ""
+"Posibilidade de agrupamento e melloras no motor de caras, adaptación da "
+"ferramenta de presentación á interface de complementos."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
 msgid "Kartik Ramesh"
-msgstr ""
+msgstr "Kartik Ramesh"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid "Face management workflow improvements"
-msgstr ""
+msgstr "Melloras no fluxo de traballo da xestión de caras."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:179
 #, kde-format
@@ -43301,10 +43117,9 @@ msgid "Renchi Raju"
 msgstr "Renchi Raju"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:423
-#, fuzzy, kde-format
-#| msgid "Developer (2002-2005)"
+#, kde-format
 msgid "Developer (2001-2005)"
-msgstr "Desenvolvedor (2002-2005)."
+msgstr "Desenvolvemento (2001-2005)."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:428
 #, kde-format
@@ -43333,10 +43148,9 @@ msgid "Developer (2004)"
 msgstr "Desenvolvedor (2004)."
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Configurar a columna"
+msgstr "Configurar as notificacións"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, kde-format
@@ -43357,7 +43171,7 @@ msgstr "Lista de cámaras RAW compatíbeis"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
 msgid "List of Detected Hardware"
-msgstr ""
+msgstr "Lista de soporte físico detectado"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
 #, kde-format
@@ -43375,13 +43189,9 @@ msgid "Contribute..."
 msgstr "Contribuír…"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action Save changes to a newly created version, specifying the filename "
-#| "and format"
-#| msgid "Save New Version As..."
+#, kde-format
 msgid "Check for New Version..."
-msgstr "Gardar a nova versión como…"
+msgstr "Comprobar se hai unha nova versión…"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
@@ -43505,10 +43315,9 @@ msgid "XMP viewer"
 msgstr "Visor de XMP"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:232
-#, fuzzy, kde-format
-#| msgid "Tool"
+#, kde-format
 msgid "ExifTool viewer"
-msgstr "Ferramenta"
+msgstr "Visor de ExifTool"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, kde-format
@@ -43546,6 +43355,8 @@ msgid ""
 "ExifTool is a platform-independent command-line application for reading, "
 "writing and editing meta information in a wide variety of files."
 msgstr ""
+"ExifTool é unha aplicación multiplataforma da liña de ordes para ler, "
+"escribir e editar metadatos dunha gran variedade de ficheiros."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
@@ -52528,75 +52339,75 @@ msgstr "Non se atoparon entradas na axenda de enderezos."
 msgid "Applying face changes"
 msgstr "Aplicar os cambios faciais"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Aceptar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Retirar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Retirar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Quen é?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Perfil do monitor:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar como etiqueta de cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
