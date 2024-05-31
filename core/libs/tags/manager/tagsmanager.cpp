@@ -572,20 +572,17 @@ void TagsManager::slotWipeAll()
         child = root.model()->index(iter++, 0, root);
     }
 
-    QList<qlonglong> imageIds;
     AlbumPointerList<TAlbum>::iterator it;
 
     for (it = tagList.begin() ; it != tagList.end() ; ++it)
     {
         QString errMsg;
 
-        if (!AlbumManager::instance()->deleteTAlbum(*it, errMsg, &imageIds))
+        if (!AlbumManager::instance()->deleteTAlbum(*it, errMsg))
         {
             QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
         }
     }
-
-    AlbumManager::instance()->askUserForWriteChangedTAlbumToFiles(imageIds);
 
     /**
      * Restore settings after tag deletion
