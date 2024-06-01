@@ -236,10 +236,11 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
 
         Q_EMIT signalAlbumDeleted(album);
 
-        quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-        delete album;
+        album->prepareForDeletion();
 
-        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(album);
+
+        delete album;
     }
 
     for (QMap<int, DAlbum*>::const_iterator it7 = yAlbumMap.constBegin() ;
@@ -253,10 +254,11 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
 
         Q_EMIT signalAlbumDeleted(album);
 
-        quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-        delete album;
+        album->prepareForDeletion();
 
-        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(album);
+
+        delete album;
     }
 
     d->dAlbumsCount = yearMonthMap;

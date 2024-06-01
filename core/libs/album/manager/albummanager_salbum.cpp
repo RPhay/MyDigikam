@@ -107,10 +107,11 @@ void AlbumManager::scanSAlbums()
 
         Q_EMIT signalAlbumDeleted(album);
 
-        quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-        delete album;
+        album->prepareForDeletion();
 
-        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(album);
+
+        delete album;
     }
 
     // add new albums
@@ -263,10 +264,11 @@ bool AlbumManager::deleteSAlbum(SAlbum* album)
 
     Q_EMIT signalAlbumDeleted(album);
 
-    quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-    delete album;
+    album->prepareForDeletion();
 
-    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(album);
+
+    delete album;
 
     return true;
 }

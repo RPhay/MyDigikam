@@ -257,6 +257,12 @@ public:
      */
     static int globalID(Type type, int id);
 
+    /**
+     * For secure deletion in an item model,
+     * call this function beforehand
+     */
+    void prepareForDeletion();
+
 protected:
 
     /**
@@ -324,7 +330,6 @@ private:
 
     bool                     m_root                 = false;
     bool                     m_usedByLabelsTree     = false;
-    volatile bool            m_albumInDeletion      = false;
 
     int                      m_id                   = -1;
 

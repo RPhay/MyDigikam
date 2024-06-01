@@ -557,7 +557,7 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     album->setParent(nullptr);
 
     Q_EMIT signalAlbumDeleted(album);
-    Q_EMIT signalAlbumHasBeenDeleted(reinterpret_cast<quintptr>(album));
+    Q_EMIT signalAlbumHasBeenDeleted(album);
     Q_EMIT signalAlbumAboutToBeAdded(album, newParent, newParent->lastChild());
 
     ChangingDB changing(d);
@@ -959,10 +959,11 @@ void AlbumManager::removeTAlbum(TAlbum* album)
 
     Q_EMIT signalAlbumDeleted(album);
 
-    quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-    delete album;
+    album->prepareForDeletion();
 
-    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(album);
+
+    delete album;
 }
 
 void AlbumManager::slotTagsJobResult()

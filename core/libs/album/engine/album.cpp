@@ -43,14 +43,8 @@ Album::Album(Album::Type type, int id, bool root)
 
 Album::~Album()
 {
-    m_albumInDeletion = true;
+    prepareForDeletion();
 
-    if (m_parent)
-    {
-        m_parent->removeChild(this);
-    }
-
-    clear();
     AlbumManager::internalInstance->notifyAlbumDeletion(this);
 }
 
@@ -132,14 +126,9 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
-    if (m_albumInDeletion)
-    {
-        return nullptr;
-    }
-
     QReadLocker locker(&m_cacheLock);
 
-    if (m_albumInDeletion || (row < 0) || (row >= m_childCache.size()))
+    if ((row < 0) || (row >= m_childCache.size()))
     {
         return nullptr;
     }
@@ -365,6 +354,16 @@ bool Album::isTrashAlbum() const
 void Album::setUsedByLabelsTree(bool isUsed)
 {
     m_usedByLabelsTree = isUsed;
+}
+
+void Album::prepareForDeletion()
+{
+    if (m_parent)
+    {
+        m_parent->removeChild(this);
+    }
+
+    clear();
 }
 
 // ------------------------------------------------------------------------------

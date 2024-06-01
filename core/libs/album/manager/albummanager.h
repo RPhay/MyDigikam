@@ -283,7 +283,7 @@ Q_SIGNALS:
      * Emitted when the album is deleted, the object can no longer be accessed.
      * For identification purposes, the former album pointer is passed.
      */
-    void signalAlbumHasBeenDeleted(quintptr);
+    void signalAlbumHasBeenDeleted(Album* album);
 
     void signalAlbumsCleared();
     void signalAlbumCurrentChanged(const QList<Album*>& albums);

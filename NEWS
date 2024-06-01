@@ -172,7 +172,7 @@ BUGFIXES:
 143 ==> 487799 - Geolocalization icon always black in thumbnail view.
 144 ==> 487370 - Face Recognition crashes - pre-release built on 20-05-2024 07:25.
 145 ==> 487668 - Crash while naming face.
-146 ==> 
+146 ==> 487822 - "Wipe all tags from Database only" crashes digiKam.
 147 ==> 
 148 ==> 
 149 ==> 

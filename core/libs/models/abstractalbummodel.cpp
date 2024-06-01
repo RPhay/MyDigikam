@@ -27,11 +27,10 @@ public:
 
     Album*                                rootAlbum         = nullptr;
     Album*                                addingAlbum       = nullptr;
+    Album*                                removingAlbum     = nullptr;
     Album::Type                           type              = Album::PHYSICAL;
     AlbumModelDragDropHandler*            dragDropHandler   = nullptr;
     AbstractAlbumModel::RootAlbumBehavior rootBehavior      = AbstractAlbumModel::IncludeRootAlbum;
-
-    quintptr                              removingAlbum     = 0;
 
     bool                                  itemDrag          = true;
     bool                                  itemDrop          = true;
@@ -574,14 +573,14 @@ void AbstractAlbumModel::slotAlbumAboutToBeDeleted(Album* album)
 
     // store album for slotAlbumHasBeenDeleted
 
-    d->removingAlbum   = reinterpret_cast<quintptr>(album);
+    d->removingAlbum   = album;
 }
 
-void AbstractAlbumModel::slotAlbumHasBeenDeleted(quintptr p)
+void AbstractAlbumModel::slotAlbumHasBeenDeleted(Album* album)
 {
-    if (d->removingAlbum == p)
+    if (d->removingAlbum == album)
     {
-        d->removingAlbum = 0;
+        d->removingAlbum = nullptr;
         endRemoveRows();
     }
 }

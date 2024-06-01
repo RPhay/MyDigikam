@@ -642,10 +642,11 @@ void AlbumManager::removePAlbum(PAlbum* album)
 
     Q_EMIT signalAlbumDeleted(album);
 
-    quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
-    delete album;
+    album->prepareForDeletion();
 
-    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(album);
+
+    delete album;
 }
 
 void AlbumManager::removeWatchedPAlbums(const PAlbum* const album)

@@ -216,7 +216,7 @@ protected Q_SLOTS:
     void slotAlbumAboutToBeAdded(Album* album, Album* parent, Album* prev);
     void slotAlbumAdded(Album*);
     void slotAlbumAboutToBeDeleted(Album* album);
-    void slotAlbumHasBeenDeleted(quintptr);
+    void slotAlbumHasBeenDeleted(Album* album);
     void slotAlbumsCleared();
     void slotAlbumIconChanged(Album* album);
     void slotAlbumRenamed(Album* album);
