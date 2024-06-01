@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 01:56+0000\n"
+"POT-Creation-Date: 2024-06-01 01:40+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3266,7 +3266,7 @@ msgid "Tools"
 msgstr "Työkalut"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:833
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -27856,7 +27856,7 @@ msgstr "Uusi albumi"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -39626,38 +39626,38 @@ msgid "Delete Tags"
 msgstr "Poista tunnisteet"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:695
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Muokkaa luokituksen otsikkoa"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:702
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Poista tunnisteen kuvake"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Invert Selection"
 msgstr "Käännä valinta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Laajenna luokituspuu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Supista luokituspuu"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Poista tunniste kuvista"
@@ -39815,43 +39815,43 @@ msgstr ""
 "myöhemmin.\n"
 "Haluatko jatkaa?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:604
+#: core/libs/tags/manager/tagsmanager.cpp:601
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Haluatko varmasti poistaa valitun tunnisteen kaikista kuvista?"
 msgstr[1] "Haluatko varmasti poistaa valitut tunnisteet kaikista kuvista?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:682
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Järjestä"
 
-#: core/libs/tags/manager/tagsmanager.cpp:688
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "&Vienti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Luo tunniste osoitekirjasta"
 
-#: core/libs/tags/manager/tagsmanager.cpp:708
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Merkitse kytkemättömät luokitukset"
 
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Lisää uusi tunniste nykyiseen tunnisteeseen. Nykyinen tunniste on se, joka "
 "on valittu viimeksi."
 
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39860,74 +39860,74 @@ msgstr ""
 "Poista valitut tietueet. Toimii myös useille tietueille, mutta ei poista "
 "juuriluokitusta."
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Muokkaa valitun luokituksen otsikkoa."
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Palauta valittujen luokitusten kuvakkeet. Toimii monivalinnalla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Merkitse kuviin kaikki kytkemättömät luokitukset."
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Käännä valinta. Vain näkyviä kohteita valitaan"
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Valitut kohteet laajennetaan"
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Laajenna koko luokituspuu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Supista koko luokituspuu"
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Poista valitut luokitukset kuvista. Toimii monivalinnalla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:799
+#: core/libs/tags/manager/tagsmanager.cpp:796
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Kirjoita luokitukset tietokannasta kuvaan"
 
-#: core/libs/tags/manager/tagsmanager.cpp:802
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Lue luokitukset kuvasta"
 
-#: core/libs/tags/manager/tagsmanager.cpp:805
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Poista kaikki luokitukset vain tietokannasta"
 
-#: core/libs/tags/manager/tagsmanager.cpp:807
+#: core/libs/tags/manager/tagsmanager.cpp:804
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Kirjoita luokitusmetatieto kuvaan."
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:806
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Lue luokitukset kuvista tietokantaan. Olemassa oleviin luokitukseen tällä ei "
 "ole vaikutusta"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39936,7 +39936,7 @@ msgstr ""
 "Poista kaikki luokitukset vain tietokannasta. Ei synkronoi tiedostoja. Jatka "
 "varoen."
 
-#: core/libs/tags/manager/tagsmanager.cpp:834
+#: core/libs/tags/manager/tagsmanager.cpp:831
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

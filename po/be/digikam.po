@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 01:56+0000\n"
+"POT-Creation-Date: 2024-06-01 01:40+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3157,7 +3157,7 @@ msgid "Tools"
 msgstr "Інструменты"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:833
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Help"
@@ -25982,7 +25982,7 @@ msgstr "Адмеціны альбомаў"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -37386,38 +37386,38 @@ msgid "Delete Tags"
 msgstr "Выдаліць пазнакі"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:695
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Рэдагаваць назву пазнакі"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:702
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Скінуць значок пазнакі"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Invert Selection"
 msgstr "Адвярнуць выбар"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr ""
@@ -37567,7 +37567,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:604
+#: core/libs/tags/manager/tagsmanager.cpp:601
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -37576,113 +37576,113 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:682
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Кіраванне"
 
-#: core/libs/tags/manager/tagsmanager.cpp:688
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Сінхранізацыя і &экспарт"
 
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:708
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:799
+#: core/libs/tags/manager/tagsmanager.cpp:796
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:802
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Read Tags from Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:805
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:807
+#: core/libs/tags/manager/tagsmanager.cpp:804
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:806
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:834
+#: core/libs/tags/manager/tagsmanager.cpp:831
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

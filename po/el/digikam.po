@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 01:56+0000\n"
+"POT-Creation-Date: 2024-06-01 01:40+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3235,7 +3235,7 @@ msgid "Tools"
 msgstr "Εργαλεία"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:833
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid "Help"
 msgstr "Βοήθεια"
@@ -28917,7 +28917,7 @@ msgstr "Τίτλοι λευκώματος"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -41641,39 +41641,39 @@ msgid "Delete Tags"
 msgstr "Διαγραφή ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:698
+#: core/libs/tags/manager/tagsmanager.cpp:695
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Επεξεργασία τίτλου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:702
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Επαναφορά εικονιδίου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Επέκταση δέντρου ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse Tag Tree"
 msgstr "Αντιγραφή λευκωμάτων..."
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Διαγραφή ετικέτας από τις εικόνες"
@@ -41852,7 +41852,7 @@ msgstr ""
 "ετεροχρονισμένα η εγγραφή μεταδεδομένων στο αρχείο.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:604
+#: core/libs/tags/manager/tagsmanager.cpp:601
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -41861,7 +41861,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Επιθυμείτε την αφαίρεση των επιλεγμένων ετικετών από όλες τις εικόνες;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:685
+#: core/libs/tags/manager/tagsmanager.cpp:682
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -41869,32 +41869,32 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Οργάνωση"
 
-#: core/libs/tags/manager/tagsmanager.cpp:688
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Συγχρονισμένη &εξαγωγή"
 
-#: core/libs/tags/manager/tagsmanager.cpp:705
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Δημιουργία ετικέτας από το βιβλίο διευθύνσεων"
 
-#: core/libs/tags/manager/tagsmanager.cpp:708
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, fuzzy, kde-format
 #| msgid "Delete Unassigned Tags"
 msgid "Mark Unassigned Tags"
 msgstr "Δισγρσφή μη αντιστοιχισμένων ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Προσθήκη νέας ετικέτας στην τρέχουσα. Η τρέχουσα είναι εκείνη στην οποία "
 "έγινε κλικ πιο πρόσφατα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -41906,19 +41906,19 @@ msgstr ""
 "Διαγραφή επιλεγμένων αντικειμένων. Λειτουργεί και με πολλαπλά αντικείμενα, "
 "αλλά δεν θα διαγράψει τη ριζική ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Επεξεργασία τίτλου από επιλεγμένη ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Επαναφορά εικονιδίου στις επιλεγμένες ετικέτες. Λειτουργεί με πολλαπλή "
 "επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, fuzzy, kde-format
 #| msgid "Delete all tags that are not assigned to images. Use with caution."
 msgid "Mark all tags that are not assigned to images."
@@ -41926,55 +41926,55 @@ msgstr ""
 "Διαγραφή όλων των ετικετών που δεν αντιστοιχούν σε εικόνες. Χρησιμοποιήστε "
 "το με προσοχή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Αντιστροφή επιλογής. Μόνο ορατά αντικείμενα θα επιλεγούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Τα επιλεγμένα αντικείμενα θα επεκταθούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Επέκταση του δέντρου ετικετών κατά ένα επίπεδο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "Η λήψη ολοκληρώθηκε..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Διαγραφή επιλεγμένων ετικετών από εικόνες. Λειτουργεί με πολλαπλή επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:799
+#: core/libs/tags/manager/tagsmanager.cpp:796
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Εγγραφή ετικετών από τη βάση δεδομένων σε εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:802
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ανάγνωση ετικετών από εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:805
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Καθαρισμός όλων των ετικετών από τη βάση δεδομένων μόνο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:807
+#: core/libs/tags/manager/tagsmanager.cpp:804
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Εγγραφή μεταδεδομένων ετικετών σε εικόνα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:809
+#: core/libs/tags/manager/tagsmanager.cpp:806
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -41982,7 +41982,7 @@ msgstr ""
 "Ανάγνωση ετικετών από εικόνες στη βάση δεδομένων. Οι υπάρχουσες ετικέτες δεν "
 "θα επηρεαστούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:812
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -41991,7 +41991,7 @@ msgstr ""
 "Διαγραφή όλων των ετικετών από τη βάση δεδομένων μόνο. Δεν θα γίνει "
 "συγχρονισμός με αρχεία. Προχωρήστε με προσοχή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:834
+#: core/libs/tags/manager/tagsmanager.cpp:831
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
