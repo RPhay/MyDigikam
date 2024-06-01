@@ -206,8 +206,10 @@ void ModelCompleter::slotRowsAboutToBeRemoved(const QModelIndex& parent, int sta
         }
         else
         {
-            qCWarning(DIGIKAM_WIDGETS_LOG) << "idToTextHash seems to be out of sync with the model."
-                                           << "There is no entry for model index" << index;
+/*
+            qCDebug(DIGIKAM_WIDGETS_LOG) << "idToTextHash seems to be out of sync with the model."
+                                         << "There is no entry for model index" << index;
+*/
         }
     }
 }
