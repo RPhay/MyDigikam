@@ -258,7 +258,7 @@ public:
     static int globalID(Type type, int id);
 
     /**
-     * For secure deletion in an item model,
+     * For secure deletion in an album model,
      * call this function beforehand
      */
     void prepareForDeletion();
