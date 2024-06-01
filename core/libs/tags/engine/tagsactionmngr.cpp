@@ -374,8 +374,10 @@ void TagsActionMngr::slotAlbumDeleted(Album* album)
         return;
     }
 
-    removeTagActionShortcut(talbum->id());
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Delete Shortcut assigned to tag " << album->id();
+    if (removeTagActionShortcut(talbum->id()))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Delete Shortcut assigned to tag " << album->id();
+    }
 }
 
 bool TagsActionMngr::removeTagActionShortcut(int tagId, bool delAction)
