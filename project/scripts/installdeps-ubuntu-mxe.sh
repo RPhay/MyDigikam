@@ -179,8 +179,9 @@ optional_packages=("ruby"                               # For i18n extraction
                    "python3-mako"                       # For MXE build
                    "python3-pkg-resources"              # For MXE build
                    "python-mako"                        # For MXE build
-                   "python-pkg-resources"              # For MXE build
+                   "python-pkg-resources"               # For MXE build
                    "python-is-python3"                  # For MXE build
+                   "python3-setuptools"                 # For Lensfun
                    "ruby"                               # For MXE build
                    "scons"                              # For MXE build
                    "sed"                                # For MXE build
