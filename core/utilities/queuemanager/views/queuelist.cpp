@@ -988,7 +988,7 @@ ItemInfoList QueueListView::itemsList(ItemListType type)
 
                 case Selected:
                 {
-                    if (!item->isSelected())
+                    if (item->isSelected())
                     {
                         list.append(item->info());
                     }
