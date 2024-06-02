@@ -19,6 +19,7 @@
 // Qt includes
 
 #include <QFileInfo>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -36,6 +37,8 @@ public:
     Private() = default;
 
     TimeAdjustContainer    settings;  ///< Settings from GUI.
+
+    QMutex                 mutex;
 
     QMap<QUrl, int>        itemsMap;
     QHash<QUrl, QDateTime> timeDateCache;
@@ -125,9 +128,13 @@ void TimeAdjustThread::setSettings(const TimeAdjustContainer& settings)
 
 QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
 {
-    if (d->timeDateCache.contains(url))
     {
-        return d->timeDateCache.value(url);
+        QMutexLocker locker(&d->mutex);
+
+        if (d->timeDateCache.contains(url))
+        {
+            return d->timeDateCache.value(url);
+        }
     }
 
     QDateTime dateTime;
@@ -167,7 +174,11 @@ QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
         }
     }
 
-    d->timeDateCache.insert(url, dateTime);
+    {
+        QMutexLocker locker(&d->mutex);
+
+        d->timeDateCache.insert(url, dateTime);
+    }
 
     return dateTime;
 }
