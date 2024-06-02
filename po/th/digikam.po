@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-01 01:40+0000\n"
+"POT-Creation-Date: 2024-06-02 01:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2797,7 +2797,7 @@ msgstr "แถบเครื่องมือหลัก"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:982
+#: core/libs/album/manager/albummanager_talbum.cpp:983
 #: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
@@ -3018,7 +3018,7 @@ msgstr "ออกจากโหมดเต็มจอภาพ"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:484
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3109,7 +3109,7 @@ msgid "No Tags Album"
 msgstr "อัลบั้มของฉัน"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:551
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -25841,7 +25841,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:80
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:479
+#: core/libs/models/abstractalbummodel.cpp:478
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -26888,38 +26888,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "การแปลงขอบเขตสี"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:409
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:748
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "การค้นหาตามเส้นเวลา ตัวปัจจุบัน"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:755
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "การค้นหาแบบฉลาดโดยใช้รูปภาพ ตัวปัจจุบัน"
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "การค้นหาแบบฉลาดปัจจุบันโดยใช้ภาพร่าง"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Map Search"
 msgstr "การค้นหาบนแผนที่ ตัวปัจจุบัน"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Search"
 msgstr "การค้นหา ตัวปัจจุบัน"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "การค้นหารายการซ้ำ ตัวปัจจุบัน"
@@ -27468,7 +27468,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "คุณต้องการจะลบคลังภาพ \"%1\" ออกจากรายการคลังภาพต่าง ๆ ของคุณจริงหรือไม่ ?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:1134
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "ไม่ต้องทำการ&ถามอีก"
@@ -27478,7 +27478,7 @@ msgstr "ไม่ต้องทำการ&ถามอีก"
 msgid "No such tag"
 msgstr "ไม่มีป้ายกำกับ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1129
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"

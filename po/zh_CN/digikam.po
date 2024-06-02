@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-01 01:40+0000\n"
+"POT-Creation-Date: 2024-06-02 01:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2588,7 +2588,7 @@ msgstr "主工具栏"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:982
+#: core/libs/album/manager/albummanager_talbum.cpp:983
 #: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
@@ -2814,7 +2814,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:484
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2906,7 +2906,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:551
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -5271,7 +5271,7 @@ msgstr "水印文字："
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
-msgstr "选择字体和风格。字体大小将自动计算。"
+msgstr "选择字体和字体样式。字体大小将自动计算。"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
@@ -24775,7 +24775,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:80
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:479
+#: core/libs/models/abstractalbummodel.cpp:478
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -25814,38 +25814,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:409
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:748
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:755
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:779
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"
@@ -26353,7 +26353,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "您想要将“%1”标签合并到“%2”标签吗？"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:1134
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "不要在此次使用过程中再次询问"
@@ -26363,7 +26363,7 @@ msgstr "不要在此次使用过程中再次询问"
 msgid "No such tag"
 msgstr "无此标签"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1129
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -40244,25 +40244,25 @@ msgstr "字体："
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Font style"
-msgstr "字体风格"
+msgstr "字体样式"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:290
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
-msgstr "勾选此项后可更改字体风格设置。"
+msgstr "勾选此项后可更改字体样式设置。"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:291
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Change font style?"
-msgstr "更改字体风格？"
+msgstr "您想要更改字体样式吗？"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:297
 #, kde-format
 msgctxt "@label: font properties"
 msgid "Font style:"
-msgstr "字体风格："
+msgstr "字体样式："
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:308
 #, kde-format
@@ -40298,7 +40298,7 @@ msgstr "在此选择要使用的字体。"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
-msgstr "在此选择要使用的字体风格。"
+msgstr "在此选择要使用的字体样式。"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, kde-format

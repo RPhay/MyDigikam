@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-01 01:40+0000\n"
+"POT-Creation-Date: 2024-06-02 01:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2681,7 +2681,7 @@ msgstr "मुख्य औज़ार पट्टी"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:982
+#: core/libs/album/manager/albummanager_talbum.cpp:983
 #: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
@@ -2882,7 +2882,7 @@ msgstr "पूर्ण स्क्रीन मोड से बाहर ह�
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:484
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2972,7 +2972,7 @@ msgid "No Tags Album"
 msgstr "मेरे एलबम"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:552
+#: core/libs/album/engine/album.cpp:551
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -24761,7 +24761,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:80
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:479
+#: core/libs/models/abstractalbummodel.cpp:478
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -25771,38 +25771,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/libs/album/engine/album.cpp:410
+#: core/libs/album/engine/album.cpp:409
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:749
+#: core/libs/album/engine/album.cpp:748
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:755
 #, fuzzy, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:760
+#: core/libs/album/engine/album.cpp:759
 #, fuzzy, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:767
 #, fuzzy, kde-format
 msgid "Current Map Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:774
 #, fuzzy, kde-format
 msgid "Current Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:779
 #, fuzzy, kde-format
 msgid "Current Duplicates Search"
 msgstr "खोज मिटाएँ"
@@ -26283,7 +26283,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:1134
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "दोबारा मत पूछें (&a)"
@@ -26293,7 +26293,7 @@ msgstr "दोबारा मत पूछें (&a)"
 msgid "No such tag"
 msgstr "ऐसा कोई टैग नहीं है"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1129
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
