@@ -19,7 +19,7 @@
 // Qt includes
 
 #include <QFileInfo>
-#include <QMutexLocker>
+#include <QReadWriteLock>
 
 // Local includes
 
@@ -129,7 +129,7 @@ void TimeAdjustThread::setSettings(const TimeAdjustContainer& settings)
 QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
 {
     {
-        QMutexLocker locker(&d->mutex);
+        QReadLocker locker(&d->mutex);
 
         if (d->timeDateCache.contains(url))
         {
@@ -175,7 +175,7 @@ QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
     }
 
     {
-        QMutexLocker locker(&d->mutex);
+        QWriteLocker locker(&d->mutex);
 
         d->timeDateCache.insert(url, dateTime);
     }
