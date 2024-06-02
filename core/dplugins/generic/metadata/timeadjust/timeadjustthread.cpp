@@ -38,7 +38,7 @@ public:
 
     TimeAdjustContainer    settings;  ///< Settings from GUI.
 
-    QMutex                 mutex;
+    QReadWriteLock         lock;
 
     QMap<QUrl, int>        itemsMap;
     QHash<QUrl, QDateTime> timeDateCache;
@@ -129,7 +129,7 @@ void TimeAdjustThread::setSettings(const TimeAdjustContainer& settings)
 QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
 {
     {
-        QReadLocker locker(&d->mutex);
+        QReadLocker locker(&d->lock);
 
         if (d->timeDateCache.contains(url))
         {
@@ -175,7 +175,7 @@ QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
     }
 
     {
-        QWriteLocker locker(&d->mutex);
+        QWriteLocker locker(&d->lock);
 
         d->timeDateCache.insert(url, dateTime);
     }
