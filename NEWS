@@ -173,15 +173,15 @@ BUGFIXES:
 144 ==> 487370 - Face Recognition crashes - pre-release built on 20-05-2024 07:25.
 145 ==> 487668 - Crash while naming face.
 146 ==> 487822 - "Wipe all tags from Database only" crashes digiKam.
-147 ==> 
-148 ==> 
-149 ==> 
-150 ==> 
-151 ==> 
-152 ==> 
-153 ==> 
-154 ==> 
-155 ==> 
+147 ==> 275609 - Collective operation-change type of picture.
+148 ==> 275607 - Decoration for more pictures.
+149 ==> 265328 - digiKam core does not compile against RawEngine.
+150 ==> 256953 - Suddenly the screen suffer a blackout and the application went out without any warning.
+151 ==> 253809 - Import from bluetooth obex.
+152 ==> 265468 - Crash with Nokia 5800.
+153 ==> 277237 - Nikon coolpix s9100 support.
+154 ==> 250055 - Was trying to import 2 of many pictures from my Canon.
+155 ==> 249043 - Export as symbolic link to file system.
 156 ==> 
 157 ==> 
 158 ==> 
