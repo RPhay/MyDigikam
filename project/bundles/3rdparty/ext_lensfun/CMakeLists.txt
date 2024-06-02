@@ -22,7 +22,10 @@ if (MSVC)
 
 else()
 
-    set(Lensfun_Conf ${Lensfun_Conf} -DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF)
+    set(Lensfun_Conf ${Lensfun_Conf}
+                     -DCMAKE_INSTALL_DATAROOTDIR=${CMAKE_INSTALL_PREFIX}
+                     -DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF
+    )
 
 endif()
 
@@ -35,12 +38,6 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-
-        # Rolling-release code do not compile with MinGW
-        # https://github.com/lensfun/lensfun/issues/2001
-        GIT_TAG v0.3.4
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_regex_mxe.patch
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
