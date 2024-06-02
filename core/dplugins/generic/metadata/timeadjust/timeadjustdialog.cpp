@@ -184,6 +184,9 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(m_buttons->button(QDialogButtonBox::Yes), SIGNAL(clicked()),
             this, SLOT(slotOkExitTimestamps()));
 
+    connect(d->settingsView, SIGNAL(signalSrcTimestampChanged()),
+            d->thread, SLOT(slotSrcTimestampChanged()));
+
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
             this, SLOT(slotPreviewTimestamps()));
 

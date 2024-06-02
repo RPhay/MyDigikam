@@ -182,7 +182,7 @@ BUGFIXES:
 153 ==> 277237 - Nikon coolpix s9100 support.
 154 ==> 250055 - Was trying to import 2 of many pictures from my Canon.
 155 ==> 249043 - Export as symbolic link to file system.
-156 ==> 
+156 ==> 487920 - Adjust DateTime is unnecesarily slow - it re-reads all the images all the time.
 157 ==> 
 158 ==> 
 159 ==> 

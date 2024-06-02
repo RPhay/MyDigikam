@@ -35,11 +35,14 @@ public:
 
     Private() = default;
 
-    TimeAdjustContainer settings;  ///< Settings from GUI.
+    TimeAdjustContainer    settings;  ///< Settings from GUI.
 
-    QMap<QUrl, int>     itemsMap;
+    QMap<QUrl, int>        itemsMap;
+    QHash<QUrl, QDateTime> timeDateCache;
 
-    DInfoInterface*     iface   = nullptr;
+    bool                   clearTimeCache = false;
+
+    DInfoInterface*        iface          = nullptr;
 };
 
 
@@ -112,10 +115,21 @@ void TimeAdjustThread::setPreviewDates(const QMap<QUrl, int>& itemsMap)
 void TimeAdjustThread::setSettings(const TimeAdjustContainer& settings)
 {
     d->settings = settings;
+
+    if (d->clearTimeCache)
+    {
+        d->timeDateCache.clear();
+        d->clearTimeCache = false;
+    }
 }
 
 QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
 {
+    if (d->timeDateCache.contains(url))
+    {
+        return d->timeDateCache.value(url);
+    }
+
     QDateTime dateTime;
 
     switch (d->settings.dateSource)
@@ -152,6 +166,8 @@ QDateTime TimeAdjustThread::readTimestamp(const QUrl& url) const
             break;
         }
     }
+
+    d->timeDateCache.insert(url, dateTime);
 
     return dateTime;
 }
@@ -272,6 +288,11 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
 int TimeAdjustThread::indexForUrl(const QUrl& url) const
 {
     return d->itemsMap.value(url);
+}
+
+void TimeAdjustThread::slotSrcTimestampChanged()
+{
+    d->clearTimeCache = true;
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin
