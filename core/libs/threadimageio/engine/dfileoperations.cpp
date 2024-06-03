@@ -318,17 +318,19 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         }
     }
 
-    QStringList args;
     QFileInfo info(path);
+    QString cmdArg = QLatin1String("\"%1\"");
 
-    if (!info.isDir())
+    if (info.isFile())
     {
-        args << QLatin1String("/select,");
+        cmdArg.prepend(QLatin1String("/select,"));
     }
 
-    args << QDir::toNativeSeparators(path);
+    QProcess process;
+    process.setProgram(QLatin1String("explorer"));
+    process.setNativeArguments(cmdArg.arg(QDir::toNativeSeparators(path)));
 
-    if (QProcess::startDetached(QLatin1String("explorer"), args))
+    if (process.startDetached())
     {
         return;
     }
