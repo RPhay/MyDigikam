@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-02 01:40+0000\n"
+"POT-Creation-Date: 2024-06-03 01:39+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -16710,14 +16710,14 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Εγγραφή μεταδεδομένων σε κάθε αρχείο"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Προσαρμογή:"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
@@ -16726,7 +16726,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
@@ -16734,7 +16734,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Ακύρωση αυτής της λειτουργίας."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, fuzzy, kde-format
 #| msgid "&Close"
@@ -16742,7 +16742,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "&Κλείσιμο"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, fuzzy, kde-format
 #| msgid "Close view"

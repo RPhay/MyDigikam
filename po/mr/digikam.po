@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-02 01:40+0000\n"
+"POT-Creation-Date: 2024-06-03 01:39+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -15224,13 +15224,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "गुणधर्म"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
@@ -15239,7 +15239,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, fuzzy, kde-format
 #| msgid "More options"
@@ -15247,7 +15247,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "जादा पर्याय"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, fuzzy, kde-format
 #| msgid "Close view"
@@ -15255,7 +15255,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "निकट दृष्य"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, fuzzy, kde-format
 #| msgid "Close view"
