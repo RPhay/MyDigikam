@@ -323,7 +323,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
     if (info.isFile())
     {
-        cmdArg.prepend(QLatin1String("/select,"));
+        cmdArg = cmdArg.prepend(QLatin1String("/select,"));
     }
 
     QProcess process;
