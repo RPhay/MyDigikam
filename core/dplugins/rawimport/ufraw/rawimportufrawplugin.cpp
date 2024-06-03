@@ -161,7 +161,7 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
                                             .arg(d->tempName)                 // Output file
                                          << filePath);                        // Input file
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw arguments:" << d->ufraw->arguments();
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw arguments:" << d->ufraw->arguments();
 
     d->ufraw->start();
 
@@ -174,37 +174,37 @@ void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     {
         case QProcess::FailedToStart:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process has failed to start";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process has failed to start";
             break;
         }
 
         case QProcess::Crashed:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process has crashed";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process has crashed";
             break;
         }
 
         case QProcess::Timedout:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process time-out";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process time-out";
             break;
         }
 
         case QProcess::WriteError:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process write error";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process write error";
             break;
         }
 
         case QProcess::ReadError:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process read error";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process read error";
             break;
         }
 
         default:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process error unknown";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: Process error unknown";
             break;
         }
     }
@@ -212,7 +212,7 @@ void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
     d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
@@ -222,15 +222,15 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
         QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(nullptr, qApp->applicationName(), message);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is null! Load with Native tool...";
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << d->props.filePath;
 
         Q_EMIT signalLoadRaw(d->props);
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is not null...";
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
 
         FilterAction action(QLatin1String("ufraw:RawConverter"), 1, FilterAction::DocumentedHistory);
@@ -253,7 +253,7 @@ void UFRawRawImportPlugin::slotProcessReadyRead()
 
     Q_FOREACH (const QString& one, lines)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw ::" << one;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "UFRaw ::" << one;
     }
 }
 

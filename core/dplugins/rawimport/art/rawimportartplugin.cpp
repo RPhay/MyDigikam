@@ -156,7 +156,7 @@ bool ARTRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*
                                        << filePath               // Input file
                                        << d->tempName);          // Output file
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "ART arguments:" << d->art->arguments();
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART arguments:" << d->art->arguments();
 
     d->art->start();
 
@@ -169,37 +169,37 @@ void ARTRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     {
         case QProcess::FailedToStart:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process has failed to start";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process has failed to start";
             break;
         }
 
         case QProcess::Crashed:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process has crashed";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process has crashed";
             break;
         }
 
         case QProcess::Timedout:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process time-out";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process time-out";
             break;
         }
 
         case QProcess::WriteError:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process write error";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process write error";
             break;
         }
 
         case QProcess::ReadError:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process read error";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process read error";
             break;
         }
 
         default:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: Process error unknown";
+            qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: Process error unknown";
             break;
         }
     }
@@ -207,7 +207,7 @@ void ARTRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void ARTRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "ART :: return code:" << code << ":: Exit status:" << status;
+    qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
     d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
@@ -217,15 +217,15 @@ void ARTRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus stat
         QString message = i18n("Error to import RAW image with ART\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(nullptr, qApp->applicationName(), message);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is null! Load with Native tool...";
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << d->props.filePath;
 
         Q_EMIT signalLoadRaw(d->props);
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "Decoded image is not null...";
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
 
         FilterAction action(QLatin1String("art:RawConverter"), 1, FilterAction::DocumentedHistory);
@@ -248,7 +248,7 @@ void ARTRawImportPlugin::slotProcessReadyRead()
 
     Q_FOREACH (const QString& one, lines)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "ART ::" << one;
+        qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "ART ::" << one;
     }
 }
 

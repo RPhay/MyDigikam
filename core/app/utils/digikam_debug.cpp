@@ -36,9 +36,11 @@ Q_LOGGING_CATEGORY(DIGIKAM_MARBLE_LOG,                  "digikam.marble",       
 
 Q_LOGGING_CATEGORY(DIGIKAM_TESTS_LOG,                   "digikam.tests",                    QtInfoMsg)
 
+Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_RAWIMPORT_LOG,       "digikam.dplugin.rawimport",        QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_GENERIC_LOG,         "digikam.dplugin.generic",          QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_EDITOR_LOG,          "digikam.dplugin.editor",           QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_BQM_LOG,             "digikam.dplugin.bqm",              QtInfoMsg)
+Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_LOG,                 "digikam.dplugin",                  QtInfoMsg)
 
 Q_LOGGING_CATEGORY(DIGIKAM_DATABASE_LOG,                "digikam.database",                 QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DBENGINE_LOG,                "digikam.dbengine",                 QtInfoMsg)

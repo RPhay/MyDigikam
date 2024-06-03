@@ -66,7 +66,7 @@ void RawPostProcessing::rawPostProcessing()
 {
     if (!m_orgImage.bits() || !m_orgImage.width() || !m_orgImage.height())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << ("RawPostProcessing::rawPostProcessing: no image m_orgImage.bits() available!");
+        qCWarning(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << ("RawPostProcessing::rawPostProcessing: no image m_orgImage.bits() available!");
         return;
     }
 
