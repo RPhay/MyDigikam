@@ -318,13 +318,25 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
             this, SLOT(slotUseExifToolChanged()));
 
     connect(d->useCustDateInput, SIGNAL(editingFinished()),
+            this, SIGNAL(signalSrcTimestampChanged()));
+
+    connect(d->useCustDateInput, SIGNAL(editingFinished()),
             this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->useCustDateInput, SIGNAL(dateChanged(QDate)),
+            this, SIGNAL(signalSrcTimestampChanged()));
 
     connect(d->useCustDateInput, SIGNAL(dateChanged(QDate)),
             this, SIGNAL(signalSettingsChangedTool()));
 
     connect(d->useCustTimeInput, SIGNAL(editingFinished()),
+            this, SIGNAL(signalSrcTimestampChanged()));
+
+    connect(d->useCustTimeInput, SIGNAL(editingFinished()),
             this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->useCustTimeInput, SIGNAL(timeChanged(QTime)),
+            this, SIGNAL(signalSrcTimestampChanged()));
 
     connect(d->useCustTimeInput, SIGNAL(timeChanged(QTime)),
             this, SIGNAL(signalSettingsChangedTool()));
@@ -549,6 +561,8 @@ void TimeAdjustSettings::slotSrcTimestampChanged()
         d->useCustTimeInput->setEnabled(true);
         d->useCustomDateTodayBtn->setEnabled(true);
     }
+
+    Q_EMIT signalSrcTimestampChanged();
 
     Q_EMIT signalSettingsChanged();
 }

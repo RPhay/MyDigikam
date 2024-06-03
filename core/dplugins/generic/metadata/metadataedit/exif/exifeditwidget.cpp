@@ -140,10 +140,10 @@ void EXIFEditWidget::readSettings()
     KConfigGroup group        = config->group(QLatin1String("All Metadata Edit Settings"));
     showPage(group.readEntry(QLatin1String("All EXIF Edit Page"), 0));
     d->captionPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"), true));
-    d->captionPage->setCheckedSyncXMPCaption(group.readEntry(QLatin1String("All Sync XMP Caption"), true));
+    d->captionPage->setCheckedSyncXMPCaption(group.readEntry(QLatin1String("All Sync XMP Caption"),   true));
     d->captionPage->setCheckedSyncIPTCCaption(group.readEntry(QLatin1String("All Sync IPTC Caption"), true));
-    d->datetimePage->setCheckedSyncXMPDate(group.readEntry(QLatin1String("All Sync XMP Date"), true));
-    d->datetimePage->setCheckedSyncIPTCDate(group.readEntry(QLatin1String("All Sync IPTC Date"), true));
+    d->datetimePage->setCheckedSyncXMPDate(group.readEntry(QLatin1String("All Sync XMP Date"),        true));
+    d->datetimePage->setCheckedSyncIPTCDate(group.readEntry(QLatin1String("All Sync IPTC Date"),      true));
 }
 
 void EXIFEditWidget::saveSettings()

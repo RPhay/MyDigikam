@@ -171,7 +171,7 @@ void IPTCEditWidget::readSettings()
     showPage(group.readEntry(QLatin1String("All IPTC Edit Page"), 0));
     d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"), true));
     d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"), true));
-    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"), true));
+    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"),        true));
 }
 
 void IPTCEditWidget::saveSettings()

@@ -59,6 +59,10 @@ Q_SIGNALS:
     void signalPreviewReady(const QUrl&, const QDateTime&, const QDateTime&);
     void signalProcessEnded(const QUrl&, const QDateTime&, const QDateTime&, int);
 
+public Q_SLOTS:
+
+    void slotSrcTimestampChanged();
+
 private:
 
     /** Called by readTimestamp() to get host timestamps

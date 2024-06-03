@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-02 01:40+0000\n"
-"PO-Revision-Date: 2024-05-30 19:51+0200\n"
+"POT-Creation-Date: 2024-06-03 01:39+0000\n"
+"PO-Revision-Date: 2024-06-02 13:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15954,13 +15954,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Gardar a data e hora corrixidas en cada imaxe."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:368
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Axustar a data e a hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, kde-format
@@ -15968,21 +15968,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Cancelar esta operación"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Pechar"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -43373,13 +43373,21 @@ msgid ""
 "Application will try to find this binary automatically if they are already "
 "installed on your computer."
 msgstr ""
+"%1 é un programa libre para ler, escribir e manipular ficheiros multimedia. "
+"É multiplataforma e pode usarse na liña de ordes. ExifTool adoita formar "
+"parte de distintos tipos de fluxos de traballo dixitais e é compatíbel con "
+"moitos tipos de metadatos, incluídos os Exif, IPTC, XMP, JFIF, GeoTIFF, "
+"perfil de ICC, IRB de Photoshop, así como formatos de metadatos específicos "
+"dos fabricantes de moitas cámaras dixitais.\n"
+"\n"
+"Aquí pode indicar a ruta do executábel de ExifTool. A aplicación intentará "
+"atopar o executábel automaticamente se xa o ten instalado."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:85
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title: group"
 msgid "Supported File Formats"
-msgstr "Formato incompatíbel"
+msgstr "Formatos de ficheiro compatíbeis"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:95
 #, kde-format
@@ -43388,19 +43396,16 @@ msgid "Extension"
 msgstr "Extensión"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Ready"
+#, kde-format
 msgctxt "@title: column"
 msgid "Read"
-msgstr "Listo"
+msgstr "Lectura"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:97
-#, fuzzy, kde-format
-#| msgid "Writable: "
+#, kde-format
 msgctxt "@title: column"
 msgid "Write"
-msgstr "Permite escritura: "
+msgstr "Escritura"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:98
 #, kde-format
@@ -43422,11 +43427,10 @@ msgid "no"
 msgstr "non"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:63
-#, fuzzy, kde-format
-#| msgid "Opening Download Dialog..."
+#, kde-format
 msgctxt "@action: button"
 msgid "Open Setup Dialog..."
-msgstr "Abrindo o diálogo de descarga…"
+msgstr "Abrir o diálogo de configuración…"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:135
@@ -43439,287 +43443,252 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:44
 #, kde-format
 msgid "AXS File Concatenation Protocol"
-msgstr ""
+msgstr "Protocolo de concatenación de ficheiros AXS"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:48
-#, fuzzy, kde-format
-#| msgid "Audio Interchange File Format AIFF"
+#, kde-format
 msgid "Audio Interchange File Format"
-msgstr "Formato de ficheiro de intercambio de son AIFF"
+msgstr "Formato de ficheiro de intercambio de son (AIFF)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
 #, kde-format
 msgid "Monkey's Audio"
-msgstr ""
+msgstr "Son de Monkey"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 0"
-msgstr "Información dos metadatos"
+msgstr "Nivel 0 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:60
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 1"
-msgstr "Información dos metadatos"
+msgstr "Nivel 1 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:64
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 11"
-msgstr "Información dos metadatos"
+msgstr "Nivel 11 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:68
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 12"
-msgstr "Información dos metadatos"
+msgstr "Nivel 12 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:72
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 13"
-msgstr "Información dos metadatos"
+msgstr "Nivel 13 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:76
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 14"
-msgstr "Información dos metadatos"
+msgstr "Nivel 14 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:80
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 15"
-msgstr "Información dos metadatos"
+msgstr "Nivel 15 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:84
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 4"
-msgstr "Información dos metadatos"
+msgstr "Nivel 4 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:88
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 5"
-msgstr "Información dos metadatos"
+msgstr "Nivel 5 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:92
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 6"
-msgstr "Información dos metadatos"
+msgstr "Nivel 6 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:96
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "JPEG Meta Information Level 8"
-msgstr "Información dos metadatos"
+msgstr "Nivel 8 de metadatos de JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
-msgstr ""
+msgstr "Formato de sistemas avanzados de Microsoft"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
 msgid "Audible Audiobook"
-msgstr ""
+msgstr "Libro de son de Audible"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "Canon Camera Information"
-msgstr "Información do título"
+msgstr "Información de cámara de Canon"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Canon Recipe Data Information"
-msgstr "Información común dos ficheiros"
+msgstr "Información de receita de Canon"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
 #, kde-format
 msgid "Derived Convenience Tags"
-msgstr ""
+msgstr "Etiquetas de conveniencia derivadas"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:120
 #, kde-format
 msgid "Digital Imaging and Communications in Medicine"
-msgstr ""
+msgstr "Imaxes e comunicacións dixitais na medicina"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:124
-#, fuzzy, kde-format
-#| msgid "Adobe Digital Negative"
+#, kde-format
 msgid "Digital Negative"
-msgstr "Negativo dixital de Adobe"
+msgstr "Negativo dixital"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:128
-#, fuzzy, kde-format
-#| msgid "Digital Scanner"
+#, kde-format
 msgid "Digital Video"
-msgstr "Escáner dixital"
+msgstr "Vídeo dixital"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "DjVu image"
-msgstr "Unha imaxe"
+msgstr "Imaxe DjVu"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
 #, kde-format
 msgid "Photoshop Save for Web"
-msgstr ""
+msgstr "Garda de Photoshop para Internet"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
-#, fuzzy, kde-format
-#| msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
+#, kde-format
 msgid "DOS/Windows executable"
-msgstr "Ficheiros executábeis de PC DOS/Windows [*.COM] [*.EXE]"
+msgstr "Executábel de DOS ou Windows"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
 msgid "Exchangeable Image File Format metadata"
-msgstr ""
+msgstr "Metadatos do formato de ficheiro de imaxe intercambiábel (EIFF)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
 #, kde-format
 msgid "Flexible Image Transport System"
-msgstr ""
+msgstr "Sistema flexíbel de transporte de imaxes (FITS)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Free Lossless Audio Codec"
-msgstr "Códec de son"
+msgstr "Códec libre de son sen perda (FLAC)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
-#, fuzzy, kde-format
-#| msgid "File/Image Information"
+#, kde-format
 msgid "FLIR Thermal Imaging Camera Information"
-msgstr "Información da imaxe/ficheiro"
+msgstr "Información de cámara térmica FLIR"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "File System Information"
-msgstr "Información do elemento/ficheiro"
+msgstr "Información do sistema de ficheiros"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
-#, fuzzy, kde-format
-#| msgid "Common File Information"
+#, kde-format
 msgid "Macromedia/Adobe Flash Information"
-msgstr "Información común dos ficheiros"
+msgstr "Información de Flash de Macromedia ou Adobe"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "FlashPix Information"
-msgstr "Información do título"
+msgstr "Información de FlashPix"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Font Name Tags"
-msgstr "Mostrar as etiquetas de caras"
+msgstr "Etiquetas de nomes de fontes"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "FotoWare FotoStation Information"
-msgstr "Información do título"
+msgstr "Información de FotoStation de FotoWare"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
 #, kde-format
 msgid "Compuserve Graphics Interchange Format"
-msgstr ""
+msgstr "Formato de intercambio de gráficos de Compuserve"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
-#, fuzzy, kde-format
-#| msgid "The GNU Image Manipulation Program."
+#, kde-format
 msgid "GNU Image Manipulation Program"
-msgstr "O programa de manipulación de imaxes de GNU."
+msgstr "Programa de manipulación de imaxes de GNU"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
-#, fuzzy, kde-format
-#| msgid "Tagged Image File Format (version 5.0)"
+#, kde-format
 msgid "Geolocated Tagged Image File Format"
-msgstr "Formato de ficheiro de imaxe con etiquetas (versión 5.0)"
+msgstr "Formato de ficheiro de imaxe con etiquetas e xeolocalizada"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "GoPro Tags"
-msgstr "Sen etiquetas"
+msgstr "Etiquetas de GoPro"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
-#, fuzzy, kde-format
-#| msgid "File/Item Information"
+#, kde-format
 msgid "H.264 Video Streams Information"
-msgstr "Información do elemento/ficheiro"
+msgstr "Información de fluxos de vídeo de H.264"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
-#, fuzzy, kde-format
-#| msgid "Hypertext Markup Language \"HTML\""
+#, kde-format
 msgid "HyperText Markup Language"
-msgstr "Linguaxe de etiquetas de hipertexto «HTML»"
+msgstr "Linguaxe de etiquetas de hipertexto"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
-msgstr ""
+msgstr "Perfil de cores do consorcio internacional de cores"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
-#, fuzzy, kde-format
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "ID3 And Lyrics3 information"
-msgstr "Información da data e hora"
+msgstr "Información de ID3 e Lyrics3"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
 #, kde-format
 msgid "International Press Telecommunications Council"
-msgstr ""
+msgstr "Consello internacional de telecomunicacións da prensa"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
 msgid "ISO 9660 Disk Image"
-msgstr ""
+msgstr "Imaxe de disco ISO 9660"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
 msgid "iTunes Cover Flow Artwork"
-msgstr ""
+msgstr "Portada do fluxo de portadas de iTunes"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
-#, fuzzy, kde-format
-#| msgid "JPEG File Interchange"
+#, kde-format
 msgid "JPEG File Interchange Format"
-msgstr "Intercambio de ficheiro JPEG"
+msgstr "Formato de intercambio de ficheiros JPEG"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
-#, fuzzy, kde-format
-#| msgid "Photograph Properties"
+#, kde-format
 msgid "Joint Photographic Experts Group"
-msgstr "Propiedades da fotografía"
+msgstr "Grupo unido de persoas expertas en fotografía"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
 #, kde-format
 msgid "JavaScript Object Notation"
-msgstr ""
+msgstr "Notación de obxectos de JavaScript"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
 #, kde-format
 msgid "Joint Photographic Experts Group 2000"
-msgstr ""
+msgstr "Grupo unido de persoas expertas en fotografía 2000"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
-#, fuzzy, kde-format
-#| msgid "Microsoft Photo"
+#, kde-format
 msgid "Microsoft Shell Link"
-msgstr "Microsoft Photo"
+msgstr "Ligazón de intérprete de Microsoft"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
 #, fuzzy, kde-format
