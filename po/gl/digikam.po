@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-03 01:39+0000\n"
-"PO-Revision-Date: 2024-06-02 13:25+0200\n"
+"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"PO-Revision-Date: 2024-06-03 10:13+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -43691,306 +43691,267 @@ msgid "Microsoft Shell Link"
 msgstr "Ligazón de intérprete de Microsoft"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Creo Leaf Capture Information"
-msgstr "Recortar a información"
+msgstr "Información de Creo Leaf Capture"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
 #, kde-format
 msgid "Lytro Light Field Picture Info"
-msgstr ""
+msgstr "Información de Lytro Light Field Picture"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 stream"
+#, kde-format
 msgid "MPEG-2 Transport Stream"
-msgstr "Fluxo JPEG-2000"
+msgstr "Fluxo de transporte MPEG-2"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Meta Information Encapsulation"
-msgstr "Información dos metadatos"
+msgstr "Cápsula de metadatos"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Workspace File Format"
+#, kde-format
 msgid "Magick Image File Format"
-msgstr "Formato de ficheiro do espazo de traballo"
+msgstr "Formato de ficheiro de imaxe de Magick"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:264
 #, kde-format
 msgid "Multiple-image Network Graphics"
-msgstr ""
+msgstr "Gráficos de rede de varias imaxes"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:268
 #, kde-format
 msgid "JVC Canon and Panasonic Camcorders Information"
-msgstr ""
+msgstr "Información de videocámaras JVC de Canon e Panasonic"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:272
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Musepack Audio Information"
-msgstr "Información dos metadatos"
+msgstr "Información de son de Musepack"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:276
 #, kde-format
 msgid "Motion Picture Experts Group"
-msgstr ""
+msgstr "Grupo experto en imaxes en movemento"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:280
 #, kde-format
 msgid "CIPA Multi-Picture Format Specification"
-msgstr ""
+msgstr "Especificación de formato de varias imaxes de CIPA"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:284
-#, fuzzy, kde-format
-#| msgid "%1|GPS Exchange Format"
+#, kde-format
 msgid "Material Exchange Format"
-msgstr "%1|Formato de intercambio do GPS"
+msgstr "Formato de intercambio de material"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:288
-#, fuzzy, kde-format
-#| msgid "Progress Information"
+#, kde-format
 msgid "Maker Notes Information"
-msgstr "Información sobre a evolución"
+msgstr "Información de notas de marcador"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:292
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Matroska Audio/Video/Subtitle Information"
-msgstr "Información de son e vídeo"
+msgstr "Información de son, vídeo e subtítulos de Matroska"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:296
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgid "Meta Information"
-msgstr "Información dos metadatos"
+msgstr "Metadatos"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
 #, kde-format
 msgid "Ogg Bitstream Container"
-msgstr ""
+msgstr "Contedor de fluxo de bits Ogg"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
-#, fuzzy, kde-format
-#| msgid "Open in File Manager"
+#, kde-format
 msgid "Open Extended Range"
-msgstr "Abrir no xestor de ficheiros"
+msgstr "Intervalo estendido aberto"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
 #, kde-format
 msgid "Ogg Opus Audio"
-msgstr ""
+msgstr "Son en Ogg Opus"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
-#, fuzzy, kde-format
-#| msgid "Portable Document File [*.PDF] Adobe"
+#, kde-format
 msgid "Adobe Portable Document Format"
-msgstr "Ficheiro de documento portábel [*.PDF] de Adobe"
+msgstr "Formato portátil de documentos de Adobe"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Device Information"
+#, kde-format
 msgid "Apple Picture Information"
-msgstr "Información do dispositivo"
+msgstr "Información de imaxe de Apple"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:320
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgid "Apple Property List"
-msgstr "Propiedades do ficheiro"
+msgstr "Lista de propiedades de Apple"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:324
-#, fuzzy, kde-format
-#| msgid "Raster Graphics"
+#, kde-format
 msgid "Portable Network Graphics"
-msgstr "Gráficos raster"
+msgstr "Gráfico de rede adaptábel"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:328
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Paint Shop Pro Information"
-msgstr "Información sobre a fonte de luz"
+msgstr "Información de Paint Shop Pro"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:332
 #, kde-format
 msgid ""
 "Palm database, Mobipocket electronic books, and Amazon Kindle Information"
 msgstr ""
+"Información de bases de datos de Palm, libros electrónicos de Mobipocket e "
+"Amazon Kindle"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:336
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "Panasonic RAW 2 Information"
-msgstr "Información do título"
+msgstr "Información de RAW 2 de Panasonic"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
-#, fuzzy, kde-format
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Streaming Parrot Drone Video Information"
-msgstr "Información da data e hora"
+msgstr "Información de vídeo de dron de emisión Parrot"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photo-CD Image-Pac"
+#, kde-format
 msgid "Kodak Photo CD Image Pac"
-msgstr "Photo-CD Image-Pac"
+msgstr "Paquete de imaxe de CD de foto de Kodak"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:348
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "Photo Mechanic Trailer Information"
-msgstr "Información da fotografía"
+msgstr "Información de tráiler de Photo Mechanic"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:352
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "Adobe Photoshop Information"
-msgstr "Información da fotografía"
+msgstr "Información de Photoshop de Adobe"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:356
-#, fuzzy, kde-format
-#| msgid "Photograph Information"
+#, kde-format
 msgid "PostScript Information"
-msgstr "Información da fotografía"
+msgstr "Información de PostScript"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:360
-#, fuzzy, kde-format
-#| msgid "Login Information"
+#, kde-format
 msgid "PrintIM Information"
-msgstr "Información de acceso"
+msgstr "Información de PrintIM"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:364
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Apple QuickTime Movie Information"
-msgstr "Información de son e vídeo"
+msgstr "Información de filme de QuickTime de Apple"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:368
-#, fuzzy, kde-format
-#| msgid "Import Information"
+#, kde-format
 msgid "FujiFilm RAW Format Information"
-msgstr "Importar a información"
+msgstr "Información de formato RAW de FujiFilm"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:372
-#, fuzzy, kde-format
-#| msgid "Audio Interchange File Format AIFF"
+#, kde-format
 msgid "Resource Interchange File Format Information"
-msgstr "Formato de ficheiro de intercambio de son AIFF"
+msgstr "Información de formato de ficheiro de intercambio de recursos"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
 #, kde-format
 msgid "Mac OS Resource"
-msgstr ""
+msgstr "Recurso de macOS"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
-#, fuzzy, kde-format
-#| msgid "File Format"
+#, kde-format
 msgid "Rich Text Format"
-msgstr "Formato de ficheiro"
+msgstr "Formato de texto enriquecido"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:384
 #, kde-format
 msgid "RGBE High Dynamic-Range"
-msgstr ""
+msgstr "Intervalo dinámico alto RGBE"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:388
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Rawzor Image Information"
-msgstr "Información da imaxe"
+msgstr "Información de imaxe de Rawzor"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:392
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Real Media/Video Information"
-msgstr "Información de son e vídeo"
+msgstr "Información multimedia ou de vídeo de Real"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:396
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgid "Redcode RAW Video Information"
-msgstr "Información de son e vídeo"
+msgstr "Información de vídeo RAW de Redcode"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:400
-#, fuzzy, kde-format
-#| msgid "Raster Graphics"
+#, kde-format
 msgid "Scalable Vector Graphics"
-msgstr "Gráficos raster"
+msgstr "Gráfico vectorial redimensionábel"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:404
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Sigma/Foveon RAW Information"
-msgstr "Información da imaxe"
+msgstr "Información de RAW de Sigma ou Foveon"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:408
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Sony Cameras Information"
-msgstr "Recortar a información"
+msgstr "Información de cámaras de Sony"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:412
-#, fuzzy, kde-format
-#| msgid "File/Image Information"
+#, kde-format
 msgid "Stereo Still Image Information"
-msgstr "Información da imaxe/ficheiro"
+msgstr "Información de imaxe fixa en estéreo"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:416
 #, kde-format
 msgid "Ogg Theora Video Specification"
-msgstr ""
+msgstr "Especificación de vídeo Theora de Ogg"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:420
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgid "BitTorrent Description Information"
-msgstr "Información do título"
+msgstr "Información de descrición de BitTorrent"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:424
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Trailer Information"
-msgstr "Información da imaxe"
+msgstr "Información de tráiler"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:428
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgid "Virtual Card Information"
-msgstr "Recortar a información"
+msgstr "Información de tarxeta virtual"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:432
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgid "Ogg Vorbis Specification"
-msgstr "Lugar específico"
+msgstr "Especificación Vorbis de Ogg"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:436
 #, kde-format
 msgid "Windows Recorded TV Show Information"
-msgstr ""
+msgstr "Información de serie de televisión gravada de Windows"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:440
-#, fuzzy, kde-format
-#| msgid "Hypertext Markup Language \"HTML\""
+#, kde-format
 msgid "Extensible Markup Language"
-msgstr "Linguaxe de etiquetas de hipertexto «HTML»"
+msgstr "Linguaxe de etiquetas extensíbel"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:444
 #, kde-format
 msgid "Extensible Metadata Platform"
-msgstr ""
+msgstr "Plataforma de metadatos extensíbel"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "ZIP Archive Information"
-msgstr "Información da imaxe"
+msgstr "Información de arquivo ZIP"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
 #: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
@@ -43999,11 +43960,10 @@ msgid "Unavailable"
 msgstr "Non dispoñíbel"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:67
-#, fuzzy, kde-format
-#| msgid "Printing in Progress"
+#, kde-format
 msgctxt "info"
 msgid "Loading in progress"
-msgstr "Impresión en progreso"
+msgstr "Carga en progreso"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:135
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:110
@@ -44092,6 +44052,11 @@ msgid ""
 "\n"
 "%2"
 msgstr ""
+"Non é posíbel cargar\n"
+"datos de %1\n"
+"con ExifTool.\n"
+"\n"
+"%2"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:292
 #, kde-format
@@ -44100,17 +44065,15 @@ msgid "File name: %1 (%2)"
 msgstr "Nome do ficheiro: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:384
-#, fuzzy, kde-format
-#| msgid "Caption Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
-msgstr "Información do título"
+msgstr "Gardar a información de ExifTool"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
-#, fuzzy, kde-format
-#| msgid "Standard EXIF Tags"
+#, kde-format
 msgid "Standard Exif Tags"
-msgstr "Etiquetas EXIF estándar"
+msgstr "Etiquetas Exif estándar"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
@@ -44148,10 +44111,9 @@ msgid "IPTC binary Files (*.iptc)"
 msgstr "Ficheiros binarios IPTC (*.iptc)"
 
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "MakerNote EXIF Tags"
+#, kde-format
 msgid "MakerNote Exif Tags"
-msgstr "Etiquetas EXIF de MakerNote"
+msgstr "Etiquetas Exif de MakerNote"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:47
 #, kde-format
@@ -44294,47 +44256,42 @@ msgstr "Núcleo de Darwin"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:164
 #, kde-format
 msgid "Adobe Lightroom Schema"
-msgstr ""
+msgstr "Esquema de Lightroom de Adobe"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:168
-#, fuzzy, kde-format
-#| msgid "XMP Schema"
+#, kde-format
 msgid "ACDSee XMP Schema"
-msgstr "Esquema XMP"
+msgstr "Esquema de XMP de ACDSee"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:172
-#, fuzzy, kde-format
-#| msgid "Microsoft Photo"
+#, kde-format
 msgid "Microsoft Photo 1.2 Schema"
-msgstr "Microsoft Photo"
+msgstr "Esquema de Photo 1.2 de Microsoft"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:176
 #, kde-format
 msgid "KDE Image Program Interface schema"
-msgstr ""
+msgstr "Esquema de interface de programa de imaxe de KDE"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:180
-#, fuzzy, kde-format
-#| msgid "IPTC Extension schema"
+#, kde-format
 msgid "XMP Extended Video schema"
-msgstr "Esquema da Extensión IPTC"
+msgstr "Esquema de vídeo estendido XMP"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:184
 #, kde-format
 msgid "Exif 2.3 metadata for XMP"
-msgstr ""
+msgstr "Metadatos de Exif 2.3 para XMP"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:188
-#, fuzzy, kde-format
-#| msgid "ImageMagick loader"
+#, kde-format
 msgid "Image Magick Attributes"
-msgstr "Cargador de ImageMagick"
+msgstr "Atributos de ImageMagick"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:192
-#, fuzzy, kde-format
-#| msgid "Image Properties"
+#, kde-format
 msgid "Image Magick Properties"
-msgstr "Propiedades da imaxe"
+msgstr "Propiedades de ImageMagick"
 
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:337
 #, kde-format
@@ -44413,18 +44370,16 @@ msgstr "Seleccione o idioma do elemento."
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:236
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:252
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Switch to %1"
-msgstr "Navegar ata %1"
+msgstr "Cambiar a %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:422
-#, fuzzy, kde-format
-#| msgid "Failed to transform these files:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "Non se puideron transformar estes ficheiros:"
+msgstr "Non foi posíbel traducir a cadea co servizo web %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:424
 #, kde-format
@@ -44450,7 +44405,7 @@ msgstr "Amhárico (Etiopía)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
-msgstr ""
+msgstr "Árabe levantino setentrional (Turquía)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
 msgctxt "@info: country code"
@@ -44478,11 +44433,9 @@ msgid "Arabic (Iraq)"
 msgstr "Árabe (Iraq)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
-#, fuzzy
-#| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
-msgstr "Árabe (Iraq)"
+msgstr "Árabe (Israel)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 msgctxt "@info: country code"
@@ -44510,16 +44463,14 @@ msgid "Arabic (Morocco)"
 msgstr "Árabe (Marrocos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:57
-#, fuzzy
-#| msgid "Arabic (Saudi Arabia)"
 msgctxt "@info: country code"
 msgid "Arabic (Mauritania)"
-msgstr "Árabe (Arabia Saudita)"
+msgstr "Árabe (Mauritania)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "Árabe (Cisxordania e Gaza palestinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
@@ -44537,18 +44488,14 @@ msgid "Arabic (Saudi Arabia)"
 msgstr "Árabe (Arabia Saudita)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:62
-#, fuzzy
-#| msgid "Arabic (Jordan)"
 msgctxt "@info: country code"
 msgid "Arabic (Sudan)"
-msgstr "Árabe (Xordania)"
+msgstr "Árabe (Sudán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:63
-#, fuzzy
-#| msgid "Arabic (Syria)"
 msgctxt "@info: country code"
 msgid "Arabic (Somalia)"
-msgstr "Árabe (Siria)"
+msgstr "Árabe (Somalia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:64
 msgctxt "@info: country code"
@@ -44556,11 +44503,9 @@ msgid "Arabic (Syria)"
 msgstr "Árabe (Siria)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:65
-#, fuzzy
-#| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Arabic (Chad)"
-msgstr "Árabe (Iraq)"
+msgstr "Árabe (Chad)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:66
 msgctxt "@info: country code"
@@ -44580,7 +44525,7 @@ msgstr "Asamés (India)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "Azarí (República de Acerbaixán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
@@ -44588,11 +44533,9 @@ msgid "Bashkir (Russia)"
 msgstr "Bashkir (Rusia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
-#, fuzzy
-#| msgid "Bengali;Bangla"
 msgctxt "@info: country code"
 msgid "Bengali (Bangladesh)"
-msgstr "Bengalí ou bangla"
+msgstr "Bengalí (Bangladesh)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:72
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:76
@@ -44601,11 +44544,9 @@ msgid "Bengali (India)"
 msgstr "Bengalí (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:73
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Bengali (Singapore)"
-msgstr "Inglés (Singapur)"
+msgstr "Bengalí (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:74
 msgctxt "@info: country code"
@@ -44626,7 +44567,7 @@ msgstr "Tibetano (Bután)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:78
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
-msgstr ""
+msgstr "Tibetano (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
 msgctxt "@info: country code"
@@ -44634,11 +44575,9 @@ msgid "Breton (France)"
 msgstr "Bretón (Francia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:80
-#, fuzzy
-#| msgid "Bosnia and Herzegovina"
 msgctxt "@info: country code"
 msgid "Bosnian (Bosnia and Herzegovina)"
-msgstr "Bosnia e Hercegovina"
+msgstr "Bosníaco (Bosnia e Hercegovina)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:82
 msgctxt "@info: country code"
@@ -44656,23 +44595,19 @@ msgid "Catalan (France)"
 msgstr "Catalán (Francia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:85
-#, fuzzy
-#| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Cebuano (Philippines)"
-msgstr "Inglés (Filipinas)"
+msgstr "Cebuano (Filipinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "Chamorro (Guam)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
-#, fuzzy
-#| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
-msgstr "Illas Marianas do Norte"
+msgstr "Chamorro (Illas Marianas do Norte)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
 msgctxt "@info: country code"
@@ -44695,11 +44630,9 @@ msgid "Danish (Denmark)"
 msgstr "Dinamarqués (Dinamarca)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:92
-#, fuzzy
-#| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "Danish (Greenland)"
-msgstr "Inglés (Irlanda)"
+msgstr "Danés (Grenlandia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:93
 msgctxt "@info: country code"
@@ -44717,11 +44650,9 @@ msgid "German (Germany)"
 msgstr "Alemán (Alemaña)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:96
-#, fuzzy
-#| msgid "Danish (Denmark)"
 msgctxt "@info: country code"
 msgid "German (Denmark)"
-msgstr "Dinamarqués (Dinamarca)"
+msgstr "Alemán (Dinamarca)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:97
 msgctxt "@info: country code"
@@ -44734,11 +44665,9 @@ msgid "German (Luxembourg)"
 msgstr "Alemán (Luxemburgo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:99
-#, fuzzy
-#| msgid "Greek (Greece)"
 msgctxt "@info: country code"
 msgid "Greek (Cyprus)"
-msgstr "Grego (Grecia)"
+msgstr "Grego (Chipre)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:100
 msgctxt "@info: country code"
@@ -44746,25 +44675,19 @@ msgid "Greek (Greece)"
 msgstr "Grego (Grecia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:101
-#, fuzzy
-#| msgid "Antigua and Barbuda"
 msgctxt "@info: country code"
 msgid "English (Antigua and Barbuda)"
-msgstr "Antiga e Barbuda"
+msgstr "Inglés (Antiga e Barbuda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:102
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Anguilla)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Anguila)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:103
-#, fuzzy
-#| msgid "American Samoa"
 msgctxt "@info: country code"
 msgid "English (American Samoa)"
-msgstr "Samoa Americana"
+msgstr "Inglés (Samoa Americana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:104
 msgctxt "@info: country code"
@@ -44772,39 +44695,29 @@ msgid "English (Australia)"
 msgstr "Inglés (Australia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:105
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Barbados)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Barbados)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:106
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Bermuda)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Bermuda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:107
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Brunei)"
-msgstr "Inglés (Belice)"
+msgstr "Inglés (Brunei)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:108
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Bahamas)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Bahamas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:109
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Botswana)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Botswana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:110
 msgctxt "@info: country code"
@@ -44822,60 +44735,44 @@ msgid "English (Caribbean)"
 msgstr "Inglés (Caribe)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:113
-#, fuzzy
-#| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Cook Islands)"
-msgstr "Inglés (Irlanda)"
+msgstr "Inglés (Illas Cook)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:114
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cameroon)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Camerún)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:115
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Dominica)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Dominica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:116
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Eritrea)"
-msgstr "Inglés (Caribe)"
+msgstr "Inglés (Eritrea)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:117
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Ethiopia)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Etiopía)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:118
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Fiji)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Fidxi)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:119
-#, fuzzy
-#| msgid "Falkland Islands"
 msgctxt "@info: country code"
 msgid "English (Falkland Islands)"
-msgstr "Illas Falkland/Malvinas"
+msgstr "Inglés (Illas Falkland)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:120
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Micronesia)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Micronesia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:121
 msgctxt "@info: country code"
@@ -44883,46 +44780,34 @@ msgid "English (United Kingdom)"
 msgstr "Inglés (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:122
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Grenada)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Granada)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:123
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Ghana)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Ghana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:124
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Gibraltar)"
-msgstr "Inglés (Australia)"
+msgstr "Inglés (Gibraltar)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Gambia)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Gambia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Guam)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Guam)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Guyana)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Güiana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
 msgctxt "@info: country code"
@@ -44930,11 +44815,9 @@ msgid "English (Ireland)"
 msgstr "Inglés (Irlanda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:129
-#, fuzzy
-#| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Israel)"
-msgstr "Inglés (Irlanda)"
+msgstr "Inglés (Israel)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:130
 msgctxt "@info: country code"
@@ -44942,11 +44825,9 @@ msgid "English (India)"
 msgstr "Inglés (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:131
-#, fuzzy
-#| msgid "British Indian Ocean Territory"
 msgctxt "@info: country code"
 msgid "English (British Indian Ocean Territ)"
-msgstr "Territorio Inglés do Océano Índico"
+msgstr "Inglés (Territorio Inglés do Océano Índico)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:132
 msgctxt "@info: country code"
@@ -44954,88 +44835,64 @@ msgid "English (Jamaica)"
 msgstr "Inglés (Xamaica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:133
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Kenya)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Kenya)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:134
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Kiribati)"
-msgstr "Inglés (Caribe)"
+msgstr "Inglés (Kiribati)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:135
-#, fuzzy
-#| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (St. Kitts-Nevis)"
-msgstr "Inglés (Estados Unidos)"
+msgstr "Inglés (Saint Kitts e Nevis)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:136
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cayman Islands)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Illas Caimán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:137
-#, fuzzy
-#| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "English (St. Lucia)"
-msgstr "Inglés (Suráfrica)"
+msgstr "Inglés (Santa Lucía)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:138
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Liberia)"
-msgstr "Inglés (Caribe)"
+msgstr "Inglés (Liberia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:139
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Lesotho)"
-msgstr "Inglés (Australia)"
+msgstr "Inglés (Lesoto)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:140
-#, fuzzy
-#| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "English (Northern Mariana Islands)"
-msgstr "Illas Marianas do Norte"
+msgstr "Inglés (Illas Marianas do Norte)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:141
-#, fuzzy
-#| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (Montserrat)"
-msgstr "Inglés (Estados Unidos)"
+msgstr "Inglés (Montserrat)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:142
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malta)"
-msgstr "Inglés (Malaisia)"
+msgstr "Inglés (Malta)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:143
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Mauritius)"
-msgstr "Inglés (Malaisia)"
+msgstr "Inglés (Mauricio)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:144
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malawi)"
-msgstr "Inglés (Malaisia)"
+msgstr "Inglés (Malaui)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:145
 msgctxt "@info: country code"
@@ -45043,39 +44900,29 @@ msgid "English (Malaysia)"
 msgstr "Inglés (Malaisia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:146
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Namibia)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Namibia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:147
-#, fuzzy
-#| msgid "Norfolk Island"
 msgctxt "@info: country code"
 msgid "English (Norfolk Island)"
-msgstr "Illa Norfolk"
+msgstr "Inglés (Illa Norfolk)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:148
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nigeria)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Nixeria)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:149
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nauru)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Nauru)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:150
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Niue)"
-msgstr "Inglés (Belice)"
+msgstr "Inglés (Niue)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:151
 msgctxt "@info: country code"
@@ -45083,11 +44930,9 @@ msgid "English (New Zealand)"
 msgstr "Inglés (Nova Celandia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:152
-#, fuzzy
-#| msgid "Papua New Guinea"
 msgctxt "@info: country code"
 msgid "English (Papua New Guinea)"
-msgstr "Papúa Nova Guinea"
+msgstr "Inglés (Papúa Nova Guinea)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:153
 msgctxt "@info: country code"
@@ -45095,53 +44940,39 @@ msgid "English (Philippines)"
 msgstr "Inglés (Filipinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:154
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Pakistan)"
-msgstr "Inglés (Caribe)"
+msgstr "Inglés (Paquistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:155
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Pitcairn)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Illas Pitcairn)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:156
-#, fuzzy
-#| msgid "Spanish (Puerto Rico)"
 msgctxt "@info: country code"
 msgid "English (Puerto Rico)"
-msgstr "Español (Porto Rico)"
+msgstr "Inglés (Porto Rico)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:157
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Palau)"
-msgstr "Inglés (Malaisia)"
+msgstr "Inglés (Palau)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:158
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Rwanda)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Ruanda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:159
-#, fuzzy
-#| msgid "Solomon Islands"
 msgctxt "@info: country code"
 msgid "English (Solomon Islands)"
-msgstr "Illas Salomón"
+msgstr "Inglés (Illas Salomón)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:160
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Seychelles)"
-msgstr "Inglés (Belice)"
+msgstr "Inglés (Seychelles)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:161
 msgctxt "@info: country code"
@@ -45149,53 +44980,39 @@ msgid "English (Singapore)"
 msgstr "Inglés (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:162
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (St. Helena)"
-msgstr "Inglés (Belice)"
+msgstr "Inglés (Santa Helena)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:163
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "English (Sierra Leone)"
-msgstr "Inglés (Singapur)"
+msgstr "Inglés (Serra Leoa)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:164
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Somalia)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Somalia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:165
-#, fuzzy
-#| msgid "English (New Zealand)"
 msgctxt "@info: country code"
 msgid "English (Swaziland)"
-msgstr "Inglés (Nova Celandia)"
+msgstr "Inglés (Eswatini)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:166
-#, fuzzy
-#| msgid "Turks and Caicos Islands"
 msgctxt "@info: country code"
 msgid "English (Turks and Caicos Islands)"
-msgstr "Illas Caicos e Turks"
+msgstr "Inglés (Illas Turks e Caicos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:167
-#, fuzzy
-#| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Tokelau)"
-msgstr "Inglés (Irlanda)"
+msgstr "Inglés (Tokelau)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:168
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Tonga)"
-msgstr "Inglés (India)"
+msgstr "Inglés (Tonga)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:169
 msgctxt "@info: country code"
@@ -45203,11 +45020,9 @@ msgid "English (Trinidad)"
 msgstr "Inglés (Trindade)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:170
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Uganda)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Uganda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:171
 msgctxt "@info: country code"
@@ -45215,39 +45030,29 @@ msgid "English (United States)"
 msgstr "Inglés (Estados Unidos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
-#, fuzzy
-#| msgid "St. Vincent and the Grenadines"
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
-msgstr "Santo Vicente e as Granadinas"
+msgstr "Inglés (Santo Vicente e as Granadinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
-#, fuzzy
-#| msgid "British Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (British Virgin Islands)"
-msgstr "Illas Virxes Británicas"
+msgstr "Inglés (Illas Virxes Británicas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:174
-#, fuzzy
-#| msgid "US Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (U.S. Virgin Islands)"
-msgstr "Illas Virxes dos EUA"
+msgstr "Inglés (Illas Virxes dos EUA)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:175
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Vanuatu)"
-msgstr "Inglés (Canadá)"
+msgstr "Inglés (Vanuatu)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:176
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Western Samoa)"
-msgstr "Inglés (Australia)"
+msgstr "Inglés (Samoa Occidental)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:177
 msgctxt "@info: country code"
@@ -45255,11 +45060,9 @@ msgid "English (South Africa)"
 msgstr "Inglés (Suráfrica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:178
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Zambia)"
-msgstr "Inglés (Xamaica)"
+msgstr "Inglés (Zambia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:179
 msgctxt "@info: country code"
@@ -45267,11 +45070,9 @@ msgid "English (Zimbabwe)"
 msgstr "Inglés (Cimbabue)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:180
-#, fuzzy
-#| msgid "Breton (France)"
 msgctxt "@info: country code"
 msgid "Esperanto (France)"
-msgstr "Bretón (Francia)"
+msgstr "Esperanto (Francia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:181
 msgctxt "@info: country code"
@@ -45299,11 +45100,9 @@ msgid "Spanish (Costa Rica)"
 msgstr "Español (Costa Rica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:186
-#, fuzzy
-#| msgid "Spanish (Colombia)"
 msgctxt "@info: country code"
 msgid "Spanish (Cuba)"
-msgstr "Español (Colombia)"
+msgstr "Español (Cuba)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:187
 msgctxt "@info: country code"
@@ -45321,11 +45120,9 @@ msgid "Spanish (Spain)"
 msgstr "Español (España)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:190
-#, fuzzy
-#| msgid "Equatorial Guinea"
 msgctxt "@info: country code"
 msgid "Spanish (Equatorial Guinea)"
-msgstr "Guinea Ecuatorial"
+msgstr "Español (Guinea Ecuatorial)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:191
 msgctxt "@info: country code"
@@ -45408,18 +45205,14 @@ msgid "Finnish (Finland)"
 msgstr "Finlandés (Finlandia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:207
-#, fuzzy
-#| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Filipino (Philippines)"
-msgstr "Inglés (Filipinas)"
+msgstr "Filipino (Filipinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:208
-#, fuzzy
-#| msgid "Fiji"
 msgctxt "@info: country code"
 msgid "Fijian (Fiji)"
-msgstr "Fidxi"
+msgstr "Fidxiano (Fidxi)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 msgctxt "@info: country code"
@@ -45427,11 +45220,9 @@ msgid "Faeroese (Faero Islands)"
 msgstr "Feroés (Illas Feroes)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:210
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Andorra)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Andorra)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:211
 msgctxt "@info: country code"
@@ -45439,25 +45230,19 @@ msgid "French (Belgium)"
 msgstr "Francés (Bélxica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:212
-#, fuzzy
-#| msgid "Burkina Faso"
 msgctxt "@info: country code"
 msgid "French (Burkina Faso)"
-msgstr "Burkina Faso"
+msgstr "Francés (Burkina Faso)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:213
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Burundi)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Burundi)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:214
-#, fuzzy
-#| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Benin)"
-msgstr "Francés (Bélxica)"
+msgstr "Francés (Benín)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:215
 msgctxt "@info: country code"
@@ -45467,21 +45252,17 @@ msgstr "Francés (Canadá)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:216
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
-msgstr ""
+msgstr "Francés (República Democrática do Congo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
-#, fuzzy
-#| msgid "Central African Republic"
 msgctxt "@info: country code"
 msgid "French (Central African Republic)"
-msgstr "República Centro-Africana"
+msgstr "Francés (República Centroafricana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:218
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Congo)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Congo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:219
 msgctxt "@info: country code"
@@ -45491,21 +45272,17 @@ msgstr "Francés (Suíza)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:220
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
-msgstr ""
+msgstr "Francés (Costa do Marfil)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Cameroon)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Camerún)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:222
-#, fuzzy
-#| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Djibouti)"
-msgstr "Francés (Bélxica)"
+msgstr "Francés (Xibutí)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:223
 msgctxt "@info: country code"
@@ -45513,67 +45290,49 @@ msgid "French (France)"
 msgstr "Francés (Francia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:224
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Gabon)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Gabón)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:225
-#, fuzzy
-#| msgid "Welsh (United Kingdom)"
 msgctxt "@info: country code"
 msgid "French (United Kingdom)"
-msgstr "Galés (Reino Unido)"
+msgstr "Francés (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:226
-#, fuzzy
-#| msgid "French Guiana"
 msgctxt "@info: country code"
 msgid "French (French Guiana)"
-msgstr "Güiana Francesa"
+msgstr "Francés (Güiana Francesa)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:227
-#, fuzzy
-#| msgid "French Guiana"
 msgctxt "@info: country code"
 msgid "French (Guinea)"
-msgstr "Güiana Francesa"
+msgstr "Francés (Güiana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:228
-#, fuzzy
-#| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Guadeloupe)"
-msgstr "Francés (Bélxica)"
+msgstr "Francés (Guadalupe)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:229
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Haiti)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Haití)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:230
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Italy)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Italia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:231
-#, fuzzy
-#| msgid "Faeroese (Faero Islands)"
 msgctxt "@info: country code"
 msgid "French (Comoros Islands)"
-msgstr "Feroés (Illas Feroes)"
+msgstr "Francés (Illas Comoras)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:232
-#, fuzzy
-#| msgid "Arabic (Lebanon)"
 msgctxt "@info: country code"
 msgid "French (Lebanon)"
-msgstr "Árabe (Líbano)"
+msgstr "Francés (Líbano)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:233
 msgctxt "@info: country code"
@@ -45586,102 +45345,74 @@ msgid "French (Monaco)"
 msgstr "Francés (Mónaco)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:235
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Madagascar)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Madagascar)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:236
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Mali)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Mali)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:237
-#, fuzzy
-#| msgid "French (France)"
 msgctxt "@info: country code"
 msgid "French (Martinique)"
-msgstr "Francés (Francia)"
+msgstr "Francés (Martinica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:238
-#, fuzzy
-#| msgid "New Caledonia"
 msgctxt "@info: country code"
 msgid "French (New Caledonia)"
-msgstr "Nova Caledonia"
+msgstr "Francés (Nova Caledonia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:239
-#, fuzzy
-#| msgid "French Polynesia"
 msgctxt "@info: country code"
 msgid "French (French Polynesia)"
-msgstr "Polinesia Francesa"
+msgstr "Francés (Polinesia Francesa)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:240
-#, fuzzy
-#| msgid "St. Pierre and Miquelon"
 msgctxt "@info: country code"
 msgid "French (St. Pierre and Miquelon)"
-msgstr "San Pedro e Miguelón"
+msgstr "Francés (San Pedro e Miguelón)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:241
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Reunion)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Reunión)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:242
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Rwanda)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Ruanda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:243
-#, fuzzy
-#| msgid "Seychelles"
 msgctxt "@info: country code"
 msgid "French (Seychelles)"
-msgstr "Seicheles"
+msgstr "Francés (Seychelles)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:244
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Chad)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Chad)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:245
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Togo)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Togo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:246
-#, fuzzy
-#| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Vanuatu)"
-msgstr "Francés (Canadá)"
+msgstr "Francés (Vanuatu)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:247
-#, fuzzy
-#| msgid "Wallis and Futuna Islands "
 msgctxt "@info: country code"
 msgid "French (Wallis and Futuna)"
-msgstr "Illas Wallis e Futuna"
+msgstr "Francés (Wallis e Futuna)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:248
-#, fuzzy
-#| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Mayotte)"
-msgstr "Francés (Mónaco)"
+msgstr "Francés (Mayotte)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:249
 msgctxt "@info: country code"
@@ -45689,11 +45420,9 @@ msgid "Frisian (Netherlands)"
 msgstr "Friso (Países Baixos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:250
-#, fuzzy
-#| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Irish (United Kingdom)"
-msgstr "Inglés (Reino Unido)"
+msgstr "Irlandés (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:251
 msgctxt "@info: country code"
@@ -45701,11 +45430,9 @@ msgid "Irish (Ireland)"
 msgstr "Irlandés (Irlanda)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:252
-#, fuzzy
-#| msgid "Welsh (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Gaelic (United Kingdom)"
-msgstr "Galés (Reino Unido)"
+msgstr "Gaélico (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:253
 msgctxt "@info: country code"
@@ -45718,30 +45445,24 @@ msgid "Gujarati (India)"
 msgstr "Guxaratí (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:255
-#, fuzzy
-#| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Manx (United Kingdom)"
-msgstr "Inglés (Reino Unido)"
+msgstr "Manx (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:256
-#, fuzzy
-#| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Hausa (Chad)"
-msgstr "Árabe (Iraq)"
+msgstr "Hausa (Chad)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr ""
+msgstr "Hawaiano (estado de Hawaii nos EUA)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
-#, fuzzy
-#| msgid "Hebrew (Israel)"
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr "Hebreo (Israel)"
+msgstr "Hebreo moderno (Israel)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
 msgctxt "@info: country code"
@@ -45751,7 +45472,7 @@ msgstr "Hindi (India)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:260
 msgctxt "@info: country code"
 msgid "Hmong (Laos)"
-msgstr ""
+msgstr "Hmong (Laos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
 msgctxt "@info: country code"
@@ -45764,11 +45485,9 @@ msgid "Croatian (Croatia)"
 msgstr "Croata (Croata)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
-#, fuzzy
-#| msgid "Catalan (France)"
 msgctxt "@info: country code"
 msgid "Haitian Creole (France)"
-msgstr "Catalán (Francia)"
+msgstr "Crioulo haitiano (Francia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:264
 msgctxt "@info: country code"
@@ -45776,11 +45495,9 @@ msgid "Hungarian (Hungary)"
 msgstr "Húngaro (Hungría)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:265
-#, fuzzy
-#| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Hungarian (Slovenia)"
-msgstr "Esloveno (Eslovenia)"
+msgstr "Húngaro (Eslovenia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:266
 msgctxt "@info: country code"
@@ -45790,19 +45507,17 @@ msgstr "Armenio (Armenia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
 msgctxt "@info: country code"
 msgid "Indonesian (Bahasa Indonesia)"
-msgstr ""
+msgstr "Indonesio"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:268
-#, fuzzy
-#| msgid "Yoruba (Nigeria)"
 msgctxt "@info: country code"
 msgid "Igbo (Nigeria)"
-msgstr "Yoruba (Nixeria)"
+msgstr "Ibo (Nixeria)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:269
 msgctxt "@info: country code"
 msgid "Sichuan Yi (People's Republic of China)"
-msgstr ""
+msgstr "Nuosu (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:270
 msgctxt "@info: country code"
@@ -45815,11 +45530,9 @@ msgid "Italian (Switzerland)"
 msgstr "Italiano (Suíza)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:272
-#, fuzzy
-#| msgid "Croatian (Croatia)"
 msgctxt "@info: country code"
 msgid "Italian (Croatia)"
-msgstr "Croata (Croata)"
+msgstr "Italiano (Croacia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:273
 msgctxt "@info: country code"
@@ -45827,18 +45540,14 @@ msgid "Italian (Italy)"
 msgstr "Italiano (Italia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:274
-#, fuzzy
-#| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Italian (Slovenia)"
-msgstr "Esloveno (Eslovenia)"
+msgstr "Italiano (Eslovenia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:275
-#, fuzzy
-#| msgid "Catalan (Spain)"
 msgctxt "@info: country code"
 msgid "Italian (San Marino)"
-msgstr "Catalán (España)"
+msgstr "Italiano (San Marino)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
 msgctxt "@info: country code"
@@ -45853,14 +45562,12 @@ msgstr "Xaponés (Xapón)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
-msgstr ""
+msgstr "Xavanés moderno (Indonesia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
-#, fuzzy
-#| msgid "(Indonesian)"
 msgctxt "@info: country code"
 msgid "Javanese (Indonesia)"
-msgstr "(Indonesio)"
+msgstr "Xavanés (Indonesia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:280
 msgctxt "@info: country code"
@@ -45893,11 +45600,9 @@ msgid "Korean (South Korea)"
 msgstr "Coreano (Corea do Sur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:286
-#, fuzzy
-#| msgid "Korean (South Korea)"
 msgctxt "@info: country code"
 msgid "Korean (North Korea)"
-msgstr "Coreano (Corea do Sur)"
+msgstr "Coreano (Corea do Norte)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
 msgctxt "@info: country code"
@@ -45905,25 +45610,19 @@ msgid "Kyrgyz (Kyrgyzstan)"
 msgstr "Kirguiz (Kirguizistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:288
-#, fuzzy
-#| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Cornish (United Kingdom)"
-msgstr "Inglés (Reino Unido)"
+msgstr "Córnico (Reino Unido)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:289
-#, fuzzy
-#| msgid "Irish (Ireland)"
 msgctxt "@info: country code"
 msgid "Kurdish (Iran)"
-msgstr "Irlandés (Irlanda)"
+msgstr "Kurdo (Irán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:290
-#, fuzzy
-#| msgid "Italian (Italy)"
 msgctxt "@info: country code"
 msgid "Latin (Italy)"
-msgstr "Italiano (Italia)"
+msgstr "Latín (Italia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:291
 msgctxt "@info: country code"
@@ -45933,14 +45632,12 @@ msgstr "Luxemburgués (Luxemburgo)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:292
 msgctxt "@info: country code"
 msgid "Lingala (Democratic Republic of Congo)"
-msgstr ""
+msgstr "Lingala (República Democrática do Congo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:293
-#, fuzzy
-#| msgid "Lingala"
 msgctxt "@info: country code"
 msgid "Lingala (Congo)"
-msgstr "Lingala"
+msgstr "Lingala (Congo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:294
 msgctxt "@info: country code"
@@ -45958,18 +45655,14 @@ msgid "Latvian (Latvia)"
 msgstr "Letón (Letonia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:297
-#, fuzzy
-#| msgid "Malay (Malaysia)"
 msgctxt "@info: country code"
 msgid "Malagasy (Madagascar)"
-msgstr "Malaio (Malaisia)"
+msgstr "Malgaxe (Madagascar)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:298
-#, fuzzy
-#| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Meadow Mari (Russia)"
-msgstr "Tátaro (Rusia)"
+msgstr "Mari das pradeiras (Rusia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:299
 msgctxt "@info: country code"
@@ -45989,7 +45682,7 @@ msgstr "Malaialam (India)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:302
 msgctxt "@info: country code"
 msgid "Mongolian (People's Republic of China)"
-msgstr ""
+msgstr "Mongol (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:303
 msgctxt "@info: country code"
@@ -46002,11 +45695,9 @@ msgid "Marathi (India)"
 msgstr "Marathi (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:305
-#, fuzzy
-#| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Hill Mari (Russia)"
-msgstr "Tátaro (Rusia)"
+msgstr "Mari das montañas (Rusia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:306
 msgctxt "@info: country code"
@@ -46019,11 +45710,9 @@ msgid "Malay (Malaysia)"
 msgstr "Malaio (Malaisia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:308
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Malay (Singapore)"
-msgstr "Inglés (Singapur)"
+msgstr "Malaio (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:309
 msgctxt "@info: country code"
@@ -46033,7 +45722,7 @@ msgstr "Maltés (Malta)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:310
 msgctxt "@info: country code"
 msgid "Burmese (Myanmar)"
-msgstr ""
+msgstr "Birmano (Myanmar)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:311
 msgctxt "@info: country code"
@@ -46046,18 +45735,14 @@ msgid "Nepali (Nepal)"
 msgstr "Nepalí (Nepal)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:313
-#, fuzzy
-#| msgid "Netherlands Antilles"
 msgctxt "@info: country code"
 msgid "Dutch (Netherlands Antilles)"
-msgstr "Antillas Holandesas"
+msgstr "Neerlandés (Antillas Neerlandesas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:314
-#, fuzzy
-#| msgid "Dutch (Belgium)"
 msgctxt "@info: country code"
 msgid "Dutch (Aruba)"
-msgstr "Holandés (Bélxica)"
+msgstr "Neerlandés (Aruba)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:315
 msgctxt "@info: country code"
@@ -46070,18 +45755,14 @@ msgid "Dutch (Netherlands)"
 msgstr "Holandés (Países Baixos)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:317
-#, fuzzy
-#| msgid "Suriname"
 msgctxt "@info: country code"
 msgid "Dutch (Suriname)"
-msgstr "Suriname"
+msgstr "Neerlandés (Suriname)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:318
-#, fuzzy
-#| msgid "Norwegian Bokmål (Norway)"
 msgctxt "@info: country code"
 msgid "Norwegian (Norway)"
-msgstr "Noruegués Bokmål (Noruega)"
+msgstr "Noruegués (Noruega)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:319
 msgctxt "@info: country code"
@@ -46094,11 +45775,9 @@ msgid "Sesotho sa Leboa (South Africa)"
 msgstr "Sesotho sa Leboa (Suráfrica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:321
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "Chewa (Zambia)"
-msgstr "Inglés (Xamaica)"
+msgstr "Chewa (Zambia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:322
 msgctxt "@info: country code"
@@ -46118,7 +45797,7 @@ msgstr "Punjabi (India)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:325
 msgctxt "@info: country code"
 msgid "Papiamento (Aruba-Dutch Caribbean)"
-msgstr ""
+msgstr "Papiamento (Aruba-Caribe Neerlandés)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:326
 msgctxt "@info: country code"
@@ -46131,11 +45810,9 @@ msgid "Pashto (Afghanistan)"
 msgstr "Paxtún (Afganistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:328
-#, fuzzy
-#| msgid "Portuguese (Portugal)"
 msgctxt "@info: country code"
 msgid "Portuguese (Angola)"
-msgstr "Portugués (Portugal)"
+msgstr "Portugués (Angola)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:329
 msgctxt "@info: country code"
@@ -46143,25 +45820,19 @@ msgid "Portuguese (Brazil)"
 msgstr "Portugués (Brasil)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:330
-#, fuzzy
-#| msgid "Faeroese (Faero Islands)"
 msgctxt "@info: country code"
 msgid "Portuguese (Cape Verde Islands)"
-msgstr "Feroés (Illas Feroes)"
+msgstr "Portugués (Illas de Cabo Verde)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:331
-#, fuzzy
-#| msgid "Guinea-Bissau"
 msgctxt "@info: country code"
 msgid "Portuguese (Guinea-Bissau)"
-msgstr "Guinea-Bissau"
+msgstr "Portugués (Guinea-Bissau)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:332
-#, fuzzy
-#| msgid "Portuguese (Brazil)"
 msgctxt "@info: country code"
 msgid "Portuguese (Mozambique)"
-msgstr "Portugués (Brasil)"
+msgstr "Portugués (Mozambique)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:333
 msgctxt "@info: country code"
@@ -46171,12 +45842,12 @@ msgstr "Portugués (Portugal)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:334
 msgctxt "@info: country code"
 msgid "Portuguese (São Tomé e Principe)"
-msgstr ""
+msgstr "Portugués (San Tomé e Príncipe)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
 msgctxt "@info: country code"
 msgid "Otomi Querétaro (Mexico)"
-msgstr ""
+msgstr "Otomi de Querétaro (México)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:336
 msgctxt "@info: country code"
@@ -46204,18 +45875,14 @@ msgid "Sanskrit (India)"
 msgstr "Sánscrito (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:341
-#, fuzzy
-#| msgid "Hindi (India)"
 msgctxt "@info: country code"
 msgid "Sindhi (India)"
-msgstr "Hindi (India)"
+msgstr "Sindhi (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:342
-#, fuzzy
-#| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Sindhi (Pakistan)"
-msgstr "Urdu (Paquistán)"
+msgstr "Sindhi (Paquistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:343
 msgctxt "@info: country code"
@@ -46248,25 +45915,19 @@ msgid "Slovenian (Slovenia)"
 msgstr "Esloveno (Eslovenia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:349
-#, fuzzy
-#| msgid "American Samoa"
 msgctxt "@info: country code"
 msgid "Samoan (Samoa)"
-msgstr "Samoa Americana"
+msgstr "Samoano (Samoa)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:350
-#, fuzzy
-#| msgid "English (Zimbabwe)"
 msgctxt "@info: country code"
 msgid "Shona (Zimbabwe)"
-msgstr "Inglés (Cimbabue)"
+msgstr "Shona (Cimbabue)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:351
-#, fuzzy
-#| msgid "Arabic (Syria)"
 msgctxt "@info: country code"
 msgid "Somali  (Somalia)"
-msgstr "Árabe (Siria)"
+msgstr "Somalí (Somalia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
 msgctxt "@info: country code"
@@ -46274,60 +45935,44 @@ msgid "Albanian (Albania)"
 msgstr "Albanés (Albania)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:353
-#, fuzzy
-#| msgid "Croatian (Bosnia and Herzegovina, Latin)"
 msgctxt "@info: country code"
 msgid "Serbian (Bosnia-Herzegovina)"
-msgstr "Croata (Bosnia e Hercegovina, latino)"
+msgstr "Serbio (Bosnia e Hercegovina)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:354
-#, fuzzy
-#| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Serbia)"
-msgstr "Persa (Irán)"
+msgstr "Serbio (Serbia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:355
-#, fuzzy
-#| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Serbia and Montenegro)"
-msgstr "Persa (Irán)"
+msgstr "Serbio (Serbia e Montenegro)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:356
-#, fuzzy
-#| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Yugoslavia)"
-msgstr "Persa (Irán)"
+msgstr "Serbio (Iugoslavia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:357
-#, fuzzy
-#| msgid "Swaziland"
 msgctxt "@info: country code"
 msgid "Swati (Swaziland)"
-msgstr "Suazilandia"
+msgstr "Suazi (Eswatini)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:358
-#, fuzzy
-#| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "Swati (South Africa)"
-msgstr "Inglés (Suráfrica)"
+msgstr "Suazi (Suráfrica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:359
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "Sotho (Lesotho)"
-msgstr "Inglés (Australia)"
+msgstr "Sotho (Lesoto)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:360
-#, fuzzy
-#| msgid "(Indonesian)"
 msgctxt "@info: country code"
 msgid "Sundanese (Indonesia)"
-msgstr "(Indonesio)"
+msgstr "Sudanés (Indonesia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:361
 msgctxt "@info: country code"
@@ -46345,11 +45990,9 @@ msgid "Swahili (Kenya)"
 msgstr "Swahili (Quenia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:364
-#, fuzzy
-#| msgid "Swahili (Kenya)"
 msgctxt "@info: country code"
 msgid "Swahili (Tanzania)"
-msgstr "Swahili (Quenia)"
+msgstr "Suahili (Tanzania)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:365
 msgctxt "@info: country code"
@@ -46357,11 +46000,9 @@ msgid "Tamil (India)"
 msgstr "Tamil (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:366
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Tamil (Singapore)"
-msgstr "Inglés (Singapur)"
+msgstr "Támil (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:367
 msgctxt "@info: country code"
@@ -46369,11 +46010,9 @@ msgid "Telugu (India)"
 msgstr "Telugu (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:368
-#, fuzzy
-#| msgid "Tajikistan"
 msgctxt "@info: country code"
 msgid "Tajik (Tajikistan)"
-msgstr "Taxiquistán"
+msgstr "Taxico (Taxiquistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:369
 msgctxt "@info: country code"
@@ -46386,25 +46025,19 @@ msgid "Turkmen (Turkmenistan)"
 msgstr "Turcomán (Turcomenistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
-#, fuzzy
-#| msgid "healingClone"
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
-msgstr "restauraciónDeClon"
+msgstr "Klingon (estado dos EUA)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
-#, fuzzy
-#| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Tagalog (Philippines)"
-msgstr "Inglés (Filipinas)"
+msgstr "Tagalo (Filipinas)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:373
-#, fuzzy
-#| msgid "Setswana Tswana (South Africa)"
 msgctxt "@info: country code"
 msgid "Setswana Tswana (Botswana)"
-msgstr "Setswana Tswana (Suráfrica)"
+msgstr "Setswana Tswana (Botswana)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:374
 msgctxt "@info: country code"
@@ -46412,25 +46045,19 @@ msgid "Setswana Tswana (South Africa)"
 msgstr "Setswana Tswana (Suráfrica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:375
-#, fuzzy
-#| msgid "Mongolian (Mongolia)"
 msgctxt "@info: country code"
 msgid "Tongan (Tonga)"
-msgstr "Mongol (Mongolia)"
+msgstr "Tongano (Tonga)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:376
-#, fuzzy
-#| msgid "Bulgarian (Bulgaria)"
 msgctxt "@info: country code"
 msgid "Turkish (Bulgaria)"
-msgstr "Búlgaro (Bulgaria)"
+msgstr "Turco (Bulgaria)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:377
-#, fuzzy
-#| msgid "Turkish (Turkey)"
 msgctxt "@info: country code"
 msgid "Turkish (Cyprus)"
-msgstr "Turco (Turquía)"
+msgstr "Turco (Chipre)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:378
 msgctxt "@info: country code"
@@ -46443,23 +46070,19 @@ msgid "Tatar (Russia)"
 msgstr "Tátaro (Rusia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:380
-#, fuzzy
-#| msgid "French Polynesia"
 msgctxt "@info: country code"
 msgid "Tahitian (French Polynesia)"
-msgstr "Polinesia Francesa"
+msgstr "Tahitiano (Polinesia Francesa)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:381
-#, fuzzy
-#| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Udmurt (Russia)"
-msgstr "Tátaro (Rusia)"
+msgstr "Udmurto (Rusia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
 msgctxt "@info: country code"
 msgid "Uighur (People's Republic of China)"
-msgstr ""
+msgstr "Uigur (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
 msgctxt "@info: country code"
@@ -46477,11 +46100,9 @@ msgid "Urdu (Pakistan)"
 msgstr "Urdu (Paquistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:386
-#, fuzzy
-#| msgid "Uzbekistan"
 msgctxt "@info: country code"
 msgid "Uzbek (Uzbekistan)"
-msgstr "Uzbequistán"
+msgstr "Uzbeko (Uzbequistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:387
 msgctxt "@info: country code"
@@ -46494,18 +46115,14 @@ msgid "Wolof (Senegal)"
 msgstr "Wolof (Senegal)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:389
-#, fuzzy
-#| msgid "isiXhosa Xhosa (South Africa)"
 msgctxt "@info: country code"
 msgid "IsiXhosa Xhosa (South Africa)"
-msgstr "isiXhosa Xhosa (Suráfrica)"
+msgstr "IsiXhosa Xhosa (Suráfrica)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
-#, fuzzy
-#| msgid "German (Germany)"
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr "Alemán (Alemaña)"
+msgstr "Yiddish (Alemaña)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
 msgctxt "@info: country code"
@@ -46515,19 +46132,17 @@ msgstr "Yoruba (Nixeria)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 msgctxt "@info: country code"
 msgid "Yucatec Maya (Mexico)"
-msgstr ""
+msgstr "Maia iucateco (México)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
 msgctxt "@info: country code"
 msgid "Chinese (People's Republic of China)"
-msgstr ""
+msgstr "Chinés (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
-#, fuzzy
-#| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr "Chinés (Hong Kong, China)"
+msgstr "Chinés (RAE de Hong Kong, República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
 msgctxt "@info: country code"
@@ -46545,11 +46160,9 @@ msgid "Chinese (Taiwan)"
 msgstr "Chinés (Taiwán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:398
-#, fuzzy
-#| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Simplified Chinese (People's Republic of China)"
-msgstr "Chinés (Hong Kong, China)"
+msgstr "Chinés simplificado (República Popular da China)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:399
 msgctxt "@info: country code"
@@ -48064,18 +47677,16 @@ msgid "Use structured definition of the subject matter:"
 msgstr "Usar a definición estruturada do asunto:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:126
-#, fuzzy, kde-format
-#| msgid "Standard"
+#, kde-format
 msgctxt "@label: subject widget"
 msgid "Use standard"
-msgstr "Estándar"
+msgstr "Usar o estándar"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:127
-#, fuzzy, kde-format
-#| msgid "Reference Image"
+#, kde-format
 msgctxt "@label: subject widget"
 msgid "reference code"
-msgstr "Imaxe de referencia"
+msgstr "código de referencia"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:136
 #, kde-format
@@ -48084,39 +47695,34 @@ msgid "Use custom definition"
 msgstr "Usar unha definición personalizada"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:152
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr "Indique aquí o fornecedor do contido."
+msgstr "Defina aquí a referencia do fornecedor de información."
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:164
-#, fuzzy, kde-format
-#| msgid "Set here the contact 'phone number."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
-msgstr "Indique aquí o teléfono do contacto."
+msgstr "Defina aquí o número de referencia do asunto."
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:175
-#, fuzzy, kde-format
-#| msgid "Set here the contact address."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr "Indique aquí o enderezo do contacto."
+msgstr "Defina aquí o nome do asunto."
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:186
-#, fuzzy, kde-format
-#| msgid "Set here the contact address."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr "Indique aquí o enderezo do contacto."
+msgstr "Defina aquí o nome do tema."
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:197
-#, fuzzy, kde-format
-#| msgid "Set here the contact e-mail."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "Indique aquí o correo do contacto."
+msgstr "Defina aquí o nome do detalle."
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, kde-format
@@ -48169,51 +47775,49 @@ msgid "&Replace"
 msgstr "&Substituír"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:57
-#, fuzzy, kde-format
-#| msgid "The specified camera (\"%1\") is not supported."
+#, kde-format
 msgid "Selected source language %1 is not supported for %2"
-msgstr "A cámara indicada («%1») non é compatíbel."
+msgstr "O idioma de orixe seleccionado, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator.cpp:69
 #, kde-format
 msgid "Selected translation language %1 is not supported for %2"
-msgstr ""
+msgstr "O idioma de tradución seleccionado, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator.cpp:81
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgid "Selected ui language %1 is not supported for %2"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "O idioma de interface seleccionado, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator.cpp:115
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "Title cannot be empty."
+#, kde-format
 msgid "%1 URL can't be empty."
-msgstr "O título non pode estar baleiro."
+msgstr "O URL de %1 non pode quedar baleiro."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "Erro: non se poden usar as credenciais de Bing na versión web."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "Erro: non se pode extraer a chave de Bing da versión web."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Erro: non se pode extraer o pase de Bing da versión web."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"Erro: non se pode extraer información adicional de Bing da versión web."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -48221,7 +47825,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "Erro: non se pode analizar o idioma detectado automaticamente."
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -48231,13 +47835,14 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Erro: os sistemas de motores detectaron tráfico sospeitoso desde a súa rede "
+"de computadores. Repita a solicitude máis tarde."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Automatically detect"
-msgstr "&Detectar automaticamente"
+msgstr "Detectar automaticamente"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:106
 #, kde-format
@@ -48270,11 +47875,10 @@ msgid "Armenian"
 msgstr "Armenio"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:121
-#, fuzzy, kde-format
-#| msgid "Azerbaijani"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Azeerbaijani"
-msgstr "Azerí"
+msgstr "Azarí"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:124
 #, kde-format
@@ -48289,25 +47893,22 @@ msgid "Bashkir"
 msgstr "Baxequir"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
-#, fuzzy, kde-format
-#| msgid "Belarus"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Belarusian"
-msgstr "Bielorrusia"
+msgstr "Bielorruso"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:133
-#, fuzzy, kde-format
-#| msgid "Bengali;Bangla"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bengali"
-msgstr "Bengalí ou bangla"
+msgstr "Bengalí"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:136
-#, fuzzy, kde-format
-#| msgid "Estonian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bosnian"
-msgstr "Estoniano"
+msgstr "Bosníaco"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:139
 #, kde-format
@@ -48322,31 +47923,28 @@ msgid "Catalan"
 msgstr "Catalán"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:145
-#, fuzzy, kde-format
-#| msgid "Chinese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Cantonese"
-msgstr "Chinés"
+msgstr "Cantonés"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:148
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "Cebuano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
-#, fuzzy, kde-format
-#| msgid "Chinese (Singapore)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Simplified)"
-msgstr "Chinés (Singapur)"
+msgstr "Chinés (simplificado)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:154
-#, fuzzy, kde-format
-#| msgid "Chinese (Taiwan)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Traditional)"
-msgstr "Chinés (Taiwán)"
+msgstr "Chinés (tradicional)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
 #, kde-format
@@ -48397,18 +47995,16 @@ msgid "Estonian"
 msgstr "Estoniano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:181
-#, fuzzy, kde-format
-#| msgid "Fiji"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Fijian"
-msgstr "Fidxi"
+msgstr "Fidxiano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:184
-#, fuzzy, kde-format
-#| msgid "Philippines"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Filipino"
-msgstr "Filipinas"
+msgstr "Filipino"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:187
 #, kde-format
@@ -48459,11 +48055,10 @@ msgid "Gujarati"
 msgstr "Guxaratí"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:211
-#, fuzzy, kde-format
-#| msgid "Catalan (France)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr "Catalán (Francia)"
+msgstr "Crioulo haitiano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
 #, kde-format
@@ -48475,7 +48070,7 @@ msgstr "Hausa"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hawaiian"
-msgstr ""
+msgstr "Hawaiano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:220
 #, kde-format
@@ -48487,7 +48082,7 @@ msgstr "Hebreo"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hill Mari"
-msgstr ""
+msgstr "Mari das montañas"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:226
 #, kde-format
@@ -48499,7 +48094,7 @@ msgstr "Hindi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "Hmong"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, kde-format
@@ -48517,7 +48112,7 @@ msgstr "Islandés"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Igbo"
-msgstr ""
+msgstr "Ibo"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:241
 #, kde-format
@@ -48565,7 +48160,7 @@ msgstr "Cazaxo"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Khmer"
-msgstr ""
+msgstr "Khmer"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:265
 #, kde-format
@@ -48574,18 +48169,16 @@ msgid "Kinyarwanda"
 msgstr "Quiñaruanda"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:268
-#, fuzzy, kde-format
-#| msgid "healingClone"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Klingon"
-msgstr "restauraciónDeClon"
+msgstr "Klingon"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:271
-#, fuzzy, kde-format
-#| msgid "healingClone"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Klingon (PlqaD)"
-msgstr "restauraciónDeClon"
+msgstr "Klingon (PlqaD)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:274
 #, kde-format
@@ -48603,7 +48196,7 @@ msgstr "Kurdo"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "Kirguiz"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
 #, kde-format
@@ -48618,17 +48211,16 @@ msgid "Latin"
 msgstr "Latín"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:289
-#, fuzzy, kde-format
-#| msgid "Latvia"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Latvian"
-msgstr "Letonia"
+msgstr "Letón"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:292
 #, kde-format
 msgctxt "@info: language name"
 msgid "Levantine Arabic"
-msgstr ""
+msgstr "Árabe levantino"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:295
 #, kde-format
@@ -48637,11 +48229,10 @@ msgid "Lithuanian"
 msgstr "Lituano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:298
-#, fuzzy, kde-format
-#| msgid "Luxembourg"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Luxembourgish"
-msgstr "Luxemburgo"
+msgstr "Luxemburgués"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
 #, kde-format
@@ -48689,7 +48280,7 @@ msgstr "Marathi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mari"
-msgstr ""
+msgstr "Mari"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:325
 #, kde-format
@@ -48725,27 +48316,25 @@ msgstr "Oriya"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chichewa"
-msgstr ""
+msgstr "Chewa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:343
 #, kde-format
 msgctxt "@info: language name"
 msgid "Papiamento"
-msgstr ""
+msgstr "Papiamento"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
-#, fuzzy, kde-format
-#| msgid "Pashto;Pushto"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
 msgstr "Pashto"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
-#, fuzzy, kde-format
-#| msgid "Version"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr "Versión"
+msgstr "Persa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
 #, kde-format
@@ -48769,7 +48358,7 @@ msgstr "Punjabi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Queretaro Otomi"
-msgstr ""
+msgstr "Otomi de Querétaro"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:364
 #, kde-format
@@ -48790,25 +48379,22 @@ msgid "Samoan"
 msgstr "Samoano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:373
-#, fuzzy, kde-format
-#| msgid "Scotsgaelic"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Scots Gaelic"
 msgstr "Gaélico escocés"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:376
-#, fuzzy, kde-format
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Cyrillic)"
-msgstr "Persa (Irán)"
+msgstr "Serbio (cirílico)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:379
-#, fuzzy, kde-format
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr "Persa (Irán)"
+msgstr "Serbio (latino)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
 #, kde-format
@@ -48832,7 +48418,7 @@ msgstr "Sindhi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "Cingalés"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
 #, kde-format
@@ -48883,11 +48469,10 @@ msgid "Tagalog"
 msgstr "Tagalo"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:418
-#, fuzzy, kde-format
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tahitian"
-msgstr "Croata"
+msgstr "Tahitiano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:421
 #, kde-format
@@ -48920,11 +48505,10 @@ msgid "Thai"
 msgstr "Tailandés"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:436
-#, fuzzy, kde-format
-#| msgid "Tonga"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tongan"
-msgstr "Tonga"
+msgstr "Tongano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:439
 #, kde-format
@@ -48942,14 +48526,13 @@ msgstr "Turcomán"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr ""
+msgstr "Udmurto"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
-#, fuzzy, kde-format
-#| msgid "Uighur (PRC)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Uighur"
-msgstr "Uigur (China)"
+msgstr "Uigur"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:451
 #, kde-format
@@ -49003,7 +48586,7 @@ msgstr "Yoruba"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yucatec Maya"
-msgstr ""
+msgstr "Maia iucateco"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:478
 #, kde-format
@@ -49012,62 +48595,56 @@ msgid "Zulu"
 msgstr "Zulú"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support voice settings"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "O motor seleccionado, %1, non permite configuración de voz."
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:55
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "O motor seleccionado, %1, non permite configuración de emoción."
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
-msgstr ""
+msgstr "O motor %1 non permite texto-para-fala."
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:260
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "O idioma seleccionado, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:279
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "A voz seleccionada, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:298
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
-msgstr "Non se permite manexar ficheiros remotos."
+msgstr "A emoción seleccionada, %1, non é compatíbel con %2."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Erro: non se pode usar o SID de Yandex na versión web."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Erro: non se pode extraer o SID de Yandex da versión web."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
-#, fuzzy, kde-format
-#| msgid "Basque (Basque Country)"
+#, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr "Éuscaro (País Vasco)"
+msgstr "Código (idioma-país)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
 #, kde-format
@@ -49079,34 +48656,31 @@ msgstr "Nome"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "Escriba aquí unha cadea para buscala na lista de idiomas…"
 
 #: core/libs/widgets/text/localizeconfig.cpp:144
-#, fuzzy, kde-format
-#| msgid "Show Non-Geolocated Items"
+#, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
-msgstr "Mostrar os elementos sen coordenadas"
+msgstr "Amosar só os elementos seleccionados (%1/%2)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:216
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "Axuste aquí o idioma do contido."
+msgstr "Seleccionar idiomas alternativos para editar o texto"
 
 #: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "Tradución por Internet:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:223
-#, fuzzy, kde-format
-#| msgid "Select here the editorial type of content."
+#, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
-msgstr "Escolla aquí o tipo editorial do contido."
+msgstr "Seleccione aquí o motor de Internet para traducir texto."
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
@@ -49120,40 +48694,44 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
+"<para>O motor de tradución é un servizo web por Internet que se usa para "
+"traducir texto dun idioma a outro. Esta funcionalidade está dispoñíbel nas "
+"opcións de metadatos nas que se permite un idioma alternativo, como no "
+"título, na lenda, etc. O proceso de tradución está completamente "
+"automatizado pero require unha conexión a Internet para funcionar.</"
+"para><para>A persoa usuaria pode seleccionar un motor de tradución máis "
+"axeitado segundo o idioma ao que traducir, xa que os servizos web non "
+"permiten traducir todos os idiomas do mundo.</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:318
-#, fuzzy, kde-format
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr "Wiktionary"
+msgstr "Idiomas de tradución dispoñíbeis (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
-msgstr ""
+msgstr "Abrir a configuración de localización"
 
 #: core/libs/widgets/text/localizeselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr "Navegar ata %1"
+msgstr "Traducir ao %1"
 
 #: core/libs/widgets/text/localizeselector.cpp:158
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
-msgstr "Axuste aquí o idioma do contido."
+msgstr "Seleccione o idioma ao que traducir con %1."
 
 #: core/libs/widgets/text/localizeselector.cpp:258
-#, fuzzy, kde-format
-#| msgid "Remove this Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr "Retirar esta etiqueta"
+msgstr "Retirar esta entrada"
 
 #: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
@@ -49177,7 +48755,7 @@ msgstr "Diferenciar as maiúsculas das minúsculas"
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
-msgstr ""
+msgstr "Activar a corrección ortográfica en segundo plano ao escribir texto."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-kuit-format
@@ -49193,11 +48771,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:104
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Idioma predeterminado"
+msgstr "Idioma predeterminado:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
@@ -49208,10 +48785,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:111
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "&Detectar automaticamente"
+msgstr "Detectar automaticamente"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:112
 #, kde-format
@@ -49227,11 +48803,10 @@ msgid "Available Language Dictionaries"
 msgstr "Wiktionary"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:136
-#, fuzzy, kde-format
-#| msgid "Codec"
+#, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
-msgstr "Códec"
+msgstr "Código"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:137
 #, kde-format
@@ -49248,11 +48823,10 @@ msgid "Available Backends"
 msgstr "Dispoñíbel:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:163
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
+#, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr "Perfil do monitor:"
+msgstr "Palabras ignoradas"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:169
 #, fuzzy, kde-format
@@ -49286,11 +48860,10 @@ msgid "&Replace"
 msgstr "&Substituír"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:96
-#, fuzzy, kde-format
-#| msgid "Previous"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Previous"
-msgstr "Anterior"
+msgstr "Ir á anterior"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:97
 #, kde-format
@@ -49299,11 +48872,10 @@ msgid "Go to previous place in folder-view hierarchy"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:113
-#, fuzzy, kde-format
-#| msgid "Go to the next item"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Next"
-msgstr "Ir ao elemento seguinte"
+msgstr "Ir á seguinte"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:114
 #, kde-format
@@ -49324,25 +48896,22 @@ msgid "Go up in folder-view hierarchy"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:147
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@action"
 msgid "Go Home"
-msgstr "Inicio"
+msgstr "Ir ao cartafol persoal"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:148
-#, fuzzy, kde-format
-#| msgid "Add the directory name"
+#, kde-format
 msgctxt "@info"
 msgid "Go to home directory"
-msgstr "Engadir o nome do directorio"
+msgstr "Ir ao cartafol persoal"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:176
-#, fuzzy, kde-format
-#| msgid "Hide Options <<"
+#, kde-format
 msgctxt "@info: folder-view"
 msgid "View Options"
-msgstr "Agochar as opcións <<"
+msgstr "Opcións da vista"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:179
 #, kde-format
@@ -49354,7 +48923,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Short View"
-msgstr ""
+msgstr "Vista abreviada"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:187
 #, kde-format
@@ -49366,7 +48935,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Detailed View"
-msgstr ""
+msgstr "Vista detallada"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:196
 #, kde-format
@@ -49375,11 +48944,10 @@ msgid "Switch Folder-View to Detailed Mode"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:204
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Bookmarks"
-msgstr "Marcadores"
+msgstr "Amosar os marcadores"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:207
 #, kde-format
@@ -49388,11 +48956,10 @@ msgid "Show or Hide the Bookmarked places"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:212
-#, fuzzy, kde-format
-#| msgid "Settings..."
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "More Settings..."
-msgstr "Configuración…"
+msgstr "Máis opcións…"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:215
 #, kde-format
@@ -49401,11 +48968,10 @@ msgid "Open configure dialog with more settings options"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:227
-#, fuzzy, kde-format
-#| msgid "Icon-View Options"
+#, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack Options"
-msgstr "Opcións da vista de iconas"
+msgstr "Opcións de montóns"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:230
 #, kde-format
@@ -49470,109 +49036,94 @@ msgid "Enter local path here..."
 msgstr "Insira a lenda do álbum…"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:276
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG images"
-msgstr "Imaxe JPEG-2000"
+msgstr "Imaxes JPEG"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:277
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "TIFF images"
-msgstr "Ficheiros TIFF"
+msgstr "Imaxes TIFF"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:278
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "PNG images"
-msgstr "Ficheiros PNG"
+msgstr "Imaxes PNG"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:279
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "PGF images"
-msgstr "Ficheiros PNG"
+msgstr "Imaxes PGF"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:280
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "HEIF images"
-msgstr "Ficheiros TIFF"
+msgstr "Imaxes HEIF"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:281
-#, fuzzy, kde-format
-#| msgid "TIFF Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "AVIF images"
-msgstr "Ficheiros TIFF"
+msgstr "Imaxes AVIF"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:282
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG-XL images"
-msgstr "Imaxe JPEG-2000"
+msgstr "Imaxes JPEG-XL"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:283
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "WEBP images"
-msgstr "Ficheiros PNG"
+msgstr "Imaxes WEBP"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:284
-#, fuzzy, kde-format
-#| msgid "PNG Files"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "DNG images"
-msgstr "Ficheiros PNG"
+msgstr "Imaxes DNG"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:285
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "RAW images"
-msgstr "Imaxe RAW"
+msgstr "Imaxes RAW"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:294
-#, fuzzy, kde-format
-#| msgid "RAW Image"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "No RAW images"
-msgstr "Imaxe RAW"
+msgstr "Non hai imaxes RAW"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:301
-#, fuzzy, kde-format
-#| msgid "All supported files (%1)"
+#, kde-format
 msgctxt "@item: filter type mime"
 msgid "All supported files"
-msgstr "Todos os ficheiros compatíbeis (%1)"
+msgstr "Todos os ficheiros compatíbeis"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:442
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
+#, kde-format
 msgctxt "@info"
 msgid "Icon Size: %1"
-msgstr "Tamaño da icona:"
+msgstr "Tamaño da icona: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
-msgstr "Marcadores"
+msgstr "Novo marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
-#, fuzzy, kde-format
-#| msgid "Edit Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr "Editar os marcadores"
+msgstr "Editar o marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
 #, kde-format
@@ -49608,11 +49159,10 @@ msgid "Reset"
 msgstr "Restabelecer"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
-msgstr "Ruta"
+msgstr "&Ruta:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
 #, fuzzy, kde-format
@@ -49642,12 +49192,10 @@ msgid "Load Contents"
 msgstr "Contido"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
-msgstr "Substituír:"
+msgstr "Lugares"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, kde-format
@@ -49678,11 +49226,10 @@ msgid "Remove selected bookmark from the list"
 msgstr "Retirar da lista as imaxes seleccionadas"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
-#, fuzzy, kde-format
-#| msgid "Edit Bookmarks"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
-msgstr "Editar os marcadores"
+msgstr "Editar o marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, fuzzy, kde-format
@@ -49692,11 +49239,10 @@ msgid "Edit current bookmark from the list"
 msgstr "Retira o valor escollido na lista"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr "Marcadores"
+msgstr "Engadir un novo marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
@@ -49722,32 +49268,28 @@ msgid "Are you sure you want to remove the bookmark \"%1\"?"
 msgstr "Seguro que quere eliminar o fluxo de traballo «%1»?"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
 msgid "My Bookmarks"
-msgstr "Marcadores"
+msgstr "Os meus marcadores"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
-#, fuzzy, kde-format
-#| msgctxt "Replace string"
-#| msgid "Replace:"
+#, kde-format
 msgctxt "@title"
 msgid "Usual Places"
-msgstr "Substituír:"
+msgstr "Lugares habituais"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:130
-#, fuzzy, kde-format
-#| msgid "Folder View Options"
+#, kde-format
 msgctxt "@title"
 msgid "Folder-View"
-msgstr "Configuración da vista de cartafol"
+msgstr "Vista de cartafoles"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
-msgstr ""
+msgstr "Montón"
 
 #: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, kde-format
@@ -49756,11 +49298,10 @@ msgid "Add Bookmark"
 msgstr "Engadir un marcador"
 
 #: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
-#, fuzzy, kde-format
-#| msgid "Folder: "
+#, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
-msgstr "Cartafol: "
+msgstr "Cartafoles"
 
 #: core/showfoto/main/main.cpp:197
 #, kde-format
@@ -49782,6 +49323,9 @@ msgid ""
 "p><p>Please install the 64-bit version of Showfoto to get a better "
 "experience with Showfoto.</p>"
 msgstr ""
+"<p>Está a executar unha versión de 32 bits de Showfoto nun Windows de 64 "
+"bits<p>Instale a versión de 64 bits de Showfoto para unha mellor experiencia."
+"</p>"
 
 #: core/showfoto/main/showfoto.cpp:97
 #, kde-format
@@ -49856,17 +49400,15 @@ msgid "Cannot delete \"%1\""
 msgstr "Non é posíbel eliminar «%1»"
 
 #: core/showfoto/main/showfoto_open.cpp:60
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Abrir as imaxes do cartafol"
 
 #: core/showfoto/main/showfoto_open.cpp:303
-#, fuzzy, kde-format
-#| msgid "There is no dropped item to process."
+#, kde-format
 msgid "There is no item to process."
-msgstr "Non se soltou ningún elemento para procesar."
+msgstr "Non hai ningún elemento para procesar."
 
 #: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
@@ -49875,15 +49417,12 @@ msgid "Error Loading File"
 msgstr "Produciuse un erro ao cargar o ficheiro"
 
 #: core/showfoto/main/showfoto_open.cpp:326
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to load file: %1\n"
-#| "Remote file handling is not supported"
+#, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
 "Remote file handling is not supported"
 msgstr ""
-"Non se puido cargar o ficheiro: %1\n"
+"Non foi posíbel cargar o ficheiro: «%1»\n"
 "Non se permite manexar ficheiros remotos."
 
 #: core/showfoto/main/showfoto_setup.cpp:22
@@ -49973,16 +49512,13 @@ msgid "Tool Tip"
 msgstr "Axudiñas"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Configuración das axudas dos elementos da barra de miniaturas<br/"
-"><i>Personalice o contido das axudas</i></qt>"
+"<qt>Configuración das axudas dos elementos da barra de miniaturas e da vista "
+"de cartafoles.<br/><i>Personalice o contido das axudas</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -50091,51 +49627,34 @@ msgstr "Pór a etiqueta de orientación como normal tras rotar/inverter."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/Exif'>EXIF</a> - a standard used "
-#| "by most digital cameras today to store technical information (like "
-#| "aperture and shutter speed) about an image.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "a standard used by most digital cameras today to store technical information "
 "(like aperture and shutter speed) about an image."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/Exif'>EXIF</a>, un estándar "
-"utilizado pola maioría das cámaras dixitais actuais para gardar información "
-"técnica (como a apertura do diafragma e a velocidade do obturador) sobre "
-"unha imaxe.</p>"
+"un estándar usado pola maioría das cámaras dixitais actuais para gardar "
+"información técnica (como a apertura do diafragma e a velocidade do "
+"obturador) sobre unha imaxe."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/"
-#| "IPTC_Information_Interchange_Model'>IPTC</a> - an older standard used in "
-#| "digital photography to store photographer information in images.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "an older standard used in digital photography to store photographer "
 "information in images."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/"
-"IPTC_Information_Interchange_Model'>XMP</a>, un estándar máis antigo "
-"empregado en fotografía dixital para gardar na imaxe información do "
-"fotógrafo.</p>"
+"un estándar máis antigo empregado en fotografía dixital para gardar na imaxe "
+"información do fotógrafo."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:196
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://en.wikipedia.org/wiki/"
-#| "Extensible_Metadata_Platform'>XMP</a> - a new standard used in digital "
-#| "photography, designed to replace IPTC.</p>"
+#, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</"
-"a>, un estándar novo utilizado en fotografía dixital deseñado para "
-"substituír o IPTC.</p>"
+"un estándar novo usado en fotografía dixital deseñado para substituír o IPTC."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:217
@@ -50146,11 +49665,10 @@ msgstr "Comportamento"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
-#, fuzzy, kde-format
-#| msgid "Tool"
+#, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
-msgstr "Ferramenta"
+msgstr "ExifTool"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:121
 #, kde-format
@@ -50244,13 +49762,9 @@ msgstr "Actualizacións"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:119
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action Save changes to a newly created version, specifying the filename "
-#| "and format"
-#| msgid "Save New Version As..."
+#, kde-format
 msgid "Check for new version:"
-msgstr "Gardar a nova versión como…"
+msgstr "Comprobación de nova versión:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:121
@@ -50282,7 +49796,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:128
 #, kde-format
 msgid "Use Version With Debug Symbols"
-msgstr ""
+msgstr "Usar a versión  con símbolos de depuración."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:129
@@ -50298,17 +49812,13 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:134
 #, kde-format
 msgid "Last check: %1"
-msgstr ""
+msgstr "Última comprobación: %1"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:135
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action Save changes to a newly created version, specifying the filename "
-#| "and format"
-#| msgid "Save New Version As..."
+#, kde-format
 msgid "Check now..."
-msgstr "Gardar a nova versión como…"
+msgstr "Comprobar agora…"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:207
 #: core/utilities/setup/misc/setupmisc.cpp:191
@@ -50460,23 +49970,21 @@ msgstr "Aparencia"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
-msgstr ""
+msgstr "Corrección ortográfica"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:320
 #: core/utilities/setup/misc/setupmisc.cpp:366
-#, fuzzy, kde-format
-#| msgid "Normalize"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
-msgstr "Normalizar"
+msgstr "Localizar"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:326
 #: core/utilities/setup/misc/setupmisc.cpp:372
-#, fuzzy, kde-format
-#| msgid "System Font"
+#, kde-format
 msgctxt "@title:tab"
 msgid "System"
-msgstr "Tipo de letra do sistema"
+msgstr "Sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:360
 #: core/utilities/setup/misc/setupmisc.cpp:405
@@ -50513,16 +50021,13 @@ msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to display the image information when the mouse hovers "
-#| "over a thumbbar item."
+#, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
 msgstr ""
-"Escolla esta opción para mostrar información da imaxe cando o rato se pouse "
-"en riba dun elemento da barra de miniaturas."
+"Escolla esta opción para amosar información da imaxe cando o rato se pouse "
+"en riba dun elemento da barra de miniaturas ou da vista de cartafoles."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
@@ -50699,14 +50204,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
-msgstr ""
+msgstr "Favoritas"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
-msgstr "Propiedades do ficheiro"
+msgstr "Propiedades de cartafoles favoritas"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
@@ -50715,18 +50219,16 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
-msgstr "Buscar:"
+msgstr "Xerarquía:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
-#, fuzzy, kde-format
-#| msgid "File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr "Propiedades do ficheiro"
+msgstr "Propiedades de elementos favoritas"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, kde-format
@@ -50741,11 +50243,10 @@ msgid "Created:"
 msgstr "Creación:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
-msgstr "Buscar:"
+msgstr "Xerarquía:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
 #, kde-format
@@ -50760,12 +50261,10 @@ msgid "Description:"
 msgstr "Descrición:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
-msgstr "Nome:"
+msgstr "&Nome:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
 #, fuzzy, kde-format
@@ -50781,11 +50280,10 @@ msgid "The favorite item name which must be unique and not empty"
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
-msgstr "Buscar:"
+msgstr "Xerarquía:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
 #, kde-format
@@ -50800,18 +50298,16 @@ msgid "Type:"
 msgstr "Tipo:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
-msgstr "Novas funcionalidades"
+msgstr "Cartafol favorito"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
-#, fuzzy, kde-format
-#| msgid "New Features"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
-msgstr "Novas funcionalidades"
+msgstr "Elemento favorito"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
@@ -50823,11 +50319,10 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
-#, fuzzy, kde-format
-#| msgid "Description:"
+#, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
-msgstr "Descrición:"
+msgstr "&Descrición:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
 #, fuzzy, kde-format
@@ -50837,12 +50332,10 @@ msgid "Enter favorite item description here..."
 msgstr "Insira aquí o nome da etiqueta…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "creation date of the image"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
-msgstr "Creación:"
+msgstr "&Creación:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
 #, kde-format
@@ -50852,28 +50345,22 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
-msgstr ""
-"Empregue este botón para buscar elementos duplicados nos álbums escollidos."
+msgstr "Use este botón para seleccionar a data da imaxe máis antiga da lista."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
-msgstr ""
-"Empregue este botón para buscar elementos duplicados nos álbums escollidos."
+msgstr "Use este botón para calcular a data media das imaxes da lista."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
-msgstr ""
-"Empregue este botón para buscar elementos duplicados nos álbums escollidos."
+msgstr "Use este botón para seleccionar a data da imaxe máis nova da lista."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
 #, fuzzy, kde-format
@@ -51008,8 +50495,7 @@ msgid "Edit Favorite Folder"
 msgstr "Editar o título da etiqueta"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
-#, fuzzy, kde-format
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Non se puido calcular a media"
@@ -51032,50 +50518,43 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritas"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
-msgstr "Engadir un cartafol"
+msgstr "Engadir como favorita"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
-msgstr "Engadir un cartafol"
+msgstr "Engadir un subcartafol"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
-#, fuzzy, kde-format
-#| msgid "Add new images to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
-msgstr "Engadir novas imaxes á lista"
+msgstr "Engadir un novo subcartafol á lista"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Deselect Item"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Item"
-msgstr "Anular a escolla do elemento"
+msgstr "Eliminar o elemento"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
-msgstr "Retirar da lista as imaxes seleccionadas"
+msgstr "Retirar da lista o elemento seleccionado"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
-#, fuzzy, kde-format
-#| msgid "Edit Titles"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Item"
-msgstr "Editar os títulos"
+msgstr "Editar o elemento"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, fuzzy, kde-format
@@ -51112,12 +50591,10 @@ msgstr ""
 "contén?</qt>"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
-#, fuzzy, kde-format
-#| msgid "Rename"
-#| msgid_plural "Rename (%1 images)"
+#, kde-format
 msgctxt "@title"
 msgid "Unnamed"
-msgstr "Renomear"
+msgstr "Sen nome"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:83
 #, kde-format
@@ -51144,57 +50621,46 @@ msgid "Date"
 msgstr "Data"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:338
-#, fuzzy, kde-format
-#| msgid "Icon-View Options"
+#, kde-format
 msgctxt "@title"
 msgid "Stack-View"
-msgstr "Opcións da vista de iconas"
+msgstr "Vista de montón"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:340
-#, fuzzy, kde-format
-#| msgid "Icon Size:"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
-msgstr "Tamaño da icona:"
+msgstr "Tamaño das iconas"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:345
-#, fuzzy, kde-format
-#| msgctxt "Small (size)"
-#| msgid "Small (%1 x %2 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
-msgstr "Pequena (%1 × %2 píxeles)"
+msgstr "Pequeno (%1×%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:349
-#, fuzzy, kde-format
-#| msgctxt "Medium (size)"
-#| msgid "Medium (%1 x %2 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
-msgstr "Media (%1 × %2 píxeles)"
+msgstr "Mediano (%1×%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "Large (size)"
-#| msgid "Large (%1 x %2 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
-msgstr "Moi grande (%1 × %2 píxeles)"
+msgstr "Grande (%1×%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "Huge (size)"
-#| msgid "Huge (%1 x %2 pixels)"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
-msgstr "Enorme (%1 × %2 píxeles)"
+msgstr "Enorme (%1×%2)"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:396
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
-msgstr "Engadir unha etiqueta de caras…"
+msgstr "Engadir como favorita"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:410
 #, fuzzy, kde-format
@@ -51204,8 +50670,7 @@ msgid "Clear All Items"
 msgstr "Limpar todo"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:418
-#, fuzzy, kde-format
-#| msgid "Remove items"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Retirar os elementos"
@@ -51214,7 +50679,7 @@ msgstr "Retirar os elementos"
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
-msgstr ""
+msgstr "Montón"
 
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:49
 #, kde-format
@@ -51308,8 +50773,7 @@ msgstr "Procesando…"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Renomeando as imaxes"
@@ -52308,75 +51772,74 @@ msgstr "Non se atoparon entradas na axenda de enderezos."
 msgid "Applying face changes"
 msgstr "Aplicar os cambios faciais"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Aceptar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Retirar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Retirar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Quen é?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr "Perfil do monitor:"
+msgstr "Ignorar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta etiqueta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar como etiqueta de cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -52430,11 +51893,10 @@ msgid "Clear all previous results and rescan"
 msgstr "Limpar os resultados non confirmados e examinar de novo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "&Help"
+#, kde-format
 msgctxt "@info"
 msgid "Help"
-msgstr "A&xuda"
+msgstr "Axuda"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
@@ -52449,46 +51911,36 @@ msgid "Find all faces in your photos"
 msgstr "Atopar todas as caras nas fotos"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Detect and recognize faces (experimental)"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
-msgstr "Detectar e recoñecer caras (experimental)."
+msgstr "Detectar e recoñecer caras."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Find all faces in your photos and try to recognize which person is "
-#| "depicted"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Find all faces in your photos and\n"
 "try to recognize which person is depicted"
 msgstr ""
-"Atope todas as caras que haxa nas fotos e tente recoñecer quen veñen sendo"
+"Atope todas as caras que haxa nas fotos e\n"
+"intente recoñecer quen veñen sendo."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
-#, fuzzy, kde-format
-#| msgid "Recognize"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
-msgstr "Recoñecer"
+msgstr "Recoñecer caras"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Try again to recognize the people depicted on marked but yet unconfirmed "
-#| "faces."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Try again to recognize the people depicted\n"
 "on marked but yet unconfirmed faces."
 msgstr ""
-"Intentar recoñecer de novo as persoas que aparezan nas caras marcadas pero "
-"non confirmadas aínda."
+"Intentar recoñecer de novo as persoas que aparezan\n"
+"nas caras marcadas pero non confirmadas aínda."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
@@ -52497,18 +51949,16 @@ msgid "Workflow"
 msgstr "Fluxo de traballo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
-#, fuzzy, kde-format
-#| msgid "Search in:"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
-msgstr "Buscar en:"
+msgstr "Buscar en"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, fuzzy, kde-format
-#| msgid "Accuracy:"
+#, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
-msgstr "Corrección:"
+msgstr "Precisión da cara"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
@@ -52517,19 +51967,13 @@ msgid "Sensitivity"
 msgstr "Sensibilidade"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
-#, fuzzy, kde-format
-#| msgid "Specific Location"
+#, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
-msgstr "Lugar específico"
+msgstr "Especificidade"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Adjust sensitivity versus specificity: The higher the value, the more "
-#| "accurately faces will be recognized, but less faces will be recognized "
-#| "(only faces that are very similar to pretagged faces are recognized)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Adjust sensitivity versus specificity: the higher the value, the more "
@@ -52538,8 +51982,9 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 "Axuste a sensibilidade ou especificidade: a maior valor, maior será a "
-"precisión do recoñecemento de caras, pero recoñeceranse menos caras (só se "
-"recoñecerán as caras moi semellantes ás previamente etiquetadas)"
+"precisión\n"
+"do recoñecemento de caras, pero recoñeceranse menos caras\n"
+"(só se recoñecerán as caras moi semellantes ás previamente etiquetadas)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
@@ -53173,11 +52618,10 @@ msgid "Select method for reference image selection"
 msgstr "Información sobre a selección da imaxe"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:210
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referencia:"
+msgstr "Referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:216
 #, fuzzy, kde-format
@@ -53219,11 +52663,10 @@ msgstr ""
 "só se usa o separador  seleccionado."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:239
-#, fuzzy, kde-format
-#| msgid "Remove duplicate words"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
-msgstr "Retirar as palabras duplicadas"
+msgstr "Retirar os duplicados"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:241
 #, fuzzy, kde-format
@@ -53487,10 +52930,9 @@ msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
-#, fuzzy, kde-format
-#| msgid "OpenStreetMap"
+#, kde-format
 msgid "OpenStreetMap (Vector)"
-msgstr "OpenStreetMap"
+msgstr "OpenStreetMap (Vector)"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
 #, kde-format
@@ -53713,10 +53155,9 @@ msgid "Export Bookmark"
 msgstr "Editar os marcadores"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
-#, fuzzy, kde-format
-#| msgid "error saving bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "erro ao gardar os marcadores"
+msgstr "Erro ao gardar os marcadores"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
 #, kde-format
@@ -53829,8 +53270,7 @@ msgstr ""
 "Definir se a hora da imaxe está diante ou detrás da hora de seguimento."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
-#, fuzzy, kde-format
-#| msgid "Interpolate"
+#, kde-format
 msgid "Interpolate"
 msgstr "Interpolar"
 
@@ -53895,8 +53335,7 @@ msgid "Correlating images -"
 msgstr "Correlación de imaxes -"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Fallou a correlación"
@@ -53911,8 +53350,7 @@ msgstr ""
 "configuración do desprazamento e da diferenza son correctos."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "A correlación tivo éxito"
@@ -54385,11 +53823,10 @@ msgid "Reverse Geo-coding Error"
 msgstr "Codificación xeográfica inversa"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:797
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Engadir unha etiqueta nova…"
+msgstr "Engadir unha etiqueta nova"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:798
 #, kde-format
@@ -54616,8 +54053,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:565
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Ese nome xa existe"
@@ -54628,60 +54064,58 @@ msgid "Non Geo-located Items"
 msgstr "Elementos sen situación xeográfica"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:233
-#, fuzzy, kde-format
-#| msgid "Mercator"
+#, kde-format
 msgctxt "the planet"
 msgid "Mercury"
-msgstr "Mercator"
+msgstr "Mercurio"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:235
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
-msgstr ""
+msgstr "Venus"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:237
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
-msgstr ""
+msgstr "Terra"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:239
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
-msgstr ""
+msgstr "Marte"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
-msgstr ""
+msgstr "Xúpiter"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:243
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "the planet"
 msgid "Saturn"
-msgstr "Saturación"
+msgstr "Saturno"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
-msgstr ""
+msgstr "Urano"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
-msgstr ""
+msgstr "Neptuno"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:250
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
-msgstr ""
+msgstr "Plutón"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:253
 #, kde-format
@@ -54690,47 +54124,43 @@ msgid "Sun"
 msgstr "Sol"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:255
-#, fuzzy, kde-format
-#| msgid "Moonlight"
+#, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
-msgstr "Luz de lúa"
+msgstr "Lúa"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:257
 #, kde-format
 msgid "Sky"
-msgstr ""
+msgstr "Ceo"
 
 #: core/utilities/geolocation/marble/astro/PlanetFactory.cpp:260
-#, fuzzy, kde-format
-#| msgid "Unknown title"
+#, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
-msgstr "Título descoñecido"
+msgstr "Planeta descoñecido"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:271
 #, kde-format
 msgid "&Lock"
-msgstr ""
+msgstr "B&loquear"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:277
 #, kde-format
 msgid "&Hide"
-msgstr ""
+msgstr "&Agochar"
 
 #: core/utilities/geolocation/marble/core/AbstractFloatItem.cpp:286
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:378
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "&Configure..."
-msgstr "Configurar"
+msgstr "&Configurar…"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:146
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:148
 #, kde-format
@@ -54742,7 +54172,7 @@ msgstr "mm"
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:152
 #, kde-format
@@ -54751,11 +54181,10 @@ msgid "cm"
 msgstr "cm"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:154
-#, fuzzy, kde-format
-#| msgid "fast"
+#, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr "rápido"
+msgstr "pés"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:156
 #, kde-format
@@ -54767,42 +54196,39 @@ msgstr "″"
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
-msgstr ""
+msgstr "iardas"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
-msgstr ""
+msgstr "millas"
 
 #: core/utilities/geolocation/marble/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:108
-#, fuzzy, kde-format
-#| msgid "Copy coordinates"
+#, kde-format
 msgid "Copy Coordinates"
 msgstr "Copiar as coordenadas"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:109
 #, kde-format
 msgid "Copy geo: URL"
-msgstr ""
+msgstr "Copiar o URL de xeolocalización:"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "&Address Details"
-msgstr "Enderezo:"
+msgstr "Det&alles do enderezo"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:142
-#, fuzzy, kde-format
-#| msgid "No description available"
+#, kde-format
 msgid "No description available."
-msgstr "Non hai ningunha descrición dispoñíbel"
+msgstr "Non hai ningunha descrición dispoñíbel."
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:345
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:358
@@ -54810,7 +54236,7 @@ msgstr "Non hai ningunha descrición dispoñíbel"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:367
 #, kde-format
 msgid "National Capital"
-msgstr ""
+msgstr "Capital nacional"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:347
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:324
@@ -54819,10 +54245,9 @@ msgstr ""
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
 #: core/utilities/searchwindow/searchfields_createfield.cpp:685
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Cidade:"
+msgstr "Cidade"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:349
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:326
@@ -54831,74 +54256,69 @@ msgstr "Cidade:"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:338
 #, kde-format
 msgid "State Capital"
-msgstr ""
+msgstr "Capital do estado"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:351
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:325
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:333
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:337
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "County Capital"
-msgstr "País:"
+msgstr "Capital do condado"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:354
 #, kde-format
 msgid "Capital"
-msgstr ""
+msgstr "Capital"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:362
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:365
-#, fuzzy, kde-format
-#| msgid "{Village}"
+#, kde-format
 msgid "Village"
-msgstr "{Vila pequena}"
+msgstr "Vila"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:506
 #, kde-format
 msgid "&Info Boxes"
-msgstr ""
+msgstr "Caixas &informativas"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:806
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Address Details"
-msgstr "Enderezo:"
+msgstr "Detalles do enderezo"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "W"
-msgstr ""
+msgstr "O"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:450
 #, kde-format
 msgid "E"
-msgstr ""
+msgstr "L"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
+#, kde-format
 msgid "N"
-msgstr "Non"
+msgstr "N"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataCoordinates.cpp:619
 #: core/utilities/geolocation/marble/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:315
 #, kde-format
 msgid "Valley"
-msgstr ""
+msgstr "Val"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
 msgid "Crater"
-msgstr ""
+msgstr "Cráter"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:318
 #, fuzzy, kde-format
