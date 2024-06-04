@@ -333,7 +333,7 @@ bool XbelWriter::write(QIODevice* const device, const BookmarkNode* const root)
     writeStartElement(QLatin1String("xbel"));
     writeAttribute(QLatin1String("version"), QLatin1String("1.0"));
 
-    if (root->type() == BookmarkNode::Root)
+    if ((root->type() == BookmarkNode::Root) && !root->children().isEmpty())
     {
         BookmarkNode* const rootFolder = root->children().constFirst();
 
