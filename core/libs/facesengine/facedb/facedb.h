@@ -22,9 +22,8 @@
 
 // Qt includes
 
-#include <QString>
 #include <QFile>
-#include <QDataStream>
+#include <QString>
 #include <QStandardPaths>
 
 // Local includes
