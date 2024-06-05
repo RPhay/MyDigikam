@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-04 01:39+0000\n"
-"PO-Revision-Date: 2024-05-17 17:09+0200\n"
+"PO-Revision-Date: 2024-06-04 14:13+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -66526,24 +66526,22 @@ msgstr "Деактивиране на хардуерното ускорение 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
-msgstr ""
+msgstr "Отстраняване на проблем с декодиране на видео с графични карти на AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for video:"
-msgstr ""
+msgstr "Използван бекенд за декодиране на видео:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@item: default raw plugin"
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (по подразбиране)"
+msgstr "FFmpeg (по подразбиране)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "Windows (System)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format

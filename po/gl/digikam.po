@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-04 01:39+0000\n"
-"PO-Revision-Date: 2024-06-03 10:13+0200\n"
+"PO-Revision-Date: 2024-06-04 10:16+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -48769,6 +48769,14 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
+"<para>Marque esta opción para activar a funcionalidade de corrección "
+"ortográfica en segundo plano para lendas, títulos e outros trebellos de "
+"edición de texto. A corrección ortográfica pode detectar automaticamente o "
+"idioma actual do texto e propoñer alternativas para palabras mal escritas.</"
+"para><para>Coas entradas nas que se pode indicar un idioma alternativo, "
+"usarase o idioma contextual para analizar o texto. A corrección ortográfica "
+"usa motores libres, entre eles dicionarios necesarios, para realizar a "
+"análise de frases nos idiomas desexados.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:104
 #, kde-format
@@ -48783,6 +48791,8 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Seleccione o idioma predeterminado aquí para usar co valor «x-default» das "
+"cadeas de idioma alternativo."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:111
 #, kde-format
@@ -48793,14 +48803,13 @@ msgstr "Detectar automaticamente"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Detectar automaticamente o idioma analizando o contido da cadea."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:123
-#, fuzzy, kde-format
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
-msgstr "Wiktionary"
+msgstr "Dicionarios de idiomas dispoñíbeis"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:136
 #, kde-format
@@ -48815,12 +48824,10 @@ msgid "Name"
 msgstr "Nome"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
+#, kde-format
 msgctxt "@title"
 msgid "Available Backends"
-msgstr "Dispoñíbel:"
+msgstr "Motores dispoñíbeis"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, kde-format
@@ -48829,17 +48836,19 @@ msgid "Ignored Words"
 msgstr "Palabras ignoradas"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:169
-#, fuzzy, kde-format
-#| msgid "Set here the number of items to find using sketch."
+#, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
-msgstr "Indique aquí a cantidade de elementos a atopar mediante o bosquexo."
+msgstr ""
+"Defina aquí unha nova palabra para ignorar durante a corrección ortográfica."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
+"Pode engadir ou retirar palabras para ignorar durante a corrección "
+"ortográfica."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:177
 #, kde-format
@@ -48869,7 +48878,7 @@ msgstr "Ir á anterior"
 #, kde-format
 msgctxt "@info"
 msgid "Go to previous place in folder-view hierarchy"
-msgstr ""
+msgstr "Ir ao lugar anterior da xerarquía da vista de cartafoles."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:113
 #, kde-format
@@ -48881,7 +48890,7 @@ msgstr "Ir á seguinte"
 #, kde-format
 msgctxt "@info"
 msgid "Go to next place in folder-view hierarchy"
-msgstr ""
+msgstr "Ir ao seguinte lugar da xerarquía da vista de cartafoles."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:130
 #, kde-format
@@ -48893,7 +48902,7 @@ msgstr "Subir"
 #, kde-format
 msgctxt "@info"
 msgid "Go up in folder-view hierarchy"
-msgstr ""
+msgstr "Subir na xerarquía da vista de cartafoles."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:147
 #, kde-format
@@ -48917,7 +48926,7 @@ msgstr "Opcións da vista"
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Selection options to render folder-view."
-msgstr ""
+msgstr "Opcións de selección para renderizar a vista de cartafoles."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:184
 #, kde-format
@@ -48929,7 +48938,7 @@ msgstr "Vista abreviada"
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Short Mode"
-msgstr ""
+msgstr "Cambiar a vista de cartafoles ao modo abreviado"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:193
 #, kde-format
@@ -48941,7 +48950,7 @@ msgstr "Vista detallada"
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Detailed Mode"
-msgstr ""
+msgstr "Cambiar a vista de cartafoles ao modo detallado"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:204
 #, kde-format
@@ -48953,7 +48962,7 @@ msgstr "Amosar os marcadores"
 #, kde-format
 msgctxt "@info"
 msgid "Show or Hide the Bookmarked places"
-msgstr ""
+msgstr "Amosar ou agochar os lugares marcados"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:212
 #, kde-format
@@ -48965,7 +48974,7 @@ msgstr "Máis opcións…"
 #, kde-format
 msgctxt "@info"
 msgid "Open configure dialog with more settings options"
-msgstr ""
+msgstr "Abrir o diálogo de configuración con máis opcións."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:227
 #, kde-format
@@ -48977,63 +48986,57 @@ msgstr "Opcións de montóns"
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack options to handle folder-view contents."
-msgstr ""
+msgstr "Opcións de montón para xestionar o contido da vista de cartafol."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:234
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Load Contents"
-msgstr "Contido"
+msgstr "Cargar o contido"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:237
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@action"
 msgid "Load Contents"
-msgstr "Contido"
+msgstr "Cargar o contido"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:238
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@info"
 msgid "Load contents to editor stack"
-msgstr "Contido"
+msgstr "Cargar o contido no montón do editor."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:245
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Append Contents"
-msgstr "Contido"
+msgstr "Engadir o contido"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:248
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@action"
 msgid "Append Contents"
-msgstr "Contido"
+msgstr "Engadir o contido"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:249
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@info"
 msgid "Append contents to editor stack"
-msgstr "Contido"
+msgstr "Engadir o contido no montón do editor."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:263
-#, fuzzy, kde-format
-#| msgid "Enter custom format"
+#, kde-format
 msgctxt "@info"
 msgid "Enter the customized folder-view path or select from history"
-msgstr "Insira un formato de data personalizado"
+msgstr ""
+"Insira a ruta personalizada da vista de cartafoles ou seleccione unha do "
+"historial."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:264
-#, fuzzy, kde-format
-#| msgid "Enter album caption here..."
+#, kde-format
 msgctxt "@info: folder-view path edit"
 msgid "Enter local path here..."
-msgstr "Insira a lenda do álbum…"
+msgstr "Insira aquí a ruta local…"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:276
 #, kde-format
@@ -49132,17 +49135,16 @@ msgid "&Title:"
 msgstr "&Título:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
-msgstr "Insira aquí o nome da etiqueta…"
+msgstr "Insira aquí o título do marcador…"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:115
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
-msgstr ""
+msgstr "O título do marcador, que debe ser único e non pode quedar baleiro."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
@@ -49165,17 +49167,16 @@ msgid "&Path:"
 msgstr "&Ruta:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
-#, fuzzy, kde-format
-#| msgid "Enter album caption here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
-msgstr "Insira a lenda do álbum…"
+msgstr "Insira aquí a ruta do marcador…"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
-msgstr ""
+msgstr "Pode engadir ou retirar aquí lugares marcados."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:117
 #, kde-format
@@ -49185,11 +49186,10 @@ msgstr "Marcadores"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:126
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:139
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
-msgstr "Contido"
+msgstr "Cargar o contido"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
 #, kde-format
@@ -49205,25 +49205,22 @@ msgstr "Engadir un marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
-#, fuzzy, kde-format
-#| msgid "Add new images to the list"
+#, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
-msgstr "Engadir novas imaxes á lista"
+msgstr "Engadir un novo marcador á lista."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action"
 msgid "Del Bookmark"
-msgstr "Marcadores"
+msgstr "Retirar o marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:108
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
-msgstr "Retirar da lista as imaxes seleccionadas"
+msgstr "Retirar o marcador seleccionado da lista."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
 #, kde-format
@@ -49232,11 +49229,10 @@ msgid "Edit Bookmark"
 msgstr "Editar o marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
-msgstr "Retira o valor escollido na lista"
+msgstr "Editar o marcador actual da lista."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
 #, kde-format
@@ -49252,20 +49248,21 @@ msgid ""
 "%1\n"
 "already exists in the list with name \"%2\"."
 msgstr ""
+"Este marcador que fai referencia a\n"
+"%1\n"
+"xa existe na lista co nome «%2»."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
-msgstr "Confirmar a eliminación"
+msgstr "Confirmar a eliminación do marcador"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete the selected workflow \"%1\"?"
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
-msgstr "Seguro que quere eliminar o fluxo de traballo «%1»?"
+msgstr "Seguro que quere retirar o marcador «%1»?"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
 #, kde-format
@@ -49564,17 +49561,14 @@ msgid "Geolocation"
 msgstr "Localización xeográfica"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Application Views Settings<br/><i>Customize the look of the views</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"<qt>Configuración das vistas da aplicación<br/><i>Personaliza a aparencia "
-"das vistas</i></qt>"
+"Configuración de xeolocalización\n"
+"Personalice a vista para xeolocalizar elementos."
 
 #: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
@@ -49674,6 +49668,8 @@ msgstr "ExifTool"
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
+"Ordenación de elementos na vista de miniaturas, na de cartafoles, e na de "
+"montón"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:125
 #, kde-format
@@ -49721,10 +49717,9 @@ msgstr ""
 "Se activa esta opción, as imaxes que se carguen irán en orde descendente."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:143
-#, fuzzy, kde-format
-#| msgid "Shared Items"
+#, kde-format
 msgid "Thumbbar Items"
-msgstr "Elementos compartidos"
+msgstr "Elementos da barra de miniaturas"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, kde-format
@@ -49768,18 +49763,15 @@ msgstr "Comprobación de nova versión:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:121
-#, fuzzy, kde-format
-#| msgid "Only For Active Tab"
+#, kde-format
 msgid "Only For Stable Releases"
-msgstr "Só para o separador activo"
+msgstr "Só para publicacións estábeis"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:166
 #: core/utilities/setup/misc/setupmisc.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Press Release"
+#, kde-format
 msgid "Weekly Pre-Releases"
-msgstr "Publicación en prensa"
+msgstr "Pre-publicacións semanais"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:123
@@ -49791,6 +49783,13 @@ msgid ""
 "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
+"Defina esta opción para configurar o tipo de novas versións que buscar ao "
+"comprobar se hai actualizacións.\n"
+"As publicacións «estábeis» son versións oficial que pode usar en produción "
+"de maneira segura.\n"
+"As «pre-publicacións» propóñense cada semana para probar rapidamente novas "
+"funcionalidades\n"
+"e non se recomendan en produción porque poden conter erros."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:128
@@ -49807,6 +49806,10 @@ msgid ""
 "This version is more heavy but can help developers to trace dysfunctions in "
 "debugger."
 msgstr ""
+"Se marca esta opción, usarase unha versión con símbolos de depuración para "
+"as actualizacións.\n"
+"Esta versión ocupa máis pero pode axudar ao equipo de desenvolvemento a "
+"trazar problemas no depurador."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:134
