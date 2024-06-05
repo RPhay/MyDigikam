@@ -20,7 +20,6 @@
 #include <QMutex>
 #include <QString>
 #include <QFileInfo>
-#include <QDataStream>
 #include <QMutexLocker>
 #include <QElapsedTimer>
 #include <QStandardPaths>

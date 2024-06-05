@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QString>
-#include <QDataStream>
 #include <QUrl>
 
 // Local includes

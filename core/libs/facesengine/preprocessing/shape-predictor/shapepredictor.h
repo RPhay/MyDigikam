@@ -42,9 +42,9 @@ namespace RedEye
 
 struct SplitFeature
 {
-    unsigned long idx1   = 0;
-    unsigned long idx2   = 0;
-    float         thresh = 0.0F;
+    quint64 idx1   = 0;
+    quint64 idx2   = 0;
+    float   thresh = 0.0F;
 };
 
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp);

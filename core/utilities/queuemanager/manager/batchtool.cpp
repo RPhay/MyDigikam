@@ -21,7 +21,6 @@
 #include <QPolygon>
 #include <QFileInfo>
 #include <QDateTime>
-#include <QDataStream>
 #include <QScopedPointer>
 
 // KDE includes

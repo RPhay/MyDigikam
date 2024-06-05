@@ -21,7 +21,6 @@
 #include <QByteArray>
 #include <QTextStream>
 #include <QElapsedTimer>
-#include <QDataStream>
 #include <qplatformdefs.h>
 #include <QScopedPointer>
 

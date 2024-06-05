@@ -19,7 +19,7 @@
 QDataStream& operator >> (QDataStream& dataStream,
                           unsigned long& in)
 {
-    qint64 x;
+    quint64 x;
     dataStream >> x;
     in = x;
 
@@ -29,7 +29,7 @@ QDataStream& operator >> (QDataStream& dataStream,
 QDataStream& operator << (QDataStream& dataStream,
                           const unsigned long& in)
 {
-    qint64 x = in;
+    quint64 x = in;
     dataStream << x;
 
     return dataStream;

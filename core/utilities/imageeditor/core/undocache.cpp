@@ -144,8 +144,8 @@ bool UndoCache::putData(int level, const DImg& img) const
     }
 
     QDataStream ds(&file);
-    ds << img.width();
-    ds << img.height();
+    ds << (quint32)img.width();
+    ds << (quint32)img.height();
     ds << img.numBytes();
     ds << img.hasAlpha();
     ds << img.sixteenBit();
@@ -169,8 +169,8 @@ bool UndoCache::putData(int level, const DImg& img) const
 
 DImg UndoCache::getData(int level) const
 {
-    uint w             = 0;
-    uint h             = 0;
+    quint32 w          = 0;
+    quint32 h          = 0;
     quint64 numBytes   = 0;
     bool    hasAlpha   = false;
     bool    sixteenBit = false;

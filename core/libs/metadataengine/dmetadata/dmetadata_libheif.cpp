@@ -17,11 +17,8 @@
 // Qt includes
 
 #include <QFile>
-#include <QVariant>
-#include <QByteArray>
-#include <QTextStream>
-#include <QDataStream>
 #include <QFileInfo>
+#include <QByteArray>
 #include <qplatformdefs.h>
 
 // Libheif includes

@@ -24,7 +24,6 @@
 #include <QVariant>
 #include <QByteArray>
 #include <QTextStream>
-#include <QDataStream>
 #include <qplatformdefs.h>
 
 // Local includes

@@ -162,7 +162,7 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
     {
         if (index.isValid())
         {
-            stream << index.row();
+            stream << (qint32)index.row();
         }
     }
 
@@ -193,8 +193,8 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
     QList<ListItem*> finalItems;
     QList<int>       toRemove;
 
-    int itemPoz;
-    int temp = 0;
+    qint32 itemPoz;
+    int    temp = 0;
 
     while (!stream.atEnd())
     {
