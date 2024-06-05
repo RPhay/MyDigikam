@@ -19,7 +19,6 @@
 
 // Qt includes
 
-#include <QDataStream>
 #include <QFile>
 #include <QImage>
 #include <QVarLengthArray>
