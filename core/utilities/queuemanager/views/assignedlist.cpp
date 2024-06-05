@@ -355,7 +355,7 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
     QByteArray encodedData;
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
-    stream << items.count();
+    stream << (qint32)items.count();
 
     Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
@@ -363,10 +363,10 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
 
         if (alwi)
         {
-            stream << (int)(alwi->toolSet().group);
+            stream << (qint32)(alwi->toolSet().group);
             stream << alwi->toolSet().name;
-            stream << alwi->toolSet().index;
-            stream << alwi->toolSet().version;
+            stream << (qint32)alwi->toolSet().index;
+            stream << (qint32)alwi->toolSet().version;
             stream << alwi->toolSet().settings;
         }
     }
@@ -431,13 +431,13 @@ void AssignedListView::dropEvent(QDropEvent* e)
 
         if (ba.size())
         {
-            int count;
+            qint32 count;
             QDataStream ds(ba);
             ds >> count;
 
             for (int i = 0 ; i < count ; ++i)
             {
-                int               group, index, version;
+                qint32            group, index, version;
                 QString           name;
                 BatchToolSettings settings;
 
