@@ -79,7 +79,7 @@ else
 fi
 
 $CMAKE_BINARY -G "Unix Makefiles" . \
-      -DCMAKE_BUILD_TYPE=debug \
+      -DCMAKE_BUILD_TYPE=Debug \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
