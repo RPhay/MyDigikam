@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -51672,8 +51672,8 @@ msgstr ""
 msgid "Applying face changes"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, fuzzy, kde-format
 #| msgid "OK"
@@ -51681,67 +51681,67 @@ msgctxt "@action"
 msgid "OK"
 msgstr "تامام"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgctxt "@action"
 msgid "Confirm"
 msgstr "جەزملە"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "چىقىرىۋەت(&R)"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, fuzzy, kde-format
 #| msgid "Recent Tags"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "يېقىنقى بەتكۈچ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -60961,75 +60961,75 @@ msgstr ""
 msgid "&Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "ئىختىيارى"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "رەڭلەر"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "كۈچەيتىش"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "ئۆزگەرتىش"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "توغرىلىقى"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "سۈزگۈچ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "CONVERT"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "مېتا سانلىق-مەلۇماتى"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, fuzzy, kde-format
 #| msgid "No tool available"
 msgctxt "@label"

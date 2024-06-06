@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -52081,71 +52081,71 @@ msgstr "Não foram encontrados itens no livro de endereços"
 msgid "Applying face changes"
 msgstr "A aplicar as modificações das caras"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "OK"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Confirme que a pessoa seleccionada aparece aqui"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Remover"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Remover resta região da cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Desmarcar esta cara como Ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "O que é isto?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar esta cara como Ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -61923,67 +61923,67 @@ msgstr "Todas as filas de tarefas terminadas"
 msgid "&Queues"
 msgstr "&Filas"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "Base"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "Personalizado"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Cores"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Melhorar"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Transformar"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "Decorar"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Filtros"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Converter"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Meta-dados"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Inválido"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"

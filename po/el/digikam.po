@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -55348,8 +55348,8 @@ msgstr "Δε βρέθηκαν καταχωρήσεις βιβλίου διευθ
 msgid "Applying face changes"
 msgstr "Εφαρμογή αλλαγών προσώπου"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, fuzzy, kde-format
 #| msgid "OK"
@@ -55357,69 +55357,69 @@ msgctxt "@action"
 msgid "OK"
 msgstr "Εντάξει"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Α&φαίρεση"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Αφαίρεση αυτής της ετικέτας"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, fuzzy, kde-format
 #| msgid "Who is this?"
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Ποιος είναι αυτός;"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Προφίλ οθόνης:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Αγνόηση αυτής της ετικέτας"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Να σημειωθει ως ετικέτα προσώπου"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -65434,77 +65434,77 @@ msgstr "Η δέσμη εργασιών ολοκληρώθηκε"
 msgid "&Queues"
 msgstr "&Ουρές αναμονής"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, fuzzy, kde-format
 #| msgid "Base"
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "Βάση"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "Προσαρμοσμένο"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Χρώματα"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Βελτίωση"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Μετασχηματισμός"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "Διακόσμηση"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Φίλτρα"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Μετατροπή"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Μη έγκυρο προφίλ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, fuzzy, kde-format
 #| msgid "No setting available"
 msgctxt "@label"

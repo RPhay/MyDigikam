@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -51216,71 +51216,71 @@ msgstr "沒有找到通訊錄條目"
 msgid "Applying face changes"
 msgstr "套用臉孔改變"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "確定"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "確認選取的人物有顯示於此"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "確認"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "移除"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "移除這個臉孔區域"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "將此臉孔標記為不忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "這是誰？"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "忽略這個臉孔"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "將此臉孔標記為忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -60569,70 +60569,70 @@ msgstr "批次佇列已完成"
 msgid "&Queues"
 msgstr "佇列(&Q)"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "自訂"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "顏色"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "增強"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "變形"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "裝飾"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "濾鏡"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "轉換"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "無效"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, fuzzy, kde-format
 #| msgid "No setting available"
 msgctxt "@label"

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -52254,77 +52254,77 @@ msgstr "ਕੋਈ ਐਡਰੈੱਸ-ਬੁੱਕ ਐਂਟਰੀ ਨਹੀਂ �
 msgid "Applying face changes"
 msgstr "ਚਿਹਰਾ ਬਦਲਾਅ ਲਾਗੂ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgctxt "@action"
 msgid "Confirm"
 msgstr "ਪੁਸ਼ਟੀ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "ਹਟਾਓ(&R)"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "ਇਹ ਟੈਗ ਹਟਾਓ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, fuzzy, kde-format
 #| msgid "Who is this?"
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "ਇਹ ਕੀ ਹੈ?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "ਮਾਨੀਟਰ ਪਰੋਫਾਇਲ:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "ਇਹ ਟੈਗ ਅਣਡਿੱਠਾ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "ਮੂੰਹ ਟੈਗ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਗਾਓ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -61692,76 +61692,76 @@ msgstr ""
 msgid "&Queues"
 msgstr "ਕਤਾਰ(&Q)"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "ਕਸਟਮ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "ਰੰਗ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "ਇੰਹਾਂਸ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "ਟਰਾਂਸਫਰਮ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "ਸਜਾਵਟ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, fuzzy, kde-format
 #| msgid "Filters"
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "ਫਿਲਟਰ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "ਬਦਲੋ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "ਮੈਟਾ-ਡਾਟਾ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "ਗਲਤ ਪਰੋਫਾਇਲ"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, fuzzy, kde-format
 #| msgid "No setting available"
 msgctxt "@label"

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-04 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:46+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -52043,71 +52043,71 @@ msgstr "В адресной книге не найдено ни одной за�
 msgid "Applying face changes"
 msgstr "Применение изменений в изображении лиц"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:173
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "ОК"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:174
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Подтвердите, что это выбранное лицо"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:187
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:212
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Удалить"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:188
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:213
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Удалить эту область лица"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Убрать метку «игнорируется» для этой метки лица"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:524
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Кто это?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:570
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Игонорировать"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:571
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Игнорировать это лицо"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:603
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Игнорировать эту метку лица"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:608
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -61937,7 +61937,7 @@ msgstr "Пакетная обработка всех очередей завер
 msgid "&Queues"
 msgstr "О&череди"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:169
+#: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
@@ -61947,7 +61947,7 @@ msgstr "Основной"
 # libs/widgets/metadata/metadatawidget.cpp:139: ?
 # utilities/assistants/printcreator/wizard/advprintphotopage.cpp:58: Другая
 # utilities/queuemanager/tools/transform/rotate.cpp:103: ?
-#: core/utilities/queuemanager/manager/batchtool.cpp:174
+#: core/utilities/queuemanager/manager/batchtool.cpp:173
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
@@ -61956,56 +61956,56 @@ msgstr "Другое"
 # BUGME: please split: --aspotashev
 # libs/imageproperties/imagepropertiessidebar.cpp:86: Все цвета --aspotashev
 # utilities/presentation/dialogs/presentation_captionpage.ui:73: Цвета --aspotashev
-#: core/utilities/queuemanager/manager/batchtool.cpp:179
+#: core/utilities/queuemanager/manager/batchtool.cpp:178
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Все цвета"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:183
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Улучшить"
 
 # i18n: file ./showfoto/showfotoui.rc line 22
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:188
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Преобразовать"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:193
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "Оформить"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:198
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:203
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Преобразовать"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:208
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Метаданные"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:218
+#: core/utilities/queuemanager/manager/batchtool.cpp:217
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Недопустимо"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:629
+#: core/utilities/queuemanager/manager/batchtool.cpp:628
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
