@@ -57,7 +57,7 @@ public:
     QTimer*         progressTimer   = nullptr;
     QLabel*         progressLabel   = nullptr;
 
-    DPreviewImage* preview          = nullptr;
+    DPreviewImage*  preview         = nullptr;
 };
 
 DPreviewManager::DPreviewManager(QWidget* const parent)

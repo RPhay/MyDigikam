@@ -325,13 +325,13 @@ void DSelectionItem::updateAnchors()
     {
         if (horizontalCondition)
         {
-            d->anchorTop    = QLineF(d->rect.topLeft() + moveDown,
+            d->anchorTop    = QLineF(d->rect.topLeft()  + moveDown,
                                      d->rect.topRight() + moveDown);
-            d->anchorBottom = QLineF(d->rect.bottomLeft() - moveDown,
+            d->anchorBottom = QLineF(d->rect.bottomLeft()  - moveDown,
                                      d->rect.bottomRight() - moveDown);
-            d->anchorLeft   = QLineF(d->rect.topLeft() + moveRight,
+            d->anchorLeft   = QLineF(d->rect.topLeft()    + moveRight,
                                      d->rect.bottomLeft() + moveRight);
-            d->anchorRight  = QLineF(d->rect.topRight() - moveRight,
+            d->anchorRight  = QLineF(d->rect.topRight()    - moveRight,
                                      d->rect.bottomRight() - moveRight);
 
             d->anchorTopLeft        = QRectF(d->rect.topLeft(),
@@ -347,11 +347,11 @@ void DSelectionItem::updateAnchors()
         {
             // Only the top & bottom lines & middle line plus two corners are drawn
 
-            d->anchorTop    = QLineF(d->rect.topLeft() + moveDown,
+            d->anchorTop    = QLineF(d->rect.topLeft()  + moveDown,
                                      d->rect.topRight() + moveDown);
-            d->anchorBottom = QLineF(d->rect.bottomLeft() - moveDown,
+            d->anchorBottom = QLineF(d->rect.bottomLeft()  - moveDown,
                                      d->rect.bottomRight() - moveDown);
-            d->anchorLeft   = QLineF(d->rect.topLeft() + QPointF(d->rect.width() / 2.0, 0.0),
+            d->anchorLeft   = QLineF(d->rect.topLeft()    + QPointF(d->rect.width() / 2.0, 0.0),
                                      d->rect.bottomLeft() + QPointF(d->rect.width() / 2.0, 0.0));
             d->anchorRight  = QLineF();
 
@@ -369,12 +369,12 @@ void DSelectionItem::updateAnchors()
         {
             // Only the left & right lines & middle line plus two corners are drawn
 
-            d->anchorTop            = QLineF(d->rect.topLeft() + QPointF(0.0, d->rect.height() / 2.0),
+            d->anchorTop            = QLineF(d->rect.topLeft()  + QPointF(0.0, d->rect.height() / 2.0),
                                              d->rect.topRight() + QPointF(0.0, d->rect.height() / 2.0));
             d->anchorBottom         = QLineF();
-            d->anchorLeft           = QLineF(d->rect.topLeft() + moveRight,
+            d->anchorLeft           = QLineF(d->rect.topLeft()    + moveRight,
                                              d->rect.bottomLeft() + moveRight);
-            d->anchorRight          = QLineF(d->rect.topRight() - moveRight,
+            d->anchorRight          = QLineF(d->rect.topRight()    - moveRight,
                                              d->rect.bottomRight() - moveRight);
 
             d->anchorTopLeft        = QRectF(d->rect.topLeft(),
@@ -963,6 +963,7 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
                 case DSelectionItem::None:
                 {
                     // should not be here :)
+
                     break;
                 }
 
@@ -1337,10 +1338,10 @@ void DPreviewImage::resizeEvent(QResizeEvent* e)
 void DPreviewImage::updateSelVisibility()
 {
     if (
-        (d->selection->rect().width()                       > 0.001) &&
-        (d->selection->rect().height()                      > 0.001) &&
+        (d->selection->rect().width()                        > 0.001) &&
+        (d->selection->rect().height()                       > 0.001) &&
         (
-         (d->scene->width() - d->selection->rect().width()  > 0.1) ||
+         (d->scene->width()  - d->selection->rect().width()  > 0.1) ||
          (d->scene->height() - d->selection->rect().height() > 0.1)
         )
        )

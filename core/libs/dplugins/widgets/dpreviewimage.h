@@ -75,6 +75,7 @@ public:
 public:
 
     // Graphics Item methods
+
     QRectF boundingRect() const                               override;
     void paint(QPainter* painter,
                const QStyleOptionGraphicsItem* option,
@@ -124,10 +125,12 @@ public Q_SLOTS:
 
     ///@{
     /// Selection area specific slots (TL = TopLeft, BR = BottomRight)
+
     void slotSetTLX(float ratio);
     void slotSetTLY(float ratio);
     void slotSetBRX(float ratio);
     void slotSetBRY(float ratio);
+
     ///@}
 
     /**
