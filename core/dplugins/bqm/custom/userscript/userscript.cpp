@@ -242,7 +242,7 @@ bool UserScript::toolOperations()
                                              QDir::toNativeSeparators(outputUrl().toLocalFile()) +
                                              QLatin1Char('"'));
 
-    // Empties d->image, not to pass it to the next tool in chain
+    // Empties image: not to pass it to the next tool in chain
 
     setImageData(DImg());
 
