@@ -174,16 +174,17 @@ public:
     bool        operator==(const DImg& image) const;
 
     /**
-     * Replaces image data of this object. Metadata is unchanged. Parameters like constructor above.
+     * Replaces image data of this object.
+     * Metadata are unchanged. Parameters like constructor above.
      */
     void        putImageData(uint width, uint height, bool sixteenBit, bool alpha, uchar* const data, bool copyData = true);
 
     /**
      * Overloaded function, provided for convenience, behaves essentially
-     * like the function above if data is not 0.
+     * like the function above if data is not nullptr.
      * Uses current width, height, sixteenBit, and alpha values.
-     * If data is 0, the current data is deleted and the image is set to null
-     * (But metadata unchanged).
+     * If data is nullptr, the current data are deleted and the image is set to null
+     * (But metadata are unchanged).
      */
     void        putImageData(uchar* const data, bool copyData = true);
 
