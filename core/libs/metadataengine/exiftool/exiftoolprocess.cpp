@@ -136,7 +136,7 @@ bool ExifToolProcess::startExifTool()
 
 void ExifToolProcess::restartExifTool()
 {
-    terminateExifTool();
+    shutDownExifTool();
 
     if (!startExifTool())
     {
@@ -147,13 +147,13 @@ void ExifToolProcess::restartExifTool()
     }
 }
 
-void ExifToolProcess::terminateExifTool()
+void ExifToolProcess::shutDownExifTool()
 {
     if (state() == QProcess::Running)
     {
         // If process is in running state, close ExifTool normally
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): send ExifTool shutdown command...";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::shutDown(): send ExifTool shutdown command...";
 
         d->cmdQueue.clear();
         write(QByteArray("-stay_open\nfalse\n"));
@@ -175,7 +175,7 @@ void ExifToolProcess::terminateExifTool()
 
 #else
 
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::shutDown(): terminate ExifTool instance...";
 
             terminate();
 
@@ -189,7 +189,7 @@ void ExifToolProcess::killExifTool()
 {
     if (state() == QProcess::Running)
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): kill ExifTool instance...";
 
         kill();
     }

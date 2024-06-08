@@ -49,7 +49,7 @@ void ExifToolThread::run()
         (ExifToolProcess::instance()->thread() == this)
        )
     {
-        ExifToolProcess::instance()->terminateExifTool();
+        ExifToolProcess::instance()->shutDownExifTool();
     }
 }
 
