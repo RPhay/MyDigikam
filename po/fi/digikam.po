@@ -64279,15 +64279,7 @@ msgid "Download Error"
 msgstr "Latausvirhe"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"

@@ -67483,6 +67483,8 @@ msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
+"Das Albumdatum wird je nach eingestellter Option angepasst, wenn beim "
+"Scannen neue Elemente gefunden werden."
 
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
@@ -67572,7 +67574,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:75
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
-msgstr ""
+msgstr "Schneller Scan (erkennt neue, gelöschte und umbenannte Elemente)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -67583,11 +67585,15 @@ msgid ""
 "this\n"
 "option must be deactivated."
 msgstr ""
+"Setzen Sie diese Option, um den Scanvorgang erheblich zu beschleunigen. Neue "
+"Elemente, gelöschte und auch umbenannte Elemente werden gefunden. Um "
+"Elemente zu finden, die geändert wurden, muss diese Option deaktiviert "
+"werden."
 
 #: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Detect faces in newly added images"
-msgstr ""
+msgstr "Gesichter in neu hinzugefügten Bildern erkennen"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, kde-format
