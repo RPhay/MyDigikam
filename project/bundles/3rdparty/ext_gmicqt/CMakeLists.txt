@@ -12,7 +12,7 @@ set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_FFTW3=ON
                 -DENABLE_SYSTEM_GMIC=OFF
                 -DENABLE_CURL=OFF
-                -DENABLE_TEST=OFF
+                -DBUILD_TESTING=OFF \
                 ${GLOBAL_PROFILE}
 )
 
@@ -60,11 +60,9 @@ elseif(APPLE)
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} 
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic}
                    -DCMAKE_BUILD_TYPE=RelWithDebInfo
                    ${GmicQt_Conf}
-#                   -DCMAKE_CXX_COMPILER=${INSTALL_ROOT}/bin/g++
-#                   -DCMAKE_C_COMPILER=${INSTALL_ROOT}/bin/gcc
 
         UPDATE_COMMAND ""
     )
