@@ -12,7 +12,7 @@ set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_FFTW3=ON
                 -DENABLE_SYSTEM_GMIC=OFF
                 -DENABLE_CURL=OFF
-                -DBUILD_TESTING=OFF \
+                -DBUILD_TESTING=OFF
                 ${GLOBAL_PROFILE}
 )
 
