@@ -59,8 +59,10 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
 
     // We handle gphoto2 cameras in this loop
 
-    if (!(camera->supportedDrivers().contains(QLatin1String("gphoto")) ||
-        camera->supportedProtocols().contains(QLatin1String("ptp"))))
+    if (
+        !(camera->supportedDrivers().contains(QLatin1String("gphoto")) ||
+        camera->supportedProtocols().contains(QLatin1String("ptp")))
+       )
     {
         return false;
     }
@@ -84,21 +86,23 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
 
     QList<QVariant> driverHandleList = driverHandle.toList();
 
-    if ((driverHandleList.size() < 3)                                  ||
+    if (
+        (driverHandleList.size() < 3)                                  ||
         (driverHandleList.at(0).toString() != QLatin1String("usb"))    ||
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         !driverHandleList.at(1).canConvert(QMetaType(QMetaType::Int))  ||
-        !driverHandleList.at(2).canConvert(QMetaType(QMetaType::Int)))
+        !driverHandleList.at(2).canConvert(QMetaType(QMetaType::Int))
 
 #else
 
         !driverHandleList.at(1).canConvert(QMetaType::Int)             ||
-        !driverHandleList.at(2).canConvert(QMetaType::Int))
+        !driverHandleList.at(2).canConvert(QMetaType::Int)
 
 #endif
 
+       )
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
         return false;
@@ -157,7 +161,7 @@ QString s_labelForSolidCamera(const Solid::Device& cameraDevice)
         }
     }
 
-    return vendor + QLatin1Char(' ') + product;
+    return (vendor + QLatin1Char(' ') + product);
 }
 
 // --------------------------------------------------------------------------------------------------
@@ -571,7 +575,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
             return;
         }
 
-        // NOTE: See bug #262296: With KDE 4.6, Solid API return device vendor id
+        // NOTE: See bug #262296: since KDE 4.6, Solid API return device vendor id
         // and product id in hexadecimal strings.
 
         bool ok;
