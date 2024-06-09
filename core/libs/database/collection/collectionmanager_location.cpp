@@ -779,18 +779,17 @@ void CollectionManager::updateLocations()
     QMap<int, AlbumRootLocation*> oldLocations;
     QList<CollectionLocation::Status> oldStatus;
 
-    // read information from database
-
-    QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
-
     // synchronize map with database
 
     {
         QReadLocker locker(&d->lock);
+
         oldLocations = d->locations;
     }
 
-    Q_FOREACH (const AlbumRootInfo& info, infos)
+    // read information from database
+
+    Q_FOREACH (const AlbumRootInfo& info, CoreDbAccess().db()->getAlbumRoots())
     {
         if (oldLocations.contains(info.id))
         {
@@ -940,6 +939,7 @@ void CollectionManager::updateLocations()
 
     {
         QWriteLocker locker(&d->lock);
+
         d->locations = newLocations;
     }
 
