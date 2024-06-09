@@ -29,6 +29,7 @@ endif()
 JoinListAsString("${GmicQt_Conf}" " " BASH_OPTIONS)
 
 # Download and build gmic-qt
+
 if (MINGW)
 
     ExternalProject_Add(ext_gmic_qt
@@ -77,7 +78,9 @@ else() # Linux
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${GmicQt_Conf}
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic}
+                   -DCMAKE_BUILD_TYPE=RelWithDebInfo
+                   ${GmicQt_Conf}
 
         UPDATE_COMMAND ""
     )
