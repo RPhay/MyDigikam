@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 01:46+0000\n"
+"POT-Creation-Date: 2024-06-09 01:42+0000\n"
 "PO-Revision-Date: 2024-05-29 22:03+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2453,83 +2453,83 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "Caricamento strumenti..."
 
-#: core/app/main/digikamapp_solid.cpp:285
+#: core/app/main/digikamapp_solid.cpp:289
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "Lettore di schede CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:291
+#: core/app/main/digikamapp_solid.cpp:295
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "Lettore di schede Memory Stick"
 
-#: core/app/main/digikamapp_solid.cpp:297
+#: core/app/main/digikamapp_solid.cpp:301
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "Lettore di schede SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:303
+#: core/app/main/digikamapp_solid.cpp:307
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "Lettore di schede SD / MMC"
 
-#: core/app/main/digikamapp_solid.cpp:309
+#: core/app/main/digikamapp_solid.cpp:313
 #, kde-format
 msgid "xD Card Reader"
 msgstr "Lettore di schede xD"
 
-#: core/app/main/digikamapp_solid.cpp:324
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgid "USB Disk"
 msgstr "Disco USB"
 
-#: core/app/main/digikamapp_solid.cpp:328
+#: core/app/main/digikamapp_solid.cpp:332
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "Disco"
 
 # at come fino a... tradoto male in questo contesto? Controllare anche gli altri!
-#: core/app/main/digikamapp_solid.cpp:401
+#: core/app/main/digikamapp_solid.cpp:405
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 «%2» su %3"
 
-#: core/app/main/digikamapp_solid.cpp:407
+#: core/app/main/digikamapp_solid.cpp:411
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 «%2»"
 
-#: core/app/main/digikamapp_solid.cpp:415
+#: core/app/main/digikamapp_solid.cpp:419
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 su %2"
 
-#: core/app/main/digikamapp_solid.cpp:427
+#: core/app/main/digikamapp_solid.cpp:431
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:662
+#: core/app/main/digikamapp_solid.cpp:666
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "Impossibile accedere al dispositivo di memorizzazione.\n"
 
-#: core/app/main/digikamapp_solid.cpp:693
+#: core/app/main/digikamapp_solid.cpp:697
 #, kde-format
 msgid "Images on %1"
 msgstr "Immagini su %1"
 
-#: core/app/main/digikamapp_solid.cpp:726
+#: core/app/main/digikamapp_solid.cpp:730
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "Il dispositivo specificato («%1») non è valido."
 
-#: core/app/main/digikamapp_solid.cpp:739
+#: core/app/main/digikamapp_solid.cpp:743
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "La fotocamera specificata («%1») non è supportata."
