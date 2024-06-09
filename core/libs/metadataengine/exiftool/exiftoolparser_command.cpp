@@ -93,6 +93,13 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
     }
 
     cmdArgs << cpyOpt;
+
+    if (copyToAll)
+    {
+        cmdArgs << QByteArray("-xmp-microsoft:RatingPercent<Microsoft:SharedUserRating");
+        cmdArgs << QByteArray("-xmp-dc:Subject<Microsoft:Category");
+    }
+
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
     d->currentPath = fileInfo.filePath();
@@ -159,26 +166,23 @@ bool ExifToolParser::applyChanges(const QString& path,
 
     d->prepareProcess();
 
-    // QMimeDatabase mimeDB;
+    QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-m");
-/*
+
     QString suffix = fileInfo.suffix().toUpper();
-
-    bool isJXLFile = (suffix == QLatin1String("JXL"));
-
     bool isVideo   = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
 
     if (isVideo)
     {
         cmdArgs << QByteArray("-api");
         cmdArgs << QByteArray("QuickTimeHandler=1");
-        cmdArgs << QByteArray("-itemlist:title=");
-        cmdArgs << QByteArray("-itemlist:comment=");
-        cmdArgs << QByteArray("-microsoft:category=");
-        cmdArgs << QByteArray("-itemlist:description=");
+        cmdArgs << QByteArray("-ItemList:Title=");
+        cmdArgs << QByteArray("-ItemList:Comment=");
+        cmdArgs << QByteArray("-Microsoft:Category=");
+        cmdArgs << QByteArray("-Microsoft:SharedUserRating=");
     }
-*/
+
     if (hasExif)
     {
         cmdArgs << QByteArray("-ifd0:all=");
@@ -217,15 +221,15 @@ bool ExifToolParser::applyChanges(const QString& path,
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
-/*
+
     if (isVideo)
     {
-        cmdArgs << QByteArray("-itemlist:title<xmp:title");
-        cmdArgs << QByteArray("-microsoft:category<xmp:tagslist");
-        cmdArgs << QByteArray("-itemlist:comment<xmp:description");
-        cmdArgs << QByteArray("-itemlist:description<xmp:description");
+        cmdArgs << QByteArray("-ItemList:Title<xmp-dc:Title");
+        cmdArgs << QByteArray("-Microsoft:Category<xmp-dc:Subject");
+        cmdArgs << QByteArray("-ItemList:Comment<xmp-dc:Description");
+        cmdArgs << QByteArray("-Microsoft:SharedUserRating<xmp-microsoft:RatingPercent");
     }
-*/
+
     if (hasCSet)
     {
         cmdArgs << QByteArray("-codedcharacterset=UTF8");
