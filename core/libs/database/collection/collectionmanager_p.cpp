@@ -61,7 +61,11 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
 
     //qCDebug(DIGIKAM_DATABASE_LOG) << "got listFromType";
 
-    udisToWatch.clear();
+    {
+        QWriteLocker locker(&lock);
+
+        udisToWatch.clear();
+    }
 
     Q_FOREACH (const Solid::Device& accessDevice, devices)
     {
@@ -74,7 +78,11 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
 
         // mark as a device of principal interest
 
-        udisToWatch << accessDevice.udi();
+        {
+            QWriteLocker locker(&lock);
+
+            udisToWatch << accessDevice.udi();
+        }
 
         const Solid::StorageAccess* access = accessDevice.as<Solid::StorageAccess>();
 
