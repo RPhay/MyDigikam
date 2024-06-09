@@ -819,7 +819,6 @@ void CollectionManager::updateLocations()
         {
             Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
-                absolutePath      = path;
                 QUrl url(location->identifier);
                 QString uuidValue = d->getCollectionUUID(path);
                 QString queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"));
@@ -839,6 +838,8 @@ void CollectionManager::updateLocations()
 
                 if (available)
                 {
+                    absolutePath = path;
+
                     break;
                 }
             }
@@ -883,7 +884,12 @@ void CollectionManager::updateLocations()
         // Don't touch location->status, do not interfere with "hidden" setting
 
         location->available = available;
-        location->setAbsolutePath(absolutePath);
+
+        // Special case for a Windows network drive path only with drive letter.
+
+        QString cleanPath   = absolutePath.endsWith(QLatin1Char('/')) ? absolutePath.chopped(1)
+                                                                      : absolutePath;
+        location->setAbsolutePath(cleanPath);
 
         if (available)
         {
@@ -896,11 +902,11 @@ void CollectionManager::updateLocations()
 
         if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
         {
-            QFileInfo writeInfo(absolutePath);
+            QFileInfo writeInfo(cleanPath);
 
             if (writeInfo.isWritable())
             {
-                SafeTemporaryFile* const temp = new SafeTemporaryFile(absolutePath +
+                SafeTemporaryFile* const temp = new SafeTemporaryFile(cleanPath +
                                                                       QLatin1String("/CaseSensitivity-XXXXXX-Test"));
                 temp->setAutoRemove(false);
                 temp->open();
