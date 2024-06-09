@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT BlackFrameToolTip : public DItemToolTip
 public:
 
     explicit BlackFrameToolTip(QTreeWidget* const view);
-    ~BlackFrameToolTip() override;
+    ~BlackFrameToolTip()        override;
 
     void setToolTipString(const QString& tip);
     void setItem(QTreeWidgetItem* const item);
@@ -42,8 +42,8 @@ public:
 
 protected:
 
-    QRect   repositionRect() override;
-    QString tipContents() override;
+    QRect   repositionRect()    override;
+    QString tipContents()       override;
 
 private:
 
