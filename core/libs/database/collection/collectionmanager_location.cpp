@@ -819,7 +819,6 @@ void CollectionManager::updateLocations()
         {
             Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
-                absolutePath      = path;
                 QUrl url(location->identifier);
                 QString uuidValue = d->getCollectionUUID(path);
                 QString queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"));
@@ -839,6 +838,8 @@ void CollectionManager::updateLocations()
 
                 if (available)
                 {
+                    absolutePath = path.endsWith(QLatin1Char('/')) ? path.chopped(1) : path;
+
                     break;
                 }
             }
