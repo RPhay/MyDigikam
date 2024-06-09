@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SAVE_IMG_THREAD_H
-#define DIGIKAM_SAVE_IMG_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace DigikamGenericDScannerPlugin
-
-#endif // DIGIKAM_SAVE_IMG_THREAD_H

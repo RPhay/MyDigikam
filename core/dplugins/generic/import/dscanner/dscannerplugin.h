@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DSCANNER_PLUGIN_H
-#define DIGIKAM_DSCANNER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamGenericDScannerPlugin
-
-#endif // DIGIKAM_DSCANNER_PLUGIN_H
