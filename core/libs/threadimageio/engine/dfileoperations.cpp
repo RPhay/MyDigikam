@@ -326,7 +326,10 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         args << QLatin1String("/select,");
     }
 
-    args << QDir::toNativeSeparators(path);
+    qDebug() << "Explorer 1:" << info.absoluteFilePath();
+    qDebug() << "Explorer 2:" << info.canonicalFilePath();
+
+    args << QDir::toNativeSeparators(info.absoluteFilePath());
 
     QProcess process;
     process.setArguments(args);
