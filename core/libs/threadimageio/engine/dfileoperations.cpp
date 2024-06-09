@@ -318,10 +318,8 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         }
     }
 
-    QFileInfo info(path);
     QStringList args;
-    args << QLatin1String("/C");
-    args << QLatin1String("explorer");
+    QFileInfo info(path);
 
     if (info.isFile())
     {
@@ -331,9 +329,10 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     args << QDir::toNativeSeparators(path);
 
     QProcess process;
-    process.start(QLatin1String("cmd.exe"), args);
+    process.setArguments(args);
+    process.setProgram(QLatin1String("explorer.exe"));
 
-    if (process.waitForFinished(5000))
+    if (process.startDetached())
     {
         return;
     }
