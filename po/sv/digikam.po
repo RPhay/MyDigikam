@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-26 08:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27994,7 +27994,7 @@ msgstr ""
 "markerade. Om sökvägen är tom kommer den delade katalogen anses som inte "
 "tillgänglig."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28004,7 +28004,7 @@ msgstr ""
 "\"relativ sökväg\" på hårddiskpartition med \"UUID\"\n"
 "Katalog \"%1\" på volymen med identifieraren \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28014,7 +28014,7 @@ msgstr ""
 "\"relativ sökväg\" på hårddiskpartition med \"beteckning\"\n"
 "Katalog \"%1\" på volymen med beteckning \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

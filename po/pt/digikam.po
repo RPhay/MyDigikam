@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -28412,7 +28412,7 @@ msgstr ""
 "A partilha de rede será identificada pela localização que seleccionou. Se "
 "esta está em branco, a partilha considerar-se-á indisponível."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28422,7 +28422,7 @@ msgstr ""
 "\"localização relativa\" na partição do disco com o \"UUID\"\n"
 "Pasta \"%1\" no volume com o ID \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28432,7 +28432,7 @@ msgstr ""
 "\"localização relativa\" na partição do disco rígido com a \"legenda\"\n"
 "Pasta \"%1\" no volume com a legenda \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -28772,7 +28772,7 @@ msgstr ""
 "De Nettwark-Freegaav lett sik över den Padd kennen, den Du utsöcht hest. "
 "Söchst Du keen Padd ut, gellt de Freegaav as nich verföögbor."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28780,7 +28780,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28788,7 +28788,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

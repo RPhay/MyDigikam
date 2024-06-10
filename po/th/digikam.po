@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -28257,7 +28257,7 @@ msgstr ""
 "พื้นที่ใช้งานร่วมกันบนเครือข่ายจะถูกแสดงตัวโดยใช้ค่าพาธของมันตามที่คุณเลือก หากค่าพาธว่าง "
 "พื้นที่ใช้งานร่วมกันนั้นจะไม่สามารถใช้งานได้"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -28267,7 +28267,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "โฟลเดอร์ \"%1\" บนโวลุมเก็บข้อมูลที่มีค่าประจำตัว \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28275,7 +28275,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

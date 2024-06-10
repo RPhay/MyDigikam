@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-30 22:41+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -27892,7 +27892,7 @@ msgstr ""
 "La retparto estos identigita per la vojo, kiun vi elektis. Se la vojo estas "
 "malplena, la parto estos konsiderata neatingebla."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27902,7 +27902,7 @@ msgstr ""
 "\"relativa vojo\" sur fiksdisko kun \"UUID\"\n"
 "Dosierujo \"%1\" sur la volumo kun la id \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27912,7 +27912,7 @@ msgstr ""
 "\"relativa vojo\" sur diskpartigo kun \"label\"\n"
 "Dosierujo \"%1\" sur la volumo etikedita \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

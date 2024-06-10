@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-23 15:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -27926,7 +27926,7 @@ msgstr ""
 "Netsameignin verður auðkennd með slóðinni sem þú valdir. Ef slóðin er auð, "
 "verður sameignin talin óaðgengileg."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27936,7 +27936,7 @@ msgstr ""
 "\"afstæð slóð\" á disksneið harðdisks með \"UUID\"\n"
 "Mappan \"%1\" á gagnageymslusvæði með auðkennið \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27946,7 +27946,7 @@ msgstr ""
 "\"afstæð slóð\" á disksneið harðdisks með \"label\"\n"
 "Mappan \"%1\" á gagnageymslusvæði með merkinguna \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

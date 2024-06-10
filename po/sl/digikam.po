@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-26 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28007,7 +28007,7 @@ msgstr ""
 "Omrežna souporaba bo določena s potjo, ki ste jo izbrali. Če je pot prazna, "
 "bo souporaba obravnavana kot nedostopna."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28017,7 +28017,7 @@ msgstr ""
 "\"relativna pot\" na trdem disku particije z \"UUID\"\n"
 "Mapa \"%1\" na nosilcu z id-jem \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28027,7 +28027,7 @@ msgstr ""
 "\"relativna pot\" na trdem disku particije z \"oznako\"\n"
 "Mapa \"%1\" na nosilcu z oznako \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

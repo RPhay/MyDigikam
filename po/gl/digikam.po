@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
-"PO-Revision-Date: 2024-06-08 13:07+0200\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
+"PO-Revision-Date: 2024-06-09 10:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -28158,7 +28158,7 @@ msgstr ""
 "A compartición de rede identificarase coa ruta que seleccionou. Se a ruta "
 "estiver baleira, a compartición considerarase como non dispoñíbel."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28168,7 +28168,7 @@ msgstr ""
 "«ruta relativa» na partición do disco duro co cartafol\n"
 "de «UUID» «%1» no volume co identificador «%2»."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28178,7 +28178,7 @@ msgstr ""
 "«ruta relativa» na partición do disco duro co cartafol\n"
 "de «etiqueta» «%1» no volume coa etiqueta «%2»."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
@@ -64266,17 +64266,26 @@ msgid ""
 "downloaded to %1.</p><p><b>After the successful download you have to restart "
 "digiKam.</b></p>"
 msgstr ""
+"<p>Para a detección facial, a ferramenta de eliminación de ollos vermellos, "
+"a clasificación de imaxes por estética ou a asignación automática de "
+"etiquetas a imaxes, digiKam necesita grandes ficheiros binarios. Pode "
+"escoller que funcionalidade quere usar.</p><p>Algúns destes ficheiros non se "
+"atoparon. Prema «Descargar» para iniciar a descarga dos ficheiros "
+"necesarios. Pode pechar o diálogo, preguntaráselle de novo a seguinte vez "
+"que inicie digiKam. Sen estes ficheiros a funcionalidade seleccionada non "
+"funcionará.</p><p>O ficheiros descargaranse en %1.</p><p><b>Tras a descarga "
+"ten que reiniciar digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:565
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "A descarga require %1 ficheiros cun tamaño de %2."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgid "All files of the selected features were found."
-msgstr ""
+msgstr "Atopáronse todos os ficheiros das funcionalidades seleccionadas."
 
 #: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
@@ -64443,21 +64452,17 @@ msgstr ""
 "predeterminada ao gardar os ficheiros de imaxe</li></ul>"
 
 #: core/utilities/setup/editor/setupraw.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>A <i>raw image file</i> contains minimally processed data from the "
-#| "image sensor of a digital camera.</p><p>Opening a raw file requires "
-#| "extensive data interpretation and processing.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "A raw image file contains minimally processed data from the image sensor of "
 "a digital camera.\n"
 "Opening a raw file requires extensive data interpretation and processing."
 msgstr ""
-"<p>Un <i>ficheiro de imaxe RAW</i> contén datos procesados minimamente do "
-"sensor de imaxes dunha cámara dixital.</p><p>Abrir un ficheiro RAW require "
-"unha extensa interpretación e procesamento dos datos.</p>"
+"Un ficheiro de imaxe RAW contén datos procesados minimamente do sensor de "
+"imaxes dunha cámara dixital.\n"
+"Abrir un ficheiro RAW require unha extensa interpretación e procesamento dos "
+"datos."
 
 #: core/utilities/setup/editor/setupraw.cpp:104
 #, kde-format
@@ -64570,6 +64575,11 @@ msgid ""
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
+"<title>Formato de ficheiro predeterminado para gardar imaxes con versión</"
+"title><para>Seleccione o formato de ficheiro no que as imaxes editadas se "
+"gardan automaticamente. Pode configurar opcións específicas dun formato, "
+"como opcións de compresión, na lapela de <interface>Opcións de formato</"
+"interface>.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:179
 #, kde-format
@@ -64653,14 +64663,7 @@ msgid "After each step that is not completely reproducible"
 msgstr "Despois de cada paso que non sexa completamente reproducíbel"
 
 #: core/utilities/setup/editor/setupversioning.cpp:282
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<para>If an image has been edited, only the <interface>current versions</"
-#| "interface> will be shown in the main thumbnail view. From the "
-#| "<interface>right sidebar</interface>, you always have access to all "
-#| "hidden files.</para> <para>With the options here, you can choose to show "
-#| "certain files permanently.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<para>If an image has been edited, only the <interface>current versions</"
@@ -64674,8 +64677,10 @@ msgstr ""
 "<para>Se se editou unha imaxe, só aparecen as <interface>versións actuais</"
 "interface> na vista de miniaturas principal. Desde a <interface>barra "
 "lateral dereita</interface> sempre se pode acceder a todos os ficheiros "
-"agochados.</para> <para>Con estas opcións pódese escoller que se mostren "
-"permanentemente determinados ficheiros.</para>"
+"agochados.</para> <para>Con estas opcións pódese escoller que se amosen "
+"permanentemente determinados ficheiros.</para> <para>Se activa por primeira "
+"vez a edición non-destrutiva e as versións de imaxe, só funcionará para as "
+"imaxes que garde a partir de agora.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:290
 #, kde-format
@@ -64696,32 +64701,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Amosar sempre as instantáneas intermedias"
 
 #: core/utilities/setup/editor/setupversioning.cpp:459
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving</title><para>Select the file format "
-#| "in which edited images are saved automatically. Format-specific options, "
-#| "like compression settings, can be configured on the <interface>Format "
-#| "Options</interface> tab.</para><para><list><item><emphasis "
-#| "strong='true'>JPEG</emphasis>: JPEG is the most commonly used file "
-#| "format, but it employs lossy compression, which means that with each "
-#| "saving operation some image information will be irreversibly lost. JPEG "
-#| "offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item><item><emphasis "
-#| "strong='true'>JPEG 2000</emphasis>: JPEG 2000 is similar to PGF. Loading "
-#| "or saving is slower, the compression rate is better, and the format more "
-#| "widely supported, though still not comparable to the tradition formats "
-#| "JPEG, PNG or TIFF. </item></list></para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly used "
@@ -64740,30 +64720,21 @@ msgid ""
 "directly be able to open these files, and you may not be able to directly "
 "publish them on the web. </item>"
 msgstr ""
-"<title>Formato de ficheiro predeterminado para gardar</title><para>Escolla o "
-"formato de ficheiro no que desexa que se garden automaticamente as imaxes "
-"editadas. As opcións específicas de cada formato, como as de compresión, "
-"pódense configurar no separador <interface>Opcións de formato</interface>.</"
-"para><para><list><item><emphasis strong='true'>JPEG</emphasis>: JPEG é o "
-"formato de ficheiro máis frecuente, pero emprega compresión con perdas, o "
-"que significa que de cada vez que se garda pérdese algo de información da "
-"imaxe irreversibelmente. JPEG ofrece unha boa taxa de compresión, o que "
-"resulta en ficheiros máis pequenos. </item><item><emphasis "
-"strong='true'>PNG</emphasis>: Un formato moi empregado que emprega "
-"compresión con perdas. Porén, os ficheiros son máis grandes porque PNG non "
-"acada taxas de compresión moi boas.</item><item><emphasis "
-"strong='true'>TIFF</emphasis>: Un formato frecuente, normalmente sen "
-"comprimir ou cunha modesta compresión sen perdas. Os ficheiros resultantes "
-"son grandes, pero non se perde calidade por causa da compresión. </"
-"item><item><emphasis strong='true'>PGF</emphasis>: Tecnicamente, este é un "
-"formato de ficheiros superior que ofrece taxas de compresión boas tanto con "
-"perdas como sen elas. Pero aínda non é popular nin moi aceptado, polo que as "
-"súas amizades poderían non ser quen de abrir estes ficheiros e pode que non "
-"os poida publicar directamente na web. </item><item><emphasis "
-"strong='true'>JPEG 2000</emphasis>: JPEG 2000 é semellante ao PGF. A carga e "
-"o gardado son máis lentos, a taxa de compresión é mellor e o formato máis "
-"aceptado, aínda que aínda non é comparábel aos formatos tradicionais JPEG, "
-"PNG ou TIFF.</item></list></para>"
+"<item><emphasis strong='true'>JPEG</emphasis>: É o formato de ficheiro máis "
+"frecuente, pero usa compresión con perdas, o que significa que de cada vez "
+"que se garda pérdese algo de información da imaxe de maneira irreversíbel. "
+"JPEG ofrece unha boa taxa de compresión, o que resulta en ficheiros máis "
+"pequenos. </item><item><emphasis strong='true'>PNG</emphasis>: Un formato "
+"moi empregado que usa compresión con perdas. Porén, os ficheiros son máis "
+"grandes porque PNG non acada taxas de compresión moi boas.</"
+"item><item><emphasis strong='true'>TIFF</emphasis>: Un formato frecuente, "
+"normalmente sen comprimir ou cunha modesta compresión sen perdas. Os "
+"ficheiros resultantes son grandes, pero non se perde calidade por causa da "
+"compresión. </item><item><emphasis strong='true'>PGF</emphasis>: "
+"Tecnicamente, este é un formato de ficheiros superior que ofrece taxas de "
+"compresión boas tanto con perdas como sen elas. Pero aínda non é popular nin "
+"moi aceptado, polo que as súas amizades poderían non ser quen de abrir estes "
+"ficheiros e pode que non os poida publicar directamente na web. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:492
 #, kde-kuit-format
@@ -64774,6 +64745,10 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
+"<item><emphasis strong='true'>JPEG 2000</emphasis>: JPEG 2000 é semellante "
+"ao PGF. A carga e o gardado son máis lentos, a taxa de compresión é mellor e "
+"o formato máis aceptado, aínda que aínda non é comparábel aos formatos "
+"tradicionais JPEG, PNG ou TIFF.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:504
 #, kde-kuit-format
@@ -64784,15 +64759,14 @@ msgid ""
 "using HEVC codec (H.265) requires less storage space than the equivalent "
 "quality JPEG. </item>"
 msgstr ""
+"<item><emphasis strong='true'>HEIF</emphasis>: O formato High Efficiency "
+"Image File (ficheiro de imaxe de alto rendemento) é un formato de contedor "
+"para almacenar imaxes individuais. Unha imaxe HEIF que usa o códec HEVC "
+"(H.265) require menos espazo de almacenamento que unha imaxe JPEG de "
+"calidade equivalente.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:515
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PNG format.</"
-#| "p><p>The Portable Network Graphics is a raster-graphics file-format that "
-#| "supports lossless data compression.</p><p>See details about this format "
-#| "from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free raster-"
@@ -64800,11 +64774,10 @@ msgid ""
 "outperform existing raster formats and thus to become their universal "
 "replacement. </item>"
 msgstr ""
-"<p>Esta ferramenta de xestor da fila do lote pode converter datos de imaxes "
-"ao formato PNG.</p><p>Portable Network Graphics é un formato de ficheiro de "
-"mapa de bits que permite compresión de datos sen perda.</p><p>Pode consultar "
-"os detalles deste formato <a href='https://en.wikipedia.org/wiki/"
-"Portable_Network_Graphics'>nesta páxina</a>.</p>"
+"<item><emphasis strong='true'>JPEG-XL</emphasis>: É un formato de ficheiro "
+"de mapa de bits gratuíto que permite compresión sen perda. Está deseñado "
+"para superar o rendemento de formatos de mapa de bits existentes e "
+"converterse así no seu substituto universal.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:525
 #, kde-kuit-format
@@ -64815,6 +64788,10 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
+"<item><emphasis strong='true'>WEBP</emphasis>: É un formato de ficheiro de "
+"imaxe desenvolvido por Google como substituto dos formatos de ficheiro JPEG, "
+"PNG e GIF. Os ficheiros son máis pequenos con calidades iguais, ou de mellor "
+"calidade co mesmo tamaño. Permite compresión con e sen perda.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:536
 #, kde-kuit-format
@@ -64825,21 +64802,22 @@ msgid ""
 "compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
 "encoding format. </item>"
 msgstr ""
+"<item><emphasis strong='true'>AVIF</emphasis>: O formato de ficheiro de "
+"imaxe de AV1 é unha especificación para almacenar imaxes no contedor ISOBMFF "
+"(como HEIF) comprimidas co códec AOMedia Video 1 (AV1), un formato de "
+"codificación aberto e gratuíto. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Reler os metadatos do ficheiro"
+msgstr "Gardar o perfil de metadatos avanzado"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
-#, fuzzy, kde-format
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Retirar os metadatos do ficheiro"
+msgstr "Cargar un perfil de metadatos avanzado"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
 #, kde-format
@@ -64886,10 +64864,9 @@ msgid "Unify read and write"
 msgstr "Unificar a lectura e a escritura."
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
-#, fuzzy, kde-format
-#| msgid "Read metadata from Baloo"
+#, kde-format
 msgid "Read all metadata for tags"
-msgstr "Ler os metadatos de Baloo"
+msgstr "Ler todos os metadatos das etiquetas"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:423
 #, kde-format
@@ -64917,11 +64894,9 @@ msgid "Save Profile"
 msgstr "Gardar o perfil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Perfil"
+msgstr "Cargar un perfil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
@@ -64929,18 +64904,16 @@ msgid "Reset to Default"
 msgstr "Restabelecer valores predeterminados"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:110
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
-msgstr "Novo espazo de nomes Xmp"
+msgstr "Novo espazo de nomes de XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:114
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr "Editar o espazo de nomes Xmp"
+msgstr "Editar o espazo de nomes de XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:204
 #, kde-format
@@ -64990,11 +64963,7 @@ msgstr ""
 "espazo de nomes correcta da lista.</li> </ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:250
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new comment namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</"
-#| "i></li><li>Select the correct namespace option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
@@ -65002,7 +64971,7 @@ msgid ""
 msgstr ""
 "<p>Para crear novos espazos de nomes de comentarios, debe indicar os "
 "seguintes parámetros:</p> <p><ul> <li>Nome do espazo de nomes con puntos.<br/"
-">Por exemplo, «<i>Xmp.xmp.Cualificacion</i>».</li><li>Seleccione a opción de "
+">Por exemplo, «<i>Xmp.xmp.Comentario</i>».</li><li>Seleccione a opción de "
 "espazo de nomes correcta da lista.</li> </ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
@@ -65104,6 +65073,11 @@ msgid ""
 "no longer be uniquely assigned and will be used for both images, which can "
 "lead to metadata problems."
 msgstr ""
+"Só debería activar esta opción se está intercambiando metadatos de imaxe con "
+"programas que usan o formato de acompañante nome-base.xmp. Se ten imaxes co "
+"mesmo nome base (p. ex. Imaxe.CR2 e Imaxe.JPG) o acompañante xa non pode "
+"asignarse de maneira única e usarase para as dúas imaxes, o que pode causar "
+"problemas de metadatos."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:284
 #, kde-format
@@ -65117,13 +65091,7 @@ msgstr ""
 "opción se sabe o que fai."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:307
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>Do you really want to enable metadata writing to RAW files?</b></"
-#| "p><p>DigiKam delegates this task to the Exiv2 library. With different RAW "
-#| "formats, problems are known which can lead to the destruction of RAW "
-#| "files. If you decide to do so, make a backup of your RAW files.</"
-#| "p><p><b>We strongly recommend not to enable this option.</b></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Do you really want to enable metadata writing to RAW files? digiKam "
@@ -65133,16 +65101,15 @@ msgid ""
 "If you decide to do so, make a backup of your RAW files. We strongly "
 "recommend not to enable this option."
 msgstr ""
-"<p><b>Seguro que quere activar a escritura de metadatos en ficheiros RAW?</"
-"b></p> <p>DigiKam delega esta tarefa á biblioteca Exiv2. Hai certos formatos "
-"RAW cos que se sabe que se producen problemas que poden levar á destrución "
-"dos ficheiros RAW. Se decide facelo, faga unha copia de seguranza dos seus "
-"ficheiros RAW.</p><p><b>Recomendamos encarecidamente que non active esta "
-"opción.</b></p>"
+"Seguro que quere activar a escritura de metadatos en ficheiros RAW? digiKam "
+"delega esta tarefa ao motor de ExifTool.\n"
+"Hai certos formatos RAW cos que se sabe que se producen problemas que poden "
+"levar á corrupción dos ficheiros RAW.\n"
+"Se decide facelo, faga unha salvagarda dos seus ficheiros RAW. Recomendamos "
+"encarecidamente que non active esta opción."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:315
-#, fuzzy, kde-format
-#| msgid "Yes I understand"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Enténdoo"
@@ -65194,14 +65161,7 @@ msgstr ""
 "Lembre que os metadatos das imaxes non se editarán automaticamente."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='http://community.kde.org/Baloo'>Baloo</a> provides the basis "
-#| "to handle all kinds of metadata on the KDE desktop in a generic fashion. "
-#| "It allows you to tag, rate and comment your files in KDE applications "
-#| "like Dolphin.</p> <p>Please set here if you want to synchronize the "
-#| "metadata stored by digiKam desktop-wide with the Baloo Desktop Search.</"
-#| "p> "
+#, kde-format
 msgctxt "@info"
 msgid ""
 "provides the basis to handle all kinds of metadata on the KDE desktop in a "
@@ -65209,12 +65169,11 @@ msgid ""
 "applications like Dolphin. Please set here if you want to synchronize the "
 "metadata stored by digiKam desktop-wide with the Baloo Desktop Search."
 msgstr ""
-"<p><a href='http://community.kde.org/Baloo'>Baloo</a> fornece a base para "
-"xestionar todo tipo de metadatos no escritorio de KDE de maneira xenérica. "
-"Permite etiquetar, cualificar e comentar os ficheiros nas aplicacións de KDE "
-"como Dolphin.</p><p>Configure aquí de quere sincronizar os metadatos "
-"almacenados por digiKam en todo o escritorio coa busca de escritorio de "
-"Baloo.</p>"
+"fornece a base para xestionar todo tipo de metadatos no escritorio de KDE de "
+"maneira xenérica. Permite etiquetar, cualificar e comentar os ficheiros nas "
+"aplicacións de KDE como Dolphin. Configure aquí de quere sincronizar os "
+"metadatos almacenados por digiKam en todo o escritorio coa busca de "
+"escritorio de Baloo."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:84
 #, kde-format
@@ -65266,18 +65225,14 @@ msgid "Captions and title"
 msgstr "Lendas e título"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to store item caption and title in the JFIF Comment "
-#| "section, the EXIF tag, the XMP tag, and the IPTC tag."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store item caption and title in the JFIF Comment "
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
 "Escolla esta opción para gardar a lenda e o título dos elementos na sección "
-"Comment de JFIF, na etiqueta EXIF, na etiqueta XMP e na IPTC."
+"Comment de JFIF, na etiqueta Exif, na etiqueta XMP e na IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:60
 #, kde-format
@@ -65286,18 +65241,14 @@ msgid "Rating"
 msgstr "Cualificación"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to store the item rating in the EXIF tag and the XMP "
-#| "tags."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
 msgstr ""
 "Escolla esta opción para gardar a cualificación do elemento nas etiquetas "
-"EXIF, e XMP."
+"Exif, e XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:65
 #, kde-format
@@ -65376,25 +65327,20 @@ msgstr ""
 "caras nas etiquetas XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:90
-#, fuzzy, kde-format
-#| msgid "Position Information (GPS)"
+#, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
-msgstr "Información sobre a posición (GPS)"
+msgstr "Información de xeolocalización (GPS)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to store the item rating in the EXIF tag and the XMP "
-#| "tags."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store Geolocation information in the Exif tag and the "
 "XMP tags."
 msgstr ""
-"Escolla esta opción para gardar a cualificación do elemento nas etiquetas "
-"EXIF, e XMP."
+"Escolla esta opción para gardar a información de xeolocalización nas "
+"etiquetas Exif, e XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
 #, kde-format
@@ -65403,15 +65349,12 @@ msgid "Reading and Writing Metadata"
 msgstr "Lectura e escritura dos metadatos"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to save, as specified, metadata to XMP sidecar files."
+#, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
 msgstr ""
-"Active esta opción para gardar, como se especifiquen, os metadatos nos "
-"ficheiros acompañantes de XMP."
+"Delegar ao motor de ExifTool todas as operacións de escritura de metadatos "
+"en ficheiros."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -65421,48 +65364,38 @@ msgid ""
 "Exiv2. This will slowdown a little bit the synchronization of files metadata "
 "with database."
 msgstr ""
+"Active esta opción para escribir os metadatos en ficheiros co motor de "
+"ExifTool en vez de Exiv2. Isto lentificará lixeiramente a sincronización de "
+"metadatos de ficheiros coa base de datos."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
-msgstr "Escribir os metadatos en cada ficheiro"
+msgstr "Escribir os metadatos nos ficheiros DNG."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to save, as specified, metadata to XMP sidecar files."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
-msgstr ""
-"Active esta opción para gardar, como se especifiquen, os metadatos nos "
-"ficheiros acompañantes de XMP."
+msgstr "Marque esta opción para escribir os metadatos en ficheiros DNG."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "If possible write Metadata to RAW files (experimental)"
+#, kde-format
 msgctxt "@option:check"
 msgid "If possible write metadata to RAW files"
-msgstr "De ser posíbel, escribir os metadatos en ficheiros RAW (experimental)"
+msgstr "De ser posíbel, escribir os metadatos en ficheiros RAW."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW TIFF/EP files. This "
-#| "feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
-#| "experimental, and is disabled by default."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to write metadata into RAW files. This feature is "
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
-"Active esta opción para escribir metadatos en ficheiros RAW TIFF/EP. Esta "
-"funcionalidade require a biblioteca compartida Exiv2 na versión >= 0.18.0. "
-"Aínda é experimental e está desactivada de maneira predeterminada."
+"Active esta opción para escribir metadatos en ficheiros RAW. Esta "
+"funcionalidade delega no motor de ExifTool e está desactivada de maneira "
+"predeterminada."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:140
 #, kde-format
@@ -65529,14 +65462,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
-msgstr ""
+msgstr "Nota: consulte %1 do motor de ExifTool."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:229
-#, fuzzy, kde-format
-#| msgid "Write Options"
+#, kde-format
 msgctxt "@label"
 msgid "write limitations"
-msgstr "Opcións de escritura"
+msgstr "limitacións de escritura"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:236
 #, kde-format
@@ -65545,21 +65477,22 @@ msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
 msgstr ""
+"Nota: estas opcións dependen da dispoñibilidade de %1. Consulte a lapela de "
+"ExifTool para máis información."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:239
-#, fuzzy, kde-format
-#| msgid "Tool"
+#, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
-msgstr "Ferramenta"
+msgstr "Motor de ExifTool"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:label"
-#| msgid "Select Metadata Fields to Be Displayed"
+#, kde-format
 msgctxt "@label"
 msgid "Select Metadata Fields to be Displayed when using Custom Filters"
-msgstr "Escoller os datos dos metadatos que se mostran"
+msgstr ""
+"Seleccionar os campos dos metadatos que se amosan ao usar filtros "
+"personalizados"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:43
 #, kde-format
@@ -65710,17 +65643,14 @@ msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Pór a etiqueta de orientación como normal tras rotar/inverter."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:120
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: These settings affect the album view and not the image editor. "
-#| "The image editor always changes the image data during the rotation.</b>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Note: These settings affect the album view and not the image editor. The "
 "image editor always changes the image data during the rotation."
 msgstr ""
-"<b>Nota: Estas opción afectan á vista de álbum e non ao editor de imaxes. O "
-"editor de imaxes sempre cambia os datos da imaxe durante a rotación.</b>"
+"Nota: Estas opción afectan á vista de álbum e non ao editor de imaxes. O "
+"editor de imaxes sempre cambia os datos da imaxe durante a rotación."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:134
 #, kde-format
@@ -65795,6 +65725,7 @@ msgstr "Indicar o modo exacto no que se escriben os acompañantes de XMP"
 msgctxt "@option:check"
 msgid "Sidecar file names are compatible with commercial programs"
 msgstr ""
+"Os nomes de ficheiro de acompañante son compatíbeis con programas comerciais."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:57
 #, kde-format
@@ -65809,16 +65740,7 @@ msgstr ""
 "Para Darktable non active esta opción."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Add file types to be recognised as sidecars.</p><p>digiKam "
-#| "(optionally) writes metadata to *.xmp sidecar files. Other programs might "
-#| "use different types, which can be specified below. digiKam will neither "
-#| "display these nor read from or write to them. But whenever a matching "
-#| "album item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, moved, "
-#| "copied or deleted, the same operation will be done on these sidecar files."
-#| "</p><p>Multiple extensions must be separated by a semicolon or a space.</"
-#| "p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -65830,23 +65752,17 @@ msgid ""
 "files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
-"<p>Engadir tipos de ficheiro para recoñecer como acompañantes.</p> "
-"<p>digiKam escribe (opcionalmente) metadatos en ficheiros acompañantes *."
-"xmp. Outros programas poderían usar tipos distintos, que poden indicarse "
-"embaixo. digiKam non os mostrará, nin os lerá nin escribirá neles. Pero cada "
-"vez que se cambia de nome, move, copia ou elimina un elemento (p. ex. «imaxe."
-"dng» para «imaxe.dng.pp3») a mesma operación realizarase neses ficheiros "
-"acompañantes.</p> <p>Distintas extensións deben separarse cun punto e coma "
-"(;) ou un espazo.</p>"
+"Engadir tipos de ficheiro para recoñecer como acompañantes.\n"
+"digiKam escribe (opcionalmente) metadatos en ficheiros acompañantes *.xmp. "
+"Outros programas poderían usar tipos distintos, que poden indicarse embaixo. "
+"digiKam non os amosará, nin os lerá nin escribirá neles. Pero cada vez que "
+"se cambia de nome, move, copia ou elimina un elemento (p. ex. «imaxe.dng» "
+"para «imaxe.dng.pp3») a mesma operación realizarase neses ficheiros "
+"acompañantes.\n"
+"Distintas extensións deben separarse cun punto e coma (;) ou un espazo."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Here you can add extra extensions of sidecars files to be processed "
-#| "alongside regular items. These files will not be visible, but regarded as "
-#| "an extension of the main file. Just write \"xyz abc\" to support files "
-#| "with the *.xyz and *.abc extensions. The internally used sidecars type *."
-#| "xmp is always included.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Here you can add extra extensions\n"
@@ -65857,11 +65773,15 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
-"<p>Aquí pode engadir extensións adicionais de ficheiros acompañantes para "
-"procesar xunto cos elementos normais. Estes ficheiros non serán visíbeis, "
-"pero consideraranse unha extensión do ficheiro principal. Escriba «xyz abc» "
-"para permitir ficheiros coas extensións *.xyz e *.abc. O tipo de acompañante "
-"*.xmp, que se usa internamente, sempre se inclúe.</p>"
+"Aquí pode engadir extensións adicionais de\n"
+"ficheiros acompañantes para procesar xunto\n"
+"cos elementos normais. Estes ficheiros non\n"
+"serán visíbeis, pero consideraranse unha\n"
+"extensión do ficheiro principal. Escriba\n"
+"«xyz abc» para permitir ficheiros coas\n"
+"extensións *.xyz e *.abc. O tipo de\n"
+"acompañante *.xmp, que se usa\n"
+"internamente, sempre se inclúe."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
@@ -65906,10 +65826,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "Configuración do servidor remoto"
+msgstr "Configuración do servidor ma&ndatario de rede"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
@@ -65925,10 +65844,9 @@ msgstr "P&orto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
-#, fuzzy, kde-format
-#| msgid "Fix type"
+#, kde-format
 msgid "Proxy type:"
-msgstr "Tipo de fix"
+msgstr "Tipo de mandatario:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
@@ -65963,41 +65881,39 @@ msgid "&Password:"
 msgstr "&Contrasinal:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
-#| msgid "The album category is"
+#, kde-format
 msgid "Get album date source:"
-msgstr "A categoría do álbum é"
+msgstr "Obter a orixe da data do álbum:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:40
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
-msgstr ""
+msgstr "Desde a data de elemento máis recente"
 
 #: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
-msgstr ""
+msgstr "Desde a data de elemento máis vella"
 
 #: core/utilities/setup/misc/setupmisc.cpp:42
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
-msgstr ""
+msgstr "Desde a data media"
 
 #: core/utilities/setup/misc/setupmisc.cpp:43
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
-msgstr ""
+msgstr "Desde a data do cartafol"
 
 #: core/utilities/setup/misc/setupmisc.cpp:44
-#, fuzzy, kde-format
-#| msgid "Change Case"
+#, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
-msgstr "Cambiar maiúsculas/minúsculas"
+msgstr "Sen cambio de data"
 
 #: core/utilities/setup/misc/setupmisc.cpp:45
 #, kde-format
@@ -66005,6 +65921,8 @@ msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
+"A data do álbum axústase segundo a opción definida cando se atopan elementos "
+"novos durante un exame."
 
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
@@ -66091,7 +66009,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:75
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
-msgstr ""
+msgstr "Exame rápido (detecta elementos novos, eliminados e renomeados)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -66102,11 +66020,14 @@ msgid ""
 "this\n"
 "option must be deactivated."
 msgstr ""
+"Defina esta opción para acelerar de maneira significativa o exame. Atópanse "
+"elementos novos, eliminados e renomeados. Desactive esta opción para "
+"detectar elementos que cambiaron."
 
 #: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Detect faces in newly added images"
-msgstr ""
+msgstr "Detectar caras nas imaxes novas que se engadan"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, kde-format
@@ -66139,12 +66060,12 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:91
 #, kde-format
 msgid "Initially select the first item in the album"
-msgstr ""
+msgstr "Seleccionar inicialmente o primeiro elemento do álbum"
 
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
-msgstr ""
+msgstr "Expandir o elemento actual da árbore cun único clic do rato"
 
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
@@ -66234,54 +66155,52 @@ msgstr "Agrupamento"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
-msgstr ""
+msgstr "Usar o axuste de escala de DPI altos do factor da pantalla"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
-msgstr ""
+msgstr "Usar mapas de píxeles de resolución alta de DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "Forzar o uso de renderización de OpenGL mediante o soporte lóxico"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
-msgstr ""
+msgstr "Desactivar a aceleración de OpenCL mediante o soporte físico"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
-msgstr ""
+msgstr "Corrixir o problema de descodificación de vídeo con GPU de AMD"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for video:"
-msgstr ""
+msgstr "Motor de descodificación usado para vídeo:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgid " (default)"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (predeterminado)"
+msgstr "FFmpeg (predeterminado)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "Windows (sistema)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
-msgstr ""
+msgstr "Activar o rexistro interno de información de depuración"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Downloading remote files for \"%1\""
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Descargando os ficheiros remotos para «%1»"
+msgstr "Descargar os datos binarios necesarios…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
@@ -66289,6 +66208,8 @@ msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
+"<b>Nota: os cambios nestas opcións só xorden efecto tras reiniciar. Algunhas "
+"opcións dependen do soporte físico e poden non xurdir efecto.</b>"
 
 #: core/utilities/setup/setup.cpp:127
 #, kde-format
@@ -66297,15 +66218,14 @@ msgid "Database"
 msgstr "Base de datos"
 
 #: core/utilities/setup/setup.cpp:128
-#, fuzzy, kde-format
-#| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
 msgstr ""
-"<qt>Configuración da base de datos<br/><i>Personalice as opcións da base de "
-"datos</i></qt>"
+"Configuración da base de datos\n"
+"Personalice as opcións da base de datos"
 
 #: core/utilities/setup/setup.cpp:132
 #, kde-format
@@ -66314,15 +66234,14 @@ msgid "Collections"
 msgstr "Coleccións"
 
 #: core/utilities/setup/setup.cpp:133
-#, fuzzy, kde-format
-#| msgid "<qt>Collections Settings<br/><i>Set root albums locations</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
 msgstr ""
-"<qt>Configuración das coleccións<br/><i>Axusta a localización da raíz dos "
-"álbums</i></qt>"
+"Configuración das coleccións\n"
+"Axusta a localización da raíz dos álbums"
 
 #: core/utilities/setup/setup.cpp:137
 #, kde-format
@@ -66331,17 +66250,14 @@ msgid "Views"
 msgstr "Vistas"
 
 #: core/utilities/setup/setup.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Application Views Settings<br/><i>Customize the look of the views</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"<qt>Configuración das vistas da aplicación<br/><i>Personaliza a aparencia "
-"das vistas</i></qt>"
+"Configuración das vistas da aplicación\n"
+"Personaliza a aparencia das vistas"
 
 #: core/utilities/setup/setup.cpp:142
 #, kde-format
@@ -66350,17 +66266,14 @@ msgid "Tool-Tip"
 msgstr "Axuda"
 
 #: core/utilities/setup/setup.cpp:143
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Items Tool-Tip Settings<br/><i>Customize information in item tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
 msgstr ""
-"<qt>Configuración das axudas dos elementos<br/><i>Personalice o contido das "
-"axudas dos elementos</i></qt>"
+"Configuración das axudas dos elementos\n"
+"Personalice o contido das axudas dos elementos"
 
 #: core/utilities/setup/setup.cpp:147
 #, kde-format
@@ -66369,17 +66282,14 @@ msgid "Metadata"
 msgstr "Metadatos"
 
 #: core/utilities/setup/setup.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
-"<qt>Xestión da información incluída na imaxe<br/><i>Configure as relacións "
-"entre imaxes e metadatos</i></qt>"
+"Xestión da información incluída na imaxe\n"
+"Configure as relacións entre imaxes e metadatos"
 
 #: core/utilities/setup/setup.cpp:152
 #, kde-format
@@ -66388,17 +66298,14 @@ msgid "Templates"
 msgstr "Modelos"
 
 #: core/utilities/setup/setup.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
-#| "templates</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
 msgstr ""
-"<qt>Modelos de metadatos<br/><i>Xestione a súa colección de modelos de "
-"metadatos</i></qt>"
+"Modelos de metadatos\n"
+"Xestione a súa colección de modelos de metadatos"
 
 #: core/utilities/setup/setup.cpp:157
 #, kde-format
@@ -66407,17 +66314,14 @@ msgid "Image Editor"
 msgstr "Editor de imaxes"
 
 #: core/utilities/setup/setup.cpp:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"<qt>Configuración do editor de imaxes<br/><i>Personalice a configuración do "
-"editor de imaxes</i></qt>"
+"Configuración do editor de imaxes\n"
+"Personalice a configuración do editor de imaxes"
 
 #: core/utilities/setup/setup.cpp:162
 #, kde-format
@@ -66426,17 +66330,14 @@ msgid "Color Management"
 msgstr "Xestión da cor"
 
 #: core/utilities/setup/setup.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize the color management "
-#| "settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
-"<qt>Configuración da xestión da cor<br/><i>Personaliza as opcións da xestión "
-"da cor</i></qt>"
+"Configuración da xestión da cor\n"
+"Personaliza as opcións da xestión da cor"
 
 #: core/utilities/setup/setup.cpp:167
 #, kde-format
@@ -66445,17 +66346,14 @@ msgid "Light Table"
 msgstr "Mesa de luces"
 
 #: core/utilities/setup/setup.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
-"<qt>Configuración da mesa de luces<br/><i>Personalice a ferramenta empregada "
-"para comparar as imaxes</i></qt>"
+"Configuración da mesa de luces\n"
+"Personalice a ferramenta empregada para comparar os elementos"
 
 #: core/utilities/setup/setup.cpp:181
 #, kde-format
@@ -66464,17 +66362,15 @@ msgid "Image Quality Sorter"
 msgstr "Ordenación segundo a calidade da imaxe."
 
 #: core/utilities/setup/setup.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"<qt>Configuración do editor de imaxes<br/><i>Personalice a configuración do "
-"editor de imaxes</i></qt>"
+"Configuración de orde de calidade de imaxes\n"
+"Personalizar a configuración predeterminada para organizar as imaxes por "
+"calidade"
 
 #: core/utilities/setup/setup.cpp:186
 #, kde-format
@@ -66483,15 +66379,14 @@ msgid "Cameras"
 msgstr "Cámaras"
 
 #: core/utilities/setup/setup.cpp:187
-#, fuzzy, kde-format
-#| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Camera Settings\n"
 "Manage your camera devices"
 msgstr ""
-"<qt>Configuración da cámara<br/><i>Xestione os seus dispositivos de cámara</"
-"i></qt>"
+"Configuración da cámara\n"
+"Xestione os seus dispositivos de cámara"
 
 #: core/utilities/setup/setup.cpp:194
 #, kde-format
@@ -66500,17 +66395,14 @@ msgid "Plugins"
 msgstr "Complementos"
 
 #: core/utilities/setup/setup.cpp:195
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Plug-in Settings<br/><i>Set which plugins will be accessible from "
-#| "application</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
 msgstr ""
-"<qt>Configuración dos complementos<br/><i>Defina a que complementos se pode "
-"acceder desde a aplicación</i></qt>"
+"Configuración dos complementos\n"
+"Defina a que complementos se pode acceder desde a aplicación"
 
 #: core/utilities/setup/setup.cpp:199
 #, kde-format
@@ -66519,27 +66411,17 @@ msgid "Miscellaneous"
 msgstr "Diversos"
 
 #: core/utilities/setup/setup.cpp:200
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of digiKam</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Miscellaneous Settings\n"
 "Customize behavior of the other parts of digiKam"
 msgstr ""
-"<qt>Configuracións diversas<br/><i>Personalice as outras partes de digiKam.</"
-"i></qt>"
+"Configuracións diversas\n"
+"Personalice as outras partes de digiKam."
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<p>The process of updating the file hashes takes a few minutes.</p> "
-#| "<p>Please ensure that any important collections on removable media are "
-#| "connected. <i>After the upgrade you cannot use your database with a "
-#| "digiKam version prior to 2.0.</i></p> <p>Do you want to begin the update?"
-#| "</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes.\n"
@@ -66549,11 +66431,12 @@ msgid ""
 "to 2.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"<p>O proceso de actualización dos resumos dos ficheiros pode levar un anaco."
-"</p><p>Asegúrese de que as coleccións que considere importantes e que estean "
-"en recursos que se poidan retirar estean conectadas.<i>Tras a anovación, non "
-"se pode empregar a base de datos con versións de digiKam anteriores á 2.0</"
-"i></p> <p>Quere iniciar a actualización?</p>"
+"O proceso de actualización dos resumos dos ficheiros pode levar un anaco.\n"
+"Asegúrese de que as coleccións que considere importantes e que estean en "
+"recursos que se poidan retirar estean conectadas.\n"
+"Tras a anovación, non se pode usar a base de datos con versións de digiKam "
+"anteriores á 2.0.\n"
+"Quere iniciar a actualización?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
@@ -66568,14 +66451,7 @@ msgid "Update File Hashes"
 msgstr "Actualizar os resumos dos ficheiros"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<qt>File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.<br/> After the upgrade you "
-#| "cannot use your database with a digiKam version prior to 2.0.</qt>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66585,12 +66461,12 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 2.0."
 msgstr ""
-"<qt>Os resumos dos ficheiros empréganse para identificar ficheiros idénticos "
-"e para mostrar as miniaturas. Estase a empregar un algoritmo novo e "
-"mellorado para crear os resumos. Porén, o algoritmo antigo aínda funciona "
-"bastante ben, polo que esta anovación é recomendada, non esixida.<br/> Unha "
-"vez anovada, non se pode empregar a base de datos cunha versión de digiKam "
-"anterior á 2.0.</qt>"
+"Os resumos dos ficheiros úsanse para identificar ficheiros idénticos e para "
+"amosar as miniaturas. Estase a usar un algoritmo novo e mellorado para crear "
+"os resumos. Porén, o algoritmo antigo aínda funciona bastante ben, polo que "
+"esta anovación é recomendada, non esixida.\n"
+"Unha vez anovada, non se pode usar a base de datos cunha versión de digiKam "
+"anterior á 2.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
@@ -66615,6 +66491,12 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Para funcionar ben, Google Maps esixe unha chave de API que as persoas "
+"usuarias deben comprar por Internet para obter credenciais. Sen a chave, "
+"Google Maps pode usarse pero cunha capa que indica «Só para "
+"desenvolvemento». Para máis información, consulte esta <a href='https://"
+"mapsplatform.google.com/pricing/'>páxina de Google</a> sobre usos, prácticas "
+"e prezos."
 
 #: core/utilities/setup/setupicc.cpp:137
 #, kde-format
@@ -66959,11 +66841,7 @@ msgstr "ningún"
 
 # skip-rule: trasno-driver, PT-2012_colour
 #: core/utilities/setup/setupicc.cpp:858
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Windows, the default search paths include <ul><li>%1/Windows/Spool/"
-#| "Drivers/Color/</li><li>%2/Windows/Color/</li></ul>On your system, "
-#| "currently these paths exist and are scanned:<ul><li>%3</li></ul>"
+#, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
 "spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
@@ -66971,18 +66849,12 @@ msgid ""
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
 "En Windows, as rutas de busca predeterminadas inclúen <ul><li>%1/Windows/"
-"Spool/Drivers/Color/</li><li>%2/Windows/Color/</li></ul>Neste sistema "
-"existen (e polo tanto examínanse) as seguintes rutas:<ul><li>%3</li></ul>"
+"System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
+"li><li>%2/Windows/Color/</li></ul>Neste sistema existen (e polo tanto "
+"examínanse) as seguintes rutas:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:874
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>/opt/"
-#| "digikam/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/."
-#| "local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, currently "
-#| "these paths exist and are scanned:<ul><li>%1</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -66991,12 +66863,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"En Mac OS X, as rutas de busca predeterminadas inclúen <ul><li>/System/"
-"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
-"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>/opt/"
-"digikam/share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/"
-"share/icc/</li><li>~/.color/icc/</li></ul>Neste sistema existen (e polo "
-"tanto examínanse) as seguintes rutas:<ul><li>%1</li></ul>"
+"En macOS, as rutas de busca predeterminadas inclúen <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Neste sistema existen (e "
+"polo tanto examínanse) as seguintes rutas:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:893
 #, kde-format
@@ -67026,13 +66898,24 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
+"Estas opcións determinan a calidade dunha imaxe e convértena nunha "
+"puntuación, almacenada na base de datos como a propiedade de etiqueta de "
+"escolla. Esta información pode avaliarse de dúas formas: usando catro "
+"factores básicos que empeoran as imaxes (desenfoque, ruído, exposición e "
+"compresión), ou usando un motor de rede neural de aprendizaxe profunda. A "
+"primeira axuda a determinar se as imaxes están afectadas polos factores "
+"básicos, pero implica cousas indesexábeis como que a persoa usuaria teña que "
+"facer axustes e non pode funcionar co procesamento estético de imaxes. A "
+"segunda usa un método baseado en intelixencia artificial co modelo %1 para "
+"predicir a puntuación. Dado que a aprendizaxe profunda é unha solución de "
+"punto a punto, non require de moita configuración, o que fai esta "
+"funcionalidade máis fácil de usar."
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:61
-#, fuzzy, kde-format
-#| msgid "Sort images by:"
+#, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr "Ordenar as imaxes segundo:"
+msgstr "calidade estética de imaxe"
 
 #: core/utilities/setup/setuplighttable.cpp:79
 #, kde-format
@@ -67121,15 +67004,7 @@ msgstr ""
 "identificar un modelo da colección.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: These information are used to set <b><a href='http://en."
-#| "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a "
-#| "href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. There "
-#| "is no limitation with XMP, but note that IPTC text tags only support the "
-#| "printable <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-#| "character set, and tag sizes are limited. Use contextual help for details."
-#| "</b>"
+#, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
 "org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a href='https://"
@@ -67137,13 +67012,11 @@ msgid ""
 "limitation with XMP, but note that IPTC text tag sizes are limited. Use "
 "contextual help for details.</b>"
 msgstr ""
-"<b>Nota: Estes datos empréganse para estabelecer os contidos das etiquetas "
-"<b><a href='http://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</"
-"a></b> e <b><a href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b>. Non "
-"hai restrición en XMP, pero lembre que os textos das etiquetas IPTC só "
-"admiten o conxunto de caracteres <b><a href='http://gl.wikipedia.org/wiki/"
-"ASCII'>ASCII</a></b> e o tamaño da etiqueta está limitado. Use a axuda "
-"contextual para máis detalles.</b>"
+"<b>Nota: Estes datos úsanse para definir os contidos das etiquetas <b><a "
+"href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></"
+"b> e <b><a href='https://en.wikipedia.org/wiki/IPTC'>IPTC</a></b>. Non hai "
+"restrición en XMP, pero lembre que os textos das etiquetas IPTC teñen un "
+"tamaño limitado. Use a axuda contextual para máis detalles.</b>"
 
 #: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format

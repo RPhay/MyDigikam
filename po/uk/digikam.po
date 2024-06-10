@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-26 08:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -28415,7 +28415,7 @@ msgstr ""
 "Спільний мережевий ресурс буде визначено за вказаним вами шляхом. Якщо шлях "
 "буде порожнім, спільний ресурс вважатиметься недоступним."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28425,7 +28425,7 @@ msgstr ""
 "«відносний шлях» на розділі диска із «UUID»\n"
 "Тека «%1» на томі із ідентифікатором «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28435,7 +28435,7 @@ msgstr ""
 "«відносний шлях» на розділі диска із «міткою»\n"
 "Тека «%1» на томі із міткою «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

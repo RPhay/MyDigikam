@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27095,7 +27095,7 @@ msgstr ""
 "网络共享通过您选择的路径进行识别。如果该路径为空，对应的共享集合将被视为不可"
 "用。"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27105,7 +27105,7 @@ msgstr ""
 "“相对路径”位于“UUID”的硬盘分区\n"
 "文件夹“%1”位于 ID 为“%2”的卷"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27115,7 +27115,7 @@ msgstr ""
 "“相对路径”位于“卷标”的硬盘分区\n"
 "文件夹“%1”位于卷标为“%2”的卷"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

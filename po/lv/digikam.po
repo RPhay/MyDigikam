@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -27587,7 +27587,7 @@ msgstr ""
 "Tīkla kopīgojums tiks identificēts pēc jūsu izvēlētā ceļa. Ja tas ir tukšs, "
 "kopīgojums tiks uzskatīts par nepieejamu."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -27597,7 +27597,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "Mape \"%1\" sējumā ar id \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27605,7 +27605,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

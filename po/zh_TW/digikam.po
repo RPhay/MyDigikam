@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27689,7 +27689,7 @@ msgstr ""
 "此網路分享會用您選擇的路徑來辨識。如果路徑是空白的，這網路分享會被視為不可"
 "用。"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -27699,7 +27699,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "硬碟空間上 ID 為 \"%2\" 的資料夾 \"%1\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27707,7 +27707,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

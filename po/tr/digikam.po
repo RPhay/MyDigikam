@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-26 21:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28049,7 +28049,7 @@ msgstr ""
 "Ağ paylaşımı seçtiğiniz yolla tanımlanacaktır. Yol boşsa paylaşımın "
 "kullanılamadığı kabul edilecektir."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28059,7 +28059,7 @@ msgstr ""
 "\"UUID\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" kimlikli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28069,7 +28069,7 @@ msgstr ""
 "\"etiket\" olan sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" etiketli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

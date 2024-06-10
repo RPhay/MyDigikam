@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28442,7 +28442,7 @@ msgstr ""
 "ការ​ចែករំលែក​បណ្ដាញ​នឹង​ត្រូវ​បាន​កំណត់​ដោយ​ផ្លូវ​​ដែល​អ្នក​បាន​ជ្រើស​ឡើយ ។ ប្រសិនបើ​ផ្លូវ​ទទេ នឹង​មិន​អាច​ត្រូវ​បាន​​"
 "ពិចារណា​​​ឡើយ ។"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -28452,7 +28452,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "ថត \"%1\" នៅ​លើ​ភាគ​ដែល​មាន​លេខ​សម្គាល់ \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28460,7 +28460,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

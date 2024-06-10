@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-26 13:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -28302,7 +28302,7 @@ msgstr ""
 "De netwerk-share wordt door het geselecteerde pad geïdentificeerd. Als het "
 "pad leeg is dan wordt de share gezien als niet beschikbaar."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28312,7 +28312,7 @@ msgstr ""
 "\"relatieve pad\" op vaste schijfpartitie met \"UUID\"\n"
 "Map \"%1\" op het volume met het id \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28322,7 +28322,7 @@ msgstr ""
 "\"relatieve pad\" op vaste schijfpartitie met \"label\"\n"
 "Map \"%1\" op het volume met het id \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

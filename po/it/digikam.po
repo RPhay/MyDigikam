@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-05-29 22:03+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28327,7 +28327,7 @@ msgstr ""
 "La condivisione di rete sarà identificata dal percorso selezionato. Se il "
 "percorso è vuoto, la condivisione verrà considerata non disponibile."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28337,7 +28337,7 @@ msgstr ""
 "«percorso relativo» sulla partizione del disco rigido con «UUID»\n"
 "Cartella «%1» nel volume con identificativo «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28347,7 +28347,7 @@ msgstr ""
 "«percorso relativo» sulla partizione del disco rigido con «etichetta»\n"
 "Cartella «%1» nel volume con identificativo «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

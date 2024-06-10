@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -28138,7 +28138,7 @@ msgstr ""
 "Udział sieciowy będzie identyfikowany za pomocą wybranej ścieżki. Jeśli "
 "ścieżka jest pusta, udział będzie uznany za niedostępny."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28148,7 +28148,7 @@ msgstr ""
 "\"względna ścieżka\" partycji dysku twardego o \"UUID\"\n"
 "Katalog \"%1\" na wolumenie o identyfikatorze \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28158,7 +28158,7 @@ msgstr ""
 "\"ścieżka względna\" na partycji dysku twardego o \"etykiecie\"\n"
 "Katalog \"%1\" na dysku o etykiecie \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-09 01:42+0000\n"
+"POT-Creation-Date: 2024-06-10 02:05+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -29578,7 +29578,7 @@ msgstr ""
 "Ο κοινόχρηστος δικτυακός πόρος θα αναγνωριστεί με τη διαδρομή που επιλέξατε. "
 "Αν είναι κενή, ο πόρος θα θεωρηθεί μη διαθέσιμος."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -29588,7 +29588,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "Φάκελος \"%1\" στο δίσκο με αναγνωριστικό \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29596,7 +29596,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Shared directory mounted at <b>%1</b>"
