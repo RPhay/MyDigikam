@@ -183,7 +183,7 @@ BUGFIXES:
 154 ==> 250055 - Was trying to import 2 of many pictures from my Canon.
 155 ==> 249043 - Export as symbolic link to file system.
 156 ==> 487920 - Adjust DateTime is unnecesarily slow - it re-reads all the images all the time.
-157 ==> 
+157 ==> 487925 - "Open in File Manager" just opens Windows Explorer and not the folder.
 158 ==> 
 159 ==> 
 160 ==> 

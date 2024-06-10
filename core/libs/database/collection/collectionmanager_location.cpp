@@ -884,12 +884,7 @@ void CollectionManager::updateLocations()
         // Don't touch location->status, do not interfere with "hidden" setting
 
         location->available = available;
-
-        // Special case for a Windows network drive path only with drive letter.
-
-        QString cleanPath   = absolutePath.endsWith(QLatin1Char('/')) ? absolutePath.chopped(1)
-                                                                      : absolutePath;
-        location->setAbsolutePath(cleanPath);
+        location->setAbsolutePath(absolutePath);
 
         if (available)
         {
@@ -902,11 +897,11 @@ void CollectionManager::updateLocations()
 
         if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
         {
-            QFileInfo writeInfo(cleanPath);
+            QFileInfo writeInfo(absolutePath);
 
             if (writeInfo.isWritable())
             {
-                SafeTemporaryFile* const temp = new SafeTemporaryFile(cleanPath +
+                SafeTemporaryFile* const temp = new SafeTemporaryFile(absolutePath +
                                                                       QLatin1String("/CaseSensitivity-XXXXXX-Test"));
                 temp->setAutoRemove(false);
                 temp->open();

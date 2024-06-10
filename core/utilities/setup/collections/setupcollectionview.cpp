@@ -660,6 +660,8 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
                                                            i18nc("@title:window", "Choose the Folder Containing your Collection"),
                                                            QUrl::fromLocalFile(picPath));
 
+    curl            = curl.adjusted(QUrl::StripTrailingSlash);
+
     if (curl.isEmpty())
     {
         return;
@@ -1505,6 +1507,8 @@ bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QS
     QUrl curl       = DFileDialog::getExistingDirectoryUrl(m_dialogParentWidget,
                                                            i18nc("@title:window", "Choose the Folder Containing your Collection"),
                                                            QUrl::fromLocalFile(picPath));
+
+    curl            = curl.adjusted(QUrl::StripTrailingSlash);
 
     if (curl.isEmpty())
     {
