@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 02:05+0000\n"
+"POT-Creation-Date: 2024-06-11 01:48+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -66068,169 +66068,169 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "以下のパスにコレクションを追加できませんでした:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:660
-#: core/utilities/setup/collections/setupcollectionview.cpp:1506
+#: core/utilities/setup/collections/setupcollectionview.cpp:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "コレクションを含むフォルダを選択"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:697
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "コレクション追加の問題"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:700
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "パス “%1” を含むコレクションは既に存在します。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:861
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "コレクションからパスを削除しますか？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "コレクション “%2” から追加されたパス “%1” を削除しますか？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:869
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "コレクションを削除しますか？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:872
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "コレクション “%1” をコレクションのリストから削除しますか？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:937
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Local Collections"
 msgstr "ローカルコレクション"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1724
+#: core/utilities/setup/collections/setupcollectionview.cpp:942
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "リムーバブルメディアのコレクション"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:945
-#: core/utilities/setup/collections/setupcollectionview.cpp:1725
+#: core/utilities/setup/collections/setupcollectionview.cpp:947
+#: core/utilities/setup/collections/setupcollectionview.cpp:1729
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "ネットワーク共有のコレクション"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:982
+#: core/utilities/setup/collections/setupcollectionview.cpp:984
 #, kde-format
 msgid "Add Collection"
 msgstr "コレクションを追加"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1032
+#: core/utilities/setup/collections/setupcollectionview.cpp:1034
 #, kde-format
 msgid "Col. %1"
 msgstr "コレクション %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1128
+#: core/utilities/setup/collections/setupcollectionview.cpp:1130
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "このコレクションは現在利用できません。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1133
+#: core/utilities/setup/collections/setupcollectionview.cpp:1135
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "問題は見つかりませんでした。このコレクションを楽しんでください。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1138
+#: core/utilities/setup/collections/setupcollectionview.cpp:1140
 #, kde-format
 msgid "This collection is hidden."
 msgstr "このコレクションは表示しないように設定されています。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1157
+#: core/utilities/setup/collections/setupcollectionview.cpp:1159
 #, kde-format
 msgid "Append network path"
 msgstr "ネットワークパスの追加"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1185
+#: core/utilities/setup/collections/setupcollectionview.cpp:1187
 #, kde-format
 msgid "Update collection"
 msgstr "コレクションの更新"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1213
+#: core/utilities/setup/collections/setupcollectionview.cpp:1215
 #, kde-format
 msgid "Remove collection"
 msgstr "コレクションを削除"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1248
+#: core/utilities/setup/collections/setupcollectionview.cpp:1250
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "名前"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1253
+#: core/utilities/setup/collections/setupcollectionview.cpp:1255
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "パス"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1258
+#: core/utilities/setup/collections/setupcollectionview.cpp:1260
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "状態"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1554
+#: core/utilities/setup/collections/setupcollectionview.cpp:1558
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "パス ‘%1’ を含むコレクションを以前に追加しています。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1592
+#: core/utilities/setup/collections/setupcollectionview.cpp:1596
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "コレクション追加の問題"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1601
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "コレクション更新の問題"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "コレクションを追加"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1618
+#: core/utilities/setup/collections/setupcollectionview.cpp:1622
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "コレクションを更新"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1626
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "この名前で新しいコレクションを作成します:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1630
+#: core/utilities/setup/collections/setupcollectionview.cpp:1634
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "この名前でコレクションを更新します:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1713
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "カテゴリを選択"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1717
+#: core/utilities/setup/collections/setupcollectionview.cpp:1721
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "このカテゴリをコレクションに使用します:"

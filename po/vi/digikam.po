@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 02:05+0000\n"
+"POT-Creation-Date: 2024-06-11 01:48+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -62388,171 +62388,171 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:660
-#: core/utilities/setup/collections/setupcollectionview.cpp:1506
+#: core/utilities/setup/collections/setupcollectionview.cpp:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:697
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Tập hợp tập ảnh"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:700
 #, fuzzy, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Tệp đã có"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:861
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, fuzzy, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Siêu dữ liệu"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:869
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:872
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:937
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, fuzzy, kde-format
 msgid "Local Collections"
 msgstr "Tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1724
+#: core/utilities/setup/collections/setupcollectionview.cpp:942
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:945
-#: core/utilities/setup/collections/setupcollectionview.cpp:1725
+#: core/utilities/setup/collections/setupcollectionview.cpp:947
+#: core/utilities/setup/collections/setupcollectionview.cpp:1729
 #, fuzzy, kde-format
 msgid "Collections on Network Shares"
 msgstr "Tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:982
+#: core/utilities/setup/collections/setupcollectionview.cpp:984
 #, fuzzy, kde-format
 msgid "Add Collection"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1032
+#: core/utilities/setup/collections/setupcollectionview.cpp:1034
 #, kde-format
 msgid "Col. %1"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1128
+#: core/utilities/setup/collections/setupcollectionview.cpp:1130
 #, kde-format
 msgid "This collection is currently not available."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1133
+#: core/utilities/setup/collections/setupcollectionview.cpp:1135
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1138
+#: core/utilities/setup/collections/setupcollectionview.cpp:1140
 #, kde-format
 msgid "This collection is hidden."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1157
+#: core/utilities/setup/collections/setupcollectionview.cpp:1159
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1185
+#: core/utilities/setup/collections/setupcollectionview.cpp:1187
 #, fuzzy, kde-format
 msgid "Update collection"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1213
+#: core/utilities/setup/collections/setupcollectionview.cpp:1215
 #, fuzzy, kde-format
 msgid "Remove collection"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1248
+#: core/utilities/setup/collections/setupcollectionview.cpp:1250
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Tên"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1253
+#: core/utilities/setup/collections/setupcollectionview.cpp:1255
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Đường dẫn"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1258
+#: core/utilities/setup/collections/setupcollectionview.cpp:1260
 #, fuzzy, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Thống kê"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1554
+#: core/utilities/setup/collections/setupcollectionview.cpp:1558
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1592
+#: core/utilities/setup/collections/setupcollectionview.cpp:1596
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Tập hợp tập ảnh"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1601
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Tập hợp tập ảnh"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1618
+#: core/utilities/setup/collections/setupcollectionview.cpp:1622
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Theo tập hợp"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1626
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1630
+#: core/utilities/setup/collections/setupcollectionview.cpp:1634
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1713
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Chọ&n mục mới"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1717
+#: core/utilities/setup/collections/setupcollectionview.cpp:1721
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 02:05+0000\n"
+"POT-Creation-Date: 2024-06-11 01:48+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -66314,34 +66314,34 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "För de nakamen Padden lett sik keen Sammeln tofögen:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:660
-#: core/utilities/setup/collections/setupcollectionview.cpp:1506
+#: core/utilities/setup/collections/setupcollectionview.cpp:1508
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Den Orner utsöken, de Dien Sammeln bargt"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:697
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problem bi't Tofögen vun en Sammeln"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:700
 #, fuzzy, kde-format
 #| msgid "A root album set with path \"%1\" already exist."
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Dat gifft al en Wörtelalbumsett mit den Padd \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:861
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Sammeln wegmaken?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -66349,150 +66349,150 @@ msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Wullt Du de Sammeln \"%1\" vun Dien Sammelnlist wegmaken?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:869
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Sammeln wegmaken?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:872
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Wullt Du de Sammeln \"%1\" vun Dien Sammelnlist wegmaken?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:937
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Local Collections"
 msgstr "Lokaal Sammeln"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1724
+#: core/utilities/setup/collections/setupcollectionview.cpp:942
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Sammeln op tuuschbor Medien"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:945
-#: core/utilities/setup/collections/setupcollectionview.cpp:1725
+#: core/utilities/setup/collections/setupcollectionview.cpp:947
+#: core/utilities/setup/collections/setupcollectionview.cpp:1729
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Sammeln op Nettwark-Freegaven"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:982
+#: core/utilities/setup/collections/setupcollectionview.cpp:984
 #, kde-format
 msgid "Add Collection"
 msgstr "Sammeln tofögen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1032
+#: core/utilities/setup/collections/setupcollectionview.cpp:1034
 #, kde-format
 msgid "Col. %1"
 msgstr "Sam. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1128
+#: core/utilities/setup/collections/setupcollectionview.cpp:1130
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Disse Sammeln is opstunns nich verföögbor."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1133
+#: core/utilities/setup/collections/setupcollectionview.cpp:1135
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Keen Problemen funnen. Veel Spaaß mit de Sammeln."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1138
+#: core/utilities/setup/collections/setupcollectionview.cpp:1140
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Disse Sammeln is versteken."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1157
+#: core/utilities/setup/collections/setupcollectionview.cpp:1159
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1185
+#: core/utilities/setup/collections/setupcollectionview.cpp:1187
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgid "Update collection"
 msgstr "Sammeln tofögen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1213
+#: core/utilities/setup/collections/setupcollectionview.cpp:1215
 #, kde-format
 msgid "Remove collection"
 msgstr "Sammeln wegmaken"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1248
+#: core/utilities/setup/collections/setupcollectionview.cpp:1250
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Naam"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1253
+#: core/utilities/setup/collections/setupcollectionview.cpp:1255
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Padd"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1258
+#: core/utilities/setup/collections/setupcollectionview.cpp:1260
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Status"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1554
+#: core/utilities/setup/collections/setupcollectionview.cpp:1558
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Du hest jüst vördem en Sammeln toföögt, de al den Padd \"%1\" bargt."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1592
+#: core/utilities/setup/collections/setupcollectionview.cpp:1596
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problem bi't Tofögen vun en Sammeln"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Problem bi't Tofögen vun en Sammeln"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Sammeln tofögen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1618
+#: core/utilities/setup/collections/setupcollectionview.cpp:1622
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Sammeln tofögen"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1626
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Dien niege Sammeln warrt mit dissen Naam opstellt:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1630
+#: core/utilities/setup/collections/setupcollectionview.cpp:1634
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will be updated to this name:"
 msgstr "Dien niege Sammeln warrt mit dissen Naam opstellt:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1713
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Indrag utsöken"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1717
+#: core/utilities/setup/collections/setupcollectionview.cpp:1721
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"
