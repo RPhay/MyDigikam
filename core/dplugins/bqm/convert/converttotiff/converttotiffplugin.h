@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONVERT_TO_TIFF_PLUGIN_H
-#define DIGIKAM_CONVERT_TO_TIFF_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmConvertToTiffPlugin
-
-#endif // DIGIKAM_CONVERT_TO_TIFF_PLUGIN_H

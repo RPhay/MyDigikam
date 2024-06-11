@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONVERT_TO_DNG_PLUGIN_H
-#define DIGIKAM_CONVERT_TO_DNG_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ public:
 };
 
 } // namespace DigikamBqmConvertToDngPlugin
-
-#endif // DIGIKAM_CONVERT_TO_DNG_PLUGIN_H

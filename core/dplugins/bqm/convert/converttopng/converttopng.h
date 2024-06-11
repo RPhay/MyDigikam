@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_TO_PNG_H
-#define DIGIKAM_BQM_CONVERT_TO_PNG_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmConvertToPngPlugin
-
-#endif // DIGIKAM_BQM_CONVERT_TO_PNG_H

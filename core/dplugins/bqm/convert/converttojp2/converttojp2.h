@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_TO_JP2_H
-#define DIGIKAM_BQM_CONVERT_TO_JP2_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmConvertToJp2Plugin
-
-#endif // DIGIKAM_BQM_CONVERT_TO_JP2_H

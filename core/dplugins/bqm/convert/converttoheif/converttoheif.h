@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_TO_HEIF_H
-#define DIGIKAM_BQM_CONVERT_TO_HEIF_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmConvertToHeifPlugin
-
-#endif // DIGIKAM_BQM_CONVERT_TO_HEIF_H

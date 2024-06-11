@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_TO_WEBP_H
-#define DIGIKAM_BQM_CONVERT_TO_WEBP_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmConvertToWebpPlugin
-
-#endif // DIGIKAM_BQM_CONVERT_TO_WEBP_H
