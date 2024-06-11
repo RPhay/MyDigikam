@@ -184,8 +184,8 @@ BUGFIXES:
 155 ==> 249043 - Export as symbolic link to file system.
 156 ==> 487920 - Adjust DateTime is unnecesarily slow - it re-reads all the images all the time.
 157 ==> 487925 - "Open in File Manager" just opens Windows Explorer and not the folder.
-158 ==> 
-159 ==> 
+158 ==> 488384 - Video Slideshow fails to encode.
+159 ==> 488385 - Video Slideshow fails to encode.
 160 ==> 
 161 ==> 
 162 ==> 
