@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WATERMARK_PLUGIN_H
-#define DIGIKAM_WATERMARK_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmWatermarkPlugin
-
-#endif // DIGIKAM_WATERMARK_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_USER_SCRIPT_PLUGIN_H
-#define DIGIKAM_USER_SCRIPT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ public:
 };
 
 } // namespace DigikamBqmUserScriptPlugin
-
-#endif // DIGIKAM_USER_SCRIPT_PLUGIN_H

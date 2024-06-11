@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TEXTURE_H
-#define DIGIKAM_BQM_TEXTURE_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmTexturePlugin
-
-#endif // DIGIKAM_BQM_TEXTURE_H

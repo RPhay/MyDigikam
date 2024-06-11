@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_WATERMARK_H
-#define DIGIKAM_BQM_WATERMARK_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace DigikamBqmWatermarkPlugin
-
-#endif // DIGIKAM_BQM_WATERMARK_H

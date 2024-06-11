@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXTURE_PLUGIN_H
-#define DIGIKAM_TEXTURE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmTexturePlugin
-
-#endif // DIGIKAM_TEXTURE_PLUGIN_H

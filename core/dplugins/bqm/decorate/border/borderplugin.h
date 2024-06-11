@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BORDER_PLUGIN_H
-#define DIGIKAM_BORDER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmBorderPlugin
-
-#endif // DIGIKAM_BORDER_PLUGIN_H
