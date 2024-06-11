@@ -83,6 +83,53 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
 
+    if (model.compare(QLatin1String("nikon z 5"), Qt::CaseInsensitive) == 0)
+    {
+        QStringList afPointUsed = findValueFirstMatch(
+                                                      QStringList()
+                                                      << QLatin1String("MakerNotes.Nikon.Camera.AFPointsUsed"),
+                                                      true
+                                                     ).toStringList();
+
+        if (!afPointUsed.isEmpty())
+        {
+            ListAFPoints points;
+
+            float xOffset = imageWidth.toInt()  / 11.5F;
+            float yOffset = imageHeight.toInt() / 11.0F;
+
+            float xShift  = imageWidth.toInt()  / 6.5F;
+            float yShift  = imageHeight.toInt() / 7.0F;
+
+            Q_FOREACH (const QString& np, afPointUsed)
+            {
+                if (np.size() < 2)
+                {
+                    continue;
+                }
+
+                float xPosition = (np.mid(1).toInt() - 1)    * xOffset + xShift;
+                float yPosition = (np[0].unicode()   - 0x41) * yOffset + yShift;
+
+                FocusPoint afpoint = NikonInternal::create_af_point(
+                                                                    imageWidth.toFloat(),
+                                                                    imageHeight.toFloat(),
+                                                                    xOffset - 40.0F,
+                                                                    yOffset - 40.0F,
+                                                                    xPosition,
+                                                                    yPosition
+                                                                   );
+
+                if (afpoint.getRect().isValid())
+                {
+                    points << afpoint;
+                }
+            }
+
+            return points;
+        }
+    }
+
     // Get size of point
 
     QVariant afPointWidth  = findValue(TagNameRoot, QLatin1String("AFAreaWidth"));
