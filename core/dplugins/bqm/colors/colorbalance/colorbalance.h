@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_COLOR_BALANCE_H
-#define DIGIKAM_BQM_COLOR_BALANCE_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmColorBalancePlugin
-
-#endif // DIGIKAM_BQM_COLOR_BALANCE_H

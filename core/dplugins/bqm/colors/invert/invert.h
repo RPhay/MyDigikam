@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_INVERT_H
-#define DIGIKAM_BQM_INVERT_H
+#pragma once
 
 // Local includes
 
@@ -48,5 +47,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamBqmInvertPlugin
-
-#endif // DIGIKAM_BQM_INVERT_H

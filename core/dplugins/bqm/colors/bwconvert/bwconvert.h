@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_BW_CONVERT_H
-#define DIGIKAM_BQM_BW_CONVERT_H
+#pragma once
 
 // Local includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace DigikamBqmBWConvertPlugin
-
-#endif // DIGIKAM_BQM_BW_CONVERT_H

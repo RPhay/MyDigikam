@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HSL_CORRECTION_PLUGIN_H
-#define DIGIKAM_HSL_CORRECTION_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmHSLCorrectionPlugin
-
-#endif // DIGIKAM_HSL_CORRECTION_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_WHITE_BALANCE_H
-#define DIGIKAM_BQM_WHITE_BALANCE_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmWhiteBalancePlugin
-
-#endif // DIGIKAM_BQM_WHITE_BALANCE_H

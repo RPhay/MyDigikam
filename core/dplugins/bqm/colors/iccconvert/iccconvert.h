@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ICC_CONVERT_H
-#define DIGIKAM_BQM_ICC_CONVERT_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmIccConvertPlugin
-
-#endif // DIGIKAM_BQM_ICC_CONVERT_H

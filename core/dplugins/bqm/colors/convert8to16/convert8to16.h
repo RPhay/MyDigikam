@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_8_TO_16_H
-#define DIGIKAM_BQM_CONVERT_8_TO_16_H
+#pragma once
 
 // Local includes
 
@@ -48,5 +47,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamBqmConvert8To16Plugin
-
-#endif // DIGIKAM_BQM_CONVERT_8_TO_16_H

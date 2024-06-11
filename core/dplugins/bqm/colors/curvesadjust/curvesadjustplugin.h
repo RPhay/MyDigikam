@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CURVES_ADJUST_PLUGIN_H
-#define DIGIKAM_CURVES_ADJUST_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmCurvesAdjustPlugin
-
-#endif // DIGIKAM_CURVES_ADJUST_PLUGIN_H

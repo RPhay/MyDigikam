@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTO_CORRECTION_PLUGIN_H
-#define DIGIKAM_AUTO_CORRECTION_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmAutoCorrectionPlugin
-
-#endif // DIGIKAM_AUTO_CORRECTION_PLUGIN_H

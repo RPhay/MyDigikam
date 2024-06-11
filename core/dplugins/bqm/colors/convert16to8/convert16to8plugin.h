@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONVERT_16_TO_8_PLUGIN_H
-#define DIGIKAM_CONVERT_16_TO_8_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmConvert16To8Plugin
-
-#endif // DIGIKAM_CONVERT_16_TO_8_PLUGIN_H

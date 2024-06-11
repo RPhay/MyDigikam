@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INVERT_PLUGIN_H
-#define DIGIKAM_INVERT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmInvertPlugin
-
-#endif // DIGIKAM_INVERT_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CHANNEL_MIXER_H
-#define DIGIKAM_BQM_CHANNEL_MIXER_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmChannelMixerPlugin
-
-#endif // DIGIKAM_BQM_CHANNEL_MIXER_H
