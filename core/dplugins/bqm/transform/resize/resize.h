@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_RESIZE_H
-#define DIGIKAM_BQM_RESIZE_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace DigikamBqmResizePlugin
-
-#endif // DIGIKAM_BQM_RESIZE_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CROP_PLUGIN_H
-#define DIGIKAM_CROP_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmCropPlugin
-
-#endif // DIGIKAM_CROP_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FLIP_PLUGIN_H
-#define DIGIKAM_FLIP_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmFlipPlugin
-
-#endif // DIGIKAM_FLIP_PLUGIN_H

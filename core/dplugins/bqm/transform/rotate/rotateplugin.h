@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ROTATE_PLUGIN_H
-#define DIGIKAM_ROTATE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmRotatePlugin
-
-#endif // DIGIKAM_ROTATE_PLUGIN_H
