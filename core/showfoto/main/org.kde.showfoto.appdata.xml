@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>Showfoto</name>
   <name xml:lang="ar">شوفوتو</name>
+  <name xml:lang="be">Showfoto</name>
   <name xml:lang="bg">Showfoto</name>
   <name xml:lang="bs">Showfoto</name>
   <name xml:lang="ca">Showfoto</name>
@@ -44,6 +45,7 @@
   <name xml:lang="zh-TW">Showfoto</name>
   <summary>Image Editor</summary>
   <summary xml:lang="ar">محرّر صور</summary>
+  <summary xml:lang="be">Рэдактар выяў</summary>
   <summary xml:lang="bg">Редактор на изображения</summary>
   <summary xml:lang="ca">Editor d'imatges</summary>
   <summary xml:lang="ca-valencia">Editor d'imatges</summary>
@@ -84,6 +86,7 @@
       Showfoto is the standalone image editor of the digiKam project.
     </p>
     <p xml:lang="ar">شوفوتو هو محرر صور سريع مع أدوات تحرير صور قوية. يمكنك استخدامه لعرض الصور الخاصة بك وتحسينها. شوفوتو هو محرر الصور المستقل لمشروع ديجيكام.</p>
+    <p xml:lang="be">Showfoto - гэта хуткі рэдактар ​​выяў з магутнымі інструментамі. Вы можаце выкарыстоўваць яго для прагляду фотаздымкаў і іх паляпшэння. Showfoto - гэта аўтаномны рэдактар ​​выяў праекта digiKam.</p>
     <p xml:lang="bg">Showfoto е бърз редактор за изображения с мощни инструменти, може да го използвате, за да разглеждате и да подобрите снимките си. Showfoto е самостоятелен резактор на изображения към проекта digiKam.</p>
     <p xml:lang="bs">Showfoto je brz uređivač slika sa moćnim alatima za obradu slika. Možete ga koristiti da vidite svoje fotografije i poboljšati ih. Showfoto je samostalan urednik slika projekta digikam.</p>
     <p xml:lang="ca">El Showfoto és un editor d'imatges ràpid amb potents eines per a l'edició d'imatges. Es pot usar per a visualitzar i millorar les vostres fotografies. El Showfoto és un editor d'imatges independent del projecte digiKam.</p>
@@ -130,6 +133,7 @@
     <screenshot type="default">
       <caption>Editing photo in Showfoto</caption>
       <caption xml:lang="ar">تحرير صورة في شوفوتو</caption>
+      <caption xml:lang="be">Рэдагаванне фотаздымкаў у Showfoto</caption>
       <caption xml:lang="bg">Редактиране на снимка в Showfoto</caption>
       <caption xml:lang="ca">Edició de fotografies en el Showfoto</caption>
       <caption xml:lang="ca-valencia">Edició de fotografies en Showfoto</caption>
@@ -258,6 +262,7 @@
   <project_group>KDE</project_group>
   <developer_name>digiKam Project</developer_name>
   <developer_name xml:lang="ar">مشروع دجيكام</developer_name>
+  <developer_name xml:lang="be">Праект digiKam</developer_name>
   <developer_name xml:lang="bg">Проект digiKam</developer_name>
   <developer_name xml:lang="bs">digiKam Projekt</developer_name>
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>

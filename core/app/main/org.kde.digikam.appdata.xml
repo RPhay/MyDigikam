@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>digiKam</name>
   <name xml:lang="ar">دِجي‌كام</name>
+  <name xml:lang="be">digiKam</name>
   <name xml:lang="bg">digiKam</name>
   <name xml:lang="bs">digiKam</name>
   <name xml:lang="ca">digiKam</name>
@@ -43,6 +44,7 @@
   <name xml:lang="zh-TW">digiKam</name>
   <summary>Photo Management Program</summary>
   <summary xml:lang="ar">برنامج لإدارة الصور</summary>
+  <summary xml:lang="be">Праграма для кіравання фотаздымкамі</summary>
   <summary xml:lang="bg">Програма за управление на снимки</summary>
   <summary xml:lang="ca">Programa per a la gestió de les fotografies</summary>
   <summary xml:lang="ca-valencia">Programa per a la gestió de les fotografies</summary>
@@ -85,6 +87,7 @@
         that process and organize imported items on-the-fly.
     </p>
     <p xml:lang="ar">دجيكام هو تطبيق متقدم مفتوح المصدر لإدارة الصور الرقمية يعمل على لينكس و ويندوز و ماك أوس. يوفر التطبيق مجموعة شاملة من الأدوات لاستيراد الصور والملفات الخام وإدارتها وتحريرها ومشاركتها. يمكنك استخدام إمكانات استيراد دجيكام لنقل الصور والملفات الأولية ومقاطع الفيديو بسهولة مباشرةً من الكاميرا وأجهزة التخزين الخارجية (بطاقات SD وأقراص USB وما إلى ذلك). يتيح لك التطبيق تكوين إعدادات وقواعد الاستيراد التي تعالج العناصر المستوردة وتنظمها أثناء التنقل.</p>
+    <p xml:lang="be">digiKam - гэта магутная праграма для кіравання лічбавымі фотаздымкамі з адкрытым зыходным кодам, якая працуе ў Linux, Windows і MacOS. Праграма мае вялікі набор інструментаў для імпартавання, кіравання, рэдагавання і абмену фотаздымкамі і файламі ў фармаце RAW. digiKam мае сродкі для лёгкай перадачы фотаздымкаў, негатываў і відэа непасрэдна з камеры і вонкавых назапашвальнікаў (SD-картак, USB-дыскаў і г. д.). Ёсць магчымасць наладжваць параметры і правілы імпартавання, якія апрацоўваюць і парадуюць элементы падчас выканання працэсу.</p>
     <p xml:lang="bg">digiKam е усъвършенствано приложение с отворен код за управление на цифрови снимки, което работи под Linux, Windows и MacOS. Приложението предоставя цялостен набор от инструменти за импортиране, управление, редактиране и споделяне на снимки и необработени файлове. Можете да използвате възможностите за импортиране на digiKam, за да прехвърляте лесно снимки, row файлове и видеоклиповете директно от вашия фотоапарат и външни устройства за съхранение (SD карти, USB дискове и др.). Приложението ви позволява да конфигурирате импортирането настройки и правила, които обработват и организират импортираните елементи в движение.</p>
     <p xml:lang="ca">El digiKam és una aplicació avançada de codi obert de gestió de fotografies digitals que funciona a Linux, Windows i macOS. L'aplicació proporciona un conjunt integrat d'eines per a importar, gestionar, editar i compartir fotografies i fitxers RAW. Podeu utilitzar les capacitats d'importació del digiKam per a transferir amb facilitat fotografies, fitxers RAW i vídeos directament des de la càmera i des de dispositius externs d'emmagatzematge (targetes SD, discos USB, etc.). L'aplicació permet configurar opcions i regles d'importació que processen i organitzen els elements importats al vol.</p>
     <p xml:lang="ca-valencia">digiKam és una aplicació avançada de codi obert de gestió de fotografies digitals que funciona a Linux, Windows i macOS. L'aplicació proporciona un conjunt integrat d'eines per a importar, gestionar, editar i compartir fotografies i fitxers RAW. Podeu utilitzar les capacitats d'importació de digiKam per a transferir amb facilitat fotografies, fitxers RAW i vídeos directament des de la càmera i des de dispositius externs d'emmagatzematge (targetes SD, discs USB, etc.). L'aplicació permet configurar opcions i regles d'importació que processen i organitzen els elements importats al vol.</p>
@@ -115,6 +118,7 @@
         find items that match specific criteria.
     </p>
     <p xml:lang="ar">ينظم دجيكام الصور والملفات الخام ومقاطع الفيديو في ألبومات. زيادة على ذلك يمتلك التطبيق أدوات  قوية تتيح لك تعيين الوسوم  والتصنيفات والتسميات للصور والملفات الخام. يمكنك بعد ذلك استخدام وظيفة التصفية للعثور بسرعة على العناصر التي تطابق معايير معينة.</p>
+    <p xml:lang="be">digiKam арганізуе фотаздымкі, негатывы і відэа ў альбомы. Таксама праграма мае магутныя інструменты пазначэння, якія даюць магчымасць прызначаць фотаздымкам і негатывам тэгі, адзнакі і адмеціны. Пасля вы можаце выкарыстоўваць функцыю фільтравання, каб хутка знайсці элементы, якія адпавядаюць пэўным крытэрыям.</p>
     <p xml:lang="bg">digiKam организира снимки, необработени файлове и видеоклипове в албуми. Но също така разполага с мощни инструменти за маркиране, които ви позволяват да задавате тагове, оценки и етикети на снимки и необработени файлове. След това можете да използвате функцията за филтриране, за да намерите бързо елементи, които отговарят на определени критерии.</p>
     <p xml:lang="ca">El digiKam organitza les fotografies, els fitxers RAW i els vídeos en àlbums. Però l'aplicació també té eines potents d'etiquetatge que permeten assignar etiquetes, valoracions i rètols a les fotografies i als fitxers RAW. Després es pot usar la funcionalitat de filtratge per a trobar ràpidament elements que coincideixin amb criteris concrets.</p>
     <p xml:lang="ca-valencia">digiKam organitza les fotografies, els fitxers RAW i els vídeos en àlbums. Però l'aplicació també té eines potents d'etiquetatge que permeten assignar etiquetes, valoracions i rètols a les fotografies i en els fitxers RAW. Després es pot utilitzar la funcionalitat de filtratge per a trobar ràpidament elements que coincidisquen amb criteris concrets.</p>
@@ -147,6 +151,7 @@
         from files to populate the photo library.
     </p>
     <p xml:lang="ar">بالإضافة إلى وظيفة التصفية ، تتميز دجيكام بقدرات بحث قوية تتيح لك البحث في مكتبة الصور بواسطة مجموعة واسعة من المعايير. يمكنك البحث في الصور عن طريق العلامات، والتسميات، والتصنيف، والبيانات، والموقع، وحتى بيانات تعريف EXIF أو IPTC أو XMP محددة. يمكنك أيضًا الجمع بين عدة معايير لإجراء عمليات بحث أكثر تقدمًا. يعتمد دجيكام على مكتبة Exiv2 للتعامل مع البيانات الوصفية للصور لتعبئة مكتبة الصور.</p>
+    <p xml:lang="be">У дадатак да функцыі фільтрацыі, digiKam мае магутныя магчымасці пошуку, з дапамогай якіх можна шукаць файлы ў бібліятэцы фотаздымкаў па шырокім дыяпазоне крытэрыяў. Вы можаце шукаць фотаздымкі па тэгах, адмецінах, адзнаках, даных, месцазнаходжанні і нават пэўных метаданых EXIF, IPTC або XMP. Таксама вы можаце аб'яднаць некалькі крытэрыяў для больш вузкага пошуку. Для апрацоўвання змесціва тэгаў метаданых з файлаў digiKam выкарыстоўвае бібліятэку Exiv2.</p>
     <p xml:lang="bg">В допълнение към функцията за филтриране, digiKam разполага с мощни възможности за търсене, които ви позволяват да търсите в библиотеката със снимки по широк спектър от критерии. Можете да търсите снимки по тагове, етикети, оценка, данни, местоположение и дори конкретни EXIF, IPTC или XMP метаданни. Можете също така да комбинирате няколко критерии за по-усъвършенствани търсения. digiKam разчита на библиотеката Exiv2 за обработка на съдържанието на таговете с метаданни от файловете, за да се попълни библиотеката със снимки.</p>
     <p xml:lang="ca">Addicionalment a la funcionalitat de filtratge, el digiKam té capacitats potents de cerca que permeten cercar la biblioteca de fotografies per un ampli ventall de criteris. Es poden cercar fotografies per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques Exif, IPTC o XMP. També es poden combinar diversos criteris per a cerques més avançades. El digiKam compta amb la biblioteca Exiv2 per a gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotografies.</p>
     <p xml:lang="ca-valencia">De manera addicional a la funcionalitat de filtratge, digiKam té capacitats potents de busca que permeten buscar la biblioteca de fotografies per un ampli ventall de criteris. Es poden buscar fotografies per etiquetes, rètols, valoracions, dates, ubicacions i inclús metadades específiques Exif, IPTC o XMP. També es poden combinar diversos criteris per a busques més avançades. digiKam compta amb la biblioteca Exiv2 per a gestionar el contingut de les etiquetes de metadades dels fitxers per a omplir la biblioteca de fotografies.</p>
@@ -177,6 +182,7 @@
         digiKam can also manage video files for cataloging purpose, and the application uses the FFmpeg backends to extract
         metadata and play media.
     </p>
+    <p xml:lang="be">digiKam можа апрацоўваць файлы негатываў (raw) і выкарыстоўвае для дэкадавання цудоўную бібліятэку LibRaw. Бібліятэка актыўна падтрымліваецца і рэгулярна абнаўляецца для падтрымкі апошніх мадэляў камер. digiKam таксама можа кіраваць відэафайламі. Для вымання метаданых і прайгравання мультымедыя праграма выкарыстоўвае бэкэнды FFmpeg.</p>
     <p xml:lang="bg">digiKam може да обработва row файлове и приложението използва отличната библиотека LibRaw за декодиране на row файлове. Библиотеката се поддържа активно и редовно се актуализира, за да включва поддръжка на най-новите модели фотоапарати. digiKam може също така да управлява видеофайлове с цел каталогизиране, а приложението използва двойката библиотеки FFmpeg и QtAv за извличане на метаданни и възпроизвеждане на мултимедия.</p>
     <p xml:lang="ca">El digiKam pot gestionar fitxers RAW, i l'aplicació usa l'excel·lent biblioteca LibRaw per a descodificar els fitxers RAW. La biblioteca està mantinguda activament i actualitzada regularment per a incloure el suport per als darrers models de càmeres. El digiKam també pot gestionar fitxers de vídeo per a la catalogació, i l'aplicació usa els dorsals del FFmpeg per a extreure les metadades i reproduir els fitxers multimèdia.</p>
     <p xml:lang="ca-valencia">digiKam pot gestionar fitxers RAW, i l'aplicació utilitza l'excel·lent biblioteca LibRaw per a descodificar els fitxers RAW. La biblioteca està mantinguda activament i actualitzada regularment per a incloure el suport per als darrers models de càmeres. digiKam també pot gestionar fitxers de vídeo per a la catalogació, i l'aplicació utilitza els dorsals de FFmpeg per a extraure les metadades i reproduir els fitxers multimèdia.</p>
@@ -199,6 +205,7 @@
         to apply lens corrections automatically on images.
     </p>
     <p xml:lang="ar">يوفر التطبيق مجموعة شاملة من أدوات التحرير. يتضمن ذلك الأدوات الأساسية لضبط الألوان والاقتصاص والشحذ بالإضافة إلى الأدوات المتقدمة لتعديل المنحنيات وخياطة البانوراما وغير ذلك الكثير. تسمح الأداة الخاصة القائمة على مكتبة Lensfun بتطبيق تصحيحات العدسة تلقائيًا على الصور.</p>
+    <p xml:lang="be">Праграма мае шырокі набор інструментаў для рэдагавання. Гэта асноўныя інструменты для падладжвання колераў, абразання і павышэння рэзкасці, а таксама інструменты для падладжвання крывых, панарамнага сшывання і многае іншае. Адмысловы інструмент на базе бібліятэкі Lensfun дае магчымасць аўтаматычна ўжываць карэкцыю аб'ектыва да выяў.</p>
     <p xml:lang="bg">Приложението предоставя пълен набор от инструменти за редактиране. То включва основни инструменти за регулиране на цветовете, изрязване и изостряне, както и усъвършенствани инструменти за регулиране на криви, свързване на панорамни снимки и много други. A специален инструмент, базиран на библиотеката Lensfun, позволява автоматично да се прилагат корекции на обектива  върху изображенията.</p>
     <p xml:lang="ca">L'aplicació proporciona un conjunt integrat d'eines d'edició. Això inclou eines bàsiques per a ajustar colors, escapçar i definir, així com eines avançades per a ajustar corbes, unir panorames i molt més. Hi ha una eina especial basada en la biblioteca Lensfun que permet aplicar automàticament correccions de la lent a les imatges.</p>
     <p xml:lang="ca-valencia">L'aplicació proporciona un conjunt integrat d'eines d'edició. Açò inclou eines bàsiques per a ajustar colors, escapçar i definir, així com eines avançades per a ajustar corbes, unir panorames i molt més. Hi ha una eina especial basada en la biblioteca Lensfun que permet aplicar automàticament correccions de la lent a les imatges.</p>
@@ -227,6 +234,7 @@
         Plugins can be written to import and export contents to remote web-services, add new features to edit image, and batch process photo.
     </p>
     <p xml:lang="ar">تنفذ الوظائف الموسعة في دجيكام عبر مجموعة من الأدوات القائمة على آلية المكونات الإضافية (تسمى DPlugins لملحقات دجيكام). يمكن كتابة ملحقات لاستيراد وتصدير المحتويات إلى خدمات الويب البعيدة، وإضافة ميزات جديدة لتحرير الصورة، ومعالجة بالدفعات للصور.</p>
+    <p xml:lang="be">Дадатковы функцыянал у digiKam рэалізаваны з дапамогай набору інструментаў на аснове механізму ўбудоў (DPlugins для digiKam Plugins). Можна напісаць убудовы для імпартавання і экспартавання змесціва ў вэб-сэрвісы, дадавання новых функцый для рэдагавання выяў і пакетнага апрацоўвання фота.</p>
     <p xml:lang="bg">Разширената функционалност в digiKam се реализира чрез набор от инструменти, базирани на механизма на плъгините (наречен DPlugins за digiKam Plugins). Плъгините могат да бъдат  програмирани за импортиране и експортиране на съдържание към отдалечени уеб услуги, добавяне на нови функции за редактиране на изображения и пакетна обработка на снимки.</p>
     <p xml:lang="ca">Al digiKam s'implementen funcionalitats ampliades a través d'un conjunt d'eines basades en mecanismes de connectors (anomenats DPlugins per «digiKam Plugins»). Els connectors es poden escriure per a importar i exportar contingut a serveis web remots, afegir característiques noves per a editar imatges i processar fotografies per lots.</p>
     <p xml:lang="ca-valencia">En digiKam s'implementen funcionalitats ampliades a través d'un conjunt d'eines basades en mecanismes de connectors (anomenats DPlugins per «digiKam Plugins»). Els connectors es poden escriure per a importar i exportar contingut a serveis web remots, afegir característiques noves per a editar imatges i processar fotografies per lots.</p>
@@ -252,6 +260,7 @@
     <p xml:lang="zh-CN">digiKam 支持通过插件来扩展其功能 。digiKam 插件又称 DPlugins 工具，它们可以让您将内容导入/导出到各种在线服务，还可以带来图像编辑和批处理的更多功能。</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
+    <p xml:lang="be">Магчымасці:</p>
     <p xml:lang="bg">Функции:</p>
     <p xml:lang="bs">Svojstva:</p>
     <p xml:lang="ca">Característiques:</p>
@@ -291,6 +300,7 @@
     <ul>
       <li>Organization of photos in albums and sub-albums (with tags and comments support)</li>
       <li xml:lang="ar">تنظيم الصّور في ألبومات وألبومات فرعيّة (بدعم الوسوم والتّعليقات)</li>
+      <li xml:lang="be">Парадкаванне фотаздымкаў у альбомах і ўкладзеных альбомах (з падтрымкай тэгаў і каментароў)</li>
       <li xml:lang="bg">Организиране на снимките в албуми и подалбуми (с поддръжка на тагове и коментари)</li>
       <li xml:lang="bs">Organizacija fotografija u albume i podalbume (sa podrškom za označavanje i komentarisanje)</li>
       <li xml:lang="ca">Organització de les fotografies en àlbums i subàlbums (amb implementació per a les etiquetes i comentaris)</li>
@@ -325,6 +335,7 @@
       <li xml:lang="zh-CN">在相册和子相册中组织照片 (支持标签和注释)</li>
       <li>Support for Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="ar">دعم Exif و Iptc و Xmp و Makernotes</li>
+      <li xml:lang="be">Падтрымка Exif, Iptc, Xmp, Makenotes</li>
       <li xml:lang="bg">Поддръжка за Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="bs">Podrška za Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="ca">Implementació per a notes Exif, IPTC, XMP i Notes del fabricant</li>
@@ -361,6 +372,7 @@
       <li xml:lang="zh-TW">支援 EXIF、IPTC、XMP 和 Makernotes</li>
       <li>SQLite or Mysql powered storage for the album contents and its metadata with advanced search tools</li>
       <li xml:lang="ar">مخزن تدعم «SQLite» أو Mysql للألبومات وبياناتها الوصفيّة مع أدوات بحث متقدمة</li>
+      <li xml:lang="be">Сховішча на базе SQLite або Mysql для змесціва альбома і яго метаданых з дадатковымі інструментамі для пошуку</li>
       <li xml:lang="bg">Съхранение на съдържанието на албума и неговите метаданни, както и възможност за разширено търсене с помощта на SQLite или Mysql</li>
       <li xml:lang="ca">Emmagatzematge basat en SQLite o MySQL per als continguts dels àlbums i les seves metadades amb eines de cerca avançada</li>
       <li xml:lang="ca-valencia">Emmagatzematge basat en SQLite o MySQL per als continguts dels àlbums i les seues metadades amb eines de busca avançada</li>
@@ -393,6 +405,7 @@
       <li xml:lang="zh-CN">通过 SQLite 或者 MySQL 为保存的相册内容及其元数据提供高级搜索工具</li>
       <li>Support for filtering and sorting albums</li>
       <li xml:lang="ar">دعم ترشيح الألبومات وفرزها</li>
+      <li xml:lang="be">Падтрымка фільтравання і сартавання альбомаў</li>
       <li xml:lang="bg">Поддръжка на филтриране и сортиране на албуми</li>
       <li xml:lang="bs">Podrška za filtriranje i sortiranje albuma</li>
       <li xml:lang="ca">Implementació per al filtratge i ordenació dels àlbums</li>
@@ -429,6 +442,7 @@
       <li xml:lang="zh-TW">支援篩選和排序相簿</li>
       <li>Import from more than 1100 digital camera devices</li>
       <li xml:lang="ar">الاستيراد من أكثر من 1100 كمرة رقميّة</li>
+      <li xml:lang="be">Імпартаванне з больш чым 1100 лічбавых камер</li>
       <li xml:lang="bg">Импортиране от повече от 1100 устройства с цифрови фотоапарати</li>
       <li xml:lang="bs">Uvoz iz više od 1100 digitalnih kamera uređaja</li>
       <li xml:lang="ca">Importa des de més de 1.100 dispositius de càmera digital</li>
@@ -465,6 +479,7 @@
       <li xml:lang="zh-TW">能從超過 1100 個數位相機裝置匯入</li>
       <li>Support for more than 900 RAW format pictures</li>
       <li xml:lang="ar">دعم يصل حتّى 300 نسق للصّور الخامّ</li>
+      <li xml:lang="be">Падтрымка больш за 900 малюнкаў у фармаце RAW</li>
       <li xml:lang="bg">Поддръжка на повече от 900 снимки във формат RAW</li>
       <li xml:lang="ca">Admet més de 900 formats d'imatge RAW</li>
       <li xml:lang="ca-valencia">Admet més de 900 formats d'imatge RAW</li>
@@ -499,6 +514,7 @@
       <li xml:lang="zh-TW">支援超過 900 個 RAW 格式圖片</li>
       <li>Light Table to compare photo side by side</li>
       <li xml:lang="ar">الطاولة الضوئيّة لمقارنة الصورة جنبا لجنب</li>
+      <li xml:lang="be">Праявачны стол для параўнання фота</li>
       <li xml:lang="bg">Светлинна маса за сравняване на снимки една до друга</li>
       <li xml:lang="ca">Taula de llum per a comparar les fotografies costat a costat</li>
       <li xml:lang="ca-valencia">Taula de llum per a comparar les fotografies costat a costat</li>
@@ -532,6 +548,7 @@
       <li xml:lang="zh-TW">並排比對相片用的光桌</li>
       <li>Extended features using extra tools</li>
       <li xml:lang="ar">ميزات موسعة باستخدام أدوات إضافية</li>
+      <li xml:lang="be">Дадатковыя магчымасці з дапамогай дадатковых інструментаў</li>
       <li xml:lang="bg">Разширени функции с помощта на допълнителни инструменти</li>
       <li xml:lang="ca">Característiques ampliades usant eines addicionals</li>
       <li xml:lang="ca-valencia">Característiques ampliades utilitzant eines addicionals</li>
@@ -566,6 +583,7 @@
       <li xml:lang="zh-TW">使用延伸工具得到延伸功能</li>
       <li>Share your photos using HTML or publishing them to remote web services</li>
       <li xml:lang="ar">مشاركة الصّور عبر HTML أو نشرها إلى مواقع الوبّ الاجتماعيّة</li>
+      <li xml:lang="be">Абагульвайце свае фотаздымкі з дапамогай HTML або публікуйце іх у вэб-службах</li>
       <li xml:lang="bg">Споделяне на снимки чрез HTML или публикуването им в отдалечени уеб услуги</li>
       <li xml:lang="ca">Compartiu les vostres fotografies usant HTML o publicant-les a serveis web remots</li>
       <li xml:lang="ca-valencia">Compartiu les vostres fotografies utilitzant HTML o publicant-les a serveis web remots</li>
@@ -600,6 +618,7 @@
       <li xml:lang="zh-TW">使用 HTML 分享圖片或將圖片發布到遠端網路服務</li>
       <li>Image editor included with advanced tools to fix photo quickly</li>
       <li xml:lang="ar">وجود محرّر صور مضمّن بمزايا متقدّمة لإصلاح الصورة بسرعة</li>
+      <li xml:lang="be">Рэдактар ​​выяў у камплекце з дадатковымі інструментамі для хуткага выпраўлення фота</li>
       <li xml:lang="bg">Включен редактор на изображения с разширени инструменти за бързо редактиране на снимки</li>
       <li xml:lang="ca">Inclou un editor d'imatges amb eines avançades per a esmenar ràpidament les fotografies</li>
       <li xml:lang="ca-valencia">Inclou un editor d'imatges amb eines avançades per a esmenar ràpidament les fotografies</li>
@@ -642,6 +661,7 @@
     <screenshot type="default">
       <caption>digiKam Batch Queue Manager</caption>
       <caption xml:lang="ar">دجيكام مدير طوابير الدفعات</caption>
+      <caption xml:lang="be">Кіраўнік чэргаў digiKam</caption>
       <caption xml:lang="bg">Пакетно обработване на снимки digiKam</caption>
       <caption xml:lang="ca">Gestor de la cua per lots del digiKam</caption>
       <caption xml:lang="ca-valencia">Gestor de la cua per lots de digiKam</caption>
@@ -675,6 +695,7 @@
     <screenshot type="default">
       <caption>digiKam Image Editor</caption>
       <caption xml:lang="ar">دجيكام محرّر الصّور</caption>
+      <caption xml:lang="be">Рэдактар выяў digiKam</caption>
       <caption xml:lang="bg">Редактор на изображения digiKam</caption>
       <caption xml:lang="ca">Editor d'imatges del digiKam</caption>
       <caption xml:lang="ca-valencia">Editor d'imatges de digiKam</caption>
@@ -708,6 +729,7 @@
     <screenshot type="default">
       <caption>digiKam Import From Camera</caption>
       <caption xml:lang="ar">استيراد من الكمرة لدجيكام</caption>
+      <caption xml:lang="be">Імпартаванне з камеры</caption>
       <caption xml:lang="bg">Импортиране от камера digiKam</caption>
       <caption xml:lang="ca">Importació des de càmera del digiKam</caption>
       <caption xml:lang="ca-valencia">Importació des de càmera de digiKam</caption>
@@ -741,6 +763,7 @@
     <screenshot type="default">
       <caption>digiKam Light Table</caption>
       <caption xml:lang="ar">الطاولة الضوئيّة لدجيكام</caption>
+      <caption xml:lang="be">Праявачны стол digiKam</caption>
       <caption xml:lang="bg">Светлинна маса digiKam</caption>
       <caption xml:lang="ca">Taula de llum del digiKam</caption>
       <caption xml:lang="ca-valencia">Taula de llum de digiKam</caption>
@@ -774,6 +797,7 @@
     <screenshot type="default">
       <caption>digiKam Tags View</caption>
       <caption xml:lang="ar">عرض وسوم دجيكام</caption>
+      <caption xml:lang="be">Сродак прагляду тэгаў</caption>
       <caption xml:lang="bg">Преглед на тагове digiKam</caption>
       <caption xml:lang="ca">Vista d'etiquetes del digiKam</caption>
       <caption xml:lang="ca-valencia">Vista d'etiquetes de digiKam</caption>
@@ -895,6 +919,7 @@
   </releases>
   <developer_name>digiKam Team</developer_name>
   <developer_name xml:lang="ar">فريق دِجي‌كام</developer_name>
+  <developer_name xml:lang="be">Каманда digiKam</developer_name>
   <developer_name xml:lang="bg">Екипът на digiKam</developer_name>
   <developer_name xml:lang="ca">Equip del digiKam</developer_name>
   <developer_name xml:lang="ca-valencia">Equip de digiKam</developer_name>
