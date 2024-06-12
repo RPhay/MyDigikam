@@ -51,7 +51,7 @@ PPM      yes        yes    yes        Portable pixmap format                   K
 XBM      yes        yes    yes        X Windows system bitmap                  KIMG | IM
 XPM      yes        yes    yes        X Windows system pixmap                  KIMG | IM
 JXL      yes        yes    yes        JPEG Extended Long-term                  KIMG | [IM]     Libjxr dependency - since KF 5.89 - IM with RT dependency
-JXR      yes        no     yes        JPEG Extended Range                             IM       Older HD photo from Microsoft
+JXR      yes        yes    yes        JPEG Extended Range                      KIMG | IM       Older HD photo from Microsoft - since KF 5.117
 PCD      yes        no     yes        PhotoCD                                         IM
 SGI      yes        no     yes        Irix RGB image                                  IM
 ICO      yes        no     no         Windows icon format                             IM
@@ -63,5 +63,5 @@ FLIF     yes        no     yes        Free Lossless Image Format                
 JBIG     yes        no     yes        Joint Bi-level Image                            IM
 BPG      yes        no     yes        Better Portable Graphics                        IM
 DJVU     yes        no     no         Deja-Vu                                         IM
------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
