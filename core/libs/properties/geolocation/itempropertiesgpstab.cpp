@@ -325,10 +325,9 @@ void ItemPropertiesGPSTab::slotCopyGPSDetails()
     }
 
     const GPSItemInfo info = d->gpsInfoList.first();
-
-    QString copyGPSText = QString::fromLatin1("%1, %2")
-                              .arg(info.coordinates.lat(), 0, 'g', 12)
-                              .arg(info.coordinates.lon(), 0, 'g', 12);
+    QString copyGPSText    = QString::fromLatin1("%1, %2")
+                                 .arg(info.coordinates.lat(), 0, 'g', 12)
+                                 .arg(info.coordinates.lon(), 0, 'g', 12);
 
     QMimeData* const mimeData = new QMimeData();
     mimeData->setText(copyGPSText);
