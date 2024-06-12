@@ -846,7 +846,7 @@ msgstr "导入"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No import tool available"
-msgstr "无可用导入工具"
+msgstr "没有可用的导入工具"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:97
 #, kde-format
@@ -858,7 +858,7 @@ msgstr "导出"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
-msgstr "无可用导出工具"
+msgstr "没有可用的导出工具"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:127
 #, kde-format
@@ -10763,7 +10763,7 @@ msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
-"无可用扫描设备。\n"
+"没有可用的扫描设备。\n"
 "请检查系统配置"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
@@ -17001,7 +17001,7 @@ msgstr "可自定义"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
 #, kde-format
 msgid "no customization available"
-msgstr "无可用自定义选项"
+msgstr "没有可用的自定义选项"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
 #, kde-format
@@ -20529,7 +20529,7 @@ msgstr "%1 - %2"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
 msgid "No detail available"
-msgstr "无可用详情"
+msgstr "没有可用的详情"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
@@ -31417,7 +31417,7 @@ msgstr "主体距离 (米)："
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:718
 #, kde-format
 msgid "(no metadata available)"
-msgstr "(无可用元数据)"
+msgstr "(没有可用的元数据)"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:725
 #, kde-format
@@ -40202,7 +40202,7 @@ msgstr "自动跳过"
 #: core/libs/widgets/files/filesaveoptionsbox.cpp:91
 #, kde-format
 msgid "No options available"
-msgstr "无可用选项"
+msgstr "没有可用的选项"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:215
 #, kde-format
@@ -40467,7 +40467,7 @@ msgstr "未校准色彩空间"
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
 #, kde-format
 msgid "No profile available..."
-msgstr "无可用色彩特性文件..."
+msgstr "没有可用的色彩特性文件..."
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:57
 #, kde-format
@@ -42441,7 +42441,7 @@ msgstr "标准 EXIF 标签"
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
-msgstr "无可用描述"
+msgstr "没有可用的描述"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
@@ -55800,7 +55800,7 @@ msgstr "然后转换到工作色彩空间"
 #: core/utilities/setup/setupicc.cpp:712
 #, kde-format
 msgid "No Profile Available"
-msgstr "无可用特性文件"
+msgstr "没有可用的特性文件"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:410
 #, kde-format
@@ -55848,7 +55848,7 @@ msgstr "请选择创建此图像的设备 (相机) 的输入色彩特性文件�
 #: core/utilities/setup/setupicc.cpp:714
 #, kde-format
 msgid "No Input Profile Available"
-msgstr "无可用输入特性文件"
+msgstr "没有可用的输入特性文件"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:612
 #, kde-format
@@ -59300,7 +59300,7 @@ msgstr "无效"
 #, kde-format
 msgctxt "@label"
 msgid "No setting available"
-msgstr "无可用设置"
+msgstr "没有可用的设置"
 
 #: core/utilities/queuemanager/manager/task.cpp:153
 #, kde-format
@@ -64477,17 +64477,17 @@ msgstr "来自系统设置的显示器特性文件"
 #: core/utilities/setup/setupicc.cpp:697
 #, kde-format
 msgid "No ICC profiles files found."
-msgstr "无可用 ICC 色彩特性文件"
+msgstr "没有可用的 ICC 色彩特性文件"
 
 #: core/utilities/setup/setupicc.cpp:713
 #, kde-format
 msgid "No Display Profile Available"
-msgstr "无可用显示器色彩特性文件"
+msgstr "没有可用的显示器色彩特性文件"
 
 #: core/utilities/setup/setupicc.cpp:715
 #, kde-format
 msgid "No Output Profile Available"
-msgstr "无可用输出色彩特性文件"
+msgstr "没有可用的输出色彩特性文件"
 
 #: core/utilities/setup/setupicc.cpp:849
 #, kde-format
