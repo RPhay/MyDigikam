@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_LENS_AUTO_FIX_H
-#define DIGIKAM_BQM_LENS_AUTO_FIX_H
+#pragma once
 
 #include "batchtool.h"
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace DigikamBqmLensAutoFixPlugin
-
-#endif // DIGIKAM_BQM_LENS_AUTO_FIX_H

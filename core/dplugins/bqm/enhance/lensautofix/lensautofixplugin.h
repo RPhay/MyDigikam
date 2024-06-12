@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LENS_AUTO_FIX_PLUGIN_H
-#define DIGIKAM_LENS_AUTO_FIX_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmLensAutoFixPlugin
-
-#endif // DIGIKAM_LENS_AUTO_FIX_PLUGIN_H

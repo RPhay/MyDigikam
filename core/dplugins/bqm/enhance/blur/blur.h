@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_BLUR_H
-#define DIGIKAM_BQM_BLUR_H
+#pragma once
 
 #include "batchtool.h"
 #include "dnuminput.h"
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamBqmBlurPlugin
-
-#endif // DIGIKAM_BQM_BLUR_H

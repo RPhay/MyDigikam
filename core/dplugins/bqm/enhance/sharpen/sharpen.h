@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_SHARPEN_H
-#define DIGIKAM_BQM_SHARPEN_H
+#pragma once
 
 #include "batchtool.h"
 #include "sharpsettings.h"
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamBqmSharpenPlugin
-
-#endif // DIGIKAM_BQM_SHARPEN_H

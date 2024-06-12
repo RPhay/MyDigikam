@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RESTORATION_PLUGIN_H
-#define DIGIKAM_RESTORATION_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmRestorationPlugin
-
-#endif // DIGIKAM_RESTORATION_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ANTI_VIGNETTING_PLUGIN_H
-#define DIGIKAM_ANTI_VIGNETTING_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmAntiVignettingPlugin
-
-#endif // DIGIKAM_ANTI_VIGNETTING_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BLUR_PLUGIN_H
-#define DIGIKAM_BLUR_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmBlurPlugin
-
-#endif // DIGIKAM_BLUR_PLUGIN_H

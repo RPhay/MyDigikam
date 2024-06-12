@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_RED_EYE_CORRECTION_H
-#define DIGIKAM_BQM_RED_EYE_CORRECTION_H
+#pragma once
 
 // Local includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace DigikamBqmRedEyeCorrectionPlugin
-
-#endif // DIGIKAM_BQM_RED_EYE_CORRECTION_H

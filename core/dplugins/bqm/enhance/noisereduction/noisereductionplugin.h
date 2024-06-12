@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NOISE_REDUCTION_PLUGIN_H
-#define DIGIKAM_NOISE_REDUCTION_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmNoiseReductionPlugin
-
-#endif // DIGIKAM_NOISE_REDUCTION_PLUGIN_H

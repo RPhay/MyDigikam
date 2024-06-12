@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_HOT_PIXELS_H
-#define DIGIKAM_BQM_HOT_PIXELS_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmHotPixelsPlugin
-
-#endif // DIGIKAM_BQM_HOT_PIXELS_H

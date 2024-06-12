@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCAL_CONTRAST_PLUGIN_H
-#define DIGIKAM_LOCAL_CONTRAST_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmLocalContrastPlugin
-
-#endif // DIGIKAM_LOCAL_CONTRAST_PLUGIN_H
