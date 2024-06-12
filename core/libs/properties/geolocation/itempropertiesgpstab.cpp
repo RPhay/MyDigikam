@@ -38,6 +38,9 @@
 #include <QLocale>
 #include <QScopedPointer>
 #include <QStackedWidget>
+#include <QApplication>
+#include <QClipboard>
+#include <QMimeData>
 
 // KDE includes
 
@@ -75,6 +78,7 @@ public:
 
     QStackedWidget*            mapView                      = nullptr;
     QToolButton*               detailsBtn                   = nullptr;
+    QToolButton*               gpsCopyBtn                   = nullptr;
     QComboBox*                 detailsCombo                 = nullptr;
 
     DAdjustableLabel*          altitude                     = nullptr;
@@ -159,8 +163,11 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
 
     d->detailsCombo = new QComboBox(box);
     d->detailsBtn   = new QToolButton(box);
+    d->gpsCopyBtn   = new QToolButton(box);
     d->detailsBtn->setIcon(QIcon::fromTheme(QLatin1String("globe")));
     d->detailsBtn->setToolTip(i18n("See more information on the Internet"));
+    d->gpsCopyBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+    d->gpsCopyBtn->setToolTip(i18n("Copy GPS coordinates to clipboard"));
     d->detailsCombo->insertItem(MapQuest,      QLatin1String("MapQuest"));
     d->detailsCombo->insertItem(GoogleMaps,    QLatin1String("Google Maps"));
     d->detailsCombo->insertItem(BingMaps,      QLatin1String("Bing Maps"));
@@ -189,6 +196,9 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
 
     connect(d->detailsBtn, SIGNAL(clicked()),
             this, SLOT(slotGPSDetails()));
+
+    connect(d->gpsCopyBtn, SIGNAL(clicked()),
+            this, SLOT(slotCopyGPSDetails()));
 }
 
 ItemPropertiesGPSTab::~ItemPropertiesGPSTab()
@@ -304,6 +314,24 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
 #endif
 
+}
+
+void ItemPropertiesGPSTab::slotCopyGPSDetails()
+{
+    if (d->gpsInfoList.isEmpty())
+    {
+        return;
+    }
+
+    const GPSItemInfo info = d->gpsInfoList.first();
+
+    QString copyGPSText = QString::fromLatin1("%1, %2")
+                              .arg(info.coordinates.lat(), 0, 'g', 12)
+                              .arg(info.coordinates.lon(), 0, 'g', 12);
+
+    QMimeData* const mimeData = new QMimeData();
+    mimeData->setText(copyGPSText);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 }
 
 void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)

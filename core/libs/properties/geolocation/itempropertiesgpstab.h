@@ -67,6 +67,7 @@ public:
 private Q_SLOTS:
 
     void slotGPSDetails();
+    void slotCopyGPSDetails();
 
 private:
 
