@@ -156,6 +156,10 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
     QWidget* const box            = new DHBox(this);
     QHBoxLayout* const hBoxLayout = reinterpret_cast<QHBoxLayout*>(box->layout());
 
+    d->gpsCopyBtn                 = new QToolButton(box);
+    d->gpsCopyBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+    d->gpsCopyBtn->setToolTip(i18n("Copy GPS coordinates to clipboard"));
+
     if (hBoxLayout)
     {
         hBoxLayout->addStretch();
@@ -163,11 +167,8 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
 
     d->detailsCombo = new QComboBox(box);
     d->detailsBtn   = new QToolButton(box);
-    d->gpsCopyBtn   = new QToolButton(box);
     d->detailsBtn->setIcon(QIcon::fromTheme(QLatin1String("globe")));
     d->detailsBtn->setToolTip(i18n("See more information on the Internet"));
-    d->gpsCopyBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-    d->gpsCopyBtn->setToolTip(i18n("Copy GPS coordinates to clipboard"));
     d->detailsCombo->insertItem(MapQuest,      QLatin1String("MapQuest"));
     d->detailsCombo->insertItem(GoogleMaps,    QLatin1String("Google Maps"));
     d->detailsCombo->insertItem(BingMaps,      QLatin1String("Bing Maps"));
