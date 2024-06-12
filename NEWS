@@ -186,7 +186,7 @@ BUGFIXES:
 157 ==> 487925 - "Open in File Manager" just opens Windows Explorer and not the folder.
 158 ==> 488384 - Video Slideshow fails to encode.
 159 ==> 488385 - Video Slideshow fails to encode.
-160 ==> 
+160 ==> 488424 - Slideshow progress does not display until an animated GIF file is displayed.
 161 ==> 
 162 ==> 
 163 ==> 

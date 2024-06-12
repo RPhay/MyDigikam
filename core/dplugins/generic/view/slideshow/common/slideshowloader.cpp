@@ -260,13 +260,10 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 
         case VideoView:
         {
-
-
             d->osd->video(true);
             d->osd->pause(false);
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
-
 
             break;
         }

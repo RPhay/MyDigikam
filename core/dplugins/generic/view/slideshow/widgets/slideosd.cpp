@@ -133,6 +133,7 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     d->progressBar->setMaximum(d->settings->delay);
     d->progressBar->setFocusPolicy(Qt::NoFocus);
     d->progressBar->setMouseTracking(true);
+    d->progressBar->setValue(0);
 
     d->toolBar       = new SlideToolBar(d->settings, d->progressBox);
 
