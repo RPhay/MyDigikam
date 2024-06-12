@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_QUALITY_SORT_PLUGIN_H
-#define DIGIKAM_QUALITY_SORT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmQualitySortPlugin
-
-#endif // DIGIKAM_QUALITY_SORT_PLUGIN_H

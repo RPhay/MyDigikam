@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ASSIGN_TAGS_H
-#define DIGIKAM_BQM_ASSIGN_TAGS_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmAssignTagsPlugin
-
-#endif // DIGIKAM_BQM_ASSIGN_TAGS_H

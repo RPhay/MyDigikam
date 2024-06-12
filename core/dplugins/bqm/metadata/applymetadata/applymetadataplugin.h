@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_APPLY_METADATA_PLUGIN_H
-#define DIGIKAM_APPLY_METADATA_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmApplyMetadataPlugin
-
-#endif // DIGIKAM_APPLY_METADATA_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TIME_ADJUST_H
-#define DIGIKAM_BQM_TIME_ADJUST_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace DigikamBqmTimeAdjustPlugin
-
-#endif // DIGIKAM_BQM_TIME_ADJUST_H

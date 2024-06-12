@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILM_GRAIN_PLUGIN_H
-#define DIGIKAM_FILM_GRAIN_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmFilmGrainPlugin
-
-#endif // DIGIKAM_FILM_GRAIN_PLUGIN_H

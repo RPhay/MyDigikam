@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRANSLATE_PLUGIN_H
-#define DIGIKAM_TRANSLATE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmTranslatePlugin
-
-#endif // DIGIKAM_TRANSLATE_PLUGIN_H

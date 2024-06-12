@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ASSIGN_TEMPLATE_H
-#define DIGIKAM_BQM_ASSIGN_TEMPLATE_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamBqmAssignTemplatePlugin
-
-#endif // DIGIKAM_BQM_ASSIGN_TEMPLATE_H

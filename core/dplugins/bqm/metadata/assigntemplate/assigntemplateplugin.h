@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASSIGN_TEMPLATE_PLUGIN_H
-#define DIGIKAM_ASSIGN_TEMPLATE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace DigikamBqmAssignTemplatePlugin
-
-#endif // DIGIKAM_ASSIGN_TEMPLATE_PLUGIN_H

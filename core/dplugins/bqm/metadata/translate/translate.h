@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TRANSLATE_H
-#define DIGIKAM_BQM_TRANSLATE_H
+#pragma once
 
 // Local includes
 
@@ -62,5 +61,3 @@ private:
 };
 
 } // namespace DigikamBqmTranslatePlugin
-
-#endif // DIGIKAM_BQM_TRANSLATE_H

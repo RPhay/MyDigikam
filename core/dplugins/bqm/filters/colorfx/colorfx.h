@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_COLOR_FX_H
-#define DIGIKAM_BQM_COLOR_FX_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmColorFXPlugin
-
-#endif // DIGIKAM_BQM_COLOR_FX_H/

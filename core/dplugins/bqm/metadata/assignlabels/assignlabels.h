@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ASSIGN_LABELS_H
-#define DIGIKAM_BQM_ASSIGN_LABELS_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmAssignLabelsPlugin
-
-#endif // DIGIKAM_BQM_ASSIGN_LABELS_H

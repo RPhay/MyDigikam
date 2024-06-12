@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_REMOVE_METADATA_H
-#define DIGIKAM_BQM_REMOVE_METADATA_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamBqmRemoveMetadataPlugin
-
-#endif // DIGIKAM_BQM_REMOVE_METADATA_H
