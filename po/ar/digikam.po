@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -21652,7 +21652,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "عرض الشّرائح"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -36913,7 +36913,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "لا وسوم أُسندت حديثًا"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgid ""
@@ -36922,32 +36922,38 @@ msgid ""
 "Available"
 msgstr "معلومات الموقع (جي‌بي‌إس)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>الارتفاع الرّأسي</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>دائرة العرض</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>خطّ الطول</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>التّاريخ</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+#| msgid "Could not find any coordinates on the clipboard."
+msgid "Copy GPS coordinates to clipboard"
+msgstr "تعذّر العثور على أيّة إحداثيّات في الحافظة."
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "طالع معلومات أكثر على الشّابكة"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"

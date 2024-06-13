@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -22350,7 +22350,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -37678,7 +37678,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "최근에 붙인 태그가 없음"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Geolocation information (GPS)"
@@ -37688,32 +37688,38 @@ msgid ""
 "Available"
 msgstr "지리적 위치 정보(GPS)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>고도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>위도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>경도</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>날짜</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+#| msgid "Copy coordinates"
+msgid "Copy GPS coordinates to clipboard"
+msgstr "좌표 복사"
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "인터넷에서 더 많은 정보 찾아보기"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"

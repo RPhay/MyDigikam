@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -22218,7 +22218,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Taispeántas Sleamhnán"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -37609,7 +37609,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Clibeanna Sannta Le Déanaí"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid ""
@@ -37618,32 +37618,38 @@ msgid ""
 "Available"
 msgstr "Faisnéis Fhotheidil"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Airde</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Domhanleithead</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Domhanfhad</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Dáta</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+#| msgid "Copy coordinates"
+msgid "Copy GPS coordinates to clipboard"
+msgstr "Cóipeáil comhordanáidí"
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
 msgid "See more information on the Internet"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, fuzzy, kde-format
 #| msgid "Not defined"
 msgctxt "@label: no GPS coordinates"

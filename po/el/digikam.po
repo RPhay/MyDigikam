@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -23094,7 +23094,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -39399,7 +39399,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Χωρίς πρόσφατα ορισμένες ετικέτες"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgid ""
@@ -39408,32 +39408,38 @@ msgid ""
 "Available"
 msgstr "Πληροφορίες θέσης (GPS)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Υψόμετρο</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Γεωγρ.Πλάτος</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Γεωγρ.Μήκος</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Ημερομηνία</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+#| msgid "Could not find any coordinates on the clipboard."
+msgid "Copy GPS coordinates to clipboard"
+msgstr "Αδυναμία εύρεσης συντεταγμένων στο πρόχειρο."
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "Δείτε περισσότερες πληροφορίες στο Διαδίκτυο"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, fuzzy, kde-format
 #| msgid "Undefined"
 msgctxt "@label: no GPS coordinates"

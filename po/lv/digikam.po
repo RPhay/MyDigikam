@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -21466,7 +21466,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slaidrāde"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -36780,7 +36780,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Nav nesen piešķirtu tagu"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Geolocation information (GPS)"
@@ -36790,32 +36790,37 @@ msgid ""
 "Available"
 msgstr "Ģeolokācijas informācija (GPS)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Augstums</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Platums</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Garums</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Datums</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+msgid "Copy GPS coordinates to clipboard"
+msgstr "Izdzēst koordinātas..."
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, fuzzy, kde-format
 msgid "See more information on the Internet"
 msgstr "Vairāk informācijas skatiet internetā"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"

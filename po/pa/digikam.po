@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 01:48+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -21791,7 +21791,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "ਸਲਾਇਡ ਸ਼ੋ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -37050,7 +37050,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "ਕੋਈ ਤਾਜ਼ਾ ਜਾਰੀ ਕੀਤੇ ਟੈਗ ਨਹੀਂ ਹਨ"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgid ""
@@ -37059,32 +37059,38 @@ msgid ""
 "Available"
 msgstr "ਸਥਿਤੀ ਜਾਣਕਾਰੀ (GPS)"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>ਉਚਾਈ</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>ਵਿਥਕਾਰ</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>ਲੰਬਕਾਰ</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>ਮਿਤੀ</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, fuzzy, kde-format
+#| msgid "Copy to Clipboard"
+msgid "Copy GPS coordinates to clipboard"
+msgstr "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ"
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, fuzzy, kde-format
 msgid "See more information on the Internet"
 msgstr "ਡਾਟਾਬੇਸ ਤੋਂ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, fuzzy, kde-format
 #| msgid "Not defined"
 msgctxt "@label: no GPS coordinates"
