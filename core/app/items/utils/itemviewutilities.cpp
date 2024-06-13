@@ -228,7 +228,7 @@ void ItemViewUtilities::createNewAlbumForInfos(const QList<ItemInfo>& infos,
     QString header(i18n("<p>Please select the destination album from the digiKam library to "
                         "move the selected images into.</p>"));
 
-    Album* const album = AlbumSelectDialog::selectAlbum(m_widget, static_cast<PAlbum*>(currentAlbum), header);
+    Album* const album = AlbumSelectDialog::selectAlbum(m_widget, dynamic_cast<PAlbum*>(currentAlbum), header);
 
     if (!album)
     {

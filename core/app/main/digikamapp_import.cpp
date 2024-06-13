@@ -144,7 +144,7 @@ void DigikamApp::slotImportAddFolders()
     QString header(i18n("<p>Please select the destination album from the digiKam library to "
                         "import folders into.</p>"));
 
-    album = AlbumSelectDialog::selectAlbum(this, static_cast<PAlbum*>(album), header);
+    album = AlbumSelectDialog::selectAlbum(this, dynamic_cast<PAlbum*>(album), header);
 
     if (!album)
     {

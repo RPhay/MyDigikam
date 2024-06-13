@@ -168,6 +168,11 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
 
     // ------------------------------------------------------------------------------------
 
+    d->albumTreeView->loadState();
+    d->searchBar->loadState();
+
+    // ------------------------------------------------------------------------------------
+
     PAlbum* select = albumToSelect;
 
     if (!select)
@@ -199,9 +204,6 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
 
     connect(d->newAlbumBtn, SIGNAL(clicked()),
             d->albumTreeView, SLOT(slotNewAlbum()));
-
-    d->albumTreeView->loadState();
-    d->searchBar->loadState();
 
     if (completerSelect)
     {
