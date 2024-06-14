@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 01:40+0000\n"
-"PO-Revision-Date: 2024-05-26 08:31+0300\n"
+"PO-Revision-Date: 2024-06-13 09:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -37815,10 +37815,9 @@ msgid "<b>Date</b>:"
 msgstr "<b>Дата</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "У буфері не знайдено жодних координат."
+msgstr "Скопіювати координати GPS до буфера обміну даними"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format

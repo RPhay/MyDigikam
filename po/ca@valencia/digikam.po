@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 01:40+0000\n"
-"PO-Revision-Date: 2024-05-26 11:17+0200\n"
+"PO-Revision-Date: 2024-06-13 16:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -25501,7 +25501,7 @@ msgstr "S'ha produït un error en iniciar la sessió"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:333
 #, kde-format
 msgid "Please check your credentials and try again."
-msgstr "Comproveu les credencials i torneu-ho a intentar."
+msgstr "Comproveu les credencials i torneu-ho a provar."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:354
 #, kde-format
@@ -37665,10 +37665,9 @@ msgid "<b>Date</b>:"
 msgstr "<b>Data</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "No s'ha trobat cap coordenada en el porta-retalls."
+msgstr "Copia les coordenades del GPS en el porta-retalls"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
@@ -64222,7 +64221,7 @@ msgid ""
 "manually."
 msgstr ""
 "No s'ha pogut detectar automàticament cap càmera.\n"
-"Comproveu que la càmera està encesa i torneu-ho a intentar, o bé intenteu "
+"Comproveu que la càmera està encesa i torneu-ho a provar, o bé intenteu "
 "configurar-la manualment."
 
 #: core/utilities/setup/camera/setupcamera.cpp:896
@@ -64607,7 +64606,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
-msgstr "Torna-ho a intentar"
+msgstr "Torneu-ho a provar"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:365
 #, kde-format

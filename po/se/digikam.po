@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 01:46+0000\n"
+"POT-Creation-Date: 2024-06-13 01:40+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -2382,82 +2382,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:285
+#: core/app/main/digikamapp_solid.cpp:289
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:291
+#: core/app/main/digikamapp_solid.cpp:295
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:297
+#: core/app/main/digikamapp_solid.cpp:301
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:303
+#: core/app/main/digikamapp_solid.cpp:307
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:309
+#: core/app/main/digikamapp_solid.cpp:313
 #, kde-format
 msgid "xD Card Reader"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:324
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgid "USB Disk"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:328
+#: core/app/main/digikamapp_solid.cpp:332
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:401
+#: core/app/main/digikamapp_solid.cpp:405
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:407
+#: core/app/main/digikamapp_solid.cpp:411
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:415
+#: core/app/main/digikamapp_solid.cpp:419
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:427
+#: core/app/main/digikamapp_solid.cpp:431
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:662
+#: core/app/main/digikamapp_solid.cpp:666
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:693
+#: core/app/main/digikamapp_solid.cpp:697
 #, kde-format
 msgid "Images on %1"
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:726
+#: core/app/main/digikamapp_solid.cpp:730
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:739
+#: core/app/main/digikamapp_solid.cpp:743
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr ""
@@ -20415,7 +20415,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:671
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26143,7 +26143,7 @@ msgid ""
 "is empty, the share will be considered unavailable."
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:467
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26151,7 +26151,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:475
+#: core/libs/database/collection/collectionmanager_p.cpp:483
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26159,7 +26159,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:489
+#: core/libs/database/collection/collectionmanager_p.cpp:497
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
@@ -34697,7 +34697,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
 #, kde-format
 msgid ""
 "No Geolocation\n"
@@ -34705,32 +34705,37 @@ msgid ""
 "Available"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#, kde-format
+msgid "Copy GPS coordinates to clipboard"
+msgstr ""
+
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
 msgid "See more information on the Internet"
 msgstr ""
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
@@ -59885,169 +59890,169 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:660
-#: core/utilities/setup/collections/setupcollectionview.cpp:1506
+#: core/utilities/setup/collections/setupcollectionview.cpp:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:697
+#: core/utilities/setup/collections/setupcollectionview.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:698
+#: core/utilities/setup/collections/setupcollectionview.cpp:700
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:861
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:869
+#: core/utilities/setup/collections/setupcollectionview.cpp:871
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:870
+#: core/utilities/setup/collections/setupcollectionview.cpp:872
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:935
-#: core/utilities/setup/collections/setupcollectionview.cpp:1723
+#: core/utilities/setup/collections/setupcollectionview.cpp:937
+#: core/utilities/setup/collections/setupcollectionview.cpp:1727
 #, kde-format
 msgid "Local Collections"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:940
-#: core/utilities/setup/collections/setupcollectionview.cpp:1724
+#: core/utilities/setup/collections/setupcollectionview.cpp:942
+#: core/utilities/setup/collections/setupcollectionview.cpp:1728
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:945
-#: core/utilities/setup/collections/setupcollectionview.cpp:1725
+#: core/utilities/setup/collections/setupcollectionview.cpp:947
+#: core/utilities/setup/collections/setupcollectionview.cpp:1729
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:982
+#: core/utilities/setup/collections/setupcollectionview.cpp:984
 #, kde-format
 msgid "Add Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1032
+#: core/utilities/setup/collections/setupcollectionview.cpp:1034
 #, kde-format
 msgid "Col. %1"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1128
+#: core/utilities/setup/collections/setupcollectionview.cpp:1130
 #, kde-format
 msgid "This collection is currently not available."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1133
+#: core/utilities/setup/collections/setupcollectionview.cpp:1135
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1138
+#: core/utilities/setup/collections/setupcollectionview.cpp:1140
 #, kde-format
 msgid "This collection is hidden."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1157
+#: core/utilities/setup/collections/setupcollectionview.cpp:1159
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1185
+#: core/utilities/setup/collections/setupcollectionview.cpp:1187
 #, kde-format
 msgid "Update collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1213
+#: core/utilities/setup/collections/setupcollectionview.cpp:1215
 #, kde-format
 msgid "Remove collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1248
+#: core/utilities/setup/collections/setupcollectionview.cpp:1250
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1253
+#: core/utilities/setup/collections/setupcollectionview.cpp:1255
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1258
+#: core/utilities/setup/collections/setupcollectionview.cpp:1260
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1554
+#: core/utilities/setup/collections/setupcollectionview.cpp:1558
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1592
+#: core/utilities/setup/collections/setupcollectionview.cpp:1596
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1601
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1618
+#: core/utilities/setup/collections/setupcollectionview.cpp:1622
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1626
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1630
+#: core/utilities/setup/collections/setupcollectionview.cpp:1634
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1713
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1717
+#: core/utilities/setup/collections/setupcollectionview.cpp:1721
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""

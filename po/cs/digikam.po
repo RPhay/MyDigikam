@@ -36024,10 +36024,9 @@ msgid "<b>Date</b>:"
 msgstr "<b>Datum</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "Ve schránce nelze nalézt žádné souřadnice."
+msgstr ""
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
