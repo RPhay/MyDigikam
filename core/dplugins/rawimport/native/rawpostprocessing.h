@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_POST_PROCESSING_H
-#define DIGIKAM_RAW_POST_PROCESSING_H
+#pragma once
 
 // Local includes
 
@@ -74,5 +73,3 @@ private:
 };
 
 } // namespace DigikamRawImportNativePlugin
-
-#endif // DIGIKAM_RAW_POST_PROCESSING_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_IMPORT_ART_PLUGIN_H
-#define DIGIKAM_RAW_IMPORT_ART_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace DigikamRawImportARTPlugin
-
-#endif // DIGIKAM_RAW_IMPORT_ART_PLUGIN_H

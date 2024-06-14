@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_IMPORT_NATIVE_PLUGIN_H
-#define DIGIKAM_RAW_IMPORT_NATIVE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamRawImportNativePlugin
-
-#endif // DIGIKAM_RAW_IMPORT_NATIVE_PLUGIN_H

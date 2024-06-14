@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_PREVIEW_H
-#define DIGIKAM_RAW_PREVIEW_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private:
 };
 
 } // namespace DigikamRawImportNativePlugin
-
-#endif // DIGIKAM_RAW_PREVIEW_H
