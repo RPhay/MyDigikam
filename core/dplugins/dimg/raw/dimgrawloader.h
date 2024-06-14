@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_RAW_LOADER_H
-#define DIGIKAM_DIMG_RAW_LOADER_H
+#pragma once
 
 // Local includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace DigikamRAWDImgPlugin
-
-#endif // DIGIKAM_DIMG_RAW_LOADER_H

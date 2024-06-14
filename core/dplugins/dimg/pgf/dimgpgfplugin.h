@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_PGF_PLUGIN_H
-#define DIGIKAM_DIMG_PGF_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ public:
 };
 
 } // namespace DigikamPGFDImgPlugin
-
-#endif // DIGIKAM_DIMG_PGF_PLUGIN_H

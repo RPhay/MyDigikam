@@ -20,8 +20,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_HEIF_LOADER_H
-#define DIGIKAM_DIMG_HEIF_LOADER_H
+#pragma once
 
 // Libheif includes
 
@@ -87,5 +86,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_HEIF_LOADER_H

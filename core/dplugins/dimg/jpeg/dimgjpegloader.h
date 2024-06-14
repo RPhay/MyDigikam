@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_JPEG_LOADER_H
-#define DIGIKAM_DIMG_JPEG_LOADER_H
+#pragma once
 
 // C++ includes
 
@@ -67,5 +66,3 @@ private:
 };
 
 } // namespace DigikamJPEGDImgPlugin
-
-#endif // DIGIKAM_DIMG_JPEG_LOADER_H

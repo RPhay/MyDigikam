@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_IMAGEMAGICK_LOADER_H
-#define DIGIKAM_DIMG_IMAGEMAGICK_LOADER_H
+#pragma once
 
 // Local includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace DigikamImageMagickDImgPlugin
-
-#endif // DIGIKAM_DIMG_IMAGEMAGICK_LOADER_H

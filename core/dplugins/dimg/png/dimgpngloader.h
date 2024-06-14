@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_PNG_LOADER_H
-#define DIGIKAM_DIMG_PNG_LOADER_H
+#pragma once
 
 // C++ includes
 
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace DigikamPNGDImgPlugin
-
-#endif // DIGIKAM_DIMG_PNG_LOADER_H

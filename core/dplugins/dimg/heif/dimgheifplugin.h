@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_HEIF_PLUGIN_H
-#define DIGIKAM_DIMG_HEIF_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ public:
 };
 
 } // namespace DigikamHEIFDImgPlugin
-
-#endif // DIGIKAM_DIMG_HEIF_PLUGIN_H

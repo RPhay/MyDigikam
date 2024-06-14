@@ -30,8 +30,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_TIFF_LOADER_H
-#define DIGIKAM_DIMG_TIFF_LOADER_H
+#pragma once
 
 // C ANSI includes
 
@@ -83,5 +82,3 @@ private:
 };
 
 } // namespace DigikamTIFFDImgPlugin
-
-#endif // DIGIKAM_DIMG_TIFF_LOADER_H

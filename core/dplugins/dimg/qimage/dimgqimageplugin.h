@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_QIMAGE_PLUGIN_H
-#define DIGIKAM_DIMG_QIMAGE_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -65,5 +64,3 @@ public:
 };
 
 } // namespace DigikamQImageDImgPlugin
-
-#endif // DIGIKAM_DIMG_QIMAGE_PLUGIN_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_QIMAGE_LOADER_H
-#define DIGIKAM_DIMG_QIMAGE_LOADER_H
+#pragma once
 
 // Local includes
 
@@ -48,5 +47,3 @@ private:
 };
 
 } // namespace DigikamQImageDImgPlugin
-
-#endif // DIGIKAM_DIMG_QIMAGE_LOADER_H

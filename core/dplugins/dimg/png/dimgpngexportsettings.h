@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H
-#define DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -45,5 +44,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H
