@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EMBOSSTOOL_PLUGIN_H
-#define DIGIKAM_EMBOSSTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorEmbossToolPlugin
-
-#endif // DIGIKAM_EMBOSSTOOL_PLUGIN_H

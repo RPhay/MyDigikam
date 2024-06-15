@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_CONFIG_H
-#define DIGIKAM_PRINT_CONFIG_H
+#pragma once
 
 // Qt includes
 
@@ -182,5 +181,3 @@ private:
 };
 
 } // namespace DigikamEditorPrintToolPlugin
-
-#endif // DIGIKAM_PRINT_CONFIG_H

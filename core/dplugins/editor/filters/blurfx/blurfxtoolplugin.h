@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BLURFXTOOL_PLUGIN_H
-#define DIGIKAM_BLURFXTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorBlurFxToolPlugin
-
-#endif // DIGIKAM_BLURFXTOOL_PLUGIN_H

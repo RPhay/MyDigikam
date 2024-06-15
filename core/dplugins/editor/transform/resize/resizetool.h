@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_RESIZE_TOOL_H
-#define DIGIKAM_EDITOR_RESIZE_TOOL_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace DigikamEditorResizeToolPlugin
-
-#endif // DIGIKAM_EDITOR_RESIZE_TOOL_H

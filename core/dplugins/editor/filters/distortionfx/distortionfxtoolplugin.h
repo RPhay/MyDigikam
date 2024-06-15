@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DISTORTIONFXTOOL_PLUGIN_H
-#define DIGIKAM_DISTORTIONFXTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorDistortionFxToolPlugin
-
-#endif // DIGIKAM_DISTORTIONFXTOOL_PLUGIN_H

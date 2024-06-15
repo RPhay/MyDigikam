@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H
-#define DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -185,5 +184,3 @@ private:
 };
 
 } // namespace DigikamEditorRatioCropToolPlugin
-
-#endif // DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H

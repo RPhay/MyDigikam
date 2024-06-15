@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_CONTENT_AWARE_RESIZE_TOOL_H
-#define DIGIKAM_EDITOR_CONTENT_AWARE_RESIZE_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace DigikamEditorContentAwareResizeToolPlugin
-
-#endif // DIGIKAM_EDITOR_CONTENT_AWARE_RESIZE_TOOL_H

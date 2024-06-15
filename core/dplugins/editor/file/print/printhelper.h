@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_HELPER_H
-#define DIGIKAM_PRINT_HELPER_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace DigikamEditorPrintToolPlugin
-
-#endif // DIGIKAM_PRINT_HELPER_H

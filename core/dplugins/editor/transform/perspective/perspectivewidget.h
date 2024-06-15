@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_PERSPECTIVE_WIDGET_H
-#define DIGIKAM_EDITOR_PERSPECTIVE_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -106,5 +105,3 @@ private:
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin
-
-#endif // DIGIKAM_EDITOR_PERSPECTIVE_WIDGET_H

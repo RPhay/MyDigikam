@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BLUR_FX_TOOL_H
-#define DIGIKAM_EDITOR_BLUR_FX_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamEditorBlurFxToolPlugin
-
-#endif // DIGIKAM_EDITOR_BLUR_FX_TOOL_H

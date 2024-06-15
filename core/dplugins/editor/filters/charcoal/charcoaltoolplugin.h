@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CHARCOALTOOL_PLUGIN_H
-#define DIGIKAM_CHARCOALTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorCharcoalToolPlugin
-
-#endif // DIGIKAM_CHARCOALTOOL_PLUGIN_H

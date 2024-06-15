@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H
-#define DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ private:
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin
-
-#endif // DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H

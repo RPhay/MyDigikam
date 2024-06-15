@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_OIL_PAINT_TOOL_H
-#define DIGIKAM_EDITOR_OIL_PAINT_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamEditorOilPaintToolPlugin
-
-#endif // DIGIKAM_EDITOR_OIL_PAINT_TOOL_H

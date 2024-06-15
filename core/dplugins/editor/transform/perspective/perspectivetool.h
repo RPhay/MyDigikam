@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-02-17
- * Description : a tool to change image perspective .
+ * Description : a tool to change image perspective.
  *
  * SPDX-FileCopyrightText: 2005-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_PERSPECTIVE_TOOL_H
-#define DIGIKAM_EDITOR_PERSPECTIVE_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin
-
-#endif // DIGIKAM_EDITOR_PERSPECTIVE_TOOL_H

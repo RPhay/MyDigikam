@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_DISTORTION_FX_TOOL_H
-#define DIGIKAM_EDITOR_DISTORTION_FX_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace DigikamEditorDistortionFxToolPlugin
-
-#endif // DIGIKAM_EDITOR_DISTORTION_FX_TOOL_H

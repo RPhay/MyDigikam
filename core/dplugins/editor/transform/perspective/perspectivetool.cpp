@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-02-17
- * Description : a tool to change image perspective .
+ * Description : a tool to change image perspective.
  *
  * SPDX-FileCopyrightText: 2005-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>

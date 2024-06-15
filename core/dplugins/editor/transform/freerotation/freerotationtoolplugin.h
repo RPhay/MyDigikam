@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FREEROTATIONTOOL_PLUGIN_H
-#define DIGIKAM_FREEROTATIONTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorFreeRotationToolPlugin
-
-#endif // DIGIKAM_FREEROTATIONTOOL_PLUGIN_H

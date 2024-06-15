@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H
-#define DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H
+#pragma once
 
 namespace DigikamEditorPerspectiveToolPlugin
 {
@@ -95,5 +94,3 @@ public:
 };
 
 } // namespace DigikamEditorPerspectiveToolPlugin
-
-#endif // DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H
