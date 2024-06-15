@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BORDER_TOOL_H
-#define DIGIKAM_EDITOR_BORDER_TOOL_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace DigikamEditorBorderToolPlugin
-
-#endif // DIGIKAM_EDITOR_BORDER_TOOL_H

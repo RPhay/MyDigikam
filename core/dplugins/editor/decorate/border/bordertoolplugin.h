@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BORDERTOOL_PLUGIN_H
-#define DIGIKAM_BORDERTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorBorderToolPlugin
-
-#endif // DIGIKAM_BORDERTOOL_PLUGIN_H

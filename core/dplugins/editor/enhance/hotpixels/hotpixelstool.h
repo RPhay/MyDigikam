@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
-#define DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace DigikamEditorHotPixelsToolPlugin
-
-#endif // DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H

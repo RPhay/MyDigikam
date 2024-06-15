@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HOT_PIXELS_TOOL_PLUGIN_H
-#define DIGIKAM_HOT_PIXELS_TOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorHotPixelsToolPlugin
-
-#endif // DIGIKAM_HOT_PIXELS_TOOL_PLUGIN_H

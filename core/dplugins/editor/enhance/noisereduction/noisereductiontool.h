@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_NOISE_REDUCTION_TOOL_H
-#define DIGIKAM_EDITOR_NOISE_REDUCTION_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamEditorNoiseReductionToolPlugin
-
-#endif // DIGIKAM_EDITOR_NOISE_REDUCTION_TOOL_H

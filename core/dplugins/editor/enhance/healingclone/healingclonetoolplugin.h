@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HEALINGCLONETOOL_PLUGIN_H
-#define DIGIKAM_HEALINGCLONETOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
-
-#endif // DIGIKAM_HEALINGCLONETOOL_PLUGIN_H

@@ -10,8 +10,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_LENS_AUTO_FIX_TOOL_H
-#define DIGIKAM_EDITOR_LENS_AUTO_FIX_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace DigikamEditorLensAutoFixToolPlugin
-
-#endif // DIGIKAM_EDITOR_LENS_AUTO_FIX_TOOL_H

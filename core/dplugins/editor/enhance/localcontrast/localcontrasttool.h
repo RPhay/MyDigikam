@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_LOCAL_CONTRAST_TOOL_H
-#define DIGIKAM_EDITOR_LOCAL_CONTRAST_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace DigikamEditorLocalContrastToolPlugin
-
-#endif // DIGIKAM_EDITOR_LOCAL_CONTRAST_TOOL_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_RESTORATION_TOOL_H
-#define DIGIKAM_EDITOR_RESTORATION_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamEditorRestorationToolPlugin
-
-#endif // DIGIKAM_EDITOR_RESTORATION_TOOL_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_INSERT_TEXT_WIDGET_H
-#define DIGIKAM_EDITOR_INSERT_TEXT_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -115,5 +114,3 @@ private:
 };
 
 } // namespace DigikamEditorInsertTextToolPlugin
-
-#endif // DIGIKAM_EDITOR_INSERT_TEXT_WIDGET_H

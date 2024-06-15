@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H
-#define DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -124,5 +123,3 @@ private:
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
-
-#endif // DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H

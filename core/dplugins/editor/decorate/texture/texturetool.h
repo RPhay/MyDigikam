@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_TEXTURE_TOOL_H
-#define DIGIKAM_EDITOR_TEXTURE_TOOL_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamEditorTextureToolPlugin
-
-#endif // DIGIKAM_EDITOR_TEXTURE_TOOL_H

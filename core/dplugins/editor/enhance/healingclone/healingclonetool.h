@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
-#define DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
+#pragma once
 
 // C++ includes
 
@@ -103,5 +102,3 @@ private:
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
-
-#endif // DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H

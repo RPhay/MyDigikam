@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_INSERT_TEXT_TOOL_H
-#define DIGIKAM_EDITOR_INSERT_TEXT_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamEditorInsertTextToolPlugin
-
-#endif // DIGIKAM_EDITOR_INSERT_TEXT_TOOL_H
