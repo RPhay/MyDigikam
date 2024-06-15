@@ -16,6 +16,7 @@ RawEngine: Update internal libraw to last 20240512 upstream. New supported camer
            Sony A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.
            Multiple DJI and Skydio drones.
            Multiple smartphones with DNG format recorded.
+Video:     Update internal QtAVPlayer to last 20240616 upstream (Qt5 only).
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
            Add optional libjxl dependency to compile DNG support.
 Bundles:   Update Exiftool to last 12.84.
