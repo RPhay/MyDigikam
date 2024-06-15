@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILMTOOL_PLUGIN_H
-#define DIGIKAM_FILMTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorFilmToolPlugin
-
-#endif // DIGIKAM_FILMTOOL_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONVERT8TO16TOOL_PLUGIN_H
-#define DIGIKAM_CONVERT8TO16TOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorConvert8To16ToolPlugin
-
-#endif // DIGIKAM_CONVERT8TO16TOOL_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PROFILECONVERSIONTOOL_PLUGIN_H
-#define DIGIKAM_PROFILECONVERSIONTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamEditorProfileConversionToolPlugin
-
-#endif // DIGIKAM_PROFILECONVERSIONTOOL_PLUGIN_H

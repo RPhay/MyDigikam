@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CBTOOL_PLUGIN_H
-#define DIGIKAM_CBTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorColorBalanceToolPlugin
-
-#endif // DIGIKAM_CBTOOL_PLUGIN_H

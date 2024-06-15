@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INVERTTOOL_PLUGIN_H
-#define DIGIKAM_INVERTTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorInvertToolPlugin
-
-#endif // DIGIKAM_INVERTTOOL_PLUGIN_H

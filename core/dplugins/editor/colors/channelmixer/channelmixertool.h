@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_CHANNEL_MIXER_TOOL_H
-#define DIGIKAM_EDITOR_CHANNEL_MIXER_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamEditorChannelMixerToolPlugin
-
-#endif // DIGIKAM_EDITOR_CHANNEL_MIXER_TOOL_H

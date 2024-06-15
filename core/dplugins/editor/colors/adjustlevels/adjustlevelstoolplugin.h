@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADJUSTLEVELSTOOL_PLUGIN_H
-#define DIGIKAM_ADJUSTLEVELSTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorAdjustLevelsToolPlugin
-
-#endif // DIGIKAM_ADJUSTLEVELSTOOL_PLUGIN_H

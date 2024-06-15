@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HSLTOOL_PLUGIN_H
-#define DIGIKAM_HSLTOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorHSLToolPlugin
-
-#endif // DIGIKAM_HSLTOOL_PLUGIN_H

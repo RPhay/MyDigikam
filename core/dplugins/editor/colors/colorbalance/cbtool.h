@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_CB_TOOL_H
-#define DIGIKAM_EDITOR_CB_TOOL_H
+#pragma once
 
 #include <QObject>
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamEditorColorBalanceToolPlugin
-
-#endif // DIGIKAM_EDITOR_CB_TOOL_H

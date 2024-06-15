@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_ADJUST_CURVES_TOOL_H
-#define DIGIKAM_EDITOR_ADJUST_CURVES_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -62,5 +61,3 @@ private:
 };
 
 } // namespace DigikamEditorAdjustCurvesToolPlugin
-
-#endif // DIGIKAM_EDITOR_ADJUST_CURVES_TOOL_H

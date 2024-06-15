@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_BW_SEPIA_TOOL_H
-#define DIGIKAM_EDITOR_BW_SEPIA_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamEditorBWSepiaToolPlugin
-
-#endif // DIGIKAM_EDITOR_BW_SEPIA_TOOL_H

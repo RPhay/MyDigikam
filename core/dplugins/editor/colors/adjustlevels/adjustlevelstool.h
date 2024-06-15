@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_ADJUST_LEVELS_TOOL_H
-#define DIGIKAM_EDITOR_ADJUST_LEVELS_TOOL_H
+#pragma once
 
 // Local includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace DigikamEditorAdjustLevelsToolPlugin
-
-#endif // DIGIKAM_EDITOR_ADJUST_LEVELS_TOOL_H

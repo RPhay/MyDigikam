@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WHITEBALANCETOOL_PLUGIN_H
-#define DIGIKAM_WHITEBALANCETOOL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamEditorWhiteBalanceToolPlugin
-
-#endif // DIGIKAM_WHITEBALANCETOOL_PLUGIN_H
