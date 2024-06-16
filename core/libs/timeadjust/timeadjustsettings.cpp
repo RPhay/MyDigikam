@@ -43,6 +43,7 @@
 #include "dexpanderbox.h"
 #include "clockphotodialog.h"
 #include "dmetadata.h"
+#include "metaenginesettings.h"
 #include "detbyclockphotobutton.h"
 
 namespace Digikam
@@ -99,6 +100,8 @@ public:
     DExpanderBox*          settingsExpander         = nullptr;
 
     QUrl                   currentItemUrl;
+
+    bool                   exifToolEnabled          = false;
 };
 
 TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool)
@@ -249,7 +252,11 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updXMPVideoCheck         = new QCheckBox(i18n("XMP: Video"),                      d->updateSettingsBox);
     d->updXMPDateCheck          = new QCheckBox(i18n("XMP"),                             d->updateSettingsBox);
 
-    d->updUseExifToolCheck->setVisible(timeAdjustTool);
+    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
+    d->exifToolEnabled                   = (timeAdjustTool &&
+                                            (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY));
+
+    d->updUseExifToolCheck->setVisible(d->exifToolEnabled);
 
     updateGBLayout->addWidget(d->updUseExifToolCheck, 0, 0, 1, 2);
     updateGBLayout->addWidget(d->updIfAvailableCheck, 1, 0, 1, 2);
@@ -527,7 +534,8 @@ void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
 
 void TimeAdjustSettings::slotUseExifToolChanged()
 {
-    bool check = d->updUseExifToolCheck->isChecked();
+    bool check = (d->exifToolEnabled &&
+                  d->updUseExifToolCheck->isChecked());
 
     d->updIfAvailableCheck->setEnabled(!check);
     d->updEXIFModDateCheck->setEnabled(!check);
