@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTO_OPTIMISER_BINARY_H
-#define DIGIKAM_AUTO_OPTIMISER_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_AUTO_OPTIMISER_BINARY_H

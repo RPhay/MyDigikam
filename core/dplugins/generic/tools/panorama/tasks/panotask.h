@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PANO_TASK_H
-#define DIGIKAM_PANO_TASK_H
+#pragma once
 
 // KDE includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_PANO_TASK_H

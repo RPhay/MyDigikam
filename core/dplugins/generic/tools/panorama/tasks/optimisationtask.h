@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OPTIMISATION_TASK_H
-#define DIGIKAM_OPTIMISATION_TASK_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_OPTIMISATION_TASK_H

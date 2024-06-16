@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_T_PARSER_GETTERS_H
-#define DIGIKAM_T_PARSER_GETTERS_H
+#pragma once
 
 #include "tparser.h"
 
@@ -165,5 +164,3 @@ int     panoScriptGetMaskPointY(const pt_script* const script, int m, int p);
 
 int     panoScriptGetEndingCommentCount(const pt_script* const script);
 char*   panoScriptGetEndingComment(const pt_script* const script, int c);
-
-#endif /* DIGIKAM_T_PARSER_GETTERS_H */

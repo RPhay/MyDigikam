@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PANO_ACTIONS_H
-#define DIGIKAM_PANO_ACTIONS_H
+#pragma once
 
 // Qt includes
 
@@ -98,5 +97,3 @@ struct PanoActionData
 
 Q_DECLARE_METATYPE(DigikamGenericPanoramaPlugin::PanoActionData)
 Q_DECLARE_METATYPE(DigikamGenericPanoramaPlugin::PanoramaPreprocessedUrls)
-
-#endif // DIGIKAM_PANO_ACTIONS_H

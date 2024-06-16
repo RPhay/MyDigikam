@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAKE_BINARY_H
-#define DIGIKAM_MAKE_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_MAKE_BINARY_H

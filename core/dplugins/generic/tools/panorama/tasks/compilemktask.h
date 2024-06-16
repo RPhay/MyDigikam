@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COMPILE_MK_TASK_H
-#define DIGIKAM_COMPILE_MK_TASK_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_COMPILE_MK_TASK_H

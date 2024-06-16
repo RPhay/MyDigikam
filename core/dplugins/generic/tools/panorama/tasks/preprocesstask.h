@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRE_PROCESS_TASK_H
-#define DIGIKAM_PRE_PROCESS_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_PRE_PROCESS_TASK_H

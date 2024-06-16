@@ -11,8 +11,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_T_PARSER_DEBUG_H
-#define DIGIKAM_T_PARSER_DEBUG_H
+#pragma once
 
 /* #define YYDEBUG 1 */
 
@@ -27,5 +26,3 @@
 #   define DEBUG_3(a,b,c)
 #   define DEBUG_4(a,b,c,d)
 #endif
-
-#endif /* DIGIKAM_T_PARSER_DEBUG_H */

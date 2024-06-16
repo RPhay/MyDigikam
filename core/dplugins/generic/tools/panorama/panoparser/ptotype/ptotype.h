@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PTO_TYPE_H
-#define DIGIKAM_PTO_TYPE_H
+#pragma once
 
 // Qt includes
 
@@ -361,5 +360,3 @@ struct PTOType
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PTO_TYPE_H

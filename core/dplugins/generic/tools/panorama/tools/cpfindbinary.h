@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CPFIND_BINARY_H
-#define DIGIKAM_CPFIND_BINARY_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_CPFIND_BINARY_H

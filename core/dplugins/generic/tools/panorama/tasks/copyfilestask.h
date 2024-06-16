@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COPY_FILES_TASK_H
-#define DIGIKAM_COPY_FILES_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_COPY_FILES_TASK_H

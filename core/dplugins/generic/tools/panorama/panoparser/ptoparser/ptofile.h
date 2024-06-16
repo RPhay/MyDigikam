@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PTO_FILE_H
-#define DIGIKAM_PTO_FILE_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PTO_FILE_H

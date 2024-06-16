@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PANO_TASKS_H
-#define DIGIKAM_PANO_TASKS_H
+#pragma once
 
 #include "preprocesstask.h"
 #include "createptotask.h"
@@ -28,5 +27,3 @@
 #include "compilemktask.h"
 #include "huginexecutortask.h"
 #include "copyfilestask.h"
-
-#endif // DIGIKAM_PANO_TASKS_H

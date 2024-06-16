@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PANO_MANAGER_H
-#define DIGIKAM_PANO_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -145,5 +144,3 @@ private:
 };
 
 } // namespace DigikamGenericPanoramaPlugin
-
-#endif // DIGIKAM_PANO_MANAGER_H

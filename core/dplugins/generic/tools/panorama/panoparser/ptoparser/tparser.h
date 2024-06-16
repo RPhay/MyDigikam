@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_T_PARSER_H
-#define DIGIKAM_T_PARSER_H
+#pragma once
 
 /**
  * Maximum size for an input token
@@ -225,5 +224,3 @@ typedef struct
 void    panoScriptParserSetDefaults(pt_script* ptr);
 int     panoScriptParse(const char* const filename, pt_script* scriptOut);
 void    panoScriptFree(pt_script* ptr);
-
-#endif /* DIGIKAM_T_PARSER_H */

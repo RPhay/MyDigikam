@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_T_PARSER_PRIVATE_H
-#define DIGIKAM_T_PARSER_PRIVATE_H
+#pragma once
 
 // C includes
 
@@ -47,5 +46,3 @@ void panoScriptParserError(char const* errorstring, ...);
 
 void  yyerror(char const* st);
 void* panoScriptReAlloc(void** ptr, size_t size, int* count);
-
-#endif /* DIGIKAM_T_PARSER_PRIVATE_H */
