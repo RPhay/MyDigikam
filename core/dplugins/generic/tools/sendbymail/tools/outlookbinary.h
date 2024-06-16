@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OUTLOOK_BINARY_H
-#define DIGIKAM_OUTLOOK_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -34,5 +33,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_OUTLOOK_BINARY_H

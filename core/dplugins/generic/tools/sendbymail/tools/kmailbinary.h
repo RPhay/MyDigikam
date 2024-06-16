@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KMAIL_BINARY_H
-#define DIGIKAM_KMAIL_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_KMAIL_BINARY_H

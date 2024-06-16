@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_H
-#define DIGIKAM_ATKINS_PAGE_LAYOUT_H
+#pragma once
 
 // Qt includes
 
@@ -79,6 +78,4 @@ private:
     Private* const d = nullptr;
 };
 
-} // Namespace Digikam
-
-#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_H
+} // Namespace DigikamGenericPrintCreatorPluginGenericPrintCreatorPlugin

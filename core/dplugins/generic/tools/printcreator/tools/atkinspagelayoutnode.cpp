@@ -222,4 +222,4 @@ AtkinsPageLayoutNode* AtkinsPageLayoutNode::rightChild() const
     return m_rightChild;
 }
 
-} // Namespace Digikam
+} // Namespace DigikamGenericPrintCreatorPlugin

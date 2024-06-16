@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WALLPAPER_PLUGIN_DLG_H
-#define DIGIKAM_WALLPAPER_PLUGIN_DLG_H
+#pragma once
 
 // Local includes
 
@@ -45,5 +44,3 @@ private:
 };
 
 } // namespace DigikamGenericWallpaperPlugin
-
-#endif // DIGIKAM_WALLPAPER_PLUGIN_DLG_H

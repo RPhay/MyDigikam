@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_CREATOR_PLUGIN_H
-#define DIGIKAM_PRINT_CREATOR_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
-
-#endif // DIGIKAM_PRINT_CREATOR_PLUGIN_H

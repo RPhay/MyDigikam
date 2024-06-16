@@ -343,6 +343,6 @@ void AdvPrintCropFrame::drawCropRectangle(bool draw)
     d->drawRec = draw;
 }
 
-} // Namespace Digikam
+} // Namespace DigikamGenericPrintCreatorPlugin
 
 #include "moc_advprintcropframe.cpp"

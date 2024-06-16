@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_OUTPUT_PAGE_H
-#define DIGIKAM_VIDSLIDE_OUTPUT_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDSLIDE_OUTPUT_PAGE_H

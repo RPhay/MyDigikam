@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAIL_WIZARD_H
-#define DIGIKAM_MAIL_WIZARD_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_MAIL_WIZARD_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAIL_PROCESS_H
-#define DIGIKAM_MAIL_PROCESS_H
+#pragma once
 
 // Qt includes
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_MAIL_PROCESS_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_SLIDESHOW_PLUGIN_H
-#define DIGIKAM_VIDEO_SLIDESHOW_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDEO_SLIDESHOW_PLUGIN_H

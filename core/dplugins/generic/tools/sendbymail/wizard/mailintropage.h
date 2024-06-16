@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAIL_INTRO_PAGE_H
-#define DIGIKAM_MAIL_INTRO_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_MAIL_INTRO_PAGE_H

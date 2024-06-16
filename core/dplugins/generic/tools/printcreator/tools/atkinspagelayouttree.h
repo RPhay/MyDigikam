@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H
-#define DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H
+#pragma once
 
 // Qt includes
 
@@ -87,6 +86,4 @@ private:
     double                m_absoluteAreaPage  = 0.0;
 };
 
-} // Namespace Digikam
-
-#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H
+} // Namespace DigikamGenericPrintCreatorPlugin

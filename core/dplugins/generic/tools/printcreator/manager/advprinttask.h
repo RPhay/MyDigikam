@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADV_PRINT_TASK_H
-#define DIGIKAM_ADV_PRINT_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -99,5 +98,3 @@ private:
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
-
-#endif // DIGIKAM_ADV_PRINT_TASK_H

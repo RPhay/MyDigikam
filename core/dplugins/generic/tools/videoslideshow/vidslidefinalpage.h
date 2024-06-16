@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_INTRO_PAGE_H
-#define DIGIKAM_VIDSLIDE_INTRO_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -28,17 +27,24 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class VidSlideIntroPage : public DWizardPage
+class VidSlideFinalPage : public DWizardPage
 {
     Q_OBJECT
 
 public:
 
-    explicit VidSlideIntroPage(QWizard* const dialog, const QString& title);
-    ~VidSlideIntroPage()    override;
+    explicit VidSlideFinalPage(QWizard* const dialog, const QString& title);
+    ~VidSlideFinalPage()    override;
 
     void initializePage()   override;
-    bool validatePage()     override;
+    bool isComplete() const override;
+    void cleanupPage()      override;
+
+private Q_SLOTS:
+
+    void slotProcess();
+    void slotDone(bool);
+    void slotMessage(const QString&, bool);
 
 private:
 
@@ -47,5 +53,3 @@ private:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDSLIDE_INTRO_PAGE_H

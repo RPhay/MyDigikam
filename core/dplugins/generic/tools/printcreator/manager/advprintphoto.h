@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADV_PRINT_PHOTO_H
-#define DIGIKAM_ADV_PRINT_PHOTO_H
+#pragma once
 
 // Qt includes
 
@@ -157,6 +156,4 @@ private:
     QSize*                  m_size                  = nullptr;
 };
 
-} // Namespace Digikam
-
-#endif // DIGIKAM_ADV_PRINT_PHOTO_H
+} // Namespace DigikamGenericPrintCreatorPlugin

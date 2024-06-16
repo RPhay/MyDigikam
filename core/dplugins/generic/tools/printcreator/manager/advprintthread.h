@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADV_PRINT_THREAD_H
-#define DIGIKAM_ADV_PRINT_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -48,5 +47,3 @@ Q_SIGNALS:
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
-
-#endif // DIGIKAM_ADV_PRINT_THREAD_H

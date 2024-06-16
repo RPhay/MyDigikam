@@ -97,4 +97,4 @@ QRectF AtkinsPageLayout::itemRect(int key)
     return QRectF();
 }
 
-} // Namespace Digikam
+} // Namespace DigikamGenericPrintCreatorPlugin

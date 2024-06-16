@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GIMP_BINARY_H
-#define DIGIKAM_GIMP_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
-
-#endif // DIGIKAM_GIMP_BINARY_H

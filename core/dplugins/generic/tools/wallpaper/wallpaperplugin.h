@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WALLPAPER_PLUGIN_H
-#define DIGIKAM_WALLPAPER_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace DigikamGenericWallpaperPlugin
-
-#endif // DIGIKAM_WALLPAPER_PLUGIN_H

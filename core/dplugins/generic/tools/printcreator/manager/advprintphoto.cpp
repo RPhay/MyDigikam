@@ -263,4 +263,4 @@ QTransform AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRo
     return matrix;
 }
 
-} // Namespace Digikam
+} // Namespace DigikamGenericPrintCreatorPlugin

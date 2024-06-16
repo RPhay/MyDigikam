@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_IMAGES_PAGE_H
-#define DIGIKAM_VIDSLIDE_IMAGES_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -30,20 +29,17 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class VidSlideImagesPage : public DWizardPage
+class VidSlideAlbumsPage : public DWizardPage
 {
     Q_OBJECT
 
 public:
 
-    explicit VidSlideImagesPage(QWizard* const dialog, const QString& title);
-    ~VidSlideImagesPage()   override;
+    explicit VidSlideAlbumsPage(QWizard* const dialog, const QString& title);
+    ~VidSlideAlbumsPage()   override;
 
-    void initializePage()   override;
     bool validatePage()     override;
     bool isComplete() const override;
-
-    void setItemsList(const QList<QUrl>& urls);
 
 private:
 
@@ -52,5 +48,3 @@ private:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDSLIDE_IMAGES_PAGE_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_RESIZE_THREAD_H
-#define DIGIKAM_IMAGE_RESIZE_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_IMAGE_RESIZE_THREAD_H

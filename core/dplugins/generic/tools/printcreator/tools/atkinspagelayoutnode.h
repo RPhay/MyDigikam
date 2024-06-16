@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H
-#define DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H
+#pragma once
 
 // Qt includes
 
@@ -118,6 +117,4 @@ private:
     AtkinsPageLayoutNode* m_rightChild  = nullptr;
 };
 
-} // Namespace Digikam
-
-#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H
+} // Namespace DigikamGenericPrintCreatorPluginGenericPrintCreatorPlugin

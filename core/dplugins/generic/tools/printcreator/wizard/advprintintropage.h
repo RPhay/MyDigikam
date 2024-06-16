@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADV_PRINT_INTRO_PAGE_H
-#define DIGIKAM_ADV_PRINT_INTRO_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
-
-#endif // DIGIKAM_ADV_PRINT_INTRO_PAGE_H

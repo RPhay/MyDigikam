@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEND_BY_MAIL_PLUGIN_H
-#define DIGIKAM_SEND_BY_MAIL_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericSendByMailPlugin
-
-#endif // DIGIKAM_SEND_BY_MAIL_PLUGIN_H

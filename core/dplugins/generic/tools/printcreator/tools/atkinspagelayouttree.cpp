@@ -299,4 +299,4 @@ QRectF AtkinsPageLayoutTree::rectInRect(const QRectF &rect,
     return QRectF(x, y, width, height);
 }
 
-} // Namespace Digikam
+} // Namespace DigikamGenericPrintCreatorPlugin

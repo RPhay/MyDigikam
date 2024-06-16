@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADV_PRINT_CROP_FRAME_H
-#define DIGIKAM_ADV_PRINT_CROP_FRAME_H
+#pragma once
 
 // Qt includes
 
@@ -69,6 +68,4 @@ private:
     Private* const d = nullptr;
 };
 
-} // Namespace Digikam
-
-#endif // DIGIKAM_ADV_PRINT_CROP_FRAME_H
+} // Namespace DigikamGenericPrintCreatorPlugin

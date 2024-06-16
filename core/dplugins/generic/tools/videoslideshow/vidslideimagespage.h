@@ -12,11 +12,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_FINAL_PAGE_H
-#define DIGIKAM_VIDSLIDE_FINAL_PAGE_H
+#pragma once
 
 // Qt includes
 
+#include <QList>
+#include <QUrl>
 #include <QString>
 
 // Local includes
@@ -28,24 +29,20 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class VidSlideFinalPage : public DWizardPage
+class VidSlideImagesPage : public DWizardPage
 {
     Q_OBJECT
 
 public:
 
-    explicit VidSlideFinalPage(QWizard* const dialog, const QString& title);
-    ~VidSlideFinalPage()    override;
+    explicit VidSlideImagesPage(QWizard* const dialog, const QString& title);
+    ~VidSlideImagesPage()   override;
 
     void initializePage()   override;
+    bool validatePage()     override;
     bool isComplete() const override;
-    void cleanupPage()      override;
 
-private Q_SLOTS:
-
-    void slotProcess();
-    void slotDone(bool);
-    void slotMessage(const QString&, bool);
+    void setItemsList(const QList<QUrl>& urls);
 
 private:
 
@@ -54,5 +51,3 @@ private:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDSLIDE_FINAL_PAGE_H

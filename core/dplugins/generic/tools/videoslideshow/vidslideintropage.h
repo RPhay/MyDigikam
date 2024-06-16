@@ -12,44 +12,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_WIZARD_H
-#define DIGIKAM_VIDSLIDE_WIZARD_H
+#pragma once
 
 // Qt includes
 
-#include <QList>
-#include <QUrl>
+#include <QString>
 
 // Local includes
 
-#include "dwizarddlg.h"
-#include "dinfointerface.h"
-#include "vidslidesettings.h"
+#include "dwizardpage.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class VidSlideWizard : public DWizardDlg
+class VidSlideIntroPage : public DWizardPage
 {
     Q_OBJECT
 
 public:
 
-    explicit VidSlideWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~VidSlideWizard()                  override;
+    explicit VidSlideIntroPage(QWizard* const dialog, const QString& title);
+    ~VidSlideIntroPage()    override;
 
-    bool validateCurrentPage()         override;
-    int  nextId()                const override;
-
-    VidSlideSettings* settings() const;
-
-    void setItemsList(const QList<QUrl>& urls);
-
-private Q_SLOTS:
-
-    void slotCurrentIdChanged(int);
+    void initializePage()   override;
+    bool validatePage()     override;
 
 private:
 
@@ -58,5 +46,3 @@ private:
 };
 
 } // namespace DigikamGenericVideoSlideShowPlugin
-
-#endif // DIGIKAM_VIDSLIDE_WIZARD_H

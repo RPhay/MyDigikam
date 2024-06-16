@@ -20,18 +20,16 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    ${CMAKE_CURRENT_SOURCE_DIR}/wizard
 )
 
 set(videoslideshowplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslidewizard.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslideintropage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslidealbumspage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslideimagespage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslidevideopage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslideoutputpage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/wizard/vidslidefinalpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslidewizard.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslideintropage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslidealbumspage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslideimagespage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslidevideopage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslideoutputpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidslidefinalpage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/videoslideshowplugin.cpp
 )
 
