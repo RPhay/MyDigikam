@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_DATA_PARSER_TIME_H
-#define DIGIKAM_GEO_DATA_PARSER_TIME_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ QDateTime GeoDataParserParseTime(QString timeString)
 }
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_GEO_DATA_PARSER_TIME_H

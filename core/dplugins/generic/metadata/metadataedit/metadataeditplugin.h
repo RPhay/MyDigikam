@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_EDIT_PLUGIN_H
-#define DIGIKAM_METADATA_EDIT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_METADATA_EDIT_PLUGIN_H

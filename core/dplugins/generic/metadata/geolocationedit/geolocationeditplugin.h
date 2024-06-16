@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEOLOCATION_EDIT_PLUGIN_H
-#define DIGIKAM_GEOLOCATION_EDIT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_GEOLOCATION_EDIT_PLUGIN_H

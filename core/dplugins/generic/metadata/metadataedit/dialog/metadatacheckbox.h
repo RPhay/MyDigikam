@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_CHECKBOX_H
-#define DIGIKAM_METADATA_CHECKBOX_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_METADATA_CHECKBOX_H

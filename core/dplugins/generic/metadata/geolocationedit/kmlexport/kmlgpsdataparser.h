@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KML_GPS_DATA_PARSER_H
-#define DIGIKAM_KML_GPS_DATA_PARSER_H
+#pragma once
 
 // Qt includes
 
@@ -99,5 +98,3 @@ private:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_KML_GPS_DATA_PARSER_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_DATETIME_H
-#define DIGIKAM_EXIF_DATETIME_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_EXIF_DATETIME_H

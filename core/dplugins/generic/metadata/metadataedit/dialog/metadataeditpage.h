@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_DATA_EDIT_PAGE_H
-#define DIGIKAM_META_DATA_EDIT_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -34,5 +33,3 @@ public:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_META_DATA_EDIT_PAGE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_ITEM_DETAILS_H
-#define DIGIKAM_GPS_ITEM_DETAILS_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_GPS_ITEM_DETAILS_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MULTI_VALUES_EDIT_H
-#define DIGIKAM_MULTI_VALUES_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_MULTI_VALUES_EDIT_H

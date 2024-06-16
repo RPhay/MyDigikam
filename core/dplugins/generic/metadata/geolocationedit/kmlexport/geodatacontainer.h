@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_DATA_CONTAINER_H
-#define DIGIKAM_GEO_DATA_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -172,5 +171,3 @@ private:
 } // namespace DigikamGenericGeolocationEditPlugin
 
 Q_DECLARE_METATYPE(DigikamGenericGeolocationEditPlugin::GeoDataContainer)
-
-#endif // DIGIKAM_GEO_DATA_CONTAINER_H

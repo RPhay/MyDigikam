@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_CAPTION_H
-#define DIGIKAM_EXIF_CAPTION_H
+#pragma once
 
 // Qt includes
 
@@ -43,20 +42,20 @@ class EXIFCaption : public MetadataEditPage
 public:
 
     explicit EXIFCaption(QWidget* const parent);
-    ~EXIFCaption() override;
+    ~EXIFCaption()                        override;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);
 
     bool syncJFIFCommentIsChecked() const;
-    bool syncXMPCaptionIsChecked() const;
+    bool syncXMPCaptionIsChecked()  const;
     bool syncIPTCCaptionIsChecked() const;
 
     void setCheckedSyncJFIFComment(bool c);
     void setCheckedSyncXMPCaption(bool c);
     void setCheckedSyncIPTCCaption(bool c);
 
-    QString getEXIFUserComments() const;
+    QString getEXIFUserComments()   const;
 
 Q_SIGNALS:
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_EXIF_CAPTION_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KML_EXPORT_H
-#define DIGIKAM_KML_EXPORT_H
+#pragma once
 
 // Qt includes
 
@@ -176,5 +175,3 @@ private:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_KML_EXPORT_H

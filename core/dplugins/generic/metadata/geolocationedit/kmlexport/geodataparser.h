@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_DATA_PARSER_H
-#define DIGIKAM_GEO_DATA_PARSER_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ protected:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_GEO_DATA_PARSER_H

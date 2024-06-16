@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPTC_EDIT_WIDGET_H
-#define DIGIKAM_IPTC_EDIT_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_IPTC_EDIT_WIDGET_H

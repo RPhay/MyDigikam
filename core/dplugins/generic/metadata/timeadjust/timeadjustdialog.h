@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_ADJUST_DIALOG_H
-#define DIGIKAM_TIME_ADJUST_DIALOG_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace DigikamGenericTimeAdjustPlugin
-
-#endif // DIGIKAM_TIME_ADJUST_DIALOG_H

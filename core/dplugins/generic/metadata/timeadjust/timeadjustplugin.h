@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_ADJUST_PLUGIN_H
-#define DIGIKAM_TIME_ADJUST_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericTimeAdjustPlugin
-
-#endif // DIGIKAM_TIME_ADJUST_PLUGIN_H

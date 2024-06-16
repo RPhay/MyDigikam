@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_XMP_SUBJECTS_H
-#define DIGIKAM_XMP_SUBJECTS_H
+#pragma once
 
 // Qt includes
 
@@ -44,5 +43,3 @@ public:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_XMP_SUBJECTS_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPTC_PROPERTIES_H
-#define DIGIKAM_IPTC_PROPERTIES_H
+#pragma once
 
 // Qt includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_IPTC_PROPERTIES_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KML_WIDGET_H
-#define DIGIKAM_KML_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -135,5 +134,3 @@ protected:
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin
-
-#endif // DIGIKAM_KML_WIDGET_H

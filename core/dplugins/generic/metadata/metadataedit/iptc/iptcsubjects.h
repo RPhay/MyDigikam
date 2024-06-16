@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPTC_SUBJECTS_H
-#define DIGIKAM_IPTC_SUBJECTS_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
-
-#endif // DIGIKAM_IPTC_SUBJECTS_H
