@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 01:40+0000\n"
-"PO-Revision-Date: 2024-06-09 10:55+0200\n"
+"PO-Revision-Date: 2024-06-15 14:44+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -37469,10 +37469,9 @@ msgid "<b>Date</b>:"
 msgstr "<b>Data</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "Non foi posíbel atopar ningunha coordenada no portapapeis."
+msgstr "Copiar as coordenadas de GPS no portapapeis"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
