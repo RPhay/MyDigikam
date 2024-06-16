@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_TEMPLATE_H
-#define DIGIKAM_CAL_TEMPLATE_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // Namespace Digikam
-
-#endif // DIGIKAM_CAL_TEMPLATE_H

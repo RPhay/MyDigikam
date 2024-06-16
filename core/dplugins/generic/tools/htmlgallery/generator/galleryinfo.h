@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GALLERY_INFO_H
-#define DIGIKAM_GALLERY_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -76,7 +75,6 @@ public:
 private:
 
     /**
-     * KConfigXT enums are mapped to ints.
      * This method returns the string associated to the enum value.
      */
     QString getEnumString(const QString& itemName) const;
@@ -86,5 +84,3 @@ private:
 QDebug operator<<(QDebug dbg, const GalleryInfo& t);
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_GALLERY_INFO_H

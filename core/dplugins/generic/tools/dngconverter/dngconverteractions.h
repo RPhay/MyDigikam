@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_CONVERTER_ACTIONS_H
-#define DIGIKAM_DNG_CONVERTER_ACTIONS_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ public:
 }  // namespace DigikamGenericDNGConverterPlugin
 
 Q_DECLARE_METATYPE(DigikamGenericDNGConverterPlugin::DNGConverterActionData)
-
-#endif /// DIGIKAM_DNG_CONVERTER_ACTIONS_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_PRINTER_H
-#define DIGIKAM_CAL_PRINTER_H
+#pragma once
 
 // Qt includes
 
@@ -62,5 +61,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAL_PRINTER_H

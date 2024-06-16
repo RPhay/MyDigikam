@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_MONTH_WIDGET_H
-#define DIGIKAM_CAL_MONTH_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -83,5 +82,3 @@ private:
 };
 
 } // Namespace Digikam
-
-#endif // DIGIKAM_CAL_MONTH_WIDGET_H

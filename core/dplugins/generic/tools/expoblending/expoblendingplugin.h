@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_PLUGIN_H
-#define DIGIKAM_EXPO_BLENDING_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_EXPO_BLENDING_PLUGIN_H

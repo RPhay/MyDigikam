@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JALBUM_PLUGIN_H
-#define DIGIKAM_JALBUM_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericJAlbumPlugin
-
-#endif // DIGIKAM_JALBUM_PLUGIN_H

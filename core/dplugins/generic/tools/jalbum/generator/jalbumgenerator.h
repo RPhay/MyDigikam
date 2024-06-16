@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JALBUM_GENERATOR_H
-#define DIGIKAM_JALBUM_GENERATOR_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private:
 };
 
 } // namespace DigikamGenericJAlbumPlugin
-
-#endif // DIGIKAM_JALBUM_GENERATOR_H

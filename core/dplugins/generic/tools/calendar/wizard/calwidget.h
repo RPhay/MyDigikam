@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_WIDGET_H
-#define DIGIKAM_CAL_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ protected:
 };
 
 } // Namespace Digikam
-
-#endif // DIGIKAM_CAL_WIDGET_H

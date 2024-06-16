@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_STRING_THEME_PARAMETER_H
-#define DIGIKAM_STRING_THEME_PARAMETER_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_STRING_THEME_PARAMETER_H

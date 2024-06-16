@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_CONVERTER_PLUGIN_H
-#define DIGIKAM_DNG_CONVERTER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericDNGConverterPlugin
-
-#endif // DIGIKAM_DNG_CONVERTER_PLUGIN_H

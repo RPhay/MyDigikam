@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_STREAM_PLUGIN_H
-#define DIGIKAM_MJPEG_STREAM_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
-
-#endif // DIGIKAM_MJPEG_STREAM_PLUGIN_H

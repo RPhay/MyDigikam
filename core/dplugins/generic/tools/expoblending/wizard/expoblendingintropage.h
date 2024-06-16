@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_INTRO_PAGE_H
-#define DIGIKAM_EXPO_BLENDING_INTRO_PAGE_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_EXPO_BLENDING_INTRO_PAGE_H

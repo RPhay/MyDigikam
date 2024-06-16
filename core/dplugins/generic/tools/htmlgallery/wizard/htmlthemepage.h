@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HTML_THEME_PAGE_H
-#define DIGIKAM_HTML_THEME_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_HTML_THEME_PAGE_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TESSERACT_BINARY_H
-#define DIGIKAM_TESSERACT_BINARY_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ public:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
-#endif // DIGIKAM_TESSERACT_BINARY_H

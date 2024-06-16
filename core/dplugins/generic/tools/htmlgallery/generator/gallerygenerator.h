@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GALLERY_GENERATOR_H
-#define DIGIKAM_GALLERY_GENERATOR_H
+#pragma once
 
 // Qt includes
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_GALLERY_GENERATOR_H

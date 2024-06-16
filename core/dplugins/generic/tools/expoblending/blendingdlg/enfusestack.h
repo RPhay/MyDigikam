@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ENFUSE_STACK_H
-#define DIGIKAM_ENFUSE_STACK_H
+#pragma once
 
 // Qt includes
 
@@ -110,5 +109,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_ENFUSE_STACK_H

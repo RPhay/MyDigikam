@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ENFUSE_BINARY_H
-#define DIGIKAM_ENFUSE_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_ENFUSE_BINARY_H

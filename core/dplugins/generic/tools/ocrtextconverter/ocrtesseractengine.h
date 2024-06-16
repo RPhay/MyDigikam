@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef OCR_TESSERACT_ENGINE_H
-#define OCR_TESSERACT_ENGINE_H
+#pragma once
 
 // Qt includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
-#endif // OCR_TESSERACT_ENGINE_H

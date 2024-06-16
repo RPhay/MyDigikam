@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_CONVERTER_THREAD_H
-#define DIGIKAM_DNG_CONVERTER_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace DigikamGenericDNGConverterPlugin
-
-#endif // DIGIKAM_DNG_CONVERTER_THREAD_H

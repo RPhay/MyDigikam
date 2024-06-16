@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_THREAD_H
-#define DIGIKAM_EXPO_BLENDING_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_EXPO_BLENDING_THREAD_H

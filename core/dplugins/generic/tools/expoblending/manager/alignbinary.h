@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALIGN_BINARY_H
-#define DIGIKAM_ALIGN_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_ALIGN_BINARY_H

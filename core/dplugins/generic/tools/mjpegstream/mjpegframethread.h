@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_FRAME_THREAD_H
-#define DIGIKAM_MJPEG_FRAME_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ Q_SIGNALS:
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
-
-#endif // DIGIKAM_MJPEG_FRAME_THREAD_H

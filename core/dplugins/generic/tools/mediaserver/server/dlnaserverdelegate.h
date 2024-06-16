@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DLNA_SERVER_DELEGATE_H
-#define DIGIKAM_DLNA_SERVER_DELEGATE_H
+#pragma once
 
 // Qt includes
 
@@ -139,5 +138,3 @@ private:
 };
 
 } // namespace DigikamGenericMediaServerPlugin
-
-#endif // DIGIKAM_DLNA_SERVER_DELEGATE_H

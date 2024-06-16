@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JALBUM_JAVA_H
-#define DIGIKAM_JALBUM_JAVA_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace DigikamGenericJAlbumPlugin
-
-#endif // DIGIKAM_JALBUM_JAVA_H

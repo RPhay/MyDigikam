@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_INTRO_PAGE_H
-#define DIGIKAM_CAL_INTRO_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -39,5 +38,3 @@ public:
 };
 
 } // namespace DigikamGenericCalendarPlugin
-
-#endif // DIGIKAM_CAL_INTRO_PAGE_H

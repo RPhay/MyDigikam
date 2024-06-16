@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAL_SYSTEM_H
-#define DIGIKAM_CAL_SYSTEM_H
+#pragma once
 
 // Qt includes
 
@@ -138,5 +137,3 @@ private:
 };
 
 } // Namespace Digikam
-
-#endif // DIGIKAM_CAL_SYSTEM_H

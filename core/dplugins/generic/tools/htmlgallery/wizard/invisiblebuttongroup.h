@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INVISIBLE_BUTTON_GROUP_H
-#define DIGIKAM_INVISIBLE_BUTTON_GROUP_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_INVISIBLE_BUTTON_GROUP_H

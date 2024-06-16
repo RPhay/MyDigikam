@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_MANAGER_H
-#define DIGIKAM_EXPO_BLENDING_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -90,5 +89,3 @@ private:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_EXPO_BLENDING_MANAGER_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXT_CONVERTER_LIST_H
-#define DIGIKAM_TEXT_CONVERTER_LIST_H
+#pragma once
 
 // Local includes
 
@@ -80,5 +79,3 @@ protected Q_SLOTS:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
-#endif // DIGIKAM_TEXT_CONVERTER_LIST_H

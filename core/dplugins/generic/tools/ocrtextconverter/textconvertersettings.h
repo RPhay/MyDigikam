@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXT_CONVERTER_SETTINGS_H
-#define DIGIKAM_TEXT_CONVERTER_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
-#endif // DIGIKAM_TEXT_CONVERTER_SETTINGS_H

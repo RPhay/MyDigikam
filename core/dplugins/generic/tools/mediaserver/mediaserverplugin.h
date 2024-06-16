@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIA_SERVER_PLUGIN_H
-#define DIGIKAM_MEDIA_SERVER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericMediaServerPlugin
-
-#endif // DIGIKAM_MEDIA_SERVER_PLUGIN_H

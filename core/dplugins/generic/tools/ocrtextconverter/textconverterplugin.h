@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OCR_TEXT_CONVERTER_PLUGIN_H
-#define DIGIKAM_OCR_TEXT_CONVERTER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
-#endif // DIGIKAM_OCR_TEXT_CONVERTER_PLUGIN_H

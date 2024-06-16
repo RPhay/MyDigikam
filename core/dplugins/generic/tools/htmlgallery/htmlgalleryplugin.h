@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HTML_GALLERY_PLUGIN_H
-#define DIGIKAM_HTML_GALLERY_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_HTML_GALLERY_PLUGIN_H

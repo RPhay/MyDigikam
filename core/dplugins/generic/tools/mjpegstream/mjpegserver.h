@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_SERVER_H
-#define DIGIKAM_MJPEG_SERVER_H
+#pragma once
 
 // Qt includes
 
@@ -91,5 +90,3 @@ private:
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
-
-#endif // DIGIKAM_MJPEG_SERVER_H

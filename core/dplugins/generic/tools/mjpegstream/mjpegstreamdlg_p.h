@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_STREAM_DLG_P_H
-#define DIGIKAM_MJPEG_STREAM_DLG_P_H
+#pragma once
 
 // Qt includes
 
@@ -113,5 +112,3 @@ public:
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
-
-#endif // DIGIKAM_MJPEG_STREAM_DLG_P_H

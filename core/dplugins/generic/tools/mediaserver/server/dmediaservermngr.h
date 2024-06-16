@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DMEDIA_SERVER_MNGR_H
-#define DIGIKAM_DMEDIA_SERVER_MNGR_H
+#pragma once
 
 // Qt includes
 
@@ -98,5 +97,3 @@ private:
 };
 
 } // namespace DigikamGenericMediaServerPlugin
-
-#endif // DIGIKAM_DMEDIA_SERVER_MNGR_H

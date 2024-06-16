@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_FRAME_TASK_H
-#define DIGIKAM_MJPEG_FRAME_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private:
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
-
-#endif // DIGIKAM_MJPEG_FRAME_TASK_H

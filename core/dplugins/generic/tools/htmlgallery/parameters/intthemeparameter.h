@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INT_THEME_PARAMETER_H
-#define DIGIKAM_INT_THEME_PARAMETER_H
+#pragma once
 
 // Local includes
 
@@ -44,5 +43,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_INT_THEME_PARAMETER_H

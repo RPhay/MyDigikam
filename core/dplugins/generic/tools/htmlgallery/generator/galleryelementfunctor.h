@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GALLERY_ELEMENT_FUNCTOR_H
-#define DIGIKAM_GALLERY_ELEMENT_FUNCTOR_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_GALLERY_ELEMENT_FUNCTOR_H

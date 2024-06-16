@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HTML_WIZARD_H
-#define DIGIKAM_HTML_WIZARD_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin
-
-#endif // DIGIKAM_HTML_WIZARD_H

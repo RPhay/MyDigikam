@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPO_BLENDING_ACTIONS_H
-#define DIGIKAM_EXPO_BLENDING_ACTIONS_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ public:
 
 Q_DECLARE_METATYPE(DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData)
 Q_DECLARE_METATYPE(DigikamGenericExpoBlendingPlugin::ExpoBlendingItemPreprocessedUrls)
-
-#endif // DIGIKAM_EXPO_BLENDING_ACTIONS_H

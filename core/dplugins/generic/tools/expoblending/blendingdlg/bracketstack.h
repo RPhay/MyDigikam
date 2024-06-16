@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BRACKET_STACK_H
-#define DIGIKAM_BRACKET_STACK_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin
-
-#endif // DIGIKAM_BRACKET_STACK_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JALBUM_SETTINGS_H
-#define DIGIKAM_JALBUM_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ public:
 QDebug operator<<(QDebug dbg, const JAlbumSettings& t);
 
 } // namespace DigikamGenericJAlbumPlugin
-
-#endif // DIGIKAM_JALBUM_SETTINGS_H

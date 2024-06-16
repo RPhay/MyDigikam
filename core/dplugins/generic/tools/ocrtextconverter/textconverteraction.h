@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXT_CONVERTER_ACTIONS_H
-#define DIGIKAM_TEXT_CONVERTER_ACTIONS_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ public:
 }  // namespace DigikamGenericTextConverterPlugin
 
 Q_DECLARE_METATYPE(DigikamGenericTextConverterPlugin::TextConverterActionData)
-
-#endif /// DIGIKAM_TEXT_CONVERTER_ACTIONS_H
