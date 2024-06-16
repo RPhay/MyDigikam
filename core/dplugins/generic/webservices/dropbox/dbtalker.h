@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_TALKER_H
-#define DIGIKAM_DB_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace DigikamGenericDropBoxPlugin
-
-#endif // DIGIKAM_DB_TALKER_H

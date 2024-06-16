@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FC_THREAD_H
-#define DIGIKAM_FC_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ Q_SIGNALS:
 };
 
 } // namespace DigikamGenericFileCopyPlugin
-
-#endif // DIGIKAM_FC_THREAD_H

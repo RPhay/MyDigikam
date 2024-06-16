@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_ITEM_H
-#define DIGIKAM_FB_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -33,10 +32,7 @@ class FbUser
 {
 public:
 
-    FbUser()
-    {
-        uploadPerm = false;
-    }
+    FbUser() = default;
 
     void clear()
     {
@@ -50,15 +46,15 @@ public:
 
     QString   name;
     QString   profileURL;
-    bool      uploadPerm;
+    bool      uploadPerm = false;
 };
 
 // ---------------------------------------------------------------
 
 enum FbPrivacy
 {
-    FB_ME = 0,
-    FB_FRIENDS = 1,
+    FB_ME       = 0,
+    FB_FRIENDS  = 1,
     FB_FRIENDS_OF_FRIENDS,
 //     FB_NETWORKS, //NETWORK is deprecated in latest version of Graph API
     FB_EVERYONE,
@@ -74,16 +70,14 @@ public:
     explicit FbAlbum()
       : WSAlbum()
     {
-        privacy = FB_FRIENDS;
     }
 
     explicit FbAlbum(const WSAlbum& baseAlbum)
       : WSAlbum(baseAlbum)
     {
-        privacy = FB_FRIENDS;
     }
 
-    FbPrivacy privacy;
+    FbPrivacy privacy = FB_FRIENDS;
 };
 
 // ---------------------------------------------------------------
@@ -92,9 +86,7 @@ class FbPhoto
 {
 public:
 
-    FbPhoto()
-    {
-    }
+    FbPhoto() = default;
 
     QString id;
 
@@ -104,5 +96,3 @@ public:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_ITEM_H

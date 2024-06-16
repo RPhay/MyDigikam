@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FT_EXPORT_WINDOW_H
-#define DIGIKAM_FT_EXPORT_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -129,5 +128,3 @@ private:
 };
 
 } // namespace DigikamGenericFileTransferPlugin
-
-#endif // DIGIKAM_FT_EXPORT_WINDOW_H

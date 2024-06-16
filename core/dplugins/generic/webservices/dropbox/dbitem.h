@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ITEM_H
-#define DIGIKAM_DB_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -44,5 +43,3 @@ public:
 };
 
 } // namespace DigikamGenericDropBoxPlugin
-
-#endif // DIGIKAM_DB_ITEM_H

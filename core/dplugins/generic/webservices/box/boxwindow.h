@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BOX_WINDOW_H
-#define DIGIKAM_BOX_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -85,5 +84,3 @@ private:
 };
 
 } // namespace DigikamGenericBoxPlugin
-
-#endif // DIGIKAM_BOX_WINDOW_H

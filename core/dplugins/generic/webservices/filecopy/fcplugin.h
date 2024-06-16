@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FC_PLUGIN_H
-#define DIGIKAM_FC_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -62,5 +61,3 @@ private:
 };
 
 } // namespace DigikamGenericFileCopyPlugin
-
-#endif // DIGIKAM_FC_PLUGIN_H

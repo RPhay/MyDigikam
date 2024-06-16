@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FT_PLUGIN_H
-#define DIGIKAM_FT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace DigikamGenericFileTransferPlugin
-
-#endif // DIGIKAM_FT_PLUGIN_H

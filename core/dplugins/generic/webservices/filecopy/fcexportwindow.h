@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FC_EXPORT_WINDOW_H
-#define DIGIKAM_FC_EXPORT_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -121,5 +120,3 @@ private:
 };
 
 } // namespace DigikamGenericFileCopyPlugin
-
-#endif // DIGIKAM_FC_EXPORT_WINDOW_H

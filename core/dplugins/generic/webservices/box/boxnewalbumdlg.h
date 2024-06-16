@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BOX_NEW_ALBUM_DLG_H
-#define DIGIKAM_BOX_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ public:
 };
 
 } // namespace DigikamGenericBoxPlugin
-
-#endif // DIGIKAM_BOX_NEW_ALBUM_DLG_H

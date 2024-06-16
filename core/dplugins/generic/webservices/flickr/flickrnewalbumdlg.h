@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FLICKR_NEW_ALBUM_DLG_H
-#define DIGIKAM_FLICKR_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ public:
 };
 
 } // namespace DigikamGenericFlickrPlugin
-
-#endif // DIGIKAM_FLICKR_NEW_ALBUM_DLG_H

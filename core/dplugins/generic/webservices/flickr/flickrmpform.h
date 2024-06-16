@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FLICKR_MPFORM_H
-#define DIGIKAM_FLICKR_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamGenericFlickrPlugin
-
-#endif // DIGIKAM_FLICKR_MPFORM_H

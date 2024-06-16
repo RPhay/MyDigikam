@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_NEW_ALBUM_DLG_H
-#define DIGIKAM_FB_NEW_ALBUM_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_NEW_ALBUM_DLG_H

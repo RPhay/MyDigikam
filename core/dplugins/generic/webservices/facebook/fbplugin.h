@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_PLUGIN_H
-#define DIGIKAM_FB_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_PLUGIN_H

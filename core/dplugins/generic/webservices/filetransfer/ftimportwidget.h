@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FT_IMPORT_WIDGET_H
-#define DIGIKAM_FT_IMPORT_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -86,5 +85,3 @@ private:
 };
 
 } // namespace DigikamGenericFileTransferPlugin
-
-#endif // DIGIKAM_FT_IMPORT_WIDGET_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FLICKR_PLUGIN_H
-#define DIGIKAM_FLICKR_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericFlickrPlugin
-
-#endif // DIGIKAM_FLICKR_PLUGIN_H

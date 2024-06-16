@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_NEW_ALBUM_DLG_H
-#define DIGIKAM_DB_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace DigikamGenericDropBoxPlugin
-
-#endif // DIGIKAM_DB_NEW_ALBUM_DLG_H

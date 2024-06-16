@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FLICKR_WIDGET_PRIVATE_H
-#define DIGIKAM_FLICKR_WIDGET_PRIVATE_H
+#pragma once
 
 #include "flickrwidget.h"
 
@@ -81,5 +80,3 @@ public:
 };
 
 } // namespace DigikamGenericFlickrPlugin
-
-#endif // DIGIKAM_FLICKR_WIDGET_PRIVATE_H

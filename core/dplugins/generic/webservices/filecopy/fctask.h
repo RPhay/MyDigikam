@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FC_TASK_H
-#define DIGIKAM_FC_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace DigikamGenericFileCopyPlugin
-
-#endif // DIGIKAM_FC_TASK

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_TALKER_WIZARD_H
-#define DIGIKAM_FB_TALKER_WIZARD_H
+#pragma once
 
 // Qt includes
 
@@ -104,5 +103,3 @@ private:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_TALKER_WIZARD_H

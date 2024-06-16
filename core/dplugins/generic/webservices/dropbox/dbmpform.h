@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_MPFORM_H
-#define DIGIKAM_DB_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -40,5 +39,3 @@ private:
 };
 
 } // namespace DigikamGenericDropBoxPlugin
-
-#endif // DIGIKAM_DB_MPFORM_H

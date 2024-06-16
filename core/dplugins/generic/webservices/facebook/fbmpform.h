@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_MPFORM_H
-#define DIGIKAM_FB_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -30,7 +29,7 @@ class FbMPForm
 
 public:
 
-    explicit FbMPForm();
+    FbMPForm();
     ~FbMPForm();
 
     void finish();
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_MPFORM_H

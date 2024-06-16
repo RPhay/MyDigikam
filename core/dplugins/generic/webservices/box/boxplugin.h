@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BOX_PLUGIN_H
-#define DIGIKAM_BOX_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericBoxPlugin
-
-#endif // DIGIKAM_BOX_PLUGIN_H

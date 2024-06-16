@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FC_CONTAINER_H
-#define DIGIKAM_FC_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -53,7 +52,6 @@ public:
 
 public:
 
-
     DInfoInterface* iface                   = nullptr;
 
     QUrl            destUrl;
@@ -72,5 +70,3 @@ public:
 };
 
 } // namespace DigikamGenericFileCopyPlugin
-
-#endif // DIGIKAM_FC_CONTAINER_H

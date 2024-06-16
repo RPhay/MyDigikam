@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FB_WIDGET_H
-#define DIGIKAM_FB_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace DigikamGenericFaceBookPlugin
-
-#endif // DIGIKAM_FB_WIDGET_H
