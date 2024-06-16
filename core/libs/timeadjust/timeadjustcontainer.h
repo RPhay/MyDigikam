@@ -103,6 +103,11 @@ public:
     bool      updXMPDate        = false;
     bool      updFileModDate    = false;
 
+    /**
+     * Only a temporary variable, will not be saved
+     */
+    bool      enableExifTool    = false;
+
     int       dateSource        = APPDATE;
     int       metadataSource    = EXIFIPTCXMP;
     int       fileDateSource    = FILELASTMOD;

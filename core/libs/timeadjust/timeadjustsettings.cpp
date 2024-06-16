@@ -101,7 +101,7 @@ public:
 
     QUrl                   currentItemUrl;
 
-    bool                   exifToolEnabled          = false;
+    bool                   enableExifTool           = false;
 };
 
 TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool)
@@ -253,10 +253,10 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updXMPDateCheck          = new QCheckBox(i18n("XMP"),                             d->updateSettingsBox);
 
     MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
-    d->exifToolEnabled                   = (timeAdjustTool &&
+    d->enableExifTool                    = (timeAdjustTool &&
                                             (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY));
 
-    d->updUseExifToolCheck->setVisible(d->exifToolEnabled);
+    d->updUseExifToolCheck->setVisible(d->enableExifTool);
 
     updateGBLayout->addWidget(d->updUseExifToolCheck, 0, 0, 1, 2);
     updateGBLayout->addWidget(d->updIfAvailableCheck, 1, 0, 1, 2);
@@ -457,6 +457,7 @@ TimeAdjustContainer TimeAdjustSettings::settings() const
     settings.adjustmentDays = d->adjDaysInput->value();
     settings.adjustmentTime = d->adjTimeInput->dateTime();
 
+    settings.enableExifTool = d->enableExifTool;
     settings.updUseExifTool = d->updUseExifToolCheck->isChecked();
     settings.updIfAvailable = d->updIfAvailableCheck->isChecked();
     settings.updFileModDate = d->updFileModDateCheck->isChecked();
@@ -534,7 +535,7 @@ void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
 
 void TimeAdjustSettings::slotUseExifToolChanged()
 {
-    bool check = (d->exifToolEnabled &&
+    bool check = (d->enableExifTool &&
                   d->updUseExifToolCheck->isChecked());
 
     d->updIfAvailableCheck->setEnabled(!check);

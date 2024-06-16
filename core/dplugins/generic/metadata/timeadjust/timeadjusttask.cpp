@@ -98,7 +98,7 @@ void TimeAdjustTask::run()
         return;
     }
 
-    if (d->settings.updUseExifTool)
+    if (d->settings.enableExifTool && d->settings.updUseExifTool)
     {
         QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
