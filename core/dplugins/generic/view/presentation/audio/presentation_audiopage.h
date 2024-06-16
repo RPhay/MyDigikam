@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_AUDIO_PAGE_H
-#define DIGIKAM_PRESENTATION_AUDIO_PAGE_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_AUDIO_PAGE_H

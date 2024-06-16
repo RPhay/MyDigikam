@@ -54,9 +54,7 @@ namespace DigikamGenericPresentationPlugin
 {
 
 PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const iface)
-    : QObject (parent),
-      m_plugin(nullptr),
-      m_dialog(nullptr)
+    : QObject(parent)
 {
       m_sharedData        = new PresentationContainer();
       m_sharedData->iface = iface;

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_SHOW_LOADER_H
-#define DIGIKAM_SLIDE_SHOW_LOADER_H
+#pragma once
 
 // Qt includes
 
@@ -126,5 +125,3 @@ private:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SLIDE_SHOW_LOADER_H

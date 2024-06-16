@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_CTRL_WIDGET_H
-#define DIGIKAM_PRESENTATION_CTRL_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_CTRL_WIDGET_H

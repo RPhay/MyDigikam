@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KB_IMAGE_LOADER_H
-#define DIGIKAM_KB_IMAGE_LOADER_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_KB_IMAGE_LOADER_H

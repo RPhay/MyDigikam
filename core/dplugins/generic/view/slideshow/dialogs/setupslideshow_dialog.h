@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_SLIDESHOW_DIALOG_H
-#define DIGIKAM_SETUP_SLIDESHOW_DIALOG_H
+#pragma once
 
 // Qt includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SETUP_SLIDESHOW_DIALOG_H

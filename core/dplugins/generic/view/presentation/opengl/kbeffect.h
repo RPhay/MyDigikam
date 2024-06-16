@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_KB_EFFECT_H
-#define DIGIKAM_KB_EFFECT_H
+#pragma once
 
 // Qt includes
 
@@ -124,5 +123,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM°KB_EFFECT_H

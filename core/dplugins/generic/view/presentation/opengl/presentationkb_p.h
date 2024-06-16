@@ -17,8 +17,6 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_KB_PRIVATE_H
-#define DIGIKAM_PRESENTATION_KB_PRIVATE_H
 
 #include "presentationkb.h"
 
@@ -90,5 +88,3 @@ public:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_KB_PRIVATE_H

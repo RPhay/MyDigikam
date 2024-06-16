@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H
-#define DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H
+#pragma once
 
 #include <QWidget>
 #include <QPainter>
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H

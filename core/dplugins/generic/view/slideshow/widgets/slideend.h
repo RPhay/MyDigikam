@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_END_PLUGIN_H
-#define DIGIKAM_SLIDE_END_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -38,5 +37,3 @@ public:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SLIDE_END_PLUGIN_H

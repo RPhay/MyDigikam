@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDESHOW_PLUGIN_H
-#define DIGIKAM_SLIDESHOW_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SLIDESHOW_PLUGIN_H

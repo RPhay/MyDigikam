@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_ADV_PAGE_H
-#define DIGIKAM_PRESENTATION_ADV_PAGE_H
+#pragma once
 
 // Local includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_ADV_PAGE_H

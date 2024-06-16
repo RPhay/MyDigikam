@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_GL_H
-#define DIGIKAM_PRESENTATION_GL_H
+#pragma once
 
 #ifdef Q_CC_MSVC
 #   include <winsock2.h>
@@ -124,5 +123,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_GL_H

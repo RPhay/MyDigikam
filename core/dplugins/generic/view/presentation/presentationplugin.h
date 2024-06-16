@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_PLUGIN_H
-#define DIGIKAM_PRESENTATION_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_PLUGIN_H

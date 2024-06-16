@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TIMER_H
-#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TIMER_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace DigikamGenericGLViewerPlugin
-
-#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TIMER_H

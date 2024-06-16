@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWER_PLUGIN_H
-#define DIGIKAM_GLVIEWER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private Q_SLOTS:
 };
 
 } // namespace DigikamGenericGLViewerPlugin
-
-#endif // DIGIKAM_GLVIEWER_PLUGIN_H

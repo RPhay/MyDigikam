@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H
-#define DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -83,5 +82,3 @@ private:
 };
 
 } // namespace DigikamGenericSlideShowPlugin
-
-#endif // DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H

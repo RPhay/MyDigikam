@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_MAIN_PAGE_H
-#define DIGIKAM_PRESENTATION_MAIN_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_MAIN_PAGE_H

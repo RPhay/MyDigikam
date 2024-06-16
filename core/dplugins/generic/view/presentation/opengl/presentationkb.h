@@ -17,8 +17,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_KB_H
-#define DIGIKAM_PRESENTATION_KB_H
+#pragma once
 
 // C++ includes
 
@@ -163,5 +162,3 @@ private:
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_KB_H

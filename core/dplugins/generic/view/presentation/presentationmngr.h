@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_MNGR_H
-#define DIGIKAM_PRESENTATION_MNGR_H
+#pragma once
 
 // Qt includes
 
@@ -57,11 +56,9 @@ private Q_SLOTS:
 
 private:
 
-    DPlugin*               m_plugin;
-    PresentationDlg*       m_dialog;
-    PresentationContainer* m_sharedData;
+    DPlugin*               m_plugin     = nullptr;
+    PresentationDlg*       m_dialog     = nullptr;
+    PresentationContainer* m_sharedData = nullptr;
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_MNGR_H

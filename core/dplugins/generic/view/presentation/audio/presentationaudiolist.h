@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRESENTATION_AUDIO_LIST_H
-#define DIGIKAM_PRESENTATION_AUDIO_LIST_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -116,11 +115,9 @@ Q_SIGNALS:
 
 protected:
 
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dragMoveEvent(QDragMoveEvent*) override;
-    void dropEvent(QDropEvent*) override;
+    void dragEnterEvent(QDragEnterEvent*)   override;
+    void dragMoveEvent(QDragMoveEvent*)     override;
+    void dropEvent(QDropEvent*)             override;
 };
 
 } // namespace DigikamGenericPresentationPlugin
-
-#endif // DIGIKAM_PRESENTATION_AUDIO_LIST_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H
-#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace DigikamGenericGLViewerPlugin
-
-#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H

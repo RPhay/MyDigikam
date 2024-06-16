@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
-#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
+#pragma once
 
 // Uncomment this line to enable performance checks.
 //#define PERFORMANCE_ANALYSIS
@@ -34,5 +33,3 @@ enum OGLstate
 };
 
 } // namespace DigikamGenericGLViewerPlugin
-
-#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
