@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-13 01:40+0000\n"
+"POT-Creation-Date: 2024-06-17 01:47+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -1426,8 +1426,8 @@ msgstr ""
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:168
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
@@ -1571,7 +1571,7 @@ msgid " fps"
 msgstr ""
 
 #: core/app/items/utils/tooltipfiller.cpp:395
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:158
 #, fuzzy, kde-format
 msgid "Video Codec:"
 msgstr "پرونده‌های صوتی"
@@ -3077,7 +3077,7 @@ msgstr "میله ابزار اصلی"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
 #: core/libs/album/manager/albummanager_talbum.cpp:983
-#: core/libs/timeadjust/timeadjustsettings.cpp:131
+#: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
 msgstr ""
@@ -3277,7 +3277,7 @@ msgstr "ویرایش حالت تمام پرده‌"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:484
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
@@ -15902,13 +15902,13 @@ msgid "Close window"
 msgstr "ویرایشگر تصویر"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:284
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -16414,7 +16414,7 @@ msgstr "پرونده‌های RAW"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target File"
@@ -17432,7 +17432,7 @@ msgstr "کاریکاتور"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
 #, fuzzy, kde-format
 msgid "Internal Error"
@@ -17545,7 +17545,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
 #, fuzzy, kde-format
 msgid "&Choose image selection method:"
 msgstr "فقره‌ای برگزیده نشد"
@@ -17554,7 +17554,7 @@ msgstr "فقره‌ای برگزیده نشد"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -17575,7 +17575,7 @@ msgstr "توصیف:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -17671,7 +17671,7 @@ msgid "Theme Parameters"
 msgstr "پارامترها"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, fuzzy, kde-format
 msgid "Output Settings"
 msgstr "تنظیمات عمومی"
@@ -19888,13 +19888,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "<p>مقدار اشباع را در اینجا تنظیم کنید."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:264
 #, fuzzy, kde-format
 msgid "Destination folder:"
 msgstr "توصیف:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -19965,7 +19965,7 @@ msgstr "%1 - پوشه دوربین را برگزینید"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, fuzzy, kde-format
 msgid "Albums Selection"
@@ -20449,7 +20449,7 @@ msgid "Welcome to Email Tool"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, fuzzy, kde-format
 msgid "Images List"
@@ -20490,38 +20490,38 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "انتساب این برچسب"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
 #, fuzzy, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "کاریکاتور"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
 #, fuzzy, kde-format
 msgid "%1 input images to process"
 msgstr "سفارشی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
 #, fuzzy, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "&نمایش اسلاید‌"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
 #, fuzzy, kde-format
 msgid "Video Slideshow completed."
 msgstr "&نمایش اسلاید‌"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening video stream in player..."
 msgstr "باز کردن پوشه"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
+#: core/dplugins/generic/tools/videoslideshow/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20529,7 +20529,7 @@ msgid ""
 "order of each item.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -20542,55 +20542,55 @@ msgid ""
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:102
 #, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
 #, fuzzy, kde-format
 #| msgid "Linear"
 msgid "Media Container Format:"
 msgstr "خطی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "باز کردن در مدیر پرونده"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:158
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output"
 msgstr "دستگاه خروجی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20599,34 +20599,34 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:192
 #, fuzzy, kde-format
 #| msgid "Thumbnail Information"
 msgid "Frames Normalization"
 msgstr "اطلاعات ریزنقش"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:202
 #, fuzzy, kde-format
 msgid "Soundtrack File:"
 msgstr "تنظیمات..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:208
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, fuzzy, kde-format
 msgid "Soundtrack Duration:"
 msgstr "تنظیمات..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:217
 #, fuzzy, kde-format
 msgid "Soundtrack Preview:"
 msgstr "تنظیمات..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20635,27 +20635,27 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
 #, fuzzy, kde-format
 msgid "Audio Track"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
 #, fuzzy, kde-format
 msgid "On Screen Display"
 msgstr "&جادهی:‌"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:85
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:88
 #, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
@@ -20666,27 +20666,27 @@ msgid ""
 "per second used to encode the media."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:97
 #, fuzzy, kde-format
 msgid "Video Standard:"
 msgstr "استاندارد"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:116
 #, fuzzy, kde-format
 msgid "Video Type:"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:139
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:139
 #, fuzzy, kde-format
 msgid "Video Bit Rate:"
 msgstr "پرونده‌های صوتی"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:185
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20695,13 +20695,13 @@ msgid ""
 "</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
 #, fuzzy, kde-format
 #| msgid "Or Between Tags"
 msgid "Transition Between Images"
 msgstr "یا بین برچسبها"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:221
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20709,29 +20709,29 @@ msgid ""
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "انتساب این برچسب"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #, fuzzy, kde-format
 #| msgid "Slide Show Settings"
 msgid "Video Settings"
 msgstr "تنظیمات نمایش اسلاید"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, fuzzy, kde-format
 msgid "Generating Video Slideshow"
 msgstr "انتساب این برچسب"
@@ -21590,13 +21590,13 @@ msgstr "فشار برای خروج..."
 msgid "SlideShow Completed"
 msgstr "نمایش اسلاید"
 
-#: core/dplugins/generic/view/presentation/presentationmngr.cpp:102
+#: core/dplugins/generic/view/presentation/presentationmngr.cpp:100
 #, fuzzy, kde-format
 #| msgid "There are no pictures in this folder."
 msgid "There are no images to show."
 msgstr "عکسی در این پوشه وجود ندارد."
 
-#: core/dplugins/generic/view/presentation/presentationmngr.cpp:161
+#: core/dplugins/generic/view/presentation/presentationmngr.cpp:159
 #, kde-format
 msgid "OpenGL support is not available on your system."
 msgstr ""
@@ -37343,7 +37343,7 @@ msgid "IPTC"
 msgstr ""
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "XMP"
 msgstr ""
@@ -39712,154 +39712,154 @@ msgstr "تاریخ و زمان"
 msgid "Select Image to Extract Clock Photo"
 msgstr "برگزیدن تصویر برای بارگذاری"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:135
+#: core/libs/timeadjust/timeadjustsettings.cpp:138
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:138
+#: core/libs/timeadjust/timeadjustsettings.cpp:141
 #, kde-format
 msgid "%1 timestamp"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:143
+#: core/libs/timeadjust/timeadjustsettings.cpp:146
 #, fuzzy, kde-format
 msgid "File name timestamp"
 msgstr "نام پرونده تصویر جدید"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:147
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:150
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, fuzzy, kde-format
 msgid "File last modified"
 msgstr "فلاش:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:156
+#: core/libs/timeadjust/timeadjustsettings.cpp:159
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:157
-#: core/libs/timeadjust/timeadjustsettings.cpp:244
+#: core/libs/timeadjust/timeadjustsettings.cpp:160
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, fuzzy, kde-format
 msgid "EXIF: created"
 msgstr "نمایش &تاریخ ایجاد پرونده‌"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:158
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, fuzzy, kde-format
 msgid "EXIF: original"
 msgstr "اصلی"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:159
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:160
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, fuzzy, kde-format
 #| msgid "Created:"
 msgid "IPTC: created"
 msgstr "ایجادشده:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, fuzzy, kde-format
 msgid "XMP: created"
 msgstr "ایجادشده : %1"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
 #, fuzzy, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "نمایش &تاریخ ایجاد پرونده‌"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, fuzzy, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "اصلی"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:174
+#: core/libs/timeadjust/timeadjustsettings.cpp:177
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Reset to current date"
 msgstr "آغاز با تصویر جاری"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:206
+#: core/libs/timeadjust/timeadjustsettings.cpp:209
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "&رونوشت به اینجا‌"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:207
+#: core/libs/timeadjust/timeadjustsettings.cpp:210
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "&افزودن‌"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:208
+#: core/libs/timeadjust/timeadjustsettings.cpp:211
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "چکیده"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:212
+#: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, fuzzy, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "درون‌یابی:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:218
+#: core/libs/timeadjust/timeadjustsettings.cpp:221
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "تعطیلات"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:221
+#: core/libs/timeadjust/timeadjustsettings.cpp:224
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:222
+#: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:240
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:241
+#: core/libs/timeadjust/timeadjustsettings.cpp:244
 #, fuzzy, kde-format
 msgid "Use this option primarily with video files"
 msgstr "<p>برای نمایش اندازه پرونده تصویر، این گزینه را تنظیم کنید."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:242
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "EXIF: Thumbnail"
 msgstr "ریزنقش"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, fuzzy, kde-format
 msgid "XMP: Video"
 msgstr "&نما‌"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:285
 #, fuzzy, kde-format
 msgid "Timestamp Adjustments"
 msgstr "تنظیمات روشنایی"
