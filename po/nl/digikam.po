@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-13 01:40+0000\n"
+"POT-Creation-Date: 2024-06-17 01:47+0000\n"
 "PO-Revision-Date: 2024-06-13 23:40+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1075,8 +1075,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:168
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
@@ -1220,7 +1220,7 @@ msgid " fps"
 msgstr " fps"
 
 #: core/app/items/utils/tooltipfiller.cpp:395
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:158
 #, kde-format
 msgid "Video Codec:"
 msgstr "Video-codec:"
@@ -2696,7 +2696,7 @@ msgstr "Hoofdwerkbalk"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
 #: core/libs/album/manager/albummanager_talbum.cpp:983
-#: core/libs/timeadjust/timeadjustsettings.cpp:131
+#: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -2920,7 +2920,7 @@ msgstr "Volledig scherm tonen"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:88
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:484
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
@@ -16050,13 +16050,13 @@ msgid "Close window"
 msgstr "Venster sluiten"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:284
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Gebruikte tijdstempel"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:286
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Bijgewerkte tijdstempel"
@@ -16589,7 +16589,7 @@ msgstr "Raw-bestand"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
 msgstr "Doelbestand"
@@ -17643,7 +17643,7 @@ msgstr "HTML-galerij aanmaken..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:97
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:126
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:116
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:124
 #, kde-format
 msgid "Internal Error"
@@ -17755,7 +17755,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:86
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:100
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:91
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
 #, kde-format
 msgid "&Choose image selection method:"
 msgstr "&Kies de selectiemethode van afbeeldingen:"
@@ -17764,7 +17764,7 @@ msgstr "&Kies de selectiemethode van afbeeldingen:"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:89
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:87
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:94
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:94
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
@@ -17784,7 +17784,7 @@ msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
 msgctxt "@title:window"
@@ -17873,7 +17873,7 @@ msgid "Theme Parameters"
 msgstr "Themaparameters"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:80
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:80
 #, kde-format
 msgid "Output Settings"
 msgstr "Uitvoerinstellingen"
@@ -20221,13 +20221,13 @@ msgstr ""
 "Selecteer uw voorkeursformaat voor exporteren van afdrukken als afbeelding."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Doelmap:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
@@ -20298,7 +20298,7 @@ msgstr "Welkom bij het hulpmiddel Maker van afdrukken"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:98
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:76
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:77
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:77
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:86
 #, kde-format
 msgid "Albums Selection"
@@ -20795,7 +20795,7 @@ msgid "Welcome to Email Tool"
 msgstr "Welkom bij het hulpmiddel E-mail"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:77
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:78
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:87
 #, kde-format
 msgid "Images List"
@@ -20842,37 +20842,37 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Diashow als video aanmaken..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Beginnen met aanmaken diashow als video..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:131
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 te verwerken invoerafbeeldingen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Diavoorstelling als video is niet voltooid"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Zie onderstaand het spoor van de videocodering"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Diavoorstelling als video is voltooid."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:194
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videostream in speler openen..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideimagespage.cpp:64
+#: core/dplugins/generic/tools/videoslideshow/vidslideimagespage.cpp:64
 #, kde-format
 msgid ""
 "<p>This view list all items to include on video stream.</p><p>The first one "
@@ -20883,7 +20883,7 @@ msgstr ""
 "videostream.</p><p>De eerste staat bovenaan in de lijst, de laatste</"
 "p><p>onderaan. U kunt de volgorde van elk item aanpassen.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:75
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:75
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Video Slideshow tool</b></h1></p><p>This assistant "
@@ -20905,18 +20905,18 @@ msgstr ""
 "videopresentatie maken met</p><p>overgangseffecten en geluidstracks om te "
 "vertonen op een TV scherm.</p></qt>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:102
 #, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binair programma FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Formaat van mediacontainer:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20925,27 +20925,27 @@ msgstr ""
 "Deze besturing biedt het kiezen van het formaat van de mediacontainer om de "
 "videostream en soundtrack te bevatten."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:120
 #, kde-format
 msgid "Open in Player:"
 msgstr "In speler openen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Output"
 msgstr "Uitvoer"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Lichtsterkte van video egaliseren"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Egalisatiesterkte:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20954,7 +20954,7 @@ msgstr ""
 "Dit bestuurt de sterkte van de egalisatie. Deze optie instellen op nul doet "
 "effectief niets."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20968,33 +20968,33 @@ msgstr ""
 "Het is nuttig voor bijv. overeen laten komen van belichting uit een reeks in "
 "een timelapse.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:192
 #, kde-format
 msgid "Frames Normalization"
 msgstr "Normalisatie van frames"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:202
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Soundtrackbestand:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Audiotrack selecteren"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Tijdsduur van soundtrack:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:217
 #, kde-format
 msgid "Soundtrack Preview:"
 msgstr "Soundtrack voorspelen:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -21007,28 +21007,28 @@ msgstr ""
 "dan de video, zal het afgekapt worden.Deze instelling leeg laten als u geen "
 "soundtrack in het medium wilt.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
 #, kde-format
 msgid "Audio Track"
 msgstr "Audiotrack"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "On Screen Display"
 msgstr "On Screen Display"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
 "De bestandsnaam van de videouitvoer zal automatisch worden gegenereerd."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:85
 #, kde-format
 msgid "Number of Frames by Image:"
 msgstr "Aantal frames per afbeelding:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:88
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:88
 #, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
@@ -21046,27 +21046,27 @@ msgstr ""
 "Het resultaat zal afhangen van het aantal gebruikte\n"
 "frames per seconde om het medium te coderen."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:97
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:97
 #, kde-format
 msgid "Video Standard:"
 msgstr "Video-standaard:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:116
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:116
 #, kde-format
 msgid "Video Type:"
 msgstr "Type video:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:139
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:139
 #, kde-format
 msgid "Video Bit Rate:"
 msgstr "Video-bitsnelheid:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:165
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Effect bij tonen van afbeeldingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:185
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:185
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21079,12 +21079,12 @@ msgstr ""
 "volgen dat gebruikt wordt om de afbeelding in de videostream te renderen. "
 "Voor een timelaps deze instelling op Geen laten.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transitie tussen afbeeldingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:221
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21096,29 +21096,29 @@ msgstr ""
 "kunnen wijzigen tijdens de diashow. Voor een timelaps deze instelling op "
 "Geen laten.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 "Tijdsduur : %1 seconden per item, totaal %2 seconden (zonder transities)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:67
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Een diashow als video aanmaken"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:76
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:76
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
 msgstr "Welkom bij het hulpmiddel Diashow als video"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:79
 #, kde-format
 msgid "Video Settings"
 msgstr "Video-instellingen"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:81
+#: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Generating Video Slideshow"
 msgstr "Diashow als video wordt aangemaakt"
@@ -21997,12 +21997,12 @@ msgstr "Klik om af te sluiten..."
 msgid "SlideShow Completed"
 msgstr "Diavoorstelling voltooid."
 
-#: core/dplugins/generic/view/presentation/presentationmngr.cpp:102
+#: core/dplugins/generic/view/presentation/presentationmngr.cpp:100
 #, kde-format
 msgid "There are no images to show."
 msgstr "Er zijn geen afbeeldingen voor de diavoorstelling beschikbaar."
 
-#: core/dplugins/generic/view/presentation/presentationmngr.cpp:161
+#: core/dplugins/generic/view/presentation/presentationmngr.cpp:159
 #, kde-format
 msgid "OpenGL support is not available on your system."
 msgstr "OpenGL-ondersteuning is niet beschikbaar op uw computer"
@@ -38174,7 +38174,7 @@ msgid "IPTC"
 msgstr "Iptc"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -40794,149 +40794,149 @@ msgstr "De datum en tijd uit de klok:"
 msgid "Select Image to Extract Clock Photo"
 msgstr "Selecteer de afbeelding waaruit de klok van de foto is te extraheren"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:135
+#: core/libs/timeadjust/timeadjustsettings.cpp:138
 #, kde-format
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:138
+#: core/libs/timeadjust/timeadjustsettings.cpp:141
 #, kde-format
 msgid "%1 timestamp"
 msgstr "%1 tijdsaanduiding"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:143
+#: core/libs/timeadjust/timeadjustsettings.cpp:146
 #, kde-format
 msgid "File name timestamp"
 msgstr "Tijdstempel van bestand"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:147
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:150
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "File last modified"
 msgstr "Bestand het laatst gewijzigd"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:156
+#: core/libs/timeadjust/timeadjustsettings.cpp:159
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:157
-#: core/libs/timeadjust/timeadjustsettings.cpp:244
+#: core/libs/timeadjust/timeadjustsettings.cpp:160
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF: aangemaakt"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:158
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF: origineel"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:159
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF: gedigitaliseerd"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:160
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: aangemaakt"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: aangemaakt"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "EXIF: aangemaakt (vaag)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "EXIF: origineel (vaag)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "EXIF: gedigitaliseerd (vaag)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:174
+#: core/libs/timeadjust/timeadjustsettings.cpp:177
 #, kde-format
 msgid "Reset to current date"
 msgstr "Naar huidige datum terugzetten"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:206
+#: core/libs/timeadjust/timeadjustsettings.cpp:209
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Waarde kopiëren"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:207
+#: core/libs/timeadjust/timeadjustsettings.cpp:210
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Toevoegen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:208
+#: core/libs/timeadjust/timeadjustsettings.cpp:211
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Aftrekken"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:212
+#: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Interval"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:218
+#: core/libs/timeadjust/timeadjustsettings.cpp:221
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "dagen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:221
+#: core/libs/timeadjust/timeadjustsettings.cpp:224
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Bepaal het verschil van de klok van de foto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:222
+#: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 "Klik of sleep en laat een foto los op de knop om een klokfoto te kiezen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:240
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr "Tijdstippen bijwerken met ExifTool"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:241
+#: core/libs/timeadjust/timeadjustsettings.cpp:244
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Deze optie primair gebruiken met videobestanden."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:242
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Alleen bestaande tijdstippen bijwerken"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF: miniatuur"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Video"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:285
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Bijstelling van tijdstempel"
