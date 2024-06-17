@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OD_ITEM_H
-#define DIGIKAM_OD_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ public:
 };
 
 } // namespace DigikamGenericOneDrivePlugin
-
-#endif // DIGIKAM_OD_ITEM_H

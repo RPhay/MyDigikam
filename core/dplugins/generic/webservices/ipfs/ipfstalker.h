@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPFS_TALKER_H
-#define DIGIKAM_IPFS_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -114,5 +113,3 @@ private:
 };
 
 } // namespace DigikamGenericIpfsPlugin
-
-#endif // DIGIKAM_IPFS_TALKER_H

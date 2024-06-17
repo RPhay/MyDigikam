@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIWIGO_SESSION_H
-#define DIGIKAM_PIWIGO_SESSION_H
+#pragma once
 
 // Qt includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace DigikamGenericPiwigoPlugin
-
-#endif // DIGIKAM_PIWIGO_SESSION_H

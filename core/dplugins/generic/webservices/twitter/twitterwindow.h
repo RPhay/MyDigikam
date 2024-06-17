@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TWITTER_WINDOW_H
-#define DIGIKAM_TWITTER_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -88,5 +87,3 @@ private:
 };
 
 } // namespace DigikamGenericTwitterPlugin
-
-#endif // DIGIKAM_TWITTER_WINDOW_H

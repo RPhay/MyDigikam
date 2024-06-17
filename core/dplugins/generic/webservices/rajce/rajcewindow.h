@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_WINDOW_H
-#define DIGIKAM_RAJCE_WINDOW_H
+#pragma once
 
 // Local includes
 
@@ -50,9 +49,7 @@ private Q_SLOTS:
 
 private:
 
-    RajceWidget* m_widget;
+    RajceWidget* m_widget = nullptr;
 };
 
 } // namespace DigikamGenericRajcePlugin
-
-#endif // DIGIKAM_RAJCE_WINDOW_H

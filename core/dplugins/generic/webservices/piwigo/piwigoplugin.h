@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIWIGO_PLUGIN_H
-#define DIGIKAM_PIWIGO_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericPiwigoPlugin
-
-#endif // DIGIKAM_PIWIGO_PLUGIN_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_NEW_ALBUM_DLG_H
-#define DIGIKAM_RAJCE_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -44,9 +43,7 @@ public:
 
 private:
 
-    QCheckBox* m_albumVisible;
+    QCheckBox* m_albumVisible = nullptr;
 };
 
 } // namespace DigikamGenericRajcePlugin
-
-#endif // DIGIKAM_RAJCE_NEW_ALBUM_DLG_H

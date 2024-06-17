@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIWIGO_WINDOW_H
-#define DIGIKAM_PIWIGO_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace DigikamGenericPiwigoPlugin
-
-#endif // DIGIKAM_PIWIGO_WINDOW_H

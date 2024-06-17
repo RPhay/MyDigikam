@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_UTILS_H
-#define DIGIKAM_INAT_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ extern QString localizedDistance(double distMeters, char format, int precision);
 extern QString localizedTimeDifference(quint64 diffSeconds);
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_UTILS_H

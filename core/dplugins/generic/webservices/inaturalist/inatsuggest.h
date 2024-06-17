@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_SUGGEST_H
-#define DIGIKAM_INAT_SUGGEST_H
+#pragma once
 
 // Qt includes
 
@@ -82,6 +81,4 @@ private:
 };
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_SUGGEST_H
 

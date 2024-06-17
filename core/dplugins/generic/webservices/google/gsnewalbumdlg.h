@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GS_NEW_ALBUM_DLG_H
-#define DIGIKAM_GS_NEW_ALBUM_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GS_NEW_ALBUM_DLG_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GP_MPFORM_H
-#define DIGIKAM_GP_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -55,10 +54,8 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary = QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1();
-
+    QByteArray m_boundary = QByteArray("----------") + 
+                            WSToolUtils::randomString(42 + 13).toLatin1();
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GP_MPFORM_H

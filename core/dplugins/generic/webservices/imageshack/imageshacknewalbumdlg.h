@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_SHACK_NEWALBUMDLG_H
-#define DIGIKAM_IMAGE_SHACK_NEWALBUMDLG_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ public:
 };
 
 } // namespace DigikamGenericImageShackPlugin
-
-#endif // DIGIKAM_IMAGE_SHACK_NEWALBUMDLG_H

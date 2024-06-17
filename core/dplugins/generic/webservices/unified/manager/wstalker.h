@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_TALKER_H
-#define DIGIKAM_WS_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -220,5 +219,3 @@ protected:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_WS_TALKER_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_WIZARD_H
-#define DIGIKAM_WS_WIZARD_H
+#pragma once
 
 // Qt includes
 
@@ -74,5 +73,3 @@ private:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_WS_WIZARD_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_P_PLUGIN_H
-#define DIGIKAM_P_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericPinterestPlugin
-
-#endif // DIGIKAM_P_PLUGIN_H

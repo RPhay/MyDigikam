@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_AUTHENTICATION_PAGE_H
-#define DIGIKAM_WS_AUTHENTICATION_PAGE_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -171,5 +170,3 @@ private:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_WS_AUTHENTICATION_PAGE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GS_WIDGET_H
-#define DIGIKAM_GS_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GS_WIDGET_H

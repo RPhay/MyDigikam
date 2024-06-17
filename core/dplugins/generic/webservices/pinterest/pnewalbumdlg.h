@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_P_NEW_ALBUM_DLG_H
-#define DIGIKAM_P_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ public:
 };
 
 } // namespace DigikamGenericPinterestPlugin
-
-#endif // DIGIKAM_P_NEW_ALBUM_DLG_H

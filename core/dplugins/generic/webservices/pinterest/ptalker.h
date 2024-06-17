@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_P_TALKER_H
-#define DIGIKAM_P_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace DigikamGenericPinterestPlugin
-
-#endif // DIGIKAM_P_TALKER_H

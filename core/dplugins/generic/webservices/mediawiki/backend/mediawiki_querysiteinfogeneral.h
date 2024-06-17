@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2011-03-22
- * Description : a Iface C++ interface
+ * Description : a Mediawiki C++ interface
  *
  * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIAWIKI_QUERYSITEINFOGENERAL_H
-#define DIGIKAM_MEDIAWIKI_QUERYSITEINFOGENERAL_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private Q_SLOTS:
 };
 
 } // namespace MediaWiki
-
-#endif // DIGIKAM_MEDIAWIKI_QUERYSITEINFOGENERAL_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPFS_WINDOW_H
-#define DIGIKAM_IPFS_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -78,5 +77,3 @@ private:
 };
 
 } // namespace DigikamGenericIpfsPlugin
-
-#endif // DIGIKAM_IPFS_WINDOW_H

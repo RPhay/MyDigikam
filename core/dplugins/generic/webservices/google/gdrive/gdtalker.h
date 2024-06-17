@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GD_TALKER_H
-#define DIGIKAM_GD_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GD_TALKER_H

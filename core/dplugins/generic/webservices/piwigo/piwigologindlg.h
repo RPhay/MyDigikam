@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIWIGO_LOGIN_DLG_H
-#define DIGIKAM_PIWIGO_LOGIN_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace DigikamGenericPiwigoPlugin
-
-#endif // DIGIKAM_PIWIGO_LOGIN_DLG_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_PLUGIN_H
-#define DIGIKAM_INAT_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_PLUGIN_H

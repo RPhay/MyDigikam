@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_TAXON_EDIT_H
-#define DIGIKAM_INAT_TAXON_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -43,5 +42,3 @@ protected:
 };
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_TAXON_EDIT_H

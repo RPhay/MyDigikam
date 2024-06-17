@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SMUG_TALKER_H
-#define DIGIKAM_SMUG_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -163,5 +162,3 @@ private:
 };
 
 } // namespace DigikamGenericSmugPlugin
-
-#endif // DIGIKAM_SMUG_TALKER_H

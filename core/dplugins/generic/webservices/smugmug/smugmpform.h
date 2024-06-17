@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SMUG_MPFORM_H
-#define DIGIKAM_SMUG_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -57,9 +56,8 @@ public:
 private:
 
     QByteArray m_buffer;
-    QByteArray m_boundary = QByteArray("----------") + WSToolUtils::randomString(42 + 13).toLatin1();
+    QByteArray m_boundary = QByteArray("----------") +
+                            WSToolUtils::randomString(42 + 13).toLatin1();
 };
 
 } // namespace DigikamGenericSmugPlugin
-
-#endif // DIGIKAM_SMUG_MPFORM_H

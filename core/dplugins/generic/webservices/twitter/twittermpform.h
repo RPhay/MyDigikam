@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TWITTER_MPFORM_H
-#define DIGIKAM_TWITTER_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -61,10 +60,10 @@ private:
 private:
 
     QByteArray        m_buffer;
-    QByteArray        m_boundary = QByteArray("00TwDK") + WSToolUtils::randomString(42 + 13).toLatin1() + QByteArray("KDwT99");
+    QByteArray        m_boundary = QByteArray("00TwDK")                          +
+                                   WSToolUtils::randomString(42 + 13).toLatin1() +
+                                   QByteArray("KDwT99");
     QList<QByteArray> m_chunks;
 };
 
 } // namespace DigikamGenericTwitterPlugin
-
-#endif // DIGIKAM_TWITTER_MPFORM_H

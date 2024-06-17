@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_SHACK_ITEM_H
-#define DIGIKAM_IMAGE_SHACK_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ public:
 };
 
 } // namespace DigikamGenericImageShackPlugin
-
-#endif // DIGIKAM_IMAGE_SHACK_ITEM_H

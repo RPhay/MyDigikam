@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_P_WIDGET_H
-#define DIGIKAM_P_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace DigikamGenericPinterestPlugin
-
-#endif // DIGIKAM_P_WIDGET_H

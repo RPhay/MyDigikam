@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGESHACK_PLUGIN_H
-#define DIGIKAM_IMAGESHACK_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericImageShackPlugin
-
-#endif // DIGIKAM_IMAGESHACK_PLUGIN_H

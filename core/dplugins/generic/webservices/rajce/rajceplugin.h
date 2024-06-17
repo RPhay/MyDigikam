@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_PLUGIN_H
-#define DIGIKAM_RAJCE_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericRajcePlugin
-
-#endif // DIGIKAM_RAJCE_PLUGIN_H

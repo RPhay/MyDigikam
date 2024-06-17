@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OD_MPFORM_H
-#define DIGIKAM_OD_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -39,5 +38,3 @@ private:
 };
 
 } // namespace DigikamGenericOneDrivePlugin
-
-#endif // DIGIKAM_OD_MPFORM_H

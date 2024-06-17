@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_TALKER_H
-#define DIGIKAM_RAJCE_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -83,5 +82,3 @@ private:
 };
 
 } // namespace DigikamGenericRajcePlugin
-
-#endif // DIGIKAM_RAJCE_TALKER_H

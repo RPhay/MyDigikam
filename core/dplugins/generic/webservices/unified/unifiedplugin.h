@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNIFIED_PLUGIN_H
-#define DIGIKAM_UNIFIED_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_UNIFIED_PLUGIN_H

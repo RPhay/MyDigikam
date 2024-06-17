@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIAWIKI_WIDGET_H
-#define DIGIKAM_MEDIAWIKI_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -128,5 +127,3 @@ private:
 };
 
 } // namespace DigikamGenericMediaWikiPlugin
-
-#endif // DIGIKAM_MEDIAWIKI_WIDGET_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GP_TALKER_H
-#define DIGIKAM_GP_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -106,5 +105,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GP_TALKER_H

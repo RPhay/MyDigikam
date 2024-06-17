@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TWITTER_PLUGIN_H
-#define DIGIKAM_TWITTER_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace DigikamGenericTwitterPlugin
-
-#endif // DIGIKAM_TWITTER_PLUGIN_H

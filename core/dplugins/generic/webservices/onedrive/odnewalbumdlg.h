@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OD_NEW_ALBUM_DLG_H
-#define DIGIKAM_OD_NEW_ALBUM_DLG_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ public:
 };
 
 } // namespace DigikamGenericOneDrivePlugin
-
-#endif // DIGIKAM_OD_NEW_ALBUM_DLG_H

@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIWIGO_TALKER_H
-#define DIGIKAM_PIWIGO_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -138,5 +137,3 @@ private:
 };
 
 } // namespace DigikamGenericPiwigoPlugin
-
-#endif // PIWIGOTALKER_H

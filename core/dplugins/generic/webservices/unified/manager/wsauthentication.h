@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_AUTHENTICATION_H
-#define DIGIKAM_WS_AUTHENTICATION_H
+#pragma once
 
 // Qt includes
 
@@ -168,5 +167,3 @@ private:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_WS_AUTHENTICATION_H

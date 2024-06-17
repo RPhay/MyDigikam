@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_WIDGET_PRIVATE_H
-#define DIGIKAM_INAT_WIDGET_PRIVATE_H
+#pragma once
 
 #include "inatwidget.h"
 
@@ -78,5 +77,3 @@ public:
 };
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_WIDGET_PRIVATE_H

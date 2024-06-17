@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIAWIKI_WINDOW_H
-#define DIGIKAM_MEDIAWIKI_WINDOW_H
+#pragma once
 
 // Local includes
 
@@ -73,5 +72,3 @@ private:
 };
 
 } // namespace DigikamGenericMediaWikiPlugin
-
-#endif // DIGIKAM_MEDIAWIKI_WINDOW_H

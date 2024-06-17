@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GS_PLUGIN_H
-#define DIGIKAM_GS_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GS_PLUGIN_H

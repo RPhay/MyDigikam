@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGUR_PLUGIN_H
-#define DIGIKAM_IMGUR_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericImgUrPlugin
-
-#endif // DIGIKAM_IMGUR_PLUGIN_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGUR_WINDOW_H
-#define DIGIKAM_IMGUR_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private:
 };
 
 } // namespace DigikamGenericImgUrPlugin
-
-#endif // DIGIKAM_IMGUR_WINDOW_H

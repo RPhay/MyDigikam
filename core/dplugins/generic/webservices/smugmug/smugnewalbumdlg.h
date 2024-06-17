@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SMUG_NEW_ALBUM_DLG_H
-#define DIGIKAM_SMUG_NEW_ALBUM_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace DigikamGenericSmugPlugin
-
-#endif // DIGIKAM_SMUG_NEW_ALBUM_DLG_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGUR_TALKER_H
-#define DIGIKAM_IMGUR_TALKER_H
+#pragma once
 
 // C++ includes
 
@@ -205,5 +204,3 @@ private:
 };
 
 } // namespace DigikamGenericImgUrPlugin
-
-#endif // DIGIKAM_IMGUR_TALKER_H

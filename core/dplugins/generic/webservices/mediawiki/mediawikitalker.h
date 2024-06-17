@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIAWIKI_TALKER_H
-#define DIGIKAM_MEDIAWIKI_TALKER_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace DigikamGenericMediaWikiPlugin
-
-#endif // DIGIKAM_MEDIAWIKI_TALKER_H

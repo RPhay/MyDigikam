@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_ALBUM_H
-#define DIGIKAM_RAJCE_ALBUM_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ QTextStream& operator<<(QTextStream& str, const DigikamGenericRajcePlugin::Rajce
 QDebug operator<<(QDebug d, const DigikamGenericRajcePlugin::RajceAlbum& a);
 
 Q_DECLARE_METATYPE(DigikamGenericRajcePlugin::RajceAlbum)
-
-#endif // DIGIKAM_RAJCE_ALBUM_H

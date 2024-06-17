@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GD_MPFORM_H
-#define DIGIKAM_GD_MPFORM_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GD_MPFORM_H

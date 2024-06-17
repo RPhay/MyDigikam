@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_IMAGES_PAGE_H
-#define DIGIKAM_WS_IMAGES_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -99,5 +98,3 @@ private:
 };
 
 } // namespace DigikamGenericUnifiedPlugin
-
-#endif // DIGIKAM_WS_IMAGES_PAGE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GS_REPLACE_DLG_H
-#define DIGIKAM_GS_REPLACE_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private:
 };
 
 } // namespace DigikamGenericGoogleServicesPlugin
-
-#endif // DIGIKAM_GS_REPLACE_DLG_H

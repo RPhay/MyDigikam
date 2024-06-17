@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_SESSION_H
-#define DIGIKAM_RAJCE_SESSION_H
+#pragma once
 
 // Qt includes
 
@@ -118,5 +117,3 @@ private:
 } // namespace DigikamGenericRajcePlugin
 
 QDebug operator<<(QDebug d, const DigikamGenericRajcePlugin::RajceSession& s);
-
-#endif // DIGIKAM_RAJCE_SESSION_H

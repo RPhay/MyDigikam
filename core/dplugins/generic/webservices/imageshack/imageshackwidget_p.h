@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_SHACK_WIDGET_PRIVATE_H
-#define DIGIKAM_IMAGE_SHACK_WIDGET_PRIVATE_H
+#pragma once
 
 #include "imageshackwidget.h"
 
@@ -79,5 +78,3 @@ public:
 };
 
 } // namespace DigikamGenericImageShackPlugin
-
-#endif // DIGIKAM_IMAGE_SHACK_WIDGET_PRIVATE_H

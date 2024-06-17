@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPFS_PLUGIN_H
-#define DIGIKAM_IPFS_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace DigikamGenericIpfsPlugin
-
-#endif // DIGIKAM_IPFS_PLUGIN_H

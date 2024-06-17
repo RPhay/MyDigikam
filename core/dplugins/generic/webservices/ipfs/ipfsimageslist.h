@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPFS_IMAGES_LIST_H
-#define DIGIKAM_IPFS_IMAGES_LIST_H
+#pragma once
 
 // Qt includes
 
@@ -81,5 +80,3 @@ public:
 };
 
 } // namespace DigikamGenericIpfsPlugin
-
-#endif // DIGIKAM_IPFS_IMAGES_LIST_H

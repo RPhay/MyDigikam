@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2011-03-22
- * Description : a Iface C++ interface
+ * Description : a Mediawiki C++ interface
  *
  * SPDX-FileCopyrightText: 2011-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2011      by Remi Benoit <r3m1 dot benoit at gmail dot com>

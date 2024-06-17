@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SMUG_PLUGIN_H
-#define DIGIKAM_SMUG_PLUGIN_H
+#pragma once
 
 // Local includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace DigikamGenericSmugPlugin
-
-#endif // DIGIKAM_SMUG_PLUGIN_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_SCORE_H
-#define DIGIKAM_INAT_SCORE_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ private:
 typedef QPair<QString, QList<ComputerVisionScore> > ImageScores;
 
 } // namespace DigikamGenericINatPlugin
-
-#endif // DIGIKAM_INAT_SCORE_H

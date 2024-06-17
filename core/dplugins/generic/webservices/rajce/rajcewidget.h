@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAJCE_WIDGET_H
-#define DIGIKAM_RAJCE_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ private:
 };
 
 } // namespace DigikamGenericRajcePlugin
-
-#endif // DIGIKAM_RAJCE_WIDGET_H

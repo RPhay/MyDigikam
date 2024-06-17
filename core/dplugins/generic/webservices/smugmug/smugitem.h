@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SMUG_ITEM_H
-#define DIGIKAM_SMUG_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -156,5 +155,3 @@ public:
 };
 
 } // namespace DigikamGenericSmugPlugin
-
-#endif // DIGIKAM_SMUG_ITEM_H
