@@ -82,9 +82,9 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/b/$DK_VERSION"
 
-    DK_KDE_VERSION="5.115"
-    DK_KP_VERSION="5.27.10"
-    DK_KA_VERSION="23.08.5"
+    DK_KDE_VERSION="5.116"
+    DK_KP_VERSION="5.27.11"
+    DK_KA_VERSION="24.05.1"
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
