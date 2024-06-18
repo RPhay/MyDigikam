@@ -21,6 +21,19 @@ index d5c9a73..290f3e3 100644
  
      # Check if sane API is available.
      find_package(${KSANECORE_NAME} "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}" REQUIRED)
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index ab07811..48686b7 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -73,7 +73,7 @@ target_link_libraries(KSaneWidgets
+     PRIVATE
+         KF${KF_MAJOR_VERSION}::I18n
+         KF${KF_MAJOR_VERSION}::WidgetsAddons
+-        KF${KF_MAJOR_VERSION}::TextWidgets
++#        KF${KF_MAJOR_VERSION}::TextWidgets
+         ${KSANECORE_TARGET}
+ )
+ 
 diff --git a/src/widgets/labeledslider.cpp b/src/widgets/labeledslider.cpp
 index dc5a39b..312079d 100644
 --- a/src/widgets/labeledslider.cpp
