@@ -45,7 +45,7 @@ if(MINGW)
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://aomedia.googlesource.com/aom
-        GIT_TAG v3.8.2
+        GIT_TAG v3.8.3
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS_AOM}
@@ -66,7 +66,7 @@ else() # Linux
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://aomedia.googlesource.com/aom
-        GIT_TAG v3.8.2
+        GIT_TAG v3.8.3
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_libaom}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}

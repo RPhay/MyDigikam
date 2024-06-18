@@ -12,7 +12,7 @@ ExternalProject_Add( ext_boost
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/boostorg/boost.git
-    GIT_TAG boost-1.83.0
+    GIT_TAG boost-1.85.0
 
     CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.sh --prefix=${PREFIX_ext_boost} --with-libraries=system
     BUILD_COMMAND <SOURCE_DIR>/b2 install
