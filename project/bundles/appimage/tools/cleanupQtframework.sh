@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to cleanup installation of KF5 framework from the host system.
+# Script to cleanup installation of Qt framework from the host system.
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -20,8 +20,8 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 ChecksRunAsRoot
 
 rm -vfr /usr/include/Qt*
-rm -vfr /usr/lib/libQt5*
-rm -vfr /usr/lib/cmake/Qt5*
+rm -vfr /usr/lib/libQt*
+rm -vfr /usr/lib/cmake/Qt*
 rm -vfr /usr/libexec/Qt*
 rm -vfr /usr/qml
 rm -vfr /usr/resources/qt*

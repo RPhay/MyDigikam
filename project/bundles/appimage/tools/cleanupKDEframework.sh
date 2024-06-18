@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to cleanup installation of KF5 framework from the host system.
+# Script to cleanup installation of KDE framework from the host system.
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -19,15 +19,17 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 . ../common.sh
 ChecksRunAsRoot
 
-rm -vfr /usr/lib64/libKF5*
+rm -vfr /usr/lib64/libKF*
 rm -vfr /usr/share/ECM
-rm -vfr /usr/include/KF5
-rm -vfr /usr/lib64/cmake/KF5*
+rm -vfr /usr/include/KF*
+rm -vfr /usr/lib64/cmake/KF*
 rm -vfr /usr/include/astro
 rm -vfr /usr/include/marble
 rm -vfr /usr/share/marble
 rm -vfr /usr/share/k*5
-rm -vfr /usr/plugins/kf5
+rm -vfr /usr/plugins/k*5
+rm -vfr /usr/share/k*6
+rm -vfr /usr/plugins/k*6
 rm -vfr /usr/plugins/imageformats/kimg*
 rm -vfr /usr/plugins/kauth
 rm -vfr /usr/plugins/plasma
