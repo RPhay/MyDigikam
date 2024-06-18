@@ -20,7 +20,7 @@ set(Heif_Conf -DBUILD_SHARED_LIBS=ON
               -DWITH_SvtEnc_PLUGIN=OFF
               -DWITH_DAV1D=OFF
               -DWITH_EXAMPLES=OFF
-              -dWITH_GDK_PIXBUF=OFF
+              -DWITH_GDK_PIXBUF=OFF
 )
 
 JoinListAsString("${Heif_Conf}" " " BASH_OPTIONS)
