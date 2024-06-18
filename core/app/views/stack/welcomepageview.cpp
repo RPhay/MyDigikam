@@ -51,10 +51,6 @@ WelcomePageViewPage::WelcomePageViewPage(QObject* const parent)
 {
 }
 
-WelcomePageViewPage::~WelcomePageViewPage()
-{
-}
-
 bool WelcomePageViewPage::acceptNavigationRequest(const QUrl& url, QWebEnginePage::NavigationType type, bool)
 {
     if (type == QWebEnginePage::NavigationTypeLinkClicked)
@@ -131,7 +127,7 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 650 user-reports closed on bugzilla.");
+    newFeatures << i18n("More than 1500 user-reports closed on bugzilla.");
     newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
     newFeatures << i18n("Windows Installer is now compiled natively with Microsoft VCPKG tool-chain and use Qt6 and KF6 frameworks.");
     newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
@@ -163,21 +159,25 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Queue Manager: add new tool to assign pick label automatically by parsing image quality.");
     newFeatures << i18n("Queue Manager: add new tool to assign rating, pick, and color labels in batch.");
     newFeatures << i18n("Queue Manager: add new tool to assign titles and captions in batch.");
-    newFeatures << i18n("Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
-    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and improve stability of plugin.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2023-11-21.");
+    newFeatures << i18n("Queue Manager: add new tool to run G'MIC filters in batch.");
+    newFeatures << i18n("Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
+    newFeatures << i18n("Add new maintenance and Queue manager tools to assign tag automatically to images using deep learning neural network engine."
+                        "<a href=\"https://community.kde.org/GSoc/2023/StatusReports/QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam\">See this GoSC-2023 report for details.</a>");
+    newFeatures << i18n("Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and improve stability of plugin.");
+    newFeatures << i18n("Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2024-06-16.");
     newFeatures << i18n("New RAW features: "
-                        "Phase One/Leaf IIQ-S v2 support "
-                        "Canon CR3 filmrolls/RawBurst "
-                        "Canon CRM (movie) files "
-                        "Tiled bit-packed (and 16-bit unpacked) DNGs "
-                        "(non-standard) Deflate-compressed integer DNG files are allowed "
-                        "Canon EOS R3, R7 and R10 "
-                        "Fujifilm X-H2S, X-T30 II "
-                        "OM System OM-1 "
-                        "Leica M11 "
-                        "Sony A7-IV (ILCE-7M4) "
-                        "DJI Mavic 3");
+                        "Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+                        "Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+                        "Hasselblad X2D-100c."
+                        "Leica Q3, M11 Monochrom."
+                        "Nikon Z30, Z8."
+                        "OM Digital OM-5."
+                        "Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6."
+                        "Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+                        "Multiple DJI and Skydio drones."
+                        "Multiple smartphones with DNG format recorded."
+                       );
 
     // Add new features here...
 

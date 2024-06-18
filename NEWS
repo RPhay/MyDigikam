@@ -13,7 +13,7 @@ RawEngine: Update internal libraw to last 20240616 upstream. New supported camer
            Nikon Z30, Z8.
            OM Digital OM-5.
            Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.
-           Sony A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.
+           Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.
            Multiple DJI and Skydio drones.
            Multiple smartphones with DNG format recorded.
 Video:     Update internal QtAVPlayer to last 20240616 upstream (Qt5 only).
@@ -22,7 +22,7 @@ DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
 Bundles:   Update Exiftool to last 12.87.
 Bundles:   AppImage and Windows installer are now based on last Exiv2 0.28.2.
 Bundles:   AppImage and Windows installer are now based on Qt framework 6.7.0 and KDE framework 6.2.0.
-Bundles:   G'Mic-Qt Image Editor tool updated to last version 3.3.7.
+Bundles:   G'Mic-Qt Image Editor tool updated to last version 3.4.0.
 Bundles:   New Batch Queue Manager tool to apply G'MIC filters over images.
 
 *****************************************************************************************************

@@ -52,9 +52,11 @@ class WelcomePageViewPage : public QWebEnginePage
 public:
 
     explicit WelcomePageViewPage(QObject* const parent = nullptr);
-    ~WelcomePageViewPage()                                                          override;
+    ~WelcomePageViewPage()                                          override = default;
 
-    bool acceptNavigationRequest(const QUrl&, QWebEnginePage::NavigationType, bool) override;
+    bool acceptNavigationRequest(const QUrl&,
+                                 QWebEnginePage::NavigationType,
+                                 bool)                              override;
 
 Q_SIGNALS:
 
