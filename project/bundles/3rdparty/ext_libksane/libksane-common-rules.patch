@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 1706c0d..746696d 100644
+index d5c9a73..290f3e3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -56,13 +56,13 @@ find_package(KF${KF_MAJOR_VERSION}I18n ${KF5_VERSION} REQUIRED)
+@@ -77,13 +77,13 @@ find_package(KF${KF_MAJOR_VERSION}I18n ${KF5_VERSION} REQUIRED)
  
  if (NOT WIN32)
      find_package(KF${KF_MAJOR_VERSION}WidgetsAddons ${KF5_VERSION} REQUIRED)
@@ -20,25 +20,12 @@ index 1706c0d..746696d 100644
 +#    )
  
      # Check if sane API is available.
-     find_package(KSaneCore "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}" REQUIRED)
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index cc00d4e..f827d60 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -51,7 +51,7 @@ target_link_libraries(KF5Sane
-     PRIVATE
-         KF${KF_MAJOR_VERSION}::I18n
-         KF${KF_MAJOR_VERSION}::WidgetsAddons
--        KF${KF_MAJOR_VERSION}::TextWidgets
-+#        KF${KF_MAJOR_VERSION}::TextWidgets
-         KSane::Core
- )
- 
+     find_package(${KSANECORE_NAME} "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}" REQUIRED)
 diff --git a/src/widgets/labeledslider.cpp b/src/widgets/labeledslider.cpp
-index 9f71f90..486dfb4 100644
+index dc5a39b..312079d 100644
 --- a/src/widgets/labeledslider.cpp
 +++ b/src/widgets/labeledslider.cpp
-@@ -10,10 +10,12 @@
+@@ -10,10 +10,11 @@
  
  #include <QLabel>
  #include <QSlider>
@@ -47,12 +34,11 @@ index 9f71f90..486dfb4 100644
  // KDE includes
  
 -#include <KPluralHandlingSpinBox>
-+//#include <KPluralHandlingSpinBox>
 +#include <klocalizedstring.h>
- #include <Option>
+ #include <KSaneCore/Option>
  
  namespace KSaneIface
-@@ -90,7 +92,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
+@@ -90,7 +91,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
      m_slider->setMaximum(maxValue);
      m_slider->setSingleStep(m_step);
  
@@ -61,7 +47,7 @@ index 9f71f90..486dfb4 100644
      m_spinb->setMinimum(minValue);
      m_spinb->setMaximum(maxValue);
      m_slider->setSingleStep(m_step);
-@@ -114,7 +116,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
+@@ -114,7 +115,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
  
  void LabeledSlider::setSuffix(const KLocalizedString &text)
  {
