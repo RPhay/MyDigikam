@@ -572,4 +572,43 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
     return md5.result().toHex();
 }
 
+QByteArray DImg::createUniqueHashV3(const QString& filePath)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
+    {
+        return QByteArray();
+    }
+
+    QCryptographicHash md5(QCryptographicHash::Md5);
+
+    // Specified size: 100 kB; but limit to file size
+
+    const qint64 specifiedSize = 100 * 1024; // 100 kB
+    const qint64 size          = qMin(file.size(), specifiedSize);
+    const qint64 maxs          = file.size() - size;
+    const qint64 step          = maxs / 3;
+
+    if (size)
+    {
+        QScopedArrayPointer<char> databuf(new char[size]);
+        int read;
+
+        for (int i = 0 ; i < 4 ; ++i)
+        {
+            file.seek(qMin(step * i, maxs));
+
+            if ((read = file.read(databuf.data(), size)) > 0)
+            {
+                md5.addData(databuf.data(), read);
+            }
+        }
+    }
+
+    file.close();
+
+    return md5.result().toHex();
+}
+
 } // namespace Digikam

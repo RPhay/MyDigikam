@@ -762,6 +762,7 @@ private:
 
     static QByteArray createUniqueHash(const QString& filePath, const QByteArray& ba);
     static QByteArray createUniqueHashV2(const QString& filePath);
+    static QByteArray createUniqueHashV3(const QString& filePath);
 
     void bitBlt(const uchar* const src, uchar* const dest,
                 int sx, int sy, int w, int h, int dx, int dy,
