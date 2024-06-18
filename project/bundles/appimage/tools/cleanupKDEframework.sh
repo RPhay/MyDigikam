@@ -22,7 +22,7 @@ ChecksRunAsRoot
 rm -vfr /usr/lib64/libKF*
 rm -vfr /usr/share/ECM
 rm -vfr /usr/include/KF*
-rm -vfr /usr/lib64/cmake/KF*
+rm -vfr /usr/lib/x86_64-linux-gnu/cmake/KF*
 rm -vfr /usr/include/astro
 rm -vfr /usr/include/marble
 rm -vfr /usr/share/marble
