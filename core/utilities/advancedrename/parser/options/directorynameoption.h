@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIRECTORY_NAME_OPTION_H
-#define DIGIKAM_DIRECTORY_NAME_OPTION_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIRECTORY_NAME_OPTION_H

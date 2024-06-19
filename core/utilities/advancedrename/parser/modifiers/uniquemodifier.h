@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNIQUE_MODIFIER_H
-#define DIGIKAM_UNIQUE_MODIFIER_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UNIQUE_MODIFIER_H

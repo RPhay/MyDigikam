@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_RENAME_WIDGET_H
-#define DIGIKAM_ADVANCED_RENAME_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -171,5 +170,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::AdvancedRenameWidget::ControlWidgets)
-
-#endif // DIGIKAM_ADVANCED_RENAME_WIDGET_H

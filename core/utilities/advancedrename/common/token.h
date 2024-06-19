@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TOKEN_H
-#define DIGIKAM_TOKEN_H
+#pragma once
 
 // Qt includes
 
@@ -110,5 +109,3 @@ private:
 typedef QList<Token*> TokenList;
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TOKEN_H

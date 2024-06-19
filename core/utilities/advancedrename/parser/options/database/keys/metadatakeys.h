@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_KEYS_H
-#define DIGIKAM_METADATA_KEYS_H
+#pragma once
 
 // Local includes
 
@@ -43,5 +42,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_METADATA_KEYS_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_OPTION_H
-#define DIGIKAM_METADATA_OPTION_H
+#pragma once
 
 // Qt includes
 
@@ -94,5 +93,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_METADATA_OPTION_H

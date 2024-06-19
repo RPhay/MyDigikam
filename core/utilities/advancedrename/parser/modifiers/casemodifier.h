@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CASE_MODIFIER_H
-#define DIGIKAM_CASE_MODIFIER_H
+#pragma once
 
 // Local includes
 
@@ -44,5 +43,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CASE_MODIFIER_H

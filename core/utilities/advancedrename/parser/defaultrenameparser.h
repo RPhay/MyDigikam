@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DEFAULT_RENAME_PARSER_H
-#define DIGIKAM_DEFAULT_RENAME_PARSER_H
+#pragma once
 
 // Local includes
 
@@ -41,6 +40,3 @@ private:
 };
 
 } // namespace Digikam
-
-
-#endif // DIGIKAM_DEFAULT_RENAME_PARSER_H

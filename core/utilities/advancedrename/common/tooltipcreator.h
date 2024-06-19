@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TOOL_TIPCREATOR_H
-#define DIGIKAM_TOOL_TIPCREATOR_H
+#pragma once
 
 // Qt includes
 
@@ -64,9 +63,6 @@ private:
     TooltipCreator()                                 = default;
     TooltipCreator(const TooltipCreator&)            = delete;
     TooltipCreator& operator=(const TooltipCreator&) = delete;
-
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TOOL_TIPCREATOR_H

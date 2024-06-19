@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATE_OPTION_H
-#define DIGIKAM_DATE_OPTION_H
+#pragma once
 
 // Qt includes
 
@@ -152,5 +151,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATE_OPTION_H

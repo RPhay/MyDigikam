@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TOOL_TIP_DIALOG_H
-#define DIGIKAM_TOOL_TIP_DIALOG_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TOOL_TIP_DIALOG_H

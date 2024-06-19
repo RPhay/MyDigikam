@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MODIFIER_H
-#define DIGIKAM_MODIFIER_H
+#pragma once
 
 // Local includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MODIFIER_H

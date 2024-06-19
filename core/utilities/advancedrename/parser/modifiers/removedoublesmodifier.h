@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_REMOVE_DOUBLES_MODIFIER_H
-#define DIGIKAM_REMOVE_DOUBLES_MODIFIER_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_REMOVE_DOUBLES_MODIFIER_H

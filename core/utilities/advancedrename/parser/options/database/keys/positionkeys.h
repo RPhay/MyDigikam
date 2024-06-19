@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_POSITION_KEYS_H
-#define DIGIKAM_POSITION_KEYS_H
+#pragma once
 
 // Local includes
 
@@ -43,5 +42,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_POSITION_KEYS_H

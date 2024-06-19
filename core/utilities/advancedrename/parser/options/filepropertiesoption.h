@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_PROPERTIES_OPTION_H
-#define DIGIKAM_FILE_PROPERTIES_OPTION_H
+#pragma once
 
 // Qt includes
 
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILE_PROPERTIES_OPTION_H

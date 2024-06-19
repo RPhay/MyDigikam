@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PARSER_H
-#define DIGIKAM_PARSER_H
+#pragma once
 
 // Qt includes
 
@@ -92,5 +91,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PARSER_H

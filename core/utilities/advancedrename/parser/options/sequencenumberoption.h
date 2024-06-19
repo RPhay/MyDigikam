@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEQUENCE_NUMBER_OPTION_H
-#define DIGIKAM_SEQUENCE_NUMBER_OPTION_H
+#pragma once
 
 // Local includes
 
@@ -78,5 +77,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SEQUENCE_NUMBER_OPTION_H

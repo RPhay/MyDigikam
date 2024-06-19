@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_KEYS_COLLECTION_H
-#define DIGIKAM_DB_KEYS_COLLECTION_H
+#pragma once
 
 // Qt includes
 
@@ -104,5 +103,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_KEYS_COLLECTION_H

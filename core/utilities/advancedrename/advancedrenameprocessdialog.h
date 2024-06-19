@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_RENAME_PROCESS_DIALOG_H
-#define DIGIKAM_ADVANCED_RENAME_PROCESS_DIALOG_H
+#pragma once
 
 // Local includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ADVANCED_RENAME_PROCESS_DIALOG_H

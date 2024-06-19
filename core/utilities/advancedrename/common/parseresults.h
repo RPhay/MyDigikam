@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PARSE_RESULTS_H
-#define DIGIKAM_PARSE_RESULTS_H
+#pragma once
 
 // Qt includes
 
@@ -78,5 +77,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PARSE_RESULTS_H

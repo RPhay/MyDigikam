@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_RENAME_INPUT_H
-#define DIGIKAM_ADVANCED_RENAME_INPUT_H
+#pragma once
 
 // Qt includes
 
@@ -151,5 +150,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ADVANCED_RENAME_INPUT_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RULE_H
-#define DIGIKAM_RULE_H
+#pragma once
 
 // Local includes
 
@@ -181,5 +180,3 @@ private:
 typedef QList<Rule*> RulesList;
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RULE_H
