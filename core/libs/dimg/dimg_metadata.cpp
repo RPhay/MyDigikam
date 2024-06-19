@@ -583,23 +583,26 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
 
     QCryptographicHash md5(QCryptographicHash::Md5);
 
-    // Specified size: 100 kB; but limit to file size
+    // Specified size: 100 kB for the first block, all
+    // further 5 blocks with 25 kB; but limit to file size
 
-    const qint64 specifiedSize = 100 * 1024; // 100 kB
+    const qint64 specifiedSize = 100 * 1024;       // 100 kB
     const qint64 size          = qMin(file.size(), specifiedSize);
-    const qint64 maxs          = file.size() - size;
-    const qint64 step          = maxs / 3;
+    const qint64 maxs          = file.size() - (size / 4);
+    const qint64 step          = maxs / 6;
 
     if (size)
     {
         QScopedArrayPointer<char> databuf(new char[size]);
         int read;
 
-        for (int i = 0 ; i < 4 ; ++i)
+        for (int i = 0 ; i < 7 ; ++i)
         {
             file.seek(qMin(step * i, maxs));
 
-            if ((read = file.read(databuf.data(), size)) > 0)
+            qint64 rsize = (i == 0) ? size : size / 4;
+
+            if ((read = file.read(databuf.data(), rsize)) > 0)
             {
                 md5.addData(databuf.data(), read);
             }
