@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 01:47+0000\n"
+"POT-Creation-Date: 2024-06-19 01:43+0000\n"
 "PO-Revision-Date: 2024-03-29 21:26+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3300,52 +3300,52 @@ msgstr "Odstrániť"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 vybraných položiek"
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:130
 #, kde-format
-msgid "More than 650 user-reports closed on bugzilla."
+msgid "More than 1500 user-reports closed on bugzilla."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, fuzzy, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3353,7 +3353,7 @@ msgstr ""
 "<p>Túto voľbu zapnite, na prispôsobenie názvov súborov obrázkov počas "
 "sťahovania."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -3370,110 +3370,110 @@ msgstr ""
 "zatiaľ experimentálna a v predvolenom nastavení je vypnutá. Zapnite toto "
 "nastavenie iba vtedy, ak viete, čo robíte."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, fuzzy, kde-format
 #| msgid "Return items whose file name contains"
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "Vrátiť položky, ktorých meno súboru obsahuje"
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, fuzzy, kde-format
 #| msgid "Return items without text in:"
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Vrátiť položky bez textu v:"
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3481,59 +3481,80 @@ msgid ""
 "images using deep learning model</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, fuzzy, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, fuzzy, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, fuzzy, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
 
+#: core/app/views/stack/welcomepageview.cpp:162
+#, fuzzy, kde-format
+msgid "Queue Manager: add new tool to run G'MIC filters in batch."
+msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+
+#: core/app/views/stack/welcomepageview.cpp:163
+#, kde-format
+msgid ""
+"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid ""
+"Add new maintenance and Queue manager tools to assign tag automatically to "
+"images using deep learning neural network engine.<a href=\"https://community."
+"kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">See this GoSC-2023 report for details.</a>"
+msgstr ""
+
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid ""
-"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
-"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
+"improve stability of plugin."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
-msgid ""
-"Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-"improve stability of plugin."
+msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
-"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
-"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
-"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
-"(ILCE-7M4) DJI Mavic 3"
+"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
+"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
+"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
+"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:184

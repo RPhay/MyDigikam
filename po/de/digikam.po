@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 01:47+0000\n"
+"POT-Creation-Date: 2024-06-19 01:43+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -3283,30 +3283,30 @@ msgstr "Löschen"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 Einträge ausgewählt"
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:130
 #, fuzzy, kde-format
 #| msgid "More than 400 user-reports closed on bugzilla."
-msgid "More than 650 user-reports closed on bugzilla."
+msgid "More than 1500 user-reports closed on bugzilla."
 msgstr "Mehr als 400 Meldungen von Anwendern wurden in Bugzilla geschlossen."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr "Code nach Qt6 portiert (noch immer mit der Qt5-API kompatibel)."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "Überall Exporteinstellungen für JPEG-XL, WEBP und AVIF hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3314,13 +3314,13 @@ msgstr ""
 "Konvertierung ins verlustfreie JPEG-XL, WEBP und AVIF während des Imports "
 "von einer Kamera hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Konverter für JPEG-XL, WEBP und AVIF in die Stapelverarbeitung hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, fuzzy, kde-format
 #| msgid ""
 #| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
@@ -3332,13 +3332,13 @@ msgstr ""
 "Unterstützung für JPEG-XL, HEIF, WEBP und AVIF als verlustfreies Format für "
 "die Speicherung von versionierten Bildern im Editor."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Benutzbarkeit: Hamburger-Menü anzeigen, wenn Hauptmenü ausgeblendet ist."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3346,7 +3346,7 @@ msgstr ""
 "Metadaten: Neue Option zum Schreiben von Metadaten mittels des ExifTool-"
 "Backends hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3355,7 +3355,7 @@ msgstr ""
 "Metadaten: Das Optionale Schreiben von Metadaten in DNG- und RAW-Dateien "
 "wird jetzt immer mit dem ExifTool-Backend durchgeführt."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3363,7 +3363,7 @@ msgstr ""
 "Metadaten: Layout des Metadateneditors optimiert, um die "
 "Benutzerfreundlichkeit zu verbessern."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3372,7 +3372,7 @@ msgstr ""
 "Metadaten: Hinzufügen neuer Optionen zum Speichern und Laden von "
 "Konfigurationsprofilen in den erweiterten Einstellungen für Metadaten."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add increment file counter to sequence numbering with option [c] or [c,"
@@ -3384,7 +3384,7 @@ msgstr ""
 "Fortlaufende Nummer für die Massenumbenennung hinzugefügt, Option [c] oder "
 "[c,Schritt]."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add increment file counter to sequence numbering with option [c] or [c,"
@@ -3394,7 +3394,7 @@ msgstr ""
 "Fortlaufende Nummer für die Massenumbenennung hinzugefügt, Option [c] oder "
 "[c,Schritt]."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add configurable first character for the unique modifier with {unique:n,"
@@ -3406,32 +3406,32 @@ msgstr ""
 "Der erste Buchstabe eines Eindeutigkeits-Suffixes kann jetzt angepasst "
 "werden {unique:n,c}."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, fuzzy, kde-format
 #| msgid "Add search for items by number of face regions."
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "Suche nach Anzahl von Gesichtsregionen hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, fuzzy, kde-format
 #| msgid "Add search for items without face regions."
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Suche nach Bildern ohne Gesichtsregionen hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 "Sammlungen: Unterstützung für plattformübergreifende Netzwerkpfade "
 "hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "Datenbank: Unterstützung für SQLite WAL (Write-Ahead Logging) hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3440,7 +3440,7 @@ msgstr ""
 "Unterstützung für Rechtschreibkorrektur in Beschriftungen mittels der KF5::"
 "Sonnet-Komponente hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, fuzzy, kde-format
 #| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgid ""
@@ -3450,7 +3450,7 @@ msgstr ""
 "Einrichtungsdialog für Rechtschreibkorrektur unter Einrichten/Verschiedenes "
 "in digiKam und Showfoto hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3458,7 +3458,7 @@ msgstr ""
 "Unterstützung für Online-Übersetzungen von Texteingabefeldern für "
 "alternative Sprachen hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, fuzzy, kde-format
 #| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgid ""
@@ -3467,7 +3467,7 @@ msgstr ""
 "Einrichtungsdialog für Lokalisierung unter Einrichten/Verschiedenes in "
 "digiKam und Showfoto hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add settings to list prefered alternative/translated languages in text "
@@ -3479,7 +3479,7 @@ msgstr ""
 "Auflistung von bevorzugten alternativen/übersetzten Sprachen in "
 "Texteingabefeldern hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3487,17 +3487,17 @@ msgstr ""
 "Es kann überall die globale oder angepasste Sortierung nach Bildqualität "
 "verwendet werden."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
@@ -3512,7 +3512,7 @@ msgstr ""
 "\">Ästhetische Klassifizierung von Bildern mit einem Deep-Learning-Modell</"
 "a> hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3522,7 +3522,7 @@ msgstr ""
 "GSoC/2022/StatusReports/QuocHungTran\">Texterkennung auf gescannten Bildern</"
 "a> hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add new tool to assign pick label automatically by parsing image quality."
@@ -3533,7 +3533,7 @@ msgstr ""
 "Neues Werkzeug zum Zuweisen von Auswahlmarkierungen auf Basis der "
 "Bildqualität hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgid ""
@@ -3543,7 +3543,7 @@ msgstr ""
 "Neues Werkzeug zur Zuweisung von Bewertung, Auswahl- und Farbmarkierungen in "
 "der Stapelverarbeitung hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, fuzzy, kde-format
 #| msgid "Add new tool to assign titles and captions in batch."
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
@@ -3551,29 +3551,52 @@ msgstr ""
 "Neues Werkzeug zur Zuweisung von Titeln und Beschriftungen in der "
 "Stapelverarbeitung hinzugefügt."
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:162
+#, fuzzy, kde-format
+#| msgid "Add new tool to assign titles and captions in batch."
+msgid "Queue Manager: add new tool to run G'MIC filters in batch."
+msgstr ""
+"Neues Werkzeug zur Zuweisung von Titeln und Beschriftungen in der "
+"Stapelverarbeitung hinzugefügt."
+
+#: core/app/views/stack/welcomepageview.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 #| "from DocBook to Sphinx/ReStructuredText framework."
 msgid ""
-"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
+"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 "<a href=\"https://docs.digikam.org/de/index.html\">Handbuch umgeschrieben</"
 "a> von DocBook nach Sphinx/ReStructuredText."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+"Add new maintenance and Queue manager tools to assign tag automatically to "
+"images using deep learning neural network engine.<a href=\"https://community."
+"kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">See this GoSC-2023 report for details.</a>"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid ""
+"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
+#, kde-format
+msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 "Interne RAW-Verarbeitung auf die neueste stabile Version Libraw 0.21.1 "
 "aktualisiert."
@@ -3581,11 +3604,12 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
-"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
-"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
-"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
-"(ILCE-7M4) DJI Mavic 3"
+"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
+"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
+"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
+"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:184

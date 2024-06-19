@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 01:47+0000\n"
+"POT-Creation-Date: 2024-06-19 01:43+0000\n"
 "PO-Revision-Date: 2024-06-04 14:13+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3296,17 +3296,18 @@ msgstr "Изтриване"
 msgid "%1/%2 items selected"
 msgstr "Маркирани са %1/%2 елемента"
 
-#: core/app/views/stack/welcomepageview.cpp:134
-#, kde-format
-msgid "More than 650 user-reports closed on bugzilla."
+#: core/app/views/stack/welcomepageview.cpp:130
+#, fuzzy, kde-format
+#| msgid "More than 650 user-reports closed on bugzilla."
+msgid "More than 1500 user-reports closed on bugzilla."
 msgstr "Повече от 650 потребителски доклада са завършени в bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr "Прехвърляне на кода към Qt6 (кодът все още е съвместим с API на Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3315,12 +3316,12 @@ msgstr ""
 "Инсталаторът на Windows вече се компилира естествено с набора от инструменти "
 "на Microsoft VCPKG и използва  Qt6 и KF6 платформи."
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "Добавяне на настройки за експорт на JPEG-XL, WEBP и AVIF навсякъде."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3328,13 +3329,13 @@ msgstr ""
 "Добавяне на конвертиране в JPEG-XL, WEBP и AVIF без загуби при импортиране "
 "от фотоапарат."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Добавяне на конвертори JPEG-XL; WEBP и AVIF в мениджъра на пакетна обработка."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3344,14 +3345,14 @@ msgstr ""
 "на изображения без загуби за съхраняване на версията на изображенията в "
 "редактора."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Използваемост: Добавяне на меню бутон в лентата с инструменти, ако главното "
 "меню е скрито."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3359,7 +3360,7 @@ msgstr ""
 "Метаданни: Добавяне на нова опция за записване на метаданни към файловете с "
 "помощта на ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3368,7 +3369,7 @@ msgstr ""
 "Метаданни: Операциите по избор за запис на метаданни към DNG и RAW файлове "
 "вече са делегирани на бекенда ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3376,7 +3377,7 @@ msgstr ""
 "Метаданни: Оптимизиране на оформлението на приставката за редактиране на "
 "метаданни за по-добра използваемост."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3385,7 +3386,7 @@ msgstr ""
 "Метаданни: добавяне на нови опции за запазване и зареждане на "
 "конфигурационни профили в панела за разширени настройки на метаданни."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3394,14 +3395,14 @@ msgstr ""
 "Разширено преименуване: Добавяне на брояч на файловете с номерация на "
 "последователностите от с опция [c] или [c,step]."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "Разширено преименуване: Добавяне на номерация на последователности с "
 "произволен текст с опция [r]."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3410,30 +3411,30 @@ msgstr ""
 "Разширено преименуване: Добавяне на конфигурируем първи символ за уникалния "
 "модификатор с {unique:n,c}."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 "Разширено търсене: Добавяне на търсене на елементи по броя на областите с "
 "лица."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Разширено търсене: Добавяне на търсене на елементи без области с лица."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr "Колекции: Добавяне на поддръжка за междуплатформени мрежови пътища."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "База данни: Добавяне на поддръжка за режим SQLite WAL (Write-Ahead-Logging)."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3442,7 +3443,7 @@ msgstr ""
 "Добавяне на поддръжка на проверка на правописа за текста на надписа чрез "
 "компонента на KF5::Sonnet."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3451,7 +3452,7 @@ msgstr ""
 "Добавяне на панел за конфигуриране на проверката на правописа в Настройки/"
 "Други за digiKam и Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3459,7 +3460,7 @@ msgstr ""
 "Добавяне на поддръжка на онлайн преводи в уиджета за текстов редактор на "
 "алтернативни езици."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
@@ -3467,7 +3468,7 @@ msgstr ""
 "Добавяне на панел за локализиране на конфигурацията в Настройки/Други за "
 "digiKam и Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3476,7 +3477,7 @@ msgstr ""
 "Добавяне на настройки за списък с предпочитани алтернативни/преведени езици "
 "в уиджета за редактиране на текст."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3484,21 +3485,21 @@ msgstr ""
 "Позволяване навсякъде да се използват глобални или персонализирани настройки "
 "за сортиране на качеството на изображенията."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Добавяне на настройки изглед икони, за да персонализирате видимостта на "
 "етикетите върху миниатюрите."
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "Добавяне на поддръжка за изображения float16 (half float) в програмата за "
 "зареждане на TIFF."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3509,7 +3510,7 @@ msgstr ""
 "PhuocKhanhLe\">Естетическо откриване за класифициране на изображения с "
 "помощта на модел за дълбоко обучение</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3519,7 +3520,7 @@ msgstr ""
 "StatusReports/QuocHungTran\">за извършване на разпознаване на текст от "
 "сканиран документ</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3528,7 +3529,7 @@ msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за автоматично присвояване на "
 "етикети за избиране според качеството на изображението"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3537,34 +3538,64 @@ msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за пакетно задаване на етикети "
 "за оценка, избор и цвят."
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за пакетно присвояване на "
 "заглавия и надписи."
 
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
+#: core/app/views/stack/welcomepageview.cpp:162
+#, fuzzy, kde-format
+#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+msgid "Queue Manager: add new tool to run G'MIC filters in batch."
+msgstr ""
+"Пакетна обработка: Добавяне на нов инструмент за пакетно присвояване на "
+"заглавия и надписи."
+
+#: core/app/views/stack/welcomepageview.cpp:163
+#, fuzzy, kde-format
+#| msgid ""
+#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
+#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgid ""
-"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
+"Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 "Документация: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
-"Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+"Add new maintenance and Queue manager tools to assign tag automatically to "
+"images using deep learning neural network engine.<a href=\"https://community."
+"kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">See this GoSC-2023 report for details.</a>"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, fuzzy, kde-format
+#| msgid ""
+#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+#| "improve stability of plugin."
+msgid ""
+"Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 "Актуализиране на инструмента G'MIC-Qt до последна версия 3.2.2 и "
 "финализиране на порта за MacOS и подобряване на стабилността на приставката."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:168
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 "Актуализиране на вътрешния RAW енджин до последната стабилна версия Libraw "
 "snapshot 2023-11-21."
@@ -3572,17 +3603,13 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
-"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
-"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
-"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
-"(ILCE-7M4) DJI Mavic 3"
+"New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
+"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
+"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
+"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
-"Нови функции на RAW: Поддръжка на Phase One/Leaf IIQ-S v2 Canon CR3 "
-"filmrolls/RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit "
-"unpacked) DNGs (non-standard) Deflate-compressed integer DNG files are "
-"allowed Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 "
-"Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
@@ -67774,6 +67801,19 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgid ""
+#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
+#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
+#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
+#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
+#~ msgstr ""
+#~ "Нови функции на RAW: Поддръжка на Phase One/Leaf IIQ-S v2 Canon CR3 "
+#~ "filmrolls/RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit "
+#~ "unpacked) DNGs (non-standard) Deflate-compressed integer DNG files are "
+#~ "allowed Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 "
+#~ "Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #~ msgctxt "@title:menu open with desktop application"
 #~ msgid "Open With"
