@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_PRIVATE_H
-#define SHOW_FOTO_PRIVATE_H
+#pragma once
 
 #include "showfoto.h"
 
@@ -145,5 +144,3 @@ public:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_PRIVATE_H

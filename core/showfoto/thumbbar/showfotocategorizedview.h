@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_CATEGORIZED_VIEW_H
-#define SHOW_FOTO_CATEGORIZED_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -202,5 +201,3 @@ private:
 };
 
 } // namespace Showfoto
-
-#endif // SHOW_FOTO_CATEGORIZED_VIEW_H

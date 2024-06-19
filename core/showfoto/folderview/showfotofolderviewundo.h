@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_UNDO_H
-#define SHOWFOTO_FOLDER_VIEW_UNDO_H
+#pragma once
 
 // Qt includes
 
@@ -48,5 +47,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_FOLDER_VIEW_UNDO_H

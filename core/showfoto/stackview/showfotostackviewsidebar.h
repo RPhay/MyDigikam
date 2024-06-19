@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_STACK_VIEW_SIDEBAR_H
-#define SHOWFOTO_STACK_VIEW_SIDEBAR_H
+#pragma once
 
 // QT includes
 
@@ -95,5 +94,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_STACK_VIEW_SIDEBAR_H

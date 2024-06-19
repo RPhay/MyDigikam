@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_BOOKMARK_DLG_H
-#define SHOWFOTO_FOLDER_VIEW_BOOKMARK_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_FOLDER_VIEW_BOOKMARK_DLG_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_ITEM_VIEW_DELEGATE_H
-#define SHOW_FOTO_ITEM_VIEW_DELEGATE_H
+#pragma once
 
 // Local includes
 
@@ -131,5 +130,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_ITEM_VIEW_DELEGATE_H

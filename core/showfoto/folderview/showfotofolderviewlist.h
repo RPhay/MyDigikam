@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_LIST_H
-#define SHOWFOTO_FOLDER_VIEW_LIST_H
+#pragma once
 
 // QT includes
 
@@ -90,5 +89,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_FOLDER_VIEW_LIST_H

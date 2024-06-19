@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_SETUP_H
-#define SHOW_FOTO_SETUP_H
+#pragma once
 
 // Local includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_SETUP_H

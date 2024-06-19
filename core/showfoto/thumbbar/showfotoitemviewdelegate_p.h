@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H
-#define SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H
+#pragma once
 
 #include "showfotoitemviewdelegate.h"
 
@@ -93,5 +92,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H

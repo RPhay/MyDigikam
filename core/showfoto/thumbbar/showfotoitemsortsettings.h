@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_ITEM_SORT_SETTINGS_H
-#define SHOW_FOTO_ITEM_SORT_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -197,5 +196,3 @@ public:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_ITEM_SORT_SETTINGS_H

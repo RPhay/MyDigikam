@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_SETUP_TOOL_TIP_H
-#define SHOW_FOTO_SETUP_TOOL_TIP_H
+#pragma once
 
 // Qt includes
 
@@ -44,5 +43,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_SETUP_TOOL_TIP_H

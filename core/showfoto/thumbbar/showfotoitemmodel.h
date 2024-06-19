@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_ITEM_MODEL_H
-#define SHOW_FOTO_ITEM_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -303,5 +302,3 @@ private:
 } // namespace ShowFoto
 
 Q_DECLARE_METATYPE(ShowFoto::ShowfotoItemModel*)
-
-#endif // SHOW_FOTO_IMAGE_MODEL_H

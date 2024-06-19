@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_STACK_VIEW_TOOL_TIP_H
-#define SHOWFOTO_STACK_VIEW_TOOL_TIP_H
+#pragma once
 
 // Qt includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_STACK_VIEW_TOOL_TIP_H

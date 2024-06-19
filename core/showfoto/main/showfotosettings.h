@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_SETTINGS_H
-#define SHOW_FOTO_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -149,5 +148,3 @@ private:
 };
 
 } // namespace Showfoto
-
-#endif // SHOW_FOTO_SETTINGS_H

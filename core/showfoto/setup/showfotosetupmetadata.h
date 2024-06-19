@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_SETUP_METADATA_H
-#define SHOW_FOTO_SETUP_METADATA_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_SETUP_METADATA_H

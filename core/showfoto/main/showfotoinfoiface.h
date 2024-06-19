@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_INFO_IFACE_H
-#define SHOWFOTO_INFO_IFACE_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ public:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOWFOTO_INFO_IFACE_H

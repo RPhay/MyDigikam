@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_DELEGATE_P_H
-#define SHOW_FOTO_DELEGATE_P_H
+#pragma once
 
 #include "showfotodelegate.h"
 
@@ -111,5 +110,3 @@ public:
 };
 
 } // namespace Showfoto
-
-#endif // SHOW_FOTO_DELEGATE_P_H

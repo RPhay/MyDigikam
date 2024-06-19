@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_DRAG_DROP_HANDLER_H
-#define SHOW_FOTO_DRAG_DROP_HANDLER_H
+#pragma once
 
 // KDE includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace Showfoto
-
-#endif // SHOW_FOTO_DRAG_DROP_HANDLER_H

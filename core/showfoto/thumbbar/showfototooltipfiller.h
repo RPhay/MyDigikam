@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_TOOL_TIP_FILLER_H
-#define SHOW_FOTO_TOOL_TIP_FILLER_H
+#pragma once
 
 // Qt include
 
@@ -31,5 +30,3 @@ namespace ShowfotoToolTipFiller
 } // namespace ShowfotoToolTipFiller
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_TOOL_TIP_FILLER_H

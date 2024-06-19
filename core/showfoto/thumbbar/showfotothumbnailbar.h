@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_THUMB_NAIL_BAR_H
-#define SHOW_FOTO_THUMB_NAIL_BAR_H
+#pragma once
 
 // Local Includes
 
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_THUMB_NAIL_BAR_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_KINETIC_SCROLLER_H
-#define SHOW_FOTO_KINETIC_SCROLLER_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace ShowFoto
-
-#endif // SHOW_FOTO_KINETIC_SCROLLER_H
