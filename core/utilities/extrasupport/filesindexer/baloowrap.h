@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BALOO_WRAP_H
-#define DIGIKAM_BALOO_WRAP_H
+#pragma once
 
 // Qt includes
 
@@ -104,5 +103,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BALOO_WRAP_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_PIPELINE_PRIVATE_H
-#define DIGIKAM_FACE_PIPELINE_PRIVATE_H
+#pragma once
 
 #include "facepipeline.h"
 
@@ -108,9 +107,7 @@ Q_SIGNALS:
 
 private:
 
-    FacePipeline* const q;
+    FacePipeline* const q = nullptr;
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_PIPELINE_PRIVATE_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LIGHT_TABLE_WINDOW_H
-#define DIGIKAM_LIGHT_TABLE_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -147,7 +146,7 @@ private Q_SLOTS:
     void slotLeftSideBarActivateComments();
     void slotLeftSideBarActivateAssignedTags();
 
-// -- Internal setup methods implemented in lighttablewindow_config.cpp ----------------------------------------
+// --- Internal setup methods implemented in lighttablewindow_config.cpp
 
 public:
 
@@ -166,7 +165,7 @@ public Q_SLOTS:
     void slotThemeChanged();
     void slotApplicationSettingsChanged();
 
-// -- Internal setup methods implemented in lighttablewindow_setup.cpp ----------------------------------------
+// --- Internal setup methods implemented in lighttablewindow_setup.cpp
 
 private:
 
@@ -175,7 +174,7 @@ private:
     void setupUserArea();
     void setupStatusBar();
 
-// -- Extra tool methods implemented in lighttablewindow_tools.cpp ----------------------------------------
+// --- Extra tool methods implemented in lighttablewindow_tools.cpp
 
 private Q_SLOTS:
 
@@ -186,13 +185,13 @@ private Q_SLOTS:
     void slotRightSlideShowManualFromCurrent();
     void slotSlideShowLastItemUrl();
 
-// -- Import tools methods implemented in lighttablewindow_import.cpp -------------------------------------
+// --- Import tools methods implemented in lighttablewindow_import.cpp
 
 private Q_SLOTS:
 
     void slotImportedImagefromScanner(const QUrl& url);
 
-// -- Internal private container --------------------------------------------------------------------
+// --- Internal private container
 
 private:
 
@@ -203,5 +202,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LIGHT_TABLE_WINDOW_H

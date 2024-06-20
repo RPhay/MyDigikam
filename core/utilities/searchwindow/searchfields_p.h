@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_FIELDS_P_H
-#define DIGIKAM_SEARCH_FIELDS_P_H
+#pragma once
 
 #include "searchfields.h"
 
@@ -62,5 +61,3 @@
 #include "picklabelfilter.h"
 #include "applicationsettings.h"
 #include "itempropertiestab.h"
-
-#endif // DIGIKAM_SEARCH_FIELDS_P_H

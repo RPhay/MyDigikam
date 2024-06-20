@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_GROUP_H
-#define DIGIKAM_FACE_GROUP_H
+#pragma once
 
 // Qt includes
 
@@ -161,5 +160,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_GROUP_H

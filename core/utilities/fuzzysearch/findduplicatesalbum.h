@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FIND_DUPLICATES_ALBUM_H
-#define DIGIKAM_FIND_DUPLICATES_ALBUM_H
+#pragma once
 
 // Qt includes
 
@@ -31,7 +30,6 @@
 
 namespace Digikam
 {
-
 
 /*!
  * \brief The FindDuplicatesAlbum class
@@ -70,5 +68,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FIND_DUPLICATES_ALBUM_H

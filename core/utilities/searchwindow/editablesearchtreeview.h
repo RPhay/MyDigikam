@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITABLE_SEARCH_TREE_VIEW_H
-#define DIGIKAM_EDITABLE_SEARCH_TREE_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EDITABLE_SEARCH_TREE_VIEW_H

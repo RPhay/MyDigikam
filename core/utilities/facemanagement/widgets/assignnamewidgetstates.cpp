@@ -36,18 +36,18 @@ AssignNameWidgetStates::AssignNameWidgetStates(FaceItem* const item)
             this, SLOT(slotStateChanged()));
 }
 
-AssignNameWidgetStates::~AssignNameWidgetStates()
-{
-}
-
 void AssignNameWidgetStates::slotStateChanged()
 {
     FaceItem* const item = static_cast<FaceItem*>(parent());
 
     // Show resize handles etc. only in edit modes
 
-    item->setEditable(!((item->widget()->mode() == AssignNameWidget::IgnoredMode)  ||
-                        (item->widget()->mode() == AssignNameWidget::ConfirmedMode)));
+    item->setEditable(
+                      !(
+                        (item->widget()->mode() == AssignNameWidget::IgnoredMode)  ||
+                        (item->widget()->mode() == AssignNameWidget::ConfirmedMode)
+                       )
+                     );
 }
 
 } // namespace Digikam

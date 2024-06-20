@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_WRITER_H
-#define DIGIKAM_DATABASE_WRITER_H
+#pragma once
 
 // Local includes
 
@@ -31,7 +30,7 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 public:
 
     DatabaseWriter(FacePipeline::WriteMode wmode, FacePipeline::Private* const dd);
-    ~DatabaseWriter() override;
+    ~DatabaseWriter() override = default;
 
 public Q_SLOTS:
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_WRITER_H

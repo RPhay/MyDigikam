@@ -25,12 +25,8 @@ ScanStateFilter::ScanStateFilter(FacePipeline::FilterMode fmode, FacePipeline::P
     : d   (dd),
       mode(fmode)
 {
-    connect(this, SIGNAL(infosToDispatch()),
+    connect(this, SIGNAL(signalInfosToDispatch()),
             this, SLOT(dispatch()));
-}
-
-ScanStateFilter::~ScanStateFilter()
-{
 }
 
 FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
@@ -165,7 +161,7 @@ void ScanStateFilter::run()
                 toBeSkipped << itemsToSkip;
             }
 
-            Q_EMIT infosToDispatch();
+            Q_EMIT signalInfosToDispatch();
         }
     }
 }

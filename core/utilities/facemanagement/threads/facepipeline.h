@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_PIPELINE_H
-#define DIGIKAM_FACE_PIPELINE_H
+#pragma once
 
 // Local includes
 
@@ -244,5 +243,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_PIPELINE_H

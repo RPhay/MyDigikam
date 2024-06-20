@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_GROUP_H
-#define DIGIKAM_SEARCH_GROUP_H
+#pragma once
 
 // Qt includes
 
@@ -129,5 +128,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SEARCH_GROUP_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PARALLEL_PIPES_H
-#define DIGIKAM_PARALLEL_PIPES_H
+#pragma once
 
 // Local includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PARALLEL_PIPES_H

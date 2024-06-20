@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_VIEW_H
-#define DIGIKAM_SEARCH_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -198,5 +197,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SEARCH_VIEW_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_PAGE_H
-#define DIGIKAM_DATABASE_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_PAGE_H

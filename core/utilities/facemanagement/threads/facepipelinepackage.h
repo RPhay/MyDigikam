@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_PIPELINE_PACKAGE_H
-#define DIGIKAM_FACE_PIPELINE_PACKAGE_H
+#pragma once
 
 // Qt includes
 
@@ -178,5 +177,3 @@ public:
 Q_DECLARE_METATYPE(Digikam::FacePipelinePackage)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FacePipelineFaceTagsIface::Roles)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FacePipelinePackage::ProcessFlags)
-
-#endif // DIGIKAM_FACE_PIPELINE_PACKAGE_H

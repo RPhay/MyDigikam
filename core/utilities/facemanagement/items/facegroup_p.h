@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_GROUP_P_H
-#define DIGIKAM_FACE_GROUP_P_H
+#pragma once
 
 #include "facegroup.h"
 
@@ -95,5 +94,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_GROUP_P_H

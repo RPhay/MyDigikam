@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SCAN_STATE_FILTER_H
-#define DIGIKAM_SCAN_STATE_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -29,7 +28,7 @@ class Q_DECL_HIDDEN ScanStateFilter : public DynamicThread
 public:
 
     ScanStateFilter(FacePipeline::FilterMode fmode, FacePipeline::Private* const dd);
-    ~ScanStateFilter() override;
+    ~ScanStateFilter() override = default;
 
     void process(const QList<ItemInfo>& infos);
     void process(const ItemInfo& info);
@@ -48,7 +47,7 @@ protected Q_SLOTS:
 
 Q_SIGNALS:
 
-    void infosToDispatch();
+    void signalInfosToDispatch();
 
 protected:
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SCAN_STATE_FILTER_H

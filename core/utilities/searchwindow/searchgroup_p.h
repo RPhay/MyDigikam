@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_GROUP_P_H
-#define DIGIKAM_SEARCH_GROUP_P_H
+#pragma once
 
 #include "searchgroup.h"
 
@@ -54,5 +53,3 @@ public:
 };
 
 } // namepace Digikam
-
-#endif // DIGIKAM_SEARCH_GROUP_P_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FUZZY_SEARCH_VIEW_H
-#define DIGIKAM_FUZZY_SEARCH_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -128,5 +127,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FUZZY_SEARCH_VIEW_H

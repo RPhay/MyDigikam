@@ -29,10 +29,6 @@ DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode wmode, FacePipeline::Priv
 {
 }
 
-DatabaseWriter::~DatabaseWriter()
-{
-}
-
 void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if      (package->databaseFaces.isEmpty())

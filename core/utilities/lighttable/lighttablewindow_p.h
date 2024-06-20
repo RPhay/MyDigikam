@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LIGHT_TABLE_WINDOW_PRIVATE_H
-#define DIGIKAM_LIGHT_TABLE_WINDOW_PRIVATE_H
+#pragma once
 
 #include "lighttablewindow.h"
 
@@ -168,5 +167,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LIGHT_TABLE_WINDOW_PRIVATE_H

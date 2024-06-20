@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FUZZY_SEARCH_VIEW_P_H
-#define DIGIKAM_FUZZY_SEARCH_VIEW_P_H
+#pragma once
 
 #include "fuzzysearchview.h"
 
@@ -167,5 +166,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FUZZY_SEARCH_VIEW_P_H

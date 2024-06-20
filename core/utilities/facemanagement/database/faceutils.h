@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_UTILS_H
-#define DIGIKAM_FACE_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -139,5 +138,3 @@ private:
 };
 
 } // Namespace Digikam
-
-#endif // DIGIKAM_FACE_UTILS_H

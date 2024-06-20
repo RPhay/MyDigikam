@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_PAGE_H
-#define DIGIKAM_COLLECTION_PAGE_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_PAGE_H

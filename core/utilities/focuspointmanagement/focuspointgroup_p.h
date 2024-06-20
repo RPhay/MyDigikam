@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FOCUSPOINT_GROUP_P_H
-#define DIGIKAM_FOCUSPOINT_GROUP_P_H
+#pragma once
 
 #include "focuspointgroup.h"
 
@@ -62,5 +61,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FOCUSPOINT_GROUP_P_H

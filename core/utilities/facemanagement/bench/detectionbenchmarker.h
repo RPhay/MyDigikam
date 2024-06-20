@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECTION_BENCH_MARKER_H
-#define DIGIKAM_DETECTION_BENCH_MARKER_H
+#pragma once
 
 // Local includes
 
@@ -58,5 +57,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DETECTION_BENCH_MARKER_H

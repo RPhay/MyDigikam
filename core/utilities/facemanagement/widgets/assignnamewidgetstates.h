@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H
-#define DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H
+#pragma once
 
 // Local includes
 
@@ -33,7 +32,7 @@ class AssignNameWidgetStates : public HidingStateChanger
 public:
 
     explicit AssignNameWidgetStates(FaceItem* const item);
-    ~AssignNameWidgetStates() override;
+    ~AssignNameWidgetStates() override = default;
 
 protected Q_SLOTS:
 
@@ -45,5 +44,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H

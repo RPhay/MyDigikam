@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_SCAN_SETTINGS_H
-#define DIGIKAM_FACE_SCAN_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -78,5 +77,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_SCAN_SETTINGS_H

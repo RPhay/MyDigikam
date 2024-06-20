@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CHOICE_SEARCH_UTILITIES_H
-#define DIGIKAM_CHOICE_SEARCH_UTILITIES_H
+#pragma once
 
 // Qt includes
 

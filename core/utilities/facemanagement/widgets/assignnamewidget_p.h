@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASSIGN_NAME_WIDGET_P_H
-#define DIGIKAM_ASSIGN_NAME_WIDGET_P_H
+#pragma once
 
 #include "assignnamewidget.h"
 
@@ -123,5 +122,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ASSIGN_NAME_WIDGET_P_H

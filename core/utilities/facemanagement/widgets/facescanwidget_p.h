@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_SCAN_WIDGET_P_H
-#define DIGIKAM_FACE_SCAN_WIDGET_P_H
+#pragma once
 
 #include "facescanwidget.h"
 
@@ -96,5 +95,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_SCAN_WIDGET_P_H

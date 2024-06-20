@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECTION_WORKER_H
-#define DIGIKAM_DETECTION_WORKER_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DETECTION_WORKER_H

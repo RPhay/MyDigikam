@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASSIGN_NAME_WIDGET_H
-#define DIGIKAM_ASSIGN_NAME_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -191,5 +190,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ASSIGN_NAME_WIDGET_H

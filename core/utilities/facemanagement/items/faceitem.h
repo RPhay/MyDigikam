@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_ITEM_H
-#define DIGIKAM_FACE_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_ITEM_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LIGHT_TABLE_THUMB_BAR_H
-#define DIGIKAM_LIGHT_TABLE_THUMB_BAR_H
+#pragma once
 
 // Local includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LIGHT_TABLE_THUMB_BAR_H

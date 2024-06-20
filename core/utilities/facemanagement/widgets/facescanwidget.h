@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_SCAN_WIDGET_H
-#define DIGIKAM_FACE_SCAN_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_SCAN_WIDGET_H

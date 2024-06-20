@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_PREVIEW_LOADER_H
-#define DIGIKAM_FACE_PREVIEW_LOADER_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_PREVIEW_LOADER_H

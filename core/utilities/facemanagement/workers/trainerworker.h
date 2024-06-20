@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRAINER_WORKERS_H
-#define DIGIKAM_TRAINER_WORKERS_H
+#pragma once
 
 // Local includes
 
@@ -53,5 +52,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRAINER_WORKERS_H

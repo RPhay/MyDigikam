@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RATING_SEARCH_UTILITIES_H
-#define DIGIKAM_RATING_SEARCH_UTILITIES_H
+#pragma once
 
 // Qt includes
 
@@ -191,5 +190,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RATING_SEARCH_UTILITIES_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WELCOME_PAGE_H
-#define DIGIKAM_WELCOME_PAGE_H
+#pragma once
 
 // Local includes
 
@@ -33,5 +32,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_WELCOME_PAGE_H
