@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_WORK_FLOW_DLG_H
-#define DIGIKAM_BQM_WORK_FLOW_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_WORK_FLOW_DLG_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_QUEUE_MGR_WINDOW_PRIVATE_H
-#define DIGIKAM_BQM_QUEUE_MGR_WINDOW_PRIVATE_H
+#pragma once
 
 #include "queuemgrwindow.h"
 
@@ -65,7 +64,7 @@
 
 #include "drawdecoder.h"
 #include "digikam_debug.h"
-#include "actions.h"
+#include "actiondata.h"
 #include "album.h"
 #include "batchtoolsfactory.h"
 #include "actionthread.h"
@@ -148,5 +147,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_QUEUE_MGR_WINDOW_PRIVATE_H

@@ -22,7 +22,7 @@
 #include "collectionscanner.h"
 #include "scancontroller.h"
 #include "metadatahub.h"
-#include "task.h"
+#include "actiontask.h"
 
 namespace Digikam
 {
@@ -78,7 +78,7 @@ void ActionThread::processQueueItems(const QList<AssignedBatchTools>& items)
 
     for (int i = 0 ; i < items.size() ; ++i)
     {
-        Task* const t = new Task();
+        ActionTask* const t = new ActionTask();
         t->setSettings(d->settings);
         t->setItem(items.at(i));
 
@@ -89,7 +89,7 @@ void ActionThread::processQueueItems(const QList<AssignedBatchTools>& items)
                 this, SLOT(slotUpdateItemInfo(Digikam::ActionData)),
                 Qt::QueuedConnection);
 
-        connect(this, SIGNAL(signalCancelTask()),
+        connect(this, SIGNAL(signalCancelActionTask()),
                 t, SLOT(slotCancel()),
                 Qt::QueuedConnection);
 
@@ -103,7 +103,7 @@ void ActionThread::cancel()
 {
     if (isRunning())
     {
-        Q_EMIT signalCancelTask();
+        Q_EMIT signalCancelActionTask();
     }
 
     ActionThreadBase::cancel();

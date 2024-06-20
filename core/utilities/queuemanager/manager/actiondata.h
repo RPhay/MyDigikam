@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ACTIONS_H
-#define DIGIKAM_BQM_ACTIONS_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ActionData)
-
-#endif // DIGIKAM_BQM_ACTIONS_H

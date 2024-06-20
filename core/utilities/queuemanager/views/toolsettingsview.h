@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TOOL_SETTINGS_VIEW_H
-#define DIGIKAM_BQM_TOOL_SETTINGS_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_TOOL_SETTINGS_VIEW_H

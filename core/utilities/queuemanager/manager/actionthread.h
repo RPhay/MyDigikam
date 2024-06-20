@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ACTION_THREAD_H
-#define DIGIKAM_BQM_ACTION_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -63,7 +62,7 @@ Q_SIGNALS:
     /**
      * Signal to emit to sub-tasks to cancel processing.
      */
-    void signalCancelTask();
+    void signalCancelActionTask();
 
 private Q_SLOTS:
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_ACTION_THREAD_H

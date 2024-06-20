@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TASK_H
-#define DIGIKAM_BQM_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -22,7 +21,7 @@
 
 // Local includes
 
-#include "actions.h"
+#include "actiondata.h"
 #include "queuesettings.h"
 #include "batchtoolutils.h"
 #include "actionthreadbase.h"
@@ -30,14 +29,14 @@
 namespace Digikam
 {
 
-class Task : public ActionJob
+class ActionTask : public ActionJob
 {
     Q_OBJECT
 
 public:
 
-    Task();
-    ~Task()     override;
+    ActionTask();
+    ~ActionTask()     override;
 
     void setSettings(const QueueSettings& settings);
     void setItem(const AssignedBatchTools& tools);
@@ -66,7 +65,7 @@ private:
 private:
 
     // Disable
-    explicit Task(QObject*) = delete;
+    explicit ActionTask(QObject*) = delete;
 
 private:
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_TASK_H

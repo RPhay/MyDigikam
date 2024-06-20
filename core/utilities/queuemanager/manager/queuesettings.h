@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_QUEUE_SETTINGS_H
-#define DIGIKAM_BQM_QUEUE_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_QUEUE_SETTINGS_H

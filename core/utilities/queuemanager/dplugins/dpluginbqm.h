@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_BQM_H
-#define DIGIKAM_DPLUGIN_BQM_H
+#pragma once
 
 // Qt includes
 
@@ -105,5 +104,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_INTERFACE(Digikam::DPluginBqm, DIGIKAM_DPLUGIN_BQM_IID)
-
-#endif // DIGIKAM_DPLUGIN_BQM_H

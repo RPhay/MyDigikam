@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_ITEM_INFO_SET_H
-#define DIGIKAM_BQM_ITEM_INFO_SET_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ typedef QList<ItemInfoSet> QueuePoolItemsList;
 
 Q_DECLARE_METATYPE(Digikam::ItemInfoSet)
 Q_DECLARE_METATYPE(Digikam::QueuePoolItemsList)
-
-#endif // DIGIKAM_BQM_ITEM_INFO_SET_H

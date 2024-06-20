@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_BATCH_TOOLS_FACTORY_H
-#define DIGIKAM_BQM_BATCH_TOOLS_FACTORY_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_BATCH_TOOLS_FACTORY_H

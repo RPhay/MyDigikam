@@ -9,7 +9,7 @@ APPLY_COMMON_POLICIES()
 
 set(libqueuemanager_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/actionthread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/task.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/actiontask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolutils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/batchtoolsfactory.cpp

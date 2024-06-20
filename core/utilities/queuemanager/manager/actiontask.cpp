@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include "task.h"
+#include "actiontask.h"
 
 // Qt includes
 
@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN Task::Private
+class Q_DECL_HIDDEN ActionTask::Private
 {
 public:
 
@@ -53,29 +53,29 @@ public:
 
 // -------------------------------------------------------
 
-Task::Task()
+ActionTask::ActionTask()
     : ActionJob(),
       d        (new Private)
 {
 }
 
-Task::~Task()
+ActionTask::~ActionTask()
 {
     slotCancel();
     delete d;
 }
 
-void Task::setSettings(const QueueSettings& settings)
+void ActionTask::setSettings(const QueueSettings& settings)
 {
     d->settings = settings;
 }
 
-void Task::setItem(const AssignedBatchTools& tools)
+void ActionTask::setItem(const AssignedBatchTools& tools)
 {
     d->tools = tools;
 }
 
-void Task::slotCancel()
+void ActionTask::slotCancel()
 {
     if (d->tool)
     {
@@ -85,7 +85,7 @@ void Task::slotCancel()
     d->cancel = true;
 }
 
-void Task::removeTempFiles(const QList<QUrl>& tmpList)
+void ActionTask::removeTempFiles(const QList<QUrl>& tmpList)
 {
     Q_FOREACH (const QUrl& url, tmpList)
     {
@@ -101,7 +101,7 @@ void Task::removeTempFiles(const QList<QUrl>& tmpList)
     }
 }
 
-void Task::emitActionData(ActionData::ActionStatus st,
+void ActionTask::emitActionData(ActionData::ActionStatus st,
                           const QString& mess,
                           const QUrl& dest,
                           bool noWrite)
@@ -116,7 +116,7 @@ void Task::emitActionData(ActionData::ActionStatus st,
     Q_EMIT signalFinished(ad);
 }
 
-void Task::run()
+void ActionTask::run()
 {
     if (d->cancel)
     {
@@ -314,4 +314,4 @@ void Task::run()
 
 } // namespace Digikam
 
-#include "moc_task.cpp"
+#include "moc_actiontask.cpp"

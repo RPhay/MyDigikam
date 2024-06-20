@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_TOOLS_VIEW_H
-#define DIGIKAM_BQM_TOOLS_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_TOOLS_VIEW_H

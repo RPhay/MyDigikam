@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_QUEUE_TOOL_TIP_H
-#define DIGIKAM_BQM_QUEUE_TOOL_TIP_H
+#pragma once
 
 // Local includes
 
@@ -49,5 +48,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BQM_QUEUE_TOOL_TIP_H
