@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAMERA_INFO_DIALOG_H
-#define DIGIKAM_CAMERA_INFO_DIALOG_H
+#pragma once
 
 // Qt includes
 
@@ -42,5 +41,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAMERA_INFO_DIALOG_H

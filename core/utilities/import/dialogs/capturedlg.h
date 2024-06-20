@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAPTURE_DLG_H
-#define DIGIKAM_CAPTURE_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAPTURE_DLG_H

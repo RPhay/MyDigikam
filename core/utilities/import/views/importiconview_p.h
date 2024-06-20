@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_ICON_VIEW_PRIVATE_H
-#define DIGIKAM_IMPORT_ICON_VIEW_PRIVATE_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_ICON_VIEW_PRIVATE_H

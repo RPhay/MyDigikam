@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAMITEM_INFO_H
-#define DIGIKAM_CAMITEM_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -120,5 +119,3 @@ typedef QList<CamItemInfo> CamItemInfoList;
 QDebug operator<<(QDebug dbg, const CamItemInfo& info);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAMITEM_INFO_H

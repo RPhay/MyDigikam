@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAMERA_FOLDER_VIEW_H
-#define DIGIKAM_CAMERA_FOLDER_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAMERA_FOLDER_VIEW_H

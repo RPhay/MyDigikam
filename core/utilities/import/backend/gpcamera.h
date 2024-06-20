@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GP_CAMERA_H
-#define DIGIKAM_GP_CAMERA_H
+#pragma once
 
 // Local includes
 
@@ -104,5 +103,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GP_CAMERA_H

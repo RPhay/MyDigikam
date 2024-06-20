@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_P_H
-#define DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_P_H
+#pragma once
 
 #include "itemviewimportdelegate.h"
 
@@ -93,5 +92,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_P_H

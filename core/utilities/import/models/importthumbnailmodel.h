@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_THUMBNAIL_MODEL_H
-#define DIGIKAM_IMPORT_THUMBNAIL_MODEL_H
+#pragma once
 
 // Local includes
 
@@ -91,5 +90,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_THUMBNAIL_MODEL_H

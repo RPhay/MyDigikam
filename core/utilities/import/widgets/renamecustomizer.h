@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RENAME_CUSTOMIZER_H
-#define DIGIKAM_RENAME_CUSTOMIZER_H
+#pragma once
 
 // Qt includes
 
@@ -86,5 +85,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RENAME_CUSTOMIZER_H

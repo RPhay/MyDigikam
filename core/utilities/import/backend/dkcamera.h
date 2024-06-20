@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DKCAMERA_H
-#define DIGIKAM_DKCAMERA_H
+#pragma once
 
 // Qt includes
 
@@ -136,5 +135,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DKCAMERA_H

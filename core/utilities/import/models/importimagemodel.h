@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_IMAGE_MODEL_H
-#define DIGIKAM_IMPORT_IMAGE_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -311,5 +310,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ImportItemModel*)
-
-#endif // DIGIKAM_IMPORT_IMAGE_MODEL_H

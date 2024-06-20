@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_DELEGATE_P_H
-#define DIGIKAM_IMPORT_DELEGATE_P_H
+#pragma once
 
 #include "importdelegate.h"
 
@@ -112,5 +111,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_DELEGATE_P_H

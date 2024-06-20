@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_FILTER_H
-#define DIGIKAM_IMPORT_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ typedef QList<Filter*> FilterList;
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::Filter*)
-
-#endif // DIGIKAM_IMPORT_FILTER_H

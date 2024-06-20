@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAMERA_MESSAGE_BOX_H
-#define DIGIKAM_CAMERA_MESSAGE_BOX_H
+#pragma once
 
 // Qt includes
 
@@ -114,5 +113,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAMERA_MESSAGE_BOX_H

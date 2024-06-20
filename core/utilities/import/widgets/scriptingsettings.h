@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SCRIPTING_SETTINGS_H
-#define DIGIKAM_SCRIPTING_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SCRIPTING_SETTINGS_H

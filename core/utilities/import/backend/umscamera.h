@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UMS_CAMERA_H
-#define DIGIKAM_UMS_CAMERA_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UMS_CAMERA_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORTUI_PRIVATE_H
-#define DIGIKAM_IMPORTUI_PRIVATE_H
+#pragma once
 
 #include "importui.h"
 
@@ -277,5 +276,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORTUI_PRIVATE_H

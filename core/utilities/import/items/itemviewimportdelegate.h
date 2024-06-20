@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_H
-#define DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_H
+#pragma once
 
 // Local includes
 
@@ -151,5 +150,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_H

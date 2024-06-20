@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_TOOL_TIP_FILLER_H
-#define DIGIKAM_IMPORT_TOOL_TIP_FILLER_H
+#pragma once
 
 // Qt includes
 
@@ -33,5 +32,3 @@ namespace ImportToolTipFiller
 } // namespace ImportToolTipFiller
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_TOOL_TIP_FILLER_H
