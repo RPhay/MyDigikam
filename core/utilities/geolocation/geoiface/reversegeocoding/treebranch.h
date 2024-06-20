@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TREE_BRANCH_H
-#define DIGIKAM_TREE_BRANCH_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TREE_BRANCH_H

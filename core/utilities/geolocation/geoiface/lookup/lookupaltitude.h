@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOOKUP_ALTITUDE_H
-#define DIGIKAM_LOOKUP_ALTITUDE_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ Q_SIGNALS:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::LookupAltitude::StatusAltitude)
-
-#endif // DIGIKAM_LOOKUP_ALTITUDE_H

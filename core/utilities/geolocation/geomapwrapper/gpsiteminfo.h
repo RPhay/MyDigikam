@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_ITEM_INFO_H
-#define DIGIKAM_GPS_ITEM_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::GPSItemInfo)
-
-#endif // DIGIKAM_GPS_ITEM_INFO_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BACKEND_GOOGLE_MAPS_H
-#define DIGIKAM_BACKEND_GOOGLE_MAPS_H
+#pragma once
 
 // Local includes
 
@@ -146,5 +145,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BACKEND_GOOGLE_MAPS_H

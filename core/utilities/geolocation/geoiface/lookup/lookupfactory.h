@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOOKUP_FACTORY_H
-#define DIGIKAM_LOOKUP_FACTORY_H
+#pragma once
 
 // Local includes
 
@@ -35,5 +34,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOOKUP_FACTORY_H

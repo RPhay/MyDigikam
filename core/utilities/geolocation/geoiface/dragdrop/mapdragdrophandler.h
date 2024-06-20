@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAP_DRAG_DROP_HANDLER_H
-#define DIGIKAM_MAP_DRAG_DROP_HANDLER_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAP_DRAG_DROP_HANDLER_H

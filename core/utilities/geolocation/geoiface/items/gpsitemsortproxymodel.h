@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_ITEM_SORT_PROXY_MODEL_H
-#define DIGIKAM_GPS_ITEM_SORT_PROXY_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -180,5 +179,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GPS_ITEM_SORT_PROXY_MODEL_H

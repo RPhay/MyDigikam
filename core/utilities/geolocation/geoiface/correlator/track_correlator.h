@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRACK_CORRELATOR_H
-#define DIGIKAM_TRACK_CORRELATOR_H
+#pragma once
 
 // Local includes
 
@@ -105,5 +104,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::TrackCorrelator::Correlation::List)
-
-#endif // DIGIKAM_TRACK_CORRELATOR_H

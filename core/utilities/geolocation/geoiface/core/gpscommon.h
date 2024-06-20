@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_COMMON_H
-#define DIGIKAM_GPS_COMMON_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ bool DIGIKAM_EXPORT checkSidecarSettings();
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::MapLayout)
-
-#endif // DIGIKAM_GPS_COMMON_H

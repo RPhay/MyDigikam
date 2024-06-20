@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_IFACE_TYPES_H
-#define DIGIKAM_GEO_IFACE_TYPES_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GeoMouseModes)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GeoExtraActions)
 
 Q_DECLARE_METATYPE(Digikam::GeoMouseModes)
-
-#endif // DIGIKAM_GEO_IFACE_TYPES_H

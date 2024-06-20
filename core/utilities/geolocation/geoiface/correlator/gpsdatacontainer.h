@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_DATA_CONTAINER_H
-#define DIGIKAM_GPS_DATA_CONTAINER_H
+#pragma once
 
 // Local includes
 
@@ -286,5 +285,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GPSDataContainer::HasFlags)
-
-#endif // DIGIKAM_GPS_DATA_CONTAINER_H

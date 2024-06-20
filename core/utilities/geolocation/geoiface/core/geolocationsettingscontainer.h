@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEOLOCATION_SETTINGS_CONTAINER_H
-#define DIGIKAM_GEOLOCATION_SETTINGS_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ public:
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GEOLOCATION_SETTINGS_CONTAINER_H

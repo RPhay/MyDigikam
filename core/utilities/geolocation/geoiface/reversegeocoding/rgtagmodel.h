@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RG_TAG_MODEL_H
-#define DIGIKAM_RG_TAG_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -261,5 +260,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RG_TAG_MODEL_H

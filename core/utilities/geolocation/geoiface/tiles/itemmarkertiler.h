@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef ITEM_MARKER_TILER_H
-#define ITEM_MARKER_TILER_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // ITEM_MARKER_TILER_H

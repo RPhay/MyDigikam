@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TILE_GROUPER_H
-#define DIGIKAM_TILE_GROUPER_H
+#pragma once
 
 // Local includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TILE_GROUPER_H

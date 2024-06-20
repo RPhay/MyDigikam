@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_MARKER_TILER_H
-#define DIGIKAM_ABSTRACT_MARKER_TILER_H
+#pragma once
 
 // Qt includes
 
@@ -185,5 +184,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::AbstractMarkerTiler::TilerFlags)
-
-#endif // DIGIKAM_ABSTRACT_MARKER_TILER_H

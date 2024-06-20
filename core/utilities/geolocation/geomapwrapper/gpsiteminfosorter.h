@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_ITEM_INFO_SORTER_H
-#define DIGIKAM_GPS_ITEM_INFO_SORTER_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GPSItemInfoSorter::SortOptions)
-
-#endif // DIGIKAM_GPS_ITEM_INFO_SORTER_H

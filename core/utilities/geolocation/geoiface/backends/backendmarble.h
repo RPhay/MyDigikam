@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BACKEND_MARBLE_H
-#define DIGIKAM_BACKEND_MARBLE_H
+#pragma once
 
 // Local includes
 
@@ -147,5 +146,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BACKEND_MARBLE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_BOOK_MARK_OWNER_H
-#define DIGIKAM_GPS_BOOK_MARK_OWNER_H
+#pragma once
 
 // Qt includes
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GPS_BOOK_MARK_OWNER_H

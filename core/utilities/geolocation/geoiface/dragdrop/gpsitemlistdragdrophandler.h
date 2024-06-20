@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_ITEM_LIST_DRAG_DROP_HANDLER_H
-#define DIGIKAM_GPS_ITEM_LIST_DRAG_DROP_HANDLER_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GPS_ITEM_LIST_DRAG_DROP_HANDLER_H

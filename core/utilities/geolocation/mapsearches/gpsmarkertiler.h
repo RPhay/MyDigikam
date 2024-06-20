@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_MARKER_TILER_H
-#define DIGIKAM_GPS_MARKER_TILER_H
+#pragma once
 
 // Qt includes
 
@@ -116,5 +115,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GPS_MARKER_TILER_H

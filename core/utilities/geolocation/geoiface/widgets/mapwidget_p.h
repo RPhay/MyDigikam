@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAP_WIDGET_P_H
-#define DIGIKAM_MAP_WIDGET_P_H
+#pragma once
 
 #include "mapwidget.h"
 
@@ -150,5 +149,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAP_WIDGET_P_H

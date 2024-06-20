@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAP_BACKEND_H
-#define DIGIKAM_MAP_BACKEND_H
+#pragma once
 
 // Qt includes
 
@@ -136,5 +135,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAP_BACKEND_H

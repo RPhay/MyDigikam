@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BOOKMARKS_MENU_H
-#define DIGIKAM_BOOKMARKS_MENU_H
+#pragma once
 
 // Qt includes
 
@@ -133,5 +132,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BOOKMARKS_MENU_H

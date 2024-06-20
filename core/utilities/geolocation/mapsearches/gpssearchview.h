@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GPS_SEARCH_VIEW_H
-#define DIGIKAM_GPS_SEARCH_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GPS_SEARCH_VIEW_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TILE_INDEX_H
-#define DIGIKAM_TILE_INDEX_H
+#pragma once
 
 // Qt includes
 
@@ -104,5 +103,3 @@ private:
 DIGIKAM_EXPORT QDebug operator<<(QDebug debugOut, const Digikam::TileIndex& tileIndex);
 
 Q_DECLARE_TYPEINFO(Digikam::TileIndex, Q_MOVABLE_TYPE);
-
-#endif // DIGIKAM_TILE_INDEX_H

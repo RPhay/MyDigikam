@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRACK_LISTMODEL_H
-#define DIGIKAM_TRACK_LISTMODEL_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRACK_LISTMODEL_H

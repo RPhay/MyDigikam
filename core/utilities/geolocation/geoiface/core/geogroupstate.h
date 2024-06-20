@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_GROUP_STATE_H
-#define DIGIKAM_GEO_GROUP_STATE_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ Q_DECLARE_FLAGS(GeoGroupState, GeoGroupStateEnum)
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GeoGroupState)
-
-#endif // DIGIKAM_GEO_GROUP_STATE_H

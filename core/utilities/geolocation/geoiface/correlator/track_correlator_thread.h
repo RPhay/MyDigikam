@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRACK_CORRELATOR_THREAD_H
-#define DIGIKAM_TRACK_CORRELATOR_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRACK_CORRELATOR_THREAD_H

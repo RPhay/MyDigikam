@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRACK_MANAGER_H
-#define DIGIKAM_TRACK_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -145,5 +144,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRACK_MANAGER_H

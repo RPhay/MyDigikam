@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BOOKMARK_NODE_H
-#define DIGIKAM_BOOKMARK_NODE_H
+#pragma once
 
 // Qt includes
 
@@ -117,5 +116,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BOOKMARK_NODE_H

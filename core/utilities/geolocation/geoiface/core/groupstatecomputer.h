@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GROUP_STATE_COMPUTER_H
-#define DIGIKAM_GROUP_STATE_COMPUTER_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GROUP_STATE_COMPUTER_H
