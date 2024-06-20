@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-19 01:43+0000\n"
-"PO-Revision-Date: 2024-06-18 15:57+0200\n"
+"PO-Revision-Date: 2024-06-19 15:49+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -3251,10 +3251,9 @@ msgid "%1/%2 items selected"
 msgstr "Vybráno %1/%2 položek"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "V Bugzille zavřeno více než 650 uživatelských hlášení."
+msgstr "V Bugzille zavřeno více než 1500 uživatelských hlášení."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
