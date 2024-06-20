@@ -233,5 +233,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CHOICE_SEARCH_UTILITIES_H
