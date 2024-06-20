@@ -44,8 +44,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-19 01:43+0000\n"
-"PO-Revision-Date: 2024-06-13 21:09+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"PO-Revision-Date: 2024-06-19 17:04+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -3289,10 +3289,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 objekt markerade"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Mer än 650 användarrapporter stängda på bugzilla."
+msgstr "Mer än 1500 användarrapporter stängda på bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3538,23 +3537,18 @@ msgstr ""
 "bakgrunden."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Köhantering: Lägg till nytt verktyg för att tilldela titlar och rubriker i "
-"bakgrunden."
+"Köhantering: Lägg till nytt verktyg för att köra G'MIC-filter i bakgrunden."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Dokumentation: <a href=\" https://docs.digikam.org/en/index.html\">Skriv om "
+"Dokumentation: <a href=\"https://docs.digikam.org/en/index.html\">Skriv om "
 "handboken</a> från DocBook till ramverket Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:164
@@ -3566,31 +3560,33 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Lägg till nya underhålls- och köhanteringsverktyg för att automatiskt "
+"tilldela etiketter till bilder med hjälp av ett artificiellt neuronnät.<a "
+"href=\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Se denna GoSC-2023 rapport för detaljerad information.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Uppdatera G'MIC-Qt verktyget till senaste version 3.2.2 och slutför "
+"Uppdatera G'MIC-Qt verktyget till senaste version 3.4.0 och slutför "
 "konvertering till MacOS och förbättrad stabilitet för insticksprogram."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Uppdatera Adobe DNG SDK till senaste 1.7.1 med stöd för JPEG-XL komprimering."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 "Uppdatering av internt gränssnitt för obehandlade bilder till senaste Libraw "
-"avbilden 2023-11-12."
+"avbilden 2024-06-16."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3602,6 +3598,13 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Nya funktioner för obehandlade bilder: Canon EOS R6 Mark II, EOS R8, EOS "
+"R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
+"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
+"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
+"ILME-FX30, DSC-HX95, A1.Multiple DJI och Skydio drönare.Flera smarta "
+"telefoner med DNG-format inkluderade."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format

@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-19 01:43+0000\n"
-"PO-Revision-Date: 2024-06-13 22:24+0300\n"
+"PO-Revision-Date: 2024-06-19 11:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3294,10 +3294,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçili"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Bugzilla'da 650'den fazla kullanıcı raporu kapatıldı."
+msgstr "Bugzilla’da 1500’den fazla kullanıcı raporu kapatıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3534,24 +3533,20 @@ msgstr ""
 "bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Kuyruk Yöneticisi: Toplu olarak başlıklar ve alt yazılar atamak için yeni "
-"bir araç eklendi."
+"Kuyruk Yöneticisi: G’MIC süzgeçlerini toplu olarak çalıştırmak için bir araç "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Belgelendirme: <a href=\" https://docs.digikam.org/en/index.html\">El "
-"Kitabı</a>, DocBook'tan Sphinx/ReStructuredText çatısına aktarıldı."
+"Belgelendirme: <a href=\"https://docs.digikam.org/en/index.html\">El Kitabı</"
+"a>, DocBook’tan Sphinx/ReStructuredText çatısına aktarıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3562,29 +3557,32 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Derin öğrenme sinirsel ağ işletkesi kullanarak künyeleri kendiliğinden "
+"atamak için yeni bakım ve kuyruk yöneticisi araçları eklendi.<a href="
+"\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Ayrıntılar için bu GoSC-2023 raporuna bakın.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"G'MIC-Qt aracı güncel 3.2.2 sürümüne güncellenip macOS sürümü tamamlandı ve "
+"G’MIC–Qt aracı güncel 3.4.0 sürümüne güncellenip macOS sürümü tamamlandı ve "
 "eklentinin kararlılığı artırıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Adobe DNG SDK’sı JPEG-XL sıkıştırması desteği içeren 1.7.1 sürümüne "
+"güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
-msgstr "İçsel RAW işletkesi, güncel 2023-11-21 anlık görüntüsüne güncellendi."
+msgstr "İçsel RAW işletkesi, güncel 2024-06-16 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3596,6 +3594,13 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Yeni RAW özellikleri: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS "
+"Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica "
+"Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-"
+"ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, "
+"A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Multiple DJI ve Skydio uçargözleri. DNG biçimini içeren birden çok sayıda "
+"akıllı telefon."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format

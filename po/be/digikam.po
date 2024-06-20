@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-19 01:43+0000\n"
-"PO-Revision-Date: 2024-06-11 17:50\n"
+"PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
 "Language: be\n"
@@ -3394,11 +3394,15 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"Палепшана змена назваў: дададзены лічыльнік файлаў для павелічэння нумарацыі "
+"з параметрам [c] або [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
+"Палепшана змена назваў: дададзена выпадковае нумараванне тэксту з параметрам "
+"[r]."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
@@ -3406,26 +3410,30 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Палепшана змена назваў: дададзены наладжвальны першы сімвал для унікальнага "
+"мадыфікатара з {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
+"Палепшаны пошук: дададзены пошук элементаў па колькасці абласцей твараў."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr ""
+msgstr "Палепшаны пошук: дададзены пошук элементаў без абласцей твараў."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr ""
+msgstr "Калекцыі: дададўена падтрымка кросплатформенных сеткавых шляхоў."
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"База даных: дададзена падтрымка рэжыму SQLite WAL (Write-Ahead-Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
@@ -3433,6 +3441,8 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Дададзена падтрымка праверкі правапісу ў віджэце тэксту субцітраў з "
+"дапамогай кампанента KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3440,18 +3450,22 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"Дададзена канфігурацыя панэлі праверкі арфаграфіі ў меню \"Налады/Рознае\" "
+"для digiKam і Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr ""
+msgstr "У віджэт тэкставага рэдактара дададзена падтрымка сеціўных перакладаў."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
+"Дададзена канфігурацыя панэлі Localize у меню \"Налады/Рознае\" для digiKam "
+"і Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3459,22 +3473,29 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"У віджэце тэкставага рэдактара ў спіс альтэрнатыўных/перакладзеных моў "
+"дададзены налады."
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Усюды дазволена выкарыстоўваць глабальныя або індывідуальныя налады "
+"сартавання якасці выявы."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Каб мець магчымасць наладжваць бачнасць адмецін паверх мініяцюр, быў "
+"дададзены рэжым у выглядзе значкоў."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"У сродку для загрузкі TIFF дададзена падтрымка выяў float16 (half float)."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3483,6 +3504,9 @@ msgid ""
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
+"Дададзены новы інструмент абслугоўвання для выканання <a href=\"https://"
+"community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">эстэтычнага "
+"выяўлення для класіфікавання выяў з дапамогай мадэлі глыбокага навучання</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3490,6 +3514,8 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"Дададзены новы інструмент <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">для распазнавання адсканаванага тэксту</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3497,6 +3523,8 @@ msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
+"Кіраўнік чаргі: дададзены новы інструмент для аўтаматычнага прызначэння "
+"адмеціны выбару з дапамогай аналізавання якасці выявы."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
@@ -3504,23 +3532,35 @@ msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
+"Кіраўнік чаргі: дададзены новы інструмент для масавага прызначэння рэйтынгу, "
+"выбару і каляровых адмецін."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
+"Кіраўнік чаргі: дададзены новы інструмент для масавага прызначэння "
+"загалоўкаў і подпісаў."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
+"Кіраўнік чаргі: дададзены новы інструмент для масавага прызначэння "
+"загалоўкаў і подпісаў."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
+#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"Дакументацыя: <a href=\" https://docs.digikam.org/en/index.html\">Перапісаны "
+"даведнік</a> з DocBook на фреймворк Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3533,11 +3573,16 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+#| "improve stability of plugin."
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Абноўлены інструмент G'MIC-Qt да апошняй версіі 3.2.2 і дапрацаваны порт на "
+"MacOS, палепшана стабільнасць убудовы."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3545,9 +3590,12 @@ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
+"Абноўлены ўнутраны рухавіх RAW да апошняй зборкі Libraw ад 21 лістапада 2023 "
+"г."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3586,6 +3634,7 @@ msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
+"Некаторыя новыя магчымасці гэтага выпуску digiKam (у параўнанні з digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:204
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
@@ -3629,6 +3678,8 @@ msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
+"digiKam мае шмат карысных функцый, апісанне якіх можна знайсці <a href="
+"\"https://docs.digikam.org/en/index.html\">дакументацыя</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
@@ -4791,7 +4842,7 @@ msgstr "Інвертаванне колераў"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
-msgstr ""
+msgstr "Інструмент для інвертавання колераў выявы"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
 #, kde-kuit-format
@@ -4799,6 +4850,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа інвертаваць колеры "
+"выяў.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:40
@@ -4812,7 +4865,7 @@ msgstr "Баланс белага"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
-msgstr ""
+msgstr "Інструмент для падладжвання балансу белага колеру"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
 #, kde-kuit-format
@@ -4821,6 +4874,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа падладжваць баланс "
+"белага колеру.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
@@ -4832,7 +4887,7 @@ msgstr "Пераўтварыць у AVIF"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат AVIF"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:62
 #, kde-kuit-format
@@ -4844,6 +4899,12 @@ msgid ""
 "container format.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць выявы ў "
+"фармат AVIF.</para><para>Фармат файла выявы AV1 — гэта спецыфікацыя фармату "
+"файла выявы для захоўвання выяў або некалькіх паслядоўных выяў, сціснутых з "
+"дапамогай AV1, у фармаце кантэйнера ISOBMFF.</para><para>Падрабязнасці пра "
+"гэты фармат глядзіце на <a href='https://en.wikipedia.org/wiki/AVIF'>гэтай "
+"старонцы</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -4855,7 +4916,7 @@ msgstr "Пераўтварыць RAW у PNG"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
-msgstr ""
+msgstr "Інструмент для пераўтварэння негатываў выяў (RAW) у кантэйнер DNG"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:62
 #, kde-kuit-format
@@ -4866,6 +4927,11 @@ msgid ""
 "Adobe.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты агульны інструмент можа пераўтвараць выявы RAW у фармат DNG.</"
+"para><para>Лічбавы негатыў — гэта фармат выяў RAW без стратаў якасці, "
+"створаны Adobe.</para><para>Падрабязнасці пра гэты фармат глядзіце на <a "
+"href='https://en.wikipedia.org/wiki/Digital_Negative'>гэтай старонцы</a>.</"
+"para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -4877,7 +4943,7 @@ msgstr "Пераўтварыць у HEIF"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат HEIF"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:62
 #, kde-kuit-format
@@ -4894,6 +4960,16 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць выявы ў "
+"фармат HEIF.</para><para>High Efficiency Image Coding (HEIF), таксама вядомы "
+"як High Efficiency Image Coding (HEIC), - гэта фармат файлаў для асобных "
+"выяў і некалькіх паслядоўных выяў. Ён быў распрацаваны Moving Picture "
+"Experts Group (MPEG). Сцвярджаецца, што ў выяве HEIF можа захоўвацца ў два "
+"разы больш інфармацыі, чым у выяве JPEG таго ж памеру, што паляпшае якасць "
+"выявы. HEIF таксама падтрымлівае анімацыю і можа захоўваць больш інфармацыі, "
+"чым анімаваны GIF, маючы меншы памер.</para><para>Падрабязней пра<a "
+"href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format '>High "
+"Efficiency Image File Format</a> глядзіце тут.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -4905,7 +4981,7 @@ msgstr "Пераўтварыць у JP2"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат JPEG-2000"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:62
 #, kde-kuit-format
@@ -4919,6 +4995,13 @@ msgid ""
 "method.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць выявы ў "
+"фармат JPEG-2000.</para> <para>Гэта стандарт сціскання выяў і сістэма "
+"кадавання. Ён быў створаны камітэтам Joint Photographic Experts Group у 2000 "
+"годзе як замена першапачатковага стандарту JPEG, які базуецца на дыскрэтным "
+"косінусным пераўтварэнні (створаны ў 1992 годзе), новым метадам на базе "
+"вейвлетаў.</para><para>Падрабязней пра гэты фармат глядзіце на <a "
+"href='https://en.wikipedia.org/wiki/JPEG_2000'>гэтай старонкі</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -4930,7 +5013,7 @@ msgstr "Пераўтварыць у JPEG"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат JPEG"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:62
 #, kde-kuit-format
@@ -4943,6 +5026,12 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</"
 "para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць выявы ў "
+"фармат JPEG.</para> <para>Фармат Joint Photographic Experts Group - "
+"распаўсюджаны метад сціскання са стратай якасці для лічбавых выяў, асабліва "
+"лічбавых фатаграфіяй.</para><para> Падрабязную інфармацыю пра гэты фармат "
+"глядзіце на <a href='https://en.wikipedia.org/wiki/JPEG'>гэтай старонцы</a>."
+"</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -4954,7 +5043,7 @@ msgstr "Пераўтварыць у JXL"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат JXL"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:62
 #, kde-kuit-format
@@ -4967,6 +5056,13 @@ msgid ""
 "replacement.</para><para>See details about this format from <a href='https://"
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць выявы ў "
+"фармат JPEG-XL.</para><para>JPEG-XL — гэта бясплатны растравы графічны "
+"фармат, які падтрымлівае сцісканне як са стратай якасці, так і без. Ён "
+"распрацаваны, каб быць лепшым наяўныя растравыя фарматы і стаць іх "
+"універсальнай заменай.</para><para>Падрабязную інфармацыю пра гэты фармат "
+"глядзіце на<a href='https://en.wikipedia.org/wiki/JPEG_XL'>гэтай старонцы</"
+"a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -4978,7 +5074,7 @@ msgstr "Пераўтварыць у PGF"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат PGF"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:62
 #, kde-kuit-format
@@ -4990,6 +5086,12 @@ msgid ""
 "details about this format from <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць даныя "
+"выяў у фармат PGF.</para><para>Progressive Graphics File — гэта растравы "
+"фармат выяў на аснове вейвлетаў, які выкарыстоўвае сцісканне даных як са "
+"стратай якасці, так і без.</para><para> Падрабязную інфармацыю пра гэты "
+"фармат глядзіце на <a href='https://en.wikipedia.org/wiki/"
+"Progressive_Graphics_File'>гэтай старонцы</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -4998,6 +5100,10 @@ msgid ""
 "Simply insert the tool for color profile conversion before this tool and "
 "select the desired color profile.</b>"
 msgstr ""
+"<b>Калі пераўтварвць у PNG не атрымліваецца, гэта можа быць звязана з "
+"правяраннем колеравага профілю. Проста ўстаўце інструмент для пераўтварэння "
+"колеравага профілю перад гэтым інструментам і абярыце патрэбны колеравы "
+"профіль.</b>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, kde-format
@@ -5009,7 +5115,7 @@ msgstr "Пераўтварыць у PNG"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат PNG"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:62
 #, kde-kuit-format
@@ -5021,6 +5127,12 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
+"<para>Гэты інструмент чаргі масавага апрацоўвання можа пераўтвараць даныя "
+"выяў у фармат PGF. </para><para>Portable Network Graphics - гэта растравы "
+"графічны фармат файла, які падтрымлівае сцісканне даных без страты якасці.</"
+"para><para>Падрабязную інфармацыю пра гэты фармат глядзіце на <a "
+"href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>гэтай "
+"старонцы</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5032,7 +5144,7 @@ msgstr "Пераўтварыць у TIFF"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
-msgstr ""
+msgstr "Інструмент для пераўтварэння выяў у фармат TIFF"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:62
 #, kde-kuit-format
@@ -7465,7 +7577,7 @@ msgstr "Падладжванне ўзроўняў"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color levels"
-msgstr ""
+msgstr "Інструмент для падладжвання ўзроўняў колераў"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:60
 #, kde-format
@@ -12185,7 +12297,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
 #, kde-format
 msgid "Exposure time (seconds):"
-msgstr ""
+msgstr "Час экспазіцыі (у секундах):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:150
 #, kde-format
@@ -60503,7 +60615,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr ""
+msgstr "Выдаліць шлях з калекцыі?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
@@ -63438,6 +63550,19 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпарт"
+
+#~ msgid ""
+#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
+#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
+#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
+#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
+#~ msgstr ""
+#~ "Новыя функцыі RAW: падтрымка файлаў Phase One/Leaf IIQ-S v2, Canon CR3 "
+#~ "filmrolls/RawBurst, Canon CRM (фільмы), скампанаваных запакаваных "
+#~ "пабітава (і 16-бітавых распакаваных) DNG (нестандартныя), файлаў DNG, "
+#~ "сціснутых з дапамогай Deflate, EOS R3, R7 і R10 Fujifilm X-H2S, X-T30 II "
+#~ "OM System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #~ msgctxt "@title:menu open with desktop application"
 #~ msgid "Open With"
