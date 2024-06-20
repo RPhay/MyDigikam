@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_EDITOR_CORE_PRIVATE_H
-#define DIGIKAM_IMAGE_EDITOR_CORE_PRIVATE_H
+#pragma once
 
 // Local includes
 
@@ -474,5 +473,3 @@ void EditorCore::Private::load(const LoadingDescription& description)
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_EDITOR_CORE_PRIVATE_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IO_FILE_SETTINGS_H
-#define DIGIKAM_IO_FILE_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -91,5 +90,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IO_FILE_SETTINGS_H

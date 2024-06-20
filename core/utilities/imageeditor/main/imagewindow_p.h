@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_WINDOW_PRIVATE_H
-#define DIGIKAM_IMAGE_WINDOW_PRIVATE_H
+#pragma once
 
 #include "imagewindow.h"
 
@@ -268,5 +267,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_WINDOW_PRIVATE_H

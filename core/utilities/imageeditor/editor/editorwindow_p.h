@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_EDITOR_WINDOW_PRIVATE_H
-#define DIGIKAM_IMAGE_EDITOR_WINDOW_PRIVATE_H
+#pragma once
 
 #include "editorwindow.h"
 
@@ -257,5 +256,3 @@ void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_EDITOR_WINDOW_PRIVATE_H

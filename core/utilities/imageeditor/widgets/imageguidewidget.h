@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_GUIDE_WIDGET_H
-#define DIGIKAM_IMAGE_GUIDE_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -143,5 +142,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_GUIDE_WIDGET_H

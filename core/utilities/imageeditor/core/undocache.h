@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNDO_CACHE_H
-#define DIGIKAM_UNDO_CACHE_H
+#pragma once
 
 // Local includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UNDO_CACHE_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNDO_ACTION_H
-#define DIGIKAM_UNDO_ACTION_H
+#pragma once
 
 // Local includes
 
@@ -116,5 +115,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UNDOACTION_H

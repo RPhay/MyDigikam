@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VERSIONING_PROMPT_USER_SAVE_DLG_H
-#define DIGIKAM_VERSIONING_PROMPT_USER_SAVE_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VERSIONING_PROMPT_USER_SAVE_DLG_H

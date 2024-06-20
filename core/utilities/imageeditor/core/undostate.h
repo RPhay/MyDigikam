@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNDO_STATE_H
-#define DIGIKAM_UNDO_STATE_H
+#pragma once
 
 namespace Digikam
 {
@@ -34,5 +33,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UNDO_STATE_H

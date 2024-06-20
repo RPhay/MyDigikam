@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_EDITOR_TOOL_H
-#define DIGIKAM_IMAGE_EDITOR_TOOL_H
+#pragma once
 
 // Qt includes
 
@@ -218,5 +217,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_EDITOR_TOOL_H

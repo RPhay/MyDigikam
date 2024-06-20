@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RUBBER_ITEM_H
-#define DIGIKAM_RUBBER_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RUBBER_ITEM_H

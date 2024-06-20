@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_POST_LOADING_MANAGER_H
-#define DIGIKAM_ICC_POST_LOADING_MANAGER_H
+#pragma once
 
 // Local includes
 
@@ -49,5 +48,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ICC_POST_LOADING_MANAGER_H

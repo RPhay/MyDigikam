@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SAVING_CONTEXT_H
-#define DIGIKAM_SAVING_CONTEXT_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SAVING_CONTEXT_H

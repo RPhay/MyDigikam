@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_EDITOR_WINDOW_H
-#define DIGIKAM_IMAGE_EDITOR_WINDOW_H
+#pragma once
 
 // C++ includes
 
@@ -383,5 +382,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_EDITOR_WINDOW_H

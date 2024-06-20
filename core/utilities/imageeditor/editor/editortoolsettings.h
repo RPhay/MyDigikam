@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_EDITOR_TOOL_SETTINGS_H
-#define DIGIKAM_IMAGE_EDITOR_TOOL_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -126,5 +125,3 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::EditorToolSettings::Buttons)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::EditorToolSettings::Tools)
-
-#endif // DIGIKAM_IMAGE_EDITOR_TOOL_SETTINGS_H
