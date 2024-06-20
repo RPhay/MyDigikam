@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_TASK_H
-#define DIGIKAM_DATABASE_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -90,5 +89,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_TASK_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FINGERPRINTS_GENERATOR_H
-#define DIGIKAM_FINGERPRINTS_GENERATOR_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FINGERPRINTS_GENERATOR_H

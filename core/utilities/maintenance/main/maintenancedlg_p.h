@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAINTENANCE_DLG_P_H
-#define DIGIKAM_MAINTENANCE_DLG_P_H
+#pragma once
 
 #include "maintenancedlg.h"
 
@@ -150,5 +149,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAINTENANCE_DLG_P_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMBS_TASK_H
-#define DIGIKAM_THUMBS_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMBS_TASK_H

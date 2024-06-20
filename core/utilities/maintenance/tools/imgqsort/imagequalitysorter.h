@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_SORTER_H
-#define DIGIKAM_IMAGE_QUALITY_SORTER_H
+#pragma once
 
 // Qt includes
 
@@ -74,5 +73,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_SORTER_H

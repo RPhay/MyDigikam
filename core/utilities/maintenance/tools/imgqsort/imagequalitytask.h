@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_TASK_H
-#define DIGIKAM_IMAGE_QUALITY_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_TASK_H

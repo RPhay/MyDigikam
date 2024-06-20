@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NEW_ITEMS_FINDER_H
-#define DIGIKAM_NEW_ITEMS_FINDER_H
+#pragma once
 
 // Qt includes
 
@@ -47,7 +46,7 @@ public:
     explicit NewItemsFinder(const FinderMode mode = CompleteCollectionScan,
                             const QStringList& foldersToScan = QStringList(),
                             ProgressItem* const parent = nullptr);
-    ~NewItemsFinder() override;
+    ~NewItemsFinder()                           override;
 
 private:
 
@@ -55,12 +54,12 @@ private:
 
 private Q_SLOTS:
 
-    void slotStart() override;
+    void slotStart()                            override;
     void slotScanStarted(const QString&);
     void slotPartialScanDone(const QString&);
     void slotTotalFilesToScan(int);
     void slotFilesScanned(int);
-    void slotCancel() override;
+    void slotCancel()                           override;
 
 private:
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NEW_ITEMS_FINDER_H

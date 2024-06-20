@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_SYNC_TASK_H
-#define DIGIKAM_METADATA_SYNC_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_METADATA_SYNC_TASK_H

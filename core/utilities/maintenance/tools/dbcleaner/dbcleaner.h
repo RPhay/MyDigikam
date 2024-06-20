@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_CLEANER_H
-#define DIGIKAM_DB_CLEANER_H
+#pragma once
 
 // Qt includes
 
@@ -105,5 +104,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_CLEANER_H
