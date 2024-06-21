@@ -12,10 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GIT_VERSION_H
-#define DIGIKAM_GIT_VERSION_H
+#pragma once
 
 #define GITVERSION "@MYGITVERSION@"
 #define GITBRANCH  "@MYGITBRANCH@"
-
-#endif // DIGIKAM_GIT_VERSION_H

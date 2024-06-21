@@ -12,9 +12,6 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BUILD_DATE_H
-#define DIGIKAM_BUILD_DATE_H
+#pragma once
 
 #define BUILD_DATE "@MYBUILDDATE@"
-
-#endif // DIGIKAM_BUILD_DATE_H
