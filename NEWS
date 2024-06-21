@@ -192,8 +192,8 @@ BUGFIXES:
 161 ==> 488411 - Format from copying coordinates is unhelpful.
 162 ==> 487683 - Import should import to the currently active album.
 163 ==> 488565 - Inconsistent DateTime display values and lack of time zone in Metadata Pane.
-164 ==> 
-165 ==> 
+164 ==> 487370 - Face Recognition crashes - pre-release built on 20-05-2024 07:25.
+165 ==> 487668 - Crash while naming face.
 166 ==> 
 167 ==> 
 168 ==> 
