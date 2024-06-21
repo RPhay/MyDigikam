@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_MANAGER_P_H
-#define DIGIKAM_ALBUM_MANAGER_P_H
+#pragma once
 
 #include "albummanager.h"
 
@@ -222,5 +221,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_MANAGER_P_H

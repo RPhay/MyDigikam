@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_H
-#define DIGIKAM_ALBUM_H
+#pragma once
 
 // Qt includes
 
@@ -597,5 +596,3 @@ private:
 
 Q_DECLARE_METATYPE(Digikam::Album*)
 Q_DECLARE_METATYPE(QList<Digikam::TAlbum*>)
-
-#endif // DIGIKAM_ALBUM_H

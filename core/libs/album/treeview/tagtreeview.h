@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_TREE_VIEW_H
-#define DIGIKAM_TAG_TREE_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -77,5 +76,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_TREE_VIEW_H

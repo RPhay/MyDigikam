@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_TREE_VIEW_H
-#define DIGIKAM_ALBUM_TREE_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -47,5 +46,3 @@ public Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_TREE_VIEW_H

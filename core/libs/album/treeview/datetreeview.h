@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATE_TREE_VIEW_H
-#define DIGIKAM_DATE_TREE_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -46,5 +45,3 @@ public Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATE_TREE_VIEW_H

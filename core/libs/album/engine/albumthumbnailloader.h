@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_THUMBNAIL_LOADER_H
-#define DIGIKAM_ALBUM_THUMBNAIL_LOADER_H
+#pragma once
 
 // Qt includes
 
@@ -209,5 +208,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_THUMBNAIL_LOADER_H

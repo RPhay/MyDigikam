@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_P_H
-#define DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_P_H
+#pragma once
 
 #include "abstractalbumtreeview.h"
 
@@ -173,5 +172,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_P_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_PROPS_EDIT_H
-#define DIGIKAM_ALBUM_PROPS_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_PROPS_EDIT_H

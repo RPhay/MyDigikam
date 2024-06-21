@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_LABELS_SEARCH_HANDLER_H
-#define DIGIKAM_ALBUM_LABELS_SEARCH_HANDLER_H
+#pragma once
 
 #include "labelstreeview.h"
 
@@ -124,5 +123,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_LABELS_SEARCH_HANDLER_H

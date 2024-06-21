@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_COUNTING_ALBUM_TREE_VIEW_H
-#define DIGIKAM_ABSTRACT_COUNTING_ALBUM_TREE_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ABSTRACT_COUNTING_ALBUM_TREE_VIEW_H

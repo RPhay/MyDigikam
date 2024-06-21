@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_H
-#define DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -477,5 +476,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::AbstractAlbumTreeView::Flags)
-
-#endif // DIGIKAM_ABSTRACT_ALBUM_TREE_VIEW_H

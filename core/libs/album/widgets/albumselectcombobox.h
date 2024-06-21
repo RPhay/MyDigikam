@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_SELECT_COMBO_BOX_H
-#define DIGIKAM_ALBUM_SELECT_COMBO_BOX_H
+#pragma once
 
 // Local includes
 
@@ -196,5 +195,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_SELECT_COMBO_BOX_H

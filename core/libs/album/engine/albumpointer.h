@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_POINTER_H
-#define DIGIKAM_ALBUM_POINTER_H
+#pragma once
 
 // Qt includes
 
@@ -149,5 +148,3 @@ Q_DECLARE_METATYPE(Digikam::AlbumPointer<Digikam::PAlbum>)
 Q_DECLARE_METATYPE(Digikam::AlbumPointer<Digikam::TAlbum>)
 Q_DECLARE_METATYPE(Digikam::AlbumPointer<Digikam::SAlbum>)
 Q_DECLARE_METATYPE(Digikam::AlbumPointer<Digikam::DAlbum>)
-
-#endif // DIGIKAM_ALBUM_POINTER_H
