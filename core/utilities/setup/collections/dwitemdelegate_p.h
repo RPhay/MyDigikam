@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DW_ITEM_DELEGATE_PRIVATE_H
-#define DIGIKAM_DW_ITEM_DELEGATE_PRIVATE_H
+#pragma once
 
 #include "dwitemdelegate.h"
 
@@ -68,5 +67,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DW_ITEM_DELEGATE_PRIVATE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_COLLECTION_VIEW_H
-#define DIGIKAM_SETUP_COLLECTION_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -302,5 +301,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_COLLECTION_VIEW_H

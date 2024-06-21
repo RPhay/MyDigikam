@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_METADATA_TAB_H
-#define DIGIKAM_ADVANCED_METADATA_TAB_H
+#pragma once
 
 // Qt includes
 
@@ -122,5 +121,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ADVANCED_METADATA_TAB_H

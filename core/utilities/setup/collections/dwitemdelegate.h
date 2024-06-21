@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DW_ITEM_DELEGATE_H
-#define DIGIKAM_DW_ITEM_DELEGATE_H
+#pragma once
 
 // Qt includes
 
@@ -155,5 +154,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(QList<QEvent::Type>)
-
-#endif // DIGIKAM_DW_ITEM_DELEGATE_H

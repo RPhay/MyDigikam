@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_ALBUM_VIEW_H
-#define DIGIKAM_SETUP_ALBUM_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_ALBUM_VIEW_H

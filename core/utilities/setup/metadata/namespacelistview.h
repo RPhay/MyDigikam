@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NAMESPACE_LISTVIEW_H
-#define DIGIKAM_NAMESPACE_LISTVIEW_H
+#pragma once
 
 // Qt includes
 
@@ -69,5 +68,3 @@ public Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NAMESPACE_LISTVIEW_H

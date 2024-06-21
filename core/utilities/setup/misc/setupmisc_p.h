@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_MISC_P_H
-#define DIGIKAM_SETUP_MISC_P_H
+#pragma once
 
 #include "setupmisc.h"
 
@@ -122,5 +121,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_MISC_P_H

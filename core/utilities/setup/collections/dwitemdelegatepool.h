@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DW_ITEM_DELEGATE_POOL_H
-#define DIGIKAM_DW_ITEM_DELEGATE_POOL_H
+#pragma once
 
 // Qt includes
 
@@ -112,5 +111,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DW_ITEM_DELEGATE_POOL_H

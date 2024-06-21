@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_DATABASE_H
-#define DIGIKAM_SETUP_DATABASE_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_DATABASE_H

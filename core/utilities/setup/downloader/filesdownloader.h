@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILES_DOWNLOADER_H
-#define DIGIKAM_FILES_DOWNLOADER_H
+#pragma once
 
 // Qt includes
 
@@ -112,5 +111,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILES_DOWNLOADER_H

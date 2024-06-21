@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_EDITOR_IFACE_H
-#define DIGIKAM_SETUP_EDITOR_IFACE_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_EDITOR_IFACE_H

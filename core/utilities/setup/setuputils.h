@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_UTILS_H
-#define DIGIKAM_SETUP_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -28,5 +27,3 @@ QStringList cleanUserFilterString(QString filterString,
                                   const bool useSemicolon  = false);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SETUP_UTILS_H
