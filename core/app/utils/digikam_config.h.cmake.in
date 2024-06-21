@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONFIG_H
-#define DIGIKAM_CONFIG_H
+#pragma once
 
 /* Define to 1 if you have KDEPIM shared library installed */
 #cmakedefine HAVE_AKONADICONTACT 1
@@ -118,5 +117,3 @@
 #cmakedefine HAVE_DRMINGW 1
 
 #define LIBEXEC_INSTALL_DIR "${KDE_INSTALL_FULL_LIBEXECDIR}"
-
-#endif // DIGIKAM_CONFIG_H

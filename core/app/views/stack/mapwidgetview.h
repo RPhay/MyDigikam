@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAP_WIDGET_VIEW_H
-#define DIGIKAM_MAP_WIDGET_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -125,5 +124,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAP_WIDGET_VIEW_H

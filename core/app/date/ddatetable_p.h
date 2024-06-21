@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DDATE_TABLE_PRIVATE_H
-#define DIGIKAM_DDATE_TABLE_PRIVATE_H
+#pragma once
 
 #include "ddatetable.h"
 
@@ -113,5 +112,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DDATE_TABLE_PRIVATE_H

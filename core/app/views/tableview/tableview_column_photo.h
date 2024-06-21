@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_COLUMN_PHOTO_H
-#define DIGIKAM_TABLE_VIEW_COLUMN_PHOTO_H
+#pragma once
 
 // Qt includes
 
@@ -104,5 +103,3 @@ private:
 } // namespace TableViewColumns
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_COLUMN_PHOTO_H

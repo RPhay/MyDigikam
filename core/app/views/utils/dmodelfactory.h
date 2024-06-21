@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DMODEL_FACTORY_H
-#define DIGIKAM_DMODEL_FACTORY_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DMODEL_FACTORY_H

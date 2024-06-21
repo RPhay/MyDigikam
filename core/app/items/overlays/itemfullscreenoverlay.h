@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_FULL_SCREEN_OVERLAY_H
-#define DIGIKAM_ITEM_FULL_SCREEN_OVERLAY_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_FULL_SCREEN_OVERLAY_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_SELECTION_MODEL_SYNCER_H
-#define DIGIKAM_TABLE_VIEW_SELECTION_MODEL_SYNCER_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_SELECTION_MODEL_SYNCER_H

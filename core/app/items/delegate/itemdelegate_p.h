@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_DELEGATE_P_H
-#define DIGIKAM_ITEM_DELEGATE_P_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_DELEGATE_P_H

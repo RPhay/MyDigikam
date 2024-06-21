@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONTEXT_MENU_HELPER_H
-#define DIGIKAM_CONTEXT_MENU_HELPER_H
+#pragma once
 
 // Qt includes
 
@@ -438,5 +437,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CONTEXT_MENU_HELPER_H

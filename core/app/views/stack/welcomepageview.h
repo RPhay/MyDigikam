@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WELCOME_PAGE_VIEW_H
-#define DIGIKAM_WELCOME_PAGE_VIEW_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -61,7 +60,6 @@ public:
 Q_SIGNALS:
 
     void linkClicked(const QUrl&);
-
 };
 
 // -------------------------------------------------------------------
@@ -94,7 +92,4 @@ private Q_SLOTS:
     void slotThemeChanged();
 };
 
-
 } // namespace Digikam
-
-#endif // DIGIKAM_WELCOME_PAGE_VIEW_H

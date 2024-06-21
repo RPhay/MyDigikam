@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIGIKAMITEM_VIEW_H
-#define DIGIKAM_DIGIKAMITEM_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -155,5 +154,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIGIKAMITEM_VIEW_H

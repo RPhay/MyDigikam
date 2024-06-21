@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COMPONENTS_INFO_DLG_H
-#define DIGIKAM_COMPONENTS_INFO_DLG_H
+#pragma once
 
 // Local includes
 
@@ -27,5 +26,3 @@ DIGIKAM_GUI_EXPORT void showDigikamComponentsInfo();
 DIGIKAM_GUI_EXPORT void showDigikamDatabaseStat();
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COMPONENTS_INFO_DLG_H

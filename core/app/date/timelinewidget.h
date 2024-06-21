@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_LINE_WIDGET_H
-#define DIGIKAM_TIME_LINE_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -166,5 +165,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TIME_LINE_WIDGET_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_COLUMN_CONFIGURATION_DIALOG_H
-#define DIGIKAM_TABLE_VIEW_COLUMN_CONFIGURATION_DIALOG_H
+#pragma once
 
 // KDE includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_COLUMN_CONFIGURATION_DIALOG_H

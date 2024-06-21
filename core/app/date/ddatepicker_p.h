@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DDATE_PICKER_PRIVATE_H
-#define DIGIKAM_DDATE_PICKER_PRIVATE_H
+#pragma once
 
 // Qt includes
 
@@ -140,5 +139,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DDATE_PICKER_PRIVATE_H

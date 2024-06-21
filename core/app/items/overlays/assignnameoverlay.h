@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASSIGN_NAME_OVERLAY_H
-#define DIGIKAM_ASSIGN_NAME_OVERLAY_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ASSIGN_NAME_OVERLAY_H

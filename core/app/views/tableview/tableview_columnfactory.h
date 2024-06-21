@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_COLUMNFACTORY_H
-#define DIGIKAM_TABLE_VIEW_COLUMNFACTORY_H
+#pragma once
 
 // Qt includes
 
@@ -335,5 +334,3 @@ public:
 Q_DECLARE_METATYPE(Digikam::TableViewColumnDescription)
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::TableViewColumn::ColumnFlags)
-
-#endif // DIGIKAM_TABLE_VIEW_COLUMNFACTORY_H

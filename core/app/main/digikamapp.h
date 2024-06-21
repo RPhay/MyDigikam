@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_APP_H
-#define DIGIKAM_APP_H
+#pragma once
 
 // Qt includes
 
@@ -270,5 +269,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_APP_H

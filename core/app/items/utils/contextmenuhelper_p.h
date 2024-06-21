@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONTEXT_MENU_HELPER_P_H
-#define DIGIKAM_CONTEXT_MENU_HELPER_P_H
+#pragma once
 
 #include "contextmenuhelper.h"
 
@@ -175,5 +174,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CONTEXT_MENU_HELPER_P_H

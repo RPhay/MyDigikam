@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_VIEW_UTILITIES_H
-#define DIGIKAM_ITEM_VIEW_UTILITIES_H
+#pragma once
 
 // Qt includes
 
@@ -85,5 +84,3 @@ protected:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ItemViewUtilities::DeleteMode)
-
-#endif // DIGIKAM_ITEM_VIEW_UTILITIES_H

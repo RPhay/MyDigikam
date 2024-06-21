@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GROUP_INDICATOR_OVERLAY_H
-#define DIGIKAM_GROUP_INDICATOR_OVERLAY_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GROUP_INDICATOR_OVERLAY_H

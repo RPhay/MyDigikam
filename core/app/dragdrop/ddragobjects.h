@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DDRAG_OBJECTS_H
-#define DIGIKAM_DDRAG_OBJECTS_H
+#pragma once
 
 // Qt includes
 
@@ -163,5 +162,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DDRAG_OBJECTS_H

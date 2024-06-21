@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_THUMBNAIL_DELEGATE_P_H
-#define DIGIKAM_ITEM_THUMBNAIL_DELEGATE_P_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEMS_THUMBNAIL_DELEGATE_P_H

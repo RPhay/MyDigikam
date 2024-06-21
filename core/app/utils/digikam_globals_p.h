@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLOBALS_P_H
-#define DIGIKAM_GLOBALS_P_H
+#pragma once
 
 #include "digikam_config.h"
 #include "digikam_globals.h"
@@ -72,5 +71,3 @@
 #ifdef HAVE_DRMINGW
 #   include <windows.h>
 #endif
-
-#endif // DIGIKAM_GLOBALS_P_H

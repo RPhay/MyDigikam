@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_MODEL_H
-#define DIGIKAM_TABLE_VIEW_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -204,5 +203,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::TableViewModel::GroupingMode)
-
-#endif // DIGIKAM_TABLE_VIEW_MODEL_H

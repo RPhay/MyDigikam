@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_SHARED_H
-#define DIGIKAM_TABLE_VIEW_SHARED_H
+#pragma once
 
 class QItemSelectionModel;
 
@@ -59,5 +58,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_SHARED_H

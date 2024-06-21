@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_COLUMN_THUMBNAIL_H
-#define DIGIKAM_TABLE_VIEW_COLUMN_THUMBNAIL_H
+#pragma once
 
 // Local includes
 
@@ -68,5 +67,3 @@ private:
 } // namespace TableViewColumns
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_COLUMN_THUMBNAIL_H

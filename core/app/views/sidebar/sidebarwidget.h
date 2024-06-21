@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SIDE_BAR_WIDGET_H
-#define DIGIKAM_SIDE_BAR_WIDGET_H
+#pragma once
 
 // QT includes
 
@@ -101,5 +100,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SIDE_BAR_WIDGET_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIGIKAMITEM_VIEW_P_H
-#define DIGIKAM_DIGIKAMITEM_VIEW_P_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIGIKAMITEM_VIEW_P_H

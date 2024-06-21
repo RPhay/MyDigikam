@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_SIDE_BAR_WIDGET_H
-#define DIGIKAM_FILTER_SIDE_BAR_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -131,5 +130,3 @@ private:
 };
 
 } // nameSpace Digikam
-
-#endif // DIGIKAM_FILTER_SIDE_BAR_WIDGET_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DEBUG_H
-#define DIGIKAM_DEBUG_H
+#pragma once
 
 // Qt includes
 
@@ -88,5 +87,3 @@ DIGIKAM_EXPORT Q_DECLARE_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL)
  * Static method to tune debug traces at run-time.
  */
 DIGIKAM_EXPORT void digikamSetDebugFilterRules(bool on);
-
-#endif // DIGIKAM_DEBUG_H

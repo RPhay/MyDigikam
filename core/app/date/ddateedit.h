@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DDATE_EDIT_H
-#define DIGIKAM_DDATE_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -130,5 +129,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DDATE_EDIT_H

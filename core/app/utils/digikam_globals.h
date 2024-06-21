@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLOBALS_H
-#define DIGIKAM_GLOBALS_H
+#pragma once
 
 // Qt includes
 
@@ -288,5 +287,3 @@ DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 DIGIKAM_EXPORT void openOnlineDocumentation(const QString& section = QString(), const QString& chapter = QString(), const QString& reference = QString());
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GLOBALS_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_PREVIEW_VIEW_H
-#define DIGIKAM_ITEM_PREVIEW_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -133,5 +132,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_PREVIEW_VIEW_H

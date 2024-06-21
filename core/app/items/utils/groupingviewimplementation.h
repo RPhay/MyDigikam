@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GROUPING_VIEW_IMPLEMENTATION_H
-#define DIGIKAM_GROUPING_VIEW_IMPLEMENTATION_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GROUPING_VIEW_IMPLEMENTATION_H

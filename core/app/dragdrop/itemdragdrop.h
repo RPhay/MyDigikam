@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_DRAG_DROP_H
-#define DIGIKAM_ITEM_DRAG_DROP_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_DRAG_DROP_H

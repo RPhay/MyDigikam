@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VERSION_H
-#define DIGIKAM_VERSION_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ DIGIKAM_EXPORT const QDateTime digiKamBuildDate();
 DIGIKAM_EXPORT int digiKamMakeIntegerVersion(int major, int minor, int patch);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VERSION_H

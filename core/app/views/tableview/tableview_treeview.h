@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TABLE_VIEW_TREEVIEW_H
-#define DIGIKAM_TABLE_VIEW_TREEVIEW_H
+#pragma once
 
 // Qt includes
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TABLE_VIEW_TREEVIEW_H

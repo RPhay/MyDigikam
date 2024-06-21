@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPOP_UP_FRAME_H
-#define DIGIKAM_DPOP_UP_FRAME_H
+#pragma once
 
 // Qt includes
 
@@ -106,5 +105,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPOP_UP_FRAME_H

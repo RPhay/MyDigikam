@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_DRAG_DROP_H
-#define DIGIKAM_TAG_DRAG_DROP_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_DRAG_DROP_H

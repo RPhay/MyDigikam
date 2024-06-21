@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LABELS_SIDE_BAR_WIDGET_H
-#define DIGIKAM_LABELS_SIDE_BAR_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -55,5 +54,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LABELS_SIDE_BAR_WIDGET_H

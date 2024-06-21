@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_LINE_SIDE_BAR_WIDGET_H
-#define DIGIKAM_TIME_LINE_SIDE_BAR_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TIME_LINE_SIDE_BAR_WIDGET_H

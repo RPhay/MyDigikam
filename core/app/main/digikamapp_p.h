@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_APP_PRIVATE_H
-#define DIGIKAM_APP_PRIVATE_H
+#pragma once
 
 #include "digikamapp.h"
 
@@ -326,5 +325,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_APP_PRIVATE_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_FILTER_VIEW_H
-#define DIGIKAM_TAG_FILTER_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // nameSpace Digikam
-
-#endif // DIGIKAM_TAG_FILTER_VIEW_H
