@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_ACTION_TYPE_H
-#define DIGIKAM_DB_ENGINE_ACTION_TYPE_H
+#pragma once
 
 // Qt includes
 
@@ -78,5 +77,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::DbEngineActionType)
-
-#endif // DIGIKAM_DB_ENGINE_ACTION_TYPE_H

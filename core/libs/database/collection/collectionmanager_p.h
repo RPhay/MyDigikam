@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_MANAGER_P_H
-#define DIGIKAM_COLLECTION_MANAGER_P_H
+#pragma once
 
 #include "collectionmanager.h"
 
@@ -293,5 +292,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_MANAGER_P_H

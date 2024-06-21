@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_LOCATION_H
-#define DIGIKAM_COLLECTION_LOCATION_H
+#pragma once
 
 // Qt includes
 
@@ -183,7 +182,6 @@ protected:
     Type            m_type              = VolumeHardWired;
     QString         m_path;
     CaseSensitivity m_caseSensitivity   = UnknownCaseSensitivity;
-
 };
 
 inline uint qHash(const CollectionLocation& loc)
@@ -192,5 +190,3 @@ inline uint qHash(const CollectionLocation& loc)
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_LOCATION_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COREDB_SCHEMA_UPDATER_H
-#define DIGIKAM_COREDB_SCHEMA_UPDATER_H
+#pragma once
 
 // Qt includes
 
@@ -108,5 +107,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COREDB_SCHEMA_UPDATER_H

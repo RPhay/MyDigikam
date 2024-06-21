@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_SERVER_H
-#define DIGIKAM_DATABASE_SERVER_H
+#pragma once
 
 // QT includes
 
@@ -141,5 +140,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_SERVER_H

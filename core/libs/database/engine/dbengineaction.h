@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_ACTION_H
-#define DIGIKAM_DB_ENGINE_ACTION_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_ENGINE_ACTION_H

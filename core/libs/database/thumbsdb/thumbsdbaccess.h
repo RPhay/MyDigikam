@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMBS_DB_ACCESS_H
-#define DIGIKAM_THUMBS_DB_ACCESS_H
+#pragma once
 
 // Local includes
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMBS_DB_ACCESS_H

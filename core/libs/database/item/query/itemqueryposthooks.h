@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_QUERY_POST_HOOKS_H
-#define DIGIKAM_ITEM_QUERY_POST_HOOKS_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_QUERY_POST_HOOKS_H

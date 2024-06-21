@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_SCANNER_OBSERVER_H
-#define DIGIKAM_COLLECTION_SCANNER_OBSERVER_H
+#pragma once
 
 // Qt includes
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_SCANNER_OBSERVER_H

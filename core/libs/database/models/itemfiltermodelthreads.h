@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_FILTER_MODEL_THREADS_H
-#define DIGIKAM_ITEM_FILTER_MODEL_THREADS_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_FILTER_MODEL_THREADS_H

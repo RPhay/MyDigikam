@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_OPERATION_GROUP_H
-#define DIGIKAM_CORE_DB_OPERATION_GROUP_H
+#pragma once
 
 // Qt includes
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_OPERATION_GROUP_H

@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_QUERY_BUILDER_P_H
-#define DIGIKAM_ITEM_QUERY_BUILDER_P_H
+#pragma once
 
 #include "itemquerybuilder.h"
 
@@ -110,5 +109,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_QUERY_BUILDER_P_H

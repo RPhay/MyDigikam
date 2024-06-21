@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMBS_DB_BACKEND_H
-#define DIGIKAM_THUMBS_DB_BACKEND_H
+#pragma once
 
 // Local includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMBS_DB_BACKEND_H

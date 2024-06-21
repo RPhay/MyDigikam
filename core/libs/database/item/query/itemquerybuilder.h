@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_QUERY_BUILDER_H
-#define DIGIKAM_ITEM_QUERY_BUILDER_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_QUERY_BUILDER_H

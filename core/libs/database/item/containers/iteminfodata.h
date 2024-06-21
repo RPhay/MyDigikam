@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_DATA_H
-#define DIGIKAM_ITEM_INFO_DATA_H
+#pragma once
 
 // Qt includes
 
@@ -163,5 +162,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_INFO_DATA_H

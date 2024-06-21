@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_TAGS_H
-#define DIGIKAM_FACE_TAGS_H
+#pragma once
 
 // Qt includes
 
@@ -116,5 +115,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_TAGS_H

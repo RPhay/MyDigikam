@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_SETTINGS_WIDGET_P_H
-#define DIGIKAM_DB_SETTINGS_WIDGET_P_H
+#pragma once
 
 #include "dbsettingswidget.h"
 
@@ -119,5 +118,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_SETTINGS_WIDGET_P_H

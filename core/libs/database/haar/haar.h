@@ -18,8 +18,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HAAR_H
-#define DIGIKAM_HAAR_H
+#pragma once
 
 // C++ includes
 
@@ -290,5 +289,3 @@ private:
 } // namespace Haar
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HAAR_H

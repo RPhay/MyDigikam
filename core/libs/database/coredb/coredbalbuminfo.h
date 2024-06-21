@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_ALBUM_INFO_H
-#define DIGIKAM_CORE_DB_ALBUM_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -378,5 +377,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_ALBUM_INFO_H

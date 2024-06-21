@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_ACCESS_H
-#define DIGIKAM_DB_ENGINE_ACCESS_H
+#pragma once
 
 // Qt includes
 
@@ -43,5 +42,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_ENGINE_ACCESS_H

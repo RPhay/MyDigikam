@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_SCANNER_P_H
-#define DIGIKAM_COLLECTION_SCANNER_P_H
+#pragma once
 
 #include "collectionscanner.h"
 
@@ -177,5 +176,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_SCANNER_P_H

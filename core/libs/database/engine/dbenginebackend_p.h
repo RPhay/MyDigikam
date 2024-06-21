@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_BACKEND_PRIVATE_H
-#define DIGIKAM_DB_ENGINE_BACKEND_PRIVATE_H
+#pragma once
 
 #include "dbenginebackend.h"
 
@@ -195,5 +194,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_ENGINE_BACKEND_PRIVATE_H

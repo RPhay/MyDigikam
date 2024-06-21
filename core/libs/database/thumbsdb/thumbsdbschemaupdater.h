@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
-#define DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
+#pragma once
 
 // Local includes
 
@@ -62,5 +61,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H

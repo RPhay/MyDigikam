@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_CACHE_H
-#define DIGIKAM_TAGS_CACHE_H
+#pragma once
 
 // Qt includes
 
@@ -323,5 +322,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAGS_CACHE_H

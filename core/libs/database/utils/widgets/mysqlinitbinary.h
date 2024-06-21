@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MYSQL_INIT_BINARY_H
-#define DIGIKAM_MYSQL_INIT_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MYSQL_INIT_BINARY_H

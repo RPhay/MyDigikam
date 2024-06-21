@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_CHECKER_H
-#define DIGIKAM_CORE_DB_CHECKER_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_CHECKER_H

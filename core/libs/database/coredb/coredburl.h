@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_URL_H
-#define DIGIKAM_CORE_DB_URL_H
+#pragma once
 
 // Qt includes
 
@@ -251,5 +250,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_URL_H

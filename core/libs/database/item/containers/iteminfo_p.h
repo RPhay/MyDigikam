@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_P_H
-#define DIGIKAM_ITEM_INFO_P_H
+#pragma once
 
 #include "iteminfo.h"
 
@@ -99,5 +98,3 @@ MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const Databas
     }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_INFO_P_H

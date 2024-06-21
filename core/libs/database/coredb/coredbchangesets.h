@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_CHANGESETS_H
-#define DIGIKAM_CORE_DB_CHANGESETS_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -407,5 +406,3 @@ DECLARE_METATYPE_FOR_DBUS(Digikam::AlbumRootChangeset)
 DECLARE_METATYPE_FOR_DBUS(Digikam::DatabaseFields::Set)
 
 #endif // HAVE_DBUS
-
-#endif // DIGIKAM_CORE_DB_CHANGESETS_H

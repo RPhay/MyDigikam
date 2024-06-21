@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_COMMENTS_H
-#define DIGIKAM_ITEM_COMMENTS_H
+#pragma once
 
 // Qt includes
 
@@ -252,5 +251,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_COMMENTS_H

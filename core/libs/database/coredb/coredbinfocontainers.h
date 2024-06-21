@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_INFO_CONTAINERS_H
-#define DIGIKAM_CORE_DB_INFO_CONTAINERS_H
+#pragma once
 
 // Qt includes
 
@@ -92,5 +91,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_INFO_CONTAINERS_H

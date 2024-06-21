@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_NAME_FILTER_H
-#define DIGIKAM_CORE_DB_NAME_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_NAME_FILTER_H

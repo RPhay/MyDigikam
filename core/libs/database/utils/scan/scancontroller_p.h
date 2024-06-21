@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SCAN_CONTROLLER_P_H
-#define DIGIKAM_SCAN_CONTROLLER_P_H
+#pragma once
 
 #include "scancontroller.h"
 
@@ -172,5 +171,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SCAN_CONTROLLER_P_H

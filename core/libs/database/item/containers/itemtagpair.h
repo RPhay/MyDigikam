@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_TAG_PAIR_H
-#define DIGIKAM_ITEM_TAG_PAIR_H
+#pragma once
 
 // Qt includes
 
@@ -126,5 +125,3 @@ private:
 };
 
 } // namespace
-
-#endif // DIGIKAM_ITEM_TAG_PAIR_H

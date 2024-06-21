@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FIELD_QUERY_BUILDER_H
-#define DIGIKAM_FIELD_QUERY_BUILDER_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FIELD_QUERY_BUILDER_H

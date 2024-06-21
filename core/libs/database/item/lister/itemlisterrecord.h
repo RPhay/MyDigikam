@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_LISTER_RECORD_H
-#define DIGIKAM_ITEM_LISTER_RECORD_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ DIGIKAM_DATABASE_EXPORT QDataStream& operator<<(QDataStream& os, const ItemListe
 DIGIKAM_DATABASE_EXPORT QDataStream& operator>>(QDataStream& ds, ItemListerRecord& record);
 */
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_LISTER_RECORD_H

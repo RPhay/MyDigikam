@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_FILTER_MODEL_H
-#define DIGIKAM_ITEM_FILTER_MODEL_H
+#pragma once
 
 // Local includes
 
@@ -344,5 +343,3 @@ protected:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ItemFilterModel*)
-
-#endif // DIGIKAM_ITEM_FILTER_MODEL_H

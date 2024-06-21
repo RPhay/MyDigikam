@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_LIST_H
-#define DIGIKAM_ITEM_INFO_LIST_H
+#pragma once
 
 // Qt includes
 
@@ -63,5 +62,3 @@ typedef ItemInfoList::iterator ItemInfoListIterator;
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ItemInfoList)
-
-#endif // DIGIKAM_ITEM_INFO_LIST_H

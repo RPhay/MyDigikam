@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_FILTER_SETTINGS_H
-#define DIGIKAM_ITEM_FILTER_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -336,5 +335,3 @@ protected:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ItemFilterSettings::GeolocationCondition)
-
-#endif // DIGIKAM_ITEM_FILTER_SETTINGS_H

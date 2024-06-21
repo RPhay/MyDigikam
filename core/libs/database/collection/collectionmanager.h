@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_MANAGER_H
-#define DIGIKAM_COLLECTION_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -343,5 +342,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLLECTION_MANAGER_H

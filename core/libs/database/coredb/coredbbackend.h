@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_BACKEND_H
-#define DIGIKAM_CORE_DB_BACKEND_H
+#pragma once
 
 // Local includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_BACKEND_H

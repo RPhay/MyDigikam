@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HAAR_IFACE_H
-#define DIGIKAM_HAAR_IFACE_H
+#pragma once
 
 // Qt includes
 
@@ -300,5 +299,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HAAR_IFACE_H

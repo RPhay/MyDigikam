@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_H
-#define DIGIKAM_ITEM_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -674,5 +673,3 @@ DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug stream, const ItemInfo& info);
 
 Q_DECLARE_TYPEINFO(Digikam::ItemInfo, Q_MOVABLE_TYPE);
 Q_DECLARE_METATYPE(Digikam::ItemInfo)
-
-#endif // DIGIKAM_ITEM_INFO_H

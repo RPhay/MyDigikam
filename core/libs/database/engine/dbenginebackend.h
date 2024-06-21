@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_BACKEND_H
-#define DIGIKAM_DB_ENGINE_BACKEND_H
+#pragma once
 
 // Qt includes
 
@@ -552,5 +551,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(QSqlError)
-
-#endif // DIGIKAM_DB_ENGINE_BACKEND_H

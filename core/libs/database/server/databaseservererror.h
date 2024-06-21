@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_SERVER_ERROR_H
-#define DIGIKAM_DATABASE_SERVER_ERROR_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_SERVER_ERROR_H

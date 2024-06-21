@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_REGION_H
-#define DIGIKAM_TAG_REGION_H
+#pragma once
 
 // Qt includes
 
@@ -150,5 +149,3 @@ protected:
 QDebug DIGIKAM_EXPORT operator<<(QDebug dbg, const TagRegion& r);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_REGION_H

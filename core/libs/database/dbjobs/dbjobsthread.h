@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_JOBS_THREAD_H
-#define DIGIKAM_DB_JOBS_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -202,5 +201,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_JOBS_THREAD_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIO_FINDERS_H
-#define DIGIKAM_DIO_FINDERS_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIO_FINDERS_H

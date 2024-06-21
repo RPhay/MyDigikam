@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_LISTER_P_H
-#define DIGIKAM_ITEM_LISTER_P_H
+#pragma once
 
 #include "itemlister.h"
 
@@ -81,5 +80,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_LISTER_P_H

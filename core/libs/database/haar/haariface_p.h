@@ -16,8 +16,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HAAR_IFACE_P_H
-#define DIGIKAM_HAAR_IFACE_P_H
+#pragma once
 
 #include "haariface.h"
 
@@ -132,5 +131,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HAAR_IFACE_P_H

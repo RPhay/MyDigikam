@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_HISTORY_GRAPH_H
-#define DIGIKAM_ITEM_HISTORY_GRAPH_H
+#pragma once
 
 // Qt includes
 
@@ -187,5 +186,3 @@ QDebug DIGIKAM_DATABASE_EXPORT operator<<(QDebug dbg, const ItemHistoryGraph& g)
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::ItemHistoryGraph::HistoryLoadingMode)
-
-#endif // DIGIKAM_ITEM_HISTORY_GRAPH_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_STAT_DLG_H
-#define DIGIKAM_DB_STAT_DLG_H
+#pragma once
 
 // Local includes
 
@@ -43,5 +42,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_STAT_DLG_H

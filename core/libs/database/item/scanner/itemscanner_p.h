@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_SCANNER_P_H
-#define DIGIKAM_ITEM_SCANNER_P_H
+#pragma once
 
 #include "itemscanner.h"
 
@@ -152,5 +151,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_SCANNER_P_H

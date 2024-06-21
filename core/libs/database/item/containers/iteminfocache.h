@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_CACHE_H
-#define DIGIKAM_ITEM_INFO_CACHE_H
+#pragma once
 
 // Qt includes
 
@@ -114,5 +113,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_INFO_CACHE_H

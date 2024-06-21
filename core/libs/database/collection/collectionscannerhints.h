@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLLECTION_SCANNER_HINTS_H
-#define DIGIKAM_COLLECTION_SCANNER_HINTS_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -395,5 +394,3 @@ DECLARE_METATYPE_FOR_DBUS(Digikam::ItemCopyMoveHint)
 DECLARE_METATYPE_FOR_DBUS(Digikam::ItemChangeHint)
 
 #endif
-
-#endif // DIGIKAM_COLLECTION_SCANNER_HINTS_H

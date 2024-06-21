@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_WATCH_H
-#define DIGIKAM_CORE_DB_WATCH_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -183,5 +182,3 @@ private:
 #endif
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_WATCH_H

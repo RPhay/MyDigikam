@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_DOWNLOAD_HISTORY_H
-#define DIGIKAM_CORE_DB_DOWNLOAD_HISTORY_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_DOWNLOAD_HISTORY_H

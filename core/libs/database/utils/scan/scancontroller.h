@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SCAN_CONTROLLER_H
-#define DIGIKAM_SCAN_CONTROLLER_H
+#pragma once
 
 // Qt includes
 
@@ -398,5 +397,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SCAN_CONTROLLER_H

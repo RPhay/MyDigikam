@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_FIELDS_H
-#define DIGIKAM_CORE_DB_FIELDS_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -587,5 +586,3 @@ Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DatabaseFields::VideoMetadata)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DatabaseFields::ItemComments)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DatabaseFields::ItemPositions)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DatabaseFields::ImageHistoryInfo)
-
-#endif // DIGIKAM_CORE_DB_FIELDS_H

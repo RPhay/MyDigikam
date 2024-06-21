@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_ATTRIBUTES_WATCH_H
-#define DIGIKAM_ITEM_ATTRIBUTES_WATCH_H
+#pragma once
 
 // Qt includes
 
@@ -98,5 +97,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_ATTRIBUTES_WATCH_H

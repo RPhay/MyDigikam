@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_LIST_MODEL_H
-#define DIGIKAM_ITEM_LIST_MODEL_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ protected Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_LIST_MODEL_H

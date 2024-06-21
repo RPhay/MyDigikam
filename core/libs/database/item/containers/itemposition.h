@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_POSITION_H
-#define DIGIKAM_ITEM_POSITION_H
+#pragma once
 
 // Qt includes
 
@@ -174,5 +173,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_POSITION_H

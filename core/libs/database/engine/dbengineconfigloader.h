@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DB_ENGINE_CONFIG_LOADER_H
-#define DIGIKAM_DB_ENGINE_CONFIG_LOADER_H
+#pragma once
 
 #include "dbengineconfigsettings.h"
 
@@ -50,5 +49,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DB_ENGINE_CONFIG_LOADER_H

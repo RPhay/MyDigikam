@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORE_DB_THUMB_INFO_PROVIDER_H
-#define DIGIKAM_CORE_DB_THUMB_INFO_PROVIDER_H
+#pragma once
 
 // Local includes
 
@@ -43,5 +42,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CORE_DB_THUMB_INFO_PROVIDER_H

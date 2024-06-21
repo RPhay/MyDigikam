@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_SORT_SETTINGS_H
-#define DIGIKAM_ITEM_SORT_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -238,5 +237,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_SORT_SETTINGS_H

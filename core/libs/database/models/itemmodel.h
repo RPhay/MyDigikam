@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_MODEL_H
-#define DIGIKAM_ITEM_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -411,5 +410,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::ItemModel*)
-
-#endif // DIGIKAM_ITEM_MODEL_H
