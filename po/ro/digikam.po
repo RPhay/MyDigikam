@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -61758,6 +61758,42 @@ msgstr "Gestionar de coadă de procesare în serie"
 msgid "&Queues"
 msgstr "Cozi"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "Eșec la salvarea elementului..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, fuzzy, kde-format
+msgid "(overwritten)"
+msgstr "Suprascriere"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "Element redenumit în %1..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Eșec la salvarea elementului..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "Element procesat cu succes..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "Eșec la salvarea elementului..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -61832,42 +61868,6 @@ msgstr ""
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Nici un parametru disponibil"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "Eșec la salvarea elementului..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, fuzzy, kde-format
-msgid "(overwritten)"
-msgstr "Suprascriere"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "Element redenumit în %1..."
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Eșec la salvarea elementului..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "Element procesat cu succes..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "Eșec la salvarea elementului..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

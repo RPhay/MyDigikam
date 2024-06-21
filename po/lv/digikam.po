@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -61538,6 +61538,42 @@ msgstr "Visas masveida rindas ir apstrādātas"
 msgid "&Queues"
 msgstr "&Rindas"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "Neizdevās saglabāt attēlu..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr "(pārrakstīts)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, kde-format
+msgid "(renamed to %1)"
+msgstr "(pārdēvēts par %1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Neizdevās saglabāt attēlu..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "Attēls veiksmīgi apstrādāts..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "Neizdevās saglabāt attēlu..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, fuzzy, kde-format
 #| msgid "Base"
@@ -61605,42 +61641,6 @@ msgstr "Nederīgs"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Nav opciju"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "Neizdevās saglabāt attēlu..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr "(pārrakstīts)"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, kde-format
-msgid "(renamed to %1)"
-msgstr "(pārdēvēts par %1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Neizdevās saglabāt attēlu..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "Attēls veiksmīgi apstrādāts..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "Neizdevās saglabāt attēlu..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

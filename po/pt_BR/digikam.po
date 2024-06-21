@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -66206,6 +66206,43 @@ msgstr "A tarefa em lote foi concluída"
 msgid "&Queues"
 msgstr "&Filas"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+#| msgid "Failed to create file..."
+msgid "Failed to find tool..."
+msgstr "Falha ao criar o arquivo..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr "(sobrescrito)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, kde-format
+msgid "(renamed to %1)"
+msgstr "(renomeado para %1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Falha ao criar o arquivo secundário..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, kde-format
+msgid "Item processed successfully %1"
+msgstr "O item foi processado com sucesso %1"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, kde-format
+msgid "Failed to create file..."
+msgstr "Falha ao criar o arquivo..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -66281,43 +66318,6 @@ msgstr "Frob inválido"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Nenhuma configuração disponível"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
-msgid "Failed to find tool..."
-msgstr "Falha ao criar o arquivo..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr "(sobrescrito)"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, kde-format
-msgid "(renamed to %1)"
-msgstr "(renomeado para %1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Falha ao criar o arquivo secundário..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, kde-format
-msgid "Item processed successfully %1"
-msgstr "O item foi processado com sucesso %1"
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, kde-format
-msgid "Failed to create file..."
-msgstr "Falha ao criar o arquivo..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

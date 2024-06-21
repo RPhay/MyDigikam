@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -61467,6 +61467,42 @@ msgstr "Kaikki eräajot on tehty"
 msgid "&Queues"
 msgstr "&Jonot"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, kde-format
+msgid "Failed to find tool..."
+msgstr "Työkalua ei löytynyt…"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr "(korvattu)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, kde-format
+msgid "(renamed to %1)"
+msgstr "(uusi nimi %1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr "Kohde on olemassa ja ohitettiin"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Oheistiedoston luominen epäonnistui…"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, kde-format
+msgid "Item processed successfully %1"
+msgstr "Kohteen käsittely onnistui %1"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, kde-format
+msgid "Failed to create file..."
+msgstr "Tiedoston luonti epäonnistui…"
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -61532,42 +61568,6 @@ msgstr "Virheellinen"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Asetusta ei ole saatavilla"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, kde-format
-msgid "Failed to find tool..."
-msgstr "Työkalua ei löytynyt…"
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr "(korvattu)"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, kde-format
-msgid "(renamed to %1)"
-msgstr "(uusi nimi %1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr "Kohde on olemassa ja ohitettiin"
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Oheistiedoston luominen epäonnistui…"
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, kde-format
-msgid "Item processed successfully %1"
-msgstr "Kohteen käsittely onnistui %1"
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, kde-format
-msgid "Failed to create file..."
-msgstr "Tiedoston luonti epäonnistui…"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -63210,6 +63210,43 @@ msgstr "一括処理キューが完了しました"
 msgid "&Queues"
 msgstr "キュー(&Q)"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+#| msgid "Failed to create file..."
+msgid "Failed to find tool..."
+msgstr "ファイルの作成に失敗しました..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr "(上書き済み)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, kde-format
+msgid "(renamed to %1)"
+msgstr "(名前を %1 に変更しました)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "アイテムを保存できませんでした..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "アイテムを処理しました..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, kde-format
+msgid "Failed to create file..."
+msgstr "ファイルの作成に失敗しました..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -63280,43 +63317,6 @@ msgstr ""
 msgctxt "@label"
 msgid "No setting available"
 msgstr "オプションはありません"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
-msgid "Failed to find tool..."
-msgstr "ファイルの作成に失敗しました..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr "(上書き済み)"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, kde-format
-msgid "(renamed to %1)"
-msgstr "(名前を %1 に変更しました)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "アイテムを保存できませんでした..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "アイテムを処理しました..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, kde-format
-msgid "Failed to create file..."
-msgstr "ファイルの作成に失敗しました..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

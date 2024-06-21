@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -60355,6 +60355,42 @@ msgstr ""
 msgid "&Queues"
 msgstr "क्विक"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "%1 मं फाइल सूची बनाना फेल"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, fuzzy, kde-format
+msgid "(overwritten)"
+msgstr "मेटाय के लिखव"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "चीज (%1) के नाम बदलव"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "%1 मं फाइल सूची बनाना फेल"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "फाइल %1 डाउनलोड करत हे..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "%1 मं फाइल सूची बनाना फेल"
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -60423,42 +60459,6 @@ msgstr "अवैध प्रोफाइल"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "कोई विकल्प नइ मिलत हे."
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "%1 मं फाइल सूची बनाना फेल"
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, fuzzy, kde-format
-msgid "(overwritten)"
-msgstr "मेटाय के लिखव"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "चीज (%1) के नाम बदलव"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "%1 मं फाइल सूची बनाना फेल"
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "फाइल %1 डाउनलोड करत हे..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "%1 मं फाइल सूची बनाना फेल"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, fuzzy, kde-format

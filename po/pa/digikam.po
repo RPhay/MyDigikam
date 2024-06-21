@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -61719,6 +61719,42 @@ msgstr ""
 msgid "&Queues"
 msgstr "ਕਤਾਰ(&Q)"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, fuzzy, kde-format
+msgid "(overwritten)"
+msgstr "ਉੱਤੇ ਲਿਖੋ"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "ਆਈਟਮ ਦਾ ਨਾਂ %1 ਬਦਲਿਆ..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "ਆਈਟਮ ਉੱਤੇ ਕਾਰਵਾਈ ਸਫ਼ਲ ਰਹੀ..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -61794,42 +61830,6 @@ msgstr "ਗਲਤ ਪਰੋਫਾਇਲ"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "ਕੋਈ ਸੈਟਿੰਗ ਉਪਲੱਬਧ ਨਹੀਂ"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, fuzzy, kde-format
-msgid "(overwritten)"
-msgstr "ਉੱਤੇ ਲਿਖੋ"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "ਆਈਟਮ ਦਾ ਨਾਂ %1 ਬਦਲਿਆ..."
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "ਆਈਟਮ ਉੱਤੇ ਕਾਰਵਾਈ ਸਫ਼ਲ ਰਹੀ..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, fuzzy, kde-format

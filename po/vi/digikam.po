@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -59766,6 +59766,42 @@ msgstr "Tiến trình liệt kê các thư mục đã chạy xong."
 msgid "&Queues"
 msgstr "Quique"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "Lỗi nạp ảnh « %1 »"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, fuzzy, kde-format
+msgid "(overwritten)"
+msgstr "Ghi đè"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "Thay tên mục (%1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Lỗi nạp ảnh « %1 »"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "Đang tải về tệp %1..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "Lỗi nạp ảnh « %1 »"
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -59834,42 +59870,6 @@ msgstr "Hồ sơ không hợp lệ"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Không có sẵn tuỳ chọn"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "Lỗi nạp ảnh « %1 »"
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, fuzzy, kde-format
-msgid "(overwritten)"
-msgstr "Ghi đè"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "Thay tên mục (%1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Lỗi nạp ảnh « %1 »"
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "Đang tải về tệp %1..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "Lỗi nạp ảnh « %1 »"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, fuzzy, kde-format

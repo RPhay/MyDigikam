@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -63760,6 +63760,42 @@ msgstr "Batch-aren ilara osatuta..."
 msgid "&Queues"
 msgstr "&Ilarak"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "Huts egin du elementua gordetzean..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, fuzzy, kde-format
+msgid "(overwritten)"
+msgstr "Gainidatzi"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "Elementua '%1' gisa izendatuta..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "Huts egin du elementua gordetzean..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "Elementua ongi prozesatu da..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "Huts egin du elementua gordetzean..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, fuzzy, kde-format
 msgctxt "@title: tool group"
@@ -63834,42 +63870,6 @@ msgstr "Baliogabea"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Ez dago ezarpenik erabilgarri"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "Huts egin du elementua gordetzean..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, fuzzy, kde-format
-msgid "(overwritten)"
-msgstr "Gainidatzi"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "Elementua '%1' gisa izendatuta..."
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "Huts egin du elementua gordetzean..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "Elementua ongi prozesatu da..."
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "Huts egin du elementua gordetzean..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

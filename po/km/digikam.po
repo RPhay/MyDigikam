@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -62279,6 +62279,42 @@ msgstr "កម្មវិធី​គ្រប់គ្រង​ជួរ​ក
 msgid "&Queues"
 msgstr ""
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, fuzzy, kde-format
+msgid "Failed to find tool..."
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, fuzzy, kde-format
+msgid "(renamed to %1)"
+msgstr "ប្ដូរ​ឈ្មោះ​អាល់ប៊ុម (%1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr ""
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, fuzzy, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, fuzzy, kde-format
+msgid "Item processed successfully %1"
+msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, fuzzy, kde-format
+msgid "Failed to create file..."
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -62351,42 +62387,6 @@ msgstr ""
 msgctxt "@label"
 msgid "No setting available"
 msgstr "ដែល​មិន​អាច​រក​បាន​"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, fuzzy, kde-format
-msgid "Failed to find tool..."
-msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, fuzzy, kde-format
-msgid "(renamed to %1)"
-msgstr "ប្ដូរ​ឈ្មោះ​អាល់ប៊ុម (%1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr ""
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, fuzzy, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, fuzzy, kde-format
-msgid "Item processed successfully %1"
-msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, fuzzy, kde-format
-msgid "Failed to create file..."
-msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format

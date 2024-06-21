@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-19 01:43+0000\n"
+"POT-Creation-Date: 2024-06-21 01:43+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -59266,6 +59266,42 @@ msgstr "所有批处理队列已完成"
 msgid "&Queues"
 msgstr "队列(&Q)"
 
+#: core/utilities/queuemanager/manager/actiontask.cpp:153
+#, kde-format
+msgid "Failed to find tool..."
+msgstr "无法找到工具..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:255
+#, kde-format
+msgid "(overwritten)"
+msgstr "(已覆盖)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:260
+#, kde-format
+msgid "(renamed to %1)"
+msgstr "(重命名为 %1)"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:265
+#, kde-format
+msgid "Item exists and was skipped"
+msgstr "项目已存在，已跳过"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:290
+#, kde-format
+msgid "Failed to create sidecar file..."
+msgstr "无法创建附带文件..."
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#, kde-format
+msgid "Item processed successfully %1"
+msgstr "项目已完成处理 %1"
+
+#: core/utilities/queuemanager/manager/actiontask.cpp:304
+#: core/utilities/queuemanager/manager/actiontask.cpp:309
+#, kde-format
+msgid "Failed to create file..."
+msgstr "无法创建文件..."
+
 #: core/utilities/queuemanager/manager/batchtool.cpp:168
 #, kde-format
 msgctxt "@title: tool group"
@@ -59331,42 +59367,6 @@ msgstr "无效"
 msgctxt "@label"
 msgid "No setting available"
 msgstr "没有可用的设置"
-
-#: core/utilities/queuemanager/manager/task.cpp:153
-#, kde-format
-msgid "Failed to find tool..."
-msgstr "无法找到工具..."
-
-#: core/utilities/queuemanager/manager/task.cpp:255
-#, kde-format
-msgid "(overwritten)"
-msgstr "(已覆盖)"
-
-#: core/utilities/queuemanager/manager/task.cpp:260
-#, kde-format
-msgid "(renamed to %1)"
-msgstr "(重命名为 %1)"
-
-#: core/utilities/queuemanager/manager/task.cpp:265
-#, kde-format
-msgid "Item exists and was skipped"
-msgstr "项目已存在，已跳过"
-
-#: core/utilities/queuemanager/manager/task.cpp:290
-#, kde-format
-msgid "Failed to create sidecar file..."
-msgstr "无法创建附带文件..."
-
-#: core/utilities/queuemanager/manager/task.cpp:299
-#, kde-format
-msgid "Item processed successfully %1"
-msgstr "项目已完成处理 %1"
-
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
-#, kde-format
-msgid "Failed to create file..."
-msgstr "无法创建文件..."
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:108
 #, kde-format
