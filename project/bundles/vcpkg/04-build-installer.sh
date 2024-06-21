@@ -138,7 +138,7 @@ cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDL
 cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/applications                            $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                           2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/Qt6/resources                           $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                           2>/dev/null
