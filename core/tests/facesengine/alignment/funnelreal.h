@@ -17,8 +17,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACESENGINE_ALIGNMENT_CONGEALING_FUNNELREAL_H
-#define DIGIKAM_FACESENGINE_ALIGNMENT_CONGEALING_FUNNELREAL_H
+#pragma once
 
 // Local includes
 
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACESENGINE_ALIGNMENT_CONGEALING_FUNNELREAL_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CORRELATOR_UTEST_H
-#define DIGIKAM_CORRELATOR_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -37,5 +36,3 @@ private Q_SLOTS:
     void testInterpolation();
 
 };
-
-#endif // DIGIKAM_CORRELATOR_UTEST_H

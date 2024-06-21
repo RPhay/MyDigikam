@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_ITEM_INFO_UTEST_H
-#define DIGIKAM_PRINT_ITEM_INFO_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -60,5 +59,3 @@ private Q_SLOTS:
 
     void testPrintItemInfo();
 };
-
-#endif // DIGIKAM_PRINT_ITEM_INFO_UTEST_H

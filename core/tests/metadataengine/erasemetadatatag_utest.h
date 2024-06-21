@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ERASE_METADATA_TAG_UTEST_H
-#define DIGIKAM_ERASE_METADATA_TAG_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ private Q_SLOTS:
 
     void testEraseMetadataTag();
 };
-
-#endif // DIGIKAM_ERASE_METADATA_TAG_UTEST_H

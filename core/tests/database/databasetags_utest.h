@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_TAGS_UTEST_H
-#define DIGIKAM_DATABASE_TAGS_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -92,5 +91,3 @@ private:
 
     QString              filesPath;
 };
-
-#endif // DIGIKAM_DATABASE_TAGS_UTEST_H

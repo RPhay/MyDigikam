@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
     Ui::MainWindow* ui;
     Iface           MediaWiki;
 };
-
-#endif // MAINWINDOW_H

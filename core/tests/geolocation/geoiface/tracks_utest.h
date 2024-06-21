@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRACKS_UTEST_H
-#define DIGIKAM_TRACKS_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ private Q_SLOTS:
     void testSaxLoaderError();
     void testFileLoading();
 };
-
-#endif // DIGIKAM_TRACKS_UTEST_H

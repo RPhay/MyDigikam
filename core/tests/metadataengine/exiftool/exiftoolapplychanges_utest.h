@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_APPLYCHANGES_UTEST_H
-#define DIGIKAM_EXIFTOOL_APPLYCHANGES_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,5 +35,3 @@ private Q_SLOTS:
 
     void testExifToolApplyChanges();
 };
-
-#endif // DIGIKAM_EXIFTOOL_APPLYCHANGES_UTEST_H

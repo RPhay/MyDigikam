@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECT_NOISE_UTEST_H
-#define DIGIKAM_DETECT_NOISE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ DataTestCases const dataTestCases =
     {QLatin1String("variousTypesNoiseFailCase"),    PairImageQuality(QLatin1String("noise_bird_salt_pepper.png"), 1)},
     {QLatin1String("variousTypesNoiseFailCase"),    PairImageQuality(QLatin1String("noise_bird_bandpass.png"),    1)},
 };
-
-#endif // DIGIKAM_DETECT_NOISE_UTEST_H

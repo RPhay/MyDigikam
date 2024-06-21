@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RGPARSING_UTEST_H
-#define DIGIKAM_RGPARSING_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,5 +35,3 @@ private Q_SLOTS:
     void testNoOp();
     void testVerifyRG();
 };
-
-#endif // DIGIKAM_RGPARSING_UTEST_H

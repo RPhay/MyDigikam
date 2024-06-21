@@ -39,8 +39,7 @@
 **
 ****************************************************************************/
 
-#ifndef DIGIKAM_MODEL_TEST_H
-#define DIGIKAM_MODEL_TEST_H
+#pragma once
 
 // Q tincludes
 
@@ -101,5 +100,3 @@ private:
 
     QList<QPersistentModelIndex> changing;
 };
-
-#endif // DIGIKAM_MODEL_TEST_H

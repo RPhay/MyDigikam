@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DTEST_DATA_DIR_H
-#define DIGIKAM_DTEST_DATA_DIR_H
+#pragma once
 
 // Qt includes
 
@@ -154,8 +153,7 @@ protected:
         }
 
         bool b = m_testDataDir.cd(subdirPath);
+
         Q_UNUSED(b);
     }
 };
-
-#endif // DIGIKAM_DTEST_DATA_DIR

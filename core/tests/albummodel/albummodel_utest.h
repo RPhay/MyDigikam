@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_MODEL_UTEST_H
-#define DIGIKAM_ALBUM_MODEL_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -102,5 +101,3 @@ private:
     QList<int>           addedIds;
     QString              imagesPath;
 };
-
-#endif // DIGIKAM_ALBUM_MODEL_UTEST_H

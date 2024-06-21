@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_CACHE_UTEST_H
-#define DIGIKAM_TAGS_CACHE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -68,7 +67,5 @@ private:
 
 private:
 
-    Digikam::TagsCache* tagsCache;
+    Digikam::TagsCache* tagsCache = nullptr;
 };
-
-#endif // DIGIKAM_TAGS_CACHE_UTEST_H

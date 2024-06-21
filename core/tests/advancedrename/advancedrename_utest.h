@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_RENAME_UTEST_H
-#define DIGIKAM_ADVANCED_RENAME_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -124,5 +123,3 @@ private Q_SLOTS:
      */
     void testEmptyParseString();
 };
-
-#endif // DIGIKAM_ADVANCED_RENAME_UTEST_H

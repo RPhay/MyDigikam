@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DITEMS_LIST_GUI_H
-#define DIGIKAM_DITEMS_LIST_GUI_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
     class Private;
     Private* const d = nullptr;
 };
-
-#endif // DIGIKAM_DITEMS_LIST_TEST_H

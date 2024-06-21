@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H
-#define DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -39,5 +38,3 @@ protected Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();
 };
-
-#endif // DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H

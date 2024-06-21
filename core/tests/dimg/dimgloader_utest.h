@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_LOADER_UTEST_H
-#define DIGIKAM_DIMG_LOADER_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -39,5 +38,3 @@ private Q_SLOTS:
 
     void testDImgLoader();
 };
-
-#endif // DIGIKAM_DIMG_LOADER_UTEST_H

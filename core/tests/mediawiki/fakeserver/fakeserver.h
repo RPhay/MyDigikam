@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MEDIAWIKI_FAKE_SERVER_H
-#define DIGIKAM_MEDIAWIKI_FAKE_SERVER_H
+#pragma once
 
 // Qt includes
 
@@ -97,9 +96,7 @@ private:
     QStringList                m_scenarios;
     QStringList                m_cookie;
     QList<FakeServer::Request> m_request;
-    QTcpServer*                m_tcpServer;
+    QTcpServer*                m_tcpServer      = nullptr;
     mutable QMutex             m_mutex;
-    QTcpSocket*                m_clientSocket;
+    QTcpSocket*                m_clientSocket   = nullptr;
 };
-
-#endif // DIGIKAM_MEDIAWIKI_FAKE_SERVER_H

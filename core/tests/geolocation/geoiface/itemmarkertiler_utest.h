@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_MARKER_TILER_UTEST_H
-#define DIGIKAM_ITEM_MARKER_TILER_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private Q_SLOTS:
     void testSelectionState1();
     void benchmarkIteratorWholeWorld();
 };
-
-#endif // DIGIKAM_ITEM_MARKER_TILER_UTEST_H

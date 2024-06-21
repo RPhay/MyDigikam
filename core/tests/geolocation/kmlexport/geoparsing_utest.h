@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEOPARSING_UTEST_H
-#define DIGIKAM_GEOPARSING_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,5 +35,3 @@ private Q_SLOTS:
     void testQDateTimeParsing();
     void testCustomParsing();
 };
-
-#endif // DIGIKAM_GEOPARSING_UTEST_H

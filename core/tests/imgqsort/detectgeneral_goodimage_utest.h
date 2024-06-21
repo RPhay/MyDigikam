@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECT_GENERAL_GOOD_IMAGE_UTEST_H
-#define DIGIKAM_DETECT_GENERAL_GOOD_IMAGE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ DataTestCases const dataTestCases =
     {QLatin1String("goodImage"),        PairImageQuality(QLatin1String("general_good_image_5.jpg"),       3)},
     {QLatin1String("goodImage"),        PairImageQuality(QLatin1String("general_good_image_6.jpg"),       3)},
 };
-
-#endif // DIGIKAM_DETECT_GENERAL_GOOD_IMAGE_UTEST_H

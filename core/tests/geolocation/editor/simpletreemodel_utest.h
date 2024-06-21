@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SIMPLETREEMODEL_UTEST_H
-#define DIGIKAM_SIMPLETREEMODEL_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,6 +35,4 @@ private Q_SLOTS:
     void testNoOp();
     void testModel1();
 };
-
-#endif // DIGIKAM_SIMPLETREEMODEL_UTEST_H
 

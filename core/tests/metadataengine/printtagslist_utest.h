@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_TAGS_LIST_UTEST_H
-#define DIGIKAM_PRINT_TAGS_LIST_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -42,5 +41,3 @@ private Q_SLOTS:
     void testPrintAllAvailableIptcTags();
     void testPrintAllAvailableXmpTags();
 };
-
-#endif // DIGIKAM_PRINT_TAGS_LIST_UTEST_H

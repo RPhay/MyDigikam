@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_FREE_ROTATION_UTEST_H
-#define DIGIKAM_DIMG_FREE_ROTATION_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,5 +35,3 @@ private:
 
     double myRound(double val, int accuracy);
 };
-
-#endif // DIGIKAM_DIMG_FREE_ROTATION_UTEST_H

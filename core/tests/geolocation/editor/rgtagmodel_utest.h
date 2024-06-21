@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RGTAGMODEL_UTEST_H
-#define DIGIKAM_RGTAGMODEL_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ private Q_SLOTS:
     void testModel3();
     void testModelSpacerTags();
 };
-
-#endif // DIGIKAM_RGTAGMODEL_UTEST_H

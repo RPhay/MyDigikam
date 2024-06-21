@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECT_AESTHETIC_UTEST_H
-#define DIGIKAM_DETECT_AESTHETIC_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -50,5 +49,3 @@ DataTestCases const dataTestCases =
     {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("general_bad_image_2.jpg"), 1)},
     {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("general_bad_image_3.jpg"), 1)},
 };
-
-#endif // DIGIKAM_DETECT_AESTHETIC_UTEST_H

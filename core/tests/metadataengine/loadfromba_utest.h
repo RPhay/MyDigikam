@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_FROM_BA_UTEST_H
-#define DIGIKAM_LOAD_FROM_BA_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ private Q_SLOTS:
 
     void testLoadFromByteArray();
 };
-
-#endif // DIGIKAM_LOAD_FROM_BA_UTEST_H

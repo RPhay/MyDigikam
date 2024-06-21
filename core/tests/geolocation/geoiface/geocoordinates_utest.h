@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEOCOORDINATES_UTEST_H
-#define DIGIKAM_GEOCOORDINATES_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -36,5 +35,3 @@ private Q_SLOTS:
     void testGeoCoordinates();
     void testMovable();
 };
-
-#endif // DIGIKAM_GEOCOORDINATES_UTEST_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_MAIN_WINDOW_H
-#define DIGIKAM_GEO_MAIN_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -123,5 +122,3 @@ private:
     class Private;
     Private* const d = nullptr;
 };
-
-#endif // DIGIKAM_GEO_MAIN_WINDOW_H

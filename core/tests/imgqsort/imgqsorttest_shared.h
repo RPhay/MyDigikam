@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGQSORT_TEST_SHARED_H
-#define DIGIKAM_IMGQSORT_TEST_SHARED_H
+#pragma once
 
 // Qt includes
 
@@ -57,5 +56,3 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType ty
 QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDetection& customSetting, const QFileInfoList& list);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMGQSORT_TEST_SHARED_H

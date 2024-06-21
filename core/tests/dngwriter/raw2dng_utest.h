@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW2DNG_UTEST_H
-#define DIGIKAM_RAW2DNG_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -32,5 +31,3 @@ private Q_SLOTS:
 
     void testRaw2Dng();
 };
-
-#endif // DIGIKAM_RAW2DNG_UTEST_H

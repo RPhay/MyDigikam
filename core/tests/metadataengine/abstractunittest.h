@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_UNIT_TEST_H
-#define DIGIKAM_ABSTRACT_UNIT_TEST_H
+#pragma once
 
 // Qt includes
 
@@ -138,5 +137,3 @@ protected:
     bool    m_hasExifTool = false;    ///< ExifTool is available in unit test.
     QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
 };
-
-#endif // DIGIKAM_ABSTRACT_UNIT_TEST_H

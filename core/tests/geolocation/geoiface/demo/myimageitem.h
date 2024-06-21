@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_MY_IMAGE_ITEM_H
-#define DIGIKAM_GEO_MY_IMAGE_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -50,5 +49,3 @@ private:
 
     Q_DISABLE_COPY(MyImageItem)
 };
-
-#endif // DIGIKAM_GEO_MY_IMAGE_ITEM_H

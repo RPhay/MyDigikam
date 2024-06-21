@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_SWITCH_UTEST_H
-#define DIGIKAM_DATABASE_SWITCH_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ private:
     QString m_db2Path;                ///< Temporary path to target database files.
     QDir    m_db2Dir;                 ///< Same that previous as QDir object.
 };
-
-#endif // DIGIKAM_DATABASE_SWITCH_UTEST_H

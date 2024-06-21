@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_READ_WRITE_UTEST_H
-#define DIGIKAM_TAGS_READ_WRITE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -86,5 +85,3 @@ private:
     QStringList tagSet2;
     QStringList tagSet3;
 };
-
-#endif // DIGIKAM_TAGS_READ_WRITE_UTEST_H

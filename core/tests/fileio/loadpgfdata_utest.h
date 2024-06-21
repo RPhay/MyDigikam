@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_PGF_DATA_UTEST_H
-#define DIGIKAM_LOAD_PGF_DATA_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -31,5 +30,3 @@ private Q_SLOTS:
 
     void testLoadData();
 };
-
-#endif // DIGIKAM_LOAD_PGF_DATA_UTEST_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_ENGINE_DEMO_FANCY_RECT_H
-#define DIGIKAM_FACE_ENGINE_DEMO_FANCY_RECT_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ public:
 };
 
 } // namespace FaceEngineDemo
-
-#endif // DIGIKAM_FACE_ENGINE_DEMO_FANCY_RECT_H

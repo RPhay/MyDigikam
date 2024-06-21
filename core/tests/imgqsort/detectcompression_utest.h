@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECT_COMPRESSION_UTEST_H
-#define DIGIKAM_DETECT_COMPRESSION_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ DataTestCases const dataTestCases =
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DETECT_COMPRESSION_UTEST_H

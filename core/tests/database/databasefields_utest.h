@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_FIELDS_UTEST_H
-#define DIGIKAM_DATABASE_FIELDS_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -43,5 +42,3 @@ private Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();
 };
-
-#endif // DIGIKAM_DATABASE_FIELDS_UTEST_H

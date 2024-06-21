@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_QT_OPENCV_H
-#define DIGIKAM_QT_OPENCV_H
+#pragma once
 
 // Qt includes
 
@@ -184,5 +183,3 @@ namespace QtOpenCV
     }
 
 } // namespace QtOpenCV
-
-#endif // DIGIKAM_QT_OPENCV_H

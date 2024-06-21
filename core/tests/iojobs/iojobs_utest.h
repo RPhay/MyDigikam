@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IO_JOBS_UTEST_H
-#define DIGIKAM_IO_JOBS_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ private Q_SLOTS:
     void permanentDel();
     void permanentDel_data();
 };
-
-#endif // DIGIKAM_IO_JOBS_UTEST_H

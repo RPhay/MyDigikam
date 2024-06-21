@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ private:
     Ui::MainWindow* ui      = nullptr;
     Iface*          mwIface = nullptr;
 };
-
-#endif // MAINWINDOW_H

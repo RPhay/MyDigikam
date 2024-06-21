@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRINT_METADATA_UTEST_H
-#define DIGIKAM_PRINT_METADATA_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -44,5 +43,3 @@ private Q_SLOTS:
 
     void testPrintMetadata();
 };
-
-#endif // DIGIKAM_PRINT_METADATA_UTEST_H

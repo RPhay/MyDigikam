@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PRIMITIVES_UTEST_H
-#define DIGIKAM_PRIMITIVES_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -40,5 +39,3 @@ private Q_SLOTS:
     void testNormalizeBounds();
     void testGroupStateComputer();
 };
-
-#endif // DIGIKAM_PRIMITIVES_UTEST_H

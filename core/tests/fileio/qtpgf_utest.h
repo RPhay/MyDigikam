@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_QT_PGF_UTEST_H
-#define DIGIKAM_QT_PGF_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -31,5 +30,3 @@ private Q_SLOTS:
 
     void testQtPGFIface();
 };
-
-#endif // DIGIKAM_QT_PGF_UTEST_H

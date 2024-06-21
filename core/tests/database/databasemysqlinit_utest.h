@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_MYSQL_INIT_UTEST_H
-#define DIGIKAM_DATABASE_MYSQL_INIT_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -45,5 +44,3 @@ private:
     QString m_tempPath;               ///< The temporary path to store file to process unit test.
     QDir    m_tempDir;                ///< Same that previous as QDir object.
 };
-
-#endif // DIGIKAM_DATABASE_MYSQL_INIT_UTEST_H

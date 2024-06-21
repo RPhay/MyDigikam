@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_SAVE_THREAD_UTEST_H
-#define DIGIKAM_LOAD_SAVE_THREAD_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -55,5 +54,3 @@ private:
     bool            m_loaded         = false;
     bool            m_saved          = false;
 };
-
-#endif // DIGIKAM_LOAD_SAVE_THREAD_UTEST_H

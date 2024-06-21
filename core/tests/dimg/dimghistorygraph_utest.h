@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H
-#define DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ private:
     QStringList      readOnlyImages;
     QList<qlonglong> ids;
 };
-
-#endif // DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H

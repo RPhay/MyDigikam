@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PATCH_PREVIEW_UTEST_H
-#define DIGIKAM_PATCH_PREVIEW_UTEST_H
+#pragma once
 
 // Local includes
 
@@ -39,5 +38,3 @@ private Q_SLOTS:
     void initTestCase()    override;
     void cleanupTestCase() override;
 };
-
-#endif // DIGIKAM_PATCH_PREVIEW_UTEST_H

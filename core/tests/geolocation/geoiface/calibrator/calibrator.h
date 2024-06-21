@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CALIBRATOR_H
-#define DIGIKAM_CALIBRATOR_H
+#pragma once
 
 // Qt includes
 
@@ -84,5 +83,3 @@ private:
 
     Q_DISABLE_COPY(Calibrator)
 };
-
-#endif // DIGIKAM_CALIBRATOR_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_MY_TREE_WIDGET_H
-#define DIGIKAM_GEO_MY_TREE_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
     class Private;
     Private* const d = nullptr;
 };
-
-#endif // DIGIKAM_GEO_MY_TREE_WIDGET_H

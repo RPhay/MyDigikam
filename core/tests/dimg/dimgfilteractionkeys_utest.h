@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMGFILTERACTIONKEYS_UTEST_H
-#define DIGIKAM_DIMGFILTERACTIONKEYS_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -44,5 +43,3 @@ private:
 
     bool hasUniqueKeys(const FilterAction& action);
 };
-
-#endif // DIGIKAM_DIMGFILTERACTIONKEYS_UTEST_H

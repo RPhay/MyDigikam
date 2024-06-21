@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PROCESSOR_DLG_H
-#define DIGIKAM_PROCESSOR_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
     class Private;
     Private* const d = nullptr;
 };
-
-#endif // DIGIKAM_PROCESSOR_DLG_H

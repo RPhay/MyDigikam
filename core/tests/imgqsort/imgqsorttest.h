@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGQSORT_TEST_H
-#define DIGIKAM_IMGQSORT_TEST_H
+#pragma once
 
 // Qt includes
 
@@ -113,5 +112,3 @@ protected:
     DataTestCases m_dataTestCases;
     bool          m_hasExifTool;
 };
-
-#endif // DIGIKAM_IMGQSORT_TEST_H

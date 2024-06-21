@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HAARIFACE_UTEST_H
-#define DIGIKAM_HAARIFACE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -56,5 +55,3 @@ private:
 
     QString              filesPath;
 };
-
-#endif // DIGIKAM_HAARIFACE_UTEST_H

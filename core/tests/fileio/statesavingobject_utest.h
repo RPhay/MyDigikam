@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_STATE_SAVING_OBJECT_UTEST_H
-#define DIGIKAM_STATE_SAVING_OBJECT_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ private:
     class Private;
     Private* const d = nullptr;
 };
-
-#endif // DIGIKAM_STATE_SAVING_OBJECT_UTEST_H

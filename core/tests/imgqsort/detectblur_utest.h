@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H
-#define DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ DataTestCases const dataTestCases =
     {QLatin1String("blurDetectionFailTest"), PairImageQuality(QLatin1String("blur_tree_3.jpg"),           1)}, // False case : Pending instead of Rejected
     {QLatin1String("blurDetectionFailTest"), PairImageQuality(QLatin1String("blur_sky_1.jpg"),            3)}, // False case : Pending instead of Accepted
 };
-
-#endif // DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H

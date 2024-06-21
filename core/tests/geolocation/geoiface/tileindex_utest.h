@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TILEINDEX_UTEST_H
-#define DIGIKAM_TILEINDEX_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -41,5 +40,3 @@ private Q_SLOTS:
     void testToCoordinatesCorners();
     void testMovable();
 };
-
-#endif // DIGIKAM_TILEINDEX_UTEST_H

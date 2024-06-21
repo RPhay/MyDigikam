@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_HISTORY_UTEST_H
-#define DIGIKAM_DIMG_HISTORY_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ private Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();
 };
-
-#endif // DIGIKAM_DIMG_HISTORY_UTEST_H

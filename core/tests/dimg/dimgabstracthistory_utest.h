@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H
-#define DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -69,8 +68,6 @@ protected:
 protected:
 
     QEventLoop  m_loop;
-    EditorCore* m_im;
+    EditorCore* m_im        = nullptr;
     QString     m_tempFile;
 };
-
-#endif // DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H

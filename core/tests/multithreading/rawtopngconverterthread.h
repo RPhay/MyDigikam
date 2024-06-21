@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H
-#define DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ private Q_SLOTS:
     void slotJobProgress(int);
     void slotJobStarted();
 };
-
-#endif // DIGIKAM_RAW_TO_PNG_CONVERTER_THREAD_H

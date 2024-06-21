@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_TEXT_BAR_UTEST_H
-#define DIGIKAM_SEARCH_TEXT_BAR_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -45,5 +44,3 @@ private:
     SearchTextSettings lastSearchTextSettings;
     int                callCount;
 };
-
-#endif // DIGIKAM_SEARCH_TEXT_BAR_UTEST_H

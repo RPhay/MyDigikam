@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PGF_SCALED_UTEST_H
-#define DIGIKAM_PGF_SCALED_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -31,5 +30,3 @@ private Q_SLOTS:
 
     void testPGFScaled();
 };
-
-#endif // DIGIKAM_PGF_SCALED_UTEST_H

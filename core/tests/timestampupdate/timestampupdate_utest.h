@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_STAMP_UPDATE_UTEST_H
-#define DIGIKAM_TIME_STAMP_UPDATE_UTEST_H
+#pragma once
 
 // Qt includes
 
@@ -48,5 +47,3 @@ private:
     QString          dbFile;
     QList<qlonglong> ids;
 };
-
-#endif // DIGIKAM_TIME_STAMP_UPDATE_UTEST_H

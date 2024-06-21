@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H
-#define DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H
+#pragma once
 
 // Qt includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace FaceEngineDemo
-
-#endif // DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H
