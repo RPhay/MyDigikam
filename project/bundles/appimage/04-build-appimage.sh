@@ -71,6 +71,7 @@ mkdir -p $APP_IMG_DIR/usr/share
 mkdir -p $APP_IMG_DIR/usr/share/icons
 mkdir -p $APP_IMG_DIR/usr/share/X11
 mkdir -p $APP_IMG_DIR/usr/share/metainfo
+mkdir -p $APP_IMG_DIR/usr/share/applications
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/interfaces
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/services
 
@@ -173,10 +174,13 @@ else
 
 fi
 
-echo -e "------------- Copy AppImage stream data filess\n"
+echo -e "------------- Copy AppImage stream data files\n"
 
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
+
+cp -r /usr/share/applications/org.kde.digikam.desktop     ./usr/share/applications
+cp -r /usr/share/applications/org.kde.showfoto.desktop    ./usr/share/applications
 
 # NOTE: no resources data are provided with QtWebKit
 
@@ -655,7 +659,9 @@ cp ${ORIG_WD}/data/AppRun ./
 
 # desktop integration files
 
-cp /usr/share/applications/org.kde.digikam.desktop      ./
+ln -s ./usr/share/applications/org.kde.digikam.desktop  ./
+ln -s ./usr/share/applications/org.kde.shofoto.desktop  ./
+
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./digikam.png
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./.DirIcon
 
