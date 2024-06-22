@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 01:43+0000\n"
+"POT-Creation-Date: 2024-06-22 01:51+0000\n"
 "PO-Revision-Date: 2024-06-19 11:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3094,7 +3094,7 @@ msgstr ""
 "bir arama sanal albümüne kaydedilir."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:143
 #, kde-format
 msgid "Timeline"
 msgstr "Zaman Akışı"
@@ -3133,22 +3133,22 @@ msgstr ""
 "Veritabanındaki geçerli sorgu hiçbir sonuç döndürmedi. Arama ayarlarını "
 "değiştirin veya içerikli bir albüm seçin."
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:124
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Çizim Arama (Bulanık)"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:128
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Görsel Arama (Bulanık)"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:132
 #, kde-format
 msgid "Map Search"
 msgstr "Aramayı Eşlemle"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:139
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -51578,71 +51578,71 @@ msgstr "Hiçbir adres defteri girdisi bulunamadı"
 msgid "Applying face changes"
 msgstr "Yüz değişiklikleri uygulanıyor"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Tamam"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Seçili kişinin burada gösterildiğini onaylayın"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Onayla"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Bu yüz bölgesini kaldır"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Bu yüzü yok saymayı durdur"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Bu kim?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Yok Say"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Bu yüzü yok say"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Bu yüzü yok sayıldı olarak imle"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

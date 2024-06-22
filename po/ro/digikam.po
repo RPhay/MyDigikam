@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 01:43+0000\n"
+"POT-Creation-Date: 2024-06-22 01:51+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3257,7 +3257,7 @@ msgstr ""
 "căutarea unui nou album virtual utilizând numele definit în stânga."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:143
 #, kde-format
 msgid "Timeline"
 msgstr "Cronologie"
@@ -3296,22 +3296,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:124
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Căutare aproximativă de schițe"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:128
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Căutare aproximativă de imagini"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:132
 #, kde-format
 msgid "Map Search"
 msgstr "Căutare pe hartă"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:139
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -52277,74 +52277,74 @@ msgstr "Nicio înregistrare găsită în cartea de adrese"
 msgid "Applying face changes"
 msgstr "Aplicare modificări?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Configurează"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "&Elimină"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Elimină acest marcaj"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Profilul monitorului: "
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignoră această etichetă"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Afișează etichetele imaginilor"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

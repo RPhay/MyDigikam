@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 01:43+0000\n"
+"POT-Creation-Date: 2024-06-22 01:51+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3300,7 +3300,7 @@ msgstr ""
 "ស្វែងរក​អាល់ប៊ុម​និម្មិត​ថ្មី​ដោយ​ប្រើ​​ឈ្មោះ​ដែល​កំណត់​នៅ​ខាង​ឆ្វេង ។"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:143
 #, kde-format
 msgid "Timeline"
 msgstr "បន្ទាត់​ពេលវេលា"
@@ -3337,22 +3337,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:124
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "ស្វែងរក​គំនូរព្រាង​ស្រពិចស្រពិល"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:128
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "ស្វែងរក​រូបភាព​ស្រពិចស្រពិល"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:132
 #, kde-format
 msgid "Map Search"
 msgstr "ស្វែងរក​ផែនទី"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:139
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -52840,75 +52840,75 @@ msgstr ""
 msgid "Applying face changes"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@action"
 msgid "Confirm"
 msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​​"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "យក​ស្លាក​ចេញ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "យក​ស្លាក​នេះ​ចេញ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, fuzzy, kde-format
 #| msgid "Ignore This Tag"
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "មិន​អើពើ​ស្លាក​នេះ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "បន្ថែម​ស្លាក​មុខ"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

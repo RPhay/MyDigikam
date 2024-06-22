@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 01:43+0000\n"
-"PO-Revision-Date: 2024-06-15 14:44+0200\n"
+"POT-Creation-Date: 2024-06-22 01:51+0000\n"
+"PO-Revision-Date: 2024-06-21 22:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3122,7 +3122,7 @@ msgstr ""
 "álbum virtual de buscas novo co nome indicado á esquerda."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:143
 #, kde-format
 msgid "Timeline"
 msgstr "Liña temporal"
@@ -3161,22 +3161,22 @@ msgstr ""
 "Esta consulta de base de datos non obtivo resultados. Cambie a configuración "
 "de busca ou seleccione un álbum con contido."
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:124
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Busca de bosquexos similares"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:128
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Busca de imaxes similares"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:132
 #, kde-format
 msgid "Map Search"
 msgstr "Busca en mapas"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:139
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -3323,10 +3323,9 @@ msgid "%1/%2 items selected"
 msgstr "Seleccionou %1 de %2 elementos"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Pecháronse máis de 650 informes de persoas usuarias en Bugzilla."
+msgstr "Pecháronse máis de 1500 informes de persoas usuarias en Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3572,23 +3571,19 @@ msgstr ""
 "en lote."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Xestor de colas: engadir unha nova ferramenta para asignar títulos e lendas "
+"Xestor de colas: engadir unha nova ferramenta para executar filtros de G'MIC "
 "en lote."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Documentación: <a href=\" https://docs.digikam.org/en/index.html\">Rescribir "
+"Documentación: <a href=\"https://docs.digikam.org/en/index.html\">Rescribir "
 "o manual</a> de DocBook á infraestrutura Sphinx con reStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:164
@@ -3600,30 +3595,35 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Engadir novas ferramentas de mantemento e de xestión de cola para asignar "
+"etiquetas automaticamente a imaxes usando un motor de rede neural de "
+"aprendizaxe profunda. <a href=\"https://community.kde.org/GSoc/2023/"
+"StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Consulte este informe de Google Summer of Code 2023 para máis información."
+"</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Actualizar a ferramenta G'MIC-Qt á última versión, 3.2.2, finalizar a "
+"Actualizar a ferramenta G'MIC-Qt á última versión, 3.4.0, finalizar a "
 "adaptación a macOS e mellorar a estabilidade do complemento."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Actualizar o SDK de DNG de Adobe á última versión, 1.7.1, que permite "
+"compresión JPEG-XL."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
-"Actualizar o motor interno de RAW á última captura de libraw, 2023-11-21."
+"Actualizar o motor interno de RAW á última captura de libraw, 2024-06-16."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3635,6 +3635,13 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Novas funcionalidades de imaxes en cru (RAW): Canon EOS R6 Mark II, EOS R8, "
+"EOS R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
+"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
+"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
+"ILME-FX30, DSC-HX95, A1.Multiple DJI e drons de Skydio. Graváronse varios "
+"teléfonos intelixentes co formato DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
@@ -51800,71 +51807,71 @@ msgstr "Non se atoparon entradas na axenda de enderezos."
 msgid "Applying face changes"
 msgstr "Aplicar os cambios faciais"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Aceptar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Confirme que a persoa seleccionada se amosa aquí"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Retirar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Retirar esta zona facial"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Desmarcar esta cara como ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Quen é?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorar esta cara"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marcar esta cara como ignorada"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"

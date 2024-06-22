@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 01:43+0000\n"
+"POT-Creation-Date: 2024-06-22 01:51+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3007,7 +3007,7 @@ msgstr ""
 "按下此按钮后，当前时间轴的所选日期将以左侧输入的名称保存到一个新的虚拟相册。"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:144
+#: core/app/views/stack/itemiconview_p.h:143
 #, kde-format
 msgid "Timeline"
 msgstr "时间轴"
@@ -3045,22 +3045,22 @@ msgstr ""
 "当前查询没有从数据库返回任何结果。请更改搜索设置，或者选择一个包含内容的相"
 "册。"
 
-#: core/app/views/stack/itemiconview_p.h:125
+#: core/app/views/stack/itemiconview_p.h:124
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "模糊画图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:129
+#: core/app/views/stack/itemiconview_p.h:128
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "模糊图像搜索"
 
-#: core/app/views/stack/itemiconview_p.h:133
+#: core/app/views/stack/itemiconview_p.h:132
 #, kde-format
 msgid "Map Search"
 msgstr "地图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:140
+#: core/app/views/stack/itemiconview_p.h:139
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -3201,10 +3201,9 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "解决了 650 多个用户上报的程序缺陷。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3407,22 +3406,16 @@ msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr "队列管理器：新增批量分配标题和说明文字的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
-msgstr "队列管理器：新增批量分配标题和说明文字的新工具。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"使用文档：<a href=\" https://docs.digikam.org/en/index.html\">重写 digiKam 使"
-"用手册</a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3435,16 +3428,11 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"更新 G'MIC-Qt 工具到最新的 3.2.2 版，完成相关插件的 macOS 移植，改善其稳定"
-"性。"
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3452,10 +3440,9 @@ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2023-11-21。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -50044,71 +50031,71 @@ msgstr "未找到地址簿条目"
 msgid "Applying face changes"
 msgstr "应用人脸更改"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:170
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:200
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "确定"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:171
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "确认所选人物显示在此处"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:175
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "确认"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "移除"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:185
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "移除此人脸区域"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:201
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "取消标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:521
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "这是谁？"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:567
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:568
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "忽略这张人脸"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:600
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:605
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -65068,16 +65055,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgid ""
-#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
-#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
-#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
-#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
-#~ msgstr ""
-#~ "全新 RAW 功能：Phase One/Leaf IIQ-S v2 支持、Canon CR3 filmrolls/RawBurst "
-#~ "Canon CRM (影片) 文件支持、Tiled bit-packed (和 16-bit unpacked) DNG 文件 "
-#~ "(非标准) 支持、允许 Deflate 压缩的整数 DNG 文件、支持 Canon EOS R3、R7、"
-#~ "R10、Fujifilm X-H2S、X-T30 II、OM System、OM-1、Leica M11、Sony A7-IV "
-#~ "(ILCE-7M4)、DJI Mavic 3"
