@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef FACIAL_RECOGNITION_WRAPPER_P_H
-#define FACIAL_RECOGNITION_WRAPPER_P_H
+#pragma once
 
 #include "facialrecognition_wrapper.h"
 
@@ -90,5 +89,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // FACIAL_RECOGNITION_WRAPPER_P_H

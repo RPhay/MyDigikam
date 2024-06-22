@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_WORKER_IFACE_H
-#define DIGIKAM_DATABASE_WORKER_IFACE_H
+#pragma once
 
 // Qt includes
 
@@ -89,5 +88,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DATABASE_WORKER_IFACE_H

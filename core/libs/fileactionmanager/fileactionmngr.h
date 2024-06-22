@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_ACTION_MNGR_H
-#define DIGIKAM_FILE_ACTION_MNGR_H
+#pragma once
 
 // Local includes
 
@@ -117,5 +116,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILE_ACTION_MNGR_H

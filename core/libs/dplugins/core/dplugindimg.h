@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_DIMG_H
-#define DIGIKAM_DPLUGIN_DIMG_H
+#pragma once
 
 // Qt includes
 
@@ -149,5 +148,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_INTERFACE(Digikam::DPluginDImg, DIGIKAM_DPLUGIN_DIMG_IID)
-
-#endif // DIGIKAM_DPLUGIN_DIMG_H

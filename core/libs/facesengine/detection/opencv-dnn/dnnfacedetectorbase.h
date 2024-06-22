@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H
-#define DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H
+#pragma once
 
 // C++ includes
 
@@ -84,5 +83,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H

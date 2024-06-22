@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JPEG_WIN_H
-#define DIGIKAM_JPEG_WIN_H
+#pragma once
 
 // C+ includes
 
@@ -49,5 +48,3 @@ void    jpeg_memory_src (j_decompress_ptr cinfo, const JOCTET* buffer, size_t bu
 } // namespace JPEGUtils
 
 } // namespace Digikam
-
-#endif // DIGIKAM_JPEG_WIN_H

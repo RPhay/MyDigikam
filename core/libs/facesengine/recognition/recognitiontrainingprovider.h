@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RECOGNITION_TRAINING_PROVIDER_H
-#define DIGIKAM_RECOGNITION_TRAINING_PROVIDER_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RECOGNITION_TRAINING_PROVIDER_H

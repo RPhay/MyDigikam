@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FULL_OBJECT_DETECTION_H
-#define DIGIKAM_FULL_OBJECT_DETECTION_H
+#pragma once
 
 // C++ includes
 
@@ -60,5 +59,3 @@ private:
 std::vector<cv::Rect> getEyes(const FullObjectDetection& shape);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FULL_OBJECT_DETECTION_H

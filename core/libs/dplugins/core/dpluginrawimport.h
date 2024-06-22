@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_RAW_IMPORT_H
-#define DIGIKAM_DPLUGIN_RAW_IMPORT_H
+#pragma once
 
 // Local includes
 
@@ -93,5 +92,3 @@ Q_SIGNALS:
 } // namespace Digikam
 
 Q_DECLARE_INTERFACE(Digikam::DPluginRawImport, DIGIKAM_DPLUGIN_RAWIMPORT_IID)
-
-#endif // DIGIKAM_DPLUGIN_RAW_IMPORT_H

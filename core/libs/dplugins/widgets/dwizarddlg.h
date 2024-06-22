@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DWIZARD_DLG_H
-#define DIGIKAM_DWIZARD_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DWIZARD_DLG_H

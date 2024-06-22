@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_DB_SCHEMA_UPDATER_H
-#define DIGIKAM_FACE_DB_SCHEMA_UPDATER_H
+#pragma once
 
 // Local includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_DB_SCHEMA_UPDATER_H

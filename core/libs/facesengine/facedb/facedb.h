@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_DB_H
-#define DIGIKAM_FACE_DB_H
+#pragma once
 
 // C++ includes
 
@@ -177,5 +176,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_DB_H

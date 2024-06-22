@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MATRIX_OPERATIONS_H
-#define DIGIKAM_MATRIX_OPERATIONS_H
+#pragma once
 
 // C++ includes
 
@@ -103,5 +102,3 @@ float determinant(const std::vector<std::vector<float> >& u);
 } // namespace MatrixOperations
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MATRIX_OPERATIONS_H

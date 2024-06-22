@@ -18,8 +18,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SHAPE_PREDICTOR_H
-#define DIGIKAM_SHAPE_PREDICTOR_H
+#pragma once
 
 // C++ includes
 
@@ -203,5 +202,3 @@ QDataStream& operator >> (QDataStream& dataStream, ShapePredictor& shape);
 } // namespace RedEye
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SHAPE_PREDICTOR_H

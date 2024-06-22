@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DITEMS_LIST_P_H
-#define DIGIKAM_DITEMS_LIST_P_H
+#pragma once
 
 #include "ditemslist.h"
 
@@ -80,5 +79,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DITEMS_LIST_P_H

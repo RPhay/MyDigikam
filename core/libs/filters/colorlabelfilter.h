@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLOR_LABEL_FILTER_H
-#define DIGIKAM_COLOR_LABEL_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLOR_LABEL_FILTER_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_PARSER_P_H
-#define DIGIKAM_IMAGE_QUALITY_PARSER_P_H
+#pragma once
 
 #include "imagequalityparser.h"
 
@@ -75,5 +74,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_PARSER_P_H

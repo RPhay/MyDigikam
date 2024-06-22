@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAG_DROP_IMPLEMENTATIONS_H
-#define DIGIKAM_DRAG_DROP_IMPLEMENTATIONS_H
+#pragma once
 
 // Qt includes
 
@@ -166,5 +165,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DRAG_DROP_IMPLEMENTATIONS_H

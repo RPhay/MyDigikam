@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_CONTAINER_H
-#define DIGIKAM_IMAGE_QUALITY_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ public:
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const ImageQualityContainer& s);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_CONTAINER_H

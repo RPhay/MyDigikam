@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_DETECTOR_H
-#define DIGIKAM_ABSTRACT_DETECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -45,5 +44,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ABSTRACT_DETECTOR_H

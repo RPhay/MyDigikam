@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_CALCULATOR_H
-#define DIGIKAM_IMAGE_QUALITY_CALCULATOR_H
+#pragma once
 
 // Local includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_CALCULATOR_H

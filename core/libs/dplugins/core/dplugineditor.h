@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_EDITOR_H
-#define DIGIKAM_DPLUGIN_EDITOR_H
+#pragma once
 
 // Qt includes
 
@@ -95,5 +94,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_INTERFACE(Digikam::DPluginEditor, DIGIKAM_DPLUGIN_EDITOR_IID)
-
-#endif // DIGIKAM_DPLUGIN_EDITOR_H

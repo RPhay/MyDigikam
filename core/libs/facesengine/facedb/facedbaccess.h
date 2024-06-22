@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_DB_ACCESS_H
-#define DIGIKAM_FACE_DB_ACCESS_H
+#pragma once
 
 // Local includes
 
@@ -105,5 +104,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_DB_ACCESS_H

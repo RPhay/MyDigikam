@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_LOADER_H
-#define DIGIKAM_DPLUGIN_LOADER_H
+#pragma once
 
 // Qt includes
 
@@ -164,5 +163,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPLUGIN_LOADER_H

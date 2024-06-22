@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPREVIEW_IMAGE_H
-#define DIGIKAM_DPREVIEW_IMAGE_H
+#pragma once
 
 // Qt includes
 
@@ -197,5 +196,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPREVIEW_IMAGE_H

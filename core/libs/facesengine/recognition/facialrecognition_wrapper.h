@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef FACIAL_RECOGNITION_WRAPPER_H
-#define FACIAL_RECOGNITION_WRAPPER_H
+#pragma once
 
 // Qt includes
 
@@ -201,5 +200,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // FACIAL_RECOGNITION_WRAPPER_H

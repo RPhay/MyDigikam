@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RATING_FILTER_H
-#define DIGIKAM_RATING_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -107,5 +106,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RATING_FILTER_H

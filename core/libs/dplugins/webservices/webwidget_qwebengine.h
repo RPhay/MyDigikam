@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WEB_WIDGET_QWEBENGINE_H
-#define DIGIKAM_WEB_WIDGET_QWEBENGINE_H
+#pragma once
 
 // Qt includes
 
@@ -49,10 +48,8 @@ Q_SIGNALS:
 
 private:
 
-  class Private;
-  Private* const d = nullptr;
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_WEB_WIDGET_QWEBENGINE_H

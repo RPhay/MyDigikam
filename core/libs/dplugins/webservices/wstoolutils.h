@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_TOOL_UTILS_H
-#define DIGIKAM_WS_TOOL_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_WS_TOOL_UTILS_H

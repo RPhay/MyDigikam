@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGEQUALITY_THREAD_H
-#define DIGIKAM_IMAGEQUALITY_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -83,5 +82,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGEQUALITY_THREAD_H

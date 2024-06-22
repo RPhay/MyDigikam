@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DTRASH_ITEM_INFO_H
-#define DIGIKAM_DTRASH_ITEM_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ typedef QList<DTrashItemInfo> DTrashItemInfoList;
 QDebug operator<<(QDebug dbg, const DTrashItemInfo& info);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DTRASH_ITEM_INFO_H

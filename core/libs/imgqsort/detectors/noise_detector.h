@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NOISE_DETECTOR_H
-#define DIGIKAM_NOISE_DETECTOR_H
+#pragma once
 
 // Local includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NOISE_DETECTOR_H

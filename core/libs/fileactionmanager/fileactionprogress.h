@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_ACTION_PROGRESS_H
-#define DIGIKAM_FILE_ACTION_PROGRESS_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILE_ACTION_PROGRESS_H

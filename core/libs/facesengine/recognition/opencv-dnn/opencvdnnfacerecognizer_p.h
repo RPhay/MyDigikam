@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef OPENCV_DNN_FACERECOGNIZER_P_H
-#define OPENCV_DNN_FACERECOGNIZER_P_H
+#pragma once
 
 #include "opencvdnnfacerecognizer.h"
 
@@ -428,5 +427,3 @@ bool OpenCVDNNFaceRecognizer::Private::insertData(const cv::Mat& nodePos, const 
 }
 
 } // namespace Digikam
-
-#endif // OPENCV_DNN_FACERECOGNIZER_P_H

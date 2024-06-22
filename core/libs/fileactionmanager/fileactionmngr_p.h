@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_ACTION_MNGR_PRIVATE_H
-#define DIGIKAM_FILE_ACTION_MNGR_PRIVATE_H
+#pragma once
 
 // Qt includes
 
@@ -187,5 +186,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILE_ACTION_MNGR_PRIVATE_H

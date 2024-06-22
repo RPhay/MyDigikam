@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_INFO_TASK_SPLITTER_H
-#define DIGIKAM_ITEM_INFO_TASK_SPLITTER_H
+#pragma once
 
 // Local includes
 
@@ -38,5 +37,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_INFO_TASK_SPLITTER_H

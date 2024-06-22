@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JPEG_UTILS_H
-#define DIGIKAM_JPEG_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -123,5 +122,3 @@ DIGIKAM_EXPORT int  getJpegQuality(const QString& file);
 } // namespace JPEGUtils
 
 } // namespace Digikam
-
-#endif // DIGIKAM_JPEG_UTILS_H

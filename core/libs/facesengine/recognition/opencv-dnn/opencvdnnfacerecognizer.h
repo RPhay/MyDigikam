@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef OPENCV_DNN_FACERECOGNIZER_H
-#define OPENCV_DNN_FACERECOGNIZER_H
+#pragma once
 
 // Qt includes
 
@@ -117,5 +116,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // OPENCV_DNN_FACERECOGNIZER_H

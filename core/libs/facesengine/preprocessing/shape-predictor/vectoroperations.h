@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VECTOR_OPERATIONS_H
-#define DIGIKAM_VECTOR_OPERATIONS_H
+#pragma once
 
 // C++ includes
 
@@ -245,5 +244,3 @@ std::vector<T> operator*(const std::vector<T>& v1,
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VECTOR_OPERATIONS_H

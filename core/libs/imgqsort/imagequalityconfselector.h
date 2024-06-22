@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_QUALITY_CONF_SELECTOR_H
-#define DIGIKAM_IMAGE_QUALITY_CONF_SELECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_QUALITY_CONF_SELECTOR_H

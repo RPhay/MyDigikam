@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RECOGNITION_PREPROCESSOR_H
-#define DIGIKAM_RECOGNITION_PREPROCESSOR_H
+#pragma once
 
 #include "facepreprocessor.h"
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RECOGNITION_PREPROCESSOR_H

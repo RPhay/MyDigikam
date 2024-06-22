@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WS_ITEM_H
-#define DIGIKAM_WS_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -93,5 +92,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_WS_ITEM_H

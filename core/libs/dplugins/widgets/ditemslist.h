@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DITEMS_LIST_H
-#define DIGIKAM_DITEMS_LIST_H
+#pragma once
 
 // Qt includes
 
@@ -326,5 +325,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DItemsList::ControlButtons)
-
-#endif // DIGIKAM_DITEMS_LIST_H

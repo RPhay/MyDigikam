@@ -31,8 +31,7 @@
  * for details.
  */
 
-#ifndef DIGIKAM_ICC_JPEG_H
-#define DIGIKAM_ICC_JPEG_H
+#pragma once
 
 #include <stdio.h>    /* needed to define "FILE", "NULL" */
 #include <jpeglib.h>
@@ -84,5 +83,3 @@ DIGIKAM_EXPORT extern void setup_read_icc_profile JPP((j_decompress_ptr cinfo));
 DIGIKAM_EXPORT extern boolean read_icc_profile JPP((j_decompress_ptr cinfo,
                                                    JOCTET** icc_data_ptr,
                                                    unsigned int* icc_data_len));
-
-#endif /* DIGIKAM_ICC_JPEG_H */

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OPENFACE_PREPROCESSOR_H
-#define DIGIKAM_OPENFACE_PREPROCESSOR_H
+#pragma once
 
 // C++ includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_OPENFACE_PREPROCESSOR_H

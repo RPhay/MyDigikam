@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEO_LOCATION_FILTER_H
-#define DIGIKAM_GEO_LOCATION_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GEO_LOCATION_FILTER_H

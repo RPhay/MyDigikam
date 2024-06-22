@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_LOADER_P_H
-#define DIGIKAM_DPLUGIN_LOADER_P_H
+#pragma once
 
 #include "dpluginloader.h"
 
@@ -58,5 +57,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPLUGIN_LOADER_P_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DNN_FACE_EXTRACTOR_H
-#define DNN_FACE_EXTRACTOR_H
+#pragma once
 
 // C++ includes
 
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DNN_FACE_EXTRACTOR_H

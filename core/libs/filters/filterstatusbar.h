@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_STATUS_BAR_H
-#define DIGIKAM_FILTER_STATUS_BAR_H
+#pragma once
 
 // Qt includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILTER_STATUS_BAR_H

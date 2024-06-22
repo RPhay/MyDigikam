@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COMPRESSION_DETECTOR_H
-#define DIGIKAM_COMPRESSION_DETECTOR_H
+#pragma once
 
 // Local includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COMPRESSION_DETECTOR_H

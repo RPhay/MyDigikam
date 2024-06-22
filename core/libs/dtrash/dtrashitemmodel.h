@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DTRASH_ITEM_MODEL_H
-#define DIGIKAM_DTRASH_ITEM_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -158,5 +157,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DTRASH_ITEM_MODEL_H

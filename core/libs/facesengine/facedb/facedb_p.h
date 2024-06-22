@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_DB_P_H
-#define DIGIKAM_FACE_DB_P_H
+#pragma once
 
 #include "facedb.h"
 
@@ -42,5 +41,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_DB_P_H

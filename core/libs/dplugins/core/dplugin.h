@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_H
-#define DIGIKAM_DPLUGIN_H
+#pragma once
 
 // Qt includes
 
@@ -230,5 +229,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_TYPEINFO(Digikam::DPluginAuthor, Q_MOVABLE_TYPE);
-
-#endif // DIGIKAM_DPLUGIN_H

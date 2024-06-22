@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_CONF_VIEW_EDITOR_H
-#define DIGIKAM_DPLUGIN_CONF_VIEW_EDITOR_H
+#pragma once
 
 // Qt includes
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPLUGIN_CONF_VIEW_EDITOR_H

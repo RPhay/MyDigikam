@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_ACTION_IMAGE_INFO_LIST_H
-#define DIGIKAM_FILE_ACTION_IMAGE_INFO_LIST_H
+#pragma once
 
 // Qt includes
 
@@ -170,5 +169,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::FileActionItemInfoList)
-
-#endif // DIGIKAM_FILE_ACTION_IMAGE_INFO_LIST_H

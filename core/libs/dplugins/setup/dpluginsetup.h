@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPLUGIN_SETUP_H
-#define DIGIKAM_DPLUGIN_SETUP_H
+#pragma once
 
 // Qt includes
 
@@ -65,5 +64,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPLUGIN_SETUP_H

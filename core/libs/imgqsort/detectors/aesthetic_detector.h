@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AESTHETIC_DETECTOR_H
-#define DIGIKAM_AESTHETIC_DETECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_AESTHETIC_DETECTOR_H
