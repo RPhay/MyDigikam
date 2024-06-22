@@ -12,8 +12,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  * ============================================================ */
 
-#ifndef DIGIKAM_HSL_FILTER_H
-#define DIGIKAM_HSL_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -99,5 +98,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HSL_FILTER_H

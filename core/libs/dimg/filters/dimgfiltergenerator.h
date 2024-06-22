@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_FILTER_GENERATOR_H
-#define DIGIKAM_DIMG_FILTER_GENERATOR_H
+#pragma once
 
 // Qt includes
 
@@ -113,5 +112,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_FILTER_GENERATOR_H

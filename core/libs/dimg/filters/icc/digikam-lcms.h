@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LCMS_H
-#define DIGIKAM_LCMS_H
+#pragma once
 
 // Qt includes
 
@@ -256,5 +255,3 @@ DIGIKAM_EXPORT LCMSBOOL                dkCmsIsTag(cmsHPROFILE hProfile, icTagSig
 DIGIKAM_EXPORT cmsHPROFILE             dkCmsOpenProfileFromFile(const char* const ICCProfile, const char* const sAccess);
 
 DIGIKAM_EXPORT void                    dkCmsXYZ2xyY(LPcmsCIExyY Dest, const cmsCIEXYZ* const Source);
-
-#endif // DIGIKAM_LCMS_H

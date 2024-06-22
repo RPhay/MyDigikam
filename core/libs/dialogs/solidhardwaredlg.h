@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SOLID_HARDWARE_DLG_H
-#define DIGIKAM_SOLID_HARDWARE_DLG_H
+#pragma once
 
 // Local includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SOLID_HARDWARE_DLG_H

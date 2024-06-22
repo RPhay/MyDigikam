@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BLACK_FRAME_TOOL_TIP_H
-#define DIGIKAM_BLACK_FRAME_TOOL_TIP_H
+#pragma once
 
 // Local includes
 
@@ -52,5 +51,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BLACK_FRAME_TOOL_TIP_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_THREADED_FILTER_H
-#define DIGIKAM_DIMG_THREADED_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -319,5 +318,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_THREADED_FILTER_H

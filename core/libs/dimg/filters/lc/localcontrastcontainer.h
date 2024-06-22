@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCAL_CONTRAST_CONTAINER_H
-#define DIGIKAM_LOCAL_CONTRAST_CONTAINER_H
+#pragma once
 
 #define TONEMAPPING_MAX_STAGES 4
 
@@ -55,5 +54,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCAL_CONTRAST_CONTAINER_H

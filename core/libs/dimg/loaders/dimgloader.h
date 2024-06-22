@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_LOADER_H
-#define DIGIKAM_DIMG_LOADER_H
+#pragma once
 
 // C++ includes
 
@@ -206,5 +205,3 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
 Q_DECLARE_OPERATORS_FOR_FLAGS(DImgLoader::LoadFlags)
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_LOADER_H

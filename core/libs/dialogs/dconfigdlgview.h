@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCONFIG_DLG_VIEW_H
-#define DIGIKAM_DCONFIG_DLG_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -195,5 +194,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCONFIG_DLG_VIEW_H

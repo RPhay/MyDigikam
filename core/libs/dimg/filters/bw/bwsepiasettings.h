@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BW_SEPIA_SETTINGS_H
-#define DIGIKAM_BW_SEPIA_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BW_SEPIA_SETTINGS_H

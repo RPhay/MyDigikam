@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DSPLASH_SCREEN_H
-#define DIGIKAM_DSPLASH_SCREEN_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DSPLASH_SCREEN_H

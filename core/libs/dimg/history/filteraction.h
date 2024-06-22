@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_ACTION_H
-#define DIGIKAM_FILTER_ACTION_H
+#pragma once
 
 // Qt includes
 
@@ -178,5 +177,3 @@ protected:
 
 Q_DECLARE_METATYPE(Digikam::FilterAction)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FilterAction::Flags)
-
-#endif // DIGIKAM_FILTER_ACTION_H

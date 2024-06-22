@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAW_PROCESSING_FILTERS_H
-#define DIGIKAM_RAW_PROCESSING_FILTERS_H
+#pragma once
 
 // Local includes
 
@@ -129,5 +128,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RAW_PROCESSING_FILTERS_H

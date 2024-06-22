@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INFRARED_FILTER_H
-#define DIGIKAM_INFRARED_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -95,5 +94,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_INFRARED_FILTER_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CURVES_SETTINGS_H
-#define DIGIKAM_CURVES_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CURVES_SETTINGS_H

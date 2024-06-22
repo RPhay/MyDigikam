@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_DIALOG_P_H
-#define DIGIKAM_IMAGE_DIALOG_P_H
+#pragma once
 
 #include "imagedialog.h"
 
@@ -75,5 +74,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMAGE_DIALOG_P_H

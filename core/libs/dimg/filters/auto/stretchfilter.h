@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_STRETCH_FILTER_H
-#define DIGIKAM_STRETCH_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -93,5 +92,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_STRETCH_FILTER_H

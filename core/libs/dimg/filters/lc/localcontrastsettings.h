@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCAL_CONTRAST_SETTINGS_H
-#define DIGIKAM_LOCAL_CONTRAST_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCAL_CONTRAST_SETTINGS_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCONFIG_DLG_MODELS_PRIVATE_H
-#define DIGIKAM_DCONFIG_DLG_MODELS_PRIVATE_H
+#pragma once
 
 #include "dconfigdlgmodels.h"
 
@@ -137,5 +136,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCONFIG_DLG_MODELS_PRIVATE_H

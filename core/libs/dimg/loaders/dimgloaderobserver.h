@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_LOADER_OBSERVER_H
-#define DIGIKAM_DIMG_LOADER_OBSERVER_H
+#pragma once
 
 // Qt includes
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_LOADER_OBSERVER_H

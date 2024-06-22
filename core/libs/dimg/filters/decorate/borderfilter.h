@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BORDER_FILTER_H
-#define DIGIKAM_BORDER_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -103,5 +102,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BORDER_FILTER_H

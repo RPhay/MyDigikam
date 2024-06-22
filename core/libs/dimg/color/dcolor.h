@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCOLOR_H
-#define DIGIKAM_DCOLOR_H
+#pragma once
 
 // C++ includes
 
@@ -229,5 +228,3 @@ public:
 
 #include "dcolorpixelaccess.h"
 #include "dcolorblend.h"
-
-#endif // DIGIKAM_DCOLOR_H

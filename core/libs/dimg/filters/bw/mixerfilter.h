@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MIXER_FILTER_H
-#define DIGIKAM_MIXER_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -112,5 +111,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MIXER_FILTER_H

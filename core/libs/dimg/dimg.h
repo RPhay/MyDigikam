@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_H
-#define DIGIKAM_DIMG_H
+#pragma once
 
 // Qt includes
 
@@ -790,5 +789,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::DImg::PrepareMetadataFlags)
-
-#endif // DIGIKAM_DIMG_H

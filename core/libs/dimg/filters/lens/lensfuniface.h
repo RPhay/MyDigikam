@@ -10,8 +10,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LENS_FUN_IFACE_H
-#define DIGIKAM_LENS_FUN_IFACE_H
+#pragma once
 
 // LensFun includes
 
@@ -154,5 +153,3 @@ private:
 
 Q_DECLARE_METATYPE(Digikam::LensFunIface::DevicePtr)
 Q_DECLARE_METATYPE(Digikam::LensFunIface::LensPtr)
-
-#endif // DIGIKAM_LENS_FUN_IFACE_H

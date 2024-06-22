@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CURVES_FILTER_H
-#define DIGIKAM_CURVES_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -85,5 +84,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CURVES_FILTER_H

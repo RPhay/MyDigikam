@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXPOSURE_CONTAINER_H
-#define DIGIKAM_EXPOSURE_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXPOSURE_CONTAINER_H

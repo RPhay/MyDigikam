@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H
-#define DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H
+#pragma once
 
 #define LensDistortionPixelAccessRegions 20
 #define LensDistortionPixelAccessWidth   40
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H

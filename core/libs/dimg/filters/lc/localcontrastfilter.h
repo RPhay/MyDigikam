@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCAL_CONTRAST_FILTER_H
-#define DIGIKAM_LOCAL_CONTRAST_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -116,5 +115,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCAL_CONTRAST_FILTER_H

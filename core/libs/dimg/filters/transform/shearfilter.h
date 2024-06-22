@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SHEAR_FILTER_H
-#define DIGIKAM_SHEAR_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -92,5 +91,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SHEAR_FILTER_H

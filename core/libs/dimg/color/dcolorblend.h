@@ -20,8 +20,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCOLOR_BLEND_H
-#define DIGIKAM_DCOLOR_BLEND_H
+#pragma once
 
 namespace Digikam
 {
@@ -199,5 +198,3 @@ inline void DColor::multiply(float factor)
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCOLOR_BLEND_H

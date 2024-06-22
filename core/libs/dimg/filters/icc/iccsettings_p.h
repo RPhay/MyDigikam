@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_SETTINGS_P_H
-#define DIGIKAM_ICC_SETTINGS_P_H
+#pragma once
 
 #include "iccsettings.h"
 #include "digikam_config.h"
@@ -98,5 +97,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ICC_SETTINGS_P_H

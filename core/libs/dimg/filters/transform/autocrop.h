@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTO_CROP_H
-#define DIGIKAM_AUTO_CROP_H
+#pragma once
 
 // Qt includes
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_AUTO_CROP_H

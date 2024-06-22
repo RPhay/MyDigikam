@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_DECODING_H
-#define DIGIKAM_DRAW_DECODING_H
+#pragma once
 
 // Qt includes
 
@@ -115,5 +114,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::DRawDecoding)
-
-#endif // DIGIKAM_DRAW_DECODING_H

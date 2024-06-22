@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_PRIVATE_H
-#define DIGIKAM_DIMG_PRIVATE_H
+#pragma once
 
 #include "digikam_config.h"
 
@@ -262,5 +261,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_PRIVATE_H

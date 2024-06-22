@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ANTI_VIGNETTING_FILTER_H
-#define DIGIKAM_ANTI_VIGNETTING_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -100,5 +99,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ANTI_VIGNETTING_FILTER_H

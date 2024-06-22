@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CURVES_BOX_H
-#define DIGIKAM_CURVES_BOX_H
+#pragma once
 
 // Qt includes
 
@@ -120,5 +119,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CURVES_BOX_H

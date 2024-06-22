@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_WRITER_PRIVATE_H
-#define DIGIKAM_DNG_WRITER_PRIVATE_H
+#pragma once
 
 #include "dngwriter.h"
 
@@ -206,5 +205,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNG_WRITER_PRIVATE_H

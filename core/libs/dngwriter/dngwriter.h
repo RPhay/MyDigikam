@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_WRITER_H
-#define DIGIKAM_DNG_WRITER_H
+#pragma once
 
 // Qt includes
 
@@ -99,5 +98,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNG_WRITER_H

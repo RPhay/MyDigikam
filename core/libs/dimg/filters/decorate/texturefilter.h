@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXTURE_FILTER_H
-#define DIGIKAM_TEXTURE_FILTER_H
+#pragma once
 
 // Qt includes
 
@@ -78,5 +77,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TEXTURE_FILTER_H

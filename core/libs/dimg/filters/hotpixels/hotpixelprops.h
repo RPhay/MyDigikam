@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HOT_PIXEL_PROPS_H
-#define DIGIKAM_HOT_PIXEL_PROPS_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HOT_PIXEL_PROPS_H

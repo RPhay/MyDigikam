@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_PROFILE_INFO_DLG_H
-#define DIGIKAM_ICC_PROFILE_INFO_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ICC_PROFILE_INFO_DLG_H

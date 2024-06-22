@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RANDOM_NUMBER_GENERATOR_H
-#define DIGIKAM_RANDOM_NUMBER_GENERATOR_H
+#pragma once
 
 // Qt includes
 
@@ -146,5 +145,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RANDOM_NUMBER_GENERATOR_H

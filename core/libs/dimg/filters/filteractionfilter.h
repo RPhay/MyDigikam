@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_ACTION_FILTER_H
-#define DIGIKAM_FILTER_ACTION_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -126,5 +125,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILTER_ACTION_FILTER_H

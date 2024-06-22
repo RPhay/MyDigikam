@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCONFIG_DLG_MODELS_H
-#define DIGIKAM_DCONFIG_DLG_MODELS_H
+#pragma once
 
 // Qt includes
 
@@ -355,5 +354,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCONFIG_DLG_MODELS_H

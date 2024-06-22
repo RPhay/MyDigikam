@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NORMALIZE_FILTER_H
-#define DIGIKAM_NORMALIZE_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NORMALIZE_FILTER_H

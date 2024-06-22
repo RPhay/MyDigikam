@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNG_WRITER_HOST_H
-#define DIGIKAM_DNG_WRITER_HOST_H
+#pragma once
 
 // Local includes
 
@@ -41,5 +40,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNG_WRITER_HOST_H

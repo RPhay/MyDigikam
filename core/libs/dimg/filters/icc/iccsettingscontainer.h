@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_SETTINGS_CONTAINER_H
-#define DIGIKAM_ICC_SETTINGS_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -128,5 +127,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::ICCSettingsContainer::Behavior)
-
-#endif // DIGIKAM_ICC_SETTINGS_CONTAINER_H

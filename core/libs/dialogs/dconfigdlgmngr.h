@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCONFIG_DLG_MNGR_H
-#define DIGIKAM_DCONFIG_DLG_MNGR_H
+#pragma once
 
 // Qt includes
 
@@ -230,5 +229,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCONFIG_DLG_MNGR_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BLACK_FRAME_LIST_VIEW_ITEM_H
-#define DIGIKAM_BLACK_FRAME_LIST_VIEW_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BLACK_FRAME_LIST_VIEW_ITEM_H

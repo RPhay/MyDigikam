@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OIL_PAINT_FILTER_H
-#define DIGIKAM_OIL_PAINT_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_OIL_PAINT_FILTER_H

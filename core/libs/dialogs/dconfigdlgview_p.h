@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCONFIG_DLG_VIEW_PRIVATE_H
-#define DIGIKAM_DCONFIG_DLG_VIEW_PRIVATE_H
+#pragma once
 
 #include "dconfigdlgview.h"
 
@@ -290,5 +289,3 @@ public Q_SLOTS:
 } // namespace DConfigDlgInternal
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCONFIG_DLG_VIEW_PRIVATE_H

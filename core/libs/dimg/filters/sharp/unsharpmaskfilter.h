@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UNSHARP_MASK_FILTER_H
-#define DIGIKAM_UNSHARP_MASK_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_UNSHARP_MASK_FILTER_H

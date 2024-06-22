@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_TRANSFORM_H
-#define DIGIKAM_ICC_TRANSFORM_H
+#pragma once
 
 // Qt includes
 
@@ -173,5 +172,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::IccTransform)
-
-#endif // DIGIKAM_ICC_TRANSFORM_H

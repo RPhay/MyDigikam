@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPROGRESS_DLG_H
-#define DIGIKAM_DPROGRESS_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPROGRESS_DLG_H

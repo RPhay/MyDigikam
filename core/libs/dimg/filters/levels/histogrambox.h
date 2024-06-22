@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HISTOGRAM_BOX_H
-#define DIGIKAM_HISTOGRAM_BOX_H
+#pragma once
 
 // Qt includes
 
@@ -81,5 +80,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_HISTOGRAM_BOX_H

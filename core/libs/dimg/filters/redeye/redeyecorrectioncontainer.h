@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RED_EYE_CORRECTION_CONTAINER_H
-#define DIGIKAM_RED_EYE_CORRECTION_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RED_EYE_CORRECTION_CONTAINER_H

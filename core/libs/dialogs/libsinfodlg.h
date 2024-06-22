@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LIBS_INFO_DLG_H
-#define DIGIKAM_LIBS_INFO_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LIBS_INFO_DLG_H

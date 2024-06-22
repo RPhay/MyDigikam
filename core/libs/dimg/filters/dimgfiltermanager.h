@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_FILTER_MANAGER_H
-#define DIGIKAM_DIMG_FILTER_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -113,5 +112,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_FILTER_MANAGER_H

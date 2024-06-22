@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NR_ESTIMATE_H
-#define DIGIKAM_NR_ESTIMATE_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NR_ESTIMATE_H

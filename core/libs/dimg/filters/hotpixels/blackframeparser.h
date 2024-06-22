@@ -17,8 +17,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BLACK_FRAME_PARSER_H
-#define DIGIKAM_BLACK_FRAME_PARSER_H
+#pragma once
 
 // Qt includes
 
@@ -78,5 +77,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_BLACK_FRAME_PARSER_H

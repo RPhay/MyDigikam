@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DPIXELS_ALIAS_FILTER_H
-#define DIGIKAM_DPIXELS_ALIAS_FILTER_H
+#pragma once
 
 // C++ includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DPIXELS_ALIAS_FILTER_H

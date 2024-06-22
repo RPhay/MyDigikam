@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEXTURE_CONTAINER_H
-#define DIGIKAM_TEXTURE_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TEXTURE_CONTAINER_H

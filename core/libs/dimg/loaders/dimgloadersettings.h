@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_LOADER_SETTINGS_H
-#define DIGIKAM_DIMG_LOADER_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -67,5 +66,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DIMG_LOADER_SETTINGS_H

@@ -18,8 +18,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLOR_FX_FILTER_H
-#define DIGIKAM_COLOR_FX_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -118,5 +117,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLOR_FX_FILTER_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RED_EYE_CORRECTION_FILTER_H
-#define DIGIKAM_RED_EYE_CORRECTION_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -93,5 +92,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RED_EYE_CORRECTION_FILTER_H
