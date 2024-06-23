@@ -183,10 +183,6 @@ else()
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 endif()
 
-if(NOT APPLE AND NOT MINGW AND NOT WIN32)
-    set(AppImageServicePatch kservice-sycoca.patch)
-endif()
-
 if (${ENABLE_QTVERSION} MATCHES "6.*")
     set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 endif()

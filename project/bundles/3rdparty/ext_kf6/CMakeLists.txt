@@ -69,10 +69,6 @@ else()
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 endif()
 
-if(NOT APPLE AND NOT MINGW AND NOT WIN32)
-    set(AppImageServicePatch kservice-sycoca.patch)
-endif()
-
 set(MarbleQtOnlyOptions -DWITH_DESIGNER_PLUGIN=OFF -DBUILD_MARBLE_TESTS=OFF -DBUILD_MARBLE_TOOLS=OFF -DBUILD_MARBLE_EXAMPLES=OFF -DBUILD_MARBLE_APPS=OFF -DBUILD_WITH_DBUS=OFF -DQTONLY=ON -DBUILD_TESTING=OFF)
 set(BreezeOptions -DBUILD_QT6=ON -DBUILD_QT5=OFF -DWITH_DECORATIONS=OFF -DWITH_WALLPAPERS=OFF)
 
@@ -99,7 +95,7 @@ InstallKF6Component(kcompletion              ${KDE_VERSION}     "${Qt6CommonOpti
 InstallKF6Component(kcolorscheme             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kconfigwidgets           ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kiconthemes              ${KDE_VERSION}     "${Qt6CommonOptions};-DKICONTHEMES_USE_QTQUICK=OFF"         "")
-InstallKF6Component(kservice                 ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "${AppImageServicePatch}")
+InstallKF6Component(kservice                 ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kglobalaccel             ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kcalendarcore            ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
 InstallKF6Component(kxmlgui                  ${KDE_VERSION}     "${Qt6CommonOptions}"                                       "")
