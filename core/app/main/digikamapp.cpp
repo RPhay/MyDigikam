@@ -33,12 +33,6 @@ DigikamApp::DigikamApp()
     setFullScreenOptions(FS_ALBUMGUI);
     setXMLFile(QLatin1String("digikamui5.rc"));
 
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    setStateConfigGroup(configGroupName());
-
-#endif
-
     m_instance         = this;
     d->config          = KSharedConfig::openConfig();
     KConfigGroup group = d->config->group(configGroupName());
@@ -67,7 +61,13 @@ DigikamApp::DigikamApp()
         d->splashScreen->show();
     }
 
-    // We need here QCoreApplication::processEvents().
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
+    // We need here QCoreApplication::processEvents() ?
 
     qApp->processEvents();
 

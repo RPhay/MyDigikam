@@ -29,12 +29,6 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 {
     setXMLFile(QLatin1String("showfotoui5.rc"));
 
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    setStateConfigGroup(configGroupName());
-
-#endif
-
     m_nonDestructive = false;
 
     // Show splash-screen at start up.
@@ -54,6 +48,16 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
         d->splash = new Digikam::DSplashScreen();
         d->splash->show();
     }
+
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
+    // We need here QCoreApplication::processEvents() ?
+
+    qApp->processEvents();
 
     // Setup loading cache and thumbnails interface.
 
