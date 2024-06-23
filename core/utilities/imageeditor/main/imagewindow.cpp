@@ -93,11 +93,7 @@ ImageWindow::ImageWindow()
     thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
     d->viewContainer->restoreState(QByteArray::fromBase64(thumbbarState));
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
     setAutoSaveSettings(configGroupName(), true);
-
-#endif
 
     //-------------------------------------------------------------
 
