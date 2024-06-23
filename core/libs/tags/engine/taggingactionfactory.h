@@ -10,8 +10,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGGING_ACTION_FACTORY_H
-#define DIGIKAM_TAGGING_ACTION_FACTORY_H
+#pragma once
 
 // Qt includes
 
@@ -107,5 +106,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAGGING_ACTION_FACTORY_H

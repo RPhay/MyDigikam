@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_MODIFICATION_HELPER_H
-#define DIGIKAM_TAG_MODIFICATION_HELPER_H
+#pragma once
 
 // Qt includes
 
@@ -231,5 +230,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_MODIFICATION_HELPER_H

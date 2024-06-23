@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTOTAGS_DNN_BASE_DETECTOR_MODEL_H
-#define DIGIKAM_AUTOTAGS_DNN_BASE_DETECTOR_MODEL_H
+#pragma once
 
 // C++ includes
 
@@ -105,5 +104,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_AUTOTAGS_DNN_BASE_DETECTOR_MODEL_H

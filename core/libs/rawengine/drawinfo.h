@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_INFO_H
-#define DIGIKAM_DRAW_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -361,5 +360,3 @@ public:
 QDebug operator<<(QDebug dbg, const DRawInfo& c);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DRAW_INFO_H

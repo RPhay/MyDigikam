@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_PROPERTIES_GPS_TAB_H
-#define DIGIKAM_ITEM_PROPERTIES_GPS_TAB_H
+#pragma once
 
 // Qt includes
 
@@ -76,5 +75,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_PROPERTIES_GPS_TAB_H

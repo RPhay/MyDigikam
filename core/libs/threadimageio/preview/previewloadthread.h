@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PREVIEW_LOAD_THREAD_H
-#define DIGIKAM_PREVIEW_LOAD_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -119,5 +118,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PREVIEW_LOAD_THREAD_H

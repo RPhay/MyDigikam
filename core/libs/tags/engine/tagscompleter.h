@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_COMPLETER_H
-#define DIGIKAM_TAGS_COMPLETER_H
+#pragma once
 
 // Qt includes
 
@@ -74,5 +73,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAGS_COMPLETER_H

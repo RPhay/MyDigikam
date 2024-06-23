@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_PROPERTIES_TXT_LABEL_H
-#define DIGIKAM_ITEM_PROPERTIES_TXT_LABEL_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_PROPERTIES_TXT_LABEL_H

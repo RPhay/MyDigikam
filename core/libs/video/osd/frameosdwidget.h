@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FRAME_OSD_WIDGET_H
-#define DIGIKAM_FRAME_OSD_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -57,5 +56,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FRAME_OSD_WIDGET_SETTINGS_H

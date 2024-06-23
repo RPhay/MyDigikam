@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOADING_CACHE_INTERFACE_H
-#define DIGIKAM_LOADING_CACHE_INTERFACE_H
+#pragma once
 
 // Qt includes
 
@@ -87,5 +86,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOADING_CACHE_INTERFACE_H

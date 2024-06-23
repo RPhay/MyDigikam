@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FRAME_UTILS_H
-#define DIGIKAM_FRAME_UTILS_H
+#pragma once
 
 // Qt includes
 
@@ -37,5 +36,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FRAME_UTILS_H

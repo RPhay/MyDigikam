@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_ITEM_PROPERTIES_TAB_H
-#define DIGIKAM_IMPORT_ITEM_PROPERTIES_TAB_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_ITEM_PROPERTIES_TAB_H

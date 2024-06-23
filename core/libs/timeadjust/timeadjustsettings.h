@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_ADJUST_SETTINGS_H
-#define DIGIKAM_TIME_ADJUST_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TIME_ADJUST_SETTINGS_H

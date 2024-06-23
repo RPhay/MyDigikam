@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_VIDEO_H
-#define DIGIKAM_SLIDE_VIDEO_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SLIDE_VIDEO_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_DECODER_WIDGET_H
-#define DIGIKAM_DRAW_DECODER_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -109,5 +108,3 @@ private:
 };
 
 } // NameSpace Digikam
-
-#endif // DIGIKAM_DRAW_DECODER_WIDGET_H

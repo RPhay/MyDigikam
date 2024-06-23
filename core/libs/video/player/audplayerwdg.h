@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUD_PLAYER_WDG_H
-#define DIGIKAM_AUD_PLAYER_WDG_H
+#pragma once
 
 // Qt include
 
@@ -85,5 +84,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_AUD_PLAYER_WDG_H

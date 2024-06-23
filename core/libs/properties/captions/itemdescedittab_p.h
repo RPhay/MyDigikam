@@ -17,8 +17,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_DESC_EDIT_TAB_P_H
-#define DIGIKAM_ITEM_DESC_EDIT_TAB_P_H
+#pragma once
 
 #include "itemdescedittab.h"
 
@@ -159,5 +158,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_DESC_EDIT_TAB_P_H

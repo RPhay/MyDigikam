@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_GPS_MODEL_HELPER_H
-#define DIGIKAM_ITEM_GPS_MODEL_HELPER_H
+#pragma once
 
 // Qt includes
 
@@ -66,5 +65,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_GPS_MODEL_HELPER_H

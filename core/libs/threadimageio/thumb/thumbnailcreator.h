@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMB_NAIL_CREATOR_H
-#define DIGIKAM_THUMB_NAIL_CREATOR_H
+#pragma once
 
 // Qt includes
 
@@ -241,5 +240,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMB_NAIL_CREATOR_H

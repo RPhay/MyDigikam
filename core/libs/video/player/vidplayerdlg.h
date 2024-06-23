@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VID_PLAYER_DLG_H
-#define DIGIKAM_VID_PLAYER_DLG_H
+#pragma once
 
 // Qt include
 
@@ -44,5 +43,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VID_PLAYER_DLG_H

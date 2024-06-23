@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VERSION_FILE_OPERATION_H
-#define DIGIKAM_VERSION_FILE_OPERATION_H
+#pragma once
 
 // Qt includes
 
@@ -116,5 +115,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::VersionFileOperation::Tasks)
-
-#endif // DIGIKAM_VERSION_FILE_OPERATION_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_WORKER_OBJECT_H
-#define DIGIKAM_WORKER_OBJECT_H
+#pragma once
 
 // Qt includes
 
@@ -193,5 +192,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_WORKER_OBJECT_H

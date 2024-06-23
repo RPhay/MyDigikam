@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VERSION_NAMING_SCHEME_H
-#define DIGIKAM_VERSION_NAMING_SCHEME_H
+#pragma once
 
 // Qt includes
 
@@ -130,5 +129,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VERSION_NAMING_SCHEME_H

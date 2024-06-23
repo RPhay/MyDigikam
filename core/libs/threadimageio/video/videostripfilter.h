@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_STRIP_FILTER_H
-#define DIGIKAM_VIDEO_STRIP_FILTER_H
+#pragma once
 
 // Local includes
 
@@ -43,5 +42,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDEO_STRIP_FILTER_H

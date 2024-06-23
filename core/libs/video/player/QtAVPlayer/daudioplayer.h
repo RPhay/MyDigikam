@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DAUDIO_PLAYER_H
-#define DIGIKAM_DAUDIO_PLAYER_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DAUDIO_PLAYER_H

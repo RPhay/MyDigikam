@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNN_RESNET_DETECTOR_H
-#define DIGIKAM_DNN_RESNET_DETECTOR_H
+#pragma once
 
 #include "dnnbasedetectormodel.h"
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNN_RESNET_DETECTOR_H

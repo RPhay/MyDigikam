@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_THREAD_H
-#define DIGIKAM_VIDSLIDE_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -67,5 +66,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDSLIDE_THREAD_H

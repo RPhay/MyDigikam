@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEMPLATE_VIEWER_H
-#define DIGIKAM_TEMPLATE_VIEWER_H
+#pragma once
 
 // Qt includes
 
@@ -47,5 +46,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TEMPLATE_VIEWER_H

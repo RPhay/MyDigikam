@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOADING_DESCRIPTION_H
-#define DIGIKAM_LOADING_DESCRIPTION_H
+#pragma once
 
 // Qt includes
 
@@ -249,5 +248,3 @@ public:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::LoadingDescription::PreviewParameters::PreviewFlags)
-
-#endif // DIGIKAM_LOADING_DESCRIPTION_H

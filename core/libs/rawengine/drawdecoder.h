@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_DECODER_H
-#define DIGIKAM_DRAW_DECODER_H
+#pragma once
 
 // C++ includes
 
@@ -274,5 +273,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DRAW_DECODER_H

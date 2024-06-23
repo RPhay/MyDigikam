@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_ITEM_PROPERTIES_SIDEBAR_H
-#define DIGIKAM_IMPORT_ITEM_PROPERTIES_SIDEBAR_H
+#pragma once
 
 // Qt includes
 
@@ -85,5 +84,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_IMPORT_ITEM_PROPERTIES_SIDEBAR_H

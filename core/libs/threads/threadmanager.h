@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THREAD_MANAGER_H
-#define DIGIKAM_THREAD_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THREAD_MANAGER_H

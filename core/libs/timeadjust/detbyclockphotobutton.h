@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DET_BY_CLOCK_PHOTO_BUTTON_H
-#define DIGIKAM_DET_BY_CLOCK_PHOTO_BUTTON_H
+#pragma once
 
 // Qt includes
 
@@ -46,5 +45,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DET_BY_CLOCK_PHOTO_BUTTON_H

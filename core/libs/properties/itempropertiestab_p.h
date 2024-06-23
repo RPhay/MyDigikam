@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_PROPERTIES_TAB_P_H
-#define DIGIKAM_ITEM_PROPERTIES_TAB_P_H
+#pragma once
 
 #include "itempropertiestab.h"
 
@@ -121,5 +120,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_PROPERTIES_TAB_P_H

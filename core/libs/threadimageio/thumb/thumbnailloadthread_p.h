@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMB_NAIL_LOAD_THREAD_P_H
-#define DIGIKAM_THUMB_NAIL_LOAD_THREAD_P_H
+#pragma once
 
 #include "thumbnailloadthread.h"
 
@@ -181,5 +180,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMB_NAIL_LOAD_THREAD_P_H

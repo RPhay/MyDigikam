@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_MNGR_LIST_VIEW_H
-#define DIGIKAM_TAG_MNGR_LIST_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -61,5 +60,3 @@ public Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_MNGR_LIST_VIEW_H

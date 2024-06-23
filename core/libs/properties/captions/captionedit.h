@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CAPTION_EDIT_H
-#define DIGIKAM_CAPTION_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CAPTION_EDIT_H

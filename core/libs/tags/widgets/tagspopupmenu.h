@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_POPUP_MENU_H
-#define DIGIKAM_TAGS_POPUP_MENU_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAGS_POPUP_MENU_H

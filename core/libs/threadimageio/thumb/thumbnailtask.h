@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMB_NAIL_TASK_H
-#define DIGIKAM_THUMB_NAIL_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -58,5 +57,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMB_NAIL_TASK_H

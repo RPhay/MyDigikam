@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEMPLATE_MANAGER_H
-#define DIGIKAM_TEMPLATE_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -77,5 +76,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TEMPLATE_MANAGER_H

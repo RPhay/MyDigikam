@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGS_LINE_EDIT_OVERLAY_H
-#define DIGIKAM_TAGS_LINE_EDIT_OVERLAY_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAGS_LINE_EDIT_OVERLAY_H

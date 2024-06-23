@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ACTION_THREAD_BASE_H
-#define DIGIKAM_ACTION_THREAD_BASE_H
+#pragma once
 
 // Qt includes
 
@@ -161,5 +160,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ACTION_THREAD_BASE_H

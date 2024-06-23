@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRANSITION_MNGR_PRIVATE_H
-#define DIGIKAM_TRANSITION_MNGR_PRIVATE_H
+#pragma once
 
 // C++ includes
 
@@ -155,5 +154,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRANSITION_MNGR_PRIVATE_H

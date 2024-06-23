@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DVIDEO_WIDGET_H
-#define DIGIKAM_DVIDEO_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DVIDEO_WIDGET_H

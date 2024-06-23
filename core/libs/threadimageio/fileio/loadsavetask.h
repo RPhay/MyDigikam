@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_SAVE_TASK_H
-#define DIGIKAM_LOAD_SAVE_TASK_H
+#pragma once
 
 // Qt includes
 
@@ -217,5 +216,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOAD_SAVE_TASK_H

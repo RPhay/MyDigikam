@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DISJOINT_METADATA_DATA_FIELDS_H
-#define DIGIKAM_DISJOINT_METADATA_DATA_FIELDS_H
+#pragma once
 
 #include "disjointmetadata.h"
 
@@ -100,5 +99,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DISJOINT_METADATA_DATA_FIELDS_H

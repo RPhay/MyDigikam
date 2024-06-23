@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EFFECT_MNGR_PRIVATE_H
-#define DIGIKAM_EFFECT_MNGR_PRIVATE_H
+#pragma once
 
 // C++ includes
 
@@ -91,5 +90,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EFFECT_MNGR_PRIVATE_H

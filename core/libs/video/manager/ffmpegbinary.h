@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FFMPEG_BINARY_H
-#define DIGIKAM_FFMPEG_BINARY_H
+#pragma once
 
 // Local includes
 
@@ -36,5 +35,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FFMPEG_BINARY_H

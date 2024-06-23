@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PARALLEL_WORKERS_H
-#define DIGIKAM_PARALLEL_WORKERS_H
+#pragma once
 
 // Qt includes
 
@@ -211,5 +210,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PARALLEL_WORKERS_H

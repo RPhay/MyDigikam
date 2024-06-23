@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAGGING_ACTION_H
-#define DIGIKAM_TAGGING_ACTION_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ protected:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::TaggingAction)
-
-#endif // DIGIKAM_TAGGING_ACTION_H

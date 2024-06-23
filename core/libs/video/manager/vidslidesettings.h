@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDSLIDE_SETTINGS_H
-#define DIGIKAM_VIDSLIDE_SETTINGS_H
+#pragma once
 
 // Qt includes
 
@@ -269,5 +268,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDSLIDE_SETTINGS_H

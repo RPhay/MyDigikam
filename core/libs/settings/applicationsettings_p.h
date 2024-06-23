@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_APPLICATION_SETTINGS_PRIVATE_H
-#define DIGIKAM_APPLICATION_SETTINGS_PRIVATE_H
+#pragma once
 
 #include "applicationsettings.h"
 
@@ -365,9 +364,7 @@ private:
 
 public:
 
-    const ApplicationSettings::OperationStrings configGroupingOperateOnAll = createConfigGroupingOperateOnAll();
+    const ApplicationSettings::OperationStrings configGroupingOperateOnAll                          = createConfigGroupingOperateOnAll();
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_APPLICATION_SETTINGS_PRIVATE_H

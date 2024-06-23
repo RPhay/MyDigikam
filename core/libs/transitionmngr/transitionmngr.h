@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TRANSITION_MNGR_H
-#define DIGIKAM_TRANSITION_MNGR_H
+#pragma once
 
 // Qt includes
 
@@ -92,5 +91,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TRANSITION_MNGR_H

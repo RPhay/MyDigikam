@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FFMPEG_LAUNCHER_H
-#define DIGIKAM_FFMPEG_LAUNCHER_H
+#pragma once
 
 // Qt includes
 
@@ -71,5 +70,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FFMPEG_LAUNCHER_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_AUTO_TAGS_ASSIGNE_H
-#define DIGIKAM_AUTO_TAGS_ASSIGNE_H
+#pragma once
 
 // Qt includes
 
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_AUTO_TAGS_ASSIGNE_H

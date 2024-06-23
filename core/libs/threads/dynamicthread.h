@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DYNAMIC_THREAD_H
-#define DIGIKAM_DYNAMIC_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -169,5 +168,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DYNAMIC_THREAD_H

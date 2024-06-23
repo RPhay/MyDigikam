@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PREVIEW_SETTINGS_H
-#define DIGIKAM_PREVIEW_SETTINGS_H
+#pragma once
 
 // Local includes
 
@@ -77,5 +76,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PREVIEW_SETTINGS_H

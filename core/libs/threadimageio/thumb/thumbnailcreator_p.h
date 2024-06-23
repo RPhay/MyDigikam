@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THUMB_NAIL_CREATOR_PRIVATE_H
-#define DIGIKAM_THUMB_NAIL_CREATOR_PRIVATE_H
+#pragma once
 
 #include "thumbnailcreator.h"
 
@@ -130,5 +129,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THUMB_NAIL_CREATOR_PRIVATE_H

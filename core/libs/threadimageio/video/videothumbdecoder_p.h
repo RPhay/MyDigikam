@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H
-#define DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H
+#pragma once
 
 #include "videothumbdecoder.h"
 
@@ -116,5 +115,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TAG_PROP_WIDGET_H
-#define DIGIKAM_TAG_PROP_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -82,5 +81,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TAG_PROP_WIDGET_H

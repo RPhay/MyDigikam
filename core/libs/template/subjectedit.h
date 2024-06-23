@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SUBJECT_EDIT_H
-#define DIGIKAM_SUBJECT_EDIT_H
+#pragma once
 
 // Local includes
 
@@ -37,5 +36,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SUBJECT_EDIT_H

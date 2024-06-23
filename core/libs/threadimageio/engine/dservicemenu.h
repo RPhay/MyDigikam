@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DSERVICE_MENU_H
-#define DIGIKAM_DSERVICE_MENU_H
+#pragma once
 
 // Qt includes
 
@@ -172,5 +171,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DSERVICE_MENU_H

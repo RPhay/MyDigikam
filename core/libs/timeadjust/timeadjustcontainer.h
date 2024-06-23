@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIME_ADJUST_CONTAINER_H
-#define DIGIKAM_TIME_ADJUST_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -152,5 +151,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TIME_ADJUST_CONTAINER_H

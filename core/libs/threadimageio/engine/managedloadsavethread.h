@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MANAGED_LOAD_SAVE_THREAD_H
-#define DIGIKAM_MANAGED_LOAD_SAVE_THREAD_H
+#pragma once
 
 // Local includes
 
@@ -214,5 +213,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MANAGED_LOAD_SAVE_THREAD_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_THUMBNAILER_H
-#define DIGIKAM_VIDEO_THUMBNAILER_H
+#pragma once
 
 // Qt includes
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDEO_THUMBNAILER_H

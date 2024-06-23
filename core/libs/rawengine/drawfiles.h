@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_FILES_H
-#define DIGIKAM_DRAW_FILES_H
+#pragma once
 
 // Qt includes
 
@@ -34,5 +33,3 @@ DIGIKAM_EXPORT QString                s_rawFileExtensions();
 DIGIKAM_EXPORT int                    s_rawFileExtensionsVersion();
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DRAW_FILES_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DISJOINT_METADATA_P_H
-#define DIGIKAM_DISJOINT_METADATA_P_H
+#pragma once
 
 #include "disjointmetadata.h"
 
@@ -95,5 +94,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DISJOINT_METADATA_P_H
