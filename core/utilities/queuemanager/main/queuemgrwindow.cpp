@@ -44,6 +44,12 @@ QueueMgrWindow::QueueMgrWindow()
     qRegisterMetaType<BatchToolSettings>("BatchToolSettings");
     qRegisterMetaType<BatchToolSet>("BatchToolSet");
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
     m_instance = this;
     BatchToolsFactory::instance();           // Create first instance here
     WorkflowManager::instance();             // Create first instance here
@@ -71,7 +77,12 @@ QueueMgrWindow::QueueMgrWindow()
 
     readSettings();
     applySettings();
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
 
     populateToolsList();
     slotQueueContentsChanged();

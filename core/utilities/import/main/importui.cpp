@@ -31,8 +31,16 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
     setConfigGroupName(QLatin1String("Camera Settings"));
 
     setXMLFile(QLatin1String("importui5.rc"));
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
     setFullScreenOptions(FS_IMPORTUI);
     setWindowFlags(Qt::Window);
+
 
     m_instance     = this;
 
@@ -58,7 +66,12 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
     // -- Read settings --------------------------------------------------
 
     readSettings();
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
 
     // -------------------------------------------------------------------
 /*

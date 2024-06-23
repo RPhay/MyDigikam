@@ -42,6 +42,12 @@ LightTableWindow::LightTableWindow()
     setConfigGroupName(QLatin1String("LightTable Settings"));
     setXMLFile(QLatin1String("lighttablewindowui5.rc"));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
     m_instance = this;
 
     setWindowFlags(Qt::Window);
@@ -69,7 +75,13 @@ LightTableWindow::LightTableWindow()
     d->rightSideBar->populateTags();
 
     applySettings();
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
+
 }
 
 LightTableWindow::~LightTableWindow()

@@ -33,6 +33,12 @@ DigikamApp::DigikamApp()
     setFullScreenOptions(FS_ALBUMGUI);
     setXMLFile(QLatin1String("digikamui5.rc"));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
     m_instance         = this;
     d->config          = KSharedConfig::openConfig();
     KConfigGroup group = d->config->group(configGroupName());
@@ -235,7 +241,11 @@ DigikamApp::DigikamApp()
 
 #endif // HAVE_KFILEMETADATA
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     setAutoSaveSettings(group, true);
+
+#endif
 
     LoadSaveThread::setInfoProvider(new DatabaseLoadSaveFileInfoProvider);
 

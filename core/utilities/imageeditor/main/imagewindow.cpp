@@ -41,6 +41,12 @@ ImageWindow::ImageWindow()
 {
     setXMLFile(QLatin1String("imageeditorui5.rc"));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    setStateConfigGroup(configGroupName());
+
+#endif
+
     m_instance = this;
 
     // We don't want to be deleted on close
@@ -87,7 +93,11 @@ ImageWindow::ImageWindow()
     thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
     d->viewContainer->restoreState(QByteArray::fromBase64(thumbbarState));
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     setAutoSaveSettings(configGroupName(), true);
+
+#endif
 
     //-------------------------------------------------------------
 
