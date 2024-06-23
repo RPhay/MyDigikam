@@ -131,6 +131,13 @@ void Showfoto::setupUserArea()
     d->leftSideBar->appendTab(d->stackView, d->stackView->getIcon(), d->stackView->getCaption());
 
     KMainWindow* const viewContainer = new KMainWindow(widget, Qt::Widget);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    viewContainer->setStateConfigGroup(QLatin1String("ImageViewer Thumbbar"));
+
+#endif
+
     m_splitter->addWidget(viewContainer);
     m_stackView                      = new Digikam::EditorStackView(viewContainer);
     m_canvas                         = new Digikam::Canvas(m_stackView);
@@ -184,7 +191,11 @@ void Showfoto::setupUserArea()
     d->thumbBar->setModels(d->model, d->filterModel);
     d->thumbBar->setSelectionMode(QAbstractItemView::SingleSelection);
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
+
+#endif
 
     d->thumbBar->installOverlays();
     d->stackView->setThumbbar(d->thumbBar);
