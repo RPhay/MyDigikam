@@ -143,7 +143,7 @@ else
         git checkout $DK_REVISION
 
     fi
-   
+
     mkdir build
 
 fi
@@ -154,6 +154,12 @@ echo "---------- Configure digiKam $DK_VERSION"
 sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
 sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
+
+if [[ $DK_QTVERSION = 5 ]] ; then
+
+    sed -e "s/DBUILD_WITH_QT6=ON/DBUILD_WITH_QT6=OFF/g"         ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
+
+fi
 
 chmod +x ./bootstrap.vcpkg
 
