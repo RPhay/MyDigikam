@@ -478,11 +478,7 @@ void LightTableWindow::setupUserArea()
     // Restore the previous state. This doesn't Q_EMIT the proper signals to the
     // dock widget, so it has to be manually reinitialized.
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
     viewContainer->setAutoSaveSettings(QLatin1String("LightTable Thumbbar"), true);
-
-#endif
 
     connect(d->barViewDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
             d->thumbView, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));
