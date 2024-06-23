@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNOTIFICATION_POPUP_H
-#define DIGIKAM_DNOTIFICATION_POPUP_H
+#pragma once
 
 // Qt includes
 
@@ -375,5 +374,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNOTIFICATION_POPUP_H

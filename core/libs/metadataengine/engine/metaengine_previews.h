@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef META_ENGINE_PREVIEWS_H
-#define META_ENGINE_PREVIEWS_H
+#pragma once
 
 // Qt includes
 
@@ -96,5 +95,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // META_ENGINE_PREVIEWS_H

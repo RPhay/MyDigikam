@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_PARSER_H
-#define DIGIKAM_EXIFTOOL_PARSER_H
+#pragma once
 
 // Qt Core
 
@@ -264,5 +263,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIFTOOL_PARSER_H

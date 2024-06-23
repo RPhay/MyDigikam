@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_FILTER_MODEL_P_H
-#define DIGIKAM_ALBUM_FILTER_MODEL_P_H
+#pragma once
 
 #include "albumfiltermodel.h"
 
@@ -32,5 +31,3 @@
 #include "applicationsettings.h"
 #include "itemsortcollator.h"
 #include "facetags.h"
-
-#endif // DIGIKAM_ALBUM_FILTER_MODEL_P_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_THREAD_H
-#define DIGIKAM_EXIFTOOL_THREAD_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIFTOOL_THREAD_H

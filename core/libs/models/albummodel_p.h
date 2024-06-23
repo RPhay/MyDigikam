@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_MODEL_P_H
-#define DIGIKAM_ALBUM_MODEL_P_H
+#pragma once
 
 #include "albummodel.h"
 
@@ -37,5 +36,3 @@
 #include "albumthumbnailloader.h"
 #include "facetags.h"
 #include "dio.h"
-
-#endif // DIGIKAM_ALBUM_MODEL_P_H

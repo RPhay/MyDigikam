@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef META_ENGINE_ROTATION_H
-#define META_ENGINE_ROTATION_H
+#pragma once
 
 // Qt includes
 
@@ -129,5 +128,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // META_ENGINE_ROTATION_H

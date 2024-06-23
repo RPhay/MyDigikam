@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ONLINE_VERSION_DLG_H
-#define DIGIKAM_ONLINE_VERSION_DLG_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ONLINE_VERSION_DLG_H

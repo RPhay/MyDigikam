@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_PROCESS_H
-#define DIGIKAM_EXIFTOOL_PROCESS_H
+#pragma once
 
 // Qt includes
 
@@ -260,5 +259,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIFTOOL_PROCESS_H

@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FOCUSPOINT_H
-#define DIGIKAM_FOCUSPOINT_H
+#pragma once
 
 // Qt includes
 
@@ -118,5 +117,3 @@ inline FocusPoint::TypePoint& operator&=(FocusPoint::TypePoint& type1, FocusPoin
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const FocusPoint& fp);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FOCUSPOINT_H

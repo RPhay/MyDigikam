@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNOTIFICATION_WRAPPER_H
-#define DIGIKAM_DNOTIFICATION_WRAPPER_H
+#pragma once
 
 // Qt includes
 
@@ -50,5 +49,3 @@ void DIGIKAM_EXPORT DNotificationWrapper(const QString& eventId, const QString& 
 bool MacNativeDispatchNotify(const QString& summary, const QString& message);
 
 #endif
-
-#endif // DIGIKAM_DNOTIFICATION_WRAPPER_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_ENGINE_SETTINGS_CONTAINER_H
-#define DIGIKAM_META_ENGINE_SETTINGS_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -126,5 +125,3 @@ DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& 
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::MetaEngineSettingsContainer::RotationBehaviorFlags)
-
-#endif // DIGIKAM_META_ENGINE_SETTINGS_CONTAINER_H

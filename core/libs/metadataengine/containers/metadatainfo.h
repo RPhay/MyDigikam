@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_DATA_INFO_H
-#define DIGIKAM_META_DATA_INFO_H
+#pragma once
 
 // Qt includes
 
@@ -187,5 +186,3 @@ typedef QList<MetadataInfo::Field> MetadataFields;
 
 Q_DECLARE_METATYPE(Digikam::IptcCoreContactInfo)
 Q_DECLARE_METATYPE(Digikam::IptcCoreLocationInfo)
-
-#endif // DIGIKAM_META_DATA_INFO_H

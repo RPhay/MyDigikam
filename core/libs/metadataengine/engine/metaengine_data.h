@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef META_ENGINE_DATA_H
-#define META_ENGINE_DATA_H
+#pragma once
 
 // Qt includes
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // META_ENGINE_DATA_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_ENGINE_DATA_PRIVATE_H
-#define DIGIKAM_META_ENGINE_DATA_PRIVATE_H
+#pragma once
 
 #include "metaengine_p.h"
 
@@ -46,5 +45,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_META_ENGINE_DATA_PRIVATE_H

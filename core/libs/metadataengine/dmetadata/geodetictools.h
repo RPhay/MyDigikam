@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEODETIC_TOOLS_H
-#define DIGIKAM_GEODETIC_TOOLS_H
+#pragma once
 
 // C++ includes
 
@@ -573,5 +572,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_GEODETIC_TOOLS_H

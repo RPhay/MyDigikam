@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_ENGINE_PRIVATE_H
-#define DIGIKAM_META_ENGINE_PRIVATE_H
+#pragma once
 
 #include "metaengine.h"
 
@@ -234,5 +233,3 @@ public:
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
-
-#endif // DIGIKAM_META_ENGINE_PRIVATE_H

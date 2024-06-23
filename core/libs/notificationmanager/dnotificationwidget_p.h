@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNOTIFICATION_WIDGET_PRIVATE_H
-#define DIGIKAM_DNOTIFICATION_WIDGET_PRIVATE_H
+#pragma once
 
 // Qt includes
 
@@ -74,5 +73,3 @@ private Q_SLOTS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNOTIFICATION_WIDGET_PRIVATE_H

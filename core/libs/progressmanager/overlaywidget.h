@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OVERLAY_WIDGET_H
-#define DIGIKAM_OVERLAY_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -61,5 +60,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_OVERLAY_WIDGET_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_MODEL_H
-#define DIGIKAM_ALBUM_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -186,5 +185,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALBUM_MODEL_H

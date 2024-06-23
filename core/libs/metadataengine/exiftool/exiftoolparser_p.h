@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_PARSER_P_H
-#define DIGIKAM_EXIFTOOL_PARSER_P_H
+#pragma once
 
 #include "exiftoolparser.h"
 
@@ -86,5 +85,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIFTOOL_PARSER_P_H

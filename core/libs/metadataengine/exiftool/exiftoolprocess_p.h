@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIFTOOL_PROCESS_P_H
-#define DIGIKAM_EXIFTOOL_PROCESS_P_H
+#pragma once
 
 #include "exiftoolprocess.h"
 
@@ -108,5 +107,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIFTOOL_PROCESS_P_H

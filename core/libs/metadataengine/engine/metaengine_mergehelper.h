@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_ENGINE_MERGE_HELPER_H
-#define DIGIKAM_META_ENGINE_MERGE_HELPER_H
+#pragma once
 
 #include "metaengine_p.h"
 
@@ -147,5 +146,3 @@ class Q_DECL_HIDDEN XmpMetaEngineMergeHelper
 #endif
 
 } // namespace Digikam
-
-#endif // DIGIKAM_META_ENGINE_MERGE_HELPER_H

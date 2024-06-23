@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CATEGORIZED_ITEM_MODEL_H
-#define DIGIKAM_CATEGORIZED_ITEM_MODEL_H
+#pragma once
 
 // Qt includes
 
@@ -143,5 +142,3 @@ protected:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::ActionItemModel::MenuCategoryMode)
-
-#endif // DIGIKAM_CATEGORIZED_ITEM_MODEL_H

@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ABSTRACT_ALBUM_MODEL_P_H
-#define DIGIKAM_ABSTRACT_ALBUM_MODEL_P_H
+#pragma once
 
 #include "abstractalbummodel.h"
 
@@ -34,5 +33,3 @@
 #include "albummanager.h"
 #include "albummodeldragdrophandler.h"
 #include "albumthumbnailloader.h"
-
-#endif // DIGIKAM_ABSTRACT_ALBUM_MODEL_P_H

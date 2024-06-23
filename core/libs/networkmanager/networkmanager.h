@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_NETWORK_MANAGER_H
-#define DIGIKAM_NETWORK_MANAGER_H
+#pragma once
 
 // Qt includes
 
@@ -64,5 +63,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_NETWORK_MANAGER_H

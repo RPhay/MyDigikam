@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_INFO_CONTAINER_H
-#define DIGIKAM_VIDEO_INFO_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -59,5 +58,3 @@ DIGIKAM_EXPORT QDataStream& operator>>(QDataStream& ds, VideoInfoContainer& info
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const VideoInfoContainer& t);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_VIDEO_INFO_CONTAINER_H

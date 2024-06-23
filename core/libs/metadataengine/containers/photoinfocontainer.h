@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PHOTO_INFO_CONTAINER_H
-#define DIGIKAM_PHOTO_INFO_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -72,5 +71,3 @@ DIGIKAM_EXPORT QDataStream& operator>>(QDataStream& ds, PhotoInfoContainer& info
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const PhotoInfoContainer& t);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_PHOTO_INFO_CONTAINER_H

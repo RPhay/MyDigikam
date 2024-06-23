@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DMETADATA_SETTINGS_CONTAINER_H
-#define DIGIKAM_DMETADATA_SETTINGS_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -196,5 +195,3 @@ private:
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DMETADATA_SETTINGS_CONTAINER_H

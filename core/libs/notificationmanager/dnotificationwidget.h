@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNOTIFICATION_WIDGET_H
-#define DIGIKAM_DNOTIFICATION_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -294,5 +293,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNOTIFICATION_WIDGET_H
