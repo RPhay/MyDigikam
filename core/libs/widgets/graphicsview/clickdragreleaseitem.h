@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CLICK_DRAG_RELEASE_ITEM_H
-#define DIGIKAM_CLICK_DRAG_RELEASE_ITEM_H
+#pragma once
 
 // Qt includes
 
@@ -68,5 +67,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_CLICK_DRAG_RELEASE_ITEM_H

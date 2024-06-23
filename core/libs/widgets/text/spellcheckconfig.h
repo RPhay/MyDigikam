@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SPELL_CHECK_CONFIG_H
-#define DIGIKAM_SPELL_CHECK_CONFIG_H
+#pragma once
 
 // Qt includes
 
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SPELL_CHECK_CONFIG_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DFONT_SELECT_H
-#define DIGIKAM_DFONT_SELECT_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DFONT_SELECT_H

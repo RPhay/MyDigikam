@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCATEGORIZED_VIEW_PRIVATE_H
-#define DIGIKAM_DCATEGORIZED_VIEW_PRIVATE_H
+#pragma once
 
 #include "dcategorizedview.h"
 
@@ -245,5 +244,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCATEGORIZED_VIEW_PRIVATE_H

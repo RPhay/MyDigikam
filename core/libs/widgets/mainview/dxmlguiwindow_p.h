@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DXML_GUI_WINDOW_P_H
-#define DIGIKAM_DXML_GUI_WINDOW_P_H
+#pragma once
 
 #include "dxmlguiwindow.h"
 
@@ -202,5 +201,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DXML_GUI_WINDOW_P_H

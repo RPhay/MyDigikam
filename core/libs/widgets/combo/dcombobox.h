@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCOMBO_BOX_H
-#define DIGIKAM_DCOMBO_BOX_H
+#pragma once
 
 // Qt includes
 
@@ -74,5 +73,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCOMBO_BOX_H

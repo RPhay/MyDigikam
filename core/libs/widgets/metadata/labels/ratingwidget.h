@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RATING_WIDGET_H
-#define DIGIKAM_RATING_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -142,5 +141,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_RATING_WIDGET_H

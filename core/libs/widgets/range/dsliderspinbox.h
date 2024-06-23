@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DSLIDER_SPINBOX_H
-#define DIGIKAM_DSLIDER_SPINBOX_H
+#pragma once
 
 // Qt includes
 
@@ -200,5 +199,3 @@ Q_SIGNALS:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DSLIDER_SPINBOX_H

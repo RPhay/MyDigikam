@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_TOOL_ERROR_VIEW_H
-#define DIGIKAM_EXIF_TOOL_ERROR_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -49,5 +48,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIF_TOOL_ERROR_VIEW_H

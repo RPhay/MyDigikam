@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLOR_GRADIENT_WIDGET_H
-#define DIGIKAM_COLOR_GRADIENT_WIDGET_H
+#pragma once
 
 // KDE includes
 
@@ -50,5 +49,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COLOR_GRADIENT_WIDGET_H

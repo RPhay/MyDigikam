@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DTEXT_EDIT_H
-#define DIGIKAM_DTEXT_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -301,5 +300,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LINE_EDIT_SPELL_CHECKER_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_DATA_SELECTOR_H
-#define DIGIKAM_META_DATA_SELECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -152,5 +151,3 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::MetadataSelectorView::ControlElements)
-
-#endif // DIGIKAM_META_DATA_SELECTOR_H

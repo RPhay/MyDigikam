@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_VIEW_CATEGORIZED_H
-#define DIGIKAM_ITEM_VIEW_CATEGORIZED_H
+#pragma once
 
 // Local includes
 
@@ -231,5 +230,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_VIEW_CATEGORIZED_H

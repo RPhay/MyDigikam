@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COLOR_LABEL_WIDGET_H
-#define DIGIKAM_COLOR_LABEL_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -135,5 +134,3 @@ Q_SIGNALS:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(QList<Digikam::ColorLabel>)
-
-#endif // DIGIKAM_COLOR_LABEL_WIDGET_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DTEXT_EDIT_P_H
-#define DIGIKAM_DTEXT_EDIT_P_H
+#pragma once
 
 #include "dtextedit.h"
 #include "digikam_config.h"
@@ -145,5 +144,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LINE_EDIT_SPELL_CHECKER_P_H

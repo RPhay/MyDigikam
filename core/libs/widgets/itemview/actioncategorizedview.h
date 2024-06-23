@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ACTION_CATEGORIZED_VIEW_H
-#define DIGIKAM_ACTION_CATEGORIZED_VIEW_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ACTION_CATEGORIZED_VIEW_H

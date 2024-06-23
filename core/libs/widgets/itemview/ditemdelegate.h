@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DITEM_DELEGATE_H
-#define DIGIKAM_DITEM_DELEGATE_H
+#pragma once
 
 // Qt includes
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DITEM_DELEGATE_H

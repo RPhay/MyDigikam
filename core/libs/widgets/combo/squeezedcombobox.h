@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SQUEEZED_COMBOBOX_H
-#define DIGIKAM_SQUEEZED_COMBOBOX_H
+#pragma once
 
 // Qt includes
 
@@ -168,5 +167,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SQUEEZED_COMBOBOX_H

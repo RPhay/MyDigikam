@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_VIEW_DELEGATE_P_H
-#define DIGIKAM_ITEM_VIEW_DELEGATE_P_H
+#pragma once
 
 #include "itemviewdelegate.h"
 
@@ -97,5 +96,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_VIEW_DELEGATE_P_H

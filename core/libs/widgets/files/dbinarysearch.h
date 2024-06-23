@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DBINARY_SEARCH_H
-#define DIGIKAM_DBINARY_SEARCH_H
+#pragma once
 
 // Qt includes
 
@@ -73,5 +72,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DBINARY_SEARCH_H

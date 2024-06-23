@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_TOOL_LIST_VIEW_GROUP_H
-#define DIGIKAM_EXIF_TOOL_LIST_VIEW_GROUP_H
+#pragma once
 
 // Qt includes
 
@@ -40,5 +39,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIF_TOOL_LIST_VIEW_GROUP_H

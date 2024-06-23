@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIMEZONE_COMBOBOX_H
-#define DIGIKAM_TIMEZONE_COMBOBOX_H
+#pragma once
 
 // Qt includes
 
@@ -44,5 +43,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_TIMEZONE_COMBOBOX_H

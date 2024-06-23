@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_STATE_SAVING_OBJECT_H
-#define DIGIKAM_STATE_SAVING_OBJECT_H
+#pragma once
 
 // Qt includes
 
@@ -196,5 +195,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_STATE_SAVING_OBJECT_H

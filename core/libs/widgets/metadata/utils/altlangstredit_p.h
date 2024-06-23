@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALT_LANG_STR_EDIT_P_H
-#define DIGIKAM_ALT_LANG_STR_EDIT_P_H
+#pragma once
 
 #include "altlangstredit.h"
 
@@ -90,5 +89,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALT_LANG_STR_EDIT_P_H

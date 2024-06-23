@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCATEGORIZED_SORT_FILTER_PROXY_MODEL_PRIVATE_H
-#define DIGIKAM_DCATEGORIZED_SORT_FILTER_PROXY_MODEL_PRIVATE_H
+#pragma once
 
 #include "dcategorizedsortfilterproxymodel.h"
 
@@ -46,5 +45,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCATEGORIZED_SORT_FILTER_PROXY_MODEL_PRIVATE_H

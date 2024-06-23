@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCALIZE_CONTAINER_H
-#define DIGIKAM_LOCALIZE_CONTAINER_H
+#pragma once
 
 // Qt includes
 
@@ -62,5 +61,3 @@ public:
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const LocalizeContainer& inf);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCALIZE_CONTAINER_H

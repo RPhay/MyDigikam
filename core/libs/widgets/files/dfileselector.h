@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DFILE_SELECTOR_H
-#define DIGIKAM_DFILE_SELECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -70,5 +69,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DFILE_SELECTOR_H

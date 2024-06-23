@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCURSOR_TRACKER_H
-#define DIGIKAM_DCURSOR_TRACKER_H
+#pragma once
 
 // Qt includes
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCURSOR_TRACKER_H

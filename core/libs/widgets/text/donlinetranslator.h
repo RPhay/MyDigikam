@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DONLINE_TRANSLATOR_H
-#define DIGIKAM_DONLINE_TRANSLATOR_H
+#pragma once
 
 // Qt includes
 
@@ -970,5 +969,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DONLINE_TRANSLATOR_H

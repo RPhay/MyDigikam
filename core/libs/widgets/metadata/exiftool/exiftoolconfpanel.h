@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_TOOL_CONF_PANEL_H
-#define DIGIKAM_EXIF_TOOL_CONF_PANEL_H
+#pragma once
 
 // Qt includes
 
@@ -60,5 +59,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_EXIF_TOOL_CONF_PANEL_H

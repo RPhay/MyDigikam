@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_COMBOBOX_UTILITIES_H
-#define DIGIKAM_COMBOBOX_UTILITIES_H
+#pragma once
 
 // Qt includes
 
@@ -307,5 +306,3 @@ protected:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_COMBOBOX_UTILITIES_H

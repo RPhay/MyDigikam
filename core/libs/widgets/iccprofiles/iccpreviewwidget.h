@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ICC_PREVIEW_WIDGET_H
-#define DIGIKAM_ICC_PREVIEW_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -46,11 +45,9 @@ public Q_SLOTS:
     void slotShowPreview(const QUrl& url);
     void slotClearPreview();
 
-private :
+private:
 
-    ICCProfileWidget* m_iccProfileWidget;
+    ICCProfileWidget* m_iccProfileWidget = nullptr;
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ICC_PREVIEW_WIDGET_H

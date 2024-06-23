@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNUM_INPUT_H
-#define DIGIKAM_DNUM_INPUT_H
+#pragma once
 
 // Qt includes
 
@@ -106,5 +105,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DNUM_INPUT_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCALIZE_SELECTOR_H
-#define DIGIKAM_LOCALIZE_SELECTOR_H
+#pragma once
 
 // Qt includes
 
@@ -105,5 +104,3 @@ bool DIGIKAM_EXPORT s_inlineTranslateString(const QString& text,
                                             QString& error);
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCALIZE_SELECTOR_H

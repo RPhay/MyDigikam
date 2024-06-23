@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTERS_HISTORY_WIDGET_H
-#define DIGIKAM_FILTERS_HISTORY_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -85,5 +84,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FILTERS_HISTORY_WIDGET_H

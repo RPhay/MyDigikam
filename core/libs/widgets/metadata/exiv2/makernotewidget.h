@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MAKER_NOTE_WIDGET_H
-#define DIGIKAM_MAKER_NOTE_WIDGET_H
+#pragma once
 
 // Local includes
 
@@ -56,5 +55,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MAKER_NOTE_WIDGET_H

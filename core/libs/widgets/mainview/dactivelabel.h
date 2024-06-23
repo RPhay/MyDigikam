@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DACTIVE_LABEL_H
-#define DIGIKAM_DACTIVE_LABEL_H
+#pragma once
 
 // Qt includes
 
@@ -48,5 +47,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DACTIVE_LABEL_H

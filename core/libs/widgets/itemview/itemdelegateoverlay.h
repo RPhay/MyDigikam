@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_DELEGATE_OVERLAY_H
-#define DIGIKAM_ITEM_DELEGATE_OVERLAY_H
+#pragma once
 
 // Qt includes
 
@@ -369,5 +368,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ITEM_DELEGATE_OVERLAY_H

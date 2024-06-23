@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MODEL_COMPLETER_H
-#define DIGIKAM_MODEL_COMPLETER_H
+#pragma once
 
 // QT includes
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MODEL_COMPLETER_H

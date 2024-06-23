@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_THEME_MANAGER_P_H
-#define DIGIKAM_THEME_MANAGER_P_H
+#pragma once
 
 #include "thememanager.h"
 
@@ -523,5 +522,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_THEME_MANAGER_P_H

@@ -15,8 +15,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SIDE_BAR_P_H
-#define DIGIKAM_SIDE_BAR_P_H
+#pragma once
 
 #include "sidebar.h"
 
@@ -153,5 +152,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SIDE_BAR_P_H

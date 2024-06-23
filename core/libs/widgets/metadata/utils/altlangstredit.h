@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALT_LANG_STR_EDIT_H
-#define DIGIKAM_ALT_LANG_STR_EDIT_H
+#pragma once
 
 // Qt includes
 
@@ -165,5 +164,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_ALT_LANG_STR_EDIT_H

@@ -12,8 +12,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOCALIZE_CONFIG_H
-#define DIGIKAM_LOCALIZE_CONFIG_H
+#pragma once
 
 // Qt includes
 
@@ -75,5 +74,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_LOCALIZE_CONFIG_H

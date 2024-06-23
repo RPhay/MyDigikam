@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCATEGORY_DRAWER_H
-#define DIGIKAM_DCATEGORY_DRAWER_H
+#pragma once
 
 // Qt includes
 
@@ -169,5 +168,3 @@ private:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCATEGORY_DRAWER_H

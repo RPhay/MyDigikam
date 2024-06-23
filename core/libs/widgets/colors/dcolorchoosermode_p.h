@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DCOLOR_CHOOSER_MODE_PRIVATE_H
-#define DIGIKAM_DCOLOR_CHOOSER_MODE_PRIVATE_H
+#pragma once
 
 #include "dcolorchoosermode.h"
 
@@ -109,5 +108,3 @@ static inline void setComponentY(QColor& color, DColorChooserMode chooserMode, q
 }
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DCOLOR_CHOOSER_MODE_PRIVATE_H

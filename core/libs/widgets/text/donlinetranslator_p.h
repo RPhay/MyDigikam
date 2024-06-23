@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DONLINE_TRANSLATOR_P_H
-#define DIGIKAM_DONLINE_TRANSLATOR_P_H
+#pragma once
 
 #include "donlinetranslator.h"
 
@@ -130,5 +129,3 @@ public:
 };
 
 } // namespace Digikam
-
-#endif // DIGIKAM_DONLINE_TRANSLATOR_P_H
