@@ -29,7 +29,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 {
     setXMLFile(QLatin1String("showfotoui5.rc"));
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
 
     setStateConfigGroup(configGroupName());
 
@@ -211,7 +211,7 @@ void Showfoto::show()
 
     // Display application window.
 
-    QMainWindow::show();
+    KMainWindow::show();
 
     // Report errors from ICC repository path.
 

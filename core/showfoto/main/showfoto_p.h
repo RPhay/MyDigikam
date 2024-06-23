@@ -53,6 +53,7 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
+#include <kxmlgui_version.h>
 
 // Local includes
 

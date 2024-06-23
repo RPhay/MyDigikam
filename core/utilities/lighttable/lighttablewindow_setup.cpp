@@ -436,7 +436,7 @@ void LightTableWindow::setupUserArea()
 
     KMainWindow* const viewContainer = new KMainWindow(mainW, Qt::Widget);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
 
     viewContainer->setStateConfigGroup(QLatin1String("LightTable Thumbbar"));
 

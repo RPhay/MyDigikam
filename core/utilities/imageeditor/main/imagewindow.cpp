@@ -41,7 +41,7 @@ ImageWindow::ImageWindow()
 {
     setXMLFile(QLatin1String("imageeditorui5.rc"));
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
 
     setStateConfigGroup(configGroupName());
 

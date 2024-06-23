@@ -50,6 +50,7 @@
 #include <kactioncollection.h>
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
+#include <kxmlgui_version.h>
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)

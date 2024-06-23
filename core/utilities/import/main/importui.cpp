@@ -32,7 +32,7 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
 
     setXMLFile(QLatin1String("importui5.rc"));
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
 
     setStateConfigGroup(configGroupName());
 
