@@ -495,13 +495,13 @@ void ShowfotoStackViewFavoriteItemDlg::setIconSize(int size)
 void ShowfotoStackViewFavoriteItemDlg::setSortOrder(int order)
 {
     s_sortOrder = (Qt::SortOrder)order;
-    d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
+    d->urlsEdit->listView()->sortItems((int)s_sortRole + (int)DItemsListView::Filename, s_sortOrder);
 }
 
 void ShowfotoStackViewFavoriteItemDlg::setSortRole(int role)
 {
     s_sortRole = (ShowfotoStackViewList::StackViewRole)role;
-    d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
+    d->urlsEdit->listView()->sortItems((int)s_sortRole + (int)DItemsListView::Filename, s_sortOrder);
 }
 
 void ShowfotoStackViewFavoriteItemDlg::setParentItem(ShowfotoStackViewFavoriteItem* const pitem)
@@ -749,7 +749,7 @@ bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetIt
 {
     int result = 0;
 
-    switch (s_sortRole + DItemsListView::Filename)
+    switch ((int)s_sortRole + (int)DItemsListView::Filename)
     {
         case DItemsListView::User1:     // Size
         {
