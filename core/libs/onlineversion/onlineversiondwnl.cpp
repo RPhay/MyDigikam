@@ -134,9 +134,11 @@ void OnlineVersionDwnl::startDownload(const QString& version)
     {
         QString arch;
         QString bundle;
+        QString qtVersion;
+        QString dir;
         QString debug = d->updateWithDebug ? QLatin1String("-debug") : QString();
 
-        if (!OnlineVersionChecker::bundleProperties(arch, bundle))
+        if (!OnlineVersionChecker::bundleProperties(arch, bundle, qtVersion, dir))
         {
             Q_EMIT signalDownloadError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
@@ -157,8 +159,9 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
 #endif
 
-        d->file       = QString::fromLatin1("digiKam-%1-%2%3%4.%5")
+        d->file       = QString::fromLatin1("digiKam-%1-%2-%3%4%5.%6")
                             .arg(version)
+                            .arg(qtVersion)
                             .arg(os)
                             .arg(arch)
                             .arg(debug)

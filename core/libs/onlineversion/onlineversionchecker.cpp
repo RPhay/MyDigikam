@@ -198,8 +198,10 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         QString arch;
         QString ext;
+        QString qtVersion;
+        QString dir;
 
-        if (!OnlineVersionChecker::bundleProperties(arch, ext))
+        if (!OnlineVersionChecker::bundleProperties(arch, ext, qtVersion, dir))
         {
             Q_EMIT signalNewVersionCheckError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
@@ -225,7 +227,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         QStringList sections = d->preReleaseFileName.split(QLatin1Char('-'));
 
-        if (sections.size() < 4)
+        if (sections.size() < 5)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid file name format returned from the remote connection.";
 
@@ -236,7 +238,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         // Two possibles places exists where to find the date in file name.
 
-        // Check 1 - the fila name include a pre release suffix as -beta or -rc
+        // Check 1 - the file-name include a pre release suffix as -beta or -rc
 
         QString dtStr      = sections[3];
         QDateTime onlineDt = asDateTimeUTC(QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss")));
@@ -309,25 +311,30 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     }
 }
 
-bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
+bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext,
+                                            QString& qtVersion, QString& dir)
 {
 
 #if defined Q_OS_MACOS
 
-    ext  = QLatin1String("pkg");
+    ext       = QLatin1String("pkg");
 
 #   if defined Q_PROCESSOR_X86_64
 
-    arch = QLatin1String("x86-64");
+    arch      = QLatin1String("x86-64");
 
 #   elif defined Q_PROCESSOR_ARM
 
 /*  Native Apple silicon is not yet supported
-    arch = QLatin1String("arm-64");
+    arch      = QLatin1String("arm-64");
 */
 
     // NOTE: Intel 64 version work fine with Apple Rosetta 2 emulator.
-    arch = QLatin1String("x86-64");
+    arch      = QLatin1String("x86-64");
+
+    // Still Qt5 version for Mac, Qt6 is not yet done.
+    qtVersion = QLatin1String("qt5");
+    dir       = QLatin1String("/");
 
 #   endif
 
@@ -353,6 +360,18 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
 #   endif
 
+#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    qtVersion = QLatin1String("qt6");
+    dir       = QLatin1String("/");
+
+#   else
+
+    qtVersion = QLatin1String("qt5");
+    dir       = QLatin1String("/legacy");
+
+#   endif
+
 #endif
 
 #if defined Q_OS_LINUX
@@ -375,9 +394,26 @@ bool OnlineVersionChecker::bundleProperties(QString& arch, QString& ext)
 
 #   endif
 
+#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    qtVersion = QLatin1String("qt6");
+    dir       = QLatin1String("/");
+
+#   else
+
+    qtVersion = QLatin1String("qt5");
+    dir       = QLatin1String("/legacy");
+
+#   endif
+
 #endif
 
-    return (!ext.isEmpty() && !arch.isEmpty());
+    return (
+            !ext.isEmpty()       &&
+            !arch.isEmpty()      &&
+            !qtVersion.isEmpty() &&
+            !dir.isEmpty()
+           );
 }
 
 } // namespace Digikam

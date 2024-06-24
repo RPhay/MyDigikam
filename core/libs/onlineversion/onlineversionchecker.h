@@ -47,10 +47,13 @@ public:
 
     /**
      * Return true if the system and architecture are supported by the bundle workflow.
-     * 'arch' is the relevant prefix for the bundle architecture.
-     * 'ext'  is the relevant bundle file extension.
+     * 'arch'      is the relevant prefix for the bundle architecture.
+     * 'ext'       is the relevant bundle file extension.
+     * 'qtVersion' is the relevant version of Qt used in the bundle file-name.
+     * 'dir'       is the subdirectory if any to get the bundle file.
      */
-    static bool bundleProperties(QString& arch, QString& ext);
+    static bool bundleProperties(QString& arch, QString& ext,
+                                 QString& qtVersion, QString& dir);
 
     /**
      * Return the last date as string when have been performed a check for new version.
