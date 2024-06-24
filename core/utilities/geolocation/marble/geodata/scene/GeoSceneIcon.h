@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEICON_H
-#define MARBLE_GEOSCENEICON_H
+#pragma once
 
 #include <QString>
 #include <QColor>
@@ -42,5 +41,3 @@ class DIGIKAM_EXPORT GeoSceneIcon : public GeoNode
 };
 
 }
-
-#endif

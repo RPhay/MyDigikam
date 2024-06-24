@@ -5,10 +5,7 @@
 // SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
 //
 
-
-#ifndef MARBLE_GEODATAGEOMETRY_H
-#define MARBLE_GEODATAGEOMETRY_H
-
+#pragma once
 
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
@@ -78,5 +75,3 @@ class DIGIKAM_EXPORT GeoDataGeometry : public GeoDataObject
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataGeometry* )
-
-#endif

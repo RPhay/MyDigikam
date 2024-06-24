@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Adrian Draghici <draghici.adrian.b@gmail.com>
 //
 
-#ifndef MARBLE_KMLNETWORKLINKTAGWRITER_H
-#define MARBLE_KMLNETWORKLINKTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

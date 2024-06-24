@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef GEODATARESOURCEMAP_H
-#define GEODATARESOURCEMAP_H
+#pragma once
 
 #include "GeoDocument.h"
 #include "MarbleGlobal.h"
@@ -52,5 +51,3 @@ private:
 };
 
 }
-
-#endif // GEODATARESOURCEMAP_H

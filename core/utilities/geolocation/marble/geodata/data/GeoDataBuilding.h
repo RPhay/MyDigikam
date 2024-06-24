@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2017 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef MARBLE_GEODATABUILDING_H
-#define MARBLE_GEODATABUILDING_H
+#pragma once
 
 #include <QVector>
 
@@ -138,5 +137,3 @@ private:
 };
 
 }
-
-#endif

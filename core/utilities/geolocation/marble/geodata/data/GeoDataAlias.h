@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATAALIAS_H
-#define MARBLE_GEODATAALIAS_H
+#pragma once
 
 #include "GeoDocument.h"
 #include "MarbleGlobal.h"
@@ -49,5 +47,3 @@ private:
 };
 
 }
-
-#endif

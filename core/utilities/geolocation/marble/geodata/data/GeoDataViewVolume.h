@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATAVIEWVOLUME_H
-#define GEODATAVIEWVOLUME_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "digikam_export.h"
@@ -52,5 +51,3 @@ private:
 };
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Gaurav Gupta <1989.gaurav@googlemail.com>
 //
 
-#ifndef MARBLE_GEODATAABSTRACTVIEW_H
-#define MARBLE_GEODATAABSTRACTVIEW_H
+#pragma once
 
 #include "MarbleGlobal.h"
 #include "GeoDataObject.h"
@@ -65,5 +64,3 @@ protected:
 };
 
 } // namespace Marble
-
-#endif

@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATACONTAINER_H
-#define MARBLE_GEODATACONTAINER_H
+#pragma once
 
 #include <QVector>
 
@@ -180,5 +178,3 @@ class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
 };
 
 }
-
-#endif

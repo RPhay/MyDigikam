@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
 //
 
-#ifndef MARBLE_GEODATATRACK_H
-#define MARBLE_GEODATATRACK_H
+#pragma once
 
 #include "GeoDataGeometry.h"
 
@@ -196,5 +195,3 @@ private:
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataTrack* )
-
-#endif // MARBLE_GEODATATRACK_H

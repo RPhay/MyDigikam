@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Gaurav Gupta <1989.gaurav@googlemail.com>
 //
 
-#ifndef MARBLE_KMLFOLDERTAGWRITER_H
-#define MARBLE_KMLFOLDERTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 #include "KmlFeatureTagWriter.h"
@@ -22,5 +21,3 @@ protected:
 };
 
 }
-
-#endif

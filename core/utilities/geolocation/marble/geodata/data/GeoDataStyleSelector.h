@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATASTYLESELECTOR_H
-#define MARBLE_GEODATASTYLESELECTOR_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -63,5 +61,3 @@ class DIGIKAM_EXPORT GeoDataStyleSelector : public GeoDataObject
 };
 
 }
-
-#endif

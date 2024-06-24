@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATAGROUNDOVERLAY_H
-#define MARBLE_GEODATAGROUNDOVERLAY_H
+#pragma once
 
 #include "GeoDataOverlay.h"
 #include "MarbleGlobal.h"
@@ -61,5 +59,3 @@ private:
 };
 
 }
-
-#endif

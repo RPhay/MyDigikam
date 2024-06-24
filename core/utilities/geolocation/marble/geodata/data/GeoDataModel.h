@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef GEODATAMODEL_H
-#define GEODATAMODEL_H
+#pragma once
 
 #include "GeoDataGeometry.h"
 #include "MarbleGlobal.h"
@@ -77,6 +76,3 @@ private:
 };
 
 }
-
-
-#endif // GEODATAMODEL_H

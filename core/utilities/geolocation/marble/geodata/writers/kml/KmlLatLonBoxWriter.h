@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Shou Ya <shouyalovelyx@gmail.com>
 //
 
-#ifndef MARBLE_KMLLATLONBOXWRITER_H
-#define MARBLE_KMLLATLONBOXWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -19,6 +18,3 @@ public:
 };
 
 }
-
-#endif
-

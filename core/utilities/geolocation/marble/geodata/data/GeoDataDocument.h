@@ -6,8 +6,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEODATADOCUMENT_H
-#define MARBLE_GEODATADOCUMENT_H
+#pragma once
 
 #include <QMetaType>
 
@@ -189,5 +188,5 @@ private:
 };
 
 }
+
 Q_DECLARE_METATYPE(Marble::GeoDataDocument*)
-#endif

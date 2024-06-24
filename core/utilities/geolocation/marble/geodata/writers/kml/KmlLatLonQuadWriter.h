@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef KMLLATLONQUADWRITER_H
-#define KMLLATLONQUADWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,6 +17,3 @@ public:
 };
 
 }
-
-
-#endif // KMLLATLONQUADWRITER_H

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Utku Aydın <utkuaydin34@gmail.com>
 //
 
-#ifndef MARBLE_DGMLVECTORTAGWRITER_H
-#define MARBLE_DGMLVECTORTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

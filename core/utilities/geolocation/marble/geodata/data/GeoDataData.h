@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef MARBLE_GEODATADATA_H
-#define MARBLE_GEODATADATA_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -90,5 +89,3 @@ class DIGIKAM_EXPORT GeoDataData : public GeoDataObject
 };
 
 }
-
-#endif //MARBLE_GEODATADATA_H

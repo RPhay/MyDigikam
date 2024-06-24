@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef GEODATADATAPRIVATE_H
-#define GEODATADATAPRIVATE_H
+#pragma once
 
 #include <QString>
 #include <QVariant>
@@ -23,5 +22,3 @@ class GeoDataDataPrivate
 };
 
 } // namespace Marble
-
-#endif //GEODATADATAPRIVATE_H

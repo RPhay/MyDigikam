@@ -3,10 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATAMULTIGEOMETRY_H
-#define MARBLE_GEODATAMULTIGEOMETRY_H
-
+#pragma once
 
 #include "digikam_export.h"
 
@@ -98,5 +95,3 @@ class DIGIKAM_EXPORT GeoDataMultiGeometry : public GeoDataGeometry
 };
 
 }
-
-#endif

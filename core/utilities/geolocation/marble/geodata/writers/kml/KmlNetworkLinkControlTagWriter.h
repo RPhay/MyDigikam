@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Marek Hakala <hakala.marek@gmail.com>
 //
 
-#ifndef MARBLE_KMLNETWORKLINKCONTROLTAGWRITER_H
-#define MARBLE_KMLNETWORKLINKCONTROLTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

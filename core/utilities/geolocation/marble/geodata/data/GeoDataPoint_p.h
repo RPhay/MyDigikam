@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-#ifndef MARBLE_GEODATAPOINTPRIVATE_H
-#define MARBLE_GEODATAPOINTPRIVATE_H
+#pragma once
 
 #include "GeoDataGeometry_p.h"
 
@@ -29,5 +28,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif

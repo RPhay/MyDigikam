@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_GEODATAACCURACY_H
-#define MARBLE_GEODATAACCURACY_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -52,5 +51,3 @@ class DIGIKAM_EXPORT GeoDataAccuracy
 };
 
 }
-
-#endif

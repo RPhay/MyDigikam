@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef MARBLE_GEODATATIMEPRIMITIVE_H
-#define MARBLE_GEODATATIMEPRIMITIVE_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -52,5 +51,3 @@ private:
 };
 
 }
-
-#endif

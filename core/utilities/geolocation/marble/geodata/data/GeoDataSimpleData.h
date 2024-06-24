@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_GEODATASIMPLEDATA_H
-#define MARBLE_GEODATASIMPLEDATA_H
+#pragma once
 
 #include "GeoDocument.h"
 #include "digikam_export.h"
@@ -79,5 +78,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif  // MARBLE_GEODATASIMPLEDATA_H

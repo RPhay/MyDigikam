@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef GEODATALATLONQUAD_H
-#define GEODATALATLONQUAD_H
+#pragma once
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataObject.h"
@@ -71,5 +70,3 @@ private:
 };
 
 }
-
-#endif

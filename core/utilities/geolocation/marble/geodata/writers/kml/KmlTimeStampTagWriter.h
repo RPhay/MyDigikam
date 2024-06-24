@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Javier Becerra <javier@auva.es>
 //
 
-#ifndef MARBLE_KMLTIMESTAMPTAGWRITER_H
-#define MARBLE_KMLTIMESTAMPTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -21,5 +20,3 @@ public:
 };
 
 }
-
-#endif

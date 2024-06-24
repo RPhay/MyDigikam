@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLOVERLAYTAGWRITER_H
-#define MARBLE_KMLOVERLAYTAGWRITER_H
+#pragma once
 
 #include "KmlFeatureTagWriter.h"
 
@@ -24,5 +23,3 @@ protected:
 };
 
 }
-
-#endif

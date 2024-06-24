@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef MARBLE_KMLLATLONALTBOXWRITER_H
-#define MARBLE_KMLLATLONALTBOXWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -19,5 +18,3 @@ public:
 };
 
 }
-
-#endif

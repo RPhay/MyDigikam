@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLLINEARRINGTAGWRITER_H
-#define MARBLE_KMLLINEARRINGTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef GEODATACREATE_H
-#define GEODATACREATE_H
+#pragma once
 
 #include "GeoDataContainer.h"
 #include "digikam_export.h"
@@ -40,5 +39,3 @@ private:
 };
 
 }
-
-#endif

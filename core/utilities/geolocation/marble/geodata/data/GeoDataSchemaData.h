@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_GEODATASCHEMADATA_H
-#define MARBLE_GEODATASCHEMADATA_H
+#pragma once
 
 // Qt
 #include <QList>
@@ -89,5 +88,3 @@ private:
 };
 
 }   // namespace Marble
-
-#endif  // MARBLE_GEODATASCHEMADATA_H

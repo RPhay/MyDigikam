@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATANETWORKLINK_H
-#define MARBLE_GEODATANETWORKLINK_H
+#pragma once
 
 #include "GeoDataFeature.h"
 #include "MarbleGlobal.h"
@@ -55,5 +53,3 @@ private:
 };
 
 }
-
-#endif

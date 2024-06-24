@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEPROPERTY_H
-#define MARBLE_GEOSCENEPROPERTY_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -51,5 +50,3 @@ class DIGIKAM_EXPORT GeoSceneProperty : public QObject,
 };
 
 }
-
-#endif

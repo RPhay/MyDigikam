@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
 //
 
-#ifndef MARBLE_GEODATASIMPLEARRAYDATA_H
-#define MARBLE_GEODATASIMPLEARRAYDATA_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -55,5 +54,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_GEODATASIMPLEARRAYDATA_H

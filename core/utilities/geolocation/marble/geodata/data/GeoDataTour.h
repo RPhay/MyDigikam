@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef GEODATATOUR_H
-#define GEODATATOUR_H
+#pragma once
 
 #include "GeoDataFeature.h"
 #include "digikam_export.h"
@@ -46,5 +45,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // GEODATATOUR_H

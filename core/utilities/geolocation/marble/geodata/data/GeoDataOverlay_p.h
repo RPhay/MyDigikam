@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_GEODATAOVERLAY_P_H
-#define MARBLE_GEODATAOVERLAY_P_H
+#pragma once
 
 #include "GeoDataFeature_p.h"
 
@@ -39,5 +38,3 @@ public:
 };
 
 }
-
-#endif

@@ -3,10 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATASTYLEMAP_H
-#define MARBLE_GEODATASTYLEMAP_H
-
+#pragma once
 
 #include <QString>
 #include <QMap>
@@ -78,5 +75,3 @@ class DIGIKAM_EXPORT GeoDataStyleMap : public GeoDataStyleSelector,
 };
 
 }
-
-#endif

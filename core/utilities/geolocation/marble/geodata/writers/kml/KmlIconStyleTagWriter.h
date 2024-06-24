@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLICONSTYLETAGWRITER_H
-#define MARBLE_KMLICONSTYLETAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 #include "GeoDataHotSpot.h"
@@ -27,5 +26,3 @@ private:
 };
 
 }
-
-#endif

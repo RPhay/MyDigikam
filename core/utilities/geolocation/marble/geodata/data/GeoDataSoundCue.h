@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef GEODATASOUNDCUE_H
-#define GEODATASOUNDCUE_H
+#pragma once
 
 #include "GeoDataTourPrimitive.h"
 
@@ -37,5 +36,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // GEODATASOUNDCUE_H

@@ -3,14 +3,10 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATALINEARRING_H
-#define MARBLE_GEODATALINEARRING_H
-
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDataLineString.h"
-
 
 namespace Marble
 {
@@ -132,5 +128,3 @@ class DIGIKAM_EXPORT GeoDataLinearRing : public GeoDataLineString
 };
 
 }
-
-#endif

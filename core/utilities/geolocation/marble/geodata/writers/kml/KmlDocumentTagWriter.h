@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
 //
 
-#ifndef MARBLE_KMLDOCUMENTTAGWRITER_H
-#define MARBLE_KMLDOCUMENTTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 #include "KmlFeatureTagWriter.h"
@@ -22,5 +21,3 @@ protected:
 };
 
 }
-
-#endif

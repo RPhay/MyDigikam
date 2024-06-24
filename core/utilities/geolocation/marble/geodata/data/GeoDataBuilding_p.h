@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2017 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef MARBLE_GEODATABUILDING_P_H
-#define MARBLE_GEODATABUILDING_P_H
+#pragma once
 
 #include "GeoDataGeometry_p.h"
 #include "GeoDataMultiGeometry.h"
@@ -38,5 +37,3 @@ public:
 };
 
 }
-
-#endif

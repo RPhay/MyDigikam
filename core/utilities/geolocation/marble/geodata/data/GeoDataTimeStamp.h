@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef MARBLE_GEODATATIMESTAMP_H
-#define MARBLE_GEODATATIMESTAMP_H
+#pragma once
 
 #include "GeoDataTimePrimitive.h"
 
@@ -80,5 +79,3 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
 };
 
 }
-
-#endif

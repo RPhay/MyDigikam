@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef GEODATAORIENTATION_H
-#define GEODATAORIENTATION_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
@@ -58,5 +57,3 @@ protected:
 };
 
 }
-
-#endif // GEODATAORIENTATION_H

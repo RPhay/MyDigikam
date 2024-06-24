@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLLINESTYLETAGWRITER_H
-#define MARBLE_KMLLINESTYLETAGWRITER_H
+#pragma once
 
 #include "KmlColorStyleTagWriter.h"
 
@@ -23,5 +22,3 @@ protected:
 };
 
 }
-
-#endif

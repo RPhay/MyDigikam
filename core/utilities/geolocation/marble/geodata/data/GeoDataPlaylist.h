@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef GEODATAPLAYLIST_H
-#define GEODATAPLAYLIST_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "GeoDataTourPrimitive.h"
@@ -38,5 +37,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // GEODATAPLAYLIST_H

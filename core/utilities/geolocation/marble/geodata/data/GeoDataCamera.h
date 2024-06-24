@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef MARBLE_GEODATACAMERA_H
-#define MARBLE_GEODATACAMERA_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDataAbstractView.h"
@@ -111,5 +110,3 @@ private:
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataCamera )
-
-#endif

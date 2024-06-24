@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef MARBLE_KMLLISTSTYLETAGWRITER_H
-#define MARBLE_KMLLISTSTYLETAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 #include "GeoDataListStyle.h"
@@ -24,5 +23,3 @@ private:
 };
 
 }
-
-#endif

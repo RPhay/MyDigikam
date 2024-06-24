@@ -8,8 +8,7 @@
 // SPDX-FileCopyrightText: 2015 Alejandro Garcia Montoro <alejandro.garciamontoro@gmail.com>
 //
 
-#ifndef MARBLE_LONLATPARSER_P_H
-#define MARBLE_LONLATPARSER_P_H
+#pragma once
 
 #include <QStringList>
 
@@ -146,5 +145,3 @@ private: // helper value, lazily set, in initAll();
 };
 
 }
-
-#endif

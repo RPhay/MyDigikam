@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 
-#ifndef GEODATASCREENOVERLAY_H
-#define GEODATASCREENOVERLAY_H
+#pragma once
 
 #include "GeoDataOverlay.h"
 #include "GeoDataVec2.h"
@@ -56,5 +55,3 @@ private:
 };
 
 }
-
-#endif

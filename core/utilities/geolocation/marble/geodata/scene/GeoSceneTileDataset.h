@@ -6,8 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_GEOSCENETILEDATASET_H
-#define MARBLE_GEOSCENETILEDATASET_H
+#pragma once
 
 #include <QList>
 #include <QVector>
@@ -150,5 +149,3 @@ inline void GeoSceneTileDataset::setBlending( const QString &name )
 }
 
 }
-
-#endif

@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2013 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef KMLPOLYSTYLETAGWRITER_H
-#define KMLPOLYSTYLETAGWRITER_H
+#pragma once
 
 #include "KmlColorStyleTagWriter.h"
 
@@ -21,4 +20,3 @@ protected:
 };
 
 }
-#endif // KMLPOLYSTYLETAGWRITER_H

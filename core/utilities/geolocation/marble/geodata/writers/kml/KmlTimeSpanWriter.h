@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Shou Ya <shouyalovelyx@gmail.com>
 //
 
-#ifndef MARBLE_KMLTIMESPANWRITER_H
-#define MARBLE_KMLTIMESPANWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -21,6 +20,3 @@ public:
 };
 
 }
-
-#endif
-

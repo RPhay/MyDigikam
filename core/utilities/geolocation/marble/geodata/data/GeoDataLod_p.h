@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <rahn@kde.org>
 //
 
-#ifndef MARBLE_GEODATALODPRIVATE_H
-#define MARBLE_GEODATALODPRIVATE_H
+#pragma once
 
 #include "GeoDataLod.h"
 
@@ -31,5 +30,3 @@ class GeoDataLodPrivate
 };
 
 } // namespace Marble
-
-#endif

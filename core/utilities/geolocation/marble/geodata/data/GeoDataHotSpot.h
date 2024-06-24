@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
 //
 
-
-#ifndef MARBLE_GEODATAHOTSPOT_H
-#define MARBLE_GEODATAHOTSPOT_H
+#pragma once
 
 #include <QPointF>
 
@@ -59,5 +57,3 @@ class DIGIKAM_EXPORT GeoDataHotSpot : public GeoDataObject
 };
 
 }
-
-#endif

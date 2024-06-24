@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATAUPDATE_H
-#define GEODATAUPDATE_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "digikam_export.h"
@@ -55,5 +54,3 @@ private:
 };
 
 }
-
-#endif

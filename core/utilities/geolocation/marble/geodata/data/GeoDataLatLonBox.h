@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2008-2009 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATALATLONBOX_H
-#define MARBLE_GEODATALATLONBOX_H
-
+#pragma once
 
 #include "MarbleGlobal.h"
 
@@ -235,5 +232,3 @@ class DIGIKAM_EXPORT GeoDataLatLonBox : public GeoDataObject
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataLatLonBox )
-
-#endif

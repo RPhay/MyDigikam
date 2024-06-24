@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef GEODATAGROUNDOVERLAY_P_H
-#define GEODATAGROUNDOVERLAY_P_H
+#pragma once
 
 #include "GeoDataOverlay_p.h"
 
@@ -34,5 +33,3 @@ GeoDataGroundOverlayPrivate::GeoDataGroundOverlayPrivate()
 }
 
 }
-
-#endif

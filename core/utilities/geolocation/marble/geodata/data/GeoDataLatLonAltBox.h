@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATALATLONALTBOX_H
-#define MARBLE_GEODATALATLONALTBOX_H
-
+#pragma once
 
 #include "MarbleGlobal.h"
 
@@ -141,5 +138,3 @@ bool DIGIKAM_EXPORT operator==( GeoDataLatLonAltBox const& lhs, GeoDataLatLonAlt
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataLatLonAltBox )
-
-#endif

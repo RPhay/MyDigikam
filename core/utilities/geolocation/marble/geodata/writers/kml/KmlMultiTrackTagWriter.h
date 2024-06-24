@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Thibaut Gridel <tgridel@free.fr>
 //
 
-#ifndef MARBLE_KMLMULTITRACKTAGWRITER_H
-#define MARBLE_KMLMULTITRACKTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

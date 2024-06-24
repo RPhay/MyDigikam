@@ -6,8 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_GEOSCENETEXTURETILEDATASET_H
-#define MARBLE_GEOSCENETEXTURETILEDATASET_H
+#pragma once
 
 #include "GeoSceneTileDataset.h"
 
@@ -24,5 +23,3 @@ class DIGIKAM_EXPORT GeoSceneTextureTileDataset : public GeoSceneTileDataset
 };
 
 }
-
-#endif // MARBLE_GEOSCENETEXTURETILEDATASET_H

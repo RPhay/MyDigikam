@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
 //
 
-#ifndef MARBLE_KMLPLACEMARKTAGWRITER_H
-#define MARBLE_KMLPLACEMARKTAGWRITER_H
+#pragma once
 
 #include "KmlFeatureTagWriter.h"
 
@@ -21,5 +20,3 @@ protected:
 };
 
 }
-
-#endif

@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATAFLYTO_H
-#define MARBLE_GEODATAFLYTO_H
+#pragma once
 
 #include "GeoDataTourPrimitive.h"
 #include "MarbleGlobal.h"
@@ -57,5 +55,3 @@ private:
 };
 
 }
-
-#endif

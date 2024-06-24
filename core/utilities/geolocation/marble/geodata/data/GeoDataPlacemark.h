@@ -5,10 +5,7 @@
 // SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATAPLACEMARK_H
-#define MARBLE_GEODATAPLACEMARK_H
-
+#pragma once
 
 #include <QDateTime>
 
@@ -702,5 +699,3 @@ class DIGIKAM_EXPORT GeoDataPlacemark: public GeoDataFeature
 };
 
 }
-
-#endif

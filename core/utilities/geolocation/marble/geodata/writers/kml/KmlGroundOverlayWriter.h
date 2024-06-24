@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Shou Ya <shouyalovelyx@gmail.com>
 //
 
-#ifndef MARBLE_KMLGROUNDOVERLAYWRITER_H
-#define MARBLE_KMLGROUNDOVERLAYWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 #include "KmlOverlayTagWriter.h"
@@ -27,6 +26,4 @@ public:
 };
 
 }
-
-#endif
 

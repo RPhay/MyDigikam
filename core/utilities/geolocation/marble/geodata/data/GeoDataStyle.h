@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATASTYLE_H
-#define MARBLE_GEODATASTYLE_H
-
+#pragma once
 
 #include "GeoDataStyleSelector.h"
 
@@ -128,5 +125,3 @@ class DIGIKAM_EXPORT GeoDataStyle : public GeoDataStyleSelector
 
 Q_DECLARE_METATYPE( Marble::GeoDataStyle* )
 Q_DECLARE_METATYPE( const Marble::GeoDataStyle* )
-
-#endif

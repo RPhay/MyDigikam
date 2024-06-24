@@ -3,12 +3,9 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <tackat@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATALOD_H
-#define MARBLE_GEODATALOD_H
+#pragma once
 
 #include "GeoDataObject.h"
-
 
 namespace Marble
 {
@@ -155,5 +152,3 @@ class DIGIKAM_EXPORT GeoDataLod : public GeoDataObject
 };
 
 }
-
-#endif

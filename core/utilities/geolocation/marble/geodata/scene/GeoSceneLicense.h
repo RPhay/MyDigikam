@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef MARBLE_GEOSCENE_LICENSE_H
-#define MARBLE_GEOSCENE_LICENSE_H
+#pragma once
 
 #include <QString>
 
@@ -45,5 +44,3 @@ class DIGIKAM_EXPORT GeoSceneLicense : public GeoNode
 };
 
 }
-
-#endif

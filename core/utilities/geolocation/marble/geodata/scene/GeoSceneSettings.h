@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENESETTINGS_H
-#define MARBLE_GEOSCENESETTINGS_H
+#pragma once
 
 #include <QObject>
 #include <QVector>
@@ -117,5 +116,3 @@ class DIGIKAM_EXPORT GeoSceneSettings : public QObject,
 };
 
 }
-
-#endif

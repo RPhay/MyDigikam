@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef GEODATATIMESTAMPPRIVATE_H
-#define GEODATATIMESTAMPPRIVATE_H
+#pragma once
 
 #include <QDateTime>
 
@@ -31,6 +30,4 @@ GeoDataTimeStampPrivate::GeoDataTimeStampPrivate() :
 }
 
 } // namespace Marble
-
-#endif //GEODATATIMESTAMPPRIVATE_H
 

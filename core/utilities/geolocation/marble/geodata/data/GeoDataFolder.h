@@ -6,9 +6,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEODATAFOLDER_H
-#define MARBLE_GEODATAFOLDER_H
-
+#pragma once
 
 #include "GeoDataContainer.h"
 
@@ -53,5 +51,3 @@ class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
 }
 
 Q_DECLARE_METATYPE(Marble::GeoDataFolder*)
-
-#endif

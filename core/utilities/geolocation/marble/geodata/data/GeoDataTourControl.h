@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef GEODATATOURCONTROL_H
-#define GEODATATOURCONTROL_H
+#pragma once
 
 #include "GeoDataTourPrimitive.h"
 
@@ -36,5 +35,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // GEODATATOURCONTROL_H

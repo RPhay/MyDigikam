@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_KMLSCHEMADATATAGWRITER_H
-#define MARBLE_KMLSCHEMADATATAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

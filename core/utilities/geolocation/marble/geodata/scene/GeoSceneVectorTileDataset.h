@@ -6,8 +6,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_GEOSCENEVECTORTILEDATASET_H
-#define MARBLE_GEOSCENEVECTORTILEDATASET_H
+#pragma once
 
 #include "GeoSceneTileDataset.h"
 
@@ -24,5 +23,3 @@ class GeoSceneVectorTileDataset : public GeoSceneTileDataset
 };
 
 }
-
-#endif // MARBLE_GEOSCENEVECTORTILEDATASET_H

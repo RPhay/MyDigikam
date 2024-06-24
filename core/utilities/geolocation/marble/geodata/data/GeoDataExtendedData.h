@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
 //
 
-#ifndef MARBLE_GEODATAEXTENDEDDATA_H
-#define MARBLE_GEODATAEXTENDEDDATA_H
+#pragma once
 
 #include "GeoDocument.h"
 #include "Serializable.h"
@@ -141,5 +140,3 @@ private:
 };
 
 }
-
-#endif

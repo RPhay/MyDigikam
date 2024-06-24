@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2017 Dennis Nienhüser <nienhueser@kde.org>
 
-#ifndef MARBLE_GEODATARELATION_H
-#define MARBLE_GEODATARELATION_H
+#pragma once
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
@@ -68,5 +67,3 @@ private:
 };
 
 }
-
-#endif

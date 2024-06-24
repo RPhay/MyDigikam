@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEGROUP_H
-#define MARBLE_GEOSCENEGROUP_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -85,5 +84,3 @@ class GeoSceneGroup : public QObject,
 };
 
 }
-
-#endif

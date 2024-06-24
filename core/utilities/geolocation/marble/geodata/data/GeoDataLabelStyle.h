@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATALABELSTYLE_H
-#define MARBLE_GEODATALABELSTYLE_H
+#pragma once
 
 #include "GeoDataColorStyle.h"
 
@@ -123,5 +121,3 @@ class DIGIKAM_EXPORT GeoDataLabelStyle : public GeoDataColorStyle
 };
 
 }
-
-#endif

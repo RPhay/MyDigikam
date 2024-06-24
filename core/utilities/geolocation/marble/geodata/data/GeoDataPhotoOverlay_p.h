@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef MARBLE_GEODATAPHOTOOVERLAY_P_H
-#define MARBLE_GEODATAPHOTOOVERLAY_P_H
+#pragma once
 
 #include "GeoDataOverlay_p.h"
 #include "GeoDataTypes.h"
@@ -49,5 +48,3 @@ GeoDataPhotoOverlayPrivate::GeoDataPhotoOverlayPrivate(const GeoDataPhotoOverlay
 }
 
 }
-
-#endif

@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2012 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef GEODATAMULTITRACK_H
-#define GEODATAMULTITRACK_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -92,5 +91,3 @@ public:
 };
 
 }
-
-#endif // GEODATAMULTITRACK_H

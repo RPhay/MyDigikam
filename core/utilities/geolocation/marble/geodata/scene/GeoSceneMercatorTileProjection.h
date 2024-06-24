@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEMERCATORTILEPROJECTION_H
-#define MARBLE_GEOSCENEMERCATORTILEPROJECTION_H
+#pragma once
 
 #include "GeoSceneAbstractTileProjection.h"
 
@@ -60,5 +59,3 @@ private:
 };
 
 }
-
-#endif

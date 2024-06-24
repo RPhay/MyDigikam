@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef MARBLE_KMLMODELTAGWRITER_H
-#define MARBLE_KMLMODELTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -20,5 +19,3 @@ public:
 };
 
 }
-
-#endif

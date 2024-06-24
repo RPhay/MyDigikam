@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_GEODATALOOKAT_H
-#define MARBLE_GEODATALOOKAT_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDataAbstractView.h"
@@ -115,5 +114,5 @@ namespace Marble
 
     };
 }
+
 Q_DECLARE_METATYPE( Marble::GeoDataLookAt )
-#endif

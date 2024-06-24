@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATANETWORKLINKCONTROL_P_H
-#define GEODATANETWORKLINKCONTROL_P_H
+#pragma once
 
 #include "GeoDataContainer_p.h"
 
@@ -88,5 +87,3 @@ GeoDataNetworkLinkControlPrivate& GeoDataNetworkLinkControlPrivate::operator=(co
 }
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATAITEMICON_H
-#define GEODATAITEMICON_H
+#pragma once
 
 #include <QFlags>
 
@@ -60,5 +59,3 @@ private:
 };
 
 }
-
-#endif

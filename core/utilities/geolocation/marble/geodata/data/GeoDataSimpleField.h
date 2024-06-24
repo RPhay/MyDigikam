@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_GEODATASIMPLEFIELD_H
-#define MARBLE_GEODATASIMPLEFIELD_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDocument.h"
@@ -104,5 +103,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_GEODATASIMPLEFIELD_H

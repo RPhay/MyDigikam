@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATAPOINT_H
-#define MARBLE_GEODATAPOINT_H
+#pragma once
 
 #include <QMetaType>
 #include <QVector>
@@ -94,5 +92,3 @@ class DIGIKAM_EXPORT GeoDataPoint : public GeoDataGeometry
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataPoint )
-
-#endif

@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATACAMERA_P_H
-#define MARBLE_GEODATACAMERA_P_H
+#pragma once
 
 #include "GeoDataCoordinates.h"
 
@@ -35,5 +33,3 @@ class GeoDataCameraPrivate
 };
 
 } // namespace Marble
-
-#endif

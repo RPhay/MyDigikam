@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_GEODATALOOKAT_P_H
-#define MARBLE_GEODATALOOKAT_P_H
+#pragma once
 
 // Marble
 #include "GeoDataCoordinates.h"
@@ -33,5 +32,3 @@ class GeoDataLookAtPrivate
 };
 
 } // namespace Marble
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATALISTSTYLE_H
-#define GEODATALISTSTYLE_H
+#pragma once
 
 #include "MarbleGlobal.h"
 #include "GeoDataObject.h"
@@ -12,7 +11,6 @@
 
 #include <QColor>
 #include <QVector>
-
 
 namespace Marble
 {
@@ -91,5 +89,3 @@ private:
 };
 
 }
-
-#endif

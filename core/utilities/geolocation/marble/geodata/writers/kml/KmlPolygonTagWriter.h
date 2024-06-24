@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Shou Ya <shouyatf@gmail.com>
 //
 
-#ifndef MARBLE_KMLPOLYGONTAGWRITER_H
-#define MARBLE_KMLPOLYGONTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

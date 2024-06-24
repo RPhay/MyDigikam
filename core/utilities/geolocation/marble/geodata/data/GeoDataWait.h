@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mihail Ivchenko <ematirov@gmail.com>
 //
 
-#ifndef GEODATAWAIT_H
-#define GEODATAWAIT_H
+#pragma once
 
 #include "GeoDataTourPrimitive.h"
 
@@ -32,5 +31,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // GEODATATOURCONTROL_H

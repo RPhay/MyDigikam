@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <tackat@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATAREGION_H
-#define MARBLE_GEODATAREGION_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -140,5 +138,3 @@ class DIGIKAM_EXPORT GeoDataRegion : public GeoDataObject
 };
 
 }
-
-#endif

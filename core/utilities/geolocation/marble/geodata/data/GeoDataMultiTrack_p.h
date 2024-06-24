@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2012 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_GEODATAMULTITRACKPRIVATE_H
-#define MARBLE_GEODATAMULTITRACKPRIVATE_H
+#pragma once
 
 #include "GeoDataGeometry_p.h"
 
@@ -49,5 +48,3 @@ class GeoDataMultiTrackPrivate : public GeoDataGeometryPrivate
 };
 
 } // namespace Marble
-
-#endif

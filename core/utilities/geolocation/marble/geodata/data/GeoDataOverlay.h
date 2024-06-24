@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-
-#ifndef MARBLE_GEODATAOVERLAY_H
-#define MARBLE_GEODATAOVERLAY_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDataFeature.h"
@@ -67,5 +65,3 @@ protected:
 };
 
 }
-
-#endif

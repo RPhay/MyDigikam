@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATACOLORSTYLE_H
-#define MARBLE_GEODATACOLORSTYLE_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -123,5 +121,3 @@ class DIGIKAM_EXPORT GeoDataColorStyle : public GeoDataObject
 };
 
 }
-
-#endif

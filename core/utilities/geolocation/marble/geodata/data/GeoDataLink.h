@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 
-
-#ifndef MARBLE_GEODATALINK_H
-#define MARBLE_GEODATALINK_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
@@ -82,5 +80,3 @@ private:
 };
 
 }
-
-#endif

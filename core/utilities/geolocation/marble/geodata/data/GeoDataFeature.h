@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATAFEATURE_H
-#define MARBLE_GEODATAFEATURE_H
+#pragma once
 
 #include "GeoDataObject.h"
 
@@ -277,5 +275,3 @@ class DIGIKAM_EXPORT GeoDataFeature : public GeoDataObject
 };
 
 }
-
-#endif

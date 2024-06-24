@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEABSTRACTDATASET_H
-#define MARBLE_GEOSCENEABSTRACTDATASET_H
+#pragma once
 
 #include <QString>
 
@@ -42,5 +41,3 @@ class DIGIKAM_EXPORT GeoSceneAbstractDataset : public GeoNode
 };
 
 }
-
-#endif

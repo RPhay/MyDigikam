@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Levente Kurusa <levex@linux.com>
 //
 
-#ifndef MARBLE_GEODATASNIPPET_H
-#define MARBLE_GEODATASNIPPET_H
+#pragma once
 
 #include <QString>
 #include "digikam_export.h"
@@ -56,5 +55,3 @@ private:
 };
 
 }
-
-#endif

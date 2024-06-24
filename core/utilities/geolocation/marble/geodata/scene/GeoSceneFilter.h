@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEFILTER_H
-#define MARBLE_GEOSCENEFILTER_H
+#pragma once
 
 #include <QString>
 #include <QList>
@@ -47,5 +46,3 @@ class GeoSceneFilter : public GeoNode
 };
 
 }
-
-#endif

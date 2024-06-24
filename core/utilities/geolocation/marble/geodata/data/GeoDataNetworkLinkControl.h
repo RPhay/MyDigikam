@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATANETWORKLINKCONTROL_H
-#define GEODATANETWORKLINKCONTROL_H
+#pragma once
 
 #include "GeoDataContainer.h"
 #include "digikam_export.h"
@@ -80,5 +79,3 @@ private:
 };
 
 }
-
-#endif

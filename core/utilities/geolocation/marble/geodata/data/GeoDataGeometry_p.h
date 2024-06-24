@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-#ifndef MARBLE_GEODATAGEOMETRYPRIVATE_H
-#define MARBLE_GEODATAGEOMETRYPRIVATE_H
+#pragma once
 
 #include <QAtomicInt>
 
@@ -55,5 +54,3 @@ class GeoDataGeometryPrivate
 };
 
 } // namespace Marble
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef MARBLE_KMLSCREENOVERLAYWRITER_H
-#define MARBLE_KMLSCREENOVERLAYWRITER_H
+#pragma once
 
 #include "GeoDataVec2.h"
 #include "KmlOverlayTagWriter.h"
@@ -26,5 +25,3 @@ private:
 };
 
 }
-
-#endif

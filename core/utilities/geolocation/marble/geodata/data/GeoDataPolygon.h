@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
 //
 
-
-#ifndef MARBLE_GEODATAPOLYGON_H
-#define MARBLE_GEODATAPOLYGON_H
+#pragma once
 
 #include <QVector>
 
@@ -232,5 +230,3 @@ class DIGIKAM_EXPORT GeoDataInnerBoundary : public GeoDataPolygon
 };
 
 }
-
-#endif // GEODATAPOLYGON_H

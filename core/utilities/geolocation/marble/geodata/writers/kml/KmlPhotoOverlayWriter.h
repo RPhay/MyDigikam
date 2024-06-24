@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Shou Ya <shouyalovelyx@gmail.com>
 //
 
-#ifndef MARBLE_KMLPHOTOOVERLAYWRITER_H
-#define MARBLE_KMLPHOTOOVERLAYWRITER_H
+#pragma once
 
 #include "KmlOverlayTagWriter.h"
 
@@ -20,5 +19,3 @@ public:
 };
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Utku Aydın <utkuaydin34@gmail.com>
 //
 
-#ifndef DGMLLAYERTAGWRITER_H
-#define DGMLLAYERTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif // DGMLLAYERTAGWRITER_H

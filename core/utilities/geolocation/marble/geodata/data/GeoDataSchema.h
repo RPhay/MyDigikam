@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_GEODATASCHEMA_H
-#define MARBLE_GEODATASCHEMA_H
+#pragma once
 
 // Qt
 #include <QHash>
@@ -75,5 +74,3 @@ private:
 };
 
 }
-
-#endif  // MARBLE_GEODATASCHEMA_H

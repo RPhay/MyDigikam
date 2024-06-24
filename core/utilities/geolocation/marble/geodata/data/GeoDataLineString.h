@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATALINESTRING_H
-#define MARBLE_GEODATALINESTRING_H
+#pragma once
 
 #include <QVector>
 #include <QMetaType>
@@ -408,5 +406,3 @@ class DIGIKAM_EXPORT GeoDataLineString : public GeoDataGeometry
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataLineString )
-
-#endif

@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
 //
 
-
-#ifndef MARBLE_SERIALIZABLE_H
-#define MARBLE_SERIALIZABLE_H
+#pragma once
 
 class QDataStream;
 
@@ -46,5 +44,3 @@ enum EnumGeometryId {
 };
 
 }
-
-#endif

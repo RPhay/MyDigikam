@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Marius-Valeriu Stanciu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_KMLOSMPLACEMARKDATATAGWRITER_H
-#define MARBLE_KMLOSMPLACEMARKDATATAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -62,6 +61,3 @@ public:
 };
 
 }
-
-#endif
-

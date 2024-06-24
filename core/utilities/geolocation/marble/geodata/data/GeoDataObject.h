@@ -5,8 +5,7 @@
 //
 
 
-#ifndef MARBLE_GEODATAOBJECT_H
-#define MARBLE_GEODATAOBJECT_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -141,5 +140,3 @@ const T *geodata_cast(const GeoDataObject *node)
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataObject* )
-
-#endif

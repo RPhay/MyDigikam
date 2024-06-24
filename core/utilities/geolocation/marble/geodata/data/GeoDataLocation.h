@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef GEODATALOCATION_H
-#define GEODATALOCATION_H
+#pragma once
 
 #include "GeoDataObject.h"
 #include "GeoDataCoordinates.h"
@@ -52,5 +51,3 @@ protected:
 };
 
 }
-
-#endif // GEODATAORIENTATION_H

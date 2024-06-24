@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATAPHOTOOVERLAY_H
-#define MARBLE_GEODATAPHOTOOVERLAY_H
+#pragma once
 
 #include "GeoDataOverlay.h"
 #include "MarbleGlobal.h"
@@ -68,5 +66,3 @@ private:
 };
 
 }
-
-#endif

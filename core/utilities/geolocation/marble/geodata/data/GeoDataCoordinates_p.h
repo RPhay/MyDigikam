@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-#ifndef MARBLE_GEODATACOORDINATES_P_H
-#define MARBLE_GEODATACOORDINATES_P_H
+#pragma once
 
 #include "Quaternion.h"
 #include <QAtomicInt>
@@ -227,5 +226,3 @@ inline bool GeoDataCoordinatesPrivate::operator!=( const GeoDataCoordinatesPriva
 }
 
 }
-
-#endif

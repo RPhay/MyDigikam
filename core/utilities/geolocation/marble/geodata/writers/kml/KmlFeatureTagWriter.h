@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLFEATURETAGWRITER_H
-#define MARBLE_KMLFEATURETAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -29,5 +28,3 @@ private:
 };
 
 }
-
-#endif

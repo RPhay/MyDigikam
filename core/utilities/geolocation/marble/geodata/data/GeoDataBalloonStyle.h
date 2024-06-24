@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATABALLOONSTYLE_H
-#define GEODATABALLOONSTYLE_H
+#pragma once
 
 #include "MarbleGlobal.h"
 #include "GeoDataColorStyle.h"
@@ -62,5 +61,3 @@ private:
 };
 
 }
-
-#endif

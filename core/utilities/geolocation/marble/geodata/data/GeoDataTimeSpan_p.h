@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef GEODATATIMESPANPRIVATE_H
-#define GEODATATIMESPANPRIVATE_H
+#pragma once
 
 #include "GeoDataTypes.h"
 #include "GeoDataTimeStamp.h"
@@ -20,6 +19,3 @@ class GeoDataTimeSpanPrivate
 };
 
 } // namespace Marble
-
-#endif //GEODATATIMESPANPRIVATE_H
-

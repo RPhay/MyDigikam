@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Marek Hakala <hakala.marek@gmail.com>
 //
 
-#ifndef MARBLE_KMLUPDATETAGWRITER_H
-#define MARBLE_KMLUPDATETAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -19,4 +18,3 @@ public:
 };
 
 }
-#endif

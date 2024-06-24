@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLCOLORSTYLETAGWRITER_H
-#define MARBLE_KMLCOLORSTYLETAGWRITER_H
+#pragma once
 
 #include <QColor>
 
@@ -37,5 +36,3 @@ private:
 };
 
 }
-
-#endif

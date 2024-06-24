@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
 //
 
-#ifndef MARBLE_KMLTRACKWRITER_H
-#define MARBLE_KMLTRACKWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif // MARBLE_KMLTRACKWRITER_H

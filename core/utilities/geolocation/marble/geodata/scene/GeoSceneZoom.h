@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEZOOM_H
-#define MARBLE_GEOSCENEZOOM_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoDocument.h"
@@ -39,5 +38,3 @@ class DIGIKAM_EXPORT GeoSceneZoom : public GeoNode
 };
 
 }
-
-#endif

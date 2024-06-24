@@ -6,9 +6,7 @@
 // SPDX-FileCopyrightText: 2015 Alejandro Garcia Montoro <alejandro.garciamontoro@gmail.com>
 //
 
-
-#ifndef MARBLE_GEODATACOORDINATES_H
-#define MARBLE_GEODATACOORDINATES_H
+#pragma once
 
 #include <QCoreApplication>
 #include <QMetaType>
@@ -433,9 +431,6 @@ class DIGIKAM_EXPORT GeoDataCoordinates
 
 DIGIKAM_EXPORT size_t qHash(const GeoDataCoordinates& coordinates );
 
-
 }
 
 Q_DECLARE_METATYPE( Marble::GeoDataCoordinates )
-
-#endif

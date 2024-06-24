@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef GEODATAVEC2_H
-#define GEODATAVEC2_H
+#pragma once
 
 #include <QPointF>
 #include "digikam_export.h"
@@ -42,5 +41,3 @@ private:
 };
 
 }
-
-#endif

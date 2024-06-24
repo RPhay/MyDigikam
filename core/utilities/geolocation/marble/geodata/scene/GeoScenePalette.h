@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEPALETTE_H
-#define MARBLE_GEOSCENEPALETTE_H
+#pragma once
 
 #include <QString>
 
@@ -39,5 +38,3 @@ class GeoScenePalette : public GeoNode
 };
 
 }
-
-#endif

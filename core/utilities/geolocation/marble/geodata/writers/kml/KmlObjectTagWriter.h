@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLOBJECTTAGWRITER_H
-#define MARBLE_KMLOBJECTTAGWRITER_H
+#pragma once
 
 #include <GeoDataObject.h>
 
@@ -26,5 +25,3 @@ private:
 };
 
 }
-
-#endif

@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-
-#ifndef MARBLE_GEODATALINESTYLE_H
-#define MARBLE_GEODATALINESTYLE_H
+#pragma once
 
 #include <QVector>
 
@@ -147,5 +145,3 @@ class DIGIKAM_EXPORT GeoDataLineStyle : public GeoDataColorStyle
 };
 
 }
-
-#endif

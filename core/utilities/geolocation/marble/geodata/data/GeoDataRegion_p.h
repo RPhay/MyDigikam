@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <rahn@kde.org>
 //
 
-#ifndef MARBLE_GEODATAREGIONPRIVATE_H
-#define MARBLE_GEODATAREGIONPRIVATE_H
+#pragma once
 
 #include "GeoDataRegion.h"
 
@@ -67,5 +66,3 @@ class GeoDataRegionPrivate
 };
 
 } // namespace Marble
-
-#endif

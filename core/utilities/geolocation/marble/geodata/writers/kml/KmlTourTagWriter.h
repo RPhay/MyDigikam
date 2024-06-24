@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Adrian Draghici <draghici.adrian.b@gmail.com>
 //
 
-#ifndef MARBLE_KMLTOURTAGWRITER_H
-#define MARBLE_KMLTOURTAGWRITER_H
+#pragma once
 
 #include "KmlFeatureTagWriter.h"
 
@@ -20,5 +19,3 @@ public:
 };
 
 }
-
-#endif

@@ -4,13 +4,11 @@
 // SPDX-FileCopyrightText: 2014 Calin Cruceru <calin@rosedu.org>
 //
 
-#ifndef MARBLE_GEODATATOURPRIVATE_H
-#define MARBLE_GEODATATOURPRIVATE_H
+#pragma once
 
 #include "GeoDataFeature_p.h"
 #include "GeoDataTypes.h"
 #include "GeoDataPlaylist.h"
-
 
 namespace Marble
 {
@@ -59,5 +57,3 @@ public:
 };
 
 }
-
-#endif // MARBLE_GEODATATOURPRIVATE_H

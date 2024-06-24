@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Utku Aydın <utkuaydin34@gmail.com>
 //
 
-#ifndef MARBLE_GEOSCENEGEODATA_H
-#define MARBLE_GEOSCENEGEODATA_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoSceneAbstractDataset.h"
@@ -61,6 +60,3 @@ class DIGIKAM_EXPORT GeoSceneGeodata : public GeoSceneAbstractDataset
 };
 
 }
-
-
-#endif

@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2015 Constantin Mihalache <mihalache.c94@gmail.com>
 
-#ifndef KMLLABELSTYLETAGWRITER_H
-#define KMLLABELSTYLETAGWRITER_H
+#pragma once
 
 #include "KmlColorStyleTagWriter.h"
 #include "GeoTagWriter.h"
@@ -23,4 +22,3 @@ protected:
 };
 
 }
-#endif // KMLLABELSTYLETAGWRITER_H
