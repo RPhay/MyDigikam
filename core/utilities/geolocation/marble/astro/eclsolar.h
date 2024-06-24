@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Gerhard HOLTKAMP
 //
 
-#if !defined(__eclsolar_h)
-#define __eclsolar_h
+#pragma once
 
 #include "attlib.h"
 #include "digikam_export.h"
@@ -150,8 +149,5 @@ class DIGIKAM_EXPORT EclSolar     // Calculate Solar Eclipses
       Vec3 eb_ude;  // Shadow delta vector for upper boundary
       Vec3 eb_lbe;  // Shadod base vector for lower boundary
       Vec3 eb_lde;  // Shadow delta vector for lower boundary
-
 };
-
-#endif         // __eclsolar_h sentry.
 

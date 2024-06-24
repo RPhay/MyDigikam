@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
 //
 
-#if !defined(__astrolib_h)
-#define __astrolib_h
+#pragma once
 
 #include "attlib.h"
 #include "digikam_export.h"
@@ -145,7 +144,3 @@ class DIGIKAM_EXPORT Eclipse      // Eclipse Calculations
    double d_penumbra; // diameter of penumbra in Earth Radii
    void equ_sun_moon(double jd, double tdut);
  };
-
-#endif         // __astrolib_h sentry.
-
-

@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_MARBLEWIDGETPOPUPMENU_H
-#define MARBLE_MARBLEWIDGETPOPUPMENU_H
+#pragma once
 
 #include <QObject>
 
@@ -72,5 +71,3 @@ private Q_SLOTS:
 };
 
 }
-
-#endif

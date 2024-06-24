@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
 //
 
-#ifndef MARBLEABSTRACTPRESENTER_H
-#define MARBLEABSTRACTPRESENTER_H
+#pragma once
 
 #include <QList>
 
@@ -146,6 +145,3 @@ class ViewportParams;
         const qreal m_viewAngle;
     };
 }
-
-
-#endif // MARBLEABSTRACTPRESENTER_H

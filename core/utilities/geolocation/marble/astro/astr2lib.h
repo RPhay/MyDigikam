@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
 //
 
-#if !defined(__astr2lib_h)
-#define __astr2lib_h
+#pragma once
 
 #include "attlib.h"
 #include "digikam_export.h"
@@ -63,6 +62,4 @@ class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 co
    DIGIKAM_EXPORT void SatTitan (double t, Vec3& rs, Vec3& vs);  // state vector of Titan
    DIGIKAM_EXPORT void NepTriton (double t, Vec3& rs, Vec3& vs); // state vector of Triton
    DIGIKAM_EXPORT void PluCharon (double t, Vec3& rs, Vec3& vs); // state vector of Charon
-
-#endif         // __astr2lib_h sentry.
 

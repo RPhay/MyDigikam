@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_SCANLINETEXTUREMAPPERCONTEXT_H
-#define MARBLE_SCANLINETEXTUREMAPPERCONTEXT_H
+#pragma once
 
 #include <QSize>
 #include <QImage>
@@ -145,5 +144,3 @@ inline qreal ScanlineTextureMapperContext::rad2PixelY( const qreal lat ) const
 }
 
 }
-
-#endif

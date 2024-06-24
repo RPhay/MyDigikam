@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_MARBLEWIDGET_H
-#define MARBLE_MARBLEWIDGET_H
+#pragma once
 
 /** @file
  * This file contains the headers for MarbleWidget.
@@ -1178,5 +1177,3 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
 };
 
 }
-
-#endif

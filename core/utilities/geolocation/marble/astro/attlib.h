@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
 //
 
-#if !defined(__attlib_h)
-#define __attlib_h
+#pragma once
 
 /***********************************************************************
     3-Dim Vector and Matrix Definitions and Operations
@@ -101,6 +100,3 @@ class DIGIKAM_EXPORT Mat3
    void vcpy (Vec3& v, double& p, double& y); // get pitch and yaw from vector
    void vcrp (Vec3& v, double& p, double& r); // get pitch and roll from vector
    Mat3 mxrox (double& a, Vec3& v);  // get matrix from eigenvector and angle
-
-#endif         // __attlib_h sentry.
-

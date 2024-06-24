@@ -6,8 +6,7 @@
 // Oxygen color definitions from
 // https://lists.kde.org/?l=kde-artists&m=116559781726568&q=p3
 
-#ifndef MARBLECOLORS_H
-#define MARBLECOLORS_H
+#pragma once
 
 #include "digikam_export.h"
 #include <QColor>
@@ -93,5 +92,3 @@ DIGIKAM_EXPORT extern QColor const aluminumGray1;
 }
 
 }
-
-#endif

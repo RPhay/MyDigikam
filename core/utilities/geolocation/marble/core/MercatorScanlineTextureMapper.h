@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_MERCATORSCANLINETEXTUREMAPPER_H
-#define MARBLE_MERCATORSCANLINETEXTUREMAPPER_H
-
+#pragma once
 
 #include "TextureMapperInterface.h"
 
@@ -47,5 +45,3 @@ class MercatorScanlineTextureMapper : public TextureMapperInterface
 };
 
 }
-
-#endif

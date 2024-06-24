@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
 //
 
-#ifndef MARBLE_MARBLEPHYSICS_H
-#define MARBLE_MARBLEPHYSICS_H
+#pragma once
 
 #include <QObject>
 
@@ -55,5 +54,3 @@ private Q_SLOTS:
 };
 
 }
-
-#endif

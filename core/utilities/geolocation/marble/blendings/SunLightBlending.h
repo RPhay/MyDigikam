@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_SUN_LIGHT_BLENDING_H
-#define MARBLE_SUN_LIGHT_BLENDING_H
+#pragma once
 
 #include <QtGlobal>
 
@@ -31,5 +30,3 @@ class SunLightBlending: public Blending
 };
 
 }
-
-#endif

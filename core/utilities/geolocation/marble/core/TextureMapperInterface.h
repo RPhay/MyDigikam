@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_TEXTUREMAPPERINTERFACE_H
-#define MARBLE_TEXTUREMAPPERINTERFACE_H
+#pragma once
 
 class QRect;
 
@@ -36,5 +35,3 @@ protected:
 };
 
 }
-
-#endif

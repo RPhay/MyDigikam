@@ -11,8 +11,7 @@
 
 // krazy:excludeall=dpointer,inline
 
-#ifndef MARBLE_QUATERNION_H
-#define MARBLE_QUATERNION_H
+#pragma once
 
 #include "digikam_export.h"
 #include <cmath>
@@ -88,5 +87,3 @@ class DIGIKAM_EXPORT Quaternion
 #ifndef QT_NO_DEBUG_STREAM
 DIGIKAM_EXPORT QDebug operator<<(QDebug, const Marble::Quaternion &);
 #endif
-
-#endif // MARBLE_QUATERNION_H

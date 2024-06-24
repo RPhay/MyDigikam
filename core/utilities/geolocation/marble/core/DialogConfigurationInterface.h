@@ -2,8 +2,8 @@
 //
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
-#ifndef MARBLE_DIALOGCONFIGURATIONINTERFACE_H
-#define MARBLE_DIALOGCONFIGURATIONINTERFACE_H
+
+#pragma once
 
 #include <QObject> // for Q_DECLARE_INTERFACE macro
 #include "digikam_export.h"
@@ -39,5 +39,3 @@ class DIGIKAM_EXPORT DialogConfigurationInterface
 }
 
 Q_DECLARE_INTERFACE( Marble::DialogConfigurationInterface, "org.kde.Marble.DialogConfigurationInterface/1.0" )
-
-#endif

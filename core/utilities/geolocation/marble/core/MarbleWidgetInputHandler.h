@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
 //
 
-#ifndef MARBLE_MARBLEWIDGETINPUTHANDLER_H
-#define MARBLE_MARBLEWIDGETINPUTHANDLER_H
+#pragma once
 
 #include <QObject>
 #include <QSharedPointer>
@@ -53,5 +52,3 @@ private:
 };
 
 }
-
-#endif

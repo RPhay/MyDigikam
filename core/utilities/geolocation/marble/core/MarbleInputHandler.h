@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
 //
 
-#ifndef MARBLE_MARBLEINPUTHANDLER_H
-#define MARBLE_MARBLEINPUTHANDLER_H
+#pragma once
 
 #include <QObject>
 
@@ -183,5 +182,3 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
 };
 
 }
-
-#endif  //MARBLE_MARBLEINPUTHANDLER_H

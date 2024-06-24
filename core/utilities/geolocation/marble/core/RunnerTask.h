@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_RUNNERTASK_H
-#define MARBLE_RUNNERTASK_H
+#pragma once
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataDocument.h"
@@ -92,5 +91,3 @@ private:
 };
 
 }
-
-#endif

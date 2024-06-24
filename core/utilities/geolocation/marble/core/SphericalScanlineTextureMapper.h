@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_SPHERICALSCANLINETEXTUREMAPPER_H
-#define MARBLE_SPHERICALSCANLINETEXTUREMAPPER_H
-
+#pragma once
 
 #include "TextureMapperInterface.h"
 
@@ -54,5 +52,3 @@ class SphericalScanlineTextureMapper : public TextureMapperInterface
 };
 
 }
-
-#endif

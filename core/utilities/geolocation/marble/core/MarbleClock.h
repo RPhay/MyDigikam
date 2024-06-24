@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef MARBLE_MARBLECLOCK_H
-#define MARBLE_MARBLECLOCK_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -106,4 +105,3 @@ public:
 };
 
 }
-#endif

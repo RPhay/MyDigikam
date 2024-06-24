@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_TEMPLATEDOCUMENT_H
-#define MARBLE_TEMPLATEDOCUMENT_H
+#pragma once
 
 #include <QtGlobal>
 
@@ -80,5 +79,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_TEMPLATEDOCUMENT_H

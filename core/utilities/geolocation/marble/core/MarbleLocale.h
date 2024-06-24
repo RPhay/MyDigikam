@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2015 Ilya Kowalewski <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef MARBLE_MARBLELOCALE_H
-#define MARBLE_MARBLELOCALE_H
+#pragma once
 
 #include <QtGlobal>
 
@@ -75,5 +74,3 @@ private:
 };
 
 }
-
-#endif

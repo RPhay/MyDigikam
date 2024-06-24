@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_GLOBAL_H
-#define MARBLE_GLOBAL_H
+#pragma once
 
 #include <cmath>
 
@@ -312,5 +311,3 @@ private:
 Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::TessellationFlags )
 Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::LabelPositionFlags )
 Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::MarbleGlobal::Profiles )
-
-#endif

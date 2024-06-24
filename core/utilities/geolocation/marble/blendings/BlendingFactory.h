@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_BLENDING_FACTORY_H
-#define MARBLE_BLENDING_FACTORY_H
+#pragma once
 
 #include <QHash>
 
@@ -32,5 +31,3 @@ class BlendingFactory
 };
 
 }
-
-#endif

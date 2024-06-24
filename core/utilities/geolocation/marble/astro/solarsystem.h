@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
 //
 
-#if !defined(__solarsystem_h)
-#define __solarsystem_h
+#pragma once
 
 #include "attlib.h"
 #include "digikam_export.h"
@@ -210,8 +209,5 @@ class DIGIKAM_EXPORT SolarSystem     // Calculate Positions of Solar System Bodi
      double ss_inc;  // inclination in degrees
      double ss_eclep; // epoch of ecliptic and equator for these elements
      Vec3 ss_comet;  // position vector of comet or asteroid in AU
-
 };
-
-#endif         // __solarsystem_h sentry.
 

@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 // SPDX-FileCopyrightText: 2014 Dennis Nienhüser <nienhueser@kde.org>
 
-#ifndef MARBLE_PLANETFACTORY_H
-#define MARBLE_PLANETFACTORY_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -36,5 +35,3 @@ public:
 };
 
 }
-
-#endif

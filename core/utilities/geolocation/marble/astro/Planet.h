@@ -4,8 +4,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 //
 
-#ifndef MARBLE_PLANET_H
-#define MARBLE_PLANET_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -129,9 +128,4 @@ private:
     PlanetPrivate * const d;
 };
 
-
-
 } //namespace Marble
-
-
-#endif

@@ -8,8 +8,7 @@
 // The TextureColorizer maps the Elevationvalues to Legend Colors.
 //
 
-#ifndef MARBLE_TEXTURECOLORIZER_H
-#define MARBLE_TEXTURECOLORIZER_H
+#pragma once
 
 #include "MarbleGlobal.h"
 #include "GeoDataDocument.h"
@@ -59,5 +58,3 @@ class TextureColorizer
 };
 
 }
-
-#endif

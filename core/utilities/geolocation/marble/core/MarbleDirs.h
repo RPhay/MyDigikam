@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_MARBLEDIRS_H
-#define MARBLE_MARBLEDIRS_H
+#pragma once
 
 #include <QDir>
 #include <QString>
@@ -100,5 +99,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_MARBLEDIRS_H

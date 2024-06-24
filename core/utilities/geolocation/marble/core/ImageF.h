@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2013 Adrian Draghici <draghici.adrian.b@gmail.com>
 
-#ifndef IMAGEF_H
-#define IMAGEF_H
+#pragma once
 
 #include <QImage>
 
@@ -26,5 +25,3 @@ public:
 };
 
 }
-
-#endif

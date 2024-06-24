@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MATHHELPER_H
-#define MATHHELPER_H
+#pragma once
 
 #include <qglobal.h>
 
@@ -18,5 +17,3 @@ qreal msvc_asinh(qreal x);
 qreal msvc_atanh(qreal x);
 #define atanh msvc_atanh
 #endif
-
-#endif  // MATHHELPER_H

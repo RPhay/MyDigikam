@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_MARBLEMATH_H
-#define MARBLE_MARBLEMATH_H
+#pragma once
 
 #include <QtGlobal>
 
@@ -102,5 +101,3 @@ inline qreal gd( qreal x ) {
 
     return atan ( sinh ( x ) );
 }
-
-#endif

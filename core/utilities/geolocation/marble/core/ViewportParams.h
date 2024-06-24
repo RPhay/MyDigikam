@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-#ifndef MARBLE_VIEWPORTPARAMS_H
-#define MARBLE_VIEWPORTPARAMS_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for ViewportParams.
@@ -217,5 +215,3 @@ class DIGIKAM_EXPORT ViewportParams
 };
 
 }
-
-#endif

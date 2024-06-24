@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Gerhard HOLTKAMP
 //
 
-#if !defined(__planetarysats_h)
-#define __planetarysats_h
+#pragma once
 
 #include "attlib.h"
 #include "digikam_export.h"
@@ -95,6 +94,3 @@ class DIGIKAM_EXPORT PlanetarySats     // Calculate spacecraft around other plan
       double pls_lng;  // planetary longitude (decimal degrees)
       double pls_height; // height above reference ellipsoid (km)
 };
-
-#endif         // __planetarysats_h sentry.
-

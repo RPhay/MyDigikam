@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-#ifndef MARBLE_MARBLEMAP_H
-#define MARBLE_MARBLEMAP_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for MarbleMap.
@@ -806,5 +804,3 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
 };
 
 }
-
-#endif

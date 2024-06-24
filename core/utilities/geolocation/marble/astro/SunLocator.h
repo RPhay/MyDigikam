@@ -2,9 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_SUNLOCATOR_H
-#define MARBLE_SUNLOCATOR_H
-
+#pragma once
 
 #include <QObject>
 #include <QColor>
@@ -48,5 +46,3 @@ class DIGIKAM_EXPORT SunLocator : public QObject
 };
 
 }
-
-#endif

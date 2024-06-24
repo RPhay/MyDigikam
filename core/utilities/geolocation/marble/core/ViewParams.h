@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-#ifndef MARBLE_VIEWPARAMS_H
-#define MARBLE_VIEWPARAMS_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for ViewParameters.
@@ -52,5 +50,3 @@ class ViewParams
 };
 
 }
-
-#endif

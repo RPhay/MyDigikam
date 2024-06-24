@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef MARBLE_ABSTRACTFLOATITEM_H
-#define MARBLE_ABSTRACTFLOATITEM_H
+#pragma once
 
 #include <QPointF>
 #include <QSizeF>
@@ -166,5 +165,3 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
 };
 
 }
-
-#endif

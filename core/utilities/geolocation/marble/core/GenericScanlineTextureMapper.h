@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_GENERICSCANLINETEXTUREMAPPER_H
-#define MARBLE_GENERICSCANLINETEXTUREMAPPER_H
-
+#pragma once
 
 #include "TextureMapperInterface.h"
 
@@ -43,5 +41,3 @@ class GenericScanlineTextureMapper : public TextureMapperInterface
 };
 
 }
-
-#endif

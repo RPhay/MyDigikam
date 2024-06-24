@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_BLENDING_ALGORITHMS_H
-#define MARBLE_BLENDING_ALGORITHMS_H
+#pragma once
 
 #include <QtGlobal>
 
@@ -255,5 +254,3 @@ class InvertHueBlending: public Blending
 };
 
 }
-
-#endif

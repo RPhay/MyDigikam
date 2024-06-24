@@ -5,9 +5,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_EQUIRECTSCANLINETEXTUREMAPPER_H
-#define MARBLE_EQUIRECTSCANLINETEXTUREMAPPER_H
-
+#pragma once
 
 #include "TextureMapperInterface.h"
 
@@ -46,5 +44,3 @@ class EquirectScanlineTextureMapper : public TextureMapperInterface
 };
 
 }
-
-#endif

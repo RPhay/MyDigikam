@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_RENDERSTATE_H
-#define MARBLE_RENDERSTATE_H
+#pragma once
 
 #include "digikam_export.h"
 #include "MarbleGlobal.h"
@@ -34,5 +33,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif

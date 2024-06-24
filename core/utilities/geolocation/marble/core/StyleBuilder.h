@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_STYLEBUILDER_H
-#define MARBLE_STYLEBUILDER_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -106,5 +105,3 @@ private:
 };
 
 }
-
-#endif

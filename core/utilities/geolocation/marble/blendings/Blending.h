@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_BLENDING_H
-#define MARBLE_BLENDING_H
+#pragma once
 
 class QImage;
 
@@ -19,5 +18,3 @@ class Blending
 };
 
 }
-
-#endif
