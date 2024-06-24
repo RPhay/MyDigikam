@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-22 01:51+0000\n"
+"POT-Creation-Date: 2024-06-24 01:39+0000\n"
 "PO-Revision-Date: 2024-05-21 01:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -971,9 +971,9 @@ msgid ""
 msgstr "<p>請選擇要移動資料夾到 digiKam 相簿櫃之目的相簿。</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1121
-#: core/utilities/imageeditor/main/imagewindow.cpp:1146
-#: core/utilities/imageeditor/main/imagewindow.cpp:1178
+#: core/utilities/imageeditor/main/imagewindow.cpp:1127
+#: core/utilities/imageeditor/main/imagewindow.cpp:1152
+#: core/utilities/imageeditor/main/imagewindow.cpp:1184
 #, kde-format
 msgid "Album \"%1\""
 msgstr "相簿 \"%1\""
@@ -1313,32 +1313,32 @@ msgstr "技術參數"
 msgid "<i>Binary Data</i>"
 msgstr "<i>二進位資料</i>"
 
-#: core/app/main/digikamapp.cpp:70
+#: core/app/main/digikamapp.cpp:76
 #, kde-format
 msgid "Initializing..."
 msgstr "初始化中..."
 
-#: core/app/main/digikamapp.cpp:148 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:154 core/showfoto/main/showfoto.cpp:116
 #, kde-format
 msgid "Load Plugins..."
 msgstr "載入外掛程式中..."
 
-#: core/app/main/digikamapp.cpp:173 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:179 core/showfoto/main/showfoto.cpp:98
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "正在檢查 ICC 儲存庫..."
 
-#: core/app/main/digikamapp.cpp:187
+#: core/app/main/digikamapp.cpp:193
 #, kde-format
 msgid "Clean up Database..."
 msgstr "正在清理資料庫..."
 
-#: core/app/main/digikamapp.cpp:209
+#: core/app/main/digikamapp.cpp:215
 #, kde-format
 msgid "Loading albums..."
 msgstr "正在載入相簿..."
 
-#: core/app/main/digikamapp.cpp:356
+#: core/app/main/digikamapp.cpp:362
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1348,7 +1348,7 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:412
+#: core/app/main/digikamapp.cpp:418
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1358,82 +1358,82 @@ msgstr ""
 "您的 digiKam 安裝沒有可用的 ExifTool，或是它無法正常運作。請前往 digiKam 設定"
 "並在中繼資料區塊檢查 ExifTool 執行檔是否可用。"
 
-#: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
+#: core/app/main/digikamapp.cpp:703 core/app/views/stack/trashview.cpp:501
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:703
+#: core/app/main/digikamapp.cpp:709
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "沒有選擇任何項目（共 %1 [%2] 個項目）"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:714
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目，群組化的項目：%2）"
 
-#: core/app/main/digikamapp.cpp:719
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 個項目已選擇 (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:732
+#: core/app/main/digikamapp.cpp:738
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] 個項目已選擇 (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:740
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 個項目已選擇。包含群組化的項目的總計：%3"
 
-#: core/app/main/digikamapp.cpp:748
+#: core/app/main/digikamapp.cpp:754
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] 個項目已選擇 (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:757
+#: core/app/main/digikamapp.cpp:763
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 個項目已選擇。包含群組化的項目：%3/%4"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:794
 #, kde-format
 msgid " (%1 of %2)"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/app/main/digikamapp.cpp:802
+#: core/app/main/digikamapp.cpp:808
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "（%1 / %2 [%3]）"
 
-#: core/app/main/digikamapp.cpp:806
+#: core/app/main/digikamapp.cpp:812
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:817
+#: core/app/main/digikamapp.cpp:823
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 個隱藏項目"
 
-#: core/app/main/digikamapp.cpp:868
+#: core/app/main/digikamapp.cpp:874
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "將中繼資料寫入選取的檔案"
 
-#: core/app/main/digikamapp.cpp:870
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3039,8 +3039,8 @@ msgid "no item"
 msgstr "沒有項目"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:412
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:441
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:448
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:482
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -21002,7 +21002,7 @@ msgstr "播放"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:293
 #, kde-format
 msgid "Stop"
 msgstr "停止"
@@ -31638,7 +31638,7 @@ msgid "Remove Black Frame"
 msgstr "移除雜訊對照圖"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:347
 #, kde-format
 msgid "Clear List"
 msgstr "清除清單"
@@ -36832,7 +36832,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1961
+#: core/utilities/import/main/importui.cpp:1970
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -38598,15 +38598,15 @@ msgid "Remember choice for this operation"
 msgstr "取消這個動作。"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:448
-#: core/utilities/lighttable/lighttablewindow.cpp:48
+#: core/utilities/lighttable/lighttablewindow.cpp:54
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "數位光桌"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:59
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "批次佇列管理器"
@@ -41854,7 +41854,7 @@ msgid "Mod.: %1"
 msgstr "變更：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:421
-#: core/showfoto/main/showfoto.cpp:256
+#: core/showfoto/main/showfoto.cpp:267
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
@@ -48880,12 +48880,12 @@ msgid ""
 "experience with Showfoto.</p>"
 msgstr ""
 
-#: core/showfoto/main/showfoto.cpp:97
+#: core/showfoto/main/showfoto.cpp:107
 #, kde-format
 msgid "Loading themes..."
 msgstr "正在載入佈景主題..."
 
-#: core/showfoto/main/showfoto.cpp:215
+#: core/showfoto/main/showfoto.cpp:226
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -48895,14 +48895,14 @@ msgstr ""
 "<p>此 ICC 描述擋路徑似乎無效。</p><p>如果您想現在設定，點選「是」，不然請選"
 "「否」。這種情況下會停用「色彩管理」的功能直到您解決這個問題</p>"
 
-#: core/showfoto/main/showfoto.cpp:255
+#: core/showfoto/main/showfoto.cpp:266
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/showfoto/main/showfoto.cpp:280
-#: core/utilities/imageeditor/main/imagewindow.cpp:499
+#: core/showfoto/main/showfoto.cpp:291
+#: core/utilities/imageeditor/main/imagewindow.cpp:505
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -48932,8 +48932,8 @@ msgid "Remote file handling is not supported"
 msgstr "濾鏡的識別子或版號不被支援"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:582
-#: core/utilities/imageeditor/main/imagewindow.cpp:697
+#: core/utilities/imageeditor/main/imagewindow.cpp:588
+#: core/utilities/imageeditor/main/imagewindow.cpp:703
 #, kde-format
 msgid "Image saved successfully"
 msgstr "影像已成功儲存"
@@ -50274,7 +50274,7 @@ msgid "&Abort"
 msgstr "放棄(&A)"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:923
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Processing..."
 msgstr "正在處理..."
@@ -57624,7 +57624,7 @@ msgid ""
 msgstr "設定這個選項會在影像上顯示白色層疊。這會幫助您避免影像曝光過度。"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:463
-#: core/utilities/import/main/importui.cpp:497
+#: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -57683,8 +57683,8 @@ msgid "Rotate Right"
 msgstr "向右旋轉"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:552
-#: core/utilities/import/main/importui.cpp:542
-#: core/utilities/import/main/importui.cpp:785
+#: core/utilities/import/main/importui.cpp:551
+#: core/utilities/import/main/importui.cpp:794
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -57943,34 +57943,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "開啟方式..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:194
+#: core/utilities/imageeditor/main/imagewindow.cpp:200
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "影像編輯器 - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:198
+#: core/utilities/imageeditor/main/imagewindow.cpp:204
 #, kde-format
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:368
+#: core/utilities/imageeditor/main/imagewindow.cpp:374
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:369
+#: core/utilities/imageeditor/main/imagewindow.cpp:375
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2（%3 百萬畫素）"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:949
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "目前相簿中沒有影像"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:950
+#: core/utilities/imageeditor/main/imagewindow.cpp:956
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -57979,13 +57979,13 @@ msgstr ""
 "目前相簿中沒有可顯示的影像。\n"
 "影像編輯器將關閉。"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1223
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "檔案無法使用"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1224
+#: core/utilities/imageeditor/main/imagewindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -58235,7 +58235,7 @@ msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2478
+#: core/utilities/import/main/importui.cpp:2487
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file <filename>%1</filename>."
 msgid "Failed to download <filename>%1</filename>"
@@ -58565,393 +58565,393 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "此項目已被下載"
 
-#: core/utilities/import/main/importui.cpp:147
+#: core/utilities/import/main/importui.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "設定檔案下載後 digiKam 將檔案重新命名的方式。"
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:157
 #, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "檔案重新命名選項"
 
-#: core/utilities/import/main/importui.cpp:154
+#: core/utilities/import/main/importui.cpp:163
 #, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "相簿的自動建立"
 
-#: core/utilities/import/main/importui.cpp:160
+#: core/utilities/import/main/importui.cpp:169
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "即時操作 (只有 JPEG)"
 
-#: core/utilities/import/main/importui.cpp:168
+#: core/utilities/import/main/importui.cpp:177
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "DNG 轉換選項"
 
-#: core/utilities/import/main/importui.cpp:176
+#: core/utilities/import/main/importui.cpp:185
 #, fuzzy, kde-format
 #| msgid "Scripting"
 msgctxt "@item"
 msgid "Scripting"
 msgstr "文稿"
 
-#: core/utilities/import/main/importui.cpp:180
+#: core/utilities/import/main/importui.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "設定"
 
-#: core/utilities/import/main/importui.cpp:195
+#: core/utilities/import/main/importui.cpp:204
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/import/main/importui.cpp:202
+#: core/utilities/import/main/importui.cpp:211
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "資訊"
 
-#: core/utilities/import/main/importui.cpp:209
+#: core/utilities/import/main/importui.cpp:218
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "擷取"
 
-#: core/utilities/import/main/importui.cpp:221
+#: core/utilities/import/main/importui.cpp:230
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "全部選取"
 
-#: core/utilities/import/main/importui.cpp:229
+#: core/utilities/import/main/importui.cpp:238
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "全部不選"
 
-#: core/utilities/import/main/importui.cpp:237
+#: core/utilities/import/main/importui.cpp:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "反相選擇"
 
-#: core/utilities/import/main/importui.cpp:245
+#: core/utilities/import/main/importui.cpp:254
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "選擇新的項目"
 
-#: core/utilities/import/main/importui.cpp:252
+#: core/utilities/import/main/importui.cpp:261
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "選擇鎖定的項目"
 
-#: core/utilities/import/main/importui.cpp:260
+#: core/utilities/import/main/importui.cpp:269
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "下載"
 
-#: core/utilities/import/main/importui.cpp:265
+#: core/utilities/import/main/importui.cpp:274
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "下載新項目"
 
-#: core/utilities/import/main/importui.cpp:275
+#: core/utilities/import/main/importui.cpp:284
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "下載選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:282
+#: core/utilities/import/main/importui.cpp:291
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "全部下載"
 
-#: core/utilities/import/main/importui.cpp:290
+#: core/utilities/import/main/importui.cpp:299
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "下載並刪除新項目"
 
-#: core/utilities/import/main/importui.cpp:298
+#: core/utilities/import/main/importui.cpp:307
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "下載並刪除選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:306
+#: core/utilities/import/main/importui.cpp:315
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "下載並刪除全部"
 
-#: core/utilities/import/main/importui.cpp:313
+#: core/utilities/import/main/importui.cpp:322
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "上傳..."
 
-#: core/utilities/import/main/importui.cpp:321
+#: core/utilities/import/main/importui.cpp:330
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "切換鎖定"
 
-#: core/utilities/import/main/importui.cpp:329
+#: core/utilities/import/main/importui.cpp:338
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "標記為已下載"
 
-#: core/utilities/import/main/importui.cpp:336
+#: core/utilities/import/main/importui.cpp:345
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "刪除"
 
-#: core/utilities/import/main/importui.cpp:341
+#: core/utilities/import/main/importui.cpp:350
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "刪除選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:349
+#: core/utilities/import/main/importui.cpp:358
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "刪除全部"
 
-#: core/utilities/import/main/importui.cpp:355
+#: core/utilities/import/main/importui.cpp:364
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "刪除新項目"
 
-#: core/utilities/import/main/importui.cpp:363
+#: core/utilities/import/main/importui.cpp:372
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/import/main/importui.cpp:367
+#: core/utilities/import/main/importui.cpp:376
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "縮圖"
 
-#: core/utilities/import/main/importui.cpp:374
+#: core/utilities/import/main/importui.cpp:383
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "預覽項目"
 
-#: core/utilities/import/main/importui.cpp:384
+#: core/utilities/import/main/importui.cpp:393
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "地圖"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:405
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "項目排序(&S)"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:406
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "此數值用於縮圖檢視中項目的排序方式"
 
-#: core/utilities/import/main/importui.cpp:402
+#: core/utilities/import/main/importui.cpp:411
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "依名稱"
 
-#: core/utilities/import/main/importui.cpp:403
+#: core/utilities/import/main/importui.cpp:412
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "依路徑"
 
-#: core/utilities/import/main/importui.cpp:404
+#: core/utilities/import/main/importui.cpp:413
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "依日期"
 
-#: core/utilities/import/main/importui.cpp:405
+#: core/utilities/import/main/importui.cpp:414
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "依大小"
 
-#: core/utilities/import/main/importui.cpp:406
+#: core/utilities/import/main/importui.cpp:415
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "依評等"
 
-#: core/utilities/import/main/importui.cpp:407
+#: core/utilities/import/main/importui.cpp:416
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "依下載狀態"
 
-#: core/utilities/import/main/importui.cpp:431
+#: core/utilities/import/main/importui.cpp:440
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "項目排列順序(&O)"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:441
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "定義是否用遞增或遞減方式排列項目。"
 
-#: core/utilities/import/main/importui.cpp:436
+#: core/utilities/import/main/importui.cpp:445
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "遞增"
 
-#: core/utilities/import/main/importui.cpp:438
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "遞減"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:459
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "將項目分組(&G)"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:460
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "顯示於縮圖檢視中的項目分類"
 
-#: core/utilities/import/main/importui.cpp:456
+#: core/utilities/import/main/importui.cpp:465
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "展開清單"
 
-#: core/utilities/import/main/importui.cpp:457
+#: core/utilities/import/main/importui.cpp:466
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "依資料夾"
 
-#: core/utilities/import/main/importui.cpp:458
+#: core/utilities/import/main/importui.cpp:467
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "依格式"
 
-#: core/utilities/import/main/importui.cpp:459
+#: core/utilities/import/main/importui.cpp:468
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "依日期"
 
-#: core/utilities/import/main/importui.cpp:485
+#: core/utilities/import/main/importui.cpp:494
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "符合視窗(&W)"
 
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/import/main/importui.cpp:499
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "縮放至 100%"
 
-#: core/utilities/import/main/importui.cpp:508
+#: core/utilities/import/main/importui.cpp:517
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "顯示歷史"
 
-#: core/utilities/import/main/importui.cpp:514
+#: core/utilities/import/main/importui.cpp:523
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "顯示縮圖列"
 
-#: core/utilities/import/main/importui.cpp:549
+#: core/utilities/import/main/importui.cpp:558
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "重試"
 
-#: core/utilities/import/main/importui.cpp:774
+#: core/utilities/import/main/importui.cpp:783
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "離開預覽模式"
 
-#: core/utilities/import/main/importui.cpp:779
+#: core/utilities/import/main/importui.cpp:788
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "下一張影像"
 
-#: core/utilities/import/main/importui.cpp:791
+#: core/utilities/import/main/importui.cpp:800
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "第一張影像"
 
-#: core/utilities/import/main/importui.cpp:796
+#: core/utilities/import/main/importui.cpp:805
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "最後一張影像"
 
-#: core/utilities/import/main/importui.cpp:897
+#: core/utilities/import/main/importui.cpp:906
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "正在取消目前的操作。請稍候..."
 
-#: core/utilities/import/main/importui.cpp:953
+#: core/utilities/import/main/importui.cpp:962
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "您是否要關閉對話框並取消目前操作？"
 
-#: core/utilities/import/main/importui.cpp:963
+#: core/utilities/import/main/importui.cpp:972
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "正在從相機中斷連線，請稍候..."
 
-#: core/utilities/import/main/importui.cpp:1040
+#: core/utilities/import/main/importui.cpp:1049
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "已就緒"
 
-#: core/utilities/import/main/importui.cpp:1097
+#: core/utilities/import/main/importui.cpp:1106
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58959,13 +58959,13 @@ msgid ""
 "and turned on."
 msgstr "連線到相機失敗。請確定相機已正確連線且已開啟。"
 
-#: core/utilities/import/main/importui.cpp:1191
+#: core/utilities/import/main/importui.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "選擇要更新的影像"
 
-#: core/utilities/import/main/importui.cpp:1226
+#: core/utilities/import/main/importui.cpp:1235
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58979,7 +58979,7 @@ msgstr ""
 "需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:1281
+#: core/utilities/import/main/importui.cpp:1290
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58989,13 +58989,13 @@ msgstr ""
 "相機資料夾 \"%1\" 已經包含項目 \"%2\"。\n"
 "請輸入一個新的檔案名稱 (不含副檔名)："
 
-#: core/utilities/import/main/importui.cpp:1285
+#: core/utilities/import/main/importui.cpp:1294
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "檔案已存在"
 
-#: core/utilities/import/main/importui.cpp:1354
+#: core/utilities/import/main/importui.cpp:1363
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59003,7 +59003,7 @@ msgid ""
 "settings..."
 msgstr "您自訂的目標相簿日期格式不合法。請檢查您的設定。"
 
-#: core/utilities/import/main/importui.cpp:1394
+#: core/utilities/import/main/importui.cpp:1403
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59014,7 +59014,7 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1403
+#: core/utilities/import/main/importui.cpp:1412
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59023,7 +59023,7 @@ msgid ""
 msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿。請在相機設定裡選擇另一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1428
+#: core/utilities/import/main/importui.cpp:1437
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59031,7 +59031,7 @@ msgid ""
 "camera pictures into."
 msgstr "請選擇要匯入相機圖片到 digiKam 相簿櫃之中的哪一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1459
+#: core/utilities/import/main/importui.cpp:1468
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59046,18 +59046,18 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1513
+#: core/utilities/import/main/importui.cpp:1522
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "移動 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:1520
+#: core/utilities/import/main/importui.cpp:1529
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59068,7 +59068,7 @@ msgstr ""
 "下面列出的項目已被相機鎖定 (只能讀取)。這些項目不會被刪除。如果您想要刪除這些"
 "項目，請將它們解除鎖定後重試一次。"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1978
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59082,19 +59082,19 @@ msgid_plural ""
 msgstr[0] ""
 "將要刪除 %1 張影像。<warning>刪除的檔案無法復原</warning>。您確定嗎？"
 
-#: core/utilities/import/main/importui.cpp:1979
+#: core/utilities/import/main/importui.cpp:1988
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:2023
+#: core/utilities/import/main/importui.cpp:2032
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "磁碟空間不足"
 
-#: core/utilities/import/main/importui.cpp:2024
+#: core/utilities/import/main/importui.cpp:2033
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59111,15 +59111,15 @@ msgstr ""
 "估計的需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:2292
-#: core/utilities/import/main/importui.cpp:2318
+#: core/utilities/import/main/importui.cpp:2301
+#: core/utilities/import/main/importui.cpp:2327
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/utilities/import/main/importui.cpp:2311
+#: core/utilities/import/main/importui.cpp:2320
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -59127,30 +59127,30 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (第 %2 張，共 %3 張)"
 
-#: core/utilities/import/main/importui.cpp:2328
+#: core/utilities/import/main/importui.cpp:2337
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/utilities/import/main/importui.cpp:2413
+#: core/utilities/import/main/importui.cpp:2422
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2435
+#: core/utilities/import/main/importui.cpp:2444
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "重新命名檔案到 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2458
+#: core/utilities/import/main/importui.cpp:2467
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "儲存 <filename>%1</filename> 的邊車檔失敗"
 
-#: core/utilities/import/main/importui.cpp:2535
+#: core/utilities/import/main/importui.cpp:2544
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -59162,13 +59162,13 @@ msgid ""
 "are auto-rotated"
 msgstr "影像已下載完成，您可以取下您的相機。影像將會自動旋轉"
 
-#: core/utilities/import/main/importui.cpp:2543
+#: core/utilities/import/main/importui.cpp:2552
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "影像已下載"
 
-#: core/utilities/import/main/importui.cpp:2569
+#: core/utilities/import/main/importui.cpp:2578
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -59176,7 +59176,7 @@ msgstr ""
 "在資料夾 <resource>%2</resource> 中已經存在相同名稱的檔案 (<filename>%1</"
 "filename>)。"
 
-#: core/utilities/import/main/importui.cpp:2582
+#: core/utilities/import/main/importui.cpp:2591
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -59761,7 +59761,7 @@ msgstr "清除全部"
 msgid "Drag and drop images here"
 msgstr "拖放影像到這裡"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:194
+#: core/utilities/lighttable/lighttablewindow.cpp:201
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -60378,146 +60378,146 @@ msgstr "正在從影像中繼資料更新資料庫"
 msgid "Thumbs"
 msgstr "縮圖"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
 #, kde-format
 msgid "Queues"
 msgstr "佇列"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:136
 #, kde-format
 msgid "Queue Settings"
 msgstr "佇列設定"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
 #, kde-format
 msgid "Control Panel"
 msgstr "控制面板"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:154
 #, kde-format
 msgid "Assigned Tools"
 msgstr "指定的工具"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:163
 #, kde-format
 msgid "Tool Settings"
 msgstr "工具設定"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run"
 msgstr "執行"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
 #, kde-format
 msgid "Run all"
 msgstr "執行全部"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
 #, kde-format
 msgid "New Queue"
 msgstr "新增佇列"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:303
 #, kde-format
 msgid "Remove Queue"
 msgstr "移除佇列"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
 #, kde-format
 msgid "Save Workflow"
 msgstr "儲存工作流"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
 #, kde-format
 msgid "Remove items"
 msgstr "移除項目"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
 #, kde-format
 msgid "Remove processed items"
 msgstr "移除已處理的項目"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:324
 #, kde-format
 msgid "Clear Queue"
 msgstr "清除佇列"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:335
 #, kde-format
 msgid "Move up"
 msgstr "上移"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:339
 #, kde-format
 msgid "Move down"
 msgstr "下移"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:343
 #, kde-format
 msgid "Remove tool"
 msgstr "移除工具"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
 #, kde-format
 msgid "Current Queue: "
 msgstr "目前佇列："
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:435
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:469
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:442
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:476
 #, kde-format
 msgid "No items"
 msgstr "沒有任何項目"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:452
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:486
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:459
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:493
 #, kde-format
 msgid "No tasks"
 msgstr "沒有作業"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:458
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:492
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:465
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:499
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "%1 項作業"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:463
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "總計：%1（%）"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:501
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "就緒"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:539
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, fuzzy, kde-format
 #| msgid "Processing under progress"
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "處理進行中"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:540
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:547
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "批次佇列管理員正執行中。您要取消目前的工作嗎？"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:639
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "在佇列中沒有要處理的項目。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:643
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:650
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "There is no item to process in the current queue (%1)."
 msgstr "在佇列中沒有要處理的項目。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:649
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:656
 #, fuzzy, kde-format
 #| msgid ""
 #| "Custom renaming rules are invalid for Queues listed below. Please fix "
@@ -60525,7 +60525,7 @@ msgstr "在佇列中沒有要處理的項目。"
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr "列在下面的佇列的自訂重新命名規則無效。請修正它們。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:654
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:661
 #, fuzzy, kde-format
 #| msgid ""
 #| "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -60535,19 +60535,19 @@ msgid ""
 "tools."
 msgstr "下面列出的佇列所指定的批次工具清單是空的。請指定工具。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:686
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:693
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "在佇列中沒有要處理的項目。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:858
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:868
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:865
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "已處理項目的相簿設定"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:859
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:866
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -60556,7 +60556,7 @@ msgstr ""
 "尚未設定用來存放佇列「%1」中處理項目的相簿。請從佇列設定值面板中選擇一本相"
 "簿。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:869
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:876
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -60565,27 +60565,27 @@ msgstr ""
 "用來存放佇列「%1」中處理項目的相簿無法使用或不能寫入。請從佇列設定值面板中設"
 "定其他相簿。"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:948
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:955
 #, kde-format
 msgid "Failed to process item..."
 msgstr "處理項目失敗..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:961
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:968
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "已取消處理..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:981
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:988
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "佇列 \"%2\" 的項目 \"%1\"：%3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1010
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1017
 #, kde-format
 msgid "Batch queue finished"
 msgstr "批次佇列已完成"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1014
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
 #, fuzzy, kde-format
 #| msgid "Batch queue finished"
 msgid "All batch queues finished"
