@@ -24,6 +24,14 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     m_animLogo = nullptr;
 
     installEventFilter(this);
+
+    QScreen* const screen = qApp->primaryScreen();
+    QRect srect           = screen->availableGeometry();
+    int height            = qRound(log10(srect.height() /  80) *  800);
+    int width             = qRound(log10(srect.width()  / 150) * 1500);
+
+    resize(width  > srect.width()  ? srect.width()  : width,
+           height > srect.height() ? srect.height() : height);
 }
 
 DXmlGuiWindow::~DXmlGuiWindow()

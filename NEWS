@@ -194,7 +194,7 @@ BUGFIXES:
 163 ==> 488565 - Inconsistent DateTime display values and lack of time zone in Metadata Pane.
 164 ==> 487370 - Face Recognition crashes - pre-release built on 20-05-2024 07:25.
 165 ==> 487668 - Crash while naming face.
-166 ==> 
+166 ==> 404761 - Settings and other dialogs should have a minimum default size of 800x600 (at least).
 167 ==> 
 168 ==> 
 169 ==> 
