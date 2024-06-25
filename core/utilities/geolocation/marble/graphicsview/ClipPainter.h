@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_CLIPPAINTER_H
-#define MARBLE_CLIPPAINTER_H
+#pragma once
 
 #include <QPainter>
 #include "digikam_export.h"
@@ -78,6 +77,4 @@ class DIGIKAM_EXPORT ClipPainter : public QPainter
     ClipPainterPrivate * const d;
 };
 
-}
-
-#endif
+} // Namespace Marble

@@ -49,4 +49,4 @@ class ViewParams
     ViewParamsPrivate * const d;
 };
 
-}
+} // Namespace Marble

@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
 //
 
-#ifndef MARBLE_GEOGRAPHICSITEM_H
-#define MARBLE_GEOGRAPHICSITEM_H
+#pragma once
 
 // Marble
 #include "digikam_export.h"
@@ -165,6 +164,5 @@ class DIGIKAM_EXPORT GeoGraphicsItem
 };
 
 } // Namespace Marble
-Q_DECLARE_OPERATORS_FOR_FLAGS(Marble::GeoGraphicsItem::GeoGraphicsItemFlags)
 
-#endif
+Q_DECLARE_OPERATORS_FOR_FLAGS(Marble::GeoGraphicsItem::GeoGraphicsItemFlags)

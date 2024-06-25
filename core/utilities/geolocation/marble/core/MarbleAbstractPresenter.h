@@ -144,4 +144,5 @@ class ViewportParams;
         int m_zoomStep;
         const qreal m_viewAngle;
     };
-}
+
+} // Namespace Marble

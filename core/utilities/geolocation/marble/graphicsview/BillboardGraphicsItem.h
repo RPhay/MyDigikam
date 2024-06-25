@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_BILLBOARDGRAPHICSITEM_H
-#define MARBLE_BILLBOARDGRAPHICSITEM_H
+#pragma once
 
 #include "MarbleGraphicsItem.h"
 #include "digikam_export.h"
@@ -63,5 +62,3 @@ class DIGIKAM_EXPORT BillboardGraphicsItem : public MarbleGraphicsItem
 };
 
 } // Marble namespace
-
-#endif

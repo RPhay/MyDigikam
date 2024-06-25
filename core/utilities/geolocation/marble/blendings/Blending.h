@@ -8,6 +8,7 @@ class QImage;
 
 namespace Marble
 {
+
 class TextureTile;
 
 class Blending
@@ -17,4 +18,4 @@ class Blending
     virtual void blend( QImage * const bottom, TextureTile const * const top ) const = 0;
 };
 
-}
+} // Namespace Marble

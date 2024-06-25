@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
 //
 
-#ifndef MARBLE_GEOGRAPHICSSCENE_H
-#define MARBLE_GEOGRAPHICSSCENE_H
+#pragma once
 
 #include "digikam_export.h"
 #include "MarbleGlobal.h"
@@ -81,5 +80,5 @@ Q_SIGNALS:
 private:
     GeoGraphicsScenePrivate * const d;
 };
-}
-#endif // MARBLE_GEOGRAPHICSSCENE_H
+
+} // Namespace Marble

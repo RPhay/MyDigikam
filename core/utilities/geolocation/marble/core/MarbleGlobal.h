@@ -306,7 +306,7 @@ private:
     MarbleGlobalPrivate* const d = nullptr;
 };
 
-}
+} // Namespace Marble
 
 Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::TessellationFlags )
 Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::LabelPositionFlags )

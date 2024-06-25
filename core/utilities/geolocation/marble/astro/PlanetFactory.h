@@ -34,4 +34,4 @@ public:
     static QString localizedName( const QString &id );
 };
 
-}
+} // Namespace Marble

@@ -803,4 +803,4 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
     friend class CustomPaintLayer;
 };
 
-}
+} // Namespace Marble

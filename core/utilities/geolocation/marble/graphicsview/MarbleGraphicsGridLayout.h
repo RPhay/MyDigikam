@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_MARBLEGRAPHICSGRIDLAYOUT_H
-#define MARBLE_MARBLEGRAPHICSGRIDLAYOUT_H
+#pragma once
 
 // Marble
 #include "AbstractMarbleGraphicsLayout.h"
@@ -55,5 +54,3 @@ class DIGIKAM_EXPORT MarbleGraphicsGridLayout : public AbstractMarbleGraphicsLay
 };
 
 } // namespace Marble
-
-#endif

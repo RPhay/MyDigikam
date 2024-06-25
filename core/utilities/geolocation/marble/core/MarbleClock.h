@@ -104,4 +104,4 @@ public:
     friend class MarbleClockPrivate;
 };
 
-}
+} // Namespace Marble

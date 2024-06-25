@@ -10,7 +10,6 @@
 
 #include <cmath>
 
-
 namespace
 {
     const qreal a1 = 1.0/6.0;

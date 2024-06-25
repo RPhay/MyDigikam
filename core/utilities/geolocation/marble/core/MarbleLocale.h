@@ -73,4 +73,4 @@ private:
     MarbleLocalePrivate* const d = nullptr;
 };
 
-}
+} // Namespace Marble

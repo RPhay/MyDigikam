@@ -30,4 +30,4 @@ class BlendingFactory
     QHash<QString, Blending const *> m_blendings;
 };
 
-}
+} // Namespace Marble

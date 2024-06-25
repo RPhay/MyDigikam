@@ -29,4 +29,4 @@ class SunLightBlending: public Blending
     int m_levelZeroRows;
 };
 
-}
+} // Namespace Marble

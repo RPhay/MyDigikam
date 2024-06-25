@@ -34,4 +34,4 @@ protected:
     bool m_repaintNeeded;
 };
 
-}
+} // Namespace Marble

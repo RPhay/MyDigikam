@@ -90,4 +90,4 @@ private:
     ParsingRunnerManager* m_manager;
 };
 
-}
+} // Namespace Marble

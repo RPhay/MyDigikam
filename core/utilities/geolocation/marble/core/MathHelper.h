@@ -9,11 +9,15 @@
 #include <qglobal.h>
 
 #ifdef Q_CC_MSVC
-#include <math.h>
+
+#   include <math.h>
 
 qreal msvc_asinh(qreal x);
-#define asinh msvc_asinh
+
+#   define asinh msvc_asinh
 
 qreal msvc_atanh(qreal x);
-#define atanh msvc_atanh
+
+#   define atanh msvc_atanh
+
 #endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_FRAMEGRAPHICSITEM_H
-#define MARBLE_FRAMEGRAPHICSITEM_H
+#pragma once
 
 // Marble
 #include "digikam_export.h"
@@ -186,5 +185,3 @@ class DIGIKAM_EXPORT FrameGraphicsItem : public ScreenGraphicsItem
 };
 
 } // namespace Marble
-
-#endif

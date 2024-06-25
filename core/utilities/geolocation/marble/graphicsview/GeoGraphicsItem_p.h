@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_GEOGRAPHICSITEMPRIVATE_H
-#define MARBLE_GEOGRAPHICSITEMPRIVATE_H
+#pragma once
 
 #include "GeoGraphicsItem.h"
 
@@ -50,6 +49,4 @@ class GeoGraphicsItemPrivate
     GeoDataStyle::ConstPtr m_highlightStyle;
 };
 
-}
-
-#endif
+} // Namespace Marble

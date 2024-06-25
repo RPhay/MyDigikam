@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_ABSTRACTMARBLEGRAPHICSLAYOUT_H
-#define MARBLE_ABSTRACTMARBLEGRAPHICSLAYOUT_H
+#pragma once
 
 
 #include "digikam_export.h"
@@ -27,6 +26,4 @@ class DIGIKAM_EXPORT AbstractMarbleGraphicsLayout
     virtual void updatePositions( MarbleGraphicsItem *parent ) = 0;
 };
 
-}
-
-#endif
+} // Namespace Marble

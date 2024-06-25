@@ -70,4 +70,4 @@ private Q_SLOTS:
     Private* const d = nullptr;
 };
 
-}
+} // Namespace Marble

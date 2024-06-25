@@ -82,7 +82,7 @@ class DIGIKAM_EXPORT Quaternion
     xmmfloat    v;
 };
 
-}
+} // Namespace Marble
 
 #ifndef QT_NO_DEBUG_STREAM
 DIGIKAM_EXPORT QDebug operator<<(QDebug, const Marble::Quaternion &);

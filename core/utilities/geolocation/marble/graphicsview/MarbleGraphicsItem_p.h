@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009-2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_MARBLEGRAPHICSITEMPRIVATE_H
-#define MARBLE_MARBLEGRAPHICSITEMPRIVATE_H
+#pragma once
 
 // Marble
 #include "AbstractMarbleGraphicsLayout.h"
@@ -109,6 +108,4 @@ class MarbleGraphicsItemPrivate
     MarbleGraphicsItem *const m_marbleGraphicsItem;
 };
 
-}
-
-#endif
+} // Namespace Marble

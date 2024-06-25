@@ -13,6 +13,7 @@
 
 namespace Marble
 {
+
 namespace Oxygen
 {
 
@@ -89,6 +90,6 @@ DIGIKAM_EXPORT extern QColor const aluminumGray3;
 DIGIKAM_EXPORT extern QColor const aluminumGray2;
 DIGIKAM_EXPORT extern QColor const aluminumGray1;
 
-}
+} // Namespace Oxygen
 
-}
+} // Namespace Marble

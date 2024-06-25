@@ -164,4 +164,4 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
     AbstractFloatItemPrivate * const d;
 };
 
-}
+} // Namespace Marble

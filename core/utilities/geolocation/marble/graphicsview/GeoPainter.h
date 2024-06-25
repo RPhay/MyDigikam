@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2008-2009 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_GEOPAINTER_H
-#define MARBLE_GEOPAINTER_H
-
+#pragma once
 
 #include "digikam_export.h"
 
@@ -521,6 +519,4 @@ class DIGIKAM_EXPORT GeoPainter : public ClipPainter
     GeoPainterPrivate  * const d;
 };
 
-}
-
-#endif
+} // Namespace Marble

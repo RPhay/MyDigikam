@@ -53,4 +53,4 @@ private Q_SLOTS:
     MarblePhysicsPrivate* d;
 };
 
-}
+} // Namespace Marble

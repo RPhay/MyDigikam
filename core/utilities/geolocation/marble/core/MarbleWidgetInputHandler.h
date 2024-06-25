@@ -51,4 +51,4 @@ private:
     Q_DISABLE_COPY(MarbleWidgetInputHandler)
 };
 
-}
+} // Namespace Marble

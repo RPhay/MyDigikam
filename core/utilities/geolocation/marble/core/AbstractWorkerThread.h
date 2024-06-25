@@ -47,4 +47,4 @@ class DIGIKAM_EXPORT AbstractWorkerThread : public QThread
     AbstractWorkerThreadPrivate * const d;
 };
 
-}
+} // Namespace Marble

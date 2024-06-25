@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_LABELGRAPHICSITEMPRIVATE_H
-#define MARBLE_LABELGRAPHICSITEMPRIVATE_H
+#pragma once
 
 #include "FrameGraphicsItem_p.h"
 
@@ -37,5 +36,3 @@ class LabelGraphicsItemPrivate : public FrameGraphicsItemPrivate
 };
 
 } // namespace Marble
-
-#endif

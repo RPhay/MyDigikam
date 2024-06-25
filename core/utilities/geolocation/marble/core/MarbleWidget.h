@@ -1176,4 +1176,4 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
     friend class MarbleWidgetDefaultInputHandler;
 };
 
-}
+} // Namespace Marble

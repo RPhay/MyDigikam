@@ -181,4 +181,4 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
     Private * const d;      // cppcheck-suppress duplInheritedMember
 };
 
-}
+} // Namespace Marble

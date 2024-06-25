@@ -57,4 +57,4 @@ class TextureColorizer
     QRgb      m_seaColor;
 };
 
-}
+} // Namespace Marble

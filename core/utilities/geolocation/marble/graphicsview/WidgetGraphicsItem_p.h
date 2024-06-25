@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_WIDGETGRAPHICSITEMPRIVATE_H
-#define MARBLE_WIDGETGRAPHICSITEMPRIVATE_H
+#pragma once
 
 #include "ScreenGraphicsItem_p.h"
 #include "WidgetGraphicsItem.h"
@@ -27,6 +26,4 @@ class WidgetGraphicsItemPrivate : public ScreenGraphicsItemPrivate
     QWidget *m_activeWidget;
 };
 
-}
-
-#endif
+} // Namespace Marble

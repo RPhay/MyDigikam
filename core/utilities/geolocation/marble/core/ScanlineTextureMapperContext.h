@@ -143,4 +143,4 @@ inline qreal ScanlineTextureMapperContext::rad2PixelY( const qreal lat ) const
     return 0.0;
 }
 
-}
+} // Namespace Marble

@@ -3,8 +3,6 @@
 // SPDX-FileCopyrightText: 2006-2009 Torsten Rahn <tackat@kde.org>
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 
-#ifndef MARBLE_GEOPAINTERPRIVATE_H
-#define MARBLE_GEOPAINTERPRIVATE_H
 
 #include "MarbleGlobal.h"
 //#include "GeoPainter.h"
@@ -53,5 +51,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif

@@ -45,4 +45,4 @@ class DIGIKAM_EXPORT SunLocator : public QObject
     Q_DISABLE_COPY( SunLocator )
 };
 
-}
+} // Namespace Marble

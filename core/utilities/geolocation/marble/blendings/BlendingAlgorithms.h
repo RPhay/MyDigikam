@@ -253,4 +253,4 @@ class InvertHueBlending: public Blending
     void blend( QImage * const bottom, TextureTile const * const top ) const override;
 };
 
-}
+} // Namespace Marble

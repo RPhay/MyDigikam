@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_LABELGRAPHICSITEM_H
-#define MARBLE_LABELGRAPHICSITEM_H
+#pragma once
 
 // Marble
 #include "FrameGraphicsItem.h"
@@ -56,5 +55,3 @@ class DIGIKAM_EXPORT LabelGraphicsItem : public FrameGraphicsItem
 };
 
 } // namespace Marble
-
-#endif

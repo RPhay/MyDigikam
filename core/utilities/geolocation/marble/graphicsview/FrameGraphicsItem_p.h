@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_FRAMEGRAPHICSITEMPRIVATE_H
-#define MARBLE_FRAMEGRAPHICSITEMPRIVATE_H
+#pragma once
 
 // Marble
 #include "FrameGraphicsItem.h"
@@ -73,5 +72,3 @@ class FrameGraphicsItemPrivate : public ScreenGraphicsItemPrivate
 };
 
 } // namespace Marble
-
-#endif

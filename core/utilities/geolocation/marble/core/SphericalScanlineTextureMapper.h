@@ -51,4 +51,4 @@ class SphericalScanlineTextureMapper : public TextureMapperInterface
     QThreadPool m_threadPool;
 };
 
-}
+} // Namespace Marble

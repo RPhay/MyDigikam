@@ -36,6 +36,6 @@ class DIGIKAM_EXPORT DialogConfigurationInterface
     virtual QDialog *configDialog() = 0;
 };
 
-}
+} // Namespace Marble
 
 Q_DECLARE_INTERFACE( Marble::DialogConfigurationInterface, "org.kde.Marble.DialogConfigurationInterface/1.0" )

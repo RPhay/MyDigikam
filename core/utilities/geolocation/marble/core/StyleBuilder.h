@@ -104,4 +104,4 @@ private:
     Private * const d;
 };
 
-}
+} // Namespace Marble

@@ -214,4 +214,4 @@ class DIGIKAM_EXPORT ViewportParams
     ViewportParamsPrivate * const d;
 };
 
-}
+} // Namespace Marble

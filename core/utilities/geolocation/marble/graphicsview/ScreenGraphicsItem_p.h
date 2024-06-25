@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009-2010 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_SCREENGRAPHICSITEMPRIVATE_H
-#define MARBLE_SCREENGRAPHICSITEMPRIVATE_H
+#pragma once
 
 #include "MarbleGraphicsItem_p.h"
 
@@ -109,6 +108,4 @@ class ScreenGraphicsItemPrivate : public MarbleGraphicsItemPrivate
     ScreenGraphicsItem::GraphicsItemFlags m_flags;
 };
 
-}
-
-#endif
+} // Namespace Marble
