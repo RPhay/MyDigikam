@@ -215,7 +215,7 @@ QString DItemDelegate::squeezedText(const QFontMetrics& fm, int width, const QSt
     QString fullText(text);
     fullText.replace(QLatin1Char('\n'), QLatin1Char(' '));
 
-    return fm.elidedText(text, Qt::ElideRight, width);
+    return fm.elidedText(fullText, Qt::ElideRight, width);
 }
 
 } // namespace Digikam

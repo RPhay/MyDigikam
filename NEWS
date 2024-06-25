@@ -195,7 +195,7 @@ BUGFIXES:
 164 ==> 487370 - Face Recognition crashes - pre-release built on 20-05-2024 07:25.
 165 ==> 487668 - Crash while naming face.
 166 ==> 404761 - Settings and other dialogs should have a minimum default size of 800x600 (at least).
-167 ==> 
+167 ==> 489192 - Display error in thumbnail caption field.
 168 ==> 
 169 ==> 
 170 ==> 
