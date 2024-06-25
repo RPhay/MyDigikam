@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef KmlEndTagHandler_h
-#define KmlEndTagHandler_h
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif // KmlEndTagHandler_h
+}

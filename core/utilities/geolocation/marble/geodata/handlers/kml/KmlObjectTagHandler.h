@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLOBJECTTAGHANDLER_H
-#define MARBLE_KMLOBJECTTAGHANDLER_H
+#pragma once
 
 #include <GeoParser.h>
 #include <GeoDataObject.h>
@@ -26,5 +25,3 @@ private:
 };
 
 }
-
-#endif

@@ -1,10 +1,15 @@
-#ifndef MARBLE_KML_KMLREFRESHMODETAGHANDLER_H
-#define MARBLE_KML_KMLREFRESHMODETAGHANDLER_H
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
+//
+
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -15,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

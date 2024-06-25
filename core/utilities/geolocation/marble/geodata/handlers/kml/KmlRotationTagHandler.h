@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef KMLROTATIONTAGHANDLER_H
-#define KMLROTATIONTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

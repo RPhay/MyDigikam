@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef KMLPLAYMODETAGHANDLER_H
-#define KMLPLAYMODETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 } // namespace kml
-} // namespace Marble
 
-#endif // KMLPLAYMODETAGHANDLER_H
+} // namespace Marble

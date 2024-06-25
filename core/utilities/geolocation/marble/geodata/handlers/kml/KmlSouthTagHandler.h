@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_KML_KMLSOUTHTAGHANDLER_H
-#define MARBLE_KML_KMLSOUTHTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

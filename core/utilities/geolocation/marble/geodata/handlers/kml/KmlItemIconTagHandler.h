@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef KMLITEMICONTAGHANDLER_H
-#define KMLITEMICONTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

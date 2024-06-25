@@ -3,15 +3,16 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef KMLGXTIMESTAMPTAGHANDLER_H
-#define KMLGXTIMESTAMPTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
+
 namespace gx
 {
 
@@ -22,7 +23,7 @@ public:
 };
 
 }
-}
+
 }
 
-#endif // KMLGXTIMESTAMPTAGHANDLER_H
+}

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Marius-Valeriu Stanciu <stanciumarius94@gmail.com>
 //
 
-#ifndef KMLOSMPLACEMARKDATATAGHANDLER_H
-#define KMLOSMPLACEMARKDATATAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -22,7 +21,6 @@ public:
 };
 
 }
-}
 
-#endif
+}
 

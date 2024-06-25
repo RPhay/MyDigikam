@@ -2,8 +2,8 @@
 //
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
-#ifndef KMLREFRESHVISIBILITYTAGHANDLER_h
-#define KMLREFRESHVISIBILITYTAGHANDLER_h
+
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -19,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

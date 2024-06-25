@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef KMLSTATETAGHANDLER_H
-#define KMLSTATETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -21,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

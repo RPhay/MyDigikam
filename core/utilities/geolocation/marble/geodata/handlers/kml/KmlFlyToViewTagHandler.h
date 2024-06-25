@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef MARBLE_KML_KMLFLYTOVIEWTAGHANDLER_H
-#define MARBLE_KML_KMLFLYTOVIEWTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,7 +19,5 @@ public:
 };
 
 }
+
 }
-
-
-#endif // KMLFLYTOVIEWTAGHANDLER_H

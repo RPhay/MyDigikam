@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Sanjiban Bairagya <sanjiban22393@gmail.com>
 //
 
-#ifndef KMLCHANGETAGHANDLER_H
-#define KMLCHANGETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

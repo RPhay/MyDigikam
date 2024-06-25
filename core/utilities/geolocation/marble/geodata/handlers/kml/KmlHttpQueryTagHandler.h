@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef KMLHTTPQUERYTAGHANDLER_H
-#define KMLHTTPQUERYTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif // KMLHTTPQUERYTAGHANDLER_H
+}

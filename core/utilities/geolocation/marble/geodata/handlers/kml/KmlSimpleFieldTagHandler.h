@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KML_KMLSIMPLEFIELDTAGHANDLER_H
-#define MARBLE_KML_KMLSIMPLEFIELDTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -15,6 +14,7 @@ class QString;
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -28,6 +28,5 @@ private:
 };
 
 }
-}
 
-#endif
+}

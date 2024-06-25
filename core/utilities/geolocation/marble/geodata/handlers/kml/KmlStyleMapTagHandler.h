@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KML_KMLSTYLEMAPTAGHANDLER_H
-#define MARBLE_KML_KMLSTYLEMAPTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -21,6 +21,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

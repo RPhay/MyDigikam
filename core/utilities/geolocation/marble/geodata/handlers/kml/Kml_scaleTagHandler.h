@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KML_KMLsCALETAGHANDLER_H
-#define MARBLE_KML_KMLsCALETAGHANDLER_H
+#pragma once
 
 // be aware that there is another Tag called Scale which uses the name KmlscaleTagHandler.h
 // as it is impossible to use the name KmlscaleTagHandler then, use an underscore
@@ -18,6 +17,7 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -28,6 +28,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

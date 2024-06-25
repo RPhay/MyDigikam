@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2013 Levente Kurusa <levex@linux.com>
 //
 
-#ifndef KMLSNIPPETTAGHANDLER_H
-#define KMLSNIPPETTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

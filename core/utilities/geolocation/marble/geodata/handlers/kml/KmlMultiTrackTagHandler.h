@@ -2,13 +2,13 @@
 //
 // SPDX-FileCopyrightText: 2012 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_KML_KMLMULTITRACKTAGHANDLER_H
-#define MARBLE_KML_KMLMULTITRACKTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -19,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

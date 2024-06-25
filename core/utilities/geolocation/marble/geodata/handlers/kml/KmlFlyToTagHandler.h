@@ -2,13 +2,13 @@
 //
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 
-#ifndef MARBLE_KML_KMLFLYTOTAGHANDLER_H
-#define MARBLE_KML_KMLFLYTOTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -19,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

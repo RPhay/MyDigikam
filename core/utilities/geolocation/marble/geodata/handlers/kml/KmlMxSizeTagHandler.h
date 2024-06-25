@@ -3,15 +3,16 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KMLMXSIZETAGHANDLER_H
-#define MARBLE_KMLMXSIZETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
+
 namespace mx
 {
 
@@ -22,9 +23,8 @@ public:
 };
 
 }
-}
+
 }
 
-#endif
-
+}
 

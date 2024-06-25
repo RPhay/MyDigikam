@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_KML_KMLMAXFADEEXTENTTAGHANDLER_H
-#define MARBLE_KML_KMLMAXFADEEXTENTTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ class KmlmaxFadeExtentTagHandler : public GeoTagHandler
 };
 
 }
-}
 
-#endif
+}

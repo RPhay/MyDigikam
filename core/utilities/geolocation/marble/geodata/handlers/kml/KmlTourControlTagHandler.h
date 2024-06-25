@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef KMLTOURCONTROLTAGHANDLER_H
-#define KMLTOURCONTROLTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 } // namespace kml
-} // namespace Marble
 
-#endif // KMLTOURCONTROLTAGHANDLER_H
+} // namespace Marble

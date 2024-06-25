@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef KMLVIEWBOUNDSCALETAGHANDLER_H
-#define KMLVIEWBOUNDSCALETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif // KMLVIEWBOUNDSCALETAGHANDLER_H
+}

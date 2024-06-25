@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
 //
 
-#ifndef MARBLE_KML_KMLTRACKTAGHANDLER_H
-#define MARBLE_KML_KMLTRACKTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -21,6 +21,5 @@ public:
 };
 
 }
-}
 
-#endif // MARBLE_KML_KMLTRACKTAGHANDLER_H
+}

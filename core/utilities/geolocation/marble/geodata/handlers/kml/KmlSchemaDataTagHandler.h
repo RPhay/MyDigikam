@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
 //
 
-#ifndef MARBLE_KML_KMLSCHEMADATATAGHANDLER_H
-#define MARBLE_KML_KMLSCHEMADATATAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KML_KMLCOLORTAGHANDLER_H
-#define MARBLE_KML_KMLCOLORTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -25,6 +24,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

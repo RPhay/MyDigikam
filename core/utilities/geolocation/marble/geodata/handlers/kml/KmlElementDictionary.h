@@ -3,8 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KML_KMLELEMENTDICTIONARY_H
-#define MARBLE_KML_KMLELEMENTDICTIONARY_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -237,5 +236,3 @@ namespace kml
     KML_DEFINE_TAG_HANDLER_OGC22(Name)
 
 }
-
-#endif

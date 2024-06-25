@@ -3,23 +3,23 @@
 // SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef KMLSIZETAGHANDLER_H
-#define KMLSIZETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmlsizeTagHandler : public GeoTagHandler
 {
+
 public:
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
-}
 
-#endif
+}

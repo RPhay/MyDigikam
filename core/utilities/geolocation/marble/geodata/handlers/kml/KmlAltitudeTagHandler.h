@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Gaurav Gupta <1989.gaurav@googlemail.com>
 //
 
-#ifndef KmlAltitudeTagHandler_h
-#define KmlAltitudeTagHandler_h
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

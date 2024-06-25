@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
 //
 
-#ifndef KMLREFRESHINTERVALTAGHANDLER_H
-#define KMLREFRESHINTERVALTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,7 +19,6 @@ public:
 };
 
 }
-}
 
-#endif
+}
 

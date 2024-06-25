@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2013 Mihail Ivchenko <ematirov@gmail.com>
 //
 
-#ifndef KMLWAITTAGHANDLER_H
-#define KMLWAITTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 } // namespace kml
-} // namespace Marble
 
-#endif // KMLWAITTAGHANDLER_H
+} // namespace Marble

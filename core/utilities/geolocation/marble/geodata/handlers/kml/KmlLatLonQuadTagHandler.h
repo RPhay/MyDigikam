@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2013 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_KML_KMLLATLONQUADTAGHANDLER_H
-#define MARBLE_KML_KMLLATLONQUADTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -20,6 +20,5 @@ class KmlLatLonQuadTagHandler : public GeoTagHandler
 };
 
 }
-}
 
-#endif
+}

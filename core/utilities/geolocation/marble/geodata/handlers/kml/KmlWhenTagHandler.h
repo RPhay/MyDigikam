@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
 //
 
-#ifndef KmlWhenTagHandler_h
-#define KmlWhenTagHandler_h
+#pragma once
 
 #include "GeoTagHandler.h"
 #include <GeoDataTimeStamp.h>
@@ -13,6 +12,7 @@ class QString;
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -30,6 +30,5 @@ private:
 };
 
 }
-}
 
-#endif // KmlWhenTagHandler_h
+}

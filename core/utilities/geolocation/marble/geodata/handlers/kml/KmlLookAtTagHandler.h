@@ -2,13 +2,14 @@
 //
 // SPDX-FileCopyrightText: 2010 Gaurav Gupta <1989.gaurav@googlemail.com>
 //
-#ifndef KmlLookAtTagHandler_h
-#define KmlLookAtTagHandler_h
+
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
 
@@ -19,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

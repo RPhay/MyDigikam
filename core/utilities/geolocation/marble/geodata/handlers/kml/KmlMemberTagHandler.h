@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Marius-Valeriu Stanciu <stanciumarius94@gmail.com>
 //
 
-#ifndef KMLMEMBERTAGHANDLER_H
-#define KMLMEMBERTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,7 +19,6 @@ public:
 };
 
 }
-}
 
-#endif
+}
 

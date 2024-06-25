@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef KMLTOURTAGHANDLER_H
-#define KMLTOURTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
@@ -20,6 +19,5 @@ public:
 };
 
 } // namespace kml
-} // namespace Marble
 
-#endif // KMLTOURTAGHANDLER_H
+} // namespace Marble

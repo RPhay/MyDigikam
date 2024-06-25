@@ -2,24 +2,27 @@
 //
 // SPDX-FileCopyrightText: 2014 Sanjiban Bairagya <sanjiban22393@gmail.com>
 
-#ifndef MARBLE_KML_KMLANIMATEDUPDATETAGHANDLER_H
-#define MARBLE_KML_KMLANIMATEDUPDATETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace kml
 {
+
 namespace gx
 {
+
 class KmlAnimatedUpdateTagHandler : public GeoTagHandler
 {
 public:
     GeoNode* parse(GeoParser&) const override;
 };
-}
-}
+
 }
 
-#endif
+}
+
+}
