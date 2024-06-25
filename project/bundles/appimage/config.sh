@@ -43,18 +43,6 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 #DK_QTVERSION="5"
 DK_QTVERSION="6"
 
-# KDE Plasma version.
-# See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="v6.0.4"
-
-# KDE Application version.
-# See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="v24.02.2"
-
-# KDE KF6 frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="v6.2.0"
-
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
@@ -70,6 +58,7 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
+DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 # KDE frameworks version + Upload URL.
 # See official release here: https://download.kde.org/stable/frameworks/
@@ -82,20 +71,37 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/b/$DK_VERSION"
 
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
     DK_KDE_VERSION="5.116"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
     DK_KP_VERSION="5.27.11"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
     DK_KA_VERSION="24.05.1"
-    DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
+
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KP_VERSION="v6.0.4"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KA_VERSION="v24.02.2"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KDE_VERSION="v6.2.0"
 
     # Absolute path where are downloaded all tarballs to compile.
     DOWNLOAD_DIR="/mnt/data/d"
 
     # Absolute path where are compiled all tarballs
     BUILDING_DIR="/mnt/data/b/$DK_VERSION"
-
-    DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 fi
 

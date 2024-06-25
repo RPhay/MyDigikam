@@ -54,19 +54,8 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
-# KDE Plasma version.
-# See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="v6.0.4"
-
-# KDE Application version.
-# See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="24.02.2"
-
-# KDE KF6 frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="v6.2.0"
-
 # Qt version to use in bundle and provided by VCPKG.
+#DK_QTVERSION="5"
 DK_QTVERSION="6"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
@@ -91,3 +80,36 @@ DK_SIGN=0
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam"
+
+# KDE frameworks version + Upload URL.
+# See official release here: https://download.kde.org/stable/frameworks/
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KDE_VERSION="5.116"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KP_VERSION="5.27.11"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KA_VERSION="24.05.1"
+
+else
+
+    # KDE Plasma version.
+    # See official release here: https://download.kde.org/stable/plasma/
+    DK_KP_VERSION="v6.0.4"
+
+    # KDE Application version.
+    # See official release here: https://download.kde.org/stable/release-service/
+    DK_KA_VERSION="24.02.2"
+
+    # KDE KF6 frameworks version.
+    # See official release here: https://download.kde.org/stable/frameworks/
+    DK_KDE_VERSION="v6.2.0"
+
+fi
