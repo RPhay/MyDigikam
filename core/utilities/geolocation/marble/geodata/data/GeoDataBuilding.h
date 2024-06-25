@@ -136,4 +136,4 @@ private:
     GeoDataBuildingPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

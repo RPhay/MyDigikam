@@ -40,4 +40,4 @@ class DIGIKAM_EXPORT GeoSceneIcon : public GeoNode
     QColor  m_color;
 };
 
-}
+} // namespace Marble

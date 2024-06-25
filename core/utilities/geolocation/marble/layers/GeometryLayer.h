@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2011-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_GEOMETRYLAYER_H
-#define MARBLE_GEOMETRYLAYER_H
+#pragma once
 
 #include <QObject>
 #include "LayerInterface.h"
@@ -95,4 +94,3 @@ private:
 };
 
 } // namespace Marble
-#endif // MARBLE_GEOMETRYLAYER_H

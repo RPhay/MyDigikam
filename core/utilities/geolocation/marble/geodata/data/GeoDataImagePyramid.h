@@ -52,4 +52,4 @@ private:
     GeoDataImagePyramidPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

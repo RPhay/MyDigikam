@@ -64,4 +64,4 @@ protected:
     Q_DECLARE_PRIVATE(GeoDataOverlay)
 };
 
-}
+} // namespace Marble

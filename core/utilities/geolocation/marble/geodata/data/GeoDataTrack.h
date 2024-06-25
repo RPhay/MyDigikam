@@ -192,6 +192,6 @@ private:
     Q_DECLARE_PRIVATE(GeoDataTrack)
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataTrack* )

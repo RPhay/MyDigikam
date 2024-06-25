@@ -88,4 +88,4 @@ DIGIKAM_EXPORT extern const char GeoDataUpdateType[];
 DIGIKAM_EXPORT extern const char GeoDataBuildingType[];
 }
 
-}
+} // namespace Marble

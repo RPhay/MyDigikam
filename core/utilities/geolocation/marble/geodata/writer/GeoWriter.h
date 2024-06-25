@@ -85,4 +85,4 @@ private:
     QString m_documentType;
 };
 
-}
+} // namespace Marble

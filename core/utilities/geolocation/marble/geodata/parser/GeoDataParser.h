@@ -37,4 +37,4 @@ private:
 // Global helper function for the tag handlers
 DIGIKAM_EXPORT GeoDataDocument* geoDataDoc(GeoParser& parser);
 
-}
+} // namespace Marble

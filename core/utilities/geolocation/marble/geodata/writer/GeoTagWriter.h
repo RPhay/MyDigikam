@@ -85,4 +85,4 @@ private:
     GeoTagWriter::QualifiedName m_name;
 };
 
-}
+} // namespace Marble

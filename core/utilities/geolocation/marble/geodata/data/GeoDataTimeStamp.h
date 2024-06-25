@@ -78,4 +78,4 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
     GeoDataTimeStampPrivate * const d;
 };
 
-}
+} // namespace Marble

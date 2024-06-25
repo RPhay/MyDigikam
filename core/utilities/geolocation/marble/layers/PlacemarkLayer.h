@@ -9,9 +9,7 @@
 // PlacemarkLayer is responsible for drawing the Placemarks on the map
 //
 
-#ifndef MARBLE_PLACEMARKLAYER_H
-#define MARBLE_PLACEMARKLAYER_H
-
+#pragma once
 
 #include <QObject>
 #include "LayerInterface.h"
@@ -116,6 +114,4 @@ class PlacemarkLayer : public QObject, public LayerInterface
     int m_debugLevelTag;
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -139,4 +139,4 @@ private:
     GeoDataExtendedDataPrivate * const d;
 };
 
-}
+} // namespace Marble

@@ -51,4 +51,4 @@ private:
 #define MARBLE_ADD_WRITER(Class, fileExtension)
 #endif
 
-}
+} // namespace Marble

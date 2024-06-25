@@ -58,4 +58,4 @@ private:
     Q_DISABLE_COPY(GeoSceneMercatorTileProjection)
 };
 
-}
+} // namespace Marble

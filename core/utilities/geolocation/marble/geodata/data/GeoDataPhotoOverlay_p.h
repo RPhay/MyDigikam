@@ -47,4 +47,4 @@ GeoDataPhotoOverlayPrivate::GeoDataPhotoOverlayPrivate(const GeoDataPhotoOverlay
 {
 }
 
-}
+} // namespace Marble

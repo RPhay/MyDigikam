@@ -43,4 +43,4 @@ class DIGIKAM_EXPORT GeoSceneLicense : public GeoNode
 
 };
 
-}
+} // namespace Marble

@@ -9,8 +9,7 @@
 // PlacemarkLayout is responsible for drawing the Placemarks on the map
 //
 
-#ifndef MARBLE_PLACEMARKLAYOUT_H
-#define MARBLE_PLACEMARKLAYOUT_H
+#pragma once
 
 #include <QHash>
 #include <QRect>
@@ -170,6 +169,4 @@ class PlacemarkLayout : public QObject
     QRectF m_lastPlacemarkSymbolRect;
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -37,4 +37,4 @@ class DIGIKAM_EXPORT GeoSceneZoom : public GeoNode
     bool m_discrete;
 };
 
-}
+} // namespace Marble

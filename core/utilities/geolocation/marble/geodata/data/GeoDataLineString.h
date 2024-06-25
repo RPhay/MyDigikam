@@ -403,6 +403,6 @@ class DIGIKAM_EXPORT GeoDataLineString : public GeoDataGeometry
     Q_DECLARE_PRIVATE(GeoDataLineString)
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataLineString )

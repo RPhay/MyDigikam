@@ -50,4 +50,4 @@ class DIGIKAM_EXPORT GeoDataAccuracy
     qreal vertical;
 };
 
-}
+} // namespace Marble

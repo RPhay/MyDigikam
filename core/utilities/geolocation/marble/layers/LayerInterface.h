@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
 //
 
-#ifndef MARBLE_LAYERINTERFACE_H
-#define MARBLE_LAYERINTERFACE_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -75,5 +74,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif

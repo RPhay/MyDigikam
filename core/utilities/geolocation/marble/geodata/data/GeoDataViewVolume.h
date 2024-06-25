@@ -50,4 +50,4 @@ private:
     GeoDataViewVolumePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

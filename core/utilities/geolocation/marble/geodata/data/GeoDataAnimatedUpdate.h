@@ -43,4 +43,4 @@ private:
     GeoDataAnimatedUpdatePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

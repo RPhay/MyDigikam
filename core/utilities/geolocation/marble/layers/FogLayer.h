@@ -6,8 +6,7 @@
 // SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-#ifndef MARBLE_FOGLAYER_H
-#define MARBLE_FOGLAYER_H
+#pragma once
 
 #include "LayerInterface.h"
 
@@ -29,6 +28,4 @@ public:
     QString runtimeTrace() const override { return QStringLiteral("FogLayer"); }
 };
 
-}
-
-#endif
+} // namespace Marble

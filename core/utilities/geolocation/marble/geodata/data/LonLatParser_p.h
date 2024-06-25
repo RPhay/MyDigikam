@@ -144,4 +144,4 @@ private: // helper value, lazily set, in initAll();
     QString m_secondsExp;
 };
 
-}
+} // namespace Marble

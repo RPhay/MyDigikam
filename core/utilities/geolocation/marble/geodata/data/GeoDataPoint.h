@@ -89,6 +89,6 @@ class DIGIKAM_EXPORT GeoDataPoint : public GeoDataGeometry
     Q_DECLARE_PRIVATE(GeoDataPoint)
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataPoint )

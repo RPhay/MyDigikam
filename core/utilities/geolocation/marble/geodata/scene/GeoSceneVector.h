@@ -45,4 +45,4 @@ class DIGIKAM_EXPORT GeoSceneVector : public GeoSceneAbstractDataset
     QBrush  m_brush;
 };
 
-}
+} // namespace Marble

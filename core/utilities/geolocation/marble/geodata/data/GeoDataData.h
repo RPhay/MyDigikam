@@ -88,4 +88,4 @@ class DIGIKAM_EXPORT GeoDataData : public GeoDataObject
     GeoDataDataPrivate * const d;
 };
 
-}
+} // namespace Marble

@@ -177,4 +177,4 @@ class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
     Q_DECLARE_PRIVATE(GeoDataContainer)
 };
 
-}
+} // namespace Marble

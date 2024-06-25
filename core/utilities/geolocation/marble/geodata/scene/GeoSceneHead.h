@@ -68,4 +68,4 @@ class DIGIKAM_EXPORT GeoSceneHead : public GeoNode
     GeoSceneHeadPrivate * const d;
 };
 
-}
+} // namespace Marble

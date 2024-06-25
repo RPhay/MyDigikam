@@ -137,4 +137,4 @@ class DIGIKAM_EXPORT GeoDataRegion : public GeoDataObject
     GeoDataRegionPrivate  *d;
 };
 
-}
+} // namespace Marble

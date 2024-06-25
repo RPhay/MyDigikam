@@ -73,4 +73,4 @@ private:
 
 };
 
-}
+} // namespace Marble

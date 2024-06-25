@@ -274,4 +274,4 @@ class DIGIKAM_EXPORT GeoDataFeature : public GeoDataObject
     Q_DECLARE_PRIVATE(GeoDataFeature)
 };
 
-}
+} // namespace Marble

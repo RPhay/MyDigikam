@@ -71,4 +71,4 @@ class DIGIKAM_EXPORT GeoSceneLayer : public GeoNode
     GeoSceneLayerPrivate * const d;
 };
 
-}
+} // namespace Marble

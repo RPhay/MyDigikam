@@ -83,4 +83,4 @@ class GeoSceneGroup : public QObject,
     QString m_name;
 };
 
-}
+} // namespace Marble

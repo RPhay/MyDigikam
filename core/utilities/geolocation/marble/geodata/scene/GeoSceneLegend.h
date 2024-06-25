@@ -42,4 +42,4 @@ class DIGIKAM_EXPORT GeoSceneLegend : public GeoNode
     GeoSceneLegendPrivate * const d;
 };
 
-}
+} // namespace Marble

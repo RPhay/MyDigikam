@@ -8,8 +8,7 @@
 // VisiblePlacemarks are those Placemarks which become visible on the map
 //
 
-#ifndef MARBLE_VISIBLEPLACEMARK_H
-#define MARBLE_VISIBLEPLACEMARK_H
+#pragma once
 
 #include <QObject>
 #include <QPixmap>
@@ -137,6 +136,4 @@ private Q_SLOTS:
     QString     m_symbolId;
 };
 
-}
-
-#endif
+} // namespace Marble

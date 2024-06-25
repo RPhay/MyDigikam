@@ -1,5 +1,11 @@
-#ifndef MARBLE_TILELAYER_H
-#define MARBLE_TILELAYER_H
+// SPDX-License-Identifier: LGPL-2.1-or-later
+//
+// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
+// SPDX-FileCopyrightText: 2010 Thibaut Gridel <tgridel@free.fr>
+// SPDX-FileCopyrightText: 2011-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
+//
+
+#pragma once
 
 #include <LayerInterface.h>
 #include <QObject>
@@ -25,6 +31,4 @@ public:
     virtual int layerCount() const = 0;
 };
 
-}
-
-#endif // MARBLE_TILELAYER_H
+} // namespace Marble

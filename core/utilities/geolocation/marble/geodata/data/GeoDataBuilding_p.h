@@ -36,4 +36,4 @@ public:
     QVector<GeoDataBuilding::NamedEntry> m_entries;
 };
 
-}
+} // namespace Marble

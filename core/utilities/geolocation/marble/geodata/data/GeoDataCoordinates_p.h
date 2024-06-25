@@ -225,4 +225,4 @@ inline bool GeoDataCoordinatesPrivate::operator!=( const GeoDataCoordinatesPriva
     return ! (*this == rhs);
 }
 
-}
+} // namespace Marble

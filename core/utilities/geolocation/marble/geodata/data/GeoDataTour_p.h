@@ -56,4 +56,4 @@ public:
     GeoDataPlaylist *m_playlist;
 };
 
-}
+} // namespace Marble

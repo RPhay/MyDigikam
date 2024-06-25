@@ -65,4 +65,4 @@ private:
     Q_DECLARE_PRIVATE(GeoDataPhotoOverlay)
 };
 
-}
+} // namespace Marble

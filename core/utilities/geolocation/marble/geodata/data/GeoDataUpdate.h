@@ -53,4 +53,4 @@ private:
     GeoDataUpdatePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

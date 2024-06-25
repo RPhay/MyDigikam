@@ -22,4 +22,4 @@ class GeoSceneVectorTileDataset : public GeoSceneTileDataset
     const char* nodeType() const override;
 };
 
-}
+} // namespace Marble

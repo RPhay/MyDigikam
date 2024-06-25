@@ -229,4 +229,4 @@ class DIGIKAM_EXPORT GeoDataInnerBoundary : public GeoDataPolygon
 {
 };
 
-}
+} // namespace Marble

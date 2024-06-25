@@ -107,6 +107,6 @@ private:
 
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataCamera )

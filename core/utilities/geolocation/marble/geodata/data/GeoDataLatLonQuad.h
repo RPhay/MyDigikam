@@ -69,4 +69,4 @@ private:
     GeoDataLatLonQuadPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

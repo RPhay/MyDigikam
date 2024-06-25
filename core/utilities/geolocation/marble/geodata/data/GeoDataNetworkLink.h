@@ -52,4 +52,4 @@ private:
     GeoDataNetworkLinkPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

@@ -43,4 +43,4 @@ enum EnumGeometryId {
     GeoDataBuildingId
 };
 
-}
+} // namespace Marble

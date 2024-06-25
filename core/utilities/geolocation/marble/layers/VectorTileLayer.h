@@ -7,8 +7,7 @@
     SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 */
 
-#ifndef MARBLE_VECTORTILELAYER_H
-#define MARBLE_VECTORTILELAYER_H
+#pragma once
 
 #include "TileLayer.h"
 
@@ -79,6 +78,4 @@ private:
 
 };
 
-}
-
-#endif // MARBLE_VECTORTILELAYER_H
+} // namespace Marble

@@ -86,4 +86,4 @@ GeoDataNetworkLinkControlPrivate& GeoDataNetworkLinkControlPrivate::operator=(co
     return *this;
 }
 
-}
+} // namespace Marble

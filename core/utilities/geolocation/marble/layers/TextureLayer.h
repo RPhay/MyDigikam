@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010, 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_MARBLETEXTURELAYER_H
-#define MARBLE_MARBLETEXTURELAYER_H
+#pragma once
 
 #include "TileLayer.h"
 
@@ -134,6 +133,4 @@ public Q_SLOTS:
     Private *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

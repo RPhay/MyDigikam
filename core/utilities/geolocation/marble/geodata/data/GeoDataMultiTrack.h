@@ -90,4 +90,4 @@ public:
     Q_DECLARE_PRIVATE(GeoDataMultiTrack)
 };
 
-}
+} // namespace Marble

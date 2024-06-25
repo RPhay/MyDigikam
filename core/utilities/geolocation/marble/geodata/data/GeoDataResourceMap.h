@@ -50,4 +50,4 @@ private:
     GeoDataResourceMapPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

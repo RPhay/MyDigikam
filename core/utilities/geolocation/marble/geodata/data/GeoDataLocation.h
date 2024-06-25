@@ -50,4 +50,4 @@ protected:
     GeoDataLocationPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

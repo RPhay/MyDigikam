@@ -37,4 +37,4 @@ class GeoScenePalette : public GeoNode
     QString m_file;
 };
 
-}
+} // namespace Marble

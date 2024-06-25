@@ -57,4 +57,4 @@ class DIGIKAM_EXPORT GeoSceneItem : public GeoNode
     int     m_spacing;
 };
 
-}
+} // namespace Marble

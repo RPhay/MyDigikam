@@ -38,4 +38,4 @@ private:
     Q_DECLARE_PRIVATE(GeoDataCreate)
 };
 
-}
+} // namespace Marble

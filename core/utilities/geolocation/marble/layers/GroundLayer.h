@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 //
 
-#ifndef MARBLE_GROUNDLAYER_H
-#define MARBLE_GROUNDLAYER_H
+#pragma once
 
 #include "LayerInterface.h"
 
@@ -43,6 +42,4 @@ class GroundLayer : public LayerInterface
 
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -148,4 +148,4 @@ inline void GeoSceneTileDataset::setBlending( const QString &name )
     m_blending = name;
 }
 
-}
+} // namespace Marble

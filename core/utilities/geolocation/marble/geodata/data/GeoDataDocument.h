@@ -187,6 +187,6 @@ private:
     Q_DECLARE_PRIVATE(GeoDataDocument)
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE(Marble::GeoDataDocument*)

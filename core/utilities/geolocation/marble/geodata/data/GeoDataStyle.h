@@ -121,7 +121,7 @@ class DIGIKAM_EXPORT GeoDataStyle : public GeoDataStyleSelector
     GeoDataStylePrivate * const d;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataStyle* )
 Q_DECLARE_METATYPE( const Marble::GeoDataStyle* )

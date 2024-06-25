@@ -49,4 +49,4 @@ class DIGIKAM_EXPORT GeoSceneProperty : public QObject,
     bool     m_value;
 };
 
-}
+} // namespace Marble

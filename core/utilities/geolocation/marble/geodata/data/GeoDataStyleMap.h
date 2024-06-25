@@ -74,4 +74,4 @@ class DIGIKAM_EXPORT GeoDataStyleMap : public GeoDataStyleSelector,
     GeoDataStyleMapPrivate * const d;
 };
 
-}
+} // namespace Marble

@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Bernahrd Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_LAYERMANAGER_H
-#define MARBLE_LAYERMANAGER_H
+#pragma once
 
 // Qt
 #include <QList>
@@ -108,6 +107,4 @@ class LayerManager : public QObject
     Private  * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

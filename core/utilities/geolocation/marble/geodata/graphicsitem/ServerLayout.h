@@ -150,4 +150,4 @@ public:
     QString name() const override;
 };
 
-}
+} // namespace Marble

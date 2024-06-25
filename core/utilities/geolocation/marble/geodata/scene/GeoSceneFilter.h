@@ -45,4 +45,4 @@ class GeoSceneFilter : public GeoNode
 
 };
 
-}
+} // namespace Marble

@@ -53,4 +53,4 @@ private:
     GeoDataSimpleArrayDataPrivate *d;
 };
 
-}
+} // namespace Marble

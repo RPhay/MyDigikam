@@ -22,4 +22,4 @@ class DIGIKAM_EXPORT GeoSceneTextureTileDataset : public GeoSceneTileDataset
     const char* nodeType() const override;
 };
 
-}
+} // namespace Marble

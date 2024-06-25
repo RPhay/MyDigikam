@@ -56,4 +56,4 @@ class DIGIKAM_EXPORT GeoDataHotSpot : public GeoDataObject
     GeoDataHotSpotPrivate *const d;
 };
 
-}
+} // namespace Marble

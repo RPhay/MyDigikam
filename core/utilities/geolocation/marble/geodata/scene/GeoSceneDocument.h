@@ -59,4 +59,4 @@ class DIGIKAM_EXPORT GeoSceneDocument : public QObject,
     GeoSceneDocumentPrivate * const d;
 };
 
-}
+} // namespace Marble

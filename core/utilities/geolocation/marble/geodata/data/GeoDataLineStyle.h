@@ -144,4 +144,4 @@ class DIGIKAM_EXPORT GeoDataLineStyle : public GeoDataColorStyle
     GeoDataLineStylePrivate * const d;
 };
 
-}
+} // namespace Marble

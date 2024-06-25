@@ -75,4 +75,4 @@ private:
     Q_DECLARE_PRIVATE(GeoDataModel)
 };
 
-}
+} // namespace Marble

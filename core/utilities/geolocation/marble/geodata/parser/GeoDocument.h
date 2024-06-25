@@ -40,4 +40,4 @@ public:
     virtual const char* nodeType() const = 0;
 };
 
-}
+} // namespace Marble

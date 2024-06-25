@@ -48,6 +48,6 @@ class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
     Q_DECLARE_PRIVATE(GeoDataFolder)
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE(Marble::GeoDataFolder*)

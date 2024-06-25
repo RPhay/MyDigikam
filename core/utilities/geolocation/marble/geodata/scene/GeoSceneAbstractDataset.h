@@ -40,4 +40,4 @@ class DIGIKAM_EXPORT GeoSceneAbstractDataset : public GeoNode
     int     m_expire;
 };
 
-}
+} // namespace Marble

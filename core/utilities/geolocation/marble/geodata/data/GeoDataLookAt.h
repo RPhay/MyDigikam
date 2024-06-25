@@ -113,6 +113,7 @@ namespace Marble
         GeoDataLookAtPrivate *d;
 
     };
-}
+
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataLookAt )

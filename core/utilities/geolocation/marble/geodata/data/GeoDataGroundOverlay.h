@@ -58,4 +58,4 @@ private:
     Q_DECLARE_PRIVATE(GeoDataGroundOverlay)
 };
 
-}
+} // namespace Marble

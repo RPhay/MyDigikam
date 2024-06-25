@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012-2016 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_FLOATITEMSLAYER_H
-#define MARBLE_FLOATITEMSLAYER_H
+#pragma once
 
 #include <QObject>
 #include "LayerInterface.h"
@@ -67,6 +66,4 @@ class FloatItemsLayer : public QObject, public LayerInterface
     QList<AbstractFloatItem *> m_floatItems;
 };
 
-}
-
-#endif
+} // namespace Marble

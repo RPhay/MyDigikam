@@ -102,4 +102,4 @@ private:
 
 };
 
-}
+} // namespace Marble

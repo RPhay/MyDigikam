@@ -115,4 +115,4 @@ class DIGIKAM_EXPORT GeoSceneSettings : public QObject,
     GeoSceneSettingsPrivate * const d;
 };
 
-}
+} // namespace Marble

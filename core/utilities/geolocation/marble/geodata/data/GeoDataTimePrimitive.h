@@ -50,4 +50,4 @@ private:
     GeoDataTimePrimitivePrivate * const d;
 };
 
-}
+} // namespace Marble

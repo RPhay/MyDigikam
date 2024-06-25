@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_MERGEDLAYERDECORATOR_H
-#define MARBLE_MERGEDLAYERDECORATOR_H
+#pragma once
 
 #include <QVector>
 #include <QList>
@@ -77,6 +76,4 @@ class MergedLayerDecorator
     Private *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

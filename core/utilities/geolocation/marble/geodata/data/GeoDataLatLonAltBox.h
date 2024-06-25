@@ -135,6 +135,6 @@ uint DIGIKAM_EXPORT qHash(const GeoDataLatLonAltBox &box, uint seed = 0);
 
 bool DIGIKAM_EXPORT operator==( GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs );
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataLatLonAltBox )

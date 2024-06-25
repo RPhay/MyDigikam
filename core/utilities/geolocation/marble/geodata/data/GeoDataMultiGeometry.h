@@ -94,4 +94,4 @@ class DIGIKAM_EXPORT GeoDataMultiGeometry : public GeoDataGeometry
     Q_DECLARE_PRIVATE(GeoDataMultiGeometry)
 };
 
-}
+} // namespace Marble

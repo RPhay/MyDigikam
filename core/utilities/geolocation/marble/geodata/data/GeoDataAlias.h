@@ -46,4 +46,4 @@ private:
     GeoDataAliasPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

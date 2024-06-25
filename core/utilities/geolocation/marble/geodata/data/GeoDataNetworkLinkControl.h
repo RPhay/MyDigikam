@@ -78,4 +78,4 @@ private:
     Q_DECLARE_PRIVATE(GeoDataNetworkLinkControl)
 };
 
-}
+} // namespace Marble

@@ -24,4 +24,4 @@ GeoDataScreenOverlayPrivate::GeoDataScreenOverlayPrivate() :
 {
 }
 
-}
+} // namespace Marble

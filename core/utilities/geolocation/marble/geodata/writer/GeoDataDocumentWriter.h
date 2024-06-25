@@ -54,4 +54,4 @@ private:
     static QSet<QPair<QString, GeoWriterBackend*> > s_backends;
 };
 
-}
+} // namespace Marble

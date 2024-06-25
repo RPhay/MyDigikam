@@ -56,4 +56,4 @@ private:
     const GeoDataBuilding *const m_building;
 };
 
-}
+} // namespace Marble

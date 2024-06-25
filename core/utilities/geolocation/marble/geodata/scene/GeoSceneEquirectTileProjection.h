@@ -54,4 +54,4 @@ private:
      Q_DISABLE_COPY(GeoSceneEquirectTileProjection)
 };
 
-}
+} // namespace Marble

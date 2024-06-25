@@ -127,4 +127,4 @@ class DIGIKAM_EXPORT GeoDataLinearRing : public GeoDataLineString
     virtual bool isClockwise() const;
 };
 
-}
+} // namespace Marble

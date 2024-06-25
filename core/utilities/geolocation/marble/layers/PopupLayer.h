@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef POPUPLAYER_H
-#define POPUPLAYER_H
+#pragma once
 
 #include "LayerInterface.h"
 
@@ -146,6 +145,4 @@ private:
     Private *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

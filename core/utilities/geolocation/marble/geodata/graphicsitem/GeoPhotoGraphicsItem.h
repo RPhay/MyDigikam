@@ -35,4 +35,4 @@ protected:
     QImage m_photo;
 };
 
-}
+} // namespace Marble

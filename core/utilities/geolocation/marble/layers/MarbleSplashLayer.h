@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_MARBLESPLASHLAYER_H
-#define MARBLE_MARBLESPLASHLAYER_H
+#pragma once
 
 #include "LayerInterface.h"
 
@@ -30,6 +29,4 @@ public:
 
 };
 
-}
-
-#endif
+} // namespace Marble

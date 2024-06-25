@@ -54,4 +54,4 @@ private:
     GeoDataFlyToPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

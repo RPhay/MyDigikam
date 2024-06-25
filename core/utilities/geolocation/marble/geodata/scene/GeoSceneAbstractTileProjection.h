@@ -104,4 +104,4 @@ public:
      const QScopedPointer<GeoSceneAbstractTileProjectionPrivate> d_ptr;
 };
 
-}
+} // namespace Marble

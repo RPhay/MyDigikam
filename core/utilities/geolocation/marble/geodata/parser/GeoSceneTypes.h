@@ -38,4 +38,4 @@ DIGIKAM_EXPORT extern const char GeoSceneXmlDataSourceType[];
 DIGIKAM_EXPORT extern const char GeoSceneZoomType[];
 }
 
-}
+} // namespace Marble

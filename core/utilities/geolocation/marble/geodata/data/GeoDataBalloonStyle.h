@@ -60,4 +60,4 @@ private:
     GeoDataBalloonStylePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

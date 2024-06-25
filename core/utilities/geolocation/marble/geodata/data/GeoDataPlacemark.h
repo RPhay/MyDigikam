@@ -698,4 +698,4 @@ class DIGIKAM_EXPORT GeoDataPlacemark: public GeoDataFeature
     Q_DECLARE_PRIVATE(GeoDataPlacemark)
 };
 
-}
+} // namespace Marble

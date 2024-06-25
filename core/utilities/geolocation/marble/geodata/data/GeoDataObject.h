@@ -137,6 +137,6 @@ const T *geodata_cast(const GeoDataObject *node)
     return nullptr;
 }
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataObject* )

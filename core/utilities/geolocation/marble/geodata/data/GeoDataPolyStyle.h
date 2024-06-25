@@ -112,4 +112,4 @@ class DIGIKAM_EXPORT GeoDataPolyStyle : public GeoDataColorStyle
     GeoDataPolyStylePrivate * const d;
 };
 
-}
+} // namespace Marble

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011, 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_FPSLAYER_H
-#define MARBLE_FPSLAYER_H
+#pragma once
 
 class QPainter;
 class QElapsedTimer;
@@ -23,6 +22,4 @@ private:
     QElapsedTimer *const m_time;
 };
 
-}
-
-#endif
+} // namespace Marble

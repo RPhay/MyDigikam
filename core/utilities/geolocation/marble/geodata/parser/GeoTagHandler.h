@@ -77,4 +77,4 @@ private:
     static GeoTagHandlerRegistrar s_handler##Name##NameSpace(GeoParser::QualifiedName(QLatin1String(Module##Tag_##Name), QLatin1String(NameSpace)), \
                                                              new UpperCaseModule##Name##TagHandler());
 
-}
+} // namespace Marble

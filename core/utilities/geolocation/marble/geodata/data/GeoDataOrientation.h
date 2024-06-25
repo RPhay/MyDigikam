@@ -56,4 +56,4 @@ protected:
     GeoDataOrientationPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

@@ -54,4 +54,4 @@ private:
     int       m_maxLines; // max of lines that are displayed
 };
 
-}
+} // namespace Marble

@@ -40,4 +40,4 @@ private:
     GeoDataVec2Private* const d = nullptr;
 };
 
-}
+} // namespace Marble

@@ -48,4 +48,4 @@ private:
     GeoDataScalePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

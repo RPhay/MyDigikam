@@ -35,4 +35,4 @@ private:
 // Global helper function for the tag handlers
 GeoSceneDocument* geoSceneDoc(GeoParser& parser);
 
-}
+} // namespace Marble

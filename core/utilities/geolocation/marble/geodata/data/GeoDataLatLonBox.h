@@ -229,6 +229,6 @@ class DIGIKAM_EXPORT GeoDataLatLonBox : public GeoDataObject
     static const GeoDataLatLonBox empty;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataLatLonBox )

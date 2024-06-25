@@ -59,4 +59,4 @@ class DIGIKAM_EXPORT GeoSceneGeodata : public GeoSceneAbstractDataset
     QVector<QColor> m_colors;
 };
 
-}
+} // namespace Marble

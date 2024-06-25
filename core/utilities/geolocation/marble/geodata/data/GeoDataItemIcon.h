@@ -58,4 +58,4 @@ private:
     GeoDataItemIconPrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

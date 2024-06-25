@@ -36,4 +36,4 @@ private:
     QPixmap m_pixmap;
 };
 
-}
+} // namespace Marble

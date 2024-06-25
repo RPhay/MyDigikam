@@ -32,4 +32,4 @@ GeoDataGroundOverlayPrivate::GeoDataGroundOverlayPrivate()
 {
 }
 
-}
+} // namespace Marble

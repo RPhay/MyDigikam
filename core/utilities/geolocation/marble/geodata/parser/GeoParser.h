@@ -123,4 +123,4 @@ private:
     GeoNode* m_node;
 };
 
-}
+} // namespace Marble

@@ -88,4 +88,4 @@ private:
     GeoDataListStylePrivate* const d = nullptr;
 };
 
-}
+} // namespace Marble

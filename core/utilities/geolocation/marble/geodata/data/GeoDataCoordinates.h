@@ -431,6 +431,6 @@ class DIGIKAM_EXPORT GeoDataCoordinates
 
 DIGIKAM_EXPORT size_t qHash(const GeoDataCoordinates& coordinates );
 
-}
+} // namespace Marble
 
 Q_DECLARE_METATYPE( Marble::GeoDataCoordinates )

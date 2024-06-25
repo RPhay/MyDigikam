@@ -25,4 +25,4 @@ public:
     explicit GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring);
 };
 
-}
+} // namespace Marble

@@ -63,4 +63,4 @@ private:
     QString m_name;
 };
 
-}
+} // namespace Marble
