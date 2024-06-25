@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_GEOWRITERBACKEND_H
-#define MARBLE_GEOWRITERBACKEND_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -53,5 +52,3 @@ private:
 #endif
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
 //
 
-#ifndef MARBLE_GEOPOLYGONGRAPHICSITEM_H
-#define MARBLE_GEOPOLYGONGRAPHICSITEM_H
+#pragma once
 
 #include "AbstractGeoPolygonGraphicsItem.h"
 
@@ -27,5 +26,3 @@ public:
 };
 
 }
-
-#endif

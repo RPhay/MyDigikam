@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2016 Sanjiban Bairagya <sanjibanb@kde.org>
 //
 
-#ifndef MARBLE_DGMLRENDERORDERTAGHANDLER_H
-#define MARBLE_DGMLRENDERORDERTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

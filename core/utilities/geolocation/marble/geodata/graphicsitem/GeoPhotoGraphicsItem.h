@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_GEOPHOTOGRAPHICSITEM_H
-#define MARBLE_GEOPHOTOGRAPHICSITEM_H
+#pragma once
 
 #include "GeoDataPoint.h"
 #include "GeoGraphicsItem.h"
@@ -37,5 +36,3 @@ protected:
 };
 
 }
-
-#endif

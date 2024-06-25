@@ -5,11 +5,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_DGML_ATTRIBUTEDICTIONARY_H
-#define MARBLE_DGML_ATTRIBUTEDICTIONARY_H
+#pragma once
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -62,6 +62,5 @@ namespace dgml
     extern const char dgmlAttr_user[];
     extern const char dgmlAttr_width[];
 }
-}
 
-#endif
+}

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_DGML_ELEMENTDICTIONARY_H
-#define MARBLE_DGML_ELEMENTDICTIONARY_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -72,5 +71,3 @@ namespace dgml
 #define DGML_DEFINE_TAG_HANDLER(Name) GEODATA_DEFINE_TAG_HANDLER(dgml, Dgml, Name, dgmlTag_nameSpace20)
 
 }
-
-#endif

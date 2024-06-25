@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
 //
 
-#ifndef MARBLE_GEOTRACKGRAPHICSITEM_H
-#define MARBLE_GEOTRACKGRAPHICSITEM_H
+#pragma once
 
 #include "GeoLineStringGraphicsItem.h"
 
@@ -30,5 +29,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_GEOTRACKGRAPHICSITEM_H

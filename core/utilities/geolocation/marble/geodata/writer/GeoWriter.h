@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
 //
 
-#ifndef MARBLE_GEOWRITER_H
-#define MARBLE_GEOWRITER_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -87,5 +86,3 @@ private:
 };
 
 }
-
-#endif

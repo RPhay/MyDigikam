@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007, 2008 Nikolas Zimmermann <zimmermann@kde.org>
 //
 
-#ifndef MARBLE_GEOTAGWRITER_H
-#define MARBLE_GEOTAGWRITER_H
+#pragma once
 
 #include <QPair>
 #include <QHash>
@@ -87,5 +86,3 @@ private:
 };
 
 }
-
-#endif

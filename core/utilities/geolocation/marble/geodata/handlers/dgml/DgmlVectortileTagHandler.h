@@ -6,13 +6,13 @@
     SPDX-FileCopyrightText: 2012 Ander Pijoan <ander.pijoan@deusto.es>
 */
 
-#ifndef MARBLE_DGML_VECTORTILETAGHANDLER_H
-#define MARBLE_DGML_VECTORTILETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -23,6 +23,5 @@ public:
 };
 
 }
-}
 
-#endif // MARBLE_DGML_VECTORTILETAGHANDLER_H
+}

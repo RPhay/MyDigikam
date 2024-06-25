@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef SCREENOVERLAYGRAPHICSITEM_H
-#define SCREENOVERLAYGRAPHICSITEM_H
+#pragma once
 
 #include "GeoDataVec2.h"
 #include "ScreenGraphicsItem.h"
@@ -38,5 +37,3 @@ private:
 };
 
 }
-
-#endif

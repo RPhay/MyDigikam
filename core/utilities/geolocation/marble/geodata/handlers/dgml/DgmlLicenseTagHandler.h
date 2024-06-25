@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef MARBLE_DGML_LICENSE_TAG_HANDLER_H
-#define MARBLE_DGML_LICENSE_TAG_HANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_DGML_ZOOMTAGHANDLER_H
-#define MARBLE_DGML_ZOOMTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -21,6 +21,5 @@ class DgmlZoomTagHandler : public GeoTagHandler
 };
 
 }
-}
 
-#endif
+}

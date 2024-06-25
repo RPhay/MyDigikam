@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010, 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_SERVERLAYOUT_H
-#define MARBLE_SERVERLAYOUT_H
+#pragma once
 
 class QUrl;
 class QString;
@@ -152,5 +151,3 @@ public:
 };
 
 }
-
-#endif

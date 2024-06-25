@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEODATATYPES_H
-#define MARBLE_GEODATATYPES_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -90,5 +89,3 @@ DIGIKAM_EXPORT extern const char GeoDataBuildingType[];
 }
 
 }
-
-#endif

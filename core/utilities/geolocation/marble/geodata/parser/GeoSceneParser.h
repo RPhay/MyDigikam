@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOSCENEPARSER_H
-#define MARBLE_GEOSCENEPARSER_H
+#pragma once
 
 #include "digikam_export.h"
 #include "GeoParser.h"
@@ -37,5 +36,3 @@ private:
 GeoSceneDocument* geoSceneDoc(GeoParser& parser);
 
 }
-
-#endif

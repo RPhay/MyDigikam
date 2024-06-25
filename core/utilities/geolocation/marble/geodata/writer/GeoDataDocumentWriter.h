@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_GEODATADOCUMENTWRITER_H
-#define MARBLE_GEODATADOCUMENTWRITER_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -56,5 +55,3 @@ private:
 };
 
 }
-
-#endif

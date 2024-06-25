@@ -19,13 +19,13 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef MARBLE_DGML_CENTERTAGHANDLER_H
-#define MARBLE_DGML_CENTERTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
 
@@ -36,6 +36,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

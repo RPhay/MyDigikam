@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEODOCUMENT_H
-#define MARBLE_GEODOCUMENT_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -42,5 +41,3 @@ public:
 };
 
 }
-
-#endif

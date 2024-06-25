@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Utku Aydın <utkuaydin34@gmail.com>
 //
 
-#ifndef MARBLE_GEOSCENETYPES_H
-#define MARBLE_GEOSCENETYPES_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -40,5 +39,3 @@ DIGIKAM_EXPORT extern const char GeoSceneZoomType[];
 }
 
 }
-
-#endif

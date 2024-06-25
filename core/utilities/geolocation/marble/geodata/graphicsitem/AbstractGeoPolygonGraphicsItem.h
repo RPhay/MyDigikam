@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
 //
 
-#ifndef MARBLE_ABSTRACTGEOPOLYGONGRAPHICSITEM_H
-#define MARBLE_ABSTRACTGEOPOLYGONGRAPHICSITEM_H
+#pragma once
 
 #include "GeoGraphicsItem.h"
 #include "digikam_export.h"
@@ -58,5 +57,3 @@ private:
 };
 
 }
-
-#endif

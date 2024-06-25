@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_DGML_AUXILLARYDICTIONARY_H
-#define MARBLE_DGML_AUXILLARYDICTIONARY_H
+#pragma once
 
 // Lists all known DGML 2.0 auxiliary strings
 
@@ -18,6 +17,7 @@
 
 namespace Marble
 {
+
 namespace dgml
 {
     extern const char dgmlValue_true[];
@@ -27,6 +27,5 @@ namespace dgml
     extern const char dgmlValue_vectortile[];
     extern const char dgmlValue_geodata[];
 }
-}
 
-#endif
+}

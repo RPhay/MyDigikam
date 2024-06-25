@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GEOTAGHANDLER_H
-#define MARBLE_GEOTAGHANDLER_H
+#pragma once
 
 #include <QHash>
 #include "digikam_export.h"
@@ -79,5 +78,3 @@ private:
                                                              new UpperCaseModule##Name##TagHandler());
 
 }
-
-#endif

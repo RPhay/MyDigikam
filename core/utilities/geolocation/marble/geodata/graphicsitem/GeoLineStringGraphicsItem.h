@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
 //
 
-#ifndef MARBLE_GEOLINESTRINGGRAPHICSITEM_H
-#define MARBLE_GEOLINESTRINGGRAPHICSITEM_H
+#pragma once
 
 #include "GeoGraphicsItem.h"
 #include "GeoDataCoordinates.h"
@@ -65,5 +64,3 @@ private:
 };
 
 }
-
-#endif
