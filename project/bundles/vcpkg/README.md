@@ -69,7 +69,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Memory : 24 Gb                                Note: QtWebEngine requires a lots of memory with parallelized build
         + CPU    : 8                                    Very important: do not assign more CPU to compile QtWebEngine, else required memory become huge.
         + Disk0  : VDI static NTFS 150 Gb               C:/ SYSTEM VCPKG cache build target on $HOME/AppData/Local/vcpkg/archives
-        + Disk1  : VDI static NTFS 250 Gb               E:/ DATA   for the build, download, install storage
+        + Disk1  : VDI static NTFS 500 Gb               E:/ DATA   for the build, download, install storage
 
     - Windows 10 22H2 or later                          https://www.microsoft.com/en-us/software-download/windows10
 
@@ -104,6 +104,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + Just in time debugger                     (optional)
             + C++ Cmake tools for windows
             + C++ ATL for latest v143 build tools
+            + C++ MFC for latest v143 build tools
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
             + C++ Profiling tools.                      For dumpbin.exe tool.
