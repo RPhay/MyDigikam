@@ -130,7 +130,7 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 
 else
 
-    $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-base[sql-mysql]
+    $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-base[mysqlplugin]
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-multimedia
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-networkauth
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-translations
