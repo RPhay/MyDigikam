@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 01:39+0000\n"
+"POT-Creation-Date: 2024-06-25 01:41+0000\n"
 "PO-Revision-Date: 2024-06-19 09:17+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -36582,23 +36582,23 @@ msgstr "nikoli"
 msgid "No data returned from the remote connection."
 msgstr "Ni prejetih podatkov iz oddaljene povezave."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:204
-#: core/libs/onlineversion/onlineversiondwnl.cpp:141
+#: core/libs/onlineversion/onlineversionchecker.cpp:206
+#: core/libs/onlineversion/onlineversiondwnl.cpp:143
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Nepodprta zvrst računalnika: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:234
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "Vrnjen neveljaven format iz oddaljene povezave."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:256
+#: core/libs/onlineversion/onlineversionchecker.cpp:258
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "Neveljaven datum pred-izdaje iz oddaljenega seznama."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:291
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "Vrnjen neveljaven format iz oddaljene povezave."
@@ -36921,27 +36921,27 @@ msgstr ""
 "Ni mogoče zagnati programa za namestitev:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:234
+#: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "Datoteka kontrolne vsote je prazna."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:246
+#: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "Kontrolna vsota je neveljavna."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:268
+#: core/libs/onlineversion/onlineversiondwnl.cpp:271
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "Prenesena datoteka je prazna."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:301
+#: core/libs/onlineversion/onlineversiondwnl.cpp:304
 #, kde-format
 msgid "Checksums error."
 msgstr "Napaka kontrolnih vsot."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:332
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Ni mogoče odpreti ciljne datoteke."
@@ -43042,12 +43042,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Razvijalec (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Konfiguriraj obvestila"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"

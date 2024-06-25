@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 01:39+0000\n"
+"POT-Creation-Date: 2024-06-25 01:41+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -38955,26 +38955,26 @@ msgstr ""
 msgid "No data returned from the remote connection."
 msgstr "Piwigost saadi vigane vastus"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:204
-#: core/libs/onlineversion/onlineversiondwnl.cpp:141
+#: core/libs/onlineversion/onlineversionchecker.cpp:206
+#: core/libs/onlineversion/onlineversiondwnl.cpp:143
 #, fuzzy, kde-format
 #| msgid "Unsupported Format"
 msgid "Unsupported Architecture: %1"
 msgstr "Toetamata vorming"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:234
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid file name format returned from the remote connection."
 msgstr "Piwigost saadi vigane vastus"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:256
+#: core/libs/onlineversion/onlineversionchecker.cpp:258
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid pre-release date from the remote list."
 msgstr "Piwigost saadi vigane vastus"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:291
 #, fuzzy, kde-format
 #| msgid "Invalid response received from remote Piwigo"
 msgid "Invalid format returned from the remote connection."
@@ -39254,30 +39254,30 @@ msgid ""
 "%1"
 msgstr "Faili avamine nurjus"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:234
+#: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Checksum file is empty."
 msgstr "Fail on tühi."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:246
+#: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:268
+#: core/libs/onlineversion/onlineversiondwnl.cpp:271
 #, fuzzy, kde-format
 #| msgid "File is empty."
 msgid "Downloaded file is empty."
 msgstr "Fail on tühi."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:301
+#: core/libs/onlineversion/onlineversiondwnl.cpp:304
 #, fuzzy, kde-format
 #| msgid "Session error"
 msgid "Checksums error."
 msgstr "Seansi tõrge"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:332
 #, fuzzy, kde-format
 #| msgid "Cannot open file"
 msgid "Cannot open target file."
@@ -45690,13 +45690,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Arendaja (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Notifications"
 msgstr "Seadista seda veergu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 01:39+0000\n"
+"POT-Creation-Date: 2024-06-25 01:41+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -36930,23 +36930,23 @@ msgstr "никогда"
 msgid "No data returned from the remote connection."
 msgstr "Не получен ответ от узла сети."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:204
-#: core/libs/onlineversion/onlineversiondwnl.cpp:141
+#: core/libs/onlineversion/onlineversionchecker.cpp:206
+#: core/libs/onlineversion/onlineversiondwnl.cpp:143
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Неподдерживаемая архитектура: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:234
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "От узла сети получен некорректный ответ формата имени файла."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:256
+#: core/libs/onlineversion/onlineversionchecker.cpp:258
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "Недопустимая дата версии, предшествующей выпуску, в удалённом списке."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:291
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "От удалённого соединения получен некорректный формат."
@@ -37271,27 +37271,27 @@ msgstr ""
 "Не удалось запустить программу установки:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:234
+#: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "Файл контрольной суммы пуст."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:246
+#: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "Некорректная контрольная сумма."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:268
+#: core/libs/onlineversion/onlineversiondwnl.cpp:271
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "Загруженный файл пуст."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:301
+#: core/libs/onlineversion/onlineversiondwnl.cpp:304
 #, kde-format
 msgid "Checksums error."
 msgstr "Ошибка контрольных сумм."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:332
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Не удаётся открыть целевой файл."
@@ -43439,12 +43439,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Разработчик (2004 г.)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Настройка уведомлений"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"

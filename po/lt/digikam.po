@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 01:39+0000\n"
+"POT-Creation-Date: 2024-06-25 01:41+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -36943,23 +36943,23 @@ msgstr ""
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:204
-#: core/libs/onlineversion/onlineversiondwnl.cpp:141
+#: core/libs/onlineversion/onlineversionchecker.cpp:206
+#: core/libs/onlineversion/onlineversiondwnl.cpp:143
 #, fuzzy, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Nežinomas formatas"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:234
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:256
+#: core/libs/onlineversion/onlineversionchecker.cpp:258
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:291
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
@@ -37216,29 +37216,29 @@ msgid ""
 "%1"
 msgstr "Negalima išsaugoti „%1“"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:234
+#: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Checksum file is empty."
 msgstr "Atsiunčiamas failas %1..."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:246
+#: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:268
+#: core/libs/onlineversion/onlineversiondwnl.cpp:271
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "Downloaded file is empty."
 msgstr "Atsiunčiamas failas %1..."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:301
+#: core/libs/onlineversion/onlineversiondwnl.cpp:304
 #, kde-format
 msgid "Checksums error."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:332
 #, fuzzy, kde-format
 msgid "Cannot open target file."
 msgstr "Negalima išsaugoti „%1“"
@@ -43347,13 +43347,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Programuotojas (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Notifications"
 msgstr "Konfigūruoti šį stulpelį"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"

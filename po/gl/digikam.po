@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 01:39+0000\n"
+"POT-Creation-Date: 2024-06-25 01:41+0000\n"
 "PO-Revision-Date: 2024-06-21 22:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -36752,23 +36752,23 @@ msgstr "nunca"
 msgid "No data returned from the remote connection."
 msgstr "A conexión remota non devolveu datos."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:204
-#: core/libs/onlineversion/onlineversiondwnl.cpp:141
+#: core/libs/onlineversion/onlineversionchecker.cpp:206
+#: core/libs/onlineversion/onlineversiondwnl.cpp:143
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Arquitectura incompatíbel: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:234
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "A conexión remota devolveu un formato incorrecto de nome de ficheiro."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:256
+#: core/libs/onlineversion/onlineversionchecker.cpp:258
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "A data de pre-publicación da lista remota é incorrecta."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:291
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "A conexión remota devolveu un formato incorrecto."
@@ -37093,27 +37093,27 @@ msgstr ""
 "Non é posíbel iniciar o instalador:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:234
+#: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "O ficheiro de suma de comprobación está baleiro."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:246
+#: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "A suma de comprobación non é válida."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:268
+#: core/libs/onlineversion/onlineversiondwnl.cpp:271
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "O ficheiro descargado está baleiro."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:301
+#: core/libs/onlineversion/onlineversiondwnl.cpp:304
 #, kde-format
 msgid "Checksums error."
 msgstr "Produciuse un erro coa suma de comprobación."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:332
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Non é posíbel abrir o ficheiro de destino."
@@ -43185,12 +43185,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Desenvolvedor (2004)."
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Configurar as notificacións"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
