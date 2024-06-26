@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-25 01:41+0000\n"
-"PO-Revision-Date: 2024-05-21 01:09+0900\n"
+"PO-Revision-Date: 2024-06-26 06:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -41731,29 +41731,25 @@ msgid "Unknown"
 msgstr "不明"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:469
-#, fuzzy, kde-format
-#| msgid "Input device"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Input device"
 msgstr "輸入裝置"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:475
-#, fuzzy, kde-format
-#| msgid "Display device"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Display device"
 msgstr "顯示裝置"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:481
-#, fuzzy, kde-format
-#| msgid "Output device"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Output device"
 msgstr "輸出裝置"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:487
-#, fuzzy, kde-format
-#| msgid "Color space"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Color space"
 msgstr "色彩空間"
@@ -60660,15 +60656,13 @@ msgid "Enhance"
 msgstr "增強"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:188
-#, fuzzy, kde-format
-#| msgid "Transform"
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "變形"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:193
-#, fuzzy, kde-format
-#| msgid "Decorate"
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "裝飾"
@@ -61474,15 +61468,13 @@ msgid "-"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:541
-#, fuzzy, kde-format
-#| msgid "Flash"
+#, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
-msgstr "閃光"
+msgstr "閃光燈"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:541
-#, fuzzy, kde-format
-#| msgid "Flash mode"
+#, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "閃光模式"

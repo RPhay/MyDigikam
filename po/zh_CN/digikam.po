@@ -3203,7 +3203,7 @@ msgstr "已选中 %1 项，共 %2 项"
 #: core/app/views/stack/welcomepageview.cpp:130
 #, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr ""
+msgstr "解决了 1500 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3408,7 +3408,7 @@ msgstr "队列管理器：新增批量分配标题和说明文字的新工具。
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
-msgstr ""
+msgstr "批处理管理：新增了批量运行 G'MIC 滤镜的工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3416,6 +3416,8 @@ msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"使用文档：<a href=\"https://docs.digikam.org/en/index.html\">重写 digiKam 使"
+"用手册</a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3426,6 +3428,10 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"新增了基于深度学习神经网络引擎的自动图像标签分配工具到系统维护和批处理工具。"
+"<a href=\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">详情请见 GoSC-2023 的报告。</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3433,16 +3439,18 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"更新 G'MIC-Qt 工具到最新的 3.4.0 版，完成相关插件的 macOS 移植，改善其稳定"
+"性。"
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
-msgstr ""
+msgstr "更新 Adobe DNG SDK 到最新的 1.7.1 版，此版支持 JPEG-XL 压缩功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
-msgstr ""
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2024-06-16。"
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3454,6 +3462,12 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"新增 RAW 支持特性：Canon EOS R6 Mark II、EOS R8、EOS R50、EOS R100、EOS Ra."
+"Fujifilm GFX100-II、X-T5、X-S20、X-H2、X-H2S.Hasselblad X2D-100c.Leica Q3、"
+"M11 Monochrom.Nikon Z30、Z8.OM Digital OM-5.Panasonic DC-G9 II、DC-ZS200D / "
+"ZS220D、DC-TZ200D / TZ202D / TZ220D、DC-S5-II、DC-GH6.Sony A7C-II、A7CR、"
+"ILCE-6700、ZV-1M2、ZV-E1、ILCE-7RM5 (A7R-V)、ILME-FX30、DSC-HX95、A1。多款 "
+"DJI 和 Skydio 无人机。多款智能手机的 DNG 格式。"
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
