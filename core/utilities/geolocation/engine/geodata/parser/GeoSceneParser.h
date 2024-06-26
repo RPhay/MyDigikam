@@ -15,17 +15,20 @@ namespace Marble
 class GeoDocument;
 class GeoSceneDocument;
 
-enum GeoSceneSourceType {
+enum GeoSceneSourceType
+{
     GeoScene_DGML   = 0
 };
 
 class DIGIKAM_EXPORT GeoSceneParser : public GeoParser
 {
 public:
+
     explicit GeoSceneParser(GeoSceneSourceType source);
     ~GeoSceneParser() override;
 
 private:
+
     bool isValidElement(const QString& tagName) const override;
     bool isValidRootElement() override;
 

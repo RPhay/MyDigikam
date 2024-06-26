@@ -17,6 +17,7 @@ class GeoDataBuilding;
 class DIGIKAM_EXPORT GeoPolygonGraphicsItem : public AbstractGeoPolygonGraphicsItem
 {
 public:
+
     static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon);
     static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring);
     static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building);

@@ -12,6 +12,7 @@ namespace Marble
 
 namespace GeoSceneTypes
 {
+
 /**
  * Please keep alphabetic order to prevent mess
  */
@@ -36,6 +37,7 @@ DIGIKAM_EXPORT extern const char GeoSceneVectorType[];
 DIGIKAM_EXPORT extern const char GeoSceneVectorTileType[];
 DIGIKAM_EXPORT extern const char GeoSceneXmlDataSourceType[];
 DIGIKAM_EXPORT extern const char GeoSceneZoomType[];
-}
+
+} // namespace GeoSceneTypes
 
 } // namespace Marble

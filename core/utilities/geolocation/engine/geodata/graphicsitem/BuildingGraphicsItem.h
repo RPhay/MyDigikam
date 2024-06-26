@@ -16,13 +16,16 @@ namespace Marble
 class DIGIKAM_EXPORT BuildingGraphicsItem : public AbstractGeoPolygonGraphicsItem
 {
 public:
+
     BuildingGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building);
     ~BuildingGraphicsItem() override;
 
 public:
+
     void paint(GeoPainter* painter, const ViewportParams *viewport, const QString &layer, int tileZoomLevel) override;
 
 private:
+
     void paintFrame(GeoPainter* painter, const ViewportParams *viewport);
 
     void paintRoof(GeoPainter* painter, const ViewportParams *viewport);
@@ -45,12 +48,12 @@ private:
     bool contains(const QPoint &screenPosition, const ViewportParams *viewport) const override;
 
 private:
+
     QVector<QPolygonF*> m_cachedOuterPolygons;
     QVector<QPolygonF*> m_cachedInnerPolygons;
     QVector<QPolygonF*> m_cachedOuterRoofPolygons;
     QVector<QPolygonF*> m_cachedInnerRoofPolygons;
     bool m_hasInnerBoundaries;
-
 };
 
 } // namespace Marble

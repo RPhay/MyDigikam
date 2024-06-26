@@ -18,9 +18,11 @@ namespace Marble
 class DIGIKAM_EXPORT GeoDocument
 {
 protected:
+
     GeoDocument();
 
 public:
+
     virtual ~GeoDocument();
 
     virtual bool isGeoDataDocument() const;
@@ -33,6 +35,7 @@ public:
 class DIGIKAM_EXPORT GeoNode
 {
 public:
+
     GeoNode();
     virtual ~GeoNode();
 

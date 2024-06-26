@@ -10,12 +10,14 @@ class QString;
 
 namespace Marble
 {
+
 class GeoSceneTileDataset;
 class TileId;
 
 class ServerLayout
 {
 public:
+
     explicit ServerLayout( GeoSceneTileDataset *textureLayer );
     virtual ~ServerLayout();
 
@@ -41,12 +43,14 @@ public:
     QString sourceDir() const;
 
 protected:
-    GeoSceneTileDataset *const m_textureLayer;
+
+    GeoSceneTileDataset* const m_textureLayer = nullptr;
 };
 
 class MarbleServerLayout : public ServerLayout
 {
 public:
+
     explicit MarbleServerLayout( GeoSceneTileDataset *textureLayer );
 
     /**
@@ -60,6 +64,7 @@ public:
 class OsmServerLayout : public ServerLayout
 {
 public:
+
     explicit OsmServerLayout( GeoSceneTileDataset *textureLayer );
 
     /**
@@ -74,6 +79,7 @@ public:
 class CustomServerLayout : public ServerLayout
 {
 public:
+
     explicit CustomServerLayout( GeoSceneTileDataset *texture );
 
     /**
@@ -90,6 +96,7 @@ public:
 class WmsServerLayout : public ServerLayout
 {
 public:
+
     explicit WmsServerLayout( GeoSceneTileDataset *texture );
 
     /**
@@ -110,6 +117,7 @@ public:
 class WmtsServerLayout : public ServerLayout
 {
 public:
+
     explicit WmtsServerLayout( GeoSceneTileDataset *texture );
 
     /**
@@ -125,18 +133,21 @@ public:
 class QuadTreeServerLayout : public ServerLayout
 {
 public:
+
     explicit QuadTreeServerLayout( GeoSceneTileDataset* textureLayer );
     QUrl downloadUrl( const QUrl &, const Marble::TileId & ) const override;
 
     QString name() const override;
 
 private:
+
     static QString encodeQuadTree( const Marble::TileId & );
 };
 
 class TmsServerLayout : public ServerLayout
 {
 public:
+
     explicit TmsServerLayout( GeoSceneTileDataset *textureLayer );
 
     /**

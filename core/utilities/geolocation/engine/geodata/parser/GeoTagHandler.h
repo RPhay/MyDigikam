@@ -26,27 +26,33 @@ class GeoNode;
 class DIGIKAM_EXPORT GeoTagHandler
 {
 public:
+
     // API to be implemented by child handlers.
     virtual GeoNode* parse(GeoParser&) const = 0;
 
 protected: // This base class is not directly constructable nor is it copyable.
+
     GeoTagHandler();
     virtual ~GeoTagHandler();
 
 private:
+
     GeoTagHandler(const GeoTagHandler&) = delete;
     GeoTagHandler& operator=(const GeoTagHandler&) = delete;
 
 private: // Only our registrar is allowed to register tag handlers.
+
     friend struct GeoTagHandlerRegistrar;
     static void registerHandler(const GeoParser::QualifiedName&, const GeoTagHandler*);
     static void unregisterHandler(const GeoParser::QualifiedName&);
 
 private: // Only our parser is allowed to access tag handlers.
+
     friend class GeoParser;
     static const GeoTagHandler* recognizes(const GeoParser::QualifiedName&);
 
 private:
+
     typedef QHash<GeoParser::QualifiedName, const GeoTagHandler*> TagHash;
 
     static TagHash* tagHandlerHash();
@@ -57,6 +63,7 @@ private:
 struct GeoTagHandlerRegistrar
 {
 public:
+
     GeoTagHandlerRegistrar(const GeoParser::QualifiedName& name, const GeoTagHandler* handler)
         :m_name( name )
     {
@@ -69,6 +76,7 @@ public:
     }
 
 private:
+
     GeoParser::QualifiedName m_name;
 };
 

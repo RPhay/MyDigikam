@@ -14,6 +14,7 @@ namespace Marble
 
 namespace GeoDataTypes
 {
+
 /**
  * the following const char* XXType are used to provide RTTI to the GeoData for
  * downcasting to the good object
@@ -86,6 +87,7 @@ DIGIKAM_EXPORT extern const char GeoDataViewVolumeType[];
 DIGIKAM_EXPORT extern const char GeoDataNetworkLinkControlType[];
 DIGIKAM_EXPORT extern const char GeoDataUpdateType[];
 DIGIKAM_EXPORT extern const char GeoDataBuildingType[];
-}
+
+} // namespace GeoDataTypes
 
 } // namespace Marble

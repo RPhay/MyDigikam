@@ -12,13 +12,15 @@
 
 #include <QPixmap>
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataScreenOverlay;
 
 class DIGIKAM_EXPORT ScreenOverlayGraphicsItem : public ScreenGraphicsItem
 {
 public:
+
     explicit ScreenOverlayGraphicsItem( const GeoDataScreenOverlay *screenOverlay );
 
     const GeoDataScreenOverlay* screenOverlay() const;
@@ -26,12 +28,16 @@ public:
     void setProjection( const ViewportParams *viewport ) override;
 
 protected:
+
     void paint( QPainter* painter ) override;
 
 private:
+
     static qreal pixelValue( GeoDataVec2::Unit unit, qreal screenSize, qreal imageSize, qreal value );
 
-    const GeoDataScreenOverlay *m_screenOverlay;
+private:
+
+    const GeoDataScreenOverlay* m_screenOverlay = nullptr;
 
     QPixmap m_pixmap;
 };

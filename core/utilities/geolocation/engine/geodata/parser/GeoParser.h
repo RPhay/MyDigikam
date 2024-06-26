@@ -23,7 +23,8 @@ class GeoStackItem;
 
 class DIGIKAM_EXPORT GeoParser : public QXmlStreamReader
 {
- public:
+public:
+
     typedef QPair<QString, QString> QualifiedName; // Tag Name & Namespace pair
 
     explicit GeoParser( GeoDataGenericSourceType sourceType );
@@ -58,6 +59,7 @@ class DIGIKAM_EXPORT GeoParser : public QXmlStreamReader
     QString attribute( const char* attributeName ) const;
 
 protected:
+
     /**
      * This method is intended to check if the current element being served by
      * the GeoParser is a valid Document Root element. This method is to be
@@ -70,17 +72,20 @@ protected:
     virtual GeoDocument* createDocument() const = 0;
 
 protected:
-    GeoDocument* m_document;
+
+    GeoDocument* m_document = nullptr;
     GeoDataGenericSourceType m_source;
 
 private:
+
     void parseDocument();
     QStack<GeoStackItem> m_nodeStack;
 };
 
 class GeoStackItem
 {
- public:
+public:
+
     GeoStackItem()
         : m_qualifiedName(),
           m_node( nullptr )
@@ -117,10 +122,15 @@ class GeoStackItem
     GeoNode* associatedNode() const { return m_node; }
 
 private:
-    friend class GeoParser;
+
     void assignNode( GeoNode* node ) { m_node = node; }
+
+private:
+
+    friend class GeoParser;
+
     GeoParser::QualifiedName m_qualifiedName;
-    GeoNode* m_node;
+    GeoNode* m_node = nullptr;
 };
 
 } // namespace Marble

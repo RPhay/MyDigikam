@@ -49,11 +49,12 @@ protected:
     static int extractElevation(const GeoDataPlacemark &placemark);
 
 private:
+
     QPixmap texture(const QString &path, const QColor &color) const;
 
-    const GeoDataPolygon * m_polygon;
-    const GeoDataLinearRing * m_ring;
-    const GeoDataBuilding *const m_building;
+    const GeoDataPolygon* m_polygon         = nullptr;
+    const GeoDataLinearRing* m_ring         = nullptr;
+    const GeoDataBuilding* const m_building = nullptr;
 };
 
 } // namespace Marble

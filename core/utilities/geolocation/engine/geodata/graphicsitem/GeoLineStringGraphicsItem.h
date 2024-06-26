@@ -23,6 +23,7 @@ class DIGIKAM_EXPORT GeoLineStringGraphicsItem : public GeoGraphicsItem
     Q_DECLARE_TR_FUNCTIONS(GeoLineStringGraphicsItem)
 
 public:
+
     explicit GeoLineStringGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLineString *lineString);
     ~GeoLineStringGraphicsItem() override;
 
@@ -41,9 +42,11 @@ public:
     static bool s_paintOutline;
 
 protected:
+
     void handleRelationUpdate(const QVector<const GeoDataRelation *> &relations) override;
 
 private:
+
     void paintOutline(GeoPainter *painter, const ViewportParams *viewport) const;
     void paintInline(GeoPainter *painter, const ViewportParams *viewport);
     void paintLabel(GeoPainter *painter, const ViewportParams *viewport) const;
@@ -53,8 +56,10 @@ private:
 
     static bool canMerge(const GeoDataCoordinates &a, const GeoDataCoordinates &b);
 
-    const GeoDataLineString *m_lineString;
-    const GeoDataLineString *m_renderLineString;
+private:
+
+    const GeoDataLineString* m_lineString           = nullptr;
+    const GeoDataLineString* m_renderLineString     = nullptr;
     GeoDataLineString m_mergedLineString;
     QVector<QPolygonF*> m_cachedPolygons;
     bool m_renderLabel;

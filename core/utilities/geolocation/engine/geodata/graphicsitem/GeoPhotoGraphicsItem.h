@@ -17,6 +17,7 @@ namespace Marble
 class DIGIKAM_EXPORT GeoPhotoGraphicsItem : public GeoGraphicsItem
 {
 public:
+
     explicit GeoPhotoGraphicsItem( const GeoDataFeature *feature );
 
     void setPoint( const GeoDataPoint& point );
@@ -30,8 +31,8 @@ public:
     bool contains(const QPoint &point, const ViewportParams *viewport) const override;
 
 protected:
-    GeoDataPoint m_point;
 
+    GeoDataPoint m_point;
     QImage m_photo;
 };
 
