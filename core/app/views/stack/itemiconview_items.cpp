@@ -718,12 +718,18 @@ void ItemIconView::slotEmptyMessageTimer()
 
     if (!album || album->isRoot() || (album->type() != Album::SEARCH))
     {
-        d->errorWidget->animatedHide();
+        if (
+            (d->errorWidget->messageType() != DNotificationWidget::Error) &&
+            (d->errorWidget->messageType() != DNotificationWidget::Warning)
+           )
+        {
+            d->errorWidget->animatedHide();
+        }
 
         return;
     }
 
-    if (!d->iconView->imageModel()->itemCount())
+    if      (!d->iconView->imageModel()->itemCount())
     {
         QString message = i18n("The current query from the database returned no results. "
                                "Change search settings or select an album with content.");
@@ -732,7 +738,10 @@ void ItemIconView::slotEmptyMessageTimer()
         d->errorWidget->setText(message);
         d->errorWidget->animatedShowTemporized(5000);
     }
-    else
+    else if (
+             (d->errorWidget->messageType() != DNotificationWidget::Error) &&
+             (d->errorWidget->messageType() != DNotificationWidget::Warning)
+            )
     {
         d->errorWidget->animatedHide();
     }
