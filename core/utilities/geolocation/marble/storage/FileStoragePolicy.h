@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2007 Tobias Koenig <tokoe@kde.org>
 //
 
-#ifndef MARBLE_FILESTORAGEPOLICY_H
-#define MARBLE_FILESTORAGEPOLICY_H
+#pragma once
 
 #include "StoragePolicy.h"
 
@@ -56,6 +55,4 @@ class FileStoragePolicy : public StoragePolicy
         QString m_errorMsg;
 };
 
-}
-
-#endif
+} // namespace Marble

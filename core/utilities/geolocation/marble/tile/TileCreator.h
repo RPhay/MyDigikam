@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007-2008 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_TILECREATOR_H
-#define MARBLE_TILECREATOR_H
+#pragma once
 
 #include <QString>
 #include <QThread>
@@ -88,6 +87,4 @@ class DIGIKAM_EXPORT TileCreator : public QThread
     TileCreatorPrivate  * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

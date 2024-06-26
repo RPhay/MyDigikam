@@ -6,8 +6,7 @@
 // SPDX-FileCopyrightText: 2008 Pino Toscano <pino@kde.org>
 //
 
-#ifndef MARBLE_HTTPJOB_H
-#define MARBLE_HTTPJOB_H
+#pragma once
 
 #include <QObject>
 #include <QNetworkReply>
@@ -78,6 +77,4 @@ private Q_SLOTS:
     friend class HttpJobPrivate;
 };
 
-}
-
-#endif
+} // namespace Marble

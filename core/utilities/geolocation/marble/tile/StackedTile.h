@@ -6,8 +6,7 @@
 // SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_STACKEDTILE_H
-#define MARBLE_STACKEDTILE_H
+#pragma once
 
 #include <QSharedPointer>
 #include <QVector>
@@ -108,6 +107,4 @@ class StackedTile : public Tile
     static int calcByteCount( const QImage &resultImage, const QVector<QSharedPointer<TextureTile> > &tiles );
 };
 
-}
-
-#endif
+} // namespace Marble

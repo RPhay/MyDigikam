@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2007 Tobias Koenig <tokoe@kde.org>
 //
 
-#ifndef MARBLE_DISCCACHE_H
-#define MARBLE_DISCCACHE_H
+#pragma once
 
 #include <QDateTime>
 #include <QMap>
@@ -42,6 +41,4 @@ class DiscCache
         QMap<QString, Entry> m_Entries;
 };
 
-}
-
-#endif
+} // namespace Marble

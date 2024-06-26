@@ -2,8 +2,8 @@
 //
 // SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
 //
-#ifndef MARBLE_FILELOADER_H
-#define MARBLE_FILELOADER_H
+
+#pragma once
 
 #include "GeoDataDocument.h"
 
@@ -47,5 +47,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif

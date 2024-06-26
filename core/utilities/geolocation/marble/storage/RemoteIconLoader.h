@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
 //
 
-#ifndef MARBLE_REMOTEICONLOADER_H
-#define MARBLE_REMOTEICONLOADER_H
+#pragma once
 
 #include <QObject>
 
@@ -44,6 +43,4 @@ private:
     RemoteIconLoaderPrivate *d;
 };
 
-}
-
-#endif  // MARBLE_REMOTEICONLOADER_H
+} // namespace Marble

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2007 Tobias Koenig <tokoe@kde.org>
 //
 
-#ifndef MARBLE_CACHESTORAGEPOLICY_H
-#define MARBLE_CACHESTORAGEPOLICY_H
+#pragma once
 
 #include "DiscCache.h"
 #include "StoragePolicy.h"
@@ -75,6 +74,4 @@ class DIGIKAM_EXPORT CacheStoragePolicy : public StoragePolicy
         QString m_errorMsg;
 };
 
-}
-
-#endif
+} // namespace Marble

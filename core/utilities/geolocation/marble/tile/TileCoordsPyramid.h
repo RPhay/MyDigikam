@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_TILECOORDSPYRAMID_H
-#define MARBLE_TILECOORDSPYRAMID_H
+#pragma once
 
 #include <QtGlobal>
 #include "digikam_export.h"
@@ -44,6 +43,4 @@ class DIGIKAM_EXPORT TileCoordsPyramid
     Private * d; // not const, needs to be swapable
 };
 
-}
-
-#endif
+} // namespace Marble

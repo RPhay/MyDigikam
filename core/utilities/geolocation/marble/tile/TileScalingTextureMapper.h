@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_TILESCALINGTEXTUREMAPPER_H
-#define MARBLE_TILESCALINGTEXTUREMAPPER_H
-
+#pragma once
 
 #include <QObject>
 #include "TextureMapperInterface.h"
@@ -51,6 +49,4 @@ class TileScalingTextureMapper : public QObject, public TextureMapperInterface
     int    m_radius;
 };
 
-}
-
-#endif
+} // namespace Marble

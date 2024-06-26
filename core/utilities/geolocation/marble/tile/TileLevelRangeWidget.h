@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_TILELEVELRANGEWIDGET_H
-#define MARBLE_TILELEVELRANGEWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -45,6 +44,4 @@ class DIGIKAM_EXPORT TileLevelRangeWidget: public QWidget
     Private * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

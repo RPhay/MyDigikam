@@ -4,9 +4,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_STORAGEPOLICY_H
-#define MARBLE_STORAGEPOLICY_H
-
+#pragma once
 
 #include <QObject>
 
@@ -44,6 +42,4 @@ class StoragePolicy : public QObject
     Q_DISABLE_COPY( StoragePolicy )
 };
 
-}
-
-#endif
+} // namespace Marble

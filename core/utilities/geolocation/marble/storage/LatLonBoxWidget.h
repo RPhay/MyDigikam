@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2007 Torsten Rahn <tackat@kde.org>
 
-#ifndef MARBLE_LATLONBOXWIDGET_H
-#define MARBLE_LATLONBOXWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -36,6 +35,4 @@ class DIGIKAM_EXPORT LatLonBoxWidget: public QWidget
     Private * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

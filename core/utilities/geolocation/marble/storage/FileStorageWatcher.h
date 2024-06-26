@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_FILESTORAGEWATCHER_H
-#define MARBLE_FILESTORAGEWATCHER_H
+#pragma once
 
 #include <QThread>
 #include <QMutex>
@@ -147,6 +146,4 @@ class FileStorageWatcher : public QThread
     bool m_quitting;
 };
 
-}
-
-#endif
+} // namespace Marble

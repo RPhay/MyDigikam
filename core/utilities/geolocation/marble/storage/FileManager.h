@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
 //
 
-#ifndef MARBLE_FILEMANAGER_H
-#define MARBLE_FILEMANAGER_H
+#pragma once
 
 #include "GeoDataDocument.h"
 
@@ -88,6 +87,4 @@ class DIGIKAM_EXPORT FileManager : public QObject
     FileManagerPrivate *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

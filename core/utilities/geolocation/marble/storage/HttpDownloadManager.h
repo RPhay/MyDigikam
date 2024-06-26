@@ -9,8 +9,7 @@
 // The HttpDownloadManager manages http downloads.
 //
 
-#ifndef MARBLE_HTTPDOWNLOADMANAGER_H
-#define MARBLE_HTTPDOWNLOADMANAGER_H
+#pragma once
 
 #include <QObject>
 
@@ -108,6 +107,4 @@ class DIGIKAM_EXPORT HttpDownloadManager : public QObject
     Q_PRIVATE_SLOT( d, void startRetryTimer() )
 };
 
-}
-
-#endif // MARBLE_HTTPDOWNLOADMANAGER_H
+} // namespace Marble

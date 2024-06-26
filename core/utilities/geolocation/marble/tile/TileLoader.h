@@ -3,8 +3,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_TILELOADER_H
-#define MARBLE_TILELOADER_H
+#pragma once
 
 #include <QObject>
 
@@ -81,6 +80,4 @@ class TileLoader: public QObject
     PluginManager const * m_pluginManager;
 };
 
-}
-
-#endif
+} // namespace Marble

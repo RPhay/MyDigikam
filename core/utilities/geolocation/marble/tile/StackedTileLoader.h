@@ -7,8 +7,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_STACKEDTILELOADER_H
-#define MARBLE_STACKEDTILELOADER_H
+#pragma once
 
 #include <QObject>
 
@@ -130,6 +129,4 @@ class StackedTileLoader : public QObject
         StackedTileLoaderPrivate* const d = nullptr;
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -5,8 +5,7 @@
     SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 */
 
-#ifndef MARBLE_VECTORTILEMODEL_H
-#define MARBLE_VECTORTILEMODEL_H
+#pragma once
 
 #include <QObject>
 #include <QRunnable>
@@ -113,6 +112,4 @@ private:
     bool m_deleteDocumentsLater;
 };
 
-}
-
-#endif // MARBLE_VECTORTILEMODEL_H
+} // namespace Marble

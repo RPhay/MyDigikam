@@ -6,8 +6,7 @@
  SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_TILE_H
-#define MARBLE_TILE_H
+#pragma once
 
 #include "TileId.h"
 
@@ -65,6 +64,4 @@ inline TileId const & Tile::id() const
     return m_id;
 }
 
-}
-
-#endif
+} // namespace Marble

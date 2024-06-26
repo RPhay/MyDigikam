@@ -8,8 +8,7 @@
 // The TileCreatorDialog displays the progress of the tile creation.
 //
 
-#ifndef MARBLE_TILECREATORDIALOG_H
-#define MARBLE_TILECREATORDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -44,6 +43,4 @@ private Q_SLOTS:
     TileCreatorDialogPrivate  * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

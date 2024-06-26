@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_DOWNLOADQUEUESET_H
-#define MARBLE_DOWNLOADQUEUESET_H
+#pragma once
 
 #include <QList>
 #include <QQueue>
@@ -133,6 +132,4 @@ class DownloadQueueSet: public QObject
     QSet<QString> m_jobBlackList;
 };
 
-}
-
-#endif
+} // namespace Marble

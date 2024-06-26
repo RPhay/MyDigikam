@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_TEXTURETILE_H
-#define MARBLE_TEXTURETILE_H
+#pragma once
 
 #include <QImage>
 
@@ -87,6 +86,4 @@ inline int TextureTile::byteCount() const
     return m_image.sizeInBytes();
 }
 
-}
-
-#endif // MARBLE_TEXTURETILE_H
+} // namespace Marble

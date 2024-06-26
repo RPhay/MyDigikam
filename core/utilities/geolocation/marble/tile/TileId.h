@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_TILEID_H
-#define MARBLE_TILEID_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -101,10 +100,8 @@ inline uint qHash( TileId const& tid )
     return ::qHash( tmp ) ^ tid.mapThemeIdHash();
 }
 
-}
+} // namespace Marble
 
 #ifndef QT_NO_DEBUG_STREAM
 QDebug operator<<( QDebug, const Marble::TileId & );
-#endif
-
 #endif

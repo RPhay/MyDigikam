@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_DOWNLOADREGION_H
-#define MARBLE_DOWNLOADREGION_H
+#pragma once
 
 #include <QObject>
 #include <QVector>
@@ -51,6 +50,4 @@ class DIGIKAM_EXPORT DownloadRegion : public QObject
     DownloadRegionPrivate* const d = nullptr;
 };
 
-}
-
-#endif
+} // namespace Marble

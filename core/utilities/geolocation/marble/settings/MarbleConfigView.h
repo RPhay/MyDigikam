@@ -13,8 +13,7 @@
  *
  * ============================================================ */
 
-#ifndef MARBLE_CONFIG_VIEW_H
-#define MARBLE_CONFIG_VIEW_H
+#pragma once
 
 // Qt includes
 
@@ -54,5 +53,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_CONFIG_VIEW_H

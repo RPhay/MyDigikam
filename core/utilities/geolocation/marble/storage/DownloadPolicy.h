@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#ifndef MARBLE_DOWNLOADPOLICY_H
-#define MARBLE_DOWNLOADPOLICY_H
+#pragma once
 
 #include <QString>
 #include <QStringList>
@@ -64,6 +63,4 @@ inline bool operator==( const DownloadPolicy & lhs, const DownloadPolicy & rhs )
     return lhs.m_key == rhs.m_key && lhs.m_maximumConnections == rhs.m_maximumConnections;
 }
 
-}
-
-#endif
+} // namespace Marble

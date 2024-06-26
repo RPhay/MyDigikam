@@ -7,8 +7,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_TILELOADERHELPER_H
-#define MARBLE_TILELOADERHELPER_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -62,6 +61,4 @@ namespace TileLoaderHelper
     DIGIKAM_EXPORT int columnToLevel( int levelZeroColumns, int column );
 }
 
-}
-
-#endif // MARBLE_TILELOADERHELPER_H
+} // namespace Marble

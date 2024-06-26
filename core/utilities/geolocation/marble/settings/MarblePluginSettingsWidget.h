@@ -14,8 +14,7 @@
  *
  * ============================================================ */
 
-#ifndef MARBLE_PLUGIN_SETTINGS_WIDGET_H
-#define MARBLE_PLUGIN_SETTINGS_WIDGET_H
+#pragma once
 
 // Qt includes
 
@@ -69,5 +68,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_PLUGIN_SETTINGS_WIDGET_H
