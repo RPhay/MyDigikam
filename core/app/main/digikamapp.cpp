@@ -418,7 +418,8 @@ void DigikamApp::show()
         QString msg = i18n("ExifTool is not available in your digiKam installation or "
                            "is not working correctly. Go to the digiKam settings and "
                            "check the availability of the ExifTool binary file in "
-                           "the metadata section.");
+                           "the metadata section.\nError message: %1",
+                           parser->currentErrorString());
 
         Q_EMIT signalNotificationError(msg, DNotificationWidget::Warning);
     }
