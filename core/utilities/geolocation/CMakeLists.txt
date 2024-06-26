@@ -7,4 +7,4 @@
 add_subdirectory(geoiface)
 add_subdirectory(mapsearches)
 add_subdirectory(geomapwrapper)
-add_subdirectory(marble)
+add_subdirectory(engine)
