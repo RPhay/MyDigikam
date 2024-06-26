@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMTAGWRITER_H
-#define MARBLE_OSMTAGWRITER_H
+#pragma once
 
 #include "GeoTagWriter.h"
 
@@ -18,6 +17,4 @@ public:
 };
 
 }
-
-#endif
 

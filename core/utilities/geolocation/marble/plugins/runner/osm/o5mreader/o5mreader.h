@@ -1,13 +1,10 @@
 // SPDX-FileCopyrightText: 2012-2015 Pavel Klinger
 // SPDX-License-Identifier: MIT
 
-
-#ifndef O5MREADER_H
-#define O5MREADER_H
+#pragma once
 
 #include <cstdint>
 #include <cstdio>
-
 
 #define O5MREADER_RET_OK 1
 #define O5MREADER_RET_ERR 0
@@ -26,7 +23,6 @@
 #define O5MREADER_DS_SYNC 0xee
 #define O5MREADER_DS_JUMP 0xef
 #define O5MREADER_DS_RESET 0xff
-
 
 #define O5MREADER_ERR_CODE_OK 0
 #define O5MREADER_ERR_CODE_FILE_HAS_WRONG_START 1
@@ -103,5 +99,3 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader *pReader, uint64_t *refId, u
 #if defined (__cplusplus)
 }
 #endif
-
-#endif // O5MREADER_H

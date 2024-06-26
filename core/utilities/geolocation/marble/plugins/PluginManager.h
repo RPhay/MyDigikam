@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-#ifndef MARBLE_PLUGINMANAGER_H
-#define MARBLE_PLUGINMANAGER_H
+#pragma once
 
 #include <QObject>
 #include <QList>
@@ -140,6 +139,4 @@ private:
     PluginManagerPrivate* const d = nullptr;
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_KML_PARSER_H
-#define MARBLE_KML_PARSER_H
+#pragma once
 
 #include "GeoParser.h"
 
@@ -26,5 +25,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_KML_PARSER_H

@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Jens-Michael Hoffmann <jmho@c-xx.com>
 //
 
-#ifndef MARBLE_ATMOSPHERE_PLUGIN_H
-#define MARBLE_ATMOSPHERE_PLUGIN_H
+#pragma once
 
 #include "RenderPlugin.h"
 
@@ -72,5 +71,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_ATMOSPHERE_PLUGIN_H

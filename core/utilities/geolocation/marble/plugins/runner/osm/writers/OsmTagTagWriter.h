@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMTAGTAGWRITER_H
-#define MARBLE_OSMTAGTAGWRITER_H
+#pragma once
 
 #include <QSet>
 
@@ -28,7 +27,5 @@ private:
 };
 
 }
-
-#endif
 
 

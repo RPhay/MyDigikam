@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_OSMNOMINATIMREVERSEGEOCODINGRUNNER_H
-#define MARBLE_OSMNOMINATIMREVERSEGEOCODINGRUNNER_H
+#pragma once
 
 #include "ReverseGeocodingRunner.h"
 #include "GeoDataCoordinates.h"
@@ -53,5 +52,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_OSMNOMINATIMREVERSEGEOCODINGRUNNER_H

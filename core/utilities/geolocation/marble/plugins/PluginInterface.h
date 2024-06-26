@@ -7,8 +7,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_PLUGIN_INTERFACE_H
-#define MARBLE_PLUGIN_INTERFACE_H
+#pragma once
 
 // Qt includes
 
@@ -111,5 +110,3 @@ class DIGIKAM_EXPORT PluginInterface
 Q_DECLARE_TYPEINFO(Marble::PluginAuthor, Q_MOVABLE_TYPE);
 
 Q_DECLARE_INTERFACE( Marble::PluginInterface, "org.kde.Marble.PluginInterface/1.1" )
-
-#endif // MARBLE_PLUGIN_INTERFACE_H

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_COMPASS_FLOAT_ITEM_H
-#define MARBLE_COMPASS_FLOAT_ITEM_H
+#pragma once
 
 #include <QPixmap>
 
@@ -96,5 +95,3 @@ private Q_SLOTS:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_COMPASS_FLOAT_ITEM_H

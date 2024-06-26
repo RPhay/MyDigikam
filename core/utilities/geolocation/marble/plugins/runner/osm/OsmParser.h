@@ -6,8 +6,7 @@
 // SPDX-FileCopyrightText: 2015 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef OSMPARSER_H
-#define OSMPARSER_H
+#pragma once
 
 #include "OsmNode.h"
 #include "OsmWay.h"
@@ -32,5 +31,3 @@ private:
 };
 
 }
-
-#endif // OSMPARSER_H

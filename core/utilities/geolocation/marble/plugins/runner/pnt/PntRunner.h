@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_PNT_RUNNER_H
-#define MARBLE_PNT_RUNNER_H
+#pragma once
 
 #include "ParsingRunner.h"
 
@@ -23,5 +22,3 @@ public:
 };
 
 }
-
-#endif // MARBLE_PNT_RUNNER_H

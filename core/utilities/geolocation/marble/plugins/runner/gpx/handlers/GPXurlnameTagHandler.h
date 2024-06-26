@@ -3,15 +3,16 @@
 // SPDX-FileCopyrightText: 2009 Anders Lund <anders@alweb.dk>
 //
 
-#ifndef MARBLE_GPX_URLNAMETAGHANDLER_H
-#define MARBLE_GPX_URLNAMETAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace gpx
 {
+
 /// text ooccurs only in link in gpx 1.1
 class GPXurlnameTagHandler : public GeoTagHandler
 {
@@ -20,6 +21,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

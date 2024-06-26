@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_OSMCONVERTER_H
-#define MARBLE_OSMCONVERTER_H
+#pragma once
 
 #include <GeoDataCoordinates.h>
 
@@ -51,6 +50,3 @@ private:
 };
 
 }
-
-#endif
-

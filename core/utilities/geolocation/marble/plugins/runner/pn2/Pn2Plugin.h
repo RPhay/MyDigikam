@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 
-#ifndef MARBLE_PN2_PLUGIN_H
-#define MARBLE_PN2_PLUGIN_H
+#pragma once
 
 #include "ParseRunnerPlugin.h"
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_PN2_PLUGIN_H

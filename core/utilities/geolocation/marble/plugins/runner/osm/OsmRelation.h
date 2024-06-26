@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_OSMRELATION
-#define MARBLE_OSMRELATION
+#pragma once
 
 #include <QString>
 #include <QXmlStreamAttributes>
@@ -52,5 +51,3 @@ private:
 typedef QHash<qint64,OsmRelation> OsmRelations;
 
 }
-
-#endif

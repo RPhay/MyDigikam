@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef NAVIGATIONBUTTON_H
-#define NAVIGATIONBUTTON_H
+#pragma once
 
 #include <QAbstractButton>
 
@@ -43,5 +42,3 @@ private:
 };
 
 }
-
-#endif

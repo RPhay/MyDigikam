@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 
-#ifndef MARBLE_GPSBABEL_RUNNER_H
-#define MARBLE_GPSBABEL_RUNNER_H
+#pragma once
 
 #include "ParsingRunner.h"
 
@@ -22,5 +21,3 @@ public:
 };
 
 }
-
-#endif // MARBLE_GPSBABEL_RUNNER_H

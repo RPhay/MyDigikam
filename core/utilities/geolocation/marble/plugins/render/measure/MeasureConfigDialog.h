@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2014 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 
-#ifndef MEASURECONFIGDIALOG_H
-#define MEASURECONFIGDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MEASURECONFIGDIALOG_H

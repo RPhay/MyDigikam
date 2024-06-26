@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMNODETAGWRITER_H
-#define MARBLE_OSMNODETAGWRITER_H
+#pragma once
 
 #include "translators/OsmConverter.h"
 
@@ -26,6 +25,4 @@ private:
 };
 
 }
-
-#endif
 

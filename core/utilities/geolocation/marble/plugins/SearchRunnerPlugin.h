@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_SEARCHRUNNERPLUGIN_H
-#define MARBLE_SEARCHRUNNERPLUGIN_H
+#pragma once
 
 #include <QObject>
 #include "PluginInterface.h"
@@ -65,11 +64,9 @@ protected:
 
 private:
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_INTERFACE( Marble::SearchRunnerPlugin, "org.kde.Marble.SearchRunnerPlugin/1.01" )
-
-#endif // MARBLE_SEARCHRUNNERPLUGIN_H

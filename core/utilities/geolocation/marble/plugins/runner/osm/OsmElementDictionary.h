@@ -3,12 +3,11 @@
 // SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
 //
 
-#ifndef MARBLE_OSMELEMENTDICTIONARY_H
-#define MARBLE_OSMELEMENTDICTIONARY_H
-
+#pragma once
 
 namespace Marble
 {
+
 namespace osm
 {
 
@@ -28,6 +27,5 @@ extern const char osmTag_relation[];
 extern const char osmTag_member[];
 extern const char osmTag_tag[];
 }
-}
 
-#endif
+}

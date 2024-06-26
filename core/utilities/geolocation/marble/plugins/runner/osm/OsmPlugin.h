@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_OSM_PLUGIN_H
-#define MARBLE_OSM_PLUGIN_H
+#pragma once
 
 #include "ParseRunnerPlugin.h"
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_OSM_PLUGIN_H

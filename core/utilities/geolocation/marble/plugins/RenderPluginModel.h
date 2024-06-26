@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_RENDER_PLUGIN_MODEL_H
-#define MARBLE_RENDER_PLUGIN_MODEL_H
+#pragma once
 
 #include <QStandardItemModel>
 #include <QList>
@@ -79,11 +78,9 @@ public Q_SLOTS:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 
     friend class Private;
 };
 
-}
-
-#endif // MARBLE_RENDER_PLUGIN_MODEL_H
+} // namespace Marble

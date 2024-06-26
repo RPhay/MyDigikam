@@ -4,13 +4,13 @@
 // SPDX-FileCopyrightText: 2009 Thibaut GRIDEL <tgridel@free.fr>
 //
 
-#ifndef MARBLE_GPX_DESCTAGHANDLER_H
-#define MARBLE_GPX_DESCTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace gpx
 {
 
@@ -21,6 +21,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

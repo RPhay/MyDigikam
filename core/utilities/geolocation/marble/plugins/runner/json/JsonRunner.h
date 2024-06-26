@@ -5,8 +5,7 @@
     SPDX-FileCopyrightText: 2019 John Zaitseff <J.Zaitseff@zap.org.au>
 */
 
-#ifndef MARBLE_JSON_RUNNER_H
-#define MARBLE_JSON_RUNNER_H
+#pragma once
 
 #include "ParsingRunner.h"
 
@@ -26,5 +25,3 @@ public:
 };
 
 }
-
-#endif // MARBLE_JSON_RUNNER_H

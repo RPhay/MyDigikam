@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMOBJECTATTRIBUTEWRITER_H
-#define MARBLE_OSMOBJECTATTRIBUTEWRITER_H
+#pragma once
 
 namespace Marble
 {
@@ -22,6 +21,4 @@ public:
 };
 
 }
-
-#endif
 

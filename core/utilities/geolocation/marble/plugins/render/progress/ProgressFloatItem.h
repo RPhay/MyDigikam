@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_PROGRESS_FLOAT_ITEM_H
-#define MARBLE_PROGRESS_FLOAT_ITEM_H
+#pragma once
 
 #include <QMutex>
 #include <QTimer>
@@ -101,5 +100,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_PROGRESS_FLOAT_ITEM_H

@@ -2,13 +2,11 @@
 //
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 
-#ifndef MARBLE_PN2_RUNNER_H
-#define MARBLE_PN2_RUNNER_H
+#pragma once
 
 #include <QDataStream>
 
 #include "ParsingRunner.h"
-
 
 namespace Marble
 {
@@ -42,5 +40,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_PN2_RUNNER_H

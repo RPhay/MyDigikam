@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_OVERVIEW_MAP_H
-#define MARBLE_OVERVIEW_MAP_H
+#pragma once
 
 #include <QHash>
 #include <QColor>
@@ -129,5 +128,3 @@ private Q_SLOTS:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_OVERVIEW_MAP_H

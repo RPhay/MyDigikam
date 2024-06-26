@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
 //
 
-#ifndef MARBLE_RENDERPLUGININTERFACE_H
-#define MARBLE_RENDERPLUGININTERFACE_H
+#pragma once
 
 #include "PluginInterface.h"
 #include "LayerInterface.h"
@@ -61,8 +60,6 @@ class RenderPluginInterface: public PluginInterface, public LayerInterface
     virtual QString renderPolicy() const = 0;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_INTERFACE( Marble::RenderPluginInterface, "org.kde.Marble.RenderPluginInterface/1.09" )
-
-#endif

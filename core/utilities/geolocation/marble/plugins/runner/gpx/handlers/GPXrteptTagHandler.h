@@ -5,13 +5,13 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef MARBLE_GPX_RTEPTTAGHANDLER_H
-#define MARBLE_GPX_RTEPTTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace gpx
 {
 
@@ -22,6 +22,5 @@ public:
 };
 
 }
-}
 
-#endif
+}

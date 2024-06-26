@@ -6,8 +6,7 @@
 // SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
 //
 
-#ifndef MARBLE_RENDERPLUGIN_H
-#define MARBLE_RENDERPLUGIN_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -15,7 +14,6 @@
 
 #include "RenderPluginInterface.h"
 #include "digikam_export.h"
-
 
 class QAction;
 class QActionGroup;
@@ -328,12 +326,12 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
 
  private:
     Q_DISABLE_COPY( RenderPlugin )
+
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
 #define MARBLE_PLUGIN(T) public:\
     RenderPlugin* newInstance( const MarbleModel *marbleModel ) const override { return new T( marbleModel ); }
-}
 
-#endif
+} // namespace Marble

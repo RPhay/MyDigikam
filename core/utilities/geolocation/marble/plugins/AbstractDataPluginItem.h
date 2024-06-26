@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_ABSTRACTDATAPLUGINITEM_H
-#define MARBLE_ABSTRACTDATAPLUGINITEM_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -90,9 +89,7 @@ class DIGIKAM_EXPORT AbstractDataPluginItem : public QObject, public BillboardGr
     qreal addedAngularResolution() const;
     void setAddedAngularResolution( qreal resolution );
 
-    AbstractDataPluginItemPrivate * const d;
+    AbstractDataPluginItemPrivate* const d = nullptr;
 };
 
 } // Marble namespace
-
-#endif

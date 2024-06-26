@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_CACHE_RUNNER_H
-#define MARBLE_CACHE_RUNNER_H
+#pragma once
 
 #include "ParsingRunner.h"
 
@@ -23,5 +22,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_CACHE_RUNNER_H

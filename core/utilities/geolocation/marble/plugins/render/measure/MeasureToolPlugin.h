@@ -9,8 +9,7 @@
 // MeasureToolPlugin enables Marble to set and display measure points
 //
 
-#ifndef MARBLE_MEASURE_TOOL_PLUGIN_H
-#define MARBLE_MEASURE_TOOL_PLUGIN_H
+#pragma once
 
 #include <QFont>
 #include <QPen>
@@ -149,5 +148,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_MEASURE_TOOL_PLUGIN_H

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_ABSTRACTDATAPLUGIN_H
-#define MARBLE_ABSTRACTDATAPLUGIN_H
+#pragma once
 
 // Marble
 #include "digikam_export.h"
@@ -125,9 +124,8 @@ class DIGIKAM_EXPORT AbstractDataPlugin : public RenderPlugin
     void favoritesModelChanged();
 
  private:
-    AbstractDataPluginPrivate * const d;
+
+    AbstractDataPluginPrivate* const d = nullptr;
 };
 
-}
-
-#endif
+} // namespace Marble

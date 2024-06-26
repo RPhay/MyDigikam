@@ -5,8 +5,7 @@
     SPDX-FileCopyrightText: 2019 John Zaitseff <J.Zaitseff@zap.org.au>
 */
 
-#ifndef MARBLE_JSON_PLUGIN_H
-#define MARBLE_JSON_PLUGIN_H
+#pragma once
 
 #include "ParseRunnerPlugin.h"
 
@@ -43,5 +42,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif

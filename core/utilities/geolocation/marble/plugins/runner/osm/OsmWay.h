@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_OSMWAY
-#define MARBLE_OSMWAY
+#pragma once
 
 #include <QSet>
 #include <QString>
@@ -52,5 +51,3 @@ private:
 typedef QHash<qint64,OsmWay> OsmWays;
 
 }
-
-#endif

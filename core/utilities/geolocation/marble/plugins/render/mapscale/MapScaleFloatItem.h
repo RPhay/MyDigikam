@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_MAP_SCALE_FLOAT_ITEM_H
-#define MARBLE_MAP_SCALE_FLOAT_ITEM_H
+#pragma once
 
 #include "AbstractFloatItem.h"
 #include "DialogConfigurationInterface.h"
@@ -113,5 +112,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_MAP_SCALE_FLOAT_ITEM_H

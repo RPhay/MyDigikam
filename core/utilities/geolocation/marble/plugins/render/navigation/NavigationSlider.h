@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef NAVIGATIONSLIDER_H
-#define NAVIGATIONSLIDER_H
+#pragma once
 
 #include <QAbstractSlider>
 #include <QPixmap>
@@ -47,5 +46,3 @@ private:
 };
 
 }
-
-#endif

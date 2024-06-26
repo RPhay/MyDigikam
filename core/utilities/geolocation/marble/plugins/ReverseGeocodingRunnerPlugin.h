@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_REVERSEGEOCODINGRUNNERPLUGIN_H
-#define MARBLE_REVERSEGEOCODINGRUNNERPLUGIN_H
+#pragma once
 
 #include <QObject>
 #include "PluginInterface.h"
@@ -67,11 +66,9 @@ protected:
 
 private:
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_INTERFACE( Marble::ReverseGeocodingRunnerPlugin, "org.kde.Marble.ReverseGeocodingRunnerPlugin/1.01" )
-
-#endif // MARBLE_REVERSEGEOCODINGRUNNERPLUGIN_H

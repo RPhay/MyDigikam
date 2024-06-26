@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_PLUGINITEMDELEGATE_H
-#define MARBLE_PLUGINITEMDELEGATE_H
+#pragma once
 
 #include <QAbstractItemDelegate>
 
@@ -80,6 +79,4 @@ class PluginItemDelegate : public QAbstractItemDelegate
     QIcon m_configIcon;
 };
 
-}
-
-#endif
+} // namespace Marble

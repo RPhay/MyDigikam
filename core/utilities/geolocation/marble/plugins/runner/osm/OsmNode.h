@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_OSMNODE
-#define MARBLE_OSMNODE
+#pragma once
 
 #include <QString>
 
@@ -38,5 +37,3 @@ private:
 typedef QHash<qint64,OsmNode> OsmNodes;
 
 }
-
-#endif

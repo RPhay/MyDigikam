@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMWAYTAGWRITER_H
-#define MARBLE_OSMWAYTAGWRITER_H
+#pragma once
 
 namespace Marble
 {
@@ -22,7 +21,3 @@ public:
 };
 
 }
-
-#endif
-
-

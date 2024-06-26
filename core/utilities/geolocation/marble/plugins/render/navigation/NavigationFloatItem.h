@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef MARBLE_NAVIGATION_FLOAT_ITEM_H
-#define MARBLE_NAVIGATION_FLOAT_ITEM_H
+#pragma once
 
 #include <QMenu>
 
@@ -118,5 +117,3 @@ private:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_NAVIGATION_FLOAT_ITEM_H

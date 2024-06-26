@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 //
 
-#ifndef ARROWDISCWIDGET_H
-#define ARROWDISCWIDGET_H
+#pragma once
 
 #include <QWidget>
 #include <QPixmap>
@@ -52,5 +51,3 @@ private:
 };
 
 }
-
-#endif

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
 //
 
-#ifndef MARBLE_O5MWRITER_H
-#define MARBLE_O5MWRITER_H
+#pragma once
 
 #include "OsmConverter.h"
 #include "GeoWriterBackend.h"
@@ -49,5 +48,3 @@ private:
 };
 
 }
-
-#endif

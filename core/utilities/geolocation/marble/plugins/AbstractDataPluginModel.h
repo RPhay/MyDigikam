@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
 //
 
-#ifndef MARBLE_ABSTRACTDATAPLUGINMODEL_H
-#define MARBLE_ABSTRACTDATAPLUGINMODEL_H
+#pragma once
 
 #include <QObject>
 #include <QList>
@@ -177,10 +176,9 @@ public Q_SLOTS:
     void favoriteItemsOnlyChanged();
 
  private:
-    AbstractDataPluginModelPrivate * const d;
+
+    AbstractDataPluginModelPrivate* const d = nullptr;
     friend class AbstractDataPluginModelPrivate;
 };
 
-}
-
-#endif
+} // namespace Marble

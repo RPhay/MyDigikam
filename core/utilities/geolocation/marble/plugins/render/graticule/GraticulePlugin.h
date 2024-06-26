@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_GRATICULE_PLUGIN_H
-#define MARBLE_GRATICULE_PLUGIN_H
+#pragma once
 
 #include <QMap>
 #include <QHash>
@@ -215,5 +214,3 @@ class GraticulePlugin : public RenderPlugin,
 };
 
 } // namespace Marble
-
-#endif // MARBLE_GRATICULEPLUGIN_H

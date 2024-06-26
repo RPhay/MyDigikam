@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_PARSERUNNERPLUGIN_H
-#define MARBLE_PARSERUNNERPLUGIN_H
+#pragma once
 
 #include <QObject>
 #include "PluginInterface.h"
@@ -55,11 +54,9 @@ public:
 
 private:
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
-}
+} // namespace Marble
 
 Q_DECLARE_INTERFACE( Marble::ParseRunnerPlugin, "org.kde.Marble.ParseRunnerPlugin/1.01" )
-
-#endif // MARBLE_PARSERUNNERPLUGIN_H

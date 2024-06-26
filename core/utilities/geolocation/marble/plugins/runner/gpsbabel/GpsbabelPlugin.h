@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
 
-#ifndef MARBLE_GPSBABEL_PLUGIN_H
-#define MARBLE_GPSBABEL_PLUGIN_H
+#pragma once
 
 #include "ParseRunnerPlugin.h"
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_GPSBABEL_PLUGIN_H

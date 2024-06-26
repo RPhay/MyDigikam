@@ -5,8 +5,7 @@
     SPDX-FileCopyrightText: 2019 John Zaitseff <J.Zaitseff@zap.org.au>
 */
 
-#ifndef MARBLE_JSON_PARSER_H
-#define MARBLE_JSON_PARSER_H
+#pragma once
 
 class QIODevice;
 class QJsonObject;
@@ -71,5 +70,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_JSON_PARSER_H

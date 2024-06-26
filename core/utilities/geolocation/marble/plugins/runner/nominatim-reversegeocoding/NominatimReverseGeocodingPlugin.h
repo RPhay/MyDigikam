@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-#ifndef MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H
-#define MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H
+#pragma once
 
 #include "ReverseGeocodingRunnerPlugin.h"
 
@@ -40,5 +39,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif // MARBLE_NOMINATIM_REVERSE_GEOCODING_PLUGIN_H

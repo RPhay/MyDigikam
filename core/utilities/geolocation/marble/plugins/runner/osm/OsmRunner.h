@@ -2,8 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLEOSMRUNNER_H
-#define MARBLEOSMRUNNER_H
+#pragma once
 
 #include "ParsingRunner.h"
 
@@ -19,4 +18,3 @@ public:
 };
 
 }
-#endif // MARBLEOSMRUNNER_H

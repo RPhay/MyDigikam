@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_OSMPBFPARSER_H
-#define MARBLE_OSMPBFPARSER_H
+#pragma once
 
 #include "OsmNode.h"
 #include "OsmWay.h"
@@ -39,5 +38,3 @@ private:
 };
 
 }
-
-#endif // MARBLE_OSMPBFPARSER_H

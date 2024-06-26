@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_GPX_ELEMENT_DICTIONARY_H
-#define MARBLE_GPX_ELEMENT_DICTIONARY_H
+#pragma once
 
 namespace Marble
 {
@@ -52,5 +51,3 @@ namespace gpx
     GPX_DEFINE_TAG_HANDLER_11(Name)
 
 }
-
-#endif

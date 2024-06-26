@@ -3,13 +3,13 @@
 // SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
 //
 
-#ifndef MARBLE_GPX_HRTAGHANDLER_H
-#define MARBLE_GPX_HRTAGHANDLER_H
+#pragma once
 
 #include "GeoTagHandler.h"
 
 namespace Marble
 {
+
 namespace gpx
 {
 
@@ -20,6 +20,5 @@ public:
 };
 
 }
-}
 
-#endif
+}
