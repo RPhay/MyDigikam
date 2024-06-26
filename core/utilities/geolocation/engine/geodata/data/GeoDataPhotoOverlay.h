@@ -10,7 +10,8 @@
 #include "MarbleGlobal.h"
 #include "digikam_export.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataPhotoOverlayPrivate;
 class GeoDataPoint;
@@ -62,6 +63,7 @@ public:
     void setShape( Shape shape );
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataPhotoOverlay)
 };
 

@@ -16,7 +16,8 @@ namespace Marble
 
 class GeoDataGeometryPrivate
 {
-  public:
+public:
+
     GeoDataGeometryPrivate()
         : m_extrude( false ),
           m_altitudeMode( ClampToGround ),

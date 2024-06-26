@@ -31,6 +31,7 @@ public:
     void setPlayMode(PlayMode mode);
 
 private:
+
     PlayMode m_playMode;
 };
 

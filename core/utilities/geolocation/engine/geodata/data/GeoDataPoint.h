@@ -39,7 +39,8 @@ class GeoDataPointPrivate;
 
 class DIGIKAM_EXPORT GeoDataPoint : public GeoDataGeometry
 {
- public:
+public:
+
     using Notation = GeoDataCoordinates::Notation;
     using Unit = GeoDataCoordinates::Unit;
 
@@ -85,7 +86,8 @@ class DIGIKAM_EXPORT GeoDataPoint : public GeoDataGeometry
 
     virtual void detach();
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataPoint)
 };
 

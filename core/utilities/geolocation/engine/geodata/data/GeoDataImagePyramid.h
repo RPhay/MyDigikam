@@ -18,6 +18,7 @@ class GeoDataImagePyramidPrivate;
 class DIGIKAM_EXPORT GeoDataImagePyramid : public GeoDataObject
 {
 public:
+
     GeoDataImagePyramid();
 
     GeoDataImagePyramid( const GeoDataImagePyramid &other );
@@ -49,6 +50,7 @@ public:
     void setGridOrigin(GridOrigin gridOrigin);
 
 private:
+
     GeoDataImagePyramidPrivate* const d = nullptr;
 };
 

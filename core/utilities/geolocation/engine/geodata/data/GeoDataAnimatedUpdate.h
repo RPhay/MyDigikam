@@ -8,7 +8,8 @@
 #include "GeoDataTourPrimitive.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataAnimatedUpdatePrivate;
 class GeoDataUpdate;
@@ -40,6 +41,7 @@ public:
     void setUpdate( GeoDataUpdate *update );
 
 private:
+
     GeoDataAnimatedUpdatePrivate* const d = nullptr;
 };
 

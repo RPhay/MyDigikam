@@ -7,7 +7,8 @@
 #include "GeoDataVec2.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataScreenOverlayPrivate;
 
@@ -51,6 +52,7 @@ public:
     void setRotation( qreal rotation );
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataScreenOverlay)
 };
 

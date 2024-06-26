@@ -54,13 +54,15 @@ class DIGIKAM_EXPORT GeoDataOverlay: public GeoDataFeature
     QString absoluteIconFile() const;
 
 protected:
+
     explicit GeoDataOverlay(GeoDataOverlayPrivate *priv);
     GeoDataOverlay(const GeoDataOverlay& other, GeoDataOverlayPrivate *priv);
 
     bool equals(const GeoDataOverlay &other) const;
     using GeoDataFeature::equals;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataOverlay)
 };
 

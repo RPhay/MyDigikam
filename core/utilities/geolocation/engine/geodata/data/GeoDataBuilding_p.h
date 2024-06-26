@@ -8,7 +8,8 @@
 #include "GeoDataGeometry_p.h"
 #include "GeoDataMultiGeometry.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataBuildingPrivate : public GeoDataGeometryPrivate
 {

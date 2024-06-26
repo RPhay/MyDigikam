@@ -147,8 +147,9 @@ class DIGIKAM_EXPORT GeoDataLod : public GeoDataObject
 
     GeoDataLod &operator=( const GeoDataLod& other );
 
- protected:
-    GeoDataLodPrivate  * const d;
+protected:
+
+    GeoDataLodPrivate* const d = nullptr;
 };
 
 } // namespace Marble

@@ -270,7 +270,8 @@ class DIGIKAM_EXPORT GeoDataFeature : public GeoDataObject
     bool equals( const GeoDataFeature &other ) const;
     using GeoDataObject::equals;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataFeature)
 };
 

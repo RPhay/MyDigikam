@@ -91,6 +91,7 @@ class DIGIKAM_EXPORT GeoDataMultiGeometry : public GeoDataGeometry
     void unpack( QDataStream& stream ) override;
 
  private:
+
     Q_DECLARE_PRIVATE(GeoDataMultiGeometry)
 };
 

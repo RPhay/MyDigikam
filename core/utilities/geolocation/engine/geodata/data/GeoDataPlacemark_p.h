@@ -157,12 +157,13 @@ class GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
     }
 
     // Data for a Placemark in addition to those in GeoDataFeature.
-    GeoDataGeometry    *m_geometry;     // any GeoDataGeometry entry like locations
-    qint64              m_population;   // population in number of inhabitants
-    GeoDataPlacemarkExtendedData *m_placemarkExtendedData;
-    GeoDataPlacemark::GeoDataVisualCategory m_visualCategory; // the visual category
+    GeoDataGeometry* m_geometry                             = nullptr;  // any GeoDataGeometry entry like locations
+    qint64           m_population;                                      // population in number of inhabitants
+    GeoDataPlacemarkExtendedData* m_placemarkExtendedData   = nullptr;
+    GeoDataPlacemark::GeoDataVisualCategory m_visualCategory;           // the visual category
 
-    OsmPlacemarkData* m_osmPlacemarkData;
+    OsmPlacemarkData* m_osmPlacemarkData                    = nullptr;
+
     static const OsmPlacemarkData s_nullOsmPlacemarkData;
     static const GeoDataPlacemarkExtendedData s_nullPlacemarkExtendedData;
 };

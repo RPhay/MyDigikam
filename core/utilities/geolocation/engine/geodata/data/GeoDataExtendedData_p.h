@@ -20,6 +20,7 @@ namespace Marble
 class GeoDataExtendedDataPrivate
 {
   public:
+
     QHash< QString, GeoDataData > hash;
     QHash< QString, GeoDataSimpleArrayData* > arrayHash;
     QHash< QString, GeoDataSchemaData> schemaDataHash;

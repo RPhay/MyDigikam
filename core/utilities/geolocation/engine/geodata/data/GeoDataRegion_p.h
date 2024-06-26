@@ -56,11 +56,12 @@ class GeoDataRegionPrivate
         delete m_lod;
     }
 
-    GeoDataFeature * m_parent;
-    GeoDataLatLonAltBox * m_latLonAltBox;
-    GeoDataLod * m_lod;
+    GeoDataFeature* m_parent            = nullptr;
+    GeoDataLatLonAltBox* m_latLonAltBox = nullptr;
+    GeoDataLod* m_lod                   = nullptr;
 
   private:
+
     // Preventing usage of operator=
     GeoDataRegionPrivate &operator=( const GeoDataRegionPrivate& ) = delete;
 };

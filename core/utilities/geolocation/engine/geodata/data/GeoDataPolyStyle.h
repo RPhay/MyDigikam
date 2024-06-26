@@ -108,8 +108,9 @@ class DIGIKAM_EXPORT GeoDataPolyStyle : public GeoDataColorStyle
      */
     void unpack( QDataStream& stream ) override;
 
-  private:
-    GeoDataPolyStylePrivate * const d;
+private:
+
+    GeoDataPolyStylePrivate* const d = nullptr;
 };
 
 } // namespace Marble

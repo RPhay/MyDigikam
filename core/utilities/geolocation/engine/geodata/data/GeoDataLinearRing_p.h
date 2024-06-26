@@ -13,6 +13,7 @@ namespace Marble
 class GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
 {
   public:
+
     explicit GeoDataLinearRingPrivate( TessellationFlags f )
      : GeoDataLineStringPrivate( f )
     {

@@ -57,6 +57,7 @@ public:
     void unpack( QDataStream& stream ) override;
 
 private:
+
     GeoDataBalloonStylePrivate* const d = nullptr;
 };
 

@@ -9,7 +9,8 @@
 
 class QVariant;
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataSimpleArrayDataPrivate;
 
@@ -50,7 +51,8 @@ public:
     void unpack( QDataStream& stream ) override;
 
 private:
-    GeoDataSimpleArrayDataPrivate *d;
+
+    GeoDataSimpleArrayDataPrivate* d = nullptr;
 };
 
 } // namespace Marble

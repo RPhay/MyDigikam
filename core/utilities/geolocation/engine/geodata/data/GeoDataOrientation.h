@@ -53,6 +53,7 @@ public:
     void setRoll( double roll);
 
 protected:
+
     GeoDataOrientationPrivate* const d = nullptr;
 };
 

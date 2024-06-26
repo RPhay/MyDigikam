@@ -18,6 +18,7 @@ class GeoDataChangePrivate;
 class DIGIKAM_EXPORT GeoDataChange : public GeoDataContainer
 {
 public:
+
     GeoDataChange();
 
     GeoDataChange( const GeoDataChange &other );
@@ -35,6 +36,7 @@ public:
     const char* nodeType() const override;
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataChange)
 };
 

@@ -10,7 +10,8 @@
 #include "MarbleGlobal.h"
 #include "GeoDataLink.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataCoordinates;
 class GeoDataLink;
@@ -72,6 +73,7 @@ public:
     void setTargetHref(const QString &targetHref);
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataModel)
 };
 

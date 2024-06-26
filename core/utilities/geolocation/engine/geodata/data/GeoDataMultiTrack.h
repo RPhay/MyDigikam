@@ -86,7 +86,8 @@ public:
     // Unserialize the Placemark from @p stream
     void unpack( QDataStream& stream ) override;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataMultiTrack)
 };
 

@@ -57,7 +57,8 @@ class DIGIKAM_EXPORT GeoDataStyleSelector : public GeoDataObject
     GeoDataStyleSelector( const GeoDataStyleSelector& other );
 
  private:
-    GeoDataStyleSelectorPrivate * const d;
+
+    GeoDataStyleSelectorPrivate* const d = nullptr;
 };
 
 } // namespace Marble

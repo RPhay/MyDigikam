@@ -117,10 +117,12 @@ private:
                         bool& isDirPosHemisphere) const;
 
 private:
+
     qreal m_lon;
     qreal m_lat;
 
 private: // helper values
+
     const QString m_north;
     const QString m_east;
     const QString m_south;
@@ -129,6 +131,7 @@ private: // helper values
     const QString m_decimalPointExp;
 
 private: // helper value, lazily set, in initAll();
+
     QStringList m_northLocale;
     QStringList m_eastLocale;
     QStringList m_southLocale;

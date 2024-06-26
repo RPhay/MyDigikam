@@ -14,6 +14,7 @@ namespace Marble
 class GeoDataMultiTrackPrivate : public GeoDataGeometryPrivate
 {
   public:
+
     GeoDataMultiTrackPrivate()
     {
     }

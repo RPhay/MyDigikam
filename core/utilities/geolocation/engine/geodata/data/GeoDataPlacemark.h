@@ -694,7 +694,8 @@ class DIGIKAM_EXPORT GeoDataPlacemark: public GeoDataFeature
 
     static bool placemarkLayoutOrderCompare(const GeoDataPlacemark *a, const GeoDataPlacemark* b);
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataPlacemark)
 };
 

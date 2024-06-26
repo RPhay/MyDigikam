@@ -50,6 +50,7 @@ public:
     void setText( const QString &text );
 
 private:
+
     QString   m_text;     // Text of the snippet
     int       m_maxLines; // max of lines that are displayed
 };

@@ -13,7 +13,8 @@ namespace Marble
 
 class GeoDataTimeSpanPrivate
 {
-  public:
+public:
+
     GeoDataTimeStamp m_begin;
     GeoDataTimeStamp m_end;
 };

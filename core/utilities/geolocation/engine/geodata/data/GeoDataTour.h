@@ -40,8 +40,8 @@ public:
     static const GeoDataTour null;
 
 private:
-    Q_DECLARE_PRIVATE(GeoDataTour)
 
+    Q_DECLARE_PRIVATE(GeoDataTour)
 };
 
 } // namespace Marble

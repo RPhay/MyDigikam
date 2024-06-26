@@ -10,7 +10,8 @@
 #include <QImage>
 #include <QColor>
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataOverlayPrivate : public GeoDataFeaturePrivate
 {

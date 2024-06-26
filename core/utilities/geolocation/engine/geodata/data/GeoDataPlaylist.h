@@ -33,6 +33,7 @@ public:
     int size() const;
 
 private:
+
     QList<GeoDataTourPrimitive*> m_primitives;
 };
 

@@ -11,6 +11,7 @@
 
 namespace Marble
 {
+
 class GeoDataCameraPrivate;
 
 /**
@@ -102,9 +103,10 @@ public:
     const char* nodeType() const override;
 
     void detach();
-private:
-    GeoDataCameraPrivate *d;
 
+private:
+
+    GeoDataCameraPrivate* d = nullptr;
 };
 
 } // namespace Marble

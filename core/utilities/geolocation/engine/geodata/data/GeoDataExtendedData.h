@@ -136,7 +136,8 @@ class DIGIKAM_EXPORT GeoDataExtendedData : public GeoNode, public Serializable
     void unpack( QDataStream& stream ) override;
 
 private:
-    GeoDataExtendedDataPrivate * const d;
+
+    GeoDataExtendedDataPrivate* const d = nullptr;
 };
 
 } // namespace Marble

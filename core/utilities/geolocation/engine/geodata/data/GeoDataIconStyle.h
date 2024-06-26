@@ -92,8 +92,9 @@ class DIGIKAM_EXPORT GeoDataIconStyle : public GeoDataColorStyle
     void pack( QDataStream& stream ) const override;
     void unpack( QDataStream& stream ) override;
 
-  private:
-    GeoDataIconStylePrivate * const d;
+private:
+
+    GeoDataIconStylePrivate* const d = nullptr;
 };
 
 } // namespace Marble

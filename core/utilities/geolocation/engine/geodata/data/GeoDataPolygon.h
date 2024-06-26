@@ -217,7 +217,8 @@ class DIGIKAM_EXPORT GeoDataPolygon : public GeoDataGeometry
     int renderOrder() const;
     void setRenderOrder(int);
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataPolygon)
 };
 

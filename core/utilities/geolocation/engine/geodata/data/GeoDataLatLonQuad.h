@@ -9,7 +9,8 @@
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataLatLonQuadPrivate;
 
@@ -66,6 +67,7 @@ public:
     bool isValid() const;
 
 private:
+
     GeoDataLatLonQuadPrivate* const d = nullptr;
 };
 

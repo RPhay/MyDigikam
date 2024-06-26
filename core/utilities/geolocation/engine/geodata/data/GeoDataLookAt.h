@@ -109,9 +109,10 @@ namespace Marble
         const char* nodeType() const override;
 
         void detach();
-    private:
-        GeoDataLookAtPrivate *d;
 
+    private:
+
+        GeoDataLookAtPrivate* d = nullptr;
     };
 
 } // namespace Marble

@@ -12,7 +12,8 @@
 #include "GeoDataImagePyramid.h"
 #include "GeoDataViewVolume.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataPhotoOverlayPrivate : public GeoDataOverlayPrivate
 {

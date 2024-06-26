@@ -31,6 +31,7 @@ public:
     void setDelayedStart(double pause);
 
 private:
+
     QString m_href;
     double m_delayedStart;
 };

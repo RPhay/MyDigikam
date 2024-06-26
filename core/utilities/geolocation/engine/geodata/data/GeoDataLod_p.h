@@ -14,7 +14,8 @@ namespace Marble
 
 class GeoDataLodPrivate
 {
-  public:
+public:
+
     GeoDataLodPrivate()
          : m_minLodPixels( 0 ),
            m_maxLodPixels( -1 ),

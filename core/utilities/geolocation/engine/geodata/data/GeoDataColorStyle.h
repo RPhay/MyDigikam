@@ -116,8 +116,9 @@ class DIGIKAM_EXPORT GeoDataColorStyle : public GeoDataObject
      */
     static QString contrastColor(const QColor &color);
 
-  private:
-    GeoDataColorStylePrivate * const d;
+private:
+
+    GeoDataColorStylePrivate* const d = nullptr;
 };
 
 } // namespace Marble

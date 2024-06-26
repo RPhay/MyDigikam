@@ -21,7 +21,6 @@ class GeoDataLatLonAltBoxPrivate;
 
 class GeoDataLineString;
 
-
 /**
  * @short A class that defines a 3D bounding box for geographic data.
  *
@@ -127,8 +126,9 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
     /// Unserialize the contents of the feature from @p stream.
     void unpack( QDataStream& stream ) override;
 
- private:
-    GeoDataLatLonAltBoxPrivate  * const d;
+private:
+
+    GeoDataLatLonAltBoxPrivate* const d = nullptr;
 };
 
 uint DIGIKAM_EXPORT qHash(const GeoDataLatLonAltBox &box, uint seed = 0);

@@ -71,7 +71,8 @@ class DIGIKAM_EXPORT GeoDataStyleMap : public GeoDataStyleSelector,
     ~GeoDataStyleMap() override;
 
   private:
-    GeoDataStyleMapPrivate * const d;
+
+    GeoDataStyleMapPrivate* const d = nullptr;
 };
 
 } // namespace Marble

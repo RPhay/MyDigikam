@@ -27,6 +27,7 @@ public:
     void setDuration(double duration);
 
 private:
+
     double m_duration;
 };
 

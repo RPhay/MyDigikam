@@ -55,6 +55,7 @@ public:
     void setLatLonQuad( const GeoDataLatLonQuad &quad );
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataGroundOverlay)
 };
 

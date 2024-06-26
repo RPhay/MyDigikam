@@ -8,7 +8,8 @@
 #include "GeoDocument.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataAlias;
 class GeoDataResourceMapPrivate;
@@ -47,6 +48,7 @@ public:
     void setTargetHref( const QString& targetHref );
 
 private:
+
     GeoDataResourceMapPrivate* const d = nullptr;
 };
 

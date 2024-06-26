@@ -12,7 +12,6 @@
 #include <QString>
 #include <QDataStream>
 
-
 namespace Marble
 {
 
@@ -74,7 +73,8 @@ public:
     virtual void unpack( QDataStream &stream );
 
 private:
-    GeoDataSimpleDataPrivate * const d;
+
+    GeoDataSimpleDataPrivate* const d = nullptr;
 };
 
 } // namespace Marble

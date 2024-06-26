@@ -133,8 +133,10 @@ class DIGIKAM_EXPORT GeoDataRegion : public GeoDataObject
     GeoDataRegion &operator=( const GeoDataRegion& other );
 
  private:
+
     void swap( GeoDataRegion & other );
-    GeoDataRegionPrivate  *d;
+
+    GeoDataRegionPrivate* d = nullptr;
 };
 
 } // namespace Marble

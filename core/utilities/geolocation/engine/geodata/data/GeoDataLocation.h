@@ -10,7 +10,8 @@
 #include "GeoDataCoordinates.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataLocationPrivate;
 
@@ -19,6 +20,7 @@ class GeoDataLocationPrivate;
 class DIGIKAM_EXPORT GeoDataLocation: public GeoDataObject
 {
 public:
+
     GeoDataLocation();
 
     GeoDataLocation( const GeoDataLocation &other );
@@ -47,6 +49,7 @@ public:
     void setAltitude( qreal altitude );
 
 protected:
+
     GeoDataLocationPrivate* const d = nullptr;
 };
 

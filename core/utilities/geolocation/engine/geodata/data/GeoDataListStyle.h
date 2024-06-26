@@ -84,7 +84,9 @@ public:
     void unpack( QDataStream& stream ) override;
 
 private:
+
     friend class GeoDataItemIcon;
+
     GeoDataListStylePrivate* const d = nullptr;
 };
 

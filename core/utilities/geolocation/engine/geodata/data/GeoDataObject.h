@@ -4,7 +4,6 @@
 // SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-
 #pragma once
 
 #include "digikam_export.h"

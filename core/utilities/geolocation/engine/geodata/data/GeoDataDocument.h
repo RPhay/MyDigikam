@@ -184,6 +184,7 @@ public:
     void unpack( QDataStream& stream ) override;
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataDocument)
 };
 

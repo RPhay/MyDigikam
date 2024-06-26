@@ -10,11 +10,13 @@
 #include "GeoDataTypes.h"
 #include "GeoDataLatLonQuad.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataGroundOverlayPrivate : public GeoDataOverlayPrivate
 {
 public:
+
     double m_altitude;
 
     AltitudeMode m_altitudeMode;

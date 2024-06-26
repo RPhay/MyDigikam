@@ -69,7 +69,8 @@ class DIGIKAM_EXPORT GeoDataGeometry : public GeoDataObject
     using GeoDataObject::equals;
 
  protected:
-    GeoDataGeometryPrivate *d_ptr;
+
+    GeoDataGeometryPrivate* d_ptr = nullptr;
 };
 
 } // namespace Marble

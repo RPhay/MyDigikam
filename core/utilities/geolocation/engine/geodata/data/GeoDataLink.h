@@ -8,7 +8,8 @@
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataLinkPrivate;
 
@@ -76,6 +77,7 @@ public:
     void setHttpQuery(const QString &httpQuery);
 
 private:
+
     GeoDataLinkPrivate* const d = nullptr;
 };
 

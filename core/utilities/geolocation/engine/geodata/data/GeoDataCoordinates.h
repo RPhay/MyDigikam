@@ -421,9 +421,10 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     void unpack(QDataStream &stream);
 
  private:
+
     void detach();
 
-    GeoDataCoordinatesPrivate *d;
+    GeoDataCoordinatesPrivate* d = nullptr;
 
     static GeoDataCoordinates::Notation s_notation;
     static const GeoDataCoordinates null;

@@ -46,8 +46,10 @@ class DIGIKAM_EXPORT GeoDataTimePrimitive : public GeoDataObject
     GeoDataTimePrimitive();
     GeoDataTimePrimitive( const GeoDataTimePrimitive& other );
     ~GeoDataTimePrimitive() override;
+
 private:
-    GeoDataTimePrimitivePrivate * const d;
+
+    GeoDataTimePrimitivePrivate* const d = nullptr;
 };
 
 } // namespace Marble

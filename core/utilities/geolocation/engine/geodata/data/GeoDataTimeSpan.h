@@ -80,8 +80,9 @@ class DIGIKAM_EXPORT GeoDataTimeSpan : public GeoDataTimePrimitive
      */
     void unpack( QDataStream& stream ) override;
 
-  private:
-    GeoDataTimeSpanPrivate * const d;
+private:
+
+    GeoDataTimeSpanPrivate* const d = nullptr;
 };
 
 } // namespace Marble

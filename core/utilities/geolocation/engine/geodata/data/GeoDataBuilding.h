@@ -12,7 +12,9 @@
 
 #include "digikam_export.h"
 
-namespace Marble {
+namespace Marble
+{
+
 class GeoDataBuildingPrivate;
 
 /*!
@@ -133,6 +135,7 @@ public:
     void setEntries(const QVector<NamedEntry>& entries);
 
 private:
+
     GeoDataBuildingPrivate* const d = nullptr;
 };
 

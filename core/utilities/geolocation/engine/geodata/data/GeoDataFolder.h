@@ -45,6 +45,7 @@ class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
     GeoDataFeature * clone() const override;
 
  private:
+
     Q_DECLARE_PRIVATE(GeoDataFolder)
 };
 

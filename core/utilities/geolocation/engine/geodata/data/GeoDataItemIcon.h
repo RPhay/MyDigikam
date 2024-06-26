@@ -55,6 +55,7 @@ public:
     void setIcon( const QImage &icon );
 
 private:
+
     GeoDataItemIconPrivate* const d = nullptr;
 };
 

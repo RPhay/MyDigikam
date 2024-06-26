@@ -166,14 +166,16 @@ class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
      */
     void unpack( QDataStream& stream ) override;
 
- protected:
+protected:
+
     explicit GeoDataContainer(GeoDataContainerPrivate *priv);
     GeoDataContainer(const GeoDataContainer& other, GeoDataContainerPrivate *priv);
 
     bool equals( const GeoDataContainer &other ) const;
     using GeoDataFeature::equals;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(GeoDataContainer)
 };
 

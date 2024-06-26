@@ -8,7 +8,8 @@
 #include "GeoDataTourPrimitive.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataAbstractView;
 class GeoDataFlyToPrivate;
@@ -18,6 +19,7 @@ class GeoDataFlyToPrivate;
 class DIGIKAM_EXPORT GeoDataFlyTo: public GeoDataTourPrimitive
 {
 public:
+
     enum FlyToMode {
         Bounce,
         Smooth
@@ -51,6 +53,7 @@ public:
     void setFlyToMode( const FlyToMode flyToMode );
 
 private:
+
     GeoDataFlyToPrivate* const d = nullptr;
 };
 

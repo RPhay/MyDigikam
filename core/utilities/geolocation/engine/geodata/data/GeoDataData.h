@@ -84,8 +84,9 @@ class DIGIKAM_EXPORT GeoDataData : public GeoDataObject
     /// Unserialize the contents of the feature from @p stream.
     void unpack( QDataStream& stream ) override;
 
-  private:
-    GeoDataDataPrivate * const d;
+private:
+
+    GeoDataDataPrivate* const d = nullptr;
 };
 
 } // namespace Marble

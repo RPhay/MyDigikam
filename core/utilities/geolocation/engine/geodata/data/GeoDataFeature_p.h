@@ -198,10 +198,10 @@ class GeoDataFeaturePrivate
     QString       m_role;
 
     GeoDataStyle::Ptr m_style;
-    const GeoDataStyleMap* m_styleMap;
+    const GeoDataStyleMap* m_styleMap                         = nullptr;
 
     GeoDataExtendedData m_extendedData;
-    mutable GeoDataFeatureExtendedData* m_featureExtendedData;
+    mutable GeoDataFeatureExtendedData* m_featureExtendedData = nullptr;
 };
 
 } // namespace Marble

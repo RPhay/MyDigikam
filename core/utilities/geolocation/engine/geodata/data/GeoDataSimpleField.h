@@ -98,8 +98,8 @@ public:
     virtual void unpack( QDataStream& stream );
 
 private:
-    GeoDataSimpleFieldPrivate * const d;
 
+    GeoDataSimpleFieldPrivate* const d = nullptr;
 };
 
 } // namespace Marble

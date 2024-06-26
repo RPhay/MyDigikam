@@ -75,6 +75,7 @@ public:
     void setAbstractView( GeoDataAbstractView *abstractView );
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataNetworkLinkControl)
 };
 

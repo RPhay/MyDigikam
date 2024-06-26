@@ -225,7 +225,8 @@ class DIGIKAM_EXPORT GeoDataLatLonBox : public GeoDataObject
     void unpack( QDataStream& stream ) override;
 
  private:
-    GeoDataLatLonBoxPrivate  * const d;
+
+    GeoDataLatLonBoxPrivate* const d = nullptr;
     static const GeoDataLatLonBox empty;
 };
 

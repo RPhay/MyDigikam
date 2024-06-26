@@ -196,7 +196,7 @@ class GeoDataCoordinatesPrivate
     */
     static qreal lonLatToEasting( qreal lon, qreal lat );
 
-    Quaternion * m_q;
+    Quaternion* m_q = nullptr;
     qreal      m_lon;
     qreal      m_lat;
     qreal      m_altitude;     // in meters above sea level
@@ -208,7 +208,6 @@ class GeoDataCoordinatesPrivate
     static const qreal sm_semiMinorAxis;
     static const qreal sm_eccentricitySquared;
     static const qreal sm_utmScaleFactor;
-
 };
 
 inline bool GeoDataCoordinatesPrivate::operator==( const GeoDataCoordinatesPrivate &rhs ) const

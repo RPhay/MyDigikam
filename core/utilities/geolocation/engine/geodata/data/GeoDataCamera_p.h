@@ -14,7 +14,8 @@ namespace Marble
 
 class GeoDataCameraPrivate
 {
- public :
+public:
+
     GeoDataCameraPrivate()
         : m_coordinates(),
           m_roll( 0.0 ),

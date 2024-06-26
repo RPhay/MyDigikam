@@ -14,9 +14,9 @@
 #include "digikam_export.h"
 #include "GeoDataGeometry.h"
 
-
 namespace Marble
 {
+
 class GeoDataCoordinates;
 class GeoDataLineStringPrivate;
 
@@ -397,9 +397,11 @@ class DIGIKAM_EXPORT GeoDataLineString : public GeoDataGeometry
     void unpack( QDataStream& stream ) override;
 
  protected:
+
     explicit GeoDataLineString(GeoDataLineStringPrivate* priv);
 
  private:
+
     Q_DECLARE_PRIVATE(GeoDataLineString)
 };
 

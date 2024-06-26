@@ -11,12 +11,14 @@
 
 namespace Marble
 {
+
 class GeoDataRelationPrivate;
 enum class OsmType;
 
 class DIGIKAM_EXPORT GeoDataRelation: public GeoDataFeature
 {
 public:
+
     enum RelationType {
         UnknownType = 0,
         RouteRoad = 1 << 1,
@@ -61,9 +63,10 @@ public:
     bool containsAnyOf(const QSet<qint64> &memberIds) const;
 
 private:
-    GeoDataRelationPrivate* d_ptr;      // cppcheck-suppress duplInheritedMember
-    Q_DECLARE_PRIVATE(GeoDataRelation)
 
+    GeoDataRelationPrivate* d_ptr = nullptr;      // cppcheck-suppress duplInheritedMember
+
+    Q_DECLARE_PRIVATE(GeoDataRelation)
 };
 
 } // namespace Marble

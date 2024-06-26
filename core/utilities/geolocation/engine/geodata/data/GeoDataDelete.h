@@ -35,6 +35,7 @@ public:
     const char* nodeType() const override;
 
 private:
+
     Q_DECLARE_PRIVATE(GeoDataDelete)
 };
 

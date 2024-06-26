@@ -26,6 +26,7 @@ class GeoDataSimpleField;
 class DIGIKAM_EXPORT GeoDataSchema : public GeoDataObject
 {
 public:
+
     GeoDataSchema();
     explicit GeoDataSchema( const QHash<QString, GeoDataSimpleField>& simpleFields );
     GeoDataSchema( const GeoDataSchema& other );
@@ -69,8 +70,8 @@ public:
     void unpack( QDataStream& stream ) override;
 
 private:
-    GeoDataSchemaPrivate * const d;
 
+    GeoDataSchemaPrivate* const d = nullptr;
 };
 
 } // namespace Marble

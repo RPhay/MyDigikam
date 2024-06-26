@@ -75,7 +75,8 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
     void unpack( QDataStream& stream ) override;
 
   private:
-    GeoDataTimeStampPrivate * const d;
+
+    GeoDataTimeStampPrivate* const d = nullptr;
 };
 
 } // namespace Marble

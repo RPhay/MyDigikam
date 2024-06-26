@@ -55,9 +55,11 @@ class DIGIKAM_EXPORT GeoDataAbstractView : public GeoDataObject
     GeoDataCoordinates coordinates() const;
 
 private:
+
     GeoDataAbstractViewPrivate* const d = nullptr;
 
 protected:
+
     bool equals(const GeoDataAbstractView &other) const;
 
     using GeoDataObject::equals;

@@ -53,7 +53,7 @@ public:
         return *this;
     }
 
-    GeoDataPlaylist *m_playlist;
+    GeoDataPlaylist* m_playlist = nullptr;
 };
 
 } // namespace Marble

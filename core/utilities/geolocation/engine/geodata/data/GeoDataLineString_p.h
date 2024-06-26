@@ -14,7 +14,8 @@ namespace Marble
 
 class GeoDataLineStringPrivate : public GeoDataGeometryPrivate
 {
-  public:
+public:
+
     explicit GeoDataLineStringPrivate( TessellationFlags f )
         :  m_rangeCorrected( nullptr ),
            m_dirtyRange( true ),
@@ -77,7 +78,7 @@ class GeoDataLineStringPrivate : public GeoDataGeometryPrivate
 
     QVector<GeoDataCoordinates> m_vector;
 
-    mutable GeoDataLineString*  m_rangeCorrected;
+    mutable GeoDataLineString*  m_rangeCorrected = nullptr;
     mutable bool                m_dirtyRange;
 
     mutable bool                m_dirtyBox; // tells whether there have been changes to the
@@ -86,7 +87,6 @@ class GeoDataLineStringPrivate : public GeoDataGeometryPrivate
     TessellationFlags           m_tessellationFlags;
     mutable qreal  m_previousResolution;
     mutable quint8 m_level;
-
 };
 
 } // namespace Marble

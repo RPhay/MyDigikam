@@ -8,7 +8,8 @@
 #include "GeoDataFeature.h"
 #include "MarbleGlobal.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataLink;
 class GeoDataNetworkLinkPrivate;
@@ -49,6 +50,7 @@ public:
     void setLink(const GeoDataLink &link);
 
 private:
+
     GeoDataNetworkLinkPrivate* const d = nullptr;
 };
 
