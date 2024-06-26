@@ -20,6 +20,6 @@ class DgmlAvailableTagHandler : public GeoTagHandler
     GeoNode* parse(GeoParser&) const override;
 };
 
-}
+} // namespace dgml
 
-}
+} // namespace Marble

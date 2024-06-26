@@ -22,4 +22,4 @@ public:
 
 }
 
-}
+} // namespace Marble

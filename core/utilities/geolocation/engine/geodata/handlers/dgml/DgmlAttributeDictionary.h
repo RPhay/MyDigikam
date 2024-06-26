@@ -61,6 +61,7 @@ namespace dgml
     extern const char dgmlAttr_usage[];
     extern const char dgmlAttr_user[];
     extern const char dgmlAttr_width[];
-}
 
-}
+} // namespace dgml
+
+} // namespace Marble

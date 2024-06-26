@@ -70,4 +70,4 @@ namespace dgml
 // Helper macro
 #define DGML_DEFINE_TAG_HANDLER(Name) GEODATA_DEFINE_TAG_HANDLER(dgml, Dgml, Name, dgmlTag_nameSpace20)
 
-}
+} // namespace Marble

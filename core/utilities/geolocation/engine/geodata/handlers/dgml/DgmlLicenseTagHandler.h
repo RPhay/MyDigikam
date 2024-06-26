@@ -19,6 +19,6 @@ public:
     GeoNode* parse( GeoParser &parser ) const override;
 };
 
-}
+} // namespace dgml
 
-}
+} // namespace Marble

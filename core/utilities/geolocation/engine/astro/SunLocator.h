@@ -40,7 +40,8 @@ class DIGIKAM_EXPORT SunLocator : public QObject
     void positionChanged( qreal lon, qreal lat );
 
  private:
-    SunLocatorPrivate * const d;
+
+    SunLocatorPrivate* const d = nullptr;
 
     Q_DISABLE_COPY( SunLocator )
 };

@@ -16,7 +16,6 @@
 #include <iostream>
 #include "digikam_export.h"
 
-
 DIGIKAM_EXPORT double atan20 (double y, double x);
 
 class DIGIKAM_EXPORT Vec3

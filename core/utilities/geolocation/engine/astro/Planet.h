@@ -125,7 +125,8 @@ public:
     void setAtmosphereColor( const QColor& color );
 
 private:
-    PlanetPrivate * const d;
+
+    PlanetPrivate* const d = nullptr;
 };
 
 } //namespace Marble

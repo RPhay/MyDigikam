@@ -35,6 +35,6 @@ public:
     virtual GeoNode* parse(GeoParser&) const;
 };
 
-}
+} // namespace dgml
 
-}
+} // namespace Marble

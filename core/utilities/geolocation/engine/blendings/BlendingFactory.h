@@ -25,8 +25,10 @@ class BlendingFactory
     Blending const * findBlending( QString const & name ) const;
 
  private:
+
     Q_DISABLE_COPY(BlendingFactory)
-    SunLightBlending *const m_sunLightBlending;
+
+    SunLightBlending* const m_sunLightBlending = nullptr;
     QHash<QString, Blending const *> m_blendings;
 };
 
