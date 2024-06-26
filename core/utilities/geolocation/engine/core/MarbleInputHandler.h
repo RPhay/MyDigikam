@@ -178,7 +178,7 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
 
     Q_DISABLE_COPY(MarbleDefaultInputHandler)
     class Private;
-    Private * const d;      // cppcheck-suppress duplInheritedMember
+    Private* const d = nullptr;      // cppcheck-suppress duplInheritedMember
 };
 
 } // Namespace Marble

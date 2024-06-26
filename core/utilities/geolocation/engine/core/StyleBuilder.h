@@ -17,7 +17,9 @@
 class QFont;
 class QColor;
 
-namespace Marble {
+namespace Marble
+{
+
 class OsmPlacemarkData;
 
 class DIGIKAM_EXPORT StyleParameters
@@ -101,7 +103,7 @@ private:
     Q_DISABLE_COPY(StyleBuilder)
 
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
 } // Namespace Marble

@@ -15,10 +15,10 @@ class GeoPainter;
 class TextureColorizer;
 class ViewportParams;
 
-
 class TextureMapperInterface
 {
 public:
+
     TextureMapperInterface();
     virtual ~TextureMapperInterface();
 
@@ -31,6 +31,7 @@ public:
     void setRepaintNeeded();
 
 protected:
+
     bool m_repaintNeeded;
 };
 

@@ -95,6 +95,7 @@ public:
     int timezone() const;
 
  private:
+
     Q_DISABLE_COPY( MarbleClock )
 
     Q_PRIVATE_SLOT( d,  void timerTimeout() )

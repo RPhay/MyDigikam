@@ -47,10 +47,11 @@ private Q_SLOTS:
       */
     void startStillMode();
 
- private:
+private:
+
     Q_DISABLE_COPY( MarblePhysics )
 
-    MarblePhysicsPrivate* d;
+    MarblePhysicsPrivate* d = nullptr;
 };
 
 } // Namespace Marble

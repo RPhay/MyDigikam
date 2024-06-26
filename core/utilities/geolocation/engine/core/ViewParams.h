@@ -14,7 +14,6 @@
 
 #include "MarbleGlobal.h"
 
-
 namespace Marble
 {
 
@@ -45,8 +44,9 @@ class ViewParams
     void setShowClouds( bool const );
 
  private:
+
     Q_DISABLE_COPY( ViewParams )
-    ViewParamsPrivate * const d;
+    ViewParamsPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

@@ -136,7 +136,8 @@ class ViewportParams;
         void setSelection(const QRect& region);
 
     private:
-        MarbleMap *const m_map;
+
+        MarbleMap* const m_map = nullptr;
         MarblePhysics m_physics;
 
         bool m_animationsEnabled;

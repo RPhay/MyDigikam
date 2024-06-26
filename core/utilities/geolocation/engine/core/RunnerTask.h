@@ -84,10 +84,11 @@ Q_SIGNALS:
     void finished();
 
 private:
-    ParsingRunner *const m_runner;
+
+    ParsingRunner* const m_runner   = nullptr;
     QString m_fileName;
     DocumentRole m_role;
-    ParsingRunnerManager* m_manager;
+    ParsingRunnerManager* m_manager = nullptr;
 };
 
 } // Namespace Marble

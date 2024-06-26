@@ -10,7 +10,8 @@
 
 #include <QDebug>
 
-namespace Marble {
+namespace Marble
+{
 
 class DIGIKAM_EXPORT RenderState
 {

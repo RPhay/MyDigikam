@@ -160,8 +160,9 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
     QMenu* contextMenu();
 
  private:
+
     Q_DISABLE_COPY( AbstractFloatItem )
-    AbstractFloatItemPrivate * const d;
+    AbstractFloatItemPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

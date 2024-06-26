@@ -12,7 +12,6 @@
 
 #include <MarbleGlobal.h>
 
-
 namespace Marble
 {
 
@@ -29,12 +28,15 @@ class GenericScanlineTextureMapper : public TextureMapperInterface
                              const QRect &dirtyRect,
                              TextureColorizer *texColorizer ) override;
 
- private:
+private:
+
     class RenderJob;
 
     void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
 
-    StackedTileLoader *const m_tileLoader;
+private:
+
+    StackedTileLoader* const m_tileLoader = nullptr;
     int m_radius;
     QImage m_canvasImage;
     QThreadPool m_threadPool;

@@ -210,8 +210,10 @@ class DIGIKAM_EXPORT ViewportParams
     void resetFocusPoint();
 
  private:
+
     Q_DISABLE_COPY( ViewportParams )
-    ViewportParamsPrivate * const d;
+
+    ViewportParamsPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

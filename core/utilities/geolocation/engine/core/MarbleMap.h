@@ -795,8 +795,10 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
     Q_PRIVATE_SLOT(d, void addPlugins())
 
  private:
+
     Q_DISABLE_COPY( MarbleMap )
-    MarbleMapPrivate * const d;
+
+    MarbleMapPrivate* const d = nullptr;
     friend class MarbleMapPrivate;
 
     class CustomPaintLayer;

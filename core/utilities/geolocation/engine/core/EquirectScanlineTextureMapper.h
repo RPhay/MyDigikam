@@ -34,9 +34,10 @@ class EquirectScanlineTextureMapper : public TextureMapperInterface
     void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
 
  private:
+
     class RenderJob;
 
-    StackedTileLoader *const m_tileLoader;
+    StackedTileLoader* const m_tileLoader = nullptr;
     int m_radius;
     QImage m_canvasImage;
     int    m_oldYPaintedTop;

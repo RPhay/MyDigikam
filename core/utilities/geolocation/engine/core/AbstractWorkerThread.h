@@ -44,7 +44,8 @@ class DIGIKAM_EXPORT AbstractWorkerThread : public QThread
     void run() override;
 
  private:
-    AbstractWorkerThreadPrivate * const d;
+
+    AbstractWorkerThreadPrivate* const d = nullptr;
 };
 
 } // Namespace Marble
