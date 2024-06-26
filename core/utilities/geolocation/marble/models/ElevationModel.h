@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
 //
 
-
-#ifndef MARBLE_ELEVATIONMODEL_H
-#define MARBLE_ELEVATIONMODEL_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -15,6 +13,7 @@ class QImage;
 
 namespace Marble
 {
+
 class GeoDataCoordinates;
 
 namespace {
@@ -51,6 +50,4 @@ private:
     ElevationModelPrivate *d;
 };
 
-}
-
-#endif // MARBLE_ELEVATIONMODEL_H
+} // namespace Marble

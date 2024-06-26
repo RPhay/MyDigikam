@@ -4,14 +4,14 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARBLE_KDESCENDANTSPROXYMODEL_H
-#define MARBLE_KDESCENDANTSPROXYMODEL_H
+#pragma once
 
 #include <QAbstractProxyModel>
 
 #include "digikam_export.h"
 
 // namespace added to avoid symbol clashes with KF6::ItemModels
+
 namespace Marble
 {
 
@@ -190,6 +190,4 @@ private:
     //@endcond
 };
 
-}
-
-#endif
+} // namespace Marble

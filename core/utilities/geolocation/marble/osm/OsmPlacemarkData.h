@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Marius-Valeriu Stanciu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMPLACEMARKDATA_H
-#define MARBLE_OSMPLACEMARKDATA_H
+#pragma once
 
 // Qt
 #include <QHash>
@@ -283,9 +282,7 @@ public:
     QHash<int, OsmPlacemarkData> m_memberReferences;
 };
 
-}
+} // namespace Marble
 
 // Makes qvariant_cast possible for OsmPlacemarkData objects
 Q_DECLARE_METATYPE( Marble::OsmPlacemarkData )
-
-#endif

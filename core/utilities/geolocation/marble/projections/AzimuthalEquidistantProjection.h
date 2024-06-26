@@ -3,10 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-
-#ifndef MARBLE_AZIMUTHALEQUIDISTANTPROJECTION_H
-#define MARBLE_AZIMUTHALEQUIDISTANTPROJECTION_H
-
+#pragma once
 
 #include "AbstractProjection.h"
 #include "AzimuthalProjection.h"
@@ -97,6 +94,4 @@ class AzimuthalEquidistantProjection : public AzimuthalProjection
     Q_DISABLE_COPY( AzimuthalEquidistantProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

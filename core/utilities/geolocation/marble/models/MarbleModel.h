@@ -9,8 +9,7 @@
 // MarbleModel is the data store and index class for the MarbleWidget.
 //
 
-#ifndef MARBLE_MARBLEMODEL_H
-#define MARBLE_MARBLEMODEL_H
+#pragma once
 
 /** @file
  * This file contains the headers for MarbleModel
@@ -316,6 +315,4 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
     MarbleModelPrivate  * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -5,8 +5,7 @@
     SPDX-License-Identifier: BSD-3-Clause
 */
 
-#ifndef OFILABS_KINETICMODEL
-#define OFILABS_KINETICMODEL
+#pragma once
 
 #include <QObject>
 #include <QScopedPointer>
@@ -54,5 +53,3 @@ private:
     Q_DECLARE_PRIVATE(KineticModel);
     Q_DISABLE_COPY(KineticModel);
 };
-
-#endif

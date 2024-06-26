@@ -5,8 +5,7 @@
 // below, taken from
 // https://code.qt.io/cgit/qt/qt.git/plain/src/gui/text/qzipreader_p.h
 
-#ifndef MARBLEZIPREADER_H
-#define MARBLEZIPREADER_H
+#pragma once
 
 #ifndef QT_NO_TEXTODFWRITER
 
@@ -86,7 +85,6 @@ private:
     Q_DISABLE_COPY(MarbleZipReader)
 };
 
-}
+} // namespace Marble
 
 #endif // QT_NO_TEXTODFWRITER
-#endif // MARBLEZIPREADER_H

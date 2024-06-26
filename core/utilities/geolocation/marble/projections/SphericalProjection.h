@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2007-2012 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_SPHERICALPROJECTION_H
-#define MARBLE_SPHERICALPROJECTION_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for SphericalProjection.
@@ -15,7 +12,6 @@
  * @author Inge Wallin  <inge@lysator.liu.se>
  * @author Torsten Rahn <rahn@kde.org>
  */
-
 
 #include "AbstractProjection.h"
 #include "AzimuthalProjection.h"
@@ -103,6 +99,4 @@ class SphericalProjection : public AzimuthalProjection
     Q_DISABLE_COPY( SphericalProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

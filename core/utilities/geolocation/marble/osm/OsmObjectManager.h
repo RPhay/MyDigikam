@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMOBJECTMANAGER_H
-#define MARBLE_OSMOBJECTMANAGER_H
+#pragma once
 
 #include "digikam_export.h"
 #include <QtGlobal>
@@ -43,7 +42,4 @@ private:
     static qint64 m_minId;
 };
 
-}
-
-#endif
-
+} // namespace Marble

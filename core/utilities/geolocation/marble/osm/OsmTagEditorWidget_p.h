@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMTAGEDITORWIDGETPRIVATE_H
-#define MARBLE_OSMTAGEDITORWIDGETPRIVATE_H
+#pragma once
 
 #include "ui_OsmTagEditorWidget.h"
 
@@ -63,6 +62,4 @@ private:
     static const QString m_customTagAdderText;
 };
 
-}
-
-#endif
+} // namespace Marble

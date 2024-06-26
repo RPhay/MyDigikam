@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_SEARCHRUNNERMANAGER_H
-#define MARBLE_SEARCHRUNNERMANAGER_H
+#pragma once
 
 #include "GeoDataLatLonBox.h"
 
@@ -78,6 +77,4 @@ private:
     Private *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

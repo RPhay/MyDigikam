@@ -6,8 +6,8 @@
 // below, taken from
 // https://code.qt.io/cgit/qt/qt.git/plain/src/gui/text/qzipwriter_p.h
 
-#ifndef MARBLEZIPWRITER_H
-#define MARBLEZIPWRITER_H
+#pragma once
+
 #ifndef QT_NO_TEXTODFWRITER
 
 //
@@ -80,7 +80,6 @@ private:
     Q_DISABLE_COPY(MarbleZipWriter)
 };
 
-}
+} // namespace Marble
 
 #endif // QT_NO_TEXTODFWRITER
-#endif // MARBLEZIPWRITER_H

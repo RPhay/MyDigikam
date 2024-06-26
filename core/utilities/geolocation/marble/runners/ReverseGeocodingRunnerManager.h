@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 
-#ifndef MARBLE_REVERSEGEOCODINGRUNNERMANAGER_H
-#define MARBLE_REVERSEGEOCODINGRUNNERMANAGER_H
+#pragma once
 
 #include <QObject>
 
@@ -70,6 +69,4 @@ private:
     Private *const d;
 };
 
-}
-
-#endif
+} // namespace Marble

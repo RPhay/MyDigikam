@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2007-2012 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_EQUIRECTPROJECTION_H
-#define MARBLE_EQUIRECTPROJECTION_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for EquirectProjection.
@@ -108,6 +105,4 @@ class EquirectProjection : public CylindricalProjection
     Q_DISABLE_COPY( EquirectProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2010 Thibaut Gridel <tgridel@free.fr>
 //
 
-#ifndef MARBLE_GEODATATREEMODEL_H
-#define MARBLE_GEODATATREEMODEL_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -14,12 +13,12 @@ class QItemSelectionModel;
 
 namespace Marble
 {
+
 class GeoDataObject;
 class GeoDataDocument;
 class GeoDataFeature;
 class GeoDataContainer;
 class GeoDataTourPrimitive;
-
 
 /**
  * @short The representation of GeoData in a model
@@ -109,6 +108,4 @@ Q_SIGNALS:
     Private* const d = nullptr;
 };
 
-}
-
-#endif // MARBLE_GEODATATREEMODEL_H
+} // namespace Marble

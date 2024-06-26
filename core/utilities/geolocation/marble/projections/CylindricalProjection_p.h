@@ -4,11 +4,9 @@
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 //
 
-#ifndef MARBLE_CYLINDRICALPROJECTIONPRIVATE_H
-#define MARBLE_CYLINDRICALPROJECTIONPRIVATE_H
+#pragma once
 
 #include "AbstractProjection_p.h"
-
 
 namespace Marble
 {
@@ -71,5 +69,3 @@ class CylindricalProjectionPrivate : public AbstractProjectionPrivate
 };
 
 } // namespace Marble
-
-#endif

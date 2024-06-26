@@ -3,10 +3,7 @@
 // SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 //
 
-
-#ifndef MARBLE_STEREOGRAPHICPROJECTION_H
-#define MARBLE_STEREOGRAPHICPROJECTION_H
-
+#pragma once
 
 #include "AbstractProjection.h"
 #include "AzimuthalProjection.h"
@@ -96,6 +93,4 @@ class StereographicProjection : public AzimuthalProjection
     Q_DISABLE_COPY( StereographicProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

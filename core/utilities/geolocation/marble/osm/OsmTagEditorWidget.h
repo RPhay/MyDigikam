@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMTAGEDITORWIDGET_H
-#define MARBLE_OSMTAGEDITORWIDGET_H
+#pragma once
 
 #include <QWidget>
 #include "digikam_export.h"
@@ -49,7 +48,5 @@ private:
     OsmTagEditorWidgetPrivate* const d = nullptr;
 };
 
-}
-
-#endif
+} // namespace Marble
 

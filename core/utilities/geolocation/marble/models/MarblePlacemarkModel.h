@@ -8,9 +8,7 @@
 // MarblePlacemarkModel exposes the model for Placemarks
 //
 
-#ifndef MARBLE_MARBLEPLACEMARKMODEL_H
-#define MARBLE_MARBLEPLACEMARKMODEL_H
-
+#pragma once
 
 #include <QAbstractListModel>
 #include <QModelIndex>
@@ -124,6 +122,4 @@ Q_SIGNALS:
     QHash<int, QByteArray> m_roleNames;
 };
 
-}
-
-#endif
+} // namespace Marble

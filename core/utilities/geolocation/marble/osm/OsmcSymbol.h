@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2017 Sergey Popov <sergobot@protonmail.com>
 //
 
-#ifndef OSMCSYMBOL_H
-#define OSMCSYMBOL_H
+#pragma once
 
 #include <QColor>
 #include <QImage>
@@ -44,5 +43,3 @@ private:
     int const m_side;
     int m_wayWidth;
 };
-
-#endif // OSMCSYMBOL_H

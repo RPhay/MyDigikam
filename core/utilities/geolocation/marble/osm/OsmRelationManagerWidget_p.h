@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMRELATIONMANAGERWIDGETPRIVATE_H
-#define MARBLE_OSMRELATIONMANAGERWIDGETPRIVATE_H
+#pragma once
 
 #include "ui_OsmRelationManagerWidget.h"
 
@@ -30,6 +29,4 @@ private:
     QMenu *m_relationDropMenu;
 };
 
-}
-
-#endif
+} // namespace Marble

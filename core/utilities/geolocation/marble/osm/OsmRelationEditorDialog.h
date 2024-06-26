@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMRELATIONEDITORDIALOG_H
-#define MARBLE_OSMRELATIONEDITORDIALOG_H
+#pragma once
 
 #include "digikam_export.h"
 
@@ -13,7 +12,8 @@
 class QLineEdit;
 class QDialogButtonBox;
 
-namespace Marble {
+namespace Marble
+{
 
 class OsmRelationEditorDialogPrivate;
 class OsmTagEditorWidget;
@@ -45,6 +45,4 @@ private:
     OsmPlacemarkData *m_relationData;
 };
 
-}
-
-#endif
+} // namespace Marble

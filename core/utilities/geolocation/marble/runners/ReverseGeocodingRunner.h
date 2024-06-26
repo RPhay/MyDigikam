@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 // SPDX-FileCopyrightText: 2012, 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 
-#ifndef MARBLE_REVERSEGEOCODINGRUNNER_H
-#define MARBLE_REVERSEGEOCODINGRUNNER_H
+#pragma once
 
 #include <QObject>
 #include "digikam_export.h"
@@ -54,6 +53,4 @@ private:
     const MarbleModel *m_model;
 };
 
-}
-
-#endif
+} // namespace Marble

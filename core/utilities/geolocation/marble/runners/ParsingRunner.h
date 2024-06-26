@@ -4,8 +4,7 @@
 // SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
 // SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
 
-#ifndef MARBLE_PARSINGRUNNER_H
-#define MARBLE_PARSINGRUNNER_H
+#pragma once
 
 #include <QObject>
 #include "digikam_export.h"
@@ -30,6 +29,4 @@ public:
     virtual GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) = 0;
 };
 
-}
-
-#endif
+} // namespace Marble

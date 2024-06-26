@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2007-2012 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_ABSTRACTPROJECTION_H
-#define MARBLE_ABSTRACTPROJECTION_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for AbstractProjection.
@@ -272,6 +269,4 @@ class DIGIKAM_EXPORT AbstractProjection
      Q_DISABLE_COPY( AbstractProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

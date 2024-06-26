@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
 //
 
-#ifndef MARBLE_OSMRELATIONMANAGERWIDGET_H
-#define MARBLE_OSMRELATIONMANAGERWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -63,7 +62,4 @@ private:
     OsmRelationManagerWidgetPrivate* const d = nullptr;
 };
 
-}
-
-#endif
-
+} // namespace Marble

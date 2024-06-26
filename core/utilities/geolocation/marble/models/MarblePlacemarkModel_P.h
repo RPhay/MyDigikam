@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
 //
 
-#ifndef MARBLE_MARBLEPLACEMARKMODEL_P_H
-#define MARBLE_MARBLEPLACEMARKMODEL_P_H
+#pragma once
 
 #include <QChar>
 #include <QRegularExpression>
@@ -27,6 +26,5 @@ namespace GeoString
         return result;
     }
 }
-}
 
-#endif
+} // namespace Marble

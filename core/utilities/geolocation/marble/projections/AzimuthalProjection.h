@@ -3,8 +3,7 @@
 // SPDX-FileCopyrightText: 2014 Gábor Péterffy <peterffy95@gmail.org>
 //
 
-#ifndef MARBLE_AZIMUTHALPROJECTION_H
-#define MARBLE_AZIMUTHALPROJECTION_H
+#pragma once
 
 /** @file
  * This file contains the headers for AzimuthalProjection.
@@ -65,8 +64,4 @@ class AzimuthalProjection : public AbstractProjection
     Q_DISABLE_COPY( AzimuthalProjection )
 };
 
-}
-
-#endif
-
-
+} // namespace Marble

@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KBIHASH_P_H
-#define KBIHASH_P_H
+#pragma once
 
 #include <QHash>
 #include <QMap>
@@ -548,5 +547,3 @@ QDebug operator<<(QDebug out, const KHash2Map<T, U> &container)
     out << ")";
     return out;
 }
-
-#endif

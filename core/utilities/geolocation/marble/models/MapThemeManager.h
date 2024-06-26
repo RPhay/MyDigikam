@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
 //
 
-#ifndef MARBLE_MAPTHEMEMANAGER_H
-#define MARBLE_MAPTHEMEMANAGER_H
+#pragma once
 
 #include <QObject>
 
@@ -105,6 +104,4 @@ class DIGIKAM_EXPORT MapThemeManager : public QObject
     Private * const d;
 };
 
-}
-
-#endif
+} // namespace Marble

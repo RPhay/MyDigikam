@@ -2,11 +2,9 @@
 // Copyright 2014      Gábor Péterffy <peterffy95@gmail.com>
 //
 
-#ifndef MARBLE_AZIMUTHALPROJECTIONPRIVATE_H
-#define MARBLE_AZIMUTHALPROJECTIONPRIVATE_H
+#pragma once
 
 #include "AbstractProjection_p.h"
-
 
 namespace Marble
 {
@@ -100,5 +98,3 @@ public:
 };
 
 } // namespace Marble
-
-#endif

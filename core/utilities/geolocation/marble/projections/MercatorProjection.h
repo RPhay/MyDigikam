@@ -4,10 +4,7 @@
 // SPDX-FileCopyrightText: 2007-2012 Torsten Rahn <rahn@kde.org>
 //
 
-
-#ifndef MARBLE_MERCATORPROJECTION_H
-#define MARBLE_MERCATORPROJECTION_H
-
+#pragma once
 
 /** @file
  * This file contains the headers for MercatorProjection.
@@ -113,6 +110,4 @@ class MercatorProjection : public CylindricalProjection
     Q_DISABLE_COPY( MercatorProjection )
 };
 
-}
-
-#endif
+} // namespace Marble

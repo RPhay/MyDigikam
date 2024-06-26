@@ -3,9 +3,7 @@
 // SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
 //
 
-#ifndef MARBLE_ABSTRACTPROJECTIONPRIVATE_H
-#define MARBLE_ABSTRACTPROJECTIONPRIVATE_H
-
+#pragma once
 
 namespace Marble
 {
@@ -31,5 +29,3 @@ class AbstractProjectionPrivate
 };
 
 } // namespace Marble
-
-#endif

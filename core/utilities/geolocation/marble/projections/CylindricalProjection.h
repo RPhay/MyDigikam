@@ -5,8 +5,7 @@
 // SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
 //
 
-#ifndef MARBLE_CYLINDRICALPROJECTION_H
-#define MARBLE_CYLINDRICALPROJECTION_H
+#pragma once
 
 /** @file
  * This file contains the headers for CylindricalProjection.
@@ -57,7 +56,5 @@ class CylindricalProjection : public AbstractProjection
     Q_DISABLE_COPY( CylindricalProjection )
 };
 
-}
-
-#endif
+} // namespace Marble
 
