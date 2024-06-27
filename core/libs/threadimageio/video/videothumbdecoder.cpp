@@ -207,7 +207,17 @@ void VideoThumbDecoder::seek(int timeInSeconds)
 
         keyFrameAttempts++;
     }
+
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100)
+
+    while ((!gotFrame || (d->pFrame->flags != AV_FRAME_FLAG_KEY)) &&
+
+#else
+
     while ((!gotFrame || !d->pFrame->key_frame) &&
+
+#endif
+
            (keyFrameAttempts < 200));
 
     if (!gotFrame)
@@ -237,7 +247,17 @@ void VideoThumbDecoder::getScaledVideoFrame(int scaledSize,
                                        bool maintainAspectRatio,
                                        VideoFrame& videoFrame)
 {
+
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100)
+
+    if (d->pFrame->flags == AV_FRAME_FLAG_INTERLACED)
+
+#else
+
     if (d->pFrame->interlaced_frame)
+
+#endif
+
     {
         d->processFilterGraph(d->pFrame,
                               d->pFrame,
