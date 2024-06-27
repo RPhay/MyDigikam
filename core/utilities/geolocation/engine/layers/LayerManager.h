@@ -34,7 +34,8 @@ class LayerManager : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit LayerManager(QObject *parent = nullptr);
     ~LayerManager() override;
 
@@ -71,7 +72,8 @@ class LayerManager : public QObject
 
     RenderState renderState() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * @brief Signal that a render item has been initialized
      */
@@ -91,20 +93,23 @@ class LayerManager : public QObject
 
     void visibilityChanged( const QString &nameId, bool visible );
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void setShowBackground( bool show );
 
     void setShowRuntimeTrace( bool show );
 
- private:
+private:
+
     Q_PRIVATE_SLOT( d, void updateVisibility( bool, const QString & ) )
 
- private:
+private:
+
     Q_DISABLE_COPY( LayerManager )
 
     class Private;
     friend class Private;
-    Private  * const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

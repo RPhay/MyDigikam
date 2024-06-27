@@ -14,12 +14,14 @@ namespace Marble
 class FpsLayer
 {
 public:
+
     explicit FpsLayer( QElapsedTimer *time );
 
     void paint( QPainter *painter ) const;
 
 private:
-    QElapsedTimer *const m_time;
+
+    QElapsedTimer* const m_time = nullptr;
 };
 
 } // namespace Marble

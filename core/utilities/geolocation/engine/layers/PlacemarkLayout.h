@@ -26,7 +26,6 @@ class QItemSelectionModel;
 class QPoint;
 class QModelIndex;
 
-
 namespace Marble
 {
 
@@ -42,14 +41,12 @@ class StyleBuilder;
 /**
  * Layouts the place marks with a passed QPainter.
  */
-
-
-
 class PlacemarkLayout : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     /**
      * Creates a new place mark layout.
      */
@@ -80,7 +77,8 @@ class PlacemarkLayout : public QObject
 
     bool hasPlacemarkAt(const QPoint &pos);
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     // earth
     void setShowPlaces( bool show );
     void setShowCities( bool show );
@@ -97,10 +95,12 @@ class PlacemarkLayout : public QObject
     void removePlacemarks( const QModelIndex& index, int first, int last );
     void resetCacheData();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void repaintNeeded();
 
- private:
+private:
+
     /**
      * Returns a the maximum height of all possible labels.
      * WARNING: This is a really slow method as it traverses all placemarks
@@ -130,11 +130,13 @@ class PlacemarkLayout : public QObject
 
     bool    placemarksOnScreenLimit( const QSize &screenSize ) const;
 
- private:
+private:
+
     Q_DISABLE_COPY( PlacemarkLayout )
-    QAbstractItemModel*  m_placemarkModel;
-    QItemSelectionModel *const m_selectionModel;
-    MarbleClock *const m_clock;
+
+    QAbstractItemModel*  m_placemarkModel       = nullptr;
+    QItemSelectionModel* const m_selectionModel = nullptr;
+    MarbleClock* const m_clock                  = nullptr;
 
     QVector<VisiblePlacemark*> m_paintOrder;
     QString m_runtimeTrace;
@@ -161,7 +163,7 @@ class PlacemarkLayout : public QObject
 
     int     m_maxLabelHeight;
     bool    m_styleResetRequested;
-    const StyleBuilder* m_styleBuilder;
+    const StyleBuilder* m_styleBuilder  = nullptr;
     // Referencing these properties by value
     // instead of using a more fragile pointer
     bool m_lastPlacemarkAvailable;

@@ -20,11 +20,13 @@ class RenderPlugin;
 /**
  * @brief Layer for handling the rendering of screen-positioned, 2D float items.
  */
-class FloatItemsLayer : public QObject, public LayerInterface
+class FloatItemsLayer : public QObject,
+                        public LayerInterface
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit FloatItemsLayer(QObject *parent = nullptr);
 
     QStringList renderPosition() const override;
@@ -43,6 +45,7 @@ class FloatItemsLayer : public QObject, public LayerInterface
     QString runtimeTrace() const override;
 
  Q_SIGNALS:
+
     /**
      * @brief Signal that a render item has been initialized
      */
@@ -59,10 +62,12 @@ class FloatItemsLayer : public QObject, public LayerInterface
 
     void pluginSettingsChanged();
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void updateVisibility(bool visible, const QString &nameId);
 
- private:
+private:
+
     QList<AbstractFloatItem *> m_floatItems;
 };
 

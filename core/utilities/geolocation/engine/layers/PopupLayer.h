@@ -30,7 +30,9 @@ class MarbleWidget;
 class DIGIKAM_EXPORT PopupLayer : public QObject, public LayerInterface
 {
     Q_OBJECT
+
 public:
+
     explicit PopupLayer( MarbleWidget *widget, QObject* parent = nullptr );
     ~PopupLayer() override;
 
@@ -135,14 +137,17 @@ public:
     void setTextColor( const QColor &color );
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
 private Q_SLOTS:
+
     void hidePopupItem();
 
 private:
+
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

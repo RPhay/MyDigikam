@@ -666,6 +666,5 @@ target_compile_definitions(core_marble_obj
                            digikamcore_EXPORTS
 )
 
-
 add_subdirectory(data)
 add_subdirectory(plugins)

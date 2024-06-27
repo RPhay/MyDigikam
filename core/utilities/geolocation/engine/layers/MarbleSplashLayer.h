@@ -15,6 +15,7 @@ namespace Marble
 class MarbleSplashLayer : public LayerInterface
 {
 public:
+
     MarbleSplashLayer();
 
     QStringList renderPosition() const override;
@@ -26,7 +27,6 @@ public:
     RenderState renderState() const override;
 
     QString runtimeTrace() const override { return QStringLiteral("SplashLayer"); }
-
 };
 
 } // namespace Marble

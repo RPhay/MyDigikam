@@ -18,6 +18,7 @@ namespace Marble
 class FogLayer : public LayerInterface
 {
 public:
+
     QStringList renderPosition() const override;
 
     bool render( GeoPainter *painter, ViewportParams *viewport,

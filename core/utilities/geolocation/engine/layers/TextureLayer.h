@@ -32,6 +32,7 @@ class DIGIKAM_EXPORT TextureLayer : public TileLayer
     Q_OBJECT
 
  public:
+
     TextureLayer( HttpDownloadManager *downloadManager,
                   PluginManager* pluginManager,
                   const SunLocator *sunLocator,
@@ -90,6 +91,7 @@ class DIGIKAM_EXPORT TextureLayer : public TileLayer
                          GeoSceneLayer *layer = nullptr ) override;
 
 public Q_SLOTS:
+
     void setShowRelief( bool show );
 
     void setShowSunShading( bool show );
@@ -116,11 +118,13 @@ public Q_SLOTS:
 
     void downloadStackedTile( const TileId &stackedTileId );
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void tileLevelChanged( int );
     void repaintNeeded();
 
- private:
+private:
+
     Q_PRIVATE_SLOT( d, void requestDelayedRepaint() )
     Q_PRIVATE_SLOT( d, void updateTextureLayers() )
     Q_PRIVATE_SLOT( d, void updateTile( const TileId &tileId, const QImage &tileImage ) )
@@ -128,9 +132,10 @@ public Q_SLOTS:
     Q_PRIVATE_SLOT( d, void removeGroundOverlays( const QModelIndex& parent, int first, int last ) )
     Q_PRIVATE_SLOT( d, void resetGroundOverlaysCache() )
 
- private:
+private:
+
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

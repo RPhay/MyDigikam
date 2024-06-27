@@ -86,8 +86,8 @@ find_package(LibXml2)                              # For HTMLGallery tool.
 
 if(ENABLE_GEOLOCATION)
 
-    set(MARBLE_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble
-                           ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/marble/geodata/data
+    set(MARBLE_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/engine
+                           ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/engine/geodata/data
     )
 
 else()

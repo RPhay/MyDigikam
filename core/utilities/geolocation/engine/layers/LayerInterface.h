@@ -12,10 +12,10 @@
 #include <QStringList>
 #include <QString>
 
-namespace Marble {
+namespace Marble
+{
 
 class RenderState;
-
 class GeoPainter;
 class GeoSceneLayer;
 class ViewportParams;

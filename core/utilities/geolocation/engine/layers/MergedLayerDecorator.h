@@ -28,7 +28,8 @@ class RenderState;
 
 class MergedLayerDecorator
 {
- public:
+public:
+
     MergedLayerDecorator( TileLoader * const tileLoader, const SunLocator* sunLocator );
     virtual ~MergedLayerDecorator();
 
@@ -69,11 +70,12 @@ class MergedLayerDecorator
 
     bool hasTextureLayer() const;
 
- protected:
+protected:
+
     Q_DISABLE_COPY( MergedLayerDecorator )
 
     class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

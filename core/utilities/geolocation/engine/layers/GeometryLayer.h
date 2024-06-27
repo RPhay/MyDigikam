@@ -18,6 +18,7 @@ class QPoint;
 
 namespace Marble
 {
+
 class GeoPainter;
 class GeoDataFeature;
 class GeoDataPlacemark;
@@ -30,7 +31,9 @@ class GeometryLayerPrivate;
 class GeometryLayer : public QObject, public LayerInterface
 {
     Q_OBJECT
+
 public:
+
     explicit GeometryLayer(const QAbstractItemModel *model, const StyleBuilder *styleBuilder);
     ~GeometryLayer() override;
 
@@ -61,6 +64,7 @@ public:
     int debugLevelTag() const;
 
 public Q_SLOTS:
+
     void addPlacemarks( const QModelIndex& index, int first, int last );
     void removePlacemarks( const QModelIndex& index, int first, int last );
     void resetCacheData();
@@ -78,6 +82,7 @@ public Q_SLOTS:
     void handleHighlight( qreal lon, qreal lat, GeoDataCoordinates::Unit unit );
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
     /**
@@ -90,7 +95,8 @@ Q_SIGNALS:
     void highlightedPlacemarksChanged( const QVector<GeoDataPlacemark*>& clickedPlacemarks );
 
 private:
-    GeometryLayerPrivate *d;
+
+    GeometryLayerPrivate* d = nullptr;
 };
 
 } // namespace Marble

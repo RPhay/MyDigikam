@@ -33,9 +33,10 @@ static const qreal s_labelOutlineWidth = 2.5;
  */
 class VisiblePlacemark : public QObject
 {
- Q_OBJECT
+    Q_OBJECT
 
- public:
+public:
+
     explicit VisiblePlacemark(const GeoDataPlacemark *placemark, const GeoDataCoordinates &coordinates, const GeoDataStyle::ConstPtr &style);
 
     /**
@@ -94,7 +95,8 @@ class VisiblePlacemark : public QObject
      */
     void setLabelRect( const QRectF& area );
 
-    enum LabelStyle {
+    enum LabelStyle
+    {
         Normal = 0,
         Glow,
         Selected
@@ -111,16 +113,19 @@ class VisiblePlacemark : public QObject
     const GeoDataCoordinates & coordinates() const;
 
 Q_SIGNALS:
+
     void updateNeeded();
 
 private Q_SLOTS:
+
     void setSymbolPixmap();
 
- private:
+private:
+
     static void drawLabelText( QPainter &labelPainter, const QString &text, const QFont &labelFont, LabelStyle labelStyle, const QColor &color );
     void drawLabelPixmap();
 
-    const GeoDataPlacemark *m_placemark;
+    const GeoDataPlacemark* m_placemark = nullptr;
 
     // View stuff
     QPointF     m_symbolPosition; // position of the placemark's symbol

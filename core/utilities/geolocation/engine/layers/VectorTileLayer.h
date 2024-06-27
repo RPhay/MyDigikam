@@ -31,6 +31,7 @@ class DIGIKAM_EXPORT VectorTileLayer : public TileLayer
     Q_OBJECT
 
 public:
+
     VectorTileLayer(HttpDownloadManager *downloadManager,
                     const PluginManager *pluginManager,
                     GeoDataTreeModel *treeModel);
@@ -60,22 +61,25 @@ public:
     void downloadTile( const TileId &stackedTileId );
 
 Q_SIGNALS:
+
     void tileLevelChanged(int tileLevel);
 
 public Q_SLOTS:
+
     void setMapTheme(const QVector<const GeoSceneVectorTileDataset *> &textures, const GeoSceneGroup *textureLayerSettings);
 
     void reset();
 
 private:
+
     Q_PRIVATE_SLOT(d, void updateLayerSettings())
     Q_PRIVATE_SLOT(d, void updateTile(const TileId &tileId, GeoDataDocument* document))
 
 
 private:
-    class Private;
-    Private *const d;
 
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

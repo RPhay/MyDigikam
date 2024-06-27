@@ -32,7 +32,6 @@ class MarbleClock;
 class ViewportParams;
 class StyleBuilder;
 
-
 struct Fragment
 {
     QVarLengthArray<QPainter::PixmapFragment, 16> fragments;
@@ -43,7 +42,8 @@ class PlacemarkLayer : public QObject, public LayerInterface
 {
     Q_OBJECT
 
- public:
+public:
+
     PlacemarkLayer( QAbstractItemModel *placemarkModel,
                     QItemSelectionModel *selectionModel,
                     MarbleClock *clock,
@@ -86,7 +86,8 @@ class PlacemarkLayer : public QObject, public LayerInterface
     bool levelTagDebugModeEnabled() const;
     void setDebugLevelTag(int level);
 
- public Q_SLOTS:
+public Q_SLOTS:
+
    // earth
    void setShowPlaces( bool show );
    void setShowCities( bool show );
@@ -101,10 +102,12 @@ class PlacemarkLayer : public QObject, public LayerInterface
    void requestStyleReset();
    void setTileLevel(int tileLevel);
 
- Q_SIGNALS:
+Q_SIGNALS:
+
    void repaintNeeded();
 
- private:
+private:
+
     void renderDebug(GeoPainter *painter, ViewportParams *viewport, const QVector<VisiblePlacemark*> & placemarks) const;
 
     PlacemarkLayout m_layout;

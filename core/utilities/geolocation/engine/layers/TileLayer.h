@@ -17,7 +17,9 @@ namespace Marble
 class DIGIKAM_EXPORT TileLayer :  public QObject, public LayerInterface
 {
     Q_OBJECT
+
 public:
+
     TileLayer();
 
     QStringList renderPosition() const override;
