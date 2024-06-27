@@ -210,7 +210,7 @@ void VideoThumbDecoder::seek(int timeInSeconds)
 
 #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100)
 
-    while ((!gotFrame || (d->pFrame->flags != AV_FRAME_FLAG_KEY)) &&
+    while ((!gotFrame || !(d->pFrame->flags & AV_FRAME_FLAG_KEY)) &&
 
 #else
 
@@ -250,7 +250,7 @@ void VideoThumbDecoder::getScaledVideoFrame(int scaledSize,
 
 #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100)
 
-    if (d->pFrame->flags == AV_FRAME_FLAG_INTERLACED)
+    if (d->pFrame->flags & AV_FRAME_FLAG_INTERLACED)
 
 #else
 
