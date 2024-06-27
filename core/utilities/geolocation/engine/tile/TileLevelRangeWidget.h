@@ -18,7 +18,8 @@ class DIGIKAM_EXPORT TileLevelRangeWidget: public QWidget
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit TileLevelRangeWidget( QWidget * const parent = nullptr, Qt::WindowFlags const f = Qt::WindowFlags() );
     ~TileLevelRangeWidget() override;
 
@@ -30,18 +31,21 @@ class DIGIKAM_EXPORT TileLevelRangeWidget: public QWidget
     int topLevel() const;
     int bottomLevel() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void topLevelChanged( int );
     void bottomLevelChanged( int );
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void setMaximumTopLevel( int const );
     void setMinimumBottomLevel( int const );
 
- private:
+private:
+
     Q_DISABLE_COPY( TileLevelRangeWidget )
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

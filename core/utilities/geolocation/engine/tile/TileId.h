@@ -18,7 +18,8 @@ class GeoDataCoordinates;
 
 class DIGIKAM_EXPORT TileId
 {
- public:
+public:
+
     TileId( QString const & mapThemeId, int zoomLevel, int tileX, int tileY );
     TileId( uint mapThemeIdHash, int zoomLevel, int tileX, int tileY );
     TileId();
@@ -33,7 +34,8 @@ class DIGIKAM_EXPORT TileId
 
     static TileId fromCoordinates( const GeoDataCoordinates& coords, int zoomLevel );
 
- private:
+private:
+
     uint m_mapThemeIdHash;
     int m_zoomLevel;
     int m_tileX;
@@ -41,7 +43,6 @@ class DIGIKAM_EXPORT TileId
 };
 
 uint qHash( TileId const& );
-
 
 // inline definitions
 
@@ -75,7 +76,7 @@ inline bool TileId::operator==( TileId const& rhs ) const
 
 inline bool TileId::operator<( TileId const& rhs ) const
 {
-    if (m_zoomLevel < rhs.m_zoomLevel)
+    if      (m_zoomLevel < rhs.m_zoomLevel)
         return true;
     else if (m_zoomLevel == rhs.m_zoomLevel
              && m_tileX < rhs.m_tileX)

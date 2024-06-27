@@ -24,23 +24,26 @@ class TileCreatorDialogPrivate;
 
 class DIGIKAM_EXPORT TileCreatorDialog : public QDialog
 {
-
     Q_OBJECT
 
- public:
+public:
+
     explicit TileCreatorDialog( TileCreator *creator, QWidget *parent = nullptr );
     ~TileCreatorDialog() override;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void setProgress( int progress );
     void setSummary( const QString& name, const QString& description );
 
 private Q_SLOTS:
+
     void cancelTileCreation();
 
- private:
+private:
+
     Q_DISABLE_COPY( TileCreatorDialog )
-    TileCreatorDialogPrivate  * const d;
+    TileCreatorDialogPrivate* const d = nullptr;
 };
 
 } // namespace Marble

@@ -39,94 +39,96 @@ class StackedTileLoaderPrivate;
  *
  * @author Torsten Rahn <rahn@kde.org>
  **/
-
 class StackedTileLoader : public QObject
 {
     Q_OBJECT
 
-    public:
-        /**
-         * Creates a new tile loader.
-         *
-         * @param mergedLayerDecorator The decorator that shall be used to decorate
-         *                        the layer.
-         * @param parent The parent widget.
-         */
-        explicit StackedTileLoader( MergedLayerDecorator *mergedLayerDecorator, QObject *parent = nullptr );
-        ~StackedTileLoader() override;
+public:
 
-        int tileColumnCount( int level ) const;
+    /**
+     * Creates a new tile loader.
+     *
+     * @param mergedLayerDecorator The decorator that shall be used to decorate
+     *                        the layer.
+     * @param parent The parent widget.
+     */
+    explicit StackedTileLoader( MergedLayerDecorator *mergedLayerDecorator, QObject *parent = nullptr );
+    ~StackedTileLoader() override;
 
-        int tileRowCount( int level ) const;
+    int tileColumnCount( int level ) const;
 
-        const GeoSceneAbstractTileProjection *tileProjection() const;
+    int tileRowCount( int level ) const;
 
-        QSize tileSize() const;
+    const GeoSceneAbstractTileProjection *tileProjection() const;
 
-        /**
-         * Loads a tile and returns it.
-         *
-         * @param stackedTileId The Id of the requested tile, containing the x and y coordinate
-         *                      and the zoom level.
-         */
-        const StackedTile* loadTile( TileId const &stackedTileId );
+    QSize tileSize() const;
 
-        /**
-         * Resets the internal tile hash.
-         */
-        void resetTilehash();
+    /**
+     * Loads a tile and returns it.
+     *
+     * @param stackedTileId The Id of the requested tile, containing the x and y coordinate
+     *                      and the zoom level.
+     */
+    const StackedTile* loadTile( TileId const &stackedTileId );
 
-        /**
-         * Cleans up the internal tile hash.
-         *
-         * Removes all superfluous tiles from the hash.
-         */
-        void cleanupTilehash();
+    /**
+     * Resets the internal tile hash.
+     */
+    void resetTilehash();
 
-        /**
-         * @brief  Returns the limit of the volatile (in RAM) cache.
-         * @return the cache limit in kilobytes
-         */
-        quint64 volatileCacheLimit() const;
+    /**
+     * Cleans up the internal tile hash.
+     *
+     * Removes all superfluous tiles from the hash.
+     */
+    void cleanupTilehash();
 
-        /**
-         * @brief Reloads the tiles that are currently displayed.
-         */
-        QList<TileId> visibleTiles() const;
+    /**
+     * @brief  Returns the limit of the volatile (in RAM) cache.
+     * @return the cache limit in kilobytes
+     */
+    quint64 volatileCacheLimit() const;
 
-        /**
-         * @brief Return the number of tiles in the cache.
-         * @return number of tiles in cache
-         */
-        int tileCount() const;
+    /**
+     * @brief Reloads the tiles that are currently displayed.
+     */
+    QList<TileId> visibleTiles() const;
 
-        /**
-         * @brief Set the limit of the volatile (in RAM) cache.
-         * @param kiloBytes The limit in kilobytes.
-         */
-        void setVolatileCacheLimit( quint64 kiloBytes );
+    /**
+     * @brief Return the number of tiles in the cache.
+     * @return number of tiles in cache
+     */
+    int tileCount() const;
 
-        /**
-         * Effectively triggers a reload of all tiles that are currently in use
-         * and clears the tile cache in physical memory.
-         */
-        void clear();
+    /**
+     * @brief Set the limit of the volatile (in RAM) cache.
+     * @param kiloBytes The limit in kilobytes.
+     */
+    void setVolatileCacheLimit( quint64 kiloBytes );
 
-        /**
-         */
-        void updateTile(TileId const & tileId, QImage const &tileImage );
+    /**
+     * Effectively triggers a reload of all tiles that are currently in use
+     * and clears the tile cache in physical memory.
+     */
+    void clear();
 
-        RenderState renderState() const;
+    /**
+     */
+    void updateTile(TileId const & tileId, QImage const &tileImage );
 
-    Q_SIGNALS:
-        void tileLoaded( TileId const &tileId );
-        void cleared();
+    RenderState renderState() const;
 
-    private:
-        Q_DISABLE_COPY( StackedTileLoader )
+Q_SIGNALS:
 
-        friend class StackedTileLoaderPrivate;
-        StackedTileLoaderPrivate* const d = nullptr;
+    void tileLoaded( TileId const &tileId );
+    void cleared();
+
+private:
+
+    Q_DISABLE_COPY( StackedTileLoader )
+
+    friend class StackedTileLoaderPrivate;
+    StackedTileLoaderPrivate* const d = nullptr;
 };
 
 } // namespace Marble

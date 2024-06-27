@@ -17,6 +17,7 @@ class QString;
 
 namespace Marble
 {
+
 class TileId;
 class HttpDownloadManager;
 class GeoDataDocument;
@@ -28,8 +29,10 @@ class TileLoader: public QObject
 {
     Q_OBJECT
 
- public:
-    enum TileStatus {
+public:
+
+    enum TileStatus
+    {
         Missing,
         Expired,
         Available
@@ -58,11 +61,13 @@ class TileLoader: public QObject
       */
     static TileStatus tileStatus( GeoSceneTileDataset const *tileData, const TileId &tileId );
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void updateTile( QByteArray const & imageData, QString const & tileId );
     void updateTile( QString const & fileName, QString const & idStr );
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void downloadTile( QUrl const & sourceUrl, QString const & destinationFileName,
                        QString const & id, DownloadUsage );
 
@@ -70,14 +75,15 @@ class TileLoader: public QObject
 
     void tileCompleted( TileId const & tileId, GeoDataDocument * document );
 
- private:
+private:
+
     static QString tileFileName( GeoSceneTileDataset const * tileData, TileId const & );
     void triggerDownload( GeoSceneTileDataset const *tileData, TileId const &, DownloadUsage const );
     static QImage scaledLowerLevelTile( GeoSceneTextureTileDataset const * textureData, TileId const & );
     GeoDataDocument* openVectorFile(const QString &filename) const;
 
     // For vectorTile parsing
-    PluginManager const * m_pluginManager;
+    PluginManager const* m_pluginManager = nullptr;
 };
 
 } // namespace Marble

@@ -48,7 +48,8 @@ class TextureTile;
 
 class StackedTile : public Tile
 {
- public:
+public:
+
     explicit StackedTile( TileId const &id, QImage const &resultImage, QVector<QSharedPointer<TextureTile> > const &tiles );
     ~StackedTile() override;
 
@@ -58,41 +59,43 @@ class StackedTile : public Tile
     int depth() const;
     int byteCount() const;
 
-/*!
-    \brief Returns the stack of Tiles
-    \return A container of Tile objects.
-*/
+    /*!
+     \brief Returns the stack of Tiles
+     \return A container of Tile objects.
+    */
     QVector<QSharedPointer<TextureTile> > tiles() const;
 
-/*!
-    \brief Returns the QImage that describes the merged stack of Tiles
-    \return A non-zero pointer to the resulting QImage
-*/
+    /*!
+     \brief Returns the QImage that describes the merged stack of Tiles
+     \return A non-zero pointer to the resulting QImage
+    */
     QImage const * resultImage() const;
 
-/*!
-    \brief Returns the color value of the result tile at the given integer position.
-    \return The uint that describes the color value of the given pixel
+    /*!
+     \brief Returns the color value of the result tile at the given integer position.
+     \return The uint that describes the color value of the given pixel
 
-    Note: for gray scale images the color value of a single pixel is described
-    via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
-*/
+     Note: for gray scale images the color value of a single pixel is described
+     via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
+    */
     uint pixel( int x, int y ) const;
 
-/*!
-    \brief Returns the color value of the result tile at a given floating point position.
-    \return The uint that describes the color value of the given pixel
+    /*!
+     \brief Returns the color value of the result tile at a given floating point position.
+     \return The uint that describes the color value of the given pixel
 
-    Subpixel calculation is done via bilinear interpolation.
+     Subpixel calculation is done via bilinear interpolation.
 
-    Note: for gray scale images the color value of a single pixel is described
-    via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
-*/
+     Note: for gray scale images the color value of a single pixel is described
+     via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
+    */
     uint pixelF( qreal x, qreal y ) const;
+
     // This method passes the top left pixel (if known already) for better performance
     uint pixelF( qreal x, qreal y, const QRgb& pixel ) const;
 
- private:
+private:
+
     Q_DISABLE_COPY( StackedTile )
 
     const QImage m_resultImage;

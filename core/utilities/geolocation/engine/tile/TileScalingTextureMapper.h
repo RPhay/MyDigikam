@@ -23,7 +23,8 @@ class TileScalingTextureMapper : public QObject, public TextureMapperInterface
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit TileScalingTextureMapper( StackedTileLoader *tileLoader, QObject *parent = nullptr );
 
     void mapTexture( GeoPainter *painter,
@@ -32,18 +33,21 @@ class TileScalingTextureMapper : public QObject, public TextureMapperInterface
                              const QRect &dirtyRect,
                              TextureColorizer *texColorizer ) override;
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void removePixmap( const TileId &tileId );
     void clearPixmaps();
 
- private:
+private:
+
     void mapTexture( GeoPainter *painter,
                      const ViewportParams *viewport,
                      int tileZoomLevel,
                      TextureColorizer *texColorizer );
 
- private:
-    StackedTileLoader *const m_tileLoader;
+private:
+
+    StackedTileLoader* const m_tileLoader = nullptr;
     QCache<TileId, const QPixmap> m_cache;
     QImage m_canvasImage;
     int    m_radius;

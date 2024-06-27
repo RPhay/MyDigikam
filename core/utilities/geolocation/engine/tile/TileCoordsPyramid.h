@@ -17,7 +17,8 @@ namespace Marble
 
 class DIGIKAM_EXPORT TileCoordsPyramid
 {
- public:
+public:
+
     TileCoordsPyramid( int const topLevel, int const bottomLevel );
     TileCoordsPyramid( TileCoordsPyramid const & other );
     TileCoordsPyramid();
@@ -38,9 +39,10 @@ class DIGIKAM_EXPORT TileCoordsPyramid
     qint64 tilesCount() const;
 
  private:
+
     void swap( TileCoordsPyramid & other );
     class Private;
-    Private * d; // not const, needs to be swapable
+    Private* d = nullptr; // not const, needs to be swapable
 };
 
 } // namespace Marble

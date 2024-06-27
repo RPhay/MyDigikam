@@ -29,6 +29,7 @@ class TileCreatorPrivate;
 class DIGIKAM_EXPORT TileCreatorSource
 {
 public:
+
     virtual ~TileCreatorSource() {}
 
     /**
@@ -49,6 +50,7 @@ class DIGIKAM_EXPORT TileCreator : public QThread
     Q_OBJECT
 
  public:
+
     /**
      * Constructor for standard Image source
      */
@@ -75,16 +77,18 @@ class DIGIKAM_EXPORT TileCreator : public QThread
     bool resume() const;
     bool verifyExactResult() const;
 
- protected:
+protected:
+
     void run() override;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void  progress( int value );
 
+private:
 
- private:
     Q_DISABLE_COPY( TileCreator )
-    TileCreatorPrivate  * const d;
+    TileCreatorPrivate* const d = nullptr;
 };
 
 } // namespace Marble
