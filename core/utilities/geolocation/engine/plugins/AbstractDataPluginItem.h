@@ -27,7 +27,8 @@ class DIGIKAM_EXPORT AbstractDataPluginItem : public QObject, public BillboardGr
     Q_PROPERTY( bool favorite READ isFavorite WRITE setFavorite NOTIFY favoriteChanged )
     Q_PROPERTY( bool sticky READ isSticky WRITE setSticky NOTIFY stickyChanged )
 
- public:
+public:
+
     explicit AbstractDataPluginItem( QObject *parent = nullptr );
     ~AbstractDataPluginItem() override;
 
@@ -70,16 +71,19 @@ class DIGIKAM_EXPORT AbstractDataPluginItem : public QObject, public BillboardGr
 
     virtual QList<QAction*> actions();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void updated();
     void idChanged();
     void favoriteChanged( const QString& id, bool favorite );
     void stickyChanged();
 
- public Q_SLOTS:
+public Q_SLOTS:
+
    void toggleFavorite();
 
- private:
+private:
+
     friend class AbstractDataPluginModel;
 
     /**

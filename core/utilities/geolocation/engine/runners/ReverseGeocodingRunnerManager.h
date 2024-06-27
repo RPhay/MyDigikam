@@ -26,6 +26,7 @@ class DIGIKAM_EXPORT ReverseGeocodingRunnerManager : public QObject
     Q_OBJECT
 
 public:
+
     /**
      * Constructor.
      * @param pluginManager The plugin manager that gives access to RunnerPlugins
@@ -46,6 +47,7 @@ public:
     QString searchReverseGeocoding( const GeoDataCoordinates &coordinates, int timeout = 30000 );
 
 Q_SIGNALS:
+
     /**
      * The reverse geocoding request is finished, the result is stored
      * in the given placemark. This signal is Q_EMITted when the first
@@ -61,12 +63,13 @@ Q_SIGNALS:
     void reverseGeocodingFinished();
 
 private:
+
     Q_PRIVATE_SLOT( d, void addReverseGeocodingResult( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark ) )
     Q_PRIVATE_SLOT( d, void cleanupReverseGeocodingTask( ReverseGeocodingTask *task ) )
 
     class Private;
     friend class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

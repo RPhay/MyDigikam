@@ -16,11 +16,11 @@ class VerticalPerspectiveProjectionPrivate;
 /**
  * @short A class to implement the spherical projection used by the "Globe" view.
  */
-
 class VerticalPerspectiveProjection : public AzimuthalProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
+
+public:
 
     /**
      * @brief Construct a new VerticalPerspectiveProjection.
@@ -85,10 +85,12 @@ class VerticalPerspectiveProjection : public AzimuthalProjection
                          qreal& lon, qreal& lat,
                          GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const override;
 
- protected:
+protected:
+
     explicit VerticalPerspectiveProjection(VerticalPerspectiveProjectionPrivate *dd );
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(VerticalPerspectiveProjection)
     Q_DISABLE_COPY( VerticalPerspectiveProjection )
 };

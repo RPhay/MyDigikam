@@ -23,6 +23,7 @@ class DIGIKAM_EXPORT ReverseGeocodingRunnerPlugin : public QObject, public Plugi
     Q_OBJECT
 
 public:
+
     /** Constructor with optional parent object */
     explicit ReverseGeocodingRunnerPlugin( QObject* parent = nullptr );
 
@@ -60,11 +61,13 @@ public:
     QIcon icon() const override;
 
 protected:
+
     void setSupportedCelestialBodies( const QStringList &celestialBodies );
 
     void setCanWorkOffline( bool canWorkOffline );
 
 private:
+
     class Private;
     Private* const d = nullptr;
 };

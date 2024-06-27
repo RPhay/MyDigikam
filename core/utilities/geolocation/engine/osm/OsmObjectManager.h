@@ -34,6 +34,7 @@ public:
     static void registerId( qint64 id );
 
 private:
+
     /**
      * @brief newly created placemarks are assigned negative unique IDs.
      * In order to assure there are no duplicate IDs, they are assigned the

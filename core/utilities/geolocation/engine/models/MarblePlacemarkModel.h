@@ -33,7 +33,8 @@ class DIGIKAM_EXPORT MarblePlacemarkModel : public QAbstractListModel
 
     Q_PROPERTY( int count READ rowCount NOTIFY countChanged )
 
- public:
+public:
+
     /**
      * The roles of the place marks.
      */
@@ -114,9 +115,10 @@ class DIGIKAM_EXPORT MarblePlacemarkModel : public QAbstractListModel
 Q_SIGNALS:
     void countChanged();
 
- private:
+private:
 
     Q_DISABLE_COPY( MarblePlacemarkModel )
+
     class Private;
     Private* const d = nullptr;
     QHash<int, QByteArray> m_roleNames;

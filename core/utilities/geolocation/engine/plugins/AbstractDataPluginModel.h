@@ -42,7 +42,8 @@ class DIGIKAM_EXPORT AbstractDataPluginModel : public QObject
     /** @todo FIXME Qt Quick segfaults if using the real class here instead of QObject */
     Q_PROPERTY( QObject* favoritesModel READ favoritesModel CONSTANT )
 
- public:
+public:
+
     explicit AbstractDataPluginModel( const QString& name, const MarbleModel *marbleModel, QObject *parent = nullptr );
     ~AbstractDataPluginModel() override;
 
@@ -91,6 +92,7 @@ class DIGIKAM_EXPORT AbstractDataPluginModel : public QObject
     bool itemExists( const QString& id ) const;
 
 public Q_SLOTS:
+
     /**
      * Adds the @p items to the list of initialized items. It checks if items with the same id are
      * already in the list and ignores and deletes them in this case.
@@ -107,7 +109,8 @@ public Q_SLOTS:
      */
     void clear();
 
- protected:
+protected:
+
     /**
      * Managing to get @p number additional items in @p box. This includes generating a url and
      * downloading the corresponding file.
@@ -145,7 +148,8 @@ public Q_SLOTS:
 
     void registerItemProperties( const QMetaObject& item );
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     /**
      * @brief Get new items with getAdditionalItems if it is reasonable.
      */
@@ -170,14 +174,16 @@ public Q_SLOTS:
 
     void themeChanged();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void itemsUpdated();
     void favoriteItemsChanged( const QStringList& favoriteItems );
     void favoriteItemsOnlyChanged();
 
- private:
+private:
 
     AbstractDataPluginModelPrivate* const d = nullptr;
+
     friend class AbstractDataPluginModelPrivate;
 };
 

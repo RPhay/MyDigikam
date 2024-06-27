@@ -17,16 +17,19 @@ class OsmPlacemarkData;
 class OsmRelationManagerWidgetPrivate : public Ui::OsmRelationManagerWidgetPrivate
 {
 public:
+
     OsmRelationManagerWidgetPrivate();
     ~OsmRelationManagerWidgetPrivate();
     void populateRelationsList();
     void populateDropMenu();
 
 private:
+
     friend class OsmRelationManagerWidget;
-    GeoDataPlacemark *m_placemark;
-    const QHash< qint64, OsmPlacemarkData > *m_allRelations;
-    QMenu *m_relationDropMenu;
+
+    GeoDataPlacemark *m_placemark                           = nullptr;
+    const QHash< qint64, OsmPlacemarkData > *m_allRelations = nullptr;
+    QMenu *m_relationDropMenu                               = nullptr;
 };
 
 } // namespace Marble

@@ -27,7 +27,8 @@ class AbstractProjectionPrivate;
 class CylindricalProjection : public AbstractProjection
 {
     // Not a QObject so far because we don't need to send signals.
-  public:
+
+public:
 
     CylindricalProjection();
 
@@ -48,10 +49,12 @@ class CylindricalProjection : public AbstractProjection
 
     QPainterPath mapShape( const ViewportParams *viewport ) const override;
 
- protected:
+protected:
+
     explicit CylindricalProjection( CylindricalProjectionPrivate* dd );
 
- private:
+private:
+
     Q_DECLARE_PRIVATE( CylindricalProjection )
     Q_DISABLE_COPY( CylindricalProjection )
 };

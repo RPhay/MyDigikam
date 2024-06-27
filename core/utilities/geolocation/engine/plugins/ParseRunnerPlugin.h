@@ -23,6 +23,7 @@ class DIGIKAM_EXPORT ParseRunnerPlugin : public QObject, public PluginInterface
     Q_OBJECT
 
 public:
+
     /** Constructor with optional parent object */
     explicit ParseRunnerPlugin( QObject* parent = nullptr );
 
@@ -53,6 +54,7 @@ public:
     QIcon icon() const override;
 
 private:
+
     class Private;
     Private* const d = nullptr;
 };

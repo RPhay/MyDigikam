@@ -21,6 +21,7 @@ class DIGIKAM_EXPORT ReverseGeocodingRunner : public QObject
     Q_OBJECT
 
 public:
+
     explicit ReverseGeocodingRunner( QObject *parent );
 
     /**
@@ -37,6 +38,7 @@ public:
     virtual void reverseGeocoding( const GeoDataCoordinates &coordinates ) = 0;
 
 Q_SIGNALS:
+
     /**
      * Reverse geocoding is finished, result in the given placemark.
      * To be Q_EMITted by runners after a @see reverseGeocoding call.
@@ -44,13 +46,15 @@ Q_SIGNALS:
     void reverseGeocodingFinished( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
 
 protected:
+
     /**
      * Access to the currently used model, or null if no was set with @see setModel
      */
     const MarbleModel *model() const;
 
 private:
-    const MarbleModel *m_model;
+
+    const MarbleModel* m_model = nullptr;
 };
 
 } // namespace Marble

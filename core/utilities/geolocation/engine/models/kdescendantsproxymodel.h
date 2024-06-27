@@ -162,6 +162,7 @@ public:
                                   int hits = 1, Qt::MatchFlags flags = Qt::MatchFlags(Qt::MatchStartsWith | Qt::MatchWrap)) const Q_DECL_OVERRIDE;
 
 private:
+
     Q_DECLARE_PRIVATE(KDescendantsProxyModel)
     //@cond PRIVATE
     KDescendantsProxyModelPrivate *d_ptr;

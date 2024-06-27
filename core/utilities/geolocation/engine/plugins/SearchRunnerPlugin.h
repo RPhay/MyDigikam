@@ -21,6 +21,7 @@ class DIGIKAM_EXPORT SearchRunnerPlugin : public QObject, public PluginInterface
     Q_OBJECT
 
 public:
+
     /** Constructor with optional parent object */
     explicit SearchRunnerPlugin( QObject* parent = nullptr );
 
@@ -58,11 +59,13 @@ public:
     QIcon icon() const override;
 
 protected:
+
     void setSupportedCelestialBodies( const QStringList &celestialBodies );
 
     void setCanWorkOffline( bool canWorkOffline );
 
 private:
+
     class Private;
     Private* const d = nullptr;
 };

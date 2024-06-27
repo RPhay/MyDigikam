@@ -30,7 +30,6 @@ namespace Marble
 
 struct DIGIKAM_EXPORT PluginAuthor
 {
-
 public:
 
     PluginAuthor()
@@ -55,7 +54,7 @@ public:
 
 class DIGIKAM_EXPORT PluginInterface
 {
- public:
+public:
 
     virtual ~PluginInterface();
 

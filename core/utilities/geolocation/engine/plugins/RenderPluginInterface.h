@@ -23,7 +23,8 @@ class RenderPlugin;
 
 class RenderPluginInterface: public PluginInterface, public LayerInterface
 {
- public:
+public:
+
     ~RenderPluginInterface() override;
 
     virtual void initialize() = 0;

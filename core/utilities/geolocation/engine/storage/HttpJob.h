@@ -28,7 +28,8 @@ class DIGIKAM_EXPORT HttpJob: public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     HttpJob( const QUrl & sourceUrl, const QString & destFileName, const QString &id, QNetworkAccessManager *networkAccessManager );
     ~HttpJob() override;
 
@@ -50,7 +51,8 @@ class DIGIKAM_EXPORT HttpJob: public QObject
 
     QByteArray userAgent() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * errorCode contains 0, if there was no error and 1 otherwise
      */
@@ -63,17 +65,21 @@ class DIGIKAM_EXPORT HttpJob: public QObject
      */
     void dataReceived( HttpJob * job, const QByteArray& data );
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void execute();
 
 private Q_SLOTS:
+
    void downloadProgress( qint64 bytesReceived, qint64 bytesTotal );
    void error( QNetworkReply::NetworkError code );
    void finished();
 
- private:
+private:
+
     Q_DISABLE_COPY( HttpJob )
-    HttpJobPrivate *const d;
+    HttpJobPrivate* const d = nullptr;
+
     friend class HttpJobPrivate;
 };
 

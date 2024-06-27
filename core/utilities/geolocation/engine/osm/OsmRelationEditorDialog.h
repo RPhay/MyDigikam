@@ -29,20 +29,25 @@ class DIGIKAM_EXPORT OsmRelationEditorDialog : public QDialog
     Q_OBJECT
 
 public:
+
     explicit OsmRelationEditorDialog( OsmPlacemarkData *relationData, QWidget *parent = nullptr );
     ~OsmRelationEditorDialog() override;
 
 private Q_SLOTS:
+
     void checkFields();
 
 private:
+
     void finish();
+
     friend class OsmRelationEditorDialogPrivate;
-    QDialogButtonBox *m_buttonBox;
-    QLineEdit *m_nameLineEdit;
-    OsmTagEditorWidget *m_tagEditor;
-    GeoDataPlacemark *m_dummyPlacemark;
-    OsmPlacemarkData *m_relationData;
+
+    QDialogButtonBox* m_buttonBox       = nullptr;
+    QLineEdit* m_nameLineEdit           = nullptr;
+    OsmTagEditorWidget* m_tagEditor     = nullptr;
+    GeoDataPlacemark* m_dummyPlacemark  = nullptr;
+    OsmPlacemarkData* m_relationData    = nullptr;
 };
 
 } // namespace Marble

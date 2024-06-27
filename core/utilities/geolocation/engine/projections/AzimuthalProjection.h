@@ -20,11 +20,11 @@ class AzimuthalProjectionPrivate;
 /**
  * @short A base class for the Gnomonic and Orthographic (Globe) projections in Marble
  */
-
 class AzimuthalProjection : public AbstractProjection
 {
     // Not a QObject so far because we don't need to send signals.
-  public:
+
+public:
 
     AzimuthalProjection();
 
@@ -56,10 +56,12 @@ class AzimuthalProjection : public AbstractProjection
     GeoDataLatLonAltBox latLonAltBox( const QRect& screenRect,
                                       const ViewportParams *viewport ) const override;
 
- protected:
+protected:
+
     explicit AzimuthalProjection( AzimuthalProjectionPrivate* dd );
 
- private:
+private:
+
     Q_DECLARE_PRIVATE( AzimuthalProjection )
     Q_DISABLE_COPY( AzimuthalProjection )
 };

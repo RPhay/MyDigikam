@@ -62,7 +62,8 @@ class DownloadQueueSet: public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit DownloadQueueSet( QObject * const parent = nullptr );
     explicit DownloadQueueSet( const DownloadPolicy& policy, QObject * const parent = nullptr );
     ~DownloadQueueSet() override;
@@ -78,7 +79,8 @@ class DownloadQueueSet: public QObject
     void retryJobs();
     void purgeJobs();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void jobAdded();
     void jobRemoved();
     void jobRetry();
@@ -88,12 +90,14 @@ class DownloadQueueSet: public QObject
                         const QString& id, DownloadUsage );
     void progressChanged( int active, int queued );
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void finishJob( HttpJob * job, const QByteArray& data );
     void redirectJob( HttpJob * job, const QUrl& newSourceUrl );
     void retryOrBlacklistJob( HttpJob * job, const int errorCode );
 
- private:
+private:
+
     void activateJob( HttpJob * const job );
     void deactivateJob( HttpJob * const job );
     bool jobIsActive( const QString& destinationFileName ) const;
@@ -109,15 +113,19 @@ class DownloadQueueSet: public QObject
     class JobStack
     {
     public:
+
         bool contains( const QString& destinationFileName ) const;
         int count() const;
         bool isEmpty() const;
         HttpJob * pop();
         void push( HttpJob * const );
+
     private:
+
         QStack<HttpJob*> m_jobs;
         QSet<QString> m_jobsContent;
     };
+
     JobStack m_jobs;
 
     /// Contains the jobs which are currently being downloaded.

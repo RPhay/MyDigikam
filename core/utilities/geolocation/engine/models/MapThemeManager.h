@@ -20,6 +20,7 @@ namespace Marble
 
 class GeoSceneDocument;
 class GeoDataPhotoOverlay;
+
 /**
  * @short The class that handles map themes that are locally available .
  *
@@ -43,6 +44,7 @@ class DIGIKAM_EXPORT MapThemeManager : public QObject
     Q_OBJECT
 
  public:
+
     explicit MapThemeManager(QObject *parent = nullptr);
     ~MapThemeManager() override;
 
@@ -88,12 +90,14 @@ class DIGIKAM_EXPORT MapThemeManager : public QObject
     static void deleteMapTheme( const QString &mapThemeId );
 
  Q_SIGNALS:
+
     /**
      * @brief This signal will be Q_EMITted, when the themes change.
      */
     void themesChanged();
 
  private:
+
     Q_PRIVATE_SLOT( d, void directoryChanged( const QString& path ) )
     Q_PRIVATE_SLOT( d, void fileChanged( const QString & path ) )
 
@@ -101,7 +105,7 @@ class DIGIKAM_EXPORT MapThemeManager : public QObject
 
     class Private;
     friend class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

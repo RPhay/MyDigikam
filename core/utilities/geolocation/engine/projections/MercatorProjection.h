@@ -13,7 +13,6 @@
  * @author Torsten Rahn <rahn@kde.org>
  */
 
-
 #include "CylindricalProjection.h"
 
 namespace Marble
@@ -26,7 +25,8 @@ namespace Marble
 class MercatorProjection : public CylindricalProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
+
+public:
 
     /**
      * @brief Construct a new MercatorProjection.
@@ -103,7 +103,8 @@ class MercatorProjection : public CylindricalProjection
 
     bool  mapCoversViewport( const ViewportParams *viewport ) const override;
 
- private:
+private:
+
     mutable qreal m_lastCenterLat;
     mutable qreal m_lastCenterLatInv;
 

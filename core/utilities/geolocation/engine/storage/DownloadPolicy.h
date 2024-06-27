@@ -16,7 +16,8 @@ class DownloadPolicyKey
 {
     friend bool operator==( DownloadPolicyKey const & lhs, DownloadPolicyKey const & rhs );
 
- public:
+public:
+
     DownloadPolicyKey();
     DownloadPolicyKey( const QStringList & hostNames, const DownloadUsage usage );
     DownloadPolicyKey( const QString & hostName, const DownloadUsage usage );
@@ -29,7 +30,8 @@ class DownloadPolicyKey
 
     bool matches( const QString & hostName, const DownloadUsage usage ) const;
 
- private:
+private:
+
     QStringList m_hostNames;
     DownloadUsage m_usage;
 };
@@ -39,12 +41,12 @@ inline bool operator==( const DownloadPolicyKey & lhs, const DownloadPolicyKey &
     return lhs.m_hostNames == rhs.m_hostNames && lhs.m_usage == rhs.m_usage;
 }
 
-
 class DownloadPolicy
 {
     friend bool operator==( const DownloadPolicy & lhs, const DownloadPolicy & rhs );
 
- public:
+public:
+
     DownloadPolicy();
     explicit DownloadPolicy( const DownloadPolicyKey & key );
 
@@ -53,14 +55,15 @@ class DownloadPolicy
 
     DownloadPolicyKey key() const;
 
- private:
+private:
+
     DownloadPolicyKey m_key;
     int m_maximumConnections;
 };
 
 inline bool operator==( const DownloadPolicy & lhs, const DownloadPolicy & rhs )
 {
-    return lhs.m_key == rhs.m_key && lhs.m_maximumConnections == rhs.m_maximumConnections;
+    return ((lhs.m_key == rhs.m_key) && (lhs.m_maximumConnections == rhs.m_maximumConnections));
 }
 
 } // namespace Marble

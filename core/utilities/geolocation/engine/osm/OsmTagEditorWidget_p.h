@@ -19,6 +19,7 @@ class OsmTagEditorWidget;
 class OsmTagEditorWidgetPrivate : public Ui::OsmTagEditorWidgetPrivate
 {
 public:
+
     typedef QPair<QString, QString> OsmTag;
     OsmTagEditorWidgetPrivate();
     ~OsmTagEditorWidgetPrivate();
@@ -26,6 +27,7 @@ public:
     void populateCurrentTagsList();
 
 private:
+
     friend class OsmTagEditorWidget;
     static QTreeWidgetItem *tagWidgetItem(const OsmTag &tag);
 
@@ -58,7 +60,8 @@ private:
      */
     static QVector<OsmTag> createAdditionalOsmTags();
 
-    GeoDataPlacemark *m_placemark;
+    GeoDataPlacemark *m_placemark = nullptr;
+
     static const QString m_customTagAdderText;
 };
 

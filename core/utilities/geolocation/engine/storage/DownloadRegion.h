@@ -14,6 +14,7 @@
 
 namespace Marble
 {
+
 class DownloadRegionPrivate;
 class GeoDataLatLonAltBox;
 class GeoDataLineString;
@@ -26,7 +27,8 @@ class DIGIKAM_EXPORT DownloadRegion : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit DownloadRegion( QObject* parent=nullptr );
 
     void setMarbleModel( MarbleModel *model );
@@ -46,7 +48,8 @@ class DIGIKAM_EXPORT DownloadRegion : public QObject
 
     QVector<int> validTileLevels( const TileType tileType ) const;
 
-  private:
+private:
+
     DownloadRegionPrivate* const d = nullptr;
 };
 

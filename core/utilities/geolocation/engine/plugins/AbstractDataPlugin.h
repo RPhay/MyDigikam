@@ -38,7 +38,8 @@ class DIGIKAM_EXPORT AbstractDataPlugin : public RenderPlugin
     Q_PROPERTY( QObject* favoritesModel READ favoritesModel NOTIFY favoritesModelChanged )
     Q_PROPERTY( int numberOfItems READ numberOfItems WRITE setNumberOfItems NOTIFY changedNumberOfItems )
 
- public:
+public:
+
     explicit AbstractDataPlugin( const MarbleModel *marbleModel );
 
     ~AbstractDataPlugin() override;
@@ -111,19 +112,21 @@ class DIGIKAM_EXPORT AbstractDataPlugin : public RenderPlugin
 
     QObject* favoritesModel();
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     virtual void favoriteItemsChanged( const QStringList& favoriteItems );
 
     void delayedUpdate();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void changedNumberOfItems( quint32 number );
 
     void favoriteItemsOnlyChanged();
 
     void favoritesModelChanged();
 
- private:
+private:
 
     AbstractDataPluginPrivate* const d = nullptr;
 };

@@ -61,7 +61,9 @@ class KBiAssociativeContainer
 
         }
     };
+
 public:
+
     using left_type = typename QMap<int, QPersistentModelIndex>::mapped_type;
     using right_type = typename QHash<QPersistentModelIndex, int>::mapped_type;
 
@@ -69,6 +71,7 @@ public:
     class _iterator : public _iterator_impl_ctor<Container, typename Container::key_type, typename Container::mapped_type>
     {
     public:
+
         explicit inline _iterator(void *data) : Container::iterator(data) {}
 
         /* implicit */ _iterator(const typename Container::iterator it)
@@ -88,11 +91,13 @@ public:
         }
 
     private:
+
 #ifndef Q_CC_MSVC
         using Container::iterator::operator*;
         using Container::iterator::operator->;
         using Container::iterator::value;
 #endif
+
     };
 
     using left_iterator = _iterator<QHash<QPersistentModelIndex, int> >;
@@ -392,7 +397,9 @@ public:
     friend QDataStream &operator<< <LeftContainer, RightContainer>(QDataStream &out, const KBiAssociativeContainer<LeftContainer, RightContainer> &bihash);
     friend QDataStream &operator>> <LeftContainer, RightContainer>(QDataStream &in, KBiAssociativeContainer<LeftContainer, RightContainer> &biHash);
     friend QDebug operator<< <LeftContainer, RightContainer>(QDebug out, const KBiAssociativeContainer<LeftContainer, RightContainer> &biHash);
+
 protected:
+
     LeftContainer _leftToRight;
     RightContainer _rightToLeft;
 };
@@ -410,6 +417,7 @@ QDataStream &operator>>(QDataStream &in, KBiAssociativeContainer<LeftContainer, 
     in >> leftToRight;
     typename LeftContainer::const_iterator it = leftToRight.constBegin();
     const typename LeftContainer::const_iterator end = leftToRight.constEnd();
+
     for (; it != end; ++it)
         container.insert(it.key(), it.value());
 
@@ -454,6 +462,7 @@ QDebug operator<<(QDebug out, const KBiAssociativeContainer<LeftContainer, Right
 
     const typename KBiAssociativeContainer<LeftContainer, RightContainer>::left_const_iterator end = container.leftConstEnd();
     out.nospace() << "KBiAssociativeContainer<" << containerType<LeftContainer>() << ", " << containerType<RightContainer>() << ">" << "(";
+
     for (; it != end; ++it)
         out << "(" << it.key() << " <=> " << it.value() << ") ";
 

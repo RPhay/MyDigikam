@@ -26,13 +26,15 @@
 
 #include "digikam_export.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class MarbleZipReaderPrivate;
 
 class DIGIKAM_EXPORT MarbleZipReader
 {
 public:
+
     MarbleZipReader(const QString &fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly );
 
     explicit MarbleZipReader(QIODevice *device);
@@ -68,7 +70,8 @@ public:
     QByteArray fileData(const QString &fileName) const;
     bool extractAll(const QString &destinationDir) const;
 
-    enum Status {
+    enum Status
+    {
         NoError,
         FileReadError,
         FileOpenError,
@@ -81,7 +84,9 @@ public:
     void close();
 
 private:
-    MarbleZipReaderPrivate *d;
+
+    MarbleZipReaderPrivate* d = nullptr;
+
     Q_DISABLE_COPY(MarbleZipReader)
 };
 

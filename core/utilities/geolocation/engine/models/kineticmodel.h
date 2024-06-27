@@ -21,6 +21,7 @@ class KineticModel: public QObject
     Q_PROPERTY(int updateInterval READ updateInterval WRITE setUpdateInterval)
 
 public:
+
     explicit KineticModel(QObject *parent = nullptr);
     ~KineticModel() override;
 
@@ -30,6 +31,7 @@ public:
     bool hasVelocity() const;
 
 public Q_SLOTS:
+
     void setDuration(int ms);
     void setPosition(const QPointF& position);
     void setPosition(qreal posX, qreal posY);
@@ -41,15 +43,19 @@ public Q_SLOTS:
     void start();
 
 Q_SIGNALS:
+
     void positionChanged( qreal lon, qreal lat );
     void headingChanged( qreal heading );
     void finished();
 
 private Q_SLOTS:
+
     void update();
 
 private:
+
     QScopedPointer<KineticModelPrivate> d_ptr;
+
     Q_DECLARE_PRIVATE(KineticModel);
     Q_DISABLE_COPY(KineticModel);
 };

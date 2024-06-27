@@ -98,12 +98,16 @@ public Q_SLOTS:
     bool swapTourPrimitives( const QModelIndex &parent, int indexA, int indexB );
 
 Q_SIGNALS:
+
     /// insert and remove row don't trigger any signal that proxies forward
     /// this signal will refresh geometry layer and placemark layout
     void removed( GeoDataObject *object );
     void added( GeoDataObject *object );
+
  private:
+
     Q_DISABLE_COPY( GeoDataTreeModel )
+
     class Private;
     Private* const d = nullptr;
 };

@@ -23,6 +23,7 @@ class DIGIKAM_EXPORT ParsingRunnerManager : public QObject
     Q_OBJECT
 
 public:
+
     /**
      * Constructor.
      * @param pluginManager The plugin manager that gives access to RunnerPlugins
@@ -43,6 +44,7 @@ public:
     GeoDataDocument *openFile( const QString &fileName, DocumentRole role = UserDocument, int timeout = 30000 );
 
 Q_SIGNALS:
+
     /**
      * The file was parsed and potential error message
      */
@@ -54,12 +56,13 @@ Q_SIGNALS:
     void parsingFinished();
 
 private:
+
     Q_PRIVATE_SLOT( d, void cleanupParsingTask() )
     Q_PRIVATE_SLOT( d, void addParsingResult( GeoDataDocument *document, const QString &error ) )
 
     class Private;
     friend class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

@@ -12,7 +12,6 @@
 #include <QScopedPointer>
 #include <QSharedPointer>
 
-
 // Marble
 #include "GeoDataCoordinates.h"
 #include "GeoDocument.h"
@@ -24,7 +23,8 @@ namespace Marble
 {
 
 /** Type of OSM element. */
-enum class OsmType {
+enum class OsmType
+{
     Node,
     Way,
     Relation
@@ -34,7 +34,8 @@ enum class OsmType {
  *  @note OSM uses distinct id spaces for all its three basic element types, so just the numeric id
  *  on its own doesn't identify an element without knowing its type.
  */
-struct OsmIdentifier {
+struct OsmIdentifier
+{
     inline OsmIdentifier() = default;
     inline OsmIdentifier(qint64 _id, OsmType _type) : id(_id), type(_type) {}
 
@@ -70,7 +71,6 @@ class OsmPlacemarkDataHashRef;
  */
 class DIGIKAM_EXPORT OsmPlacemarkData: public GeoNode
 {
-
 public:
 
     OsmPlacemarkData();

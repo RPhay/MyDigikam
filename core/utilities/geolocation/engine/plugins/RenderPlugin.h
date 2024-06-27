@@ -45,11 +45,13 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
     Q_PROPERTY ( bool visible READ visible WRITE setVisible NOTIFY visibilityChanged )
     Q_PROPERTY ( bool userCheckable READ isUserCheckable WRITE setUserCheckable NOTIFY userCheckableChanged )
 
- public:
+public:
+
     /**
      * @brief A Type of plugin
      */
-    enum RenderType {
+    enum RenderType
+    {
         UnknownRenderType,
         TopLevelRenderType,
         PanelRenderType,
@@ -195,7 +197,8 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
 
     QString runtimeTrace() const override;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     /**
      * @brief setting enabled
      *
@@ -279,7 +282,8 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
      */
     QAction *action() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * This signal is Q_EMITted if the visibility is changed with @see setVisible
      */
@@ -313,10 +317,12 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
      */
     void repaintNeeded( const QRegion& dirtyRegion = QRegion() );
 
- protected:
+protected:
+
     bool eventFilter( QObject *, QEvent * ) override;
 
- private:
+private:
+
     friend class RenderPluginModel;
 
     QStandardItem *item();
@@ -324,7 +330,8 @@ class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
     void applyItemState();
     void retrieveItemState();
 
- private:
+private:
+
     Q_DISABLE_COPY( RenderPlugin )
 
     class Private;

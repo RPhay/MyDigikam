@@ -15,7 +15,8 @@ class CylindricalProjection;
 
 class CylindricalProjectionPrivate : public AbstractProjectionPrivate
 {
-  public:
+public:
+
     explicit CylindricalProjectionPrivate( CylindricalProjection * parent );
 
     // This method tessellates a line segment in a way that the line segment
@@ -64,7 +65,8 @@ class CylindricalProjectionPrivate : public AbstractProjectionPrivate
 
     qreal repeatDistance( const ViewportParams *viewport ) const;
 
-    CylindricalProjection * const q_ptr;
+    CylindricalProjection* const q_ptr = nullptr;
+
     Q_DECLARE_PUBLIC( CylindricalProjection )
 };
 

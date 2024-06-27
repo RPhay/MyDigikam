@@ -22,7 +22,8 @@ class PluginItemDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit PluginItemDelegate( QAbstractItemView *view, QObject * parent = nullptr );
     ~PluginItemDelegate() override;
 
@@ -34,7 +35,8 @@ class PluginItemDelegate : public QAbstractItemDelegate
     void setAboutIcon( const QIcon& icon );
     void setConfigIcon( const QIcon& icon );
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * This signal is emitted if the user clicks on a "about"-button of an item in the view
      * passed to the constructor.
@@ -47,14 +49,17 @@ class PluginItemDelegate : public QAbstractItemDelegate
      */
     void configPluginClicked( const QModelIndex &index );
 
- protected:
+protected:
+
     bool editorEvent( QEvent *event,
                       QAbstractItemModel *model,
                       const QStyleOptionViewItem &option,
                       const QModelIndex &index ) override;
 
- private:
-    enum ButtonType {
+private:
+
+    enum ButtonType
+    {
         About,
         Configure
     };

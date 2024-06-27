@@ -20,7 +20,8 @@ class StereographicProjectionPrivate;
 class StereographicProjection : public AzimuthalProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
+
+public:
 
     /**
      * @brief Construct a new StereographicProjection.
@@ -85,10 +86,12 @@ class StereographicProjection : public AzimuthalProjection
                          qreal& lon, qreal& lat,
                          GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const override;
 
- protected:
+protected:
+
     explicit StereographicProjection(StereographicProjectionPrivate *dd );
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(StereographicProjection)
     Q_DISABLE_COPY( StereographicProjection )
 };

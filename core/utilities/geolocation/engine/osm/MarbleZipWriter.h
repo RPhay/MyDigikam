@@ -26,14 +26,15 @@
 
 #include "digikam_export.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class MarbleZipWriterPrivate;
-
 
 class DIGIKAM_EXPORT MarbleZipWriter
 {
 public:
+
     MarbleZipWriter(const QString &fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate) );
 
     explicit MarbleZipWriter(QIODevice *device);
@@ -44,7 +45,8 @@ public:
     bool isWritable() const;
     bool exists() const;
 
-    enum Status {
+    enum Status
+    {
         NoError,
         FileWriteError,
         FileOpenError,
@@ -54,7 +56,8 @@ public:
 
     Status status() const;
 
-    enum CompressionPolicy {
+    enum CompressionPolicy
+    {
         AlwaysCompress,
         NeverCompress,
         AutoCompress
@@ -75,8 +78,11 @@ public:
     void addSymLink(const QString &fileName, const QString &destination);
 
     void close();
+
 private:
-    MarbleZipWriterPrivate *d;
+
+    MarbleZipWriterPrivate* d = nullptr;
+
     Q_DISABLE_COPY(MarbleZipWriter)
 };
 

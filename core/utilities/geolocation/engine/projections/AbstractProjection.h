@@ -36,16 +36,17 @@ class GeoDataLatLonAltBox;
 class ViewportParams;
 class AbstractProjectionPrivate;
 
-
 /**
  * @short A base class for all projections in Marble.
  */
-
 class DIGIKAM_EXPORT AbstractProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
-    enum SurfaceType {
+
+public:
+
+    enum SurfaceType
+    {
         Cylindrical,
         Pseudocylindrical,
         Hybrid,
@@ -54,7 +55,8 @@ class DIGIKAM_EXPORT AbstractProjection
         Azimuthal
     };
 
-    enum PreservationType {
+    enum PreservationType
+    {
         NoPreservation,
         Conformal,
         EqualArea
@@ -260,11 +262,13 @@ class DIGIKAM_EXPORT AbstractProjection
 
     QRegion mapRegion( const ViewportParams *viewport ) const;
 
- protected:
+protected:
+
      const QScopedPointer<AbstractProjectionPrivate> d_ptr;
      explicit AbstractProjection( AbstractProjectionPrivate* dd );
 
- private:
+private:
+
      Q_DECLARE_PRIVATE(AbstractProjection)
      Q_DISABLE_COPY( AbstractProjection )
 };

@@ -19,7 +19,8 @@ class OsmRelationManagerWidgetPrivate;
 class GeoDataPlacemark;
 class OsmPlacemarkData;
 
-enum Column {
+enum Column
+{
     Name = 0,
     Type = 1,
     Role = 2
@@ -35,12 +36,14 @@ class DIGIKAM_EXPORT OsmRelationManagerWidget : public QWidget
     Q_OBJECT
 
 public:
+
     explicit OsmRelationManagerWidget( GeoDataPlacemark *placemark,
                                        const QHash<qint64, OsmPlacemarkData> *relations,
                                        QWidget *parent = nullptr );
     ~OsmRelationManagerWidget() override;
 
 public Q_SLOTS:
+
     /**
      * @brief addRelation adds the placemark to the relation specified in the action->text();
      * If the text is "New Relation", a new relation is added
@@ -55,10 +58,13 @@ public Q_SLOTS:
     void update();
 
 Q_SIGNALS:
+
     void relationCreated( const OsmPlacemarkData &relationData );
 
 private:
+
     friend class OsmRelationManagerWidgetPrivate;
+
     OsmRelationManagerWidgetPrivate* const d = nullptr;
 };
 

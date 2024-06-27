@@ -13,6 +13,7 @@
 class OsmcSymbol
 {
 public:
+
     explicit OsmcSymbol(const QString &tag, int size = 20);
     ~OsmcSymbol();
 
@@ -20,6 +21,7 @@ public:
     QColor wayColor() const;
 
 private:
+
     bool parseTag(const QString &tag);
     bool parseBackground(const QString &bg);
     QSvgRenderer* parseForeground(const QString &fg);
@@ -29,8 +31,8 @@ private:
     QColor  m_wayColor;
     QColor  m_backgroundColor;
     QString m_backgroundType;
-    QSvgRenderer *m_foreground;
-    QSvgRenderer *m_foreground2;
+    QSvgRenderer *m_foreground      = nullptr;
+    QSvgRenderer *m_foreground2     = nullptr;
     QString m_text;
     QColor  m_textColor;
 

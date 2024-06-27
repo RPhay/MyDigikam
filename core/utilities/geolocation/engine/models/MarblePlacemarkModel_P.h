@@ -25,6 +25,6 @@ namespace GeoString
         result.replace(QChar(0x0142), QLatin1Char('l'));
         return result;
     }
-}
+} // namespace GeoString
 
 } // namespace Marble

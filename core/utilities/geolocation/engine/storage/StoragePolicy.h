@@ -18,27 +18,30 @@ class StoragePolicy : public QObject
 {
     Q_OBJECT
 
-    public:
-        explicit StoragePolicy( QObject *parent = nullptr );
+public:
 
-        ~StoragePolicy() override {}
+    explicit StoragePolicy( QObject *parent = nullptr );
 
-        virtual bool fileExists( const QString &fileName ) const = 0;
+    ~StoragePolicy() override {}
 
-        /**
-         * Return true if file was written successfully.
-         */
-        virtual bool updateFile( const QString &fileName, const QByteArray &data ) = 0;
+    virtual bool fileExists( const QString &fileName ) const = 0;
+
+    /**
+     * Return true if file was written successfully.
+     */
+    virtual bool updateFile( const QString &fileName, const QByteArray &data ) = 0;
 
     virtual void clearCache() = 0;
 
-        virtual QString lastErrorMessage() const = 0;
+    virtual QString lastErrorMessage() const = 0;
 
-    Q_SIGNALS:
+Q_SIGNALS:
+
     void cleared();
     void sizeChanged( qint64 );
 
-    private:
+private:
+
     Q_DISABLE_COPY( StoragePolicy )
 };
 

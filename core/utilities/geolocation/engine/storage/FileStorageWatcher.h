@@ -18,20 +18,23 @@ class FileStorageWatcherThread : public QObject
 {
     Q_OBJECT
 
-    public:
+public:
+
     explicit FileStorageWatcherThread( const QString &dataDirectory, QObject * parent = nullptr );
 
     ~FileStorageWatcherThread() override;
 
     quint64 cacheLimit();
 
-    Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * Is Q_EMITted when a variable has changed.
      */
     void variableChanged();
 
-    public Q_SLOTS:
+public Q_SLOTS:
+
     /**
      * Sets the limit of the cache in @p bytes.
     */
@@ -58,13 +61,15 @@ class FileStorageWatcherThread : public QObject
      */
     void getCurrentCacheSize();
 
-    private Q_SLOTS:
+private Q_SLOTS:
+
     /**
      * Ensures that the cache doesn't exceed limits.
      */
     void ensureCacheSize();
 
-    private:
+private:
+
     Q_DISABLE_COPY( FileStorageWatcherThread )
 
     /**
@@ -83,13 +88,13 @@ class FileStorageWatcherThread : public QObject
     bool    m_willQuit;
 };
 
-
 // Lives inside main thread
 class FileStorageWatcher : public QThread
 {
     Q_OBJECT
 
-    public:
+public:
+
     /**
      * Creates a new FileStorageWatcher, which is a thread watching the
      * space Marble takes on the hard drive and deletes files if necessary.
@@ -106,10 +111,11 @@ class FileStorageWatcher : public QThread
      */
     quint64 cacheLimit();
 
-    public Q_SLOTS:
+public Q_SLOTS:
+
     /**
-         * Sets the limit of the cache in @p bytes.
-         */
+     * Sets the limit of the cache in @p bytes.
+     */
     void setCacheLimit( quint64 bytes );
 
     /**
@@ -123,24 +129,26 @@ class FileStorageWatcher : public QThread
      */
     void resetCurrentSize();
 
+Q_SIGNALS:
 
-    Q_SIGNALS:
     void sizeChanged( qint64 bytes );
     void cleared();
 
-    protected:
+protected:
+
     /**
      * The function being called at starting Thread.
      * The thread is started by QThread::start().
      */
     void run() override;
 
-    private:
+private:
+
     Q_DISABLE_COPY( FileStorageWatcher )
 
     QString m_dataDirectory;
-    FileStorageWatcherThread *m_thread;
-    QMutex *m_limitMutex;
+    FileStorageWatcherThread* m_thread  = nullptr;
+    QMutex* m_limitMutex                = nullptr;
     quint64 m_limit;
     bool m_started;
     bool m_quitting;

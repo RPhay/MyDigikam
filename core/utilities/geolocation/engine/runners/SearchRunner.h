@@ -24,6 +24,7 @@ class DIGIKAM_EXPORT SearchRunner : public QObject
     Q_OBJECT
 
 public:
+
     explicit SearchRunner( QObject *parent = nullptr );
 
     /**
@@ -40,6 +41,7 @@ public:
     virtual void search( const QString &searchTerm, const GeoDataLatLonBox &preferred ) = 0;
 
 Q_SIGNALS:
+
     /**
      * This is Q_EMITted to indicate that the runner has finished the placemark search.
      * @param result the result of the search.
@@ -47,13 +49,15 @@ Q_SIGNALS:
     void searchFinished( const QVector<GeoDataPlacemark*>& result );
 
 protected:
+
     /**
      * Access to the currently used model, or null if no was set with @see setModel
      */
     const MarbleModel *model() const;
 
 private:
-    const MarbleModel *m_model;
+
+    const MarbleModel* m_model = nullptr;
 };
 
 } // namespace Marble

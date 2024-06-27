@@ -85,7 +85,8 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
     Q_PROPERTY( QString mapThemeId READ mapThemeId WRITE setMapThemeId NOTIFY themeChanged )
     Q_PROPERTY( bool workOffline READ workOffline WRITE setWorkOffline NOTIFY workOfflineChanged )
 
- public:
+public:
+
     /**
      * @brief  Construct a new MarbleModel.
      * @param parent the parent widget
@@ -169,7 +170,6 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
      */
     HttpDownloadManager *downloadManager();
     const HttpDownloadManager *downloadManager() const;
-
 
     /**
      * @brief Handle file loading into the treeModel
@@ -259,7 +259,8 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
      */
     const GeoDataPlacemark *trackedPlacemark() const;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     void clearPersistentTileCache();
 
     /**
@@ -276,7 +277,7 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
 
     void updateProperty( const QString &property, bool value );
 
- Q_SIGNALS:
+Q_SIGNALS:
 
     /**
      * @brief Signal that the MarbleModel has started to create a new set of tiles.
@@ -306,13 +307,14 @@ class DIGIKAM_EXPORT MarbleModel : public QObject
      */
     void homeChanged( const GeoDataCoordinates &newHomePoint );
 
- private:
+private:
+
     Q_DISABLE_COPY( MarbleModel )
 
     Q_PRIVATE_SLOT( d, void assignFillColors( const QString &filePath ) )
 
     void addDownloadPolicies( const GeoSceneDocument *mapTheme );
-    MarbleModelPrivate  * const d;
+    MarbleModelPrivate* const d = nullptr;
 };
 
 } // namespace Marble

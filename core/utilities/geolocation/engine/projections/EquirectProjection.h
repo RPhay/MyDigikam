@@ -13,9 +13,7 @@
  * @author Torsten Rahn <rahn@kde.org>
  */
 
-
 #include "CylindricalProjection.h"
-
 
 namespace Marble
 {
@@ -23,11 +21,11 @@ namespace Marble
 /**
  * @short A class to implement the Equirectangular projection used by the "Flat Map" view.
  */
-
 class EquirectProjection : public CylindricalProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
+
+public:
 
     /**
      * @brief Construct a new EquirectProjection.
@@ -101,7 +99,8 @@ class EquirectProjection : public CylindricalProjection
 
     bool mapCoversViewport( const ViewportParams *viewport ) const override;
 
- private:
+private:
+
     Q_DISABLE_COPY( EquirectProjection )
 };
 

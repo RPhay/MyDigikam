@@ -25,6 +25,7 @@ class DIGIKAM_EXPORT OsmTagEditorWidget : public QWidget
     Q_OBJECT
 
 public:
+
     explicit OsmTagEditorWidget( GeoDataPlacemark *placemark, QWidget *parent = nullptr );
     ~OsmTagEditorWidget() override;
 
@@ -34,6 +35,7 @@ public:
     OsmPlacemarkData placemarkData() const;
 
 public Q_SLOTS:
+
     void update();
     void addSelectedTag();
     void removeSelectedTag();
@@ -41,10 +43,13 @@ public Q_SLOTS:
     void handleItemChanged( QTreeWidgetItem *item, int column );
 
 Q_SIGNALS:
+
     void placemarkChanged( GeoDataFeature *);
 
 private:
+
     friend class OsmTagEditorWidgetPrivate;
+
     OsmTagEditorWidgetPrivate* const d = nullptr;
 };
 

@@ -32,7 +32,8 @@ class DIGIKAM_EXPORT FileManager : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     /**
      * Creates a new file manager.
      *
@@ -71,20 +72,21 @@ class DIGIKAM_EXPORT FileManager : public QObject
     /** Returns the number of files being opened at the moment */
     int pendingFiles() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void fileAdded( const QString &key );
     void fileRemoved( const QString &key );
     void centeredDocument( const GeoDataLatLonBox& );
     void fileError(const QString &key, const QString& error);
 
- private:
+private:
 
     Q_PRIVATE_SLOT( d, void cleanupLoader( FileLoader *loader ) )
 
     Q_DISABLE_COPY( FileManager )
 
     friend class FileManagerPrivate;
-    FileManagerPrivate *const d;
+    FileManagerPrivate* const d = nullptr;
 };
 
 } // namespace Marble

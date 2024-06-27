@@ -16,11 +16,11 @@ class AzimuthalEquidistantProjectionPrivate;
 /**
  * @short A class to implement the spherical projection used by the "Globe" view.
  */
-
 class AzimuthalEquidistantProjection : public AzimuthalProjection
 {
     // Not a QObject so far because we don't need to send signals.
- public:
+
+public:
 
     /**
      * @brief Construct a new AzimuthalEquidistantProjection.
@@ -86,10 +86,12 @@ class AzimuthalEquidistantProjection : public AzimuthalProjection
                          qreal& lon, qreal& lat,
                          GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const override;
 
- protected:
+protected:
+
     explicit AzimuthalEquidistantProjection(AzimuthalEquidistantProjectionPrivate *dd );
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(AzimuthalEquidistantProjection)
     Q_DISABLE_COPY( AzimuthalEquidistantProjection )
 };

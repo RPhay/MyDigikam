@@ -19,6 +19,7 @@ class DIGIKAM_EXPORT ParsingRunner : public QObject
     Q_OBJECT
 
 public:
+
     explicit ParsingRunner( QObject *parent = nullptr );
 
     /**

@@ -12,17 +12,16 @@ namespace Marble
 // Maximum amount of nodes that are created automatically between actual nodes.
 static const int maxTessellationNodes = 200;
 
-
 class AzimuthalProjection;
 
 class AzimuthalProjectionPrivate : public AbstractProjectionPrivate
 {
 public:
+
     explicit AzimuthalProjectionPrivate( AzimuthalProjection * parent )
         : AbstractProjectionPrivate( parent ),
           q_ptr( parent )
     {
-
     }
 
     ~AzimuthalProjectionPrivate() override {};
@@ -92,7 +91,7 @@ public:
     bool globeHidesPoint( const GeoDataCoordinates &coordinates,
                           const ViewportParams *viewport ) const;
 
-    AzimuthalProjection * const q_ptr;
+    AzimuthalProjection* const q_ptr = nullptr;
 
     Q_DECLARE_PUBLIC( AzimuthalProjection )
 };

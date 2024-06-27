@@ -27,6 +27,7 @@ class DIGIKAM_EXPORT RenderPluginModel : public QStandardItemModel
     Q_OBJECT
 
 public:
+
     /**
      * This enum contains the data roles for the QStandardItems.
      */

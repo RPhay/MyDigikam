@@ -10,29 +10,35 @@
 
 namespace Marble
 {
+
 class GeoDataLatLonBox;
 
 class DIGIKAM_EXPORT LatLonBoxWidget: public QWidget
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit LatLonBoxWidget( QWidget * const parent = nullptr, Qt::WindowFlags const f = Qt::WindowFlags() );
     ~LatLonBoxWidget() override;
     GeoDataLatLonBox latLonBox() const;
     void setLatLonBox( GeoDataLatLonBox const & );
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void valueChanged();
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void updateLatSingleStep();
     void updateLonSingleStep();
 
- private:
+private:
+
     Q_DISABLE_COPY( LatLonBoxWidget )
+
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

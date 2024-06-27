@@ -38,7 +38,8 @@ class DIGIKAM_EXPORT HttpDownloadManager : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     /**
      * Creates a new http download manager.
      *
@@ -61,7 +62,7 @@ class DIGIKAM_EXPORT HttpDownloadManager : public QObject
 
     static QByteArray userAgent(const QString &platform, const QString &plugin);
 
- public Q_SLOTS:
+public Q_SLOTS:
 
     /**
      * Adds a new job with a sourceUrl, destination file name and given id.
@@ -69,8 +70,8 @@ class DIGIKAM_EXPORT HttpDownloadManager : public QObject
     void addJob( const QUrl& sourceUrl, const QString& destFilename, const QString &id,
                  const DownloadUsage usage );
 
+Q_SIGNALS:
 
- Q_SIGNALS:
     void downloadComplete( const QString&, const QString& );
 
     /**
@@ -96,11 +97,12 @@ class DIGIKAM_EXPORT HttpDownloadManager : public QObject
       */
     void progressChanged( int active, int queued );
 
- private:
+private:
+
     Q_DISABLE_COPY( HttpDownloadManager )
 
     class Private;
-    Private * const d;
+    Private* const d = nullptr;
 
     Q_PRIVATE_SLOT( d, void finishJob( const QByteArray&, const QString&, const QString& id ) )
     Q_PRIVATE_SLOT( d, void requeue() )

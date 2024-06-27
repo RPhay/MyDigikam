@@ -12,7 +12,8 @@ class AbstractProjection;
 
 class AbstractProjectionPrivate
 {
-  public:
+public:
+
     explicit AbstractProjectionPrivate( AbstractProjection * parent );
 
     virtual ~AbstractProjectionPrivate() { };
@@ -24,7 +25,7 @@ class AbstractProjectionPrivate
     mutable qreal  m_previousResolution;
     mutable qreal  m_level;
 
-    AbstractProjection * const q_ptr;
+    AbstractProjection* const q_ptr = nullptr;
     Q_DECLARE_PUBLIC( AbstractProjection )
 };
 

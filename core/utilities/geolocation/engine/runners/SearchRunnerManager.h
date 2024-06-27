@@ -29,6 +29,7 @@ class DIGIKAM_EXPORT SearchRunnerManager : public QObject
     Q_OBJECT
 
 public:
+
     /**
      * Constructor.
      * @param pluginManager The plugin manager that gives access to RunnerPlugins
@@ -49,6 +50,7 @@ public:
     QVector<GeoDataPlacemark *> searchPlacemarks( const QString &searchTerm, const GeoDataLatLonBox &preferred = GeoDataLatLonBox(), int timeout = 30000 );
 
 Q_SIGNALS:
+
     /**
      * Placemarks were added to or removed from the model
      * @todo FIXME: this sounds like a duplication of QAbstractItemModel signals
@@ -69,12 +71,13 @@ Q_SIGNALS:
     void placemarkSearchFinished();
 
 private:
+
     Q_PRIVATE_SLOT( d, void addSearchResult( const QVector<GeoDataPlacemark *> &result ) )
     Q_PRIVATE_SLOT( d, void cleanupSearchTask( SearchTask *task ) )
 
     class Private;
     friend class Private;
-    Private *const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble
