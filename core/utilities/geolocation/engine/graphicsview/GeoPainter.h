@@ -29,7 +29,6 @@ class GeoDataLinearRing;
 class GeoDataPoint;
 class GeoDataPolygon;
 
-
 /*!
     \class GeoPainter
     \brief A painter that allows to draw geometric primitives on the map.
@@ -85,8 +84,10 @@ class GeoDataPolygon;
 
 class DIGIKAM_EXPORT GeoPainter : public ClipPainter
 {
- public:
-    enum Frame {
+public:
+
+    enum Frame
+    {
         NoOptions = 0x0,
         RoundFrame = 0x1
     };
@@ -109,7 +110,6 @@ class DIGIKAM_EXPORT GeoPainter : public ClipPainter
     \brief Destroys the geo painter.
 */
     ~GeoPainter();
-
 
 /*!
     \brief Returns the map quality.
@@ -504,6 +504,7 @@ class DIGIKAM_EXPORT GeoPainter : public ClipPainter
 
 
     // Reenabling QPainter+ClipPainter methods.
+
     using QPainter::drawText;
     using QPainter::drawEllipse;
     using QPainter::drawImage;
@@ -514,9 +515,11 @@ class DIGIKAM_EXPORT GeoPainter : public ClipPainter
     using QPainter::drawRect;
     using QPainter::drawRoundedRect;
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoPainter )
-    GeoPainterPrivate  * const d;
+
+    GeoPainterPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

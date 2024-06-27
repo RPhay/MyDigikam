@@ -19,7 +19,8 @@ class MarbleGraphicsGridLayoutPrivate;
 
 class DIGIKAM_EXPORT MarbleGraphicsGridLayout : public AbstractMarbleGraphicsLayout
 {
- public:
+public:
+
     MarbleGraphicsGridLayout( int rows, int columns );
     ~MarbleGraphicsGridLayout() override;
 
@@ -49,8 +50,9 @@ class DIGIKAM_EXPORT MarbleGraphicsGridLayout : public AbstractMarbleGraphicsLay
      */
     void setSpacing( int spacing );
 
- private:
-    MarbleGraphicsGridLayoutPrivate * const d;
+private:
+
+    MarbleGraphicsGridLayoutPrivate* const d = nullptr;
 };
 
 } // namespace Marble

@@ -41,9 +41,11 @@ namespace Marble
 // @internal
 
 class ClipPainterPrivate;
+
 class DIGIKAM_EXPORT ClipPainter : public QPainter
 {
- public:
+public:
+
     ClipPainter();
     ClipPainter(QPaintDevice*, bool);
 
@@ -73,8 +75,9 @@ class DIGIKAM_EXPORT ClipPainter : public QPainter
     //  void clearNodeCount(){ m_debugNodeCount = 0; }
     //  int nodeCount(){ return m_debugNodeCount; }
 
- private:
-    ClipPainterPrivate * const d;
+private:
+
+    ClipPainterPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

@@ -21,8 +21,10 @@ class FrameGraphicsItemPrivate;
 
 class DIGIKAM_EXPORT FrameGraphicsItem : public ScreenGraphicsItem
 {
- public:
-    enum FrameType {
+public:
+
+    enum FrameType
+    {
         NoFrame,
         RectFrame,
         RoundedRectFrame,
@@ -156,7 +158,8 @@ class DIGIKAM_EXPORT FrameGraphicsItem : public ScreenGraphicsItem
      */
     void setContentSize( const QSizeF& size ) override;
 
- protected:
+protected:
+
     /**
      * Returns the shape of the background.
      */
@@ -179,7 +182,8 @@ class DIGIKAM_EXPORT FrameGraphicsItem : public ScreenGraphicsItem
 
     explicit FrameGraphicsItem(FrameGraphicsItemPrivate *dd);
 
- private:
+private:
+
     Q_DISABLE_COPY( FrameGraphicsItem )
     Q_DECLARE_PRIVATE(FrameGraphicsItem)
 };

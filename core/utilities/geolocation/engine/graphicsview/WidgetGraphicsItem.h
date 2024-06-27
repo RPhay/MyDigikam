@@ -18,7 +18,8 @@ class WidgetGraphicsItemPrivate;
 
 class DIGIKAM_EXPORT WidgetGraphicsItem : public ScreenGraphicsItem
 {
- public:
+public:
+
     explicit WidgetGraphicsItem( MarbleGraphicsItem *parent = nullptr );
 
     ~WidgetGraphicsItem() override;
@@ -26,7 +27,8 @@ class DIGIKAM_EXPORT WidgetGraphicsItem : public ScreenGraphicsItem
     void setWidget( QWidget *widget );
     QWidget *widget() const;
 
- protected:
+protected:
+
     /**
      * Paints the item in item coordinates.
      */
@@ -34,7 +36,8 @@ class DIGIKAM_EXPORT WidgetGraphicsItem : public ScreenGraphicsItem
 
     bool eventFilter( QObject *, QEvent * ) override;
 
- private:
+private:
+
     Q_DISABLE_COPY( WidgetGraphicsItem )
     Q_DECLARE_PRIVATE(WidgetGraphicsItem)
 };

@@ -26,7 +26,8 @@ class LabelGraphicsItemPrivate;
  */
 class DIGIKAM_EXPORT LabelGraphicsItem : public FrameGraphicsItem
 {
- public:
+public:
+
     explicit LabelGraphicsItem( MarbleGraphicsItem *parent = nullptr );
     ~LabelGraphicsItem() override;
 
@@ -46,10 +47,12 @@ class DIGIKAM_EXPORT LabelGraphicsItem : public FrameGraphicsItem
 
     void clear();
 
- protected:
+protected:
+
     void paintContent( QPainter *painter ) override;
 
- private:
+private:
+
     Q_DISABLE_COPY( LabelGraphicsItem )
     Q_DECLARE_PRIVATE(LabelGraphicsItem)
 };

@@ -19,8 +19,10 @@ class ScreenGraphicsItemPrivate;
 
 class DIGIKAM_EXPORT ScreenGraphicsItem : public MarbleGraphicsItem
 {
- public:
-    enum GraphicsItemFlag {
+public:
+
+    enum GraphicsItemFlag
+    {
         ItemIsMovable = 0x1,
         ItemIsHideable = 0x2
     };
@@ -85,12 +87,14 @@ class DIGIKAM_EXPORT ScreenGraphicsItem : public MarbleGraphicsItem
      */
     void setFlags( GraphicsItemFlags flags );
 
- protected:
+protected:
+
     explicit ScreenGraphicsItem(ScreenGraphicsItemPrivate *dd);
 
     bool eventFilter( QObject *, QEvent * ) override;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(ScreenGraphicsItem)
 };
 

@@ -21,7 +21,8 @@ class GeoPainter;
 
 class GeoPainterPrivate
 {
- public:
+public:
+
     GeoPainterPrivate( GeoPainter* q, const ViewportParams *viewport, MapQuality mapQuality );
 
     ~GeoPainterPrivate();
@@ -42,12 +43,13 @@ class GeoPainterPrivate
 
     void drawTextRotated( const QPointF &startPoint, qreal angle, const QString &text );
 
-    const ViewportParams *const m_viewport;
-    const MapQuality       m_mapQuality;
-    qreal             *const m_x;
+    const ViewportParams* const m_viewport      = nullptr;
+    const MapQuality            m_mapQuality;
+    qreal* const                m_x             = nullptr;
 
 private:
-    GeoPainter* m_parent;
+
+    GeoPainter* m_parent                        = nullptr;
 };
 
 } // namespace Marble

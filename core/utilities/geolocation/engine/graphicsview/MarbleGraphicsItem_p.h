@@ -23,7 +23,8 @@ namespace Marble
 
 class MarbleGraphicsItemPrivate
 {
- public:
+public:
+
     explicit MarbleGraphicsItemPrivate( MarbleGraphicsItem *marbleGraphicsItem,
                                         MarbleGraphicsItem *parent = nullptr )
         : m_repaintNeeded( true ),
@@ -98,14 +99,14 @@ class MarbleGraphicsItemPrivate
     bool m_visibility;
 
     // The parent of the item
-    MarbleGraphicsItem *const m_parent;
+    MarbleGraphicsItem* const m_parent              = nullptr;
     // The set of children.
-    QSet<MarbleGraphicsItem *> m_children;
+    QSet<MarbleGraphicsItem*> m_children;
 
     // The layout handling the positions of the children
-    AbstractMarbleGraphicsLayout *m_layout;
+    AbstractMarbleGraphicsLayout* m_layout          = nullptr;
 
-    MarbleGraphicsItem *const m_marbleGraphicsItem;
+    MarbleGraphicsItem* const m_marbleGraphicsItem  = nullptr;
 };
 
 } // Namespace Marble

@@ -26,8 +26,10 @@ class MarbleGraphicsItemPrivate;
 
 class DIGIKAM_EXPORT MarbleGraphicsItem
 {
- public:
-    enum CacheMode {
+public:
+
+    enum CacheMode
+    {
         NoCache,
         ItemCoordinateCache,
         DeviceCoordinateCache
@@ -115,7 +117,8 @@ class DIGIKAM_EXPORT MarbleGraphicsItem
 
     virtual void setProjection(const ViewportParams *viewport );
 
- protected:
+protected:
+
     explicit MarbleGraphicsItem(MarbleGraphicsItemPrivate *dd);
 
     /**
@@ -132,10 +135,12 @@ class DIGIKAM_EXPORT MarbleGraphicsItem
      */
     void update();
 
- protected:
-    MarbleGraphicsItemPrivate * const d_ptr;
+protected:
 
- private:
+    MarbleGraphicsItemPrivate* const d_ptr = nullptr;
+
+private:
+
     Q_DISABLE_COPY(MarbleGraphicsItem)
     Q_DECLARE_PRIVATE(MarbleGraphicsItem)
 };

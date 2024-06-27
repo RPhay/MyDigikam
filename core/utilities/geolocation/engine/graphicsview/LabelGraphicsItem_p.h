@@ -21,7 +21,8 @@ class LabelGraphicsItem;
 
 class LabelGraphicsItemPrivate : public FrameGraphicsItemPrivate
 {
- public:
+public:
+
     LabelGraphicsItemPrivate(LabelGraphicsItem *labelGraphicsItem,
                              MarbleGraphicsItem *parent);
 

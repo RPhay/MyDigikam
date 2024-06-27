@@ -15,7 +15,8 @@ class MarbleGraphicsItem;
 
 class DIGIKAM_EXPORT AbstractMarbleGraphicsLayout
 {
- public:
+public:
+
     AbstractMarbleGraphicsLayout();
     virtual ~AbstractMarbleGraphicsLayout();
 

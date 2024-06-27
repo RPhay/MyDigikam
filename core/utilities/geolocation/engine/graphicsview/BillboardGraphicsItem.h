@@ -14,6 +14,7 @@ class QPointF;
 
 namespace Marble
 {
+
 class GeoDataCoordinates;
 class BillboardGraphicsItemPrivate;
 
@@ -26,7 +27,8 @@ class BillboardGraphicsItemPrivate;
  */
 class DIGIKAM_EXPORT BillboardGraphicsItem : public MarbleGraphicsItem
 {
- public:
+public:
+
     BillboardGraphicsItem();
 
     GeoDataCoordinates coordinate() const;
@@ -57,7 +59,8 @@ class DIGIKAM_EXPORT BillboardGraphicsItem : public MarbleGraphicsItem
      */
     QRectF containsRect( const QPointF &point ) const;
 
- private:
+private:
+
     Q_DECLARE_PRIVATE(BillboardGraphicsItem)
 };
 

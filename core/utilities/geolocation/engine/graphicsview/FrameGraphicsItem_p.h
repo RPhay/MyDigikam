@@ -18,7 +18,8 @@ namespace Marble
 
 class FrameGraphicsItemPrivate : public ScreenGraphicsItemPrivate
 {
- public:
+public:
+
     FrameGraphicsItemPrivate(FrameGraphicsItem *frameGraphicsItem,
                              MarbleGraphicsItem *parent)
         : ScreenGraphicsItemPrivate(frameGraphicsItem, parent),

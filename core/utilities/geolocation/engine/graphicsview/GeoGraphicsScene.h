@@ -29,6 +29,7 @@ class DIGIKAM_EXPORT GeoGraphicsScene : public QObject
     Q_OBJECT
 
 public:
+
     /**
      * Creates a new instance of GeoGraphicsScene
      * @param parent the QObject parent of the Scene
@@ -72,13 +73,16 @@ public:
     void resetStyle();
 
 public Q_SLOTS:
+
     void applyHighlight( const QVector<GeoDataPlacemark*>& );
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
 private:
-    GeoGraphicsScenePrivate * const d;
+
+    GeoGraphicsScenePrivate* const d = nullptr;
 };
 
 } // Namespace Marble

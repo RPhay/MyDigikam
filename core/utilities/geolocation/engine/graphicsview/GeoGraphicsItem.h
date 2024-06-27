@@ -27,6 +27,7 @@ class GeoDataRelation;
 class RenderContext
 {
 public:
+
     bool operator==(const RenderContext &other) const;
     bool operator!=(const RenderContext &other) const;
 
@@ -34,22 +35,24 @@ public:
     int tileLevel() const;
 
 private:
+
     int m_tileLevel;
 };
 
 class DIGIKAM_EXPORT GeoGraphicsItem
 {
- public:
+public:
+
     explicit GeoGraphicsItem( const GeoDataFeature *feature );
     virtual ~GeoGraphicsItem();
 
-    enum GeoGraphicsItemFlag {
+    enum GeoGraphicsItemFlag
+    {
         NoOptions = 0x0,
         ItemIsMovable = 0x1,
         ItemIsSelectable = 0x2,
         ItemIsVisible = 0x4
     };
-
     Q_DECLARE_FLAGS(GeoGraphicsItemFlags, GeoGraphicsItemFlag)
 
     bool visible() const;
@@ -157,10 +160,11 @@ class DIGIKAM_EXPORT GeoGraphicsItem
 
     void setRelations(const QSet<const GeoDataRelation *> &relations);
 
- protected:
+protected:
+
     virtual void handleRelationUpdate(const QVector<const GeoDataRelation *> &relations);
 
-    GeoGraphicsItemPrivate *const d;
+    GeoGraphicsItemPrivate* const d = nullptr;
 };
 
 } // Namespace Marble
