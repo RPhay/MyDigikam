@@ -9,16 +9,18 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmlrefreshIntervalTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode * parse( GeoParser & ) const override;
 };
 
 }
 
-}
+} // namespace Marble
 

@@ -9,12 +9,14 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmldrawOrderTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser &parser) const override;
 };
 

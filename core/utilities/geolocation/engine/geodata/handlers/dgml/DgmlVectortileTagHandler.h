@@ -19,6 +19,7 @@ namespace dgml
 class DgmlVectortileTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse( GeoParser& ) const override;
 };
 

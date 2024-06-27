@@ -9,15 +9,17 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmllinkSnippetTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode * parse( GeoParser & ) const override;
 };
 
-}
+} // namespace kml
 
-}
+} // namespace Marble

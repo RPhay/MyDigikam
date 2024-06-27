@@ -12,12 +12,14 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmlcolorTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 
     static QColor parseColor( const QString &colorString );
@@ -25,4 +27,4 @@ public:
 
 }
 
-}
+} // namespace Marble

@@ -9,15 +9,17 @@
 
 namespace Marble
 {
+
 namespace kml
 {
 
 class KmlmaxFadeExtentTagHandler : public GeoTagHandler
 {
- public:
+public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble

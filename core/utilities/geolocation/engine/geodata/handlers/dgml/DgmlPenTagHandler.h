@@ -17,9 +17,10 @@ namespace dgml
 class DgmlPenTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
-}
+} // namespace dgml
 
 } // namespace Marble

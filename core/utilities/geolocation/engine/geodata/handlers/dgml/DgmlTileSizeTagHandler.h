@@ -16,6 +16,7 @@ namespace dgml
 class DgmlTileSizeTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse( GeoParser& ) const override;
 };
 

@@ -14,7 +14,8 @@ namespace dgml
 
 class DgmlDownloadPolicyTagHandler: public GeoTagHandler
 {
- public:
+public:
+
     GeoNode* parse( GeoParser & ) const override;
 };
 

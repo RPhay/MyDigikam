@@ -18,6 +18,7 @@ namespace dgml
 class DgmlLegendTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 

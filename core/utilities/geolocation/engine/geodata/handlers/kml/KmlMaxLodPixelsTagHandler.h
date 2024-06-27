@@ -15,10 +15,11 @@ namespace kml
 
 class KmlmaxLodPixelsTagHandler : public GeoTagHandler
 {
- public:
+public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble

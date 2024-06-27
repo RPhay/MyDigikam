@@ -15,6 +15,7 @@ namespace dgml
 class DgmlBlendingTagHandler: public GeoTagHandler
 {
 public:
+
     GeoNode* parse( GeoParser& ) const override;
 };
 

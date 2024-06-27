@@ -9,6 +9,7 @@
 
 namespace Marble
 {
+
 class OsmPlacemarkData;
 
 namespace kml
@@ -17,10 +18,11 @@ namespace kml
 class KmlOsmPlacemarkDataTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse( GeoParser& parser ) const override;
 };
 
 }
 
-}
+} // namespace Marble
 
