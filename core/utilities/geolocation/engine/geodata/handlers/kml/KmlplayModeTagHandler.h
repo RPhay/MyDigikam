@@ -16,6 +16,7 @@ namespace kml
 class KmlplayModeTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser &parser) const override;
 };
 

@@ -19,6 +19,7 @@ namespace kml
 class KmlwhenTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 
     static QDateTime parse( const QString &dateTime );
@@ -26,9 +27,10 @@ public:
     static GeoDataTimeStamp parseTimestamp( const QString &dateTime );
 
 private:
+
     static Marble::GeoDataTimeStamp::TimeResolution modify( QString& whenString );
 };
 
 }
 
-}
+} // namespace Marble

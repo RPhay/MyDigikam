@@ -19,12 +19,13 @@ namespace mx
 class KmlsizeTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble
 
 }
 

@@ -15,10 +15,11 @@ namespace kml
 
 class KmlLatLonBoxTagHandler : public GeoTagHandler
 {
- public:
+public:
+
     GeoNode* parse( GeoParser& ) const override;
 };
 
 }
 
-}
+} // namespace Marble

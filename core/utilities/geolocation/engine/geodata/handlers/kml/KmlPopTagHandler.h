@@ -17,6 +17,7 @@ namespace kml
 class KmlpopTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 

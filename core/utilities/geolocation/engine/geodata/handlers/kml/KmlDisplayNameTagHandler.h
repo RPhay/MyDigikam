@@ -16,9 +16,10 @@ namespace kml
 class KmldisplayNameTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse( GeoParser& ) const override;
 };
 
 }
 
-}
+} // namespace Marble

@@ -18,6 +18,7 @@ namespace gx
 class KmlAnimatedUpdateTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
@@ -25,4 +26,4 @@ public:
 
 }
 
-}
+} // namespace Marble

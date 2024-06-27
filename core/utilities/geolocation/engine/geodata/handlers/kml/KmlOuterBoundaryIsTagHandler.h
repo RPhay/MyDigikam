@@ -17,9 +17,10 @@ namespace kml
 class KmlouterBoundaryIsTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble

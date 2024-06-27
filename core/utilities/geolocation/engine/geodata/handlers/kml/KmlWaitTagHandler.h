@@ -16,6 +16,7 @@ namespace kml
 class KmlWaitTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser &parser) const override;
 };
 

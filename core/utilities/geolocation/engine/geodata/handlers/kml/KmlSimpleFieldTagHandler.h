@@ -21,12 +21,14 @@ namespace kml
 class KmlSimpleFieldTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 
 private:
+
     static GeoDataSimpleField::SimpleFieldType resolveType( const QString& type );
 };
 
 }
 
-}
+} // namespace Marble

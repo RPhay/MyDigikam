@@ -19,6 +19,7 @@ namespace gx
 class KmlaltitudeModeTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
@@ -26,4 +27,4 @@ public:
 
 }
 
-}
+} // namespace Marble

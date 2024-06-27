@@ -15,9 +15,10 @@ namespace kml
 class KmlMultiTrackTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble

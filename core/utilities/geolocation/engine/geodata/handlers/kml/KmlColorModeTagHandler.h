@@ -17,9 +17,10 @@ namespace kml
 class KmlcolorModeTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
 }
 
-}
+} // namespace Marble

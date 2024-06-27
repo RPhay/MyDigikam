@@ -21,7 +21,8 @@ public:
     static void parseIdentifiers( const GeoParser &parser, GeoDataObject* object );
 
 private:
+
     KmlObjectTagHandler() = delete; // not implemented
 };
 
-}
+} // namespace Marble
