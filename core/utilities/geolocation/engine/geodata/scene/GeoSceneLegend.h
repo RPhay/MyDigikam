@@ -24,7 +24,8 @@ class GeoSceneLegendPrivate;
 
 class DIGIKAM_EXPORT GeoSceneLegend : public GeoNode
 {
- public:
+public:
+
     GeoSceneLegend();
     ~GeoSceneLegend() override;
 
@@ -37,9 +38,11 @@ class DIGIKAM_EXPORT GeoSceneLegend : public GeoNode
     void addSection( const GeoSceneSection* );
     QVector<const GeoSceneSection*> sections() const;
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneLegend )
-    GeoSceneLegendPrivate * const d;
+
+    GeoSceneLegendPrivate* const d = nullptr;
 };
 
 } // namespace Marble

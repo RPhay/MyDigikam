@@ -22,12 +22,14 @@ class GeoDataBuilding;
 class DIGIKAM_EXPORT AbstractGeoPolygonGraphicsItem : public GeoGraphicsItem
 {
 protected:
+
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon);
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring);
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building);
     ~AbstractGeoPolygonGraphicsItem() override;
 
 public:
+
     const GeoDataLatLonAltBox& latLonAltBox() const override;
     void paint(GeoPainter* painter, const ViewportParams *viewport, const QString &layer, int tileZoomLevel) override;
     bool contains(const QPoint &screenPosition, const ViewportParams *viewport) const override;
@@ -38,6 +40,7 @@ public:
     static const void *s_previousStyle;
 
 protected:
+
     bool configurePainter(GeoPainter* painter, const ViewportParams &viewport) const;
     inline
     const GeoDataPolygon *polygon() const { return m_polygon; }

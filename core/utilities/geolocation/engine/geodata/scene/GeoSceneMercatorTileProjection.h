@@ -29,6 +29,7 @@ namespace Marble
 class DIGIKAM_EXPORT GeoSceneMercatorTileProjection : public GeoSceneAbstractTileProjection
 {
 public:
+
     /**
      * @brief Construct a new GeoSceneMercatorTileProjection.
      */
@@ -37,6 +38,7 @@ public:
     ~GeoSceneMercatorTileProjection() override;
 
 public:
+
     /**
      * @copydoc
      */
@@ -55,6 +57,7 @@ public:
     using GeoSceneAbstractTileProjection::geoCoordinates;
 
 private:
+
     Q_DISABLE_COPY(GeoSceneMercatorTileProjection)
 };
 

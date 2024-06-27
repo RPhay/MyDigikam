@@ -16,8 +16,10 @@ namespace Marble
 
 class DIGIKAM_EXPORT GeoSceneLicense : public GeoNode
 {
- public:
-    enum Attribution {
+public:
+
+    enum Attribution
+    {
         Never,
         OptOut,
         OptIn,
@@ -36,11 +38,11 @@ class DIGIKAM_EXPORT GeoSceneLicense : public GeoNode
 
     const char *nodeType() const override;
 
- private:
+private:
+
     QString m_fullLicense;
     QString m_shortLicense;
     Attribution m_attribution;
-
 };
 
 } // namespace Marble

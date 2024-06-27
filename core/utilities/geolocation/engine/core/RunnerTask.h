@@ -72,6 +72,7 @@ class ParsingTask : public QObject, public QRunnable
     Q_OBJECT
 
 public:
+
     ParsingTask( ParsingRunner *runner, ParsingRunnerManager *manager, const QString& fileName, DocumentRole role );
 
     /**
@@ -80,6 +81,7 @@ public:
     void run() override;
 
 Q_SIGNALS:
+
     void parsed(GeoDataDocument* document, const QString &error);
     void finished();
 

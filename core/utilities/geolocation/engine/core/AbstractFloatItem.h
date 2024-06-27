@@ -39,7 +39,8 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit AbstractFloatItem( const MarbleModel *marbleModel,
                                 const QPointF &point = QPointF( 10.0, 10.0 ),
                                 const QSizeF &size = QSizeF( 150.0, 50.0 ) );
@@ -124,7 +125,8 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
      */
     bool positionLocked() const;
 
- public Q_SLOTS:
+public Q_SLOTS:
+
     /**
      * @brief Set is position locked
      * @param lock is locked?
@@ -153,15 +155,17 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
      */
     void hide();
 
- protected:
+protected:
+
     bool eventFilter(QObject *object, QEvent *e) override;
     virtual void contextMenuEvent ( QWidget *w, QContextMenuEvent *e );
     virtual void toolTipEvent( QHelpEvent *e );
     QMenu* contextMenu();
 
- private:
+private:
 
     Q_DISABLE_COPY( AbstractFloatItem )
+
     AbstractFloatItemPrivate* const d = nullptr;
 };
 

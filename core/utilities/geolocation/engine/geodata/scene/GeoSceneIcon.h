@@ -21,7 +21,8 @@ namespace Marble
  */
 class DIGIKAM_EXPORT GeoSceneIcon : public GeoNode
 {
- public:
+public:
+
     GeoSceneIcon();
     ~GeoSceneIcon() override;
 
@@ -33,7 +34,8 @@ class DIGIKAM_EXPORT GeoSceneIcon : public GeoNode
 
     const char *nodeType() const override;
 
- private:
+private:
+
     // FIXME: d-pointerfy
 
     QString m_pixmap;

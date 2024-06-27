@@ -22,7 +22,8 @@ class StackedTileLoader;
 
 class MercatorScanlineTextureMapper : public TextureMapperInterface
 {
- public:
+public:
+
     explicit MercatorScanlineTextureMapper( StackedTileLoader *tileLoader );
 
     void mapTexture( GeoPainter *painter,
@@ -31,10 +32,11 @@ class MercatorScanlineTextureMapper : public TextureMapperInterface
                              const QRect &dirtyRect,
                              TextureColorizer *texColorizer ) override;
 
- private:
+private:
+
     void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
 
- private:
+private:
 
     class RenderJob;
 

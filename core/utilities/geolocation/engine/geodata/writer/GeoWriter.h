@@ -24,6 +24,7 @@ class GeoNode;
 class DIGIKAM_EXPORT GeoWriter : public QXmlStreamWriter
 {
 public:
+
     GeoWriter();
 
     /**
@@ -71,17 +72,20 @@ public:
     template<class T>
     void writeOptionalElement( const QString &key, const T &value , const T &defaultValue = T() )
     {
-        if ( value != defaultValue ) {
+        if ( value != defaultValue )
+        {
             writeElement( key, QVariant::fromValue( value ).toString() );
         }
     }
 
 private:
+
     friend class GeoTagWriter;
     friend class GeoDataDocumentWriter;
     bool writeElement( const GeoNode* object );
 
 private:
+
     QString m_documentType;
 };
 

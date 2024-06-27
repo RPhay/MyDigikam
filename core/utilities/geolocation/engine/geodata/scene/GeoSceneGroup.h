@@ -26,7 +26,8 @@ class GeoSceneGroup : public QObject,
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit GeoSceneGroup( const QString& name );
     ~GeoSceneGroup() override;
 
@@ -71,10 +72,12 @@ class GeoSceneGroup : public QObject,
 
     const char *nodeType() const override;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void valueChanged( const QString&, bool );
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneGroup )
 
     /// The vector holding all the properties in this settings group.

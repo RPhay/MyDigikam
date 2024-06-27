@@ -26,7 +26,8 @@ class ViewParamsPrivate;
 
 class ViewParams
 {
- public:
+public:
+
     ViewParams();
     ~ViewParams();
 
@@ -43,9 +44,10 @@ class ViewParams
     bool showClouds() const;
     void setShowClouds( bool const );
 
- private:
+private:
 
     Q_DISABLE_COPY( ViewParams )
+
     ViewParamsPrivate* const d = nullptr;
 };
 

@@ -19,13 +19,13 @@ namespace Marble
 /**
  * @short Settings property within a GeoScene document.
  */
-
 class DIGIKAM_EXPORT GeoSceneProperty : public QObject,
                                         public GeoNode
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit GeoSceneProperty( const QString& name );
     const char* nodeType() const override;
 
@@ -37,10 +37,12 @@ class DIGIKAM_EXPORT GeoSceneProperty : public QObject,
     bool value() const;
     void setValue( bool value );
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void valueChanged( const QString&, bool );
 
- private:
+private:
+
     // FIXME: d-pointerfy
 
     QString  m_name;

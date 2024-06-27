@@ -36,7 +36,8 @@ class TileId;
 
 class DIGIKAM_EXPORT GeoSceneTileDataset : public GeoSceneAbstractDataset
 {
- public:
+public:
+
     enum StorageLayout { Marble, OpenStreetMap, TileMapService };
 
     explicit GeoSceneTileDataset( const QString& name );
@@ -107,14 +108,15 @@ class DIGIKAM_EXPORT GeoSceneTileDataset : public GeoSceneAbstractDataset
     QList<const DownloadPolicy *> downloadPolicies() const;
     void addDownloadPolicy( const DownloadUsage usage, const int maximumConnections );
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneTileDataset )
     QStringList hostNames() const;
 
     QString m_sourceDir;
     QString m_installMap;
     StorageLayout m_storageLayoutMode;
-    const ServerLayout *m_serverLayout;
+    const ServerLayout* m_serverLayout = nullptr;
     int m_levelZeroColumns;
     int m_levelZeroRows;
     int m_minimumTileLevel;
@@ -122,7 +124,7 @@ class DIGIKAM_EXPORT GeoSceneTileDataset : public GeoSceneAbstractDataset
     QVector<int> m_tileLevels;
     mutable QSize m_tileSize;
     GeoDataLatLonBox m_latLonBox;
-    GeoSceneAbstractTileProjection *m_tileProjection;
+    GeoSceneAbstractTileProjection* m_tileProjection = nullptr;
     QString m_blending;
 
     /// List of Urls which are used in a round robin fashion
@@ -130,7 +132,7 @@ class DIGIKAM_EXPORT GeoSceneTileDataset : public GeoSceneAbstractDataset
 
     /// Points to next Url for the round robin algorithm
     mutable QVector<QUrl>::const_iterator m_nextUrl;
-    QList<const DownloadPolicy *> m_downloadPolicies;
+    QList<const DownloadPolicy*> m_downloadPolicies;
 };
 
 inline bool GeoSceneTileDataset::hasMaximumTileLevel() const

@@ -28,6 +28,7 @@ class TileId;
 class DIGIKAM_EXPORT GeoSceneAbstractTileProjection
 {
 public:
+
     enum Type { Equirectangular, Mercator };
 
     /**
@@ -38,6 +39,7 @@ public:
     virtual ~GeoSceneAbstractTileProjection();
 
 public:
+
     virtual GeoSceneAbstractTileProjection::Type type() const = 0;
 
     /**
@@ -100,7 +102,9 @@ public:
     GeoDataLatLonBox geoCoordinates(const TileId &tileId) const;
 
  private:
+
      Q_DISABLE_COPY(GeoSceneAbstractTileProjection)
+
      const QScopedPointer<GeoSceneAbstractTileProjectionPrivate> d_ptr;
 };
 

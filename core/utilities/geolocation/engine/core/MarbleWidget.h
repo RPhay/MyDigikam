@@ -137,7 +137,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
 
     Q_PROPERTY(quint64 volatileTileCacheLimit READ volatileTileCacheLimit WRITE setVolatileTileCacheLimit)
 
- public:
+public:
 
     /**
      * @brief Construct a new MarbleWidget.
@@ -601,7 +601,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      */
     void setHighlightEnabled( bool enabled );
 
- public Q_SLOTS:
+public Q_SLOTS:
 
     /// @name Position management slots
     //@{
@@ -1061,7 +1061,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
 
     //@}
 
- Q_SIGNALS:
+Q_SIGNALS:
 
     /**
      * @brief Signal that the zoom has changed, and to what.
@@ -1158,12 +1158,12 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
      */
     virtual void customPaint( GeoPainter *painter );
 
- private:
+private:
 
     Q_PRIVATE_SLOT( d, void updateMapTheme() )
     Q_PRIVATE_SLOT( d, void updateSystemBackgroundAttribute() )
 
- private:
+private:
 
     Q_DISABLE_COPY( MarbleWidget )
 

@@ -28,7 +28,8 @@ class GeoSceneHeadPrivate;
  */
 class DIGIKAM_EXPORT GeoSceneHead : public GeoNode
 {
- public:
+public:
+
     GeoSceneHead();
     ~GeoSceneHead() override;
 
@@ -62,10 +63,10 @@ class DIGIKAM_EXPORT GeoSceneHead : public GeoNode
     const GeoSceneLicense* license() const;
     GeoSceneLicense* license();
 
+private:
 
- private:
     Q_DISABLE_COPY( GeoSceneHead )
-    GeoSceneHeadPrivate * const d;
+    GeoSceneHeadPrivate* const d = nullptr;
 };
 
 } // namespace Marble

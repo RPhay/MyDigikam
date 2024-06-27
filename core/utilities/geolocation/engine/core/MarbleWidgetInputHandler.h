@@ -24,11 +24,13 @@ class DIGIKAM_EXPORT MarbleWidgetInputHandler : public MarbleDefaultInputHandler
     Q_OBJECT
 
 public:
+
     MarbleWidgetInputHandler(MarbleAbstractPresenter *marblePresenter, MarbleWidget *marbleWidget);
 
     void setDebugModeEnabled(bool enabled);
 
 private Q_SLOTS:
+
     void installPluginEventFilter(RenderPlugin *renderPlugin) override;
     void showLmbMenu(int x, int y) override;
     void showRmbMenu(int x, int y) override;
@@ -36,6 +38,7 @@ private Q_SLOTS:
     void setCursor(const QCursor &cursor) override;
 
 private:
+
     bool handleKeyPress(QKeyEvent* event) override;
     bool handleTouch(QTouchEvent *event) override;
     bool handleGesture(QGestureEvent *e) override;

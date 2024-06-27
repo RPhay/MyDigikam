@@ -38,7 +38,8 @@ class ViewportParamsPrivate;
 
 class DIGIKAM_EXPORT ViewportParams
 {
- public:
+public:
+
     ViewportParams( );
     explicit ViewportParams( Projection projection,
                              qreal centerLongitude = 0, qreal centerLatitude = 0,
@@ -209,7 +210,7 @@ class DIGIKAM_EXPORT ViewportParams
       */
     void resetFocusPoint();
 
- private:
+private:
 
     Q_DISABLE_COPY( ViewportParams )
 

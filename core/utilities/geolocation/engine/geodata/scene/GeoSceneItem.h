@@ -21,7 +21,8 @@ class GeoSceneIcon;
 
 class DIGIKAM_EXPORT GeoSceneItem : public GeoNode
 {
- public:
+public:
+
     explicit GeoSceneItem( const QString& name );
     ~GeoSceneItem() override;
 
@@ -44,10 +45,11 @@ class DIGIKAM_EXPORT GeoSceneItem : public GeoNode
     const GeoSceneIcon* icon() const;
     GeoSceneIcon* icon();
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneItem )
 
-    GeoSceneIcon* m_icon;
+    GeoSceneIcon* m_icon = nullptr;
 
     QString m_name;
     QString m_text;

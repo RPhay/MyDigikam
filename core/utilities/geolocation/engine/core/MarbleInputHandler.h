@@ -121,13 +121,15 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit MarbleDefaultInputHandler( MarbleAbstractPresenter* marblePresenter);
     ~MarbleDefaultInputHandler() override;
 
     void stopInertialEarthRotation() override;
 
- protected:
+protected:
+
     bool eventFilter( QObject *, QEvent * ) override;
     bool handleMouseEvent(QMouseEvent *e);
     bool handlePinch(const QPointF &center, qreal scaleFactor, Qt::GestureState state);
@@ -140,7 +142,8 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
     virtual bool handleKeyPress(QKeyEvent *e);
     virtual void handleMouseButtonPressAndHold(const QPoint &position);
 
- private Q_SLOTS:
+private Q_SLOTS:
+
     void installPluginEventFilter( RenderPlugin *renderPlugin ) override = 0;
     virtual void showLmbMenu( int, int ) = 0;
     virtual void showRmbMenu( int, int ) = 0;
@@ -151,7 +154,8 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
 
     void lmbTimeout();
 
- private:
+private:
+
     virtual AbstractSelectionRubber *selectionRubber() = 0;
     virtual bool layersEventFilter(QObject *, QEvent *) = 0;
 
@@ -177,6 +181,7 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
     void adjustCursorShape(const QPoint& mousePosition, const QPoint& mouseDirection);
 
     Q_DISABLE_COPY(MarbleDefaultInputHandler)
+
     class Private;
     Private* const d = nullptr;      // cppcheck-suppress duplInheritedMember
 };

@@ -24,6 +24,7 @@ class ViewportParams;
 class ScanlineTextureMapperContext
 {
 public:
+
     ScanlineTextureMapperContext( StackedTileLoader * const tileLoader, int tileLevel );
 
     void pixelValueF( const qreal lon, const qreal lat,
@@ -44,6 +45,7 @@ public:
     int globalHeight() const;
 
 private:
+
     // method for fast integer calculation
     void nextTile( int& posx, int& posy );
 
@@ -66,6 +68,7 @@ private:
                             const int n ) const;
 
 private:
+
     StackedTileLoader *const m_tileLoader;
     GeoSceneAbstractTileProjection::Type const m_textureProjection;
     /// size of the tiles of the current texture layer

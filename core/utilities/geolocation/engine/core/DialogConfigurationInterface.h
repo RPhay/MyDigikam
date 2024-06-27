@@ -25,7 +25,8 @@ namespace Marble
  */
 class DIGIKAM_EXPORT DialogConfigurationInterface
 {
- public:
+public:
+
     virtual ~DialogConfigurationInterface();
 
     /**

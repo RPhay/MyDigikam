@@ -93,7 +93,7 @@ public:
 
     static void debug();
 
- private:
+private:
 
     Q_DISABLE_COPY(MarbleDirs)
 };

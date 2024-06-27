@@ -21,7 +21,8 @@ class DIGIKAM_EXPORT MarbleClock : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit MarbleClock( QObject* parent = nullptr );
 
     ~MarbleClock() override;
@@ -32,7 +33,8 @@ class DIGIKAM_EXPORT MarbleClock : public QObject
      */
     qreal dayFraction() const;
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     /**
      * @brief the timeChanged signal will be triggered at updateInterval() rate
      * or at most every second.

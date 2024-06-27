@@ -20,7 +20,8 @@ namespace Marble
  */
 class DIGIKAM_EXPORT GeoSceneAbstractDataset : public GeoNode
 {
- public:
+public:
+
     ~GeoSceneAbstractDataset() override {};
 
     QString name() const;
@@ -31,10 +32,12 @@ class DIGIKAM_EXPORT GeoSceneAbstractDataset : public GeoNode
     int expire() const;
     void setExpire( int expire );
 
- protected:
+protected:
+
     explicit GeoSceneAbstractDataset( const QString& name );
 
  private:
+
     QString m_name;
     QString m_fileFormat;
     int     m_expire;

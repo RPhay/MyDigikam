@@ -26,7 +26,8 @@ class GeoSceneLayerPrivate;
 
 class DIGIKAM_EXPORT GeoSceneLayer : public GeoNode
 {
- public:
+public:
+
     explicit GeoSceneLayer( const QString& name );
     ~GeoSceneLayer() override;
 
@@ -66,9 +67,10 @@ class DIGIKAM_EXPORT GeoSceneLayer : public GeoNode
     void removeFilter( GeoSceneFilter * filter );
 
  private:
+
     Q_DISABLE_COPY( GeoSceneLayer )
 
-    GeoSceneLayerPrivate * const d;
+    GeoSceneLayerPrivate* const d = nullptr;
 };
 
 } // namespace Marble

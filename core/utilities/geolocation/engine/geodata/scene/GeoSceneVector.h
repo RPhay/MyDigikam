@@ -21,7 +21,8 @@ namespace Marble
 
 class DIGIKAM_EXPORT GeoSceneVector : public GeoSceneAbstractDataset
 {
- public:
+public:
+
     explicit GeoSceneVector( const QString& name );
     const char* nodeType() const override;
 
@@ -37,7 +38,8 @@ class DIGIKAM_EXPORT GeoSceneVector : public GeoSceneAbstractDataset
     QBrush brush() const;
     void setBrush( const QBrush& brush );
 
- private:
+private:
+
     QString m_sourceFile;
     QString m_feature;
 

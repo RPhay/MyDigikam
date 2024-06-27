@@ -22,6 +22,7 @@ class GeoDataDocument;
 class DIGIKAM_EXPORT GeoDataDocumentWriter
 {
 public:
+
     /**
      * Write the content of the given GeoDataDocument to the given I/O device
      * @param device An I/O device open for writing
@@ -50,6 +51,7 @@ public:
     static void unregisterWriter(GeoWriterBackend* writer, const QString &fileExtension);
 
 private:
+
     static QString determineDocumentIdentifier(const QString &filename);
     static QSet<QPair<QString, GeoWriterBackend*> > s_backends;
 };

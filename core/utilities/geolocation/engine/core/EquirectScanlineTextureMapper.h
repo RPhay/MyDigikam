@@ -14,14 +14,15 @@
 #include <QThreadPool>
 #include <QImage>
 
-
 namespace Marble
 {
+
 class StackedTileLoader;
 
 class EquirectScanlineTextureMapper : public TextureMapperInterface
 {
- public:
+public:
+
     explicit EquirectScanlineTextureMapper( StackedTileLoader *tileLoader );
 
     void mapTexture( GeoPainter *painter,
@@ -30,10 +31,11 @@ class EquirectScanlineTextureMapper : public TextureMapperInterface
                              const QRect &dirtyRect,
                              TextureColorizer *texColorizer ) override;
 
- private:
+private:
+
     void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
 
- private:
+private:
 
     class RenderJob;
 

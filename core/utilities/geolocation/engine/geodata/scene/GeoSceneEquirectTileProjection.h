@@ -25,6 +25,7 @@ namespace Marble
 class DIGIKAM_EXPORT GeoSceneEquirectTileProjection : public GeoSceneAbstractTileProjection
 {
 public:
+
     /**
      * @brief Construct a new GeoSceneEquirectTileProjection.
      */
@@ -33,6 +34,7 @@ public:
     ~GeoSceneEquirectTileProjection() override;
 
 public:
+
     /**
      * @copydoc
      */
@@ -51,6 +53,7 @@ public:
     using GeoSceneAbstractTileProjection::geoCoordinates;
 
 private:
+
      Q_DISABLE_COPY(GeoSceneEquirectTileProjection)
 };
 

@@ -17,7 +17,8 @@ namespace Marble
 
 class DIGIKAM_EXPORT GeoSceneGeodata : public GeoSceneAbstractDataset
 {
- public:
+public:
+
     explicit GeoSceneGeodata( const QString& name );
     ~GeoSceneGeodata() override;
     const char* nodeType() const override;
@@ -48,7 +49,8 @@ class DIGIKAM_EXPORT GeoSceneGeodata : public GeoSceneAbstractDataset
     QVector<QColor> colors() const;
     void setColors(const QVector<QColor> &colors);
 
- private:
+private:
+
     QString m_property;
     QString m_sourceFile;
     QString m_colorize;

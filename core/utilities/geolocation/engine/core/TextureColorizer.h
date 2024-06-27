@@ -25,7 +25,8 @@ class ViewportParams;
 
 class TextureColorizer
 {
- public:
+public:
+
     TextureColorizer( const QString &seafile,
                       const QString &landfile );
 
@@ -45,7 +46,8 @@ class TextureColorizer
 
     void setPixel( const QRgb *coastData, QRgb *writeData, int bump, uchar grey );
 
- private:
+private:
+
     QString m_seafile;
     QString m_landfile;
     QList<const GeoDataDocument*> m_seaDocuments;

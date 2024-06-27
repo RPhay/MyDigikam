@@ -16,6 +16,7 @@ namespace Marble
 class DIGIKAM_EXPORT RenderState
 {
 public:
+
     explicit RenderState( const QString &name = QString(), RenderStatus status=Complete );
     RenderState( const RenderState &other );
     RenderState& operator=( const RenderState &other );
@@ -29,6 +30,7 @@ public:
     operator QString() const;
 
 private:
+
     class Private;
     Private* const d = nullptr;
 };

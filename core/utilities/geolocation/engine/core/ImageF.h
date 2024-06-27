@@ -13,15 +13,16 @@ class ImageF
 {
 
 private:
+
     ImageF();
 
 public:
+
     /**
     * @brief Returns the color value of the result tile at a given floating point position.
     * @return The uint that describes the color value of the given pixel
     */
     static uint pixelF( const QImage& image, qreal x, qreal y );
-
 };
 
 } // Namespace Marble

@@ -31,19 +31,21 @@ class DIGIKAM_EXPORT AbstractWorkerThread : public QThread
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit AbstractWorkerThread( QObject *parent = nullptr );
     ~AbstractWorkerThread() override;
 
     void ensureRunning();
 
- protected:
+protected:
+
     virtual bool workAvailable() = 0;
     virtual void work() = 0;
 
     void run() override;
 
- private:
+private:
 
     AbstractWorkerThreadPrivate* const d = nullptr;
 };

@@ -26,6 +26,7 @@ class GeoWriter;
 class DIGIKAM_EXPORT GeoTagWriter
 {
 public:
+
     virtual bool write( const GeoNode *node, GeoWriter& writer ) const = 0;
 
     /**
@@ -43,24 +44,30 @@ public:
     typedef QPair<QString, QString> QualifiedName;
 
 protected:
+
     GeoTagWriter();
     virtual ~GeoTagWriter();
 
     static bool writeElement(const GeoNode *object, GeoWriter &writer);
 
 private:
+
     // Only our registrar is allowed to register tag writers.
     friend struct GeoTagWriterRegistrar;
     static void registerWriter(const QualifiedName&, const GeoTagWriter*);
     static void unregisterWriter(const QualifiedName&);
 
 private:
-    //Collect the Tag Writers and provide a singleton like accessor
+
+    // Collect the Tag Writers and provide a singleton like accessor
+
     typedef QHash<QualifiedName, const GeoTagWriter*> TagHash;
     static TagHash* tagWriterHash();
 
 private:
+
     // Only our writer is allowed to access tag handlers.
+
     friend class GeoWriter;
     friend class GeoDataDocumentWriter;
     static const GeoTagWriter* recognizes(const QualifiedName&);
@@ -70,6 +77,7 @@ private:
 struct GeoTagWriterRegistrar
 {
 public:
+
     GeoTagWriterRegistrar(const GeoTagWriter::QualifiedName& name, const GeoTagWriter* writer) :
         m_name(name)
     {
@@ -82,6 +90,7 @@ public:
     }
 
 private:
+
     GeoTagWriter::QualifiedName m_name;
 };
 

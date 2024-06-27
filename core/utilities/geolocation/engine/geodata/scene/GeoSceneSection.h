@@ -19,10 +19,10 @@ class GeoSceneItem;
 /**
  * @short Section of a GeoScene document.
  */
-
 class DIGIKAM_EXPORT GeoSceneSection : public GeoNode
 {
- public:
+public:
+
     explicit GeoSceneSection( const QString& name );
     ~GeoSceneSection() override;
 
@@ -53,7 +53,8 @@ class DIGIKAM_EXPORT GeoSceneSection : public GeoNode
     QString radio() const;
     void setRadio( const QString& radio );
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneSection )
 
     /// The vector holding all the items in the legend section.

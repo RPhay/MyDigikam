@@ -15,7 +15,7 @@ namespace Marble
 
 class DIGIKAM_EXPORT GeoSceneTextureTileDataset : public GeoSceneTileDataset
 {
- public:
+public:
 
     explicit GeoSceneTextureTileDataset( const QString& name );
 

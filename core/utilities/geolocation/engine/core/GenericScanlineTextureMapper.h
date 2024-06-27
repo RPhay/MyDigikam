@@ -19,7 +19,8 @@ class StackedTileLoader;
 
 class GenericScanlineTextureMapper : public TextureMapperInterface
 {
- public:
+public:
+
     explicit GenericScanlineTextureMapper( StackedTileLoader *tileLoader );
 
     void mapTexture( GeoPainter *painter,

@@ -31,7 +31,8 @@ class DIGIKAM_EXPORT GeoSceneSettings : public QObject,
 {
     Q_OBJECT
 
- public:
+public:
+
     GeoSceneSettings();
     ~GeoSceneSettings() override;
     const char* nodeType() const override;
@@ -107,12 +108,15 @@ class DIGIKAM_EXPORT GeoSceneSettings : public QObject,
      */
     QVector<GeoSceneProperty*> rootProperties();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void valueChanged( const QString&, bool );
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneSettings )
-    GeoSceneSettingsPrivate * const d;
+
+    GeoSceneSettingsPrivate* const d = nullptr;
 };
 
 } // namespace Marble

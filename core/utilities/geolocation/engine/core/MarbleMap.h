@@ -85,7 +85,7 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.MarbleMap")
 
- public:
+public:
 
     friend class MarbleWidget;
 
@@ -428,7 +428,7 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
      */
     const StyleBuilder* styleBuilder() const;
 
- public Q_SLOTS:
+public Q_SLOTS:
 
     /**
      * @brief Paint the map using a give painter.
@@ -718,7 +718,8 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
 
     void highlightRouteRelation(qint64 osmId, bool enabled);
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     void tileLevelChanged( int level );
 
     /**
@@ -776,7 +777,7 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
 
     void propertyValueChanged( const QString& name, bool value );
 
- protected:
+protected:
 
     /**
      * @brief Enables custom drawing onto the MarbleMap straight after
@@ -787,14 +788,15 @@ class DIGIKAM_EXPORT MarbleMap : public QObject
      */
     virtual void customPaint( GeoPainter *painter );
 
- private:
+private:
+
     Q_PRIVATE_SLOT( d, void updateMapTheme() )
     Q_PRIVATE_SLOT( d, void updateProperty( const QString &, bool ) )
     Q_PRIVATE_SLOT( d, void setDocument(QString) )
     Q_PRIVATE_SLOT( d, void updateTileLevel() )
     Q_PRIVATE_SLOT(d, void addPlugins())
 
- private:
+private:
 
     Q_DISABLE_COPY( MarbleMap )
 

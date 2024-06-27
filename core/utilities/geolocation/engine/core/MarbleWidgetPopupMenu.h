@@ -62,7 +62,7 @@ private Q_SLOTS:
     void startReverseGeocoding();
     void showAddressInformation( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
 
- private:
+private:
 
     Q_DISABLE_COPY( MarbleWidgetPopupMenu )
 

@@ -18,9 +18,10 @@ class GeoDataLookAt;
 
 class MarblePhysics : public QObject
 {
- Q_OBJECT
+    Q_OBJECT
 
- public:
+public:
+
     /**
       * @brief Constructor
       * @param presenter the MarbleWidget that is being animated
@@ -40,6 +41,7 @@ class MarblePhysics : public QObject
     void flyTo( const GeoDataLookAt &target, FlyToMode mode = Instant );
 
 private Q_SLOTS:
+
     void updateProgress(qreal progress);
 
     /**

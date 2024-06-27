@@ -25,6 +25,7 @@ class OsmPlacemarkData;
 class DIGIKAM_EXPORT StyleParameters
 {
 public:
+
     explicit StyleParameters(const GeoDataPlacemark *placemark_ = nullptr, int tileLevel = 0);
 
     const GeoDataPlacemark *placemark;
@@ -32,7 +33,8 @@ public:
     const GeoDataRelation *relation;
 };
 
-enum StyleEffect {
+enum StyleEffect
+{
     NoEffect,
     InvertedEffect,
     GrayscaleEffect,
@@ -42,6 +44,7 @@ enum StyleEffect {
 class DIGIKAM_EXPORT StyleBuilder
 {
 public:
+
     typedef QPair<QString, QString> OsmTag;
 
     StyleBuilder();
@@ -100,6 +103,7 @@ public:
     static GeoDataPlacemark::GeoDataVisualCategory determineVisualCategory(const OsmPlacemarkData &osmData);
 
 private:
+
     Q_DISABLE_COPY(StyleBuilder)
 
     class Private;

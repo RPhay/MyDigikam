@@ -29,7 +29,8 @@ class GeoSceneMapPrivate;
  */
 class DIGIKAM_EXPORT GeoSceneMap : public GeoNode
 {
- public:
+public:
+
     GeoSceneMap();
     ~GeoSceneMap() override;
     const char* nodeType() const override;
@@ -112,9 +113,11 @@ class DIGIKAM_EXPORT GeoSceneMap : public GeoNode
      */
     bool hasVectorLayers() const;
 
- private:
+private:
+
     Q_DISABLE_COPY( GeoSceneMap )
-    GeoSceneMapPrivate * const d;
+
+    GeoSceneMapPrivate* const d = nullptr;
 };
 
 } // namespace Marble

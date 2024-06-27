@@ -35,7 +35,8 @@ typedef xmmfloat  matrix[3];
 
 class DIGIKAM_EXPORT Quaternion
 {
- public:
+public:
+
     Quaternion();
     Quaternion(qreal w, qreal x, qreal y, qreal z);
 

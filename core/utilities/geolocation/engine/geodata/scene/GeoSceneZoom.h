@@ -17,7 +17,8 @@ namespace Marble
  */
 class DIGIKAM_EXPORT GeoSceneZoom : public GeoNode
 {
- public:
+public:
+
     GeoSceneZoom();
 
     int minimum() const;
@@ -29,7 +30,8 @@ class DIGIKAM_EXPORT GeoSceneZoom : public GeoNode
 
     const char *nodeType() const override;
 
- private:
+private:
+
     // FIXME: d-pointerfy
 
     int  m_minimum;

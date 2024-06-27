@@ -19,6 +19,7 @@ class GeoDataDocument;
 class DIGIKAM_EXPORT GeoWriterBackend
 {
 public:
+
     virtual ~GeoWriterBackend();
 
     /**
@@ -36,11 +37,13 @@ public:
 class DIGIKAM_EXPORT GeoWriterBackendRegistrar
 {
 public:
+
     GeoWriterBackendRegistrar(GeoWriterBackend* writer, const QString &fileExtension);
     ~GeoWriterBackendRegistrar();
 
 private:
-    GeoWriterBackend* m_writer;
+
+    GeoWriterBackend* m_writer = nullptr;
     QString m_fileExtension;
 };
 
