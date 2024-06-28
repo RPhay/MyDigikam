@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 01:47+0000\n"
-"PO-Revision-Date: 2024-06-19 11:29+0200\n"
+"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"PO-Revision-Date: 2024-06-27 14:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1398,11 +1398,7 @@ msgstr ""
 "worden totdat dit is opgelost.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1411,7 +1407,8 @@ msgid ""
 msgstr ""
 "ExifTool is niet beschikbaar in uw digiKam installatie of werkt niet juist. "
 "Ga naar de instellingen van digiKam en controleer de beschikbaarheid van het "
-"binaire bestand ExifTool in de sectie metagegevens."
+"binaire bestand ExifTool in de sectie metagegevens.\n"
+"Foutmelding: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -18523,7 +18520,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:40
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:39
 #, kde-format
 msgid "Developer"
 msgstr "Ontwikkelaar"

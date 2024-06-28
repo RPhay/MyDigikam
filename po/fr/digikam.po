@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 01:47+0000\n"
-"PO-Revision-Date: 2024-06-14 09:44+0200\n"
+"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"PO-Revision-Date: 2024-06-26 13:19+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -3370,10 +3370,9 @@ msgid "%1/%2 items selected"
 msgstr "%1 / %2 éléments sélectionnés"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Plus de 650 rapports de bogue fermés dans Bugzilla."
+msgstr "Plus de 1500 rapports de bogue fermés dans Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3634,18 +3633,14 @@ msgstr ""
 "des légendes dans le lot de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Gestionnaire de file : ajoute un nouvel outil pour attribuer des titres et "
-"des légendes dans le lot de travaux."
+"Gestionnaire de file : ajout d'un nouvel outil pour lancer des filtres "
+"« G'MIC » par lot de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
@@ -3663,31 +3658,36 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Ajout de nouveaux outils de maintenance et de gestion de file d'attente pour "
+"attribuer automatiquement des balises aux images à l'aide du moteur de "
+"réseau neuronal d'apprentissage profond.<a href=\"https://community.kde.org/"
+"GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Veuillez consulter ce rapport du GoSC 2023 pour plus de détails.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Mettez à jour l'outil « G'MIC-Qt » vers la dernière version 3.2.2, finalisez "
-"le portage vers macOS et améliorez la stabilité du module externe."
+"Mise à jour de l'outil « G'MIC-Qt » vers la dernière version 3.4.0, "
+"finalisation du portage vers macOS et amélioration de la stabilité du module "
+"externe."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Mise à jour du SDK « Adobe DNG » vers la version 1.7.1 avec la prise en "
+"charge de la compression « JPEG-XL »."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
-"Mettre à jour le moteur interne « RAW » vers la dernière version de la "
-"bibliothèque « libraw » en date du 21 Novembre 2023."
+"Mise à jour du moteur interne « RAW » vers la dernière version de la "
+"bibliothèque « libraw » en date du 16 Juin 2024."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3699,6 +3699,13 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Nouvelles fonctionnalités « RAW » pour Canon EOS R6 Mark II, EOS R8, EOS "
+"R50, EOS R100, EOS Ra.Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S."
+"Hasselblad X2D-100c.Leica Q3, M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5."
+"Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-"
+"II, DC-GH6.Sony A7C-II, A7CR, ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), "
+"ILME-FX30, DSC-HX95, A1. Multiple drones DJI et Skdio. Multiples téléphones "
+"au format « DNG » enregistrés."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
@@ -18664,7 +18671,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:40
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:39
 #, kde-format
 msgid "Developer"
 msgstr "Développeur"

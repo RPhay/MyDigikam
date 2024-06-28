@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 01:47+0000\n"
-"PO-Revision-Date: 2024-06-04 14:13+0200\n"
+"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"PO-Revision-Date: 2024-06-27 19:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -1370,11 +1370,7 @@ msgstr ""
 "приблем бъде разрешен.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1383,7 +1379,7 @@ msgid ""
 msgstr ""
 "ExifTool не е наличен във вашата инсталация на digiKam или не работи "
 "правилно. Отидете в настройките на digiKam и проверете наличието на ExifTool "
-"в раздела за метаданни."
+"в раздела за метаданни. Съобщение за грешка: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -3302,10 +3298,9 @@ msgid "%1/%2 items selected"
 msgstr "Маркирани са %1/%2 елемента"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Повече от 650 потребителски доклада са завършени в bugzilla."
+msgstr "Повече от 1500 потребителски доклада са завършени в bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3551,24 +3546,19 @@ msgstr ""
 "заглавия и надписи."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Пакетна обработка: Добавяне на нов инструмент за пакетно присвояване на "
-"заглавия и надписи."
+"Пакетна обработка: Добавяне на нов инструмент за прилагане на G'MIC филтри."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Документация: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
-"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+"Документация: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> от DocBook в Sphinx/ReStructuredText формат."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3579,31 +3569,34 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Добавяне на нови инструменти за поддръжка и управление на опашки, за да "
+"присвоите етикет автоматичноизображения, използващи невронна мрежа за "
+"дълбоко обучение.<a href=\"https://community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Вижте доклад GoSC-2023 за подробности.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Актуализиране на инструмента G'MIC-Qt до последна версия 3.2.2 и "
+"Актуализиране на инструмента G'MIC-Qt до последна версия 3.4.0 и "
 "финализиране на порта за MacOS и подобряване на стабилността на приставката."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Актуализиране на Adobe DNG SDK до последна версия 1.7.1 с поддръжка на JPEG-"
+"XL компресия."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 "Актуализиране на вътрешния RAW енджин до последната стабилна версия Libraw "
-"snapshot 2023-11-21."
+"snapshot 2024-06-16."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -3615,6 +3608,12 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Нова RAW поддръжка: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
+"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
+"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
+"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
+"Multiple DJI и Skydio дронове. Множество смартфони със записан DNG формат."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
@@ -18519,7 +18518,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:40
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:39
 #, kde-format
 msgid "Developer"
 msgstr "Разработчик"
@@ -37687,10 +37686,9 @@ msgid "<b>Date</b>:"
 msgstr "<b>Дата</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "Не можа да се намери координати в клипборда."
+msgstr "Копиране в клипборда на GPS координатите"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format

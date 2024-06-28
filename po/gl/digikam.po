@@ -64,8 +64,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-27 01:47+0000\n"
-"PO-Revision-Date: 2024-06-21 22:25+0200\n"
+"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"PO-Revision-Date: 2024-06-27 21:06+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -1399,11 +1399,7 @@ msgstr ""
 "problema.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1412,7 +1408,8 @@ msgid ""
 msgstr ""
 "ExifTool non está dispoñíbel na súa instalación de digiKam, ou non funciona "
 "correctamente. Abra a configuración de digiKam e comprobe a dispoñibilidade "
-"do ficheiro executábel de ExifTool na sección de metadatos."
+"do ficheiro executábel de ExifTool na sección de metadatos.\n"
+"Mensaxe de erro: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -18449,7 +18446,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:40
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:39
 #, kde-format
 msgid "Developer"
 msgstr "Desenvolvedor."
