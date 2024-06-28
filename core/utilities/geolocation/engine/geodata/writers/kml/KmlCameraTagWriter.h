@@ -13,7 +13,8 @@ namespace Marble
 class KmlCameraTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 };
 
-}
+} // namespace Marble

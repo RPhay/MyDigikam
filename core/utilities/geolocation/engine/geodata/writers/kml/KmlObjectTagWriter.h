@@ -9,6 +9,7 @@
 
 namespace Marble
 {
+
 class GeoWriter;
 
 class KmlObjectTagWriter
@@ -21,7 +22,8 @@ public:
     static void writeIdentifiers( GeoWriter &writer, const GeoDataObject* object );
 
 private:
+
     KmlObjectTagWriter() = delete; // not implemented
 };
 
-}
+} // namespace Marble

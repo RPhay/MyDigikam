@@ -16,10 +16,12 @@ namespace Marble
 class KmlOverlayTagWriter: public KmlFeatureTagWriter
 {
 public:
+
     explicit KmlOverlayTagWriter( const QString &elementName );
 
 protected:
+
     bool writeMid( const GeoNode *node, GeoWriter& writer ) const override = 0;
 };
 
-}
+} // namespace Marble

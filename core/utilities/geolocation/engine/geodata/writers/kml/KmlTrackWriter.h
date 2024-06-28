@@ -11,9 +11,9 @@ namespace Marble {
 
 class KmlTrackWriter : public GeoTagWriter
 {
-
 public:
+
     bool write( const GeoNode *node, GeoWriter &writer ) const override;
 };
 
-}
+} // namespace Marble

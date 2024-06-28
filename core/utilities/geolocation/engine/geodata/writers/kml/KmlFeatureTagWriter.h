@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "GeoTagWriter.h"
-
 #include <QString>
+
+#include "GeoTagWriter.h"
 
 namespace Marble
 {
@@ -16,15 +16,18 @@ namespace Marble
 class KmlFeatureTagWriter: public GeoTagWriter
 {
 public:
+
     explicit KmlFeatureTagWriter( const QString &elementName );
 
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
 protected:
+
     virtual bool writeMid( const GeoNode *node, GeoWriter& writer ) const = 0;
 
 private:
+
     QString const m_elementName;
 };
 
-}
+} // namespace Marble

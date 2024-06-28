@@ -17,9 +17,11 @@ class GeoDataWait;
 class KmlPlaylistTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
 private:
+
     static void writeTourPrimitive(const GeoDataTourPrimitive *primitive, GeoWriter &writer);
     static void writeTourControl(const GeoDataTourControl &tourControl, GeoWriter& writer );
     static void writeWait(const GeoDataWait &wait, GeoWriter &writer);
@@ -27,4 +29,4 @@ private:
     static QString playModeToString( GeoDataTourControl::PlayMode playMode );
 };
 
-}
+} // namespace Marble

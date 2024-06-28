@@ -13,10 +13,12 @@ namespace Marble
 class KmlPlacemarkTagWriter : public KmlFeatureTagWriter
 {
 public:
+
   KmlPlacemarkTagWriter();
 
 protected:
+
     bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
 };
 
-}
+} // namespace Marble

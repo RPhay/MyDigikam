@@ -13,9 +13,10 @@ namespace Marble
 class KmlPhotoOverlayWriter : public KmlOverlayTagWriter
 {
 public:
+
     KmlPhotoOverlayWriter();
 
     bool writeMid( const GeoNode *node, GeoWriter &writer ) const override;
 };
 
-}
+} // namespace Marble

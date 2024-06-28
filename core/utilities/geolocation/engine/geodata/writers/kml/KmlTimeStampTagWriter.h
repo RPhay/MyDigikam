@@ -14,9 +14,10 @@ class GeoDataTimeStamp;
 class KmlTimeStampTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
     static QString toString( const GeoDataTimeStamp &timestamp );
 };
 
-}
+} // namespace Marble

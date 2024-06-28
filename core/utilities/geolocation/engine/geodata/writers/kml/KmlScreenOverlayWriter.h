@@ -7,7 +7,6 @@
 
 #include "GeoDataVec2.h"
 #include "KmlOverlayTagWriter.h"
-
 #include "MarbleGlobal.h"
 
 namespace Marble
@@ -16,12 +15,14 @@ namespace Marble
 class KmlScreenOverlayWriter : public KmlOverlayTagWriter
 {
 public:
+
     KmlScreenOverlayWriter();
     bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
 
 private:
+
     static void writeVec2( const QString &element, const GeoDataVec2 &vec2, GeoWriter& writer );
     static QString unitToString( GeoDataVec2::Unit unit );
 };
 
-}
+} // namespace Marble

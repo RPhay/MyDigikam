@@ -7,7 +7,6 @@
 
 #include "GeoTagWriter.h"
 #include "KmlOverlayTagWriter.h"
-
 #include "MarbleGlobal.h"
 
 namespace Marble
@@ -16,6 +15,7 @@ namespace Marble
 class KmlGroundOverlayWriter : public KmlOverlayTagWriter
 {
 public:
+
     KmlGroundOverlayWriter();
 
     bool writeMid( const GeoNode *node, GeoWriter &writer ) const override;
@@ -25,5 +25,5 @@ public:
     static void writeAltitudeMode( GeoWriter &writer, AltitudeMode altitudeMode );
 };
 
-}
+} // namespace Marble
 

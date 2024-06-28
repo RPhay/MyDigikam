@@ -13,8 +13,8 @@ namespace Marble
 class KmlFlyToTagWriter : public GeoTagWriter
 {
 public:
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
+    bool write( const GeoNode *node, GeoWriter& writer ) const override;
 };
 
-}
+} // namespace Marble

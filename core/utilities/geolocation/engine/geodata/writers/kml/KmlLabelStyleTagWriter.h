@@ -13,12 +13,14 @@ namespace Marble
 class KmlLabelStyleTagWriter : public KmlColorStyleTagWriter
 {
 public:
+
     KmlLabelStyleTagWriter();
 
 protected:
+
     bool writeMid( const GeoNode *node, GeoWriter &writer ) const override;
     bool isEmpty( const GeoNode *node ) const override;
     QColor defaultColor() const override;
 };
 
-}
+} // namespace Marble

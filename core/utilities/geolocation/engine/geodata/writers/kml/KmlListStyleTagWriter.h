@@ -15,11 +15,13 @@ namespace Marble
 class KmlListStyleTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
 private:
+
     static QString itemTypeToString( GeoDataListStyle::ListItemType itemType );
     static QString iconStateToString( GeoDataItemIcon::ItemIconStates state );
 };
 
-}
+} // namespace Marble

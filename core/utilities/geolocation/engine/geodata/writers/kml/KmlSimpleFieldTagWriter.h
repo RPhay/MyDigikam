@@ -16,10 +16,12 @@ namespace Marble
 class KmlSimpleFieldTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
 private:
+
     static QString resolveType( GeoDataSimpleField::SimpleFieldType type );
 };
 
-}
+} // namespace Marble

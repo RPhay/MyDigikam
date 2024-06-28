@@ -16,6 +16,7 @@ namespace Marble
 class KmlColorStyleTagWriter: public GeoTagWriter
 {
 public:
+
     explicit KmlColorStyleTagWriter( const QString &elementName );
 
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
@@ -23,6 +24,7 @@ public:
     static QString formatColor( const QColor &color );
 
 protected:
+
     virtual bool writeMid( const GeoNode *node, GeoWriter& writer ) const = 0;
 
     /** Returns true iff all properties have a default value */
@@ -32,7 +34,8 @@ protected:
     virtual QColor defaultColor() const;
 
 private:
+
     QString const m_elementName;
 };
 
-}
+} // namespace Marble

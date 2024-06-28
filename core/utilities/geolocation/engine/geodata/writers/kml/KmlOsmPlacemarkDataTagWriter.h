@@ -21,6 +21,7 @@ class GeoDataGeometry;
 class KmlOsmPlacemarkDataTagWriter
 {
 public:
+
     /**
      * @brief write function writes a custom XML schema made to store
      * OsmPlacemarkData in a valid KML context
@@ -60,4 +61,4 @@ public:
      static bool writeOsmData( const GeoDataGeometry *geometry, const OsmPlacemarkData &osmData, GeoWriter& writer );
 };
 
-}
+} // namespace Marble

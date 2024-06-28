@@ -15,14 +15,17 @@ namespace Marble
 class KmlIconStyleTagWriter : public KmlColorStyleTagWriter
 {
 public:
+
     KmlIconStyleTagWriter();
 
 protected:
+
     bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
     bool isEmpty( const GeoNode *node ) const override;
 
 private:
+
     static QString unitString( GeoDataHotSpot::Units unit );
 };
 
-}
+} // namespace Marble

@@ -14,13 +14,14 @@ namespace Marble
 class KmlLinkTagWriter : public GeoTagWriter
 {
 public:
+
     bool write( const GeoNode *node, GeoWriter& writer ) const override;
 
     static QString refreshModeToString( GeoDataLink::RefreshMode refreshMode) ;
 
 private:
-    static QString viewRefreshModeToString( GeoDataLink::ViewRefreshMode);
 
+    static QString viewRefreshModeToString( GeoDataLink::ViewRefreshMode);
 };
 
-}
+} // namespace Marble
