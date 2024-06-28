@@ -1,11 +1,22 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Gerhard HOLTKAMP
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include "attlib.h"
+
 #include "digikam_export.h"
 
 const int GBL_ECLBUF = 12;  // maximum number of eclipses allowed
@@ -15,7 +26,8 @@ typedef double PMJD[MAXLUN];  // array of MJD's of the respective phase
 
 class DIGIKAM_EXPORT EclSolar     // Calculate Solar Eclipses
 {
-  public:
+public:
+
     EclSolar();
     ~EclSolar();
 
@@ -55,7 +67,8 @@ class DIGIKAM_EXPORT EclSolar     // Calculate Solar Eclipses
     void getShadowCone(double mjd, bool umbra, int numpts, double* lat, double* lng);
     void setPenumbraAngle(double pa, int mode);
 
-  private:
+private:
+
     void esinit();  // initialize EclSolar
     static double atan23 (double y, double x);  // atan without singularity for x,y=0
     void DefTime ();  // Get System Time and Date
@@ -150,4 +163,3 @@ class DIGIKAM_EXPORT EclSolar     // Calculate Solar Eclipses
       Vec3 eb_lbe;  // Shadod base vector for lower boundary
       Vec3 eb_lde;  // Shadow delta vector for lower boundary
 };
-

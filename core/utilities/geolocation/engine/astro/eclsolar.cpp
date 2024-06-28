@@ -1,11 +1,20 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Gerhard HOLTKAMP
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 /***************************************************************************
 * Calculate Solar Eclipses                                                 *
-*                                                                          *
 *                                                                          *
 * The algorithm for the phases of the Moon and of the dates for the        *
 * equinoxes and solstices of the Sun as well as the dates of eclipses      *
@@ -20,23 +29,23 @@
 * "Explanatory Supplement to the Astronomical Almanac"                     *
 * University Science Books, Mill Valley, CA, 1992                          *
 *                                                                          *
-* Open Source Code. License: GNU LGPL Version 2+                          *
+* Open Source Code. License: GNU LGPL Version 2+                           *
 *                                                                          *
-* Author: Gerhard HOLTKAMP,        28-JAN-2013                              *
+* Author: Gerhard HOLTKAMP,        28-JAN-2013                             *
 ***************************************************************************/
 
-/*------------ include files and definitions -----------------------------*/
 #include "eclsolar.h"
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
 #include <ctime>
+
 using namespace std;
 
 #include "astrolib.h"
 
-/* const double PI = 3.14159265359; */
 const double degrad = M_PI / 180.0;
 
 // ################ Solar Eclipse Class ####################

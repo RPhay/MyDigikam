@@ -1,23 +1,33 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include "attlib.h"
+
 #include "digikam_export.h"
 
-/***********************************************************************
-    Definitions of Astr2lib Functions
-
-
-  Author: Gerhard HOLTKAMP                   25-MAR-2014
- ***********************************************************************/
+/**
+ * Definitions of Astr2lib Functions
+ * Author: Gerhard HOLTKAMP                   25-MAR-2014
+ */
 
 class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 coordinates
- {
-  public:
+{
+public:
+
     Plan200();
     Vec3 velocity();   // return last calculated planet velocity
     void state (Vec3& rs, Vec3& vs);  // return last state vector
@@ -27,10 +37,10 @@ class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 co
     Vec3 Jupiter (double t);   // position of Jupiter at time t
     Vec3 Saturn (double t);   // position of Saturn at time t
     Vec3 Uranus (double t);   // position of Uranus at time t
-      Vec3 Neptune (double t);   // position of Neptune at time t
-      Vec3 Pluto (double t);   // position of Pluto at time t
+    Vec3 Neptune (double t);   // position of Neptune at time t
+    Vec3 Pluto (double t);   // position of Pluto at time t
 
-  private:
+private:
      double c3[19], s3[19];
      double c[11], s[11];
      double m1, m2, m3, m4, m5, m6, m7, m8;
@@ -62,4 +72,3 @@ class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 co
    DIGIKAM_EXPORT void SatTitan (double t, Vec3& rs, Vec3& vs);  // state vector of Titan
    DIGIKAM_EXPORT void NepTriton (double t, Vec3& rs, Vec3& vs); // state vector of Triton
    DIGIKAM_EXPORT void PluCharon (double t, Vec3& rs, Vec3& vs); // state vector of Charon
-

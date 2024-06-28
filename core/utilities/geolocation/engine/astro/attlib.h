@@ -1,29 +1,39 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-/***********************************************************************
-    3-Dim Vector and Matrix Definitions and Operations
-
-  License: GNU LGPL Version 2+
-
-  Author: Gerhard HOLTKAMP                   14-JAN-2012
- ***********************************************************************/
+/**
+ * 3-Dim Vector and Matrix Definitions and Operations
+ * License: GNU LGPL Version 2+
+ * Author: Gerhard HOLTKAMP                   14-JAN-2012
+ */
 
 #include <iostream>
+
 #include "digikam_export.h"
 
 DIGIKAM_EXPORT double atan20 (double y, double x);
 
 class DIGIKAM_EXPORT Vec3
 {
- private:
+private:
+
    double v[3];
 
- public:
+public:
 
    friend class Mat3;
 
@@ -56,7 +66,8 @@ class DIGIKAM_EXPORT Vec3
 // class Mat3: public Vec3
 class DIGIKAM_EXPORT Mat3
 {
- public:
+public:
+
    double m[3][3];
 
    explicit Mat3(double x=0);

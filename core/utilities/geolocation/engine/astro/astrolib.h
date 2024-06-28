@@ -1,21 +1,29 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include "attlib.h"
+
 #include "digikam_export.h"
 
-/***********************************************************************
-   Definitions of Astrolib Functions
-
-
-   License: GNU LGPL Version 2+
-
-   Author: Gerhard HOLTKAMP               14-JAN-2012
- ***********************************************************************/
+/**
+ * Definitions of Astrolib Functions
+ * License: GNU LGPL Version 2+
+ * Author: Gerhard HOLTKAMP               14-JAN-2012
+ */
 
  DIGIKAM_EXPORT double ddd (int d, int m, double s); // deg, min, sec -> decimal degrees
  DIGIKAM_EXPORT void dms (double dd, int &d, int &m, double &s); // dec deg -> deg, min, sec
@@ -63,13 +71,15 @@
  DIGIKAM_EXPORT Vec3 QuickSun (double t);   // low precision position of the Sun at time t
 
 class DIGIKAM_EXPORT Sun200      // Calculating the Sun in epoch J2000.0 coordinates
- {
-  public:
+{
+public:
+
    Sun200();
    Vec3 position (double t);   // position of the Sun
    void state (double t, Vec3& rs, Vec3& vs);  // State vector of the Sun
 
-  private:
+private:
+
    double c3[9], s3[9];
    double c[9], s[9];
    double m2, m3, m4, m5, m6;
@@ -85,15 +95,17 @@ class DIGIKAM_EXPORT Sun200      // Calculating the Sun in epoch J2000.0 coordin
    void pertjup();
    void pertsat();
    void pertmoo();
- };
+};
 
 class DIGIKAM_EXPORT Moon200     // Calculating the position of the Moon in J2000.0
- {
-  public:
+{
+public:
+
    Moon200();
    Vec3 position (double t);   // position of the Moon
 
-  private:
+private:
+
    double dgam, dlam, n, gam1c, sinpi;
    double l0, l, ls, f, d, s;
    double dl0, dl, dls, df, dd, ds;
@@ -114,11 +126,12 @@ class DIGIKAM_EXPORT Moon200     // Calculating the position of the Moon in J200
               double& n, double&x, double& y);
    void solarn (double& n);
    void planetary (double t);
- };
+};
 
 class DIGIKAM_EXPORT Eclipse      // Eclipse Calculations
- {
-  public:
+{
+public:
+
    Eclipse();
    int solar (double jd, double tdut, double& phi, double& lamda);
    void maxpos (double jd, double tdut, double& phi, double& lamda);
@@ -132,7 +145,8 @@ class DIGIKAM_EXPORT Eclipse      // Eclipse Calculations
    double GetEp2 ();   // get the ep2 value
    int lunar (double jd, double tdut);
 
-  private:
+private:
+
    Sun200 sun;
    Moon200 moon;
    Vec3 rs, rm;   // position of the Sun and the Moon
@@ -143,4 +157,4 @@ class DIGIKAM_EXPORT Eclipse      // Eclipse Calculations
    double d_umbra; // diameter of umbra in Earth Radii
    double d_penumbra; // diameter of penumbra in Earth Radii
    void equ_sun_moon(double jd, double tdut);
- };
+};

@@ -1,18 +1,26 @@
-// SPDX-FileCopyrightText: 2009 Henry de Valence <hdevalence@gmail.com>
-// SPDX-FileCopyrightText: 2009 David Roberts <dvdr18@gmail.com>
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "digikam_export.h"
-
 #include <QtGlobal>
-
 #include <QDateTime>
 #include <QStringList>
 #include <QColor>
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -21,7 +29,9 @@ class PlanetPrivate;
 
 class DIGIKAM_EXPORT Planet
 {
-//Not a QObject because we don't need sigs/slots
+
+// Not a QObject because we don't need sigs/slots
+
 public:
 
     /** Constructor to use for a custom planet

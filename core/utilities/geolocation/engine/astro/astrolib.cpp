@@ -1,21 +1,32 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Gerhard Holtkamp
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
-/* =========================================================================
-  Procedures needed for standard astronomy programs.
-  The majority of procedures in this unit are taken from Montenbruck,
-  Pfleger "Astronomie mit dem Personal Computer", Springer Verlag, 1989
-  as well as from the "Explanatory Supplement to the Astronomical Almanac"
-  University Science Books, Mill Valley, California, 1992
-  and modified correspondingly.
-
-  License: GNU LGPL Version 2+
-  Copyright : Gerhard HOLTKAMP          15-APR-2015
-  ========================================================================= */
+/**
+ * Procedures needed for standard astronomy programs.
+ * The majority of procedures in this unit are taken from Montenbruck,
+ * Pfleger "Astronomie mit dem Personal Computer", Springer Verlag, 1989
+ * as well as from the "Explanatory Supplement to the Astronomical Almanac"
+ * University Science Books, Mill Valley, California, 1992
+ * and modified correspondingly.
+ *
+ * License: GNU LGPL Version 2+
+ * Copyright : Gerhard HOLTKAMP          15-APR-2015
+ */
 
 #include <cmath>
+
 using namespace std;
 
 #include "astrolib.h"
