@@ -29,6 +29,6 @@ private:
     static GeoDataSimpleField::SimpleFieldType resolveType( const QString& type );
 };
 
-}
+} // namespace kml
 
 } // namespace Marble

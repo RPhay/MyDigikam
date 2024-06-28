@@ -13,6 +13,7 @@ namespace Marble
 // Lists all known KML 2.1 tags (https://developers.google.com/kml/documentation/kmlreferencel)
 namespace kml
 {
+
     DIGIKAM_EXPORT extern const char kmlTag_nameSpace20[];
     DIGIKAM_EXPORT extern const char kmlTag_nameSpace21[];
     DIGIKAM_EXPORT extern const char kmlTag_nameSpace22[];
@@ -219,7 +220,8 @@ namespace kml
     DIGIKAM_EXPORT extern const char kmlTag_role[];
     DIGIKAM_EXPORT extern const char kmlTag_CountryNameCode[];
     DIGIKAM_EXPORT extern const char kmlTag_countrycode[];
-}
+
+} // namespace kml
 
 // Helper macros
 #define KML_DEFINE_TAG_HANDLER_20(Name) GEODATA_DEFINE_TAG_HANDLER(kml, Kml, Name, kmlTag_nameSpace20)
@@ -235,4 +237,4 @@ namespace kml
     KML_DEFINE_TAG_HANDLER_22(Name) \
     KML_DEFINE_TAG_HANDLER_OGC22(Name)
 
-}
+} // namespace Marble

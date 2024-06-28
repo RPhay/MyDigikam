@@ -25,6 +25,6 @@ public:
     static QColor parseColor( const QString &colorString );
 };
 
-}
+} // namespace kml
 
 } // namespace Marble

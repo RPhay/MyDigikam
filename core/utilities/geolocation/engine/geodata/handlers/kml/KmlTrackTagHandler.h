@@ -20,6 +20,6 @@ public:
     GeoNode *parse( GeoParser &parser ) const override;
 };
 
-}
+} // namespace kml
 
 } // namespace Marble
