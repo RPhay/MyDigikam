@@ -31,6 +31,6 @@ private:
     static Marble::GeoDataTimeStamp::TimeResolution modify( QString& whenString );
 };
 
-}
+} // namespace kml
 
 } // namespace Marble
