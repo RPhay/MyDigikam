@@ -9,6 +9,7 @@
 
 namespace Marble
 {
+
 /**
      This helper class organizes a GeoDataDocument to
      meet the following OSM standard structure:
@@ -24,12 +25,12 @@ namespace Marble
      See https://wiki.openstreetmap.org/wiki/OSM_XML#Contents
 
 */
-
 class OsmDocumentTagTranslator : public GeoTagWriter
 {
 public:
-  bool write( const GeoNode *node, GeoWriter& writer ) const override;
+
+    bool write( const GeoNode *node, GeoWriter& writer ) const override;
 };
 
-}
+} // namespace Marble
 

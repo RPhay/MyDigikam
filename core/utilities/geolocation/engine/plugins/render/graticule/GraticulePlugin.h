@@ -83,9 +83,8 @@ class GraticulePlugin : public RenderPlugin,
 
     void setSettings( const QHash<QString,QVariant> &settings ) override;
 
-
-
  public Q_SLOTS:
+
     void readSettings();
     void writeSettings();
 
@@ -93,8 +92,8 @@ class GraticulePlugin : public RenderPlugin,
     void tropicsGetColor();
     void equatorGetColor();
 
-
  private:
+
      /**
      * @brief Renders the coordinate grid within the defined view bounding box.
      * @param painter the painter used to draw the grid
@@ -209,8 +208,8 @@ class GraticulePlugin : public RenderPlugin,
 
     QIcon m_icon;
 
-    Ui::GraticuleConfigWidget *ui_configWidget;
-    QDialog *m_configDialog;
+    Ui::GraticuleConfigWidget* ui_configWidget  = nullptr;
+    QDialog* m_configDialog                     = nullptr;
 };
 
 } // namespace Marble

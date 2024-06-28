@@ -9,13 +9,15 @@
 #include "ui_MeasureConfigDialog.h"
 #include "MeasureToolPlugin.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class MeasureConfigDialog : public QDialog
 {
     Q_OBJECT
 
 public:
+
     explicit MeasureConfigDialog(QDialog *parent = nullptr);
     ~MeasureConfigDialog() override;
 
@@ -40,13 +42,16 @@ public:
     void setPaintMode(MeasureToolPlugin::PaintMode);
 
 private Q_SLOTS:
+
     void updateTabs();
 
 Q_SIGNALS:
+
     void applied();
 
 private:
-    Ui::MeasureConfigDialog *ui;
+
+    Ui::MeasureConfigDialog* ui = nullptr;
 };
 
 } // namespace Marble

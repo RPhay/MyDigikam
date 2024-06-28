@@ -14,11 +14,14 @@ namespace Marble
 class NavigationSlider : public QAbstractSlider
 {
     Q_OBJECT
+
 public:
+
     explicit NavigationSlider( QWidget *parent = nullptr );
     ~NavigationSlider() override;
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
 protected:
@@ -41,8 +44,10 @@ protected:
     void repaint();
 
 private:
+
     static QPixmap pixmap(const QString &id );
+
     QString m_handleImagePath;
 };
 
-}
+} // namespace Marble

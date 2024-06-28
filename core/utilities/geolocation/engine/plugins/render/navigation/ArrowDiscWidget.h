@@ -17,16 +17,20 @@ class MarbleWidget;
 class ArrowDiscWidget : public QWidget
 {
     Q_OBJECT
+
 public:
+
     explicit ArrowDiscWidget( QWidget *parent = nullptr );
     ~ArrowDiscWidget() override;
 
     void setMarbleWidget( MarbleWidget *marbleWidget );
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
 protected:
+
     void paintEvent( QPaintEvent * ) override;
     void mouseMoveEvent( QMouseEvent *mouseEvent ) override;
     void mousePressEvent( QMouseEvent *mouseEvent ) override;
@@ -35,10 +39,12 @@ protected:
     void repaint();
 
 private Q_SLOTS:
+
     void startPressRepeat();
     void repeatPress();
 
 private:
+
     static QPixmap pixmap(const QString &id );
     Qt::ArrowType arrowUnderMouse( const QPoint &position ) const;
     QTimer m_initialPressTimer;
@@ -46,8 +52,8 @@ private:
     Qt::ArrowType m_arrowPressed;
     int m_repetitions;
 
-    MarbleWidget *m_marbleWidget;
+    MarbleWidget* m_marbleWidget    = nullptr;
     QString m_imagePath;
 };
 
-}
+} // namespace Marble

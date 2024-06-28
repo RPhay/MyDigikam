@@ -11,18 +11,19 @@
 
 namespace Marble
 {
+
 class GeoWriter;
 class OsmWayData;
 
 class OsmNodeTagWriter
 {
-
 public:
+
     static void writeAllNodes(const OsmConverter::Nodes &osmData, GeoWriter& writer );
 
 private:
+
     static void writeNode(const OsmConverter::Node &node, GeoWriter& writer );
 };
 
-}
-
+} // namespace Marble

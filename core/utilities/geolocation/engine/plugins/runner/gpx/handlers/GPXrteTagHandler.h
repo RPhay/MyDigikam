@@ -18,9 +18,10 @@ namespace gpx
 class GPXrteTagHandler : public GeoTagHandler
 {
 public:
+
     GeoNode* parse(GeoParser&) const override;
 };
 
-}
+} // namespace gpx
 
-}
+} // namespace Marble

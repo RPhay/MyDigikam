@@ -35,7 +35,8 @@
 typedef int O5mreaderRet;
 typedef int O5mreaderIterateRet;
 
-typedef struct {
+typedef struct
+{
     int errCode;
     char* errMsg;
     FILE *f;
@@ -59,7 +60,8 @@ typedef struct {
     char** strPairTable;
 } O5mreader;
 
-typedef struct {
+typedef struct
+{
     uint8_t type;
     uint64_t id;
     uint32_t version;

@@ -14,13 +14,15 @@
 #include "OsmPlacemarkData.h"
 #include "GeoDataLinearRing.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataDocument;
 
 class OsmRelation
 {
 public:
+
     OsmPlacemarkData & osmData();
     void parseMember(const QXmlStreamAttributes &attributes);
     void addMember(qint64 reference, const QString &role, const QString &type);
@@ -30,6 +32,7 @@ public:
     const OsmPlacemarkData & osmData() const;
 
 private:
+
     typedef QPair<GeoDataLinearRing, OsmPlacemarkData> OsmRing;
     using OsmRings = QVector<OsmRing>;
 
@@ -50,4 +53,4 @@ private:
 
 typedef QHash<qint64,OsmRelation> OsmRelations;
 
-}
+} // namespace Marble

@@ -6,7 +6,6 @@
 #pragma once
 
 #include <QAbstractItemDelegate>
-
 #include <QModelIndex>
 #include <QIcon>
 

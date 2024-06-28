@@ -20,4 +20,4 @@ public:
     GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) override;
 };
 
-}
+} // namespace Marble

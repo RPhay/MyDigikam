@@ -10,16 +10,19 @@
 #include "OsmWay.h"
 #include "OsmRelation.h"
 
-namespace OSMPBF {
+namespace OSMPBF
+{
 class PrimitiveBlock;
 class PrimitiveGroup;
 }
 
-namespace Marble {
+namespace Marble
+{
 
 class OsmPbfParser
 {
 public:
+
     void parse(const uint8_t *data, std::size_t len);
 
     OsmNodes m_nodes;
@@ -27,6 +30,7 @@ public:
     OsmRelations m_relations;
 
 private:
+
     bool parseBlob(const uint8_t *&it, const uint8_t *end);
     void parsePrimitiveBlock(const uint8_t *data, std::size_t len);
     void parseDenseNodes(const OSMPBF::PrimitiveBlock &block,  const OSMPBF::PrimitiveGroup &group);
@@ -37,4 +41,4 @@ private:
     QSet<QString> m_stringPool;
 };
 
-}
+} // namespace Marble

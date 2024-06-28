@@ -7,6 +7,7 @@
 
 namespace Marble
 {
+
 class OsmPlacemarkData;
 class GeoWriter;
 
@@ -20,5 +21,5 @@ public:
     static void writeAttributes( const OsmPlacemarkData &osmData, GeoWriter &writer );
 };
 
-}
+} // namespace Marble
 

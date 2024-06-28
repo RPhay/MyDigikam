@@ -12,12 +12,16 @@
 
 class QXmlStreamAttributes;
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataDocument;
 
-class OsmNode {
+class OsmNode
+{
+
 public:
+
     OsmPlacemarkData & osmData();
     void parseCoordinates(const QXmlStreamAttributes &attributes);
     void setCoordinates(const GeoDataCoordinates &coordinates);
@@ -28,6 +32,7 @@ public:
     GeoDataPlacemark* create() const;
 
 private:
+
     int populationIndex(qint64 population) const;
 
     OsmPlacemarkData m_osmData;
@@ -36,4 +41,4 @@ private:
 
 typedef QHash<qint64,OsmNode> OsmNodes;
 
-}
+} // namespace Marble

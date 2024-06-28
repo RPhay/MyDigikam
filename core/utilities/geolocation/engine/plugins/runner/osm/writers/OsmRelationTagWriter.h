@@ -19,11 +19,12 @@ class OsmRelationTagWriter
 {
 
 public:
+
     static void writeRelation( const QVector<GeoDataPlacemark*>& relation, const QString& id,
-                           const QMap<QString,QString>& tags, GeoWriter& writer );
+                               const QMap<QString,QString>& tags, GeoWriter& writer );
 
     static void writeMultipolygon( const GeoDataPolygon& polygon,
                                    const OsmPlacemarkData& osmData, GeoWriter& writer );
 };
 
-}
+} // namespace Marble

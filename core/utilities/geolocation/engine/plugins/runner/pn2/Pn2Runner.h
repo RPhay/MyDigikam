@@ -39,4 +39,4 @@ private:
     bool m_isMapColorField;       // Whether the file contains color indexes
 };
 
-}
+} // namespace Marble

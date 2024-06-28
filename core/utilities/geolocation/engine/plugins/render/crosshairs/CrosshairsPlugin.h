@@ -93,14 +93,14 @@ private Q_SLOTS:
 
     bool                        m_isInitialized;
 
-    QSvgRenderer*               m_svgobj;
+    QSvgRenderer*               m_svgobj            = nullptr;
     QPixmap                     m_crosshairs;
     int                         m_themeIndex;
 
     QString                     m_theme;
 
-    QDialog*                    m_configDialog;
-    Ui::CrosshairsConfigWidget* m_uiConfigWidget;
+    QDialog*                    m_configDialog      = nullptr;
+    Ui::CrosshairsConfigWidget* m_uiConfigWidget    = nullptr;
 };
 
 } // namespace Marble

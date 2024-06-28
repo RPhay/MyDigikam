@@ -10,8 +10,10 @@ namespace Marble
 {
 
 // Lists all known GPX 1.1 tags (https://www.topografix.com/GPX/1/1/)
+
 namespace gpx
 {
+
     extern const char gpxTag_nameSpace10[];
     extern const char gpxTag_nameSpace11[];
 
@@ -39,7 +41,8 @@ namespace gpx
     extern const char gpxTag_nameSpaceGarminTrackPointExt1[];
     extern const char gpxTag_TrackPointExtension[];
     extern const char gpxTag_hr[];
-}
+
+} // namespace gpx
 
 // Helper macros
 #define GPX_DEFINE_TAG_HANDLER_10(Name) GEODATA_DEFINE_TAG_HANDLER(gpx, GPX, Name, gpxTag_nameSpace10)
@@ -50,4 +53,4 @@ namespace gpx
     GPX_DEFINE_TAG_HANDLER_10(Name) \
     GPX_DEFINE_TAG_HANDLER_11(Name)
 
-}
+} // namespace Marble

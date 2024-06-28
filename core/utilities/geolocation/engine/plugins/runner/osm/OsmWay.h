@@ -13,13 +13,15 @@
 #include "OsmPlacemarkData.h"
 #include "StyleBuilder.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataDocument;
 
 class OsmWay
 {
 public:
+
     OsmPlacemarkData & osmData();
     void addReference(qint64 id);
 
@@ -29,6 +31,7 @@ public:
     GeoDataPlacemark* create(const OsmNodes &nodes, QSet<qint64> &usedNodes) const;
 
 private:
+
     bool isArea() const;
 
     static bool isAreaTag(const StyleBuilder::OsmTag &keyValue);
@@ -50,4 +53,4 @@ private:
 
 typedef QHash<qint64,OsmWay> OsmWays;
 
-}
+} // namespace Marble

@@ -6,8 +6,9 @@
 #pragma once
 
 // Marble
-#include "digikam_export.h"
 #include "RenderPlugin.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {

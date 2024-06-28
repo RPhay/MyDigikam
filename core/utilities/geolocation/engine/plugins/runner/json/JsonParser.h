@@ -69,4 +69,4 @@ private:
     bool parseGeoJsonSubLevel(const QJsonObject&, QVector<GeoDataGeometry*>&, bool&);
 };
 
-}
+} // namespace Marble

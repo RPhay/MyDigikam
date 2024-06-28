@@ -24,4 +24,4 @@ private:
     GeoDocument* createDocument() const override;
 };
 
-}
+} // namespace Marble

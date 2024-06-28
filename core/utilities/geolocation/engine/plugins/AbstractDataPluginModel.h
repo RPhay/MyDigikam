@@ -8,13 +8,12 @@
 #include <QObject>
 #include <QList>
 #include <QHash>
-
-#include "digikam_export.h"
-
 #include <QPoint>
 #include <QUrl>
 #include <QString>
 #include <QStringList>
+
+#include "digikam_export.h"
 
 namespace Marble
 {

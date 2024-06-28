@@ -12,9 +12,11 @@ namespace Marble
 class OsmRunner : public ParsingRunner
 {
     Q_OBJECT
+
 public:
+
     explicit OsmRunner(QObject *parent = nullptr);
     GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) override;
 };
 
-}
+} // namespace Marble

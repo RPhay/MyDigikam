@@ -6,10 +6,10 @@
 
 #pragma once
 
+#include <QStringList>
+
 #include "PluginInterface.h"
 #include "LayerInterface.h"
-
-#include <QStringList>
 
 namespace Marble
 {

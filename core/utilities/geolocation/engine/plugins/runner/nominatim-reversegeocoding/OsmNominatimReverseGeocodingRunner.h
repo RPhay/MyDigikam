@@ -23,7 +23,9 @@ class GeoDataExtendedData;
 class OsmNominatimRunner : public ReverseGeocodingRunner
 {
     Q_OBJECT
+
 public:
+
     explicit OsmNominatimRunner(QObject *parent = nullptr);
 
     ~OsmNominatimRunner() override;

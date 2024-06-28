@@ -21,6 +21,7 @@ class OsmPlacemarkData;
 class OsmConverter
 {
 public:
+
     typedef QPair<QString, QString> Tag;
     typedef QPair<GeoDataCoordinates, OsmPlacemarkData > Node;
     typedef QPair<const GeoDataLineString*, OsmPlacemarkData > Way;
@@ -38,6 +39,7 @@ public:
     const Relations &relations() const;
 
 private:
+
     Nodes m_nodes;
     Ways m_ways;
     Relations m_relations;
@@ -49,4 +51,4 @@ private:
                         GeoDataPlacemark* placemark);
 };
 
-}
+} // namespace Marble

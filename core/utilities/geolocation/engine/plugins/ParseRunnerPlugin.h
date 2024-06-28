@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QObject>
+
 #include "PluginInterface.h"
 
 namespace Marble

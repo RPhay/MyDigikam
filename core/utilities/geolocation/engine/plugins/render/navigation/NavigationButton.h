@@ -13,13 +13,17 @@ namespace Marble
 class NavigationButton : public QAbstractButton
 {
     Q_OBJECT
+
 public:
+
     explicit NavigationButton( QWidget *parent = nullptr );
 
 Q_SIGNALS:
+
     void repaintNeeded();
 
 protected:
+
     void mousePressEvent ( QMouseEvent *mouseEvent ) override;
     void mouseReleaseEvent ( QMouseEvent *mouseEvent ) override;
 
@@ -38,7 +42,8 @@ protected:
     void paintEvent( QPaintEvent * ) override;
 
 private:
+
     QIcon::Mode m_iconMode;
 };
 
-}
+} // namespace Marble

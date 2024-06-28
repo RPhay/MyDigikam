@@ -79,8 +79,8 @@ private:
 
 private:
 
-    QDialog*                    m_configDialog;
-    Ui::MapScaleConfigWidget*   ui_configWidget;
+    QDialog*                    m_configDialog      = nullptr;
+    Ui::MapScaleConfigWidget*   ui_configWidget     = nullptr;
 
     int                         m_radius;
 
@@ -104,9 +104,9 @@ private:
 
     bool                        m_showRatioScale;
 
-    QMenu*                      m_contextMenu;
+    QMenu*                      m_contextMenu       = nullptr;
 
-    QAction*                    m_minimizeAction;
+    QAction*                    m_minimizeAction    = nullptr;
     bool                        m_minimized;
     int                         m_widthScaleFactor;
 };
