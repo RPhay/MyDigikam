@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "SphericalScanlineTextureMapper.h"
 
@@ -29,18 +37,20 @@ using namespace Marble;
 class SphericalScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
+
     RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewport, MapQuality mapQuality, int yTop, int yBottom );
 
     void run() override;
 
 private:
-    StackedTileLoader *const m_tileLoader;
-    const int m_tileLevel;
-    QImage *const m_canvasImage;
-    const ViewportParams *const m_viewport;
-    const MapQuality m_mapQuality;
-    int const m_yTop;
-    int const m_yBottom;
+
+    StackedTileLoader *const    m_tileLoader  = nullptr;
+    const int                   m_tileLevel;
+    QImage *const               m_canvasImage = nullptr;
+    const ViewportParams *const m_viewport    = nullptr;
+    const MapQuality            m_mapQuality;
+    int const                   m_yTop;
+    int const                   m_yBottom;
 };
 
 SphericalScanlineTextureMapper::RenderJob::RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewport, MapQuality mapQuality, int yTop, int yBottom )

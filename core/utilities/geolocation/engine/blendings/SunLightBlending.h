@@ -39,8 +39,8 @@ private:
     static int maxDivisor( int maximum, int fullLength );
 
     const SunLocator * const m_sunLocator = nullptr;
-    int m_levelZeroColumns;
-    int m_levelZeroRows;
+    int                      m_levelZeroColumns;
+    int                      m_levelZeroRows;
 };
 
 } // Namespace Marble

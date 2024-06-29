@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2008 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -141,12 +149,12 @@ public Q_SLOTS:
 private:
 
     MarbleMap* const m_map = nullptr;
-    MarblePhysics m_physics;
+    MarblePhysics    m_physics;
 
-    bool m_animationsEnabled;
-    int m_logzoom;
-    int m_zoomStep;
-    const qreal m_viewAngle;
+    bool             m_animationsEnabled;
+    int              m_logzoom;
+    int              m_zoomStep;
+    const qreal      m_viewAngle;
 };
 
 } // Namespace Marble

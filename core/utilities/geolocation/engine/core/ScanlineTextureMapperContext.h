@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Andrew Manson <g.real.ate@gmail.com>
-// SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -19,7 +28,6 @@ namespace Marble
 class StackedTile;
 class StackedTileLoader;
 class ViewportParams;
-
 
 class ScanlineTextureMapperContext
 {
@@ -69,37 +77,37 @@ private:
 
 private:
 
-    StackedTileLoader *const m_tileLoader;
-    GeoSceneAbstractTileProjection::Type const m_textureProjection;
+    StackedTileLoader *const                    m_tileLoader;
+    GeoSceneAbstractTileProjection::Type const  m_textureProjection;
     /// size of the tiles of the current texture layer
-    QSize const m_tileSize;
+    QSize const                                 m_tileSize;
 
-    int const        m_tileLevel;
-    int const        m_globalWidth;
-    int const        m_globalHeight;
-    qreal const      m_normGlobalWidth;
-    qreal const      m_normGlobalHeight;
+    int const                                   m_tileLevel;
+    int const                                   m_globalWidth;
+    int const                                   m_globalHeight;
+    qreal const                                 m_normGlobalWidth;
+    qreal const                                 m_normGlobalHeight;
 
-    const StackedTile *m_tile;
+    const StackedTile *                         m_tile = nullptr;
 
     // Coordinate transformations:
 
     // Position of the tile in global Texture Coordinates
     // ( with origin in upper left corner, measured in pixel)
-    int          m_tilePosX;
-    int          m_tilePosY;
+    int                                         m_tilePosX;
+    int                                         m_tilePosY;
 
     // Converts global texture coordinates
     // ( with origin in center, measured in pixel)
     // to tile coordinates ( measured in pixel )
-    qreal  m_toTileCoordinatesLon;
-    qreal  m_toTileCoordinatesLat;
+    qreal                                       m_toTileCoordinatesLon;
+    qreal                                       m_toTileCoordinatesLat;
 
     // Previous coordinates
-    qreal  m_prevLat;
-    qreal  m_prevLon;
-    qreal  m_prevPixelX;
-    qreal  m_prevPixelY;
+    qreal                                       m_prevLat;
+    qreal                                       m_prevLon;
+    qreal                                       m_prevPixelX;
+    qreal                                       m_prevPixelY;
 };
 
 inline int ScanlineTextureMapperContext::globalWidth() const

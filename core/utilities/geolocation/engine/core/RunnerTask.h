@@ -1,16 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
-// SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
+
+#include <QRunnable>
+#include <QString>
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataDocument.h"
 #include "GeoDataLatLonBox.h"
-
-#include <QRunnable>
-#include <QString>
 
 namespace Marble
 {
@@ -29,6 +39,7 @@ class SearchTask : public QObject, public QRunnable
     Q_OBJECT
 
 public:
+
     SearchTask( SearchRunner *runner, SearchRunnerManager *manager, const MarbleModel *model, const QString &searchTerm, const GeoDataLatLonBox &preferred );
 
     /**
@@ -37,12 +48,14 @@ public:
     void run() override;
 
 Q_SIGNALS:
+
     void finished( SearchTask *task );
 
 private:
-    SearchRunner *const m_runner;
-    QString m_searchTerm;
-    GeoDataLatLonBox m_preferredBbox;
+
+    SearchRunner *const m_runner = nullptr;
+    QString             m_searchTerm;
+    GeoDataLatLonBox    m_preferredBbox;
 };
 
 /** A RunnerTask that executes reverse geocoding */
@@ -51,6 +64,7 @@ class ReverseGeocodingTask : public QObject, public QRunnable
     Q_OBJECT
 
 public:
+
     ReverseGeocodingTask( ReverseGeocodingRunner*runner, ReverseGeocodingRunnerManager *manager, const MarbleModel *model, const GeoDataCoordinates &coordinates );
 
     /**
@@ -59,15 +73,18 @@ public:
     void run() override;
 
 Q_SIGNALS:
+
     void finished( ReverseGeocodingTask *task );
 
 private:
-    ReverseGeocodingRunner *const m_runner;
-    GeoDataCoordinates m_coordinates;
+
+    ReverseGeocodingRunner *const   m_runner = nullptr;
+    GeoDataCoordinates              m_coordinates;
 };
 
 /** A RunnerTask that executes a file Parsing */
-class ParsingTask : public QObject, public QRunnable
+class ParsingTask : public QObject,
+                    public QRunnable
 {
     Q_OBJECT
 
@@ -87,10 +104,10 @@ Q_SIGNALS:
 
 private:
 
-    ParsingRunner* const m_runner   = nullptr;
-    QString m_fileName;
-    DocumentRole m_role;
-    ParsingRunnerManager* m_manager = nullptr;
+    ParsingRunner* const    m_runner  = nullptr;
+    QString                 m_fileName;
+    DocumentRole            m_role;
+    ParsingRunnerManager*   m_manager = nullptr;
 };
 
 } // Namespace Marble

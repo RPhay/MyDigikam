@@ -1,26 +1,34 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-// SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include <MarbleAbstractPresenter.h>
+
 #include <QtMath>
-#include <Quaternion.h>
-#include <ViewportParams.h>
-#include <MarbleLocale.h>
+
+#include "Quaternion.h"
+#include "ViewportParams.h"
+#include "MarbleLocale.h"
 #include "MarbleMap.h"
 #include "MarbleModel.h"
-#include <Planet.h>
+#include "Planet.h"
 #include "GeoDataGeometry.h"
 #include "GeoDataLatLonAltBox.h"
-#include <GeoDataPlacemark.h>
-#include <GeoDataLookAt.h>
-#include <MarbleClock.h>
-#include <digikam_debug.h>
+#include "GeoDataPlacemark.h"
+#include "GeoDataLookAt.h"
+#include "MarbleClock.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -579,7 +587,7 @@ namespace Marble
         Q_EMIT regionSelected(box);
      }
 
-}
+} // namespace Marble
 
 #include "moc_MarbleAbstractPresenter.cpp"
 

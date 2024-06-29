@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Carlos Licea <carlos _licea@hotmail.com>
-// SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // local
 #include"EquirectScanlineTextureMapper.h"
@@ -29,11 +37,13 @@ using namespace Marble;
 class EquirectScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
+
     RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewportParams, MapQuality mapQuality, int yTop, int yBottom );
 
     void run() override;
 
 private:
+
     StackedTileLoader *const m_tileLoader;
     const int m_tileLevel;
     QImage *const m_canvasImage;
@@ -53,7 +63,6 @@ EquirectScanlineTextureMapper::RenderJob::RenderJob( StackedTileLoader *tileLoad
       m_yPaintedBottom( yBottom )
 {
 }
-
 
 EquirectScanlineTextureMapper::EquirectScanlineTextureMapper( StackedTileLoader *tileLoader )
     : TextureMapperInterface(),

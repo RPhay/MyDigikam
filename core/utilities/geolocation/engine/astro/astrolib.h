@@ -86,6 +86,7 @@ private:
    double d, a, uu, tt;
    double cl, sl, cb, sb;
    double u, v, dl, dr, db;
+
    void addthe (double c1, double s1, double c2, double s2,
                 double& cc, double& ss);
    void term (int i1, int i, int it, double dlc, double dls, double drc,
@@ -111,6 +112,7 @@ private:
    double dl0, dl, dls, df, dd, ds;
    double co[13][4];
    double si[13][4];
+
    void addthe (double c1, double s1, double c2, double s2,
                 double& c, double& s);
    double sinus (double phi);
@@ -156,5 +158,6 @@ private:
    double ep2;    // correction for Apparent Sideral Time
    double d_umbra; // diameter of umbra in Earth Radii
    double d_penumbra; // diameter of penumbra in Earth Radii
+
    void equ_sun_moon(double jd, double tdut);
 };

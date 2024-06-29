@@ -1,12 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2009 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2008 Carlos Licea <carlos.licea@kdemail.net>
-// SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
-// SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "MarbleMap.h"
@@ -71,10 +76,10 @@
 namespace Marble
 {
 
-
 class MarbleMap::CustomPaintLayer : public LayerInterface
 {
 public:
+
     explicit CustomPaintLayer( MarbleMap *map )
         : m_map( map )
     {
@@ -101,15 +106,16 @@ public:
     QString runtimeTrace() const override { return QStringLiteral("CustomPaint"); }
 
 private:
-    MarbleMap *const m_map;
-};
 
+    MarbleMap *const m_map = nullptr;
+};
 
 class MarbleMapPrivate
 {
     friend class MarbleWidget;
 
 public:
+
     explicit MarbleMapPrivate( MarbleMap *parent, MarbleModel *model );
 
     void updateMapTheme();
@@ -122,37 +128,37 @@ public:
 
     void addPlugins();
 
-    MarbleMap *const q;
+    MarbleMap *const                q = nullptr;
 
     // The model we are showing.
-    MarbleModel     *const m_model;
-    bool             m_modelIsOwned;
+    MarbleModel* const              m_model = nullptr;
+    bool                            m_modelIsOwned;
 
     // Parameters for the maps appearance.
-    ViewParams       m_viewParams;
-    ViewportParams   m_viewport;
-    bool             m_showFrameRate;
-    bool             m_showDebugPolygons;
-    bool             m_showDebugBatchRender;
-    GeoDataRelation::RelationTypes m_visibleRelationTypes;
-    StyleBuilder     m_styleBuilder;
+    ViewParams                      m_viewParams;
+    ViewportParams                  m_viewport;
+    bool                            m_showFrameRate;
+    bool                            m_showDebugPolygons;
+    bool                            m_showDebugBatchRender;
+    GeoDataRelation::RelationTypes  m_visibleRelationTypes;
+    StyleBuilder                    m_styleBuilder;
 
-    QList<RenderPlugin *> m_renderPlugins;
+    QList<RenderPlugin *>           m_renderPlugins;
 
-    LayerManager     m_layerManager;
-    MarbleSplashLayer m_marbleSplashLayer;
-    MarbleMap::CustomPaintLayer m_customPaintLayer;
-    GeometryLayer            m_geometryLayer;
-    FloatItemsLayer          m_floatItemsLayer;
-    FogLayer                 m_fogLayer;
-    GroundLayer              m_groundLayer;
-    TextureLayer     m_textureLayer;
-    PlacemarkLayer   m_placemarkLayer;
-    VectorTileLayer  m_vectorTileLayer;
+    LayerManager                    m_layerManager;
+    MarbleSplashLayer               m_marbleSplashLayer;
+    MarbleMap::CustomPaintLayer     m_customPaintLayer;
+    GeometryLayer                   m_geometryLayer;
+    FloatItemsLayer                 m_floatItemsLayer;
+    FogLayer                        m_fogLayer;
+    GroundLayer                     m_groundLayer;
+    TextureLayer                    m_textureLayer;
+    PlacemarkLayer                  m_placemarkLayer;
+    VectorTileLayer                 m_vectorTileLayer;
 
-    bool m_isLockedToSubSolarPoint;
-    bool m_isSubSolarPointIconVisible;
-    RenderState m_renderState;
+    bool                            m_isLockedToSubSolarPoint;
+    bool                            m_isSubSolarPointIconVisible;
+    RenderState                     m_renderState;
 };
 
 MarbleMapPrivate::MarbleMapPrivate( MarbleMap *parent, MarbleModel *model ) :
@@ -1489,6 +1495,6 @@ void MarbleMap::setHeading( qreal heading )
     Q_EMIT visibleLatLonAltBoxChanged( d->m_viewport.viewLatLonAltBox() );
 }
 
-}
+} // namespace Marble
 
 #include "moc_MarbleMap.cpp"

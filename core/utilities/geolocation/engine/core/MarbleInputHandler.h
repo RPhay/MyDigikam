@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2005-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2014 Adam Dabrowski <adamdbrw@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -34,7 +42,8 @@ class DIGIKAM_EXPORT MarbleInputHandler  : public QObject
 {
     Q_OBJECT
 
- public:
+public:
+
     explicit MarbleInputHandler( MarbleAbstractPresenter* );
     ~MarbleInputHandler() override;
 
@@ -77,7 +86,8 @@ class DIGIKAM_EXPORT MarbleInputHandler  : public QObject
     /// should the map do kinetic scrolling, this would stop the operation
     virtual void stopInertialEarthRotation();
 
- Q_SIGNALS:
+Q_SIGNALS:
+
     // Mouse button menus
     void lmbRequest( int, int );
     void rmbRequest( int, int );
@@ -92,23 +102,28 @@ class DIGIKAM_EXPORT MarbleInputHandler  : public QObject
      */
     void mouseClickGeoPosition( qreal, qreal, GeoDataCoordinates::Unit );
 
- protected Q_SLOTS:
+protected Q_SLOTS:
+
     void restoreViewContext();
 
- protected:
-    class Protected;
-    Protected * const d;
+protected:
 
- private Q_SLOTS:
+    class Protected;
+    Protected * const d = nullptr;
+
+private Q_SLOTS:
+
     virtual void installPluginEventFilter( RenderPlugin *renderPlugin ) = 0;
 
- private:
+private:
+
     Q_DISABLE_COPY( MarbleInputHandler )
 };
 
 class AbstractSelectionRubber
 {
 public:
+
     virtual ~AbstractSelectionRubber() {}
     virtual void show() = 0;
     virtual void hide() = 0;
