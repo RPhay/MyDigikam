@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2009 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "ClipPainter.h"
 
@@ -15,7 +24,8 @@ namespace Marble
 
 class ClipPainterPrivate
 {
- public:
+public:
+
     explicit ClipPainterPrivate( ClipPainter * parent );
 
     ClipPainter * q;
@@ -88,7 +98,7 @@ class ClipPainterPrivate
     bool m_debugBatchRender;
 };
 
-}
+} // namespace Marble
 
 using namespace Marble;
 
@@ -107,24 +117,20 @@ ClipPainter::ClipPainter()
 {
 }
 
-
 ClipPainter::~ClipPainter()
 {
     delete d;
 }
-
 
 void ClipPainter::setScreenClip(bool enable)
 {
     d->m_doClip = enable;
 }
 
-
 bool ClipPainter::hasScreenClip() const
 {
     return d->m_doClip;
 }
-
 
 void ClipPainter::drawPolygon ( const QPolygonF & polygon,
                                 Qt::FillRule fillRule )
