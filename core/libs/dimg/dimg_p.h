@@ -254,7 +254,8 @@ public:
              << QLatin1String("rawDecodingSettings")
              << QLatin1String("rawDecodingFilterAction")
              << QLatin1String("uniqueHash")
-             << QLatin1String("uniqueHashV2");
+             << QLatin1String("uniqueHashV2")
+             << QLatin1String("uniqueHashV3");
 
         return list;
     }

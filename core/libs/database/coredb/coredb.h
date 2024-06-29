@@ -121,8 +121,6 @@ public:
 
     void setUniqueHashVersion(int version);
 
-    bool isUniqueHashV2()                                                                                           const;
-
     // ----------- AlbumRoot operations -----------
 
     /**

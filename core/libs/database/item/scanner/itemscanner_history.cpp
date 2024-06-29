@@ -371,7 +371,7 @@ QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& histor
 
     // Second: uniqueHash + fileSize. Sufficient to assume that a file is identical, but subject to frequent change.
 
-    if (historyId.hasUniqueHashIdentifier() && CoreDbAccess().db()->isUniqueHashV2())
+    if (historyId.hasUniqueHashIdentifier() && (CoreDbAccess().db()->getUniqueHashVersion() > 1))
     {
         QList<ItemScanInfo> infos = CoreDbAccess().db()->getIdenticalFiles(historyId.m_uniqueHash, historyId.m_fileSize);
 
@@ -443,26 +443,28 @@ QString ItemScanner::uniqueHash() const
 {
     // the QByteArray is an ASCII hex string
 
+    const int version = CoreDbAccess().db()->getUniqueHashVersion();
+
     if (d->scanInfo.category == DatabaseItem::Image)
     {
-        if (CoreDbAccess().db()->isUniqueHashV2())
+        if (version == 1)
         {
-            return QString::fromUtf8(d->img.getUniqueHashV2());
+            return QString::fromUtf8(d->img.getUniqueHash());
         }
         else
         {
-            return QString::fromUtf8(d->img.getUniqueHash());
+            return QString::fromUtf8(d->img.getUniqueHashVersion(version));
         }
     }
     else
     {
-        if (CoreDbAccess().db()->isUniqueHashV2())
+        if (version == 1)
         {
-            return QString::fromUtf8(DImg::getUniqueHashV2(d->fileInfo.filePath()));
+            return QString::fromUtf8(DImg::getUniqueHash(d->fileInfo.filePath()));
         }
         else
         {
-            return QString::fromUtf8(DImg::getUniqueHash(d->fileInfo.filePath()));
+            return QString::fromUtf8(DImg::getUniqueHashVersion(d->fileInfo.filePath(), version));
         }
     }
 }

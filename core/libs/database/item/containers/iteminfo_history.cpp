@@ -84,7 +84,7 @@ HistoryImageId ItemInfo::historyImageId() const
     id.setFileName(name());
     id.setPathOnDisk(filePath());
 
-    if (CoreDbAccess().db()->isUniqueHashV2())
+    if (CoreDbAccess().db()->getUniqueHashVersion() > 1)
     {
         ItemScanInfo info = CoreDbAccess().db()->getItemScanInfo(m_data->id);
         id.setUniqueHash(info.uniqueHash, info.fileSize);

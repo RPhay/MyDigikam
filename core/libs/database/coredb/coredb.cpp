@@ -1044,15 +1044,11 @@ int CoreDB::getUniqueHashVersion() const
     return d->uniqueHashVersion;
 }
 
-bool CoreDB::isUniqueHashV2() const
-{
-    return (getUniqueHashVersion() == 2);
-}
-
 void CoreDB::setUniqueHashVersion(int version)
 {
     d->uniqueHashVersion = version;
-    setSetting(QLatin1String("uniqueHashVersion"), QString::number(d->uniqueHashVersion));
+    setSetting(QLatin1String("uniqueHashVersion"),
+               QString::number(d->uniqueHashVersion));
 }
 
 qlonglong CoreDB::getImageId(int albumID, const QString& name) const

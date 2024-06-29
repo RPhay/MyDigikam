@@ -58,16 +58,20 @@ QByteArray DImg::getUniqueHash(const QString& filePath)
     return DImg::createUniqueHash(filePath, ba);
 }
 
-QByteArray DImg::getUniqueHashV2()
+QByteArray DImg::getUniqueHashVersion(int version)
 {
-    if (hasAttribute(QLatin1String("uniqueHashV2")))
+    const QString uniqueHash(QString::fromLatin1("uniqueHashV%1").arg(version));
+
+    if (hasAttribute(uniqueHash))
     {
-        return attribute(QLatin1String("uniqueHashV2")).toByteArray();
+        return attribute(uniqueHash).toByteArray();
     }
 
     if (!hasAttribute(QLatin1String("originalFilePath")))
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "DImg::getUniqueHash called without originalFilePath property set!";
+        qCWarning(DIGIKAM_DIMG_LOG) << "DImg::getUniqueHashVersion called without "
+                                       "originalFilePath property set!";
+
         return QByteArray();
     }
 
@@ -80,22 +84,34 @@ QByteArray DImg::getUniqueHashV2()
 
     FileReadLocker lock(filePath);
 
-    QByteArray hash = DImg::createUniqueHashV2(filePath);
-    setAttribute(QLatin1String("uniqueHashV2"), hash);
+    QByteArray hash = DImg::getUniqueHashVersion(filePath, version);
+    setAttribute(uniqueHash, hash);
 
     return hash;
 }
 
-QByteArray DImg::getUniqueHashV2(const QString& filePath)
+QByteArray DImg::getUniqueHashVersion(const QString& filePath, int version)
 {
-    return DImg::createUniqueHashV2(filePath);
+    if      (version == 2)
+    {
+        return DImg::createUniqueHashV2(filePath);
+    }
+    else if (version == 3)
+    {
+        return DImg::createUniqueHashV3(filePath);
+    }
+
+    qCWarning(DIGIKAM_DIMG_LOG) << "DImg::getUniqueHashVersion called with "
+                                   "unsupported version:" << version;
+
+    return QByteArray();
 }
 
 QByteArray DImg::createImageUniqueId()
 {
     NonDeterministicRandomData randomData(16);
     QByteArray imageUUID = randomData.toHex();
-    imageUUID           += getUniqueHashV2();
+    imageUUID           += getUniqueHashVersion(2);
 
     return imageUUID;
 }
@@ -322,7 +338,7 @@ HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageI
     id.setCreationDate(dt);
     id.setFileName(fileInfo.fileName());
     id.setPath(fileInfo.path());
-    id.setUniqueHash(QString::fromUtf8(getUniqueHashV2()), fileInfo.size());
+    id.setUniqueHash(QString::fromUtf8(getUniqueHashVersion(2)), fileInfo.size());
     id.setType(type);
 
     return id;
@@ -584,7 +600,7 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
     QCryptographicHash md5(QCryptographicHash::Md5);
 
     // Specified size: 100 kB for the first block, all
-    // further 5 blocks with 25 kB; but limit to file size
+    // further 6 blocks with 25 kB; but limit to file size
 
     const qint64 specifiedSize = 100 * 1024;       // 100 kB
     const qint64 size          = qMin(file.size(), specifiedSize);
