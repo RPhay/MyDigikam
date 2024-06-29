@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"POT-Creation-Date: 2024-06-29 01:42+0000\n"
 "PO-Revision-Date: 2024-06-27 15:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -52623,78 +52623,78 @@ msgstr ""
 "gerçekleştirmek için\n"
 "buraya eskizleyin"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:233
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Merkür"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:235
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "Venüs"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:237
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "Dünya"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:239
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "Mars"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:249
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "Jüpiter"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:251
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Satürn"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "Uranüs"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "Neptün"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:250
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:258
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "Plüto"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:261
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Güneş"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:263
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Ay"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:257
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:265
 #, kde-format
 msgid "Sky"
 msgstr "Gökyüzü"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:260
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:268
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"

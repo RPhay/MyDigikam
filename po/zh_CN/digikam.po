@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 01:52+0000\n"
+"POT-Creation-Date: 2024-06-29 01:42+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1324,15 +1324,13 @@ msgstr ""
 "如果选择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
 "ExifTool binary file in the metadata section.\n"
 "Error message: %1"
 msgstr ""
-"ExifTool 不可用或者工作不正常。请在 digiKam 设置窗口的“元数据”页面检查 "
-"ExifTool 的可执行文件是否可用。"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -51037,78 +51035,78 @@ msgstr ""
 "以进行\n"
 "模糊搜索"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:233
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "水星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:235
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "金星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:237
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "地球"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:239
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "火星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:249
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "木星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:251
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "土星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "天王星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "海王星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:250
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:258
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "冥王星"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:261
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "太阳"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:263
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "月球"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:257
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:265
 #, kde-format
 msgid "Sky"
 msgstr "天空"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:260
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:268
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"

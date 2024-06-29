@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-28 01:52+0000\n"
-"PO-Revision-Date: 2024-06-16 07:39+0200\n"
+"POT-Creation-Date: 2024-06-29 01:42+0000\n"
+"PO-Revision-Date: 2024-06-28 21:02+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -1358,11 +1358,7 @@ msgstr ""
 "problemon.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1371,7 +1367,8 @@ msgid ""
 msgstr ""
 "ExifTool ne disponeblas en via digiKam-instalaĵo aŭ ne funkcias ĝuste. Iru "
 "al la agordoj de digiKam kaj kontrolu la haveblecon de la ExifTool-"
-"duumdosiero en la metadatuma sekcio."
+"duumdosiero en la metadatuma sekcio.\n"
+"Erarmesaĝo: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -3280,10 +3277,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 eroj elektitaj"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Pli ol 650 uzantraportoj fermiĝis sur bugzilla."
+msgstr "Pli ol 1550 uzantraportoj fermiĝis en bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3518,24 +3514,20 @@ msgstr ""
 "en staplo."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Atendovica mastrumilo: aldoni novan ilon por asigni titolojn kaj subtitolojn "
-"en staplo."
+"Atendovica Mastrumilo: aldoni novan ilon por efektivigi G'MIC-filtrilojn en "
+"staplo."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 "Dokumentaro: <a href=\" https://docs.digikam.org/en/index.html\">Reskribi "
-"manlibron</a> de DocBook al Sphinx/ReStructuredText kadro."
+"manlibron</a> de DocBook al framo Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3548,15 +3540,12 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Ĝisdatigi G'MIC-Qt-ilon al lasta versio 3.2.2 kaj finpretigi MacOS-pordon "
+"Ĝisdatigi G'MIC-Qt-ilon al lasta versio 3.4.0 kaj finpretigi MacOS-portadon "
 "kaj plibonigi stabilecon de kromaĵo."
 
 #: core/app/views/stack/welcomepageview.cpp:167
@@ -3565,11 +3554,10 @@ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
-"Ĝisdatigi internan RAW-motoron al lasta libraw-momentversio 2023-11-21."
+"Ĝisdatigi internan RAW-motoron al lasta libraw-momentversio 2024-06-16."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -52430,78 +52418,78 @@ msgstr ""
 "por fari\n"
 "Neklaran serĉon"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:233
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Merkuro"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:235
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "Venuso"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:237
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "Tero"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:239
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "Marso"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:249
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "Jupitero"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:251
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Saturno"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "Urano"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "Neptuno"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:250
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:258
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "Plutono"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:261
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Suno"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:263
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Luno"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:257
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:265
 #, kde-format
 msgid "Sky"
 msgstr "Ĉielo"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:260
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:268
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
@@ -66930,16 +66918,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgid ""
-#~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
-#~ "RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) "
-#~ "DNGs (non-standard) Deflate-compressed integer DNG files are allowed "
-#~ "Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica "
-#~ "M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
-#~ msgstr ""
-#~ "Novaj RAW-ecoj: Phase One/Leaf IIQ-S v2-subteno Canon CR3 filmrolls/"
-#~ "RawBurst Canon CRM (filmo) dosieroj Tiled bit-pakitaj (kaj 16-bit "
-#~ "malpakitaj) DNG-oj (ne-normaj) Deflate-kunpremitaj entjeraj DNG-dosieroj "
-#~ "estas permesitaj Kanono EOS R3, R7 kaj R10 Fujifilm X-H2S, X-T30 II OM "
-#~ "System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
