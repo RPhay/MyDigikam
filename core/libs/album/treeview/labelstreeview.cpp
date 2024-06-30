@@ -32,6 +32,7 @@
 #include "digikam_globals.h"
 #include "coredbsearchxml.h"
 #include "searchtabheader.h"
+#include "thememanager.h"
 #include "albummanager.h"
 #include "albumtreeview.h"
 #include "itemlister.h"
@@ -64,9 +65,12 @@ public:
 
     bool                       isCheckableTreeView          = false;
     bool                       isLoadingState               = false;
+    int                        treeItemsIndex               = 0;
     int                        iconSizeFromSetting          = 0;
 
     QHash<Labels, QList<int> > selectedLabels;
+
+    QList<QTreeWidgetItem*>    treeWidgetItems;
 
     const QString configRatingSelectionEntry                = QLatin1String("RatingSelection");
     const QString configPickSelectionEntry                  = QLatin1String("PickSelection");
@@ -110,6 +114,13 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSettingsChanged()));
+
+    connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
+            this, [this]()
+        {
+            initTreeView();
+        }
+    );
 }
 
 LabelsTreeView::~LabelsTreeView()
@@ -127,6 +138,34 @@ bool LabelsTreeView::isLoadingState() const
     return d->isLoadingState;
 }
 
+QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
+{
+    QTreeWidgetItem* treeItem = nullptr;
+
+    if (d->treeWidgetItems.size() > d->treeItemsIndex)
+    {
+        treeItem = d->treeWidgetItems.at(d->treeItemsIndex);
+    }
+    else
+    {
+        if (parent)
+        {
+            treeItem = new QTreeWidgetItem(parent);
+        }
+        else
+        {
+            treeItem = new QTreeWidgetItem(this);
+        }
+
+        d->treeWidgetItems << treeItem;
+    }
+
+    d->treeItemsIndex++;
+
+    return treeItem;
+}
+
+
 QPixmap LabelsTreeView::goldenStarPixmap(bool fillin) const
 {
     QPixmap pixmap = QPixmap(60, 60);
@@ -137,11 +176,15 @@ QPixmap LabelsTreeView::goldenStarPixmap(bool fillin) const
 
     if (fillin)
     {
+        QPen pen(palette().color(QPalette::Active, foregroundRole()));
         p1.setBrush(qApp->palette().color(QPalette::Link));
+        p1.setPen(pen);
     }
-
-    QPen pen(palette().color(QPalette::Active, foregroundRole()));
-    p1.setPen(pen);
+    else
+    {
+        QPen pen(qApp->palette().color(QPalette::Active, QPalette::ButtonText));
+        p1.setPen(pen);
+    }
 
     QTransform transform;
     transform.scale(4, 4);     // 60px/15px (RatingWidget::starPolygon() size is 15*15px)
@@ -341,7 +384,11 @@ void LabelsTreeView::setCurrentAlbum()
 
 void LabelsTreeView::initTreeView()
 {
-    setIconSize(QSize(d->iconSizeFromSetting*5,d->iconSizeFromSetting));
+    setIconSize(QSize(d->iconSizeFromSetting * 5,
+                      d->iconSizeFromSetting));
+
+    d->treeItemsIndex = 0;
+
     initRatingsTree();
     initPicksTree();
     initColorsTree();
@@ -351,12 +398,12 @@ void LabelsTreeView::initTreeView()
 
 void LabelsTreeView::initRatingsTree()
 {
-    d->ratings = new QTreeWidgetItem(this);
+    d->ratings = getOrCreateItem(nullptr);
     d->ratings->setText(0, i18nc("@item: rating tree", "Rating"));
     d->ratings->setFont(0, d->regularFont);
     d->ratings->setFlags(Qt::ItemIsEnabled);
 
-    QTreeWidgetItem* const noRate = new QTreeWidgetItem(d->ratings);
+    QTreeWidgetItem* const noRate = getOrCreateItem(d->ratings);
     noRate->setText(0, i18nc("@item: rating tree", "No Rating"));
     noRate->setFont(0, d->regularFont);
     QPixmap pix2(goldenStarPixmap().size());
@@ -370,9 +417,9 @@ void LabelsTreeView::initRatingsTree()
 
     for (int rate = 1 ; rate <= 5 ; ++rate)
     {
-        QTreeWidgetItem* const rateWidget = new QTreeWidgetItem(d->ratings);
+        QTreeWidgetItem* const rateWidget = getOrCreateItem(d->ratings);
 
-        QPixmap pix(goldenStarPixmap().width()*rate, goldenStarPixmap().height());
+        QPixmap pix(goldenStarPixmap().width() * rate, goldenStarPixmap().height());
         pix.fill(Qt::transparent);
         QPainter p(&pix);
         int offset = 0;
@@ -392,7 +439,7 @@ void LabelsTreeView::initRatingsTree()
 
 void LabelsTreeView::initPicksTree()
 {
-    d->picks = new QTreeWidgetItem(this);
+    d->picks = getOrCreateItem(nullptr);
     d->picks->setText(0, i18nc("@title: pick tree", "Pick"));
     d->picks->setFont(0, d->regularFont);
     d->picks->setFlags(Qt::ItemIsEnabled);
@@ -411,24 +458,24 @@ void LabelsTreeView::initPicksTree()
 
     Q_FOREACH (const QString& pick, pickSetNames)
     {
-        QTreeWidgetItem* const pickWidgetItem = new QTreeWidgetItem(d->picks);
+        QTreeWidgetItem* const pickWidgetItem = getOrCreateItem(d->picks);
         pickWidgetItem->setText(0, pick);
         pickWidgetItem->setFont(0, d->regularFont);
-        pickWidgetItem->setIcon(0, QIcon::fromTheme(pickSetIcons.at(pickSetNames.indexOf(pick))));
+        pickWidgetItem->setIcon(0, QIcon(QIcon::fromTheme(pickSetIcons.at(pickSetNames.indexOf(pick))).pixmap(48, 48)));
     }
 }
 
 void LabelsTreeView::initColorsTree()
 {
-    d->colors                      = new QTreeWidgetItem(this);
+    d->colors                      = getOrCreateItem(nullptr);
     d->colors->setText(0, i18nc("@item: color tree", "Color"));
     d->colors->setFont(0, d->regularFont);
     d->colors->setFlags(Qt::ItemIsEnabled);
 
-    QTreeWidgetItem* const noColor = new QTreeWidgetItem(d->colors);
+    QTreeWidgetItem* const noColor = getOrCreateItem(d->colors);
     noColor->setText(0, i18nc("@item: color tree", "No Color"));
     noColor->setFont(0, d->regularFont);
-    noColor->setIcon(0, QIcon::fromTheme(QLatin1String("emblem-unmounted")));
+    noColor->setIcon(0, QIcon(QIcon::fromTheme(QLatin1String("emblem-unmounted")).pixmap(48, 48)));
 
     QStringList colorSet;
     colorSet << QLatin1String("red")      << QLatin1String("orange")
@@ -446,7 +493,7 @@ void LabelsTreeView::initColorsTree()
 
     Q_FOREACH (const QString& color, colorSet)
     {
-        QTreeWidgetItem* const colorWidgetItem = new QTreeWidgetItem(d->colors);
+        QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
         colorWidgetItem->setText(0, colorSetNames.at(colorSet.indexOf(color)));
         colorWidgetItem->setFont(0, d->regularFont);
         QPixmap colorIcon                      = colorRectPixmap(QColor(color));
@@ -460,7 +507,7 @@ void LabelsTreeView::slotSettingsChanged()
     if (d->iconSizeFromSetting != ApplicationSettings::instance()->getTreeViewIconSize())
     {
         d->iconSizeFromSetting = ApplicationSettings::instance()->getTreeViewIconSize();
-        setIconSize(QSize(d->iconSizeFromSetting*5, d->iconSizeFromSetting));
+        setIconSize(QSize(d->iconSizeFromSetting * 5, d->iconSizeFromSetting));
         d->iconSize            = QSize(d->iconSizeFromSetting, d->iconSizeFromSetting);
         QTreeWidgetItemIterator it(this);
 

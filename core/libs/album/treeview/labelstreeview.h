@@ -116,6 +116,11 @@ private:
     void initPicksTree();
     void initColorsTree();
 
+    /**
+     * @brief Index based access to the items
+     */
+    QTreeWidgetItem* getOrCreateItem(QTreeWidgetItem* const parent);
+
 private Q_SLOTS:
 
     void slotSettingsChanged();
