@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "MapThemeManager.h"
@@ -50,6 +59,7 @@ namespace Marble
 class Q_DECL_HIDDEN MapThemeManager::Private
 {
 public:
+
     Private( MapThemeManager *parent );
     ~Private();
 
@@ -96,11 +106,11 @@ public:
      */
     static bool deleteDirectory( const QString &directory );
 
-    MapThemeManager *const q;
-    QStandardItemModel m_mapThemeModel;
-    QStandardItemModel m_celestialList;
-    QFileSystemWatcher m_fileSystemWatcher;
-    bool m_isInitialized;
+    MapThemeManager *const  q = nullptr;
+    QStandardItemModel      m_mapThemeModel;
+    QStandardItemModel      m_celestialList;
+    QFileSystemWatcher      m_fileSystemWatcher;
+    bool                    m_isInitialized;
 
 private:
     /**
@@ -588,6 +598,6 @@ GeoSceneDocument *MapThemeManager::createMapThemeFromOverlay( const GeoDataPhoto
     return document;
 }
 
-}
+} // namespace Marble
 
 #include "moc_MapThemeManager.cpp"

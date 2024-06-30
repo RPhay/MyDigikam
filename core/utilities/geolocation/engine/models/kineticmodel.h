@@ -1,9 +1,17 @@
-/*
-    This file is part of the Ofi Labs X2 project.
-
-    SPDX-FileCopyrightText: 2010 Ariya Hidayat <ariya.hidayat@gmail.com>
-    SPDX-License-Identifier: BSD-3-Clause
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 

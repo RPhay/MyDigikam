@@ -1,12 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2008, 2009, 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
-// SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
-// SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "MarbleModel.h"
 
@@ -20,6 +25,7 @@
 #include <QTextDocument>
 
 #include "kdescendantsproxymodel.h"
+
 #include "MapThemeManager.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneGeodata.h"
@@ -126,7 +132,7 @@ class MarbleModelPrivate
     int                      m_homeZoom;
 
     // View and paint stuff
-    GeoSceneDocument        *m_mapTheme;
+    GeoSceneDocument*        m_mapTheme         = nullptr;
 
     FileStoragePolicy        m_storagePolicy;
     HttpDownloadManager      m_downloadManager;
@@ -145,9 +151,9 @@ class MarbleModelPrivate
 
     FileManager              m_fileManager;
 
-    const GeoDataPlacemark  *m_trackedPlacemark;
+    const GeoDataPlacemark*  m_trackedPlacemark = nullptr;
 
-    QTextDocument           *m_legend;
+    QTextDocument*           m_legend           = nullptr;
 
     bool                     m_workOffline;
 
@@ -832,6 +838,6 @@ const ElevationModel* MarbleModel::elevationModel() const
     return &d->m_elevationModel;
 }
 
-}
+} // namespace Marble
 
 #include "moc_MarbleModel.cpp"

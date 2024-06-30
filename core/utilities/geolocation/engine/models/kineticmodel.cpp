@@ -1,10 +1,17 @@
-/*
-    This file is part of the Ofi Labs X2 project.
-
-    SPDX-FileCopyrightText: 2010 Ariya Hidayat <ariya.hidayat@gmail.com>
-
-    SPDX-License-Identifier: BSD-3-Clause
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "kineticmodel.h"
 
@@ -16,20 +23,21 @@ static const int KineticModelDefaultUpdateInterval = 15; // ms
 class KineticModelPrivate
 {
 public:
-    QTimer ticker;
 
-    int duration;
-    QPointF position;
-    qreal heading;
-    QPointF velocity;
-    qreal velocityHeading;
-    QPointF deacceleration;
-    qreal deaccelerationHeading;
+    QTimer          ticker;
 
-    QElapsedTimer timestamp;
-    QPointF lastPosition;
-    qreal lastHeading;
-    bool changingPosition;
+    int             duration;
+    QPointF         position;
+    qreal           heading;
+    QPointF         velocity;
+    qreal           velocityHeading;
+    QPointF         deacceleration;
+    qreal           deaccelerationHeading;
+
+    QElapsedTimer   timestamp;
+    QPointF         lastPosition;
+    qreal           lastHeading;
+    bool            changingPosition;
 
     KineticModelPrivate();
 };
@@ -46,7 +54,6 @@ KineticModelPrivate::KineticModelPrivate()
     , lastHeading(0)
     , changingPosition(true)
 {
-
 }
 
 KineticModel::KineticModel(QObject *parent)
@@ -59,7 +66,6 @@ KineticModel::KineticModel(QObject *parent)
 
 KineticModel::~KineticModel()
 {
-
 }
 
 bool KineticModel::hasVelocity() const
@@ -239,4 +245,3 @@ void KineticModel::update()
 }
 
 #include "moc_kineticmodel.cpp"
-
