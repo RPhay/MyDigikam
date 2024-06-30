@@ -38,6 +38,8 @@ private:
 
     static int maxDivisor( int maximum, int fullLength );
 
+private:
+
     const SunLocator * const m_sunLocator = nullptr;
     int                      m_levelZeroColumns;
     int                      m_levelZeroRows;

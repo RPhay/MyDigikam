@@ -86,6 +86,8 @@ private:
 
     Q_DISABLE_COPY(TemplateDocument)
 
+private:
+
     TemplateDocumentPrivate* d = nullptr;
 };
 

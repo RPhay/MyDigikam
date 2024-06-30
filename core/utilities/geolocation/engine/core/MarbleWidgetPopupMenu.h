@@ -75,6 +75,8 @@ private:
 
     Q_DISABLE_COPY( MarbleWidgetPopupMenu )
 
+private:
+
     class Private;
     Private* const d = nullptr;
 };

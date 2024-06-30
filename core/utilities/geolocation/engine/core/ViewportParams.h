@@ -223,6 +223,8 @@ private:
 
     Q_DISABLE_COPY( ViewportParams )
 
+private:
+
     ViewportParamsPrivate* const d = nullptr;
 };
 

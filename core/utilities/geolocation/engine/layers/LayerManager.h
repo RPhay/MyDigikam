@@ -116,6 +116,8 @@ private:
 
     Q_DISABLE_COPY( LayerManager )
 
+private:
+
     class Private;
     friend class Private;
     Private* const d = nullptr;

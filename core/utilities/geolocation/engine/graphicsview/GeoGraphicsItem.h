@@ -174,6 +174,8 @@ protected:
 
     virtual void handleRelationUpdate(const QVector<const GeoDataRelation *> &relations);
 
+protected:
+
     GeoGraphicsItemPrivate* const d = nullptr;
 };
 

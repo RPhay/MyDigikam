@@ -116,6 +116,8 @@ private:
 
     Q_DISABLE_COPY(StyleBuilder)
 
+private:
+
     class Private;
     Private* const d = nullptr;
 };

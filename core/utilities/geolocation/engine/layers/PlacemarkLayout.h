@@ -142,9 +142,11 @@ private:
 
     Q_DISABLE_COPY( PlacemarkLayout )
 
-    QAbstractItemModel*                                 m_placemarkModel       = nullptr;
-    QItemSelectionModel* const                          m_selectionModel = nullptr;
-    MarbleClock* const                                  m_clock                  = nullptr;
+private:
+
+    QAbstractItemModel*                                 m_placemarkModel        = nullptr;
+    QItemSelectionModel* const                          m_selectionModel        = nullptr;
+    MarbleClock* const                                  m_clock                 = nullptr;
 
     QVector<VisiblePlacemark*>                          m_paintOrder;
     QString                                             m_runtimeTrace;
@@ -171,7 +173,7 @@ private:
 
     int                                                 m_maxLabelHeight;
     bool                                                m_styleResetRequested;
-    const StyleBuilder*                                 m_styleBuilder  = nullptr;
+    const StyleBuilder*                                 m_styleBuilder          = nullptr;
     // Referencing these properties by value
     // instead of using a more fragile pointer
     bool                                                m_lastPlacemarkAvailable;

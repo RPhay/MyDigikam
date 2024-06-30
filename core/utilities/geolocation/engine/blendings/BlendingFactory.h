@@ -41,6 +41,8 @@ private:
 
     Q_DISABLE_COPY(BlendingFactory)
 
+private:
+
     SunLightBlending* const          m_sunLightBlending = nullptr;
     QHash<QString, Blending const *> m_blendings;
 };

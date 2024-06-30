@@ -85,6 +85,8 @@ protected:
 
     Q_DISABLE_COPY( MergedLayerDecorator )
 
+protected:
+
     class Private;
     Private* const d = nullptr;
 };

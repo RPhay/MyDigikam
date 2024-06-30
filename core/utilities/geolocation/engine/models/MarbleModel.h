@@ -322,6 +322,9 @@ private:
     Q_PRIVATE_SLOT( d, void assignFillColors( const QString &filePath ) )
 
     void addDownloadPolicies( const GeoSceneDocument *mapTheme );
+
+private:
+
     MarbleModelPrivate* const d = nullptr;
 };
 

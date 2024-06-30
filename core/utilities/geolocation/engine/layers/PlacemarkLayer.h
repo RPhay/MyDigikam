@@ -117,6 +117,8 @@ private:
 
     void renderDebug(GeoPainter *painter, ViewportParams *viewport, const QVector<VisiblePlacemark*> & placemarks) const;
 
+private:
+
     PlacemarkLayout m_layout;
     bool            m_debugModeEnabled;
     bool            m_levelTagDebugModeEnabled;

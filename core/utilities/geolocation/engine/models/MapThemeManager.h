@@ -110,6 +110,8 @@ class DIGIKAM_EXPORT MapThemeManager : public QObject
 
     Q_DISABLE_COPY( MapThemeManager )
 
+ private:
+
     class Private;
     friend class Private;
     Private* const d = nullptr;

@@ -134,6 +134,8 @@ private:
     static void drawLabelText( QPainter &labelPainter, const QString &text, const QFont &labelFont, LabelStyle labelStyle, const QColor &color );
     void drawLabelPixmap();
 
+private:
+
     const GeoDataPlacemark* m_placemark = nullptr;
 
     // View stuff

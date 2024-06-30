@@ -43,21 +43,23 @@ public:
     {
     }
 
-    qreal m_zValue;
-    GeoGraphicsItem::GeoGraphicsItemFlags m_flags;
+public:
 
-    int m_minZoomLevel;
-    const GeoDataFeature* m_feature             = nullptr;
-    RenderContext m_renderContext;
-    GeoDataStyle::ConstPtr m_style;
-    const StyleBuilder* m_styleBuilder          = nullptr;
-    QVector<const GeoDataRelation*> m_relations;
+    qreal                                   m_zValue;
+    GeoGraphicsItem::GeoGraphicsItemFlags   m_flags;
 
-    QStringList m_paintLayers;
+    int                                     m_minZoomLevel;
+    const GeoDataFeature*                   m_feature             = nullptr;
+    RenderContext                           m_renderContext;
+    GeoDataStyle::ConstPtr                  m_style;
+    const StyleBuilder*                     m_styleBuilder        = nullptr;
+    QVector<const GeoDataRelation*>         m_relations;
+
+    QStringList                             m_paintLayers;
 
     // To highlight a placemark
-    bool m_highlighted;
-    GeoDataStyle::ConstPtr m_highlightStyle;
+    bool                                    m_highlighted;
+    GeoDataStyle::ConstPtr                  m_highlightStyle;
 };
 
 } // Namespace Marble

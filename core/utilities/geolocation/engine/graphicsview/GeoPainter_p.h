@@ -51,6 +51,8 @@ public:
 
     void drawTextRotated( const QPointF &startPoint, qreal angle, const QString &text );
 
+public:
+
     const ViewportParams* const m_viewport      = nullptr;
     const MapQuality            m_mapQuality;
     qreal* const                m_x             = nullptr;

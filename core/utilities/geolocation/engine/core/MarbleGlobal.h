@@ -312,6 +312,8 @@ private:
     MarbleGlobal();
     Q_DISABLE_COPY( MarbleGlobal )
 
+private:
+
     MarbleGlobalPrivate* const d = nullptr;
 };
 

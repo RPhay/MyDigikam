@@ -19,9 +19,11 @@
 
 #pragma once
 
-#include "digikam_export.h"
 #include <cmath>
+
 #include <QtGlobal>
+
+#include "digikam_export.h"
 
 namespace Marble
 {

@@ -47,11 +47,11 @@ private:
 
     class RenderJob;
 
-    StackedTileLoader* const m_tileLoader = nullptr;
-    int m_radius;
-    QImage m_canvasImage;
-    int    m_oldYPaintedTop;
-    QThreadPool m_threadPool;
+    StackedTileLoader* const    m_tileLoader = nullptr;
+    int                         m_radius;
+    QImage                      m_canvasImage;
+    int                         m_oldYPaintedTop;
+    QThreadPool                 m_threadPool;
 };
 
 } // Namespace Marble

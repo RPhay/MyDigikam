@@ -1176,6 +1176,8 @@ private:
 
     Q_DISABLE_COPY( MarbleWidget )
 
+private:
+
     MarbleWidgetPrivate* const d = nullptr;
     friend class MarbleWidgetPrivate;
 

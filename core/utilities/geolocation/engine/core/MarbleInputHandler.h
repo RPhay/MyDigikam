@@ -197,6 +197,8 @@ private:
 
     Q_DISABLE_COPY(MarbleDefaultInputHandler)
 
+private:
+
     class Private;
     Private* const d = nullptr;      // cppcheck-suppress duplInheritedMember
 };

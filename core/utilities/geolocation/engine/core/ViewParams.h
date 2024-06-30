@@ -57,6 +57,8 @@ private:
 
     Q_DISABLE_COPY( ViewParams )
 
+private:
+
     ViewParamsPrivate* const d = nullptr;
 };
 

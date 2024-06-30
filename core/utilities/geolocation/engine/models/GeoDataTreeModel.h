@@ -114,9 +114,11 @@ Q_SIGNALS:
     void removed( GeoDataObject *object );
     void added( GeoDataObject *object );
 
- private:
+private:
 
     Q_DISABLE_COPY( GeoDataTreeModel )
+
+private:
 
     class Private;
     Private* const d = nullptr;

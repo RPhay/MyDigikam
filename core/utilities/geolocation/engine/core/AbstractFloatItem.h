@@ -175,6 +175,8 @@ private:
 
     Q_DISABLE_COPY( AbstractFloatItem )
 
+private:
+
     AbstractFloatItemPrivate* const d = nullptr;
 };
 

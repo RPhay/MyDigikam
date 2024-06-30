@@ -149,15 +149,17 @@ public:
 
 private:
 
-   Sun200 sun;
-   Moon200 moon;
-   Vec3 rs, rm;   // position of the Sun and the Moon
-   Vec3 eshadow;  // unit vector in direction of shadow
-   Vec3 rint;     // intersection shadow axis - Earth surface
-   double t;      // time in Julian Centuries
-   double ep2;    // correction for Apparent Sideral Time
-   double d_umbra; // diameter of umbra in Earth Radii
-   double d_penumbra; // diameter of penumbra in Earth Radii
+   Sun200   sun;
+   Moon200  moon;
+   Vec3     rs, rm;     // position of the Sun and the Moon
+   Vec3     eshadow;    // unit vector in direction of shadow
+   Vec3     rint;       // intersection shadow axis - Earth surface
+   double   t;          // time in Julian Centuries
+   double   ep2;        // correction for Apparent Sideral Time
+   double   d_umbra;    // diameter of umbra in Earth Radii
+   double   d_penumbra; // diameter of penumbra in Earth Radii
+
+private:
 
    void equ_sun_moon(double jd, double tdut);
 };

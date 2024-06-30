@@ -56,9 +56,11 @@ Q_SIGNALS:
 
 private:
 
-    SunLocatorPrivate* const d = nullptr;
-
     Q_DISABLE_COPY( SunLocator )
+
+private:
+
+    SunLocatorPrivate* const d = nullptr;
 };
 
 } // Namespace Marble

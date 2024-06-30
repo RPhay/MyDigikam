@@ -807,6 +807,8 @@ private:
 
     Q_DISABLE_COPY( MarbleMap )
 
+private:
+
     MarbleMapPrivate* const d = nullptr;
     friend class MarbleMapPrivate;
 

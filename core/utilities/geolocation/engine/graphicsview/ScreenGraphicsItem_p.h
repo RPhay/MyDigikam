@@ -109,14 +109,16 @@ public:
         return ( m_flags & ScreenGraphicsItem::ItemIsMovable ) ? true : false;
     }
 
-    QPointF             m_position;
+public:
+
+    QPointF                                 m_position;
     // The size of the parent, or if no parent exists the size of the viewport.
-    QSizeF              m_viewportSize;
+    QSizeF                                  m_viewportSize;
 
-    QPoint              m_floatItemMoveStartPos;
-    bool                m_floatItemMoving;
+    QPoint                                  m_floatItemMoveStartPos;
+    bool                                    m_floatItemMoving;
 
-    ScreenGraphicsItem::GraphicsItemFlags m_flags;
+    ScreenGraphicsItem::GraphicsItemFlags   m_flags;
 };
 
 } // Namespace Marble

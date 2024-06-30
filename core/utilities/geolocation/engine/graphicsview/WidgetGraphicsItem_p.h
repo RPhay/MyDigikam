@@ -32,6 +32,8 @@ public:
 
     ~WidgetGraphicsItemPrivate() override;
 
+public:
+
     QWidget *m_widget       = nullptr;
     QWidget *m_marbleWidget = nullptr;
     QWidget *m_activeWidget = nullptr;

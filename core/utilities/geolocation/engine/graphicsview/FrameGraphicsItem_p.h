@@ -63,23 +63,25 @@ public:
         m_marbleGraphicsItem->setSize(totalSize);
     }
 
-    FrameGraphicsItem::FrameType m_frame;
-    QSizeF m_contentSize;
+public:
+
+    FrameGraphicsItem::FrameType    m_frame;
+    QSizeF                          m_contentSize;
 
     // Margin
-    qreal m_margin;
-    qreal m_marginTop;
-    qreal m_marginBottom;
-    qreal m_marginLeft;
-    qreal m_marginRight;
+    qreal                           m_margin;
+    qreal                           m_marginTop;
+    qreal                           m_marginBottom;
+    qreal                           m_marginLeft;
+    qreal                           m_marginRight;
     // Padding
-    qreal m_padding;
+    qreal                           m_padding;
 
     // Background/Border painting
-    qreal m_borderWidth;
-    QBrush m_borderBrush;
-    Qt::PenStyle m_borderStyle;
-    QBrush m_backgroundBrush;
+    qreal                           m_borderWidth;
+    QBrush                          m_borderBrush;
+    Qt::PenStyle                    m_borderStyle;
+    QBrush                          m_backgroundBrush;
 };
 
 } // namespace Marble

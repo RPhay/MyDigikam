@@ -39,11 +39,13 @@ public:
     // TODO: This has to go up to MarbleGraphicsItem
     static QFont font();
 
-    QString m_text;
-    QImage m_image;
-    QIcon m_icon;
+public:
 
-    QSizeF m_minimumSize;
+    QString     m_text;
+    QImage      m_image;
+    QIcon       m_icon;
+
+    QSizeF      m_minimumSize;
 };
 
 } // namespace Marble

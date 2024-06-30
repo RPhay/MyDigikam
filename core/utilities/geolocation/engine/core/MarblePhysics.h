@@ -63,6 +63,8 @@ private:
 
     Q_DISABLE_COPY( MarblePhysics )
 
+private:
+
     MarblePhysicsPrivate* d = nullptr;
 };
 

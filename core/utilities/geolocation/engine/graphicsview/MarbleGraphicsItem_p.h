@@ -98,25 +98,27 @@ public:
         }
     }
 
-    QSizeF m_size;
+public:
 
-    bool m_repaintNeeded;
+    QSizeF                          m_size;
 
-    MarbleGraphicsItem::CacheMode m_cacheMode;
+    bool                            m_repaintNeeded;
 
-    QPixmap m_pixmap;
+    MarbleGraphicsItem::CacheMode   m_cacheMode;
 
-    bool m_visibility;
+    QPixmap                         m_pixmap;
+
+    bool                            m_visibility;
 
     // The parent of the item
-    MarbleGraphicsItem* const m_parent              = nullptr;
+    MarbleGraphicsItem* const       m_parent              = nullptr;
     // The set of children.
-    QSet<MarbleGraphicsItem*> m_children;
+    QSet<MarbleGraphicsItem*>       m_children;
 
     // The layout handling the positions of the children
-    AbstractMarbleGraphicsLayout* m_layout          = nullptr;
+    AbstractMarbleGraphicsLayout*   m_layout              = nullptr;
 
-    MarbleGraphicsItem* const m_marbleGraphicsItem  = nullptr;
+    MarbleGraphicsItem* const       m_marbleGraphicsItem  = nullptr;
 };
 
 } // Namespace Marble

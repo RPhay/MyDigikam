@@ -138,87 +138,89 @@ private:
 
     void getPlanMat();  // get Matrix to convert from J2000.0 into planetary coordinates
 
-   // data fields
+private:
 
-      bool ss_update_called;  // true if updateSolar() has already been called
-      bool ss_moon_called;    // true if special Moon calculation called
-      bool ss_planmat_called; // true if matrix for planetary coordinates called
-      bool ss_kepler_stored;  // true if Kepler elements for comet or asteroid stored
-      bool ss_kepler_called;  // true if comet or asteroid position calculated
-      bool ss_user_stored;    // true if orbit elements for user defined object stored
-      bool ss_user_active;    // true if user defined object activated
+    // data fields
 
-      int ss_day;           // date
-      int ss_month;
-      int ss_year;
-      int ss_hour;
-      int ss_minute;
-      int ss_second;
-      double ss_time;       // currently used MJD
-      double ss_tzone;      // timezone in hours
-      double ss_del_tdut;   // TDT - UT in sec
-      int ss_del_auto;      // 1 = automatic del_tdut,  0 = manual
-      bool ss_RT;   // true if calculations in Real Time, false if time manually set to MJD.
-      bool ss_nutation;  // true if position corrected for nutation
-      double ss_epoch;  // epoch of coordinates in MJD
-      int ss_central_body;  // body defining the coordinate origin (0=sun,1=moon,2=mercury etc.; -1=user)
+    bool ss_update_called;  // true if updateSolar() has already been called
+    bool ss_moon_called;    // true if special Moon calculation called
+    bool ss_planmat_called; // true if matrix for planetary coordinates called
+    bool ss_kepler_stored;  // true if Kepler elements for comet or asteroid stored
+    bool ss_kepler_called;  // true if comet or asteroid position calculated
+    bool ss_user_stored;    // true if orbit elements for user defined object stored
+    bool ss_user_active;    // true if user defined object activated
 
-     Vec3 ss_rm, ss_rs;  // position of Moon and Sun in ecliptic of date (A.U.)
-     Vec3 ss_pmer, ss_pven, ss_pearth, ss_pmars, ss_pjup, ss_psat, ss_pura, ss_pnept; // positions of planets
-     Vec3 ss_pio, ss_peuropa, ss_pganymede, ss_pcallisto;  // positions of Jupiter moons
-     Vec3 ss_prhea, ss_ptitan, ss_pmimas, ss_penceladus, ss_pdione; // positions of Saturn moons
-     Vec3 ss_user;  // position of user defined object
+    int ss_day;           // date
+    int ss_month;
+    int ss_year;
+    int ss_hour;
+    int ss_minute;
+    int ss_second;
+    double ss_time;       // currently used MJD
+    double ss_tzone;      // timezone in hours
+    double ss_del_tdut;   // TDT - UT in sec
+    int ss_del_auto;      // 1 = automatic del_tdut,  0 = manual
+    bool ss_RT;   // true if calculations in Real Time, false if time manually set to MJD.
+    bool ss_nutation;  // true if position corrected for nutation
+    double ss_epoch;  // epoch of coordinates in MJD
+    int ss_central_body;  // body defining the coordinate origin (0=sun,1=moon,2=mercury etc.; -1=user)
 
-     double ss_moon_mag;  // apparent magnitude of the Moon
-     double ss_moon_lblon;  // longitude of lunar libration
-     double ss_moon_lblat;  // latitude of lunar libration
-     double ss_moon_term;   // position of lunar terminator
-     double ss_moon_ildisk; // fraction of Moon's illuminated disk
-     double ss_moon_phase;  // phase of Moon
+    Vec3 ss_rm, ss_rs;  // position of Moon and Sun in ecliptic of date (A.U.)
+    Vec3 ss_pmer, ss_pven, ss_pearth, ss_pmars, ss_pjup, ss_psat, ss_pura, ss_pnept; // positions of planets
+    Vec3 ss_pio, ss_peuropa, ss_pganymede, ss_pcallisto;  // positions of Jupiter moons
+    Vec3 ss_prhea, ss_ptitan, ss_pmimas, ss_penceladus, ss_pdione; // positions of Saturn moons
+    Vec3 ss_user;  // position of user defined object
 
-     double ss_GM;  // gravitational constant (m^3/s^2)
-     double ss_J2;  // J2 gravitational term
-     double ss_R0; // equatorial radius (km)
-     double ss_flat;  // flattening factor
-     double ss_axl0;  // l-direction of rotation axis
-     double ss_axl1;  // delta of axl0
-     double ss_axb0;  // b-direction of rotation axis
-     double ss_axb1;  // delta of axb0
-     double ss_W;    // location of prime meridian
-     double ss_Wd;   // daily variation of W.
+    double ss_moon_mag;  // apparent magnitude of the Moon
+    double ss_moon_lblon;  // longitude of lunar libration
+    double ss_moon_lblat;  // latitude of lunar libration
+    double ss_moon_term;   // position of lunar terminator
+    double ss_moon_ildisk; // fraction of Moon's illuminated disk
+    double ss_moon_phase;  // phase of Moon
 
-     // data for user defined object:
-     double ss_user_GM;  // gravitational constant (m^3/s^2)
-     double ss_user_J2;  // J2 gravitational term
-     double ss_user_R0; // equatorial radius (km)
-     double ss_user_flat;  // flattening factor
-     double ss_user_axl0;  // l-direction of rotation axis
-     double ss_user_axl1;  // delta of axl0
-     double ss_user_axb0;  // b-direction of rotation axis
-     double ss_user_axb1;  // delta of axb0
-     double ss_user_W;    // location of prime meridian
-     double ss_user_Wd;   // daily variation of W.
-     double ss_user_t0;  // time of perihelion passage or epoch of elliptical elements (MJD
-     double ss_user_m0;  // Mean Anomaly in degrees
-     double ss_user_a;   // semi-major axis in AU
-     double ss_user_ecc; // eccentricity
-     double ss_user_ran; // right ascension of ascending node in degrees
-     double ss_user_aper; // argument of perihelion
-     double ss_user_inc;  // inclination in degrees
-     double ss_user_eclep; // epoch of ecliptic and equator for these elements
+    double ss_GM;  // gravitational constant (m^3/s^2)
+    double ss_J2;  // J2 gravitational term
+    double ss_R0; // equatorial radius (km)
+    double ss_flat;  // flattening factor
+    double ss_axl0;  // l-direction of rotation axis
+    double ss_axl1;  // delta of axl0
+    double ss_axb0;  // b-direction of rotation axis
+    double ss_axb1;  // delta of axb0
+    double ss_W;    // location of prime meridian
+    double ss_Wd;   // daily variation of W.
 
-     Mat3 ss_planmat; // matrix to convert from J2000.0 into planetary coordinates
-     double ss_lat;  // planetary latitude (decimal degrees)
-     double ss_lng;  // planetary longitude (decimal degrees)
-     double ss_height; // height above reference ellipsoid (km)
+    // data for user defined object:
+    double ss_user_GM;  // gravitational constant (m^3/s^2)
+    double ss_user_J2;  // J2 gravitational term
+    double ss_user_R0; // equatorial radius (km)
+    double ss_user_flat;  // flattening factor
+    double ss_user_axl0;  // l-direction of rotation axis
+    double ss_user_axl1;  // delta of axl0
+    double ss_user_axb0;  // b-direction of rotation axis
+    double ss_user_axb1;  // delta of axb0
+    double ss_user_W;    // location of prime meridian
+    double ss_user_Wd;   // daily variation of W.
+    double ss_user_t0;  // time of perihelion passage or epoch of elliptical elements (MJD
+    double ss_user_m0;  // Mean Anomaly in degrees
+    double ss_user_a;   // semi-major axis in AU
+    double ss_user_ecc; // eccentricity
+    double ss_user_ran; // right ascension of ascending node in degrees
+    double ss_user_aper; // argument of perihelion
+    double ss_user_inc;  // inclination in degrees
+    double ss_user_eclep; // epoch of ecliptic and equator for these elements
 
-     double ss_t0;  // time of perihelion passage or epoch of elliptical elements (MJD)
-     double ss_m0;  // Mean Anomaly in degrees
-     double ss_a;   // semi-major axis in AU
-     double ss_ecc; // eccentricity
-     double ss_ran; // right ascension of ascending node in degrees
-     double ss_aper; // argument of perihelion
-     double ss_inc;  // inclination in degrees
-     double ss_eclep; // epoch of ecliptic and equator for these elements
-     Vec3 ss_comet;  // position vector of comet or asteroid in AU
+    Mat3 ss_planmat; // matrix to convert from J2000.0 into planetary coordinates
+    double ss_lat;  // planetary latitude (decimal degrees)
+    double ss_lng;  // planetary longitude (decimal degrees)
+    double ss_height; // height above reference ellipsoid (km)
+
+    double ss_t0;  // time of perihelion passage or epoch of elliptical elements (MJD)
+    double ss_m0;  // Mean Anomaly in degrees
+    double ss_a;   // semi-major axis in AU
+    double ss_ecc; // eccentricity
+    double ss_ran; // right ascension of ascending node in degrees
+    double ss_aper; // argument of perihelion
+    double ss_inc;  // inclination in degrees
+    double ss_eclep; // epoch of ecliptic and equator for these elements
+    Vec3 ss_comet;  // position vector of comet or asteroid in AU
 };

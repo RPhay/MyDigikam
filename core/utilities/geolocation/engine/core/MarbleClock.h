@@ -105,11 +105,13 @@ public:
      **/
     int timezone() const;
 
- private:
+private:
 
     Q_DISABLE_COPY( MarbleClock )
 
     Q_PRIVATE_SLOT( d,  void timerTimeout() )
+
+private:
 
     MarbleClockPrivate* const d = nullptr;
 

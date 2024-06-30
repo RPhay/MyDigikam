@@ -97,16 +97,18 @@ public:
    friend std::ostream& operator << (std::ostream& os, const Mat3& c);
 };
 
-//  ****************************************************************************
-// defining the following functions here seems to make more compilers happy
-   Mat3 mxcon (double r);  // constant matrix
-   Mat3 mxidn ();          // identity matrix
-    //  friend Mat3 mxtrn (const Mat3& m1);  // transposed matrix
-   Mat3 xrot (double a);  // rotation around x-axis
-   Mat3 yrot (double a);  // rotation around y-axis
-   Mat3 zrot (double a);  // rotation around z-axis
+// ****************************************************************************
 
-   Mat3 csmx (double p, double y, double r); // pitch/yaw/roll matrix
-   void vcpy (Vec3& v, double& p, double& y); // get pitch and yaw from vector
-   void vcrp (Vec3& v, double& p, double& r); // get pitch and roll from vector
-   Mat3 mxrox (double& a, Vec3& v);  // get matrix from eigenvector and angle
+// defining the following functions here seems to make more compilers happy
+
+Mat3 mxcon (double r);  // constant matrix
+Mat3 mxidn ();          // identity matrix
+ //  friend Mat3 mxtrn (const Mat3& m1);  // transposed matrix
+Mat3 xrot (double a);  // rotation around x-axis
+Mat3 yrot (double a);  // rotation around y-axis
+Mat3 zrot (double a);  // rotation around z-axis
+
+Mat3 csmx (double p, double y, double r); // pitch/yaw/roll matrix
+void vcpy (Vec3& v, double& p, double& y); // get pitch and yaw from vector
+void vcrp (Vec3& v, double& p, double& r); // get pitch and roll from vector
+Mat3 mxrox (double& a, Vec3& v);  // get matrix from eigenvector and angle

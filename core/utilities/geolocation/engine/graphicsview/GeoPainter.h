@@ -529,6 +529,8 @@ private:
 
     Q_DISABLE_COPY( GeoPainter )
 
+private:
+
     GeoPainterPrivate* const d = nullptr;
 };
 
