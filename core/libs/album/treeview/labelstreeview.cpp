@@ -165,7 +165,6 @@ QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
     return treeItem;
 }
 
-
 QPixmap LabelsTreeView::goldenStarPixmap(bool fillin) const
 {
     QPixmap pixmap = QPixmap(60, 60);
