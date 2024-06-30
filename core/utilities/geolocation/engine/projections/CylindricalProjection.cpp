@@ -1,14 +1,23 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2007-2012 Torsten Rahn <rahn@kde.org>
-// SPDX-FileCopyrightText: 2012 Cezar Mocan <mocancezar@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Local
 #include "CylindricalProjection.h"
-
 #include "CylindricalProjection_p.h"
+
+#include <QPainterPath>
 
 // Marble
 #include "GeoDataLinearRing.h"
@@ -17,12 +26,11 @@
 #include "GeoDataLatLonAltBox.h"
 #include "ViewportParams.h"
 
-#include <QPainterPath>
-
 // Maximum amount of nodes that are created automatically between actual nodes.
 static const int maxTessellationNodes = 200;
 
-namespace Marble {
+namespace Marble
+{
 
 CylindricalProjection::CylindricalProjection()
         : AbstractProjection( new CylindricalProjectionPrivate( this ) )
@@ -42,9 +50,7 @@ CylindricalProjectionPrivate::CylindricalProjectionPrivate( CylindricalProjectio
         : AbstractProjectionPrivate( parent ),
           q_ptr( parent )
 {
-
 }
-
 
 QPainterPath CylindricalProjection::mapShape( const ViewportParams *viewport ) const
 {
@@ -95,6 +101,7 @@ bool CylindricalProjection::screenCoordinates( const GeoDataLineString &lineStri
     polygons << subPolygons;
     return polygons.isEmpty();
 }
+
 int CylindricalProjectionPrivate::tessellateLineSegment( const GeoDataCoordinates &aCoords,
                                                 qreal ax, qreal ay,
                                                 const GeoDataCoordinates &bCoords,
@@ -150,7 +157,6 @@ int CylindricalProjectionPrivate::tessellateLineSegment( const GeoDataCoordinate
     return mirrorCount;
 }
 
-
 int CylindricalProjectionPrivate::processTessellation( const GeoDataCoordinates &previousCoords,
                                                     const GeoDataCoordinates &currentCoords,
                                                     int tessellatedNodes,
@@ -160,7 +166,6 @@ int CylindricalProjectionPrivate::processTessellation( const GeoDataCoordinates 
                                                     int mirrorCount,
                                                     qreal repeatDistance) const
 {
-
     const bool clampToGround = f.testFlag( FollowGround );
     const bool followLatitudeCircle = f.testFlag( RespectLatitudeCircle )
                                       && previousCoords.latitude() == currentCoords.latitude();
@@ -474,5 +479,4 @@ qreal CylindricalProjectionPrivate::repeatDistance( const ViewportParams *viewpo
     return   xEast - xWest;
 }
 
-}
-
+} // namespace Marble

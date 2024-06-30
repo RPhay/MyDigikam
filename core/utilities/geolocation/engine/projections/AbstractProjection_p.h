@@ -16,17 +16,20 @@ public:
 
     explicit AbstractProjectionPrivate( AbstractProjection * parent );
 
-    virtual ~AbstractProjectionPrivate() { };
+    virtual ~AbstractProjectionPrivate() {};
 
     int levelForResolution(qreal resolution) const;
 
-    qreal  m_maxLat;
-    qreal  m_minLat;
-    mutable qreal  m_previousResolution;
-    mutable qreal  m_level;
-
-    AbstractProjection* const q_ptr = nullptr;
     Q_DECLARE_PUBLIC( AbstractProjection )
+
+public:
+
+    qreal                       m_maxLat;
+    qreal                       m_minLat;
+    mutable qreal               m_previousResolution;
+    mutable qreal               m_level;
+
+    AbstractProjection* const   q_ptr = nullptr;
 };
 
 } // namespace Marble
