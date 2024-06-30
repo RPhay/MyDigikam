@@ -135,10 +135,21 @@ cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDL
 cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                       2>/dev/null
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                     $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/Qt6/resources                           $BUNDLEDIR/                           2>/dev/null
+
+else
+
+    cp -r $VCPKG_INSTALL_PREFIX/share/knotifications5                     $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/Qt5/resources                           $BUNDLEDIR/                           2>/dev/null
+
+fi
+
 cp -r $VCPKG_INSTALL_PREFIX/share/applications                            $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/Qt6/resources                           $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                           2>/dev/null
@@ -181,8 +192,17 @@ done
 
 # Plugins Shared libraries -------------------------------------------------------------------
 
-echo -e "\n---------- Qt6 plugins"
-cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
+echo -e "\n---------- Qt plugins"
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                               $BUNDLEDIR/                           2>/dev/null
+
+else
+
+    cp -r $VCPKG_INSTALL_PREFIX/Qt5/plugins                               $BUNDLEDIR/                           2>/dev/null
+
+fi
 
 echo -e "\n---------- OpenGl Software for Qt6"
 # Taken from https://download.qt.io/development_releases/prebuilt/llvmpipe/windows/
@@ -296,12 +316,21 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-$VCPKG_INSTALL_PREFIX/bin/digikam.exe                      \
-$VCPKG_INSTALL_PREFIX/bin/showfoto.exe                     \
-$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe                \
-$VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
+$VCPKG_INSTALL_PREFIX/bin/digikam.exe         \
+$VCPKG_INSTALL_PREFIX/bin/showfoto.exe        \
+$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe   \
 $VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe \
 "
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe"
+
+else
+
+    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt5/bin/QtWebEngineProcess.exe"
+
+fi
 
 for app in $EXE_FILES ; do
 
@@ -310,9 +339,19 @@ for app in $EXE_FILES ; do
 
 done
 
-DLL_FILES="\
-`find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`  \
-"
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    DLL_FILES="\
+    `find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`  \
+    "
+
+else
+
+    DLL_FILES="\
+    `find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt5/plugins||'`  \
+    "
+
+fi
 
 for app in $DLL_FILES ; do
 
@@ -399,9 +438,19 @@ else
 
 fi
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.sum
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    QT_SUF="-Qt5"
+
+else
+
+    QT_SUF="-Qt6"
+
+fi
+
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER$QT_SUF-Win64$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER$QT_SUF-Win64$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER$QT_SUF-Win64$DEBUG_SUF.sum
 
 #################################################################################################
 # Build NSIS installer and Portable archive.
