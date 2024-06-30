@@ -104,11 +104,17 @@ void ImportThumbnailBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 {
     if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
     {
-        setFlow(TopToBottom);
+        if (flow() != TopToBottom)
+        {
+            setFlow(TopToBottom);
+        }
     }
     else
     {
-        setFlow(LeftToRight);
+        if (flow() != LeftToRight)
+        {
+            setFlow(LeftToRight);
+        }
     }
 
     scrollTo(currentIndex());
