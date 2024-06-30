@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-29 01:42+0000\n"
+"POT-Creation-Date: 2024-06-30 01:44+0000\n"
 "PO-Revision-Date: 2024-06-27 07:28+0300\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -25056,8 +25056,8 @@ msgstr "від спостереження"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:646
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:676
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:653
 #, kde-format
 msgid "not available"
 msgstr "немає доступу"
@@ -30575,55 +30575,55 @@ msgstr "Відкрити початкову сторінку у типовій �
 msgid "Cannot load page %1"
 msgstr "Не вдалося завантажити сторінку %1"
 
-#: core/libs/dimg/dimg_metadata.cpp:426
+#: core/libs/dimg/dimg_metadata.cpp:442
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "RGB"
 
-#: core/libs/dimg/dimg_metadata.cpp:431
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "Градації сірого"
 
-#: core/libs/dimg/dimg_metadata.cpp:436
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "Чорно-біле"
 
-#: core/libs/dimg/dimg_metadata.cpp:441
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "Індексований"
 
-#: core/libs/dimg/dimg_metadata.cpp:446
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:451
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: core/libs/dimg/dimg_metadata.cpp:456
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "CIE L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:461
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "Некалібрований (RAW)"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:483
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"
@@ -53389,97 +53389,97 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Невідома планета"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:271
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:281
 #, kde-format
 msgid "&Lock"
 msgstr "За&блокувати"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:277
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:287
 #, kde-format
 msgid "&Hide"
 msgstr "С&ховати"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:286
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #, kde-format
 msgid "&Configure..."
 msgstr "&Налаштувати…"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:146
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:155
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "м"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:148
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:157
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "мм"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:150
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "км"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:161
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "см"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:154
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "фут"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:156
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "дюйм"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:158
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:167
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "ярд"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "миля"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:162
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "мор. миля"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:108
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:115
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Копіювати координати"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:109
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "Копіювати геодані: адреса"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:126
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:133
 #, kde-format
 msgid "&Address Details"
 msgstr "П&араметри адреси"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:142
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:149
 #, kde-format
 msgid "No description available."
 msgstr "Немає опису."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:345
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:352
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:358
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:364
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:367
@@ -53487,7 +53487,7 @@ msgstr "Немає опису."
 msgid "National Capital"
 msgstr "Столиця країни"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:347
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:324
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:328
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:332
@@ -53498,7 +53498,7 @@ msgstr "Столиця країни"
 msgid "City"
 msgstr "Місто"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:349
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:356
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:326
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:330
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:334
@@ -53507,7 +53507,7 @@ msgstr "Місто"
 msgid "State Capital"
 msgstr "Адміністративний центр регіону"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:351
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:358
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:325
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:333
@@ -53516,23 +53516,23 @@ msgstr "Адміністративний центр регіону"
 msgid "County Capital"
 msgstr "Адміністративний центр округу"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:361
 #, kde-format
 msgid "Capital"
 msgstr "Адміністративний центр"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:362
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:369
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:365
 #, kde-format
 msgid "Village"
 msgstr "Село"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:506
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:513
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Інформаційні панелі"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:806
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:813
 #, kde-format
 msgid "Address Details"
 msgstr "Параметри адреси"

@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-29 01:42+0000\n"
+"POT-Creation-Date: 2024-06-30 01:44+0000\n"
 "PO-Revision-Date: 2024-06-19 17:04+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -24671,8 +24671,8 @@ msgstr "från observation"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:666
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:646
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:676
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:653
 #, kde-format
 msgid "not available"
 msgstr "inte tillgänglig"
@@ -30107,55 +30107,55 @@ msgstr "Öppna hemsidan med förvald skrivbordsbläddrare"
 msgid "Cannot load page %1"
 msgstr "Kan inte läsa in sidan %1"
 
-#: core/libs/dimg/dimg_metadata.cpp:426
+#: core/libs/dimg/dimg_metadata.cpp:442
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
 msgstr "RGB"
 
-#: core/libs/dimg/dimg_metadata.cpp:431
+#: core/libs/dimg/dimg_metadata.cpp:447
 #, kde-format
 msgctxt "Color Model: Grayscale"
 msgid "Grayscale"
 msgstr "Gråskala"
 
-#: core/libs/dimg/dimg_metadata.cpp:436
+#: core/libs/dimg/dimg_metadata.cpp:452
 #, kde-format
 msgctxt "Color Model: Monochrome"
 msgid "Monochrome"
 msgstr "Monokrom"
 
-#: core/libs/dimg/dimg_metadata.cpp:441
+#: core/libs/dimg/dimg_metadata.cpp:457
 #, kde-format
 msgctxt "Color Model: Indexed"
 msgid "Indexed"
 msgstr "Indexerad"
 
-#: core/libs/dimg/dimg_metadata.cpp:446
+#: core/libs/dimg/dimg_metadata.cpp:462
 #, kde-format
 msgctxt "Color Model: YCbCr"
 msgid "YCbCr"
 msgstr "YCbCr"
 
-#: core/libs/dimg/dimg_metadata.cpp:451
+#: core/libs/dimg/dimg_metadata.cpp:467
 #, kde-format
 msgctxt "Color Model: CMYK"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: core/libs/dimg/dimg_metadata.cpp:456
+#: core/libs/dimg/dimg_metadata.cpp:472
 #, kde-format
 msgctxt "Color Model: CIE L*a*b*"
 msgid "CIE L*a*b*"
 msgstr "CIE L*a*b*"
 
-#: core/libs/dimg/dimg_metadata.cpp:461
+#: core/libs/dimg/dimg_metadata.cpp:477
 #, kde-format
 msgctxt "Color Model: Uncalibrated (RAW)"
 msgid "Uncalibrated (RAW)"
 msgstr "Okalibrerad (obehandlad)"
 
-#: core/libs/dimg/dimg_metadata.cpp:467
+#: core/libs/dimg/dimg_metadata.cpp:483
 #, kde-format
 msgctxt "Color Model: Unknown"
 msgid "Unknown"
@@ -52639,97 +52639,97 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Okänd planet"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:271
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:281
 #, kde-format
 msgid "&Lock"
 msgstr "&Lås"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:277
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:287
 #, kde-format
 msgid "&Hide"
 msgstr "&Dölj"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:286
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:378
 #, kde-format
 msgid "&Configure..."
 msgstr "An&passa..."
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:146
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:155
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:148
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:157
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:150
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:161
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:154
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "fot"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:156
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "tum"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:158
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:167
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "yard"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "mile"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:162
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:108
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:115
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Kopiera koordinater"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:109
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "Kopiera geo: webbadress"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:126
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:133
 #, kde-format
 msgid "&Address Details"
 msgstr "&Adressinformation"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:142
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:149
 #, kde-format
 msgid "No description available."
 msgstr "Ingen beskrivning tillgänglig."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:345
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:352
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:358
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:364
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:367
@@ -52737,7 +52737,7 @@ msgstr "Ingen beskrivning tillgänglig."
 msgid "National Capital"
 msgstr "Nationshuvudstad"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:347
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:324
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:328
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:332
@@ -52748,7 +52748,7 @@ msgstr "Nationshuvudstad"
 msgid "City"
 msgstr "Stad"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:349
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:356
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:326
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:330
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:334
@@ -52757,7 +52757,7 @@ msgstr "Stad"
 msgid "State Capital"
 msgstr "Delstatshuvudstad"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:351
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:358
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:325
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:329
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:333
@@ -52766,23 +52766,23 @@ msgstr "Delstatshuvudstad"
 msgid "County Capital"
 msgstr "Länsstad"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:361
 #, kde-format
 msgid "Capital"
 msgstr "Huvudstad"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:362
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:369
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:365
 #, kde-format
 msgid "Village"
 msgstr "By"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:506
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:513
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Informationsrutor"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:806
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:813
 #, kde-format
 msgid "Address Details"
 msgstr "Adressinformation"
