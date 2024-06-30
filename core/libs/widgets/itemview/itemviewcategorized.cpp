@@ -496,6 +496,10 @@ void ItemViewCategorized::rowsRemoved(const QModelIndex& parent, int start, int 
     {
         scrollTo(currentIndex(), QAbstractItemView::PositionAtCenter);
     }
+    else
+    {
+        scrollTo(currentIndex(), QAbstractItemView::PositionAtTop);
+    }
 }
 
 void ItemViewCategorized::rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end)

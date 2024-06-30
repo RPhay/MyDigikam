@@ -196,7 +196,7 @@ BUGFIXES:
 165 ==> 487668 - Crash while naming face.
 166 ==> 404761 - Settings and other dialogs should have a minimum default size of 800x600 (at least).
 167 ==> 489192 - Display error in thumbnail caption field.
-168 ==> 
+168 ==> 489501 - After deleting images, the following item is not at top in the view.
 169 ==> 
 170 ==> 
 171 ==> 
