@@ -141,6 +141,7 @@ else
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-speech
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-webchannel
     $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-webengine
+    $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5-winextras
 
 fi
 
