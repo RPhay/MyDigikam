@@ -1,9 +1,17 @@
-// SPDX-FileCopyrightText: 2008 David Roberts <dvdr18@gmail.com>
-// SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
-// SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
-// SPDX-License-Identifier: LGPL-2.1-or-later
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "MergedLayerDecorator.h"
 
@@ -32,6 +40,7 @@ using namespace Marble;
 class Q_DECL_HIDDEN MergedLayerDecorator::Private
 {
 public:
+
     Private( TileLoader *tileLoader, const SunLocator *sunLocator );
 
     static int maxDivisor( int maximum, int fullLength );
@@ -45,18 +54,18 @@ public:
     void detectMaxTileLevel();
     QVector<const GeoSceneTextureTileDataset *> findRelevantTextureLayers( const TileId &stackedTileId ) const;
 
-    TileLoader *const m_tileLoader;
-    const SunLocator *const m_sunLocator;
-    BlendingFactory m_blendingFactory;
+    TileLoader *const                           m_tileLoader    = nullptr;
+    const SunLocator *const                     m_sunLocator    = nullptr;
+    BlendingFactory                             m_blendingFactory;
     QVector<const GeoSceneTextureTileDataset *> m_textureLayers;
-    QList<const GeoDataGroundOverlay *> m_groundOverlays;
-    int m_maxTileLevel;
-    QString m_themeId;
-    int m_levelZeroColumns;
-    int m_levelZeroRows;
-    bool m_showSunShading;
-    bool m_showCityLights;
-    bool m_showTileId;
+    QList<const GeoDataGroundOverlay *>         m_groundOverlays;
+    int                                         m_maxTileLevel;
+    QString                                     m_themeId;
+    int                                         m_levelZeroColumns;
+    int                                         m_levelZeroRows;
+    bool                                        m_showSunShading;
+    bool                                        m_showCityLights;
+    bool                                        m_showTileId;
 };
 
 MergedLayerDecorator::Private::Private( TileLoader *tileLoader, const SunLocator *sunLocator ) :
@@ -595,6 +604,7 @@ int MergedLayerDecorator::Private::maxDivisor( int maximum, int fullLength )
     int best = 2;
 
     int  nEvalMin = fullLength;
+
     for ( int it = 1; it <= maximum; ++it ) {
         // The optimum is the interval which results in the least amount
         // supporting points taking into account the rest which can't
@@ -605,5 +615,6 @@ int MergedLayerDecorator::Private::maxDivisor( int maximum, int fullLength )
             best = it;
         }
     }
+
     return best;
 }

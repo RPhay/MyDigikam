@@ -1,19 +1,27 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008-2009 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
-// SPDX-FileCopyrightText: 2011 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "MarbleSplashLayer.h"
+
+#include <QPixmap>
 
 #include "GeoPainter.h"
 #include "MarbleDirs.h"
 #include "ViewportParams.h"
 #include "RenderState.h"
-
-#include <QPixmap>
 
 namespace Marble
 {
@@ -67,5 +75,4 @@ RenderState MarbleSplashLayer::renderState() const
     return RenderState(QStringLiteral("Splash Screen"));
 }
 
-
-}
+} // namespace Marble

@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007-2008 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 //
 // PlacemarkLayer is responsible for drawing the Placemarks on the map
@@ -12,11 +20,10 @@
 #pragma once
 
 #include <QObject>
-#include "LayerInterface.h"
-
 #include <QVector>
 #include <QPainter>
 
+#include "LayerInterface.h"
 #include "PlacemarkLayout.h"
 
 class QAbstractItemModel;
@@ -111,10 +118,10 @@ private:
     void renderDebug(GeoPainter *painter, ViewportParams *viewport, const QVector<VisiblePlacemark*> & placemarks) const;
 
     PlacemarkLayout m_layout;
-    bool m_debugModeEnabled;
-    bool m_levelTagDebugModeEnabled;
-    int m_tileLevel;
-    int m_debugLevelTag;
+    bool            m_debugModeEnabled;
+    bool            m_levelTagDebugModeEnabled;
+    int             m_tileLevel;
+    int             m_debugLevelTag;
 };
 
 } // namespace Marble

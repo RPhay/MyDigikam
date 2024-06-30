@@ -1,12 +1,21 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-// SPDX-FileCopyrightText: 2012 Dennis Nienhüser <nienhueser@kde.org>
-// SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
-// SPDX-FileCopyrightText: 2015 Imran Tatriev <itatriev@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "PopupLayer.h"
+
+#include <QSizeF>
 
 #include "GeoDataCoordinates.h"
 #include "GeoPainter.h"
@@ -15,14 +24,13 @@
 #include "RenderPlugin.h"
 #include "RenderState.h"
 
-#include <QSizeF>
-
 namespace Marble
 {
 
 class Q_DECL_HIDDEN PopupLayer::Private
 {
 public:
+
     Private( MarbleWidget *marbleWidget, PopupLayer *q );
 
     /**
@@ -38,10 +46,10 @@ public:
     void setupDialogGeoPlaces( const GeoDataPlacemark *index );
     void setupDialogSkyPlaces( const GeoDataPlacemark *index );
 
-    MarbleWidget *const m_widget;
-    QSizeF m_requestedSize;
-    bool m_hasCrosshairsPlugin;
-    bool m_crosshairsVisible;
+    MarbleWidget *const m_widget = nullptr;
+    QSizeF              m_requestedSize;
+    bool                m_hasCrosshairsPlugin;
+    bool                m_crosshairsVisible;
 };
 
 PopupLayer::Private::Private( MarbleWidget *marbleWidget, PopupLayer */*q*/ ) :
@@ -217,6 +225,6 @@ void PopupLayer::hidePopupItem()
     setVisible( false );
 }
 
-}
+} // namespace Marble
 
 #include "moc_PopupLayer.cpp"

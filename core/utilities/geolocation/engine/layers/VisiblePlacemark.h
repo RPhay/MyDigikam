@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 //
 // VisiblePlacemarks are those Placemarks which become visible on the map
@@ -128,17 +137,17 @@ private:
     const GeoDataPlacemark* m_placemark = nullptr;
 
     // View stuff
-    QPointF     m_symbolPosition; // position of the placemark's symbol
-    bool        m_selected;       // state of the placemark
-    QPixmap     m_labelPixmap;    // the text label (most often name)
-    bool        m_labelDirty;
-    QRectF      m_labelRect;      // bounding box of label
+    QPointF                 m_symbolPosition; // position of the placemark's symbol
+    bool                    m_selected;       // state of the placemark
+    QPixmap                 m_labelPixmap;    // the text label (most often name)
+    bool                    m_labelDirty;
+    QRectF                  m_labelRect;      // bounding box of label
 
-    GeoDataStyle::ConstPtr m_style;
-    GeoDataCoordinates m_coordinates;
+    GeoDataStyle::ConstPtr  m_style;
+    GeoDataCoordinates      m_coordinates;
 
-    mutable QPixmap     m_symbolPixmap;   // cached value
-    QString     m_symbolId;
+    mutable QPixmap         m_symbolPixmap;   // cached value
+    QString                 m_symbolId;
 };
 
 } // namespace Marble

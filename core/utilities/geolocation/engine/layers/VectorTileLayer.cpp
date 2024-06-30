@@ -1,11 +1,17 @@
-/*
-    SPDX-License-Identifier: LGPL-2.1-or-later
-
-    SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
-    SPDX-FileCopyrightText: 2010 Thibaut Gridel <tgridel@free.fr>
-    SPDX-FileCopyrightText: 2012 Ander Pijoan <ander.pijoan@deusto.es>
-    SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "VectorTileLayer.h"
 
@@ -34,6 +40,7 @@ namespace Marble
 class Q_DECL_HIDDEN VectorTileLayer::Private
 {
 public:
+
     Private(HttpDownloadManager *downloadManager,
             const PluginManager *pluginManager,
             VectorTileLayer *parent,
@@ -47,16 +54,18 @@ public:
     QVector<const GeoSceneVectorTileDataset *> findRelevantVectorLayers( const TileId &stackedTileId ) const;
 
 public:
-    VectorTileLayer  *const m_parent;
-    TileLoader m_loader;
-    QVector<VectorTileModel *> m_tileModels;
-    QVector<VectorTileModel *> m_activeTileModels;
-    const GeoSceneGroup *m_layerSettings;
+
+    VectorTileLayer* const      m_parent        = nullptr;
+    TileLoader                  m_loader;
+    QVector<VectorTileModel *>  m_tileModels;
+    QVector<VectorTileModel *>  m_activeTileModels;
+    const GeoSceneGroup *       m_layerSettings = nullptr;
 
     // TreeModel for displaying GeoDataDocuments
-    GeoDataTreeModel *const m_treeModel;
+    GeoDataTreeModel *const     m_treeModel     = nullptr;
 
-    QThreadPool m_threadPool; // a shared thread pool for all layers to keep CPU usage sane
+    // a shared thread pool for all layers to keep CPU usage sane
+    QThreadPool                 m_threadPool    = nullptr;
 };
 
 VectorTileLayer::Private::Private(HttpDownloadManager *downloadManager,
@@ -274,7 +283,6 @@ QVector<const GeoSceneVectorTileDataset *> VectorTileLayer::Private::findRelevan
     return result;
 }
 
-
-}
+} // namespace Marble
 
 #include "moc_VectorTileLayer.cpp"

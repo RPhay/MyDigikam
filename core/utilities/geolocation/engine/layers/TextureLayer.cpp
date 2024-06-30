@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2008, 2009, 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
-// SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "TextureLayer.h"
 
@@ -42,6 +50,7 @@ const int REPAINT_SCHEDULING_INTERVAL = 1000;
 class Q_DECL_HIDDEN TextureLayer::Private
 {
 public:
+
     Private( HttpDownloadManager *downloadManager,
              PluginManager* pluginManager,
              const SunLocator *sunLocator,
@@ -62,24 +71,25 @@ public:
     static bool drawOrderLessThan( const GeoDataGroundOverlay* o1, const GeoDataGroundOverlay* o2 );
 
 public:
-    TextureLayer  *const m_parent;
-    const SunLocator *const m_sunLocator;
-    TileLoader m_loader;
-    MergedLayerDecorator m_layerDecorator;
-    StackedTileLoader    m_tileLoader;
-    GeoDataCoordinates m_centerCoordinates;
-    int m_tileZoomLevel;
-    TextureMapperInterface *m_texmapper;
-    TextureColorizer *m_texcolorizer;
+
+    TextureLayer  *const                        m_parent                = nullptr;
+    const SunLocator *const                     m_sunLocator            = nullptr;
+    TileLoader                                  m_loader;
+    MergedLayerDecorator                        m_layerDecorator;
+    StackedTileLoader                           m_tileLoader;
+    GeoDataCoordinates                          m_centerCoordinates;
+    int                                         m_tileZoomLevel;
+    TextureMapperInterface *                    m_texmapper             = nullptr;
+    TextureColorizer *                          m_texcolorizer          = nullptr;
     QVector<const GeoSceneTextureTileDataset *> m_textures;
-    const GeoSceneGroup *m_textureLayerSettings;
-    QString m_runtimeTrace;
-    QSortFilterProxyModel m_groundOverlayModel;
-    QList<const GeoDataGroundOverlay *> m_groundOverlayCache;
+    const GeoSceneGroup *                       m_textureLayerSettings  = nullptr;
+    QString                                     m_runtimeTrace;
+    QSortFilterProxyModel                       m_groundOverlayModel;
+    QList<const GeoDataGroundOverlay *>         m_groundOverlayCache;
     QMap<QString, GeoSceneTextureTileDataset *> m_customTextures;
     // For scheduling repaints
-    QTimer           m_repaintTimer;
-    RenderState m_renderState;
+    QTimer                                      m_repaintTimer;
+    RenderState                                 m_renderState;
 };
 
 TextureLayer::Private::Private( HttpDownloadManager *downloadManager,
@@ -580,6 +590,6 @@ void TextureLayer::removeTextureLayer(const QString &key)
     }
 }
 
-}
+} // namespace Marble
 
 #include "moc_TextureLayer.cpp"

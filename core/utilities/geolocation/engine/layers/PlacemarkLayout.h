@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 //
 // PlacemarkLayout is responsible for drawing the Placemarks on the map
@@ -134,41 +142,41 @@ private:
 
     Q_DISABLE_COPY( PlacemarkLayout )
 
-    QAbstractItemModel*  m_placemarkModel       = nullptr;
-    QItemSelectionModel* const m_selectionModel = nullptr;
-    MarbleClock* const m_clock                  = nullptr;
+    QAbstractItemModel*                                 m_placemarkModel       = nullptr;
+    QItemSelectionModel* const                          m_selectionModel = nullptr;
+    MarbleClock* const                                  m_clock                  = nullptr;
 
-    QVector<VisiblePlacemark*> m_paintOrder;
-    QString m_runtimeTrace;
-    int m_labelArea;
-    QHash<const GeoDataPlacemark*, VisiblePlacemark*> m_visiblePlacemarks;
-    QVector< QVector< VisiblePlacemark* > >  m_rowsection;
+    QVector<VisiblePlacemark*>                          m_paintOrder;
+    QString                                             m_runtimeTrace;
+    int                                                 m_labelArea;
+    QHash<const GeoDataPlacemark*, VisiblePlacemark*>   m_visiblePlacemarks;
+    QVector< QVector< VisiblePlacemark* > >             m_rowsection;
 
     /// map providing the list of placemark belonging in TileId as key
-    QMap<TileId, QList<const GeoDataPlacemark*> > m_placemarkCache;
-    QSet<qint64> m_osmIds;
+    QMap<TileId, QList<const GeoDataPlacemark*> >       m_placemarkCache;
+    QSet<qint64>                                        m_osmIds;
 
     const QSet<GeoDataPlacemark::GeoDataVisualCategory> m_acceptedVisualCategories;
 
     // earth
-    bool m_showPlaces;
-    bool m_showCities;
-    bool m_showTerrain;
-    bool m_showOtherPlaces;
+    bool                                                m_showPlaces;
+    bool                                                m_showCities;
+    bool                                                m_showTerrain;
+    bool                                                m_showOtherPlaces;
 
     // other planets
-    bool m_showLandingSites;
-    bool m_showCraters;
-    bool m_showMaria;
+    bool                                                m_showLandingSites;
+    bool                                                m_showCraters;
+    bool                                                m_showMaria;
 
-    int     m_maxLabelHeight;
-    bool    m_styleResetRequested;
-    const StyleBuilder* m_styleBuilder  = nullptr;
+    int                                                 m_maxLabelHeight;
+    bool                                                m_styleResetRequested;
+    const StyleBuilder*                                 m_styleBuilder  = nullptr;
     // Referencing these properties by value
     // instead of using a more fragile pointer
-    bool m_lastPlacemarkAvailable;
-    QRectF m_lastPlacemarkLabelRect;
-    QRectF m_lastPlacemarkSymbolRect;
+    bool                                                m_lastPlacemarkAvailable;
+    QRectF                                              m_lastPlacemarkLabelRect;
+    QRectF                                              m_lastPlacemarkSymbolRect;
 };
 
 } // namespace Marble

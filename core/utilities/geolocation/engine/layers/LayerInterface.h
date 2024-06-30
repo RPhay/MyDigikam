@@ -1,16 +1,25 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
-
-#include "digikam_export.h"
 
 #include <QtGlobal>
 #include <QStringList>
 #include <QString>
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -56,7 +65,7 @@ public:
      * @return @c true  Returns whether the rendering has been successful
      */
     virtual bool render( GeoPainter *painter, ViewportParams *viewport,
-       const QString &renderPos, GeoSceneLayer *layer ) = 0;
+                         const QString &renderPos, GeoSceneLayer *layer ) = 0;
 
     /**
       * @brief Returns the z value of the layer (default: 0.0). If two layers are painted

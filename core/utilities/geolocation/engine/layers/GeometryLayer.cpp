@@ -1,10 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
-// SPDX-FileCopyrightText: 2010 Thibaut Gridel <tgridel@free.fr>
-// SPDX-FileCopyrightText: 2011-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2014 Gábor Péterffy <peterffy95@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeometryLayer.h"
 
@@ -58,12 +65,14 @@ namespace Marble
 class GeometryLayerPrivate
 {
 public:
+
     using OsmLineStringItems = QVector<GeoLineStringGraphicsItem *>;
     using Relations = QSet<const GeoDataRelation *>;
     typedef QHash<const GeoDataFeature *, Relations> FeatureRelationHash;
     using GeoGraphicItems = QVector<GeoGraphicsItem *>;
 
-    struct PaintFragments {
+    struct PaintFragments
+    {
         // Three lists for different z values
         // A z value of 0 is default and used by the majority of items, so sorting
         // can be avoided for it
@@ -95,17 +104,17 @@ public:
     int m_tileLevel;
     GeoGraphicsItem* m_lastFeatureAt;
 
-    bool m_dirty;
-    int m_cachedItemCount;
-    QHash<QString, GeoGraphicItems> m_cachedPaintFragments;
-    typedef QPair<QString, GeoGraphicsItem*> LayerItem;
-    QList<LayerItem> m_cachedDefaultLayer;
-    QDateTime m_cachedDateTime;
-    GeoDataLatLonBox m_cachedLatLonBox;
-    QSet<qint64> m_highlightedRouteRelations;
-    GeoDataRelation::RelationTypes m_visibleRelationTypes;
-    bool m_levelTagDebugModeEnabled;
-    int m_debugLevelTag;
+    bool                                        m_dirty;
+    int                                         m_cachedItemCount;
+    QHash<QString, GeoGraphicItems>             m_cachedPaintFragments;
+    typedef QPair<QString, GeoGraphicsItem*>    LayerItem;
+    QList<LayerItem>                            m_cachedDefaultLayer;
+    QDateTime                                   m_cachedDateTime;
+    GeoDataLatLonBox                            m_cachedLatLonBox;
+    QSet<qint64>                                m_highlightedRouteRelations;
+    GeoDataRelation::RelationTypes              m_visibleRelationTypes;
+    bool                                        m_levelTagDebugModeEnabled;
+    int                                         m_debugLevelTag;
 };
 
 GeometryLayerPrivate::GeometryLayerPrivate(const QAbstractItemModel *model, const StyleBuilder *styleBuilder) :
@@ -131,7 +140,9 @@ GeometryLayer::GeometryLayer(const QAbstractItemModel *model, const StyleBuilder
     d(new GeometryLayerPrivate(model, styleBuilder))
 {
     const GeoDataObject *object = static_cast<GeoDataObject*>(d->m_model->index(0, 0, QModelIndex()).internalPointer());
-    if (object && object->parent()) {
+
+    if (object && object->parent())
+    {
         d->createGraphicsItems(object->parent());
     }
 
@@ -705,6 +716,6 @@ int GeometryLayer::debugLevelTag() const
     return d->m_debugLevelTag;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GeometryLayer.cpp"
