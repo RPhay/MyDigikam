@@ -26,12 +26,10 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     installEventFilter(this);
 
     QScreen* const screen = qApp->primaryScreen();
-    QRect srect           = screen->availableGeometry();
-    int height            = qRound(log10(srect.height() /  80) *  800);
-    int width             = qRound(log10(srect.width()  / 150) * 1500);
+    int width             = screen->availableSize().width()  / 1.10;
+    int height            = screen->availableSize().height() / 1.10;
 
-    resize(width  > srect.width()  ? srect.width()  : width,
-           height > srect.height() ? srect.height() : height);
+    resize(width, height);
 }
 
 DXmlGuiWindow::~DXmlGuiWindow()
@@ -392,12 +390,13 @@ void DXmlGuiWindow::saveWindowSize()
 void DXmlGuiWindow::setGoodDefaultWindowSize(QWindow* const win)
 {
     QScreen* const screen = win->screen();
-    QRect srect           = screen->availableGeometry();
-    int height            = qRound(log10(srect.height() / 60) * 600);
-    int width             = qRound(log10(srect.width()  / 80) * 800);
+    int sw                = screen->availableSize().width();
+    int sh                = screen->availableSize().height();
+    int width             = qRound(log10(sw / 80) * 800);
+    int height            = qRound(log10(sh / 60) * 600);
 
-    win->resize(width  > srect.width()  ? srect.width()  : width,
-                height > srect.height() ? srect.height() : height);
+    win->resize((width  > sw) ? sw : width,
+                (height > sh) ? sh : height);
 }
 
 void DXmlGuiWindow::slotRawCameraList()
