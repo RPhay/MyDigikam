@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2015 Marius-Valeriu Stanciu <stanciumarius94@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -214,8 +224,8 @@ public:
 
 private:
 
-    qint64 m_id;
-    QHash<QString, QString> m_tags;
+    qint64                                  m_id;
+    QHash<QString, QString>                 m_tags;
 
     /**
      * @brief m_relationReferences is used to store the relations the placemark is part of
@@ -223,7 +233,7 @@ private:
      * Eg. an entry ( "123", "stop" ) means that the parent placemark is a member of
      * the relation with id "123", while having the "stop" role
      */
-    QHash<OsmIdentifier, QString> m_relationReferences;
+    QHash<OsmIdentifier, QString>           m_relationReferences;
 
     /**
      * Store the insternal instance of the hash-table functions container.
@@ -267,11 +277,13 @@ public:
     QHash< int, OsmPlacemarkData >::const_iterator memberReferencesBegin() const;
     QHash< int, OsmPlacemarkData >::const_iterator memberReferencesEnd() const;
 
+public:
+
     /**
      * @brief m_ndRefs is used to store a way's component nodes
      * ( It is empty for other placemark types )
      */
-    QHash< GeoDataCoordinates, OsmPlacemarkData > m_nodeReferences;
+    QHash< GeoDataCoordinates, OsmPlacemarkData >   m_nodeReferences;
 
     /**
      * @brief m_memberRefs is used to store a polygon's member boundaries
@@ -279,7 +291,7 @@ public:
      *  -1 represents the outerBoundary, and 0,1,2... its innerBoundaries, in the
      *  order provided by polygon->innerBoundaries()
      */
-    QHash<int, OsmPlacemarkData> m_memberReferences;
+    QHash<int, OsmPlacemarkData>                    m_memberReferences;
 };
 
 } // namespace Marble

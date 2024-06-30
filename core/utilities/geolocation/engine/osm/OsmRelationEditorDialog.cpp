@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // self
 #include "OsmRelationEditorDialog.h"
@@ -24,8 +34,8 @@
 
 #include <klocalizedstring.h>
 
-namespace Marble {
-
+namespace Marble
+{
 
 OsmRelationEditorDialog::OsmRelationEditorDialog( OsmPlacemarkData *relationData, QWidget *parent ) :
     QDialog( parent )
@@ -94,7 +104,7 @@ void OsmRelationEditorDialog::checkFields()
     }
 }
 
-}
+} // namespace Marble
 
 #include "moc_OsmRelationEditorDialog.cpp"
 

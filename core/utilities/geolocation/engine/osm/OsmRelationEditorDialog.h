@@ -1,13 +1,23 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2015 Stanciu Marius-Valeriu <stanciumarius94@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "digikam_export.h"
-
 #include <QDialog>
+
+#include "digikam_export.h"
 
 class QLineEdit;
 class QDialogButtonBox;
@@ -40,6 +50,8 @@ private Q_SLOTS:
 private:
 
     void finish();
+
+private:
 
     friend class OsmRelationEditorDialogPrivate;
 
