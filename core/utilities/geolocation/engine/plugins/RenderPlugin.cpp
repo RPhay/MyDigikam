@@ -1,10 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-// SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
-// SPDX-FileCopyrightText: 2011, 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Self
 #include "RenderPlugin.h"
@@ -26,7 +33,8 @@ namespace Marble
 
 class Q_DECL_HIDDEN RenderPlugin::Private
 {
-  public:
+public:
+
     Private( const MarbleModel *marbleModel )
         : m_marbleModel( marbleModel ),
           m_action(nullptr),
@@ -41,17 +49,19 @@ class Q_DECL_HIDDEN RenderPlugin::Private
     {
     }
 
+public:
+
     // const: RenderPlugins should only read the model, not modify it
-    const MarbleModel  *const m_marbleModel;
 
-    QAction            m_action;
-    QStandardItem      m_item;
+    const MarbleModel* const m_marbleModel = nullptr;
 
-    bool                m_enabled;
-    bool                m_visible;
-    bool                m_userCheckable;
+    QAction                  m_action;
+    QStandardItem            m_item;
+
+    bool                     m_enabled;
+    bool                     m_visible;
+    bool                     m_userCheckable;
 };
-
 
 RenderPlugin::RenderPlugin( const MarbleModel *marbleModel )
     : d( new Private( marbleModel ) )

@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Bastian Holst <bastianholst@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Self
 #include "AbstractDataPluginModel.h"
@@ -51,6 +61,7 @@ class FavoritesModel;
 class AbstractDataPluginModelPrivate
 {
 public:
+
     AbstractDataPluginModelPrivate( const QString& name,
                                     const MarbleModel *marbleModel,
                                     AbstractDataPluginModel * parent );
@@ -62,35 +73,40 @@ public:
 
     void updateFavoriteItems();
 
-    AbstractDataPluginModel *m_parent;
-    const QString m_name;
-    const MarbleModel *const m_marbleModel;
-    GeoDataLatLonAltBox m_lastBox;
-    GeoDataLatLonAltBox m_downloadedBox;
-    qint32 m_lastNumber;
-    qint32 m_downloadedNumber;
-    QString m_currentPlanetId;
-    QList<AbstractDataPluginItem*> m_itemSet;
-    QHash<QString, AbstractDataPluginItem*> m_downloadingItems;
-    QList<AbstractDataPluginItem*> m_displayedItems;
-    QTimer m_downloadTimer;
-    quint32 m_descriptionFileNumber;
-    QHash<QString, QVariant> m_itemSettings;
-    QStringList m_favoriteItems;
-    bool m_favoriteItemsOnly;
+public:
 
-    CacheStoragePolicy m_storagePolicy;
-    HttpDownloadManager m_downloadManager;
-    FavoritesModel* m_favoritesModel;
-    QMetaObject m_metaObject;
-    bool m_hasMetaObject;
-    bool m_needsSorting;
+    AbstractDataPluginModel *                   m_parent            = nullptr;
+    const QString                               m_name;
+    const MarbleModel *const                    m_marbleModel       = nullptr;
+    GeoDataLatLonAltBox                         m_lastBox;
+    GeoDataLatLonAltBox                         m_downloadedBox;
+    qint32                                      m_lastNumber;
+    qint32                                      m_downloadedNumber;
+    QString                                     m_currentPlanetId;
+    QList<AbstractDataPluginItem*>              m_itemSet;
+    QHash<QString, AbstractDataPluginItem*>     m_downloadingItems;
+    QList<AbstractDataPluginItem*>              m_displayedItems;
+    QTimer                                      m_downloadTimer;
+    quint32                                     m_descriptionFileNumber;
+    QHash<QString, QVariant>                    m_itemSettings;
+    QStringList                                 m_favoriteItems;
+    bool                                        m_favoriteItemsOnly;
+
+    CacheStoragePolicy                          m_storagePolicy;
+    HttpDownloadManager                         m_downloadManager;
+    FavoritesModel*                             m_favoritesModel    = nullptr;
+    QMetaObject                                 m_metaObject;
+    bool                                        m_hasMetaObject;
+    bool                                        m_needsSorting;
 };
 
 class FavoritesModel : public QAbstractListModel
 {
 public:
-    AbstractDataPluginModelPrivate* d;
+
+    AbstractDataPluginModelPrivate* d = nullptr;
+
+public:
 
     explicit FavoritesModel( AbstractDataPluginModelPrivate* d, QObject* parent = nullptr );
 
@@ -103,6 +119,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
+
     QHash<int, QByteArray> m_roleNames;
 };
 

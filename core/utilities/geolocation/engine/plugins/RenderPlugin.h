@@ -1,10 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
-// SPDX-FileCopyrightText: 2011, 2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -13,6 +20,7 @@
 #include <QRegion>
 
 #include "RenderPluginInterface.h"
+
 #include "digikam_export.h"
 
 class QAction;
@@ -33,7 +41,8 @@ class RenderPluginModel;
  *
  */
 
-class DIGIKAM_EXPORT RenderPlugin : public QObject, public RenderPluginInterface
+class DIGIKAM_EXPORT RenderPlugin : public QObject,
+                                    public RenderPluginInterface
 {
     Q_OBJECT
 
@@ -330,9 +339,9 @@ private:
     void applyItemState();
     void retrieveItemState();
 
-private:
-
     Q_DISABLE_COPY( RenderPlugin )
+
+private:
 
     class Private;
     Private* const d = nullptr;

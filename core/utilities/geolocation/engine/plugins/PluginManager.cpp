@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "PluginManager.h"
@@ -27,7 +36,8 @@ namespace Marble
 
 class PluginManagerPrivate
 {
- public:
+public:
+
     PluginManagerPrivate(PluginManager* parent)
             : m_pluginsLoaded(false),
               m_parent(parent)
@@ -39,17 +49,19 @@ class PluginManagerPrivate
     void loadPlugins();
     bool addPlugin(QObject *obj, const QPluginLoader *loader);
 
-    bool m_pluginsLoaded;
-    QList<const RenderPlugin *> m_renderPluginTemplates;
-    QList<const SearchRunnerPlugin *> m_searchRunnerPlugins;
+public:
+
+    bool                                        m_pluginsLoaded;
+    QList<const RenderPlugin *>                 m_renderPluginTemplates;
+    QList<const SearchRunnerPlugin *>           m_searchRunnerPlugins;
     QList<const ReverseGeocodingRunnerPlugin *> m_reverseGeocodingRunnerPlugins;
-    QList<const ParseRunnerPlugin *> m_parsingRunnerPlugins;
-    PluginManager* m_parent;
-    static QStringList m_blacklist;
-    static QStringList m_whitelist;
+    QList<const ParseRunnerPlugin *>            m_parsingRunnerPlugins;
+    PluginManager*                              m_parent = nullptr;
+    static QStringList                          m_blacklist;
+    static QStringList                          m_whitelist;
 
 #ifdef Q_OS_ANDROID
-    QStringList m_pluginPaths;
+    QStringList                                 m_pluginPaths;
 #endif
 };
 
@@ -64,9 +76,10 @@ PluginManagerPrivate::~PluginManagerPrivate()
 PluginManager::PluginManager( QObject *parent ) : QObject( parent ),
     d( new PluginManagerPrivate(this) )
 {
-    //Checking assets:/plugins for uninstalled plugins
+    // Checking assets:/plugins for uninstalled plugins
+
 #ifdef Q_OS_ANDROID
-        installPluginsFromAssets();
+    installPluginsFromAssets();
 #endif
 }
 
@@ -310,6 +323,6 @@ void PluginManagerPrivate::loadPlugins()
     }
 #endif
 
-}
+} // namespace Marble
 
 #include "moc_PluginManager.cpp"
