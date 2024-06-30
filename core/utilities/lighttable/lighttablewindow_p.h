@@ -148,6 +148,8 @@ public:
     QAction*                  navigateByPairAction          = nullptr;
     QAction*                  clearOnCloseAction            = nullptr;
 
+    QMainWindow*              dockArea                      = nullptr;
+
     DAdjustableLabel*         leftFileName                  = nullptr;     ///< File name loaded in left preview and show on status bar.
     DAdjustableLabel*         rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
 

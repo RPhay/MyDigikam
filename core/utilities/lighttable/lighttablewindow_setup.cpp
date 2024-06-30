@@ -434,18 +434,12 @@ void LightTableWindow::setupUserArea()
     // The central preview is wrapped in a KMainWindow so that the thumbnail
     // bar can float around it.
 
-    KMainWindow* const viewContainer = new KMainWindow(mainW, Qt::Widget);
+    d->dockArea             = new QMainWindow(mainW, Qt::Widget);
 
-#if (KXMLGUI_VERSION >= QT_VERSION_CHECK(5, 88, 0))
-
-    viewContainer->setStateConfigGroup(QLatin1String("LightTable Thumbbar"));
-
-#endif
-
-    d->hSplitter->addWidget(viewContainer);
-    d->hSplitter->setStretchFactor(d->hSplitter->indexOf(viewContainer), 10);
-    d->previewView                   = new LightTableView(viewContainer);
-    viewContainer->setCentralWidget(d->previewView);
+    d->hSplitter->addWidget(d->dockArea);
+    d->hSplitter->setStretchFactor(d->hSplitter->indexOf(d->dockArea), 10);
+    d->previewView          = new LightTableView(d->dockArea);
+    d->dockArea->setCentralWidget(d->previewView);
 
     // The right sidebar.
 
@@ -466,19 +460,14 @@ void LightTableWindow::setupUserArea()
 
     // The thumb bar is placed in a detachable/dockable widget.
 
-    d->barViewDock = new ThumbBarDock(viewContainer, Qt::Tool);
+    d->barViewDock = new ThumbBarDock(d->dockArea, Qt::Tool);
     d->barViewDock->setObjectName(QLatin1String("lighttable_thumbbar"));
 
     d->thumbView   = new LightTableThumbBar(d->barViewDock);
 
     d->barViewDock->setWidget(d->thumbView);
-    viewContainer->addDockWidget(Qt::TopDockWidgetArea, d->barViewDock);
+    d->dockArea->addDockWidget(Qt::TopDockWidgetArea, d->barViewDock);
     d->barViewDock->setFloating(false);
-
-    // Restore the previous state. This doesn't Q_EMIT the proper signals to the
-    // dock widget, so it has to be manually reinitialized.
-
-    viewContainer->setAutoSaveSettings(QLatin1String("LightTable Thumbbar"), true);
 
     connect(d->barViewDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),
             d->thumbView, SLOT(slotDockLocationChanged(Qt::DockWidgetArea)));

@@ -59,6 +59,10 @@ void LightTableWindow::readSettings()
     d->navigateByPairAction->setChecked(group.readEntry(QLatin1String("Navigate By Pair"), false));
     slotToggleNavigateByPair();
 
+    QByteArray thumbbarState;
+    thumbbarState = group.readEntry(QLatin1String("ThumbbarState"), thumbbarState);
+    d->dockArea->restoreState(QByteArray::fromBase64(thumbbarState));
+
     d->leftSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Left Sidebar")));
     d->leftSideBar->loadState();
     d->rightSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Right Sidebar")));
@@ -73,8 +77,9 @@ void LightTableWindow::writeSettings()
     KConfigGroup group        = config->group(configGroupName());
     d->hSplitter->saveState(group, QLatin1String("Horizontal Splitter State"));
     group.writeEntry(QLatin1String("Show Thumbbar"),    d->barViewDock->shouldBeVisible());
-    group.writeEntry(QLatin1String("Navigate By Pair"), d->navigateByPairAction->isChecked());
+    group.writeEntry(QLatin1String("ThumbbarState"),    d->dockArea->saveState().toBase64());
     group.writeEntry(QLatin1String("Clear On Close"),   d->clearOnCloseAction->isChecked());
+    group.writeEntry(QLatin1String("Navigate By Pair"), d->navigateByPairAction->isChecked());
 
     d->leftSideBar->setConfigGroup(KConfigGroup(&group, QLatin1String("Left Sidebar")));
     d->leftSideBar->saveState();
