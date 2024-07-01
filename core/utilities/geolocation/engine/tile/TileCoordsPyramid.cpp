@@ -1,17 +1,26 @@
-/*
-    SPDX-FileCopyrightText: 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
-    SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-
-    SPDX-License-Identifier: LGPL-2.1-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "TileCoordsPyramid.h"
 
+#include <algorithm>
+
 #include <QRect>
 #include <QVector>
-#include <digikam_debug.h>
 
-#include <algorithm>
+#include <digikam_debug.h>
 
 namespace Marble
 {
@@ -19,12 +28,13 @@ namespace Marble
 class Q_DECL_HIDDEN TileCoordsPyramid::Private
 {
 public:
+
     Private( int const topLevel, int const bottomLevel );
 
-    int m_topLevel;
-    int m_bottomLevel;
-    QRect m_bottomLevelCoords;
-    QVector<int> m_validLevels;
+    int             m_topLevel;
+    int             m_bottomLevel;
+    QRect           m_bottomLevelCoords;
+    QVector<int>    m_validLevels;
 };
 
 TileCoordsPyramid::Private::Private( int const topLevel, int const bottomLevel )
@@ -33,7 +43,6 @@ TileCoordsPyramid::Private::Private( int const topLevel, int const bottomLevel )
 {
     Q_ASSERT( m_topLevel <= m_bottomLevel );
 }
-
 
 TileCoordsPyramid::TileCoordsPyramid( int const topLevel, int const bottomLevel )
     : d( new Private( topLevel, bottomLevel ))
@@ -48,7 +57,6 @@ TileCoordsPyramid::TileCoordsPyramid( TileCoordsPyramid const & other )
 TileCoordsPyramid::TileCoordsPyramid()
     :d( new Private( 0, 0 ) )
 {
-
 }
 
 TileCoordsPyramid & TileCoordsPyramid::operator=( TileCoordsPyramid const & rhs )
@@ -121,4 +129,4 @@ void TileCoordsPyramid::swap( TileCoordsPyramid & other )
     std::swap( d, other.d );
 }
 
-}
+} // namespace Marble

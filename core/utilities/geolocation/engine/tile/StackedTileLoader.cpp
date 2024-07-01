@@ -1,11 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2005-2007 Torsten Rahn <tackat@kde.org>
-    SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-    SPDX-FileCopyrightText: 2008, 2009, 2010 Jens-Michael Hoffmann <jensmh@gmx.de>
-    SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "StackedTileLoader.h"
 
@@ -28,16 +34,17 @@ namespace Marble
 class StackedTileLoaderPrivate
 {
 public:
+
     explicit StackedTileLoaderPrivate( MergedLayerDecorator *mergedLayerDecorator )
         : m_layerDecorator( mergedLayerDecorator )
     {
         m_tileCache.setMaxCost( 20000 * 1024 ); // Cache size measured in bytes
     }
 
-    MergedLayerDecorator *const m_layerDecorator;
+    MergedLayerDecorator* const   m_layerDecorator = nullptr;
     QHash <TileId, StackedTile*>  m_tilesOnDisplay;
     QCache <TileId, StackedTile>  m_tileCache;
-    QReadWriteLock m_cacheLock;
+    QReadWriteLock                m_cacheLock;
 };
 
 StackedTileLoader::StackedTileLoader( MergedLayerDecorator *mergedLayerDecorator, QObject *parent )
@@ -211,6 +218,6 @@ void StackedTileLoader::clear()
     Q_EMIT cleared();
 }
 
-}
+} // namespace Marble
 
 #include "moc_StackedTileLoader.cpp"

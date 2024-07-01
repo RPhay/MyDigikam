@@ -1,13 +1,23 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include <QObject>
-#include "TextureMapperInterface.h"
 
+#include "TextureMapperInterface.h"
 #include "TileId.h"
 
 #include <QCache>
@@ -47,10 +57,10 @@ private:
 
 private:
 
-    StackedTileLoader* const m_tileLoader = nullptr;
-    QCache<TileId, const QPixmap> m_cache;
-    QImage m_canvasImage;
-    int    m_radius;
+    StackedTileLoader* const        m_tileLoader = nullptr;
+    QCache<TileId, const QPixmap>   m_cache;
+    QImage                          m_canvasImage;
+    int                             m_radius;
 };
 
 } // namespace Marble

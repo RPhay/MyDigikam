@@ -1,15 +1,22 @@
-/*
-    SPDX-License-Identifier: LGPL-2.1-or-later
-
-    SPDX-FileCopyrightText: 2012 Ander Pijoan <ander.pijoan@deusto.es>
-    SPDX-FileCopyrightText: 2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include <QObject>
 #include <QRunnable>
-
 #include <QMap>
 
 #include "TileId.h"
@@ -41,9 +48,9 @@ Q_SIGNALS:
 
 private:
 
-    TileLoader* const m_loader = nullptr;
+    TileLoader* const                      m_loader      = nullptr;
     const GeoSceneVectorTileDataset* const m_tileDataset = nullptr;
-    const TileId m_id;
+    const TileId                           m_id;
 };
 
 class VectorTileModel : public QObject
@@ -107,19 +114,19 @@ private:
 
         GeoDataDocument* const m_document           = nullptr;
         VectorTileModel* const m_vectorTileModel    = nullptr;
-        GeoDataLatLonBox m_boundingBox;
+        GeoDataLatLonBox       m_boundingBox;
     };
 
-    TileLoader* const m_loader                      = nullptr;
-    const GeoSceneVectorTileDataset* const m_layer  = nullptr;
-    GeoDataTreeModel* const m_treeModel             = nullptr;
-    QThreadPool* const m_threadPool                 = nullptr;
-    int m_tileLoadLevel;
-    int m_tileZoomLevel;
-    QList<TileId> m_pendingDocuments;
-    QList<GeoDataDocument*> m_garbageQueue;
+    TileLoader* const                            m_loader                = nullptr;
+    const GeoSceneVectorTileDataset* const       m_layer                 = nullptr;
+    GeoDataTreeModel* const                      m_treeModel             = nullptr;
+    QThreadPool* const                           m_threadPool                 = nullptr;
+    int                                          m_tileLoadLevel;
+    int                                          m_tileZoomLevel;
+    QList<TileId>                                m_pendingDocuments;
+    QList<GeoDataDocument*>                      m_garbageQueue;
     QMap<TileId, QSharedPointer<CacheDocument> > m_documents;
-    bool m_deleteDocumentsLater;
+    bool                                         m_deleteDocumentsLater;
 };
 
 } // namespace Marble

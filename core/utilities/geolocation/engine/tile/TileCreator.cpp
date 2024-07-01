@@ -1,8 +1,17 @@
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007-2008 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2011 Niko Sams <niko.sams@gmail.com>
-//
-// SPDX-License-Identifier: LGPL-2.1-or-later
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "TileCreator.h"
 
@@ -27,7 +36,8 @@ namespace Marble
 
 class TileCreatorPrivate
 {
- public:
+public:
+
     TileCreatorPrivate( TileCreatorSource *source,
                         const QString& dem, const QString& targetDir=QString() )
        : m_dem( dem ),
@@ -50,21 +60,23 @@ class TileCreatorPrivate
         delete m_source;
     }
 
- public:
-    QString  m_dem;
-    QString  m_targetDir;
-    bool     m_cancelled;
-    QString  m_tileFormat;
-    int      m_tileQuality;
-    bool     m_resume;
-    bool     m_verify;
+public:
 
-    TileCreatorSource  *m_source;
+    QString            m_dem;
+    QString            m_targetDir;
+    bool               m_cancelled;
+    QString            m_tileFormat;
+    int                m_tileQuality;
+    bool               m_resume;
+    bool               m_verify;
+
+    TileCreatorSource* m_source = nullptr;
 };
 
 class TileCreatorSourceImage : public TileCreatorSource
 {
 public:
+
     explicit TileCreatorSourceImage( const QString &sourcePath )
         : m_sourceImage( QImage( sourcePath ) ),
           m_cachedRowNum( -1 )
@@ -145,12 +157,11 @@ public:
     }
 
 private:
+
     QImage m_sourceImage;
-
     QImage m_rowCache;
-    int m_cachedRowNum;
+    int    m_cachedRowNum;
 };
-
 
 TileCreator::TileCreator(const QString& sourceDir, const QString& installMap,
                          const QString& dem, const QString& targetDir)
@@ -611,7 +622,6 @@ bool TileCreator::verifyExactResult() const
     return d->m_verify;
 }
 
-
-}
+} // namespace Marble
 
 #include "moc_TileCreator.cpp"

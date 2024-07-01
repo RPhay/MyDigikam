@@ -1,11 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2005-2007 Torsten Rahn <tackat@kde.org>
-    SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-    SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jensmh@gmx.de>
-    SPDX-FileCopyrightText: 2010-2012 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -126,6 +132,8 @@ Q_SIGNALS:
 private:
 
     Q_DISABLE_COPY( StackedTileLoader )
+
+private:
 
     friend class StackedTileLoaderPrivate;
     StackedTileLoaderPrivate* const d = nullptr;

@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "TileCreatorDialog.h"
@@ -22,12 +31,12 @@ namespace Marble
 
 class TileCreatorDialogPrivate
 {
- public:
+public:
+
     Ui::TileCreatorDialog  uiWidget;
 
-    TileCreator *m_creator;
+    TileCreator*           m_creator = nullptr;
 };
-
 
 TileCreatorDialog::TileCreatorDialog(TileCreator *creator, QWidget *parent)
     : QDialog(parent),
@@ -83,6 +92,6 @@ void TileCreatorDialog::setSummary( const QString& name,
     d->uiWidget.descriptionLabel->setText( summary );
 }
 
-}
+} // namespace Marble
 
 #include "moc_TileCreatorDialog.cpp"
