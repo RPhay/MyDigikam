@@ -183,12 +183,16 @@ else()
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 endif()
 
+if(WIN32)
+    set(WindowsConfigPatch kconfig-fix-header.patch)
+endif()
+
 if (${ENABLE_QTVERSION} MATCHES "6.*")
     set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 endif()
 
 InstallKDEComponent(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"                       "extracmakemodules-compiler-options.patch")
-InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "kconfig-fix-header.patch")
+InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "${WindowsConfigPatch}")
 InstallKDEComponent(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
 InstallKDEComponent(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "kcoreaddons-mingw.patch")
