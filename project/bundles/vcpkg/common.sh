@@ -118,8 +118,23 @@ $VCPKG_INSTALL_PREFIX/tools/curl:\
 $VCPKG_INSTALL_PREFIX/tools/python3:\
 $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
-$VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 "
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    export PATH="\
+    $PATH:\
+    $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
+    "
+
+else
+
+    export PATH="\
+    $PATH:\
+    $VCPKG_INSTALL_PREFIX/tools/qt5/bin\
+    "
+
+fi
 
 echo "PATH=$PATH"
 
