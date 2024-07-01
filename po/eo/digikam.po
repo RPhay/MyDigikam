@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-30 01:44+0000\n"
-"PO-Revision-Date: 2024-06-28 21:02+0200\n"
+"POT-Creation-Date: 2024-07-01 01:43+0000\n"
+"PO-Revision-Date: 2024-06-30 21:40+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -3538,6 +3538,11 @@ msgid ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">See this GoSC-2023 report for details.</a>"
 msgstr ""
+"Aldoni novajn ilojn por prizorgado kaj Queue-mastrumo por asigni etikedon "
+"aŭtomate al bildoj per profund-lernada neŭralreta motoro.<a href=\"https://"
+"community.kde.org/GSoc/2023/StatusReports/"
+"QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
+"\">Vidu ĉi raporton de GoSC-2023 pri detaloj.</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3552,6 +3557,7 @@ msgstr ""
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Ĝisdatigi Adobe DNG SDK al lasta 1.7.1 kun subteno por kunpremo JPEG-XL."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3600,7 +3606,7 @@ msgstr ""
 "kun digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:204
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:350
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:360
 #, kde-format
 msgid "About"
 msgstr "Pri"
@@ -4056,7 +4062,7 @@ msgstr "Kolora reĝimo"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:186
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:196
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -18228,7 +18234,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:39
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:45
 #, kde-format
 msgid "Developer"
 msgstr "Kreinto"
@@ -19969,8 +19975,8 @@ msgid "Add again"
 msgstr "Aldoni denove"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:143
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:151
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:153
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:161
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #, kde-format
 msgid "Remove"
@@ -27377,115 +27383,115 @@ msgstr "Skani por Vizaĝoj"
 msgid "Should sub-albums be scanned too?"
 msgstr "Ĉu ankaŭ subalbumoj estu skanitaj?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:87
+#: core/libs/album/treeview/labelstreeview.cpp:91
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
 msgstr "Etikedoj"
 
-#: core/libs/album/treeview/labelstreeview.cpp:355
+#: core/libs/album/treeview/labelstreeview.cpp:401
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Noto"
 
-#: core/libs/album/treeview/labelstreeview.cpp:360
+#: core/libs/album/treeview/labelstreeview.cpp:406
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Neniu Taksado"
 
-#: core/libs/album/treeview/labelstreeview.cpp:396
+#: core/libs/album/treeview/labelstreeview.cpp:442
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Elekti"
 
-#: core/libs/album/treeview/labelstreeview.cpp:401
+#: core/libs/album/treeview/labelstreeview.cpp:447
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Neniu Elekto"
 
-#: core/libs/album/treeview/labelstreeview.cpp:402
+#: core/libs/album/treeview/labelstreeview.cpp:448
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Malakceptita Ero"
 
-#: core/libs/album/treeview/labelstreeview.cpp:403
+#: core/libs/album/treeview/labelstreeview.cpp:449
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Decidota Ero"
 
-#: core/libs/album/treeview/labelstreeview.cpp:404
+#: core/libs/album/treeview/labelstreeview.cpp:450
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Akceptita Ero"
 
-#: core/libs/album/treeview/labelstreeview.cpp:424
+#: core/libs/album/treeview/labelstreeview.cpp:470
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Koloro"
 
-#: core/libs/album/treeview/labelstreeview.cpp:429
+#: core/libs/album/treeview/labelstreeview.cpp:475
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "Neniu Koloro"
 
-#: core/libs/album/treeview/labelstreeview.cpp:441
+#: core/libs/album/treeview/labelstreeview.cpp:487
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Red"
 msgstr "Ruĝo"
 
-#: core/libs/album/treeview/labelstreeview.cpp:441
+#: core/libs/album/treeview/labelstreeview.cpp:487
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Orange"
 msgstr "Oranĝo"
 
-#: core/libs/album/treeview/labelstreeview.cpp:442
+#: core/libs/album/treeview/labelstreeview.cpp:488
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Yellow"
 msgstr "Flava"
 
-#: core/libs/album/treeview/labelstreeview.cpp:442
+#: core/libs/album/treeview/labelstreeview.cpp:488
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Green"
 msgstr "Verdo"
 
-#: core/libs/album/treeview/labelstreeview.cpp:443
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Blue"
 msgstr "Bluo"
 
-#: core/libs/album/treeview/labelstreeview.cpp:443
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Magenta"
 msgstr "Violkolora (magenta)"
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Gray"
 msgstr "Griza"
 
-#: core/libs/album/treeview/labelstreeview.cpp:444
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Black"
 msgstr "Nigra"
 
-#: core/libs/album/treeview/labelstreeview.cpp:445
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, kde-format
 msgctxt "@item: color tree"
 msgid "White"
@@ -42786,12 +42792,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Ellaboranto (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:105
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:103
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Agordi sciigojn"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:151
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:149
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -54434,59 +54440,59 @@ msgid "This is an Invalid File"
 msgstr "Ĉi tio estas Nevalida Dosiero"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:184
-#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:401
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:38
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:194
+#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:411
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:48
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
 msgstr "Nomo"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:188
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:198
 #, kde-format
 msgid "Popularity"
 msgstr "Populareco"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:190
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:200
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "PopIndekso"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:246
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:256
 #, kde-format
 msgid "Playlist"
 msgstr "Ludlisto"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:84
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:94
 #, kde-format
 msgid "No name specified"
 msgstr "Neniu nomo specifita"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:85
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr "Bonvolu specifi nomon por ĉi tiu rilato."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:89
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
 #, kde-format
 msgid "No type tag specified"
 msgstr "Neniu tipo-etikedo specifita"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:90
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr "Bonvolu aldoni tipetikedon por ĉi tiu rilato."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:69
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:80
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:79
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:90
 #, kde-format
 msgid "New Relation"
 msgstr "Nova Rilato"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:144
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:258
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:154
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
 #, kde-format
@@ -54511,8 +54517,8 @@ msgstr "Rolo"
 msgid "Add Relation"
 msgstr "Aldoni Rilaton"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:95
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:105
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:105
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:115
 #, kde-format
 msgid "value"
 msgstr "valoro"
@@ -54549,12 +54555,12 @@ msgstr ">>"
 msgid "Related Tags"
 msgstr "Rilataj Etikedoj"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:34
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:44
 #, kde-format
 msgid "Add custom tag..."
 msgstr "Aldoni propran etikedon..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:365
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:375
 #, kde-format
 msgid "Configure"
 msgstr "Agordi"
@@ -55311,12 +55317,12 @@ msgstr ""
 msgid "Micro World Database II"
 msgstr "Micro World Database II"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:58
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:69
 #, kde-format
 msgid "Azimuthal Equidistant"
 msgstr "Azimuta Samdistanca"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:63
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:74
 #, kde-format
 msgid ""
 "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</"
@@ -55327,12 +55333,12 @@ msgstr ""
 "Montrado de sismaj kaj radio-datenoj kaj por uzo en ciferecaj planetarioj.</"
 "p>"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:35
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:44
 #, kde-format
 msgid "Flat Map"
 msgstr "Plata Mapo"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:40
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -55341,12 +55347,12 @@ msgstr ""
 "<p><b>Ekvirektangula Projekcio</b> (\"Plate carrée\")</p><p>Aplikoj: Fakta "
 "normo por ĉieaj teksturaj datumaroj por komputila programaro.</p>"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:64
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:74
 #, kde-format
 msgid "Gnomonic"
 msgstr "Gnomonic"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:79
 #, kde-format
 msgid ""
 "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for "
@@ -55356,12 +55362,12 @@ msgstr ""
 "<p><b>Gnomona Projekcio</b> (\"rektlinia\")</p><p>Aplikoj: Uzata por montri "
 "panoramfotadon. Ankaŭ uzata por navigado, radio kaj sisma laboro.</p>"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:64
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:74
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
 msgstr "Lambert Azimutala Egal-Areo"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:79
 #, kde-format
 msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
@@ -55370,13 +55376,13 @@ msgstr ""
 "<p><b>Lambert Azimutala Egala-Area Projekcio</b></p><p>Aplikoj: Uzite en "
 "struktura geologio por grafiki direktajn datumojn.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:41
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:49
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:46
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:54
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -55385,12 +55391,12 @@ msgstr ""
 "<p><b>Merkator-Projekcio</b></p><p>Aplikoj: populara norma mapprojekcio por "
 "navigado.</p>"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:66
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:73
 #, kde-format
 msgid "Globe"
 msgstr "Globo"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:71
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:78
 #, kde-format
 msgid ""
 "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A "
@@ -55401,12 +55407,12 @@ msgstr ""
 "projekcio, kiu estas uzata por montri la hemisferon de globo kiel ĝi aperas "
 "el la kosma spaco.</p> p>"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:64
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:75
 #, kde-format
 msgid "Stereographic"
 msgstr "Stereografia"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:80
 #, kde-format
 msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
@@ -55415,12 +55421,12 @@ msgstr ""
 "<p><b>Stereografia Projekcio</b> (\"ortogonala\")</p><p>Aplikoj: Uzite por "
 "planeda kartografio, geologio kaj panorama fotado.</p>"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:78
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:90
 #, kde-format
 msgid "Vertical Perspective Projection"
 msgstr "Vertikala Perspektiva Projekcio"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:83
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:95
 #, kde-format
 msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
@@ -59933,27 +59939,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr "Treni kaj faligi bildon ĉi tie"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:256
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "Montri sur maldekstra panelo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:257
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "Montri sur dekstra panelo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:259
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "Forigi objekton"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "Forviŝi ĉion"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:463
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Treni kaj faligi bildojn ĉi tie"
