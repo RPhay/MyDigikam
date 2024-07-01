@@ -188,7 +188,7 @@ if (${ENABLE_QTVERSION} MATCHES "6.*")
 endif()
 
 InstallKDEComponent(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"                       "extracmakemodules-compiler-options.patch")
-InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "kconfig-fix-header.patch")
 InstallKDEComponent(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
 InstallKDEComponent(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "kcoreaddons-mingw.patch")
