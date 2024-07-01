@@ -6,6 +6,13 @@
 
 APPLY_COMMON_POLICIES()
 
+if(MSVC AND NOT Qt6_FOUND)
+
+    # Under Windows with Qt5, the Marle code does not adhere to the flag we use
+    remove_definitions(-DQT_STRICT_ITERATORS)
+
+endif()
+
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
