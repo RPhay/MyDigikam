@@ -54,7 +54,10 @@ class Q_DECL_HIDDEN LabelsTreeView::Private
 {
 public:
 
-    Private() = default;
+    explicit Private(QTreeWidget* const w)
+      : itemIterator(w)
+    {
+    }
 
     QFont                      regularFont;
     QSize                      iconSize;
@@ -63,7 +66,7 @@ public:
     QTreeWidgetItem*           picks                        = nullptr;
     QTreeWidgetItem*           colors                       = nullptr;
 
-    QTreeWidgetItemIterator*   itemIterator                 = nullptr;
+    QTreeWidgetItemIterator    itemIterator;
 
     bool                       isCheckableTreeView          = false;
     bool                       isLoadingState               = false;
@@ -80,7 +83,7 @@ public:
 LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     : QTreeWidget      (parent),
       StateSavingObject(this),
-      d                (new Private)
+      d                (new Private(this))
 {
     d->regularFont         = ApplicationSettings::instance()->getTreeViewFont();
     d->iconSizeFromSetting = ApplicationSettings::instance()->getTreeViewIconSize();
@@ -141,9 +144,9 @@ QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
 {
     QTreeWidgetItem* item = nullptr;
 
-    if (*(*d->itemIterator))
+    if (*d->itemIterator)
     {
-        item = *(*d->itemIterator);
+        item = (*d->itemIterator);
     }
     else
     {
@@ -157,7 +160,7 @@ QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
         }
     }
 
-    ++(*d->itemIterator);
+    ++d->itemIterator;
 
     return item;
 }
@@ -380,7 +383,7 @@ void LabelsTreeView::setCurrentAlbum()
 
 void LabelsTreeView::initTreeView()
 {
-    d->itemIterator = new QTreeWidgetItemIterator(this);
+    d->itemIterator = QTreeWidgetItemIterator(this);
 
     setIconSize(QSize(d->iconSizeFromSetting * 5,
                       d->iconSizeFromSetting));
@@ -390,9 +393,6 @@ void LabelsTreeView::initTreeView()
     initColorsTree();
     expandAll();
     setRootIsDecorated(false);
-
-    delete d->itemIterator;
-    d->itemIterator = nullptr;
 }
 
 void LabelsTreeView::initRatingsTree()
