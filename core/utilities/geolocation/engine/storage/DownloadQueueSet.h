@@ -1,6 +1,17 @@
-// SPDX-FileCopyrightText: 2009 Jens-Michael Hoffmann <jmho@c-xx.com>
-//
-// SPDX-License-Identifier: LGPL-2.1-or-later
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -105,7 +116,7 @@ private:
     bool jobIsWaitingForRetry( const QString& destinationFileName ) const;
     bool jobIsBlackListed( const QUrl& sourceUrl ) const;
 
-    DownloadPolicy m_downloadPolicy;
+private:
 
     /** This is the first stage a job enters, from this queue it will get
      *  into the activatedJobs container.
@@ -123,21 +134,25 @@ private:
     private:
 
         QStack<HttpJob*> m_jobs;
-        QSet<QString> m_jobsContent;
+        QSet<QString>    m_jobsContent;
     };
 
-    JobStack m_jobs;
+private:
+
+    DownloadPolicy      m_downloadPolicy;
+
+    JobStack            m_jobs;
 
     /// Contains the jobs which are currently being downloaded.
-    QList<HttpJob*> m_activeJobs;
+    QList<HttpJob*>     m_activeJobs;
 
     /** Contains jobs which failed to download and which are scheduled for
      *  retry according to retry settings.
      */
-    QQueue<HttpJob*> m_retryQueue;
+    QQueue<HttpJob*>    m_retryQueue;
 
     /// Contains the blacklisted source urls
-    QSet<QString> m_jobBlackList;
+    QSet<QString>       m_jobBlackList;
 };
 
 } // namespace Marble

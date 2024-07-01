@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "FileLoader.h"
 
@@ -38,6 +48,7 @@ namespace Marble
 class FileLoaderPrivate
 {
 public:
+
     FileLoaderPrivate( FileLoader* parent, const PluginManager *pluginManager, bool recenter,
                        const QString &file, const QString &property, const GeoDataStyle::Ptr &style, DocumentRole role, int renderOrder) :
         q(parent),
@@ -82,18 +93,20 @@ public:
 
     void documentParsed( GeoDataDocument *doc, const QString& error);
 
-    FileLoader *q;
+public:
+
+    FileLoader*          q              = nullptr;
     ParsingRunnerManager m_runner;
-    QString m_filepath;
-    QString m_contents;
-    QString m_property;
-    GeoDataStyle::Ptr m_style;
-    GeoDataStyleMap* m_styleMap;
-    GeoDataDocument *m_document;
-    QString m_error;
-    int m_renderOrder;
-    DocumentRole m_documentRole;
-    bool m_recenter;
+    QString              m_filepath;
+    QString              m_contents;
+    QString              m_property;
+    GeoDataStyle::Ptr    m_style;
+    GeoDataStyleMap*     m_styleMap     = nullptr;
+    GeoDataDocument*     m_document     = nullptr;
+    QString              m_error;
+    int                  m_renderOrder;
+    DocumentRole         m_documentRole;
+    bool                 m_recenter;
 };
 
 FileLoader::FileLoader( QObject* parent, const PluginManager *pluginManager, bool recenter, const QString& file,
@@ -557,7 +570,6 @@ int FileLoaderPrivate::areaPopIdx( qreal area )
     return popidx;
 }
 
-
+} // namespace Marble
 
 #include "moc_FileLoader.cpp"
-} // namespace Marble

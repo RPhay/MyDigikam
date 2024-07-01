@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Henry de Valence <hdevalence@gmail.com>
-// SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
-// SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "ReverseGeocodingRunnerManager.h"
 
@@ -29,6 +37,7 @@ class MarbleModel;
 class Q_DECL_HIDDEN ReverseGeocodingRunnerManager::Private
 {
 public:
+
     Private( ReverseGeocodingRunnerManager *parent, const MarbleModel *marbleModel );
 
     QList<const ReverseGeocodingRunnerPlugin *> plugins( const QList<const ReverseGeocodingRunnerPlugin *> &plugins ) const;
@@ -36,12 +45,14 @@ public:
     void addReverseGeocodingResult( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
     void cleanupReverseGeocodingTask( ReverseGeocodingTask *task );
 
-    ReverseGeocodingRunnerManager *const q;
-    const MarbleModel *const m_marbleModel;
-    const PluginManager* m_pluginManager;
-    QList<ReverseGeocodingTask*> m_reverseTasks;
-    QVector<GeoDataCoordinates> m_reverseGeocodingResults;
-    QString m_reverseGeocodingResult;
+public:
+
+    ReverseGeocodingRunnerManager* const q               = nullptr;
+    const MarbleModel* const             m_marbleModel   = nullptr;
+    const PluginManager*                 m_pluginManager = nullptr;
+    QList<ReverseGeocodingTask*>         m_reverseTasks;
+    QVector<GeoDataCoordinates>          m_reverseGeocodingResults;
+    QString                              m_reverseGeocodingResult;
 };
 
 ReverseGeocodingRunnerManager::Private::Private( ReverseGeocodingRunnerManager *parent, const MarbleModel *marbleModel ) :
@@ -154,6 +165,6 @@ QString ReverseGeocodingRunnerManager::searchReverseGeocoding( const GeoDataCoor
     return d->m_reverseGeocodingResult;
 }
 
-}
+} // namespace Marble
 
 #include "moc_ReverseGeocodingRunnerManager.cpp"

@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "RemoteIconLoader.h"
 
@@ -28,14 +38,20 @@ namespace Marble
 class RemoteIconLoaderPrivate
 {
     public:
+
         RemoteIconLoaderPrivate()
             : m_storagePolicy(MarbleDirs::localPath() + QLatin1String("/cache/icons/")),
               m_downloadManager( &m_storagePolicy )
         {
         }
+
+    public:
+
         QHash<QUrl, QImage> m_iconCache;
-        FileStoragePolicy m_storagePolicy;
+        FileStoragePolicy   m_storagePolicy;
         HttpDownloadManager m_downloadManager;
+
+    public:
 
         /**
          * Returns true if the icon for Url(=url) is available in cache
@@ -152,6 +168,6 @@ void RemoteIconLoader::storeIcon( const QByteArray &data, const QString &fileNam
     Q_EMIT iconReady();
 }
 
-}
+} // namespace Marble
 
 #include "moc_RemoteIconLoader.cpp"

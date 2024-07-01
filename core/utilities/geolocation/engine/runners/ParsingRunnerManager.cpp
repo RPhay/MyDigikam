@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Henry de Valence <hdevalence@gmail.com>
-// SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
-// SPDX-FileCopyrightText: 2010-2013 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "ParsingRunnerManager.h"
 
@@ -27,6 +35,7 @@ class MarbleModel;
 class Q_DECL_HIDDEN ParsingRunnerManager::Private
 {
 public:
+
     Private( ParsingRunnerManager *parent, const PluginManager *pluginManager );
 
     ~Private();
@@ -34,11 +43,13 @@ public:
     void cleanupParsingTask();
     void addParsingResult(GeoDataDocument *document, const QString &error);
 
-    ParsingRunnerManager *const q;
-    const PluginManager *const m_pluginManager;
-    QMutex m_parsingTasksMutex;
-    int m_parsingTasks;
-    GeoDataDocument *m_fileResult;
+public:
+
+    ParsingRunnerManager* const q                       = nullptr;
+    const PluginManager* const  m_pluginManager         = nullptr;
+    QMutex                      m_parsingTasksMutex;
+    int                         m_parsingTasks;
+    GeoDataDocument*            m_fileResult            = nullptr;
 };
 
 ParsingRunnerManager::Private::Private( ParsingRunnerManager *parent, const PluginManager *pluginManager ) :
@@ -129,6 +140,6 @@ void ParsingRunnerManager::Private::addParsingResult(GeoDataDocument *document, 
     }
 }
 
-}
+} // namespace Marble
 
 #include "moc_ParsingRunnerManager.cpp"

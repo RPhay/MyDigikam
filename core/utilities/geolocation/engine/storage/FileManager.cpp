@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "FileManager.h"
 
@@ -21,9 +30,11 @@ using namespace Marble;
 
 namespace Marble
 {
+
 class FileManagerPrivate
 {
 public:
+
     FileManagerPrivate( GeoDataTreeModel *treeModel, const PluginManager *pluginManager, FileManager* parent ) :
         q( parent ),
         m_treeModel( treeModel ),
@@ -44,23 +55,25 @@ public:
     void closeFile( const QString &key );
     void cleanupLoader( FileLoader *loader );
 
-    FileManager *const q;
-    GeoDataTreeModel *const m_treeModel;
-    const PluginManager *const m_pluginManager;
+public:
 
-    QList<FileLoader*> m_loaderList;
+    FileManager* const                  q               = nullptr;
+    GeoDataTreeModel* const             m_treeModel     = nullptr;
+    const PluginManager* const          m_pluginManager = nullptr;
+
+    QList<FileLoader*>                  m_loaderList;
     QHash < QString, GeoDataDocument* > m_fileItemHash;
-    GeoDataLatLonBox m_latLonBox;
-    QElapsedTimer m_timer;
+    GeoDataLatLonBox                    m_latLonBox;
+    QElapsedTimer                       m_timer;
 };
-}
+
+} // namespace Marble
 
 FileManager::FileManager( GeoDataTreeModel *treeModel, const PluginManager *pluginManager, QObject *parent )
     : QObject( parent )
     , d( new FileManagerPrivate( treeModel, pluginManager, this ) )
 {
 }
-
 
 FileManager::~FileManager()
 {
