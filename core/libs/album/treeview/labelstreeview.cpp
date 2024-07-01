@@ -63,14 +63,13 @@ public:
     QTreeWidgetItem*           picks                        = nullptr;
     QTreeWidgetItem*           colors                       = nullptr;
 
+    QTreeWidgetItemIterator*   itemIterator                 = nullptr;
+
     bool                       isCheckableTreeView          = false;
     bool                       isLoadingState               = false;
-    int                        treeItemsIndex               = 0;
     int                        iconSizeFromSetting          = 0;
 
     QHash<Labels, QList<int> > selectedLabels;
-
-    QList<QTreeWidgetItem*>    treeWidgetItems;
 
     const QString configRatingSelectionEntry                = QLatin1String("RatingSelection");
     const QString configPickSelectionEntry                  = QLatin1String("PickSelection");
@@ -140,29 +139,27 @@ bool LabelsTreeView::isLoadingState() const
 
 QTreeWidgetItem* LabelsTreeView::getOrCreateItem(QTreeWidgetItem* const parent)
 {
-    QTreeWidgetItem* treeItem = nullptr;
+    QTreeWidgetItem* item = nullptr;
 
-    if (d->treeWidgetItems.size() > d->treeItemsIndex)
+    if (*(*d->itemIterator))
     {
-        treeItem = d->treeWidgetItems.at(d->treeItemsIndex);
+        item = *(*d->itemIterator);
     }
     else
     {
         if (parent)
         {
-            treeItem = new QTreeWidgetItem(parent);
+            item = new QTreeWidgetItem(parent);
         }
         else
         {
-            treeItem = new QTreeWidgetItem(this);
+            item = new QTreeWidgetItem(this);
         }
-
-        d->treeWidgetItems << treeItem;
     }
 
-    d->treeItemsIndex++;
+    ++(*d->itemIterator);
 
-    return treeItem;
+    return item;
 }
 
 QPixmap LabelsTreeView::goldenStarPixmap(bool fillin) const
@@ -383,16 +380,19 @@ void LabelsTreeView::setCurrentAlbum()
 
 void LabelsTreeView::initTreeView()
 {
+    d->itemIterator = new QTreeWidgetItemIterator(this);
+
     setIconSize(QSize(d->iconSizeFromSetting * 5,
                       d->iconSizeFromSetting));
-
-    d->treeItemsIndex = 0;
 
     initRatingsTree();
     initPicksTree();
     initColorsTree();
     expandAll();
     setRootIsDecorated(false);
+
+    delete d->itemIterator;
+    d->itemIterator = nullptr;
 }
 
 void LabelsTreeView::initRatingsTree()
