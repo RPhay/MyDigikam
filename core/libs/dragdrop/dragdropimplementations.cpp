@@ -81,7 +81,7 @@ bool DragDropModelImplementation::isDropEnabled(const QModelIndex& index) const
 
 Qt::DropActions DragDropModelImplementation::supportedDropActions() const
 {
-    return Qt::CopyAction|Qt::MoveAction;
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 QStringList DragDropModelImplementation::mimeTypes() const
