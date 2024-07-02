@@ -573,8 +573,8 @@ if [ "$DK_UPLOAD" = 1 ] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *$QT_SUF-Win64$DEBUG_SUF.exe*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *$QT_SUF-Win64$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
