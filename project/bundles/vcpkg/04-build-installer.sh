@@ -345,17 +345,22 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 EXE_FILES="\
 $VCPKG_INSTALL_PREFIX/bin/digikam.exe         \
 $VCPKG_INSTALL_PREFIX/bin/showfoto.exe        \
-$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe   \
 $VCPKG_INSTALL_PREFIX/tools/ffmpeg/ffmpeg.exe \
 "
 
 if [[ $DK_QTVERSION = 6 ]] ; then
 
-    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe"
+    EXE_FILES+="\
+    $VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
+    $VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe    \
+    "
 
 else
 
-    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt5/QtWebEngineProcess.exe"
+    EXE_FILES+="\
+    $VCPKG_INSTALL_PREFIX/tools/Qt5/QtWebEngineProcess.exe \
+    $VCPKG_INSTALL_PREFIX/bin/kbuildsycoca5.exe            \
+    "
 
 fi
 
