@@ -1,26 +1,38 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "Quaternion.h"
 #include <QAtomicInt>
+
+#include "Quaternion.h"
 
 namespace Marble
 {
 
 class GeoDataCoordinatesPrivate
 {
-  public:
-    /*
-    * if this ctor is called there exists exactly one GeoDataCoordinates object
-    * with this data.
-    * changes will be made in the GeoDataCoordinates class
-    * ref must be called ref as qAtomicAssign used in GeoDataCoordinates::operator=
-    * needs this name. Maybe we can rename it to our scheme later on.
-    */
+public:
+
+    /**
+     * if this ctor is called there exists exactly one GeoDataCoordinates object
+     * with this data.
+     * changes will be made in the GeoDataCoordinates class
+     * ref must be called ref as qAtomicAssign used in GeoDataCoordinates::operator=
+     * needs this name. Maybe we can rename it to our scheme later on.
+     */
     GeoDataCoordinatesPrivate()
         : m_q( nullptr ),
           m_lon( 0 ),
@@ -31,13 +43,13 @@ class GeoDataCoordinatesPrivate
     {
     }
 
-    /*
-    * if this ctor is called there exists exactly one GeoDataCoordinates object
-    * with this data.
-    * changes will be made in the GeoDataCoordinates class
-    * ref must be called ref as qAtomicAssign used in GeoDataCoordinates::operator=
-    * needs this name. Maybe we can rename it to our scheme later on.
-    */
+    /**
+     * if this ctor is called there exists exactly one GeoDataCoordinates object
+     * with this data.
+     * changes will be made in the GeoDataCoordinates class
+     * ref must be called ref as qAtomicAssign used in GeoDataCoordinates::operator=
+     * needs this name. Maybe we can rename it to our scheme later on.
+     */
     GeoDataCoordinatesPrivate( qreal _lon, qreal _lat, qreal _alt,
                         GeoDataCoordinates::Unit unit,
                         int _detail )
@@ -59,10 +71,10 @@ class GeoDataCoordinatesPrivate
         }
     }
 
-    /*
-    * this constructor is needed as Quaternion doesn't define a copy ctor
-    * initialize the reference with the value of the other
-    */
+    /**
+     * this constructor is needed as Quaternion doesn't define a copy ctor
+     * initialize the reference with the value of the other
+     */
     GeoDataCoordinatesPrivate( const GeoDataCoordinatesPrivate &other )
         : m_q( nullptr ),
           m_lon( other.m_lon ),
@@ -73,9 +85,9 @@ class GeoDataCoordinatesPrivate
     {
     }
 
-    /*
-    * return this instead of &other
-    */
+    /**
+     * return this instead of &other
+     */
     GeoDataCoordinatesPrivate& operator=( const GeoDataCoordinatesPrivate &other )
     {
         m_lon = other.m_lon;
@@ -98,53 +110,52 @@ class GeoDataCoordinatesPrivate
     // http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html
 
     /**
-    * Computes the ellipsoidal distance from the equator to a point at a
-    * given latitude.
-    *
-    * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
-    * GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
-    *
-    * @param phi Latitude of the point, in radians.
-    * @return The ellipsoidal distance of the point from the equator, in meters.
-    */
+     * Computes the ellipsoidal distance from the equator to a point at a
+     * given latitude.
+     *
+     * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
+     * GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
+     *
+     * @param phi Latitude of the point, in radians.
+     * @return The ellipsoidal distance of the point from the equator, in meters.
+     */
     static qreal arcLengthOfMeridian( qreal phi );
 
     /**
-    * Determines the central meridian for the given UTM zone.
-    *
-    * @param zone An integer value designating the UTM zone, range [1,60].
-    * @return The central meridian for the given UTM zone, in radians, or zero
-    * if the UTM zone parameter is outside the range [1,60].
-    * Range of the central meridian is the radian equivalent of [-177,+177].
-    */
+     * Determines the central meridian for the given UTM zone.
+     *
+     * @param zone An integer value designating the UTM zone, range [1,60].
+     * @return The central meridian for the given UTM zone, in radians, or zero
+     * if the UTM zone parameter is outside the range [1,60].
+     * Range of the central meridian is the radian equivalent of [-177,+177].
+     */
     static qreal centralMeridianUTM( qreal zone );
 
-
     /**
-    * Computes the footpoint latitude for use in converting transverse
-    * Mercator coordinates to ellipsoidal coordinates.
-    *
-    * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
-    *   GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
-    *
-    * @param northing The UTM northing coordinate, in meters.
-    * @return The footpoint latitude, in radians.
-    */
+     * Computes the footpoint latitude for use in converting transverse
+     * Mercator coordinates to ellipsoidal coordinates.
+     *
+     * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
+     *   GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
+     *
+     * @param northing The UTM northing coordinate, in meters.
+     * @return The footpoint latitude, in radians.
+     */
     static qreal footpointLatitude( qreal northing );
 
     /**
-    * Converts a latitude/longitude pair to x and y coordinates in the
-    * Transverse Mercator projection.  Note that Transverse Mercator is not
-    * the same as UTM; a scale factor is required to convert between them.
-    *
-    * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
-    * GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
-    *
-    * @param lambda Longitude of the point, in radians.
-    * @param phi Latitude of the point, in radians.
-    * @param lambda0 Longitude of the central meridian to be used, in radians.
-    * @return The computed point with its x and y coordinates
-    */
+     * Converts a latitude/longitude pair to x and y coordinates in the
+     * Transverse Mercator projection.  Note that Transverse Mercator is not
+     * the same as UTM; a scale factor is required to convert between them.
+     *
+     * Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,
+     * GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.
+     *
+     * @param lambda Longitude of the point, in radians.
+     * @param phi Latitude of the point, in radians.
+     * @param lambda0 Longitude of the central meridian to be used, in radians.
+     * @return The computed point with its x and y coordinates
+     */
     static QPointF mapLonLatToXY( qreal lambda, qreal phi, qreal lambda0 );
 
     /**
@@ -161,39 +172,39 @@ class GeoDataCoordinatesPrivate
     static QPointF lonLatToUTMXY( qreal lon, qreal lat, qreal zone );
 
     /**
-    * @brief retrieves the UTM latitude band of a longitude/latitude
-    * pair
-    * @param lon longitude, in radians
-    * @param lat latitude, in radians
-    * @return latitude band
-    */
+     * @brief retrieves the UTM latitude band of a longitude/latitude
+     * pair
+     * @param lon longitude, in radians
+     * @param lat latitude, in radians
+     * @return latitude band
+     */
     static QString lonLatToLatitudeBand( qreal lon, qreal lat );
 
     /**
-    * @brief retrieves the northing value of a longitude/latitude
-    * pair
-    * @param lon longitude, in radians
-    * @param lat latitude, in radians
-    * @return UTM northing value
-    */
+     * @brief retrieves the northing value of a longitude/latitude
+     * pair
+     * @param lon longitude, in radians
+     * @param lat latitude, in radians
+     * @return UTM northing value
+     */
     static qreal lonLatToNorthing( qreal lon, qreal lat );
 
     /**
-    * @brief retrieves the UTM zone number of a longitude/latitude
-    * pair
-    * @param lon longitude, in radians
-    * @param lat latitude, in radians
-    * @return UTM zone number
-    */
+     * @brief retrieves the UTM zone number of a longitude/latitude
+     * pair
+     * @param lon longitude, in radians
+     * @param lat latitude, in radians
+     * @return UTM zone number
+     */
     static int lonLatToZone( qreal lon, qreal lat );
 
     /**
-    * @brief  retrieves the easting value of a longitude/latitude
-    * pair
-    * @param lon longitude, in radians
-    * @param lat latitude, in radians
-    * @return UTM easting value
-    */
+     * @brief  retrieves the easting value of a longitude/latitude
+     * pair
+     * @param lon longitude, in radians
+     * @param lat latitude, in radians
+     * @return UTM easting value
+     */
     static qreal lonLatToEasting( qreal lon, qreal lat );
 
     Quaternion* m_q = nullptr;

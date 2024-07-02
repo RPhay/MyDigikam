@@ -1,10 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007-2008 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-// SPDX-FileCopyrightText: 2015 Alejandro Garcia Montoro <alejandro.garciamontoro@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -12,8 +19,9 @@
 #include <QMetaType>
 #include <QVector>
 
-#include "digikam_export.h"
 #include "MarbleGlobal.h"
+
+#include "digikam_export.h"
 
 class QString;
 
@@ -47,7 +55,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * However the Marble's interfaces to the outside should default
      * to degrees.
      */
-    enum Unit{
+    enum Unit
+    {
         Radian,
         Degree
     };
@@ -62,7 +71,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * Sexagesimal DMS notation uses integer based
      * Degrees-(Arc)Minutes-(Arc)Seconds to describe parts of a degree.
      */
-    enum Notation{
+    enum Notation
+    {
         Decimal, ///< "Decimal" notation (base-10)
         DMS,     ///< "Sexagesimal DMS" notation (base-60)
         DM,      ///< "Sexagesimal DM" notation (base-60)
@@ -79,14 +89,15 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * corresponds to the bearing value at A, the "FinalBearing" bearing to that
      * at B.
      */
-    enum BearingType {
+    enum BearingType
+    {
         InitialBearing,
         FinalBearing
     };
 
     // Type definitions
-    using Vector = QVector<GeoDataCoordinates>;
-    using PtrVector = QVector<GeoDataCoordinates *>;
+    using Vector    = QVector<GeoDataCoordinates>;
+    using PtrVector = QVector<GeoDataCoordinates*>;
 
     GeoDataCoordinates( const GeoDataCoordinates& other );
 

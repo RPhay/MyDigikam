@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -55,7 +63,8 @@ class GeoDataColorStylePrivate;
  */
 class DIGIKAM_EXPORT GeoDataColorStyle : public GeoDataObject
 {
-  public:
+public:
+
     /// Provides type information for downcasting a GeoData
     const char* nodeType() const override;
 
@@ -71,11 +80,11 @@ class DIGIKAM_EXPORT GeoDataColorStyle : public GeoDataObject
     enum ColorMode { Normal, Random };
 
     /**
-      * @brief Returns the color that should be painted: Either color() or a randomized
-      * version of it, depending on the colorMode() setting. Randomization happens once
-      * per setColor() call, i.e. repeated calls to paintedColor always return the same
-      * color unless setColor is called in between.
-      */
+     * @brief Returns the color that should be painted: Either color() or a randomized
+     * version of it, depending on the colorMode() setting. Randomization happens once
+     * per setColor() call, i.e. repeated calls to paintedColor always return the same
+     * color unless setColor is called in between.
+     */
     QColor paintedColor() const;
 
     /**
@@ -86,11 +95,10 @@ class DIGIKAM_EXPORT GeoDataColorStyle : public GeoDataObject
     /// Return the color mode
     ColorMode colorMode() const;
 
-
     /**
-    * assignment operator
-    * @param other the other colorstyle
-    */
+     * assignment operator
+     * @param other the other colorstyle
+     */
     GeoDataColorStyle& operator=( const GeoDataColorStyle& other );
     bool operator==( const GeoDataColorStyle &other ) const;
     bool operator!=( const GeoDataColorStyle &other ) const;

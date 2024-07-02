@@ -1,23 +1,30 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <inge@lysator.liu.se>
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include <QVector>
 
-#include "digikam_export.h"
-
 #include "GeoDataFeature.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {
 
 class GeoDataContainerPrivate;
-
 class GeoDataFolder;
 class GeoDataPlacemark;
 class GeoDataLatLonAltBox;
@@ -39,10 +46,12 @@ class GeoDataLatLonAltBox;
  */
 class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
 {
- public:
+public:
+
     /// Default constructor
     GeoDataContainer();
     GeoDataContainer( const GeoDataContainer& other );
+
     /// Destruct the GeoDataContainer
     ~GeoDataContainer() override;
 
@@ -101,7 +110,7 @@ class DIGIKAM_EXPORT GeoDataContainer : public GeoDataFeature
      */
     void insert( int index, GeoDataFeature *feature );
 
-     void insert(GeoDataFeature *other, int index);
+    void insert(GeoDataFeature *other, int index);
 
     /**
     * @brief add an element

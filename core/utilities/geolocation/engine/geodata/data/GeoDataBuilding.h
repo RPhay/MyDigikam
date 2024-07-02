@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2017 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -29,11 +39,13 @@ class GeoDataBuildingPrivate;
 class DIGIKAM_EXPORT GeoDataBuilding : public GeoDataGeometry
 {
 public:
+
     explicit GeoDataBuilding();
     explicit GeoDataBuilding(const GeoDataGeometry &other);
     explicit GeoDataBuilding(const GeoDataBuilding &other);
 
-    struct NamedEntry {
+    struct NamedEntry
+    {
         GeoDataCoordinates point;
         QString label;
     };
@@ -49,85 +61,73 @@ public:
     static double parseBuildingHeight(const QString& buildingHeight);
 
     /*!
-    Destroys the GeoDataBuilding
-*/
+     Destroys the GeoDataBuilding
+     */
     ~GeoDataBuilding() override;
 
-
-/*!
-    @return the height of the building
-*/
+    /*!
+     @return the height of the building
+     */
     double height() const;
 
-
-/*!
-    Sets the height of the building
-    @param height
- */
+    /*!
+     Sets the height of the building
+     @param height
+     */
     void setHeight(double height);
 
-
-/*!
-    @return the minimum level
- */
+    /*!
+     @return the minimum level
+     */
     int minLevel() const;
 
-
-/*!
-    Sets the minimum level of the building
-    @param minLevel
- */
+    /*!
+     Sets the minimum level of the building
+     @param minLevel
+     */
     void setMinLevel(int minLevel);
 
-
-/*!
-    @return the maximum level of the building
- */
+    /*!
+     @return the maximum level of the building
+     */
     int maxLevel() const;
 
-
-/*!
-    Sets the maximum level of the building
-    @param maxLevel
- */
+    /*!
+     Sets the maximum level of the building
+     @param maxLevel
+     */
     void setMaxLevel(int maxLevel);
 
-
-/*!
-    @return the non existent levels in the building
- */
+    /*!
+     @return the non existent levels in the building
+     */
     QVector<int> nonExistentLevels() const;
 
-
-/*!
-    Sets the non existent levels of the building
-    @param nonExistentLevels
- */
+    /*!
+     Sets the non existent levels of the building
+     @param nonExistentLevels
+     */
     void setNonExistentLevels(const QVector<int>& nonExistentLevels);
 
-
-/*!
-    @return the multigeometry associated with the building
- */
+    /*!
+     @return the multigeometry associated with the building
+     */
     GeoDataMultiGeometry* multiGeometry() const;
 
-
-/*!
-    @return the latlonaltbox for the contained multigeometry
- */
+    /*!
+     @return the latlonaltbox for the contained multigeometry
+     */
     const GeoDataLatLonAltBox& latLonAltBox() const override;
 
-
-/*!
-    @return the name of the building
- */
+    /*!
+     @return the name of the building
+     */
     QString name() const;
 
-
-/*!
-    Sets the name of the building
-    @param name
- */
+    /*!
+     Sets the name of the building
+     @param name
+     */
     void setName(const QString& name);
 
     QVector<NamedEntry> entries() const;

@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Gaurav Gupta <1989.gaurav@googlemail.com>
-// SPDX-FileCopyrightText: 2013 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataAbstractView.h"
 
@@ -12,16 +21,18 @@
 #include "GeoDataTimeSpan.h"
 #include "GeoDataTimeStamp.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataAbstractViewPrivate
 {
 public:
+
     GeoDataAbstractViewPrivate();
 
-    GeoDataTimeSpan m_timeSpan;
+    GeoDataTimeSpan  m_timeSpan;
     GeoDataTimeStamp m_timeStamp;
-    AltitudeMode m_altitudeMode;
+    AltitudeMode     m_altitudeMode;
 };
 
 GeoDataAbstractViewPrivate::GeoDataAbstractViewPrivate() :
@@ -144,4 +155,4 @@ void GeoDataAbstractView::setAltitudeMode(const AltitudeMode altitudeMode)
     d->m_altitudeMode = altitudeMode;
 }
 
-}
+} // namespace Marble

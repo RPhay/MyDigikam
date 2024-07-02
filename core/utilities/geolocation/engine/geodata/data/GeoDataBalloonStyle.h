@@ -5,22 +5,30 @@
 
 #pragma once
 
+#include <QColor>
+
 #include "MarbleGlobal.h"
 #include "GeoDataColorStyle.h"
-#include "digikam_export.h"
 
-#include <QColor>
+#include "digikam_export.h"
 
 namespace Marble
 {
 
 class GeoDataBalloonStylePrivate;
 
-/**
- */
 class DIGIKAM_EXPORT GeoDataBalloonStyle : public GeoDataColorStyle
 {
 public:
+
+    enum DisplayMode
+    {
+        Default,
+        Hide
+    };
+
+public:
+
     GeoDataBalloonStyle();
 
     GeoDataBalloonStyle( const GeoDataBalloonStyle &other );
@@ -29,16 +37,11 @@ public:
     bool operator==( const GeoDataBalloonStyle &other ) const;
     bool operator!=( const GeoDataBalloonStyle &other ) const;
 
-
     ~GeoDataBalloonStyle() override;
 
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;
 
-    enum DisplayMode {
-        Default,
-        Hide
-    };
 
     QColor backgroundColor() const;
     void setBackgroundColor( const QColor &color );
