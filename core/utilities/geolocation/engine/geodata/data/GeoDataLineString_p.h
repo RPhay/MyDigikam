@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -76,6 +86,8 @@ public:
     static qreal resolutionForLevel(int level);
     void optimize(GeoDataLineString& lineString) const;
 
+public:
+
     QVector<GeoDataCoordinates> m_vector;
 
     mutable GeoDataLineString*  m_rangeCorrected = nullptr;
@@ -85,8 +97,8 @@ public:
                                             // GeoDataPoints since the LatLonAltBox has
                                             // been calculated. Saves performance.
     TessellationFlags           m_tessellationFlags;
-    mutable qreal  m_previousResolution;
-    mutable quint8 m_level;
+    mutable qreal               m_previousResolution;
+    mutable quint8              m_level;
 };
 
 } // namespace Marble

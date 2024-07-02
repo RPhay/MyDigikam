@@ -1,23 +1,33 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Gaurav Gupta <1989.gaurav@googlemail.com>
-// SPDX-FileCopyrightText: 2010 Bastian Holst <bastianholst@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-// Marble
-#include "GeoDataCoordinates.h"
-
 // Qt
 #include <QAtomicInt>
+
+// Marble
+#include "GeoDataCoordinates.h"
 
 namespace Marble
 {
 
 class GeoDataLookAtPrivate
 {
- public :
+public:
+
     GeoDataLookAtPrivate()
         : m_coordinates(),
           m_range( 0.0 ),
@@ -26,9 +36,9 @@ class GeoDataLookAtPrivate
     }
 
     GeoDataCoordinates m_coordinates;
-    qreal m_range;
+    qreal              m_range;
 
-    QAtomicInt ref;
+    QAtomicInt         ref;
 };
 
 } // namespace Marble

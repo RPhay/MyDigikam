@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataLabelStyle.h"
 
@@ -20,10 +29,10 @@ static const int defaultSize = 10;
 static const int defaultSize = 8;
 #endif
 
-
 class GeoDataLabelStylePrivate
 {
-  public:
+public:
+
     GeoDataLabelStylePrivate()
         : m_scale( 1.0 ),
           m_alignment( GeoDataLabelStyle::Corner ),
@@ -41,13 +50,13 @@ class GeoDataLabelStylePrivate
     }
 
     /// The current scale of the label
-    float  m_scale;
+    float                        m_scale;
     /// The current alignment of the label
     GeoDataLabelStyle::Alignment m_alignment;
     /// The current font of the label
-    QFont  m_font;   // Not a KML property
+    QFont                        m_font;   // Not a KML property
     /// Whether or not the text should glow
-    bool m_glow; // Not a KML property
+    bool                         m_glow; // Not a KML property
 };
 
 GeoDataLabelStyle::GeoDataLabelStyle()
@@ -175,4 +184,4 @@ void GeoDataLabelStyle::unpack( QDataStream& stream )
     d->m_alignment = static_cast<GeoDataLabelStyle::Alignment>( a );
 }
 
-}
+} // namespace Marble

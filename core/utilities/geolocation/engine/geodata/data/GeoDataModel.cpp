@@ -1,11 +1,22 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
-// SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataModel.h"
 #include "GeoDataGeometry_p.h"
+
+#include <cstdio>
 
 #include "GeoDataTypes.h"
 #include "GeoDataLocation.h"
@@ -13,42 +24,42 @@
 #include "GeoDataResourceMap.h"
 #include "GeoDataScale.h"
 
-#include <cstdio>
-
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataModelPrivate : public GeoDataGeometryPrivate
 {
 public:
+
     GeoDataModelPrivate();
 
     GeoDataGeometryPrivate *copy() const override { return new GeoDataModelPrivate( *this ); }
 
     GeoDataCoordinates m_coordinates;
 
-    GeoDataScale m_scale;
-    GeoDataOrientation m_orientation;
-    GeoDataLocation m_location;
-    GeoDataLink m_link;
-    GeoDataResourceMap m_map;
-    QString m_targetHref;
-    QString m_sourceHref;
+    GeoDataScale        m_scale;
+    GeoDataOrientation  m_orientation;
+    GeoDataLocation     m_location;
+    GeoDataLink         m_link;
+    GeoDataResourceMap  m_map;
+    QString             m_targetHref;
+    QString             m_sourceHref;
 };
 
-GeoDataModelPrivate::GeoDataModelPrivate() :
-    m_coordinates(),
-    m_scale(),
-    m_orientation(),
-    m_location(),
-    m_link(),
-    m_map(),
-    m_targetHref(),
-    m_sourceHref()
+GeoDataModelPrivate::GeoDataModelPrivate()
+    : m_coordinates(),
+      m_scale(),
+      m_orientation(),
+      m_location(),
+      m_link(),
+      m_map(),
+      m_targetHref(),
+      m_sourceHref()
 {
 }
 
-GeoDataModel::GeoDataModel() :
-    GeoDataGeometry( new GeoDataModelPrivate )
+GeoDataModel::GeoDataModel()
+    : GeoDataGeometry( new GeoDataModelPrivate )
 {
     setAltitudeMode( ClampToGround );
 }
@@ -79,7 +90,6 @@ GeoDataGeometry *GeoDataModel::copy() const
 {
     return new GeoDataModel(*this);
 }
-
 
 bool GeoDataModel::operator==( const GeoDataModel &other ) const
 {
@@ -266,4 +276,4 @@ void GeoDataModel::setSourceHref(const QString &sourceHref)
     d->m_map.setSourceHref( sourceHref );
 }
 
-}
+} // namespace Marble

@@ -1,14 +1,25 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataListStyle.h"
+
+#include <QDataStream>
+
 #include "GeoDataTypes.h"
 #include "GeoDataItemIcon.h"
 #include "MarbleDirs.h"
-
-#include <QDataStream>
 
 namespace Marble
 {
@@ -16,27 +27,28 @@ namespace Marble
 class GeoDataListStylePrivate
 {
 public:
+
     GeoDataListStylePrivate();
 
-    GeoDataListStyle::ListItemType m_listItemType;
-    QColor m_bgColor;
+    GeoDataListStyle::ListItemType  m_listItemType;
+    QColor                          m_bgColor;
 
-    QVector<GeoDataItemIcon*> m_vector;
+    QVector<GeoDataItemIcon*>       m_vector;
 };
 
-GeoDataListStylePrivate::GeoDataListStylePrivate() :
-    m_listItemType( GeoDataListStyle::Check ),
-    m_bgColor( Qt::white )
+GeoDataListStylePrivate::GeoDataListStylePrivate()
+    : m_listItemType( GeoDataListStyle::Check ),
+      m_bgColor( Qt::white )
 {
 }
 
-GeoDataListStyle::GeoDataListStyle() :
-    d( new GeoDataListStylePrivate )
+GeoDataListStyle::GeoDataListStyle()
+    : d( new GeoDataListStylePrivate )
 {
 }
 
-GeoDataListStyle::GeoDataListStyle( const Marble::GeoDataListStyle &other ) :
-    GeoDataObject( other ), d( new GeoDataListStylePrivate( *other.d ) )
+GeoDataListStyle::GeoDataListStyle( const Marble::GeoDataListStyle &other )
+    : GeoDataObject( other ), d( new GeoDataListStylePrivate( *other.d ) )
 {
 }
 
@@ -227,4 +239,4 @@ void GeoDataListStyle::unpack( QDataStream& stream )
     d->m_vector.append( itemIcon );
 }
 
-}
+} // namespace Marble

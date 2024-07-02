@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataLineString.h"
 #include "GeoDataLineString_p.h"
@@ -18,20 +27,21 @@
 
 namespace Marble
 {
+
 GeoDataLineString::GeoDataLineString( TessellationFlags f )
-  : GeoDataGeometry( new GeoDataLineStringPrivate( f ) )
+    : GeoDataGeometry( new GeoDataLineStringPrivate( f ) )
 {
 //    qCDebug(DIGIKAM_MARBLE_LOG) << "1) GeoDataLineString created:" << p();
 }
 
 GeoDataLineString::GeoDataLineString( GeoDataLineStringPrivate* priv )
-  : GeoDataGeometry( priv )
+    : GeoDataGeometry( priv )
 {
 //    qCDebug(DIGIKAM_MARBLE_LOG) << "2) GeoDataLineString created:" << p();
 }
 
 GeoDataLineString::GeoDataLineString( const GeoDataGeometry & other )
-  : GeoDataGeometry( other )
+    : GeoDataGeometry( other )
 {
 //    qCDebug(DIGIKAM_MARBLE_LOG) << "3) GeoDataLineString created:" << p();
 }
@@ -127,7 +137,7 @@ quint8 GeoDataLineStringPrivate::levelForResolution(qreal resolution) const {
 
     m_previousResolution = resolution;
 
-    if (resolution < 0.0000005) m_level = 17;
+    if      (resolution < 0.0000005) m_level = 17;
     else if (resolution < 0.0000010) m_level = 16;
     else if (resolution < 0.0000020) m_level = 15;
     else if (resolution < 0.0000040) m_level = 14;
@@ -944,4 +954,4 @@ void GeoDataLineString::unpack( QDataStream& stream )
     }
 }
 
-}
+} // namespace Marble

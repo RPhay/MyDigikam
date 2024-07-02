@@ -1,16 +1,27 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "MarbleGlobal.h"
-#include "GeoDataObject.h"
-#include "digikam_export.h"
-
 #include <QColor>
 #include <QVector>
+
+#include "MarbleGlobal.h"
+#include "GeoDataObject.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -18,11 +29,10 @@ namespace Marble
 class GeoDataListStylePrivate;
 class GeoDataItemIcon;
 
-/**
- */
 class DIGIKAM_EXPORT GeoDataListStyle : public GeoDataObject
 {
 public:
+
     GeoDataListStyle();
 
     GeoDataListStyle( const GeoDataListStyle &other );
@@ -37,7 +47,8 @@ public:
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;
 
-    enum ListItemType {
+    enum ListItemType
+    {
         Check,
         RadioFolder,
         CheckOffOnly,

@@ -1,13 +1,24 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataItemIcon.h"
-#include "GeoDataTypes.h"
 
 #include <QString>
 #include <QImage>
+
+#include "GeoDataTypes.h"
 
 namespace Marble
 {
@@ -15,27 +26,28 @@ namespace Marble
 class GeoDataItemIconPrivate
 {
 public:
+
     GeoDataItemIconPrivate();
 
     GeoDataItemIcon::ItemIconStates m_state;
-    QString m_iconPath;
-    QImage m_icon;
+    QString                         m_iconPath;
+    QImage                          m_icon;
 };
 
-GeoDataItemIconPrivate::GeoDataItemIconPrivate() :
-    m_state(),
-    m_iconPath(),
-    m_icon()
+GeoDataItemIconPrivate::GeoDataItemIconPrivate()
+    : m_state(),
+      m_iconPath(),
+     m_icon()
 {
 }
 
-GeoDataItemIcon::GeoDataItemIcon() :
-    d( new GeoDataItemIconPrivate )
+GeoDataItemIcon::GeoDataItemIcon()
+    : d( new GeoDataItemIconPrivate )
 {
 }
 
-GeoDataItemIcon::GeoDataItemIcon( const Marble::GeoDataItemIcon &other ) :
-    GeoDataObject(), d( new GeoDataItemIconPrivate( *other.d ) )
+GeoDataItemIcon::GeoDataItemIcon( const Marble::GeoDataItemIcon &other )
+    : GeoDataObject(), d( new GeoDataItemIconPrivate( *other.d ) )
 {
 }
 
@@ -111,4 +123,4 @@ QImage GeoDataItemIcon::icon() const
     }
 }
 
-}
+} // namespace Marble

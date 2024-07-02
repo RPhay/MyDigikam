@@ -1,21 +1,31 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataLineStyle.h"
 
-#include "GeoDataTypes.h"
-
 #include <QDataStream>
+
+#include "GeoDataTypes.h"
 
 namespace Marble
 {
 
 class GeoDataLineStylePrivate
 {
-  public:
+public:
+
     GeoDataLineStylePrivate()
         : m_width( 1.0 ), m_physicalWidth( 0.0 ),
           m_capStyle( Qt::FlatCap ), m_penStyle( Qt::SolidLine ),
@@ -24,14 +34,14 @@ class GeoDataLineStylePrivate
     }
 
     /// The current width of the line
-    float  m_width;
+    float               m_width;
     /// The current real width of the line
-    float  m_physicalWidth;
-    Qt::PenCapStyle m_capStyle;
-    Qt::PenStyle m_penStyle;
-    bool m_cosmeticOutline;
-    bool m_background;
-    QVector< qreal > m_pattern;
+    float               m_physicalWidth;
+    Qt::PenCapStyle     m_capStyle;
+    Qt::PenStyle        m_penStyle;
+    bool                m_cosmeticOutline;
+    bool                m_background;
+    QVector< qreal >    m_pattern;
 };
 
 GeoDataLineStyle::GeoDataLineStyle()
@@ -181,4 +191,4 @@ void GeoDataLineStyle::unpack( QDataStream& stream )
     stream >> d->m_background;
 }
 
-}
+} // namespace Marble
