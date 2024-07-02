@@ -167,11 +167,31 @@ cp    $BUILDDIR/data/breeze.rcc                                           $BUNDL
 cp    $BUILDDIR/data/breeze-dark.rcc                                      $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/icons                                   $BUNDLEDIR/data                       2>/dev/null
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp -r $VCPKG_INSTALL_PREFIX/share/icons                               $BUNDLEDIR/data                       2>/dev/null
+
+else
+
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/icons                            $BUNDLEDIR/data                       2>/dev/null
+
+fi
 
 echo -e "\n---------- i18n"
+
 # Qt framekork translations
-cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                            $BUNDLEDIR/translations               2>/dev/null
+
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                        $BUNDLEDIR/translations               2>/dev/null
+
+else
+
+    cp -r $VCPKG_INSTALL_PREFIX/share/qt5/translations/*                  $BUNDLEDIR/translations               2>/dev/null
+
+fi
+
 rm -fr $BUNDLEDIR/translations/assistant*.qm
 rm -fr $BUNDLEDIR/translations/designer*.qm
 rm -fr $BUNDLEDIR/translations/linguist*.qm
@@ -207,7 +227,7 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 
 else
 
-    cp -r $VCPKG_INSTALL_PREFIX/Qt5/plugins                               $BUNDLEDIR/                           2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 fi
 
@@ -335,7 +355,7 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 
 else
 
-    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt5/bin/QtWebEngineProcess.exe"
+    EXE_FILES+="$VCPKG_INSTALL_PREFIX/tools/Qt5/QtWebEngineProcess.exe"
 
 fi
 
@@ -355,7 +375,7 @@ if [[ $DK_QTVERSION = 6 ]] ; then
 else
 
     DLL_FILES="\
-    `find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt5/plugins||'`  \
+    `find  $VCPKG_INSTALL_PREFIX/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`  \
     "
 
 fi
