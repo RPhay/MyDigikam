@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -10,7 +20,6 @@
 #include "GeoDataStyleMap.h"
 #include "GeoDataSchema.h"
 #include "GeoDataContainer_p.h"
-
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -18,9 +27,10 @@ namespace Marble
 
 class GeoDataDocumentPrivate : public GeoDataContainerPrivate
 {
-  public:
+public:
+
     GeoDataDocumentPrivate()
-    :  m_documentRole( UnknownDocument )
+      : m_documentRole( UnknownDocument )
     {
     }
 
@@ -42,14 +52,16 @@ class GeoDataDocumentPrivate : public GeoDataContainerPrivate
         return GeoDataDocumentId;
     }
 
-    QMap<QString, GeoDataStyle::Ptr> m_styleHash;
-    QMap<QString, GeoDataStyleMap> m_styleMapHash;
-    QMap<QString, GeoDataSchema> m_schemaHash;
-    QString m_filename;
-    QString m_baseUri;
-    GeoDataNetworkLinkControl m_networkLinkControl;
-    QString m_property;
-    DocumentRole m_documentRole;
+public:
+
+    QMap<QString, GeoDataStyle::Ptr>    m_styleHash;
+    QMap<QString, GeoDataStyleMap>      m_styleMapHash;
+    QMap<QString, GeoDataSchema>        m_schemaHash;
+    QString                             m_filename;
+    QString                             m_baseUri;
+    GeoDataNetworkLinkControl           m_networkLinkControl;
+    QString                             m_property;
+    DocumentRole                        m_documentRole;
 };
 
 } // namespace Marble

@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Torsten Rahn <rahn@kde.org>
-// SPDX-FileCopyrightText: 2008 Inge Wallin <inge@lysator.liu.se>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -21,8 +30,14 @@ class GeoDataHotSpotPrivate;
  */
 class DIGIKAM_EXPORT GeoDataHotSpot : public GeoDataObject
 {
-  public:
-    enum Units{Fraction, Pixels, InsetPixels};
+public:
+
+    enum Units
+    {
+        Fraction,
+        Pixels,
+        InsetPixels
+    };
 
     GeoDataHotSpot( const QPointF& hotSpot = QPointF( 0.5, 0.5 ),
                     Units xunits = Fraction, Units yunits = Fraction );

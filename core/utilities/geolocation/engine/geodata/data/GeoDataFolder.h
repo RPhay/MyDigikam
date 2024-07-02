@@ -1,10 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-    SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-    SPDX-FileCopyrightText: 2007 Inge Wallin <inge@lysator.liu.se>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -30,7 +37,8 @@ class GeoDataFolderPrivate;
  */
 class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
 {
- public:
+public:
+
     GeoDataFolder();
     GeoDataFolder( const GeoDataFolder& other );
     ~GeoDataFolder() override;
@@ -44,7 +52,7 @@ class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
 
     GeoDataFeature * clone() const override;
 
- private:
+private:
 
     Q_DECLARE_PRIVATE(GeoDataFolder)
 };

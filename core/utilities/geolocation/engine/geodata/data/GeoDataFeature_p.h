@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -25,15 +35,18 @@ namespace Marble
 class GeoDataFeatureExtendedData
 {
 public:
-    GeoDataSnippet      m_snippet;      // Snippet of the feature.
-    QString             m_description;  // A longer textual description
-    bool                m_descriptionCDATA; // True if description should be considered CDATA
-    QString             m_address;      // The address.  Optional
-    QString             m_phoneNumber;  // Phone         Optional
-    GeoDataAbstractView* m_abstractView; // AbstractView  Optional
-    GeoDataTimeSpan  m_timeSpan;
-    GeoDataTimeStamp m_timeStamp;
-    GeoDataRegion m_region;
+
+    GeoDataSnippet          m_snippet;                  // Snippet of the feature.
+    QString                 m_description;              // A longer textual description
+    bool                    m_descriptionCDATA;         // True if description should be considered CDATA
+    QString                 m_address;                  // The address.  Optional
+    QString                 m_phoneNumber;              // Phone         Optional
+    GeoDataAbstractView*    m_abstractView = nullptr;   // AbstractView  Optional
+    GeoDataTimeSpan         m_timeSpan;
+    GeoDataTimeStamp        m_timeStamp;
+    GeoDataRegion           m_region;
+
+public:
 
     GeoDataFeatureExtendedData() :
         m_snippet(),
@@ -112,7 +125,8 @@ public:
 
 class GeoDataFeaturePrivate
 {
-  public:
+public:
+
     GeoDataFeaturePrivate() :
         m_name(),
         m_styleUrl(),
@@ -188,19 +202,21 @@ class GeoDataFeaturePrivate
         return *m_featureExtendedData;
     }
 
-    QString             m_name;         // Name of the feature. Is shown on screen
-    QString             m_styleUrl;     // styleUrl     Url#tag to a document wide style
-    qint64              m_popularity;   // Population/Area/Altitude depending on placemark(!)
-    int                 m_zoomLevel;    // Zoom Level of the feature
+public:
 
-    bool        m_visible;      // True if this feature should be shown.
+    QString                             m_name;         // Name of the feature. Is shown on screen
+    QString                             m_styleUrl;     // styleUrl     Url#tag to a document wide style
+    qint64                              m_popularity;   // Population/Area/Altitude depending on placemark(!)
+    int                                 m_zoomLevel;    // Zoom Level of the feature
 
-    QString       m_role;
+    bool                                m_visible;      // True if this feature should be shown.
 
-    GeoDataStyle::Ptr m_style;
-    const GeoDataStyleMap* m_styleMap                         = nullptr;
+    QString                             m_role;
 
-    GeoDataExtendedData m_extendedData;
+    GeoDataStyle::Ptr                   m_style;
+    const GeoDataStyleMap*              m_styleMap            = nullptr;
+
+    GeoDataExtendedData                 m_extendedData;
     mutable GeoDataFeatureExtendedData* m_featureExtendedData = nullptr;
 };
 

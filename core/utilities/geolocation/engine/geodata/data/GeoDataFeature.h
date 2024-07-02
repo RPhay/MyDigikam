@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -16,17 +25,12 @@ namespace Marble
 // forward define all features we can find.
 class GeoDataRegion;
 class GeoDataAbstractView;
-
 class GeoDataStyle;
 class GeoDataStyleMap;
-
 class GeoDataExtendedData;
-
 class GeoDataTimeSpan;
 class GeoDataTimeStamp;
-
 class GeoDataFeaturePrivate;
-
 class GeoDataSnippet;
 
 /**

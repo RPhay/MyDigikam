@@ -1,22 +1,34 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataFlyTo.h"
 #include "GeoDataTypes.h"
 #include "GeoDataAbstractView.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataFlyToPrivate
 {
 public:
-    double m_duration;
+
+    double                  m_duration;
 
     GeoDataFlyTo::FlyToMode m_flyToMode;
 
-    GeoDataAbstractView* m_view;
+    GeoDataAbstractView*    m_view = nullptr;
 
     GeoDataFlyToPrivate();
 };
@@ -24,18 +36,15 @@ public:
 GeoDataFlyToPrivate::GeoDataFlyToPrivate() :
     m_duration( 0.0 ), m_flyToMode(), m_view( nullptr )
 {
-
 }
 
 GeoDataFlyTo::GeoDataFlyTo() : d( new GeoDataFlyToPrivate )
 {
-
 }
 
 GeoDataFlyTo::GeoDataFlyTo( const Marble::GeoDataFlyTo &other ) :
     GeoDataTourPrimitive( other ), d( new GeoDataFlyToPrivate( *other.d ) )
 {
-
 }
 
 GeoDataFlyTo &GeoDataFlyTo::operator=( const GeoDataFlyTo &other )
@@ -117,4 +126,4 @@ void GeoDataFlyTo::setFlyToMode( const GeoDataFlyTo::FlyToMode flyToMode )
     d->m_flyToMode = flyToMode;
 }
 
-}
+} // namespace Marble

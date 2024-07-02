@@ -1,17 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
+
+#include <QSize>
 
 #include "GeoDataColorStyle.h"
 #include "GeoDataHotSpot.h"
 
 #include "digikam_export.h"
-
-#include <QSize>
 
 namespace Marble
 {
@@ -27,7 +36,8 @@ static const QSize s_minimumIconSize = QSize( 10, 10 );
  */
 class DIGIKAM_EXPORT GeoDataIconStyle : public GeoDataColorStyle
 {
-  public:
+public:
+
     GeoDataIconStyle();
     GeoDataIconStyle( const GeoDataIconStyle& other );
     explicit GeoDataIconStyle( const QString& iconPath,
