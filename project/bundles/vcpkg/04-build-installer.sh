@@ -131,24 +131,31 @@ mkdir -p $BUNDLEDIR/translations
 
 echo -e "\n---------- Generics data"
 cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                       2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                       2>/dev/null
+
+
 
 if [[ $DK_QTVERSION = 6 ]] ; then
 
+    cp -r $VCPKG_INSTALL_PREFIX/share/digikam                             $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                            $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/solid                               $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                            $BUNDLEDIR/data                       2>/dev/null
     cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                     $BUNDLEDIR/data                       2>/dev/null
-    cp -r $VCPKG_INSTALL_PREFIX/share/Qt6/resources                           $BUNDLEDIR/                           2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/applications                        $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/Qt6/resources                       $BUNDLEDIR/                           2>/dev/null
 
 else
 
-    cp -r $VCPKG_INSTALL_PREFIX/share/knotifications5                     $BUNDLEDIR/data                       2>/dev/null
-    cp -r $VCPKG_INSTALL_PREFIX/share/Qt5/resources                           $BUNDLEDIR/                           2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/digikam                          $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/showfoto                         $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/solid                            $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/kxmlgui5                         $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/knotifications5                  $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/data/applications                     $BUNDLEDIR/data                       2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/share/qt5/resources                       $BUNDLEDIR/                           2>/dev/null
 
 fi
 
-cp -r $VCPKG_INSTALL_PREFIX/share/applications                            $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Qt config"
