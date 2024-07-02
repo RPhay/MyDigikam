@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-01 01:43+0000\n"
-"PO-Revision-Date: 2024-06-26 06:50+0900\n"
+"POT-Creation-Date: 2024-07-02 01:43+0000\n"
+"PO-Revision-Date: 2024-07-01 13:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -345,7 +345,7 @@ msgstr "設為標籤縮圖"
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
-msgstr[0] ""
+msgstr[0] "將臉孔名稱從「%2」變更為「%3」"
 
 #: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
@@ -688,7 +688,7 @@ msgstr "依檔名群組化所選"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr ""
+msgstr "依縮時攝影/連拍群組化所選"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -1349,11 +1349,7 @@ msgstr ""
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1361,7 +1357,8 @@ msgid ""
 "Error message: %1"
 msgstr ""
 "您的 digiKam 安裝沒有可用的 ExifTool，或是它無法正常運作。請前往 digiKam 設定"
-"並在中繼資料區塊檢查 ExifTool 執行檔是否可用。"
+"並在中繼資料區塊檢查 ExifTool 執行檔是否可用。\n"
+"錯誤訊息：%1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -1414,7 +1411,7 @@ msgstr[0] "%1/%2 個項目已選擇。包含群組化的項目：%3/%4"
 #: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2)"
-msgstr "(第 %1 張，共 %2 張)"
+msgstr "（%1 / %2）"
 
 #: core/app/main/digikamapp.cpp:809
 #, kde-format
@@ -1424,7 +1421,7 @@ msgstr "（%1 / %2 [%3]）"
 #: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
-msgstr ""
+msgstr "（%1 / %2；包含群組化項目的總計：%3）"
 
 #: core/app/main/digikamapp.cpp:824
 #, kde-format
@@ -2672,6 +2669,8 @@ msgid ""
 "p><p>Please install the 64-bit version of digiKam to get a better experience "
 "with digiKam.</p>"
 msgstr ""
+"<p>您目前正在於 64 位元版 Windows 上執行 32 位元版的 digiKam。</p><p>請安裝 "
+"64 位元版的 digiKam 以獲取更加的體驗。</p>"
 
 #: core/app/main/main.cpp:311
 #, kde-format
@@ -2700,11 +2699,14 @@ msgid ""
 "directory does not exist, it is a directory itself or it cannot be read/"
 "written to.</p>"
 msgstr ""
+"<p>指定的設定檔案路徑是無效的。可能是它的上層目錄不存在、它本身是目錄，或是它"
+"無法讀取或無法寫入。</p>"
 
+# %1 和 %2 都是格式 / 副檔名，%1 是大寫 (像是 "PNG")，%2 則是副檔名形式 (像是 "*.png")。
 #: core/app/utils/digikam_globals.cpp:121
 #, kde-format
 msgid "%1 Image (%2)"
-msgstr "%1 張影像 (%2)"
+msgstr "%1 影像 (%2)"
 
 #: core/app/utils/digikam_globals.cpp:125
 #, kde-format
@@ -2734,7 +2736,7 @@ msgstr "HEIC (*.heic *.heif)"
 #: core/app/utils/digikam_globals.cpp:149
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
-msgstr ""
+msgstr "FITS (*.fts *.fit *.fits)"
 
 #: core/app/utils/digikam_globals.cpp:156
 #, kde-format
@@ -2888,6 +2890,8 @@ msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
+"歡迎使用 digiKam 的臉孔管理。如果您是初次使用這個功能，請考慮使用左下方的側邊"
+"面板中的說明盒。"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:197
 #, kde-format
@@ -3297,7 +3301,7 @@ msgstr ""
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
-msgstr ""
+msgstr "中繼資料：新增儲存與載入設定檔的選項到「進階中繼資料設定面板」中"
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
@@ -6590,13 +6594,7 @@ msgid "HEIF quality:"
 msgstr "HEIF 品質："
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
@@ -6604,10 +6602,9 @@ msgid ""
 "large file size)</p><p><b>Note: HEIF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/"
-"><b>50</b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質"
-"（不壓縮，檔案最大）</p><p><b>備註：JPEG 2000 使用此選項時，就不再是一種無損"
-"影像壓縮格式。</b></p>"
+"<p>HEIF 影像的品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/><b>50</"
+"b>：中等品質<br/><b>75</b>：高品質（預設）<br/><b>100</b>：超高品質（無壓縮而"
+"檔案較大）</p><p><b>請注意：使用此選項時 HEIF 不是無損影像壓縮格式。</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
@@ -6737,9 +6734,9 @@ msgid ""
 "(default)<br/><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
-"<p>JPEG 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/><b>50</"
-"b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質（不壓縮，"
-"檔案最大）</p><p><b>備註：JPEG 是有損壓縮格式。</b></p>"
+"<p>JPEG 品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/><b>50</b>：中等"
+"品質<br/><b>75</b>：高品質（預設）<br/><b>100</b>：超高品質（無壓縮而檔案較"
+"大）</p><p><b>請注意：JPEG 總是會使用有損壓縮。</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
@@ -6851,10 +6848,10 @@ msgid ""
 "large file size)</p><p><b>Note: JPEG 2000 is not a lossless image "
 "compression format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/"
-"><b>50</b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質"
-"（不壓縮，檔案最大）</p><p><b>備註：JPEG 2000 使用此選項時，就不再是一種無損"
-"影像壓縮格式。</b></p>"
+"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/"
+"><b>50</b>：中等品質<br/><b>75</b>：高品質（預設）<br/><b>100</b>：超高品質"
+"（無壓縮而檔案較大）</p><p><b>請注意：使用此選項時 JPEG 2000 不是無損影像壓縮"
+"格式。</b></p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
 #, kde-format
@@ -6963,9 +6960,9 @@ msgid ""
 "small file size)</p><p><b>Note: PGF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>PGF 影像的品質：</p><p><b>1</b>：高品質 (不壓縮、檔案大)<br/><b>3</b>：較"
-"好品質 (預設)<br/><b>6</b>：中等品質<br/><b>9</b>：低品質 (高壓縮比，檔案"
-"小)</p><p><b>備註：當您使用這個設定值時，PGF 就不是無損影像壓縮格式。</b></p>"
+"<p>PGF 影像的品質：</p><p><b>1</b>：超高品質（無壓縮而檔案較大）<br/><b>3</"
+"b>：高品質（預設）<br/><b>6</b>：中等品質<br/><b>9</b>：低品質（高壓縮而檔案"
+"較小）</p><p><b>請注意：使用此選項時 PGF 不是無損影像壓縮格式。</b></p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
 #, kde-format
@@ -7072,13 +7069,7 @@ msgid "AVIF quality:"
 msgstr "AVIF 品質："
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
@@ -7086,10 +7077,9 @@ msgid ""
 "large file size)</p><p><b>Note: AVIF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/"
-"><b>50</b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質"
-"（不壓縮，檔案最大）</p><p><b>備註：JPEG 2000 使用此選項時，就不再是一種無損"
-"影像壓縮格式。</b></p>"
+"<p>AVIF 影像的品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/><b>50</"
+"b>：中等品質<br/><b>75</b>：高品質（預設）<br/><b>99</b>：超高品質（無壓縮而"
+"檔案較大）</p><p><b>請注意：使用此選項時 AVIF 不是無損影像壓縮格式。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, fuzzy, kde-format
@@ -7116,13 +7106,7 @@ msgid "JPEG XL quality:"
 msgstr "JPEG XL 品質："
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
@@ -7130,10 +7114,10 @@ msgid ""
 "large file size)</p><p><b>Note: JPEG XL is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/"
-"><b>50</b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質"
-"（不壓縮，檔案最大）</p><p><b>備註：JPEG 2000 使用此選項時，就不再是一種無損"
-"影像壓縮格式。</b></p>"
+"<p>JPEG XL 影像的品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/"
+"><b>50</b>：中等品質<br/><b>75</b>：高品質（預設）<br/><b>99</b>：超高品質"
+"（無壓縮而檔案較大）</p><p><b>請注意：使用此選項時 JPEG XL 不是無損影像壓縮格"
+"式。</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
@@ -7183,13 +7167,7 @@ msgid "WEBP quality:"
 msgstr "WEBP 品質："
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
@@ -7197,10 +7175,9 @@ msgid ""
 "large file size)</p><p><b>Note: WEBP is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 影像的品質：</p><p><b>1</b>：低品質（高壓縮比，檔案最小）<br/"
-"><b>50</b>：中等品質<br/><b>75</b>：較好品質（預設）<br/><b>100</b>：高品質"
-"（不壓縮，檔案最大）</p><p><b>備註：JPEG 2000 使用此選項時，就不再是一種無損"
-"影像壓縮格式。</b></p>"
+"<p>WEB 影像的品質：</p><p><b>1</b>：低品質（高壓縮而檔案較小）<br/><b>50</"
+"b>：中等品質<br/><b>75</b>：高品質（預設）<br/><b>99</b>：超高品質（無壓縮而"
+"檔案較大）</p><p><b>請注意：使用此選項時 WEBP 不是無損影像壓縮格式。</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
@@ -7916,8 +7893,7 @@ msgid "This Image Editor tool can convert image to a different color space."
 msgstr "這個影像編輯器工具可以用來將影像轉換至另一個色彩空間。"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:108
-#, fuzzy, kde-format
-#| msgid "Color Space"
+#, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "色彩空間"
@@ -7929,11 +7905,10 @@ msgid "Color Space Converter..."
 msgstr "色彩空間轉換器..."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:137
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
-msgstr "這張影像不能套用色彩管理。"
+msgstr "這張影像並未進行色彩管理。"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:154
 #, kde-format
@@ -12715,8 +12690,7 @@ msgid "Subject distance type:"
 msgstr "拍攝主體距離類型："
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@item: subject distance"
 msgid "Unknown"
 msgstr "不明"
@@ -16486,11 +16460,10 @@ msgid "Save Result"
 msgstr "儲存佈景主題"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:182
-#, fuzzy, kde-format
-#| msgid "File name filter:"
+#, kde-format
 msgctxt "@label: textbox"
 msgid "File Name Template: "
-msgstr "檔名過濾："
+msgstr "檔名範本："
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:303
 #, kde-format
@@ -17401,16 +17374,14 @@ msgid "Create jAlbum project files"
 msgstr "建立 jAlbum 專案檔案"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to create project files"
-msgstr "建立檔案失敗..."
+msgstr "建立專案檔失敗"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:143
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to create settings file"
-msgstr "建立檔案失敗..."
+msgstr "建立設定檔案失敗"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:157
 #, kde-format
@@ -17534,11 +17505,10 @@ msgstr "啟動影像編輯器"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:132
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
-#, fuzzy, kde-format
-#| msgid "Custom list"
+#, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
-msgstr "自訂清單"
+msgstr "啟動時一併啟動伺服器"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:133
 #, fuzzy, kde-format
@@ -17566,11 +17536,10 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:296
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgid "Median: "
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
-msgstr "中值："
+msgstr "媒體伺服器內容"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:209
 #, kde-format
@@ -17585,7 +17554,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Server is running"
-msgstr ""
+msgstr "伺服器執行中"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
@@ -17597,18 +17566,15 @@ msgstr[0] "已分享 %1 本相簿"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:249
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info"
 msgid "1 item shared"
 msgid_plural "%1 items shared"
-msgstr[0] "%1 個項目"
+msgstr[0] "已分享 %1 個項目"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:250
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "停止"
@@ -17618,16 +17584,14 @@ msgstr "停止"
 #, kde-format
 msgctxt "@label"
 msgid "Server is not running"
-msgstr ""
+msgstr "伺服器並非執行中"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:261
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "Start index for custom range"
-#| msgid "Start:"
+#, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr "起始值："
+msgstr "啟動"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:284
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:65
@@ -17656,19 +17620,17 @@ msgstr "項目排序(&S)"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:322
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
-msgstr "啟動影像編輯器"
+msgstr "正在啟動媒體伺服器"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:323
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player...."
+#, kde-format
 msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
-msgstr "媒體播放程式發生一個錯誤...."
+msgstr "啟動媒體伺服器時發生錯誤…"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:50
 #, kde-format
@@ -17712,16 +17674,14 @@ msgid "Media Server cannot be started!"
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:170
-#, fuzzy, kde-format
-#| msgid "The folders have been listed."
+#, kde-format
 msgid "MJPEG Server have been started"
-msgstr "已經列出資料夾。"
+msgstr "已啟動 MJPEG 伺服器"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:171
-#, fuzzy, kde-format
-#| msgid "The folders have been listed."
+#, kde-format
 msgid "MJPEG Server cannot be started!"
-msgstr "已經列出資料夾。"
+msgstr "無法啟動 MJPEG 伺服器！"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
 #, kde-format
@@ -17730,11 +17690,10 @@ msgid "Share Files With MJPEG Stream Server"
 msgstr "與 MJPEG 串流伺服器分享檔案"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgid "Median: "
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
-msgstr "中值："
+msgstr "MJPEG 伺服器內容"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:98
 #, kde-format
@@ -17745,11 +17704,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:61
-#, fuzzy, kde-format
-#| msgid "Service ID:"
+#, kde-format
 msgctxt "@label"
 msgid "Server Port:"
-msgstr "服務 ID："
+msgstr "伺服器連接埠："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:65
 #, kde-format
@@ -17758,13 +17716,12 @@ msgid "The MJPEG server IP port."
 msgstr "MJPEG 伺服器的 IP 連接埠。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:69
-#, fuzzy, kde-format
-#| msgid "Set this option to display the item name."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to turn-on the MJPEG server at application start-up "
 "automatically"
-msgstr "設定此選項會顯示項目的名稱。"
+msgstr "設定此選項來在應用程式啟動時自動開啟 MJPEG 伺服器"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
 #, kde-format
@@ -17780,25 +17737,23 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
-#, fuzzy, kde-format
-#| msgid "Preview"
+#, kde-format
 msgctxt "@action: button"
 msgid "Preview..."
-msgstr "預覽"
+msgstr "預覽..."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Press this button to preview the stream on your computer with your browser."
-msgstr ""
+msgstr "按下此按鈕來在您的電腦上用您的瀏覽器預覽串流。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:111
-#, fuzzy, kde-format
-#| msgid "MySQL interface"
+#, kde-format
 msgctxt "@title"
 msgid "Server"
-msgstr "MySQL 介面"
+msgstr "伺服器"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:127
 #, kde-format
@@ -17812,14 +17767,13 @@ msgctxt "@info"
 msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
 "more network bandwidth"
-msgstr ""
+msgstr "JPEG 品質 [50:低 - 100:高]。警告：品質越高需要的網路頻寬也就越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG Size:"
-msgstr "JPEG 檔案"
+msgstr "JPEG 尺寸："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
 #, kde-format
@@ -17828,20 +17782,20 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size require more network bandwidth"
 msgstr ""
+"JPEG 影像尺寸，以像素為單位，使用標準的螢幕解析度。警告：尺寸越大需要的網路頻"
+"寬也就越高"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
-#, fuzzy, kde-format
-#| msgid "Milliseconds"
+#, kde-format
 msgctxt "@label"
 msgid "Delay in Seconds:"
-msgstr "毫秒"
+msgstr "延遲（秒）："
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:164
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgctxt "@info"
 msgid "The delay in seconds between images."
-msgstr "影像之間延遲的秒數。"
+msgstr "影像之間停頓的秒數。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:167
 #, kde-format
@@ -17855,7 +17809,7 @@ msgctxt "@info"
 msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "require more network bandwidth"
-msgstr ""
+msgstr "算繪串流時每秒的影格數。警告：速率越高會需要越多網絡頻寬"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
 #, kde-format
@@ -17867,7 +17821,7 @@ msgstr "循環串流"
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead once."
-msgstr ""
+msgstr "MJPEG 串流會循環播放而非只播放一次。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
 #, kde-format
@@ -17879,8 +17833,7 @@ msgstr "串流"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:73
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:100
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label"
 msgid "Type:"
 msgstr "類型："
@@ -17893,13 +17846,14 @@ msgid ""
 "effects, the duration can depend of random values and can change while the "
 "stream."
 msgstr ""
+"轉場是兩張影像之間套用的視覺效果。某些效果的長度會依賴於隨機數值而在串流進行"
+"時變動。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
-#, fuzzy, kde-format
-#| msgid "Duration"
+#, kde-format
 msgctxt "@title"
 msgid "Transition"
-msgstr "持續時間"
+msgstr "轉場"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
 #, kde-format
@@ -17907,21 +17861,19 @@ msgctxt "@label"
 msgid ""
 "An effect is an visual panning or zooming applied while an image is "
 "displayed in MJPEG stream."
-msgstr ""
+msgstr "效果是影像顯示於 MJPEG 串流時能夠套用的視覺平移或縮放。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
-#, fuzzy, kde-format
-#| msgid "Effects"
+#, kde-format
 msgctxt "@title"
 msgid "Effect"
 msgstr "效果"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
-#, fuzzy, kde-format
-#| msgid "OSM"
+#, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
-msgstr "OSM"
+msgstr "OSD 螢幕顯示"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:51
 #, kde-format
@@ -18506,10 +18458,9 @@ msgid "Project file parsing failed."
 msgstr "連線失敗。"
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
-#, fuzzy, kde-format
-#| msgid "Failed to upload file <filename>%1</filename>."
+#, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。"
+msgstr "專案檔中有未知的輸入檔：<filename>%1</filename>"
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:177
 #, fuzzy, kde-format
@@ -18707,11 +18658,10 @@ msgid "Save Settings"
 msgstr "儲存設定"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
-#, fuzzy, kde-format
-#| msgid "File name filter:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
-msgstr "檔名過濾："
+msgstr "檔名範本："
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:92
 #, fuzzy, kde-format
@@ -19878,10 +19828,9 @@ msgid "%1 resized successfully"
 msgstr "%1 已成功調整大小"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
+#, kde-format
 msgid "Failed to resize %1: %2"
-msgstr "儲存檔案失敗：%1"
+msgstr "調整 %1 尺寸失敗：%2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
 #, fuzzy, kde-format
@@ -19969,7 +19918,7 @@ msgstr "檔案「%1」太大了而無法傳送，請壓低它的大小或是變�
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:649
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
-msgstr ""
+msgstr "啟動「%1」程式失敗。請檢查您的系統。"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
@@ -20316,11 +20265,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:91
-#, fuzzy, kde-format
-#| msgid "Ignore grouping"
+#, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
-msgstr "忽略群組"
+msgstr "建立影片投影片…"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidefinalpage.cpp:128
 #, fuzzy, kde-format
@@ -20376,18 +20324,15 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title: binary properties"
-#| msgid "Binary"
+#, kde-format
 msgctxt "@title:group"
 msgid "FFmpeg Binary"
-msgstr "執行檔"
+msgstr "FFmpeg 執行檔"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:112
-#, fuzzy, kde-format
-#| msgid "LibLqr"
+#, kde-format
 msgid "Media Container Format:"
-msgstr "LibLqr"
+msgstr "媒體容器格式："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:115
 #, kde-format
@@ -20434,35 +20379,30 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Image Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "影像資訊"
+msgstr "影格正規化"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:202
-#, fuzzy, kde-format
-#| msgid "Soundtrack"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "音樂"
+msgstr "背景音樂檔案："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:208
-#, fuzzy, kde-format
-#| msgid "Audio bitrate"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "音效位元率"
+msgstr "選擇音訊軌 "
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
-#, fuzzy, kde-format
-#| msgid "Soundtrack"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "音樂"
+msgstr "背景音樂長度："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgid "Open a preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "開啟預覽"
+msgstr "背景音樂預覽："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:224
 #, kde-format
@@ -20474,25 +20414,24 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:245
-#, fuzzy, kde-format
-#| msgid "Audio bitrate"
+#, kde-format
 msgid "Audio Track"
-msgstr "音效位元率"
+msgstr "音效軌"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgid "On Screen Display"
-msgstr "位置："
+msgstr "螢幕顯示"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
-msgstr ""
+msgstr "影片的輸出檔名會自動產生。"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:85
 #, kde-format
 msgid "Number of Frames by Image:"
-msgstr ""
+msgstr "每個影像的影格數："
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:88
 #, kde-format
@@ -20523,7 +20462,7 @@ msgstr "影片位元率："
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:165
 #, kde-format
 msgid "Effect While Displaying Images"
-msgstr ""
+msgstr "顯示影像時的效果"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:185
 #, kde-format
@@ -20535,10 +20474,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:201
-#, fuzzy, kde-format
-#| msgid "Or Between Tags"
+#, kde-format
 msgid "Transition Between Images"
-msgstr "或標籤之間"
+msgstr "影像之間的轉場"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:221
 #, kde-format
@@ -20547,6 +20485,8 @@ msgid ""
 "effects, the duration can depend of random values and can change while the "
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
+"<i>轉場是兩張影像之間套用的視覺效果。某些效果的長度會依賴於隨機數值而在投影片"
+"進行時變動。對於縮時攝影請將此設為無。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
 #, kde-format
@@ -20629,10 +20569,9 @@ msgid ""
 msgstr "無法儲存「%1」檔案"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
-#, fuzzy, kde-format
-#| msgid "Unknown filter"
+#, kde-format
 msgid "Unknown Error %1"
-msgstr "未知的濾鏡"
+msgstr "未知的錯誤 %1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -20674,7 +20613,7 @@ msgstr "桌布設定"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:73
 #, kde-format
 msgid "Wallpaper Layout:"
-msgstr ""
+msgstr "桌布佈局："
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:75
 #, fuzzy, kde-format
@@ -21936,21 +21875,22 @@ msgid "Box"
 msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Box web-service"
-msgstr "依評等排序"
+msgstr "匯出到 Box 網路服務的工具"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Box web-service.\n"
 "\n"
 "See Box web site for details: %1"
-msgstr "依評等排序"
+msgstr ""
+"這個工具讓使用者能匯出項目到 Box 網路服務。\n"
+"\n"
+"詳情請見 Box 網站：%1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
 #, kde-format
@@ -22116,13 +22056,16 @@ msgid "Uploading Failed"
 msgstr "上傳失敗"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:319
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to Box.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳圖片到 Box。\n"
+"%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:377
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
@@ -22141,20 +22084,17 @@ msgstr "登入失敗"
 #, kde-format
 msgctxt "@info"
 msgid "Authentication failed. Do you want to try again?"
-msgstr ""
+msgstr "認證失敗。您要重試嗎？"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:393
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:398
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your search failed:\n"
-#| "%1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Box call failed:\n"
 "%1"
 msgstr ""
-"您的搜尋失敗：\n"
+"Box 呼叫失敗：\n"
 "%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:44
@@ -22164,21 +22104,22 @@ msgid "Dropbox"
 msgstr "Dropbox"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Dropbox web-service"
-msgstr "依評等排序"
+msgstr "匯出到 Dropbox 網路服務的工具"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Dropbox web-service.\n"
 "\n"
 "See Dropbox web site for details: %1"
-msgstr "依評等排序"
+msgstr ""
+"這個工具讓使用者能匯出項目到 Dropbox 網路服務。\n"
+"\n"
+"詳情請見 Dropbox 網站：%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:94
 #, kde-format
@@ -22203,7 +22144,7 @@ msgstr "開始上傳到 Dropbox"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:241
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
-msgstr ""
+msgstr "沒有選取影像。請選擇要上傳的影像。"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:370
@@ -22211,7 +22152,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:384
 #, kde-format
 msgid "Authentication failed. Do you want to try again?"
-msgstr ""
+msgstr "認證失敗。您要重試嗎？"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:269
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:481
@@ -22230,24 +22171,24 @@ msgid "Dropbox export"
 msgstr "Dropbox 匯出"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:311
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to Dropbox.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 Dropbox。\n"
+"%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:384
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:389
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your search failed:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "Dropbox call failed:\n"
 "%1"
 msgstr ""
-"您的搜尋失敗：\n"
+"Dropbox 呼叫失敗：\n"
 "%1"
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:46
@@ -22916,10 +22857,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
-#, fuzzy, kde-format
-#| msgid "Unknown filter"
+#, kde-format
 msgid "Unknown error"
-msgstr "未知的濾鏡"
+msgstr "未知的錯誤"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:836
 #, kde-format
@@ -23185,11 +23125,13 @@ msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgstr "儲存某些資訊時失敗："
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:819
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo into %1. %2\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"上傳相片到 %1 失敗。%2\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:433
 #, kde-format
@@ -23513,20 +23455,24 @@ msgid "Google Photo export"
 msgstr "Google 相簿匯出"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:985
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to save photo: %1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"儲存相片失敗：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1006
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to download photo: %1\n"
 "Do you want to continue?"
-msgstr "下載檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"下載相片失敗：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1033
 #, fuzzy, kde-format
@@ -23536,13 +23482,16 @@ msgid "Failed to save image to %1"
 msgstr "儲存標籤到檔案中失敗。"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1055
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to %1.\n"
 "%2\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 %1。\n"
+"%2\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1105
 #, fuzzy, kde-format
@@ -23662,11 +23611,10 @@ msgid "Remove information bar on thumbnails"
 msgstr "在網際網路尋找更多的資訊"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "Add Folders..."
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Add to root folder"
-msgstr "加入資料夾..."
+msgstr "新增到根資料夾"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:91
 #, kde-format
@@ -23719,11 +23667,13 @@ msgid "Failed to get galleries list: %1\n"
 msgstr "儲存檔案失敗：%1"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:415
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 ImageShack：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:48
@@ -23853,11 +23803,13 @@ msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "載入影像「%1」失敗"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 Imgur：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:184
 #: core/libs/dialogs/webbrowserdlg.cpp:124
@@ -24436,11 +24388,13 @@ msgid "Failed to upload photo to IPFS: %1\n"
 msgstr "載入影像「%1」失敗"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 IPFS：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:203
 #, kde-format
@@ -25030,13 +24984,16 @@ msgid "Onedrive export"
 msgstr "Onedrive 匯出"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:318
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to OneDrive.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 OneDrive。\n"
+"%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:392
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:397
@@ -25117,12 +25074,15 @@ msgid "Pinterest export"
 msgstr "Pinterest 匯出"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:322
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to Pinterest.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 Pinterest。\n"
+"%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:394
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:399
@@ -25387,12 +25347,13 @@ msgid "Failed to upload media into remote Piwigo. "
 msgstr "儲存某些資訊時失敗："
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:640
-#, fuzzy, kde-format
-#| msgid " Do you want to continue?"
+#, kde-format
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "您是否要繼續？"
+msgstr ""
+"\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/rajce/rajcenewalbumdlg.cpp:40
 #, kde-format
@@ -25896,7 +25857,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"上傳相片到 SmugMug 失敗。\n"
+"無法上傳相片到 SmugMug。\n"
 "%1\n"
 "您要繼續嗎？"
 
@@ -25990,12 +25951,15 @@ msgid "Twitter export"
 msgstr "Twitter 匯出"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:321
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo to Twitter.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片到 Twitter。\n"
+"%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:401
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:406
@@ -26030,11 +25994,13 @@ msgid "Code: %1. %2"
 msgstr "相機： %1-%2"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:441
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo: %1\n"
 "Do you want to continue?"
-msgstr "下載檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"無法上傳相片：%1\n"
+"您要繼續嗎？"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:40
 #, fuzzy, kde-format
@@ -26440,13 +26406,15 @@ msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
+"<p>您希望刪除的相簿包含 digiKam 中未顯示的檔案 (%1)。</p><p>您確定要繼續嗎？"
+"</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:251
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
-msgstr "刪除檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr "<p>您希望刪除的相簿不是空的。</p><p>您確定要繼續嗎？</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
@@ -27188,7 +27156,7 @@ msgstr "掃描臉孔"
 msgid "Should sub-albums be scanned too?"
 msgstr "要掃描子相簿嗎？"
 
-#: core/libs/album/treeview/labelstreeview.cpp:91
+#: core/libs/album/treeview/labelstreeview.cpp:93
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -28364,7 +28332,7 @@ msgstr "人物"
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
-msgstr "未知"
+msgstr "不明"
 
 #: core/libs/database/tags/facetags.cpp:504
 #, kde-format
@@ -29383,8 +29351,7 @@ msgid "Settings for Saving Image File"
 msgstr "儲存影像檔的設定"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Info - %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "色彩描述檔資訊 - %1"
@@ -29531,17 +29498,13 @@ msgid "Libraries"
 msgstr "相簿櫃"
 
 #: core/libs/dialogs/libsinfodlg.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
 #: core/libs/dialogs/libsinfodlg.cpp:438
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
@@ -29571,8 +29534,7 @@ msgid "No"
 msgstr "否"
 
 #: core/libs/dialogs/libsinfodlg.cpp:705
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr "不明"
@@ -30635,10 +30597,9 @@ msgstr ""
 "度色版的平滑曲線點。"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:199
-#, fuzzy, kde-format
-#| msgid "Reset current channel curves' values."
+#, kde-format
 msgid "Resets channel/channels curves' values."
-msgstr "重設目前色版曲線的數值。"
+msgstr "重設色版曲線的數值。"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:200
 #, kde-format
@@ -30648,15 +30609,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:205
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reset &Channel"
-msgstr "還原所有更動"
+msgstr "重設色版(&C)"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:206
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgid "Reset &All"
-msgstr "重設"
+msgstr "全部重設(&A)"
 
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
@@ -32543,8 +32503,8 @@ msgid ""
 "range from 0.0 (none) to 10.0. The threshold is the value below which "
 "everything is considered noise."
 msgstr ""
-"<b>臨界值</b>：可在 0.0 (無) 到 10.0 範圍內調整影像去雜訊的臨界值。此臨界值是"
-"將影像全視為雜訊的數值。"
+"<b>閥值</b>：可在 0.0 (無) 到 10.0 範圍內調整影像去雜訊的閥值。此閥值是將影像"
+"全視為雜訊的數值。"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:89
 #, kde-format
@@ -32553,8 +32513,8 @@ msgid ""
 "opposed to hard thresholding). The higher the softness the more noise "
 "remains in the image."
 msgstr ""
-"<b>柔軟度</b>：這項可調整修正的柔軟度 (柔軟和硬式臨界值相反)。柔軟度愈高會使"
-"影像留下愈多雜訊。"
+"<b>柔軟度</b>：此選項可調整閥值的柔軟度（軟性閥值而非硬性閥值）。柔軟度愈高會"
+"使影像留下愈多雜訊。"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:95
 #, kde-format
@@ -32574,7 +32534,7 @@ msgstr "剖析影像中的雜訊，自動計算所有的去除雜訊設定。"
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:176
 #, kde-format
 msgid "Threshold:"
-msgstr "臨界值："
+msgstr "閥值："
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:114
 #: core/libs/dimg/filters/nr/nrsettings.cpp:141
@@ -32704,7 +32664,7 @@ msgstr "將原始和模糊影像之間的差異值重新加入到原始影像。
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
 "apply the difference amount."
-msgstr "此臨界值為最大明度值的分數，需要套用數量差值。"
+msgstr "套用差值量所需要的閥值，為最大明度值的比例。"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:185
 #, kde-format
@@ -34286,21 +34246,21 @@ msgid "Failed to transform these files:"
 msgstr "轉換這些檔案失敗："
 
 #: core/libs/fileactionmanager/metadatahubmngr.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
-msgstr "套用中繼資料中"
+msgstr "套用待處理變更到中繼資料"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Apply pending changes to metadata"
-msgstr "套用中繼資料中"
+msgstr "套用待處理變更到中繼資料"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:67
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgid "No pending metadata synchronization"
-msgstr "加入中繼資料資訊"
+msgstr "沒有待處理的中繼資料同步"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:69
 #, kde-format
@@ -34687,67 +34647,55 @@ msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:99
-#, fuzzy, kde-format
-#| msgid "Assign 'Rejected' Label to Low Quality Pictures"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr "對低品質的圖片指定「已拒絕」的標籤"
+msgstr "指派「已拒絕」旗標給低品質圖片"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:100
-#, fuzzy, kde-format
-#| msgid ""
-#| "Low quality images detected by blur, noise, and compression analysis will "
-#| "be assigned to Rejected label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by blur, noise, and compression analysis will be "
 "assigned to Rejected label."
 msgstr ""
-"依照模糊、雜訊與壓縮等分析判定為低品質的影像，會被指定一個「已拒絕」標籤。"
+"依照模糊、雜訊與壓縮等分析判定為低品質的影像，會被指派為「已拒絕」旗標。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:112
-#, fuzzy, kde-format
-#| msgid "Assign 'Pending' Label to Medium Quality Pictures"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgstr "對中等品質的圖片指定「暫停」的標籤"
+msgstr "指派「待處理」旗標給中等品質圖片"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Medium quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Pending label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by blur, noise, and compression analysis will "
 "be assigned to Pending label."
 msgstr ""
-"依照模糊、雜訊與壓縮等分析判定為中等品質的影像，會被指定一個「暫停」標籤。"
+"依照模糊、雜訊與壓縮等分析判定為中等品質的影像，會被指派為「待處理」旗標。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
-#, fuzzy, kde-format
-#| msgid "Assign 'Accepted' Label to High Quality Pictures"
+#, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgstr "對高品質的圖片指定「已接受」的標籤"
+msgstr "指派「已接受」旗標給高品質圖片"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "High quality images detected by blur, noise, and compression analysis "
-#| "will be assigned to Accepted label."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by blur, noise, and compression analysis will "
 "be assigned to Accepted label."
 msgstr ""
-"依照模糊、雜訊與壓縮等分析判定為高品質的影像，會被指定一個「已接受」標籤。"
+"依照模糊、雜訊與壓縮等分析判定為高品質的影像，會被指派為「已接受」旗標。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr ""
+msgstr "使用深度學習來偵測美感影像"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
@@ -34756,12 +34704,14 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"偵測影像是否有美感價值。\n"
+"美感偵測引擎利用深度學習模型來分類影像"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
-msgstr ""
+msgstr "使用基礎要素來偵測品質"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
@@ -34769,13 +34719,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
 "exposure, and compression)."
-msgstr ""
+msgstr "偵測影像是否被四個基礎要素（模糊、雜訊、曝光、壓縮）影響而失真。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
-msgstr "已拒絕臨界值："
+msgstr "已拒絕閥值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, fuzzy, kde-format
@@ -34785,11 +34735,10 @@ msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr "指定為「已接受」標籤的上限值"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
-#, fuzzy, kde-format
-#| msgid "Pending threshold:"
+#, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
-msgstr "暫停臨界值："
+msgstr "待處理閥值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, fuzzy, kde-format
@@ -34802,7 +34751,7 @@ msgstr "指定為「暫停」標籤的上限值"
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
-msgstr "已接受臨界值："
+msgstr "已接受閥值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:178
 #, fuzzy, kde-format
@@ -37517,8 +37466,7 @@ msgstr "未經校準"
 #: core/libs/properties/itempropertiessidebar.cpp:257
 #: core/libs/properties/itempropertiessidebardb.cpp:667
 #: core/libs/properties/itempropertiessidebardb.cpp:680
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "不明"
@@ -37843,47 +37791,46 @@ msgid "Quality:"
 msgstr "品質："
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "Bilinear"
-msgstr "線性內插法"
+msgstr "雙線性"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:240
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "VNG"
-msgstr "PNG"
+msgstr "VNG"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "PPG"
-msgstr "PNG"
+msgstr "PPG"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:242
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AHD"
-msgstr "且"
+msgstr "AHD"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:243
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "DCB"
-msgstr ""
+msgstr "DCB"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:244
-#, fuzzy, kde-format
-#| msgid "DTD"
+#, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "DHT"
-msgstr "DTD"
+msgstr "DHT"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:245
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AAHD"
-msgstr ""
+msgstr "AAHD"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:249
 #, kde-kuit-format
@@ -37968,10 +37915,10 @@ msgid "Method:"
 msgstr "方式："
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:334
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default D65"
-msgstr "預設"
+msgstr "預設 D65"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:335
 #, kde-format
@@ -37986,7 +37933,7 @@ msgid "Automatic"
 msgstr "自動"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:337
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox set white balance manually"
 msgid "Manual"
 msgstr "手動"
@@ -38035,7 +37982,7 @@ msgid ""
 msgstr "在這裡設定綠色元件以控制洋紅色偏去除等級。"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:366
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
 msgstr "亮部："
@@ -38050,19 +37997,19 @@ msgstr "純白"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unclip"
-msgstr ""
+msgstr "不削值"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:370
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Blend"
-msgstr "月曆"
+msgstr "混色"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:371
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Rebuild"
-msgstr "全部重新建立"
+msgstr "重建"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:373
 #, kde-kuit-format
@@ -38229,10 +38176,10 @@ msgid "White Balance"
 msgstr "白平衡"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:504
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Noise reduction:"
-msgstr "減少雜訊"
+msgstr "降噪："
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:506
 #, kde-format
@@ -38241,16 +38188,16 @@ msgid "None"
 msgstr "無"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:507
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "Wavelets"
-msgstr "垂直波"
+msgstr "子波降噪"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:508
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "FBDD"
-msgstr ""
+msgstr "FBDD 降噪"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:510
 #, kde-kuit-format
@@ -38276,7 +38223,7 @@ msgstr "收藏"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Camera Profile:"
-msgstr "相機設定檔："
+msgstr "相機描述檔："
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:545
 #, kde-format
@@ -38311,29 +38258,28 @@ msgstr ""
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:560
 #: core/libs/rawengine/drawdecoderwidget.cpp:594
-#, fuzzy, kde-format
-#| msgid "ICC Files (*.icc; *.icm)"
+#, kde-format
 msgctxt "@info: open file filters"
 msgid "ICC Files (*.icc *.icm)"
-msgstr "ICC 檔案 (*.icc; *.icm)"
+msgstr "ICC 檔案 (*.icc *.icm)"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:562
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Workspace:"
-msgstr "工作色域描述檔"
+msgstr "作業空間："
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:564
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Raw (no profile)"
-msgstr "原始 (無特性檔案)"
+msgstr "原始（無描述檔）"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:565
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "sRGB"
-msgstr ""
+msgstr "sRGB"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:566
 #, kde-format
@@ -38345,13 +38291,13 @@ msgstr "Adobe RGB"
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Wide Gamut"
-msgstr ""
+msgstr "廣色域"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:568
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Pro-Photo"
-msgstr ""
+msgstr "Pro-Photo"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:569
 #, kde-format
@@ -38759,13 +38705,13 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] ""
 "標籤 '%2' 有 %1 個子標籤。刪除這個標籤也會刪除子標籤們。\n"
-"您是否要繼續？"
+"您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
-msgstr[0] "標籤 '%2' 被指定到 %1 個項目。是否要繼續？"
+msgstr[0] "標籤 '%2' 被指定到 %1 個項目。您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
@@ -38787,12 +38733,12 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "標籤 '%1' 有一個以上的子標籤。刪除這些標籤也會刪除子標籤們。\n"
-"您是否要繼續？"
+"您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
-msgstr "標籤 '%1' 被指定到一個以上的項目。是否要繼續？"
+msgstr "標籤 '%1' 被指定到一個以上的項目。您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, kde-format
@@ -38800,7 +38746,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "要刪除「%1」標籤嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:570
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -38809,17 +38755,17 @@ msgid_plural ""
 "Face tags '%2' have at least one face tag child. Removing them will also "
 "remove the children.\n"
 "Do you want to continue?"
-msgstr[0] "標籤 '%2' 有 %1 個子標籤。刪除這個標籤也會刪除子標籤。是否要繼續？"
+msgstr[0] ""
+"臉孔標籤「%2」有至少一個子臉孔標籤。刪除它們也會一同刪除子臉孔標籤。\n"
+"您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:592
-#, fuzzy, kde-format
-#| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
-#| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
 msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
-msgstr[0] "標籤 '%2' 被指定到 %1 個項目。是否要繼續？"
+msgstr[0] "臉孔標籤 '%2' 已被指派給至少一個項目。您確定要繼續嗎？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
@@ -39012,7 +38958,7 @@ msgid_plural ""
 "Tags %2 have one or more subtags. Deleting them will also delete the "
 "subtags. Do you want to continue?"
 msgstr[0] ""
-"標籤 %2 有一個以上的子標籤。刪除這些標籤也會刪除子標籤們。您是否要繼續？"
+"標籤 %2 有一個以上的子標籤。刪除這些標籤也會刪除子標籤們。您確定要繼續嗎？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
@@ -39043,6 +38989,9 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
+"<qt>digiKam 會在設定來自資料庫的標籤前清理標籤中繼資料。<br/>如果先前沒有利用"
+"「從影像讀取標籤」讀取過標籤的話您可能會<b>喪失標籤資訊</b>。<br/>您確定要繼"
+"續嗎？</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:498
 #: core/libs/tags/manager/tagsmanager.cpp:517
@@ -39050,10 +38999,10 @@ msgstr ""
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
-msgstr "這項操作依照收藏的大小，可能會花很長的時間。您要繼續嗎？"
+msgstr "這項操作依照收藏的大小，可能會花很長的時間。您確定要繼續嗎？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:537
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
 "To apply changes to files, you must choose write metadata to file later.\n"
@@ -39129,10 +39078,9 @@ msgid "Selected items will be expanded"
 msgstr "選取的項目會被展開"
 
 #: core/libs/tags/manager/tagsmanager.cpp:744
-#, fuzzy, kde-format
-#| msgid "Expand tag tree by one level"
+#, kde-format
 msgid "Expand tag tree completely"
-msgstr "將標籤樹展開一層"
+msgstr "完全展開標籤樹狀圖"
 
 #: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
@@ -39165,8 +39113,7 @@ msgid "Write Tags Metadata to Image."
 msgstr "將標籤中繼資料寫入影像。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:806
-#, fuzzy, kde-format
-#| msgid "Read tags from Images into Database. Existing tags won't be affected"
+#, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "從影像讀取標籤再寫入資料庫。現有的標籤不會受到影響"
 
@@ -41563,74 +41510,64 @@ msgid "The color space used by the ICC profile"
 msgstr "ICC 描述檔使用的色彩空間"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Connection Space"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Connection Space"
 msgstr "通聯空間"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "The connection space used by the ICC profile"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The connection space used by the ICC profile"
-msgstr "此 ICC 描述檔使用的通聯空間"
+msgstr "ICC 描述檔使用的通聯空間"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:141
-#, fuzzy, kde-format
-#| msgid "Device Class"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Device Class"
 msgstr "裝置類別"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
-#, fuzzy, kde-format
-#| msgid "The ICC profile device class"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile device class"
-msgstr "此 ICC 描述檔裝置類別"
+msgstr "ICC 描述檔的裝置類別"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "Rendering Intent"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
-msgstr "色彩對應方式"
+msgstr "色彩演算比對方式"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "The ICC profile rendering intent"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
-msgstr "此 ICC 描述檔色彩對應方式"
+msgstr "ICC 描述檔的色彩演算比對方式"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Profile Version"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Profile Version"
 msgstr "描述檔版本"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "The ICC version used to record the profile"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC version used to record the profile"
-msgstr "此 ICC 版本用於記錄描述檔"
+msgstr "用於記錄描述檔的 ICC 版本"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "CMM Flags"
+#, kde-format
 msgctxt "@item: icc profile properties"
 msgid "CMM Flags"
-msgstr "色彩管理模組 (CMM) 標示"
+msgstr "色彩管理模組 (CMM) 旗標"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "The ICC profile color management flags"
+#, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile color management flags"
-msgstr "此 ICC 描述檔顏色管理標示"
+msgstr "ICC 描述檔的色彩管理旗標"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:170
 #, kde-format
@@ -41657,80 +41594,70 @@ msgstr ""
 "點。黃線代表由描述檔校正的每一點數量和校正的方向。</p>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "ICC Color Profile Information"
+#, kde-format
 msgctxt "@title: icc profile properties"
 msgid "ICC Color Profile Information"
 msgstr "ICC 色彩描述檔資訊"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:347
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:408
-#, fuzzy, kde-format
-#| msgid "Lab"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "Lab"
-msgstr "Lab 色彩模式"
+msgstr "Lab"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:353
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:414
-#, fuzzy, kde-format
-#| msgid "Luv"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "Luv"
-msgstr "Luv 色彩模式"
+msgstr "Luv"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:359
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:420
-#, fuzzy, kde-format
-#| msgid "RGB"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "RGB"
-msgstr "RGB 色彩模式"
+msgstr "RGB"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:365
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:426
-#, fuzzy, kde-format
-#| msgid "GRAY"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "GRAY"
-msgstr "灰階模式"
+msgstr "灰階"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:371
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:432
-#, fuzzy, kde-format
-#| msgid "HSV"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "HSV"
-msgstr "HSV 色彩模式"
+msgstr "HSV"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:377
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:438
-#, fuzzy, kde-format
-#| msgid "HLS"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "HLS"
-msgstr "HLS 色彩模式"
+msgstr "HLS"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:383
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:444
-#, fuzzy, kde-format
-#| msgid "CMYK"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "CMYK"
-msgstr "CMYK 色彩模式"
+msgstr "CMYK"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:389
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:450
-#, fuzzy, kde-format
-#| msgid "CMY"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "CMY"
-msgstr "CMY 色彩模式"
+msgstr "CMY"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:395
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: icc profile color space"
 msgid "Unknown"
 msgstr "不明"
@@ -41760,24 +41687,22 @@ msgid "Color space"
 msgstr "色彩空間"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:493
-#, fuzzy, kde-format
-#| msgid "Link device"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Link device"
-msgstr "連接裝置"
+msgstr "連結裝置"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:499
-#, fuzzy, kde-format
-#| msgid "Abstract"
+#, kde-format
 msgctxt "@info: icc profile class"
 msgid "Abstract"
-msgstr "抽象類別"
+msgstr "抽象"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:505
 #, kde-format
 msgctxt "@info: icc profile class"
 msgid "Named color"
-msgstr "有名稱的顏色"
+msgstr "已命名色彩"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:511
 #, kde-format
@@ -41786,8 +41711,7 @@ msgid "Unknown"
 msgstr "不明"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:524
-#, fuzzy, kde-format
-#| msgid "Perceptual"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
 msgstr "感知式"
@@ -41811,8 +41735,7 @@ msgid "Absolute Colorimetric"
 msgstr "絕對比色"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:548
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Unknown"
 msgstr "不明"
@@ -42966,7 +42889,7 @@ msgstr "超文件標示語言 「HTML」"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
-msgstr ""
+msgstr "國際色彩聯盟 (ICC) 色彩描述檔"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
 #, fuzzy, kde-format
@@ -43099,7 +43022,7 @@ msgstr "中繼資訊"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
 #, kde-format
 msgid "Ogg Bitstream Container"
-msgstr ""
+msgstr "Ogg 位元串流容器"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
 #, fuzzy, kde-format
@@ -43156,10 +43079,9 @@ msgid "Panasonic RAW 2 Information"
 msgstr "標題資訊"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
-#, fuzzy, kde-format
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Streaming Parrot Drone Video Information"
-msgstr "日期和時間資訊"
+msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
 #, fuzzy, kde-format
@@ -52490,7 +52412,7 @@ msgstr "地域"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:317
 #, kde-format
 msgid "Crater"
-msgstr ""
+msgstr "撞擊坑"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:318
 #, kde-format
@@ -52500,7 +52422,7 @@ msgstr "海洋"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:319
 #, kde-format
 msgid "Manned Landing Site"
-msgstr ""
+msgstr "載人的著陸點"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:320
 #, kde-format
@@ -52510,12 +52432,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:321
 #, kde-format
 msgid "Unmanned Soft Landing Site"
-msgstr ""
+msgstr "未載人的軟著陸點"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:322
 #, kde-format
 msgid "Unmanned Hard Landing Site"
-msgstr ""
+msgstr "未載人的硬著陸點"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:323
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:341
@@ -52565,7 +52487,7 @@ msgstr "磁極"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:347
 #, kde-format
 msgid "Ship Wreck"
-msgstr ""
+msgstr "船跡"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:348
 #, kde-format
@@ -52573,15 +52495,14 @@ msgid "Air Port"
 msgstr "機場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:349
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgid "Observatory"
-msgstr "重複："
+msgstr "觀測所"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:350
 #, kde-format
 msgid "Military Danger Area"
-msgstr ""
+msgstr "軍事危險區"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:351
 #, kde-format
@@ -52610,16 +52531,14 @@ msgid "Suburb"
 msgstr "郊區"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:360
-#, fuzzy, kde-format
-#| msgid "{Hamlet}"
+#, kde-format
 msgid "Hamlet"
-msgstr "{Hamlet}"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:361
-#, fuzzy, kde-format
-#| msgid "Normalize"
+#, kde-format
 msgid "Locality"
-msgstr "標準化"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:362
 #, kde-format
@@ -52629,18 +52548,17 @@ msgstr "城鎮"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:363
 #, kde-format
 msgid "Town Capital"
-msgstr ""
+msgstr "城鎮首府"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:366
-#, fuzzy, kde-format
-#| msgid "Add village tag"
+#, kde-format
 msgid "Village Capital"
-msgstr "新增鄉村標籤"
+msgstr "村落首府"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:368
 #, kde-format
 msgid "Water"
-msgstr ""
+msgstr "水域"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:369
 #, kde-format
@@ -52656,13 +52574,12 @@ msgstr "微晶木"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:371
 #, kde-format
 msgid "Beach"
-msgstr ""
+msgstr "海灘"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:372
-#, fuzzy, kde-format
-#| msgid "Iceland"
+#, kde-format
 msgid "Wetland"
-msgstr "冰島"
+msgstr "溼地"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:373
 #, kde-format
@@ -52682,24 +52599,22 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Cliff"
-msgstr ""
+msgstr "懸崖"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:377
-#, fuzzy, kde-format
-#| msgid "Feather:"
+#, kde-format
 msgid "Heath"
-msgstr "羽化："
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:378
 #, kde-format
 msgid "Traffic Signals"
-msgstr ""
+msgstr "紅綠燈"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:379
-#, fuzzy, kde-format
-#| msgid "My Calendar"
+#, kde-format
 msgid "Elevator"
-msgstr "我的行事曆"
+msgstr "電梯"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:380
 #, kde-format
@@ -52729,10 +52644,9 @@ msgid "Cycleway"
 msgstr "自行車道"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
-#, fuzzy, kde-format
-#| msgid "Service ID:"
+#, kde-format
 msgid "Service Road"
-msgstr "服務 ID："
+msgstr "輔道"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
@@ -52752,7 +52666,7 @@ msgstr "生活街道"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Unclassified Road"
-msgstr ""
+msgstr "未分類道路"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
@@ -52772,7 +52686,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Secondary Road"
-msgstr ""
+msgstr "次要道路"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:396
 #, kde-format
@@ -52782,7 +52696,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Primary Road"
-msgstr ""
+msgstr "主要道路"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
@@ -52797,7 +52711,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:400
 #, kde-format
 msgid "Trunk Road"
-msgstr ""
+msgstr "幹道"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:401
 #, kde-format
@@ -52825,10 +52739,9 @@ msgid "Camping"
 msgstr "露營"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:406
-#, fuzzy, kde-format
-#| msgid "Host Name"
+#, kde-format
 msgid "Hostel"
-msgstr "主機名稱"
+msgstr "青年旅館"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #, kde-format
@@ -52843,7 +52756,7 @@ msgstr "Motel"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:409
 #, kde-format
 msgid "Youth Hostel"
-msgstr ""
+msgstr "青年旅館"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #, kde-format
@@ -53032,10 +52945,9 @@ msgid "Recycling"
 msgstr "回收"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:446
-#, fuzzy, kde-format
-#| msgid "Sepia Filter"
+#, kde-format
 msgid "Shelter"
-msgstr "深褐色濾鏡"
+msgstr "避難所"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:447
 #, kde-format
@@ -53050,7 +52962,7 @@ msgstr "廁所"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Town Hall"
-msgstr ""
+msgstr "市政廳"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #, kde-format
@@ -53117,7 +53029,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Cave Entrance"
-msgstr ""
+msgstr "洞穴入口"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:464
 #, fuzzy, kde-format
@@ -53134,7 +53046,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Supermarket"
-msgstr ""
+msgstr "超市"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
@@ -53152,26 +53064,24 @@ msgid "Butcher"
 msgstr "屠宰場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:470
-#, fuzzy, kde-format
-#| msgid "Connection Space"
+#, kde-format
 msgid "Confectionery"
-msgstr "通聯空間"
+msgstr "甜點店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:471
 #, kde-format
 msgid "Convenience Shop"
-msgstr ""
+msgstr "便利商店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:472
-#, fuzzy, kde-format
-#| msgid "Greece"
+#, kde-format
 msgid "Greengrocer"
-msgstr "希臘"
+msgstr "蔬果"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
 msgid "Seafood Shop"
-msgstr ""
+msgstr "海產店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:474
 #, kde-format
@@ -53194,15 +53104,14 @@ msgid "Clothes Shop"
 msgstr "服飾店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:478
-#, fuzzy, kde-format
-#| msgid "Light Source Information"
+#, kde-format
 msgid "Fashion Shop"
-msgstr "光源資訊"
+msgstr "時尚商店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Jewelry Shop"
-msgstr ""
+msgstr "寶石店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
@@ -53223,7 +53132,7 @@ msgstr "選擇服務"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:483
 #, kde-format
 msgid "Chemist"
-msgstr ""
+msgstr "化學"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
@@ -53243,7 +53152,7 @@ msgstr "眼科"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Perfumery"
-msgstr ""
+msgstr "香水"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:488
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:490
@@ -53254,7 +53163,7 @@ msgstr "五金行"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:489
 #, kde-format
 msgid "Florist"
-msgstr ""
+msgstr "花店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:491
 #, kde-format
@@ -53264,7 +53173,7 @@ msgstr "傢俱店"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
 msgid "Electronics Shop"
-msgstr ""
+msgstr "電器行"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:493
 #, kde-format
@@ -53274,7 +53183,7 @@ msgstr "手機行"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:494
 #, kde-format
 msgid "Bicycle Shop"
-msgstr ""
+msgstr "腳踏車店"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #, kde-format
@@ -53294,7 +53203,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "Motorcycle Shop"
-msgstr ""
+msgstr "機車行"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:499
 #, kde-format
@@ -53395,23 +53304,22 @@ msgstr "商店"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:518
 #, kde-format
 msgid "Bridge"
-msgstr ""
+msgstr "橋"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:519
-#, fuzzy, kde-format
-#| msgid "Light source:"
+#, kde-format
 msgid "Lighthouse"
-msgstr "光源："
+msgstr "燈塔"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:520
 #, kde-format
 msgid "Pier"
-msgstr ""
+msgstr "碼頭"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Water Tower"
-msgstr ""
+msgstr "水塔"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
@@ -53424,10 +53332,9 @@ msgid "Communications Tower"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:524
-#, fuzzy, kde-format
-#| msgid "No selection"
+#, kde-format
 msgid "Tourist Attraction"
-msgstr "熱門景點"
+msgstr "景點"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
@@ -53495,10 +53402,9 @@ msgid "Wilderness Hut"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
-#, fuzzy, kde-format
-#| msgid "Serial"
+#, kde-format
 msgid "Memorial"
-msgstr "串列"
+msgstr "紀念碑"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
@@ -53513,27 +53419,27 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:541
 #, kde-format
 msgid "Airport Gate"
-msgstr ""
+msgstr "機場登機口"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Airport Runway"
-msgstr ""
+msgstr "機場跑道"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Airport Apron"
-msgstr ""
+msgstr "機場停機坪"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
 #, kde-format
 msgid "Airport Taxiway"
-msgstr ""
+msgstr "機場滑行道"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Airport Terminal"
-msgstr ""
+msgstr "機場航廈"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
@@ -53626,10 +53532,9 @@ msgid "Place Of Worship"
 msgstr "宗教"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:564
-#, fuzzy, kde-format
-#| msgid "Bahamas"
+#, kde-format
 msgid "Bahai"
-msgstr "巴哈馬"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
 #, kde-format
@@ -53682,10 +53587,9 @@ msgid "Golf Course"
 msgstr "高爾夫球場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:575
-#, fuzzy, kde-format
-#| msgid "San Marino"
+#, kde-format
 msgid "Marina"
-msgstr "聖馬利諾"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:576
 #, kde-format
@@ -53705,7 +53609,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:579
 #, kde-format
 msgid "Sports Centre"
-msgstr ""
+msgstr "運動中心"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:580
 #, kde-format
@@ -53723,16 +53627,14 @@ msgid "Miniature Golf Course"
 msgstr "迷你高爾夫"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:584
-#, fuzzy, kde-format
-#| msgctxt "Picture adjustments"
-#| msgid "Adjustments"
+#, kde-format
 msgid "Allotments"
-msgstr "調整"
+msgstr "休閒農場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Basin"
-msgstr ""
+msgstr "水池"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:586
 #, kde-format
@@ -53742,12 +53644,12 @@ msgstr "公墓"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Commercial"
-msgstr ""
+msgstr "商業"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Construction"
-msgstr ""
+msgstr "建築"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:589
 #, kde-format
@@ -53767,7 +53669,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:592
 #, kde-format
 msgid "Grass"
-msgstr ""
+msgstr "草"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
@@ -53777,7 +53679,7 @@ msgstr "工業"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Landfill"
-msgstr ""
+msgstr "掩埋場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:595
 #, kde-format
@@ -53787,34 +53689,32 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Military"
-msgstr ""
+msgstr "軍事"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Quarry"
-msgstr ""
+msgstr "採石場"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:598
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "鐵路"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:599
-#, fuzzy, kde-format
-#| msgid "Reset curve to linear"
+#, kde-format
 msgid "Reservoir"
-msgstr "重設曲線為直線"
+msgstr "水庫"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Residential"
-msgstr ""
+msgstr "住宅區"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:601
-#, fuzzy, kde-format
-#| msgid "Details"
+#, kde-format
 msgid "Retail"
-msgstr "詳細資料"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
@@ -53870,10 +53770,9 @@ msgid "Miniature Railway"
 msgstr "迷你鐵路"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:612
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "Railway Construction"
-msgstr "Raw 轉換"
+msgstr "鐵路建設"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
 #, kde-format
@@ -54104,10 +54003,9 @@ msgid "Canal"
 msgstr "運河"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:657
-#, fuzzy, kde-format
-#| msgid "Terrain"
+#, kde-format
 msgid "Drain"
-msgstr "地域"
+msgstr "水溝"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
 #, kde-format
@@ -54293,18 +54191,15 @@ msgid "Name"
 msgstr "名稱"
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:198
-#, fuzzy, kde-format
-#| msgid "Regularity:"
+#, kde-format
 msgid "Popularity"
-msgstr "勻稱："
+msgstr ""
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "Color Model: Indexed"
-#| msgid "Indexed"
+#, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr "索引色"
+msgstr ""
 
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:256
 #, kde-format
@@ -54319,7 +54214,7 @@ msgstr "沒有指定名稱"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "請指定此關聯的名稱。"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
 #, kde-format
@@ -54329,13 +54224,13 @@ msgstr "沒有指定類型標籤"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr ""
+msgstr "請為此關聯加入類型標籤。"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:79
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:90
 #, kde-format
 msgid "New Relation"
-msgstr ""
+msgstr "新增關聯"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:154
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
@@ -54348,23 +54243,21 @@ msgstr "編輯"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:23
-#, fuzzy, kde-format
-#| msgid "Current aspect ratio"
+#, kde-format
 msgid "Current Relations"
-msgstr "目前影像比例"
+msgstr "目前的關聯"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:44
 #, kde-format
 msgid "Role"
-msgstr ""
+msgstr "角色"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_addRelation)
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:67
-#, fuzzy, kde-format
-#| msgid "Add Collection"
+#, kde-format
 msgid "Add Relation"
-msgstr "新增收藏"
+msgstr "新增關聯"
 
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:105
 #: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:115
@@ -54459,13 +54352,13 @@ msgstr "箭頭"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:61
 #, kde-format
 msgid "Atom"
-msgstr ""
+msgstr "原子"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:70
 #, kde-format
 msgid "Magnet"
-msgstr ""
+msgstr "磁鐵"
 
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:58
 #, kde-format
@@ -54562,10 +54455,9 @@ msgstr "影像的色彩模式"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:922
-#, fuzzy, kde-format
-#| msgid "Topic"
+#, kde-format
 msgid "&Tropics:"
-msgstr "主題"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, tropicsPushButton)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:938
@@ -54778,31 +54670,27 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "多邊形"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:33
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:127
-#, fuzzy, kde-format
-#| msgctxt "Filter Effect: Circle Out"
-#| msgid "Circle Out"
+#, kde-format
 msgid "Circle"
-msgstr "圓形擴大"
+msgstr "圓形"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:51
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgid "Segment labels"
-msgstr "影像旗標"
+msgstr "區段旗標"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showDistanceLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:60
-#, fuzzy, kde-format
-#| msgid "Distance:"
+#, kde-format
 msgid "Distance "
-msgstr "距離："
+msgstr "距離 "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:70
@@ -54832,7 +54720,7 @@ msgstr "參數"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "面積"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:142
@@ -54844,7 +54732,7 @@ msgstr "半徑"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:152
 #, kde-format
 msgid "Circumference"
-msgstr "圓週長"
+msgstr "圓周長"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:87
 #, kde-format
@@ -54868,6 +54756,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"面積：\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:385
 #, kde-format
@@ -54875,6 +54765,8 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"圓周長：\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:500
 #, fuzzy, kde-format
@@ -54974,16 +54866,14 @@ msgid "Home Button"
 msgstr "首頁按鍵"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:68
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Overview Map"
-msgstr "顯示概要地圖"
+msgstr "概觀地圖"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "&Overview Map"
-msgstr "顯示概要地圖"
+msgstr "概觀地圖(&O)"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:88
 #, fuzzy, kde-format
@@ -54991,10 +54881,9 @@ msgid "A plugin to add a float item that provides an overview map."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:479
-#, fuzzy, kde-format
-#| msgid "Show overview map"
+#, kde-format
 msgid "Choose Overview Map"
-msgstr "顯示概要地圖"
+msgstr "選擇概觀地圖"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:511
 #, fuzzy, kde-format
@@ -55004,10 +54893,9 @@ msgstr "在這裡設定第二條線的顏色。"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, OverviewMapConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:14
-#, fuzzy, kde-format
-#| msgid "<b>Configure Preview Behavior</b>"
+#, kde-format
 msgid "Configure Overview Map"
-msgstr "<b>設定預覽行為</b>"
+msgstr "設定概觀地圖"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:20
@@ -55029,17 +54917,15 @@ msgstr "大小(&S)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:97
-#, fuzzy, kde-format
-#| msgctxt "Pixels"
-#| msgid "px"
+#, kde-format
 msgid "x"
-msgstr "px"
+msgstr "×"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMapConfigWidget.ui:200
-#, fuzzy, kde-format
+#, kde-format
 msgid "Position I&ndicator:"
-msgstr "地理位置濾鏡"
+msgstr "位置指示器(&N)："
 
 #: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:80
 #, kde-format
@@ -55057,10 +54943,9 @@ msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "顯示詳情進度對視窗"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:29
-#, fuzzy, kde-format
-#| msgid "Transform"
+#, kde-format
 msgid "Cache File Parser"
-msgstr "變形"
+msgstr "快取檔案剖析器"
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:44
 #, kde-format
@@ -55068,10 +54953,9 @@ msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:60
-#, fuzzy, kde-format
-#| msgid "Marble 2"
+#, kde-format
 msgid "Marble Cache Files"
-msgstr "大理石 2"
+msgstr "Marble 快取檔"
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
 #, kde-format
@@ -55596,87 +55480,87 @@ msgstr "繪製工具"
 msgid "Runner Tools"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:45
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:120
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:130
 #, kde-format
 msgid "Visible region"
 msgstr "可見區域"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:122
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:132
 #, kde-format
 msgid "Specify region"
 msgstr "指定區域"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:124
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:134
 #, kde-format
 msgid "Download Route"
 msgstr "下載路徑"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:126
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:136
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:149
 #, kde-format
 msgid "Offset from route:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:169
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:179
 #, kde-format
 msgid "Selection Method"
 msgstr "選取方法"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:177
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:187
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:227
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:237
 #, kde-format
 msgid "Download Region"
 msgstr "下載區域"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:229
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:239
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:231
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:241
 #, kde-format
 msgid "Texture tiles"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:232
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:242
 #, kde-format
 msgid "Vector tiles"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:233
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:243
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:527
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:547
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:541
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:551
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "估計下載大小：%1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:544
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:554
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "估計下載大小：%1 kB"
@@ -56071,10 +55955,10 @@ msgid "Imported %1"
 msgstr "已匯入 %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "儲存於檔案"
+msgstr "儲存檔案"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
 #, kde-format
@@ -56082,35 +55966,30 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 書籤.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
-msgstr "書籤"
+msgstr "匯出書籤"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "書籤"
+msgstr "儲存書籤時發生錯誤"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:155
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "Edit Bookmarks"
-msgstr "書籤"
+msgstr "編輯書籤"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:161
-#, fuzzy, kde-format
-#| msgid "Add Border..."
+#, kde-format
 msgid "Add Bookmark..."
-msgstr "加入邊框..."
+msgstr "新增書籤…"
 
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:96
-#, fuzzy, kde-format
-#| msgid "Copyright"
+#, kde-format
 msgid "<p>Copyright %1</p>"
-msgstr "著作權"
+msgstr "<p>版權 %1</p>"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
@@ -56152,10 +56031,9 @@ msgid "Set this option to show tracks on the Map"
 msgstr "設定這個選項來在地圖上顯示軌跡"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Remove selected tag"
+#, kde-format
 msgid "Only use selected images"
-msgstr "移除選取的標籤"
+msgstr "只使用選取的影像"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
 #, fuzzy, kde-format
@@ -56410,10 +56288,9 @@ msgid "Paste coordinates"
 msgstr "貼上座標"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
-#, fuzzy, kde-format
-#| msgid "Paste coordinates"
+#, kde-format
 msgid "Paste coordinates swapped"
-msgstr "貼上座標"
+msgstr "貼上交換的座標"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
 #, kde-format
@@ -57232,7 +57109,7 @@ msgstr "按這個按鈕可獲得關於選擇的螢幕校樣描述檔的詳細資
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:117
 #, kde-format
 msgid "Rendering intent:"
-msgstr "色彩對應方式："
+msgstr "色彩演算比對方式："
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:122
 #, kde-format
@@ -58300,9 +58177,9 @@ msgid "Failed to upload file <b>%1</b>."
 msgstr "上傳檔案 \"%1\" 失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1054
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr "上傳檔案 <b>%1</b> 失敗。您要繼續嗎？"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1070
 #, fuzzy, kde-kuit-format
@@ -58316,9 +58193,9 @@ msgid "Failed to delete file <b>%1</b>."
 msgstr "刪除檔案 \"%1\" 失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1082
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
-msgstr "刪除檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr "刪除檔案 <b>%1</b> 失敗。您要繼續嗎？"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1098
 #, fuzzy, kde-kuit-format
@@ -58332,9 +58209,9 @@ msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
-msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。您要繼續嗎？"
+msgstr "切換檔案 <b>%1</b> 的鎖定失敗。您要繼續嗎？"
 
 #: core/utilities/import/backend/gpcamera.cpp:1612
 #, kde-format
@@ -58552,7 +58429,7 @@ msgstr "此項目已鎖定。"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has an unknown download status"
-msgstr "此項目的下載狀態未知"
+msgstr "此項目的下載狀態不明"
 
 #: core/utilities/import/items/importoverlays.cpp:244
 #, kde-format
@@ -59932,8 +59809,7 @@ msgid "&Right Panel"
 msgstr "右側面板(&R)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:29
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "維護"
@@ -60107,16 +59983,14 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:179
-#, fuzzy, kde-format
-#| msgid "Metering mode:"
+#, kde-format
 msgid "Auto-tagging mode: "
-msgstr "測光模式："
+msgstr "自動標籤模式："
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:184
-#, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
+#, kde-format
 msgid "Clean all and re-assign"
-msgstr "全部清除並重新掃描"
+msgstr "全部清除並重新指派"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:185
 #: core/utilities/maintenance/main/maintenancedlg.cpp:229
@@ -60158,10 +60032,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:215
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Auto-tags Assignment"
-msgstr "自動調整"
+msgstr "自動指定標籤"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:223
 #, kde-format
@@ -60223,10 +60096,9 @@ msgstr ""
 "處理時間：%1"
 
 #: core/utilities/maintenance/tools/autotags/autotagsassignment.cpp:102
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Autotags Assignment"
-msgstr "自動調整"
+msgstr "自動標籤指派"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
@@ -60236,7 +60108,7 @@ msgstr "自動調整"
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
 #, kde-format
 msgid "Clean up the databases : "
-msgstr ""
+msgstr "清理資料庫："
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:120
 #, kde-format
@@ -60246,7 +60118,7 @@ msgstr "正在分析資料庫"
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:223
 #, kde-format
 msgid "cleaning core db"
-msgstr ""
+msgstr "正在清理核心資料庫"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:252
 #, kde-format
@@ -60264,10 +60136,9 @@ msgid "cleaning similarity db"
 msgstr "正在清理相似度資料庫"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:367
-#, fuzzy, kde-format
-#| msgid "Initializing database..."
+#, kde-format
 msgid "shrinking databases"
-msgstr "初始化資料庫..."
+msgstr "正在縮小資料庫"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:486
 #, kde-format
@@ -60280,10 +60151,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:499
-#, fuzzy, kde-format
-#| msgid "Schema Name"
+#, kde-format
 msgid "Core DB"
-msgstr "綱要名稱"
+msgstr "核心資料庫"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:500
 #, kde-format
@@ -60351,18 +60221,22 @@ msgid "Remove all tags from image"
 msgstr "從影像移除所有標籤"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:204
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"所有臉孔皆會從 %1 個所選影像中移除。\n"
+"您確定要繼續嗎？"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:209
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
-msgstr "上傳檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
+msgstr ""
+"所有標籤皆會從 %1 個所選影像中移除。\n"
+"您確定要繼續嗎？"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
 #, kde-format
@@ -60484,10 +60358,10 @@ msgid_plural "%1 tasks"
 msgstr[0] "%1 項作業"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
-msgstr "總計：%1（%）"
+msgstr "總計： "
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
 #, kde-format
@@ -60496,8 +60370,7 @@ msgid "Ready"
 msgstr "就緒"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
-#, fuzzy, kde-format
-#| msgid "Processing under progress"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "處理進行中"
@@ -60587,10 +60460,9 @@ msgid "Batch queue finished"
 msgstr "批次佇列已完成"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1021
-#, fuzzy, kde-format
-#| msgid "Batch queue finished"
+#, kde-format
 msgid "All batch queues finished"
-msgstr "批次佇列已完成"
+msgstr "所有批次佇列皆已完成"
 
 #. i18n: ectx: Menu (Queues)
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:6
@@ -60599,10 +60471,9 @@ msgid "&Queues"
 msgstr "佇列(&Q)"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to find tool..."
-msgstr "建立檔案失敗..."
+msgstr "尋找工具失敗…"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:255
 #, kde-format
@@ -60617,7 +60488,7 @@ msgstr "(已重新命名為 %1)"
 #: core/utilities/queuemanager/manager/actiontask.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
-msgstr ""
+msgstr "項目已存在而已略過"
 
 #: core/utilities/queuemanager/manager/actiontask.cpp:290
 #, kde-format
@@ -60639,11 +60510,10 @@ msgstr "建立檔案失敗..."
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Base"
-msgstr ""
+msgstr "基礎"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:173
-#, fuzzy, kde-format
-#| msgid "Custom"
+#, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "自訂"
@@ -60697,8 +60567,7 @@ msgid "Invalid"
 msgstr "無效"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:628
-#, fuzzy, kde-format
-#| msgid "No setting available"
+#, kde-format
 msgctxt "@label"
 msgid "No setting available"
 msgstr "無可用的設定值"
@@ -61012,39 +60881,34 @@ msgid "Assign Workflow to current queue"
 msgstr "指定工作流到目前佇列"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:281
-#, fuzzy, kde-format
-#| msgid "Edit Workflow"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "編輯工作流"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:282
-#, fuzzy, kde-format
-#| msgid "Save Workflow"
+#, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
-msgstr "儲存工作流"
+msgstr "更新工作流"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:283
-#, fuzzy, kde-format
-#| msgid "Delete Workflow"
+#, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "刪除工作流"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:335
-#, fuzzy, kde-format
-#| msgid "Delete Workflow?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
-msgstr "要刪除工作流嗎？"
+msgstr "刪除工作流？"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:336
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete the selected workflow \"%1\"?"
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
-msgstr "您確定要刪除選擇的工作流「%1」？"
+msgstr "您確定要刪除所選的工作流「%1」嗎？"
 
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
@@ -63508,7 +63372,7 @@ msgstr "使用臉孔偵測功能"
 #: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "使用美感偵測功能"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
@@ -63566,16 +63430,7 @@ msgid "File on the server is too large."
 msgstr "伺服器上的檔案太大了。"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:552
-#, fuzzy, kde-format
-#| msgctxt "%1: folder path, %2: disk size with unit"
-#| msgid ""
-#| "<p>For the face engine and red eye removal tool, digiKam needs some large "
-#| "binary files. Some of these files were not found. Click 'Download' to "
-#| "begin downloading the needed files. You can cancel this process, the next "
-#| "time digiKam is started this dialog will appear again. Face detection "
-#| "will not work without these files.</p><p>The files will be downloaded to "
-#| "%1. Make sure there are around %2 available. <b>After the successful "
-#| "download you have to restart digiKam.</b></p>"
+#, kde-format
 msgctxt "%1: folder path"
 msgid ""
 "<p>For face detection, the red-eye removal tool, the classification of "
@@ -63588,11 +63443,12 @@ msgid ""
 "downloaded to %1.</p><p><b>After the successful download you have to restart "
 "digiKam.</b></p>"
 msgstr ""
-"<p>digiKam 的臉孔辨識引擎與紅眼移除工具需要一些大的程式執行檔。這些檔案某些並"
-"未被找到。點擊「下載」來開始下載這些必須的檔案。您可以取消這個操作，但下次開"
-"啟 digiKam 時這個對話框仍然會再出現。沒有這些檔案，臉孔辨識引擎便無法運作。</"
-"p><p>這些檔案會下載到 %1。請確保該處有大約 %2 的可用空間。<b>成功下載後您將會"
-"需要重啟 digiKam。</b></p>"
+"<p>對於臉孔辨識、紅眼移除工具、影像美感分類，以及影像標籤自動指派功能，"
+"digiKam 會需要一些極大的二進制檔案。您可以選擇您想要使用哪些功能。</p><p>這些"
+"檔案其中一部分並沒有找到。請點擊「下載」來開始下載您需要的檔案。您可以關閉此"
+"對話框，而下次開啟 digiKam 的時候會再次詢問您。沒有這些檔案的話所選的功能則無"
+"法正常運作。</p><p>這些檔案會下載到 %1。</p><p><b>下載成功後您將會需要重新啟"
+"動 digiKam。</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:565
 #, kde-format
@@ -64082,18 +63938,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From Image"
-#| msgid_plural "Reread Metadata From Selected Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "從選擇的影像中重新讀取中繼資料"
+msgstr "儲存進階中繼資料設定檔"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "從 Nepomuk 讀取中繼資料"
+msgstr "載入進階中繼資料設定檔"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
 #, kde-format
@@ -64102,13 +63956,16 @@ msgid "Warning"
 msgstr "警告"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:197
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This option will reset configuration to default\n"
 "All your changes will be lost.\n"
 " Do you want to continue?"
-msgstr "這項操作依照收藏的大小，可能會花很長的時間。您要繼續嗎？"
+msgstr ""
+"這個選項會將設定重設為預設值\n"
+"您的所有變更都將會喪失。\n"
+"您確定要繼續嗎？"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:389
 #, kde-format
@@ -65238,7 +65095,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
 msgid "Expand current tree item with a single mouse click"
-msgstr ""
+msgstr "滑鼠單擊來展開目前的樹狀圖項目"
 
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
@@ -65674,12 +65531,7 @@ msgid "Working Color Space"
 msgstr "使用的色彩空間"
 
 #: core/utilities/setup/setupicc.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This is the color space all the images will be converted to when "
-#| "opened (if you choose to convert) and the profile that will be embedded "
-#| "when saving. Good and safe choices are <b>Adobe RGB (1998)</b> and "
-#| "<b>sRGB IEC61966-2.1</b>"
+#, kde-format
 msgid ""
 "<p>This is the color space all the images will be converted to when opened "
 "(if you choose to convert) and the profile that will be embedded when "
@@ -65688,7 +65540,7 @@ msgid ""
 msgstr ""
 "<p>這是所有影像開啟時會轉換成的色彩空間 (如果您選擇轉換) 而且此描述檔會在儲存"
 "時內嵌到影像。比較安全、適合的選擇是 <b>Adobe RGB (1998)</b> 和 <b>sRGB "
-"IEC61966-2.1</b>"
+"IEC61966-2.1</b></p>"
 
 #: core/utilities/setup/setupicc.cpp:167
 #, kde-format
@@ -65933,7 +65785,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:447
 #, kde-format
 msgid "Rendering Intents:"
-msgstr "色彩對應方式："
+msgstr "色彩演算比對方式："
 
 #: core/utilities/setup/setupicc.cpp:462
 #, kde-format
@@ -65980,20 +65832,19 @@ msgid "none"
 msgstr "無"
 
 #: core/utilities/setup/setupicc.cpp:858
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
 "spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
 "Windows/Color/</li></ul>On your system, currently these paths exist and are "
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
-"於 Linux 系統，預設搜尋路徑包括您系統上的 <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>，目前存在這些路徑"
-"並會被掃描：<ul><li>%1</li></ul>"
+"在 Windows 上，預設搜尋路徑包含<ul><li>%1/Windows/System32/spool/drivers/"
+"color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/Windows/Color/</"
+"li></ul>在您的系統上，這些路徑目前存在而會被掃描：<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:874
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -66002,10 +65853,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"於 Linux 系統，預設搜尋路徑包括您系統上的 <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>，目前存在這些路徑"
-"並會被掃描：<ul><li>%1</li></ul>"
+"在 macOS 上，預設搜尋路徑包含<ul><li>/System/Library/ColorSync/Profiles</"
+"li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/Profiles</"
+"li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/digikam/"
+"profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
+"li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
+"<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:893
 #, kde-format
@@ -66015,10 +65868,10 @@ msgid ""
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
 "currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
-"於 Linux 系統，預設搜尋路徑包括您系統上的 <ul><li>/usr/share/color/icc</"
-"li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/icc/</"
-"li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>，目前存在這些路徑"
-"並會被掃描：<ul><li>%1</li></ul>"
+"在 Linux 上，預設搜尋路徑包含<ul><li>/usr/share/color/icc</li><li>/usr/local/"
+"share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/"
+"</li><li>~/.color/icc/</li></ul>在您的系統上，這些路徑目前存在而會被掃描："
+"<ul><li>%1</li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:51
 #, kde-format
@@ -66035,13 +65888,18 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
+"這些設定會判斷影像的品質，將其轉換為分數，並作為「挑選旗標」屬性儲存於資料庫"
+"中。這個資訊有兩種方式能夠計算出：使用四個使影像受損的基礎要素（模糊、雜訊、"
+"曝光、壓縮），或者是使用深度學習神經網路引擎。前者能夠幫助判斷影像是否因那些"
+"基礎要素而失真，但會需要使用者的細部調整，且與「美感影像處理」不相容。後者使"
+"用基於 %1 模型的 AI 方式來預測分數。因為深度學習是從頭到尾的完整方案，它不需"
+"要使用者提供大量參數的詳細設定，使此功能更容易使用。"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:61
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr "影像品質排序器"
+msgstr "使用美感影像品質"
 
 #: core/utilities/setup/setuplighttable.cpp:79
 #, kde-format

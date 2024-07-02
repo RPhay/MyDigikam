@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-01 01:43+0000\n"
+"POT-Creation-Date: 2024-07-02 01:43+0000\n"
 "PO-Revision-Date: 2024-06-29 11:34+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27306,7 +27306,7 @@ msgstr "Scan for Faces"
 msgid "Should sub-albums be scanned too?"
 msgstr "Should sub-albums be scanned too?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:91
+#: core/libs/album/treeview/labelstreeview.cpp:93
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -55629,87 +55629,87 @@ msgstr "Render Tools"
 msgid "Runner Tools"
 msgstr "Runner Tools"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:36
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:45
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Unable to insert data into cache"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:120
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:130
 #, kde-format
 msgid "Visible region"
 msgstr "Visible region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:122
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:132
 #, kde-format
 msgid "Specify region"
 msgstr "Specify region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:124
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:134
 #, kde-format
 msgid "Download Route"
 msgstr "Download Route"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:126
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:136
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Enabled when a route exists"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:149
 #, kde-format
 msgid "Offset from route:"
 msgstr "Offset from route:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:169
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:179
 #, kde-format
 msgid "Selection Method"
 msgstr "Selection Method"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:177
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:187
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Number of tiles to download:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:227
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:237
 #, kde-format
 msgid "Download Region"
 msgstr "Download Region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:229
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:239
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Tile type to be downloaded:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:231
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:241
 #, kde-format
 msgid "Texture tiles"
 msgstr "Texture tiles"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:232
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:242
 #, kde-format
 msgid "Vector tiles"
 msgstr "Vector tiles"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:233
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:243
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "Allows selection between layer types that are visibly being rendered."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:527
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "There is a limit of %1 tile(s) to download."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:547
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Approximate size of the tiles to be downloaded"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:541
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:551
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Estimated download size: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:544
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:554
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Estimated download size: %1 kB"
