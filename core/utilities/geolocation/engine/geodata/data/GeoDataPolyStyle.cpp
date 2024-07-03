@@ -1,22 +1,33 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataPolyStyle.h"
-#include "GeoDataTypes.h"
-#include "MarbleDirs.h"
 
 #include <QDataStream>
 #include <QImage>
+
+#include "GeoDataTypes.h"
+#include "MarbleDirs.h"
 
 namespace Marble
 {
 
 class GeoDataPolyStylePrivate
 {
-  public:
+public:
+
     GeoDataPolyStylePrivate()
         : m_fill(true)
         , m_outline(true)
@@ -26,14 +37,16 @@ class GeoDataPolyStylePrivate
     }
 
     /// whether to fill the polygon
-    bool  m_fill;
+    bool            m_fill;
+
     /// whether to draw the outline
-    bool  m_outline;
-    Qt::BrushStyle m_brushStyle;
+    bool            m_outline;
+    Qt::BrushStyle  m_brushStyle;
+
     /// The value of colorIndex will be maped to a color for brush
-    quint8 m_colorIndex;
-    QString m_texturePath;
-    QImage m_textureImage;
+    quint8          m_colorIndex;
+    QString         m_texturePath;
+    QImage          m_textureImage;
 };
 
 GeoDataPolyStyle::GeoDataPolyStyle()
@@ -165,4 +178,4 @@ void GeoDataPolyStyle::unpack( QDataStream& stream )
     stream >> d->m_colorIndex;
 }
 
-}
+} // namespace Marble

@@ -1,21 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2004-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataPoint.h"
 #include "GeoDataPoint_p.h"
 
-
-#include "digikam_debug.h"
 #include "MarbleGlobal.h"
-
 #include "GeoDataTypes.h"
 #include "GeoDataLatLonAltBox.h"
 
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -118,4 +123,4 @@ void GeoDataPoint::unpack( QDataStream& stream )
     // TODO: what about m_latLonAltBox and base class?
 }
 
-}
+} // namespace Marble

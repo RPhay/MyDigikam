@@ -1,16 +1,28 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Sanjiban Bairagya <sanjiban22393@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataOrientation.h"
 #include "GeoDataTypes.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataOrientationPrivate
 {
 public:
+
     double m_heading;
 
     double m_tilt;
@@ -20,13 +32,16 @@ public:
     GeoDataOrientationPrivate();
 };
 
-GeoDataOrientationPrivate::GeoDataOrientationPrivate() :
-    m_heading(0), m_tilt(0), m_roll(0)
+GeoDataOrientationPrivate::GeoDataOrientationPrivate()
+    : m_heading(0),
+      m_tilt(0),
+      m_roll(0)
 {
     // nothing to do
 }
 
-GeoDataOrientation::GeoDataOrientation() : d( new GeoDataOrientationPrivate )
+GeoDataOrientation::GeoDataOrientation()
+    : d( new GeoDataOrientationPrivate )
 {
     // nothing to do
 }
@@ -43,7 +58,6 @@ GeoDataOrientation &GeoDataOrientation::operator=( const GeoDataOrientation &oth
     *d = *other.d;
     return *this;
 }
-
 
 bool GeoDataOrientation::operator==( const GeoDataOrientation &other ) const
 {
@@ -98,4 +112,4 @@ void GeoDataOrientation::setRoll( double roll )
     d->m_roll = roll;
 }
 
-}
+} // namespace Marble

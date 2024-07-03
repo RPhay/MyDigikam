@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Patrick Spendrin <ps_ml@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -22,12 +32,14 @@ namespace Marble
 class GeoDataPlacemarkExtendedData
 {
 public:
-    GeoDataPlacemarkExtendedData() :
-        m_area( -1.0 ),
-        m_isBalloonVisible( false )
+
+    GeoDataPlacemarkExtendedData()
+        : m_area( -1.0 ),
+          m_isBalloonVisible( false )
     {
         // nothing to do
     }
+
     GeoDataPlacemarkExtendedData & operator=(const GeoDataPlacemarkExtendedData &other)
     {
         m_countrycode = other.m_countrycode;
@@ -49,19 +61,20 @@ public:
         return !(*this == other);
     }
 
-    QString             m_countrycode;  // Country code.
-    qreal               m_area;         // Area in square kilometer
-    QString             m_state;        // State
-    bool                m_isBalloonVisible;  //Visibility of balloon
+    QString             m_countrycode;      // Country code.
+    qreal               m_area;             // Area in square kilometer
+    QString             m_state;            // State
+    bool                m_isBalloonVisible; //Visibility of balloon
 };
 
 class GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
 {
     Q_DECLARE_TR_FUNCTIONS(GeoDataPlacemark)
 
-  public:
-    GeoDataPlacemarkPrivate() :
-        m_geometry(new GeoDataPoint),
+public:
+
+    GeoDataPlacemarkPrivate()
+      : m_geometry(new GeoDataPoint),
         m_population( -1 ),
         m_placemarkExtendedData(nullptr),
         m_visualCategory(GeoDataPlacemark::Default),
@@ -156,16 +169,22 @@ class GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
         return m_osmPlacemarkData ? *m_osmPlacemarkData : s_nullOsmPlacemarkData;
     }
 
-    // Data for a Placemark in addition to those in GeoDataFeature.
-    GeoDataGeometry* m_geometry                             = nullptr;  // any GeoDataGeometry entry like locations
-    qint64           m_population;                                      // population in number of inhabitants
-    GeoDataPlacemarkExtendedData* m_placemarkExtendedData   = nullptr;
-    GeoDataPlacemark::GeoDataVisualCategory m_visualCategory;           // the visual category
+public:
 
-    OsmPlacemarkData* m_osmPlacemarkData                    = nullptr;
-
-    static const OsmPlacemarkData s_nullOsmPlacemarkData;
+    static const OsmPlacemarkData             s_nullOsmPlacemarkData;
     static const GeoDataPlacemarkExtendedData s_nullPlacemarkExtendedData;
+
+public:
+
+    // Data for a Placemark in addition to those in GeoDataFeature.
+
+    GeoDataGeometry*                        m_geometry              = nullptr;  // any GeoDataGeometry entry like locations
+    qint64                                  m_population;                       // population in number of inhabitants
+    GeoDataPlacemarkExtendedData*           m_placemarkExtendedData = nullptr;
+    GeoDataPlacemark::GeoDataVisualCategory m_visualCategory;                   // the visual category
+
+    OsmPlacemarkData*                       m_osmPlacemarkData      = nullptr;
+
 };
 
 } // namespace Marble

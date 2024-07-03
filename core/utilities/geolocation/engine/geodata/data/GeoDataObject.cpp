@@ -1,8 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataObject.h"
 
@@ -12,16 +21,15 @@
 #include <QUrl>
 
 #include "GeoDataDocument.h"
-
 #include "GeoDataTypes.h"
-
 
 namespace Marble
 {
 
 class GeoDataObjectPrivate
 {
-  public:
+public:
+
     GeoDataObjectPrivate()
         : m_id(),
           m_targetId(),
@@ -29,9 +37,9 @@ class GeoDataObjectPrivate
     {
     }
 
-    QString  m_id;
-    QString  m_targetId;
-    GeoDataObject *m_parent;
+    QString         m_id;
+    QString         m_targetId;
+    GeoDataObject*  m_parent = nullptr;
 };
 
 GeoDataObject::GeoDataObject()
@@ -128,4 +136,4 @@ bool GeoDataObject::equals(const GeoDataObject &other) const
     return d->m_id == other.d->m_id && d->m_targetId == other.d->m_targetId;
 }
 
-}
+} // namespace Marble

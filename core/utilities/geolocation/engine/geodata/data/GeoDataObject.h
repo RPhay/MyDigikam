@@ -1,17 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "digikam_export.h"
+#include <QMetaType>
 
 #include "GeoDocument.h"
 #include "Serializable.h"
 
-#include <QMetaType>
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -39,9 +48,10 @@ class GeoDataObjectPrivate;
  * Marble.
  */
 class DIGIKAM_EXPORT GeoDataObject : public GeoNode,
-                      public Serializable
+                                     public Serializable
 {
 public:
+
     GeoDataObject();
     GeoDataObject( const GeoDataObject & );
     GeoDataObject & operator=( const GeoDataObject & );
@@ -81,18 +91,17 @@ public:
     /// Reimplemented from Serializable
     void unpack( QDataStream& steam ) override;
 
- private:
+private:
 
-    GeoDataObjectPrivate * d;
+    GeoDataObjectPrivate* d = nullptr;
 
- protected:
+protected:
     /**
      * @brief Compares the value of id and targetId of the two objects
      * @return true if they these values are equal or false otherwise
      */
     virtual bool equals(const GeoDataObject &other) const;
 };
-
 
 /**
  * Returns the given node cast to type T if the node was instantiated as type T; otherwise returns 0.
