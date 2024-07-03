@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataTypes.h"
 
@@ -11,6 +20,7 @@ namespace Marble
 
 namespace GeoDataTypes
 {
+
 const char GeoDataAnimatedUpdateType[] = "GeoDataAnimatedUpdate";
 const char GeoDataAliasType[] = "GeoDataAlias";
 const char GeoDataCameraType[] = "GeoDataCamera";
@@ -78,6 +88,7 @@ const char GeoDataViewVolumeType[] = "GeoDataViewVolume";
 const char GeoDataNetworkLinkControlType[] = "GeoDataNetworkLinkControl";
 const char GeoDataUpdateType[] = "GeoDataUpdate";
 const char GeoDataBuildingType[] = "GeoDataBuilding";
-}
 
-}
+} // namespace GeoDataTypes
+
+} // namespace Marble

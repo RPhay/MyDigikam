@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2011 Utku Aydın <utkuaydin34@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneTypes.h"
 
@@ -10,6 +20,7 @@ namespace Marble
 
 namespace GeoSceneTypes
 {
+
 const char GeoSceneDocumentType[] = "GeoSceneDocument";
 const char GeoSceneFilterType[] = "GeoSceneFilter";
 const char GeoSceneGeodataType[] = "GeoSceneGeodata";
@@ -31,6 +42,7 @@ const char GeoSceneVectorType[] = "GeoSceneVector";
 const char GeoSceneVectorTileType[] = "GeoSceneVectorTileDataset";
 const char GeoSceneXmlDataSourceType[] = "GeoSceneXmlDataSource";
 const char GeoSceneZoomType[] = "GeoSceneZoom";
-}
 
-}
+} // namespace GeoSceneTypes
+
+} // namespace Marble
