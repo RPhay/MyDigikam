@@ -198,7 +198,7 @@ BUGFIXES:
 166 ==> 404761 - Settings and other dialogs should have a minimum default size of 800x600 (at least).
 167 ==> 489192 - Display error in thumbnail caption field.
 168 ==> 489501 - After deleting images, the following item is not at top in the view.
-169 ==> 
+169 ==> 489680 - Cannot include directories starting with dot.
 170 ==> 
 171 ==> 
 172 ==> 
