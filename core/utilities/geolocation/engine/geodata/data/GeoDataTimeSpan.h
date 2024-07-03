@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -15,24 +25,22 @@ namespace Marble
 class GeoDataTimeStamp;
 class GeoDataTimeSpanPrivate;
 
-/**
- */
 class DIGIKAM_EXPORT GeoDataTimeSpan : public GeoDataTimePrimitive
 {
-  public:
+public:
 
     GeoDataTimeSpan();
     GeoDataTimeSpan( const GeoDataTimeSpan& other );
     ~GeoDataTimeSpan() override;
 
     /**
-    * @brief assignment operator
-    */
+     * @brief assignment operator
+     */
     GeoDataTimeSpan& operator=( const GeoDataTimeSpan& other );
 
     /**
-     * @brief equality operators
-     */
+      * @brief equality operators
+      */
     bool operator==( const GeoDataTimeSpan& other ) const;
     bool operator!=( const GeoDataTimeSpan& other ) const;
 
@@ -40,27 +48,27 @@ class DIGIKAM_EXPORT GeoDataTimeSpan : public GeoDataTimePrimitive
     const char* nodeType() const override;
 
     /**
-    * @brief return the beginning instant of a timespan
-    */
+     * @brief return the beginning instant of a timespan
+     */
     const GeoDataTimeStamp & begin() const;
     GeoDataTimeStamp & begin();
 
     /**
-    * @brief Set the beginning instant of a timespan
-    * @param begin the beginning instant of a timespan
-    */
+     * @brief Set the beginning instant of a timespan
+     * @param begin the beginning instant of a timespan
+     */
     void setBegin( const GeoDataTimeStamp& begin );
 
     /**
-    * @brief return the ending instant of a timespan
-    */
+     * @brief return the ending instant of a timespan
+     */
     const GeoDataTimeStamp & end() const;
     GeoDataTimeStamp & end();
 
     /**
-    * @brief Set the ending instant of a timespan
-    * @param end the ending instant of a timespan
-    */
+     * @brief Set the ending instant of a timespan
+     * @param end the ending instant of a timespan
+     */
     void setEnd( const GeoDataTimeStamp& end );
 
     /**

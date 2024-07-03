@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -16,12 +26,12 @@ namespace Marble
 
 class GeoDataTimeStampPrivate;
 
-/**
- */
 class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
 {
-  public:
-    enum TimeResolution {
+public:
+
+    enum TimeResolution
+    {
         SecondResolution,
         DayResolution,
         MonthResolution,
@@ -33,8 +43,8 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
     ~GeoDataTimeStamp() override;
 
     /**
-    * @brief assignment operator
-    */
+     * @brief assignment operator
+     */
     GeoDataTimeStamp& operator=( const GeoDataTimeStamp& other );
 
     /**
@@ -48,14 +58,14 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
     const char* nodeType() const override;
 
     /**
-    * @brief return the when time of timestamp
-    */
+     * @brief return the when time of timestamp
+     */
     QDateTime when() const;
 
     /**
-    * @brief Set the when time of timestamp
-    * @param when the when time of timestamp
-    */
+     * @brief Set the when time of timestamp
+     * @param when the when time of timestamp
+     */
     void setWhen( const QDateTime& when );
 
     void setResolution( TimeResolution resolution );
@@ -74,7 +84,7 @@ class DIGIKAM_EXPORT GeoDataTimeStamp : public GeoDataTimePrimitive
      */
     void unpack( QDataStream& stream ) override;
 
-  private:
+private:
 
     GeoDataTimeStampPrivate* const d = nullptr;
 };

@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataTrack.h"
 #include "GeoDataGeometry_p.h"
@@ -18,11 +28,13 @@
 
 #include "digikam_debug.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataTrackPrivate : public GeoDataGeometryPrivate
 {
 public:
+
     GeoDataTrackPrivate()
         : m_lineStringNeedsUpdate( false ),
           m_interpolate( false )
@@ -51,8 +63,8 @@ public:
     GeoDataExtendedData m_extendedData;
 };
 
-GeoDataTrack::GeoDataTrack() :
-    GeoDataGeometry( new GeoDataTrackPrivate() )
+GeoDataTrack::GeoDataTrack()
+    : GeoDataGeometry( new GeoDataTrackPrivate() )
 {
 
 }
@@ -84,7 +96,6 @@ GeoDataGeometry *GeoDataTrack::copy() const
 {
     return new GeoDataTrack(*this);
 }
-
 
 bool GeoDataTrack::operator==( const GeoDataTrack& other ) const
 {
@@ -361,4 +372,4 @@ void GeoDataTrack::unpack( QDataStream& stream )
     GeoDataGeometry::unpack( stream );
 }
 
-}
+} //namespace Marble

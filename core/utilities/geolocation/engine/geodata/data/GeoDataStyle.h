@@ -1,17 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include "GeoDataStyleSelector.h"
 
-#include "digikam_export.h"
-
 #include <QSharedPointer>
 #include <QMetaType>
+
+#include "digikam_export.h"
 
 class QFont;
 class QColor;
@@ -46,13 +55,15 @@ class GeoDataStylePrivate;
  */
 class DIGIKAM_EXPORT GeoDataStyle : public GeoDataStyleSelector
 {
-  public:
-    using Ptr = QSharedPointer<GeoDataStyle>;
+public:
+
+    using Ptr      = QSharedPointer<GeoDataStyle>;
     using ConstPtr = QSharedPointer<const GeoDataStyle>;
 
     /// Construct a default style
     GeoDataStyle();
     GeoDataStyle( const GeoDataStyle& other );
+
     /**
      * @brief Construct a new style
      * @param  iconPath used to construct the icon style
@@ -117,7 +128,7 @@ class DIGIKAM_EXPORT GeoDataStyle : public GeoDataStyleSelector
      */
     void unpack( QDataStream& stream ) override;
 
-  private:
+private:
 
     GeoDataStylePrivate* const d = nullptr;
 };

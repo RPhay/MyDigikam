@@ -1,17 +1,28 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2011 Guillaume Martres <smarter@ubuntu.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "GeoDataGeometry.h"
-
 #include <QList>
+
+#include "GeoDataGeometry.h"
 
 class QDateTime;
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataTrackPrivate;
 class GeoDataExtendedData;
@@ -48,8 +59,8 @@ class GeoDataCoordinates;
  */
 class DIGIKAM_EXPORT GeoDataTrack : public GeoDataGeometry
 {
-
 public:
+
     GeoDataTrack();
     explicit GeoDataTrack( const GeoDataTrack &other );
 
