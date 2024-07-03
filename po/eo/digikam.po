@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:43+0000\n"
+"POT-Creation-Date: 2024-07-03 01:45+0000\n"
 "PO-Revision-Date: 2024-06-30 21:40+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -52649,23 +52649,23 @@ msgstr "&Informkestoj"
 msgid "Address Details"
 msgstr "Detaloj de Adreso"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "W"
 msgstr "W"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "E"
 msgstr "E"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
