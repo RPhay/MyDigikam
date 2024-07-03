@@ -1,37 +1,52 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataVec2.h"
 
 #include "digikam_debug.h"
 
-namespace Marble {
+namespace Marble
+{
 
 class GeoDataVec2Private
 {
 public:
+
     GeoDataVec2Private();
+
+    static GeoDataVec2::Unit parseUnits( const QString &value );
+
+public:
 
     GeoDataVec2::Unit  m_xunit;
     GeoDataVec2::Unit  m_yunit;
-
-    static GeoDataVec2::Unit  parseUnits( const QString &value );
 };
 
-GeoDataVec2Private::GeoDataVec2Private() :
-    m_xunit(GeoDataVec2::Fraction), m_yunit(GeoDataVec2::Fraction)
+GeoDataVec2Private::GeoDataVec2Private()
+    : m_xunit(GeoDataVec2::Fraction),
+      m_yunit(GeoDataVec2::Fraction)
 {
 }
 
-GeoDataVec2::GeoDataVec2() :
-    d( new GeoDataVec2Private )
+GeoDataVec2::GeoDataVec2()
+    : d( new GeoDataVec2Private )
 {
 }
 
-GeoDataVec2::GeoDataVec2(qreal x, qreal y, const QString &xunits, const QString &yunits) :
-    d( new GeoDataVec2Private )
+GeoDataVec2::GeoDataVec2(qreal x, qreal y, const QString &xunits, const QString &yunits)
+    : d( new GeoDataVec2Private )
 {
     setX( x );
     setY( y );
@@ -103,4 +118,4 @@ void GeoDataVec2::setYunits(Unit yunit)
     d->m_yunit = yunit;
 }
 
-}
+} // namespace Marble

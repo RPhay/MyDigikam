@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "AbstractGeoPolygonGraphicsItem.h"
 
@@ -29,27 +39,27 @@ namespace Marble
 
 const void *AbstractGeoPolygonGraphicsItem::s_previousStyle = nullptr;
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon) :
-    GeoGraphicsItem(placemark),
-    m_polygon(polygon),
-    m_ring(nullptr),
-    m_building(nullptr)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon)
+    : GeoGraphicsItem(placemark),
+      m_polygon(polygon),
+      m_ring(nullptr),
+      m_building(nullptr)
 {
 }
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring) :
-    GeoGraphicsItem(placemark),
-    m_polygon(nullptr),
-    m_ring(ring),
-    m_building(nullptr)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring)
+    : GeoGraphicsItem(placemark),
+      m_polygon(nullptr),
+      m_ring(ring),
+      m_building(nullptr)
 {
 }
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building) :
-    GeoGraphicsItem(placemark),
-    m_polygon(nullptr),
-    m_ring(nullptr),
-    m_building(building)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building)
+    : GeoGraphicsItem(placemark),
+      m_polygon(nullptr),
+      m_ring(nullptr),
+      m_building(building)
 {
 }
 
@@ -232,4 +242,4 @@ void AbstractGeoPolygonGraphicsItem::setPolygon(GeoDataPolygon *polygon)
     m_polygon = polygon;
 }
 
-}
+} // namespace Marble

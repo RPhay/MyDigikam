@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Andrew Manson <g.real.ate@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoLineStringGraphicsItem.h"
 
@@ -27,17 +37,17 @@ namespace Marble
 {
 
 const GeoDataStyle *GeoLineStringGraphicsItem::s_previousStyle = nullptr;
-bool GeoLineStringGraphicsItem::s_paintInline = true;
-bool GeoLineStringGraphicsItem::s_paintOutline = true;
+bool GeoLineStringGraphicsItem::s_paintInline                  = true;
+bool GeoLineStringGraphicsItem::s_paintOutline                 = true;
 
 GeoLineStringGraphicsItem::GeoLineStringGraphicsItem(const GeoDataPlacemark *placemark,
-                                                     const GeoDataLineString *lineString) :
-    GeoGraphicsItem(placemark),
-    m_lineString(lineString),
-    m_renderLineString(lineString),
-    m_renderLabel(false),
-    m_penWidth(0.0),
-    m_name(placemark->name())
+                                                     const GeoDataLineString *lineString)
+    : GeoGraphicsItem(placemark),
+      m_lineString(lineString),
+      m_renderLineString(lineString),
+      m_renderLabel(false),
+      m_penWidth(0.0),
+      m_name(placemark->name())
 {
     QString const category = StyleBuilder::visualCategoryName(placemark->visualCategory());
     QStringList paintLayers;
@@ -54,10 +64,9 @@ GeoLineStringGraphicsItem::~GeoLineStringGraphicsItem()
     qDeleteAll(m_cachedPolygons);
 }
 
-
 void GeoLineStringGraphicsItem::setLineString( const GeoDataLineString* lineString )
 {
-    m_lineString = lineString;
+    m_lineString       = lineString;
     m_renderLineString = lineString;
 }
 
@@ -509,4 +518,4 @@ bool GeoLineStringGraphicsItem::canMerge(const GeoDataCoordinates &a, const GeoD
     return a.sphericalDistanceTo(b) * EARTH_RADIUS < 0.1;
 }
 
-}
+} // namespace Marble

@@ -1,16 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataUpdate.h"
+
+#include <QString>
 
 #include "GeoDataCreate.h"
 #include "GeoDataDelete.h"
 #include "GeoDataChange.h"
 #include "GeoDataTypes.h"
-
-#include <QString>
 
 namespace Marble
 {
@@ -18,15 +28,19 @@ namespace Marble
 class GeoDataUpdatePrivate
 {
 public:
+
     GeoDataUpdatePrivate();
-    GeoDataCreate* m_create;
-    GeoDataDelete* m_delete;
-    GeoDataChange* m_change;
-    QString m_targetHref;
+
+    GeoDataCreate* m_create = nullptr;
+    GeoDataDelete* m_delete = nullptr;
+    GeoDataChange* m_change = nullptr;
+    QString        m_targetHref;
 };
 
-GeoDataUpdatePrivate::GeoDataUpdatePrivate() :
-    m_create( nullptr ), m_delete( nullptr ), m_change( nullptr )
+GeoDataUpdatePrivate::GeoDataUpdatePrivate()
+    : m_create( nullptr ),
+      m_delete( nullptr ),
+      m_change( nullptr )
 {
 }
 
@@ -35,8 +49,9 @@ GeoDataUpdate::GeoDataUpdate() :
 {
 }
 
-GeoDataUpdate::GeoDataUpdate( const Marble::GeoDataUpdate &other ) :
-    GeoDataObject(), d( new GeoDataUpdatePrivate( *other.d ) )
+GeoDataUpdate::GeoDataUpdate( const Marble::GeoDataUpdate &other )
+    : GeoDataObject(),
+      d( new GeoDataUpdatePrivate( *other.d ) )
 {
 }
 
@@ -143,4 +158,4 @@ void GeoDataUpdate::setDelete( GeoDataDelete* dataDelete )
     }
 }
 
-}
+} // namespace Marble

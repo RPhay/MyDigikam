@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataViewVolume.h"
 
@@ -13,6 +23,7 @@ namespace Marble
 class GeoDataViewVolumePrivate
 {
 public:
+
     GeoDataViewVolumePrivate();
 
     qreal m_leftFov;
@@ -22,23 +33,25 @@ public:
     qreal m_near;
 };
 
-GeoDataViewVolumePrivate::GeoDataViewVolumePrivate() :
-    m_leftFov(),
-    m_rightFov(),
-    m_bottomFov(),
-    m_topFov(),
-    m_near()
+GeoDataViewVolumePrivate::GeoDataViewVolumePrivate()
+    : m_leftFov(),
+      m_rightFov(),
+      m_bottomFov(),
+      m_topFov(),
+      m_near()
 {
     // nothing to do
 }
 
-GeoDataViewVolume::GeoDataViewVolume() : d( new GeoDataViewVolumePrivate )
+GeoDataViewVolume::GeoDataViewVolume()
+    : d( new GeoDataViewVolumePrivate )
 {
     // nothing to do
 }
 
-GeoDataViewVolume::GeoDataViewVolume( const Marble::GeoDataViewVolume &other ) :
-    GeoDataObject(), d( new GeoDataViewVolumePrivate( *other.d ) )
+GeoDataViewVolume::GeoDataViewVolume( const Marble::GeoDataViewVolume &other )
+    : GeoDataObject(),
+      d( new GeoDataViewVolumePrivate( *other.d ) )
 {
     // nothing to do
 }
@@ -125,4 +138,4 @@ void GeoDataViewVolume::setNear(qreal near)
     d->m_near = near;
 }
 
-}
+} // namespace Marble
