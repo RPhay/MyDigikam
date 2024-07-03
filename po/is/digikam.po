@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:43+0000\n"
-"PO-Revision-Date: 2024-05-23 15:15+0000\n"
+"POT-Creation-Date: 2024-07-03 01:45+0000\n"
+"PO-Revision-Date: 2024-07-02 21:41+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1364,11 +1364,7 @@ msgstr ""
 "gerð óvirk þar til þú leysir þetta vandamál.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1377,7 +1373,8 @@ msgid ""
 msgstr ""
 "ExifTool er ekki tiltækt í digiKam-uppsetningunni þinni eða er ekki að virka "
 "rétt. Farðu í stillingar digiKam og athugaðu í lýsigagnahlutanum hvort "
-"keyrsluskrár ExifTool séu aðgengilegar."
+"keyrsluskrár ExifTool séu aðgengilegar.\n"
+"Villuskilaboð: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -3283,10 +3280,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 atriði valin"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 650 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Meira en 650 villuskýrslum notenda lokað á bugzilla."
+msgstr "Meira en 1500 villuskýrslum notenda lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
@@ -3518,23 +3514,18 @@ msgstr ""
 "í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:162
-#, fuzzy, kde-format
-#| msgid "Queue Manager: add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
-"Magnvinnslustjóri: Bætt við verkfæri til að úthluta titlum og skýringatextum "
-"í magnvinnslu."
+"Magnvinnslustjóri: Bætt við verkfæri til að keyra G'MIC-síur í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Documentation: <a href=\" https://docs.digikam.org/en/index.html"
-#| "\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Handbækur: <a href=\" https://docs.digikam.org/en/index.html\">Endurskrifun "
+"Handbækur: <a href=\"https://docs.digikam.org/en/index.html\">Endurskrifun "
 "handbókar</a> úr DocBook yfir í Sphinx/ReStructuredText kerfi."
 
 #: core/app/views/stack/welcomepageview.cpp:164
@@ -3548,15 +3539,12 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
-#| "improve stability of plugin."
+#, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
-"Uppfærsla á G'MIC-Qt verkfærinu í nýjustu 3.2.2 útgáfuna og lokið við MacOS-"
+"Uppfærsla á G'MIC-Qt verkfærinu í nýjustu 3.4.0 útgáfuna og lokið við MacOS-"
 "yfirfærslu ásamt lagfæringum á stöðugleika viðbótarinnar."
 
 #: core/app/views/stack/welcomepageview.cpp:167
@@ -3565,10 +3553,9 @@ msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2023-11-21."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2024-06-16."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -37196,10 +37183,9 @@ msgid "<b>Date</b>:"
 msgstr "<b> Dagsetning</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Could not find any coordinates on the clipboard."
+#, kde-format
 msgid "Copy GPS coordinates to clipboard"
-msgstr "Fann engin staðsetningarhnit á klippiborðinu."
+msgstr "Afrita GPS-staðsetningarhnit á klippispjald"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
 #, kde-format
@@ -52727,23 +52713,23 @@ msgstr "Upplýs&ingareitir"
 msgid "Address Details"
 msgstr "Nánar um heimilisfang"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "W"
 msgstr "V"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "E"
 msgstr "A"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
@@ -56692,13 +56678,13 @@ msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr ""
-"Fann fleiri en einn punkt á klippiborðinu - einungis er hægt að úthluta "
+"Fann fleiri en einn punkt á klippispjaldinu - einungis er hægt að úthluta "
 "einum punkti í einu."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:521
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
-msgstr "Fann engin staðsetningarhnit á klippiborðinu."
+msgstr "Fann engin staðsetningarhnit á klippispjaldinu."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:525
 #, kde-format
@@ -65780,14 +65766,12 @@ msgid "Disable hardware acceleration OpenCL"
 msgstr "Gera OpenCL-vélbúnaðarhröðun óvirka"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "fix AMD-GPU Vdeo decoding Problem"
+#, kde-format
 msgid "Fix AMD-GPU video decoding issue"
-msgstr "lagað vandamál í myndmerkiskóðun AMD-GPU"
+msgstr "Lagað vandamál í myndmerkiskóðun AMD-GPU"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Used decoding backend for Video:"
+#, kde-format
 msgid "Used decoding backend for video:"
 msgstr "Bakendi notaður fyrir afkóðun myndmerkis:"
 

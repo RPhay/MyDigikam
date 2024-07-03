@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:43+0000\n"
+"POT-Creation-Date: 2024-07-03 01:45+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -51263,23 +51263,23 @@ msgstr "信息框(&I)"
 msgid "Address Details"
 msgstr "地址详情"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "W"
 msgstr "西"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "E"
 msgstr "东"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
 #, kde-format
 msgid "N"
 msgstr "北"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"

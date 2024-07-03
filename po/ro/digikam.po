@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-02 01:43+0000\n"
+"POT-Creation-Date: 2024-07-03 01:45+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -53480,17 +53480,17 @@ msgstr ""
 msgid "Address Details"
 msgstr "Adresă:"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "W"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
 #, kde-format
 msgid "E"
 msgstr ""
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
@@ -53498,7 +53498,7 @@ msgstr ""
 msgid "N"
 msgstr "Nu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
 #, kde-format
 msgid "S"
