@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataSchemaData.h"
 
@@ -20,15 +30,16 @@ namespace Marble
 class GeoDataSchemaDataPrivate
 {
 public:
+
     GeoDataSchemaDataPrivate()
-    : m_parent( nullptr )
+        : m_parent( nullptr )
     {
         // nothing to do
     }
 
-    QString m_schemaUrl;
+    QString                           m_schemaUrl;
     QHash<QString, GeoDataSimpleData> m_simpleData;   // Map for name and SimpleData
-    GeoDataExtendedData *m_parent;
+    GeoDataExtendedData*              m_parent = nullptr;
 };
 
 GeoDataSchemaData::GeoDataSchemaData()

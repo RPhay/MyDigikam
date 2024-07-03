@@ -1,12 +1,23 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2014 Abhinav Gangwar <abhgang@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
-#include "digikam_export.h"
 #include "GeoDocument.h"
+
+#include "digikam_export.h"
 
 class QDataStream;
 class QString;
@@ -16,11 +27,10 @@ namespace Marble
 
 class GeoDataSimpleFieldPrivate;
 
-/**
- */
 class DIGIKAM_EXPORT GeoDataSimpleField : public GeoNode
 {
 public:
+
     GeoDataSimpleField();
     GeoDataSimpleField( const GeoDataSimpleField& other );
     bool operator==( const GeoDataSimpleField& other ) const;
@@ -30,7 +40,8 @@ public:
     /*
      * @brief Enum for different values of type attribute of SimpleField
      */
-    enum SimpleFieldType {
+    enum SimpleFieldType
+    {
         String,
         Int,
         UInt,

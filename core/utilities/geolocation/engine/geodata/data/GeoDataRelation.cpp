@@ -1,13 +1,24 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2017 Dennis Nienhüser <nienhueser@kde.org>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoDataRelation.h"
 
+#include <QSet>
+
 #include "GeoDataTypes.h"
 #include "OsmPlacemarkData.h"
-
-#include <QSet>
 
 namespace Marble
 {
@@ -15,20 +26,21 @@ namespace Marble
 class GeoDataRelationPrivate
 {
 public:
-    QSet<const GeoDataFeature*> m_features;
-    OsmPlacemarkData m_osmData;
-    QSet<qint64> m_memberIds;
 
-    mutable GeoDataRelation::RelationType m_relationType = GeoDataRelation::UnknownType;
-    mutable bool m_relationTypeDirty = true;
+    QSet<const GeoDataFeature*>                          m_features;
+    OsmPlacemarkData                                     m_osmData;
+    QSet<qint64>                                         m_memberIds;
+
+    mutable GeoDataRelation::RelationType                m_relationType = GeoDataRelation::UnknownType;
+    mutable bool                                         m_relationTypeDirty = true;
     static QHash<QString, GeoDataRelation::RelationType> s_relationTypes;
 };
 
 QHash<QString, GeoDataRelation::RelationType> GeoDataRelationPrivate::s_relationTypes;
 
-GeoDataRelation::GeoDataRelation() :
-    GeoDataFeature(),
-    d_ptr(new GeoDataRelationPrivate)
+GeoDataRelation::GeoDataRelation()
+    : GeoDataFeature(),
+      d_ptr(new GeoDataRelationPrivate)
 {
     // nothing to do
 }
@@ -170,4 +182,4 @@ bool GeoDataRelation::containsAnyOf(const QSet<qint64> &memberIds) const
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(GeoDataRelation::RelationTypes)
 
-}
+} // namesapce Marble
