@@ -79,7 +79,6 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam"
 
 # KDE frameworks version + Upload URL.
 # See official release here: https://download.kde.org/stable/frameworks/
@@ -98,6 +97,8 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     # See official release here: https://download.kde.org/stable/frameworks/
     DK_KA_VERSION="24.05.1"
 
+    DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
+
 else
 
     # KDE Plasma version.
@@ -111,5 +112,7 @@ else
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
     DK_KDE_VERSION="v6.2.0"
+
+    DK_UPLOADDIR="/srv/archives/files/digikam"
 
 fi
