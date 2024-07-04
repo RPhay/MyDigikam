@@ -54,6 +54,6 @@ GeoNode* KmlrefreshModeTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
 
+} // namespace Marble

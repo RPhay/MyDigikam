@@ -24,8 +24,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( Update )
 
 GeoNode* KmlUpdateTagHandler::parse( GeoParser& parser ) const
@@ -45,5 +47,6 @@ GeoNode* KmlUpdateTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

@@ -51,6 +51,9 @@ GeoNode* KmlAnimatedUpdateTagHandler::parse( GeoParser& parser ) const
 
     return nullptr;
 }
-}
-}
-}
+
+} // namespace gx
+
+} // namespace kml
+
+} // namespace Marble

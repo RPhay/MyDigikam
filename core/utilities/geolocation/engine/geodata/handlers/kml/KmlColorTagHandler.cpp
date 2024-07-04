@@ -61,5 +61,6 @@ QColor KmlcolorTagHandler::parseColor( const QString &colorString )
     return ok ? QColor::fromRgba( rgba ) : QColor();
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

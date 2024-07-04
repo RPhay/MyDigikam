@@ -79,5 +79,6 @@ GeoDataSimpleField::SimpleFieldType KmlSimpleFieldTagHandler::resolveType( const
     return fieldType;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

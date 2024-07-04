@@ -225,6 +225,6 @@ const char kmlTag_role[] = "role";
 const char kmlTag_CountryNameCode[] = "CountryNameCode";
 const char kmlTag_countrycode[] = "countrycode";
 
-}
+} // namespace kml
 
-}
+} // namespace Marble

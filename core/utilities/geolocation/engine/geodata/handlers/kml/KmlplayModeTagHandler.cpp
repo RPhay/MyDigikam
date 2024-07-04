@@ -47,4 +47,5 @@ GeoNode* KmlplayModeTagHandler::parse(GeoParser &parser) const
 }
 
 } // namespace kml
+
 } // namespace Marble

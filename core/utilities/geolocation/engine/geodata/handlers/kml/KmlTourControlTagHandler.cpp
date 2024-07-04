@@ -51,4 +51,5 @@ GeoNode* KmlTourControlTagHandler::parse(GeoParser &parser) const
 }
 
 } // namespace kml
+
 } // namespace Marble

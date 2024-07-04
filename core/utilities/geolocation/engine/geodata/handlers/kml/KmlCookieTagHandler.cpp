@@ -43,5 +43,6 @@ GeoNode* KmlcookieTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

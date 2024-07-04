@@ -52,6 +52,8 @@ GeoNode* KmlTimeStampTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
-}
+} // namespace gx
+
+} // namespace kml
+
+} // namespace Marble

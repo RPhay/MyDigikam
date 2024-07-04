@@ -44,5 +44,6 @@ GeoNode* KmlmaxWidthTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

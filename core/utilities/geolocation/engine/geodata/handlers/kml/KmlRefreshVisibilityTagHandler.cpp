@@ -43,5 +43,6 @@ GeoNode *KmlrefreshVisibilityTagHandler::parse(GeoParser & parser) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

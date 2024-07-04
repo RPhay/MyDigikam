@@ -38,5 +38,6 @@ GeoNode* KmlinnerBoundaryIsTagHandler::parse( GeoParser& parser ) const
     return parentItem.nodeAs<GeoDataPolygon>();
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

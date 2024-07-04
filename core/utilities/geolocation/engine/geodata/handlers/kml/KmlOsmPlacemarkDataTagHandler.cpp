@@ -97,5 +97,7 @@ GeoNode* KmlOsmPlacemarkDataTagHandler::parse( GeoParser& parser ) const
     }
     return nullptr;
 }
-}
-}
+
+} // namespace kml
+
+} // namespace Marble

@@ -45,5 +45,6 @@ GeoNode* KmlsouthTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

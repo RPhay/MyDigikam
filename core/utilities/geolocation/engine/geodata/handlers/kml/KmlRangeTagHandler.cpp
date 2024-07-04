@@ -47,6 +47,8 @@ KML_DEFINE_TAG_HANDLER (range)
 
       return nullptr;
     }
-}
-}
+
+} // namespace kml
+
+} // namespace Marble
 

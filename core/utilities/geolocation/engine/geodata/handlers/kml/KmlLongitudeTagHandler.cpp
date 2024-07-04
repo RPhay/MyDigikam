@@ -52,5 +52,6 @@ namespace kml
       return nullptr;
     }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

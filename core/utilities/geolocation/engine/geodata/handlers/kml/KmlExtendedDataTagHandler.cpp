@@ -51,5 +51,6 @@ GeoNode* KmlExtendedDataTagHandler::parse( GeoParser& parser ) const
 
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

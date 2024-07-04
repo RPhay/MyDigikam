@@ -48,6 +48,8 @@ GeoNode* KmlsizeTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
-}
+} // namespace mx
+
+} // namespace kml
+
+} // namespace Marble

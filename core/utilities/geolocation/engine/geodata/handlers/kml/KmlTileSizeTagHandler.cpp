@@ -44,5 +44,6 @@ GeoNode* KmltileSizeTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

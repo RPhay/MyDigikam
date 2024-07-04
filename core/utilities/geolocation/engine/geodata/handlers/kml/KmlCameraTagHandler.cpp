@@ -54,6 +54,6 @@ GeoNode *KmlCameraTagHandler::parse( GeoParser & parser ) const
     return camera;
 }
 
-}
+} // namespace kml
 
-}
+} // namespace Marble

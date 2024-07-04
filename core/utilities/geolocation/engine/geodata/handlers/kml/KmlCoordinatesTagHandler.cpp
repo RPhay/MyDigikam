@@ -192,5 +192,6 @@ GeoNode* KmlcoordinatesTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

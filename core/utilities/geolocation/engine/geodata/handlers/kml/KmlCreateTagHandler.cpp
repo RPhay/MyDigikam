@@ -46,5 +46,6 @@ GeoNode* KmlCreateTagHandler::parse( GeoParser& parser ) const
     }
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

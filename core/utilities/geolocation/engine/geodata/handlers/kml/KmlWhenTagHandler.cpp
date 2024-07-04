@@ -86,6 +86,6 @@ GeoDataTimeStamp::TimeResolution KmlwhenTagHandler::modify(  QString& whenString
     return GeoDataTimeStamp::SecondResolution;
 }
 
-}
+} // namespace kml
 
-}
+} // namespace Marble

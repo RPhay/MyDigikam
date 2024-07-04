@@ -50,4 +50,5 @@ GeoNode* KmlWaitTagHandler::parse(GeoParser &parser) const
 }
 
 } // namespace kml
+
 } // namespace Marble

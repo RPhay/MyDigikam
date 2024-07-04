@@ -37,5 +37,7 @@ KML_DEFINE_TAG_HANDLER( refreshInterval )
 
       return nullptr;
     }
-}
-}
+
+} // namespace kml
+
+} // namespace Marble

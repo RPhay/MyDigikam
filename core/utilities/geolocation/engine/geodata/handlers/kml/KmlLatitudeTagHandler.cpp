@@ -27,8 +27,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
     KML_DEFINE_TAG_HANDLER( latitude )
     GeoNode *KmllatitudeTagHandler::parse( GeoParser & parser ) const
     {
@@ -45,8 +47,10 @@ namespace kml
         } else if ( parentItem.is<GeoDataLocation>() ) {
             qreal latitude = parser.readElementText().trimmed().toDouble();
             parentItem.nodeAs<GeoDataLocation>()->setLatitude(latitude, GeoDataCoordinates::Degree);
-    }
+        }
         return nullptr;
     }
-  }
-}
+
+} // namespace kml
+
+} // namespace Marble

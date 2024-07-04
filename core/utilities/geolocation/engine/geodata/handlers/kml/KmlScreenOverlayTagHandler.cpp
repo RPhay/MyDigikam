@@ -56,5 +56,6 @@ GeoNode* KmlScreenOverlayTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
-}
-}
+} // namespace kml
+
+} // namespace Marble

@@ -52,7 +52,9 @@ KML_DEFINE_TAG_HANDLER( altitude )
 
       return nullptr;
     }
-}
-}
+
+} // namespace kml
+
+} // namespace Marble
 
 
