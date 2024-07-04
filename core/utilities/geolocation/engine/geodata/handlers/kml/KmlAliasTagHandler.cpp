@@ -22,8 +22,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( Alias )
 
 GeoNode* KmlAliasTagHandler::parse( GeoParser& parser ) const

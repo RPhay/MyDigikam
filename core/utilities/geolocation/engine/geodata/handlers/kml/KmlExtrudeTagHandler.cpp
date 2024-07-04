@@ -1,27 +1,37 @@
-/*
-    SPDX-FileCopyrightText: 2008 Patrick Spendrin <ps_ml@gmx.de>
-    SPDX-FileCopyrightText: 2014 Marek Hakala <hakala.marek@gmail.com>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlExtrudeTagHandler.h"
-#include "digikam_debug.h"
-#include "KmlElementDictionary.h"
 
+#include "KmlElementDictionary.h"
 #include "GeoDataGeometry.h"
 #include "GeoDataPoint.h"
 #include "GeoDataPolygon.h"
 #include "GeoDataLineString.h"
 #include "GeoDataLinearRing.h"
 #include "GeoDataPlacemark.h"
-
 #include "GeoParser.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( extrude )
 
 GeoNode* KmlextrudeTagHandler::parse( GeoParser& parser ) const

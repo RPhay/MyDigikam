@@ -21,8 +21,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( bottomFov )
 
 GeoNode* KmlbottomFovTagHandler::parse( GeoParser& parser ) const
