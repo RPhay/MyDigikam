@@ -1,12 +1,22 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
 #include <QVector>
+
 #include "GeoDocument.h"
 
 #include "digikam_export.h"
@@ -15,13 +25,11 @@ namespace Marble
 {
 
 class GeoSceneSection;
-
 class GeoSceneLegendPrivate;
 
 /**
  * @short Legend of a GeoScene document.
  */
-
 class DIGIKAM_EXPORT GeoSceneLegend : public GeoNode
 {
 public:
@@ -41,6 +49,8 @@ public:
 private:
 
     Q_DISABLE_COPY( GeoSceneLegend )
+
+private:
 
     GeoSceneLegendPrivate* const d = nullptr;
 };

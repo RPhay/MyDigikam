@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneLegend.h"
 
@@ -14,18 +23,19 @@ namespace Marble
 
 class GeoSceneLegendPrivate
 {
-  public:
+public:
+
     ~GeoSceneLegendPrivate()
     {
         qDeleteAll( m_sections );
     }
 
-     /// The vector holding all the sections in the legend.
+    /// The vector holding all the sections in the legend.
     /// (We want to preserve the order and don't care
     /// much about speed here), so we don't use a hash
+
     QVector<const GeoSceneSection*> m_sections;
 };
-
 
 GeoSceneLegend::GeoSceneLegend()
     : d( new GeoSceneLegendPrivate )
@@ -45,6 +55,7 @@ const char* GeoSceneLegend::nodeType() const
 void GeoSceneLegend::addSection( const GeoSceneSection* section )
 {
     // Remove any section that has the same name
+
     QVector<const GeoSceneSection*>::iterator it = d->m_sections.begin();
     while (it != d->m_sections.end()) {
         const GeoSceneSection* currentSection = *it;
@@ -68,4 +79,4 @@ QVector<const GeoSceneSection*> GeoSceneLegend::sections() const
     return d->m_sections;
 }
 
-}
+} // namespace Marble

@@ -1,14 +1,22 @@
-/*
-    SPDX-FileCopyrightText: 2016 Friedrich W. H. Kossebau <kossebau@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneMercatorTileProjection.h"
 
-#include <GeoDataLatLonBox.h>
-#include <MarbleMath.h>
-
+#include "GeoDataLatLonBox.h"
+#include "MarbleMath.h"
 
 namespace Marble
 {
@@ -16,7 +24,6 @@ namespace Marble
 GeoSceneMercatorTileProjection::GeoSceneMercatorTileProjection()
 {
 }
-
 
 GeoSceneMercatorTileProjection::~GeoSceneMercatorTileProjection()
 {
@@ -27,29 +34,24 @@ GeoSceneAbstractTileProjection::Type GeoSceneMercatorTileProjection::type() cons
     return Mercator;
 }
 
-
-static inline
-unsigned int lowerBoundTileIndex(qreal baseTileIndex)
+static inline unsigned int lowerBoundTileIndex(qreal baseTileIndex)
 {
     const qreal floorBaseTileIndex = floor(baseTileIndex);
     unsigned int tileIndex = static_cast<unsigned int>(floorBaseTileIndex);
     return (baseTileIndex == floorBaseTileIndex) ? tileIndex-1 : tileIndex;
 }
 
-static inline
-unsigned int upperBoundTileIndex(qreal baseTileIndex)
+static inline unsigned int upperBoundTileIndex(qreal baseTileIndex)
 {
     return (unsigned int)floor(baseTileIndex);
 }
 
-static inline
-qreal baseTileXFromLon(qreal lon, unsigned int tileCount)
+static inline qreal baseTileXFromLon(qreal lon, unsigned int tileCount)
 {
     return 0.5 * (lon / M_PI + 1.0) * tileCount;
 }
 
-static inline
-qreal baseTileYFromLat(qreal latitude, unsigned int tileCount)
+static inline qreal baseTileYFromLat(qreal latitude, unsigned int tileCount)
 {
     // We need to calculate the tile position from the latitude
     // projected using the Mercator projection. This requires the inverse Gudermannian
@@ -62,8 +64,7 @@ qreal baseTileYFromLat(qreal latitude, unsigned int tileCount)
 }
 
 // on tile borders selects the tile to the east
-static inline
-unsigned int eastBoundTileXFromLon(qreal lon, unsigned int tileCount)
+static inline unsigned int eastBoundTileXFromLon(qreal lon, unsigned int tileCount)
 {
     // special casing tile-map end
     if (lon == M_PI) {
@@ -73,8 +74,7 @@ unsigned int eastBoundTileXFromLon(qreal lon, unsigned int tileCount)
 }
 
 // on tile borders selects the tile to the west
-static inline
-unsigned int westBoundTileXFromLon(qreal lon, unsigned int tileCount)
+static inline unsigned int westBoundTileXFromLon(qreal lon, unsigned int tileCount)
 {
     // special casing tile-map end
     if (lon == -M_PI) {
@@ -84,8 +84,7 @@ unsigned int westBoundTileXFromLon(qreal lon, unsigned int tileCount)
 }
 
 // on tile borders selects the tile to the south
-static inline
-unsigned int southBoundTileYFromLat(qreal lat, unsigned int tileCount)
+static inline unsigned int southBoundTileYFromLat(qreal lat, unsigned int tileCount)
 {
     // special casing tile-map end
     if (lat == -M_PI*0.5) {
@@ -96,8 +95,7 @@ unsigned int southBoundTileYFromLat(qreal lat, unsigned int tileCount)
 }
 
 // on tile borders selects the tile to the north
-static inline
-unsigned int northBoundTileYFromLat(qreal lat, unsigned int tileCount)
+static inline unsigned int northBoundTileYFromLat(qreal lat, unsigned int tileCount)
 {
     // special casing tile-map end
     if (lat == M_PI*0.5) {
@@ -108,18 +106,15 @@ unsigned int northBoundTileYFromLat(qreal lat, unsigned int tileCount)
 }
 
 
-static inline
-qreal lonFromTileX(unsigned int x, unsigned int tileCount)
+static inline qreal lonFromTileX(unsigned int x, unsigned int tileCount)
 {
     return ( (2*M_PI * x) / tileCount - M_PI );
 }
 
-static inline
-qreal latFromTileY(unsigned int y, unsigned int tileCount)
+static inline qreal latFromTileY(unsigned int y, unsigned int tileCount)
 {
     return gd(M_PI * (1.0 - (2.0 * y) / tileCount));
 }
-
 
 QRect GeoSceneMercatorTileProjection::tileIndexes(const GeoDataLatLonBox &latLonBox, int zoomLevel) const
 {
@@ -136,7 +131,6 @@ QRect GeoSceneMercatorTileProjection::tileIndexes(const GeoDataLatLonBox &latLon
     return QRect(QPoint(westX, northY), QPoint(eastX, southY));
 }
 
-
 GeoDataLatLonBox GeoSceneMercatorTileProjection::geoCoordinates(int zoomLevel, int x, int y) const
 {
     const unsigned int xTileCount = (1 << zoomLevel) * levelZeroColumns();
@@ -151,4 +145,4 @@ GeoDataLatLonBox GeoSceneMercatorTileProjection::geoCoordinates(int zoomLevel, i
     return GeoDataLatLonBox(north, south, east, west);
 }
 
-}
+} // namespace Marble

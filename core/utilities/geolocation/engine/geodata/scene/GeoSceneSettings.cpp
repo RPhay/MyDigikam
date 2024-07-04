@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneSettings.h"
 
@@ -17,16 +26,20 @@ namespace Marble
 
 class GeoSceneSettingsPrivate
 {
-  public:
+public:
+
     ~GeoSceneSettingsPrivate()
     {
         qDeleteAll(m_properties);
         qDeleteAll(m_groups);
     }
 
+public:
+
     /// The hash table holding all the properties in the settings.
-    QVector<GeoSceneProperty*> m_properties;
-    QVector<GeoSceneGroup*> m_groups;
+
+    QVector<GeoSceneProperty*>  m_properties;
+    QVector<GeoSceneGroup*>     m_groups;
 };
 
 
@@ -256,6 +269,6 @@ QVector<GeoSceneProperty*> GeoSceneSettings::rootProperties()
     return d->m_properties;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GeoSceneSettings.cpp"

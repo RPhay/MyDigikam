@@ -1,9 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2007 Murad Tagirov <tmurad@gmail.com>
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "GeoSceneDocument.h"
@@ -20,7 +28,8 @@ namespace Marble
 
 class GeoSceneDocumentPrivate
 {
-  public:
+public:
+
     GeoSceneDocumentPrivate()
         : m_head(new GeoSceneHead),
           m_map(new GeoSceneMap),
@@ -37,10 +46,10 @@ class GeoSceneDocumentPrivate
         delete m_legend;
     }
 
-    GeoSceneHead*     m_head;
-    GeoSceneMap*      m_map;
-    GeoSceneSettings* m_settings;
-    GeoSceneLegend*   m_legend;
+    GeoSceneHead*     m_head        = nullptr;
+    GeoSceneMap*      m_map         = nullptr;
+    GeoSceneSettings* m_settings    = nullptr;
+    GeoSceneLegend*   m_legend      = nullptr;
 };
 
 
@@ -49,8 +58,9 @@ GeoSceneDocument::GeoSceneDocument()
       d( new GeoSceneDocumentPrivate )
 {
     // Establish connection of property changes to the outside, e.g. the LegendBrowser
+
     connect ( d->m_settings, SIGNAL(valueChanged(QString,bool)),
-                          SIGNAL(valueChanged(QString,bool)) );
+              this, SIGNAL(valueChanged(QString,bool)) );
 }
 
 GeoSceneDocument::~GeoSceneDocument()
@@ -103,6 +113,6 @@ GeoSceneLegend* GeoSceneDocument::legend()
     return d->m_legend;
 }
 
-}
+} // namespace Marble
 
 #include "moc_GeoSceneDocument.cpp"

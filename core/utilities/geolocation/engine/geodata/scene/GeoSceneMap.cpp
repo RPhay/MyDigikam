@@ -1,19 +1,27 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneMap.h"
+
+#include <QColor>
 
 #include "GeoSceneTypes.h"
 #include "GeoSceneLayer.h"
 #include "GeoSceneFilter.h"
 #include "DgmlAuxillaryDictionary.h"
-
-#include <QColor>
-
-#include <GeoDataCoordinates.h>
+#include "GeoDataCoordinates.h"
 
 namespace Marble
 {
@@ -22,7 +30,8 @@ namespace Marble
 
 class GeoSceneMapPrivate
 {
-  public:
+public:
+
     GeoSceneMapPrivate()
     {
     }
@@ -33,25 +42,24 @@ class GeoSceneMapPrivate
         qDeleteAll( m_filters );
     }
 
-    QVariantList  m_center;
+    QVariantList                m_center;
 
     /// The vector holding all the sections in the legend.
     /// (We want to preserve the order and don't care
     /// much about speed here), so we don't use a hash
-    QVector<GeoSceneLayer*> m_layers;
+    QVector<GeoSceneLayer*>     m_layers;
 
     /// The vector holding all the filters in the map.
-    QVector<GeoSceneFilter*> m_filters;
+    QVector<GeoSceneFilter*>    m_filters;
 
-    QColor m_backgroundColor;
-    QColor m_labelColor;
+    QColor                      m_backgroundColor;
+    QColor                      m_labelColor;
 
     /// This color will be used to highlight
     /// a region when it's clicked on.
-    QColor m_highlightBrushColor;
-    QColor m_highlightPenColor;
+    QColor                      m_highlightBrushColor;
+    QColor                      m_highlightPenColor;
 };
-
 
 GeoSceneMap::GeoSceneMap()
     : d ( new GeoSceneMapPrivate )
@@ -271,4 +279,4 @@ void GeoSceneMap::setHighlightPenColor( const QColor &highlightPenColor )
     d->m_highlightPenColor = highlightPenColor;
 }
 
-}
+} // namespace Marble

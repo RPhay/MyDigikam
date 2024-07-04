@@ -1,12 +1,21 @@
-/*
-    SPDX-FileCopyrightText: 2016 Friedrich W. H. Kossebau <kossebau@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GeoSceneEquirectTileProjection.h"
 
-#include <GeoDataLatLonBox.h>
+#include "GeoDataLatLonBox.h"
 
 namespace Marble
 {
@@ -14,7 +23,6 @@ namespace Marble
 GeoSceneEquirectTileProjection::GeoSceneEquirectTileProjection()
 {
 }
-
 
 GeoSceneEquirectTileProjection::~GeoSceneEquirectTileProjection()
 {
@@ -24,7 +32,6 @@ GeoSceneAbstractTileProjection::Type GeoSceneEquirectTileProjection::type() cons
 {
     return Equirectangular;
 }
-
 
 static inline
 unsigned int lowerBoundTileIndex(qreal baseTileIndex)
@@ -51,7 +58,6 @@ qreal baseTileYFromLat(qreal lat, unsigned int tileCount)
 {
     return (0.5 - lat / M_PI) * tileCount;
 }
-
 
 // on tile borders selects the tile to the east
 static inline
@@ -97,7 +103,6 @@ unsigned int northBoundTileYFromLat(qreal lat, unsigned int tileCount)
     return lowerBoundTileIndex(baseTileYFromLat(lat, tileCount));
 }
 
-
 QRect GeoSceneEquirectTileProjection::tileIndexes(const GeoDataLatLonBox &latLonBox, int zoomLevel) const
 {
     const unsigned int xTileCount = (1 << zoomLevel) * levelZeroColumns();
@@ -127,4 +132,4 @@ GeoDataLatLonBox GeoSceneEquirectTileProjection::geoCoordinates(int zoomLevel, i
     return GeoDataLatLonBox(north, south, east, west);
 }
 
-}
+} // namespace Marble

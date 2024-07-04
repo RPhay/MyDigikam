@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "GeoSceneHead.h"
@@ -18,7 +27,8 @@ namespace Marble
 
 class GeoSceneHeadPrivate
 {
-  public:
+public:
+
     GeoSceneHeadPrivate()
         : m_zoom(new GeoSceneZoom),
           m_icon(new GeoSceneIcon),
@@ -39,19 +49,18 @@ class GeoSceneHeadPrivate
         delete m_license;
     }
 
-    GeoSceneZoom* m_zoom;
-    GeoSceneIcon* m_icon;
-    GeoSceneLicense* m_license;
+    GeoSceneZoom*       m_zoom;
+    GeoSceneIcon*       m_icon;
+    GeoSceneLicense*    m_license;
 
-    QString m_name;
-    QString m_target;
-    QString m_theme;
-    QString m_description;
-    qreal m_radius;
+    QString             m_name;
+    QString             m_target;
+    QString             m_theme;
+    QString             m_description;
+    qreal               m_radius;
 
-    bool    m_visible;
+    bool                m_visible;
 };
-
 
 GeoSceneHead::GeoSceneHead()
     : d( new GeoSceneHeadPrivate )
@@ -162,4 +171,4 @@ GeoSceneLicense* GeoSceneHead::license()
     return d->m_license;
 }
 
-}
+} // namespace Marble

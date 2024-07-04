@@ -1,10 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Torsten Rahn <rahn@kde.org>
-    SPDX-FileCopyrightText: 2008 Jens-Michael Hoffmann <jensmh@gmx.de>
-    SPDX-FileCopyrightText: 2012 Ander Pijoan <ander.pijoan@deusto.es>
-
-    SPDX-License-Identifier: LGPL-2.1-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -26,10 +33,11 @@
 /* In order to make Marble able to manage vector tiles,
  * now there is GeoSceneTileDataset and then GeoSceneTextureTileDataset
  * (for the tag <texture> in dgml) or GeoSceneVectorTileDataset
- * (for <vectortile>) are created, which inherit from this class */
-
+ * (for <vectortile>) are created, which inherit from this class
+ */
 namespace Marble
 {
+
 class DownloadPolicy;
 class ServerLayout;
 class TileId;
@@ -38,7 +46,14 @@ class DIGIKAM_EXPORT GeoSceneTileDataset : public GeoSceneAbstractDataset
 {
 public:
 
-    enum StorageLayout { Marble, OpenStreetMap, TileMapService };
+    enum StorageLayout
+    {
+        Marble,
+        OpenStreetMap,
+        TileMapService
+    };
+
+public:
 
     explicit GeoSceneTileDataset( const QString& name );
     ~GeoSceneTileDataset() override;
@@ -113,26 +128,28 @@ private:
     Q_DISABLE_COPY( GeoSceneTileDataset )
     QStringList hostNames() const;
 
-    QString m_sourceDir;
-    QString m_installMap;
-    StorageLayout m_storageLayoutMode;
-    const ServerLayout* m_serverLayout = nullptr;
-    int m_levelZeroColumns;
-    int m_levelZeroRows;
-    int m_minimumTileLevel;
-    int m_maximumTileLevel;
-    QVector<int> m_tileLevels;
-    mutable QSize m_tileSize;
-    GeoDataLatLonBox m_latLonBox;
-    GeoSceneAbstractTileProjection* m_tileProjection = nullptr;
-    QString m_blending;
+private:
+
+    QString                                 m_sourceDir;
+    QString                                 m_installMap;
+    StorageLayout                           m_storageLayoutMode;
+    const ServerLayout*                     m_serverLayout = nullptr;
+    int                                     m_levelZeroColumns;
+    int                                     m_levelZeroRows;
+    int                                     m_minimumTileLevel;
+    int                                     m_maximumTileLevel;
+    QVector<int>                            m_tileLevels;
+    mutable QSize                           m_tileSize;
+    GeoDataLatLonBox                        m_latLonBox;
+    GeoSceneAbstractTileProjection*         m_tileProjection = nullptr;
+    QString                                 m_blending;
 
     /// List of Urls which are used in a round robin fashion
-    QVector<QUrl> m_downloadUrls;
+    QVector<QUrl>                           m_downloadUrls;
 
     /// Points to next Url for the round robin algorithm
-    mutable QVector<QUrl>::const_iterator m_nextUrl;
-    QList<const DownloadPolicy*> m_downloadPolicies;
+    mutable QVector<QUrl>::const_iterator   m_nextUrl;
+    QList<const DownloadPolicy*>            m_downloadPolicies;
 };
 
 inline bool GeoSceneTileDataset::hasMaximumTileLevel() const
