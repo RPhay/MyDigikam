@@ -1,16 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Harshit Jain <hjain.itbhu@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlBeginTagHandler.h"
-
-#include "digikam_debug.h"
 
 #include "KmlWhenTagHandler.h"
 #include "KmlElementDictionary.h"
 #include "GeoDataTimeSpan.h"
 #include "GeoParser.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {
