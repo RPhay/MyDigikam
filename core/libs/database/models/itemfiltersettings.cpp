@@ -767,8 +767,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                     if (canConverseNum && canConverseDenom && num && denom && info.dimensions().isValid())
                     {
                         double textAspect = qMax((double)num / denom, (double)denom / num);
-                        double infoAspect = qMax((double)info.dimensions().width()  / (double)info.dimensions().height(),
-                                                 (double)info.dimensions().height() / (double)info.dimensions().width());
+                        double infoAspect = qMax((double)info.dimensions().width()  / info.dimensions().height(),
+                                                 (double)info.dimensions().height() / info.dimensions().width());
 
                         if (fabs(infoAspect - textAspect) < 0.01)
                         {
