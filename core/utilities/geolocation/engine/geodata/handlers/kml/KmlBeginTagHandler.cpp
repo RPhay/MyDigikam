@@ -24,8 +24,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( begin )
 
 GeoNode* KmlbeginTagHandler::parse( GeoParser& parser ) const

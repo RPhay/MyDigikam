@@ -1,11 +1,21 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2012 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlTourControlTagHandler.h"
-#include "KmlPlaylistTagHandler.h"
 
+#include "KmlPlaylistTagHandler.h"
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
 #include "GeoParser.h"
@@ -14,8 +24,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER_GX22( TourControl )
 
 GeoNode* KmlTourControlTagHandler::parse(GeoParser &parser) const

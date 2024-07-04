@@ -1,12 +1,19 @@
-/*
-    SPDX-FileCopyrightText: 2008-2009 Patrick Spendrin <ps_ml@gmx.de>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlIconStyleTagHandler.h"
-
-#include "digikam_debug.h"
 
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
@@ -14,10 +21,14 @@
 #include "GeoDataIconStyle.h"
 #include "GeoParser.h"
 
+#include "digikam_debug.h"
+
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( IconStyle )
 
 GeoNode* KmlIconStyleTagHandler::parse( GeoParser& parser ) const

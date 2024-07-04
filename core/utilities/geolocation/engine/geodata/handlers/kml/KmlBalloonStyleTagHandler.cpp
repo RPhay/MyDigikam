@@ -25,8 +25,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( BalloonStyle )
 
 GeoNode* KmlBalloonStyleTagHandler::parse( GeoParser& parser ) const

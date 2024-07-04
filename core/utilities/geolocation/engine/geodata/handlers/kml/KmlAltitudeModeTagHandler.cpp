@@ -30,8 +30,10 @@
 
 namespace Marble
 {
+
 namespace kml
 {
+
 KML_DEFINE_TAG_HANDLER( altitudeMode )
 
 GeoNode* KmlaltitudeModeTagHandler::parse( GeoParser& parser ) const
