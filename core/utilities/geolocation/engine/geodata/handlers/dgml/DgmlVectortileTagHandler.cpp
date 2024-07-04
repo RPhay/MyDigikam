@@ -1,16 +1,21 @@
-/*
-    SPDX-License-Identifier: LGPL-2.1-or-later
-
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-FileCopyrightText: 2012 Ander Pijoan <ander.pijoan@deusto.es>
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "DgmlVectortileTagHandler.h"
 
 #include <limits>
-
-#include "digikam_debug.h"
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
@@ -18,6 +23,8 @@
 #include "GeoParser.h"
 #include "GeoSceneLayer.h"
 #include "GeoSceneVectorTileDataset.h"
+
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -55,6 +62,6 @@ GeoNode* DgmlVectortileTagHandler::parse( GeoParser& parser ) const
     return texture;
 }
 
-}
-}
+} // namespace dgml
 
+} // namespace Marble

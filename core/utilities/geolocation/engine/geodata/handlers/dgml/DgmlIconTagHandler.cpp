@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2008 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 // Own
 #include "DgmlIconTagHandler.h"
@@ -20,8 +29,10 @@
 
 namespace Marble
 {
+
 namespace dgml
 {
+
 DGML_DEFINE_TAG_HANDLER(Icon)
 
 GeoNode* DgmlIconTagHandler::parse(GeoParser& parser) const
@@ -52,5 +63,6 @@ GeoNode* DgmlIconTagHandler::parse(GeoParser& parser) const
     return nullptr;
 }
 
-}
-}
+} // namespace dgml
+
+} // namespace Marble

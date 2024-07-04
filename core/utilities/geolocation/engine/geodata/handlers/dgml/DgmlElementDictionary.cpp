@@ -1,17 +1,27 @@
-/*
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "DgmlElementDictionary.h"
 
 namespace Marble
 {
 
-// One static list of all tag names, to avoid string comparisons all-over-the-place
 namespace dgml
 {
+
+// One static list of all tag names, to avoid string comparisons all-over-the-place
 
 const char dgmlTag_nameSpace20[] = "http://edu.kde.org/marble/dgml/2.0";
 
@@ -63,5 +73,7 @@ const char dgmlTag_Vectortile[] = "vectortile";
 const char dgmlTag_Visible[] = "visible";
 const char dgmlTag_Zoom[] = "zoom";
 const char dgmlTag_RenderOrder[] = "renderOrder";
-}
-}
+
+} // namespace dgml
+
+} // namespace Marble

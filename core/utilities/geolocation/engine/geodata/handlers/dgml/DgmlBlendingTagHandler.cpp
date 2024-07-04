@@ -1,6 +1,17 @@
-// SPDX-FileCopyrightText: 2010 Jens-Michael Hoffmann <jmho@c-xx.com>
-//
-// SPDX-License-Identifier: LGPL-2.1-or-later
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "DgmlBlendingTagHandler.h"
 
@@ -8,12 +19,15 @@
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneTileDataset.h"
+
 #include "digikam_debug.h"
 
 namespace Marble
 {
+
 namespace dgml
 {
+
 static GeoTagHandlerRegistrar registrar( GeoParser::QualifiedName( QString::fromUtf8(dgmlTag_Blending),
                                                                        QString::fromUtf8(dgmlTag_nameSpace20) ),
                                          new DgmlBlendingTagHandler );
@@ -35,6 +49,6 @@ GeoNode* DgmlBlendingTagHandler::parse( GeoParser& parser ) const
     return nullptr;
 }
 
+} // namespace dgml
 
-}
-}
+} // namespace Marble

@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -11,10 +20,12 @@
 namespace Marble
 {
 
-// Lists all known DGML 2.0 tags
-// http://edu.kde.org/marble/apis/dgml/documentation/dgmltags.html)
 namespace dgml
 {
+
+    // Lists all known DGML 2.0 tags
+    // http://edu.kde.org/marble/apis/dgml/documentation/dgmltags.html)
+
     DIGIKAM_EXPORT extern const char dgmlTag_nameSpace20[];
 
     extern  const char dgmlTag_Available[];
@@ -65,7 +76,8 @@ namespace dgml
     extern  const char dgmlTag_Visible[];
     extern  const char dgmlTag_Zoom[];
     extern  const char dgmlTag_RenderOrder[];
-}
+
+} // namespace dgml
 
 // Helper macro
 #define DGML_DEFINE_TAG_HANDLER(Name) GEODATA_DEFINE_TAG_HANDLER(dgml, Dgml, Name, dgmlTag_nameSpace20)
