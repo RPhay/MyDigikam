@@ -754,18 +754,23 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                     )
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
-                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'),
+                                                                                            Qt::SkipEmptyParts);
 
                 if (numberStringList.length() == 2)
                 {
-                    QString numString     = (QString)numberStringList.at(0), denomString = (QString)numberStringList.at(1);
                     bool canConverseNum   = false;
                     bool canConverseDenom = false;
-                    int num               = numString.toInt(&canConverseNum, 10), denom = denomString.toInt(&canConverseDenom, 10);
+                    int num               = numberStringList.at(0).toInt(&canConverseNum, 10);
+                    int denom             = numberStringList.at(1).toInt(&canConverseDenom, 10);
 
-                    if (canConverseNum && canConverseDenom)
+                    if (canConverseNum && canConverseDenom && num && denom && info.dimensions().isValid())
                     {
-                        if (fabs(info.aspectRatio() - (double)num / denom) < 0.1)
+                        double textAspect = qMax((double)num / denom, (double)denom / num);
+                        double infoAspect = qMax((double)info.dimensions().width()  / (double)info.dimensions().height(),
+                                                 (double)info.dimensions().height() / (double)info.dimensions().width());
+
+                        if (fabs(infoAspect - textAspect) < 0.01)
                         {
                             textMatch = true;
                         }

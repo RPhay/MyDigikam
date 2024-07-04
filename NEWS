@@ -199,7 +199,7 @@ BUGFIXES:
 167 ==> 489192 - Display error in thumbnail caption field.
 168 ==> 489501 - After deleting images, the following item is not at top in the view.
 169 ==> 489680 - Cannot include directories starting with dot.
-170 ==> 
+170 ==> 382629 - Filter and Search delivers wrong results for text search in aspect ratio.
 171 ==> 
 172 ==> 
 173 ==> 
