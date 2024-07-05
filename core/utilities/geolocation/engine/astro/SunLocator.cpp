@@ -31,7 +31,7 @@ namespace Marble
 
 using std::sin;
 
-class  Q_DECL_HIDDENSunLocatorPrivate
+class Q_DECL_HIDDEN SunLocatorPrivate
 {
 public:
     SunLocatorPrivate( const MarbleClock *clock, const Planet *planet )

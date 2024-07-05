@@ -34,7 +34,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENPluginManagerPrivate
+class Q_DECL_HIDDEN PluginManagerPrivate
 {
 public:
 
@@ -171,7 +171,7 @@ void PluginManager::whitelistPlugin(const QString &filename)
 }
 
 /** Append obj to the given plugins list if it inherits both T and U */
-template<class  Q_DECL_HIDDENIface, class  Q_DECL_HIDDENPlugin>
+template<class Iface, class Plugin>
 bool appendPlugin( QObject * obj, const QPluginLoader *loader, QList<Plugin> &plugins )
 {
     if ( qobject_cast<Iface*>( obj ) && qobject_cast<Plugin>( obj ) ) {

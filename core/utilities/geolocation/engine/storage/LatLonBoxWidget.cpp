@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENQ_DECL_HIDDEN LatLonBoxWidget::Private
+class Q_DECL_HIDDEN Q_DECL_HIDDEN LatLonBoxWidget::Private
 {
 public:
 

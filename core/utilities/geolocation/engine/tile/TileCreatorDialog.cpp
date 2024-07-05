@@ -29,7 +29,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENTileCreatorDialogPrivate
+class Q_DECL_HIDDEN TileCreatorDialogPrivate
 {
 public:
 

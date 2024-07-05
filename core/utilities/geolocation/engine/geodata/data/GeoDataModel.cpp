@@ -27,7 +27,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENGeoDataModelPrivate : public GeoDataGeometryPrivate
+class Q_DECL_HIDDEN GeoDataModelPrivate : public GeoDataGeometryPrivate
 {
 public:
 

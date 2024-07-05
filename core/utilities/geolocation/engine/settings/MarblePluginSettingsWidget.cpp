@@ -51,7 +51,7 @@ using namespace Digikam;
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarblePluginSettingsWidget::Private
+class Q_DECL_HIDDEN MarblePluginSettingsWidget::Private
 {
 public:
 

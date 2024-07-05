@@ -446,7 +446,7 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon( const GeoDataLineString &l
 
             // This if-clause contains the section that tessellates the line
             // segments of a linestring. If you are about to learn how the code of
-            // this class  Q_DECL_HIDDENworks you can safely ignore this section for a start.
+            // this class Q_DECL_HIDDEN works you can safely ignore this section for a start.
 
             if ( lineString.tessellate() /* && ( isVisible || previousIsVisible ) */ ) {
 

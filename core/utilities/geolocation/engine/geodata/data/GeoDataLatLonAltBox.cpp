@@ -26,7 +26,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENGeoDataLatLonAltBoxPrivate
+class Q_DECL_HIDDEN GeoDataLatLonAltBoxPrivate
 {
 public:
 

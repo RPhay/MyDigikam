@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENGeoDataCreatePrivate : public GeoDataContainerPrivate
+class Q_DECL_HIDDEN GeoDataCreatePrivate : public GeoDataContainerPrivate
 {
 };
 

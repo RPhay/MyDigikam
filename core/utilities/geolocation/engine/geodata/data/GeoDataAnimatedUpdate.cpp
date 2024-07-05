@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENGeoDataAnimatedUpdatePrivate
+class Q_DECL_HIDDEN GeoDataAnimatedUpdatePrivate
 {
 public:
 

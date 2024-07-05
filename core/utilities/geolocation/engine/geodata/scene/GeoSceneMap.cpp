@@ -28,7 +28,7 @@ namespace Marble
 
 // FIXME: Filters are a Dataset.
 
-class  Q_DECL_HIDDENGeoSceneMapPrivate
+class Q_DECL_HIDDEN GeoSceneMapPrivate
 {
 public:
 

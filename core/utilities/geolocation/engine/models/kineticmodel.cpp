@@ -20,7 +20,7 @@
 
 static const int KineticModelDefaultUpdateInterval = 15; // ms
 
-class  Q_DECL_HIDDENKineticModelPrivate
+class Q_DECL_HIDDEN KineticModelPrivate
 {
 public:
 

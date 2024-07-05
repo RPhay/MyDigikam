@@ -19,7 +19,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleGlobalPrivate
+class Q_DECL_HIDDEN MarbleGlobalPrivate
 {
 public:
 

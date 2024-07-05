@@ -58,7 +58,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleWidget::CustomPaintLayer : public LayerInterface
+class Q_DECL_HIDDEN MarbleWidget::CustomPaintLayer : public LayerInterface
 {
 public:
 
@@ -93,7 +93,7 @@ public:
     MarbleWidget *const m_widget;
 };
 
-class  Q_DECL_HIDDENMarbleWidgetPrivate
+class Q_DECL_HIDDEN MarbleWidgetPrivate
 {
  public:
     explicit MarbleWidgetPrivate( MarbleWidget* parent )

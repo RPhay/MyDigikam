@@ -34,7 +34,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENViewportParamsPrivate
+class Q_DECL_HIDDEN ViewportParamsPrivate
 {
 public:
 

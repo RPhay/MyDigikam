@@ -76,7 +76,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleMap::CustomPaintLayer : public LayerInterface
+class Q_DECL_HIDDEN MarbleMap::CustomPaintLayer : public LayerInterface
 {
 public:
 
@@ -110,9 +110,9 @@ private:
     MarbleMap *const m_map = nullptr;
 };
 
-class  Q_DECL_HIDDENMarbleMapPrivate
+class Q_DECL_HIDDEN MarbleMapPrivate
 {
-    friend class  Q_DECL_HIDDENMarbleWidget;
+    friend class Q_DECL_HIDDEN MarbleWidget;
 
 public:
 

@@ -45,9 +45,9 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleWidgetInputHandlerPrivate
+class Q_DECL_HIDDEN MarbleWidgetInputHandlerPrivate
 {
-    class  Q_DECL_HIDDENMarbleWidgetSelectionRubber : public AbstractSelectionRubber
+    class Q_DECL_HIDDEN MarbleWidgetSelectionRubber : public AbstractSelectionRubber
     {
         public:
             explicit MarbleWidgetSelectionRubber(MarbleWidget *widget)
@@ -348,7 +348,7 @@ void MarbleWidgetInputHandler::setDebugModeEnabled(bool enabled)
     d->m_debugModeEnabled = enabled;
 }
 
-//FIXME - these should be moved to superclass  Q_DECL_HIDDENand popupMenu should be abstracted in MarbleAbstractPresenter
+//FIXME - these should be moved to superclass Q_DECL_HIDDEN and popupMenu should be abstracted in MarbleAbstractPresenter
 void MarbleWidgetInputHandler::showLmbMenu(int x, int y)
 {
     if (isMouseButtonPopupEnabled(Qt::LeftButton) && !d->m_pinchDetected && !d->m_panDetected)

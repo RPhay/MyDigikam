@@ -41,7 +41,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENStyleBuilder::Private
+class Q_DECL_HIDDEN StyleBuilder::Private
 {
 public:
 

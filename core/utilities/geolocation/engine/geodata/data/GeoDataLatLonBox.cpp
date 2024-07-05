@@ -27,7 +27,7 @@ namespace Marble
 
 const GeoDataLatLonBox GeoDataLatLonBox::empty = GeoDataLatLonBox();
 
-class  Q_DECL_HIDDENGeoDataLatLonBoxPrivate
+class Q_DECL_HIDDEN GeoDataLatLonBoxPrivate
 {
 public:
 

@@ -68,7 +68,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleModelPrivate
+class Q_DECL_HIDDEN MarbleModelPrivate
 {
  public:
     MarbleModelPrivate()

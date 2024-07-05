@@ -23,7 +23,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENBillboardGraphicsItemPrivate : public MarbleGraphicsItemPrivate
+class Q_DECL_HIDDEN BillboardGraphicsItemPrivate : public MarbleGraphicsItemPrivate
 {
 public:
 

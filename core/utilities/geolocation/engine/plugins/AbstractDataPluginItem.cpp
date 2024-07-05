@@ -30,7 +30,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENAbstractDataPluginItemPrivate
+class Q_DECL_HIDDEN AbstractDataPluginItemPrivate
 {
 public:
 

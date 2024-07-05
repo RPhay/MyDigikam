@@ -27,7 +27,7 @@ namespace Marble
 
 typedef KHash2Map<QPersistentModelIndex, int> Mapping;
 
-class  Q_DECL_HIDDENKDescendantsProxyModelPrivate
+class Q_DECL_HIDDEN KDescendantsProxyModelPrivate
 {
     KDescendantsProxyModelPrivate(KDescendantsProxyModel *qq)
         : q_ptr(qq),

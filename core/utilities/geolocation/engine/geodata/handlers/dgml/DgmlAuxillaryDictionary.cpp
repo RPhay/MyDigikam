@@ -20,7 +20,7 @@
 // This tags are compared with the backend attribute from the
 // <layer> tag in the .dgml file.
 // When the backend value is parsed, it is turned
-// tolower so if the values in this class  Q_DECL_HIDDENare not lowercase
+// tolower so if the values in this class Q_DECL_HIDDEN are not lowercase
 // it wont see they are the same
 
 namespace Marble

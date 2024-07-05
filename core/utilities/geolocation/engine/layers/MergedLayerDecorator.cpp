@@ -37,7 +37,7 @@
 
 using namespace Marble;
 
-class  Q_DECL_HIDDENQ_DECL_HIDDEN MergedLayerDecorator::Private
+class Q_DECL_HIDDEN Q_DECL_HIDDEN MergedLayerDecorator::Private
 {
 public:
 
@@ -595,7 +595,7 @@ QVector<const GeoSceneTextureTileDataset *> MergedLayerDecorator::Private::findR
     return result;
 }
 
-// TODO: This should likely go into a math class  Q_DECL_HIDDENin the future ...
+// TODO: This should likely go into a math class Q_DECL_HIDDEN in the future ...
 
 int MergedLayerDecorator::Private::maxDivisor( int maximum, int fullLength )
 {

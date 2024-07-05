@@ -36,7 +36,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENSphericalProjectionPrivate : public AzimuthalProjectionPrivate
+class Q_DECL_HIDDEN SphericalProjectionPrivate : public AzimuthalProjectionPrivate
 {
 public:
 

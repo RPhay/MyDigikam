@@ -35,7 +35,7 @@
 
 using namespace Marble;
 
-class  Q_DECL_HIDDENMercatorScanlineTextureMapper::RenderJob : public QRunnable
+class Q_DECL_HIDDEN MercatorScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
     RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewport, MapQuality mapQuality, int yTop, int yBottom );

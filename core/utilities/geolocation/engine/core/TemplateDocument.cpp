@@ -30,7 +30,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENTemplateDocumentPrivate
+class Q_DECL_HIDDEN TemplateDocumentPrivate
 {
 public:
 

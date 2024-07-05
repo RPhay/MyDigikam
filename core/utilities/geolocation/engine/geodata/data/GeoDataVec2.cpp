@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENGeoDataVec2Private
+class Q_DECL_HIDDEN GeoDataVec2Private
 {
 public:
 

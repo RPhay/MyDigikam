@@ -60,7 +60,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENQ_DECL_HIDDEN MarbleWidgetPopupMenu::Private
+class Q_DECL_HIDDEN Q_DECL_HIDDEN MarbleWidgetPopupMenu::Private
 {
 
 public:

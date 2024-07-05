@@ -28,7 +28,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarblePhysicsPrivate
+class Q_DECL_HIDDEN MarblePhysicsPrivate
 {
 
 public:

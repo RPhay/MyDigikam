@@ -62,7 +62,7 @@
 
 namespace Marble
 {
-class  Q_DECL_HIDDENGeometryLayerPrivate
+class Q_DECL_HIDDEN GeometryLayerPrivate
 {
 public:
 

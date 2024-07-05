@@ -27,7 +27,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleLocalePrivate
+class Q_DECL_HIDDEN MarbleLocalePrivate
 {
 public:
 

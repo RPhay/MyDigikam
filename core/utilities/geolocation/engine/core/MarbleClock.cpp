@@ -23,7 +23,7 @@
 namespace Marble
 {
 
-class  Q_DECL_HIDDENMarbleClockPrivate
+class Q_DECL_HIDDEN MarbleClockPrivate
 {
 public:
 
