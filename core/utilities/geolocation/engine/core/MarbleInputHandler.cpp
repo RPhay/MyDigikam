@@ -43,7 +43,7 @@ namespace Marble
 
 const int TOOLTIP_START_INTERVAL = 1000;
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN MarbleInputHandler::Protected
+class Q_DECL_HIDDEN MarbleInputHandler::Protected
 {
 public:
 
@@ -151,7 +151,7 @@ void MarbleInputHandler::stopInertialEarthRotation()
 {
 }
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN MarbleDefaultInputHandler::Private
+class Q_DECL_HIDDEN MarbleDefaultInputHandler::Private
 {
  public:
     Private();

@@ -58,7 +58,7 @@ using namespace Digikam;
 namespace Marble
 {
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN MarbleConfigView::Private
+class Q_DECL_HIDDEN MarbleConfigView::Private
 {
 
 public:

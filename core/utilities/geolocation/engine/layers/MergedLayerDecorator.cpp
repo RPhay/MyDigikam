@@ -37,7 +37,7 @@
 
 using namespace Marble;
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN MergedLayerDecorator::Private
+class Q_DECL_HIDDEN MergedLayerDecorator::Private
 {
 public:
 

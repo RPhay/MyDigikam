@@ -33,7 +33,7 @@
 
 using namespace Marble;
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN MarblePlacemarkModel::Private
+class Q_DECL_HIDDEN MarblePlacemarkModel::Private
 {
 public:
 

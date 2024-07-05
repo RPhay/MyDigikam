@@ -25,7 +25,7 @@
 namespace Marble
 {
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN TileCoordsPyramid::Private
+class Q_DECL_HIDDEN TileCoordsPyramid::Private
 {
 public:
 

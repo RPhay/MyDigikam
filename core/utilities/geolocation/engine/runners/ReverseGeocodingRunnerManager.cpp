@@ -34,7 +34,7 @@ namespace Marble
 
 class Q_DECL_HIDDEN MarbleModel;
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN ReverseGeocodingRunnerManager::Private
+class Q_DECL_HIDDEN ReverseGeocodingRunnerManager::Private
 {
 public:
 

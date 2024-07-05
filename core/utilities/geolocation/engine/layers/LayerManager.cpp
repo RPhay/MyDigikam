@@ -31,7 +31,7 @@
 namespace Marble
 {
 
-class Q_DECL_HIDDEN Q_DECL_HIDDEN LayerManager::Private
+class Q_DECL_HIDDEN LayerManager::Private
 {
 public:
 
