@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -27,7 +37,7 @@ class ProgressFloatItem  : public AbstractFloatItem
 
     MARBLE_PLUGIN( ProgressFloatItem )
 
- public:
+public:
 
     explicit ProgressFloatItem( const MarbleModel *marbleModel = nullptr );
     ~ProgressFloatItem () override;
@@ -78,25 +88,27 @@ private:
 
     void setActive( bool active );
 
-    bool m_isInitialized;
+private:
 
-    int m_totalJobs;
+    bool    m_isInitialized;
 
-    int m_completedJobs;
+    int     m_totalJobs;
 
-    qreal m_completed;
+    int     m_completedJobs;
 
-    QTimer m_progressHideTimer;
+    qreal   m_completed;
 
-    QTimer m_progressShowTimer;
+    QTimer  m_progressHideTimer;
 
-    QMutex m_jobMutex;
+    QTimer  m_progressShowTimer;
 
-    bool m_active;
+    QMutex  m_jobMutex;
 
-    int m_fontSize;
+    bool    m_active;
 
-    QTimer m_repaintTimer;
+    int     m_fontSize;
+
+    QTimer  m_repaintTimer;
 };
 
 } // namespace Marble

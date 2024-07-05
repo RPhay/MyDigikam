@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mohammed Nafees <nafees.technocool@gmail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -47,13 +57,16 @@ private:
 
     static QPixmap pixmap(const QString &id );
     Qt::ArrowType arrowUnderMouse( const QPoint &position ) const;
-    QTimer m_initialPressTimer;
-    QTimer m_repeatPressTimer;
-    Qt::ArrowType m_arrowPressed;
-    int m_repetitions;
 
-    MarbleWidget* m_marbleWidget    = nullptr;
-    QString m_imagePath;
+private:
+
+    QTimer          m_initialPressTimer;
+    QTimer          m_repeatPressTimer;
+    Qt::ArrowType   m_arrowPressed;
+    int             m_repetitions;
+
+    MarbleWidget*   m_marbleWidget    = nullptr;
+    QString         m_imagePath;
 };
 
 } // namespace Marble

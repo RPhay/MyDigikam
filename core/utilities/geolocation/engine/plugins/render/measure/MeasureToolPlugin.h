@@ -1,9 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2006-2007 Torsten Rahn <tackat@kde.org>
-// SPDX-FileCopyrightText: 2007 Inge Wallin <ingwa@kde.org>
-// SPDX-FileCopyrightText: 2011 Michael Henning <mikehenning@eclipse.net>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 //
 // MeasureToolPlugin enables Marble to set and display measure points
@@ -108,43 +116,45 @@ private:
 
     static QString meterToPreferredUnit(qreal meters, bool isSquare = false);
 
+private:
+
     // The line strings in the distance path.
-    GeoDataLineString m_measureLineString;
-    GeoDataLatLonAltBox m_latLonAltBox;
+    GeoDataLineString       m_measureLineString;
+    GeoDataLatLonAltBox     m_latLonAltBox;
 
-    QPixmap m_mark;
-    QFont   m_font_regular;
-    int     m_fontascent;
+    QPixmap                 m_mark;
+    QFont                   m_font_regular;
+    int                     m_fontascent;
 
-    QPen    m_pen;
+    QPen                    m_pen;
 
-    QAction* m_addMeasurePointAction        = nullptr;
-    QAction* m_removeLastMeasurePointAction = nullptr;
-    QAction* m_removeMeasurePointsAction    = nullptr;
-    QAction* m_separator                    = nullptr;
+    QAction*                m_addMeasurePointAction        = nullptr;
+    QAction*                m_removeLastMeasurePointAction = nullptr;
+    QAction*                m_removeMeasurePointsAction    = nullptr;
+    QAction*                m_separator                    = nullptr;
 
-    MarbleWidget* m_marbleWidget            = nullptr;
+    MarbleWidget*           m_marbleWidget                 = nullptr;
 
-    MeasureConfigDialog* m_configDialog     = nullptr;
+    MeasureConfigDialog*    m_configDialog                 = nullptr;
 
-    bool m_showDistanceLabel;
-    bool m_showBearingLabel;
-    bool m_showBearingChangeLabel;
+    bool                    m_showDistanceLabel;
+    bool                    m_showBearingLabel;
+    bool                    m_showBearingChangeLabel;
 
-    bool m_showPolygonArea;
-    bool m_showCircularArea;
-    bool m_showRadius;
-    bool m_showPerimeter;
-    bool m_showCircumference;
+    bool                    m_showPolygonArea;
+    bool                    m_showCircularArea;
+    bool                    m_showRadius;
+    bool                    m_showPerimeter;
+    bool                    m_showCircumference;
 
-    qreal m_totalDistance;
-    qreal m_polygonArea;
-    qreal m_circularArea;
-    qreal m_radius;
-    qreal m_perimeter;
-    qreal m_circumference;
+    qreal                   m_totalDistance;
+    qreal                   m_polygonArea;
+    qreal                   m_circularArea;
+    qreal                   m_radius;
+    qreal                   m_perimeter;
+    qreal                   m_circumference;
 
-    PaintMode m_paintMode;
+    PaintMode               m_paintMode;
 };
 
 } // namespace Marble

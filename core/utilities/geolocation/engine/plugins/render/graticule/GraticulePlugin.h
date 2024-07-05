@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2009 Torsten Rahn <tackat@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -42,7 +52,8 @@ class GraticulePlugin : public RenderPlugin,
     Q_INTERFACES( Marble::DialogConfigurationInterface )
     MARBLE_PLUGIN( GraticulePlugin )
 
- public:
+public:
+
     GraticulePlugin();
 
     explicit GraticulePlugin( const MarbleModel *marbleModel );
@@ -83,7 +94,7 @@ class GraticulePlugin : public RenderPlugin,
 
     void setSettings( const QHash<QString,QVariant> &settings ) override;
 
- public Q_SLOTS:
+public Q_SLOTS:
 
     void readSettings();
     void writeSettings();
@@ -92,7 +103,7 @@ class GraticulePlugin : public RenderPlugin,
     void tropicsGetColor();
     void equatorGetColor();
 
- private:
+private:
 
      /**
      * @brief Renders the coordinate grid within the defined view bounding box.
@@ -192,24 +203,26 @@ class GraticulePlugin : public RenderPlugin,
      */
     void initLineMaps( GeoDataCoordinates::Notation notation );
 
-    GeoDataCoordinates::Notation m_currentNotation;
+private:
+
+    GeoDataCoordinates::Notation    m_currentNotation;
 
     // Maps the zoom factor to the amount of lines per 360 deg
-    QMap<qreal,qreal> m_boldLineMap;
-    QMap<qreal,qreal> m_normalLineMap;
+    QMap<qreal,qreal>               m_boldLineMap;
+    QMap<qreal,qreal>               m_normalLineMap;
 
-    QPen m_equatorCirclePen;
-    QPen m_tropicsCirclePen;
-    QPen m_gridCirclePen;
-    bool m_showPrimaryLabels;
-    bool m_showSecondaryLabels;
+    QPen                            m_equatorCirclePen;
+    QPen                            m_tropicsCirclePen;
+    QPen                            m_gridCirclePen;
+    bool                            m_showPrimaryLabels;
+    bool                            m_showSecondaryLabels;
 
-    bool m_isInitialized;
+    bool                            m_isInitialized;
 
-    QIcon m_icon;
+    QIcon                           m_icon;
 
-    Ui::GraticuleConfigWidget* ui_configWidget  = nullptr;
-    QDialog* m_configDialog                     = nullptr;
+    Ui::GraticuleConfigWidget*      ui_configWidget  = nullptr;
+    QDialog*                        m_configDialog   = nullptr;
 };
 
 } // namespace Marble
