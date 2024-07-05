@@ -35,8 +35,6 @@
 namespace Marble
 {
 
-class MarbleModel;
-
 class Q_DECL_HIDDEN SearchRunnerManager::Private
 {
 public:
