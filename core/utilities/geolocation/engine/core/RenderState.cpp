@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class Q_DECL_HIDDEN RenderState::Private
+class  Q_DECL_HIDDENQ_DECL_HIDDEN RenderState::Private
 {
 public:
     QString m_name;

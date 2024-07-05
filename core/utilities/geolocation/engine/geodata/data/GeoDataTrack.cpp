@@ -31,7 +31,7 @@
 namespace Marble
 {
 
-class GeoDataTrackPrivate : public GeoDataGeometryPrivate
+class  Q_DECL_HIDDENGeoDataTrackPrivate : public GeoDataGeometryPrivate
 {
 public:
 

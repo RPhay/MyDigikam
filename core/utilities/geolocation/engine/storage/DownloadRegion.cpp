@@ -33,7 +33,7 @@
 namespace Marble
 {
 
-class DownloadRegionPrivate
+class  Q_DECL_HIDDENDownloadRegionPrivate
 {
 public:
 

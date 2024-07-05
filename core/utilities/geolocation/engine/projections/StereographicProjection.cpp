@@ -37,7 +37,7 @@
 namespace Marble
 {
 
-class StereographicProjectionPrivate : public AzimuthalProjectionPrivate
+class  Q_DECL_HIDDENStereographicProjectionPrivate : public AzimuthalProjectionPrivate
 {
 public:
 

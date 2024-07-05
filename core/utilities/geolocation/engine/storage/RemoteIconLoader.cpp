@@ -35,7 +35,7 @@
 namespace Marble
 {
 
-class RemoteIconLoaderPrivate
+class  Q_DECL_HIDDENRemoteIconLoaderPrivate
 {
     public:
 

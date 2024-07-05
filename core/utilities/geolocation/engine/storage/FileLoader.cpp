@@ -45,7 +45,7 @@
 namespace Marble
 {
 
-class FileLoaderPrivate
+class  Q_DECL_HIDDENFileLoaderPrivate
 {
 public:
 

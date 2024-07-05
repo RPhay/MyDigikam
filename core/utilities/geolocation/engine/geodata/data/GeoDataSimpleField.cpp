@@ -25,7 +25,7 @@
 namespace Marble
 {
 
-class GeoDataSimpleFieldPrivate
+class  Q_DECL_HIDDENGeoDataSimpleFieldPrivate
 {
 public:
 

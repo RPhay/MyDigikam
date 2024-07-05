@@ -64,7 +64,7 @@ int const maximumRouteOffset    = 10000;
 int averageTextureTileSize      = 13; // The average size of a tile in kilobytes
 int averageVectorTileSize       = 30; // The average size of a vector tile in kilobytes
 
-class Q_DECL_HIDDEN DownloadRegionDialog::Private
+class  Q_DECL_HIDDENQ_DECL_HIDDEN DownloadRegionDialog::Private
 {
 public:
 

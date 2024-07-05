@@ -34,7 +34,7 @@
 
 using namespace Marble;
 
-class SphericalScanlineTextureMapper::RenderJob : public QRunnable
+class  Q_DECL_HIDDENSphericalScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
 

@@ -27,7 +27,7 @@
 namespace Marble
 {
 
-class PlanetPrivate
+class  Q_DECL_HIDDENPlanetPrivate
 {
 public:
     qreal M_0, M_1; // for calculating mean anomaly

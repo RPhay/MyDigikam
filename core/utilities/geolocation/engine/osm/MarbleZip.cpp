@@ -363,7 +363,7 @@ bool MarbleZipReader::FileInfo::isValid() const
     return isDir || isFile || isSymLink;
 }
 
-class QZipPrivate
+class  Q_DECL_HIDDENQZipPrivate
 {
 public:
     QZipPrivate(QIODevice *device, bool ownDev)
@@ -408,7 +408,7 @@ void QZipPrivate::fillFileInfo(int index, MarbleZipReader::FileInfo &fileInfo) c
     fileInfo.lastModified = readMSDosDate(header.h.last_mod_file);
 }
 
-class MarbleZipReaderPrivate : public QZipPrivate
+class  Q_DECL_HIDDENMarbleZipReaderPrivate : public QZipPrivate
 {
 public:
     MarbleZipReaderPrivate(QIODevice *device, bool ownDev)
@@ -421,7 +421,7 @@ public:
     MarbleZipReader::Status status;
 };
 
-class MarbleZipWriterPrivate : public QZipPrivate
+class  Q_DECL_HIDDENMarbleZipWriterPrivate : public QZipPrivate
 {
 public:
     MarbleZipWriterPrivate(QIODevice *device, bool ownDev)
@@ -644,7 +644,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString &fileName, c
 //////////////////////////////  Reader
 
 /*!
-    \class QZipReader::FileInfo
+    \class  Q_DECL_HIDDENQZipReader::FileInfo
     \internal
     Represents one entry in the zip table of contents.
 */
@@ -691,11 +691,11 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString &fileName, c
 */
 
 /*!
-    \class QZipReader
+    \class  Q_DECL_HIDDENQZipReader
     \internal
     \since 4.5
 
-    \brief the QZipReader class provides a way to inspect the contents of a zip
+    \brief the QZipReader class  Q_DECL_HIDDENprovides a way to inspect the contents of a zip
     archive and extract individual files from it.
 
     QZipReader can be used to read a zip archive either from a file or from any
@@ -978,11 +978,11 @@ void MarbleZipReader::close()
 ////////////////////////////// Writer
 
 /*!
-    \class QZipWriter
+    \class  Q_DECL_HIDDENQZipWriter
     \internal
     \since 4.5
 
-    \brief the QZipWriter class provides a way to create a new zip archive.
+    \brief the QZipWriter class  Q_DECL_HIDDENprovides a way to create a new zip archive.
 
     QZipWriter can be used to create a zip archive containing any number of files
     and directories. The files in the archive will be compressed in a way that is

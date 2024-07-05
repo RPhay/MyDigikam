@@ -31,7 +31,7 @@
 namespace Marble
 {
 
-class StackedTileLoaderPrivate
+class  Q_DECL_HIDDENStackedTileLoaderPrivate
 {
 public:
 

@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class GeoDataImagePyramidPrivate
+class  Q_DECL_HIDDENGeoDataImagePyramidPrivate
 {
 public:
 

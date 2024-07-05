@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class Q_DECL_HIDDEN TileLevelRangeWidget::Private
+class  Q_DECL_HIDDENQ_DECL_HIDDEN TileLevelRangeWidget::Private
 {
 public:
 

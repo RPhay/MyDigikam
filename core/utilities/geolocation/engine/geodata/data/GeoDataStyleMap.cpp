@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-class GeoDataStyleMapPrivate
+class  Q_DECL_HIDDENGeoDataStyleMapPrivate
 {
 public:
 

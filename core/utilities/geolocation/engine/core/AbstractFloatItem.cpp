@@ -35,7 +35,7 @@
 namespace Marble
 {
 
-class AbstractFloatItemPrivate
+class  Q_DECL_HIDDENAbstractFloatItemPrivate
 {
   public:
     AbstractFloatItemPrivate()

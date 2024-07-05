@@ -31,7 +31,7 @@ using namespace Marble;
 namespace Marble
 {
 
-class FileManagerPrivate
+class  Q_DECL_HIDDENFileManagerPrivate
 {
 public:
 

@@ -33,7 +33,7 @@
 namespace Marble
 {
 
-class GeoGraphicsScenePrivate
+class  Q_DECL_HIDDENGeoGraphicsScenePrivate
 {
 public:
 

@@ -30,7 +30,7 @@
 namespace Marble
 {
 
-class MarbleGraphicsGridLayoutPrivate
+class  Q_DECL_HIDDENMarbleGraphicsGridLayoutPrivate
 {
  public:
     MarbleGraphicsGridLayoutPrivate( int rows, int columns )

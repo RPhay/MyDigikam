@@ -56,9 +56,9 @@ const qreal boxComparisonFactor = 16.0;
 // Separator to separate the id of the item from the file type
 const QChar fileIdSeparator = QLatin1Char('_');
 
-class FavoritesModel;
+class  Q_DECL_HIDDENFavoritesModel;
 
-class AbstractDataPluginModelPrivate
+class  Q_DECL_HIDDENAbstractDataPluginModelPrivate
 {
 public:
 
@@ -100,7 +100,7 @@ public:
     bool                                        m_needsSorting;
 };
 
-class FavoritesModel : public QAbstractListModel
+class  Q_DECL_HIDDENFavoritesModel : public QAbstractListModel
 {
 public:
 

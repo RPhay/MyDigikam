@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-class Q_DECL_HIDDEN RenderPluginModel::Private
+class  Q_DECL_HIDDENQ_DECL_HIDDEN RenderPluginModel::Private
 {
 public:
 

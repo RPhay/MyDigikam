@@ -27,7 +27,7 @@ namespace Marble
 const int WAIT_ATTEMPTS = 20;
 const int WAIT_TIME = 100;
 
-class AbstractWorkerThreadPrivate
+class  Q_DECL_HIDDENAbstractWorkerThreadPrivate
 {
  public:
 

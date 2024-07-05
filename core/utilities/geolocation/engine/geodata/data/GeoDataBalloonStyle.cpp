@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-class GeoDataBalloonStylePrivate
+class  Q_DECL_HIDDENGeoDataBalloonStylePrivate
 {
 public:
 

@@ -38,7 +38,7 @@ namespace Marble
 {
 
 // 4 uchar long queue
-class EmbossFifo
+class  Q_DECL_HIDDENEmbossFifo
 {
 public:
 

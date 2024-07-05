@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-class ClipPainterPrivate
+class  Q_DECL_HIDDENClipPainterPrivate
 {
 public:
 

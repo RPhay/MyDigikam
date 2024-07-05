@@ -25,7 +25,7 @@
 namespace Marble
 {
 
-class GeoSceneHeadPrivate
+class  Q_DECL_HIDDENGeoSceneHeadPrivate
 {
 public:
 

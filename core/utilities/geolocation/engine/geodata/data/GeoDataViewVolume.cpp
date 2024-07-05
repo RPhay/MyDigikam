@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class GeoDataViewVolumePrivate
+class  Q_DECL_HIDDENGeoDataViewVolumePrivate
 {
 public:
 

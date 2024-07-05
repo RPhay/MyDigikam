@@ -23,7 +23,7 @@
 
 using namespace Marble;
 
-class Marble::HttpJobPrivate
+class  Q_DECL_HIDDENMarble::HttpJobPrivate
 {
 public:
 

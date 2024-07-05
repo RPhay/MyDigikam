@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-class GeoDataHotSpotPrivate
+class  Q_DECL_HIDDENGeoDataHotSpotPrivate
 {
 public:
 

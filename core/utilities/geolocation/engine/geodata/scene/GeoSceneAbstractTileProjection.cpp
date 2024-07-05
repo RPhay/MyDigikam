@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-class GeoSceneAbstractTileProjectionPrivate
+class  Q_DECL_HIDDENGeoSceneAbstractTileProjectionPrivate
 {
 public:
 

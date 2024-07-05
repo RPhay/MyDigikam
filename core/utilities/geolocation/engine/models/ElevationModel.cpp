@@ -37,7 +37,7 @@
 namespace Marble
 {
 
-class ElevationModelPrivate
+class  Q_DECL_HIDDENElevationModelPrivate
 {
 public:
 

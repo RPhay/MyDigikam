@@ -34,7 +34,7 @@
 namespace Marble
 {
 
-class TileCreatorPrivate
+class  Q_DECL_HIDDENTileCreatorPrivate
 {
 public:
 
@@ -73,7 +73,7 @@ public:
     TileCreatorSource* m_source = nullptr;
 };
 
-class TileCreatorSourceImage : public TileCreatorSource
+class  Q_DECL_HIDDENTileCreatorSourceImage : public TileCreatorSource
 {
 public:
 

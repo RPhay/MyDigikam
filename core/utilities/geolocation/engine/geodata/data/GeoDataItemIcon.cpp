@@ -23,7 +23,7 @@
 namespace Marble
 {
 
-class GeoDataItemIconPrivate
+class  Q_DECL_HIDDENGeoDataItemIconPrivate
 {
 public:
 

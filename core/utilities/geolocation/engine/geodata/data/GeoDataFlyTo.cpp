@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class GeoDataFlyToPrivate
+class  Q_DECL_HIDDENGeoDataFlyToPrivate
 {
 public:
 

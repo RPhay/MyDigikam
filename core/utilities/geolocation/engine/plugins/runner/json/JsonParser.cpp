@@ -1,5 +1,5 @@
 /*
-    The JsonParser class reads in a GeoJSON document that conforms to
+    The JsonParser class  Q_DECL_HIDDENreads in a GeoJSON document that conforms to
     RFC7946 (including relevant errata) and optionally contains
     attributes from the Simplestyle specification version 1.1.0
     ((https://github.com/mapbox/simplestyle-spec).  Attributes are also

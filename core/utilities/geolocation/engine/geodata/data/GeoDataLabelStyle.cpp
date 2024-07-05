@@ -29,7 +29,7 @@ static const int defaultSize = 10;
 static const int defaultSize = 8;
 #endif
 
-class GeoDataLabelStylePrivate
+class  Q_DECL_HIDDENGeoDataLabelStylePrivate
 {
 public:
 

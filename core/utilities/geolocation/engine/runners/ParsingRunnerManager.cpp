@@ -30,9 +30,9 @@
 namespace Marble
 {
 
-class MarbleModel;
+class  Q_DECL_HIDDENMarbleModel;
 
-class Q_DECL_HIDDEN ParsingRunnerManager::Private
+class  Q_DECL_HIDDENQ_DECL_HIDDEN ParsingRunnerManager::Private
 {
 public:
 

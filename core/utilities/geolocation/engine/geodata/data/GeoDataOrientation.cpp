@@ -19,7 +19,7 @@
 namespace Marble
 {
 
-class GeoDataOrientationPrivate
+class  Q_DECL_HIDDENGeoDataOrientationPrivate
 {
 public:
 
