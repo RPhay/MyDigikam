@@ -15,12 +15,12 @@
 
 #pragma once
 
-#include "digikam_export.h"
-
 #include <QObject>
 #include <QVector>
 
 #include "GeoDataPlacemark.h"
+
+#include "digikam_export.h"
 
 namespace Marble
 {

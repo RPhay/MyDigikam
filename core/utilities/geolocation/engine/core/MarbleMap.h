@@ -26,9 +26,10 @@
  * @author Inge Wallin  <inge@lysator.liu.se>
  */
 
-#include "digikam_export.h"
 #include "GeoDataCoordinates.h"       // In geodata/data/
 #include "GeoDataRelation.h"
+
+#include "digikam_export.h"
 
 class QFont;
 class QString;
