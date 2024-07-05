@@ -26,7 +26,7 @@
 namespace Marble
 {
 
-class GeoGraphicsItemPrivate
+struct Q_DECL_HIDDEN GeoGraphicsItemPrivate
 {
 public:
 

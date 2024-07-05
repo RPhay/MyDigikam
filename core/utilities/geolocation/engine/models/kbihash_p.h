@@ -33,7 +33,7 @@ QDataStream &operator>>(QDataStream &in, KBiAssociativeContainer<LeftContainer, 
 
 
 template<typename LeftContainer, typename RightContainer>
-class KBiAssociativeContainer
+struct Q_DECL_HIDDEN KBiAssociativeContainer
 {
     // We need to convert from a QHash::iterator or QMap::iterator
     // to a KBiAssociativeContainer::iterator (left or right)

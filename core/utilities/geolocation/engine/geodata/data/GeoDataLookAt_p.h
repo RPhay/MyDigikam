@@ -24,7 +24,7 @@
 namespace Marble
 {
 
-class GeoDataLookAtPrivate
+struct Q_DECL_HIDDEN GeoDataLookAtPrivate
 {
 public:
 

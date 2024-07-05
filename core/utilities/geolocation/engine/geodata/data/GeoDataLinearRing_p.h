@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
+struct Q_DECL_HIDDEN GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
 {
 public:
 

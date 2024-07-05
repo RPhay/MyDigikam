@@ -20,7 +20,7 @@
 namespace Marble
 {
 
-class GeoDataTimePrimitivePrivate
+struct Q_DECL_HIDDEN GeoDataTimePrimitivePrivate
 {
 };
 

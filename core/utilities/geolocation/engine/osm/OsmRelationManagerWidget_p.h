@@ -24,7 +24,7 @@ class OsmRelationManagerWidget;
 class GeoDataPlacemark;
 class OsmPlacemarkData;
 
-class OsmRelationManagerWidgetPrivate : public Ui::OsmRelationManagerWidgetPrivate
+struct Q_DECL_HIDDEN OsmRelationManagerWidgetPrivate : public Ui::OsmRelationManagerWidgetPrivate
 {
 public:
 

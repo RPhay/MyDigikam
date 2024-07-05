@@ -24,7 +24,7 @@
 namespace Marble
 {
 
-class GeoDataPhotoOverlayPrivate : public GeoDataOverlayPrivate
+struct Q_DECL_HIDDEN GeoDataPhotoOverlayPrivate : public GeoDataOverlayPrivate
 {
 public:
 

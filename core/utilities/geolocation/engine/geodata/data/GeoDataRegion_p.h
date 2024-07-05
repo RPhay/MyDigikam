@@ -24,7 +24,7 @@
 namespace Marble
 {
 
-class GeoDataRegionPrivate
+struct Q_DECL_HIDDEN GeoDataRegionPrivate
 {
 public:
 

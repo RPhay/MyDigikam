@@ -23,7 +23,7 @@
 namespace Marble
 {
 
-class GeoDataGroundOverlayPrivate : public GeoDataOverlayPrivate
+struct Q_DECL_HIDDEN GeoDataGroundOverlayPrivate : public GeoDataOverlayPrivate
 {
 public:
 

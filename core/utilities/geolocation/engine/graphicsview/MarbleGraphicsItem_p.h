@@ -31,7 +31,7 @@
 namespace Marble
 {
 
-class MarbleGraphicsItemPrivate
+struct Q_DECL_HIDDEN MarbleGraphicsItemPrivate
 {
 public:
 

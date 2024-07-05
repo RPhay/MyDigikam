@@ -32,7 +32,7 @@
 namespace Marble
 {
 
-class GeoDataFeatureExtendedData
+struct Q_DECL_HIDDEN GeoDataFeatureExtendedData
 {
 public:
 
@@ -123,7 +123,7 @@ public:
     }
 };
 
-class GeoDataFeaturePrivate
+struct Q_DECL_HIDDEN GeoDataFeaturePrivate
 {
 public:
 

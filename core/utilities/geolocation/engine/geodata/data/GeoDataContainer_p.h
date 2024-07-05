@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-class GeoDataContainerPrivate : public GeoDataFeaturePrivate
+struct Q_DECL_HIDDEN GeoDataContainerPrivate : public GeoDataFeaturePrivate
 {
 public:
 
