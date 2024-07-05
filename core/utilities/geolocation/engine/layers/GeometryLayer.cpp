@@ -71,7 +71,7 @@ public:
     typedef QHash<const GeoDataFeature *, Relations> FeatureRelationHash;
     using GeoGraphicItems = QVector<GeoGraphicsItem *>;
 
-    struct PaintFragments
+    struct Q_DECL_HIDDEN PaintFragments
     {
         // Three lists for different z values
         // A z value of 0 is default and used by the majority of items, so sorting

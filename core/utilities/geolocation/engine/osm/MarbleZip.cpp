@@ -269,7 +269,7 @@ static QDateTime readMSDosDate(const uchar *src)
     return QDateTime(QDate(tm_year, tm_mon, tm_mday), QTime(tm_hour, tm_min, tm_sec));
 }
 
-struct LocalFileHeader
+struct Q_DECL_HIDDEN LocalFileHeader
 {
     uchar signature[4]; //  0x04034b50
     uchar version_needed[2];
@@ -283,14 +283,14 @@ struct LocalFileHeader
     uchar extra_field_length[2];
 };
 
-struct DataDescriptor
+struct Q_DECL_HIDDEN DataDescriptor
 {
     uchar crc_32[4];
     uchar compressed_size[4];
     uchar uncompressed_size[4];
 };
 
-struct CentralFileHeader
+struct Q_DECL_HIDDEN CentralFileHeader
 {
     uchar signature[4]; // 0x02014b50
     uchar version_made[2];
@@ -311,7 +311,7 @@ struct CentralFileHeader
     LocalFileHeader toLocalHeader() const;
 };
 
-struct EndOfDirectory
+struct Q_DECL_HIDDEN EndOfDirectory
 {
     uchar signature[4]; // 0x06054b50
     uchar this_disk[2];
@@ -323,7 +323,7 @@ struct EndOfDirectory
     uchar comment_length[2];
 };
 
-struct FileHeader
+struct Q_DECL_HIDDEN FileHeader
 {
     CentralFileHeader h;
     QByteArray file_name;
