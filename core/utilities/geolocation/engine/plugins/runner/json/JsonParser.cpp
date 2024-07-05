@@ -1,18 +1,17 @@
-/*
-    The JsonParser class Q_DECL_HIDDEN reads in a GeoJSON document that conforms to
-    RFC7946 (including relevant errata) and optionally contains
-    attributes from the Simplestyle specification version 1.1.0
-    ((https://github.com/mapbox/simplestyle-spec).  Attributes are also
-    stored as OSM tags as required.
-
-    TODO: Handle the Simplestyle "marker-size", "marker-symbol" and
-    "marker-color" correctly.
-
-    SPDX-License-Identifier: LGPL-2.1-or-later
-
-    SPDX-FileCopyrightText: 2013 Ander Pijoan <ander.pijoan@deusto.es>
-    SPDX-FileCopyrightText: 2019 John Zaitseff <J.Zaitseff@zap.org.au>
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "JsonParser.h"
 
@@ -42,6 +41,16 @@
 namespace Marble
 {
 
+/**
+    The JsonParser class reads in a GeoJSON document that conforms to
+    RFC7946 (including relevant errata) and optionally contains
+    attributes from the Simplestyle specification version 1.1.0
+    ((https://github.com/mapbox/simplestyle-spec).  Attributes are also
+    stored as OSM tags as required.
+
+    TODO: Handle the Simplestyle "marker-size", "marker-symbol" and
+    "marker-color" correctly.
+*/
 JsonParser::JsonParser()
     : m_document( nullptr )
 {
@@ -523,4 +532,4 @@ bool JsonParser::parseGeoJsonSubLevel( const QJsonObject& jsonObject,
     }
 }
 
-}
+} // namespace Marble

@@ -1,9 +1,22 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "O5mWriter.h"
+
+#include <QDataStream>
+#include <QBuffer>
 
 #include "GeoDataDocument.h"
 #include "GeoDataLineString.h"
@@ -15,9 +28,6 @@
 #include "GeoDataMultiGeometry.h"
 #include "GeoWriter.h"
 #include "OsmPlacemarkData.h"
-
-#include <QDataStream>
-#include <QBuffer>
 
 namespace Marble
 {
@@ -358,4 +368,4 @@ qint32 O5mWriter::deltaTo(double value, double previous) const
 
 MARBLE_ADD_WRITER(O5mWriter, QString::fromUtf8("o5m"))
 
-}
+} // namespace Marble
