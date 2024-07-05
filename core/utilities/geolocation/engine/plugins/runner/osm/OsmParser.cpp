@@ -1,12 +1,28 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2011 Thibaut Gridel <tgridel@free.fr>
-// SPDX-FileCopyrightText: 2011 Konstantin Oblaukhov <oblaukhov.konstantin@gmail.com>
-// SPDX-FileCopyrightText: 2014 Bernhard Beschow <bbeschow@cs.tu-berlin.de>
-// SPDX-FileCopyrightText: 2015 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "OsmParser.h"
+
+#include <QColor>
+#include <QFile>
+#include <QFileInfo>
+#include <QBuffer>
+#include <QSet>
+
+#include <klocalizedstring.h>
+
 #include "OsmElementDictionary.h"
 #include "OsmObjectManager.h"
 #include "GeoDataDocument.h"
@@ -17,15 +33,8 @@
 #include "o5mreader.h"
 #include "OsmPbfParser.h"
 
-#include <QColor>
-#include <QFile>
-#include <QFileInfo>
-#include <QBuffer>
-#include <QSet>
-
-#include <klocalizedstring.h>
-
-namespace Marble {
+namespace Marble
+{
 
 GeoDataDocument *OsmParser::parse(const QString &filename, QString &error)
 {
@@ -264,4 +273,4 @@ GeoDataDocument *OsmParser::createDocument(OsmNodes &nodes, OsmWays &ways, OsmRe
     return document;
 }
 
-}
+} // namespace Marble
