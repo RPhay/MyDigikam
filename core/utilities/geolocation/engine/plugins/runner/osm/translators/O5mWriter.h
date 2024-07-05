@@ -1,14 +1,24 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
+#include <QSet>
+
 #include "OsmConverter.h"
 #include "GeoWriterBackend.h"
-
-#include <QSet>
 
 namespace Marble
 {
@@ -28,6 +38,8 @@ private:
     typedef QPair<QString, QString> StringPair;
     typedef QHash<StringPair, qint32> StringTable;
 
+private:
+
     void writeHeader(QDataStream& stream) const;
     void writeNodes(const OsmConverter::Nodes &nodes, QDataStream& stream) const;
     void writeWays(const OsmConverter::Ways &ways, QDataStream& stream) const;
@@ -44,9 +56,11 @@ private:
     void writeUnsigned(quint32 value, QDataStream &stream) const;
     qint32 deltaTo(double value, double previous) const;
 
+private:
+
     static QSet<QString> m_blacklistedTags;
 
-    mutable QByteArray m_stringPairBuffer;
+    mutable QByteArray   m_stringPairBuffer;
 };
 
 } // namespace Marble

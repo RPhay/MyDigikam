@@ -1,7 +1,17 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2016 Dennis Nienhüser <nienhueser@kde.org>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #pragma once
 
@@ -27,10 +37,12 @@ public:
     typedef QPair<const GeoDataLineString*, OsmPlacemarkData > Way;
     typedef QPair<const GeoDataFeature*, OsmPlacemarkData > Relation;
 
-    using Nodes = QVector<Node>;
-    using Tags = QVector<Tag>;
-    using Ways = QVector<Way>;
+    using Nodes     = QVector<Node>;
+    using Tags      = QVector<Tag>;
+    using Ways      = QVector<Way>;
     using Relations = QVector<Relation>;
+
+public:
 
     void read(const GeoDataDocument* document);
 
@@ -40,15 +52,17 @@ public:
 
 private:
 
-    Nodes m_nodes;
-    Ways m_ways;
-    Relations m_relations;
-
     void processLinearRing(GeoDataLinearRing *linearRing,
                            const OsmPlacemarkData& osmData);
     void processPolygon(GeoDataPolygon *polygon,
                         const OsmPlacemarkData& osmData,
                         GeoDataPlacemark* placemark);
+
+private:
+
+    Nodes       m_nodes;
+    Ways        m_ways;
+    Relations   m_relations;
 };
 
 } // namespace Marble
