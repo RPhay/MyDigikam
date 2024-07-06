@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataFeature_p.h"
 #include "GeoDataTypes.h"
 #include "GeoDataPlaylist.h"
@@ -22,21 +24,22 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataTourPrivate : public GeoDataFeaturePrivate
+class Q_DECL_HIDDEN GeoDataTourPrivate : public GeoDataFeaturePrivate
 {
 public:
 
     GeoDataTourPrivate()
-        : m_playlist( nullptr )
+        : m_playlist(nullptr)
     {
         // nothing to do
     }
 
-    GeoDataTourPrivate(const GeoDataTourPrivate &other)
+    GeoDataTourPrivate(const GeoDataTourPrivate& other)
       : GeoDataFeaturePrivate(other),
-        m_playlist(nullptr)
+        m_playlist           (nullptr)
     {
-        if (other.m_playlist) {
+        if (other.m_playlist)
+        {
             m_playlist = new GeoDataPlaylist(*other.m_playlist);
         }
     }
@@ -46,23 +49,29 @@ public:
         delete m_playlist;
     }
 
-    GeoDataTourPrivate& operator=( const GeoDataTourPrivate &other )
+    GeoDataTourPrivate& operator=(const GeoDataTourPrivate& other)
     {
-        if ( this == &other ) {
+        if (this == &other)
+        {
             return *this;
         }
 
-        GeoDataFeaturePrivate::operator=( other );
+        GeoDataFeaturePrivate::operator=(other);
 
-        GeoDataPlaylist *newPlaylist = nullptr;
-        if ( other.m_playlist ) {
-            newPlaylist = new GeoDataPlaylist( *other.m_playlist );
+        GeoDataPlaylist* newPlaylist = nullptr;
+
+        if (other.m_playlist)
+        {
+            newPlaylist = new GeoDataPlaylist(*other.m_playlist);
         }
+
         delete m_playlist;
         m_playlist = newPlaylist;
 
         return *this;
     }
+
+public:
 
     GeoDataPlaylist* m_playlist = nullptr;
 };

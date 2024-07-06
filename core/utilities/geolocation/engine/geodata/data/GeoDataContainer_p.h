@@ -15,14 +15,15 @@
 
 #pragma once
 
-#include "GeoDataFeature_p.h"
+// Local includes
 
+#include "GeoDataFeature_p.h"
 #include "GeoDataTypes.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataContainerPrivate : public GeoDataFeaturePrivate
+class Q_DECL_HIDDEN GeoDataContainerPrivate : public GeoDataFeaturePrivate
 {
 public:
 
@@ -34,26 +35,30 @@ public:
       : GeoDataFeaturePrivate(other)
     {
         m_vector.reserve(other.m_vector.size());
-        for (GeoDataFeature *feature: other.m_vector) {
+
+        for (GeoDataFeature* feature : other.m_vector)
+        {
             m_vector.append(feature->clone());
         }
     }
 
     ~GeoDataContainerPrivate() override
     {
-        qDeleteAll( m_vector );
+        qDeleteAll(m_vector);
     }
 
-    GeoDataContainerPrivate& operator=( const GeoDataContainerPrivate &other)
+    GeoDataContainerPrivate& operator=(const GeoDataContainerPrivate& other)
     {
-        GeoDataFeaturePrivate::operator=( other );
-        qDeleteAll( m_vector );
+        GeoDataFeaturePrivate::operator=(other);
+        qDeleteAll(m_vector);
         m_vector.clear();
         m_vector.reserve(other.m_vector.size());
-        for( GeoDataFeature *feature: other.m_vector )
+
+        for (GeoDataFeature* feature : other.m_vector)
         {
             m_vector.append(feature->clone());
         }
+
         return *this;
     }
 
@@ -62,9 +67,10 @@ public:
         return GeoDataFolderId;
     }
 
-    void setParent(GeoDataObject *parent)
+    void setParent(GeoDataObject* parent)
     {
-        for (GeoDataFeature *feature: m_vector) {
+        for (GeoDataFeature* feature : m_vector)
+        {
             feature->setParent(parent);
         }
     }

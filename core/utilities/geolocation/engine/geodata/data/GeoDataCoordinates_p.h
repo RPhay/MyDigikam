@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataCoordinatesPrivate
+class Q_DECL_HIDDEN GeoDataCoordinatesPrivate
 {
 public:
 

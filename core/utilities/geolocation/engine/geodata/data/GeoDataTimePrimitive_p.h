@@ -15,12 +15,14 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataTimePrimitivePrivate
+class Q_DECL_HIDDEN GeoDataTimePrimitivePrivate
 {
 };
 

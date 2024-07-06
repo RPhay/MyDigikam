@@ -21,7 +21,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataTimeSpanPrivate
+class Q_DECL_HIDDEN GeoDataTimeSpanPrivate
 {
 public:
 

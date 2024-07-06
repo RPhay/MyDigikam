@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QAtomicInt>
+
+// Local includes
 
 #include "GeoDataGeometry.h"
 #include "GeoDataLatLonAltBox.h"
@@ -23,22 +27,22 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataGeometryPrivate
+class Q_DECL_HIDDEN GeoDataGeometryPrivate
 {
 public:
 
     GeoDataGeometryPrivate()
-        : m_extrude( false ),
-          m_altitudeMode( ClampToGround ),
-          ref( 0 )
+        : m_extrude     (false),
+          m_altitudeMode(ClampToGround),
+          ref           (0)
     {
     }
 
-    GeoDataGeometryPrivate( const GeoDataGeometryPrivate& other )
-        : m_extrude( other.m_extrude ),
-          m_altitudeMode( other.m_altitudeMode ),
+    GeoDataGeometryPrivate(const GeoDataGeometryPrivate& other)
+        : m_extrude     (other.m_extrude),
+          m_altitudeMode(other.m_altitudeMode),
           m_latLonAltBox(),
-          ref( 0 )
+          ref           (0)
     {
     }
 
@@ -46,11 +50,12 @@ public:
     {
     }
 
-    GeoDataGeometryPrivate& operator=( const GeoDataGeometryPrivate &other )
+    GeoDataGeometryPrivate& operator=(const GeoDataGeometryPrivate& other)
     {
-        m_extrude = other.m_extrude;
+        m_extrude      = other.m_extrude;
         m_altitudeMode = other.m_altitudeMode;
         m_latLonAltBox = other.m_latLonAltBox;
+
         return *this;
     }
 

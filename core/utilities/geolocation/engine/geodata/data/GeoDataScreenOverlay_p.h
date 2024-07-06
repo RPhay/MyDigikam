@@ -15,12 +15,14 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataOverlay_p.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataScreenOverlayPrivate : public GeoDataOverlayPrivate
+class Q_DECL_HIDDEN GeoDataScreenOverlayPrivate : public GeoDataOverlayPrivate
 {
 public:
 

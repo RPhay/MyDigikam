@@ -15,11 +15,16 @@
 
 #pragma once
 
+#include "GeoDataFeature.h"
+
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "GeoDataExtendedData.h"
 #include "GeoDataAbstractView.h"
-#include "GeoDataFeature.h"
 #include "GeoDataRegion.h"
 #include "GeoDataTimeStamp.h"
 #include "GeoDataTimeSpan.h"
@@ -32,7 +37,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataFeatureExtendedData
+class Q_DECL_HIDDEN GeoDataFeatureExtendedData
 {
 public:
 
@@ -48,68 +53,73 @@ public:
 
 public:
 
-    GeoDataFeatureExtendedData() :
-        m_snippet(),
-        m_description(),
-        m_descriptionCDATA(false),
-        m_address(),
-        m_phoneNumber(),
-        m_abstractView( nullptr ),
-        m_timeSpan(),
-        m_timeStamp(),
-        m_region()
+    GeoDataFeatureExtendedData()
+      : m_snippet             (),
+        m_description         (),
+        m_descriptionCDATA    (false),
+        m_address             (),
+        m_phoneNumber         (),
+        m_abstractView        (nullptr),
+        m_timeSpan            (),
+        m_timeStamp           (),
+        m_region              ()
     {
         // nothing to do
     }
 
-    GeoDataFeatureExtendedData(const GeoDataFeatureExtendedData &other) :
-        m_snippet( other.m_snippet ),
-        m_description( other.m_description ),
-        m_descriptionCDATA( other.m_descriptionCDATA),
-        m_address( other.m_address ),
-        m_phoneNumber( other.m_phoneNumber ),
-        m_abstractView( other.m_abstractView ),
-        m_timeSpan( other.m_timeSpan ),
-        m_timeStamp( other.m_timeStamp ),
-        m_region( other.m_region )
+    GeoDataFeatureExtendedData(const GeoDataFeatureExtendedData &other)
+      : m_snippet             (other.m_snippet),
+        m_description         (other.m_description),
+        m_descriptionCDATA    (other.m_descriptionCDATA),
+        m_address             (other.m_address),
+        m_phoneNumber         (other.m_phoneNumber),
+        m_abstractView        (other.m_abstractView),
+        m_timeSpan            (other.m_timeSpan),
+        m_timeStamp           (other.m_timeStamp),
+        m_region              (other.m_region)
     {
         // nothing to do
     }
 
-    GeoDataFeatureExtendedData& operator=(const GeoDataFeatureExtendedData &other)
+    GeoDataFeatureExtendedData& operator=(const GeoDataFeatureExtendedData& other)
     {
-        m_snippet = other.m_snippet;
-        m_description = other.m_description;
-        m_descriptionCDATA = other.m_descriptionCDATA;
-        m_address = other.m_address;
-        m_phoneNumber = other.m_phoneNumber;
-        m_abstractView = other.m_abstractView;
-        m_timeSpan = other.m_timeSpan;
-        m_timeStamp = other.m_timeStamp;
-        m_region = other.m_region;
+        m_snippet           = other.m_snippet;
+        m_description       = other.m_description;
+        m_descriptionCDATA  = other.m_descriptionCDATA;
+        m_address           = other.m_address;
+        m_phoneNumber       = other.m_phoneNumber;
+        m_abstractView      = other.m_abstractView;
+        m_timeSpan          = other.m_timeSpan;
+        m_timeStamp         = other.m_timeStamp;
+        m_region            = other.m_region;
+
         return *this;
     }
 
     bool operator==(const GeoDataFeatureExtendedData &other) const
     {
-        if (m_snippet != other.m_snippet ||
-                m_description != other.m_description ||
-                m_descriptionCDATA != other.m_descriptionCDATA ||
-                m_address != other.m_address ||
-                m_phoneNumber != other.m_phoneNumber ||
-                m_timeSpan != other.m_timeSpan ||
-                m_timeStamp != other.m_timeStamp ||
-                m_region != other.m_region) {
+        if (m_snippet           != other.m_snippet          ||
+            m_description       != other.m_description      ||
+            m_descriptionCDATA  != other.m_descriptionCDATA ||
+            m_address           != other.m_address          ||
+            m_phoneNumber       != other.m_phoneNumber      ||
+            m_timeSpan          != other.m_timeSpan         ||
+            m_timeStamp         != other.m_timeStamp        ||
+            m_region            != other.m_region)
+        {
             return false;
         }
 
         if ( (!m_abstractView && other.m_abstractView) ||
-                    (m_abstractView && !other.m_abstractView) ) {
+             (m_abstractView && !other.m_abstractView) )
+        {
             return false;
         }
 
-        if (m_abstractView && other.m_abstractView) {
-            if (*m_abstractView != *other.m_abstractView) {
+        if (m_abstractView && other.m_abstractView)
+        {
+            if (*m_abstractView != *other.m_abstractView)
+            {
                 return false;
             }
         }
@@ -123,57 +133,63 @@ public:
     }
 };
 
-struct Q_DECL_HIDDEN GeoDataFeaturePrivate
+class Q_DECL_HIDDEN GeoDataFeaturePrivate
 {
 public:
 
-    GeoDataFeaturePrivate() :
-        m_name(),
-        m_styleUrl(),
-        m_popularity( 0 ),
-        m_zoomLevel( 1 ),
-        m_visible( true ),
-        m_role(QLatin1String(" ")),
-        m_style( nullptr ),
-        m_styleMap( nullptr ),
-        m_extendedData(),
+    GeoDataFeaturePrivate()
+      : m_name               (),
+        m_styleUrl           (),
+        m_popularity         (0),
+        m_zoomLevel          (1),
+        m_visible            (true),
+        m_role               (QLatin1String(" ")),
+        m_style              (nullptr),
+        m_styleMap           (nullptr),
+        m_extendedData       (),
         m_featureExtendedData(nullptr)
     {
     }
 
-    GeoDataFeaturePrivate( const GeoDataFeaturePrivate& other ) :
-        m_name( other.m_name ),
-        m_styleUrl( other.m_styleUrl ),
-        m_popularity( other.m_popularity ),
-        m_zoomLevel( other.m_zoomLevel ),
-        m_visible( other.m_visible ),
-        m_role( other.m_role ),
-        m_style( other.m_style ),               //FIXME: both style and stylemap need to be reworked internally!!!!
-        m_styleMap( other.m_styleMap ),
-        m_extendedData( other.m_extendedData ),
+    GeoDataFeaturePrivate(const GeoDataFeaturePrivate& other)
+      : m_name               (other.m_name),
+        m_styleUrl           (other.m_styleUrl),
+        m_popularity         (other.m_popularity),
+        m_zoomLevel          (other.m_zoomLevel),
+        m_visible            (other.m_visible),
+        m_role               (other.m_role),
+        m_style              (other.m_style),      // FIXME: both style and stylemap need to be reworked internally!!!!
+        m_styleMap           (other.m_styleMap),
+        m_extendedData       (other.m_extendedData),
         m_featureExtendedData(nullptr)
     {
-        if (other.m_featureExtendedData) {
+        if (other.m_featureExtendedData)
+        {
             m_featureExtendedData = new GeoDataFeatureExtendedData(*other.m_featureExtendedData);
         }
     }
 
-    GeoDataFeaturePrivate& operator=( const GeoDataFeaturePrivate& other )
+    GeoDataFeaturePrivate& operator=(const GeoDataFeaturePrivate& other)
     {
-        m_name = other.m_name;
-        m_styleUrl = other.m_styleUrl;
-        m_popularity = other.m_popularity;
-        m_zoomLevel = other.m_zoomLevel;
-        m_visible = other.m_visible;
-        m_role = other.m_role;
-        m_style = other.m_style;
-        m_styleMap = other.m_styleMap;
-        m_extendedData = other.m_extendedData;
+        m_name          = other.m_name;
+        m_styleUrl      = other.m_styleUrl;
+        m_popularity    = other.m_popularity;
+        m_zoomLevel     = other.m_zoomLevel;
+        m_visible       = other.m_visible;
+        m_role          = other.m_role;
+        m_style         = other.m_style;
+        m_styleMap      = other.m_styleMap;
+        m_extendedData  = other.m_extendedData;
+
         delete m_featureExtendedData;
+
         m_featureExtendedData = nullptr;
-        if (other.m_featureExtendedData) {
+
+        if (other.m_featureExtendedData)
+        {
             m_featureExtendedData = new GeoDataFeatureExtendedData(*other.m_featureExtendedData);
         }
+
         return *this;
     }
 
@@ -187,18 +203,23 @@ public:
         delete m_featureExtendedData;
     }
 
-    GeoDataFeatureExtendedData & featureExtendedData()
+    GeoDataFeatureExtendedData& featureExtendedData()
     {
-        if (!m_featureExtendedData) {
+        if (!m_featureExtendedData)
+        {
             m_featureExtendedData = new GeoDataFeatureExtendedData;
         }
+
         return *m_featureExtendedData;
     }
-    const GeoDataFeatureExtendedData & featureExtendedData() const
+
+    const GeoDataFeatureExtendedData& featureExtendedData() const
     {
-        if (!m_featureExtendedData) {
+        if (!m_featureExtendedData)
+        {
             m_featureExtendedData = new GeoDataFeatureExtendedData;
         }
+
         return *m_featureExtendedData;
     }
 

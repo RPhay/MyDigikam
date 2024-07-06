@@ -23,7 +23,8 @@ namespace Marble
 {
 
 // Helper class for GeoDataCoordinates::fromString(...)
-struct Q_DECL_HIDDEN LonLatParser
+
+class Q_DECL_HIDDEN LonLatParser
 {
 private:
 

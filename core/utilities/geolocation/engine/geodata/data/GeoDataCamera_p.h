@@ -22,7 +22,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataCameraPrivate
+class Q_DECL_HIDDEN GeoDataCameraPrivate
 {
 public:
 

@@ -15,17 +15,19 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataLineString_p.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
+class Q_DECL_HIDDEN GeoDataLinearRingPrivate : public GeoDataLineStringPrivate
 {
 public:
 
-    explicit GeoDataLinearRingPrivate( TessellationFlags f )
-        : GeoDataLineStringPrivate( f )
+    explicit GeoDataLinearRingPrivate(TessellationFlags f)
+        : GeoDataLineStringPrivate(f)
     {
     }
 
@@ -33,10 +35,11 @@ public:
     {
     }
 
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
         GeoDataLinearRingPrivate* copy = new GeoDataLinearRingPrivate;
         *copy = *this;
+
         return copy;
     }
 };

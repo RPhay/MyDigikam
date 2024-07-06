@@ -29,7 +29,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataPlacemarkExtendedData
+class Q_DECL_HIDDEN GeoDataPlacemarkExtendedData
 {
 public:
 
@@ -67,7 +67,7 @@ public:
     bool                m_isBalloonVisible; //Visibility of balloon
 };
 
-struct Q_DECL_HIDDEN GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
+class Q_DECL_HIDDEN GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
 {
     Q_DECLARE_TR_FUNCTIONS(GeoDataPlacemark)
 

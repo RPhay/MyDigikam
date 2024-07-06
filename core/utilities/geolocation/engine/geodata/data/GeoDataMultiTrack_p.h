@@ -15,14 +15,15 @@
 
 #pragma once
 
-#include "GeoDataGeometry_p.h"
+// Local includes
 
+#include "GeoDataGeometry_p.h"
 #include "GeoDataTrack.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataMultiTrackPrivate : public GeoDataGeometryPrivate
+class Q_DECL_HIDDEN GeoDataMultiTrackPrivate : public GeoDataGeometryPrivate
 {
 public:
 
@@ -35,24 +36,28 @@ public:
         qDeleteAll(m_vector);
     }
 
-    GeoDataMultiTrackPrivate& operator=( const GeoDataMultiTrackPrivate &other)
+    GeoDataMultiTrackPrivate& operator=(const GeoDataMultiTrackPrivate& other)
     {
-        GeoDataGeometryPrivate::operator=( other );
+        GeoDataGeometryPrivate::operator=(other);
 
-        qDeleteAll( m_vector );
+        qDeleteAll(m_vector);
         m_vector.clear();
 
         m_vector.reserve(other.m_vector.size());
-        for( GeoDataTrack *track: other.m_vector ) {
-            m_vector.append( new GeoDataTrack( *track ) );
+
+        for (GeoDataTrack* track : other.m_vector)
+        {
+            m_vector.append(new GeoDataTrack(*track));
         }
+
         return *this;
     }
 
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
-         GeoDataMultiTrackPrivate* copy = new GeoDataMultiTrackPrivate;
+        GeoDataMultiTrackPrivate* copy = new GeoDataMultiTrackPrivate;
         *copy = *this;
+
         return copy;
     }
 

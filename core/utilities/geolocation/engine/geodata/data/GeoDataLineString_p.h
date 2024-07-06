@@ -15,31 +15,32 @@
 
 #pragma once
 
-#include "GeoDataGeometry_p.h"
+// Local includes
 
+#include "GeoDataGeometry_p.h"
 #include "GeoDataTypes.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataLineStringPrivate : public GeoDataGeometryPrivate
+class Q_DECL_HIDDEN GeoDataLineStringPrivate : public GeoDataGeometryPrivate
 {
 public:
 
-    explicit GeoDataLineStringPrivate( TessellationFlags f )
-        :  m_rangeCorrected( nullptr ),
-           m_dirtyRange( true ),
-           m_dirtyBox( true ),
-           m_tessellationFlags( f ),
-           m_previousResolution( -1 ),
-           m_level( -1 )
+    explicit GeoDataLineStringPrivate(TessellationFlags f)
+        :  m_rangeCorrected     (nullptr),
+           m_dirtyRange         (true),
+           m_dirtyBox           (true),
+           m_tessellationFlags  (f),
+           m_previousResolution (-1),
+           m_level              (-1)
     {
     }
 
     GeoDataLineStringPrivate()
-         : m_rangeCorrected( nullptr ),
-           m_dirtyRange( true ),
-           m_dirtyBox( true )
+         : m_rangeCorrected (nullptr),
+           m_dirtyRange     (true),
+           m_dirtyBox       (true)
     {
     }
 
@@ -48,38 +49,39 @@ public:
         delete m_rangeCorrected;
     }
 
-    GeoDataLineStringPrivate& operator=( const GeoDataLineStringPrivate &other)
+    GeoDataLineStringPrivate& operator=(const GeoDataLineStringPrivate& other)
     {
-        GeoDataGeometryPrivate::operator=( other );
-        m_vector = other.m_vector;
-        m_rangeCorrected = nullptr;
-        m_dirtyRange = true;
-        m_dirtyBox = other.m_dirtyBox;
+        GeoDataGeometryPrivate::operator=(other);
+        m_vector            = other.m_vector;
+        m_rangeCorrected    = nullptr;
+        m_dirtyRange        = true;
+        m_dirtyBox          = other.m_dirtyBox;
         m_tessellationFlags = other.m_tessellationFlags;
+
         return *this;
     }
 
-
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
         GeoDataLineStringPrivate* copy = new GeoDataLineStringPrivate;
-        *copy = *this;
+        *copy                          = *this;
+
         return copy;
     }
 
-    void toPoleCorrected( const GeoDataLineString & q, GeoDataLineString & poleCorrected ) const;
+    void toPoleCorrected( const GeoDataLineString& q, GeoDataLineString& poleCorrected ) const;
 
-    void toDateLineCorrected( const GeoDataLineString & q,
-                              QVector<GeoDataLineString*> & lineStrings ) const;
+    void toDateLineCorrected( const GeoDataLineString& q,
+                              QVector<GeoDataLineString*>& lineStrings ) const;
 
-    void interpolateDateLine( const GeoDataCoordinates & previousCoords,
-                              const GeoDataCoordinates & currentCoords,
-                              GeoDataCoordinates & previousAtDateline,
-                              GeoDataCoordinates & currentAtDateline,
+    void interpolateDateLine( const GeoDataCoordinates& previousCoords,
+                              const GeoDataCoordinates& currentCoords,
+                              GeoDataCoordinates& previousAtDateline,
+                              GeoDataCoordinates& currentAtDateline,
                               TessellationFlags f ) const;
 
-    GeoDataCoordinates findDateLine( const GeoDataCoordinates & previousCoords,
-                       const GeoDataCoordinates & currentCoords,
+    GeoDataCoordinates findDateLine( const GeoDataCoordinates& previousCoords,
+                       const GeoDataCoordinates& currentCoords,
                        int recursionCounter ) const;
 
     quint8 levelForResolution(qreal resolution) const;

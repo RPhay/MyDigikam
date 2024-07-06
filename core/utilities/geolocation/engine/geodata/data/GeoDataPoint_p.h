@@ -15,12 +15,14 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataGeometry_p.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataPointPrivate : public GeoDataGeometryPrivate
+class Q_DECL_HIDDEN GeoDataPointPrivate : public GeoDataGeometryPrivate
 {
 public:
 
@@ -32,10 +34,11 @@ public:
     {
     }
 
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
         GeoDataPointPrivate* copy = new GeoDataPointPrivate;
         *copy = *this;
+
         return copy;
     }
 };

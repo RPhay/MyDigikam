@@ -15,15 +15,19 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QImage>
 #include <QColor>
+
+// Local includes
 
 #include "GeoDataFeature_p.h"
 
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataOverlayPrivate : public GeoDataFeaturePrivate
+class Q_DECL_HIDDEN GeoDataOverlayPrivate : public GeoDataFeaturePrivate
 {
 public:
 
@@ -38,15 +42,15 @@ public:
 public:
 
     GeoDataOverlayPrivate()
-        : m_color(Qt::white),
+        : m_color    (Qt::white),
           m_drawOrder(0)
     {
     }
 
     GeoDataOverlayPrivate(const GeoDataOverlayPrivate& other)
       : GeoDataFeaturePrivate(other),
-        m_color(Qt::white),
-        m_drawOrder(0)
+        m_color              (Qt::white),
+        m_drawOrder          (0)
     {
     }
 };
