@@ -1,17 +1,26 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2010 Gaurav Gupta <1989.gaurav@googlemail.com>
-//
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlFolderTagWriter.h"
+
+#include <QVector>
 
 #include "GeoDataFolder.h"
 #include "GeoWriter.h"
 #include "KmlElementDictionary.h"
-
 #include "GeoDataTypes.h"
-
-#include <QVector>
 
 namespace Marble
 {
@@ -24,7 +33,8 @@ bool KmlFolderTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) cons
 {
     const GeoDataFolder *folder = static_cast<const GeoDataFolder*>(node);
 
-    //Write all containing features
+    // Write all containing features
+
     QVector<GeoDataFeature*>::ConstIterator it =  folder->constBegin();
     QVector<GeoDataFeature*>::ConstIterator const end = folder->constEnd();
 
@@ -38,7 +48,7 @@ bool KmlFolderTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) cons
 KmlFolderTagWriter::KmlFolderTagWriter() :
   KmlFeatureTagWriter( QString::fromUtf8(kml::kmlTag_Folder) )
 {
-  // nothing to do
+    // nothing to do
 }
 
-}
+} // namespace Marble

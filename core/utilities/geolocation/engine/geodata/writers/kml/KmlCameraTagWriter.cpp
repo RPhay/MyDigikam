@@ -1,11 +1,21 @@
-// SPDX-License-Identifier: LGPL-2.1-or-later
-//
-// SPDX-FileCopyrightText: 2013 Mayank Madan <maddiemadan@gmail.com>
-// SPDX-FileCopyrightText: 2013 Illya Kovalevskyy <illya.kovalevskyy@gmail.com>
-//
-
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "KmlCameraTagWriter.h"
+
+#include <QDateTime>
 
 #include "GeoDataCamera.h"
 #include "GeoDataTypes.h"
@@ -16,13 +26,11 @@
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagWriter.h"
 
-#include <QDateTime>
-
 namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerCamera( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataCameraType),
-                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+                                                                         QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                new KmlCameraTagWriter() );
 
 
@@ -65,5 +73,4 @@ bool KmlCameraTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
     return true;
 }
 
-}
-
+} // namespace Marble
