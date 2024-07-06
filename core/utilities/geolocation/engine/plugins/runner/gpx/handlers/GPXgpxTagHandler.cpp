@@ -1,8 +1,17 @@
-/*
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GPXgpxTagHandler.h"
 
@@ -23,8 +32,10 @@
 
 namespace Marble
 {
+
 namespace gpx
 {
+
 GPX_DEFINE_TAG_HANDLER(gpx)
 
 GeoNode* GPXgpxTagHandler::parse(GeoParser& parser) const
@@ -83,5 +94,6 @@ GeoNode* GPXgpxTagHandler::parse(GeoParser& parser) const
     return doc;
 }
 
-}
-}
+} // namespace gpx
+
+} // namespace Marble

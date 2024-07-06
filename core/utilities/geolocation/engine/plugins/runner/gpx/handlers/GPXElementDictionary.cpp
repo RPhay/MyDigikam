@@ -1,17 +1,29 @@
-/*
-    SPDX-FileCopyrightText: 2007 Nikolas Zimmermann <zimmermann@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2023-05-15
+ * Description : geolocation engine based on Marble.
+ *
+ * SPDX-FileCopyrightText: 2007-2022 Marble Team
+ * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
+ * ============================================================ */
 
 #include "GPXElementDictionary.h"
 
 namespace Marble
 {
 
-// One static list of all tag names, to avoid string comparisons all-over-the-place
 namespace gpx
 {
+
+/**
+ * One static list of all tag names, to avoid string comparisons all-over-the-place.
+ */
 
 const char gpxTag_nameSpace10[] = "http://www.topografix.com/GPX/1/0";
 const char gpxTag_nameSpace11[] = "http://www.topografix.com/GPX/1/1";
@@ -40,5 +52,6 @@ const char gpxTag_nameSpaceGarminTrackPointExt1[] = "http://www.garmin.com/xmlsc
 const char gpxTag_TrackPointExtension[] = "TrackPointExtension";
 const char gpxTag_hr[] = "hr";
 
-}
-}
+} // namespace gpx
+
+} // namespace Marble
