@@ -231,12 +231,6 @@ DIGIKAM_EXPORT bool isRunningOnNativeKDE();
 DIGIKAM_EXPORT QProcessEnvironment adjustedEnvironmentForAppImage();
 
 /**
- * Static method to initialize DrMinGw crash handler under windows.
- * This method is typically called from main() function.
- */
-DIGIKAM_EXPORT void tryInitDrMingw();
-
-/**
  * Prefix of macOS Bundle to access to internal Unix hierarchy.
  */
 DIGIKAM_EXPORT QString macOSBundlePrefix();

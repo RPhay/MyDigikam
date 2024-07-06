@@ -179,8 +179,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     digikamSetDebugFilterRules(system.enableLogging);
 
-    tryInitDrMingw();
-
 #ifdef HAVE_IMAGE_MAGICK
 
 #ifdef Q_CC_MSVC

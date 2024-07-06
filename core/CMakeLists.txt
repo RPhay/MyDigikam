@@ -223,7 +223,6 @@ MACRO_BOOL_TO_01(ENABLE_QTMULTIMEDIA                            HAVE_QTMULTIMEDI
 MACRO_BOOL_TO_01(ENABLE_DBUS                                    HAVE_DBUS)
 MACRO_BOOL_TO_01(ENABLE_APPSTYLES                               HAVE_APPSTYLE_SUPPORT)
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE                              HAVE_QWEBENGINE)
-MACRO_BOOL_TO_01(ENABLE_DRMINGW                                 HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_FOUND                              HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(HEIF_FOUND                                     HAVE_HEIF)
 MACRO_BOOL_TO_01(X265_FOUND                                     HAVE_X265)
@@ -396,11 +395,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
-
-    if(MINGW)
-        # Remove ATTRIBUTES GCC flag which generate a lots of compilation warnings with KF${QT_VERSION_MAJOR} frameworks
-        REMOVE_GCC_COMPILER_WARNINGS("-Wattributes")
-    endif()
 
     include(MacroSanitizers)
     ENABLE_COMPILER_SANITIZERS()
