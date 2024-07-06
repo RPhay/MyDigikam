@@ -24,40 +24,44 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN GeoDataRegionPrivate
+class Q_DECL_HIDDEN GeoDataRegionPrivate
 {
 public:
 
     GeoDataRegionPrivate()
-        : m_parent( nullptr ),
-          m_latLonAltBox( nullptr ),
-          m_lod( nullptr )
+        : m_parent      (nullptr),
+          m_latLonAltBox(nullptr),
+          m_lod         (nullptr)
     {
     }
 
-    GeoDataRegionPrivate( const GeoDataRegionPrivate& other )
-        : m_parent( other.m_parent )
+    GeoDataRegionPrivate(const GeoDataRegionPrivate& other)
+        : m_parent(other.m_parent)
     {
-        if ( other.m_latLonAltBox ) {
-            m_latLonAltBox = new GeoDataLatLonAltBox( *other.m_latLonAltBox );
+        if (other.m_latLonAltBox)
+        {
+            m_latLonAltBox = new GeoDataLatLonAltBox(*other.m_latLonAltBox);
         }
-        else {
+        else
+        {
             m_latLonAltBox = nullptr;
         }
 
-        if ( other.m_lod ) {
-            m_lod = new GeoDataLod( *other.m_lod );
+        if (other.m_lod)
+        {
+            m_lod = new GeoDataLod(*other.m_lod);
         }
-        else {
+        else
+        {
             m_lod = nullptr;
         }
     }
 
 
-    explicit GeoDataRegionPrivate( GeoDataFeature * feature )
-         : m_parent( feature ),
-           m_latLonAltBox( nullptr ),
-           m_lod( nullptr )
+    explicit GeoDataRegionPrivate(GeoDataFeature* feature)
+         : m_parent      (feature),
+           m_latLonAltBox(nullptr),
+           m_lod         (nullptr)
     {
     }
 
@@ -77,7 +81,7 @@ private:
 
     // Preventing usage of operator=
 
-    GeoDataRegionPrivate &operator=( const GeoDataRegionPrivate& ) = delete;
+    GeoDataRegionPrivate &operator=(const GeoDataRegionPrivate&) = delete;
 };
 
 } // namespace Marble
