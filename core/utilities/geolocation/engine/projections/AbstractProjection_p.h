@@ -10,7 +10,7 @@ namespace Marble
 
 class AbstractProjection;
 
-struct Q_DECL_HIDDEN AbstractProjectionPrivate
+class Q_DECL_HIDDEN AbstractProjectionPrivate
 {
 public:
 

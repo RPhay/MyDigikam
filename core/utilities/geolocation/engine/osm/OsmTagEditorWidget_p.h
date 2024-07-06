@@ -26,7 +26,7 @@ class GeoDataPlacemark;
 class OsmPlacemarkData;
 class OsmTagEditorWidget;
 
-struct Q_DECL_HIDDEN OsmTagEditorWidgetPrivate : public Ui::OsmTagEditorWidgetPrivate
+class Q_DECL_HIDDEN OsmTagEditorWidgetPrivate : public Ui::OsmTagEditorWidgetPrivate
 {
 public:
 

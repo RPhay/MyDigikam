@@ -23,7 +23,7 @@ class QWidget;
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN WidgetGraphicsItemPrivate : public ScreenGraphicsItemPrivate
+class Q_DECL_HIDDEN WidgetGraphicsItemPrivate : public ScreenGraphicsItemPrivate
 {
 public:
 

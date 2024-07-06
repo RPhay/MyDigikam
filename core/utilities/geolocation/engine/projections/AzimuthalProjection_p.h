@@ -25,7 +25,7 @@ static const int maxTessellationNodes = 200;
 
 class AzimuthalProjection;
 
-struct Q_DECL_HIDDEN AzimuthalProjectionPrivate : public AbstractProjectionPrivate
+class Q_DECL_HIDDEN AzimuthalProjectionPrivate : public AbstractProjectionPrivate
 {
 public:
 

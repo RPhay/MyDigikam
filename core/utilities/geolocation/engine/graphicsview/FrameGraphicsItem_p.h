@@ -26,7 +26,7 @@
 namespace Marble
 {
 
-struct Q_DECL_HIDDEN FrameGraphicsItemPrivate : public ScreenGraphicsItemPrivate
+class Q_DECL_HIDDEN FrameGraphicsItemPrivate : public ScreenGraphicsItemPrivate
 {
 public:
 

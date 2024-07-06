@@ -29,7 +29,7 @@ namespace Marble
 
 class LabelGraphicsItem;
 
-struct Q_DECL_HIDDEN LabelGraphicsItemPrivate : public FrameGraphicsItemPrivate
+class Q_DECL_HIDDEN LabelGraphicsItemPrivate : public FrameGraphicsItemPrivate
 {
 public:
 

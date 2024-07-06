@@ -27,7 +27,7 @@ class ViewportParams;
 class GeoDataCoordinates;
 class GeoPainter;
 
-struct Q_DECL_HIDDEN GeoPainterPrivate
+class Q_DECL_HIDDEN GeoPainterPrivate
 {
 public:
 

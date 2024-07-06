@@ -22,7 +22,7 @@ namespace Marble
 
 class CylindricalProjection;
 
-struct Q_DECL_HIDDEN CylindricalProjectionPrivate : public AbstractProjectionPrivate
+class Q_DECL_HIDDEN CylindricalProjectionPrivate : public AbstractProjectionPrivate
 {
 public:
 
