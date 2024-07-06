@@ -1,7 +1,7 @@
 # Translation for digikam.po to Euskara/Basque (eu).
 # Copyright (C) 2005-2023 This file is copyright:
 # This package is distributed under the same license as the digikam package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # --- kipiplugin_acquireimages
 # Translation for kipiplugin_acquireimages.po to Euskara/Basque (eu).
@@ -38,15 +38,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 01:41+0000\n"
-"PO-Revision-Date: 2023-04-22 19:09+0200\n"
+"POT-Creation-Date: 2024-07-06 01:46+0000\n"
+"PO-Revision-Date: 2024-07-06 01:10+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -827,11 +827,10 @@ msgid "R&emove Tag"
 msgstr "K&endu etiketa"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Kendu «aurpegi» etiketak"
+msgstr "Kendu etiketa guztiak"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -1384,6 +1383,10 @@ msgid ""
 "ExifTool binary file in the metadata section.\n"
 "Error message: %1"
 msgstr ""
+"«ExifTool» ez dago erabilgarri digiKamen zure instalazioan edo ez dabil "
+"behar bezala. Joan digiKamen ezarpenetara eta egiaztatu «ExifTool» fitxategi "
+"bitarra meta-datuak atalean erabilgarri dagoen.\n"
+"Errore mezua: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -1531,17 +1534,15 @@ msgid "Images found in %1"
 msgstr "%1(e)n aurkitutako irudiak"
 
 #: core/app/main/digikamapp_config.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Kolore-antolaera argi bat aukeratu duzu. Ikono iluneko gai batera aldatzen "
-"dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
+"Orain sistemaren ikono-gaira aldatzen dugu. Plasma 6 mahaigain batean "
+"ikonoen koloreak automatikoki doitzen dira. Ikono-gaia erabilgarri dago "
+"digiKam berrabiatu ondoren."
 
 #: core/app/main/digikamapp_config.cpp:129
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -1910,11 +1911,10 @@ msgid "Recognize Faces"
 msgstr "Aurpegiak ezagutzea"
 
 #: core/app/main/digikamapp_setup.cpp:466
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Kendu «aurpegi» etiketak"
+msgstr "Kendu aurpegi guztiak"
 
 #: core/app/main/digikamapp_setup.cpp:473
 #, kde-format
@@ -2808,12 +2808,7 @@ msgid "All supported files (%1)"
 msgstr "Onartutako fitxategi guztiak (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2822,19 +2817,13 @@ msgid ""
 "Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
-"Erreakzioak: %2\n"
+"Atzeraelikadura: %2\n"
+"Dokumentazioa: %3\n"
 "\n"
-"Eraikitze data: %3 (jomuga: %4)"
+"Eraikitze data: %4 (jomuga: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2845,11 +2834,12 @@ msgid ""
 "Branch: %7"
 msgstr ""
 "IRC: %1 - #digikam\n"
-"Erreakzioak: %2\n"
+"Atzeraelikadura: %2\n"
+"Dokumentazioa: %3\n"
 "\n"
-"Eraikitze data: %3 (jomuga: %4)\n"
-"Berrikuspena: %5\n"
-"Adarra: %6"
+"Eraikitze data: %4 (jomuga: %5)\n"
+"Berrikuspena: %6\n"
+"Adarra: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
@@ -2878,10 +2868,9 @@ msgid "Clear all faces on this image"
 msgstr "Garbitu irudi honetako aurpegi guztiak"
 
 #: core/app/views/preview/itempreviewview.cpp:184
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Markatu aurpegi ezezagun guztiak ezikusi gisa"
+msgstr "Markatu baieztatu gabeko aurpegi guztiak ezikusi gisa"
 
 #: core/app/views/preview/itempreviewview.cpp:191
 #, kde-format
@@ -3206,9 +3195,7 @@ msgstr "Tresnak"
 
 #: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:830
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Laguntza"
 
@@ -3216,7 +3203,7 @@ msgstr "Laguntza"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Zakarrontziari buruzko lerroko laguntza"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
@@ -3247,6 +3234,7 @@ msgstr "Ezabatu..."
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Elementuen hautapena edo zakarrontziko elementu guztiak betiko ezabatu."
 
 #: core/app/views/stack/trashview.cpp:135
 #, kde-format
@@ -3313,15 +3301,16 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementu hautatuta"
 
 #: core/app/views/stack/welcomepageview.cpp:130
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
-msgstr "Bugzillan erabiltzaileen 200 txosten baino gehiago itxi dira."
+msgstr "Bugzillan erabiltzaileen 1500 txosten baino gehiago itxi dira."
 
 #: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Kodea Qt6 «framework»era eratorri da (kodea oraindik Qt5 APIarekin "
+"bateragarria da)."
 
 #: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
@@ -3329,17 +3318,22 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"Windows instalatzailea orain Microsoft VCPKG tresna-katearekin konpilatzen "
+"da era natiboan eta Qt6 eta «KF6 framework» erabiltzen ditu."
 
 #: core/app/views/stack/welcomepageview.cpp:133
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
+"JPEG-XL, WEBP, eta AVIF esportatzeko ezarpenak leku guztietan gehitu dira."
 
 #: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Kameratik inportatzean galerarik gabeko JPEG-XL, WEBP, eta AVIF bihurtzea "
+"gehitu da."
 
 #: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
@@ -3357,6 +3351,8 @@ msgstr ""
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Erabilgarritasuna: menu-nagusia eskutuan badago, gehitu hanburgesa menua "
+"tresna-barran."
 
 #: core/app/views/stack/welcomepageview.cpp:138
 #, fuzzy, kde-format
@@ -55092,7 +55088,7 @@ msgid "&Hide"
 msgstr "Ezkutatu"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:378
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "&Configure..."
@@ -55250,7 +55246,7 @@ msgid "E"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
 #| msgid "No"
@@ -55258,7 +55254,7 @@ msgid "N"
 msgstr "Ez"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:150
 #, kde-format
 msgid "S"
 msgstr ""
@@ -57297,17 +57293,17 @@ msgstr "Gehitu konderriko etiketa"
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:66
 #, kde-format
 msgid "Atmosphere"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:71
 #, kde-format
 msgid "&Atmosphere"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:86
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
 msgstr ""
@@ -57355,19 +57351,19 @@ msgstr ""
 msgid "Magnet"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:58
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:67
 #, fuzzy, kde-format
 #| msgid "Show compass"
 msgid "Compass"
 msgstr "Erakutsi iparrorratza"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:63
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:72
 #, fuzzy, kde-format
 #| msgid "Show compass"
 msgid "&Compass"
 msgstr "Erakutsi iparrorratza"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
@@ -57409,17 +57405,17 @@ msgstr "Zirkulua kanporantz"
 msgid "German"
 msgstr "Alemana"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:81
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:86
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:101
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr ""
@@ -57505,75 +57501,75 @@ msgstr "Bertikalki lehenbizi"
 msgid "Show numerical Labels."
 msgstr "Erakutsi irudien etiketak"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:70
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:80
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate Grid"
 msgstr "Koordenatuak"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate &Grid"
 msgstr "Koordenatuak"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:100
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:212
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:222
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the coordinate grid."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:223
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:233
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the tropic circles."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the equator."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:314
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:324
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Equator"
 msgstr "Sortzailea"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:319
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:329
 #, fuzzy, kde-format
 msgid "Prime Meridian"
 msgstr "Gurasoak"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:330
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:406
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:416
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:417
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:410
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:420
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Arctic Circle"
 msgstr "Zirkulua kanporantz"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:421
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Antarctica"
@@ -57595,58 +57591,58 @@ msgstr "Erakutsi irudi mota"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:52
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:61
 #, kde-format
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgid "Scale Bar"
 msgstr "Erakutsi eskalaren barra"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "&Eskalatu:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Elementu honek geokokatze informazioa du."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:109
 #, fuzzy, kde-format
 #| msgid "Original Colors:"
 msgid "Original Developer"
 msgstr "Jatorrizko koloreak:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:240
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:249
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #, kde-format
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:248
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:257
 #, fuzzy, kde-format
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:262
 #, kde-format
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:264
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:273
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:384
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:393
 #, fuzzy, kde-format
 #| msgctxt "@info: tableview"
 #| msgid "Rational"
@@ -57741,97 +57737,97 @@ msgstr "Erradioa:"
 msgid "Circumference"
 msgstr "Référence :"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
 #, fuzzy, kde-format
 #| msgid "Base Tools"
 msgid "Measure Tool"
 msgstr "Oinarrizko tresnak"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
 #, fuzzy, kde-format
 #| msgid "Base Tools"
 msgid "&Measure Tool"
 msgstr "Oinarrizko tresnak"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:112
 #, kde-format
 msgid "Measure distances between two or more points."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:367
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:482
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:372
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:487
 #, kde-format
 msgid ""
 "Area:\n"
 "%1"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:385
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:390
 #, kde-format
 msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:500
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:505
 #, fuzzy, kde-format
 msgid ""
 "Perimeter:\n"
 "%1"
 msgstr "Gurasoak"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:558
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Polygon Ruler"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:560
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Circle Ruler"
 msgstr "Zirkulua kanporantz"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:568
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:574
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:579
 #, fuzzy, kde-format
 msgid "Area: %1<br/>\n"
 msgstr "Pertsonalizatua"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:567
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:575
 #, fuzzy, kde-format
 #| msgid "Radius:"
 msgid "Radius: %1<br/>\n"
 msgstr "Erradioa:"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:577
 #, kde-format
 msgid "Circumference: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:621
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:626
 #, fuzzy, kde-format
 #| msgid "Add a focus point"
 msgid "Add &Measure Point"
 msgstr "Gehitu puntu fokal bat"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:622
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:627
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgid "Remove &Last Measure Point"
 msgstr "Kendu kontua"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:624
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:629
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgid "&Remove Measure Points"
@@ -57839,56 +57835,56 @@ msgstr "Kendu kontua"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:55
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:63
 #, fuzzy, kde-format
 #| msgid "Show navigation"
 msgid "Navigation"
 msgstr "Erakutsi nabigazioa"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:68
 #, fuzzy, kde-format
 #| msgid "Show navigation"
 msgid "&Navigation"
 msgstr "Erakutsi nabigazioa"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:83
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:242
 #, fuzzy, kde-format
 msgid "Current Location Button"
 msgstr "Mantendu aspektu-erlazioa"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:237
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:245
 #, kde-format
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:78
 #, fuzzy, kde-format
 msgid "Overview Map"
 msgstr "Erakutsi ikuspegi orokorraren mapa"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:73
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:83
 #, fuzzy, kde-format
 msgid "&Overview Map"
 msgstr "Erakutsi ikuspegi orokorraren mapa"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Elementu honek geokokatze informazioa du."
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:479
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:489
 #, fuzzy, kde-format
 msgid "Choose Overview Map"
 msgstr "Erakutsi ikuspegi orokorraren mapa"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:511
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:521
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the position indicator"
@@ -57936,53 +57932,53 @@ msgstr "X"
 msgid "Position I&ndicator:"
 msgstr "Iragazki berdea"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:80
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:89
 #, fuzzy, kde-format
 msgid "Download Progress Indicator"
 msgstr "Esposizioaren adierazleak"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:94
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgid "&Download Progress"
 msgstr "Zama-jaiste errorea"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:109
 #, fuzzy, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "Esposizioaren adierazleak"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:29
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:40
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Cache File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:44
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:55
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:60
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:71
 #, fuzzy, kde-format
 #| msgid "Marble widget"
 msgid "Marble Cache Files"
 msgstr "Marmolaren trepeta"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "GPSBabel NMEA File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Save files as"
@@ -58006,108 +58002,108 @@ msgstr ""
 msgid "GPS Data"
 msgstr "Données"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:24
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "GeoJSON File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:39
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:56
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:64
 #, kde-format
 msgid "GeoJSON"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:22
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "KML File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:54
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:64
 #, kde-format
 msgid "Google Earth KML"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:34
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:54
 #, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Osm File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:53
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:64
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Pn2 File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Name of the component"
 #| msgid "Component"
 msgid "Compressed Pnt"
 msgstr "Osagaia"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgid "Pnt File Parser"
 msgstr "Fitxategi-transferentzia"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:63
 #, kde-format
 msgid "Micro World Database II"
 msgstr ""
@@ -68355,64 +68351,59 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "Urruneko zerbitzariaren ezarpenak"
+msgstr "Sa&reko zerbitzari-ordezkariaren ezarpenak"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
-msgstr ""
+msgstr "&Ordezkaria:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60
-#, fuzzy, kde-format
-#| msgid "Host Port:"
+#, kde-format
 msgid "P&ort:"
-msgstr "Ostalariaren ataka:"
+msgstr "&Ataka:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
 #, kde-format
 msgid "Proxy type:"
-msgstr ""
+msgstr "Ordezkari mota:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
-msgstr ""
+msgstr "HTTP"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "SOCKS5"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
 #: core/utilities/setup/misc/proxysettingswidget.ui:180
-#, fuzzy, kde-format
-#| msgid "Orientation"
+#, kde-format
 msgid "Requires authentication"
-msgstr "Aurkezpena"
+msgstr "Autentifikazioa behar du"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
 #: core/utilities/setup/misc/proxysettingswidget.ui:186
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "U&sername:"
-msgstr "Erabiltzaile-izena:"
+msgstr "Erabilt&zaile-izena:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
 #: core/utilities/setup/misc/proxysettingswidget.ui:196
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "&Password:"
-msgstr "Pasahitza:"
+msgstr "&Pasahitza:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
 #, fuzzy, kde-format
@@ -68631,30 +68622,28 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:307
-#, fuzzy, kde-format
-#| msgid "No"
+#, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Ez"
 
 #: core/utilities/setup/misc/setupmisc.cpp:308
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Bai"
 
 #: core/utilities/setup/misc/setupmisc.cpp:309
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Galdetu"
 
 #: core/utilities/setup/misc/setupmisc.cpp:352
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
-msgstr "Taldea"
+msgstr "Taldekatzea"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
@@ -68664,38 +68653,37 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
-msgstr ""
+msgstr "Erabili DPI bereizmen altuko pixel-mapak"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:92
 #, kde-format
 msgid "Force use of software OpenGL rendering"
-msgstr ""
+msgstr "Behartu software OpenGL errendatzea erabiltzea"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:93
 #, kde-format
 msgid "Disable hardware acceleration OpenCL"
-msgstr ""
+msgstr "Ezgaitu hardware azelerazio OpenCL"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:97
 #, kde-format
 msgid "Fix AMD-GPU video decoding issue"
-msgstr ""
+msgstr "AMD-GPUaren bideoa deskodetzeko arazoa konpondu"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:99
 #, kde-format
 msgid "Used decoding backend for video:"
-msgstr ""
+msgstr "Bideoarekin erabilitako deskodetzeko bizkarraldekoa:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgid "FFmpeg (Default)"
-msgstr " (lehenetsia)"
+msgstr "FFmpeg (Lehenetsia)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
 msgid "Windows (System)"
-msgstr ""
+msgstr "Windows (Sistemarena)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
@@ -68703,10 +68691,9 @@ msgid "Enable internal debug logging"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Downloading file %1..."
+#, kde-format
 msgid "Download required binary data..."
-msgstr "%1 fitxategia deskargatzen..."
+msgstr "Beharrezko datu bitarrak zama-jaitsi..."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:123
 #, kde-format
@@ -68716,8 +68703,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:127
-#, fuzzy, kde-format
-#| msgid "Database"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Datu-basea"
@@ -68734,8 +68720,7 @@ msgstr ""
 "i></qt>"
 
 #: core/utilities/setup/setup.cpp:132
-#, fuzzy, kde-format
-#| msgid "Collections"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Bildumak"
@@ -68754,8 +68739,7 @@ msgstr ""
 "kokalekuak</i></qt>"
 
 #: core/utilities/setup/setup.cpp:137
-#, fuzzy, kde-format
-#| msgid "Views"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Ikuspegiak"
@@ -68774,8 +68758,7 @@ msgstr ""
 "itxura</i></qt>"
 
 #: core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Tool-Tip"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Argibidea"
@@ -68794,8 +68777,7 @@ msgstr ""
 "argibideen informazioak</i></qt>"
 
 #: core/utilities/setup/setup.cpp:147
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadatuak"
@@ -68814,155 +68796,133 @@ msgstr ""
 "irudiak eta metadatuen arteko erlazioak</i></qt>"
 
 #: core/utilities/setup/setup.cpp:152
-#, fuzzy, kde-format
-#| msgid "Templates"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Txantiloiak"
 
 #: core/utilities/setup/setup.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
-#| "templates</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
 msgstr ""
-"<qt>Metadatuen txantiloiak<br/><i>Kudeatu zure metadatuen txantiloien "
-"bilduma</i></qt>"
+"Metadatuen txantiloiak\n"
+"Kudeatu metadatu txantiloien zure bilduma"
 
 #: core/utilities/setup/setup.cpp:157
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
-msgstr "Irudi editorea"
+msgstr "Irudi-editorea"
 
 #: core/utilities/setup/setup.cpp:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"<qt>Irudi-editorearen ezarpenak<br/><i>Pertsonalizatu irudi-editorearen "
-"portaera</i></qt>"
+"Irudi-editorearen ezarpenak\n"
+"Neurrira ipini irudi-editorearen ezarpenak"
 
 #: core/utilities/setup/setup.cpp:162
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
-msgstr "Koloreen kudeaketa"
+msgstr "Kolore-kudeaketa"
 
 #: core/utilities/setup/setup.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
-"<qt>Koloreen kudeaketaren ezarpenak<br/><i>Pertsonalizatu koloreen "
-"kudeaketaren ezarpenak</i></qt>"
+"Kolore-kudeaketarako ezarpenak\n"
+"Neurrira ipini kolore-kudeaketaren ezarpenak"
 
 #: core/utilities/setup/setup.cpp:167
-#, fuzzy, kde-format
-#| msgid "Light Table"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Argi-mahaia"
 
 #: core/utilities/setup/setup.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
-"<qt>Argi-mahaiaren ezarpenak<br/><i>Pertsonalizatu irudiak konparatzeko "
-"tresna</i></qt>"
+"Argi-mahaiaren ezarpenak\n"
+"Neurrira ipini irudiak konparatzeko erabilitako tresna"
 
 #: core/utilities/setup/setup.cpp:181
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Irudi-kalitatearen sailkatzailea"
 
 #: core/utilities/setup/setup.cpp:182
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"<qt>Irudi-editorearen ezarpenak<br/><i>Pertsonalizatu irudi-editorearen "
-"portaera</i></qt>"
+"Irudi-kalitate sailkatzailearen ezarpenak\n"
+"Pertsonalizatu ezarpen lehenetsiak, irudi-triajea kalitatearen arabera "
+"egiteko"
 
 #: core/utilities/setup/setup.cpp:186
-#, fuzzy, kde-format
-#| msgid "Cameras"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamerak"
 
 #: core/utilities/setup/setup.cpp:187
-#, fuzzy, kde-format
-#| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Camera Settings\n"
 "Manage your camera devices"
-msgstr "<qt>Kameren ezarpenak<br/><i>Kudeatu kamerak</i></qt>"
+msgstr ""
+"Kamera ezarpenak\n"
+"Kudeatu zure kamera gailuak"
 
 #: core/utilities/setup/setup.cpp:194
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginak"
 
 #: core/utilities/setup/setup.cpp:195
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from the main interface</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
 msgstr ""
-"<qt>Interfaze nagusiaren pluginen ezarpenak<br/><i>Ezarri zer plugin egongo "
-"diren atzigarri interfaze nagusian</i></qt>"
+"Plugin ezarpenak\n"
+"Ezarri aplikaziotik atzigarri izango diren pluginak"
 
 #: core/utilities/setup/setup.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@item: album categories"
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
-msgstr "Hainbat"
+msgstr "Askotarikoak"
 
 #: core/utilities/setup/setup.cpp:200
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of digiKam</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Miscellaneous Settings\n"
 "Customize behavior of the other parts of digiKam"
 msgstr ""
-"<qt>Hainbat ezarpen<br/><i>Pertsonalizatu digiKam-eko beste zatien portaera</"
-"i></qt>"
+"Askotariko ezarpenak\n"
+"Neurrira ipini digiKam-eko beste atalen jokabidea"
 
 #: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format
@@ -68977,10 +68937,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setupdatabase.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:group"
 msgid "Updates"
-msgstr "Eguneratu"
+msgstr "Eguneratzeak"
 
 #: core/utilities/setup/setupdatabase.cpp:186
 #, fuzzy, kde-format
@@ -69007,10 +68967,9 @@ msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
 
 #: core/utilities/setup/setupgeolocation.cpp:104
-#, fuzzy, kde-format
-#| msgid "URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "APIaren URL:"
+msgstr "API gakoa:"
 
 #: core/utilities/setup/setupgeolocation.cpp:115
 #, kde-format
@@ -69325,22 +69284,19 @@ msgid "Rendering Intents:"
 msgstr "Errendatzearen saiakerak:"
 
 #: core/utilities/setup/setupicc.cpp:462
-#, fuzzy, kde-format
-#| msgid "Behavior"
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
-msgstr "Portaera"
+msgstr "Jokabidea"
 
 #: core/utilities/setup/setupicc.cpp:463
-#, fuzzy, kde-format
-#| msgid "Profiles"
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profilak"
 
 #: core/utilities/setup/setupicc.cpp:464
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Aurreratua"
@@ -69432,11 +69388,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:61
-#, fuzzy, kde-format
-#| msgid "Sort images by:"
+#, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr "Ordenatu irudiak honen arabera:"
+msgstr "irudiaren kalitate estetikoa"
 
 #: core/utilities/setup/setuplighttable.cpp:79
 #, kde-format
@@ -69483,33 +69438,28 @@ msgstr ""
 "kendu ezarpena uneko irudiak argi-mahaian mantentzeko."
 
 #: core/utilities/setup/setupplugins.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "generic black and white film"
-#| msgid "Generic"
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "Generikoa"
 
 #: core/utilities/setup/setupplugins.cpp:72
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "Irudi editorea"
 
 #: core/utilities/setup/setupplugins.cpp:78
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr "Agindu-sorta ilara kudeatzailea"
+msgstr "Sorta ilara kudeatzailea"
 
 #: core/utilities/setup/setupplugins.cpp:84
-#, fuzzy, kde-format
-#| msgid "Image labels"
+#, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
-msgstr "Irudi etiketak"
+msgstr "Irudi zamatzaileak"
 
 #: core/utilities/setup/setuptemplate.cpp:77
 #, kde-format
@@ -69531,15 +69481,7 @@ msgstr ""
 "direktorioan identifikatzeko erabiliko da.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: These information are used to set <b><a href='http://en."
-#| "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a "
-#| "href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. There "
-#| "is no limitation with XMP, but note that IPTC text tags only support the "
-#| "printable <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-#| "character set, and tag sizes are limited. Use contextual help for details."
-#| "</b>"
+#, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
 "org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a href='https://"
@@ -69550,11 +69492,9 @@ msgstr ""
 "<b>Oharra: informazio hauek <b><a href='http://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a></b> eta <b><a href='http://en."
 "wikipedia.org/wiki/IPTC'>IPTC</a></b> etiketen edukia ezartzeko erabiltzen "
-"dira. Ez dago murriztapenik XMPrekin, baina jakin ezazu IPTCko etiketetako "
-"testuak  inprimagarria den <b><a href='http://en.wikipedia.org/wiki/"
-"Ascii'>ASCII</a></b> karaktere-jokoa soilik onartzen duela, eta etiketen "
-"tamainak mugatuta daudela. Erabili testuinguruko laguntza xehetasunetarako.</"
-"b>"
+"dira. Ez dago murriztapenik XMPrekin, baina jakin ezazu IPTCko testu "
+"etiketen neurriak mugatuta daudela. Erabili testuinguruko laguntza "
+"xehetasunetarako.</b>"
 
 #: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
@@ -69730,9 +69670,10 @@ msgid "Image labels"
 msgstr "Irudi etiketak"
 
 #: core/utilities/setup/setuptooltip.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
-msgstr "Ezarri aukera hau  ********  bistaratzeko."
+msgstr ""
+"Ezarri aukera hau irudiaren hautua, kolorea, balorazioa etiketak azaltzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:251
 #, kde-format
@@ -69916,11 +69857,13 @@ msgid "Set this option to display the item dimensions."
 msgstr "Ezarri aukera hau elementuaren dimentsioak bistaratzeko."
 
 #: core/utilities/setup/setuptooltip.cpp:356
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
-msgstr "Oharra: ezarpen hauek "
+msgstr ""
+"Oharra: ezarpen hauek, Kamera ezarpen jokabidea orriko \"Erabili fitxategiko "
+"meta-datuak\" aukera behar dute."
 
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format

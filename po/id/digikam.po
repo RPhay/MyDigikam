@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 01:41+0000\n"
+"POT-Creation-Date: 2024-07-06 01:46+0000\n"
 "PO-Revision-Date: 2023-08-28 07:33+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -52524,7 +52524,7 @@ msgid "&Hide"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:378
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "&Configure..."
@@ -52686,7 +52686,7 @@ msgid "E"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
 #| msgid "No"
@@ -52694,7 +52694,7 @@ msgid "N"
 msgstr "Tidak"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:150
 #, kde-format
 msgid "S"
 msgstr ""
@@ -54722,17 +54722,17 @@ msgstr "Tambahkan Citra..."
 msgid "Configure"
 msgstr "Konfigurasikan"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:66
 #, kde-format
 msgid "Atmosphere"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:71
 #, kde-format
 msgid "&Atmosphere"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:86
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
 msgstr ""
@@ -54778,17 +54778,17 @@ msgstr ""
 msgid "Magnet"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:58
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:67
 #, kde-format
 msgid "Compass"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:63
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:72
 #, kde-format
 msgid "&Compass"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:87
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "A plugin to show a float item that provides a compass over the map."
@@ -54827,17 +54827,17 @@ msgstr ""
 msgid "German"
 msgstr "Jerman"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:81
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:86
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:101
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr ""
@@ -54920,73 +54920,73 @@ msgstr "Garis Menegak"
 msgid "Show numerical Labels."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:70
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:80
 #, fuzzy, kde-format
 #| msgid "Copy Files"
 msgid "Coordinate Grid"
 msgstr "Salin File"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Copy Files"
 msgid "Coordinate &Grid"
 msgstr "Salin File"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:100
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:212
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:222
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:223
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:233
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:314
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:324
 #, fuzzy, kde-format
 #| msgctxt "@label: item creator"
 #| msgid "Creator"
 msgid "Equator"
 msgstr "Pencipta"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:319
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:329
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Prime Meridian"
 msgstr "Parameter"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:330
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:406
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:416
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:417
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:410
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:420
 #, kde-format
 msgid "Arctic Circle"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:421
 #, kde-format
 msgid "Antarctic Circle"
 msgstr ""
@@ -55006,58 +55006,58 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:52
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:61
 #, kde-format
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "Scale Bar"
 msgstr "&Skala ke:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "&Skala ke:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:98
 #, fuzzy, kde-format
 #| msgid "This is the list of items that are about to be deleted."
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Ini adalah daftar tentang item yang akan dihapus."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:109
 #, fuzzy, kde-format
 #| msgid "Developer"
 msgid "Original Developer"
 msgstr "Pengembang"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:240
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:249
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #, kde-format
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:248
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:257
 #, fuzzy, kde-format
 #| msgid "cm"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:262
 #, kde-format
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:264
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:273
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:384
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:393
 #, fuzzy, kde-format
 #| msgctxt "@info: tableview"
 #| msgid "Rational"
@@ -55153,37 +55153,37 @@ msgstr "Radius:"
 msgid "Circumference"
 msgstr "Referensi:"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
 #, kde-format
 msgid "Measure Tool"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
 #, kde-format
 msgid "&Measure Tool"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:112
 #, kde-format
 msgid "Measure distances between two or more points."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:367
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:482
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:372
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:487
 #, kde-format
 msgid ""
 "Area:\n"
 "%1"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:385
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:390
 #, kde-format
 msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:500
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
@@ -55192,56 +55192,56 @@ msgid ""
 "%1"
 msgstr "Parameter"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:558
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Polygon Ruler"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:560
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
 #, kde-format
 msgid "Circle Ruler"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:568
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:574
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:579
 #, kde-format
 msgid "Area: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:567
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:575
 #, fuzzy, kde-format
 #| msgid "Radius:"
 msgid "Radius: %1<br/>\n"
 msgstr "Radius:"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:577
 #, kde-format
 msgid "Circumference: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:621
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:626
 #, fuzzy, kde-format
 #| msgid "Add tags per image"
 msgid "Add &Measure Point"
 msgstr "Tambahkan tag tiap citra"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:622
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:627
 #, fuzzy, kde-format
 #| msgid "Remove Account"
 msgid "Remove &Last Measure Point"
 msgstr "Hapus Akun"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:624
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:629
 #, fuzzy, kde-format
 #| msgid "Remove Account"
 msgid "&Remove Measure Points"
@@ -55249,58 +55249,58 @@ msgstr "Hapus Akun"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:55
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:63
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "Navigation"
 msgstr "Suram"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:68
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgid "&Navigation"
 msgstr "Suram"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:83
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:242
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Current"
 msgid "Current Location Button"
 msgstr "Saat ini"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:237
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:245
 #, kde-format
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:78
 #, kde-format
 msgid "Overview Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:73
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:83
 #, kde-format
 msgid "&Overview Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:98
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Tidak ada item untuk diproses di dalam antrean."
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:479
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:489
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgid "Choose Overview Map"
 msgstr "Tutup tampilan"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:511
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:521
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr ""
@@ -55349,57 +55349,57 @@ msgstr "x"
 msgid "Position I&ndicator:"
 msgstr "Posisi:"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:80
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:89
 #, fuzzy, kde-format
 #| msgid "Show progress indicator"
 msgid "Download Progress Indicator"
 msgstr "Tampilkan indikator progres"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:94
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgid "&Download Progress"
 msgstr "Galat unduh"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:109
 #, fuzzy, kde-format
 #| msgid "Show progress indicator"
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "Tampilkan indikator progres"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:29
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "Cache File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:44
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:55
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:60
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:71
 #, fuzzy, kde-format
 #| msgid "Marble 2"
 msgid "Marble Cache Files"
 msgstr "Kelereng 2"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "GPSBabel NMEA File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgid "GPSBabel files"
@@ -55423,110 +55423,110 @@ msgstr ""
 msgid "GPS Data"
 msgstr "Data"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:24
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "GeoJSON File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:39
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:56
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:64
 #, kde-format
 msgid "GeoJSON"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:22
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "KML File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:54
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:64
 #, kde-format
 msgid "Google Earth KML"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:34
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, kde-format
 msgid "OpenStreetMap Nominatim"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:54
 #, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "Osm File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:53
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:64
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "Pn2 File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "Noise Weight:"
 msgid "Compressed Pnt"
 msgstr "Berat Kepyur:"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "Pnt File Parser"
 msgstr "Transfer File"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:63
 #, kde-format
 msgid "Micro World Database II"
 msgstr ""

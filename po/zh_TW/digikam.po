@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 01:41+0000\n"
-"PO-Revision-Date: 2024-07-01 13:28+0900\n"
+"POT-Creation-Date: 2024-07-06 01:46+0000\n"
+"PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -4462,7 +4462,7 @@ msgstr "色版混合"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
-msgstr "混合色頻的工具"
+msgstr "混合色版的工具"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, kde-kuit-format
@@ -4470,7 +4470,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
-msgstr "<para>這個「批次佇列管理器」工具可以用來混合影像的色頻。</para>"
+msgstr "<para>這個「批次佇列管理器」工具可以用來混合影像的色版。</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
@@ -7704,17 +7704,17 @@ msgstr "負片轉換"
 #: core/dplugins/editor/colors/film/filmtool.cpp:165
 #, kde-format
 msgid "Input range of red color channel."
-msgstr "紅色色頻的輸入範圍。"
+msgstr "紅色色版的輸入範圍。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:170
 #, kde-format
 msgid "Input range of green color channel."
-msgstr "綠色色頻的輸入範圍。"
+msgstr "綠色色版的輸入範圍。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:175
 #, kde-format
 msgid "Input range of blue color channel."
-msgstr "藍色色頻的輸入範圍。"
+msgstr "藍色色版的輸入範圍。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:196
 #, kde-format
@@ -7777,8 +7777,8 @@ msgid ""
 "without clipping any color channel. Use the output histogram to evaluate "
 "each channel."
 msgstr ""
-"移動滑動器到較高的值，直到在不修正任何色頻的狀況下達到最高的亮度。使用輸出的"
-"直方圖來評估每個色頻。"
+"移動滑動器到較高的值，直到在不修正任何色版的狀況下達到最高的亮度。使用輸出的"
+"直方圖來評估每個色版。"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:248
 #, kde-format
@@ -8777,12 +8777,10 @@ msgstr "調整大小到(&S)："
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: core/dplugins/editor/file/print/printoptionspage.ui:203
-#, fuzzy, kde-format
-#| msgctxt "Pixels"
-#| msgid "px"
+#, kde-format
 msgctxt "Dimension separator, as in: '15 x 10 centimeters'"
 msgid "x"
-msgstr "px"
+msgstr "×"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_PrintUnit)
 #: core/dplugins/editor/file/print/printoptionspage.ui:230
@@ -30307,14 +30305,13 @@ msgstr "紅外線濾鏡"
 #: core/libs/dimg/filters/bw/mixerfilter.cpp:52
 #, kde-format
 msgid "Channel Mixer Tool"
-msgstr "色頻混合工具"
+msgstr "色版混合工具"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:100
-#, fuzzy, kde-format
-#| msgid "Output Channel:"
+#, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
-msgstr "輸出色頻："
+msgstr "輸出色版："
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:102
 #, kde-format
@@ -30414,17 +30411,7 @@ msgid "Monochrome"
 msgstr "單色"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Use <b>Monochrome</b> mode to convert color picture to Black and White:"
-#| "</p><p>The <qt><font color=\"red\">red channel</font></qt> modifies <a "
-#| "href='http://en.wikipedia.org/wiki/Contrast_(vision)'>the contrast</a> of "
-#| "photograph.</p><p>The <qt><font color=\"green\">green channel</font></qt> "
-#| "enhances or reduces the details level of photograph.</p><p>The <qt><font "
-#| "color=\"blue\">blue channel</font></qt> affects <a href='http://en."
-#| "wikipedia.org/wiki/Image_noise'>the noise</a> of photograph.</"
-#| "p><p><u>Note:</u> in this mode, the histogram will display only "
-#| "luminosity values.</p>"
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
@@ -30433,13 +30420,11 @@ msgid ""
 "The \"blue channel\" affects the noise of photograph.\n"
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
-"<p>使用<b>單色</b>模式將彩色圖片轉換為黑白。</p> <p><qt><font color=\"red\">"
-"紅色色頻</font></qt>會變更相片的<a href='http://en.wikipedia.org/wiki/"
-"Contrast_(vision)'>對比度（contrast）</a>。</p> <p><qt><font color=\"green\">"
-"綠色色頻</font></qt>會加強或減少相片的詳細等級。</p> <p><qt><font color="
-"\"blue\">藍色色頻</font></qt>會影響相片的<a href='http://en.wikipedia.org/"
-"wiki/Image_noise'>噪度（noise）</a>。</p> <p><u>注意：</u>這種模式下，直方圖"
-"只會顯示亮度值。</p>"
+"使用「單色」模式將彩色圖片轉換為黑白：\n"
+"「紅色色版」會變更相片的對比度。\n"
+"「綠色色版」會加強或減少相片的詳細等級。\n"
+"「藍色色版」會影響相片的噪度。\n"
+"請注意：這種模式下，直方圖只會顯示亮度值。"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:321
 #, fuzzy, kde-format
@@ -37342,8 +37327,7 @@ msgid "Color depth: "
 msgstr "色彩深度："
 
 #: core/libs/properties/itempropertiescolorstab.cpp:180
-#, fuzzy, kde-format
-#| msgid "Alpha Channel: "
+#, kde-format
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr "Alpha 色版："
@@ -38602,10 +38586,9 @@ msgid "Opening items in the Slideshow"
 msgstr "在投影片放映開啟項目"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:510
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgid "Renaming items"
-msgstr "重新命名影像"
+msgstr "重新命名項目"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
@@ -38620,50 +38603,43 @@ msgid ""
 msgstr ""
 
 #: core/libs/settings/applicationsettings_p.cpp:49
-#, fuzzy, kde-format
-#| msgid "Category"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
-msgstr "類別"
+msgstr "分類"
 
 #: core/libs/settings/applicationsettings_p.cpp:50
-#, fuzzy, kde-format
-#| msgid "Travel"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "旅遊"
 
 #: core/libs/settings/applicationsettings_p.cpp:51
-#, fuzzy, kde-format
-#| msgid "Holidays"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "渡假"
 
 #: core/libs/settings/applicationsettings_p.cpp:52
-#, fuzzy, kde-format
-#| msgid "Friends"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "朋友"
 
 #: core/libs/settings/applicationsettings_p.cpp:53
-#, fuzzy, kde-format
-#| msgid "Nature"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "自然"
 
 #: core/libs/settings/applicationsettings_p.cpp:54
-#, fuzzy, kde-format
-#| msgid "Party"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "聚會"
 
 #: core/libs/settings/applicationsettings_p.cpp:55
-#, fuzzy, kde-format
-#| msgid "Todo"
+#, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "待辦"
@@ -38912,16 +38888,13 @@ msgstr "快捷鍵(&S)："
 #, kde-format
 msgctxt "@label"
 msgid "Note"
-msgstr ""
+msgstr "備註"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to "
-#| "items.</p>"
+#, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
-msgstr "<p><b>注意</b>：此捷徑可以用於指定或取消指定項目的標籤。</p>"
+msgstr "此快捷鍵可以用於指派標籤給項目，或是從項目移除標籤。"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:153
 #, kde-format
@@ -38936,8 +38909,7 @@ msgid "Discard"
 msgstr "捨棄"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:221
-#, fuzzy, kde-format
-#| msgid "Previous tags were changed. Save changes? "
+#, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "先前的標籤已變更。要儲存變更嗎？"
@@ -39013,10 +38985,10 @@ msgstr ""
 "您要繼續嗎？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:601
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
-msgstr[0] "您要從收藏清單中移除此收藏「%1」嗎？"
+msgstr[0] "您確定要將所選的標籤從所有影像上移除嗎？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:682
 #, kde-format
@@ -39036,9 +39008,9 @@ msgid "Create Tag from Address Book"
 msgstr "從通訊錄建立標籤"
 
 #: core/libs/tags/manager/tagsmanager.cpp:705
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "最近指定的標籤"
+msgstr "標記未指定的標籤"
 
 #: core/libs/tags/manager/tagsmanager.cpp:725
 #, kde-format
@@ -39063,9 +39035,9 @@ msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重設選取的標籤圖示。可以用於多個選取標籤。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:737
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mark all tags that are not assigned to images."
-msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
+msgstr "標記所有未被指定到任何影像上的標籤。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
@@ -39224,8 +39196,7 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>在「%1」中<br/>標籤的屬性</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:515
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "標籤建立錯誤"
@@ -39343,8 +39314,7 @@ msgid ""
 msgstr "在這裡輸入主題詳細名稱。如果您選擇標準 XMP/NAA 參考代碼請使用英文。"
 
 #: core/libs/template/templatelist.cpp:70
-#, fuzzy, kde-format
-#| msgid "Here you can see the metadata template list managed by digiKam."
+#, kde-format
 msgctxt "@info"
 msgid "Here you can see the metadata template list managed by digiKam."
 msgstr "在這裡您可以看到由 digiKam 管理的中繼資料範本清單。"
@@ -39374,15 +39344,7 @@ msgid ""
 msgstr "在這裡輸入相片創作者的姓名。用分號在不同作者之間作區隔。"
 
 #: core/libs/template/templatepanel.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This field should contain the names of the persons who created the "
-#| "photograph. If it is not appropriate to add the name of the photographer "
-#| "(for example, if the identity of the photographer needs to be protected) "
-#| "the name of a company or organization can also be used. Once saved, this "
-#| "field should not be changed by anyone. <p>To enter more than one name, "
-#| "use <b>semi-colons as separators</b>.</p><p>With IPTC, this field is "
-#| "limited to 32 ASCII characters.</p>"
+#, kde-format
 msgid ""
 "<p>This field should contain the names of the persons who created the "
 "photograph. If it is not appropriate to add the name of the photographer "
@@ -39394,8 +39356,8 @@ msgid ""
 msgstr ""
 "<p>這欄位應含有相片創作者的姓名。若加入攝影師姓名不恰當 (舉例來說，假如需要保"
 "護攝影師的身份) 也可使用公司或機構名稱。一旦儲存，這欄位就不應該被任何人更"
-"改。<p>使用<b>分號作為區隔</b>來輸入多個名稱。</p><p>若用 IPTC, 這欄位限制為 "
-"32 個 ASCII 字元。</p>"
+"改。</p><p>使用<b>分號作為區隔</b>來輸入多個名稱。</p><p>若用 IPTC, 這欄位限"
+"制為 32 個字元。</p>"
 
 #: core/libs/template/templatepanel.cpp:103
 #, kde-format
@@ -50219,6 +50181,8 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
+"重新命名 %1 張影像時發生問題。\n"
+"您要再次重新命名這些影像，還是透過覆寫來重新命名這些影像？"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
 #, kde-format
@@ -50282,7 +50246,7 @@ msgstr "<p>新增重新命名選項到剖析字串中。</p>"
 #, kde-format
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
-msgstr ""
+msgstr "要套用修飾元，請將其加到選項後方，例如：[file]{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -50479,7 +50443,7 @@ msgstr "取代："
 #, kde-format
 msgctxt "The string to replace the text with"
 msgid "With:"
-msgstr ""
+msgstr "為："
 
 #. i18n: ectx: property (text), widget (QCheckBox, caseSensitive)
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:55
@@ -50520,14 +50484,15 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "新增後置數字，||n|| 指定使用的位數"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:45
-#, fuzzy, kde-format
-#| msgid "Add a suffix number, ||n|| specifies the number of digits to use"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
 "all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
 "digits"
-msgstr "新增後置數字，||n|| 指定使用的位數"
+msgstr ""
+"新增後置數字，||n|| 指定使用的位數，||c|| 指定數字前方的分隔字元，||a|| 為可"
+"選，來包含所有獨特性的選項，||0|| 亦為可選，來總是加上 ||n|| 個數字 0"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -50543,7 +50508,7 @@ msgstr "相機名稱"
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
-msgstr "關鍵字分離器："
+msgstr "關鍵字分隔符號："
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
 #, kde-format
@@ -50633,7 +50598,7 @@ msgstr "影像方向"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:66
 #, kde-format
 msgid "Color depth (bits per channel)"
-msgstr "色彩深度（每個色頻的位元數）"
+msgstr "色彩深度（每個色版的位元數）"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:67
 #, kde-format
@@ -52239,7 +52204,7 @@ msgid "&Hide"
 msgstr "隱藏(&H)"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:378
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
 #, kde-format
 msgid "&Configure..."
 msgstr "設定(&C)…"
@@ -52387,13 +52352,13 @@ msgid "E"
 msgstr "東"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:140
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:149
 #, kde-format
 msgid "N"
 msgstr "北"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:141
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:150
 #, kde-format
 msgid "S"
 msgstr "南"
@@ -54307,17 +54272,17 @@ msgstr "新增自訂標籤..."
 msgid "Configure"
 msgstr "設定"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:62
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:66
 #, kde-format
 msgid "Atmosphere"
 msgstr "大氣層"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:71
 #, kde-format
 msgid "&Atmosphere"
 msgstr "大氣層(&A)"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:82
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:86
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
 msgstr "在地球週圍顯示大氣層的外掛程式。"
@@ -54360,17 +54325,17 @@ msgstr "原子"
 msgid "Magnet"
 msgstr "磁鐵"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:58
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:67
 #, kde-format
 msgid "Compass"
 msgstr "羅盤"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:63
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:72
 #, kde-format
 msgid "&Compass"
 msgstr "羅盤(&C)"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:87
 #, fuzzy, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
 msgstr "新增基於外觀比例資訊的過濾器；"
@@ -54409,17 +54374,17 @@ msgstr "圓形擴大"
 msgid "German"
 msgstr "德語"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:72
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:81
 #, kde-format
 msgid "Crosshairs"
 msgstr "準心"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:77
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:86
 #, kde-format
 msgid "Cross&hairs"
 msgstr "準心(&H)"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:101
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr ""
@@ -54505,77 +54470,77 @@ msgstr "先調整垂直"
 msgid "Show numerical Labels."
 msgstr "顯示影像標籤"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:70
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:80
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate Grid"
 msgstr "座標"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, fuzzy, kde-format
 #| msgid "Coordinates"
 msgid "Coordinate &Grid"
 msgstr "座標"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:100
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:212
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:222
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the coordinate grid."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:223
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:233
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the tropic circles."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the equator."
 msgstr "在這裡設定第二條線的顏色。"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:314
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:324
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Equator"
 msgstr "我的行事曆"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:319
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:329
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
 msgid "Prime Meridian"
 msgstr "參數"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:320
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:330
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:406
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:416
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:407
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:417
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:410
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:420
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Arctic Circle"
 msgstr "圓形擴大"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:411
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:421
 #, fuzzy, kde-format
 #| msgid "Antarctica"
 msgid "Antarctic Circle"
@@ -54597,55 +54562,55 @@ msgstr "顯示影像標題"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:52
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:61
 #, kde-format
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:78
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgid "Scale Bar"
 msgstr "顯示刻度列"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:74
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "調整大小到(&S)："
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:98
 #, fuzzy, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:109
 #, kde-format
 msgid "Original Developer"
 msgstr "原始開發者"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:240
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:244
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:249
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:248
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:257
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:262
 #, kde-format
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:264
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:273
 #, kde-format
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:384
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:393
 #, fuzzy, kde-format
 #| msgid "Rational"
 msgid "&Ratio Scale"
@@ -54734,23 +54699,23 @@ msgstr "半徑"
 msgid "Circumference"
 msgstr "圓周長"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
 #, kde-format
 msgid "Measure Tool"
 msgstr "測量工具"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
 #, kde-format
 msgid "&Measure Tool"
 msgstr "測量工具(&M)"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:112
 #, kde-format
 msgid "Measure distances between two or more points."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:367
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:482
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:372
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:487
 #, kde-format
 msgid ""
 "Area:\n"
@@ -54759,7 +54724,7 @@ msgstr ""
 "面積：\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:385
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:390
 #, kde-format
 msgid ""
 "Circumference:\n"
@@ -54768,7 +54733,7 @@ msgstr ""
 "圓周長：\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:500
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Parameters"
@@ -54777,59 +54742,59 @@ msgid ""
 "%1"
 msgstr "參數"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:558
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
 #, kde-format
 msgid "Polygon Ruler"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:560
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
 #, fuzzy, kde-format
 #| msgctxt "Filter Effect: Circle Out"
 #| msgid "Circle Out"
 msgid "Circle Ruler"
 msgstr "圓形擴大"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:568
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:574
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:579
 #, fuzzy, kde-format
 #| msgid "Author: %1<br/><br/>"
 msgid "Area: %1<br/>\n"
 msgstr "作者：%1<br/><br/>"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:567
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:575
 #, fuzzy, kde-format
 #| msgid "Radius:"
 msgid "Radius: %1<br/>\n"
 msgstr "半徑："
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:577
 #, kde-format
 msgid "Circumference: %1<br/>\n"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:621
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:626
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgid "Add &Measure Point"
 msgstr "加入臉孔標籤..."
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:622
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:627
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgid "Remove &Last Measure Point"
 msgstr "移除收藏"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:624
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:629
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgid "&Remove Measure Points"
@@ -54837,55 +54802,55 @@ msgstr "移除收藏"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:55
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:63
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Navigation"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:60
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:68
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "&Navigation"
 msgstr "顯示導航控制"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:75
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:83
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:234
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:242
 #, fuzzy, kde-format
 #| msgid "Current aspect ratio"
 msgid "Current Location Button"
 msgstr "目前影像比例"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:237
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:245
 #, kde-format
 msgid "Home Button"
 msgstr "首頁按鍵"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:78
 #, kde-format
 msgid "Overview Map"
 msgstr "概觀地圖"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:73
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:83
 #, kde-format
 msgid "&Overview Map"
 msgstr "概觀地圖(&O)"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:98
 #, fuzzy, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "新增基於外觀比例資訊的過濾器；"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:479
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:489
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "選擇概觀地圖"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:511
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:521
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the position indicator"
@@ -54927,49 +54892,49 @@ msgstr "×"
 msgid "Position I&ndicator:"
 msgstr "位置指示器(&N)："
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:80
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:89
 #, kde-format
 msgid "Download Progress Indicator"
 msgstr "下載進度指示器"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:94
 #, kde-format
 msgid "&Download Progress"
 msgstr "下載進度(&D)"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:109
 #, fuzzy, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr "顯示詳情進度對視窗"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:29
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:40
 #, kde-format
 msgid "Cache File Parser"
 msgstr "快取檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:44
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:55
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:60
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:71
 #, kde-format
 msgid "Marble Cache Files"
 msgstr "Marble 快取檔"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:32
 #, kde-format
 msgid "GPSBabel NMEA File Parser"
 msgstr "GPSBabel NMEA 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:63
 #, kde-format
 msgid "GPSBabel files"
 msgstr "GPSBabel 檔案"
@@ -54989,101 +54954,101 @@ msgstr ""
 msgid "GPS Data"
 msgstr "GPS 資料"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:24
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:32
 #, kde-format
 msgid "GeoJSON File Parser"
 msgstr "GeoJSON 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:39
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:56
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:64
 #, kde-format
 msgid "GeoJSON"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:22
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:32
 #, kde-format
 msgid "KML File Parser"
 msgstr "KML 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:54
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:64
 #, kde-format
 msgid "Google Earth KML"
 msgstr "Google Earth KML"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:25
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:34
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:30
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Nominatim"
 msgstr "開放街圖"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:45
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:54
 #, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:32
 #, kde-format
 msgid "Osm File Parser"
 msgstr "Osm 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:53
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:64
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap Data"
 msgstr "開放街圖"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:32
 #, kde-format
 msgid "Pn2 File Parser"
 msgstr "Pn2 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:63
 #, kde-format
 msgid "Compressed Pnt"
 msgstr "壓縮的 Pnt"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:32
 #, kde-format
 msgid "Pnt File Parser"
 msgstr "Pnt 檔案剖析器"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:47
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:63
 #, kde-format
 msgid "Micro World Database II"
 msgstr ""
@@ -61659,49 +61624,45 @@ msgid "bps"
 msgstr "bps"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:939
-#, fuzzy, kde-format
-#| msgid "Return video audio Channel Type"
+#, kde-format
 msgid "Return Audio Channel Type"
-msgstr "回傳此影片的聲道型態"
+msgstr "回傳聲道型態"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:941
-#, fuzzy, kde-format
-#| msgid "Mono"
+#, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "單聲道"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:942
-#, fuzzy, kde-format
-#| msgid "Stereo"
+#, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
-msgstr "立體聲"
+msgstr "雙聲道"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
-msgstr ""
+msgstr "5.1 環繞音效"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
-msgstr ""
+msgstr "7.1 環繞音效"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:945
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
-msgstr ""
+msgstr "16 聲道序列"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:946
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
-msgstr "聲道型態"
+msgstr "其他聲道型態"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #, fuzzy, kde-format
@@ -64102,9 +64063,9 @@ msgid "Alternative special options"
 msgstr "替代特殊選項"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
-#, fuzzy, kde-format
+#, kde-format
 msgid "Separator:"
-msgstr "麥卡托投影（Mercator）"
+msgstr "分隔符號："
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:326
 #, kde-format
@@ -64159,12 +64120,12 @@ msgstr ""
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
 #, kde-format
 msgid "Tag Path separator is required"
-msgstr "標籤路徑是必要的"
+msgstr "需要標籤路徑分割符號"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:634
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
-msgstr ""
+msgstr "標籤路徑分割符號現在只支援使用單一字元"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:59
 #, kde-format
@@ -66203,7 +66164,7 @@ msgstr "啟用這個選項會顯示影片的音訊位元率。"
 #: core/utilities/setup/setuptooltip.cpp:261
 #, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
-msgstr "啟用這個選項會顯示影片的聲道型態。"
+msgstr "啟用這個選項來顯示影片的聲道型態。"
 
 #: core/utilities/setup/setuptooltip.cpp:264
 #, kde-format
