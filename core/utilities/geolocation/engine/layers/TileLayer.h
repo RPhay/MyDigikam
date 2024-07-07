@@ -15,8 +15,10 @@
 
 #pragma once
 
-#include <LayerInterface.h>
+#include "LayerInterface.h"
+
 #include <QObject>
+
 #include "GeoSceneAbstractTileProjection.h"
 
 namespace Marble

@@ -20,7 +20,7 @@
 #include <QThreadPool>
 #include <QImage>
 
-#include <MarbleGlobal.h>
+#include "MarbleGlobal.h"
 
 namespace Marble
 {

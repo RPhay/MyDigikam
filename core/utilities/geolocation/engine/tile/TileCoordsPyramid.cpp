@@ -20,7 +20,7 @@
 #include <QRect>
 #include <QVector>
 
-#include <digikam_debug.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

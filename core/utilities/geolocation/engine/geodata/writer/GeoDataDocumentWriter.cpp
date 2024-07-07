@@ -23,7 +23,7 @@
 #include "GeoDataDocument.h"
 #include "KmlElementDictionary.h"
 
-#include <digikam_debug.h>
+#include "digikam_debug.h"
 
 namespace Marble
 {

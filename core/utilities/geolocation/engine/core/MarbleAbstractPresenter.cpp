@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include <MarbleAbstractPresenter.h>
+#include "MarbleAbstractPresenter.h"
 
 #include <QtMath>
 

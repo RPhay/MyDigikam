@@ -16,7 +16,8 @@
 #include "MathHelper.h"
 
 #ifdef Q_CC_MSVC
-#include <float.h>
+
+#   include <float.h>
 
 qreal msvc_asinh(qreal x)
 {

@@ -16,7 +16,7 @@
 #pragma once
 
 #include "GeoTagHandler.h"
-#include <GeoDataTimeStamp.h>
+#include "GeoDataTimeStamp.h"
 
 class QString;
 

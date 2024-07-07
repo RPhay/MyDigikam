@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include <GeoDataCoordinates.h>
+#include "GeoDataCoordinates.h"
 
 namespace Marble
 {

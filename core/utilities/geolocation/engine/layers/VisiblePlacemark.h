@@ -24,8 +24,8 @@
 #include <QPoint>
 #include <QRectF>
 
-#include <GeoDataStyle.h>
-#include <GeoDataCoordinates.h>
+#include "GeoDataStyle.h"
+#include "GeoDataCoordinates.h"
 
 namespace Marble
 {

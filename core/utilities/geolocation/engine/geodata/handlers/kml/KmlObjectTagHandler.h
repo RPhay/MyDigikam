@@ -15,8 +15,8 @@
 
 #pragma once
 
-#include <GeoParser.h>
-#include <GeoDataObject.h>
+#include "GeoParser.h"
+#include "GeoDataObject.h"
 
 namespace Marble
 {

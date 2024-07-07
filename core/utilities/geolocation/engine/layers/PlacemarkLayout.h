@@ -27,7 +27,7 @@
 #include <QPointer>
 
 #include "GeoDataPlacemark.h"
-#include <GeoDataStyle.h>
+#include "GeoDataStyle.h"
 
 class QAbstractItemModel;
 class QItemSelectionModel;

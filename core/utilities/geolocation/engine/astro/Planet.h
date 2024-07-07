@@ -15,10 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
 #include <QDateTime>
 #include <QStringList>
 #include <QColor>
+
+// Local includes
 
 #include "digikam_export.h"
 

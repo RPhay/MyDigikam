@@ -19,15 +19,14 @@
 // Private
 #include "GeoDataRegion_p.h"
 
+// std
+#include <algorithm>
+
 // GeoData
 #include "GeoDataFeature.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataGeometry.h"
 #include "GeoDataTypes.h"
-
-// std
-#include <algorithm>
-
 
 namespace Marble
 {
