@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
 
 class QString;

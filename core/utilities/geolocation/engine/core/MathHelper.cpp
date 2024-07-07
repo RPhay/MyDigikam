@@ -19,6 +19,9 @@
 
 #   include <float.h>
 
+namespace Marble
+{
+
 qreal msvc_asinh(qreal x)
 {
     if (_isnan(x))
@@ -34,6 +37,8 @@ qreal msvc_atanh(qreal x)
 {
     return (0.5 * log((1.0 + x) / (1.0 - x)));
 }
+
+} // Namespace Marble
 
 #endif  // Q_CC_MSVC
 

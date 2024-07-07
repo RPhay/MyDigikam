@@ -13,15 +13,19 @@
  *
  * ============================================================ */
 
-//
-// The TextureColorizer maps the Elevationvalues to Legend Colors.
-//
+/**
+ * The TextureColorizer maps the Elevationvalues to Legend Colors.
+ */
 
 #pragma once
+
+// Qt includes
 
 #include <QString>
 #include <QImage>
 #include <QColor>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "GeoDataDocument.h"

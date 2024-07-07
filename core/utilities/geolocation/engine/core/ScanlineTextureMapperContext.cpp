@@ -15,13 +15,14 @@
 
 #include "ScanlineTextureMapperContext.h"
 
+// Local includes
+
 #include "GeoSceneAbstractTileProjection.h"
 #include "StackedTile.h"
 #include "StackedTileLoader.h"
 #include "TileId.h"
 #include "ViewParams.h"
 #include "ViewportParams.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

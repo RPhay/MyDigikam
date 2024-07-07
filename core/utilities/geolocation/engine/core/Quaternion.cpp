@@ -15,7 +15,11 @@
 
 #include "Quaternion.h"
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "digikam_debug.h"
 

@@ -15,8 +15,12 @@
 
 #pragma once
 
+// C++ includes
+
 #include <QSize>
 #include <QImage>
+
+// Local includes
 
 #include "GeoSceneTileDataset.h"
 #include "MarbleMath.h"

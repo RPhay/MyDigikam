@@ -15,12 +15,15 @@
 
 #pragma once
 
-#include "TextureMapperInterface.h"
-
-#include "MarbleGlobal.h"
+// Qt includes
 
 #include <QThreadPool>
 #include <QImage>
+
+// Local includes
+
+#include "TextureMapperInterface.h"
+#include "MarbleGlobal.h"
 
 namespace Marble
 {

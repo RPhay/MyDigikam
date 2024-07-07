@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-// Self
 #include "MarbleWidgetPopupMenu.h"
 
-// Qt
+// Qt includes
+
 #include <QApplication>
 #include <QFile>
 #include <QMimeData>
@@ -26,9 +26,12 @@
 #include <QMenu>
 #include <QMessageBox>
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
-// Marble
+// Local includes
+
 #include "AbstractDataPluginItem.h"
 #include "AbstractFloatItem.h"
 #include "MarbleDirs.h"
@@ -54,7 +57,6 @@
 #include "TemplateDocument.h"
 #include "OsmPlacemarkData.h"
 #include "StyleBuilder.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -62,28 +64,27 @@ namespace Marble
 
 class Q_DECL_HIDDEN MarbleWidgetPopupMenu::Private
 {
-
 public:
 
-    const MarbleModel* const m_model;
-    MarbleWidget* const m_widget;
+    const MarbleModel* const        m_model                 = nullptr;
+    MarbleWidget* const             m_widget                = nullptr;
 
     QVector<const GeoDataFeature*>  m_featurelist;
-    QList<AbstractDataPluginItem*> m_itemList;
+    QList<AbstractDataPluginItem*>  m_itemList;
 
-    QMenu m_lmbMenu;
-    QMenu m_rmbMenu;
+    QMenu                           m_lmbMenu;
+    QMenu                           m_rmbMenu;
 
-    QAction* m_infoDialogAction;
+    QAction*                        m_infoDialogAction      = nullptr;
 
-    QAction* const m_copyCoordinateAction;
-    QAction* const m_copyGeoAction;
+    QAction* const                  m_copyCoordinateAction  = nullptr;
+    QAction* const                  m_copyGeoAction         = nullptr;
 
-    QAction* m_rmbExtensionPoint;
+    QAction*                        m_rmbExtensionPoint     = nullptr;
 
-    ReverseGeocodingRunnerManager m_runnerManager;
+    ReverseGeocodingRunnerManager   m_runnerManager;
 
-    QPoint m_mousePosition;
+    QPoint                          m_mousePosition;
 
 public:
 

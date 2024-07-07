@@ -15,12 +15,16 @@
 
 #include "TextureColorizer.h"
 
+// Qt includes
+
 #include <qmath.h>
 #include <QFile>
 #include <QSharedPointer>
 #include <QVector>
 #include <QElapsedTimer>
 #include <QPainter>
+
+// Local includes
 
 #include "GeoPainter.h"
 #include "ViewParams.h"
@@ -31,13 +35,14 @@
 #include "GeoDataFeature.h"
 #include "GeoDataPlacemark.h"
 #include "AbstractProjection.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-// 4 uchar long queue
+/**
+ * 4 uchar long queue
+ */
 class Q_DECL_HIDDEN EmbossFifo
 {
 public:

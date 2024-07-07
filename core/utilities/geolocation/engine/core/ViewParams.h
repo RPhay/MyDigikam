@@ -15,10 +15,8 @@
 
 #pragma once
 
-/** @file
+/**
  * This file contains the headers for ViewParameters.
- *
- * @author Inge Wallin  <inge@lysator.liu.se>
  */
 
 #include "MarbleGlobal.h"
@@ -30,7 +28,6 @@ class ViewParamsPrivate;
 
 /**
  * @short A public class that controls the painting of a MarbleWidget
- *
  */
 
 class ViewParams

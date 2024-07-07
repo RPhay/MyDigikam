@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "digikam_export.h"
 

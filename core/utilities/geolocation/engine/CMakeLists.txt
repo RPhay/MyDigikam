@@ -64,7 +64,6 @@ set(marblewidget_SRCS
     core/MercatorScanlineTextureMapper.cpp
     core/Quaternion.cpp
     core/RenderState.cpp
-    core/RunnerTask.cpp
     core/SphericalScanlineTextureMapper.cpp
     core/ScanlineTextureMapperContext.cpp
     core/StyleBuilder.cpp
@@ -615,6 +614,7 @@ set(marblewidget_SRCS
     runners/ReverseGeocodingRunnerManager.cpp
     runners/SearchRunner.cpp
     runners/SearchRunnerManager.cpp
+    runners/RunnerTask.cpp
 
     settings/MarbleConfigView.cpp
     settings/MarblePluginSettingsWidget.cpp

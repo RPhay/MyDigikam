@@ -15,13 +15,14 @@
 
 #include "RunnerTask.h"
 
+// Local includes
+
 #include "ParsingRunner.h"
 #include "ParsingRunnerManager.h"
 #include "SearchRunner.h"
 #include "SearchRunnerManager.h"
 #include "ReverseGeocodingRunner.h"
 #include "ReverseGeocodingRunnerManager.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

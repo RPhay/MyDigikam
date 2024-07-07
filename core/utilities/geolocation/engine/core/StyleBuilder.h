@@ -15,13 +15,16 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QHash>
 #include <QPair>
+
+// Local includes
 
 #include "GeoDataPlacemark.h"
 #include "GeoDataStyle.h"
 #include "GeoDataRelation.h"
-
 #include "digikam_export.h"
 
 class QFont;

@@ -15,6 +15,8 @@
 
 #include "TemplateDocument.h"
 
+// Qt includes
+
 #include <QMap>
 #include <QString>
 #include <QFile>
@@ -24,6 +26,8 @@
 #else
 #   include <QRegExp>
 #endif
+
+// Local includes
 
 #include "digikam_debug.h"
 

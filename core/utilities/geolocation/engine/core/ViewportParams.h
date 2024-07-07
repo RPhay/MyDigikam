@@ -13,15 +13,17 @@
  *
  * ============================================================ */
 
-#pragma once
-
-/** @file
+/**
  * This file contains the headers for ViewportParams.
- *
- * @author Inge Wallin  <inge@lysator.liu.se>
  */
 
+#pragma once
+
+// Qt includes
+
 #include <QSize>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 #include "Quaternion.h"
@@ -42,9 +44,7 @@ class ViewportParamsPrivate;
 
 /**
  * @short A public class that controls what is visible in the viewport of a Marble map.
- *
  */
-
 class DIGIKAM_EXPORT ViewportParams
 {
 public:

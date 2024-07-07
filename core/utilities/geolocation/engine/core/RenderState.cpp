@@ -15,6 +15,8 @@
 
 #include "RenderState.h"
 
+// Qt includes
+
 #include <QList>
 
 namespace Marble
@@ -23,9 +25,12 @@ namespace Marble
 class Q_DECL_HIDDEN RenderState::Private
 {
 public:
-    QString m_name;
-    QList<RenderState> m_children;
-    RenderStatus m_status;
+
+    QString             m_name;
+    QList<RenderState>  m_children;
+    RenderStatus        m_status;
+
+public:
 
     Private(const QString& name = QString(), RenderStatus status = Complete);
     RenderStatus status() const;

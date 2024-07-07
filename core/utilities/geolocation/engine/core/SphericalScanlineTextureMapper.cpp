@@ -15,10 +15,16 @@
 
 #include "SphericalScanlineTextureMapper.h"
 
+// C++ includes
+
 #include <cmath>
+
+// Qt includes
 
 #include <qmath.h>
 #include <QRunnable>
+
+// Local includes
 
 #include "GeoPainter.h"
 #include "GeoDataPolygon.h"
@@ -29,7 +35,6 @@
 #include "TextureColorizer.h"
 #include "ViewportParams.h"
 #include "MathHelper.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

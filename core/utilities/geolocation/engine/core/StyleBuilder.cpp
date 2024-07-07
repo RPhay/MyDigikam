@@ -15,12 +15,16 @@
 
 #include "StyleBuilder.h"
 
+// Qt includes
+
 #include <QApplication>
 #include <QFont>
 #include <QImage>
 #include <QDate>
 #include <QSet>
 #include <QScreen>
+
+// Local includes
 
 #include "MarbleDirs.h"
 #include "OsmPlacemarkData.h"
@@ -35,7 +39,6 @@
 #include "GeoDataLabelStyle.h"
 #include "GeoDataLineStyle.h"
 #include "GeoDataPolyStyle.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

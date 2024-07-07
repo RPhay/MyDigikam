@@ -15,9 +15,13 @@
 
 #include "ViewportParams.h"
 
+// Qt includes
+
 #include <QRect>
 #include <QPainterPath>
 #include <QRegion>
+
+// Local includes
 
 #include "GeoDataLatLonAltBox.h"
 #include "SphericalProjection.h"
@@ -28,7 +32,6 @@
 #include "AzimuthalEquidistantProjection.h"
 #include "StereographicProjection.h"
 #include "VerticalPerspectiveProjection.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

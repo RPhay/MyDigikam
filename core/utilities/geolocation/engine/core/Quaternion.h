@@ -19,9 +19,15 @@
 
 #pragma once
 
+// C++ includes
+
 #include <cmath>
 
+// Qt includes
+
 #include <QtGlobal>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -87,7 +93,6 @@ public:
     void        toMatrix(matrix& m) const;
     void        rotateAroundAxis(const matrix& m);
 
-    // TODO: Better add accessors...
     xmmfloat    v;
 };
 

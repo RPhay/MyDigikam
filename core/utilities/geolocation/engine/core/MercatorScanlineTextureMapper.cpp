@@ -13,16 +13,18 @@
  *
  * ============================================================ */
 
-// local
 #include"MercatorScanlineTextureMapper.h"
 
-// posix
+// C++ includes
+
 #include <cmath>
 
-// Qt
+// Qt includes
+
 #include <QRunnable>
 
-// Marble
+// Local includes
+
 #include "GeoPainter.h"
 #include "ScanlineTextureMapperContext.h"
 #include "StackedTileLoader.h"
@@ -30,7 +32,6 @@
 #include "ViewportParams.h"
 #include "MathHelper.h"
 #include "AbstractProjection.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

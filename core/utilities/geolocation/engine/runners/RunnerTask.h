@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QRunnable>
 #include <QString>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataDocument.h"
@@ -33,7 +37,9 @@ class ParsingRunnerManager;
 class SearchRunnerManager;
 class ReverseGeocodingRunnerManager;
 
-/** A RunnerTask that executes a placemark search */
+/**
+ * A RunnerTask that executes a placemark search
+ */
 class SearchTask : public QObject, public QRunnable
 {
     Q_OBJECT

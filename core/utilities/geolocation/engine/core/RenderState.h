@@ -15,10 +15,14 @@
 
 #pragma once
 
-#include "digikam_export.h"
-#include "MarbleGlobal.h"
+// Qt includes
 
 #include <QDebug>
+
+// Local includes
+
+#include "digikam_export.h"
+#include "MarbleGlobal.h"
 
 namespace Marble
 {

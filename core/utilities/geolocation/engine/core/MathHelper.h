@@ -15,11 +15,16 @@
 
 #pragma once
 
+// Qt includes
+
 #include <qglobal.h>
 
 #ifdef Q_CC_MSVC
 
 #   include <math.h>
+
+namespace Marble
+{
 
 qreal msvc_asinh(qreal x);
 
@@ -29,4 +34,6 @@ qreal msvc_atanh(qreal x);
 
 #   define atanh msvc_atanh
 
-#endif
+} // Namespace Marble
+
+#endif // Q_CC_MSVC
