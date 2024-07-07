@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoLineStringGraphicsItem.h"
 
 namespace Marble
@@ -28,13 +30,13 @@ class DIGIKAM_EXPORT GeoTrackGraphicsItem : public GeoLineStringGraphicsItem
 
 public:
 
-    explicit GeoTrackGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataTrack *track);
+    explicit GeoTrackGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataTrack* track);
 
-    void paint(GeoPainter *painter, const ViewportParams *viewport, const QString &layer, int tileZoomLevel) override;
+    void paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel) override;
 
 private:
 
-    void setTrack(const GeoDataTrack *track);
+    void setTrack(const GeoDataTrack* track);
     void update();
 
 private:

@@ -15,13 +15,16 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QRegion>
+
+// Local includes
 
 #include "GeoGraphicsItem.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataLineString.h"
 #include "MarbleGlobal.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -35,37 +38,37 @@ class DIGIKAM_EXPORT GeoLineStringGraphicsItem : public GeoGraphicsItem
 
 public:
 
-    explicit GeoLineStringGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLineString *lineString);
+    explicit GeoLineStringGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLineString* lineString);
     ~GeoLineStringGraphicsItem() override;
 
-    void setLineString( const GeoDataLineString* lineString );
+    void setLineString(const GeoDataLineString* lineString);
     const GeoDataLineString* lineString() const;
-    static GeoDataLineString merge(const QVector<const GeoDataLineString*> &lineStrings);
-    void setMergedLineString(const GeoDataLineString &sharedLineString);
+    static GeoDataLineString merge(const QVector<const GeoDataLineString*>& lineStrings);
+    void setMergedLineString(const GeoDataLineString& sharedLineString);
 
     const GeoDataLatLonAltBox& latLonAltBox() const override;
 
-    void paint(GeoPainter* painter, const ViewportParams *viewport, const QString &layer, int tileZoomLevel) override;
-    bool contains(const QPoint &screenPosition, const ViewportParams *viewport) const override;
+    void paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel) override;
+    bool contains(const QPoint& screenPosition, const ViewportParams* viewport) const override;
 
-    static const GeoDataStyle *s_previousStyle;
+    static const GeoDataStyle* s_previousStyle;
     static bool s_paintInline;
     static bool s_paintOutline;
 
 protected:
 
-    void handleRelationUpdate(const QVector<const GeoDataRelation *> &relations) override;
+    void handleRelationUpdate(const QVector<const GeoDataRelation*>& relations) override;
 
 private:
 
-    void paintOutline(GeoPainter *painter, const ViewportParams *viewport) const;
-    void paintInline(GeoPainter *painter, const ViewportParams *viewport);
-    void paintLabel(GeoPainter *painter, const ViewportParams *viewport) const;
+    void paintOutline(GeoPainter* painter, const ViewportParams* viewport) const;
+    void paintInline(GeoPainter* painter, const ViewportParams* viewport);
+    void paintLabel(GeoPainter* painter, const ViewportParams* viewport) const;
 
-    bool configurePainterForLine(GeoPainter* painter, const ViewportParams *viewport, const bool isOutline = false) const;
-    bool configurePainterForLabel(GeoPainter* painter,  const ViewportParams *viewport, LabelPositionFlags &labelPositionFlags) const;
+    bool configurePainterForLine(GeoPainter* painter, const ViewportParams* viewport, const bool isOutline = false) const;
+    bool configurePainterForLabel(GeoPainter* painter,  const ViewportParams* viewport, LabelPositionFlags& labelPositionFlags) const;
 
-    static bool canMerge(const GeoDataCoordinates &a, const GeoDataCoordinates &b);
+    static bool canMerge(const GeoDataCoordinates& a, const GeoDataCoordinates& b);
 
 private:
 

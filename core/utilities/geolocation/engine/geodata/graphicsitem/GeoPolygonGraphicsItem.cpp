@@ -15,6 +15,8 @@
 
 #include "GeoPolygonGraphicsItem.h"
 
+// Local includes
+
 #include "BuildingGraphicsItem.h"
 #include "GeoDataPlacemark.h"
 #include "StyleBuilder.h"
@@ -22,22 +24,22 @@
 namespace Marble
 {
 
-AbstractGeoPolygonGraphicsItem *GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon)
+AbstractGeoPolygonGraphicsItem* GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon)
 {
     return new GeoPolygonGraphicsItem(placemark, polygon);
 }
 
-AbstractGeoPolygonGraphicsItem *GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring)
+AbstractGeoPolygonGraphicsItem* GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring)
 {
     return new GeoPolygonGraphicsItem(placemark, ring);
 }
 
-AbstractGeoPolygonGraphicsItem *GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building)
+AbstractGeoPolygonGraphicsItem* GeoPolygonGraphicsItem::createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataBuilding* building)
 {
     return new BuildingGraphicsItem(placemark, building);
 }
 
-GeoPolygonGraphicsItem::GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon) :
+GeoPolygonGraphicsItem::GeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon) :
     AbstractGeoPolygonGraphicsItem(placemark, polygon)
 {
     const int elevation = extractElevation(*placemark);
@@ -48,7 +50,7 @@ GeoPolygonGraphicsItem::GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark
     setPaintLayers(QStringList(paintLayer));
 }
 
-GeoPolygonGraphicsItem::GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring) :
+GeoPolygonGraphicsItem::GeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring) :
     AbstractGeoPolygonGraphicsItem(placemark, ring)
 {
     const int elevation = extractElevation(*placemark);

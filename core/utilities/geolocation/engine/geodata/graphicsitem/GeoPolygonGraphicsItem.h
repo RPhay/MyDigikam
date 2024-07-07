@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "AbstractGeoPolygonGraphicsItem.h"
 
 namespace Marble
@@ -28,12 +30,12 @@ class DIGIKAM_EXPORT GeoPolygonGraphicsItem : public AbstractGeoPolygonGraphicsI
 {
 public:
 
-    static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon);
-    static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring);
-    static AbstractGeoPolygonGraphicsItem *createGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataBuilding *building);
+    static AbstractGeoPolygonGraphicsItem* createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon);
+    static AbstractGeoPolygonGraphicsItem* createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring);
+    static AbstractGeoPolygonGraphicsItem* createGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataBuilding* building);
 
-    explicit GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataPolygon *polygon);
-    explicit GeoPolygonGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataLinearRing *ring);
+    explicit GeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon);
+    explicit GeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring);
 };
 
 } // namespace Marble
