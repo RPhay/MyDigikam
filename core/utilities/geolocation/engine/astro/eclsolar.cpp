@@ -28,13 +28,11 @@
 * and on the                                                               *
 * "Explanatory Supplement to the Astronomical Almanac"                     *
 * University Science Books, Mill Valley, CA, 1992                          *
-*                                                                          *
-* Open Source Code. License: GNU LGPL Version 2+                           *
-*                                                                          *
-* Author: Gerhard HOLTKAMP,        28-JAN-2013                             *
 ***************************************************************************/
 
 #include "eclsolar.h"
+
+// C++ includes
 
 #include <cstdio>
 #include <cstdlib>
@@ -43,6 +41,8 @@
 #include <ctime>
 
 using namespace std;
+
+// Local includes
 
 #include "astrolib.h"
 
@@ -2948,4 +2948,3 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
   }
 
 }
-

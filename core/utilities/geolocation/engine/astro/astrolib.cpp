@@ -20,19 +20,22 @@
  * as well as from the "Explanatory Supplement to the Astronomical Almanac"
  * University Science Books, Mill Valley, California, 1992
  * and modified correspondingly.
- *
- * License: GNU LGPL Version 2+
- * Copyright : Gerhard HOLTKAMP          15-APR-2015
  */
+
+// C++ includes
 
 #include <cmath>
 
 using namespace std;
 
+// Local includes
+
 #include "astrolib.h"
 
 double frac (double f)
- { return fmod(f,1.0); }
+{
+    return fmod(f,1.0);
+}
 
 /*--------------- Function ddd ------------------------------------------*/
 

@@ -15,32 +15,36 @@
 
 #include "PlanetFactory.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "Planet.h"
 #include "MarbleColors.h"
 #include "MarbleGlobal.h"
-
 #include "digikam_debug.h"
 
-namespace Marble {
+namespace Marble
+{
 
 QList<QString> PlanetFactory::planetList()
 {
     QStringList planets;
 
     planets << QString::fromUtf8("mercury")
-    << QString::fromUtf8("venus")
-    << QString::fromUtf8("earth")
-    << QString::fromUtf8("mars")
-    << QString::fromUtf8("jupiter")
-    << QString::fromUtf8("saturn")
-    << QString::fromUtf8("uranus")
-    << QString::fromUtf8("neptune")
-    << QString::fromUtf8("pluto")
-    << QString::fromUtf8("sun")
-    << QString::fromUtf8("moon")
-    << QString::fromUtf8("sky");
+            << QString::fromUtf8("venus")
+            << QString::fromUtf8("earth")
+            << QString::fromUtf8("mars")
+            << QString::fromUtf8("jupiter")
+            << QString::fromUtf8("saturn")
+            << QString::fromUtf8("uranus")
+            << QString::fromUtf8("neptune")
+            << QString::fromUtf8("pluto")
+            << QString::fromUtf8("sun")
+            << QString::fromUtf8("moon")
+            << QString::fromUtf8("sky");
 
     return planets;
 }
@@ -52,7 +56,8 @@ Planet PlanetFactory::construct( const QString &id )
 
     // constants taken from https://aa.quae.nl/en/reken/zonpositie.html
 
-    if (id == QLatin1String("mercury")) {
+    if      (id == QLatin1String("mercury"))
+    {
         planet.setM_0( 174.7948*DEG2RAD );
         planet.setM_1( 4.09233445*DEG2RAD );
         planet.setC_1( 23.4400*DEG2RAD );
@@ -68,7 +73,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setRadius( 2440000.0 );
         planet.setName(QStringLiteral("Mercury"));
         planet.setHasAtmosphere( false );
-    } else if (id == QLatin1String("venus")) {
+    }
+    else if (id == QLatin1String("venus"))
+    {
         planet.setM_0( 50.4161*DEG2RAD );
         planet.setM_1( 1.60213034*DEG2RAD );
         planet.setC_1( 0.7758*DEG2RAD );
@@ -86,7 +93,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Venus"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::sunYellow4 );
-    } else if (id == QLatin1String("earth")) {
+    }
+    else if (id == QLatin1String("earth"))
+    {
         planet.setM_0( 357.5291*DEG2RAD );
         planet.setM_1( 0.98560028*DEG2RAD );
         planet.setC_1( 1.9148*DEG2RAD );
@@ -104,7 +113,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Earth"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Qt::white );
-    } else if (id == QLatin1String("mars")) {
+    }
+    else if (id == QLatin1String("mars"))
+    {
         planet.setM_0( 19.3730*DEG2RAD );
         planet.setM_1( 0.52402068*DEG2RAD );
         planet.setC_1( 10.6912*DEG2RAD );
@@ -122,7 +133,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Mars"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::hotOrange2 );
-    } else if (id == QLatin1String("jupiter")) {
+    }
+    else if (id == QLatin1String("jupiter"))
+    {
         planet.setM_0( 20.0202*DEG2RAD );
         planet.setM_1( 0.08308529*DEG2RAD );
         planet.setC_1( 5.5549*DEG2RAD );
@@ -139,7 +152,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Jupiter"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::sunYellow2 );
-    } else if (id == QLatin1String("saturn")) {
+    }
+    else if (id == QLatin1String("saturn"))
+    {
         planet.setM_0( 317.0207*DEG2RAD );
         planet.setM_1( 0.03344414*DEG2RAD );
         planet.setC_1( 6.3585*DEG2RAD );
@@ -156,7 +171,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Saturn"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::sunYellow2 );
-    } else if (id == QLatin1String("uranus")) {
+    }
+    else if (id == QLatin1String("uranus"))
+    {
         planet.setM_0( 141.0498*DEG2RAD );
         planet.setM_1( 0.01172834*DEG2RAD );
         planet.setC_1( 5.3042*DEG2RAD );
@@ -173,7 +190,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Uranus"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::seaBlue4 );
-    } else if (id == QLatin1String("neptune")) {
+    }
+    else if (id == QLatin1String("neptune"))
+    {
         planet.setM_0( 256.2250*DEG2RAD );
         planet.setM_1( 0.00598103*DEG2RAD );
         planet.setC_1( 1.0302*DEG2RAD );
@@ -190,7 +209,9 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setName(QStringLiteral("Neptune"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Oxygen::skyBlue2 );
-    } else if (id == QLatin1String("pluto")) {
+    }
+    else if (id == QLatin1String("pluto"))
+    {
         // dwarf planets ... (everybody likes pluto)
         planet.setM_0( 14.882*DEG2RAD );
         planet.setM_1( 0.00396*DEG2RAD );
@@ -207,25 +228,33 @@ Planet PlanetFactory::construct( const QString &id )
         planet.setRadius( 1151000.0 );
         planet.setName(QStringLiteral("Pluto"));
         planet.setHasAtmosphere( false );
-    } else if (id == QLatin1String("sun")) {
+    }
+    else if (id == QLatin1String("sun"))
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 695000000.0 );
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Sun"));
         planet.setHasAtmosphere( true );
         planet.setAtmosphereColor( Qt::white );
-    } else if (id == QLatin1String("moon")) {
+    }
+    else if (id == QLatin1String("moon"))
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 1738000.0 );
         //FIXME: fill in with valid data
         planet.setName(QStringLiteral("Moon"));
         planet.setHasAtmosphere( false );
-    } else if (id == QLatin1String("sky")) {
+    }
+    else if (id == QLatin1String("sky"))
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 10000000.0 );
         planet.setName(QStringLiteral("Sky"));
         planet.setHasAtmosphere( false );
-    } else {
+    }
+    else
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Creating Planet instance" << id << "with invalid orbital elements";
         planet.setRadius( 10000000.0 );
         planet.setName(QStringLiteral("Unknown"));
@@ -237,33 +266,56 @@ Planet PlanetFactory::construct( const QString &id )
 
 QString PlanetFactory::localizedName( const QString &id )
 {
-    if (id == QLatin1String("mercury")) {
+    if      (id == QLatin1String("mercury"))
+    {
         return i18nc("the planet", "Mercury");
-    } else if (id == QLatin1String("venus")) {
+    }
+    else if (id == QLatin1String("venus"))
+    {
         return i18nc("the planet", "Venus");
-    } else if (id == QLatin1String("earth")) {
+    }
+    else if (id == QLatin1String("earth"))
+    {
         return i18nc("the planet", "Earth");
-    } else if (id == QLatin1String("mars")) {
+    }
+    else if (id == QLatin1String("mars"))
+    {
         return i18nc("the planet", "Mars");
-    } else if (id == QLatin1String("jupiter")) {
+    }
+    else if (id == QLatin1String("jupiter"))
+    {
         return i18nc("the planet", "Jupiter");
-    } else if (id == QLatin1String("saturn")) {
+    }
+    else if (id == QLatin1String("saturn"))
+    {
         return i18nc("the planet", "Saturn");
-    } else if (id == QLatin1String("uranus")) {
+    }
+    else if (id == QLatin1String("uranus"))
+    {
         return i18nc("the planet", "Uranus");
-    } else if (id == QLatin1String("neptune")) {
+    }
+    else if (id == QLatin1String("neptune"))
+    {
         return i18nc("the planet", "Neptune");
-    // dwarf planets ... (everybody likes pluto)
-    } else if (id == QLatin1String("pluto")) {
+    }
+    else if (id == QLatin1String("pluto"))    // dwarf planets ... (everybody likes pluto)
+    {
         return i18nc("the planet", "Pluto");
-    // sun, moon and sky
-    } else if (id == QLatin1String("sun")) {
+    }
+    else if (id == QLatin1String("sun"))        // sun, moon and sky
+    {
         return i18nc("the earth's star", "Sun");
-    } else if (id == QLatin1String("moon")) {
+    }
+    else if (id == QLatin1String("moon"))
+    {
         return i18nc("the earth's moon", "Moon");
-    } else if (id == QLatin1String("sky")) {
+    }
+    else if (id == QLatin1String("sky"))
+    {
         return i18n("Sky");
-    } else if ( id.isEmpty() ) {
+    }
+    else if ( id.isEmpty() )
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Warning: empty id";
         return i18nc("a planet without data", "Unknown Planet");
     }
@@ -271,4 +323,4 @@ QString PlanetFactory::localizedName( const QString &id )
     return id;
 }
 
-}
+} // namespace Marble

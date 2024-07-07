@@ -25,9 +25,13 @@
 
 #include "astr2lib.h"
 
+// C++ includes
+
 #include <cmath>
 
 using namespace std;
+
+// Local includes
 
 #include "astrolib.h"
 
@@ -41,48 +45,53 @@ extern double atan21 (double y, double x);
  ======================================================================
 */
 Plan200::Plan200 ()
-  { }
+{
+}
 
 void Plan200::addthe (double c1, double s1, double c2, double s2,                           double& cc, double& ss)
 {
- cc=c1*c2-s1*s2;
- ss=s1*c2+c1*s2;
+    cc = c1*c2-s1*s2;
+    ss = s1*c2+c1*s2;
 }
 
 void Plan200::term (int i1, int i, int it, double dlc, double dls, double drc,
-              double drs, double dbc, double dbs)
+                    double drs, double dbc, double dbs)
 {
- if (it == 0) addthe (c3[i1],s3[i1],c[i],s[i],u,v);
- else
-  {
-   u=u*tt;
-   v=v*tt;
-  }
- dl = dl + dlc*u + dls*v;
- dr = dr + drc*u + drs*v;
- db = db + dbc*u + dbs*v;
+    if (it == 0)
+    {
+        addthe (c3[i1],s3[i1],c[i],s[i],u,v);
+    }
+    else
+    {
+        u = u*tt;
+        v = v*tt;
+    }
+
+    dl = dl + dlc*u + dls*v;
+    dr = dr + drc*u + drs*v;
+    db = db + dbc*u + dbs*v;
 }
 
 Vec3 Plan200::velocity()   // return last calculated planet velocity
 {
- return vp;
+    return vp;
 }
 
 void Plan200::state (Vec3& rs, Vec3& vs)
 {
- /* State vector rs (position) and vs (velocity) of the Sun in
-    ecliptic of date coordinates for last calculated planet
- */
- rs = rp;
- vs = vp;
+    /* State vector rs (position) and vs (velocity) of the Sun in
+       ecliptic of date coordinates for last calculated planet
+    */
+    rs = rp;
+    vs = vp;
 }
 
 void Plan200::posvel ()
 {
- /* auxiliary program to calculate position and velocity
-    vectors rp, vp.
-    to be called by the various planet procedures.
- */
+    /* auxiliary program to calculate position and velocity
+       vectors rp, vp.
+       to be called by the various planet procedures.
+    */
 
  double cl, sl, cb, sb;
 
@@ -2040,4 +2049,3 @@ void PluCharon (double t, Vec3& rs, Vec3& vs)
      vs =   equecl (t, vs);
 
   }
-

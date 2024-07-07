@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QColor>
 
-// FIXME: This class shouldn't be exposed.
+// Local includes
+
 #include "digikam_export.h"
 
 namespace Marble

@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "attlib.h"
+// Local includes
 
+#include "attlib.h"
 #include "digikam_export.h"
 
 class DIGIKAM_EXPORT SolarSystem     // Calculate Positions of Solar System Bodies

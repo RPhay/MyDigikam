@@ -15,11 +15,11 @@
 
 /**
  * Calculate Spacecraft around other planets
- * Open Source Code. License: GNU LGPL Version 2+
- * Author: Gerhard HOLTKAMP,        26-AUG-2012
  */
 
 #include "planetarySats.h"
+
+// C++ includes
 
 #include <fstream>
 #include <iostream>
@@ -29,6 +29,8 @@
 #include <ctime>
 
 using namespace std;
+
+// Local includes
 
 #include "astrolib.h"
 

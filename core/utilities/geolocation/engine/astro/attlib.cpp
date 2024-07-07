@@ -15,11 +15,11 @@
 
 /**
  * 3-Dim Vector and Matrix Definitions and Operations
- * License:GNU LGPL Version 2+
- * Author: Gerhard HOLTKAMP                   14-JAN-2012
  */
 
 #include "attlib.h"
+
+// C++ includes
 
 #include <cmath>
 
