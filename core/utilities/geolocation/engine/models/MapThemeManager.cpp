@@ -13,22 +13,26 @@
  *
  * ============================================================ */
 
-// Own
 #include "MapThemeManager.h"
 
-// Std
+// C++ includes
+
 #include <limits>
 
-// Qt
+// Qt includes
+
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QFileSystemWatcher>
 #include <QScopedPointer>
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
-// Local dir
+// Local includes
+
 #include "GeoDataPhotoOverlay.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneMap.h"
@@ -44,7 +48,6 @@
 #include "MarbleDirs.h"
 #include "Planet.h"
 #include "PlanetFactory.h"
-
 #include "digikam_debug.h"
 
 namespace

@@ -15,10 +15,16 @@
 
 #include "kdescendantsproxymodel.h"
 
+// C++ includes
+
 #include <iterator>
+
+// Qt includes
 
 #include <QStringList>
 #include <QTimer>
+
+// Local includes
 
 #include "kbihash_p.h"
 

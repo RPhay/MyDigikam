@@ -15,9 +15,13 @@
 
 #include "ElevationModel.h"
 
+// Qt includes
+
 #include <QCache>
 #include <QImage>
 #include <qmath.h>
+
+// Local includes
 
 #include "GeoSceneHead.h"
 #include "GeoSceneLayer.h"
@@ -31,7 +35,6 @@
 #include "MapThemeManager.h"
 #include "TileId.h"
 #include "PluginManager.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

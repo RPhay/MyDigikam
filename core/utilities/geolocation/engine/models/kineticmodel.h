@@ -15,9 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QScopedPointer>
 #include <QPointF>
+
+namespace Marble
+{
 
 class KineticModelPrivate;
 
@@ -67,3 +72,5 @@ private:
     Q_DECLARE_PRIVATE(KineticModel);
     Q_DISABLE_COPY(KineticModel);
 };
+
+} // namespace Marble

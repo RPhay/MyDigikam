@@ -13,14 +13,18 @@
  *
  * ============================================================ */
 
-//
-// MarblePlacemarkModel exposes the model for Placemarks
-//
+/**
+ * MarblePlacemarkModel exposes the model for Placemarks
+ */
 
 #pragma once
 
+// Qt includes
+
 #include <QAbstractListModel>
 #include <QModelIndex>
+
+// Local includes
 
 #include "digikam_export.h"
 

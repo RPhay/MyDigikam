@@ -13,30 +13,26 @@
  *
  * ============================================================ */
 
-//
-// MarbleModel is the data store and index class for the MarbleWidget.
-//
-
 #pragma once
 
-/** @file
- * This file contains the headers for MarbleModel
- *
- * @author Torsten Rahn <tackat@kde.org>
- * @author Inge Wallin  <inge@lysator.liu.se>
- */
+// Qt includes
 
 #include <QObject>
 #include <QString>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 class QItemSelectionModel;
 class QAbstractItemModel;
 class QTextDocument;
 class QDateTime;
+
+/**
+ * MarbleModel is the data store and index class for the MarbleWidget.
+ */
 
 namespace Marble
 {

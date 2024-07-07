@@ -15,8 +15,13 @@
 
 #include "kineticmodel.h"
 
+// Qt includes
+
 #include <QTimer>
 #include <QElapsedTimer>
+
+namespace Marble
+{
 
 static const int KineticModelDefaultUpdateInterval = 15; // ms
 
@@ -243,5 +248,7 @@ void KineticModel::update()
 
     d->timestamp.start();
 }
+
+} // namespace Marble
 
 #include "moc_kineticmodel.cpp"

@@ -15,10 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QStandardItemModel>
 #include <QString>
 #include <QStringList>
+
+// Local includes
 
 #include "digikam_export.h"
 

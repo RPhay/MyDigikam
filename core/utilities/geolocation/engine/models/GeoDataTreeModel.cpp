@@ -13,18 +13,21 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoDataTreeModel.h"
 
-// Qt
+// Qt includes
+
 #include <QBrush>
 #include <QModelIndex>
 #include <QList>
 #include <QItemSelectionModel>
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
-// Marble
+// Local includes
+
 #include "GeoDataObject.h"
 #include "GeoDataDocument.h"
 #include "GeoDataContainer.h"
@@ -46,7 +49,6 @@
 #include "GeoDataListStyle.h"
 #include "FileManager.h"
 #include "MarblePlacemarkModel.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

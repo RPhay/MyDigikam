@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QChar>
 #include <QRegularExpression>
 #include <QString>

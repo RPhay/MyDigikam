@@ -13,22 +13,22 @@
  *
  * ============================================================ */
 
-// Own
 #include "MarblePlacemarkModel.h"
 #include "MarblePlacemarkModel_P.h"
 
-// Qt
+// Qt includes
+
 #include <QElapsedTimer>
 #include <QImage>
 
-// Marble
+// Local includes
+
 #include "GeoDataPlacemark.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
 #include "GeoDataGeometry.h"
-#include "GeoDataStyle.h"       // In geodata/data/
+#include "GeoDataStyle.h"
 #include "GeoDataIconStyle.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

@@ -15,7 +15,11 @@
 
 #include "MarbleModel.h"
 
+// C++ includes
+
 #include <cmath>
+
+// Qt includes
 
 #include <QAtomicInt>
 #include <QPointer>
@@ -24,8 +28,9 @@
 #include <QSortFilterProxyModel>
 #include <QTextDocument>
 
-#include "kdescendantsproxymodel.h"
+// Local includes
 
+#include "kdescendantsproxymodel.h"
 #include "MapThemeManager.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneGeodata.h"
@@ -62,7 +67,6 @@
 #include "TileCreatorDialog.h"
 #include "TileLoader.h"
 #include "ElevationModel.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -70,7 +74,8 @@ namespace Marble
 
 class Q_DECL_HIDDEN MarbleModelPrivate
 {
- public:
+public:
+
     MarbleModelPrivate()
         : m_clock(),
           m_planet(PlanetFactory::construct(QStringLiteral("earth"))),

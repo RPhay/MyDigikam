@@ -21,6 +21,9 @@
 #include <QMap>
 #include <QDebug>
 
+namespace Marble
+{
+
 template<typename LeftContainer, typename RightContainer>
 class KBiAssociativeContainer;
 
@@ -659,3 +662,5 @@ QDebug operator<<(QDebug out, const KHash2Map<T, U> &container)
     out << ")";
     return out;
 }
+
+} // namespace Marble
