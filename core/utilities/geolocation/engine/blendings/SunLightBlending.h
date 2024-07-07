@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
+
+// Local includes
 
 #include "Blending.h"
 
@@ -28,21 +32,21 @@ class SunLightBlending: public Blending
 {
 public:
 
-    explicit SunLightBlending( const SunLocator * sunLocator );
+    explicit SunLightBlending(const SunLocator* sunLocator);
     ~SunLightBlending() override;
-    void blend( QImage * const bottom, TextureTile const * const top ) const override;
+    void blend(QImage* const bottom, TextureTile const* const top) const override;
 
-    void setLevelZeroLayout( int levelZeroColumns, int levelZeroRows );
-
-private:
-
-    static int maxDivisor( int maximum, int fullLength );
+    void setLevelZeroLayout(int levelZeroColumns, int levelZeroRows);
 
 private:
 
-    const SunLocator * const m_sunLocator = nullptr;
-    int                      m_levelZeroColumns;
-    int                      m_levelZeroRows;
+    static int maxDivisor(int maximum, int fullLength);
+
+private:
+
+    const SunLocator* const m_sunLocator = nullptr;
+    int                     m_levelZeroColumns;
+    int                     m_levelZeroRows;
 };
 
 } // Namespace Marble

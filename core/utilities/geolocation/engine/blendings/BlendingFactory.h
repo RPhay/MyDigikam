@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QHash>
 
 class QString;
@@ -30,12 +32,12 @@ class BlendingFactory
 {
 public:
 
-    explicit BlendingFactory( const SunLocator *sunLocator );
+    explicit BlendingFactory(const SunLocator* sunLocator);
     ~BlendingFactory();
 
-    void setLevelZeroLayout( int levelZeroColumns, int levelZeroRows );
+    void setLevelZeroLayout(int levelZeroColumns, int levelZeroRows);
 
-    Blending const * findBlending( QString const & name ) const;
+    Blending const* findBlending(QString const& name) const;
 
 private:
 
@@ -43,8 +45,8 @@ private:
 
 private:
 
-    SunLightBlending* const          m_sunLightBlending = nullptr;
-    QHash<QString, Blending const *> m_blendings;
+    SunLightBlending* const         m_sunLightBlending = nullptr;
+    QHash<QString, Blending const*> m_blendings;
 };
 
 } // Namespace Marble
