@@ -12,7 +12,6 @@
 
 var mapDiv;
 var map;
-var eventBuffer = new Array();
 var markerList = new Object();
 var clusterList = new Object();
 var clusterDataList = new Object();
@@ -38,22 +37,7 @@ var projectionHelper = null;
 
 function kgeomapPostEventString(eventString)
 {
-    // We keep these 2 lines for backwards compatibility with QWebView
-    eventBuffer.push(eventString);
-    window.status = '(event)';
-
-    // We use this when porting to QWebEngineView
     console.log('(event)'+eventString);
-}
-
-// We keep this function for backwards compatibility with QWebView
-function kgeomapReadEventStrings()
-{
-    var eventBufferString = eventBuffer.join('|');
-    eventBuffer = new Array();
-    // let the application know that there are no more events waiting:
-    window.status = '()';
-    return eventBufferString;
 }
 
 function kgeomapDebugOut(someString)
