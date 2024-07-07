@@ -10,7 +10,8 @@
 # prerequisites: Python 2.7 or higher: http://www.python.org
 #                AStyle:               http://astyle.sourceforge.net
 #
-# SPDX-FileCopyrightText: 2011 by Andi Clemens <andi dot clemens at gmail dot com>
+# SPDX-FileCopyrightText: 2011      by Andi Clemens <andi dot clemens at gmail dot com>
+# SPDX-FileCopyrightText: 2012-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -46,20 +47,28 @@ def format_file(f, verbose=False):
     args.append("--mode=c")
     args.append("--style=allman")
     args.append("--indent=spaces=4")
-    args.append("--convert-tabs")
     args.append("--indent-switches")
-    args.append("--break-blocks")
+    args.append("--indent-preproc-define")
+    args.append("--indent-col1-comments")
+    args.append("--convert-tabs")
+    args.append("--break-blocks=all")
+    args.append("--break-after-logical")
     args.append("--break-closing-brackets")
+    args.append("--break-one-line-headers")
     args.append("--pad-oper")
     args.append("--pad-header")
+    args.append("--pad-comma")
     args.append("--unpad-paren")
     args.append("--align-pointer=type")
     args.append("--align-reference=type")
-    args.append("--indent-col1-comments")
     args.append("--add-brackets")
+    args.append("--add-braces")
     args.append("--min-conditional-indent=0")
-    args.append("--max-instatement-indent=70")
+    args.append("--max-instatement-indent=120")
     args.append(f)
+
+#    args.append("--squeeze-lines=2")
+#    args.append("--squeeze-ws")
 
     if (verbose):
         process = subprocess.Popen(args)
