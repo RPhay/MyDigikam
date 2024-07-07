@@ -49,7 +49,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN GeoDataTreeModel::Private
 {
@@ -872,5 +873,7 @@ bool GeoDataTreeModel::swapTourPrimitives( const QModelIndex &parent, int indexA
     }
     return false;
 }
+
+} // namespace Marble
 
 #include "moc_GeoDataTreeModel.cpp"

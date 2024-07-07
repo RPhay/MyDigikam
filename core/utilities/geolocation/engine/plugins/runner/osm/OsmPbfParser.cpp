@@ -30,7 +30,8 @@
 
 #include <klocalizedstring.h>
 
-using namespace Marble;
+namespace Marble
+{
 
 void OsmPbfParser::parse(const uint8_t *data, std::size_t len)
 {
@@ -216,3 +217,5 @@ void OsmPbfParser::parseRelations(const OSMPBF::PrimitiveBlock &block, const OSM
 }
 
 #endif // HAVE_PROTOBUF
+
+} // namespace Marble

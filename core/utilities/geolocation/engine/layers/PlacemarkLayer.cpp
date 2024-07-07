@@ -30,7 +30,8 @@
 
 #define BATCH_RENDERING
 
-using namespace Marble;
+namespace Marble
+{
 
 PlacemarkLayer::PlacemarkLayer(QAbstractItemModel *placemarkModel,
                                 QItemSelectionModel *selectionModel,
@@ -334,5 +335,7 @@ void PlacemarkLayer::setDebugLevelTag(int level)
         Q_EMIT repaintNeeded();
     }
 }
+
+} // namespace Marble
 
 #include "moc_PlacemarkLayer.cpp"

@@ -21,9 +21,10 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
-class Q_DECL_HIDDEN Marble::HttpJobPrivate
+class Q_DECL_HIDDEN HttpJobPrivate
 {
 public:
 
@@ -201,5 +202,7 @@ void HttpJob::finished()
     d->m_networkReply->deleteLater();
     d->m_networkReply = nullptr;
 }
+
+} // namespace Marble
 
 #include "moc_HttpJob.cpp"

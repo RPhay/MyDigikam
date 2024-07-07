@@ -28,7 +28,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 // Only remove 20 files without checking
 // changed cacheLimits and changed themes etc.
@@ -289,6 +290,6 @@ void FileStorageWatcher::run()
     m_thread = nullptr;
 }
 
-// End of all methods
+} // namespace Marble
 
 #include "moc_FileStorageWatcher.cpp"

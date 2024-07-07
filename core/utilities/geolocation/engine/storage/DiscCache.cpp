@@ -24,7 +24,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 static QString indexFileName( const QString &cacheDirectory )
 {
@@ -204,3 +205,5 @@ void DiscCache::cleanup()
         }
     }
 }
+
+} // namespace Marble

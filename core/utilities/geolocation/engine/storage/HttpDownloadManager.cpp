@@ -28,7 +28,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 // Time before a failed download job is requeued in ms
 const quint32 requeueTime = 60000;
@@ -241,5 +242,7 @@ QByteArray HttpDownloadManager::userAgent(const QString &platform, const QString
     result = result.arg( MARBLE_VERSION_STRING, device, platform, component, app);
     return result.toLatin1();
 }
+
+} // namespace Marble
 
 #include "moc_HttpDownloadManager.cpp"

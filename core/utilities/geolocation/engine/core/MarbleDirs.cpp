@@ -22,7 +22,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 QString MarbleDirs::path(const QString& relativePath)
 {
@@ -170,3 +171,5 @@ void MarbleDirs::debug()
     qCDebug(DIGIKAM_MARBLE_LOG) << "Plugin System Path:" << pluginSystemPath();
     qCDebug(DIGIKAM_MARBLE_LOG) << "===================";
 }
+
+} // namespace Marble

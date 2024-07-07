@@ -21,7 +21,8 @@
 
 #include <klocalizedstring.h>
 
-using namespace Marble;
+namespace Marble
+{
 
 CacheStoragePolicy::CacheStoragePolicy( const QString &cacheDirectory )
     : m_cache( cacheDirectory )
@@ -76,5 +77,7 @@ quint64 CacheStoragePolicy::cacheLimit() const
 {
     return m_cache.cacheLimit();
 }
+
+} // namespace Marble
 
 #include "moc_CacheStoragePolicy.cpp"

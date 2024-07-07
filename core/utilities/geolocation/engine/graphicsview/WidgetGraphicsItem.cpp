@@ -28,7 +28,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 WidgetGraphicsItemPrivate::WidgetGraphicsItemPrivate(WidgetGraphicsItem *widgetGraphicsItem,
                                                      MarbleGraphicsItem *parent)
@@ -166,3 +167,5 @@ bool WidgetGraphicsItem::eventFilter( QObject *object, QEvent *e )
 
     return ScreenGraphicsItem::eventFilter(object, e);
 }
+
+} // namespace Marble

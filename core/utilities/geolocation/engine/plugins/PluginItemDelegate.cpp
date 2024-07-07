@@ -33,7 +33,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 const QSize iconSize( 16, 16 );
 
@@ -423,5 +424,7 @@ QRect PluginItemDelegate::alignRect( const QRect& object,
 
     return rect;
 }
+
+} // namespace Marble
 
 #include "moc_PluginItemDelegate.cpp"

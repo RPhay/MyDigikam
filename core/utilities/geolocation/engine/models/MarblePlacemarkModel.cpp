@@ -31,7 +31,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN MarblePlacemarkModel::Private
 {
@@ -238,5 +239,7 @@ void  MarblePlacemarkModel::removePlacemarks( const QString &containerName,
         qCDebug(DIGIKAM_MARBLE_LOG) << "removePlacemarks(" << containerName << "): Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
     }
 }
+
+} // namespace Marble
 
 #include "moc_MarblePlacemarkModel.cpp"

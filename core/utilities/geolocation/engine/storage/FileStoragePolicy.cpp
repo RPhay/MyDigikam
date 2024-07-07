@@ -28,7 +28,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 FileStoragePolicy::FileStoragePolicy( const QString &dataDirectory, QObject *parent )
     : StoragePolicy( parent ),
@@ -152,5 +153,7 @@ QString FileStoragePolicy::lastErrorMessage() const
 {
     return m_errorMsg;
 }
+
+} // namespace Marble
 
 #include "moc_FileStoragePolicy.cpp"

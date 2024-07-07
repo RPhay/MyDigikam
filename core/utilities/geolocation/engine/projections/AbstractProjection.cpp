@@ -28,7 +28,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 AbstractProjection::AbstractProjection()
     : d_ptr( new AbstractProjectionPrivate( this ) )
@@ -260,3 +261,5 @@ QRegion AbstractProjection::mapRegion( const ViewportParams *viewport ) const
 {
     return QRegion( mapShape( viewport ).toFillPolygon().toPolygon() );
 }
+
+} // namespace Marble

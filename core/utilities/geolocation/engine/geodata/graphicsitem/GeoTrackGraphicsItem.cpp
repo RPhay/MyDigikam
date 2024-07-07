@@ -22,7 +22,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 GeoTrackGraphicsItem::GeoTrackGraphicsItem(const GeoDataPlacemark *placemark, const GeoDataTrack *track) :
     GeoLineStringGraphicsItem(placemark, track->lineString())
@@ -52,3 +53,5 @@ void GeoTrackGraphicsItem::update()
 {
     setLineString( m_track->lineString() );
 }
+
+} // namespace Marble

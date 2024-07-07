@@ -33,7 +33,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN GenericScanlineTextureMapper::RenderJob : public QRunnable
 {
@@ -275,3 +276,5 @@ void GenericScanlineTextureMapper::RenderJob::run()
         }
     }
 }
+
+} // namespace Marble

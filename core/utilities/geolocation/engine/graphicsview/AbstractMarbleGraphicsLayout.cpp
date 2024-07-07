@@ -15,7 +15,8 @@
 
 #include "AbstractMarbleGraphicsLayout.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 AbstractMarbleGraphicsLayout::AbstractMarbleGraphicsLayout()
 {
@@ -24,3 +25,5 @@ AbstractMarbleGraphicsLayout::AbstractMarbleGraphicsLayout()
 AbstractMarbleGraphicsLayout::~AbstractMarbleGraphicsLayout()
 {
 }
+
+} // namespace Marble

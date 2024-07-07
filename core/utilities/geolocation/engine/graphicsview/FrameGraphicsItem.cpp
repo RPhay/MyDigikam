@@ -28,7 +28,8 @@
 // Marble
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 FrameGraphicsItem::FrameGraphicsItem( MarbleGraphicsItem *parent )
     : ScreenGraphicsItem(new FrameGraphicsItemPrivate(this, parent))
@@ -297,3 +298,5 @@ void FrameGraphicsItem::paintContent( QPainter *painter )
 {
     Q_UNUSED( painter )
 }
+
+} // namespace Marble

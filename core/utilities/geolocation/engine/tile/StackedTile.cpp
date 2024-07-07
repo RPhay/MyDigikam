@@ -19,7 +19,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 static const uint **jumpTableFromQImage32( const QImage &img )
 {
@@ -333,3 +334,5 @@ QImage const * StackedTile::resultImage() const
 {
     return &m_resultImage;
 }
+
+} // namespace Marble

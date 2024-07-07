@@ -25,7 +25,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 ScreenGraphicsItem::ScreenGraphicsItem( MarbleGraphicsItem *parent )
     : MarbleGraphicsItem( new ScreenGraphicsItemPrivate( this, parent ) )
@@ -180,3 +181,5 @@ bool ScreenGraphicsItem::eventFilter( QObject *object, QEvent *e )
         return MarbleGraphicsItem::eventFilter( object, e );
     }
 }
+
+} // namespace Marble

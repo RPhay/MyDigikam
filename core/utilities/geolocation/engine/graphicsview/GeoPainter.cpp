@@ -33,7 +33,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 GeoPainterPrivate::GeoPainterPrivate( GeoPainter* q, const ViewportParams *viewport, MapQuality mapQuality )
         : m_viewport( viewport ),
@@ -1076,3 +1077,5 @@ void GeoPainter::drawTextFragment(const QPoint &position, const QString &text,
                           position.y() - pixmap.height()/2,
                           pixmap);
 }
+
+} // namespace Marble

@@ -30,7 +30,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 VisiblePlacemark::VisiblePlacemark( const GeoDataPlacemark *placemark, const GeoDataCoordinates &coordinates, const GeoDataStyle::ConstPtr &style )
     : m_placemark( placemark ),
@@ -269,5 +270,7 @@ void VisiblePlacemark::drawLabelText(QPainter &labelPainter, const QString &text
     }
     }
 }
+
+} // namespace Marble
 
 #include "moc_VisiblePlacemark.cpp"

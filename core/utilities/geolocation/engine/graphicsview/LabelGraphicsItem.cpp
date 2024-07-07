@@ -23,7 +23,8 @@
 #include <QFont>
 #include <QPainter>
 
-using namespace Marble;
+namespace Marble
+{
 
 LabelGraphicsItemPrivate::LabelGraphicsItemPrivate(LabelGraphicsItem *labelGraphicsItem,
                                                    MarbleGraphicsItem *parent)
@@ -163,3 +164,5 @@ void LabelGraphicsItem::paintContent( QPainter *painter )
 
     painter->restore();
 }
+
+} // namespace Marble

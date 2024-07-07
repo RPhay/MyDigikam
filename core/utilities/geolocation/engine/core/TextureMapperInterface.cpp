@@ -15,13 +15,13 @@
 
 #include "TextureMapperInterface.h"
 
-using namespace Marble;
+namespace Marble
+{
 
-TextureMapperInterface::TextureMapperInterface() :
-    m_repaintNeeded( true )
+TextureMapperInterface::TextureMapperInterface()
+    : m_repaintNeeded( true )
 {
 }
-
 
 TextureMapperInterface::~TextureMapperInterface()
 {
@@ -31,3 +31,5 @@ void TextureMapperInterface::setRepaintNeeded()
 {
     m_repaintNeeded = true;
 }
+
+} // namespace Marble

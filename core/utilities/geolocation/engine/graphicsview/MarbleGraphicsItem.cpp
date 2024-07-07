@@ -27,7 +27,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 MarbleGraphicsItem::MarbleGraphicsItem(MarbleGraphicsItemPrivate *dd)
     : d_ptr(dd)
@@ -288,3 +289,5 @@ void MarbleGraphicsItem::setProjection( const ViewportParams *viewport )
     Q_D(MarbleGraphicsItem);
     d->setProjection(viewport);
 }
+
+} // namespace Marble

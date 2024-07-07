@@ -100,7 +100,8 @@ public:
 
 } // namespace Marble
 
-using namespace Marble;
+namespace Marble
+{
 
 ClipPainter::ClipPainter(QPaintDevice * pd, bool clip)
     : QPainter( pd ), d( new ClipPainterPrivate( this ) )
@@ -1295,3 +1296,5 @@ void ClipPainterPrivate::debugDrawNodes( const QPolygonF & polygon )
     }
     q->restore();
 }
+
+} // namespace Marble

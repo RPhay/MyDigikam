@@ -24,7 +24,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 ScanlineTextureMapperContext::ScanlineTextureMapperContext( StackedTileLoader * const tileLoader, int tileLevel )
     : m_tileLoader( tileLoader ),
@@ -515,3 +516,5 @@ void ScanlineTextureMapperContext::nextTile( qreal &posX, qreal &posY )
     m_toTileCoordinatesLat = (qreal)(0.5 * m_globalHeight - m_tilePosY);
     posY = lat - m_tilePosY;
 }
+
+} // namespace Marble

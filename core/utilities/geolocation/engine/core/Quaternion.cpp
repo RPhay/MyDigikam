@@ -20,7 +20,8 @@
 #include "digikam_debug.h"
 
 using namespace std;
-using namespace Marble;
+namespace Marble
+{
 
 Quaternion::Quaternion()
 {
@@ -282,3 +283,5 @@ void Quaternion::rotateAroundAxis(const matrix &m)
     v[Q_Y] = y;
     v[Q_Z] = z;
 }
+
+} // namespace Marble

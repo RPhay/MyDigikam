@@ -33,23 +33,26 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN MercatorScanlineTextureMapper::RenderJob : public QRunnable
 {
 public:
+
     RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewport, MapQuality mapQuality, int yTop, int yBottom );
 
     void run() override;
 
 private:
-    StackedTileLoader *const m_tileLoader;
-    const int m_tileLevel;
-    QImage *const m_canvasImage;
-    const ViewportParams *const m_viewport;
-    const MapQuality m_mapQuality;
-    const int m_yPaintedTop;
-    const int m_yPaintedBottom;
+
+    StackedTileLoader* const    m_tileLoader  = nullptr;
+    const int                   m_tileLevel;
+    QImage* const               m_canvasImage = nullptr;
+    const ViewportParams* const m_viewport    = nullptr;
+    const MapQuality            m_mapQuality;
+    const int                   m_yPaintedTop;
+    const int                   m_yPaintedBottom;
 };
 
 MercatorScanlineTextureMapper::RenderJob::RenderJob( StackedTileLoader *tileLoader, int tileLevel, QImage *canvasImage, const ViewportParams *viewport, MapQuality mapQuality, int yTop, int yBottom )
@@ -252,3 +255,5 @@ void MercatorScanlineTextureMapper::RenderJob::run()
         }
     }
 }
+
+} // namespace Marble

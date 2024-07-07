@@ -26,8 +26,6 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
-
 namespace Marble
 {
 
@@ -67,7 +65,6 @@ public:
     QElapsedTimer                       m_timer;
 };
 
-} // namespace Marble
 
 FileManager::FileManager( GeoDataTreeModel *treeModel, const PluginManager *pluginManager, QObject *parent )
     : QObject( parent )
@@ -208,5 +205,7 @@ void FileManagerPrivate::cleanupLoader( FileLoader* loader )
         m_latLonBox.clear();
     }
 }
+
+} // namespace Marble
 
 #include "moc_FileManager.cpp"

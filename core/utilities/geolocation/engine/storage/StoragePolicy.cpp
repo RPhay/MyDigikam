@@ -16,11 +16,14 @@
 // Own
 #include "StoragePolicy.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 StoragePolicy::StoragePolicy( QObject *parent )
     : QObject( parent )
 {
 }
+
+} // namespace Marble
 
 #include "moc_StoragePolicy.cpp"

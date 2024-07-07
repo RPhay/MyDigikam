@@ -32,7 +32,8 @@
 #include "MathHelper.h"
 #include "ViewportParams.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 TileScalingTextureMapper::TileScalingTextureMapper( StackedTileLoader *tileLoader, QObject *parent )
     : QObject( parent ),
@@ -195,5 +196,7 @@ void TileScalingTextureMapper::clearPixmaps()
 {
     m_cache.clear();
 }
+
+} // namespace Marble
 
 #include "moc_TileScalingTextureMapper.cpp"

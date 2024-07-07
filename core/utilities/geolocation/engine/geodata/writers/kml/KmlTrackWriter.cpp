@@ -24,7 +24,8 @@
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagWriter.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 static GeoTagWriterRegistrar s_writerPoint(GeoTagWriter::QualifiedName(
                                            QString::fromUtf8(GeoDataTypes::GeoDataTrackType),
@@ -54,3 +55,5 @@ bool KmlTrackWriter::write( const GeoNode *node, GeoWriter &writer ) const
 
     return true;
 }
+
+} // namespace Marble

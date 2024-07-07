@@ -32,7 +32,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN EquirectScanlineTextureMapper::RenderJob : public QRunnable
 {
@@ -254,3 +255,5 @@ void EquirectScanlineTextureMapper::RenderJob::run()
         }
     }
 }
+
+} // namespace Marble

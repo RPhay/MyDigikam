@@ -24,7 +24,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 GeoGraphicsItem::GeoGraphicsItem( const GeoDataFeature *feature )
     : d( new GeoGraphicsItemPrivate( feature ) )
@@ -230,3 +231,5 @@ RenderContext::RenderContext(int tileLevel) :
 {
     // nothing to do
 }
+
+} // namespace Marble

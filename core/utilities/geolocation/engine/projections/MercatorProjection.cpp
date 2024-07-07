@@ -29,7 +29,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 MercatorProjection::MercatorProjection()
     : CylindricalProjection(),
@@ -273,3 +274,5 @@ bool MercatorProjection::mapCoversViewport( const ViewportParams *viewport ) con
 
     return !(yTop >= 0 || yBottom < height);
 }
+
+} // namespace Marble

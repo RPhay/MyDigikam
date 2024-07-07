@@ -26,7 +26,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 EquirectProjection::EquirectProjection()
     : CylindricalProjection()
@@ -275,3 +276,5 @@ bool EquirectProjection::mapCoversViewport( const ViewportParams *viewport ) con
 
     return !(yTop >= 0 || yBottom < height);
 }
+
+} // namespace Marble

@@ -35,7 +35,8 @@
 
 #include "digikam_debug.h"
 
-using namespace Marble;
+namespace Marble
+{
 
 class Q_DECL_HIDDEN MergedLayerDecorator::Private
 {
@@ -618,3 +619,5 @@ int MergedLayerDecorator::Private::maxDivisor( int maximum, int fullLength )
 
     return best;
 }
+
+} // namespace Marble
