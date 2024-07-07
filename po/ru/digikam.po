@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 01:46+0000\n"
+"POT-Creation-Date: 2024-07-07 01:44+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2734,7 +2734,7 @@ msgstr "&Справка"
 msgid "Main Toolbar"
 msgstr "Основная панель инструментов"
 
-#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2744,7 +2744,7 @@ msgstr "Основная панель инструментов"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
+#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2753,7 +2753,7 @@ msgstr ""
 "Гиздатов,Дмитрий Ашкадов,Александр Яворский,Ольга Миронова,Олеся Герасименко,"
 "Мария Шикунова"
 
-#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
+#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2762,34 +2762,34 @@ msgstr ""
 "rustahm@gmail.com,dmitry.ashkadov@gmail.com,kekcuha@gmail.com,omiro@basealt."
 "ru,gammaray@basealt.ru,trasnslation-team@basealt.ru"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Открыть диалог камеры с папкой «path»"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Открыть диалог камеры для устройства с Solid UDI «udi»"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:233
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Автоматически определять и открывать камеру gphoto2"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Запустить digiKam с файлом базы данных SQLite, находящимся в каталоге «dir»"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустить digiKam с конфигурационным файлом «config»"
 
-#: core/app/main/main.cpp:267
+#: core/app/main/main.cpp:265
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2799,7 +2799,7 @@ msgstr ""
 "<p>Вы используете 32-битную версию digiKam в 64-х битной ОС Windows</p> "
 "<p>Рекомендуется использовать 64-х битную версию приложения.</p>"
 
-#: core/app/main/main.cpp:311
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2810,7 +2810,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере не установлено ни одного модуля для работы с базами данных."
 
-#: core/app/main/main.cpp:320
+#: core/app/main/main.cpp:318
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2821,7 +2821,7 @@ msgstr ""
 "необходимо его установить.\n"
 "На компьютере установлены следующие модули баз данных:"
 
-#: core/app/main/main.cpp:364
+#: core/app/main/main.cpp:362
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49605,19 +49605,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Папки"
 
-#: core/showfoto/main/main.cpp:197
+#: core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:215
+#: core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Открыть файл(ы) или каталог(и)"
 
-#: core/showfoto/main/main.cpp:246
+#: core/showfoto/main/main.cpp:244
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -56214,19 +56214,19 @@ msgid "GPSBabel files"
 msgstr "Сохранять файлы в формате:"
 
 # i18n: file ./showfoto/showfotoui.rc line 22
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Transfer"
 msgid "Gpx File Parser"
 msgstr "Передача файла"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "Data"
 msgid "GPS Data"

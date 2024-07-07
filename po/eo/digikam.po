@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 01:46+0000\n"
-"PO-Revision-Date: 2024-06-30 21:40+0200\n"
+"POT-Creation-Date: 2024-07-07 01:44+0000\n"
+"PO-Revision-Date: 2024-07-06 16:50+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -2645,7 +2645,7 @@ msgstr "&Helpo"
 msgid "Main Toolbar"
 msgstr "Ĉefa ilobreto"
 
-#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2655,34 +2655,34 @@ msgstr "Ĉefa ilobreto"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
+#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Axel Rousseau,Oliver Kellogg"
 
-#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
+#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "axel@esperanto-jeunes.org,olivermkellogg@gmail.com"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Malfermi fotilan dialogon ĉe \"vojo\""
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Malfermi fotilan dialogon por la aparato kun Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:233
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Aŭtomate detekti kaj malfermi konektitan fotilon gphoto2"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2690,12 +2690,12 @@ msgstr ""
 "Komenci digikam per la datumbaza dosiero SQLite trovita en la dosierujo \"dir"
 "\""
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Komenci digikam per la agorda dosiero \"config\""
 
-#: core/app/main/main.cpp:267
+#: core/app/main/main.cpp:265
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2706,7 +2706,7 @@ msgstr ""
 "instali la 64-bitan version de digiKam por akiri pli bonan sperton kun "
 "digiKam.</p>"
 
-#: core/app/main/main.cpp:311
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2717,7 +2717,7 @@ msgstr ""
 "ĝin.\n"
 "Ne estas datumbaza kromaĵo instalita en via komputilo."
 
-#: core/app/main/main.cpp:320
+#: core/app/main/main.cpp:318
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2728,7 +2728,7 @@ msgstr ""
 "ĝin.\n"
 "Datumbazaj aldonaĵoj instalitaj sur via komputilo estas listigitaj malsupre."
 
-#: core/app/main/main.cpp:364
+#: core/app/main/main.cpp:362
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3575,6 +3575,12 @@ msgid ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI and Skydio drones.Multiple smartphones with DNG format recorded."
 msgstr ""
+"Nova RAW-kapabloj: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
+"Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.Hasselblad X2D-100c.Leica Q3, "
+"M11 Monochrom.Nikon Z30, Z8.OM Digital OM-5.Panasonic DC-G9 II, DC-ZS200D / "
+"ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.Sony A7C-II, A7CR, "
+"ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.Pluraj "
+"flugrobotoj DJI kaj Skydio. Pluraj poŝtelefonoj kun DNG-formato registrita."
 
 #: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
@@ -48933,19 +48939,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dosierujoj"
 
-#: core/showfoto/main/main.cpp:197
+#: core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:215
+#: core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Dosiero(j) aŭ dosierujo(j) por malfermi"
 
-#: core/showfoto/main/main.cpp:246
+#: core/showfoto/main/main.cpp:244
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -55193,18 +55199,18 @@ msgstr ""
 msgid "GPSBabel files"
 msgstr "GPSBabel-dosieroj"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:32
 #, kde-format
 msgid "Gpx File Parser"
 msgstr "Pgx-Dosiera Analizilo"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 "Kromprogramo por ŝargi Geolokajn Datenojn el la Gpx-datena dosierformato."
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:63
 #, kde-format
 msgid "GPS Data"
 msgstr "GPS-Datumoj"

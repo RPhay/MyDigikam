@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 01:46+0000\n"
+"POT-Creation-Date: 2024-07-07 01:44+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2632,7 +2632,7 @@ msgstr "ヘルプ(&H)"
 msgid "Main Toolbar"
 msgstr "メインツールバー"
 
-#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2642,46 +2642,46 @@ msgstr "メインツールバー"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
+#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Yukiko Bando"
 
-#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
+#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ybando@k6.dion.ne.jp"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "カメラダイアログを \"path\" で開く"
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI \"udi\" のデバイスのためにカメラダイアログを開く"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:233
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "接続されている gphoto2 カメラを自動的に検出して開く"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "ディレクトリ \"dir\" にある SQLite データベースファイルで digiKam を起動"
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "設定ファイル \"config\" で digiKam を起動"
 
-#: core/app/main/main.cpp:267
+#: core/app/main/main.cpp:265
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2691,7 +2691,7 @@ msgstr ""
 "<p>64ビット Windows で32ビット版の digiKam を実行しています。</p><p>より良い"
 "動作のために64ビット版の digiKam をインストールしてください。</p>"
 
-#: core/app/main/main.cpp:311
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2702,7 +2702,7 @@ msgstr ""
 "ンストールしてください。\n"
 "コンピュータにインストールされているデータベースプラグインはありません。"
 
-#: core/app/main/main.cpp:320
+#: core/app/main/main.cpp:318
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2714,7 +2714,7 @@ msgstr ""
 "コンピュータにインストールされているデータベースプラグインは以下のとおりで"
 "す。"
 
-#: core/app/main/main.cpp:364
+#: core/app/main/main.cpp:362
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -51032,20 +51032,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "フォルダ: "
 
-#: core/showfoto/main/main.cpp:197
+#: core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:215
+#: core/showfoto/main/main.cpp:213
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "開くファイルまたはフォルダ"
 
-#: core/showfoto/main/main.cpp:246
+#: core/showfoto/main/main.cpp:244
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -57503,17 +57503,17 @@ msgstr ""
 msgid "GPSBabel files"
 msgstr "画像を次の形式で保存する"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:32
 #, fuzzy, kde-format
 msgid "Gpx File Parser"
 msgstr "変換(&N)"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "Data"
 msgid "GPS Data"

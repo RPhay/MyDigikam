@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 01:46+0000\n"
+"POT-Creation-Date: 2024-07-07 01:44+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -2671,7 +2671,7 @@ msgstr "&Даведка"
 msgid "Main Toolbar"
 msgstr "Асноўныя інструменты"
 
-#: core/app/main/main.cpp:211 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2681,34 +2681,34 @@ msgstr "Асноўныя інструменты"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:220 core/showfoto/main/main.cpp:206
+#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Дарафей Праляскоўскі, Antikruk"
 
-#: core/app/main/main.cpp:221 core/showfoto/main/main.cpp:207
+#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "komzpa@licei2.com, nashtlumach@gmail.com"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Адкрыць дыялогавае акно камеры \"path\""
 
-#: core/app/main/main.cpp:232
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Адкрыць дыялогавае акно камеры для прылады з Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:233
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Аўтаматычна выяўляць і адкрываць камеру gphoto2"
 
-#: core/app/main/main.cpp:237
+#: core/app/main/main.cpp:235
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2716,12 +2716,12 @@ msgstr ""
 "Запускаць digiKam з файлам базы даных SQLite, што знаходзіцца ў каталозе "
 "\"dir\""
 
-#: core/app/main/main.cpp:240
+#: core/app/main/main.cpp:238
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запускаць digiKam з файлам канфігурацыі \"config\""
 
-#: core/app/main/main.cpp:267
+#: core/app/main/main.cpp:265
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2731,7 +2731,7 @@ msgstr ""
 "<p>Вы запусцілі 32-бітавую версію digiKam на 64-бітавай версіі Windows.</"
 "p><p>Усталюйце 64-бітавую версію digiKam, каб палепшыць прадукцыйнасць.</p>"
 
-#: core/app/main/main.cpp:311
+#: core/app/main/main.cpp:309
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2742,7 +2742,7 @@ msgstr ""
 "ўсталюйце яе.\n"
 "На камп'ютары не ўсталявана ўбудоў для працы з базамі даных."
 
-#: core/app/main/main.cpp:320
+#: core/app/main/main.cpp:318
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2753,7 +2753,7 @@ msgstr ""
 "ўсталюйце яе.\n"
 "На камп'ютары ўсталяваныя наступныя ўбудовы для працы з базамі даных:"
 
-#: core/app/main/main.cpp:364
+#: core/app/main/main.cpp:362
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -46779,19 +46779,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Каталогі"
 
-#: core/showfoto/main/main.cpp:197
+#: core/showfoto/main/main.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:215
+#: core/showfoto/main/main.cpp:213
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:246
+#: core/showfoto/main/main.cpp:244
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -52779,17 +52779,17 @@ msgstr ""
 msgid "GPSBabel files"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:21
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:32
 #, kde-format
 msgid "Gpx File Parser"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:47
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:63
 #, kde-format
 msgid "GPS Data"
 msgstr ""
