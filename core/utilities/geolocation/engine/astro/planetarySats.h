@@ -30,10 +30,10 @@ public:
     void setStepWidth(double s);  // set the step width (seconds)
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto
-    void getTime ();  // Get System Time and Date
+    void getTime();   // Get System Time and Date
     void setDeltaRT(double drt);
     void setMJD(int year, int month, int day, int hour, int min, double sec);// set time
-    static void getDatefromMJD(double mjd, int &year, int &month, int &day, int &hour, int &min, double &sec);
+    static void getDatefromMJD(double mjd, int& year, int& month, int& day, int& hour, int& min, double& sec);
     void setSatFile(char* fname);
     void setPlanet(char* pname);
     int selectSat(char* sname);
@@ -41,9 +41,9 @@ public:
     void setStateVector(double mjd, double x, double y, double z, double vx, double vy, double vz);
     int getStateVector(int nsat);
     void stateToKepler();
-    void getKeplerElements(double &perc, double &apoc, double &inc, double &ecc, double &ra, double &tano, double &m0, double &a, double &n0);
-    void getPlanetographic(double &lng, double &lat, double &height) const;
-    void getFixedFrame(double &x, double &y, double &z, double &vx, double &vy, double &vz);
+    void getKeplerElements(double& perc, double& apoc, double& inc, double& ecc, double& ra, double& tano, double& m0, double& a, double& n0);
+    void getPlanetographic(double& lng, double& lat, double& height) const;
+    void getFixedFrame(double& x, double& y, double& z, double& vx, double& vy, double& vz);
     void currentPos();
     void nextStep();
     double getLastMJD() const;
@@ -51,13 +51,13 @@ public:
 private:
 
     void plsatinit();  // initialize PlanetarySats
-    static double atan23 (double y, double x);  // atan without singularity for x,y=0
+    static double atan23(double y, double x);   // atan without singularity for x,y=0
     void getMercury();
     void getVenus();
     void getMoon();
     void getMars();
-    void getSatPos (double t);
-    static Mat3 getSelenographic (double jd);
+    void getSatPos(double t);
+    static Mat3 getSelenographic(double jd);
 
 private:
 

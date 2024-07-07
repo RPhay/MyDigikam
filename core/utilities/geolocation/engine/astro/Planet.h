@@ -34,7 +34,7 @@ class PlanetPrivate;
 class DIGIKAM_EXPORT Planet
 {
 
-// Not a QObject because we don't need sigs/slots
+    // Not a QObject because we don't need sigs/slots
 
 public:
 
@@ -46,10 +46,10 @@ public:
     /**
      * @deprecated Please use PlanetFactory::construct(id) instead.
      */
-     explicit Planet(const QString& id);
+    explicit Planet(const QString& id);
 
     ///Copy Constructor
-    Planet( const Planet& other );
+    Planet(const Planet& other);
     ///Destructor
     ~Planet();
 
@@ -94,53 +94,53 @@ public:
      * @param lat the latitude of the sun, in radian
      * @param dateTime the time for which the sun position is to be calculated
      */
-    void sunPosition(qreal &lon, qreal &lat, const QDateTime &dateTime) const;
+    void sunPosition(qreal& lon, qreal& lat, const QDateTime& dateTime) const;
 
     /* Setter functions */
-    void setM_0( qreal M_0 );
-    void setM_1( qreal M_1 );
+    void setM_0(qreal M_0);
+    void setM_1(qreal M_1);
 
-    void setC_1( qreal C_1 );
-    void setC_2( qreal C_2 );
-    void setC_3( qreal C_3 );
-    void setC_4( qreal C_4 );
-    void setC_5( qreal C_5 );
-    void setC_6( qreal C_6 );
+    void setC_1(qreal C_1);
+    void setC_2(qreal C_2);
+    void setC_3(qreal C_3);
+    void setC_4(qreal C_4);
+    void setC_5(qreal C_5);
+    void setC_6(qreal C_6);
 
-    void setPi( qreal Pi );
+    void setPi(qreal Pi);
 
-    void setEpsilon( qreal epsilon );
+    void setEpsilon(qreal epsilon);
 
-    void setTheta_0( qreal theta_0 );
-    void setTheta_1( qreal theta_1 );
+    void setTheta_0(qreal theta_0);
+    void setTheta_1(qreal theta_1);
 
-    void setRadius( qreal radius );
+    void setRadius(qreal radius);
 
     void setTwilightZone(qreal twilightZone);
 
-    void setName( const QString& name );
-    void setId( const QString& id );
+    void setName(const QString& name);
+    void setId(const QString& id);
 
-    Planet& operator=( const Planet& rhs );
+    Planet& operator=(const Planet& rhs);
 
     /**
      * @deprecated Please use PlanetFactory::localizedName(id) instead.
      */
-     static QString name(const QString& id);
+    static QString name(const QString& id);
     /**
      * @deprecated Please use PlanetFactory::planetList() instead.
      */
-     static QStringList planetList();
+    static QStringList planetList();
 
     bool hasAtmosphere() const;
-    void setHasAtmosphere( bool enabled );
+    void setHasAtmosphere(bool enabled);
 
     QColor atmosphereColor() const;
-    void setAtmosphereColor( const QColor& color );
+    void setAtmosphereColor(const QColor& color);
 
 private:
 
     PlanetPrivate* const d = nullptr;
 };
 
-} //namespace Marble
+} // namespace Marble

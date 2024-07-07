@@ -41,29 +41,29 @@ public:
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto
     void setLocalPos(double lat, double lng, double hgt); // set local geographic coordinates
-    void getLocalDetails(char *otxt);  // provide eclipse details for local position
+    void getLocalDetails(char* otxt);  // provide eclipse details for local position
     void setCurrentMJD(int year, int month, int day, int hour, int min, double sec); // set current time
-    void getDatefromMJD(double mjd, int &year, int &month, int &day,
-                        int &hour, int &min, double &sec) const; // convert MJD into date and time
-    int getLocalVisibility(double &mjd_start, double &mjd_stop);  // local start and stop times for eclipse
-    int getLocalTotal(double &mjd_start, double &mjd_stop);  // local start and stop times for totality/annularity
-    int getLocalMax(double &mjdmax, double &magmax, double &elmax);  // get local (solar) eclipse maximum
-    int getPenumbra(double &mjd_start, double &mjd_stop);  // start and stop times for penumbral eclipse of Moon
-    int getPartial(double &mjd_start, double &mjd_stop);  // (global) start and stop times for partial phase
-    int getTotal(double &mjd_start, double &mjd_stop);   // (global) start and stop times for totality/annularity
+    void getDatefromMJD(double mjd, int& year, int& month, int& day,
+                        int& hour, int& min, double& sec) const; // convert MJD into date and time
+    int getLocalVisibility(double& mjd_start, double& mjd_stop);  // local start and stop times for eclipse
+    int getLocalTotal(double& mjd_start, double& mjd_stop);  // local start and stop times for totality/annularity
+    int getLocalMax(double& mjdmax, double& magmax, double& elmax);  // get local (solar) eclipse maximum
+    int getPenumbra(double& mjd_start, double& mjd_stop);  // start and stop times for penumbral eclipse of Moon
+    int getPartial(double& mjd_start, double& mjd_stop);  // (global) start and stop times for partial phase
+    int getTotal(double& mjd_start, double& mjd_stop);   // (global) start and stop times for totality/annularity
     void getEclYearInfo(char* wbuf);  // list of eclipses of the year
-    int getEclYearInfo(int k, int &yr, int &month, int &day,
-                   int &hour, int &min, double &sec, double &tzone, double &magn);
-    int getEclTxt (int j, char* jtxt);  // get text for j-th eclipse
+    int getEclYearInfo(int k, int& yr, int& month, int& day,
+                       int& hour, int& min, double& sec, double& tzone, double& magn);
+    int getEclTxt(int j, char* jtxt);   // get text for j-th eclipse
     void putEclSelect(int es);  // select particular eclipse for details
     void nextEcl();  // select the next eclipse for details
     void previousEcl();  // select the previous eclipse for details
     double getLastMJD() const;  // get the MJD last used in calculations
-    void getMaxPos(double &lat, double &lng); // get position of maximum eclipse
-    int eclPltCentral(bool firstc, double &lat, double &lng);  // calc central eclipse line
+    void getMaxPos(double& lat, double& lng); // get position of maximum eclipse
+    int eclPltCentral(bool firstc, double& lat, double& lng);  // calc central eclipse line
     int GNSBound(bool firstc, bool north, double& lat, double& lng); // northern or southern boundary
     int GRSBound(bool firstc, double& lat1, double& lng1, double& lat2, double& lng2);
-                     // Rise / Set Boundary
+    // Rise / Set Boundary
     int centralBound(bool firstc, double& lat1, double& lng1, double& lat2, double& lng2);
     void getShadowCone(double mjd, bool umbra, int numpts, double* lat, double* lng);
     void setPenumbraAngle(double pa, int mode);
@@ -71,28 +71,28 @@ public:
 private:
 
     void esinit();  // initialize EclSolar
-    static double atan23 (double y, double x);  // atan without singularity for x,y=0
-    void DefTime ();  // Get System Time and Date
-    void calcMaxPos(double &lat, double &lng); // get position of maximum eclipse
-    static void GetMonth (int mm, char* mchr);
-    static double phmjd (double yearf, double phase, double tdut,
-                  int& eph, double& ejd, double& emag);
-    void ckphase (double minmjd, double maxmjd, double yr,
-              double deltdut, int &mp, PMJD p, double phase);
-    static void dtmstr(double jdmoon, char *dts);
+    static double atan23(double y, double x);   // atan without singularity for x,y=0
+    void DefTime();   // Get System Time and Date
+    void calcMaxPos(double& lat, double& lng); // get position of maximum eclipse
+    static void GetMonth(int mm, char* mchr);
+    static double phmjd(double yearf, double phase, double tdut,
+                        int& eph, double& ejd, double& emag);
+    void ckphase(double minmjd, double maxmjd, double yr,
+                 double deltdut, int& mp, PMJD p, double phase);
+    static void dtmstr(double jdmoon, char* dts);
     void moonph();  // calculate phases of the Moon
     void eclStart();   // initialize detailed calcs for selected eclipse
     static double getlocmag(double jd, double ep2, double phi, double lamda,
-                     double height, const Vec3& rs, const Vec3& rm, int& totflg);
+                            double height, const Vec3& rs, const Vec3& rm, int& totflg);
     static int iscrs(double vrc0, double vrc1, double dpn,
-                           double& vrx0, double& vrx1, double& vrx20, double& vrx21);
+                     double& vrx0, double& vrx1, double& vrx20, double& vrx21);
     void InitBound(); // initialize boundary calcs
     void InRSBound();  // initialize Sunrise/Sunset boundaries
-    static double DegFDms (double h);
-    int localStart(int j, double *spt, double *ept, int *spp,
-                                   int p, char *otxt);
-    static double navCourse (double lat1, double lng1, double lat2, double lng2); // navigation course from p1 to p2
-    static void navNewPos (double d, double an, double lat1, double lng1, double &lat2, double &lng2);
+    static double DegFDms(double h);
+    int localStart(int j, double* spt, double* ept, int* spp,
+                   int p, char* otxt);
+    static double navCourse(double lat1, double lng1, double lat2, double lng2);  // navigation course from p1 to p2
+    static void navNewPos(double d, double an, double lat1, double lng1, double& lat2, double& lng2);
     static double sunObscure(double l1, double l2, double m);  // get the Obscuration of the Sun
 
     // data fields
@@ -130,10 +130,10 @@ private:
     double eb_eclmjd [GBL_ECLBUF];  // the MJD's of the middle of the eclipses
     double eb_magnitude [GBL_ECLBUF];   // magnitude of respective eclipse
     int eb_phase [GBL_ECLBUF];    // phase of the eclipse. 0 if no eclipse,
-                                 // 1 partial Sun, 2 non-central annular, 3 non-central total,
-                                 // 4 annular, 5 total, 6 annual/total  Sun
-                                 // -1 partial penumbral Moon, -2 penumbral Moon,
-                                 // -3 partial Moon, -4 total Moon.
+    // 1 partial Sun, 2 non-central annular, 3 non-central total,
+    // 4 annular, 5 total, 6 annual/total  Sun
+    // -1 partial penumbral Moon, -2 penumbral Moon,
+    // -3 partial Moon, -4 total Moon.
     int eb_nphase;   // number of phases for eclipse details
     int eb_spp[4];     // kind of eclipse phase i
     double eb_spt[4];  // start time in MJD for phase i

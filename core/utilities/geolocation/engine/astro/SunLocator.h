@@ -37,14 +37,14 @@ class DIGIKAM_EXPORT SunLocator : public QObject
 
 public:
 
-    SunLocator( const MarbleClock *clock, const Planet *planet );
+    SunLocator(const MarbleClock* clock, const Planet* planet);
     ~SunLocator() override;
 
     qreal shading(qreal lon, qreal a, qreal c) const;
-    static void shadePixel(QRgb &pixcol, qreal shade);
-    static void shadePixelComposite(QRgb &pixcol, const QRgb &dpixcol, qreal shade);
+    static void shadePixel(QRgb& pixcol, qreal shade);
+    static void shadePixelComposite(QRgb& pixcol, const QRgb& dpixcol, qreal shade);
 
-    void  setPlanet( const Planet *planet );
+    void  setPlanet(const Planet* planet);
 
     qreal getLon() const;
     qreal getLat() const;
@@ -55,11 +55,11 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void positionChanged( qreal lon, qreal lat );
+    void positionChanged(qreal lon, qreal lat);
 
 private:
 
-    Q_DISABLE_COPY( SunLocator )
+    Q_DISABLE_COPY(SunLocator)
 
 private:
 
