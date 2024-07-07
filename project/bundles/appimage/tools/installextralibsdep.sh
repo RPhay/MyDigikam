@@ -44,8 +44,7 @@ cmake $ORIG_WD/../3rdparty \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTVERSION=$DK_QTVERSION
 
 cmake --build . --config RelWithDebInfo --target ext_$1 -- -j$CPU_CORES
 

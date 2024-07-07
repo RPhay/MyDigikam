@@ -28,11 +28,7 @@ if(KF${QT_VERSION_MAJOR}Sonnet_FOUND)
     include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::SonnetCore,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-if(ENABLE_QWEBENGINE)
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-else()
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-endif()
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 
 set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dprogressdlg.cpp

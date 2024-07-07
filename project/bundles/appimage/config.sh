@@ -46,9 +46,6 @@ DK_QTVERSION="6"
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
-# Option to use QtWebEngine instead QtWebkit
-DK_QTWEBENGINE=1
-
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
 

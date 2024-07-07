@@ -275,8 +275,6 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
 
-#ifdef HAVE_QWEBENGINE
-
     delete d->browser;
     d->browser = new WebBrowserDlg(url, d->parent, true);
     d->browser->setModal(true);
@@ -288,34 +286,6 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
             this, SIGNAL(signalBusy(bool)));
 
     d->browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-    QPointer<QInputDialog> textDlg = new QInputDialog(d->parent);
-
-    textDlg->setWindowTitle(i18nc("@title:window", "Enter Flickr Login URL"));
-    textDlg->setLabelText(i18n("Copy the full URL from the external browser "
-                               "that contains the \"oauth_token\" entry:"));
-    textDlg->resize(770, textDlg->sizeHint().height());
-    textDlg->setInputMode(QInputDialog::TextInput);
-    textDlg->setTextEchoMode(QLineEdit::Normal);
-    textDlg->setModal(true);
-
-    if (textDlg->exec() != QDialog::Accepted)
-    {
-        Q_EMIT signalBusy(false);
-
-        delete textDlg;
-
-        return;
-    }
-
-    slotCatchUrl(QUrl(textDlg->textValue().trimmed()));
-    delete textDlg;
-
-#endif
-
 }
 
 QString FlickrTalker::getMaxAllowedFileSize()

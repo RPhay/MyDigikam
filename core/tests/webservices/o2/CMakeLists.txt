@@ -22,10 +22,8 @@ if(NOT APPLE)
 
     add_subdirectory(fbdemo)
 
-    if(ENABLE_QWEBENGINE)
 # NOTE: Do not compile anymore on CI
-#        add_subdirectory(fbinter)
-    endif()
+#   add_subdirectory(fbinter)
 
 endif()
 

@@ -414,51 +414,24 @@ void DXmlGuiWindow::slotDonateMoney()
 {
     QUrl url(QLatin1String("https://www.digikam.org/donate/"));
 
-#ifdef HAVE_QWEBENGINE
-
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-
-#endif
-
 }
 
 void DXmlGuiWindow::slotRecipesBook()
 {
     QUrl url(QLatin1String("https://www.digikam.org/recipes_book/"));
 
-#ifdef HAVE_QWEBENGINE
-
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-
-#endif
-
 }
 
 void DXmlGuiWindow::slotContribute()
 {
     QUrl url(QLatin1String("https://www.digikam.org/contribute/"));
 
-#ifdef HAVE_QWEBENGINE
-
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-
-#endif
-
 }
 
 void DXmlGuiWindow::setupIconTheme()

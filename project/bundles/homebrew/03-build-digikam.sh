@@ -62,7 +62,6 @@ rm -rf $BUILDING_DIR/* || true
 #       -DKA_VERSION=$DK_KA_VERSION \
 #       -DKDE_VERSION=$DK_KDE_VERSION \
 #       -DENABLE_QTVERSION=$DK_QTVERSION \
-#       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
 #       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
 #       -Wno-dev
 
@@ -203,7 +202,6 @@ cmake $ORIG_WD/../3rdparty \
        -DKA_VERSION=$DK_KA_VERSION \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

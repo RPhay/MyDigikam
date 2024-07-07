@@ -103,9 +103,6 @@ DK_VERSION=master
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
-# Option to use QtWebEngine instead QtWebkit
-DK_QTWEBENGINE=1
-
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
 

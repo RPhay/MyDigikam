@@ -23,17 +23,10 @@
 #include <QUrl>
 #include <QMap>
 
-#ifdef HAVE_QWEBENGINE
-#   include <QWebEngineView>
-#   include <QWebEnginePage>
-#   include <QWebEngineProfile>
-#   include <QWebEngineCookieStore>
-#else
-#   include <qwebview.h>
-#   include <qwebpage.h>
-#   include <qwebframe.h>
-#   include <QNetworkRequest>
-#endif
+#include <QWebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineProfile>
+#include <QWebEngineCookieStore>
 
 // Local includes
 
@@ -46,46 +39,19 @@ using namespace Digikam;
 namespace DigikamGenericUnifiedPlugin
 {
 
-#ifdef HAVE_QWEBENGINE
-
 class WSAuthenticationPage : public QWebEnginePage
-
-#else
-
-class WSAuthenticationPage : public QWebPage
-
-#endif // #ifdef HAVE_QWEBENGINE
-
 {
     Q_OBJECT
 
 public:
 
-#ifdef HAVE_QWEBENGINE
-
     explicit WSAuthenticationPage(QObject* const parent, QWebEngineProfile* profile, const QString& callbackUrl);
-
-#else
-
-    explicit WSAuthenticationPage(QObject* const parent, const QString& callbackUrl);
-
-#endif // #ifdef HAVE_QWEBENGINE
 
     virtual ~WSAuthenticationPage() = default;
 
     void setCallbackUrl(const QString& url);
 
-#ifdef HAVE_QWEBENGINE
-
     bool acceptNavigationRequest(const QUrl& url, QWebEnginePage::NavigationType type, bool isMainFrame);
-
-#else
-
-private Q_SLOTS:
-
-    bool slotUrlChanged(const QUrl& url);
-
-#endif // #ifdef HAVE_QWEBENGINE
 
 Q_SIGNALS:
 
@@ -98,15 +64,7 @@ private:
 
 // -------------------------------------------------------------------
 
-#ifdef HAVE_QWEBENGINE
-
 class WSAuthenticationPageView : public QWebEngineView
-
-#else
-
-class WSAuthenticationPageView : public QWebView
-
-#endif
 {
     Q_OBJECT
 

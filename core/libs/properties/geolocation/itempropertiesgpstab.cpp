@@ -56,10 +56,7 @@
 #include "itemgpsmodelhelper.h"
 #include "dexpanderbox.h"
 #include "digikam_config.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webbrowserdlg.h"
-#endif
+#include "webbrowserdlg.h"
 
 namespace Digikam
 {
@@ -304,17 +301,8 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << url;
 
-#ifdef HAVE_QWEBENGINE
-
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(url), this);
     browser->show();
-
-#else
-
-    QDesktopServices::openUrl(QUrl(url));
-
-#endif
-
 }
 
 void ItemPropertiesGPSTab::slotCopyGPSDetails()

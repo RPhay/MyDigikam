@@ -19,11 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src
 )
 
-if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-else()
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-endif()
 
 if(KF${QT_VERSION_MAJOR}KIO_FOUND)
     include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::KIOCore,INTERFACE_INCLUDE_DIRECTORIES>
@@ -75,17 +71,10 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wssettings.cpp
 )
 
-#if(ENABLE_QWEBENGINE)
-#    set(libdpluginsinterface_SRCS
-#        ${libdpluginsinterface_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget_qwebengine.cpp
-#       )
-#else()
-#    set(libdpluginsinterface_SRCS
-#        ${libdpluginsinterface_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget.cpp
-#       )
-#endif()
+#set(libdpluginsinterface_SRCS
+#    ${libdpluginsinterface_SRCS}
+#    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget_qwebengine.cpp
+#)
 
 # Used by digikamcore
 add_library(core_dpluginsinterface_obj OBJECT ${libdpluginsinterface_SRCS})

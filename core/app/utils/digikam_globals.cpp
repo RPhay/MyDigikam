@@ -319,17 +319,8 @@ void openOnlineDocumentation(const QString& section, const QString& chapter, con
         }
     }
 
-#ifdef HAVE_QWEBENGINE
-
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-
-#endif
-
 }
 
 } // namespace Digikam

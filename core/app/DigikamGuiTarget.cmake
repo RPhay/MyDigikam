@@ -265,21 +265,10 @@ target_link_libraries(digikamgui
                       ${FFMPEG_LIBRARIES}
 )
 
-if(ENABLE_QWEBENGINE)
-
-    target_link_libraries(digikamgui
-                          PRIVATE
-                          Qt${QT_VERSION_MAJOR}::WebEngineWidgets
-    )
-
-else()
-
-    target_link_libraries(digikamgui
-                          PRIVATE
-                          Qt${QT_VERSION_MAJOR}::WebKitWidgets
-    )
-
-endif()
+target_link_libraries(digikamgui
+                      PRIVATE
+                      Qt${QT_VERSION_MAJOR}::WebEngineWidgets
+)
 
 if(ENABLE_DBUS)
 

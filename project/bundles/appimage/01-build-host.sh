@@ -81,8 +81,7 @@ cmake $ORIG_WD/../3rdparty \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKP_VERSION=$DK_KP_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTVERSION=$DK_QTVERSION
 
 # Install new cmake recent version and shared lib
 
@@ -107,9 +106,7 @@ cmake $ORIG_WD/../3rdparty \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKP_VERSION=$DK_KP_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-      -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
+      -DENABLE_QTVERSION=$DK_QTVERSION
 
 # Low level libraries and Qt dependencies
 # NOTE: The order to compile each component here is very important.
@@ -120,10 +117,6 @@ cmake $ORIG_WD/../3rdparty \
 cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
 cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
-
-if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES    # depend of Qt and libicu
-fi
 
 # Clean up previous openssl install
 

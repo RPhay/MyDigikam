@@ -319,7 +319,6 @@ cmake $ORIG_WD/../3rdparty \
        -DKP_VERSION=$DK_KP_VERSION \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
@@ -341,16 +340,7 @@ if [[ $DK_QTVERSION = 5 ]] ; then
     port install qt$DK_QTVERSION-qtnetworkauth
     port install qt$DK_QTVERSION-sqlite-plugin
     port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
-
-    if [[ $DK_QTWEBENGINE = 1 ]] ; then
-
-        port install qt$DK_QTVERSION-qtwebengine
-
-    else
-
-        port install qt$DK_QTVERSION-qtwebkit
-
-    fi
+    port install qt$DK_QTVERSION-qtwebengine
 
 else
 
@@ -366,7 +356,6 @@ else
            -DKP_VERSION=$DK_KP_VERSION \
            -DKDE_VERSION=$DK_KDE_VERSION \
            -DENABLE_QTVERSION=$DK_QTVERSION \
-           -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
            -DARCH_TARGET=$ARCH_TARGET \
            -Wno-dev
 

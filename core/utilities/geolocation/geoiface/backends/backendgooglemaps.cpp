@@ -48,16 +48,7 @@
 #include "mapwidget.h"
 #include "abstractmarkertiler.h"
 #include "geomodelhelper.h"
-
-#ifdef HAVE_QWEBENGINE
-
-#   include "htmlwidget_qwebengine.h"
-
-#else
-
-#   include "htmlwidget_qwebkit.h"
-
-#endif
+#include "htmlwidget_qwebengine.h"
 
 namespace Digikam
 {

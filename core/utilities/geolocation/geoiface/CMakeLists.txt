@@ -23,12 +23,7 @@ if(${ENABLE_GEOLOCATION})
 
 endif()
 
-if(ENABLE_QWEBENGINE)
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-else()
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-endif()
-
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 
 set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_correlator.cpp
@@ -109,17 +104,10 @@ if(${ENABLE_GEOLOCATION})
 
 endif()
 
-if(ENABLE_QWEBENGINE)
-    set(libgeoiface_SRCS
-        ${libgeoiface_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebengine.cpp
-       )
-else()
-    set(libgeoiface_SRCS
-        ${libgeoiface_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebkit.cpp
-       )
-endif()
+set(libgeoiface_SRCS
+    ${libgeoiface_SRCS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebengine.cpp
+)
 
 if(NOT Qt6_FOUND)
 

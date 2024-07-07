@@ -27,13 +27,9 @@
 #include <QWidget>
 #include <QLabel>
 
-#ifdef HAVE_QWEBENGINE
-#   include <QWebEngineView>
-#   include <QWebEnginePage>
-#   include <QWebEngineSettings>
-#else
-#   include <qwebview.h>
-#endif
+#include <QWebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineSettings>
 
 // Local includes
 
@@ -41,8 +37,6 @@
 
 namespace Digikam
 {
-
-#ifdef HAVE_QWEBENGINE
 
 class WelcomePageViewPage : public QWebEnginePage
 {
@@ -65,13 +59,6 @@ Q_SIGNALS:
 // -------------------------------------------------------------------
 
 class WelcomePageView : public QWebEngineView
-
-#else
-
-class WelcomePageView : public QWebView
-
-#endif
-
 {
     Q_OBJECT
 

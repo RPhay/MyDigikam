@@ -54,8 +54,7 @@ cmake $ORIG_WD/../3rdparty \
       -DKP_VERSION=$DK_KP_VERSION \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTVERSION=$DK_QTVERSION
 
 cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
@@ -153,7 +152,7 @@ cmake -G "Unix Makefiles" .. \
       -DENABLE_MEDIAPLAYER=ON \
       -DENABLE_DBUS=OFF \
       -DENABLE_APPSTYLES=ON \
-      -DENABLE_QWEBENGINE=$DK_QTWEBENGINE \
+      -DENABLE_QWEBENGINE=ON \
       -DENABLE_FACESENGINE_DNN=ON \
       -DENABLE_KIO=OFF \
       -DENABLE_LEGACY=OFF \
@@ -210,8 +209,7 @@ cmake $ORIG_WD/../3rdparty \
       -DKP_VERSION=$DK_KP_VERSION \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTVERSION=$DK_QTVERSION
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES

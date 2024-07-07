@@ -182,15 +182,9 @@ cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
 cp -r /usr/share/applications/org.kde.digikam.desktop     ./usr/share/applications
 cp -r /usr/share/applications/org.kde.showfoto.desktop    ./usr/share/applications
 
-# NOTE: no resources data are provided with QtWebKit
+echo -e "------------- Copy QWebEngine bin data files\n"
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
-
-    echo -e "------------- Copy QWebEngine bin data files\n"
-
-    cp -r /usr/resources ./usr
-
-fi
+cp -r /usr/resources ./usr
 
 echo -e "------------- Copy libgphoto2 drivers\n"
 
@@ -324,22 +318,9 @@ else
 
 fi
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
+echo -e "------------- Copy QtWebEngine runtime process\n"
 
-    echo -e "------------- Copy QtWebEngine runtime process\n"
-
-    [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
-
-else
-
-    echo -e "------------- Copy QtWebKit runtime process\n"
-
-    [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
-    [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
-    [[ -e /usr/libexec/QtWebStorageProcess ]] && cp /usr/libexec/QtWebStorageProcess ./usr/bin
-    [[ -e /usr/libexec/QtWebPluginProcess ]]  && cp /usr/libexec/QtWebPluginProcess  ./usr/bin
-
-fi
+[[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
 
 echo -e "------------- Copy Solid binary\n"
 

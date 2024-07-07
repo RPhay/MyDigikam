@@ -193,7 +193,6 @@ cmake $ORIG_WD/../3rdparty \
       -DKP_VERSION=$DK_KP_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel

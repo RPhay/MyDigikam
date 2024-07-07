@@ -38,12 +38,6 @@
 #include <QMimeType>
 #include <QMimeDatabase>
 
-#ifdef HAVE_QWEBENGINE
-#   include "webbrowserdlg.h"
-#else
-#   include <QDesktopServices>
-#endif
-
 // KDE includes
 
 #include <ki18n_version.h>
@@ -65,6 +59,7 @@
 #include "digikam_debug.h"
 #include "drawdecoder.h"
 #include "rawcameradlg.h"
+#include "webbrowserdlg.h"
 
 // Windows includes
 

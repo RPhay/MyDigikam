@@ -48,9 +48,7 @@
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 
-#ifdef HAVE_QWEBENGINE
-#   include "webbrowserdlg.h"
-#endif
+#include "webbrowserdlg.h"
 
 // KDE includes
 

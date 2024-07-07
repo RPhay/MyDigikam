@@ -18,23 +18,11 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Svg
 )
 
-if(ENABLE_QWEBENGINE)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebEngineWidgets
-    )
-
-else()
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebKitWidgets
-    )
-
-endif()
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                                   NO_MODULE
+                                   COMPONENTS
+                                   WebEngineWidgets
+)
 
 find_package(Qt${QT_VERSION_MAJOR}
              OPTIONAL_COMPONENTS

@@ -283,20 +283,6 @@ echo "---------- Copying Qt Web Backend files..."
 #       libexec/qt5/lib/QtWebEngineCore.framework/Versions/5/Helpers/QtWebEngineProcess.app/Contents/MacOS
 #       instead of libexec/qt5/libexec/. No needs to make extra rules for this runtime process.
 
-if [[ $DK_QTWEBENGINE = 0 ]] ; then
-
-    # Rules for QtWebKit runtime process
-
-    mkdir -p $TEMPROOT/libexec/qt5/libexec/
-
-    # QtWebKit runtime process
-
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess" "$TEMPROOT/libexec/qt5/libexec/"
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess ]]        && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess"        "$TEMPROOT/libexec/qt5/libexec/"
-    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess" "$TEMPROOT/libexec/qt5/libexec/"
-
-fi
-
 echo "---------- Copying i18n..."
 
 i18nprefix=$INSTALL_PREFIX/share/

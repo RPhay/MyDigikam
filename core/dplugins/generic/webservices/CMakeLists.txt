@@ -6,17 +6,8 @@
 
 include_directories(${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src)
 
-if(ENABLE_QWEBENGINE)
-
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-    set(QWEB_BACKEND Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
-
-else()
-
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-    set(QWEB_BACKEND Qt${QT_VERSION_MAJOR}::WebKitWidgets)
-
-endif()
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+set(QWEB_BACKEND Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 
 add_subdirectory(box)
 add_subdirectory(dropbox)

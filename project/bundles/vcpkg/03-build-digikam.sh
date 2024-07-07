@@ -81,7 +81,6 @@ cmake $ORIG_WD/../3rdparty \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_lensfun --parallel
@@ -232,7 +231,6 @@ cmake $ORIG_WD/../3rdparty \
       -DKA_VERSION=$DK_KA_VERSION \
       -DKDE_VERSION=$DK_KDE_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_mosaicwall --parallel

@@ -25,9 +25,7 @@
 #include <QApplication>
 #include <QStandardPaths>
 
-#ifdef HAVE_QWEBENGINE
-#   include <QtWebEngineWidgetsVersion>
-#endif
+#include <QtWebEngineWidgetsVersion>
 
 // KDE includes
 
@@ -43,8 +41,6 @@
 
 namespace Digikam
 {
-
-#ifdef HAVE_QWEBENGINE
 
 WelcomePageViewPage::WelcomePageViewPage(QObject* const parent)
     : QWebEnginePage(parent)
@@ -67,28 +63,11 @@ bool WelcomePageViewPage::acceptNavigationRequest(const QUrl& url, QWebEnginePag
 
 WelcomePageView::WelcomePageView(QWidget* const parent)
     : QWebEngineView(parent)
-
-#else
-
-WelcomePageView::WelcomePageView(QWidget* const parent)
-    : QWebView(parent)
-
-#endif
-
 {
     setFocusPolicy(Qt::WheelFocus);
 
-#ifndef HAVE_QWEBENGINE
-
-    page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
-    setRenderHint(QPainter::TextAntialiasing);
-
-#endif
-
     setContextMenuPolicy(Qt::NoContextMenu);
     setContentsMargins(QMargins());
-
-#ifdef HAVE_QWEBENGINE
 
     WelcomePageViewPage* const wpage = new WelcomePageViewPage(this);
     setPage(wpage);
@@ -96,21 +75,10 @@ WelcomePageView::WelcomePageView(QWidget* const parent)
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
 
-#endif
-
     // ------------------------------------------------------------
-
-#ifdef HAVE_QWEBENGINE
 
     connect(wpage, SIGNAL(linkClicked(QUrl)),
             this, SLOT(slotUrlOpen(QUrl)));
-
-#else
-
-    connect(this, SIGNAL(linkClicked(QUrl)),
-            this, SLOT(slotUrlOpen(QUrl)));
-
-#endif
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));

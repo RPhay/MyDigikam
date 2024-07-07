@@ -40,41 +40,18 @@
 namespace DigikamGenericUnifiedPlugin
 {
 
-#ifdef HAVE_QWEBENGINE
-
 WSAuthenticationPage::WSAuthenticationPage(QObject* const parent, QWebEngineProfile* profile, const QString& callbackUrl)
     : QWebEnginePage(profile, parent),
       m_callbackUrl (callbackUrl)
 {
 }
 
-#else
-
-WSAuthenticationPage::WSAuthenticationPage(QObject* const parent, const QString& callbackUrl)
-    : QWebPage     (parent),
-      m_callbackUrl(callbackUrl)
-{
-    connect(mainFrame(), SIGNAL(urlChanged(QUrl)),
-            this, SLOT(slotUrlChanged(QUrl)));
-}
-
-#endif // #ifdef HAVE_QWEBENGINE
-
 void WSAuthenticationPage::setCallbackUrl(const QString& url)
 {
     m_callbackUrl = url;
 }
 
-#ifdef HAVE_QWEBENGINE
-
 bool WSAuthenticationPage::acceptNavigationRequest(const QUrl& url, QWebEnginePage::NavigationType /*type*/, bool /*isMainFrame*/)
-
-#else
-
-bool WSAuthenticationPage::slotUrlChanged(const QUrl& url)
-
-#endif // #ifdef HAVE_QWEBENGINE
-
 {
     QString urlString = url.toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "urlString: " << urlString;
@@ -98,37 +75,16 @@ bool WSAuthenticationPage::slotUrlChanged(const QUrl& url)
 
 // ----------------------------------------------------------------------------
 
-#ifdef HAVE_QWEBENGINE
-
 WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
                                                    WSAuthentication* const wsAuth,
                                                    const QString& callbackUrl)
     : QWebEngineView    (parent),
       m_WSAuthentication(wsAuth)
-
-#else
-
-WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
-                                                   WSAuthentication* const wsAuth,
-                                                   const QString& callbackUrl)
-    : QWebView          (parent),
-      m_WSAuthentication(wsAuth)
-
-#endif // #ifdef HAVE_QWEBENGINE
-
 {
     adjustSize();
     setMinimumSize(QSize(850, 800));
 
-#ifdef HAVE_QWEBENGINE
-
     WSAuthenticationPage* const wpage = new WSAuthenticationPage(this, new QWebEngineProfile, callbackUrl);
-
-#else
-
-    WSAuthenticationPage* const wpage = new WSAuthenticationPage(this, callbackUrl);
-
-#endif // #ifdef HAVE_QWEBENGINE
 
     setPage(wpage);
 
@@ -175,15 +131,7 @@ void WSAuthenticationPageView::slotOpenBrowser(const QUrl& url)
 {
     WSAuthenticationPage* const page = dynamic_cast<WSAuthenticationPage*>(this->page());
 
-#ifdef HAVE_QWEBENGINE
-
     page->setUrl(url);
-
-#else
-
-    page->mainFrame()->setUrl(url);
-
-#endif
 
     /*
      * Here we show the web browser again after creation, because when this slot is triggered,

@@ -10,7 +10,6 @@ option(ENABLE_GEOLOCATION                "Build digiKam with Geolocation support
 option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player support (default=ON)"                               ON)
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
-option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
 option(ENABLE_KIO                        "Build digiKam with KIO support (default=ON)"                                        ON)
 
 # Database options:
@@ -25,9 +24,3 @@ option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for de
 option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
 option(BUILD_WITH_CCACHE                 "Use ccache to speed up compilations"                                                OFF)
 option(BUILD_WITH_QT6                    "Build with Qt6, else Qt5"                                                           OFF)
-
-# Packaging options:
-if(MINGW)
-    option(ENABLE_DRMINGW                "Enable the Dr. MinGW crash handler support for windows (default ON)"                ON)
-    option(ENABLE_MINGW_HARDENING_LINKER "Enable DEP (NX), ASLR, and high-entropy ASLR linker flags for MinGW (default ON)"   ON)
-endif()

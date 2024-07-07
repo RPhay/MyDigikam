@@ -218,21 +218,10 @@ if(Qt6_FOUND)
 
 endif()
 
-if(ENABLE_QWEBENGINE)
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          Qt${QT_VERSION_MAJOR}::WebEngineWidgets
-    )
-
-else()
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          Qt${QT_VERSION_MAJOR}::WebKitWidgets
-    )
-
-endif()
+target_link_libraries(digikamcore
+                      PRIVATE
+                      Qt${QT_VERSION_MAJOR}::WebEngineWidgets
+)
 
 if(ENABLE_DBUS)
 

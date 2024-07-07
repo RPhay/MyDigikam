@@ -177,7 +177,6 @@ rm -rf $BUILDING_DIR/* || true
 #       -DKP_VERSION=$DK_KP_VERSION \
 #       -DKDE_VERSION=$DK_KDE_VERSION \
 #       -DENABLE_QTVERSION=$DK_QTVERSION \
-#       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
 #       -Wno-dev
 #
 #cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES

@@ -8,14 +8,6 @@
 
 SET(EXTPREFIX_qt "${EXTPREFIX}")
 
-IF(NOT ENABLE_QTWEBENGINE)
-    SET(DROP_QTWEBENGINE_DEPS
-        -skip qtwebengine                 # No need Chromium browser support (QtWebkit instead)
-        -skip qtwebchannel                # QtWebChannel support ==> QWebEngine dependency
-        -skip qtquickcontrols             # QtQuick support      ==> QWebEngine dependency
-        )
-ENDIF()
-
 # NOTE: even if OpenSSL libs paths are passed as arguments, an hardcoded patch is necessary else linking fail.
 
 ExternalProject_Add(ext_qt5
@@ -87,7 +79,6 @@ ExternalProject_Add(ext_qt5
                   -skip qtwebsockets                # No need websocket support
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
-                  ${DROP_QTWEBENGINE_DEPS}
 
     UPDATE_COMMAND ""
     BUILD_IN_SOURCE 1

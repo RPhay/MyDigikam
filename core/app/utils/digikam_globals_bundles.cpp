@@ -225,12 +225,7 @@ void loadStdQtTranslationFiles(QApplication& app)
             QLatin1String("qtquickcontrols"),
             QLatin1String("qtquickcontrols2"),
             QLatin1String("qtmultimedia"),
-
-#ifdef HAVE_QWEBENGINE
-
             QLatin1String("qtwebengine"),
-
-#endif
 
 #ifdef HAVE_QTXMLPATTERNS
 

@@ -19,15 +19,7 @@ include_directories(${DK_LOCAL_INCLUDES}
 # -------------------------------------------------------------------------------
 # Unit-tests common dependencies
 
-if(ENABLE_QWEBENGINE)
-
-    set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
-
-else()
-
-    set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebKitWidgets)
-
-endif()
+set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 
 if(ENABLE_DBUS)
 

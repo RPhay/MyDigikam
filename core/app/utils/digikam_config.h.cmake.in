@@ -104,16 +104,10 @@
 /* Define to 1 if system use QtMultimedia */
 #cmakedefine HAVE_QTMULTIMEDIA 1
 
-/* Define to 1 if system use QtWebEngine */
-#cmakedefine HAVE_QWEBENGINE 1
-
 /* Define to 1 if system use QtXmlPatterns */
 #cmakedefine HAVE_QTXMLPATTERNS 1
 
 /* Define to 1 if ImageMagick codecs are supported */
 #cmakedefine HAVE_IMAGE_MAGICK 1
-
-/* Defines to 1 if the Dr. Mingw crash handler should be used */
-#cmakedefine HAVE_DRMINGW 1
 
 #define LIBEXEC_INSTALL_DIR "${KDE_INSTALL_FULL_LIBEXECDIR}"

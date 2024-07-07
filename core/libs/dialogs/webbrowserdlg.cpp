@@ -24,16 +24,11 @@
 #include <QToolBar>
 #include <QDesktopServices>
 #include <QNetworkCookieJar>
-
-#ifdef HAVE_QWEBENGINE
-#   include <QWebEngineView>
-#   include <QWebEnginePage>
-#   include <QWebEngineProfile>
-#   include <QWebEngineCookieStore>
-#   include <QWebEngineFindTextResult>
-#else
-#   include <qwebview.h>
-#endif
+#include <QWebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineProfile>
+#include <QWebEngineCookieStore>
+#include <QWebEngineFindTextResult>
 
 // KDE includes
 
@@ -61,17 +56,7 @@ public:
 public:
 
     QUrl               home;
-
-#ifdef HAVE_QWEBENGINE
-
     QWebEngineView*    browser      = nullptr;
-
-#else
-
-    QWebView*          browser      = nullptr;
-
-#endif
-
     QToolBar*          toolbar      = nullptr;
     StatusProgressBar* progressbar  = nullptr;
     SearchTextBar*     searchbar    = nullptr;
@@ -86,39 +71,18 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     d->home    = url;
 
-#ifdef HAVE_QWEBENGINE
-
     d->browser = new QWebEngineView(this);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
-
-#else
-
-    d->browser = new QWebView(this);
-    d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
-    d->browser->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-
-#endif
 
     // --------------------------
 
     d->toolbar = new QToolBar(this);
     d->toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
-#ifdef HAVE_QWEBENGINE
-
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Back));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Forward));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Reload));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Stop));
-
-#else
-
-    d->toolbar->addAction(d->browser->pageAction(QWebPage::Back));
-    d->toolbar->addAction(d->browser->pageAction(QWebPage::Forward));
-    d->toolbar->addAction(d->browser->pageAction(QWebPage::Reload));
-    d->toolbar->addAction(d->browser->pageAction(QWebPage::Stop));
-
-#endif
 
     QAction* const gohome  = new QAction(QIcon::fromTheme(QLatin1String("go-home")),
                                          i18n("Home"), this);
@@ -250,9 +214,7 @@ void WebBrowserDlg::slotLoadingFinished(bool b)
 void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 {
 
-#ifdef HAVE_QWEBENGINE
-
-#   if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     d->browser->findText(settings.text,
                          (settings.caseSensitive == Qt::CaseSensitive) ? QWebEnginePage::FindCaseSensitively
@@ -263,7 +225,7 @@ void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
                             }
                         );
 
-#   else
+#else
 
     d->browser->findText(settings.text,
                          (settings.caseSensitive == Qt::CaseSensitive) ? QWebEnginePage::FindCaseSensitively
@@ -273,16 +235,6 @@ void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
                                 d->searchbar->slotSearchResult(found);
                             }
                         );
-
-#   endif
-
-#else
-
-    bool found = d->browser->findText(
-                    settings.text,
-                    (settings.caseSensitive == Qt::CaseInsensitive) ? QWebPage::FindCaseSensitively
-                                                                    : QWebPage::FindFlags());
-    d->searchbar->slotSearchResult(found);
 
 #endif
 

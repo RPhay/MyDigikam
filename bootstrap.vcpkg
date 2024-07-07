@@ -81,7 +81,6 @@ cmake .. \
       -DENABLE_DBUS=OFF \
       -DENABLE_KIO=OFF \
       -DENABLE_APPSTYLES=ON \
-      -DENABLE_QWEBENGINE=ON \
       ${OPTIONS} \
       -Wno-dev
 
