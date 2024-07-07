@@ -42,14 +42,14 @@ class DIGIKAM_EXPORT GeoDataTreeModel : public QAbstractItemModel
 {
     Q_OBJECT
 
- public:
+public:
 
     /**
      * Creates a new GeoDataTreeModel.
      *
      * @param parent The parent object.
      */
-    explicit GeoDataTreeModel( QObject *parent = nullptr );
+    explicit GeoDataTreeModel(QObject* parent = nullptr);
 
     /**
      * Destroys the GeoDataModel.
@@ -59,30 +59,30 @@ class DIGIKAM_EXPORT GeoDataTreeModel : public QAbstractItemModel
     /**
      * Return the number of Items in the Model.
      */
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
     QVariant headerData(int section, Qt::Orientation orientation,
-                                int role = Qt::DisplayRole) const override;
+                        int role = Qt::DisplayRole) const override;
 
     QHash<int, QByteArray> roleNames() const override;
 
-    QVariant data(const QModelIndex &index, int role) const override;
+    QVariant data(const QModelIndex& index, int role) const override;
 
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
 
-    QModelIndex index(const GeoDataObject *object) const;
+    QModelIndex index(const GeoDataObject* object) const;
 
-    QModelIndex parent(const QModelIndex &index) const override;
+    QModelIndex parent(const QModelIndex& index) const override;
 
-    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex& parent = QModelIndex()) const override;
 
-    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
 
-    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
 
-    QItemSelectionModel *selectionModel();
+    QItemSelectionModel* selectionModel();
 
-    GeoDataDocument *rootDocument();
+    GeoDataDocument* rootDocument();
 
 public Q_SLOTS:
 
@@ -91,36 +91,36 @@ public Q_SLOTS:
       * @param document The new root document. Ownership retains with the caller,
       *   i.e. GeoDataTreeModel will not delete the passed document at its destruction.
       */
-    void setRootDocument( GeoDataDocument *document );
+    void setRootDocument(GeoDataDocument* document);
 
-    int addFeature( GeoDataContainer *parent, GeoDataFeature *feature, int row = -1 );
+    int addFeature(GeoDataContainer* parent, GeoDataFeature* feature, int row = -1);
 
-    bool removeFeature( GeoDataContainer *parent, int index );
+    bool removeFeature(GeoDataContainer* parent, int index);
 
-    int removeFeature(GeoDataFeature *feature);
+    int removeFeature(GeoDataFeature* feature);
 
-    void updateFeature( GeoDataFeature *feature );
+    void updateFeature(GeoDataFeature* feature);
 
-    int addDocument( GeoDataDocument *document );
+    int addDocument(GeoDataDocument* document);
 
-    void removeDocument( int index );
+    void removeDocument(int index);
 
-    void removeDocument( GeoDataDocument* document );
+    void removeDocument(GeoDataDocument* document);
 
-    int addTourPrimitive( const QModelIndex &parent, GeoDataTourPrimitive *primitive, int row = -1 );
-    bool removeTourPrimitive( const QModelIndex &parent, int index );
-    bool swapTourPrimitives( const QModelIndex &parent, int indexA, int indexB );
+    int addTourPrimitive(const QModelIndex& parent, GeoDataTourPrimitive* primitive, int row = -1);
+    bool removeTourPrimitive(const QModelIndex& parent, int index);
+    bool swapTourPrimitives(const QModelIndex& parent, int indexA, int indexB);
 
 Q_SIGNALS:
 
     /// insert and remove row don't trigger any signal that proxies forward
     /// this signal will refresh geometry layer and placemark layout
-    void removed( GeoDataObject *object );
-    void added( GeoDataObject *object );
+    void removed(GeoDataObject* object);
+    void added(GeoDataObject* object);
 
 private:
 
-    Q_DISABLE_COPY( GeoDataTreeModel )
+    Q_DISABLE_COPY(GeoDataTreeModel)
 
 private:
 

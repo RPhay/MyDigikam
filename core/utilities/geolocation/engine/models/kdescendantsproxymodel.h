@@ -75,7 +75,7 @@ public:
      *
      * @param parent The parent object.
      */
-    explicit KDescendantsProxyModel(QObject *parent = nullptr);
+    explicit KDescendantsProxyModel(QObject* parent = nullptr);
 
     /**
      * Destroys the descendant entities proxy model.
@@ -85,7 +85,7 @@ public:
     /**
      * Sets the source @p model of the proxy.
      */
-    void setSourceModel(QAbstractItemModel *model) Q_DECL_OVERRIDE;
+    void setSourceModel(QAbstractItemModel* model) Q_DECL_OVERRIDE;
 
 #if 0
     /**
@@ -93,7 +93,7 @@ public:
      *
      * This method does nothing.
      */
-    void setRootIndex(const QModelIndex &index);
+    void setRootIndex(const QModelIndex& index);
 #endif
 
     /**
@@ -143,36 +143,36 @@ public:
     /**
      * Sets the ancestor @p separator used between data of ancestors.
      */
-    void setAncestorSeparator(const QString &separator);
+    void setAncestorSeparator(const QString& separator);
 
     /**
      * Separator used between data of ancestors.
      */
     QString ancestorSeparator() const;
 
-    QModelIndex mapFromSource(const QModelIndex &sourceIndex) const Q_DECL_OVERRIDE;
-    QModelIndex mapToSource(const QModelIndex &proxyIndex) const Q_DECL_OVERRIDE;
+    QModelIndex mapFromSource(const QModelIndex& sourceIndex) const Q_DECL_OVERRIDE;
+    QModelIndex mapToSource(const QModelIndex& proxyIndex) const Q_DECL_OVERRIDE;
 
-    Qt::ItemFlags flags(const QModelIndex &index) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    Qt::ItemFlags flags(const QModelIndex& index) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const Q_DECL_OVERRIDE;
 
-    QMimeData *mimeData(const QModelIndexList &indexes) const Q_DECL_OVERRIDE;
+    QMimeData* mimeData(const QModelIndexList& indexes) const Q_DECL_OVERRIDE;
     QStringList mimeTypes() const Q_DECL_OVERRIDE;
 
-    bool hasChildren(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QModelIndex index(int, int, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QModelIndex parent(const QModelIndex &) const Q_DECL_OVERRIDE;
-    int columnCount(const QModelIndex &index = QModelIndex()) const Q_DECL_OVERRIDE;
+    bool hasChildren(const QModelIndex& parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QModelIndex index(int, int, const QModelIndex& parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QModelIndex parent(const QModelIndex&) const Q_DECL_OVERRIDE;
+    int columnCount(const QModelIndex& index = QModelIndex()) const Q_DECL_OVERRIDE;
 
     Qt::DropActions supportedDropActions() const Q_DECL_OVERRIDE;
 
     /**
     Reimplemented to match all descendants.
     */
-    QModelIndexList match(const QModelIndex &start, int role, const QVariant &value,
-                                  int hits = 1, Qt::MatchFlags flags = Qt::MatchFlags(Qt::MatchStartsWith | Qt::MatchWrap)) const Q_DECL_OVERRIDE;
+    QModelIndexList match(const QModelIndex& start, int role, const QVariant& value,
+                          int hits = 1, Qt::MatchFlags flags = Qt::MatchFlags(Qt::MatchStartsWith | Qt::MatchWrap)) const Q_DECL_OVERRIDE;
 
 private:
 
@@ -181,30 +181,30 @@ private:
 
 private:
 
-    KDescendantsProxyModelPrivate *d_ptr = nullptr;
+    KDescendantsProxyModelPrivate* d_ptr = nullptr;
 
 private:
 
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeInserted(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsInserted(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeRemoved(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsRemoved(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeMoved(const QModelIndex &, int, int, const QModelIndex &, int))
-    Q_PRIVATE_SLOT(d_func(), void sourceRowsMoved(const QModelIndex &, int, int, const QModelIndex &, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeInserted(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsInserted(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeRemoved(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsRemoved(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsAboutToBeMoved(const QModelIndex&, int, int, const QModelIndex&, int))
+    Q_PRIVATE_SLOT(d_func(), void sourceRowsMoved(const QModelIndex&, int, int, const QModelIndex&, int))
     Q_PRIVATE_SLOT(d_func(), void sourceModelAboutToBeReset())
     Q_PRIVATE_SLOT(d_func(), void sourceModelReset())
     Q_PRIVATE_SLOT(d_func(), void sourceLayoutAboutToBeChanged())
     Q_PRIVATE_SLOT(d_func(), void sourceLayoutChanged())
-    Q_PRIVATE_SLOT(d_func(), void sourceDataChanged(const QModelIndex &, const QModelIndex &))
+    Q_PRIVATE_SLOT(d_func(), void sourceDataChanged(const QModelIndex&, const QModelIndex&))
     Q_PRIVATE_SLOT(d_func(), void sourceModelDestroyed())
 
     Q_PRIVATE_SLOT(d_func(), void processPendingParents())
 
     // Make these private, they shouldn't be called by applications
-//   virtual bool insertRows(int , int, const QModelIndex & = QModelIndex());
-//   virtual bool insertColumns(int, int, const QModelIndex & = QModelIndex());
-//   virtual bool removeRows(int, int, const QModelIndex & = QModelIndex());
-//   virtual bool removeColumns(int, int, const QModelIndex & = QModelIndex());
+    //   virtual bool insertRows(int , int, const QModelIndex & = QModelIndex());
+    //   virtual bool insertColumns(int, int, const QModelIndex & = QModelIndex());
+    //   virtual bool removeRows(int, int, const QModelIndex & = QModelIndex());
+    //   virtual bool removeColumns(int, int, const QModelIndex & = QModelIndex());
 
     //@endcond
 };

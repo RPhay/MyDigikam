@@ -39,8 +39,8 @@ class Q_DECL_HIDDEN MarblePlacemarkModel::Private
 public:
 
     Private()
-      : m_size(0),
-        m_placemarkContainer( nullptr )
+        : m_size(0),
+          m_placemarkContainer(nullptr)
     {
     }
 
@@ -49,16 +49,16 @@ public:
     }
 
     int                             m_size;
-    QVector<GeoDataPlacemark*>     *m_placemarkContainer = nullptr;
+    QVector<GeoDataPlacemark*>*     m_placemarkContainer = nullptr;
 };
 
 // ---------------------------------------------------------------------------
 
-MarblePlacemarkModel::MarblePlacemarkModel( QObject *parent )
-    : QAbstractListModel( parent ),
-      d( new Private )
+MarblePlacemarkModel::MarblePlacemarkModel(QObject* parent)
+    : QAbstractListModel(parent),
+      d(new Private)
 {
-    QHash<int,QByteArray> roles;
+    QHash<int, QByteArray> roles;
     roles[DescriptionRole] = "description";
     roles[Qt::DisplayRole] = "name";
     roles[Qt::DecorationRole] = "icon";
@@ -87,25 +87,35 @@ MarblePlacemarkModel::~MarblePlacemarkModel()
     delete d;
 }
 
-void MarblePlacemarkModel::setPlacemarkContainer( QVector<GeoDataPlacemark*> *container )
+void MarblePlacemarkModel::setPlacemarkContainer(QVector<GeoDataPlacemark*>* container)
 {
     d->m_placemarkContainer = container;
 }
 
-int MarblePlacemarkModel::rowCount( const QModelIndex &parent ) const
+int MarblePlacemarkModel::rowCount(const QModelIndex& parent) const
 {
-    if ( !parent.isValid() )
+    if (!parent.isValid())
+    {
         return d->m_size;
+    }
+
     else
+    {
         return 0;
+    }
 }
 
-int MarblePlacemarkModel::columnCount( const QModelIndex &parent ) const
+int MarblePlacemarkModel::columnCount(const QModelIndex& parent) const
 {
-    if ( !parent.isValid() )
+    if (!parent.isValid())
+    {
         return 1;
+    }
+
     else
+    {
         return 0;
+    }
 }
 
 QHash<int, QByteArray> MarblePlacemarkModel::roleNames() const
@@ -113,63 +123,132 @@ QHash<int, QByteArray> MarblePlacemarkModel::roleNames() const
     return m_roleNames;
 }
 
-QVariant MarblePlacemarkModel::data( const QModelIndex &index, int role ) const
+QVariant MarblePlacemarkModel::data(const QModelIndex& index, int role) const
 {
-    if ( !index.isValid() )
+    if (!index.isValid())
+    {
         return QVariant();
+    }
 
-    if ( index.row() >= d->m_placemarkContainer->size() )
+    if (index.row() >= d->m_placemarkContainer->size())
+    {
         return QVariant();
+    }
 
-    if ( role == Qt::DisplayRole ) {
-        return d->m_placemarkContainer->at( index.row() )->name();
-    } else if ( role == Qt::DecorationRole ) {
-          return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->style()->iconStyle().icon() );
-    } else if ( role == IconPathRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->style()->iconStyle().iconPath() );
-    } else if ( role == PopularityIndexRole ) {
-        return d->m_placemarkContainer->at( index.row() )->zoomLevel();
-    } else if ( role == VisualCategoryRole ) {
-        return d->m_placemarkContainer->at( index.row() )->visualCategory();
-    } else if ( role == AreaRole ) {
-        return d->m_placemarkContainer->at( index.row() )->area();
-    } else if ( role == PopulationRole ) {
-        return d->m_placemarkContainer->at( index.row() )->population();
-    } else if ( role == CountryCodeRole ) {
-        return d->m_placemarkContainer->at( index.row() )->countryCode();
-    } else if ( role == StateRole ) {
-        return d->m_placemarkContainer->at( index.row() )->state();
-    } else if ( role == PopularityRole ) {
-        return d->m_placemarkContainer->at( index.row() )->popularity();
-    } else if ( role == DescriptionRole ) {
-        return d->m_placemarkContainer->at( index.row() )->description();
-    } else if ( role == Qt::ToolTipRole ) {
-        return d->m_placemarkContainer->at( index.row() )->description();
-    } else if ( role == GeoTypeRole ) {
-        return d->m_placemarkContainer->at( index.row() )->role();
-    } else if ( role == CoordinateRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->coordinate() );
-    } else if ( role == StyleRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->style().data() );
-    } else if ( role == GmtRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->extendedData().value(QStringLiteral("gmt")).value() );
-    } else if ( role == DstRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->extendedData().value(QStringLiteral("dst")).value() );
-    } else if ( role == GeometryRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->geometry() );
-    } else if ( role == ObjectPointerRole ) {
-        return QVariant::fromValue( dynamic_cast<GeoDataObject*>( d->m_placemarkContainer->at( index.row() ) ) );
-    } else if ( role == LongitudeRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->coordinate().longitude( GeoDataCoordinates::Degree ) );
-    } else if ( role == LatitudeRole ) {
-        return QVariant::fromValue( d->m_placemarkContainer->at( index.row() )->coordinate().latitude( GeoDataCoordinates::Degree ) );
-    } else
+    if (role == Qt::DisplayRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->name();
+    }
+
+    else if (role == Qt::DecorationRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->style()->iconStyle().icon());
+    }
+
+    else if (role == IconPathRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->style()->iconStyle().iconPath());
+    }
+
+    else if (role == PopularityIndexRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->zoomLevel();
+    }
+
+    else if (role == VisualCategoryRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->visualCategory();
+    }
+
+    else if (role == AreaRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->area();
+    }
+
+    else if (role == PopulationRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->population();
+    }
+
+    else if (role == CountryCodeRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->countryCode();
+    }
+
+    else if (role == StateRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->state();
+    }
+
+    else if (role == PopularityRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->popularity();
+    }
+
+    else if (role == DescriptionRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->description();
+    }
+
+    else if (role == Qt::ToolTipRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->description();
+    }
+
+    else if (role == GeoTypeRole)
+    {
+        return d->m_placemarkContainer->at(index.row())->role();
+    }
+
+    else if (role == CoordinateRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->coordinate());
+    }
+
+    else if (role == StyleRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->style().data());
+    }
+
+    else if (role == GmtRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->extendedData().value(QStringLiteral("gmt")).value());
+    }
+
+    else if (role == DstRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->extendedData().value(QStringLiteral("dst")).value());
+    }
+
+    else if (role == GeometryRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->geometry());
+    }
+
+    else if (role == ObjectPointerRole)
+    {
+        return QVariant::fromValue(dynamic_cast<GeoDataObject*>(d->m_placemarkContainer->at(index.row())));
+    }
+
+    else if (role == LongitudeRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->coordinate().longitude(GeoDataCoordinates::Degree));
+    }
+
+    else if (role == LatitudeRole)
+    {
+        return QVariant::fromValue(d->m_placemarkContainer->at(index.row())->coordinate().latitude(GeoDataCoordinates::Degree));
+    }
+
+    else
+    {
         return QVariant();
+    }
 }
 
-QModelIndexList MarblePlacemarkModel::approxMatch( const QModelIndex & start, int role,
-                                             const QVariant & value, int hits,
-                                             Qt::MatchFlags flags ) const
+QModelIndexList MarblePlacemarkModel::approxMatch(const QModelIndex& start, int role,
+                                                  const QVariant& value, int hits,
+                                                  Qt::MatchFlags flags) const
 {
     QList<QModelIndex> results;
 
@@ -183,55 +262,59 @@ QModelIndexList MarblePlacemarkModel::approxMatch( const QModelIndex & start, in
     int         row = start.row();
     const int   rowNum = rowCount();
 
-    while ( row < rowNum && count != hits ) {
-        if ( flags & Qt::MatchStartsWith ) {
-            entryIndex = index( row, 0 );
-            listName    = data( entryIndex, role ).toString().toLower();
-            simplifiedListName = GeoString::deaccent( listName );
+    while (row < rowNum && count != hits)
+    {
+        if (flags & Qt::MatchStartsWith)
+        {
+            entryIndex = index(row, 0);
+            listName    = data(entryIndex, role).toString().toLower();
+            simplifiedListName = GeoString::deaccent(listName);
 
-            if ( listName.startsWith( queryString )
-                 || simplifiedListName.startsWith( queryString )
-                 )
+            if (listName.startsWith(queryString)
+                || simplifiedListName.startsWith(queryString)
+               )
             {
                 results << entryIndex;
                 ++count;
             }
         }
+
         ++row;
     }
 
     return results;
 }
 
-void MarblePlacemarkModel::addPlacemarks( int start,
-                                          int length )
+void MarblePlacemarkModel::addPlacemarks(int start,
+                                         int length)
 {
     Q_UNUSED(start);
 
-// performance wise a reset is far better when the provided list
-// is significant. That is an issue because we have
-// MarbleControlBox::m_sortproxy as a sorting customer.
-// I leave the balance search as an exercise to the reader...
+    // performance wise a reset is far better when the provided list
+    // is significant. That is an issue because we have
+    // MarbleControlBox::m_sortproxy as a sorting customer.
+    // I leave the balance search as an exercise to the reader...
 
     QElapsedTimer t;
     t.start();
-//    beginInsertRows( QModelIndex(), start, start + length );
+    //    beginInsertRows( QModelIndex(), start, start + length );
     d->m_size += length;
-//    endInsertRows();
+    //    endInsertRows();
     beginResetModel();
     endResetModel();
     Q_EMIT countChanged();
     qCDebug(DIGIKAM_MARBLE_LOG) << "addPlacemarks: Time elapsed:" << t.elapsed() << "ms for" << length << "Placemarks.";
 }
 
-void  MarblePlacemarkModel::removePlacemarks( const QString &containerName,
-                                              int start,
-                                              int length )
+void  MarblePlacemarkModel::removePlacemarks(const QString& containerName,
+                                             int start,
+                                             int length)
 {
-    if ( length > 0 ) {
+    if (length > 0)
+    {
         QElapsedTimer t;
         t.start();
-        beginRemoveRows( QModelIndex(), start, start + length );
+        beginRemoveRows(QModelIndex(), start, start + length);
         d->m_size -= length;
         endRemoveRows();
         Q_EMIT layoutChanged();

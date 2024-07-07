@@ -32,7 +32,7 @@ class GeoDataCoordinates;
 
 namespace
 {
-    unsigned int const invalidElevationData = 32768;
+unsigned int const invalidElevationData = 32768;
 }
 
 class TileId;
@@ -46,11 +46,11 @@ class DIGIKAM_EXPORT ElevationModel : public QObject
 
 public:
 
-    explicit ElevationModel( HttpDownloadManager *downloadManager, PluginManager* pluginManager, QObject *parent = nullptr );
+    explicit ElevationModel(HttpDownloadManager* downloadManager, PluginManager* pluginManager, QObject* parent = nullptr);
     ~ElevationModel() override;
 
-    qreal height( qreal lon, qreal lat ) const;
-    QVector<GeoDataCoordinates> heightProfile( qreal fromLon, qreal fromLat, qreal toLon, qreal toLat ) const;
+    qreal height(qreal lon, qreal lat) const;
+    QVector<GeoDataCoordinates> heightProfile(qreal fromLon, qreal fromLat, qreal toLon, qreal toLat) const;
 
 Q_SIGNALS:
 
@@ -62,7 +62,7 @@ Q_SIGNALS:
 
 private:
 
-    Q_PRIVATE_SLOT( d, void tileCompleted( const TileId&, const QImage& ) )
+    Q_PRIVATE_SLOT(d, void tileCompleted(const TileId&, const QImage&))
 
 private:
 

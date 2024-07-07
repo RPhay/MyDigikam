@@ -79,34 +79,34 @@ public:
     MarbleModelPrivate()
         : m_clock(),
           m_planet(PlanetFactory::construct(QStringLiteral("earth"))),
-          m_sunLocator( &m_clock, &m_planet ),
+          m_sunLocator(&m_clock, &m_planet),
           m_pluginManager(),
-          m_homePoint( -9.4, 54.8, 0.0, GeoDataCoordinates::Degree ),  // Some point that tackat defined. :-)
-          m_homeZoom( 1050 ),
-          m_mapTheme( nullptr ),
-          m_storagePolicy( MarbleDirs::localPath() ),
-          m_downloadManager( &m_storagePolicy ),
-          m_storageWatcher( MarbleDirs::localPath() ),
+          m_homePoint(-9.4, 54.8, 0.0, GeoDataCoordinates::Degree),    // Some point that tackat defined. :-)
+          m_homeZoom(1050),
+          m_mapTheme(nullptr),
+          m_storagePolicy(MarbleDirs::localPath()),
+          m_downloadManager(&m_storagePolicy),
+          m_storageWatcher(MarbleDirs::localPath()),
           m_treeModel(),
           m_descendantProxy(),
           m_placemarkProxyModel(),
-          m_placemarkSelectionModel( nullptr ),
-          m_fileManager( &m_treeModel, &m_pluginManager ),
-          m_trackedPlacemark( nullptr ),
-          m_legend( nullptr ),
-          m_workOffline( false ),
-          m_elevationModel( &m_downloadManager, &m_pluginManager )
+          m_placemarkSelectionModel(nullptr),
+          m_fileManager(&m_treeModel, &m_pluginManager),
+          m_trackedPlacemark(nullptr),
+          m_legend(nullptr),
+          m_workOffline(false),
+          m_elevationModel(&m_downloadManager, &m_pluginManager)
     {
-        m_descendantProxy.setSourceModel( &m_treeModel );
+        m_descendantProxy.setSourceModel(&m_treeModel);
 
-        m_placemarkProxyModel.setFilterFixedString( QString::fromUtf8(GeoDataTypes::GeoDataPlacemarkType) );
-        m_placemarkProxyModel.setFilterKeyColumn( 1 );
-        m_placemarkProxyModel.setSourceModel( &m_descendantProxy );
+        m_placemarkProxyModel.setFilterFixedString(QString::fromUtf8(GeoDataTypes::GeoDataPlacemarkType));
+        m_placemarkProxyModel.setFilterKeyColumn(1);
+        m_placemarkProxyModel.setSourceModel(&m_descendantProxy);
         m_placemarkSelectionModel.setModel(&m_placemarkProxyModel);
 
-        m_groundOverlayProxyModel.setFilterFixedString( QString::fromUtf8(GeoDataTypes::GeoDataGroundOverlayType) );
-        m_groundOverlayProxyModel.setFilterKeyColumn( 1 );
-        m_groundOverlayProxyModel.setSourceModel( &m_descendantProxy );
+        m_groundOverlayProxyModel.setFilterFixedString(QString::fromUtf8(GeoDataTypes::GeoDataGroundOverlayType));
+        m_groundOverlayProxyModel.setFilterKeyColumn(1);
+        m_groundOverlayProxyModel.setSourceModel(&m_descendantProxy);
     }
 
     ~MarbleModelPrivate()
@@ -120,10 +120,10 @@ public:
      * by colorMap attribute under <brush> element
      * in theme file.
      */
-    void assignFillColors( const QString &filePath );
-    void assignFillColors(GeoDataDocument *doc, const GeoSceneGeodata &data) const;
+    void assignFillColors(const QString& filePath);
+    void assignFillColors(GeoDataDocument* doc, const GeoSceneGeodata& data) const;
 
-    void addHighlightStyle(GeoDataDocument *doc) const;
+    void addHighlightStyle(GeoDataDocument* doc) const;
 
     // Misc stuff.
     MarbleClock              m_clock;
@@ -165,21 +165,21 @@ public:
     ElevationModel           m_elevationModel;
 };
 
-MarbleModel::MarbleModel( QObject *parent )
-    : QObject( parent ),
-      d( new MarbleModelPrivate() )
+MarbleModel::MarbleModel(QObject* parent)
+    : QObject(parent),
+      d(new MarbleModelPrivate())
 {
     // connect the StoragePolicy used by the download manager to the FileStorageWatcher
-    connect( &d->m_storagePolicy, SIGNAL(cleared()),
-             &d->m_storageWatcher, SLOT(resetCurrentSize()) );
-    connect( &d->m_storagePolicy, SIGNAL(sizeChanged(qint64)),
-             &d->m_storageWatcher, SLOT(addToCurrentSize(qint64)) );
+    connect(&d->m_storagePolicy, SIGNAL(cleared()),
+            &d->m_storageWatcher, SLOT(resetCurrentSize()));
+    connect(&d->m_storagePolicy, SIGNAL(sizeChanged(qint64)),
+            &d->m_storageWatcher, SLOT(addToCurrentSize(qint64)));
 
-    connect( &d->m_fileManager, SIGNAL(fileAdded(QString)),
-             this, SLOT(assignFillColors(QString)) );
+    connect(&d->m_fileManager, SIGNAL(fileAdded(QString)),
+            this, SLOT(assignFillColors(QString)));
 
     connect(&d->m_clock,   SIGNAL(timeChanged()),
-            &d->m_sunLocator, SLOT(update()) );
+            &d->m_sunLocator, SLOT(update()));
 }
 
 MarbleModel::~MarbleModel()
@@ -194,17 +194,19 @@ QString MarbleModel::mapThemeId() const
     QString mapThemeId;
 
     if (d->m_mapTheme)
+    {
         mapThemeId = d->m_mapTheme->head()->mapThemeId();
+    }
 
     return mapThemeId;
 }
 
-GeoSceneDocument *MarbleModel::mapTheme()
+GeoSceneDocument* MarbleModel::mapTheme()
 {
     return d->m_mapTheme;
 }
 
-const GeoSceneDocument *MarbleModel::mapTheme() const
+const GeoSceneDocument* MarbleModel::mapTheme() const
 {
     return d->m_mapTheme;
 }
@@ -218,21 +220,26 @@ const GeoSceneDocument *MarbleModel::mapTheme() const
 // FIXME: Get rid of 'currentProjection' here.  It's totally misplaced.
 //
 
-void MarbleModel::setMapThemeId( const QString &mapThemeId )
+void MarbleModel::setMapThemeId(const QString& mapThemeId)
 {
-    if ( !mapThemeId.isEmpty() && mapThemeId == this->mapThemeId() )
+    if (!mapThemeId.isEmpty() && mapThemeId == this->mapThemeId())
+    {
         return;
+    }
 
-    GeoSceneDocument *mapTheme = MapThemeManager::loadMapTheme( mapThemeId );
-    setMapTheme( mapTheme );
+    GeoSceneDocument* mapTheme = MapThemeManager::loadMapTheme(mapThemeId);
+    setMapTheme(mapTheme);
 }
 
-void MarbleModel::setMapTheme( GeoSceneDocument *document )
+void MarbleModel::setMapTheme(GeoSceneDocument* document)
 {
-    GeoSceneDocument *mapTheme = document;
-    if ( !mapTheme ) {
+    GeoSceneDocument* mapTheme = document;
+
+    if (!mapTheme)
+    {
         // Check whether the previous theme works
-        if ( d->m_mapTheme ){
+        if (d->m_mapTheme)
+        {
             qCWarning(DIGIKAM_MARBLE_LOG) << "Selected theme doesn't work, so we stick to the previous one";
             return;
         }
@@ -240,27 +247,34 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
         // Fall back to default theme
         QString defaultTheme = QString::fromUtf8("earth/srtm/srtm.dgml");
         qCWarning(DIGIKAM_MARBLE_LOG) << "Falling back to default theme:" << defaultTheme;
-        mapTheme = MapThemeManager::loadMapTheme( defaultTheme );
+        mapTheme = MapThemeManager::loadMapTheme(defaultTheme);
     }
 
     // If this last resort doesn't work either shed a tear and exit
-    if ( !mapTheme ) {
+    if (!mapTheme)
+    {
         qCWarning(DIGIKAM_MARBLE_LOG) << "Couldn't find a valid DGML map.";
         return;
     }
 
     // find the list of previous theme's geodata
     QList<GeoSceneGeodata> currentDatasets;
-    if ( d->m_mapTheme ) {
-        for ( GeoSceneLayer *layer: d->m_mapTheme->map()->layers() ) {
-            if ( layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
-                 && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector) )
+
+    if (d->m_mapTheme)
+    {
+        for (GeoSceneLayer* layer : d->m_mapTheme->map()->layers())
+        {
+            if (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
+                && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector))
+            {
                 continue;
+            }
 
             // look for documents
-            for ( GeoSceneAbstractDataset *dataset: layer->datasets() ) {
-                GeoSceneGeodata *data = dynamic_cast<GeoSceneGeodata*>( dataset );
-                Q_ASSERT( data );
+            for (GeoSceneAbstractDataset* dataset : layer->datasets())
+            {
+                GeoSceneGeodata* data = dynamic_cast<GeoSceneGeodata*>(dataset);
+                Q_ASSERT(data);
                 currentDatasets << *data;
             }
         }
@@ -269,34 +283,39 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
     delete d->m_mapTheme;
     d->m_mapTheme = mapTheme;
 
-    addDownloadPolicies( d->m_mapTheme );
+    addDownloadPolicies(d->m_mapTheme);
 
     // Some output to show how to use this stuff ...
     qCDebug(DIGIKAM_MARBLE_LOG) << "DGML2 Name       : " << d->m_mapTheme->head()->name();
-/*
-    qCDebug(DIGIKAM_MARBLE_LOG) << "DGML2 Description: " << d->m_mapTheme->head()->description();
+    /*
+        qCDebug(DIGIKAM_MARBLE_LOG) << "DGML2 Description: " << d->m_mapTheme->head()->description();
 
-    if ( d->m_mapTheme->map()->hasTextureLayers() )
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Contains texture layers! ";
-    else
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any texture layers! ";
+        if ( d->m_mapTheme->map()->hasTextureLayers() )
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Contains texture layers! ";
+        else
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any texture layers! ";
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
+        qCDebug(DIGIKAM_MARBLE_LOG) << "Number of SRTM textures: " << d->m_mapTheme->map()->layer("srtm")->datasets().count();
 
-    if ( d->m_mapTheme->map()->hasVectorLayers() )
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Contains vector layers! ";
-    else
-        qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any vector layers! ";
-*/
+        if ( d->m_mapTheme->map()->hasVectorLayers() )
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Contains vector layers! ";
+        else
+            qCDebug(DIGIKAM_MARBLE_LOG) << "Does not contain any vector layers! ";
+    */
     //Don't change the planet unless we have to...
     qreal const radiusAttributeValue = d->m_mapTheme->head()->radius();
-    if( d->m_mapTheme->head()->target().toLower() != d->m_planet.id() || radiusAttributeValue != d->m_planet.radius() ) {
+
+    if (d->m_mapTheme->head()->target().toLower() != d->m_planet.id() || radiusAttributeValue != d->m_planet.radius())
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Changing Planet";
         d->m_planet = PlanetFactory::construct(d->m_mapTheme->head()->target().toLower());
-        if ( radiusAttributeValue > 0.0 ) {
-            d->m_planet.setRadius( radiusAttributeValue );
+
+        if (radiusAttributeValue > 0.0)
+        {
+            d->m_planet.setRadius(radiusAttributeValue);
         }
-        sunLocator()->setPlanet( &d->m_planet );
+
+        sunLocator()->setPlanet(&d->m_planet);
     }
 
     QStringList fileList;
@@ -304,41 +323,55 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
     QList<GeoDataStyle::Ptr> styleList;
     QList<int> renderOrderList;
 
-    for ( GeoSceneLayer *layer: d->m_mapTheme->map()->layers() ) {
-        if ( layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
-             && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector) )
+    for (GeoSceneLayer* layer : d->m_mapTheme->map()->layers())
+    {
+        if (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
+            && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector))
+        {
             continue;
+        }
 
         // look for datasets which are different from currentDatasets
-        for ( const GeoSceneAbstractDataset *dataset: layer->datasets() ) {
-            const GeoSceneGeodata *data = dynamic_cast<const GeoSceneGeodata*>( dataset );
-            Q_ASSERT( data );
+        for (const GeoSceneAbstractDataset* dataset : layer->datasets())
+        {
+            const GeoSceneGeodata* data = dynamic_cast<const GeoSceneGeodata*>(dataset);
+            Q_ASSERT(data);
             bool skip = false;
-            GeoDataDocument *doc = nullptr;
-            for ( int i = 0; i < currentDatasets.size(); ++i ) {
-                if ( currentDatasets[i] == *data ) {
-                    currentDatasets.removeAt( i );
+            GeoDataDocument* doc = nullptr;
+
+            for (int i = 0; i < currentDatasets.size(); ++i)
+            {
+                if (currentDatasets[i] == *data)
+                {
+                    currentDatasets.removeAt(i);
                     skip = true;
                     break;
                 }
+
                 /*
                  * If the sourcefile of data matches any in the currentDatasets then there
                  * is no need to parse the file again just update the style
                  * i.e. <brush> and <pen> values of already parsed file. assignNewStyle() does that
                  */
-                if ( currentDatasets[i].sourceFile() == data->sourceFile() ) {
+                if (currentDatasets[i].sourceFile() == data->sourceFile())
+                {
                     doc = d->m_fileManager.at(data->sourceFile());
                     currentDatasets.removeAt(i);
                 }
             }
-            if ( skip ) {
+
+            if (skip)
+            {
                 continue;
             }
 
-            if (doc) {
+            if (doc)
+            {
                 d->assignFillColors(doc, *data);
             }
-            else {
+
+            else
+            {
                 const QString filename = data->sourceFile();
                 const QString property = data->property();
                 const QPen pen = data->pen();
@@ -354,15 +387,16 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
                  * send an empty style to fileManeger otherwise the FileLoader::createFilterProperties()
                  * will overwrite the parsed value of color index ( GeoDataPolyStyle::d->m_colorIndex ).
                  */
-                if ( data->colors().isEmpty() ) {
-                    GeoDataLineStyle lineStyle( pen.color() );
-                    lineStyle.setPenStyle( pen.style() );
-                    lineStyle.setWidth( pen.width() );
-                    GeoDataPolyStyle polyStyle( brush.color() );
-                    polyStyle.setFill( true );
+                if (data->colors().isEmpty())
+                {
+                    GeoDataLineStyle lineStyle(pen.color());
+                    lineStyle.setPenStyle(pen.style());
+                    lineStyle.setWidth(pen.width());
+                    GeoDataPolyStyle polyStyle(brush.color());
+                    polyStyle.setFill(true);
                     style = GeoDataStyle::Ptr(new GeoDataStyle);
-                    style->setLineStyle( lineStyle );
-                    style->setPolyStyle( polyStyle );
+                    style->setLineStyle(lineStyle);
+                    style->setPolyStyle(polyStyle);
                     style->setId(QStringLiteral("default"));
                 }
 
@@ -373,22 +407,27 @@ void MarbleModel::setMapTheme( GeoSceneDocument *document )
             }
         }
     }
+
     // unload old currentDatasets which are not part of the new map
-    for(const GeoSceneGeodata &data: currentDatasets) {
-        d->m_fileManager.removeFile( data.sourceFile() );
+    for (const GeoSceneGeodata& data : currentDatasets)
+    {
+        d->m_fileManager.removeFile(data.sourceFile());
     }
+
     // load new datasets
-    for ( int i = 0 ; i < fileList.size(); ++i ) {
-        d->m_fileManager.addFile( fileList.at(i), propertyList.at(i), styleList.at(i), MapDocument, renderOrderList.at(i) );
+    for (int i = 0 ; i < fileList.size(); ++i)
+    {
+        d->m_fileManager.addFile(fileList.at(i), propertyList.at(i), styleList.at(i), MapDocument, renderOrderList.at(i));
     }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "THEME CHANGED: ***" << mapTheme->head()->mapThemeId();
-    Q_EMIT themeChanged( mapTheme->head()->mapThemeId() );
+    Q_EMIT themeChanged(mapTheme->head()->mapThemeId());
 }
 
-void MarbleModelPrivate::addHighlightStyle(GeoDataDocument *doc) const
+void MarbleModelPrivate::addHighlightStyle(GeoDataDocument* doc) const
 {
-    if ( doc ) {
+    if (doc)
+    {
         /*
          * Add a highlight style to GeoDataDocument if
          *the theme file specifies any highlight color.
@@ -399,94 +438,98 @@ void MarbleModelPrivate::addHighlightStyle(GeoDataDocument *doc) const
         GeoDataStyle::Ptr highlightStyle(new GeoDataStyle);
         highlightStyle->setId(QStringLiteral("highlight"));
 
-        if ( highlightBrushColor.isValid() ) {
+        if (highlightBrushColor.isValid())
+        {
             GeoDataPolyStyle highlightPolyStyle;
-            highlightPolyStyle.setColor( highlightBrushColor );
-            highlightPolyStyle.setFill( true );
-            highlightStyle->setPolyStyle( highlightPolyStyle );
+            highlightPolyStyle.setColor(highlightBrushColor);
+            highlightPolyStyle.setFill(true);
+            highlightStyle->setPolyStyle(highlightPolyStyle);
         }
-        if ( highlightPenColor.isValid() ) {
-            GeoDataLineStyle highlightLineStyle( highlightPenColor );
-            highlightStyle->setLineStyle( highlightLineStyle );
+
+        if (highlightPenColor.isValid())
+        {
+            GeoDataLineStyle highlightLineStyle(highlightPenColor);
+            highlightStyle->setLineStyle(highlightLineStyle);
         }
-        if ( highlightBrushColor.isValid()
-            || highlightPenColor.isValid() )
+
+        if (highlightBrushColor.isValid()
+            || highlightPenColor.isValid())
         {
             GeoDataStyleMap styleMap = doc->styleMap(QStringLiteral("default-map"));
             styleMap.insert(QStringLiteral("highlight"), QLatin1Char('#') + highlightStyle->id());
-            doc->addStyle( highlightStyle );
-            doc->addStyleMap( styleMap );
+            doc->addStyle(highlightStyle);
+            doc->addStyleMap(styleMap);
         }
     }
 }
 
-void MarbleModel::home( qreal &lon, qreal &lat, int& zoom ) const
+void MarbleModel::home(qreal& lon, qreal& lat, int& zoom) const
 {
-    d->m_homePoint.geoCoordinates( lon, lat, GeoDataCoordinates::Degree );
+    d->m_homePoint.geoCoordinates(lon, lat, GeoDataCoordinates::Degree);
     zoom = d->m_homeZoom;
 }
 
-void MarbleModel::setHome( qreal lon, qreal lat, int zoom )
+void MarbleModel::setHome(qreal lon, qreal lat, int zoom)
 {
-    d->m_homePoint = GeoDataCoordinates( lon, lat, 0, GeoDataCoordinates::Degree );
+    d->m_homePoint = GeoDataCoordinates(lon, lat, 0, GeoDataCoordinates::Degree);
     d->m_homeZoom = zoom;
-    Q_EMIT homeChanged( d->m_homePoint );
+    Q_EMIT homeChanged(d->m_homePoint);
 }
 
-void MarbleModel::setHome( const GeoDataCoordinates& homePoint, int zoom )
+void MarbleModel::setHome(const GeoDataCoordinates& homePoint, int zoom)
 {
     d->m_homePoint = homePoint;
     d->m_homeZoom = zoom;
-    Q_EMIT homeChanged( d->m_homePoint );
+    Q_EMIT homeChanged(d->m_homePoint);
 }
 
-HttpDownloadManager *MarbleModel::downloadManager()
+HttpDownloadManager* MarbleModel::downloadManager()
 {
     return &d->m_downloadManager;
 }
 
-const HttpDownloadManager *MarbleModel::downloadManager() const
+const HttpDownloadManager* MarbleModel::downloadManager() const
 {
     return &d->m_downloadManager;
 }
 
 
-GeoDataTreeModel *MarbleModel::treeModel()
+GeoDataTreeModel* MarbleModel::treeModel()
 {
     return &d->m_treeModel;
 }
 
-const GeoDataTreeModel *MarbleModel::treeModel() const
+const GeoDataTreeModel* MarbleModel::treeModel() const
 {
     return &d->m_treeModel;
 }
 
-QAbstractItemModel *MarbleModel::placemarkModel()
+QAbstractItemModel* MarbleModel::placemarkModel()
 {
     return &d->m_placemarkProxyModel;
 }
 
-const QAbstractItemModel *MarbleModel::placemarkModel() const
+const QAbstractItemModel* MarbleModel::placemarkModel() const
 {
     return &d->m_placemarkProxyModel;
 }
 
-QAbstractItemModel *MarbleModel::groundOverlayModel()
+QAbstractItemModel* MarbleModel::groundOverlayModel()
 {
     return &d->m_groundOverlayProxyModel;
 }
 
-const QAbstractItemModel *MarbleModel::groundOverlayModel() const
+const QAbstractItemModel* MarbleModel::groundOverlayModel() const
 {
     return &d->m_groundOverlayProxyModel;
 }
 
-QItemSelectionModel *MarbleModel::placemarkSelectionModel()
+QItemSelectionModel* MarbleModel::placemarkSelectionModel()
 {
     return &d->m_placemarkSelectionModel;
 }
 
-FileManager *MarbleModel::fileManager()
+FileManager* MarbleModel::fileManager()
 {
     return &d->m_fileManager;
 }
@@ -506,22 +549,22 @@ QString MarbleModel::planetId() const
     return d->m_planet.id();
 }
 
-MarbleClock *MarbleModel::clock()
+MarbleClock* MarbleModel::clock()
 {
     return &d->m_clock;
 }
 
-const MarbleClock *MarbleModel::clock() const
+const MarbleClock* MarbleModel::clock() const
 {
     return &d->m_clock;
 }
 
-SunLocator *MarbleModel::sunLocator()
+SunLocator* MarbleModel::sunLocator()
 {
     return &d->m_sunLocator;
 }
 
-const SunLocator *MarbleModel::sunLocator() const
+const SunLocator* MarbleModel::sunLocator() const
 {
     return &d->m_sunLocator;
 }
@@ -536,7 +579,8 @@ void MarbleModel::clearPersistentTileCache()
     d->m_storagePolicy.clearCache();
 
     // Now create base tiles again if needed
-    if ( d->m_mapTheme->map()->hasTextureLayers() || d->m_mapTheme->map()->hasVectorLayers() ) {
+    if (d->m_mapTheme->map()->hasTextureLayers() || d->m_mapTheme->map()->hasVectorLayers())
+    {
         // If the tiles aren't already there, put up a progress dialog
         // while creating them.
 
@@ -544,31 +588,31 @@ void MarbleModel::clearPersistentTileCache()
         // the name of the layer that has the same name as the theme ID
         QString themeID = d->m_mapTheme->head()->theme();
 
-        const GeoSceneLayer *layer =
-            static_cast<const GeoSceneLayer*>( d->m_mapTheme->map()->layer( themeID ) );
-        const GeoSceneTileDataset *texture =
-            static_cast<const GeoSceneTileDataset*>( layer->groundDataset() );
+        const GeoSceneLayer* layer =
+            static_cast<const GeoSceneLayer*>(d->m_mapTheme->map()->layer(themeID));
+        const GeoSceneTileDataset* texture =
+            static_cast<const GeoSceneTileDataset*>(layer->groundDataset());
 
         QString sourceDir = texture->sourceDir();
         QString installMap = texture->installMap();
-        QString role = d->m_mapTheme->map()->layer( themeID )->role();
+        QString role = d->m_mapTheme->map()->layer(themeID)->role();
 
-        if ( !TileLoader::baseTilesAvailable( *texture )
-            && !installMap.isEmpty() )
+        if (!TileLoader::baseTilesAvailable(*texture)
+            && !installMap.isEmpty())
         {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles not available. Creating Tiles ... \n"
-                     << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
+                                        << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
             MarbleDirs::debug();
 
-            TileCreator *tileCreator = new TileCreator(
-                                     sourceDir,
-                                     installMap,
-                                     (role == QLatin1String("dem")) ? QString::fromUtf8("true") : QString::fromUtf8("false") );
-            tileCreator->setTileFormat( texture->fileFormat().toLower() );
+            TileCreator* tileCreator = new TileCreator(
+                sourceDir,
+                installMap,
+                (role == QLatin1String("dem")) ? QString::fromUtf8("true") : QString::fromUtf8("false"));
+            tileCreator->setTileFormat(texture->fileFormat().toLower());
 
-            QPointer<TileCreatorDialog> tileCreatorDlg = new TileCreatorDialog( tileCreator, nullptr );
-            tileCreatorDlg->setSummary( d->m_mapTheme->head()->name(),
-                                        d->m_mapTheme->head()->description() );
+            QPointer<TileCreatorDialog> tileCreatorDlg = new TileCreatorDialog(tileCreator, nullptr);
+            tileCreatorDlg->setSummary(d->m_mapTheme->head()->name(),
+                                       d->m_mapTheme->head()->description());
             tileCreatorDlg->exec();
             qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Tile creation completed");
             delete tileCreatorDlg;
@@ -578,24 +622,28 @@ void MarbleModel::clearPersistentTileCache()
 
 void MarbleModel::setPersistentTileCacheLimit(quint64 kiloBytes)
 {
-    d->m_storageWatcher.setCacheLimit( kiloBytes * 1024 );
+    d->m_storageWatcher.setCacheLimit(kiloBytes * 1024);
 
-    if( kiloBytes != 0 )
+    if (kiloBytes != 0)
     {
-        if( !d->m_storageWatcher.isRunning() )
-            d->m_storageWatcher.start( QThread::IdlePriority );
+        if (!d->m_storageWatcher.isRunning())
+        {
+            d->m_storageWatcher.start(QThread::IdlePriority);
+        }
     }
+
     else
     {
         d->m_storageWatcher.quit();
     }
+
     // TODO: trigger update
 }
 
-void MarbleModel::setTrackedPlacemark( const GeoDataPlacemark *placemark )
+void MarbleModel::setTrackedPlacemark(const GeoDataPlacemark* placemark)
 {
     d->m_trackedPlacemark = placemark;
-    Q_EMIT trackedPlacemarkChanged( placemark );
+    Q_EMIT trackedPlacemarkChanged(placemark);
 }
 
 const GeoDataPlacemark* MarbleModel::trackedPlacemark() const
@@ -613,40 +661,53 @@ PluginManager* MarbleModel::pluginManager()
     return &d->m_pluginManager;
 }
 
-const Planet *MarbleModel::planet() const
+const Planet* MarbleModel::planet() const
 {
     return &d->m_planet;
 }
 
-void MarbleModel::addDownloadPolicies( const GeoSceneDocument *mapTheme )
+void MarbleModel::addDownloadPolicies(const GeoSceneDocument* mapTheme)
 {
-    if ( !mapTheme )
+    if (!mapTheme)
+    {
         return;
-    if ( !mapTheme->map()->hasTextureLayers() && !mapTheme->map()->hasVectorLayers() )
+    }
+
+    if (!mapTheme->map()->hasTextureLayers() && !mapTheme->map()->hasVectorLayers())
+    {
         return;
+    }
 
     // As long as we don't have an Layer Management Class we just lookup
     // the name of the layer that has the same name as the theme ID
     const QString themeId = mapTheme->head()->theme();
-    const GeoSceneLayer * const layer = static_cast<const GeoSceneLayer*>( mapTheme->map()->layer( themeId ));
-    if ( !layer )
-        return;
+    const GeoSceneLayer* const layer = static_cast<const GeoSceneLayer*>(mapTheme->map()->layer(themeId));
 
-    const GeoSceneTileDataset * const texture = static_cast<const GeoSceneTileDataset*>( layer->groundDataset() );
-    if ( !texture )
+    if (!layer)
+    {
         return;
+    }
 
-    QList<const DownloadPolicy *> policies = texture->downloadPolicies();
-    QList<const DownloadPolicy *>::const_iterator pos = policies.constBegin();
-    QList<const DownloadPolicy *>::const_iterator const end = policies.constEnd();
-    for (; pos != end; ++pos ) {
-        d->m_downloadManager.addDownloadPolicy( **pos );
+    const GeoSceneTileDataset* const texture = static_cast<const GeoSceneTileDataset*>(layer->groundDataset());
+
+    if (!texture)
+    {
+        return;
+    }
+
+    QList<const DownloadPolicy*> policies = texture->downloadPolicies();
+    QList<const DownloadPolicy*>::const_iterator pos = policies.constBegin();
+    QList<const DownloadPolicy*>::const_iterator const end = policies.constEnd();
+
+    for (; pos != end; ++pos)
+    {
+        d->m_downloadManager.addDownloadPolicy(**pos);
     }
 }
 
-void MarbleModel::setClockDateTime( const QDateTime& datetime )
+void MarbleModel::setClockDateTime(const QDateTime& datetime)
 {
-    d->m_clock.setDateTime( datetime );
+    d->m_clock.setDateTime(datetime);
 }
 
 QDateTime MarbleModel::clockDateTime() const
@@ -659,14 +720,14 @@ int MarbleModel::clockSpeed() const
     return d->m_clock.speed();
 }
 
-void MarbleModel::setClockSpeed( int speed )
+void MarbleModel::setClockSpeed(int speed)
 {
-    d->m_clock.setSpeed( speed );
+    d->m_clock.setSpeed(speed);
 }
 
-void MarbleModel::setClockTimezone( int timeInSec )
+void MarbleModel::setClockTimezone(int timeInSec)
 {
-    d->m_clock.setTimezone( timeInSec );
+    d->m_clock.setTimezone(timeInSec);
 }
 
 int MarbleModel::clockTimezone() const
@@ -674,142 +735,168 @@ int MarbleModel::clockTimezone() const
     return d->m_clock.timezone();
 }
 
-QTextDocument * MarbleModel::legend()
+QTextDocument* MarbleModel::legend()
 {
     return d->m_legend;
 }
 
-void MarbleModel::setLegend( QTextDocument * legend )
+void MarbleModel::setLegend(QTextDocument* legend)
 {
     delete d->m_legend;
     d->m_legend = legend;
 }
 
-void MarbleModel::addGeoDataFile( const QString& filename )
+void MarbleModel::addGeoDataFile(const QString& filename)
 {
-    d->m_fileManager.addFile( filename, filename, GeoDataStyle::Ptr(), UserDocument, 0, true );
+    d->m_fileManager.addFile(filename, filename, GeoDataStyle::Ptr(), UserDocument, 0, true);
 }
 
-void MarbleModel::addGeoDataString( const QString& data, const QString& key )
+void MarbleModel::addGeoDataString(const QString& data, const QString& key)
 {
-    d->m_fileManager.addData( key, data, UserDocument );
+    d->m_fileManager.addData(key, data, UserDocument);
 }
 
-void MarbleModel::removeGeoData( const QString& fileName )
+void MarbleModel::removeGeoData(const QString& fileName)
 {
-    d->m_fileManager.removeFile( fileName );
+    d->m_fileManager.removeFile(fileName);
 }
 
-void MarbleModel::updateProperty( const QString &property, bool value )
+void MarbleModel::updateProperty(const QString& property, bool value)
 {
-    for( GeoDataFeature *feature: d->m_treeModel.rootDocument()->featureList()) {
-        if (auto document = geodata_cast<GeoDataDocument>(feature)) {
-            if( document->property() == property ){
-                document->setVisible( value );
-                d->m_treeModel.updateFeature( document );
+    for (GeoDataFeature* feature : d->m_treeModel.rootDocument()->featureList())
+    {
+        if (auto document = geodata_cast<GeoDataDocument>(feature))
+        {
+            if (document->property() == property)
+            {
+                document->setVisible(value);
+                d->m_treeModel.updateFeature(document);
             }
         }
     }
 }
 
-void MarbleModelPrivate::assignFillColors(const QString &filePath)
+void MarbleModelPrivate::assignFillColors(const QString& filePath)
 {
-    const GeoSceneGeodata *data = nullptr;
+    const GeoSceneGeodata* data = nullptr;
 
-    for (auto layer : m_mapTheme->map()->layers()) {
+    for (auto layer : m_mapTheme->map()->layers())
+    {
         if (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)
-            && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector)) {
+            && layer->backend() != QString::fromUtf8(dgml::dgmlValue_vector))
+        {
             continue;
         }
 
-        for (auto dataset: layer->datasets()) {
-            auto sceneData = dynamic_cast<const GeoSceneGeodata *>(dataset);
-            if (sceneData != nullptr && sceneData->sourceFile() == filePath) {
+        for (auto dataset : layer->datasets())
+        {
+            auto sceneData = dynamic_cast<const GeoSceneGeodata*>(dataset);
+
+            if (sceneData != nullptr && sceneData->sourceFile() == filePath)
+            {
                 data = sceneData;
                 break;
             }
         }
 
-        if (data) {
+        if (data)
+        {
             break;
         }
     }
 
-    if (data == nullptr) {
+    if (data == nullptr)
+    {
         return;
     }
 
-    GeoDataDocument *doc = m_fileManager.at(filePath);
-    Q_ASSERT( doc );
+    GeoDataDocument* doc = m_fileManager.at(filePath);
+    Q_ASSERT(doc);
 
     assignFillColors(doc, *data);
 }
 
-void MarbleModelPrivate::assignFillColors(GeoDataDocument *doc, const GeoSceneGeodata &data) const
+void MarbleModelPrivate::assignFillColors(GeoDataDocument* doc, const GeoSceneGeodata& data) const
 {
-    addHighlightStyle( doc );
+    addHighlightStyle(doc);
 
     const QPen pen = data.pen();
     const QBrush brush = data.brush();
     const QVector<QColor> colors = data.colors();
-    GeoDataLineStyle lineStyle( pen.color() );
-    lineStyle.setPenStyle( pen.style() );
-    lineStyle.setWidth( pen.width() );
+    GeoDataLineStyle lineStyle(pen.color());
+    lineStyle.setPenStyle(pen.style());
+    lineStyle.setWidth(pen.width());
 
-    if (!colors.isEmpty()) {
+    if (!colors.isEmpty())
+    {
         const qreal alpha = data.alpha();
-        for (auto feature : *doc) {
+
+        for (auto feature : *doc)
+        {
             auto placemark = geodata_cast<GeoDataPlacemark>(feature);
-            if (placemark == nullptr) {
+
+            if (placemark == nullptr)
+            {
                 continue;
             }
 
             GeoDataStyle::Ptr style(new GeoDataStyle);
             style->setId(QStringLiteral("normal"));
-            style->setLineStyle( lineStyle );
+            style->setLineStyle(lineStyle);
             quint8 colorIndex = placemark->style()->polyStyle().colorIndex();
             GeoDataPolyStyle polyStyle;
             // Set the colorIndex so that it's not lost after setting new style.
-            polyStyle.setColorIndex( colorIndex );
+            polyStyle.setColorIndex(colorIndex);
             QColor color;
             // color index having value 99 is undefined
-            Q_ASSERT( colors.size() );
-            if (colorIndex > colors.size() || (colorIndex - 1) < 0) {
+            Q_ASSERT(colors.size());
+
+            if (colorIndex > colors.size() || (colorIndex - 1) < 0)
+            {
                 color = colors[0];      // Assign the first color as default
             }
-            else {
-                color = colors[colorIndex-1];
+
+            else
+            {
+                color = colors[colorIndex - 1];
             }
-            color.setAlphaF( alpha );
-            polyStyle.setColor( color );
-            polyStyle.setFill( true );
-            style->setPolyStyle( polyStyle );
-            placemark->setStyle( style );
+
+            color.setAlphaF(alpha);
+            polyStyle.setColor(color);
+            polyStyle.setFill(true);
+            style->setPolyStyle(polyStyle);
+            placemark->setStyle(style);
         }
     }
-    else {
+
+    else
+    {
         GeoDataStyle::Ptr style(new GeoDataStyle);
-        GeoDataPolyStyle polyStyle( brush.color() );
-        polyStyle.setFill( true );
-        style->setLineStyle( lineStyle );
-        style->setPolyStyle( polyStyle );
+        GeoDataPolyStyle polyStyle(brush.color());
+        polyStyle.setFill(true);
+        style->setLineStyle(lineStyle);
+        style->setPolyStyle(polyStyle);
         style->setId(QStringLiteral("default"));
         GeoDataStyleMap styleMap;
         styleMap.setId(QStringLiteral("default-map"));
         styleMap.insert(QStringLiteral("normal"), QLatin1Char('#') + style->id());
-        doc->addStyle( style );
-        doc->addStyleMap( styleMap );
+        doc->addStyle(style);
+        doc->addStyleMap(styleMap);
 
         const QString styleUrl = QLatin1Char('#') + styleMap.id();
 
-        for (auto feature : *doc) {
+        for (auto feature : *doc)
+        {
             auto placemark = geodata_cast<GeoDataPlacemark>(feature);
-            if (placemark == nullptr) {
+
+            if (placemark == nullptr)
+            {
                 continue;
             }
 
             if (geodata_cast<GeoDataTrack>(placemark->geometry()) ||
-                geodata_cast<GeoDataPoint>(placemark->geometry())) {
+                geodata_cast<GeoDataPoint>(placemark->geometry()))
+            {
                 continue;
             }
 
@@ -823,10 +910,11 @@ bool MarbleModel::workOffline() const
     return d->m_workOffline;
 }
 
-void MarbleModel::setWorkOffline( bool workOffline )
+void MarbleModel::setWorkOffline(bool workOffline)
 {
-    if ( d->m_workOffline != workOffline ) {
-        downloadManager()->setDownloadEnabled( !workOffline );
+    if (d->m_workOffline != workOffline)
+    {
+        downloadManager()->setDownloadEnabled(!workOffline);
 
         d->m_workOffline = workOffline;
         Q_EMIT workOfflineChanged();

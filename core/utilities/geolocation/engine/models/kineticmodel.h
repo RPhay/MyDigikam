@@ -35,7 +35,7 @@ class KineticModel: public QObject
 
 public:
 
-    explicit KineticModel(QObject *parent = nullptr);
+    explicit KineticModel(QObject* parent = nullptr);
     ~KineticModel() override;
 
     int duration() const;
@@ -57,8 +57,8 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void positionChanged( qreal lon, qreal lat );
-    void headingChanged( qreal heading );
+    void positionChanged(qreal lon, qreal lat);
+    void headingChanged(qreal heading);
     void finished();
 
 private Q_SLOTS:
