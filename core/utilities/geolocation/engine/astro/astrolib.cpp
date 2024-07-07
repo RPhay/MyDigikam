@@ -32,6 +32,9 @@ using namespace std;
 
 #include "astrolib.h"
 
+namespace Marble
+{
+
 double frac(double f)
 {
     return fmod(f, 1.0);
@@ -2916,4 +2919,4 @@ int Eclipse::lunar(double jd, double tdut)
     return phase;
 }
 
-
+} // namespace Marble

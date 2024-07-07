@@ -27,6 +27,9 @@
 
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 DIGIKAM_EXPORT double atan20(double y, double x);
 
 class DIGIKAM_EXPORT Vec3
@@ -114,3 +117,5 @@ Mat3 csmx(double p, double y, double r);  // pitch/yaw/roll matrix
 void vcpy(Vec3& v, double& p, double& y);  // get pitch and yaw from vector
 void vcrp(Vec3& v, double& p, double& r);  // get pitch and roll from vector
 Mat3 mxrox(double& a, Vec3& v);   // get matrix from eigenvector and angle
+
+} // namespace Marble

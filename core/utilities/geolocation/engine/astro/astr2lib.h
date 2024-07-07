@@ -19,10 +19,12 @@
 
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 /**
  * Definitions of Astr2lib Functions
  */
-
 class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 coordinates
 {
 public:
@@ -74,3 +76,5 @@ DIGIKAM_EXPORT void SatRhea(double t, Vec3& rs, Vec3& vs);    // state vector of
 DIGIKAM_EXPORT void SatTitan(double t, Vec3& rs, Vec3& vs);   // state vector of Titan
 DIGIKAM_EXPORT void NepTriton(double t, Vec3& rs, Vec3& vs);  // state vector of Triton
 DIGIKAM_EXPORT void PluCharon(double t, Vec3& rs, Vec3& vs);  // state vector of Charon
+
+} // namespace Marble

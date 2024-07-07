@@ -32,6 +32,9 @@ using namespace std;
 
 #include "astrolib.h"
 
+namespace Marble
+{
+
 extern double frac(double f);
 extern double atan21(double y, double x);
 
@@ -2284,3 +2287,5 @@ void PluCharon(double t, Vec3& rs, Vec3& vs)
     vs =   equecl(t, vs);
 
 }
+
+} // namespace Marble

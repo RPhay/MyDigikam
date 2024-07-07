@@ -19,6 +19,9 @@
 
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 /**
  * Definitions of Astrolib Functions
  */
@@ -161,3 +164,5 @@ private:
 
     void equ_sun_moon(double jd, double tdut);
 };
+
+} // namespace Marble

@@ -20,6 +20,9 @@
 #include "attlib.h"
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 class DIGIKAM_EXPORT PlanetarySats     // Calculate spacecraft around other planets
 {
 public:
@@ -110,3 +113,5 @@ private:
     double pls_lng;  // planetary longitude (decimal degrees)
     double pls_height; // height above reference ellipsoid (km)
 };
+
+} // namespace Marble

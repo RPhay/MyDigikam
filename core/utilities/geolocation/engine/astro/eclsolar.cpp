@@ -46,6 +46,9 @@ using namespace std;
 
 #include "astrolib.h"
 
+namespace Marble
+{
+
 const double degrad = M_PI / 180.0;
 
 // ################ Solar Eclipse Class ####################
@@ -3979,5 +3982,6 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
             break;
         }
     }
-
 }
+
+} // namespace Marble

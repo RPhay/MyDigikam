@@ -20,6 +20,9 @@
 #include "attlib.h"
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 const int GBL_ECLBUF = 12;  // maximum number of eclipses allowed
 const int MAXLUN     = 15;
 
@@ -164,3 +167,5 @@ private:
     Vec3 eb_lbe;  // Shadod base vector for lower boundary
     Vec3 eb_lde;  // Shadow delta vector for lower boundary
 };
+
+} // namespace Marble

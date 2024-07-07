@@ -47,6 +47,9 @@ using namespace std;
 #include "astrolib.h"
 #include "astr2lib.h"
 
+namespace Marble
+{
+
 const double degrad = M_PI / 180.0;
 
 // ################ Solar Eclipse Class ####################
@@ -3197,5 +3200,6 @@ double SolarSystem::getAsteroidMag(double h, double g)
     ra = h + 5.0 * log10(ra * decl) + g * t;
 
     return ra;
-
 }
+
+} // namespace Marble

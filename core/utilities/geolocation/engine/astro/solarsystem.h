@@ -20,6 +20,9 @@
 #include "attlib.h"
 #include "digikam_export.h"
 
+namespace Marble
+{
+
 class DIGIKAM_EXPORT SolarSystem     // Calculate Positions of Solar System Bodies
 {
 public:
@@ -225,3 +228,5 @@ private:
     double ss_eclep; // epoch of ecliptic and equator for these elements
     Vec3 ss_comet;  // position vector of comet or asteroid in AU
 };
+
+} // namespace Marble

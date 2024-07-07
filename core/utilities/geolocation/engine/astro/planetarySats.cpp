@@ -34,6 +34,9 @@ using namespace std;
 
 #include "astrolib.h"
 
+namespace Marble
+{
+
 // ################ Planetary Sats Class ####################
 
 PlanetarySats::PlanetarySats()
@@ -927,3 +930,4 @@ Mat3 PlanetarySats::getSelenographic(double jd)
     return m1;
 }
 
+} // namespace Marble

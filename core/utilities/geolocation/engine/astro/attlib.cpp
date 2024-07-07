@@ -25,7 +25,9 @@
 
 using namespace std;
 
-/*********************************************************************/
+namespace Marble
+{
+
 double atan20(double y, double x)
 {
     /* redefine atan2 so that it doesn't crash when both x and y are 0 */
@@ -43,7 +45,6 @@ double atan20(double y, double x)
 
     return result;
 }
-
 
 Vec3::Vec3(double x, double y, double z)
 {
@@ -612,7 +613,6 @@ Mat3 operator * (double r, const Mat3& c1)
     return result;
 }
 
-
 Mat3 operator * (const Mat3& c1, double r)
 {
     int i, j;
@@ -872,7 +872,6 @@ Mat3 mxrox(double& a, Vec3& v)
     return result;
 }
 
-
 ostream& operator << (ostream& os, const Mat3& c)
 {
     os << "[" << c.m[0][0] << "," << c.m[0][1] << "," << c.m[0][2] << "]" << endl
@@ -881,3 +880,4 @@ ostream& operator << (ostream& os, const Mat3& c)
     return os;
 }
 
+} // namespace Marble

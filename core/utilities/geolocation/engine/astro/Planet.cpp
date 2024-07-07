@@ -46,8 +46,7 @@ public:
     QColor  atmosphereColor;
 
     PlanetPrivate()
-        :
-        M_0(0.0),
+      : M_0(0.0),
         M_1(0.0),
         C_1(0.0),
         C_2(0.0),
