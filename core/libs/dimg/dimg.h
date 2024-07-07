@@ -717,8 +717,8 @@ public:
      *
      * Version 3: This methods return a 128-bit MD5 hex digest which is meant to uniquely
      * identify the file. It cannot be used to find similar images.
-     * The hash is calculated from 7 blocks distributed across the file, the first block
-     * has a size of 100 kB because of the metadata, all other 6 blocks have 25 kB.
+     * The hash is calculated from 6 blocks distributed across the file, the first block
+     * has a size of 100 kB (capture metadata), all other possible 5 blocks up to 25 kB.
      * The hash will be returned as a 32-byte hexadecimal string.
      *
      * If you already have a DImg object loaded from the file, use the member method.

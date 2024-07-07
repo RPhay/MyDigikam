@@ -599,28 +599,39 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
 
     QCryptographicHash md5(QCryptographicHash::Md5);
 
-    // Specified size: 100 kB for the first block, all
-    // further 6 blocks with 25 kB; but limit to file size
+    // maximum size: 100 kB for the first block, all other
+    // possible 5 blocks up to 25 kB; but limit to file size
 
-    const qint64 specifiedSize = 100 * 1024;       // 100 kB
-    const qint64 size          = qMin(file.size(), specifiedSize);
-    const qint64 maxs          = file.size() - (size / 4);
-    const qint64 step          = maxs / 6;
+    const qint64 firstSize = 100 * 1024;         // 100 kB
+    const qint64 nextSize  = 25  * 1024;         //  25 kB
+    const qint64 fsize     = qMin(file.size(), firstSize);
+    const qint64 bsize     = file.size() - fsize;
 
-    if (size)
+    const qint64 block     = (bsize < nextSize) ? bsize
+                                                : nextSize;
+    const qint64 step      = qMax(bsize - block, 5) / 5;
+
+    if (fsize)
     {
-        QScopedArrayPointer<char> databuf(new char[size]);
-        int read;
+        QScopedArrayPointer<char> databuf(new char[fsize]);
+        qint64 read;
 
-        for (int i = 0 ; i < 7 ; ++i)
+        for (int i = 0 ; i < 6 ; ++i)
         {
-            file.seek(qMin(step * i, maxs));
+            qint64 rsize = (i == 0) ? fsize : block;
+            qint64 rstep = (i == 5) ? file.size() - rsize
+                                    : step * i + firstSize;
 
-            qint64 rsize = (i == 0) ? size : size / 4;
+            file.seek(qMin((i == 0) ? 0 : rstep, file.size() - rsize));
 
             if ((read = file.read(databuf.data(), rsize)) > 0)
             {
                 md5.addData(databuf.data(), read);
+            }
+
+            if (file.atEnd())
+            {
+                break;
             }
         }
     }
