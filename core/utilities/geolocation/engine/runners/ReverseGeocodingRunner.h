@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -32,12 +36,12 @@ class DIGIKAM_EXPORT ReverseGeocodingRunner : public QObject
 
 public:
 
-    explicit ReverseGeocodingRunner( QObject *parent );
+    explicit ReverseGeocodingRunner(QObject* parent);
 
     /**
      * Stores a pointer to the currently used model
      */
-    void setModel( const MarbleModel *model );
+    void setModel(const MarbleModel* model);
 
     /**
      * Start a reverse geocoding request. Called by MarbleRunnerManager, runners
@@ -45,7 +49,7 @@ public:
      * If implemented in a plugin, make sure to include ReverseGeocoding in the
      * plugin capabilities, otherwise MarbleRunnerManager will ignore the plugin
      */
-    virtual void reverseGeocoding( const GeoDataCoordinates &coordinates ) = 0;
+    virtual void reverseGeocoding(const GeoDataCoordinates& coordinates) = 0;
 
 Q_SIGNALS:
 
@@ -53,14 +57,14 @@ Q_SIGNALS:
      * Reverse geocoding is finished, result in the given placemark.
      * To be Q_EMITted by runners after a @see reverseGeocoding call.
      */
-    void reverseGeocodingFinished( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
+    void reverseGeocodingFinished(const GeoDataCoordinates& coordinates, const GeoDataPlacemark& placemark);
 
 protected:
 
     /**
      * Access to the currently used model, or null if no was set with @see setModel
      */
-    const MarbleModel *model() const;
+    const MarbleModel* model() const;
 
 private:
 

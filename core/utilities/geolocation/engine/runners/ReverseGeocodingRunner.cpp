@@ -18,17 +18,17 @@
 namespace Marble
 {
 
-ReverseGeocodingRunner::ReverseGeocodingRunner( QObject *parent )
-    : QObject( parent )
+ReverseGeocodingRunner::ReverseGeocodingRunner(QObject* parent)
+    : QObject(parent)
 {
 }
 
-void ReverseGeocodingRunner::setModel( const MarbleModel *model )
+void ReverseGeocodingRunner::setModel(const MarbleModel* model)
 {
     m_model = model;
 }
 
-const MarbleModel *ReverseGeocodingRunner::model() const
+const MarbleModel* ReverseGeocodingRunner::model() const
 {
     return m_model;
 }

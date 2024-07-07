@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 
-#include "GeoDataDocument.h"
+// Local includes
 
+#include "GeoDataDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -30,14 +33,14 @@ class DIGIKAM_EXPORT ParsingRunner : public QObject
 
 public:
 
-    explicit ParsingRunner( QObject *parent = nullptr );
+    explicit ParsingRunner(QObject* parent = nullptr);
 
     /**
       * Start a file parsing.
       * If implemented in a plugin, make sure to include Parsing in the
       * plugin capabilities, otherwise MarbleRunnerManager will ignore the plugin
       */
-    virtual GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) = 0;
+    virtual GeoDataDocument* parseFile(const QString& fileName, DocumentRole role, QString& error) = 0;
 };
 
 } // namespace Marble
