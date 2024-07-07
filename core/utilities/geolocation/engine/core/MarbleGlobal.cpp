@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "MarbleGlobal.h"
+
+// Local includes
+
 #include "MarbleLocale.h"
 
 namespace Marble
@@ -50,7 +53,7 @@ MarbleGlobalPrivate::~MarbleGlobalPrivate()
 // ---
 
 MarbleGlobal::MarbleGlobal()
-    : d ( new MarbleGlobalPrivate )
+    : d(new MarbleGlobalPrivate)
 {
 }
 
@@ -76,7 +79,7 @@ MarbleGlobal::Profiles MarbleGlobal::profiles() const
     return d->m_profiles;
 }
 
-void MarbleGlobal::setProfiles( MarbleGlobal::Profiles profiles )
+void MarbleGlobal::setProfiles(MarbleGlobal::Profiles profiles)
 {
     d->m_profiles = profiles;
 }

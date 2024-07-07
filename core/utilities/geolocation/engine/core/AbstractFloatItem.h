@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPointF>
 #include <QSizeF>
+
+// Local includes
 
 #include "RenderPlugin.h"
 #include "FrameGraphicsItem.h"
@@ -50,13 +54,13 @@ class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphi
 
 public:
 
-    explicit AbstractFloatItem( const MarbleModel *marbleModel,
-                                const QPointF &point = QPointF( 10.0, 10.0 ),
-                                const QSizeF &size = QSizeF( 150.0, 50.0 ) );
+    explicit AbstractFloatItem(const MarbleModel* marbleModel,
+                               const QPointF& point = QPointF(10.0, 10.0),
+                               const QSizeF& size = QSizeF(150.0, 50.0));
     ~AbstractFloatItem() override;
 
-    QHash<QString,QVariant> settings() const override;
-    void setSettings(const QHash<QString, QVariant> &settings) override;
+    QHash<QString, QVariant> settings() const override;
+    void setSettings(const QHash<QString, QVariant>& settings) override;
 
     RenderType renderType() const override;
 
@@ -70,7 +74,7 @@ public:
      * @brief setting current pen for rendering
      * @param pen
      */
-    void setPen( const QPen &pen );
+    void setPen(const QPen& pen);
 
     /**
      * @brief current font for rendering
@@ -82,16 +86,16 @@ public:
      * @brief setting current font for rendering
      * @param font
      */
-    void setFont( const QFont &font );
+    void setFont(const QFont& font);
 
     /**
      * @brief Paints the float item on the map.
      * @deprecated Do not override this method since it won't be called any longer.
      *             Override one of FrameGraphicsItem's paint methods instead.
      */
-     bool render( GeoPainter *painter, ViewportParams *viewport,
-                 const QString& renderPos = QLatin1String("FLOAT_ITEM"),
-                 GeoSceneLayer * layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("FLOAT_ITEM"),
+                GeoSceneLayer* layer = nullptr) override;
 
     QString renderPolicy() const override;
 
@@ -100,7 +104,7 @@ public:
      * @deprecated The return value of method is ignored. The float item's rendering position
      *             will always be "FLOAT_ITEM".
      */
-     QStringList renderPosition() const override;
+    QStringList renderPosition() const override;
 
     /**
      * @brief Set visibility of the float item
@@ -110,7 +114,7 @@ public:
      *
      * @param visible visibility of the item
      */
-    void setVisible( bool visible );
+    void setVisible(bool visible);
 
     /**
      * @brief Check visibility of the float item
@@ -146,7 +150,7 @@ public Q_SLOTS:
      * To check it use @see positionLocked
      *
      */
-    void setPositionLocked( bool lock );
+    void setPositionLocked(bool lock);
 
     /**
      * @brief Show the item
@@ -166,14 +170,14 @@ public Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject *object, QEvent *e) override;
-    virtual void contextMenuEvent ( QWidget *w, QContextMenuEvent *e );
-    virtual void toolTipEvent( QHelpEvent *e );
+    bool eventFilter(QObject* object, QEvent* e) override;
+    virtual void contextMenuEvent(QWidget* w, QContextMenuEvent* e);
+    virtual void toolTipEvent(QHelpEvent* e);
     QMenu* contextMenu();
 
 private:
 
-    Q_DISABLE_COPY( AbstractFloatItem )
+    Q_DISABLE_COPY(AbstractFloatItem)
 
 private:
 

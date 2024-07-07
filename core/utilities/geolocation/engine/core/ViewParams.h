@@ -40,22 +40,22 @@ public:
     ViewParams();
     ~ViewParams();
 
-    MapQuality mapQuality( ViewContext viewContext ) const;
+    MapQuality mapQuality(ViewContext viewContext) const;
     MapQuality mapQuality() const;
-    void setMapQualityForViewContext( MapQuality quality, ViewContext viewContext );
+    void setMapQualityForViewContext(MapQuality quality, ViewContext viewContext);
 
     ViewContext viewContext() const;
-    void setViewContext( ViewContext viewContext );
+    void setViewContext(ViewContext viewContext);
 
     bool showAtmosphere() const;
-    void setShowAtmosphere( bool );
+    void setShowAtmosphere(bool);
 
     bool showClouds() const;
-    void setShowClouds( bool const );
+    void setShowClouds(bool const);
 
 private:
 
-    Q_DISABLE_COPY( ViewParams )
+    Q_DISABLE_COPY(ViewParams)
 
 private:
 

@@ -15,7 +15,12 @@
 
 #pragma once
 
-#include <QObject> // for Q_DECLARE_INTERFACE macro
+// Qt includes
+
+#include <QObject>
+
+// Local includes
+
 #include "digikam_export.h"
 
 class QDialog;
@@ -44,9 +49,9 @@ public:
      *
      * @return: Pointer to the configuration dialog, which must be non-zero.
      */
-    virtual QDialog *configDialog() = 0;
+    virtual QDialog* configDialog() = 0;
 };
 
 } // Namespace Marble
 
-Q_DECLARE_INTERFACE( Marble::DialogConfigurationInterface, "org.kde.Marble.DialogConfigurationInterface/1.0" )
+Q_DECLARE_INTERFACE(Marble::DialogConfigurationInterface, "org.kde.Marble.DialogConfigurationInterface/1.0")

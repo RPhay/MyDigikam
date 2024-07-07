@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -59,7 +63,7 @@ public:
         NauticalMile
     };
 
-    void setMeasurementSystem( MarbleLocale::MeasurementSystem measurementSystem );
+    void setMeasurementSystem(MarbleLocale::MeasurementSystem measurementSystem);
     MarbleLocale::MeasurementSystem measurementSystem() const;
 
     static QString languageCode();
@@ -68,7 +72,7 @@ public:
      * @brief meterToCustomUnit Converts @p meters to @p targetValue of @p targetUnit in @p targetSystem
      */
     static void meterToTargetUnit(qreal meters, MeasurementSystem targetSystem,
-                                  qreal &targetValue, MeasureUnit &targetUnit);
+                                  qreal& targetValue, MeasureUnit& targetUnit);
 
     /**
      * @brief unitAbbreviation Represents a short string form of @p unit, e.g. "km" for Kilometer
@@ -77,7 +81,7 @@ public:
 
 private:
 
-    Q_DISABLE_COPY( MarbleLocale )
+    Q_DISABLE_COPY(MarbleLocale)
 
 private:
 

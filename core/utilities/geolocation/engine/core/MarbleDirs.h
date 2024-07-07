@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDir>
 #include <QString>
 #include <QStringList>
+
+// Local includes
 
 #include "digikam_export.h"
 

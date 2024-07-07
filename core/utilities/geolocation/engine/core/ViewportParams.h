@@ -49,23 +49,23 @@ class DIGIKAM_EXPORT ViewportParams
 {
 public:
 
-    ViewportParams( );
-    explicit ViewportParams( Projection projection,
-                             qreal centerLongitude = 0, qreal centerLatitude = 0,
-                             int radius = 2000,
-                             const QSize &size = QSize( 100, 100 ) );
+    ViewportParams();
+    explicit ViewportParams(Projection projection,
+                            qreal centerLongitude = 0, qreal centerLatitude = 0,
+                            int radius = 2000,
+                            const QSize& size = QSize(100, 100));
     ~ViewportParams();
 
     // Getters and setters
     Projection projection() const;
-    const AbstractProjection *currentProjection() const;
+    const AbstractProjection* currentProjection() const;
     void setProjection(Projection newProjection);
 
     int polarity() const;
 
     const GeoDataLatLonAltBox& viewLatLonAltBox() const;
 
-    GeoDataLatLonAltBox latLonAltBox( const QRect &screenRect ) const;
+    GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect) const;
 
     // Calculates an educated guess for the average angle in radians covered per pixel.
     // Given a certain resolution it doesn't make much sense
@@ -81,16 +81,16 @@ public:
     // represent a single point on the screen already.
     // See angularResolution()
 
-    bool resolves ( const GeoDataLatLonBox &latLonBox, qreal pixel = 2.0 ) const;
+    bool resolves(const GeoDataLatLonBox& latLonBox, qreal pixel = 2.0) const;
 
-    bool resolves ( const GeoDataLatLonAltBox &latLonAltBox, qreal pixel = 2.0, qreal altitude = 10000.0 ) const;
+    bool resolves(const GeoDataLatLonAltBox& latLonAltBox, qreal pixel = 2.0, qreal altitude = 10000.0) const;
 
     // Determines whether two points are located enough apart so that it makes
     // sense to display them as distinct points. If this is not the case
     // calculation and drawing of one point can be skipped as only a single
     // point will be displayed on the screen.
 
-    bool resolves ( const GeoDataCoordinates &coord1, const GeoDataCoordinates &coord2 ) const;
+    bool resolves(const GeoDataCoordinates& coord1, const GeoDataCoordinates& coord2) const;
 
     int  radius() const;
 
@@ -100,11 +100,11 @@ public:
      */
     void setRadius(int radius);
 
-    void centerOn( qreal lon, qreal lat );
-    void setHeading( qreal heading );
+    void centerOn(qreal lon, qreal lat);
+    void setHeading(qreal heading);
 
     Quaternion planetAxis() const;
-    const matrix &planetAxisMatrix() const;
+    const matrix& planetAxisMatrix() const;
 
     int width()  const;
     int height() const;
@@ -128,8 +128,8 @@ public:
      *
      * @see ViewportParams
      */
-    bool screenCoordinates( const qreal lon, const qreal lat,
-                            qreal &x, qreal &y ) const;
+    bool screenCoordinates(const qreal lon, const qreal lat,
+                           qreal& x, qreal& y) const;
 
     /**
      * @brief Get the screen coordinates corresponding to geographical coordinates in the map.
@@ -144,13 +144,13 @@ public:
      *
      * @see ViewportParams
      */
-    bool screenCoordinates( const GeoDataCoordinates &geopoint,
-                            qreal &x, qreal &y,
-                            bool &globeHidesPoint ) const;
+    bool screenCoordinates(const GeoDataCoordinates& geopoint,
+                           qreal& x, qreal& y,
+                           bool& globeHidesPoint) const;
 
     // Will just call the virtual version with a dummy globeHidesPoint.
-    bool screenCoordinates( const GeoDataCoordinates &geopoint,
-                            qreal &x, qreal &y ) const;
+    bool screenCoordinates(const GeoDataCoordinates& geopoint,
+                           qreal& x, qreal& y) const;
 
     /**
      * @brief Get the coordinates of screen points for geographical coordinates in the map.
@@ -168,14 +168,14 @@ public:
      *
      * @see ViewportParams
      */
-    bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                            qreal *x, qreal &y, int &pointRepeatNum,
-                            const QSizeF& size,
-                            bool &globeHidesPoint ) const;
+    bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                           qreal* x, qreal& y, int& pointRepeatNum,
+                           const QSizeF& size,
+                           bool& globeHidesPoint) const;
 
 
-    bool screenCoordinates( const GeoDataLineString &lineString,
-                            QVector<QPolygonF*> &polygons ) const;
+    bool screenCoordinates(const GeoDataLineString& lineString,
+                           QVector<QPolygonF*>& polygons) const;
 
     /**
      * @brief Get the earth coordinates corresponding to a pixel in the map.
@@ -187,9 +187,9 @@ public:
      * @return @c true  if the pixel (x, y) is within the globe
      *         @c false if the pixel (x, y) is outside the globe, i.e. in space.
      */
-    bool geoCoordinates( const int x, const int y,
-                         qreal &lon, qreal &lat,
-                         GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const;
+    bool geoCoordinates(const int x, const int y,
+                        qreal& lon, qreal& lat,
+                        GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const;
 
     qreal heading() const;
     bool mapCoversViewport() const;
@@ -211,7 +211,7 @@ public:
       * @param focusPoint New focus point
       * @see focusPoint resetFocusPoint
       */
-    void setFocusPoint(const GeoDataCoordinates &focusPoint);
+    void setFocusPoint(const GeoDataCoordinates& focusPoint);
 
     /**
       * @brief Invalidate any focus point set with @ref setFocusPoint.
@@ -221,7 +221,7 @@ public:
 
 private:
 
-    Q_DISABLE_COPY( ViewportParams )
+    Q_DISABLE_COPY(ViewportParams)
 
 private:
 

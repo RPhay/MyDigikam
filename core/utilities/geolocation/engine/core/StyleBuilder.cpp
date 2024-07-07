@@ -50,45 +50,45 @@ public:
     GeoDataStyle::ConstPtr presetStyle(GeoDataPlacemark::GeoDataVisualCategory visualCategory) const;
 
     static GeoDataStyle::Ptr createStyle(qreal width, qreal realWidth, const QColor& color,
-                                  const QColor& outlineColor, bool fill, bool outline,
-                                  Qt::BrushStyle brushStyle, Qt::PenStyle penStyle,
-                                  Qt::PenCapStyle capStyle, bool lineBackground,
-                                  const QVector< qreal >& dashPattern,
-                                  const QFont& font, const QColor& fontColor = Qt::black,
-                                  const QString& texturePath = QString());
-    static GeoDataStyle::Ptr createPOIStyle(const QFont &font, const QString &bitmap,
-                                     const QColor &textColor = Qt::black,
-                                     const QColor &color = QColor(0xBE, 0xAD, 0xAD),
-                                     const QColor &outline = QColor(0xBE, 0xAD, 0xAD).darker(),
-                                     bool fill = true, bool renderOutline = true);
-    static GeoDataStyle::Ptr createOsmPOIStyle(const QFont &font, const QString &bitmap,
-                                        const QColor &textColor = Qt::black,
-                                        const QColor &color = QColor(0xBE, 0xAD, 0xAD),
-                                        const QColor &outline = QColor(0xBE, 0xAD, 0xAD).darker());
-    static GeoDataStyle::Ptr createOsmPOIRingStyle(const QFont &font, const QString &bitmap,
-                                            const QColor &textColor = Qt::black,
-                                            const QColor &color = QColor(0xBE, 0xAD, 0xAD),
-                                            const QColor &outline = QColor(0xBE, 0xAD, 0xAD).darker());
-    static GeoDataStyle::Ptr createOsmPOIAreaStyle(const QFont &font, const QString &bitmap,
-                                            const QColor &textColor = Qt::black,
-                                            const QColor &color = QColor(0xBE, 0xAD, 0xAD),
-                                            const QColor &outline = QColor(0xBE, 0xAD, 0xAD).darker());
+                                         const QColor& outlineColor, bool fill, bool outline,
+                                         Qt::BrushStyle brushStyle, Qt::PenStyle penStyle,
+                                         Qt::PenCapStyle capStyle, bool lineBackground,
+                                         const QVector< qreal >& dashPattern,
+                                         const QFont& font, const QColor& fontColor = Qt::black,
+                                         const QString& texturePath = QString());
+    static GeoDataStyle::Ptr createPOIStyle(const QFont& font, const QString& bitmap,
+                                            const QColor& textColor = Qt::black,
+                                            const QColor& color = QColor(0xBE, 0xAD, 0xAD),
+                                            const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker(),
+                                            bool fill = true, bool renderOutline = true);
+    static GeoDataStyle::Ptr createOsmPOIStyle(const QFont& font, const QString& bitmap,
+                                               const QColor& textColor = Qt::black,
+                                               const QColor& color = QColor(0xBE, 0xAD, 0xAD),
+                                               const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
+    static GeoDataStyle::Ptr createOsmPOIRingStyle(const QFont& font, const QString& bitmap,
+                                                   const QColor& textColor = Qt::black,
+                                                   const QColor& color = QColor(0xBE, 0xAD, 0xAD),
+                                                   const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
+    static GeoDataStyle::Ptr createOsmPOIAreaStyle(const QFont& font, const QString& bitmap,
+                                                   const QColor& textColor = Qt::black,
+                                                   const QColor& color = QColor(0xBE, 0xAD, 0xAD),
+                                                   const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
     static GeoDataStyle::Ptr createHighwayStyle(const QColor& color, const QColor& outlineColor, const QFont& font,
-                                         const QColor& fontColor = Qt::black,
-                                         qreal width = 1, qreal realWidth = 0.0,
-                                         Qt::PenStyle penStyle = Qt::SolidLine,
-                                         Qt::PenCapStyle capStyle = Qt::RoundCap,
-                                         bool lineBackground = false);
+                                                const QColor& fontColor = Qt::black,
+                                                qreal width = 1, qreal realWidth = 0.0,
+                                                Qt::PenStyle penStyle = Qt::SolidLine,
+                                                Qt::PenCapStyle capStyle = Qt::RoundCap,
+                                                bool lineBackground = false);
     GeoDataStyle::Ptr createWayStyle(const QColor& color, const QColor& outlineColor,
                                      bool fill = true, bool outline = true,
                                      Qt::BrushStyle brushStyle = Qt::SolidPattern,
                                      const QString& texturePath = QString()) const;
-    static GeoDataStyle::Ptr createIconWayStyle(const QColor& color, const QFont &font, const QColor &textColor, double lineWidth=1.0, const QString& iconPath = QString());
+    static GeoDataStyle::Ptr createIconWayStyle(const QColor& color, const QFont& font, const QColor& textColor, double lineWidth = 1.0, const QString& iconPath = QString());
 
-    GeoDataStyle::ConstPtr createRelationStyle(const StyleParameters &parameters);
-    GeoDataStyle::ConstPtr createPlacemarkStyle(const StyleParameters &parameters);
-    GeoDataStyle::ConstPtr adjustPisteStyle(const StyleParameters &parameters, const GeoDataStyle::ConstPtr &style);
-    static void adjustWayWidth(const StyleParameters &parameters, GeoDataLineStyle &lineStyle);
+    GeoDataStyle::ConstPtr createRelationStyle(const StyleParameters& parameters);
+    GeoDataStyle::ConstPtr createPlacemarkStyle(const StyleParameters& parameters);
+    GeoDataStyle::ConstPtr adjustPisteStyle(const StyleParameters& parameters, const GeoDataStyle::ConstPtr& style);
+    static void adjustWayWidth(const StyleParameters& parameters, GeoDataLineStyle& lineStyle);
 
     // Having an outline with the same color as the fill results in degraded
     // performance and degraded display quality for no good reason
@@ -97,7 +97,7 @@ public:
 
     static QColor effectColor(const QColor& color);
 
-    static QString createPaintLayerItem(const QString &itemType, GeoDataPlacemark::GeoDataVisualCategory visualCategory, const QString &subType = QString());
+    static QString createPaintLayerItem(const QString& itemType, GeoDataPlacemark::GeoDataVisualCategory visualCategory, const QString& subType = QString());
 
     static void initializeOsmVisualCategories();
     static void initializeMinimumZoomLevels();
@@ -139,24 +139,26 @@ StyleBuilder::Private::Private() :
     m_oceanianCountries(
 {
     QLocale::Australia, QLocale::NewZealand, QLocale::Fiji,
-            QLocale::PapuaNewGuinea, QLocale::NewCaledonia, QLocale::SolomonIslands,
-            QLocale::Samoa, QLocale::Vanuatu, QLocale::Guam,
-            QLocale::FrenchPolynesia, QLocale::Tonga, QLocale::Palau,
-            QLocale::Kiribati, QLocale::CookIslands, QLocale::Micronesia,
-            QLocale::MarshallIslands, QLocale::NauruCountry,
-            QLocale::AmericanSamoa, QLocale::Niue, QLocale::Pitcairn,
-            QLocale::WallisAndFutunaIslands, QLocale::NorfolkIsland
+    QLocale::PapuaNewGuinea, QLocale::NewCaledonia, QLocale::SolomonIslands,
+    QLocale::Samoa, QLocale::Vanuatu, QLocale::Guam,
+    QLocale::FrenchPolynesia, QLocale::Tonga, QLocale::Palau,
+    QLocale::Kiribati, QLocale::CookIslands, QLocale::Micronesia,
+    QLocale::MarshallIslands, QLocale::NauruCountry,
+    QLocale::AmericanSamoa, QLocale::Niue, QLocale::Pitcairn,
+    QLocale::WallisAndFutunaIslands, QLocale::NorfolkIsland
 })
 {
     m_oceanianCountries << QLocale::TuvaluCountry << QLocale::OutlyingOceania;
     initializeMinimumZoomLevels();
-    for (int i = 0; i < GeoDataPlacemark::LastIndex; ++i) {
+
+    for (int i = 0; i < GeoDataPlacemark::LastIndex; ++i)
+    {
         m_maximumZoomLevel = qMax(m_maximumZoomLevel, s_defaultMinZoomLevels[i]);
     }
 }
 
-GeoDataStyle::Ptr StyleBuilder::Private::createPOIStyle(const QFont &font, const QString &path,
-        const QColor &textColor, const QColor &color, const QColor &outlineColor, bool fill, bool renderOutline)
+GeoDataStyle::Ptr StyleBuilder::Private::createPOIStyle(const QFont& font, const QString& path,
+                                                        const QColor& textColor, const QColor& color, const QColor& outlineColor, bool fill, bool renderOutline)
 {
     GeoDataStyle::Ptr style =  createStyle(1, 0, effectColor(color), effectColor(outlineColor), fill, renderOutline, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector<qreal>(), font);
     style->setIconStyle(GeoDataIconStyle(path));
@@ -169,22 +171,22 @@ GeoDataStyle::Ptr StyleBuilder::Private::createPOIStyle(const QFont &font, const
     return style;
 }
 
-GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIStyle(const QFont &font, const QString &imagePath,
-        const QColor &textColor, const QColor &color, const QColor &outlineColor)
+GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIStyle(const QFont& font, const QString& imagePath,
+                                                           const QColor& textColor, const QColor& color, const QColor& outlineColor)
 {
     QString const path = MarbleDirs::path(QLatin1String("svg/osmcarto/svg/") + imagePath + QLatin1String(".svg"));
     return createPOIStyle(font, path, textColor, color, outlineColor, false, false);
 }
 
-GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIRingStyle(const QFont &font, const QString &imagePath,
-        const QColor &textColor, const QColor &color, const QColor &outlineColor)
+GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIRingStyle(const QFont& font, const QString& imagePath,
+                                                               const QColor& textColor, const QColor& color, const QColor& outlineColor)
 {
     QString const path = MarbleDirs::path(QLatin1String("svg/osmcarto/svg/") + imagePath + QLatin1String(".svg"));
     return createPOIStyle(font, path, textColor, color, outlineColor, false, true);
 }
 
-GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIAreaStyle(const QFont &font, const QString &imagePath,
-        const QColor &textColor, const QColor &color, const QColor &outlineColor)
+GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIAreaStyle(const QFont& font, const QString& imagePath,
+                                                               const QColor& textColor, const QColor& color, const QColor& outlineColor)
 {
     QString const path = MarbleDirs::path(QLatin1String("svg/osmcarto/svg/") + imagePath + QLatin1String(".svg"));
     return createPOIStyle(font, path, textColor, color, outlineColor, true, false);
@@ -192,19 +194,19 @@ GeoDataStyle::Ptr StyleBuilder::Private::createOsmPOIAreaStyle(const QFont &font
 
 
 GeoDataStyle::Ptr StyleBuilder::Private::createHighwayStyle(const QColor& color, const QColor& outlineColor, const QFont& font,
-        const QColor& fontColor, qreal width, qreal realWidth, Qt::PenStyle penStyle,
-        Qt::PenCapStyle capStyle, bool lineBackground)
+                                                            const QColor& fontColor, qreal width, qreal realWidth, Qt::PenStyle penStyle,
+                                                            Qt::PenCapStyle capStyle, bool lineBackground)
 {
     return createStyle(width, realWidth, color, outlineColor, true, true, Qt::SolidPattern, penStyle, capStyle, lineBackground, QVector< qreal >(), font, fontColor);
 }
 
 GeoDataStyle::Ptr StyleBuilder::Private::createWayStyle(const QColor& color, const QColor& outlineColor,
-        bool fill, bool outline, Qt::BrushStyle brushStyle, const QString& texturePath) const
+                                                        bool fill, bool outline, Qt::BrushStyle brushStyle, const QString& texturePath) const
 {
     return createStyle(1, 0, color, outlineColor, fill, outline, brushStyle, Qt::SolidLine, Qt::RoundCap, false, QVector<qreal>(), m_defaultFont, Qt::black, texturePath);
 }
 
-GeoDataStyle::Ptr StyleBuilder::Private::createIconWayStyle(const QColor &color, const QFont &font, const QColor &textColor, double lineWidth, const QString &iconPath)
+GeoDataStyle::Ptr StyleBuilder::Private::createIconWayStyle(const QColor& color, const QFont& font, const QColor& textColor, double lineWidth, const QString& iconPath)
 {
     auto const path = iconPath.isEmpty() ? iconPath : MarbleDirs::path(iconPath);
     auto style = createPOIStyle(font, path, textColor, color, color, true, true);
@@ -212,28 +214,36 @@ GeoDataStyle::Ptr StyleBuilder::Private::createIconWayStyle(const QColor &color,
     return style;
 }
 
-GeoDataStyle::ConstPtr StyleBuilder::Private::createRelationStyle(const StyleParameters &parameters)
+GeoDataStyle::ConstPtr StyleBuilder::Private::createRelationStyle(const StyleParameters& parameters)
 {
     Q_ASSERT(parameters.relation);
-    const GeoDataPlacemark *const placemark = parameters.placemark;
+    const GeoDataPlacemark* const placemark = parameters.placemark;
     auto const visualCategory = placemark->visualCategory();
     bool const isHighway = visualCategory >= GeoDataPlacemark::HighwaySteps && visualCategory <= GeoDataPlacemark::HighwayMotorway;
     bool const isRailway = visualCategory >= GeoDataPlacemark::RailwayRail && visualCategory <= GeoDataPlacemark::RailwayFunicular;
-    if (isHighway || isRailway) {
+
+    if (isHighway || isRailway)
+    {
         if (parameters.relation->relationType() == GeoDataRelation::RouteHiking &&
-            parameters.relation->osmData().containsTagKey(QStringLiteral("osmc:symbol"))) {
+            parameters.relation->osmData().containsTagKey(QStringLiteral("osmc:symbol")))
+        {
             QString const osmcSymbolValue = parameters.relation->osmData().tagValue(QStringLiteral("osmc:symbol"));
             // Take cached Style instance if possible
             QString const cacheKey = QStringLiteral("/route/hiking/%1").arg(osmcSymbolValue);
-            if (m_styleCache.contains(cacheKey)) {
+
+            if (m_styleCache.contains(cacheKey))
+            {
                 return m_styleCache[cacheKey];
             }
 
             auto style = presetStyle(visualCategory);
             auto lineStyle = style->lineStyle();
-            if (isHighway) {
+
+            if (isHighway)
+            {
                 adjustWayWidth(parameters, lineStyle);
             }
+
             auto iconStyle = style->iconStyle();
             GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
             OsmcSymbol symbol = OsmcSymbol(osmcSymbolValue);
@@ -247,79 +257,110 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createRelationStyle(const StylePar
         }
 
         if (parameters.relation->relationType() >= GeoDataRelation::RouteRoad &&
-            parameters.relation->relationType() <= GeoDataRelation::RouteInlineSkates) {
+            parameters.relation->relationType() <= GeoDataRelation::RouteInlineSkates)
+        {
             auto const colorValue = parameters.relation->osmData().tagValue(QStringLiteral("colour"));
             QString color = colorValue;
-            if (!QColor::isValidColor(colorValue)) {
-                switch (parameters.relation->relationType()) {
-                case GeoDataRelation::RouteTrain:
-                    color = QStringLiteral("navy"); break;
-                case GeoDataRelation::RouteSubway:
-                    color = QStringLiteral("cornflowerblue"); break;
-                case GeoDataRelation::RouteTram:
-                    color = QStringLiteral("steelblue"); break;
-                case GeoDataRelation::RouteBus:
-                case GeoDataRelation::RouteTrolleyBus:
-                    color = QStringLiteral("tomato"); break;
-                case GeoDataRelation::RouteBicycle:
-                case GeoDataRelation::RouteMountainbike:
-                case GeoDataRelation::RouteFoot:
-                case GeoDataRelation::RouteHiking:
-                case GeoDataRelation::RouteHorse:
-                case GeoDataRelation::RouteInlineSkates:
-                    color = QStringLiteral("paleturquoise"); break;
-                case GeoDataRelation::UnknownType:
-                case GeoDataRelation:: RouteRoad:
-                case GeoDataRelation::RouteDetour:
-                case GeoDataRelation::RouteFerry:
-                case GeoDataRelation::RouteSkiDownhill:
-                case GeoDataRelation::RouteSkiNordic:
-                case GeoDataRelation::RouteSkitour:
-                case GeoDataRelation::RouteSled:
-                    color = QString(); break;
+
+            if (!QColor::isValidColor(colorValue))
+            {
+                switch (parameters.relation->relationType())
+                {
+                    case GeoDataRelation::RouteTrain:
+                        color = QStringLiteral("navy");
+                        break;
+
+                    case GeoDataRelation::RouteSubway:
+                        color = QStringLiteral("cornflowerblue");
+                        break;
+
+                    case GeoDataRelation::RouteTram:
+                        color = QStringLiteral("steelblue");
+                        break;
+
+                    case GeoDataRelation::RouteBus:
+                    case GeoDataRelation::RouteTrolleyBus:
+                        color = QStringLiteral("tomato");
+                        break;
+
+                    case GeoDataRelation::RouteBicycle:
+                    case GeoDataRelation::RouteMountainbike:
+                    case GeoDataRelation::RouteFoot:
+                    case GeoDataRelation::RouteHiking:
+                    case GeoDataRelation::RouteHorse:
+                    case GeoDataRelation::RouteInlineSkates:
+                        color = QStringLiteral("paleturquoise");
+                        break;
+
+                    case GeoDataRelation::UnknownType:
+                    case GeoDataRelation:: RouteRoad:
+                    case GeoDataRelation::RouteDetour:
+                    case GeoDataRelation::RouteFerry:
+                    case GeoDataRelation::RouteSkiDownhill:
+                    case GeoDataRelation::RouteSkiNordic:
+                    case GeoDataRelation::RouteSkitour:
+                    case GeoDataRelation::RouteSled:
+                        color = QString();
+                        break;
                 }
             }
+
             // Take cached Style instance if possible
             QString const cacheKey = QStringLiteral("/route/%1/%2").arg(parameters.relation->relationType()).arg(color);
-            if (m_styleCache.contains(cacheKey)) {
+
+            if (m_styleCache.contains(cacheKey))
+            {
                 return m_styleCache[cacheKey];
             }
 
             auto style = presetStyle(visualCategory);
             auto lineStyle = style->lineStyle();
-            if (isHighway) {
+
+            if (isHighway)
+            {
                 adjustWayWidth(parameters, lineStyle);
             }
+
             GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
-            if (!color.isEmpty()) {
+
+            if (!color.isEmpty())
+            {
                 lineStyle.setColor(QColor(color));
                 auto labelStyle = style->labelStyle();
                 labelStyle.setColor(GeoDataColorStyle::contrastColor(color));
                 newStyle->setLabelStyle(labelStyle);
             }
+
             newStyle->setLineStyle(lineStyle);
             style = newStyle;
             m_styleCache.insert(cacheKey, newStyle);
             return style;
         }
     }
+
     return GeoDataStyle::ConstPtr();
 }
 
-GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StyleParameters &parameters)
+GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StyleParameters& parameters)
 {
-    const GeoDataPlacemark *const placemark = parameters.placemark;
+    const GeoDataPlacemark* const placemark = parameters.placemark;
     QString styleCacheKey;
 
-    OsmPlacemarkData const & osmData = placemark->osmData();
+    OsmPlacemarkData const& osmData = placemark->osmData();
     auto const visualCategory = placemark->visualCategory();
-    if (visualCategory == GeoDataPlacemark::Building) {
+
+    if (visualCategory == GeoDataPlacemark::Building)
+    {
         auto const tagMap = osmTagMapping();
-        auto const & osmData = placemark->osmData();
+        auto const& osmData = placemark->osmData();
         auto const buildingTag = QStringLiteral("building");
-        for (auto iter = osmData.tagsBegin(), end = osmData.tagsEnd(); iter != end; ++iter) {
+
+        for (auto iter = osmData.tagsBegin(), end = osmData.tagsEnd(); iter != end; ++iter)
+        {
             auto const osmTag = StyleBuilder::OsmTag(iter.key(), iter.value());
-            if (iter.key() != buildingTag && tagMap.contains(osmTag)) {
+
+            if (iter.key() != buildingTag && tagMap.contains(osmTag))
+            {
                 return m_buildingStyles.value(tagMap.value(osmTag), m_defaultStyle[visualCategory]);
             }
         }
@@ -327,87 +368,140 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
 
     GeoDataStyle::ConstPtr style = presetStyle(visualCategory);
 
-    if (geodata_cast<GeoDataPoint>(placemark->geometry())) {
-        if (visualCategory == GeoDataPlacemark::NaturalTree) {
+    if (geodata_cast<GeoDataPoint>(placemark->geometry()))
+    {
+        if (visualCategory == GeoDataPlacemark::NaturalTree)
+        {
             GeoDataCoordinates const coordinates = placemark->coordinate();
             qreal const lat = coordinates.latitude(GeoDataCoordinates::Degree);
-            if (qAbs(lat) > 15) {
+
+            if (qAbs(lat) > 15)
+            {
                 /** @todo Should maybe auto-adjust to MarbleClock at some point */
                 int const month = QDate::currentDate().month();
                 bool const southernHemisphere = lat < 0;
-                if (southernHemisphere) {
-                    if (month >= 3 && month <= 5) {
+
+                if (southernHemisphere)
+                {
+                    if (month >= 3 && month <= 5)
+                    {
                         style = m_styleTreeAutumn;
-                    } else if (month >= 6 && month <= 8) {
+                    }
+
+                    else if (month >= 6 && month <= 8)
+                    {
                         style = m_styleTreeWinter;
                     }
-                } else {
-                    if (month >= 9 && month <= 11) {
+                }
+
+                else
+                {
+                    if (month >= 9 && month <= 11)
+                    {
                         style = m_styleTreeAutumn;
-                    } else if (month == 12 || month == 1 || month == 2) {
+                    }
+
+                    else if (month == 12 || month == 1 || month == 2)
+                    {
                         style = m_styleTreeWinter;
                     }
                 }
             }
         }
-    } else if (geodata_cast<GeoDataLinearRing>(placemark->geometry())) {
+    }
+
+    else if (geodata_cast<GeoDataLinearRing>(placemark->geometry()))
+    {
         bool adjustStyle = false;
 
         GeoDataPolyStyle polyStyle = style->polyStyle();
         GeoDataLineStyle lineStyle = style->lineStyle();
-        if (visualCategory == GeoDataPlacemark::NaturalWater) {
-            if (osmData.containsTag(QStringLiteral("salt"), QStringLiteral("yes"))) {
+
+        if (visualCategory == GeoDataPlacemark::NaturalWater)
+        {
+            if (osmData.containsTag(QStringLiteral("salt"), QStringLiteral("yes")))
+            {
                 polyStyle.setColor(effectColor("#ffff80"));
                 lineStyle.setPenStyle(Qt::DashLine);
                 lineStyle.setWidth(2);
                 adjustStyle = true;
             }
-        } else if (visualCategory == GeoDataPlacemark::Bathymetry) {
+        }
+
+        else if (visualCategory == GeoDataPlacemark::Bathymetry)
+        {
             auto tagIter = osmData.findTag(QStringLiteral("ele"));
-            if (tagIter != osmData.tagsEnd()) {
+
+            if (tagIter != osmData.tagsEnd())
+            {
                 const QString& elevation = tagIter.value();
-                if (elevation == QLatin1String("4000")) {
+
+                if (elevation == QLatin1String("4000"))
+                {
                     polyStyle.setColor(effectColor("#94c2c2"));
                     lineStyle.setColor(effectColor("#94c2c2"));
                     adjustStyle = true;
                 }
             }
-        } else if (visualCategory == GeoDataPlacemark::AmenityGraveyard || visualCategory == GeoDataPlacemark::LanduseCemetery) {
+        }
+
+        else if (visualCategory == GeoDataPlacemark::AmenityGraveyard || visualCategory == GeoDataPlacemark::LanduseCemetery)
+        {
             auto tagIter = osmData.findTag(QStringLiteral("religion"));
-            if (tagIter != osmData.tagsEnd()) {
+
+            if (tagIter != osmData.tagsEnd())
+            {
                 const QString& religion = tagIter.value();
-                if (religion == QLatin1String("jewish")) {
+
+                if (religion == QLatin1String("jewish"))
+                {
                     polyStyle.setTexturePath(MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_jewish.png")));
                     adjustStyle = true;
-                } else if (religion == QLatin1String("christian")) {
+                }
+
+                else if (religion == QLatin1String("christian"))
+                {
                     polyStyle.setTexturePath(MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_christian.png")));
                     adjustStyle = true;
-                } else if (religion == QLatin1String("INT-generic")) {
+                }
+
+                else if (religion == QLatin1String("INT-generic"))
+                {
                     polyStyle.setTexturePath(MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
                     adjustStyle = true;
                 }
             }
-        } else if (visualCategory == GeoDataPlacemark::PisteDownhill) {
+        }
+
+        else if (visualCategory == GeoDataPlacemark::PisteDownhill)
+        {
             return adjustPisteStyle(parameters, style);
         }
 
-        if (adjustStyle) {
+        if (adjustStyle)
+        {
             GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
             newStyle->setPolyStyle(polyStyle);
             newStyle->setLineStyle(lineStyle);
             style = newStyle;
         }
 
-        if (style->iconStyle().iconPath().isEmpty()) {
+        if (style->iconStyle().iconPath().isEmpty())
+        {
             const GeoDataPlacemark::GeoDataVisualCategory category = determineVisualCategory(osmData);
             const GeoDataStyle::ConstPtr categoryStyle = presetStyle(category);
-            if (category != GeoDataPlacemark::None && !categoryStyle->iconStyle().scaledIcon().isNull()) {
+
+            if (category != GeoDataPlacemark::None && !categoryStyle->iconStyle().scaledIcon().isNull())
+            {
                 GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
                 newStyle->setIconStyle(categoryStyle->iconStyle());
                 style = newStyle;
             }
         }
-    } else if (geodata_cast<GeoDataLineString>(placemark->geometry())) {
+    }
+
+    else if (geodata_cast<GeoDataLineString>(placemark->geometry()))
+    {
         GeoDataPolyStyle polyStyle = style->polyStyle();
         GeoDataLineStyle lineStyle = style->lineStyle();
         GeoDataLabelStyle labelStyle = style->labelStyle();
@@ -416,21 +510,31 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
 
         bool adjustStyle = false;
 
-        if (visualCategory == GeoDataPlacemark::AdminLevel2) {
-            if (osmData.containsTag(QStringLiteral("maritime"), QStringLiteral("yes"))) {
+        if (visualCategory == GeoDataPlacemark::AdminLevel2)
+        {
+            if (osmData.containsTag(QStringLiteral("maritime"), QStringLiteral("yes")))
+            {
                 lineStyle.setColor(effectColor("#88b3bf"));
                 polyStyle.setColor(effectColor("#88b3bf"));
-                if (osmData.containsTag(QStringLiteral("marble:disputed"), QStringLiteral("yes"))) {
+
+                if (osmData.containsTag(QStringLiteral("marble:disputed"), QStringLiteral("yes")))
+                {
                     lineStyle.setPenStyle(Qt::DashLine);
                 }
+
                 adjustStyle = true;
             }
-        } else if ((visualCategory >= GeoDataPlacemark::HighwayService &&
-                    visualCategory <= GeoDataPlacemark::HighwayMotorway) ||
-                   visualCategory == GeoDataPlacemark::TransportAirportRunway) {
+        }
+
+        else if ((visualCategory >= GeoDataPlacemark::HighwayService &&
+                  visualCategory <= GeoDataPlacemark::HighwayMotorway) ||
+                 visualCategory == GeoDataPlacemark::TransportAirportRunway)
+        {
             // Take cached Style instance if possible
             styleCacheKey = QStringLiteral("%1/%2").arg(parameters.tileLevel).arg(visualCategory);
-            if (m_styleCache.contains(styleCacheKey)) {
+
+            if (m_styleCache.contains(styleCacheKey))
+            {
                 style = m_styleCache[styleCacheKey];
                 return style;
             }
@@ -440,11 +544,13 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
             adjustWayWidth(parameters, lineStyle);
 
             QString const accessValue = osmData.tagValue(QStringLiteral("access"));
+
             if (accessValue == QLatin1String("private") ||
                 accessValue == QLatin1String("no") ||
                 accessValue == QLatin1String("agricultural") ||
                 accessValue == QLatin1String("delivery") ||
-                accessValue == QLatin1String("forestry")) {
+                accessValue == QLatin1String("forestry"))
+            {
                 QColor polyColor = polyStyle.color();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -462,7 +568,8 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
                 lineStyle.setColor(effectColor(lineStyle.color().darker(150)));
             }
 
-            if (osmData.containsTag(QString::fromUtf8("tunnel"), QString::fromUtf8("yes"))) {
+            if (osmData.containsTag(QString::fromUtf8("tunnel"), QString::fromUtf8("yes")))
+            {
                 QColor polyColor = polyStyle.color();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -480,67 +587,98 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
                 lineStyle.setColor(effectColor(lineStyle.color().lighter(115)));
             }
 
-        } else if (visualCategory >= GeoDataPlacemark::WaterwayCanal && visualCategory <= GeoDataPlacemark::WaterwayStream) {
+        }
+
+        else if (visualCategory >= GeoDataPlacemark::WaterwayCanal && visualCategory <= GeoDataPlacemark::WaterwayStream)
+        {
 
             adjustStyle = true;
 
             // Take cached Style instance if possible
             styleCacheKey = QStringLiteral("%1/%2").arg(parameters.tileLevel).arg(visualCategory);
-            if (m_styleCache.contains(styleCacheKey)) {
+
+            if (m_styleCache.contains(styleCacheKey))
+            {
                 style = m_styleCache[styleCacheKey];
                 return style;
             }
 
 
-            if (parameters.tileLevel <= 3) {
+            if (parameters.tileLevel <= 3)
+            {
                 lineStyle.setWidth(1);
                 lineStyle.setPhysicalWidth(0.0);
                 styleCacheKey = QStringLiteral("%1/%2").arg(parameters.tileLevel).arg(visualCategory);
-            } else if (parameters.tileLevel <= 7) {
+            }
+
+            else if (parameters.tileLevel <= 7)
+            {
                 lineStyle.setWidth(2);
                 lineStyle.setPhysicalWidth(0.0);
                 styleCacheKey = QStringLiteral("%1/%2").arg(parameters.tileLevel).arg(visualCategory);
-            } else {
+            }
+
+            else
+            {
                 QString const widthValue = osmData.tagValue(QStringLiteral("width")).remove(QStringLiteral(" meters")).remove(QStringLiteral(" m"));
                 bool ok;
                 float const width = widthValue.toFloat(&ok);
                 lineStyle.setPhysicalWidth(ok ? qBound(0.1f, width, 200.0f) : 0.0f);
             }
-        } else if (visualCategory == GeoDataPlacemark::PisteDownhill) {
+        }
+
+        else if (visualCategory == GeoDataPlacemark::PisteDownhill)
+        {
             return adjustPisteStyle(parameters, style);
         }
 
-        if (adjustStyle) {
+        if (adjustStyle)
+        {
             GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
             newStyle->setPolyStyle(polyStyle);
             newStyle->setLineStyle(lineStyle);
             newStyle->setLabelStyle(labelStyle);
             newStyle->setIconStyle(iconStyle);
             style = newStyle;
-            if (!styleCacheKey.isEmpty()) {
+
+            if (!styleCacheKey.isEmpty())
+            {
                 m_styleCache.insert(styleCacheKey, newStyle);
             }
         }
 
-    } else if (geodata_cast<GeoDataPolygon>(placemark->geometry())) {
+    }
+
+    else if (geodata_cast<GeoDataPolygon>(placemark->geometry()))
+    {
         GeoDataPolyStyle polyStyle = style->polyStyle();
         GeoDataLineStyle lineStyle = style->lineStyle();
         bool adjustStyle = false;
-        if (visualCategory == GeoDataPlacemark::Bathymetry) {
+
+        if (visualCategory == GeoDataPlacemark::Bathymetry)
+        {
             auto tagIter = osmData.findTag(QStringLiteral("ele"));
-            if (tagIter != osmData.tagsEnd()) {
+
+            if (tagIter != osmData.tagsEnd())
+            {
                 const QString& elevation = tagIter.value();
-                if (elevation == QLatin1String("4000")) {
+
+                if (elevation == QLatin1String("4000"))
+                {
                     polyStyle.setColor(effectColor("#a5c9c9"));
                     lineStyle.setColor(effectColor("#a5c9c9"));
                     adjustStyle = true;
                 }
             }
-        } else if (visualCategory == GeoDataPlacemark::PisteDownhill) {
+        }
+
+        else if (visualCategory == GeoDataPlacemark::PisteDownhill)
+        {
             return adjustPisteStyle(parameters, style);
         }
 
-        if (adjustStyle) {
+        if (adjustStyle)
+        {
             GeoDataStyle::Ptr newStyle(new GeoDataStyle(*style));
             newStyle->setPolyStyle(polyStyle);
             newStyle->setLineStyle(lineStyle);
@@ -552,14 +690,16 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
     return style;
 }
 
-GeoDataStyle::ConstPtr StyleBuilder::Private::adjustPisteStyle(const StyleParameters &parameters, const GeoDataStyle::ConstPtr &style)
+GeoDataStyle::ConstPtr StyleBuilder::Private::adjustPisteStyle(const StyleParameters& parameters, const GeoDataStyle::ConstPtr& style)
 {
     // Take cached Style instance if possible
-    auto const & osmData = parameters.placemark->osmData();
+    auto const& osmData = parameters.placemark->osmData();
     auto const visualCategory = parameters.placemark->visualCategory();
     auto const difficulty = osmData.tagValue(QString::fromUtf8("piste:difficulty"));
     QString styleCacheKey = QStringLiteral("piste/%1/%2").arg(visualCategory).arg(difficulty);
-    if (m_styleCache.contains(styleCacheKey)) {
+
+    if (m_styleCache.contains(styleCacheKey))
+    {
         return m_styleCache[styleCacheKey];
     }
 
@@ -573,51 +713,103 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::adjustPisteStyle(const StyleParame
     auto orange = QColor(255, 165, 0);
     auto fallBack = Qt::lightGray;
     auto country = QLocale::system().country();
-    if (country == QLocale::Japan) {
-        if (difficulty == QString::fromUtf8("easy")) {
+
+    if (country == QLocale::Japan)
+    {
+        if (difficulty == QString::fromUtf8("easy"))
+        {
             lineStyle.setColor(green);
-        } else if (difficulty == QString::fromUtf8("intermediate")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("intermediate"))
+        {
             lineStyle.setColor(red);
-        } else if (difficulty == QString::fromUtf8("advanced")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("advanced"))
+        {
             lineStyle.setColor(black);
-        } else {
+        }
+
+        else
+        {
             lineStyle.setColor(fallBack);
         }
-    } else if (country == QLocale::UnitedStates ||
-               country == QLocale::UnitedStatesMinorOutlyingIslands ||
-               country == QLocale::Canada ||
-               m_oceanianCountries.contains(country)) {
-        if (difficulty == QString::fromUtf8("easy")) {
+    }
+
+    else if (country == QLocale::UnitedStates ||
+             country == QLocale::UnitedStatesMinorOutlyingIslands ||
+             country == QLocale::Canada ||
+             m_oceanianCountries.contains(country))
+    {
+        if (difficulty == QString::fromUtf8("easy"))
+        {
             lineStyle.setColor(green);
-        } else if (difficulty == QString::fromUtf8("intermediate")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("intermediate"))
+        {
             lineStyle.setColor(blue);
-        } else if (difficulty == QString::fromUtf8("advanced") || difficulty == QString::fromUtf8("expert")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("advanced") || difficulty == QString::fromUtf8("expert"))
+        {
             lineStyle.setColor(black);
-        } else {
+        }
+
+        else
+        {
             lineStyle.setColor(fallBack);
         }
+
         // fallback on Europe
-    } else {
-        if (difficulty == QString::fromUtf8("novice")) {
+    }
+
+    else
+    {
+        if (difficulty == QString::fromUtf8("novice"))
+        {
             lineStyle.setColor(green);
-        } else if (difficulty == QString::fromUtf8("easy")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("easy"))
+        {
             lineStyle.setColor(blue);
-        } else if (difficulty == QString::fromUtf8("intermediate")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("intermediate"))
+        {
             lineStyle.setColor(red);
-        } else if (difficulty == QString::fromUtf8("advanced")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("advanced"))
+        {
             lineStyle.setColor(black);
-        } else if (difficulty == QString::fromUtf8("expert")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("expert"))
+        {
             // scandinavian countries have different colors then the rest of Europe
             if (country == QLocale::Denmark ||
                 country == QLocale::Norway ||
-                country == QLocale::Sweden) {
+                country == QLocale::Sweden)
+            {
                 lineStyle.setColor(black);
-            } else {
+            }
+
+            else
+            {
                 lineStyle.setColor(orange);
             }
-        } else if (difficulty == QString::fromUtf8("freeride")) {
+        }
+
+        else if (difficulty == QString::fromUtf8("freeride"))
+        {
             lineStyle.setColor(yellow);
-        } else {
+        }
+
+        else
+        {
             lineStyle.setColor(fallBack);
         }
     }
@@ -631,27 +823,43 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::adjustPisteStyle(const StyleParame
     return newStyle;
 }
 
-void StyleBuilder::Private::adjustWayWidth(const StyleParameters &parameters, GeoDataLineStyle &lineStyle)
+void StyleBuilder::Private::adjustWayWidth(const StyleParameters& parameters, GeoDataLineStyle& lineStyle)
 {
-    auto const & osmData = parameters.placemark->osmData();
+    auto const& osmData = parameters.placemark->osmData();
     auto const visualCategory = parameters.placemark->visualCategory();
-    if (parameters.tileLevel <= 8) {
+
+    if (parameters.tileLevel <= 8)
+    {
         lineStyle.setPhysicalWidth(0.0);
         lineStyle.setWidth(2.0);
-    } else if (parameters.tileLevel <= 10) {
+    }
+
+    else if (parameters.tileLevel <= 10)
+    {
         lineStyle.setPhysicalWidth(0.0);
         lineStyle.setWidth(3.0);
-    } else if (parameters.tileLevel <= 12) {
+    }
+
+    else if (parameters.tileLevel <= 12)
+    {
         lineStyle.setPhysicalWidth(0.0);
         lineStyle.setWidth(4.0);
-    } else {
+    }
+
+    else
+    {
         auto tagIter = osmData.findTag(QStringLiteral("width"));
-        if (tagIter != osmData.tagsEnd()) {
+
+        if (tagIter != osmData.tagsEnd())
+        {
             QString const widthValue = QString(tagIter.value()).remove(QStringLiteral(" meters")).remove(QStringLiteral(" m"));
             bool ok;
             float const width = widthValue.toFloat(&ok);
             lineStyle.setPhysicalWidth(ok ? qBound(0.1f, width, 200.0f) : 0.0f);
-        } else {
+        }
+
+        else
+        {
             bool const isOneWay = osmData.containsTag(QStringLiteral("oneway"), QStringLiteral("yes")) ||
                                   osmData.containsTag(QStringLiteral("oneway"), QStringLiteral("-1"));
             int const lanes = isOneWay ? 1 : 2; // also for motorway which implicitly is one way, but has two lanes and each direction has its own highway
@@ -664,11 +872,11 @@ void StyleBuilder::Private::adjustWayWidth(const StyleParameters &parameters, Ge
 }
 
 GeoDataStyle::Ptr StyleBuilder::Private::createStyle(qreal width, qreal realWidth, const QColor& color,
-        const QColor& outlineColor, bool fill, bool outline, Qt::BrushStyle brushStyle, Qt::PenStyle penStyle,
-        Qt::PenCapStyle capStyle, bool lineBackground, const QVector< qreal >& dashPattern,
-        const QFont& font, const QColor& fontColor, const QString& texturePath)
+                                                     const QColor& outlineColor, bool fill, bool outline, Qt::BrushStyle brushStyle, Qt::PenStyle penStyle,
+                                                     Qt::PenCapStyle capStyle, bool lineBackground, const QVector< qreal >& dashPattern,
+                                                     const QFont& font, const QColor& fontColor, const QString& texturePath)
 {
-    GeoDataStyle *style = new GeoDataStyle;
+    GeoDataStyle* style = new GeoDataStyle;
     GeoDataLineStyle lineStyle(effectColor(outlineColor));
     lineStyle.setCapStyle(capStyle);
     lineStyle.setPenStyle(penStyle);
@@ -694,7 +902,8 @@ void StyleBuilder::Private::initializeDefaultStyles()
     // the future: Having a PlacemarkStyleProperty properties[] would
     // help here greatly.
 
-    if (m_defaultStyleInitialized) {
+    if (m_defaultStyleInitialized)
+    {
         return;
     }
 
@@ -712,83 +921,83 @@ void StyleBuilder::Private::initializeDefaultStyles()
 
     m_defaultStyle[GeoDataPlacemark::None]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Default]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/default_location.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Unknown]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::SmallCity]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_4_white.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::SmallCountyCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_4_yellow.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::SmallStateCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_4_orange.png")),
-                            QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::SmallNationCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_4_red.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::MediumCity]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_3_white.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::MediumCountyCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_3_yellow.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::MediumStateCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_3_orange.png")),
-                            QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::MediumNationCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_3_red.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::BigCity]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_2_white.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::BigCountyCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_2_yellow.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::BigStateCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_2_orange.png")),
-                            QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, true), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::BigNationCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_2_red.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::LargeCity]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_1_white.png")),
-                            QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::LargeCountyCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_1_yellow.png")),
-                            QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::LargeStateCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_1_orange.png")),
-                            QFont(defaultFamily, defaultSize, 75, true), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 75, true), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::LargeNationCapital]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/city_1_red.png")),
-                            QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 75, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Nation]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, int(defaultSize * 1.5), 75, false), QColor("#404040")));
+                                             QFont(defaultFamily, int(defaultSize * 1.5), 75, false), QColor("#404040")));
     // Align area labels centered
     m_defaultStyle[GeoDataPlacemark::Nation]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
@@ -807,104 +1016,110 @@ void StyleBuilder::Private::initializeDefaultStyles()
     m_defaultStyle[GeoDataPlacemark::PlaceVillage] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#505050"));
     m_defaultStyle[GeoDataPlacemark::PlaceVillageCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#505050"));
     m_defaultStyle[GeoDataPlacemark::PlaceVillageNationalCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#505050"));
-    for (int i = GeoDataPlacemark::PlaceCity; i <= GeoDataPlacemark::PlaceVillageCapital; ++i) {
+
+    for (int i = GeoDataPlacemark::PlaceCity; i <= GeoDataPlacemark::PlaceVillageCapital; ++i)
+    {
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->polyStyle().setFill(false);
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->polyStyle().setOutline(false);
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
-        if (i == GeoDataPlacemark::PlaceCityNationalCapital || i == GeoDataPlacemark::PlaceTownNationalCapital || i == GeoDataPlacemark::PlaceVillageNationalCapital) {
+        if (i == GeoDataPlacemark::PlaceCityNationalCapital || i == GeoDataPlacemark::PlaceTownNationalCapital || i == GeoDataPlacemark::PlaceVillageNationalCapital)
+        {
             m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->iconStyle().setScale(0.55f);
-        } else {
+        }
+
+        else
+        {
             m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->iconStyle().setScale(0.25);
         }
     }
 
     m_defaultStyle[GeoDataPlacemark::Mountain]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/mountain_1.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Volcano]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/volcano_1.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Mons]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/mountain_1.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Valley]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/valley.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Continent]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
+                                             QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
     // Align area labels centered
     m_defaultStyle[GeoDataPlacemark::Continent]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::Ocean]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, int(defaultSize * 1.7), 50, true), QColor("#2c72c7")));
+                                             QFont(defaultFamily, int(defaultSize * 1.7), 50, true), QColor("#2c72c7")));
     // Align area labels centered
     m_defaultStyle[GeoDataPlacemark::Ocean]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::OtherTerrain]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/other.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Crater]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/crater.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.9), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Mare]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
-                            QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
+                                             QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
     // Align area labels centered
     m_defaultStyle[GeoDataPlacemark::Mare]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::GeographicPole]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/pole_1.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::MagneticPole]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/pole_2.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::ShipWreck]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/shipwreck.png")),
-                            QFont(defaultFamily, int(defaultSize * 0.8), 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, int(defaultSize * 0.8), 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::AirPort]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/airport.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Observatory]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/observatory.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::OsmSite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/osm.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::Coordinate]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/coordinate.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
 
     m_defaultStyle[GeoDataPlacemark::MannedLandingSite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/manned_landing.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::RoboticRover]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/robotic_rover.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::UnmannedSoftLandingSite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/unmanned_soft_landing.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     m_defaultStyle[GeoDataPlacemark::UnmannedHardLandingSite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/unmanned_hard_landing.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     QColor const shopColor("#ac39ac");
     QColor const transportationColor("#0092da");
@@ -915,7 +1130,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
     QColor const buildingColor("#beadad");
     QColor const waterColor("#b5d0d0");
     // Allows to visualize multiple repaints of buildings
-//    QColor const buildingColor(0, 255, 0, 64);
+    //    QColor const buildingColor(0, 255, 0, 64);
 
     QFont const osmFont(defaultFamily, 10, 50, false);
     m_defaultStyle[GeoDataPlacemark::AccomodationCamping]      = createOsmPOIRingStyle(osmFont, QString::fromUtf8("transportation/camping.16"), transportationColor);
@@ -1153,18 +1368,18 @@ void StyleBuilder::Private::initializeDefaultStyles()
     m_defaultStyle[GeoDataPlacemark::TransportSpeedCamera]     = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/speedcamera"));
 
     m_defaultStyle[GeoDataPlacemark::NaturalWater]             = createStyle(4, 0, waterColor, waterColor, true, false,
-            Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
-            osmFont, waterColor.darker(150));
+                                                                             Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                             osmFont, waterColor.darker(150));
     m_defaultStyle[GeoDataPlacemark::WaterwayRiver]            = createStyle(4, 0, waterColor, waterColor, true, false,
-            Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
-            osmFont, waterColor.darker(150));
+                                                                             Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                             osmFont, waterColor.darker(150));
     m_defaultStyle[GeoDataPlacemark::WaterwayCanal]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
     m_defaultStyle[GeoDataPlacemark::WaterwayDitch]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
     m_defaultStyle[GeoDataPlacemark::WaterwayDrain]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
     m_defaultStyle[GeoDataPlacemark::WaterwayStream]          = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
     m_defaultStyle[GeoDataPlacemark::WaterwayWeir]            = createStyle(4, 0, "#ffffff", "#87939b", true, false,
-            Qt::SolidPattern, Qt::DotLine, Qt::RoundCap, true, QVector< qreal >(),
-            osmFont, waterColor.darker(150));
+                                                                            Qt::SolidPattern, Qt::DotLine, Qt::RoundCap, true, QVector< qreal >(),
+                                                                            osmFont, waterColor.darker(150));
 
     m_defaultStyle[GeoDataPlacemark::CrossingIsland]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/zebra_crossing"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::CrossingIsland]->iconStyle().setScale(0.75);
@@ -1176,8 +1391,8 @@ void StyleBuilder::Private::initializeDefaultStyles()
     m_defaultStyle[GeoDataPlacemark::CrossingZebra]->iconStyle().setScale(0.75);
 
     m_defaultStyle[GeoDataPlacemark::NaturalReef]              = createStyle(5.5, 0, "#36677c", "#36677c", true, false,
-            Qt::Dense7Pattern, Qt::DotLine, Qt::RoundCap, false, QVector< qreal >(),
-            osmFont, waterColor.darker(150));
+                                                                             Qt::Dense7Pattern, Qt::DotLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                             osmFont, waterColor.darker(150));
 
     m_defaultStyle[GeoDataPlacemark::AmenityGraveyard]         = createWayStyle("#AACBAF", "#AACBAF", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
 
@@ -1287,7 +1502,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
 
     m_defaultStyle[GeoDataPlacemark::Satellite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/satellite.png")),
-                            QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
+                                             QFont(defaultFamily, defaultSize, 50, false), defaultLabelColor));
 
     QFont tmp;
 
@@ -1325,9 +1540,12 @@ void StyleBuilder::Private::initializeDefaultStyles()
 
     // Buildings
     m_defaultStyle[GeoDataPlacemark::Building] = createStyle(1, 0, buildingColor, buildingColor.darker(),
-            true, true, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector<qreal>(), osmFont);
-    for (int i = 0; i < GeoDataPlacemark::LastIndex; ++i) {
-        if (m_defaultStyle[i] && !m_defaultStyle[i]->iconStyle().iconPath().isEmpty()) {
+                                                             true, true, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector<qreal>(), osmFont);
+
+    for (int i = 0; i < GeoDataPlacemark::LastIndex; ++i)
+    {
+        if (m_defaultStyle[i] && !m_defaultStyle[i]->iconStyle().iconPath().isEmpty())
+        {
             auto const category = GeoDataPlacemark::GeoDataVisualCategory(i);
             m_buildingStyles[category] = GeoDataStyle::Ptr(new GeoDataStyle(*m_defaultStyle[GeoDataPlacemark::Building]));
             m_buildingStyles[category]->iconStyle() = m_defaultStyle[i]->iconStyle();
@@ -1340,28 +1558,38 @@ void StyleBuilder::Private::initializeDefaultStyles()
 QColor StyleBuilder::Private::effectColor(const QColor& color)
 {
     int gray;
-    switch (s_styleEffect) {
-    case InvertedEffect:
-        return QColor(255 - color.red(), 255 - color.green(), 255 - color.blue());
-    case GrayscaleEffect:
-        gray = qMin(255, static_cast<int>(7 * qGray(color.darker(800).rgb())));
-        return QColor(gray, gray, gray);
-    case RedModeEffect:
-        gray = qMin(255, static_cast<int>(7 * qGray(color.darker(800).rgb())));
-        return QColor(gray, 0, 0);
-    case NoEffect:
-        return color;
+
+    switch (s_styleEffect)
+    {
+        case InvertedEffect:
+            return QColor(255 - color.red(), 255 - color.green(), 255 - color.blue());
+
+        case GrayscaleEffect:
+            gray = qMin(255, static_cast<int>(7 * qGray(color.darker(800).rgb())));
+            return QColor(gray, gray, gray);
+
+        case RedModeEffect:
+            gray = qMin(255, static_cast<int>(7 * qGray(color.darker(800).rgb())));
+            return QColor(gray, 0, 0);
+
+        case NoEffect:
+            return color;
     }
 
     return color;
 }
 
-QString StyleBuilder::Private::createPaintLayerItem(const QString &itemType, GeoDataPlacemark::GeoDataVisualCategory visualCategory, const QString &subType)
+QString StyleBuilder::Private::createPaintLayerItem(const QString& itemType, GeoDataPlacemark::GeoDataVisualCategory visualCategory, const QString& subType)
 {
     QString const category = visualCategoryName(visualCategory);
-    if (subType.isEmpty()) {
+
+    if (subType.isEmpty())
+    {
         return itemType + QLatin1Char('/') + category;
-    } else {
+    }
+
+    else
+    {
         return itemType + QLatin1Char('/') + category + QLatin1Char('/') + subType;
     }
 }
@@ -1369,7 +1597,8 @@ QString StyleBuilder::Private::createPaintLayerItem(const QString &itemType, Geo
 void StyleBuilder::Private::initializeOsmVisualCategories()
 {
     // Only initialize the map once
-    if (!s_visualCategories.isEmpty()) {
+    if (!s_visualCategories.isEmpty())
+    {
         return;
     }
 
@@ -1516,7 +1745,8 @@ void StyleBuilder::Private::initializeOsmVisualCategories()
 
 
     // Default for all other shops
-    for (const QString &value: shopValues()) {
+    for (const QString& value : shopValues())
+    {
         s_visualCategories[OsmTag(QString::fromUtf8("shop"), value)]               = GeoDataPlacemark::Shop;
     }
 
@@ -1742,19 +1972,23 @@ void StyleBuilder::Private::initializeOsmVisualCategories()
     s_visualCategories[OsmTag(QString::fromUtf8("marble:feature"), QString::fromUtf8("bathymetry"))]  = GeoDataPlacemark::Bathymetry;
 
     // Default for buildings
-    for (const auto &tag: buildingTags()) {
+    for (const auto& tag : buildingTags())
+    {
         s_visualCategories[tag]                                 = GeoDataPlacemark::Building;
     }
 }
 
 void StyleBuilder::Private::initializeMinimumZoomLevels()
 {
-    if (s_defaultMinZoomLevelsInitialized) {
+    if (s_defaultMinZoomLevelsInitialized)
+    {
         return;
     }
 
     s_defaultMinZoomLevelsInitialized = true;
-    for (int i = 0; i < GeoDataPlacemark::LastIndex; i++) {
+
+    for (int i = 0; i < GeoDataPlacemark::LastIndex; i++)
+    {
         s_defaultMinZoomLevels[i] = -1;
     }
 
@@ -1959,9 +2193,11 @@ void StyleBuilder::Private::initializeMinimumZoomLevels()
 
     s_defaultMinZoomLevels[GeoDataPlacemark::Satellite]   = 0;
 
-    for (int shop = GeoDataPlacemark::ShopBeverages; shop <= GeoDataPlacemark::Shop; ++shop) {
+    for (int shop = GeoDataPlacemark::ShopBeverages; shop <= GeoDataPlacemark::Shop; ++shop)
+    {
         s_defaultMinZoomLevels[shop] = 17;
     }
+
     s_defaultMinZoomLevels[GeoDataPlacemark::ShopSupermarket] = 16;
     s_defaultMinZoomLevels[GeoDataPlacemark::ShopDepartmentStore] = 16;
     s_defaultMinZoomLevels[GeoDataPlacemark::ShopDoitYourself] = 16;
@@ -2005,7 +2241,8 @@ void StyleBuilder::Private::initializeMinimumZoomLevels()
     s_defaultMinZoomLevels[GeoDataPlacemark::TransportMotorcycleParking]  = 17;
     s_defaultMinZoomLevels[GeoDataPlacemark::TransportSubwayEntrance]  = 17;
 
-    for (int religion = GeoDataPlacemark::ReligionPlaceOfWorship; religion <= GeoDataPlacemark::ReligionTaoist; ++religion) {
+    for (int religion = GeoDataPlacemark::ReligionPlaceOfWorship; religion <= GeoDataPlacemark::ReligionTaoist; ++religion)
+    {
         s_defaultMinZoomLevels[religion] = 17;
     }
 
@@ -2053,8 +2290,10 @@ void StyleBuilder::Private::initializeMinimumZoomLevels()
     s_defaultMinZoomLevels[GeoDataPlacemark::IndoorWall] = 17;
     s_defaultMinZoomLevels[GeoDataPlacemark::IndoorRoom] = 17;
 
-    for (int i = GeoDataPlacemark::PlaceCity; i < GeoDataPlacemark::LastIndex; i++) {
-        if (s_defaultMinZoomLevels[i] < 0) {
+    for (int i = GeoDataPlacemark::PlaceCity; i < GeoDataPlacemark::LastIndex; i++)
+    {
+        if (s_defaultMinZoomLevels[i] < 0)
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Missing default min zoom level for GeoDataPlacemark::GeoDataVisualCategory " << i;
             Q_ASSERT(false && "StyleBuilder::Private::initializeMinimumZoomLevels is incomplete");
             s_defaultMinZoomLevels[i] = 15;
@@ -2096,22 +2335,27 @@ void StyleBuilder::setDefaultLabelColor(const QColor& color)
     reset();
 }
 
-GeoDataStyle::ConstPtr StyleBuilder::createStyle(const StyleParameters &parameters) const
+GeoDataStyle::ConstPtr StyleBuilder::createStyle(const StyleParameters& parameters) const
 {
-    const GeoDataPlacemark *const placemark = parameters.placemark;
+    const GeoDataPlacemark* const placemark = parameters.placemark;
 
-    if (!placemark) {
+    if (!placemark)
+    {
         Q_ASSERT(false && "Must not pass a null placemark to StyleBuilder::createStyle");
         return GeoDataStyle::Ptr();
     }
 
-    if (placemark->customStyle()) {
+    if (placemark->customStyle())
+    {
         return placemark->customStyle();
     }
 
-    if (parameters.relation) {
+    if (parameters.relation)
+    {
         auto style = d->createRelationStyle(parameters);
-        if (style) {
+
+        if (style)
+        {
             return style;
         }
     }
@@ -2121,13 +2365,18 @@ GeoDataStyle::ConstPtr StyleBuilder::createStyle(const StyleParameters &paramete
 
 GeoDataStyle::ConstPtr StyleBuilder::Private::presetStyle(GeoDataPlacemark::GeoDataVisualCategory visualCategory) const
 {
-    if (!m_defaultStyleInitialized) {
-        const_cast<StyleBuilder::Private *>(this)->initializeDefaultStyles(); // const cast due to lazy initialization
+    if (!m_defaultStyleInitialized)
+    {
+        const_cast<StyleBuilder::Private*>(this)->initializeDefaultStyles();  // const cast due to lazy initialization
     }
 
-    if (m_defaultStyle[visualCategory]) {
+    if (m_defaultStyle[visualCategory])
+    {
         return m_defaultStyle[visualCategory];
-    } else {
+    }
+
+    else
+    {
         return m_defaultStyle[GeoDataPlacemark::Default];
     }
 }
@@ -2137,7 +2386,8 @@ QStringList StyleBuilder::renderOrder() const
 {
     static QStringList paintLayerOrder;
 
-    if (paintLayerOrder.isEmpty()) {
+    if (paintLayerOrder.isEmpty())
+    {
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::Landmass);
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::UrbanArea);
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::LanduseResidential);
@@ -2198,7 +2448,9 @@ QStringList StyleBuilder::renderOrder() const
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::Landmass);
 
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::NaturalWater);
-        for (int i = GeoDataPlacemark::WaterwayCanal; i <= GeoDataPlacemark::WaterwayStream; ++i) {
+
+        for (int i = GeoDataPlacemark::WaterwayCanal; i <= GeoDataPlacemark::WaterwayStream; ++i)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
@@ -2215,23 +2467,34 @@ QStringList StyleBuilder::renderOrder() const
 
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::TransportAirportApron);
 
-        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
+        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
-        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
+
+        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
-        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
+
+        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
-        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
+
+        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
+
         // Highway labels shall appear on top of railways, hence here and not already above
-        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++) {
+        for (int i = GeoDataPlacemark::HighwaySteps; i <= GeoDataPlacemark::HighwayMotorway; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
-        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++) {
+
+        for (int i = GeoDataPlacemark::RailwayRail; i <= GeoDataPlacemark::RailwayFunicular; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
@@ -2240,25 +2503,33 @@ QStringList StyleBuilder::renderOrder() const
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::TransportPlatform, QString::fromUtf8("inline"));
         paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::TransportPlatform, QString::fromUtf8("label"));
 
-        for (int i = GeoDataPlacemark::PisteDownhill; i <= GeoDataPlacemark::PisteSkiJump; ++i) {
+        for (int i = GeoDataPlacemark::PisteDownhill; i <= GeoDataPlacemark::PisteSkiJump; ++i)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("Polygon"), GeoDataPlacemark::GeoDataVisualCategory(i));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
-        for (int i = GeoDataPlacemark::AerialwayCableCar; i <= GeoDataPlacemark::AerialwayGoods; ++i) {
+
+        for (int i = GeoDataPlacemark::AerialwayCableCar; i <= GeoDataPlacemark::AerialwayGoods; ++i)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
-        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
+        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("outline"));
         }
-        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
+
+        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("inline"));
         }
-        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++) {
+
+        for (int i = GeoDataPlacemark::AdminLevel1; i <= GeoDataPlacemark::AdminLevel11; i++)
+        {
             paintLayerOrder << Private::createPaintLayerItem(QString::fromUtf8("LineString"), GeoDataPlacemark::GeoDataVisualCategory(i), QString::fromUtf8("label"));
         }
 
@@ -2279,23 +2550,25 @@ void StyleBuilder::reset()
     d->m_defaultStyleInitialized = false;
 }
 
-int StyleBuilder::minimumZoomLevel(const GeoDataPlacemark &placemark) const
+int StyleBuilder::minimumZoomLevel(const GeoDataPlacemark& placemark) const
 {
     Q_ASSERT(Private::s_defaultMinZoomLevelsInitialized);
     return Private::s_defaultMinZoomLevels[placemark.visualCategory()];
 }
 
-int StyleBuilder::minimumZoomLevel(const GeoDataPlacemark::GeoDataVisualCategory &visualCategory)
+int StyleBuilder::minimumZoomLevel(const GeoDataPlacemark::GeoDataVisualCategory& visualCategory)
 {
     Private::initializeMinimumZoomLevels();
     return Private::s_defaultMinZoomLevels[visualCategory];
 }
 
-qint64 StyleBuilder::popularity(const GeoDataPlacemark *placemark)
+qint64 StyleBuilder::popularity(const GeoDataPlacemark* placemark)
 {
     qint64 const defaultValue = 100;
     int const offset = 10;
-    if (StyleBuilder::Private::s_popularities.isEmpty()) {
+
+    if (StyleBuilder::Private::s_popularities.isEmpty())
+    {
         QVector<GeoDataPlacemark::GeoDataVisualCategory> popularities;
         popularities << GeoDataPlacemark::PlaceCityNationalCapital;
         popularities << GeoDataPlacemark::PlaceTownNationalCapital;
@@ -2495,7 +2768,9 @@ qint64 StyleBuilder::popularity(const GeoDataPlacemark *placemark)
         popularities << GeoDataPlacemark::PowerTower;
 
         int value = defaultValue + offset * popularities.size();
-        for (auto popularity : popularities) {
+
+        for (auto popularity : popularities)
+        {
             StyleBuilder::Private::s_popularities[popularity] = value;
             value -= offset;
         }
@@ -2515,7 +2790,8 @@ QString StyleBuilder::visualCategoryName(GeoDataPlacemark::GeoDataVisualCategory
 {
     static QHash<GeoDataPlacemark::GeoDataVisualCategory, QString> visualCategoryNames;
 
-    if (visualCategoryNames.isEmpty()) {
+    if (visualCategoryNames.isEmpty())
+    {
         visualCategoryNames[GeoDataPlacemark::None] = QString::fromUtf8("None");
         visualCategoryNames[GeoDataPlacemark::Default] = QString::fromUtf8("Default");
         visualCategoryNames[GeoDataPlacemark::Unknown] = QString::fromUtf8("Unknown");
@@ -2903,82 +3179,82 @@ QStringList StyleBuilder::shopValues()
 {
     // from https://taginfo.openstreetmap.org/keys/building#values
     static const QStringList osmShopValues = QStringList()
-            << QString::fromUtf8( "cheese")
-            << QString::fromUtf8( "chocolate")
-            << QString::fromUtf8( "coffee")
-            << QString::fromUtf8( "dairy")
-            << QString::fromUtf8( "farm")
-            << QString::fromUtf8( "pasta")
-            << QString::fromUtf8( "pastry")
-            << QString::fromUtf8( "wine")
-            << QString::fromUtf8( "general")
-            << QString::fromUtf8( "mall")
-            << QString::fromUtf8( "baby_goods")
-            << QString::fromUtf8( "boutique")
-            << QString::fromUtf8( "fabric")
-            << QString::fromUtf8( "leather")
-            << QString::fromUtf8( "tailor")
-            << QString::fromUtf8( "watches")
-            << QString::fromUtf8( "charity")
-            << QString::fromUtf8( "second_hand")
-            << QString::fromUtf8( "erotic")
-            << QString::fromUtf8( "hearing_aids")
-            << QString::fromUtf8( "herbalist")
-            << QString::fromUtf8( "massage")
-            << QString::fromUtf8( "medical_supply")
-            << QString::fromUtf8( "tattoo")
-            << QString::fromUtf8( "bathroom_furnishing")
-            << QString::fromUtf8( "electrical")
-            << QString::fromUtf8( "energy")
-            << QString::fromUtf8( "furnace")
-            << QString::fromUtf8( "garden_furniture")
-            << QString::fromUtf8( "gas")
-            << QString::fromUtf8( "glaziery")
-            << QString::fromUtf8( "houseware")
-            << QString::fromUtf8( "locksmith")
-            << QString::fromUtf8( "paint")
-            << QString::fromUtf8( "trade")
-            << QString::fromUtf8( "antiques")
-            << QString::fromUtf8( "bed")
-            << QString::fromUtf8( "candles")
-            << QString::fromUtf8( "carpet")
-            << QString::fromUtf8( "curtain")
-            << QString::fromUtf8( "interior_decoration")
-            << QString::fromUtf8( "kitchen")
-            << QString::fromUtf8( "lamps")
-            << QString::fromUtf8( "window_blind")
-            << QString::fromUtf8( "radiotechnics")
-            << QString::fromUtf8( "vacuum_cleaner")
-            << QString::fromUtf8( "fishing")
-            << QString::fromUtf8( "free_flying")
-            << QString::fromUtf8( "hunting")
-            << QString::fromUtf8( "outdoor")
-            << QString::fromUtf8( "scuba_diving")
-            << QString::fromUtf8( "sports")
-            << QString::fromUtf8( "tyres")
-            << QString::fromUtf8( "swimming_pool")
-            << QString::fromUtf8( "art")
-            << QString::fromUtf8( "craft")
-            << QString::fromUtf8( "frame")
-            << QString::fromUtf8( "games")
-            << QString::fromUtf8( "model")
-            << QString::fromUtf8( "music")
-            << QString::fromUtf8( "trophy")
-            << QString::fromUtf8( "video")
-            << QString::fromUtf8( "video_games")
-            << QString::fromUtf8( "anime")
-            << QString::fromUtf8( "ticket")
-            << QString::fromUtf8( "copyshop")
-            << QString::fromUtf8( "dry_cleaning")
-            << QString::fromUtf8( "e-cigarette")
-            << QString::fromUtf8( "funeral_directors")
-            << QString::fromUtf8( "money_lender")
-            << QString::fromUtf8( "pawnbroker")
-            << QString::fromUtf8( "pyrotechnics")
-            << QString::fromUtf8( "religion")
-            << QString::fromUtf8( "storage_rental")
-            << QString::fromUtf8( "weapons")
-            << QString::fromUtf8( "user defined");
+                                             << QString::fromUtf8("cheese")
+                                             << QString::fromUtf8("chocolate")
+                                             << QString::fromUtf8("coffee")
+                                             << QString::fromUtf8("dairy")
+                                             << QString::fromUtf8("farm")
+                                             << QString::fromUtf8("pasta")
+                                             << QString::fromUtf8("pastry")
+                                             << QString::fromUtf8("wine")
+                                             << QString::fromUtf8("general")
+                                             << QString::fromUtf8("mall")
+                                             << QString::fromUtf8("baby_goods")
+                                             << QString::fromUtf8("boutique")
+                                             << QString::fromUtf8("fabric")
+                                             << QString::fromUtf8("leather")
+                                             << QString::fromUtf8("tailor")
+                                             << QString::fromUtf8("watches")
+                                             << QString::fromUtf8("charity")
+                                             << QString::fromUtf8("second_hand")
+                                             << QString::fromUtf8("erotic")
+                                             << QString::fromUtf8("hearing_aids")
+                                             << QString::fromUtf8("herbalist")
+                                             << QString::fromUtf8("massage")
+                                             << QString::fromUtf8("medical_supply")
+                                             << QString::fromUtf8("tattoo")
+                                             << QString::fromUtf8("bathroom_furnishing")
+                                             << QString::fromUtf8("electrical")
+                                             << QString::fromUtf8("energy")
+                                             << QString::fromUtf8("furnace")
+                                             << QString::fromUtf8("garden_furniture")
+                                             << QString::fromUtf8("gas")
+                                             << QString::fromUtf8("glaziery")
+                                             << QString::fromUtf8("houseware")
+                                             << QString::fromUtf8("locksmith")
+                                             << QString::fromUtf8("paint")
+                                             << QString::fromUtf8("trade")
+                                             << QString::fromUtf8("antiques")
+                                             << QString::fromUtf8("bed")
+                                             << QString::fromUtf8("candles")
+                                             << QString::fromUtf8("carpet")
+                                             << QString::fromUtf8("curtain")
+                                             << QString::fromUtf8("interior_decoration")
+                                             << QString::fromUtf8("kitchen")
+                                             << QString::fromUtf8("lamps")
+                                             << QString::fromUtf8("window_blind")
+                                             << QString::fromUtf8("radiotechnics")
+                                             << QString::fromUtf8("vacuum_cleaner")
+                                             << QString::fromUtf8("fishing")
+                                             << QString::fromUtf8("free_flying")
+                                             << QString::fromUtf8("hunting")
+                                             << QString::fromUtf8("outdoor")
+                                             << QString::fromUtf8("scuba_diving")
+                                             << QString::fromUtf8("sports")
+                                             << QString::fromUtf8("tyres")
+                                             << QString::fromUtf8("swimming_pool")
+                                             << QString::fromUtf8("art")
+                                             << QString::fromUtf8("craft")
+                                             << QString::fromUtf8("frame")
+                                             << QString::fromUtf8("games")
+                                             << QString::fromUtf8("model")
+                                             << QString::fromUtf8("music")
+                                             << QString::fromUtf8("trophy")
+                                             << QString::fromUtf8("video")
+                                             << QString::fromUtf8("video_games")
+                                             << QString::fromUtf8("anime")
+                                             << QString::fromUtf8("ticket")
+                                             << QString::fromUtf8("copyshop")
+                                             << QString::fromUtf8("dry_cleaning")
+                                             << QString::fromUtf8("e-cigarette")
+                                             << QString::fromUtf8("funeral_directors")
+                                             << QString::fromUtf8("money_lender")
+                                             << QString::fromUtf8("pawnbroker")
+                                             << QString::fromUtf8("pyrotechnics")
+                                             << QString::fromUtf8("religion")
+                                             << QString::fromUtf8("storage_rental")
+                                             << QString::fromUtf8("weapons")
+                                             << QString::fromUtf8("user defined");
 
     return osmShopValues;
 }
@@ -2988,76 +3264,77 @@ QSet<StyleBuilder::OsmTag> StyleBuilder::buildingTags()
     static const QString building = QStringLiteral("building");
     // from https://taginfo.openstreetmap.org/keys/building#values
     static const QSet<OsmTag> osmBuildingTags = QSet<OsmTag>()
-            << OsmTag(building, QString::fromUtf8("yes"))
-            << OsmTag(building, QString::fromUtf8("house"))
-            << OsmTag(building, QString::fromUtf8("residential"))
-            << OsmTag(building, QString::fromUtf8("garage"))
-            << OsmTag(building, QString::fromUtf8("apartments"))
-            << OsmTag(building, QString::fromUtf8("hut"))
-            << OsmTag(building, QString::fromUtf8("industrial"))
-            << OsmTag(building, QString::fromUtf8("detached"))
-            << OsmTag(building, QString::fromUtf8("roof"))
-            << OsmTag(building, QString::fromUtf8("garages"))
-            << OsmTag(building, QString::fromUtf8("commercial"))
-            << OsmTag(building, QString::fromUtf8("terrace"))
-            << OsmTag(building, QString::fromUtf8("shed"))
-            << OsmTag(building, QString::fromUtf8("school"))
-            << OsmTag(building, QString::fromUtf8("retail"))
-            << OsmTag(building, QString::fromUtf8("farm_auxiliary"))
-            << OsmTag(building, QString::fromUtf8("church"))
-            << OsmTag(building, QString::fromUtf8("cathedral"))
-            << OsmTag(building, QString::fromUtf8("greenhouse"))
-            << OsmTag(building, QString::fromUtf8("barn"))
-            << OsmTag(building, QString::fromUtf8("service"))
-            << OsmTag(building, QString::fromUtf8("manufacture"))
-            << OsmTag(building, QString::fromUtf8("construction"))
-            << OsmTag(building, QString::fromUtf8("cabin"))
-            << OsmTag(building, QString::fromUtf8("farm"))
-            << OsmTag(building, QString::fromUtf8("warehouse"))
-            << OsmTag(building, QString::fromUtf8("House"))
-            << OsmTag(building, QString::fromUtf8("office"))
-            << OsmTag(building, QString::fromUtf8("civic"))
-            << OsmTag(building, QString::fromUtf8("Residential"))
-            << OsmTag(building, QString::fromUtf8("hangar"))
-            << OsmTag(building, QString::fromUtf8("public"))
-            << OsmTag(building, QString::fromUtf8("university"))
-            << OsmTag(building, QString::fromUtf8("hospital"))
-            << OsmTag(building, QString::fromUtf8("chapel"))
-            << OsmTag(building, QString::fromUtf8("hotel"))
-            << OsmTag(building, QString::fromUtf8("train_station"))
-            << OsmTag(building, QString::fromUtf8("dormitory"))
-            << OsmTag(building, QString::fromUtf8("kindergarten"))
-            << OsmTag(building, QString::fromUtf8("stable"))
-            << OsmTag(building, QString::fromUtf8("storage_tank"))
-            << OsmTag(building, QString::fromUtf8("shop"))
-            << OsmTag(building, QString::fromUtf8("college"))
-            << OsmTag(building, QString::fromUtf8("supermarket"))
-            << OsmTag(building, QString::fromUtf8("factory"))
-            << OsmTag(building, QString::fromUtf8("bungalow"))
-            << OsmTag(building, QString::fromUtf8("tower"))
-            << OsmTag(building, QString::fromUtf8("silo"))
-            << OsmTag(building, QString::fromUtf8("storage"))
-            << OsmTag(building, QString::fromUtf8("station"))
-            << OsmTag(building, QString::fromUtf8("education"))
-            << OsmTag(building, QString::fromUtf8("carport"))
-            << OsmTag(building, QString::fromUtf8("houseboat"))
-            << OsmTag(building, QString::fromUtf8("castle"))
-            << OsmTag(building, QString::fromUtf8("social_facility"))
-            << OsmTag(building, QString::fromUtf8("water_tower"))
-            << OsmTag(building, QString::fromUtf8("container"))
-            << OsmTag(building, QString::fromUtf8("exhibition_hall"))
-            << OsmTag(building, QString::fromUtf8("monastery"))
-            << OsmTag(building, QString::fromUtf8("bunker"))
-            << OsmTag(building, QString::fromUtf8("shelter"))
-            << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("yes"))
-            << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("antenna"));
+                                                << OsmTag(building, QString::fromUtf8("yes"))
+                                                << OsmTag(building, QString::fromUtf8("house"))
+                                                << OsmTag(building, QString::fromUtf8("residential"))
+                                                << OsmTag(building, QString::fromUtf8("garage"))
+                                                << OsmTag(building, QString::fromUtf8("apartments"))
+                                                << OsmTag(building, QString::fromUtf8("hut"))
+                                                << OsmTag(building, QString::fromUtf8("industrial"))
+                                                << OsmTag(building, QString::fromUtf8("detached"))
+                                                << OsmTag(building, QString::fromUtf8("roof"))
+                                                << OsmTag(building, QString::fromUtf8("garages"))
+                                                << OsmTag(building, QString::fromUtf8("commercial"))
+                                                << OsmTag(building, QString::fromUtf8("terrace"))
+                                                << OsmTag(building, QString::fromUtf8("shed"))
+                                                << OsmTag(building, QString::fromUtf8("school"))
+                                                << OsmTag(building, QString::fromUtf8("retail"))
+                                                << OsmTag(building, QString::fromUtf8("farm_auxiliary"))
+                                                << OsmTag(building, QString::fromUtf8("church"))
+                                                << OsmTag(building, QString::fromUtf8("cathedral"))
+                                                << OsmTag(building, QString::fromUtf8("greenhouse"))
+                                                << OsmTag(building, QString::fromUtf8("barn"))
+                                                << OsmTag(building, QString::fromUtf8("service"))
+                                                << OsmTag(building, QString::fromUtf8("manufacture"))
+                                                << OsmTag(building, QString::fromUtf8("construction"))
+                                                << OsmTag(building, QString::fromUtf8("cabin"))
+                                                << OsmTag(building, QString::fromUtf8("farm"))
+                                                << OsmTag(building, QString::fromUtf8("warehouse"))
+                                                << OsmTag(building, QString::fromUtf8("House"))
+                                                << OsmTag(building, QString::fromUtf8("office"))
+                                                << OsmTag(building, QString::fromUtf8("civic"))
+                                                << OsmTag(building, QString::fromUtf8("Residential"))
+                                                << OsmTag(building, QString::fromUtf8("hangar"))
+                                                << OsmTag(building, QString::fromUtf8("public"))
+                                                << OsmTag(building, QString::fromUtf8("university"))
+                                                << OsmTag(building, QString::fromUtf8("hospital"))
+                                                << OsmTag(building, QString::fromUtf8("chapel"))
+                                                << OsmTag(building, QString::fromUtf8("hotel"))
+                                                << OsmTag(building, QString::fromUtf8("train_station"))
+                                                << OsmTag(building, QString::fromUtf8("dormitory"))
+                                                << OsmTag(building, QString::fromUtf8("kindergarten"))
+                                                << OsmTag(building, QString::fromUtf8("stable"))
+                                                << OsmTag(building, QString::fromUtf8("storage_tank"))
+                                                << OsmTag(building, QString::fromUtf8("shop"))
+                                                << OsmTag(building, QString::fromUtf8("college"))
+                                                << OsmTag(building, QString::fromUtf8("supermarket"))
+                                                << OsmTag(building, QString::fromUtf8("factory"))
+                                                << OsmTag(building, QString::fromUtf8("bungalow"))
+                                                << OsmTag(building, QString::fromUtf8("tower"))
+                                                << OsmTag(building, QString::fromUtf8("silo"))
+                                                << OsmTag(building, QString::fromUtf8("storage"))
+                                                << OsmTag(building, QString::fromUtf8("station"))
+                                                << OsmTag(building, QString::fromUtf8("education"))
+                                                << OsmTag(building, QString::fromUtf8("carport"))
+                                                << OsmTag(building, QString::fromUtf8("houseboat"))
+                                                << OsmTag(building, QString::fromUtf8("castle"))
+                                                << OsmTag(building, QString::fromUtf8("social_facility"))
+                                                << OsmTag(building, QString::fromUtf8("water_tower"))
+                                                << OsmTag(building, QString::fromUtf8("container"))
+                                                << OsmTag(building, QString::fromUtf8("exhibition_hall"))
+                                                << OsmTag(building, QString::fromUtf8("monastery"))
+                                                << OsmTag(building, QString::fromUtf8("bunker"))
+                                                << OsmTag(building, QString::fromUtf8("shelter"))
+                                                << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("yes"))
+                                                << OsmTag(QString::fromUtf8("building:part"), QString::fromUtf8("antenna"));
 
     return osmBuildingTags;
 }
 
-GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(const OsmPlacemarkData &osmData)
+GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(const OsmPlacemarkData& osmData)
 {
     QString const yes(QStringLiteral("yes"));
+
     if (osmData.containsTagKey(QStringLiteral("area:highway")) ||              // Not supported yet
         osmData.containsTag(QStringLiteral("boundary"), QStringLiteral("protected_area")) ||   // Not relevant for the default map
         osmData.containsTag(QStringLiteral("boundary"), QStringLiteral("postal_code")) ||
@@ -3069,52 +3346,71 @@ GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(co
         osmData.containsTagKey(QStringLiteral("abandoned:leisure")) ||
         osmData.containsTagKey(QStringLiteral("disused:highway")) ||
         osmData.containsTag(QStringLiteral("highway"), QStringLiteral("razed")) ||
-        osmData.containsTag(QStringLiteral("piste:abandoned"), yes)) {
+        osmData.containsTag(QStringLiteral("piste:abandoned"), yes))
+    {
         return GeoDataPlacemark::None;
     }
 
-    if (osmData.containsTag(QStringLiteral("building"), yes)) {
+    if (osmData.containsTag(QStringLiteral("building"), yes))
+    {
         return GeoDataPlacemark::Building;
     }
 
-    if (osmData.containsTag(QStringLiteral("historic"), QStringLiteral("castle")) && osmData.containsTag(QStringLiteral("castle_type"), QStringLiteral("kremlin"))) {
+    if (osmData.containsTag(QStringLiteral("historic"), QStringLiteral("castle")) && osmData.containsTag(QStringLiteral("castle_type"), QStringLiteral("kremlin")))
+    {
         return GeoDataPlacemark::None;
     }
 
-    if (osmData.containsTag(QStringLiteral("natural"), QStringLiteral("glacier")) && osmData.containsTag(QStringLiteral("glacier:type"), QStringLiteral("shelf"))) {
+    if (osmData.containsTag(QStringLiteral("natural"), QStringLiteral("glacier")) && osmData.containsTag(QStringLiteral("glacier:type"), QStringLiteral("shelf")))
+    {
         return GeoDataPlacemark::NaturalIceShelf;
     }
 
-    if (osmData.containsTag(QStringLiteral("highway"), QStringLiteral("crossing"))) {
+    if (osmData.containsTag(QStringLiteral("highway"), QStringLiteral("crossing")))
+    {
         QStringList const crossings = osmData.tagValue(QStringLiteral("crossing")).split(QLatin1Char(';'));
         QString const crossingRef = osmData.tagValue(QStringLiteral("crossing_ref"));
+
         if (crossingRef == QStringLiteral("zebra") ||
             crossingRef == QStringLiteral("tiger") ||
             crossings.contains(QStringLiteral("zebra")) ||
-            crossings.contains(QStringLiteral("tiger"))) {
+            crossings.contains(QStringLiteral("tiger")))
+        {
             return GeoDataPlacemark::CrossingZebra;
-        } else if (crossingRef == QStringLiteral("toucan") ||
-                   crossingRef == QStringLiteral("pelican") ||
-                   crossings.contains(QStringLiteral("traffic_signals")) ||
-                   crossings.contains(QStringLiteral("toucan")) ||
-                   crossings.contains(QStringLiteral("pelican"))) {
+        }
+
+        else if (crossingRef == QStringLiteral("toucan") ||
+                 crossingRef == QStringLiteral("pelican") ||
+                 crossings.contains(QStringLiteral("traffic_signals")) ||
+                 crossings.contains(QStringLiteral("toucan")) ||
+                 crossings.contains(QStringLiteral("pelican")))
+        {
             return GeoDataPlacemark::CrossingSignals;
-        } else if (crossings.contains(QStringLiteral("island"))) {
+        }
+
+        else if (crossings.contains(QStringLiteral("island")))
+        {
             return GeoDataPlacemark::CrossingIsland;
         }
     }
+
     if (osmData.containsTag(QStringLiteral("railway"), QStringLiteral("crossing")) ||
-        osmData.containsTag(QStringLiteral("railway"), QStringLiteral("level_crossing"))) {
+        osmData.containsTag(QStringLiteral("railway"), QStringLiteral("level_crossing")))
+    {
         return GeoDataPlacemark::CrossingRailway;
     }
 
     Private::initializeOsmVisualCategories();
 
     auto const pisteType = osmData.tagValue(QStringLiteral("piste:type"));
-    if (!pisteType.isEmpty()) {
+
+    if (!pisteType.isEmpty())
+    {
         auto const tag = OsmTag(QStringLiteral("piste:type"), pisteType);
         auto category = Private::s_visualCategories.value(tag, GeoDataPlacemark::None);
-        if (category != GeoDataPlacemark::None) {
+
+        if (category != GeoDataPlacemark::None)
+        {
             return category;
         }
     }
@@ -3125,26 +3421,46 @@ GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(co
     // More at https://wiki.openstreetmap.org/wiki/Key:capital#Using_relations_for_capitals
     QString const national_level(QStringLiteral("2"));
 
-    for (auto iter = osmData.tagsBegin(), end = osmData.tagsEnd(); iter != end; ++iter) {
+    for (auto iter = osmData.tagsBegin(), end = osmData.tagsEnd(); iter != end; ++iter)
+    {
         const auto tag = OsmTag(iter.key(), iter.value());
         GeoDataPlacemark::GeoDataVisualCategory category = Private::s_visualCategories.value(tag, GeoDataPlacemark::None);
-        if (category != GeoDataPlacemark::None) {
-            if (category == GeoDataPlacemark::PlaceCity && osmData.containsTag(admin_level, national_level)) {
+
+        if (category != GeoDataPlacemark::None)
+        {
+            if (category == GeoDataPlacemark::PlaceCity && osmData.containsTag(admin_level, national_level))
+            {
                 category = GeoDataPlacemark::PlaceCityNationalCapital;
-            } else if (category == GeoDataPlacemark::PlaceCity && osmData.containsTag(capital, yes)) {
+            }
+
+            else if (category == GeoDataPlacemark::PlaceCity && osmData.containsTag(capital, yes))
+            {
                 category = GeoDataPlacemark::PlaceCityCapital;
-            } else if (category == GeoDataPlacemark::PlaceTown && osmData.containsTag(admin_level, national_level)) {
+            }
+
+            else if (category == GeoDataPlacemark::PlaceTown && osmData.containsTag(admin_level, national_level))
+            {
                 category = GeoDataPlacemark::PlaceTownNationalCapital;
-            } else if (category == GeoDataPlacemark::PlaceTown && osmData.containsTag(capital, yes)) {
+            }
+
+            else if (category == GeoDataPlacemark::PlaceTown && osmData.containsTag(capital, yes))
+            {
                 category = GeoDataPlacemark::PlaceTownCapital;
-            } else if (category == GeoDataPlacemark::PlaceVillage && osmData.containsTag(admin_level, national_level)) {
+            }
+
+            else if (category == GeoDataPlacemark::PlaceVillage && osmData.containsTag(admin_level, national_level))
+            {
                 category = GeoDataPlacemark::PlaceVillageNationalCapital;
-            } else if (category == GeoDataPlacemark::PlaceVillage && osmData.containsTag(capital, yes)) {
+            }
+
+            else if (category == GeoDataPlacemark::PlaceVillage && osmData.containsTag(capital, yes))
+            {
                 category = GeoDataPlacemark::PlaceVillageCapital;
             }
         }
 
-        if (category != GeoDataPlacemark::None) {
+        if (category != GeoDataPlacemark::None)
+        {
             return category;
         }
     }
@@ -3152,7 +3468,7 @@ GeoDataPlacemark::GeoDataVisualCategory StyleBuilder::determineVisualCategory(co
     return GeoDataPlacemark::None;
 }
 
-StyleParameters::StyleParameters(const GeoDataPlacemark *placemark_, int tileLevel_) :
+StyleParameters::StyleParameters(const GeoDataPlacemark* placemark_, int tileLevel_) :
     placemark(placemark_),
     tileLevel(tileLevel_),
     relation(nullptr)

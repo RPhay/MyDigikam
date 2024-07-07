@@ -40,23 +40,23 @@ class SphericalScanlineTextureMapper : public TextureMapperInterface
 {
 public:
 
-    explicit SphericalScanlineTextureMapper( StackedTileLoader *tileLoader );
+    explicit SphericalScanlineTextureMapper(StackedTileLoader* tileLoader);
 
-    void mapTexture( GeoPainter *painter,
-                             const ViewportParams *viewport,
-                             int tileZoomLevel,
-                             const QRect &dirtyRect,
-                             TextureColorizer *texColorizer ) override;
+    void mapTexture(GeoPainter* painter,
+                    const ViewportParams* viewport,
+                    int tileZoomLevel,
+                    const QRect& dirtyRect,
+                    TextureColorizer* texColorizer) override;
 
 private:
 
-    void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
+    void mapTexture(const ViewportParams* viewport, int tileZoomLevel, MapQuality mapQuality);
 
 private:
 
     class RenderJob;
 
-    StackedTileLoader *const m_tileLoader = nullptr;
+    StackedTileLoader* const m_tileLoader = nullptr;
     int                      m_radius;
     QImage                   m_canvasImage;
     QThreadPool              m_threadPool;

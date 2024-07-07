@@ -87,6 +87,7 @@ void TemplateDocumentPrivate::processTemplateIncludes(QString& input)
             input.replace(QLatin1String("%!{") + include + QLatin1String("}%"),
                           QString::fromUtf8(includeFile.readAll()));
         }
+
         else
         {
             qCDebug(DIGIKAM_MARBLE_LOG) << "[WARNING] Can't process template include" << include;
@@ -120,7 +121,7 @@ QString TemplateDocument::value(const QString& key) const
     return d->templateEntries[key];
 }
 
-void TemplateDocument::setValue(const QString &key, const QString& value)
+void TemplateDocument::setValue(const QString& key, const QString& value)
 {
     d->templateEntries[key] = value;
 }

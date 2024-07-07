@@ -36,11 +36,11 @@ class DIGIKAM_EXPORT StyleParameters
 {
 public:
 
-    explicit StyleParameters(const GeoDataPlacemark *placemark_ = nullptr, int tileLevel = 0);
+    explicit StyleParameters(const GeoDataPlacemark* placemark_ = nullptr, int tileLevel = 0);
 
-    const GeoDataPlacemark *placemark;
+    const GeoDataPlacemark* placemark;
     int tileLevel;
-    const GeoDataRelation *relation;
+    const GeoDataRelation* relation;
 };
 
 enum StyleEffect
@@ -64,12 +64,12 @@ public:
      * Return the label font of the placemark.
      */
     QFont defaultFont() const;
-    void setDefaultFont( const QFont& font );
+    void setDefaultFont(const QFont& font);
 
     QColor defaultLabelColor() const;
-    void setDefaultLabelColor( const QColor& color );
+    void setDefaultLabelColor(const QColor& color);
 
-    GeoDataStyle::ConstPtr createStyle(const StyleParameters &parameters) const;
+    GeoDataStyle::ConstPtr createStyle(const StyleParameters& parameters) const;
 
     /**
      * @brief Returns the order in which the visual categories used in the theme shall be painted on the map.
@@ -84,9 +84,9 @@ public:
      * @param placemark the placemark for which the minimum zoom level shall be returned
      * @return zoom level from which on the given visual category will be visible
      */
-    int minimumZoomLevel(const GeoDataPlacemark &placemark) const;
+    int minimumZoomLevel(const GeoDataPlacemark& placemark) const;
 
-    static int minimumZoomLevel(const GeoDataPlacemark::GeoDataVisualCategory &visualCategory);
+    static int minimumZoomLevel(const GeoDataPlacemark::GeoDataVisualCategory& visualCategory);
 
     static qint64 popularity(const GeoDataPlacemark* placemark);
 
@@ -110,7 +110,7 @@ public:
     static QStringList shopValues();
     static QSet<OsmTag> buildingTags();
 
-    static GeoDataPlacemark::GeoDataVisualCategory determineVisualCategory(const OsmPlacemarkData &osmData);
+    static GeoDataPlacemark::GeoDataVisualCategory determineVisualCategory(const OsmPlacemarkData& osmData);
 
 private:
 

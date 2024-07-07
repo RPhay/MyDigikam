@@ -40,7 +40,7 @@ class SearchTask : public QObject, public QRunnable
 
 public:
 
-    SearchTask( SearchRunner *runner, SearchRunnerManager *manager, const MarbleModel *model, const QString &searchTerm, const GeoDataLatLonBox &preferred );
+    SearchTask(SearchRunner* runner, SearchRunnerManager* manager, const MarbleModel* model, const QString& searchTerm, const GeoDataLatLonBox& preferred);
 
     /**
      * @reimp
@@ -49,11 +49,11 @@ public:
 
 Q_SIGNALS:
 
-    void finished( SearchTask *task );
+    void finished(SearchTask* task);
 
 private:
 
-    SearchRunner *const m_runner = nullptr;
+    SearchRunner* const m_runner = nullptr;
     QString             m_searchTerm;
     GeoDataLatLonBox    m_preferredBbox;
 };
@@ -65,7 +65,7 @@ class ReverseGeocodingTask : public QObject, public QRunnable
 
 public:
 
-    ReverseGeocodingTask( ReverseGeocodingRunner*runner, ReverseGeocodingRunnerManager *manager, const MarbleModel *model, const GeoDataCoordinates &coordinates );
+    ReverseGeocodingTask(ReverseGeocodingRunner* runner, ReverseGeocodingRunnerManager* manager, const MarbleModel* model, const GeoDataCoordinates& coordinates);
 
     /**
      * @reimp
@@ -74,23 +74,23 @@ public:
 
 Q_SIGNALS:
 
-    void finished( ReverseGeocodingTask *task );
+    void finished(ReverseGeocodingTask* task);
 
 private:
 
-    ReverseGeocodingRunner *const   m_runner = nullptr;
+    ReverseGeocodingRunner* const   m_runner = nullptr;
     GeoDataCoordinates              m_coordinates;
 };
 
 /** A RunnerTask that executes a file Parsing */
 class ParsingTask : public QObject,
-                    public QRunnable
+    public QRunnable
 {
     Q_OBJECT
 
 public:
 
-    ParsingTask( ParsingRunner *runner, ParsingRunnerManager *manager, const QString& fileName, DocumentRole role );
+    ParsingTask(ParsingRunner* runner, ParsingRunnerManager* manager, const QString& fileName, DocumentRole role);
 
     /**
      * @reimp
@@ -99,7 +99,7 @@ public:
 
 Q_SIGNALS:
 
-    void parsed(GeoDataDocument* document, const QString &error);
+    void parsed(GeoDataDocument* document, const QString& error);
     void finished();
 
 private:

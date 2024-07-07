@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 
@@ -36,7 +40,7 @@ public:
       * @brief Constructor
       * @param presenter the MarbleWidget that is being animated
       */
-    explicit MarblePhysics( MarbleAbstractPresenter *presenter );
+    explicit MarblePhysics(MarbleAbstractPresenter* presenter);
 
     /**
       * @brief Destructor
@@ -48,7 +52,7 @@ public:
       * @param target camera position indicating the target of the animation
       * @param mode animation mode; @code Instant @endcode means no animation
       */
-    void flyTo( const GeoDataLookAt &target, FlyToMode mode = Instant );
+    void flyTo(const GeoDataLookAt& target, FlyToMode mode = Instant);
 
 private Q_SLOTS:
 
@@ -61,7 +65,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( MarblePhysics )
+    Q_DISABLE_COPY(MarblePhysics)
 
 private:
 

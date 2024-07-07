@@ -15,9 +15,15 @@
 
 #pragma once
 
+// C++ includes
+
 #include <cmath>
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -119,7 +125,7 @@ enum LabelLocalization
     CustomAndNative,    ///< Custom and native labels
     Custom,             ///< Shows the name in the user's language
     Native              ///< Display the name in the official language and
-                        ///  glyphs of the labeled place.
+    ///  glyphs of the labeled place.
 };
 
 /**
@@ -266,7 +272,7 @@ const qreal TWOPI = 2 * M_PI;
 // Version definitions to use with an external application (as digiKam)
 
 // String for about dialog and http user agent
-const QString MARBLE_VERSION_STRING = QString::fromLatin1( MARBLE_LIB_VERSION_STRING );
+const QString MARBLE_VERSION_STRING = QString::fromLatin1(MARBLE_LIB_VERSION_STRING);
 
 // API Version id: ((major<<16)|(minor<<8)|(patch))
 #define MARBLE_VERSION MARBLE_LIB_VERSION
@@ -291,7 +297,7 @@ class  DIGIKAM_EXPORT MarbleGlobal
 
 public:
 
-    static MarbleGlobal * getInstance();
+    static MarbleGlobal* getInstance();
     ~MarbleGlobal();
 
     MarbleLocale* locale() const;
@@ -302,15 +308,15 @@ public:
         SmallScreen     = 0x1,
         HighResolution  = 0x2
     };
-    Q_DECLARE_FLAGS( Profiles, Profile )
+    Q_DECLARE_FLAGS(Profiles, Profile)
 
     Profiles profiles() const;
-    void setProfiles( Profiles profiles );
+    void setProfiles(Profiles profiles);
 
 private:
 
     MarbleGlobal();
-    Q_DISABLE_COPY( MarbleGlobal )
+    Q_DISABLE_COPY(MarbleGlobal)
 
 private:
 
@@ -319,6 +325,6 @@ private:
 
 } // Namespace Marble
 
-Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::TessellationFlags )
-Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::LabelPositionFlags )
-Q_DECLARE_OPERATORS_FOR_FLAGS( Marble::MarbleGlobal::Profiles )
+Q_DECLARE_OPERATORS_FOR_FLAGS(Marble::TessellationFlags)
+Q_DECLARE_OPERATORS_FOR_FLAGS(Marble::LabelPositionFlags)
+Q_DECLARE_OPERATORS_FOR_FLAGS(Marble::MarbleGlobal::Profiles)

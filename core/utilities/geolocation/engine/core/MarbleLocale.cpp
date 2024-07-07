@@ -15,13 +15,17 @@
 
 #include "MarbleLocale.h"
 
-// Qt
+// Qt includes
+
 #include <QLocale>
+
+// KDE includes
 
 #include <klocalizedstring.h>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_debug.h"
 
 namespace Marble
@@ -38,7 +42,7 @@ public:
 };
 
 MarbleLocalePrivate::MarbleLocalePrivate()
-    : m_measurementSystem( MarbleLocale::MetricSystem )
+    : m_measurementSystem(MarbleLocale::MetricSystem)
 {
 }
 
@@ -49,7 +53,7 @@ MarbleLocalePrivate::~MarbleLocalePrivate()
 // ---
 
 MarbleLocale::MarbleLocale()
-    : d ( new MarbleLocalePrivate )
+    : d(new MarbleLocalePrivate)
 {
 }
 
@@ -58,7 +62,7 @@ MarbleLocale::~MarbleLocale()
     delete d;
 }
 
-void MarbleLocale::setMeasurementSystem( MarbleLocale::MeasurementSystem measurementSystem )
+void MarbleLocale::setMeasurementSystem(MarbleLocale::MeasurementSystem measurementSystem)
 {
     d->m_measurementSystem = measurementSystem;
 }
@@ -69,7 +73,7 @@ MarbleLocale::MeasurementSystem MarbleLocale::measurementSystem() const
 }
 
 void MarbleLocale::meterToTargetUnit(qreal meters, MeasurementSystem targetSystem,
-                                     qreal &targetValue, MeasureUnit &targetUnit)
+                                     qreal& targetValue, MeasureUnit& targetUnit)
 {
     targetValue = meters;
 
@@ -153,22 +157,31 @@ QString MarbleLocale::unitAbbreviation(MeasureUnit unit)
     {
         case Meter:
             return i18nc("means meter", "m");
+
         case Milimeter:
             return i18nc("means milimeters", "mm");
+
         case Kilometer:
             return i18nc("means kilometers", "km");
+
         case Centimeter:
             return i18nc("means centimeters", "cm");
+
         case Foot:
             return i18nc("means feet", "ft");
+
         case Inch:
             return i18nc("means inches", "in");
+
         case Yard:
             return i18nc("means yards", "yd");
+
         case Mile:
             return i18nc("means miles", "mi");
+
         case NauticalMile:
             return i18nc("means nautical miles", "nm");
+
         default:
             return QString::fromUtf8("");
     }
@@ -181,22 +194,29 @@ QString MarbleLocale::languageCode()
 
     int index = lang.indexOf(QLatin1Char('_'));
 
-    if      (lang == QLatin1String("C"))
+    if (lang == QLatin1String("C"))
     {
         code = QString::fromUtf8("en");
     }
-    else if ( index != -1 )
+
+    else if (index != -1)
     {
-        code = lang.left ( index );
+        code = lang.left(index);
     }
+
     else
     {
         index = lang.indexOf(QLatin1Char('@'));
 
-        if ( index != -1 )
-            code = lang.left ( index );
+        if (index != -1)
+        {
+            code = lang.left(index);
+        }
+
         else
+        {
             code = lang;
+        }
     }
 
     return code;

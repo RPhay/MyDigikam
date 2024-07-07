@@ -18,8 +18,13 @@
 
 #pragma once
 
-#include "digikam_export.h"
+// Qt includes
+
 #include <QColor>
+
+// Local includes
+
+#include "digikam_export.h"
 
 namespace Marble
 {

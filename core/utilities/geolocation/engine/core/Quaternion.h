@@ -56,18 +56,18 @@ public:
     static Quaternion   fromSpherical(qreal lon, qreal lat);
     static Quaternion   fromEuler(qreal pitch, qreal yaw, qreal roll);
 
-    static Quaternion slerp(const Quaternion &q1, const Quaternion &q2, qreal t);
-    static Quaternion nlerp(const Quaternion &q1, const Quaternion &q2, qreal t);
+    static Quaternion slerp(const Quaternion& q1, const Quaternion& q2, qreal t);
+    static Quaternion nlerp(const Quaternion& q1, const Quaternion& q2, qreal t);
 
     // Operators
-    Quaternion  operator*(const Quaternion &q) const;
-    Quaternion  operator+(const Quaternion &q) const;
+    Quaternion  operator*(const Quaternion& q) const;
+    Quaternion  operator+(const Quaternion& q) const;
     Quaternion  operator*(qreal factor) const;
-    bool        operator==(const Quaternion &q) const;
-    Quaternion& operator*=(const Quaternion &q);
+    bool        operator==(const Quaternion& q) const;
+    Quaternion& operator*=(const Quaternion& q);
     Quaternion& operator*=(qreal);
 
-    void        getSpherical(qreal &lon, qreal &lat) const;
+    void        getSpherical(qreal& lon, qreal& lat) const;
 
     void        normalize();
 
@@ -82,10 +82,10 @@ public:
     qreal       roll() const;
 
 
-    void        rotateAroundAxis(const Quaternion &q);
+    void        rotateAroundAxis(const Quaternion& q);
 
-    void        toMatrix(matrix &m) const;
-    void        rotateAroundAxis(const matrix &m);
+    void        toMatrix(matrix& m) const;
+    void        rotateAroundAxis(const matrix& m);
 
     // TODO: Better add accessors...
     xmmfloat    v;
@@ -94,5 +94,5 @@ public:
 } // Namespace Marble
 
 #ifndef QT_NO_DEBUG_STREAM
-DIGIKAM_EXPORT QDebug operator<<(QDebug, const Marble::Quaternion &);
+DIGIKAM_EXPORT QDebug operator<<(QDebug, const Marble::Quaternion&);
 #endif

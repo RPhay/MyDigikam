@@ -15,11 +15,13 @@
 
 #pragma once
 
-// Marble
-#include "digikam_export.h"
+// Qt includes
 
-// Qt
 #include <QThread>
+
+// Local includes
+
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -43,7 +45,7 @@ class DIGIKAM_EXPORT AbstractWorkerThread : public QThread
 
 public:
 
-    explicit AbstractWorkerThread( QObject *parent = nullptr );
+    explicit AbstractWorkerThread(QObject* parent = nullptr);
     ~AbstractWorkerThread() override;
 
     void ensureRunning();

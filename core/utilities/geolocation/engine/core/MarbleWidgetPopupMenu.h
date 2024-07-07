@@ -39,14 +39,14 @@ class DIGIKAM_EXPORT MarbleWidgetPopupMenu  : public QObject
 
 public:
 
-    MarbleWidgetPopupMenu( MarbleWidget*, const MarbleModel* );
+    MarbleWidgetPopupMenu(MarbleWidget*, const MarbleModel*);
     ~MarbleWidgetPopupMenu() override;
 
     /**
       * Adds the action to the menu associated with the specified
       * mouse button
       */
-    void addAction( Qt::MouseButton button, QAction* action );
+    void addAction(Qt::MouseButton button, QAction* action);
 
     /**
      * @brief mousePosition Position of the last mouse button click
@@ -56,8 +56,8 @@ public:
 
 public Q_SLOTS:
 
-    void  showLmbMenu( int, int );
-    void  showRmbMenu( int, int );
+    void  showLmbMenu(int, int);
+    void  showRmbMenu(int, int);
 
 private Q_SLOTS:
 
@@ -69,11 +69,11 @@ private Q_SLOTS:
 private Q_SLOTS:
 
     void startReverseGeocoding();
-    void showAddressInformation( const GeoDataCoordinates &coordinates, const GeoDataPlacemark &placemark );
+    void showAddressInformation(const GeoDataCoordinates& coordinates, const GeoDataPlacemark& placemark);
 
 private:
 
-    Q_DISABLE_COPY( MarbleWidgetPopupMenu )
+    Q_DISABLE_COPY(MarbleWidgetPopupMenu)
 
 private:
 

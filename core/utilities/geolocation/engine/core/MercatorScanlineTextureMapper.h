@@ -31,17 +31,17 @@ class MercatorScanlineTextureMapper : public TextureMapperInterface
 {
 public:
 
-    explicit MercatorScanlineTextureMapper( StackedTileLoader *tileLoader );
+    explicit MercatorScanlineTextureMapper(StackedTileLoader* tileLoader);
 
-    void mapTexture( GeoPainter *painter,
-                             const ViewportParams *viewport,
-                             int tileZoomLevel,
-                             const QRect &dirtyRect,
-                             TextureColorizer *texColorizer ) override;
+    void mapTexture(GeoPainter* painter,
+                    const ViewportParams* viewport,
+                    int tileZoomLevel,
+                    const QRect& dirtyRect,
+                    TextureColorizer* texColorizer) override;
 
 private:
 
-    void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
+    void mapTexture(const ViewportParams* viewport, int tileZoomLevel, MapQuality mapQuality);
 
 private:
 

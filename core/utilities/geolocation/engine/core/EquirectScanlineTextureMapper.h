@@ -15,12 +15,16 @@
 
 #pragma once
 
-#include "TextureMapperInterface.h"
-
-#include "MarbleGlobal.h"
+// Qt includes
 
 #include <QThreadPool>
 #include <QImage>
+
+// Local includes
+
+#include "TextureMapperInterface.h"
+#include "MarbleGlobal.h"
+
 
 namespace Marble
 {
@@ -31,17 +35,17 @@ class EquirectScanlineTextureMapper : public TextureMapperInterface
 {
 public:
 
-    explicit EquirectScanlineTextureMapper( StackedTileLoader *tileLoader );
+    explicit EquirectScanlineTextureMapper(StackedTileLoader* tileLoader);
 
-    void mapTexture( GeoPainter *painter,
-                     const ViewportParams *viewport,
-                     int tileZoomLevel,
-                     const QRect &dirtyRect,
-                     TextureColorizer *texColorizer ) override;
+    void mapTexture(GeoPainter* painter,
+                    const ViewportParams* viewport,
+                    int tileZoomLevel,
+                    const QRect& dirtyRect,
+                    TextureColorizer* texColorizer) override;
 
 private:
 
-    void mapTexture( const ViewportParams *viewport, int tileZoomLevel, MapQuality mapQuality );
+    void mapTexture(const ViewportParams* viewport, int tileZoomLevel, MapQuality mapQuality);
 
 private:
 

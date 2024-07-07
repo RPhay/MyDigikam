@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN EmbossFifo
 public:
 
     EmbossFifo()
-        : data( 0 )
+        : data(0)
     {
     }
 
@@ -66,97 +66,105 @@ private:
     quint32 data;
 };
 
-TextureColorizer::TextureColorizer( const QString &seafile,
-                                    const QString &landfile )
-    : m_showRelief( false ),
-      m_landColor(qRgb( 255, 0, 0 ) ),
-      m_seaColor( qRgb( 0, 255, 0 ) )
+TextureColorizer::TextureColorizer(const QString& seafile,
+                                   const QString& landfile)
+    : m_showRelief(false),
+      m_landColor(qRgb(255, 0, 0)),
+      m_seaColor(qRgb(0, 255, 0))
 {
     QElapsedTimer t;
     t.start();
 
-    QImage   gradientImage ( 256, 1, QImage::Format_RGB32 );
+    QImage   gradientImage(256, 1, QImage::Format_RGB32);
     QPainter  gradientPainter;
-    gradientPainter.begin( &gradientImage );
-    gradientPainter.setPen( Qt::NoPen );
+    gradientPainter.begin(&gradientImage);
+    gradientPainter.setPen(Qt::NoPen);
 
 
     int shadingStart = 120;
-    QImage    shadingImage ( 16, 1, QImage::Format_RGB32 );
+    QImage    shadingImage(16, 1, QImage::Format_RGB32);
     QPainter  shadingPainter;
-    shadingPainter.begin( &shadingImage );
-    shadingPainter.setPen( Qt::NoPen );
+    shadingPainter.begin(&shadingImage);
+    shadingPainter.setPen(Qt::NoPen);
 
     int offset = 0;
 
     QStringList  filelist;
     filelist << seafile << landfile;
 
-    for ( const QString &filename: filelist ) {
+    for (const QString& filename : filelist)
+    {
 
-        QLinearGradient  gradient( 0, 0, 256, 0 );
+        QLinearGradient  gradient(0, 0, 256, 0);
 
-        QFile  file( filename );
-        file.open( QIODevice::ReadOnly );
-        QTextStream  stream( &file );  // read the data from the file
+        QFile  file(filename);
+        file.open(QIODevice::ReadOnly);
+        QTextStream  stream(&file);    // read the data from the file
 
         QString      evalstrg;
 
-        while ( !stream.atEnd() ) {
+        while (!stream.atEnd())
+        {
             stream >> evalstrg;
-            if (!evalstrg.isEmpty() && evalstrg.contains(QLatin1Char('='))) {
+
+            if (!evalstrg.isEmpty() && evalstrg.contains(QLatin1Char('=')))
+            {
                 QString  colorValue = evalstrg.left(evalstrg.indexOf(QLatin1Char('=')));
                 QString  colorPosition = evalstrg.mid(evalstrg.indexOf(QLatin1Char('=')) + 1);
-                gradient.setColorAt( colorPosition.toDouble(),
-                                     QColor( colorValue ) );
+                gradient.setColorAt(colorPosition.toDouble(),
+                                    QColor(colorValue));
             }
         }
-        gradientPainter.setBrush( gradient );
-        gradientPainter.drawRect( 0, 0, 256, 1 );
 
-        QLinearGradient  shadeGradient( - shadingStart, 0, 256 - shadingStart, 0 );
+        gradientPainter.setBrush(gradient);
+        gradientPainter.drawRect(0, 0, 256, 1);
+
+        QLinearGradient  shadeGradient(- shadingStart, 0, 256 - shadingStart, 0);
 
         shadeGradient.setColorAt(0.00, QColor(Qt::white));
         shadeGradient.setColorAt(0.15, QColor(Qt::white));
         shadeGradient.setColorAt(0.75, QColor(Qt::black));
         shadeGradient.setColorAt(1.00, QColor(Qt::black));
 
-        const QRgb * gradientScanLine  = (QRgb*)( gradientImage.scanLine( 0 ) );
-        const QRgb * shadingScanLine   = (QRgb*)( shadingImage.scanLine( 0 ) );
+        const QRgb* gradientScanLine  = (QRgb*)(gradientImage.scanLine(0));
+        const QRgb* shadingScanLine   = (QRgb*)(shadingImage.scanLine(0));
 
-        for ( int i = 0; i < 256; ++i ) {
+        for (int i = 0; i < 256; ++i)
+        {
 
-            QRgb shadeColor = *(gradientScanLine + i );
+            QRgb shadeColor = *(gradientScanLine + i);
             shadeGradient.setColorAt(0.496, shadeColor);
             shadeGradient.setColorAt(0.504, shadeColor);
-            shadingPainter.setBrush( shadeGradient );
-            shadingPainter.drawRect( 0, 0, 16, 1 );
+            shadingPainter.setBrush(shadeGradient);
+            shadingPainter.drawRect(0, 0, 16, 1);
 
             // populate texturepalette[][]
-            for ( int j = 0; j < 16; ++j ) {
-                texturepalette[j][offset + i] = *(shadingScanLine + j );
+            for (int j = 0; j < 16; ++j)
+            {
+                texturepalette[j][offset + i] = *(shadingScanLine + j);
             }
         }
 
         offset += 256;
     }
+
     shadingPainter.end();  // Need to explicitly tell painter lifetime to avoid crash
     gradientPainter.end(); // on some systems.
 
     qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
-void TextureColorizer::addSeaDocument( const GeoDataDocument *seaDocument )
+void TextureColorizer::addSeaDocument(const GeoDataDocument* seaDocument)
 {
-    m_seaDocuments.append( seaDocument );
+    m_seaDocuments.append(seaDocument);
 }
 
-void TextureColorizer::addLandDocument( const GeoDataDocument *landDocument )
+void TextureColorizer::addLandDocument(const GeoDataDocument* landDocument)
 {
-    m_landDocuments.append( landDocument );
+    m_landDocuments.append(landDocument);
 }
 
-void TextureColorizer::setShowRelief( bool show )
+void TextureColorizer::setShowRelief(bool show)
 {
     m_showRelief = show;
 }
@@ -178,61 +186,71 @@ void TextureColorizer::setShowRelief( bool show )
 // showRelief).
 //
 
-void TextureColorizer::drawIndividualDocument( GeoPainter *painter, const GeoDataDocument *document )
+void TextureColorizer::drawIndividualDocument(GeoPainter* painter, const GeoDataDocument* document)
 {
     QVector<GeoDataFeature*>::ConstIterator i = document->constBegin();
     QVector<GeoDataFeature*>::ConstIterator end = document->constEnd();
 
-    for ( ; i != end; ++i ) {
-        if (const GeoDataPlacemark *placemark = geodata_cast<GeoDataPlacemark>(*i)) {
-            if (const GeoDataLineString *child = geodata_cast<GeoDataLineString>(placemark->geometry())) {
-                const GeoDataLinearRing ring( *child );
-                painter->drawPolygon( ring );
+    for (; i != end; ++i)
+    {
+        if (const GeoDataPlacemark* placemark = geodata_cast<GeoDataPlacemark>(*i))
+        {
+            if (const GeoDataLineString* child = geodata_cast<GeoDataLineString>(placemark->geometry()))
+            {
+                const GeoDataLinearRing ring(*child);
+                painter->drawPolygon(ring);
             }
 
-            if (const GeoDataPolygon *child = geodata_cast<GeoDataPolygon>(placemark->geometry())) {
-                painter->drawPolygon( *child );
+            if (const GeoDataPolygon* child = geodata_cast<GeoDataPolygon>(placemark->geometry()))
+            {
+                painter->drawPolygon(*child);
             }
 
-            if (const GeoDataLinearRing *child = geodata_cast<GeoDataLinearRing>(placemark->geometry())) {
-                painter->drawPolygon( *child );
+            if (const GeoDataLinearRing* child = geodata_cast<GeoDataLinearRing>(placemark->geometry()))
+            {
+                painter->drawPolygon(*child);
             }
         }
     }
 }
 
-void TextureColorizer::drawTextureMap( GeoPainter *painter )
+void TextureColorizer::drawTextureMap(GeoPainter* painter)
 {
-    for( const GeoDataDocument *doc: m_landDocuments ) {
-        painter->setPen( QPen( Qt::NoPen ) );
-        painter->setBrush( QBrush( m_landColor ) );
-        drawIndividualDocument( painter, doc );
+    for (const GeoDataDocument* doc : m_landDocuments)
+    {
+        painter->setPen(QPen(Qt::NoPen));
+        painter->setBrush(QBrush(m_landColor));
+        drawIndividualDocument(painter, doc);
     }
 
-    for( const GeoDataDocument *doc: m_seaDocuments ) {
-        if ( doc->isVisible() ) {
-            painter->setPen( Qt::NoPen );
-            painter->setBrush( QBrush( m_seaColor ) );
-            drawIndividualDocument( painter, doc );
+    for (const GeoDataDocument* doc : m_seaDocuments)
+    {
+        if (doc->isVisible())
+        {
+            painter->setPen(Qt::NoPen);
+            painter->setBrush(QBrush(m_seaColor));
+            drawIndividualDocument(painter, doc);
         }
     }
 }
 
-void TextureColorizer::colorize( QImage *origimg, const ViewportParams *viewport, MapQuality mapQuality )
+void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport, MapQuality mapQuality)
 {
-    if ( m_coastImage.size() != viewport->size() )
-        m_coastImage = QImage( viewport->size(), QImage::Format_RGB32 );
+    if (m_coastImage.size() != viewport->size())
+    {
+        m_coastImage = QImage(viewport->size(), QImage::Format_RGB32);
+    }
 
     // update coast image
-    m_coastImage.fill( QColor( 0, 0, 255, 0).rgb() );
+    m_coastImage.fill(QColor(0, 0, 255, 0).rgb());
 
     const bool antialiased =    mapQuality == HighQuality
-                             || mapQuality == PrintQuality;
+                                || mapQuality == PrintQuality;
 
-    GeoPainter painter( &m_coastImage, viewport, mapQuality );
-    painter.setRenderHint( QPainter::Antialiasing, antialiased );
+    GeoPainter painter(&m_coastImage, viewport, mapQuality);
+    painter.setRenderHint(QPainter::Antialiasing, antialiased);
 
-    drawTextureMap( &painter );
+    drawTextureMap(&painter);
 
     const qint64 radius = viewport->radius() * viewport->currentProjection()->clippingRadius();
 
@@ -245,125 +263,151 @@ void TextureColorizer::colorize( QImage *origimg, const ViewportParams *viewport
 
     int     bump = 8;
 
-    if ( radius * radius > imgradius
-         || !viewport->currentProjection()->isClippedToSphere() )
+    if (radius * radius > imgradius
+        || !viewport->currentProjection()->isClippedToSphere())
     {
         int yTop = 0;
         int yBottom = imgheight;
 
-        if( !viewport->currentProjection()->isClippedToSphere() && !viewport->currentProjection()->traversablePoles() )
+        if (!viewport->currentProjection()->isClippedToSphere() && !viewport->currentProjection()->traversablePoles())
         {
             qreal realYTop, realYBottom, dummyX;
             GeoDataCoordinates yNorth(0, viewport->currentProjection()->maxLat(), 0);
             GeoDataCoordinates ySouth(0, viewport->currentProjection()->minLat(), 0);
-            viewport->screenCoordinates(yNorth, dummyX, realYTop );
-            viewport->screenCoordinates(ySouth, dummyX, realYBottom );
+            viewport->screenCoordinates(yNorth, dummyX, realYTop);
+            viewport->screenCoordinates(ySouth, dummyX, realYBottom);
             yTop = qBound(qreal(0.0), realYTop, qreal(imgheight));
             yBottom = qBound(qreal(0.0), realYBottom, qreal(imgheight));
         }
 
         const int itEnd = yBottom;
 
-        for (int y = yTop; y < itEnd; ++y) {
+        for (int y = yTop; y < itEnd; ++y)
+        {
 
-            QRgb  *writeData         = (QRgb*)( origimg->scanLine( y ) );
-            const QRgb  *coastData   = (QRgb*)( m_coastImage.scanLine( y ) );
+            QRgb*  writeData         = (QRgb*)(origimg->scanLine(y));
+            const QRgb*  coastData   = (QRgb*)(m_coastImage.scanLine(y));
 
-            uchar *readDataStart     = origimg->scanLine( y );
-            const uchar *readDataEnd = readDataStart + imgwidth*4;
+            uchar* readDataStart     = origimg->scanLine(y);
+            const uchar* readDataEnd = readDataStart + imgwidth * 4;
 
             EmbossFifo  emboss;
 
-            for ( uchar* readData = readDataStart;
-                  readData < readDataEnd;
-                  readData += 4, ++writeData, ++coastData )
+            for (uchar* readData = readDataStart;
+                 readData < readDataEnd;
+                 readData += 4, ++writeData, ++coastData)
             {
 
                 // Cheap Emboss / Bumpmapping
                 uchar&  grey = *readData; // qBlue(*data);
 
-                if ( m_showRelief ) {
+                if (m_showRelief)
+                {
                     emboss.enqueue(grey);
-                    bump = ( emboss.head() + 8 - grey );
-                    if (bump < 0) {
+                    bump = (emboss.head() + 8 - grey);
+
+                    if (bump < 0)
+                    {
                         bump = 0;
-                    } else if (bump > 15) {
+                    }
+
+                    else if (bump > 15)
+                    {
                         bump = 15;
                     }
                 }
-                setPixel( coastData, writeData, bump, grey );
+
+                setPixel(coastData, writeData, bump, grey);
             }
         }
     }
-    else {
-        int yTop    = ( imgry-radius < 0 ) ? 0 : imgry-radius;
-        const int yBottom = ( yTop == 0 ) ? imgheight : imgry + radius;
+
+    else
+    {
+        int yTop    = (imgry - radius < 0) ? 0 : imgry - radius;
+        const int yBottom = (yTop == 0) ? imgheight : imgry + radius;
 
         EmbossFifo  emboss;
 
-        for ( int y = yTop; y < yBottom; ++y ) {
+        for (int y = yTop; y < yBottom; ++y)
+        {
             const int  dy = imgry - y;
-            int  rx = (int)sqrt( (qreal)( radius * radius - dy * dy ) );
+            int  rx = (int)sqrt((qreal)(radius * radius - dy * dy));
             int  xLeft  = 0;
             int  xRight = imgwidth;
 
-            if ( imgrx-rx > 0 ) {
+            if (imgrx - rx > 0)
+            {
                 xLeft  = imgrx - rx;
                 xRight = imgrx + rx;
             }
 
-            QRgb  *writeData         = (QRgb*)( origimg->scanLine( y ) )  + xLeft;
-            const QRgb *coastData    = (QRgb*)( m_coastImage.scanLine( y ) ) + xLeft;
+            QRgb*  writeData         = (QRgb*)(origimg->scanLine(y))  + xLeft;
+            const QRgb* coastData    = (QRgb*)(m_coastImage.scanLine(y)) + xLeft;
 
-            uchar *readDataStart     = origimg->scanLine( y ) + xLeft * 4;
-            const uchar *readDataEnd = origimg->scanLine( y ) + xRight * 4;
+            uchar* readDataStart     = origimg->scanLine(y) + xLeft * 4;
+            const uchar* readDataEnd = origimg->scanLine(y) + xRight * 4;
 
 
-            for ( uchar* readData = readDataStart;
-                  readData < readDataEnd;
-                  readData += 4, ++writeData, ++coastData )
+            for (uchar* readData = readDataStart;
+                 readData < readDataEnd;
+                 readData += 4, ++writeData, ++coastData)
             {
                 // Cheap Emboss / Bumpmapping
 
                 uchar& grey = *readData; // qBlue(*data);
 
-                if ( m_showRelief ) {
+                if (m_showRelief)
+                {
                     emboss.enqueue(grey);
-                    bump = ( emboss.head() + 16 - grey ) >> 1;
-                    if (bump < 0) {
+                    bump = (emboss.head() + 16 - grey) >> 1;
+
+                    if (bump < 0)
+                    {
                         bump = 0;
-                    } else if (bump > 15) {
+                    }
+
+                    else if (bump > 15)
+                    {
                         bump = 15;
                     }
                 }
-                setPixel( coastData, writeData, bump, grey );
+
+                setPixel(coastData, writeData, bump, grey);
             }
         }
     }
 }
 
-void TextureColorizer::setPixel( const QRgb *coastData, QRgb *writeData, int bump, uchar grey )
+void TextureColorizer::setPixel(const QRgb* coastData, QRgb* writeData, int bump, uchar grey)
 {
-    int alpha = qRed( *coastData );
-    if ( alpha == 255 )
+    int alpha = qRed(*coastData);
+
+    if (alpha == 255)
+    {
         *writeData = texturepalette[bump][grey + 0x100];
-    else if( alpha == 0 ){
+    }
+
+    else if (alpha == 0)
+    {
         *writeData = texturepalette[bump][grey];
     }
-    else {
+
+    else
+    {
         qreal c = 1.0 / 255.0;
 
         QRgb landcolor  = (QRgb)(texturepalette[bump][grey + 0x100]);
         QRgb watercolor = (QRgb)(texturepalette[bump][grey]);
 
         *writeData = qRgb(
-                    (int) ( c * ( alpha * qRed( landcolor )
-                                  + ( 255 - alpha ) * qRed( watercolor ) ) ),
-                    (int) ( c * ( alpha * qGreen( landcolor )
-                                  + ( 255 - alpha ) * qGreen( watercolor ) ) ),
-                    (int) ( c * ( alpha * qBlue( landcolor )
-                                  + ( 255 - alpha ) * qBlue( watercolor ) ) )
-                    );
+                         (int)(c * (alpha * qRed(landcolor)
+                                    + (255 - alpha) * qRed(watercolor))),
+                         (int)(c * (alpha * qGreen(landcolor)
+                                    + (255 - alpha) * qGreen(watercolor))),
+                         (int)(c * (alpha * qBlue(landcolor)
+                                    + (255 - alpha) * qBlue(watercolor)))
+                     );
     }
 }
 

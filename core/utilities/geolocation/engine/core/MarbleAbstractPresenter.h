@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QList>
+
+// Local includes
 
 #include "GeoDataLatLonBox.h"
 #include "MarblePhysics.h"
@@ -44,11 +48,11 @@ Q_SIGNALS:
      *
      * @param boundingBox The geographical coordinates of the selected region
      */
-    void regionSelected(const GeoDataLatLonBox &boundingBox);
+    void regionSelected(const GeoDataLatLonBox& boundingBox);
 
 public:
 
-    explicit MarbleAbstractPresenter(MarbleMap *map, QObject *parent = nullptr);
+    explicit MarbleAbstractPresenter(MarbleMap* map, QObject* parent = nullptr);
     ~MarbleAbstractPresenter() override;
 
     qreal moveStep() const;
@@ -90,8 +94,8 @@ public:
     qreal distanceFromZoom(qreal zoom) const;
     qreal zoomFromDistance(qreal distance) const;
 
-    void zoomAt(const QPoint &pos, qreal newDistance);
-    void moveTo(const QPoint &pos, qreal factor);
+    void zoomAt(const QPoint& pos, qreal newDistance);
+    void moveTo(const QPoint& pos, qreal factor);
 
     qreal centerLongitude() const;
     qreal centerLatitude() const;
@@ -115,13 +119,13 @@ public:
 
     bool animationsEnabled() const;
 
-    ViewportParams *viewport();
+    ViewportParams* viewport();
     const ViewportParams* viewport() const;
 
 public Q_SLOTS:
 
     void rotateBy(const qreal deltaLon, const qreal deltaLat, FlyToMode mode = Instant);
-    void flyTo(const GeoDataLookAt &newLookAt, FlyToMode mode = Automatic);
+    void flyTo(const GeoDataLookAt& newLookAt, FlyToMode mode = Automatic);
     void goHome(FlyToMode mode = Automatic);
 
     void setZoom(int newZoom, FlyToMode mode = Instant);
@@ -129,12 +133,12 @@ public Q_SLOTS:
     void zoomViewBy(int zoomStep, FlyToMode mode = Instant);
     void zoomIn(FlyToMode mode = Automatic);
     void zoomOut(FlyToMode mode = Automatic);
-    void zoomAtBy(const QPoint &pos, int zoomStep);
+    void zoomAtBy(const QPoint& pos, int zoomStep);
 
     void setViewContext(ViewContext viewContext);
 
     void centerOn(const qreal lon, const qreal lat, bool animated = false);
-    void centerOn(const GeoDataCoordinates &point, bool animated = false);
+    void centerOn(const GeoDataCoordinates& point, bool animated = false);
     void centerOn(const GeoDataLatLonBox& box, bool animated = false);
     void centerOn(const GeoDataPlacemark& placemark, bool animated = false);
     void headingOn(qreal heading);
