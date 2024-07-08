@@ -32,7 +32,7 @@ public:
     }
 
     GeoDataContainerPrivate(const GeoDataContainerPrivate& other)
-      : GeoDataFeaturePrivate(other)
+        : GeoDataFeaturePrivate(other)
     {
         m_vector.reserve(other.m_vector.size());
 

@@ -15,10 +15,13 @@
 
 #pragma once
 
-#include "GeoDataContainer_p.h"
+// Qt includes
 
 #include <QDateTime>
 
+// Local includes
+
+#include "GeoDataContainer_p.h"
 #include "GeoDataTypes.h"
 #include "GeoDataUpdate.h"
 
@@ -30,9 +33,9 @@ class Q_DECL_HIDDEN GeoDataNetworkLinkControlPrivate : public GeoDataContainerPr
 public:
 
     GeoDataNetworkLinkControlPrivate();
-    GeoDataNetworkLinkControlPrivate(const GeoDataNetworkLinkControlPrivate &other);
+    GeoDataNetworkLinkControlPrivate(const GeoDataNetworkLinkControlPrivate& other);
     ~GeoDataNetworkLinkControlPrivate() override;
-    GeoDataNetworkLinkControlPrivate& operator=(const GeoDataNetworkLinkControlPrivate &other);
+    GeoDataNetworkLinkControlPrivate& operator=(const GeoDataNetworkLinkControlPrivate& other);
 
 public:
 
@@ -50,16 +53,16 @@ public:
 };
 
 GeoDataNetworkLinkControlPrivate::GeoDataNetworkLinkControlPrivate()
-    : m_minRefreshPeriod( 0.0 ),
-      m_maxSessionLength( 0.0 ),
-      m_maxLines( 2 ),
+    : m_minRefreshPeriod(0.0),
+      m_maxSessionLength(0.0),
+      m_maxLines(2),
       m_expires(),
       m_update(),
-      m_abstractView( nullptr )
+      m_abstractView(nullptr)
 {
 }
 
-GeoDataNetworkLinkControlPrivate::GeoDataNetworkLinkControlPrivate( const GeoDataNetworkLinkControlPrivate &other )
+GeoDataNetworkLinkControlPrivate::GeoDataNetworkLinkControlPrivate(const GeoDataNetworkLinkControlPrivate& other)
     : GeoDataContainerPrivate(other),
       m_minRefreshPeriod(other.m_minRefreshPeriod),
       m_maxSessionLength(other.m_maxSessionLength),
@@ -80,7 +83,7 @@ GeoDataNetworkLinkControlPrivate::~GeoDataNetworkLinkControlPrivate()
     delete m_abstractView;
 }
 
-GeoDataNetworkLinkControlPrivate& GeoDataNetworkLinkControlPrivate::operator=(const GeoDataNetworkLinkControlPrivate &other)
+GeoDataNetworkLinkControlPrivate& GeoDataNetworkLinkControlPrivate::operator=(const GeoDataNetworkLinkControlPrivate& other)
 {
     GeoDataContainerPrivate::operator=(other);
     m_minRefreshPeriod = other.m_minRefreshPeriod;

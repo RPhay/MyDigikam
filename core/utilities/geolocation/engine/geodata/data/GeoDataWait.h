@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataTourPrimitive.h"
 
 namespace Marble
@@ -27,9 +29,9 @@ public:
     GeoDataWait();
     ~GeoDataWait() override;
 
-    bool operator==(const GeoDataWait &other) const;
-    bool operator!=(const GeoDataWait &other) const;
-    const char *nodeType() const override;
+    bool operator==(const GeoDataWait& other) const;
+    bool operator!=(const GeoDataWait& other) const;
+    const char* nodeType() const override;
 
     double duration() const;
     void setDuration(double duration);

@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "GeoDataTourPrimitive.h"
 
@@ -29,12 +33,12 @@ public:
     GeoDataSoundCue();
     ~GeoDataSoundCue() override;
 
-    bool operator==( const GeoDataSoundCue &other ) const;
-    bool operator!=( const GeoDataSoundCue &other ) const;
-    const char *nodeType() const override;
+    bool operator==(const GeoDataSoundCue& other) const;
+    bool operator!=(const GeoDataSoundCue& other) const;
+    const char* nodeType() const override;
 
     QString href() const;
-    void setHref(const QString &url);
+    void setHref(const QString& url);
 
     double delayedStart() const;
     void setDelayedStart(double pause);

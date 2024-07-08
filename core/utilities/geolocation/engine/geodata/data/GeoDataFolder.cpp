@@ -15,6 +15,8 @@
 
 #include "GeoDataFolder.h"
 
+// Local includes
+
 #include "GeoDataTypes.h"
 #include "GeoDataContainer_p.h"
 
@@ -27,11 +29,11 @@ class Q_DECL_HIDDEN GeoDataFolderPrivate : public GeoDataContainerPrivate
 
 
 GeoDataFolder::GeoDataFolder()
-        : GeoDataContainer( new GeoDataFolderPrivate )
+    : GeoDataContainer(new GeoDataFolderPrivate)
 {
 }
 
-GeoDataFolder::GeoDataFolder( const GeoDataFolder& other )
+GeoDataFolder::GeoDataFolder(const GeoDataFolder& other)
     : GeoDataContainer(other, new GeoDataFolderPrivate(*other.d_func()))
 {
 }
@@ -42,7 +44,8 @@ GeoDataFolder::~GeoDataFolder()
 
 GeoDataFolder& GeoDataFolder::operator=(const GeoDataFolder& other)
 {
-    if (this != &other) {
+    if (this != &other)
+    {
         Q_D(GeoDataFolder);
         *d = *other.d_func();
     }
@@ -50,14 +53,14 @@ GeoDataFolder& GeoDataFolder::operator=(const GeoDataFolder& other)
     return *this;
 }
 
-bool GeoDataFolder::operator==( const GeoDataFolder &other ) const
+bool GeoDataFolder::operator==(const GeoDataFolder& other) const
 {
-    return GeoDataContainer::equals( other );
+    return GeoDataContainer::equals(other);
 }
 
-bool GeoDataFolder::operator!=( const GeoDataFolder &other ) const
+bool GeoDataFolder::operator!=(const GeoDataFolder& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 const char* GeoDataFolder::nodeType() const
@@ -65,7 +68,7 @@ const char* GeoDataFolder::nodeType() const
     return GeoDataTypes::GeoDataFolderType;
 }
 
-GeoDataFeature * GeoDataFolder::clone() const
+GeoDataFeature* GeoDataFolder::clone() const
 {
     return new GeoDataFolder(*this);
 }

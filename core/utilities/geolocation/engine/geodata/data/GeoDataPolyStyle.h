@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataColorStyle.h"
+// Local includes
 
+#include "GeoDataColorStyle.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -37,23 +38,23 @@ public:
 
     /// Construct a new GeoDataPolyStyle
     GeoDataPolyStyle();
-    GeoDataPolyStyle( const GeoDataPolyStyle& other );
+    GeoDataPolyStyle(const GeoDataPolyStyle& other);
 
     /**
      * @brief Construct a new GeoDataPolyStyle
      * @param  color  the color to use when showing the name @see GeoDataColorStyle
      */
-    explicit GeoDataPolyStyle( const QColor &color );
+    explicit GeoDataPolyStyle(const QColor& color);
 
     ~GeoDataPolyStyle() override;
 
     /**
      * @brief assignment operator
      */
-    GeoDataPolyStyle& operator=( const GeoDataPolyStyle& other );
+    GeoDataPolyStyle& operator=(const GeoDataPolyStyle& other);
 
-    bool operator==( const GeoDataPolyStyle &other ) const;
-    bool operator!=( const GeoDataPolyStyle &other ) const;
+    bool operator==(const GeoDataPolyStyle& other) const;
+    bool operator!=(const GeoDataPolyStyle& other) const;
 
     /// Provides type information for downcasting a GeoNode
     const char* nodeType() const override;
@@ -85,7 +86,7 @@ public:
      * @brief Set brush style
      * @param style
      */
-    void setBrushStyle( const Qt::BrushStyle style );
+    void setBrushStyle(const Qt::BrushStyle style);
     /**
      * @brief Return brush style
      * @return brush style.
@@ -96,7 +97,7 @@ public:
      * @brief Set the color index which will be used to assign color to brush
      * @param colorIndex The value of color index
      */
-    void setColorIndex( quint8 colorIndex );
+    void setColorIndex(quint8 colorIndex);
 
     /**
      * @brief Return the value of color index
@@ -104,7 +105,7 @@ public:
      */
     quint8 colorIndex() const;
 
-    void setTexturePath( const QString &path );
+    void setTexturePath(const QString& path);
 
     QString texturePath() const;
 
@@ -114,13 +115,13 @@ public:
      * @brief  Serialize the style to a stream.
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /**
      * @brief  Unserialize the style from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

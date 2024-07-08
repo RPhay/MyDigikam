@@ -15,12 +15,14 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QString>
 #include <QDataStream>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -33,7 +35,7 @@ class DIGIKAM_EXPORT GeoDataSimpleData : public GeoNode
 public:
 
     GeoDataSimpleData();
-    GeoDataSimpleData( const GeoDataSimpleData &other );
+    GeoDataSimpleData(const GeoDataSimpleData& other);
     ~GeoDataSimpleData() override;
 
     /*
@@ -44,7 +46,7 @@ public:
     /*
      * @brief Set the name of SimpleData to @p name
      */
-    void setName( const QString &name );
+    void setName(const QString& name);
 
     /*
      * @brief Returns the data defined by SimpleData
@@ -54,18 +56,18 @@ public:
     /*
      * @brief Set the value of data defined by SimpleData to @p data
      */
-    void setData( const QString &data );
+    void setData(const QString& data);
 
     /*
      * Assignment operator
      */
-    GeoDataSimpleData &operator=( const GeoDataSimpleData &rhs );
+    GeoDataSimpleData& operator=(const GeoDataSimpleData& rhs);
 
     /*
      * @brief Equality operator
      */
-    bool operator==( const GeoDataSimpleData &other ) const;
-    bool operator!=( const GeoDataSimpleData &other ) const;
+    bool operator==(const GeoDataSimpleData& other) const;
+    bool operator!=(const GeoDataSimpleData& other) const;
 
     /*
      * Provides information for downcasting a GeoNode
@@ -75,12 +77,12 @@ public:
     /*
      * Seriliaze SimpleData to stream @p stream
      */
-    virtual void pack( QDataStream &stream ) const;
+    virtual void pack(QDataStream& stream) const;
 
     /*
      * Unseriliaze SimpleData from stream @p stream
      */
-    virtual void unpack( QDataStream &stream );
+    virtual void unpack(QDataStream& stream);
 
 private:
 

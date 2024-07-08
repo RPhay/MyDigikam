@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataContainer.h"
+// Local includes
 
+#include "GeoDataContainer.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -40,17 +41,17 @@ class DIGIKAM_EXPORT GeoDataFolder : public GeoDataContainer
 public:
 
     GeoDataFolder();
-    GeoDataFolder( const GeoDataFolder& other );
+    GeoDataFolder(const GeoDataFolder& other);
     ~GeoDataFolder() override;
 
     GeoDataFolder& operator=(const GeoDataFolder& other);
 
-    bool operator==( const GeoDataFolder &other ) const;
-    bool operator!=( const GeoDataFolder &other ) const;
+    bool operator==(const GeoDataFolder& other) const;
+    bool operator!=(const GeoDataFolder& other) const;
 
     const char* nodeType() const override;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
 private:
 

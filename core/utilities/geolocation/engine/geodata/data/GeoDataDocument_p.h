@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataStyle.h"
 #include "GeoDataNetworkLinkControl.h"
 #include "GeoDataStyleMap.h"
@@ -30,20 +32,20 @@ class Q_DECL_HIDDEN GeoDataDocumentPrivate : public GeoDataContainerPrivate
 public:
 
     GeoDataDocumentPrivate()
-      : m_documentRole( UnknownDocument )
+        : m_documentRole(UnknownDocument)
     {
     }
 
     GeoDataDocumentPrivate(const GeoDataDocumentPrivate& other)
-      : GeoDataContainerPrivate(other),
-        m_styleHash(other.m_styleHash),
-        m_styleMapHash(other.m_styleMapHash),
-        m_schemaHash(other.m_schemaHash),
-        m_filename(other.m_filename),
-        m_baseUri(other.m_baseUri),
-        m_networkLinkControl(other.m_networkLinkControl),
-        m_property(other.m_property),
-        m_documentRole(other.m_documentRole)
+        : GeoDataContainerPrivate(other),
+          m_styleHash(other.m_styleHash),
+          m_styleMapHash(other.m_styleMapHash),
+          m_schemaHash(other.m_schemaHash),
+          m_filename(other.m_filename),
+          m_baseUri(other.m_baseUri),
+          m_networkLinkControl(other.m_networkLinkControl),
+          m_property(other.m_property),
+          m_documentRole(other.m_documentRole)
     {
     }
 

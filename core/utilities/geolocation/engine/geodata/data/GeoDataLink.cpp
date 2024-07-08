@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataLink.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -48,25 +51,25 @@ GeoDataLinkPrivate::GeoDataLinkPrivate() :
     // nothing to do
 }
 
-GeoDataLink::GeoDataLink() : d( new GeoDataLinkPrivate )
+GeoDataLink::GeoDataLink() : d(new GeoDataLinkPrivate)
 {
     // nothing to do
 }
 
-GeoDataLink::GeoDataLink( const Marble::GeoDataLink &other ) :
-   GeoDataObject( other ), d( new GeoDataLinkPrivate( *other.d ) )
+GeoDataLink::GeoDataLink(const Marble::GeoDataLink& other) :
+    GeoDataObject(other), d(new GeoDataLinkPrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataLink &GeoDataLink::operator=( const GeoDataLink &other )
+GeoDataLink& GeoDataLink::operator=(const GeoDataLink& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataLink::operator==( const GeoDataLink& other ) const
+bool GeoDataLink::operator==(const GeoDataLink& other) const
 {
     return equals(other) &&
            d->m_href == other.d->m_href &&
@@ -79,7 +82,7 @@ bool GeoDataLink::operator==( const GeoDataLink& other ) const
            d->m_httpQuery == other.d->m_httpQuery;
 }
 
-bool GeoDataLink::operator!=( const GeoDataLink& other ) const
+bool GeoDataLink::operator!=(const GeoDataLink& other) const
 {
     return !this->operator==(other);
 }
@@ -89,7 +92,7 @@ GeoDataLink::~GeoDataLink()
     delete d;
 }
 
-const char *GeoDataLink::nodeType() const
+const char* GeoDataLink::nodeType() const
 {
     return GeoDataTypes::GeoDataLinkType;
 }
@@ -99,7 +102,7 @@ QString GeoDataLink::href() const
     return d->m_href;
 }
 
-void GeoDataLink::setHref( const QString& href )
+void GeoDataLink::setHref(const QString& href)
 {
     d->m_href = href;
 }
@@ -109,7 +112,7 @@ GeoDataLink::RefreshMode GeoDataLink::refreshMode() const
     return d->m_refreshMode;
 }
 
-void GeoDataLink::setRefreshMode(RefreshMode refreshMode )
+void GeoDataLink::setRefreshMode(RefreshMode refreshMode)
 {
     d->m_refreshMode = refreshMode;
 }
@@ -119,7 +122,7 @@ qreal GeoDataLink::refreshInterval() const
     return d->m_refreshInterval;
 }
 
-void GeoDataLink::setRefreshInterval( qreal refreshInterval)
+void GeoDataLink::setRefreshInterval(qreal refreshInterval)
 {
     d->m_refreshInterval = refreshInterval;
 }
@@ -159,7 +162,7 @@ QString GeoDataLink::viewFormat() const
     return d->m_viewFormat;
 }
 
-void GeoDataLink::setViewFormat(const QString &viewFormat)
+void GeoDataLink::setViewFormat(const QString& viewFormat)
 {
     d->m_viewFormat = viewFormat;
 }
@@ -168,7 +171,7 @@ QString GeoDataLink::httpQuery() const
 {
     return d->m_httpQuery;
 }
-void GeoDataLink::setHttpQuery(const QString &httpQuery)
+void GeoDataLink::setHttpQuery(const QString& httpQuery)
 {
     d->m_httpQuery = httpQuery;
 }

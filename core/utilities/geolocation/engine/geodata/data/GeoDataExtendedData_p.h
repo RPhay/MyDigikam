@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QHash>
+
+// Local includes
 
 #include "GeoDataData.h"
 #include "GeoDataSimpleArrayData.h"

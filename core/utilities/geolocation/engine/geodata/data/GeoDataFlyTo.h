@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataTourPrimitive.h"
 #include "MarbleGlobal.h"
 
@@ -36,11 +38,11 @@ public:
 
     GeoDataFlyTo();
 
-    GeoDataFlyTo( const GeoDataFlyTo &other );
+    GeoDataFlyTo(const GeoDataFlyTo& other);
 
-    GeoDataFlyTo& operator=( const GeoDataFlyTo &other );
-    bool operator==( const GeoDataFlyTo& other ) const;
-    bool operator!=( const GeoDataFlyTo& other ) const;
+    GeoDataFlyTo& operator=(const GeoDataFlyTo& other);
+    bool operator==(const GeoDataFlyTo& other) const;
+    bool operator!=(const GeoDataFlyTo& other) const;
 
     ~GeoDataFlyTo() override;
 
@@ -49,17 +51,17 @@ public:
 
     double duration() const;
 
-    void setDuration( double duration );
+    void setDuration(double duration);
 
-    const GeoDataAbstractView *view() const;
+    const GeoDataAbstractView* view() const;
 
-    GeoDataAbstractView *view();
+    GeoDataAbstractView* view();
 
-    void setView( GeoDataAbstractView *view );
+    void setView(GeoDataAbstractView* view);
 
     FlyToMode flyToMode() const;
 
-    void setFlyToMode( const FlyToMode flyToMode );
+    void setFlyToMode(const FlyToMode flyToMode);
 
 private:
 

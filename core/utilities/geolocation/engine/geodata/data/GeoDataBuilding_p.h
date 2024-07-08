@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataGeometry_p.h"
 #include "GeoDataMultiGeometry.h"
 
@@ -32,7 +34,7 @@ public:
     {
     }
 
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
         GeoDataBuildingPrivate* copy = new GeoDataBuildingPrivate;
         *copy = *this;

@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDateTime>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 #include "GeoDataTimeStamp.h"
@@ -35,9 +39,9 @@ public:
 };
 
 GeoDataTimeStampPrivate::GeoDataTimeStampPrivate()
-    : m_resolution( GeoDataTimeStamp::SecondResolution )
+    : m_resolution(GeoDataTimeStamp::SecondResolution)
 {
-  // nothing to do
+    // nothing to do
 }
 
 } // namespace Marble

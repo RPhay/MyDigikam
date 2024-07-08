@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QMetaType>
+
+// Local includes
 
 #include "GeoDocument.h"
 #include "Serializable.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -48,21 +51,21 @@ class GeoDataObjectPrivate;
  * Marble.
  */
 class DIGIKAM_EXPORT GeoDataObject : public GeoNode,
-                                     public Serializable
+    public Serializable
 {
 public:
 
     GeoDataObject();
-    GeoDataObject( const GeoDataObject & );
-    GeoDataObject & operator=( const GeoDataObject & );
+    GeoDataObject(const GeoDataObject&);
+    GeoDataObject& operator=(const GeoDataObject&);
     ~GeoDataObject() override;
 
     /// Provides the parent of the object in GeoDataContainers
-    const GeoDataObject *parent() const;
-    GeoDataObject *parent();
+    const GeoDataObject* parent() const;
+    GeoDataObject* parent();
 
     /// Sets the parent of the object
-    void setParent(GeoDataObject *parent);
+    void setParent(GeoDataObject* parent);
 
     /**
      * @brief Get the id of the object.
@@ -72,7 +75,7 @@ public:
      * @brief Set the id of the object
      * @param value the new id value
      */
-    void setId( const QString &value );
+    void setId(const QString& value);
 
     /**
      * @brief Get the targetId of the object to be replaced
@@ -82,14 +85,14 @@ public:
      * @brief set a new targetId of this object
      * @param value the new targetId value
      */
-    void setTargetId( const QString &value );
+    void setTargetId(const QString& value);
 
-    QString resolvePath( const QString &relativePath ) const;
+    QString resolvePath(const QString& relativePath) const;
 
     /// Reimplemented from Serializable
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /// Reimplemented from Serializable
-    void unpack( QDataStream& steam ) override;
+    void unpack(QDataStream& steam) override;
 
 private:
 
@@ -100,7 +103,7 @@ protected:
      * @brief Compares the value of id and targetId of the two objects
      * @return true if they these values are equal or false otherwise
      */
-    virtual bool equals(const GeoDataObject &other) const;
+    virtual bool equals(const GeoDataObject& other) const;
 };
 
 /**
@@ -111,14 +114,16 @@ protected:
  * @return the given node as type T if cast is successful, otherwise 0
  */
 template<typename T>
-T *geodata_cast(GeoDataObject *node)
+T* geodata_cast(GeoDataObject* node)
 {
-    if (node == nullptr) {
+    if (node == nullptr)
+    {
         return nullptr;
     }
 
-    if (typeid(*node) == typeid(T)) {
-        return static_cast<T *>(node);
+    if (typeid(*node) == typeid(T))
+    {
+        return static_cast<T*>(node);
     }
 
     return nullptr;
@@ -132,14 +137,16 @@ T *geodata_cast(GeoDataObject *node)
  * @return the given node as type const T if cast is successful, otherwise 0
  */
 template<typename T>
-const T *geodata_cast(const GeoDataObject *node)
+const T* geodata_cast(const GeoDataObject* node)
 {
-    if (node == nullptr) {
+    if (node == nullptr)
+    {
         return nullptr;
     }
 
-    if (typeid(*node) == typeid(T)) {
-        return static_cast<const T *>(node);
+    if (typeid(*node) == typeid(T))
+    {
+        return static_cast<const T*>(node);
     }
 
     return nullptr;
@@ -147,4 +154,4 @@ const T *geodata_cast(const GeoDataObject *node)
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataObject* )
+Q_DECLARE_METATYPE(Marble::GeoDataObject*)

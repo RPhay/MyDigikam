@@ -25,8 +25,8 @@ GeoDataPhotoOverlay::GeoDataPhotoOverlay()
     // nothing to do
 }
 
-GeoDataPhotoOverlay::GeoDataPhotoOverlay(const GeoDataPhotoOverlay &other)
-  : GeoDataOverlay(other, new GeoDataPhotoOverlayPrivate(*other.d_func()))
+GeoDataPhotoOverlay::GeoDataPhotoOverlay(const GeoDataPhotoOverlay& other)
+    : GeoDataOverlay(other, new GeoDataPhotoOverlayPrivate(*other.d_func()))
 {
     // nothing to do
 }
@@ -35,7 +35,7 @@ GeoDataPhotoOverlay::~GeoDataPhotoOverlay()
 {
 }
 
-GeoDataPhotoOverlay &GeoDataPhotoOverlay::operator=( const GeoDataPhotoOverlay &other )
+GeoDataPhotoOverlay& GeoDataPhotoOverlay::operator=(const GeoDataPhotoOverlay& other)
 {
     if (this != &other)
     {
@@ -64,7 +64,7 @@ bool GeoDataPhotoOverlay::operator!=(const GeoDataPhotoOverlay& other) const
     return (! this->operator == (other));
 }
 
-GeoDataFeature * GeoDataPhotoOverlay::clone() const
+GeoDataFeature* GeoDataPhotoOverlay::clone() const
 {
     return (new GeoDataPhotoOverlay(*this));
 }
@@ -82,7 +82,7 @@ qreal GeoDataPhotoOverlay::rotation() const
     return d->m_rotation;
 }
 
-void GeoDataPhotoOverlay::setRotation( const qreal rotation )
+void GeoDataPhotoOverlay::setRotation(const qreal rotation)
 {
     Q_D(GeoDataPhotoOverlay);
     d->m_rotation = rotation;
@@ -100,7 +100,7 @@ const GeoDataViewVolume& GeoDataPhotoOverlay::viewVolume() const
     return d->m_viewVolume;
 }
 
-void GeoDataPhotoOverlay::setViewVolume( const GeoDataViewVolume &viewVolume )
+void GeoDataPhotoOverlay::setViewVolume(const GeoDataViewVolume& viewVolume)
 {
     Q_D(GeoDataPhotoOverlay);
     d->m_viewVolume = viewVolume;
@@ -118,7 +118,7 @@ const GeoDataImagePyramid& GeoDataPhotoOverlay::imagePyramid() const
     return d->m_imagePyramid;
 }
 
-void GeoDataPhotoOverlay::setImagePyramid( const GeoDataImagePyramid &imagePyramid )
+void GeoDataPhotoOverlay::setImagePyramid(const GeoDataImagePyramid& imagePyramid)
 {
     Q_D(GeoDataPhotoOverlay);
     d->m_imagePyramid = imagePyramid;
@@ -136,7 +136,7 @@ const GeoDataPoint& GeoDataPhotoOverlay::point() const
     return d->m_point;
 }
 
-void GeoDataPhotoOverlay::setPoint( const GeoDataPoint &point )
+void GeoDataPhotoOverlay::setPoint(const GeoDataPoint& point)
 {
     Q_D(GeoDataPhotoOverlay);
     d->m_point = point;
@@ -148,7 +148,7 @@ GeoDataPhotoOverlay::Shape GeoDataPhotoOverlay::shape() const
     return d->m_shape;
 }
 
-void GeoDataPhotoOverlay::setShape( Shape shape )
+void GeoDataPhotoOverlay::setShape(Shape shape)
 {
     Q_D(GeoDataPhotoOverlay);
     d->m_shape = shape;

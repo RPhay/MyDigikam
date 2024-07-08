@@ -22,7 +22,7 @@ namespace Marble
 const GeoDataTour GeoDataTour::null;
 
 GeoDataTour::GeoDataTour()
-    : GeoDataFeature( new GeoDataTourPrivate )
+    : GeoDataFeature(new GeoDataTourPrivate)
 {
     // nothing to do
 }
@@ -39,7 +39,8 @@ GeoDataTour::~GeoDataTour()
 
 GeoDataTour& GeoDataTour::operator=(const GeoDataTour& other)
 {
-    if (this != &other) {
+    if (this != &other)
+    {
         Q_D(GeoDataTour);
         *d = *other.d_func();
     }
@@ -51,7 +52,7 @@ GeoDataTour& GeoDataTour::operator=(const GeoDataTour& other)
 bool GeoDataTour::operator==(const GeoDataTour& other) const
 {
     Q_D(const GeoDataTour);
-    return equals( other ) &&
+    return equals(other) &&
            *d->m_playlist == *other.d_func()->m_playlist;
 }
 
@@ -60,7 +61,7 @@ bool GeoDataTour::operator!=(const GeoDataTour& other) const
     return !this->operator==(other);
 }
 
-GeoDataFeature * GeoDataTour::clone() const
+GeoDataFeature* GeoDataTour::clone() const
 {
     return new GeoDataTour(*this);
 }
@@ -78,14 +79,14 @@ const GeoDataPlaylist* GeoDataTour::playlist() const
     return d->m_playlist;
 }
 
-void GeoDataTour::setPlaylist(GeoDataPlaylist *playlist)
+void GeoDataTour::setPlaylist(GeoDataPlaylist* playlist)
 {
     Q_D(GeoDataTour);
     d->m_playlist = playlist;
     d->m_playlist->setParent(this);
 }
 
-const char *GeoDataTour::nodeType() const
+const char* GeoDataTour::nodeType() const
 {
     return GeoDataTypes::GeoDataTourType;
 }

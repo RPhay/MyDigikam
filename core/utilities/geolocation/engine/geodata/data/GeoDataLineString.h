@@ -15,12 +15,15 @@
 
 #pragma once
 
+// qt includes
+
 #include <QVector>
 #include <QMetaType>
 
+// Local includes
+
 #include "MarbleGlobal.h"
 #include "GeoDataGeometry.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -81,13 +84,13 @@ public:
     /*!
      \brief Creates a new LineString.
     */
-    explicit GeoDataLineString( TessellationFlags f = NoTessellation );
+    explicit GeoDataLineString(TessellationFlags f = NoTessellation);
 
 
     /*!
      \brief Creates a LineString from an existing geometry object.
     */
-    explicit GeoDataLineString( const GeoDataGeometry &other );
+    explicit GeoDataLineString(const GeoDataGeometry& other);
 
 
     /*!
@@ -95,11 +98,11 @@ public:
     */
     ~GeoDataLineString() override;
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
     /*!
      \brief Returns whether a LineString is a closed polygon.
@@ -126,7 +129,7 @@ public:
      If \a tessellate is <code>false</code> then the LineString's line segments
      are rendered as straight lines in screen coordinate space.
     */
-    void setTessellate( bool tessellate );
+    void setTessellate(bool tessellate);
 
 
     /*!
@@ -138,7 +141,7 @@ public:
     /*!
      \brief Sets the given tessellation flags for a LineString.
     */
-    void setTessellationFlags( TessellationFlags f );
+    void setTessellationFlags(TessellationFlags f);
 
     /*!
      \brief Reverses the LineString.
@@ -159,7 +162,7 @@ public:
       * @param planetRadius radius of the sphere
       * @param offset position of coordinate within LineString
       */
-    virtual qreal length( qreal planetRadius, int offset = 0 ) const;
+    virtual qreal length(qreal planetRadius, int offset = 0) const;
 
     /*!
      \brief Provides a more generic representation of the LineString.
@@ -226,21 +229,21 @@ public:
      \brief Returns a reference to the coordinates of a node at a given position.
      This method detaches the returned coordinate object from the line string.
     */
-    GeoDataCoordinates& at( int pos );
+    GeoDataCoordinates& at(int pos);
 
 
     /*!
      \brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& at( int pos ) const;
+    const GeoDataCoordinates& at(int pos) const;
 
 
     /*!
      \brief Returns a reference to the coordinates of a node at a given position.
      This method detaches the returned coordinate object from the line string.
     */
-    GeoDataCoordinates& operator[]( int pos );
+    GeoDataCoordinates& operator[](int pos);
 
 
     /**
@@ -254,7 +257,7 @@ public:
      \brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& operator[]( int pos ) const;
+    const GeoDataCoordinates& operator[](int pos) const;
 
 
     /*!
@@ -288,7 +291,7 @@ public:
     /*!
      \brief Inserts a new node at the given index.
     */
-    void insert( int index, const GeoDataCoordinates& value );
+    void insert(int index, const GeoDataCoordinates& value);
 
     /*!
      \brief Attempts to allocate memory for at least \a size coordinates.
@@ -298,7 +301,7 @@ public:
     /*!
      \brief Appends a given geodesic position as a new node to the LineString.
     */
-    void append ( const GeoDataCoordinates& value );
+    void append(const GeoDataCoordinates& value);
 
 
     /*!
@@ -310,20 +313,20 @@ public:
     /*!
      \brief Appends a given geodesic position as a new node to the LineString.
     */
-    GeoDataLineString& operator << ( const GeoDataCoordinates& value );
+    GeoDataLineString& operator << (const GeoDataCoordinates& value);
 
 
     /*!
      \brief Appends a given LineString to the end of the LineString.
     */
-    GeoDataLineString& operator << ( const GeoDataLineString& lineString );
+    GeoDataLineString& operator << (const GeoDataLineString& lineString);
 
 
     /*!
      \brief Returns true/false depending on whether this and other are/are not equal.
     */
-    bool operator==( const GeoDataLineString &other ) const;
-    bool operator!=( const GeoDataLineString &other ) const;
+    bool operator==(const GeoDataLineString& other) const;
+    bool operator!=(const GeoDataLineString& other) const;
 
 
     /*!
@@ -361,20 +364,20 @@ public:
     /*!
      \brief Removes the node at the given position and returns it.
      */
-    QVector<GeoDataCoordinates>::Iterator erase ( const QVector<GeoDataCoordinates>::Iterator& position );
+    QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& position);
 
 
     /*!
      \brief Removes the nodes within the given range and returns them.
     */
-    QVector<GeoDataCoordinates>::Iterator erase ( const QVector<GeoDataCoordinates>::Iterator& begin,
-                                                  const QVector<GeoDataCoordinates>::Iterator& end );
+    QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& begin,
+                                                const QVector<GeoDataCoordinates>::Iterator& end);
 
 
     /*!
      \brief Removes the node at the given position and destroys it.
     */
-    void remove ( int i );
+    void remove(int i);
 
     /*!
      \brief Returns a linestring with detail values assigned to each node.
@@ -391,13 +394,13 @@ public:
      \brief Serialize the LineString to a stream.
      \param stream the stream.
     */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /*!
      \brief Unserialize the LineString from a stream.
      \param stream the stream.
     */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 protected:
 
@@ -410,4 +413,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataLineString )
+Q_DECLARE_METATYPE(Marble::GeoDataLineString)

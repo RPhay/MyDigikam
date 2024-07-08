@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QAtomicInt>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 
@@ -28,10 +32,10 @@ public:
 
     GeoDataCameraPrivate()
         : m_coordinates(),
-          m_roll( 0.0 ),
-          m_heading( 0.0 ),
-          m_tilt( 0.0 ),
-          ref( 1 )
+          m_roll(0.0),
+          m_heading(0.0),
+          m_tilt(0.0),
+          ref(1)
     {
     }
 

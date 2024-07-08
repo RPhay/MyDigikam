@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 class QDataStream;
@@ -32,9 +33,9 @@ class DIGIKAM_EXPORT GeoDataSimpleField : public GeoNode
 public:
 
     GeoDataSimpleField();
-    GeoDataSimpleField( const GeoDataSimpleField& other );
-    bool operator==( const GeoDataSimpleField& other ) const;
-    bool operator!=( const GeoDataSimpleField& other ) const;
+    GeoDataSimpleField(const GeoDataSimpleField& other);
+    bool operator==(const GeoDataSimpleField& other) const;
+    bool operator!=(const GeoDataSimpleField& other) const;
     ~GeoDataSimpleField() override;
 
     /*
@@ -72,7 +73,7 @@ public:
      * @brief Set the value of name attribute of SimpleField
      * @param value  The value to be set as name attribute
      */
-    void setName( const QString& value );
+    void setName(const QString& value);
 
     /*
      * @brief Returns the value of displayField child element of SimpleField tag
@@ -83,13 +84,13 @@ public:
      * @brief Set the value for displayName tag
      * @param displayName  The value to be set for displayName tag
      */
-    void setDisplayName( const QString& displayName );
+    void setDisplayName(const QString& displayName);
 
     /*
      * @brief The assignment operator
      * @param rhs  The object to be duplicated
      */
-    GeoDataSimpleField& operator=( const GeoDataSimpleField& rhs );
+    GeoDataSimpleField& operator=(const GeoDataSimpleField& rhs);
 
     /*
      * @brief Provides information for downcasting a GeoNode
@@ -100,13 +101,13 @@ public:
      * @brief Serialize SimpleField to a stream
      * @param stream  The stream
      */
-    virtual void pack( QDataStream& stream ) const;
+    virtual void pack(QDataStream& stream) const;
 
     /*
      * @brief Unserialize SimpleField from a stream
      * @param stream  The stream
      */
-    virtual void unpack( QDataStream& stream );
+    virtual void unpack(QDataStream& stream);
 
 private:
 

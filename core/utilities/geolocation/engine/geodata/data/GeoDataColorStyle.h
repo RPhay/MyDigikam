@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 class QColor;
@@ -72,7 +73,7 @@ public:
      * @brief  Set a new color
      * @param  value  the new color value
      */
-    void setColor( const QColor &value );
+    void setColor(const QColor& value);
     /// Return the color component
     QColor color() const;
 
@@ -99,30 +100,30 @@ public:
      * assignment operator
      * @param other the other colorstyle
      */
-    GeoDataColorStyle& operator=( const GeoDataColorStyle& other );
-    bool operator==( const GeoDataColorStyle &other ) const;
-    bool operator!=( const GeoDataColorStyle &other ) const;
+    GeoDataColorStyle& operator=(const GeoDataColorStyle& other);
+    bool operator==(const GeoDataColorStyle& other) const;
+    bool operator!=(const GeoDataColorStyle& other) const;
 
     /**
      * @brief Serialize the style to a stream
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /**
      * @brief  Unserialize the style from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     GeoDataColorStyle();
-    GeoDataColorStyle( const GeoDataColorStyle& other );
+    GeoDataColorStyle(const GeoDataColorStyle& other);
 
     ~GeoDataColorStyle() override;
 
     /**
      * @return Returns a foreground color suitable for e.g. text display on top of the given background color
      */
-    static QString contrastColor(const QColor &color);
+    static QString contrastColor(const QColor& color);
 
 private:
 

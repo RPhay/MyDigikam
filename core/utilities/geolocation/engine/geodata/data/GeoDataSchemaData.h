@@ -15,12 +15,13 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QList>
 
-// Marble
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -37,10 +38,10 @@ class DIGIKAM_EXPORT GeoDataSchemaData : public GeoNode
 public:
 
     GeoDataSchemaData();
-    GeoDataSchemaData( const GeoDataSchemaData& other );
-    GeoDataSchemaData& operator=( const GeoDataSchemaData& rhs );
-    bool operator==( const GeoDataSchemaData &other ) const;
-    bool operator!=( const GeoDataSchemaData &other ) const;
+    GeoDataSchemaData(const GeoDataSchemaData& other);
+    GeoDataSchemaData& operator=(const GeoDataSchemaData& rhs);
+    bool operator==(const GeoDataSchemaData& other) const;
+    bool operator!=(const GeoDataSchemaData& other) const;
     ~GeoDataSchemaData() override;
 
     /*
@@ -51,17 +52,17 @@ public:
     /*
      * @brief Set the schemaUrl attribute of SchemaData to @p schemaUrl
      */
-    void setSchemaUrl( const QString& schemaUrl );
+    void setSchemaUrl(const QString& schemaUrl);
 
     /*
      * @brief Returns the SimpleData having name attribute @p name
      */
-    GeoDataSimpleData& simpleData( const QString& name ) const;
+    GeoDataSimpleData& simpleData(const QString& name) const;
 
     /*
      * @brief Adds a SimpleData @p simpleData to schemaDataHash
      */
-    void addSimpleData( const GeoDataSimpleData& simpleData );
+    void addSimpleData(const GeoDataSimpleData& simpleData);
 
     /*
      * @brief Dump a list containing all SimpleData values stored in schemaDataHash
@@ -71,13 +72,13 @@ public:
     /*
      * @brief Set the parent @parent
      */
-    void setParent(GeoDataExtendedData *parent);
+    void setParent(GeoDataExtendedData* parent);
 
     /*
      * @brief Get the parent
      */
-    const GeoDataExtendedData *parent() const;
-    GeoDataExtendedData *parent();
+    const GeoDataExtendedData* parent() const;
+    GeoDataExtendedData* parent();
 
     /*
      * @brief Provides information for downcasting a GeoNode
@@ -87,12 +88,12 @@ public:
     /*
      * @brief Serialize SchemaData to a stream @p stream
      */
-    virtual void pack( QDataStream& stream ) const;
+    virtual void pack(QDataStream& stream) const;
 
     /*
      * @brief Unserialize SchemaData from a stream @p stream
      */
-    virtual void unpack( QDataStream& stream );
+    virtual void unpack(QDataStream& stream);
 
 private:
 

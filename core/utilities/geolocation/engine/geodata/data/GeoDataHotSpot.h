@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPointF>
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -39,14 +42,14 @@ public:
         InsetPixels
     };
 
-    GeoDataHotSpot( const QPointF& hotSpot = QPointF( 0.5, 0.5 ),
-                    Units xunits = Fraction, Units yunits = Fraction );
-    GeoDataHotSpot( const GeoDataHotSpot& other );
+    GeoDataHotSpot(const QPointF& hotSpot = QPointF(0.5, 0.5),
+                   Units xunits = Fraction, Units yunits = Fraction);
+    GeoDataHotSpot(const GeoDataHotSpot& other);
     ~GeoDataHotSpot() override;
 
-    GeoDataHotSpot& operator=( const GeoDataHotSpot& other );
-    bool operator==( const GeoDataHotSpot& other ) const;
-    bool operator!=( const GeoDataHotSpot& other ) const;
+    GeoDataHotSpot& operator=(const GeoDataHotSpot& other);
+    bool operator==(const GeoDataHotSpot& other) const;
+    bool operator!=(const GeoDataHotSpot& other) const;
 
     /// Provides type information for downcasting a GeoData
     const char* nodeType() const override;
@@ -57,15 +60,15 @@ public:
     * @param yunits the same for y
     * @return the point of the hotspot
     */
-    const QPointF& hotSpot( Units& xunits, Units& yunits ) const;
+    const QPointF& hotSpot(Units& xunits, Units& yunits) const;
 
-    void setHotSpot( const QPointF& hotSpot = QPointF( 0.5, 0.5 ),
-                     Units xunits = Fraction, Units yunits = Fraction );
+    void setHotSpot(const QPointF& hotSpot = QPointF(0.5, 0.5),
+                    Units xunits = Fraction, Units yunits = Fraction);
 
     /// Serialize the contents of the feature to @p stream.
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /// Unserialize the contents of the feature from @p stream.
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

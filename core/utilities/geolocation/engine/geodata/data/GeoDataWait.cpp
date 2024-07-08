@@ -15,6 +15,8 @@
 
 #include "GeoDataWait.h"
 
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -39,7 +41,7 @@ bool GeoDataWait::operator!=(const GeoDataWait& other) const
     return !this->operator==(other);
 }
 
-const char *GeoDataWait::nodeType() const
+const char* GeoDataWait::nodeType() const
 {
     return GeoDataTypes::GeoDataWaitType;
 }

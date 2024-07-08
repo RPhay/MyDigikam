@@ -28,19 +28,19 @@ class Q_DECL_HIDDEN GeoDataLineStringPrivate : public GeoDataGeometryPrivate
 public:
 
     explicit GeoDataLineStringPrivate(TessellationFlags f)
-        :  m_rangeCorrected     (nullptr),
-           m_dirtyRange         (true),
-           m_dirtyBox           (true),
-           m_tessellationFlags  (f),
-           m_previousResolution (-1),
-           m_level              (-1)
+        :  m_rangeCorrected(nullptr),
+           m_dirtyRange(true),
+           m_dirtyBox(true),
+           m_tessellationFlags(f),
+           m_previousResolution(-1),
+           m_level(-1)
     {
     }
 
     GeoDataLineStringPrivate()
-         : m_rangeCorrected (nullptr),
-           m_dirtyRange     (true),
-           m_dirtyBox       (true)
+        : m_rangeCorrected(nullptr),
+          m_dirtyRange(true),
+          m_dirtyBox(true)
     {
     }
 
@@ -69,20 +69,20 @@ public:
         return copy;
     }
 
-    void toPoleCorrected( const GeoDataLineString& q, GeoDataLineString& poleCorrected ) const;
+    void toPoleCorrected(const GeoDataLineString& q, GeoDataLineString& poleCorrected) const;
 
-    void toDateLineCorrected( const GeoDataLineString& q,
-                              QVector<GeoDataLineString*>& lineStrings ) const;
+    void toDateLineCorrected(const GeoDataLineString& q,
+                             QVector<GeoDataLineString*>& lineStrings) const;
 
-    void interpolateDateLine( const GeoDataCoordinates& previousCoords,
-                              const GeoDataCoordinates& currentCoords,
-                              GeoDataCoordinates& previousAtDateline,
-                              GeoDataCoordinates& currentAtDateline,
-                              TessellationFlags f ) const;
+    void interpolateDateLine(const GeoDataCoordinates& previousCoords,
+                             const GeoDataCoordinates& currentCoords,
+                             GeoDataCoordinates& previousAtDateline,
+                             GeoDataCoordinates& currentAtDateline,
+                             TessellationFlags f) const;
 
-    GeoDataCoordinates findDateLine( const GeoDataCoordinates& previousCoords,
-                       const GeoDataCoordinates& currentCoords,
-                       int recursionCounter ) const;
+    GeoDataCoordinates findDateLine(const GeoDataCoordinates& previousCoords,
+                                    const GeoDataCoordinates& currentCoords,
+                                    int recursionCounter) const;
 
     quint8 levelForResolution(qreal resolution) const;
     static qreal resolutionForLevel(int level);
@@ -96,8 +96,8 @@ public:
     mutable bool                m_dirtyRange;
 
     mutable bool                m_dirtyBox; // tells whether there have been changes to the
-                                            // GeoDataPoints since the LatLonAltBox has
-                                            // been calculated. Saves performance.
+    // GeoDataPoints since the LatLonAltBox has
+    // been calculated. Saves performance.
     TessellationFlags           m_tessellationFlags;
     mutable qreal               m_previousResolution;
     mutable quint8              m_level;

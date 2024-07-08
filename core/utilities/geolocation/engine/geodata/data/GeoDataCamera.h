@@ -15,9 +15,10 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataAbstractView.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -35,26 +36,26 @@ public:
 
     GeoDataCamera(const GeoDataCamera& other);
 
-    GeoDataCamera& operator=(const GeoDataCamera &other);
-    bool operator==( const GeoDataCamera &other ) const;
-    bool operator!=( const GeoDataCamera &other ) const;
+    GeoDataCamera& operator=(const GeoDataCamera& other);
+    bool operator==(const GeoDataCamera& other) const;
+    bool operator!=(const GeoDataCamera& other) const;
 
     ~GeoDataCamera() override;
 
-    GeoDataAbstractView *copy() const override;
+    GeoDataAbstractView* copy() const override;
 
     /**
      * @brief set the altitude in a GeoDataCamera object
      * @param altitude latitude
      *
      */
-    void setAltitude( qreal altitude);
+    void setAltitude(qreal altitude);
 
     /**
      * @brief retrieves the altitude of the GeoDataCamera object
      * @return latitude
      */
-    qreal altitude( ) const;
+    qreal altitude() const;
 
     /**
      * @brief set the latitude in a GeoDataCamera object
@@ -62,7 +63,7 @@ public:
      * @param unit units that lon and lat get measured in
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      */
-    void setLatitude( qreal latitude,GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void setLatitude(qreal latitude, GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
     /**
      * @brief retrieves the latitude of the GeoDataCamera object
@@ -71,7 +72,7 @@ public:
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      * @return latitude
      */
-    qreal latitude( GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian ) const;
+    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
 
     /**
      * @brief set the longitude in a GeoDataCamera object
@@ -79,7 +80,7 @@ public:
      * @param unit units that lon and lat get measured in
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      */
-    void setLongitude( qreal longitude,GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void setLongitude(qreal longitude, GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
     /**
      * @brief retrieves the longitude of the GeoDataCamera object
@@ -88,7 +89,7 @@ public:
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      * @return latitude
      */
-    qreal longitude( GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian ) const;
+    qreal longitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
 
     /**
      * @brief retrieve the lat/lon/alt triple as a GeoDataCoordinates object
@@ -97,7 +98,7 @@ public:
      */
     GeoDataCoordinates coordinates() const;
 
-    void setRoll( qreal roll );
+    void setRoll(qreal roll);
 
     qreal roll() const;
 
@@ -109,7 +110,7 @@ public:
 
     void setTilt(qreal tilt);
 
-    void setCoordinates( const GeoDataCoordinates& coordinates );
+    void setCoordinates(const GeoDataCoordinates& coordinates);
 
     /// Provides type information for downcasting a GeoNode
     const char* nodeType() const override;
@@ -123,4 +124,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataCamera )
+Q_DECLARE_METATYPE(Marble::GeoDataCamera)

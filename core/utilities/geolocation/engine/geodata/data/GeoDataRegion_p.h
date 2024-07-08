@@ -15,10 +15,9 @@
 
 #pragma once
 
-#include "GeoDataRegion.h"
-
 // Local includes
 
+#include "GeoDataRegion.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataTypes.h"
 #include "GeoDataLod.h"
@@ -31,9 +30,9 @@ class Q_DECL_HIDDEN GeoDataRegionPrivate
 public:
 
     GeoDataRegionPrivate()
-        : m_parent      (nullptr),
+        : m_parent(nullptr),
           m_latLonAltBox(nullptr),
-          m_lod         (nullptr)
+          m_lod(nullptr)
     {
     }
 
@@ -44,6 +43,7 @@ public:
         {
             m_latLonAltBox = new GeoDataLatLonAltBox(*other.m_latLonAltBox);
         }
+
         else
         {
             m_latLonAltBox = nullptr;
@@ -53,6 +53,7 @@ public:
         {
             m_lod = new GeoDataLod(*other.m_lod);
         }
+
         else
         {
             m_lod = nullptr;
@@ -61,9 +62,9 @@ public:
 
 
     explicit GeoDataRegionPrivate(GeoDataFeature* feature)
-         : m_parent      (feature),
-           m_latLonAltBox(nullptr),
-           m_lod         (nullptr)
+        : m_parent(feature),
+          m_latLonAltBox(nullptr),
+          m_lod(nullptr)
     {
     }
 
@@ -83,7 +84,7 @@ private:
 
     // Preventing usage of operator=
 
-    GeoDataRegionPrivate &operator=(const GeoDataRegionPrivate&) = delete;
+    GeoDataRegionPrivate& operator=(const GeoDataRegionPrivate&) = delete;
 };
 
 } // namespace Marble

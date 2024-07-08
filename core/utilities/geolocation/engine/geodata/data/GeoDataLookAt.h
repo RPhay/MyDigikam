@@ -15,117 +15,118 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataAbstractView.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_export.h"
 
 namespace Marble
 {
-    class GeoDataLookAtPrivate;
+class GeoDataLookAtPrivate;
+
+/**
+ */
+class DIGIKAM_EXPORT GeoDataLookAt : public GeoDataAbstractView
+{
+public:
+
+    GeoDataLookAt();
+
+    GeoDataLookAt(const GeoDataLookAt& other);
+
+    GeoDataLookAt& operator=(const GeoDataLookAt& other);
+
+    bool operator==(const GeoDataLookAt& other) const;
+    bool operator!=(const GeoDataLookAt& other) const;
+
+    ~GeoDataLookAt() override;
+
+    GeoDataAbstractView* copy() const override;
 
     /**
+     * @brief set the altitude in a GeoDataLookAt object
+     * @param altitude latitude
+     *
      */
-    class DIGIKAM_EXPORT GeoDataLookAt : public GeoDataAbstractView
-    {
-    public:
+    void setAltitude(qreal altitude);
 
-        GeoDataLookAt();
+    /**
+     * @brief retrieves the altitude of the GeoDataLookAt object
+     * @return latitude
+     */
+    qreal altitude() const;
 
-        GeoDataLookAt(const GeoDataLookAt& other);
+    /**
+     * @brief set the latitude in a GeoDataLookAt object
+     * @param latitude latitude
+     * @param unit units that lon and lat get measured in
+     * (default for Radian: north pole at pi/2, southpole at -pi/2)
+     */
+    void setLatitude(qreal latitude, GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
-        GeoDataLookAt& operator=(const GeoDataLookAt &other);
+    /**
+     * @brief retrieves the latitude of the GeoDataLookAt object
+     * use the unit parameter to switch between Radian and DMS
+     * @param unit units that lon and lat get measured in
+     * (default for Radian: north pole at pi/2, southpole at -pi/2)
+     * @return latitude
+     */
+    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
 
-        bool operator==(const GeoDataLookAt &other) const;
-        bool operator!=(const GeoDataLookAt &other) const;
+    /**
+     * @brief set the longitude in a GeoDataLookAt object
+     * @param longitude longitude
+     * @param unit units that lon and lat get measured in
+     * (default for Radian: north pole at pi/2, southpole at -pi/2)
+     */
+    void setLongitude(qreal longitude, GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
-        ~GeoDataLookAt() override;
+    /**
+     * @brief retrieves the longitude of the GeoDataLookAt object
+     * use the unit parameter to switch between Radian and DMS
+     * @param unit units that lon and lat get measured in
+     * (default for Radian: north pole at pi/2, southpole at -pi/2)
+     * @return latitude
+     */
+    qreal longitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
 
-        GeoDataAbstractView *copy() const override;
+    /**
+     * @brief retrieve the lat/lon/alt triple as a GeoDataCoordinates object
+     * @return GeoDataCoordinates
+     * @see longitude latitude altitude
+     */
+    GeoDataCoordinates coordinates() const;
 
-        /**
-         * @brief set the altitude in a GeoDataLookAt object
-         * @param altitude latitude
-         *
-         */
-        void setAltitude( qreal altitude);
+    /**
+      * @brief Change the distance (in meters) between the camera and the object looked at
+      * @see range
+      */
+    void setRange(qreal range);
 
-        /**
-         * @brief retrieves the altitude of the GeoDataLookAt object
-         * @return latitude
-         */
-        qreal altitude( ) const;
+    /**
+      * @brief Retrieve the distance (in meters) between the camera and the object looked at
+      * @see setRange
+      */
+    qreal range() const;
 
-        /**
-         * @brief set the latitude in a GeoDataLookAt object
-         * @param latitude latitude
-         * @param unit units that lon and lat get measured in
-         * (default for Radian: north pole at pi/2, southpole at -pi/2)
-         */
-        void setLatitude( qreal latitude,GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    /**
+    * @brief set the GeoDataCoordinates object
+    * @param coordinates GeoDataCoordinates
+    * @see GeoDataCoordinates
+    */
+    void setCoordinates(const GeoDataCoordinates& coordinates);
 
-        /**
-         * @brief retrieves the latitude of the GeoDataLookAt object
-         * use the unit parameter to switch between Radian and DMS
-         * @param unit units that lon and lat get measured in
-         * (default for Radian: north pole at pi/2, southpole at -pi/2)
-         * @return latitude
-         */
-        qreal latitude( GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian ) const;
+    /// Provides type information for downcasting a GeoNode
+    const char* nodeType() const override;
 
-        /**
-         * @brief set the longitude in a GeoDataLookAt object
-         * @param longitude longitude
-         * @param unit units that lon and lat get measured in
-         * (default for Radian: north pole at pi/2, southpole at -pi/2)
-         */
-        void setLongitude( qreal longitude,GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void detach();
 
-        /**
-         * @brief retrieves the longitude of the GeoDataLookAt object
-         * use the unit parameter to switch between Radian and DMS
-         * @param unit units that lon and lat get measured in
-         * (default for Radian: north pole at pi/2, southpole at -pi/2)
-         * @return latitude
-         */
-        qreal longitude( GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian ) const;
+private:
 
-        /**
-         * @brief retrieve the lat/lon/alt triple as a GeoDataCoordinates object
-         * @return GeoDataCoordinates
-         * @see longitude latitude altitude
-         */
-        GeoDataCoordinates coordinates() const;
-
-        /**
-          * @brief Change the distance (in meters) between the camera and the object looked at
-          * @see range
-          */
-        void setRange( qreal range );
-
-        /**
-          * @brief Retrieve the distance (in meters) between the camera and the object looked at
-          * @see setRange
-          */
-        qreal range() const;
-
-        /**
-        * @brief set the GeoDataCoordinates object
-        * @param coordinates GeoDataCoordinates
-        * @see GeoDataCoordinates
-        */
-        void setCoordinates( const GeoDataCoordinates& coordinates );
-
-        /// Provides type information for downcasting a GeoNode
-        const char* nodeType() const override;
-
-        void detach();
-
-    private:
-
-        GeoDataLookAtPrivate* d = nullptr;
-    };
+    GeoDataLookAtPrivate* d = nullptr;
+};
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataLookAt )
+Q_DECLARE_METATYPE(Marble::GeoDataLookAt)

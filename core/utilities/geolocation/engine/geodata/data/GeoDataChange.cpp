@@ -15,6 +15,8 @@
 
 #include "GeoDataChange.h"
 
+// Local includes
+
 #include "GeoDataContainer_p.h"
 #include "GeoDataTypes.h"
 
@@ -31,14 +33,15 @@ GeoDataChange::GeoDataChange()
 {
 }
 
-GeoDataChange::GeoDataChange(const GeoDataChange &other)
+GeoDataChange::GeoDataChange(const GeoDataChange& other)
     : GeoDataContainer(other, new GeoDataChangePrivate(*other.d_func()))
 {
 }
 
-GeoDataChange &GeoDataChange::operator=( const GeoDataChange &other )
+GeoDataChange& GeoDataChange::operator=(const GeoDataChange& other)
 {
-    if (this != &other) {
+    if (this != &other)
+    {
         Q_D(GeoDataChange);
         *d = *other.d_func();
     }
@@ -46,26 +49,26 @@ GeoDataChange &GeoDataChange::operator=( const GeoDataChange &other )
     return *this;
 }
 
-bool GeoDataChange::operator==( const GeoDataChange &other ) const
+bool GeoDataChange::operator==(const GeoDataChange& other) const
 {
     return GeoDataContainer::equals(other);
 }
 
-bool GeoDataChange::operator!=( const GeoDataChange &other ) const
+bool GeoDataChange::operator!=(const GeoDataChange& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataChange::~GeoDataChange()
 {
 }
 
-GeoDataFeature * GeoDataChange::clone() const
+GeoDataFeature* GeoDataChange::clone() const
 {
     return new GeoDataChange(*this);
 }
 
-const char *GeoDataChange::nodeType() const
+const char* GeoDataChange::nodeType() const
 {
     return GeoDataTypes::GeoDataChangeType;
 }

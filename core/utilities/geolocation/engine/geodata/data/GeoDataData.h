@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 class QVariant;
@@ -35,17 +36,17 @@ public:
     GeoDataData();
 
     /** Convenience constructor that sets name and value directly */
-    GeoDataData( const QString &name, const QVariant &value );
+    GeoDataData(const QString& name, const QVariant& value);
 
-    GeoDataData( const GeoDataData& other );
-    bool operator==( const GeoDataData& other ) const;
-    bool operator!=( const GeoDataData& other ) const;
+    GeoDataData(const GeoDataData& other);
+    bool operator==(const GeoDataData& other) const;
+    bool operator!=(const GeoDataData& other) const;
     ~GeoDataData() override;
 
     /**
      * @brief assignment operator
      */
-    GeoDataData& operator=( const GeoDataData& other );
+    GeoDataData& operator=(const GeoDataData& other);
 
     /// Provides type information for downcasting a GeoData
     const char* nodeType() const override;
@@ -65,7 +66,7 @@ public:
     * @brief set the value of data
     * @param value the value to be set
     */
-    void setValue( const QVariant& value );
+    void setValue(const QVariant& value);
 
     /**
     * @brief return the name of data
@@ -76,7 +77,7 @@ public:
     * @brief set the name of data
     * @param name the name to be set
     */
-    void setName( const QString& name );
+    void setName(const QString& name);
 
     /**
     * @brief return the displayName of data
@@ -87,13 +88,13 @@ public:
     * @brief set the displayName of data
     * @param displayName the displayName to be set
     */
-    void setDisplayName( const QString& displayName );
+    void setDisplayName(const QString& displayName);
 
     /// Serialize the contents of the feature to @p stream.
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /// Unserialize the contents of the feature from @p stream.
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

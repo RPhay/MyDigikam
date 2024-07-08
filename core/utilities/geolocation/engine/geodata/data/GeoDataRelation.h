@@ -15,9 +15,10 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -57,22 +58,22 @@ public:
 
     GeoDataRelation();
     ~GeoDataRelation() override;
-    GeoDataRelation(const GeoDataRelation &other);
-    GeoDataRelation & operator=(GeoDataRelation other);
-    bool operator<(const GeoDataRelation &other) const;
+    GeoDataRelation(const GeoDataRelation& other);
+    GeoDataRelation& operator=(GeoDataRelation other);
+    bool operator<(const GeoDataRelation& other) const;
 
     const char* nodeType() const override;
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
-    void addMember(const GeoDataFeature* feature, qint64 id, OsmType type, const QString &role);
+    void addMember(const GeoDataFeature* feature, qint64 id, OsmType type, const QString& role);
     QSet<const GeoDataFeature*> members() const;
 
-    OsmPlacemarkData &osmData();
-    const OsmPlacemarkData &osmData() const;
+    OsmPlacemarkData& osmData();
+    const OsmPlacemarkData& osmData() const;
 
     RelationType relationType() const;
     QSet<qint64> memberIds() const;
-    bool containsAnyOf(const QSet<qint64> &memberIds) const;
+    bool containsAnyOf(const QSet<qint64>& memberIds) const;
 
 private:
 

@@ -35,8 +35,8 @@ public:
     }
 
     GeoDataTourPrivate(const GeoDataTourPrivate& other)
-      : GeoDataFeaturePrivate(other),
-        m_playlist           (nullptr)
+        : GeoDataFeaturePrivate(other),
+          m_playlist(nullptr)
     {
         if (other.m_playlist)
         {

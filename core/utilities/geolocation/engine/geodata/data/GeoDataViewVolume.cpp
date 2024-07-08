@@ -15,6 +15,8 @@
 
 #include "GeoDataViewVolume.h"
 
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -44,21 +46,21 @@ GeoDataViewVolumePrivate::GeoDataViewVolumePrivate()
 }
 
 GeoDataViewVolume::GeoDataViewVolume()
-    : d( new GeoDataViewVolumePrivate )
+    : d(new GeoDataViewVolumePrivate)
 {
     // nothing to do
 }
 
-GeoDataViewVolume::GeoDataViewVolume( const Marble::GeoDataViewVolume &other )
+GeoDataViewVolume::GeoDataViewVolume(const Marble::GeoDataViewVolume& other)
     : GeoDataObject(),
-      d( new GeoDataViewVolumePrivate( *other.d ) )
+      d(new GeoDataViewVolumePrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataViewVolume &GeoDataViewVolume::operator=( const GeoDataViewVolume &other )
+GeoDataViewVolume& GeoDataViewVolume::operator=(const GeoDataViewVolume& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
@@ -66,11 +68,11 @@ GeoDataViewVolume &GeoDataViewVolume::operator=( const GeoDataViewVolume &other 
 bool GeoDataViewVolume::operator==(const GeoDataViewVolume& other) const
 {
     return equals(other)
-        && d->m_leftFov == other.d->m_leftFov
-        && d->m_rightFov == other.d->m_rightFov
-        && d->m_topFov == other.d->m_topFov
-        && d->m_bottomFov == other.d->m_bottomFov
-        && d->m_near == other.d->m_near;
+           && d->m_leftFov == other.d->m_leftFov
+           && d->m_rightFov == other.d->m_rightFov
+           && d->m_topFov == other.d->m_topFov
+           && d->m_bottomFov == other.d->m_bottomFov
+           && d->m_near == other.d->m_near;
 }
 
 bool GeoDataViewVolume::operator!=(const GeoDataViewVolume& other) const
@@ -83,7 +85,7 @@ GeoDataViewVolume::~GeoDataViewVolume()
     delete d;
 }
 
-const char *GeoDataViewVolume::nodeType() const
+const char* GeoDataViewVolume::nodeType() const
 {
     return GeoDataTypes::GeoDataViewVolumeType;
 }

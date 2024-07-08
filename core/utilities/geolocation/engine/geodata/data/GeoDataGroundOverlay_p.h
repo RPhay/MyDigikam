@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataOverlay_p.h"
+// Local includes
 
+#include "GeoDataOverlay_p.h"
 #include "GeoDataTypes.h"
 #include "GeoDataLatLonQuad.h"
 

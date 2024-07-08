@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 
-#include "GeoDataFeature.h"
+// Local includes
 
+#include "GeoDataFeature.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -50,7 +53,7 @@ public:
 
     /// Default constructor
     GeoDataContainer();
-    GeoDataContainer( const GeoDataContainer& other );
+    GeoDataContainer(const GeoDataContainer& other);
 
     /// Destruct the GeoDataContainer
     ~GeoDataContainer() override;
@@ -93,31 +96,31 @@ public:
     /**
      * @brief  returns the requested child item
      */
-    GeoDataFeature* child( int );
+    GeoDataFeature* child(int);
 
     /**
      * @brief  returns the requested child item
      */
-    const GeoDataFeature* child( int ) const;
+    const GeoDataFeature* child(int) const;
 
     /**
      * @brief returns the position of an item in the list
      */
-    int childPosition( const GeoDataFeature *child) const;
+    int childPosition(const GeoDataFeature* child) const;
 
     /**
      * @brief inserts @p feature at position @p index in the container
      */
-    void insert( int index, GeoDataFeature *feature );
+    void insert(int index, GeoDataFeature* feature);
 
-    void insert(GeoDataFeature *other, int index);
+    void insert(GeoDataFeature* other, int index);
 
     /**
     * @brief add an element
     */
-    void append( GeoDataFeature *other );
+    void append(GeoDataFeature* other);
 
-    void remove( int index );
+    void remove(int index);
 
     void remove(int index, int count);
 
@@ -129,7 +132,7 @@ public:
 
     void removeLast();
 
-    bool removeOne( GeoDataFeature *feature );
+    bool removeOne(GeoDataFeature* feature);
 
     /**
     * @brief size of the container
@@ -144,8 +147,8 @@ public:
     /**
     * @brief return the reference of the element at a specific position
     */
-    GeoDataFeature& at( int pos );
-    const GeoDataFeature& at( int pos ) const;
+    GeoDataFeature& at(int pos);
+    const GeoDataFeature& at(int pos) const;
 
     /**
     * @brief return the reference of the last element for convenience
@@ -168,19 +171,19 @@ public:
      * @brief  Serialize the container to a stream.
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /**
      * @brief  Unserialize the container from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 protected:
 
-    explicit GeoDataContainer(GeoDataContainerPrivate *priv);
-    GeoDataContainer(const GeoDataContainer& other, GeoDataContainerPrivate *priv);
+    explicit GeoDataContainer(GeoDataContainerPrivate* priv);
+    GeoDataContainer(const GeoDataContainer& other, GeoDataContainerPrivate* priv);
 
-    bool equals( const GeoDataContainer &other ) const;
+    bool equals(const GeoDataContainer& other) const;
     using GeoDataFeature::equals;
 
 private:

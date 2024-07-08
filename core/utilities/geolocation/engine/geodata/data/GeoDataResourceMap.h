@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDocument.h"
 #include "MarbleGlobal.h"
 
@@ -32,12 +34,12 @@ public:
 
     GeoDataResourceMap();
 
-    GeoDataResourceMap( const GeoDataResourceMap &other );
+    GeoDataResourceMap(const GeoDataResourceMap& other);
 
-    GeoDataResourceMap& operator=( const GeoDataResourceMap &other );
+    GeoDataResourceMap& operator=(const GeoDataResourceMap& other);
 
-    bool operator==( const GeoDataResourceMap &other ) const;
-    bool operator!=( const GeoDataResourceMap &other ) const;
+    bool operator==(const GeoDataResourceMap& other) const;
+    bool operator!=(const GeoDataResourceMap& other) const;
 
     ~GeoDataResourceMap() override;
 
@@ -48,15 +50,15 @@ public:
 
     GeoDataAlias& alias();
 
-    void setAlias( const GeoDataAlias &alias);
+    void setAlias(const GeoDataAlias& alias);
 
     QString sourceHref() const;
 
-    void setSourceHref( const QString& sourceHref );
+    void setSourceHref(const QString& sourceHref);
 
     QString targetHref() const;
 
-    void setTargetHref( const QString& targetHref );
+    void setTargetHref(const QString& targetHref);
 
 private:
 

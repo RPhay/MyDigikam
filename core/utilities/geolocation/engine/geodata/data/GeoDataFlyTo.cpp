@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataFlyTo.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 #include "GeoDataAbstractView.h"
 
@@ -34,49 +37,55 @@ public:
 };
 
 GeoDataFlyToPrivate::GeoDataFlyToPrivate() :
-    m_duration( 0.0 ), m_flyToMode(), m_view( nullptr )
+    m_duration(0.0), m_flyToMode(), m_view(nullptr)
 {
 }
 
-GeoDataFlyTo::GeoDataFlyTo() : d( new GeoDataFlyToPrivate )
+GeoDataFlyTo::GeoDataFlyTo() : d(new GeoDataFlyToPrivate)
 {
 }
 
-GeoDataFlyTo::GeoDataFlyTo( const Marble::GeoDataFlyTo &other ) :
-    GeoDataTourPrimitive( other ), d( new GeoDataFlyToPrivate( *other.d ) )
+GeoDataFlyTo::GeoDataFlyTo(const Marble::GeoDataFlyTo& other) :
+    GeoDataTourPrimitive(other), d(new GeoDataFlyToPrivate(*other.d))
 {
 }
 
-GeoDataFlyTo &GeoDataFlyTo::operator=( const GeoDataFlyTo &other )
+GeoDataFlyTo& GeoDataFlyTo::operator=(const GeoDataFlyTo& other)
 {
-    GeoDataTourPrimitive::operator=( other );
+    GeoDataTourPrimitive::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataFlyTo::operator==( const GeoDataFlyTo& other ) const
+bool GeoDataFlyTo::operator==(const GeoDataFlyTo& other) const
 {
-    if ( !equals(other) ||
-         d->m_duration != other.d->m_duration ||
-         d->m_flyToMode != other.d->m_flyToMode ) {
+    if (!equals(other) ||
+        d->m_duration != other.d->m_duration ||
+        d->m_flyToMode != other.d->m_flyToMode)
+    {
         return false;
     }
 
-    if ( (!d->m_view && other.d->m_view) ||
-         (d->m_view && !other.d->m_view) ) {
+    if ((!d->m_view && other.d->m_view) ||
+        (d->m_view && !other.d->m_view))
+    {
         return false;
-    } else if ( !d->m_view && !other.d->m_view ) {
+    }
+
+    else if (!d->m_view && !other.d->m_view)
+    {
         return true;
     }
 
-    if (*d->m_view != *other.d->m_view) {
+    if (*d->m_view != *other.d->m_view)
+    {
         return false;
     }
 
     return true;
 }
 
-bool GeoDataFlyTo::operator!=( const GeoDataFlyTo& other ) const
+bool GeoDataFlyTo::operator!=(const GeoDataFlyTo& other) const
 {
     return !this->operator==(other);
 }
@@ -86,22 +95,22 @@ GeoDataFlyTo::~GeoDataFlyTo()
     delete d;
 }
 
-const char *GeoDataFlyTo::nodeType() const
+const char* GeoDataFlyTo::nodeType() const
 {
     return GeoDataTypes::GeoDataFlyToType;
 }
 
-const GeoDataAbstractView *GeoDataFlyTo::view() const
+const GeoDataAbstractView* GeoDataFlyTo::view() const
 {
     return d->m_view;
 }
 
-GeoDataAbstractView *GeoDataFlyTo::view()
+GeoDataAbstractView* GeoDataFlyTo::view()
 {
     return d->m_view;
 }
 
-void GeoDataFlyTo::setView( GeoDataAbstractView *view )
+void GeoDataFlyTo::setView(GeoDataAbstractView* view)
 {
     d->m_view = view;
 }
@@ -111,7 +120,7 @@ double GeoDataFlyTo::duration() const
     return d->m_duration;
 }
 
-void GeoDataFlyTo::setDuration( double duration )
+void GeoDataFlyTo::setDuration(double duration)
 {
     d->m_duration = duration;
 }
@@ -121,7 +130,7 @@ GeoDataFlyTo::FlyToMode GeoDataFlyTo::flyToMode() const
     return d->m_flyToMode;
 }
 
-void GeoDataFlyTo::setFlyToMode( const GeoDataFlyTo::FlyToMode flyToMode )
+void GeoDataFlyTo::setFlyToMode(const GeoDataFlyTo::FlyToMode flyToMode)
 {
     d->m_flyToMode = flyToMode;
 }

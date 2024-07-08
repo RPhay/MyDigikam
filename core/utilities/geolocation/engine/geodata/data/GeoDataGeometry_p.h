@@ -32,17 +32,17 @@ class Q_DECL_HIDDEN GeoDataGeometryPrivate
 public:
 
     GeoDataGeometryPrivate()
-        : m_extrude     (false),
+        : m_extrude(false),
           m_altitudeMode(ClampToGround),
-          ref           (0)
+          ref(0)
     {
     }
 
     GeoDataGeometryPrivate(const GeoDataGeometryPrivate& other)
-        : m_extrude     (other.m_extrude),
+        : m_extrude(other.m_extrude),
           m_altitudeMode(other.m_altitudeMode),
           m_latLonAltBox(),
-          ref           (0)
+          ref(0)
     {
     }
 
@@ -59,7 +59,7 @@ public:
         return *this;
     }
 
-    virtual GeoDataGeometryPrivate *copy() const = 0;
+    virtual GeoDataGeometryPrivate* copy() const = 0;
 
 public:
 

@@ -15,7 +15,11 @@
 
 #include "GeoDataStyleMap.h"
 
+// Qt includes
+
 #include <QDataStream>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 
@@ -30,14 +34,14 @@ public:
 };
 
 GeoDataStyleMap::GeoDataStyleMap()
-    : d( new GeoDataStyleMapPrivate )
+    : d(new GeoDataStyleMapPrivate)
 {
 }
 
-GeoDataStyleMap::GeoDataStyleMap( const GeoDataStyleMap& other )
+GeoDataStyleMap::GeoDataStyleMap(const GeoDataStyleMap& other)
     : GeoDataStyleSelector(other),
       QMap<QString, QString>(other),
-      d( new GeoDataStyleMapPrivate( *other.d ) )
+      d(new GeoDataStyleMapPrivate(*other.d))
 {
 }
 
@@ -56,26 +60,26 @@ QString GeoDataStyleMap::lastKey() const
     return d->lastKey;
 }
 
-void GeoDataStyleMap::setLastKey( const QString& key )
+void GeoDataStyleMap::setLastKey(const QString& key)
 {
     d->lastKey = key;
 }
 
-GeoDataStyleMap& GeoDataStyleMap::operator=( const GeoDataStyleMap& other )
+GeoDataStyleMap& GeoDataStyleMap::operator=(const GeoDataStyleMap& other)
 {
-    QMap<QString, QString>::operator=( other );
-    GeoDataStyleSelector::operator=( other );
+    QMap<QString, QString>::operator=(other);
+    GeoDataStyleSelector::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataStyleMap::operator==( const GeoDataStyleMap &other ) const
+bool GeoDataStyleMap::operator==(const GeoDataStyleMap& other) const
 {
-    if ( GeoDataStyleSelector::operator!=( other )
-/*
-         PORT_QT6
-         || QMap<QString, QString>::operator!=( other )
-*/
+    if (GeoDataStyleSelector::operator!=(other)
+        /*
+                 PORT_QT6
+                 || QMap<QString, QString>::operator!=( other )
+        */
        )
     {
         return false;
@@ -84,21 +88,21 @@ bool GeoDataStyleMap::operator==( const GeoDataStyleMap &other ) const
     return d->lastKey == other.d->lastKey;
 }
 
-bool GeoDataStyleMap::operator!=( const GeoDataStyleMap &other ) const
+bool GeoDataStyleMap::operator!=(const GeoDataStyleMap& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
-void GeoDataStyleMap::pack( QDataStream& stream ) const
+void GeoDataStyleMap::pack(QDataStream& stream) const
 {
-    GeoDataStyleSelector::pack( stream );
+    GeoDataStyleSelector::pack(stream);
     // lastKey doesn't need to be stored as it is needed at runtime only
     stream << *this;
 }
 
-void GeoDataStyleMap::unpack( QDataStream& stream )
+void GeoDataStyleMap::unpack(QDataStream& stream)
 {
-    GeoDataStyleSelector::unpack( stream );
+    GeoDataStyleSelector::unpack(stream);
 
     stream >> *this;
 }

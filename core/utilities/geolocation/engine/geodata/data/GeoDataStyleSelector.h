@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -45,29 +46,29 @@ public:
     /**
     * @brief assignment operator
     */
-    GeoDataStyleSelector& operator=( const GeoDataStyleSelector& other );
+    GeoDataStyleSelector& operator=(const GeoDataStyleSelector& other);
 
-    bool operator==( const GeoDataStyleSelector &other ) const;
-    bool operator!=( const GeoDataStyleSelector &other ) const;
+    bool operator==(const GeoDataStyleSelector& other) const;
+    bool operator!=(const GeoDataStyleSelector& other) const;
 
     /**
      * @brief Serialize the styleselector to a stream
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /**
      * @brief  Unserialize the styleselector from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
- protected:
+protected:
 
     GeoDataStyleSelector();
-    GeoDataStyleSelector( const GeoDataStyleSelector& other );
+    GeoDataStyleSelector(const GeoDataStyleSelector& other);
 
- private:
+private:
 
     GeoDataStyleSelectorPrivate* const d = nullptr;
 };

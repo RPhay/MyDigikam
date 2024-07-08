@@ -15,10 +15,12 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QAtomicInt>
 
-// Marble
+// Local includes
+
 #include "GeoDataCoordinates.h"
 
 namespace Marble
@@ -30,8 +32,8 @@ public:
 
     GeoDataLookAtPrivate()
         : m_coordinates(),
-          m_range( 0.0 ),
-          ref( 1 )
+          m_range(0.0),
+          ref(1)
     {
     }
 

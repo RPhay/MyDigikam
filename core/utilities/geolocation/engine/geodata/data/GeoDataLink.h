@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
 
@@ -44,11 +46,11 @@ public:
 
     GeoDataLink();
 
-    GeoDataLink( const GeoDataLink &other );
+    GeoDataLink(const GeoDataLink& other);
 
-    GeoDataLink& operator=( const GeoDataLink &other );
-    bool operator==( const GeoDataLink &other ) const;
-    bool operator!=( const GeoDataLink &other ) const;
+    GeoDataLink& operator=(const GeoDataLink& other);
+    bool operator==(const GeoDataLink& other) const;
+    bool operator!=(const GeoDataLink& other) const;
 
     ~GeoDataLink() override;
 
@@ -57,15 +59,15 @@ public:
 
     QString href() const;
 
-    void setHref( const QString& href );
+    void setHref(const QString& href);
 
     RefreshMode refreshMode() const;
 
-    void setRefreshMode( RefreshMode refreshMode );
+    void setRefreshMode(RefreshMode refreshMode);
 
     qreal refreshInterval() const;
 
-    void setRefreshInterval( qreal refreshInterval );
+    void setRefreshInterval(qreal refreshInterval);
 
     ViewRefreshMode viewRefreshMode() const;
 
@@ -81,11 +83,11 @@ public:
 
     QString viewFormat() const;
 
-    void setViewFormat(const QString &viewFormat);
+    void setViewFormat(const QString& viewFormat);
 
     QString httpQuery() const;
 
-    void setHttpQuery(const QString &httpQuery);
+    void setHttpQuery(const QString& httpQuery);
 
 private:
 

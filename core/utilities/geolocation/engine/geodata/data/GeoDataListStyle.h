@@ -15,12 +15,15 @@
 
 #pragma once
 
+// qt includes
+
 #include <QColor>
 #include <QVector>
 
+// Local includes
+
 #include "MarbleGlobal.h"
 #include "GeoDataObject.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -35,12 +38,12 @@ public:
 
     GeoDataListStyle();
 
-    GeoDataListStyle( const GeoDataListStyle &other );
+    GeoDataListStyle(const GeoDataListStyle& other);
 
-    GeoDataListStyle& operator=( const GeoDataListStyle &other );
+    GeoDataListStyle& operator=(const GeoDataListStyle& other);
 
-    bool operator==( const GeoDataListStyle &other ) const;
-    bool operator!=( const GeoDataListStyle &other ) const;
+    bool operator==(const GeoDataListStyle& other) const;
+    bool operator!=(const GeoDataListStyle& other) const;
 
     ~GeoDataListStyle() override;
 
@@ -59,24 +62,24 @@ public:
     void setListItemType(ListItemType type);
 
     QColor backgroundColor() const;
-    void setBackgroundColor( const QColor &color );
+    void setBackgroundColor(const QColor& color);
 
     QVector<GeoDataItemIcon*> itemIconList() const;
 
-    GeoDataItemIcon* child( int );
+    GeoDataItemIcon* child(int);
 
-    const GeoDataItemIcon* child( int ) const;
+    const GeoDataItemIcon* child(int) const;
 
-    int childPosition( const GeoDataItemIcon *child ) const;
+    int childPosition(const GeoDataItemIcon* child) const;
 
-    void append( GeoDataItemIcon *other );
+    void append(GeoDataItemIcon* other);
 
-    void remove( int index );
+    void remove(int index);
 
     int size() const;
 
-    GeoDataItemIcon& at( int pos );
-    const GeoDataItemIcon& at( int pos ) const;
+    GeoDataItemIcon& at(int pos);
+    const GeoDataItemIcon& at(int pos) const;
 
     GeoDataItemIcon& last();
     const GeoDataItemIcon& last() const;
@@ -90,9 +93,9 @@ public:
     QVector<GeoDataItemIcon*>::ConstIterator constEnd() const;
     void clear();
 
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

@@ -5,11 +5,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QColor>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "GeoDataColorStyle.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -31,11 +34,11 @@ public:
 
     GeoDataBalloonStyle();
 
-    GeoDataBalloonStyle( const GeoDataBalloonStyle &other );
+    GeoDataBalloonStyle(const GeoDataBalloonStyle& other);
 
-    GeoDataBalloonStyle& operator=( const GeoDataBalloonStyle &other );
-    bool operator==( const GeoDataBalloonStyle &other ) const;
-    bool operator!=( const GeoDataBalloonStyle &other ) const;
+    GeoDataBalloonStyle& operator=(const GeoDataBalloonStyle& other);
+    bool operator==(const GeoDataBalloonStyle& other) const;
+    bool operator!=(const GeoDataBalloonStyle& other) const;
 
     ~GeoDataBalloonStyle() override;
 
@@ -44,20 +47,20 @@ public:
 
 
     QColor backgroundColor() const;
-    void setBackgroundColor( const QColor &color );
+    void setBackgroundColor(const QColor& color);
 
     QColor textColor() const;
-    void setTextColor( const QColor &color );
+    void setTextColor(const QColor& color);
 
     QString text() const;
-    void setText( const QString &text );
+    void setText(const QString& text);
 
     DisplayMode displayMode() const;
-    void setDisplayMode(DisplayMode mode );
+    void setDisplayMode(DisplayMode mode);
 
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

@@ -16,36 +16,37 @@
 #include "GeoDataPoint.h"
 #include "GeoDataPoint_p.h"
 
+// Local includes
+
 #include "MarbleGlobal.h"
 #include "GeoDataTypes.h"
 #include "GeoDataLatLonAltBox.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-GeoDataPoint::GeoDataPoint( qreal lon, qreal lat, qreal alt,
-                            GeoDataCoordinates::Unit unit )
-    : GeoDataGeometry( new GeoDataPointPrivate )
+GeoDataPoint::GeoDataPoint(qreal lon, qreal lat, qreal alt,
+                           GeoDataCoordinates::Unit unit)
+    : GeoDataGeometry(new GeoDataPointPrivate)
 {
     Q_D(GeoDataPoint);
     d->m_coordinates = GeoDataCoordinates(lon, lat, alt, unit);
     d->m_latLonAltBox = GeoDataLatLonAltBox(d->m_coordinates);
 }
 
-GeoDataPoint::GeoDataPoint( const GeoDataPoint& other )
-    : GeoDataGeometry( other )
+GeoDataPoint::GeoDataPoint(const GeoDataPoint& other)
+    : GeoDataGeometry(other)
 {
     Q_D(GeoDataPoint);
-    const GeoDataPointPrivate * const otherD = other.d_func();
+    const GeoDataPointPrivate* const otherD = other.d_func();
 
     d->m_coordinates = otherD->m_coordinates;
     d->m_latLonAltBox = otherD->m_latLonAltBox;
 }
 
-GeoDataPoint::GeoDataPoint( const GeoDataCoordinates& other )
-    : GeoDataGeometry ( new GeoDataPointPrivate )
+GeoDataPoint::GeoDataPoint(const GeoDataCoordinates& other)
+    : GeoDataGeometry(new GeoDataPointPrivate)
 {
     Q_D(GeoDataPoint);
     d->m_coordinates = other;
@@ -53,7 +54,7 @@ GeoDataPoint::GeoDataPoint( const GeoDataCoordinates& other )
 }
 
 GeoDataPoint::GeoDataPoint()
-    : GeoDataGeometry( new GeoDataPointPrivate )
+    : GeoDataGeometry(new GeoDataPointPrivate)
 {
     // nothing to do
 }
@@ -68,23 +69,23 @@ EnumGeometryId GeoDataPoint::geometryId() const
     return GeoDataPointId;
 }
 
-GeoDataGeometry *GeoDataPoint::copy() const
+GeoDataGeometry* GeoDataPoint::copy() const
 {
     return new GeoDataPoint(*this);
 }
 
-bool GeoDataPoint::operator==( const GeoDataPoint &other ) const
+bool GeoDataPoint::operator==(const GeoDataPoint& other) const
 {
     return equals(other) &&
            coordinates() == other.coordinates();
 }
 
-bool GeoDataPoint::operator!=( const GeoDataPoint &other ) const
+bool GeoDataPoint::operator!=(const GeoDataPoint& other) const
 {
     return !this->operator==(other);
 }
 
-void GeoDataPoint::setCoordinates( const GeoDataCoordinates &coordinates )
+void GeoDataPoint::setCoordinates(const GeoDataCoordinates& coordinates)
 {
     detach();
 
@@ -93,7 +94,7 @@ void GeoDataPoint::setCoordinates( const GeoDataCoordinates &coordinates )
     d->m_latLonAltBox = GeoDataLatLonAltBox(d->m_coordinates);
 }
 
-const GeoDataCoordinates &GeoDataPoint::coordinates() const
+const GeoDataCoordinates& GeoDataPoint::coordinates() const
 {
     Q_D(const GeoDataPoint);
     return d->m_coordinates;
@@ -109,14 +110,14 @@ void GeoDataPoint::detach()
     GeoDataGeometry::detach();
 }
 
-void GeoDataPoint::pack( QDataStream& stream ) const
+void GeoDataPoint::pack(QDataStream& stream) const
 {
     Q_D(const GeoDataPoint);
     d->m_coordinates.pack(stream);
     // TODO: what about m_latLonAltBox and base class?
 }
 
-void GeoDataPoint::unpack( QDataStream& stream )
+void GeoDataPoint::unpack(QDataStream& stream)
 {
     Q_D(GeoDataPoint);
     d->m_coordinates.unpack(stream);

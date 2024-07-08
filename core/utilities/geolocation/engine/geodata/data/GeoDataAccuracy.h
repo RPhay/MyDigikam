@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -37,11 +41,11 @@ public:
         Detailed
     };
 
-    explicit GeoDataAccuracy( Level level = none, qreal horizontal = 0.0, qreal vertical = 0.0 );
+    explicit GeoDataAccuracy(Level level = none, qreal horizontal = 0.0, qreal vertical = 0.0);
 
-    bool operator==( const GeoDataAccuracy &other ) const;
+    bool operator==(const GeoDataAccuracy& other) const;
 
-    bool operator!=( const GeoDataAccuracy &other ) const;
+    bool operator!=(const GeoDataAccuracy& other) const;
 
     /**
      * @brief Approximate descriptive accuracy.

@@ -15,9 +15,10 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataOverlay.h"
 #include "MarbleGlobal.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -34,15 +35,15 @@ public:
 
     GeoDataPhotoOverlay();
 
-    GeoDataPhotoOverlay( const GeoDataPhotoOverlay &other );
+    GeoDataPhotoOverlay(const GeoDataPhotoOverlay& other);
 
     ~GeoDataPhotoOverlay() override;
 
-    GeoDataPhotoOverlay& operator=( const GeoDataPhotoOverlay &other );
-    bool operator==( const GeoDataPhotoOverlay &other ) const;
-    bool operator!=( const GeoDataPhotoOverlay &other ) const;
+    GeoDataPhotoOverlay& operator=(const GeoDataPhotoOverlay& other);
+    bool operator==(const GeoDataPhotoOverlay& other) const;
+    bool operator!=(const GeoDataPhotoOverlay& other) const;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;
@@ -55,22 +56,22 @@ public:
     };
 
     qreal rotation() const;
-    void setRotation( const qreal rotation );
+    void setRotation(const qreal rotation);
 
-    GeoDataViewVolume &viewVolume();
+    GeoDataViewVolume& viewVolume();
     const GeoDataViewVolume& viewVolume() const;
-    void setViewVolume( const GeoDataViewVolume &viewVolume );
+    void setViewVolume(const GeoDataViewVolume& viewVolume);
 
     GeoDataImagePyramid& imagePyramid();
     const GeoDataImagePyramid& imagePyramid() const;
-    void setImagePyramid( const GeoDataImagePyramid &imagePyramid );
+    void setImagePyramid(const GeoDataImagePyramid& imagePyramid);
 
     GeoDataPoint& point();
     const GeoDataPoint& point() const;
-    void setPoint( const GeoDataPoint &point );
+    void setPoint(const GeoDataPoint& point);
 
     Shape shape() const;
-    void setShape( Shape shape );
+    void setShape(Shape shape);
 
 private:
 

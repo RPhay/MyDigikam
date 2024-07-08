@@ -15,6 +15,8 @@
 
 #include "GeoDataTourControl.h"
 
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -39,7 +41,7 @@ bool GeoDataTourControl::operator!=(const GeoDataTourControl& other) const
     return !this->operator==(other);
 }
 
-const char *GeoDataTourControl::nodeType() const
+const char* GeoDataTourControl::nodeType() const
 {
     return GeoDataTypes::GeoDataTourControlType;
 }

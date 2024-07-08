@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 
-#include "GeoDataGeometry.h"
+// Local includes
 
+#include "GeoDataGeometry.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -38,26 +41,29 @@ class DIGIKAM_EXPORT GeoDataMultiGeometry : public GeoDataGeometry
 public:
 
     GeoDataMultiGeometry();
-    explicit GeoDataMultiGeometry( const GeoDataGeometry& other );
+    explicit GeoDataMultiGeometry(const GeoDataGeometry& other);
 
     ~GeoDataMultiGeometry() override;
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
-    bool operator==(const GeoDataMultiGeometry &other) const;
-    bool operator!=(const GeoDataMultiGeometry &other) const { return !(*this == other); }
+    bool operator==(const GeoDataMultiGeometry& other) const;
+    bool operator!=(const GeoDataMultiGeometry& other) const
+    {
+        return !(*this == other);
+    }
 
     const GeoDataLatLonAltBox& latLonAltBox() const override;
 
     int size() const;
-    GeoDataGeometry& at( int pos );
-    const GeoDataGeometry& at( int pos ) const;
-    GeoDataGeometry& operator[]( int pos );
-    const GeoDataGeometry& operator[]( int pos ) const;
+    GeoDataGeometry& at(int pos);
+    const GeoDataGeometry& at(int pos) const;
+    GeoDataGeometry& operator[](int pos);
+    const GeoDataGeometry& operator[](int pos) const;
 
     GeoDataGeometry& first();
     const GeoDataGeometry& first() const;
@@ -67,40 +73,40 @@ public:
     /**
      * @brief  returns the requested child item
      */
-    GeoDataGeometry* child( int );
+    GeoDataGeometry* child(int);
 
     /**
      * @brief  returns the requested child item
      */
-    const GeoDataGeometry* child( int ) const;
+    const GeoDataGeometry* child(int) const;
 
     /**
      * @brief returns the position of an item in the list
      */
-    int childPosition( const GeoDataGeometry *child ) const;
+    int childPosition(const GeoDataGeometry* child) const;
 
     /**
     * @brief add an element
     */
-    void append( GeoDataGeometry *other );
+    void append(GeoDataGeometry* other);
 
-    GeoDataMultiGeometry& operator << ( const GeoDataGeometry& value );
+    GeoDataMultiGeometry& operator << (const GeoDataGeometry& value);
 
     QVector<GeoDataGeometry*>::Iterator begin();
     QVector<GeoDataGeometry*>::Iterator end();
     QVector<GeoDataGeometry*>::ConstIterator constBegin() const;
     QVector<GeoDataGeometry*>::ConstIterator constEnd() const;
     void clear();
-    QVector<GeoDataGeometry *> vector();
+    QVector<GeoDataGeometry*> vector();
 
-    QVector<GeoDataGeometry*>::Iterator erase ( QVector<GeoDataGeometry*>::Iterator pos );
-    QVector<GeoDataGeometry*>::Iterator erase ( QVector<GeoDataGeometry*>::Iterator begin,
-                                                  QVector<GeoDataGeometry*>::Iterator end );
+    QVector<GeoDataGeometry*>::Iterator erase(QVector<GeoDataGeometry*>::Iterator pos);
+    QVector<GeoDataGeometry*>::Iterator erase(QVector<GeoDataGeometry*>::Iterator begin,
+                                              QVector<GeoDataGeometry*>::Iterator end);
 
     // Serialize the Placemark to @p stream
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     // Unserialize the Placemark from @p stream
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

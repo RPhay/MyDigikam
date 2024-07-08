@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataAnimatedUpdate.h"
+
+// Local includes
+
 #include "GeoDataUpdate.h"
 #include "GeoDataTypes.h"
 #include "GeoDataAbstractView.h"
@@ -33,33 +36,38 @@ public:
 };
 
 GeoDataAnimatedUpdatePrivate::GeoDataAnimatedUpdatePrivate() :
-    m_duration( 0.0 ), m_delayedStart( 0 ), m_update( nullptr )
+    m_duration(0.0), m_delayedStart(0), m_update(nullptr)
 {
 }
 
-GeoDataAnimatedUpdate::GeoDataAnimatedUpdate() : d( new GeoDataAnimatedUpdatePrivate )
+GeoDataAnimatedUpdate::GeoDataAnimatedUpdate() : d(new GeoDataAnimatedUpdatePrivate)
 {
 }
 
-GeoDataAnimatedUpdate::GeoDataAnimatedUpdate( const Marble::GeoDataAnimatedUpdate &other ) :
-    GeoDataTourPrimitive( other ), d( new GeoDataAnimatedUpdatePrivate( *other.d ) )
+GeoDataAnimatedUpdate::GeoDataAnimatedUpdate(const Marble::GeoDataAnimatedUpdate& other) :
+    GeoDataTourPrimitive(other), d(new GeoDataAnimatedUpdatePrivate(*other.d))
 {
 }
 
-GeoDataAnimatedUpdate &GeoDataAnimatedUpdate::operator=( const GeoDataAnimatedUpdate &other )
+GeoDataAnimatedUpdate& GeoDataAnimatedUpdate::operator=(const GeoDataAnimatedUpdate& other)
 {
-    GeoDataTourPrimitive::operator=( other );
+    GeoDataTourPrimitive::operator=(other);
     *d = *other.d;
     return *this;
 }
 
 bool GeoDataAnimatedUpdate::operator==(const GeoDataAnimatedUpdate& other) const
 {
-    if( ( !d->m_update && other.d->m_update ) || ( d->m_update && !other.d->m_update) ){
+    if ((!d->m_update && other.d->m_update) || (d->m_update && !other.d->m_update))
+    {
         return false;
-    } else if( d->m_update && other.d->m_update ){
+    }
+
+    else if (d->m_update && other.d->m_update)
+    {
         return d->m_duration == other.d->m_duration && *(d->m_update) == *(other.d->m_update);
     }
+
     return d->m_duration == other.d->m_duration;
 }
 
@@ -73,7 +81,7 @@ GeoDataAnimatedUpdate::~GeoDataAnimatedUpdate()
     delete d;
 }
 
-const char *GeoDataAnimatedUpdate::nodeType() const
+const char* GeoDataAnimatedUpdate::nodeType() const
 {
     return GeoDataTypes::GeoDataAnimatedUpdateType;
 }
@@ -88,12 +96,14 @@ GeoDataUpdate* GeoDataAnimatedUpdate::update()
     return d->m_update;
 }
 
-void GeoDataAnimatedUpdate::setUpdate( GeoDataUpdate *update )
+void GeoDataAnimatedUpdate::setUpdate(GeoDataUpdate* update)
 {
     delete d->m_update;
     d->m_update = update;
-    if ( d->m_update ) {
-        d->m_update->setParent( this );
+
+    if (d->m_update)
+    {
+        d->m_update->setParent(this);
     }
 }
 
@@ -102,7 +112,7 @@ double GeoDataAnimatedUpdate::duration() const
     return d->m_duration;
 }
 
-void GeoDataAnimatedUpdate::setDuration( double duration )
+void GeoDataAnimatedUpdate::setDuration(double duration)
 {
     d->m_duration = duration;
 }
@@ -112,7 +122,7 @@ double GeoDataAnimatedUpdate::delayedStart() const
     return d->m_delayedStart;
 }
 
-void GeoDataAnimatedUpdate::setDelayedStart( double delayedStart )
+void GeoDataAnimatedUpdate::setDelayedStart(double delayedStart)
 {
     d->m_delayedStart = delayedStart;
 }

@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QFlags>
+
+// Local includes
 
 #include "GeoDataObject.h"
 
@@ -28,17 +32,17 @@ class GeoDataItemIconPrivate;
 
 class DIGIKAM_EXPORT GeoDataItemIcon : public GeoDataObject
 {
-    Q_FLAGS( ItemIconState ItemIconStates )
+    Q_FLAGS(ItemIconState ItemIconStates)
 
 public:
 
     GeoDataItemIcon();
 
-    GeoDataItemIcon( const GeoDataItemIcon &other );
+    GeoDataItemIcon(const GeoDataItemIcon& other);
 
-    GeoDataItemIcon& operator=( const GeoDataItemIcon &other );
-    bool operator==( const GeoDataItemIcon &other ) const;
-    bool operator!=( const GeoDataItemIcon &other ) const;
+    GeoDataItemIcon& operator=(const GeoDataItemIcon& other);
+    bool operator==(const GeoDataItemIcon& other) const;
+    bool operator!=(const GeoDataItemIcon& other) const;
 
     ~GeoDataItemIcon() override;
 
@@ -54,16 +58,16 @@ public:
         Fetching1 = 1 << 4,
         Fetching2 = 1 << 5
     };
-    Q_DECLARE_FLAGS( ItemIconStates, ItemIconState )
+    Q_DECLARE_FLAGS(ItemIconStates, ItemIconState)
 
     ItemIconStates state() const;
     void setState(ItemIconStates state);
 
     QString iconPath() const;
-    void setIconPath( const QString &path );
+    void setIconPath(const QString& path);
 
     QImage icon() const;
-    void setIcon( const QImage &icon );
+    void setIcon(const QImage& icon);
 
 private:
 

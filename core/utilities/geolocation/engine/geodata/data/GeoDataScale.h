@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataObject.h"
 #include "MarbleGlobal.h"
 
@@ -31,12 +33,12 @@ public:
 
     GeoDataScale();
 
-    GeoDataScale( const GeoDataScale &other );
+    GeoDataScale(const GeoDataScale& other);
 
-    GeoDataScale& operator=( const GeoDataScale &other );
+    GeoDataScale& operator=(const GeoDataScale& other);
 
-    bool operator==( const GeoDataScale &other ) const;
-    bool operator!=( const GeoDataScale &other ) const;
+    bool operator==(const GeoDataScale& other) const;
+    bool operator!=(const GeoDataScale& other) const;
 
     ~GeoDataScale() override;
 
@@ -45,15 +47,15 @@ public:
 
     double x() const;
 
-    void setX( double x );
+    void setX(double x);
 
     double y() const;
 
-    void setY( double y );
+    void setY(double y);
 
     double z() const;
 
-    void setZ( double z);
+    void setZ(double z);
 
 private:
 

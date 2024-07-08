@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QList>
+
+// Local includes
 
 #include "GeoDataGeometry.h"
 
@@ -62,15 +66,15 @@ class DIGIKAM_EXPORT GeoDataTrack : public GeoDataGeometry
 public:
 
     GeoDataTrack();
-    explicit GeoDataTrack( const GeoDataTrack &other );
+    explicit GeoDataTrack(const GeoDataTrack& other);
 
-    GeoDataTrack &operator=( const GeoDataTrack &other );
+    GeoDataTrack& operator=(const GeoDataTrack& other);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
     /**
      * Returns the number of points in the track
@@ -80,8 +84,8 @@ public:
     /**
      * @brief: Equality operators.
      */
-    bool operator==( const GeoDataTrack& other ) const;
-    bool operator!=( const GeoDataTrack& other ) const;
+    bool operator==(const GeoDataTrack& other) const;
+    bool operator!=(const GeoDataTrack& other) const;
 
     /**
      * Returns true if coordinatesAt() should use interpolation, false otherwise.
@@ -130,38 +134,38 @@ public:
      *
      * @see interpolate
      */
-    GeoDataCoordinates coordinatesAt( const QDateTime &when ) const;
+    GeoDataCoordinates coordinatesAt(const QDateTime& when) const;
 
     /**
      * Return coordinates at specified index. This is useful when the track contains
      * coordinates without time information.
      */
-    GeoDataCoordinates coordinatesAt( int index ) const;
+    GeoDataCoordinates coordinatesAt(int index) const;
 
     /**
      * Add a new point with coordinates @p coord associated with the
      * time value @p when
      */
-    void addPoint( const QDateTime &when, const GeoDataCoordinates &coord );
+    void addPoint(const QDateTime& when, const GeoDataCoordinates& coord);
 
     /**
      * Add the coordinates part for a new point. See this class description
      * for more information.
      * @see appendWhen
      */
-    void appendCoordinates( const GeoDataCoordinates &coord );
+    void appendCoordinates(const GeoDataCoordinates& coord);
 
     /**
      * Add altitude information to the last appended coordinates
      */
-    void appendAltitude( qreal altitude );
+    void appendAltitude(qreal altitude);
 
     /**
      * Add the time value part for a new point. See this class description
      * for more information.
      * @see appendCoordinates
      */
-    void appendWhen( const QDateTime &when );
+    void appendWhen(const QDateTime& when);
 
     /**
      * Remove all the points contained in the track.
@@ -171,17 +175,17 @@ public:
     /**
      * Remove all points from the track whose time value is less than @p when.
      */
-    void removeBefore( const QDateTime &when );
+    void removeBefore(const QDateTime& when);
 
     /**
      * Remove all points from the track whose time value is greater than @p when.
      */
-    void removeAfter( const QDateTime &when );
+    void removeAfter(const QDateTime& when);
 
     /**
      * Return the GeoDataLineString representing the current track
      */
-    const GeoDataLineString *lineString() const;
+    const GeoDataLineString* lineString() const;
 
     /**
      * Return the ExtendedData assigned to the feature.
@@ -193,11 +197,11 @@ public:
      * Sets the ExtendedData of the feature.
      * @param  extendedData  the new ExtendedData to be used.
      */
-    void setExtendedData( const GeoDataExtendedData& extendedData );
+    void setExtendedData(const GeoDataExtendedData& extendedData);
 
     const GeoDataLatLonAltBox& latLonAltBox() const override;
-    void pack( QDataStream& stream ) const override;
-    void unpack( QDataStream& stream ) override;
+    void pack(QDataStream& stream) const override;
+    void unpack(QDataStream& stream) override;
 
 private:
 
@@ -206,4 +210,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataTrack* )
+Q_DECLARE_METATYPE(Marble::GeoDataTrack*)

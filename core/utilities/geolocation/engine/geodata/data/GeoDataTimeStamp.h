@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataTimePrimitive.h"
+// Local includes
 
+#include "GeoDataTimePrimitive.h"
 #include "digikam_export.h"
 
 class QDateTime;
@@ -39,19 +40,19 @@ public:
     };
 
     GeoDataTimeStamp();
-    GeoDataTimeStamp( const GeoDataTimeStamp& other );
+    GeoDataTimeStamp(const GeoDataTimeStamp& other);
     ~GeoDataTimeStamp() override;
 
     /**
      * @brief assignment operator
      */
-    GeoDataTimeStamp& operator=( const GeoDataTimeStamp& other );
+    GeoDataTimeStamp& operator=(const GeoDataTimeStamp& other);
 
     /**
      * @brief equality operators
      */
-    bool operator==( const GeoDataTimeStamp& other ) const;
-    bool operator!=( const GeoDataTimeStamp& other ) const;
+    bool operator==(const GeoDataTimeStamp& other) const;
+    bool operator!=(const GeoDataTimeStamp& other) const;
 
 
     /// Provides type information for downcasting a GeoNode
@@ -66,9 +67,9 @@ public:
      * @brief Set the when time of timestamp
      * @param when the when time of timestamp
      */
-    void setWhen( const QDateTime& when );
+    void setWhen(const QDateTime& when);
 
-    void setResolution( TimeResolution resolution );
+    void setResolution(TimeResolution resolution);
 
     TimeResolution resolution() const;
 
@@ -76,13 +77,13 @@ public:
      * @brief Serialize the timestamp to a stream
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /**
      * @brief  Unserialize the timestamp from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

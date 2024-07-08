@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPointF>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -34,20 +38,20 @@ public:
 
     GeoDataVec2();
 
-    GeoDataVec2(qreal x, qreal y, const QString &xunit, const QString &yunit);
+    GeoDataVec2(qreal x, qreal y, const QString& xunit, const QString& yunit);
 
-    GeoDataVec2( const GeoDataVec2 &other );
+    GeoDataVec2(const GeoDataVec2& other);
 
-    GeoDataVec2& operator=( const GeoDataVec2 &other );
-    bool operator==( const GeoDataVec2 &other ) const;
-    bool operator!=( const GeoDataVec2 &other ) const;
+    GeoDataVec2& operator=(const GeoDataVec2& other);
+    bool operator==(const GeoDataVec2& other) const;
+    bool operator!=(const GeoDataVec2& other) const;
     ~GeoDataVec2();
 
     Unit xunit() const;
-    void setXunits( Unit xunit );
+    void setXunits(Unit xunit);
 
     Unit yunit() const;
-    void setYunits( Unit yunit );
+    void setYunits(Unit yunit);
 
 private:
 

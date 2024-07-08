@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataOrientation.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -41,25 +44,25 @@ GeoDataOrientationPrivate::GeoDataOrientationPrivate()
 }
 
 GeoDataOrientation::GeoDataOrientation()
-    : d( new GeoDataOrientationPrivate )
+    : d(new GeoDataOrientationPrivate)
 {
     // nothing to do
 }
 
-GeoDataOrientation::GeoDataOrientation( const Marble::GeoDataOrientation &other ) :
-    GeoDataObject( other ), d( new GeoDataOrientationPrivate( *other.d ) )
+GeoDataOrientation::GeoDataOrientation(const Marble::GeoDataOrientation& other) :
+    GeoDataObject(other), d(new GeoDataOrientationPrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataOrientation &GeoDataOrientation::operator=( const GeoDataOrientation &other )
+GeoDataOrientation& GeoDataOrientation::operator=(const GeoDataOrientation& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataOrientation::operator==( const GeoDataOrientation &other ) const
+bool GeoDataOrientation::operator==(const GeoDataOrientation& other) const
 {
     return equals(other) &&
            d->m_heading == other.d->m_heading &&
@@ -67,9 +70,9 @@ bool GeoDataOrientation::operator==( const GeoDataOrientation &other ) const
            d->m_tilt == other.d->m_tilt;
 }
 
-bool GeoDataOrientation::operator!=( const GeoDataOrientation &other ) const
+bool GeoDataOrientation::operator!=(const GeoDataOrientation& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataOrientation::~GeoDataOrientation()
@@ -77,7 +80,7 @@ GeoDataOrientation::~GeoDataOrientation()
     delete d;
 }
 
-const char *GeoDataOrientation::nodeType() const
+const char* GeoDataOrientation::nodeType() const
 {
     return GeoDataTypes::GeoDataOrientationType;
 }
@@ -87,7 +90,7 @@ double GeoDataOrientation::heading() const
     return d->m_heading;
 }
 
-void GeoDataOrientation::setHeading( double heading )
+void GeoDataOrientation::setHeading(double heading)
 {
     d->m_heading = heading;
 }
@@ -97,7 +100,7 @@ double GeoDataOrientation::tilt() const
     return d->m_tilt;
 }
 
-void GeoDataOrientation::setTilt( double tilt )
+void GeoDataOrientation::setTilt(double tilt)
 {
     d->m_tilt = tilt;
 }
@@ -107,7 +110,7 @@ double GeoDataOrientation::roll() const
     return d->m_roll;
 }
 
-void GeoDataOrientation::setRoll( double roll )
+void GeoDataOrientation::setRoll(double roll)
 {
     d->m_roll = roll;
 }

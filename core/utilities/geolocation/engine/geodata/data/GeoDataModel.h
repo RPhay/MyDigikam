@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataGeometry.h"
 #include "MarbleGlobal.h"
 #include "GeoDataLink.h"
@@ -38,49 +40,49 @@ public:
 
     GeoDataModel();
 
-    GeoDataModel( const GeoDataModel &other );
+    GeoDataModel(const GeoDataModel& other);
 
-    GeoDataModel& operator=( const GeoDataModel &other );
+    GeoDataModel& operator=(const GeoDataModel& other);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
-    bool operator==( const GeoDataModel &other ) const;
-    bool operator!=( const GeoDataModel &other ) const;
+    bool operator==(const GeoDataModel& other) const;
+    bool operator!=(const GeoDataModel& other) const;
 
     ~GeoDataModel() override;
 
     const GeoDataLink& link() const;
     GeoDataLink& link();
-    void setLink( const GeoDataLink &link );
+    void setLink(const GeoDataLink& link);
 
     const GeoDataCoordinates& coordinates() const;
     GeoDataCoordinates& coordinates();
-    void setCoordinates(const GeoDataCoordinates &coordinates);
+    void setCoordinates(const GeoDataCoordinates& coordinates);
 
     const GeoDataScale& scale() const;
     GeoDataScale& scale();
-    void setScale(const GeoDataScale &scale);
+    void setScale(const GeoDataScale& scale);
 
     const GeoDataOrientation& orientation() const;
     GeoDataOrientation& orientation();
-    void setOrientation( const GeoDataOrientation &orientation);
+    void setOrientation(const GeoDataOrientation& orientation);
 
     const GeoDataLocation& location() const;
     GeoDataLocation& location();
-    void setLocation( const GeoDataLocation &location);
+    void setLocation(const GeoDataLocation& location);
 
     const GeoDataResourceMap& resourceMap() const;
     GeoDataResourceMap& resourceMap();
-    void setResourceMap( const GeoDataResourceMap &map);
+    void setResourceMap(const GeoDataResourceMap& map);
 
     QString sourceHref() const;
     QString targetHref() const;
-    void setSourceHref(const QString &sourceHref);
-    void setTargetHref(const QString &targetHref);
+    void setSourceHref(const QString& sourceHref);
+    void setTargetHref(const QString& targetHref);
 
 private:
 

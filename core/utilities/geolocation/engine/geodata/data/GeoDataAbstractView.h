@@ -15,9 +15,10 @@
 
 #pragma once
 
+// Local includes
+
 #include "MarbleGlobal.h"
 #include "GeoDataObject.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -39,26 +40,29 @@ public:
 
     ~GeoDataAbstractView() override;
 
-    GeoDataAbstractView( const GeoDataAbstractView &other );
+    GeoDataAbstractView(const GeoDataAbstractView& other);
 
-    GeoDataAbstractView& operator=( const GeoDataAbstractView &other );
+    GeoDataAbstractView& operator=(const GeoDataAbstractView& other);
 
-    bool operator==(const GeoDataAbstractView &other) const;
-    inline bool operator!=(const GeoDataAbstractView &other) const { return !(*this == other); }
+    bool operator==(const GeoDataAbstractView& other) const;
+    inline bool operator!=(const GeoDataAbstractView& other) const
+    {
+        return !(*this == other);
+    }
 
-    virtual GeoDataAbstractView *copy() const = 0;
+    virtual GeoDataAbstractView* copy() const = 0;
 
     const GeoDataTimeSpan& timeSpan() const;
 
     GeoDataTimeSpan& timeSpan();
 
-    void setTimeSpan( const GeoDataTimeSpan &timeSpan );
+    void setTimeSpan(const GeoDataTimeSpan& timeSpan);
 
     GeoDataTimeStamp& timeStamp();
 
     const GeoDataTimeStamp& timeStamp() const;
 
-    void setTimeStamp( const GeoDataTimeStamp &timeStamp );
+    void setTimeStamp(const GeoDataTimeStamp& timeStamp);
 
     AltitudeMode altitudeMode() const;
 
@@ -72,7 +76,7 @@ private:
 
 protected:
 
-    bool equals(const GeoDataAbstractView &other) const;
+    bool equals(const GeoDataAbstractView& other) const;
 
     using GeoDataObject::equals;
 };

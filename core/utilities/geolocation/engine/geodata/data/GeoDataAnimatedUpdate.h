@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataTourPrimitive.h"
 #include "MarbleGlobal.h"
 
@@ -31,24 +33,24 @@ class DIGIKAM_EXPORT GeoDataAnimatedUpdate: public GeoDataTourPrimitive
 public:
 
     GeoDataAnimatedUpdate();
-    GeoDataAnimatedUpdate( const GeoDataAnimatedUpdate &other );
-    GeoDataAnimatedUpdate& operator=( const GeoDataAnimatedUpdate &other );
-    bool operator== (const GeoDataAnimatedUpdate &other) const;
-    bool operator!= (const GeoDataAnimatedUpdate &other) const;
+    GeoDataAnimatedUpdate(const GeoDataAnimatedUpdate& other);
+    GeoDataAnimatedUpdate& operator=(const GeoDataAnimatedUpdate& other);
+    bool operator== (const GeoDataAnimatedUpdate& other) const;
+    bool operator!= (const GeoDataAnimatedUpdate& other) const;
     ~GeoDataAnimatedUpdate() override;
 
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;
 
     double duration() const;
-    void setDuration( double duration );
+    void setDuration(double duration);
 
     double delayedStart() const;
-    void setDelayedStart( double delayedStart );
+    void setDelayedStart(double delayedStart);
 
     const GeoDataUpdate* update() const;
     GeoDataUpdate* update();
-    void setUpdate( GeoDataUpdate *update );
+    void setUpdate(GeoDataUpdate* update);
 
 private:
 

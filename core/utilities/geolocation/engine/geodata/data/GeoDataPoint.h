@@ -15,14 +15,19 @@
 
 #pragma once
 
+// C++ includes
+
 #include <cmath>
+
+// Qt includes
 
 #include <QMetaType>
 #include <QVector>
 
+// Local includes
+
 #include "GeoDataGeometry.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -52,8 +57,8 @@ public:
     using Notation = GeoDataCoordinates::Notation;
     using Unit     = GeoDataCoordinates::Unit;
 
-    GeoDataPoint( const GeoDataPoint& other );
-    explicit GeoDataPoint( const GeoDataCoordinates& other );
+    GeoDataPoint(const GeoDataPoint& other);
+    explicit GeoDataPoint(const GeoDataCoordinates& other);
     GeoDataPoint();
 
     /**
@@ -64,19 +69,19 @@ public:
      * @param _unit units that lon and lat get measured in
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      */
-    GeoDataPoint( qreal lon, qreal lat, qreal alt = 0,
-                  GeoDataPoint::Unit _unit = GeoDataCoordinates::Radian );
+    GeoDataPoint(qreal lon, qreal lat, qreal alt = 0,
+                 GeoDataPoint::Unit _unit = GeoDataCoordinates::Radian);
 
     ~GeoDataPoint() override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
-    bool operator==( const GeoDataPoint &other ) const;
-    bool operator!=( const GeoDataPoint &other ) const;
+    bool operator==(const GeoDataPoint& other) const;
+    bool operator!=(const GeoDataPoint& other) const;
 
-    void setCoordinates( const GeoDataCoordinates &coordinates );
+    void setCoordinates(const GeoDataCoordinates& coordinates);
 
     const GeoDataCoordinates& coordinates() const;
 
@@ -88,9 +93,9 @@ public:
 
 
     // Serialize the Placemark to @p stream
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     // Unserialize the Placemark from @p stream
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     virtual void detach();
 
@@ -101,4 +106,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataPoint )
+Q_DECLARE_METATYPE(Marble::GeoDataPoint)

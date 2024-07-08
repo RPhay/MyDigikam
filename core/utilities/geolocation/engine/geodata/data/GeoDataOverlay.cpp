@@ -25,18 +25,18 @@ GeoDataOverlay::GeoDataOverlay()
     // nothing to do
 }
 
-GeoDataOverlay::GeoDataOverlay(const GeoDataOverlay &other)
+GeoDataOverlay::GeoDataOverlay(const GeoDataOverlay& other)
     : GeoDataFeature(other, new GeoDataOverlayPrivate(*other.d_func()))
 {
     // nothing to do
 }
 
-GeoDataOverlay::GeoDataOverlay(GeoDataOverlayPrivate *priv)
+GeoDataOverlay::GeoDataOverlay(GeoDataOverlayPrivate* priv)
     : GeoDataFeature(priv)
 {
 }
 
-GeoDataOverlay::GeoDataOverlay(const GeoDataOverlay& other, GeoDataOverlayPrivate *priv)
+GeoDataOverlay::GeoDataOverlay(const GeoDataOverlay& other, GeoDataOverlayPrivate* priv)
     : GeoDataFeature(other, priv)
 {
 }
@@ -45,9 +45,10 @@ GeoDataOverlay::~GeoDataOverlay()
 {
 }
 
-GeoDataOverlay &GeoDataOverlay::operator=( const GeoDataOverlay &other )
+GeoDataOverlay& GeoDataOverlay::operator=(const GeoDataOverlay& other)
 {
-    if (this != &other) {
+    if (this != &other)
+    {
         Q_D(GeoDataOverlay);
         *d = *other.d_func();
     }
@@ -61,7 +62,7 @@ QColor GeoDataOverlay::color() const
     return d->m_color;
 }
 
-void GeoDataOverlay::setColor( const QColor &color )
+void GeoDataOverlay::setColor(const QColor& color)
 {
     Q_D(GeoDataOverlay);
     d->m_color = color;
@@ -73,7 +74,7 @@ int GeoDataOverlay::drawOrder() const
     return d->m_drawOrder;
 }
 
-void GeoDataOverlay::setDrawOrder( int order )
+void GeoDataOverlay::setDrawOrder(int order)
 {
     Q_D(GeoDataOverlay);
     d->m_drawOrder = order;
@@ -82,23 +83,26 @@ void GeoDataOverlay::setDrawOrder( int order )
 QImage GeoDataOverlay::icon() const
 {
     Q_D(const GeoDataOverlay);
-    if ( d->m_image.isNull() && !d->m_iconPath.isEmpty() ) {
-        d->m_image = QImage( absoluteIconFile() );
+
+    if (d->m_image.isNull() && !d->m_iconPath.isEmpty())
+    {
+        d->m_image = QImage(absoluteIconFile());
     }
+
     return d->m_image;
 }
 
-void GeoDataOverlay::setIcon( const QImage &icon )
+void GeoDataOverlay::setIcon(const QImage& icon)
 {
     Q_D(GeoDataOverlay);
     d->m_image = icon;
 }
 
-void GeoDataOverlay::setIconFile( const QString &path )
+void GeoDataOverlay::setIconFile(const QString& path)
 {
     Q_D(GeoDataOverlay);
     d->m_iconPath = path;
-    d->m_image = QImage( path );
+    d->m_image = QImage(path);
 }
 
 QString GeoDataOverlay::iconFile() const
@@ -110,7 +114,7 @@ QString GeoDataOverlay::iconFile() const
 QString GeoDataOverlay::absoluteIconFile() const
 {
     Q_D(const GeoDataOverlay);
-    return resolvePath( d->m_iconPath );
+    return resolvePath(d->m_iconPath);
 }
 
 bool GeoDataOverlay::equals(const GeoDataOverlay& other) const

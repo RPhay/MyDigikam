@@ -15,12 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QCoreApplication>
 #include <QMetaType>
 #include <QVector>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 class QString;
@@ -45,9 +48,9 @@ class Quaternion;
 
 class DIGIKAM_EXPORT GeoDataCoordinates
 {
- Q_DECLARE_TR_FUNCTIONS(GeoDataCoordinates)
+    Q_DECLARE_TR_FUNCTIONS(GeoDataCoordinates)
 
- public:
+public:
     /**
      * @brief enum used constructor to specify the units used
      *
@@ -99,7 +102,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     using Vector    = QVector<GeoDataCoordinates>;
     using PtrVector = QVector<GeoDataCoordinates*>;
 
-    GeoDataCoordinates( const GeoDataCoordinates& other );
+    GeoDataCoordinates(const GeoDataCoordinates& other);
 
     /**
      * @brief constructs an invalid instance
@@ -118,9 +121,9 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      * @param detail detail (default: 0)
      */
-    GeoDataCoordinates( qreal lon, qreal lat, qreal alt = 0,
-                        GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian,
-                        int detail = 0 );
+    GeoDataCoordinates(qreal lon, qreal lat, qreal alt = 0,
+                       GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian,
+                       int detail = 0);
 
     virtual ~GeoDataCoordinates();
 
@@ -141,8 +144,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * @param unit units that lon and lat get measured in
     * (default for Radian: north pole at pi/2, southpole at -pi/2)
     */
-    void set( qreal lon, qreal lat, qreal alt = 0,
-              GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void set(qreal lon, qreal lat, qreal alt = 0,
+             GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
     /**
     * @brief use this function to get the longitude and latitude with one
@@ -173,8 +176,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * @param unit units that lon and lat get measured in
     * (default for Radian: north pole at pi/2, southpole at -pi/2)
     */
-    void setLongitude( qreal lon,
-              GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void setLongitude(qreal lon,
+                      GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
     /**
     * @brief retrieves the longitude of the GeoDataCoordinates object
@@ -193,7 +196,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * (default for Radian: north pole at pi/2, southpole at -pi/2)
     * @return latitude
     */
-    qreal latitude( GeoDataCoordinates::Unit unit ) const;
+    qreal latitude(GeoDataCoordinates::Unit unit) const;
     qreal latitude() const;
 
     /**
@@ -202,8 +205,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * @param unit units that lon and lat get measured in
     * (default for Radian: north pole at pi/2, southpole at -pi/2)
     */
-    void setLatitude( qreal lat,
-              GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian );
+    void setLatitude(qreal lat,
+                     GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian);
 
     /**
         * @brief return the altitude of the Point in meters
@@ -213,7 +216,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * @brief set the altitude of the Point in meters
     * @param altitude altitude
     */
-    void setAltitude( const qreal altitude );
+    void setAltitude(const qreal altitude);
 
     /**
     * @brief retrieves the UTM zone of the GeoDataCoordinates object.
@@ -263,9 +266,9 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param unit Unit of the result
      * @return The coordinate rotated in anticlockwise direction
      */
-    GeoDataCoordinates rotateAround( const GeoDataCoordinates &axis, qreal angle, Unit unit = Radian ) const;
+    GeoDataCoordinates rotateAround(const GeoDataCoordinates& axis, qreal angle, Unit unit = Radian) const;
 
-    GeoDataCoordinates rotateAround(const Quaternion &rotAxis) const;
+    GeoDataCoordinates rotateAround(const Quaternion& rotAxis) const;
 
     /**
      * @brief Returns the bearing (true bearing, the angle between the line defined
@@ -276,7 +279,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @return The true bearing in the requested unit, not range normalized,
      * in clockwise direction, with the value 0 corresponding to north
      */
-    qreal bearing( const GeoDataCoordinates &other, Unit unit = Radian, BearingType type = InitialBearing ) const;
+    qreal bearing(const GeoDataCoordinates& other, Unit unit = Radian, BearingType type = InitialBearing) const;
 
     /**
      * @brief Returns the coordinates of the resulting point after moving this point
@@ -284,12 +287,12 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param bearing the same as above
      * @param distance the distance on a unit sphere
      */
-    GeoDataCoordinates moveByBearing( qreal bearing, qreal distance ) const;
+    GeoDataCoordinates moveByBearing(qreal bearing, qreal distance) const;
 
     /**
     * @brief return a Quaternion with the used coordinates
     */
-    const Quaternion &quaternion() const;
+    const Quaternion& quaternion() const;
 
     /**
      * @brief slerp (spherical linear) interpolation between this coordinate and the given target coordinate
@@ -297,7 +300,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param t Fraction 0..1 to weight between this and target
      * @return Interpolated coordinate between this (t<=0.0) and target (t>=1.0)
      */
-    GeoDataCoordinates interpolate( const GeoDataCoordinates &target, double t ) const;
+    GeoDataCoordinates interpolate(const GeoDataCoordinates& target, double t) const;
 
     /**
      * @brief nlerp (normalized linear interpolation) between this coordinates and the given target coordinates
@@ -305,7 +308,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param t Fraction 0..1 to weight between this and target
      * @return Interpolated coordinate between this (t<=0.0) and target (t>=1.0)
      */
-    GeoDataCoordinates nlerp(const GeoDataCoordinates &target, double t) const;
+    GeoDataCoordinates nlerp(const GeoDataCoordinates& target, double t) const;
 
     /**
      * @brief squad (spherical and quadrangle) interpolation between b and c
@@ -314,20 +317,20 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param after Fourth base point
      * @param t Offset between b (t<=0) and c (t>=1)
      */
-    GeoDataCoordinates interpolate( const GeoDataCoordinates &before, const GeoDataCoordinates &target, const GeoDataCoordinates &after, double t ) const;
+    GeoDataCoordinates interpolate(const GeoDataCoordinates& before, const GeoDataCoordinates& target, const GeoDataCoordinates& after, double t) const;
 
     /**
     * @brief return whether our coordinates represent a pole
     * This method can be used to check whether the coordinate equals one of
     * the poles.
     */
-    bool isPole( Pole = AnyPole ) const;
+    bool isPole(Pole = AnyPole) const;
 
     /**
      * @brief This method calculates the shortest distance between two points on a sphere.
      * @brief See: https://en.wikipedia.org/wiki/Great-circle_distance
      */
-    qreal sphericalDistanceTo(const GeoDataCoordinates &other) const;
+    qreal sphericalDistanceTo(const GeoDataCoordinates& other) const;
 
     /**
     * @brief return Notation of string representation
@@ -338,23 +341,23 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * @brief set the Notation of the string representation
     * @param notation Notation
     */
-    static void setDefaultNotation( GeoDataCoordinates::Notation notation );
+    static void setDefaultNotation(GeoDataCoordinates::Notation notation);
 
     /**
      * @brief normalize the longitude to always be -M_PI <= lon <= +M_PI (Radian).
      * @param lon longitude
      * @param unit unit of the result
      */
-    static qreal normalizeLon( qreal lon,
-                               GeoDataCoordinates::Unit = GeoDataCoordinates::Radian );
+    static qreal normalizeLon(qreal lon,
+                              GeoDataCoordinates::Unit = GeoDataCoordinates::Radian);
 
     /**
      * @brief normalize latitude to always be in -M_PI / 2. <= lat <= +M_PI / 2 (Radian).
      * @param lat latitude
      * @param unit unit of the result
      */
-    static qreal normalizeLat( qreal lat,
-                               GeoDataCoordinates::Unit = GeoDataCoordinates::Radian );
+    static qreal normalizeLat(qreal lat,
+                              GeoDataCoordinates::Unit = GeoDataCoordinates::Radian);
 
     /**
      * @brief normalize both longitude and latitude at the same time
@@ -370,8 +373,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param lat the latitude value
      * @param unit unit of the result
      */
-    static void normalizeLonLat( qreal &lon, qreal &lat,
-                                 GeoDataCoordinates::Unit = GeoDataCoordinates::Radian );
+    static void normalizeLonLat(qreal& lon, qreal& lat,
+                                GeoDataCoordinates::Unit = GeoDataCoordinates::Radian);
 
     /**
      * @brief try to parse the string into a coordinate pair
@@ -379,7 +382,7 @@ class DIGIKAM_EXPORT GeoDataCoordinates
      * @param successful becomes true if the conversion succeeds
      * @return the geodatacoordinates
      */
-    static GeoDataCoordinates fromString( const QString &string, bool& successful );
+    static GeoDataCoordinates fromString(const QString& string, bool& successful);
 
     /**
     * @brief return a string representation of the coordinate
@@ -399,39 +402,39 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     * of 3 or 4 will show arc seconds. A precision beyond that will
     * increase the number of digits after the arc second decimal point.
     */
-    QString toString( GeoDataCoordinates::Notation notation, int precision = -1 ) const;
+    QString toString(GeoDataCoordinates::Notation notation, int precision = -1) const;
 
-    static QString lonToString( qreal lon, GeoDataCoordinates::Notation notation,
-                                           GeoDataCoordinates::Unit unit = Radian,
-                                           int precision = -1,
-                                           char format = 'f' );
+    static QString lonToString(qreal lon, GeoDataCoordinates::Notation notation,
+                               GeoDataCoordinates::Unit unit = Radian,
+                               int precision = -1,
+                               char format = 'f');
     /**
      * @brief return a string representation of longitude of the coordinate
      * convenience function that uses the default notation
      */
     QString lonToString() const;
 
-    static QString latToString( qreal lat, GeoDataCoordinates::Notation notation,
-                                           GeoDataCoordinates::Unit unit = Radian,
-                                           int precision = -1,
-                                           char format = 'f' );
+    static QString latToString(qreal lat, GeoDataCoordinates::Notation notation,
+                               GeoDataCoordinates::Unit unit = Radian,
+                               int precision = -1,
+                               char format = 'f');
     /**
      * @brief return a string representation of latitude of the coordinate
      * convenience function that uses the default notation
      */
     QString latToString() const;
 
-    bool operator==(const GeoDataCoordinates &other) const;
-    bool operator!=(const GeoDataCoordinates &other) const;
+    bool operator==(const GeoDataCoordinates& other) const;
+    bool operator!=(const GeoDataCoordinates& other) const;
 
-    GeoDataCoordinates& operator=( const GeoDataCoordinates &other );
+    GeoDataCoordinates& operator=(const GeoDataCoordinates& other);
 
     /** Serialize the contents of the feature to @p stream. */
-    void pack(QDataStream &stream) const;
+    void pack(QDataStream& stream) const;
     /** Unserialize the contents of the feature from @p stream. */
-    void unpack(QDataStream &stream);
+    void unpack(QDataStream& stream);
 
- private:
+private:
 
     void detach();
 
@@ -441,8 +444,8 @@ class DIGIKAM_EXPORT GeoDataCoordinates
     static const GeoDataCoordinates null;
 };
 
-DIGIKAM_EXPORT size_t qHash(const GeoDataCoordinates& coordinates );
+DIGIKAM_EXPORT size_t qHash(const GeoDataCoordinates& coordinates);
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataCoordinates )
+Q_DECLARE_METATYPE(Marble::GeoDataCoordinates)

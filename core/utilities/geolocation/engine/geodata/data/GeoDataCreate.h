@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataContainer.h"
+// Local includes
 
+#include "GeoDataContainer.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -32,16 +33,16 @@ public:
 
     GeoDataCreate();
 
-    GeoDataCreate( const GeoDataCreate &other );
+    GeoDataCreate(const GeoDataCreate& other);
 
     ~GeoDataCreate() override;
 
-    GeoDataCreate& operator=( const GeoDataCreate &other );
+    GeoDataCreate& operator=(const GeoDataCreate& other);
 
-    bool operator==( const GeoDataCreate &other ) const;
-    bool operator!=( const GeoDataCreate &other ) const;
+    bool operator==(const GeoDataCreate& other) const;
+    bool operator!=(const GeoDataCreate& other) const;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;

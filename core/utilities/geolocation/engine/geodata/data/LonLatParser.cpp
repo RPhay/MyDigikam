@@ -15,14 +15,19 @@
 
 #include "LonLatParser_p.h"
 
+// qt includes
+
 #include <QLocale>
 #include <QRegularExpression>
 #include <QSet>
 
+// KDE includes
+
 #include <klocalizedstring.h>
 
-#include "GeoDataCoordinates.h"
+// Local includes
 
+#include "GeoDataCoordinates.h"
 #include "digikam_debug.h"
 
 namespace Marble
@@ -32,9 +37,9 @@ LonLatParser::LonLatParser()
     : m_lon(0.0)
     , m_lat(0.0)
     , m_north(QStringLiteral("n"))
-    , m_east( QStringLiteral("e"))
+    , m_east(QStringLiteral("e"))
     , m_south(QStringLiteral("s"))
-    , m_west( QStringLiteral("w"))
+    , m_west(QStringLiteral("w"))
     , m_decimalPointExp(createDecimalPointExp())
 {
 }
@@ -42,7 +47,8 @@ LonLatParser::LonLatParser()
 void LonLatParser::initAll()
 {
     // already all initialized?
-    if (! m_dirCapExp.isEmpty()) {
+    if (! m_dirCapExp.isEmpty())
+    {
         return;
     }
 
@@ -64,18 +70,20 @@ void LonLatParser::initAll()
 
     // use a set to remove duplicates
     QSet<QString> dirs = QSet<QString>()
-        << m_north << m_east << m_south << m_west;
-    dirs += QSet<QString>( m_northLocale.begin(), m_northLocale.end() );
-    dirs += QSet<QString>( m_eastLocale.begin(), m_eastLocale.end() );
-    dirs += QSet<QString>( m_southLocale.begin(), m_southLocale.end() );
-    dirs += QSet<QString>( m_westLocale.begin(), m_westLocale.end() );
+                         << m_north << m_east << m_south << m_west;
+    dirs += QSet<QString>(m_northLocale.begin(), m_northLocale.end());
+    dirs += QSet<QString>(m_eastLocale.begin(), m_eastLocale.end());
+    dirs += QSet<QString>(m_southLocale.begin(), m_southLocale.end());
+    dirs += QSet<QString>(m_westLocale.begin(), m_westLocale.end());
 
     QString fullNamesExp;
     QString simpleLetters;
 
-    for(const QString& dir: dirs) {
+    for (const QString& dir : dirs)
+    {
         // collect simple letters
-        if ((dir.length() == 1) && (QLatin1Char('a')<=dir.at(0)) && (dir.at(0)<=QLatin1Char('z'))) {
+        if ((dir.length() == 1) && (QLatin1Char('a') <= dir.at(0)) && (dir.at(0) <= QLatin1Char('z')))
+        {
             simpleLetters += dir;
             continue;
         }
@@ -110,15 +118,23 @@ void LonLatParser::initAll()
     // u201D: ” RIGHT DOUBLE QUOTATION MARK
 
     m_degreeExp = QStringLiteral(u"\u00B0|\u00BA");
-    for(const QString& symbol: m_degreeLocale) {
+
+    for (const QString& symbol : m_degreeLocale)
+    {
         m_degreeExp += QLatin1Char('|') + QRegularExpression::escape(symbol);
     }
+
     m_minutesExp = QStringLiteral(u"'|\u2032|\u00B4|\u20C2|\u2019");
-    for(const QString& symbol: m_minutesLocale) {
+
+    for (const QString& symbol : m_minutesLocale)
+    {
         m_minutesExp += QLatin1Char('|') + QRegularExpression::escape(symbol);
     }
+
     m_secondsExp = QStringLiteral(u"\"|\u2033|\u201D|''|\u2032\u2032|\u00B4\u00B4|\u20C2\u20C2|\u2019\u2019");
-    for(const QString& symbol: m_secondsLocale) {
+
+    for (const QString& symbol : m_secondsLocale)
+    {
         m_secondsExp += QLatin1Char('|') + QRegularExpression::escape(symbol);
     }
 }
@@ -130,13 +146,15 @@ bool LonLatParser::parse(const QString& string)
     // #1: Just two numbers, no directions, e.g. 74.2245 -32.2434 (assumes lat lon)
     {
         const QString numberCapExp = QStringLiteral("\\A(?:") +
-            QStringLiteral("([-+]?\\d{1,3}%1?\\d*(?:[eE][+-]?\\d+)?)(?:,|;|\\s)\\s*").arg(m_decimalPointExp) +
-            QStringLiteral("([-+]?\\d{1,3}%1?\\d*(?:[eE][+-]?\\d+)?)").arg(m_decimalPointExp) +
-            QStringLiteral(")\\z");
+                                     QStringLiteral("([-+]?\\d{1,3}%1?\\d*(?:[eE][+-]?\\d+)?)(?:,|;|\\s)\\s*").arg(m_decimalPointExp) +
+                                     QStringLiteral("([-+]?\\d{1,3}%1?\\d*(?:[eE][+-]?\\d+)?)").arg(m_decimalPointExp) +
+                                     QStringLiteral(")\\z");
 
         const QRegularExpression regex(numberCapExp);
         QRegularExpressionMatch match = regex.match(input);
-        if (match.hasMatch()) {
+
+        if (match.hasMatch())
+        {
             m_lon = parseDouble(match.captured(2));
             m_lat = parseDouble(match.captured(1));
 
@@ -146,27 +164,33 @@ bool LonLatParser::parse(const QString& string)
 
     initAll();
 
-    if (tryMatchFromD(input, PostfixDir)) {
+    if (tryMatchFromD(input, PostfixDir))
+    {
         return true;
     }
 
-    if (tryMatchFromD(input, PrefixDir)) {
+    if (tryMatchFromD(input, PrefixDir))
+    {
         return true;
     }
 
-    if (tryMatchFromDms(input, PostfixDir)) {
+    if (tryMatchFromDms(input, PostfixDir))
+    {
         return true;
     }
 
-    if (tryMatchFromDms(input, PrefixDir)) {
+    if (tryMatchFromDms(input, PrefixDir))
+    {
         return true;
     }
 
-    if (tryMatchFromDm(input, PostfixDir)) {
+    if (tryMatchFromDm(input, PostfixDir))
+    {
         return true;
     }
 
-    if (tryMatchFromDm(input, PrefixDir)) {
+    if (tryMatchFromDm(input, PrefixDir))
+    {
         return true;
     }
 
@@ -178,29 +202,31 @@ bool LonLatParser::tryMatchFromDms(const QString& input, DirPosition dirPosition
 {
     // direction as postfix
     const QString postfixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
-        QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*%2[,;]?\\s*") +
-        QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
-        QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*%2") +
-        QStringLiteral(")\\z");
+                                  QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
+                                  QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*%2[,;]?\\s*") +
+                                  QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
+                                  QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*%2") +
+                                  QStringLiteral(")\\z");
 
     // direction as prefix
     const QString prefixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
-        QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*(?:,|;|\\s)\\s*") +
-        QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
-        QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?") +
-        QStringLiteral(")\\z");
+                                 QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
+                                 QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?\\s*(?:,|;|\\s)\\s*") +
+                                 QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2})(?:%4|\\s)\\s*") +
+                                 QStringLiteral("(\\d{1,2}%1?\\d*)(?:%5)?") +
+                                 QStringLiteral(")\\z");
 
-    const QString &expTemplate = (dirPosition == PostfixDir) ? postfixCapExp
-                                                             : prefixCapExp;
+    const QString& expTemplate = (dirPosition == PostfixDir) ? postfixCapExp
+                                 : prefixCapExp;
 
     const QString numberCapExp = expTemplate.arg(m_decimalPointExp, m_dirCapExp,
                                                  m_degreeExp, m_minutesExp, m_secondsExp);
 
     const QRegularExpression regex(numberCapExp);
     QRegularExpressionMatch match = regex.match(input);
-    if (!match.hasMatch()) {
+
+    if (!match.hasMatch())
+    {
         return false;
     }
 
@@ -209,8 +235,10 @@ bool LonLatParser::tryMatchFromDms(const QString& input, DirPosition dirPosition
     bool isLatDirPosHemisphere;
     const QString dir1 = match.captured(dirPosition == PostfixDir ? 5 : 1);
     const QString dir2 = match.captured(dirPosition == PostfixDir ? 10 : 6);
+
     if (!isCorrectDirections(dir1, dir2, isDir1LonDir,
-                             isLonDirPosHemisphere, isLatDirPosHemisphere)) {
+                             isLonDirPosHemisphere, isLatDirPosHemisphere))
+    {
         return false;
     }
 
@@ -229,24 +257,26 @@ bool LonLatParser::tryMatchFromDm(const QString& input, DirPosition dirPosition)
 {
     // direction as postfix
     const QString postfixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*%2[,;]?\\s*") +
-        QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*%2") +
-        QStringLiteral(")\\z");
+                                  QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*%2[,;]?\\s*") +
+                                  QStringLiteral("([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*%2") +
+                                  QStringLiteral(")\\z");
 
     // direction as prefix
     const QString prefixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*(?:,|;|\\s)\\s*") +
-        QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?") +
-        QStringLiteral(")\\z");
+                                 QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?\\s*(?:,|;|\\s)\\s*") +
+                                 QStringLiteral("%2\\s*([-+]?)(\\d{1,3})(?:%3|\\s)\\s*(\\d{1,2}%1?\\d*)(?:%4)?") +
+                                 QStringLiteral(")\\z");
 
     const QString& expTemplate = (dirPosition == PostfixDir) ? postfixCapExp
-                                                             : prefixCapExp;
+                                 : prefixCapExp;
 
     const QString numberCapExp = expTemplate.arg(m_decimalPointExp, m_dirCapExp,
-                                                  m_degreeExp, m_minutesExp);
+                                                 m_degreeExp, m_minutesExp);
     const QRegularExpression regex(numberCapExp);
     QRegularExpressionMatch match = regex.match(input);
-    if (!match.hasMatch()) {
+
+    if (!match.hasMatch())
+    {
         return false;
     }
 
@@ -255,8 +285,10 @@ bool LonLatParser::tryMatchFromDm(const QString& input, DirPosition dirPosition)
     bool isLatDirPosHemisphere;
     const QString dir1 = match.captured(dirPosition == PostfixDir ? 4 : 1);
     const QString dir2 = match.captured(dirPosition == PostfixDir ? 8 : 5);
+
     if (!isCorrectDirections(dir1, dir2, isDir1LonDir,
-                             isLonDirPosHemisphere, isLatDirPosHemisphere)) {
+                             isLonDirPosHemisphere, isLatDirPosHemisphere))
+    {
         return false;
     }
 
@@ -275,36 +307,41 @@ bool LonLatParser::tryMatchFromD(const QString& input, DirPosition dirPosition)
 {
     // direction as postfix, e.g. 74.2245 N 32.2434 W
     const QString postfixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("([-+]?\\d{1,3}%1?\\d*)(?:%3)?(?:\\s*)%2(?:,|;|\\s)\\s*") +
-        QStringLiteral("([-+]?\\d{1,3}%1?\\d*)(?:%3)?(?:\\s*)%2") +
-        QStringLiteral(")\\z");
+                                  QStringLiteral("([-+]?\\d{1,3}%1?\\d*)(?:%3)?(?:\\s*)%2(?:,|;|\\s)\\s*") +
+                                  QStringLiteral("([-+]?\\d{1,3}%1?\\d*)(?:%3)?(?:\\s*)%2") +
+                                  QStringLiteral(")\\z");
 
     // direction as prefix, e.g. N 74.2245 W 32.2434
     const QString prefixCapExp = QStringLiteral("\\A(?:") +
-        QStringLiteral("%2\\s*([-+]?\\d{1,3}%1?\\d*)(?:%3)?\\s*(?:,|;|\\s)\\s*") +
-        QStringLiteral("%2\\s*([-+]?\\d{1,3}%1?\\d*)(?:%3)?") +
-        QStringLiteral(")\\z");
+                                 QStringLiteral("%2\\s*([-+]?\\d{1,3}%1?\\d*)(?:%3)?\\s*(?:,|;|\\s)\\s*") +
+                                 QStringLiteral("%2\\s*([-+]?\\d{1,3}%1?\\d*)(?:%3)?") +
+                                 QStringLiteral(")\\z");
 
     const QString& expTemplate = (dirPosition == PostfixDir) ? postfixCapExp
-                                                             : prefixCapExp;
+                                 : prefixCapExp;
 
     const QString numberCapExp = expTemplate.arg(m_decimalPointExp, m_dirCapExp, m_degreeExp);
     const QRegularExpression regex(numberCapExp);
-// qCWarning(DIGIKAM_MARBLE_LOG) << regex.isValid() << regex.errorString() << regex.pattern();
+    // qCWarning(DIGIKAM_MARBLE_LOG) << regex.isValid() << regex.errorString() << regex.pattern();
     QRegularExpressionMatch match = regex.match(input);
-    if (!match.hasMatch()) {
-//         qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> no match";
+
+    if (!match.hasMatch())
+    {
+        //         qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> no match";
         return false;
     }
-//     qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> match" << match;
+
+    //     qCWarning(DIGIKAM_MARBLE_LOG) << "LonLatParser::tryMatchFromD -> match" << match;
 
     bool isDir1LonDir;
     bool isLonDirPosHemisphere;
     bool isLatDirPosHemisphere;
     const QString dir1 = match.captured(dirPosition == PostfixDir ? 2 : 1);
     const QString dir2 = match.captured(dirPosition == PostfixDir ? 4 : 3);
+
     if (!isCorrectDirections(dir1, dir2, isDir1LonDir,
-                             isLonDirPosHemisphere, isLatDirPosHemisphere)) {
+                             isLonDirPosHemisphere, isLatDirPosHemisphere))
+    {
         return false;
     }
 
@@ -333,14 +370,16 @@ QString LonLatParser::createDecimalPointExp()
     const QString decimalPoint = QLocale::system().decimalPoint();
 
     return (decimalPoint == QLatin1String(".")) ? QStringLiteral("\\.") :
-        QLatin1String("[.") + decimalPoint + QLatin1Char(']');
+           QLatin1String("[.") + decimalPoint + QLatin1Char(']');
 }
 
 void LonLatParser::getLocaleList(QStringList& localeList, const QString& localeListString,
                                  const QLatin1String& placeholder, const QString& separator)
 {
     const QString lowerLocaleListString = localeListString.toLower();
-    if (lowerLocaleListString != placeholder) {
+
+    if (lowerLocaleListString != placeholder)
+    {
         localeList = lowerLocaleListString.split(separator, Qt::SkipEmptyParts);
     }
 }
@@ -408,10 +447,13 @@ qreal LonLatParser::degreeValueFromDMS(const QRegularExpressionMatch& regexMatch
 
     qreal result = degree + (minutes * MIN2HOUR) + (seconds * SEC2HOUR);
 
-    if (isNegativeValue) {
+    if (isNegativeValue)
+    {
         result *= -1;
     }
-    if (! isPosHemisphere) {
+
+    if (! isPosHemisphere)
+    {
         result *= -1;
     }
 
@@ -426,10 +468,13 @@ qreal LonLatParser::degreeValueFromDM(const QRegularExpressionMatch& regexMatch,
 
     qreal result = degree + (minutes * MIN2HOUR);
 
-    if (isNegativeValue) {
+    if (isNegativeValue)
+    {
         result *= -1;
     }
-    if (! isPosHemisphere) {
+
+    if (! isPosHemisphere)
+    {
         result *= -1;
     }
 
@@ -440,7 +485,8 @@ qreal LonLatParser::degreeValueFromD(const QRegularExpressionMatch& regexMatch, 
 {
     qreal result = parseDouble(regexMatch.captured(c));
 
-    if (! isPosHemisphere) {
+    if (! isPosHemisphere)
+    {
         result *= -1;
     }
 
@@ -455,20 +501,21 @@ bool LonLatParser::isCorrectDirections(const QString& dir1, const QString& dir2,
     // first try localized names
     isDir1LonDir = isLocaleLonDirection(dir1, isLonDirPosHemisphere);
     const bool resultLocale = isDir1LonDir ?
-        isLocaleLatDirection(dir2, isLatDirPosHemisphere) :
-        (isLocaleLatDirection(dir1, isLatDirPosHemisphere) &&
-         isLocaleLonDirection(dir2, isLonDirPosHemisphere));
+                              isLocaleLatDirection(dir2, isLatDirPosHemisphere) :
+                              (isLocaleLatDirection(dir1, isLatDirPosHemisphere) &&
+                               isLocaleLonDirection(dir2, isLonDirPosHemisphere));
 
-    if (resultLocale) {
+    if (resultLocale)
+    {
         return resultLocale;
     }
 
     // fallback to try english names as lingua franca
     isDir1LonDir = isLonDirection(dir1, isLonDirPosHemisphere);
     return isDir1LonDir ?
-        isLatDirection(dir2, isLatDirPosHemisphere) :
-        (isLatDirection(dir1, isLatDirPosHemisphere) &&
-         isLonDirection(dir2, isLonDirPosHemisphere));
+           isLatDirection(dir2, isLatDirPosHemisphere) :
+           (isLatDirection(dir1, isLatDirPosHemisphere) &&
+            isLonDirection(dir2, isLonDirPosHemisphere));
 }
 
 } // namespace Marble

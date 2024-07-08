@@ -15,9 +15,13 @@
 
 #include "GeoDataLabelStyle.h"
 
+// Qt includes
+
 #include <QFont>
 #include <QColor>
 #include <QDataStream>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 
@@ -34,18 +38,18 @@ class Q_DECL_HIDDEN GeoDataLabelStylePrivate
 public:
 
     GeoDataLabelStylePrivate()
-        : m_scale( 1.0 ),
-          m_alignment( GeoDataLabelStyle::Corner ),
-          m_font( QFont(QStringLiteral("Sans Serif")).family(), defaultSize, 50, false ),
-          m_glow( true )
+        : m_scale(1.0),
+          m_alignment(GeoDataLabelStyle::Corner),
+          m_font(QFont(QStringLiteral("Sans Serif")).family(), defaultSize, 50, false),
+          m_glow(true)
     {
     }
 
-    explicit GeoDataLabelStylePrivate( const QFont &font )
-        : m_scale( 1.0 ),
-          m_alignment( GeoDataLabelStyle::Corner ),
-          m_font( font ),
-          m_glow( true )
+    explicit GeoDataLabelStylePrivate(const QFont& font)
+        : m_scale(1.0),
+          m_alignment(GeoDataLabelStyle::Corner),
+          m_font(font),
+          m_glow(true)
     {
     }
 
@@ -60,20 +64,20 @@ public:
 };
 
 GeoDataLabelStyle::GeoDataLabelStyle()
-    : d (new GeoDataLabelStylePrivate )
+    : d(new GeoDataLabelStylePrivate)
 {
-    setColor( QColor( Qt::black ) );
+    setColor(QColor(Qt::black));
 }
 
-GeoDataLabelStyle::GeoDataLabelStyle( const GeoDataLabelStyle& other )
-    : GeoDataColorStyle( other ), d (new GeoDataLabelStylePrivate( *other.d ) )
+GeoDataLabelStyle::GeoDataLabelStyle(const GeoDataLabelStyle& other)
+    : GeoDataColorStyle(other), d(new GeoDataLabelStylePrivate(*other.d))
 {
 }
 
-GeoDataLabelStyle::GeoDataLabelStyle( const QFont &font, const QColor &color )
-    : d (new GeoDataLabelStylePrivate( font ) )
+GeoDataLabelStyle::GeoDataLabelStyle(const QFont& font, const QColor& color)
+    : d(new GeoDataLabelStylePrivate(font))
 {
-    setColor( color );
+    setColor(color);
 }
 
 GeoDataLabelStyle::~GeoDataLabelStyle()
@@ -81,16 +85,17 @@ GeoDataLabelStyle::~GeoDataLabelStyle()
     delete d;
 }
 
-GeoDataLabelStyle& GeoDataLabelStyle::operator=( const GeoDataLabelStyle& other )
+GeoDataLabelStyle& GeoDataLabelStyle::operator=(const GeoDataLabelStyle& other)
 {
-    GeoDataColorStyle::operator=( other );
+    GeoDataColorStyle::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataLabelStyle::operator==( const GeoDataLabelStyle &other ) const
+bool GeoDataLabelStyle::operator==(const GeoDataLabelStyle& other) const
 {
-    if ( GeoDataColorStyle::operator!=( other ) ) {
+    if (GeoDataColorStyle::operator!=(other))
+    {
         return false;
     }
 
@@ -100,9 +105,9 @@ bool GeoDataLabelStyle::operator==( const GeoDataLabelStyle &other ) const
            d->m_glow == other.d->m_glow;
 }
 
-bool GeoDataLabelStyle::operator!=( const GeoDataLabelStyle &other ) const
+bool GeoDataLabelStyle::operator!=(const GeoDataLabelStyle& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 const char* GeoDataLabelStyle::nodeType() const
@@ -110,7 +115,7 @@ const char* GeoDataLabelStyle::nodeType() const
     return GeoDataTypes::GeoDataLabelStyleType;
 }
 
-void GeoDataLabelStyle::setAlignment( GeoDataLabelStyle::Alignment alignment )
+void GeoDataLabelStyle::setAlignment(GeoDataLabelStyle::Alignment alignment)
 {
     d->m_alignment = alignment;
 }
@@ -130,7 +135,7 @@ float GeoDataLabelStyle::scale() const
     return d->m_scale;
 }
 
-void GeoDataLabelStyle::setFont( const QFont &font )
+void GeoDataLabelStyle::setFont(const QFont& font)
 {
     d->m_font = font;
 }
@@ -142,15 +147,16 @@ QFont GeoDataLabelStyle::font() const
 
 QFont GeoDataLabelStyle::scaledFont() const
 {
-   // Font shouldn't be smaller (or equal to) than 0, but if it is, regular font is returned
-   // setPointSize() takes an integer as parameter, so rounded value should be checked
-   if( qRound( font().pointSize() * scale() ) <= 0 ) {
-       return font();
-   }
+    // Font shouldn't be smaller (or equal to) than 0, but if it is, regular font is returned
+    // setPointSize() takes an integer as parameter, so rounded value should be checked
+    if (qRound(font().pointSize() * scale()) <= 0)
+    {
+        return font();
+    }
 
-   QFont scaledFont = font();
-   scaledFont.setPointSize( qRound( scaledFont.pointSize() * scale() ));
-   return scaledFont;
+    QFont scaledFont = font();
+    scaledFont.setPointSize(qRound(scaledFont.pointSize() * scale()));
+    return scaledFont;
 }
 
 bool GeoDataLabelStyle::glow() const
@@ -163,25 +169,25 @@ void GeoDataLabelStyle::setGlow(bool on)
     d->m_glow = on;
 }
 
-void GeoDataLabelStyle::pack( QDataStream& stream ) const
+void GeoDataLabelStyle::pack(QDataStream& stream) const
 {
-    GeoDataColorStyle::pack( stream );
+    GeoDataColorStyle::pack(stream);
 
     stream << d->m_scale;
     stream << d->m_alignment;
     stream << d->m_font;
 }
 
-void GeoDataLabelStyle::unpack( QDataStream& stream )
+void GeoDataLabelStyle::unpack(QDataStream& stream)
 {
     int a;
-    GeoDataColorStyle::unpack( stream );
+    GeoDataColorStyle::unpack(stream);
 
     stream >> d->m_scale;
     stream >> a;
     stream >> d->m_font;
 
-    d->m_alignment = static_cast<GeoDataLabelStyle::Alignment>( a );
+    d->m_alignment = static_cast<GeoDataLabelStyle::Alignment>(a);
 }
 
 } // namespace Marble

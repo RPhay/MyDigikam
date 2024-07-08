@@ -15,6 +15,8 @@
 
 #include "GeoDataVec2.h"
 
+// Local includes
+
 #include "digikam_debug.h"
 
 namespace Marble
@@ -26,7 +28,7 @@ public:
 
     GeoDataVec2Private();
 
-    static GeoDataVec2::Unit parseUnits( const QString &value );
+    static GeoDataVec2::Unit parseUnits(const QString& value);
 
 public:
 
@@ -41,28 +43,33 @@ GeoDataVec2Private::GeoDataVec2Private()
 }
 
 GeoDataVec2::GeoDataVec2()
-    : d( new GeoDataVec2Private )
+    : d(new GeoDataVec2Private)
 {
 }
 
-GeoDataVec2::GeoDataVec2(qreal x, qreal y, const QString &xunits, const QString &yunits)
-    : d( new GeoDataVec2Private )
+GeoDataVec2::GeoDataVec2(qreal x, qreal y, const QString& xunits, const QString& yunits)
+    : d(new GeoDataVec2Private)
 {
-    setX( x );
-    setY( y );
-    d->m_xunit = GeoDataVec2Private::parseUnits( xunits );
-    d->m_yunit = GeoDataVec2Private::parseUnits( yunits );
+    setX(x);
+    setY(y);
+    d->m_xunit = GeoDataVec2Private::parseUnits(xunits);
+    d->m_yunit = GeoDataVec2Private::parseUnits(yunits);
 }
 
-GeoDataVec2::Unit GeoDataVec2Private::parseUnits( const QString &value )
+GeoDataVec2::Unit GeoDataVec2Private::parseUnits(const QString& value)
 {
-    if (value == QLatin1String("fraction")) {
+    if (value == QLatin1String("fraction"))
+    {
         return GeoDataVec2::Fraction;
     }
-    if (value == QLatin1String("pixels")) {
+
+    if (value == QLatin1String("pixels"))
+    {
         return GeoDataVec2::Pixels;
     }
-    if (value == QLatin1String("insetPixels")) {
+
+    if (value == QLatin1String("insetPixels"))
+    {
         return GeoDataVec2::InsetPixels;
     }
 
@@ -70,12 +77,12 @@ GeoDataVec2::Unit GeoDataVec2Private::parseUnits( const QString &value )
     return GeoDataVec2::Fraction;
 }
 
-GeoDataVec2::GeoDataVec2( const Marble::GeoDataVec2 &other ) :
-  QPointF(other), d( new GeoDataVec2Private( *other.d ) )
+GeoDataVec2::GeoDataVec2(const Marble::GeoDataVec2& other) :
+    QPointF(other), d(new GeoDataVec2Private(*other.d))
 {
 }
 
-GeoDataVec2 &GeoDataVec2::operator=( const GeoDataVec2 &other )
+GeoDataVec2& GeoDataVec2::operator=(const GeoDataVec2& other)
 {
     QPointF::operator=(other);
     *d = *other.d;

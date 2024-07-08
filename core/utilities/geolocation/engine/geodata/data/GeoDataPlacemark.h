@@ -15,11 +15,14 @@
 
 #pragma once
 
+// qT includes
+
 #include <QDateTime>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataFeature.h"
-
 #include "digikam_export.h"
 
 class QXmlStreamWriter;
@@ -62,29 +65,29 @@ public:
     /**
      * Create a new placemark from existing placemark @p placemark
      */
-    GeoDataPlacemark( const GeoDataPlacemark& placemark );
+    GeoDataPlacemark(const GeoDataPlacemark& placemark);
 
     /**
      * Create a new placemark with the given @p name.
      */
-    explicit GeoDataPlacemark( const QString &name );
+    explicit GeoDataPlacemark(const QString& name);
 
     /**
     * Delete the placemark
     */
     ~GeoDataPlacemark() override;
 
-    GeoDataPlacemark &operator=( const GeoDataPlacemark &other );
+    GeoDataPlacemark& operator=(const GeoDataPlacemark& other);
 
     /**
     * Equality operators.
     */
-    bool operator==( const GeoDataPlacemark& other ) const;
-    bool operator!=( const GeoDataPlacemark& other ) const;
+    bool operator==(const GeoDataPlacemark& other) const;
+    bool operator!=(const GeoDataPlacemark& other) const;
 
     const char* nodeType() const override;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
     /**
      * @brief  A categorization of a placemark as defined by ...FIXME.
@@ -551,7 +554,7 @@ public:
      *
      * @see GeoDataTrack::GeoDataTrack
      */
-    GeoDataCoordinates coordinate( const QDateTime &dateTime = QDateTime(), bool *iconAtCoordinates = nullptr ) const;
+    GeoDataCoordinates coordinate(const QDateTime& dateTime = QDateTime(), bool* iconAtCoordinates = nullptr) const;
 
     /**
      * The geometry of the GeoDataPlacemark is to be rendered to the marble map
@@ -575,17 +578,17 @@ public:
      * Return the coordinates of the placemark as @p longitude,
      * @p latitude and @p altitude.
      */
-    void coordinate( qreal &longitude, qreal &latitude, qreal &altitude ) const;
+    void coordinate(qreal& longitude, qreal& latitude, qreal& altitude) const;
 
     /**
       * Quick, safe accessor to the placemark's OsmPlacemarkData stored within it's
       * ExtendedData. If the extendedData does not contain osmData, the function
       * inserts a default-constructed one, and returns a reference to it.
       */
-    OsmPlacemarkData &osmData();
-    const OsmPlacemarkData &osmData() const;
+    OsmPlacemarkData& osmData();
+    const OsmPlacemarkData& osmData() const;
 
-    void setOsmData( const OsmPlacemarkData &osmData );
+    void setOsmData(const OsmPlacemarkData& osmData);
     bool hasOsmData() const;
     /**
      * @since 0.26.0
@@ -596,13 +599,13 @@ public:
      * Set the coordinate of the placemark in @p longitude and
      * @p latitude.
      */
-    void setCoordinate( qreal longitude, qreal latitude, qreal altitude = 0,
-                        GeoDataCoordinates::Unit _unit = GeoDataCoordinates::Radian );
+    void setCoordinate(qreal longitude, qreal latitude, qreal altitude = 0,
+                       GeoDataCoordinates::Unit _unit = GeoDataCoordinates::Radian);
 
     /**
     * Set the coordinate of the placemark with an @p GeoDataPoint.
     */
-    void setCoordinate( const GeoDataCoordinates &coordinate );
+    void setCoordinate(const GeoDataCoordinates& coordinate);
 
     /**
      * Sets the current Geometry of this Placemark. @see geometry() and the class
@@ -610,7 +613,7 @@ public:
      * to any @see GeoDataGeometry like @see GeoDataPoint,@see GeoDataLineString,
      * @see GeoDataLinearRing and @see GeoDataMultiGeometry
      */
-    void setGeometry( GeoDataGeometry *entry );
+    void setGeometry(GeoDataGeometry* entry);
 
     /**
      * Return the area size of the feature in square km.
@@ -624,7 +627,7 @@ public:
     /**
      * Set the area size of the feature in square km.
      */
-    void setArea( qreal area );
+    void setArea(qreal area);
 
     /**
      * Return the population of the placemark.
@@ -634,7 +637,7 @@ public:
      * Sets the @p population of the placemark.
      * @param  population  the new population value
      */
-    void setPopulation( qint64 population );
+    void setPopulation(qint64 population);
 
     /**
      * Return the state of the placemark.
@@ -644,7 +647,7 @@ public:
     /**
      * Set the state @p state of the placemark.
      */
-    void setState( const QString &state );
+    void setState(const QString& state);
 
     /**
      * Return the country code of the placemark.
@@ -654,7 +657,7 @@ public:
     /**
      * Set the country @p code of the placemark.
      */
-    void setCountryCode( const QString &code );
+    void setCountryCode(const QString& code);
 
     /**
      * Returns whether balloon is visible or not
@@ -664,14 +667,14 @@ public:
     /**
      * Set visibility of the balloon
      */
-    void setBalloonVisible( bool visible );
+    void setBalloonVisible(bool visible);
 
     /**
      * Serialize the Placemark to a data stream. This is a binary serialisation
      * and is deserialised using @see unpack()
      * @param stream the QDataStream to serialise object to.
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /**
      * Serialise this Placemark to a XML stream writer @see QXmlStreamWriter in
@@ -681,16 +684,16 @@ public:
      * method.
      * @param stream the XML Stream Reader to output to.
      */
-    virtual QXmlStreamWriter& pack( QXmlStreamWriter& stream ) const;
+    virtual QXmlStreamWriter& pack(QXmlStreamWriter& stream) const;
 
-    virtual QXmlStreamWriter& operator <<( QXmlStreamWriter& stream ) const;
+    virtual QXmlStreamWriter& operator <<(QXmlStreamWriter& stream) const;
 
     /**
      * Deserialize the Placemark from a data stream. This has the opposite effect
      * from @see pack()
      * @param stream the QDataStream to deserialise from.
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     /**
      * Returns GeoDataLookAt object if lookAt is setup earlier
@@ -698,10 +701,10 @@ public:
      * to GeoDataLookAt with range equals to altitude of
      * GeoDataCoordinate
      */
-    const GeoDataLookAt *lookAt() const;
-    GeoDataLookAt *lookAt();
+    const GeoDataLookAt* lookAt() const;
+    GeoDataLookAt* lookAt();
 
-    static bool placemarkLayoutOrderCompare(const GeoDataPlacemark *a, const GeoDataPlacemark* b);
+    static bool placemarkLayoutOrderCompare(const GeoDataPlacemark* a, const GeoDataPlacemark* b);
 
 private:
 

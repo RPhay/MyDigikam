@@ -13,16 +13,15 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoDataRegion.h"
-
-// Private
 #include "GeoDataRegion_p.h"
 
-// std
+// C++ includes
+
 #include <algorithm>
 
-// GeoData
+// Local includes
+
 #include "GeoDataFeature.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataGeometry.h"
@@ -32,19 +31,19 @@ namespace Marble
 {
 GeoDataRegion::GeoDataRegion()
     : GeoDataObject(),
-      d( new GeoDataRegionPrivate )
+      d(new GeoDataRegionPrivate)
 {
 }
 
-GeoDataRegion::GeoDataRegion( const GeoDataRegion& other )
-    : GeoDataObject( other ),
-      d( new GeoDataRegionPrivate( *other.d ) )
+GeoDataRegion::GeoDataRegion(const GeoDataRegion& other)
+    : GeoDataObject(other),
+      d(new GeoDataRegionPrivate(*other.d))
 {
 }
 
-GeoDataRegion::GeoDataRegion( GeoDataFeature * feature )
+GeoDataRegion::GeoDataRegion(GeoDataFeature* feature)
     : GeoDataObject(),
-      d( new GeoDataRegionPrivate( feature ) )
+      d(new GeoDataRegionPrivate(feature))
 {
 }
 
@@ -77,26 +76,37 @@ const GeoDataLatLonAltBox& GeoDataRegion::latLonAltBox() const
     // FIXME: This isn't exactly what a 'const' function should do, is it?
 
     // If the latLonAltBox hasn't been set try to determine it automatically
-    if ( !d->m_latLonAltBox ) {
+    if (!d->m_latLonAltBox)
+    {
         // If there is a parent try to
-        if ( d->m_parent ) {
+        if (d->m_parent)
+        {
 
-            if (const GeoDataPlacemark *placemark = geodata_cast<GeoDataPlacemark>(d->m_parent)) {
-                const GeoDataGeometry * geometry = placemark->geometry();
-                if ( geometry ) {
-                    d->m_latLonAltBox = new GeoDataLatLonAltBox( placemark->geometry()->latLonAltBox() );
+            if (const GeoDataPlacemark* placemark = geodata_cast<GeoDataPlacemark>(d->m_parent))
+            {
+                const GeoDataGeometry* geometry = placemark->geometry();
+
+                if (geometry)
+                {
+                    d->m_latLonAltBox = new GeoDataLatLonAltBox(placemark->geometry()->latLonAltBox());
                 }
-                else {
+
+                else
+                {
                     d->m_latLonAltBox = new GeoDataLatLonAltBox();
                 }
             }
-            else {
+
+            else
+            {
                 // If the parent is not a placemark then create a default LatLonAltBox
                 // FIXME: reference a shared object instead
                 d->m_latLonAltBox = new GeoDataLatLonAltBox();
             }
         }
-        else {
+
+        else
+        {
             // If there is no parent then create a default LatLonAltBox
             // FIXME: reference a shared object instead
             d->m_latLonAltBox = new GeoDataLatLonAltBox();
@@ -107,17 +117,18 @@ const GeoDataLatLonAltBox& GeoDataRegion::latLonAltBox() const
 }
 
 
-void GeoDataRegion::setLatLonAltBox( const GeoDataLatLonAltBox & latLonAltBox )
+void GeoDataRegion::setLatLonAltBox(const GeoDataLatLonAltBox& latLonAltBox)
 {
     delete d->m_latLonAltBox;
-    d->m_latLonAltBox = new GeoDataLatLonAltBox( latLonAltBox );
+    d->m_latLonAltBox = new GeoDataLatLonAltBox(latLonAltBox);
 }
 
 
 GeoDataLod& GeoDataRegion::lod() const
 {
     // If the lod hasn't been set then return a shared one
-    if ( !d->m_lod ) {
+    if (!d->m_lod)
+    {
         // FIXME: reference a shared object instead
         d->m_lod = new GeoDataLod();
     }
@@ -126,43 +137,46 @@ GeoDataLod& GeoDataRegion::lod() const
 }
 
 
-void GeoDataRegion::setLod( const GeoDataLod & lod )
+void GeoDataRegion::setLod(const GeoDataLod& lod)
 {
     delete d->m_lod;
-    d->m_lod = new GeoDataLod( lod );
+    d->m_lod = new GeoDataLod(lod);
 }
 
 
-void GeoDataRegion::pack( QDataStream& stream ) const
+void GeoDataRegion::pack(QDataStream& stream) const
 {
-    GeoDataObject::pack( stream );
+    GeoDataObject::pack(stream);
 
-    d->m_lod->pack( stream );
-    d->m_latLonAltBox->pack( stream );
+    d->m_lod->pack(stream);
+    d->m_latLonAltBox->pack(stream);
 }
 
 
-void GeoDataRegion::unpack( QDataStream& stream )
+void GeoDataRegion::unpack(QDataStream& stream)
 {
-    GeoDataObject::unpack( stream );
+    GeoDataObject::unpack(stream);
 
-    d->m_lod->unpack( stream );
-    d->m_latLonAltBox->unpack( stream );
+    d->m_lod->unpack(stream);
+    d->m_latLonAltBox->unpack(stream);
 }
 
-GeoDataRegion &GeoDataRegion::operator=( const GeoDataRegion& other )
+GeoDataRegion& GeoDataRegion::operator=(const GeoDataRegion& other)
 {
     // Self assignment
-    if ( this == &other ) return *this;
+    if (this == &other)
+    {
+        return *this;
+    }
 
-    GeoDataRegion temp( other );
-    swap( temp );
+    GeoDataRegion temp(other);
+    swap(temp);
     return *this;
 }
 
-void GeoDataRegion::swap( GeoDataRegion & other )
+void GeoDataRegion::swap(GeoDataRegion& other)
 {
-    std::swap( d, other.d );
+    std::swap(d, other.d);
 }
 
 } // namespace Marble

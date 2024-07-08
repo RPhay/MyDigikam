@@ -15,8 +15,12 @@
 
 #include "GeoDataItemIcon.h"
 
+// Qt includes
+
 #include <QString>
 #include <QImage>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 
@@ -37,28 +41,28 @@ public:
 GeoDataItemIconPrivate::GeoDataItemIconPrivate()
     : m_state(),
       m_iconPath(),
-     m_icon()
+      m_icon()
 {
 }
 
 GeoDataItemIcon::GeoDataItemIcon()
-    : d( new GeoDataItemIconPrivate )
+    : d(new GeoDataItemIconPrivate)
 {
 }
 
-GeoDataItemIcon::GeoDataItemIcon( const Marble::GeoDataItemIcon &other )
-    : GeoDataObject(), d( new GeoDataItemIconPrivate( *other.d ) )
+GeoDataItemIcon::GeoDataItemIcon(const Marble::GeoDataItemIcon& other)
+    : GeoDataObject(), d(new GeoDataItemIconPrivate(*other.d))
 {
 }
 
-GeoDataItemIcon &GeoDataItemIcon::operator=( const GeoDataItemIcon &other )
+GeoDataItemIcon& GeoDataItemIcon::operator=(const GeoDataItemIcon& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataItemIcon::operator==( const GeoDataItemIcon& other ) const
+bool GeoDataItemIcon::operator==(const GeoDataItemIcon& other) const
 {
     return equals(other) &&
            d->m_state == other.d->m_state &&
@@ -66,7 +70,7 @@ bool GeoDataItemIcon::operator==( const GeoDataItemIcon& other ) const
            d->m_icon == other.d->m_icon;
 }
 
-bool GeoDataItemIcon::operator!=( const GeoDataItemIcon& other ) const
+bool GeoDataItemIcon::operator!=(const GeoDataItemIcon& other) const
 {
     return !this->operator==(other);
 }
@@ -76,7 +80,7 @@ GeoDataItemIcon::~GeoDataItemIcon()
     delete d;
 }
 
-const char *GeoDataItemIcon::nodeType() const
+const char* GeoDataItemIcon::nodeType() const
 {
     return GeoDataTypes::GeoDataItemIconType;
 }
@@ -91,7 +95,7 @@ void GeoDataItemIcon::setState(ItemIconStates state)
     d->m_state = state;
 }
 
-void GeoDataItemIcon::setIcon( const QImage &icon )
+void GeoDataItemIcon::setIcon(const QImage& icon)
 {
     d->m_icon = icon;
 }
@@ -101,22 +105,24 @@ QString GeoDataItemIcon::iconPath() const
     return d->m_iconPath;
 }
 
-void GeoDataItemIcon::setIconPath( const QString &path )
+void GeoDataItemIcon::setIconPath(const QString& path)
 {
     d->m_iconPath = path;
 }
 
 QImage GeoDataItemIcon::icon() const
 {
-    if(!d->m_icon.isNull())
+    if (!d->m_icon.isNull())
     {
         return d->m_icon;
     }
-    else if(!d->m_iconPath.isEmpty())
+
+    else if (!d->m_iconPath.isEmpty())
     {
         d->m_icon = QImage(resolvePath(d->m_iconPath));
         return d->m_icon;
     }
+
     else
     {
         return QImage();

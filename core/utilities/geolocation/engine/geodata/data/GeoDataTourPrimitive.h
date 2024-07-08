@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataObject.h"
 #include "digikam_export.h"
 
@@ -25,8 +27,11 @@ class DIGIKAM_EXPORT GeoDataTourPrimitive : public GeoDataObject
 {
 public:
 
-    bool operator==(const GeoDataTourPrimitive &other) const;
-    inline bool operator!=(const GeoDataTourPrimitive &other) const { return !(*this == other); }
+    bool operator==(const GeoDataTourPrimitive& other) const;
+    inline bool operator!=(const GeoDataTourPrimitive& other) const
+    {
+        return !(*this == other);
+    }
 };
 
 } // namespace Marble

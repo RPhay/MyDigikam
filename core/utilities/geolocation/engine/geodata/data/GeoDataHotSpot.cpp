@@ -15,7 +15,11 @@
 
 #include "GeoDataHotSpot.h"
 
+// Qt includes
+
 #include <QDataStream>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 
@@ -30,10 +34,10 @@ public:
     {
     }
 
-    GeoDataHotSpotPrivate( const QPointF& hotSpot, GeoDataHotSpot::Units xunits, GeoDataHotSpot::Units yunits )
-        : m_hotSpot( hotSpot ),
-          m_xunits( xunits ),
-          m_yunits( yunits )
+    GeoDataHotSpotPrivate(const QPointF& hotSpot, GeoDataHotSpot::Units xunits, GeoDataHotSpot::Units yunits)
+        : m_hotSpot(hotSpot),
+          m_xunits(xunits),
+          m_yunits(yunits)
     {
     }
 
@@ -42,13 +46,13 @@ public:
     GeoDataHotSpot::Units   m_yunits;
 };
 
-GeoDataHotSpot::GeoDataHotSpot( const QPointF& hotSpot, Units xunits, Units yunits )
-    : d( new GeoDataHotSpotPrivate( hotSpot, xunits, yunits ) )
+GeoDataHotSpot::GeoDataHotSpot(const QPointF& hotSpot, Units xunits, Units yunits)
+    : d(new GeoDataHotSpotPrivate(hotSpot, xunits, yunits))
 {
 }
 
-GeoDataHotSpot::GeoDataHotSpot( const GeoDataHotSpot& other )
-    : GeoDataObject(other), d( new GeoDataHotSpotPrivate( *other.d ) )
+GeoDataHotSpot::GeoDataHotSpot(const GeoDataHotSpot& other)
+    : GeoDataObject(other), d(new GeoDataHotSpotPrivate(*other.d))
 {
 }
 
@@ -57,15 +61,15 @@ GeoDataHotSpot::~GeoDataHotSpot()
     delete d;
 }
 
-GeoDataHotSpot& GeoDataHotSpot::operator=( const GeoDataHotSpot& other )
+GeoDataHotSpot& GeoDataHotSpot::operator=(const GeoDataHotSpot& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
 
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataHotSpot::operator==( const GeoDataHotSpot& other ) const
+bool GeoDataHotSpot::operator==(const GeoDataHotSpot& other) const
 {
     return equals(other) &&
            d->m_hotSpot == other.d->m_hotSpot &&
@@ -73,12 +77,12 @@ bool GeoDataHotSpot::operator==( const GeoDataHotSpot& other ) const
            d->m_yunits == other.d->m_yunits;
 }
 
-bool GeoDataHotSpot::operator!=( const GeoDataHotSpot& other ) const
+bool GeoDataHotSpot::operator!=(const GeoDataHotSpot& other) const
 {
     return !this->operator==(other);
 }
 
-const QPointF& GeoDataHotSpot::hotSpot( Units& xunits, Units& yunits ) const
+const QPointF& GeoDataHotSpot::hotSpot(Units& xunits, Units& yunits) const
 {
     xunits = d->m_xunits;
     yunits = d->m_yunits;
@@ -87,7 +91,7 @@ const QPointF& GeoDataHotSpot::hotSpot( Units& xunits, Units& yunits ) const
 }
 
 
-void GeoDataHotSpot::setHotSpot( const QPointF& hotSpot, Units xunits, Units yunits )
+void GeoDataHotSpot::setHotSpot(const QPointF& hotSpot, Units xunits, Units yunits)
 {
     d->m_hotSpot = hotSpot;
     d->m_xunits = xunits;
@@ -99,17 +103,17 @@ const char* GeoDataHotSpot::nodeType() const
     return GeoDataTypes::GeoDataHotspotType;
 }
 
-void GeoDataHotSpot::pack( QDataStream& stream ) const
+void GeoDataHotSpot::pack(QDataStream& stream) const
 {
-    GeoDataObject::pack( stream );
+    GeoDataObject::pack(stream);
 
     stream << d->m_xunits << d->m_yunits;
     stream << d->m_hotSpot;
 }
 
-void GeoDataHotSpot::unpack( QDataStream& stream )
+void GeoDataHotSpot::unpack(QDataStream& stream)
 {
-    GeoDataObject::unpack( stream );
+    GeoDataObject::unpack(stream);
     int xu, yu;
     stream >> xu >> yu;
     d->m_xunits = static_cast<Units>(xu);

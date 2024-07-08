@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -30,11 +31,11 @@ public:
 
     GeoDataViewVolume();
 
-    GeoDataViewVolume( const GeoDataViewVolume &other );
+    GeoDataViewVolume(const GeoDataViewVolume& other);
 
-    GeoDataViewVolume& operator=( const GeoDataViewVolume &other );
-    bool operator==( const GeoDataViewVolume &other ) const;
-    bool operator!=( const GeoDataViewVolume &other ) const;
+    GeoDataViewVolume& operator=(const GeoDataViewVolume& other);
+    bool operator==(const GeoDataViewVolume& other) const;
+    bool operator!=(const GeoDataViewVolume& other) const;
 
     ~GeoDataViewVolume() override;
 

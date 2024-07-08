@@ -16,7 +16,11 @@
 #include "GeoDataData.h"
 #include "GeoDataData_p.h"
 
+// Qt includes
+
 #include <QDataStream>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 
@@ -24,12 +28,12 @@ namespace Marble
 {
 
 GeoDataData::GeoDataData()
-    : GeoDataObject(), d( new GeoDataDataPrivate )
+    : GeoDataObject(), d(new GeoDataDataPrivate)
 {
 }
 
-GeoDataData::GeoDataData( const GeoDataData& other )
-    : GeoDataObject( other ), d( new GeoDataDataPrivate( *other.d ) )
+GeoDataData::GeoDataData(const GeoDataData& other)
+    : GeoDataObject(other), d(new GeoDataDataPrivate(*other.d))
 {
 }
 
@@ -38,14 +42,14 @@ GeoDataData::~GeoDataData()
     delete d;
 }
 
-GeoDataData& GeoDataData::operator=( const GeoDataData& other )
+GeoDataData& GeoDataData::operator=(const GeoDataData& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataData::operator==( const GeoDataData& other) const
+bool GeoDataData::operator==(const GeoDataData& other) const
 {
     return equals(other) &&
            d->m_name == other.d->m_name &&
@@ -53,13 +57,13 @@ bool GeoDataData::operator==( const GeoDataData& other) const
            d->m_displayName == other.d->m_displayName;
 }
 
-bool GeoDataData::operator!=( const GeoDataData &other ) const
+bool GeoDataData::operator!=(const GeoDataData& other) const
 {
     return !this->operator==(other);
 }
 
-GeoDataData::GeoDataData( const QString &name, const QVariant &value )
-    : d( new GeoDataDataPrivate )
+GeoDataData::GeoDataData(const QString& name, const QVariant& value)
+    : d(new GeoDataDataPrivate)
 {
     d->m_name = name;
     d->m_value = value;
@@ -85,7 +89,7 @@ const QVariant& GeoDataData::valueRef() const
     return d->m_value;
 }
 
-void GeoDataData::setValue( const QVariant& value )
+void GeoDataData::setValue(const QVariant& value)
 {
     d->m_value = value;
 }
@@ -95,7 +99,7 @@ QString GeoDataData::name() const
     return d->m_name;
 }
 
-void GeoDataData::setName( const QString& name )
+void GeoDataData::setName(const QString& name)
 {
     d->m_name = name;
 }
@@ -105,22 +109,22 @@ QString GeoDataData::displayName() const
     return d->m_displayName;
 }
 
-void GeoDataData::setDisplayName( const QString& displayName )
+void GeoDataData::setDisplayName(const QString& displayName)
 {
     d->m_displayName = displayName;
 }
 
-void GeoDataData::pack( QDataStream& stream ) const
+void GeoDataData::pack(QDataStream& stream) const
 {
-    GeoDataObject::pack( stream );
+    GeoDataObject::pack(stream);
 
     stream << d->m_value;
     stream << d->m_displayName;
 }
 
-void GeoDataData::unpack( QDataStream& stream )
+void GeoDataData::unpack(QDataStream& stream)
 {
-    GeoDataObject::unpack( stream );
+    GeoDataObject::unpack(stream);
 
     stream >> d->m_value;
     stream >> d->m_displayName;

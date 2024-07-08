@@ -15,12 +15,14 @@
 
 #include "GeoDataSchemaData.h"
 
-// Qt
+// Qt includes
+
 #include <QDataStream>
 #include <QString>
 #include <QHash>
 
-// Marble
+// Local includes
+
 #include "GeoDataSimpleData.h"
 #include "GeoDataTypes.h"
 
@@ -32,7 +34,7 @@ class Q_DECL_HIDDEN GeoDataSchemaDataPrivate
 public:
 
     GeoDataSchemaDataPrivate()
-        : m_parent( nullptr )
+        : m_parent(nullptr)
     {
         // nothing to do
     }
@@ -43,25 +45,25 @@ public:
 };
 
 GeoDataSchemaData::GeoDataSchemaData()
-    : d( new GeoDataSchemaDataPrivate )
+    : d(new GeoDataSchemaDataPrivate)
 {
 }
 
-GeoDataSchemaData::GeoDataSchemaData( const GeoDataSchemaData &other )
-    : d( new GeoDataSchemaDataPrivate( *other.d ) )
+GeoDataSchemaData::GeoDataSchemaData(const GeoDataSchemaData& other)
+    : d(new GeoDataSchemaDataPrivate(*other.d))
 {
 }
 
-GeoDataSchemaData &GeoDataSchemaData::operator=( const GeoDataSchemaData &rhs )
+GeoDataSchemaData& GeoDataSchemaData::operator=(const GeoDataSchemaData& rhs)
 {
     *d = *rhs.d;
     return *this;
 }
 
-bool GeoDataSchemaData::operator==( const GeoDataSchemaData &other ) const
+bool GeoDataSchemaData::operator==(const GeoDataSchemaData& other) const
 {
-    if ( d->m_schemaUrl != other.d->m_schemaUrl ||
-         d->m_simpleData.size() != other.d->m_simpleData.size() )
+    if (d->m_schemaUrl != other.d->m_schemaUrl ||
+        d->m_simpleData.size() != other.d->m_simpleData.size())
     {
         return false;
     }
@@ -70,8 +72,10 @@ bool GeoDataSchemaData::operator==( const GeoDataSchemaData &other ) const
     QHash<QString, GeoDataSimpleData>::iterator end = d->m_simpleData.end();
     QHash<QString, GeoDataSimpleData>::iterator beginOther = other.d->m_simpleData.begin();
 
-    for( ; begin != end; ++begin, ++beginOther ) {
-        if ( *begin != *beginOther ) {
+    for (; begin != end; ++begin, ++beginOther)
+    {
+        if (*begin != *beginOther)
+        {
             return false;
         }
     }
@@ -79,7 +83,7 @@ bool GeoDataSchemaData::operator==( const GeoDataSchemaData &other ) const
     return true;
 }
 
-bool GeoDataSchemaData::operator!=( const GeoDataSchemaData &other ) const
+bool GeoDataSchemaData::operator!=(const GeoDataSchemaData& other) const
 {
     return !this->operator==(other);
 }
@@ -94,19 +98,19 @@ QString GeoDataSchemaData::schemaUrl() const
     return d->m_schemaUrl;
 }
 
-void GeoDataSchemaData::setSchemaUrl( const QString &schemaUrl )
+void GeoDataSchemaData::setSchemaUrl(const QString& schemaUrl)
 {
     d->m_schemaUrl = schemaUrl;
 }
 
-GeoDataSimpleData &GeoDataSchemaData::simpleData( const QString &name ) const
+GeoDataSimpleData& GeoDataSchemaData::simpleData(const QString& name) const
 {
     return d->m_simpleData[ name ];
 }
 
-void GeoDataSchemaData::addSimpleData( const GeoDataSimpleData &data )
+void GeoDataSchemaData::addSimpleData(const GeoDataSimpleData& data)
 {
-    d->m_simpleData.insert( data.name(), data );
+    d->m_simpleData.insert(data.name(), data);
 }
 
 QList<GeoDataSimpleData> GeoDataSchemaData::simpleDataList() const
@@ -114,17 +118,17 @@ QList<GeoDataSimpleData> GeoDataSchemaData::simpleDataList() const
     return d->m_simpleData.values();
 }
 
-void GeoDataSchemaData::setParent(GeoDataExtendedData *parent)
+void GeoDataSchemaData::setParent(GeoDataExtendedData* parent)
 {
     d->m_parent = parent;
 }
 
-const GeoDataExtendedData *GeoDataSchemaData::parent() const
+const GeoDataExtendedData* GeoDataSchemaData::parent() const
 {
     return d->m_parent;
 }
 
-GeoDataExtendedData *GeoDataSchemaData::parent()
+GeoDataExtendedData* GeoDataSchemaData::parent()
 {
     return d->m_parent;
 }
@@ -134,7 +138,7 @@ const char* GeoDataSchemaData::nodeType() const
     return GeoDataTypes::GeoDataSchemaDataType;
 }
 
-void GeoDataSchemaData::pack( QDataStream &stream ) const
+void GeoDataSchemaData::pack(QDataStream& stream) const
 {
     stream << d->m_schemaUrl;
     stream << d->m_simpleData.size();
@@ -142,21 +146,23 @@ void GeoDataSchemaData::pack( QDataStream &stream ) const
     QHash<QString, GeoDataSimpleData>::const_iterator iter = d->m_simpleData.constBegin();
     QHash<QString, GeoDataSimpleData>::const_iterator end = d->m_simpleData.constEnd();
 
-    for( ; iter != end; ++iter ) {
-        iter.value().pack( stream );
+    for (; iter != end; ++iter)
+    {
+        iter.value().pack(stream);
     }
 }
 
-void GeoDataSchemaData::unpack( QDataStream &stream )
+void GeoDataSchemaData::unpack(QDataStream& stream)
 {
     stream >> d->m_schemaUrl;
     int size = 0;
     stream >> size;
 
-    for( int i = 0; i < size; i++ ) {
+    for (int i = 0; i < size; i++)
+    {
         GeoDataSimpleData simpleData;
-        simpleData.unpack( stream );
-        d->m_simpleData.insert( simpleData.name(), simpleData );
+        simpleData.unpack(stream);
+        d->m_simpleData.insert(simpleData.name(), simpleData);
     }
 }
 

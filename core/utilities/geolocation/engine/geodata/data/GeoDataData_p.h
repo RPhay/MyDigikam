@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QVariant>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 

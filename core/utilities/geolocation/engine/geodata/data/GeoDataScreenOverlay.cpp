@@ -15,6 +15,9 @@
 
 #include "GeoDataScreenOverlay.h"
 #include "GeoDataScreenOverlay_p.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -25,7 +28,7 @@ GeoDataScreenOverlay::GeoDataScreenOverlay()
 {
 }
 
-GeoDataScreenOverlay::GeoDataScreenOverlay( const Marble::GeoDataScreenOverlay &other )
+GeoDataScreenOverlay::GeoDataScreenOverlay(const Marble::GeoDataScreenOverlay& other)
     : GeoDataOverlay(other, new GeoDataScreenOverlayPrivate(*other.d_func()))
 {
 }
@@ -34,9 +37,10 @@ GeoDataScreenOverlay::~GeoDataScreenOverlay()
 {
 }
 
-GeoDataScreenOverlay &GeoDataScreenOverlay::operator=( const GeoDataScreenOverlay &other )
+GeoDataScreenOverlay& GeoDataScreenOverlay::operator=(const GeoDataScreenOverlay& other)
 {
-    if (this != &other) {
+    if (this != &other)
+    {
         Q_D(GeoDataScreenOverlay);
         *d = *other.d_func();
     }
@@ -62,12 +66,12 @@ bool GeoDataScreenOverlay::operator!=(const GeoDataScreenOverlay& other) const
     return !this->operator==(other);
 }
 
-GeoDataFeature * GeoDataScreenOverlay::clone() const
+GeoDataFeature* GeoDataScreenOverlay::clone() const
 {
     return new GeoDataScreenOverlay(*this);
 }
 
-const char *GeoDataScreenOverlay::nodeType() const
+const char* GeoDataScreenOverlay::nodeType() const
 {
     return GeoDataTypes::GeoDataScreenOverlayType;
 }
@@ -78,7 +82,7 @@ GeoDataVec2 GeoDataScreenOverlay::overlayXY() const
     return d->m_overlayXY;
 }
 
-void GeoDataScreenOverlay::setOverlayXY(const GeoDataVec2 &vec2)
+void GeoDataScreenOverlay::setOverlayXY(const GeoDataVec2& vec2)
 {
     Q_D(GeoDataScreenOverlay);
     d->m_overlayXY = vec2;
@@ -99,7 +103,7 @@ GeoDataVec2 GeoDataScreenOverlay::screenXY() const
     return d->m_screenXY;
 }
 
-void GeoDataScreenOverlay::setScreenXY(const GeoDataVec2 &vec2)
+void GeoDataScreenOverlay::setScreenXY(const GeoDataVec2& vec2)
 {
     Q_D(GeoDataScreenOverlay);
     d->m_screenXY = vec2;
@@ -120,7 +124,7 @@ GeoDataVec2 GeoDataScreenOverlay::rotationXY() const
     return d->m_rotationXY;
 }
 
-void GeoDataScreenOverlay::setRotationXY(const GeoDataVec2 &vec2)
+void GeoDataScreenOverlay::setRotationXY(const GeoDataVec2& vec2)
 {
     Q_D(GeoDataScreenOverlay);
     d->m_rotationXY = vec2;
@@ -141,7 +145,7 @@ GeoDataVec2 GeoDataScreenOverlay::size() const
     return d->m_size;
 }
 
-void GeoDataScreenOverlay::setSize(const GeoDataVec2 &vec2)
+void GeoDataScreenOverlay::setSize(const GeoDataVec2& vec2)
 {
     Q_D(GeoDataScreenOverlay);
     d->m_size = vec2;

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataOverlay_p.h"
 #include "GeoDataTypes.h"
 #include "GeoDataPoint.h"
@@ -41,11 +43,11 @@ public:
 };
 
 GeoDataPhotoOverlayPrivate::GeoDataPhotoOverlayPrivate()
-    : m_rotation( 0.0 ),
+    : m_rotation(0.0),
       m_viewVolume(),
       m_imagePyramid(),
       m_point(),
-      m_shape( GeoDataPhotoOverlay::Rectangle )
+      m_shape(GeoDataPhotoOverlay::Rectangle)
 {
     // nothing to do
 }

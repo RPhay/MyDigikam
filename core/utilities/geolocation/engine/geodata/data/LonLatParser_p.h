@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QStringList>
 
 class QRegularExpressionMatch;
@@ -80,12 +82,18 @@ public:
     /**
      * @brief return the lon value from the last successful parsing
      */
-    qreal lon() const { return m_lon; }
+    qreal lon() const
+    {
+        return m_lon;
+    }
 
     /**
      * @brief return the lat value from the last successful parsing
      */
-    qreal lat() const { return m_lat; }
+    qreal lat() const
+    {
+        return m_lat;
+    }
 
 private:
 

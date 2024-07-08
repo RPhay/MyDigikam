@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataLocation.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -34,34 +37,34 @@ GeoDataLocationPrivate::GeoDataLocationPrivate()
     // nothing to do
 }
 
-GeoDataLocation::GeoDataLocation() : d( new GeoDataLocationPrivate )
+GeoDataLocation::GeoDataLocation() : d(new GeoDataLocationPrivate)
 {
     // nothing to do
 }
 
-GeoDataLocation::GeoDataLocation( const Marble::GeoDataLocation &other ) :
-    GeoDataObject( other ), d( new GeoDataLocationPrivate( *other.d ) )
+GeoDataLocation::GeoDataLocation(const Marble::GeoDataLocation& other) :
+    GeoDataObject(other), d(new GeoDataLocationPrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataLocation &GeoDataLocation::operator=( const GeoDataLocation &other )
+GeoDataLocation& GeoDataLocation::operator=(const GeoDataLocation& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
 
-bool GeoDataLocation::operator==( const GeoDataLocation &other ) const
+bool GeoDataLocation::operator==(const GeoDataLocation& other) const
 {
     return equals(other) &&
            d->m_coordinates == other.d->m_coordinates;
 }
 
-bool GeoDataLocation::operator!=( const GeoDataLocation &other ) const
+bool GeoDataLocation::operator!=(const GeoDataLocation& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataLocation::~GeoDataLocation()
@@ -69,7 +72,7 @@ GeoDataLocation::~GeoDataLocation()
     delete d;
 }
 
-const char *GeoDataLocation::nodeType() const
+const char* GeoDataLocation::nodeType() const
 {
     return GeoDataTypes::GeoDataLocationType;
 }
@@ -95,7 +98,7 @@ void GeoDataLocation::setLatitude(qreal latitude, GeoDataCoordinates::Unit unit)
     d->m_coordinates.setLatitude(latitude, unit);
 }
 
-qreal GeoDataLocation::longitude( GeoDataCoordinates::Unit unit ) const
+qreal GeoDataLocation::longitude(GeoDataCoordinates::Unit unit) const
 {
     return d->m_coordinates.longitude(unit);
 }

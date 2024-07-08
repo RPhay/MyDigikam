@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataObject.h"
 
 class QVariant;
@@ -30,9 +32,9 @@ class DIGIKAM_EXPORT GeoDataSimpleArrayData : public GeoDataObject
 public:
 
     GeoDataSimpleArrayData();
-    GeoDataSimpleArrayData( const GeoDataSimpleArrayData& other );
-    bool operator==( const GeoDataSimpleArrayData &other ) const;
-    bool operator!=( const GeoDataSimpleArrayData &other) const;
+    GeoDataSimpleArrayData(const GeoDataSimpleArrayData& other);
+    bool operator==(const GeoDataSimpleArrayData& other) const;
+    bool operator!=(const GeoDataSimpleArrayData& other) const;
     ~GeoDataSimpleArrayData() override;
 
     /**
@@ -43,7 +45,7 @@ public:
     /**
      * Returns the value at index @p index
      */
-    QVariant valueAt( int index ) const;
+    QVariant valueAt(int index) const;
 
     /**
      * Returns all values in the array
@@ -53,11 +55,11 @@ public:
     /**
      * Append a value to the array
      */
-    void append( const QVariant& value );
+    void append(const QVariant& value);
 
     const char* nodeType() const override;
-    void pack( QDataStream& stream ) const override;
-    void unpack( QDataStream& stream ) override;
+    void pack(QDataStream& stream) const override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

@@ -42,15 +42,15 @@ public:
 public:
 
     GeoDataOverlayPrivate()
-        : m_color    (Qt::white),
+        : m_color(Qt::white),
           m_drawOrder(0)
     {
     }
 
     GeoDataOverlayPrivate(const GeoDataOverlayPrivate& other)
-      : GeoDataFeaturePrivate(other),
-        m_color              (Qt::white),
-        m_drawOrder          (0)
+        : GeoDataFeaturePrivate(other),
+          m_color(Qt::white),
+          m_drawOrder(0)
     {
     }
 };

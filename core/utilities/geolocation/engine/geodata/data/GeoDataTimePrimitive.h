@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -40,22 +41,22 @@ public:
     /// Provides type information for downcasting a GeoNode
     const char* nodeType() const override;
 
-    GeoDataTimePrimitive& operator=( const GeoDataTimePrimitive& other );
+    GeoDataTimePrimitive& operator=(const GeoDataTimePrimitive& other);
 
     /**
      * @brief Serialize the styleselector to a stream
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /**
      * @brief  Unserialize the styleselector from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     GeoDataTimePrimitive();
-    GeoDataTimePrimitive( const GeoDataTimePrimitive& other );
+    GeoDataTimePrimitive(const GeoDataTimePrimitive& other);
     ~GeoDataTimePrimitive() override;
 
 private:

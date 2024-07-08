@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataScale.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -41,27 +44,27 @@ GeoDataScalePrivate::GeoDataScalePrivate()
 }
 
 GeoDataScale::GeoDataScale()
-    : d( new GeoDataScalePrivate )
+    : d(new GeoDataScalePrivate)
 {
     // nothing to do
 }
 
-GeoDataScale::GeoDataScale( const Marble::GeoDataScale &other )
-    : GeoDataObject( other ),
-      d( new GeoDataScalePrivate( *other.d ) )
+GeoDataScale::GeoDataScale(const Marble::GeoDataScale& other)
+    : GeoDataObject(other),
+      d(new GeoDataScalePrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataScale &GeoDataScale::operator=( const GeoDataScale &other )
+GeoDataScale& GeoDataScale::operator=(const GeoDataScale& other)
 {
-    GeoDataObject::operator=( other );
+    GeoDataObject::operator=(other);
     *d = *other.d;
     return *this;
 }
 
 
-bool GeoDataScale::operator==( const GeoDataScale &other ) const
+bool GeoDataScale::operator==(const GeoDataScale& other) const
 {
     return equals(other) &&
            d->m_x == other.d->m_x &&
@@ -69,9 +72,9 @@ bool GeoDataScale::operator==( const GeoDataScale &other ) const
            d->m_z == other.d->m_z;
 }
 
-bool GeoDataScale::operator!=( const GeoDataScale &other ) const
+bool GeoDataScale::operator!=(const GeoDataScale& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataScale::~GeoDataScale()
@@ -79,7 +82,7 @@ GeoDataScale::~GeoDataScale()
     delete d;
 }
 
-const char *GeoDataScale::nodeType() const
+const char* GeoDataScale::nodeType() const
 {
     return GeoDataTypes::GeoDataScaleType;
 }
@@ -89,7 +92,7 @@ double GeoDataScale::x() const
     return d->m_x;
 }
 
-void GeoDataScale::setX( double x )
+void GeoDataScale::setX(double x)
 {
     d->m_x = x;
 }
@@ -99,7 +102,7 @@ double GeoDataScale::y() const
     return d->m_y;
 }
 
-void GeoDataScale::setY( double y )
+void GeoDataScale::setY(double y)
 {
     d->m_y = y;
 }
@@ -109,7 +112,7 @@ double GeoDataScale::z() const
     return d->m_z;
 }
 
-void GeoDataScale::setZ( double z )
+void GeoDataScale::setZ(double z)
 {
     d->m_z = z;
 }

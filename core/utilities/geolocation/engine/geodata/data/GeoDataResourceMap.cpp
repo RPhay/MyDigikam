@@ -15,6 +15,8 @@
 
 #include "GeoDataResourceMap.h"
 
+// Local includes
+
 #include "GeoDataAlias.h"
 #include "GeoDataTypes.h"
 
@@ -36,31 +38,31 @@ GeoDataResourceMapPrivate::GeoDataResourceMapPrivate() :
     // nothing to do
 }
 
-GeoDataResourceMap::GeoDataResourceMap() : d( new GeoDataResourceMapPrivate )
+GeoDataResourceMap::GeoDataResourceMap() : d(new GeoDataResourceMapPrivate)
 {
     // nothing to do
 }
 
-GeoDataResourceMap::GeoDataResourceMap( const Marble::GeoDataResourceMap &other ) :
-    GeoNode( other ), d( new GeoDataResourceMapPrivate( *other.d ) )
+GeoDataResourceMap::GeoDataResourceMap(const Marble::GeoDataResourceMap& other) :
+    GeoNode(other), d(new GeoDataResourceMapPrivate(*other.d))
 {
     // nothing to do
 }
 
-GeoDataResourceMap &GeoDataResourceMap::operator=( const GeoDataResourceMap &other )
+GeoDataResourceMap& GeoDataResourceMap::operator=(const GeoDataResourceMap& other)
 {
     *d = *other.d;
     return *this;
 }
 
-bool GeoDataResourceMap::operator==( const GeoDataResourceMap &other ) const
+bool GeoDataResourceMap::operator==(const GeoDataResourceMap& other) const
 {
     return d->m_alias == other.d->m_alias;
 }
 
-bool GeoDataResourceMap::operator!=( const GeoDataResourceMap &other ) const
+bool GeoDataResourceMap::operator!=(const GeoDataResourceMap& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataResourceMap::~GeoDataResourceMap()
@@ -68,22 +70,22 @@ GeoDataResourceMap::~GeoDataResourceMap()
     delete d;
 }
 
-const char *GeoDataResourceMap::nodeType() const
+const char* GeoDataResourceMap::nodeType() const
 {
     return GeoDataTypes::GeoDataResourceMapType;
 }
 
-const GeoDataAlias &GeoDataResourceMap::alias() const
+const GeoDataAlias& GeoDataResourceMap::alias() const
 {
     return d->m_alias;
 }
 
-GeoDataAlias &GeoDataResourceMap::alias()
+GeoDataAlias& GeoDataResourceMap::alias()
 {
     return d->m_alias;
 }
 
-void GeoDataResourceMap::setAlias( const GeoDataAlias &alias )
+void GeoDataResourceMap::setAlias(const GeoDataAlias& alias)
 {
     d->m_alias = alias;
 }
@@ -98,14 +100,14 @@ QString GeoDataResourceMap::targetHref() const
     return d->m_alias.targetHref();
 }
 
-void GeoDataResourceMap::setSourceHref( const QString& sourceHref )
+void GeoDataResourceMap::setSourceHref(const QString& sourceHref)
 {
-    d->m_alias.setSourceHref( sourceHref );
+    d->m_alias.setSourceHref(sourceHref);
 }
 
-void GeoDataResourceMap::setTargetHref( const QString& targetHref )
+void GeoDataResourceMap::setTargetHref(const QString& targetHref)
 {
-    d->m_alias.setTargetHref( targetHref );
+    d->m_alias.setTargetHref(targetHref);
 }
 
 } // namespace Marble

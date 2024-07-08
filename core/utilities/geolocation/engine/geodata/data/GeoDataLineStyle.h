@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 
-#include "GeoDataColorStyle.h"
+// Local includes
 
+#include "GeoDataColorStyle.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -40,22 +43,22 @@ public:
 
     /// Construct a new GeoDataLineStyle
     GeoDataLineStyle();
-    GeoDataLineStyle( const GeoDataLineStyle& other );
+    GeoDataLineStyle(const GeoDataLineStyle& other);
     /**
      * @brief Construct a new GeoDataLineStyle
      * @param  color  the color to use when showing the name @see GeoDataColorStyle
      */
-    explicit GeoDataLineStyle( const QColor &color );
+    explicit GeoDataLineStyle(const QColor& color);
 
     ~GeoDataLineStyle() override;
 
     /**
     * @brief assignment operator
     */
-    GeoDataLineStyle& operator=( const GeoDataLineStyle& other );
+    GeoDataLineStyle& operator=(const GeoDataLineStyle& other);
 
-    bool operator==( const GeoDataLineStyle &other ) const;
-    bool operator!=( const GeoDataLineStyle &other ) const;
+    bool operator==(const GeoDataLineStyle& other) const;
+    bool operator!=(const GeoDataLineStyle& other) const;
 
     /// Provides type information for downcasting a GeoData
     const char* nodeType() const override;
@@ -85,7 +88,7 @@ public:
     /**
      * @brief Set whether the line has a cosmetic 1 pixel outline
      */
-    void setCosmeticOutline( bool enabled );
+    void setCosmeticOutline(bool enabled);
     /**
      * @brief Return whether the line has a cosmetic 1 pixel outline
      */
@@ -96,7 +99,7 @@ public:
      * @brief Set pen cap style
      * @param  style cap style
      */
-    void setCapStyle( Qt::PenCapStyle style );
+    void setCapStyle(Qt::PenCapStyle style);
 
     /**
      * @brief Return the current pen cap style
@@ -108,7 +111,7 @@ public:
      * @brief Set pen cap style
      * @param  style cap style
      */
-    void setPenStyle( Qt::PenStyle style );
+    void setPenStyle(Qt::PenStyle style);
 
     /**
      * @brief Return the current pen cap style
@@ -116,11 +119,11 @@ public:
      */
     Qt::PenStyle penStyle() const;
 
-     /**
-     * @brief Set whether to draw the solid background
-     * @param background @c true if the background should be solid
-     */
-    void setBackground( bool background );
+    /**
+    * @brief Set whether to draw the solid background
+    * @param background @c true if the background should be solid
+    */
+    void setBackground(bool background);
 
     /**
      * @brief Return true if background get drawn
@@ -132,7 +135,7 @@ public:
      * @brief Sets the dash pattern
      * @param pattern dash pattern
      */
-    void setDashPattern( const QVector<qreal>& pattern );
+    void setDashPattern(const QVector<qreal>& pattern);
 
     /**
      * @brief Return the current dash pattern
@@ -144,12 +147,12 @@ public:
      * @brief  Serialize the style to a stream.
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /**
      * @brief  Unserialize the style from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

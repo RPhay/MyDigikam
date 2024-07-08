@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -32,11 +33,11 @@ public:
 
     GeoDataImagePyramid();
 
-    GeoDataImagePyramid( const GeoDataImagePyramid &other );
+    GeoDataImagePyramid(const GeoDataImagePyramid& other);
 
-    GeoDataImagePyramid& operator=( const GeoDataImagePyramid &other );
-    bool operator==( const GeoDataImagePyramid &other ) const;
-    bool operator!=( const GeoDataImagePyramid &other ) const;
+    GeoDataImagePyramid& operator=(const GeoDataImagePyramid& other);
+    bool operator==(const GeoDataImagePyramid& other) const;
+    bool operator!=(const GeoDataImagePyramid& other) const;
 
     ~GeoDataImagePyramid() override;
 

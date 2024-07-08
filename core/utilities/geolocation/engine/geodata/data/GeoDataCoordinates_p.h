@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QAtomicInt>
+
+// Local includes
 
 #include "Quaternion.h"
 
@@ -34,12 +38,12 @@ public:
      * needs this name. Maybe we can rename it to our scheme later on.
      */
     GeoDataCoordinatesPrivate()
-        : m_q( nullptr ),
-          m_lon( 0 ),
-          m_lat( 0 ),
-          m_altitude( 0 ),
-          m_detail( 0 ),
-          ref( 0 )
+        : m_q(nullptr),
+          m_lon(0),
+          m_lat(0),
+          m_altitude(0),
+          m_detail(0),
+          ref(0)
     {
     }
 
@@ -50,24 +54,26 @@ public:
      * ref must be called ref as qAtomicAssign used in GeoDataCoordinates::operator=
      * needs this name. Maybe we can rename it to our scheme later on.
      */
-    GeoDataCoordinatesPrivate( qreal _lon, qreal _lat, qreal _alt,
-                        GeoDataCoordinates::Unit unit,
-                        int _detail )
-        : m_q( nullptr ),
-          m_altitude( _alt ),
-          m_detail( _detail ),
-          ref( 0 )
+    GeoDataCoordinatesPrivate(qreal _lon, qreal _lat, qreal _alt,
+                              GeoDataCoordinates::Unit unit,
+                              int _detail)
+        : m_q(nullptr),
+          m_altitude(_alt),
+          m_detail(_detail),
+          ref(0)
     {
-        switch( unit ){
-        default:
-        case GeoDataCoordinates::Radian:
-            m_lon = _lon;
-            m_lat = _lat;
-            break;
-        case GeoDataCoordinates::Degree:
-            m_lon = _lon * DEG2RAD;
-            m_lat = _lat * DEG2RAD;
-            break;
+        switch (unit)
+        {
+            default:
+            case GeoDataCoordinates::Radian:
+                m_lon = _lon;
+                m_lat = _lat;
+                break;
+
+            case GeoDataCoordinates::Degree:
+                m_lon = _lon * DEG2RAD;
+                m_lat = _lat * DEG2RAD;
+                break;
         }
     }
 
@@ -75,20 +81,20 @@ public:
      * this constructor is needed as Quaternion doesn't define a copy ctor
      * initialize the reference with the value of the other
      */
-    GeoDataCoordinatesPrivate( const GeoDataCoordinatesPrivate &other )
-        : m_q( nullptr ),
-          m_lon( other.m_lon ),
-          m_lat( other.m_lat ),
-          m_altitude( other.m_altitude ),
-          m_detail( other.m_detail ),
-          ref( 0 )
+    GeoDataCoordinatesPrivate(const GeoDataCoordinatesPrivate& other)
+        : m_q(nullptr),
+          m_lon(other.m_lon),
+          m_lat(other.m_lat),
+          m_altitude(other.m_altitude),
+          m_detail(other.m_detail),
+          ref(0)
     {
     }
 
     /**
      * return this instead of &other
      */
-    GeoDataCoordinatesPrivate& operator=( const GeoDataCoordinatesPrivate &other )
+    GeoDataCoordinatesPrivate& operator=(const GeoDataCoordinatesPrivate& other)
     {
         m_lon = other.m_lon;
         m_lat = other.m_lat;
@@ -100,10 +106,10 @@ public:
         return *this;
     }
 
-    bool operator==( const GeoDataCoordinatesPrivate &rhs ) const;
-    bool operator!=( const GeoDataCoordinatesPrivate &rhs ) const;
+    bool operator==(const GeoDataCoordinatesPrivate& rhs) const;
+    bool operator!=(const GeoDataCoordinatesPrivate& rhs) const;
 
-    static Quaternion basePoint( const Quaternion &q1, const Quaternion &q2, const Quaternion &q3 );
+    static Quaternion basePoint(const Quaternion& q1, const Quaternion& q2, const Quaternion& q3);
 
     // Helper functions for UTM-related development.
     // Based on Chuck Taylor work:
@@ -119,7 +125,7 @@ public:
      * @param phi Latitude of the point, in radians.
      * @return The ellipsoidal distance of the point from the equator, in meters.
      */
-    static qreal arcLengthOfMeridian( qreal phi );
+    static qreal arcLengthOfMeridian(qreal phi);
 
     /**
      * Determines the central meridian for the given UTM zone.
@@ -129,7 +135,7 @@ public:
      * if the UTM zone parameter is outside the range [1,60].
      * Range of the central meridian is the radian equivalent of [-177,+177].
      */
-    static qreal centralMeridianUTM( qreal zone );
+    static qreal centralMeridianUTM(qreal zone);
 
     /**
      * Computes the footpoint latitude for use in converting transverse
@@ -141,7 +147,7 @@ public:
      * @param northing The UTM northing coordinate, in meters.
      * @return The footpoint latitude, in radians.
      */
-    static qreal footpointLatitude( qreal northing );
+    static qreal footpointLatitude(qreal northing);
 
     /**
      * Converts a latitude/longitude pair to x and y coordinates in the
@@ -156,7 +162,7 @@ public:
      * @param lambda0 Longitude of the central meridian to be used, in radians.
      * @return The computed point with its x and y coordinates
      */
-    static QPointF mapLonLatToXY( qreal lambda, qreal phi, qreal lambda0 );
+    static QPointF mapLonLatToXY(qreal lambda, qreal phi, qreal lambda0);
 
     /**
      * Converts a latitude/longitude pair to x and y coordinates in the
@@ -169,7 +175,7 @@ public:
      * @return A point with its x and y coordinates representing
      * easting and northing of the UTM coordinates computed.
      */
-    static QPointF lonLatToUTMXY( qreal lon, qreal lat, qreal zone );
+    static QPointF lonLatToUTMXY(qreal lon, qreal lat, qreal zone);
 
     /**
      * @brief retrieves the UTM latitude band of a longitude/latitude
@@ -178,7 +184,7 @@ public:
      * @param lat latitude, in radians
      * @return latitude band
      */
-    static QString lonLatToLatitudeBand( qreal lon, qreal lat );
+    static QString lonLatToLatitudeBand(qreal lon, qreal lat);
 
     /**
      * @brief retrieves the northing value of a longitude/latitude
@@ -187,7 +193,7 @@ public:
      * @param lat latitude, in radians
      * @return UTM northing value
      */
-    static qreal lonLatToNorthing( qreal lon, qreal lat );
+    static qreal lonLatToNorthing(qreal lon, qreal lat);
 
     /**
      * @brief retrieves the UTM zone number of a longitude/latitude
@@ -196,7 +202,7 @@ public:
      * @param lat latitude, in radians
      * @return UTM zone number
      */
-    static int lonLatToZone( qreal lon, qreal lat );
+    static int lonLatToZone(qreal lon, qreal lat);
 
     /**
      * @brief  retrieves the easting value of a longitude/latitude
@@ -205,7 +211,7 @@ public:
      * @param lat latitude, in radians
      * @return UTM easting value
      */
-    static qreal lonLatToEasting( qreal lon, qreal lat );
+    static qreal lonLatToEasting(qreal lon, qreal lat);
 
     Quaternion* m_q = nullptr;
     qreal      m_lon;
@@ -221,18 +227,18 @@ public:
     static const qreal sm_utmScaleFactor;
 };
 
-inline bool GeoDataCoordinatesPrivate::operator==( const GeoDataCoordinatesPrivate &rhs ) const
+inline bool GeoDataCoordinatesPrivate::operator==(const GeoDataCoordinatesPrivate& rhs) const
 {
     // do not compare the m_detail member as it does not really belong to
     // GeoDataCoordinates and should be removed
     return m_lon == rhs.m_lon && m_lat == rhs.m_lat && m_altitude == rhs.m_altitude;
 }
 
-inline bool GeoDataCoordinatesPrivate::operator!=( const GeoDataCoordinatesPrivate &rhs ) const
+inline bool GeoDataCoordinatesPrivate::operator!=(const GeoDataCoordinatesPrivate& rhs) const
 {
     // do not compare the m_detail member as it does not really belong to
     // GeoDataCoordinates and should be removed
-    return ! (*this == rhs);
+    return !(*this == rhs);
 }
 
 } // namespace Marble

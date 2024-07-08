@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataFeature_p.h"
+// Local includes
 
+#include "GeoDataFeature_p.h"
 #include "GeoDataPoint.h"
 #include "GeoDataLinearRing.h"
 #include "GeoDataPolygon.h"
@@ -34,13 +35,13 @@ class Q_DECL_HIDDEN GeoDataPlacemarkExtendedData
 public:
 
     GeoDataPlacemarkExtendedData()
-        : m_area( -1.0 ),
-          m_isBalloonVisible( false )
+        : m_area(-1.0),
+          m_isBalloonVisible(false)
     {
         // nothing to do
     }
 
-    GeoDataPlacemarkExtendedData & operator=(const GeoDataPlacemarkExtendedData &other)
+    GeoDataPlacemarkExtendedData& operator=(const GeoDataPlacemarkExtendedData& other)
     {
         m_countrycode = other.m_countrycode;
         m_area = other.m_area;
@@ -49,14 +50,14 @@ public:
         return *this;
     }
 
-    bool operator==(const GeoDataPlacemarkExtendedData &other) const
+    bool operator==(const GeoDataPlacemarkExtendedData& other) const
     {
         return m_countrycode == other.m_countrycode &&
-                m_area == other.m_area &&
-                m_state == other.m_state;
+               m_area == other.m_area &&
+               m_state == other.m_state;
     }
 
-    bool operator!=(const GeoDataPlacemarkExtendedData &other) const
+    bool operator!=(const GeoDataPlacemarkExtendedData& other) const
     {
         return !(*this == other);
     }
@@ -74,26 +75,29 @@ class Q_DECL_HIDDEN GeoDataPlacemarkPrivate : public GeoDataFeaturePrivate
 public:
 
     GeoDataPlacemarkPrivate()
-      : m_geometry(new GeoDataPoint),
-        m_population( -1 ),
-        m_placemarkExtendedData(nullptr),
-        m_visualCategory(GeoDataPlacemark::Default),
-        m_osmPlacemarkData(nullptr)
+        : m_geometry(new GeoDataPoint),
+          m_population(-1),
+          m_placemarkExtendedData(nullptr),
+          m_visualCategory(GeoDataPlacemark::Default),
+          m_osmPlacemarkData(nullptr)
     {
     }
 
     GeoDataPlacemarkPrivate(const GeoDataPlacemarkPrivate& other)
-      : GeoDataFeaturePrivate(other),
-        m_geometry(other.m_geometry->copy()),
-        m_population(other.m_population),
-        m_placemarkExtendedData(nullptr),
-        m_visualCategory(other.m_visualCategory),
-        m_osmPlacemarkData(nullptr)
+        : GeoDataFeaturePrivate(other),
+          m_geometry(other.m_geometry->copy()),
+          m_population(other.m_population),
+          m_placemarkExtendedData(nullptr),
+          m_visualCategory(other.m_visualCategory),
+          m_osmPlacemarkData(nullptr)
     {
-        if (other.m_placemarkExtendedData) {
+        if (other.m_placemarkExtendedData)
+        {
             m_placemarkExtendedData = new GeoDataPlacemarkExtendedData(*other.m_placemarkExtendedData);
         }
-        if (other.m_osmPlacemarkData) {
+
+        if (other.m_osmPlacemarkData)
+        {
             m_osmPlacemarkData = new OsmPlacemarkData(*other.m_osmPlacemarkData);
         }
     }
@@ -105,13 +109,14 @@ public:
         delete m_osmPlacemarkData;
     }
 
-    GeoDataPlacemarkPrivate& operator=( const GeoDataPlacemarkPrivate& other )
+    GeoDataPlacemarkPrivate& operator=(const GeoDataPlacemarkPrivate& other)
     {
-        if ( this == &other ) {
+        if (this == &other)
+        {
             return *this;
         }
 
-        GeoDataFeaturePrivate::operator=( other );
+        GeoDataFeaturePrivate::operator=(other);
 
         m_population = other.m_population;
         m_visualCategory = other.m_visualCategory;
@@ -121,16 +126,26 @@ public:
         // TODO: why not set parent here to geometry?
 
         delete m_placemarkExtendedData;
-        if (other.m_placemarkExtendedData) {
+
+        if (other.m_placemarkExtendedData)
+        {
             m_placemarkExtendedData = new GeoDataPlacemarkExtendedData(*other.m_placemarkExtendedData);
-        } else {
+        }
+
+        else
+        {
             m_placemarkExtendedData = nullptr;
         }
 
         delete m_osmPlacemarkData;
-        if (other.m_osmPlacemarkData) {
+
+        if (other.m_osmPlacemarkData)
+        {
             m_osmPlacemarkData = new OsmPlacemarkData(*other.m_osmPlacemarkData);
-        } else {
+        }
+
+        else
+        {
             m_osmPlacemarkData = nullptr;
         }
 
@@ -142,29 +157,32 @@ public:
         return GeoDataPlacemarkId;
     }
 
-    GeoDataPlacemarkExtendedData & placemarkExtendedData()
+    GeoDataPlacemarkExtendedData& placemarkExtendedData()
     {
-        if (!m_placemarkExtendedData) {
+        if (!m_placemarkExtendedData)
+        {
             m_placemarkExtendedData = new GeoDataPlacemarkExtendedData;
         }
 
         return *m_placemarkExtendedData;
     }
 
-    const GeoDataPlacemarkExtendedData & placemarkExtendedData() const
+    const GeoDataPlacemarkExtendedData& placemarkExtendedData() const
     {
         return m_placemarkExtendedData ? *m_placemarkExtendedData : s_nullPlacemarkExtendedData;
     }
 
-    OsmPlacemarkData & osmPlacemarkData()
+    OsmPlacemarkData& osmPlacemarkData()
     {
-        if (!m_osmPlacemarkData) {
+        if (!m_osmPlacemarkData)
+        {
             m_osmPlacemarkData = new OsmPlacemarkData;
         }
+
         return *m_osmPlacemarkData;
     }
 
-    const OsmPlacemarkData & osmPlacemarkData() const
+    const OsmPlacemarkData& osmPlacemarkData() const
     {
         return m_osmPlacemarkData ? *m_osmPlacemarkData : s_nullOsmPlacemarkData;
     }

@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataFeature.h"
+// Local includes
 
+#include "GeoDataFeature.h"
 #include "digikam_export.h"
 
 class QColor;
@@ -36,23 +37,23 @@ public:
 
     ~GeoDataOverlay() override;
 
-    GeoDataOverlay( const GeoDataOverlay &other );
+    GeoDataOverlay(const GeoDataOverlay& other);
 
-    GeoDataOverlay& operator=( const GeoDataOverlay &other );
+    GeoDataOverlay& operator=(const GeoDataOverlay& other);
 
     QColor color() const;
 
-    void setColor( const QColor &color );
+    void setColor(const QColor& color);
 
     int drawOrder() const;
 
-    void setDrawOrder( int order );
+    void setDrawOrder(int order);
 
     QImage icon() const;
 
-    void setIcon( const QImage &icon );
+    void setIcon(const QImage& icon);
 
-    void setIconFile( const QString &path );
+    void setIconFile(const QString& path);
 
     QString iconFile() const;
 
@@ -65,10 +66,10 @@ public:
 
 protected:
 
-    explicit GeoDataOverlay(GeoDataOverlayPrivate *priv);
-    GeoDataOverlay(const GeoDataOverlay& other, GeoDataOverlayPrivate *priv);
+    explicit GeoDataOverlay(GeoDataOverlayPrivate* priv);
+    GeoDataOverlay(const GeoDataOverlay& other, GeoDataOverlayPrivate* priv);
 
-    bool equals(const GeoDataOverlay &other) const;
+    bool equals(const GeoDataOverlay& other) const;
     using GeoDataFeature::equals;
 
 private:

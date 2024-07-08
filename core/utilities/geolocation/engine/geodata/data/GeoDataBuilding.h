@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
+
+// Local includes
 
 #include "GeoDataGeometry.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -41,8 +44,8 @@ class DIGIKAM_EXPORT GeoDataBuilding : public GeoDataGeometry
 public:
 
     explicit GeoDataBuilding();
-    explicit GeoDataBuilding(const GeoDataGeometry &other);
-    explicit GeoDataBuilding(const GeoDataBuilding &other);
+    explicit GeoDataBuilding(const GeoDataGeometry& other);
+    explicit GeoDataBuilding(const GeoDataBuilding& other);
 
     struct NamedEntry
     {
@@ -50,13 +53,13 @@ public:
         QString label;
     };
 
-    GeoDataBuilding& operator=(const GeoDataBuilding &other);
+    GeoDataBuilding& operator=(const GeoDataBuilding& other);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
     static double parseBuildingHeight(const QString& buildingHeight);
 

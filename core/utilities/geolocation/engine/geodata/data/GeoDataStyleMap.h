@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QMap>
 
-#include "GeoDataStyleSelector.h"
+// Local includes
 
+#include "GeoDataStyleSelector.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -38,7 +41,7 @@ class GeoDataStyleMapPrivate;
  * @see GeoDataStyleSelector
  */
 class DIGIKAM_EXPORT GeoDataStyleMap : public GeoDataStyleSelector,
-                                       public QMap<QString, QString>
+    public QMap<QString, QString>
 {
 public:
 
@@ -56,30 +59,30 @@ public:
     * and add both to this map
     * @param key the last key
     */
-    void setLastKey( const QString& key );
+    void setLastKey(const QString& key);
 
     /**
     * @brief assignment operator
     * @param other the styleMap which gets duplicated.
     */
-    GeoDataStyleMap& operator=( const GeoDataStyleMap& other );
+    GeoDataStyleMap& operator=(const GeoDataStyleMap& other);
 
-    bool operator==( const GeoDataStyleMap &other ) const;
-    bool operator!=( const GeoDataStyleMap &other ) const;
+    bool operator==(const GeoDataStyleMap& other) const;
+    bool operator!=(const GeoDataStyleMap& other) const;
 
     /**
      * @brief Serialize the stylemap to a stream
      * @param  stream  the stream
      */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /**
      * @brief  Unserialize the stylemap from a stream
      * @param  stream  the stream
      */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     GeoDataStyleMap();
-    GeoDataStyleMap( const GeoDataStyleMap& other );
+    GeoDataStyleMap(const GeoDataStyleMap& other);
     ~GeoDataStyleMap() override;
 
 private:

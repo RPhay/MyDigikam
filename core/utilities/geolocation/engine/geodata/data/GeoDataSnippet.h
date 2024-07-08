@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -32,13 +36,13 @@ public:
      * @param text the text
      * @param maxLines the maximum nuber of lines
      */
-    explicit GeoDataSnippet( const QString &text = QString() , int maxLines = 0 );
+    explicit GeoDataSnippet(const QString& text = QString(), int maxLines = 0);
 
     /**
      * Check for equality/inequality between two GeoDataSnippets.
      */
-    bool operator==( const GeoDataSnippet &other ) const;
-    bool operator!=( const GeoDataSnippet &other ) const;
+    bool operator==(const GeoDataSnippet& other) const;
+    bool operator!=(const GeoDataSnippet& other) const;
 
     /**
      * Return the number of lines that should be displayed at maximum. The value
@@ -49,7 +53,7 @@ public:
     /**
      * Set the number of lines displayed at maximum.
      */
-    void setMaxLines( int lines );
+    void setMaxLines(int lines);
 
     /**
      * Returns the text that is associated with this snippet.
@@ -59,7 +63,7 @@ public:
     /**
      * Set the text that the snippet will display.
      */
-    void setText( const QString &text );
+    void setText(const QString& text);
 
 private:
 

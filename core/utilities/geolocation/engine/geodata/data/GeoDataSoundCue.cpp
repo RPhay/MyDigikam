@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "GeoDataSoundCue.h"
+
+// Local includes
+
 #include "GeoDataTypes.h"
 
 namespace Marble
@@ -38,7 +41,7 @@ GeoDataSoundCue::~GeoDataSoundCue()
 {
 }
 
-const char *GeoDataSoundCue::nodeType() const
+const char* GeoDataSoundCue::nodeType() const
 {
     return GeoDataTypes::GeoDataSoundCueType;
 }
@@ -48,7 +51,7 @@ QString GeoDataSoundCue::href() const
     return m_href;
 }
 
-void GeoDataSoundCue::setHref(const QString &url)
+void GeoDataSoundCue::setHref(const QString& url)
 {
     m_href = url;
 }

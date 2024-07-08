@@ -16,7 +16,11 @@
 #include "GeoDataModel.h"
 #include "GeoDataGeometry_p.h"
 
+// C++ includes
+
 #include <cstdio>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 #include "GeoDataLocation.h"
@@ -33,7 +37,10 @@ public:
 
     GeoDataModelPrivate();
 
-    GeoDataGeometryPrivate *copy() const override { return new GeoDataModelPrivate( *this ); }
+    GeoDataGeometryPrivate* copy() const override
+    {
+        return new GeoDataModelPrivate(*this);
+    }
 
     GeoDataCoordinates m_coordinates;
 
@@ -59,24 +66,24 @@ GeoDataModelPrivate::GeoDataModelPrivate()
 }
 
 GeoDataModel::GeoDataModel()
-    : GeoDataGeometry( new GeoDataModelPrivate )
+    : GeoDataGeometry(new GeoDataModelPrivate)
 {
-    setAltitudeMode( ClampToGround );
+    setAltitudeMode(ClampToGround);
 }
 
-GeoDataModel::GeoDataModel( const GeoDataModel &other ) :
-    GeoDataGeometry( other )
+GeoDataModel::GeoDataModel(const GeoDataModel& other) :
+    GeoDataGeometry(other)
 {
     // nothing to do
 }
 
-GeoDataModel &GeoDataModel::operator=( const GeoDataModel &other )
+GeoDataModel& GeoDataModel::operator=(const GeoDataModel& other)
 {
-    GeoDataGeometry::operator=( other );
+    GeoDataGeometry::operator=(other);
     return *this;
 }
 
-const char *GeoDataModel::nodeType() const
+const char* GeoDataModel::nodeType() const
 {
     return GeoDataTypes::GeoDataModelType;
 }
@@ -86,15 +93,15 @@ EnumGeometryId GeoDataModel::geometryId() const
     return GeoDataModelId;
 }
 
-GeoDataGeometry *GeoDataModel::copy() const
+GeoDataGeometry* GeoDataModel::copy() const
 {
     return new GeoDataModel(*this);
 }
 
-bool GeoDataModel::operator==( const GeoDataModel &other ) const
+bool GeoDataModel::operator==(const GeoDataModel& other) const
 {
     Q_D(const GeoDataModel);
-    const GeoDataModelPrivate *other_d = other.d_func();
+    const GeoDataModelPrivate* other_d = other.d_func();
 
     return equals(other) &&
            d->m_coordinates == other_d->m_coordinates &&
@@ -107,22 +114,22 @@ bool GeoDataModel::operator==( const GeoDataModel &other ) const
            d->m_sourceHref == other_d->m_sourceHref;
 }
 
-bool GeoDataModel::operator!=( const GeoDataModel &other ) const
+bool GeoDataModel::operator!=(const GeoDataModel& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 GeoDataModel::~GeoDataModel()
 {
 }
 
-const GeoDataCoordinates &GeoDataModel::coordinates() const
+const GeoDataCoordinates& GeoDataModel::coordinates() const
 {
     Q_D(const GeoDataModel);
     return d->m_coordinates;
 }
 
-GeoDataCoordinates &GeoDataModel::coordinates()
+GeoDataCoordinates& GeoDataModel::coordinates()
 {
     detach();
 
@@ -130,13 +137,13 @@ GeoDataCoordinates &GeoDataModel::coordinates()
     return d->m_coordinates;
 }
 
-const GeoDataLocation &GeoDataModel::location() const
+const GeoDataLocation& GeoDataModel::location() const
 {
     Q_D(const GeoDataModel);
     return d->m_location;
 }
 
-GeoDataLocation &GeoDataModel::location()
+GeoDataLocation& GeoDataModel::location()
 {
     detach();
 
@@ -144,7 +151,7 @@ GeoDataLocation &GeoDataModel::location()
     return d->m_location;
 }
 
-void GeoDataModel::setCoordinates(const GeoDataCoordinates &coordinates)
+void GeoDataModel::setCoordinates(const GeoDataCoordinates& coordinates)
 {
     detach();
 
@@ -152,7 +159,7 @@ void GeoDataModel::setCoordinates(const GeoDataCoordinates &coordinates)
     d->m_coordinates = coordinates;
 }
 
-void GeoDataModel::setLocation(const GeoDataLocation &location)
+void GeoDataModel::setLocation(const GeoDataLocation& location)
 {
     detach();
 
@@ -160,13 +167,13 @@ void GeoDataModel::setLocation(const GeoDataLocation &location)
     d->m_location = location;
 }
 
-const GeoDataLink &GeoDataModel::link() const
+const GeoDataLink& GeoDataModel::link() const
 {
     Q_D(const GeoDataModel);
     return d->m_link;
 }
 
-GeoDataLink &GeoDataModel::link()
+GeoDataLink& GeoDataModel::link()
 {
     detach();
 
@@ -174,7 +181,7 @@ GeoDataLink &GeoDataModel::link()
     return d->m_link;
 }
 
-void GeoDataModel::setLink( const GeoDataLink &link )
+void GeoDataModel::setLink(const GeoDataLink& link)
 {
     detach();
 
@@ -182,13 +189,13 @@ void GeoDataModel::setLink( const GeoDataLink &link )
     d->m_link = link;
 }
 
-const GeoDataScale &GeoDataModel::scale() const
+const GeoDataScale& GeoDataModel::scale() const
 {
     Q_D(const GeoDataModel);
     return d->m_scale;
 }
 
-GeoDataScale &GeoDataModel::scale()
+GeoDataScale& GeoDataModel::scale()
 {
     detach();
 
@@ -196,7 +203,7 @@ GeoDataScale &GeoDataModel::scale()
     return d->m_scale;
 }
 
-void GeoDataModel::setScale(const GeoDataScale &scale)
+void GeoDataModel::setScale(const GeoDataScale& scale)
 {
     detach();
 
@@ -204,13 +211,13 @@ void GeoDataModel::setScale(const GeoDataScale &scale)
     d->m_scale = scale;
 }
 
-const GeoDataOrientation &GeoDataModel::orientation() const
+const GeoDataOrientation& GeoDataModel::orientation() const
 {
     Q_D(const GeoDataModel);
     return d->m_orientation;
 }
 
-GeoDataOrientation &GeoDataModel::orientation()
+GeoDataOrientation& GeoDataModel::orientation()
 {
     detach();
 
@@ -218,7 +225,7 @@ GeoDataOrientation &GeoDataModel::orientation()
     return d->m_orientation;
 }
 
-void GeoDataModel::setOrientation(const GeoDataOrientation &orientation)
+void GeoDataModel::setOrientation(const GeoDataOrientation& orientation)
 {
     detach();
 
@@ -226,13 +233,13 @@ void GeoDataModel::setOrientation(const GeoDataOrientation &orientation)
     d->m_orientation = orientation;
 }
 
-const GeoDataResourceMap &GeoDataModel::resourceMap() const
+const GeoDataResourceMap& GeoDataModel::resourceMap() const
 {
     Q_D(const GeoDataModel);
     return d->m_map;
 }
 
-GeoDataResourceMap &GeoDataModel::resourceMap()
+GeoDataResourceMap& GeoDataModel::resourceMap()
 {
     detach();
 
@@ -240,7 +247,7 @@ GeoDataResourceMap &GeoDataModel::resourceMap()
     return d->m_map;
 }
 
-void GeoDataModel::setResourceMap(const GeoDataResourceMap &map)
+void GeoDataModel::setResourceMap(const GeoDataResourceMap& map)
 {
     detach();
 
@@ -254,12 +261,12 @@ QString GeoDataModel::targetHref() const
     return d->m_map.targetHref();
 }
 
-void GeoDataModel::setTargetHref(const QString &targetHref)
+void GeoDataModel::setTargetHref(const QString& targetHref)
 {
     detach();
 
     Q_D(GeoDataModel);
-    d->m_map.setTargetHref( targetHref );
+    d->m_map.setTargetHref(targetHref);
 }
 
 QString GeoDataModel::sourceHref() const
@@ -268,12 +275,12 @@ QString GeoDataModel::sourceHref() const
     return d->m_map.sourceHref();
 }
 
-void GeoDataModel::setSourceHref(const QString &sourceHref)
+void GeoDataModel::setSourceHref(const QString& sourceHref)
 {
     detach();
 
     Q_D(GeoDataModel);
-    d->m_map.setSourceHref( sourceHref );
+    d->m_map.setSourceHref(sourceHref);
 }
 
 } // namespace Marble

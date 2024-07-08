@@ -16,24 +16,27 @@
 #include "GeoDataDocument.h"
 #include "GeoDataDocument_p.h"
 
+// Qt includes
+
 #include <QDataStream>
+
+// Local includes
 
 #include "GeoDataStyleMap.h"
 #include "GeoDataNetworkLinkControl.h"
 #include "GeoDataSchema.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
 GeoDataDocument::GeoDataDocument()
-    : GeoDataContainer( new GeoDataDocumentPrivate )
+    : GeoDataContainer(new GeoDataDocumentPrivate)
 {
 }
 
-GeoDataDocument::GeoDataDocument( const GeoDataDocument& other )
-    : GeoDocument     (),
+GeoDataDocument::GeoDataDocument(const GeoDataDocument& other)
+    : GeoDocument(),
       GeoDataContainer(other, new GeoDataDocumentPrivate(*other.d_func()))
 {
 }
@@ -54,7 +57,7 @@ GeoDataDocument& GeoDataDocument::operator=(const GeoDataDocument& other)
     return *this;
 }
 
-bool GeoDataDocument::operator==( const GeoDataDocument &other ) const
+bool GeoDataDocument::operator==(const GeoDataDocument& other) const
 {
     if (!GeoDataContainer::equals(other))
     {
@@ -80,7 +83,7 @@ bool GeoDataDocument::operator==( const GeoDataDocument &other ) const
     auto iter      = d->m_styleHash.constBegin();
     auto const end = d->m_styleHash.constEnd();
 
-    for ( ; iter != end ; ++iter)
+    for (; iter != end ; ++iter)
     {
         if (!other_d->m_styleHash.contains(iter.key()))
         {
@@ -96,9 +99,9 @@ bool GeoDataDocument::operator==( const GeoDataDocument &other ) const
     return true;
 }
 
-bool GeoDataDocument::operator!=( const GeoDataDocument &other ) const
+bool GeoDataDocument::operator!=(const GeoDataDocument& other) const
 {
-    return !this->operator==( other );
+    return !this->operator==(other);
 }
 
 const char* GeoDataDocument::nodeType() const
@@ -106,7 +109,7 @@ const char* GeoDataDocument::nodeType() const
     return GeoDataTypes::GeoDataDocumentType;
 }
 
-GeoDataFeature * GeoDataDocument::clone() const
+GeoDataFeature* GeoDataDocument::clone() const
 {
     return new GeoDataDocument(*this);
 }
@@ -118,7 +121,7 @@ DocumentRole GeoDataDocument::documentRole() const
     return d->m_documentRole;
 }
 
-void GeoDataDocument::setDocumentRole( DocumentRole role )
+void GeoDataDocument::setDocumentRole(DocumentRole role)
 {
     Q_D(GeoDataDocument);
 
@@ -131,7 +134,7 @@ QString GeoDataDocument::property() const
     return d->m_property;
 }
 
-void GeoDataDocument::setProperty( const QString& property )
+void GeoDataDocument::setProperty(const QString& property)
 {
     Q_D(GeoDataDocument);
 
@@ -145,7 +148,7 @@ QString GeoDataDocument::fileName() const
     return d->m_filename;
 }
 
-void GeoDataDocument::setFileName( const QString &value )
+void GeoDataDocument::setFileName(const QString& value)
 {
     Q_D(GeoDataDocument);
 
@@ -159,7 +162,7 @@ QString GeoDataDocument::baseUri() const
     return d->m_baseUri;
 }
 
-void GeoDataDocument::setBaseUri( const QString &baseUrl )
+void GeoDataDocument::setBaseUri(const QString& baseUrl)
 {
     Q_D(GeoDataDocument);
 
@@ -173,14 +176,14 @@ GeoDataNetworkLinkControl GeoDataDocument::networkLinkControl() const
     return d->m_networkLinkControl;
 }
 
-void GeoDataDocument::setNetworkLinkControl( const GeoDataNetworkLinkControl &networkLinkControl )
+void GeoDataDocument::setNetworkLinkControl(const GeoDataNetworkLinkControl& networkLinkControl)
 {
     Q_D(GeoDataDocument);
 
     d->m_networkLinkControl = networkLinkControl;
 }
 
-void GeoDataDocument::addStyle( const GeoDataStyle::Ptr &style )
+void GeoDataDocument::addStyle(const GeoDataStyle::Ptr& style)
 {
     Q_D(GeoDataDocument);
 
@@ -188,14 +191,14 @@ void GeoDataDocument::addStyle( const GeoDataStyle::Ptr &style )
     d->m_styleHash[style->id()]->setParent(this);
 }
 
-void GeoDataDocument::removeStyle( const QString& styleId )
+void GeoDataDocument::removeStyle(const QString& styleId)
 {
     Q_D(GeoDataDocument);
 
     d->m_styleHash.remove(styleId);
 }
 
-GeoDataStyle::Ptr GeoDataDocument::style( const QString& styleId )
+GeoDataStyle::Ptr GeoDataDocument::style(const QString& styleId)
 {
     /*
      * FIXME: m_styleHash always should contain at least default
@@ -206,7 +209,7 @@ GeoDataStyle::Ptr GeoDataDocument::style( const QString& styleId )
     return d->m_styleHash[styleId];
 }
 
-GeoDataStyle::ConstPtr GeoDataDocument::style( const QString &styleId ) const
+GeoDataStyle::ConstPtr GeoDataDocument::style(const QString& styleId) const
 {
     Q_D(const GeoDataDocument);
 
@@ -219,7 +222,7 @@ QList<GeoDataStyle::ConstPtr> GeoDataDocument::styles() const
 
     QList<GeoDataStyle::ConstPtr> result;
 
-    for (auto const & style: d->m_styleHash.values())
+    for (auto const& style : d->m_styleHash.values())
     {
         result << style;
     }
@@ -234,7 +237,7 @@ QList<GeoDataStyle::Ptr> GeoDataDocument::styles()
     return d->m_styleHash.values();
 }
 
-void GeoDataDocument::addStyleMap( const GeoDataStyleMap& map )
+void GeoDataDocument::addStyleMap(const GeoDataStyleMap& map)
 {
     Q_D(GeoDataDocument);
 
@@ -242,21 +245,21 @@ void GeoDataDocument::addStyleMap( const GeoDataStyleMap& map )
     d->m_styleMapHash[map.id()].setParent(this);
 }
 
-void GeoDataDocument::removeStyleMap( const QString& mapId )
+void GeoDataDocument::removeStyleMap(const QString& mapId)
 {
     Q_D(GeoDataDocument);
 
     d->m_styleMapHash.remove(mapId);
 }
 
-GeoDataStyleMap& GeoDataDocument::styleMap( const QString& styleId )
+GeoDataStyleMap& GeoDataDocument::styleMap(const QString& styleId)
 {
     Q_D(GeoDataDocument);
 
     return d->m_styleMapHash[styleId];
 }
 
-GeoDataStyleMap GeoDataDocument::styleMap( const QString &styleId ) const
+GeoDataStyleMap GeoDataDocument::styleMap(const QString& styleId) const
 {
     Q_D(const GeoDataDocument);
 
@@ -270,7 +273,7 @@ QList<GeoDataStyleMap> GeoDataDocument::styleMaps() const
     return d->m_styleMapHash.values();
 }
 
-void GeoDataDocument::addSchema( const GeoDataSchema& schema )
+void GeoDataDocument::addSchema(const GeoDataSchema& schema)
 {
     Q_D(GeoDataDocument);
 
@@ -278,22 +281,22 @@ void GeoDataDocument::addSchema( const GeoDataSchema& schema )
     d->m_schemaHash[schema.id()].setParent(this);
 }
 
-void GeoDataDocument::removeSchema( const QString& schemaId )
+void GeoDataDocument::removeSchema(const QString& schemaId)
 {
     Q_D(GeoDataDocument);
 
     GeoDataSchema schema = d->m_schemaHash.take(schemaId);
-    schema.setParent( nullptr );
+    schema.setParent(nullptr);
 }
 
-GeoDataSchema GeoDataDocument::schema( const QString& schemaId ) const
+GeoDataSchema GeoDataDocument::schema(const QString& schemaId) const
 {
     Q_D(const GeoDataDocument);
 
     return d->m_schemaHash.value(schemaId);
 }
 
-GeoDataSchema &GeoDataDocument::schema( const QString &schemaId )
+GeoDataSchema& GeoDataDocument::schema(const QString& schemaId)
 {
     Q_D(GeoDataDocument);
 
@@ -307,37 +310,37 @@ QList<GeoDataSchema> GeoDataDocument::schemas() const
     return d->m_schemaHash.values();
 }
 
-void GeoDataDocument::pack( QDataStream& stream ) const
+void GeoDataDocument::pack(QDataStream& stream) const
 {
     Q_D(const GeoDataDocument);
 
-    GeoDataContainer::pack( stream );
+    GeoDataContainer::pack(stream);
 
     stream << d->m_styleHash.size();
 
-    for( QMap<QString, GeoDataStyle::Ptr>::const_iterator iterator
-          = d->m_styleHash.constBegin();
-        iterator != d->m_styleHash.constEnd();
-        ++iterator )
+    for (QMap<QString, GeoDataStyle::Ptr>::const_iterator iterator
+         = d->m_styleHash.constBegin();
+         iterator != d->m_styleHash.constEnd();
+         ++iterator)
     {
-        iterator.value()->pack( stream );
+        iterator.value()->pack(stream);
     }
 }
 
-void GeoDataDocument::unpack( QDataStream& stream )
+void GeoDataDocument::unpack(QDataStream& stream)
 {
     Q_D(GeoDataDocument);
 
-    GeoDataContainer::unpack( stream );
+    GeoDataContainer::unpack(stream);
 
     int size = 0;
 
     stream >> size;
 
-    for( int i = 0 ; i < size ; i++ )
+    for (int i = 0 ; i < size ; i++)
     {
         GeoDataStyle::Ptr style(new GeoDataStyle);
-        style->unpack( stream );
+        style->unpack(stream);
         d->m_styleHash.insert(style->id(), style);
     }
 }

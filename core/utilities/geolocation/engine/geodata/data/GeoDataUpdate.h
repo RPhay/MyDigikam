@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataObject.h"
+// Local includes
 
+#include "GeoDataObject.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -34,11 +35,11 @@ class DIGIKAM_EXPORT GeoDataUpdate : public GeoDataObject
 public:
     GeoDataUpdate();
 
-    GeoDataUpdate( const GeoDataUpdate &other );
+    GeoDataUpdate(const GeoDataUpdate& other);
 
-    GeoDataUpdate& operator=( const GeoDataUpdate &other );
-    bool operator==( const GeoDataUpdate &other ) const;
-    bool operator!=( const GeoDataUpdate &other ) const;
+    GeoDataUpdate& operator=(const GeoDataUpdate& other);
+    bool operator==(const GeoDataUpdate& other) const;
+    bool operator!=(const GeoDataUpdate& other) const;
 
     ~GeoDataUpdate() override;
 
@@ -46,19 +47,19 @@ public:
     const char* nodeType() const override;
 
     QString targetHref() const;
-    void setTargetHref( const QString &targetHref );
+    void setTargetHref(const QString& targetHref);
 
-    const GeoDataChange *change() const;
-    GeoDataChange *change();
-    void setChange( GeoDataChange* change );
+    const GeoDataChange* change() const;
+    GeoDataChange* change();
+    void setChange(GeoDataChange* change);
 
-    const GeoDataCreate *create() const;
-    GeoDataCreate *create();
-    void setCreate( GeoDataCreate* create );
+    const GeoDataCreate* create() const;
+    GeoDataCreate* create();
+    void setCreate(GeoDataCreate* create);
 
-    const GeoDataDelete *getDelete() const;
-    GeoDataDelete *getDelete();
-    void setDelete( GeoDataDelete* dataDelete );
+    const GeoDataDelete* getDelete() const;
+    GeoDataDelete* getDelete();
+    void setDelete(GeoDataDelete* dataDelete);
 
 private:
 

@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataFeature.h"
+// Local includes
 
+#include "GeoDataFeature.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -38,10 +39,10 @@ public:
 
     GeoDataTour& operator=(const GeoDataTour& other);
 
-    bool operator==(const GeoDataTour &other) const;
-    bool operator!=(const GeoDataTour &other) const;
+    bool operator==(const GeoDataTour& other) const;
+    bool operator!=(const GeoDataTour& other) const;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
     GeoDataPlaylist* playlist();
     const GeoDataPlaylist* playlist() const;

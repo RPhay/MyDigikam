@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 
-#include "GeoDataGeometry.h"
+// Local includes
 
+#include "GeoDataGeometry.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -32,26 +35,26 @@ class DIGIKAM_EXPORT GeoDataMultiTrack : public GeoDataGeometry
 public:
 
     GeoDataMultiTrack();
-    explicit GeoDataMultiTrack( const GeoDataGeometry& other );
+    explicit GeoDataMultiTrack(const GeoDataGeometry& other);
 
     ~GeoDataMultiTrack() override;
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
-    bool operator==( const GeoDataMultiTrack& other ) const;
-    bool operator!=( const GeoDataMultiTrack& other ) const;
+    bool operator==(const GeoDataMultiTrack& other) const;
+    bool operator!=(const GeoDataMultiTrack& other) const;
 
     const GeoDataLatLonAltBox& latLonAltBox() const override;
 
     int size() const;
-    GeoDataTrack& at( int pos );
-    const GeoDataTrack& at( int pos ) const;
-    GeoDataTrack& operator[]( int pos );
-    const GeoDataTrack& operator[]( int pos ) const;
+    GeoDataTrack& at(int pos);
+    const GeoDataTrack& at(int pos) const;
+    GeoDataTrack& operator[](int pos);
+    const GeoDataTrack& operator[](int pos) const;
 
     GeoDataTrack& first();
     const GeoDataTrack& first() const;
@@ -61,24 +64,24 @@ public:
     /**
      * @brief  returns the requested child item
      */
-    GeoDataTrack* child( int );
+    GeoDataTrack* child(int);
 
     /**
      * @brief  returns the requested child item
      */
-    const GeoDataTrack* child( int ) const;
+    const GeoDataTrack* child(int) const;
 
     /**
      * @brief returns the position of an item in the list
      */
-    int childPosition( const GeoDataTrack *child ) const;
+    int childPosition(const GeoDataTrack* child) const;
 
     /**
     * @brief add an element
     */
-    void append( GeoDataTrack *other );
+    void append(GeoDataTrack* other);
 
-    GeoDataMultiTrack& operator << ( const GeoDataTrack& value );
+    GeoDataMultiTrack& operator << (const GeoDataTrack& value);
 
     QVector<GeoDataTrack*>::Iterator begin();
     QVector<GeoDataTrack*>::Iterator end();
@@ -87,14 +90,14 @@ public:
     void clear();
     QVector<GeoDataTrack> vector() const;
 
-    QVector<GeoDataTrack*>::Iterator erase ( QVector<GeoDataTrack*>::Iterator pos );
-    QVector<GeoDataTrack*>::Iterator erase ( QVector<GeoDataTrack*>::Iterator begin,
-                                                  QVector<GeoDataTrack*>::Iterator end );
+    QVector<GeoDataTrack*>::Iterator erase(QVector<GeoDataTrack*>::Iterator pos);
+    QVector<GeoDataTrack*>::Iterator erase(QVector<GeoDataTrack*>::Iterator begin,
+                                           QVector<GeoDataTrack*>::Iterator end);
 
     // Serialize the Placemark to @p stream
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     // Unserialize the Placemark from @p stream
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 

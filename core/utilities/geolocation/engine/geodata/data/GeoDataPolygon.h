@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "GeoDataGeometry.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -86,29 +89,29 @@ public:
     /*!
      \brief Creates a new Polygon.
     */
-    explicit GeoDataPolygon( TessellationFlags f = NoTessellation );
+    explicit GeoDataPolygon(TessellationFlags f = NoTessellation);
 
     /*!
      \brief Creates a Polygon from an existing geometry object.
     */
-    explicit GeoDataPolygon( const GeoDataGeometry &other );
+    explicit GeoDataPolygon(const GeoDataGeometry& other);
 
     /*!
      \brief Destroys a Polygon.
     */
     ~GeoDataPolygon() override;
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
     EnumGeometryId geometryId() const override;
 
-    GeoDataGeometry *copy() const override;
+    GeoDataGeometry* copy() const override;
 
     /*!
      \brief Returns true/false depending on whether this and other are/are not equal.
     */
-    bool operator==( const GeoDataPolygon &other ) const;
-    bool operator!=( const GeoDataPolygon &other ) const;
+    bool operator==(const GeoDataPolygon& other) const;
+    bool operator!=(const GeoDataPolygon& other) const;
 
     /*!
      \brief Returns whether a Polygon is a closed polygon.
@@ -130,7 +133,7 @@ public:
      If \a tessellate is <code>false</code> then the Polygon's line segments
      are rendered as straight lines in screen coordinate space.
     */
-    void setTessellate( bool tessellate );
+    void setTessellate(bool tessellate);
 
 
     /*!
@@ -141,7 +144,7 @@ public:
     /*!
      \brief Sets the given tessellation flags for a Polygon.
     */
-    void setTessellationFlags( TessellationFlags f );
+    void setTessellationFlags(TessellationFlags f);
 
     /*!
      \brief Returns the smallest latLonAltBox that contains the Polygon.
@@ -153,19 +156,19 @@ public:
      \brief Returns the outer boundary that is represented as a LinearRing.
      \see GeoDataLinearRing
     */
-    GeoDataLinearRing &outerBoundary();
+    GeoDataLinearRing& outerBoundary();
 
     /*!
      \brief Returns the outer boundary that is represented as a LinearRing.
      \see GeoDataLinearRing
     */
-    const GeoDataLinearRing &outerBoundary() const;
+    const GeoDataLinearRing& outerBoundary() const;
 
     /*!
      \brief Sets the given LinearRing as an outer boundary of the Polygon.
      \see GeoDataLinearRing
     */
-    void setOuterBoundary( const GeoDataLinearRing& boundary );
+    void setOuterBoundary(const GeoDataLinearRing& boundary);
 
     /*!
      \brief Returns a set of inner boundaries which are represented as LinearRings.
@@ -183,14 +186,14 @@ public:
      \brief Appends a given LinearRing as an inner boundary of the Polygon.
      \see GeoDataLinearRing
     */
-    void appendInnerBoundary( const GeoDataLinearRing& boundary );
+    void appendInnerBoundary(const GeoDataLinearRing& boundary);
 
     /*!
      \brief Returns whether the given coordinates lie within the polygon.
      \return <code>true</code> if the coordinates lie within the polygon
      (and not in its holes), false otherwise.
     */
-    virtual bool contains( const GeoDataCoordinates &coordinates ) const;
+    virtual bool contains(const GeoDataCoordinates& coordinates) const;
 
     // Serialization
 
@@ -198,13 +201,13 @@ public:
      \brief Serialize the Polygon to a stream.
      \param stream the stream.
     */
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
 
     /*!
      \brief Unserialize the Polygon from a stream.
      \param stream the stream.
     */
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
     int renderOrder() const;
     void setRenderOrder(int);

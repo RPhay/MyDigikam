@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataFeature.h"
 #include "MarbleGlobal.h"
 
@@ -30,23 +32,23 @@ public:
 
     GeoDataNetworkLink();
 
-    GeoDataNetworkLink( const GeoDataNetworkLink &other );
+    GeoDataNetworkLink(const GeoDataNetworkLink& other);
 
-    GeoDataNetworkLink& operator=( const GeoDataNetworkLink &other );
+    GeoDataNetworkLink& operator=(const GeoDataNetworkLink& other);
 
-    bool operator==( const GeoDataNetworkLink &other ) const;
-    bool operator!=( const GeoDataNetworkLink &other ) const;
+    bool operator==(const GeoDataNetworkLink& other) const;
+    bool operator!=(const GeoDataNetworkLink& other) const;
 
     ~GeoDataNetworkLink() override;
 
-    GeoDataFeature * clone() const override;
+    GeoDataFeature* clone() const override;
 
     /** Provides type information for downcasting a GeoNode */
     const char* nodeType() const override;
 
     bool refreshVisibility() const;
 
-    void setRefreshVisibility( bool refreshVisibility );
+    void setRefreshVisibility(bool refreshVisibility);
 
     bool flyToView() const;
 
@@ -56,7 +58,7 @@ public:
 
     const GeoDataLink& link() const;
 
-    void setLink(const GeoDataLink &link);
+    void setLink(const GeoDataLink& link);
 
 private:
 

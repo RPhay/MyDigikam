@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDataGeometry_p.h"
+// Local includes
 
+#include "GeoDataGeometry_p.h"
 #include "GeoDataPoint.h"
 #include "GeoDataPolygon.h"
 #include "GeoDataTrack.h"
@@ -41,23 +42,25 @@ public:
         qDeleteAll(m_vector);
     }
 
-    GeoDataMultiGeometryPrivate& operator=( const GeoDataMultiGeometryPrivate &other)
+    GeoDataMultiGeometryPrivate& operator=(const GeoDataMultiGeometryPrivate& other)
     {
-        GeoDataGeometryPrivate::operator=( other );
+        GeoDataGeometryPrivate::operator=(other);
 
-        qDeleteAll( m_vector );
+        qDeleteAll(m_vector);
         m_vector.clear();
 
         m_vector.reserve(other.m_vector.size());
 
-        for (const GeoDataGeometry *geometry: other.m_vector) {
+        for (const GeoDataGeometry* geometry : other.m_vector)
+        {
 
             m_vector.append(geometry->copy());
         }
+
         return *this;
     }
 
-    GeoDataGeometryPrivate *copy() const override
+    GeoDataGeometryPrivate* copy() const override
     {
         GeoDataMultiGeometryPrivate* copy = new GeoDataMultiGeometryPrivate;
         *copy = *this;

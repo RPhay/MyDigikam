@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QHash>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "GeoDataLatLonBox.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -44,12 +47,12 @@ class GeoDataLineString;
  */
 class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
 {
-    friend bool DIGIKAM_EXPORT operator==( GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs );
+    friend bool DIGIKAM_EXPORT operator==(GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs);
 
- public:
+public:
     GeoDataLatLonAltBox();
-    GeoDataLatLonAltBox( const GeoDataLatLonAltBox & other );
-    GeoDataLatLonAltBox( const GeoDataLatLonBox &other, qreal minAltitude, qreal maxAltitude );
+    GeoDataLatLonAltBox(const GeoDataLatLonAltBox& other);
+    GeoDataLatLonAltBox(const GeoDataLatLonBox& other, qreal minAltitude, qreal maxAltitude);
     /**
      * @brief A LatLonAltBox with the data from a GeoDataCoordinate
      * This way of creating a GeoDataLatLonAltBox sets the north and south
@@ -57,12 +60,12 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
      * resulting in a Box that has a 0 Area. This is useful for building
      * LatLonAltBoxes from GeoDataCoordinates.
      */
-    explicit GeoDataLatLonAltBox( const GeoDataCoordinates & coordinates );
+    explicit GeoDataLatLonAltBox(const GeoDataCoordinates& coordinates);
 
     ~GeoDataLatLonAltBox() override;
 
-    GeoDataLatLonAltBox& operator=( const GeoDataLatLonAltBox& other );
-    GeoDataLatLonAltBox& operator=( const GeoDataCoordinates& other );
+    GeoDataLatLonAltBox& operator=(const GeoDataLatLonAltBox& other);
+    GeoDataLatLonAltBox& operator=(const GeoDataCoordinates& other);
 
     /// Provides type information for downcasting a GeoData
     const char* nodeType() const override;
@@ -71,21 +74,21 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
      * @brief qHash, for using GeoDataLatLonAltBox in a QCache as Key
      * @return the hash of the GeoDataLatLonAltBox
      */
-    uint qHash(const GeoDataLatLonAltBox &);
+    uint qHash(const GeoDataLatLonAltBox&);
 
     /**
      * @brief Get the lower altitude boundary of the bounding box.
      * @return the height of the lower altitude boundary in meters.
      */
     qreal minAltitude() const;
-    void setMinAltitude( const qreal minAltitude );
+    void setMinAltitude(const qreal minAltitude);
 
     /**
      * @brief Get the upper altitude boundary of the bounding box.
      * @return the height of the upper altitude boundary in meters.
      */
     qreal maxAltitude() const;
-    void setMaxAltitude( const qreal maxAltitude );
+    void setMaxAltitude(const qreal maxAltitude);
 
     /**
      * @brief Get the reference system for the altitude.
@@ -93,15 +96,15 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
      * for measuring the altitude.
      */
     AltitudeMode altitudeMode() const;
-    void setAltitudeMode( const AltitudeMode altitudeMode );
+    void setAltitudeMode(const AltitudeMode altitudeMode);
 
-    bool contains( const GeoDataCoordinates & ) const override;
-    bool     contains( const GeoDataLatLonAltBox & ) const;
+    bool contains(const GeoDataCoordinates&) const override;
+    bool     contains(const GeoDataLatLonAltBox&) const;
 
     /**
      * @brief Check if this GeoDataLatLonAltBox intersects with the given one.
      */
-    virtual bool intersects( const GeoDataLatLonAltBox & ) const;
+    virtual bool intersects(const GeoDataLatLonAltBox&) const;
 
     using GeoDataLatLonBox::intersects;
 
@@ -109,7 +112,7 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
      * @brief Create the smallest bounding box from a line string.
      * @return the smallest bounding box that contains the linestring.
      */
-    static GeoDataLatLonAltBox fromLineString( const GeoDataLineString& lineString );
+    static GeoDataLatLonAltBox fromLineString(const GeoDataLineString& lineString);
 
     /**
      * @brief Indicates whether the bounding box only contains a single 2D point ("singularity").
@@ -129,19 +132,19 @@ class DIGIKAM_EXPORT GeoDataLatLonAltBox : public GeoDataLatLonBox
     GeoDataCoordinates center() const override;
 
     /// Serialize the contents of the feature to @p stream.
-    void pack( QDataStream& stream ) const override;
+    void pack(QDataStream& stream) const override;
     /// Unserialize the contents of the feature from @p stream.
-    void unpack( QDataStream& stream ) override;
+    void unpack(QDataStream& stream) override;
 
 private:
 
     GeoDataLatLonAltBoxPrivate* const d = nullptr;
 };
 
-uint DIGIKAM_EXPORT qHash(const GeoDataLatLonAltBox &box, uint seed = 0);
+uint DIGIKAM_EXPORT qHash(const GeoDataLatLonAltBox& box, uint seed = 0);
 
-bool DIGIKAM_EXPORT operator==( GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs );
+bool DIGIKAM_EXPORT operator==(GeoDataLatLonAltBox const& lhs, GeoDataLatLonAltBox const& rhs);
 
 } // namespace Marble
 
-Q_DECLARE_METATYPE( Marble::GeoDataLatLonAltBox )
+Q_DECLARE_METATYPE(Marble::GeoDataLatLonAltBox)
