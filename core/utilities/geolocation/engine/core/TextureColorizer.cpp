@@ -131,8 +131,8 @@ TextureColorizer::TextureColorizer(const QString& seafile,
         shadeGradient.setColorAt(0.75, QColor(Qt::black));
         shadeGradient.setColorAt(1.00, QColor(Qt::black));
 
-        const QRgb* gradientScanLine  = (QRgb*)(gradientImage.scanLine(0));
-        const QRgb* shadingScanLine   = (QRgb*)(shadingImage.scanLine(0));
+        const QRgb* gradientScanLine  = reinterpret_cast<QRgb*>(gradientImage.scanLine(0));
+        const QRgb* shadingScanLine   = reinterpret_cast<QRgb*>(shadingImage.scanLine(0));
 
         for (int i = 0; i < 256; ++i)
         {
@@ -290,8 +290,8 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
         for (int y = yTop; y < itEnd; ++y)
         {
 
-            QRgb*  writeData         = (QRgb*)(origimg->scanLine(y));
-            const QRgb*  coastData   = (QRgb*)(m_coastImage.scanLine(y));
+            QRgb*  writeData         = reinterpret_cast<QRgb*>(origimg->scanLine(y));
+            const QRgb*  coastData   = reinterpret_cast<QRgb*>(m_coastImage.scanLine(y));
 
             uchar* readDataStart     = origimg->scanLine(y);
             const uchar* readDataEnd = readDataStart + imgwidth * 4;
@@ -347,8 +347,8 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
                 xRight = imgrx + rx;
             }
 
-            QRgb*  writeData         = (QRgb*)(origimg->scanLine(y))  + xLeft;
-            const QRgb* coastData    = (QRgb*)(m_coastImage.scanLine(y)) + xLeft;
+            QRgb*  writeData         = reinterpret_cast<QRgb*>(origimg->scanLine(y))     + xLeft;
+            const QRgb* coastData    = reinterpret_cast<QRgb*>(m_coastImage.scanLine(y)) + xLeft;
 
             uchar* readDataStart     = origimg->scanLine(y) + xLeft * 4;
             const uchar* readDataEnd = origimg->scanLine(y) + xRight * 4;

@@ -78,8 +78,8 @@ void SunLightBlending::blend(QImage* const tileImage, TextureTile const* const t
         const qreal a = sin((lat + DEG2RAD * m_sunLocator->getLat()) / 2.0);
         const qreal c = cos(lat) * cos(-DEG2RAD * m_sunLocator->getLat());
 
-        QRgb* scanline  = (QRgb*)tileImage->scanLine(cur_y);
-        const QRgb* nscanline = (QRgb*)nighttile->scanLine(cur_y);
+        QRgb* scanline        = reinterpret_cast<QRgb*>(tileImage->scanLine(cur_y));
+        const QRgb* nscanline = reinterpret_cast<const QRgb*>(nighttile->scanLine(cur_y));
 
         qreal lastShade = -10.0;
 

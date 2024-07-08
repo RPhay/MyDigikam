@@ -15,7 +15,11 @@
 
 #include "TileCreator.h"
 
+// C++ includes
+
 #include <cmath>
+
+// Qt includes
 
 #include <QDir>
 #include <QRect>
@@ -25,10 +29,11 @@
 #include <QImage>
 #include <QPainter>
 
+// Local includes
+
 #include "MarbleGlobal.h"
 #include "MarbleDirs.h"
 #include "TileLoaderHelper.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -486,26 +491,26 @@ void TileCreator::run()
                         QRgb* destLine;
 
                         for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = (QRgb*) tile.scanLine( y );
-                            const QRgb* srcLine = (QRgb*) img_topleft.scanLine( 2 * y );
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topleft.scanLine( 2 * y ));
                             for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
                                 destLine[x] = srcLine[ 2 * x ];
                         }
                         for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = (QRgb*) tile.scanLine( y );
-                            const QRgb* srcLine = (QRgb*) img_topright.scanLine( 2 * y );
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topright.scanLine( 2 * y ));
                             for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
                                 destLine[x] = srcLine[ 2 * ( x - c_defaultTileSize / 2 ) ];
                         }
                         for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = (QRgb*) tile.scanLine( y );
-                            const QRgb* srcLine = (QRgb*) img_bottomleft.scanLine( 2 * ( y-c_defaultTileSize/2 ) );
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomleft.scanLine( 2 * ( y-c_defaultTileSize/2 ) ));
                             for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
                                 destLine[x] = srcLine[ 2 * x ];
                         }
                         for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = (QRgb*) tile.scanLine( y );
-                            const QRgb* srcLine = (QRgb*) img_bottomright.scanLine( 2 * ( y-c_defaultTileSize / 2 ) );
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomright.scanLine( 2 * ( y-c_defaultTileSize / 2 ) ));
                             for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
                                 destLine[x] = srcLine[ 2*( x-c_defaultTileSize / 2 ) ];
                         }
@@ -521,7 +526,7 @@ void TileCreator::run()
                 }
 
                 percentCompleted =  (int) ( 90 * (qreal)(createdTilesCount)
-                                            / (qreal)(totalTileCount) );
+                                               / (qreal)(totalTileCount) );
                 createdTilesCount++;
 
                 Q_EMIT progress( percentCompleted );

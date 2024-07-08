@@ -69,7 +69,7 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     // --------------------------------------------------------
 
     QLabel* const logo              = new QLabel(page);
-    logo->setPixmap(!tool->icon().isNull() ? tool->icon().pixmap(QSize(48, 48))
+    logo->setPixmap(!tool->icon().isNull() ? m_tool->icon().pixmap(QSize(48, 48))
                                            : QIcon::fromTheme(QLatin1String("plugins")).pixmap(QSize(48, 48)));
 
     // --------------------------------------------------------
@@ -79,10 +79,10 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br/>"
                                       "<b>%2 %3</b>"
                                       "<p>%4</p>")
-                    .arg(tool->name())
+                    .arg(m_tool->name())
                     .arg(i18nc("@label", "Version"))
-                    .arg(tool->version())
-                    .arg(tool->description()));
+                    .arg(m_tool->version())
+                    .arg(m_tool->description()));
 
     QTabWidget* const tab           = new QTabWidget(page);
 
@@ -93,9 +93,9 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     authors->setOpenLinks(false);
     authors->setFocusPolicy(Qt::NoFocus);
 
-    QString alist = i18n("<p>Copyright %1</p>", tool->copyrightYears());
+    QString alist = i18n("<p>Copyright %1</p>", m_tool->copyrightYears());
 
-    Q_FOREACH (const PluginAuthor& auth, tool->pluginAuthors())
+    Q_FOREACH (const PluginAuthor& auth, m_tool->pluginAuthors())
     {
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"

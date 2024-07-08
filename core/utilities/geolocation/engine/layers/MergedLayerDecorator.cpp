@@ -15,9 +15,13 @@
 
 #include "MergedLayerDecorator.h"
 
+// Qt includes
+
 #include <QPointer>
 #include <QPainter>
 #include <QPainterPath>
+
+// Local includes
 
 #include "Blending.h"
 #include "BlendingFactory.h"
@@ -32,7 +36,6 @@
 #include "TileLoader.h"
 #include "RenderState.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -247,7 +250,7 @@ void MergedLayerDecorator::Private::renderGroundOverlays( QImage *tileImage, con
         const bool isMercatorTileProjection = (m_textureLayers.at( 0 )->tileProjectionType() ==  GeoSceneAbstractTileProjection::Mercator);
 
         for ( int y = 0; y < tileImage->height(); ++y ) {
-             QRgb *scanLine = ( QRgb* ) ( tileImage->scanLine( y ) );
+             QRgb *scanLine = reinterpret_cast<QRgb*>(tileImage->scanLine( y ) );
 
              const qreal lat = isMercatorTileProjection
                      ? gd(2 * (latPixelPosition - y) * pixel2Rad )
@@ -442,7 +445,7 @@ void MergedLayerDecorator::Private::paintSunShading( QImage *tileImage, const Ti
         const qreal a = sin( (lat+DEG2RAD * m_sunLocator->getLat() )/2.0 );
         const qreal c = cos(lat)*cos( -DEG2RAD * m_sunLocator->getLat() );
 
-        QRgb* scanline = (QRgb*)tileImage->scanLine( cur_y );
+        QRgb* scanline = reinterpret_cast<QRgb*>(tileImage->scanLine( cur_y ));
 
         qreal lastShade = -10.0;
 

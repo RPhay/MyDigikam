@@ -153,8 +153,8 @@ void EquirectScanlineTextureMapper::mapTexture(const ViewportParams* viewport, i
     const int clearStart = (yPaintedTop - m_oldYPaintedTop <= 0) ? yPaintedBottom : 0;
     const int clearStop  = (yPaintedTop - m_oldYPaintedTop <= 0) ? imageHeight  : yTop;
 
-    QRgb* const itClearBegin = (QRgb*)(m_canvasImage.scanLine(clearStart));
-    QRgb* const itClearEnd = (QRgb*)(m_canvasImage.scanLine(clearStop));
+    QRgb* const itClearBegin = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStart));
+    QRgb* const itClearEnd   = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStop));
 
     for (QRgb* it = itClearBegin; it < itClearEnd; ++it)
     {
@@ -209,18 +209,15 @@ void EquirectScanlineTextureMapper::RenderJob::run()
 
     const int maxInterpolationPointX = n * (int)(imageWidth / n - 1) + 1;
 
-
     // initialize needed variables that are modified during texture mapping:
 
     ScanlineTextureMapperContext context(m_tileLoader, m_tileLevel);
-
 
     // Scanline based algorithm to do texture mapping
 
     for (int y = m_yPaintedTop; y < m_yPaintedBottom; ++y)
     {
-
-        QRgb* scanLine = (QRgb*)(m_canvasImage->scanLine(y));
+        QRgb* scanLine = reinterpret_cast<QRgb*>(m_canvasImage->scanLine(y));
 
         qreal lon = leftLon;
         const qreal lat = M_PI / 2 - (y - yTop) * pixel2Rad;

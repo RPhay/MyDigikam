@@ -204,7 +204,7 @@ void GenericScanlineTextureMapper::RenderJob::run()
         const int xRight = (imageWidth / 2 - rx > 0) ? xLeft + rx + rx
                            : imageWidth;
 
-        QRgb* scanLine = (QRgb*)(m_canvasImage->scanLine(y)) + xLeft;
+        QRgb* scanLine = reinterpret_cast<QRgb*>(m_canvasImage->scanLine(y)) + xLeft;
 
         const int xIpLeft  = (imageWidth / 2 - rx > 0) ? n * (int)(xLeft / n + 1)
                              : 1;
