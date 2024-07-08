@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "digikam_export.h"
 
 namespace Marble

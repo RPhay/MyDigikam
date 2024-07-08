@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoTagHandler.h"
 
-// Marble
+// Local includes
+
 #include "digikam_debug.h"
 
 namespace Marble
@@ -38,7 +38,9 @@ GeoTagHandler::~GeoTagHandler()
 GeoTagHandler::TagHash* GeoTagHandler::tagHandlerHash()
 {
     if (!s_tagHandlerHash)
+    {
         s_tagHandlerHash = new TagHash();
+    }
 
     Q_ASSERT(s_tagHandlerHash);
     return s_tagHandlerHash;
@@ -47,8 +49,12 @@ GeoTagHandler::TagHash* GeoTagHandler::tagHandlerHash()
 void GeoTagHandler::registerHandler(const GeoParser::QualifiedName& qName, const GeoTagHandler* handler)
 {
     TagHash* hash = tagHandlerHash();
+
     if (!hash->contains(qName))
+    {
         hash->insert(qName, handler);
+    }
+
     Q_ASSERT(hash->contains(qName));
 
 #if DUMP_TAG_HANDLER_REGISTRATION > 0
@@ -71,7 +77,9 @@ const GeoTagHandler* GeoTagHandler::recognizes(const GeoParser::QualifiedName& q
     TagHash* hash = tagHandlerHash();
 
     if (!hash->contains(qName))
+    {
         return nullptr;
+    }
 
     return (*hash)[qName];
 }

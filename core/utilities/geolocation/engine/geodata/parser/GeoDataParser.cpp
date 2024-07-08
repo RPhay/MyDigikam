@@ -13,21 +13,19 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoDataParser.h"
+
+// Qt includes
 
 #include <QStringView>
 
-// Marble
-#include "digikam_debug.h"
+// Local includes
 
-// Geodata
 #include "GeoDataDocument.h"
 #include "GeoDocument.h"
 #include "GeoTagHandler.h"
-
-// KML support
 #include "KmlElementDictionary.h"
+#include "digikam_debug.h"
 
 namespace Marble
 {
@@ -49,40 +47,49 @@ bool GeoDataParser::isValidRootElement()
         {
             m_source = GeoData_KML;
         }
+
         else
         {
             Q_ASSERT(false);
             return false;
         }
     }
-    switch ((GeoDataSourceType) m_source) {
-    // TODO: case GeoData_GeoRSS:
-    case GeoData_KML:
-        return isValidElement(QString::fromUtf8(kml::kmlTag_kml));
-    default:
-        Q_ASSERT(false);
-        return false;
+
+    switch ((GeoDataSourceType) m_source)
+    {
+        // TODO: case GeoData_GeoRSS:
+        case GeoData_KML:
+            return isValidElement(QString::fromUtf8(kml::kmlTag_kml));
+
+        default:
+            Q_ASSERT(false);
+            return false;
     }
 }
 
 bool GeoDataParser::isValidElement(const QString& tagName) const
 {
     if (!GeoParser::isValidElement(tagName))
+    {
         return false;
-
-    switch ((GeoDataSourceType) m_source) {
-    // TODO: case GeoData_GeoRSS:
-    case GeoData_KML: {
-        const QStringView namespaceUri = this->namespaceUri();
-        return (namespaceUri == QLatin1String(kml::kmlTag_nameSpace20) ||
-                namespaceUri == QLatin1String(kml::kmlTag_nameSpace21) ||
-                namespaceUri == QLatin1String(kml::kmlTag_nameSpace22) ||
-                namespaceUri == QLatin1String(kml::kmlTag_nameSpaceOgc22) ||
-                namespaceUri == QLatin1String(kml::kmlTag_nameSpaceGx22) ||
-                namespaceUri == QLatin1String(kml::kmlTag_nameSpaceMx));
     }
-    default:
-        break;
+
+    switch ((GeoDataSourceType) m_source)
+    {
+        // TODO: case GeoData_GeoRSS:
+        case GeoData_KML:
+        {
+            const QStringView namespaceUri = this->namespaceUri();
+            return (namespaceUri == QLatin1String(kml::kmlTag_nameSpace20) ||
+                    namespaceUri == QLatin1String(kml::kmlTag_nameSpace21) ||
+                    namespaceUri == QLatin1String(kml::kmlTag_nameSpace22) ||
+                    namespaceUri == QLatin1String(kml::kmlTag_nameSpaceOgc22) ||
+                    namespaceUri == QLatin1String(kml::kmlTag_nameSpaceGx22) ||
+                    namespaceUri == QLatin1String(kml::kmlTag_nameSpaceMx));
+        }
+
+        default:
+            break;
     }
 
     // Should never be reached.

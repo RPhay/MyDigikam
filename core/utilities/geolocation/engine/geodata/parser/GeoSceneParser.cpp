@@ -15,11 +15,12 @@
 
 #include "GeoSceneParser.h"
 
+// Local includes
+
 #include "GeoDocument.h"
 #include "GeoSceneDocument.h"
 #include "GeoTagHandler.h"
 #include "DgmlElementDictionary.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,25 +38,31 @@ GeoSceneParser::~GeoSceneParser()
 
 bool GeoSceneParser::isValidRootElement()
 {
-    switch ((GeoSceneSourceType) m_source) {
-    case GeoScene_DGML:
-        return isValidElement(QString::fromUtf8(dgml::dgmlTag_Dgml));
-    default:
-        Q_ASSERT(false);
-        return false;
+    switch ((GeoSceneSourceType) m_source)
+    {
+        case GeoScene_DGML:
+            return isValidElement(QString::fromUtf8(dgml::dgmlTag_Dgml));
+
+        default:
+            Q_ASSERT(false);
+            return false;
     }
 }
 
 bool GeoSceneParser::isValidElement(const QString& tagName) const
 {
     if (!GeoParser::isValidElement(tagName))
+    {
         return false;
+    }
 
-    switch ((GeoSceneSourceType) m_source) {
-    case GeoScene_DGML:
-        return (namespaceUri() == QLatin1String(dgml::dgmlTag_nameSpace20));
-    default:
-        break;
+    switch ((GeoSceneSourceType) m_source)
+    {
+        case GeoScene_DGML:
+            return (namespaceUri() == QLatin1String(dgml::dgmlTag_nameSpace20));
+
+        default:
+            break;
     }
 
     // Should never be reached.

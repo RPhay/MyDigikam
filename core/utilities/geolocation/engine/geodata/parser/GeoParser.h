@@ -15,10 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QPair>
 #include <QStack>
 #include <QXmlStreamReader>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -37,7 +41,7 @@ public:
 
     typedef QPair<QString, QString> QualifiedName; // Tag Name & Namespace pair
 
-    explicit GeoParser( GeoDataGenericSourceType sourceType );
+    explicit GeoParser(GeoDataGenericSourceType sourceType);
     virtual ~GeoParser();
 
     /**
@@ -46,7 +50,7 @@ public:
      * To retrieve the resulting data see @see releaseDocument() and
      * @see releaseModel()
      */
-    bool read( QIODevice* );
+    bool read(QIODevice*);
 
     /**
      * @brief retrieve the parsed document and reset the parser
@@ -54,19 +58,22 @@ public:
      * and set the contained m_document pointer to 0.
      */
     GeoDocument* releaseDocument();
-    GeoDocument* activeDocument() { return m_document; }
+    GeoDocument* activeDocument()
+    {
+        return m_document;
+    }
 
     // Used by tag handlers, to be overridden by GeoDataParser/GeoSceneParser
-    virtual bool isValidElement( const QString& tagName ) const;
+    virtual bool isValidElement(const QString& tagName) const;
 
     // Used by tag handlers, to access a parent element's associated GeoStackItem
-    GeoStackItem parentElement( unsigned int depth = 0 ) const;
+    GeoStackItem parentElement(unsigned int depth = 0) const;
 
     // Used by tag handlers, to Q_EMIT a warning while parsing
-    void raiseWarning( const QString& );
+    void raiseWarning(const QString&);
 
     // Used by tag handlers, to retrieve the value for an attribute of the currently parsed element
-    QString attribute( const char* attributeName ) const;
+    QString attribute(const char* attributeName) const;
 
 protected:
 
@@ -98,18 +105,18 @@ public:
 
     GeoStackItem()
         : m_qualifiedName(),
-          m_node( nullptr )
+          m_node(nullptr)
     {
     }
 
-    GeoStackItem( const GeoParser::QualifiedName& qualifiedName, GeoNode* node )
-        : m_qualifiedName( qualifiedName ),
-          m_node( node )
+    GeoStackItem(const GeoParser::QualifiedName& qualifiedName, GeoNode* node)
+        : m_qualifiedName(qualifiedName),
+          m_node(node)
     {
     }
 
     // Fast path for tag handlers
-    bool represents( const char* tagName ) const
+    bool represents(const char* tagName) const
     {
         return m_node && (QString::fromUtf8(tagName) == m_qualifiedName.first);
     }
@@ -118,7 +125,7 @@ public:
     template<class T>
     T* nodeAs()
     {
-        Q_ASSERT( dynamic_cast<T*>( m_node ) != nullptr );
+        Q_ASSERT(dynamic_cast<T*>(m_node) != nullptr);
         return static_cast<T*>(m_node);
     }
 
@@ -128,12 +135,21 @@ public:
         return nullptr != dynamic_cast<T*>(m_node);
     }
 
-    GeoParser::QualifiedName qualifiedName() const { return m_qualifiedName; }
-    GeoNode* associatedNode() const { return m_node; }
+    GeoParser::QualifiedName qualifiedName() const
+    {
+        return m_qualifiedName;
+    }
+    GeoNode* associatedNode() const
+    {
+        return m_node;
+    }
 
 private:
 
-    void assignNode( GeoNode* node ) { m_node = node; }
+    void assignNode(GeoNode* node)
+    {
+        m_node = node;
+    }
 
 private:
 

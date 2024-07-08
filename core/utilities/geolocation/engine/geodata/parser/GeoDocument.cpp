@@ -13,7 +13,11 @@
  *
  * ============================================================ */
 
+// C++ includes
+
 #include <cstdio>
+
+// Local includes
 
 #include "GeoDocument.h"
 #include "GeoSceneTypes.h"

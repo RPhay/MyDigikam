@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoParser.h"
+// Local includes
 
+#include "GeoParser.h"
 #include "digikam_export.h"
 
 namespace Marble

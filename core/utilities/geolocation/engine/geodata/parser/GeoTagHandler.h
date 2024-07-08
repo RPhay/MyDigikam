@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QHash>
 
-#include "GeoParser.h"
+// Local includes
 
+#include "GeoParser.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -76,7 +79,7 @@ struct GeoTagHandlerRegistrar
 public:
 
     GeoTagHandlerRegistrar(const GeoParser::QualifiedName& name, const GeoTagHandler* handler)
-        :m_name( name )
+        : m_name(name)
     {
         GeoTagHandler::registerHandler(name, handler);
     }
