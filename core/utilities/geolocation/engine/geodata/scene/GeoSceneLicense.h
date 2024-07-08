@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -44,11 +47,11 @@ public:
     QString shortLicense() const;
     Attribution attribution() const;
 
-    void setLicense( const QString &license );
-    void setShortLicense( const QString &license );
-    void setAttribution(Attribution attr );
+    void setLicense(const QString& license);
+    void setShortLicense(const QString& license);
+    void setAttribution(Attribution attr);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
 private:
 

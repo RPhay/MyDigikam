@@ -15,6 +15,8 @@
 
 #include "GeoWriterBackend.h"
 
+// Local includes
+
 #include "GeoDataDocumentWriter.h"
 
 namespace Marble
@@ -25,7 +27,7 @@ GeoWriterBackend::~GeoWriterBackend()
     // does nothing
 }
 
-GeoWriterBackendRegistrar::GeoWriterBackendRegistrar(GeoWriterBackend *writer, const QString &fileExtension) :
+GeoWriterBackendRegistrar::GeoWriterBackendRegistrar(GeoWriterBackend* writer, const QString& fileExtension) :
     m_writer(writer),
     m_fileExtension(fileExtension)
 {

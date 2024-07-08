@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -43,12 +46,12 @@ public:
      * @brief  Add a section to the legend
      * @param  section  the new section
      */
-    void addSection( const GeoSceneSection* );
+    void addSection(const GeoSceneSection*);
     QVector<const GeoSceneSection*> sections() const;
 
 private:
 
-    Q_DISABLE_COPY( GeoSceneLegend )
+    Q_DISABLE_COPY(GeoSceneLegend)
 
 private:
 

@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -36,16 +39,16 @@ public:
     QString name() const;
 
     QString fileFormat() const;
-    void setFileFormat( const QString& fileFormat );
+    void setFileFormat(const QString& fileFormat);
 
     int expire() const;
-    void setExpire( int expire );
+    void setExpire(int expire);
 
 protected:
 
-    explicit GeoSceneAbstractDataset( const QString& name );
+    explicit GeoSceneAbstractDataset(const QString& name);
 
- private:
+private:
 
     QString m_name;
     QString m_fileFormat;

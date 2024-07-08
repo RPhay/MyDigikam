@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPair>
 #include <QHash>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -36,7 +40,7 @@ class DIGIKAM_EXPORT GeoTagWriter
 {
 public:
 
-    virtual bool write( const GeoNode *node, GeoWriter& writer ) const = 0;
+    virtual bool write(const GeoNode* node, GeoWriter& writer) const = 0;
 
     /**
      * @brief Object Name and Namespace Pair
@@ -57,7 +61,7 @@ protected:
     GeoTagWriter();
     virtual ~GeoTagWriter();
 
-    static bool writeElement(const GeoNode *object, GeoWriter &writer);
+    static bool writeElement(const GeoNode* object, GeoWriter& writer);
 
 private:
 

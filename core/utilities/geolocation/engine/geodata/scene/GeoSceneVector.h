@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QPen>
 #include <QBrush>
+
+// Local includes
 
 #include "GeoSceneAbstractDataset.h"
 
@@ -31,20 +35,20 @@ class DIGIKAM_EXPORT GeoSceneVector : public GeoSceneAbstractDataset
 {
 public:
 
-    explicit GeoSceneVector( const QString& name );
+    explicit GeoSceneVector(const QString& name);
     const char* nodeType() const override;
 
     QString sourceFile() const;
-    void setSourceFile( const QString& sourceFile );
+    void setSourceFile(const QString& sourceFile);
 
     QString feature() const;
-    void setFeature( const QString& feature );
+    void setFeature(const QString& feature);
 
     QPen pen() const;
-    void setPen( const QPen& pen );
+    void setPen(const QPen& pen);
 
     QBrush brush() const;
-    void setBrush( const QBrush& brush );
+    void setBrush(const QBrush& brush);
 
 private:
 

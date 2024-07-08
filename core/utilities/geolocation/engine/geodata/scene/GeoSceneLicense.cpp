@@ -15,13 +15,15 @@
 
 #include "GeoSceneLicense.h"
 
+// Local includes
+
 #include "GeoSceneTypes.h"
 
 namespace Marble
 {
 
 GeoSceneLicense::GeoSceneLicense() :
-    m_attribution( OptOut )
+    m_attribution(OptOut)
 {
     // nothing to do
 }
@@ -41,22 +43,22 @@ GeoSceneLicense::Attribution GeoSceneLicense::attribution() const
     return m_attribution;
 }
 
-void GeoSceneLicense::setLicense(const QString &license )
+void GeoSceneLicense::setLicense(const QString& license)
 {
     m_fullLicense = license;
 }
 
-void GeoSceneLicense::setShortLicense( const QString &license )
+void GeoSceneLicense::setShortLicense(const QString& license)
 {
     m_shortLicense = license;
 }
 
-void GeoSceneLicense::setAttribution(Attribution attr )
+void GeoSceneLicense::setAttribution(Attribution attr)
 {
     m_attribution = attr;
 }
 
-const char *GeoSceneLicense::nodeType() const
+const char* GeoSceneLicense::nodeType() const
 {
     return GeoSceneTypes::GeoSceneLicenseType;
 }

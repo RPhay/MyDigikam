@@ -15,8 +15,12 @@
 
 #pragma once
 
+// qt includes
+
 #include <QIODevice>
 #include <QSet>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -40,7 +44,7 @@ public:
      * @param documentIdentifier XML document identifier or file extension that determines
      * @return True if writing is successful, false otherwise
      */
-    static bool write(QIODevice* device, const GeoDataDocument &document, const QString &documentIdentifier);
+    static bool write(QIODevice* device, const GeoDataDocument& document, const QString& documentIdentifier);
 
     /**
      * Convenience method that uses a QFile as QIODevice and determines the document type from the filename extension
@@ -50,19 +54,19 @@ public:
      * Use an empty string (default) to determine it automatically
      * @return True if writing is successful, false otherwise
      */
-    static bool write(const QString &filename, const GeoDataDocument &document, const QString &documentIdentifier = QString());
+    static bool write(const QString& filename, const GeoDataDocument& document, const QString& documentIdentifier = QString());
 
     /**
      * Registers a plugin as a backend for writing a certain file extension. Usually called by the MARBLE_ADD_WRITER macro.
      * @param writer Backend to register
      * @param fileExtension File extension to associate the backend with
      */
-    static void registerWriter(GeoWriterBackend* writer, const QString &fileExtension);
-    static void unregisterWriter(GeoWriterBackend* writer, const QString &fileExtension);
+    static void registerWriter(GeoWriterBackend* writer, const QString& fileExtension);
+    static void unregisterWriter(GeoWriterBackend* writer, const QString& fileExtension);
 
 private:
 
-    static QString determineDocumentIdentifier(const QString &filename);
+    static QString determineDocumentIdentifier(const QString& filename);
 
 private:
 

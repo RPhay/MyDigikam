@@ -15,11 +15,12 @@
 
 #include "GeoWriter.h"
 
+// Local includes
+
 #include "GeoDocument.h"
 #include "GeoTagWriter.h"
 #include "KmlElementDictionary.h"
 #include "DgmlElementDictionary.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -31,26 +32,32 @@ GeoWriter::GeoWriter()
     m_documentType = QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 
-bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
+bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
 {
-    setDevice( device );
-    setAutoFormatting( true );
+    setDevice(device);
+    setAutoFormatting(true);
     writeStartDocument();
 
     //FIXME: write the starting tags. Possibly register a tag handler to do this
     // with a null string as the object name?
 
-    GeoTagWriter::QualifiedName name( QString(), m_documentType );
+    GeoTagWriter::QualifiedName name(QString(), m_documentType);
     const GeoTagWriter* writer = GeoTagWriter::recognizes(name);
-    if( writer ) {
+
+    if (writer)
+    {
         //FIXME is this too much of a hack?
         writer->write(/* node = */ nullptr, *this); // node is never used in write()
-    } else {
+    }
+
+    else
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "There is no GeoWriter registered for: " << name;
         return false;
     }
 
-    if( ! writeElement( feature ) ) {
+    if (! writeElement(feature))
+    {
         return false;
     }
 
@@ -59,57 +66,65 @@ bool GeoWriter::write(QIODevice* device, const GeoNode *feature)
     return true;
 }
 
-bool GeoWriter::writeElement(const GeoNode *object)
+bool GeoWriter::writeElement(const GeoNode* object)
 {
     // Add checks to see that everything is ok here
 
-    GeoTagWriter::QualifiedName name( QString::fromUtf8(object->nodeType()), m_documentType );
-    const GeoTagWriter* writer = GeoTagWriter::recognizes( name );
+    GeoTagWriter::QualifiedName name(QString::fromUtf8(object->nodeType()), m_documentType);
+    const GeoTagWriter* writer = GeoTagWriter::recognizes(name);
 
-    if( writer ) {
-        if( ! writer->write( object, *this ) ) {
+    if (writer)
+    {
+        if (! writer->write(object, *this))
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "An error has been reported by the GeoWriter for: "
-                    << name;
+                                        << name;
             return false;
         }
-    } else {
+    }
+
+    else
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "There is no GeoWriter registered for: " << name;
         return true;
     }
+
     return true;
 }
 
 
-void GeoWriter::setDocumentType( const QString &documentType )
+void GeoWriter::setDocumentType(const QString& documentType)
 {
     m_documentType = documentType;
 }
 
-void GeoWriter::writeElement( const QString &namespaceUri, const QString &key, const QString &value )
+void GeoWriter::writeElement(const QString& namespaceUri, const QString& key, const QString& value)
 {
-    writeStartElement( namespaceUri, key );
-    writeCharacters( value );
+    writeStartElement(namespaceUri, key);
+    writeCharacters(value);
     writeEndElement();
 }
 
-void GeoWriter::writeElement( const QString &key, const QString &value )
+void GeoWriter::writeElement(const QString& key, const QString& value)
 {
-    writeStartElement( key );
-    writeCharacters( value );
+    writeStartElement(key);
+    writeCharacters(value);
     writeEndElement();
 }
 
-void GeoWriter::writeOptionalElement( const QString &key, const QString &value, const QString &defaultValue )
+void GeoWriter::writeOptionalElement(const QString& key, const QString& value, const QString& defaultValue)
 {
-    if( value != defaultValue ) {
-        writeElement( key, value );
+    if (value != defaultValue)
+    {
+        writeElement(key, value);
     }
 }
 
-void GeoWriter::writeOptionalAttribute( const QString &key, const QString &value, const QString &defaultValue )
+void GeoWriter::writeOptionalAttribute(const QString& key, const QString& value, const QString& defaultValue)
 {
-    if( value != defaultValue ) {
-        writeAttribute( key, value );
+    if (value != defaultValue)
+    {
+        writeAttribute(key, value);
     }
 }
 

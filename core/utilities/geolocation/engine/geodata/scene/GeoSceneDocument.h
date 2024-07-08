@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -34,8 +37,8 @@ class GeoSceneDocumentPrivate;
  * @short A container for features parsed from the DGML file.
  */
 class DIGIKAM_EXPORT GeoSceneDocument : public QObject,
-                                        public GeoDocument,
-                                        public GeoNode
+    public GeoDocument,
+    public GeoNode
 {
     Q_OBJECT
 
@@ -46,7 +49,10 @@ public:
 
     const char* nodeType() const override;
 
-    bool isGeoSceneDocument() const override { return true; }
+    bool isGeoSceneDocument() const override
+    {
+        return true;
+    }
 
     const GeoSceneHead* head() const;
     GeoSceneHead* head();
@@ -62,11 +68,11 @@ public:
 
 Q_SIGNALS:
 
-    void valueChanged( const QString&, bool );
+    void valueChanged(const QString&, bool);
 
 private:
 
-    Q_DISABLE_COPY( GeoSceneDocument )
+    Q_DISABLE_COPY(GeoSceneDocument)
 
     GeoSceneDocumentPrivate* const d = nullptr;
 };

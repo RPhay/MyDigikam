@@ -15,8 +15,9 @@
 
 #include "GeoTagWriter.h"
 
-#include "GeoWriter.h"
+// Local includes
 
+#include "GeoWriter.h"
 #include "digikam_debug.h"
 
 namespace Marble
@@ -30,28 +31,31 @@ GeoTagWriter::~GeoTagWriter()
 {
 }
 
-bool GeoTagWriter::writeElement( const GeoNode *object,
-                                 GeoWriter &writer)
+bool GeoTagWriter::writeElement(const GeoNode* object,
+                                GeoWriter& writer)
 {
-    return writer.writeElement( object );
+    return writer.writeElement(object);
 }
 
 void GeoTagWriter::registerWriter(const QualifiedName& name,
-                                  const GeoTagWriter* writer )
+                                  const GeoTagWriter* writer)
 {
     TagHash* tagHash = tagWriterHash();
 
-    if ( tagHash->contains( name ) ) {
+    if (tagHash->contains(name))
+    {
         qCWarning(DIGIKAM_MARBLE_LOG) << "Warning: The tag" << name << "is already registered. Often this indicates that multiple versions of the marblewidget library are loaded at the same time. This will likely lead to problems. Please check your installation, especially internal Marble plugins and external applications that install Marble plugins.";
     }
+
     else
     {
-        tagHash->insert( name, writer );
+        tagHash->insert(name, writer);
     }
-    Q_ASSERT( tagHash->contains( name ) );
+
+    Q_ASSERT(tagHash->contains(name));
 }
 
-void GeoTagWriter::unregisterWriter(const GeoTagWriter::QualifiedName &qName)
+void GeoTagWriter::unregisterWriter(const GeoTagWriter::QualifiedName& qName)
 {
     auto hash = tagWriterHash();
     Q_ASSERT(hash->contains(qName));
@@ -66,15 +70,16 @@ GeoTagWriter::TagHash* GeoTagWriter::tagWriterHash()
     return &s_tagWriterHash;
 }
 
-const GeoTagWriter* GeoTagWriter::recognizes( const QualifiedName &qname )
+const GeoTagWriter* GeoTagWriter::recognizes(const QualifiedName& qname)
 {
     TagHash* hash = tagWriterHash();
 
-    if( !hash->contains( qname ) ) {
+    if (!hash->contains(qname))
+    {
         return nullptr;
     }
 
-    return hash->value( qname );
+    return hash->value(qname);
 }
 
 } // namespace Marble

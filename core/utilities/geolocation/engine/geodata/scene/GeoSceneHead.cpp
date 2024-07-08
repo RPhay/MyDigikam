@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoSceneHead.h"
 
-// Marble
+// Local includes
+
 #include "GeoSceneTypes.h"
 #include "GeoSceneIcon.h"
 #include "GeoSceneZoom.h"
@@ -37,8 +37,8 @@ public:
           m_target(),
           m_theme(),
           m_description(),
-          m_radius( 0.0 ),
-          m_visible( true )
+          m_radius(0.0),
+          m_visible(true)
     {
     }
 
@@ -63,7 +63,7 @@ public:
 };
 
 GeoSceneHead::GeoSceneHead()
-    : d( new GeoSceneHeadPrivate )
+    : d(new GeoSceneHeadPrivate)
 {
 }
 
@@ -82,7 +82,7 @@ QString GeoSceneHead::name() const
     return d->m_name;
 }
 
-void GeoSceneHead::setName( const QString& name )
+void GeoSceneHead::setName(const QString& name)
 {
     d->m_name = name;
 }
@@ -92,7 +92,7 @@ QString GeoSceneHead::target() const
     return d->m_target;
 }
 
-void GeoSceneHead::setTarget( const QString& target )
+void GeoSceneHead::setTarget(const QString& target)
 {
     d->m_target = target;
 }
@@ -107,7 +107,7 @@ QString GeoSceneHead::mapThemeId() const
     return d->m_target + QLatin1Char('/') + d->m_theme + QLatin1Char('/') + d->m_theme + QLatin1String(".dgml");
 }
 
-void GeoSceneHead::setTheme( const QString& theme )
+void GeoSceneHead::setTheme(const QString& theme)
 {
     d->m_theme = theme;
 }
@@ -117,7 +117,7 @@ QString GeoSceneHead::description() const
     return d->m_description;
 }
 
-void GeoSceneHead::setDescription( const QString& description )
+void GeoSceneHead::setDescription(const QString& description)
 {
     d->m_description = description;
 }
@@ -127,7 +127,7 @@ qreal GeoSceneHead::radius() const
     return d->m_radius;
 }
 
-void GeoSceneHead::setRadius( qreal radius )
+void GeoSceneHead::setRadius(qreal radius)
 {
     d->m_radius = radius;
 }
@@ -137,7 +137,7 @@ bool GeoSceneHead::visible() const
     return d->m_visible;
 }
 
-void GeoSceneHead::setVisible( bool visible )
+void GeoSceneHead::setVisible(bool visible)
 {
     d->m_visible = visible;
 }
@@ -162,7 +162,8 @@ GeoSceneZoom* GeoSceneHead::zoom()
     return d->m_zoom;
 }
 
-const GeoSceneLicense* GeoSceneHead::license() const {
+const GeoSceneLicense* GeoSceneHead::license() const
+{
     return d->m_license;
 }
 

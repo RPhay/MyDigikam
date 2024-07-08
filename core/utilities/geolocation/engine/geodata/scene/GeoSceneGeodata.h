@@ -15,12 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPen>
 #include <QBrush>
 
+// Local includes
+
 #include "GeoSceneAbstractDataset.h"
 #include "GeoDocument.h"
-
 #include "digikam_export.h"
 
 namespace Marble
@@ -30,35 +33,35 @@ class DIGIKAM_EXPORT GeoSceneGeodata : public GeoSceneAbstractDataset
 {
 public:
 
-    explicit GeoSceneGeodata( const QString& name );
+    explicit GeoSceneGeodata(const QString& name);
     ~GeoSceneGeodata() override;
     const char* nodeType() const override;
 
-    bool operator==( const GeoSceneGeodata &other ) const;
+    bool operator==(const GeoSceneGeodata& other) const;
 
     QString property() const;
-    void setProperty( const QString& property );
+    void setProperty(const QString& property);
 
     QString sourceFile() const;
-    void setSourceFile( const QString& sourceFile );
+    void setSourceFile(const QString& sourceFile);
 
     QString colorize() const;
-    void setColorize( const QString& colorize );
+    void setColorize(const QString& colorize);
 
     qreal alpha() const;
     void setAlpha(qreal alpha);
 
     QPen pen() const;
-    void setPen( const QPen& pen );
+    void setPen(const QPen& pen);
 
     QBrush brush() const;
-    void setBrush( const QBrush& brush );
+    void setBrush(const QBrush& brush);
 
     int renderOrder() const;
-    void setRenderOrder( int renderOrder );
+    void setRenderOrder(int renderOrder);
 
     QVector<QColor> colors() const;
-    void setColors(const QVector<QColor> &colors);
+    void setColors(const QVector<QColor>& colors);
 
 private:
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoSceneTileDataset.h"
 
 namespace Marble
@@ -24,7 +26,7 @@ class GeoSceneVectorTileDataset : public GeoSceneTileDataset
 {
 public:
 
-    explicit GeoSceneVectorTileDataset( const QString& name );
+    explicit GeoSceneVectorTileDataset(const QString& name);
 
     const char* nodeType() const override;
 };

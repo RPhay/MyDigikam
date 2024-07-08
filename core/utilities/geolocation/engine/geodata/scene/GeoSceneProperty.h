@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QString>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -29,26 +32,26 @@ namespace Marble
  * @short Settings property within a GeoScene document.
  */
 class DIGIKAM_EXPORT GeoSceneProperty : public QObject,
-                                        public GeoNode
+    public GeoNode
 {
     Q_OBJECT
 
 public:
 
-    explicit GeoSceneProperty( const QString& name );
+    explicit GeoSceneProperty(const QString& name);
     const char* nodeType() const override;
 
     QString name() const;
     bool available() const;
-    void setAvailable( bool available );
+    void setAvailable(bool available);
     bool defaultValue() const;
-    void setDefaultValue( bool defaultValue );
+    void setDefaultValue(bool defaultValue);
     bool value() const;
-    void setValue( bool value );
+    void setValue(bool value);
 
 Q_SIGNALS:
 
-    void valueChanged( const QString&, bool );
+    void valueChanged(const QString&, bool);
 
 private:
 

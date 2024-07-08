@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QList>
+
+// Local includes
 
 #include "GeoDocument.h"
 
@@ -33,20 +37,20 @@ class GeoSceneFilter : public GeoNode
 {
 public:
 
-    explicit GeoSceneFilter( const QString& name );
+    explicit GeoSceneFilter(const QString& name);
     ~GeoSceneFilter() override;
 
     QString name() const;
-    void setName( const QString& name );
+    void setName(const QString& name);
 
     QString type() const;
-    void setType( const QString& type );
+    void setType(const QString& type);
 
     QList<const GeoScenePalette*> palette() const;
-    void addPalette( const GeoScenePalette *palette );
-    int removePalette( const GeoScenePalette *palette ); //returns # of items removed
+    void addPalette(const GeoScenePalette* palette);
+    int removePalette(const GeoScenePalette* palette);   //returns # of items removed
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
 private:
 

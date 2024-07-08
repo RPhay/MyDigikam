@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QVector>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 class QString;
@@ -35,7 +38,7 @@ class GeoSceneSettingsPrivate;
  * @short Settings of a GeoScene document.
  */
 class DIGIKAM_EXPORT GeoSceneSettings : public QObject,
-                                        public GeoNode
+    public GeoNode
 {
     Q_OBJECT
 
@@ -52,7 +55,7 @@ public:
      * @return @c true  the property was registered across groups
      *         @c false the property wasn't registered across groups
      */
-    bool propertyAvailable( const QString& name, bool& available ) const;
+    bool propertyAvailable(const QString& name, bool& available) const;
 
     /**
      * @brief  Set the value of a property across groups
@@ -61,7 +64,7 @@ public:
      * @return @c true  the property was found and changed accordingly
      *         @c false the property couldn't be found here
      */
-    bool setPropertyValue( const QString& name, bool value );
+    bool setPropertyValue(const QString& name, bool value);
 
     /**
      * @brief  Get the value of a property across groups
@@ -70,7 +73,7 @@ public:
      * @return @c true  the property was found and returned accordingly
      *         @c false the property couldn't be found in this group
      */
-    bool propertyValue( const QString& name, bool& value ) const;
+    bool propertyValue(const QString& name, bool& value) const;
 
     /**
      * @brief  Get the whole list of properties stored in the settings
@@ -86,27 +89,27 @@ public:
      * @brief  Add a group to the settings
      * @param  group  the new group
      */
-    void addGroup( GeoSceneGroup* group );
+    void addGroup(GeoSceneGroup* group);
 
     /**
      * @brief  Get a group from the settings
      * @param  name  the name of the group
      */
-    const GeoSceneGroup* group( const QString& name ) const;
-    GeoSceneGroup* group( const QString& name );
+    const GeoSceneGroup* group(const QString& name) const;
+    GeoSceneGroup* group(const QString& name);
 
     /**
      * @brief  Add a property to the settings
      * @param  property  the new property
      */
-    void addProperty( GeoSceneProperty* property );
+    void addProperty(GeoSceneProperty* property);
 
     /**
      * @brief  Get a property from the settings
      * @param  name  the name of the property
      */
-    const GeoSceneProperty* property( const QString& name ) const;
-    GeoSceneProperty* property( const QString& name );
+    const GeoSceneProperty* property(const QString& name) const;
+    GeoSceneProperty* property(const QString& name);
 
     /**
      * @brief  Get the properties that are categorized into groups
@@ -118,11 +121,11 @@ public:
 
 Q_SIGNALS:
 
-    void valueChanged( const QString&, bool );
+    void valueChanged(const QString&, bool);
 
 private:
 
-    Q_DISABLE_COPY( GeoSceneSettings )
+    Q_DISABLE_COPY(GeoSceneSettings)
 
 private:
 

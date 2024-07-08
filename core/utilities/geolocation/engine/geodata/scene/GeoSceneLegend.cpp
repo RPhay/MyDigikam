@@ -15,6 +15,8 @@
 
 #include "GeoSceneLegend.h"
 
+// Local includes
+
 #include "GeoSceneTypes.h"
 #include "GeoSceneSection.h"
 
@@ -27,7 +29,7 @@ public:
 
     ~GeoSceneLegendPrivate()
     {
-        qDeleteAll( m_sections );
+        qDeleteAll(m_sections);
     }
 
     /// The vector holding all the sections in the legend.
@@ -38,7 +40,7 @@ public:
 };
 
 GeoSceneLegend::GeoSceneLegend()
-    : d( new GeoSceneLegendPrivate )
+    : d(new GeoSceneLegendPrivate)
 {
 }
 
@@ -52,25 +54,32 @@ const char* GeoSceneLegend::nodeType() const
     return GeoSceneTypes::GeoSceneLegendType;
 }
 
-void GeoSceneLegend::addSection( const GeoSceneSection* section )
+void GeoSceneLegend::addSection(const GeoSceneSection* section)
 {
     // Remove any section that has the same name
 
     QVector<const GeoSceneSection*>::iterator it = d->m_sections.begin();
-    while (it != d->m_sections.end()) {
+
+    while (it != d->m_sections.end())
+    {
         const GeoSceneSection* currentSection = *it;
-        if ( currentSection->name() == section->name() ) {
+
+        if (currentSection->name() == section->name())
+        {
             delete currentSection;
             d->m_sections.erase(it);
             break;
         }
-        else {
+
+        else
+        {
             ++it;
         }
-     }
+    }
 
-    if ( section ) {
-        d->m_sections.append( section );
+    if (section)
+    {
+        d->m_sections.append(section);
     }
 }
 

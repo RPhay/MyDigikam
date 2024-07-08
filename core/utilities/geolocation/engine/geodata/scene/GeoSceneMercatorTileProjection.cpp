@@ -15,6 +15,8 @@
 
 #include "GeoSceneMercatorTileProjection.h"
 
+// Local includes
+
 #include "GeoDataLatLonBox.h"
 #include "MarbleMath.h"
 
@@ -38,7 +40,7 @@ static inline unsigned int lowerBoundTileIndex(qreal baseTileIndex)
 {
     const qreal floorBaseTileIndex = floor(baseTileIndex);
     unsigned int tileIndex = static_cast<unsigned int>(floorBaseTileIndex);
-    return (baseTileIndex == floorBaseTileIndex) ? tileIndex-1 : tileIndex;
+    return (baseTileIndex == floorBaseTileIndex) ? tileIndex - 1 : tileIndex;
 }
 
 static inline unsigned int upperBoundTileIndex(qreal baseTileIndex)
@@ -59,7 +61,7 @@ static inline qreal baseTileYFromLat(qreal latitude, unsigned int tileCount)
     // prevent undefined results we need to restrict our calculation.
     // Using 85.0 instead of some more correct 85.05113, to avoid running into NaN issues.
     qreal maxAbsLat = 85.0 * DEG2RAD;
-    qreal lat = (qAbs(latitude) > maxAbsLat) ? latitude/qAbs(latitude) * maxAbsLat : latitude;
+    qreal lat = (qAbs(latitude) > maxAbsLat) ? latitude / qAbs(latitude) * maxAbsLat : latitude;
     return (0.5 * (1.0 - gdInv(lat) / M_PI) * tileCount);
 }
 
@@ -67,9 +69,11 @@ static inline qreal baseTileYFromLat(qreal latitude, unsigned int tileCount)
 static inline unsigned int eastBoundTileXFromLon(qreal lon, unsigned int tileCount)
 {
     // special casing tile-map end
-    if (lon == M_PI) {
+    if (lon == M_PI)
+    {
         return 0;
     }
+
     return upperBoundTileIndex(baseTileXFromLon(lon, tileCount));
 }
 
@@ -77,9 +81,11 @@ static inline unsigned int eastBoundTileXFromLon(qreal lon, unsigned int tileCou
 static inline unsigned int westBoundTileXFromLon(qreal lon, unsigned int tileCount)
 {
     // special casing tile-map end
-    if (lon == -M_PI) {
-        return tileCount-1;
+    if (lon == -M_PI)
+    {
+        return tileCount - 1;
     }
+
     return lowerBoundTileIndex(baseTileXFromLon(lon, tileCount));
 }
 
@@ -87,10 +93,12 @@ static inline unsigned int westBoundTileXFromLon(qreal lon, unsigned int tileCou
 static inline unsigned int southBoundTileYFromLat(qreal lat, unsigned int tileCount)
 {
     // special casing tile-map end
-    if (lat == -M_PI*0.5) {
+    if (lat == -M_PI * 0.5)
+    {
         // calculate with normal lat value
         lat = M_PI * 0.5;
     }
+
     return upperBoundTileIndex(baseTileYFromLat(lat, tileCount));
 }
 
@@ -98,17 +106,19 @@ static inline unsigned int southBoundTileYFromLat(qreal lat, unsigned int tileCo
 static inline unsigned int northBoundTileYFromLat(qreal lat, unsigned int tileCount)
 {
     // special casing tile-map end
-    if (lat == M_PI*0.5) {
+    if (lat == M_PI * 0.5)
+    {
         // calculate with normal lat value
         lat = - M_PI * 0.5;
     }
+
     return lowerBoundTileIndex(baseTileYFromLat(lat, tileCount));
 }
 
 
 static inline qreal lonFromTileX(unsigned int x, unsigned int tileCount)
 {
-    return ( (2*M_PI * x) / tileCount - M_PI );
+    return ((2 * M_PI * x) / tileCount - M_PI);
 }
 
 static inline qreal latFromTileY(unsigned int y, unsigned int tileCount)
@@ -116,7 +126,7 @@ static inline qreal latFromTileY(unsigned int y, unsigned int tileCount)
     return gd(M_PI * (1.0 - (2.0 * y) / tileCount));
 }
 
-QRect GeoSceneMercatorTileProjection::tileIndexes(const GeoDataLatLonBox &latLonBox, int zoomLevel) const
+QRect GeoSceneMercatorTileProjection::tileIndexes(const GeoDataLatLonBox& latLonBox, int zoomLevel) const
 {
     const unsigned int xTileCount = (1 << zoomLevel) * levelZeroColumns();
 

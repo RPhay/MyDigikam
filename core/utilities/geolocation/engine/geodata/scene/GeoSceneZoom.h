@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -32,13 +33,13 @@ public:
     GeoSceneZoom();
 
     int minimum() const;
-    void setMinimum( int name );
+    void setMinimum(int name);
     int maximum() const;
-    void setMaximum( int target );
+    void setMaximum(int target);
     bool discrete() const;
-    void setDiscrete( bool theme );
+    void setDiscrete(bool theme);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
 private:
 

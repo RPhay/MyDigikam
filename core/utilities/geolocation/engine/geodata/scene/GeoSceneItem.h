@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "GeoDocument.h"
 
@@ -31,7 +35,7 @@ class DIGIKAM_EXPORT GeoSceneItem : public GeoNode
 {
 public:
 
-    explicit GeoSceneItem( const QString& name );
+    explicit GeoSceneItem(const QString& name);
     ~GeoSceneItem() override;
 
     const char* nodeType() const override;
@@ -39,23 +43,23 @@ public:
     QString name() const;
 
     QString text() const;
-    void setText( const QString& text );
+    void setText(const QString& text);
 
     bool checkable() const;
-    void setCheckable( bool checkable );
+    void setCheckable(bool checkable);
 
     QString connectTo() const;
-    void setConnectTo( const QString& text );
+    void setConnectTo(const QString& text);
 
     int  spacing() const;
-    void setSpacing( int spacing );
+    void setSpacing(int spacing);
 
     const GeoSceneIcon* icon() const;
     GeoSceneIcon* icon();
 
 private:
 
-    Q_DISABLE_COPY( GeoSceneItem )
+    Q_DISABLE_COPY(GeoSceneItem)
 
 private:
 

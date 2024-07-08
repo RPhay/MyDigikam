@@ -15,11 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QList>
 #include <QVector>
 #include <QSize>
 #include <QStringList>
 #include <QUrl>
+
+// Local includes
 
 #include "GeoSceneAbstractDataset.h"
 #include "GeoSceneAbstractTileProjection.h"
@@ -28,9 +32,8 @@
 
 /**
  * @short Tiled dataset stored in a layer. TextureTile and VectorTile layes inherit from this class.
- */
-
-/* In order to make Marble able to manage vector tiles,
+ *
+ * In order to make Marble able to manage vector tiles,
  * now there is GeoSceneTileDataset and then GeoSceneTextureTileDataset
  * (for the tag <texture> in dgml) or GeoSceneVectorTileDataset
  * (for <vectortile>) are created, which inherit from this class
@@ -55,57 +58,57 @@ public:
 
 public:
 
-    explicit GeoSceneTileDataset( const QString& name );
+    explicit GeoSceneTileDataset(const QString& name);
     ~GeoSceneTileDataset() override;
     const char* nodeType() const override;
 
     QString sourceDir() const;
-    void setSourceDir( const QString& sourceDir );
+    void setSourceDir(const QString& sourceDir);
 
     QString installMap() const;
-    void setInstallMap( const QString& installMap );
+    void setInstallMap(const QString& installMap);
 
     StorageLayout storageLayout() const;
-    void setStorageLayout( const StorageLayout );
+    void setStorageLayout(const StorageLayout);
 
-    void setServerLayout( const ServerLayout * );
-    const ServerLayout *serverLayout() const;
+    void setServerLayout(const ServerLayout*);
+    const ServerLayout* serverLayout() const;
 
     int levelZeroColumns() const;
-    void setLevelZeroColumns( const int );
+    void setLevelZeroColumns(const int);
 
     int levelZeroRows() const;
-    void setLevelZeroRows( const int );
+    void setLevelZeroRows(const int);
 
     bool hasMaximumTileLevel() const;
     int maximumTileLevel() const;
-    void setMaximumTileLevel( const int );
+    void setMaximumTileLevel(const int);
 
     int minimumTileLevel() const;
     void setMinimumTileLevel(int level);
 
-    void setTileLevels(const QString &tileLevels);
+    void setTileLevels(const QString& tileLevels);
     QVector<int> tileLevels() const;
 
     QVector<QUrl> downloadUrls() const;
 
     const QSize tileSize() const;
-    void setTileSize( const QSize &tileSize );
+    void setTileSize(const QSize& tileSize);
 
     /**
      * @brief set bounds for the texture. Tiles outside of these bounds won't be searched in this texture.
      * Null box means no bounds.
      */
-    void setLatLonBox( const GeoDataLatLonBox &box );
+    void setLatLonBox(const GeoDataLatLonBox& box);
     GeoDataLatLonBox latLonBox() const;
 
     void setTileProjection(GeoSceneAbstractTileProjection::Type projectionType);
 
-    const GeoSceneAbstractTileProjection * tileProjection() const;
+    const GeoSceneAbstractTileProjection* tileProjection() const;
     GeoSceneAbstractTileProjection::Type tileProjectionType() const;
 
     QString blending() const;
-    void setBlending( const QString &name );
+    void setBlending(const QString& name);
 
     /**
      * Creates a download URL for the given tile id.
@@ -113,19 +116,19 @@ public:
      * It implements the round robin for the tile servers.
      * On each invocation the next url is returned.
      */
-    QUrl downloadUrl( const TileId & ) const;
-    void addDownloadUrl( const QUrl & );
+    QUrl downloadUrl(const TileId&) const;
+    void addDownloadUrl(const QUrl&);
 
-    QString relativeTileFileName( const TileId & ) const;
+    QString relativeTileFileName(const TileId&) const;
 
     QString themeStr() const;
 
-    QList<const DownloadPolicy *> downloadPolicies() const;
-    void addDownloadPolicy( const DownloadUsage usage, const int maximumConnections );
+    QList<const DownloadPolicy*> downloadPolicies() const;
+    void addDownloadPolicy(const DownloadUsage usage, const int maximumConnections);
 
 private:
 
-    Q_DISABLE_COPY( GeoSceneTileDataset )
+    Q_DISABLE_COPY(GeoSceneTileDataset)
     QStringList hostNames() const;
 
 private:
@@ -162,7 +165,7 @@ inline QString GeoSceneTileDataset::blending() const
     return m_blending;
 }
 
-inline void GeoSceneTileDataset::setBlending( const QString &name )
+inline void GeoSceneTileDataset::setBlending(const QString& name)
 {
     m_blending = name;
 }

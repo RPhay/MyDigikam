@@ -14,13 +14,16 @@
  * ============================================================ */
 
 #include "GeoSceneVectorTileDataset.h"
+
+// Local includes
+
 #include "GeoSceneTypes.h"
 
 namespace Marble
 {
 
-GeoSceneVectorTileDataset::GeoSceneVectorTileDataset( const QString& name )
-    : GeoSceneTileDataset( name )
+GeoSceneVectorTileDataset::GeoSceneVectorTileDataset(const QString& name)
+    : GeoSceneTileDataset(name)
 {
 }
 

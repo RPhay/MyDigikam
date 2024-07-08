@@ -15,14 +15,17 @@
 
 #include "GeoDataDocumentWriter.h"
 
+// Qt includes
+
 #include <QFileInfo>
+
+// Local includes
 
 #include "GeoWriterBackend.h"
 #include "GeoWriter.h"
 #include "GeoTagWriter.h"
 #include "GeoDataDocument.h"
 #include "KmlElementDictionary.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -30,16 +33,23 @@ namespace Marble
 
 QSet<QPair<QString, GeoWriterBackend*> > GeoDataDocumentWriter::s_backends;
 
-bool GeoDataDocumentWriter::write(QIODevice *device, const GeoDataDocument &document, const QString &documentIdentifier)
+bool GeoDataDocumentWriter::write(QIODevice* device, const GeoDataDocument& document, const QString& documentIdentifier)
 {
     const GeoTagWriter* tagWriter = GeoTagWriter::recognizes(GeoTagWriter::QualifiedName(QString(), documentIdentifier));
-    if (tagWriter) {
+
+    if (tagWriter)
+    {
         GeoWriter writer;
         writer.setDocumentType(documentIdentifier);
         return writer.write(device, &document);
-    } else {
-        for(const auto &backend: s_backends) {
-            if (backend.first == documentIdentifier) {
+    }
+
+    else
+    {
+        for (const auto& backend : s_backends)
+        {
+            if (backend.first == documentIdentifier)
+            {
                 backend.second->write(device, document);
                 return true;
             }
@@ -50,10 +60,12 @@ bool GeoDataDocumentWriter::write(QIODevice *device, const GeoDataDocument &docu
     }
 }
 
-bool GeoDataDocumentWriter::write(const QString &filename, const GeoDataDocument &document, const QString &documentIdentifier)
+bool GeoDataDocumentWriter::write(const QString& filename, const GeoDataDocument& document, const QString& documentIdentifier)
 {
     QFile file(filename);
-    if (!file.open(QIODevice::WriteOnly)) {
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot open" << filename << "for writing:" << file.errorString();
         return false;
     }
@@ -62,30 +74,36 @@ bool GeoDataDocumentWriter::write(const QString &filename, const GeoDataDocument
     return write(&file, document, docType);
 }
 
-void GeoDataDocumentWriter::registerWriter(GeoWriterBackend *writer, const QString &fileExtension)
+void GeoDataDocumentWriter::registerWriter(GeoWriterBackend* writer, const QString& fileExtension)
 {
     s_backends << QPair<QString, GeoWriterBackend*>(fileExtension, writer);
 }
 
-void GeoDataDocumentWriter::unregisterWriter(GeoWriterBackend *writer, const QString &fileExtension)
+void GeoDataDocumentWriter::unregisterWriter(GeoWriterBackend* writer, const QString& fileExtension)
 {
     auto pair = QPair<QString, GeoWriterBackend*>(fileExtension, writer);
     s_backends.remove(pair);
     delete writer;
 }
 
-QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString &filename)
+QString GeoDataDocumentWriter::determineDocumentIdentifier(const QString& filename)
 {
     QString const fileExtension = QFileInfo(filename).suffix().toLower();
-    if (fileExtension == QLatin1String("kml")) {
+
+    if (fileExtension == QLatin1String("kml"))
+    {
         return QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
     }
-    if (fileExtension == QLatin1String("osm")) {
+
+    if (fileExtension == QLatin1String("osm"))
+    {
         return QLatin1String("0.6");
     }
 
-    for(const auto &backend: s_backends) {
-        if (backend.first == fileExtension) {
+    for (const auto& backend : s_backends)
+    {
+        if (backend.first == fileExtension)
+        {
             return backend.first;
         }
     }

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoSceneAbstractTileProjection.h"
 
 namespace Marble
@@ -52,7 +54,7 @@ public:
     /**
      * @copydoc
      */
-    QRect tileIndexes(const GeoDataLatLonBox &latLonBox, int zoomLevel) const override;
+    QRect tileIndexes(const GeoDataLatLonBox& latLonBox, int zoomLevel) const override;
 
     /**
      * @copydoc
@@ -63,7 +65,7 @@ public:
 
 private:
 
-     Q_DISABLE_COPY(GeoSceneEquirectTileProjection)
+    Q_DISABLE_COPY(GeoSceneEquirectTileProjection)
 };
 
 } // namespace Marble

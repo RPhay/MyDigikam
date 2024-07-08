@@ -15,6 +15,8 @@
 
 #include "GeoSceneIcon.h"
 
+// Local includes
+
 #include "GeoSceneTypes.h"
 
 namespace Marble
@@ -34,7 +36,7 @@ QString GeoSceneIcon::pixmap() const
     return m_pixmap;
 }
 
-void GeoSceneIcon::setPixmap( const QString& pixmap )
+void GeoSceneIcon::setPixmap(const QString& pixmap)
 {
     m_pixmap = pixmap;
 }
@@ -44,12 +46,12 @@ QColor GeoSceneIcon::color() const
     return m_color;
 }
 
-void GeoSceneIcon::setColor( const QColor& color )
+void GeoSceneIcon::setColor(const QColor& color)
 {
     m_color = color;
 }
 
-const char *GeoSceneIcon::nodeType() const
+const char* GeoSceneIcon::nodeType() const
 {
     return GeoSceneTypes::GeoSceneIconType;
 }

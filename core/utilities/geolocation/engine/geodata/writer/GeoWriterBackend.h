@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -38,7 +42,7 @@ public:
      * @param document A GeoDataDocument with content to write
      * @return True if the content is successfully written to the device, false otherwise
      */
-    virtual bool write(QIODevice* device, const GeoDataDocument &document) = 0;
+    virtual bool write(QIODevice* device, const GeoDataDocument& document) = 0;
 };
 
 /**
@@ -48,7 +52,7 @@ class DIGIKAM_EXPORT GeoWriterBackendRegistrar
 {
 public:
 
-    GeoWriterBackendRegistrar(GeoWriterBackend* writer, const QString &fileExtension);
+    GeoWriterBackendRegistrar(GeoWriterBackend* writer, const QString& fileExtension);
     ~GeoWriterBackendRegistrar();
 
 private:

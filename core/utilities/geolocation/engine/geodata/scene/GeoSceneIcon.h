@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QColor>
 
-#include "GeoDocument.h"
+// Local includes
 
+#include "GeoDocument.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -41,7 +44,7 @@ public:
     QColor color() const;
     void setColor(const QColor&);
 
-    const char *nodeType() const override;
+    const char* nodeType() const override;
 
 private:
 

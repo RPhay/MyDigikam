@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoSceneTileDataset.h"
 
 namespace Marble
@@ -24,7 +26,7 @@ class DIGIKAM_EXPORT GeoSceneTextureTileDataset : public GeoSceneTileDataset
 {
 public:
 
-    explicit GeoSceneTextureTileDataset( const QString& name );
+    explicit GeoSceneTextureTileDataset(const QString& name);
 
     const char* nodeType() const override;
 };

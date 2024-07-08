@@ -15,6 +15,8 @@
 
 #include "GeoSceneAbstractTileProjection.h"
 
+// Local includes
+
 #include "GeoDataLatLonBox.h"
 #include "TileId.h"
 
@@ -68,7 +70,7 @@ void GeoSceneAbstractTileProjection::setLevelZeroRows(int levelZeroRows)
     d_ptr->levelZeroRows = levelZeroRows;
 }
 
-GeoDataLatLonBox GeoSceneAbstractTileProjection::geoCoordinates(const TileId &tileId) const
+GeoDataLatLonBox GeoSceneAbstractTileProjection::geoCoordinates(const TileId& tileId) const
 {
     return geoCoordinates(tileId.zoomLevel(), tileId.x(), tileId.y());
 }

@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-// Own
 #include "GeoSceneDocument.h"
 
-// Marble
+// Local includes
+
 #include "GeoSceneHead.h"
 #include "GeoSceneMap.h"
 #include "GeoSceneLegend.h"
@@ -55,12 +55,12 @@ public:
 
 GeoSceneDocument::GeoSceneDocument()
     : GeoDocument(),
-      d( new GeoSceneDocumentPrivate )
+      d(new GeoSceneDocumentPrivate)
 {
     // Establish connection of property changes to the outside, e.g. the LegendBrowser
 
-    connect ( d->m_settings, SIGNAL(valueChanged(QString,bool)),
-              this, SIGNAL(valueChanged(QString,bool)) );
+    connect(d->m_settings, SIGNAL(valueChanged(QString, bool)),
+            this, SIGNAL(valueChanged(QString, bool)));
 }
 
 GeoSceneDocument::~GeoSceneDocument()
