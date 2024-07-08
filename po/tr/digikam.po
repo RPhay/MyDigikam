@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 01:44+0000\n"
+"POT-Creation-Date: 2024-07-08 01:43+0000\n"
 "PO-Revision-Date: 2024-06-27 15:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1030,7 +1030,7 @@ msgstr "Ad:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:242
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2670,7 +2670,7 @@ msgstr "&Yardım"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:205 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2680,46 +2680,46 @@ msgstr "Ana Araç Çubuğu"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
+#: core/app/main/main.cpp:214 core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "H.Gökhan SARI, Osman Tosun, Emir SARI"
 
-#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
+#: core/app/main/main.cpp:215 core/showfoto/main/main.cpp:201
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com, emir_sari@icloud.com"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:223
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "\"Yol\"da Kamera İletişim Kutusunu Aç"
 
-#: core/app/main/main.cpp:230
+#: core/app/main/main.cpp:226
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI \"udi\"li aygıt için kamera iletişim kutusunu Aç"
 
-#: core/app/main/main.cpp:233
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Bağlı bir gphoto2 kamerayı otomatik olarak algıla ve aç"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:231
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Digikam'i \"dir\" dizininde bulunan SQLite veritabanı dosyasıyla başlat"
 
-#: core/app/main/main.cpp:238
+#: core/app/main/main.cpp:234
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Digikam'ı \"config\" yapılandırma dosyasıyla başlat"
 
-#: core/app/main/main.cpp:265
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2729,7 +2729,7 @@ msgstr ""
 "<p>64 bit Windows üzerinde 32 bit digiKam'i çalıştırıyorsunuz.</p><p>Daha "
 "iyi bir digiKam deneyimi için lütfen digiKam'in 64 bit sürümünü kurun.</p>"
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:305
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2740,7 +2740,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:318
+#: core/app/main/main.cpp:314
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2751,7 +2751,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:362
+#: core/app/main/main.cpp:358
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3295,17 +3295,17 @@ msgstr "Sil"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçili"
 
-#: core/app/views/stack/welcomepageview.cpp:130
+#: core/app/views/stack/welcomepageview.cpp:98
 #, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
 msgstr "Bugzilla’da 1500’den fazla kullanıcı raporu kapatıldı."
 
-#: core/app/views/stack/welcomepageview.cpp:131
+#: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr "Kod, Qt6 çatısına aktarıldı (halen Qt5 API'si ile uyumlu)."
 
-#: core/app/views/stack/welcomepageview.cpp:132
+#: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3314,12 +3314,12 @@ msgstr ""
 "Windows Kurulum Programı artık tümüyle yerel Microsoft VCPKG araç zinciriyle "
 "derleniyor ve Qt6 ve KF6 çatılarını kullanıyor."
 
-#: core/app/views/stack/welcomepageview.cpp:133
+#: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "Her yere JPEG-XL, WEBP ve AVIF dışa aktarma desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3327,13 +3327,13 @@ msgstr ""
 "Kameradan içe aktarırken kayıpsız JPEG-XL, WEBP ve AVIF biçimlerine "
 "dönüştürme desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Toplu Kuyruk Yöneticisi'ne JPEG-XL, WEBP ve AVIF dönüştürücüleri eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3342,14 +3342,14 @@ msgstr ""
 "Sürümlendirme: Düzenleyicide; JPEG-XL, HEIF, WEBP ve AVIF sürümlendirilmiş "
 "görsellerini kayıpsız görsel olarak işleme desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Kullanılabilirlik: Ana menü gizliyse araç çubuğuna hamburger menüsüne ekleme "
 "desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3357,7 +3357,7 @@ msgstr ""
 "Üst veri: ExifTool arka ucuyla dosyalara üst veri yazmak için yeni seçenek "
 "eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3366,7 +3366,7 @@ msgstr ""
 "Üst veri: DNG ve RAW dosyalarına isteğe bağlı üst veri yazma işlemleri artık "
 "ExifTool arka ucuna devredildi."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3374,7 +3374,7 @@ msgstr ""
 "Üst veri: Daha iyi bir kullanılabilirlik için üst veri düzenleme "
 "eklentisinin yerleşimi eniyilendi."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:109
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3383,7 +3383,7 @@ msgstr ""
 "Üst veri: Gelişmiş Üst Veri Ayarları panelinde yapılandırma profillerini "
 "kaydetmek ve yüklemek için yeni seçenekler eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:110
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3392,14 +3392,14 @@ msgstr ""
 "Gelişmiş yeniden adlandırma: [c] veya [c,step] seçeneğiyle sıra "
 "numaralandırmaya artış dosyası sayacı eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "Gelişmiş yeniden adlandırma: [r] seçeneğiyle rastgele metin sıralı "
 "numaralandırma seçeneği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3408,28 +3408,28 @@ msgstr ""
 "Gelişmiş yeniden adlandırma: {unique:n,c} ile benzersiz niteleyici için "
 "yapılandırılabilir ilk karakter eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 "Gelişmiş arama: Yüz bölgelerinin sayısına göre ögeler için arama eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Gelişmiş arama: yüz bölgeleri olmayan öğeler için arama ekleyin."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr "Koleksiyonlar: Çapraz platform ağ yolları için destek eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr "Veritabanı: SQLite WAL (Önden Günlükleme) kipi için destek eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3437,14 +3437,14 @@ msgid ""
 msgstr ""
 "KF5::Sonnet bileşeniyle alt yazı metinlerinde yazım denetimi desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr "digiKam ve FotoGöster için yazım denetimi yapılandırma paneli eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3452,13 +3452,13 @@ msgstr ""
 "Alternatif Dil metin düzenleyicisi araç takımında çevrimiçi çeviri desteği "
 "eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr "digiKam ve FotoGöster için yerelleştirme yapılandırma paneli eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3467,7 +3467,7 @@ msgstr ""
 "Metin düzenleyicisi araç takımında tercih edilen alternatif/çevrilmiş diller "
 "ayar listesi eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3475,20 +3475,20 @@ msgstr ""
 "Her yerde Global veya Özelleştirilmiş Görsel Kalitesi sıralama ayarları "
 "eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Etiketlerin küçük görseller üzerindeki görünürlüğünü ayarlamak için simge "
 "görünümü ayarları eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "TIFF yükleyicisinde float16 (yarım kayan noktalı değer) desteği eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3499,7 +3499,7 @@ msgstr ""
 "\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Estetik "
 "Algılama</a> gerçekleştirmek üzere yeni bakım aracı eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3509,7 +3509,7 @@ msgstr ""
 "StatusReports/QuocHungTran\">optik karakter tanıma</a> gerçekleştirmek için "
 "yeni bir araç eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3518,7 +3518,7 @@ msgstr ""
 "Kuyruk Yöneticisi: Görsel kalitesini ayrıştırarak otomatik olarak seçim "
 "etiketi atamak için yeni bir araç eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3527,21 +3527,21 @@ msgstr ""
 "Kuyruk Yöneticisi: Toplu olarak derecelendirme, seçim ve renk etiketleri "
 "atamak için yeni bir araç eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:129
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Kuyruk Yöneticisi: Toplu olarak başlıklar ve alt yazılar atamak için yeni "
 "bir araç eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:130
 #, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
 "Kuyruk Yöneticisi: G’MIC süzgeçlerini toplu olarak çalıştırmak için bir araç "
 "eklendi."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3550,7 +3550,7 @@ msgstr ""
 "Belgelendirme: <a href=\"https://docs.digikam.org/en/index.html\">El Kitabı</"
 "a>, DocBook’tan Sphinx/ReStructuredText çatısına aktarıldı."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
@@ -3565,7 +3565,7 @@ msgstr ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">Ayrıntılar için bu GoSC-2023 raporuna bakın.</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
@@ -3574,19 +3574,19 @@ msgstr ""
 "G’MIC–Qt aracı güncel 3.4.0 sürümüne güncellenip macOS sürümü tamamlandı ve "
 "eklentinin kararlılığı artırıldı."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 "Adobe DNG SDK’sı JPEG-XL sıkıştırması desteği içeren 1.7.1 sürümüne "
 "güncellendi."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr "İçsel RAW işletkesi, güncel 2024-06-16 anlık görüntüsüne güncellendi."
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid ""
 "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
@@ -3604,27 +3604,27 @@ msgstr ""
 "Multiple DJI ve Skydio uçargözleri. DNG biçimini içeren birden çok sayıda "
 "akıllı telefon."
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "...and much more."
 msgstr "...ve çok daha fazlası."
 
-#: core/app/views/stack/welcomepageview.cpp:190
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:193
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "New Features"
 msgstr "Yeni Özellikler"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3633,18 +3633,18 @@ msgstr ""
 "digiKam'ın bu sürümündeki yeni özelliklerden bazıları şunlardır (digiKam 7 "
 "ile karşılaştırıldığında):"
 
-#: core/app/views/stack/welcomepageview.cpp:204
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:360
+#: core/app/views/stack/welcomepageview.cpp:172
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:361
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
 
-#: core/app/views/stack/welcomepageview.cpp:206
+#: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:207
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3655,7 +3655,7 @@ msgstr ""
 "geliştirmek, aramak ve dışa aktarmak için tasarlanmış açık kaynaklı bir "
 "fotoğraf yönetimi programıdır."
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:176
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3665,12 +3665,12 @@ msgstr ""
 "Şu anda digiKam'ın albüm görüntüleme kipindesiniz. Albümler, dosyalarınızın "
 "saklandığı yerlerdir ve sabit diskinizdeki klasörlerle aynıdır."
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:177
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:178
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3679,7 +3679,7 @@ msgstr ""
 "digiKam'in <a href=\"https://docs.digikam.org/en/index.html"
 "\">belgelendirmesinde</a> açıklanan pek çok güçlü özelliği vardır"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3688,34 +3688,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam ana sayfası</a>, digiKam'ın yeni "
 "sürümleri hakkında bilgi sağlar."
 
-#: core/app/views/stack/welcomepageview.cpp:266
+#: core/app/views/stack/welcomepageview.cpp:234
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "digiKam %1 sürümüne hoş geldiniz"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:237
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Arka Plan Görselinde Emeği Geçenler"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:240
 #, kde-format
 msgid "Author:"
 msgstr "Yazar:"
 
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:241
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Konum:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:243
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:244
 #, kde-format
 msgid "Lens:"
 msgstr "Mercek:"
@@ -4089,7 +4089,7 @@ msgstr "Renk Kipi"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:196
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -4440,8 +4440,8 @@ msgstr "Video Kod Çözücüleri"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, kde-format
 msgid "no entry"
 msgstr "girdi yok"
@@ -11529,9 +11529,9 @@ msgstr "Değişiklikler kaydediliyor -"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:835
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:859
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1046
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:430
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
@@ -22367,7 +22367,7 @@ msgstr "&Box'a Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1225
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1195
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -23222,129 +23222,116 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "&Flickr'a Dışa Aktar..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:297
-#, kde-format
-msgctxt "@title:window"
-msgid "Enter Flickr Login URL"
-msgstr "Flickr Oturum Açma URL'sini Gir"
-
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:298
-#, kde-format
-msgid ""
-"Copy the full URL from the external browser that contains the \"oauth_token"
-"\" entry:"
-msgstr "Tarayıcıdan \"oauth_token\" girdisini içeren tam URL'yi kopyalayın:"
-
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:352
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "İzin verilen en büyük dosya boyutu alınıyor…"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:646
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:616
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "Dosya boyutu izin verilen en büyük dosya boyutunu aşıyor."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:703
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
 #, kde-format
 msgid "No photo specified"
 msgstr "Belirtilen fotoğraf yok"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:709
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:496
 #, kde-format
 msgid "General upload failure"
 msgstr "Genel karşıya yükleme hatası"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:715
 #, kde-format
 msgid "Filesize was zero"
 msgstr "Dosya boyutu sıfır idi"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:721
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "Dosya türü tanınamadı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:727
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Kullanıcı karşıya yükleme sınırını aştı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
 msgstr "Geçersiz imza"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
 msgstr "İmza eksik"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Oturum Açma Başarısız / Geçersiz yetkilendirme jetonu"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Geçersiz API anahtarı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Hizmet şu anda kullanılamıyor"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:550
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Geçersiz Frob"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "\"xxx\" biçimi bulunamadı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "\"xxx\" yöntemi bulunamadı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Geçersiz SOAP zarfı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:817
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Geçersiz XML RPC yöntemi çağrısı"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:823
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "POST yöntemi, artık tüm ayarlayıcılar için zorunlu"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
 #, kde-format
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:836
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:806
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -23353,17 +23340,17 @@ msgstr ""
 "Hata oluştu: %1\n"
 "Daha ileri gidilemiyor."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1046
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "PhotoSet kümesi oluşturma başarısız: "
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1142
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1112
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr "Fotoğraf kümelerinin listesi getirilemedi."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1286
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1256
 #, kde-format
 msgid "Failed to query photo information"
 msgstr "Fotoğraf bilgisi sorgulanamadı"
@@ -24251,14 +24238,14 @@ msgstr ""
 "Fotoğraf, Imgur'a karşıya yüklenemedi: %1\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:184
-#: core/libs/dialogs/webbrowserdlg.cpp:124
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
+#: core/libs/dialogs/webbrowserdlg.cpp:88
 #, kde-format
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:185
-#: core/libs/dialogs/webbrowserdlg.cpp:125
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
+#: core/libs/dialogs/webbrowserdlg.cpp:89
 #, kde-format
 msgid "Go back to Home page"
 msgstr "Ana sayfaya geri dön"
@@ -24728,8 +24715,8 @@ msgstr "gözlemden"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:676
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:653
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:706
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:673
 #, kde-format
 msgid "not available"
 msgstr "kullanılabilir değil"
@@ -26409,7 +26396,7 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Web Hizmetlerine Dışa Aktar"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:317
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
@@ -26418,7 +26405,7 @@ msgstr ""
 "<qt><p><h1><b>Yetkilendirme tamamlandı!</b></h1></p><p><h3>Hesap bağlaması "
 "başarılı!</h3></p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:324
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -29899,7 +29886,7 @@ msgstr "<i>Kare hızı:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodlayıcısı:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29923,67 +29910,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Ögeler Listesi"
 
-#: core/libs/dialogs/libsinfodlg.cpp:181
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:182
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:196
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Özellikler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:225
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Kitaplıklar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:337
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:438
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Bildiriler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV Yapılandırması"
 
-#: core/libs/dialogs/libsinfodlg.cpp:695
+#: core/libs/dialogs/libsinfodlg.cpp:682
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:700
+#: core/libs/dialogs/libsinfodlg.cpp:687
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:705
+#: core/libs/dialogs/libsinfodlg.cpp:692
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30148,17 +30135,17 @@ msgctxt "@item"
 msgid "Udi"
 msgstr "Evrensel aygıt kimliği"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:93
 #, kde-format
 msgid "Desktop Browser"
 msgstr "Masaüstü Tarayıcı"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:94
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "Ana sayfayı öntanımlı masaüstü web tarayıcısında aç"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:246
+#: core/libs/dialogs/webbrowserdlg.cpp:210
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "%1 sayfası yüklenemiyor"
@@ -37289,7 +37276,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Yeni Atanmış Künye Yok"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:126
 #, kde-format
 msgid ""
 "No Geolocation\n"
@@ -37300,37 +37287,37 @@ msgstr ""
 "coğrafi konum\n"
 "bilgisi yok"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Rakım</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Enlem</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Boylam</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Tarih</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
 #, kde-format
 msgid "Copy GPS coordinates to clipboard"
 msgstr "GPS Koordinatlarını Panoya Kopyala"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:168
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "İnternette daha fazla bilgiye bakın"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:407
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
@@ -49118,19 +49105,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Klasörler"
 
-#: core/showfoto/main/main.cpp:195
+#: core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "FotoGöster"
 
-#: core/showfoto/main/main.cpp:213
+#: core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Açılacak dosya(lar) veya klasör(ler)"
 
-#: core/showfoto/main/main.cpp:244
+#: core/showfoto/main/main.cpp:240
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -52623,174 +52610,174 @@ msgstr ""
 "gerçekleştirmek için\n"
 "buraya eskizleyin"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:283
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Merkür"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:288
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "Venüs"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:293
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "Dünya"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:298
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "Mars"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:249
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:303
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "Jüpiter"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:251
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:308
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Satürn"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:313
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "Uranüs"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:318
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "Neptün"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:258
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:323
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "Plüto"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:261
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:328
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Güneş"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:263
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:333
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Ay"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:265
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:338
 #, kde-format
 msgid "Sky"
 msgstr "Gökyüzü"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:268
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:344
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Bilinmeyen Gezegen"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:281
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:294
 #, kde-format
 msgid "&Lock"
 msgstr "&Kilitle"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:287
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:301
 #, kde-format
 msgid "&Hide"
 msgstr "&Gizle"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:311
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
 #, kde-format
 msgid "&Configure..."
 msgstr "&Yapılandır..."
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:155
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:157
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:168
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "ay"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:174
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "inç"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:167
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:177
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "yd"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:180
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:183
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "dm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:115
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Koordinatları Kopyala"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "geo: URL'sini Kopyala"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:133
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:134
 #, kde-format
 msgid "&Address Details"
 msgstr "&Adres Ayrıntıları"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:149
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:151
 #, kde-format
 msgid "No description available."
 msgstr "Kullanılabilir açıklama yok."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:352
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:446
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:365
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:371
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:374
@@ -52798,7 +52785,7 @@ msgstr "Kullanılabilir açıklama yok."
 msgid "National Capital"
 msgstr "Ulusal Başkent"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:339
@@ -52809,7 +52796,7 @@ msgstr "Ulusal Başkent"
 msgid "City"
 msgstr "Şehir"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:356
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:456
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:333
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:337
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:341
@@ -52818,7 +52805,7 @@ msgstr "Şehir"
 msgid "State Capital"
 msgstr "Eyalet Başkenti"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:358
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:461
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:332
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:336
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:340
@@ -52827,23 +52814,23 @@ msgstr "Eyalet Başkenti"
 msgid "County Capital"
 msgstr "İlçe Başkenti"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:361
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:467
 #, kde-format
 msgid "Capital"
 msgstr "Başkent"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:369
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:478
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Village"
 msgstr "Köy"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:513
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:634
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Bilgi Kutuları"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:813
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1002
 #, kde-format
 msgid "Address Details"
 msgstr "Adres Ayrıntıları"
@@ -52876,7 +52863,7 @@ msgid "Valley"
 msgstr "Vadi"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:323
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:156
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Terrain"
 msgstr "Arazi"
@@ -52987,7 +52974,7 @@ msgid "Coordinate"
 msgstr "Koordinat"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:360
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:154
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
 #, kde-format
 msgid "Satellite"
 msgstr "Uydu"
@@ -54197,7 +54184,7 @@ msgid "Narrow Gauge"
 msgstr "Dar Hat"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:311
 #, kde-format
 msgid "Tram"
 msgstr "Tramvay"
@@ -54213,7 +54200,7 @@ msgid "Abandoned Railway"
 msgstr "Terk Edilmiş Demiryolu"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:616
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:307
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
@@ -54320,7 +54307,7 @@ msgid "Goods"
 msgstr "Mal"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:236
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:347
 #, kde-format
 msgid "Downhill Piste"
 msgstr "Alp Disiplini Kayak Pisti"
@@ -54331,7 +54318,7 @@ msgid "Nordic Piste"
 msgstr "Kros Kayak Pisti"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:238
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:355
 #, kde-format
 msgid "Skitour"
 msgstr "Kayak Turu"
@@ -54545,67 +54532,67 @@ msgctxt "Seconds symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:295
 #, kde-format
 msgid "Detour"
 msgstr "Servis Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:299
 #, kde-format
 msgid "Ferry Route"
 msgstr "Vapur Hattı"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:303
 #, kde-format
 msgid "Train"
 msgstr "Tren"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:315
 #, kde-format
 msgid "Bus"
 msgstr "Otobüs"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:319
 #, kde-format
 msgid "Trolley Bus"
 msgstr "Troleybüs"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:323
 #, kde-format
 msgid "Bicycle Route"
 msgstr "Bisiklet Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:231
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:327
 #, kde-format
 msgid "Mountainbike Route"
 msgstr "Dağ Bisikleti Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:232
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:331
 #, kde-format
 msgid "Walking Route"
 msgstr "Yürüyüş Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:233
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:335
 #, kde-format
 msgid "Hiking Route"
 msgstr "Doğa Yürüyüşü Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:234
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:339
 #, kde-format
 msgid "Bridleway"
 msgstr "At Binme Parkuru"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:235
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:343
 #, kde-format
 msgid "Inline Skates Route"
 msgstr "Düz Tekerlekli Paten Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:237
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:351
 #, kde-format
 msgid "Nordic Ski Trail"
 msgstr "Kros Kayağı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:239
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:359
 #, kde-format
 msgid "Sled Trail"
 msgstr "Kızak Yolu"
@@ -54638,26 +54625,26 @@ msgid "This is an Invalid File"
 msgstr "Bu, geçersiz bir dosya"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:194
-#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:411
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:48
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
 msgstr "Ad"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:198
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
 #, kde-format
 msgid "Popularity"
 msgstr "Popülerlik"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:200
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Popülerlik İndeksi"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:256
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
 #, kde-format
 msgid "Playlist"
 msgstr "Oynatma Listesi"
@@ -54758,7 +54745,7 @@ msgstr "İlgili Künyeler"
 msgid "Add custom tag..."
 msgstr "Özel Künye Ekle..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:375
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:376
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
@@ -55536,12 +55523,12 @@ msgstr ""
 "p><p>Uygulamalar: Sismik ve radyo verilerinin görüntülenmesi ve sayısal "
 "gezegenevlerinde kullanım için.</p>"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:44
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:45
 #, kde-format
 msgid "Flat Map"
 msgstr "Düz Harita"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:50
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -55580,13 +55567,13 @@ msgstr ""
 "<p><b>Lambert Azimutal Eşit Alan İzdüşümü</b></p><p>Uygulamalar: Yapısal "
 "jeolojide yön verilerini çizmek için kullanılır.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:49
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:50
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Merkator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:54
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -55972,7 +55959,7 @@ msgstr "Sunum Araçları"
 msgid "Runner Tools"
 msgstr "Çalışan Araçları"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:45
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:46
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Önbelleğe veri yerleştirilemiyor"
@@ -56195,38 +56182,38 @@ msgstr "-"
 msgid "Maximum Tile Level"
 msgstr "En yüksek karo düzeyi"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:153
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
 #, kde-format
 msgid "Roadmap"
 msgstr "Yol Haritası"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:155
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:174
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Harita Türü Denetimini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Dolaşım Denetimini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Ölçek Denetimini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Haritalar"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:375
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Float items"
@@ -67181,6 +67168,15 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgctxt "@title:window"
+#~ msgid "Enter Flickr Login URL"
+#~ msgstr "Flickr Oturum Açma URL'sini Gir"
+
+#~ msgid ""
+#~ "Copy the full URL from the external browser that contains the "
+#~ "\"oauth_token\" entry:"
+#~ msgstr "Tarayıcıdan \"oauth_token\" girdisini içeren tam URL'yi kopyalayın:"
 
 #~ msgid ""
 #~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 01:44+0000\n"
+"POT-Creation-Date: 2024-07-08 01:43+0000\n"
 "PO-Revision-Date: 2024-06-27 19:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1014,7 +1014,7 @@ msgstr "Име:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:242
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2662,7 +2662,7 @@ msgstr "&Помощ"
 msgid "Main Toolbar"
 msgstr "Основна лента с инструменти"
 
-#: core/app/main/main.cpp:209 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:205 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2672,35 +2672,35 @@ msgstr "Основна лента с инструменти"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:218 core/showfoto/main/main.cpp:204
+#: core/app/main/main.cpp:214 core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Златко Попов,Ясен Праматаров"
 
-#: core/app/main/main.cpp:219 core/showfoto/main/main.cpp:205
+#: core/app/main/main.cpp:215 core/showfoto/main/main.cpp:201
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zlatkopopov@fsa-bg.org, yasen@lindeas.com"
 
-#: core/app/main/main.cpp:227
+#: core/app/main/main.cpp:223
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Отваряне на диалоговия прозорец на камерата при \"path\""
 
-#: core/app/main/main.cpp:230
+#: core/app/main/main.cpp:226
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 "Отваряне на диалогов прозорец на камерата за устройството с Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:233
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Автоматично откриване и зареждане на закачен фотоапарат"
 
-#: core/app/main/main.cpp:235
+#: core/app/main/main.cpp:231
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2708,12 +2708,12 @@ msgstr ""
 "Стартиране на digikam с файла с база данни SQLite, намерен в директорията "
 "\"dir\""
 
-#: core/app/main/main.cpp:238
+#: core/app/main/main.cpp:234
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Стартиране на digikam с конфигурационния файл \"config\""
 
-#: core/app/main/main.cpp:265
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2724,7 +2724,7 @@ msgstr ""
 "инсталирайте 64-битовата версия на digiKam, за да получите по-добри "
 "резултати.</p>"
 
-#: core/app/main/main.cpp:309
+#: core/app/main/main.cpp:305
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2735,7 +2735,7 @@ msgstr ""
 "го.\n"
 "На вашия компютър няма инсталирана приставка за база данни."
 
-#: core/app/main/main.cpp:318
+#: core/app/main/main.cpp:314
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2745,7 +2745,7 @@ msgstr ""
 "Не е наличен плъгин за бази данни Qt SQLite или MySQL, моля, инсталирайте го."
 "Плъгините за бази данни, инсталирани на вашия компютър, са изброени по-долу."
 
-#: core/app/main/main.cpp:362
+#: core/app/main/main.cpp:358
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3297,17 +3297,17 @@ msgstr "Изтриване"
 msgid "%1/%2 items selected"
 msgstr "Маркирани са %1/%2 елемента"
 
-#: core/app/views/stack/welcomepageview.cpp:130
+#: core/app/views/stack/welcomepageview.cpp:98
 #, kde-format
 msgid "More than 1500 user-reports closed on bugzilla."
 msgstr "Повече от 1500 потребителски доклада са завършени в bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:131
+#: core/app/views/stack/welcomepageview.cpp:99
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr "Прехвърляне на кода към Qt6 (кодът все още е съвместим с API на Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:132
+#: core/app/views/stack/welcomepageview.cpp:100
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3316,12 +3316,12 @@ msgstr ""
 "Инсталаторът на Windows вече се компилира естествено с набора от инструменти "
 "на Microsoft VCPKG и използва  Qt6 и KF6 платформи."
 
-#: core/app/views/stack/welcomepageview.cpp:133
+#: core/app/views/stack/welcomepageview.cpp:101
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "Добавяне на настройки за експорт на JPEG-XL, WEBP и AVIF навсякъде."
 
-#: core/app/views/stack/welcomepageview.cpp:134
+#: core/app/views/stack/welcomepageview.cpp:102
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3329,13 +3329,13 @@ msgstr ""
 "Добавяне на конвертиране в JPEG-XL, WEBP и AVIF без загуби при импортиране "
 "от фотоапарат."
 
-#: core/app/views/stack/welcomepageview.cpp:135
+#: core/app/views/stack/welcomepageview.cpp:103
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Добавяне на конвертори JPEG-XL; WEBP и AVIF в мениджъра на пакетна обработка."
 
-#: core/app/views/stack/welcomepageview.cpp:136
+#: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3345,14 +3345,14 @@ msgstr ""
 "на изображения без загуби за съхраняване на версията на изображенията в "
 "редактора."
 
-#: core/app/views/stack/welcomepageview.cpp:137
+#: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Използваемост: Добавяне на меню бутон в лентата с инструменти, ако главното "
 "меню е скрито."
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:106
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3360,7 +3360,7 @@ msgstr ""
 "Метаданни: Добавяне на нова опция за записване на метаданни към файловете с "
 "помощта на ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3369,7 +3369,7 @@ msgstr ""
 "Метаданни: Операциите по избор за запис на метаданни към DNG и RAW файлове "
 "вече са делегирани на бекенда ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3377,7 +3377,7 @@ msgstr ""
 "Метаданни: Оптимизиране на оформлението на приставката за редактиране на "
 "метаданни за по-добра използваемост."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:109
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3386,7 +3386,7 @@ msgstr ""
 "Метаданни: добавяне на нови опции за запазване и зареждане на "
 "конфигурационни профили в панела за разширени настройки на метаданни."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:110
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3395,14 +3395,14 @@ msgstr ""
 "Разширено преименуване: Добавяне на брояч на файловете с номерация на "
 "последователностите от с опция [c] или [c,step]."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "Разширено преименуване: Добавяне на номерация на последователности с "
 "произволен текст с опция [r]."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3411,30 +3411,30 @@ msgstr ""
 "Разширено преименуване: Добавяне на конфигурируем първи символ за уникалния "
 "модификатор с {unique:n,c}."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:113
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 "Разширено търсене: Добавяне на търсене на елементи по броя на областите с "
 "лица."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:114
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Разширено търсене: Добавяне на търсене на елементи без области с лица."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr "Колекции: Добавяне на поддръжка за междуплатформени мрежови пътища."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "База данни: Добавяне на поддръжка за режим SQLite WAL (Write-Ahead-Logging)."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3443,7 +3443,7 @@ msgstr ""
 "Добавяне на поддръжка на проверка на правописа за текста на надписа чрез "
 "компонента на KF5::Sonnet."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3452,7 +3452,7 @@ msgstr ""
 "Добавяне на панел за конфигуриране на проверката на правописа в Настройки/"
 "Други за digiKam и Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3460,7 +3460,7 @@ msgstr ""
 "Добавяне на поддръжка на онлайн преводи в уиджета за текстов редактор на "
 "алтернативни езици."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
@@ -3468,7 +3468,7 @@ msgstr ""
 "Добавяне на панел за локализиране на конфигурацията в Настройки/Други за "
 "digiKam и Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:121
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3477,7 +3477,7 @@ msgstr ""
 "Добавяне на настройки за списък с предпочитани алтернативни/преведени езици "
 "в уиджета за редактиране на текст."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:122
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3485,21 +3485,21 @@ msgstr ""
 "Позволяване навсякъде да се използват глобални или персонализирани настройки "
 "за сортиране на качеството на изображенията."
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:123
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Добавяне на настройки изглед икони, за да персонализирате видимостта на "
 "етикетите върху миниатюрите."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:124
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "Добавяне на поддръжка за изображения float16 (half float) в програмата за "
 "зареждане на TIFF."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:125
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3510,7 +3510,7 @@ msgstr ""
 "PhuocKhanhLe\">Естетическо откриване за класифициране на изображения с "
 "помощта на модел за дълбоко обучение</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:126
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3520,7 +3520,7 @@ msgstr ""
 "StatusReports/QuocHungTran\">за извършване на разпознаване на текст от "
 "сканиран документ</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:127
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3529,7 +3529,7 @@ msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за автоматично присвояване на "
 "етикети за избиране според качеството на изображението"
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:128
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3538,20 +3538,20 @@ msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за пакетно задаване на етикети "
 "за оценка, избор и цвят."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:129
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за пакетно присвояване на "
 "заглавия и надписи."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:130
 #, kde-format
 msgid "Queue Manager: add new tool to run G'MIC filters in batch."
 msgstr ""
 "Пакетна обработка: Добавяне на нов инструмент за прилагане на G'MIC филтри."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:131
 #, kde-format
 msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3560,7 +3560,7 @@ msgstr ""
 "Документация: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> от DocBook в Sphinx/ReStructuredText формат."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:132
 #, kde-format
 msgid ""
 "Add new maintenance and Queue manager tools to assign tag automatically to "
@@ -3575,7 +3575,7 @@ msgstr ""
 "QuocHungTran#Add_Automatic_Tags_Assignment_Tools_and_Improve_Face_Recognition_Engine_for_digiKam"
 "\">Вижте доклад GoSC-2023 за подробности.</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.4.0 and finalize MacOS port and "
@@ -3584,21 +3584,21 @@ msgstr ""
 "Актуализиране на инструмента G'MIC-Qt до последна версия 3.4.0 и "
 "финализиране на порта за MacOS и подобряване на стабилността на приставката."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
 "Актуализиране на Adobe DNG SDK до последна версия 1.7.1 с поддръжка на JPEG-"
 "XL компресия."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2024-06-16."
 msgstr ""
 "Актуализиране на вътрешния RAW енджин до последната стабилна версия Libraw "
 "snapshot 2024-06-16."
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid ""
 "New RAW features: Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra."
@@ -3615,27 +3615,27 @@ msgstr ""
 "ILCE-6700, ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1."
 "Multiple DJI и Skydio дронове. Множество смартфони със записан DNG формат."
 
-#: core/app/views/stack/welcomepageview.cpp:184
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "...and much more."
 msgstr "...и много други."
 
-#: core/app/views/stack/welcomepageview.cpp:190
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:193
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "New Features"
 msgstr "Нови възможности"
 
-#: core/app/views/stack/welcomepageview.cpp:195
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3644,18 +3644,18 @@ msgstr ""
 "Някои от новите функции в тази версия на digiKam включват (в сравнение с "
 "digiKam 7):"
 
-#: core/app/views/stack/welcomepageview.cpp:204
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:360
+#: core/app/views/stack/welcomepageview.cpp:172
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:361
 #, kde-format
 msgid "About"
 msgstr "Относно"
 
-#: core/app/views/stack/welcomepageview.cpp:206
+#: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:207
+#: core/app/views/stack/welcomepageview.cpp:175
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3666,7 +3666,7 @@ msgstr ""
 "импортиране, организиране, подобряване, търсене и експортиране на вашите "
 "цифрови изображения към и от вашия компютър."
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:176
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3677,12 +3677,12 @@ msgstr ""
 "местата, където се съхраняват вашите файлове, и са идентични с папките на "
 "вашия твърд диск."
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:177
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:178
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3691,7 +3691,7 @@ msgstr ""
 "digiKam има много мощни функции, които са описани в <a href=\"https://docs."
 "digikam.org/en/index.html\">документацията</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:179
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3700,34 +3700,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\"> Начална страница на Digikam </a> "
 "предоставя информация за нови версии на Digikam."
 
-#: core/app/views/stack/welcomepageview.cpp:266
+#: core/app/views/stack/welcomepageview.cpp:234
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Добре дошли в digiKam %1!"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:237
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Информация за изображението на фона"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:240
 #, kde-format
 msgid "Author:"
 msgstr "Автор:"
 
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:241
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Местоположение:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:243
 #, kde-format
 msgid "Camera:"
 msgstr "Камера:"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:244
 #, kde-format
 msgid "Lens:"
 msgstr "Обектив:"
@@ -4101,7 +4101,7 @@ msgstr "Цветови режим"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:196
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -4452,8 +4452,8 @@ msgstr "Видеодекодери"
 #: core/app/views/utils/componentsinfodlg.cpp:268
 #: core/app/views/utils/componentsinfodlg.cpp:285
 #: core/app/views/utils/componentsinfodlg.cpp:303
-#: core/libs/dialogs/libsinfodlg.cpp:547 core/libs/dialogs/libsinfodlg.cpp:553
-#: core/libs/dialogs/libsinfodlg.cpp:628
+#: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
+#: core/libs/dialogs/libsinfodlg.cpp:615
 #, kde-format
 msgid "no entry"
 msgstr "няма запис"
@@ -11643,9 +11643,9 @@ msgstr "Запазване на промените -"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:372
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:237
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:549
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:835
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:859
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1046
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:430
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:270
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:590
@@ -22588,7 +22588,7 @@ msgstr "Експортиране в &Box..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:429
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:430
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1225
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1195
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:467
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:719
@@ -23443,131 +23443,116 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "Експортиране в &Flickr..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:297
-#, kde-format
-msgctxt "@title:window"
-msgid "Enter Flickr Login URL"
-msgstr "Въведете адрес за влизане в Flickr"
-
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:298
-#, kde-format
-msgid ""
-"Copy the full URL from the external browser that contains the \"oauth_token"
-"\" entry:"
-msgstr ""
-"Копиране на пълния URL адрес от външния браузър, който съдържа записа "
-"\"oauth_token\":"
-
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:352
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:322
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "Получаване на максималния разрешен размер на файла."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:646
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:616
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "Размерът на файла надвишава максимално допустимия размер на файла."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:703
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:490
 #, kde-format
 msgid "No photo specified"
 msgstr "Няма посочена снимка"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:709
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:496
 #, kde-format
 msgid "General upload failure"
 msgstr "Цялостен неуспех при качване"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:715
 #, kde-format
 msgid "Filesize was zero"
 msgstr "Размерът на файла беше нула"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:721
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "Типът на файла не е разпознат"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:727
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:514
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Потребителят е превишил лимита за качване"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:733
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:520
 #, kde-format
 msgid "Invalid signature"
 msgstr "Невалиден подпис"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:739
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:526
 #, kde-format
 msgid "Missing signature"
 msgstr "Липсващ подпис"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:745
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Влизането в системата е неуспешно / Невалиден токен за автентичност"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:538
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Невалиден API ключ"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:757
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Услугата в момента е недостъпна"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:550
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Невалиден Frob"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:769
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:556
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Форматът \"xxx\" не е намерен"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:805
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:562
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Метод \"xxx\" не е намерен"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:781
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:568
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Невалиден SOAP плик"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:817
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:574
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Невалидно извикване на XML-RPC метод"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:823
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "Методът POST вече се изисква за всички задаващи устройства"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:829
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:227
 #, kde-format
 msgid "Unknown error"
 msgstr "Неизвестна грешка"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:836
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:806
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -23576,17 +23561,17 @@ msgstr ""
 "Възникна грешка: %1\n"
 "Не може да се продължи по-нататък."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1046
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1016
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "Неуспешно създадени колекции от снимки: "
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1142
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1112
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr "Неуспешно извличане на списък с набори от снимки."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1286
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1256
 #, kde-format
 msgid "Failed to query photo information"
 msgstr "Неуспешна заявка за информация за снимка"
@@ -24481,14 +24466,14 @@ msgstr ""
 "Неуспешно качване на снимка в Imgur: %1\n"
 "Искате ли да продължите?"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:184
-#: core/libs/dialogs/webbrowserdlg.cpp:124
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:113
+#: core/libs/dialogs/webbrowserdlg.cpp:88
 #, kde-format
 msgid "Home"
 msgstr "Начална страница"
 
-#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:185
-#: core/libs/dialogs/webbrowserdlg.cpp:125
+#: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:114
+#: core/libs/dialogs/webbrowserdlg.cpp:89
 #, kde-format
 msgid "Go back to Home page"
 msgstr "Обратно към Началната страница"
@@ -24959,8 +24944,8 @@ msgstr "от наблюдението"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:676
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:653
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:706
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:673
 #, kde-format
 msgid "not available"
 msgstr "не е налично"
@@ -26650,7 +26635,7 @@ msgctxt "@action"
 msgid "Export to Webservices..."
 msgstr "Експортиране в Webservices..."
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:317
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:265
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking "
@@ -26659,7 +26644,7 @@ msgstr ""
 "<qt><p><h1><b>Удостоверяването е извършено!</b></h1></p><p><h3>Свързването "
 "на акаунта е успешно!</h3></p></qt>"
 
-#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:324
+#: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:272
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Authentication done!</b></h1></p><p><h3>Account linking failed!"
@@ -30193,7 +30178,7 @@ msgstr "<i>Скорост на кадрите:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видео кодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -30217,67 +30202,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Списък с елементи"
 
-#: core/libs/dialogs/libsinfodlg.cpp:181
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:182
+#: core/libs/dialogs/libsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:196
+#: core/libs/dialogs/libsinfodlg.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Свойства"
 
-#: core/libs/dialogs/libsinfodlg.cpp:225
+#: core/libs/dialogs/libsinfodlg.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Библиотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:337
+#: core/libs/dialogs/libsinfodlg.cpp:324
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:438
+#: core/libs/dialogs/libsinfodlg.cpp:425
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:466
+#: core/libs/dialogs/libsinfodlg.cpp:453
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Манифести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:500
+#: core/libs/dialogs/libsinfodlg.cpp:487
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Конфигурация на OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:695
+#: core/libs/dialogs/libsinfodlg.cpp:682
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:700
+#: core/libs/dialogs/libsinfodlg.cpp:687
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:705
+#: core/libs/dialogs/libsinfodlg.cpp:692
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30443,17 +30428,17 @@ msgctxt "@item"
 msgid "Udi"
 msgstr "Уди"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:93
 #, kde-format
 msgid "Desktop Browser"
 msgstr "Браузър на работната среда"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:94
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "Отваряне на началната страница с уеб браузъра по подразбиране"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:246
+#: core/libs/dialogs/webbrowserdlg.cpp:210
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "Не може да се зареди страница %1"
@@ -37654,7 +37639,7 @@ msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Няма наскоро поставени тагове"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:129
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:126
 #, kde-format
 msgid ""
 "No Geolocation\n"
@@ -37665,37 +37650,37 @@ msgstr ""
 "информация\n"
 "за геолокация"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Височина</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:142
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Географска ширина</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:143
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Географска дължина</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:141
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Дата</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:161
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
 #, kde-format
 msgid "Copy GPS coordinates to clipboard"
 msgstr "Копиране в клипборда на GPS координатите"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:171
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:168
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "Вижте повече информация в интернет"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:419
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:407
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
@@ -49560,19 +49545,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Папки"
 
-#: core/showfoto/main/main.cpp:195
+#: core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:213
+#: core/showfoto/main/main.cpp:209
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Файл(ове) или папка(и) за отваряне"
 
-#: core/showfoto/main/main.cpp:244
+#: core/showfoto/main/main.cpp:240
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -53116,174 +53101,174 @@ msgstr ""
 "за да се извърши\n"
 "ориентировъчно търсене"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:241
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:283
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Меркурий"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:243
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:288
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "Венера"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:245
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:293
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "Земя"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:247
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:298
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "Марс"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:249
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:303
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "Юпитер"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:251
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:308
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Сатурн"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:253
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:313
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "Уран"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:255
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:318
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "Нептун"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:258
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:323
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "Плутон"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:261
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:328
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Слънце"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:263
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:333
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Луна"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:265
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:338
 #, kde-format
 msgid "Sky"
 msgstr "Небе"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:268
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:344
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Неизвестна планета"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:281
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:294
 #, kde-format
 msgid "&Lock"
 msgstr "&Заключване"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:287
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:301
 #, kde-format
 msgid "&Hide"
 msgstr "&Скриване"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:296
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:311
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
 #, kde-format
 msgid "&Configure..."
 msgstr "&Настройки..."
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:155
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "м"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:157
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:162
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "км"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:161
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:168
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "см"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "ft"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:174
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "in"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:167
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:177
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "yd"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:180
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "мили"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:183
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:115
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Копиране на координати"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "Копиране на геолокация: URL"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:133
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:134
 #, kde-format
 msgid "&Address Details"
 msgstr "&Подробности за адреса"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:149
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:151
 #, kde-format
 msgid "No description available."
 msgstr "Няма налично описание."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:352
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:446
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:365
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:371
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:374
@@ -53291,7 +53276,7 @@ msgstr "Няма налично описание."
 msgid "National Capital"
 msgstr "Столица"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:354
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:331
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:335
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:339
@@ -53302,7 +53287,7 @@ msgstr "Столица"
 msgid "City"
 msgstr "Град"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:356
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:456
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:333
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:337
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:341
@@ -53311,7 +53296,7 @@ msgstr "Град"
 msgid "State Capital"
 msgstr "Главен областен град"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:358
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:461
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:332
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:336
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:340
@@ -53320,23 +53305,23 @@ msgstr "Главен областен град"
 msgid "County Capital"
 msgstr "Столица на държава"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:361
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:467
 #, kde-format
 msgid "Capital"
 msgstr "Столица"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:369
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:478
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:372
 #, kde-format
 msgid "Village"
 msgstr "Село"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:513
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:634
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Информация"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:813
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1002
 #, kde-format
 msgid "Address Details"
 msgstr "Подробности за адреса"
@@ -53369,7 +53354,7 @@ msgid "Valley"
 msgstr "Долина"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:323
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:156
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Terrain"
 msgstr "Теренен изглед"
@@ -53480,7 +53465,7 @@ msgid "Coordinate"
 msgstr "Координата"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:360
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:154
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
 #, kde-format
 msgid "Satellite"
 msgstr "Спътников изглед"
@@ -54690,7 +54675,7 @@ msgid "Narrow Gauge"
 msgstr "Теснолинейка"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:227
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:311
 #, kde-format
 msgid "Tram"
 msgstr "Трамвай"
@@ -54706,7 +54691,7 @@ msgid "Abandoned Railway"
 msgstr "Изоставена железопътна линия"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:616
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:226
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:307
 #, kde-format
 msgid "Subway"
 msgstr "Метро"
@@ -54813,7 +54798,7 @@ msgid "Goods"
 msgstr "Стоки"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:236
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:347
 #, kde-format
 msgid "Downhill Piste"
 msgstr "Писта за дoунхил"
@@ -54824,7 +54809,7 @@ msgid "Nordic Piste"
 msgstr "Писта за спортно ходене"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:238
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:355
 #, kde-format
 msgid "Skitour"
 msgstr "Скитур"
@@ -55038,67 +55023,67 @@ msgctxt "Seconds symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:223
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:295
 #, kde-format
 msgid "Detour"
 msgstr "Пренасочване"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:224
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:299
 #, kde-format
 msgid "Ferry Route"
 msgstr "Маршрут с фериботна връзка"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:225
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:303
 #, kde-format
 msgid "Train"
 msgstr "Влак"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:228
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:315
 #, kde-format
 msgid "Bus"
 msgstr "Автобус"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:229
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:319
 #, kde-format
 msgid "Trolley Bus"
 msgstr "Тролейбус"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:230
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:323
 #, kde-format
 msgid "Bicycle Route"
 msgstr "Велосипеден маршрут"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:231
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:327
 #, kde-format
 msgid "Mountainbike Route"
 msgstr "Маршрут за планински велосипеди"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:232
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:331
 #, kde-format
 msgid "Walking Route"
 msgstr "Пешеходен маршрут"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:233
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:335
 #, kde-format
 msgid "Hiking Route"
 msgstr "Туристически маршрут"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:234
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:339
 #, kde-format
 msgid "Bridleway"
 msgstr "Маршрут за конна езда"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:235
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:343
 #, kde-format
 msgid "Inline Skates Route"
 msgstr "Маршрут за ролкови кънки"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:237
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:351
 #, kde-format
 msgid "Nordic Ski Trail"
 msgstr "Пътека за ски бягане"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:239
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:359
 #, kde-format
 msgid "Sled Trail"
 msgstr "Маршрут за шейни"
@@ -55135,26 +55120,26 @@ msgid "This is an Invalid File"
 msgstr "Това е невалиден файл"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:194
-#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:411
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:48
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
 msgstr "Име"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:198
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
 #, kde-format
 msgid "Popularity"
 msgstr "Популярност"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:200
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Индекс на популярност"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:256
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
 #, kde-format
 msgid "Playlist"
 msgstr "Списък с песни"
@@ -55255,7 +55240,7 @@ msgstr "Свързани етикети"
 msgid "Add custom tag..."
 msgstr "Добавяне на потребителски таг..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:375
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:376
 #, kde-format
 msgid "Configure"
 msgstr "Настройки"
@@ -56031,12 +56016,12 @@ msgstr ""
 "Приложения: Показване на сеизмични и радио данни и за използване в цифрови "
 "планетариуми.</p>"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:44
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:45
 #, kde-format
 msgid "Flat Map"
 msgstr "Плоска карта"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:50
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -56076,13 +56061,13 @@ msgstr ""
 "<p><b>Равноплощна азимутална проекция на Ламберт</b></p><p> Приложения: "
 "Използва се в структурната геология за начертаване на данни за посоките. </p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:49
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:50
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Меркаторово"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:54
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -56473,7 +56458,7 @@ msgstr "Инструмент за рендиране"
 msgid "Runner Tools"
 msgstr "Инструменти за изпълняване на програми"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:45
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:46
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Невъзможно е да се вмъкнат данни в кеша"
@@ -56694,38 +56679,38 @@ msgstr "до"
 msgid "Maximum Tile Level"
 msgstr "Максимално ниво на секторите"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:153
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:144
 #, kde-format
 msgid "Roadmap"
 msgstr "Пътна карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:155
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:146
 #, kde-format
 msgid "Hybrid"
 msgstr "Смесен изглед"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:174
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:165
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Управление на вида карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Управление на навигацията"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:175
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Управление на мащаба"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:188
 #: core/utilities/setup/setupgeolocation.cpp:132
 #, kde-format
 msgid "Google Maps"
 msgstr "Карти в Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:375
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:366
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Float items"
@@ -67804,6 +67789,17 @@ msgstr "Елементи на албуми"
 #, kde-format
 msgid "Import Items"
 msgstr "Импортиране на елементи"
+
+#~ msgctxt "@title:window"
+#~ msgid "Enter Flickr Login URL"
+#~ msgstr "Въведете адрес за влизане в Flickr"
+
+#~ msgid ""
+#~ "Copy the full URL from the external browser that contains the "
+#~ "\"oauth_token\" entry:"
+#~ msgstr ""
+#~ "Копиране на пълния URL адрес от външния браузър, който съдържа записа "
+#~ "\"oauth_token\":"
 
 #~ msgid ""
 #~ "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
