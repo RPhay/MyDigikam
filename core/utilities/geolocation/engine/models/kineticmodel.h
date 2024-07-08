@@ -69,7 +69,7 @@ private:
 
     QScopedPointer<KineticModelPrivate> d_ptr;
 
-    Q_DECLARE_PRIVATE(KineticModel);
+    Q_DECLARE_PRIVATE(KineticModel)
     Q_DISABLE_COPY(KineticModel);
 };
 
