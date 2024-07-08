@@ -609,7 +609,7 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
 
     const qint64 block     = (bsize < nextSize) ? bsize
                                                 : nextSize;
-    const qint64 step      = qMax(bsize - block, 5) / 5;
+    const qint64 step      = qMax(bsize - block, (qint64)5) / 5;
 
     if (fsize)
     {
