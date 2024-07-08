@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QColor>
 #include <QImage>
 #include <QString>
@@ -42,7 +44,7 @@ private:
 
     QColor          m_wayColor;
     QColor          m_backgroundColor;
-    QString m_backgroundType;
+    QString         m_backgroundType;
     QSvgRenderer *  m_foreground      = nullptr;
     QSvgRenderer *  m_foreground2     = nullptr;
     QString         m_text;
@@ -55,5 +57,7 @@ private:
     QStringList     m_precoloredForegroundTypes;
 
     int const       m_side;
+/*
     int             m_wayWidth;
+*/
 };

@@ -239,3 +239,10 @@ target_compile_definitions(core_dimg_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
+
+set_target_properties(core_dimg_obj
+                      PROPERTIES
+                      C_STANDARD 11                 # For liblqr code
+                      C_STANDARD_REQUIRED YES
+                      C_EXTENSIONS NO
+)

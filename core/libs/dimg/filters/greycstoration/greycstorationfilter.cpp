@@ -59,6 +59,7 @@
 #   pragma clang diagnostic ignored "-Wunused-local-typedef"
 #   pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   pragma clang diagnostic ignored "-Wdate-time"
+#   pragma clang diagnostic ignored "-Wconstant-conversion"
 #endif
 
 // CImg includes

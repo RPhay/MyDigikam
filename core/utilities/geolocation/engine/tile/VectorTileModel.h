@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QRunnable>
 #include <QMap>
+
+// Local includes
 
 #include "TileId.h"
 #include "GeoDataLatLonBox.h"
@@ -120,7 +124,7 @@ private:
     TileLoader* const                            m_loader                = nullptr;
     const GeoSceneVectorTileDataset* const       m_layer                 = nullptr;
     GeoDataTreeModel* const                      m_treeModel             = nullptr;
-    QThreadPool* const                           m_threadPool                 = nullptr;
+    QThreadPool* const                           m_threadPool            = nullptr;
     int                                          m_tileLoadLevel;
     int                                          m_tileZoomLevel;
     QList<TileId>                                m_pendingDocuments;

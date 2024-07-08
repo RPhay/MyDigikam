@@ -17,7 +17,7 @@
 // clazy:skip
 
 // Pragma directives to reduce warnings from OpenCV header files.
-#if !defined(__APPLE__) && defined(__GNUC__)
+#if defined(__GNUC__)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
 #   pragma GCC diagnostic ignored "-Woverloaded-virtual"
@@ -25,7 +25,7 @@
 #   pragma GCC diagnostic ignored "-Wdeprecated-enum-enum-conversion"
 #endif
 
-#if defined(__APPLE__) && defined(__clang__)
+#if defined(__clang__)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wnon-virtual-dtor"
 #   pragma clang diagnostic ignored "-Woverloaded-virtual"
@@ -79,10 +79,10 @@
 #include <opencv2/ml.hpp>
 
 // Restore warnings
-#if !defined(__APPLE__) && defined(__GNUC__)
+#if defined(__GNUC__)
 #   pragma GCC diagnostic pop
 #endif
 
-#if defined(__APPLE__) && defined(__clang__)
+#if defined(__clang__)
 #   pragma clang diagnostic pop
 #endif

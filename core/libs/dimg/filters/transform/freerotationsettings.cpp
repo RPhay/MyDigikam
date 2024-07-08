@@ -204,7 +204,6 @@ void FreeRotationSettings::readSettings(const KConfigGroup& group)
 
 void FreeRotationSettings::writeSettings(KConfigGroup& group)
 {
-    FreeRotationContainer prm = settings();
     group.writeEntry(d->configAutoCropTypeEntry,    d->autoCropCB->currentIndex());
     group.writeEntry(d->configAntiAliasingEntry,    d->antialiasInput->isChecked());
     group.writeEntry(d->configBackgroundColorEntry, d->backgroundColor->color());
