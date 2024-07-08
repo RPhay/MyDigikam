@@ -401,7 +401,7 @@ private:
 
     QString    m_path;
     QString    m_parentPath         = QLatin1String("/");
-;
+
     QString    m_category;
     QString    m_caption;
     qlonglong  m_iconId             = 0;

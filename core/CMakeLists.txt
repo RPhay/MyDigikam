@@ -393,6 +393,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
+    REMOVE_CLANG_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
 
     include(MacroSanitizers)
     ENABLE_COMPILER_SANITIZERS()
