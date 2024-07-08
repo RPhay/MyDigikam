@@ -111,7 +111,7 @@ void TextureFilter::filterImage()
     uchar* pOutBits = m_destImage.bits();
     uint   offset;
 
-    DColor teData, transData, inData, outData;
+    DColor teData, inData, outData;
     uchar* ptr = nullptr, *dptr = nullptr, *tptr = nullptr;
     int    progress;
 
