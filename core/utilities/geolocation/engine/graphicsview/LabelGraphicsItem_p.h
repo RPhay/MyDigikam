@@ -15,12 +15,16 @@
 
 #pragma once
 
-#include "FrameGraphicsItem_p.h"
+// Qt includes
 
 #include <QString>
 #include <QSizeF>
 #include <QImage>
 #include <QIcon>
+
+// Local includes
+
+#include "FrameGraphicsItem_p.h"
 
 class QFont;
 
@@ -33,8 +37,8 @@ class Q_DECL_HIDDEN LabelGraphicsItemPrivate : public FrameGraphicsItemPrivate
 {
 public:
 
-    LabelGraphicsItemPrivate(LabelGraphicsItem *labelGraphicsItem,
-                             MarbleGraphicsItem *parent);
+    LabelGraphicsItemPrivate(LabelGraphicsItem* labelGraphicsItem,
+                             MarbleGraphicsItem* parent);
 
     // TODO: This has to go up to MarbleGraphicsItem
     static QFont font();

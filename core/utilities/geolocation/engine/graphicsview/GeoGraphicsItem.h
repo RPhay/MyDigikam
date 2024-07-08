@@ -15,9 +15,9 @@
 
 #pragma once
 
-// Marble
-#include "GeoDataStyle.h"
+// Local includes
 
+#include "GeoDataStyle.h"
 #include "digikam_export.h"
 
 class QString;
@@ -38,8 +38,8 @@ class RenderContext
 {
 public:
 
-    bool operator==(const RenderContext &other) const;
-    bool operator!=(const RenderContext &other) const;
+    bool operator==(const RenderContext& other) const;
+    bool operator!=(const RenderContext& other) const;
 
     explicit RenderContext(int tileLevel = -1);
     int tileLevel() const;
@@ -53,7 +53,7 @@ class DIGIKAM_EXPORT GeoGraphicsItem
 {
 public:
 
-    explicit GeoGraphicsItem( const GeoDataFeature *feature );
+    explicit GeoGraphicsItem(const GeoDataFeature* feature);
     virtual ~GeoGraphicsItem();
 
     enum GeoGraphicsItemFlag
@@ -67,7 +67,7 @@ public:
 
     bool visible() const;
 
-    void setVisible( bool visible );
+    void setVisible(bool visible);
 
     /**
      * Get the GeoGraphicItemFlags value that describes which flags are set on
@@ -80,13 +80,13 @@ public:
      * @param flag the flag
      * @param enabled sets if the flag is to be set or unset
      */
-    void setFlag( GeoGraphicsItemFlag flag, bool enabled = true );
+    void setFlag(GeoGraphicsItemFlag flag, bool enabled = true);
 
     /**
      * Replace all of the current flags.
      * @param flags is the new value for this item's flags.
      */
-    void setFlags( GeoGraphicsItemFlags flags );
+    void setFlags(GeoGraphicsItemFlags flags);
 
     /**
      * Returns the minim zoom level on which item will be active.
@@ -96,7 +96,7 @@ public:
     /**
      * Sets the minimum zoom level
      */
-    void setMinZoomLevel( int zoomLevel );
+    void setMinZoomLevel(int zoomLevel);
 
     /**
      * Returns the placemark for that item.
@@ -106,7 +106,7 @@ public:
     /**
      * Returns the bounding box covered by the item.
      */
-    virtual const GeoDataLatLonAltBox &latLonAltBox() const = 0;
+    virtual const GeoDataLatLonAltBox& latLonAltBox() const = 0;
 
     /**
      * Returns the style of item.
@@ -116,7 +116,7 @@ public:
     /**
      * Set the style for the item.
      */
-    void setStyleBuilder(const StyleBuilder *styleBuilder);
+    void setStyleBuilder(const StyleBuilder* styleBuilder);
 
     void resetStyle();
 
@@ -126,7 +126,7 @@ public:
      * GeoGraphicsItem takes ownership of the
      * passed style and deletes it when appropriate.
      */
-    void setHighlightStyle( const GeoDataStyle::ConstPtr &highlightStyle );
+    void setHighlightStyle(const GeoDataStyle::ConstPtr& highlightStyle);
 
     /**
      * Returns the z value of the item
@@ -136,7 +136,7 @@ public:
     /**
      * Set the z value of the item
      */
-    void setZValue( qreal z );
+    void setZValue(qreal z);
 
     static bool zValueLessThan(GeoGraphicsItem* one, GeoGraphicsItem* two);
     static bool styleLessThan(GeoGraphicsItem* one, GeoGraphicsItem* two);
@@ -148,17 +148,17 @@ public:
      * Note that depending on the projection and zoom level, the item may be visible more than once,
      * which is taken care of by GeoPainter.
      */
-    virtual void paint(GeoPainter *painter, const ViewportParams *viewport, const QString &layer, int tileZoomLevel) = 0;
+    virtual void paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel) = 0;
 
-    void setHighlighted( bool highlight );
+    void setHighlighted(bool highlight);
 
     bool isHighlighted() const;
 
     QStringList paintLayers() const;
 
-    void setPaintLayers(const QStringList &paintLayers);
+    void setPaintLayers(const QStringList& paintLayers);
 
-    void setRenderContext(const RenderContext &renderContext);
+    void setRenderContext(const RenderContext& renderContext);
 
     /**
      * @brief contains Returns true if the item contains the given coordinates
@@ -166,13 +166,13 @@ public:
      * @param viewport
      * @return
      */
-    virtual bool contains(const QPoint &screenPosition, const ViewportParams *viewport) const;
+    virtual bool contains(const QPoint& screenPosition, const ViewportParams* viewport) const;
 
-    void setRelations(const QSet<const GeoDataRelation *> &relations);
+    void setRelations(const QSet<const GeoDataRelation*>& relations);
 
 protected:
 
-    virtual void handleRelationUpdate(const QVector<const GeoDataRelation *> &relations);
+    virtual void handleRelationUpdate(const QVector<const GeoDataRelation*>& relations);
 
 protected:
 

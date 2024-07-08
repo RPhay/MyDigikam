@@ -15,10 +15,12 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QVector>
 
-// Marble
+// Local includes
+
 #include "MarbleGraphicsItem.h"
 #include "digikam_export.h"
 
@@ -38,7 +40,7 @@ public:
     };
     Q_DECLARE_FLAGS(GraphicsItemFlags, GraphicsItemFlag)
 
-    explicit ScreenGraphicsItem( MarbleGraphicsItem *parent = nullptr );
+    explicit ScreenGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
     ~ScreenGraphicsItem() override;
 
@@ -52,7 +54,7 @@ public:
      * Positive y-coordinates are counted top-aligned from the top border of the parent item.
      * Negative y-coordinates are counted right-aligned from the bottom border of the parent item.
      */
-    void    setPosition( const QPointF& position );
+    void    setPosition(const QPointF& position);
 
     /**
      * @brief Return the position of the ScreenGraphicsItem
@@ -95,13 +97,13 @@ public:
      * Sets the flags to flags. All flags in flags will be enabled and all other flags will
      * be disabled. By default all flags are disabled.
      */
-    void setFlags( GraphicsItemFlags flags );
+    void setFlags(GraphicsItemFlags flags);
 
 protected:
 
-    explicit ScreenGraphicsItem(ScreenGraphicsItemPrivate *dd);
+    explicit ScreenGraphicsItem(ScreenGraphicsItemPrivate* dd);
 
-    bool eventFilter( QObject *, QEvent * ) override;
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 

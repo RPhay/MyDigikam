@@ -15,11 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QList>
 
-#include "digikam_export.h"
+// Local includes
+
 #include "MarbleGlobal.h"
+#include "digikam_export.h"
 
 namespace Marble
 {
@@ -43,20 +47,20 @@ public:
      * Creates a new instance of GeoGraphicsScene
      * @param parent the QObject parent of the Scene
      */
-    explicit GeoGraphicsScene( QObject *parent = nullptr );
+    explicit GeoGraphicsScene(QObject* parent = nullptr);
     ~GeoGraphicsScene() override;
 
     /**
      * @brief Add an item to the GeoGraphicsScene
      * Adds the item @p item to the GeoGraphicsScene
      */
-    void addItem( GeoGraphicsItem *item );
+    void addItem(GeoGraphicsItem* item);
 
     /**
      * @brief Remove all concerned items from the GeoGraphicsScene
      * Removes all items which are associated with @p object from the GeoGraphicsScene
      */
-    void removeItem( const GeoDataFeature *feature );
+    void removeItem(const GeoDataFeature* feature);
 
     /**
      * @brief Remove all items from the GeoGraphicsScene
@@ -70,7 +74,7 @@ public:
      * @param maxZoomLevel The max zoom level of tiling
      * @return The list of items in the specified box in no specific order.
      */
-    QList<GeoGraphicsItem *> items( const GeoDataLatLonBox &box, int maxZoomLevel ) const;
+    QList<GeoGraphicsItem*> items(const GeoDataLatLonBox& box, int maxZoomLevel) const;
 
     /**
      * @brief Get the list of items which belong to a placemark
@@ -83,7 +87,7 @@ public:
 
 public Q_SLOTS:
 
-    void applyHighlight( const QVector<GeoDataPlacemark*>& );
+    void applyHighlight(const QVector<GeoDataPlacemark*>&);
 
 Q_SIGNALS:
 

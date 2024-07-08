@@ -13,24 +13,25 @@
  *
  * ============================================================ */
 
-// Self
 #include "GeoGraphicsItem.h"
 #include "GeoGraphicsItem_p.h"
 
-// Qt
+// Qt includes
+
 #include <QColor>
 
-#include "GeoDataPlacemark.h"
+// Local includes
 
+#include "GeoDataPlacemark.h"
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-GeoGraphicsItem::GeoGraphicsItem( const GeoDataFeature *feature )
-    : d( new GeoGraphicsItemPrivate( feature ) )
+GeoGraphicsItem::GeoGraphicsItem(const GeoDataFeature* feature)
+    : d(new GeoGraphicsItemPrivate(feature))
 {
-    setFlag( ItemIsVisible, true );
+    setFlag(ItemIsVisible, true);
 }
 
 GeoGraphicsItem::~GeoGraphicsItem()
@@ -43,9 +44,9 @@ bool GeoGraphicsItem::visible() const
     return d->m_flags & ItemIsVisible;
 }
 
-void GeoGraphicsItem::setVisible( bool visible )
+void GeoGraphicsItem::setVisible(bool visible)
 {
-    setFlag( ItemIsVisible, visible );
+    setFlag(ItemIsVisible, visible);
 }
 
 GeoGraphicsItem::GeoGraphicsItemFlags GeoGraphicsItem::flags() const
@@ -53,16 +54,20 @@ GeoGraphicsItem::GeoGraphicsItemFlags GeoGraphicsItem::flags() const
     return d->m_flags;
 }
 
-void GeoGraphicsItem::setFlag( GeoGraphicsItemFlag flag, bool enabled )
+void GeoGraphicsItem::setFlag(GeoGraphicsItemFlag flag, bool enabled)
 {
-    if( enabled ) {
+    if (enabled)
+    {
         d->m_flags = d->m_flags | flag;
-    } else {
+    }
+
+    else
+    {
         d->m_flags = d->m_flags & ~flag;
     }
 }
 
-void GeoGraphicsItem::setFlags( GeoGraphicsItemFlags flags )
+void GeoGraphicsItem::setFlags(GeoGraphicsItemFlags flags)
 {
     d->m_flags = flags;
 }
@@ -72,7 +77,7 @@ const GeoDataFeature* GeoGraphicsItem::feature() const
     return d->m_feature;
 }
 
-void GeoGraphicsItem::setHighlightStyle( const GeoDataStyle::ConstPtr &highlightStyle)
+void GeoGraphicsItem::setHighlightStyle(const GeoDataStyle::ConstPtr& highlightStyle)
 {
     /**
      * Delete any previously set style
@@ -87,21 +92,31 @@ GeoDataStyle::ConstPtr GeoGraphicsItem::style() const
      * m_isHighlight is set true when the item is
      * supposed to be colored highlighted
      */
-    if ( d->m_highlighted && d->m_highlightStyle ) {
+    if (d->m_highlighted && d->m_highlightStyle)
+    {
         return d->m_highlightStyle;
     }
 
-    if (!d->m_style) {
-        if (const GeoDataPlacemark *placemark = geodata_cast<GeoDataPlacemark>(d->m_feature)) {
+    if (!d->m_style)
+    {
+        if (const GeoDataPlacemark* placemark = geodata_cast<GeoDataPlacemark>(d->m_feature))
+        {
             auto styling = StyleParameters(placemark, d->m_renderContext.tileLevel());
-            for (auto relation: d->m_relations) {
-                if (relation->isVisible()) {
+
+            for (auto relation : d->m_relations)
+            {
+                if (relation->isVisible())
+                {
                     styling.relation = relation;
                     break;
                 }
             }
+
             d->m_style = d->m_styleBuilder->createStyle(styling);
-        } else {
+        }
+
+        else
+        {
             d->m_style = d->m_feature->style();
         }
     }
@@ -109,7 +124,7 @@ GeoDataStyle::ConstPtr GeoGraphicsItem::style() const
     return d->m_style;
 }
 
-void GeoGraphicsItem::setStyleBuilder(const StyleBuilder *styleBuilder)
+void GeoGraphicsItem::setStyleBuilder(const StyleBuilder* styleBuilder)
 {
     d->m_styleBuilder = styleBuilder;
 }
@@ -125,12 +140,12 @@ qreal GeoGraphicsItem::zValue() const
     return d->m_zValue;
 }
 
-void GeoGraphicsItem::setZValue( qreal z )
+void GeoGraphicsItem::setZValue(qreal z)
 {
     d->m_zValue = z;
 }
 
-void GeoGraphicsItem::setHighlighted( bool highlight )
+void GeoGraphicsItem::setHighlighted(bool highlight)
 {
     d->m_highlighted = highlight;
 }
@@ -145,30 +160,32 @@ QStringList GeoGraphicsItem::paintLayers() const
     return d->m_paintLayers;
 }
 
-void GeoGraphicsItem::setPaintLayers(const QStringList &paintLayers)
+void GeoGraphicsItem::setPaintLayers(const QStringList& paintLayers)
 {
     d->m_paintLayers = paintLayers;
 }
 
-void GeoGraphicsItem::setRenderContext(const RenderContext &renderContext)
+void GeoGraphicsItem::setRenderContext(const RenderContext& renderContext)
 {
-    if (renderContext != d->m_renderContext) {
+    if (renderContext != d->m_renderContext)
+    {
         d->m_renderContext = renderContext;
         d->m_style = GeoDataStyle::ConstPtr();
     }
 }
 
-bool GeoGraphicsItem::contains(const QPoint &, const ViewportParams *) const
+bool GeoGraphicsItem::contains(const QPoint&, const ViewportParams*) const
 {
     return false;
 }
 
-void GeoGraphicsItem::setRelations(const QSet<const GeoDataRelation*> &relations)
+void GeoGraphicsItem::setRelations(const QSet<const GeoDataRelation*>& relations)
 {
     d->m_relations.clear();
     std::copy(relations.begin(), relations.end(), std::back_inserter(d->m_relations));
     std::sort(d->m_relations.begin(), d->m_relations.end(),
-    [](const GeoDataRelation * a, const GeoDataRelation * b) {
+              [](const GeoDataRelation * a, const GeoDataRelation * b)
+    {
         return *a < *b;
     });
 
@@ -176,7 +193,7 @@ void GeoGraphicsItem::setRelations(const QSet<const GeoDataRelation*> &relations
     handleRelationUpdate(d->m_relations);
 }
 
-void GeoGraphicsItem::handleRelationUpdate(const QVector<const GeoDataRelation *> &)
+void GeoGraphicsItem::handleRelationUpdate(const QVector<const GeoDataRelation*>&)
 {
     // does nothing
 }
@@ -191,19 +208,20 @@ void GeoGraphicsItem::setMinZoomLevel(int zoomLevel)
     d->m_minZoomLevel = zoomLevel;
 }
 
-bool GeoGraphicsItem::zValueLessThan(GeoGraphicsItem *one, GeoGraphicsItem *two)
+bool GeoGraphicsItem::zValueLessThan(GeoGraphicsItem* one, GeoGraphicsItem* two)
 {
     return one->d->m_zValue < two->d->m_zValue;
 }
 
-bool GeoGraphicsItem::styleLessThan(GeoGraphicsItem *one, GeoGraphicsItem *two)
+bool GeoGraphicsItem::styleLessThan(GeoGraphicsItem* one, GeoGraphicsItem* two)
 {
     return reinterpret_cast<quint64>(one->d->m_style.data()) < reinterpret_cast<quint64>(two->d->m_style.data());
 }
 
-bool GeoGraphicsItem::zValueAndStyleLessThan(GeoGraphicsItem *one, GeoGraphicsItem *two)
+bool GeoGraphicsItem::zValueAndStyleLessThan(GeoGraphicsItem* one, GeoGraphicsItem* two)
 {
-    if (one->d->m_zValue == two->d->m_zValue) {
+    if (one->d->m_zValue == two->d->m_zValue)
+    {
         return reinterpret_cast<quint64>(one->d->m_style.data()) < reinterpret_cast<quint64>(two->d->m_style.data());
     }
 
@@ -211,12 +229,12 @@ bool GeoGraphicsItem::zValueAndStyleLessThan(GeoGraphicsItem *one, GeoGraphicsIt
 }
 
 
-bool RenderContext::operator==(const RenderContext &other) const
+bool RenderContext::operator==(const RenderContext& other) const
 {
     return m_tileLevel == other.m_tileLevel;
 }
 
-bool RenderContext::operator!=(const RenderContext &other) const
+bool RenderContext::operator!=(const RenderContext& other) const
 {
     return !operator==(other);
 }

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "digikam_export.h"
 
 namespace Marble
@@ -33,7 +35,7 @@ public:
      * This updates the positions of all items in the layout.
      * Calling this will be done on every repainting, so you won't have to do it yourself.
      */
-    virtual void updatePositions( MarbleGraphicsItem *parent ) = 0;
+    virtual void updatePositions(MarbleGraphicsItem* parent) = 0;
 };
 
 } // Namespace Marble

@@ -13,6 +13,8 @@
  *
  * ============================================================ */
 
+// Local includes
+
 #include "MarbleGlobal.h"
 
 class QPolygonF;
@@ -31,25 +33,25 @@ class Q_DECL_HIDDEN GeoPainterPrivate
 {
 public:
 
-    GeoPainterPrivate( GeoPainter* q, const ViewportParams *viewport, MapQuality mapQuality );
+    GeoPainterPrivate(GeoPainter* q, const ViewportParams* viewport, MapQuality mapQuality);
 
     ~GeoPainterPrivate();
 
 
-    static void createAnnotationLayout ( qreal x, qreal y,
-                                         const QSizeF& bubbleSize,
-                                         qreal bubbleOffsetX, qreal bubbleOffsetY,
-                                         qreal xRnd, qreal yRnd,
-                                         QPainterPath& path, QRectF& rect );
+    static void createAnnotationLayout(qreal x, qreal y,
+                                       const QSizeF& bubbleSize,
+                                       qreal bubbleOffsetX, qreal bubbleOffsetY,
+                                       qreal xRnd, qreal yRnd,
+                                       QPainterPath& path, QRectF& rect);
 
-    static GeoDataLinearRing createLinearRingFromGeoRect( const GeoDataCoordinates & centerCoordinates,
-                                                          qreal width, qreal height );
+    static GeoDataLinearRing createLinearRingFromGeoRect(const GeoDataCoordinates& centerCoordinates,
+                                                         qreal width, qreal height);
 
-    static bool doClip( const ViewportParams *viewport );
+    static bool doClip(const ViewportParams* viewport);
 
     static qreal normalizeAngle(qreal angle);
 
-    void drawTextRotated( const QPointF &startPoint, qreal angle, const QString &text );
+    void drawTextRotated(const QPointF& startPoint, qreal angle, const QString& text);
 
 public:
 

@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPainter>
+
+// Local includes
 
 #include "digikam_export.h"
 #include "MarbleGlobal.h"
@@ -61,26 +65,26 @@ public:
 
     ~ClipPainter();
 
-    void setScreenClip( bool enable );
+    void setScreenClip(bool enable);
     bool hasScreenClip() const;
 
-    void drawPolygon( const QPolygonF &,
-                      Qt::FillRule fillRule = Qt::OddEvenFill );
+    void drawPolygon(const QPolygonF&,
+                     Qt::FillRule fillRule = Qt::OddEvenFill);
 
-    void drawPolyline( const QPolygonF & );
-    void drawPolyline( const QPolygonF &, QVector<QPointF>& labelNodes,
-                       LabelPositionFlags labelPositionFlag = LineCenter );
+    void drawPolyline(const QPolygonF&);
+    void drawPolyline(const QPolygonF&, QVector<QPointF>& labelNodes,
+                      LabelPositionFlags labelPositionFlag = LineCenter);
 
-    void labelPosition(const QPolygonF &polygon, QVector<QPointF> &labelNodes,
+    void labelPosition(const QPolygonF& polygon, QVector<QPointF>& labelNodes,
                        LabelPositionFlags labelPositionFlags) const;
 
-    void setPen(const QColor &);
-    void setPen(const QPen & pen);
+    void setPen(const QColor&);
+    void setPen(const QPen& pen);
     void setPen(Qt::PenStyle style);
-    void setBrush(const QBrush & brush);
+    void setBrush(const QBrush& brush);
 
-    void setDebugPolygonsLevel( int );
-    void setDebugBatchRender( bool );
+    void setDebugPolygonsLevel(int);
+    void setDebugBatchRender(bool);
 
     //  void clearNodeCount(){ m_debugNodeCount = 0; }
     //  int nodeCount(){ return m_debugNodeCount; }

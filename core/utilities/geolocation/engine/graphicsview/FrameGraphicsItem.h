@@ -15,11 +15,14 @@
 
 #pragma once
 
-#include <Qt> // for Qt::PenStyle
+// Qt includes
 
-// Marble
-#include "digikam_export.h"
+#include <Qt>
+
+// Local includes
+
 #include "ScreenGraphicsItem.h"
+#include "digikam_export.h"
 
 class QBrush;
 class QPainterPath;
@@ -41,7 +44,7 @@ public:
         ShadowFrame
     };
 
-    explicit FrameGraphicsItem( MarbleGraphicsItem *parent = nullptr );
+    explicit FrameGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
     ~FrameGraphicsItem() override;
 
@@ -53,7 +56,7 @@ public:
     /**
      * Sets the type of the Frame. Standard is NoFrame.
      */
-    void setFrame( FrameType type );
+    void setFrame(FrameType type);
 
     /**
      * Returns the margin of the item. This is used for all margins with the value 0.0.
@@ -64,7 +67,7 @@ public:
     /**
      * Sets the margin of the item. This is used for all margins with the value 0.0.
      */
-    void setMargin( qreal margin );
+    void setMargin(qreal margin);
 
     /**
      * Returns the top margin of the item.
@@ -74,7 +77,7 @@ public:
     /**
      * Set the top margin of the item.
      */
-    void setMarginTop( qreal marginTop );
+    void setMarginTop(qreal marginTop);
 
     /**
      * Returns the bottom margin of the item.
@@ -84,7 +87,7 @@ public:
     /**
      * Set the bottom margin of the item.
      */
-    void setMarginBottom( qreal marginBottom );
+    void setMarginBottom(qreal marginBottom);
 
     /**
      * Returns the left margin of the item.
@@ -94,7 +97,7 @@ public:
     /**
      * Set the left margin of the item.
      */
-    void setMarginLeft( qreal marginLeft );
+    void setMarginLeft(qreal marginLeft);
 
     /**
      * Returns the right margin of the item.
@@ -104,7 +107,7 @@ public:
     /**
      * Set the right margin of the item.
      */
-    void setMarginRight( qreal marginRight );
+    void setMarginRight(qreal marginRight);
 
     /**
      * Returns the border width of the item.
@@ -114,7 +117,7 @@ public:
     /**
      * Set the border width of the item.
      */
-    void setBorderWidth( qreal width );
+    void setBorderWidth(qreal width);
 
     /**
      * Returns the padding of the item.
@@ -125,7 +128,7 @@ public:
     /**
      * Set the padding of the item.
      */
-    void setPadding( qreal width );
+    void setPadding(qreal width);
 
     /**
      * Returns the brush of the border.
@@ -135,17 +138,17 @@ public:
     /**
      * Change the brush of the border.
      */
-    void setBorderBrush( const QBrush &brush );
+    void setBorderBrush(const QBrush& brush);
 
     /**
      * Returns the style of the border.
      */
-    Qt::PenStyle borderStyle () const;
+    Qt::PenStyle borderStyle() const;
 
     /**
      * Change the style of the border.
      */
-    void setBorderStyle( Qt::PenStyle style );
+    void setBorderStyle(Qt::PenStyle style);
 
     /**
      * Returns the background brush of the item.
@@ -155,7 +158,7 @@ public:
     /**
      * Changes the background brush of the item.
      */
-    void setBackground( const QBrush &background );
+    void setBackground(const QBrush& background);
 
     QRectF paintedRect() const;
 
@@ -166,7 +169,7 @@ public:
      * Sets the size of the content of the item.
      * @p size is the size required for contents.
      */
-    void setContentSize( const QSizeF& size ) override;
+    void setContentSize(const QSizeF& size) override;
 
 protected:
 
@@ -178,23 +181,23 @@ protected:
     /**
      * This function won't be reimplemented in most cases.
      */
-    void paint( QPainter *painter ) override;
+    void paint(QPainter* painter) override;
 
     /**
      * Here the items paint their content.
      */
-    virtual void paintContent( QPainter *painter );
+    virtual void paintContent(QPainter* painter);
 
     /**
      * Paints the background. This function won't be reimplemented in most cases.
      */
-    virtual void paintBackground( QPainter *painter );
+    virtual void paintBackground(QPainter* painter);
 
-    explicit FrameGraphicsItem(FrameGraphicsItemPrivate *dd);
+    explicit FrameGraphicsItem(FrameGraphicsItemPrivate* dd);
 
 private:
 
-    Q_DISABLE_COPY( FrameGraphicsItem )
+    Q_DISABLE_COPY(FrameGraphicsItem)
     Q_DECLARE_PRIVATE(FrameGraphicsItem)
 };
 

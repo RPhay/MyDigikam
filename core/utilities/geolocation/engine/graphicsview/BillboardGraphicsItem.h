@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <Qt>
+
+// Local includes
 
 #include "MarbleGraphicsItem.h"
 #include "digikam_export.h"
@@ -42,10 +46,10 @@ public:
     BillboardGraphicsItem();
 
     GeoDataCoordinates coordinate() const;
-    void setCoordinate( const GeoDataCoordinates &coordinates );
+    void setCoordinate(const GeoDataCoordinates& coordinates);
 
     Qt::Alignment alignment() const;
-    void setAlignment( Qt::Alignment alignment );
+    void setAlignment(Qt::Alignment alignment);
 
     /**
      * @brief Returns the absolute screen positions of the item.
@@ -67,7 +71,7 @@ public:
     /**
      * Returns the rect of one representation of the object that is at the given position.
      */
-    QRectF containsRect( const QPointF &point ) const;
+    QRectF containsRect(const QPointF& point) const;
 
 private:
 

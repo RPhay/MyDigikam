@@ -15,7 +15,8 @@
 
 #pragma once
 
-// Marble
+// Local includes
+
 #include "ScreenGraphicsItem.h"
 #include "digikam_export.h"
 
@@ -30,25 +31,25 @@ class DIGIKAM_EXPORT WidgetGraphicsItem : public ScreenGraphicsItem
 {
 public:
 
-    explicit WidgetGraphicsItem( MarbleGraphicsItem *parent = nullptr );
+    explicit WidgetGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
     ~WidgetGraphicsItem() override;
 
-    void setWidget( QWidget *widget );
-    QWidget *widget() const;
+    void setWidget(QWidget* widget);
+    QWidget* widget() const;
 
 protected:
 
     /**
      * Paints the item in item coordinates.
      */
-    void paint( QPainter *painter ) override;
+    void paint(QPainter* painter) override;
 
-    bool eventFilter( QObject *, QEvent * ) override;
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 
-    Q_DISABLE_COPY( WidgetGraphicsItem )
+    Q_DISABLE_COPY(WidgetGraphicsItem)
     Q_DECLARE_PRIVATE(WidgetGraphicsItem)
 };
 

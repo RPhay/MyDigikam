@@ -15,11 +15,13 @@
 
 #pragma once
 
-#include "GeoGraphicsItem.h"
+// Qt includes
 
 #include <QSet>
 
-// Marble
+// Local includes
+
+#include "GeoGraphicsItem.h"
 #include "GeoDataStyle.h"
 #include "StyleBuilder.h"
 
@@ -30,12 +32,12 @@ class Q_DECL_HIDDEN GeoGraphicsItemPrivate
 {
 public:
 
-    explicit GeoGraphicsItemPrivate( const GeoDataFeature *feature)
-        : m_zValue( 0 ),
-          m_minZoomLevel( 0 ),
-          m_feature( feature ),
+    explicit GeoGraphicsItemPrivate(const GeoDataFeature* feature)
+        : m_zValue(0),
+          m_minZoomLevel(0),
+          m_feature(feature),
           m_styleBuilder(nullptr),
-          m_highlighted( false )
+          m_highlighted(false)
     {
     }
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ScreenGraphicsItem_p.h"
 #include "WidgetGraphicsItem.h"
 
@@ -27,16 +29,16 @@ class Q_DECL_HIDDEN WidgetGraphicsItemPrivate : public ScreenGraphicsItemPrivate
 {
 public:
 
-    WidgetGraphicsItemPrivate(WidgetGraphicsItem *widgetGraphicsItem,
-                              MarbleGraphicsItem *parent);
+    WidgetGraphicsItemPrivate(WidgetGraphicsItem* widgetGraphicsItem,
+                              MarbleGraphicsItem* parent);
 
     ~WidgetGraphicsItemPrivate() override;
 
 public:
 
-    QWidget *m_widget       = nullptr;
-    QWidget *m_marbleWidget = nullptr;
-    QWidget *m_activeWidget = nullptr;
+    QWidget* m_widget       = nullptr;
+    QWidget* m_marbleWidget = nullptr;
+    QWidget* m_activeWidget = nullptr;
 };
 
 } // Namespace Marble
