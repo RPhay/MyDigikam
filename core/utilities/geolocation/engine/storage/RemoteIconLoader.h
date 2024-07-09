@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 
 class QString;
@@ -33,14 +35,14 @@ class RemoteIconLoader : public QObject
 
 public:
 
-    explicit RemoteIconLoader( QObject *parent = nullptr );
+    explicit RemoteIconLoader(QObject* parent = nullptr);
     ~RemoteIconLoader() override;
 
     /**
      * Handles the icon request for passed url( whether icon is available
      * in cache or on disk or it should gor for a download
      */
-    QImage load( const QUrl& url );
+    QImage load(const QUrl& url);
 
 Q_SIGNALS:
 
@@ -52,7 +54,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void storeIcon( const QByteArray&, const QString& );
+    void storeIcon(const QByteArray&, const QString&);
 
 private:
 

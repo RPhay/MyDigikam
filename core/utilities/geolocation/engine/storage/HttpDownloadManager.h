@@ -13,16 +13,19 @@
  *
  * ============================================================ */
 
-//
-// The HttpDownloadManager manages http downloads.
-//
+/**
+ * The HttpDownloadManager manages http downloads.
+ */
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 class QUrl;
@@ -56,7 +59,7 @@ public:
      *
      * @param policy The storage policy for this manager.
      */
-    explicit HttpDownloadManager( StoragePolicy *policy );
+    explicit HttpDownloadManager(StoragePolicy* policy);
 
     /**
      * Destroys the http download manager.
@@ -66,29 +69,29 @@ public:
     /**
      * Switches loading on/off, useful for offline mode.
      */
-    void setDownloadEnabled( const bool enable );
-    void addDownloadPolicy( const DownloadPolicy& );
+    void setDownloadEnabled(const bool enable);
+    void addDownloadPolicy(const DownloadPolicy&);
 
-    static QByteArray userAgent(const QString &platform, const QString &plugin);
+    static QByteArray userAgent(const QString& platform, const QString& plugin);
 
 public Q_SLOTS:
 
     /**
      * Adds a new job with a sourceUrl, destination file name and given id.
      */
-    void addJob( const QUrl& sourceUrl, const QString& destFilename, const QString &id,
-                 const DownloadUsage usage );
+    void addJob(const QUrl& sourceUrl, const QString& destFilename, const QString& id,
+                const DownloadUsage usage);
 
 Q_SIGNALS:
 
-    void downloadComplete( const QString&, const QString& );
+    void downloadComplete(const QString&, const QString&);
 
     /**
      * This signal is Q_EMITted if a file is downloaded and the data argument
      * contains the files content. The HttpDownloadManager takes care to save
      * it using the given storage policy.
      */
-    void downloadComplete( const QByteArray &data, const QString& initiatorId );
+    void downloadComplete(const QByteArray& data, const QString& initiatorId);
 
     /**
      * Signal is Q_EMITted when a new job is added to the queue.
@@ -104,15 +107,15 @@ Q_SIGNALS:
     /**
       * A job was queued, activated or removed (finished, failed)
       */
-    void progressChanged( int active, int queued );
+    void progressChanged(int active, int queued);
 
 private:
 
-    Q_DISABLE_COPY( HttpDownloadManager )
+    Q_DISABLE_COPY(HttpDownloadManager)
 
-    Q_PRIVATE_SLOT( d, void finishJob( const QByteArray&, const QString&, const QString& id ) )
-    Q_PRIVATE_SLOT( d, void requeue() )
-    Q_PRIVATE_SLOT( d, void startRetryTimer() )
+    Q_PRIVATE_SLOT(d, void finishJob(const QByteArray&, const QString&, const QString& id))
+    Q_PRIVATE_SLOT(d, void requeue())
+    Q_PRIVATE_SLOT(d, void startRetryTimer())
 
 private:
 

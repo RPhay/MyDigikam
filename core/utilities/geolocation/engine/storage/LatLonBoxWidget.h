@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QWidget>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -30,10 +34,10 @@ class DIGIKAM_EXPORT LatLonBoxWidget: public QWidget
 
 public:
 
-    explicit LatLonBoxWidget( QWidget * const parent = nullptr, Qt::WindowFlags const f = Qt::WindowFlags() );
+    explicit LatLonBoxWidget(QWidget* const parent = nullptr, Qt::WindowFlags const f = Qt::WindowFlags());
     ~LatLonBoxWidget() override;
     GeoDataLatLonBox latLonBox() const;
-    void setLatLonBox( GeoDataLatLonBox const & );
+    void setLatLonBox(GeoDataLatLonBox const&);
 
 Q_SIGNALS:
 
@@ -46,7 +50,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( LatLonBoxWidget )
+    Q_DISABLE_COPY(LatLonBoxWidget)
 
 private:
 

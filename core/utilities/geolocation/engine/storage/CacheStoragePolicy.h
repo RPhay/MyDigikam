@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "DiscCache.h"
 #include "StoragePolicy.h"
-
 #include "digikam_export.h"
 
 class QByteArray;
@@ -38,7 +41,7 @@ public:
      *
      * @param cacheDirectory The directory which shall be used for the cache.
      */
-    explicit CacheStoragePolicy( const QString &cacheDirectory );
+    explicit CacheStoragePolicy(const QString& cacheDirectory);
 
     /**
      * Destroys the cache storage policy.
@@ -48,12 +51,12 @@ public:
     /**
      * Returns whether the @p fileName exists already.
      */
-    bool fileExists( const QString &fileName ) const override;
+    bool fileExists(const QString& fileName) const override;
 
     /**
      * Updates the @p fileName with the given @p data.
      */
-    bool updateFile( const QString &fileName, const QByteArray &data ) override;
+    bool updateFile(const QString& fileName, const QByteArray& data) override;
 
     /**
      * Clears the cache.
@@ -68,12 +71,12 @@ public:
     /**
      * Returns the data of a file.
      */
-    QByteArray data( const QString &fileName );
+    QByteArray data(const QString& fileName);
 
     /**
      * Sets the limit of the cache in @p bytes.
      */
-    void setCacheLimit( quint64 bytes );
+    void setCacheLimit(quint64 bytes);
 
     /**
      * Returns the limit of the cache in bytes.

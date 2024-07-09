@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "StoragePolicy.h"
 
 namespace Marble
@@ -32,7 +34,7 @@ public:
      * @param dataDirectory The directory where the data should go to.
      * @param parent The parent object.
      */
-    explicit FileStoragePolicy( const QString &dataDirectory = QString(), QObject *parent = nullptr );
+    explicit FileStoragePolicy(const QString& dataDirectory = QString(), QObject* parent = nullptr);
 
     /**
      * Destroys the cache storage policy.
@@ -42,17 +44,17 @@ public:
     /**
      * Returns whether the @p fileName exists already.
      */
-    bool fileExists( const QString &fileName ) const override;
+    bool fileExists(const QString& fileName) const override;
 
     /**
      * Updates the @p fileName with the given @p data.
      */
-    bool updateFile( const QString &fileName, const QByteArray &data ) override;
+    bool updateFile(const QString& fileName, const QByteArray& data) override;
 
     /**
      * Clears the cache.
      */
-void clearCache() override;
+    void clearCache() override;
 
     /**
      * Returns the last error message.
@@ -61,7 +63,7 @@ void clearCache() override;
 
 private:
 
-    Q_DISABLE_COPY( FileStoragePolicy )
+    Q_DISABLE_COPY(FileStoragePolicy)
 
 private:
 

@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QNetworkReply>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 class QNetworkAccessManager;
@@ -37,24 +40,24 @@ class DIGIKAM_EXPORT HttpJob: public QObject
 
 public:
 
-    HttpJob( const QUrl & sourceUrl, const QString & destFileName, const QString &id, QNetworkAccessManager *networkAccessManager );
+    HttpJob(const QUrl& sourceUrl, const QString& destFileName, const QString& id, QNetworkAccessManager* networkAccessManager);
     ~HttpJob() override;
 
     QUrl sourceUrl() const;
-    void setSourceUrl( const QUrl & );
+    void setSourceUrl(const QUrl&);
 
     QString initiatorId() const;
-    void setInitiatorId( const QString & );
+    void setInitiatorId(const QString&);
 
     QString destinationFileName() const;
-    void setDestinationFileName( const QString & );
+    void setDestinationFileName(const QString&);
 
     bool tryAgain();
 
     DownloadUsage downloadUsage() const;
-    void setDownloadUsage( const DownloadUsage );
+    void setDownloadUsage(const DownloadUsage);
 
-    void setUserAgentPluginId( const QString & pluginId ) const;
+    void setUserAgentPluginId(const QString& pluginId) const;
 
     QByteArray userAgent() const;
 
@@ -63,14 +66,14 @@ Q_SIGNALS:
     /**
      * errorCode contains 0, if there was no error and 1 otherwise
      */
-    void jobDone( HttpJob *, int errorCode );
-    void redirected( HttpJob * job, const QUrl& redirectionTarget );
+    void jobDone(HttpJob*, int errorCode);
+    void redirected(HttpJob* job, const QUrl& redirectionTarget);
 
     /**
      * This signal is Q_EMITted if the data was successfully received and
      * the argument data contains completely the downloaded content.
      */
-    void dataReceived( HttpJob * job, const QByteArray& data );
+    void dataReceived(HttpJob* job, const QByteArray& data);
 
 public Q_SLOTS:
 
@@ -78,13 +81,13 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-   void downloadProgress( qint64 bytesReceived, qint64 bytesTotal );
-   void error( QNetworkReply::NetworkError code );
-   void finished();
+    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void error(QNetworkReply::NetworkError code);
+    void finished();
 
 private:
 
-    Q_DISABLE_COPY( HttpJob )
+    Q_DISABLE_COPY(HttpJob)
 
 private:
 

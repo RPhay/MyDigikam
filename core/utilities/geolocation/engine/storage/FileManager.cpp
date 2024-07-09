@@ -15,15 +15,18 @@
 
 #include "FileManager.h"
 
+// Qt includes
+
 #include <QFileInfo>
 #include <QElapsedTimer>
+
+// Local includes
 
 #include "FileLoader.h"
 #include "MarbleModel.h"
 #include "GeoDataTreeModel.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataStyle.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -33,25 +36,29 @@ class Q_DECL_HIDDEN FileManagerPrivate
 {
 public:
 
-    FileManagerPrivate( GeoDataTreeModel *treeModel, const PluginManager *pluginManager, FileManager* parent ) :
-        q( parent ),
-        m_treeModel( treeModel ),
-        m_pluginManager( pluginManager )
+    FileManagerPrivate(GeoDataTreeModel* treeModel,
+                       const PluginManager* pluginManager,
+                       FileManager* parent)
+        : q(parent),
+          m_treeModel(treeModel),
+          m_pluginManager(pluginManager)
     {
     }
 
     ~FileManagerPrivate()
     {
-        for ( FileLoader *loader: m_loaderList ) {
-            if ( loader ) {
+        for (FileLoader* loader : m_loaderList)
+        {
+            if (loader)
+            {
                 loader->wait();
             }
         }
     }
 
-    void appendLoader( FileLoader *loader );
-    void closeFile( const QString &key );
-    void cleanupLoader( FileLoader *loader );
+    void appendLoader(FileLoader* loader);
+    void closeFile(const QString& key);
+    void cleanupLoader(FileLoader* loader);
 
 public:
 
@@ -66,9 +73,9 @@ public:
 };
 
 
-FileManager::FileManager( GeoDataTreeModel *treeModel, const PluginManager *pluginManager, QObject *parent )
-    : QObject( parent )
-    , d( new FileManagerPrivate( treeModel, pluginManager, this ) )
+FileManager::FileManager(GeoDataTreeModel* treeModel, const PluginManager* pluginManager, QObject* parent)
+    : QObject(parent)
+    , d(new FileManagerPrivate(treeModel, pluginManager, this))
 {
 }
 
@@ -77,77 +84,89 @@ FileManager::~FileManager()
     delete d;
 }
 
-void FileManager::addFile( const QString& filepath, const QString& property, const GeoDataStyle::Ptr &style, DocumentRole role, int renderOrder, bool recenter )
+void FileManager::addFile(const QString& filepath, const QString& property, const GeoDataStyle::Ptr& style, DocumentRole role, int renderOrder, bool recenter)
 {
-    if( d->m_fileItemHash.contains( filepath ) ) {
-            return;  // already loaded
+    if (d->m_fileItemHash.contains(filepath))
+    {
+        return;  // already loaded
     }
 
-    for ( const FileLoader *loader: d->m_loaderList ) {
-        if ( loader->path() == filepath )
-            return;  // currently loading
+    for (const FileLoader* loader : d->m_loaderList)
+    {
+        if (loader->path() == filepath)
+        {
+            return;    // currently loading
+        }
     }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "adding container:" << filepath;
     qCDebug(DIGIKAM_MARBLE_LOG) << "Starting placemark loading timer";
     d->m_timer.start();
-    FileLoader* loader = new FileLoader( this, d->m_pluginManager, recenter, filepath, property, style, role, renderOrder );
-    d->appendLoader( loader );
+    FileLoader* loader = new FileLoader(this, d->m_pluginManager, recenter, filepath, property, style, role, renderOrder);
+    d->appendLoader(loader);
 }
 
-void FileManager::addData( const QString &name, const QString &data, DocumentRole role )
+void FileManager::addData(const QString& name, const QString& data, DocumentRole role)
 {
-    FileLoader* loader = new FileLoader( this, d->m_pluginManager, data, name, role );
-    d->appendLoader( loader );
+    FileLoader* loader = new FileLoader(this, d->m_pluginManager, data, name, role);
+    d->appendLoader(loader);
 }
 
-void FileManagerPrivate::appendLoader( FileLoader *loader )
+void FileManagerPrivate::appendLoader(FileLoader* loader)
 {
-    QObject::connect( loader, SIGNAL(loaderFinished(FileLoader*)),
-             q, SLOT(cleanupLoader(FileLoader*)) );
+    QObject::connect(loader, SIGNAL(loaderFinished(FileLoader*)),
+                     q, SLOT(cleanupLoader(FileLoader*)));
 
-    m_loaderList.append( loader );
+    m_loaderList.append(loader);
     loader->start();
 }
 
-void FileManager::removeFile( const QString& key )
+void FileManager::removeFile(const QString& key)
 {
-    for ( FileLoader *loader: d->m_loaderList ) {
-        if ( loader->path() == key ) {
-            disconnect( loader, nullptr, this, nullptr );
+    for (FileLoader* loader : d->m_loaderList)
+    {
+        if (loader->path() == key)
+        {
+            disconnect(loader, nullptr, this, nullptr);
             loader->wait();
-            d->m_loaderList.removeAll( loader );
+            d->m_loaderList.removeAll(loader);
             delete loader->document();
             return;
         }
     }
 
-    if( d->m_fileItemHash.contains( key ) ) {
-        d->closeFile( key );
+    if (d->m_fileItemHash.contains(key))
+    {
+        d->closeFile(key);
     }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "could not identify " << key;
 }
 
-void FileManagerPrivate::closeFile( const QString& key )
+void FileManagerPrivate::closeFile(const QString& key)
 {
     qCDebug(DIGIKAM_MARBLE_LOG) << "FileManager::closeFile " << key;
-    if( m_fileItemHash.contains( key ) ) {
-        GeoDataDocument *doc = m_fileItemHash.value( key );
-        m_treeModel->removeDocument( doc );
-        Q_EMIT q->fileRemoved( key );
+
+    if (m_fileItemHash.contains(key))
+    {
+        GeoDataDocument* doc = m_fileItemHash.value(key);
+        m_treeModel->removeDocument(doc);
+        Q_EMIT q->fileRemoved(key);
         delete doc;
-        m_fileItemHash.remove( key );
+        m_fileItemHash.remove(key);
     }
 }
 
-void FileManager::closeFile( const GeoDataDocument *document )
+void FileManager::closeFile(const GeoDataDocument* document)
 {
     QHash < QString, GeoDataDocument* >::iterator itpoint = d->m_fileItemHash.begin();
     QHash < QString, GeoDataDocument* >::iterator const endpoint = d->m_fileItemHash.end();
-    for (; itpoint != endpoint; ++itpoint ) {
-        if( d->m_fileItemHash.value( itpoint.key() ) == document ) {
-            d->closeFile( itpoint.key() );
+
+    for (; itpoint != endpoint; ++itpoint)
+    {
+        if (d->m_fileItemHash.value(itpoint.key()) == document)
+        {
+            d->closeFile(itpoint.key());
             return;
         }
     }
@@ -158,11 +177,13 @@ int FileManager::size() const
     return d->m_fileItemHash.size();
 }
 
-GeoDataDocument * FileManager::at( const QString &key )
+GeoDataDocument* FileManager::at(const QString& key)
 {
-    if ( d->m_fileItemHash.contains( key ) ) {
-        return d->m_fileItemHash.value( key );
+    if (d->m_fileItemHash.contains(key))
+    {
+        return d->m_fileItemHash.value(key);
     }
+
     return nullptr;
 }
 
@@ -171,37 +192,49 @@ int FileManager::pendingFiles() const
     return d->m_loaderList.size();
 }
 
-void FileManagerPrivate::cleanupLoader( FileLoader* loader )
+void FileManagerPrivate::cleanupLoader(FileLoader* loader)
 {
-    GeoDataDocument *doc = loader->document();
-    m_loaderList.removeAll( loader );
-    if ( loader->isFinished() ) {
-        if ( doc ) {
-            if ( doc->name().isEmpty() && !doc->fileName().isEmpty() )
+    GeoDataDocument* doc = loader->document();
+    m_loaderList.removeAll(loader);
+
+    if (loader->isFinished())
+    {
+        if (doc)
+        {
+            if (doc->name().isEmpty() && !doc->fileName().isEmpty())
             {
-                QFileInfo file( doc->fileName() );
-                doc->setName( file.baseName() );
+                QFileInfo file(doc->fileName());
+                doc->setName(file.baseName());
             }
-            m_treeModel->addDocument( doc );
-            m_fileItemHash.insert( loader->path(), doc );
-            Q_EMIT q->fileAdded( loader->path() );
-            if( loader->recenter() ) {
+
+            m_treeModel->addDocument(doc);
+            m_fileItemHash.insert(loader->path(), doc);
+            Q_EMIT q->fileAdded(loader->path());
+
+            if (loader->recenter())
+            {
                 m_latLonBox |= doc->latLonAltBox();
             }
         }
-        if ( !loader->error().isEmpty() ) {
+
+        if (!loader->error().isEmpty())
+        {
             qCWarning(DIGIKAM_MARBLE_LOG) << "Failed to parse" << loader->path() << loader->error();
             Q_EMIT q->fileError(loader->path(), loader->error());
         }
+
         delete loader;
     }
-    if ( m_loaderList.isEmpty()  )
+
+    if (m_loaderList.isEmpty())
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Finished loading all placemarks " << m_timer.elapsed();
 
-        if ( !m_latLonBox.isEmpty() ) {
-            Q_EMIT q->centeredDocument( m_latLonBox );
+        if (!m_latLonBox.isEmpty())
+        {
+            Q_EMIT q->centeredDocument(m_latLonBox);
         }
+
         m_latLonBox.clear();
     }
 }

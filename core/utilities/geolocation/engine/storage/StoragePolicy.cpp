@@ -13,14 +13,13 @@
  *
  * ============================================================ */
 
-// Own
 #include "StoragePolicy.h"
 
 namespace Marble
 {
 
-StoragePolicy::StoragePolicy( QObject *parent )
-    : QObject( parent )
+StoragePolicy::StoragePolicy(QObject* parent)
+    : QObject(parent)
 {
 }
 

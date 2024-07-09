@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDateTime>
 #include <QMap>
 #include <QPair>
@@ -29,29 +31,29 @@ class DiscCache
 {
 public:
 
-    explicit DiscCache( const QString &cacheDirectory );
+    explicit DiscCache(const QString& cacheDirectory);
     ~DiscCache();
 
     quint64 cacheLimit() const;
     void clear();
-    bool exists( const QString &key ) const;
-    bool find( const QString &key, QByteArray &data );
-    bool insert( const QString &key, const QByteArray &data );
-    void remove( const QString &key );
-    void setCacheLimit( quint64 n );
+    bool exists(const QString& key) const;
+    bool find(const QString& key, QByteArray& data);
+    bool insert(const QString& key, const QByteArray& data);
+    void remove(const QString& key);
+    void setCacheLimit(quint64 n);
 
 private:
 
-    QString keyToFileName( const QString& ) const;
+    QString keyToFileName(const QString&) const;
     void cleanup();
 
 private:
 
+    typedef QPair<QDateTime, quint64> Entry;
+
     QString                 m_CacheDirectory;
     quint64                 m_CacheLimit;
     quint64                 m_CurrentCacheSize;
-
-    typedef QPair<QDateTime, quint64> Entry;
     QMap<QString, Entry>    m_Entries;
 };
 

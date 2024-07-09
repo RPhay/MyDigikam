@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDialog>
 #include <QVector>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -37,13 +40,13 @@ public:
 
     enum SelectionMethod { VisibleRegionMethod, SpecifiedRegionMethod, RouteDownloadMethod };
 
-    explicit DownloadRegionDialog( MarbleWidget *const widget, QWidget * const parent = nullptr,
-                                   Qt::WindowFlags const f = Qt::WindowFlags() );
+    explicit DownloadRegionDialog(MarbleWidget* const widget, QWidget* const parent = nullptr,
+                                  Qt::WindowFlags const f = Qt::WindowFlags());
     ~DownloadRegionDialog() override;
-    void setAllowedTileLevelRange( int const minimumTileLevel,
-                                   int const maximumTileLevel );
-    void setVisibleTileLevel( int const tileLevel );
-    void setSelectionMethod( SelectionMethod const );
+    void setAllowedTileLevelRange(int const minimumTileLevel,
+                                  int const maximumTileLevel);
+    void setVisibleTileLevel(int const tileLevel);
+    void setSelectionMethod(SelectionMethod const);
 
     QVector<TileCoordsPyramid> region() const;
 
@@ -51,8 +54,8 @@ public:
 
 public Q_SLOTS:
 
-    void setSpecifiedLatLonAltBox( GeoDataLatLonAltBox const & );
-    void setVisibleLatLonAltBox( GeoDataLatLonAltBox const & );
+    void setSpecifiedLatLonAltBox(GeoDataLatLonAltBox const&);
+    void setVisibleLatLonAltBox(GeoDataLatLonAltBox const&);
     void updateTileLayer();
     void delayUpdateTileLayer();
 
@@ -67,8 +70,8 @@ Q_SIGNALS:
 
 protected:
 
-    void hideEvent( QHideEvent * event ) override;
-    void showEvent( QShowEvent * event ) override;
+    void hideEvent(QHideEvent* event) override;
+    void showEvent(QShowEvent* event) override;
 
 private Q_SLOTS:
 
@@ -83,7 +86,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( DownloadRegionDialog )
+    Q_DISABLE_COPY(DownloadRegionDialog)
     class Private;
     Private* const d = nullptr;
 };

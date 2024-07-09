@@ -15,11 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QList>
 #include <QQueue>
 #include <QObject>
 #include <QSet>
 #include <QStack>
+
+// Local includes
 
 #include "DownloadPolicy.h"
 
@@ -75,16 +79,16 @@ class DownloadQueueSet: public QObject
 
 public:
 
-    explicit DownloadQueueSet( QObject * const parent = nullptr );
-    explicit DownloadQueueSet( const DownloadPolicy& policy, QObject * const parent = nullptr );
+    explicit DownloadQueueSet(QObject* const parent = nullptr);
+    explicit DownloadQueueSet(const DownloadPolicy& policy, QObject* const parent = nullptr);
     ~DownloadQueueSet() override;
 
     DownloadPolicy downloadPolicy() const;
-    void setDownloadPolicy( const DownloadPolicy& );
+    void setDownloadPolicy(const DownloadPolicy&);
 
-    bool canAcceptJob( const QUrl& sourceUrl,
-                       const QString& destinationFileName ) const;
-    void addJob( HttpJob * const job );
+    bool canAcceptJob(const QUrl& sourceUrl,
+                      const QString& destinationFileName) const;
+    void addJob(HttpJob* const job);
 
     void activateJobs();
     void retryJobs();
@@ -95,26 +99,26 @@ Q_SIGNALS:
     void jobAdded();
     void jobRemoved();
     void jobRetry();
-    void jobFinished( const QByteArray& data, const QString& destinationFileName,
-                      const QString& id );
-    void jobRedirected( const QUrl& newSourceUrl, const QString& destinationFileName,
-                        const QString& id, DownloadUsage );
-    void progressChanged( int active, int queued );
+    void jobFinished(const QByteArray& data, const QString& destinationFileName,
+                     const QString& id);
+    void jobRedirected(const QUrl& newSourceUrl, const QString& destinationFileName,
+                       const QString& id, DownloadUsage);
+    void progressChanged(int active, int queued);
 
 private Q_SLOTS:
 
-    void finishJob( HttpJob * job, const QByteArray& data );
-    void redirectJob( HttpJob * job, const QUrl& newSourceUrl );
-    void retryOrBlacklistJob( HttpJob * job, const int errorCode );
+    void finishJob(HttpJob* job, const QByteArray& data);
+    void redirectJob(HttpJob* job, const QUrl& newSourceUrl);
+    void retryOrBlacklistJob(HttpJob* job, const int errorCode);
 
 private:
 
-    void activateJob( HttpJob * const job );
-    void deactivateJob( HttpJob * const job );
-    bool jobIsActive( const QString& destinationFileName ) const;
-    bool jobIsQueued( const QString& destinationFileName ) const;
-    bool jobIsWaitingForRetry( const QString& destinationFileName ) const;
-    bool jobIsBlackListed( const QUrl& sourceUrl ) const;
+    void activateJob(HttpJob* const job);
+    void deactivateJob(HttpJob* const job);
+    bool jobIsActive(const QString& destinationFileName) const;
+    bool jobIsQueued(const QString& destinationFileName) const;
+    bool jobIsWaitingForRetry(const QString& destinationFileName) const;
+    bool jobIsBlackListed(const QUrl& sourceUrl) const;
 
 private:
 
@@ -125,11 +129,11 @@ private:
     {
     public:
 
-        bool contains( const QString& destinationFileName ) const;
+        bool contains(const QString& destinationFileName) const;
         int count() const;
         bool isEmpty() const;
-        HttpJob * pop();
-        void push( HttpJob * const );
+        HttpJob* pop();
+        void push(HttpJob* const);
 
     private:
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QThread>
 #include <QMutex>
 #include <QMultiMap>
@@ -30,7 +32,7 @@ class FileStorageWatcherThread : public QObject
 
 public:
 
-    explicit FileStorageWatcherThread( const QString &dataDirectory, QObject * parent = nullptr );
+    explicit FileStorageWatcherThread(const QString& dataDirectory, QObject* parent = nullptr);
 
     ~FileStorageWatcherThread() override;
 
@@ -48,13 +50,13 @@ public Q_SLOTS:
     /**
      * Sets the limit of the cache in @p bytes.
     */
-    void setCacheLimit( quint64 bytes );
+    void setCacheLimit(quint64 bytes);
 
     /**
      * Add @p bytes to the current cache size.
      * So FileStorageWatcher is aware of the current cache size.
      */
-    void addToCurrentSize( qint64 bytes );
+    void addToCurrentSize(qint64 bytes);
 
     /**
      * Setting current cache size to 0.
@@ -80,7 +82,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( FileStorageWatcherThread )
+    Q_DISABLE_COPY(FileStorageWatcherThread)
 
     /**
      * Returns true if it is necessary to delete files.
@@ -88,7 +90,7 @@ private:
     bool keepDeleting() const;
 
     QString m_dataDirectory;
-    QMultiMap<QDateTime,QString> m_filesCache;
+    QMultiMap<QDateTime, QString> m_filesCache;
     quint64 m_cacheLimit;
     quint64 m_cacheSoftLimit;
     quint64 m_currentCacheSize;
@@ -112,7 +114,7 @@ public:
      * @param dataDirectory The directory where the data is stored
      * @param parent The parent of the object.
      */
-    explicit FileStorageWatcher( const QString &dataDirectory = QString(), QObject * parent = nullptr );
+    explicit FileStorageWatcher(const QString& dataDirectory = QString(), QObject* parent = nullptr);
 
     ~FileStorageWatcher() override;
 
@@ -126,13 +128,13 @@ public Q_SLOTS:
     /**
      * Sets the limit of the cache in @p bytes.
      */
-    void setCacheLimit( quint64 bytes );
+    void setCacheLimit(quint64 bytes);
 
     /**
      * Add @p bytes to the current cache size.
      * So FileStorageWatcher is aware of the current cache size.
      */
-    void addToCurrentSize( qint64 bytes );
+    void addToCurrentSize(qint64 bytes);
 
     /**
      * Setting current cache size to 0.
@@ -141,7 +143,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void sizeChanged( qint64 bytes );
+    void sizeChanged(qint64 bytes);
     void cleared();
 
 protected:
@@ -154,7 +156,7 @@ protected:
 
 private:
 
-    Q_DISABLE_COPY( FileStorageWatcher )
+    Q_DISABLE_COPY(FileStorageWatcher)
 
 private:
 

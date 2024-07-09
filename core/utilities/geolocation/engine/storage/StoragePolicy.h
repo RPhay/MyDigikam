@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 
 class QByteArray;
@@ -29,16 +31,16 @@ class StoragePolicy : public QObject
 
 public:
 
-    explicit StoragePolicy( QObject *parent = nullptr );
+    explicit StoragePolicy(QObject* parent = nullptr);
 
     ~StoragePolicy() override {}
 
-    virtual bool fileExists( const QString &fileName ) const = 0;
+    virtual bool fileExists(const QString& fileName) const = 0;
 
     /**
      * Return true if file was written successfully.
      */
-    virtual bool updateFile( const QString &fileName, const QByteArray &data ) = 0;
+    virtual bool updateFile(const QString& fileName, const QByteArray& data) = 0;
 
     virtual void clearCache() = 0;
 
@@ -47,11 +49,11 @@ public:
 Q_SIGNALS:
 
     void cleared();
-    void sizeChanged( qint64 );
+    void sizeChanged(qint64);
 
 private:
 
-    Q_DISABLE_COPY( StoragePolicy )
+    Q_DISABLE_COPY(StoragePolicy)
 };
 
 } // namespace Marble
