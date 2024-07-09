@@ -9,7 +9,7 @@
  *               below, taken from
  *               https://code.qt.io/cgit/qt/qt.git/plain/src/gui/text/qzipwriter_p.h
  *
- * SPDX-FileCopyrightText: 2015 The Qt Company Ltd. <https://www.qt.io/licensing/>
+ * SPDX-FileCopyrightText: 2015      by the Qt Company Ltd. <https://www.qt.io/licensing/>
  * SPDX-FileCopyrightText: 2023-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: LGPL-2.1-only WITH Qt-LGPL-exception-1.1 OR LGPL-3.0-only WITH Qt-LGPL-exception-1.1 OR GPL-3.0-only OR LicenseRef-Qt-Commercial
@@ -20,22 +20,15 @@
 
 #ifndef QT_NO_TEXTODFWRITER
 
-//
-//  W A R N I N G
-//  -------------
-//
-// This file is not part of the Qt API.  It exists for the convenience
-// of the QZipReader class.  This header file may change from
-// version to version without notice, or even be removed.
-//
-// We mean it.
-//
+// Qt includes
 
-#include <QDateTime>
-#include <QFile>
-#include <QString>
+#   include <QDateTime>
+#   include <QFile>
+#   include <QString>
 
-#include "digikam_export.h"
+// Local includes
+
+#   include "digikam_export.h"
 
 namespace Marble
 {
@@ -46,9 +39,9 @@ class DIGIKAM_EXPORT MarbleZipReader
 {
 public:
 
-    MarbleZipReader(const QString &fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly );
+    MarbleZipReader(const QString& fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly);
 
-    explicit MarbleZipReader(QIODevice *device);
+    explicit MarbleZipReader(QIODevice* device);
     ~MarbleZipReader();
 
     QIODevice* device() const;
@@ -59,9 +52,9 @@ public:
     struct DIGIKAM_EXPORT FileInfo
     {
         FileInfo();
-        FileInfo(const FileInfo &other);
+        FileInfo(const FileInfo& other);
         ~FileInfo();
-        FileInfo &operator=(const FileInfo &other);
+        FileInfo& operator=(const FileInfo& other);
         bool isValid() const;
         QString filePath;
         uint isDir : 1;
@@ -71,15 +64,15 @@ public:
         uint crc32;
         qint64 size;
         QDateTime lastModified;
-        void *d;
+        void* d;
     };
 
     QList<FileInfo> fileInfoList() const;
     int count() const;
 
     FileInfo entryInfoAt(int index) const;
-    QByteArray fileData(const QString &fileName) const;
-    bool extractAll(const QString &destinationDir) const;
+    QByteArray fileData(const QString& fileName) const;
+    bool extractAll(const QString& destinationDir) const;
 
     enum Status
     {

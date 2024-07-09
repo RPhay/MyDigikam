@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDialog>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -40,7 +44,7 @@ class DIGIKAM_EXPORT OsmRelationEditorDialog : public QDialog
 
 public:
 
-    explicit OsmRelationEditorDialog( OsmPlacemarkData *relationData, QWidget *parent = nullptr );
+    explicit OsmRelationEditorDialog(OsmPlacemarkData* relationData, QWidget* parent = nullptr);
     ~OsmRelationEditorDialog() override;
 
 private Q_SLOTS:

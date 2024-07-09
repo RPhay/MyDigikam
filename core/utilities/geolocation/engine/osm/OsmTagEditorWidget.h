@@ -15,10 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QWidget>
 
-#include "MarbleGlobal.h"
+// Local includes
 
+#include "MarbleGlobal.h"
 #include "digikam_export.h"
 
 class QTreeWidgetItem;
@@ -37,7 +40,7 @@ class DIGIKAM_EXPORT OsmTagEditorWidget : public QWidget
 
 public:
 
-    explicit OsmTagEditorWidget( GeoDataPlacemark *placemark, QWidget *parent = nullptr );
+    explicit OsmTagEditorWidget(GeoDataPlacemark* placemark, QWidget* parent = nullptr);
     ~OsmTagEditorWidget() override;
 
     /**
@@ -50,12 +53,12 @@ public Q_SLOTS:
     void update();
     void addSelectedTag();
     void removeSelectedTag();
-    void handleDoubleClick( QTreeWidgetItem *item, int column );
-    void handleItemChanged( QTreeWidgetItem *item, int column );
+    void handleDoubleClick(QTreeWidgetItem* item, int column);
+    void handleItemChanged(QTreeWidgetItem* item, int column);
 
 Q_SIGNALS:
 
-    void placemarkChanged( GeoDataFeature *);
+    void placemarkChanged(GeoDataFeature*);
 
 private:
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ui_OsmRelationManagerWidget.h"
 
 namespace Marble
@@ -37,9 +39,9 @@ private:
 
     friend class OsmRelationManagerWidget;
 
-    GeoDataPlacemark *m_placemark                           = nullptr;
-    const QHash< qint64, OsmPlacemarkData > *m_allRelations = nullptr;
-    QMenu *m_relationDropMenu                               = nullptr;
+    GeoDataPlacemark* m_placemark                           = nullptr;
+    const QHash< qint64, OsmPlacemarkData >* m_allRelations = nullptr;
+    QMenu* m_relationDropMenu                               = nullptr;
 };
 
 } // namespace Marble

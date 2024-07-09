@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QtGlobal>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -37,12 +41,12 @@ public:
      * @brief initializeOsmData assigns valid osmData
      * to a placemark that does not have it.
      */
-    static void initializeOsmData( GeoDataPlacemark *placemark );
+    static void initializeOsmData(GeoDataPlacemark* placemark);
 
     /**
      * @brief registerId is used to keep track of the minimum id @see m_minId
      */
-    static void registerId( qint64 id );
+    static void registerId(qint64 id);
 
 private:
 

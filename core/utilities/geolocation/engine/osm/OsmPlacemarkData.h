@@ -15,14 +15,16 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QHash>
 #include <QMetaType>
 #include <QString>
 #include <QScopedPointer>
 #include <QSharedPointer>
 
-// Marble
+// Local includes
+
 #include "GeoDataCoordinates.h"
 #include "GeoDocument.h"
 #include "digikam_export.h"
@@ -32,7 +34,9 @@ class QXmlStreamAttributes;
 namespace Marble
 {
 
-/** Type of OSM element. */
+/**
+ * Type of OSM element.
+ */
 enum class OsmType
 {
     Node,
@@ -40,9 +44,10 @@ enum class OsmType
     Relation
 };
 
-/** Identifier for an OSM element.
- *  @note OSM uses distinct id spaces for all its three basic element types, so just the numeric id
- *  on its own doesn't identify an element without knowing its type.
+/**
+ * Identifier for an OSM element.
+ * @note OSM uses distinct id spaces for all its three basic element types, so just the numeric id
+ * on its own doesn't identify an element without knowing its type.
  */
 struct OsmIdentifier
 {
@@ -52,10 +57,15 @@ struct OsmIdentifier
     qint64 id = 0;
     OsmType type = OsmType::Way;
 
-    inline bool operator==(OsmIdentifier other) const { return id == other.id && type == other.type; }
+    inline bool operator==(OsmIdentifier other) const
+    {
+        return id == other.id && type == other.type;
+    }
 };
 
-/** Forward declaration */
+/**
+ * Forward declaration
+ */
 class OsmPlacemarkDataHashRef;
 
 /**
@@ -97,50 +107,50 @@ public:
     QString action() const;
     const char* nodeType() const override;
 
-    void setId( qint64 id );
-    void setVersion( const QString& version );
-    void setChangeset( const QString& changeset );
-    void setUid( const QString& uid );
-    void setVisible( const QString& visible );
-    void setUser( const QString& user );
-    void setTimestamp( const QString& timestamp );
-    void setAction( const QString& action );
+    void setId(qint64 id);
+    void setVersion(const QString& version);
+    void setChangeset(const QString& changeset);
+    void setUid(const QString& uid);
+    void setVisible(const QString& visible);
+    void setUser(const QString& user);
+    void setTimestamp(const QString& timestamp);
+    void setAction(const QString& action);
 
     /**
      * @brief tagValue returns the value of the tag that has @p key as key
      * or an empty qstring if there is no such tag
      */
-    QString tagValue( const QString &key ) const;
+    QString tagValue(const QString& key) const;
 
     /**
      * @brief addTag this function inserts a string key=value mapping,
      * equivalent to the \<tag k="@p key" v="@p value"\> osm core data
      * element
      */
-    void addTag( const QString& key, const QString& value );
+    void addTag(const QString& key, const QString& value);
 
     /**
      * @brief removeTag removes the tag from the tag hash
      */
-    void removeTag( const QString& key );
+    void removeTag(const QString& key);
 
     /**
      * @brief containsTag returns true if the tag hash contains an entry with
      * the @p key as key and @p value as value
      */
-    bool containsTag( const QString& key, const QString& value ) const;
+    bool containsTag(const QString& key, const QString& value) const;
 
     /**
      * @brief containsTagKey returns true if the tag hash contains an entry with
      * the @p key as key
      */
-    bool containsTagKey( const QString& key ) const;
+    bool containsTagKey(const QString& key) const;
 
     /**
      * @brief tagValue returns a pointer to the tag that has @p key as key
      * or the end iterator if there is no such tag
      */
-    QHash<QString, QString>::const_iterator findTag(const QString &key) const;
+    QHash<QString, QString>::const_iterator findTag(const QString& key) const;
 
     /**
      * @brief iterators for the tags hash.
@@ -151,32 +161,32 @@ public:
     /**
      * @brief this function returns the osmData associated with a nd
      */
-    OsmPlacemarkData &nodeReference( const GeoDataCoordinates& coordinates );
-    OsmPlacemarkData nodeReference( const GeoDataCoordinates& coordinates ) const;
+    OsmPlacemarkData& nodeReference(const GeoDataCoordinates& coordinates);
+    OsmPlacemarkData nodeReference(const GeoDataCoordinates& coordinates) const;
 
     /**
      * @brief addRef this function inserts a GeoDataCoordinates = OsmPlacemarkData
      * mapping into the reference hash, equivalent to the \<member ref="@p key" \>
      * osm core data element
      */
-    void addNodeReference( const GeoDataCoordinates& key, const OsmPlacemarkData &value );
-    void removeNodeReference( const GeoDataCoordinates& key );
-    bool containsNodeReference( const GeoDataCoordinates& key ) const;
+    void addNodeReference(const GeoDataCoordinates& key, const OsmPlacemarkData& value);
+    void removeNodeReference(const GeoDataCoordinates& key);
+    bool containsNodeReference(const GeoDataCoordinates& key) const;
 
     /**
      * @brief changeNodeReference is a convenience function that allows the quick change of
      * a node hash entry. This is generally used to update the osm data in case
      * nodes are being moved in the editor.
      */
-    void changeNodeReference( const GeoDataCoordinates& oldKey, const GeoDataCoordinates &newKey );
+    void changeNodeReference(const GeoDataCoordinates& oldKey, const GeoDataCoordinates& newKey);
 
     /**
      * @brief this function returns the osmData associated with a member boundary's index
      * -1 represents the outer boundary of a polygon, and 0,1,2... the inner boundaries,
      * in the order provided by polygon->innerBoundaries();
      */
-    OsmPlacemarkData &memberReference( int key );
-    OsmPlacemarkData memberReference( int key ) const;
+    OsmPlacemarkData& memberReference(int key);
+    OsmPlacemarkData memberReference(int key) const;
 
     /**
      * @brief addRef this function inserts a int = OsmplacemarkData
@@ -184,17 +194,17 @@ public:
      * core data element
      * @see m_memberReferences
      */
-    void addMemberReference( int key, const OsmPlacemarkData &value );
-    void removeMemberReference( int key );
-    bool containsMemberReference( int key ) const;
+    void addMemberReference(int key, const OsmPlacemarkData& value);
+    void removeMemberReference(int key);
+    bool containsMemberReference(int key) const;
 
     /**
      * @brief addRelation calling this makes the osm placemark a member of the relation
      * with @p id as id, while having the role @p role
      */
-    void addRelation( qint64 id, OsmType type, const QString &role );
-    void removeRelation( qint64 id );
-    bool containsRelation( qint64 id ) const;
+    void addRelation(qint64 id, OsmType type, const QString& role);
+    void removeRelation(qint64 id);
+    bool containsRelation(qint64 id) const;
 
     QHash< OsmIdentifier, QString >::const_iterator relationReferencesBegin() const;
     QHash< OsmIdentifier, QString >::const_iterator relationReferencesEnd() const;
@@ -215,7 +225,7 @@ public:
      * arguments of a tag
      * @return an OsmPlacemarkData object containing all the necessary data
      */
-    static OsmPlacemarkData fromParserAttributes( const QXmlStreamAttributes &attributes );
+    static OsmPlacemarkData fromParserAttributes(const QXmlStreamAttributes& attributes);
 
     /**
      * Return the insternal instance of the hash-table functions container.
@@ -269,11 +279,11 @@ public:
     /**
      * @brief iterators for the reference hashes.
      */
-    QHash< GeoDataCoordinates, OsmPlacemarkData > & nodeReferences();
+    QHash< GeoDataCoordinates, OsmPlacemarkData >& nodeReferences();
     QHash< GeoDataCoordinates, OsmPlacemarkData >::const_iterator nodeReferencesBegin() const;
     QHash< GeoDataCoordinates, OsmPlacemarkData >::const_iterator nodeReferencesEnd() const;
 
-    QHash< int, OsmPlacemarkData > & memberReferences();
+    QHash< int, OsmPlacemarkData >& memberReferences();
     QHash< int, OsmPlacemarkData >::const_iterator memberReferencesBegin() const;
     QHash< int, OsmPlacemarkData >::const_iterator memberReferencesEnd() const;
 
@@ -297,4 +307,4 @@ public:
 } // namespace Marble
 
 // Makes qvariant_cast possible for OsmPlacemarkData objects
-Q_DECLARE_METATYPE( Marble::OsmPlacemarkData )
+Q_DECLARE_METATYPE(Marble::OsmPlacemarkData)

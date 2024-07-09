@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPair>
+
+// Local includes
 
 #include "ui_OsmTagEditorWidget.h"
 
@@ -39,7 +43,7 @@ public:
 private:
 
     friend class OsmTagEditorWidget;
-    static QTreeWidgetItem *tagWidgetItem(const OsmTag &tag);
+    static QTreeWidgetItem* tagWidgetItem(const OsmTag& tag);
 
     /**
      * @brief recommendedTags builds a list of tags that are recommended by osm standards
@@ -57,13 +61,13 @@ private:
      * @brief containsAny convenience function that determines whether the placemark contains
      * any of the given parameter tags
      */
-    static bool containsAny(const OsmPlacemarkData &osmData, const QStringList &tags);
+    static bool containsAny(const OsmPlacemarkData& osmData, const QStringList& tags);
 
     /**
      * @brief addPattern convenience function that takes a list of OsmTags
      * and adds their keys to the filter, if the placemark doesn't already have them
      */
-    static void addPattern(QStringList &filter, const OsmPlacemarkData &osmData, const QStringList &pattern);
+    static void addPattern(QStringList& filter, const OsmPlacemarkData& osmData, const QStringList& pattern);
 
     /**
      * @brief returns a list of useful, popular osm tags that currently don't have a visual category associated with them

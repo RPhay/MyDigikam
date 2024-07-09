@@ -22,11 +22,14 @@
 #include <QString>
 #include <QSvgRenderer>
 
+namespace Marble
+{
+
 class OsmcSymbol
 {
 public:
 
-    explicit OsmcSymbol(const QString &tag, int size = 20);
+    explicit OsmcSymbol(const QString& tag, int size = 20);
     ~OsmcSymbol();
 
     QImage icon() const;
@@ -34,9 +37,9 @@ public:
 
 private:
 
-    bool parseTag(const QString &tag);
-    bool parseBackground(const QString &bg);
-    QSvgRenderer* parseForeground(const QString &fg);
+    bool parseTag(const QString& tag);
+    bool parseBackground(const QString& bg);
+    QSvgRenderer* parseForeground(const QString& fg);
 
     void render();
 
@@ -45,8 +48,8 @@ private:
     QColor          m_wayColor;
     QColor          m_backgroundColor;
     QString         m_backgroundType;
-    QSvgRenderer *  m_foreground      = nullptr;
-    QSvgRenderer *  m_foreground2     = nullptr;
+    QSvgRenderer*   m_foreground      = nullptr;
+    QSvgRenderer*   m_foreground2     = nullptr;
     QString         m_text;
     QColor          m_textColor;
 
@@ -57,7 +60,9 @@ private:
     QStringList     m_precoloredForegroundTypes;
 
     int const       m_side;
-/*
-    int             m_wayWidth;
-*/
+    /*
+        int             m_wayWidth;
+    */
 };
+
+} // namespace Marble

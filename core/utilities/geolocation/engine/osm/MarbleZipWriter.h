@@ -20,21 +20,14 @@
 
 #ifndef QT_NO_TEXTODFWRITER
 
-//
-//  W A R N I N G
-//  -------------
-//
-// This file is not part of the Qt API.  It exists for the convenience
-// of the QZipWriter class.  This header file may change from
-// version to version without notice, or even be removed.
-//
-// We mean it.
-//
+// Qt includes
 
-#include <QString>
-#include <QFile>
+#   include <QString>
+#   include <QFile>
 
-#include "digikam_export.h"
+// Local includes
+
+#   include "digikam_export.h"
 
 namespace Marble
 {
@@ -45,9 +38,9 @@ class DIGIKAM_EXPORT MarbleZipWriter
 {
 public:
 
-    MarbleZipWriter(const QString &fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate) );
+    MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate));
 
-    explicit MarbleZipWriter(QIODevice *device);
+    explicit MarbleZipWriter(QIODevice* device);
     ~MarbleZipWriter();
 
     QIODevice* device() const;
@@ -79,13 +72,13 @@ public:
     void setCreationPermissions(QFile::Permissions permissions);
     QFile::Permissions creationPermissions() const;
 
-    void addFile(const QString &fileName, const QByteArray &data);
+    void addFile(const QString& fileName, const QByteArray& data);
 
-    void addFile(const QString &fileName, QIODevice *device);
+    void addFile(const QString& fileName, QIODevice* device);
 
-    void addDirectory(const QString &dirName);
+    void addDirectory(const QString& dirName);
 
-    void addSymLink(const QString &fileName, const QString &destination);
+    void addSymLink(const QString& fileName, const QString& destination);
 
     void close();
 

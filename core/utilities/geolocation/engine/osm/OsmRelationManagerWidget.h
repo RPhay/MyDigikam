@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QWidget>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "digikam_export.h"
@@ -47,9 +51,9 @@ class DIGIKAM_EXPORT OsmRelationManagerWidget : public QWidget
 
 public:
 
-    explicit OsmRelationManagerWidget( GeoDataPlacemark *placemark,
-                                       const QHash<qint64, OsmPlacemarkData> *relations,
-                                       QWidget *parent = nullptr );
+    explicit OsmRelationManagerWidget(GeoDataPlacemark* placemark,
+                                      const QHash<qint64, OsmPlacemarkData>* relations,
+                                      QWidget* parent = nullptr);
     ~OsmRelationManagerWidget() override;
 
 public Q_SLOTS:
@@ -58,10 +62,10 @@ public Q_SLOTS:
      * @brief addRelation adds the placemark to the relation specified in the action->text();
      * If the text is "New Relation", a new relation is added
      */
-    void addRelation( QAction* action );
-    void handleItemChange( QTreeWidgetItem *item, int column );
-    void handleDoubleClick( QTreeWidgetItem * item, int column );
-    void handleRelationContextMenuRequest( const QPoint& point );
+    void addRelation(QAction* action);
+    void handleItemChange(QTreeWidgetItem* item, int column);
+    void handleDoubleClick(QTreeWidgetItem* item, int column);
+    void handleRelationContextMenuRequest(const QPoint& point);
     /**
      * @brief update updates the relations list and the suggested relations drop menu
      */
@@ -69,7 +73,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void relationCreated( const OsmPlacemarkData &relationData );
+    void relationCreated(const OsmPlacemarkData& relationData);
 
 private:
 
