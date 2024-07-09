@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QVector>
 #include <QList>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 
@@ -41,11 +45,11 @@ class MergedLayerDecorator
 {
 public:
 
-    MergedLayerDecorator( TileLoader * const tileLoader, const SunLocator* sunLocator );
+    MergedLayerDecorator(TileLoader* const tileLoader, const SunLocator* sunLocator);
     virtual ~MergedLayerDecorator();
 
-    void setTextureLayers( const QVector<const GeoSceneTextureTileDataset *> &textureLayers );
-    void updateGroundOverlays( const QList<const GeoDataGroundOverlay *> &groundOverlays );
+    void setTextureLayers(const QVector<const GeoSceneTextureTileDataset*>& textureLayers);
+    void updateGroundOverlays(const QList<const GeoDataGroundOverlay*>& groundOverlays);
 
     int textureLayersSize() const;
 
@@ -55,35 +59,35 @@ public:
      */
     int maximumTileLevel() const;
 
-    int tileColumnCount( int level ) const;
+    int tileColumnCount(int level) const;
 
-    int tileRowCount( int level ) const;
+    int tileRowCount(int level) const;
 
-    const GeoSceneAbstractTileProjection *tileProjection() const;
+    const GeoSceneAbstractTileProjection* tileProjection() const;
 
     QSize tileSize() const;
 
-    StackedTile *loadTile( const TileId &id );
+    StackedTile* loadTile(const TileId& id);
 
-    StackedTile *updateTile( const StackedTile &stackedTile, const TileId &tileId, const QImage &tileImage );
+    StackedTile* updateTile(const StackedTile& stackedTile, const TileId& tileId, const QImage& tileImage);
 
-    void downloadStackedTile( const TileId &id, DownloadUsage usage );
+    void downloadStackedTile(const TileId& id, DownloadUsage usage);
 
-    void setShowSunShading( bool show );
+    void setShowSunShading(bool show);
     bool showSunShading() const;
 
-    void setShowCityLights( bool show );
+    void setShowCityLights(bool show);
     bool showCityLights() const;
 
     void setShowTileId(bool show);
 
-    RenderState renderState( const TileId &stackedTileId ) const;
+    RenderState renderState(const TileId& stackedTileId) const;
 
     bool hasTextureLayer() const;
 
 protected:
 
-    Q_DISABLE_COPY( MergedLayerDecorator )
+    Q_DISABLE_COPY(MergedLayerDecorator)
 
 protected:
 

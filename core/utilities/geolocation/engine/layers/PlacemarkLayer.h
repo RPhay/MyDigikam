@@ -13,15 +13,19 @@
  *
  * ============================================================ */
 
-//
-// PlacemarkLayer is responsible for drawing the Placemarks on the map
-//
+/**
+ * PlacemarkLayer is responsible for drawing the Placemarks on the map
+ */
 
 #pragma once
+
+// Qt includes
 
 #include <QObject>
 #include <QVector>
 #include <QPainter>
+
+// Local includes
 
 #include "LayerInterface.h"
 #include "PlacemarkLayout.h"
@@ -51,11 +55,11 @@ class PlacemarkLayer : public QObject, public LayerInterface
 
 public:
 
-    PlacemarkLayer( QAbstractItemModel *placemarkModel,
-                    QItemSelectionModel *selectionModel,
-                    MarbleClock *clock,
-                    const StyleBuilder *styleBuilder,
-                    QObject *parent = nullptr );
+    PlacemarkLayer(QAbstractItemModel* placemarkModel,
+                   QItemSelectionModel* selectionModel,
+                   MarbleClock* clock,
+                   const StyleBuilder* styleBuilder,
+                   QObject* parent = nullptr);
     ~PlacemarkLayer() override;
 
     /**
@@ -71,9 +75,9 @@ public:
     /**
      * @reimp
      */
-    bool render( GeoPainter *painter, ViewportParams *viewport,
-                 const QString &renderPos = QLatin1String("NONE"),
-                 GeoSceneLayer *layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("NONE"),
+                GeoSceneLayer* layer = nullptr) override;
 
     RenderState renderState() const override;
 
@@ -82,9 +86,9 @@ public:
     /**
      * Returns a list of model indexes that are at position @p pos.
      */
-    QVector<const GeoDataFeature *> whichPlacemarkAt( const QPoint &pos );
+    QVector<const GeoDataFeature*> whichPlacemarkAt(const QPoint& pos);
 
-    bool hasPlacemarkAt(const QPoint &pos);
+    bool hasPlacemarkAt(const QPoint& pos);
 
     bool isDebugModeEnabled() const;
     void setDebugModeEnabled(bool enabled);
@@ -95,27 +99,28 @@ public:
 
 public Q_SLOTS:
 
-   // earth
-   void setShowPlaces( bool show );
-   void setShowCities( bool show );
-   void setShowTerrain( bool show );
-   void setShowOtherPlaces( bool show );
+    // earth
+    void setShowPlaces(bool show);
+    void setShowCities(bool show);
+    void setShowTerrain(bool show);
+    void setShowOtherPlaces(bool show);
 
-   // other planets
-   void setShowLandingSites( bool show );
-   void setShowCraters( bool show );
-   void setShowMaria( bool show );
+    // other planets
+    void setShowLandingSites(bool show);
+    void setShowCraters(bool show);
+    void setShowMaria(bool show);
 
-   void requestStyleReset();
-   void setTileLevel(int tileLevel);
+    void requestStyleReset();
+    void setTileLevel(int tileLevel);
 
 Q_SIGNALS:
 
-   void repaintNeeded();
+    void repaintNeeded();
 
 private:
 
-    void renderDebug(GeoPainter *painter, ViewportParams *viewport, const QVector<VisiblePlacemark*> & placemarks) const;
+    void renderDebug(GeoPainter* painter, ViewportParams* viewport,
+                     const QVector<VisiblePlacemark*>& placemarks) const;
 
 private:
 

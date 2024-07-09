@@ -13,11 +13,13 @@
  *
  * ============================================================ */
 
-//
-// PlacemarkLayout is responsible for drawing the Placemarks on the map
-//
+/**
+ * PlacemarkLayout is responsible for drawing the Placemarks on the map
+ */
 
 #pragma once
+
+// Qt includes
 
 #include <QHash>
 #include <QRect>
@@ -25,6 +27,8 @@
 #include <QMap>
 #include <QVector>
 #include <QPointer>
+
+// Local includes
 
 #include "GeoDataPlacemark.h"
 #include "GeoDataStyle.h"
@@ -58,11 +62,11 @@ public:
     /**
      * Creates a new place mark layout.
      */
-    PlacemarkLayout( QAbstractItemModel  *placemarkModel,
-                     QItemSelectionModel *selectionModel,
-                     MarbleClock *clock,
-                     const StyleBuilder* styleBuilder,
-                     QObject *parent = nullptr );
+    PlacemarkLayout(QAbstractItemModel*  placemarkModel,
+                    QItemSelectionModel* selectionModel,
+                    MarbleClock* clock,
+                    const StyleBuilder* styleBuilder,
+                    QObject* parent = nullptr);
 
     /**
      * Destroys the place mark painter.
@@ -72,35 +76,35 @@ public:
     /**
      * @reimp
      */
-    QVector<VisiblePlacemark *> generateLayout(const ViewportParams *viewport , int tileLevel);
+    QVector<VisiblePlacemark*> generateLayout(const ViewportParams* viewport, int tileLevel);
 
     /**
      * Returns a list of model indexes that are at position @p pos.
      */
-    QVector<const GeoDataFeature *> whichPlacemarkAt( const QPoint &pos );
+    QVector<const GeoDataFeature*> whichPlacemarkAt(const QPoint& pos);
 
     QString runtimeTrace() const;
 
-    QList<VisiblePlacemark *> visiblePlacemarks() const;
+    QList<VisiblePlacemark*> visiblePlacemarks() const;
 
-    bool hasPlacemarkAt(const QPoint &pos);
+    bool hasPlacemarkAt(const QPoint& pos);
 
 public Q_SLOTS:
 
     // earth
-    void setShowPlaces( bool show );
-    void setShowCities( bool show );
-    void setShowTerrain( bool show );
-    void setShowOtherPlaces( bool show );
+    void setShowPlaces(bool show);
+    void setShowCities(bool show);
+    void setShowTerrain(bool show);
+    void setShowOtherPlaces(bool show);
 
     // other planets
-    void setShowLandingSites( bool show );
-    void setShowCraters( bool show );
-    void setShowMaria( bool show );
+    void setShowLandingSites(bool show);
+    void setShowCraters(bool show);
+    void setShowMaria(bool show);
 
     void requestStyleReset();
-    void addPlacemarks( const QModelIndex& index, int first, int last );
-    void removePlacemarks( const QModelIndex& index, int first, int last );
+    void addPlacemarks(const QModelIndex& index, int first, int last);
+    void removePlacemarks(const QModelIndex& index, int first, int last);
     void resetCacheData();
 
 Q_SIGNALS:
@@ -121,26 +125,26 @@ private:
     void styleReset();
     void clearCache();
 
-    static QSet<TileId> visibleTiles(const ViewportParams &viewport, int tileLevel);
-    bool layoutPlacemark(const GeoDataPlacemark *placemark, const GeoDataCoordinates &coordinates, qreal x, qreal y, bool selected );
+    static QSet<TileId> visibleTiles(const ViewportParams& viewport, int tileLevel);
+    bool layoutPlacemark(const GeoDataPlacemark* placemark, const GeoDataCoordinates& coordinates, qreal x, qreal y, bool selected);
 
     /**
      * Returns the coordinates at which an icon should be drawn for the @p placemark.
      * @p ok is set to true if the coordinates are valid and should be used for drawing,
      * it is set to false otherwise.
      */
-    GeoDataCoordinates placemarkIconCoordinates( const GeoDataPlacemark *placemark ) const;
+    GeoDataCoordinates placemarkIconCoordinates(const GeoDataPlacemark* placemark) const;
 
-    QRectF  roomForLabel(const GeoDataStyle::ConstPtr &style,
+    QRectF  roomForLabel(const GeoDataStyle::ConstPtr& style,
                          const qreal x, const qreal y,
-                         const QString &labelText , const VisiblePlacemark *placemark) const;
-    bool    hasRoomForPixmap(const qreal y, const VisiblePlacemark *placemark) const;
+                         const QString& labelText, const VisiblePlacemark* placemark) const;
+    bool    hasRoomForPixmap(const qreal y, const VisiblePlacemark* placemark) const;
 
-    bool    placemarksOnScreenLimit( const QSize &screenSize ) const;
+    bool    placemarksOnScreenLimit(const QSize& screenSize) const;
 
 private:
 
-    Q_DISABLE_COPY( PlacemarkLayout )
+    Q_DISABLE_COPY(PlacemarkLayout)
 
 private:
 

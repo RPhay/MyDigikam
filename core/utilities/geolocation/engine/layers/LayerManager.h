@@ -15,7 +15,8 @@
 
 #pragma once
 
-// Qt
+// Qt includes
+
 #include <QList>
 #include <QObject>
 #include <QRegion>
@@ -36,48 +37,46 @@ class LayerInterface;
 
 /**
  * @short Handles rendering of all active layers in the correct order
- *
  */
-
 class LayerManager : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit LayerManager(QObject *parent = nullptr);
+    explicit LayerManager(QObject* parent = nullptr);
     ~LayerManager() override;
 
-    void renderLayers( GeoPainter *painter, ViewportParams *viewport );
+    void renderLayers(GeoPainter* painter, ViewportParams* viewport);
 
     bool showBackground() const;
 
     bool showRuntimeTrace() const;
 
-    void addRenderPlugin(RenderPlugin *renderPlugin);
+    void addRenderPlugin(RenderPlugin* renderPlugin);
 
     /**
      * @brief Returns a list of all DataPlugins on the layer
      * @return the list of DataPlugins
      */
-    QList<AbstractDataPlugin *> dataPlugins()  const;
+    QList<AbstractDataPlugin*> dataPlugins()  const;
 
     /**
      * @brief Returns all items of dataPlugins on the position curpos
      */
-    QList<AbstractDataPluginItem *> whichItemAt( const QPoint& curpos ) const;
+    QList<AbstractDataPluginItem*> whichItemAt(const QPoint& curpos) const;
 
     /**
      * @brief Add a layer to be included in rendering.
      */
-    void addLayer(LayerInterface *layer);
+    void addLayer(LayerInterface* layer);
 
     /**
      * @brief Remove a layer from being included in rendering.
      */
-    void removeLayer(LayerInterface *layer);
+    void removeLayer(LayerInterface* layer);
 
-    QList<LayerInterface *> internalLayers() const;
+    QList<LayerInterface*> internalLayers() const;
 
     RenderState renderState() const;
 
@@ -86,7 +85,7 @@ Q_SIGNALS:
     /**
      * @brief Signal that a render item has been initialized
      */
-    void renderPluginInitialized( RenderPlugin *renderPlugin );
+    void renderPluginInitialized(RenderPlugin* renderPlugin);
 
     /**
      * This signal is Q_EMITted when the settings of a plugin changed.
@@ -98,23 +97,23 @@ Q_SIGNALS:
      * If available with the @p dirtyRegion which is the region the view will change in.
      * If dirtyRegion.isEmpty() returns true, the whole viewport has to be repainted.
      */
-    void repaintNeeded( const QRegion & dirtyRegion = QRegion() );
+    void repaintNeeded(const QRegion& dirtyRegion = QRegion());
 
-    void visibilityChanged( const QString &nameId, bool visible );
+    void visibilityChanged(const QString& nameId, bool visible);
 
 public Q_SLOTS:
 
-    void setShowBackground( bool show );
+    void setShowBackground(bool show);
 
-    void setShowRuntimeTrace( bool show );
-
-private:
-
-    Q_PRIVATE_SLOT( d, void updateVisibility( bool, const QString & ) )
+    void setShowRuntimeTrace(bool show);
 
 private:
 
-    Q_DISABLE_COPY( LayerManager )
+    Q_PRIVATE_SLOT(d, void updateVisibility(bool, const QString&))
+
+private:
+
+    Q_DISABLE_COPY(LayerManager)
 
 private:
 

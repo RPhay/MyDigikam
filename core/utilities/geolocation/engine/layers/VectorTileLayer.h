@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "TileLayer.h"
+// Local includes
 
+#include "TileLayer.h"
 #include "MarbleGlobal.h"
 
 namespace Marble
@@ -38,9 +39,9 @@ class DIGIKAM_EXPORT VectorTileLayer : public TileLayer
 
 public:
 
-    VectorTileLayer(HttpDownloadManager *downloadManager,
-                    const PluginManager *pluginManager,
-                    GeoDataTreeModel *treeModel);
+    VectorTileLayer(HttpDownloadManager* downloadManager,
+                    const PluginManager* pluginManager,
+                    GeoDataTreeModel* treeModel);
 
     ~VectorTileLayer() override;
 
@@ -50,21 +51,21 @@ public:
 
     QString runtimeTrace() const override;
 
-    bool render(GeoPainter *painter, ViewportParams *viewport,
-                const QString &renderPos = QLatin1String("NONE"),
-                GeoSceneLayer *layer = nullptr) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("NONE"),
+                GeoSceneLayer* layer = nullptr) override;
 
     void reload();
 
     QSize tileSize() const;
-    const GeoSceneAbstractTileProjection *tileProjection() const;
+    const GeoSceneAbstractTileProjection* tileProjection() const;
 
-    int tileColumnCount( int level ) const;
-    int tileRowCount( int level ) const;
+    int tileColumnCount(int level) const;
+    int tileRowCount(int level) const;
 
     int layerCount() const;
 
-    void downloadTile( const TileId &stackedTileId );
+    void downloadTile(const TileId& stackedTileId);
 
 Q_SIGNALS:
 
@@ -72,14 +73,14 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void setMapTheme(const QVector<const GeoSceneVectorTileDataset *> &textures, const GeoSceneGroup *textureLayerSettings);
+    void setMapTheme(const QVector<const GeoSceneVectorTileDataset*>& textures, const GeoSceneGroup* textureLayerSettings);
 
     void reset();
 
 private:
 
     Q_PRIVATE_SLOT(d, void updateLayerSettings())
-    Q_PRIVATE_SLOT(d, void updateTile(const TileId &tileId, GeoDataDocument* document))
+    Q_PRIVATE_SLOT(d, void updateTile(const TileId& tileId, GeoDataDocument* document))
 
 private:
 

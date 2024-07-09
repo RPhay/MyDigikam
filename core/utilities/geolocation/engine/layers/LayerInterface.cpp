@@ -15,6 +15,8 @@
 
 #include "LayerInterface.h"
 
+// Local includes
+
 #include "RenderState.h"
 
 namespace Marble
@@ -24,7 +26,6 @@ LayerInterface::~LayerInterface()
 {
     // nothing to do
 }
-
 
 qreal LayerInterface::zValue() const
 {

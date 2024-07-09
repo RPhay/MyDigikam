@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "LayerInterface.h"
 
@@ -30,13 +34,16 @@ public:
 
     QStringList renderPosition() const override;
 
-    bool render( GeoPainter *painter, ViewportParams *viewport,
-                         const QString &renderPos = QLatin1String("SURFACE"),
-                         GeoSceneLayer *layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("SURFACE"),
+                GeoSceneLayer* layer = nullptr) override;
 
     RenderState renderState() const override;
 
-    QString runtimeTrace() const override { return QStringLiteral("SplashLayer"); }
+    QString runtimeTrace() const override
+    {
+        return QStringLiteral("SplashLayer");
+    }
 };
 
 } // namespace Marble

@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QList>
 #include <QRegion>
+
+// Local includes
 
 #include "LayerInterface.h"
 
@@ -37,48 +41,48 @@ class FloatItemsLayer : public QObject,
 
 public:
 
-    explicit FloatItemsLayer(QObject *parent = nullptr);
+    explicit FloatItemsLayer(QObject* parent = nullptr);
 
     QStringList renderPosition() const override;
 
-    bool render(GeoPainter *painter, ViewportParams *viewport,
-       const QString &renderPos = QLatin1String("NONE"), GeoSceneLayer *layer = nullptr) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("NONE"), GeoSceneLayer* layer = nullptr) override;
 
-    void addFloatItem(AbstractFloatItem *floatItem);
+    void addFloatItem(AbstractFloatItem* floatItem);
 
     /**
      * @brief Returns a list of all FloatItems of the layer
      * @return the list of the floatItems
      */
-    QList<AbstractFloatItem *> floatItems() const;
+    QList<AbstractFloatItem*> floatItems() const;
 
     QString runtimeTrace() const override;
 
- Q_SIGNALS:
+Q_SIGNALS:
 
     /**
      * @brief Signal that a render item has been initialized
      */
-    void renderPluginInitialized(RenderPlugin *renderPlugin);
+    void renderPluginInitialized(RenderPlugin* renderPlugin);
 
     /**
      * This signal is Q_EMITted when the repaint of the view was requested by a plugin.
      * If available with the @p dirtyRegion which is the region the view will change in.
      * If dirtyRegion.isEmpty() returns true, the whole viewport has to be repainted.
      */
-    void repaintNeeded(const QRegion &dirtyRegion = QRegion());
+    void repaintNeeded(const QRegion& dirtyRegion = QRegion());
 
-    void visibilityChanged(const QString &nameId, bool visible);
+    void visibilityChanged(const QString& nameId, bool visible);
 
     void pluginSettingsChanged();
 
 private Q_SLOTS:
 
-    void updateVisibility(bool visible, const QString &nameId);
+    void updateVisibility(bool visible, const QString& nameId);
 
 private:
 
-    QList<AbstractFloatItem *> m_floatItems;
+    QList<AbstractFloatItem*> m_floatItems;
 };
 
 } // namespace Marble

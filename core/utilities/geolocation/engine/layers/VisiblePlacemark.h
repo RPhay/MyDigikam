@@ -19,10 +19,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QPixmap>
 #include <QPoint>
 #include <QRectF>
+
+// Local includes
 
 #include "GeoDataStyle.h"
 #include "GeoDataCoordinates.h"
@@ -46,7 +50,7 @@ class VisiblePlacemark : public QObject
 
 public:
 
-    explicit VisiblePlacemark(const GeoDataPlacemark *placemark, const GeoDataCoordinates &coordinates, const GeoDataStyle::ConstPtr &style);
+    explicit VisiblePlacemark(const GeoDataPlacemark* placemark, const GeoDataCoordinates& coordinates, const GeoDataStyle::ConstPtr& style);
 
     /**
      * Returns the index of the place mark model which
@@ -72,7 +76,7 @@ public:
     /**
      * Sets the state of the place mark.
      */
-    void setSelected( bool selected );
+    void setSelected(bool selected);
 
     /**
      * Returns the position of the place mark symbol on the map.
@@ -87,7 +91,7 @@ public:
     /**
      * Sets the @p position of the place mark symbol on the map.
      */
-    void setSymbolPosition(const QPointF &position );
+    void setSymbolPosition(const QPointF& position);
 
     /**
      * Returns the pixmap of the place mark name label.
@@ -102,7 +106,7 @@ public:
     /**
      * Sets the @p area covered by the place mark name label on the map.
      */
-    void setLabelRect( const QRectF& area );
+    void setLabelRect(const QRectF& area);
 
     enum LabelStyle
     {
@@ -111,7 +115,7 @@ public:
         Selected
     };
 
-    void setStyle(const GeoDataStyle::ConstPtr &style);
+    void setStyle(const GeoDataStyle::ConstPtr& style);
 
     GeoDataStyle::ConstPtr style() const;
 
@@ -119,7 +123,7 @@ public:
 
     QRectF boundingBox() const;
 
-    const GeoDataCoordinates & coordinates() const;
+    const GeoDataCoordinates& coordinates() const;
 
 Q_SIGNALS:
 
@@ -131,7 +135,7 @@ private Q_SLOTS:
 
 private:
 
-    static void drawLabelText( QPainter &labelPainter, const QString &text, const QFont &labelFont, LabelStyle labelStyle, const QColor &color );
+    static void drawLabelText(QPainter& labelPainter, const QString& text, const QFont& labelFont, LabelStyle labelStyle, const QColor& color);
     void drawLabelPixmap();
 
 private:

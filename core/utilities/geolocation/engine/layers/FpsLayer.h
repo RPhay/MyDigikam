@@ -25,9 +25,9 @@ class FpsLayer
 {
 public:
 
-    explicit FpsLayer( QElapsedTimer *time );
+    explicit FpsLayer(QElapsedTimer* time);
 
-    void paint( QPainter *painter ) const;
+    void paint(QPainter* painter) const;
 
 private:
 

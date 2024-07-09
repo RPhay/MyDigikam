@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QColor>
 #include <QPainterPath>
+
+// Local includes
 
 #include "LayerInterface.h"
 
@@ -33,19 +37,22 @@ public:
 
     QStringList renderPosition() const override;
 
-    bool render( GeoPainter *painter, ViewportParams *viewport,
-                         const QString& renderPos = QLatin1String("NONE"),
-                         GeoSceneLayer * layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("NONE"),
+                GeoSceneLayer* layer = nullptr) override;
 
     qreal zValue() const override;
 
-    void setColor( const QColor &color );
+    void setColor(const QColor& color);
 
     QColor color() const;
 
     RenderState renderState() const override;
 
-    QString runtimeTrace() const override { return QStringLiteral("GroundLayer"); }
+    QString runtimeTrace() const override
+    {
+        return QStringLiteral("GroundLayer");
+    }
 
 private:
 

@@ -15,16 +15,20 @@
 
 #pragma once
 
-#include "LayerInterface.h"
+// Qt includes
 
 #include <QObject>
 
+// Local includes
+
+#include "LayerInterface.h"
 #include "GeoSceneAbstractTileProjection.h"
 
 namespace Marble
 {
 
-class DIGIKAM_EXPORT TileLayer :  public QObject, public LayerInterface
+class DIGIKAM_EXPORT TileLayer : public QObject,
+                                 public LayerInterface
 {
     Q_OBJECT
 
@@ -35,10 +39,10 @@ public:
     QStringList renderPosition() const override;
 
     virtual QSize tileSize() const = 0;
-    virtual const GeoSceneAbstractTileProjection *tileProjection() const = 0;
+    virtual const GeoSceneAbstractTileProjection* tileProjection() const = 0;
 
-    virtual int tileColumnCount( int level ) const = 0;
-    virtual int tileRowCount( int level ) const = 0;
+    virtual int tileColumnCount(int level) const = 0;
+    virtual int tileRowCount(int level) const = 0;
 
     virtual int layerCount() const = 0;
 };
