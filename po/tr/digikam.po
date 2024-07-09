@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 01:43+0000\n"
+"POT-Creation-Date: 2024-07-09 01:40+0000\n"
 "PO-Revision-Date: 2024-06-27 15:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3959,7 +3959,7 @@ msgstr "Dosya Adı"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:174
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:389
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:572
 #, kde-format
 msgid "Path"
 msgstr "Yol"
@@ -31821,7 +31821,7 @@ msgstr "Yağlı Boya Efekti"
 msgid "Rain Drops Effect"
 msgstr "Yağmur Damlaları Efekti"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:163
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:164
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greystorasyon Süzgeci"
@@ -52778,38 +52778,38 @@ msgid "No description available."
 msgstr "Kullanılabilir açıklama yok."
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:446
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:365
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:371
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:374
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:527
 #, kde-format
 msgid "National Capital"
 msgstr "Ulusal Başkent"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:331
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:335
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:339
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:343
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:363
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:494
 #: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "City"
 msgstr "Şehir"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:456
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:333
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:337
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:341
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:345
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:445
 #, kde-format
 msgid "State Capital"
 msgstr "Eyalet Başkenti"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:461
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:332
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:336
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:340
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:344
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:442
 #, kde-format
 msgid "County Capital"
 msgstr "İlçe Başkenti"
@@ -52820,7 +52820,7 @@ msgid "Capital"
 msgstr "Başkent"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:478
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:372
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:521
 #, kde-format
 msgid "Village"
 msgstr "Köy"
@@ -52835,1698 +52835,1698 @@ msgstr "&Bilgi Kutuları"
 msgid "Address Details"
 msgstr "Adres Ayrıntıları"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:563
 #, kde-format
 msgid "W"
 msgstr "B"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:455
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:563
 #, kde-format
 msgid "E"
 msgstr "D"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:149
 #, kde-format
 msgid "N"
 msgstr "K"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:624
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:150
 #, kde-format
 msgid "S"
 msgstr "G"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:322
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:376
 #, kde-format
 msgid "Valley"
 msgstr "Vadi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:323
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:379
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Terrain"
 msgstr "Arazi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:324
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Crater"
 msgstr "Krater"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:325
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:385
 #, kde-format
 msgid "Sea"
 msgstr "Deniz"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:326
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:388
 #, kde-format
 msgid "Manned Landing Site"
 msgstr "İnsanlı İniş Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:327
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:391
 #, kde-format
 msgid "Robotic Rover"
 msgstr "Robot Rover"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:328
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:394
 #, kde-format
 msgid "Unmanned Soft Landing Site"
 msgstr "İnsansız Yumuşak İniş Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:329
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:397
 #, kde-format
 msgid "Unmanned Hard Landing Site"
 msgstr "İnsansız Sert İniş Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:330
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:348
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:454
 #, kde-format
 msgid "Mountain"
 msgstr "Dağ"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:334
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:338
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:342
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:346
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:448
 #, kde-format
 msgid "Nation Capital"
 msgstr "Ulus Başkenti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:347
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:451
 #, kde-format
 msgid "Nation"
 msgstr "Ulus"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:349
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:467
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:806
 #, kde-format
 msgid "Volcano"
 msgstr "Yanardağ"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:350
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:460
 #, kde-format
 msgid "Continent"
 msgstr "Kıta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:351
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:463
 #, kde-format
 msgid "Ocean"
 msgstr "Okyanus"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:352
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:466
 #, kde-format
 msgid "Geographic Pole"
 msgstr "Coğrafi Kutup"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:353
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:469
 #, kde-format
 msgid "Magnetic Pole"
 msgstr "Manyetik Kutup"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:354
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:472
 #, kde-format
 msgid "Ship Wreck"
 msgstr "Gemi Enkazı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:355
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:475
 #, kde-format
 msgid "Air Port"
 msgstr "Havaalanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:356
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:478
 #, kde-format
 msgid "Observatory"
 msgstr "Gözlemevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:357
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:481
 #, kde-format
 msgid "Military Danger Area"
 msgstr "Askeri Tehlike Bölgesi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:358
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:484
 #, kde-format
 msgid "OSM Site"
 msgstr "OSM Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:359
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:487
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordinat"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:360
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:490
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
 #, kde-format
 msgid "Satellite"
 msgstr "Uydu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:364
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:497
 #, kde-format
 msgid "City Capital"
 msgstr "Şehir Başkenti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:366
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:503
 #, kde-format
 msgid "Suburb"
 msgstr "Banliyö"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:367
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:506
 #, kde-format
 msgid "Hamlet"
 msgstr "Mezra"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:368
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:509
 #, kde-format
 msgid "Locality"
 msgstr "Muhit"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:369
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:512
 #, kde-format
 msgid "Town"
 msgstr "Kasaba"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:370
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:515
 #, kde-format
 msgid "Town Capital"
 msgstr "Kasaba Başkenti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:373
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:524
 #, kde-format
 msgid "Village Capital"
 msgstr "Köy Başkenti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:375
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:530
 #, kde-format
 msgid "Water"
 msgstr "Su"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:533
 #, kde-format
 msgid "Reef"
 msgstr "Resif"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:377
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:536
 #, kde-format
 msgid "Wood"
 msgstr "Odun"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:378
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:539
 #, kde-format
 msgid "Beach"
 msgstr "Kumsal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:542
 #, kde-format
 msgid "Wetland"
 msgstr "Sulak Alan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:380
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:545
 #, kde-format
 msgid "Glacier"
 msgstr "Buzul"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:381
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Ice Shelf"
 msgstr "Buz Sahanlığı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:551
 #, kde-format
 msgid "Scrub"
 msgstr "Bodur"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:383
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:554
 #, kde-format
 msgid "Cliff"
 msgstr "Uçurum"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:384
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:557
 #, kde-format
 msgid "Heath"
 msgstr "Çalı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:385
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:560
 #, kde-format
 msgid "Traffic Signals"
 msgstr "Trafik İşaretleri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:386
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:563
 #, kde-format
 msgid "Elevator"
 msgstr "Asansör"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:387
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:566
 #, kde-format
 msgid "Steps"
 msgstr "Merdivenler"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:388
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:569
 #, kde-format
 msgid "Unknown Road"
 msgstr "Bilinmeyen Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:390
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:392
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:581
 #, kde-format
 msgid "Footway"
 msgstr "Kaldırım"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:391
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:588
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1169
 #, kde-format
 msgid "Track"
 msgstr "İz"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:393
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:584
 #, kde-format
 msgid "Cycleway"
 msgstr "Bisiklet Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:587
 #, kde-format
 msgid "Service Road"
 msgstr "Servis Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:395
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:590
 #, kde-format
 msgid "Road"
 msgstr "Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:396
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:593
 #, kde-format
 msgid "Residential Road"
 msgstr "Meskun Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:596
 #, kde-format
 msgid "Living Street"
 msgstr "Canlı Sokak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:398
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:599
 #, kde-format
 msgid "Unclassified Road"
 msgstr "Sınıflandırılmamış Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:399
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:602
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr "Üçüncül Bağlantı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:400
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:605
 #, kde-format
 msgid "Tertiary Road"
 msgstr "Üçüncül Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:608
 #, kde-format
 msgid "Secondary Link Road"
 msgstr "İkincil Bağlantı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:402
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:611
 #, kde-format
 msgid "Secondary Road"
 msgstr "İkincil Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:403
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:614
 #, kde-format
 msgid "Primary Link Road"
 msgstr "Birincil Bağlantı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:617
 #, kde-format
 msgid "Primary Road"
 msgstr "Birincil Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:405
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:620
 #, kde-format
 msgid "Raceway"
 msgstr "Yarış Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:406
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:623
 #, kde-format
 msgid "Trunk Link Road"
 msgstr "Ana Bağlantı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:626
 #, kde-format
 msgid "Trunk Road"
 msgstr "Ana Yol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:408
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:629
 #, kde-format
 msgid "Motorway Link Road"
 msgstr "Otoban Bağlantı Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:409
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:632
 #, kde-format
 msgid "Motorway"
 msgstr "Otoban"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:635
 #, kde-format
 msgid "Corridor"
 msgstr "Koridor"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:411
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:638
 #, kde-format
 msgid "Building"
 msgstr "Yapı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:412
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:641
 #, kde-format
 msgid "Camping"
 msgstr "Kamp"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:644
 #, kde-format
 msgid "Hostel"
 msgstr "Pansiyon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:414
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:647
 #, kde-format
 msgid "Hotel"
 msgstr "Otel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:415
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:650
 #, kde-format
 msgid "Motel"
 msgstr "Motel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:653
 #, kde-format
 msgid "Youth Hostel"
 msgstr "Gençlik Pansiyonu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:417
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:656
 #, kde-format
 msgid "Guest House"
 msgstr "Konukevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:418
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:659
 #, kde-format
 msgid "Library"
 msgstr "Kütüphane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:662
 #, kde-format
 msgid "Kindergarten"
 msgstr "Ana Okulu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:420
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:665
 #, kde-format
 msgid "College"
 msgstr "Kolej"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:421
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:668
 #, kde-format
 msgid "School"
 msgstr "Okul"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:671
 #, kde-format
 msgid "University"
 msgstr "Üniversite"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:423
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:674
 #, kde-format
 msgid "Bar"
 msgstr "Bar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:424
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:677
 #, kde-format
 msgid "Biergarten"
 msgstr "Biraevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:680
 #, kde-format
 msgid "Cafe"
 msgstr "Kafe"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:426
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:683
 #, kde-format
 msgid "Fast Food"
 msgstr "Tez Yemek"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:427
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:686
 #, kde-format
 msgid "Pub"
 msgstr "Meyhane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:689
 #, kde-format
 msgid "Restaurant"
 msgstr "Restoran"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:429
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:692
 #, kde-format
 msgid "Dentist"
 msgstr "Dişçi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:430
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:695
 #, kde-format
 msgid "Doctors"
 msgstr "Doktor"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:698
 #, kde-format
 msgid "Hospital"
 msgstr "Hastane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:432
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:701
 #, kde-format
 msgid "Pharmacy"
 msgstr "Eczane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:433
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:704
 #, kde-format
 msgid "Veterinary"
 msgstr "Veteriner"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:707
 #, kde-format
 msgid "ATM"
 msgstr "Bankamatik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:435
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:710
 #, kde-format
 msgid "Bank"
 msgstr "Banka"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:436
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:713
 #, kde-format
 msgid "Archaeological Site"
 msgstr "Arkeolojik Site"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:716
 #, kde-format
 msgid "Embassy"
 msgstr "Büyükelçilik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:719
 #, kde-format
 msgid "Emergency Phone"
 msgstr "Acil Durum Telefonu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:439
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:722
 #, kde-format
 msgid "Mountain Rescue"
 msgstr "Dağ Arama-Kurtarma"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:725
 #, kde-format
 msgid "Water Park"
 msgstr "Su Parkı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:441
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:728
 #, kde-format
 msgid "Community Centre"
 msgstr "Toplum Merkezi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:731
 #, kde-format
 msgid "Fountain"
 msgstr "Çeşme"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:443
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:734
 #, kde-format
 msgid "Night Club"
 msgstr "Gece Kulübü"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:444
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:737
 #, kde-format
 msgid "Bench"
 msgstr "Bank"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:740
 #, kde-format
 msgid "Court House"
 msgstr "Adalet Sarayı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:446
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:743
 #, kde-format
 msgid "Fire Station"
 msgstr "İtfaiye"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:447
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:746
 #, kde-format
 msgid "Hunting Stand"
 msgstr "Av Tezgahı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:749
 #, kde-format
 msgid "Police"
 msgstr "Polis"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:449
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:752
 #, kde-format
 msgid "Post Box"
 msgstr "Posta Kutusu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:755
 #, kde-format
 msgid "Post Office"
 msgstr "Postane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:758
 #, kde-format
 msgid "Prison"
 msgstr "Cezaevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:452
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:761
 #, kde-format
 msgid "Recycling"
 msgstr "Geri Dönüşüm"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:453
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:764
 #, kde-format
 msgid "Shelter"
 msgstr "Sığınak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:767
 #, kde-format
 msgid "Telephone"
 msgstr "Telefon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:455
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:770
 #, kde-format
 msgid "Toilets"
 msgstr "Tuvalet"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:456
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:773
 #, kde-format
 msgid "Town Hall"
 msgstr "Belediye Binası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:457
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:776
 #, kde-format
 msgid "Waste Basket"
 msgstr "Atık Sepeti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:779
 #, kde-format
 msgid "Drinking Water"
 msgstr "İçme Suyu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:459
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:782
 #, kde-format
 msgid "Graveyard"
 msgstr "Mezarlık"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:460
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:785
 #, kde-format
 msgid "Charging Station"
 msgstr "Şarj İstasyonu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:461
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:788
 #, kde-format
 msgid "Car Wash"
 msgstr "Araba Yıkama"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:462
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:791
 #, kde-format
 msgid "Social Facility"
 msgstr "Sosyal Tesis"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:794
 #, kde-format
 msgid "City Wall"
 msgstr "Şehir Duvarı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:464
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:797
 #, kde-format
 msgid "Gate"
 msgstr "Ana Kapı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:465
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:800
 #, kde-format
 msgid "Lift Gate"
 msgstr "Sürgülü Kapı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:466
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:674
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:803
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1427
 #, kde-format
 msgid "Wall"
 msgstr "Duvar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:468
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:809
 #, kde-format
 msgid "Peak"
 msgstr "Tepe"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:812
 #, kde-format
 msgid "Tree"
 msgstr "Ağaç"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:470
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:815
 #, kde-format
 msgid "Cave Entrance"
 msgstr "Mağara Girişi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:471
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:818
 #, kde-format
 msgid "Beverages"
 msgstr "İçecek"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:821
 #, kde-format
 msgid "Hifi"
 msgstr "Yüksek Duyarlık"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:473
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:824
 #, kde-format
 msgid "Supermarket"
 msgstr "Süper Market"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:474
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:827
 #, kde-format
 msgid "Liquor Store"
 msgstr "İçki Dükkanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:830
 #, kde-format
 msgid "Bakery"
 msgstr "Fırın"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:476
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:833
 #, kde-format
 msgid "Butcher"
 msgstr "Kasap"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:477
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:836
 #, kde-format
 msgid "Confectionery"
 msgstr "Şekerleme"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:839
 #, kde-format
 msgid "Convenience Shop"
 msgstr "Mahalle Bakkalı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:479
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:842
 #, kde-format
 msgid "Greengrocer"
 msgstr "Manav"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:480
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:845
 #, kde-format
 msgid "Seafood Shop"
 msgstr "Balıkçı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:848
 #, kde-format
 msgid "Department Store"
 msgstr "Büyük Mağaza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:482
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:851
 #, kde-format
 msgid "Kiosk"
 msgstr "Büfe"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:483
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:854
 #, kde-format
 msgid "Bag Shop"
 msgstr "Çanta Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:857
 #, kde-format
 msgid "Clothes Shop"
 msgstr "Giysi Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:485
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:860
 #, kde-format
 msgid "Fashion Shop"
 msgstr "Moda Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:486
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:863
 #, kde-format
 msgid "Jewelry Shop"
 msgstr "Kuyumcu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:866
 #, kde-format
 msgid "Shoe Shop"
 msgstr "Ayakkabı Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:488
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:869
 #, kde-format
 msgid "Variety Store"
 msgstr "Tuhafiye"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:489
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:872
 #, kde-format
 msgid "Beauty Services"
 msgstr "Güzellik Hizmetleri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:875
 #, kde-format
 msgid "Chemist"
 msgstr "Eczacı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:491
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:878
 #, kde-format
 msgid "Cosmetics"
 msgstr "Kozmetik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:881
 #, kde-format
 msgid "Hairdresser"
 msgstr "Kuaför"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:493
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:884
 #, kde-format
 msgid "Optician"
 msgstr "Gözlükçü"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:887
 #, kde-format
 msgid "Perfumery"
 msgstr "Parfümeri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:890
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:896
 #, kde-format
 msgid "Hardware Store"
 msgstr "Hırdavat Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:496
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:893
 #, kde-format
 msgid "Florist"
 msgstr "Çiçekçi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:899
 #, kde-format
 msgid "Furniture Store"
 msgstr "Mobilya Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:499
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:902
 #, kde-format
 msgid "Electronics Shop"
 msgstr "Elektronik Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:500
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:905
 #, kde-format
 msgid "Mobile Phone Shop"
 msgstr "Cep Telefoncu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:908
 #, kde-format
 msgid "Bicycle Shop"
 msgstr "Bisikletçi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:502
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:911
 #, kde-format
 msgid "Car Dealer"
 msgstr "Galerici"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:914
 #, kde-format
 msgid "Car Repair Shop"
 msgstr "Araba Onarım"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:504
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:917
 #, kde-format
 msgid "Car Parts"
 msgstr "Araba Parçaları"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:920
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr "Motorsikletçi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:923
 #, kde-format
 msgid "Outdoor Shop"
 msgstr "Kamp Malzemeleri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:507
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:926
 #, kde-format
 msgid "Sports Shop"
 msgstr "Spor Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:508
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:929
 #, kde-format
 msgid "Printing Services"
 msgstr "Baskı Hizmetleri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:932
 #, kde-format
 msgid "Art Shop"
 msgstr "Sanat Galerisi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:510
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:935
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr "Müzik Aletleri Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:938
 #, kde-format
 msgid "Photo Shop"
 msgstr "Fotoğrafçı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:941
 #, kde-format
 msgid "Bookshop"
 msgstr "Kitapçı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:513
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:944
 #, kde-format
 msgid "Gift Shop"
 msgstr "Armağanlık Eşya"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:514
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:947
 #, kde-format
 msgid "Stationery"
 msgstr "Kırtasiye"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:950
 #, kde-format
 msgid "Laundry"
 msgstr "Çamaşırhane"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:516
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:953
 #, kde-format
 msgid "Pet Shop"
 msgstr "Evcil Hayvan Mağazası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:517
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:956
 #, kde-format
 msgid "Toy Store"
 msgstr "Oyuncakçı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:518
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:959
 #, kde-format
 msgid "Travel Agency"
 msgstr "Seyahat Acentesi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:962
 #, kde-format
 msgid "Deli"
 msgstr "Şarküteri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:520
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:965
 #, kde-format
 msgid "Tobacco Shop"
 msgstr "Tütüncü"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:968
 #, kde-format
 msgid "Tea Shop"
 msgstr "Çayevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:971
 #, kde-format
 msgid "Computer Shop"
 msgstr "Bilgisayarcı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:523
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:974
 #, kde-format
 msgid "Garden Centre"
 msgstr "Bahçe Malzemeleri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:977
 #, kde-format
 msgid "Shop"
 msgstr "Dükkan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:525
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:980
 #, kde-format
 msgid "Bridge"
 msgstr "Köprü"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:526
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:983
 #, kde-format
 msgid "Lighthouse"
 msgstr "Fener"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:986
 #, kde-format
 msgid "Pier"
 msgstr "İskele"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:528
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:989
 #, kde-format
 msgid "Water Tower"
 msgstr "Su Kulesi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:529
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:992
 #, kde-format
 msgid "Wind Mill"
 msgstr "Yel Değirmeni"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:995
 #, kde-format
 msgid "Communications Tower"
 msgstr "Baz İstasyonu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:531
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:998
 #, kde-format
 msgid "Tourist Attraction"
 msgstr "Turistik Atraksiyon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:532
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1001
 #, kde-format
 msgid "Artwork"
 msgstr "Sanat"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1004
 #, kde-format
 msgid "Castle"
 msgstr "Kale"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:534
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1007
 #, kde-format
 msgid "Cinema"
 msgstr "Sinema"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:535
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1010
 #, kde-format
 msgid "Information"
 msgstr "Bilgi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1013
 #, kde-format
 msgid "Monument"
 msgstr "Anıt"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:537
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1016
 #, kde-format
 msgid "Museum"
 msgstr "Müze"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:538
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1019
 #, kde-format
 msgid "Ruin"
 msgstr "Yıkıntı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1022
 #, kde-format
 msgid "Theatre"
 msgstr "Tiyatro"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:540
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1025
 #, kde-format
 msgid "Theme Park"
 msgstr "Eğlence Parkı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:541
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1028
 #, kde-format
 msgid "View Point"
 msgstr "Bakış Noktası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1031
 #, kde-format
 msgid "Zoo"
 msgstr "Hayvanat Bahçesi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:543
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1034
 #, kde-format
 msgid "Alpine Hut"
 msgstr "Dağ Barınağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:544
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1037
 #, kde-format
 msgid "Wilderness Hut"
 msgstr "Yaban Barınağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1040
 #, kde-format
 msgid "Memorial"
 msgstr "Anıt"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:546
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1043
 #, kde-format
 msgid "Aerodrome"
 msgstr "Hava Meydanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:547
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1046
 #, kde-format
 msgid "Helipad"
 msgstr "Heliped"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1049
 #, kde-format
 msgid "Airport Gate"
 msgstr "Havaalanı Kapısı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:549
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1052
 #, kde-format
 msgid "Airport Runway"
 msgstr "Havaalanı Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:550
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1055
 #, kde-format
 msgid "Airport Apron"
 msgstr "Havaalanı Apronu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1058
 #, kde-format
 msgid "Airport Taxiway"
 msgstr "Havaalanı Taksi Yolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:552
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1061
 #, kde-format
 msgid "Airport Terminal"
 msgstr "Havaalanı Terminali"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:553
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1064
 #, kde-format
 msgid "Bus Station"
 msgstr "Otobüs Terminali"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1067
 #, kde-format
 msgid "Bus Stop"
 msgstr "Otobüs Durağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:555
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1070
 #, kde-format
 msgid "Car Sharing"
 msgstr "Araba Paylaşım"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:556
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1073
 #, kde-format
 msgid "Gas Station"
 msgstr "Benzinlik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1076
 #, kde-format
 msgid "Parking"
 msgstr "Otopark"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:558
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1079
 #, kde-format
 msgid "Parking Space"
 msgstr "Park Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:559
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1082
 #, kde-format
 msgid "Platform"
 msgstr "Platform"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1085
 #, kde-format
 msgid "Bicycle Rental"
 msgstr "Bisiklet Kiralama"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:561
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1088
 #, kde-format
 msgid "Car Rental"
 msgstr "Araba Kiralama"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:562
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1091
 #, kde-format
 msgid "Ski Rental"
 msgstr "Kayak Kiralama"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1094
 #, kde-format
 msgid "Taxi Rank"
 msgstr "Taksi Durağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:564
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1097
 #, kde-format
 msgid "Train Station"
 msgstr "Tren İstasyonu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:565
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1100
 #, kde-format
 msgid "Tram Stop"
 msgstr "Tramvay Durağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1103
 #, kde-format
 msgid "Bicycle Parking"
 msgstr "Bisiklet Park Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:567
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1106
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr "Motosiklet Park Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:568
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1109
 #, kde-format
 msgid "Subway Entrance"
 msgstr "Metro Girişi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1112
 #, kde-format
 msgid "Speed Camera"
 msgstr "Radar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:570
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1115
 #, kde-format
 msgid "Place Of Worship"
 msgstr "Tapınak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:571
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1118
 #, kde-format
 msgid "Bahai"
 msgstr "Bahailik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1121
 #, kde-format
 msgid "Buddhist"
 msgstr "Budist"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1124
 #, kde-format
 msgid "Christian"
 msgstr "Hıristiyan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:574
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1127
 #, kde-format
 msgid "Muslim"
 msgstr "Müslüman"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:575
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1130
 #, kde-format
 msgid "Hindu"
 msgstr "Hindu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1133
 #, kde-format
 msgid "Jain"
 msgstr "Caynist"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:577
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1136
 #, kde-format
 msgid "Jewish"
 msgstr "Musevi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:578
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1139
 #, kde-format
 msgid "Shinto"
 msgstr "Şinto"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1142
 #, kde-format
 msgid "Sikh"
 msgstr "Sih"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:580
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1145
 #, kde-format
 msgid "Taoist"
 msgstr "Taocu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1148
 #, kde-format
 msgid "Golf Course"
 msgstr "Golf Sahası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:582
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1151
 #, kde-format
 msgid "Marina"
 msgstr "Yat Limanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1154
 #, kde-format
 msgid "Park"
 msgstr "Park"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1157
 #, kde-format
 msgid "Playground"
 msgstr "Oyun Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:585
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1160
 #, kde-format
 msgid "Pitch"
 msgstr "Saha"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:586
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1163
 #, kde-format
 msgid "Sports Centre"
 msgstr "Spor Merkezi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1166
 #, kde-format
 msgid "Stadium"
 msgstr "Stadyum"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:589
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1172
 #, kde-format
 msgid "Swimming Pool"
 msgstr "Yüzme Havuzu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1175
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr "Mini-Golf Sahası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:591
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1178
 #, kde-format
 msgid "Allotments"
 msgstr "Parseller"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:592
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1181
 #, kde-format
 msgid "Basin"
 msgstr "Havza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1184
 #, kde-format
 msgid "Cemetery"
 msgstr "Mezarlık"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:594
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1187
 #, kde-format
 msgid "Commercial"
 msgstr "Ticari"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:595
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1190
 #, kde-format
 msgid "Construction"
 msgstr "Yapı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1193
 #, kde-format
 msgid "Farmland"
 msgstr "Ekilebilir Arazi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:597
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1196
 #, kde-format
 msgid "Farmyard"
 msgstr "Çiftlik Avlusu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:598
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1199
 #, kde-format
 msgid "Garages"
 msgstr "Garaj"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1202
 #, kde-format
 msgid "Grass"
 msgstr "Çim"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:600
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1205
 #, kde-format
 msgid "Industrial"
 msgstr "Sanayi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:601
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1208
 #, kde-format
 msgid "Landfill"
 msgstr "Katı Atık Sahası"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1211
 #, kde-format
 msgid "Meadow"
 msgstr "Çayır"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:603
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1214
 #, kde-format
 msgid "Military"
 msgstr "Askeri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:604
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1217
 #, kde-format
 msgid "Quarry"
 msgstr "Taşocağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1220
 #, kde-format
 msgid "Railway"
 msgstr "Demiryolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:606
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1223
 #, kde-format
 msgid "Reservoir"
 msgstr "Rezervuar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:607
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1226
 #, kde-format
 msgid "Residential"
 msgstr "Meskun Mahal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1229
 #, kde-format
 msgid "Retail"
 msgstr "Perakende"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:609
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1232
 #, kde-format
 msgid "Orchard"
 msgstr "Bostan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:610
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1235
 #, kde-format
 msgid "Vineyard"
 msgstr "Üzüm Bağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1238
 #, kde-format
 msgid "Rail"
 msgstr "Ray"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:612
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1241
 #, kde-format
 msgid "Narrow Gauge"
 msgstr "Dar Hat"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:613
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1244
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:311
 #, kde-format
 msgid "Tram"
 msgstr "Tramvay"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1247
 #, kde-format
 msgid "Light Rail"
 msgstr "Hafif Raylı Sistem"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:615
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1250
 #, kde-format
 msgid "Abandoned Railway"
 msgstr "Terk Edilmiş Demiryolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:616
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1253
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:307
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1256
 #, kde-format
 msgid "Preserved Railway"
 msgstr "Korunmuş Demiryolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:618
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1259
 #, kde-format
 msgid "Miniature Railway"
 msgstr "Mini Demiryolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:619
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1262
 #, kde-format
 msgid "Railway Construction"
 msgstr "Demiryolu Yapımı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1265
 #, kde-format
 msgid "Monorail"
 msgstr "Tek Raylı Sistem"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:621
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1268
 #, kde-format
 msgid "Funicular Railway"
 msgstr "Füniküler Demiryolu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:622
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1271
 #, kde-format
 msgid "Power Tower"
 msgstr "Elektrik Direği"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1274
 #, kde-format
 msgid "Aerialway Station"
 msgstr "Yerüstü İstasyon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:624
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1277
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr "Direk"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:625
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1280
 #, kde-format
 msgid "Cable Car"
 msgstr "Teleferik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1283
 #, kde-format
 msgid "Gondola"
 msgstr "Gondol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:627
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1286
 #, kde-format
 msgid "Chair Lift"
 msgstr "Koltuklu Teleferik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:628
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1289
 #, kde-format
 msgid "Mixed Lift"
 msgstr "Karışık Asansör"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1292
 #, kde-format
 msgid "Drag Lift"
 msgstr "Kayak Teleferiği"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:630
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1295
 #, kde-format
 msgid "T-Bar"
 msgstr "T Çubuğu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:631
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1298
 #, kde-format
 msgid "J-Bar"
 msgstr "J Çubuğu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1301
 #, kde-format
 msgid "Platter"
 msgstr "Kayık Tabak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:633
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1304
 #, kde-format
 msgid "Rope Tow"
 msgstr "Halat Konveyör"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:634
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1307
 #, kde-format
 msgid "Magic Carpet"
 msgstr "Uçan Halı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1310
 #, kde-format
 msgid "Zip Line"
 msgstr "Çelik Kayma Halatı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:636
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1313
 #, kde-format
 msgid "Goods"
 msgstr "Mal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:637
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1316
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:347
 #, kde-format
 msgid "Downhill Piste"
 msgstr "Alp Disiplini Kayak Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1319
 #, kde-format
 msgid "Nordic Piste"
 msgstr "Kros Kayak Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1322
 #: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:355
 #, kde-format
 msgid "Skitour"
 msgstr "Kayak Turu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:640
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1325
 #, kde-format
 msgid "Sled Piste"
 msgstr "Kızak Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1328
 #, kde-format
 msgid "Winter Hike"
 msgstr "Kış Yürüyüşü"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:642
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1331
 #, kde-format
 msgid "Sleigh Piste"
 msgstr "Büyük Kızak Pisti"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:643
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1334
 #, kde-format
 msgid "Ice Skate"
 msgstr "Buz Kayağı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1337
 #, kde-format
 msgid "Snow Park"
 msgstr "Kar Parkı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:645
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1340
 #, kde-format
 msgid "Ski Playground"
 msgstr "Kayak Oyun Alanı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:646
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1343
 #, kde-format
 msgid "Ski Jump"
 msgstr "Atlamalı Kayak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1346
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr "Yönetim Sınırı (Düzey 1)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:648
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1349
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr "Yönetim Sınırı (Düzey 2)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:649
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1352
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr "Yönetim Sınırı (Düzey 3)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1355
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr "Yönetim Sınırı (Düzey 4)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:651
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1358
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr "Yönetim Sınırı (Düzey 5)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:652
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1361
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr "Yönetim Sınırı (Düzey 6)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1364
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr "Yönetim Sınırı (Düzey 7)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:654
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1367
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr "Yönetim Sınırı (Düzey 8)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:655
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1370
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr "Yönetim Sınırı (Düzey 9)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1373
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr "Yönetim Sınırı (Düzey 10)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:657
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1376
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr "Yönetim Sınırı (Düzey 11)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:658
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1379
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr "Sınır (Deniz)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1382
 #, kde-format
 msgid "Land Mass"
 msgstr "Kıta Sahanlığı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:660
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1385
 #, kde-format
 msgid "Urban Area"
 msgstr "Kentsel Alan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:661
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1388
 #, kde-format
 msgid "International Date Line"
 msgstr "Uluslararası Tarih Çizgisi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1391
 #, kde-format
 msgid "Bathymetry"
 msgstr "Batimetri"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:663
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1394
 #, kde-format
 msgid "Canal"
 msgstr "Kanal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:664
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1397
 #, kde-format
 msgid "Drain"
 msgstr "Lağım"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:665
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1400
 #, kde-format
 msgid "Ditch"
 msgstr "Hendek"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:666
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1403
 #, kde-format
 msgid "Stream"
 msgstr "Akış"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:667
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1406
 #, kde-format
 msgid "River"
 msgstr "Irmak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1409
 #, kde-format
 msgid "Weir"
 msgstr "Su Bendi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:669
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:670
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:671
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1412
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1415
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1418
 #, kde-format
 msgid "Crosswalk"
 msgstr "Yaya Geçidi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:672
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1421
 #, kde-format
 msgid "Railway Crossing"
 msgstr "Demiryolu Geçidi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:673
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1424
 #, kde-format
 msgid "Door"
 msgstr "Kapı"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:675
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1430
 #, kde-format
 msgid "Room"
 msgstr "Oda"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:53
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:59
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:56
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:62
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:59
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:65
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:62
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:68
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:93
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:101
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:96
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:104
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:99
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:107
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
@@ -54607,19 +54607,19 @@ msgstr "<en büyük> alt metin içeriği tamsayıya dönüştürülemedi. Şu id
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr "<en küçük> alt metin içeriği tamsayıya dönüştürülemedi. Şu idi: '%1'"
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:96
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:110
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
 "%1. satırda ayrıştırma başarısız oldu. Belge sonu sonrası hâlâ %2 "
 "kapatılmamış künye var. "
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:132
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:157
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
 msgstr "%1. satır ve %2. sütunda dosya ayrıştırması hatası. "
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:134
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:159
 #, kde-format
 msgid "This is an Invalid File"
 msgstr "Bu, geçersiz bir dosya"
