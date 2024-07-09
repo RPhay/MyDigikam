@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "AbstractProjection.h"
 #include "AzimuthalProjection.h"
 
@@ -67,15 +69,15 @@ public:
      * @return @c true  if the geographical coordinates are visible on the screen
      *         @c false if the geographical coordinates are not visible on the screen
      */
-    bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                            const ViewportParams *params,
-                            qreal &x, qreal &y, bool &globeHidesPoint ) const override;
+    bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                           const ViewportParams* params,
+                           qreal& x, qreal& y, bool& globeHidesPoint) const override;
 
-    bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                            const ViewportParams * viewport,
-                            qreal *x, qreal &y, int &pointRepeatNum,
-                            const QSizeF& size,
-                            bool &globeHidesPoint ) const override;
+    bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                           const ViewportParams* viewport,
+                           qreal* x, qreal& y, int& pointRepeatNum,
+                           const QSizeF& size,
+                           bool& globeHidesPoint) const override;
 
     using AbstractProjection::screenCoordinates;
 
@@ -90,19 +92,19 @@ public:
      * @return @c true  if the pixel (x, y) is within the globe
      *         @c false if the pixel (x, y) is outside the globe, i.e. in space.
      */
-    bool geoCoordinates( const int x, const int y,
-                         const ViewportParams *params,
-                         qreal& lon, qreal& lat,
-                         GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const override;
+    bool geoCoordinates(const int x, const int y,
+                        const ViewportParams* params,
+                        qreal& lon, qreal& lat,
+                        GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const override;
 
 protected:
 
-    explicit GnomonicProjection(GnomonicProjectionPrivate *dd );
+    explicit GnomonicProjection(GnomonicProjectionPrivate* dd);
 
 private:
 
     Q_DECLARE_PRIVATE(GnomonicProjection)
-    Q_DISABLE_COPY( GnomonicProjection )
+    Q_DISABLE_COPY(GnomonicProjection)
 };
 
 } // namespace Marble

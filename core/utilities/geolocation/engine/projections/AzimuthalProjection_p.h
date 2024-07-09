@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "AbstractProjection_p.h"
 
 namespace Marble
@@ -29,9 +31,9 @@ class Q_DECL_HIDDEN AzimuthalProjectionPrivate : public AbstractProjectionPrivat
 {
 public:
 
-    explicit AzimuthalProjectionPrivate( AzimuthalProjection * parent )
-        : AbstractProjectionPrivate( parent ),
-          q_ptr( parent )
+    explicit AzimuthalProjectionPrivate(AzimuthalProjection* parent)
+        : AbstractProjectionPrivate(parent),
+          q_ptr(parent)
     {
     }
 
@@ -55,54 +57,54 @@ public:
     // The allowLatePolygonCut parameter allows to split at least
     // non-closed linestrings properly at this point.
 
-    void tessellateLineSegment(  const GeoDataCoordinates &aCoords,
-                                qreal ax, qreal ay,
-                                const GeoDataCoordinates &bCoords,
-                                qreal bx, qreal by,
-                                QVector<QPolygonF*> &polygons,
-                                const ViewportParams *viewport,
-                                TessellationFlags f = TessellationFlags(),
-                                bool allowLatePolygonCut = false ) const;
-
-    void processTessellation(   const GeoDataCoordinates &previousCoords,
-                               const GeoDataCoordinates &currentCoords,
-                               int count,
-                               QVector<QPolygonF*> &polygons,
-                               const ViewportParams *viewport,
+    void tessellateLineSegment(const GeoDataCoordinates& aCoords,
+                               qreal ax, qreal ay,
+                               const GeoDataCoordinates& bCoords,
+                               qreal bx, qreal by,
+                               QVector<QPolygonF*>& polygons,
+                               const ViewportParams* viewport,
                                TessellationFlags f = TessellationFlags(),
-                               bool allowLatePolygonCut = false ) const;
+                               bool allowLatePolygonCut = false) const;
 
-    void crossHorizon( const GeoDataCoordinates & bCoord,
-                       QVector<QPolygonF*> &polygons,
-                       const ViewportParams *viewport,
-                       bool allowLatePolygonCut = false
+    void processTessellation(const GeoDataCoordinates& previousCoords,
+                             const GeoDataCoordinates& currentCoords,
+                             int count,
+                             QVector<QPolygonF*>& polygons,
+                             const ViewportParams* viewport,
+                             TessellationFlags f = TessellationFlags(),
+                             bool allowLatePolygonCut = false) const;
+
+    void crossHorizon(const GeoDataCoordinates& bCoord,
+                      QVector<QPolygonF*>& polygons,
+                      const ViewportParams* viewport,
+                      bool allowLatePolygonCut = false
                      ) const;
 
-    virtual bool lineStringToPolygon( const GeoDataLineString &lineString,
-                              const ViewportParams *viewport,
-                              QVector<QPolygonF*> &polygons ) const;
+    virtual bool lineStringToPolygon(const GeoDataLineString& lineString,
+                                     const ViewportParams* viewport,
+                                     QVector<QPolygonF*>& polygons) const;
 
-    void horizonToPolygon( const ViewportParams *viewport,
-                           const GeoDataCoordinates & disappearCoords,
-                           const GeoDataCoordinates & reappearCoords,
-                           QPolygonF* ) const;
+    void horizonToPolygon(const ViewportParams* viewport,
+                          const GeoDataCoordinates& disappearCoords,
+                          const GeoDataCoordinates& reappearCoords,
+                          QPolygonF*) const;
 
-    GeoDataCoordinates findHorizon( const GeoDataCoordinates & previousCoords,
-                                    const GeoDataCoordinates & currentCoords,
-                                    const ViewportParams *viewport,
-                                    TessellationFlags f = TessellationFlags()) const;
+    GeoDataCoordinates findHorizon(const GeoDataCoordinates& previousCoords,
+                                   const GeoDataCoordinates& currentCoords,
+                                   const ViewportParams* viewport,
+                                   TessellationFlags f = TessellationFlags()) const;
 
-    GeoDataCoordinates doFindHorizon(const GeoDataCoordinates & previousCoords,
-                                     const GeoDataCoordinates & currentCoords,
-                                     const ViewportParams *viewport,
+    GeoDataCoordinates doFindHorizon(const GeoDataCoordinates& previousCoords,
+                                     const GeoDataCoordinates& currentCoords,
+                                     const ViewportParams* viewport,
                                      TessellationFlags f,
                                      bool currentHide,
                                      int recursionCounter) const;
 
-    bool globeHidesPoint( const GeoDataCoordinates &coordinates,
-                          const ViewportParams *viewport ) const;
+    bool globeHidesPoint(const GeoDataCoordinates& coordinates,
+                         const ViewportParams* viewport) const;
 
-    Q_DECLARE_PUBLIC( AzimuthalProjection )
+    Q_DECLARE_PUBLIC(AzimuthalProjection)
 
 public:
 

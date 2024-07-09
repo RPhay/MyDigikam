@@ -13,14 +13,13 @@
  *
  * ============================================================ */
 
+/**
+ * This file contains the headers for EquirectProjection.
+ */
+
 #pragma once
 
-/** @file
- * This file contains the headers for EquirectProjection.
- *
- * @author Inge Wallin  <inge@lysator.liu.se>
- * @author Torsten Rahn <rahn@kde.org>
- */
+// Local includes
 
 #include "CylindricalProjection.h"
 
@@ -59,7 +58,10 @@ public:
      */
     QIcon icon() const override;
 
-    PreservationType preservationType() const override { return NoPreservation; }
+    PreservationType preservationType() const override
+    {
+        return NoPreservation;
+    }
 
     /**
      * @brief Get the screen coordinates corresponding to geographical coordinates in the map.
@@ -71,15 +73,15 @@ public:
      * @return @c true  if the geographical coordinates are visible on the screen
      *         @c false if the geographical coordinates are not visible on the screen
      */
-    bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                            const ViewportParams *params,
-                            qreal &x, qreal &y, bool &globeHidesPoint ) const override;
+    bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                           const ViewportParams* params,
+                           qreal& x, qreal& y, bool& globeHidesPoint) const override;
 
-    bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                            const ViewportParams *viewport,
-                            qreal *x, qreal &y, int &pointRepeatNum,
-                            const QSizeF& size,
-                            bool &globeHidesPoint ) const override;
+    bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                           const ViewportParams* viewport,
+                           qreal* x, qreal& y, int& pointRepeatNum,
+                           const QSizeF& size,
+                           bool& globeHidesPoint) const override;
 
     using CylindricalProjection::screenCoordinates;
 
@@ -98,19 +100,19 @@ public:
      * @return @c true  if the pixel (x, y) is within the map
      *         @c false if the pixel (x, y) is above or underneath the map
      */
-    bool geoCoordinates( const int x, const int y,
-                         const ViewportParams *params,
-                         qreal& lon, qreal& lat,
-                         GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const override;
+    bool geoCoordinates(const int x, const int y,
+                        const ViewportParams* params,
+                        qreal& lon, qreal& lat,
+                        GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const override;
 
-    GeoDataLatLonAltBox latLonAltBox( const QRect& screenRect,
-                                      const ViewportParams *viewport ) const override;
+    GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect,
+                                     const ViewportParams* viewport) const override;
 
-    bool mapCoversViewport( const ViewportParams *viewport ) const override;
+    bool mapCoversViewport(const ViewportParams* viewport) const override;
 
 private:
 
-    Q_DISABLE_COPY( EquirectProjection )
+    Q_DISABLE_COPY(EquirectProjection)
 };
 
 } // namespace Marble

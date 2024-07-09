@@ -13,16 +13,17 @@
  *
  * ============================================================ */
 
-#pragma once
-
-/** @file
+/**
  * This file contains the headers for AbstractProjection.
- *
- * @author Inge Wallin  <inge@lysator.liu.se>
- * @author Torsten Rahn <rahn@kde.org>
  */
 
+#pragma once
+
+// Qt includes
+
 #include <QVector>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 #include "digikam_export.h"
@@ -110,7 +111,7 @@ public:
      * In general this value can only be smaller or equal to maxValidLat().
      */
     qreal  maxLat()  const;
-    void setMaxLat( qreal maxLat );
+    void setMaxLat(qreal maxLat);
 
     /**
      * @brief Returns the minimum (southern) latitude that is mathematically defined and reasonable.
@@ -126,7 +127,7 @@ public:
      * In general this value can only be larger or equal to minValidLat().
      */
     qreal  minLat()  const;
-    void setMinLat( qreal minLat );
+    void setMinLat(qreal minLat);
 
     /**
      * @brief Returns whether the projection allows for wrapping in x direction (along the longitude scale).
@@ -176,9 +177,9 @@ public:
      *
      * @see ViewportParams
      */
-    bool screenCoordinates( const qreal lon, const qreal lat,
-                            const ViewportParams *viewport,
-                            qreal& x, qreal& y ) const;
+    bool screenCoordinates(const qreal lon, const qreal lat,
+                           const ViewportParams* viewport,
+                           qreal& x, qreal& y) const;
 
     /**
      * @brief Get the screen coordinates corresponding to geographical coordinates in the map.
@@ -194,15 +195,15 @@ public:
      *
      * @see ViewportParams
      */
-    virtual bool screenCoordinates( const GeoDataCoordinates &geopoint,
-                                    const ViewportParams *viewport,
-                                    qreal &x, qreal &y,
-                                    bool &globeHidesPoint ) const = 0;
+    virtual bool screenCoordinates(const GeoDataCoordinates& geopoint,
+                                   const ViewportParams* viewport,
+                                   qreal& x, qreal& y,
+                                   bool& globeHidesPoint) const = 0;
 
     // Will just call the virtual version with a dummy globeHidesPoint.
-    bool screenCoordinates( const GeoDataCoordinates &geopoint,
-                            const ViewportParams *viewport,
-                            qreal &x, qreal &y ) const;
+    bool screenCoordinates(const GeoDataCoordinates& geopoint,
+                           const ViewportParams* viewport,
+                           qreal& x, qreal& y) const;
 
     /**
      * @brief Get the coordinates of screen points for geographical coordinates in the map.
@@ -221,15 +222,15 @@ public:
      *
      * @see ViewportParams
      */
-    virtual bool screenCoordinates( const GeoDataCoordinates &coordinates,
-                                    const ViewportParams *viewport,
-                                    qreal *x, qreal &y, int &pointRepeatNum,
-                                    const QSizeF& size,
-                                    bool &globeHidesPoint ) const = 0;
+    virtual bool screenCoordinates(const GeoDataCoordinates& coordinates,
+                                   const ViewportParams* viewport,
+                                   qreal* x, qreal& y, int& pointRepeatNum,
+                                   const QSizeF& size,
+                                   bool& globeHidesPoint) const = 0;
 
-    virtual bool screenCoordinates( const GeoDataLineString &lineString,
-                            const ViewportParams *viewport,
-                            QVector<QPolygonF*> &polygons ) const = 0;
+    virtual bool screenCoordinates(const GeoDataLineString& lineString,
+                                   const ViewportParams* viewport,
+                                   QVector<QPolygonF*>& polygons) const = 0;
 
     /**
      * @brief Get the earth coordinates corresponding to a pixel in the map.
@@ -242,24 +243,24 @@ public:
      * @return @c true  if the pixel (x, y) is within the globe
      *         @c false if the pixel (x, y) is outside the globe, i.e. in space.
      */
-    virtual bool geoCoordinates( const int x, const int y,
-                                 const ViewportParams *viewport,
-                                 qreal& lon, qreal& lat,
-                                 GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree ) const = 0;
+    virtual bool geoCoordinates(const int x, const int y,
+                                const ViewportParams* viewport,
+                                qreal& lon, qreal& lat,
+                                GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const = 0;
 
 
     /**
      * @brief Returns a GeoDataLatLonAltBox bounding box of the given screenrect inside the given viewport.
      */
-    virtual GeoDataLatLonAltBox latLonAltBox( const QRect& screenRect,
-                                              const ViewportParams *viewport ) const;
+    virtual GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect,
+                                             const ViewportParams* viewport) const;
 
     /**
      * @brief Returns whether the projected data fully obstructs the current viewport.
      * In this case there are no black areas visible around the actual map.
      * This case allows for performance optimizations.
      */
-    virtual bool mapCoversViewport( const ViewportParams *viewport ) const = 0;
+    virtual bool mapCoversViewport(const ViewportParams* viewport) const = 0;
 
     /**
      * @brief Returns the shape/outline of a map projection.
@@ -267,19 +268,19 @@ public:
      *
      * Example: For an azimuthal projection a circle is returned at low zoom values.
      */
-    virtual QPainterPath mapShape( const ViewportParams *viewport ) const = 0;
+    virtual QPainterPath mapShape(const ViewportParams* viewport) const = 0;
 
-    QRegion mapRegion( const ViewportParams *viewport ) const;
+    QRegion mapRegion(const ViewportParams* viewport) const;
 
 protected:
 
-     const QScopedPointer<AbstractProjectionPrivate> d_ptr;
-     explicit AbstractProjection( AbstractProjectionPrivate* dd );
+    const QScopedPointer<AbstractProjectionPrivate> d_ptr;
+    explicit AbstractProjection(AbstractProjectionPrivate* dd);
 
 private:
 
-     Q_DECLARE_PRIVATE(AbstractProjection)
-     Q_DISABLE_COPY( AbstractProjection )
+    Q_DECLARE_PRIVATE(AbstractProjection)
+    Q_DISABLE_COPY(AbstractProjection)
 };
 
 } // namespace Marble
