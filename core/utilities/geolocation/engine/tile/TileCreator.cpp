@@ -43,19 +43,23 @@ class Q_DECL_HIDDEN TileCreatorPrivate
 {
 public:
 
-    TileCreatorPrivate( TileCreatorSource *source,
-                        const QString& dem, const QString& targetDir=QString() )
-       : m_dem( dem ),
-         m_targetDir( targetDir ),
-         m_cancelled( false ),
-         m_tileFormat( QString::fromUtf8("jpg") ),
-         m_resume( false ),
-         m_verify( false ),
-         m_source( source )
-     {
-        if (m_dem == QLatin1String("true")) {
+    TileCreatorPrivate(TileCreatorSource* source,
+                       const QString& dem, const QString& targetDir = QString())
+        : m_dem(dem),
+          m_targetDir(targetDir),
+          m_cancelled(false),
+          m_tileFormat(QString::fromUtf8("jpg")),
+          m_resume(false),
+          m_verify(false),
+          m_source(source)
+    {
+        if (m_dem == QLatin1String("true"))
+        {
             m_tileQuality = 70;
-        } else {
+        }
+
+        else
+        {
             m_tileQuality = 85;
         }
     }
@@ -82,25 +86,27 @@ class Q_DECL_HIDDEN TileCreatorSourceImage : public TileCreatorSource
 {
 public:
 
-    explicit TileCreatorSourceImage( const QString &sourcePath )
-        : m_sourceImage( QImage( sourcePath ) ),
-          m_cachedRowNum( -1 )
+    explicit TileCreatorSourceImage(const QString& sourcePath)
+        : m_sourceImage(QImage(sourcePath)),
+          m_cachedRowNum(-1)
     {
     }
 
     QSize fullImageSize() const override
     {
-        if ( m_sourceImage.size().width() > 21600 || m_sourceImage.height() > 10800 ) {
+        if (m_sourceImage.size().width() > 21600 || m_sourceImage.height() > 10800)
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Install map too large!");
             return QSize();
         }
+
         return m_sourceImage.size();
     }
 
     QImage tile(int n, int m, int maxTileLevel) override
     {
-        int  mmax = TileLoaderHelper::levelToColumn( defaultLevelZeroColumns, maxTileLevel );
-        int  nmax = TileLoaderHelper::levelToRow( defaultLevelZeroRows, maxTileLevel );
+        int  mmax = TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, maxTileLevel);
+        int  nmax = TileLoaderHelper::levelToRow(defaultLevelZeroRows, maxTileLevel);
 
         int imageHeight = m_sourceImage.height();
         int imageWidth = m_sourceImage.width();
@@ -108,55 +114,68 @@ public:
         // If the image size of the image source does not match the expected
         // geometry we need to smooth-scale the image in advance to match
         // the required size
-        bool needsScaling = ( imageWidth != 2 * nmax * (int)( c_defaultTileSize )
-                            ||  imageHeight != nmax * (int)( c_defaultTileSize ) );
+        bool needsScaling = (imageWidth != 2 * nmax * (int)(c_defaultTileSize)
+                             ||  imageHeight != nmax * (int)(c_defaultTileSize));
 
-        if ( needsScaling )
+        if (needsScaling)
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Image Size doesn't match 2*n*TILEWIDTH x n*TILEHEIGHT geometry. Scaling ...";
+        }
 
         int  stdImageWidth  = 2 * nmax * c_defaultTileSize;
-        if ( stdImageWidth == 0 )
+
+        if (stdImageWidth == 0)
+        {
             stdImageWidth = 2 * c_defaultTileSize;
+        }
 
         int  stdImageHeight  = nmax * c_defaultTileSize;
-        if ( stdImageWidth != imageWidth ) {
+
+        if (stdImageWidth != imageWidth)
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) <<
-            QString::fromUtf8( "TileCreator::createTiles() The size of the final image will measure  %1 x %2 pixels").arg(stdImageWidth).arg(stdImageHeight);
+                                        QString::fromUtf8("TileCreator::createTiles() The size of the final image will measure  %1 x %2 pixels").arg(stdImageWidth).arg(stdImageHeight);
         }
 
         QImage row;
 
-        if ( m_cachedRowNum == n ) {
+        if (m_cachedRowNum == n)
+        {
 
             row = m_rowCache;
 
-        } else {
+        }
 
-            QRect   sourceRowRect( 0, (int)( (qreal)( n * imageHeight ) / (qreal)( nmax )),
-                                imageWidth,(int)( (qreal)( imageHeight ) / (qreal)( nmax ) ) );
+        else
+        {
+
+            QRect   sourceRowRect(0, (int)((qreal)(n * imageHeight) / (qreal)(nmax)),
+                                  imageWidth, (int)((qreal)(imageHeight) / (qreal)(nmax)));
 
 
-            row = m_sourceImage.copy( sourceRowRect );
+            row = m_sourceImage.copy(sourceRowRect);
 
-            if ( needsScaling ) {
+            if (needsScaling)
+            {
                 // Pick the current row and smooth scale it
                 // to make it match the expected size
-                QSize destSize( stdImageWidth, c_defaultTileSize );
-                row = row.scaled( destSize,
-                                Qt::IgnoreAspectRatio,
-                                Qt::SmoothTransformation );
+                QSize destSize(stdImageWidth, c_defaultTileSize);
+                row = row.scaled(destSize,
+                                 Qt::IgnoreAspectRatio,
+                                 Qt::SmoothTransformation);
             }
 
             m_cachedRowNum = n;
             m_rowCache = row;
         }
 
-        if ( row.isNull() ) {
+        if (row.isNull())
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Read-Error! Null QImage!";
             return QImage();
         }
 
-        QImage  tile = row.copy( m * stdImageWidth / mmax, 0, c_defaultTileSize, c_defaultTileSize );
+        QImage  tile = row.copy(m * stdImageWidth / mmax, 0, c_defaultTileSize, c_defaultTileSize);
 
         return tile;
     }
@@ -171,42 +190,45 @@ private:
 TileCreator::TileCreator(const QString& sourceDir, const QString& installMap,
                          const QString& dem, const QString& targetDir)
     : QThread(nullptr),
-      d( new TileCreatorPrivate( nullptr, dem, targetDir ) )
+      d(new TileCreatorPrivate(nullptr, dem, targetDir))
 
 {
     qCDebug(DIGIKAM_MARBLE_LOG) << "Prefix: " << sourceDir
-        << "installmap:" << installMap;
+                                << "installmap:" << installMap;
 
     QString sourcePath;
 
     // If the sourceDir starts with a '/' assume an absolute path.
     // Otherwise assume a relative marble data path
-    if ( QDir::isAbsolutePath( sourceDir ) ) {
+    if (QDir::isAbsolutePath(sourceDir))
+    {
         sourcePath = sourceDir + QLatin1Char('/') + installMap;
         qCDebug(DIGIKAM_MARBLE_LOG) << "Trying absolute path*:" << sourcePath;
     }
-    else {
+
+    else
+    {
         sourcePath = MarbleDirs::path(QLatin1String("maps/") + sourceDir + QLatin1Char('/') + installMap);
         qCDebug(DIGIKAM_MARBLE_LOG) << "Trying relative path*:"
-                << QLatin1String("maps/") + sourceDir + QLatin1Char('/') + installMap;
+                                    << QLatin1String("maps/") + sourceDir + QLatin1Char('/') + installMap;
     }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "Creating tiles from*: " << sourcePath;
 
-    d->m_source = new TileCreatorSourceImage( sourcePath );
+    d->m_source = new TileCreatorSourceImage(sourcePath);
 
-    if ( d->m_targetDir.isNull() )
+    if (d->m_targetDir.isNull())
         d->m_targetDir = MarbleDirs::localPath() + QLatin1String("/maps/")
-            + sourcePath.section(QLatin1Char('/'), -3, -2) + QLatin1Char('/');
+                         + sourcePath.section(QLatin1Char('/'), -3, -2) + QLatin1Char('/');
 
-    setTerminationEnabled( true );
+    setTerminationEnabled(true);
 }
 
-TileCreator::TileCreator( TileCreatorSource* source, const QString& dem, const QString& targetDir )
+TileCreator::TileCreator(TileCreatorSource* source, const QString& dem, const QString& targetDir)
     : QThread(nullptr),
-      d( new TileCreatorPrivate( source, dem, targetDir ) )
+      d(new TileCreatorPrivate(source, dem, targetDir))
 {
-    setTerminationEnabled( true );
+    setTerminationEnabled(true);
 }
 
 TileCreator::~TileCreator()
@@ -221,18 +243,23 @@ void TileCreator::cancelTileCreation()
 
 void TileCreator::run()
 {
-    if (d->m_resume && d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100) {
+    if (d->m_resume && d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100)
+    {
         qCWarning(DIGIKAM_MARBLE_LOG) << "Resuming jpegs is only supported with tileQuality 100";
         return;
     }
 
     if (!d->m_targetDir.endsWith(QLatin1Char('/')))
+    {
         d->m_targetDir += QLatin1Char('/');
+    }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "Installing tiles to: " << d->m_targetDir;
 
     QVector<QRgb> grayScalePalette;
-    for ( int cnt = 0; cnt <= 255; ++cnt ) {
+
+    for (int cnt = 0; cnt <= 255; ++cnt)
+    {
         grayScalePalette.insert(cnt, qRgb(cnt, cnt, cnt));
     }
 
@@ -240,32 +267,43 @@ void TileCreator::run()
     int  imageWidth  = fullImageSize.width();
     int  imageHeight = fullImageSize.height();
 
-    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8( "TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
+    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("TileCreator::createTiles() image dimensions %1 x %2").arg(imageWidth).arg(imageHeight);
 
-    if ( imageWidth < 1 || imageHeight < 1 ) {
+    if (imageWidth < 1 || imageHeight < 1)
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Invalid imagemap!");
         return;
     }
 
     // Calculating Maximum Tile Level
-    float approxMaxTileLevel = std::log( imageWidth / ( 2.0 * c_defaultTileSize ) ) / std::log( 2.0 );
+    float approxMaxTileLevel = std::log(imageWidth / (2.0 * c_defaultTileSize)) / std::log(2.0);
 
     int  maxTileLevel = 0;
-    if ( approxMaxTileLevel == int( approxMaxTileLevel ) )
-        maxTileLevel = static_cast<int>( approxMaxTileLevel );
-    else
-        maxTileLevel = static_cast<int>( approxMaxTileLevel + 1 );
 
-    if ( maxTileLevel < 0 ) {
-        qCDebug(DIGIKAM_MARBLE_LOG)
-        << QString::fromUtf8( "TileCreator::createTiles(): Invalid Maximum Tile Level: %1" )
-        .arg( maxTileLevel );
+    if (approxMaxTileLevel == int(approxMaxTileLevel))
+    {
+        maxTileLevel = static_cast<int>(approxMaxTileLevel);
     }
+
+    else
+    {
+        maxTileLevel = static_cast<int>(approxMaxTileLevel + 1);
+    }
+
+    if (maxTileLevel < 0)
+    {
+        qCDebug(DIGIKAM_MARBLE_LOG)
+                << QString::fromUtf8("TileCreator::createTiles(): Invalid Maximum Tile Level: %1")
+                .arg(maxTileLevel);
+    }
+
     qCDebug(DIGIKAM_MARBLE_LOG) << "Maximum Tile Level: " << maxTileLevel;
 
 
-    if ( !QDir( d->m_targetDir ).exists() )
-        ( QDir::root() ).mkpath( d->m_targetDir );
+    if (!QDir(d->m_targetDir).exists())
+    {
+        (QDir::root()).mkpath(d->m_targetDir);
+    }
 
     // Counting total amount of tiles to be generated for the progressbar
     // to prevent compiler warnings this var should
@@ -273,16 +311,17 @@ void TileCreator::run()
     int  tileLevel      = 0;
     int  totalTileCount = 0;
 
-    while ( tileLevel <= maxTileLevel ) {
-        totalTileCount += ( TileLoaderHelper::levelToRow( defaultLevelZeroRows, tileLevel )
-                            * TileLoaderHelper::levelToColumn( defaultLevelZeroColumns, tileLevel ) );
+    while (tileLevel <= maxTileLevel)
+    {
+        totalTileCount += (TileLoaderHelper::levelToRow(defaultLevelZeroRows, tileLevel)
+                           * TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, tileLevel));
         tileLevel++;
     }
 
     qCDebug(DIGIKAM_MARBLE_LOG) << totalTileCount << " tiles to be created in total.";
 
-    int  mmax = TileLoaderHelper::levelToColumn( defaultLevelZeroColumns, maxTileLevel );
-    int  nmax = TileLoaderHelper::levelToRow( defaultLevelZeroRows, maxTileLevel );
+    int  mmax = TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, maxTileLevel);
+    int  nmax = TileLoaderHelper::levelToRow(defaultLevelZeroRows, maxTileLevel);
 
     // Loading each row at highest spatial resolution and cropping tiles
     int      percentCompleted = 0;
@@ -290,66 +329,90 @@ void TileCreator::run()
     QString  tileName;
 
     // Creating directory structure for the highest level
-    QString  dirName( d->m_targetDir
-                      + QString::fromUtf8("%1").arg(maxTileLevel) );
-    if ( !QDir( dirName ).exists() )
-        ( QDir::root() ).mkpath( dirName );
+    QString  dirName(d->m_targetDir
+                     + QString::fromUtf8("%1").arg(maxTileLevel));
 
-    for ( int n = 0; n < nmax; ++n ) {
-        QString dirName( d->m_targetDir
-                         + QString::fromUtf8("%1/%2").arg(maxTileLevel).arg(n, tileDigits, 10, QLatin1Char('0')));
-        if ( !QDir( dirName ).exists() )
-            ( QDir::root() ).mkpath( dirName );
+    if (!QDir(dirName).exists())
+    {
+        (QDir::root()).mkpath(dirName);
     }
 
-    for ( int n = 0; n < nmax; ++n ) {
+    for (int n = 0; n < nmax; ++n)
+    {
+        QString dirName(d->m_targetDir
+                        + QString::fromUtf8("%1/%2").arg(maxTileLevel).arg(n, tileDigits, 10, QLatin1Char('0')));
 
-        for ( int m = 0; m < mmax; ++m ) {
+        if (!QDir(dirName).exists())
+        {
+            (QDir::root()).mkpath(dirName);
+        }
+    }
+
+    for (int n = 0; n < nmax; ++n)
+    {
+
+        for (int m = 0; m < mmax; ++m)
+        {
 
             qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("** tile") << m << QString::fromUtf8("x") << n;
 
-            if ( d->m_cancelled )
+            if (d->m_cancelled)
+            {
                 return;
+            }
 
             tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                       .arg( maxTileLevel )
-                                       .arg(n, tileDigits, 10, QLatin1Char('0'))
-                                       .arg(m, tileDigits, 10, QLatin1Char('0'))
-                                       .arg( d->m_tileFormat );
+                       .arg(maxTileLevel)
+                       .arg(n, tileDigits, 10, QLatin1Char('0'))
+                       .arg(m, tileDigits, 10, QLatin1Char('0'))
+                       .arg(d->m_tileFormat);
 
-            if ( QFile::exists( tileName ) && d->m_resume ) {
+            if (QFile::exists(tileName) && d->m_resume)
+            {
 
                 //qCDebug(DIGIKAM_MARBLE_LOG) << tileName << "exists already";
 
-            } else {
+            }
+            else
+            {
 
-                QImage tile = d->m_source->tile( n, m, maxTileLevel );
+                QImage tile = d->m_source->tile(n, m, maxTileLevel);
 
-                if ( tile.isNull() ) {
+                if (tile.isNull())
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Read-Error! Null QImage!";
                     return;
                 }
 
-                if (d->m_dem == QLatin1String("true")) {
+                if (d->m_dem == QLatin1String("true"))
+                {
                     tile = tile.convertToFormat(QImage::Format_Indexed8,
                                                 grayScalePalette,
                                                 Qt::ThresholdDither);
                 }
 
                 bool  ok = tile.save(tileName, d->m_tileFormat.toLatin1().data(), d->m_tileFormat == QLatin1String("jpg") ? 100 : d->m_tileQuality);
-                if ( !ok )
+
+                if (!ok)
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << tileName;
+                }
 
-                qCDebug(DIGIKAM_MARBLE_LOG) << tileName << "size" << QFile( tileName ).size();
+                qCDebug(DIGIKAM_MARBLE_LOG) << tileName << "size" << QFile(tileName).size();
 
-                if ( d->m_verify ) {
+                if (d->m_verify)
+                {
                     QImage writtenTile(tileName);
-                    Q_ASSERT( writtenTile.size() == tile.size() );
-                    for ( int i=0; i < writtenTile.size().width(); ++i) {
-                        for ( int j=0; j < writtenTile.size().height(); ++j) {
-                            if ( writtenTile.pixel( i, j ) != tile.pixel( i, j ) ) {
-                                unsigned int  pixel = tile.pixel( i, j);
-                                unsigned int  writtenPixel = writtenTile.pixel( i, j);
+                    Q_ASSERT(writtenTile.size() == tile.size());
+
+                    for (int i = 0; i < writtenTile.size().width(); ++i)
+                    {
+                        for (int j = 0; j < writtenTile.size().height(); ++j)
+                        {
+                            if (writtenTile.pixel(i, j) != tile.pixel(i, j))
+                            {
+                                unsigned int  pixel = tile.pixel(i, j);
+                                unsigned int  writtenPixel = writtenTile.pixel(i, j);
                                 qCWarning(DIGIKAM_MARBLE_LOG) << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
                                 QByteArray baPixel((char*)&pixel, sizeof(unsigned int));
                                 qCWarning(DIGIKAM_MARBLE_LOG) << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
@@ -363,12 +426,12 @@ void TileCreator::run()
 
             }
 
-            percentCompleted =  (int) ( 90 * (qreal)(createdTilesCount)
-                                        / (qreal)(totalTileCount) );
+            percentCompleted = (int)(90 * (qreal)(createdTilesCount)
+                                     / (qreal)(totalTileCount));
             createdTilesCount++;
 
             qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
-            Q_EMIT progress( percentCompleted );
+            Q_EMIT progress(percentCompleted);
         }
     }
 
@@ -379,140 +442,195 @@ void TileCreator::run()
     // Now that we have the tiles at the highest resolution lets build
     // them together four by four.
 
-    while( tileLevel > 0 ) {
+    while (tileLevel > 0)
+    {
         tileLevel--;
 
-        int  nmaxit =  TileLoaderHelper::levelToRow( defaultLevelZeroRows, tileLevel );
+        int  nmaxit =  TileLoaderHelper::levelToRow(defaultLevelZeroRows, tileLevel);
 
-        for ( int n = 0; n < nmaxit; ++n ) {
-            QString  dirName( d->m_targetDir
-                              + QString::fromUtf8("%1/%2")
-                                  .arg(tileLevel)
-                                  .arg(n, tileDigits, 10, QLatin1Char('0')));
+        for (int n = 0; n < nmaxit; ++n)
+        {
+            QString  dirName(d->m_targetDir
+                             + QString::fromUtf8("%1/%2")
+                             .arg(tileLevel)
+                             .arg(n, tileDigits, 10, QLatin1Char('0')));
 
             // qCDebug(DIGIKAM_MARBLE_LOG) << "dirName: " << dirName;
-            if ( !QDir( dirName ).exists() )
-                ( QDir::root() ).mkpath( dirName );
+            if (!QDir(dirName).exists())
+            {
+                (QDir::root()).mkpath(dirName);
+            }
 
-            int   mmaxit = TileLoaderHelper::levelToColumn( defaultLevelZeroColumns, tileLevel );
-            for ( int m = 0; m < mmaxit; ++m ) {
+            int   mmaxit = TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, tileLevel);
 
-                if ( d->m_cancelled )
+            for (int m = 0; m < mmaxit; ++m)
+            {
+
+                if (d->m_cancelled)
+                {
                     return;
+                }
 
                 QString newTileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                           .arg( tileLevel )
-                                           .arg(n, tileDigits, 10, QLatin1Char('0'))
-                                           .arg(m, tileDigits, 10, QLatin1Char('0'))
-                                           .arg( d->m_tileFormat );
+                                      .arg(tileLevel)
+                                      .arg(n, tileDigits, 10, QLatin1Char('0'))
+                                      .arg(m, tileDigits, 10, QLatin1Char('0'))
+                                      .arg(d->m_tileFormat);
 
-                if ( QFile::exists( newTileName ) && d->m_resume ) {
+                if (QFile::exists(newTileName) && d->m_resume)
+                {
                     //qCDebug(DIGIKAM_MARBLE_LOG) << newTileName << "exists already";
-                } else {
+                }
+                else
+                {
                     tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                            .arg( tileLevel + 1 )
-                                            .arg(2*n, tileDigits, 10, QLatin1Char('0'))
-                                            .arg(2*m, tileDigits, 10, QLatin1Char('0'))
-                                            .arg( d->m_tileFormat );
-                    QImage  img_topleft( tileName );
+                               .arg(tileLevel + 1)
+                               .arg(2 * n, tileDigits, 10, QLatin1Char('0'))
+                               .arg(2 * m, tileDigits, 10, QLatin1Char('0'))
+                               .arg(d->m_tileFormat);
+                    QImage  img_topleft(tileName);
 
                     tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                            .arg( tileLevel + 1 )
-                                            .arg(2*n, tileDigits, 10, QLatin1Char('0'))
-                                            .arg(2*m+1, tileDigits, 10, QLatin1Char('0'))
-                                            .arg( d->m_tileFormat );
-                    QImage  img_topright( tileName );
+                               .arg(tileLevel + 1)
+                               .arg(2 * n, tileDigits, 10, QLatin1Char('0'))
+                               .arg(2 * m + 1, tileDigits, 10, QLatin1Char('0'))
+                               .arg(d->m_tileFormat);
+                    QImage  img_topright(tileName);
 
                     tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                            .arg( tileLevel + 1 )
-                                            .arg(2*n+1, tileDigits, 10, QLatin1Char('0'))
-                                            .arg(2*m, tileDigits, 10, QLatin1Char('0'))
-                                            .arg( d->m_tileFormat );
-                    QImage  img_bottomleft( tileName );
+                               .arg(tileLevel + 1)
+                               .arg(2 * n + 1, tileDigits, 10, QLatin1Char('0'))
+                               .arg(2 * m, tileDigits, 10, QLatin1Char('0'))
+                               .arg(d->m_tileFormat);
+                    QImage  img_bottomleft(tileName);
 
                     tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                            .arg( tileLevel + 1 )
-                                            .arg(2*n+1, tileDigits, 10, QLatin1Char('0'))
-                                            .arg(2*m+1, tileDigits, 10, QLatin1Char('0'))
-                                            .arg( d->m_tileFormat );
-                    QImage  img_bottomright( tileName );
+                               .arg(tileLevel + 1)
+                               .arg(2 * n + 1, tileDigits, 10, QLatin1Char('0'))
+                               .arg(2 * m + 1, tileDigits, 10, QLatin1Char('0'))
+                               .arg(d->m_tileFormat);
+                    QImage  img_bottomright(tileName);
 
-                    QSize const expectedSize( c_defaultTileSize, c_defaultTileSize );
-                    if ( img_topleft.size() != expectedSize ||
-                         img_topright.size() != expectedSize ||
-                         img_bottomleft.size() != expectedSize ||
-                         img_bottomright.size() != expectedSize ) {
+                    QSize const expectedSize(c_defaultTileSize, c_defaultTileSize);
+
+                    if (img_topleft.size() != expectedSize ||
+                        img_topright.size() != expectedSize ||
+                        img_bottomleft.size() != expectedSize ||
+                        img_bottomright.size() != expectedSize)
+                    {
                         qCDebug(DIGIKAM_MARBLE_LOG) << "Tile write failure. Missing write permissions?";
-                        Q_EMIT progress( 100 );
+                        Q_EMIT progress(100);
                         return;
                     }
+
                     QImage  tile = img_topleft;
 
-                    if (d->m_dem == QLatin1String("true")) {
+                    if (d->m_dem == QLatin1String("true"))
+                    {
 
-                        tile.setColorTable( grayScalePalette );
+                        tile.setColorTable(grayScalePalette);
                         uchar* destLine;
 
-                        for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = tile.scanLine( y );
-                            const uchar* srcLine = img_topleft.scanLine( 2 * y );
-                            for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
-                                destLine[x] = srcLine[ 2*x ];
+                        for (uint y = 0; y < c_defaultTileSize / 2; ++y)
+                        {
+                            destLine = tile.scanLine(y);
+                            const uchar* srcLine = img_topleft.scanLine(2 * y);
+
+                            for (uint x = 0; x < c_defaultTileSize / 2; ++x)
+                            {
+                                destLine[x] = srcLine[ 2 * x ];
+                            }
                         }
-                        for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = tile.scanLine( y );
-                            const uchar* srcLine = img_topright.scanLine( 2 * y );
-                            for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
-                                destLine[x] = srcLine[ 2 * ( x - c_defaultTileSize / 2 ) ];
+
+                        for (uint y = 0; y < c_defaultTileSize / 2; ++y)
+                        {
+                            destLine = tile.scanLine(y);
+                            const uchar* srcLine = img_topright.scanLine(2 * y);
+
+                            for (uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x)
+                            {
+                                destLine[x] = srcLine[ 2 * (x - c_defaultTileSize / 2) ];
+                            }
                         }
-                        for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = tile.scanLine( y );
-                            const uchar* srcLine = img_bottomleft.scanLine( 2 * ( y - c_defaultTileSize / 2 ) );
-                            for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
+
+                        for (uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y)
+                        {
+                            destLine = tile.scanLine(y);
+                            const uchar* srcLine = img_bottomleft.scanLine(2 * (y - c_defaultTileSize / 2));
+
+                            for (uint x = 0; x < c_defaultTileSize / 2; ++x)
+                            {
                                 destLine[ x ] = srcLine[ 2 * x ];
+                            }
                         }
-                        for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = tile.scanLine( y );
-                            const uchar* srcLine = img_bottomright.scanLine( 2 * ( y - c_defaultTileSize/2 ) );
-                            for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
-                                destLine[x] = srcLine[ 2 * ( x - c_defaultTileSize / 2 ) ];
+
+                        for (uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y)
+                        {
+                            destLine = tile.scanLine(y);
+                            const uchar* srcLine = img_bottomright.scanLine(2 * (y - c_defaultTileSize / 2));
+
+                            for (uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x)
+                            {
+                                destLine[x] = srcLine[ 2 * (x - c_defaultTileSize / 2) ];
+                            }
                         }
                     }
-                    else {
+
+                    else
+                    {
 
                         // tile.depth() != 8
 
-                        img_topleft = img_topleft.convertToFormat( QImage::Format_ARGB32 );
-                        img_topright = img_topright.convertToFormat( QImage::Format_ARGB32 );
-                        img_bottomleft = img_bottomleft.convertToFormat( QImage::Format_ARGB32 );
-                        img_bottomright = img_bottomright.convertToFormat( QImage::Format_ARGB32 );
+                        img_topleft = img_topleft.convertToFormat(QImage::Format_ARGB32);
+                        img_topright = img_topright.convertToFormat(QImage::Format_ARGB32);
+                        img_bottomleft = img_bottomleft.convertToFormat(QImage::Format_ARGB32);
+                        img_bottomright = img_bottomright.convertToFormat(QImage::Format_ARGB32);
                         tile = img_topleft;
 
                         QRgb* destLine;
 
-                        for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
-                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topleft.scanLine( 2 * y ));
-                            for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
+                        for (uint y = 0; y < c_defaultTileSize / 2; ++y)
+                        {
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine(y));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topleft.scanLine(2 * y));
+
+                            for (uint x = 0; x < c_defaultTileSize / 2; ++x)
+                            {
                                 destLine[x] = srcLine[ 2 * x ];
+                            }
                         }
-                        for ( uint y = 0; y < c_defaultTileSize / 2; ++y ) {
-                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
-                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topright.scanLine( 2 * y ));
-                            for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
-                                destLine[x] = srcLine[ 2 * ( x - c_defaultTileSize / 2 ) ];
+
+                        for (uint y = 0; y < c_defaultTileSize / 2; ++y)
+                        {
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine(y));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_topright.scanLine(2 * y));
+
+                            for (uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x)
+                            {
+                                destLine[x] = srcLine[ 2 * (x - c_defaultTileSize / 2) ];
+                            }
                         }
-                        for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
-                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomleft.scanLine( 2 * ( y-c_defaultTileSize/2 ) ));
-                            for ( uint x = 0; x < c_defaultTileSize / 2; ++x )
+
+                        for (uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y)
+                        {
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine(y));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomleft.scanLine(2 * (y - c_defaultTileSize / 2)));
+
+                            for (uint x = 0; x < c_defaultTileSize / 2; ++x)
+                            {
                                 destLine[x] = srcLine[ 2 * x ];
+                            }
                         }
-                        for ( uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y ) {
-                            destLine = reinterpret_cast<QRgb*>(tile.scanLine( y ));
-                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomright.scanLine( 2 * ( y-c_defaultTileSize / 2 ) ));
-                            for ( uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x )
-                                destLine[x] = srcLine[ 2*( x-c_defaultTileSize / 2 ) ];
+
+                        for (uint y = c_defaultTileSize / 2; y < c_defaultTileSize; ++y)
+                        {
+                            destLine = reinterpret_cast<QRgb*>(tile.scanLine(y));
+                            const QRgb* srcLine = reinterpret_cast<QRgb*>(img_bottomright.scanLine(2 * (y - c_defaultTileSize / 2)));
+
+                            for (uint x = c_defaultTileSize / 2; x < c_defaultTileSize; ++x)
+                            {
+                                destLine[x] = srcLine[ 2 * (x - c_defaultTileSize / 2) ];
+                            }
                         }
                     }
 
@@ -521,68 +639,86 @@ void TileCreator::run()
                     // Saving at 100% JPEG quality to have a high-quality
                     // version to create the remaining needed tiles from.
                     bool  ok = tile.save(newTileName, d->m_tileFormat.toLatin1().data(), d->m_tileFormat == QLatin1String("jpg") ? 100 : d->m_tileQuality);
-                    if ( ! ok )
+
+                    if (! ok)
+                    {
                         qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << newTileName;
+                    }
                 }
 
-                percentCompleted =  (int) ( 90 * (qreal)(createdTilesCount)
-                                               / (qreal)(totalTileCount) );
+                percentCompleted = (int)(90 * (qreal)(createdTilesCount)
+                                         / (qreal)(totalTileCount));
                 createdTilesCount++;
 
-                Q_EMIT progress( percentCompleted );
+                Q_EMIT progress(percentCompleted);
                 qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
             }
         }
+
         qCDebug(DIGIKAM_MARBLE_LOG) << "tileLevel: " << tileLevel << " successfully created.";
     }
+
     qCDebug(DIGIKAM_MARBLE_LOG) << "Tile creation completed.";
 
-    if (d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100) {
+    if (d->m_tileFormat == QLatin1String("jpg") && d->m_tileQuality != 100)
+    {
 
         // Applying correct lower JPEG compression now that we created all tiles
         int savedTilesCount = 0;
 
         tileLevel = 0;
-        while ( tileLevel <= maxTileLevel ) {
-            int nmaxit =  TileLoaderHelper::levelToRow( defaultLevelZeroRows, tileLevel );
-            for ( int n = 0; n < nmaxit; ++n) {
-                int mmaxit =  TileLoaderHelper::levelToColumn( defaultLevelZeroColumns, tileLevel );
-                for ( int m = 0; m < mmaxit; ++m) {
 
-                    if ( d->m_cancelled )
+        while (tileLevel <= maxTileLevel)
+        {
+            int nmaxit =  TileLoaderHelper::levelToRow(defaultLevelZeroRows, tileLevel);
+
+            for (int n = 0; n < nmaxit; ++n)
+            {
+                int mmaxit =  TileLoaderHelper::levelToColumn(defaultLevelZeroColumns, tileLevel);
+
+                for (int m = 0; m < mmaxit; ++m)
+                {
+
+                    if (d->m_cancelled)
+                    {
                         return;
+                    }
 
                     savedTilesCount++;
 
                     tileName = d->m_targetDir + QString::fromUtf8("%1/%2/%2_%3.%4")
-                                            .arg( tileLevel )
-                                            .arg(n, tileDigits, 10, QLatin1Char('0'))
-                                            .arg(m, tileDigits, 10, QLatin1Char('0'))
-                                            .arg( d->m_tileFormat );
-                    QImage tile( tileName );
+                               .arg(tileLevel)
+                               .arg(n, tileDigits, 10, QLatin1Char('0'))
+                               .arg(m, tileDigits, 10, QLatin1Char('0'))
+                               .arg(d->m_tileFormat);
+                    QImage tile(tileName);
 
                     bool ok;
 
-                    ok = tile.save( tileName, d->m_tileFormat.toLatin1().data(), d->m_tileQuality );
+                    ok = tile.save(tileName, d->m_tileFormat.toLatin1().data(), d->m_tileQuality);
 
-                    if ( !ok )
+                    if (!ok)
+                    {
                         qCDebug(DIGIKAM_MARBLE_LOG) << "Error while writing Tile: " << tileName;
+                    }
+
                     // Don't exceed 99% as this would cancel the thread unexpectedly
-                    percentCompleted = 90 + (int)( 9 * (qreal)(savedTilesCount)
-                                                / (qreal)(totalTileCount) );
-                    Q_EMIT progress( percentCompleted );
+                    percentCompleted = 90 + (int)(9 * (qreal)(savedTilesCount)
+                                                  / (qreal)(totalTileCount));
+                    Q_EMIT progress(percentCompleted);
                     qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted" << percentCompleted;
                     //qCDebug(DIGIKAM_MARBLE_LOG) << "Saving Tile #" << savedTilesCount
                     //         << " of " << totalTileCount
                     //         << " Percent: " << percentCompleted;
                 }
             }
+
             tileLevel++;
         }
     }
 
     percentCompleted = 100;
-    Q_EMIT progress( percentCompleted );
+    Q_EMIT progress(percentCompleted);
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "percentCompleted: " << percentCompleted;
 }

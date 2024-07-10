@@ -15,14 +15,17 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
-
-#include "TextureMapperInterface.h"
-#include "TileId.h"
-
 #include <QCache>
 #include <QImage>
 #include <QPixmap>
+
+// Local includes
+
+#include "TextureMapperInterface.h"
+#include "TileId.h"
 
 namespace Marble
 {
@@ -35,25 +38,25 @@ class TileScalingTextureMapper : public QObject, public TextureMapperInterface
 
 public:
 
-    explicit TileScalingTextureMapper( StackedTileLoader *tileLoader, QObject *parent = nullptr );
+    explicit TileScalingTextureMapper(StackedTileLoader* tileLoader, QObject* parent = nullptr);
 
-    void mapTexture( GeoPainter *painter,
-                             const ViewportParams *viewport,
-                             int tileZoomLevel,
-                             const QRect &dirtyRect,
-                             TextureColorizer *texColorizer ) override;
+    void mapTexture(GeoPainter* painter,
+                    const ViewportParams* viewport,
+                    int tileZoomLevel,
+                    const QRect& dirtyRect,
+                    TextureColorizer* texColorizer) override;
 
 private Q_SLOTS:
 
-    void removePixmap( const TileId &tileId );
+    void removePixmap(const TileId& tileId);
     void clearPixmaps();
 
 private:
 
-    void mapTexture( GeoPainter *painter,
-                     const ViewportParams *viewport,
-                     int tileZoomLevel,
-                     TextureColorizer *texColorizer );
+    void mapTexture(GeoPainter* painter,
+                    const ViewportParams* viewport,
+                    int tileZoomLevel,
+                    TextureColorizer* texColorizer);
 
 private:
 

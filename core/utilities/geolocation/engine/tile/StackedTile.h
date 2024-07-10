@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QSharedPointer>
 #include <QVector>
 #include <QImage>
+
+// Local includes
 
 #include "Tile.h"
 
@@ -57,10 +61,10 @@ class StackedTile : public Tile
 {
 public:
 
-    explicit StackedTile( TileId const &id, QImage const &resultImage, QVector<QSharedPointer<TextureTile> > const &tiles );
+    explicit StackedTile(TileId const& id, QImage const& resultImage, QVector<QSharedPointer<TextureTile> > const& tiles);
     ~StackedTile() override;
 
-    void setUsed( bool used );
+    void setUsed(bool used);
     bool used() const;
 
     int depth() const;
@@ -76,7 +80,7 @@ public:
      \brief Returns the QImage that describes the merged stack of Tiles
      \return A non-zero pointer to the resulting QImage
     */
-    QImage const * resultImage() const;
+    QImage const* resultImage() const;
 
     /*!
      \brief Returns the color value of the result tile at the given integer position.
@@ -85,7 +89,7 @@ public:
      Note: for gray scale images the color value of a single pixel is described
      via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
     */
-    uint pixel( int x, int y ) const;
+    uint pixel(int x, int y) const;
 
     /*!
      \brief Returns the color value of the result tile at a given floating point position.
@@ -96,16 +100,16 @@ public:
      Note: for gray scale images the color value of a single pixel is described
      via a uchar (1 byte) while for RGB(A) images uint (4 bytes) are used.
     */
-    uint pixelF( qreal x, qreal y ) const;
+    uint pixelF(qreal x, qreal y) const;
 
     // This method passes the top left pixel (if known already) for better performance
-    uint pixelF( qreal x, qreal y, const QRgb& pixel ) const;
+    uint pixelF(qreal x, qreal y, const QRgb& pixel) const;
 
 private:
 
-    Q_DISABLE_COPY( StackedTile )
+    Q_DISABLE_COPY(StackedTile)
 
-    static int calcByteCount( const QImage &resultImage, const QVector<QSharedPointer<TextureTile> > &tiles );
+    static int calcByteCount(const QImage& resultImage, const QVector<QSharedPointer<TextureTile> >& tiles);
 
 private:
 
@@ -113,8 +117,8 @@ private:
     const int                                   m_depth;
     const bool                                  m_isGrayscale;
     const QVector<QSharedPointer<TextureTile> > m_tiles;
-    const uchar **const                         jumpTable8;
-    const uint **const                          jumpTable32;
+    const uchar** const                         jumpTable8;
+    const uint** const                          jumpTable32;
     const int                                   m_byteCount;
     bool                                        m_isUsed;
 };

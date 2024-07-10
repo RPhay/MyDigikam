@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDialog>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -33,13 +37,13 @@ class DIGIKAM_EXPORT TileCreatorDialog : public QDialog
 
 public:
 
-    explicit TileCreatorDialog( TileCreator *creator, QWidget *parent = nullptr );
+    explicit TileCreatorDialog(TileCreator* creator, QWidget* parent = nullptr);
     ~TileCreatorDialog() override;
 
 public Q_SLOTS:
 
-    void setProgress( int progress );
-    void setSummary( const QString& name, const QString& description );
+    void setProgress(int progress);
+    void setSummary(const QString& name, const QString& description);
 
 private Q_SLOTS:
 
@@ -47,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( TileCreatorDialog )
+    Q_DISABLE_COPY(TileCreatorDialog)
 
 private:
 

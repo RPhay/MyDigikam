@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "RenderState.h"
 
@@ -58,14 +62,14 @@ public:
      *                        the layer.
      * @param parent The parent widget.
      */
-    explicit StackedTileLoader( MergedLayerDecorator *mergedLayerDecorator, QObject *parent = nullptr );
+    explicit StackedTileLoader(MergedLayerDecorator* mergedLayerDecorator, QObject* parent = nullptr);
     ~StackedTileLoader() override;
 
-    int tileColumnCount( int level ) const;
+    int tileColumnCount(int level) const;
 
-    int tileRowCount( int level ) const;
+    int tileRowCount(int level) const;
 
-    const GeoSceneAbstractTileProjection *tileProjection() const;
+    const GeoSceneAbstractTileProjection* tileProjection() const;
 
     QSize tileSize() const;
 
@@ -75,7 +79,7 @@ public:
      * @param stackedTileId The Id of the requested tile, containing the x and y coordinate
      *                      and the zoom level.
      */
-    const StackedTile* loadTile( TileId const &stackedTileId );
+    const StackedTile* loadTile(TileId const& stackedTileId);
 
     /**
      * Resets the internal tile hash.
@@ -110,7 +114,7 @@ public:
      * @brief Set the limit of the volatile (in RAM) cache.
      * @param kiloBytes The limit in kilobytes.
      */
-    void setVolatileCacheLimit( quint64 kiloBytes );
+    void setVolatileCacheLimit(quint64 kiloBytes);
 
     /**
      * Effectively triggers a reload of all tiles that are currently in use
@@ -120,18 +124,18 @@ public:
 
     /**
      */
-    void updateTile(TileId const & tileId, QImage const &tileImage );
+    void updateTile(TileId const& tileId, QImage const& tileImage);
 
     RenderState renderState() const;
 
 Q_SIGNALS:
 
-    void tileLoaded( TileId const &tileId );
+    void tileLoaded(TileId const& tileId);
     void cleared();
 
 private:
 
-    Q_DISABLE_COPY( StackedTileLoader )
+    Q_DISABLE_COPY(StackedTileLoader)
 
 private:
 

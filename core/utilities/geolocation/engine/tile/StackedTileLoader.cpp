@@ -15,17 +15,20 @@
 
 #include "StackedTileLoader.h"
 
+// Qt includes
+
 #include <QCache>
 #include <QHash>
 #include <QReadWriteLock>
 #include <QImage>
+
+// Local includes
 
 #include "MergedLayerDecorator.h"
 #include "StackedTile.h"
 #include "TileLoader.h"
 #include "TileLoaderHelper.h"
 #include "MarbleGlobal.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -35,10 +38,10 @@ class Q_DECL_HIDDEN StackedTileLoaderPrivate
 {
 public:
 
-    explicit StackedTileLoaderPrivate( MergedLayerDecorator *mergedLayerDecorator )
-        : m_layerDecorator( mergedLayerDecorator )
+    explicit StackedTileLoaderPrivate(MergedLayerDecorator* mergedLayerDecorator)
+        : m_layerDecorator(mergedLayerDecorator)
     {
-        m_tileCache.setMaxCost( 20000 * 1024 ); // Cache size measured in bytes
+        m_tileCache.setMaxCost(20000 * 1024);   // Cache size measured in bytes
     }
 
     MergedLayerDecorator* const   m_layerDecorator = nullptr;
@@ -47,29 +50,29 @@ public:
     QReadWriteLock                m_cacheLock;
 };
 
-StackedTileLoader::StackedTileLoader( MergedLayerDecorator *mergedLayerDecorator, QObject *parent )
-    : QObject( parent ),
-      d( new StackedTileLoaderPrivate( mergedLayerDecorator ) )
+StackedTileLoader::StackedTileLoader(MergedLayerDecorator* mergedLayerDecorator, QObject* parent)
+    : QObject(parent),
+      d(new StackedTileLoaderPrivate(mergedLayerDecorator))
 {
 }
 
 StackedTileLoader::~StackedTileLoader()
 {
-    qDeleteAll( d->m_tilesOnDisplay );
+    qDeleteAll(d->m_tilesOnDisplay);
     delete d;
 }
 
-int StackedTileLoader::tileColumnCount( int level ) const
+int StackedTileLoader::tileColumnCount(int level) const
 {
-    return d->m_layerDecorator->tileColumnCount( level );
+    return d->m_layerDecorator->tileColumnCount(level);
 }
 
-int StackedTileLoader::tileRowCount( int level ) const
+int StackedTileLoader::tileRowCount(int level) const
 {
-    return d->m_layerDecorator->tileRowCount( level );
+    return d->m_layerDecorator->tileRowCount(level);
 }
 
-const GeoSceneAbstractTileProjection *StackedTileLoader::tileProjection() const
+const GeoSceneAbstractTileProjection* StackedTileLoader::tileProjection() const
 {
     return d->m_layerDecorator->tileProjection();
 }
@@ -83,9 +86,11 @@ void StackedTileLoader::resetTilehash()
 {
     QHash<TileId, StackedTile*>::const_iterator it = d->m_tilesOnDisplay.constBegin();
     QHash<TileId, StackedTile*>::const_iterator const end = d->m_tilesOnDisplay.constEnd();
-    for (; it != end; ++it ) {
-        Q_ASSERT( it.value()->used() && "contained in m_tilesOnDisplay should imply used()" );
-        it.value()->setUsed( false );
+
+    for (; it != end; ++it)
+    {
+        Q_ASSERT(it.value()->used() && "contained in m_tilesOnDisplay should imply used()");
+        it.value()->setUsed(false);
     }
 }
 
@@ -94,46 +99,57 @@ void StackedTileLoader::cleanupTilehash()
     // Make sure that tiles which haven't been used during the last
     // rendering of the map at all get removed from the tile hash.
 
-    QHashIterator<TileId, StackedTile*> it( d->m_tilesOnDisplay );
-    while ( it.hasNext() ) {
+    QHashIterator<TileId, StackedTile*> it(d->m_tilesOnDisplay);
+
+    while (it.hasNext())
+    {
         it.next();
-        if ( !it.value()->used() ) {
+
+        if (!it.value()->used())
+        {
             // If insert call result is false then the cache is too small to store the tile
             // but the item will get deleted nevertheless and the pointer we have
             // doesn't get set to zero (so don't delete it in this case or it will crash!)
-            d->m_tileCache.insert( it.key(), it.value(), it.value()->byteCount() );
-            d->m_tilesOnDisplay.remove( it.key() );
+            d->m_tileCache.insert(it.key(), it.value(), it.value()->byteCount());
+            d->m_tilesOnDisplay.remove(it.key());
         }
     }
 }
 
-const StackedTile* StackedTileLoader::loadTile( TileId const & stackedTileId )
+const StackedTile* StackedTileLoader::loadTile(TileId const& stackedTileId)
 {
     // check if the tile is in the hash
     d->m_cacheLock.lockForRead();
-    StackedTile * stackedTile = d->m_tilesOnDisplay.value( stackedTileId, 0 );
+    StackedTile* stackedTile = d->m_tilesOnDisplay.value(stackedTileId, 0);
     d->m_cacheLock.unlock();
-    if ( stackedTile ) {
-        stackedTile->setUsed( true );
+
+    if (stackedTile)
+    {
+        stackedTile->setUsed(true);
         return stackedTile;
     }
+
     // here ends the performance critical section of this method
 
     d->m_cacheLock.lockForWrite();
 
     // has another thread loaded our tile due to a race condition?
-    stackedTile = d->m_tilesOnDisplay.value( stackedTileId, 0 );
-    if ( stackedTile ) {
-        Q_ASSERT( stackedTile->used() && "other thread should have marked tile as used" );
+    stackedTile = d->m_tilesOnDisplay.value(stackedTileId, 0);
+
+    if (stackedTile)
+    {
+        Q_ASSERT(stackedTile->used() && "other thread should have marked tile as used");
         d->m_cacheLock.unlock();
         return stackedTile;
     }
 
     // the tile was not in the hash so check if it is in the cache
-    stackedTile = d->m_tileCache.take( stackedTileId );
-    if ( stackedTile ) {
-        Q_ASSERT( !stackedTile->used() && "tiles in m_tileCache are invisible and should thus be marked as unused" );
-        stackedTile->setUsed( true );
+    stackedTile = d->m_tileCache.take(stackedTileId);
+
+    if (stackedTile)
+    {
+        Q_ASSERT(!stackedTile->used() && "tiles in m_tileCache are invisible and should thus be marked as unused");
+        stackedTile->setUsed(true);
         d->m_tilesOnDisplay[ stackedTileId ] = stackedTile;
         d->m_cacheLock.unlock();
         return stackedTile;
@@ -144,14 +160,14 @@ const StackedTile* StackedTileLoader::loadTile( TileId const & stackedTileId )
 
     qCDebug(DIGIKAM_MARBLE_LOG) << "load tile from disk:" << stackedTileId;
 
-    stackedTile = d->m_layerDecorator->loadTile( stackedTileId );
-    Q_ASSERT( stackedTile );
-    stackedTile->setUsed( true );
+    stackedTile = d->m_layerDecorator->loadTile(stackedTileId);
+    Q_ASSERT(stackedTile);
+    stackedTile->setUsed(true);
 
     d->m_tilesOnDisplay[ stackedTileId ] = stackedTile;
     d->m_cacheLock.unlock();
 
-    Q_EMIT tileLoaded( stackedTileId );
+    Q_EMIT tileLoaded(stackedTileId);
 
     return stackedTile;
 }
@@ -171,47 +187,55 @@ int StackedTileLoader::tileCount() const
     return d->m_tileCache.count() + d->m_tilesOnDisplay.count();
 }
 
-void StackedTileLoader::setVolatileCacheLimit( quint64 kiloBytes )
+void StackedTileLoader::setVolatileCacheLimit(quint64 kiloBytes)
 {
-    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg( kiloBytes );
-    d->m_tileCache.setMaxCost( kiloBytes * 1024 );
+    qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Setting tile cache to %1 kilobytes.").arg(kiloBytes);
+    d->m_tileCache.setMaxCost(kiloBytes * 1024);
 }
 
-void StackedTileLoader::updateTile( TileId const &tileId, QImage const &tileImage )
+void StackedTileLoader::updateTile(TileId const& tileId, QImage const& tileImage)
 {
-    const TileId stackedTileId( 0, tileId.zoomLevel(), tileId.x(), tileId.y() );
+    const TileId stackedTileId(0, tileId.zoomLevel(), tileId.x(), tileId.y());
 
-    StackedTile * displayedTile = d->m_tilesOnDisplay.take( stackedTileId );
-    if ( displayedTile ) {
-        Q_ASSERT( !d->m_tileCache.contains( stackedTileId ) );
+    StackedTile* displayedTile = d->m_tilesOnDisplay.take(stackedTileId);
 
-        StackedTile *const stackedTile = d->m_layerDecorator->updateTile( *displayedTile, tileId, tileImage );
-        stackedTile->setUsed( true );
-        d->m_tilesOnDisplay.insert( stackedTileId, stackedTile );
+    if (displayedTile)
+    {
+        Q_ASSERT(!d->m_tileCache.contains(stackedTileId));
+
+        StackedTile* const stackedTile = d->m_layerDecorator->updateTile(*displayedTile, tileId, tileImage);
+        stackedTile->setUsed(true);
+        d->m_tilesOnDisplay.insert(stackedTileId, stackedTile);
 
         delete displayedTile;
         displayedTile = nullptr;
 
-        Q_EMIT tileLoaded( stackedTileId );
-    } else {
-        d->m_tileCache.remove( stackedTileId );
+        Q_EMIT tileLoaded(stackedTileId);
+    }
+
+    else
+    {
+        d->m_tileCache.remove(stackedTileId);
     }
 }
 
 RenderState StackedTileLoader::renderState() const
 {
-    RenderState renderState( QString::fromUtf8("Stacked Tiles") );
+    RenderState renderState(QString::fromUtf8("Stacked Tiles"));
     QHash<TileId, StackedTile*>::const_iterator it = d->m_tilesOnDisplay.constBegin();
     QHash<TileId, StackedTile*>::const_iterator const end = d->m_tilesOnDisplay.constEnd();
-    for (; it != end; ++it ) {
-        renderState.addChild( d->m_layerDecorator->renderState( it.key() ) );
+
+    for (; it != end; ++it)
+    {
+        renderState.addChild(d->m_layerDecorator->renderState(it.key()));
     }
+
     return renderState;
 }
 
 void StackedTileLoader::clear()
 {
-    qDeleteAll( d->m_tilesOnDisplay );
+    qDeleteAll(d->m_tilesOnDisplay);
     d->m_tilesOnDisplay.clear();
     d->m_tileCache.clear(); // clear the tile cache in physical memory
 
