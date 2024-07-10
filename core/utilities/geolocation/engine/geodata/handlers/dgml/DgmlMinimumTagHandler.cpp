@@ -15,7 +15,11 @@
 
 #include "DgmlMinimumTagHandler.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
@@ -36,16 +40,23 @@ GeoNode* DgmlMinimumTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Zoom)) {
+
+    if (parentItem.represents(dgmlTag_Zoom))
+    {
         QString parsedText = parser.readElementText();
 
         bool ok = false;
         int parsedInt = parsedText.toInt(&ok);
 
         if (ok)
+        {
             parentItem.nodeAs<GeoSceneZoom>()->setMinimum(parsedInt);
+        }
+
         else
+        {
             parser.raiseWarning(i18n("Could not convert <minimum> child text content to integer. Was: '%1'", parsedText));
+        }
     }
 
 

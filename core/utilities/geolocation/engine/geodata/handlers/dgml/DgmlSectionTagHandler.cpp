@@ -15,13 +15,14 @@
 
 #include "DgmlSectionTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneLegend.h"
 #include "GeoSceneSection.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -47,13 +48,15 @@ GeoNode* DgmlSectionTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Legend)) {
-        section = new GeoSceneSection( name );
-        section->setCheckable( checkable == QString::fromUtf8(dgmlValue_true) || checkable == QString::fromUtf8(dgmlValue_on) );
-        section->setConnectTo( connectTo );
-        section->setSpacing( spacing );
-        section->setRadio( radio );
-        parentItem.nodeAs<GeoSceneLegend>()->addSection( section );
+
+    if (parentItem.represents(dgmlTag_Legend))
+    {
+        section = new GeoSceneSection(name);
+        section->setCheckable(checkable == QString::fromUtf8(dgmlValue_true) || checkable == QString::fromUtf8(dgmlValue_on));
+        section->setConnectTo(connectTo);
+        section->setSpacing(spacing);
+        section->setRadio(radio);
+        parentItem.nodeAs<GeoSceneLegend>()->addSection(section);
     }
 
     return section;

@@ -13,13 +13,14 @@
  *
  * ============================================================ */
 
-// Own
 #include "DgmlIconTagHandler.h"
 
-// Qt
+// Qt includes
+
 #include <QColor>
 
-// Marble
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "GeoParser.h"
@@ -45,19 +46,23 @@ GeoNode* DgmlIconTagHandler::parse(GeoParser& parser) const
     QColor color;
     color.setNamedColor(parser.attribute(dgmlAttr_color).trimmed());
 
-    GeoSceneIcon *icon = nullptr;
+    GeoSceneIcon* icon = nullptr;
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Head)) {
+
+    if (parentItem.represents(dgmlTag_Head))
+    {
         icon = parentItem.nodeAs<GeoSceneHead>()->icon();
-        icon->setPixmap( pixmapRelativePath );
-        icon->setColor( color );
+        icon->setPixmap(pixmapRelativePath);
+        icon->setColor(color);
     }
-    if (parentItem.represents(dgmlTag_Item)) {
+
+    if (parentItem.represents(dgmlTag_Item))
+    {
         icon = parentItem.nodeAs<GeoSceneItem>()->icon();
-        icon->setPixmap( pixmapRelativePath );
-        icon->setColor( color );
+        icon->setPixmap(pixmapRelativePath);
+        icon->setColor(color);
     }
 
     return nullptr;

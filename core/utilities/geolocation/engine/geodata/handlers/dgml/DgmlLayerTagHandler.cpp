@@ -15,13 +15,14 @@
 
 #include "DgmlLayerTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneMap.h"
 #include "GeoSceneLayer.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -39,15 +40,17 @@ GeoNode* DgmlLayerTagHandler::parse(GeoParser& parser) const
     QString backend    = parser.attribute(dgmlAttr_backend).toLower().trimmed();
     QString role      = parser.attribute(dgmlAttr_role).toLower().trimmed();
 
-    GeoSceneLayer *layer = nullptr;
+    GeoSceneLayer* layer = nullptr;
 
     // Checking for parent layer
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Map)) {
-        layer = new GeoSceneLayer( name );
-        layer->setBackend( backend );
-        layer->setRole( role );
-        parentItem.nodeAs<GeoSceneMap>()->addLayer( layer );
+
+    if (parentItem.represents(dgmlTag_Map))
+    {
+        layer = new GeoSceneLayer(name);
+        layer->setBackend(backend);
+        layer->setRole(role);
+        parentItem.nodeAs<GeoSceneMap>()->addLayer(layer);
     }
 
     return layer;

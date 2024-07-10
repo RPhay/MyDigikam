@@ -15,6 +15,8 @@
 
 #include "DgmlSourceFileTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "GeoParser.h"
@@ -35,11 +37,13 @@ GeoNode* DgmlSourceFileTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if ( parentItem.represents( dgmlTag_Vector )
-         || parentItem.represents( dgmlTag_Geodata ) ) {
-        GeoSceneGeodata *dataSource = nullptr;
+
+    if (parentItem.represents(dgmlTag_Vector)
+        || parentItem.represents(dgmlTag_Geodata))
+    {
+        GeoSceneGeodata* dataSource = nullptr;
         dataSource = parentItem.nodeAs<GeoSceneGeodata>();
-        dataSource->setSourceFile( parser.readElementText().trimmed() );
+        dataSource->setSourceFile(parser.readElementText().trimmed());
     }
 
     return nullptr;

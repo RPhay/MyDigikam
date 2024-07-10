@@ -15,10 +15,11 @@
 
 #include "DgmlMaximumTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneZoom.h"
-
 #include <klocalizedstring.h>
 
 namespace Marble
@@ -34,16 +35,23 @@ GeoNode* DgmlMaximumTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Zoom)) {
+
+    if (parentItem.represents(dgmlTag_Zoom))
+    {
         QString parsedText = parser.readElementText();
 
         bool ok = false;
         int parsedInt = parsedText.toInt(&ok);
 
         if (ok)
+        {
             parentItem.nodeAs<GeoSceneZoom>()->setMaximum(parsedInt);
+        }
+
         else
+        {
             parser.raiseWarning(i18n("Could not convert <maximum> child text content to integer. Was: '%1'", parsedText));
+        }
     }
 
     return nullptr;

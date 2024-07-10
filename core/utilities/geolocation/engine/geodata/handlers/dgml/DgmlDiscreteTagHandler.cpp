@@ -15,6 +15,8 @@
 
 #include "DgmlDiscreteTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
@@ -35,7 +37,9 @@ GeoNode* DgmlDiscreteTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Zoom)) {
+
+    if (parentItem.represents(dgmlTag_Zoom))
+    {
         QString parsedText = parser.readElementText().toLower().trimmed();
         parentItem.nodeAs<GeoSceneZoom>()->setDiscrete(parsedText == QString::fromUtf8(dgmlValue_true) || parsedText == QString::fromUtf8(dgmlValue_on));
     }

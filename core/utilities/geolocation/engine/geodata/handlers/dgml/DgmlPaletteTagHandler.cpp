@@ -15,13 +15,14 @@
 
 #include "DgmlPaletteTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneFilter.h"
 #include "GeoScenePalette.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -40,13 +41,15 @@ GeoNode* DgmlPaletteTagHandler::parse(GeoParser& parser) const
     QString type      = parser.attribute(dgmlAttr_type).toLower().trimmed();
     QString file      = parser.readElementText().trimmed();
 
-    GeoScenePalette *palette = nullptr;
+    GeoScenePalette* palette = nullptr;
 
     // Checking for parent palette
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Filter)) {
-        palette = new GeoScenePalette( type, file );
-        parentItem.nodeAs<GeoSceneFilter>()->addPalette( palette );
+
+    if (parentItem.represents(dgmlTag_Filter))
+    {
+        palette = new GeoScenePalette(type, file);
+        parentItem.nodeAs<GeoSceneFilter>()->addPalette(palette);
     }
 
     return palette;

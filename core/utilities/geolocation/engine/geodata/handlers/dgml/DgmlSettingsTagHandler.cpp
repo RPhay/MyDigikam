@@ -15,11 +15,12 @@
 
 #include "DgmlSettingsTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneSettings.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -36,8 +37,11 @@ GeoNode* DgmlSettingsTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(dgmlTag_Document))
+    {
         return parentItem.nodeAs<GeoSceneDocument>()->settings();
+    }
 
     return nullptr;
 }

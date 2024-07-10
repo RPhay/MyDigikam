@@ -14,13 +14,15 @@
  * ============================================================ */
 
 #include "DgmlGroupTagHandler.h"
+
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneSettings.h"
 #include "GeoSceneGroup.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -42,9 +44,11 @@ GeoNode* DgmlGroupTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Settings)) {
-        group = new GeoSceneGroup( name );
-        parentItem.nodeAs<GeoSceneSettings>()->addGroup( group );
+
+    if (parentItem.represents(dgmlTag_Settings))
+    {
+        group = new GeoSceneGroup(name);
+        parentItem.nodeAs<GeoSceneSettings>()->addGroup(group);
     }
 
     return group;

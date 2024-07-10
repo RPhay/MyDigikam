@@ -15,7 +15,11 @@
 
 #include "DgmlMapTagHandler.h"
 
+// Qt includes
+
 #include <QColor>
+
+// Local includes
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
@@ -35,22 +39,26 @@ GeoNode* DgmlMapTagHandler::parse(GeoParser& parser) const
 
     QColor  labelColor  = parser.attribute(dgmlAttr_labelColor).trimmed();
 
-    if ( !labelColor.isValid() )
+    if (!labelColor.isValid())
+    {
         labelColor = Qt::black;
+    }
 
-    QColor highlightBrushColor = QColor ( parser.attribute(dgmlAttr_highlightBrush).trimmed() );
-    QColor highlightPenColor = QColor ( parser.attribute(dgmlAttr_highlightPen).trimmed() );
+    QColor highlightBrushColor = QColor(parser.attribute(dgmlAttr_highlightBrush).trimmed());
+    QColor highlightPenColor = QColor(parser.attribute(dgmlAttr_highlightPen).trimmed());
 
     GeoSceneMap* map = nullptr;
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Document)) {
+
+    if (parentItem.represents(dgmlTag_Document))
+    {
         map = parentItem.nodeAs<GeoSceneDocument>()->map();
-        map->setBackgroundColor( QColor( parser.attribute( dgmlAttr_bgcolor ).trimmed() ) );
-        map->setLabelColor( labelColor );
-        map->setHighlightBrushColor( highlightBrushColor );
-        map->setHighlightPenColor( highlightPenColor );
+        map->setBackgroundColor(QColor(parser.attribute(dgmlAttr_bgcolor).trimmed()));
+        map->setLabelColor(labelColor);
+        map->setHighlightBrushColor(highlightBrushColor);
+        map->setHighlightPenColor(highlightPenColor);
     }
 
     return map;

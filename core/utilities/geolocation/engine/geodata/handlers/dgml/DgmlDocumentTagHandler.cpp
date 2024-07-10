@@ -15,10 +15,11 @@
 
 #include "DgmlDocumentTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble

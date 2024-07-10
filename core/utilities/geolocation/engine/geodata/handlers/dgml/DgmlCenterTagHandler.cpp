@@ -15,6 +15,8 @@
 
 #include "DgmlCenterTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneMap.h"
@@ -34,8 +36,11 @@ GeoNode* DgmlCenterTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(dgmlTag_Map))
-        parentItem.nodeAs<GeoSceneMap>()->setCenter( parser.readElementText().trimmed() );
+    {
+        parentItem.nodeAs<GeoSceneMap>()->setCenter(parser.readElementText().trimmed());
+    }
 
     return 0;
 }

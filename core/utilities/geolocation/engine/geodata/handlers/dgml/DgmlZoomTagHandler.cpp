@@ -15,11 +15,12 @@
 
 #include "DgmlZoomTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneHead.h"
 #include "GeoSceneZoom.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -36,8 +37,11 @@ GeoNode* DgmlZoomTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(dgmlTag_Head))
+    {
         return parentItem.nodeAs<GeoSceneHead>()->zoom();
+    }
 
     return nullptr;
 }

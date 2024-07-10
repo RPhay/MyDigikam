@@ -15,6 +15,8 @@
 
 #include "DgmlDescriptionTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneHead.h"
@@ -34,8 +36,11 @@ GeoNode* DgmlDescriptionTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(dgmlTag_Head))
-        parentItem.nodeAs<GeoSceneHead>()->setDescription( parser.readElementText().trimmed() );
+    {
+        parentItem.nodeAs<GeoSceneHead>()->setDescription(parser.readElementText().trimmed());
+    }
 
     return nullptr;
 }

@@ -15,11 +15,12 @@
 
 #include "DgmlAvailableTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneProperty.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,7 +38,9 @@ GeoNode* DgmlAvailableTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Property)) {
+
+    if (parentItem.represents(dgmlTag_Property))
+    {
         QString parsedText = parser.readElementText().toLower().trimmed();
         parentItem.nodeAs<GeoSceneProperty>()->setAvailable(parsedText == QString::fromUtf8(dgmlValue_true) || parsedText == QString::fromUtf8(dgmlValue_on));
     }

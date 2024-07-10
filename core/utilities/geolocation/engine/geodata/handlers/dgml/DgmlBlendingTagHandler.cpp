@@ -15,11 +15,12 @@
 
 #include "DgmlBlendingTagHandler.h"
 
+// Local includes
+
 #include "DgmlAttributeDictionary.h"
 #include "DgmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneTileDataset.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -28,24 +29,27 @@ namespace Marble
 namespace dgml
 {
 
-static GeoTagHandlerRegistrar registrar( GeoParser::QualifiedName( QString::fromUtf8(dgmlTag_Blending),
-                                                                       QString::fromUtf8(dgmlTag_nameSpace20) ),
-                                         new DgmlBlendingTagHandler );
+static GeoTagHandlerRegistrar registrar(GeoParser::QualifiedName(QString::fromUtf8(dgmlTag_Blending),
+                                                                 QString::fromUtf8(dgmlTag_nameSpace20)),
+                                        new DgmlBlendingTagHandler);
 
-GeoNode* DgmlBlendingTagHandler::parse( GeoParser& parser ) const
+GeoNode* DgmlBlendingTagHandler::parse(GeoParser& parser) const
 {
     // Check whether the tag is valid
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(dgmlTag_Blending)));
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if ( !parentItem.represents( dgmlTag_Texture ) && !parentItem.represents( dgmlTag_Vectortile ))
+
+    if (!parentItem.represents(dgmlTag_Texture) && !parentItem.represents(dgmlTag_Vectortile))
+    {
         return nullptr;
+    }
 
     // Attribute name, default to ""
-    const QString name = parser.attribute( dgmlAttr_name ).trimmed();
+    const QString name = parser.attribute(dgmlAttr_name).trimmed();
     qCDebug(DIGIKAM_MARBLE_LOG) << "DgmlBlendingTagHandler::parse" << name;
-    parentItem.nodeAs<GeoSceneTileDataset>()->setBlending( name );
+    parentItem.nodeAs<GeoSceneTileDataset>()->setBlending(name);
     return nullptr;
 }
 

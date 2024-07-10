@@ -15,9 +15,13 @@
 
 #include "DgmlPenTagHandler.h"
 
+// Qt includes
+
 #include <QPen>
 #include <QColor>
 #include <QString>
+
+// Local includes
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
@@ -44,36 +48,57 @@ GeoNode* DgmlPenTagHandler::parse(GeoParser& parser) const
 
     QPen pen;
 
-    if ( !color.isEmpty() && QColor( color ).isValid() ) {
-        pen.setColor( QColor( color ) );
+    if (!color.isEmpty() && QColor(color).isValid())
+    {
+        pen.setColor(QColor(color));
     }
 
-    if ( !style.isEmpty() ) {
-        if (style == QLatin1String("nopen")) {
+    if (!style.isEmpty())
+    {
+        if (style == QLatin1String("nopen"))
+        {
             pen.setStyle(Qt::NoPen);
-        } else if (style == QLatin1String("solidline")) {
+        }
+
+        else if (style == QLatin1String("solidline"))
+        {
             pen.setStyle(Qt::SolidLine);
-        } else if (style == QLatin1String("dashline")) {
+        }
+
+        else if (style == QLatin1String("dashline"))
+        {
             pen.setStyle(Qt::DashLine);
-        } else if (style == QLatin1String("dotline")) {
+        }
+
+        else if (style == QLatin1String("dotline"))
+        {
             pen.setStyle(Qt::DotLine);
-        } else if (style == QLatin1String("dashdotline")) {
+        }
+
+        else if (style == QLatin1String("dashdotline"))
+        {
             pen.setStyle(Qt::DashDotLine);
-        } else if (style == QLatin1String("dashdotdotline")) {
+        }
+
+        else if (style == QLatin1String("dashdotdotline"))
+        {
             pen.setStyle(Qt::DashDotDotLine);
         }
     }
 
-    if ( width != 0.0 ) {
-        pen.setWidthF( width );
+    if (width != 0.0)
+    {
+        pen.setWidthF(width);
     }
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if ( parentItem.represents( dgmlTag_Vector )
-         || parentItem.represents( dgmlTag_Geodata ) ) {
-        GeoSceneGeodata *geodata = parentItem.nodeAs<GeoSceneGeodata>();
-        geodata->setPen( pen );
+
+    if (parentItem.represents(dgmlTag_Vector)
+        || parentItem.represents(dgmlTag_Geodata))
+    {
+        GeoSceneGeodata* geodata = parentItem.nodeAs<GeoSceneGeodata>();
+        geodata->setPen(pen);
     }
 
     return nullptr;

@@ -15,10 +15,14 @@
 
 #include "DgmlBrushTagHandler.h"
 
+// Qt includes
+
 #include <QBrush>
 #include <QColor>
 #include <QList>
 #include <QString>
+
+// Local includes
 
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
@@ -44,34 +48,48 @@ GeoNode* DgmlBrushTagHandler::parse(GeoParser& parser) const
 
     QBrush brush;
 
-    if ( !color.isEmpty() && QColor( color ).isValid() ) {
-        QColor brushColor( color );
-        if (color.contains(QLatin1String("transparent"))) {
-            brushColor.setAlphaF( 0.0 );
+    if (!color.isEmpty() && QColor(color).isValid())
+    {
+        QColor brushColor(color);
+
+        if (color.contains(QLatin1String("transparent")))
+        {
+            brushColor.setAlphaF(0.0);
         }
-        else {
-            brushColor.setAlphaF( alpha );
+
+        else
+        {
+            brushColor.setAlphaF(alpha);
         }
-        brush.setColor( brushColor );
+
+        brush.setColor(brushColor);
     }
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if ( parentItem.represents( dgmlTag_Vector )
-         || parentItem.represents( dgmlTag_Geodata ) ) {
-        GeoSceneGeodata *geodata = parentItem.nodeAs<GeoSceneGeodata>();
-        geodata->setBrush( brush );
-        if ( !colorMap.isEmpty() ) {
+
+    if (parentItem.represents(dgmlTag_Vector)
+        || parentItem.represents(dgmlTag_Geodata))
+    {
+        GeoSceneGeodata* geodata = parentItem.nodeAs<GeoSceneGeodata>();
+        geodata->setBrush(brush);
+
+        if (!colorMap.isEmpty())
+        {
             const QStringList colorString = colorMap.split(QLatin1Char(','));
 
             QVector<QColor> colorList;
             colorList.reserve(colorString.size());
-            for(const QString& colorName: colorString) {
+
+            for (const QString& colorName : colorString)
+            {
                 colorList.append(QColor(colorName));
             }
-            geodata->setColors( colorList );
+
+            geodata->setColors(colorList);
         }
-        geodata->setAlpha( alpha );
+
+        geodata->setAlpha(alpha);
     }
 
     return nullptr;

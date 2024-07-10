@@ -15,13 +15,14 @@
 
 #include "DgmlItemTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "DgmlAuxillaryDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneSection.h"
 #include "GeoSceneItem.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -42,16 +43,18 @@ GeoNode* DgmlItemTagHandler::parse(GeoParser& parser) const
     QString connectTo = parser.attribute(dgmlAttr_connect).trimmed();
     int     spacing   = parser.attribute(dgmlAttr_spacing).toInt();
 
-    GeoSceneItem *item = nullptr;
+    GeoSceneItem* item = nullptr;
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Section)) {
-        item = new GeoSceneItem( name );
-        item->setCheckable( checkable == QString::fromUtf8(dgmlValue_true) || checkable == QString::fromUtf8(dgmlValue_on) );
-        item->setConnectTo( connectTo );
-        item->setSpacing( spacing );
-        parentItem.nodeAs<GeoSceneSection>()->addItem( item );
+
+    if (parentItem.represents(dgmlTag_Section))
+    {
+        item = new GeoSceneItem(name);
+        item->setCheckable(checkable == QString::fromUtf8(dgmlValue_true) || checkable == QString::fromUtf8(dgmlValue_on));
+        item->setConnectTo(connectTo);
+        item->setSpacing(spacing);
+        parentItem.nodeAs<GeoSceneSection>()->addItem(item);
     }
 
     return item;

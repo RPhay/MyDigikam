@@ -15,13 +15,14 @@
 
 #include "DgmlPropertyTagHandler.h"
 
+// Local includes
+
 #include "DgmlElementDictionary.h"
 #include "DgmlAttributeDictionary.h"
 #include "GeoParser.h"
 #include "GeoSceneSettings.h"
 #include "GeoSceneGroup.h"
 #include "GeoSceneProperty.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -43,13 +44,17 @@ GeoNode* DgmlPropertyTagHandler::parse(GeoParser& parser) const
 
     // Checking for parent item
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(dgmlTag_Settings)) {
-        property = new GeoSceneProperty( name );
-        parentItem.nodeAs<GeoSceneSettings>()->addProperty( property );
+
+    if (parentItem.represents(dgmlTag_Settings))
+    {
+        property = new GeoSceneProperty(name);
+        parentItem.nodeAs<GeoSceneSettings>()->addProperty(property);
     }
-    if (parentItem.represents(dgmlTag_Group)) {
-        property = new GeoSceneProperty( name );
-        parentItem.nodeAs<GeoSceneGroup>()->addProperty( property);
+
+    if (parentItem.represents(dgmlTag_Group))
+    {
+        property = new GeoSceneProperty(name);
+        parentItem.nodeAs<GeoSceneGroup>()->addProperty(property);
     }
 
     return property;
