@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 01:40+0000\n"
+"POT-Creation-Date: 2024-07-10 01:44+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -19462,8 +19462,8 @@ msgid "Add again"
 msgstr "Thêm hạt mảng thuốc..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:153
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:161
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #, fuzzy, kde-format
 msgid "Remove"
@@ -53523,36 +53523,36 @@ msgstr ""
 msgid "Playlist"
 msgstr "Xoá hết"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:94
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
 #, fuzzy, kde-format
 #| msgid "No or invalid size specified"
 msgid "No name specified"
 msgstr "Chưa ghi rõ kích cỡ hay kích cỡ không hợp lệ"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:96
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr ""
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:102
 #, fuzzy, kde-format
 #| msgid "No or invalid size specified"
 msgid "No type tag specified"
 msgstr "Chưa ghi rõ kích cỡ hay kích cỡ không hợp lệ"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:103
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr ""
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:79
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:90
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:81
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:96
 #, fuzzy, kde-format
 msgid "New Relation"
 msgstr "Bản dịch Hoà Lan"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:154
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:166
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:181
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
@@ -53578,8 +53578,8 @@ msgstr ""
 msgid "Add Relation"
 msgstr "Theo tập hợp"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:105
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:115
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:108
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:124
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "value"
@@ -53617,7 +53617,7 @@ msgstr ""
 msgid "Related Tags"
 msgstr "Lưu ảnh"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:44
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:46
 #, fuzzy, kde-format
 msgid "Add custom tag..."
 msgstr "Thẻ tôi"
@@ -54369,12 +54369,12 @@ msgstr ""
 msgid "Micro World Database II"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:72
 #, kde-format
 msgid "Azimuthal Equidistant"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:77
 #, kde-format
 msgid ""
 "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</"
@@ -54382,24 +54382,24 @@ msgid ""
 "planetariums.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:45
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:48
 #, kde-format
 msgid "Flat Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:53
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
 "De facto standard for global texture data sets for computer software.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:77
 #, kde-format
 msgid "Gnomonic"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for "
@@ -54407,37 +54407,37 @@ msgid ""
 "work.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:77
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:73
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:76
 #, kde-format
 msgid "Globe"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:78
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:81
 #, kde-format
 msgid ""
 "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A "
@@ -54445,24 +54445,24 @@ msgid ""
 "it appears from outer space.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:75
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:78
 #, fuzzy, kde-format
 msgid "Stereographic"
 msgstr "Tệp ảnh"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:80
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:83
 #, kde-format
 msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:90
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:93
 #, kde-format
 msgid "Vertical Perspective Projection"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:95
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:98
 #, kde-format
 msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
@@ -54767,87 +54767,87 @@ msgstr "Màu nét dẫn:"
 msgid "Runner Tools"
 msgstr "Công cụ kéo cắt"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:46
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:51
 #, fuzzy, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Lỗi in tệp: « %1 »"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:130
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:137
 #, fuzzy, kde-format
 msgid "Visible region"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:132
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
 #, fuzzy, kde-format
 msgid "Specify region"
 msgstr "Vùng chọn"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:134
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:141
 #, fuzzy, kde-format
 msgid "Download Route"
 msgstr "Tải về"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:136
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:143
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:149
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:156
 #, kde-format
 msgid "Offset from route:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:179
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:190
 #, fuzzy, kde-format
 msgid "Selection Method"
 msgstr "Mô tả"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:187
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:198
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:237
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:251
 #, fuzzy, kde-format
 msgid "Download Region"
 msgstr "Tải về"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:239
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:253
 #, fuzzy, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Đây là danh sách các mục sắp bị xoá."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:241
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:255
 #, fuzzy, kde-format
 msgid "Texture tiles"
 msgstr "Lọc đỏ"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, fuzzy, kde-format
 msgid "Vector tiles"
 msgstr "Tệp âm thanh"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:583
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:547
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:597
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:551
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:602
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:554
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:607
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""

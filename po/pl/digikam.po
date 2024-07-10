@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 01:40+0000\n"
+"POT-Creation-Date: 2024-07-10 01:44+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -20148,8 +20148,8 @@ msgid "Add again"
 msgstr "Dodaj ponownie"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:153
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:161
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #, kde-format
 msgid "Remove"
@@ -54806,34 +54806,34 @@ msgstr "PopIndex"
 msgid "Playlist"
 msgstr "Lista odtwarzania"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:94
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
 #, kde-format
 msgid "No name specified"
 msgstr "Nie podano nazwy"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:96
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr "Podaj nazwę dla tego związku."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:102
 #, kde-format
 msgid "No type tag specified"
 msgstr "Nie podano znacznika rodzaju"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:103
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr "Dodaj znacznik rodzaju dla tego związku."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:79
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:90
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:81
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:96
 #, kde-format
 msgid "New Relation"
 msgstr "Nowy związek"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:154
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:166
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:181
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
@@ -54859,8 +54859,8 @@ msgstr "Rola"
 msgid "Add Relation"
 msgstr "Dodaj związek"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:105
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:115
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:108
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:124
 #, kde-format
 msgid "value"
 msgstr "wartość"
@@ -54897,7 +54897,7 @@ msgstr ">>"
 msgid "Related Tags"
 msgstr "Powiązane znaczniki"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:44
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:46
 #, kde-format
 msgid "Add custom tag..."
 msgstr "Dodaj własny znacznik..."
@@ -55672,12 +55672,12 @@ msgstr "Utwórz GeoDataDocument z plików osm"
 msgid "Micro World Database II"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:72
 #, kde-format
 msgid "Azimuthal Equidistant"
 msgstr "Azymutalne równoodległościowe"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:77
 #, kde-format
 msgid ""
 "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</"
@@ -55688,12 +55688,12 @@ msgstr ""
 "p><p>Zastosowania: Wyświetlanie danych sejsmicznych i radiowych w cyfrowych "
 "planetariach.</p>"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:45
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:48
 #, kde-format
 msgid "Flat Map"
 msgstr "Płaska mapa"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:53
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -55703,12 +55703,12 @@ msgstr ""
 "p><p>Zastosowania: De facto standard dla danych teksturowych dla "
 "oprogramowania komputerowego.</p>"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:77
 #, kde-format
 msgid "Gnomonic"
 msgstr "Gnomoniczne"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for "
@@ -55719,12 +55719,12 @@ msgstr ""
 "Używana do wyświetlania zdjęcia panoramicznego. Używana także do nawigacji, "
 "dzieł radiowych i sejsmicznych.</p>"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:77
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
 msgstr "Azymutalne równopowierzchniowe Lamberta"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
@@ -55734,13 +55734,13 @@ msgstr ""
 "p><p>Zastosowania: Używane w geologi strukturalnej do rysowania danych "
 "kierunkowych.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Merkator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -55749,12 +55749,12 @@ msgstr ""
 "<p><b>Odwzorowanie merkatora</b></p><p>Zastosowania: popularne odwzorowanie "
 "standardowej mapy dla nawigacji.</p>"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:73
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:76
 #, kde-format
 msgid "Globe"
 msgstr "Kula ziemska"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:78
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:81
 #, kde-format
 msgid ""
 "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A "
@@ -55766,12 +55766,12 @@ msgstr ""
 "jako globu w ten sam sposób w jaki jest widziany w przestrzeni kosmicznej.</"
 "p>"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:75
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:78
 #, kde-format
 msgid "Stereographic"
 msgstr "Stereograficzne"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:80
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:83
 #, kde-format
 msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
@@ -55780,12 +55780,12 @@ msgstr ""
 "<p><b>Odwzorowanie stereograficzne</b> (\"prostokątne\")</p><p>Zastosowania: "
 "Używane dla kartografii planetarnej, geologii i zdjęć panoramicznych.</p>"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:90
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:93
 #, kde-format
 msgid "Vertical Perspective Projection"
 msgstr "Odwzorowanie pionowej perspektywy"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:95
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:98
 #, kde-format
 msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
@@ -56113,89 +56113,89 @@ msgstr "Narzędzie obramowania"
 msgid "Runner Tools"
 msgstr "Narzędzie pochylania"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:46
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:51
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Nie można zapisać wstawić danych do pamięci podręcznej"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:130
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Visible region"
 msgstr "Widoczny region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:132
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
 #, kde-format
 msgid "Specify region"
 msgstr "Określ region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:134
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:141
 #, kde-format
 msgid "Download Route"
 msgstr "Pobierz trasę"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:136
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:143
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Włączone, jeśli droga istnieje"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:149
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:156
 #, kde-format
 msgid "Offset from route:"
 msgstr "Odsunięcie od trasy:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:179
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:190
 #, kde-format
 msgid "Selection Method"
 msgstr "Metoda wyboru"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:187
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:198
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Liczba pól do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:237
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:251
 #, kde-format
 msgid "Download Region"
 msgstr "Pobierz region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:239
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:253
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Rodzaj kafelki do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:241
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:255
 #, kde-format
 msgid "Texture tiles"
 msgstr "Pola teksturowane"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Vector tiles"
 msgstr "Pola wektorowe"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Zezwala na zaznaczanie pomiędzy rodzajami warstw, które widać, że są w "
 "trakcie wyświetlania."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:583
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Ograniczono pobieranie do %1 pól."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:547
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:597
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Przybliżony rozmiar pól do pobrania"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:551
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:602
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Szacowany rozmiar do pobrania: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:554
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:607
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Szacowany rozmiar do pobrania: %1 kB"

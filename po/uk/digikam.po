@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 01:40+0000\n"
+"POT-Creation-Date: 2024-07-10 01:44+0000\n"
 "PO-Revision-Date: 2024-06-27 07:28+0300\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -20370,8 +20370,8 @@ msgid "Add again"
 msgstr "Додати знову"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:153
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:161
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #, kde-format
 msgid "Remove"
@@ -55340,34 +55340,34 @@ msgstr "Значення рейтингу"
 msgid "Playlist"
 msgstr "Список відтворення"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:94
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
 #, kde-format
 msgid "No name specified"
 msgstr "Не вказано назви"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:96
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr "Будь ласка, вкажіть назву цього зв’язку."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:102
 #, kde-format
 msgid "No type tag specified"
 msgstr "Не вказано мітки типу"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:103
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr "Будь ласка, додайте мітку типу для цього зв’язку."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:79
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:90
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:81
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:96
 #, kde-format
 msgid "New Relation"
 msgstr "Новий зв’язок"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:154
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:166
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:181
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
@@ -55393,8 +55393,8 @@ msgstr "Роль"
 msgid "Add Relation"
 msgstr "Додати зв’язок"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:105
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:115
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:108
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:124
 #, kde-format
 msgid "value"
 msgstr "значення"
@@ -55431,7 +55431,7 @@ msgstr ">>"
 msgid "Related Tags"
 msgstr "Пов’язані мітки"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:44
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:46
 #, kde-format
 msgid "Add custom tag..."
 msgstr "Додати нетипову мітку…"
@@ -56195,12 +56195,12 @@ msgstr ""
 msgid "Micro World Database II"
 msgstr "Micro World Database II"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:69
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:72
 #, kde-format
 msgid "Azimuthal Equidistant"
 msgstr "Азимутальна еквідистанційна"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:77
 #, kde-format
 msgid ""
 "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</"
@@ -56211,12 +56211,12 @@ msgstr ""
 "p><p>Застосування: показ сейсмічних та радіоданих, а також даних у цифрових "
 "планетаріях.</p>"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:45
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:48
 #, kde-format
 msgid "Flat Map"
 msgstr "Плоска карта"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:53
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -56226,12 +56226,12 @@ msgstr ""
 "p><p>Застосування: фактичний стандарт для наборів даних глобальних текстур у "
 "програмному забезпеченні.</p>"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:77
 #, kde-format
 msgid "Gnomonic"
 msgstr "Гномонічна"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for "
@@ -56242,12 +56242,12 @@ msgstr ""
 "використовується для показу панорамних фотографій. Також використовується "
 "для навігації, радіо та сейсмічних карт.</p>"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:74
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:77
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
 msgstr "Азимутальна Ламберта з рівними площами"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:79
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
@@ -56257,13 +56257,13 @@ msgstr ""
 "p><p>Застосування: використовується у структурній геології для зображення "
 "даних із напрямками.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:50
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Проєкція Меркатора"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -56272,12 +56272,12 @@ msgstr ""
 "<p><b>Проєкція Меркатора</b></p><p>Застосування: популярна стандартна "
 "проєкція карт для навігації.</p>"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:73
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:76
 #, kde-format
 msgid "Globe"
 msgstr "Глобус"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:78
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:81
 #, kde-format
 msgid ""
 "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A "
@@ -56288,12 +56288,12 @@ msgstr ""
 "проєкція із перспективою, що використовується для показу півкулі глобуса "
 "такою, як її можна бачити із зовні.</p>"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:75
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:78
 #, kde-format
 msgid "Stereographic"
 msgstr "Стереографічна"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:80
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:83
 #, kde-format
 msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
@@ -56303,12 +56303,12 @@ msgstr ""
 "використовується для картографії у планетаріях, геології та панорамної "
 "фотографії.</p>"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:90
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:93
 #, kde-format
 msgid "Vertical Perspective Projection"
 msgstr "Проєкція вертикальної перспективи"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:95
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:98
 #, kde-format
 msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
@@ -56659,88 +56659,88 @@ msgstr "Інструменти обробки"
 msgid "Runner Tools"
 msgstr "Інструменти запуску"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:46
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:51
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Не вдалося додати дані до кешу"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:130
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:137
 #, kde-format
 msgid "Visible region"
 msgstr "Видима ділянка"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:132
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
 #, kde-format
 msgid "Specify region"
 msgstr "Вказати ділянку"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:134
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:141
 #, kde-format
 msgid "Download Route"
 msgstr "Отримати маршрут"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:136
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:143
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Увімкнено, якщо маршрут існує"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:149
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:156
 #, kde-format
 msgid "Offset from route:"
 msgstr "Відхилення від маршруту:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:179
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:190
 #, kde-format
 msgid "Selection Method"
 msgstr "Спосіб вибору"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:187
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:198
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Кількість елементів для отримання:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:237
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:251
 #, kde-format
 msgid "Download Region"
 msgstr "Отримання ділянки"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:239
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:253
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Тип плиток, які буде отримано:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:241
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:255
 #, kde-format
 msgid "Texture tiles"
 msgstr "Плитки текстур"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Vector tiles"
 msgstr "Векторні плитки"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:537
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:583
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Передбачено обмеження отримання даних у %1 плиток."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:547
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:597
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Приблизний об’єм даних, які доведеться отримати"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:551
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:602
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Приблизний об’єм отримання: %1 МБ"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:554
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:607
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Приблизний об’єм отримання: %1 кБ"
