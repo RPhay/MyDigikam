@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QList>
+
+// Local includes
 
 #include "translators/OsmConverter.h"
 
@@ -29,11 +33,11 @@ class OsmNodeTagWriter
 {
 public:
 
-    static void writeAllNodes(const OsmConverter::Nodes &osmData, GeoWriter& writer );
+    static void writeAllNodes(const OsmConverter::Nodes& osmData, GeoWriter& writer);
 
 private:
 
-    static void writeNode(const OsmConverter::Node &node, GeoWriter& writer );
+    static void writeNode(const OsmConverter::Node& node, GeoWriter& writer);
 };
 
 } // namespace Marble

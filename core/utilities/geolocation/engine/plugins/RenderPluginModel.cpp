@@ -15,6 +15,8 @@
 
 #include "RenderPluginModel.h"
 
+// Local includes
+
 #include "DialogConfigurationInterface.h"
 #include "PluginInterface.h"
 #include "RenderPlugin.h"
@@ -47,7 +49,7 @@ RenderPluginModel::Private::Private()
 
 RenderPluginModel::RenderPluginModel(QObject* parent)
     : QStandardItemModel(parent),
-      d                 (new Private)
+      d(new Private)
 {
 }
 
@@ -63,7 +65,7 @@ RenderPluginModel::~RenderPluginModel()
     delete d;
 }
 
-void RenderPluginModel::setRenderPlugins(const QList<RenderPlugin*> &renderPlugins)
+void RenderPluginModel::setRenderPlugins(const QList<RenderPlugin*>& renderPlugins)
 {
     // our model doesn't own the items, so take them away
 
@@ -83,13 +85,17 @@ void RenderPluginModel::setRenderPlugins(const QList<RenderPlugin*> &renderPlugi
     }
 }
 
-QVector<PluginAuthor> RenderPluginModel::pluginAuthors( const QModelIndex &index ) const
+QVector<PluginAuthor> RenderPluginModel::pluginAuthors(const QModelIndex& index) const
 {
     if (!index.isValid())
+    {
         return QVector<PluginAuthor>();
+    }
 
     if ((index.row() < 0) || (index.row() >= d->m_renderPlugins.count()))
+    {
         return QVector<PluginAuthor>();
+    }
 
     return d->m_renderPlugins.at(index.row())->pluginAuthors();
 }
@@ -97,10 +103,14 @@ QVector<PluginAuthor> RenderPluginModel::pluginAuthors( const QModelIndex &index
 RenderPlugin* RenderPluginModel::plugin(const QModelIndex& index)
 {
     if (!index.isValid())
+    {
         return nullptr;
+    }
 
     if ((index.row() < 0) || (index.row() >= d->m_renderPlugins.count()))
+    {
         return nullptr;
+    }
 
     RenderPlugin* const plugin = d->m_renderPlugins.at(index.row());
 

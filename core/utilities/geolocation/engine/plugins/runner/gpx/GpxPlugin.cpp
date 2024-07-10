@@ -15,7 +15,11 @@
 
 #include "GpxPlugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "GpxRunner.h"
 
@@ -29,7 +33,7 @@ GpxPlugin::GpxPlugin(QObject* const parent)
 
 QString GpxPlugin::name() const
 {
-    return i18n( "Gpx File Parser" );
+    return i18n("Gpx File Parser");
 }
 
 QString GpxPlugin::nameId() const
@@ -44,7 +48,7 @@ QString GpxPlugin::version() const
 
 QString GpxPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the Gpx data File format." );
+    return i18n("A plugin to load Geolocation Data from the Gpx data File format.");
 }
 
 QString GpxPlugin::copyrightYears() const
@@ -55,12 +59,12 @@ QString GpxPlugin::copyrightYears() const
 QVector<PluginAuthor> GpxPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
+           << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
 }
 
 QString GpxPlugin::fileFormatDescription() const
 {
-    return i18n( "GPS Data" );
+    return i18n("GPS Data");
 }
 
 QStringList GpxPlugin::fileExtensions() const

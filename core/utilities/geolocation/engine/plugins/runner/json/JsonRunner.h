@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ParsingRunner.h"
 
 namespace Marble
@@ -26,10 +28,10 @@ class JsonRunner : public ParsingRunner
 
 public:
 
-    explicit JsonRunner(QObject *parent = nullptr);
+    explicit JsonRunner(QObject* parent = nullptr);
     ~JsonRunner() override;
 
-    GeoDataDocument* parseFile(const QString &fileName, DocumentRole role, QString& error) override;
+    GeoDataDocument* parseFile(const QString& fileName, DocumentRole role, QString& error) override;
 };
 
 } // namespace Marble

@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "PluginInterface.h"
 
@@ -34,7 +38,7 @@ class DIGIKAM_EXPORT ParseRunnerPlugin : public QObject, public PluginInterface
 public:
 
     /** Constructor with optional parent object */
-    explicit ParseRunnerPlugin( QObject* parent = nullptr );
+    explicit ParseRunnerPlugin(QObject* parent = nullptr);
 
     /** Destructor */
     ~ParseRunnerPlugin() override;
@@ -56,7 +60,7 @@ public:
     /** Plugin factory method to create a new runner instance.
       * Method caller gets ownership of the returned object
       */
-    virtual ParsingRunner *newRunner() const = 0;
+    virtual ParsingRunner* newRunner() const = 0;
 
     // Overridden methods with default implementations
 
@@ -70,4 +74,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_INTERFACE( Marble::ParseRunnerPlugin, "org.kde.Marble.ParseRunnerPlugin/1.01" )
+Q_DECLARE_INTERFACE(Marble::ParseRunnerPlugin, "org.kde.Marble.ParseRunnerPlugin/1.01")

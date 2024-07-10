@@ -15,75 +15,88 @@
 
 #include "NavigationButton.h"
 
+// Qt includes
+
 #include <QPainter>
 #include <QMouseEvent>
 
 namespace Marble
 {
 
-NavigationButton::NavigationButton( QWidget *parent )
-    : QAbstractButton( parent ),
-      m_iconMode( QIcon::Normal )
+NavigationButton::NavigationButton(QWidget* parent)
+    : QAbstractButton(parent),
+      m_iconMode(QIcon::Normal)
 {
     // nothing to do
 }
 
-void NavigationButton::mousePressEvent ( QMouseEvent *mouseEvent )
+void NavigationButton::mousePressEvent(QMouseEvent* mouseEvent)
 {
-    if ( isEnabled() ) {
-        if ( mouseEvent->button() == Qt::LeftButton ) {
+    if (isEnabled())
+    {
+        if (mouseEvent->button() == Qt::LeftButton)
+        {
             m_iconMode = QIcon::Selected;
         }
     }
+
     Q_EMIT repaintNeeded();
 }
 
-void NavigationButton::mouseReleaseEvent ( QMouseEvent * )
+void NavigationButton::mouseReleaseEvent(QMouseEvent*)
 {
-    if ( isEnabled() ) {
+    if (isEnabled())
+    {
         m_iconMode = QIcon::Active;
         Q_EMIT clicked();
     }
+
     Q_EMIT repaintNeeded();
 }
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-void NavigationButton::enterEvent(QEnterEvent *)
+void NavigationButton::enterEvent(QEnterEvent*)
 
 #else
 
-void NavigationButton::enterEvent(QEvent *)
+void NavigationButton::enterEvent(QEvent*)
 
 #endif
 
 {
-    if ( isEnabled() ) {
+    if (isEnabled())
+    {
         m_iconMode = QIcon::Active;
     }
+
     Q_EMIT repaintNeeded();
 }
 
-void NavigationButton::leaveEvent( QEvent * )
+void NavigationButton::leaveEvent(QEvent*)
 {
-    if ( isEnabled() ) {
+    if (isEnabled())
+    {
         m_iconMode = QIcon::Normal;
     }
+
     Q_EMIT repaintNeeded();
 }
 
-void NavigationButton::changeEvent( QEvent *e )
+void NavigationButton::changeEvent(QEvent* e)
 {
-    if ( e->type() == QEvent::EnabledChange ) {
+    if (e->type() == QEvent::EnabledChange)
+    {
         m_iconMode = isEnabled() ? QIcon::Normal : QIcon::Disabled;
     }
+
     Q_EMIT repaintNeeded();
 }
 
-void NavigationButton::paintEvent( QPaintEvent * )
+void NavigationButton::paintEvent(QPaintEvent*)
 {
-    QPainter painter( this );
-    painter.drawPixmap( 0, 0, icon().pixmap( iconSize(), m_iconMode ) );
+    QPainter painter(this);
+    painter.drawPixmap(0, 0, icon().pixmap(iconSize(), m_iconMode));
 }
 
 } // namespace Marble

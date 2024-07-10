@@ -15,6 +15,8 @@
 
 #include "GpxParser.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoDataDocument.h"
 
@@ -22,7 +24,7 @@ namespace Marble
 {
 
 GpxParser::GpxParser()
-    : GeoParser( 0 )
+    : GeoParser(0)
 {
 }
 
@@ -43,9 +45,9 @@ bool GpxParser::isValidElement(const QString& tagName) const
     }
 
     return (
-            (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpace10)))    ||
-            (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpace11)))    ||
-            (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpaceGarminTrackPointExt1)))
+               (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpace10)))    ||
+               (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpace11)))    ||
+               (namespaceUri() == QStringView(QString::fromUtf8(gpx::gpxTag_nameSpaceGarminTrackPointExt1)))
            );
 }
 

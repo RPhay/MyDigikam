@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QAbstractSlider>
 #include <QPixmap>
 
@@ -27,7 +29,7 @@ class NavigationSlider : public QAbstractSlider
 
 public:
 
-    explicit NavigationSlider( QWidget *parent = nullptr );
+    explicit NavigationSlider(QWidget* parent = nullptr);
     ~NavigationSlider() override;
 
 Q_SIGNALS:
@@ -38,24 +40,24 @@ protected:
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    void enterEvent( QEnterEvent * ) override;
+    void enterEvent(QEnterEvent*) override;
 
 #else
 
-    void enterEvent( QEvent * ) override;
+    void enterEvent(QEvent*) override;
 
 #endif
 
-    void mouseMoveEvent( QMouseEvent * mouseEvent) override;
-    void mousePressEvent( QMouseEvent * ) override;
-    void mouseReleaseEvent( QMouseEvent * ) override;
-    void leaveEvent( QEvent * ) override;
-    void paintEvent( QPaintEvent * ) override;
+    void mouseMoveEvent(QMouseEvent* mouseEvent) override;
+    void mousePressEvent(QMouseEvent*) override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void leaveEvent(QEvent*) override;
+    void paintEvent(QPaintEvent*) override;
     void repaint();
 
 private:
 
-    static QPixmap pixmap(const QString &id );
+    static QPixmap pixmap(const QString& id);
 
 private:
 

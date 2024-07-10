@@ -15,14 +15,17 @@
 
 #include "GPXhrTagHandler.h"
 
+// Qt includes
+
 #include <QVariant>
+
+// Local includes
 
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataTrack.h"
 #include "GeoDataSimpleArrayData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -39,17 +42,20 @@ GeoNode* GPXhrTagHandler::parse(GeoParser& parser) const
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.is<GeoDataTrack>() )
+    if (parentItem.is<GeoDataTrack>())
     {
         GeoDataSimpleArrayData* arrayData = parentItem.nodeAs<GeoDataTrack>()
-                        ->extendedData().simpleArrayData(QStringLiteral("heartrate"));
-        if (!arrayData) {
+                                            ->extendedData().simpleArrayData(QStringLiteral("heartrate"));
+
+        if (!arrayData)
+        {
             arrayData = new GeoDataSimpleArrayData();
-            QString name = parser.attribute( "name" ).trimmed();
+            QString name = parser.attribute("name").trimmed();
             parentItem.nodeAs<GeoDataTrack>()->extendedData().setSimpleArrayData(QStringLiteral("heartrate"), arrayData);
         }
-        QVariant value( parser.readElementText().toInt() );
-        arrayData->append( value );
+
+        QVariant value(parser.readElementText().toInt());
+        arrayData->append(value);
         return nullptr;
     }
 

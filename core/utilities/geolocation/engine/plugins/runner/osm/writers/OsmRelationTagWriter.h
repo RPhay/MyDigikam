@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QMap>
 
 namespace Marble
@@ -30,11 +32,11 @@ class OsmRelationTagWriter
 
 public:
 
-    static void writeRelation( const QVector<GeoDataPlacemark*>& relation, const QString& id,
-                               const QMap<QString,QString>& tags, GeoWriter& writer );
+    static void writeRelation(const QVector<GeoDataPlacemark*>& relation, const QString& id,
+                              const QMap<QString, QString>& tags, GeoWriter& writer);
 
-    static void writeMultipolygon( const GeoDataPolygon& polygon,
-                                   const OsmPlacemarkData& osmData, GeoWriter& writer );
+    static void writeMultipolygon(const GeoDataPolygon& polygon,
+                                  const OsmPlacemarkData& osmData, GeoWriter& writer);
 };
 
 } // namespace Marble

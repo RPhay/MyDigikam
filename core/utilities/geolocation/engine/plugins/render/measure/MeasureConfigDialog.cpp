@@ -15,18 +15,20 @@
 
 #include "MeasureConfigDialog.h"
 
+// Qt includes
+
 #include <QPushButton>
 
 namespace Marble
 {
 
-MeasureConfigDialog::MeasureConfigDialog(QDialog *parent) :
+MeasureConfigDialog::MeasureConfigDialog(QDialog* parent) :
     QDialog(parent),
     ui(new Ui::MeasureConfigDialog)
 {
     ui->setupUi(this);
 
-    QPushButton *apply = ui->m_buttonBox->button(QDialogButtonBox::Apply);
+    QPushButton* apply = ui->m_buttonBox->button(QDialogButtonBox::Apply);
     connect(apply, SIGNAL(clicked()), this, SIGNAL(applied()));
     connect(ui->m_modeCombo, SIGNAL(currentIndexChanged(int)),
             this, SLOT(updateTabs()));
@@ -132,15 +134,17 @@ void MeasureConfigDialog::setPaintMode(MeasureToolPlugin::PaintMode mode)
 
 void MeasureConfigDialog::updateTabs()
 {
-    switch (paintMode()) {
-    case MeasureToolPlugin::Polygon:
-        ui->tabWidget->setTabEnabled(0, true);
-        ui->tabWidget->setTabEnabled(1, false);
-        break;
-    case MeasureToolPlugin::Circular:
-        ui->tabWidget->setTabEnabled(0, false);
-        ui->tabWidget->setTabEnabled(1, true);
-        break;
+    switch (paintMode())
+    {
+        case MeasureToolPlugin::Polygon:
+            ui->tabWidget->setTabEnabled(0, true);
+            ui->tabWidget->setTabEnabled(1, false);
+            break;
+
+        case MeasureToolPlugin::Circular:
+            ui->tabWidget->setTabEnabled(0, false);
+            ui->tabWidget->setTabEnabled(1, true);
+            break;
     }
 }
 

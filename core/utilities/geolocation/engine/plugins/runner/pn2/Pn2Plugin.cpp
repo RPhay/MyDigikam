@@ -15,7 +15,11 @@
 
 #include "Pn2Plugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "Pn2Runner.h"
 
@@ -23,13 +27,13 @@ namespace Marble
 {
 
 Pn2Plugin::Pn2Plugin(QObject* const parent)
-    : ParseRunnerPlugin( parent )
+    : ParseRunnerPlugin(parent)
 {
 }
 
 QString Pn2Plugin::name() const
 {
-    return i18n( "Pn2 File Parser" );
+    return i18n("Pn2 File Parser");
 }
 
 QString Pn2Plugin::nameId() const
@@ -44,7 +48,7 @@ QString Pn2Plugin::version() const
 
 QString Pn2Plugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the compressed Pnt data files format" );
+    return i18n("A plugin to load Geolocation Data from the compressed Pnt data files format");
 }
 
 QString Pn2Plugin::copyrightYears() const
@@ -55,12 +59,12 @@ QString Pn2Plugin::copyrightYears() const
 QVector<PluginAuthor> Pn2Plugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Cezar Mocan"), QStringLiteral("mocancezar@gmail.com"));
+           << PluginAuthor(QStringLiteral("Cezar Mocan"), QStringLiteral("mocancezar@gmail.com"));
 }
 
 QString Pn2Plugin::fileFormatDescription() const
 {
-    return i18n( "Compressed Pnt" );
+    return i18n("Compressed Pnt");
 }
 
 QStringList Pn2Plugin::fileExtensions() const

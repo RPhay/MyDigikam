@@ -15,17 +15,20 @@
 
 #include "JsonRunner.h"
 
+// Qt includes
+
 #include <QFile>
+
+// Local includes
 
 #include "JsonParser.h"
 #include "GeoDataDocument.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-JsonRunner::JsonRunner(QObject *parent) :
+JsonRunner::JsonRunner(QObject* parent) :
     ParsingRunner(parent)
 {
 }
@@ -34,11 +37,13 @@ JsonRunner::~JsonRunner()
 {
 }
 
-GeoDataDocument *JsonRunner::parseFile(const QString &fileName, DocumentRole role, QString &error)
+GeoDataDocument* JsonRunner::parseFile(const QString& fileName, DocumentRole role, QString& error)
 {
     // Check that the file exists
     QFile file(fileName);
-    if (! file.exists()) {
+
+    if (! file.exists())
+    {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
@@ -51,7 +56,8 @@ GeoDataDocument *JsonRunner::parseFile(const QString &fileName, DocumentRole rol
     JsonParser parser;
 
     // Start parsing
-    if (! parser.read(&file)) {
+    if (! parser.read(&file))
+    {
         error = QStringLiteral("Could not parse GeoJSON from %1").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
@@ -60,8 +66,8 @@ GeoDataDocument *JsonRunner::parseFile(const QString &fileName, DocumentRole rol
     GeoDataDocument* document = parser.releaseDocument();
     file.close();
 
-    document->setDocumentRole( role );
-    document->setFileName( fileName );
+    document->setDocumentRole(role);
+    document->setFileName(fileName);
 
     return document;
 }

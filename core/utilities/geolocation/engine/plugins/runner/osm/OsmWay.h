@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QSet>
 #include <QString>
+
+// Local includes
 
 #include "OsmNode.h"
 #include "GeoDataBuilding.h"
@@ -32,23 +36,23 @@ class OsmWay
 {
 public:
 
-    OsmPlacemarkData & osmData();
+    OsmPlacemarkData& osmData();
     void addReference(qint64 id);
 
-    const OsmPlacemarkData & osmData() const;
-    const QVector<qint64> &references() const;
+    const OsmPlacemarkData& osmData() const;
+    const QVector<qint64>& references() const;
 
-    GeoDataPlacemark* create(const OsmNodes &nodes, QSet<qint64> &usedNodes) const;
+    GeoDataPlacemark* create(const OsmNodes& nodes, QSet<qint64>& usedNodes) const;
 
 private:
 
     bool isArea() const;
 
-    static bool isAreaTag(const StyleBuilder::OsmTag &keyValue);
+    static bool isAreaTag(const StyleBuilder::OsmTag& keyValue);
 
     bool isBuilding() const;
 
-    static bool isBuildingTag(const StyleBuilder::OsmTag &keyValue);
+    static bool isBuildingTag(const StyleBuilder::OsmTag& keyValue);
 
 
     QString extractBuildingName() const;
@@ -64,6 +68,6 @@ private:
     static QSet<StyleBuilder::OsmTag> s_buildingTags;
 };
 
-typedef QHash<qint64,OsmWay> OsmWays;
+typedef QHash<qint64, OsmWay> OsmWays;
 
 } // namespace Marble

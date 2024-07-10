@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QStringList>
+
+// Local includes
 
 #include "PluginInterface.h"
 #include "LayerInterface.h"
@@ -72,4 +76,4 @@ public:
 
 } // namespace Marble
 
-Q_DECLARE_INTERFACE( Marble::RenderPluginInterface, "org.kde.Marble.RenderPluginInterface/1.09" )
+Q_DECLARE_INTERFACE(Marble::RenderPluginInterface, "org.kde.Marble.RenderPluginInterface/1.09")

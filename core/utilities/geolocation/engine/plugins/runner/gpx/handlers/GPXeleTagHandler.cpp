@@ -15,11 +15,12 @@
 
 #include "GPXeleTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPoint.h"
 #include "GeoDataTrack.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -35,12 +36,14 @@ GeoNode* GPXeleTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_ele)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_trkpt))
     {
         GeoDataTrack* track = parentItem.nodeAs<GeoDataTrack>();
-        track->appendAltitude( parser.readElementText().trimmed().toDouble() );
+        track->appendAltitude(parser.readElementText().trimmed().toDouble());
         return track;
     }
+
     return nullptr;
 }
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ParseRunnerPlugin.h"
 
 namespace Marble
@@ -24,11 +26,11 @@ class CachePlugin : public ParseRunnerPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.CachePlugin")
-    Q_INTERFACES( Marble::ParseRunnerPlugin )
+    Q_INTERFACES(Marble::ParseRunnerPlugin)
 
 public:
 
-    explicit CachePlugin(QObject* const parent = nullptr );
+    explicit CachePlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 

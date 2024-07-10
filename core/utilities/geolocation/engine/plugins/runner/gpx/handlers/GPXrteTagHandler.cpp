@@ -15,13 +15,14 @@
 
 #include "GPXrteTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataDocument.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataPoint.h"
 #include "GeoDataLineString.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,19 +38,21 @@ GeoNode* GPXrteTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_rte)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_gpx))
     {
         GeoDataDocument* doc = parentItem.nodeAs<GeoDataDocument>();
 
         // placemark for the linestring
-        GeoDataPlacemark *placemark = new GeoDataPlacemark;
+        GeoDataPlacemark* placemark = new GeoDataPlacemark;
         doc->append(placemark);
-        GeoDataLineString *linestring = new GeoDataLineString;
+        GeoDataLineString* linestring = new GeoDataLineString;
         placemark->setGeometry(linestring);
         placemark->setStyleUrl(QStringLiteral("#map-route"));
 
         return placemark;
     }
+
     return nullptr;
 }
 

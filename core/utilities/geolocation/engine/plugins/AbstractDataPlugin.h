@@ -15,9 +15,9 @@
 
 #pragma once
 
-// Marble
-#include "RenderPlugin.h"
+// Local includes
 
+#include "RenderPlugin.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -44,14 +44,14 @@ class DIGIKAM_EXPORT AbstractDataPlugin : public RenderPlugin
 {
     Q_OBJECT
 
-    Q_PROPERTY( bool favoriteItemsOnly READ isFavoriteItemsOnly WRITE setFavoriteItemsOnly NOTIFY favoriteItemsOnlyChanged )
+    Q_PROPERTY(bool favoriteItemsOnly READ isFavoriteItemsOnly WRITE setFavoriteItemsOnly NOTIFY favoriteItemsOnlyChanged)
     /** @todo FIXME Qt Quick segfaults if using the real class here instead of QObject */
-    Q_PROPERTY( QObject* favoritesModel READ favoritesModel NOTIFY favoritesModelChanged )
-    Q_PROPERTY( int numberOfItems READ numberOfItems WRITE setNumberOfItems NOTIFY changedNumberOfItems )
+    Q_PROPERTY(QObject* favoritesModel READ favoritesModel NOTIFY favoritesModelChanged)
+    Q_PROPERTY(int numberOfItems READ numberOfItems WRITE setNumberOfItems NOTIFY changedNumberOfItems)
 
 public:
 
-    explicit AbstractDataPlugin( const MarbleModel *marbleModel );
+    explicit AbstractDataPlugin(const MarbleModel* marbleModel);
 
     ~AbstractDataPlugin() override;
 
@@ -76,24 +76,24 @@ public:
      * @brief Renders the content provided by the plugin on the viewport.
      * @return @c true  Returns whether the rendering has been successful
      */
-    bool render( GeoPainter *painter, ViewportParams *viewport,
-                 const QString& renderPos = QLatin1String("NONE"), GeoSceneLayer * layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport,
+                const QString& renderPos = QLatin1String("NONE"), GeoSceneLayer* layer = nullptr) override;
 
     /**
      * @return The model associated with the plugin.
      */
-    AbstractDataPluginModel *model();
-    const AbstractDataPluginModel *model() const;
+    AbstractDataPluginModel* model();
+    const AbstractDataPluginModel* model() const;
 
     /**
      * Set the model of the plugin.
      */
-    void setModel( AbstractDataPluginModel* model );
+    void setModel(AbstractDataPluginModel* model);
 
     /**
      * Set the number of items to be shown at the same time.
      */
-    void setNumberOfItems( quint32 number );
+    void setNumberOfItems(quint32 number);
 
     /**
      * @return The number of items to be shown at the same time.
@@ -106,7 +106,7 @@ public:
      *
      * @return The items at the given position.
      */
-    QList<AbstractDataPluginItem *> whichItemAt( const QPoint& curpos );
+    QList<AbstractDataPluginItem*> whichItemAt(const QPoint& curpos);
 
     /**
      * Function for returning the type of plugin this is for.
@@ -117,7 +117,7 @@ public:
     RenderType renderType() const override;
 
     /** Convenience method to set the favorite item state on the current model */
-    void setFavoriteItemsOnly( bool favoriteOnly );
+    void setFavoriteItemsOnly(bool favoriteOnly);
 
     bool isFavoriteItemsOnly() const;
 
@@ -125,13 +125,13 @@ public:
 
 private Q_SLOTS:
 
-    virtual void favoriteItemsChanged( const QStringList& favoriteItems );
+    virtual void favoriteItemsChanged(const QStringList& favoriteItems);
 
     void delayedUpdate();
 
 Q_SIGNALS:
 
-    void changedNumberOfItems( quint32 number );
+    void changedNumberOfItems(quint32 number);
 
     void favoriteItemsOnlyChanged();
 

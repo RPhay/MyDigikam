@@ -15,12 +15,14 @@
 
 #pragma once
 
+// Local includes
+
 #include "AbstractFloatItem.h"
 #include "DialogConfigurationInterface.h"
 
 namespace Ui
 {
-    class MapScaleConfigWidget;
+class MapScaleConfigWidget;
 }
 
 namespace Marble
@@ -30,17 +32,17 @@ namespace Marble
  * @short The class that creates a map scale.
  */
 class MapScaleFloatItem : public AbstractFloatItem,
-                          public DialogConfigurationInterface
+    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.MapScaleFloatItem")
-    Q_INTERFACES( Marble::RenderPluginInterface )
-    Q_INTERFACES( Marble::DialogConfigurationInterface )
-    MARBLE_PLUGIN( MapScaleFloatItem )
+    Q_INTERFACES(Marble::RenderPluginInterface)
+    Q_INTERFACES(Marble::DialogConfigurationInterface)
+    MARBLE_PLUGIN(MapScaleFloatItem)
 
 public:
 
-    explicit MapScaleFloatItem( const MarbleModel *marbleModel = nullptr );
+    explicit MapScaleFloatItem(const MarbleModel* marbleModel = nullptr);
     ~MapScaleFloatItem() override;
 
     QStringList backendTypes() const override;
@@ -59,22 +61,22 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
-    void setProjection( const ViewportParams *viewport ) override;
+    void setProjection(const ViewportParams* viewport) override;
 
-    void paintContent( QPainter *painter ) override;
+    void paintContent(QPainter* painter) override;
 
-    QDialog *configDialog() override;
+    QDialog* configDialog() override;
 
 protected:
 
-    void contextMenuEvent( QWidget *w, QContextMenuEvent *e ) override;
-    void toolTipEvent( QHelpEvent *e ) override;
+    void contextMenuEvent(QWidget* w, QContextMenuEvent* e) override;
+    void toolTipEvent(QHelpEvent* e) override;
 
 private Q_SLOTS:
 

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QAbstractButton>
 
 namespace Marble
@@ -26,7 +28,7 @@ class NavigationButton : public QAbstractButton
 
 public:
 
-    explicit NavigationButton( QWidget *parent = nullptr );
+    explicit NavigationButton(QWidget* parent = nullptr);
 
 Q_SIGNALS:
 
@@ -34,22 +36,22 @@ Q_SIGNALS:
 
 protected:
 
-    void mousePressEvent ( QMouseEvent *mouseEvent ) override;
-    void mouseReleaseEvent ( QMouseEvent *mouseEvent ) override;
+    void mousePressEvent(QMouseEvent* mouseEvent) override;
+    void mouseReleaseEvent(QMouseEvent* mouseEvent) override;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    void enterEvent( QEnterEvent * e) override;
+    void enterEvent(QEnterEvent* e) override;
 
 #else
 
-    void enterEvent( QEvent * e) override;
+    void enterEvent(QEvent* e) override;
 
 #endif
 
-    void leaveEvent( QEvent * e) override;
-    void changeEvent( QEvent *e ) override;
-    void paintEvent( QPaintEvent * ) override;
+    void leaveEvent(QEvent* e) override;
+    void changeEvent(QEvent* e) override;
+    void paintEvent(QPaintEvent*) override;
 
 private:
 

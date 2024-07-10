@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ParsingRunner.h"
 
 namespace Marble
@@ -26,8 +28,8 @@ class OsmRunner : public ParsingRunner
 
 public:
 
-    explicit OsmRunner(QObject *parent = nullptr);
-    GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) override;
+    explicit OsmRunner(QObject* parent = nullptr);
+    GeoDataDocument* parseFile(const QString& fileName, DocumentRole role, QString& error) override;
 };
 
 } // namespace Marble

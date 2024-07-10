@@ -15,13 +15,16 @@
 
 #include "GPXtimeTagHandler.h"
 
+// Qt includes
+
 #include <QDateTime>
+
+// Local includes
 
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPoint.h"
 #include "GeoDataTrack.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,12 +40,14 @@ GeoNode* GPXtimeTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_time)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_trkpt))
     {
         GeoDataTrack* track = parentItem.nodeAs<GeoDataTrack>();
-        QDateTime dateTime = QDateTime::fromString( parser.readElementText().trimmed(), Qt::ISODate );
-        track->appendWhen( dateTime );
+        QDateTime dateTime = QDateTime::fromString(parser.readElementText().trimmed(), Qt::ISODate);
+        track->appendWhen(dateTime);
     }
+
     return nullptr;
 }
 

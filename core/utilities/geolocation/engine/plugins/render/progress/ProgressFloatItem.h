@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QMutex>
 #include <QTimer>
 #include <QIcon>
+
+// Local includes
 
 #include "AbstractFloatItem.h"
 
@@ -33,14 +37,14 @@ class ProgressFloatItem  : public AbstractFloatItem
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.ProgressFloatItem")
 
-    Q_INTERFACES( Marble::RenderPluginInterface )
+    Q_INTERFACES(Marble::RenderPluginInterface)
 
-    MARBLE_PLUGIN( ProgressFloatItem )
+    MARBLE_PLUGIN(ProgressFloatItem)
 
 public:
 
-    explicit ProgressFloatItem( const MarbleModel *marbleModel = nullptr );
-    ~ProgressFloatItem () override;
+    explicit ProgressFloatItem(const MarbleModel* marbleModel = nullptr);
+    ~ProgressFloatItem() override;
 
     QStringList backendTypes() const override;
 
@@ -58,21 +62,21 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
     QPainterPath backgroundShape() const override;
 
-    void paintContent( QPainter *painter ) override;
+    void paintContent(QPainter* painter) override;
 
 private Q_SLOTS:
 
     void removeProgressItem();
 
-    void handleProgress( int active, int queued );
+    void handleProgress(int active, int queued);
 
     void hideProgress();
 
@@ -82,11 +86,11 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( ProgressFloatItem )
+    Q_DISABLE_COPY(ProgressFloatItem)
 
     bool active() const;
 
-    void setActive( bool active );
+    void setActive(bool active);
 
 private:
 

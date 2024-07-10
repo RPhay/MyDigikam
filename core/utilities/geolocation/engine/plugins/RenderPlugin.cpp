@@ -13,19 +13,19 @@
  *
  * ============================================================ */
 
-// Self
 #include "RenderPlugin.h"
 
-// Qt
+// Qt includes
+
 #include <QAction>
 #include <QStandardItem>
 
-// Marble
+// Local includes
+
 #include "DialogConfigurationInterface.h"
 #include "MarbleModel.h"
 #include "RenderPluginModel.h"
 #include "RenderState.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -35,8 +35,8 @@ class Q_DECL_HIDDEN RenderPlugin::Private
 {
 public:
 
-    Private( const MarbleModel *marbleModel )
-        : m_marbleModel( marbleModel ),
+    Private(const MarbleModel* marbleModel)
+        : m_marbleModel(marbleModel),
           m_action(nullptr),
           m_item(),
           m_enabled(true),
@@ -63,22 +63,22 @@ public:
     bool                     m_userCheckable;
 };
 
-RenderPlugin::RenderPlugin( const MarbleModel *marbleModel )
-    : d( new Private( marbleModel ) )
+RenderPlugin::RenderPlugin(const MarbleModel* marbleModel)
+    : d(new Private(marbleModel))
 {
-    connect( &d->m_action, SIGNAL(toggled(bool)),
-             this,         SLOT(setVisible(bool)) );
-    connect( this,         SIGNAL(visibilityChanged(bool,QString)),
-             &d->m_action, SLOT(setChecked(bool)) );
-    connect( this,         SIGNAL(enabledChanged(bool)),
-             &d->m_action, SLOT(setVisible(bool)) );
-    connect( this,         SIGNAL(enabledChanged(bool)),
-                           SIGNAL(actionGroupsChanged()) );
+    connect(&d->m_action, SIGNAL(toggled(bool)),
+            this,         SLOT(setVisible(bool)));
+    connect(this,         SIGNAL(visibilityChanged(bool, QString)),
+            &d->m_action, SLOT(setChecked(bool)));
+    connect(this,         SIGNAL(enabledChanged(bool)),
+            &d->m_action, SLOT(setVisible(bool)));
+    connect(this,         SIGNAL(enabledChanged(bool)),
+            SIGNAL(actionGroupsChanged()));
 
-    connect( this, SIGNAL(visibilityChanged(bool,QString)),
-             this, SIGNAL(repaintNeeded()) );
-    connect( this, SIGNAL(settingsChanged(QString)),
-             this, SIGNAL(repaintNeeded()) );
+    connect(this, SIGNAL(visibilityChanged(bool, QString)),
+            this, SIGNAL(repaintNeeded()));
+    connect(this, SIGNAL(settingsChanged(QString)),
+            this, SIGNAL(repaintNeeded()));
 }
 
 RenderPlugin::~RenderPlugin()
@@ -93,11 +93,11 @@ const MarbleModel* RenderPlugin::marbleModel() const
 
 QAction* RenderPlugin::action() const
 {
-    d->m_action.setCheckable( true );
-    d->m_action.setChecked( visible() );
-    d->m_action.setIcon( icon() );
-    d->m_action.setText( guiString() );
-    d->m_action.setToolTip( description() );
+    d->m_action.setCheckable(true);
+    d->m_action.setChecked(visible());
+    d->m_action.setIcon(icon());
+    d->m_action.setText(guiString());
+    d->m_action.setToolTip(description());
     return &d->m_action;
 }
 
@@ -113,63 +113,68 @@ const QList<QActionGroup*>* RenderPlugin::toolbarActionGroups() const
 
 QStandardItem* RenderPlugin::item()
 {
-    d->m_item.setIcon( icon() );
-    d->m_item.setText( name() );
-    d->m_item.setEditable( false );
-    d->m_item.setCheckable( true );
-    d->m_item.setCheckState( enabled() ?  Qt::Checked : Qt::Unchecked  );
-    d->m_item.setToolTip( description() );
-    d->m_item.setFlags( d->m_item.flags() & ~Qt::ItemIsSelectable );
+    d->m_item.setIcon(icon());
+    d->m_item.setText(name());
+    d->m_item.setEditable(false);
+    d->m_item.setCheckable(true);
+    d->m_item.setCheckState(enabled() ?  Qt::Checked : Qt::Unchecked);
+    d->m_item.setToolTip(description());
+    d->m_item.setFlags(d->m_item.flags() & ~Qt::ItemIsSelectable);
 
     // Custom data
-    d->m_item.setData( nameId(), RenderPluginModel::NameId );
-    d->m_item.setData( (bool) qobject_cast<DialogConfigurationInterface *>( this ), RenderPluginModel::ConfigurationDialogAvailable );
-    d->m_item.setData( backendTypes(), RenderPluginModel::BackendTypes );
-    d->m_item.setData( version(), RenderPluginModel::Version );
-    d->m_item.setData( aboutDataText(), RenderPluginModel::AboutDataText );
-    d->m_item.setData( copyrightYears(), RenderPluginModel::CopyrightYears );
+    d->m_item.setData(nameId(), RenderPluginModel::NameId);
+    d->m_item.setData((bool) qobject_cast<DialogConfigurationInterface*>(this), RenderPluginModel::ConfigurationDialogAvailable);
+    d->m_item.setData(backendTypes(), RenderPluginModel::BackendTypes);
+    d->m_item.setData(version(), RenderPluginModel::Version);
+    d->m_item.setData(aboutDataText(), RenderPluginModel::AboutDataText);
+    d->m_item.setData(copyrightYears(), RenderPluginModel::CopyrightYears);
 
     return &d->m_item;
 }
 
 void RenderPlugin::applyItemState()
 {
-    setEnabled( d->m_item.checkState() == Qt::Checked );
+    setEnabled(d->m_item.checkState() == Qt::Checked);
 }
 
 void RenderPlugin::retrieveItemState()
 {
-    d->m_item.setCheckState( enabled() ? Qt::Checked : Qt::Unchecked  );
+    d->m_item.setCheckState(enabled() ? Qt::Checked : Qt::Unchecked);
 }
 
-void RenderPlugin::setEnabled( bool enabled )
+void RenderPlugin::setEnabled(bool enabled)
 {
-    if ( enabled == d->m_enabled )
+    if (enabled == d->m_enabled)
+    {
         return;
+    }
 
     d->m_enabled = enabled;
 
-    d->m_item.setCheckState( enabled ? Qt::Checked : Qt::Unchecked  );
+    d->m_item.setCheckState(enabled ? Qt::Checked : Qt::Unchecked);
 
-    Q_EMIT enabledChanged( enabled );
+    Q_EMIT enabledChanged(enabled);
 }
 
-void RenderPlugin::setVisible( bool visible )
+void RenderPlugin::setVisible(bool visible)
 {
-    if ( visible == d->m_visible )
+    if (visible == d->m_visible)
+    {
         return;
+    }
 
     d->m_visible = visible;
 
-    Q_EMIT visibilityChanged( visible, nameId() );
+    Q_EMIT visibilityChanged(visible, nameId());
 }
 
-void RenderPlugin::setUserCheckable( bool checkable )
+void RenderPlugin::setUserCheckable(bool checkable)
 {
-    if ( checkable != d->m_userCheckable ) {
-        d->m_action.setEnabled( checkable );
+    if (checkable != d->m_userCheckable)
+    {
+        d->m_action.setEnabled(checkable);
         d->m_userCheckable = checkable;
-        Q_EMIT userCheckableChanged( checkable );
+        Q_EMIT userCheckableChanged(checkable);
     }
 }
 
@@ -188,9 +193,9 @@ bool RenderPlugin::isUserCheckable() const
     return d->m_userCheckable;
 }
 
-QHash<QString,QVariant> RenderPlugin::settings() const
+QHash<QString, QVariant> RenderPlugin::settings() const
 {
-    QHash<QString,QVariant> result;
+    QHash<QString, QVariant> result;
 
     result.insert(QStringLiteral("enabled"), enabled());
     result.insert(QStringLiteral("visible"), visible());
@@ -198,7 +203,7 @@ QHash<QString,QVariant> RenderPlugin::settings() const
     return result;
 }
 
-void RenderPlugin::setSettings( const QHash<QString,QVariant> &settings )
+void RenderPlugin::setSettings(const QHash<QString, QVariant>& settings)
 {
     setEnabled(settings.value(QStringLiteral("enabled"), enabled()).toBool());
     setVisible(settings.value(QStringLiteral("visible"), visible()).toBool());
@@ -211,7 +216,7 @@ RenderPlugin::RenderType RenderPlugin::renderType() const
 
 RenderState RenderPlugin::renderState() const
 {
-    return RenderState( name() );
+    return RenderState(name());
 }
 
 QString RenderPlugin::runtimeTrace() const
@@ -219,14 +224,14 @@ QString RenderPlugin::runtimeTrace() const
     return name();
 }
 
-bool RenderPlugin::eventFilter( QObject *, QEvent * )
+bool RenderPlugin::eventFilter(QObject*, QEvent*)
 {
     return false;
 }
 
 void RenderPlugin::restoreDefaultSettings()
 {
-    setSettings( QHash<QString,QVariant>() );
+    setSettings(QHash<QString, QVariant>());
 }
 
 QStringList RenderPlugin::settingKeys() const
@@ -234,22 +239,26 @@ QStringList RenderPlugin::settingKeys() const
     return settings().keys();
 }
 
-bool RenderPlugin::setSetting( const QString & key, const QVariant & value )
+bool RenderPlugin::setSetting(const QString& key, const QVariant& value)
 {
     QHash< QString, QVariant> settings = this->settings();
-    if( settings.contains( key ) )
+
+    if (settings.contains(key))
     {
         settings [ key ] = value;
-        setSettings( settings );
+        setSettings(settings);
         return true;
-    } else {
+    }
+
+    else
+    {
         return false;
     }
 }
 
-QVariant RenderPlugin::setting( const QString & name ) const
+QVariant RenderPlugin::setting(const QString& name) const
 {
-    return settings().value( name, QVariant() );
+    return settings().value(name, QVariant());
 }
 
 } // namespace Marble

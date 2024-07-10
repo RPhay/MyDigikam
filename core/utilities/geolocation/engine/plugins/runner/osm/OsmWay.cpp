@@ -13,6 +13,10 @@
  *
  * ============================================================ */
 
+#include "OsmWay.h"
+
+// Local includes
+
 #include "OsmRelation.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataLineStyle.h"
@@ -22,7 +26,6 @@
 #include "OsmObjectManager.h"
 #include "MarbleDirs.h"
 #include "GeoDataMultiGeometry.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -31,29 +34,35 @@ namespace Marble
 QSet<StyleBuilder::OsmTag> OsmWay::s_areaTags;
 QSet<StyleBuilder::OsmTag> OsmWay::s_buildingTags;
 
-GeoDataPlacemark *OsmWay::create(const OsmNodes &nodes, QSet<qint64> &usedNodes) const
+GeoDataPlacemark* OsmWay::create(const OsmNodes& nodes, QSet<qint64>& usedNodes) const
 {
     OsmPlacemarkData osmData = m_osmData;
-    GeoDataGeometry *geometry = nullptr;
+    GeoDataGeometry* geometry = nullptr;
 
-    if (isArea()) {
+    if (isArea())
+    {
         GeoDataLinearRing linearRing;
         linearRing.reserve(m_references.size());
         bool const stripLastNode = m_references.first() == m_references.last();
-        for (int i=0, n=m_references.size() - (stripLastNode ? 1 : 0); i<n; ++i) {
+
+        for (int i = 0, n = m_references.size() - (stripLastNode ? 1 : 0); i < n; ++i)
+        {
             qint64 nodeId = m_references[i];
             auto const nodeIter = nodes.constFind(nodeId);
-            if (nodeIter == nodes.constEnd()) {
+
+            if (nodeIter == nodes.constEnd())
+            {
                 return nullptr;
             }
 
-            OsmNode const & node = nodeIter.value();
+            OsmNode const& node = nodeIter.value();
             osmData.addNodeReference(node.coordinates(), node.osmData());
             linearRing.append(node.coordinates());
             usedNodes << nodeId;
         }
 
-        if (isBuilding()) {
+        if (isBuilding())
+        {
             GeoDataBuilding building;
             building.setName(extractBuildingName());
             building.setHeight(extractBuildingHeight());
@@ -61,20 +70,29 @@ GeoDataPlacemark *OsmWay::create(const OsmNodes &nodes, QSet<qint64> &usedNodes)
             building.multiGeometry()->append(new GeoDataLinearRing(linearRing.optimized()));
 
             geometry = new GeoDataBuilding(building);
-        } else {
+        }
+
+        else
+        {
             geometry = new GeoDataLinearRing(linearRing.optimized());
         }
-    } else {
+    }
+
+    else
+    {
         GeoDataLineString lineString;
         lineString.reserve(m_references.size());
 
-        for(auto nodeId: m_references) {
+        for (auto nodeId : m_references)
+        {
             auto const nodeIter = nodes.constFind(nodeId);
-            if (nodeIter == nodes.constEnd()) {
+
+            if (nodeIter == nodes.constEnd())
+            {
                 return nullptr;
             }
 
-            OsmNode const & node = nodeIter.value();
+            OsmNode const& node = nodeIter.value();
             osmData.addNodeReference(node.coordinates(), node.osmData());
             lineString.append(node.coordinates());
             usedNodes << nodeId;
@@ -87,13 +105,16 @@ GeoDataPlacemark *OsmWay::create(const OsmNodes &nodes, QSet<qint64> &usedNodes)
 
     OsmObjectManager::registerId(m_osmData.id());
 
-    GeoDataPlacemark *placemark = new GeoDataPlacemark;
+    GeoDataPlacemark* placemark = new GeoDataPlacemark;
     placemark->setGeometry(geometry);
     placemark->setVisualCategory(StyleBuilder::determineVisualCategory(m_osmData));
     placemark->setName(m_osmData.tagValue(QStringLiteral("name")));
-    if (placemark->name().isEmpty()) {
+
+    if (placemark->name().isEmpty())
+    {
         placemark->setName(m_osmData.tagValue(QStringLiteral("ref")));
     }
+
     placemark->setOsmData(osmData);
     placemark->setZoomLevel(StyleBuilder::minimumZoomLevel(placemark->visualCategory()));
     placemark->setPopularity(StyleBuilder::popularity(placemark));
@@ -102,17 +123,17 @@ GeoDataPlacemark *OsmWay::create(const OsmNodes &nodes, QSet<qint64> &usedNodes)
     return placemark;
 }
 
-const QVector<qint64> &OsmWay::references() const
+const QVector<qint64>& OsmWay::references() const
 {
     return m_references;
 }
 
-OsmPlacemarkData &OsmWay::osmData()
+OsmPlacemarkData& OsmWay::osmData()
 {
     return m_osmData;
 }
 
-const OsmPlacemarkData &OsmWay::osmData() const
+const OsmPlacemarkData& OsmWay::osmData() const
 {
     return m_osmData;
 }
@@ -128,26 +149,34 @@ bool OsmWay::isArea() const
     // We need to create two separate ways in cases like that to support this.
     // See also https://wiki.openstreetmap.org/wiki/Key:area
 
-    if (m_osmData.containsTag(QStringLiteral("area"), QStringLiteral("yes"))) {
+    if (m_osmData.containsTag(QStringLiteral("area"), QStringLiteral("yes")))
+    {
         return true;
     }
 
     bool const isLinearFeature =
-            m_osmData.containsTag(QStringLiteral("area"), QStringLiteral("no")) ||
-            m_osmData.containsTagKey(QStringLiteral("highway")) ||
-            m_osmData.containsTagKey(QStringLiteral("barrier"));
-    if (isLinearFeature) {
+        m_osmData.containsTag(QStringLiteral("area"), QStringLiteral("no")) ||
+        m_osmData.containsTagKey(QStringLiteral("highway")) ||
+        m_osmData.containsTagKey(QStringLiteral("barrier"));
+
+    if (isLinearFeature)
+    {
         return false;
     }
 
     bool const isAreaFeature = m_osmData.containsTagKey(QStringLiteral("landuse"));
-    if (isAreaFeature) {
+
+    if (isAreaFeature)
+    {
         return true;
     }
 
-    for (auto iter = m_osmData.tagsBegin(), end=m_osmData.tagsEnd(); iter != end; ++iter) {
+    for (auto iter = m_osmData.tagsBegin(), end = m_osmData.tagsEnd(); iter != end; ++iter)
+    {
         const auto tag = StyleBuilder::OsmTag(iter.key(), iter.value());
-        if (isAreaTag(tag)) {
+
+        if (isAreaTag(tag))
+        {
             return true;
         }
     }
@@ -156,9 +185,10 @@ bool OsmWay::isArea() const
     return isImplicitlyClosed;
 }
 
-bool OsmWay::isAreaTag(const StyleBuilder::OsmTag &keyValue)
+bool OsmWay::isAreaTag(const StyleBuilder::OsmTag& keyValue)
 {
-    if (s_areaTags.isEmpty()) {
+    if (s_areaTags.isEmpty())
+    {
         // All these tags can be found updated at
         // https://wiki.openstreetmap.org/wiki/Map_Features#Landuse
 
@@ -172,9 +202,11 @@ bool OsmWay::isAreaTag(const StyleBuilder::OsmTag &keyValue)
         s_areaTags.insert(StyleBuilder::OsmTag(QStringLiteral("area"), QStringLiteral("yes")));
         s_areaTags.insert(StyleBuilder::OsmTag(QStringLiteral("waterway"), QStringLiteral("riverbank")));
 
-        for (auto const & tag: StyleBuilder::buildingTags()) {
+        for (auto const& tag : StyleBuilder::buildingTags())
+        {
             s_areaTags.insert(tag);
         }
+
         s_areaTags.insert(StyleBuilder::OsmTag(QStringLiteral("man_made"), QStringLiteral("bridge")));
 
         s_areaTags.insert(StyleBuilder::OsmTag(QStringLiteral("amenity"), QStringLiteral("graveyard")));
@@ -209,9 +241,12 @@ bool OsmWay::isAreaTag(const StyleBuilder::OsmTag &keyValue)
 
 bool OsmWay::isBuilding() const
 {
-    for (auto iter = m_osmData.tagsBegin(), end=m_osmData.tagsEnd(); iter != end; ++iter) {
+    for (auto iter = m_osmData.tagsBegin(), end = m_osmData.tagsEnd(); iter != end; ++iter)
+    {
         const auto tag = StyleBuilder::OsmTag(iter.key(), iter.value());
-        if (isBuildingTag(tag)) {
+
+        if (isBuildingTag(tag))
+        {
             return true;
         }
     }
@@ -219,10 +254,12 @@ bool OsmWay::isBuilding() const
     return false;
 }
 
-bool OsmWay::isBuildingTag(const StyleBuilder::OsmTag &keyValue)
+bool OsmWay::isBuildingTag(const StyleBuilder::OsmTag& keyValue)
 {
-    if (s_buildingTags.isEmpty()) {
-        for (auto const & tag: StyleBuilder::buildingTags()) {
+    if (s_buildingTags.isEmpty())
+    {
+        for (auto const& tag : StyleBuilder::buildingTags())
+        {
             s_buildingTags.insert(tag);
         }
     }
@@ -233,12 +270,16 @@ bool OsmWay::isBuildingTag(const StyleBuilder::OsmTag &keyValue)
 QString OsmWay::extractBuildingName() const
 {
     auto tagIter = m_osmData.findTag(QStringLiteral("addr:housename"));
-    if (tagIter != m_osmData.tagsEnd()) {
+
+    if (tagIter != m_osmData.tagsEnd())
+    {
         return tagIter.value();
     }
 
     tagIter = m_osmData.findTag(QStringLiteral("addr:housenumber"));
-    if (tagIter != m_osmData.tagsEnd()) {
+
+    if (tagIter != m_osmData.tagsEnd())
+    {
         return tagIter.value();
     }
 
@@ -250,13 +291,18 @@ double OsmWay::extractBuildingHeight() const
     double height = 8.0;
 
     QHash<QString, QString>::const_iterator tagIter;
-    if ((tagIter = m_osmData.findTag(QStringLiteral("height"))) != m_osmData.tagsEnd()) {
+
+    if ((tagIter = m_osmData.findTag(QStringLiteral("height"))) != m_osmData.tagsEnd())
+    {
         height = GeoDataBuilding::parseBuildingHeight(tagIter.value());
-    } else if ((tagIter = m_osmData.findTag(QStringLiteral("building:levels"))) != m_osmData.tagsEnd()) {
+    }
+
+    else if ((tagIter = m_osmData.findTag(QStringLiteral("building:levels"))) != m_osmData.tagsEnd())
+    {
         int const levels = tagIter.value().toInt();
         int const skipLevels = m_osmData.tagValue(QStringLiteral("building:min_level")).toInt();
         /** @todo Is 35 as an upper bound for the number of levels sane? */
-        height = 3.0 * qBound(1, 1+levels-skipLevels, 35);
+        height = 3.0 * qBound(1, 1 + levels - skipLevels, 35);
     }
 
     return qBound(1.0, height, 1000.0);

@@ -13,16 +13,20 @@
  *
  * ============================================================ */
 
-//
-// MeasureToolPlugin enables Marble to set and display measure points
-//
+/**
+ * MeasureToolPlugin enables Marble to set and display measure points
+ */
 
 #pragma once
+
+// Qt includes
 
 #include <QFont>
 #include <QPen>
 #include <QAction>
 #include <QPixmap>
+
+// Local includes
 
 #include "DialogConfigurationInterface.h"
 #include "GeoDataLatLonAltBox.h"
@@ -36,13 +40,13 @@ namespace Marble
 class MeasureConfigDialog;
 
 class MeasureToolPlugin : public RenderPlugin,
-                          public DialogConfigurationInterface
+    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.MeasureToolPlugin")
-    Q_INTERFACES( Marble::RenderPluginInterface )
-    Q_INTERFACES( Marble::DialogConfigurationInterface )
-    MARBLE_PLUGIN( MeasureToolPlugin )
+    Q_INTERFACES(Marble::RenderPluginInterface)
+    Q_INTERFACES(Marble::DialogConfigurationInterface)
+    MARBLE_PLUGIN(MeasureToolPlugin)
 
 public:
 
@@ -54,7 +58,7 @@ public:
 
 public:
 
-    explicit MeasureToolPlugin( const MarbleModel *marbleModel = nullptr );
+    explicit MeasureToolPlugin(const MarbleModel* marbleModel = nullptr);
 
     QStringList backendTypes() const override;
     QString renderPolicy() const override;
@@ -71,40 +75,40 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
-    bool render( GeoPainter *painter, ViewportParams *viewport, const QString& renderPos, GeoSceneLayer * layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport, const QString& renderPos, GeoSceneLayer* layer = nullptr) override;
 
-    QDialog *configDialog() override;
-    QHash<QString,QVariant> settings() const override;
-    void setSettings( const QHash<QString,QVariant> &settings ) override;
+    QDialog* configDialog() override;
+    QHash<QString, QVariant> settings() const override;
+    void setSettings(const QHash<QString, QVariant>& settings) override;
 
 Q_SIGNALS:
 
-    void  numberOfMeasurePointsChanged( int newNumber );
+    void  numberOfMeasurePointsChanged(int newNumber);
 
 public Q_SLOTS:
 
-    bool  eventFilter( QObject *object, QEvent *event ) override;
+    bool  eventFilter(QObject* object, QEvent* event) override;
 
 private:
 
-    void  drawMeasurePoints( GeoPainter *painter );
-    void  drawInfobox( GeoPainter *painter ) const;
-    void  drawSegments( GeoPainter *painter );
+    void  drawMeasurePoints(GeoPainter* painter);
+    void  drawInfobox(GeoPainter* painter) const;
+    void  drawSegments(GeoPainter* painter);
     void  addContextItems();
     void  removeContextItems();
 
 private Q_SLOTS:
 
-    void  setNumberOfMeasurePoints( int number );
+    void  setNumberOfMeasurePoints(int number);
     void  addMeasurePointEvent();
 
-    void  addMeasurePoint( qreal lon, qreal lat );
+    void  addMeasurePoint(qreal lon, qreal lat);
     void  removeLastMeasurePoint();
     void  removeMeasurePoints();
 
@@ -112,7 +116,7 @@ private Q_SLOTS:
 
 private:
 
-    Q_DISABLE_COPY( MeasureToolPlugin )
+    Q_DISABLE_COPY(MeasureToolPlugin)
 
     static QString meterToPreferredUnit(qreal meters, bool isSquare = false);
 

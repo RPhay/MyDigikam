@@ -15,12 +15,13 @@
 
 #include "GPXurlnameTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataData.h"
 #include "GeoDataExtendedData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,21 +38,23 @@ GeoNode* GPXurlnameTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_urlname)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_wpt))
     {
         GeoDataPlacemark* placemark = parentItem.nodeAs<GeoDataPlacemark>();
         QString text = parser.readElementText().trimmed();
-// no reason to save for now!
-//         GeoDataExtendedData extendedData = placemark->extendedData();
-//         extendedData.addValue(GeoDataData("urlname", text));
-//         placemark->setExtendedData(extendedData);
+        // no reason to save for now!
+        //         GeoDataExtendedData extendedData = placemark->extendedData();
+        //         extendedData.addValue(GeoDataData("urlname", text));
+        //         placemark->setExtendedData(extendedData);
 
         const QString link = QStringLiteral("<br/>Link: <a href=\"%1\">%2</a>")
-            .arg(placemark->extendedData().value(QStringLiteral("url")).value().toString())
-            .arg(text);
+                             .arg(placemark->extendedData().value(QStringLiteral("url")).value().toString())
+                             .arg(text);
         placemark->setDescription(placemark->description().append(link));
         placemark->setDescriptionCDATA(true);
     }
+
     return nullptr;
 }
 

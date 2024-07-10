@@ -15,10 +15,14 @@
 
 #include "OsmNominatimReverseGeocodingRunner.h"
 
+// Qt includes
+
 #include <QUrl>
 #include <QTimer>
 #include <QNetworkReply>
 #include <QDomDocument>
+
+// Local includes
 
 #include "MarbleLocale.h"
 #include "GeoDataPlacemark.h"
@@ -26,7 +30,6 @@
 #include "GeoDataData.h"
 #include "HttpDownloadManager.h"
 #include "OsmPlacemarkData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -34,7 +37,7 @@ namespace Marble
 
 OsmNominatimRunner::OsmNominatimRunner(QObject* parent)
     : ReverseGeocodingRunner(parent),
-      m_manager             (this)
+      m_manager(this)
 {
     connect(&m_manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(handleResult(QNetworkReply*)));
@@ -47,38 +50,38 @@ OsmNominatimRunner::~OsmNominatimRunner()
 
 void OsmNominatimRunner::returnNoReverseGeocodingResult()
 {
-    Q_EMIT reverseGeocodingFinished( m_coordinates, GeoDataPlacemark() );
+    Q_EMIT reverseGeocodingFinished(m_coordinates, GeoDataPlacemark());
 }
 
-void OsmNominatimRunner::reverseGeocoding( const GeoDataCoordinates &coordinates )
+void OsmNominatimRunner::reverseGeocoding(const GeoDataCoordinates& coordinates)
 {
     m_coordinates = coordinates;
     QString base  = QString::fromUtf8("https://nominatim.openstreetmap.org/reverse?format=xml&addressdetails=1");
     // @todo: Alternative URI with addressdetails=1 could be used for shorter placemark name
     QString query = QString::fromUtf8("&lon=%1&lat=%2&accept-language=%3");
-    double lon    = coordinates.longitude( GeoDataCoordinates::Degree );
-    double lat    = coordinates.latitude( GeoDataCoordinates::Degree );
-    QString url   = QString( base + query ).arg( lon ).arg( lat ).arg( MarbleLocale::languageCode() );
+    double lon    = coordinates.longitude(GeoDataCoordinates::Degree);
+    double lat    = coordinates.latitude(GeoDataCoordinates::Degree);
+    QString url   = QString(base + query).arg(lon).arg(lat).arg(MarbleLocale::languageCode());
 
     m_request.setUrl(QUrl(url));
     m_request.setRawHeader(QByteArray("User-Agent"),
                            HttpDownloadManager::userAgent(QLatin1String("Browser"),
-                           QLatin1String("OsmNominatimRunner")) );
+                                                          QLatin1String("OsmNominatimRunner")));
 
     QEventLoop eventLoop;
 
     QTimer timer;
-    timer.setSingleShot( true );
-    timer.setInterval( 15000 );
+    timer.setSingleShot(true);
+    timer.setInterval(15000);
 
-    connect( &timer, SIGNAL(timeout()),
-             &eventLoop, SLOT(quit()));
+    connect(&timer, SIGNAL(timeout()),
+            &eventLoop, SLOT(quit()));
 
-    connect( this, SIGNAL(reverseGeocodingFinished(GeoDataCoordinates,GeoDataPlacemark)),
-             &eventLoop, SLOT(quit()) );
+    connect(this, SIGNAL(reverseGeocodingFinished(GeoDataCoordinates, GeoDataPlacemark)),
+            &eventLoop, SLOT(quit()));
 
     // @todo FIXME Must currently be done in the main thread, see bug 257376
-    QTimer::singleShot( 0, this, SLOT(startReverseGeocoding()) );
+    QTimer::singleShot(0, this, SLOT(startReverseGeocoding()));
     timer.start();
 
     eventLoop.exec();
@@ -86,15 +89,15 @@ void OsmNominatimRunner::reverseGeocoding( const GeoDataCoordinates &coordinates
 
 void OsmNominatimRunner::startReverseGeocoding()
 {
-    QNetworkReply *reply = m_manager.get( m_request );
+    QNetworkReply* reply = m_manager.get(m_request);
 
     connect(reply, SIGNAL(errorOccurred(QNetworkReply::NetworkError)),
             this, SLOT(returnNoReverseGeocodingResult()));
 }
 
-void OsmNominatimRunner::handleResult( QNetworkReply* reply )
+void OsmNominatimRunner::handleResult(QNetworkReply* reply)
 {
-    if ( !reply->bytesAvailable() )
+    if (!reply->bytesAvailable())
     {
         returnNoReverseGeocodingResult();
         return;
@@ -102,7 +105,7 @@ void OsmNominatimRunner::handleResult( QNetworkReply* reply )
 
     QDomDocument xml;
 
-    if ( !xml.setContent( reply->readAll() ) )
+    if (!xml.setContent(reply->readAll()))
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse osm nominatim result " << xml.toString();
         returnNoReverseGeocodingResult();
@@ -112,26 +115,27 @@ void OsmNominatimRunner::handleResult( QNetworkReply* reply )
     QDomElement root    = xml.documentElement();
     QDomNodeList places = root.elementsByTagName(QStringLiteral("result"));
 
-    if ( places.size() == 1 )
+    if (places.size() == 1)
     {
-        QString address = places.item( 0 ).toElement().text();
+        QString address = places.item(0).toElement().text();
         GeoDataPlacemark placemark;
         placemark.setVisualCategory(GeoDataPlacemark::Coordinate);
-        placemark.setAddress( address );
-        placemark.setCoordinate( m_coordinates );
+        placemark.setAddress(address);
+        placemark.setCoordinate(m_coordinates);
 
         QDomNode details = root.firstChildElement(QStringLiteral("addressparts"));
-        extractChildren( details, placemark );
+        extractChildren(details, placemark);
 
-        Q_EMIT reverseGeocodingFinished( m_coordinates, placemark );
+        Q_EMIT reverseGeocodingFinished(m_coordinates, placemark);
     }
+
     else
     {
         returnNoReverseGeocodingResult();
     }
 }
 
-void OsmNominatimRunner::extractChildren(const QDomNode &node, GeoDataPlacemark &placemark)
+void OsmNominatimRunner::extractChildren(const QDomNode& node, GeoDataPlacemark& placemark)
 {
     QMap<QString, QString> tagTranslator;
     tagTranslator[QLatin1String("house_number")]   = QLatin1String("addr:housenumber");
@@ -150,10 +154,10 @@ void OsmNominatimRunner::extractChildren(const QDomNode &node, GeoDataPlacemark 
     OsmPlacemarkData osmData;
     QDomNodeList nodes = node.childNodes();
 
-    for (int i = 0 , n = nodes.length() ; i < n ; ++i)
+    for (int i = 0, n = nodes.length() ; i < n ; ++i)
     {
         QDomNode child = nodes.item(i);
-        data.addValue( GeoDataData( child.nodeName(), child.toElement().text() ) );
+        data.addValue(GeoDataData(child.nodeName(), child.toElement().text()));
 
         if (tagTranslator.contains(child.nodeName()))
         {

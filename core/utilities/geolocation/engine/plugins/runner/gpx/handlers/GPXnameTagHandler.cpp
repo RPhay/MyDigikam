@@ -15,11 +15,12 @@
 
 #include "GPXnameTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataPoint.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -33,6 +34,7 @@ GeoNode* GPXnameTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_name)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_wpt)
         || parentItem.represents(gpxTag_trk)
         || parentItem.represents(gpxTag_rtept))
@@ -41,11 +43,13 @@ GeoNode* GPXnameTagHandler::parse(GeoParser& parser) const
 
         placemark->setName(parser.readElementText().trimmed());
     }
+
     else if (parentItem.represents(gpxTag_rte))
     {
         GeoDataFeature* route = parentItem.nodeAs<GeoDataFeature>();
         route->setName(parser.readElementText().trimmed());
     }
+
     return nullptr;
 }
 

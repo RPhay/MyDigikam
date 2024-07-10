@@ -15,8 +15,12 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QList>
+
+// Local includes
 
 #include "digikam_export.h"
 
@@ -48,7 +52,7 @@ class DIGIKAM_EXPORT PluginManager : public QObject
 
 public:
 
-    explicit PluginManager( QObject* parent = nullptr );
+    explicit PluginManager(QObject* parent = nullptr);
 
     ~PluginManager() override;
 
@@ -59,60 +63,60 @@ public:
      * In order to use the RenderPlugins, first create new instances using
      * RenderPlugin::newInstance().
      */
-    QList<const RenderPlugin *> renderPlugins() const;
+    QList<const RenderPlugin*> renderPlugins() const;
 
     /**
      * @brief Add a RenderPlugin manually to the list of known plugins. Normally you
      * don't need to call this method since all plugins are loaded automatically.
      * @param plugin The plugin to add. Ownership retains with the caller.
      */
-    void addRenderPlugin( const RenderPlugin *plugin );
+    void addRenderPlugin(const RenderPlugin* plugin);
 
     /**
      * Returns all search runner plugins.
      * @note: Runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const SearchRunnerPlugin *> searchRunnerPlugins() const;
+    QList<const SearchRunnerPlugin*> searchRunnerPlugins() const;
 
     /**
      * @brief Add a SearchRunnerPlugin manually to the list of known plugins. Normally you
      * don't need to call this method since all plugins are loaded automatically.
      * @param plugin The plugin to add. Ownership retains with the caller.
      */
-    void addSearchRunnerPlugin( const SearchRunnerPlugin *plugin );
+    void addSearchRunnerPlugin(const SearchRunnerPlugin* plugin);
 
     /**
      * Returns all reverse geocoding runner plugins.
      * @note: The runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const ReverseGeocodingRunnerPlugin *> reverseGeocodingRunnerPlugins() const;
+    QList<const ReverseGeocodingRunnerPlugin*> reverseGeocodingRunnerPlugins() const;
 
     /**
      * @brief Add a ReverseGeocodingRunnerPlugin manually to the list of known plugins. Normally you
      * don't need to call this method since all plugins are loaded automatically.
      * @param plugin The plugin to add. Ownership retains with the caller.
      */
-    void addReverseGeocodingRunnerPlugin( const ReverseGeocodingRunnerPlugin *plugin );
+    void addReverseGeocodingRunnerPlugin(const ReverseGeocodingRunnerPlugin* plugin);
 
     /**
      * Returns all parse runner plugins.
      * @note: The runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const ParseRunnerPlugin *> parsingRunnerPlugins() const;
+    QList<const ParseRunnerPlugin*> parsingRunnerPlugins() const;
 
     /**
      * @brief Add a ParseRunnerPlugin manually to the list of known plugins. Normally you
      * don't need to call this method since all plugins are loaded automatically.
      * @param plugin The plugin to add. Ownership retains with the caller.
      */
-    void addParseRunnerPlugin( const ParseRunnerPlugin *plugin );
+    void addParseRunnerPlugin(const ParseRunnerPlugin* plugin);
 
     /**
      * @brief blacklistPlugin Prevent that a plugin is loaded from the given filename
      * @param filename The name of the file (excluding prefix and file extension) to blacklist. E.g.
      * to ignore "libWikipedia.so" on Linux and "Wikipedia.dll" on Windows, pass "Wikipedia"
      */
-    static void blacklistPlugin(const QString &filename);
+    static void blacklistPlugin(const QString& filename);
 
     /**
      * @brief whitelistPlugin Add a plugin to the whitelist of plugins. If the whitelist is not
@@ -121,7 +125,7 @@ public:
      * @param filename The name of the file (excluding prefix and file extension) to whitelist. E.g.
      * to ignore "libWikipedia.so" on Linux and "Wikipedia.dll" on Windows, pass "Wikipedia"
      */
-    static void whitelistPlugin(const QString &filename);
+    static void whitelistPlugin(const QString& filename);
 
 Q_SIGNALS:
 
@@ -137,7 +141,7 @@ Q_SIGNALS:
 
 private:
 
-    Q_DISABLE_COPY( PluginManager )
+    Q_DISABLE_COPY(PluginManager)
 
 #ifdef Q_OS_ANDROID
 

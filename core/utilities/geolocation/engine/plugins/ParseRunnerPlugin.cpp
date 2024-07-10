@@ -15,6 +15,8 @@
 
 #include "ParseRunnerPlugin.h"
 
+// Qt includes
+
 #include <QIcon>
 
 namespace Marble
@@ -32,9 +34,9 @@ ParseRunnerPlugin::Private::Private()
     // nothing to do
 }
 
-ParseRunnerPlugin::ParseRunnerPlugin( QObject* parent ) :
-    QObject( parent ),
-    d( new Private )
+ParseRunnerPlugin::ParseRunnerPlugin(QObject* parent) :
+    QObject(parent),
+    d(new Private)
 {
 }
 

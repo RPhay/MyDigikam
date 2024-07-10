@@ -15,11 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QHash>
 #include <QColor>
 #include <QPixmap>
 #include <QSvgWidget>
 #include <QSvgRenderer>
+
+// Local includes
 
 #include "GeoDataLatLonAltBox.h"
 #include "AbstractFloatItem.h"
@@ -27,7 +31,7 @@
 
 namespace Ui
 {
-    class OverviewMapConfigWidget;
+class OverviewMapConfigWidget;
 }
 
 namespace Marble
@@ -38,7 +42,7 @@ namespace Marble
  *
  */
 class OverviewMap : public AbstractFloatItem,
-                    public DialogConfigurationInterface
+    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.OverviewMap")
@@ -102,9 +106,9 @@ protected:
 
 private:
 
-    void changeBackground( const QString& target );
-    QSvgWidget *currentWidget() const;
-    void setCurrentWidget( QSvgWidget *widget );
+    void changeBackground(const QString& target);
+    QSvgWidget* currentWidget() const;
+    void setCurrentWidget(QSvgWidget* widget);
     void loadPlanetMaps();
     void loadMapSuggestions();
 
@@ -116,7 +120,7 @@ private:
     QHash<QString, QString>         m_svgPaths;
     QStringList                     m_planetID;
     QPixmap                         m_worldmap;
-    QHash<QString,QVariant>         m_settings;
+    QHash<QString, QVariant>         m_settings;
     QColor                          m_posColor;
     QSizeF                          m_defaultSize;
 

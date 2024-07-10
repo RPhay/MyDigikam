@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QPixmap>
+
+// Local includes
 
 #include "AbstractFloatItem.h"
 #include "DialogConfigurationInterface.h"
@@ -24,7 +28,7 @@ class QSvgRenderer;
 
 namespace Ui
 {
-    class CompassConfigWidget;
+class CompassConfigWidget;
 }
 
 namespace Marble
@@ -34,19 +38,19 @@ namespace Marble
  * @short The class that creates a compass
  */
 class CompassFloatItem : public AbstractFloatItem,
-                         public DialogConfigurationInterface
+    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.CompassFloatItem")
-    Q_INTERFACES( Marble::RenderPluginInterface )
-    Q_INTERFACES( Marble::DialogConfigurationInterface )
-    MARBLE_PLUGIN( CompassFloatItem )
+    Q_INTERFACES(Marble::RenderPluginInterface)
+    Q_INTERFACES(Marble::DialogConfigurationInterface)
+    MARBLE_PLUGIN(CompassFloatItem)
 
 public:
 
     CompassFloatItem();
-    explicit CompassFloatItem( const MarbleModel *marbleModel );
-    ~CompassFloatItem () override;
+    explicit CompassFloatItem(const MarbleModel* marbleModel);
+    ~CompassFloatItem() override;
 
     QStringList backendTypes() const override;
 
@@ -64,32 +68,32 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
     QPainterPath backgroundShape() const override;
 
-    void setProjection( const ViewportParams *viewport ) override;
+    void setProjection(const ViewportParams* viewport) override;
 
-    void paintContent( QPainter *painter ) override;
+    void paintContent(QPainter* painter) override;
 
-    QDialog *configDialog() override;
+    QDialog* configDialog() override;
 
-    QHash<QString,QVariant> settings() const override;
+    QHash<QString, QVariant> settings() const override;
 
-    void setSettings( const QHash<QString,QVariant> &settings ) override;
+    void setSettings(const QHash<QString, QVariant>& settings) override;
 
 private Q_SLOTS:
 
-   void readSettings();
-   void writeSettings();
+    void readSettings();
+    void writeSettings();
 
 private:
 
-    Q_DISABLE_COPY( CompassFloatItem )
+    Q_DISABLE_COPY(CompassFloatItem)
 
 private:
 

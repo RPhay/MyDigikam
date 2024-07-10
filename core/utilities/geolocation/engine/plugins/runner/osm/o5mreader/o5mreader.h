@@ -15,6 +15,8 @@
 
 #pragma once
 
+// C++ includes
+
 #include <cstdint>
 #include <cstdio>
 
@@ -44,6 +46,9 @@
 #define O5MREADER_ERR_CODE_CAN_NOT_ITERATE_NDS_HERE 5
 #define O5MREADER_ERR_CODE_CAN_NOT_ITERATE_REFS_HERE 6
 
+namespace Marble
+{
+
 typedef int O5mreaderRet;
 typedef int O5mreaderIterateRet;
 
@@ -51,7 +56,7 @@ typedef struct
 {
     int errCode;
     char* errMsg;
-    FILE *f;
+    FILE* f;
     uint64_t offset;
     uint64_t offsetNd;
     uint64_t offsetRf;
@@ -82,34 +87,28 @@ typedef struct
     int32_t lat;
 } O5mreaderDataset;
 
-#if defined (__cplusplus)
-extern "C" {
-#endif
+void o5mreader_setError(O5mreader* pReader, int code, const char* message);
+void o5mreader_setNoError(O5mreader* pReader);
+O5mreaderIterateRet o5mreader_skipTags(O5mreader* pReader);
+O5mreaderIterateRet o5mreader_readNode(O5mreader* pReader, O5mreaderDataset* ds);
+O5mreaderIterateRet o5mreader_readWay(O5mreader* pReader, O5mreaderDataset* ds);
+O5mreaderIterateRet o5mreader_readRel(O5mreader* pReader, O5mreaderDataset* ds);
+O5mreaderIterateRet o5mreader_skipRefs(O5mreader* pReader);
+O5mreaderIterateRet o5mreader_skipNds(O5mreader* pReader);
+O5mreaderRet o5mreader_readInt(O5mreader* pReader, uint64_t* ret);
 
-void o5mreader_setError(O5mreader *pReader,int code, const char* message);
-void o5mreader_setNoError(O5mreader *pReader);
-O5mreaderIterateRet o5mreader_skipTags(O5mreader *pReader);
-O5mreaderIterateRet o5mreader_readNode(O5mreader *pReader, O5mreaderDataset* ds);
-O5mreaderIterateRet o5mreader_readWay(O5mreader *pReader, O5mreaderDataset* ds);
-O5mreaderIterateRet o5mreader_readRel(O5mreader *pReader, O5mreaderDataset* ds);
-O5mreaderIterateRet o5mreader_skipRefs(O5mreader *pReader);
-O5mreaderIterateRet o5mreader_skipNds(O5mreader *pReader);
-O5mreaderRet o5mreader_readInt(O5mreader *pReader, uint64_t *ret);
+O5mreaderRet o5mreader_open(O5mreader** ppReader, FILE* f);
 
-O5mreaderRet o5mreader_open(O5mreader **ppReader,FILE* f);
-
-void o5mreader_close(O5mreader *pReader);
+void o5mreader_close(O5mreader* pReader);
 
 const char* o5mreader_strerror(int errCode);
 
-O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader *pReader, O5mreaderDataset* ds);
+O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDataset* ds);
 
-O5mreaderIterateRet o5mreader_iterateTags(O5mreader *pReader, char** pKey, char** pVal);
+O5mreaderIterateRet o5mreader_iterateTags(O5mreader* pReader, char** pKey, char** pVal);
 
-O5mreaderIterateRet o5mreader_iterateNds(O5mreader *pReader, uint64_t *nodeId);
+O5mreaderIterateRet o5mreader_iterateNds(O5mreader* pReader, uint64_t* nodeId);
 
-O5mreaderIterateRet o5mreader_iterateRefs(O5mreader *pReader, uint64_t *refId, uint8_t *type, char** pRole);
+O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, uint8_t* type, char** pRole);
 
-#if defined (__cplusplus)
-}
-#endif
+} // namespace Marble

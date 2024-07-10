@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QWidget>
 #include <QPixmap>
 #include <QTimer>
@@ -30,10 +32,10 @@ class ArrowDiscWidget : public QWidget
 
 public:
 
-    explicit ArrowDiscWidget( QWidget *parent = nullptr );
+    explicit ArrowDiscWidget(QWidget* parent = nullptr);
     ~ArrowDiscWidget() override;
 
-    void setMarbleWidget( MarbleWidget *marbleWidget );
+    void setMarbleWidget(MarbleWidget* marbleWidget);
 
 Q_SIGNALS:
 
@@ -41,11 +43,11 @@ Q_SIGNALS:
 
 protected:
 
-    void paintEvent( QPaintEvent * ) override;
-    void mouseMoveEvent( QMouseEvent *mouseEvent ) override;
-    void mousePressEvent( QMouseEvent *mouseEvent ) override;
-    void mouseReleaseEvent( QMouseEvent *mouseEvent ) override;
-    void leaveEvent( QEvent *event ) override;
+    void paintEvent(QPaintEvent*) override;
+    void mouseMoveEvent(QMouseEvent* mouseEvent) override;
+    void mousePressEvent(QMouseEvent* mouseEvent) override;
+    void mouseReleaseEvent(QMouseEvent* mouseEvent) override;
+    void leaveEvent(QEvent* event) override;
     void repaint();
 
 private Q_SLOTS:
@@ -55,8 +57,8 @@ private Q_SLOTS:
 
 private:
 
-    static QPixmap pixmap(const QString &id );
-    Qt::ArrowType arrowUnderMouse( const QPoint &position ) const;
+    static QPixmap pixmap(const QString& id);
+    Qt::ArrowType arrowUnderMouse(const QPoint& position) const;
 
 private:
 

@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
+
+// Local includes
 
 #include "ReverseGeocodingRunner.h"
 #include "GeoDataCoordinates.h"
@@ -36,17 +40,17 @@ class OsmNominatimRunner : public ReverseGeocodingRunner
 
 public:
 
-    explicit OsmNominatimRunner(QObject *parent = nullptr);
+    explicit OsmNominatimRunner(QObject* parent = nullptr);
 
     ~OsmNominatimRunner() override;
 
     // Overriding MarbleAbstractRunner
-    void reverseGeocoding( const GeoDataCoordinates &coordinates ) override;
+    void reverseGeocoding(const GeoDataCoordinates& coordinates) override;
 
 private Q_SLOTS:
 
     // Forward a result to the search or reverse geocoding handler
-    void handleResult( QNetworkReply* );
+    void handleResult(QNetworkReply*);
 
     void returnNoReverseGeocodingResult();
 
@@ -54,7 +58,7 @@ private Q_SLOTS:
 
 private:
 
-    static void extractChildren(const QDomNode &node, GeoDataPlacemark &placemark);
+    static void extractChildren(const QDomNode& node, GeoDataPlacemark& placemark);
 
 private:
 

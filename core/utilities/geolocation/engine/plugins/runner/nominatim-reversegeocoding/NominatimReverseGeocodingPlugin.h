@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ReverseGeocodingRunnerPlugin.h"
 
 namespace Marble
@@ -24,11 +26,11 @@ class NominatimPlugin : public ReverseGeocodingRunnerPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.NominatimReverseGeocodingPlugin")
-    Q_INTERFACES( Marble::ReverseGeocodingRunnerPlugin )
+    Q_INTERFACES(Marble::ReverseGeocodingRunnerPlugin)
 
 public:
 
-    explicit NominatimPlugin(QObject * const parent = nullptr);
+    explicit NominatimPlugin(QObject* const parent = nullptr);
 
     QString name() const override;
 

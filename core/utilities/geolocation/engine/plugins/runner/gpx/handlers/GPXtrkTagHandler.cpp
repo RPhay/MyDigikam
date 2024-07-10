@@ -15,13 +15,14 @@
 
 #include "GPXtrkTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataDocument.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataPoint.h"
 #include "GeoDataMultiGeometry.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -37,17 +38,19 @@ GeoNode* GPXtrkTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_trk)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_gpx))
     {
         GeoDataDocument* doc = parentItem.nodeAs<GeoDataDocument>();
-        GeoDataPlacemark *placemark = new GeoDataPlacemark;
+        GeoDataPlacemark* placemark = new GeoDataPlacemark;
         doc->append(placemark);
-        GeoDataMultiGeometry *multigeometry = new GeoDataMultiGeometry;
+        GeoDataMultiGeometry* multigeometry = new GeoDataMultiGeometry;
         placemark->setGeometry(multigeometry);
         placemark->setStyleUrl(QStringLiteral("#map-track"));
 
         return placemark;
     }
+
     return nullptr;
 }
 

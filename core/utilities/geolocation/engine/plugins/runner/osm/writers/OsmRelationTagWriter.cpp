@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-//Self
 #include "OsmRelationTagWriter.h"
 
-//Marble
+// Local includes
+
 #include "OsmElementDictionary.h"
 #include "OsmObjectAttributeWriter.h"
 #include "OsmTagTagWriter.h"
@@ -32,42 +32,43 @@
 namespace Marble
 {
 
-void OsmRelationTagWriter::writeMultipolygon( const GeoDataPolygon& polygon,
-                                              const OsmPlacemarkData& osmData, GeoWriter& writer )
+void OsmRelationTagWriter::writeMultipolygon(const GeoDataPolygon& polygon,
+                                             const OsmPlacemarkData& osmData, GeoWriter& writer)
 {
-    writer.writeStartElement( QString::fromUtf8(osm::osmTag_relation) );
+    writer.writeStartElement(QString::fromUtf8(osm::osmTag_relation));
 
-    OsmObjectAttributeWriter::writeAttributes( osmData, writer );
-    OsmTagTagWriter::writeTags( osmData, writer );
+    OsmObjectAttributeWriter::writeAttributes(osmData, writer);
+    OsmTagTagWriter::writeTags(osmData, writer);
 
-    writer.writeStartElement( QString::fromUtf8(osm::osmTag_member) );
-    QString memberId = QString::number( osmData.memberReference( -1 ).id() );
-    writer.writeAttribute( QLatin1String("type"), QLatin1String("way") );
-    writer.writeAttribute( QLatin1String("ref"), memberId );
-    writer.writeAttribute( QLatin1String("role"), QLatin1String("outer") );
+    writer.writeStartElement(QString::fromUtf8(osm::osmTag_member));
+    QString memberId = QString::number(osmData.memberReference(-1).id());
+    writer.writeAttribute(QLatin1String("type"), QLatin1String("way"));
+    writer.writeAttribute(QLatin1String("ref"), memberId);
+    writer.writeAttribute(QLatin1String("role"), QLatin1String("outer"));
     writer.writeEndElement();
 
     qsizetype size = polygon.innerBoundaries().size();
 
-    for (int index = 0 ; index < size ; ++index )
+    for (int index = 0 ; index < size ; ++index)
     {
-        writer.writeStartElement( QString::fromUtf8(osm::osmTag_member) );
-        QString memberId = QString::number( osmData.memberReference( index ).id() );
-        writer.writeAttribute( QLatin1String("type"), QLatin1String("way") );
-        writer.writeAttribute( QLatin1String("ref"), memberId );
-        writer.writeAttribute( QLatin1String("role"), QLatin1String("inner") );
+        writer.writeStartElement(QString::fromUtf8(osm::osmTag_member));
+        QString memberId = QString::number(osmData.memberReference(index).id());
+        writer.writeAttribute(QLatin1String("type"), QLatin1String("way"));
+        writer.writeAttribute(QLatin1String("ref"), memberId);
+        writer.writeAttribute(QLatin1String("role"), QLatin1String("inner"));
         writer.writeEndElement();
     }
-    writer.writeEndElement();
- }
 
-void OsmRelationTagWriter::writeRelation( const QVector<GeoDataPlacemark*>& members, const QString& id,
-                                          const QMap<QString,QString>& tags, GeoWriter& writer )
+    writer.writeEndElement();
+}
+
+void OsmRelationTagWriter::writeRelation(const QVector<GeoDataPlacemark*>& members, const QString& id,
+                                         const QMap<QString, QString>& tags, GeoWriter& writer)
 {
-    Q_UNUSED( members );
-    Q_UNUSED( id );
-    Q_UNUSED( tags );
-    Q_UNUSED( writer );
+    Q_UNUSED(members);
+    Q_UNUSED(id);
+    Q_UNUSED(tags);
+    Q_UNUSED(writer);
 
     // Not implemented yet ( need to implement the custom relations first )
 }

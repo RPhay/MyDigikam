@@ -42,10 +42,10 @@ public:
     {
     }
 
-    PluginAuthor( const QString &name_, const QString &email_, const QString &task_ = i18n( "Developer" ) )
-        : name( name_ ),
-          task( task_ ),
-          email( email_ )
+    PluginAuthor(const QString& name_, const QString& email_, const QString& task_ = i18n("Developer"))
+        : name(name_),
+          task(task_),
+          email(email_)
     {
     }
 
@@ -114,4 +114,4 @@ public:
 
 Q_DECLARE_TYPEINFO(Marble::PluginAuthor, Q_MOVABLE_TYPE);
 
-Q_DECLARE_INTERFACE( Marble::PluginInterface, "org.kde.Marble.PluginInterface/1.1" )
+Q_DECLARE_INTERFACE(Marble::PluginInterface, "org.kde.Marble.PluginInterface/1.1")

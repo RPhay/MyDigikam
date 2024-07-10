@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ParsingRunner.h"
 
 namespace Marble
@@ -26,10 +28,10 @@ class PntRunner : public ParsingRunner
 
 public:
 
-    explicit PntRunner(QObject *parent = nullptr);
+    explicit PntRunner(QObject* parent = nullptr);
     ~PntRunner() override;
 
-    GeoDataDocument* parseFile( const QString &fileName, DocumentRole role, QString& error ) override;
+    GeoDataDocument* parseFile(const QString& fileName, DocumentRole role, QString& error) override;
 };
 
 } // namespace Marble

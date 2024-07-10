@@ -43,25 +43,25 @@ CacheRunner::~CacheRunner()
 {
 }
 
-GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole role, QString& error )
+GeoDataDocument* CacheRunner::parseFile(const QString& fileName, DocumentRole role, QString& error)
 {
-    QFile file( fileName );
+    QFile file(fileName);
 
-    if ( !file.exists() )
+    if (!file.exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
     }
 
-    file.open( QIODevice::ReadOnly );
-    QDataStream in( &file );
+    file.open(QIODevice::ReadOnly);
+    QDataStream in(&file);
 
     // Read and check the header
     quint32 magic;
     in >> magic;
 
-    if ( magic != MarbleMagicNumber )
+    if (magic != MarbleMagicNumber)
     {
         return nullptr;
     }
@@ -70,7 +70,7 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
     qint32 version;
     in >> version;
 
-    if ( version < 015 )
+    if (version < 015)
     {
         error = QStringLiteral("Bad cache file %1: Version %2 is too old, need 15 or later").arg(fileName).arg(version);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
@@ -84,10 +84,10 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
       }
     */
 
-    GeoDataDocument *document = new GeoDataDocument();
-    document->setDocumentRole( role );
+    GeoDataDocument* document = new GeoDataDocument();
+    document->setDocumentRole(role);
 
-    in.setVersion( QDataStream::Qt_4_2 );
+    in.setVersion(QDataStream::Qt_4_2);
 
     // Read the data itself
     // Use double to provide a single cache file format across architectures
@@ -107,34 +107,39 @@ GeoDataDocument* CacheRunner::parseFile( const QString &fileName, DocumentRole r
     const QString gmtId = QStringLiteral("gmt");
     const QString dstId = QStringLiteral("dst");
 
-    while ( !in.atEnd() )
+    while (!in.atEnd())
     {
-        GeoDataPlacemark *mark = new GeoDataPlacemark;
-        in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
-        mark->setName( tmpstr );
+        GeoDataPlacemark* mark = new GeoDataPlacemark;
+        in >> tmpstr;
+        tmpstr = *stringPool.insert(tmpstr);
+        mark->setName(tmpstr);
         in >> lon >> lat >> alt;
-        mark->setCoordinate( (qreal)(lon), (qreal)(lat), (qreal)(alt) );
-        in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
-        mark->setRole( tmpstr );
-        in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
-        mark->setDescription( tmpstr );
-        in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
-        mark->setCountryCode( tmpstr );
-        in >> tmpstr; tmpstr = *stringPool.insert(tmpstr);
-        mark->setState( tmpstr );
+        mark->setCoordinate((qreal)(lon), (qreal)(lat), (qreal)(alt));
+        in >> tmpstr;
+        tmpstr = *stringPool.insert(tmpstr);
+        mark->setRole(tmpstr);
+        in >> tmpstr;
+        tmpstr = *stringPool.insert(tmpstr);
+        mark->setDescription(tmpstr);
+        in >> tmpstr;
+        tmpstr = *stringPool.insert(tmpstr);
+        mark->setCountryCode(tmpstr);
+        in >> tmpstr;
+        tmpstr = *stringPool.insert(tmpstr);
+        mark->setState(tmpstr);
         in >> area;
-        mark->setArea( (qreal)(area) );
+        mark->setArea((qreal)(area));
         in >> tmpint64;
-        mark->setPopulation( tmpint64 );
+        mark->setPopulation(tmpint64);
         in >> tmpint16;
         mark->extendedData().addValue(GeoDataData(gmtId, int(tmpint16)));
         in >> tmpint8;
         mark->extendedData().addValue(GeoDataData(dstId, int(tmpint8)));
 
-        document->append( mark );
+        document->append(mark);
     }
 
-    document->setFileName( fileName );
+    document->setFileName(fileName);
 
     file.close();
 

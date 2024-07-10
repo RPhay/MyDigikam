@@ -15,12 +15,13 @@
 
 #include "GPXextensionsTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPoint.h"
 #include "GeoDataTrack.h"
 #include "GeoDataExtendedData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -31,13 +32,13 @@ namespace gpx
 
 GPX_DEFINE_TAG_HANDLER(extensions)
 
-GeoNode* GPXextensionsTagHandler::parse( GeoParser& parser ) const
+GeoNode* GPXextensionsTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_extensions)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( gpxTag_trkpt ) )
+    if (parentItem.represents(gpxTag_trkpt))
     {
         GeoDataTrack* track = parentItem.nodeAs<GeoDataTrack>();
         return track;

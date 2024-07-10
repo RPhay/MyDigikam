@@ -15,11 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QMap>
 #include <QHash>
 #include <QPen>
 #include <QIcon>
 #include <QColorDialog>
+
+// Local includes
 
 #include "DialogConfigurationInterface.h"
 #include "RenderPlugin.h"
@@ -28,7 +32,7 @@
 
 namespace Ui
 {
-    class GraticuleConfigWidget;
+class GraticuleConfigWidget;
 }
 
 namespace Marble
@@ -44,19 +48,19 @@ class GeoDataLatLonAltBox;
  */
 
 class GraticulePlugin : public RenderPlugin,
-                        public DialogConfigurationInterface
+    public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.GraticulePlugin")
-    Q_INTERFACES( Marble::RenderPluginInterface )
-    Q_INTERFACES( Marble::DialogConfigurationInterface )
-    MARBLE_PLUGIN( GraticulePlugin )
+    Q_INTERFACES(Marble::RenderPluginInterface)
+    Q_INTERFACES(Marble::DialogConfigurationInterface)
+    MARBLE_PLUGIN(GraticulePlugin)
 
 public:
 
     GraticulePlugin();
 
-    explicit GraticulePlugin( const MarbleModel *marbleModel );
+    explicit GraticulePlugin(const MarbleModel* marbleModel);
 
     QStringList backendTypes() const override;
 
@@ -78,21 +82,21 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    QDialog *configDialog() override;
+    QDialog* configDialog() override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
-    bool render( GeoPainter *painter, ViewportParams *viewport, const QString& renderPos, GeoSceneLayer * layer = nullptr ) override;
+    bool render(GeoPainter* painter, ViewportParams* viewport, const QString& renderPos, GeoSceneLayer* layer = nullptr) override;
 
     qreal zValue() const override;
 
-    QHash<QString,QVariant> settings() const override;
+    QHash<QString, QVariant> settings() const override;
 
-    void setSettings( const QHash<QString,QVariant> &settings ) override;
+    void setSettings(const QHash<QString, QVariant>& settings) override;
 
 public Q_SLOTS:
 
@@ -105,26 +109,26 @@ public Q_SLOTS:
 
 private:
 
-     /**
-     * @brief Renders the coordinate grid within the defined view bounding box.
-     * @param painter the painter used to draw the grid
-     * @param viewport the viewport
-     */
-    void renderGrid( GeoPainter *painter, ViewportParams *viewport,
-                     const QPen& equatorCirclePen,
-                     const QPen& tropicsCirclePen,
-                     const QPen& gridCirclePen );
+    /**
+    * @brief Renders the coordinate grid within the defined view bounding box.
+    * @param painter the painter used to draw the grid
+    * @param viewport the viewport
+    */
+    void renderGrid(GeoPainter* painter, ViewportParams* viewport,
+                    const QPen& equatorCirclePen,
+                    const QPen& tropicsCirclePen,
+                    const QPen& gridCirclePen);
 
-     /**
-     * @brief Renders a latitude line within the defined view bounding box.
-     * @param painter the painter used to draw the latitude line
-     * @param latitude the latitude of the coordinate line measured in degree .
-     * @param viewLatLonAltBox the latitude longitude bounding box that is covered by the view.
-     */
-    static void renderLatitudeLine( GeoPainter *painter, qreal latitude,
-                                    const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
-                                    const QString& lineLabel = QString(),
-                                    LabelPositionFlags labelPositionFlags = LineCenter );
+    /**
+    * @brief Renders a latitude line within the defined view bounding box.
+    * @param painter the painter used to draw the latitude line
+    * @param latitude the latitude of the coordinate line measured in degree .
+    * @param viewLatLonAltBox the latitude longitude bounding box that is covered by the view.
+    */
+    static void renderLatitudeLine(GeoPainter* painter, qreal latitude,
+                                   const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
+                                   const QString& lineLabel = QString(),
+                                   LabelPositionFlags labelPositionFlags = LineCenter);
 
     /**
      * @brief Renders a longitude line within the defined view bounding box.
@@ -137,11 +141,11 @@ private:
      *        The radius of the polarGap area is measured in degrees.
      * @param lineLabel draws a label using the font and color properties set for the painter.
      */
-    static void renderLongitudeLine( GeoPainter *painter, qreal longitude,
-                                     const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
-                                     qreal northPolarGap = 0.0, qreal southPolarGap = 0.0,
-                                     const QString& lineLabel = QString(),
-                                     LabelPositionFlags labelPositionFlags = LineCenter );
+    static void renderLongitudeLine(GeoPainter* painter, qreal longitude,
+                                    const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
+                                    qreal northPolarGap = 0.0, qreal southPolarGap = 0.0,
+                                    const QString& lineLabel = QString(),
+                                    LabelPositionFlags labelPositionFlags = LineCenter);
 
     /**
      * @brief Renders the latitude lines that are visible within the defined view bounding box.
@@ -149,10 +153,10 @@ private:
      * @param viewLatLonAltBox the latitude longitude bounding box that is covered by the view.
      * @param step the angular distance between the lines measured in degrees .
      */
-    void renderLatitudeLines( GeoPainter *painter,
-                              const GeoDataLatLonAltBox& viewLatLonAltBox,
-                              qreal step, qreal skipStep,
-                              LabelPositionFlags labelPositionFlags = LineCenter
+    void renderLatitudeLines(GeoPainter* painter,
+                             const GeoDataLatLonAltBox& viewLatLonAltBox,
+                             qreal step, qreal skipStep,
+                             LabelPositionFlags labelPositionFlags = LineCenter
                             );
 
     /**
@@ -169,7 +173,7 @@ private:
      *        concurring lines around the poles which obstruct the view onto the surface.
      *        The radius of the polarGap area is measured in degrees.
      */
-    void renderLongitudeLines( GeoPainter *painter,
+    void renderLongitudeLines(GeoPainter* painter,
                               const GeoDataLatLonAltBox& viewLatLonAltBox,
                               qreal step, qreal skipStep,
                               qreal northPolarGap = 0.0, qreal southPolarGap = 0.0,
@@ -190,26 +194,26 @@ private:
      *        concurring lines around the poles which obstruct the view onto the surface.
      *        The radius of the polarGap area is measured in degrees.
      */
-    static void renderUtmExceptions( GeoPainter *painter,
-                                     const GeoDataLatLonAltBox& viewLatLonAltBox,
-                                     qreal step,
-                                     qreal northPolarGap, qreal southPolarGap,
-                                     const QString & label,
-                                     LabelPositionFlags labelPositionFlags );
+    static void renderUtmExceptions(GeoPainter* painter,
+                                    const GeoDataLatLonAltBox& viewLatLonAltBox,
+                                    qreal step,
+                                    qreal northPolarGap, qreal southPolarGap,
+                                    const QString& label,
+                                    LabelPositionFlags labelPositionFlags);
 
     /**
      * @brief Maps the number of coordinate lines per 360 deg against the globe radius on the screen.
      * @param notation Determines whether the graticule is according to the DMS or Decimal system.
      */
-    void initLineMaps( GeoDataCoordinates::Notation notation );
+    void initLineMaps(GeoDataCoordinates::Notation notation);
 
 private:
 
     GeoDataCoordinates::Notation    m_currentNotation;
 
     // Maps the zoom factor to the amount of lines per 360 deg
-    QMap<qreal,qreal>               m_boldLineMap;
-    QMap<qreal,qreal>               m_normalLineMap;
+    QMap<qreal, qreal>               m_boldLineMap;
+    QMap<qreal, qreal>               m_normalLineMap;
 
     QPen                            m_equatorCirclePen;
     QPen                            m_tropicsCirclePen;

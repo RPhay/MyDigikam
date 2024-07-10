@@ -15,7 +15,11 @@
 
 #include "GPXrteptTagHandler.h"
 
+// Qt includes
+
 #include <QStringView>
+
+// Local includes
 
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
@@ -23,7 +27,6 @@
 #include "GeoDataCoordinates.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataStyle.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -39,6 +42,7 @@ GeoNode* GPXrteptTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_rtept)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_rte))
     {
         GeoDataPlacemark* placemark = parentItem.nodeAs<GeoDataPlacemark>();
@@ -50,19 +54,24 @@ GeoNode* GPXrteptTagHandler::parse(GeoParser& parser) const
         qreal lat = 0;
         qreal lon = 0;
         tmp = attributes.value(QLatin1String(gpxTag_lat));
-        if ( !tmp.isEmpty() )
+
+        if (!tmp.isEmpty())
         {
             lat = tmp.toString().toFloat();
         }
+
         tmp = attributes.value(QLatin1String(gpxTag_lon));
-        if ( !tmp.isEmpty() )
+
+        if (!tmp.isEmpty())
         {
             lon = tmp.toString().toFloat();
         }
+
         coord.set(lon, lat, 0, GeoDataCoordinates::Degree);
         linestring->append(coord);
 
     }
+
     return nullptr;
 }
 

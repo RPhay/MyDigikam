@@ -15,14 +15,18 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QMenu>
+
+// Local includes
 
 #include "MarbleGlobal.h"
 #include "AbstractFloatItem.h"
 
 namespace Ui
 {
-    class Navigation;
+class Navigation;
 }
 
 namespace Marble
@@ -33,20 +37,19 @@ class WidgetGraphicsItem;
 
 /**
  * @short Provides a float item with zoom and move controls
- *
  */
 class NavigationFloatItem : public AbstractFloatItem
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.NavigationFloatItem")
 
-    Q_INTERFACES( Marble::RenderPluginInterface )
+    Q_INTERFACES(Marble::RenderPluginInterface)
 
-    MARBLE_PLUGIN( NavigationFloatItem )
+    MARBLE_PLUGIN(NavigationFloatItem)
 
 public:
 
-    explicit NavigationFloatItem( const MarbleModel *marbleModel = nullptr );
+    explicit NavigationFloatItem(const MarbleModel* marbleModel = nullptr);
     ~NavigationFloatItem() override;
 
     QStringList backendTypes() const override;
@@ -65,33 +68,33 @@ public:
 
     QVector<PluginAuthor> pluginAuthors() const override;
 
-    QIcon icon () const override;
+    QIcon icon() const override;
 
-    void initialize () override;
+    void initialize() override;
 
-    bool isInitialized () const override;
+    bool isInitialized() const override;
 
-    void setProjection( const ViewportParams *viewport ) override;
+    void setProjection(const ViewportParams* viewport) override;
 
-    static QPixmap pixmap( const QString &Id );
+    static QPixmap pixmap(const QString& Id);
 
-    QHash<QString,QVariant> settings() const override;
+    QHash<QString, QVariant> settings() const override;
 
-    void setSettings( const QHash<QString, QVariant> &settings ) override;
+    void setSettings(const QHash<QString, QVariant>& settings) override;
 
 protected:
 
-    bool eventFilter( QObject *object, QEvent *e ) override;
-    void paintContent( QPainter *painter ) override;
-    void contextMenuEvent( QWidget *w, QContextMenuEvent *e ) override;
+    bool eventFilter(QObject* object, QEvent* e) override;
+    void paintContent(QPainter* painter) override;
+    void contextMenuEvent(QWidget* w, QContextMenuEvent* e) override;
 
 private Q_SLOTS:
 
     /** Map theme was changed, adjust controls */
-    void selectTheme( const QString& theme );
+    void selectTheme(const QString& theme);
 
     /** Enable/disable zoom in/out buttons */
-    void updateButtons( int zoomValue );
+    void updateButtons(int zoomValue);
 
     void activateCurrentPositionButton();
     void activateHomeButton();

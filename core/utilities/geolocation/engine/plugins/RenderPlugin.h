@@ -15,12 +15,15 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
 #include <QString>
 #include <QRegion>
 
-#include "RenderPluginInterface.h"
+// Local includes
 
+#include "RenderPluginInterface.h"
 #include "digikam_export.h"
 
 class QAction;
@@ -42,17 +45,17 @@ class RenderPluginModel;
  */
 
 class DIGIKAM_EXPORT RenderPlugin : public QObject,
-                                    public RenderPluginInterface
+    public RenderPluginInterface
 {
     Q_OBJECT
 
-    Q_PROPERTY ( QString name READ name CONSTANT )
-    Q_PROPERTY ( QString nameId READ nameId CONSTANT )
-    Q_PROPERTY ( QString version READ version CONSTANT )
-    Q_PROPERTY ( QString description READ description CONSTANT )
-    Q_PROPERTY ( bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged )
-    Q_PROPERTY ( bool visible READ visible WRITE setVisible NOTIFY visibilityChanged )
-    Q_PROPERTY ( bool userCheckable READ isUserCheckable WRITE setUserCheckable NOTIFY userCheckableChanged )
+    Q_PROPERTY(QString name READ name CONSTANT)
+    Q_PROPERTY(QString nameId READ nameId CONSTANT)
+    Q_PROPERTY(QString version READ version CONSTANT)
+    Q_PROPERTY(QString description READ description CONSTANT)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
+    Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibilityChanged)
+    Q_PROPERTY(bool userCheckable READ isUserCheckable WRITE setUserCheckable NOTIFY userCheckableChanged)
 
 public:
 
@@ -68,7 +71,7 @@ public:
         ThemeRenderType
     };
 
-    explicit RenderPlugin( const MarbleModel *marbleModel );
+    explicit RenderPlugin(const MarbleModel* marbleModel);
     ~RenderPlugin() override;
 
     /**
@@ -92,7 +95,7 @@ public:
      * @return new instance of current plugin
      * @note Typically this method is implemented with the help of the MARBLE_PLUGIN() macro.
      */
-    virtual RenderPlugin *newInstance( const MarbleModel *marbleModel ) const = 0;
+    virtual RenderPlugin* newInstance(const MarbleModel* marbleModel) const = 0;
 
     /**
      * @brief Access to the MarbleModel
@@ -179,7 +182,7 @@ public:
      * @return plugin's settings
      * @see setSettings
      */
-    virtual QHash<QString,QVariant> settings() const;
+    virtual QHash<QString, QVariant> settings() const;
 
     /**
      * @brief Set the settings of the plugin
@@ -189,7 +192,7 @@ public:
      * @param new plugin's settings
      * @see settings
      */
-    virtual void setSettings( const QHash<QString,QVariant> &settings );
+    virtual void setSettings(const QHash<QString, QVariant>& settings);
 
     /**
      * @brief Render type of the plugin
@@ -219,7 +222,7 @@ public Q_SLOTS:
      * @param enabled plugin's enabled state
      * @see enabled
      */
-    void    setEnabled( bool enabled );
+    void    setEnabled(bool enabled);
 
     /**
      * @brief setting visible
@@ -229,7 +232,7 @@ public Q_SLOTS:
      * @param visible visibility of the plugin
      * @see visible
      */
-    void    setVisible( bool visible );
+    void    setVisible(bool visible);
 
     /**
      * @brief setting user checkable
@@ -269,7 +272,7 @@ public Q_SLOTS:
      *
      * @return successfully changed or not
      */
-    bool setSetting( const QString & key, const QVariant & value );
+    bool setSetting(const QString& key, const QVariant& value);
 
     /**
      * @brief Getting setting value from the settings
@@ -280,7 +283,7 @@ public Q_SLOTS:
      *
      * @return setting value
      */
-    QVariant setting( const QString & key ) const;
+    QVariant setting(const QString& key) const;
 
     /**
      * @brief Plugin's menu action
@@ -289,19 +292,19 @@ public Q_SLOTS:
      *
      * @return action, displayed in menu
      */
-    QAction *action() const;
+    QAction* action() const;
 
 Q_SIGNALS:
 
     /**
      * This signal is Q_EMITted if the visibility is changed with @see setVisible
      */
-    void visibilityChanged( bool visible, const QString &nameId );
+    void visibilityChanged(bool visible, const QString& nameId);
 
     /**
      * This signal is Q_EMITted if the enabled property is changed with @see setEnabled
      */
-    void enabledChanged( bool enable );
+    void enabledChanged(bool enable);
 
     /**
      * This signal is Q_EMITted if the user checkable property is changed with @see setUserCheckable
@@ -311,7 +314,7 @@ Q_SIGNALS:
     /**
      * This signal is Q_EMITted if the settings of the RenderPlugin changed.
      */
-    void settingsChanged( const QString& nameId );
+    void settingsChanged(const QString& nameId);
 
     /**
      * This signal is Q_EMITted if the actions that the plugin supports change in
@@ -324,22 +327,22 @@ Q_SIGNALS:
      * @p dirtyRegion which is the region the view will change in. If dirtyRegion.isEmpty() returns
      * true, the whole viewport has to be repainted.
      */
-    void repaintNeeded( const QRegion& dirtyRegion = QRegion() );
+    void repaintNeeded(const QRegion& dirtyRegion = QRegion());
 
 protected:
 
-    bool eventFilter( QObject *, QEvent * ) override;
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 
     friend class RenderPluginModel;
 
-    QStandardItem *item();
+    QStandardItem* item();
 
     void applyItemState();
     void retrieveItemState();
 
-    Q_DISABLE_COPY( RenderPlugin )
+    Q_DISABLE_COPY(RenderPlugin)
 
 private:
 

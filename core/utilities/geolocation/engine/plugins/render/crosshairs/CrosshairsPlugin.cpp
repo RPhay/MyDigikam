@@ -15,13 +15,19 @@
 
 #include "CrosshairsPlugin.h"
 
+// Qt includes
+
 #include <QRect>
 #include <QColor>
 #include <QPushButton>
 #include <QSvgRenderer>
 #include <QImageReader>
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "ui_CrosshairsConfigWidget.h"
 #include "GeoPainter.h"
@@ -33,25 +39,25 @@ namespace Marble
 {
 
 CrosshairsPlugin::CrosshairsPlugin()
-    : RenderPlugin( nullptr ),
-      m_svgobj( nullptr ),
-      m_themeIndex( 0 ),
-      m_configDialog( nullptr ),
-      m_uiConfigWidget( nullptr )
+    : RenderPlugin(nullptr),
+      m_svgobj(nullptr),
+      m_themeIndex(0),
+      m_configDialog(nullptr),
+      m_uiConfigWidget(nullptr)
 {
 }
 
-CrosshairsPlugin::CrosshairsPlugin( const MarbleModel *marbleModel )
-    : RenderPlugin( marbleModel ),
-      m_isInitialized( false ),
-      m_svgobj( nullptr ),
-      m_themeIndex( 0 ),
-      m_configDialog( nullptr ),
-      m_uiConfigWidget( nullptr )
+CrosshairsPlugin::CrosshairsPlugin(const MarbleModel* marbleModel)
+    : RenderPlugin(marbleModel),
+      m_isInitialized(false),
+      m_svgobj(nullptr),
+      m_themeIndex(0),
+      m_configDialog(nullptr),
+      m_uiConfigWidget(nullptr)
 {
 }
 
-CrosshairsPlugin::~CrosshairsPlugin ()
+CrosshairsPlugin::~CrosshairsPlugin()
 {
     delete m_svgobj;
 }
@@ -78,12 +84,12 @@ RenderPlugin::RenderType CrosshairsPlugin::renderType() const
 
 QString CrosshairsPlugin::name() const
 {
-    return i18n( "Crosshairs" );
+    return i18n("Crosshairs");
 }
 
 QString CrosshairsPlugin::guiString() const
 {
-    return i18n( "Cross&hairs" );
+    return i18n("Cross&hairs");
 }
 
 QString CrosshairsPlugin::nameId() const
@@ -98,7 +104,7 @@ QString CrosshairsPlugin::version() const
 
 QString CrosshairsPlugin::description() const
 {
-    return i18n( "A plugin that shows crosshairs over the map." );
+    return i18n("A plugin that shows crosshairs over the map.");
 }
 
 QString CrosshairsPlugin::copyrightYears() const
@@ -109,51 +115,51 @@ QString CrosshairsPlugin::copyrightYears() const
 QVector<PluginAuthor> CrosshairsPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Cezar Mocan"), QStringLiteral("cezarmocan@gmail.com"))
-            << PluginAuthor(QStringLiteral("Torsten Rahn"), QStringLiteral("tackat@kde.org"));
+           << PluginAuthor(QStringLiteral("Cezar Mocan"), QStringLiteral("cezarmocan@gmail.com"))
+           << PluginAuthor(QStringLiteral("Torsten Rahn"), QStringLiteral("tackat@kde.org"));
 }
 
-QIcon CrosshairsPlugin::icon () const
+QIcon CrosshairsPlugin::icon() const
 {
     return QIcon::fromTheme(QStringLiteral("crosshairs"));
 }
 
-void CrosshairsPlugin::initialize ()
+void CrosshairsPlugin::initialize()
 {
     readSettings();
     m_isInitialized = true;
 }
 
-bool CrosshairsPlugin::isInitialized () const
+bool CrosshairsPlugin::isInitialized() const
 {
     return m_isInitialized;
 }
 
-QDialog *CrosshairsPlugin::configDialog()
+QDialog* CrosshairsPlugin::configDialog()
 {
-    if ( !m_configDialog )
+    if (!m_configDialog)
     {
         m_configDialog = new QDialog();
         m_uiConfigWidget = new Ui::CrosshairsConfigWidget;
-        m_uiConfigWidget->setupUi( m_configDialog );
+        m_uiConfigWidget->setupUi(m_configDialog);
         readSettings();
 
-        connect( m_uiConfigWidget->m_buttonBox, SIGNAL(accepted()),
-                SLOT(writeSettings()) );
+        connect(m_uiConfigWidget->m_buttonBox, SIGNAL(accepted()),
+                SLOT(writeSettings()));
 
-        connect( m_uiConfigWidget->m_buttonBox, SIGNAL(rejected()),
-                SLOT(readSettings()) );
+        connect(m_uiConfigWidget->m_buttonBox, SIGNAL(rejected()),
+                SLOT(readSettings()));
 
-        QPushButton *applyButton = m_uiConfigWidget->m_buttonBox->button( QDialogButtonBox::Apply );
+        QPushButton* applyButton = m_uiConfigWidget->m_buttonBox->button(QDialogButtonBox::Apply);
 
-        connect( applyButton, SIGNAL(clicked()),
-                 this,        SLOT(writeSettings()) );
+        connect(applyButton, SIGNAL(clicked()),
+                this,        SLOT(writeSettings()));
     }
 
     return m_configDialog;
 }
 
-QHash<QString,QVariant> CrosshairsPlugin::settings() const
+QHash<QString, QVariant> CrosshairsPlugin::settings() const
 {
     QHash<QString, QVariant> result = RenderPlugin::settings();
 
@@ -162,9 +168,9 @@ QHash<QString,QVariant> CrosshairsPlugin::settings() const
     return result;
 }
 
-void CrosshairsPlugin::setSettings( const QHash<QString,QVariant> &settings )
+void CrosshairsPlugin::setSettings(const QHash<QString, QVariant>& settings)
 {
-    RenderPlugin::setSettings( settings );
+    RenderPlugin::setSettings(settings);
 
     m_themeIndex = settings.value(QStringLiteral("theme"), 0).toInt();
 
@@ -173,24 +179,27 @@ void CrosshairsPlugin::setSettings( const QHash<QString,QVariant> &settings )
 
 void CrosshairsPlugin::readSettings()
 {
-    if ( m_uiConfigWidget && (m_themeIndex >= 0) && (m_themeIndex < m_uiConfigWidget->m_themeList->count()) )
+    if (m_uiConfigWidget && (m_themeIndex >= 0) && (m_themeIndex < m_uiConfigWidget->m_themeList->count()))
     {
-        m_uiConfigWidget->m_themeList->setCurrentRow( m_themeIndex );
+        m_uiConfigWidget->m_themeList->setCurrentRow(m_themeIndex);
     }
 
     m_theme = QStringLiteral(":/crosshairs-darkened.png");
 
-    switch( m_themeIndex )
+    switch (m_themeIndex)
     {
         case 1:
             m_theme = QStringLiteral(":/crosshairs-gun1.svg");
             break;
+
         case 2:
             m_theme = QStringLiteral(":/crosshairs-gun2.svg");
             break;
+
         case 3:
             m_theme = QStringLiteral(":/crosshairs-circled.svg");
             break;
+
         case 4:
             m_theme = QStringLiteral(":/crosshairs-german.svg");
             break;
@@ -199,7 +208,7 @@ void CrosshairsPlugin::readSettings()
     if (QImageReader::imageFormat(m_theme) == QByteArray("svg"))
     {
         delete m_svgobj;
-        m_svgobj = new QSvgRenderer( m_theme, this );
+        m_svgobj = new QSvgRenderer(m_theme, this);
     }
 
     m_crosshairs = QPixmap();
@@ -207,37 +216,38 @@ void CrosshairsPlugin::readSettings()
 
 void CrosshairsPlugin::writeSettings()
 {
-    if ( m_uiConfigWidget )
+    if (m_uiConfigWidget)
     {
         m_themeIndex = m_uiConfigWidget->m_themeList->currentRow();
     }
 
     readSettings();
 
-    Q_EMIT settingsChanged( nameId() );
+    Q_EMIT settingsChanged(nameId());
 }
 
-bool CrosshairsPlugin::render( GeoPainter *painter, ViewportParams *viewport,
-                               const QString& renderPos,
-                               GeoSceneLayer * layer )
+bool CrosshairsPlugin::render(GeoPainter* painter, ViewportParams* viewport,
+                              const QString& renderPos,
+                              GeoSceneLayer* layer)
 {
-    Q_UNUSED( renderPos )
-    Q_UNUSED( layer )
+    Q_UNUSED(renderPos)
+    Q_UNUSED(layer)
 
-    if ( m_crosshairs.isNull() )
+    if (m_crosshairs.isNull())
     {
         if (QImageReader::imageFormat(m_theme) == QByteArray("svg"))
         {
-            painter->setRenderHint( QPainter::Antialiasing, true );
-            m_crosshairs = QPixmap( QSize( 21, 21 ) );
-            m_crosshairs.fill( Qt::transparent );
+            painter->setRenderHint(QPainter::Antialiasing, true);
+            m_crosshairs = QPixmap(QSize(21, 21));
+            m_crosshairs.fill(Qt::transparent);
 
-            QPainter mapPainter( &m_crosshairs );
-            m_svgobj->render( &mapPainter );
+            QPainter mapPainter(&m_crosshairs);
+            m_svgobj->render(&mapPainter);
         }
+
         else
         {
-            m_crosshairs.load( m_theme );
+            m_crosshairs.load(m_theme);
         }
     }
 
@@ -248,9 +258,9 @@ bool CrosshairsPlugin::render( GeoPainter *painter, ViewportParams *viewport,
     int posY;
 
     GeoDataCoordinates const focusPoint  = viewport->focusPoint();
-    GeoDataCoordinates const centerPoint = GeoDataCoordinates( viewport->centerLongitude(), viewport->centerLatitude() );
+    GeoDataCoordinates const centerPoint = GeoDataCoordinates(viewport->centerLongitude(), viewport->centerLatitude());
 
-    if ( focusPoint == centerPoint )
+    if (focusPoint == centerPoint)
     {
         // Focus point is in the middle of the screen. Special casing this avoids jittering.
 
@@ -258,16 +268,17 @@ bool CrosshairsPlugin::render( GeoPainter *painter, ViewportParams *viewport,
         posX = (viewPortSize.width()  - width)  / 2;
         posY = (viewPortSize.height() - height) / 2;
     }
+
     else
     {
         qreal centerX = 0.0;
         qreal centerY = 0.0;
-        viewport->screenCoordinates( focusPoint, centerX, centerY );
+        viewport->screenCoordinates(focusPoint, centerX, centerY);
         posX = qRound(centerX - width / 2.0);
         posY = qRound(centerY - height / 2.0);
     }
 
-    painter->drawPixmap(posX, posY, m_crosshairs );
+    painter->drawPixmap(posX, posY, m_crosshairs);
 
     return true;
 }

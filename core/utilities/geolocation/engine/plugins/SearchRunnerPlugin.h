@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
 
 #include "PluginInterface.h"
 
@@ -34,7 +38,7 @@ class DIGIKAM_EXPORT SearchRunnerPlugin : public QObject, public PluginInterface
 public:
 
     /** Constructor with optional parent object */
-    explicit SearchRunnerPlugin( QObject* parent = nullptr );
+    explicit SearchRunnerPlugin(QObject* parent = nullptr);
 
     /** Destructor */
     ~SearchRunnerPlugin() override;
@@ -49,10 +53,10 @@ public:
     /** Plugin factory method to create a new runner instance.
       * Method caller gets ownership of the returned object
       */
-    virtual SearchRunner *newRunner() const = 0;
+    virtual SearchRunner* newRunner() const = 0;
 
     /** True if the plugin supports its tasks on the given planet */
-    bool supportsCelestialBody( const QString &celestialBodyId ) const;
+    bool supportsCelestialBody(const QString& celestialBodyId) const;
 
     /** True if the plugin can execute its tasks without network access */
     bool canWorkOffline() const;
@@ -71,9 +75,9 @@ public:
 
 protected:
 
-    void setSupportedCelestialBodies( const QStringList &celestialBodies );
+    void setSupportedCelestialBodies(const QStringList& celestialBodies);
 
-    void setCanWorkOffline( bool canWorkOffline );
+    void setCanWorkOffline(bool canWorkOffline);
 
 private:
 
@@ -83,4 +87,4 @@ private:
 
 } // namespace Marble
 
-Q_DECLARE_INTERFACE( Marble::SearchRunnerPlugin, "org.kde.Marble.SearchRunnerPlugin/1.01" )
+Q_DECLARE_INTERFACE(Marble::SearchRunnerPlugin, "org.kde.Marble.SearchRunnerPlugin/1.01")

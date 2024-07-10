@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "OsmPlacemarkData.h"
 #include "GeoDataPlacemark.h"
@@ -32,12 +36,12 @@ class OsmNode
 
 public:
 
-    OsmPlacemarkData & osmData();
-    void parseCoordinates(const QXmlStreamAttributes &attributes);
-    void setCoordinates(const GeoDataCoordinates &coordinates);
+    OsmPlacemarkData& osmData();
+    void parseCoordinates(const QXmlStreamAttributes& attributes);
+    void setCoordinates(const GeoDataCoordinates& coordinates);
 
-    const GeoDataCoordinates & coordinates() const;
-    const OsmPlacemarkData & osmData() const;
+    const GeoDataCoordinates& coordinates() const;
+    const OsmPlacemarkData& osmData() const;
 
     GeoDataPlacemark* create() const;
 
@@ -51,6 +55,6 @@ private:
     GeoDataCoordinates m_coordinates;
 };
 
-typedef QHash<qint64,OsmNode> OsmNodes;
+typedef QHash<qint64, OsmNode> OsmNodes;
 
 } // namespace Marble

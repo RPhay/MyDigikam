@@ -15,11 +15,14 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QStandardItemModel>
 #include <QList>
 
-#include "PluginInterface.h"
+// Local includes
 
+#include "PluginInterface.h"
 #include "digikam_export.h"
 
 namespace Marble

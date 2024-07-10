@@ -15,21 +15,25 @@
 
 #include "PntPlugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "PntRunner.h"
 
 namespace Marble
 {
 
-PntPlugin::PntPlugin(QObject * const parent)
+PntPlugin::PntPlugin(QObject* const parent)
     : ParseRunnerPlugin(parent)
 {
 }
 
 QString PntPlugin::name() const
 {
-    return i18n( "Pnt File Parser" );
+    return i18n("Pnt File Parser");
 }
 
 QString PntPlugin::nameId() const
@@ -44,7 +48,7 @@ QString PntPlugin::version() const
 
 QString PntPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the Micro World Database II Files format" );
+    return i18n("A plugin to load Geolocation Data from the Micro World Database II Files format");
 }
 
 QString PntPlugin::copyrightYears() const
@@ -55,12 +59,12 @@ QString PntPlugin::copyrightYears() const
 QVector<PluginAuthor> PntPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
+           << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
 }
 
 QString PntPlugin::fileFormatDescription() const
 {
-    return i18n( "Micro World Database II" );
+    return i18n("Micro World Database II");
 }
 
 QStringList PntPlugin::fileExtensions() const

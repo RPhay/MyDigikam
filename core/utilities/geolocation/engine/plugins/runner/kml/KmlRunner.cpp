@@ -15,20 +15,23 @@
 
 #include "KmlRunner.h"
 
+// Qt includes
+
 #include <QBuffer>
 #include <QFile>
 #include <QFileInfo>
 
+// Local includes
+
 #include "GeoDataDocument.h"
 #include "KmlParser.h"
 #include "MarbleZipReader.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-KmlRunner::KmlRunner(QObject *parent) :
+KmlRunner::KmlRunner(QObject* parent) :
     ParsingRunner(parent)
 {
 }
@@ -37,10 +40,12 @@ KmlRunner::~KmlRunner()
 {
 }
 
-GeoDataDocument *KmlRunner::parseFile(const QString &fileName, DocumentRole role, QString &error)
+GeoDataDocument* KmlRunner::parseFile(const QString& fileName, DocumentRole role, QString& error)
 {
     QFile file(fileName);
-    if (!file.open(QFile::ReadOnly)) {
+
+    if (!file.open(QFile::ReadOnly))
+    {
         error = QStringLiteral("Cannot open file %1").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
@@ -49,20 +54,29 @@ GeoDataDocument *KmlRunner::parseFile(const QString &fileName, DocumentRole role
     QBuffer buffer;
     QIODevice* device = nullptr;
 
-    if (fileName.toLower().endsWith(QLatin1String(".kmz"))) {
+    if (fileName.toLower().endsWith(QLatin1String(".kmz")))
+    {
         MarbleZipReader zipReader(&file);
 
         QStringList kmlFiles;
-        for(const MarbleZipReader::FileInfo &zipFileInfo : zipReader.fileInfoList()) {
-            if (zipFileInfo.filePath.toLower().endsWith(QLatin1String(".kml"))) {
+
+        for (const MarbleZipReader::FileInfo& zipFileInfo : zipReader.fileInfoList())
+        {
+            if (zipFileInfo.filePath.toLower().endsWith(QLatin1String(".kml")))
+            {
                 kmlFiles.append(zipFileInfo.filePath);
             }
         }
-        if (kmlFiles.empty()) {
+
+        if (kmlFiles.empty())
+        {
             error = QStringLiteral("File %1 does not contain any KML files").arg(fileName);
             qCDebug(DIGIKAM_MARBLE_LOG) << error;
             return nullptr;
-        } else if (kmlFiles.size() > 1) {
+        }
+
+        else if (kmlFiles.size() > 1)
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << QStringLiteral("File %1 contains multiple KML files").arg(fileName);
         }
 
@@ -70,21 +84,26 @@ GeoDataDocument *KmlRunner::parseFile(const QString &fileName, DocumentRole role
         buffer.setData(data);
         buffer.open(QBuffer::ReadOnly);
         device = &buffer;
-    } else {
+    }
+
+    else
+    {
         device = &file;
     }
 
     KmlParser parser;
-    if (!parser.read(device)) {
+
+    if (!parser.read(device))
+    {
         error = parser.errorString();
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
         return nullptr;
     }
 
     GeoDocument* document = parser.releaseDocument();
-    Q_ASSERT( document );
+    Q_ASSERT(document);
     GeoDataDocument* doc = static_cast<GeoDataDocument*>(document);
-    doc->setDocumentRole( role );
+    doc->setDocumentRole(role);
     doc->setFileName(fileName);
 
     file.close();

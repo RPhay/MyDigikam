@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "ParseRunnerPlugin.h"
 
 namespace Marble
@@ -24,7 +26,7 @@ class PntPlugin : public ParseRunnerPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.PntPlugin")
-    Q_INTERFACES( Marble::ParseRunnerPlugin )
+    Q_INTERFACES(Marble::ParseRunnerPlugin)
 
 public:
 

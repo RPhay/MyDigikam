@@ -22,4 +22,4 @@ RenderPluginInterface::~RenderPluginInterface()
 {
 }
 
-}
+} // namespace Marble

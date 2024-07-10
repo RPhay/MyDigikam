@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QDialog>
+
+// Local includes
 
 #include "ui_MeasureConfigDialog.h"
 #include "MeasureToolPlugin.h"
@@ -29,7 +33,7 @@ class MeasureConfigDialog : public QDialog
 
 public:
 
-    explicit MeasureConfigDialog(QDialog *parent = nullptr);
+    explicit MeasureConfigDialog(QDialog* parent = nullptr);
     ~MeasureConfigDialog() override;
 
     bool showBearingLabel() const;

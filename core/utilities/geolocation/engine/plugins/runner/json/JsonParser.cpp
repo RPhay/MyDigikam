@@ -15,11 +15,15 @@
 
 #include "JsonParser.h"
 
+// Qt includes
+
 #include <QIODevice>
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QColor>
+
+// Local includes
 
 #include "GeoDataDocument.h"
 #include "GeoDataPlacemark.h"
@@ -35,7 +39,6 @@
 #include "MarbleDirs.h"
 #include "StyleBuilder.h"
 #include "OsmPlacemarkData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -52,7 +55,7 @@ namespace Marble
     "marker-color" correctly.
 */
 JsonParser::JsonParser()
-    : m_document( nullptr )
+    : m_document(nullptr)
 {
     // Get the default styles set by Marble
 
@@ -69,7 +72,7 @@ JsonParser::JsonParser()
     // Set "marker-color": "#7e7e7e" and "marker-size": "medium"
     m_iconStylePoints->setColor(QColor("#ff7e7e7e"));
     m_iconStylePoints->setIconPath(MarbleDirs::path(QStringLiteral("svg/dot-circle-regular.svg")));
-    m_iconStylePoints->setSize(QSize(22,22), Qt::KeepAspectRatio);
+    m_iconStylePoints->setSize(QSize(22, 22), Qt::KeepAspectRatio);
 
     m_iconStyleOther->setIconPath(QString());
     m_iconStyleOther->setColor(QColor("#ff7e7e7e"));
@@ -102,28 +105,32 @@ JsonParser::~JsonParser()
     delete m_labelStyle;
 }
 
-GeoDataDocument *JsonParser::releaseDocument()
+GeoDataDocument* JsonParser::releaseDocument()
 {
     GeoDataDocument* document = m_document;
     m_document = nullptr;
     return document;
 }
 
-bool JsonParser::read( QIODevice* device )
+bool JsonParser::read(QIODevice* device)
 {
     // Release the previous document if required
     delete m_document;
     m_document = new GeoDataDocument;
-    Q_ASSERT( m_document );
+    Q_ASSERT(m_document);
 
     // Read JSON file data
     QJsonParseError error;
     const QJsonDocument jsonDoc = QJsonDocument::fromJson(device->readAll(), &error);
 
-    if (jsonDoc.isNull()) {
+    if (jsonDoc.isNull())
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Error parsing GeoJSON:" << error.errorString();
         return false;
-    } else if (! jsonDoc.isObject()) {
+    }
+
+    else if (! jsonDoc.isObject())
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Invalid file, does not contain a GeoJSON object";
         return false;
     }
@@ -135,12 +142,16 @@ bool JsonParser::read( QIODevice* device )
     const QString jsonObjectType = jsonDoc.object().value(QStringLiteral("type")).toString();
 
     if (jsonObjectType == QStringLiteral("FeatureCollection")
-        || jsonObjectType == QStringLiteral("Feature")) {
+        || jsonObjectType == QStringLiteral("Feature"))
+    {
 
         // A normal GeoJSON document: parse it recursively
         return parseGeoJsonTopLevel(jsonDoc.object());
 
-    } else {
+    }
+
+    else
+    {
         // Create a wrapper Feature object and parse that
 
         QJsonObject jsonWrapper;
@@ -154,31 +165,40 @@ bool JsonParser::read( QIODevice* device )
     }
 }
 
-bool JsonParser::parseGeoJsonTopLevel( const QJsonObject& jsonObject )
+bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
 {
     // Every GeoJSON object must have a case-sensitive "type" member (see RFC7946 section 3)
     const QString jsonObjectType = jsonObject.value(QStringLiteral("type")).toString();
 
-    if (jsonObjectType == QStringLiteral("FeatureCollection")) {
+    if (jsonObjectType == QStringLiteral("FeatureCollection"))
+    {
         // Handle the FeatureCollection object, which may contain multiple Feature objects in it
 
         const QJsonArray featureArray = jsonObject.value(QStringLiteral("features")).toArray();
-        for (int featureIndex = 0; featureIndex < featureArray.size(); ++featureIndex) {
-            if (! parseGeoJsonTopLevel( featureArray[featureIndex].toObject() )) {
+
+        for (int featureIndex = 0; featureIndex < featureArray.size(); ++featureIndex)
+        {
+            if (! parseGeoJsonTopLevel(featureArray[featureIndex].toObject()))
+            {
                 return false;
             }
         }
+
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("Feature")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("Feature"))
+    {
         // Handle the Feature object, which contains a single geometry object and possibly
         // associated properties.  Note that only Feature objects can have recognised properties.
 
         QVector<GeoDataGeometry*> geometryList;     // Populated by parseGeoJsonSubLevel()
         bool hasPoints = false;                     // Populated by parseGeoJsonSubLevel()
 
-        if (! parseGeoJsonSubLevel( jsonObject.value(QStringLiteral("geometry")).toObject(),
-                geometryList, hasPoints )) {
+        if (! parseGeoJsonSubLevel(jsonObject.value(QStringLiteral("geometry")).toObject(),
+                                   geometryList, hasPoints))
+        {
             return false;
         }
 
@@ -186,21 +206,31 @@ bool JsonParser::parseGeoJsonTopLevel( const QJsonObject& jsonObject )
 
         GeoDataPlacemark* placemark = new GeoDataPlacemark();
 
-        if (geometryList.length() < 1) {
+        if (geometryList.length() < 1)
+        {
             // No geometries available to add to the placemark
             ;
 
-        } else if (geometryList.length() == 1) {
+        }
+
+        else if (geometryList.length() == 1)
+        {
             // Single geometry
             placemark->setGeometry(geometryList[0]);
 
-        } else {
+        }
+
+        else
+        {
             // Multiple geometries require a GeoDataMultiGeometry class
 
             GeoDataMultiGeometry* geom = new GeoDataMultiGeometry();
-            for (int i = 0; i < geometryList.length(); ++i) {
+
+            for (int i = 0; i < geometryList.length(); ++i)
+            {
                 geom->append(geometryList[i]);
             }
+
             placemark->setGeometry(geom);
         }
 
@@ -219,17 +249,20 @@ bool JsonParser::parseGeoJsonTopLevel( const QJsonObject& jsonObject )
 
         OsmPlacemarkData osmData;
 
-        for ( ; iter != end; ++iter) {
+        for (; iter != end; ++iter)
+        {
             // Pass the value through QVariant to also get booleans and numbers
             const QString propertyValue = iter.value().toVariant().toString();
             const QString propertyKey = iter.key();
 
-            if (iter.value().isObject() || iter.value().isArray()) {
+            if (iter.value().isObject() || iter.value().isArray())
+            {
                 qCDebug(DIGIKAM_MARBLE_LOG) << "Skipping unsupported JSON property containing an object or array:" << propertyKey;
                 continue;
             }
 
-            if (propertyKey == QStringLiteral("name")) {
+            if (propertyKey == QStringLiteral("name"))
+            {
                 // The "name" property is not defined in the Simplestyle specification, but is used
                 // extensively in the wild.  Treat "name" and "title" essentially the same for the
                 // purposes of placemarks (although osmData tags will preserve the distinction).
@@ -237,93 +270,162 @@ bool JsonParser::parseGeoJsonTopLevel( const QJsonObject& jsonObject )
                 placemark->setName(propertyValue);
                 osmData.addTag(propertyKey, propertyValue);
 
-            } else if (propertyKey == QStringLiteral("title")) {
+            }
+
+            else if (propertyKey == QStringLiteral("title"))
+            {
                 placemark->setName(propertyValue);
                 osmData.addTag(propertyKey, propertyValue);
 
-            } else if (propertyKey == QStringLiteral("description")) {
+            }
+
+            else if (propertyKey == QStringLiteral("description"))
+            {
                 placemark->setDescription(propertyValue);
                 osmData.addTag(propertyKey, propertyValue);
 
-            } else if (propertyKey == QStringLiteral("marker-size")) {
+            }
+
+            else if (propertyKey == QStringLiteral("marker-size"))
+            {
                 // TODO: Implement marker-size handling
-                if (propertyValue == QStringLiteral("")) {
+                if (propertyValue == QStringLiteral(""))
+                {
                     // Use the default value
                     ;
-                } else {
+                }
+
+                else
+                {
                     //qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring unimplemented marker-size property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("marker-symbol")) {
+            }
+            else if (propertyKey == QStringLiteral("marker-symbol"))
+            {
                 // TODO: Implement marker-symbol handling
-                if (propertyValue == QStringLiteral("")) {
+                if (propertyValue == QStringLiteral(""))
+                {
                     // Use the default value
                     ;
-                } else {
+                }
+
+                else
+                {
                     //qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring unimplemented marker-symbol property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("marker-color")) {
+            }
+            else if (propertyKey == QStringLiteral("marker-color"))
+            {
                 // Even though the Simplestyle spec allows colors to omit the leading "#", this
                 // implementation assumes it is always present, as this then allows named colors
                 // understood by QColor as an extension
                 QColor color = QColor(propertyValue);
-                if (color.isValid()) {
+
+                if (color.isValid())
+                {
                     iconStyle.setColor(color);  // Currently ignored by Marble
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid marker-color property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("stroke")) {
+            }
+
+            else if (propertyKey == QStringLiteral("stroke"))
+            {
                 QColor color = QColor(propertyValue);   // Assume leading "#" is present
-                if (color.isValid()) {
+
+                if (color.isValid())
+                {
                     color.setAlpha(lineStyle.color().alpha());
                     lineStyle.setColor(color);
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid stroke property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("stroke-opacity")) {
+            }
+
+            else if (propertyKey == QStringLiteral("stroke-opacity"))
+            {
                 bool ok;
                 float opacity = propertyValue.toFloat(&ok);
-                if (ok && opacity >= 0.0 && opacity <= 1.0) {
+
+                if (ok && opacity >= 0.0 && opacity <= 1.0)
+                {
                     QColor color = lineStyle.color();
                     color.setAlphaF(opacity);
                     lineStyle.setColor(color);
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid stroke-opacity property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("stroke-width")) {
+            }
+
+            else if (propertyKey == QStringLiteral("stroke-width"))
+            {
                 bool ok;
                 float width = propertyValue.toFloat(&ok);
-                if (ok && width >= 0.0) {
+
+                if (ok && width >= 0.0)
+                {
                     lineStyle.setWidth(width);
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid stroke-width property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("fill")) {
+            }
+
+            else if (propertyKey == QStringLiteral("fill"))
+            {
                 QColor color = QColor(propertyValue);   // Assume leading "#" is present
-                if (color.isValid()) {
+
+                if (color.isValid())
+                {
                     color.setAlpha(polyStyle.color().alpha());
                     polyStyle.setColor(color);
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid fill property:" << propertyValue;
                 }
 
-            } else if (propertyKey == QStringLiteral("fill-opacity")) {
+            }
+
+            else if (propertyKey == QStringLiteral("fill-opacity"))
+            {
                 bool ok;
                 float opacity = propertyValue.toFloat(&ok);
-                if (ok && opacity >= 0.0 && opacity <= 1.0) {
+
+                if (ok && opacity >= 0.0 && opacity <= 1.0)
+                {
                     QColor color = polyStyle.color();
                     color.setAlphaF(opacity);
                     polyStyle.setColor(color);
-                } else {
+                }
+
+                else
+                {
                     qCDebug(DIGIKAM_MARBLE_LOG) << "Ignoring invalid fill-opacity property:" << propertyValue;
                 }
 
-            } else {
+            }
+
+            else
+            {
                 // Property is not defined by the Simplestyle spec
                 osmData.addTag(propertyKey, propertyValue);
             }
@@ -340,37 +442,49 @@ bool JsonParser::parseGeoJsonTopLevel( const QJsonObject& jsonObject )
 
         const GeoDataPlacemark::GeoDataVisualCategory category =
             StyleBuilder::determineVisualCategory(osmData);
-        if (category != GeoDataPlacemark::None) {
+
+        if (category != GeoDataPlacemark::None)
+        {
             placemark->setVisualCategory(category);
         }
 
         m_document->append(placemark);
         return true;
 
-    } else {
+    }
+
+    else
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Missing FeatureCollection or Feature object in GeoJSON file";
         return false;
     }
 }
 
-bool JsonParser::parseGeoJsonSubLevel( const QJsonObject& jsonObject,
-                                       QVector<GeoDataGeometry*>& geometryList, bool& hasPoints )
+bool JsonParser::parseGeoJsonSubLevel(const QJsonObject& jsonObject,
+                                      QVector<GeoDataGeometry*>& geometryList, bool& hasPoints)
 {
     // The GeoJSON object type
     const QString jsonObjectType = jsonObject.value(QStringLiteral("type")).toString();
 
     if (jsonObjectType == QStringLiteral("FeatureCollection")
-        || jsonObjectType == QStringLiteral("Feature")) {
+        || jsonObjectType == QStringLiteral("Feature"))
+    {
 
         qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot have FeatureCollection or Feature objects at this level of the GeoJSON file";
         return false;
 
-    } else if (jsonObjectType == QStringLiteral("GeometryCollection")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("GeometryCollection"))
+    {
         // Handle the GeometryCollection object, which may contain multiple geometry objects
 
         const QJsonArray geometryArray = jsonObject.value(QStringLiteral("geometries")).toArray();
-        for (int geometryIndex = 0; geometryIndex < geometryArray.size(); ++geometryIndex) {
-            if (! parseGeoJsonSubLevel( geometryArray[geometryIndex].toObject(), geometryList, hasPoints )) {
+
+        for (int geometryIndex = 0; geometryIndex < geometryArray.size(); ++geometryIndex)
+        {
+            if (! parseGeoJsonSubLevel(geometryArray[geometryIndex].toObject(), geometryList, hasPoints))
+            {
                 return false;
             }
         }
@@ -382,7 +496,8 @@ bool JsonParser::parseGeoJsonSubLevel( const QJsonObject& jsonObject,
 
     const QJsonArray coordinateArray = jsonObject.value(QStringLiteral("coordinates")).toArray();
 
-    if (jsonObjectType == QStringLiteral("Point")) {
+    if (jsonObjectType == QStringLiteral("Point"))
+    {
         // A Point object has a single GeoJSON position: an array of at least two values
 
         GeoDataPoint* geom = new GeoDataPoint();
@@ -390,16 +505,20 @@ bool JsonParser::parseGeoJsonSubLevel( const QJsonObject& jsonObject,
         const qreal lat = coordinateArray.at(1).toDouble();
         const qreal alt = coordinateArray.at(2).toDouble();     // If missing, uses 0 as the default
 
-        geom->setCoordinates( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+        geom->setCoordinates(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
         geometryList.append(geom);
 
         hasPoints = true;
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("MultiPoint")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("MultiPoint"))
+    {
         // A MultiPoint object has an array of GeoJSON positions (ie, a two-level array)
 
-        for (int positionIndex = 0; positionIndex < coordinateArray.size(); ++positionIndex) {
+        for (int positionIndex = 0; positionIndex < coordinateArray.size(); ++positionIndex)
+        {
             const QJsonArray positionArray = coordinateArray[positionIndex].toArray();
 
             GeoDataPoint* geom = new GeoDataPoint();
@@ -407,126 +526,164 @@ bool JsonParser::parseGeoJsonSubLevel( const QJsonObject& jsonObject,
             const qreal lat = positionArray.at(1).toDouble();
             const qreal alt = positionArray.at(2).toDouble();
 
-            geom->setCoordinates( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+            geom->setCoordinates(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
             geometryList.append(geom);
         }
 
         hasPoints = true;
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("LineString")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("LineString"))
+    {
         // A LineString object has an array of GeoJSON positions (ie, a two-level array)
 
-        GeoDataLineString* geom = new GeoDataLineString( RespectLatitudeCircle | Tessellate );
+        GeoDataLineString* geom = new GeoDataLineString(RespectLatitudeCircle | Tessellate);
 
-        for (int positionIndex = 0; positionIndex < coordinateArray.size(); ++positionIndex) {
+        for (int positionIndex = 0; positionIndex < coordinateArray.size(); ++positionIndex)
+        {
             const QJsonArray positionArray = coordinateArray[positionIndex].toArray();
 
             const qreal lon = positionArray.at(0).toDouble();
             const qreal lat = positionArray.at(1).toDouble();
             const qreal alt = positionArray.at(2).toDouble();
 
-            geom->append( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+            geom->append(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
         }
+
         geometryList.append(geom);
 
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("MultiLineString")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("MultiLineString"))
+    {
         // A MultiLineString object has an array of arrays of GeoJSON positions (three-level)
 
-        for (int lineStringIndex = 0; lineStringIndex < coordinateArray.size(); ++lineStringIndex) {
+        for (int lineStringIndex = 0; lineStringIndex < coordinateArray.size(); ++lineStringIndex)
+        {
             const QJsonArray lineStringArray = coordinateArray[lineStringIndex].toArray();
 
-            GeoDataLineString* geom = new GeoDataLineString( RespectLatitudeCircle | Tessellate );
+            GeoDataLineString* geom = new GeoDataLineString(RespectLatitudeCircle | Tessellate);
 
-            for (int positionIndex = 0; positionIndex < lineStringArray.size(); ++positionIndex) {
+            for (int positionIndex = 0; positionIndex < lineStringArray.size(); ++positionIndex)
+            {
                 const QJsonArray positionArray = lineStringArray[positionIndex].toArray();
 
                 const qreal lon = positionArray.at(0).toDouble();
                 const qreal lat = positionArray.at(1).toDouble();
                 const qreal alt = positionArray.at(2).toDouble();
 
-                geom->append( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+                geom->append(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
             }
+
             geometryList.append(geom);
         }
 
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("Polygon")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("Polygon"))
+    {
         // A Polygon object has an array of arrays of GeoJSON positions: the first array within the
         // top-level Polygon coordinates array is the outer boundary, following arrays are inner
         // holes (if any)
 
-        GeoDataPolygon* geom = new GeoDataPolygon( RespectLatitudeCircle | Tessellate );
+        GeoDataPolygon* geom = new GeoDataPolygon(RespectLatitudeCircle | Tessellate);
 
-        for (int ringIndex = 0; ringIndex < coordinateArray.size(); ++ringIndex) {
+        for (int ringIndex = 0; ringIndex < coordinateArray.size(); ++ringIndex)
+        {
             const QJsonArray ringArray = coordinateArray[ringIndex].toArray();
 
             GeoDataLinearRing linearRing;
 
-            for (int positionIndex = 0; positionIndex < ringArray.size(); ++positionIndex) {
+            for (int positionIndex = 0; positionIndex < ringArray.size(); ++positionIndex)
+            {
                 const QJsonArray positionArray = ringArray[positionIndex].toArray();
 
                 const qreal lon = positionArray.at(0).toDouble();
                 const qreal lat = positionArray.at(1).toDouble();
                 const qreal alt = positionArray.at(2).toDouble();
 
-                linearRing.append( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+                linearRing.append(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
             }
 
-            if (ringIndex == 0) {
+            if (ringIndex == 0)
+            {
                 // Outer boundary of the polygon
                 geom->setOuterBoundary(linearRing);
-            } else {
+            }
+
+            else
+            {
                 geom->appendInnerBoundary(linearRing);
             }
         }
+
         geometryList.append(geom);
 
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("MultiPolygon")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral("MultiPolygon"))
+    {
         // A MultiPolygon object has an array of Polygon arrays (ie, a four-level array)
 
-        for (int polygonIndex = 0; polygonIndex < coordinateArray.size(); ++polygonIndex) {
+        for (int polygonIndex = 0; polygonIndex < coordinateArray.size(); ++polygonIndex)
+        {
             const QJsonArray polygonArray = coordinateArray[polygonIndex].toArray();
 
-            GeoDataPolygon* geom = new GeoDataPolygon( RespectLatitudeCircle | Tessellate );
+            GeoDataPolygon* geom = new GeoDataPolygon(RespectLatitudeCircle | Tessellate);
 
-            for (int ringIndex = 0; ringIndex < polygonArray.size(); ++ringIndex) {
+            for (int ringIndex = 0; ringIndex < polygonArray.size(); ++ringIndex)
+            {
                 const QJsonArray ringArray = polygonArray[ringIndex].toArray();
 
                 GeoDataLinearRing linearRing;
 
-                for (int positionIndex = 0; positionIndex < ringArray.size(); ++positionIndex) {
+                for (int positionIndex = 0; positionIndex < ringArray.size(); ++positionIndex)
+                {
                     const QJsonArray positionArray = ringArray[positionIndex].toArray();
 
                     const qreal lon = positionArray.at(0).toDouble();
                     const qreal lat = positionArray.at(1).toDouble();
                     const qreal alt = positionArray.at(2).toDouble();
 
-                    linearRing.append( GeoDataCoordinates( lon, lat, alt, GeoDataCoordinates::Degree ));
+                    linearRing.append(GeoDataCoordinates(lon, lat, alt, GeoDataCoordinates::Degree));
                 }
 
-                if (ringIndex == 0) {
+                if (ringIndex == 0)
+                {
                     // Outer boundary of the polygon
                     geom->setOuterBoundary(linearRing);
-                } else {
+                }
+
+                else
+                {
                     geom->appendInnerBoundary(linearRing);
                 }
             }
+
             geometryList.append(geom);
         }
 
         return true;
 
-    } else if (jsonObjectType == QStringLiteral("")) {
+    }
+
+    else if (jsonObjectType == QStringLiteral(""))
+    {
         // Unlocated Feature objects have a null value for "geometry" (RFC7946 section 3.2)
         return true;
 
-    } else {
+    }
+
+    else
+    {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown GeoJSON object type" << jsonObjectType;
         return false;
     }

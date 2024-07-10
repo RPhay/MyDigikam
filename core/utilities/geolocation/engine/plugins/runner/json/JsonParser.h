@@ -15,10 +15,12 @@
 
 #pragma once
 
-class QIODevice;
-class QJsonObject;
+// Qt includes
 
 #include <QVector>
+
+class QIODevice;
+class QJsonObject;
 
 namespace Marble
 {

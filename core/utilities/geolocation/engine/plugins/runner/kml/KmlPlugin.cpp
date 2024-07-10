@@ -15,7 +15,11 @@
 
 #include "KmlPlugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "KmlRunner.h"
 
@@ -23,13 +27,13 @@ namespace Marble
 {
 
 KmlPlugin::KmlPlugin(QObject* const parent)
-    : ParseRunnerPlugin( parent )
+    : ParseRunnerPlugin(parent)
 {
 }
 
 QString KmlPlugin::name() const
 {
-    return i18n( "KML File Parser" );
+    return i18n("KML File Parser");
 }
 
 QString KmlPlugin::nameId() const
@@ -44,7 +48,7 @@ QString KmlPlugin::version() const
 
 QString KmlPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the KML and KMZ data file format." );
+    return i18n("A plugin to load Geolocation Data from the KML and KMZ data file format.");
 }
 
 QString KmlPlugin::copyrightYears() const
@@ -55,19 +59,19 @@ QString KmlPlugin::copyrightYears() const
 QVector<PluginAuthor> KmlPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"))
-            << PluginAuthor(QStringLiteral("Dennis Nienhüser"), QStringLiteral("nienhueser@kde.org"));
+           << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"))
+           << PluginAuthor(QStringLiteral("Dennis Nienhüser"), QStringLiteral("nienhueser@kde.org"));
 }
 
 QString KmlPlugin::fileFormatDescription() const
 {
-    return i18n( "Google Earth KML" );
+    return i18n("Google Earth KML");
 }
 
 QStringList KmlPlugin::fileExtensions() const
 {
     return QStringList() << QStringLiteral("kml")
-                         << QStringLiteral("kmz");
+           << QStringLiteral("kmz");
 }
 
 ParsingRunner* KmlPlugin::newRunner() const

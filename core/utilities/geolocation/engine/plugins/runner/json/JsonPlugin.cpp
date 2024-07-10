@@ -15,7 +15,11 @@
 
 #include "JsonPlugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "JsonRunner.h"
 
@@ -23,13 +27,13 @@ namespace Marble
 {
 
 JsonPlugin::JsonPlugin(QObject* const parent)
-    : ParseRunnerPlugin( parent )
+    : ParseRunnerPlugin(parent)
 {
 }
 
 QString JsonPlugin::name() const
 {
-    return i18n( "GeoJSON File Parser" );
+    return i18n("GeoJSON File Parser");
 }
 
 QString JsonPlugin::nameId() const
@@ -44,7 +48,7 @@ QString JsonPlugin::version() const
 
 QString JsonPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the GeoJSON data file format." );
+    return i18n("A plugin to load Geolocation Data from the GeoJSON data file format.");
 }
 
 QString JsonPlugin::copyrightYears() const
@@ -55,19 +59,19 @@ QString JsonPlugin::copyrightYears() const
 QVector<PluginAuthor> JsonPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Ander Pijoan"), QStringLiteral("ander.pijoan@deusto.es"))
-            << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
+           << PluginAuthor(QStringLiteral("Ander Pijoan"), QStringLiteral("ander.pijoan@deusto.es"))
+           << PluginAuthor(QStringLiteral("John Zaitseff"), QStringLiteral("J.Zaitseff@zap.org.au"));
 }
 
 QString JsonPlugin::fileFormatDescription() const
 {
-    return i18n( "GeoJSON" );
+    return i18n("GeoJSON");
 }
 
 QStringList JsonPlugin::fileExtensions() const
 {
     return QStringList() << QStringLiteral("json")
-                         << QStringLiteral("geojson");
+           << QStringLiteral("geojson");
 }
 
 ParsingRunner* JsonPlugin::newRunner() const

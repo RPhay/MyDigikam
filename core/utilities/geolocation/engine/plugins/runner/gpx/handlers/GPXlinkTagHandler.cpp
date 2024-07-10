@@ -15,12 +15,13 @@
 
 #include "GPXlinkTagHandler.h"
 
+// Local includes
+
 #include "GPXElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataData.h"
 #include "GeoDataExtendedData.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -41,6 +42,7 @@ GeoNode* GPXlinkTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(gpxTag_link)));
 
     GeoStackItem parentItem = parser.parentElement();
+
     if (parentItem.represents(gpxTag_wpt))
     {
         GeoDataPlacemark* placemark = parentItem.nodeAs<GeoDataPlacemark>();
@@ -48,15 +50,17 @@ GeoNode* GPXlinkTagHandler::parse(GeoParser& parser) const
         QXmlStreamAttributes attributes = parser.attributes();
         QString href = attributes.value(QLatin1String("href")).toString();
         QString text = href;
+
         if (parser.readNextStartElement())
         {
             text = parser.readElementText();
         }
 
         const QString link = QStringLiteral("Link: <a href=\"%1\">%2</a>")
-            .arg(href).arg(text);
+                             .arg(href).arg(text);
 
         QString desc = placemark->description();
+
         if (!desc.isEmpty())
         {
             desc += QLatin1String("<br/>");

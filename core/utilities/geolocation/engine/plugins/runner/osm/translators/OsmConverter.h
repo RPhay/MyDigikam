@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoDataCoordinates.h"
 
 namespace Marble
@@ -46,15 +48,15 @@ public:
 
     void read(const GeoDataDocument* document);
 
-    const Nodes & nodes() const;
-    const Ways & ways() const;
-    const Relations &relations() const;
+    const Nodes& nodes() const;
+    const Ways& ways() const;
+    const Relations& relations() const;
 
 private:
 
-    void processLinearRing(GeoDataLinearRing *linearRing,
+    void processLinearRing(GeoDataLinearRing* linearRing,
                            const OsmPlacemarkData& osmData);
-    void processPolygon(GeoDataPolygon *polygon,
+    void processPolygon(GeoDataPolygon* polygon,
                         const OsmPlacemarkData& osmData,
                         GeoDataPlacemark* placemark);
 

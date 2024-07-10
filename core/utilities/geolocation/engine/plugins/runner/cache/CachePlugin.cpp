@@ -37,7 +37,7 @@ CachePlugin::CachePlugin(QObject* const parent)
 
 QString CachePlugin::name() const
 {
-    return i18n( "Cache File Parser" );
+    return i18n("Cache File Parser");
 }
 
 QString CachePlugin::nameId() const
@@ -52,7 +52,7 @@ QString CachePlugin::version() const
 
 QString CachePlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from the binary Cache files." );
+    return i18n("A plugin to load Geolocation Data from the binary Cache files.");
 }
 
 QString CachePlugin::copyrightYears() const
@@ -63,12 +63,12 @@ QString CachePlugin::copyrightYears() const
 QVector<PluginAuthor> CachePlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
+           << PluginAuthor(QStringLiteral("Thibaut Gridel"), QStringLiteral("tgridel@free.fr"));
 }
 
 QString CachePlugin::fileFormatDescription() const
 {
-    return i18n( "Marble Cache Files" );
+    return i18n("Marble Cache Files");
 }
 
 QStringList CachePlugin::fileExtensions() const

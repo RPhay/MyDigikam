@@ -24,6 +24,10 @@
 #include <QLineEdit>
 #include <QDialogButtonBox>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "OsmTagEditorWidget.h"
@@ -32,7 +36,6 @@
 #include "GeoDataPlacemark.h"
 #include "GeoDataExtendedData.h"
 #include "GeoDataData.h"
-#include <klocalizedstring.h>
 
 namespace Marble
 {

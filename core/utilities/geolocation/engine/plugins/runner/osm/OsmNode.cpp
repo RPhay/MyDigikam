@@ -15,7 +15,11 @@
 
 #include "OsmNode.h"
 
+// Qt includes
+
 #include <QXmlStreamAttributes>
+
+// Local includes
 
 #include "OsmObjectManager.h"
 #include "GeoDataStyle.h"
@@ -27,23 +31,24 @@
 namespace Marble
 {
 
-void OsmNode::parseCoordinates(const QXmlStreamAttributes &attributes)
+void OsmNode::parseCoordinates(const QXmlStreamAttributes& attributes)
 {
     qreal const lon = attributes.value(QLatin1String("lon")).toDouble();
     qreal const lat = attributes.value(QLatin1String("lat")).toDouble();
     setCoordinates(GeoDataCoordinates(lon, lat, 0, GeoDataCoordinates::Degree));
 }
 
-void OsmNode::setCoordinates(const GeoDataCoordinates &coordinates)
+void OsmNode::setCoordinates(const GeoDataCoordinates& coordinates)
 {
     m_coordinates = coordinates;
 }
 
-GeoDataPlacemark *OsmNode::create() const
+GeoDataPlacemark* OsmNode::create() const
 {
     GeoDataPlacemark::GeoDataVisualCategory const category = StyleBuilder::determineVisualCategory(m_osmData);
 
-    if (category == GeoDataPlacemark::None && m_osmData.isEmpty()) {
+    if (category == GeoDataPlacemark::None && m_osmData.isEmpty())
+    {
         return nullptr;
     }
 
@@ -54,36 +59,54 @@ GeoDataPlacemark *OsmNode::create() const
     placemark->setCoordinate(coordinates);
 
     QHash<QString, QString>::const_iterator tagIter;
+
     if ((category == GeoDataPlacemark::TransportCarShare || category == GeoDataPlacemark::MoneyAtm)
-            && (tagIter = m_osmData.findTag(QStringLiteral("operator"))) != m_osmData.tagsEnd()) {
+        && (tagIter = m_osmData.findTag(QStringLiteral("operator"))) != m_osmData.tagsEnd())
+    {
         placemark->setName(tagIter.value());
-    } else {
+    }
+
+    else
+    {
         placemark->setName(m_osmData.tagValue(QStringLiteral("name")));
     }
-    if (category == GeoDataPlacemark::AerialwayStation && coordinates.altitude() != 0.0) {
-        if (placemark->name().isEmpty()) {
+
+    if (category == GeoDataPlacemark::AerialwayStation && coordinates.altitude() != 0.0)
+    {
+        if (placemark->name().isEmpty())
+        {
             placemark->setName(QStringLiteral("%1 m").arg(coordinates.altitude()));
-        } else {
+        }
+
+        else
+        {
             placemark->setName(QStringLiteral("%1 (%2 m)").arg(placemark->name()).arg(coordinates.altitude()));
         }
     }
-    if (placemark->name().isEmpty()) {
+
+    if (placemark->name().isEmpty())
+    {
         placemark->setName(m_osmData.tagValue(QStringLiteral("ref")));
     }
+
     placemark->setVisualCategory(category);
     placemark->setZoomLevel(StyleBuilder::minimumZoomLevel(category));
     placemark->setPopularity(StyleBuilder::popularity(placemark));
 
-    if (category >= GeoDataPlacemark::PlaceCity && category <= GeoDataPlacemark::PlaceVillageNationalCapital) {
+    if (category >= GeoDataPlacemark::PlaceCity && category <= GeoDataPlacemark::PlaceVillageNationalCapital)
+    {
         int const population = m_osmData.tagValue(QStringLiteral("population")).toInt();
         placemark->setPopulation(qMax(0, population));
-        if (population > 0) {
+
+        if (population > 0)
+        {
             placemark->setZoomLevel(populationIndex(population));
             placemark->setPopularity(population);
         }
     }
 
-    if (m_osmData.containsTagKey(QLatin1String("marbleZoomLevel"))) {
+    if (m_osmData.containsTagKey(QLatin1String("marbleZoomLevel")))
+    {
         int const zoomLevel = m_osmData.tagValue(QLatin1String("marbleZoomLevel")).toInt();
         placemark->setZoomLevel(zoomLevel);
     }
@@ -96,28 +119,55 @@ int OsmNode::populationIndex(qint64 population) const
 {
     int popidx = 3;
 
-    if ( population < 2500 )        popidx=10;
-    else if ( population < 5000)    popidx=9;
-    else if ( population < 25000)   popidx=8;
-    else if ( population < 75000)   popidx=7;
-    else if ( population < 250000)  popidx=6;
-    else if ( population < 750000)  popidx=5;
-    else if ( population < 2500000) popidx=4;
+    if (population < 2500)
+    {
+        popidx = 10;
+    }
+
+    else if (population < 5000)
+    {
+        popidx = 9;
+    }
+
+    else if (population < 25000)
+    {
+        popidx = 8;
+    }
+
+    else if (population < 75000)
+    {
+        popidx = 7;
+    }
+
+    else if (population < 250000)
+    {
+        popidx = 6;
+    }
+
+    else if (population < 750000)
+    {
+        popidx = 5;
+    }
+
+    else if (population < 2500000)
+    {
+        popidx = 4;
+    }
 
     return popidx;
 }
 
-const GeoDataCoordinates &OsmNode::coordinates() const
+const GeoDataCoordinates& OsmNode::coordinates() const
 {
     return m_coordinates;
 }
 
-OsmPlacemarkData &OsmNode::osmData()
+OsmPlacemarkData& OsmNode::osmData()
 {
     return m_osmData;
 }
 
-const OsmPlacemarkData &OsmNode::osmData() const
+const OsmPlacemarkData& OsmNode::osmData() const
 {
     return m_osmData;
 }

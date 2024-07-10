@@ -13,10 +13,10 @@
  *
  * ============================================================ */
 
-//Self
 #include "OsmTagTagWriter.h"
 
-//Marble
+// Local includes
+
 #include "GeoWriter.h"
 #include "OsmElementDictionary.h"
 #include "OsmPlacemarkData.h"
@@ -26,9 +26,10 @@ namespace Marble
 
 QSet<QString> OsmTagTagWriter::m_blacklist;
 
-void OsmTagTagWriter::writeTags( const OsmPlacemarkData& osmData, GeoWriter &writer )
+void OsmTagTagWriter::writeTags(const OsmPlacemarkData& osmData, GeoWriter& writer)
 {
-    if (m_blacklist.isEmpty()) {
+    if (m_blacklist.isEmpty())
+    {
         m_blacklist << QStringLiteral("mx:version");
         m_blacklist << QStringLiteral("mx:changeset");
         m_blacklist << QStringLiteral("mx:uid");
@@ -41,11 +42,13 @@ void OsmTagTagWriter::writeTags( const OsmPlacemarkData& osmData, GeoWriter &wri
     auto it = osmData.tagsBegin();
     auto end = osmData.tagsEnd();
 
-    for ( ; it != end; ++it ) {
-        if (!m_blacklist.contains(it.key())) {
-            writer.writeStartElement( QString::fromUtf8(osm::osmTag_tag) );
-            writer.writeAttribute( QLatin1String("k"), it.key() );
-            writer.writeAttribute( QLatin1String("v"), it.value() );
+    for (; it != end; ++it)
+    {
+        if (!m_blacklist.contains(it.key()))
+        {
+            writer.writeStartElement(QString::fromUtf8(osm::osmTag_tag));
+            writer.writeAttribute(QLatin1String("k"), it.key());
+            writer.writeAttribute(QLatin1String("v"), it.value());
             writer.writeEndElement();
         }
     }

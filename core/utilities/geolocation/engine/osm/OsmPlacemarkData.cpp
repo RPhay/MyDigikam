@@ -14,6 +14,9 @@
  * ============================================================ */
 
 #include "OsmPlacemarkData.h"
+
+// Qt includes
+
 #include <QXmlStreamAttributes>
 
 // Local includes

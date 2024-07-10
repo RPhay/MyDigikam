@@ -15,12 +15,16 @@
 
 #include "GpsbabelRunner.h"
 
+// Qt includes
+
 #include <QFile>
 #include <QProcess>
 #include <QFileInfo>
 #include <QTemporaryFile>
 #include <QDir>
 #include <QMap>
+
+// Local includes
 
 #include "GeoDataParser.h"
 #include "GeoDataDocument.h"
@@ -29,16 +33,16 @@
 namespace Marble
 {
 
-GpsbabelRunner::GpsbabelRunner( QObject* parent )
-    : ParsingRunner( parent )
+GpsbabelRunner::GpsbabelRunner(QObject* parent)
+    : ParsingRunner(parent)
 {
 }
 
-GeoDataDocument* GpsbabelRunner::parseFile(const QString &fileName, DocumentRole role, QString &error)
+GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole role, QString& error)
 {
     // Check and see if the file exists
 
-    if ( !QFileInfo( fileName ).exists() )
+    if (!QFileInfo(fileName).exists())
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
@@ -47,11 +51,11 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString &fileName, DocumentRole
 
     // Inspect the filename suffix
 
-    QString const fileSuffix = QFileInfo( fileName ).suffix();
+    QString const fileSuffix = QFileInfo(fileName).suffix();
 
     // Determine if fileName suffix is supported by this plugin
 
-    QMap<QString,QString> fileTypes;
+    QMap<QString, QString> fileTypes;
     fileTypes[QLatin1String("nmea")]     = QLatin1String("nmea");
     fileTypes[QLatin1String("igc")]      = QLatin1String("igc");
     fileTypes[QLatin1String("tiger")]    = QLatin1String("tiger");
@@ -61,7 +65,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString &fileName, DocumentRole
     fileTypes[QLatin1String("csv")]      = QLatin1String("csv");
     QString const inputFileType = fileTypes[fileSuffix];
 
-    if ( inputFileType.isEmpty() )
+    if (inputFileType.isEmpty())
     {
         error = QStringLiteral("Unsupported file extension for").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
@@ -72,43 +76,44 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString &fileName, DocumentRole
 
     QTemporaryFile tempKmlFile(QDir::tempPath() + QLatin1String("/marble-gpsbabel-XXXXXX.kml"));
     tempKmlFile.open();
-    QFile kmlFile( tempKmlFile.fileName() );
+    QFile kmlFile(tempKmlFile.fileName());
 
     // Set up gpsbabel command line
 
     const QString command = QLatin1String("gpsbabel");
     const QStringList args = QStringList()
-        << QLatin1String("-i")
-        << inputFileType
-        << QLatin1String("-f")
-        << fileName
-        << QLatin1String("-o")
-        << QLatin1String("kml")
-        << QLatin1String("-F")
-        << tempKmlFile.fileName()
-    ;
+                             << QLatin1String("-i")
+                             << inputFileType
+                             << QLatin1String("-f")
+                             << fileName
+                             << QLatin1String("-o")
+                             << QLatin1String("kml")
+                             << QLatin1String("-F")
+                             << tempKmlFile.fileName()
+                             ;
 
     // Execute gpsbabel to parse the input file
 
-    int const exitStatus = QProcess::execute( command, args );
+    int const exitStatus = QProcess::execute(command, args);
 
-    if ( exitStatus == 0 )
+    if (exitStatus == 0)
     {
-        kmlFile.open( QIODevice::ReadWrite );
-        GeoDataParser parser( GeoData_KML );
-        parser.read( &kmlFile );
-        GeoDataDocument *document = dynamic_cast<GeoDataDocument*>( parser.releaseDocument() );
+        kmlFile.open(QIODevice::ReadWrite);
+        GeoDataParser parser(GeoData_KML);
+        parser.read(&kmlFile);
+        GeoDataDocument* document = dynamic_cast<GeoDataDocument*>(parser.releaseDocument());
 
-        if ( !document )
+        if (!document)
         {
             error = parser.errorString();
             qCDebug(DIGIKAM_MARBLE_LOG) << error;
             return nullptr;
         }
 
-        document->setDocumentRole( role );
+        document->setDocumentRole(role);
         return document;
     }
+
     else
     {
         error = QStringLiteral("Gpsbabel returned error code %1").arg(exitStatus);

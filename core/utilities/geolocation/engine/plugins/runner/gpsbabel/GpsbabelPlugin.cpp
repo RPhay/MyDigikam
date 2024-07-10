@@ -15,7 +15,11 @@
 
 #include "GpsbabelPlugin.h"
 
+// KDE includes
+
 #include <klocalizedstring.h>
+
+// Local includes
 
 #include "GpsbabelRunner.h"
 
@@ -29,7 +33,7 @@ GpsbabelPlugin::GpsbabelPlugin(QObject* const parent)
 
 QString GpsbabelPlugin::name() const
 {
-    return i18n( "GPSBabel NMEA File Parser" );
+    return i18n("GPSBabel NMEA File Parser");
 }
 
 QString GpsbabelPlugin::nameId() const
@@ -44,7 +48,7 @@ QString GpsbabelPlugin::version() const
 
 QString GpsbabelPlugin::description() const
 {
-    return i18n( "A plugin to load Geolocation Data from NMEA files through GPSBabel command line tool." );
+    return i18n("A plugin to load Geolocation Data from NMEA files through GPSBabel command line tool.");
 }
 
 QString GpsbabelPlugin::copyrightYears() const
@@ -55,24 +59,24 @@ QString GpsbabelPlugin::copyrightYears() const
 QVector<PluginAuthor> GpsbabelPlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-            << PluginAuthor(QStringLiteral("Mohammed Nafees"), QStringLiteral("nafees.technocool@gmail.com"));
+           << PluginAuthor(QStringLiteral("Mohammed Nafees"), QStringLiteral("nafees.technocool@gmail.com"));
 }
 
 QString GpsbabelPlugin::fileFormatDescription() const
 {
-    return i18n( "GPSBabel files" );
+    return i18n("GPSBabel files");
 }
 
 QStringList GpsbabelPlugin::fileExtensions() const
 {
     return QStringList()
-        << QStringLiteral("nmea")
-        << QStringLiteral("igc")
-        << QStringLiteral("tiger")
-        << QStringLiteral("ov2")
-        << QStringLiteral("garmin")
-        << QStringLiteral("csv")
-        << QStringLiteral("magellan");
+           << QStringLiteral("nmea")
+           << QStringLiteral("igc")
+           << QStringLiteral("tiger")
+           << QStringLiteral("ov2")
+           << QStringLiteral("garmin")
+           << QStringLiteral("csv")
+           << QStringLiteral("magellan");
 }
 
 ParsingRunner* GpsbabelPlugin::newRunner() const

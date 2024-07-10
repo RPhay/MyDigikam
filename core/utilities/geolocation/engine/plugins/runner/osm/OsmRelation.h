@@ -15,9 +15,13 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
 #include <QXmlStreamAttributes>
 #include <QSet>
+
+// Local includes
 
 #include "OsmNode.h"
 #include "OsmWay.h"
@@ -33,13 +37,13 @@ class OsmRelation
 {
 public:
 
-    OsmPlacemarkData & osmData();
-    void parseMember(const QXmlStreamAttributes &attributes);
-    void addMember(qint64 reference, const QString &role, const QString &type);
-    void createMultipolygon(GeoDataDocument* document, OsmWays &ways, const OsmNodes &nodes, QSet<qint64> &usedNodes, QSet<qint64> &usedWays) const;
+    OsmPlacemarkData& osmData();
+    void parseMember(const QXmlStreamAttributes& attributes);
+    void addMember(qint64 reference, const QString& role, const QString& type);
+    void createMultipolygon(GeoDataDocument* document, OsmWays& ways, const OsmNodes& nodes, QSet<qint64>& usedNodes, QSet<qint64>& usedWays) const;
     void createRelation(GeoDataDocument* document, const QHash<qint64, GeoDataPlacemark*>& wayPlacemarks) const;
 
-    const OsmPlacemarkData & osmData() const;
+    const OsmPlacemarkData& osmData() const;
 
 private:
 
@@ -57,7 +61,7 @@ private:
 
 private:
 
-    OsmRings rings(const QStringList &roles, const OsmWays &ways, const OsmNodes &nodes, QSet<qint64> &usedNodes, QSet<qint64> &usedWays) const;
+    OsmRings rings(const QStringList& roles, const OsmWays& ways, const OsmNodes& nodes, QSet<qint64>& usedNodes, QSet<qint64>& usedWays) const;
 
 private:
 
@@ -65,6 +69,6 @@ private:
     QVector<OsmMember> m_members;
 };
 
-typedef QHash<qint64,OsmRelation> OsmRelations;
+typedef QHash<qint64, OsmRelation> OsmRelations;
 
 } // namespace Marble
