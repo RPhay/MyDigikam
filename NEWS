@@ -19,7 +19,7 @@ RawEngine: Update internal libraw to last 20240711 upstream. New supported camer
 Video:     Update internal QtAVPlayer to last 20240616 upstream (Qt5 only).
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
            Add optional libjxl dependency to compile DNG support.
-Bundles:   Update Exiftool to last 12.87.
+Bundles:   Update Exiftool to last 12.88.
 Bundles:   AppImage and Windows installer are now based on last Exiv2 0.28.2.
 Bundles:   AppImage are now based on Qt6 framework 6.7.2, Qt5 framework 5.15.14, and KDE framework 6.2.0.
 Bundles:   Windows installer are now based on Qt6 framework 6.7.2, Qt5 framework 5.15.14, and  KDE framework 6.2.0.
