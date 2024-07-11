@@ -163,6 +163,8 @@ public:
     QAction*             nextAction         = nullptr;
     QAction*             playAction         = nullptr;
     QAction*             grabAction         = nullptr;
+    QAction*             backAction         = nullptr;
+    QAction*             forwAction         = nullptr;
 
     QPushButton*         loopPlay           = nullptr;
 
@@ -273,13 +275,17 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                                         i18nc("go to previous image", "Back"),   this);
+                                         i18nc("go to previous image", "Back"),           this);
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
-                                         i18nc("go to next image", "Forward"),    this);
+                                         i18nc("go to next image", "Forward"),            this);
+    d->backAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-backward")),
+                                         i18nc("video frame backward", "Frame Backward"), this);
     d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
-                                         i18nc("pause/play video", "Pause/Play"), this);
+                                         i18nc("pause/play video", "Pause/Play"),         this);
+    d->forwAction          = new QAction(QIcon::fromTheme(QLatin1String("media-seek-forward")),
+                                         i18nc("video frame forward", "Frame Forward"),   this);
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
-                                         i18nc("capture video frame", "Capture"), this);
+                                         i18nc("capture video frame", "Capture"),         this);
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
@@ -351,7 +357,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar               = new QToolBar(this);
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
+    d->toolBar->addAction(d->backAction);
     d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->forwAction);
     d->toolBar->addAction(d->grabAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
@@ -379,8 +387,14 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->nextAction, SIGNAL(triggered()),
             this, SIGNAL(signalNextItem()));
 
+    connect(d->backAction, SIGNAL(triggered()),
+            this, SLOT(slotFrameBackward()));
+
     connect(d->playAction, SIGNAL(triggered()),
             this, SLOT(slotPausePlay()));
+
+    connect(d->forwAction, SIGNAL(triggered()),
+            this, SLOT(slotFrameForward()));
 
     connect(d->grabAction, SIGNAL(triggered()),
             this, SLOT(slotCapture()));
@@ -440,21 +454,16 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
     if (newState == QMediaPlayer::PlayingState)
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
+
+        d->backAction->setEnabled(true);
+        d->forwAction->setEnabled(true);
     }
     else
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
 
         if (
-            (newState           == QMediaPlayer::StoppedState)  &&
-            (d->player->error() != QMediaPlayer::NoError)
-           )
-        {
-            setPreviewMode(Private::ErrorView);
-        }
-
-        if (
-            (newState                 == QMediaPlayer::StoppedState) &&
+            (newState                 == QMediaPlayer::StoppedState) ||
             (d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
            )
         {
@@ -464,6 +473,9 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
             {
                 setPreviewMode(Private::ErrorView);
             }
+
+            d->backAction->setEnabled(false);
+            d->forwAction->setEnabled(false);
         }
     }
 }
@@ -558,10 +570,57 @@ void MediaPlayerView::slotPausePlay()
     if (!d->player->isPlaying())
     {
         d->player->play();
+
         return;
     }
 
     d->player->pause();
+}
+
+void MediaPlayerView::slotFrameBackward()
+{
+    if (d->player->isPlaying())
+    {
+        d->player->pause();
+
+        return;
+    }
+
+    QVariant frameRateVar = d->player->metaData().value(QMediaMetaData::VideoFrameRate);
+
+    if (frameRateVar.isValid())
+    {
+        double frameRate = frameRateVar.toDouble();
+
+        if (frameRate > 0.0)
+        {
+           double frame = 1000.0 / frameRate;
+           d->player->setPosition(d->player->position() - frame);
+        }
+    }
+}
+
+void MediaPlayerView::slotFrameForward()
+{
+    if (d->player->isPlaying())
+    {
+        d->player->pause();
+
+        return;
+    }
+
+    QVariant frameRateVar = d->player->metaData().value(QMediaMetaData::VideoFrameRate);
+
+    if (frameRateVar.isValid())
+    {
+        double frameRate = frameRateVar.toDouble();
+
+        if (frameRate > 0.0)
+        {
+           double frame = 1000.0 / frameRate;
+           d->player->setPosition(d->player->position() + frame);
+        }
+    }
 }
 
 void MediaPlayerView::slotCapture()

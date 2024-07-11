@@ -71,6 +71,8 @@ private Q_SLOTS:
     void slotVolumeChanged(int volume);
     void slotLoopToggled(bool loop);
     void slotPosition(int position);
+    void slotFrameBackward();
+    void slotFrameForward();
     void slotPausePlay();
     void slotCapture();
 
