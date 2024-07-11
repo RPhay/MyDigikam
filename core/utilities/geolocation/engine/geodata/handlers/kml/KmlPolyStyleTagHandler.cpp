@@ -15,12 +15,13 @@
 
 #include "KmlPolyStyleTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
 #include "GeoDataStyle.h"
 #include "GeoDataPolyStyle.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -29,21 +30,23 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( PolyStyle )
+KML_DEFINE_TAG_HANDLER(PolyStyle)
 
-GeoNode* KmlPolyStyleTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlPolyStyleTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_PolyStyle)));
 
     GeoStackItem parentItem = parser.parentElement();
 
 
-    if ( parentItem.represents( kmlTag_Style ) ) {
+    if (parentItem.represents(kmlTag_Style))
+    {
         GeoDataPolyStyle style;
-        KmlObjectTagHandler::parseIdentifiers( parser, &style );
-        parentItem.nodeAs<GeoDataStyle>()->setPolyStyle( style );
+        KmlObjectTagHandler::parseIdentifiers(parser, &style);
+        parentItem.nodeAs<GeoDataStyle>()->setPolyStyle(style);
         return &parentItem.nodeAs<GeoDataStyle>()->polyStyle();
     }
+
     return nullptr;
 }
 

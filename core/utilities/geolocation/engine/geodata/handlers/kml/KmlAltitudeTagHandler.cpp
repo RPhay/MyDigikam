@@ -15,6 +15,8 @@
 
 #include "KmlAltitudeTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "MarbleGlobal.h"
 #include "GeoDataLookAt.h"
@@ -23,7 +25,6 @@
 #include "GeoParser.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataLocation.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -32,26 +33,37 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( altitude )
-    GeoNode *KmlaltitudeTagHandler::parse(GeoParser & parser) const
+KML_DEFINE_TAG_HANDLER(altitude)
+GeoNode* KmlaltitudeTagHandler::parse(GeoParser& parser) const
+{
+    Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_altitude)));
+
+    GeoStackItem parentItem = parser.parentElement();
+
+    qreal const altitude = parser.readElementText().trimmed().toDouble();
+
+    if (parentItem.is<GeoDataLookAt>())
     {
-        Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_altitude)));
-
-        GeoStackItem parentItem = parser.parentElement();
-
-        qreal const altitude = parser.readElementText().trimmed().toDouble();
-        if ( parentItem.is<GeoDataLookAt>() ){
-            parentItem.nodeAs<GeoDataLookAt>()->setAltitude( altitude );
-        } else if ( parentItem.is<GeoDataCamera>() ){
-            parentItem.nodeAs<GeoDataCamera>()->setAltitude( altitude );
-        } else if ( parentItem.is<GeoDataGroundOverlay>() ) {
-            parentItem.nodeAs<GeoDataGroundOverlay>()->setAltitude( altitude );
-        } else if ( parentItem.is<GeoDataLocation>() ) {
-        parentItem.nodeAs<GeoDataLocation>()->setAltitude( altitude );
-        }
-
-      return nullptr;
+        parentItem.nodeAs<GeoDataLookAt>()->setAltitude(altitude);
     }
+
+    else if (parentItem.is<GeoDataCamera>())
+    {
+        parentItem.nodeAs<GeoDataCamera>()->setAltitude(altitude);
+    }
+
+    else if (parentItem.is<GeoDataGroundOverlay>())
+    {
+        parentItem.nodeAs<GeoDataGroundOverlay>()->setAltitude(altitude);
+    }
+
+    else if (parentItem.is<GeoDataLocation>())
+    {
+        parentItem.nodeAs<GeoDataLocation>()->setAltitude(altitude);
+    }
+
+    return nullptr;
+}
 
 } // namespace kml
 

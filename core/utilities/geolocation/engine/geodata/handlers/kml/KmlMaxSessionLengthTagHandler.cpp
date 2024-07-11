@@ -15,6 +15,8 @@
 
 #include "KmlMaxSessionLengthTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataNetworkLinkControl.h"
 #include "GeoDataParser.h"
@@ -25,19 +27,19 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( maxSessionLength )
+KML_DEFINE_TAG_HANDLER(maxSessionLength)
 
-GeoNode* KmlmaxSessionLengthTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlmaxSessionLengthTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_maxSessionLength)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_NetworkLinkControl ) )
+    if (parentItem.represents(kmlTag_NetworkLinkControl))
     {
         qreal maxSessionLength = parser.readElementText().toDouble();
 
-        parentItem.nodeAs<GeoDataNetworkLinkControl>()->setMaxSessionLength( maxSessionLength );
+        parentItem.nodeAs<GeoDataNetworkLinkControl>()->setMaxSessionLength(maxSessionLength);
     }
 
     return nullptr;

@@ -15,6 +15,8 @@
 
 #include "KmlUpdateTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataNetworkLinkControl.h"
 #include "GeoDataUpdate.h"
@@ -28,22 +30,27 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( Update )
+KML_DEFINE_TAG_HANDLER(Update)
 
-GeoNode* KmlUpdateTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlUpdateTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Update)));
 
-    GeoDataUpdate *update = new GeoDataUpdate;
-    KmlObjectTagHandler::parseIdentifiers( parser, update );
+    GeoDataUpdate* update = new GeoDataUpdate;
+    KmlObjectTagHandler::parseIdentifiers(parser, update);
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_NetworkLinkControl ) ) {
+    if (parentItem.represents(kmlTag_NetworkLinkControl))
+    {
         return &parentItem.nodeAs<GeoDataNetworkLinkControl>()->update();
-    } else if ( parentItem.represents( kmlTag_AnimatedUpdate ) ) {
-        parentItem.nodeAs<GeoDataAnimatedUpdate>()->setUpdate( update );
+    }
+
+    else if (parentItem.represents(kmlTag_AnimatedUpdate))
+    {
+        parentItem.nodeAs<GeoDataAnimatedUpdate>()->setUpdate(update);
         return update;
     }
+
     return nullptr;
 }
 

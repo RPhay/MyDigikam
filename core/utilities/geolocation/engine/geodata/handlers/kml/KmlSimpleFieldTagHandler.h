@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagHandler.h"
 #include "GeoDataSimpleField.h"
 
@@ -34,7 +36,7 @@ public:
 
 private:
 
-    static GeoDataSimpleField::SimpleFieldType resolveType( const QString& type );
+    static GeoDataSimpleField::SimpleFieldType resolveType(const QString& type);
 };
 
 } // namespace kml

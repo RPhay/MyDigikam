@@ -15,6 +15,8 @@
 
 #include "KmlLeftFovTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataViewVolume.h"
 #include "GeoDataParser.h"
@@ -25,20 +27,21 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( leftFov )
+KML_DEFINE_TAG_HANDLER(leftFov)
 
-GeoNode* KmlleftFovTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlleftFovTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_leftFov)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if (parentItem.represents( kmlTag_ViewVolume ))
+    if (parentItem.represents(kmlTag_ViewVolume))
     {
         qreal leftFov = parser.readElementText().toDouble();
 
-        parentItem.nodeAs<GeoDataViewVolume>()->setLeftFov( leftFov );
+        parentItem.nodeAs<GeoDataViewVolume>()->setLeftFov(leftFov);
     }
+
     return nullptr;
 }
 

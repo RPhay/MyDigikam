@@ -15,6 +15,8 @@
 
 #include "KmlExtrudeTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataGeometry.h"
 #include "GeoDataPoint.h"
@@ -23,7 +25,6 @@
 #include "GeoDataLinearRing.h"
 #include "GeoDataPlacemark.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -32,9 +33,9 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( extrude )
+KML_DEFINE_TAG_HANDLER(extrude)
 
-GeoNode* KmlextrudeTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlextrudeTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_extrude)));
 
@@ -43,24 +44,38 @@ GeoNode* KmlextrudeTagHandler::parse( GeoParser& parser ) const
     GeoDataGeometry* geometry;
     bool validParents = false;
 
-    if( parentItem.is<GeoDataPoint>() ) {
+    if (parentItem.is<GeoDataPoint>())
+    {
         geometry = parentItem.nodeAs<GeoDataPoint>();
         validParents = true;
-    } else if( parentItem.is<GeoDataPlacemark>() ) {
+    }
+
+    else if (parentItem.is<GeoDataPlacemark>())
+    {
         geometry = parentItem.nodeAs<GeoDataPlacemark>()->geometry();
         validParents = true;
-    } else if( parentItem.is<GeoDataPolygon>() ) {
+    }
+
+    else if (parentItem.is<GeoDataPolygon>())
+    {
         geometry = parentItem.nodeAs<GeoDataPolygon>();
         validParents = true;
-    } else if( parentItem.is<GeoDataLineString>() ) {
+    }
+
+    else if (parentItem.is<GeoDataLineString>())
+    {
         geometry = parentItem.nodeAs<GeoDataLineString>();
         validParents = true;
-    } else if( parentItem.is<GeoDataLinearRing>() ) {
+    }
+
+    else if (parentItem.is<GeoDataLinearRing>())
+    {
         geometry = parentItem.nodeAs<GeoDataLinearRing>();
         validParents = true;
     }
 
-    if( validParents ) {
+    if (validParents)
+    {
         QString content = parser.readElementText().trimmed();
 
         const bool extrude = (content == QLatin1String("1"));

@@ -15,13 +15,14 @@
 
 #include "KmlLineStringTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataLineString.h"
 #include "GeoDataMultiGeometry.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -30,26 +31,33 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( LineString )
+KML_DEFINE_TAG_HANDLER(LineString)
 
-GeoNode* KmlLineStringTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlLineStringTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_LineString)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    GeoDataLineString *lineString = new GeoDataLineString;
-    KmlObjectTagHandler::parseIdentifiers( parser, lineString );
+    GeoDataLineString* lineString = new GeoDataLineString;
+    KmlObjectTagHandler::parseIdentifiers(parser, lineString);
 
-    if( parentItem.represents( kmlTag_Placemark ) ) {
-        parentItem.nodeAs<GeoDataPlacemark>()->setGeometry( lineString );
+    if (parentItem.represents(kmlTag_Placemark))
+    {
+        parentItem.nodeAs<GeoDataPlacemark>()->setGeometry(lineString);
         return parentItem.nodeAs<GeoDataPlacemark>()->geometry();
 
-    } else if(  parentItem.represents( kmlTag_MultiGeometry ) ) {
-        parentItem.nodeAs<GeoDataMultiGeometry>()->append( lineString );
+    }
+
+    else if (parentItem.represents(kmlTag_MultiGeometry))
+    {
+        parentItem.nodeAs<GeoDataMultiGeometry>()->append(lineString);
         return lineString;
 
-    } else {
+    }
+
+    else
+    {
         delete lineString;
         return nullptr;
     }

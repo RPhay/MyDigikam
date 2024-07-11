@@ -15,10 +15,11 @@
 
 #include "KmlPopTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataPlacemark.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,19 +28,25 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( pop )
+KML_DEFINE_TAG_HANDLER(pop)
 
-GeoNode* KmlpopTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlpopTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_pop)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if( parentItem.is<GeoDataPlacemark>() ) {
+    if (parentItem.is<GeoDataPlacemark>())
+    {
         QString population = parser.readElementText().trimmed();
         qint64 pop = population.toLongLong();
-        if( pop < 0 ) pop = 0;
-        parentItem.nodeAs<GeoDataPlacemark>()->setPopulation( pop );
+
+        if (pop < 0)
+        {
+            pop = 0;
+        }
+
+        parentItem.nodeAs<GeoDataPlacemark>()->setPopulation(pop);
     }
 
     return nullptr;

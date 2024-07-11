@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoParser.h"
 #include "GeoDataObject.h"
 
@@ -28,7 +30,7 @@ public:
     /**
      * Parses the id and targetId attributes and assign their values to the given object
      */
-    static void parseIdentifiers( const GeoParser &parser, GeoDataObject* object );
+    static void parseIdentifiers(const GeoParser& parser, GeoDataObject* object);
 
 private:
 

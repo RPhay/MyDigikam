@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QColor>
+
+// Local includes
 
 #include "GeoTagHandler.h"
 
@@ -31,7 +35,7 @@ public:
 
     GeoNode* parse(GeoParser&) const override;
 
-    static QColor parseColor( const QString &colorString );
+    static QColor parseColor(const QString& colorString);
 };
 
 } // namespace kml

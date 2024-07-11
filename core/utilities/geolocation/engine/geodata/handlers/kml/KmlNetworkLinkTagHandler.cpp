@@ -15,6 +15,8 @@
 
 #include "KmlNetworkLinkTagHandler.h"
 
+// Local includes
+
 #include "GeoDataNetworkLink.h"
 #include "GeoDataContainer.h"
 #include "GeoDataDocument.h"
@@ -27,23 +29,30 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( NetworkLink )
+KML_DEFINE_TAG_HANDLER(NetworkLink)
 
-GeoNode* KmlNetworkLinkTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlNetworkLinkTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_NetworkLink)));
 
-    GeoDataNetworkLink *networkLink = new GeoDataNetworkLink;
+    GeoDataNetworkLink* networkLink = new GeoDataNetworkLink;
     GeoStackItem parentItem = parser.parentElement();
 
-    if( parentItem.represents( kmlTag_Folder ) || parentItem.represents( kmlTag_Document ) ) {
-        parentItem.nodeAs<GeoDataContainer>()->append( networkLink );
+    if (parentItem.represents(kmlTag_Folder) || parentItem.represents(kmlTag_Document))
+    {
+        parentItem.nodeAs<GeoDataContainer>()->append(networkLink);
         return networkLink;
-    } else if ( parentItem.qualifiedName().first == QString::fromUtf8(kmlTag_kml) ) {
-        GeoDataDocument* doc = geoDataDoc( parser );
-        doc->append( networkLink );
+    }
+
+    else if (parentItem.qualifiedName().first == QString::fromUtf8(kmlTag_kml))
+    {
+        GeoDataDocument* doc = geoDataDoc(parser);
+        doc->append(networkLink);
         return networkLink;
-    } else {
+    }
+
+    else
+    {
         delete networkLink;
         return nullptr;
     }

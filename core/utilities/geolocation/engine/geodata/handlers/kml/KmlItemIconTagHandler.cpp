@@ -15,11 +15,12 @@
 
 #include "KmlItemIconTagHandler.h"
 
+// Local includes
+
 #include "GeoDataListStyle.h"
 #include "GeoDataItemIcon.h"
 #include "GeoDataParser.h"
 #include "KmlElementDictionary.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -28,19 +29,21 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( ItemIcon )
+KML_DEFINE_TAG_HANDLER(ItemIcon)
 
-GeoNode* KmlItemIconTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlItemIconTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_ItemIcon)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_ListStyle ) ) {
-        GeoDataItemIcon *itemIcon = new GeoDataItemIcon;
-        parentItem.nodeAs<GeoDataListStyle>()->append( itemIcon );
+    if (parentItem.represents(kmlTag_ListStyle))
+    {
+        GeoDataItemIcon* itemIcon = new GeoDataItemIcon;
+        parentItem.nodeAs<GeoDataListStyle>()->append(itemIcon);
         return itemIcon;
     }
+
     return nullptr;
 }
 

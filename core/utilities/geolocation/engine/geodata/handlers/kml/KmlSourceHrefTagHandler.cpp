@@ -15,6 +15,8 @@
 
 #include "KmlSourceHrefTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataAlias.h"
@@ -25,9 +27,9 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( sourceHref )
+KML_DEFINE_TAG_HANDLER(sourceHref)
 
-GeoNode* KmlsourceHrefTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlsourceHrefTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_sourceHref)));
 
@@ -35,8 +37,9 @@ GeoNode* KmlsourceHrefTagHandler::parse( GeoParser& parser ) const
 
     QString content = parser.readElementText().trimmed();
 
-    if ( parentItem.is<GeoDataAlias>() ){
-        parentItem.nodeAs<GeoDataAlias>()->setSourceHref( content );
+    if (parentItem.is<GeoDataAlias>())
+    {
+        parentItem.nodeAs<GeoDataAlias>()->setSourceHref(content);
     }
 
     return nullptr;

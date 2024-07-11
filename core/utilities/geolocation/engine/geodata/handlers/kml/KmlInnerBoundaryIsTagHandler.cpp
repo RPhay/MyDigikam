@@ -15,10 +15,11 @@
 
 #include "KmlInnerBoundaryIsTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataPolygon.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,9 +28,9 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( innerBoundaryIs )
+KML_DEFINE_TAG_HANDLER(innerBoundaryIs)
 
-GeoNode* KmlinnerBoundaryIsTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlinnerBoundaryIsTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_innerBoundaryIs)));
 

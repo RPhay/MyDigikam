@@ -15,12 +15,13 @@
 
 #include "KmlBgColorTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "KmlColorTagHandler.h"
 #include "GeoDataBalloonStyle.h"
 #include "GeoDataListStyle.h"
 #include "GeoDataParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -29,23 +30,24 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( bgColor )
+KML_DEFINE_TAG_HANDLER(bgColor)
 
-GeoNode* KmlbgColorTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlbgColorTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_bgColor)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    QColor const color = KmlcolorTagHandler::parseColor( parser.readElementText().trimmed() );
+    QColor const color = KmlcolorTagHandler::parseColor(parser.readElementText().trimmed());
 
-    if ( parentItem.represents( kmlTag_BalloonStyle ) )
+    if (parentItem.represents(kmlTag_BalloonStyle))
     {
-        parentItem.nodeAs<GeoDataBalloonStyle>()->setBackgroundColor( color );
+        parentItem.nodeAs<GeoDataBalloonStyle>()->setBackgroundColor(color);
     }
-    else if ( parentItem.represents( kmlTag_ListStyle ) )
+
+    else if (parentItem.represents(kmlTag_ListStyle))
     {
-        parentItem.nodeAs<GeoDataListStyle>()->setBackgroundColor( color );
+        parentItem.nodeAs<GeoDataListStyle>()->setBackgroundColor(color);
     }
 
     return nullptr;

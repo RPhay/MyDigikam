@@ -15,10 +15,11 @@
 
 #include "KmlWidthTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataLineStyle.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,18 +28,19 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( width )
+KML_DEFINE_TAG_HANDLER(width)
 
-GeoNode* KmlwidthTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlwidthTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_width)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if( parentItem.represents( kmlTag_LineStyle ) ) {
+    if (parentItem.represents(kmlTag_LineStyle))
+    {
         float width = parser.readElementText().trimmed().toFloat();
 
-        parentItem.nodeAs<GeoDataLineStyle>()->setWidth( width );
+        parentItem.nodeAs<GeoDataLineStyle>()->setWidth(width);
     }
 
     return nullptr;

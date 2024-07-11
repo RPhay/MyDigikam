@@ -15,11 +15,12 @@
 
 #include "KmlMarblePlacemarkTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataContainer.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -28,21 +29,25 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( MarblePlacemark )
+KML_DEFINE_TAG_HANDLER(MarblePlacemark)
 
-GeoNode* KmlMarblePlacemarkTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlMarblePlacemarkTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_MarblePlacemark)));
 
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if( parentItem.represents( kmlTag_Folder ) || parentItem.represents( kmlTag_Document ) ) {
-        GeoDataPlacemark *placemark = new GeoDataPlacemark;
-        parentItem.nodeAs<GeoDataContainer>()->append( placemark );
+    if (parentItem.represents(kmlTag_Folder) || parentItem.represents(kmlTag_Document))
+    {
+        GeoDataPlacemark* placemark = new GeoDataPlacemark;
+        parentItem.nodeAs<GeoDataContainer>()->append(placemark);
         return placemark;
 
-    } else {
+    }
+
+    else
+    {
         return nullptr;
     }
 }

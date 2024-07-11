@@ -14,12 +14,14 @@
  * ============================================================ */
 
 #include "KmlFlyToTagHandler.h"
+
+// Local includes
+
 #include "KmlObjectTagHandler.h"
 #include "GeoDataFlyTo.h"
 #include "GeoDataPlaylist.h"
 #include "GeoParser.h"
 #include "KmlElementDictionary.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -28,18 +30,19 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER_GX22( FlyTo )
+KML_DEFINE_TAG_HANDLER_GX22(FlyTo)
 
-GeoNode* KmlFlyToTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlFlyToTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_FlyTo)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if (parentItem.is<GeoDataPlaylist>()) {
-        GeoDataFlyTo *flyTo = new GeoDataFlyTo;
-        KmlObjectTagHandler::parseIdentifiers( parser, flyTo );
-        parentItem.nodeAs<GeoDataPlaylist>()->addPrimitive( flyTo );
+    if (parentItem.is<GeoDataPlaylist>())
+    {
+        GeoDataFlyTo* flyTo = new GeoDataFlyTo;
+        KmlObjectTagHandler::parseIdentifiers(parser, flyTo);
+        parentItem.nodeAs<GeoDataPlaylist>()->addPrimitive(flyTo);
         return flyTo;
     }
 

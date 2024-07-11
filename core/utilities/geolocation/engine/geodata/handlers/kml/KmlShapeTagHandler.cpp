@@ -15,10 +15,11 @@
 
 #include "KmlShapeTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataPhotoOverlay.h"
 #include "GeoDataParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,32 +28,43 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( shape )
+KML_DEFINE_TAG_HANDLER(shape)
 
-GeoNode* KmlshapeTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlshapeTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_shape)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if (parentItem.represents( kmlTag_PhotoOverlay ))
+    if (parentItem.represents(kmlTag_PhotoOverlay))
     {
         GeoDataPhotoOverlay::Shape shape;
         QString shapeText = parser.readElementText();
 
-        if (shapeText == QLatin1String("rectangle")) {
+        if (shapeText == QLatin1String("rectangle"))
+        {
             shape = GeoDataPhotoOverlay::Rectangle;
-        } else if (shapeText == QLatin1String("cylinder")) {
+        }
+
+        else if (shapeText == QLatin1String("cylinder"))
+        {
             shape = GeoDataPhotoOverlay::Cylinder;
-        } else if (shapeText == QLatin1String("sphere")) {
+        }
+
+        else if (shapeText == QLatin1String("sphere"))
+        {
             shape = GeoDataPhotoOverlay::Sphere;
-        } else {
+        }
+
+        else
+        {
             qCDebug(DIGIKAM_MARBLE_LOG) << "Unknown shape attribute" << shapeText << ", falling back to default value 'rectangle'";
             shape = GeoDataPhotoOverlay::Rectangle;
         }
 
-        parentItem.nodeAs<GeoDataPhotoOverlay>()->setShape( shape );
+        parentItem.nodeAs<GeoDataPhotoOverlay>()->setShape(shape);
     }
+
     return nullptr;
 }
 

@@ -15,6 +15,8 @@
 
 #include "KmlCreateTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataUpdate.h"
 #include "GeoDataCreate.h"
@@ -27,20 +29,24 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( Create )
+KML_DEFINE_TAG_HANDLER(Create)
 
-GeoNode* KmlCreateTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlCreateTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Create)));
 
-    GeoDataCreate *create = new GeoDataCreate;
-    KmlObjectTagHandler::parseIdentifiers( parser, create );
+    GeoDataCreate* create = new GeoDataCreate;
+    KmlObjectTagHandler::parseIdentifiers(parser, create);
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_Update ) ) {
-        parentItem.nodeAs<GeoDataUpdate>()->setCreate( create );
+    if (parentItem.represents(kmlTag_Update))
+    {
+        parentItem.nodeAs<GeoDataUpdate>()->setCreate(create);
         return create;
-    } else {
+    }
+
+    else
+    {
         delete create;
         return nullptr;
     }

@@ -14,11 +14,13 @@
  * ============================================================ */
 
 #include "KmlDocumentTagHandler.h"
+
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
 #include "GeoDataDocument.h"
 #include "GeoDataParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -34,22 +36,28 @@ GeoNode* KmlDocumentTagHandler::parse(GeoParser& parser) const
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Document)));
 
     GeoStackItem parentItem = parser.parentElement();
-    if( !(parentItem.qualifiedName().first.isNull() && parentItem.qualifiedName().second.isNull()) ) {
+
+    if (!(parentItem.qualifiedName().first.isNull() && parentItem.qualifiedName().second.isNull()))
+    {
         // this happens if there is a parent element to the Document tag. We can work around that and simply expect that
         // the new Document tag works like a Folder
-        if( parentItem.represents( kmlTag_Folder ) || parentItem.represents( kmlTag_Document ) || parentItem.represents( kmlTag_Create ) ) {
-            GeoDataDocument *document = new GeoDataDocument;
-            KmlObjectTagHandler::parseIdentifiers( parser, document );
-            parentItem.nodeAs<GeoDataContainer>()->append( document );
+        if (parentItem.represents(kmlTag_Folder) || parentItem.represents(kmlTag_Document) || parentItem.represents(kmlTag_Create))
+        {
+            GeoDataDocument* document = new GeoDataDocument;
+            KmlObjectTagHandler::parseIdentifiers(parser, document);
+            parentItem.nodeAs<GeoDataContainer>()->append(document);
 
             return document;
         }
-        else if (parentItem.qualifiedName().first == QLatin1String(kmlTag_kml)) {
-            GeoDataDocument* doc = geoDataDoc( parser );
-            KmlObjectTagHandler::parseIdentifiers( parser, doc );
+
+        else if (parentItem.qualifiedName().first == QLatin1String(kmlTag_kml))
+        {
+            GeoDataDocument* doc = geoDataDoc(parser);
+            KmlObjectTagHandler::parseIdentifiers(parser, doc);
             return doc;
         }
     }
+
     return nullptr;
 }
 

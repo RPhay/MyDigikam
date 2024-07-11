@@ -15,10 +15,11 @@
 
 #include "KmlXTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoParser.h"
 #include "GeoDataScale.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,18 +28,20 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( x )
+KML_DEFINE_TAG_HANDLER(x)
 
-GeoNode* KmlxTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlxTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_x)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.is<GeoDataScale>() ){
+    if (parentItem.is<GeoDataScale>())
+    {
         double x = parser.readElementText().trimmed().toDouble();
-    parentItem.nodeAs<GeoDataScale>()->setX( x );
+        parentItem.nodeAs<GeoDataScale>()->setX(x);
     }
+
     return nullptr;
 }
 

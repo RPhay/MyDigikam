@@ -15,10 +15,11 @@
 
 #include "KmlStateTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataItemIcon.h"
 #include "GeoDataParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,9 +28,9 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( state )
+KML_DEFINE_TAG_HANDLER(state)
 
-GeoNode* KmlstateTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlstateTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_state)));
 
@@ -37,32 +38,52 @@ GeoNode* KmlstateTagHandler::parse( GeoParser& parser ) const
 
     GeoDataItemIcon::ItemIconStates itemIconState;
 
-    if ( parentItem.represents( kmlTag_ItemIcon ) )
+    if (parentItem.represents(kmlTag_ItemIcon))
     {
         QString value = parser.readElementText().trimmed();
         QStringList iconStateTextList = value.split(QLatin1Char(' '));
 
-        for( const QString &value: iconStateTextList ) {
-            if (value == QLatin1String("open")) {
+        for (const QString& value : iconStateTextList)
+        {
+            if (value == QLatin1String("open"))
+            {
                 itemIconState |= GeoDataItemIcon::Open;
-            } else if (value == QLatin1String("closed")) {
+            }
+
+            else if (value == QLatin1String("closed"))
+            {
                 itemIconState |= GeoDataItemIcon::Closed;
-            } else if (value == QLatin1String("error")) {
+            }
+
+            else if (value == QLatin1String("error"))
+            {
                 itemIconState |= GeoDataItemIcon::Error;
-            } else if (value == QLatin1String("fetching0")) {
+            }
+
+            else if (value == QLatin1String("fetching0"))
+            {
                 itemIconState |= GeoDataItemIcon::Fetching0;
-            } else if (value == QLatin1String("fetching1")) {
+            }
+
+            else if (value == QLatin1String("fetching1"))
+            {
                 itemIconState |= GeoDataItemIcon::Fetching1;
-            } else if (value == QLatin1String("fetching2")) {
+            }
+
+            else if (value == QLatin1String("fetching2"))
+            {
                 itemIconState |= GeoDataItemIcon::Fetching2;
             }
-            else {
+
+            else
+            {
                 qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse state value" << value;
             }
         }
 
-        parentItem.nodeAs<GeoDataItemIcon>()->setState( itemIconState );
+        parentItem.nodeAs<GeoDataItemIcon>()->setState(itemIconState);
     }
+
     return nullptr;
 }
 

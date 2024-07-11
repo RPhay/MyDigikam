@@ -15,7 +15,11 @@
 
 #include "KmlExpiresTagHandler.h"
 
+// Qt includes
+
 #include <QDateTime>
+
+// Local includes
 
 #include "KmlElementDictionary.h"
 #include "GeoDataNetworkLinkControl.h"
@@ -27,19 +31,19 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( expires )
+KML_DEFINE_TAG_HANDLER(expires)
 
-GeoNode* KmlexpiresTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlexpiresTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_expires)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_NetworkLinkControl ) )
+    if (parentItem.represents(kmlTag_NetworkLinkControl))
     {
-        QDateTime time = QDateTime::fromString( parser.readElementText(), Qt::ISODate );
+        QDateTime time = QDateTime::fromString(parser.readElementText(), Qt::ISODate);
 
-        parentItem.nodeAs<GeoDataNetworkLinkControl>()->setExpires( time );
+        parentItem.nodeAs<GeoDataNetworkLinkControl>()->setExpires(time);
     }
 
     return nullptr;

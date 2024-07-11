@@ -15,12 +15,13 @@
 
 #include "KmlRangeTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "MarbleGlobal.h"
 #include "GeoDataLookAt.h"
 #include "GeoParser.h"
 #include "GeoDataCoordinates.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -29,24 +30,25 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER (range)
-    GeoNode *KmlrangeTagHandler::parse (GeoParser & parser) const
+KML_DEFINE_TAG_HANDLER(range)
+GeoNode* KmlrangeTagHandler::parse(GeoParser& parser) const
+{
+    Q_ASSERT(parser.isStartElement()
+             && parser.isValidElement(QString::fromUtf8(kmlTag_range)));
+
+    GeoStackItem parentItem = parser.parentElement();
+
+    if (parentItem.is<GeoDataLookAt>())
     {
-        Q_ASSERT (parser.isStartElement ()
-                  && parser.isValidElement (QString::fromUtf8(kmlTag_range)));
 
-        GeoStackItem parentItem = parser.parentElement ();
+        QString rangeTemp = parser.readElementText().trimmed();
+        qreal range = rangeTemp.toDouble();
 
-        if ( parentItem.is<GeoDataLookAt>() ){
-
-            QString rangeTemp = parser.readElementText().trimmed();
-            qreal range = rangeTemp.toDouble();
-
-            parentItem.nodeAs<GeoDataLookAt>()->setRange( range );
-        }
-
-      return nullptr;
+        parentItem.nodeAs<GeoDataLookAt>()->setRange(range);
     }
+
+    return nullptr;
+}
 
 } // namespace kml
 

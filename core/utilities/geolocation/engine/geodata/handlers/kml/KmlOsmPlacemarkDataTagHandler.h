@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagHandler.h"
 
 namespace Marble
@@ -29,7 +31,7 @@ class KmlOsmPlacemarkDataTagHandler : public GeoTagHandler
 {
 public:
 
-    GeoNode* parse( GeoParser& parser ) const override;
+    GeoNode* parse(GeoParser& parser) const override;
 };
 
 } // namespace kml

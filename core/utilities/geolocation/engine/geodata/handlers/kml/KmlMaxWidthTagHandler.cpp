@@ -15,10 +15,11 @@
 
 #include "KmlMaxWidthTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataImagePyramid.h"
 #include "GeoDataParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -27,20 +28,21 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( maxWidth )
+KML_DEFINE_TAG_HANDLER(maxWidth)
 
-GeoNode* KmlmaxWidthTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlmaxWidthTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_maxWidth)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if (parentItem.represents( kmlTag_ImagePyramid ))
+    if (parentItem.represents(kmlTag_ImagePyramid))
     {
         int maxWidth = parser.readElementText().toInt();
 
-        parentItem.nodeAs<GeoDataImagePyramid>()->setMaxWidth( maxWidth );
+        parentItem.nodeAs<GeoDataImagePyramid>()->setMaxWidth(maxWidth);
     }
+
     return nullptr;
 }
 

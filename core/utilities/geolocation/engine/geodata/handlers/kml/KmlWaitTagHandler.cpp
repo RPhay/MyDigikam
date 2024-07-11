@@ -15,6 +15,8 @@
 
 #include "KmlWaitTagHandler.h"
 
+// Local includes
+
 #include "KmlPlaylistTagHandler.h"
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
@@ -28,21 +30,25 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER_GX22( Wait )
+KML_DEFINE_TAG_HANDLER_GX22(Wait)
 
-GeoNode* KmlWaitTagHandler::parse(GeoParser &parser) const
+GeoNode* KmlWaitTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Wait)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    GeoDataWait *wait = new GeoDataWait;
-    KmlObjectTagHandler::parseIdentifiers( parser, wait );
+    GeoDataWait* wait = new GeoDataWait;
+    KmlObjectTagHandler::parseIdentifiers(parser, wait);
 
-    if (parentItem.is<GeoDataPlaylist>()) {
+    if (parentItem.is<GeoDataPlaylist>())
+    {
         parentItem.nodeAs<GeoDataPlaylist>()->addPrimitive(wait);
         return wait;
-    } else {
+    }
+
+    else
+    {
         delete wait;
     }
 

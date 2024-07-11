@@ -15,12 +15,13 @@
 
 #include "KmlLatLonBoxTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
 #include "GeoParser.h"
 #include "GeoDataLatLonBox.h"
 #include "GeoDataGroundOverlay.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -29,22 +30,25 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( LatLonBox )
+KML_DEFINE_TAG_HANDLER(LatLonBox)
 
-GeoNode* KmlLatLonBoxTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlLatLonBoxTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_LatLonBox)));
 
     GeoDataLatLonBox box;
-    KmlObjectTagHandler::parseIdentifiers( parser, &box );
+    KmlObjectTagHandler::parseIdentifiers(parser, &box);
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if( parentItem.represents( kmlTag_GroundOverlay ) )
+    if (parentItem.represents(kmlTag_GroundOverlay))
     {
-        parentItem.nodeAs<GeoDataGroundOverlay>()->setLatLonBox( box );
+        parentItem.nodeAs<GeoDataGroundOverlay>()->setLatLonBox(box);
         return &parentItem.nodeAs<GeoDataGroundOverlay>()->latLonBox();
-    } else {
+    }
+
+    else
+    {
         return nullptr;
     }
 }

@@ -15,6 +15,8 @@
 
 #include "KmlViewFormatTagHandler.h"
 
+// Local includes
+
 #include "GeoDataLink.h"
 #include "GeoParser.h"
 #include "KmlElementDictionary.h"
@@ -25,14 +27,16 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( viewFormat )
+KML_DEFINE_TAG_HANDLER(viewFormat)
 
-GeoNode* KmlviewFormatTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlviewFormatTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_viewFormat)));
 
     GeoStackItem parentItem = parser.parentElement();
-    if (parentItem.represents(kmlTag_Link)) {
+
+    if (parentItem.represents(kmlTag_Link))
+    {
         QString content = parser.readElementText().trimmed();
         parentItem.nodeAs<GeoDataLink>()->setViewFormat(content);
     }

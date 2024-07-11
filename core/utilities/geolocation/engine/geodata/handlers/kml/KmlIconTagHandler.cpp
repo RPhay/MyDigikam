@@ -15,13 +15,14 @@
 
 #include "KmlIconTagHandler.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataIconStyle.h"
 #include "GeoDataGroundOverlay.h"
 #include "GeoDataPhotoOverlay.h"
 #include "GeoDataScreenOverlay.h"
 #include "GeoParser.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -30,23 +31,34 @@ namespace Marble
 namespace kml
 {
 
-KML_DEFINE_TAG_HANDLER( Icon )
+KML_DEFINE_TAG_HANDLER(Icon)
 
-GeoNode* KmlIconTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlIconTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_Icon)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    if ( parentItem.represents( kmlTag_IconStyle ) ) {
+    if (parentItem.represents(kmlTag_IconStyle))
+    {
         return parentItem.nodeAs<GeoDataIconStyle>();
-    } else if ( parentItem.represents( kmlTag_GroundOverlay ) ) {
+    }
+
+    else if (parentItem.represents(kmlTag_GroundOverlay))
+    {
         return parentItem.nodeAs<GeoDataGroundOverlay>();
-    }  else if ( parentItem.represents( kmlTag_PhotoOverlay ) ) {
+    }
+
+    else if (parentItem.represents(kmlTag_PhotoOverlay))
+    {
         return parentItem.nodeAs<GeoDataPhotoOverlay>();
-    }  else if ( parentItem.represents( kmlTag_ScreenOverlay ) ) {
+    }
+
+    else if (parentItem.represents(kmlTag_ScreenOverlay))
+    {
         return parentItem.nodeAs<GeoDataScreenOverlay>();
     }
+
     return nullptr;
 }
 

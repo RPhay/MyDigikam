@@ -14,12 +14,14 @@
  * ============================================================ */
 
 #include "KmlAnimatedUpdateTagHandler.h"
+
+// Local includes
+
 #include "GeoDataAnimatedUpdate.h"
 #include "GeoDataPlaylist.h"
 #include "GeoParser.h"
 #include "KmlElementDictionary.h"
 #include "KmlObjectTagHandler.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
@@ -31,21 +33,25 @@ namespace kml
 namespace gx
 {
 
-KML_DEFINE_TAG_HANDLER_GX22( AnimatedUpdate )
+KML_DEFINE_TAG_HANDLER_GX22(AnimatedUpdate)
 
-GeoNode* KmlAnimatedUpdateTagHandler::parse( GeoParser& parser ) const
+GeoNode* KmlAnimatedUpdateTagHandler::parse(GeoParser& parser) const
 {
     Q_ASSERT(parser.isStartElement() && parser.isValidElement(QLatin1String(kmlTag_AnimatedUpdate)));
 
     GeoStackItem parentItem = parser.parentElement();
 
-    GeoDataAnimatedUpdate *animatedUpdate = new GeoDataAnimatedUpdate;
-    KmlObjectTagHandler::parseIdentifiers( parser, animatedUpdate );
+    GeoDataAnimatedUpdate* animatedUpdate = new GeoDataAnimatedUpdate;
+    KmlObjectTagHandler::parseIdentifiers(parser, animatedUpdate);
 
-    if (parentItem.is<GeoDataPlaylist>()) {
-        parentItem.nodeAs<GeoDataPlaylist>()->addPrimitive( animatedUpdate );
+    if (parentItem.is<GeoDataPlaylist>())
+    {
+        parentItem.nodeAs<GeoDataPlaylist>()->addPrimitive(animatedUpdate);
         return animatedUpdate;
-    } else {
+    }
+
+    else
+    {
         delete animatedUpdate;
     }
 
