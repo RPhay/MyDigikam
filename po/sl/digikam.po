@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-10 01:44+0000\n"
+"POT-Creation-Date: 2024-07-11 01:42+0000\n"
 "PO-Revision-Date: 2024-06-27 07:31+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3670,7 +3670,7 @@ msgstr ""
 "primerjavi z digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:172
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:361
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:425
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -52759,7 +52759,7 @@ msgid "&Hide"
 msgstr "Skrij"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:311
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:387
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:436
 #, kde-format
 msgid "&Configure..."
 msgstr "Konfiguriraj..."
@@ -52907,13 +52907,13 @@ msgid "E"
 msgstr "E"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:149
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:156
 #, kde-format
 msgid "N"
 msgstr "N"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:150
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "S"
 msgstr "S"
@@ -54658,14 +54658,14 @@ msgstr "Smučarsko tekaška proga"
 msgid "Sled Trail"
 msgstr "Steza za sanke"
 
-#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:46
+#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:53
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
 msgstr ""
 "Podrejene besedne vsebine <maximum> ni bilo mogoče pretvoriti v celo "
 "število. Bila je: '%1'"
 
-#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:48
+#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:58
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr ""
@@ -54692,7 +54692,7 @@ msgstr "To je neveljavna datoteka"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:48
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
@@ -54714,22 +54714,22 @@ msgstr "PopIndeks"
 msgid "Playlist"
 msgstr "Seznam predvajanj"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:95
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:98
 #, kde-format
 msgid "No name specified"
 msgstr "Ni določenega imena"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:96
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr "Določite ime za to relacijo."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:102
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:105
 #, kde-format
 msgid "No type tag specified"
 msgstr "Ni določene oznake vrste"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:103
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:106
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr "Dodajte oznako vrste za to relacijo."
@@ -54810,22 +54810,22 @@ msgstr "Oznake v relaciji"
 msgid "Add custom tag..."
 msgstr "Dodaj oznako po meri..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:376
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:446
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:66
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:72
 #, kde-format
 msgid "Atmosphere"
 msgstr "Atmosfera"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:71
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:77
 #, kde-format
 msgid "&Atmosphere"
 msgstr "&Atmosfera"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:86
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:92
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
 msgstr "Vtičnik za prikaz atmosfere okoli zemlje."
@@ -54868,17 +54868,17 @@ msgstr "Atom"
 msgid "Magnet"
 msgstr "Magnet"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:67
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:73
 #, kde-format
 msgid "Compass"
 msgstr "Kompas"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:72
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:78
 #, kde-format
 msgid "&Compass"
 msgstr "Kompas"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:93
 #, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
 msgstr ""
@@ -54914,17 +54914,17 @@ msgstr "Obkroženo"
 msgid "German"
 msgstr "Nemško"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:81
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:87
 #, kde-format
 msgid "Crosshairs"
 msgstr "Križec"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:86
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
 #, kde-format
 msgid "Cross&hairs"
 msgstr "Križec"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:101
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:107
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr "Vtičnik, ki kaže merilni križec nad zemljevidom."
@@ -55003,67 +55003,67 @@ msgstr "Številčne oznake"
 msgid "Show numerical Labels."
 msgstr "Pokaži številčne oznake."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:80
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:84
 #, kde-format
 msgid "Coordinate Grid"
 msgstr "Koordinatna mreža"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:89
 #, kde-format
 msgid "Coordinate &Grid"
 msgstr "Koordinatna mreža"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:104
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr "Vtičnik, ki prikazuje koordinatno mrežo nad zemljevidom."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:222
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:229
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "Izberite barvo koordinatne mreže."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:233
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:241
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "Izberite barvo tropskih povratnikov."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:253
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr "Izberite barvo ekvatorja."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:324
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:336
 #, kde-format
 msgid "Equator"
 msgstr "Ekvator"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:329
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:343
 #, kde-format
 msgid "Prime Meridian"
 msgstr "Prvi poldnevnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:330
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
 #, kde-format
 msgid "Antimeridian"
 msgstr "Antimeridian"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:416
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:439
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr "Rakov (severni) povratnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:417
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr "Kozorogov (južni) povratnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:420
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:443
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Arktični krog"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:421
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Antarktični krog"
@@ -55082,53 +55082,53 @@ msgstr "Pokaži merilno lestvico"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:61
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:67
 #, kde-format
 msgid "Minimize"
 msgstr "Strni"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:84
 #, kde-format
 msgid "Scale Bar"
 msgstr "Merilo"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:83
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:89
 #, kde-format
 msgid "&Scale Bar"
 msgstr "Merilo"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:98
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:104
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Vtičnik za prikaz lebdečega elementa, ki zagotavlja merilo zemljevida."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:109
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:115
 #, kde-format
 msgid "Original Developer"
 msgstr "Izvirni razvijalec"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:249
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:253
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:269
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:276
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:257
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:282
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:262
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:289
 #, kde-format
 msgid "mi"
 msgstr "milj"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:273
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:305
 #, kde-format
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:393
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:443
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "Lestvica"
@@ -55211,23 +55211,23 @@ msgstr "Polmer"
 msgid "Circumference"
 msgstr "Obseg"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
 #, kde-format
 msgid "Measure Tool"
 msgstr "Orodje merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:102
 #, kde-format
 msgid "&Measure Tool"
 msgstr "Orodje &merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:112
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:117
 #, kde-format
 msgid "Measure distances between two or more points."
 msgstr "Izmeri razdalje med dvema ali več točkami."
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:372
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:487
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:426
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:561
 #, kde-format
 msgid ""
 "Area:\n"
@@ -55236,7 +55236,7 @@ msgstr ""
 "Površina:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:390
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:445
 #, kde-format
 msgid ""
 "Circumference:\n"
@@ -55245,7 +55245,7 @@ msgstr ""
 "Obseg:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:505
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:580
 #, kde-format
 msgid ""
 "Perimeter:\n"
@@ -55254,106 +55254,106 @@ msgstr ""
 "Perimeter:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:563
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:646
 #, kde-format
 msgid "Polygon Ruler"
 msgstr "Poligonsko ravnilo"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:565
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:651
 #, kde-format
 msgid "Circle Ruler"
 msgstr "Krožno ravnilo"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:568
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:656
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
 msgstr "Celotna razdalja: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:570
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:579
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:660
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:683
 #, kde-format
 msgid "Area: %1<br/>\n"
 msgstr "Površina: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:572
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:665
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
 msgstr "Perimeter: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:575
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:673
 #, kde-format
 msgid "Radius: %1<br/>\n"
 msgstr "Polmer: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:577
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:678
 #, kde-format
 msgid "Circumference: %1<br/>\n"
 msgstr "Obseg: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:626
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:733
 #, kde-format
 msgid "Add &Measure Point"
 msgstr "Dodaj točko merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:627
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
 msgid "Remove &Last Measure Point"
 msgstr "Odstrani zadnjo točko merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:629
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:736
 #, kde-format
 msgid "&Remove Measure Points"
 msgstr "Odst&rani točke merjenja"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:63
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:69
 #, kde-format
 msgid "Navigation"
 msgstr "Navigacija"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:74
 #, kde-format
 msgid "&Navigation"
 msgstr "Navigacija"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:83
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:89
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 "Vtičnik za dodajanje nadzora miške za povečavo in premikanje zemljevida"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:269
 #, kde-format
 msgid "Current Location Button"
 msgstr "Gumb trenutne lokacije"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:245
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:272
 #, kde-format
 msgid "Home Button"
 msgstr "Gumb Domov"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:86
 #, kde-format
 msgid "Overview Map"
 msgstr "Pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:83
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:91
 #, kde-format
 msgid "&Overview Map"
 msgstr "Pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:98
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:106
 #, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Vtičnik za dodajanje lebdečega elementa, ki nudi pregledni zemljevid."
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:489
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:563
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Izberi pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:521
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:599
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Izberite barvo indikatorja pozicije"
@@ -55394,17 +55394,17 @@ msgstr "x"
 msgid "Position I&ndicator:"
 msgstr "Indikator pozicije:"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:95
 #, kde-format
 msgid "Download Progress Indicator"
 msgstr "Prenesi kazalnik napredka"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:94
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:100
 #, kde-format
 msgid "&Download Progress"
 msgstr "Prenesi napredek"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:109
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:115
 #, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr ""
@@ -55428,80 +55428,80 @@ msgstr ""
 msgid "Marble Cache Files"
 msgstr "Marble datoteke v medpomnilniku"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
 #, kde-format
 msgid "GPSBabel NMEA File Parser"
 msgstr "razčlenjevalnik datoteke GPSBabel NMEA"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:51
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr "Vtičnik za nalaganje datotek NMEA prek ukazne vrstice orodja GPSBabel."
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:63
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:67
 #, kde-format
 msgid "GPSBabel files"
 msgstr "Datoteke GPSBabel"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
 #, kde-format
 msgid "Gpx File Parser"
 msgstr "Razčlenjevalnik datoteke Gpx"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:51
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek Gpx."
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:63
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:67
 #, kde-format
 msgid "GPS Data"
 msgstr "Podatki GPS"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:36
 #, kde-format
 msgid "GeoJSON File Parser"
 msgstr "Razčlenjevalnik datoteke GeoJSON"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:51
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek GeoJSON."
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:64
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:68
 #, kde-format
 msgid "GeoJSON"
 msgstr "GeoJSON"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:36
 #, kde-format
 msgid "KML File Parser"
 msgstr "Razčlenjevalnik datoteke KML"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:51
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek KML in KMZ."
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:64
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:68
 #, kde-format
 msgid "Google Earth KML"
 msgstr "Google Earth KML"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:34
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:38
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr "OpenStreetMap Nominatim reverzno geokodiranje"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:43
 #, kde-format
 msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap Nominatim"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:54
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:58
 #, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
@@ -55510,12 +55510,12 @@ msgstr ""
 "Vtičnik za obdelavo spletnega povratnega geokodiranja s spletno storitvijo "
 "OpenStreetMap Nominatim"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:36
 #, kde-format
 msgid "Osm File Parser"
 msgstr "Osm razčlenjevalnik datoteke"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:51
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
@@ -55523,33 +55523,33 @@ msgstr ""
 "Vtičnik za nalaganje geolokacijskih podatkov iz datotek v formatu "
 "OpenStreetMap."
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:64
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:68
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap podatki"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:36
 #, kde-format
 msgid "Pn2 File Parser"
 msgstr "Razčlenjevalnik datoteke Pn2"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:51
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz stisnjenih datotek Pn2"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:63
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:67
 #, kde-format
 msgid "Compressed Pnt"
 msgstr "Stisnjen Pnt"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:32
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:36
 #, kde-format
 msgid "Pnt File Parser"
 msgstr "Razčlenjevalnik datoteke Pnt"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:47
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:51
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
@@ -55558,7 +55558,7 @@ msgstr ""
 "Vtičnik za nalaganje geolokacijskih podatkov iz datotek Micro World Database "
 "II"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:63
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:67
 #, kde-format
 msgid "Micro World Database II"
 msgstr "Micro World Database II"
