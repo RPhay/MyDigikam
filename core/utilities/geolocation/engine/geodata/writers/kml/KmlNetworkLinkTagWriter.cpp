@@ -15,6 +15,8 @@
 
 #include "KmlNetworkLinkTagWriter.h"
 
+// Local includes
+
 #include "GeoDataNetworkLink.h"
 #include "GeoDataTypes.h"
 #include "GeoDataLink.h"
@@ -25,26 +27,26 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerNetworkLink(
-        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataNetworkLinkType),
-                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-        new KmlNetworkLinkTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataNetworkLinkType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlNetworkLinkTagWriter);
 
-bool KmlNetworkLinkTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlNetworkLinkTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
 
-    const GeoDataNetworkLink *networkLink = static_cast<const GeoDataNetworkLink*>( node );
+    const GeoDataNetworkLink* networkLink = static_cast<const GeoDataNetworkLink*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_NetworkLink) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_NetworkLink));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_name), networkLink->name() );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_name), networkLink->name());
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_visibility), QString::number( networkLink->isVisible() ), QString::fromUtf8("1"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_visibility), QString::number(networkLink->isVisible()), QString::fromUtf8("1"));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_refreshVisibility), QString::number( networkLink->refreshVisibility() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_refreshVisibility), QString::number(networkLink->refreshVisibility()), QString::fromUtf8("0"));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_flyToView), QString::number( networkLink->flyToView() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_flyToView), QString::number(networkLink->flyToView()), QString::fromUtf8("0"));
 
-    writeElement( &networkLink->link(), writer);
+    writeElement(&networkLink->link(), writer);
 
     writer.writeEndElement();
 

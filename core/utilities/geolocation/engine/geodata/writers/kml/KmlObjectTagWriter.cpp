@@ -15,20 +15,25 @@
 
 #include "KmlObjectTagWriter.h"
 
+// Local includes
+
 #include "GeoWriter.h"
 
 namespace Marble
 {
 
-void KmlObjectTagWriter::writeIdentifiers( GeoWriter &writer, const GeoDataObject *object )
+void KmlObjectTagWriter::writeIdentifiers(GeoWriter& writer, const GeoDataObject* object)
 {
-    if ( object && !object->id().isEmpty() ) {
-        writer.writeAttribute( QLatin1String("id"),
-                               object->id() );
+    if (object && !object->id().isEmpty())
+    {
+        writer.writeAttribute(QLatin1String("id"),
+                              object->id());
     }
-    if ( object && !object->targetId().isEmpty() ) {
-        writer.writeAttribute( QLatin1String("targetId"),
-                               object->targetId() );
+
+    if (object && !object->targetId().isEmpty())
+    {
+        writer.writeAttribute(QLatin1String("targetId"),
+                              object->targetId());
     }
 }
 

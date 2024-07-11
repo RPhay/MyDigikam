@@ -15,7 +15,11 @@
 
 #include "KmlExtendedDataTagWriter.h"
 
+// Qt includes
+
 #include <QHash>
+
+// Local includes
 
 #include "GeoDataTypes.h"
 #include "GeoWriter.h"
@@ -27,27 +31,29 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerExtendedData( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataExtendedDataType),
-                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-                                               new KmlExtendedDataTagWriter() );
+static GeoTagWriterRegistrar s_writerExtendedData(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataExtendedDataType),
+                                                                              QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+                                                  new KmlExtendedDataTagWriter());
 
 
-bool KmlExtendedDataTagWriter::write( const GeoNode *node,
-                               GeoWriter& writer ) const
+bool KmlExtendedDataTagWriter::write(const GeoNode* node,
+                                     GeoWriter& writer) const
 {
-    const GeoDataExtendedData *extended = static_cast<const GeoDataExtendedData*>( node );
+    const GeoDataExtendedData* extended = static_cast<const GeoDataExtendedData*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ExtendedData) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ExtendedData));
 
     QHash< QString, GeoDataData >::const_iterator begin = extended->constBegin();
     QHash< QString, GeoDataData >::const_iterator end = extended->constEnd();
 
-    for( QHash< QString, GeoDataData >::const_iterator i = begin; i != end; ++i ){
-        writeElement( &i.value(), writer );
+    for (QHash< QString, GeoDataData >::const_iterator i = begin; i != end; ++i)
+    {
+        writeElement(&i.value(), writer);
     }
 
-    for( const GeoDataSchemaData &schemaData: extended->schemaDataList() ) {
-        writeElement( &schemaData, writer );
+    for (const GeoDataSchemaData& schemaData : extended->schemaDataList())
+    {
+        writeElement(&schemaData, writer);
     }
 
     writer.writeEndElement();

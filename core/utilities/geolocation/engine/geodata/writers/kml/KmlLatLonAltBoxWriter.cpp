@@ -15,6 +15,8 @@
 
 #include "KmlLatLonAltBoxWriter.h"
 
+// Local includes
+
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataTypes.h"
 #include "GeoWriter.h"
@@ -26,23 +28,23 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLatLonAltBox(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLatLonAltBoxType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataLatLonAltBoxType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
     new KmlLatLonAltBoxWriter);
 
-bool KmlLatLonAltBoxWriter::write( const GeoNode *node,
-                 GeoWriter& writer ) const
+bool KmlLatLonAltBoxWriter::write(const GeoNode* node,
+                                  GeoWriter& writer) const
 {
-    const GeoDataLatLonAltBox *latLonAltBox = static_cast<const GeoDataLatLonAltBox*>( node );
+    const GeoDataLatLonAltBox* latLonAltBox = static_cast<const GeoDataLatLonAltBox*>(node);
     writer.writeStartElement(QString::fromUtf8(kml::kmlTag_LatLonAltBox));
-    KmlObjectTagWriter::writeIdentifiers( writer, latLonAltBox );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_north), QString::number(latLonAltBox->north( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_south), QString::number(latLonAltBox->south( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_east),  QString::number(latLonAltBox->east( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_west),  QString::number(latLonAltBox->west( GeoDataCoordinates::Degree )) );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_minAltitude), QString::number(latLonAltBox->minAltitude()) );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_maxAltitude), QString::number(latLonAltBox->maxAltitude()) );
-    KmlGroundOverlayWriter::writeAltitudeMode( writer, latLonAltBox->altitudeMode());
+    KmlObjectTagWriter::writeIdentifiers(writer, latLonAltBox);
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_north), QString::number(latLonAltBox->north(GeoDataCoordinates::Degree)));
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_south), QString::number(latLonAltBox->south(GeoDataCoordinates::Degree)));
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_east),  QString::number(latLonAltBox->east(GeoDataCoordinates::Degree)));
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_west),  QString::number(latLonAltBox->west(GeoDataCoordinates::Degree)));
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_minAltitude), QString::number(latLonAltBox->minAltitude()));
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_maxAltitude), QString::number(latLonAltBox->maxAltitude()));
+    KmlGroundOverlayWriter::writeAltitudeMode(writer, latLonAltBox->altitudeMode());
     writer.writeEndElement();
     return true;
 }

@@ -15,6 +15,8 @@
 
 #include "KmlTourTagWriter.h"
 
+// Local includes
+
 #include "GeoDataTour.h"
 #include "GeoDataTypes.h"
 #include "GeoDataPlaylist.h"
@@ -25,21 +27,24 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerTour(
-        GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataTourType),
-                                     QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-        new KmlTourTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataTourType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlTourTagWriter);
 
-bool KmlTourTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
+bool KmlTourTagWriter::writeMid(const GeoNode* node, GeoWriter& writer) const
 {
-    const  GeoDataTour* tour = static_cast<const GeoDataTour*>( node );
-    if ( tour->playlist() ) {
-        writeElement( tour->playlist(), writer );
+    const  GeoDataTour* tour = static_cast<const GeoDataTour*>(node);
+
+    if (tour->playlist())
+    {
+        writeElement(tour->playlist(), writer);
     }
+
     return true;
 }
 
 KmlTourTagWriter::KmlTourTagWriter() :
-    KmlFeatureTagWriter( QString::fromUtf8("gx:Tour") )
+    KmlFeatureTagWriter(QString::fromUtf8("gx:Tour"))
 {
     // nothing to do
 }

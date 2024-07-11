@@ -15,7 +15,11 @@
 
 #include "KmlTrackWriter.h"
 
+// Qt includes
+
 #include <QDateTime>
+
+// Local includes
 
 #include "GeoDataCoordinates.h"
 #include "GeoDataTrack.h"
@@ -28,29 +32,32 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerPoint(GeoTagWriter::QualifiedName(
-                                           QString::fromUtf8(GeoDataTypes::GeoDataTrackType),
-                                           QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
-                                           new KmlTrackWriter() );
+                                               QString::fromUtf8(GeoDataTypes::GeoDataTrackType),
+                                               QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+                                           new KmlTrackWriter());
 
-bool KmlTrackWriter::write( const GeoNode *node, GeoWriter &writer ) const
+bool KmlTrackWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataTrack *track = static_cast<const GeoDataTrack *>( node );
+    const GeoDataTrack* track = static_cast<const GeoDataTrack*>(node);
 
-    writer.writeStartElement( QString::fromUtf8("gx:Track") );
-    KmlObjectTagWriter::writeIdentifiers( writer, track );
+    writer.writeStartElement(QString::fromUtf8("gx:Track"));
+    KmlObjectTagWriter::writeIdentifiers(writer, track);
 
     int points = track->size();
-    for ( int i = 0; i < points; i++ ) {
-        writer.writeElement( QString::fromUtf8("when"), track->whenList().at( i ).toString( Qt::ISODate ) );
+
+    for (int i = 0; i < points; i++)
+    {
+        writer.writeElement(QString::fromUtf8("when"), track->whenList().at(i).toString(Qt::ISODate));
 
         qreal lon, lat, alt;
-        track->coordinatesList().at( i ).geoCoordinates( lon, lat, alt, GeoDataCoordinates::Degree );
+        track->coordinatesList().at(i).geoCoordinates(lon, lat, alt, GeoDataCoordinates::Degree);
         const QString coord = QString::number(lon, 'f', 10) + QLatin1Char(' ') +
                               QString::number(lat, 'f', 10) + QLatin1Char(' ') +
                               QString::number(alt, 'f', 10);
 
-        writer.writeElement( QString::fromUtf8("gx:coord"), coord );
+        writer.writeElement(QString::fromUtf8("gx:coord"), coord);
     }
+
     writer.writeEndElement();
 
     return true;

@@ -15,6 +15,8 @@
 
 #include "DgmlVectorTagWriter.h"
 
+// Local includes
+
 #include "GeoWriter.h"
 #include "GeoSceneVector.h"
 #include "GeoSceneTypes.h"
@@ -23,22 +25,22 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerVector( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneVectorType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ), new DgmlVectorTagWriter() );
+static GeoTagWriterRegistrar s_writerVector(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoSceneTypes::GeoSceneVectorType), QString::fromUtf8(dgml::dgmlTag_nameSpace20)), new DgmlVectorTagWriter());
 
-bool DgmlVectorTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool DgmlVectorTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoSceneVector *vector = static_cast<const GeoSceneVector*>( node );
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Vector) );
-    writer.writeAttribute( QLatin1String("name"), vector->name() );
-    writer.writeAttribute( QLatin1String("feature"), vector->feature() );
+    const GeoSceneVector* vector = static_cast<const GeoSceneVector*>(node);
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Vector));
+    writer.writeAttribute(QLatin1String("name"), vector->name());
+    writer.writeAttribute(QLatin1String("feature"), vector->feature());
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_SourceFile) );
-    writer.writeAttribute( QLatin1String("format"), vector->fileFormat() );
-    writer.writeCharacters( vector->sourceFile() );
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_SourceFile));
+    writer.writeAttribute(QLatin1String("format"), vector->fileFormat());
+    writer.writeCharacters(vector->sourceFile());
     writer.writeEndElement();
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Pen) );
-    writer.writeAttribute( QLatin1String("color"), vector->pen().color().name() );
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Pen));
+    writer.writeAttribute(QLatin1String("color"), vector->pen().color().name());
     writer.writeEndElement();
 
     writer.writeEndElement();

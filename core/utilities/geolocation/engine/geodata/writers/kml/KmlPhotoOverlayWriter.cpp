@@ -15,6 +15,8 @@
 
 #include "KmlPhotoOverlayWriter.h"
 
+// Local includes
+
 #include "GeoDataPhotoOverlay.h"
 #include "GeoDataTypes.h"
 #include "GeoDataImagePyramid.h"
@@ -27,66 +29,70 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataPhotoOverlayType),
-                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlPhotoOverlayWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataPhotoOverlayType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlPhotoOverlayWriter);
 
-KmlPhotoOverlayWriter::KmlPhotoOverlayWriter() : KmlOverlayTagWriter( QString::fromUtf8(kml::kmlTag_PhotoOverlay) )
+KmlPhotoOverlayWriter::KmlPhotoOverlayWriter() : KmlOverlayTagWriter(QString::fromUtf8(kml::kmlTag_PhotoOverlay))
 {
     // nothing to do
 }
 
-bool KmlPhotoOverlayWriter::writeMid( const GeoNode *node, GeoWriter &writer ) const
+bool KmlPhotoOverlayWriter::writeMid(const GeoNode* node, GeoWriter& writer) const
 {
-    KmlOverlayTagWriter::writeMid( node, writer );
+    KmlOverlayTagWriter::writeMid(node, writer);
 
-    const GeoDataPhotoOverlay *photo_overlay =
-        static_cast<const GeoDataPhotoOverlay*>( node );
+    const GeoDataPhotoOverlay* photo_overlay =
+        static_cast<const GeoDataPhotoOverlay*>(node);
 
     // rotation
-    QString const rotation = QString::number( photo_overlay->rotation(), 'f', 3 );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_rotation), rotation, QString::fromUtf8("0.000") );
+    QString const rotation = QString::number(photo_overlay->rotation(), 'f', 3);
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_rotation), rotation, QString::fromUtf8("0.000"));
 
     // ViewVolume
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ViewVolume) );
-    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_leftFov), photo_overlay->viewVolume().leftFov(), 0 );
-    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_rightFov), photo_overlay->viewVolume().rightFov(), 0 );
-    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_bottomFov), photo_overlay->viewVolume().bottomFov(), 0 );
-    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_topFov), photo_overlay->viewVolume().topFov(), 0 );
-    writer.writeOptionalElement<qreal>( QString::fromUtf8(kml::kmlTag_near), photo_overlay->viewVolume().near(), 0 );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ViewVolume));
+    writer.writeOptionalElement<qreal>(QString::fromUtf8(kml::kmlTag_leftFov), photo_overlay->viewVolume().leftFov(), 0);
+    writer.writeOptionalElement<qreal>(QString::fromUtf8(kml::kmlTag_rightFov), photo_overlay->viewVolume().rightFov(), 0);
+    writer.writeOptionalElement<qreal>(QString::fromUtf8(kml::kmlTag_bottomFov), photo_overlay->viewVolume().bottomFov(), 0);
+    writer.writeOptionalElement<qreal>(QString::fromUtf8(kml::kmlTag_topFov), photo_overlay->viewVolume().topFov(), 0);
+    writer.writeOptionalElement<qreal>(QString::fromUtf8(kml::kmlTag_near), photo_overlay->viewVolume().near(), 0);
     writer.writeEndElement();
 
     // ImagePyramid
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ImagePyramid) );
-    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_tileSize), photo_overlay->imagePyramid().tileSize(), 256 );
-    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_maxWidth), photo_overlay->imagePyramid().maxWidth() );
-    writer.writeOptionalElement<int>( QString::fromUtf8(kml::kmlTag_maxHeight), photo_overlay->imagePyramid().maxHeight() );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ImagePyramid));
+    writer.writeOptionalElement<int>(QString::fromUtf8(kml::kmlTag_tileSize), photo_overlay->imagePyramid().tileSize(), 256);
+    writer.writeOptionalElement<int>(QString::fromUtf8(kml::kmlTag_maxWidth), photo_overlay->imagePyramid().maxWidth());
+    writer.writeOptionalElement<int>(QString::fromUtf8(kml::kmlTag_maxHeight), photo_overlay->imagePyramid().maxHeight());
 
-    switch ( photo_overlay->imagePyramid().gridOrigin() )
+    switch (photo_overlay->imagePyramid().gridOrigin())
     {
-    case GeoDataImagePyramid::LowerLeft:
-        writer.writeElement( QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("lowerLeft") );
-        break;
-    case GeoDataImagePyramid::UpperLeft:
-        writer.writeElement( QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("upperLeft") );
-        break;
+        case GeoDataImagePyramid::LowerLeft:
+            writer.writeElement(QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("lowerLeft"));
+            break;
+
+        case GeoDataImagePyramid::UpperLeft:
+            writer.writeElement(QString::fromUtf8(kml::kmlTag_gridOrigin), QString::fromUtf8("upperLeft"));
+            break;
     }
+
     writer.writeEndElement();
 
     // Point
-    writeElement( &photo_overlay->point(), writer );
+    writeElement(&photo_overlay->point(), writer);
 
     // shape
-    switch ( photo_overlay->shape() )
+    switch (photo_overlay->shape())
     {
-    case GeoDataPhotoOverlay::Rectangle:
-        break;
-    case GeoDataPhotoOverlay::Cylinder:
-        writer.writeElement( QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("cylinder") );
-        break;
-    case GeoDataPhotoOverlay::Sphere:
-        writer.writeElement( QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("sphere") );
-        break;
+        case GeoDataPhotoOverlay::Rectangle:
+            break;
+
+        case GeoDataPhotoOverlay::Cylinder:
+            writer.writeElement(QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("cylinder"));
+            break;
+
+        case GeoDataPhotoOverlay::Sphere:
+            writer.writeElement(QString::fromUtf8(kml::kmlTag_shape), QString::fromUtf8("sphere"));
+            break;
     }
 
     return true;

@@ -15,6 +15,8 @@
 
 #include "KmlModelTagWriter.h"
 
+// Local includes
+
 #include "GeoDataModel.h"
 #include "GeoDataAlias.h"
 #include "GeoDataTypes.h"
@@ -32,60 +34,60 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerModel(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataModelType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataModelType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
     new KmlModelTagWriter);
 
-bool KmlModelTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlModelTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataModel *model = static_cast<const GeoDataModel*>( node );
+    const GeoDataModel* model = static_cast<const GeoDataModel*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Model) );
-    KmlObjectTagWriter::writeIdentifiers( writer, model );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Model));
+    KmlObjectTagWriter::writeIdentifiers(writer, model);
 
-    KmlGroundOverlayWriter::writeAltitudeMode( writer, model->altitudeMode());
+    KmlGroundOverlayWriter::writeAltitudeMode(writer, model->altitudeMode());
 
     const GeoDataLocation location = model->location() ;
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Location) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Location));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_longitude), QString::number( location.longitude( GeoDataCoordinates::Degree ) ), QString::fromUtf8("0") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_latitude), QString::number( location.latitude( GeoDataCoordinates::Degree ) ), QString::fromUtf8("0") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_altitude), QString::number( location.altitude() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_longitude), QString::number(location.longitude(GeoDataCoordinates::Degree)), QString::fromUtf8("0"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_latitude), QString::number(location.latitude(GeoDataCoordinates::Degree)), QString::fromUtf8("0"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_altitude), QString::number(location.altitude()), QString::fromUtf8("0"));
 
     writer.writeEndElement();
 
     const GeoDataOrientation orientation = model->orientation();
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Orientation) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Orientation));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_heading), QString::number( orientation.heading() ), QString::fromUtf8("0") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_tilt), QString::number( orientation.tilt() ), QString::fromUtf8("0") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_roll), QString::number( orientation.roll() ), QString::fromUtf8("0") );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_heading), QString::number(orientation.heading()), QString::fromUtf8("0"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_tilt), QString::number(orientation.tilt()), QString::fromUtf8("0"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_roll), QString::number(orientation.roll()), QString::fromUtf8("0"));
 
     writer.writeEndElement();
 
     const GeoDataScale scale = model->scale() ;
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Scale) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Scale));
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_x), QString::number( scale.x() ), QString::fromUtf8("1") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_y), QString::number( scale.y() ), QString::fromUtf8("1") );
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_z), QString::number( scale.z() ), QString::fromUtf8("1") );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_x), QString::number(scale.x()), QString::fromUtf8("1"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_y), QString::number(scale.y()), QString::fromUtf8("1"));
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_z), QString::number(scale.z()), QString::fromUtf8("1"));
 
     writer.writeEndElement();
 
-    writeElement( &model->link(), writer );
+    writeElement(&model->link(), writer);
 
     const GeoDataResourceMap map = model->resourceMap() ;
 
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_ResourceMap) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ResourceMap));
 
     const GeoDataAlias alias = map.alias() ;
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Alias) );
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Alias));
 
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_targetHref), alias.targetHref() );
-    writer.writeTextElement( QString::fromUtf8(kml::kmlTag_sourceHref), alias.sourceHref() );
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_targetHref), alias.targetHref());
+    writer.writeTextElement(QString::fromUtf8(kml::kmlTag_sourceHref), alias.sourceHref());
 
     writer.writeEndElement();
 

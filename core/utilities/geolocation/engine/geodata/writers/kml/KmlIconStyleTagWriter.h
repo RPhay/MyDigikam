@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagWriter.h"
 #include "GeoDataHotSpot.h"
 #include "KmlColorStyleTagWriter.h"
@@ -30,12 +32,12 @@ public:
 
 protected:
 
-    bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
-    bool isEmpty( const GeoNode *node ) const override;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override;
+    bool isEmpty(const GeoNode* node) const override;
 
 private:
 
-    static QString unitString( GeoDataHotSpot::Units unit );
+    static QString unitString(GeoDataHotSpot::Units unit);
 };
 
 } // namespace Marble

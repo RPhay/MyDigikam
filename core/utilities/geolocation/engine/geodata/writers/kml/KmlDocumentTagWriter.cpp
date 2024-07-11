@@ -15,7 +15,11 @@
 
 #include "KmlDocumentTagWriter.h"
 
+// Qt includes
+
 #include <QVector>
+
+// Local includes
 
 #include "GeoDocument.h"
 #include "GeoDataDocument.h"
@@ -28,41 +32,46 @@
 #include "GeoDataTimeSpan.h"
 #include "GeoDataSchema.h"
 #include "GeoDataTypes.h"
-
 #include "digikam_debug.h"
 
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataDocumentType),
-                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
-                                               new KmlDocumentTagWriter() );
+static GeoTagWriterRegistrar s_writerDocument(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataDocumentType),
+                                                                          QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+                                              new KmlDocumentTagWriter());
 
 KmlDocumentTagWriter::KmlDocumentTagWriter() :
-  KmlFeatureTagWriter( QString::fromUtf8(kml::kmlTag_Document) )
+    KmlFeatureTagWriter(QString::fromUtf8(kml::kmlTag_Document))
 {
-  // nothing to do
+    // nothing to do
 }
 
-bool KmlDocumentTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
+bool KmlDocumentTagWriter::writeMid(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataDocument *document = static_cast<const GeoDataDocument*>(node);
+    const GeoDataDocument* document = static_cast<const GeoDataDocument*>(node);
 
-    for( const GeoDataStyle::ConstPtr &style: document->styles() ) {
-        writeElement( style.data(), writer );
+    for (const GeoDataStyle::ConstPtr& style : document->styles())
+    {
+        writeElement(style.data(), writer);
     }
-    for( const GeoDataStyleMap &map: document->styleMaps() ) {
-        writeElement( &map, writer );
+
+    for (const GeoDataStyleMap& map : document->styleMaps())
+    {
+        writeElement(&map, writer);
     }
-    for( const GeoDataSchema &schema: document->schemas() ) {
-        writeElement( &schema, writer );
+
+    for (const GeoDataSchema& schema : document->schemas())
+    {
+        writeElement(&schema, writer);
     }
 
     QVector<GeoDataFeature*>::ConstIterator it =  document->constBegin();
     QVector<GeoDataFeature*>::ConstIterator const end = document->constEnd();
 
-    for ( ; it != end; ++it ) {
-        writeElement( *it, writer );
+    for (; it != end; ++it)
+    {
+        writeElement(*it, writer);
     }
 
     return true;

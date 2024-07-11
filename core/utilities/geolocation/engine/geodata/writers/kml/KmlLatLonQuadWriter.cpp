@@ -15,6 +15,8 @@
 
 #include "KmlLatLonQuadWriter.h"
 
+// Local includes
+
 #include "GeoDataLatLonQuad.h"
 #include "GeoDataTypes.h"
 #include "GeoWriter.h"
@@ -25,39 +27,40 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLatLonQuad(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLatLonQuadType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlLatLonQuadWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataLatLonQuadType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlLatLonQuadWriter);
 
-bool KmlLatLonQuadWriter::write( const GeoNode *node,
-                 GeoWriter& writer ) const
+bool KmlLatLonQuadWriter::write(const GeoNode* node,
+                                GeoWriter& writer) const
 {
-    const GeoDataLatLonQuad *latLonQuad = static_cast<const GeoDataLatLonQuad*>( node );
+    const GeoDataLatLonQuad* latLonQuad = static_cast<const GeoDataLatLonQuad*>(node);
 
-    if ( latLonQuad->isValid() ) {
-        writer.writeStartElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_LatLonQuad) );
-        KmlObjectTagWriter::writeIdentifiers( writer, latLonQuad );
+    if (latLonQuad->isValid())
+    {
+        writer.writeStartElement(QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_LatLonQuad));
+        KmlObjectTagWriter::writeIdentifiers(writer, latLonQuad);
 
-        writer.writeStartElement( QString::fromUtf8(kml::kmlTag_coordinates) );
+        writer.writeStartElement(QString::fromUtf8(kml::kmlTag_coordinates));
 
-        writer.writeCharacters( QString::number( latLonQuad->bottomLeftLongitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( "," ) );
-        writer.writeCharacters( QString::number( latLonQuad->bottomLeftLatitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( " " ) );
+        writer.writeCharacters(QString::number(latLonQuad->bottomLeftLongitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(","));
+        writer.writeCharacters(QString::number(latLonQuad->bottomLeftLatitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(" "));
 
-        writer.writeCharacters( QString::number( latLonQuad->bottomRightLongitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( "," ) );
-        writer.writeCharacters( QString::number( latLonQuad->bottomRightLatitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( " " ) );
+        writer.writeCharacters(QString::number(latLonQuad->bottomRightLongitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(","));
+        writer.writeCharacters(QString::number(latLonQuad->bottomRightLatitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(" "));
 
-        writer.writeCharacters( QString::number( latLonQuad->topRightLongitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( "," ) );
-        writer.writeCharacters( QString::number( latLonQuad->topRightLatitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( " " ) );
+        writer.writeCharacters(QString::number(latLonQuad->topRightLongitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(","));
+        writer.writeCharacters(QString::number(latLonQuad->topRightLatitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(" "));
 
-        writer.writeCharacters( QString::number( latLonQuad->topLeftLongitude( GeoDataCoordinates::Degree ) ) );
-        writer.writeCharacters( QString::fromUtf8( "," ) );
-        writer.writeCharacters( QString::number( latLonQuad->topLeftLatitude( GeoDataCoordinates::Degree ) ) );
+        writer.writeCharacters(QString::number(latLonQuad->topLeftLongitude(GeoDataCoordinates::Degree)));
+        writer.writeCharacters(QString::fromUtf8(","));
+        writer.writeCharacters(QString::number(latLonQuad->topLeftLatitude(GeoDataCoordinates::Degree)));
 
         writer.writeEndElement();
 

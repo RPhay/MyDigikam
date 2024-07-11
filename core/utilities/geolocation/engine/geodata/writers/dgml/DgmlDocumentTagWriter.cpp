@@ -15,6 +15,8 @@
 
 #include "DgmlDocumentTagWriter.h"
 
+// Local includes
+
 #include "GeoWriter.h"
 #include "GeoSceneDocument.h"
 #include "GeoSceneHead.h"
@@ -26,26 +28,26 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerDocument( GeoTagWriter::QualifiedName( QString::fromUtf8("GeoSceneDocument"), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
-                                               new DgmlDocumentTagWriter() );
+static GeoTagWriterRegistrar s_writerDocument(GeoTagWriter::QualifiedName(QString::fromUtf8("GeoSceneDocument"), QString::fromUtf8(dgml::dgmlTag_nameSpace20)),
+                                              new DgmlDocumentTagWriter());
 
-bool DgmlDocumentTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool DgmlDocumentTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoSceneDocument *document = static_cast<const GeoSceneDocument*>( node );
+    const GeoSceneDocument* document = static_cast<const GeoSceneDocument*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Document) );
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Document));
 
-    const GeoSceneHead *head = document->head();
-    writeElement( head, writer );
+    const GeoSceneHead* head = document->head();
+    writeElement(head, writer);
 
-    const GeoSceneMap *map = document->map() ;
-    writeElement( map, writer );
+    const GeoSceneMap* map = document->map() ;
+    writeElement(map, writer);
 
-    const GeoSceneSettings *settings = document->settings();
-    writeElement( settings, writer );
+    const GeoSceneSettings* settings = document->settings();
+    writeElement(settings, writer);
 
-    const GeoSceneLegend *legend = document->legend();
-    writeElement( legend, writer );
+    const GeoSceneLegend* legend = document->legend();
+    writeElement(legend, writer);
 
     writer.writeEndDocument();
     return true;

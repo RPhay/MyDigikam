@@ -15,6 +15,8 @@
 
 #include "KmlSimpleDataTagWriter.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataSimpleData.h"
 #include "GeoDataTypes.h"
@@ -24,16 +26,16 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerSimpleData(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataSimpleDataType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlSimpleDataTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataSimpleDataType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlSimpleDataTagWriter);
 
-bool KmlSimpleDataTagWriter::write( const GeoNode *node, GeoWriter &writer ) const
+bool KmlSimpleDataTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataSimpleData *simpleData = static_cast<const GeoDataSimpleData*>( node );
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_SimpleData) );
-    writer.writeAttribute( QLatin1String("name"), simpleData->name() );
-    writer.writeCharacters( simpleData->data() );
+    const GeoDataSimpleData* simpleData = static_cast<const GeoDataSimpleData*>(node);
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_SimpleData));
+    writer.writeAttribute(QLatin1String("name"), simpleData->name());
+    writer.writeCharacters(simpleData->data());
     writer.writeEndElement();
 
     return true;

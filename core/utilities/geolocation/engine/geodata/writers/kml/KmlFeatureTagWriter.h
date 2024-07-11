@@ -15,7 +15,11 @@
 
 #pragma once
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "GeoTagWriter.h"
 
@@ -27,13 +31,13 @@ class KmlFeatureTagWriter: public GeoTagWriter
 {
 public:
 
-    explicit KmlFeatureTagWriter( const QString &elementName );
+    explicit KmlFeatureTagWriter(const QString& elementName);
 
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
+    bool write(const GeoNode* node, GeoWriter& writer) const override;
 
 protected:
 
-    virtual bool writeMid( const GeoNode *node, GeoWriter& writer ) const = 0;
+    virtual bool writeMid(const GeoNode* node, GeoWriter& writer) const = 0;
 
 private:
 

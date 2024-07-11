@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagWriter.h"
 #include "GeoDataListStyle.h"
 #include "GeoDataItemIcon.h"
@@ -26,12 +28,12 @@ class KmlListStyleTagWriter : public GeoTagWriter
 {
 public:
 
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
+    bool write(const GeoNode* node, GeoWriter& writer) const override;
 
 private:
 
-    static QString itemTypeToString( GeoDataListStyle::ListItemType itemType );
-    static QString iconStateToString( GeoDataItemIcon::ItemIconStates state );
+    static QString itemTypeToString(GeoDataListStyle::ListItemType itemType);
+    static QString iconStateToString(GeoDataItemIcon::ItemIconStates state);
 };
 
 } // namespace Marble

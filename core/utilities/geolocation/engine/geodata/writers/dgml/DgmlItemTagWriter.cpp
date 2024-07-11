@@ -15,6 +15,8 @@
 
 #include "DgmlItemTagWriter.h"
 
+// Local includes
+
 #include "GeoSceneTypes.h"
 #include "GeoWriter.h"
 #include "GeoSceneSection.h"
@@ -25,24 +27,30 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerItem( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneItemType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
-                                                                            new DgmlItemTagWriter() );
+static GeoTagWriterRegistrar s_writerItem(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoSceneTypes::GeoSceneItemType), QString::fromUtf8(dgml::dgmlTag_nameSpace20)),
+                                          new DgmlItemTagWriter());
 
-bool DgmlItemTagWriter::write(const GeoNode *node, GeoWriter& writer) const
+bool DgmlItemTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoSceneItem *item = static_cast<const GeoSceneItem*>( node );
+    const GeoSceneItem* item = static_cast<const GeoSceneItem*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Item) );
-    writer.writeAttribute( QString::fromUtf8("name"), item->name() );
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Item));
+    writer.writeAttribute(QString::fromUtf8("name"), item->name());
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Icon) );
-    if( !item->icon()->pixmap().isEmpty() ) {
-        writer.writeAttribute( QString::fromUtf8("pixmap"), item->icon()->pixmap() );
-    } else if (item->icon()->color().isValid()) {
-        writer.writeAttribute( QString::fromUtf8("color"), item->icon()->color().name() );
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Icon));
+
+    if (!item->icon()->pixmap().isEmpty())
+    {
+        writer.writeAttribute(QString::fromUtf8("pixmap"), item->icon()->pixmap());
     }
+
+    else if (item->icon()->color().isValid())
+    {
+        writer.writeAttribute(QString::fromUtf8("color"), item->icon()->color().name());
+    }
+
     writer.writeEndElement();
-    writer.writeElement( QString::fromUtf8("text"), item->text() );
+    writer.writeElement(QString::fromUtf8("text"), item->text());
 
     writer.writeEndElement();
     return true;

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "KmlFeatureTagWriter.h"
 
 namespace Marble
@@ -24,11 +26,11 @@ class KmlPlacemarkTagWriter : public KmlFeatureTagWriter
 {
 public:
 
-  KmlPlacemarkTagWriter();
+    KmlPlacemarkTagWriter();
 
 protected:
 
-    bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override;
 };
 
 } // namespace Marble

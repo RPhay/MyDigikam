@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "KmlColorStyleTagWriter.h"
 
 namespace Marble
@@ -28,8 +30,8 @@ public:
 
 protected:
 
-    bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
-    bool isEmpty( const GeoNode *node ) const override;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override;
+    bool isEmpty(const GeoNode* node) const override;
 };
 
 } // namespace Marble

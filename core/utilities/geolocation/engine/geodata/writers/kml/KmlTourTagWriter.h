@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "KmlFeatureTagWriter.h"
 
 namespace Marble
@@ -26,7 +28,7 @@ public:
 
     KmlTourTagWriter();
 
-    bool writeMid( const GeoNode *node, GeoWriter& writer ) const override;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override;
 };
 
 } // namespace Marble

@@ -15,7 +15,11 @@
 
 #include "KmlSchemaDataTagWriter.h"
 
+// Qt includes
+
 #include <QString>
+
+// Local includes
 
 #include "KmlElementDictionary.h"
 #include "GeoWriter.h"
@@ -27,20 +31,22 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerSchemaData(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataSchemaDataType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlSchemaDataTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataSchemaDataType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlSchemaDataTagWriter);
 
-bool KmlSchemaDataTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlSchemaDataTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataSchemaData *schemaData = static_cast<const GeoDataSchemaData*>( node );
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_SchemaData) );
+    const GeoDataSchemaData* schemaData = static_cast<const GeoDataSchemaData*>(node);
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_SchemaData));
     QString schemaUrl = schemaData->schemaUrl();
-    writer.writeAttribute( QLatin1String("schemaUrl"), schemaUrl );
+    writer.writeAttribute(QLatin1String("schemaUrl"), schemaUrl);
 
-    for( const GeoDataSimpleData& data: schemaData->simpleDataList() ) {
-        writeElement( &data, writer );
+    for (const GeoDataSimpleData& data : schemaData->simpleDataList())
+    {
+        writeElement(&data, writer);
     }
+
     writer.writeEndElement();
 
     return true;

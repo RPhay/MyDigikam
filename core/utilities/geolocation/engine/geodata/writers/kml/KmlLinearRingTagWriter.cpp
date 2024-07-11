@@ -15,6 +15,8 @@
 
 #include "KmlLinearRingTagWriter.h"
 
+// Local includes
+
 #include "GeoDataLinearRing.h"
 #include "GeoDataTypes.h"
 #include "GeoDataCoordinates.h"
@@ -26,37 +28,38 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerLookAt(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataLinearRingType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlLinearRingTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataLinearRingType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlLinearRingTagWriter);
 
-bool KmlLinearRingTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlLinearRingTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataLinearRing *ring = static_cast<const GeoDataLinearRing*>( node );
+    const GeoDataLinearRing* ring = static_cast<const GeoDataLinearRing*>(node);
 
-    if ( ring->size() > 1 )
+    if (ring->size() > 1)
     {
-        writer.writeStartElement( QString::fromUtf8(kml::kmlTag_LinearRing) );
-        KmlObjectTagWriter::writeIdentifiers( writer, ring );
-        writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_extrude), QString::number( ring->extrude() ), QString::fromUtf8("0") );
-        writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_tessellate), QString::number( ring->tessellate() ), QString::fromUtf8("0") );
-        writer.writeStartElement( QString::fromUtf8("coordinates") );
+        writer.writeStartElement(QString::fromUtf8(kml::kmlTag_LinearRing));
+        KmlObjectTagWriter::writeIdentifiers(writer, ring);
+        writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_extrude), QString::number(ring->extrude()), QString::fromUtf8("0"));
+        writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_tessellate), QString::number(ring->tessellate()), QString::fromUtf8("0"));
+        writer.writeStartElement(QString::fromUtf8("coordinates"));
 
         int size = ring->size() >= 3 && ring->first() != ring->last() ? ring->size() + 1 : ring->size();
 
-        for ( int i = 0; i < size; ++i )
+        for (int i = 0; i < size; ++i)
         {
-            GeoDataCoordinates coordinates = ring->at( i % ring->size() );
-            if ( i > 0 )
+            GeoDataCoordinates coordinates = ring->at(i % ring->size());
+
+            if (i > 0)
             {
-                writer.writeCharacters( QString::fromUtf8(" ") );
+                writer.writeCharacters(QString::fromUtf8(" "));
             }
 
-            qreal lon = coordinates.longitude( GeoDataCoordinates::Degree );
-            writer.writeCharacters( QString::number( lon, 'f', 10 ) );
-            writer.writeCharacters( QString::fromUtf8(",") );
-            qreal lat = coordinates.latitude( GeoDataCoordinates::Degree );
-            writer.writeCharacters( QString::number( lat, 'f', 10 ) );
+            qreal lon = coordinates.longitude(GeoDataCoordinates::Degree);
+            writer.writeCharacters(QString::number(lon, 'f', 10));
+            writer.writeCharacters(QString::fromUtf8(","));
+            qreal lat = coordinates.latitude(GeoDataCoordinates::Degree);
+            writer.writeCharacters(QString::number(lat, 'f', 10));
         }
 
         writer.writeEndElement();

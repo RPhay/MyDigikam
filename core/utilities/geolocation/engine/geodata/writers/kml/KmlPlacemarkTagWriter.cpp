@@ -15,6 +15,8 @@
 
 #include "KmlPlacemarkTagWriter.h"
 
+// Local includes
+
 #include "KmlElementDictionary.h"
 #include "GeoDataPlacemark.h"
 #include "GeoDataExtendedData.h"
@@ -31,35 +33,39 @@ namespace Marble
 //don't use the tag dictionary for tag names, because with the writer we are using
 // the object type strings instead
 //FIXME: USE object strings provided by idis
-static GeoTagWriterRegistrar s_writerPlacemark( GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataPlacemarkType),
-                                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)), new KmlPlacemarkTagWriter() );
+static GeoTagWriterRegistrar s_writerPlacemark(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataPlacemarkType),
+                                                                           QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)), new KmlPlacemarkTagWriter());
 
-bool KmlPlacemarkTagWriter::writeMid( const GeoNode *node, GeoWriter& writer ) const
+bool KmlPlacemarkTagWriter::writeMid(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataPlacemark *placemark = static_cast<const GeoDataPlacemark*>(node);
+    const GeoDataPlacemark* placemark = static_cast<const GeoDataPlacemark*>(node);
 
-    writer.writeOptionalElement( QString::fromUtf8(kml::kmlTag_styleUrl), placemark->styleUrl() );
-    if ( placemark->styleUrl().isEmpty() && placemark->customStyle() ) {
-        writeElement( placemark->customStyle().data(), writer );
+    writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_styleUrl), placemark->styleUrl());
+
+    if (placemark->styleUrl().isEmpty() && placemark->customStyle())
+    {
+        writeElement(placemark->customStyle().data(), writer);
     }
 
-    if( placemark->geometry() ) {
-        writeElement( placemark->geometry(), writer );
+    if (placemark->geometry())
+    {
+        writeElement(placemark->geometry(), writer);
     }
 
-    if( placemark->isBalloonVisible() ){
+    if (placemark->isBalloonVisible())
+    {
         QString string;
-        string.setNum( 1 );
-        writer.writeElement( QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_balloonVisibility), string );
+        string.setNum(1);
+        writer.writeElement(QString::fromUtf8(kml::kmlTag_nameSpaceGx22), QString::fromUtf8(kml::kmlTag_balloonVisibility), string);
     }
 
     return true;
 }
 
 KmlPlacemarkTagWriter::KmlPlacemarkTagWriter() :
-  KmlFeatureTagWriter( QString::fromUtf8(kml::kmlTag_Placemark) )
+    KmlFeatureTagWriter(QString::fromUtf8(kml::kmlTag_Placemark))
 {
-  // nothing to do
+    // nothing to do
 }
 
 } // namespace Marble

@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagWriter.h"
 #include "GeoDataSimpleField.h"
 
@@ -27,11 +29,11 @@ class KmlSimpleFieldTagWriter : public GeoTagWriter
 {
 public:
 
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
+    bool write(const GeoNode* node, GeoWriter& writer) const override;
 
 private:
 
-    static QString resolveType( GeoDataSimpleField::SimpleFieldType type );
+    static QString resolveType(GeoDataSimpleField::SimpleFieldType type);
 };
 
 } // namespace Marble

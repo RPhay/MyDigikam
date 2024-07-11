@@ -15,6 +15,8 @@
 
 #include "KmlRegionTagWriter.h"
 
+// Local includes
+
 #include "GeoDataRegion.h"
 #include "GeoDataLatLonAltBox.h"
 #include "GeoDataTypes.h"
@@ -29,17 +31,17 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerRegion(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataRegionType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataRegionType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
     new KmlRegionTagWriter);
 
-bool KmlRegionTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlRegionTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataRegion *region = static_cast<const GeoDataRegion*>( node );
-    writer.writeStartElement( QString::fromUtf8(kml::kmlTag_Region) );
-    KmlObjectTagWriter::writeIdentifiers( writer, region );
-    writeElement( &region->latLonAltBox(), writer );
-    writeElement( &region->lod(), writer );
+    const GeoDataRegion* region = static_cast<const GeoDataRegion*>(node);
+    writer.writeStartElement(QString::fromUtf8(kml::kmlTag_Region));
+    KmlObjectTagWriter::writeIdentifiers(writer, region);
+    writeElement(&region->latLonAltBox(), writer);
+    writeElement(&region->lod(), writer);
     writer.writeEndElement();
     return true;
 }

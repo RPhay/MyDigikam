@@ -15,6 +15,8 @@
 
 #include "KmlMultiTrackTagWriter.h"
 
+// Local includes
+
 #include "GeoDataMultiTrack.h"
 #include "GeoDataTrack.h"
 #include "GeoDataTypes.h"
@@ -26,20 +28,20 @@ namespace Marble
 {
 
 static GeoTagWriterRegistrar s_writerMultiTrack(
-    GeoTagWriter::QualifiedName( QString::fromUtf8(GeoDataTypes::GeoDataMultiTrackType),
-                                 QString::fromUtf8(kml::kmlTag_nameSpaceOgc22) ),
-    new KmlMultiTrackTagWriter );
+    GeoTagWriter::QualifiedName(QString::fromUtf8(GeoDataTypes::GeoDataMultiTrackType),
+                                QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
+    new KmlMultiTrackTagWriter);
 
-bool KmlMultiTrackTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool KmlMultiTrackTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoDataMultiTrack *geometry = static_cast<const GeoDataMultiTrack*>( node );
+    const GeoDataMultiTrack* geometry = static_cast<const GeoDataMultiTrack*>(node);
 
-    writer.writeStartElement( QString::fromUtf8("gx:MultiTrack") );
-    KmlObjectTagWriter::writeIdentifiers( writer, geometry );
+    writer.writeStartElement(QString::fromUtf8("gx:MultiTrack"));
+    KmlObjectTagWriter::writeIdentifiers(writer, geometry);
 
-    for ( int i = 0; i < geometry->size(); ++i )
+    for (int i = 0; i < geometry->size(); ++i)
     {
-        writeElement( &geometry->at( i ), writer );
+        writeElement(&geometry->at(i), writer);
     }
 
     writer.writeEndElement();

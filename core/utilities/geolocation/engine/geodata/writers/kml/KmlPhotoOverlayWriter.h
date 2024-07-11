@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "KmlOverlayTagWriter.h"
 
 namespace Marble
@@ -26,7 +28,7 @@ public:
 
     KmlPhotoOverlayWriter();
 
-    bool writeMid( const GeoNode *node, GeoWriter &writer ) const override;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override;
 };
 
 } // namespace Marble

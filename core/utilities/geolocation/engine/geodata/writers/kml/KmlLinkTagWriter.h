@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagWriter.h"
 #include "GeoDataLink.h"
 
@@ -25,13 +27,13 @@ class KmlLinkTagWriter : public GeoTagWriter
 {
 public:
 
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
+    bool write(const GeoNode* node, GeoWriter& writer) const override;
 
-    static QString refreshModeToString( GeoDataLink::RefreshMode refreshMode) ;
+    static QString refreshModeToString(GeoDataLink::RefreshMode refreshMode) ;
 
 private:
 
-    static QString viewRefreshModeToString( GeoDataLink::ViewRefreshMode);
+    static QString viewRefreshModeToString(GeoDataLink::ViewRefreshMode);
 };
 
 } // namespace Marble

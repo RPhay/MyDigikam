@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "KmlFeatureTagWriter.h"
 
 class QString;
@@ -27,11 +29,11 @@ class KmlOverlayTagWriter: public KmlFeatureTagWriter
 {
 public:
 
-    explicit KmlOverlayTagWriter( const QString &elementName );
+    explicit KmlOverlayTagWriter(const QString& elementName);
 
 protected:
 
-    bool writeMid( const GeoNode *node, GeoWriter& writer ) const override = 0;
+    bool writeMid(const GeoNode* node, GeoWriter& writer) const override = 0;
 };
 
 } // namespace Marble

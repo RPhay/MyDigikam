@@ -15,6 +15,8 @@
 
 #pragma once
 
+// Local includes
+
 #include "GeoTagWriter.h"
 #include "GeoDataTourControl.h"
 
@@ -28,15 +30,15 @@ class KmlPlaylistTagWriter : public GeoTagWriter
 {
 public:
 
-    bool write( const GeoNode *node, GeoWriter& writer ) const override;
+    bool write(const GeoNode* node, GeoWriter& writer) const override;
 
 private:
 
-    static void writeTourPrimitive(const GeoDataTourPrimitive *primitive, GeoWriter &writer);
-    static void writeTourControl(const GeoDataTourControl &tourControl, GeoWriter& writer );
-    static void writeWait(const GeoDataWait &wait, GeoWriter &writer);
-    static void writeSoundCue(const GeoDataSoundCue &cue, GeoWriter &writer);
-    static QString playModeToString( GeoDataTourControl::PlayMode playMode );
+    static void writeTourPrimitive(const GeoDataTourPrimitive* primitive, GeoWriter& writer);
+    static void writeTourControl(const GeoDataTourControl& tourControl, GeoWriter& writer);
+    static void writeWait(const GeoDataWait& wait, GeoWriter& writer);
+    static void writeSoundCue(const GeoDataSoundCue& cue, GeoWriter& writer);
+    static QString playModeToString(GeoDataTourControl::PlayMode playMode);
 };
 
 } // namespace Marble

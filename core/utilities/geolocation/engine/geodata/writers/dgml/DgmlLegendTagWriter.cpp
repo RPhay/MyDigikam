@@ -15,6 +15,8 @@
 
 #include "DgmlLegendTagWriter.h"
 
+// Local includes
+
 #include "GeoSceneTypes.h"
 #include "GeoWriter.h"
 #include "GeoSceneLegend.h"
@@ -24,19 +26,21 @@
 namespace Marble
 {
 
-static GeoTagWriterRegistrar s_writerLegend( GeoTagWriter::QualifiedName( QString::fromUtf8(GeoSceneTypes::GeoSceneLegendType), QString::fromUtf8(dgml::dgmlTag_nameSpace20) ),
-                                               new DgmlLegendTagWriter() );
+static GeoTagWriterRegistrar s_writerLegend(GeoTagWriter::QualifiedName(QString::fromUtf8(GeoSceneTypes::GeoSceneLegendType), QString::fromUtf8(dgml::dgmlTag_nameSpace20)),
+                                            new DgmlLegendTagWriter());
 
-bool DgmlLegendTagWriter::write( const GeoNode *node, GeoWriter& writer ) const
+bool DgmlLegendTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
-    const GeoSceneLegend *legend = static_cast<const GeoSceneLegend*>( node );
+    const GeoSceneLegend* legend = static_cast<const GeoSceneLegend*>(node);
 
-    writer.writeStartElement( QString::fromUtf8(dgml::dgmlTag_Legend) );
-    for( int i = 0; i < legend->sections().count(); ++i )
+    writer.writeStartElement(QString::fromUtf8(dgml::dgmlTag_Legend));
+
+    for (int i = 0; i < legend->sections().count(); ++i)
     {
-        const GeoSceneSection *section = legend->sections().at( i );
-        writeElement( section, writer );
+        const GeoSceneSection* section = legend->sections().at(i);
+        writeElement(section, writer);
     }
+
     writer.writeEndElement();
     return true;
 }
