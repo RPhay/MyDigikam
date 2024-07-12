@@ -23,7 +23,11 @@ wget https://exiftool.org/exiftool-$1_64.zip
 echo "Rename archives..."
 
 mv Image-ExifTool-$1.tar.gz Image-ExifTool.tar.gz
-mv exiftool-$1_64.zip exiftool.zip
+unzip -o exiftool-$1_64.zip -d ./
+cd ./exiftool-$1_64/
+zip -r ../exiftool.zip ./
+cd ..
+chmod -R 777 ./exiftool-$1_64/
 
 echo "Cleanup files from download area..."
 
