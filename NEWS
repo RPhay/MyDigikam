@@ -17,6 +17,7 @@ RawEngine: Update internal libraw to last 20240711 upstream. New supported camer
            Multiple DJI and Skydio drones.
            Multiple smartphones with DNG format recorded.
 Video:     Update internal QtAVPlayer to last 20240616 upstream (Qt5 only).
+Video:     Add support to advance in video frame by frame (Qt6 only).
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
            Add optional libjxl dependency to compile DNG support.
 Bundles:   Update Exiftool to last 12.88.
