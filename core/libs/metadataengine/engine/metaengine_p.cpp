@@ -27,7 +27,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "metaengine_data_p.h"
 #include "drawfiles.h"
 #include "exiftoolparser.h"
@@ -162,24 +161,8 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 
     try
     {
-        Exiv2::Image::AutoPtr image;
-
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            (const wchar_t*)xmpFile.utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            QFile::encodeName(xmpFile).constData());
-
-#else
-
-        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            xmpFile.toUtf8().constData());
-
-#endif
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
+                                                                  xmpFile.toUtf8().constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -227,21 +210,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     {
         try
         {
-            Exiv2::Image::AutoPtr image;
-
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-            image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-            image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
-
-#else
-
-            image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
-
-#endif
+            Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
