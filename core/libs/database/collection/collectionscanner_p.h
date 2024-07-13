@@ -42,9 +42,8 @@
 
 // Local includes
 
-#include "drawfiles.h"
 #include "digikam_debug.h"
-#include "digikam_globals.h"
+#include "drawfiles.h"
 #include "coredb.h"
 #include "collectionmanager.h"
 #include "collectionlocation.h"

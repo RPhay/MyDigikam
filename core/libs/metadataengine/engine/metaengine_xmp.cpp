@@ -1075,9 +1075,7 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 case Exiv2::date:
                 case Exiv2::time:
                 {
-                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
-
-                    return QVariant(asDateTimeUTC(dateTime));
+                    return QVariant(QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate));
                 }
 
                 case Exiv2::asciiString:

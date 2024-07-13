@@ -21,7 +21,6 @@
 
 // Local includes
 
-#include "digikam_globals.h"
 #include "ddateedit.h"
 
 namespace Digikam
@@ -68,9 +67,7 @@ DDateTimeEdit::~DDateTimeEdit()
 
 QDateTime DDateTimeEdit::dateTime() const
 {
-    QDateTime dateTime(d->datePopUp->date(), d->timePopUp->time());
-
-    return asDateTimeUTC(dateTime);
+    return QDateTime(d->datePopUp->date(), d->timePopUp->time());
 }
 
 void DDateTimeEdit::setDateTime(const QDateTime& dateTime)

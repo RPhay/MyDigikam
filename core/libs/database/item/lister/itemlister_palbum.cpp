@@ -118,9 +118,9 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
         ++it;
         record.format            = (*it).toString();
         ++it;
-        record.creationDate      = asDateTimeUTC((*it).toDateTime());
+        record.creationDate      = asDateTimeLocal((*it).toDateTime());
         ++it;
-        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
+        record.modificationDate  = asDateTimeLocal((*it).toDateTime());
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;

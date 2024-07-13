@@ -25,7 +25,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "dmetadata.h"
 #include "dinfointerface.h"
 #include "dfileoperations.h"
@@ -80,7 +79,7 @@ void TimeAdjustTask::run()
 
     int status             = TimeAdjustList::NOPROCESS_ERROR;
     QDateTime org          = d->thread->readTimestamp(d->url);
-    QDateTime adj          = asDateTimeLocal(d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url)));
+    QDateTime adj          = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
     bool writeToSidecar    = (MetaEngineSettings::instance()->settings()
                               .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
     bool writeWithExifTool = (MetaEngineSettings::instance()->settings().writeWithExifTool);

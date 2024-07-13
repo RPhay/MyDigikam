@@ -14,10 +14,6 @@
 
 #include "captionvalues.h"
 
-// Local includes
-
-#include "digikam_globals.h"
-
 namespace Digikam
 {
 
@@ -113,7 +109,7 @@ MetaEngine::AltLangMap CaptionsMap::datesList() const
 
     for (CaptionsMap::const_iterator it = constBegin() ; it != constEnd() ; ++it)
     {
-        map.insert(it.key(), asDateTimeLocal((*it).date).toString(Qt::ISODate));
+        map.insert(it.key(), (*it).date.toString(Qt::ISODate));
     }
 
     return map;
@@ -127,7 +123,7 @@ void CaptionsMap::setDatesList(const MetaEngine::AltLangMap& map)
 
         if (val != end())
         {
-            (*val).date = asDateTimeLocal(QDateTime::fromString(it.value(), Qt::ISODate));
+            (*val).date = QDateTime::fromString(it.value(), Qt::ISODate);
         }
     }
 }

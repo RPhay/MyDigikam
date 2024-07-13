@@ -604,7 +604,7 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
         case QVariant::Date:
         case QVariant::DateTime:
         {
-            QDateTime dateTime = asDateTimeUTC(val.toDateTime());
+            QDateTime dateTime = val.toDateTime();
 
             if (!dateTime.isValid())
             {
@@ -719,7 +719,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
             case QVariant::Date:
             case QVariant::DateTime:
             {
-                QDateTime dateTime = asDateTimeUTC(val.toDateTime());
+                QDateTime dateTime = val.toDateTime();
 
                 if (!dateTime.isValid())
                 {
@@ -971,9 +971,7 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                 case Exiv2::date:
                 case Exiv2::time:
                 {
-                    QDateTime dateTime = QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate);
-
-                    return QVariant(asDateTimeUTC(dateTime));
+                    return QVariant(QDateTime::fromString(QString::fromStdString(it->toString()), Qt::ISODate));
                 }
 
                 case Exiv2::asciiString:

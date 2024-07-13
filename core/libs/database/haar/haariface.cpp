@@ -142,7 +142,7 @@ bool HaarIface::indexImage(qlonglong imageid)
         SimilarityDbAccess().backend()->execSql(QString::fromUtf8("REPLACE INTO ImageHaarMatrix "
                                                                   " (imageid, modificationDate, uniqueHash, matrix) "
                                                                   " VALUES(?, ?, ?, ?);"),
-                                                imageid, asDateTimeLocal(info.modDateTime()), info.uniqueHash(), array);
+                                                imageid, info.modDateTime(), info.uniqueHash(), array);
     }
 
     return true;

@@ -205,7 +205,7 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
 
             if (values.size() == 2)
             {
-                QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
+                QDateTime modDateTime = asDateTimeLocal(values.at(0).toDateTime());
 
                 if (
                     (modDateTime             != imageInfo.modDateTime()) ||
@@ -248,7 +248,7 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
 
                 if (values.size() == 2)
                 {
-                    QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
+                    QDateTime modDateTime = asDateTimeLocal(values.at(0).toDateTime());
 
                     if (
                         (modDateTime             != info.modDateTime()) ||
@@ -292,7 +292,7 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
 
                 if (values.size() == 2)
                 {
-                    QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
+                    QDateTime modDateTime = asDateTimeLocal(values.at(0).toDateTime());
 
                     if (
                         (modDateTime             != info.modDateTime()) ||

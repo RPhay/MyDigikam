@@ -27,7 +27,6 @@
 
 // Local includes
 
-#include "digikam_globals.h"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "dlayoutbox.h"
@@ -305,7 +304,7 @@ bool TimeAdjust::toolOperations()
         orgDateTime = imageInfo().modDateTime();
     }
 
-    QDateTime dt = asDateTimeLocal(prm.calculateAdjustedDate(orgDateTime));
+    QDateTime dt = prm.calculateAdjustedDate(orgDateTime);
 
     if (!dt.isValid())
     {
