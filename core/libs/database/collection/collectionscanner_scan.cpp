@@ -491,7 +491,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
             }
             else
             {
-                modified = QFileInfo(folder).lastModified();
+                modified = asDateTimeUTC(QFileInfo(folder).lastModified());
             }
 
             if (s_modificationDateEquals(modified, it.value()))
@@ -599,7 +599,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             }
             else
             {
-                QDateTime dateTime = fileInfo.lastModified();
+                QDateTime dateTime = asDateTimeUTC(fileInfo.lastModified());
                 d->albumDateCache.insert(fileInfo.filePath(), dateTime);
             }
         }
@@ -714,7 +714,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     }
 
     int albumID                          = checkAlbum(location, album);
-    QDateTime albumDateTime              = QFileInfo(dir.path()).lastModified();
+    QDateTime albumDateTime              = asDateTimeUTC(QFileInfo(dir.path()).lastModified());
     QDateTime albumModified              = CoreDbAccess().db()->getAlbumModificationDate(albumID);
 
     if (checkDate && s_modificationDateEquals(albumDateTime, albumModified))
@@ -968,7 +968,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
                                        bool checkSidecar, const QFileInfo* const sidecarInfo)
 {
     bool hasAnyHint            = d->hints && d->hints->hasAnyNormalHint(scanInfo.id);
-    QDateTime modificationDate = fi.lastModified();
+    QDateTime modificationDate = asDateTimeUTC(fi.lastModified());
 
     // if the date is null, this signals a full rescan
 
@@ -1039,7 +1039,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     {
         if      (sidecarInfo)
         {
-            QDateTime sidecarDate = sidecarInfo->lastModified();
+            QDateTime sidecarDate = asDateTimeUTC(sidecarInfo->lastModified());
 
             if (sidecarDate > modificationDate)
             {
@@ -1049,7 +1049,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
         else if (DMetadata::hasSidecar(fi.filePath()))
         {
             QString filePath      = DMetadata::sidecarPath(fi.filePath());
-            QDateTime sidecarDate = QFileInfo(filePath).lastModified();
+            QDateTime sidecarDate = asDateTimeUTC(QFileInfo(filePath).lastModified());
 
             if (sidecarDate > modificationDate)
             {

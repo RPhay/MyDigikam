@@ -18,6 +18,10 @@
 
 #include <QRegularExpression>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -148,12 +152,12 @@ QDateTime TimeAdjustContainer::getDateTimeFromString(const QString& dateStr) con
             dateString.remove(QLatin1Char('h'));
             dateString.remove(QLatin1Char('H'));
 
-            dateTime = QDateTime::fromString(dateString, format);
+            dateTime = asDateTimeUTC(QDateTime::fromString(dateString, format));
 
             if (!dateTime.isValid() && !secondFormat.isEmpty())
             {
                 format   = secondFormat;
-                dateTime = QDateTime::fromString(dateString, format);
+                dateTime = asDateTimeUTC(QDateTime::fromString(dateString, format));
             }
 
             if (dateTime.isValid() && (format.count(QLatin1Char('y')) == 2))

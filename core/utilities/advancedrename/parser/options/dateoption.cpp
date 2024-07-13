@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "ui_dateoptiondialogwidget.h"
 
 namespace Digikam
@@ -293,7 +294,7 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
 
     if (!(settings.creationTime.isNull()) && (settings.creationTime.isValid()))
     {
-        dateTime = settings.creationTime;
+        dateTime = asDateTimeLocal(settings.creationTime);
     }
     else
     {
@@ -303,7 +304,7 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
 
         if (!info.isNull())
         {
-            dateTime = info.dateTime();
+            dateTime = asDateTimeLocal(info.dateTime());
         }
 
         if (dateTime.isNull() || !dateTime.isValid())
@@ -311,7 +312,7 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
             // still no date info, use Qt file information
 
             QFileInfo fileInfo(settings.fileUrl.toLocalFile());
-            dateTime = fileInfo.birthTime();
+            dateTime = asDateTimeLocal(fileInfo.birthTime());
         }
     }
 

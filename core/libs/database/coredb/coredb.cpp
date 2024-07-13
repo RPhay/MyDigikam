@@ -446,7 +446,7 @@ void CoreDB::setAlbumDate(int albumID, const QDate& date)
 void CoreDB::setAlbumModificationDate(int albumID, const QDateTime& modificationDate)
 {
     d->db->execSql(QString::fromUtf8("UPDATE Albums SET modificationDate=? WHERE id=?;"),
-                   modificationDate, albumID);
+                   asDateTimeLocal(modificationDate), albumID);
 }
 
 void CoreDB::setAlbumIcon(int albumID, qlonglong iconID)
@@ -1492,7 +1492,7 @@ QVariantList CoreDB::getImagesFields(qlonglong imageID, DatabaseFields::Images f
         if ((fields & DatabaseFields::ModificationDate))
         {
             int index          = fieldNames.indexOf(QLatin1String("modificationDate"));
-            QDateTime dateTime = asDateTimeLocal(values.at(index).toDateTime());
+            QDateTime dateTime = asDateTimeUTC(values.at(index).toDateTime());
             values[index]      = QVariant(dateTime);
         }
     }
@@ -1523,14 +1523,14 @@ QVariantList CoreDB::getItemInformation(qlonglong imageID, DatabaseFields::ItemI
         if ((fields & DatabaseFields::CreationDate))
         {
             int index          = fieldNames.indexOf(QLatin1String("creationDate"));
-            QDateTime dateTime = asDateTimeLocal(values.at(index).toDateTime());
+            QDateTime dateTime = asDateTimeUTC(values.at(index).toDateTime());
             values[index]      = QVariant(dateTime);
         }
 
         if ((fields & DatabaseFields::DigitizationDate))
         {
             int index          = fieldNames.indexOf(QLatin1String("digitizationDate"));
-            QDateTime dateTime = asDateTimeLocal(values.at(index).toDateTime());
+            QDateTime dateTime = asDateTimeUTC(values.at(index).toDateTime());
             values[index]      = QVariant(dateTime);
         }
     }
@@ -1732,14 +1732,14 @@ void CoreDB::addItemInformation(qlonglong imageID, const QVariantList& infos,
     if ((fields & DatabaseFields::CreationDate))
     {
         int index          = fieldNames.indexOf(QLatin1String("creationDate"));
-        QDateTime dateTime = boundValues.at(index).toDateTime();
+        QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
 
     if ((fields & DatabaseFields::DigitizationDate))
     {
         int index          = fieldNames.indexOf(QLatin1String("digitizationDate"));
-        QDateTime dateTime = boundValues.at(index).toDateTime();
+        QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
 
@@ -1762,14 +1762,14 @@ void CoreDB::changeItemInformation(qlonglong imageId, const QVariantList& infos,
     if ((fields & DatabaseFields::CreationDate))
     {
         int index          = fieldNames.indexOf(QLatin1String("creationDate"));
-        QDateTime dateTime = boundValues.at(index).toDateTime();
+        QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
 
     if ((fields & DatabaseFields::DigitizationDate))
     {
         int index          = fieldNames.indexOf(QLatin1String("digitizationDate"));
-        QDateTime dateTime = boundValues.at(index).toDateTime();
+        QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
 
@@ -1959,7 +1959,7 @@ QList<CommentInfo> CoreDB::getItemComments(qlonglong imageID) const
         ++it;
         info.author   = (*it).toString();
         ++it;
-        info.date     = asDateTimeLocal((*it).toDateTime());
+        info.date     = asDateTimeUTC((*it).toDateTime());
         ++it;
         info.comment  = (*it).toString();
         ++it;
@@ -1974,7 +1974,7 @@ int CoreDB::setImageComment(qlonglong imageID, const QString& comment, DatabaseC
                             const QString& language, const QString& author, const QDateTime& date) const
 {
     QVariantList boundValues;
-    boundValues << imageID << (int)type << language << author << date << comment;
+    boundValues << imageID << (int)type << language << author << asDateTimeLocal(date) << comment;
 
     QVariant id;
     d->db->execSql(QString::fromUtf8("REPLACE INTO ImageComments "
@@ -2218,7 +2218,7 @@ QList<qlonglong> CoreDB::findByNameAndCreationDate(const QString& fileName, cons
     d->db->execSql(QString::fromUtf8("SELECT id FROM Images "
                                      "LEFT JOIN ImageInformation ON id=imageid "
                                      " WHERE name=? AND creationDate=? AND status<3;"),
-                   fileName, creationDate, &values);
+                   fileName, asDateTimeLocal(creationDate), &values);
 
     QList<qlonglong> ids;
 
@@ -2784,7 +2784,7 @@ QList<ItemScanInfo> CoreDB::getIdenticalFiles(const QString& uniqueHash, qlonglo
         ++it;
         info.category         = (DatabaseItem::Category)(*it).toInt();
         ++it;
-        info.modificationDate = asDateTimeLocal((*it).toDateTime());
+        info.modificationDate = asDateTimeUTC((*it).toDateTime());
         ++it;
         info.fileSize         = (*it).toLongLong();
         ++it;
@@ -3160,8 +3160,8 @@ int CoreDB::findInDownloadHistory(const QString& identifier, const QString& name
     QList<QVariant> values;
     QVariantList boundValues;
     boundValues << identifier << name << fileSize
-                << date.addSecs(-2)
-                << date.addSecs(2);
+                << asDateTimeLocal(date.addSecs(-2))
+                << asDateTimeLocal(date.addSecs(2));
 
     d->db->execSql(QString::fromUtf8("SELECT id FROM DownloadHistory "
                                      " WHERE identifier=? AND filename=? "
@@ -3183,7 +3183,7 @@ int CoreDB::addToDownloadHistory(const QString& identifier, const QString& name,
     d->db->execSql(QString::fromUtf8("REPLACE INTO DownloadHistory "
                                      "(identifier, filename, filesize, filedate) "
                                      " VALUES (?,?,?,?);"),
-                   identifier, name, fileSize, date, nullptr, &id);
+                   identifier, name, fileSize, asDateTimeLocal(date), nullptr, &id);
 
     return id.toInt();
 }
@@ -3389,7 +3389,7 @@ QDateTime CoreDB::getAlbumModificationDate(int albumID) const
         return QDateTime();
     }
 
-    QDateTime dateTime = asDateTimeLocal(values.first().toDateTime());
+    QDateTime dateTime = asDateTimeUTC(values.first().toDateTime());
 
     return dateTime;
 }
@@ -3407,7 +3407,7 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
     {
         QString relativePath = (*it).toString();
         ++it;
-        QDateTime dateTime   = asDateTimeLocal((*it).toDateTime());
+        QDateTime dateTime   = asDateTimeUTC((*it).toDateTime());
         ++it;
 
         pathDateMap.insert(relativePath, dateTime);
@@ -3769,7 +3769,7 @@ qlonglong CoreDB::addItem(int albumID, const QString& name,
 {
     QVariantList boundValues;
     boundValues << albumID << name << (int)status << (int)category
-                << modificationDate << fileSize << uniqueHash;
+                << asDateTimeLocal(modificationDate) << fileSize << uniqueHash;
 
     QVariant id;
     d->db->execSql(QString::fromUtf8("REPLACE INTO Images "
@@ -3793,7 +3793,7 @@ void CoreDB::updateItem(qlonglong imageID, DatabaseItem::Category category,
                         qlonglong fileSize, const QString& uniqueHash)
 {
     QVariantList boundValues;
-    boundValues << (int)category << modificationDate << fileSize << uniqueHash << imageID;
+    boundValues << (int)category << asDateTimeLocal(modificationDate) << fileSize << uniqueHash << imageID;
 
     d->db->execSql(QString::fromUtf8("UPDATE Images SET category=?, modificationDate=?, fileSize=?, uniqueHash=? "
                                      "WHERE id=?;"),
@@ -3844,7 +3844,7 @@ void CoreDB::setItemManualOrder(qlonglong imageID, qlonglong value)
 void CoreDB::setItemModificationDate(qlonglong imageID, const QDateTime& modificationDate)
 {
     QVariantList boundValues;
-    boundValues << modificationDate << imageID;
+    boundValues << asDateTimeLocal(modificationDate) << imageID;
     d->db->execSql(QString::fromUtf8("UPDATE Images SET modificationDate=? WHERE id=?;"),
                    boundValues);
 
@@ -4108,7 +4108,7 @@ QList<ItemScanInfo> CoreDB::getItemScanInfos(int albumID) const
             info.itemName         = query.value(2).toString();
             info.status           = (DatabaseItem::Status)query.value(3).toInt();
             info.category         = (DatabaseItem::Category)query.value(4).toInt();
-            info.modificationDate = asDateTimeLocal(query.value(5).toDateTime());
+            info.modificationDate = asDateTimeUTC(query.value(5).toDateTime());
             info.fileSize         = query.value(6).toLongLong();
             info.uniqueHash       = query.value(7).toString();
 
@@ -4143,7 +4143,7 @@ ItemScanInfo CoreDB::getItemScanInfo(qlonglong imageID) const
         ++it;
         info.category         = (DatabaseItem::Category)(*it).toInt();
         ++it;
-        info.modificationDate = asDateTimeLocal((*it).toDateTime());
+        info.modificationDate = asDateTimeUTC((*it).toDateTime());
         ++it;
         info.fileSize         = (*it).toLongLong();
         ++it;
@@ -4280,7 +4280,7 @@ QDate CoreDB::getAlbumLowestDate(int albumID) const
         return QDate();
     }
 
-    QDateTime albumDateTime = asDateTimeLocal(values.first().toDateTime());
+    QDateTime albumDateTime = asDateTimeUTC(values.first().toDateTime());
 
     return albumDateTime.date();
 }
@@ -4298,7 +4298,7 @@ QDate CoreDB::getAlbumHighestDate(int albumID) const
         return QDate();
     }
 
-    QDateTime albumDateTime = asDateTimeLocal(values.first().toDateTime());
+    QDateTime albumDateTime = asDateTimeUTC(values.first().toDateTime());
 
     return albumDateTime.date();
 }
@@ -4315,7 +4315,7 @@ QDate CoreDB::getAlbumAverageDate(int albumID) const
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
     {
-        QDateTime itemDateTime = asDateTimeLocal((*it).toDateTime());
+        QDateTime itemDateTime = asDateTimeUTC((*it).toDateTime());
 
         if (itemDateTime.isValid())
         {

@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "coredburl.h"
 #include "coredbaccess.h"
 #include "coredb.h"

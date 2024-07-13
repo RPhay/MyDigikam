@@ -109,6 +109,7 @@
 
 #include "metaengine_mergehelper.h"
 #include "metaenginesettings.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {

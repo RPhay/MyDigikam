@@ -323,8 +323,8 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 {
     // creation date is not what it seems on Unix
 
-    QDateTime ctime = fileInfo.birthTime();
-    QDateTime mtime = fileInfo.lastModified();
+    QDateTime ctime = asDateTimeUTC(fileInfo.birthTime());
+    QDateTime mtime = asDateTimeUTC(fileInfo.lastModified());
 
     if (ctime.isValid())
     {
@@ -336,7 +336,7 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
         return mtime;
     }
 
-    return QDateTime::currentDateTime();
+    return asDateTimeUTC(QDateTime::currentDateTime());
 }
 
 } // namespace Digikam

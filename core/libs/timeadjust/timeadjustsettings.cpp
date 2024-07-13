@@ -578,7 +578,7 @@ void TimeAdjustSettings::slotSrcTimestampChanged()
 
 void TimeAdjustSettings::slotResetDateToCurrent()
 {
-    QDateTime currentDateTime(QDateTime::currentDateTime());
+    QDateTime currentDateTime(asDateTimeUTC(QDateTime::currentDateTime()));
     d->useCustDateInput->setDateTime(currentDateTime);
     d->useCustTimeInput->setDateTime(currentDateTime);
 

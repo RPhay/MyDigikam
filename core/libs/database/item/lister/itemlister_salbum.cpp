@@ -115,9 +115,9 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
         ++it;
         record.format            = (*it).toString();
         ++it;
-        record.creationDate      = asDateTimeLocal((*it).toDateTime());
+        record.creationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.modificationDate  = asDateTimeLocal((*it).toDateTime());
+        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;
@@ -372,9 +372,9 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
         ++it;
         record.format            = (*it).toString();
         ++it;
-        record.creationDate      = asDateTimeLocal((*it).toDateTime());
+        record.creationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.modificationDate  = asDateTimeLocal((*it).toDateTime());
+        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;
@@ -437,7 +437,7 @@ void ItemLister::listAreaRange(ItemListerReceiver* const receiver,
 
         record.rating            = (*it).toInt();
         ++it;
-        record.creationDate      = asDateTimeLocal((*it).toDateTime());
+        record.creationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
         lat                      = (*it).toDouble();
         ++it;
