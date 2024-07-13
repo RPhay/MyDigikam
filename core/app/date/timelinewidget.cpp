@@ -155,8 +155,15 @@ int TimeLineWidget::totalIndex() const
         return 0;
     }
 
-    int i = (d->maxDateTime.toSecsSinceEpoch() -
-             d->minDateTime.toSecsSinceEpoch()) / secondsOfTimeUnit();
+    int        i = 0;
+    QDateTime dt = d->minDateTime;
+
+    do
+    {
+        dt = nextDateTime(dt);
+        ++i;
+    }
+    while (dt < d->maxDateTime);
 
     return i;
 }
@@ -168,8 +175,15 @@ int TimeLineWidget::indexForDateTime(const QDateTime& date) const
         return 0;
     }
 
-    int i = fabs((d->minDateTime.toSecsSinceEpoch() -
-                 date.toSecsSinceEpoch()) / secondsOfTimeUnit());
+    int        i = 0;
+    QDateTime dt = d->minDateTime;
+
+    do
+    {
+        dt = nextDateTime(dt);
+        ++i;
+    }
+    while (dt < date);
 
     return i;
 }
@@ -191,9 +205,15 @@ void TimeLineWidget::setCurrentIndex(int index)
         return;
     }
 
-    qint64 seconds = d->minDateTime.toSecsSinceEpoch() +
-                     ((qint64)index * secondsOfTimeUnit());
-    QDateTime dt   = QDateTime::fromSecsSinceEpoch(seconds);
+    int        i = 0;
+    QDateTime dt = d->minDateTime;
+
+    do
+    {
+        dt = nextDateTime(dt);
+        ++i;
+    }
+    while (i <= index);
 
     setRefDateTime(dt);
 }
@@ -1303,40 +1323,6 @@ QDateTime TimeLineWidget::nextDateTime(const QDateTime& dt) const
     }
 
     return next;
-}
-
-qint64 TimeLineWidget::secondsOfTimeUnit() const
-{
-    qint64 seconds;
-
-    switch (d->timeUnit)
-    {
-        case Day:
-        {
-            seconds = 86400;
-            break;
-        }
-
-        case Week:
-        {
-            seconds = 86400 * 7;
-            break;
-        }
-
-        case Month:
-        {
-            seconds = 86400 * 30;
-            break;
-        }
-
-        case Year:
-        {
-            seconds = 86400 * 365;
-            break;
-        }
-    }
-
-    return seconds;
 }
 
 int TimeLineWidget::maxCount() const
