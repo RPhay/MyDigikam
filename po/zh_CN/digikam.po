@@ -40120,13 +40120,13 @@ msgstr "打开/关闭循环播放"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "上一帧"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:286
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr ""
+msgstr "下一帧"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67

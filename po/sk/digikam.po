@@ -19,13 +19,13 @@
 # Richard Frič <Richard.Fric@kdemail.net>, 2006--2011.
 # Roman Paholík <wizzardsk@gmail.com>, 2012--2016.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020.
-# Jozef Riha <jose1711@gmail.com>, 2006, 2021, 2022, 2023.
+# Jozef Riha <jose1711@gmail.com>, 2006, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-13 01:43+0000\n"
-"PO-Revision-Date: 2024-03-29 21:26+0100\n"
+"PO-Revision-Date: 2024-07-13 09:50+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
@@ -28603,8 +28603,7 @@ msgstr ""
 "aktuálnu verziu schémy databázy. Skúste začať znova s prázdnou databázou."
 
 #: core/libs/database/utils/ifaces/dio.cpp:346
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Konflikt súborov"
@@ -28628,12 +28627,11 @@ msgstr ""
 "\n"
 "Dostupné možnosti sú:\n"
 "Automaticky premenovať: kolidujúce súbory budú premenované.\n"
-"Automaticky prepísať: kolidujúce súbory budú prepísané.\n"
+"Automaticky prepisovať: kolidujúce súbory budú prepísané.\n"
 "Automaticky preskakovať: kolidujúce súbory budú preskočené."
 
 #: core/libs/database/utils/ifaces/dio.cpp:356
-#, fuzzy, kde-format
-#| msgid "Rename automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automaticky premenovať"
@@ -28646,8 +28644,7 @@ msgid "Overwrite Automatically"
 msgstr "Automaticky prepísať"
 
 #: core/libs/database/utils/ifaces/dio.cpp:360
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automaticky preskakovať"
@@ -28789,9 +28786,9 @@ msgid "Database copied successfully."
 msgstr "Databáza bola úspešne skopírovaná."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
-#, fuzzy, kde-format
+#, kde-format
 msgid "Database conversion canceled."
-msgstr "požiadavka bola zrušená"
+msgstr "Prevod databázy bol zrušený."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, fuzzy, kde-format
@@ -28844,17 +28841,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are three databases: one for all collections properties, "
-#| "one to store compressed thumbnails, and one to store faces recognition "
-#| "metadata.<br/>Write access is required to be able to edit image "
-#| "properties.</p><p>Databases are digiKam core engines. Take care to use a "
-#| "place hosted by fast hardware (as SSD) with enough free space especially "
-#| "for thumbnails database.</p><p>Note: a remote file system such as NFS, "
-#| "cannot be used here. For performance reasons, it is also recommended not "
-#| "to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28866,21 +28853,21 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>Tu vyberte umiestnenie, v ktorom  budú uložené súbory databázy. Budú to "
-"celkom štyri databázy. Jedna pre uloženie všetkých vlastností kolekcií, "
-"jedna pre uloženie komprimovaných náhľadov, jedna pre uloženie metadát "
-"rozpoznávania tvárí a jedna pre uloženie odtlačkov podobností.<br/>Aby bolo "
-"možné upravovať vlastnosti obrázkov, vyžadujú sa práva pre zápis.</"
-"p><p>Databázy sú najdôležitejšie súbory digiKamu. Vyberte umiestnenie na "
-"rýchlom disku (napríklad SSD alebo NVMe) s dostatkom voľného miesta - "
-"predovšetkým pre databázu náhľadov.</p><p>Poznámka: Nie je možné použiť "
-"vzdialený systém súborov (napríklad NFS). Zároveň z dôvodu nízkeho výkonu sa "
-"neodporúča použiť sieťové nosiče dát.</p><p></p>"
+"<p>Tu vyberte umiestnenie na vašom systéme, v ktorom budú uložené súbory "
+"databázy. Budú to celkom štyri databázy. Jedna pre uloženie všetkých "
+"vlastností kolekcií, jedna pre uloženie komprimovaných náhľadov, jedna pre "
+"uloženie metadát rozpoznávania tvárí a jedna pre uloženie odtlačkov "
+"podobností.<br/>Aby bolo možné upravovať vlastnosti obrázkov, vyžadujú sa "
+"práva pre zápis.</p><p>Databázy sú najdôležitejšie súbory digiKamu. Vyberte "
+"umiestnenie na rýchlom disku (napríklad SSD alebo NVMe) s dostatkom voľného "
+"miesta - predovšetkým pre databázu náhľadov.</p><p>Poznámka: Nie je možné "
+"použiť vzdialený systém súborov (napríklad NFS). Zároveň z dôvodu nízkeho "
+"výkonu sa neodporúča použiť sieťové nosiče dát.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable WAL mode for the databases"
-msgstr "Vložiť dáta z databázy"
+msgstr "Povoliť režim WAL pre databáze"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
 #, kde-format
@@ -41972,7 +41959,7 @@ msgstr "Uložiť pod iným názvom"
 #: core/utilities/setup/camera/setupcamera.cpp:327
 #, kde-format
 msgid "Overwrite automatically"
-msgstr "Automaticky prepísať"
+msgstr "Automaticky prepisovať"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:69
 #: core/utilities/setup/camera/setupcamera.cpp:328
@@ -49594,12 +49581,10 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Basque (Basque Country)"
+#, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr "Baskičtina (Baskicko)"
+msgstr "Kód (jazyk-krajina)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
 #, fuzzy, kde-format
@@ -49623,11 +49608,10 @@ msgid "Show only selected items (%1/%2)"
 msgstr "Zobraziť položky bez geolokácie"
 
 #: core/libs/widgets/text/localizeconfig.cpp:216
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "Tu vyberte jazyk obsahu."
+msgstr "Vyberte alternatívne jazyky pre úpravu textu"
 
 #: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
@@ -50582,13 +50566,14 @@ msgid "Geolocation"
 msgstr "Geolokácia"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
+"Nastavenie geolokácie\n"
+"Prispôsobte si pohľad pre geolokáciu položiek"
 
 #: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
@@ -67698,13 +67683,14 @@ msgid "Database"
 msgstr "Databáza"
 
 #: core/utilities/setup/setup.cpp:128
-#, fuzzy, kde-format
-#| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
-msgstr "<qt>Nastavenia databázy<br/><i>Upraviť nastavenie databázy</i></qt>"
+msgstr ""
+"Nastavenia databázy\n"
+"Upravte konfiguráciu databázy"
 
 #: core/utilities/setup/setup.cpp:132
 #, kde-format
@@ -67713,31 +67699,30 @@ msgid "Collections"
 msgstr "Kolekcie"
 
 #: core/utilities/setup/setup.cpp:133
-#, fuzzy, kde-format
-#| msgid "<qt>Collections Settings<br/><i>Set root albums locations</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
 msgstr ""
-"<qt>Nastavenie zbierok<br/><i>Nastaviť umiestnenia koreňových albumov</i></"
-"qt>"
+"Nastavenie zbierok\n"
+"Nastavte umiestnenia koreňových albumov"
 
 #: core/utilities/setup/setup.cpp:137
-#, fuzzy, kde-format
-#| msgid "Views"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pohľady"
 
 #: core/utilities/setup/setup.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
+"Nastavenie vzhľadu aplikácie\n"
+"Upravte zobrazenie pohľadov"
 
 #: core/utilities/setup/setup.cpp:142
 #, kde-format
@@ -67746,34 +67731,30 @@ msgid "Tool-Tip"
 msgstr "Bublinový pomocník"
 
 #: core/utilities/setup/setup.cpp:143
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
 msgstr ""
-"<qt>Nastavenie bublín položiek panela náhľadov<br/><i>Prispôsobiť informácie "
-"v bublinách</i></qt>"
+"Nastavenie bublín položiek panela náhľadov\n"
+"Upravte informácie zobrazované v bublinách"
 
 #: core/utilities/setup/setup.cpp:147
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadáta"
 
 #: core/utilities/setup/setup.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
-"<qt>Správa informácií ukladaných do obrázka<br/><i>Nastavenie vzťahu medzi "
-"obrázkami a metadátami</i></qt>"
+"Správa informácií ukladaných do obrázka\n"
+"Nastavte vzťah medzi obrázkami a metadátami"
 
 #: core/utilities/setup/setup.cpp:152
 #, kde-format
@@ -67782,12 +67763,14 @@ msgid "Templates"
 msgstr "Šablóny"
 
 #: core/utilities/setup/setup.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
-msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
+msgstr ""
+"Šablóny metadát\n"
+"Spravujte vašu zbierku šáblón metadát"
 
 #: core/utilities/setup/setup.cpp:157
 #, kde-format
@@ -67796,14 +67779,14 @@ msgid "Image Editor"
 msgstr "Editor obrázkov"
 
 #: core/utilities/setup/setup.cpp:158
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
-"nastavenie dekódovania RAW</i></qt>"
+"Nastavedia editora obrázkov\n"
+"Upravte nastavenia editora obrázkov"
 
 #: core/utilities/setup/setup.cpp:162
 #, kde-format
@@ -67812,34 +67795,30 @@ msgid "Color Management"
 msgstr "Správa farieb"
 
 #: core/utilities/setup/setup.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
-"<qt>Nastavenie správy farieb<br/><i>Prispôsobiť nastavenie správy farieb</"
-"i></qt>"
+"Nastavenie správy farieb\n"
+"Upravte nastavenia správy farieb"
 
 #: core/utilities/setup/setup.cpp:167
-#, fuzzy, kde-format
-#| msgid "Light Table"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Svetelná tabuľa"
 
 #: core/utilities/setup/setup.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
-"<qt>Nastavenie Svetelnej tabule<br/><i>Prispôsobenie nástroja na "
-"porovnávanie fotografií</i></qt>"
+"Nastavenie Svetelnej tabule\n"
+"Upravte si nástroj na porovnávanie fotografií"
 
 #: core/utilities/setup/setup.cpp:181
 #, kde-format
@@ -67864,13 +67843,14 @@ msgid "Cameras"
 msgstr "Fotoaparáty"
 
 #: core/utilities/setup/setup.cpp:187
-#, fuzzy, kde-format
-#| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Camera Settings\n"
 "Manage your camera devices"
-msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
+msgstr ""
+"Nastavenia fotoaparátu\n"
+"Spravujte vaše fotoaparáty"
 
 #: core/utilities/setup/setup.cpp:194
 #, kde-format
@@ -67879,13 +67859,14 @@ msgid "Plugins"
 msgstr "Pluginy"
 
 #: core/utilities/setup/setup.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
 msgstr ""
-"<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
+"Nastavenia pluginov\n"
+"Nastavte, ktoré pluginy budú dostupné z aplikácie"
 
 #: core/utilities/setup/setup.cpp:199
 #, kde-format
@@ -67894,17 +67875,14 @@ msgid "Miscellaneous"
 msgstr "Rôzne"
 
 #: core/utilities/setup/setup.cpp:200
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
-#| "of digiKam</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Miscellaneous Settings\n"
 "Customize behavior of the other parts of digiKam"
 msgstr ""
-"<qt>Rôzne nastavenia<br/><i>Upraviť správanie ostatných súčastí digiKamu</"
-"i></qt>"
+"Rôzne nastavenia\n"
+"Upravte správanie ostatných súčastí digiKamu"
 
 #: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format
@@ -67961,11 +67939,9 @@ msgstr ""
 "Získať informácie o <interface>aktualizácii odtlačkov súborov</interface>"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "API URL:"
+msgstr "API kľúč:"
 
 #: core/utilities/setup/setupgeolocation.cpp:115
 #, kde-format
@@ -67998,9 +67974,9 @@ msgid "Visit Little CMS project website"
 msgstr "Navštíviť web projektu Little CMS"
 
 #: core/utilities/setup/setupicc.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgid "Working Color Space"
-msgstr "Farba pracovných hodín"
+msgstr "Pracovný priestor farieb"
 
 #: core/utilities/setup/setupicc.cpp:161
 #, kde-format
