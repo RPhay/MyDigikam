@@ -155,17 +155,7 @@ int TimeLineWidget::totalIndex() const
         return 0;
     }
 
-    int        i = 0;
-    QDateTime dt = d->minDateTime;
-
-    do
-    {
-        dt = nextDateTime(dt);
-        ++i;
-    }
-    while (dt < d->maxDateTime);
-
-    return i;
+    return qRound(d->minDateTime.daysTo(d->maxDateTime) / daysOfTimeUnit());
 }
 
 int TimeLineWidget::indexForDateTime(const QDateTime& date) const
@@ -175,17 +165,7 @@ int TimeLineWidget::indexForDateTime(const QDateTime& date) const
         return 0;
     }
 
-    int        i = 0;
-    QDateTime dt = d->minDateTime;
-
-    do
-    {
-        dt = nextDateTime(dt);
-        ++i;
-    }
-    while (dt < date);
-
-    return i;
+    return qRound(d->minDateTime.daysTo(date) / daysOfTimeUnit());
 }
 
 int TimeLineWidget::indexForRefDateTime() const
@@ -205,15 +185,7 @@ void TimeLineWidget::setCurrentIndex(int index)
         return;
     }
 
-    int        i = 0;
-    QDateTime dt = d->minDateTime;
-
-    do
-    {
-        dt = nextDateTime(dt);
-        ++i;
-    }
-    while (i <= index);
+    QDateTime dt = d->minDateTime.addDays(qRound(index * daysOfTimeUnit()));
 
     setRefDateTime(dt);
 }
@@ -1323,6 +1295,39 @@ QDateTime TimeLineWidget::nextDateTime(const QDateTime& dt) const
     }
 
     return next;
+}
+
+double TimeLineWidget::daysOfTimeUnit() const
+{
+    double days = 1.0;
+
+    switch (d->timeUnit)
+    {
+        case Day:
+        {
+            break;
+        }
+
+        case Week:
+        {
+            days *= 7.0;
+            break;
+        }
+
+        case Month:
+        {
+            days *= 30.43;
+            break;
+        }
+
+        case Year:
+        {
+            days *= 365.2;
+            break;
+        }
+    }
+
+    return days;
 }
 
 int TimeLineWidget::maxCount() const
