@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-13 01:43+0000\n"
+"POT-Creation-Date: 2024-07-15 01:44+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -189,7 +189,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Kuupäev puudub"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Week #weeknumber - month name - year string\n"
@@ -207,21 +207,21 @@ msgstr ""
 "%1. nädal - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, fuzzy, kde-format
 #| msgid "Start: "
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Algus:"
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, fuzzy, kde-format
 #| msgid "End: "
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Lõpp:"
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-13 01:43+0000\n"
+"POT-Creation-Date: 2024-07-15 01:44+0000\n"
 "PO-Revision-Date: 2024-06-29 11:34+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -175,7 +175,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "No Date"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -187,19 +187,19 @@ msgstr ""
 "Week #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Start: "
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "End: "
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"

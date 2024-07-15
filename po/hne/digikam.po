@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-13 01:43+0000\n"
+"POT-Creation-Date: 2024-07-15 01:44+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -187,7 +187,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "कोई तारीक नइ"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, fuzzy, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -197,19 +197,19 @@ msgid ""
 "%4\t%5"
 msgstr "हफ्ता #%1 - %2 %3"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, fuzzy, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "सामर्थ्य:"
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr ""
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"

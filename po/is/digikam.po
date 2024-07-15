@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-13 01:43+0000\n"
-"PO-Revision-Date: 2024-07-02 21:41+0000\n"
+"POT-Creation-Date: 2024-07-15 01:44+0000\n"
+"PO-Revision-Date: 2024-07-14 22:15+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -170,7 +170,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Engin dagsetning"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -182,19 +182,19 @@ msgstr ""
 "Vika #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Upphaf:"
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Endir: "
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -41388,15 +41388,13 @@ msgstr "Víxla endurtekinni spilun af/á"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "Rammi afturábak"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr "Áfram"
+msgstr "Rammi áfram"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
