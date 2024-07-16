@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-15 01:44+0000\n"
-"PO-Revision-Date: 2024-06-27 11:12+0200\n"
+"PO-Revision-Date: 2024-07-12 08:32+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/app/date/ddateedit.cpp:492
 #, kde-format
@@ -41946,15 +41946,13 @@ msgstr "Canvia la reproducció en bucle"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "Fotograma arrere"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr "Avant"
+msgstr "Fotograma avant"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -67833,14 +67831,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@title:window"
-#~ msgid "Enter Flickr Login URL"
-#~ msgstr "Introduïu l'URL d'inici de sessió de Flickr"
-
-#~ msgid ""
-#~ "Copy the full URL from the external browser that contains the "
-#~ "\"oauth_token\" entry:"
-#~ msgstr ""
-#~ "Copieu l'URL complet des del navegador extern que continga l'entrada "
-#~ "«oauth_token»:"
