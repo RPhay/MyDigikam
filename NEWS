@@ -9,7 +9,7 @@ BUGFIXES:
 
 001 ==> 490220 - digiKam crashes after a random duration during library scan.
 002 ==> 490367 - Offset of 2 Hours with the GPS tracks correlator from geolocation editor.
-003 ==>
+003 ==> 447133 - Hangs after changing database settings.
 004 ==>
 005 ==>
 006 ==>
