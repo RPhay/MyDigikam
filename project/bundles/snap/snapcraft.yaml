@@ -115,6 +115,7 @@ parts:
           - libxml2-dev
           - libglib2.0-dev
           - libqt6networkauth6-dev
+          - libpulse0
 
         stage-packages:
           - libexif12
@@ -175,6 +176,7 @@ parts:
           - libarmadillo10
           - libblas3
           - kimageformat-plugins
+          - libpulse0
 
         build-snaps:
           - ffmpeg-2204-sdk
