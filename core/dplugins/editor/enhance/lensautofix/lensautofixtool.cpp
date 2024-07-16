@@ -196,6 +196,11 @@ void LensAutoFixTool::preparePreview()
         p2.end();
         DImg grid(pix.toImage());
 
+        if (preview.sixteenBit())
+        {
+            grid.convertDepth(64);
+        }
+
         DColorComposer* const composer            = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
         DColorComposer::MultiplicationFlags flags = DColorComposer::NoMultiplication;
 
