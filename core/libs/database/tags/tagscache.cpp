@@ -367,10 +367,20 @@ void TagsCache::initialize()
 
 void TagsCache::invalidate()
 {
+    QWriteLocker locker(&d->lock);
+
     d->needUpdateInfos      = true;
     d->needUpdateHash       = true;
     d->needUpdateProperties = true;
     d->needUpdateLabelTags  = true;
+
+    d->infos.clear();
+    d->nameHash.clear();
+    d->internalTags.clear();
+    d->tagProperties.clear();
+    d->pickLabelsTags.clear();
+    d->colorLabelsTags.clear();
+    d->tagsWithProperty.clear();
 }
 
 QLatin1String TagsCache::tagPathOfDigikamInternalTags(LeadingSlashPolicy slashPolicy)
