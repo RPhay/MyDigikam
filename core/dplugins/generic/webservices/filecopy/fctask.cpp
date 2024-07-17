@@ -278,15 +278,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             }
         }
 
-        // Remove possible sidecar file
-
-        if (QFile::exists(DMetadata::sidecarUrl(destUrl).toLocalFile()))
-        {
-            QFile::remove(DMetadata::sidecarUrl(destUrl).toLocalFile());
-        }
-
         QScopedPointer<DMetadata> meta(new DMetadata);
-        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
         if (!meta->load(destFile))
         {
@@ -295,6 +287,8 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
 
         if (d->settings.removeMetadata)
         {
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+
             meta->clearExif();
             meta->clearIptc();
             meta->clearXmp();
@@ -307,6 +301,17 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
         if (!meta->save(destFile))
         {
             return false;
+        }
+
+        // Remove possible sidecar file
+
+        if (
+            (!d->settings.sidecars        ||
+              d->settings.removeMetadata) &&
+            QFile::exists(DMetadata::sidecarUrl(destUrl).toLocalFile())
+           )
+        {
+            QFile::remove(DMetadata::sidecarUrl(destUrl).toLocalFile());
         }
 
         DFileOperations::copyModificationTime(orgPath, destFile);
