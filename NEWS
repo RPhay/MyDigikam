@@ -11,7 +11,7 @@ BUGFIXES:
 002 ==> 490367 - Offset of 2 Hours with the GPS tracks correlator from geolocation editor.
 003 ==> 447133 - Hangs after changing database settings.
 004 ==> 376825 - Tag displays do not display correctly after new database is selected.
-005 ==>
+005 ==> 490385 - Remove All Metadata for File Export does not work when sidecar files are used.
 006 ==>
 007 ==>
 008 ==>

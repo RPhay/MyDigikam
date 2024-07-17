@@ -257,11 +257,6 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
             destFile = destUrl.toLocalFile();
 
-            if (d->settings.sidecars)
-            {
-                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
-            }
-
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
 
             if (!img.save(destFile, DImg::JPEG))
@@ -276,11 +271,6 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
             destFile = destUrl.toLocalFile();
 
-            if (d->settings.sidecars)
-            {
-                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
-            }
-
             if (!img.save(destFile, DImg::PNG))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (PNG)";
@@ -288,7 +278,15 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             }
         }
 
+        // Remove possible sidecar file
+
+        if (QFile::exists(DMetadata::sidecarUrl(destUrl).toLocalFile()))
+        {
+            QFile::remove(DMetadata::sidecarUrl(destUrl).toLocalFile());
+        }
+
         QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
         if (!meta->load(destFile))
         {
