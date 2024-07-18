@@ -123,17 +123,17 @@ static void writeMSDosDate(uchar* dest, const QDateTime& dt)
     if (dt.isValid())
     {
         quint16 time =
-            (dt.time().hour() << 11)    // 5 bit hour
-            | (dt.time().minute() << 5)   // 6 bit minute
-            | (dt.time().second() >> 1);  // 5 bit double seconds
+            (dt.time().hour() << 11)         // 5 bit hour
+            | (dt.time().minute() << 5)      // 6 bit minute
+            | (dt.time().second() >> 1);     // 5 bit double seconds
 
         dest[0] = time & 0xff;
         dest[1] = time >> 8;
 
         quint16 date =
             ((dt.date().year() - 1980) << 9) // 7 bit year 1980-based
-            | (dt.date().month() << 5)           // 4 bit month
-            | (dt.date().day());                 // 5 bit day
+            | (dt.date().month() << 5)       // 4 bit month
+            | (dt.date().day());             // 5 bit day
 
         dest[2] = char(date);
         dest[3] = char(date >> 8);
@@ -574,7 +574,12 @@ public:
     QFile::Permissions permissions;
     MarbleZipWriter::CompressionPolicy compressionPolicy;
 
-    enum EntryType { Directory, File, Symlink };
+    enum EntryType
+    {
+        Directory,
+        File,
+        Symlink
+    };
 
     void addEntry(EntryType type, const QString& fileName, const QByteArray& contents);
 };
@@ -592,7 +597,8 @@ LocalFileHeader CentralFileHeader::toLocalHeader() const
     copyUInt(h.uncompressed_size, uncompressed_size);
     copyUShort(h.file_name_length, file_name_length);
     copyUShort(h.extra_field_length, extra_field_length);
-    return h;
+
+    return h;       // cppcheck-suppress uninitvar
 }
 
 void MarbleZipReaderPrivate::scanFiles()
@@ -625,6 +631,7 @@ void MarbleZipReaderPrivate::scanFiles()
     }
 
     // find EndOfDirectory header
+
     int i = 0;
     int start_of_directory = -1;
     int num_dir_entries = 0;
@@ -652,6 +659,7 @@ void MarbleZipReaderPrivate::scanFiles()
     }
 
     // have the eod
+
     start_of_directory = readUInt(eod.dir_start_offset);
     num_dir_entries = readUShort(eod.num_dir_entries);
     qCDebug(DIGIKAM_MARBLE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
@@ -770,7 +778,9 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
         writeUShort(header.h.compression_method, 8);
 
         ulong len = contents.length();
+
         // shamelessly copied form zlib
+
         len += (len >> 12) + (len >> 14) + 11;
         int res;
 
@@ -799,6 +809,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     }
 
     // TODO add a check if data.length() > contents.length().  Then try to store the original and revert the compression method to be uncompressed
+
     writeUInt(header.h.compressed_size, data.length());
     uint crc_32 = ::crc32(0, nullptr, 0);
     crc_32 = ::crc32(crc_32, (const uchar*)contents.constData(), contents.length());
@@ -813,11 +824,14 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     }
 
     writeUShort(header.h.file_name_length, header.file_name.length());
+
     //h.extra_field_length[2];
 
     writeUShort(header.h.version_made, 3 << 8);
+
     //uchar internal_file_attributes[2];
     //uchar external_file_attributes[4];
+
     quint32 mode = permissionsToMode(permissions);
 
     switch (type)
@@ -1081,6 +1095,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     int compressed_size = readUInt(header.h.compressed_size);
     int uncompressed_size = readUInt(header.h.uncompressed_size);
     int start = readUInt(header.h.offset_local_header);
+
     //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
 
     d->device->seek(start);
@@ -1090,15 +1105,19 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     d->device->seek(d->device->pos() + skip);
 
     int compression_method = readUShort(lh.compression_method);
+
     //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("file=%s: compressed_size=%d, uncompressed_size=%d", fileName.toLocal8Bit().data(), compressed_size, uncompressed_size);
 
     //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("file at %lld", d->device->pos());
+
     QByteArray compressed = d->device->read(compressed_size);
 
     if (compression_method == 0)
     {
         // no compression
+
         compressed.truncate(uncompressed_size);
+
         return compressed;
     }
 
@@ -1106,6 +1125,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     {
         // Deflate
         //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("compressed=%d", compressed.size());
+
         compressed.truncate(compressed_size);
         QByteArray baunzip;
         ulong len = qMax(uncompressed_size,  1);
@@ -1159,6 +1179,7 @@ bool MarbleZipReader::extractAll(const QString& destinationDir) const
     QDir baseDir(destinationDir);
 
     // create directories first
+
     QList<FileInfo> allFiles = fileInfoList();
 
     for (const FileInfo& fi : allFiles)
@@ -1180,6 +1201,7 @@ bool MarbleZipReader::extractAll(const QString& destinationDir) const
     }
 
     // set up symlinks
+
     for (const FileInfo& fi : allFiles)
     {
         const QString absPath = destinationDir + QDir::separator() + fi.filePath;
@@ -1513,6 +1535,7 @@ void MarbleZipWriter::addDirectory(const QString& dirName)
     QString name(QDir::fromNativeSeparators(dirName));
 
     // separator is mandatory
+
     if (!name.endsWith(QLatin1Char('/')))
     {
         name.append(QLatin1Char('/'));
@@ -1543,6 +1566,7 @@ void MarbleZipWriter::close()
     }
 
     //qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("QZip::close writing directory, %d entries", d->fileHeaders.size());
+
     d->device->seek(d->start_of_directory);
 
     // write new directory
@@ -1556,12 +1580,16 @@ void MarbleZipWriter::close()
     }
 
     int dir_size = d->device->pos() - d->start_of_directory;
+
     // write end of directory
+
     EndOfDirectory eod;
     memset(&eod, 0, sizeof(EndOfDirectory));
     writeUInt(eod.signature, 0x06054b50);
+
     //uchar this_disk[2];
     //uchar start_of_directory_disk[2];
+
     writeUShort(eod.num_dir_entries_this_disk, d->fileHeaders.size());
     writeUShort(eod.num_dir_entries, d->fileHeaders.size());
     writeUInt(eod.directory_size, dir_size);
