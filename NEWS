@@ -16,8 +16,8 @@ BUGFIXES:
 005 ==> 490385 - Remove All Metadata for File Export does not work when sidecar files are used.
 006 ==> 488576 - Crash while showing Video.
 007 ==> 490128 - digiKam freezes when I click the "metadata" button on the right.
-008 ==>
-009 ==>
+008 ==> 490396 - Impossible validation of exiftool.exe even though it is present in the digiKam folder.
+009 ==> 490341 - Exiftool not present.
 010 ==>
 011 ==>
 012 ==>
