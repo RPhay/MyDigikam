@@ -40,8 +40,10 @@ MercatorProjection::MercatorProjection()
       m_lastCenterLat(200.0),
       m_lastCenterLatInv(0.0)
 {
-    setMinLat(minValidLat());
-    setMaxLat(maxValidLat());
+    // NOTE: virtual calls in constructor: uses dynamic binding
+
+    this->setMinLat(minValidLat());
+    this->setMaxLat(maxValidLat());
 }
 
 MercatorProjection::~MercatorProjection()
