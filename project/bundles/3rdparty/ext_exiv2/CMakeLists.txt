@@ -35,54 +35,15 @@ set(Exiv2_Conf -DBUILD_SHARED_LIBS=ON
                -DEXIV2_TEAM_PACKAGING=OFF
 )
 
-if(MINGW)
-
-    set(Exiv2_Conf ${Exiv2_Conf}
-               -DEXIV2_ENABLE_WIN_UNICODE=ON
-    )
-
-endif()
-
 JoinListAsString("${Exiv2_Conf}" " " BASH_OPTIONS)
 
-if(MINGW)
+if(APPLE)
 
     ExternalProject_Add(ext_exiv2
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
-
-        # To use official release tag
-        GIT_TAG v0.28.2
-        # See the bug https://github.com/Exiv2/exiv2/issues/2637
-#        GIT_TAG 0.27-maintenance
-
-        PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
-
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
-                          cd <SOURCE_DIR> &&
-                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2 &&
-                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
-
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
-        BUILD_IN_SOURCE 1
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
-elseif(APPLE)
-
-    ExternalProject_Add(ext_exiv2
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-
-        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
-        GIT_TAG v0.28.2
+        GIT_TAG v0.28.3
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
@@ -106,7 +67,7 @@ elseif(MSVC)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
-        GIT_TAG v0.28.2
+        GIT_TAG v0.28.3
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-brotli-vcpkg.patch &&
                       cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
@@ -128,7 +89,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
-        GIT_TAG v0.28.2
+        GIT_TAG v0.28.3
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
