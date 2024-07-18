@@ -170,34 +170,6 @@ cd $VCPKG_DIR
 $VCPKG_DIR/create_manifest.sh $VCPKG_DIR vcpkg
 cp $VCPKG_DIR/vcpkg_manifest.txt $ORIG_WD/data/
 
-# ---
-
-if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
-    mkdir -p $BUILDING_DIR/dk_cmake
-fi
-
-cd $BUILDING_DIR/dk_cmake
-
-rm -rf $BUILDING_DIR/dk_cmake/* || true
-
-cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
-      -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
-      -DINSTALL_ROOT=$VCPKG_INSTALL_PREFIX \
-      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
-      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-      -DKA_VERSION=$DK_KA_VERSION \
-      -DKP_VERSION=$DK_KP_VERSION \
-      -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -Wno-dev
-
-cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel
-cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
-
 export PATH=$ORIG_PATH
 
 TerminateScript

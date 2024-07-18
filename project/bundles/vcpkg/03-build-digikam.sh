@@ -83,6 +83,8 @@ cmake $ORIG_WD/../3rdparty \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -Wno-dev
 
+cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel
+cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 cmake --build . --config RelWithDebInfo --target ext_lensfun --parallel
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
