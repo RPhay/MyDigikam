@@ -217,7 +217,7 @@ void DTextEdit::focusOutEvent(QFocusEvent* e)
         Q_EMIT editingFinished();
     }
 
-    return QTextEdit::focusOutEvent(e);
+    QTextEdit::focusOutEvent(e);
 }
 
 void DTextEdit::keyPressEvent(QKeyEvent* e)
