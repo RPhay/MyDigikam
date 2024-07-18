@@ -2112,10 +2112,11 @@ Vec3 SolarSystem::PosUser(double t)
     return r1;
 }
 
-void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,
+void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,                     // cppcheck-suppress passedByValue
                            double& lblon, double& lblat, double& termt)
 {
-    /* Calculate the librations angles lblon (longitude) and
+    /*
+       Calculate the librations angles lblon (longitude) and
        lblat (latitude) for the moon at position rs and time jd.
        Also calculate the selenographic longitude of the terminator.
        rm is the position of the Moon from Earth, sn the position
