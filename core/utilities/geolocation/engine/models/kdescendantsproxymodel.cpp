@@ -1044,7 +1044,7 @@ void KDescendantsProxyModelPrivate::sourceLayoutAboutToBeChanged()
         m_layoutChangePersistentIndexes << srcPersistentIndex;
     }
 
-    q->layoutAboutToBeChanged();
+    Q_EMIT q->layoutAboutToBeChanged();
 }
 
 void KDescendantsProxyModelPrivate::sourceLayoutChanged()
@@ -1074,7 +1074,7 @@ void KDescendantsProxyModelPrivate::sourceLayoutChanged()
     m_layoutChangePersistentIndexes.clear();
     m_proxyIndexes.clear();
 
-    q->layoutChanged();
+    Q_EMIT q->layoutChanged();
 }
 
 void KDescendantsProxyModelPrivate::sourceDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)

@@ -104,6 +104,8 @@ public:
 
 class Q_DECL_HIDDEN FavoritesModel : public QAbstractListModel
 {
+    Q_OBJECT
+
 public:
 
     AbstractDataPluginModelPrivate* d = nullptr;
@@ -781,4 +783,5 @@ void AbstractDataPluginModel::registerItemProperties(const QMetaObject& item)
 
 } // namespace Marble
 
+#include "AbstractDataPluginModel.moc"
 #include "moc_AbstractDataPluginModel.cpp"
