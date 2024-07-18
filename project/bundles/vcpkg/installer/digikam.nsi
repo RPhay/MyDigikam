@@ -262,6 +262,9 @@
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
+        SetOutPath "$INSTDIR\exiftool_files"
+        File /r "${BUNDLEPATH}\exiftool_files\*.*"
+
         ;Store installation folder
 
         WriteRegStr HKLM "Software\${MY_PRODUCT}" "" $INSTDIR
@@ -349,6 +352,7 @@
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\resources"
         RMDir /r "$INSTDIR\translations"
+        RMDir /r "$INSTDIR\exiftool_files"
 
         ;MXE Legacy
         Delete "$INSTDIR\*.yes"
