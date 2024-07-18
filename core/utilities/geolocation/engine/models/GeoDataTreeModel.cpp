@@ -15,6 +15,10 @@
 
 #include "GeoDataTreeModel.h"
 
+// C++includes
+
+#include <algorithm>
+
 // Qt includes
 
 #include <QBrush>
@@ -1139,7 +1143,7 @@ bool GeoDataTreeModel::swapTourPrimitives(const QModelIndex& parent, int indexA,
     {
         if (indexA > indexB)
         {
-            qSwap(indexA, indexB);
+            std::swap(indexA, indexB);
         }
 
         if (indexB - indexA == 1)
