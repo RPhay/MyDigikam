@@ -604,7 +604,7 @@ ln -sv "./Image-ExifTool/exiftool" "exiftool"
 echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+rm -f $ORIG_WD/bundle/*$DEBUG_SUF* || true
 
 if [[ $DK_VERSION != v* ]] ; then
 
