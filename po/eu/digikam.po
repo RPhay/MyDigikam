@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 01:42+0000\n"
-"PO-Revision-Date: 2024-07-06 01:10+0200\n"
+"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"PO-Revision-Date: 2024-07-13 11:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -178,7 +178,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Datarik gabe"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -190,19 +190,19 @@ msgstr ""
 "%1. astea - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Hasi: "
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Bukatu: "
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -5752,7 +5752,7 @@ msgstr ""
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Objektiboaren zuzenketa automatikoa"
@@ -27434,7 +27434,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -27452,7 +27452,7 @@ msgstr ""
 "baina baliteke <b>ez</b> funtzionatzea. Egiaztatu datu-basearen ezarpenak "
 "<b>konfigurazioaren menuan</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27471,12 +27471,12 @@ msgstr ""
 "funtzionatzea. Egiaztatu datu-basearen ezarpenak <b>konfigurazioaren menuan</"
 "b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:238
+#: core/libs/album/manager/albummanager_database.cpp:243
 #, fuzzy, kde-format
 msgid "Failed to initialize the database."
 msgstr "Huts egin du etiketa datu-baseari gehitzean"
 
-#: core/libs/album/manager/albummanager_database.cpp:260
+#: core/libs/album/manager/albummanager_database.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -27508,7 +27508,7 @@ msgstr ""
 "Bestela, klik egin 'Ez' eta zuzendu zure eskualde-ezarpenak digiKam "
 "berrabiarazi aurretik."
 
-#: core/libs/album/manager/albummanager_database.cpp:303
+#: core/libs/album/manager/albummanager_database.cpp:309
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -27522,7 +27522,7 @@ msgstr ""
 "<p>Honako bilduma</p><p><b>%1</b><br/>(%2)</p><p>ez da sisteman aurkitu.<br/"
 ">Hautatu aukera egokiena egoera hau kudeatzeko:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:322
+#: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27534,7 +27534,7 @@ msgstr ""
 "fitxategi-sistemaren ezarpenak aldatzean gertatzea.<br/>Bilduma honako "
 "kokalekuan dago orain:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:341
+#: core/libs/album/manager/albummanager_database.cpp:347
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27543,7 +27543,7 @@ msgstr ""
 "Bilduma biltegiratzeko gailu batean kokatu da, baina ez da beti konektatuta "
 "egoten. Markatu bilduma bilduma aldagarri gisa."
 
-#: core/libs/album/manager/albummanager_database.cpp:348
+#: core/libs/album/manager/albummanager_database.cpp:354
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27552,21 +27552,21 @@ msgstr ""
 "Ez hartu ekintzarik orain. Arazoa beranduago ebatziko dut konfigurazioaren "
 "elkarrizketa-koadroa erabiliz."
 
-#: core/libs/album/manager/albummanager_database.cpp:362
+#: core/libs/album/manager/albummanager_database.cpp:368
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Ez da bilduma aurkitu"
 
-#: core/libs/album/manager/albummanager_database.cpp:468
+#: core/libs/album/manager/albummanager_database.cpp:474
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Datu-basearen karpeta"
 
-#: core/libs/album/manager/albummanager_database.cpp:469
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27582,36 +27582,36 @@ msgstr ""
 "berretsiz) edo fitxategi zaharrari ezikusi eginez datu-base berri batekin "
 "hastea?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:479
-#: core/libs/album/manager/albummanager_database.cpp:546
-#: core/libs/album/manager/albummanager_database.cpp:568
+#: core/libs/album/manager/albummanager_database.cpp:485
+#: core/libs/album/manager/albummanager_database.cpp:552
+#: core/libs/album/manager/albummanager_database.cpp:574
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Eguneratu datu-basea"
 
-#: core/libs/album/manager/albummanager_database.cpp:481
-#: core/libs/album/manager/albummanager_database.cpp:548
-#: core/libs/album/manager/albummanager_database.cpp:570
-#: core/libs/album/manager/albummanager_database.cpp:618
+#: core/libs/album/manager/albummanager_database.cpp:487
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:576
+#: core/libs/album/manager/albummanager_database.cpp:624
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Sortu datu-base berria"
 
-#: core/libs/album/manager/albummanager_database.cpp:537
-#: core/libs/album/manager/albummanager_database.cpp:560
-#: core/libs/album/manager/albummanager_database.cpp:610
-#: core/libs/album/manager/albummanager_database.cpp:642
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:566
+#: core/libs/album/manager/albummanager_database.cpp:616
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Datu-basearen karpeta berria"
 
-#: core/libs/album/manager/albummanager_database.cpp:538
+#: core/libs/album/manager/albummanager_database.cpp:544
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27626,16 +27626,16 @@ msgstr ""
 "eguneratzea (datu-base berri batekin hasteko) edo uneko datu-basea kokaleku "
 "horretan kopiatzea eta hura erabiltzea?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:550
-#: core/libs/album/manager/albummanager_database.cpp:620
-#: core/libs/album/manager/albummanager_database.cpp:651
+#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:626
+#: core/libs/album/manager/albummanager_database.cpp:657
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopiatu uneko datu-basea"
 
-#: core/libs/album/manager/albummanager_database.cpp:561
+#: core/libs/album/manager/albummanager_database.cpp:567
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27648,7 +27648,7 @@ msgstr ""
 "karpeta horretan.</p><p>Zer nahiago duzu, datu-base zaharreko fitxategia "
 "eguneratzea, edo datu-base berri batekin hastea?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:596
+#: core/libs/album/manager/albummanager_database.cpp:602
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27657,7 +27657,7 @@ msgstr ""
 "Huts egin du datu-base zaharreko fitxategia (\"%1\") bere kokaleku berrian "
 "(\"%2\") kopiatzean. Datu-base zaharrak eguneratzen saiatzen."
 
-#: core/libs/album/manager/albummanager_database.cpp:611
+#: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27668,7 +27668,7 @@ msgstr ""
 "p><p>Zer nahiago duzu, uneko datu-basea kokaleku horretan kopiatzea eta hori "
 "erabiltzea, edo datu-base berri batekin hastea?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27681,14 +27681,14 @@ msgstr ""
 "nahiago duzu, existitzen den fitxategia datu-base berria bezala erabiltzea, "
 "edo hura kendu eta uneko datu-basea kokaleku horretan kopiatzea?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:653
+#: core/libs/album/manager/albummanager_database.cpp:659
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Erabil lehendik dagoen fitxategia"
 
-#: core/libs/album/manager/albummanager_database.cpp:708
+#: core/libs/album/manager/albummanager_database.cpp:714
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27698,7 +27698,7 @@ msgstr ""
 "egitean. Fitxategia ordeztea ukatu egin da babeskopiarik gabe, existitzen "
 "den fitxategia erabiltzen."
 
-#: core/libs/album/manager/albummanager_database.cpp:726
+#: core/libs/album/manager/albummanager_database.cpp:732
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27707,12 +27707,12 @@ msgstr ""
 "Huts egin du datu-base zaharreko fitxategia (\"%1\") bere kokaleku berrian "
 "(\"%2\") kopiatzean. Datu-base huts batekin hasten."
 
-#: core/libs/album/manager/albummanager_database.cpp:749
+#: core/libs/album/manager/albummanager_database.cpp:755
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:765
+#: core/libs/album/manager/albummanager_database.cpp:771
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -37705,7 +37705,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Kolore-etiketa"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -54097,11 +54097,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
-#, fuzzy, kde-format
-#| msgid "Synchronize"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
-msgstr "Sinkronizatu"
+msgstr "Aurkegiak ezagutzea"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
@@ -54125,25 +54124,22 @@ msgid "Search in"
 msgstr "Bilatu hemen:"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
-#, fuzzy, kde-format
-#| msgid "Accuracy"
+#, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
-msgstr "Zehaztasuna"
+msgstr "Aurpegien zehaztasuna"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "Sensitivity"
+#, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Sentikortasuna"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
-msgstr "Kokalekua"
+msgstr "Espezifikotasuna"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
@@ -54154,25 +54150,32 @@ msgid ""
 "be recognized, but less faces will be recognized\n"
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
+"Doitu sentikortasuna vs. espezifikotasuna: zenbat eta balio handiago, "
+"aurpegiak orduan\n"
+"eta zehatzago ezagutuko dira, baina aurpegi gutxiago\n"
+"ezagutuko dira (aurrez etiketatutakoekin oso antzekoak direnak bakarrik "
+"ezagutzen dira)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
-msgstr ""
+msgstr "Erabili antzemateko YOLO v3 eredua"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
+"Aurpegiak antzematea YOLO v3 datu-ereduarekin. Emaitza hobeak baina "
+"motelagoa."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
-msgstr ""
+msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
@@ -54182,6 +54185,9 @@ msgid ""
 "You can choose if you wish to employ all processor cores\n"
 "on your system, or work in the background only on one core."
 msgstr ""
+"Aurpegiak antzematea eta ezagutzea denbora behar duten atazak dira.\n"
+"Sistemako prozesatzaileetako nukleo guztiak erabiltzea edo atzeko planoan "
+"nukleo bakarrean lan egitea nahi duzun aukera dezakezu."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
@@ -54468,7 +54474,7 @@ msgstr ""
 #: core/utilities/firstrun/startscanpage.cpp:34
 #, kde-format
 msgid "Scan Your Collection"
-msgstr "Eskaneatu bildumak"
+msgstr "Miatu zure bilduma"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
 #, fuzzy, kde-format
@@ -54630,12 +54636,11 @@ msgid "Find duplicates"
 msgstr "Bilatu bikoiztutakoak"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:113
-#, fuzzy, kde-format
-#| msgid "Use this button to scan the selected albums for duplicate items."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
-"Erabili botoi hau bikoiztutako elementuak aurkitzeko hautatutako albumetan."
+"Erabili botoi hau, hautatutako albumak bikoiztutako elementu bila miatzeko."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:118
 #, fuzzy, kde-format
@@ -63116,9 +63121,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scan for new items"
-msgstr "Eskaneatu irudi berriak"
+msgstr "Miatu irudi berri bila"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:66
 #, kde-format
@@ -63165,7 +63170,7 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:89
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
-msgstr ""
+msgstr "Miatu aldatutako edo katalogatu gabeko elementu bila (azkarragoa)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:84
 #, fuzzy, kde-format
@@ -63261,7 +63266,7 @@ msgstr ""
 #: core/utilities/maintenance/main/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
-msgstr ""
+msgstr "Miatu esleitu gabekoak bakarrik"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:187
 #, kde-format
@@ -63271,6 +63276,9 @@ msgid ""
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
 "the items with no assigned tag.</p>"
 msgstr ""
+"<p><b>Garbitu dena eta berriz esleitu</b>: garbitu jada esleitutako etiketa "
+"denak eta berriz hutsetik miatu.</p><p>Miatu esleitu gabekoak bakarrik<b>: "
+"miatu etiketarik esleitu gabeko elementuak bakarrik.</b>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:200
 #, kde-format
@@ -63303,14 +63311,14 @@ msgid "Auto-tags Assignment"
 msgstr "Doitze automatikoa"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:223
-#, fuzzy, kde-format
+#, kde-format
 msgid "Scan Mode: "
-msgstr "Modeloa: "
+msgstr "Miatzeko modua: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
-msgstr ""
+msgstr "Garbitu dena eta berriz miatu"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:241
 #, fuzzy, kde-format
@@ -63438,9 +63446,9 @@ msgid "Similarity DB"
 msgstr "Antzekotasuna:"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Find new items"
-msgstr "Bildumaren arabera"
+msgstr "Aurkitu elementu berriak"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:103
 #, fuzzy, kde-format
@@ -63448,30 +63456,24 @@ msgid "Find duplicates items"
 msgstr "Bilatu bikoiztutakoak"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "Bilatu albumetan:"
+msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:283
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "Bilatu albumetan:"
+msgstr "Miatu %1 albumetan aurpegi bila"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:290
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgid "Scan for faces in image: %1"
-msgstr "Aztertu irudien bila"
+msgstr "Miatu irudia aurpegi bila: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:294
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgid "Scan for faces in %1 images"
-msgstr "Aztertu irudien bila"
+msgstr "Miatu %1 irudiak aurpegi bila"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesdetector.cpp:299
 #, fuzzy, kde-format
@@ -68219,28 +68221,28 @@ msgid "Write to XMP sidecar for read-only item only"
 msgstr "Idatzi metadatuak fitxategi bakoitzean"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Idatzi metadatuak fitxategi bakoitzean"
+msgstr "Idatzi XMP sidekarretan bakarrik"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr ""
+msgstr "Idatzi elementuan eta XMP sidekarretan"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Specify the exact mode of XMP sidecar writing"
-msgstr ""
+msgstr "XMP sidekarretan idazteko modu zehatza zehaztu"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Sidecar file names are compatible with commercial programs"
-msgstr ""
+msgstr "Sidekar fitxategi-izenak programa komertzialekin bateragarriak dira"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:57
 #, fuzzy, kde-format
@@ -68284,45 +68286,26 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "Saisissez les instructions d'utilisation éditoriale."
+msgstr "Sartu sidekar fitxategi-luzapen gehigarriak."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "Saisissez les instructions d'utilisation éditoriale."
+msgstr "&Sidekar fitxategi-luzapen gehigarriak"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr ""
+msgstr "Sidekarrak"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -68333,21 +68316,14 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Zure herrialderako egutegi "
-"bat zama-jaitsi dezakezu hemendik, <a href=\"www.icalshare.com\"><span style="
-"\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></a> "
-"edo beste gune batzuetatik.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Hau erabat aukerakoa da. "
-"Egutegi honetako gertaera guztiak kolore gorriz inprimatuko dira.</p></"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Zure intranet lokalerako "
+"ordezkariaren ezarpenak. Mesedez, utzi hutsik ordezkaririk ez badago.</p></"
 "body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
@@ -68407,40 +68383,39 @@ msgid "&Password:"
 msgstr "&Pasahitza:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:38
-#, fuzzy, kde-format
+#, kde-format
 msgid "Get album date source:"
-msgstr "Erakutsi albumaren kategoria"
+msgstr "Lortu albumaren dataren sorburua:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:40
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
-msgstr ""
+msgstr "Elementu berrienaren datatik"
 
 #: core/utilities/setup/misc/setupmisc.cpp:41
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
-msgstr ""
+msgstr "Elementu zaharrenaren datatik"
 
 #: core/utilities/setup/misc/setupmisc.cpp:42
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
-msgstr ""
+msgstr "Batezbesteko datatik"
 
 #: core/utilities/setup/misc/setupmisc.cpp:43
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
-msgstr ""
+msgstr "Karpetaren datatik"
 
 #: core/utilities/setup/misc/setupmisc.cpp:44
-#, fuzzy, kde-format
-#| msgid "Change Case"
+#, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
-msgstr "Aldatu maiuskulak/minuskulak"
+msgstr "Data aldaketarik gabe"
 
 #: core/utilities/setup/misc/setupmisc.cpp:45
 #, kde-format
@@ -68448,6 +68423,8 @@ msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
+"Albumaren data, miatu bitartean aurkitutako elementu berrietarako ezarritako "
+"aukeren arabera doitzen da."
 
 #: core/utilities/setup/misc/setupmisc.cpp:49
 #, kde-format
@@ -68486,25 +68463,24 @@ msgstr ""
 "(201006 edo 20090523) jartzeko eta albumak data horien arabera ordenatzeko."
 
 #: core/utilities/setup/misc/setupmisc.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Confirm when moving items to the &trash"
-msgstr "Berretsi elementuak &zakarrontzira botatzean."
+msgstr "Baieztatu elementuak &zakarrontzira botatzean"
 
 #: core/utilities/setup/misc/setupmisc.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Confirm when permanently deleting items"
-msgstr "Berretsi elementuak behin betiko ezabatzean."
+msgstr "Baieztatu elementuak behin betiko ezabatzean"
 
 #: core/utilities/setup/misc/setupmisc.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
-msgstr "Ez berretsi aldaketak aplikatzean e&skuineko alboko barran."
+msgstr "Ez baieztatu e&skuineko alboko barran aldaketak aplikatzean"
 
 #: core/utilities/setup/misc/setupmisc.cpp:66
-#, fuzzy, kde-format
-#| msgid "&Scan for new items at startup (makes startup slower.)"
+#, kde-format
 msgid "&Scan for new items at startup (makes startup slower)"
-msgstr "&Eskaneatu elementu berrien bila abioan (abioa moteltzen du)."
+msgstr "&Miatu elementu berrien bila abioan (abioa moteltzen du)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:67
 #, kde-format
@@ -68526,7 +68502,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:75
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
-msgstr ""
+msgstr "Miaketa azkarra (elementu berriak, ezabatuak eta berrizendatuak)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -68541,7 +68517,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:82
 #, kde-format
 msgid "Detect faces in newly added images"
-msgstr ""
+msgstr "Irudi erantsi berrietan aurkegiak antzematea"
 
 #: core/utilities/setup/misc/setupmisc.cpp:84
 #, kde-format
@@ -68702,6 +68678,9 @@ msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
+"<b>Oharra: Ezarpen hauei eginiko aldaketa guztiak indarrean sartzeko "
+"berrabiatu beharra dago. Ezarpen batzuk hardwarearekiko mendekoak dira eta "
+"baliteke eraginik ez izatea.</b>"
 
 #: core/utilities/setup/setup.cpp:127
 #, kde-format
@@ -68710,15 +68689,14 @@ msgid "Database"
 msgstr "Datu-basea"
 
 #: core/utilities/setup/setup.cpp:128
-#, fuzzy, kde-format
-#| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
 msgstr ""
-"<qt>Datu-basearen ezarpenak<br/><i>Pertsonalizatu datu-basearen ezarpenak</"
-"i></qt>"
+"Datu-basearen ezarpenak\n"
+"Datu-basearen ezarpenak neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:132
 #, kde-format
@@ -68727,17 +68705,14 @@ msgid "Collections"
 msgstr "Bildumak"
 
 #: core/utilities/setup/setup.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
-#| "i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
 msgstr ""
-"<qt>Bildumen ezarpenak<br/><i>Ezarri erroko albumak eta datu-basearen "
-"kokalekuak</i></qt>"
+"Bildumen ezarpenak\n"
+"Ezarri erroko albumen kokalekuak"
 
 #: core/utilities/setup/setup.cpp:137
 #, kde-format
@@ -68746,17 +68721,14 @@ msgid "Views"
 msgstr "Ikuspegiak"
 
 #: core/utilities/setup/setup.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"<qt>Albumen ikuspegiaren ezarpenak<br/><i>Pertsonalizatu albumen zerrenden "
-"itxura</i></qt>"
+"Aplikazioaren ikuspegien ezarpenak\n"
+"Ikuspegien itxura neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:142
 #, kde-format
@@ -68765,17 +68737,14 @@ msgid "Tool-Tip"
 msgstr "Argibidea"
 
 #: core/utilities/setup/setup.cpp:143
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
 msgstr ""
-"<qt>Albumeko elementuen argibideen ezarpenak<br/><i>Pertsonalizatu "
-"argibideen informazioak</i></qt>"
+"Elementuen argibideen ezarpenak\n"
+"Elementuen argibideen informazioa neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:147
 #, kde-format
@@ -68784,17 +68753,14 @@ msgid "Metadata"
 msgstr "Metadatuak"
 
 #: core/utilities/setup/setup.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
-"<qt>Kapsulatutako irudien informazioaren kudeaketa<br/><i>Konfiguratu "
-"irudiak eta metadatuen arteko erlazioak</i></qt>"
+"Irudien kapsulatutako informazioaren kudeaketa\n"
+"Irudien eta metadatuen arteko erlazioak ezarri"
 
 #: core/utilities/setup/setup.cpp:152
 #, kde-format
@@ -68810,7 +68776,7 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 "Metadatuen txantiloiak\n"
-"Kudeatu metadatu txantiloien zure bilduma"
+"Metadatu txantiloien zure bilduma kudeatu"
 
 #: core/utilities/setup/setup.cpp:157
 #, kde-format
@@ -68826,7 +68792,7 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 "Irudi-editorearen ezarpenak\n"
-"Neurrira ipini irudi-editorearen ezarpenak"
+"Irudi-editorearen ezarpenak neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:162
 #, kde-format
@@ -68842,7 +68808,7 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 "Kolore-kudeaketarako ezarpenak\n"
-"Neurrira ipini kolore-kudeaketaren ezarpenak"
+"Kolore-kudeaketaren ezarpenak neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:167
 #, kde-format
@@ -68858,7 +68824,7 @@ msgid ""
 "Customize tool used to compare items"
 msgstr ""
 "Argi-mahaiaren ezarpenak\n"
-"Neurrira ipini irudiak konparatzeko erabilitako tresna"
+"Irudiak konparatzeko erabilitako tresna neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:181
 #, kde-format
@@ -68874,8 +68840,7 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 "Irudi-kalitate sailkatzailearen ezarpenak\n"
-"Pertsonalizatu ezarpen lehenetsiak, irudi-triajea kalitatearen arabera "
-"egiteko"
+"Irudi-triajea kalitatearen arabera egiteko ezarpen lehenetsiak neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:186
 #, kde-format
@@ -68891,7 +68856,7 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 "Kamera ezarpenak\n"
-"Kudeatu zure kamera gailuak"
+"Zure kamera gailuak kudeatu"
 
 #: core/utilities/setup/setup.cpp:194
 #, kde-format
@@ -68907,7 +68872,7 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 "Plugin ezarpenak\n"
-"Ezarri aplikaziotik atzigarri izango diren pluginak"
+"Aplikaziotik atzigarri izango diren pluginak ezarri"
 
 #: core/utilities/setup/setup.cpp:199
 #, kde-format
@@ -68923,7 +68888,7 @@ msgid ""
 "Customize behavior of the other parts of digiKam"
 msgstr ""
 "Askotariko ezarpenak\n"
-"Neurrira ipini digiKam-eko beste atalen jokabidea"
+"DigiKam-eko beste atalen jokabidea neurrira ipini"
 
 #: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format

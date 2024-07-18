@@ -199,9 +199,6 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
 
 void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
 {
-    d->exifToolWidget->loadFromUrl(url);
-    d->exifToolWidget->setEnabled(true);
-
     if (url.isEmpty())
     {
         d->exifWidget->loadFromURL(url);
@@ -213,6 +210,8 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
         d->makernoteWidget->setEnabled(false);
         d->iptcWidget->setEnabled(false);
         d->xmpWidget->setEnabled(false);
+        d->exifToolWidget->setEnabled(false);
+
         return;
     }
 
@@ -220,6 +219,9 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     d->makernoteWidget->setEnabled(true);
     d->iptcWidget->setEnabled(true);
     d->xmpWidget->setEnabled(true);
+    d->exifToolWidget->setEnabled(true);
+
+    d->exifToolWidget->loadFromUrl(url);
 
     QScopedPointer<DMetadata> metadata(new DMetadata);
 

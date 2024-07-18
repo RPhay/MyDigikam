@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 01:42+0000\n"
+"POT-Creation-Date: 2024-07-17 01:41+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -173,7 +173,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "沒有日期"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -185,19 +185,19 @@ msgstr ""
 "第 #%1 週 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "開始："
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "結束："
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -5573,7 +5573,7 @@ msgstr "<para>這個「批次佇列管理器」工具可以用來修正影像的
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "鏡頭自動校正"
@@ -26481,7 +26481,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26498,7 +26498,7 @@ msgstr ""
 "會試著啟動，但<b>不</b>會有任何功能。請檢查<b>組態設定選單</b>中的資料庫設定"
 "值。</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26515,12 +26515,12 @@ msgstr ""
 "資料庫情形下使用 digiKam。digiKam 現在會試著啟動，但<b>不</b>會有任何功能。請"
 "檢查<b>組態設定選單</b>中的資料庫設定值。</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:238
+#: core/libs/album/manager/albummanager_database.cpp:243
 #, kde-format
 msgid "Failed to initialize the database."
 msgstr "初始化資料庫失敗。"
 
-#: core/libs/album/manager/albummanager_database.cpp:260
+#: core/libs/album/manager/albummanager_database.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -26549,7 +26549,7 @@ msgstr ""
 "再也找不到這些檔案。如果您確定要繼續，請點選「是」。反之，請點選「否」並在重"
 "新啟動 digiKam 前修正您的語系設定值。"
 
-#: core/libs/album/manager/albummanager_database.cpp:303
+#: core/libs/album/manager/albummanager_database.cpp:309
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -26563,7 +26563,7 @@ msgstr ""
 "<p>目前在您的系統上無法找到此收藏 </p><p><b>%1</b><br/>(%2)</p><p>。<br/> 請"
 "選擇最合適的選項來處理這個狀況：</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:322
+#: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26573,33 +26573,33 @@ msgstr ""
 "<p>此收藏仍無法使用，但識別碼已改變。<br/>這可能是還原備份所造成，請改變分割"
 "區規劃或檔案系統設定值。<br/>此收藏現在被放在這個地方：</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:341
+#: core/libs/album/manager/albummanager_database.cpp:347
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr "此收藏放置的儲存裝置不是固定式的。請將此收藏標記為抽取式收藏。"
 
-#: core/libs/album/manager/albummanager_database.cpp:348
+#: core/libs/album/manager/albummanager_database.cpp:354
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "現在不採取行動。我想之後再用設定對話框解決這個問題"
 
-#: core/libs/album/manager/albummanager_database.cpp:362
+#: core/libs/album/manager/albummanager_database.cpp:368
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "找不到收藏"
 
-#: core/libs/album/manager/albummanager_database.cpp:468
+#: core/libs/album/manager/albummanager_database.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "資料庫資料夾"
 
-#: core/libs/album/manager/albummanager_database.cpp:469
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26612,33 +26612,33 @@ msgstr ""
 "digiKam 的資料庫檔案。</p> <p>您想要升級此舊資料庫檔案 - 確認這個資料庫檔案實"
 "際被建立放置在資料夾「%2」的圖片 - 或者忽略此舊檔並用新的資料庫啟動？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:479
-#: core/libs/album/manager/albummanager_database.cpp:546
-#: core/libs/album/manager/albummanager_database.cpp:568
+#: core/libs/album/manager/albummanager_database.cpp:485
+#: core/libs/album/manager/albummanager_database.cpp:552
+#: core/libs/album/manager/albummanager_database.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "升級資料庫"
 
-#: core/libs/album/manager/albummanager_database.cpp:481
-#: core/libs/album/manager/albummanager_database.cpp:548
-#: core/libs/album/manager/albummanager_database.cpp:570
-#: core/libs/album/manager/albummanager_database.cpp:618
+#: core/libs/album/manager/albummanager_database.cpp:487
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:576
+#: core/libs/album/manager/albummanager_database.cpp:624
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "建立新資料庫"
 
-#: core/libs/album/manager/albummanager_database.cpp:537
-#: core/libs/album/manager/albummanager_database.cpp:560
-#: core/libs/album/manager/albummanager_database.cpp:610
-#: core/libs/album/manager/albummanager_database.cpp:642
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:566
+#: core/libs/album/manager/albummanager_database.cpp:616
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "新增資料庫資料夾"
 
-#: core/libs/album/manager/albummanager_database.cpp:538
+#: core/libs/album/manager/albummanager_database.cpp:544
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26651,15 +26651,15 @@ msgstr ""
 "digiKam 的資料庫檔案。</p> <p>您想要升級此舊資料庫檔案、用新的資料庫啟動或複"
 "製目前的資料庫到這個位置並繼續使用？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:550
-#: core/libs/album/manager/albummanager_database.cpp:620
-#: core/libs/album/manager/albummanager_database.cpp:651
+#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:626
+#: core/libs/album/manager/albummanager_database.cpp:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "複製目前資料庫"
 
-#: core/libs/album/manager/albummanager_database.cpp:561
+#: core/libs/album/manager/albummanager_database.cpp:567
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26671,7 +26671,7 @@ msgstr ""
 "digiKam 的資料庫檔案。</p> <p>您是否要升級此舊資料庫檔案或用新的資料庫開始？"
 "</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:596
+#: core/libs/album/manager/albummanager_database.cpp:602
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26680,7 +26680,7 @@ msgstr ""
 "將舊的資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") 失敗。請試著將舊的資料庫升"
 "級。"
 
-#: core/libs/album/manager/albummanager_database.cpp:611
+#: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26690,7 +26690,7 @@ msgstr ""
 "<p>您已經選擇資料夾「%1」作為儲存資料庫的新地方。</p><p>您想要複製目前的資料"
 "庫到這個位置並繼續使用，或者用新的資料庫啟動？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26702,13 +26702,13 @@ msgstr ""
 "置。</p> <p>您想要使用這個現有檔案作為新的資料庫，或者移除此檔案並複製目前的"
 "資料庫到這個地方？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:653
+#: core/libs/album/manager/albummanager_database.cpp:659
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "使用現有檔案"
 
-#: core/libs/album/manager/albummanager_database.cpp:708
+#: core/libs/album/manager/albummanager_database.cpp:714
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26717,7 +26717,7 @@ msgstr ""
 "備份現有的資料庫檔案 (\"%1\") 失敗。若沒有備份會拒絕取代檔案，而使用現有的檔"
 "案。"
 
-#: core/libs/album/manager/albummanager_database.cpp:726
+#: core/libs/album/manager/albummanager_database.cpp:732
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26725,12 +26725,12 @@ msgid ""
 msgstr ""
 "將舊資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") 失敗。用空白的資料庫啟動。"
 
-#: core/libs/album/manager/albummanager_database.cpp:749
+#: core/libs/album/manager/albummanager_database.cpp:755
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:765
+#: core/libs/album/manager/albummanager_database.cpp:771
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -36049,7 +36049,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "色彩旗標"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

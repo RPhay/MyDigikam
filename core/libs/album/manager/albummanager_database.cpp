@@ -196,6 +196,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     d->albumWatch->setDbEngineParameters(params);
 
     ScanController::Advice advice = ScanController::instance()->databaseInitialization();
+    QString errorMsg              = CoreDbAccess().lastError();
 
     QApplication::restoreOverrideCursor();
 
@@ -208,8 +209,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         case ScanController::ContinueWithoutDatabase:
         {
-            QString errorMsg = CoreDbAccess().lastError();
-
             if (errorMsg.isEmpty())
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
@@ -235,7 +234,14 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         case ScanController::AbortImmediately:
         {
-            databaseError = i18n("Failed to initialize the database.");
+            if (!errorMsg.isEmpty())
+            {
+                databaseError = errorMsg;
+            }
+            else
+            {
+                databaseError = i18n("Failed to initialize the database.");
+            }
 
             return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
         }

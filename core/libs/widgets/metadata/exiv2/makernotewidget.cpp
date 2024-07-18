@@ -67,7 +67,7 @@ QString MakerNoteWidget::getMetadataTitle() const
 
 bool MakerNoteWidget::loadFromURL(const QUrl& url)
 {
-    setFileName(url.toLocalFile());
+    setFileName(url.fileName());
 
     if (url.isEmpty())
     {

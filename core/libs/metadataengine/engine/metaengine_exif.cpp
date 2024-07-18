@@ -30,9 +30,8 @@
 
 // Local includes
 
-#include "metaengine_rotation.h"
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "metaengine_rotation.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -48,21 +47,7 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
     try
     {
-
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
-
-#else
-
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
-
-#endif
-
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdExif);
 
         return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));

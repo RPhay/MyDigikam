@@ -3,17 +3,19 @@ digiKam 8.5.0 - Release date: 2024-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Bundles: update to last Exiv2 version 0.28.3.
+Bundles: update to last ExifTool version 12.89.
 
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==>
-002 ==>
-003 ==>
-004 ==>
-005 ==>
-006 ==>
-007 ==>
+001 ==> 490220 - digiKam crashes after a random duration during library scan.
+002 ==> 490367 - Offset of 2 Hours with the GPS tracks correlator from geolocation editor.
+003 ==> 447133 - Hangs after changing database settings.
+004 ==> 376825 - Tag displays do not display correctly after new database is selected.
+005 ==> 490385 - Remove All Metadata for File Export does not work when sidecar files are used.
+006 ==> 488576 - Crash while showing Video.
+007 ==> 490128 - digiKam freezes when I click the "metadata" button on the right.
 008 ==>
 009 ==>
 010 ==>

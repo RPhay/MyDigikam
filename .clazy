@@ -19,7 +19,6 @@ IGNORE_DIRS+=".*core/libs/rawengine/libraw/.*|"
 IGNORE_DIRS+=".*core/libs/dngwriter/extra/.*|"
 IGNORE_DIRS+=".*core/libs/dplugins/webservices/o2/.*|"
 IGNORE_DIRS+=".*core/dplugins/generic/tools/mediaserver/upnpsdk/.*|"
-IGNORE_DIRS+=".*core/utilities/geolocation/marble/.*|"
 IGNORE_DIRS+=".*core/libs/video/QtAVPlayer/.*|"
 # Remove last character
 IGNORE_DIRS=${IGNORE_DIRS::-1}

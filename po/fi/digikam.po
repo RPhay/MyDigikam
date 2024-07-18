@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 01:42+0000\n"
+"POT-Creation-Date: 2024-07-17 01:41+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -186,7 +186,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Ei päiväystä"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -198,19 +198,19 @@ msgstr ""
 "Viikko %1 – %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Alku:"
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Loppu:"
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -6051,7 +6051,7 @@ msgstr "<p>Tällä eräajotyökalulla voi säätää kuvien aikatietoja.</p>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Automaattinen linssivääristymien korjaus"
@@ -27278,7 +27278,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:215
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -27291,7 +27291,7 @@ msgstr ""
 "täysin toimintakuntoinen. Tarkista <b>asetusvalikosta</b> tietokannan "
 "asetukset.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:224
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27304,13 +27304,13 @@ msgstr ""
 "yrittää nyt käynnistyä, mutta se <b>ei ole</b> täysin toimintakunnossa. "
 "Tarkista <b>asetusvalikosta</b> tietokannan asetukset.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:238
+#: core/libs/album/manager/albummanager_database.cpp:243
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnails database"
 msgid "Failed to initialize the database."
 msgstr "Pienoiskuvatietokannan alustaminen epäonnistui"
 
-#: core/libs/album/manager/albummanager_database.cpp:260
+#: core/libs/album/manager/albummanager_database.cpp:266
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27331,7 +27331,7 @@ msgstr ""
 "jatkaa, valitse ”Kyllä”. Muussa tapauksessa napsauta ”Ei”, tarkista "
 "merkistöasetus ja käynnistä digiKam uudelleen."
 
-#: core/libs/album/manager/albummanager_database.cpp:303
+#: core/libs/album/manager/albummanager_database.cpp:309
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27341,7 +27341,7 @@ msgstr ""
 "<p>Kokoelmaa</p><p><b>%1</b><br/>(%2)</p><p>ei tällä hetkellä löydy "
 "järjestelmästä.<br/>Valitse sopivin tapa jatkaa tilanteessa:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:322
+#: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27352,7 +27352,7 @@ msgstr ""
 "aiheuttaa varmuuskopion palauttaminen tai levyosioiden tai "
 "tiedostojärjestelmien muutokset.<br/>Kokoelman sijainti on nyt:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:341
+#: core/libs/album/manager/albummanager_database.cpp:347
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27361,7 +27361,7 @@ msgstr ""
 "Kokoelma on tallennuslaitteella, jota ei aina ole liitetty. Merkitse "
 "kokoelman tyyppi siirrettäväksi."
 
-#: core/libs/album/manager/albummanager_database.cpp:348
+#: core/libs/album/manager/albummanager_database.cpp:354
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27369,19 +27369,19 @@ msgid ""
 msgstr ""
 "Älä tee mitään nyt. Ratkaisen ongelman tuonnempana itse asetusikkunassa"
 
-#: core/libs/album/manager/albummanager_database.cpp:362
+#: core/libs/album/manager/albummanager_database.cpp:368
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kokoelmaa ei löytynyt"
 
-#: core/libs/album/manager/albummanager_database.cpp:468
+#: core/libs/album/manager/albummanager_database.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Tietokantakansio"
 
-#: core/libs/album/manager/albummanager_database.cpp:469
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27395,33 +27395,33 @@ msgstr ""
 "vanhan tietokantatiedoston ja vahvistaa että se tilastoi kansion ”%2” kuvat? "
 "Voit myös alustaa uuden tietokannan.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:479
-#: core/libs/album/manager/albummanager_database.cpp:546
-#: core/libs/album/manager/albummanager_database.cpp:568
+#: core/libs/album/manager/albummanager_database.cpp:485
+#: core/libs/album/manager/albummanager_database.cpp:552
+#: core/libs/album/manager/albummanager_database.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Päivitä tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:481
-#: core/libs/album/manager/albummanager_database.cpp:548
-#: core/libs/album/manager/albummanager_database.cpp:570
-#: core/libs/album/manager/albummanager_database.cpp:618
+#: core/libs/album/manager/albummanager_database.cpp:487
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:576
+#: core/libs/album/manager/albummanager_database.cpp:624
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Luo uusi tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:537
-#: core/libs/album/manager/albummanager_database.cpp:560
-#: core/libs/album/manager/albummanager_database.cpp:610
-#: core/libs/album/manager/albummanager_database.cpp:642
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:566
+#: core/libs/album/manager/albummanager_database.cpp:616
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Uuden tietokannan kansio"
 
-#: core/libs/album/manager/albummanager_database.cpp:538
+#: core/libs/album/manager/albummanager_database.cpp:544
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27435,15 +27435,15 @@ msgstr ""
 "päivittää vanhan, luoda uuden vai kopioida nykyisen tietokannan tähän "
 "sijaintiin?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:550
-#: core/libs/album/manager/albummanager_database.cpp:620
-#: core/libs/album/manager/albummanager_database.cpp:651
+#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:626
+#: core/libs/album/manager/albummanager_database.cpp:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopioi nykyinen tietokanta"
 
-#: core/libs/album/manager/albummanager_database.cpp:561
+#: core/libs/album/manager/albummanager_database.cpp:567
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27455,7 +27455,7 @@ msgstr ""
 "Tässä kansiossa on vanha versio digiKamin tietokannasta.</p><p>Haluatko "
 "päivittää vanhan vai luoda uuden tietokannan?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:596
+#: core/libs/album/manager/albummanager_database.cpp:602
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27464,7 +27464,7 @@ msgstr ""
 "Tietokantatiedoston ”%1” kopiointi uudelle nimelle ”%2” epäonnistui. "
 "Yritetään päivittää vanha tietokanta."
 
-#: core/libs/album/manager/albummanager_database.cpp:611
+#: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27475,7 +27475,7 @@ msgstr ""
 "p><p>Haluatko luoda uuden vai kopioida nykyisen tietokannan tähän sijaintiin?"
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27488,13 +27488,13 @@ msgstr ""
 "olevaa, vai poistaa sen ja kopioida nykyisen tietokannan tähän sijaintiin?</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:653
+#: core/libs/album/manager/albummanager_database.cpp:659
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Käytä olemassa olevaa tiedostoa"
 
-#: core/libs/album/manager/albummanager_database.cpp:708
+#: core/libs/album/manager/albummanager_database.cpp:714
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27503,7 +27503,7 @@ msgstr ""
 "Tietokantatiedoston ”%1” varmuuskopiointi epäonnistui. Tiedoston korvausta "
 "ei yritetä, vaan jatketaan vanhan tiedoston käyttämistä."
 
-#: core/libs/album/manager/albummanager_database.cpp:726
+#: core/libs/album/manager/albummanager_database.cpp:732
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27512,12 +27512,12 @@ msgstr ""
 "Tietokantatiedoston ”%1” kopiointi uudelle nimelle ”%2” epäonnistui. "
 "Käynnistetään tyhjällä tietokannalla."
 
-#: core/libs/album/manager/albummanager_database.cpp:749
+#: core/libs/album/manager/albummanager_database.cpp:755
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:765
+#: core/libs/album/manager/albummanager_database.cpp:771
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -36790,7 +36790,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Värimerkki"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

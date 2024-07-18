@@ -9,6 +9,13 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+if [ "$1" == "" ] ; then
+
+    echo "Error: missing Exiftool version to handle (eg. 12.81)..."
+    exit
+
+fi
+
 DK_UPLOADURL="digikam@tinami.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/exiftool/"
 
@@ -23,7 +30,11 @@ wget https://exiftool.org/exiftool-$1_64.zip
 echo "Rename archives..."
 
 mv Image-ExifTool-$1.tar.gz Image-ExifTool.tar.gz
-mv exiftool-$1_64.zip exiftool.zip
+unzip -o exiftool-$1_64.zip -d ./
+cd ./exiftool-$1_64/
+zip -r ../exiftool.zip ./
+cd ..
+chmod -R 777 ./exiftool-$1_64/
 
 echo "Cleanup files from download area..."
 
@@ -48,5 +59,7 @@ echo "Cleanup local files..."
 rm -fr Image-ExifTool.tar.gz
 rm -fr exiftool.zip
 rm -fr VERSION
+rm -fr exiftool-$1_64.zip
+rm -fr exiftool-$1_64
 
 echo "All done..."

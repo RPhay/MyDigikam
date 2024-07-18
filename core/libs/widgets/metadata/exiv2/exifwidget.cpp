@@ -70,7 +70,7 @@ QString ExifWidget::getMetadataTitle() const
 
 bool ExifWidget::loadFromURL(const QUrl& url)
 {
-    setFileName(url.toLocalFile());
+    setFileName(url.fileName());
 
     if (url.isEmpty())
     {

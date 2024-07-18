@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 01:42+0000\n"
+"POT-Creation-Date: 2024-07-17 01:41+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -207,7 +207,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "គ្មាន​កាលបរិច្ឆេទ"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Week #weeknumber - month name - year string\n"
@@ -225,19 +225,19 @@ msgstr ""
 "សប្ដាណ៍ #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, fuzzy, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "ជ្រើស​រូបភាព"
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr ""
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"
@@ -5958,7 +5958,7 @@ msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "ការ​កែ​កែវ​ម៉ាស៊ីន​ថត​រូប​ស្វ័យប្រវត្តិ"
@@ -27207,7 +27207,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -27224,7 +27224,7 @@ msgstr ""
 "ទិន្នន័យ​បាន​ឡើយ ។ digiKam នឹង​ចាប់ផ្ដើម​​ឥឡូវ​នេះ ប៉ុន្តែ​វា​នឹង <b>មិន</b> ដំណើរការ​ឡើយ ។ សូម​ពិនិត្យ​"
 "មើល​ការ​កំណត់​មូលដ្ឋាន​ទិន្នន័យ​នៅ​ក្នុង <b>ម៉ឺនុយ​ការ​កំណត់​រចនាសម្ព័ន្ធ</b> ។</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27242,13 +27242,13 @@ msgstr ""
 "ប៉ុន្តែ​នឹង <b>មិន​</b> ដំណើរការ​ឡើយ ។ សូម​ពិនិត្យមើល​ការ​កំណត់​មូលដ្ឋាន​ទិន្នន័យ​របស់​អ្នក​នៅ​ក្នុង <b>ម៉ឺនុយ​ការ​"
 "កំណត់​រចនា​សម្ព័ន្ធ</b> ។</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:238
+#: core/libs/album/manager/albummanager_database.cpp:243
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "Failed to initialize the database."
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បន្ថែម​ស្លាក​ទៅកាន់​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/album/manager/albummanager_database.cpp:260
+#: core/libs/album/manager/albummanager_database.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -27277,7 +27277,7 @@ msgstr ""
 "ទាំង​នេះ​អាច​នឹង​មិន​ត្រូវ​បាន​រក​ឃើញ​នៅ​ក្នុង​សម្រាំង​ទៀត​ទេ ។ ប្រសិនបើ​អ្នក​ប្រាកដ​ថា អ្នក​ចង់​បន្ត ចុច 'បាទ/"
 "ចាស់' ។ បើ​មិន​ដូច្នេះ​ទេ ចុច 'ទេ' ហើយ​កែ​ការកំណត់​ទីតាំង​​របស់​អ្នក មុន​ពេល​ចាប់ផ្ដើម digiKam ឡើង​វិញ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:303
+#: core/libs/album/manager/albummanager_database.cpp:309
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -27291,7 +27291,7 @@ msgstr ""
 "រក​មិន​ឃើញ​<p>សម្រាំង </p><p><b>%1</b><br/>(%2)</p><p> បច្ចុប្បន្ន​នៅ​លើ​ប្រព័ន្ធ​របស់​អ្នក​ឡើយ ។"
 "<br/> សូម​ជ្រើស​ជម្រើស​ត្រឹមត្រូវ​បំផុត ដើម្បី​ដោះស្រាយ​ស្ថានភាព​នេះ ៖</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:322
+#: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27302,7 +27302,7 @@ msgstr ""
 "វិញ ការ​ផ្លាស់ប្ដូរ​​ប្លង់​ភាគ​ថាស ឬ​ការ​កំណត់​ប្រព័ន្ធ​ឯកសារ ។<br/>ឥឡូវ​នេះ​សម្រាំង​ត្រូវ​បាន​ដាក់​​នៅ​ទីកន្លែង​"
 "នេះ ៖</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:341
+#: core/libs/album/manager/albummanager_database.cpp:347
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27310,28 +27310,28 @@ msgid ""
 msgstr ""
 "សម្រាំង​ត្រូវ​បាន​ដាក់​នៅ​លើ​ឧបករណ៍​ផ្ទុក ដែល​​មិន​ត្រូវ​បាន​​ភ្ជាប់​ជានិច្ច ។ សម្គាល់​ការ​សម្រាំង​ជា​សម្រាំងចល័ត ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:348
+#: core/libs/album/manager/albummanager_database.cpp:354
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "គ្មាន​សកម្មភាព​ឡើង​ឥឡូវ​នេះ ។ ខ្ញុំ​ចង់​ដោះស្រាយ​បញ្ហា​ក្រោយពេល​ប្រើ​ប្រអប់​រៀបចំ"
 
-#: core/libs/album/manager/albummanager_database.cpp:362
+#: core/libs/album/manager/albummanager_database.cpp:368
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "រក​មិន​ឃើញ​សម្រាំង​ឡើយ"
 
-#: core/libs/album/manager/albummanager_database.cpp:468
+#: core/libs/album/manager/albummanager_database.cpp:474
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/album/manager/albummanager_database.cpp:469
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27345,36 +27345,36 @@ msgstr ""
 "ឡើង - ក្នុង​ការ​អះអាង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដូច​ដែល​បាន​បង្កើត​សម្រាប់​រូបភាព​ដែល​បាន​ដាក់​នៅ​ក្នុង​ថត "
 "\"%2\" ឬ​មិន​អើពើ​ឯកសារ​ចាស់ ហើយ​ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:479
-#: core/libs/album/manager/albummanager_database.cpp:546
-#: core/libs/album/manager/albummanager_database.cpp:568
+#: core/libs/album/manager/albummanager_database.cpp:485
+#: core/libs/album/manager/albummanager_database.cpp:552
+#: core/libs/album/manager/albummanager_database.cpp:574
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "ធ្វើ​ឲ្យ​មូលដ្ឋាន​ទិន្នន័យ​ប្រសើរ​ឡើង"
 
-#: core/libs/album/manager/albummanager_database.cpp:481
-#: core/libs/album/manager/albummanager_database.cpp:548
-#: core/libs/album/manager/albummanager_database.cpp:570
-#: core/libs/album/manager/albummanager_database.cpp:618
+#: core/libs/album/manager/albummanager_database.cpp:487
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:576
+#: core/libs/album/manager/albummanager_database.cpp:624
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "បង្កើត​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី"
 
-#: core/libs/album/manager/albummanager_database.cpp:537
-#: core/libs/album/manager/albummanager_database.cpp:560
-#: core/libs/album/manager/albummanager_database.cpp:610
-#: core/libs/album/manager/albummanager_database.cpp:642
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:566
+#: core/libs/album/manager/albummanager_database.cpp:616
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី"
 
-#: core/libs/album/manager/albummanager_database.cpp:538
+#: core/libs/album/manager/albummanager_database.cpp:544
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27388,16 +27388,16 @@ msgstr ""
 "ចាស់​ប្រសើរ​ឡើង ចាប់ផ្ដើម​ជាមួយ​​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី ឬ​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន​ទៅ​កាន់​ទីតាំង​នេះ ហើយ​"
 "បន្ត​ក្នុង​ការ​ប្រើ​វាឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:550
-#: core/libs/album/manager/albummanager_database.cpp:620
-#: core/libs/album/manager/albummanager_database.cpp:651
+#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:626
+#: core/libs/album/manager/albummanager_database.cpp:657
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន"
 
-#: core/libs/album/manager/albummanager_database.cpp:561
+#: core/libs/album/manager/albummanager_database.cpp:567
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27409,7 +27409,7 @@ msgstr ""
 "ចាស់​របស់ digiKam ដែល​ត្រូវ​បាន​រក​ឃើញ​នៅ​ក្នុង​ថត ។</p> <p>តើ​អ្នក​ចង់​ធ្វើ​ឲ្យ​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់​"
 "ប្រសើរ​ ឬ​​ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ឬ ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:596
+#: core/libs/album/manager/albummanager_database.cpp:602
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27418,7 +27418,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី (\"%2\") ។ "
 "សាកល្បង​​ធ្វើ​ឲ្យ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់​ប្រើសើរ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:611
+#: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27428,7 +27428,7 @@ msgstr ""
 "<p>អ្នក​បាន​ជ្រើស​ថត \"%1\" ជា​ទី​កន្លែង​ថ្មី​ ដើម្បី​ទុក​មូលដ្ឋាន​ទិន្នន័យ ។</p><p>តើ​អ្នក​ចង់​ចម្លង​​មូលដ្ឋាន​"
 "ទិន្នន័យ​បច្ចុប្បន្ន​ទៅកាន់​ទីតាំង​ថ្មី ហើយ​បន្ត​ប្រើ​វា ឬ​ចាប់ផ្ដើម​​មូលដ្ឋាន​ន័យ​ថ្មី​ឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27440,14 +27440,14 @@ msgstr ""
 "រួចហើយ​នៅ​​ក្នុង​ទីតាំង​នេះ ។</p> <p>តើ​អ្នក​ចង់​ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់​នេះ​ជា​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ ឬ​យក​វា​"
 "ចេញ ​ហើយ​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន​ទៅ​ទីកន្លែង​នេះ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:653
+#: core/libs/album/manager/albummanager_database.cpp:659
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់"
 
-#: core/libs/album/manager/albummanager_database.cpp:708
+#: core/libs/album/manager/albummanager_database.cpp:714
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27456,7 +27456,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បម្រុងទុក​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​មាន​ស្រាប់ (\"%1\") ។ បដិសេធ​ក្នុង​ការ​ជំនួស​ឯកសារ​"
 "ដោយ​មិន​ចាំបាច់​បម្រុងទុក ដោយ​ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:726
+#: core/libs/album/manager/albummanager_database.cpp:732
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27465,12 +27465,12 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​ទីតាំង​ថ្មី​របស់​វា (\"%2\") ។ "
 "ចាប់ផ្ដើម​ដោយ​មាន​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:749
+#: core/libs/album/manager/albummanager_database.cpp:755
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:765
+#: core/libs/album/manager/albummanager_database.cpp:771
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -36822,7 +36822,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "តុល្យភាព​ពណ៌"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

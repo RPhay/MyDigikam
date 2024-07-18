@@ -109,6 +109,8 @@ private:
     QDateTime     prevDateTime(const QDateTime& dt)                             const;
     QDateTime     nextDateTime(const QDateTime& dt)                             const;
 
+    double        daysOfTimeUnit()                                              const;
+
     int           maxCount()                                                    const;
     int           indexForDateTime(const QDateTime& date)                       const;
     int           statForDateTime(const QDateTime& dt, SelectionMode& selected) const;

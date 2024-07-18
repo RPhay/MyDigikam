@@ -14,12 +14,12 @@
  *
  * ============================================================ */
 
+#include "metaengine_p.h"
+
 // Local includes
 
-#include "metaengine_previews.h"
-#include "metaengine_p.h"
 #include "digikam_debug.h"
-#include "digikam_config.h"
+#include "metaengine_previews.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -94,20 +94,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
-
-#else
-
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
-
-#endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 

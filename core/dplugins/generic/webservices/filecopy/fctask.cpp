@@ -257,11 +257,6 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
             destFile = destUrl.toLocalFile();
 
-            if (d->settings.sidecars)
-            {
-                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
-            }
-
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
 
             if (!img.save(destFile, DImg::JPEG))
@@ -275,11 +270,6 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             destFile.append(QLatin1String(".png"));
             destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
             destFile = destUrl.toLocalFile();
-
-            if (d->settings.sidecars)
-            {
-                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
-            }
 
             if (!img.save(destFile, DImg::PNG))
             {
@@ -297,6 +287,8 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
 
         if (d->settings.removeMetadata)
         {
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+
             meta->clearExif();
             meta->clearIptc();
             meta->clearXmp();
@@ -309,6 +301,17 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
         if (!meta->save(destFile))
         {
             return false;
+        }
+
+        // Remove possible sidecar file
+
+        if (
+            (!d->settings.sidecars        ||
+              d->settings.removeMetadata) &&
+            QFile::exists(DMetadata::sidecarUrl(destUrl).toLocalFile())
+           )
+        {
+            QFile::remove(DMetadata::sidecarUrl(destUrl).toLocalFile());
         }
 
         DFileOperations::copyModificationTime(orgPath, destFile);

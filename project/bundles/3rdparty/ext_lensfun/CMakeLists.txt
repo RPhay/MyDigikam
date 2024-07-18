@@ -31,31 +31,7 @@ endif()
 
 JoinListAsString("${Lensfun_Conf}" " " BASH_OPTIONS)
 
-if (MINGW)
-
-    ExternalProject_Add(ext_lensfun
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-
-        GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
-                          cd <SOURCE_DIR> &&
-                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun &&
-                          cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
-
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && make install/fast
-
-        BUILD_IN_SOURCE 1
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
-elseif (APPLE)
+if (APPLE)
 
     ExternalProject_Add(ext_lensfun
 

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-12 01:42+0000\n"
-"PO-Revision-Date: 2024-07-06 16:50+0200\n"
+"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"PO-Revision-Date: 2024-07-16 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -163,7 +163,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Neniu dato"
 
-#: core/app/date/timelinewidget.cpp:297
+#: core/app/date/timelinewidget.cpp:269
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -175,19 +175,19 @@ msgstr ""
 "Semajno #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:301
+#: core/app/date/timelinewidget.cpp:273
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Lanĉi: "
 
-#: core/app/date/timelinewidget.cpp:302
+#: core/app/date/timelinewidget.cpp:274
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Fino: "
 
-#: core/app/date/timelinewidget.cpp:309
+#: core/app/date/timelinewidget.cpp:281
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -5795,7 +5795,7 @@ msgstr ""
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:231
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Aŭtomata korekto de lenso"
@@ -26723,7 +26723,7 @@ msgid ""
 "p>"
 msgstr "<p>digiKam provos komenci nun, sed ĝi <b>ne</b> estos funkcia.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:215
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26736,7 +26736,7 @@ msgstr ""
 "funkcia. Bonvolu kontroli la datumbazajn agordojn en la <b>agorda menuo</b>."
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:224
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26749,12 +26749,12 @@ msgstr ""
 "komenci nun, sed ĝi <b>ne</b> estos funkcia. Bonvolu kontroli la datumbazajn "
 "agordojn en la <b>agorda menuo</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:238
+#: core/libs/album/manager/albummanager_database.cpp:243
 #, kde-format
 msgid "Failed to initialize the database."
 msgstr "Malsukcesis pravalorizi la datumbazon."
 
-#: core/libs/album/manager/albummanager_database.cpp:260
+#: core/libs/album/manager/albummanager_database.cpp:266
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26776,7 +26776,7 @@ msgstr ""
 "la kolekto. Se vi certas, ke vi volas daŭrigi, alklaku 'Jes'. Alie, alklaku "
 "'Ne' kaj korektu vian datumbazan signaron antaŭ rekomenci digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:303
+#: core/libs/album/manager/albummanager_database.cpp:309
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26787,7 +26787,7 @@ msgstr ""
 "sistemo.<br/> Bonvolu elekti la plej taŭga opcio por trakti ĉi tiun "
 "situacion:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:322
+#: core/libs/album/manager/albummanager_database.cpp:328
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26799,7 +26799,7 @@ msgstr ""
 "aŭ la agordoj de dosiersistemaj.<br/>La kolekto nun troviĝas ĉe ĉi tiu loko: "
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:341
+#: core/libs/album/manager/albummanager_database.cpp:347
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26808,7 +26808,7 @@ msgstr ""
 "La kolekto troviĝas sur konserveja aparato, kiu ne ĉiam estas ligita. Marku "
 "la kolekton kiel forprenebla kolekto."
 
-#: core/libs/album/manager/albummanager_database.cpp:348
+#: core/libs/album/manager/albummanager_database.cpp:354
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26816,19 +26816,19 @@ msgid ""
 msgstr ""
 "Ne agu nun. Mi ŝatus solvi la problemon poste uzante la agordan dialogon"
 
-#: core/libs/album/manager/albummanager_database.cpp:362
+#: core/libs/album/manager/albummanager_database.cpp:368
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kolekto ne Trovita"
 
-#: core/libs/album/manager/albummanager_database.cpp:468
+#: core/libs/album/manager/albummanager_database.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Datumbaza Dosierujo"
 
-#: core/libs/album/manager/albummanager_database.cpp:469
+#: core/libs/album/manager/albummanager_database.cpp:475
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26844,33 +26844,33 @@ msgstr ""
 "situantaj en la dosierujo \"%2\" - aŭ ignori la malnovan dosieron kaj "
 "komenci per nova datumbazo?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:479
-#: core/libs/album/manager/albummanager_database.cpp:546
-#: core/libs/album/manager/albummanager_database.cpp:568
+#: core/libs/album/manager/albummanager_database.cpp:485
+#: core/libs/album/manager/albummanager_database.cpp:552
+#: core/libs/album/manager/albummanager_database.cpp:574
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Ĝisdatigi/promocii datumbazon"
 
-#: core/libs/album/manager/albummanager_database.cpp:481
-#: core/libs/album/manager/albummanager_database.cpp:548
-#: core/libs/album/manager/albummanager_database.cpp:570
-#: core/libs/album/manager/albummanager_database.cpp:618
+#: core/libs/album/manager/albummanager_database.cpp:487
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:576
+#: core/libs/album/manager/albummanager_database.cpp:624
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Krei novan datumbazon"
 
-#: core/libs/album/manager/albummanager_database.cpp:537
-#: core/libs/album/manager/albummanager_database.cpp:560
-#: core/libs/album/manager/albummanager_database.cpp:610
-#: core/libs/album/manager/albummanager_database.cpp:642
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:566
+#: core/libs/album/manager/albummanager_database.cpp:616
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Nova Datumbaza Dosierujo"
 
-#: core/libs/album/manager/albummanager_database.cpp:538
+#: core/libs/album/manager/albummanager_database.cpp:544
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26885,15 +26885,15 @@ msgstr ""
 "dosieron, komenci per nova datumbazo, aŭ kopii la nunan datumbazon al ĉi tiu "
 "loko kaj daŭre uzi ĝin. ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:550
-#: core/libs/album/manager/albummanager_database.cpp:620
-#: core/libs/album/manager/albummanager_database.cpp:651
+#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:626
+#: core/libs/album/manager/albummanager_database.cpp:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopii Aktualan Datumbazon"
 
-#: core/libs/album/manager/albummanager_database.cpp:561
+#: core/libs/album/manager/albummanager_database.cpp:567
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26906,7 +26906,7 @@ msgstr ""
 "versio de digiKam.</p> <p>Ĉu vi ŝatus ĝisdatigi la malnovan datumbazan "
 "dosieron aŭ komenci per nova datumbazo?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:596
+#: core/libs/album/manager/albummanager_database.cpp:602
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26915,7 +26915,7 @@ msgstr ""
 "Malsukcesis kopii la malnovan datumbazan dosieron (\"%1\") al ĝia nova loko "
 "(\"%2\"). Provante ĝisdatigi malnovajn datumbazojn."
 
-#: core/libs/album/manager/albummanager_database.cpp:611
+#: core/libs/album/manager/albummanager_database.cpp:617
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26926,7 +26926,7 @@ msgstr ""
 "datumbazon.</p><p>Ĉu vi ŝatus kopii la nunan datumbazon al ĉi tiu loko kaj "
 "daŭrigi uzi ĝin, aŭ komenci per nova datumbazo?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:649
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26939,13 +26939,13 @@ msgstr ""
 "uzi ĉi tiun ekzistantan dosieron kiel la novan datumbazon, aŭ forigi ĝin kaj "
 "kopii la nunan datumbazon al ĉi tiu loko?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:653
+#: core/libs/album/manager/albummanager_database.cpp:659
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Uzi Ekzistantan Dosieron"
 
-#: core/libs/album/manager/albummanager_database.cpp:708
+#: core/libs/album/manager/albummanager_database.cpp:714
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26954,7 +26954,7 @@ msgstr ""
 "Malsukcesis sekurkopii la ekzistantan datumbazan dosieron (\"%1\"). Rifuzo "
 "anstataŭigi dosieron sen sekurkopio, uzante la ekzistantan dosieron."
 
-#: core/libs/album/manager/albummanager_database.cpp:726
+#: core/libs/album/manager/albummanager_database.cpp:732
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26963,12 +26963,12 @@ msgstr ""
 "Malsukcesis kopii la malnovan datumbazan dosieron (\"%1\") al ĝia nova loko "
 "(\"%2\"). Komencante kun malplena datumbazo."
 
-#: core/libs/album/manager/albummanager_database.cpp:749
+#: core/libs/album/manager/albummanager_database.cpp:755
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr "<p><b>Bonvolu kontroli la datumbazan agordon en ĉi dialogo.</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:765
+#: core/libs/album/manager/albummanager_database.cpp:771
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -36309,7 +36309,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Kolora etikedo"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1485
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1470
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -41333,15 +41333,13 @@ msgstr "Ŝalti ludadon en buklo"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "Kadro Malantaŭen"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr "Antaŭen"
+msgstr "Kadro Antaŭen"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -66929,14 +66927,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgctxt "@title:window"
-#~ msgid "Enter Flickr Login URL"
-#~ msgstr "Enigi Flickr-ensalutan URL"
-
-#~ msgid ""
-#~ "Copy the full URL from the external browser that contains the "
-#~ "\"oauth_token\" entry:"
-#~ msgstr ""
-#~ "Kopiu la plenan URL el la ekstera retumilo, kiu enhavas la enskribon "
-#~ "\"oauth_token\":"

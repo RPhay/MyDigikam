@@ -19,7 +19,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "digikam_version.h"
 
 #if defined(Q_CC_CLANG)
@@ -141,21 +140,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
     try
     {
-        Exiv2::Image::AutoPtr image;
-
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-        image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-        image        = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
-
-#else
-
-        image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
-
-#endif
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
 
         image->readMetadata();
 
@@ -246,25 +231,11 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             QString xmpSidecarPath = sidecarFilePathForFile(filePath);
             QFileInfo xmpSidecarFileInfo(xmpSidecarPath);
 
-            Exiv2::Image::AutoPtr xmpsidecar;
-
             if (xmpSidecarFileInfo.exists() && xmpSidecarFileInfo.isReadable())
             {
                 // Read sidecar data
 
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
-
-                xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
-
-#elif defined __MINGW32__ // krazy:exclude=cpp
-
-                xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
-
-#else
-
-                xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
-
-#endif
+                Exiv2::Image::AutoPtr xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
 
                 xmpsidecar->readMetadata();
 
