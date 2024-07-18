@@ -9,6 +9,13 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+if [ "$1" == "" ] ; then
+
+    echo "Error: missing Exiftool version to handle (eg. 12.81)..."
+    exit
+
+fi
+
 DK_UPLOADURL="digikam@tinami.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/exiftool/"
 
@@ -52,5 +59,7 @@ echo "Cleanup local files..."
 rm -fr Image-ExifTool.tar.gz
 rm -fr exiftool.zip
 rm -fr VERSION
+rm -fr exiftool-$1_64.zip
+rm -fr exiftool-$1_64
 
 echo "All done..."
