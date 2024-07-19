@@ -2754,7 +2754,7 @@ int EclSolar::GRSBound(bool firstc, double& lat1, double& lng1, double& lat2, do
         lng1 /= degrad;
     };
 
-    if (lat1 < 100.0)  // intersection #2
+    if (lat2 < 100.0)  // intersection #2
     {
         vrx2[2] = 0;
         vrx2 = mxvct(m2, vrx2);
