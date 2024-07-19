@@ -32,12 +32,12 @@ public:
 
 public:
 
-    void setStepWidth(double s);  // set the step width (seconds)
-    void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
-    void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto
-    void getTime();   // Get System Time and Date
+    void setStepWidth(double s);                                                // set the step width (seconds)
+    void setDeltaTAI_UTC(double d);                                             // set IERS Parameter TAI - UTC
+    void setAutoTAI_UTC();                                                      // IERS Parameter TAI - UTC to auto
+    void getTime();                                                             // Get System Time and Date
     void setDeltaRT(double drt);
-    void setMJD(int year, int month, int day, int hour, int min, double sec);// set time
+    void setMJD(int year, int month, int day, int hour, int min, double sec);   // set time
     static void getDatefromMJD(double mjd, int& year, int& month, int& day, int& hour, int& min, double& sec);
     void setSatFile(char* fname);
     void setPlanet(char* pname);
@@ -55,7 +55,7 @@ public:
 
 private:
 
-    void plsatinit();  // initialize PlanetarySats
+    void plsatinit();                           // initialize PlanetarySats
     static double atan23(double y, double x);   // atan without singularity for x,y=0
     void getMercury();
     void getVenus();
@@ -68,52 +68,52 @@ private:
 
     // data fields
 
-    char pls_satelmfl[205];  // name of file for satellite state vectors
-    char pls_satname[40];  // name of satellite
-    char pls_plntname[40]; // name of planet
+    char pls_satelmfl[205]  = { 0 };    // name of file for satellite state vectors
+    char pls_satname[40]    = { 0 };    // name of satellite
+    char pls_plntname[40]   = { 0 };    // name of planet
 
-    bool pls_moonflg;  // true if Moon, false if other body
+    bool pls_moonflg        = false;    // true if Moon, false if other body
 
-    int pls_day;           // date
-    int pls_month;
-    int pls_year;
-    int pls_hour;
-    int pls_minute;
-    int pls_second;
-    double pls_time;     // current time in MJD (UTC)
-    double pls_del_tdut;   // TDT - UT in sec
-    int pls_del_auto;      // 1 = automatic del_tdut,  0 = manual
-    double pls_step;       // stepwidth in sec
-    double pls_delta_rt;   // delta time to R/T in hours
+    int pls_day             = 0;        // date
+    int pls_month           = 0;
+    int pls_year            = 0;
+    int pls_hour            = 0;
+    int pls_minute          = 0;
+    int pls_second          = 0;
+    double pls_time         = 0.0;      // current time in MJD (UTC)
+    double pls_del_tdut     = 0.0;      // TDT - UT in sec
+    int pls_del_auto        = 0;        // 1 = automatic del_tdut,  0 = manual
+    double pls_step         = 0.0;      // stepwidth in sec
+    double pls_delta_rt     = 0.0;      // delta time to R/T in hours
 
-    double pls_tepoch;  // MJD epoch of state vector (TT)
-    Vec3 pls_rep;  // state vector km and km/s
+    double pls_tepoch       = 0.0;      // MJD epoch of state vector (TT)
+    Vec3 pls_rep;                       // state vector km and km/s
     Vec3 pls_vep;
 
-    double pls_ra; // Right Ascension
-    double pls_per; // argument of perige center
-    double pls_m0;  // mean anomaly
-    double pls_ecc; // eccentricity
-    double pls_inc; // inclination
-    double pls_a;  // semi-major axis (km)
-    double pls_n0;  // mean motion  (rev/day)
+    double pls_ra           = 0.0;      // Right Ascension
+    double pls_per          = 0.0;      // argument of perige center
+    double pls_m0           = 0.0;      // mean anomaly
+    double pls_ecc          = 0.0;      // eccentricity
+    double pls_inc          = 0.0;      // inclination
+    double pls_a            = 0.0;      // semi-major axis (km)
+    double pls_n0           = 0.0;      // mean motion  (rev/day)
 
-    double pls_GM;  // graviatational constant (m^3/s^2)
-    double pls_J2;  // J2 gravitational term
-    double pls_R0; // equatorial radius (km)
-    double pls_flat;  // flattening factor
-    double pls_axl0;  // l-direction of rotation axis
-    double pls_axl1;  // delta of axl0
-    double pls_axb0;  // b-direction of rotation axis
-    double pls_axb1;  // delta of axb0
-    double pls_W;    // location of prime meridian
-    double pls_Wd;   // daily variation of W.
+    double pls_GM           = 0.0;      // graviatational constant (m^3/s^2)
+    double pls_J2           = 0.0;      // J2 gravitational term
+    double pls_R0           = 0.0;      // equatorial radius (km)
+    double pls_flat         = 0.0;      // flattening factor
+    double pls_axl0         = 0.0;      // l-direction of rotation axis
+    double pls_axl1         = 0.0;      // delta of axl0
+    double pls_axb0         = 0.0;      // b-direction of rotation axis
+    double pls_axb1         = 0.0;      // delta of axb0
+    double pls_W            = 0.0;      // location of prime meridian
+    double pls_Wd           = 0.0;      // daily variation of W.
 
-    Vec3 pls_r;  // current state vector  m and m/s
+    Vec3 pls_r;                         // current state vector  m and m/s
     Vec3 pls_v;
-    double pls_lat;  // planetary latitude (decimal degrees)
-    double pls_lng;  // planetary longitude (decimal degrees)
-    double pls_height; // height above reference ellipsoid (km)
+    double pls_lat          = 0.0;      // planetary latitude (decimal degrees)
+    double pls_lng          = 0.0;      // planetary longitude (decimal degrees)
+    double pls_height       = 0.0;      // height above reference ellipsoid (km)
 };
 
 } // namespace Marble
