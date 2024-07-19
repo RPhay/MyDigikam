@@ -27,7 +27,6 @@
 
 // Local includes
 
-#include "GeoDataPolygon_p.h"
 #include "GeoDataCoordinates.h"
 #include "GeoDataTypes.h"
 #include "digikam_debug.h"
