@@ -24,7 +24,7 @@ namespace dgml
 
 // One static list of all attribute names, to avoid string comparisons all-over-the-place
 
-const char dgmlAttr_nameSpace20[] = "http://edu.kde.org/marble/dgml/2.0";
+const char dgmlAttr_nameSpace20[] = "http://edu.kde.org/marble/dgml/2.0";   // krazy:exclude=insecurenet
 
 const char dgmlAttr_alpha[]            = "alpha";
 const char dgmlAttr_attribution[]      = "attribution";

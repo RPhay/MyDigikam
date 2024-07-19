@@ -44,7 +44,7 @@ public:
      *@code
      *<Placemark>
      *    ...
-     *    <ExtendedData xmlns:mx="http://marble.kde.org">
+     *    <ExtendedData xmlns:mx="http://marble.kde.org">                       // krazy:exclude=insecurenet
      *        <mx:OsmPlacemarkData id=...>
      *             <mx:tag k="key" v="value"/>
      *             .. more tags

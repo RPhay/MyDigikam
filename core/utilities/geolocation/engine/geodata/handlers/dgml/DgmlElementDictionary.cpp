@@ -24,7 +24,7 @@ namespace dgml
 
 // One static list of all tag names, to avoid string comparisons all-over-the-place
 
-const char dgmlTag_nameSpace20[] = "http://edu.kde.org/marble/dgml/2.0";
+const char dgmlTag_nameSpace20[] = "http://edu.kde.org/marble/dgml/2.0";    // krazy:exclude=insecurenet
 
 const char dgmlTag_Available[] = "available";
 const char dgmlTag_Blending[] = "blending";

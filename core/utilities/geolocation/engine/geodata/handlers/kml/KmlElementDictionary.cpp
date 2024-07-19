@@ -23,12 +23,12 @@ namespace Marble
 namespace kml
 {
 
-const char kmlTag_nameSpace20[] = "http://earth.google.com/kml/2.0";
-const char kmlTag_nameSpace21[] = "http://earth.google.com/kml/2.1";
-const char kmlTag_nameSpace22[] = "http://earth.google.com/kml/2.2";
-const char kmlTag_nameSpaceOgc22[] = "http://www.opengis.net/kml/2.2";
-const char kmlTag_nameSpaceGx22[] = "http://www.google.com/kml/ext/2.2";
-const char kmlTag_nameSpaceMx[] = "http://marble.kde.org";
+const char kmlTag_nameSpace20[] = "http://earth.google.com/kml/2.0";        // krazy:exclude=insecurenet
+const char kmlTag_nameSpace21[] = "http://earth.google.com/kml/2.1";        // krazy:exclude=insecurenet
+const char kmlTag_nameSpace22[] = "http://earth.google.com/kml/2.2";        // krazy:exclude=insecurenet
+const char kmlTag_nameSpaceOgc22[] = "http://www.opengis.net/kml/2.2";      // krazy:exclude=insecurenet
+const char kmlTag_nameSpaceGx22[] = "http://www.google.com/kml/ext/2.2";    // krazy:exclude=insecurenet
+const char kmlTag_nameSpaceMx[] = "http://marble.kde.org";                  // krazy:exclude=insecurenet
 
 const char kmlTag_address[] = "address";
 const char kmlTag_AddressDetails[] = "AddressDetails";

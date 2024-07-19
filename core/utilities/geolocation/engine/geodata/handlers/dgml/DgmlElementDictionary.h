@@ -27,7 +27,7 @@ namespace dgml
 {
 
 // Lists all known DGML 2.0 tags
-// http://edu.kde.org/marble/apis/dgml/documentation/dgmltags.html)
+// https://edu.kde.org/marble/apis/dgml/documentation/dgmltags.html
 
 DIGIKAM_EXPORT extern const char dgmlTag_nameSpace20[];
 

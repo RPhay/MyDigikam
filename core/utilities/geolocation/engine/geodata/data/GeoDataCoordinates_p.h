@@ -114,7 +114,7 @@ public:
 
     // Helper functions for UTM-related development.
     // Based on Chuck Taylor work:
-    // http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html
+    // https://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html
 
     /**
      * Computes the ellipsoidal distance from the equator to a point at a

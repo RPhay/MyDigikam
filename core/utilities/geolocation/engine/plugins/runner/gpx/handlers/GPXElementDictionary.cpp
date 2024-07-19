@@ -26,8 +26,8 @@ namespace gpx
  * One static list of all tag names, to avoid string comparisons all-over-the-place.
  */
 
-const char gpxTag_nameSpace10[] = "http://www.topografix.com/GPX/1/0";
-const char gpxTag_nameSpace11[] = "http://www.topografix.com/GPX/1/1";
+const char gpxTag_nameSpace10[] = "http://www.topografix.com/GPX/1/0";              // krazy:exclude=insecurenet
+const char gpxTag_nameSpace11[] = "http://www.topografix.com/GPX/1/1";              // krazy:exclude=insecurenet
 
 const char gpxTag_ele[] = "ele";
 const char gpxTag_extensions[] = "extensions";
@@ -49,7 +49,7 @@ const char gpxTag_link [] = "link";
 const char gpxTag_url [] = "url";
 const char gpxTag_urlname [] = "urlname";
 
-const char gpxTag_nameSpaceGarminTrackPointExt1[] = "http://www.garmin.com/xmlschemas/TrackPointExtension/v1";
+const char gpxTag_nameSpaceGarminTrackPointExt1[] = "http://www.garmin.com/xmlschemas/TrackPointExtension/v1";  // krazy:exclude=insecurenet
 const char gpxTag_TrackPointExtension[] = "TrackPointExtension";
 const char gpxTag_hr[] = "hr";
 
