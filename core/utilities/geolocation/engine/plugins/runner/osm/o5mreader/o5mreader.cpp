@@ -289,11 +289,13 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
                 return O5MREADER_ITERATE_RET_ERR;
             }
 
-            fseek(
+            int ret = fseek(
                 pReader->f,
                 (pReader->current - ftell(pReader->f)) + pReader->offset,
                 SEEK_CUR
             );
+
+            (void)ret;
 
             pReader->offset = 0;
         }
@@ -312,12 +314,13 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
             return O5MREADER_ITERATE_RET_DONE;
         }
 
-        if (O5MREADER_DS_RESET == ds->type)
+        if      (O5MREADER_DS_RESET == ds->type)
         {
             o5mreader_reset(pReader);
         }
-
-        else if (0xf0 == ds->type) {}
+        else if (0xf0 == ds->type)
+        {
+        }
         else
         {
             if (o5mreader_readUInt(pReader, &pReader->offset) == O5MREADER_RET_ERR)
@@ -349,8 +352,6 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
             }
         }
     }
-
-
 }
 
 int o5mreader_thereAreNoMoreData(O5mreader* pReader)
