@@ -35,6 +35,8 @@ public:
     EclSolar();
     ~EclSolar();
 
+public:
+
     int getYear() const;  // the year currently used by EclSolar
     void putYear(int yr);  // set the year to be used by EclSolar
     int getNumberEclYear();  // get the number of eclipses of the currently selected year
@@ -97,6 +99,8 @@ private:
     static double navCourse(double lat1, double lng1, double lat2, double lng2);  // navigation course from p1 to p2
     static void navNewPos(double d, double an, double lat1, double lng1, double& lat2, double& lng2);
     static double sunObscure(double l1, double l2, double m);  // get the Obscuration of the Sun
+
+private:
 
     // data fields
 

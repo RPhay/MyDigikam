@@ -30,6 +30,8 @@ public:
     PlanetarySats();
     ~PlanetarySats();
 
+public:
+
     void setStepWidth(double s);  // set the step width (seconds)
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto

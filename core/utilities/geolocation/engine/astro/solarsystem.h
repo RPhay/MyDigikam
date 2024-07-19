@@ -30,6 +30,8 @@ public:
     SolarSystem();
     ~SolarSystem();
 
+public:
+
     void setTimezone(double d);  // set timezone for I/O
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto

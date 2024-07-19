@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "attlib.h"
+// Local includes
 
+#include "attlib.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -81,13 +82,6 @@ public:
 
 private:
 
-    double c3[9], s3[9];
-    double c[9], s[9];
-    double m2, m3, m4, m5, m6;
-    double d, a, uu, tt;
-    double cl, sl, cb, sb;
-    double u, v, dl, dr, db;
-
     void addthe(double c1, double s1, double c2, double s2,
                 double& cc, double& ss);
     void term(int i1, int i, int it, double dlc, double dls, double drc,
@@ -97,6 +91,16 @@ private:
     void pertjup();
     void pertsat();
     void pertmoo();
+
+private:
+
+    double c3[9] = { 0.0 }, s3[9] = { 0.0 };
+    double c[9]  = { 0.0 }, s[9]  = { 0.0 };
+
+    double m2    = 0.0, m3 = 0.0, m4 = 0.0, m5 = 0.0, m6 = 0.0;
+    double d     = 0.0, a  = 0.0, uu = 0.0, tt = 0.0;
+    double cl    = 0.0, sl = 0.0, cb = 0.0, sb = 0.0;
+    double u     = 0.0, v  = 0.0, dl = 0.0, dr = 0.0, db = 0.0;
 };
 
 class DIGIKAM_EXPORT Moon200     // Calculating the position of the Moon in J2000.0
@@ -107,12 +111,6 @@ public:
     Vec3 position(double t);    // position of the Moon
 
 private:
-
-    double dgam, dlam, n, gam1c, sinpi;
-    double l0, l, ls, f, d, s;
-    double dl0, dl, dls, df, dd, ds;
-    double co[13][4];
-    double si[13][4];
 
     void addthe(double c1, double s1, double c2, double s2,
                 double& c, double& s);
@@ -129,6 +127,15 @@ private:
               double& n, double& x, double& y);
     void solarn(double& n);
     void planetary(double t);
+
+private:
+
+    double dgam = 0.0, dlam = 0.0, n   = 0.0, gam1c = 0.0, sinpi = 0.0;
+    double l0   = 0.0, l    = 0.0, ls  = 0.0, f     = 0.0, d     = 0.0, s  = 0.0;
+    double dl0  = 0.0, dl   = 0.0, dls = 0.0, df    = 0.0, dd    = 0.0, ds = 0.0;
+
+    double co[13][4] = { { 0.0 } };
+    double si[13][4] = { { 0.0 } };
 };
 
 class DIGIKAM_EXPORT Eclipse      // Eclipse Calculations
@@ -143,22 +150,25 @@ public:
     void umbra(double jd, double tdut, Vec3& vrm, Vec3& ves,
                double& dpn, double& pang);
     double duration(double jd, double tdut, double& width);
+
     Vec3 GetRSun();     // get Earth - Sun vector in Earth radii
     Vec3 GetRMoon();    // get Earth - Moon vector in Earth radii
     double GetEp2();    // get the ep2 value
+
     int lunar(double jd, double tdut);
 
 private:
 
     Sun200   sun;
     Moon200  moon;
-    Vec3     rs, rm;     // position of the Sun and the Moon
-    Vec3     eshadow;    // unit vector in direction of shadow
-    Vec3     rint;       // intersection shadow axis - Earth surface
-    double   t;          // time in Julian Centuries
-    double   ep2;        // correction for Apparent Sideral Time
-    double   d_umbra;    // diameter of umbra in Earth Radii
-    double   d_penumbra; // diameter of penumbra in Earth Radii
+    Vec3     rs, rm;            // position of the Sun and the Moon
+    Vec3     eshadow;           // unit vector in direction of shadow
+    Vec3     rint;              // intersection shadow axis - Earth surface
+
+    double   t          = 0.0;  // time in Julian Centuries
+    double   ep2        = 0.0;  // correction for Apparent Sideral Time
+    double   d_umbra    = 0.0;  // diameter of umbra in Earth Radii
+    double   d_penumbra = 0.0;  // diameter of penumbra in Earth Radii
 
 private:
 

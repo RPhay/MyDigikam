@@ -60,7 +60,6 @@ EclSolar::EclSolar()
 
 EclSolar::~EclSolar()
 {
-
 }
 
 double EclSolar::atan23(double y, double x)
@@ -84,6 +83,7 @@ double EclSolar::atan23(double y, double x)
 void EclSolar::esinit()
 {
     // initialize eclipse data
+
     eb_start_called = false;
     eb_moonph_called = false;
     eb_lunecl = true;
