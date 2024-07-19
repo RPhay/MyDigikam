@@ -46,9 +46,7 @@ public:
     {
     }
 
-    ~Private()
-    {
-    }
+    ~Private() = default;
 
 public:
 
@@ -68,16 +66,20 @@ RenderPlugin::RenderPlugin(const MarbleModel* marbleModel)
     : d(new Private(marbleModel))
 {
     connect(&d->m_action, SIGNAL(toggled(bool)),
-            this,         SLOT(setVisible(bool)));
-    connect(this,         SIGNAL(visibilityChanged(bool, QString)),
-            &d->m_action, SLOT(setChecked(bool)));
-    connect(this,         SIGNAL(enabledChanged(bool)),
-            &d->m_action, SLOT(setVisible(bool)));
-    connect(this,         SIGNAL(enabledChanged(bool)),
-            SIGNAL(actionGroupsChanged()));
+            this, SLOT(setVisible(bool)));
 
-    connect(this, SIGNAL(visibilityChanged(bool, QString)),
+    connect(this, SIGNAL(visibilityChanged(bool,QString)),
+            &d->m_action, SLOT(setChecked(bool)));
+
+    connect(this, SIGNAL(enabledChanged(bool)),
+            &d->m_action, SLOT(setVisible(bool)));
+
+    connect(this, SIGNAL(enabledChanged(bool)),
+            this, SIGNAL(actionGroupsChanged()));
+
+    connect(this, SIGNAL(visibilityChanged(bool,QString)),
             this, SIGNAL(repaintNeeded()));
+
     connect(this, SIGNAL(settingsChanged(QString)),
             this, SIGNAL(repaintNeeded()));
 }
@@ -99,6 +101,7 @@ QAction* RenderPlugin::action() const
     d->m_action.setIcon(icon());
     d->m_action.setText(guiString());
     d->m_action.setToolTip(description());
+
     return &d->m_action;
 }
 
@@ -123,6 +126,7 @@ QStandardItem* RenderPlugin::item()
     d->m_item.setFlags(d->m_item.flags() & ~Qt::ItemIsSelectable);
 
     // Custom data
+
     d->m_item.setData(nameId(), RenderPluginModel::NameId);
     d->m_item.setData((bool) qobject_cast<DialogConfigurationInterface*>(this), RenderPluginModel::ConfigurationDialogAvailable);
     d->m_item.setData(backendTypes(), RenderPluginModel::BackendTypes);
@@ -175,6 +179,7 @@ void RenderPlugin::setUserCheckable(bool checkable)
     {
         d->m_action.setEnabled(checkable);
         d->m_userCheckable = checkable;
+
         Q_EMIT userCheckableChanged(checkable);
     }
 }
@@ -246,8 +251,9 @@ bool RenderPlugin::setSetting(const QString& key, const QVariant& value)
 
     if (settings.contains(key))
     {
-        settings [ key ] = value;
+        settings[key] = value;
         setSettings(settings);
+
         return true;
     }
 

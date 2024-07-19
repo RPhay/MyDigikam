@@ -32,10 +32,10 @@ class Q_DECL_HIDDEN GeoSceneDocumentPrivate
 public:
 
     GeoSceneDocumentPrivate()
-        : m_head(new GeoSceneHead),
-          m_map(new GeoSceneMap),
+        : m_head    (new GeoSceneHead),
+          m_map     (new GeoSceneMap),
           m_settings(new GeoSceneSettings),
-          m_legend(new GeoSceneLegend)
+          m_legend  (new GeoSceneLegend)
     {
     }
 
@@ -56,12 +56,12 @@ public:
 
 GeoSceneDocument::GeoSceneDocument()
     : GeoDocument(),
-      d(new GeoSceneDocumentPrivate)
+      d          (new GeoSceneDocumentPrivate)
 {
     // Establish connection of property changes to the outside, e.g. the LegendBrowser
 
-    connect(d->m_settings, SIGNAL(valueChanged(QString, bool)),
-            this, SIGNAL(valueChanged(QString, bool)));
+    connect(d->m_settings, SIGNAL(valueChanged(QString,bool)),
+            this, SIGNAL(valueChanged(QString,bool)));
 }
 
 GeoSceneDocument::~GeoSceneDocument()

@@ -58,7 +58,9 @@ void OsmNominatimRunner::reverseGeocoding(const GeoDataCoordinates& coordinates)
 {
     m_coordinates = coordinates;
     QString base  = QString::fromUtf8("https://nominatim.openstreetmap.org/reverse?format=xml&addressdetails=1");
+
     // @todo: Alternative URI with addressdetails=1 could be used for shorter placemark name
+
     QString query = QString::fromUtf8("&lon=%1&lat=%2&accept-language=%3");
     double lon    = coordinates.longitude(GeoDataCoordinates::Degree);
     double lat    = coordinates.latitude(GeoDataCoordinates::Degree);
@@ -78,10 +80,11 @@ void OsmNominatimRunner::reverseGeocoding(const GeoDataCoordinates& coordinates)
     connect(&timer, SIGNAL(timeout()),
             &eventLoop, SLOT(quit()));
 
-    connect(this, SIGNAL(reverseGeocodingFinished(GeoDataCoordinates, GeoDataPlacemark)),
+    connect(this, SIGNAL(reverseGeocodingFinished(GeoDataCoordinates,GeoDataPlacemark)),
             &eventLoop, SLOT(quit()));
 
     // @todo FIXME Must currently be done in the main thread, see bug 257376
+
     QTimer::singleShot(0, this, SLOT(startReverseGeocoding()));
     timer.start();
 
@@ -110,6 +113,7 @@ void OsmNominatimRunner::handleResult(QNetworkReply* reply)
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "Cannot parse osm nominatim result " << xml.toString();
         returnNoReverseGeocodingResult();
+
         return;
     }
 
@@ -129,7 +133,6 @@ void OsmNominatimRunner::handleResult(QNetworkReply* reply)
 
         Q_EMIT reverseGeocodingFinished(m_coordinates, placemark);
     }
-
     else
     {
         returnNoReverseGeocodingResult();
@@ -147,7 +150,9 @@ void OsmNominatimRunner::extractChildren(const QDomNode& node, GeoDataPlacemark&
     tagTranslator[QLatin1String("state")]          = QLatin1String("addr:state");
     tagTranslator[QLatin1String("postcode")]       = QLatin1String("addr:postcode");
     tagTranslator[QLatin1String("country_code")]   = QLatin1String("addr:country"); // correct mapping
+
     // @todo Find a proper mapping for those
+
     //tagTranslator["village"] = "";
     //tagTranslator["town"] = "";
 

@@ -44,9 +44,9 @@ OsmRelationManagerWidget::OsmRelationManagerWidget(GeoDataPlacemark* placemark,
                                                    const QHash<qint64, OsmPlacemarkData>* relations,
                                                    QWidget* parent)
     : QWidget(parent),
-      d(new OsmRelationManagerWidgetPrivate)
+      d      (new OsmRelationManagerWidgetPrivate)
 {
-    d->m_placemark = placemark;
+    d->m_placemark    = placemark;
     d->m_allRelations = relations;
     d->setupUi(this);
     d->populateRelationsList();
@@ -59,14 +59,17 @@ OsmRelationManagerWidget::OsmRelationManagerWidget(GeoDataPlacemark* placemark,
     d->m_addRelation->setMenu(d->m_relationDropMenu);
     d->populateDropMenu();
 
-    QObject::connect(d->m_currentRelations, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-                     this, SLOT(handleDoubleClick(QTreeWidgetItem*, int)));
+    QObject::connect(d->m_currentRelations, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+                     this, SLOT(handleDoubleClick(QTreeWidgetItem*,int)));
+
     QObject::connect(d->m_currentRelations, SIGNAL(customContextMenuRequested(QPoint)),
                      this, SLOT(handleRelationContextMenuRequest(QPoint)));
+
     QObject::connect(d->m_relationDropMenu, SIGNAL(triggered(QAction*)),
                      this, SLOT(addRelation(QAction*)));
-    QObject::connect(d->m_currentRelations, SIGNAL(itemChanged(QTreeWidgetItem*, int)),
-                     this, SLOT(handleItemChange(QTreeWidgetItem*, int)));
+
+    QObject::connect(d->m_currentRelations, SIGNAL(itemChanged(QTreeWidgetItem*,int)),
+                     this, SLOT(handleItemChange(QTreeWidgetItem*,int)));
 }
 
 OsmRelationManagerWidget::~OsmRelationManagerWidget()
@@ -77,6 +80,7 @@ OsmRelationManagerWidget::~OsmRelationManagerWidget()
 void OsmRelationManagerWidget::addRelation(QAction* relationAction)
 {
     // The QAction::text() adds a '&' for some reason
+
     QString relationText = relationAction->text().remove(QLatin1Char('&'));
 
     if (relationText == i18n("New Relation"))
@@ -98,17 +102,18 @@ void OsmRelationManagerWidget::addRelation(QAction* relationAction)
         d->m_currentRelations->addTopLevelItem(newRelationItem);
 
         // Make the user complete the role column
+
         newRelationItem->setFlags(newRelationItem->flags() | Qt::ItemIsEditable);
         d->m_currentRelations->editItem(newRelationItem, Column::Role);
 
         // This tells the annotate plugin to add the new relation to its list
+
         Q_EMIT relationCreated(relationData);
     }
-
     else
     {
         qint64 id = relationAction->data().toLongLong();
-        OsmPlacemarkData relationData = d->m_allRelations->value(id);
+        OsmPlacemarkData relationData    = d->m_allRelations->value(id);
         QTreeWidgetItem* newRelationItem = new QTreeWidgetItem();
         newRelationItem->setText(Column::Name, relationData.tagValue(QStringLiteral("name")));
         newRelationItem->setText(Column::Type, relationData.tagValue(QStringLiteral("type")));
@@ -116,6 +121,7 @@ void OsmRelationManagerWidget::addRelation(QAction* relationAction)
         d->m_currentRelations->addTopLevelItem(newRelationItem);
 
         // Make the user complete the role column
+
         newRelationItem->setFlags(newRelationItem->flags() | Qt::ItemIsEditable);
         d->m_currentRelations->editItem(newRelationItem, Column::Role);
     }
@@ -132,13 +138,14 @@ void OsmRelationManagerWidget::handleDoubleClick(QTreeWidgetItem* item, int colu
     Qt::ItemFlags flags = item->flags();
 
     // Only the "role" column should be editable
-    if (column == Column::Role)
+
+    if      (column == Column::Role)
     {
         item->setFlags(flags | Qt::ItemIsEditable);
+
         // If the double click didn't occur on the "role" column, and the item
         // is editable make it uneditable
     }
-
     else if (flags & Qt::ItemIsEditable)
     {
         item->setFlags(flags ^ Qt::ItemIsEditable);
@@ -148,13 +155,14 @@ void OsmRelationManagerWidget::handleDoubleClick(QTreeWidgetItem* item, int colu
 void OsmRelationManagerWidget::handleItemChange(QTreeWidgetItem* item, int column)
 {
     // Only the role column should be editable
+
     if (column != Column::Role)
     {
         return;
     }
 
     QString role = item->text(Column::Role);
-    qint64 id = item->data(Column::Name, Qt::UserRole).toLongLong();
+    qint64 id    = item->data(Column::Name, Qt::UserRole).toLongLong();
 
     d->m_placemark->osmData().addRelation(id, OsmType::Way, role);
     update();
@@ -169,16 +177,14 @@ void OsmRelationManagerWidget::handleRelationContextMenuRequest(const QPoint& po
 
     if (selectedItem)
     {
-
         QTreeWidgetItem* requestedItem = d->m_currentRelations->itemAt(point);
         qint64 id = requestedItem->data(Column::Name, Qt::UserRole).toLongLong();
 
-        if (selectedItem->text() == i18n("Remove"))
+        if      (selectedItem->text() == i18n("Remove"))
         {
             d->m_placemark->osmData().removeRelation(id);
             update();
         }
-
         else if (selectedItem->text() == i18n("Edit"))
         {
             OsmPlacemarkData relationData = d->m_allRelations->value(id);
@@ -192,6 +198,7 @@ void OsmRelationManagerWidget::handleRelationContextMenuRequest(const QPoint& po
             }
 
             Q_EMIT relationCreated(relationData);
+
             update();
         }
     }

@@ -37,14 +37,15 @@ GeoSceneGroup::~GeoSceneGroup()
 
 bool GeoSceneGroup::propertyAvailable(const QString& name, bool& available) const
 {
-    QVector<GeoSceneProperty*>::const_iterator it = m_properties.constBegin();
+    QVector<GeoSceneProperty*>::const_iterator it  = m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator end = m_properties.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         if ((*it)->name() == name)
         {
             available = (*it)->available();
+
             return true;
         }
     }
@@ -56,15 +57,17 @@ bool GeoSceneGroup::propertyAvailable(const QString& name, bool& available) cons
 
 bool GeoSceneGroup::setPropertyValue(const QString& name, bool value)
 {
-    QVector<GeoSceneProperty*>::const_iterator it = m_properties.constBegin();
+    QVector<GeoSceneProperty*>::const_iterator it  = m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator end = m_properties.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         if ((*it)->name() == name)
         {
             (*it)->setValue(value);
+
             Q_EMIT valueChanged(name, value);
+
             return true;
         }
     }
@@ -74,14 +77,15 @@ bool GeoSceneGroup::setPropertyValue(const QString& name, bool value)
 
 bool GeoSceneGroup::propertyValue(const QString& name, bool& value) const
 {
-    QVector<GeoSceneProperty*>::const_iterator it = m_properties.constBegin();
+    QVector<GeoSceneProperty*>::const_iterator it  = m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator end = m_properties.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         if ((*it)->name() == name)
         {
             value = (*it)->value();
+
             return true;
         }
     }
@@ -101,6 +105,7 @@ void GeoSceneGroup::addProperty(GeoSceneProperty* property)
     }
 
     // Remove any property that has the same name
+
     QVector<GeoSceneProperty*>::iterator it = m_properties.begin();
 
     while (it != m_properties.end())
@@ -113,7 +118,6 @@ void GeoSceneGroup::addProperty(GeoSceneProperty* property)
             m_properties.erase(it);
             break;
         }
-
         else
         {
             ++it;
@@ -123,8 +127,10 @@ void GeoSceneGroup::addProperty(GeoSceneProperty* property)
     m_properties.append(property);
 
     // Establish connection to the outside, e.g. the LegendBrowser
-    connect(property, SIGNAL(valueChanged(QString, bool)),
-            SIGNAL(valueChanged(QString, bool)));
+
+    connect(property, SIGNAL(valueChanged(QString,bool)),
+            SIGNAL(valueChanged(QString,bool)));
+
     Q_EMIT valueChanged(property->name(), property->value());
 }
 
@@ -132,10 +138,10 @@ const GeoSceneProperty* GeoSceneGroup::property(const QString& name) const
 {
     GeoSceneProperty* property = nullptr;
 
-    QVector<GeoSceneProperty*>::const_iterator it = m_properties.constBegin();
+    QVector<GeoSceneProperty*>::const_iterator it  = m_properties.constBegin();
     QVector<GeoSceneProperty*>::const_iterator end = m_properties.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         if ((*it)->name() == name)
         {
@@ -149,10 +155,10 @@ const GeoSceneProperty* GeoSceneGroup::property(const QString& name) const
 
 // implement non-const method by means of const method,
 // for details, see "Effective C++" (third edition)
+
 GeoSceneProperty* GeoSceneGroup::property(const QString& name)
 {
-    return const_cast<GeoSceneProperty*>
-           (static_cast<GeoSceneGroup const*>(this)->property(name));
+    return const_cast<GeoSceneProperty*>(static_cast<GeoSceneGroup const*>(this)->property(name));
 }
 
 QVector<GeoSceneProperty*> GeoSceneGroup::properties()
