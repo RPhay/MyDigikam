@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT MarbleZipReader
 {
 public:
 
-    MarbleZipReader(const QString& fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly);
+    explicit MarbleZipReader(const QString& fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly);
 
     explicit MarbleZipReader(QIODevice* device);
     ~MarbleZipReader();

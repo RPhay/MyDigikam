@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT TileCoordsPyramid
 public:
 
     TileCoordsPyramid(int const topLevel, int const bottomLevel);
-    TileCoordsPyramid(TileCoordsPyramid const& other);
+    explicit TileCoordsPyramid(TileCoordsPyramid const& other);
     TileCoordsPyramid();
     TileCoordsPyramid& operator=(TileCoordsPyramid const& rhs);
     ~TileCoordsPyramid();

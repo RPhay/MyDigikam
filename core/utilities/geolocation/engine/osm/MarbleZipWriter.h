@@ -38,7 +38,7 @@ class DIGIKAM_EXPORT MarbleZipWriter
 {
 public:
 
-    MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate));
+    explicit MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate));
 
     explicit MarbleZipWriter(QIODevice* device);
     ~MarbleZipWriter();

@@ -37,10 +37,11 @@ class DIGIKAM_EXPORT Vec3
 {
 public:
 
-    friend class Mat3;
-
-    Vec3(double x = 0, double y = 0, double z = 0);
+    explicit Vec3(double x = 0, double y = 0, double z = 0);
     Vec3(const Vec3& c);
+
+public:
+
     void assign(double x = 0, double y = 0, double z = 0);
     double& operator [](unsigned index);
     Vec3& operator = (const Vec3& c);
@@ -65,6 +66,8 @@ public:
 private:
 
     double v[3] = { 0.0 };
+
+    friend class Mat3;
 };
 
 /********************************************************************/
@@ -76,6 +79,9 @@ public:
 
     explicit Mat3(double x = 0);
     Mat3(const Mat3& c);
+
+public:
+
     void assign(double x11, double x12, double x13,  double x21, double x22,
                 double x23, double x31, double x32, double x33);
     void assign(double x[3][3]);                                        // assign matrix
