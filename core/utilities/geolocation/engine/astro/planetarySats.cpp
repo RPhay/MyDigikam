@@ -198,8 +198,7 @@ void PlanetarySats::getDatefromMJD(double mjd, int& year, int& month, int& day, 
 
 void PlanetarySats::setSatFile(char* fname)
 {
-    strcpy(pls_satelmfl, fname);
-
+    strncpy(pls_satelmfl, fname, sizeof(pls_satelmfl));
 }
 
 void PlanetarySats::setStateVector(double mjd, double x, double y, double z, double vx, double vy, double vz)
@@ -398,7 +397,7 @@ int PlanetarySats::getStateVector(int nsat)
 void PlanetarySats::setPlanet(char* pname)
 {
     pls_moonflg = false;
-    strcpy(pls_plntname, pname);
+    strncpy(pls_plntname, pname, sizeof(pls_plntname));
 
     if (strncmp("Mars", pname, 4) == 0)
     {

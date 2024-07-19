@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "attlib.h"
+// Local includes
 
+#include "attlib.h"
 #include "digikam_export.h"
 
 namespace Marble
@@ -30,25 +31,16 @@ class DIGIKAM_EXPORT Plan200      // Calculating the Planets in epoch J2000.0 co
 public:
 
     Plan200();
-    Vec3 velocity();   // return last calculated planet velocity
-    void state(Vec3& rs, Vec3& vs);   // return last state vector
-    Vec3 Mercury(double t);    // position of Mercury at time t
-    Vec3 Venus(double t);    // position of Venus at time t
-    Vec3 Mars(double t);    // position of Mars at time t
-    Vec3 Jupiter(double t);    // position of Jupiter at time t
-    Vec3 Saturn(double t);    // position of Saturn at time t
-    Vec3 Uranus(double t);    // position of Uranus at time t
-    Vec3 Neptune(double t);    // position of Neptune at time t
-    Vec3 Pluto(double t);    // position of Pluto at time t
-
-private:
-
-    double c3[19], s3[19];
-    double c[11], s[11];
-    double m1, m2, m3, m4, m5, m6, m7, m8;
-    double /*d, a, uu,*/ tt;
-    double u, v, dl, dr, db, l, b, r;
-    Vec3   rp, vp;   // state vector of planet
+    Vec3 velocity();                    // return last calculated planet velocity
+    void state(Vec3& rs, Vec3& vs);     // return last state vector
+    Vec3 Mercury(double t);             // position of Mercury at time t
+    Vec3 Venus(double t);               // position of Venus at time t
+    Vec3 Mars(double t);                // position of Mars at time t
+    Vec3 Jupiter(double t);             // position of Jupiter at time t
+    Vec3 Saturn(double t);              // position of Saturn at time t
+    Vec3 Uranus(double t);              // position of Uranus at time t
+    Vec3 Neptune(double t);             // position of Neptune at time t
+    Vec3 Pluto(double t);               // position of Pluto at time t
 
 private:
 
@@ -57,6 +49,17 @@ private:
     void term(int i1, int i, int it, double dlc, double dls, double drc,
               double drs, double dbc, double dbs);
     void posvel();
+
+private:
+
+    double c3[19] = { 0.0 }, s3[19] = { 0.0 };
+    double c[11]  = { 0.0 }, s[11]  = { 0.0 };
+
+    double m1 = 0.0, m2 = 0.0, m3 = 0.0, m4 = 0.0, m5 = 0.0, m6 = 0.0, m7 = 0.0, m8 = 0.0;
+    double /*d, a, uu,*/ tt = 0.0;
+    double u = 0.0, v = 0.0, dl = 0.0, dr = 0.0, db = 0.0, l = 0.0, b = 0.0, r = 0.0;
+
+    Vec3   rp, vp;   // state vector of planet
 };
 
 DIGIKAM_EXPORT void MarPhobos(double t, Vec3& rs, Vec3& vs);  // State vector of Phobos

@@ -33,7 +33,6 @@ class PlanetPrivate;
 
 class DIGIKAM_EXPORT Planet
 {
-
     // Not a QObject because we don't need sigs/slots
 
 public:
@@ -50,6 +49,7 @@ public:
 
     ///Copy Constructor
     Planet(const Planet& other);
+
     ///Destructor
     ~Planet();
 
@@ -84,6 +84,7 @@ public:
 
     /** The user visible name of the planet */
     QString name() const;
+
     /** The internal, nonlocalized name of the planet */
     QString id() const;
 
@@ -97,6 +98,7 @@ public:
     void sunPosition(qreal& lon, qreal& lat, const QDateTime& dateTime) const;
 
     /* Setter functions */
+
     void setM_0(qreal M_0);
     void setM_1(qreal M_1);
 
@@ -127,6 +129,7 @@ public:
      * @deprecated Please use PlanetFactory::localizedName(id) instead.
      */
     static QString name(const QString& id);
+
     /**
      * @deprecated Please use PlanetFactory::planetList() instead.
      */

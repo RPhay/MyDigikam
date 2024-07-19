@@ -208,19 +208,28 @@ QSvgRenderer* OsmcSymbol::parseForeground(const QString& fg)
     if (QColor::isValidColor(color) && m_foregroundTypes.contains(type))
     {
         // Open svg resource and load contents to QByteArray
+
         QFile file(QString::fromUtf8(":/osmc-symbols/%1.svg").arg(type));
-        file.open(QIODevice::ReadOnly);
+
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            return nullptr;
+        }
+
         QByteArray baData = file.readAll();
 
         // Load svg contents to xml document
+
         QDomDocument doc;
         doc.setContent(baData);
 
         // Recursively change color
+
         QDomElement rootElement = doc.documentElement();
         setXMLAttribute(rootElement, QString::fromUtf8("path"), QString::fromUtf8("fill"), color);
 
         // Create and return svg renderer with edited contents
+
         return new QSvgRenderer(doc.toByteArray());
     }
 

@@ -60,7 +60,6 @@ EclSolar::EclSolar()
 
 EclSolar::~EclSolar()
 {
-
 }
 
 double EclSolar::atan23(double y, double x)
@@ -84,6 +83,7 @@ double EclSolar::atan23(double y, double x)
 void EclSolar::esinit()
 {
     // initialize eclipse data
+
     eb_start_called = false;
     eb_moonph_called = false;
     eb_lunecl = true;
@@ -2754,7 +2754,7 @@ int EclSolar::GRSBound(bool firstc, double& lat1, double& lng1, double& lat2, do
         lng1 /= degrad;
     };
 
-    if (lat1 < 100.0)  // intersection #2
+    if (lat2 < 100.0)  // intersection #2
     {
         vrx2[2] = 0;
         vrx2 = mxvct(m2, vrx2);

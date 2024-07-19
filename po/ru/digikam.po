@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"POT-Creation-Date: 2024-07-19 01:44+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -4181,7 +4181,7 @@ msgstr "Цветовая модель"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:226
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -55345,7 +55345,7 @@ msgid "This is an Invalid File"
 msgstr "Файл повреждён или отсутствует."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:223
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -55355,13 +55355,13 @@ msgstr "Файл повреждён или отсутствует."
 msgid "Name"
 msgstr "Имя"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:229
 #, fuzzy, kde-format
 #| msgid "Regularity:"
 msgid "Popularity"
 msgstr "Порядок:"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "Color Model: Indexed"
 #| msgid "Indexed"
@@ -55369,7 +55369,7 @@ msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Индексированный цвет"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Play list"
@@ -56395,13 +56395,13 @@ msgid ""
 "in structural geology to plot directional data.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Меркатор"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:60
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "

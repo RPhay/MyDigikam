@@ -30,6 +30,8 @@ public:
     SolarSystem();
     ~SolarSystem();
 
+public:
+
     void setTimezone(double d);  // set timezone for I/O
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto
@@ -146,87 +148,90 @@ private:
 
     // data fields
 
-    bool ss_update_called;  // true if updateSolar() has already been called
-    bool ss_moon_called;    // true if special Moon calculation called
-    bool ss_planmat_called; // true if matrix for planetary coordinates called
-    bool ss_kepler_stored;  // true if Kepler elements for comet or asteroid stored
-    bool ss_kepler_called;  // true if comet or asteroid position calculated
-    bool ss_user_stored;    // true if orbit elements for user defined object stored
-    bool ss_user_active;    // true if user defined object activated
+    bool ss_update_called   = false;    // true if updateSolar() has already been called
+    bool ss_moon_called     = false;    // true if special Moon calculation called
+    bool ss_planmat_called  = false;    // true if matrix for planetary coordinates called
+    bool ss_kepler_stored   = false;    // true if Kepler elements for comet or asteroid stored
+    bool ss_kepler_called   = false;    // true if comet or asteroid position calculated
+    bool ss_user_stored     = false;    // true if orbit elements for user defined object stored
+    bool ss_user_active     = false;    // true if user defined object activated
 
-    int ss_day;           // date
-    int ss_month;
-    int ss_year;
-    int ss_hour;
-    int ss_minute;
-    int ss_second;
-    double ss_time;       // currently used MJD
-    double ss_tzone;      // timezone in hours
-    double ss_del_tdut;   // TDT - UT in sec
-    int ss_del_auto;      // 1 = automatic del_tdut,  0 = manual
-    bool ss_RT;   // true if calculations in Real Time, false if time manually set to MJD.
-    bool ss_nutation;  // true if position corrected for nutation
-    double ss_epoch;  // epoch of coordinates in MJD
-    int ss_central_body;  // body defining the coordinate origin (0=sun,1=moon,2=mercury etc.; -1=user)
+    int ss_day              = 0;        // date
+    int ss_month            = 0;
+    int ss_year             = 0;
+    int ss_hour             = 0;
+    int ss_minute           = 0;
+    int ss_second           = 0;
+    double ss_time          = 0.0;      // currently used MJD
+    double ss_tzone         = 0.0;      // timezone in hours
+    double ss_del_tdut      = 0.0;      // TDT - UT in sec
+    int ss_del_auto         = 0;        // 1 = automatic del_tdut,  0 = manual
+    bool ss_RT              = false;    // true if calculations in Real Time, false if time manually set to MJD.
+    bool ss_nutation        = false;    // true if position corrected for nutation
+    double ss_epoch         = 0.0;      // epoch of coordinates in MJD
+    int ss_central_body     = 0;        // body defining the coordinate origin (0=sun,1=moon,2=mercury etc.; -1=user)
 
-    Vec3 ss_rm, ss_rs;  // position of Moon and Sun in ecliptic of date (A.U.)
-    Vec3 ss_pmer, ss_pven, ss_pearth, ss_pmars, ss_pjup, ss_psat, ss_pura, ss_pnept; // positions of planets
-    Vec3 ss_pio, ss_peuropa, ss_pganymede, ss_pcallisto;  // positions of Jupiter moons
-    Vec3 ss_prhea, ss_ptitan, ss_pmimas, ss_penceladus, ss_pdione; // positions of Saturn moons
-    Vec3 ss_user;  // position of user defined object
+    Vec3 ss_rm, ss_rs;                                                                  // position of Moon and Sun in ecliptic of date (A.U.)
+    Vec3 ss_pmer, ss_pven, ss_pearth, ss_pmars, ss_pjup, ss_psat, ss_pura, ss_pnept;    // positions of planets
+    Vec3 ss_pio, ss_peuropa, ss_pganymede, ss_pcallisto;                                // positions of Jupiter moons
+    Vec3 ss_prhea, ss_ptitan, ss_pmimas, ss_penceladus, ss_pdione;                      // positions of Saturn moons
+    Vec3 ss_user;                                                                       // position of user defined object
 
-    double ss_moon_mag;  // apparent magnitude of the Moon
-    double ss_moon_lblon;  // longitude of lunar libration
-    double ss_moon_lblat;  // latitude of lunar libration
-    double ss_moon_term;   // position of lunar terminator
-    double ss_moon_ildisk; // fraction of Moon's illuminated disk
-    double ss_moon_phase;  // phase of Moon
+    double ss_moon_mag      = 0.0;  // apparent magnitude of the Moon
+    double ss_moon_lblon    = 0.0;  // longitude of lunar libration
+    double ss_moon_lblat    = 0.0;  // latitude of lunar libration
+    double ss_moon_term     = 0.0;  // position of lunar terminator
+    double ss_moon_ildisk   = 0.0;  // fraction of Moon's illuminated disk
+    double ss_moon_phase    = 0.0;  // phase of Moon
 
-    double ss_GM;  // gravitational constant (m^3/s^2)
-    double ss_J2;  // J2 gravitational term
-    double ss_R0; // equatorial radius (km)
-    double ss_flat;  // flattening factor
-    double ss_axl0;  // l-direction of rotation axis
-    double ss_axl1;  // delta of axl0
-    double ss_axb0;  // b-direction of rotation axis
-    double ss_axb1;  // delta of axb0
-    double ss_W;    // location of prime meridian
-    double ss_Wd;   // daily variation of W.
+    double ss_GM            = 0.0;  // gravitational constant (m^3/s^2)
+    double ss_J2            = 0.0;  // J2 gravitational term
+    double ss_R0            = 0.0;  // equatorial radius (km)
+    double ss_flat          = 0.0;  // flattening factor
+    double ss_axl0          = 0.0;  // l-direction of rotation axis
+    double ss_axl1          = 0.0;  // delta of axl0
+    double ss_axb0          = 0.0;  // b-direction of rotation axis
+    double ss_axb1          = 0.0;  // delta of axb0
+    double ss_W             = 0.0;  // location of prime meridian
+    double ss_Wd            = 0.0;  // daily variation of W.
 
     // data for user defined object:
-    double ss_user_GM;  // gravitational constant (m^3/s^2)
-    double ss_user_J2;  // J2 gravitational term
-    double ss_user_R0; // equatorial radius (km)
-    double ss_user_flat;  // flattening factor
-    double ss_user_axl0;  // l-direction of rotation axis
-    double ss_user_axl1;  // delta of axl0
-    double ss_user_axb0;  // b-direction of rotation axis
-    double ss_user_axb1;  // delta of axb0
-    double ss_user_W;    // location of prime meridian
-    double ss_user_Wd;   // daily variation of W.
-    double ss_user_t0;  // time of perihelion passage or epoch of elliptical elements (MJD
-    double ss_user_m0;  // Mean Anomaly in degrees
-    double ss_user_a;   // semi-major axis in AU
-    double ss_user_ecc; // eccentricity
-    double ss_user_ran; // right ascension of ascending node in degrees
-    double ss_user_aper; // argument of perihelion
-    double ss_user_inc;  // inclination in degrees
-    double ss_user_eclep; // epoch of ecliptic and equator for these elements
 
-    Mat3 ss_planmat; // matrix to convert from J2000.0 into planetary coordinates
-    double ss_lat;  // planetary latitude (decimal degrees)
-    double ss_lng;  // planetary longitude (decimal degrees)
-    double ss_height; // height above reference ellipsoid (km)
+    double ss_user_GM       = 0.0;  // gravitational constant (m^3/s^2)
+    double ss_user_J2       = 0.0;  // J2 gravitational term
+    double ss_user_R0       = 0.0;  // equatorial radius (km)
+    double ss_user_flat     = 0.0;  // flattening factor
+    double ss_user_axl0     = 0.0;  // l-direction of rotation axis
+    double ss_user_axl1     = 0.0;  // delta of axl0
+    double ss_user_axb0     = 0.0;  // b-direction of rotation axis
+    double ss_user_axb1     = 0.0;  // delta of axb0
+    double ss_user_W        = 0.0;  // location of prime meridian
+    double ss_user_Wd       = 0.0;  // daily variation of W.
+    double ss_user_t0       = 0.0;  // time of perihelion passage or epoch of elliptical elements (MJD
+    double ss_user_m0       = 0.0;  // Mean Anomaly in degrees
+    double ss_user_a        = 0.0;  // semi-major axis in AU
+    double ss_user_ecc      = 0.0;  // eccentricity
+    double ss_user_ran      = 0.0;  // right ascension of ascending node in degrees
+    double ss_user_aper     = 0.0;  // argument of perihelion
+    double ss_user_inc      = 0.0;  // inclination in degrees
+    double ss_user_eclep    = 0.0;  // epoch of ecliptic and equator for these elements
 
-    double ss_t0;  // time of perihelion passage or epoch of elliptical elements (MJD)
-    double ss_m0;  // Mean Anomaly in degrees
-    double ss_a;   // semi-major axis in AU
-    double ss_ecc; // eccentricity
-    double ss_ran; // right ascension of ascending node in degrees
-    double ss_aper; // argument of perihelion
-    double ss_inc;  // inclination in degrees
-    double ss_eclep; // epoch of ecliptic and equator for these elements
-    Vec3 ss_comet;  // position vector of comet or asteroid in AU
+    Mat3 ss_planmat;                // matrix to convert from J2000.0 into planetary coordinates
+
+    double ss_lat           = 0.0;  // planetary latitude (decimal degrees)
+    double ss_lng           = 0.0;  // planetary longitude (decimal degrees)
+    double ss_height        = 0.0;  // height above reference ellipsoid (km)
+
+    double ss_t0            = 0.0;  // time of perihelion passage or epoch of elliptical elements (MJD)
+    double ss_m0            = 0.0;  // Mean Anomaly in degrees
+    double ss_a             = 0.0;  // semi-major axis in AU
+    double ss_ecc           = 0.0;  // eccentricity
+    double ss_ran           = 0.0;  // right ascension of ascending node in degrees
+    double ss_aper          = 0.0;  // argument of perihelion
+    double ss_inc           = 0.0;  // inclination in degrees
+    double ss_eclep         = 0.0;  // epoch of ecliptic and equator for these elements
+
+    Vec3 ss_comet;                  // position vector of comet or asteroid in AU
 };
 
 } // namespace Marble
