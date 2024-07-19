@@ -35,6 +35,8 @@ apps:
           PERL5LIB: "$SNAP/usr/share/perl5"
           LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:${LD_LIBRARY_PATH}
           PATH: $SNAP/ffmpeg-platform/usr/bin:${PATH}
+          ALSA_CONFIG_PATH: "$SNAP/kf6/etc/asound.conf"
+          QT_MEDIA_BACKEND: "ffmpeg"
 
 compression: lzo
 
