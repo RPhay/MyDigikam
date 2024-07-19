@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"POT-Creation-Date: 2024-07-19 01:44+0000\n"
 "PO-Revision-Date: 2024-07-12 13:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -4089,7 +4089,7 @@ msgstr "Renk Kipi"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:226
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -54637,7 +54637,7 @@ msgid "This is an Invalid File"
 msgstr "Bu, geçersiz bir dosya"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:223
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -54645,18 +54645,18 @@ msgstr "Bu, geçersiz bir dosya"
 msgid "Name"
 msgstr "Ad"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:229
 #, kde-format
 msgid "Popularity"
 msgstr "Popülerlik"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:232
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Popülerlik İndeksi"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:313
 #, kde-format
 msgid "Playlist"
 msgstr "Oynatma Listesi"
@@ -55579,13 +55579,13 @@ msgstr ""
 "<p><b>Lambert Azimutal Eşit Alan İzdüşümü</b></p><p>Uygulamalar: Yapısal "
 "jeolojide yön verilerini çizmek için kullanılır.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Merkator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:60
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "

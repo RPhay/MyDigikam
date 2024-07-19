@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"POT-Creation-Date: 2024-07-19 01:44+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -4276,7 +4276,7 @@ msgstr "Mód na ndathanna: "
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:226
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -56695,7 +56695,7 @@ msgid "This is an Invalid File"
 msgstr "Seo é an bhuníomhá"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:223
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -56704,13 +56704,13 @@ msgstr "Seo é an bhuníomhá"
 msgid "Name"
 msgstr "Ainm"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:229
 #, fuzzy, kde-format
 #| msgid "Priority:"
 msgid "Popularity"
 msgstr "Tosaíocht:"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "Color Model: Indexed"
 #| msgid "Indexed"
@@ -56718,7 +56718,7 @@ msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Innéacsaithe"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:313
 #, fuzzy, kde-format
 msgid "Playlist"
 msgstr "Glan uile"
@@ -57687,13 +57687,13 @@ msgid ""
 "in structural geology to plot directional data.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:60
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
