@@ -23,15 +23,13 @@
  * and modified correspondingly.
  */
 
+#include "astrolib.h"
+
 // C++ includes
 
 #include <cmath>
 
 using namespace std;
-
-// Local includes
-
-#include "astrolib.h"
 
 namespace Marble
 {

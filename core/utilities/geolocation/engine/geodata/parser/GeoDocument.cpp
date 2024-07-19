@@ -14,13 +14,14 @@
  *
  * ============================================================ */
 
+#include "GeoDocument.h"
+
 // C++ includes
 
 #include <cstdio>
 
 // Local includes
 
-#include "GeoDocument.h"
 #include "GeoSceneTypes.h"
 
 namespace Marble

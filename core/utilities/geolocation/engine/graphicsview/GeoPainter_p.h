@@ -14,6 +14,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 // Local includes
 
 #include "MarbleGlobal.h"

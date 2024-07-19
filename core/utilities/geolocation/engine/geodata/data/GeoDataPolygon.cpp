@@ -15,6 +15,7 @@
  * ============================================================ */
 
 #include "GeoDataPolygon.h"
+#include "GeoDataPolygon_p.h"
 
 // C++ includes
 

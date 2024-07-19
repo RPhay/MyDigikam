@@ -14,12 +14,12 @@
  *
  * ============================================================ */
 
-#include "metaengine_p.h"
+#include "metaengine_previews.h"
 
 // Local includes
 
 #include "digikam_debug.h"
-#include "metaengine_previews.h"
+#include "metaengine_p.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
