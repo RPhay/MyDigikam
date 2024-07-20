@@ -19,7 +19,7 @@ BUGFIXES:
 008 ==> 490396 - Impossible validation of exiftool.exe even though it is present in the digiKam folder.
 009 ==> 490341 - Exiftool not present.
 010 ==> 490496 - Exiftool not found.
-011 ==>
+011 ==> 490536 - Open With not working.
 012 ==>
 013 ==>
 014 ==>
