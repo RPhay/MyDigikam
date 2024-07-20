@@ -59,7 +59,9 @@ OverviewMap::OverviewMap(const MarbleModel* marbleModel)
     // cache is no needed because:
     // (1) the SVG overview map is already rendered and stored in m_worldmap pixmap
     // (2) bounding box and location dot keep changing during navigation
+
     setCacheMode(NoCache);
+
     connect(this, SIGNAL(settingsChanged(QString)),
             this, SLOT(updateSettings()));
 
@@ -68,10 +70,10 @@ OverviewMap::OverviewMap(const MarbleModel* marbleModel)
 
 OverviewMap::~OverviewMap()
 {
-    QHash<QString, QSvgWidget*>::const_iterator pos = m_svgWidgets.constBegin();
+    QHash<QString, QSvgWidget*>::const_iterator pos       = m_svgWidgets.constBegin();
     QHash<QString, QSvgWidget*>::const_iterator const end = m_svgWidgets.constEnd();
 
-    for (; pos != end; ++pos)
+    for ( ; pos != end ; ++pos)
     {
         delete pos.value();
     }
@@ -114,8 +116,7 @@ QString OverviewMap::copyrightYears() const
 
 QVector<PluginAuthor> OverviewMap::pluginAuthors() const
 {
-    return QVector<PluginAuthor>()
-           << PluginAuthor(QStringLiteral("Torsten Rahn"), QStringLiteral("tackat@kde.org"));
+    return QVector<PluginAuthor>() << PluginAuthor(QStringLiteral("Torsten Rahn"), QStringLiteral("tackat@kde.org"));
 }
 
 QIcon OverviewMap::icon() const
@@ -128,7 +129,8 @@ QDialog* OverviewMap::configDialog()
     if (!m_configDialog)
     {
         // Initializing configuration dialog
-        m_configDialog = new QDialog();
+
+        m_configDialog  = new QDialog();
         ui_configWidget = new Ui::OverviewMapConfigWidget;
         ui_configWidget->setupUi(m_configDialog);
         ui_configWidget->label_3->setVisible(false);
@@ -136,7 +138,7 @@ QDialog* OverviewMap::configDialog()
         ui_configWidget->m_fileChooserButton->setVisible(false);
         ui_configWidget->m_tableWidget->setVisible(false);
 
-        for (int i = 0; i < m_planetID.size(); ++i)
+        for (int i = 0 ; i < m_planetID.size() ; ++i)
         {
             ui_configWidget->m_planetComboBox->addItem(PlanetFactory::localizedName(m_planetID.value(i)));
         }
@@ -144,27 +146,38 @@ QDialog* OverviewMap::configDialog()
         ui_configWidget->m_planetComboBox->setCurrentIndex(2);
         readSettings();
         loadMapSuggestions();
+
         connect(ui_configWidget->m_buttonBox, SIGNAL(accepted()),
-                SLOT(writeSettings()));
+                this, SLOT(writeSettings()));
+
         connect(ui_configWidget->m_buttonBox, SIGNAL(rejected()),
-                SLOT(readSettings()));
+                this, SLOT(readSettings()));
+
         connect(ui_configWidget->m_buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
-                SLOT(restoreDefaultSettings()));
+                this, SLOT(restoreDefaultSettings()));
+
         QPushButton* applyButton = ui_configWidget->m_buttonBox->button(QDialogButtonBox::Apply);
+
         connect(applyButton, SIGNAL(clicked()),
-                SLOT(writeSettings()));
+                this, SLOT(writeSettings()));
+
         connect(ui_configWidget->m_fileChooserButton, SIGNAL(clicked()),
                 SLOT(chooseCustomMap()));
+
         connect(ui_configWidget->m_widthBox, SIGNAL(valueChanged(int)),
-                SLOT(synchronizeSpinboxes()));
+                this, SLOT(synchronizeSpinboxes()));
+
         connect(ui_configWidget->m_heightBox, SIGNAL(valueChanged(int)),
-                SLOT(synchronizeSpinboxes()));
+                this, SLOT(synchronizeSpinboxes()));
+
         connect(ui_configWidget->m_planetComboBox, SIGNAL(currentIndexChanged(int)),
-                SLOT(showCurrentPlanetPreview()));
+                this, SLOT(showCurrentPlanetPreview()));
+
         connect(ui_configWidget->m_colorChooserButton, SIGNAL(clicked()),
-                SLOT(choosePositionIndicatorColor()));
-        connect(ui_configWidget->m_tableWidget, SIGNAL(cellClicked(int, int)),
-                SLOT(useMapSuggestion(int)));
+                this, SLOT(choosePositionIndicatorColor()));
+
+        connect(ui_configWidget->m_tableWidget, SIGNAL(cellClicked(int,int)),
+                this, SLOT(useMapSuggestion(int)));
     }
 
     return m_configDialog;
@@ -182,9 +195,9 @@ bool OverviewMap::isInitialized() const
 void OverviewMap::setProjection(const ViewportParams* viewport)
 {
     GeoDataLatLonAltBox latLonAltBox = viewport->latLonAltBox(QRect(QPoint(0, 0), viewport->size()));
-    const qreal centerLon = viewport->centerLongitude();
-    const qreal centerLat = viewport->centerLatitude();
-    QString target = marbleModel()->planetId();
+    const qreal centerLon            = viewport->centerLongitude();
+    const qreal centerLat            = viewport->centerLatitude();
+    QString target                   = marbleModel()->planetId();
 
     if (target != m_target)
     {
@@ -198,8 +211,8 @@ void OverviewMap::setProjection(const ViewportParams* viewport)
           && m_centerLat == centerLat))
     {
         m_latLonAltBox = latLonAltBox;
-        m_centerLon = centerLon;
-        m_centerLat = centerLat;
+        m_centerLon    = centerLon;
+        m_centerLat    = centerLat;
         update();
     }
 
@@ -215,10 +228,11 @@ void OverviewMap::paintContent(QPainter* painter)
     if (m_svgobj.isValid())
     {
         // Rerender worldmap pixmap if the size or map has changed
+
         if (m_worldmap.size() != mapRect.size().toSize() || m_mapChanged)
         {
             m_mapChanged = false;
-            m_worldmap = QPixmap(mapRect.size().toSize());
+            m_worldmap   = QPixmap(mapRect.size().toSize());
             m_worldmap.fill(Qt::transparent);
             QPainter mapPainter;
             mapPainter.begin(&m_worldmap);
@@ -229,13 +243,12 @@ void OverviewMap::paintContent(QPainter* painter)
 
         painter->drawPixmap(QPoint(0, 0), m_worldmap);
     }
-
     else
     {
         painter->setPen(QPen(Qt::DashLine));
         painter->drawRect(QRectF(QPoint(0, 0), mapRect.size().toSize()));
 
-        for (int y = 1; y < 4; ++y)
+        for (int y = 1 ; y < 4 ; ++y)
         {
             if (y == 2)
             {
@@ -251,7 +264,7 @@ void OverviewMap::paintContent(QPainter* painter)
                               mapRect.width(), 0.25 * y * mapRect.height());
         }
 
-        for (int x = 1; x < 8; ++x)
+        for (int x = 1 ; x < 8 ; ++x)
         {
             if (x == 4)
             {
@@ -269,6 +282,7 @@ void OverviewMap::paintContent(QPainter* painter)
     }
 
     // Now draw the latitude longitude bounding box
+
     qreal xWest = mapRect.width() / 2.0
                   + mapRect.width() / (2.0 * M_PI) * m_latLonAltBox.west();
     qreal xEast = mapRect.width() / 2.0
@@ -301,6 +315,7 @@ void OverviewMap::paintContent(QPainter* painter)
     if (m_latLonAltBox.west() <= m_latLonAltBox.east())
     {
         // Make sure the latLonBox is still visible
+
         if (boxWidth  < minBoxSize)
         {
             boxWidth  = minBoxSize;
@@ -308,7 +323,6 @@ void OverviewMap::paintContent(QPainter* painter)
 
         painter->drawRect(QRectF(xWest, xNorth, boxWidth, boxHeight));
     }
-
     else
     {
         // If the dateline is shown in the viewport  and if the poles are not
@@ -317,9 +331,10 @@ void OverviewMap::paintContent(QPainter* painter)
         boxWidth = xEast;
 
         // Make sure the latLonBox is still visible
-        if (boxWidth  < minBoxSize)
+
+        if (boxWidth < minBoxSize)
         {
-            boxWidth  = minBoxSize;
+            boxWidth = minBoxSize;
         }
 
         painter->drawRect(QRectF(0, xNorth, boxWidth, boxHeight));
@@ -327,9 +342,10 @@ void OverviewMap::paintContent(QPainter* painter)
         boxWidth = mapRect.width() - xWest;
 
         // Make sure the latLonBox is still visible
-        if (boxWidth  < minBoxSize)
+
+        if (boxWidth < minBoxSize)
         {
-            boxWidth  = minBoxSize;
+            boxWidth = minBoxSize;
         }
 
         painter->drawRect(QRectF(xWest, xNorth, boxWidth, boxHeight));
@@ -371,11 +387,10 @@ void OverviewMap::setSettings(const QHash<QString, QVariant>& settings)
     {
         QString mapFile = MarbleDirs::path(QLatin1String("svg/") + planet + QLatin1String("map.svg"));
 
-        if (planet == QLatin1String("moon"))
+        if      (planet == QLatin1String("moon"))
         {
             mapFile = MarbleDirs::path(QStringLiteral("svg/lunarmap.svg"));
         }
-
         else if (planet == QLatin1String("earth") || mapFile.isEmpty())
         {
             mapFile = MarbleDirs::path(QStringLiteral("svg/worldmap.svg"));
@@ -390,6 +405,7 @@ void OverviewMap::setSettings(const QHash<QString, QVariant>& settings)
     m_target.clear(); // FIXME: forces execution of changeBackground() in changeViewport()
 
     readSettings();
+
     Q_EMIT settingsChanged(nameId());
 }
 
@@ -477,6 +493,7 @@ bool OverviewMap::eventFilter(QObject* object, QEvent* e)
             cursorAboveFloatItem = true;
 
             // Double click triggers recentering the map at the specified position
+
             if (e->type() == QEvent::MouseButtonDblClick)
             {
                 QRectF mapRect(contentRect());
@@ -495,7 +512,9 @@ bool OverviewMap::eventFilter(QObject* object, QEvent* e)
             && !(event->buttons() & Qt::LeftButton))
         {
             // Cross hair cursor when moving above the float item without pressing a button
+
             widget->setCursor(QCursor(Qt::CrossCursor));
+
             return true;
         }
     }
@@ -544,7 +563,7 @@ void OverviewMap::loadMapSuggestions()
 {
     QStringList paths = QDir(MarbleDirs::pluginPath(QString())).entryList(QStringList(QLatin1String("*.svg")), QDir::Files | QDir::NoDotAndDotDot);
 
-    for (int i = 0; i < paths.size(); ++i)
+    for (int i = 0 ; i < paths.size() ; ++i)
     {
         paths[i] = MarbleDirs::pluginPath(QString()) + QLatin1Char('/') + paths[i];
     }
@@ -552,7 +571,7 @@ void OverviewMap::loadMapSuggestions()
     paths << MarbleDirs::path(QStringLiteral("svg/worldmap.svg")) << MarbleDirs::path(QStringLiteral("svg/lunarmap.svg"));
     ui_configWidget->m_tableWidget->setRowCount(paths.size());
 
-    for (int i = 0; i < paths.size(); ++i)
+    for (int i = 0 ; i < paths.size() ; ++i)
     {
         ui_configWidget->m_tableWidget->setCellWidget(i, 0, new QSvgWidget(paths[i]));
         ui_configWidget->m_tableWidget->setItem(i, 1, new QTableWidgetItem(paths[i]));
@@ -576,11 +595,10 @@ void OverviewMap::chooseCustomMap()
 
 void OverviewMap::synchronizeSpinboxes()
 {
-    if (sender() == ui_configWidget->m_widthBox)
+    if      (sender() == ui_configWidget->m_widthBox)
     {
         ui_configWidget->m_heightBox->setValue(ui_configWidget->m_widthBox->value() / 2);
     }
-
     else if (sender() == ui_configWidget->m_heightBox)
     {
         ui_configWidget->m_widthBox->setValue(ui_configWidget->m_heightBox->value() * 2);

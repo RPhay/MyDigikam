@@ -95,7 +95,7 @@ QImage RemoteIconLoaderPrivate::cachedIcon(const QUrl& url) const
 bool RemoteIconLoaderPrivate::loadFromDiskCache(const QUrl& url)
 {
     QString path = MarbleDirs::localPath() + QLatin1String("/cache/icons/") + cacheFileName(url);
-    QImage icon = QFile::exists(path) ? QImage(path) : QImage();
+    QImage icon  = QFile::exists(path) ? QImage(path) : QImage();
 
     if (!icon.isNull())
     {
@@ -110,15 +110,16 @@ void RemoteIconLoaderPrivate::initiateDownload(const QUrl& url)
 {
     DownloadUsage usage = DownloadBrowse;
     m_downloadManager.setDownloadEnabled(true);
-    QString fileName = cacheFileName(url);
+    QString fileName    = cacheFileName(url);
     m_downloadManager.addJob(url, fileName, url.toString(), usage);
 }
 
 QString RemoteIconLoaderPrivate::cacheFileName(const QUrl& url)
 {
-    const QString suffix = QFileInfo(url.path()).suffix();
-    const QByteArray hash = QCryptographicHash::hash(url.toEncoded(), QCryptographicHash::Md5).toHex();
+    const QString suffix   = QFileInfo(url.path()).suffix();
+    const QByteArray hash  = QCryptographicHash::hash(url.toEncoded(), QCryptographicHash::Md5).toHex();
     const QString fileName = QString::fromLatin1(hash) + QLatin1Char('.') + suffix;
+
     return fileName;
 }
 
@@ -126,15 +127,14 @@ RemoteIconLoader::RemoteIconLoader(QObject* parent)
     : QObject(parent),
       d(new RemoteIconLoaderPrivate())
 {
-    connect(&d->m_downloadManager, SIGNAL(downloadComplete(QByteArray, QString)), this,
-            SLOT(storeIcon(QByteArray, QString)));
+    connect(&d->m_downloadManager, SIGNAL(downloadComplete(QByteArray,QString)),
+            this, SLOT(storeIcon(QByteArray,QString)));
 }
 
 RemoteIconLoader::~RemoteIconLoader()
 {
     delete d;
 }
-
 
 QImage RemoteIconLoader::load(const QUrl& url)
 {
@@ -174,6 +174,7 @@ void RemoteIconLoader::storeIcon(const QByteArray& data, const QString& fileName
 {
     QImage icon = QImage::fromData(data);
     d->m_iconCache.insert(QUrl(fileName), icon);
+
     Q_EMIT iconReady();
 }
 

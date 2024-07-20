@@ -54,8 +54,9 @@ class Q_DECL_HIDDEN FileLoaderPrivate
 public:
 
     FileLoaderPrivate(FileLoader* parent, const PluginManager* pluginManager, bool recenter,
-                      const QString& file, const QString& property, const GeoDataStyle::Ptr& style, DocumentRole role, int renderOrder) :
-        q(parent),
+                      const QString& file, const QString& property, const GeoDataStyle::Ptr& style,
+                      DocumentRole role, int renderOrder)
+      : q(parent),
         m_runner(pluginManager),
         m_filepath(file),
         m_property(property),
@@ -168,15 +169,17 @@ void FileLoader::run()
         QString suffix = fileinfo.suffix();
 
         // determine source, cache names
-        if (fileinfo.isAbsolute())
+
+        if      (fileinfo.isAbsolute())
         {
             // We got an _absolute_ path now: e.g. "/patrick.kml"
+
             defaultSourceName = path + QLatin1Char('/') + name + QLatin1Char('.') + suffix;
         }
-
         else if (d->m_filepath.contains(QLatin1Char('/')))
         {
             // _relative_ path: "maps/mars/viking/patrick.kml"
+
             defaultSourceName = MarbleDirs::path(path + QLatin1Char('/') + name + QLatin1Char('.') + suffix);
 
             if (!QFile::exists(defaultSourceName))
@@ -184,10 +187,10 @@ void FileLoader::run()
                 defaultSourceName = MarbleDirs::path(path + QLatin1Char('/') + name + QLatin1String(".cache"));
             }
         }
-
         else
         {
             // _standard_ shared placemarks: "placemarks/patrick.kml"
+
             defaultSourceName = MarbleDirs::path(QLatin1String("placemarks/") + path + name + QLatin1Char('.') + suffix);
 
             if (!QFile::exists(defaultSourceName))
@@ -201,11 +204,12 @@ void FileLoader::run()
             qCDebug(DIGIKAM_MARBLE_LOG) << "No recent Default Placemark Cache File available!";
 
             // use runners: pnt, gpx, osm
-            connect(&d->m_runner, SIGNAL(parsingFinished(GeoDataDocument*, QString)),
-                    this, SLOT(documentParsed(GeoDataDocument*, QString)));
+
+            connect(&d->m_runner, SIGNAL(parsingFinished(GeoDataDocument*,QString)),
+                    this, SLOT(documentParsed(GeoDataDocument*,QString)));
+
             d->m_runner.parseFile(defaultSourceName, d->m_documentRole);
         }
-
         else
         {
             qCDebug(DIGIKAM_MARBLE_LOG) << "No Default Placemark Source File for " << name;
@@ -217,6 +221,7 @@ void FileLoader::run()
     else
     {
         // Read the KML Data
+
         GeoDataParser parser(GeoData_KML);
 
         QByteArray ba(d->m_contents.toUtf8());
@@ -226,11 +231,14 @@ void FileLoader::run()
         if (!parser.read(&buffer))
         {
             qCWarning(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Could not import kml buffer!");
+
             Q_EMIT loaderFinished(this);
+
             return;
         }
 
         GeoDocument* document = parser.releaseDocument();
+
         Q_ASSERT(document);
 
         d->m_document = static_cast<GeoDataDocument*>(document);
@@ -244,7 +252,6 @@ void FileLoader::run()
         Q_EMIT newGeoDataDocumentAdded(d->m_document);
         Q_EMIT loaderFinished(this);
     }
-
 }
 
 bool FileLoader::recenter() const
@@ -279,6 +286,7 @@ void FileLoaderPrivate::documentParsed(GeoDataDocument* doc, const QString& erro
         }
 
         createFilterProperties(doc);
+
         Q_EMIT q->newGeoDataDocumentAdded(m_document);
     }
 
@@ -292,13 +300,12 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
     QVector<GeoDataFeature*>::Iterator i = container->begin();
     QVector<GeoDataFeature*>::Iterator const end = container->end();
 
-    for (; i != end; ++i)
+    for ( ; i != end ; ++i)
     {
-        if (auto child = dynamic_cast<GeoDataContainer*>(*i))
+        if      (auto child = dynamic_cast<GeoDataContainer*>(*i))
         {
             createFilterProperties(child);
         }
-
         else if (geodata_cast<GeoDataTour>(*i)
                  || geodata_cast<GeoDataRelation>(*i)
                  || geodata_cast<GeoDataGroundOverlay>(*i)
@@ -310,6 +317,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
         else if (auto placemark = geodata_cast<GeoDataPlacemark>(*i))
         {
             const QString placemarkRole = placemark->role();
+
             Q_ASSERT(placemark->geometry());
 
             bool hasPopularity = false;
@@ -323,6 +331,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // Mountain (H), Volcano (V), Shipwreck (W)
+
             if (placemarkRole == QLatin1String("H") ||
                 placemarkRole == QLatin1String("V") ||
                 placemarkRole == QLatin1String("W"))
@@ -338,6 +347,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // Continent (K), Ocean (O), Nation (S)
+
             else if (placemarkRole == QLatin1String("K") ||
                      placemarkRole == QLatin1String("O") ||
                      placemarkRole == QLatin1String("S"))
@@ -354,6 +364,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // Pole (P)
+
             else if (placemarkRole == QLatin1String("P"))
             {
                 placemark->setPopularity(1000000000);
@@ -361,6 +372,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // Magnetic Pole (M)
+
             else if (placemarkRole == QLatin1String("M"))
             {
                 placemark->setPopularity(10000000);
@@ -368,6 +380,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // MannedLandingSite (h)
+
             else if (placemarkRole == QLatin1String("h"))
             {
                 placemark->setPopularity(1000000000);
@@ -375,6 +388,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // RoboticRover (r)
+
             else if (placemarkRole == QLatin1String("r"))
             {
                 placemark->setPopularity(10000000);
@@ -382,6 +396,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // UnmannedSoftLandingSite (u)
+
             else if (placemarkRole == QLatin1String("u"))
             {
                 placemark->setPopularity(1000000);
@@ -389,6 +404,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // UnmannedSoftLandingSite (i)
+
             else if (placemarkRole == QLatin1String("i"))
             {
                 placemark->setPopularity(1000000);
@@ -396,6 +412,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             }
 
             // Space Terrain: Craters, Maria, Montes, Valleys, etc.
+
             else if (placemarkRole == QLatin1String("m") ||
                      placemarkRole == QLatin1String("v") ||
                      placemarkRole == QLatin1String("o") ||
@@ -419,7 +436,6 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                             placemark->setZoomLevel(1);
                         }
                     }
-
                     else
                     {
                         placemark->setZoomLevel(spacePopIdx(diameter));
@@ -432,7 +448,6 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                     }
                 }
             }
-
             else
             {
                 qint64 population = placemark->population();
@@ -447,81 +462,66 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 
             //  Then we set the visual category:
 
-            if (placemarkRole == QLatin1String("H"))
+            if      (placemarkRole == QLatin1String("H"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Mountain);
             }
-
             else if (placemarkRole == QLatin1String("V"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Volcano);
             }
-
             else if (placemarkRole == QLatin1String("m"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Mons);
             }
-
             else if (placemarkRole == QLatin1String("v"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Valley);
             }
-
             else if (placemarkRole == QLatin1String("o"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::OtherTerrain);
             }
-
             else if (placemarkRole == QLatin1String("c"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Crater);
             }
-
             else if (placemarkRole == QLatin1String("a"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Mare);
             }
-
             else if (placemarkRole == QLatin1String("P"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::GeographicPole);
             }
-
             else if (placemarkRole == QLatin1String("M"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::MagneticPole);
             }
-
             else if (placemarkRole == QLatin1String("W"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::ShipWreck);
             }
-
             else if (placemarkRole == QLatin1String("F"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::AirPort);
             }
-
             else if (placemarkRole == QLatin1String("A"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Observatory);
             }
-
             else if (placemarkRole == QLatin1String("K"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Continent);
             }
-
             else if (placemarkRole == QLatin1String("O"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Ocean);
             }
-
             else if (placemarkRole == QLatin1String("S"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Nation);
             }
-
             else if (placemarkRole == QLatin1String("PPL") ||
                      placemarkRole == QLatin1String("PPLF") ||
                      placemarkRole == QLatin1String("PPLG") ||
@@ -553,7 +553,6 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                         break;
                 }
             }
-
             else if (placemarkRole == QLatin1String("PPLA"))
             {
                 switch (placemark->zoomLevel())
@@ -578,7 +577,6 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                         break;
                 }
             }
-
             else if (placemarkRole == QLatin1String("PPLC"))
             {
                 switch (placemark->zoomLevel())
@@ -603,7 +601,6 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                         break;
                 }
             }
-
             else if (placemarkRole == QLatin1String("PPLA2") ||
                      placemarkRole == QLatin1String("PPLA3") ||
                      placemarkRole == QLatin1String("PPLA4"))
@@ -630,34 +627,30 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                         break;
                 }
             }
-
             else if (placemarkRole == QLatin1String(" ") && !hasPopularity && placemark->visualCategory() == GeoDataPlacemark::Unknown)
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Unknown);   // default location
                 placemark->setZoomLevel(0);
             }
-
             else if (placemarkRole == QLatin1String("h"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::MannedLandingSite);
             }
-
             else if (placemarkRole == QLatin1String("r"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::RoboticRover);
             }
-
             else if (placemarkRole == QLatin1String("u"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::UnmannedSoftLandingSite);
             }
-
             else if (placemarkRole == QLatin1String("i"))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::UnmannedHardLandingSite);
             }
 
             // At last fine-tune zoomlevel:
+
             if (!placemark->isVisible())
             {
                 placemark->setZoomLevel(18);
@@ -665,11 +658,11 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 
             // Workaround: Emulate missing "setVisible" serialization by allowing for population
             // values smaller than -1 which are considered invisible.
+
             else if (placemark->population() < -1)
             {
                 placemark->setZoomLevel(18);
             }
-
             else if (placemarkRole == QLatin1String("W"))
             {
                 if (placemark->zoomLevel() < 4)
@@ -677,18 +670,15 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                     placemark->setZoomLevel(4);
                 }
             }
-
             else if (placemarkRole == QLatin1String("O"))
             {
                 placemark->setZoomLevel(2);
             }
-
             else if (placemarkRole == QLatin1String("K"))
             {
                 placemark->setZoomLevel(0);
             }
         }
-
         else
         {
             qCWarning(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
@@ -700,36 +690,30 @@ int FileLoaderPrivate::cityPopIdx(qint64 population)
 {
     int popidx = 3;
 
-    if (population < 2500)
+    if      (population < 2500)
     {
         popidx = 10;
     }
-
     else if (population < 5000)
     {
         popidx = 9;
     }
-
     else if (population < 25000)
     {
         popidx = 8;
     }
-
     else if (population < 75000)
     {
         popidx = 7;
     }
-
     else if (population < 250000)
     {
         popidx = 6;
     }
-
     else if (population < 750000)
     {
         popidx = 5;
     }
-
     else if (population < 2500000)
     {
         popidx = 4;
@@ -742,46 +726,38 @@ int FileLoaderPrivate::spacePopIdx(qint64 population)
 {
     int popidx = 1;
 
-    if (population < 1000)
+    if      (population < 1000)
     {
         popidx = 10;
     }
-
     else if (population < 2000)
     {
         popidx = 9;
     }
-
     else if (population < 8000)
     {
         popidx = 8;
     }
-
     else if (population < 20000)
     {
         popidx = 7;
     }
-
     else if (population < 60000)
     {
         popidx = 6;
     }
-
     else if (population < 100000)
     {
         popidx = 5;
     }
-
     else if (population < 200000)
     {
         popidx = 4;
     }
-
     else if (population < 400000)
     {
         popidx = 2;
     }
-
     else if (population < 600000)
     {
         popidx = 1;
@@ -794,21 +770,18 @@ int FileLoaderPrivate::areaPopIdx(qreal area)
 {
     int popidx = 1;
 
-    if (area <  200000)
+    if      (area <  200000)
     {
         popidx = 5;
     }
-
     else if (area < 1000000)
     {
         popidx = 4;
     }
-
     else if (area < 2500000)
     {
         popidx = 3;
     }
-
     else if (area < 5000000)
     {
         popidx = 2;

@@ -54,6 +54,7 @@ ProgressFloatItem::ProgressFloatItem(const MarbleModel* marbleModel)
       m_repaintTimer()
 {
     // This timer is responsible to activate the automatic display with a small delay
+
     m_progressShowTimer.setInterval(250);
     m_progressShowTimer.setSingleShot(true);
 
@@ -61,6 +62,7 @@ ProgressFloatItem::ProgressFloatItem(const MarbleModel* marbleModel)
             this, SLOT(show()));
 
     // This timer is responsible to hide the automatic display when downloads are finished
+
     m_progressHideTimer.setInterval(750);
     m_progressHideTimer.setSingleShot(true);
 
@@ -68,6 +70,7 @@ ProgressFloatItem::ProgressFloatItem(const MarbleModel* marbleModel)
             this, SLOT(hideProgress()));
 
     // Repaint timer
+
     m_repaintTimer.setSingleShot(true);
     m_repaintTimer.setInterval(1000);
 
@@ -75,9 +78,11 @@ ProgressFloatItem::ProgressFloatItem(const MarbleModel* marbleModel)
             this, SIGNAL(repaintNeeded()));
 
     // Plugin is enabled by default
+
     setEnabled(true);
 
     // Plugin is visible by default on devices with small screens only
+
     setVisible(MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen);
 }
 
@@ -139,10 +144,16 @@ void ProgressFloatItem::initialize()
 
     Q_ASSERT(manager);
 
-    connect(manager, SIGNAL(progressChanged(int, int)), this, SLOT(handleProgress(int, int)), Qt::UniqueConnection);
-    connect(manager, SIGNAL(jobRemoved()), this, SLOT(removeProgressItem()), Qt::UniqueConnection);
+    connect(manager, SIGNAL(progressChanged(int,int)),
+            this, SLOT(handleProgress(int,int)),
+            Qt::UniqueConnection);
+
+    connect(manager, SIGNAL(jobRemoved()),
+            this, SLOT(removeProgressItem()),
+            Qt::UniqueConnection);
 
     // Calculate font size
+
     QFont myFont = font();
     const QString text = QLatin1String("100%");
     int fontSize = myFont.pointSize();
@@ -170,8 +181,9 @@ QPainterPath ProgressFloatItem::backgroundShape() const
     if (active())
     {
         // Circular shape if active, invisible otherwise
-        QRectF rect = contentRect();
-        qreal width = rect.width();
+
+        QRectF rect  = contentRect();
+        qreal width  = rect.width();
         qreal height = rect.height();
         path.addEllipse(marginLeft() + 2 * padding(), marginTop() + 2 * padding(), width, height);
     }
@@ -182,9 +194,11 @@ QPainterPath ProgressFloatItem::backgroundShape() const
 void ProgressFloatItem::paintContent(QPainter* painter)
 {
     // Timers cannot be stopped from another thread (e.g. from QtQuick RenderThread).
+
     if (QThread::currentThread() == QCoreApplication::instance()->thread())
     {
         // Stop repaint timer if it is already running
+
         if (m_repaintTimer.isActive())
         {
             m_repaintTimer.stop();
@@ -199,8 +213,9 @@ void ProgressFloatItem::paintContent(QPainter* painter)
     painter->save();
 
     // Paint progress pie
+
     int startAngle =  90 * 16; // 12 o' clock
-    int spanAngle = -ceil(360 * 16 * m_completed);
+    int spanAngle  = -ceil(360 * 16 * m_completed);
     QRectF rect(contentRect());
     rect.adjust(1, 1, -1, -1);
 
@@ -209,6 +224,7 @@ void ProgressFloatItem::paintContent(QPainter* painter)
     painter->drawPie(rect, startAngle, spanAngle);
 
     // Paint progress label
+
     QFont myFont = font();
     myFont.setPointSize(m_fontSize);
     const QString done = QString::number((int)(m_completed * 100)) + QLatin1Char('%');
@@ -233,12 +249,11 @@ void ProgressFloatItem::removeProgressItem()
 
     if (enabled())
     {
-        if (!active() && !m_progressShowTimer.isActive())
+        if      (!active() && !m_progressShowTimer.isActive())
         {
             m_progressShowTimer.start();
             m_progressHideTimer.stop();
         }
-
         else if (active())
         {
             update();
@@ -256,7 +271,6 @@ void ProgressFloatItem::handleProgress(int current, int queued)
         m_totalJobs = 0;
         m_completedJobs = 0;
     }
-
     else
     {
         m_totalJobs = qMax<int>(m_totalJobs, queued + current);
@@ -266,12 +280,11 @@ void ProgressFloatItem::handleProgress(int current, int queued)
 
     if (enabled())
     {
-        if (!active() && !m_progressShowTimer.isActive() && m_totalJobs > 0)
+        if      (!active() && !m_progressShowTimer.isActive() && m_totalJobs > 0)
         {
             m_progressShowTimer.start();
             m_progressHideTimer.stop();
         }
-
         else if (active())
         {
             if (m_totalJobs < 1 || m_completedJobs == m_totalJobs)
@@ -300,6 +313,7 @@ void ProgressFloatItem::hideProgress()
         setActive(false);
 
         update();
+
         Q_EMIT repaintNeeded(QRegion());
     }
 }
