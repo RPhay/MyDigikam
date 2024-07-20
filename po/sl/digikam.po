@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-19 01:44+0000\n"
+"POT-Creation-Date: 2024-07-20 01:44+0000\n"
 "PO-Revision-Date: 2024-07-12 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3670,7 +3670,7 @@ msgstr ""
 "primerjavi z digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:172
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:425
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -3995,7 +3995,7 @@ msgstr "Ime datoteke"
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
 #: core/libs/dialogs/deletedialog.cpp:174
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:572
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
 msgstr "Pot"
@@ -4125,7 +4125,7 @@ msgstr "Barvni način"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:226
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -18328,7 +18328,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:357
 #: core/libs/widgets/mainview/daboutdata.cpp:363
 #: core/libs/widgets/mainview/daboutdata.cpp:374
-#: core/utilities/geolocation/engine/plugins/PluginInterface.h:45
+#: core/utilities/geolocation/engine/plugins/PluginInterface.h:46
 #, kde-format
 msgid "Developer"
 msgstr "Razvijalec"
@@ -20076,8 +20076,8 @@ msgid "Add again"
 msgstr "Dodaj spet"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:510
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:165
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:358
 #, kde-format
 msgid "Remove"
@@ -24676,8 +24676,8 @@ msgstr "iz opazovanja"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:706
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:673
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
 #, kde-format
 msgid "not available"
 msgstr "ni na voljo"
@@ -52683,2077 +52683,2077 @@ msgstr ""
 "da izvedete\n"
 "megleno iskanje"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:283
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:284
 #, kde-format
 msgctxt "the planet"
 msgid "Mercury"
 msgstr "Merkur"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:288
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:289
 #, kde-format
 msgctxt "the planet"
 msgid "Venus"
 msgstr "Venera"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:293
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:294
 #, kde-format
 msgctxt "the planet"
 msgid "Earth"
 msgstr "Zemlja"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:298
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:299
 #, kde-format
 msgctxt "the planet"
 msgid "Mars"
 msgstr "Mars"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:303
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:304
 #, kde-format
 msgctxt "the planet"
 msgid "Jupiter"
 msgstr "Jupiter"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:308
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:309
 #, kde-format
 msgctxt "the planet"
 msgid "Saturn"
 msgstr "Saturn"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:313
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:314
 #, kde-format
 msgctxt "the planet"
 msgid "Uranus"
 msgstr "Uran"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:318
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:319
 #, kde-format
 msgctxt "the planet"
 msgid "Neptune"
 msgstr "Neptun"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:323
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:324
 #, kde-format
 msgctxt "the planet"
 msgid "Pluto"
 msgstr "Pluton"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:328
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:329
 #, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
 msgstr "Sonce"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:333
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:334
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
 msgstr "Luna"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:338
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
 msgid "Sky"
 msgstr "Nebo"
 
-#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:344
+#: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:345
 #, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Neznani planet"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:294
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
 #, kde-format
 msgid "&Lock"
 msgstr "Zakleni"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:301
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
 #, kde-format
 msgid "&Hide"
 msgstr "Skrij"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:311
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:436
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
 #, kde-format
 msgid "&Configure..."
 msgstr "Konfiguriraj..."
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:159
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
 #, kde-format
 msgctxt "means meter"
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:162
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
 #, kde-format
 msgctxt "means milimeters"
 msgid "mm"
 msgstr "mm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:165
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:166
 #, kde-format
 msgctxt "means kilometers"
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:168
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
 #, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:171
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:172
 #, kde-format
 msgctxt "means feet"
 msgid "ft"
 msgstr "čevljev"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:174
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:175
 #, kde-format
 msgctxt "means inches"
 msgid "in"
 msgstr "palcev"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:177
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:178
 #, kde-format
 msgctxt "means yards"
 msgid "yd"
 msgstr "jardov"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:180
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:181
 #, kde-format
 msgctxt "means miles"
 msgid "mi"
 msgstr "milj"
 
-#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:183
+#: core/utilities/geolocation/engine/core/MarbleLocale.cpp:184
 #, kde-format
 msgctxt "means nautical miles"
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
 #, kde-format
 msgid "Copy Coordinates"
 msgstr "Kopiraj koordinate"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:117
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:118
 #, kde-format
 msgid "Copy geo: URL"
 msgstr "Kopiraj geo: URL"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:134
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:135
 #, kde-format
 msgid "&Address Details"
 msgstr "Podrobnosti naslova"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:151
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
 #, kde-format
 msgid "No description available."
 msgstr "Opis ni na voljo."
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:446
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:500
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:518
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:527
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:447
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:501
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:519
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:528
 #, kde-format
 msgid "National Capital"
 msgstr "Glavno mesto države"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:403
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:415
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:427
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:439
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:494
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:440
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
 #: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "City"
 msgstr "Mesto"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:456
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:409
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:421
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:433
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:445
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:446
 #, kde-format
 msgid "State Capital"
 msgstr "Glavno mesto zvezne države"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:461
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:406
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:418
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:430
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:442
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:443
 #, kde-format
 msgid "County Capital"
 msgstr "Glavno mesto okrožja"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:467
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
 #, kde-format
 msgid "Capital"
 msgstr "Glavno mesto"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:478
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:521
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "Vas"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:634
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
 #, kde-format
 msgid "&Info Boxes"
 msgstr "Informacijske table"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1002
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
 #, kde-format
 msgid "Address Details"
 msgstr "Podrobnosti naslova"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:563
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "W"
 msgstr "W"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:563
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:564
 #, kde-format
 msgid "E"
 msgstr "E"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:156
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
 #, kde-format
 msgid "N"
 msgstr "N"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:780
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:781
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "S"
 msgstr "S"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:376
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:377
 #, kde-format
 msgid "Valley"
 msgstr "Dolina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:379
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:380
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:147
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:382
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:383
 #, kde-format
 msgid "Crater"
 msgstr "Krater"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:385
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:386
 #, kde-format
 msgid "Sea"
 msgstr "Morje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:388
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:389
 #, kde-format
 msgid "Manned Landing Site"
 msgstr "Mesto pristanka s posadko"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:391
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:392
 #, kde-format
 msgid "Robotic Rover"
 msgstr "Robotski rover"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:394
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:395
 #, kde-format
 msgid "Unmanned Soft Landing Site"
 msgstr "Mesto mehkega pristanka brez posadke"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:397
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:398
 #, kde-format
 msgid "Unmanned Hard Landing Site"
 msgstr "Mesto trdega pristanka brez posadke"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:400
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:454
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:401
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:455
 #, kde-format
 msgid "Mountain"
 msgstr "Gora"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:412
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:424
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:436
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:448
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:413
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:425
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:437
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:449
 #, kde-format
 msgid "Nation Capital"
 msgstr "Glavno mesto države"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:451
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:452
 #, kde-format
 msgid "Nation"
 msgstr "Narod"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:457
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:806
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:458
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:807
 #, kde-format
 msgid "Volcano"
 msgstr "Vulkan"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:460
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:461
 #, kde-format
 msgid "Continent"
 msgstr "Kontinent"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:463
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:464
 #, kde-format
 msgid "Ocean"
 msgstr "Ocean"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:466
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:467
 #, kde-format
 msgid "Geographic Pole"
 msgstr "Geografski pol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:469
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:470
 #, kde-format
 msgid "Magnetic Pole"
 msgstr "Magnetni pol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:472
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:473
 #, kde-format
 msgid "Ship Wreck"
 msgstr "Razbitina ladje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:475
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:476
 #, kde-format
 msgid "Air Port"
 msgstr "Letališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:478
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:479
 #, kde-format
 msgid "Observatory"
 msgstr "Observatorij"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:481
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:482
 #, kde-format
 msgid "Military Danger Area"
 msgstr "Vojaško nevarno območje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:484
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:485
 #, kde-format
 msgid "OSM Site"
 msgstr "OSM stran"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:487
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:488
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordinate"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:490
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:491
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:145
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:497
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:498
 #, kde-format
 msgid "City Capital"
 msgstr "Središče mesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:503
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:504
 #, kde-format
 msgid "Suburb"
 msgstr "Predmestje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:506
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:507
 #, kde-format
 msgid "Hamlet"
 msgstr "Zaselek"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:509
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:510
 #, kde-format
 msgid "Locality"
 msgstr "Kraj"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:512
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:513
 #, kde-format
 msgid "Town"
 msgstr "Mesto"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:515
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:516
 #, kde-format
 msgid "Town Capital"
 msgstr "Središče mesteca"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:524
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:525
 #, kde-format
 msgid "Village Capital"
 msgstr "Središče vasi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:530
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:531
 #, kde-format
 msgid "Water"
 msgstr "Voda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:533
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:534
 #, kde-format
 msgid "Reef"
 msgstr "Greben"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:536
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:537
 #, kde-format
 msgid "Wood"
 msgstr "Les"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:539
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:540
 #, kde-format
 msgid "Beach"
 msgstr "Plaža"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:542
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:543
 #, kde-format
 msgid "Wetland"
 msgstr "Močvirje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:545
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:546
 #, kde-format
 msgid "Glacier"
 msgstr "Ledenik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:548
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
 msgid "Ice Shelf"
 msgstr "Ledena polica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:551
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:552
 #, kde-format
 msgid "Scrub"
 msgstr "Grm"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:554
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:555
 #, kde-format
 msgid "Cliff"
 msgstr "Klif"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:557
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:558
 #, kde-format
 msgid "Heath"
 msgstr "Resava"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:560
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:561
 #, kde-format
 msgid "Traffic Signals"
 msgstr "Prometni znaki"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:563
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:564
 #, kde-format
 msgid "Elevator"
 msgstr "Dvigalo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:566
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:567
 #, kde-format
 msgid "Steps"
 msgstr "Stopnice"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:569
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:570
 #, kde-format
 msgid "Unknown Road"
 msgstr "Neznana cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:575
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:581
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:576
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:582
 #, kde-format
 msgid "Footway"
 msgstr "Pešpot"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:578
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1169
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:579
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1170
 #, kde-format
 msgid "Track"
 msgstr "Sled"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:584
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:585
 #, kde-format
 msgid "Cycleway"
 msgstr "Kolesarska steza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:587
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:588
 #, kde-format
 msgid "Service Road"
 msgstr "Servisna cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:590
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:591
 #, kde-format
 msgid "Road"
 msgstr "Cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:593
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:594
 #, kde-format
 msgid "Residential Road"
 msgstr "Stanovanjska cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:596
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:597
 #, kde-format
 msgid "Living Street"
 msgstr "Živahna ulica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:599
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:600
 #, kde-format
 msgid "Unclassified Road"
 msgstr "Neklasificirana cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:602
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:603
 #, kde-format
 msgid "Tertiary Link Road"
 msgstr "Povezovalna cesta 3. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:605
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:606
 #, kde-format
 msgid "Tertiary Road"
 msgstr "Cesta 3. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:608
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:609
 #, kde-format
 msgid "Secondary Link Road"
 msgstr "Povezovalna cesta 2. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:611
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:612
 #, kde-format
 msgid "Secondary Road"
 msgstr "Cesta 2. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:614
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:615
 #, kde-format
 msgid "Primary Link Road"
 msgstr "Povezovalna cesta 1. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:617
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:618
 #, kde-format
 msgid "Primary Road"
 msgstr "Cesta 1. reda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:620
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:621
 #, kde-format
 msgid "Raceway"
 msgstr "Dirkališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:623
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:624
 #, kde-format
 msgid "Trunk Link Road"
 msgstr "Glavna povezovalna cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:626
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:627
 #, kde-format
 msgid "Trunk Road"
 msgstr "Glavna cesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:629
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:630
 #, kde-format
 msgid "Motorway Link Road"
 msgstr "Avtocestna povezava"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:632
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:633
 #, kde-format
 msgid "Motorway"
 msgstr "Avtocesta"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:635
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:636
 #, kde-format
 msgid "Corridor"
 msgstr "Koridor"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:638
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:639
 #, kde-format
 msgid "Building"
 msgstr "Stavba"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:641
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:642
 #, kde-format
 msgid "Camping"
 msgstr "Kamping"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:644
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:645
 #, kde-format
 msgid "Hostel"
 msgstr "Hostel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:647
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:648
 #, kde-format
 msgid "Hotel"
 msgstr "Hotel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:650
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:651
 #, kde-format
 msgid "Motel"
 msgstr "Motel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:653
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:654
 #, kde-format
 msgid "Youth Hostel"
 msgstr "Mladinski hostel"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:656
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:657
 #, kde-format
 msgid "Guest House"
 msgstr "Gostišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:659
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:660
 #, kde-format
 msgid "Library"
 msgstr "Knjižnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:662
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:663
 #, kde-format
 msgid "Kindergarten"
 msgstr "Otroški vrtec"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:665
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:666
 #, kde-format
 msgid "College"
 msgstr "Srednja šola"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:668
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:669
 #, kde-format
 msgid "School"
 msgstr "Šola"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:671
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:672
 #, kde-format
 msgid "University"
 msgstr "Univerza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:674
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:675
 #, kde-format
 msgid "Bar"
 msgstr "Bar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:677
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:678
 #, kde-format
 msgid "Biergarten"
 msgstr "Pivski vrt"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:680
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:681
 #, kde-format
 msgid "Cafe"
 msgstr "Kavarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:683
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:684
 #, kde-format
 msgid "Fast Food"
 msgstr "Hitra hrana"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:686
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:687
 #, kde-format
 msgid "Pub"
 msgstr "Gostilna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:689
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:690
 #, kde-format
 msgid "Restaurant"
 msgstr "Restavracija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:692
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:693
 #, kde-format
 msgid "Dentist"
 msgstr "Zobozdravnik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:695
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:696
 #, kde-format
 msgid "Doctors"
 msgstr "Zdravniki"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:698
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:699
 #, kde-format
 msgid "Hospital"
 msgstr "Bolnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:701
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:702
 #, kde-format
 msgid "Pharmacy"
 msgstr "Lekarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:704
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:705
 #, kde-format
 msgid "Veterinary"
 msgstr "Veterinar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:707
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:708
 #, kde-format
 msgid "ATM"
 msgstr "Bankomat"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:710
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:711
 #, kde-format
 msgid "Bank"
 msgstr "Banka"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:713
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:714
 #, kde-format
 msgid "Archaeological Site"
 msgstr "Arheološko najdišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:716
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:717
 #, kde-format
 msgid "Embassy"
 msgstr "Ambasada"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:719
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:720
 #, kde-format
 msgid "Emergency Phone"
 msgstr "Telefon v sili"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:722
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:723
 #, kde-format
 msgid "Mountain Rescue"
 msgstr "Gorska reševalna služba"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:725
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:726
 #, kde-format
 msgid "Water Park"
 msgstr "Vodni park"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:728
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:729
 #, kde-format
 msgid "Community Centre"
 msgstr "Dom krajanov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:731
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:732
 #, kde-format
 msgid "Fountain"
 msgstr "Fontana"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:734
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:735
 #, kde-format
 msgid "Night Club"
 msgstr "Nočni klub"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:737
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:738
 #, kde-format
 msgid "Bench"
 msgstr "Klop"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:740
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:741
 #, kde-format
 msgid "Court House"
 msgstr "Sodišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:743
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:744
 #, kde-format
 msgid "Fire Station"
 msgstr "Gasilni dom"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:746
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:747
 #, kde-format
 msgid "Hunting Stand"
 msgstr "Lovska preža"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:749
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:750
 #, kde-format
 msgid "Police"
 msgstr "Policija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:752
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:753
 #, kde-format
 msgid "Post Box"
 msgstr "Poštni nabiralnik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:755
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:756
 #, kde-format
 msgid "Post Office"
 msgstr "Poštni urad"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:758
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:759
 #, kde-format
 msgid "Prison"
 msgstr "Zapor"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:761
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:762
 #, kde-format
 msgid "Recycling"
 msgstr "Recikliranje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:764
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:765
 #, kde-format
 msgid "Shelter"
 msgstr "Zavetje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:767
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:768
 #, kde-format
 msgid "Telephone"
 msgstr "Telefon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:770
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:771
 #, kde-format
 msgid "Toilets"
 msgstr "Toalete"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:773
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:774
 #, kde-format
 msgid "Town Hall"
 msgstr "Mestna hiša"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:776
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:777
 #, kde-format
 msgid "Waste Basket"
 msgstr "Koš za odpadke"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:779
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:780
 #, kde-format
 msgid "Drinking Water"
 msgstr "Pitna voda"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:782
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:783
 #, kde-format
 msgid "Graveyard"
 msgstr "Pokopališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:785
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:786
 #, kde-format
 msgid "Charging Station"
 msgstr "Polnilna postaja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:788
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:789
 #, kde-format
 msgid "Car Wash"
 msgstr "Avtopralnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:791
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:792
 #, kde-format
 msgid "Social Facility"
 msgstr "Socialni objekt"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:794
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:795
 #, kde-format
 msgid "City Wall"
 msgstr "Mestno obzidje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:797
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:798
 #, kde-format
 msgid "Gate"
 msgstr "Vrata"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:800
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:801
 #, kde-format
 msgid "Lift Gate"
 msgstr "Dvižna vrata"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:803
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1427
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:804
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1428
 #, kde-format
 msgid "Wall"
 msgstr "Zid"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:809
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:810
 #, kde-format
 msgid "Peak"
 msgstr "Vrh"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:812
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:813
 #, kde-format
 msgid "Tree"
 msgstr "Drevo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:815
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:816
 #, kde-format
 msgid "Cave Entrance"
 msgstr "Vhod v jamo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:818
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:819
 #, kde-format
 msgid "Beverages"
 msgstr "Pijače"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:821
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:822
 #, kde-format
 msgid "Hifi"
 msgstr "Hifi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:824
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:825
 #, kde-format
 msgid "Supermarket"
 msgstr "Supermarket"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:827
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:828
 #, kde-format
 msgid "Liquor Store"
 msgstr "Trgovina s pijačami"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:830
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:831
 #, kde-format
 msgid "Bakery"
 msgstr "Pekarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:833
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:834
 #, kde-format
 msgid "Butcher"
 msgstr "Mesar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:836
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:837
 #, kde-format
 msgid "Confectionery"
 msgstr "Slaščice"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:839
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:840
 #, kde-format
 msgid "Convenience Shop"
 msgstr "Priročna trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:842
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:843
 #, kde-format
 msgid "Greengrocer"
 msgstr "Trgovina z zelenjavo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:845
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:846
 #, kde-format
 msgid "Seafood Shop"
 msgstr "Ribarnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:848
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:849
 #, kde-format
 msgid "Department Store"
 msgstr "Veleblagovnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:851
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:852
 #, kde-format
 msgid "Kiosk"
 msgstr "Kiosk"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:854
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:855
 #, kde-format
 msgid "Bag Shop"
 msgstr "Trgovina s torbami"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:857
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:858
 #, kde-format
 msgid "Clothes Shop"
 msgstr "Trgovina z oblekami"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:860
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:861
 #, kde-format
 msgid "Fashion Shop"
 msgstr "Modna trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:863
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:864
 #, kde-format
 msgid "Jewelry Shop"
 msgstr "Draguljarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:866
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:867
 #, kde-format
 msgid "Shoe Shop"
 msgstr "Prodajalna čevljev"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:869
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:870
 #, kde-format
 msgid "Variety Store"
 msgstr "Trgovina z mešanim blagom"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:872
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:873
 #, kde-format
 msgid "Beauty Services"
 msgstr "Lepotilni salon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:875
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:876
 #, kde-format
 msgid "Chemist"
 msgstr "Drogerija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:878
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:879
 #, kde-format
 msgid "Cosmetics"
 msgstr "Kozmetika"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:881
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:882
 #, kde-format
 msgid "Hairdresser"
 msgstr "Frizer"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:884
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:885
 #, kde-format
 msgid "Optician"
 msgstr "Optik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:887
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:888
 #, kde-format
 msgid "Perfumery"
 msgstr "Parfumerija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:890
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:896
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:891
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:897
 #, kde-format
 msgid "Hardware Store"
 msgstr "Železnina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:893
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:894
 #, kde-format
 msgid "Florist"
 msgstr "Cvetličarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:899
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:900
 #, kde-format
 msgid "Furniture Store"
 msgstr "Prodajalna pohištva"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:902
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:903
 #, kde-format
 msgid "Electronics Shop"
 msgstr "Prodajalna elektronike"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:905
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:906
 #, kde-format
 msgid "Mobile Phone Shop"
 msgstr "Prodajalna mobilnih telefonov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:908
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:909
 #, kde-format
 msgid "Bicycle Shop"
 msgstr "Prodajalna koles"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:911
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:912
 #, kde-format
 msgid "Car Dealer"
 msgstr "Prodajalna avtomobilov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:914
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:915
 #, kde-format
 msgid "Car Repair Shop"
 msgstr "Avtoservis"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:917
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:918
 #, kde-format
 msgid "Car Parts"
 msgstr "Deli za avtomobile"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:920
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:921
 #, kde-format
 msgid "Motorcycle Shop"
 msgstr "Prodajalna motociklov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:923
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:924
 #, kde-format
 msgid "Outdoor Shop"
 msgstr "Trgovina za opremo za športe v naravi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:926
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:927
 #, kde-format
 msgid "Sports Shop"
 msgstr "Športna trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:929
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:930
 #, kde-format
 msgid "Printing Services"
 msgstr "Tiskarske storitve"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:932
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:933
 #, kde-format
 msgid "Art Shop"
 msgstr "Umetniška trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:935
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:936
 #, kde-format
 msgid "Musical Instrument Shop"
 msgstr "Trgovina z glasbili"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:938
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:939
 #, kde-format
 msgid "Photo Shop"
 msgstr "Foto trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:941
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:942
 #, kde-format
 msgid "Bookshop"
 msgstr "Knjigarna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:944
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:945
 #, kde-format
 msgid "Gift Shop"
 msgstr "Prodajalna daril"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:947
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:948
 #, kde-format
 msgid "Stationery"
 msgstr "Pisalne potrebščine"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:950
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:951
 #, kde-format
 msgid "Laundry"
 msgstr "Pralnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:953
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:954
 #, kde-format
 msgid "Pet Shop"
 msgstr "Trgovina z domačimi živalmi"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:956
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:957
 #, kde-format
 msgid "Toy Store"
 msgstr "Trgovina z igračami"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:959
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:960
 #, kde-format
 msgid "Travel Agency"
 msgstr "Potovalna agencija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:962
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:963
 #, kde-format
 msgid "Deli"
 msgstr "Delikatesa"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:965
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:966
 #, kde-format
 msgid "Tobacco Shop"
 msgstr "Trgovina s tobačnimi izdelki"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:968
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:969
 #, kde-format
 msgid "Tea Shop"
 msgstr "Čajnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:971
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:972
 #, kde-format
 msgid "Computer Shop"
 msgstr "Prodajalna računalnikov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:974
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:975
 #, kde-format
 msgid "Garden Centre"
 msgstr "Vrtni center"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:977
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:978
 #, kde-format
 msgid "Shop"
 msgstr "Trgovina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:980
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:981
 #, kde-format
 msgid "Bridge"
 msgstr "Most"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:983
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:984
 #, kde-format
 msgid "Lighthouse"
 msgstr "Svetilnik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:986
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:987
 #, kde-format
 msgid "Pier"
 msgstr "Pomol"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:989
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:990
 #, kde-format
 msgid "Water Tower"
 msgstr "Vodni stolp"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:992
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:993
 #, kde-format
 msgid "Wind Mill"
 msgstr "Mlin na veter"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:995
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:996
 #, kde-format
 msgid "Communications Tower"
 msgstr "Komunikacijski stolp"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:998
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:999
 #, kde-format
 msgid "Tourist Attraction"
 msgstr "Turistična znamenitost"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1001
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1002
 #, kde-format
 msgid "Artwork"
 msgstr "Umetniško delo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1004
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1005
 #, kde-format
 msgid "Castle"
 msgstr "Grad"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1007
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1008
 #, kde-format
 msgid "Cinema"
 msgstr "Kino"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1010
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1011
 #, kde-format
 msgid "Information"
 msgstr "Informacije"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1013
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1014
 #, kde-format
 msgid "Monument"
 msgstr "Spomenik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1016
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1017
 #, kde-format
 msgid "Museum"
 msgstr "Muzej"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1019
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1020
 #, kde-format
 msgid "Ruin"
 msgstr "Razvalina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1022
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1023
 #, kde-format
 msgid "Theatre"
 msgstr "Gledališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1025
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1026
 #, kde-format
 msgid "Theme Park"
 msgstr "Tematski park"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1028
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1029
 #, kde-format
 msgid "View Point"
 msgstr "Razgledna točka"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1031
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1032
 #, kde-format
 msgid "Zoo"
 msgstr "Zoološki vrt"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1034
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1035
 #, kde-format
 msgid "Alpine Hut"
 msgstr "Planinska koča"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1037
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1038
 #, kde-format
 msgid "Wilderness Hut"
 msgstr "Zavetišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1040
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1041
 #, kde-format
 msgid "Memorial"
 msgstr "Spominska plošča"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1043
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1044
 #, kde-format
 msgid "Aerodrome"
 msgstr "Letališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1046
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1047
 #, kde-format
 msgid "Helipad"
 msgstr "Heliodrom"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1049
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1050
 #, kde-format
 msgid "Airport Gate"
 msgstr "Izhod iz letališča"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1052
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1053
 #, kde-format
 msgid "Airport Runway"
 msgstr "Pristajalna steza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1055
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1056
 #, kde-format
 msgid "Airport Apron"
 msgstr "Letališka ploščad"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1058
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1059
 #, kde-format
 msgid "Airport Taxiway"
 msgstr "Letališka vozna steza"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1061
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1062
 #, kde-format
 msgid "Airport Terminal"
 msgstr "Letališki terminal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1064
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1065
 #, kde-format
 msgid "Bus Station"
 msgstr "Avtobusna postaja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1067
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1068
 #, kde-format
 msgid "Bus Stop"
 msgstr "Postajališče avtobusa"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1070
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1071
 #, kde-format
 msgid "Car Sharing"
 msgstr "Avto polnilnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1073
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1074
 #, kde-format
 msgid "Gas Station"
 msgstr "Plinska postaja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1076
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1077
 #, kde-format
 msgid "Parking"
 msgstr "Parkirišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1079
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1080
 #, kde-format
 msgid "Parking Space"
 msgstr "Prostor za parkiranje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1082
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1083
 #, kde-format
 msgid "Platform"
 msgstr "Ploščad"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1085
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1086
 #, kde-format
 msgid "Bicycle Rental"
 msgstr "Izposojevalnica koles"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1088
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1089
 #, kde-format
 msgid "Car Rental"
 msgstr "Izposojevalnica avtomobilov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1091
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1092
 #, kde-format
 msgid "Ski Rental"
 msgstr "Izposojevalnica smuči"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1094
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1095
 #, kde-format
 msgid "Taxi Rank"
 msgstr "Postaja taksijev"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1097
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1098
 #, kde-format
 msgid "Train Station"
 msgstr "Železniška postaja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1100
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1101
 #, kde-format
 msgid "Tram Stop"
 msgstr "Postajališče tramvaja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1103
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1104
 #, kde-format
 msgid "Bicycle Parking"
 msgstr "Parkirišče koles"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1106
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1107
 #, kde-format
 msgid "Motorcycle Parking"
 msgstr "Parkirišče motociklov"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1109
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1110
 #, kde-format
 msgid "Subway Entrance"
 msgstr "Vhod v podzemsko železnico"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1112
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1113
 #, kde-format
 msgid "Speed Camera"
 msgstr "Hitra kamera"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1115
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1116
 #, kde-format
 msgid "Place Of Worship"
 msgstr "Prostor za molitve"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1118
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1119
 #, kde-format
 msgid "Bahai"
 msgstr "Bahajski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1121
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1122
 #, kde-format
 msgid "Buddhist"
 msgstr "Budistični"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1124
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1125
 #, kde-format
 msgid "Christian"
 msgstr "Krščanski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1127
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1128
 #, kde-format
 msgid "Muslim"
 msgstr "Muslimanski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1130
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1131
 #, kde-format
 msgid "Hindu"
 msgstr "Hinduistični"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1133
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1134
 #, kde-format
 msgid "Jain"
 msgstr "Džainistični"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1136
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1137
 #, kde-format
 msgid "Jewish"
 msgstr "Judovski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1139
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1140
 #, kde-format
 msgid "Shinto"
 msgstr "Šintoistični"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1142
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1143
 #, kde-format
 msgid "Sikh"
 msgstr "Sikhovski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1145
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1146
 #, kde-format
 msgid "Taoist"
 msgstr "Taoistični"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1148
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1149
 #, kde-format
 msgid "Golf Course"
 msgstr "Golf igrišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1151
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1152
 #, kde-format
 msgid "Marina"
 msgstr "Marina"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1154
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1155
 #, kde-format
 msgid "Park"
 msgstr "Park"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1157
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1158
 #, kde-format
 msgid "Playground"
 msgstr "Igrišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1160
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1161
 #, kde-format
 msgid "Pitch"
 msgstr "Klanec"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1163
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1164
 #, kde-format
 msgid "Sports Centre"
 msgstr "Športni center"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1166
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1167
 #, kde-format
 msgid "Stadium"
 msgstr "Stadion"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1172
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1173
 #, kde-format
 msgid "Swimming Pool"
 msgstr "Plavalni bazen"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1175
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1176
 #, kde-format
 msgid "Miniature Golf Course"
 msgstr "Mini golf"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1178
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1179
 #, kde-format
 msgid "Allotments"
 msgstr "Dodelitve"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1181
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1182
 #, kde-format
 msgid "Basin"
 msgstr "Bazen"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1184
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1185
 #, kde-format
 msgid "Cemetery"
 msgstr "Pokopališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1187
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1188
 #, kde-format
 msgid "Commercial"
 msgstr "Poslovno središče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1190
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1191
 #, kde-format
 msgid "Construction"
 msgstr "Konstrukcija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1193
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1194
 #, kde-format
 msgid "Farmland"
 msgstr "Kmetijsko zemljišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1196
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1197
 #, kde-format
 msgid "Farmyard"
 msgstr "Kmetijsko dvorišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1199
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1200
 #, kde-format
 msgid "Garages"
 msgstr "Garaže"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1202
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1203
 #, kde-format
 msgid "Grass"
 msgstr "Trava"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1205
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1206
 #, kde-format
 msgid "Industrial"
 msgstr "Industrijsko"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1208
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1209
 #, kde-format
 msgid "Landfill"
 msgstr "Odlagališče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1211
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1212
 #, kde-format
 msgid "Meadow"
 msgstr "Travnik"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1214
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1215
 #, kde-format
 msgid "Military"
 msgstr "Vojaško"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1217
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1218
 #, kde-format
 msgid "Quarry"
 msgstr "Kamnolom"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1220
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1221
 #, kde-format
 msgid "Railway"
 msgstr "Železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1223
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1224
 #, kde-format
 msgid "Reservoir"
 msgstr "Rezervar"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1226
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1227
 #, kde-format
 msgid "Residential"
 msgstr "Stanovanjski"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1229
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1230
 #, kde-format
 msgid "Retail"
 msgstr "Na drobno"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1232
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1233
 #, kde-format
 msgid "Orchard"
 msgstr "Sadovnjak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1235
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1236
 #, kde-format
 msgid "Vineyard"
 msgstr "Vinograd"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1238
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1239
 #, kde-format
 msgid "Rail"
 msgstr "Železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1241
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1242
 #, kde-format
 msgid "Narrow Gauge"
 msgstr "Ozkotirna"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1244
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:311
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1245
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:312
 #, kde-format
 msgid "Tram"
 msgstr "Tramvaj"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1247
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1248
 #, kde-format
 msgid "Light Rail"
 msgstr "Hitri tramvaj"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1250
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1251
 #, kde-format
 msgid "Abandoned Railway"
 msgstr "Zapuščena železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1253
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:307
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1254
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:308
 #, kde-format
 msgid "Subway"
 msgstr "Podzemna železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1256
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1257
 #, kde-format
 msgid "Preserved Railway"
 msgstr "Ohranjena železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1259
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1260
 #, kde-format
 msgid "Miniature Railway"
 msgstr "Miniaturna železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1262
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1263
 #, kde-format
 msgid "Railway Construction"
 msgstr "Železniška konstrukcija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1265
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1266
 #, kde-format
 msgid "Monorail"
 msgstr "Enotirna železnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1268
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1269
 #, kde-format
 msgid "Funicular Railway"
 msgstr "Tirna vzpenjača"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1271
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1272
 #, kde-format
 msgid "Power Tower"
 msgstr "Zaganjalni stolp"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1274
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1275
 #, kde-format
 msgid "Aerialway Station"
 msgstr "Postaja žičnice"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1277
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1278
 #, kde-format
 msgctxt "A pylon supporting the aerialway cable e.g. on a ski lift"
 msgid "Pylon"
 msgstr "Pilon"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1280
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1281
 #, kde-format
 msgid "Cable Car"
 msgstr "Žičnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1283
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1284
 #, kde-format
 msgid "Gondola"
 msgstr "Gondola"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1286
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1287
 #, kde-format
 msgid "Chair Lift"
 msgstr "Sedežnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1289
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1290
 #, kde-format
 msgid "Mixed Lift"
 msgstr "Mešano dvigalo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1292
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1293
 #, kde-format
 msgid "Drag Lift"
 msgstr "Vlečno dvigalo"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1295
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1296
 #, kde-format
 msgid "T-Bar"
 msgstr "Vlečnica na sidra"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1298
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1299
 #, kde-format
 msgid "J-Bar"
 msgstr "Vlečnica s kljukami"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1301
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1302
 #, kde-format
 msgid "Platter"
 msgstr "Vlečnica s krogci"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1304
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1305
 #, kde-format
 msgid "Rope Tow"
 msgstr "Vlečnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1307
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1308
 #, kde-format
 msgid "Magic Carpet"
 msgstr "Tekoči trak"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1310
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1311
 #, kde-format
 msgid "Zip Line"
 msgstr "Zip žica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1313
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1314
 #, kde-format
 msgid "Goods"
 msgstr "Dobrine"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1316
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:347
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1317
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:348
 #, kde-format
 msgid "Downhill Piste"
 msgstr "Alpska smučarska proga"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1319
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1320
 #, kde-format
 msgid "Nordic Piste"
 msgstr "Tekaška smučarska proga"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1322
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:355
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1323
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:356
 #, kde-format
 msgid "Skitour"
 msgstr "Turna smuka"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1325
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1326
 #, kde-format
 msgid "Sled Piste"
 msgstr "Proga za konjske sanke"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1328
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1329
 #, kde-format
 msgid "Winter Hike"
 msgstr "Zimsko potepanje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1331
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1332
 #, kde-format
 msgid "Sleigh Piste"
 msgstr "Sankaška proga"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1334
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1335
 #, kde-format
 msgid "Ice Skate"
 msgstr "Drsanje na ledu"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1337
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1338
 #, kde-format
 msgid "Snow Park"
 msgstr "Snežni park"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1340
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1341
 #, kde-format
 msgid "Ski Playground"
 msgstr "Snežno igrišče"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1343
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1344
 #, kde-format
 msgid "Ski Jump"
 msgstr "Smučarska skakalnica"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1346
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1347
 #, kde-format
 msgid "Admin Boundary (Level 1)"
 msgstr "Administrativna meja (raven 1)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1349
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1350
 #, kde-format
 msgid "Admin Boundary (Level 2)"
 msgstr "Administrativna meja (raven 2)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1352
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1353
 #, kde-format
 msgid "Admin Boundary (Level 3)"
 msgstr "Administrativna meja (raven 3)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1355
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1356
 #, kde-format
 msgid "Admin Boundary (Level 4)"
 msgstr "Administrativna meja (raven 4)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1358
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1359
 #, kde-format
 msgid "Admin Boundary (Level 5)"
 msgstr "Administrativna meja (raven 5)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1361
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1362
 #, kde-format
 msgid "Admin Boundary (Level 6)"
 msgstr "Administrativna meja (raven 6)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1364
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1365
 #, kde-format
 msgid "Admin Boundary (Level 7)"
 msgstr "Administrativna meja (raven 7)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1367
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1368
 #, kde-format
 msgid "Admin Boundary (Level 8)"
 msgstr "Administrativna meja (raven 8)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1370
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1371
 #, kde-format
 msgid "Admin Boundary (Level 9)"
 msgstr "Administrativna meja (raven 9)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1373
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1374
 #, kde-format
 msgid "Admin Boundary (Level 10)"
 msgstr "Administrativna meja (raven 10)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1376
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1377
 #, kde-format
 msgid "Admin Boundary (Level 11)"
 msgstr "Administrativna meja (raven 11)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1379
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1380
 #, kde-format
 msgid "Boundary (Maritime)"
 msgstr "Meja (morska)"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1382
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1383
 #, kde-format
 msgid "Land Mass"
 msgstr "Kopenska masa"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1385
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1386
 #, kde-format
 msgid "Urban Area"
 msgstr "Mestno območje"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1388
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1389
 #, kde-format
 msgid "International Date Line"
 msgstr "Mednarodna datumska meja"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1391
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1392
 #, kde-format
 msgid "Bathymetry"
 msgstr "Batimetrija"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1394
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1395
 #, kde-format
 msgid "Canal"
 msgstr "Kanal"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1397
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1398
 #, kde-format
 msgid "Drain"
 msgstr "Odtok"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1400
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1401
 #, kde-format
 msgid "Ditch"
 msgstr "Jarek"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1403
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1404
 #, kde-format
 msgid "Stream"
 msgstr "Tok"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1406
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1407
 #, kde-format
 msgid "River"
 msgstr "Reka"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1409
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1410
 #, kde-format
 msgid "Weir"
 msgstr "Jez"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1412
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1415
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1418
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1413
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1416
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1419
 #, kde-format
 msgid "Crosswalk"
 msgstr "Prehod"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1421
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1422
 #, kde-format
 msgid "Railway Crossing"
 msgstr "Železniški prehod"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1424
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1425
 #, kde-format
 msgid "Door"
 msgstr "Vrata"
 
-#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1430
+#: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1431
 #, kde-format
 msgid "Room"
 msgstr "Soba"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:59
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:60
 #, kde-format
 msgctxt "North direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:62
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:63
 #, kde-format
 msgctxt "East direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:65
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:66
 #, kde-format
 msgctxt "South direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:68
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:69
 #, kde-format
 msgctxt "West direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:101
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:102
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:104
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:105
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:107
+#: core/utilities/geolocation/engine/geodata/data/LonLatParser.cpp:108
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:295
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:296
 #, kde-format
 msgid "Detour"
 msgstr "Obvoz"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:299
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:300
 #, kde-format
 msgid "Ferry Route"
 msgstr "Trajektna pot"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:303
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:304
 #, kde-format
 msgid "Train"
 msgstr "Vlak"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:315
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:316
 #, kde-format
 msgid "Bus"
 msgstr "Avtobus"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:319
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:320
 #, kde-format
 msgid "Trolley Bus"
 msgstr "Trolejbus"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:323
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:324
 #, kde-format
 msgid "Bicycle Route"
 msgstr "Kolesarska steza"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:327
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:328
 #, kde-format
 msgid "Mountainbike Route"
 msgstr "Pot za gorsko kolo"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:331
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:332
 #, kde-format
 msgid "Walking Route"
 msgstr "Pešpot"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:335
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:336
 #, kde-format
 msgid "Hiking Route"
 msgstr "Pohodniška pot"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:339
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:340
 #, kde-format
 msgid "Bridleway"
 msgstr "Konjska steza"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:343
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:344
 #, kde-format
 msgid "Inline Skates Route"
 msgstr "Steza za rolkanje"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:351
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:352
 #, kde-format
 msgid "Nordic Ski Trail"
 msgstr "Smučarsko tekaška proga"
 
-#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:359
+#: core/utilities/geolocation/engine/geodata/graphicsitem/GeoLineStringGraphicsItem.cpp:360
 #, kde-format
 msgid "Sled Trail"
 msgstr "Steza za sanke"
 
-#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:53
+#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:54
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
 msgstr ""
 "Podrejene besedne vsebine <maximum> ni bilo mogoče pretvoriti v celo "
 "število. Bila je: '%1'"
 
-#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:58
+#: core/utilities/geolocation/engine/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:59
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr ""
 "Podrejene besedne vsebine <minimum> ni bilo mogoče pretvoriti v celo "
 "število. Bila je: '%1'"
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:110
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:111
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
 "Razčlenjevanje vrstice %1 ni uspelo. Še vedno %2 nezaprtih oznak po koncu "
 "dokumenta. "
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:157
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:158
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
 msgstr "Napaka pri razčlenjevanju datoteke v vrstici: %1 in stolpcu %2. "
 
-#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:159
+#: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:160
 #, kde-format
 msgid "This is an Invalid File"
 msgstr "To je neveljavna datoteka"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:223
-#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:224
+#: core/utilities/geolocation/engine/models/MapThemeManager.cpp:455
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:52
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:229
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
 #, kde-format
 msgid "Popularity"
 msgstr "Popularnost"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:232
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "PopIndeks"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:313
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
 #, kde-format
 msgid "Playlist"
 msgstr "Seznam predvajanj"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:98
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
 #, kde-format
 msgid "No name specified"
 msgstr "Ni določenega imena"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:99
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
 #, kde-format
 msgid "Please specify a name for this relation."
 msgstr "Določite ime za to relacijo."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:105
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:106
 #, kde-format
 msgid "No type tag specified"
 msgstr "Ni določene oznake vrste"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:106
+#: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:107
 #, kde-format
 msgid "Please add a type tag for this relation."
 msgstr "Dodajte oznako vrste za to relacijo."
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:81
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:96
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:86
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget_p.cpp:97
 #, kde-format
 msgid "New Relation"
 msgstr "Nova relacija"
 
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:166
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:181
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
@@ -54779,8 +54779,8 @@ msgstr "Vloga"
 msgid "Add Relation"
 msgstr "Dodaj relacijo"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:108
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:124
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget.cpp:115
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:125
 #, kde-format
 msgid "value"
 msgstr "vrednost"
@@ -54817,27 +54817,27 @@ msgstr ">>"
 msgid "Related Tags"
 msgstr "Oznake v relaciji"
 
-#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:46
+#: core/utilities/geolocation/engine/osm/OsmTagEditorWidget_p.cpp:47
 #, kde-format
 msgid "Add custom tag..."
 msgstr "Dodaj oznako po meri..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:446
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:72
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:73
 #, kde-format
 msgid "Atmosphere"
 msgstr "Atmosfera"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:77
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:78
 #, kde-format
 msgid "&Atmosphere"
 msgstr "&Atmosfera"
 
-#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/atmosphere/AtmospherePlugin.cpp:93
 #, kde-format
 msgid "A plugin to show the atmosphere around the earth."
 msgstr "Vtičnik za prikaz atmosfere okoli zemlje."
@@ -54880,17 +54880,17 @@ msgstr "Atom"
 msgid "Magnet"
 msgstr "Magnet"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:73
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:74
 #, kde-format
 msgid "Compass"
 msgstr "Kompas"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:78
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:79
 #, kde-format
 msgid "&Compass"
 msgstr "Kompas"
 
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:94
 #, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
 msgstr ""
@@ -54926,17 +54926,17 @@ msgstr "Obkroženo"
 msgid "German"
 msgstr "Nemško"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
 #, kde-format
 msgid "Crosshairs"
 msgstr "Križec"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "Cross&hairs"
 msgstr "Križec"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr "Vtičnik, ki kaže merilni križec nad zemljevidom."
@@ -55015,67 +55015,67 @@ msgstr "Številčne oznake"
 msgid "Show numerical Labels."
 msgstr "Pokaži številčne oznake."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:84
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:85
 #, kde-format
 msgid "Coordinate Grid"
 msgstr "Koordinatna mreža"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:90
 #, kde-format
 msgid "Coordinate &Grid"
 msgstr "Koordinatna mreža"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:104
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:105
 #, kde-format
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr "Vtičnik, ki prikazuje koordinatno mrežo nad zemljevidom."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:229
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "Izberite barvo koordinatne mreže."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:241
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "Izberite barvo tropskih povratnikov."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:253
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr "Izberite barvo ekvatorja."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:336
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
 #, kde-format
 msgid "Equator"
 msgstr "Ekvator"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:343
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
 #, kde-format
 msgid "Prime Meridian"
 msgstr "Prvi poldnevnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
 #, kde-format
 msgid "Antimeridian"
 msgstr "Antimeridian"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:439
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr "Rakov (severni) povratnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr "Kozorogov (južni) povratnik"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:443
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Arktični krog"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Antarktični krog"
@@ -55094,53 +55094,53 @@ msgstr "Pokaži merilno lestvico"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:67
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
 #, kde-format
 msgid "Minimize"
 msgstr "Strni"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:84
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
 #, kde-format
 msgid "Scale Bar"
 msgstr "Merilo"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
 #, kde-format
 msgid "&Scale Bar"
 msgstr "Merilo"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:104
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Vtičnik za prikaz lebdečega elementa, ki zagotavlja merilo zemljevida."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:115
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
 #, kde-format
 msgid "Original Developer"
 msgstr "Izvirni razvijalec"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:269
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:276
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:282
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:289
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "mi"
 msgstr "milj"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:305
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
 #, kde-format
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:443
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "Lestvica"
@@ -55223,23 +55223,23 @@ msgstr "Polmer"
 msgid "Circumference"
 msgstr "Obseg"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:97
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:98
 #, kde-format
 msgid "Measure Tool"
 msgstr "Orodje merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:102
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:103
 #, kde-format
 msgid "&Measure Tool"
 msgstr "Orodje &merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:117
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:118
 #, kde-format
 msgid "Measure distances between two or more points."
 msgstr "Izmeri razdalje med dvema ali več točkami."
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:426
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:561
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:427
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:562
 #, kde-format
 msgid ""
 "Area:\n"
@@ -55248,7 +55248,7 @@ msgstr ""
 "Površina:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:446
 #, kde-format
 msgid ""
 "Circumference:\n"
@@ -55257,7 +55257,7 @@ msgstr ""
 "Obseg:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:580
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:581
 #, kde-format
 msgid ""
 "Perimeter:\n"
@@ -55266,106 +55266,106 @@ msgstr ""
 "Perimeter:\n"
 "%1"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:646
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:647
 #, kde-format
 msgid "Polygon Ruler"
 msgstr "Poligonsko ravnilo"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:651
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:652
 #, kde-format
 msgid "Circle Ruler"
 msgstr "Krožno ravnilo"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:656
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:657
 #, kde-format
 msgid "Total Distance: %1<br/>\n"
 msgstr "Celotna razdalja: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:660
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:683
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:661
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:684
 #, kde-format
 msgid "Area: %1<br/>\n"
 msgstr "Površina: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:665
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:666
 #, kde-format
 msgid "Perimeter: %1<br/>\n"
 msgstr "Perimeter: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:673
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:674
 #, kde-format
 msgid "Radius: %1<br/>\n"
 msgstr "Polmer: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:678
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:679
 #, kde-format
 msgid "Circumference: %1<br/>\n"
 msgstr "Obseg: %1<br/>\n"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:733
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
 #, kde-format
 msgid "Add &Measure Point"
 msgstr "Dodaj točko merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:734
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:735
 #, kde-format
 msgid "Remove &Last Measure Point"
 msgstr "Odstrani zadnjo točko merjenja"
 
-#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:736
+#: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:737
 #, kde-format
 msgid "&Remove Measure Points"
 msgstr "Odst&rani točke merjenja"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/engine/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:69
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:70
 #, kde-format
 msgid "Navigation"
 msgstr "Navigacija"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:74
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:75
 #, kde-format
 msgid "&Navigation"
 msgstr "Navigacija"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:89
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:90
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 "Vtičnik za dodajanje nadzora miške za povečavo in premikanje zemljevida"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:269
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:270
 #, kde-format
 msgid "Current Location Button"
 msgstr "Gumb trenutne lokacije"
 
-#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:272
+#: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:273
 #, kde-format
 msgid "Home Button"
 msgstr "Gumb Domov"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:86
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:87
 #, kde-format
 msgid "Overview Map"
 msgstr "Pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:91
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:92
 #, kde-format
 msgid "&Overview Map"
 msgstr "Pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:106
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:107
 #, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Vtičnik za dodajanje lebdečega elementa, ki nudi pregledni zemljevid."
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:563
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:564
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Izberi pregledni zemljevid"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:599
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:600
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Izberite barvo indikatorja pozicije"
@@ -55406,114 +55406,114 @@ msgstr "x"
 msgid "Position I&ndicator:"
 msgstr "Indikator pozicije:"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:95
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:96
 #, kde-format
 msgid "Download Progress Indicator"
 msgstr "Prenesi kazalnik napredka"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:100
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
 #, kde-format
 msgid "&Download Progress"
 msgstr "Prenesi napredek"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:115
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:116
 #, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr ""
 "Vtičnik za prikaz indikatorja napredka prenosa krožnega grafikona nad "
 "zemljevidom"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:40
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:41
 #, kde-format
 msgid "Cache File Parser"
 msgstr "Razčlenjevalnik datoteke v medpomnilniku"
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:55
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:56
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
 "Vtičnik za nalaganje geolokacijskih podatkov iz binarnih predpomnilniških "
 "datotek."
 
-#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:71
+#: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:72
 #, kde-format
 msgid "Marble Cache Files"
 msgstr "Marble datoteke v medpomnilniku"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:37
 #, kde-format
 msgid "GPSBabel NMEA File Parser"
 msgstr "razčlenjevalnik datoteke GPSBabel NMEA"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:52
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr "Vtičnik za nalaganje datotek NMEA prek ukazne vrstice orodja GPSBabel."
 
-#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:68
 #, kde-format
 msgid "GPSBabel files"
 msgstr "Datoteke GPSBabel"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:37
 #, kde-format
 msgid "Gpx File Parser"
 msgstr "Razčlenjevalnik datoteke Gpx"
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:52
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek Gpx."
 
-#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:68
 #, kde-format
 msgid "GPS Data"
 msgstr "Podatki GPS"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:37
 #, kde-format
 msgid "GeoJSON File Parser"
 msgstr "Razčlenjevalnik datoteke GeoJSON"
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:52
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek GeoJSON."
 
-#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:68
+#: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
 #, kde-format
 msgid "GeoJSON"
 msgstr "GeoJSON"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
 msgid "KML File Parser"
 msgstr "Razčlenjevalnik datoteke KML"
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:52
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz datotek KML in KMZ."
 
-#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:68
+#: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
 #, kde-format
 msgid "Google Earth KML"
 msgstr "Google Earth KML"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:38
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
 msgstr "OpenStreetMap Nominatim reverzno geokodiranje"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:43
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
 msgid "OpenStreetMap Nominatim"
 msgstr "OpenStreetMap Nominatim"
 
-#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:58
+#: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:59
 #, kde-format
 msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
@@ -55522,12 +55522,12 @@ msgstr ""
 "Vtičnik za obdelavo spletnega povratnega geokodiranja s spletno storitvijo "
 "OpenStreetMap Nominatim"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:37
 #, kde-format
 msgid "Osm File Parser"
 msgstr "Osm razčlenjevalnik datoteke"
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:52
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
@@ -55535,33 +55535,33 @@ msgstr ""
 "Vtičnik za nalaganje geolokacijskih podatkov iz datotek v formatu "
 "OpenStreetMap."
 
-#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:68
+#: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:69
 #, kde-format
 msgid "OpenStreetMap Data"
 msgstr "OpenStreetMap podatki"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:37
 #, kde-format
 msgid "Pn2 File Parser"
 msgstr "Razčlenjevalnik datoteke Pn2"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:52
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr "Vtičnik za nalaganje geolokacijskih podatkov iz stisnjenih datotek Pn2"
 
-#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:68
 #, kde-format
 msgid "Compressed Pnt"
 msgstr "Stisnjen Pnt"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:36
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:37
 #, kde-format
 msgid "Pnt File Parser"
 msgstr "Razčlenjevalnik datoteke Pnt"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:51
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:52
 #, kde-format
 msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
@@ -55570,17 +55570,17 @@ msgstr ""
 "Vtičnik za nalaganje geolokacijskih podatkov iz datotek Micro World Database "
 "II"
 
-#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:67
+#: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
 #, kde-format
 msgid "Micro World Database II"
 msgstr "Micro World Database II"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:72
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:73
 #, kde-format
 msgid "Azimuthal Equidistant"
 msgstr "Azimutna ekvidistanta"
 
-#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:77
+#: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:78
 #, kde-format
 msgid ""
 "<p><b>Azimuthal Equidistant Projection</b> (\"fish eye\")</"
@@ -55591,12 +55591,12 @@ msgstr ""
 "Prikaz seizmičnih in radijskih podatkov ter uporaba v digitalnih "
 "planetarijih.</p>​"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:48
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format
 msgid "Flat Map"
 msgstr "Ravni zemljevid"
 
-#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:53
+#: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:54
 #, kde-format
 msgid ""
 "<p><b>Equirectangular Projection</b> (\"Plate carrée\")</p><p>Applications: "
@@ -55606,12 +55606,12 @@ msgstr ""
 "facto standard za globalne nabore podatkov o teksturi za računalniško "
 "programsko opremo.</p>"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:77
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:78
 #, kde-format
 msgid "Gnomonic"
 msgstr "Gnomska"
 
-#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:82
+#: core/utilities/geolocation/engine/projections/GnomonicProjection.cpp:83
 #, kde-format
 msgid ""
 "<p><b>Gnomonic Projection</b> (\"rectilinear\")</p><p>Applications: Used for "
@@ -55622,12 +55622,12 @@ msgstr ""
 "se za prikazovanje panoramske fotografije. Uporablja se tudi za navigacijo, "
 "radio in delo na seizmiki.</p>"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:77
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:78
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
 msgstr "Lambert azimutna enakopovršinska"
 
-#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:82
+#: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:83
 #, kde-format
 msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
@@ -55636,13 +55636,13 @@ msgstr ""
 "<p><b>Lambertova azimutna enakoploščna projekcija</b></p><p>Aplikacije: v "
 "rabi v strukturni geologiji za risanje podatkov o smeri.</p>"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatorjeva"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:60
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:61
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
@@ -55651,12 +55651,12 @@ msgstr ""
 "<p><b>Mercatorjeva projekcija</b></p><p>Aplikacije: priljubljena standardna "
 "projekcija zemljevidov za navigacijo.</p>​"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:76
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
 #, kde-format
 msgid "Globe"
 msgstr "Globus"
 
-#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:81
+#: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:82
 #, kde-format
 msgid ""
 "<p><b>Orthographic Projection</b> (\"orthogonal\")</p><p>Applications: A "
@@ -55667,12 +55667,12 @@ msgstr ""
 "Perspektivna projekcija, ki se uporablja za prikaz poloble globusa kot se "
 "pojavi iz vesolja.</p>"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:78
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:79
 #, kde-format
 msgid "Stereographic"
 msgstr "Stereografska"
 
-#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:83
+#: core/utilities/geolocation/engine/projections/StereographicProjection.cpp:84
 #, kde-format
 msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
@@ -55682,12 +55682,12 @@ msgstr ""
 "uporabljeno za planetarno kartografijo, geologijo in panoramsko fotografijo."
 "</p>"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:93
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:94
 #, kde-format
 msgid "Vertical Perspective Projection"
 msgstr "Navpična perspektivna projekcija"
 
-#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:98
+#: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:99
 #, kde-format
 msgid ""
 "<p><b>Vertical Perspective Projection</b> (\"orthogonal\")</p><p> Shows the "
@@ -56029,87 +56029,87 @@ msgstr "Orodja za upodabljanje"
 msgid "Runner Tools"
 msgstr "Orodja za tek"
 
-#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:51
+#: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:52
 #, kde-format
 msgid "Unable to insert data into cache"
 msgstr "Podatkov ni mogoče vstaviti v predpomnilnik"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:137
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:138
 #, kde-format
 msgid "Visible region"
 msgstr "Vidna regija"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:139
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:140
 #, kde-format
 msgid "Specify region"
 msgstr "Določi regijo"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:141
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:142
 #, kde-format
 msgid "Download Route"
 msgstr "Prenesi pot"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:143
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:144
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Omogočeno, ko pot obstaja"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:156
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:157
 #, kde-format
 msgid "Offset from route:"
 msgstr "Odmik od poti:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:190
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:191
 #, kde-format
 msgid "Selection Method"
 msgstr "Izbirna metoda"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:198
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:199
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Število ploščic za prenos:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:251
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:252
 #, kde-format
 msgid "Download Region"
 msgstr "Prenesi regijo"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:253
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Vrsta ploščice za prenos:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:255
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Texture tiles"
 msgstr "Teksturne ploščice"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
 #, kde-format
 msgid "Vector tiles"
 msgstr "Vektorske ploščice"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "Omogoča izbiro med vrstami plasti, ki se vidno upodabljajo."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:583
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:584
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Prenos je omejen na %1 ploščico(e)."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:597
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:598
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Približna velikost ploščic za prenos"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:602
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:603
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Predvidena velikost prenosa: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:607
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:608
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Predvidena velikost prenosa: %1 kB"

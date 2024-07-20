@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-17 01:41+0000\n"
+"POT-Creation-Date: 2024-07-19 01:44+0000\n"
 "PO-Revision-Date: 2024-07-06 16:16+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -3962,7 +3962,7 @@ msgstr "Fargemodus"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:77
 #: core/app/views/tableview/tableview_column_item.cpp:122
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:222
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:226
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -52205,7 +52205,7 @@ msgid "This is an Invalid File"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:219
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:223
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:454
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:51
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -52213,18 +52213,18 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:225
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:229
 #, kde-format
 msgid "Popularity"
 msgstr ""
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:228
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:232
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr ""
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:309
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:313
 #, kde-format
 msgid "Playlist"
 msgstr ""
@@ -53110,13 +53110,13 @@ msgid ""
 "in structural geology to plot directional data.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:53
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:55
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #, fuzzy, kde-format
 msgid "Mercator"
 msgstr "Mercator"
 
-#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:58
+#: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:60
 #, kde-format
 msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
