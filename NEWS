@@ -20,7 +20,7 @@ BUGFIXES:
 009 ==> 490341 - Exiftool not present.
 010 ==> 490496 - Exiftool not found.
 011 ==> 490536 - Open With not working.
-012 ==>
+012 ==> 490552 - Import: Incorrect date during automatic file naming with “date” construct.
 013 ==>
 014 ==>
 015 ==>

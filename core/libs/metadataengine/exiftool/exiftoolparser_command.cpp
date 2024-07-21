@@ -96,8 +96,10 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
 
     if (copyToAll)
     {
-        cmdArgs << QByteArray("-xmp-microsoft:RatingPercent<Microsoft:SharedUserRating");
+        cmdArgs << QByteArray("-api");
+        cmdArgs << QByteArray("QuickTimeUTC");
         cmdArgs << QByteArray("-xmp-dc:Subject<Microsoft:Category");
+        cmdArgs << QByteArray("-xmp-microsoft:RatingPercent<Microsoft:SharedUserRating");
     }
 
     cmdArgs << QByteArray("-o");
