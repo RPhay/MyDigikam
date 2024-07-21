@@ -54,8 +54,10 @@ HttpJobPrivate::HttpJobPrivate(const QUrl& sourceUrl, const QString& destFileNam
       m_initiatorId(id),
       m_trialsLeft(3),
       m_downloadUsage(DownloadBrowse),
+
       // FIXME: remove initialization depending on if empty pluginId
       // results in valid user agent string
+
       m_userAgent(QString::fromUtf8("unknown")),
       m_networkAccessManager(networkAccessManager),
       m_networkReply(nullptr)
@@ -63,7 +65,8 @@ HttpJobPrivate::HttpJobPrivate(const QUrl& sourceUrl, const QString& destFileNam
 }
 
 
-HttpJob::HttpJob(const QUrl& sourceUrl, const QString& destFileName, const QString& id, QNetworkAccessManager* networkAccessManager)
+HttpJob::HttpJob(const QUrl& sourceUrl, const QString& destFileName,
+                 const QString& id, QNetworkAccessManager* networkAccessManager)
     : d(new HttpJobPrivate(sourceUrl, destFileName, id, networkAccessManager))
 {
 }
@@ -110,7 +113,6 @@ bool HttpJob::tryAgain()
         d->m_trialsLeft--;
         return true;
     }
-
     else
     {
         return false;
@@ -144,6 +146,7 @@ QByteArray HttpJob::userAgent() const
 
         default:
             qCCritical(DIGIKAM_MARBLE_LOG) << "Unknown download usage value:" << d->m_downloadUsage;
+
             return HttpDownloadManager::userAgent(QString::fromUtf8("unknown"), d->m_userAgent);
     }
 }
@@ -156,10 +159,12 @@ void HttpJob::execute()
                          userAgent());
     d->m_networkReply = d->m_networkAccessManager->get(request);
 
-    connect(d->m_networkReply, SIGNAL(downloadProgress(qint64, qint64)),
-            SLOT(downloadProgress(qint64, qint64)));
+    connect(d->m_networkReply, SIGNAL(downloadProgress(qint64,qint64)),
+            SLOT(downloadProgress(qint64,qint64)));
+
     connect(d->m_networkReply, SIGNAL(errorOccurred(QNetworkReply::NetworkError)),
             SLOT(error(QNetworkReply::NetworkError)));
+
     connect(d->m_networkReply, SIGNAL(finished()),
             SLOT(finished()));
 }
@@ -167,6 +172,7 @@ void HttpJob::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
     Q_UNUSED(bytesReceived);
     Q_UNUSED(bytesTotal);
+
     //     qCDebug(DIGIKAM_MARBLE_LOG) << "downloadProgress" << destinationFileName()
     //              << bytesReceived << '/' << bytesTotal;
 }
@@ -179,11 +185,11 @@ void HttpJob::error(QNetworkReply::NetworkError code)
 void HttpJob::finished()
 {
     QNetworkReply::NetworkError const error = d->m_networkReply->error();
+
     //     qCDebug(DIGIKAM_MARBLE_LOG) << "finished" << destinationFileName()
     //              << "error" << error;
 
-    const QVariant httpPipeliningWasUsed =
-        d->m_networkReply->attribute(QNetworkRequest::HttpPipeliningWasUsedAttribute);
+    const QVariant httpPipeliningWasUsed = d->m_networkReply->attribute(QNetworkRequest::HttpPipeliningWasUsedAttribute);
 
     if (!httpPipeliningWasUsed.isNull())
     {
@@ -195,8 +201,8 @@ void HttpJob::finished()
         case QNetworkReply::NoError:
         {
             // check if we are redirected
-            const QVariant redirectionAttribute =
-                d->m_networkReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+
+            const QVariant redirectionAttribute = d->m_networkReply->attribute(QNetworkRequest::RedirectionTargetAttribute);
 
             if (!redirectionAttribute.isNull())
             {
@@ -206,18 +212,27 @@ void HttpJob::finished()
             else
             {
                 // no redirection occurred
+
                 const QByteArray data = d->m_networkReply->readAll();
+
                 Q_EMIT dataReceived(this, data);
             }
+
+            break;
         }
-        break;
 
         default:
+        {
             Q_EMIT jobDone(this, 1);
+
+            break;
+        }
     }
 
     d->m_networkReply->disconnect(this);
+
     // No delete. This method is called by a signal QNetworkReply::finished.
+
     d->m_networkReply->deleteLater();
     d->m_networkReply = nullptr;
 }

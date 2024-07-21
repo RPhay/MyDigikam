@@ -87,8 +87,10 @@ void DownloadQueueSet::addJob(HttpJob* const job)
 {
     m_jobs.push(job);
     qCDebug(DIGIKAM_MARBLE_LOG) << "addJob: new job queue size:" << m_jobs.count();
+
     Q_EMIT jobAdded();
     Q_EMIT progressChanged(m_activeJobs.size(), m_jobs.count());
+
     activateJobs();
 }
 
@@ -108,7 +110,9 @@ void DownloadQueueSet::retryJobs()
     {
         HttpJob* const job = m_retryQueue.dequeue();
         qCDebug(DIGIKAM_MARBLE_LOG) << "Requeuing" << job->destinationFileName();
+
         // FIXME: addJob calls activateJobs every time
+
         addJob(job);
     }
 }
@@ -116,6 +120,7 @@ void DownloadQueueSet::retryJobs()
 void DownloadQueueSet::purgeJobs()
 {
     // purge all waiting jobs
+
     while (!m_jobs.isEmpty())
     {
         HttpJob* const job = m_jobs.pop();
@@ -123,10 +128,12 @@ void DownloadQueueSet::purgeJobs()
     }
 
     // purge all retry jobs
+
     qDeleteAll(m_retryQueue);
     m_retryQueue.clear();
 
     // cancel all current jobs
+
     while (!m_activeJobs.isEmpty())
     {
         deactivateJob(m_activeJobs.first());
@@ -140,8 +147,10 @@ void DownloadQueueSet::finishJob(HttpJob* job, const QByteArray& data)
     qCDebug(DIGIKAM_MARBLE_LOG) << "finishJob: " << job->sourceUrl() << job->destinationFileName();
 
     deactivateJob(job);
+
     Q_EMIT jobRemoved();
     Q_EMIT jobFinished(data, job->destinationFileName(), job->initiatorId());
+
     job->deleteLater();
     activateJobs();
 }
@@ -151,9 +160,11 @@ void DownloadQueueSet::redirectJob(HttpJob* job, const QUrl& newSourceUrl)
     qCDebug(DIGIKAM_MARBLE_LOG) << "jobRedirected:" << job->sourceUrl() << " -> " << newSourceUrl;
 
     deactivateJob(job);
+
     Q_EMIT jobRemoved();
     Q_EMIT jobRedirected(newSourceUrl, job->destinationFileName(), job->initiatorId(),
                          job->downloadUsage());
+
     job->deleteLater();
 }
 
@@ -163,6 +174,7 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
     Q_ASSERT(!m_retryQueue.contains(job));
 
     deactivateJob(job);
+
     Q_EMIT jobRemoved();
 
     if (job->tryAgain())
@@ -170,6 +182,7 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
         qCDebug(DIGIKAM_MARBLE_LOG) << QString::fromUtf8("Download of %1 to %2 failed, but trying again soon")
                                     .arg(job->sourceUrl().toString(), job->destinationFileName());
         m_retryQueue.enqueue(job);
+
         Q_EMIT jobRetry();
     }
 
@@ -193,14 +206,17 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
 void DownloadQueueSet::activateJob(HttpJob* const job)
 {
     m_activeJobs.push_back(job);
+
     Q_EMIT progressChanged(m_activeJobs.size(), m_jobs.count());
 
-    connect(job, SIGNAL(jobDone(HttpJob*, int)),
-            SLOT(retryOrBlacklistJob(HttpJob*, int)));
-    connect(job, SIGNAL(redirected(HttpJob*, QUrl)),
-            SLOT(redirectJob(HttpJob*, QUrl)));
-    connect(job, SIGNAL(dataReceived(HttpJob*, QByteArray)),
-            SLOT(finishJob(HttpJob*, QByteArray)));
+    connect(job, SIGNAL(jobDone(HttpJob*,int)),
+            SLOT(retryOrBlacklistJob(HttpJob*,int)));
+
+    connect(job, SIGNAL(redirected(HttpJob*,QUrl)),
+            SLOT(redirectJob(HttpJob*,QUrl)));
+
+    connect(job, SIGNAL(dataReceived(HttpJob*,QByteArray)),
+            SLOT(finishJob(HttpJob*,QByteArray)));
 
     job->execute();
 }
@@ -215,11 +231,17 @@ void DownloadQueueSet::activateJob(HttpJob* const job)
 void DownloadQueueSet::deactivateJob(HttpJob* const job)
 {
     const bool disconnected = job->disconnect();
+
     Q_ASSERT(disconnected);
+
     Q_UNUSED(disconnected);   // for Q_ASSERT in release mode
+
     const bool removed = m_activeJobs.removeOne(job);
+
     Q_ASSERT(removed);
+
     Q_UNUSED(removed);   // for Q_ASSERT in release mode
+
     Q_EMIT progressChanged(m_activeJobs.size(), m_jobs.count());
 }
 
@@ -228,7 +250,7 @@ bool DownloadQueueSet::jobIsActive(QString const& destinationFileName) const
     QList<HttpJob*>::const_iterator pos = m_activeJobs.constBegin();
     QList<HttpJob*>::const_iterator const end = m_activeJobs.constEnd();
 
-    for (; pos != end; ++pos)
+    for ( ; pos != end ; ++pos)
     {
         if ((*pos)->destinationFileName() == destinationFileName)
         {
@@ -249,7 +271,7 @@ bool DownloadQueueSet::jobIsWaitingForRetry(QString const& destinationFileName) 
     QList<HttpJob*>::const_iterator pos = m_retryQueue.constBegin();
     QList<HttpJob*>::const_iterator const end = m_retryQueue.constEnd();
 
-    for (; pos != end; ++pos)
+    for ( ; pos != end ; ++pos)
     {
         if ((*pos)->destinationFileName() == destinationFileName)
         {
@@ -262,11 +284,10 @@ bool DownloadQueueSet::jobIsWaitingForRetry(QString const& destinationFileName) 
 
 bool DownloadQueueSet::jobIsBlackListed(const QUrl& sourceUrl) const
 {
-    QSet<QString>::const_iterator const pos =
-        m_jobBlackList.constFind(sourceUrl.toString());
+    QSet<QString>::const_iterator const pos = m_jobBlackList.constFind(sourceUrl.toString());
+
     return pos != m_jobBlackList.constEnd();
 }
-
 
 inline bool DownloadQueueSet::JobStack::contains(const QString& destinationFileName) const
 {
@@ -287,8 +308,10 @@ inline HttpJob* DownloadQueueSet::JobStack::pop()
 {
     HttpJob* const job = m_jobs.pop();
     bool const removed = m_jobsContent.remove(job->destinationFileName());
+
     Q_UNUSED(removed);   // for Q_ASSERT in release mode
     Q_ASSERT(removed);
+
     return job;
 }
 
