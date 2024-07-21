@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 01:44+0000\n"
+"POT-Creation-Date: 2024-07-21 01:46+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -55443,28 +55443,28 @@ msgstr "Przycisk obecnego położenia"
 msgid "Home Button"
 msgstr "Przycisk położenia domu"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
 #, kde-format
 msgid "Overview Map"
 msgstr "Podgląd mapy"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:94
 #, kde-format
 msgid "&Overview Map"
 msgstr "&Podgląd mapy"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:109
 #, fuzzy, kde-format
 #| msgid "This is a float item that provides an overview map."
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Odrywana rzecz, która wyświetla mapę do podglądu."
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:564
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:583
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Pokaż mapę podglądu"
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:600
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Wybierz barwę dla wskaźnika położenia"
@@ -55505,17 +55505,17 @@ msgstr "x"
 msgid "Position I&ndicator:"
 msgstr "Wskaźn&ik położenia:"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:96
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
 #, kde-format
 msgid "Download Progress Indicator"
 msgstr "Pasek postępu pobierania"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:106
 #, kde-format
 msgid "&Download Progress"
 msgstr "&Postęp pobierania"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:121
 #, fuzzy, kde-format
 #| msgid "Shows a pie chart download progress indicator"
 msgid "A plugin to show a pie chart download progress indicator over the map"
@@ -56162,54 +56162,54 @@ msgstr "Odsunięcie od trasy:"
 msgid "Selection Method"
 msgstr "Metoda wyboru"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:199
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:200
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Liczba pól do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:252
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
 #, kde-format
 msgid "Download Region"
 msgstr "Pobierz region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Rodzaj kafelki do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
 #, kde-format
 msgid "Texture tiles"
 msgstr "Pola teksturowane"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
 #, kde-format
 msgid "Vector tiles"
 msgstr "Pola wektorowe"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Zezwala na zaznaczanie pomiędzy rodzajami warstw, które widać, że są w "
 "trakcie wyświetlania."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:584
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Ograniczono pobieranie do %1 pól."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:598
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Przybliżony rozmiar pól do pobrania"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:603
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Szacowany rozmiar do pobrania: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:608
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Szacowany rozmiar do pobrania: %1 kB"

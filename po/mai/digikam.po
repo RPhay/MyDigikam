@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 01:44+0000\n"
+"POT-Creation-Date: 2024-07-21 01:46+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -53766,27 +53766,27 @@ msgstr "मोजुदा पृष्ठ"
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
 #, kde-format
 msgid "Overview Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:94
 #, kde-format
 msgid "&Overview Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:109
 #, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:564
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:583
 #, kde-format
 msgid "Choose Overview Map"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:600
+#: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:618
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr ""
@@ -53830,20 +53830,20 @@ msgstr ""
 msgid "Position I&ndicator:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:96
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "enfuse settings"
 #| msgid "Exposure:"
 msgid "Download Progress Indicator"
 msgstr "उद्भासन:"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:101
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:106
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "&Download Progress"
 msgstr "अनुशीर्षक"
 
-#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/progress/ProgressFloatItem.cpp:121
 #, kde-format
 msgid "A plugin to show a pie chart download progress indicator over the map"
 msgstr ""
@@ -54481,55 +54481,55 @@ msgstr ""
 msgid "Selection Method"
 msgstr "जमावट"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:199
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:200
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:252
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "Download Region"
 msgstr "अनुशीर्षक"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
 #, fuzzy, kde-format
 #| msgid "Paper Size:"
 msgid "Texture tiles"
 msgstr "पृष्ठ आकार:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:257
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
 #, fuzzy, kde-format
 #| msgid "Video"
 msgid "Vector tiles"
 msgstr "वीडियो"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:584
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:598
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:603
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:608
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""
