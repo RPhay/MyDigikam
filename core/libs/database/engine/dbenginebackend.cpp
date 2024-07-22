@@ -1704,7 +1704,7 @@ bool BdEngineBackend::exec(DbEngineSqlQuery& query)
             if (queryErrorHandling(query, retries++))
             {
                 // Workaround for an endless locked
-                // database in QSqlQuery::execBatch.
+                // database in QSqlQuery::exec.
 
                 if (d->isSQLiteLockError(query))
                 {
