@@ -1625,6 +1625,18 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSql(const QString& sql)
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
@@ -1662,6 +1674,18 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSqlWithResult(const QStri
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
@@ -1704,7 +1728,6 @@ bool BdEngineBackend::exec(DbEngineSqlQuery& query)
             if (queryErrorHandling(query, retries++))
             {
                 // Workaround for an endless locked
-                // database in QSqlQuery::exec.
 
                 if (d->isSQLiteLockError(query))
                 {
@@ -1750,7 +1773,6 @@ bool BdEngineBackend::execBatch(DbEngineSqlQuery& query)
             if (queryErrorHandling(query, retries++))
             {
                 // Workaround for an endless locked
-                // database in QSqlQuery::execBatch.
 
                 if (d->isSQLiteLockError(query))
                 {
