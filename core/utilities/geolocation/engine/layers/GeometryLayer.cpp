@@ -158,7 +158,7 @@ GeometryLayer::GeometryLayer(const QAbstractItemModel* model, const StyleBuilder
         d->createGraphicsItems(object->parent());
     }
 
-    connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
+    connect(model, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(resetCacheData()));
 
     connect(model, SIGNAL(rowsInserted(QModelIndex,int,int)),
@@ -910,6 +910,7 @@ void GeometryLayer::setDebugLevelTag(int level)
     if (d->m_debugLevelTag != level)
     {
         d->m_debugLevelTag = level;
+
         Q_EMIT repaintNeeded();
     }
 }

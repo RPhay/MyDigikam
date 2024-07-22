@@ -66,9 +66,11 @@ public:
     const GeoSceneGroup*        m_layerSettings = nullptr;
 
     // TreeModel for displaying GeoDataDocuments
+
     GeoDataTreeModel* const     m_treeModel     = nullptr;
 
     // a shared thread pool for all layers to keep CPU usage sane
+
     QThreadPool                 m_threadPool    = nullptr;
 };
 
@@ -110,7 +112,7 @@ void VectorTileLayer::Private::updateLayerSettings()
         if (m_layerSettings)
         {
             const bool propertyExists = m_layerSettings->propertyValue(candidate->name(), enabled);
-            enabled |= !propertyExists; // if property doesn't exist, enable layer nevertheless
+            enabled                  |= !propertyExists; // if property doesn't exist, enable layer nevertheless
         }
 
         if (enabled)
@@ -118,7 +120,6 @@ void VectorTileLayer::Private::updateLayerSettings()
             m_activeTileModels.append(candidate);
             qCDebug(DIGIKAM_MARBLE_LOG) << "enabling vector layer" << candidate->name();
         }
-
         else
         {
             candidate->clear();
@@ -136,7 +137,8 @@ VectorTileLayer::VectorTileLayer(HttpDownloadManager* downloadManager,
     qRegisterMetaType<TileId>("TileId");
     qRegisterMetaType<GeoDataDocument*>("GeoDataDocument*");
 
-    connect(&d->m_loader, SIGNAL(tileCompleted(TileId, GeoDataDocument*)), this, SLOT(updateTile(TileId, GeoDataDocument*)));
+    connect(&d->m_loader, SIGNAL(tileCompleted(TileId,GeoDataDocument*)),
+            this, SLOT(updateTile(TileId,GeoDataDocument*)));
 }
 
 VectorTileLayer::~VectorTileLayer()
@@ -171,6 +173,7 @@ QString VectorTileLayer::runtimeTrace() const
     }
 
     int const layers = d->m_activeTileModels.size();
+
     return QStringLiteral("Vector Tiles: %1 tiles in %2 layers").arg(tiles).arg(layers);
 }
 
@@ -182,7 +185,7 @@ bool VectorTileLayer::render(GeoPainter* painter, ViewportParams* viewport,
     Q_UNUSED(layer);
 
     int const oldLevel = tileZoomLevel();
-    int level = 0;
+    int level          = 0;
 
     for (VectorTileModel* mapper : d->m_activeTileModels)
     {
@@ -224,18 +227,21 @@ const GeoSceneAbstractTileProjection* VectorTileLayer::tileProjection() const
 int VectorTileLayer::tileColumnCount(int level) const
 {
     // So far we only support Vector tiles with a single level zero tile
+
     return TileLoaderHelper::levelToColumn(1, level);
 }
 
 int VectorTileLayer::tileRowCount(int level) const
 {
     // So far we only support Vector tiles with a single level zero tile
+
     return TileLoaderHelper::levelToRow(1, level);
 }
 
 int VectorTileLayer::layerCount() const
 {
     // So far we only support one sublayer of vector tiles
+
     return 1;
 }
 
@@ -278,8 +284,8 @@ void VectorTileLayer::setMapTheme(const QVector<const GeoSceneVectorTileDataset*
 
     if (d->m_layerSettings)
     {
-        connect(d->m_layerSettings, SIGNAL(valueChanged(QString, bool)),
-                this,                      SLOT(updateLayerSettings()));
+        connect(d->m_layerSettings, SIGNAL(valueChanged(QString,bool)),
+                this, SLOT(updateLayerSettings()));
     }
 
     d->updateLayerSettings();
@@ -301,10 +307,12 @@ QVector<const GeoSceneVectorTileDataset*> VectorTileLayer::Private::findRelevant
         const GeoSceneVectorTileDataset* vectorTileDataset = candidate->layer();
 
         // check, if layer provides tiles for the current level
+
         if (!vectorTileDataset->hasMaximumTileLevel() ||
             vectorTileDataset->maximumTileLevel() >= tileId.zoomLevel())
         {
             //check if the tile intersects with texture bounds
+
             if (vectorTileDataset->latLonBox().isNull())
             {
                 result.append(vectorTileDataset);

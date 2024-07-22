@@ -73,7 +73,6 @@ void LayerManager::Private::updateVisibility(bool visible, const QString& nameId
     Q_EMIT q->visibilityChanged(nameId, visible);
 }
 
-
 LayerManager::LayerManager(QObject* parent)
     : QObject(parent),
       d(new Private(this))
@@ -101,12 +100,15 @@ void LayerManager::addRenderPlugin(RenderPlugin* renderPlugin)
 
     QObject::connect(renderPlugin, SIGNAL(settingsChanged(QString)),
                      this, SIGNAL(pluginSettingsChanged()));
+
     QObject::connect(renderPlugin, SIGNAL(repaintNeeded(QRegion)),
                      this, SIGNAL(repaintNeeded(QRegion)));
-    QObject::connect(renderPlugin, SIGNAL(visibilityChanged(bool, QString)),
-                     this, SLOT(updateVisibility(bool, QString)));
+
+    QObject::connect(renderPlugin, SIGNAL(visibilityChanged(bool,QString)),
+                     this, SLOT(updateVisibility(bool,QString)));
 
     // get data plugins
+
     AbstractDataPlugin* const dataPlugin = qobject_cast<AbstractDataPlugin*>(renderPlugin);
 
     if (dataPlugin)
@@ -165,6 +167,7 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
         QList<LayerInterface*> layers;
 
         // collect all RenderPlugins of current renderPosition
+
         for (auto* renderPlugin : d->m_renderPlugins)
         {
             if (renderPlugin && renderPlugin->renderPosition().contains(renderPosition))
@@ -174,6 +177,7 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
                     if (!renderPlugin->isInitialized())
                     {
                         renderPlugin->initialize();
+
                         Q_EMIT renderPluginInitialized(renderPlugin);
                     }
 
@@ -183,6 +187,7 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
         }
 
         // collect all internal LayerInterfaces of current renderPosition
+
         for (auto* layer : d->m_internalLayers)
         {
             if (layer && layer->renderPosition().contains(renderPosition))
@@ -192,13 +197,18 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
         }
 
         // sort them according to their zValue()s
-        std::sort(layers.begin(), layers.end(), [](const LayerInterface * const one, const LayerInterface * const two) -> bool
-        {
-            Q_ASSERT(one&& two);
-            return one->zValue() < two->zValue();
-        });
+
+        std::sort(layers.begin(), layers.end(),
+                  [](const LayerInterface * const one, const LayerInterface * const two) -> bool
+            {
+                Q_ASSERT(one&& two);
+
+                return one->zValue() < two->zValue();
+            }
+        );
 
         // render the layers of the current renderPosition
+
         QElapsedTimer timer;
 
         for (auto* layer : layers)
@@ -213,7 +223,7 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
     if (d->m_showRuntimeTrace)
     {
         const int totalElapsed = totalTime.elapsed();
-        const int fps = 1000.0 / totalElapsed;
+        const int fps          = 1000.0 / totalElapsed;
         traceList.append(QString::fromUtf8("Total: %1 ms (%2 fps)").arg(totalElapsed, 3).arg(fps));
 
         painter->save();
@@ -221,8 +231,8 @@ void LayerManager::renderLayers(GeoPainter* painter, ViewportParams* viewport)
         painter->setBackground(Qt::gray);
         painter->setFont(QFont(QStringLiteral("Sans Serif"), 10, QFont::Bold));
 
-        int i = 0;
-        int const top = 150;
+        int i                = 0;
+        int const top        = 150;
         int const lineHeight = painter->fontMetrics().height();
 
         for (const auto& text : traceList)
