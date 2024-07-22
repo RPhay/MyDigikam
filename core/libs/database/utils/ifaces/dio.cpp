@@ -77,8 +77,6 @@ DIO* DIO::instance()
 DIO::DIO()
 {
     qRegisterMetaType<QMap<QString,int>>("QMap<QString,int>");
-
-    m_processingCount = 0;
 }
 
 void DIO::cleanUp()
@@ -87,6 +85,8 @@ void DIO::cleanUp()
 
 bool DIO::itemsUnderProcessing()
 {
+    qCDebug(DIGIKAM_DATABASE_LOG) << "DIO::itemsUnderProcessing()" << instance()->m_processingCount;
+
     return instance()->m_processingCount;
 }
 
