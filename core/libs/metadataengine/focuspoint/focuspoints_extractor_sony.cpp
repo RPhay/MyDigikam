@@ -28,12 +28,12 @@ const float RATIO_POINT_IMAGE = 120; // this is a guess
 namespace SonyInternal
 {
 
-FocusPoint create_af_point(float imageWidth,
-                           float imageHeight,
-                           float afPointWidth,
-                           float afPointHeight,
-                           float af_x_position,
-                           float af_y_position)
+FocusPoint create_af_point1(float imageWidth,
+                            float imageHeight,
+                            float afPointWidth,
+                            float afPointHeight,
+                            float af_x_position,
+                            float af_y_position)
 {
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
@@ -42,19 +42,80 @@ FocusPoint create_af_point(float imageWidth,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
+FocusPoint create_af_point2(float imageWidth,
+                            float imageHeight,
+                            float afPointWidth,
+                            float afPointHeight,
+                            float af_x_position,
+                            float af_y_position)
+{
+    return FocusPoint(af_x_position / imageWidth,
+                      af_y_position / imageHeight,
+                      afPointWidth  / imageWidth,
+                      afPointHeight / imageHeight,
+                      FocusPoint::TypePoint::SelectedInFocus);
+}
+
 } // namespace SonyInternal
 
 // Main function to extract af point
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() const
 {
-    QString TagNameRoot = QLatin1String("MakerNotes.Sony.Camera");
-    QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString().split(QLatin1String(" "));
+    QString TagNameRoot      = QLatin1String("MakerNotes.Sony.Camera");
+    QStringList af_info      = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString().split(QLatin1String(" "));
+    QStringList af_frameSize = findValue(TagNameRoot, QLatin1String("FocusFrameSize")).toString().split(QLatin1String("x"));
 
-    if (af_info.size() < 5)
+    if  (af_info.size() < 5)
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Unsupported Sony Camera.";
+        if (af_info.size() == 4)
+        {
+            // Get size image
 
-        return getAFPoints_exif();
+            float afImageWidth  = af_info[0].toFloat();
+            float afImageHeight = af_info[1].toFloat();
+
+            // Get size of af points
+
+            // For cameras without a focus frame size we initially
+            // set a default value. This must be validated later.
+
+            float afPointWidth  = 300.0F;
+            float afPointHeight = 300.0F;
+
+            if (af_frameSize.size() == 2)
+            {
+                afPointWidth  = af_frameSize[0].toFloat();
+                afPointHeight = af_frameSize[1].toFloat();
+            }
+
+            // Get coordinate of af points
+
+            float af_x_position = af_info[2].toFloat();
+            float af_y_position = af_info[3].toFloat();
+
+             ListAFPoints points;
+             FocusPoint afpoint = SonyInternal::create_af_point2(
+                                                                 afImageWidth,
+                                                                 afImageHeight,
+                                                                 afPointWidth,
+                                                                 afPointHeight,
+                                                                 af_x_position,
+                                                                 af_y_position
+                                                                );
+
+            if (afpoint.getRect().isValid())
+            {
+                points << afpoint;
+            }
+
+            return points;
+        }
+        else
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Unsupported Sony Camera.";
+
+            return getAFPoints_exif();
+        }
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Sony Makernotes Focus Location:" << af_info;
@@ -75,14 +136,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     float af_y_position = af_info[4].toFloat();
 
     ListAFPoints points;
-    FocusPoint afpoint  = SonyInternal::create_af_point(
-                                                        afImageWidth,
-                                                        afImageHeight,
-                                                        afPointWidth,
-                                                        afPointHeight,
-                                                        af_x_position,
-                                                        af_y_position
-                                                       );
+    FocusPoint afpoint  = SonyInternal::create_af_point1(
+                                                         afImageWidth,
+                                                         afImageHeight,
+                                                         afPointWidth,
+                                                         afPointHeight,
+                                                         af_x_position,
+                                                         af_y_position
+                                                        );
 
     if (afpoint.getRect().isValid())
     {
