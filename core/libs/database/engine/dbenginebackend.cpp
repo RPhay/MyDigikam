@@ -1703,6 +1703,19 @@ bool BdEngineBackend::exec(DbEngineSqlQuery& query)
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+                // database in QSqlQuery::execBatch.
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
