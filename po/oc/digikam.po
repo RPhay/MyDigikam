@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-21 01:46+0000\n"
+"POT-Creation-Date: 2024-07-22 01:47+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -3269,7 +3269,7 @@ msgid "Selection"
 msgstr "&Suprimir"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:900
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, fuzzy, kde-format
@@ -25891,7 +25891,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:905
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -26422,7 +26422,7 @@ msgid "Context menu"
 msgstr "Comentaris"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:915
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27720,7 +27720,7 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
@@ -27728,7 +27728,7 @@ msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Yannig Marchegay (Kokoyaya)"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27741,64 +27741,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "&Suprimir"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:867
+#: core/libs/database/utils/ifaces/dio.cpp:869
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Copy Album"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:874
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Copy Images"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:880
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgid "Copy Files"
 msgstr "Diàpo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:885
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Move Album"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:890
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Move Images"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:895
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Move Files"
 msgstr "imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:910
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
