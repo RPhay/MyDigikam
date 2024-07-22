@@ -62,9 +62,11 @@ public:
         }
 
         const GeoSceneHead* head = m_srtmTheme->head();
+
         Q_ASSERT(head);
 
         const GeoSceneMap* map = m_srtmTheme->map();
+
         Q_ASSERT(map);
 
         const GeoSceneLayer* sceneLayer = map->layer(head->theme());
@@ -78,6 +80,7 @@ public:
         Q_ASSERT(sceneLayer);
 
         m_textureLayer = dynamic_cast<GeoSceneTextureTileDataset*>(sceneLayer->datasets().first());
+
         Q_ASSERT(m_textureLayer);
     }
 
@@ -89,6 +92,7 @@ public:
     void tileCompleted(const TileId& tileId, const QImage& image)
     {
         m_cache.insert(tileId, new QImage(image));
+
         Q_EMIT q->updateAvailable();
     }
 
@@ -106,15 +110,14 @@ ElevationModel::ElevationModel(HttpDownloadManager* downloadManager, PluginManag
     QObject(parent),
     d(new ElevationModelPrivate(this, downloadManager, pluginManager))
 {
-    connect(&d->m_tileLoader, SIGNAL(tileCompleted(TileId, QImage)),
-            this, SLOT(tileCompleted(TileId, QImage)));
+    connect(&d->m_tileLoader, SIGNAL(tileCompleted(TileId,QImage)),
+            this, SLOT(tileCompleted(TileId,QImage)));
 }
 
 ElevationModel::~ElevationModel()
 {
     delete d;
 }
-
 
 qreal ElevationModel::height(qreal lon, qreal lat) const
 {
@@ -124,27 +127,29 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
     }
 
     const int tileZoomLevel = TileLoader::maximumTileLevel(*(d->m_textureLayer));
+
     Q_ASSERT(tileZoomLevel == 9);
 
-    const int width = d->m_textureLayer->tileSize().width();
-    const int height = d->m_textureLayer->tileSize().height();
+    const int width     = d->m_textureLayer->tileSize().width();
+    const int height    = d->m_textureLayer->tileSize().height();
 
     const int numTilesX = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
     const int numTilesY = TileLoaderHelper::levelToRow(d->m_textureLayer->levelZeroRows(), tileZoomLevel);
+
     Q_ASSERT(numTilesX > 0);
     Q_ASSERT(numTilesY > 0);
 
     qreal textureX = 180 + lon;
-    textureX *= numTilesX * width / 360;
+    textureX      *= numTilesX * width / 360;
 
     qreal textureY = 90 - lat;
-    textureY *= numTilesY * height / 180;
+    textureY      *= numTilesY * height / 180;
 
-    qreal ret = 0;
+    qreal ret      = 0;
     bool hasHeight = false;
-    qreal noData = 0;
+    qreal noData   = 0;
 
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0 ; i < 4 ; ++i)
     {
         const int x = static_cast<int>(textureX + (i % 2));
         const int y = static_cast<int>(textureY + (i / 2));
@@ -153,6 +158,7 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
         //qCDebug(DIGIKAM_MARBLE_LOG) << "y" << y << ( y / height );
 
         const TileId id(0, tileZoomLevel, (x % (numTilesX * width)) / width, (y % (numTilesY * height)) / height);
+
         //qCDebug(DIGIKAM_MARBLE_LOG) << "LAT" << lat << "LON" << lon << "tile" << ( x % ( numTilesX * width ) ) / width << ( y % ( numTilesY * height ) ) / height;
 
         const QImage* image = d->m_cache[id];
@@ -173,20 +179,23 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
 
         Q_ASSERT(0 <= dx && dx <= 1);
         Q_ASSERT(0 <= dy && dy <= 1);
+
         unsigned int pixel = image->pixel(x % width, y % height) & 0xffff;   // 16 valid bits
         short int elevation = (short int) pixel; // and signed type, so just cast it
 
         //qCDebug(DIGIKAM_MARBLE_LOG) << "(1-dx)" << (1-dx) << "(1-dy)" << (1-dy);
+
         if (pixel != invalidElevationData)     //no data?
         {
             //qCDebug(DIGIKAM_MARBLE_LOG) << "got at x" << x % width << "y" << y % height << "a height of" << pixel << "** RGB" << qRed(pixel) << qGreen(pixel) << qBlue(pixel);
+
             ret += (qreal)elevation * (1 - dx) * (1 - dy);
             hasHeight = true;
         }
-
         else
         {
             //qCDebug(DIGIKAM_MARBLE_LOG) << "no data at" <<  x % width << "y" << y % height;
+
             noData += (1 - dx) * (1 - dy);
         }
     }
@@ -195,17 +204,18 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
     {
         ret = invalidElevationData; //no data
     }
-
     else
     {
         if (noData)
         {
             //qCDebug(DIGIKAM_MARBLE_LOG) << "NO DATA" << noData;
+
             ret += (ret / (1 - noData)) * noData;
         }
     }
 
     //qCDebug(DIGIKAM_MARBLE_LOG) << ">>>" << lat << lon << "returning an elevation of" << ret;
+
     return ret;
 }
 
@@ -217,25 +227,28 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
     }
 
     const int tileZoomLevel = TileLoader::maximumTileLevel(*(d->m_textureLayer));
-    const int width = d->m_textureLayer->tileSize().width();
-    const int numTilesX = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
+    const int width         = d->m_textureLayer->tileSize().width();
+    const int numTilesX     = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
+    qreal distPerPixel      = (qreal)360 / (width * numTilesX);
 
-    qreal distPerPixel = (qreal)360 / (width * numTilesX);
     //qCDebug(DIGIKAM_MARBLE_LOG) << "heightProfile" << fromLat << fromLon << toLat << toLon << "distPerPixel" << distPerPixel;
 
-    qreal lat = fromLat;
-    qreal lon = fromLon;
+    qreal lat   = fromLat;
+    qreal lon   = fromLon;
     char dirLat = fromLat < toLat ? 1 : -1;
     char dirLon = fromLon < toLon ? 1 : -1;
-    qreal k = qAbs((fromLat - toLat) / (fromLon - toLon));
+    qreal k     = qAbs((fromLat - toLat) / (fromLon - toLon));
+
     //qCDebug(DIGIKAM_MARBLE_LOG) << "fromLon" << fromLon << "fromLat" << fromLat;
     //qCDebug(DIGIKAM_MARBLE_LOG) << "diff lon" << ( fromLon - toLon ) << "diff lat" << ( fromLat - toLat );
     //qCDebug(DIGIKAM_MARBLE_LOG) << "dirLon" << QString::number(dirLon) << "dirLat" << QString::number(dirLat) << "k" << k;
+
     QVector<GeoDataCoordinates> ret;
 
     while (lat * dirLat <= toLat * dirLat && lon * dirLon <= toLon * dirLon)
     {
         //qCDebug(DIGIKAM_MARBLE_LOG) << lat << lon;
+
         qreal h = height(lon, lat);
 
         if (h < 32000)
@@ -246,19 +259,21 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
         if (k < 0.5)
         {
             //qCDebug(DIGIKAM_MARBLE_LOG) << "lon(x) += distPerPixel";
+
             lat += distPerPixel * k * dirLat;
             lon += distPerPixel * dirLon;
         }
-
         else
         {
             //qCDebug(DIGIKAM_MARBLE_LOG) << "lat(y) += distPerPixel";
+
             lat += distPerPixel * dirLat;
             lon += distPerPixel / k * dirLon;
         }
     }
 
     //qCDebug(DIGIKAM_MARBLE_LOG) << ret;
+
     return ret;
 }
 
