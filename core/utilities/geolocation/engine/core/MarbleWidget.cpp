@@ -114,6 +114,7 @@ private:
 class Q_DECL_HIDDEN MarbleWidgetPrivate
 {
 public:
+
     explicit MarbleWidgetPrivate(MarbleWidget* parent)
         : m_widget(parent),
           m_model(),
@@ -151,7 +152,7 @@ public:
       */
     void updateSystemBackgroundAttribute();
 
-    MarbleWidget* const             m_widget;
+    MarbleWidget* const             m_widget        = nullptr;
 
     MarbleModel                     m_model;
     MarbleMap                       m_map;
@@ -160,10 +161,10 @@ public:
 
     MarbleWidgetInputHandler*       m_inputhandler;
 
-    PopupLayer*                     m_mapInfoDialog;
+    PopupLayer*                     m_mapInfoDialog = nullptr;
     MarbleWidget::CustomPaintLayer  m_customPaintLayer;
 
-    MarbleWidgetPopupMenu*          m_popupmenu;
+    MarbleWidgetPopupMenu*          m_popupmenu     = nullptr;
 
     bool                            m_showFrameRate;
 
@@ -183,6 +184,7 @@ MarbleWidget::~MarbleWidget()
 {
     // Remove and delete an existing InputHandler
     // initialized in d->construct()
+
     setInputHandler(nullptr);
 
     delete d;
@@ -191,76 +193,99 @@ MarbleWidget::~MarbleWidget()
 void MarbleWidgetPrivate::construct()
 {
     // Widget settings
+
     m_widget->setMinimumSize(200, 300);
     m_widget->setFocusPolicy(Qt::WheelFocus);
     m_widget->setFocus(Qt::OtherFocusReason);
 
     // Set background: black.
+
     m_widget->setPalette(QPalette(Qt::black));
 
     // Set whether the black space gets displayed or the earth gets simply
     // displayed on the widget background.
+
     m_widget->setAutoFillBackground(true);
 
     // Initialize the map and forward some signals.
+
     m_map.setSize(m_widget->width(), m_widget->height());
     m_map.setShowFrameRate(false);    // never let the map draw the frame rate,
+
     // we do this differently here in the widget
 
-    m_widget->connect(&m_presenter, SIGNAL(regionSelected(GeoDataLatLonBox)), m_widget, SIGNAL(regionSelected(GeoDataLatLonBox)));
+    m_widget->connect(&m_presenter, SIGNAL(regionSelected(GeoDataLatLonBox)),
+                      m_widget, SIGNAL(regionSelected(GeoDataLatLonBox)));
 
-    m_widget->connect(&m_presenter, SIGNAL(zoomChanged(int)), m_widget, SIGNAL(zoomChanged(int)));
-    m_widget->connect(&m_presenter, SIGNAL(distanceChanged(QString)), m_widget, SIGNAL(distanceChanged(QString)));
+    m_widget->connect(&m_presenter, SIGNAL(zoomChanged(int)),
+                      m_widget, SIGNAL(zoomChanged(int)));
+
+    m_widget->connect(&m_presenter, SIGNAL(distanceChanged(QString)),
+                      m_widget, SIGNAL(distanceChanged(QString)));
 
     // forward some signals of m_map
-    m_widget->connect(&m_map,   SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)),
+
+    m_widget->connect(&m_map, SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)),
                       m_widget, SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)));
-    m_widget->connect(&m_map,   SIGNAL(projectionChanged(Projection)),
+
+    m_widget->connect(&m_map, SIGNAL(projectionChanged(Projection)),
                       m_widget, SIGNAL(projectionChanged(Projection)));
-    m_widget->connect(&m_map,   SIGNAL(tileLevelChanged(int)),
+
+    m_widget->connect(&m_map, SIGNAL(tileLevelChanged(int)),
                       m_widget, SIGNAL(tileLevelChanged(int)));
-    m_widget->connect(&m_map,   SIGNAL(framesPerSecond(qreal)),
+
+    m_widget->connect(&m_map, SIGNAL(framesPerSecond(qreal)),
                       m_widget, SIGNAL(framesPerSecond(qreal)));
-    m_widget->connect(&m_map,   SIGNAL(viewContextChanged(ViewContext)),
+
+    m_widget->connect(&m_map, SIGNAL(viewContextChanged(ViewContext)),
                       m_widget, SLOT(setViewContext(ViewContext)));
 
-    m_widget->connect(&m_map,   SIGNAL(pluginSettingsChanged()),
+    m_widget->connect(&m_map, SIGNAL(pluginSettingsChanged()),
                       m_widget, SIGNAL(pluginSettingsChanged()));
-    m_widget->connect(&m_map,   SIGNAL(renderPluginInitialized(RenderPlugin*)),
+
+    m_widget->connect(&m_map, SIGNAL(renderPluginInitialized(RenderPlugin*)),
                       m_widget, SIGNAL(renderPluginInitialized(RenderPlugin*)));
 
     // react to some signals of m_map
-    m_widget->connect(&m_map,   SIGNAL(themeChanged(QString)),
+
+    m_widget->connect(&m_map, SIGNAL(themeChanged(QString)),
                       m_widget, SLOT(updateMapTheme()));
-    m_widget->connect(&m_map,   SIGNAL(viewContextChanged(ViewContext)),
+
+    m_widget->connect(&m_map, SIGNAL(viewContextChanged(ViewContext)),
                       m_widget, SIGNAL(viewContextChanged(ViewContext)));
-    m_widget->connect(&m_map,   SIGNAL(repaintNeeded(QRegion)),
+
+    m_widget->connect(&m_map, SIGNAL(repaintNeeded(QRegion)),
                       m_widget, SLOT(update()));
-    m_widget->connect(&m_map,   SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)),
+
+    m_widget->connect(&m_map, SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)),
                       m_widget, SLOT(updateSystemBackgroundAttribute()));
-    m_widget->connect(&m_map,   SIGNAL(renderStatusChanged(RenderStatus)),
+
+    m_widget->connect(&m_map, SIGNAL(renderStatusChanged(RenderStatus)),
                       m_widget, SIGNAL(renderStatusChanged(RenderStatus)));
-    m_widget->connect(&m_map,   SIGNAL(renderStateChanged(RenderState)),
+
+    m_widget->connect(&m_map, SIGNAL(renderStateChanged(RenderState)),
                       m_widget, SIGNAL(renderStateChanged(RenderState)));
 
-    m_widget->connect(&m_map,   SIGNAL(propertyValueChanged(QString, bool)),
-                      m_widget, SIGNAL(propertyValueChanged(QString, bool)));
+    m_widget->connect(&m_map, SIGNAL(propertyValueChanged(QString,bool)),
+                      m_widget, SIGNAL(propertyValueChanged(QString,bool)));
 
     m_widget->connect(m_model.fileManager(), SIGNAL(centeredDocument(GeoDataLatLonBox)),
                       m_widget, SLOT(centerOn(GeoDataLatLonBox)));
 
 
     // Show a progress dialog when the model calculates new map tiles.
-    m_widget->connect(&m_model, SIGNAL(creatingTilesStart(TileCreator*, const QString&,
-                                                          const QString&)),
-                      m_widget, SLOT(creatingTilesStart(TileCreator*, const QString&,
-                                                        const QString&)));
+
+    m_widget->connect(&m_model, SIGNAL(creatingTilesStart(TileCreator*,QString,QString)),
+                      m_widget, SLOT(creatingTilesStart(TileCreator*,QString,QString)));
 
     m_popupmenu = new MarbleWidgetPopupMenu(m_widget, &m_model);
 
     m_mapInfoDialog = new PopupLayer(m_widget, m_widget);
     m_mapInfoDialog->setVisible(false);
-    m_widget->connect(m_mapInfoDialog, SIGNAL(repaintNeeded()), m_widget, SLOT(update()));
+
+    m_widget->connect(m_mapInfoDialog, SIGNAL(repaintNeeded()),
+                      m_widget, SLOT(update()));
+
     m_map.addLayer(m_mapInfoDialog);
 
     setInputHandler();
@@ -268,10 +293,10 @@ void MarbleWidgetPrivate::construct()
 
     m_map.addLayer(&m_customPaintLayer);
 
-    m_widget->connect(m_inputhandler, SIGNAL(mouseClickGeoPosition(qreal, qreal, GeoDataCoordinates::Unit)),
-                      m_widget, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)));
-    m_widget->setHighlightEnabled(true);
+    m_widget->connect(m_inputhandler, SIGNAL(mouseClickGeoPosition(qreal,qreal,GeoDataCoordinates::Unit)),
+                      m_widget, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)));
 
+    m_widget->setHighlightEnabled(true);
 }
 
 void MarbleWidgetPrivate::setInputHandler()
@@ -288,11 +313,11 @@ void MarbleWidgetPrivate::setInputHandler(MarbleWidgetInputHandler* handler)
     {
         m_widget->installEventFilter(m_inputhandler);
 
-        QObject::connect(m_inputhandler, SIGNAL(mouseClickScreenPosition(int, int)),
-                         m_widget,       SLOT(notifyMouseClick(int, int)));
+        QObject::connect(m_inputhandler, SIGNAL(mouseClickScreenPosition(int,int)),
+                         m_widget, SLOT(notifyMouseClick(int,int)));
 
         QObject::connect(m_inputhandler, SIGNAL(mouseMoveGeoPosition(QString)),
-                         m_widget,       SIGNAL(mouseMoveGeoPosition(QString)));
+                         m_widget, SIGNAL(mouseMoveGeoPosition(QString)));
     }
 }
 
@@ -300,12 +325,12 @@ void MarbleWidgetPrivate::updateSystemBackgroundAttribute()
 {
     // We only have to repaint the background every time if the earth
     // doesn't cover the whole image.
+
     const bool isOn = m_map.viewport()->mapCoversViewport() && !m_model.mapThemeId().isEmpty();
     m_widget->setAttribute(Qt::WA_NoSystemBackground, isOn);
 }
 
 // ----------------------------------------------------------------
-
 
 MarbleModel* MarbleWidget::model()
 {
@@ -331,7 +356,6 @@ MarbleWidgetPopupMenu* MarbleWidget::popupMenu()
 {
     return d->m_popupmenu;
 }
-
 
 void MarbleWidget::setInputHandler(MarbleWidgetInputHandler* handler)
 {
@@ -427,15 +451,14 @@ void MarbleWidget::setHighlightEnabled(bool enabled)
 {
     if (enabled)
     {
-        connect(this, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)),
-                &d->m_map, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)),
+        connect(this, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)),
+                &d->m_map, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)),
                 Qt::UniqueConnection);
     }
-
     else
     {
-        disconnect(this, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)),
-                   &d->m_map, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)));
+        disconnect(this, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)),
+                   &d->m_map, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)));
     }
 }
 
@@ -567,13 +590,11 @@ void MarbleWidget::zoomView(int zoom, FlyToMode mode)
     d->m_presenter.zoomView(zoom, mode);
 }
 
-
 void MarbleWidget::zoomViewBy(int zoomStep, FlyToMode mode)
 {
     d->m_inputhandler->stopInertialEarthRotation();
     d->m_presenter.zoomViewBy(zoomStep, mode);
 }
-
 
 void MarbleWidget::zoomIn(FlyToMode mode)
 {
@@ -592,7 +613,6 @@ void MarbleWidget::rotateBy(const qreal deltaLon, const qreal deltaLat, FlyToMod
     d->m_inputhandler->stopInertialEarthRotation();
     d->m_presenter.rotateBy(deltaLon, deltaLat, mode);
 }
-
 
 void MarbleWidget::centerOn(const qreal lon, const qreal lat, bool animated)
 {
@@ -739,10 +759,13 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
     {
         // If the globe covers fully the screen then we can use the faster
         // RGB32 as there are no translucent areas involved.
+
         QImage::Format imageFormat = (d->m_map.viewport()->mapCoversViewport())
                                      ? QImage::Format_RGB32
                                      : QImage::Format_ARGB32_Premultiplied;
+
         // Paint to an intermediate image
+
         image = QImage(rect().size(), imageFormat);
         image.fill(Qt::transparent);
         paintDevice = &image;
@@ -751,6 +774,7 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
     {
         // FIXME: Better way to get the GeoPainter
         // Create a painter that will do the painting.
+
         GeoPainter geoPainter(paintDevice, d->m_map.viewport(), d->m_map.mapQuality());
 
         d->m_map.paint(geoPainter, evt->rect());
@@ -759,9 +783,10 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
     if (!isEnabled())
     {
         // Draw a grayscale version of the intermediate image
+
         QRgb* pixel = reinterpret_cast<QRgb*>(image.scanLine(0));
 
-        for (int i = 0; i < image.width()*image.height(); ++i, ++pixel)
+        for (int i = 0 ; i < image.width()*image.height() ; ++i, ++pixel)
         {
             int gray = qGray(*pixel);
             *pixel = qRgb(gray, gray, gray);
@@ -778,6 +803,7 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
         fpsPainter.paint(&painter);
 
         const qreal fps = 1000.0 / (qreal)(t.elapsed() + 1);
+
         Q_EMIT framesPerSecond(fps);
     }
 }
@@ -785,9 +811,9 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
 void MarbleWidget::customPaint(GeoPainter* painter)
 {
     Q_UNUSED(painter);
+
     /* This is a NOOP in the base class*/
 }
-
 
 void MarbleWidget::goHome(FlyToMode mode)
 {
@@ -812,6 +838,7 @@ void MarbleWidgetPrivate::updateMapTheme()
     Q_EMIT m_widget->themeChanged(m_map.mapThemeId());
 
     // Now we want a full repaint as the atmosphere might differ
+
     m_widget->setAttribute(Qt::WA_NoSystemBackground, false);
 
     m_widget->update();
@@ -874,11 +901,11 @@ void MarbleWidget::setSubSolarPointIconVisible(bool visible)
         d->m_map.setSubSolarPointIconVisible(visible);
     }
 
-    QList<RenderPlugin*> pluginList = renderPlugins();
-    QList<RenderPlugin*>::const_iterator i = pluginList.constBegin();
+    QList<RenderPlugin*> pluginList                = renderPlugins();
+    QList<RenderPlugin*>::const_iterator i         = pluginList.constBegin();
     QList<RenderPlugin*>::const_iterator const end = pluginList.constEnd();
 
-    for (; i != end; ++i)
+    for ( ; i != end ; ++i)
     {
         if ((*i)->nameId() == QLatin1String("sun"))
         {
@@ -1047,6 +1074,7 @@ void MarbleWidget::creatingTilesStart(TileCreator* creator,
     QPointer<TileCreatorDialog> dialog = new TileCreatorDialog(creator, this);
     dialog->setSummary(name, description);
     dialog->exec();
+
     delete dialog;
 }
 
@@ -1123,6 +1151,7 @@ QString MarbleWidget::distanceString() const
 void MarbleWidget::setInputEnabled(bool enabled)
 {
     //if input is set as enabled
+
     if (enabled)
     {
         if (!d->m_inputhandler)
@@ -1135,7 +1164,6 @@ void MarbleWidget::setInputEnabled(bool enabled)
             installEventFilter(d->m_inputhandler);
         }
     }
-
     else // input is disabled
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleWidget::disableInput";

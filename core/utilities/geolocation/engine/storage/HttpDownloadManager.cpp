@@ -59,7 +59,7 @@ public:
 
 public:
 
-    HttpDownloadManager*                                m_downloadManager;
+    HttpDownloadManager*                                m_downloadManager   = nullptr;
     QTimer                                              m_requeueTimer;
 
     /**
@@ -71,7 +71,7 @@ public:
     QList<QPair<DownloadPolicyKey, DownloadQueueSet*> > m_queueSets;
 
     QMap<DownloadUsage, DownloadQueueSet*>              m_defaultQueueSets;
-    StoragePolicy* const                                m_storagePolicy;
+    StoragePolicy* const                                m_storagePolicy     = nullptr;
     QNetworkAccessManager                               m_networkAccessManager;
     bool                                                m_acceptJobs;
 };
@@ -130,7 +130,6 @@ DownloadQueueSet* HttpDownloadManager::Private::findQueues(const QString& hostNa
     return result;
 }
 
-
 HttpDownloadManager::HttpDownloadManager(StoragePolicy* policy)
     : d(new Private(this, policy))
 {
@@ -149,10 +148,11 @@ HttpDownloadManager::~HttpDownloadManager()
 
 void HttpDownloadManager::setDownloadEnabled(const bool enable)
 {
-    /*
-        PORT_QT6
-        d->m_networkAccessManager.setNetworkAccessible( enable ? QNetworkAccessManager::Accessible : QNetworkAccessManager::NotAccessible );
-    */
+/*
+    TODO: PORT_QT6
+    d->m_networkAccessManager.setNetworkAccessible(enable ? QNetworkAccessManager::Accessible
+                                                          : QNetworkAccessManager::NotAccessible);
+*/
     d->m_acceptJobs                                                         = enable;
     QList<QPair<DownloadPolicyKey, DownloadQueueSet*> >::iterator pos       = d->m_queueSets.begin();
     QList<QPair<DownloadPolicyKey, DownloadQueueSet*> >::iterator const end = d->m_queueSets.end();

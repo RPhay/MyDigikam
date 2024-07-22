@@ -142,7 +142,9 @@ public:
 
     void addPlugins();
 
-    MarbleMap* const                q = nullptr;
+public:
+
+    MarbleMap* const                q       = nullptr;
 
     // The model we are showing.
     MarbleModel* const              m_model = nullptr;
@@ -175,25 +177,25 @@ public:
     RenderState                     m_renderState;
 };
 
-MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model) :
-    q(parent),
-    m_model(model),
-    m_modelIsOwned(false),
-    m_viewParams(),
-    m_showFrameRate(false),
-    m_showDebugPolygons(false),
-    m_showDebugBatchRender(false),
-    m_visibleRelationTypes(GeoDataRelation::RouteFerry),
-    m_styleBuilder(),
-    m_layerManager(parent),
-    m_customPaintLayer(parent),
-    m_geometryLayer(model->treeModel(), &m_styleBuilder),
-    m_floatItemsLayer(parent),
-    m_textureLayer(model->downloadManager(), model->pluginManager(), model->sunLocator(), model->groundOverlayModel()),
-    m_placemarkLayer(model->placemarkModel(), model->placemarkSelectionModel(), model->clock(), &m_styleBuilder),
-    m_vectorTileLayer(model->downloadManager(), model->pluginManager(), model->treeModel()),
-    m_isLockedToSubSolarPoint(false),
-    m_isSubSolarPointIconVisible(false)
+MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model)
+    : q(parent),
+      m_model(model),
+      m_modelIsOwned(false),
+      m_viewParams(),
+      m_showFrameRate(false),
+      m_showDebugPolygons(false),
+      m_showDebugBatchRender(false),
+      m_visibleRelationTypes(GeoDataRelation::RouteFerry),
+      m_styleBuilder(),
+      m_layerManager(parent),
+      m_customPaintLayer(parent),
+      m_geometryLayer(model->treeModel(), &m_styleBuilder),
+      m_floatItemsLayer(parent),
+      m_textureLayer(model->downloadManager(), model->pluginManager(), model->sunLocator(), model->groundOverlayModel()),
+      m_placemarkLayer(model->placemarkModel(), model->placemarkSelectionModel(), model->clock(), &m_styleBuilder),
+      m_vectorTileLayer(model->downloadManager(), model->pluginManager(), model->treeModel()),
+      m_isLockedToSubSolarPoint(false),
+      m_isSubSolarPointIconVisible(false)
 {
     m_layerManager.addLayer(&m_floatItemsLayer);
     m_layerManager.addLayer(&m_fogLayer);
@@ -204,21 +206,24 @@ MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model) :
 
     QObject::connect(m_model, SIGNAL(themeChanged(QString)),
                      parent, SLOT(updateMapTheme()));
+
     QObject::connect(m_model->fileManager(), SIGNAL(fileAdded(QString)),
                      parent, SLOT(setDocument(QString)));
-
 
     QObject::connect(&m_placemarkLayer, SIGNAL(repaintNeeded()),
                      parent, SIGNAL(repaintNeeded()));
 
     QObject::connect(&m_layerManager, SIGNAL(pluginSettingsChanged()),
-                     parent,        SIGNAL(pluginSettingsChanged()));
+                     parent, SIGNAL(pluginSettingsChanged()));
+
     QObject::connect(&m_layerManager, SIGNAL(repaintNeeded(QRegion)),
-                     parent,        SIGNAL(repaintNeeded(QRegion)));
+                     parent, SIGNAL(repaintNeeded(QRegion)));
+
     QObject::connect(&m_layerManager, SIGNAL(renderPluginInitialized(RenderPlugin*)),
-                     parent,        SIGNAL(renderPluginInitialized(RenderPlugin*)));
-    QObject::connect(&m_layerManager, SIGNAL(visibilityChanged(QString, bool)),
-                     parent,        SLOT(setPropertyValue(QString, bool)));
+                     parent, SIGNAL(renderPluginInitialized(RenderPlugin*)));
+
+    QObject::connect(&m_layerManager, SIGNAL(visibilityChanged(QString,bool)),
+                     parent, SLOT(setPropertyValue(QString,bool)));
 
     QObject::connect(&m_geometryLayer, SIGNAL(repaintNeeded()),
                      parent, SIGNAL(repaintNeeded()));
@@ -232,31 +237,38 @@ MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model) :
      * placemarks will be fletered out in GeoGraphicsScene
      * and will not be highlighted.
      */
-    QObject::connect(parent, SIGNAL(highlightedPlacemarksChanged(qreal, qreal, GeoDataCoordinates::Unit)),
-                     &m_geometryLayer, SLOT(handleHighlight(qreal, qreal, GeoDataCoordinates::Unit)));
+    QObject::connect(parent, SIGNAL(highlightedPlacemarksChanged(qreal,qreal,GeoDataCoordinates::Unit)),
+                     &m_geometryLayer, SLOT(handleHighlight(qreal,qreal,GeoDataCoordinates::Unit)));
 
     QObject::connect(&m_floatItemsLayer, SIGNAL(repaintNeeded(QRegion)),
-                     parent,             SIGNAL(repaintNeeded(QRegion)));
+                     parent, SIGNAL(repaintNeeded(QRegion)));
+
     QObject::connect(&m_floatItemsLayer, SIGNAL(renderPluginInitialized(RenderPlugin*)),
-                     parent,             SIGNAL(renderPluginInitialized(RenderPlugin*)));
-    QObject::connect(&m_floatItemsLayer, SIGNAL(visibilityChanged(QString, bool)),
-                     parent,             SLOT(setPropertyValue(QString, bool)));
+                     parent, SIGNAL(renderPluginInitialized(RenderPlugin*)));
+
+    QObject::connect(&m_floatItemsLayer, SIGNAL(visibilityChanged(QString,bool)),
+                     parent, SLOT(setPropertyValue(QString,bool)));
+
     QObject::connect(&m_floatItemsLayer, SIGNAL(pluginSettingsChanged()),
-                     parent,             SIGNAL(pluginSettingsChanged()));
+                     parent, SIGNAL(pluginSettingsChanged()));
 
     QObject::connect(&m_textureLayer, SIGNAL(tileLevelChanged(int)),
                      parent, SLOT(updateTileLevel()));
+
     QObject::connect(&m_vectorTileLayer, SIGNAL(tileLevelChanged(int)),
                      parent, SLOT(updateTileLevel()));
+
     QObject::connect(parent, SIGNAL(radiusChanged(int)),
                      parent, SLOT(updateTileLevel()));
 
     QObject::connect(&m_textureLayer, SIGNAL(repaintNeeded()),
                      parent, SIGNAL(repaintNeeded()));
+
     QObject::connect(parent, SIGNAL(visibleLatLonAltBoxChanged(GeoDataLatLonAltBox)),
                      parent, SIGNAL(repaintNeeded()));
 
     addPlugins();
+
     QObject::connect(model->pluginManager(), SIGNAL(renderPluginsChanged()),
                      parent, SLOT(addPlugins()));
 }
@@ -264,42 +276,38 @@ MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model) :
 void MarbleMapPrivate::updateProperty(const QString& name, bool show)
 {
     // earth
-    if (name == QLatin1String("places"))
+
+    if      (name == QLatin1String("places"))
     {
         m_placemarkLayer.setShowPlaces(show);
     }
-
     else if (name == QLatin1String("cities"))
     {
         m_placemarkLayer.setShowCities(show);
     }
-
     else if (name == QLatin1String("terrain"))
     {
         m_placemarkLayer.setShowTerrain(show);
     }
-
     else if (name == QLatin1String("otherplaces"))
     {
         m_placemarkLayer.setShowOtherPlaces(show);
     }
 
     // other planets
+
     else if (name == QLatin1String("landingsites"))
     {
         m_placemarkLayer.setShowLandingSites(show);
     }
-
     else if (name == QLatin1String("craters"))
     {
         m_placemarkLayer.setShowCraters(show);
     }
-
     else if (name == QLatin1String("maria"))
     {
         m_placemarkLayer.setShowMaria(show);
     }
-
     else if (name == QLatin1String("relief"))
     {
         m_textureLayer.setShowRelief(show);
@@ -342,14 +350,15 @@ void MarbleMapPrivate::addPlugins()
         }
 
         RenderPlugin* const renderPlugin = factory->newInstance(m_model);
+
         Q_ASSERT(renderPlugin && "Plugin must not return null when requesting a new instance.");
+
         m_renderPlugins << renderPlugin;
 
         if (AbstractFloatItem* const floatItem = qobject_cast<AbstractFloatItem*>(renderPlugin))
         {
             m_floatItemsLayer.addFloatItem(floatItem);
         }
-
         else
         {
             m_layerManager.addRenderPlugin(renderPlugin);
@@ -404,12 +413,12 @@ const ViewportParams* MarbleMap::viewport() const
     return &d->m_viewport;
 }
 
-
 void MarbleMap::setMapQualityForViewContext(MapQuality quality, ViewContext viewContext)
 {
     d->m_viewParams.setMapQualityForViewContext(quality, viewContext);
 
     // Update texture map during the repaint that follows:
+
     d->m_textureLayer.setNeedsUpdate();
 }
 
@@ -432,11 +441,13 @@ void MarbleMap::setViewContext(ViewContext viewContext)
 
     const MapQuality oldQuality = d->m_viewParams.mapQuality();
     d->m_viewParams.setViewContext(viewContext);
+
     Q_EMIT viewContextChanged(viewContext);
 
     if (d->m_viewParams.mapQuality() != oldQuality)
     {
         // Update texture map during the repaint that follows:
+
         d->m_textureLayer.setNeedsUpdate();
 
         Q_EMIT repaintNeeded();
@@ -447,7 +458,6 @@ ViewContext MarbleMap::viewContext() const
 {
     return d->m_viewParams.viewContext();
 }
-
 
 void MarbleMap::setSize(int width, int height)
 {
@@ -494,25 +504,21 @@ void MarbleMap::setRadius(int radius)
     }
 }
 
-
 int MarbleMap::preferredRadiusCeil(int radius) const
 {
     return d->m_textureLayer.preferredRadiusCeil(radius);
 }
-
 
 int MarbleMap::preferredRadiusFloor(int radius) const
 {
     return d->m_textureLayer.preferredRadiusFloor(radius);
 }
 
-
 int MarbleMap::tileZoomLevel() const
 {
     auto const tileZoomLevel = qMax(d->m_textureLayer.tileZoomLevel(), d->m_vectorTileLayer.tileZoomLevel());
     return tileZoomLevel >= 0 ? tileZoomLevel : qMin<int>(qMax<int>(qLn(d->m_viewport.radius() * 4 / 256) / qLn(2.0), 1), d->m_styleBuilder.maximumZoomLevel());
 }
-
 
 qreal MarbleMap::centerLatitude() const
 {
@@ -530,6 +536,7 @@ bool MarbleMap::hasFeatureAt(const QPoint& position) const
 qreal MarbleMap::centerLongitude() const
 {
     // Calculate translation of center point
+
     const qreal centerLon = d->m_viewport.centerLongitude();
 
     return centerLon * RAD2DEG;
@@ -580,6 +587,7 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
 {
     Q_ASSERT(textureLayer());
     Q_ASSERT(!pyramid.isEmpty());
+
     QElapsedTimer t;
     t.start();
 
@@ -591,25 +599,26 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
 
 
     int const first = 0;
-    int tilesCount = 0;
+    int tilesCount  = 0;
 
-    for (int level = pyramid[first].bottomLevel(); level >= pyramid[first].topLevel(); --level)
+    for (int level = pyramid[first].bottomLevel() ; level >= pyramid[first].topLevel() ; --level)
     {
         QSet<TileId> tileIdSet;
 
-        for (int i = 0; i < pyramid.size(); ++i)
+        for (int i = 0 ; i < pyramid.size() ; ++i)
         {
             QRect const coords = pyramid[i].coords(level);
             qCDebug(DIGIKAM_MARBLE_LOG) << "MarbleMap::downloadRegion level:" << level << "tile coords:" << coords;
             int x1, y1, x2, y2;
             coords.getCoords(&x1, &y1, &x2, &y2);
 
-            for (int x = x1; x <= x2; ++x)
+            for (int x = x1 ; x <= x2 ; ++x)
             {
-                for (int y = y1; y <= y2; ++y)
+                for (int y = y1 ; y <= y2 ; ++y)
                 {
                     TileId const stackedTileId(0, level, x, y);
                     tileIdSet.insert(stackedTileId);
+
                     // FIXME: use lazy evaluation to not generate up to 100k tiles in one go
                     // this can take considerable time even on very fast systems
                     // in contrast generating the TileIds on the fly when they are needed
@@ -718,7 +727,7 @@ bool MarbleMap::showCrosshairs() const
     QList<RenderPlugin*>::const_iterator i = pluginList.constBegin();
     QList<RenderPlugin*>::const_iterator const end = pluginList.constEnd();
 
-    for (; i != end; ++i)
+    for ( ; i != end ; ++i)
     {
         if ((*i)->nameId() == QLatin1String("crosshairs"))
         {
@@ -794,13 +803,11 @@ quint64 MarbleMap::volatileTileCacheLimit() const
     return d->m_textureLayer.volatileCacheLimit();
 }
 
-
 void MarbleMap::rotateBy(qreal deltaLon, qreal deltaLat)
 {
     centerOn(d->m_viewport.centerLongitude() * RAD2DEG + deltaLon,
              d->m_viewport.centerLatitude()  * RAD2DEG + deltaLat);
 }
-
 
 void MarbleMap::centerOn(const qreal lon, const qreal lat)
 {
@@ -840,7 +847,6 @@ void MarbleMap::setProjection(Projection projection)
     Q_EMIT visibleLatLonAltBoxChanged(d->m_viewport.viewLatLonAltBox());
 }
 
-
 bool MarbleMap::screenCoordinates(qreal lon, qreal lat,
                                   qreal& x, qreal& y) const
 {
@@ -861,10 +867,12 @@ void MarbleMapPrivate::setDocument(const QString& key)
         // Happens if no valid map theme is set or at application startup
         // if a file is passed via command line parameters and the last
         // map theme has not been loaded yet
+
         /**
          * @todo Do we need to queue the document and process it once a map
          * theme becomes available?
          */
+
         return;
     }
 
@@ -879,11 +887,12 @@ void MarbleMapPrivate::setDocument(const QString& key)
         }
 
         // look for documents
+
         for (const GeoSceneAbstractDataset* dataset : layer->datasets())
         {
             const GeoSceneGeodata* data = static_cast<const GeoSceneGeodata*>(dataset);
-            QString containername = data->sourceFile();
-            QString colorize = data->colorize();
+            QString containername       = data->sourceFile();
+            QString colorize            = data->colorize();
 
             if (key == containername)
             {
@@ -898,6 +907,7 @@ void MarbleMapPrivate::setDocument(const QString& key)
                 }
 
                 // set visibility according to theme property
+
                 if (!data->property().isEmpty())
                 {
                     bool value;
@@ -915,10 +925,12 @@ void MarbleMapPrivate::updateTileLevel()
     auto const tileZoomLevel = q->tileZoomLevel();
     m_geometryLayer.setTileLevel(tileZoomLevel);
     m_placemarkLayer.setTileLevel(tileZoomLevel);
+
     Q_EMIT q->tileLevelChanged(tileZoomLevel);
 }
 
 // Used to be paintEvent()
+
 void MarbleMap::paint(GeoPainter& painter, const QRect& dirtyRect)
 {
     Q_UNUSED(dirtyRect);
@@ -969,6 +981,7 @@ void MarbleMap::paint(GeoPainter& painter, const QRect& dirtyRect)
     }
 
     const qreal fps = 1000.0 / (qreal)(t.elapsed());
+
     Q_EMIT framesPerSecond(fps);
 }
 
@@ -990,15 +1003,18 @@ void MarbleMap::setMapThemeId(const QString& mapThemeId)
 void MarbleMapPrivate::updateMapTheme()
 {
     m_layerManager.removeLayer(&m_textureLayer);
+
     // FIXME Find a better way to do this reset. Maybe connect to themeChanged SIGNAL?
+
     m_vectorTileLayer.reset();
     m_layerManager.removeLayer(&m_vectorTileLayer);
     m_layerManager.removeLayer(&m_groundLayer);
 
-    QObject::connect(m_model->mapTheme()->settings(), SIGNAL(valueChanged(QString, bool)),
-                     q, SLOT(updateProperty(QString, bool)));
-    QObject::connect(m_model->mapTheme()->settings(), SIGNAL(valueChanged(QString, bool)),
-                     m_model, SLOT(updateProperty(QString, bool)));
+    QObject::connect(m_model->mapTheme()->settings(), SIGNAL(valueChanged(QString,bool)),
+                     q, SLOT(updateProperty(QString,bool)));
+
+    QObject::connect(m_model->mapTheme()->settings(), SIGNAL(valueChanged(QString,bool)),
+                     m_model, SLOT(updateProperty(QString,bool)));
 
     q->setPropertyValue(QStringLiteral("clouds_data"), m_viewParams.showClouds());
 
@@ -1006,25 +1022,25 @@ void MarbleMapPrivate::updateMapTheme()
     m_groundLayer.setColor(backgroundColor);
 
     // Check whether there is a texture layer and vectortile layer available:
+
     if (m_model->mapTheme()->map()->hasTextureLayers())
     {
-        const GeoSceneSettings* const settings = m_model->mapTheme()->settings();
-        const GeoSceneGroup* const textureLayerSettings = settings ? settings->group(QString::fromUtf8("Texture Layers")) : nullptr;
+        const GeoSceneSettings* const settings             = m_model->mapTheme()->settings();
+        const GeoSceneGroup* const textureLayerSettings    = settings ? settings->group(QString::fromUtf8("Texture Layers")) : nullptr;
         const GeoSceneGroup* const vectorTileLayerSettings = settings ? settings->group(QString::fromUtf8("VectorTile Layers")) : nullptr;
-
-        bool textureLayersOk = true;
-        bool vectorTileLayersOk = true;
+        bool textureLayersOk                               = true;
+        bool vectorTileLayersOk                            = true;
 
         // textures will contain texture layers and
         // vectorTiles vectortile layers
+
         QVector<const GeoSceneTextureTileDataset*> textures;
         QVector<const GeoSceneVectorTileDataset*> vectorTiles;
 
         for (GeoSceneLayer* layer : m_model->mapTheme()->map()->layers())
         {
-            if (layer->backend() == QString::fromUtf8(dgml::dgmlValue_texture))
+            if      (layer->backend() == QString::fromUtf8(dgml::dgmlValue_texture))
             {
-
                 for (const GeoSceneAbstractDataset* pos : layer->datasets())
                 {
                     const GeoSceneTextureTileDataset* const texture = dynamic_cast<GeoSceneTextureTileDataset const*>(pos);
@@ -1034,12 +1050,13 @@ void MarbleMapPrivate::updateMapTheme()
                         continue;
                     }
 
-                    const QString sourceDir = texture->sourceDir();
+                    const QString sourceDir  = texture->sourceDir();
                     const QString installMap = texture->installMap();
-                    const QString role = layer->role();
+                    const QString role       = layer->role();
 
                     // If the tiles aren't already there, put up a progress dialog
                     // while creating them.
+
                     if (!TileLoader::baseTilesAvailable(*texture)
                         && !installMap.isEmpty())
                     {
@@ -1074,7 +1091,6 @@ void MarbleMapPrivate::updateMapTheme()
                     {
                         textures.append(texture);
                     }
-
                     else
                     {
                         qCWarning(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
@@ -1082,10 +1098,8 @@ void MarbleMapPrivate::updateMapTheme()
                     }
                 }
             }
-
             else if (layer->backend() == QString::fromUtf8(dgml::dgmlValue_vectortile))
             {
-
                 for (const GeoSceneAbstractDataset* pos : layer->datasets())
                 {
                     const GeoSceneVectorTileDataset* const vectorTile = dynamic_cast<GeoSceneVectorTileDataset const*>(pos);
@@ -1095,12 +1109,13 @@ void MarbleMapPrivate::updateMapTheme()
                         continue;
                     }
 
-                    const QString sourceDir = vectorTile->sourceDir();
+                    const QString sourceDir  = vectorTile->sourceDir();
                     const QString installMap = vectorTile->installMap();
-                    const QString role = layer->role();
+                    const QString role       = layer->role();
 
                     // If the tiles aren't already there, put up a progress dialog
                     // while creating them.
+
                     if (!TileLoader::baseTilesAvailable(*vectorTile)
                         && !installMap.isEmpty())
                     {
@@ -1122,7 +1137,6 @@ void MarbleMapPrivate::updateMapTheme()
                         {
                             qCDebug(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "successfully created.";
                         }
-
                         else
                         {
                             qCDebug(DIGIKAM_MARBLE_LOG) << "Some or all base tiles for" << sourceDir << "could not be created.";
@@ -1135,7 +1149,6 @@ void MarbleMapPrivate::updateMapTheme()
                     {
                         vectorTiles.append(vectorTile);
                     }
-
                     else
                     {
                         qCWarning(DIGIKAM_MARBLE_LOG) << "Base tiles for" << sourceDir << "not available. Skipping all texture layers.";
@@ -1153,7 +1166,8 @@ void MarbleMapPrivate::updateMapTheme()
 
             if (filter->type() == QLatin1String("colorize"))
             {
-                //no need to look up with MarbleDirs twice so they are left null for now
+                // no need to look up with MarbleDirs twice so they are left null for now
+
                 QList<const GeoScenePalette*> palette = filter->palette();
 
                 for (const GeoScenePalette* curPalette : palette)
@@ -1170,7 +1184,8 @@ void MarbleMapPrivate::updateMapTheme()
                     }
                 }
 
-                //look up locations if they are empty
+                // look up locations if they are empty
+
                 if (seafile.isEmpty())
                 {
                     seafile = MarbleDirs::path(QStringLiteral("seacolors.leg"));
@@ -1204,7 +1219,6 @@ void MarbleMapPrivate::updateMapTheme()
             m_layerManager.addLayer(&m_vectorTileLayer);
         }
     }
-
     else
     {
         m_layerManager.addLayer(&m_groundLayer);
@@ -1213,6 +1227,7 @@ void MarbleMapPrivate::updateMapTheme()
     }
 
     // earth
+
     m_placemarkLayer.setShowPlaces(q->showPlaces());
 
     m_placemarkLayer.setShowCities(q->showCities());
@@ -1229,7 +1244,7 @@ void MarbleMapPrivate::updateMapTheme()
     {
         bool propertyAvailable = false;
         m_model->mapTheme()->settings()->propertyAvailable(renderPlugin->nameId(), propertyAvailable);
-        bool propertyValue = false;
+        bool propertyValue     = false;
         m_model->mapTheme()->settings()->propertyValue(renderPlugin->nameId(), propertyValue);
 
         if (propertyAvailable)
@@ -1249,9 +1264,9 @@ void MarbleMap::setPropertyValue(const QString& name, bool value)
     {
         d->m_model->mapTheme()->settings()->setPropertyValue(name, value);
         d->m_textureLayer.setNeedsUpdate();
+
         Q_EMIT propertyValueChanged(name, value);
     }
-
     else
     {
         qCDebug(DIGIKAM_MARBLE_LOG) << "WARNING: Failed to access a map theme! Property: " << name;
@@ -1261,7 +1276,6 @@ void MarbleMap::setPropertyValue(const QString& name, bool value)
     {
         d->m_layerManager.addLayer(&d->m_groundLayer);
     }
-
     else
     {
         d->m_layerManager.removeLayer(&d->m_groundLayer);
@@ -1298,11 +1312,11 @@ void MarbleMap::setShowAtmosphere(bool visible)
 
 void MarbleMap::setShowCrosshairs(bool visible)
 {
-    QList<RenderPlugin*> pluginList = renderPlugins();
-    QList<RenderPlugin*>::const_iterator i = pluginList.constBegin();
+    QList<RenderPlugin*> pluginList                = renderPlugins();
+    QList<RenderPlugin*>::const_iterator i         = pluginList.constBegin();
     QList<RenderPlugin*>::const_iterator const end = pluginList.constEnd();
 
-    for (; i != end; ++i)
+    for ( ; i != end ; ++i)
     {
         if ((*i)->nameId() == QLatin1String("crosshairs"))
         {
@@ -1331,8 +1345,8 @@ void MarbleMap::setShowCityLights(bool visible)
 
 void MarbleMap::setLockToSubSolarPoint(bool visible)
 {
-    disconnect(d->m_model->sunLocator(), SIGNAL(positionChanged(qreal, qreal)),
-               this,                     SLOT(centerOn(qreal, qreal)));
+    disconnect(d->m_model->sunLocator(), SIGNAL(positionChanged(qreal,qreal)),
+               this, SLOT(centerOn(qreal,qreal)));
 
     if (isLockedToSubSolarPoint() != visible)
     {
@@ -1341,8 +1355,8 @@ void MarbleMap::setLockToSubSolarPoint(bool visible)
 
     if (isLockedToSubSolarPoint())
     {
-        connect(d->m_model->sunLocator(), SIGNAL(positionChanged(qreal, qreal)),
-                this,                     SLOT(centerOn(qreal, qreal)));
+        connect(d->m_model->sunLocator(), SIGNAL(positionChanged(qreal,qreal)),
+                this, SLOT(centerOn(qreal,qreal)));
 
         centerOn(d->m_model->sunLocator()->getLon(), d->m_model->sunLocator()->getLat());
     }
@@ -1426,6 +1440,7 @@ void MarbleMap::setShowRuntimeTrace(bool visible)
     if (visible != d->m_layerManager.showRuntimeTrace())
     {
         d->m_layerManager.setShowRuntimeTrace(visible);
+
         Q_EMIT repaintNeeded();
     }
 }
@@ -1440,6 +1455,7 @@ void MarbleMap::setShowDebugPolygons(bool visible)
     if (visible != d->m_showDebugPolygons)
     {
         d->m_showDebugPolygons = visible;
+
         Q_EMIT repaintNeeded();
     }
 }
@@ -1456,6 +1472,7 @@ void MarbleMap::setShowDebugBatchRender(bool visible)
     if (visible != d->m_showDebugBatchRender)
     {
         d->m_showDebugBatchRender = visible;
+
         Q_EMIT repaintNeeded();
     }
 }
@@ -1470,6 +1487,7 @@ void MarbleMap::setShowDebugPlacemarks(bool visible)
     if (visible != d->m_placemarkLayer.isDebugModeEnabled())
     {
         d->m_placemarkLayer.setDebugModeEnabled(visible);
+
         Q_EMIT repaintNeeded();
     }
 }
@@ -1485,6 +1503,7 @@ void MarbleMap::setLevelTagDebugModeEnabled(bool visible)
     {
         d->m_geometryLayer.setLevelTagDebugModeEnabled(visible);
         d->m_placemarkLayer.setLevelTagDebugModeEnabled(visible);
+
         Q_EMIT repaintNeeded();
     }
 }
@@ -1517,6 +1536,7 @@ void MarbleMap::setVisibleRelationTypes(GeoDataRelation::RelationTypes relationT
     {
         d->m_visibleRelationTypes = relationTypes;
         d->m_geometryLayer.setVisibleRelationTypes(relationTypes);
+
         Q_EMIT visibleRelationTypesChanged(d->m_visibleRelationTypes);
     }
 }
@@ -1538,6 +1558,7 @@ void MarbleMap::clearVolatileTileCache()
 {
     d->m_vectorTileLayer.reset();
     d->m_textureLayer.reset();
+
     qCDebug(DIGIKAM_MARBLE_LOG) << "Cleared Volatile Cache!";
 }
 
@@ -1564,12 +1585,11 @@ AngleUnit MarbleMap::defaultAngleUnit() const
 
 void MarbleMap::setDefaultAngleUnit(AngleUnit angleUnit)
 {
-    if (angleUnit == DecimalDegree)
+    if      (angleUnit == DecimalDegree)
     {
         GeoDataCoordinates::setDefaultNotation(GeoDataCoordinates::Decimal);
         return;
     }
-
     else if (angleUnit == UTM)
     {
         GeoDataCoordinates::setDefaultNotation(GeoDataCoordinates::UTM);
@@ -1654,6 +1674,7 @@ void  MarbleMap::removeTextureLayer(const QString& key)
 }
 
 // this method will only temporarily "pollute" the MarbleModel class
+
 TextureLayer* MarbleMap::textureLayer() const
 {
     return &d->m_textureLayer;
