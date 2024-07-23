@@ -23,7 +23,7 @@ BUGFIXES:
 012 ==> 490552 - Import: Incorrect date during automatic file naming with “date” construct.
 013 ==> 490330 - Focus points is not displayed at all for a sony a6700 jpg, heif or raw file (arw).
 014 ==> 490671 - digiKam crashes on startup with a white window and file download dialog.
-015 ==>
+015 ==> 488222 - Exiftool not recognized.
 016 ==>
 017 ==>
 018 ==>
