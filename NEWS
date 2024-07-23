@@ -24,7 +24,7 @@ BUGFIXES:
 013 ==> 490330 - Focus points is not displayed at all for a sony a6700 jpg, heif or raw file (arw).
 014 ==> 490671 - digiKam crashes on startup with a white window and file download dialog.
 015 ==> 488222 - Exiftool not recognized.
-016 ==>
+016 ==> 490690 - digiKam 8.4.0, Error at Configuring, CMake Error at core/cmake/modules/FindLibheif.cmake:57.
 017 ==>
 018 ==>
 019 ==>
