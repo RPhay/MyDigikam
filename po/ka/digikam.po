@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 01:47+0000\n"
+"POT-Creation-Date: 2024-07-23 01:48+0000\n"
 "PO-Revision-Date: 2024-07-07 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -23110,8 +23110,8 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
 msgstr "მიუწვდომელია"
@@ -49679,7 +49679,7 @@ msgstr ""
 msgid "&Address Details"
 msgstr "&მისამართის დეტალები"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
 #, kde-format
 msgid "No description available."
 msgstr "აღწერის გარეშე."
@@ -49692,7 +49692,7 @@ msgstr "აღწერის გარეშე."
 msgid "National Capital"
 msgstr "დედაქალაქი"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
@@ -49703,7 +49703,7 @@ msgstr "დედაქალაქი"
 msgid "City"
 msgstr "ქალაქი"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
@@ -49712,7 +49712,7 @@ msgstr "ქალაქი"
 msgid "State Capital"
 msgstr "შტატის დედაქალაქი"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
@@ -49721,23 +49721,23 @@ msgstr "შტატის დედაქალაქი"
 msgid "County Capital"
 msgstr "რეგიონის დედაქალაქი"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
 msgstr "Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "სოფელი"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
 msgstr "ინფორმაციული ველები"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
 #, kde-format
 msgid "Address Details"
 msgstr "მისამართის დეტალები"

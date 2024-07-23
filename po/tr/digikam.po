@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 01:47+0000\n"
+"POT-Creation-Date: 2024-07-23 01:48+0000\n"
 "PO-Revision-Date: 2024-07-12 13:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -24715,8 +24715,8 @@ msgstr "gözlemden"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
 msgstr "kullanılabilir değil"
@@ -52784,7 +52784,7 @@ msgstr "geo: URL'sini Kopyala"
 msgid "&Address Details"
 msgstr "&Adres Ayrıntıları"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
 #, kde-format
 msgid "No description available."
 msgstr "Kullanılabilir açıklama yok."
@@ -52797,7 +52797,7 @@ msgstr "Kullanılabilir açıklama yok."
 msgid "National Capital"
 msgstr "Ulusal Başkent"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
@@ -52808,7 +52808,7 @@ msgstr "Ulusal Başkent"
 msgid "City"
 msgstr "Şehir"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
@@ -52817,7 +52817,7 @@ msgstr "Şehir"
 msgid "State Capital"
 msgstr "Eyalet Başkenti"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
@@ -52826,23 +52826,23 @@ msgstr "Eyalet Başkenti"
 msgid "County Capital"
 msgstr "İlçe Başkenti"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
 msgstr "Başkent"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "Köy"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Bilgi Kutuları"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
 #, kde-format
 msgid "Address Details"
 msgstr "Adres Ayrıntıları"

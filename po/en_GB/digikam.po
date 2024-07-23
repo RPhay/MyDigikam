@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 01:47+0000\n"
+"POT-Creation-Date: 2024-07-23 01:48+0000\n"
 "PO-Revision-Date: 2024-06-29 11:34+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -24490,8 +24490,8 @@ msgstr "from observation"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
 msgstr "not available"
@@ -52455,7 +52455,7 @@ msgstr "Copy geo: URL"
 msgid "&Address Details"
 msgstr "&Address Details"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
 #, kde-format
 msgid "No description available."
 msgstr "No description available."
@@ -52468,7 +52468,7 @@ msgstr "No description available."
 msgid "National Capital"
 msgstr "National Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
@@ -52479,7 +52479,7 @@ msgstr "National Capital"
 msgid "City"
 msgstr "City"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
@@ -52488,7 +52488,7 @@ msgstr "City"
 msgid "State Capital"
 msgstr "State Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
@@ -52497,23 +52497,23 @@ msgstr "State Capital"
 msgid "County Capital"
 msgstr "County Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
 msgstr "Capital"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "Village"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
 msgstr "&Info Boxes"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
 #, kde-format
 msgid "Address Details"
 msgstr "Address Details"

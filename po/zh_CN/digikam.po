@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 01:47+0000\n"
+"POT-Creation-Date: 2024-07-23 01:48+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -23831,8 +23831,8 @@ msgstr "观察之后"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
 msgstr "不可用"
@@ -51199,7 +51199,7 @@ msgstr "复制 geo: URL"
 msgid "&Address Details"
 msgstr "地址详情(&A)"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
 #, kde-format
 msgid "No description available."
 msgstr "没有可用描述。"
@@ -51212,7 +51212,7 @@ msgstr "没有可用描述。"
 msgid "National Capital"
 msgstr "国家首都/行政中心"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
@@ -51223,7 +51223,7 @@ msgstr "国家首都/行政中心"
 msgid "City"
 msgstr "城市"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
@@ -51232,7 +51232,7 @@ msgstr "城市"
 msgid "State Capital"
 msgstr "州府/省会"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
@@ -51241,23 +51241,23 @@ msgstr "州府/省会"
 msgid "County Capital"
 msgstr "郡县首府"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
 msgstr "行政中心"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "乡村"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
 msgstr "信息框(&I)"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
 #, kde-format
 msgid "Address Details"
 msgstr "地址详情"

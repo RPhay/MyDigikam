@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-22 01:47+0000\n"
-"PO-Revision-Date: 2024-06-19 23:13+0200\n"
+"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"PO-Revision-Date: 2024-07-14 20:40+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1359,11 +1359,7 @@ msgstr ""
 "risolverai questo problema.</p>"
 
 #: core/app/main/digikamapp.cpp:418
-#, fuzzy, kde-format
-#| msgid ""
-#| "ExifTool is not available in your digiKam installation or is not working "
-#| "correctly. Go to the digiKam settings and check the availability of the "
-#| "ExifTool binary file in the metadata section."
+#, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
 "correctly. Go to the digiKam settings and check the availability of the "
@@ -1372,7 +1368,8 @@ msgid ""
 msgstr ""
 "ExifTool non è disponibile nella tua installazione di digiKam, oppure non "
 "sta funzionando correttamente. Vai alle impostazioni di digiKam e controlla "
-"la disponibilità del file eseguibile di ExifTool nella sezione Metadati."
+"la disponibilità del file eseguibile di ExifTool nella sezione Metadati.\n"
+"Messaggio di errore: %1"
 
 #: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
 #, kde-format
@@ -24974,8 +24971,8 @@ msgstr "dall'osservazione"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1058
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1098
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:707
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:674
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
 msgstr "non disponibile"
@@ -41972,15 +41969,13 @@ msgstr "Attiva la riproduzione con ripetizione"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "Fotogramma all'indietro"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
-msgstr "Avanti"
+msgstr "Fotogramma in avanti"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -53318,7 +53313,7 @@ msgstr "Copia URL geo:"
 msgid "&Address Details"
 msgstr "Dettagli dell'&indirizzo"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:152
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:161
 #, kde-format
 msgid "No description available."
 msgstr "Nessuna descrizione disponibile."
@@ -53331,7 +53326,7 @@ msgstr "Nessuna descrizione disponibile."
 msgid "National Capital"
 msgstr "Capitale di nazione"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:452
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:451
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:404
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:416
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
@@ -53342,7 +53337,7 @@ msgstr "Capitale di nazione"
 msgid "City"
 msgstr "Città"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:457
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:455
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:410
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:422
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:434
@@ -53351,7 +53346,7 @@ msgstr "Città"
 msgid "State Capital"
 msgstr "Capitale di stato"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:462
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:459
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:407
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:419
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:431
@@ -53360,23 +53355,23 @@ msgstr "Capitale di stato"
 msgid "County Capital"
 msgstr "Capoluogo"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:468
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:464
 #, kde-format
 msgid "Capital"
 msgstr "Capitale"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:479
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:474
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:522
 #, kde-format
 msgid "Village"
 msgstr "Villaggio"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:635
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:632
 #, kde-format
 msgid "&Info Boxes"
 msgstr "Caselle di &informazioni"
 
-#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:1003
+#: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:995
 #, kde-format
 msgid "Address Details"
 msgstr "Dettagli dell'indirizzo"
