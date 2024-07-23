@@ -54,7 +54,7 @@ else()
     if(HEIF_INCLUDES_DIR)
 
         file(STRINGS "${HEIF_INCLUDES_DIR}/libheif/heif_version.h" TMP REGEX "^#define LIBHEIF_VERSION[ \t].*$")
-        string(REGEX MATCHALL "[0-9.]+" HEIF_VERSION ${TMP})
+        string(REGEX MATCHALL "[0-9.]+" HEIF_VERSION "${TMP}")
 
     endif()
 
