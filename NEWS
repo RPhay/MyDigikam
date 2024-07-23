@@ -25,7 +25,7 @@ BUGFIXES:
 014 ==> 490671 - digiKam crashes on startup with a white window and file download dialog.
 015 ==> 488222 - Exiftool not recognized.
 016 ==> 490690 - digiKam 8.4.0, Error at Configuring, CMake Error at core/cmake/modules/FindLibheif.cmake:57.
-017 ==>
+017 ==> 490711 - Add support for KDE kio slaves.
 018 ==>
 019 ==>
 020 ==>
