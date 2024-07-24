@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-23 01:48+0000\n"
-"PO-Revision-Date: 2024-07-14 22:15+0000\n"
+"PO-Revision-Date: 2024-07-23 11:05+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3551,6 +3551,8 @@ msgstr ""
 #, kde-format
 msgid "Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support."
 msgstr ""
+"Uppfærsla á Adobe DNG SDK yfir í nýjasta 1.7.1 með stuðningi við JPEG-XL "
+"þjöppun."
 
 #: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
