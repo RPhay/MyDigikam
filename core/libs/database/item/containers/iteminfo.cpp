@@ -45,7 +45,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
     m_data->fileSize               = record.fileSize;
     m_data->imageSize              = record.imageSize;
     m_data->currentSimilarity      = record.currentSimilarity;
-    m_data->currentReferenceImage  = record.currentFuzzySearchReferenceImage;
+    m_data->currentReferenceImage  = record.currentReferenceImage;
 
     m_data->ratingCached           = true;
     m_data->categoryCached         = true;

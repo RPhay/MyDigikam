@@ -101,37 +101,37 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
     {
         ItemListerRecord record;
 
-        record.imageID           = (*it).toLongLong();
+        record.imageID               = (*it).toLongLong();
         ++it;
-        record.name              = (*it).toString();
+        record.name                  = (*it).toString();
         ++it;
-        record.albumID           = (*it).toInt();
+        record.albumID               = (*it).toInt();
         ++it;
-        record.albumRootID       = (*it).toInt();
+        record.albumRootID           = (*it).toInt();
         ++it;
-        record.rating            = (*it).toInt();
+        record.rating                = (*it).toInt();
         ++it;
-        record.category          = (DatabaseItem::Category)(*it).toInt();
+        record.category              = (DatabaseItem::Category)(*it).toInt();
         ++it;
-        record.format            = (*it).toString();
+        record.format                = (*it).toString();
         ++it;
-        record.creationDate      = asDateTimeUTC((*it).toDateTime());
+        record.creationDate          = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
+        record.modificationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.fileSize          = (*it).toLongLong();
+        record.fileSize              = (*it).toLongLong();
         ++it;
-        width                    = (*it).toInt();
+        width                        = (*it).toInt();
         ++it;
-        height                   = (*it).toInt();
+        height                       = (*it).toInt();
         ++it;
-        lat                      = (*it).toDouble();
+        lat                          = (*it).toDouble();
         ++it;
-        lon                      = (*it).toDouble();
+        lon                          = (*it).toDouble();
         ++it;
 
-        record.currentSimilarity                = 0.0;
-        record.currentFuzzySearchReferenceImage = referenceImageId;
+        record.currentSimilarity     = 0.0;
+        record.currentReferenceImage = referenceImageId;
 
         if (referenceImageId != -1)
         {
@@ -246,6 +246,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
     }
 
     QMap<qlonglong, double> imageSimilarityMap;
+    qlonglong referenceImageId = -1;
 
     if      (type == QLatin1String("signature"))
     {
@@ -261,7 +262,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
     }
     else if (type == QLatin1String("imageid"))
     {
-        qlonglong id = reader.valueToLongLong();
+        referenceImageId = reader.valueToLongLong();
         HaarIface iface;
 
         if (d->listOnlyAvailableImages)
@@ -269,7 +270,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
             iface.setAlbumRootsToSearch(albumRootsToList());
         }
 
-        imageSimilarityMap = iface.bestMatchesForImageWithThreshold(id, threshold, maxThreshold, targetAlbums,
+        imageSimilarityMap = iface.bestMatchesForImageWithThreshold(referenceImageId, threshold, maxThreshold, targetAlbums,
                                                                     HaarIface::DuplicatesSearchRestrictions::None, sketchType).second;
     }
     else if (type == QLatin1String("image"))
@@ -288,11 +289,12 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
                                                                     HaarIface::DuplicatesSearchRestrictions::None, sketchType).second;
     }
 
-    listFromHaarSearch(receiver, imageSimilarityMap);
+    listFromHaarSearch(receiver, imageSimilarityMap, referenceImageId);
 }
 
 void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
-                                    const QMap<qlonglong, double>& imageSimilarityMap)
+                                    const QMap<qlonglong, double>& imageSimilarityMap,
+                                    qlonglong referenceImageId)
 {
     QList<QVariant> values;
     QString         errMsg;
@@ -358,35 +360,37 @@ void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
     {
         ItemListerRecord record;
 
-        record.imageID           = (*it).toLongLong();
+        record.imageID               = (*it).toLongLong();
         ++it;
-        record.name              = (*it).toString();
+        record.name                  = (*it).toString();
         ++it;
-        record.albumID           = (*it).toInt();
+        record.albumID               = (*it).toInt();
         ++it;
-        record.albumRootID       = (*it).toInt();
+        record.albumRootID           = (*it).toInt();
         ++it;
-        record.rating            = (*it).toInt();
+        record.rating                = (*it).toInt();
         ++it;
-        record.category          = (DatabaseItem::Category)(*it).toInt();
+        record.category              = (DatabaseItem::Category)(*it).toInt();
         ++it;
-        record.format            = (*it).toString();
+        record.format                = (*it).toString();
         ++it;
-        record.creationDate      = asDateTimeUTC((*it).toDateTime());
+        record.creationDate          = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
+        record.modificationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.fileSize          = (*it).toLongLong();
+        record.fileSize              = (*it).toLongLong();
         ++it;
-        width                    = (*it).toInt();
+        width                        = (*it).toInt();
         ++it;
-        height                   = (*it).toInt();
+        height                       = (*it).toInt();
         ++it;
 
-        record.imageSize         = QSize(width, height);
+        record.imageSize             = QSize(width, height);
 
-        record.currentSimilarity = (*it).toDouble();
+        record.currentSimilarity     = (*it).toDouble();
         ++it;
+
+        record.currentReferenceImage = referenceImageId;
 
         receiver->receive(record);
     }

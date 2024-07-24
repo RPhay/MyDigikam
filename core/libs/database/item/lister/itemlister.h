@@ -168,10 +168,11 @@ private:
      * This method generates image records for the receiver that contain the similarities.
      * @param receiver for the searches
      * @param imageSimilarityMap the map of image ids and their similarities in the HAAR search
+     * @param referenceImageId the id of the reference image to search for
      */
     void listFromHaarSearch(ItemListerReceiver* const receiver,
-                            const QMap<qlonglong,
-                            double>& imageSimilarityMap);
+                            const QMap<qlonglong, double>& imageSimilarityMap,
+                            qlonglong referenceImageId);
     //@}
 
 private:

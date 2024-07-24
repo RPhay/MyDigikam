@@ -45,15 +45,15 @@ public:
 
 public:
 
-    int                    albumID                          = -1;
-    int                    albumRootID                      = -1;
-    int                    rating                           = -1;
+    int                    albumID               = -1;
+    int                    albumRootID           = -1;
+    int                    rating                = -1;
 
-    qlonglong              fileSize                         = -1;
-    qlonglong              imageID                          = -1;
-    qlonglong              currentFuzzySearchReferenceImage = -1;
+    qlonglong              fileSize              = -1;
+    qlonglong              imageID               = -1;
+    qlonglong              currentReferenceImage = -1;
 
-    double                 currentSimilarity                = 0.0;
+    double                 currentSimilarity     = 0.0;
 
     QString                format;
     QString                name;
@@ -63,7 +63,7 @@ public:
 
     QSize                  imageSize;
 
-    DatabaseItem::Category category                         = DatabaseItem::UndefinedCategory;
+    DatabaseItem::Category category              = DatabaseItem::UndefinedCategory;
 
     QList<QVariant>        extraValues;
 };

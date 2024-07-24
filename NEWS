@@ -27,7 +27,7 @@ BUGFIXES:
 016 ==> 490690 - digiKam 8.4.0, Error at Configuring, CMake Error at core/cmake/modules/FindLibheif.cmake:57.
 017 ==> 490711 - Add support for KDE kio slaves.
 018 ==> 490747 - Exiftool missing in Windows 8.4 package.
-019 ==>
+019 ==> 490793 - Find similar returns the source image in the search.
 020 ==>
 021 ==>
 022 ==>
