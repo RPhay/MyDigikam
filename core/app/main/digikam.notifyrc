@@ -779,7 +779,7 @@ Name[tr]=Yinelenmiş ögelerin güncellemeleri tamamlandı
 Name[uk]=Пошук дублікатів у базі даних завершено
 Name[x-test]=xxUpdate of duplicates items in database completexx
 Name[zh_CN]=已完成数据库重复项目更新
-Name[zh_TW]=資料庫內重覆項目更新完成
+Name[zh_TW]=資料庫內重複項目更新完成
 Comment=The update of the duplicates items in database has completed.
 Comment[ar]=لقد اكتمل تحديث قاعدة بيانات العناصر المتكرّرة.
 Comment[be]=Абнаўленне дублікатаў у базе даных завершана.
@@ -823,7 +823,7 @@ Comment[tr]=Veritabanındaki yinelenmiş ögelerin güncellemeleri tamamlandı.
 Comment[uk]=Завершено пошук і вилучення дублікатів з бази даних.
 Comment[x-test]=xxThe update of the duplicates items in database has completed.xx
 Comment[zh_CN]=数据库的重复项目更新作业已经完成。
-Comment[zh_TW]=資料庫內重覆項目更新已完成。
+Comment[zh_TW]=資料庫內重複項目更新已完成。
 Action=Popup
 
 [Event/NewItemsFinder]
