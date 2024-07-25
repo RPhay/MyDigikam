@@ -28,7 +28,7 @@ BUGFIXES:
 017 ==> 490711 - Add support for KDE kio slaves.
 018 ==> 490747 - Exiftool missing in Windows 8.4 package.
 019 ==> 490793 - Find similar returns the source image in the search.
-020 ==>
+020 ==> 490809 - XMP Toolkit error 102: Unknown namespace prefix for qualified name.
 021 ==>
 022 ==>
 023 ==>
