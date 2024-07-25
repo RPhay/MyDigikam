@@ -288,7 +288,7 @@ void WorkflowList::slotContextMenu()
 
     if (m_lastAssignedTitle != item->title())
     {
-        popmenu.setDisabled(true);
+        updAction->setDisabled(true);
     }
 
     popmenu.addSeparator();
