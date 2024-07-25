@@ -182,6 +182,7 @@ bool ExifToolParser::applyChanges(const QString& path,
         cmdArgs << QByteArray("-ItemList:Title=");
         cmdArgs << QByteArray("-ItemList:Comment=");
         cmdArgs << QByteArray("-Microsoft:Category=");
+        cmdArgs << QByteArray("-UserData:GpsCoordinates=");
         cmdArgs << QByteArray("-Microsoft:SharedUserRating=");
     }
 
@@ -229,6 +230,7 @@ bool ExifToolParser::applyChanges(const QString& path,
         cmdArgs << QByteArray("-ItemList:Title<xmp-dc:Title");
         cmdArgs << QByteArray("-Microsoft:Category<xmp-dc:Subject");
         cmdArgs << QByteArray("-ItemList:Comment<xmp-dc:Description");
+        cmdArgs << QByteArray("-UserData:GpsCoordinates<Composite:GpsPosition");
         cmdArgs << QByteArray("-Microsoft:SharedUserRating<xmp-microsoft:RatingPercent");
     }
 
