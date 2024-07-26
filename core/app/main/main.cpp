@@ -249,48 +249,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("digikam"), app.windowIcon()));
 
-#ifdef Q_OS_WIN
-
-    if (
-        QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
-        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64"))
-       )
-    {
-        QMessageBox::critical(qApp->activeWindow(),
-                              qApp->applicationName(),
-                              i18n("<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</p>"
-                                   "<p>Please install the 64-bit version of digiKam to get "
-                                   "a better experience with digiKam.</p>"));
-    }
-
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
-
-    QFileInfo appInfo(appUrl.toLocalFile());
-
-    if (appInfo.exists() && appInfo.isDir())
-    {
-        QString appLocalPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-        QUrl    appLocalUrl  = QUrl::fromLocalFile(appLocalPath).adjusted(QUrl::RemoveFilename);
-        appLocalUrl.setPath(appLocalUrl.path() + QLatin1String("digikam"));
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Copy faces engine data from"
-                                     << appUrl.toLocalFile() << "to"
-                                     << appLocalUrl.toLocalFile();
-
-        if (DFileOperations::copyFolderRecursively(appUrl.toLocalFile(), appLocalUrl.toLocalFile()))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Delete faces engine data from"
-                                         << appUrl.toLocalFile();
-
-            QDir rmAppPath(appUrl.toLocalFile());
-            rmAppPath.removeRecursively();
-        }
-    }
-
-#endif
-
     // Check if Qt database plugins are available.
 
     if (

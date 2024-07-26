@@ -228,22 +228,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("showfoto"), app.windowIcon()));
 
-#ifdef Q_OS_WIN
-
-    if (
-        QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
-        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64"))
-       )
-    {
-        QMessageBox::critical(qApp->activeWindow(),
-                              qApp->applicationName(),
-                              i18nc("#info", "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
-                                    "<p>Please install the 64-bit version of Showfoto to get "
-                                    "a better experience with Showfoto.</p>"));
-    }
-
-#endif
-
     QList<QUrl> urlList;
     QStringList urls = parser.positionalArguments();
 
