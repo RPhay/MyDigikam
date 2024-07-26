@@ -30,7 +30,7 @@ BUGFIXES:
 019 ==> 490793 - Find similar returns the source image in the search.
 020 ==> 490809 - XMP Toolkit error 102: Unknown namespace prefix for qualified name.
 021 ==> 490828 - Unable to delete workflow.
-022 ==> 
+022 ==> 490859 - Image color profile is not taken into account when creating thumbnails for 16 bit tiffs.
 023 ==> 
 024 ==> 
 025 ==> 

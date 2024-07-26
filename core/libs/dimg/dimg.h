@@ -566,6 +566,7 @@ public:
      * QImage wrapper methods
      */
     QImage     copyQImage()                           const;
+    QImage     copyQImage32()                         const;
     QImage     copyQImage(const QRect& rect)          const;
     QImage     copyQImage(const QRectF& relativeRect) const;
     QImage     copyQImage(int x, int y, int w, int h) const;

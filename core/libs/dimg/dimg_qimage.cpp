@@ -67,6 +67,25 @@ QImage DImg::copyQImage() const
     return img;
 }
 
+QImage DImg::copyQImage32() const
+{
+    if (isNull())
+    {
+        return QImage();
+    }
+
+    if (!sixteenBit())
+    {
+        return copyQImage();
+    }
+
+    DImg img(*this);
+    img.detach();
+    img.convertDepth(32);
+
+    return img.copyQImage();
+}
+
 QImage DImg::copyQImage(const QRect& rect) const
 {
     return (copyQImage(rect.x(), rect.y(), rect.width(), rect.height()));

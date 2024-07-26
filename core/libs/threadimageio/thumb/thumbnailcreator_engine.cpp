@@ -249,7 +249,7 @@ QImage ThumbnailCreator::loadWithDImgScaled(const QString& path, IccProfile* con
         *profile = img.getIccProfile();
     }
 
-    return img.copyQImage();
+    return img.copyQImage32();
 }
 
 QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
@@ -363,7 +363,7 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     QRect mappedDetail = TagRegion::mapFromOriginalSize(img, detailRect);
     img.crop(mappedDetail.intersected(QRect(0, 0, img.width(), img.height())));
 
-    return img.copyQImage();
+    return img.copyQImage32();
 }
 
 QImage ThumbnailCreator::loadImagePreview(const DMetadata& metadata) const
@@ -391,7 +391,7 @@ QImage ThumbnailCreator::loadImagePreview(const DMetadata& metadata) const
 
         if (img.load(metadata.getFilePath(), loadFlags, d->observer, d->fastRawSettings))
         {
-            image = img.copyQImage();
+            image = img.copyQImage32();
         }
     }
 
