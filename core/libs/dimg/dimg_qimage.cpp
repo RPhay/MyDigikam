@@ -33,7 +33,8 @@ QImage DImg::copyQImage() const
 
     if (img.isNull())
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Failed to allocate memory to copy DImg of size" << size() << "to QImage";
+        qCDebug(DIGIKAM_DIMG_LOG) << "Failed to allocate memory to copy DImg of size"
+                                  << size() << "to QImage";
 
         return QImage();
     }
@@ -60,9 +61,6 @@ QImage DImg::copyQImage() const
             sptr   += 4;
         }
     }
-
-    // NOTE: Qt4 do not provide anymore QImage::setAlphaChannel() because
-    // alpha channel is auto-detected during QImage->QPixmap conversion
 
     return img;
 }
