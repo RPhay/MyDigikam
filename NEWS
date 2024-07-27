@@ -31,7 +31,7 @@ BUGFIXES:
 020 ==> 490809 - XMP Toolkit error 102: Unknown namespace prefix for qualified name.
 021 ==> 490828 - Unable to delete workflow.
 022 ==> 490859 - Image color profile is not taken into account when creating thumbnails for 16 bit tiffs.
-023 ==> 
+023 ==> 490883 - Exiftool not found (digiKam 8.4.0/qt6/win64).
 024 ==> 
 025 ==> 
 026 ==> 
