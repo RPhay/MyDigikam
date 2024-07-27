@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"POT-Creation-Date: 2024-07-27 01:50+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2981,15 +2981,7 @@ msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 "Start digikam med den SQLite-databasefil der blev fundet i mappen <dir>"
 
-#: core/app/main/main.cpp:261
-#, kde-format
-msgid ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of digiKam to get a better experience "
-"with digiKam.</p>"
-msgstr ""
-
-#: core/app/main/main.cpp:305
+#: core/app/main/main.cpp:263
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -3000,7 +2992,7 @@ msgstr ""
 "installere det.\n"
 "Der er intet database-plugin installeret på din computer."
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3011,7 +3003,7 @@ msgstr ""
 "skal installere det.\n"
 "Installerede database-plugins er oplistet nedenfor:"
 
-#: core/app/main/main.cpp:358
+#: core/app/main/main.cpp:316
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -52686,15 +52678,6 @@ msgstr "showFoto"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Filer eller mapper at åbne"
-
-#: core/showfoto/main/main.cpp:240
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of Showfoto to get a better "
-"experience with Showfoto.</p>"
-msgstr ""
 
 #: core/showfoto/main/showfoto.cpp:107
 #, kde-format

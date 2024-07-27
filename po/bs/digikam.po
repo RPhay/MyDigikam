@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"POT-Creation-Date: 2024-07-27 01:50+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3033,15 +3033,7 @@ msgstr ""
 "Pokreni digikam sa SQLite datotekom baze podataka pronađenoj u direktoriju "
 "<dir>"
 
-#: core/app/main/main.cpp:261
-#, kde-format
-msgid ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of digiKam to get a better experience "
-"with digiKam.</p>"
-msgstr ""
-
-#: core/app/main/main.cpp:305
+#: core/app/main/main.cpp:263
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -3052,7 +3044,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Ne postoji instaliran dodatak za baze podataka na vašem računaru."
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -3063,7 +3055,7 @@ msgstr ""
 "molimo, instalirajte ga.\n"
 "Dodaci za baze podataka instalirani na vašem računaru su izlistani ispod:"
 
-#: core/app/main/main.cpp:358
+#: core/app/main/main.cpp:316
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -52956,15 +52948,6 @@ msgstr ""
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Datoteke ili direktoriji za otvaranje"
-
-#: core/showfoto/main/main.cpp:240
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of Showfoto to get a better "
-"experience with Showfoto.</p>"
-msgstr ""
 
 #: core/showfoto/main/showfoto.cpp:107
 #, kde-format

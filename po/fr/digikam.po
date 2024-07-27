@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"POT-Creation-Date: 2024-07-27 01:50+0000\n"
 "PO-Revision-Date: 2024-07-13 10:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -2776,18 +2776,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Démarrer DigiKam avec le fichier configuration « config »"
 
-#: core/app/main/main.cpp:261
-#, kde-format
-msgid ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of digiKam to get a better experience "
-"with digiKam.</p>"
-msgstr ""
-"<p>Vous avez lancé DigiKam en version « 32 bits » sur une version « 64 "
-"bits » de Windows.</p><p>Veuillez installer une version « 64 bits » pour une "
-"meilleure expérience avec DigiKam.</p>"
-
-#: core/app/main/main.cpp:305
+#: core/app/main/main.cpp:263
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2797,7 +2786,7 @@ msgstr ""
 "L'exécutable Qt SQLite ou MySQL n'est pas disponible, veuillez l'installer.\n"
 "Il n'y a pas de module de base de données installé sur votre ordinateur."
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:272
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2808,7 +2797,7 @@ msgstr ""
 "Les modules de base de données installés sur votre ordinateur sont listés ci-"
 "dessous."
 
-#: core/app/main/main.cpp:358
+#: core/app/main/main.cpp:316
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49918,18 +49907,6 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Fichier(s) ou dossier(s) à ouvrir"
 
-#: core/showfoto/main/main.cpp:240
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of Showfoto to get a better "
-"experience with Showfoto.</p>"
-msgstr ""
-"<p>Vous avez lancé ShowFoto en version « 32 bits » sur une version « 64 "
-"bits » de Windows.</p><p>Veuillez installer une version « 64 bits » pour une "
-"meilleure expérience avec ShowFoto.</p>"
-
 #: core/showfoto/main/showfoto.cpp:107
 #, kde-format
 msgid "Loading themes..."
@@ -68295,6 +68272,25 @@ msgstr "Éléments de l'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importer des éléments"
+
+#~ msgid ""
+#~ "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of digiKam to get a better "
+#~ "experience with digiKam.</p>"
+#~ msgstr ""
+#~ "<p>Vous avez lancé DigiKam en version « 32 bits » sur une version « 64 "
+#~ "bits » de Windows.</p><p>Veuillez installer une version « 64 bits » pour "
+#~ "une meilleure expérience avec DigiKam.</p>"
+
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of Showfoto to get a better "
+#~ "experience with Showfoto.</p>"
+#~ msgstr ""
+#~ "<p>Vous avez lancé ShowFoto en version « 32 bits » sur une version « 64 "
+#~ "bits » de Windows.</p><p>Veuillez installer une version « 64 bits » pour "
+#~ "une meilleure expérience avec ShowFoto.</p>"
 
 #~ msgctxt "@title:window"
 #~ msgid "Enter Flickr Login URL"

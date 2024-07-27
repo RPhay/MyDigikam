@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"POT-Creation-Date: 2024-07-27 01:50+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2895,15 +2895,7 @@ msgstr "DigiKam opropen un de Datenbankdatei binnen den Orner <dir> bruken"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "DigiKam opropen un de Datenbankdatei binnen den Orner <dir> bruken"
 
-#: core/app/main/main.cpp:261
-#, kde-format
-msgid ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of digiKam to get a better experience "
-"with digiKam.</p>"
-msgstr ""
-
-#: core/app/main/main.cpp:305
+#: core/app/main/main.cpp:263
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2914,7 +2906,7 @@ msgstr ""
 "bitte.\n"
 "Disse Datenbankmodulen sünd installeert:"
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2925,7 +2917,7 @@ msgstr ""
 "bitte.\n"
 "Disse Datenbankmodulen sünd installeert:"
 
-#: core/app/main/main.cpp:358
+#: core/app/main/main.cpp:316
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -51297,15 +51289,6 @@ msgstr ""
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Datei(en)/Orner(n), de Du opmaken wullt"
-
-#: core/showfoto/main/main.cpp:240
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of Showfoto to get a better "
-"experience with Showfoto.</p>"
-msgstr ""
 
 #: core/showfoto/main/showfoto.cpp:107
 #, kde-format

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-23 01:48+0000\n"
+"POT-Creation-Date: 2024-07-27 01:50+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2770,15 +2770,7 @@ msgstr "Palaist digikam ar datubāzes failu mapē <dir>"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Palaist digikam ar datubāzes failu mapē <dir>"
 
-#: core/app/main/main.cpp:261
-#, kde-format
-msgid ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of digiKam to get a better experience "
-"with digiKam.</p>"
-msgstr ""
-
-#: core/app/main/main.cpp:305
+#: core/app/main/main.cpp:263
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2788,7 +2780,7 @@ msgstr ""
 "Nav pieejams Qt4 SQLite datubāzes spraudnis - lūdzu instalējiet to.\n"
 "Jūsu datorā nav instalēts neviens datubāzes spraudnis."
 
-#: core/app/main/main.cpp:314
+#: core/app/main/main.cpp:272
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2798,7 +2790,7 @@ msgstr ""
 "Nav pieejams Qt4 SQLite datubāzes spraudnis - lūdzu, instalējiet to.\n"
 "Ir instalēti šādi datubāzes spraudņi:"
 
-#: core/app/main/main.cpp:358
+#: core/app/main/main.cpp:316
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49604,15 +49596,6 @@ msgstr ""
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Fails(i) vai mape(s), ko atvērt"
-
-#: core/showfoto/main/main.cpp:240
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of Showfoto to get a better "
-"experience with Showfoto.</p>"
-msgstr ""
 
 #: core/showfoto/main/showfoto.cpp:107
 #, kde-format
