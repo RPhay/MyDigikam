@@ -82,7 +82,12 @@ void Sidebar::doLoadState()
     }
 
     d->activeTab = -1;
-    slotClicked(tab);
+
+    QTimer::singleShot(0, this, [this, tab]()->void
+        {
+            slotClicked(tab);
+        }
+    );
 }
 
 void Sidebar::doSaveState()
