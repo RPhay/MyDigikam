@@ -23,6 +23,7 @@
 #include "imagequalityparser.h"
 #include "previewloadthread.h"
 #include "maintenancedata.h"
+#include "scancontroller.h"
 #include "metadatahub.h"
 #include "iteminfo.h"
 #include "dimg.h"
@@ -120,7 +121,8 @@ void ImageQualityTask::run()
             MetadataHub hub;
             hub.load(info);
 
-            hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL);
+            ScanController::FileMetadataWrite writeScope(info);
+            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL));
 
             // delete image data after to set label
 

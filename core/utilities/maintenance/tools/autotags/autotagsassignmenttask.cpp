@@ -21,6 +21,7 @@
 #include "localizeselector.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
+#include "scancontroller.h"
 #include "metadatahub.h"
 #include "tagscache.h"
 #include "iteminfo.h"
@@ -136,7 +137,8 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
         MetadataHub hub;
         hub.load(info);
 
-        hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true);
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
     }
 }
 

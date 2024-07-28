@@ -481,7 +481,8 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 
         // write out to file DMetadata
 
-        hub.writeToMetadata(info, MetadataHub::WRITE_ALL);
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_ALL));
 
         Q_EMIT signalProgressValueChanged(i++ / (float)d->currInfos.count());
 

@@ -642,7 +642,8 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                             MetadataHub hub;
                             hub.load(info);
 
-                            hub.writeToMetadata(info, MetadataHub::WRITE_TAGS);
+                            ScanController::FileMetadataWrite writeScope(info);
+                            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
                         }
                     }
                 }

@@ -800,7 +800,8 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
         MetadataHub hub;
         hub.load(info);
 
-        hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true);
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
     }
 
     m_transformQue.clear();
