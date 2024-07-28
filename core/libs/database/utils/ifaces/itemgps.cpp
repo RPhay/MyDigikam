@@ -21,7 +21,6 @@
 #include "tagscache.h"
 #include "metadatahub.h"
 #include "itemposition.h"
-#include "scancontroller.h"
 #include "metaenginesettings.h"
 #include "itemextendedproperties.h"
 
@@ -139,19 +138,9 @@ QString ItemGPS::saveChanges()
     MetadataHub hub;
     hub.load(m_info);
 
-    if (MetaEngineSettings::instance()->settings().useLazySync)
-    {
-        hub.writeToMetadata(m_info, MetadataHub::WRITE_TAGS     |
-                                    MetadataHub::WRITE_TEMPLATE |
-                                    MetadataHub::WRITE_POSITION);
-    }
-    else
-    {
-        ScanController::FileMetadataWrite writeScope(m_info);
-        writeScope.changed(hub.writeToMetadata(m_info, MetadataHub::WRITE_TAGS     |
-                                                       MetadataHub::WRITE_TEMPLATE |
-                                                       MetadataHub::WRITE_POSITION));
-    }
+    hub.writeToMetadata(m_info, MetadataHub::WRITE_TAGS     |
+                                MetadataHub::WRITE_TEMPLATE |
+                                MetadataHub::WRITE_POSITION);
 
     m_dirty        = false;
     m_savedState   = m_gpsData;

@@ -20,7 +20,6 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "collectionscanner.h"
-#include "scancontroller.h"
 #include "metadatahub.h"
 #include "actiontask.h"
 
@@ -139,8 +138,7 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
             MetadataHub hub;
             hub.load(info);
 
-            ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_ALL, true));
+            hub.writeToMetadata(info, MetadataHub::WRITE_ALL, true);
         }
         else
         {

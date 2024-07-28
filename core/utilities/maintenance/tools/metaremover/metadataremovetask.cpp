@@ -20,7 +20,6 @@
 #include "digikam_debug.h"
 #include "coredboperationgroup.h"
 #include "maintenancedata.h"
-#include "scancontroller.h"
 #include "facetagseditor.h"
 #include "metadatahub.h"
 #include "faceutils.h"
@@ -128,8 +127,7 @@ void MetadataRemoveTask::run()
                     MetadataHub hub;
                     hub.load(item);
 
-                    ScanController::FileMetadataWrite writeScope(item);
-                    writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS));
+                    hub.writeToMetadata(item, MetadataHub::WRITE_TAGS, true);
                 }
             }
         }

@@ -94,15 +94,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList
         MetadataHub hub;
         hub.load(info);
 
-        if (MetaEngineSettings::instance()->settings().useLazySync)
-        {
-            hub.writeToMetadata(info, MetadataHub::WRITE_ALL);
-        }
-        else
-        {
-            ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_ALL));
-        }
+        hub.writeToMetadata(info, MetadataHub::WRITE_ALL);
 
         // hub emits fileMetadataChanged
 
@@ -132,15 +124,7 @@ void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos
 
         // apply to file metadata
 
-        if (MetaEngineSettings::instance()->settings().useLazySync)
-        {
-            hub.writeToMetadata(info, (MetadataHub::WriteComponents)flags);
-        }
-        else
-        {
-            ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.writeToMetadata(info, (MetadataHub::WriteComponents)flags));
-        }
+        hub.writeToMetadata(info, (MetadataHub::WriteComponents)flags);
 
         // hub emits fileMetadataChanged
 
@@ -332,8 +316,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             MetadataHub hub;
             hub.load(info);
 
-            ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
+            hub.writeToMetadata(info, MetadataHub::WRITE_TAGS);
         }
         else
         {

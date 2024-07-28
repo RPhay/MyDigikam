@@ -35,7 +35,6 @@
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
 #include "albummanager.h"
-#include "scancontroller.h"
 #include "metadatahub.h"
 
 namespace Digikam
@@ -311,8 +310,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
     MetadataHub hub;
     hub.load(info);
 
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    hub.writeToMetadata(info, MetadataHub::WRITE_TAGS);
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
@@ -323,8 +321,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
     MetadataHub hub;
     hub.load(info);
 
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    hub.writeToMetadata(info, MetadataHub::WRITE_TAGS);
 
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
@@ -364,8 +361,7 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
     MetadataHub hub;
     hub.load(info);
 
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    hub.writeToMetadata(info, MetadataHub::WRITE_TAGS);
 }
 
 // --- Utilities ---

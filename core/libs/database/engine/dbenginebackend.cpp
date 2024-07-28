@@ -177,7 +177,7 @@ QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
     if (parameters.isSQLite())
     {
         QStringList toAdd;
-/*
+
         if (!parameters.walMode)
         {
             // Enable shared cache, especially useful
@@ -185,7 +185,7 @@ QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
 
             toAdd << QLatin1String("QSQLITE_ENABLE_SHARED_CACHE");
         }
-*/
+
         // We do our own waiting.
 
         toAdd << QLatin1String("QSQLITE_BUSY_TIMEOUT=0");
