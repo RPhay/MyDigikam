@@ -16,9 +16,10 @@
 
 // Qt includes
 
-#include <QMetaType>
 #include <QString>
 #include <QSqlQuery>
+#include <QMetaType>
+#include <QVariantList>
 
 // Local includes
 
