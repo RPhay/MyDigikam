@@ -38,6 +38,7 @@ public:
 
     DbEngineSqlQuery& operator=(const DbEngineSqlQuery& other);
 
+    void addBindValueList(const QVariantList& values);
     bool prepare(const QString& query);
     QString lastQuery()                                 const;
 

@@ -1625,6 +1625,18 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSql(const QString& sql)
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
@@ -1662,6 +1674,18 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSqlWithResult(const QStri
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
@@ -1703,6 +1727,18 @@ bool BdEngineBackend::exec(DbEngineSqlQuery& query)
         {
             if (queryErrorHandling(query, retries++))
             {
+                // Workaround for an endless locked
+
+                if (d->isSQLiteLockError(query))
+                {
+                    if (d->resetDatabaseForThread())
+                    {
+                        beginTransaction();
+                    }
+
+                    query = copyQuery(query);
+                }
+
                 continue;
             }
             else
@@ -1774,10 +1810,10 @@ DbEngineSqlQuery BdEngineBackend::prepareQuery(const QString& sql)
         }
         else
         {
-            qCDebug(DIGIKAM_DBENGINE_LOG) << "Prepare failed!";
-
             if (queryErrorHandling(query, retries++))
             {
+                qCDebug(DIGIKAM_DBENGINE_LOG) << "Retray to prepare query";
+
                 continue;
             }
             else
@@ -1790,18 +1826,17 @@ DbEngineSqlQuery BdEngineBackend::prepareQuery(const QString& sql)
 
 DbEngineSqlQuery BdEngineBackend::copyQuery(const DbEngineSqlQuery& old)
 {
-    DbEngineSqlQuery query = getQuery();
 /*
     qCDebug(DIGIKAM_DBENGINE_LOG) << "Last query was [" << old.lastQuery() << "]";
 */
-    query.prepare(old.lastQuery());
+    DbEngineSqlQuery query = prepareQuery(old.lastQuery());
     query.setForwardOnly(old.isForwardOnly());
 
     // only for positional binding
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QList<QVariant> boundValues = old.boundValues();
+    QVariantList boundValues = old.boundValues();
 
 #else
 

@@ -114,14 +114,7 @@ int ActionThreadBase::maximumNumberOfThreads() const
 
 void ActionThreadBase::setDefaultMaximumNumberOfThreads()
 {
-    int threads = QThread::idealThreadCount();
-
-    if (threads > 4)
-    {
-        threads = qRound((double)threads / 1.2);
-    }
-
-    setMaximumNumberOfThreads(threads);
+    setMaximumNumberOfThreads(QThread::idealThreadCount());
 }
 
 void ActionThreadBase::slotJobFinished()

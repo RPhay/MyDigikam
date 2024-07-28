@@ -2349,9 +2349,9 @@ void CoreDB::addImageRelations(const QList<qlonglong>& subjectIds,
         types    << type;
     }
 
-    query.addBindValue(subjects);
-    query.addBindValue(objects);
-    query.addBindValue(types);
+    query.addBindValueList(subjects);
+    query.addBindValueList(objects);
+    query.addBindValueList(types);
     d->db->execBatch(query);
     d->db->recordChangeset(ImageChangeset(subjectIds + objectIds,
                                           DatabaseFields::Set(DatabaseFields::ImageRelations)));
@@ -3242,8 +3242,8 @@ void CoreDB::addTagsToItems(const QList<qlonglong>& imageIDs, const QList<int>& 
         }
     }
 
-    query.addBindValue(images);
-    query.addBindValue(tags);
+    query.addBindValueList(images);
+    query.addBindValueList(tags);
     d->db->execBatch(query);
     d->db->recordChangeset(ImageTagChangeset(imageIDs, tagIDs, ImageTagChangeset::Added));
 }
@@ -3291,8 +3291,8 @@ void CoreDB::removeTagsFromItems(const QList<qlonglong>& imageIDs, const QList<i
         }
     }
 
-    query.addBindValue(images);
-    query.addBindValue(tags);
+    query.addBindValueList(images);
+    query.addBindValueList(tags);
     d->db->execBatch(query);
     d->db->recordChangeset(ImageTagChangeset(imageIDs, tagIDs, ImageTagChangeset::Removed));
 }
@@ -4387,8 +4387,8 @@ void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albu
         imageIds << id;
     }
 
-    query.addBindValue(status);
-    query.addBindValue(imageIds);
+    query.addBindValueList(status);
+    query.addBindValueList(imageIds);
     d->db->execBatch(query);
 
     d->db->recordChangeset(CollectionImageChangeset(itemIDs, albumIDs, CollectionImageChangeset::Removed));
@@ -4407,8 +4407,8 @@ void CoreDB::removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList
         imageIds << id;
     }
 
-    query.addBindValue(status);
-    query.addBindValue(imageIds);
+    query.addBindValueList(status);
+    query.addBindValueList(imageIds);
     d->db->execBatch(query);
 
     d->db->recordChangeset(CollectionImageChangeset(itemIDs, albumIDs, CollectionImageChangeset::Removed));
