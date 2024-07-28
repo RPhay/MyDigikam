@@ -29,8 +29,6 @@ void ItemIconView::slotAllAlbumsLoaded()
                this, SLOT(slotAllAlbumsLoaded()));
 
     loadViewState();
-    d->leftSideBar->loadState();
-    d->rightSideBar->loadState();
     d->rightSideBar->populateTags();
 
     // now that all albums have been loaded, activate the albumHistory

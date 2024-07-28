@@ -537,6 +537,7 @@ void ItemIconView::loadViewState()
 #endif // HAVE_GEOLOCATION
 
     d->tableView->loadState();
+    d->leftSideBar->loadState();
     d->rightSideBar->loadState();
 }
 
