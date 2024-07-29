@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 01:50+0000\n"
+"POT-Creation-Date: 2024-07-29 01:49+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -3087,7 +3087,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "फ़िल्टर्स"
 
-#: core/app/views/stack/itemiconview_albums.cpp:303
+#: core/app/views/stack/itemiconview_albums.cpp:301
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""

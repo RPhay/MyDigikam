@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 01:50+0000\n"
+"POT-Creation-Date: 2024-07-29 01:49+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3187,7 +3187,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Suodattimet"
 
-#: core/app/views/stack/itemiconview_albums.cpp:303
+#: core/app/views/stack/itemiconview_albums.cpp:301
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Juurialbumin avaaminen ei onnistu. Se ei ole fyysinen sijainti."
