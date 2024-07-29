@@ -25,14 +25,14 @@ BUGFIXES:
 014 ==> 490671 - digiKam crashes on startup with a white window and file download dialog.
 015 ==> 488222 - Exiftool not recognized.
 016 ==> 490690 - digiKam 8.4.0, Error at Configuring, CMake Error at core/cmake/modules/FindLibheif.cmake:57.
-017 ==> 490711 - Add support for KDE kio slaves.
-018 ==> 490747 - Exiftool missing in Windows 8.4 package.
-019 ==> 490793 - Find similar returns the source image in the search.
-020 ==> 490809 - XMP Toolkit error 102: Unknown namespace prefix for qualified name.
-021 ==> 490828 - Unable to delete workflow.
-022 ==> 490859 - Image color profile is not taken into account when creating thumbnails for 16 bit tiffs.
-023 ==> 490883 - Exiftool not found (digiKam 8.4.0/qt6/win64).
-024 ==> 490912 - digiKam 8.4 can't find exiftool on Windows.
+017 ==> 490747 - Exiftool missing in Windows 8.4 package.
+018 ==> 490793 - Find similar returns the source image in the search.
+019 ==> 490809 - XMP Toolkit error 102: Unknown namespace prefix for qualified name.
+020 ==> 490828 - Unable to delete workflow.
+021 ==> 490859 - Image color profile is not taken into account when creating thumbnails for 16 bit tiffs.
+022 ==> 490883 - Exiftool not found (digiKam 8.4.0/qt6/win64).
+023 ==> 490912 - digiKam 8.4 can't find exiftool on Windows.
+024 ==> 
 025 ==> 
 026 ==> 
 027 ==> 
