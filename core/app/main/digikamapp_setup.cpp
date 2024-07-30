@@ -139,6 +139,8 @@ void DigikamApp::setupActions()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
+    d->backwardActionMenu->setMenu(d->backwardActionMenu->popupMenu());
+
     connect(d->backwardActionMenu->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowBackwardMenu()));
 
@@ -161,6 +163,8 @@ void DigikamApp::setupActions()
     ac->setDefaultShortcut(d->forwardActionMenu, Qt::ALT | Qt::Key_Right);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    d->forwardActionMenu->setMenu(d->forwardActionMenu->popupMenu());
 
     connect(d->forwardActionMenu->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowForwardMenu()));

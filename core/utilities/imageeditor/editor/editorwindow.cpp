@@ -332,6 +332,8 @@ void EditorWindow::setupStandardActions()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
+    m_undoAction->setMenu(m_undoAction->popupMenu());
+
     connect(m_undoAction->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowUndoMenu()));
 
@@ -358,6 +360,8 @@ void EditorWindow::setupStandardActions()
     ac->setDefaultShortcut(m_redoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Z));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    m_redoAction->setMenu(m_redoAction->popupMenu());
 
     connect(m_redoAction->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowRedoMenu()));

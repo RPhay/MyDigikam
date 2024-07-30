@@ -32,7 +32,7 @@ BUGFIXES:
 021 ==> 490859 - Image color profile is not taken into account when creating thumbnails for 16 bit tiffs.
 022 ==> 490883 - Exiftool not found (digiKam 8.4.0/qt6/win64).
 023 ==> 490912 - digiKam 8.4 can't find exiftool on Windows.
-024 ==> 
+024 ==> 491007 - When Undo is scrolled over the undo choices do not appear.
 025 ==> 
 026 ==> 
 027 ==> 
