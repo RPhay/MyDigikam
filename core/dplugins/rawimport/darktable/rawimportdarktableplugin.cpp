@@ -174,7 +174,15 @@ void DarkTableRawImportPlugin::setup(QObject* const /*parent*/)
 
 QString DarkTableRawImportPlugin::getRawProgram() const
 {
-    return DFileOperations::findExecutable(QLatin1String("darktable"));
+    QStringList hints;
+
+#ifdef Q_OS_MACOS
+
+    hints << QLatin1String("/Applications/darktable.app/Contents/MacOS");
+
+#endif
+
+    return DFileOperations::findExecutable(QLatin1String("darktable"), hints);
 }
 
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)

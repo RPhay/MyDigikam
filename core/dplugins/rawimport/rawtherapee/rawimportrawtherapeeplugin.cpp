@@ -121,7 +121,15 @@ void RawTherapeeRawImportPlugin::setup(QObject* const /*parent*/)
 
 QString RawTherapeeRawImportPlugin::getRawProgram() const
 {
-    return DFileOperations::findExecutable(QLatin1String("rawtherapee"));
+    QStringList hints;
+
+#ifdef Q_OS_MACOS
+
+    hints << QLatin1String("/Applications/rawtherapee.app/Contents/MacOS");
+
+#endif
+
+    return DFileOperations::findExecutable(QLatin1String("rawtherapee"), hints);
 }
 
 bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)

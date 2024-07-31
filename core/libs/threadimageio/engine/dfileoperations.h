@@ -119,7 +119,8 @@ public:
      * If the path is empty, QStandardPaths::findExecutable()
      * is used as under Linux and macOS.
      */
-    static QString findExecutable(const QString& name);
+    static QString findExecutable(const QString& name,
+                                  const QStringList& hints = QStringList());
 
     /**
      * Rename/move or copy all possible sidecar files

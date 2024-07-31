@@ -122,7 +122,15 @@ void ARTRawImportPlugin::setup(QObject* const /*parent*/)
 
 QString ARTRawImportPlugin::getRawProgram() const
 {
-    return DFileOperations::findExecutable(QLatin1String("ART"));
+    QStringList hints;
+
+#ifdef Q_OS_MACOS
+
+    hints << QLatin1String("/Applications/ART.app/Contents/MacOS");
+
+#endif
+
+    return DFileOperations::findExecutable(QLatin1String("ART"), hints);
 }
 
 bool ARTRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)

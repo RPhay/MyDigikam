@@ -655,7 +655,8 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     return false;
 }
 
-QString DFileOperations::findExecutable(const QString& name)
+QString DFileOperations::findExecutable(const QString& name,
+                                        const QStringList& hints)
 {
     QString path;
     QString program = name;
@@ -711,7 +712,7 @@ QString DFileOperations::findExecutable(const QString& name)
 
 #endif
 
-    path = QStandardPaths::findExecutable(program);
+    path = QStandardPaths::findExecutable(program, hints);
 
     return path;
 }
