@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 01:49+0000\n"
+"POT-Creation-Date: 2024-07-31 01:47+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1559,94 +1559,94 @@ msgctxt "@action: setup"
 msgid "&Back"
 msgstr "返回(&B)"
 
-#: core/app/main/digikamapp_setup.cpp:158
+#: core/app/main/digikamapp_setup.cpp:160
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "向前"
 
-#: core/app/main/digikamapp_setup.cpp:181
+#: core/app/main/digikamapp_setup.cpp:185
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "重新整理"
 
-#: core/app/main/digikamapp_setup.cpp:182
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "重新整理目前內容。"
 
-#: core/app/main/digikamapp_setup.cpp:209
+#: core/app/main/digikamapp_setup.cpp:213
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "新增(&N)..."
 
-#: core/app/main/digikamapp_setup.cpp:210
+#: core/app/main/digikamapp_setup.cpp:214
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "在收藏中建立一本新的空白相簿。"
 
-#: core/app/main/digikamapp_setup.cpp:218
+#: core/app/main/digikamapp_setup.cpp:222
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "移至相簿(&M)..."
 
-#: core/app/main/digikamapp_setup.cpp:219
+#: core/app/main/digikamapp_setup.cpp:223
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "將選擇的項目移至一本相簿。"
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:230
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "複製到(&C)…"
 
-#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:231
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "複製選取影像到目標資料夾。"
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:238
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "刪除相簿"
 
-#: core/app/main/digikamapp_setup.cpp:241
-#: core/app/main/digikamapp_setup.cpp:481
+#: core/app/main/digikamapp_setup.cpp:245
+#: core/app/main/digikamapp_setup.cpp:485
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "重新命名..."
 
-#: core/app/main/digikamapp_setup.cpp:249
-#: core/app/main/digikamapp_setup.cpp:301
+#: core/app/main/digikamapp_setup.cpp:253
+#: core/app/main/digikamapp_setup.cpp:305
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "屬性"
 
-#: core/app/main/digikamapp_setup.cpp:250
+#: core/app/main/digikamapp_setup.cpp:254
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "編輯相簿屬性和收藏資訊。"
 
-#: core/app/main/digikamapp_setup.cpp:258
+#: core/app/main/digikamapp_setup.cpp:262
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "將中繼資料寫入檔案"
 
-#: core/app/main/digikamapp_setup.cpp:259
-#: core/app/main/digikamapp_setup.cpp:435
+#: core/app/main/digikamapp_setup.cpp:263
+#: core/app/main/digikamapp_setup.cpp:439
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1656,14 +1656,14 @@ msgstr ""
 "用 digiKam 資料庫的內容更新目前相簿中影像的繼資料 (資料庫的資料會覆寫檔案的中"
 "繼資料)。"
 
-#: core/app/main/digikamapp_setup.cpp:269
+#: core/app/main/digikamapp_setup.cpp:273
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "從檔案重新讀取中繼資料"
 
-#: core/app/main/digikamapp_setup.cpp:270
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:274
+#: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1674,291 +1674,291 @@ msgstr ""
 "從目前相簿中檔案的中繼資料更新 digiKam 資料庫 (檔案的中繼資料會覆寫資料庫中的"
 "資訊)。"
 
-#: core/app/main/digikamapp_setup.cpp:280
+#: core/app/main/digikamapp_setup.cpp:284
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "在檔案管理員開啟"
 
-#: core/app/main/digikamapp_setup.cpp:287
+#: core/app/main/digikamapp_setup.cpp:291
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "標籤管理員"
 
-#: core/app/main/digikamapp_setup.cpp:294
+#: core/app/main/digikamapp_setup.cpp:298
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "新增(&E)..."
 
-#: core/app/main/digikamapp_setup.cpp:308
+#: core/app/main/digikamapp_setup.cpp:312
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "刪除"
 
-#: core/app/main/digikamapp_setup.cpp:315
+#: core/app/main/digikamapp_setup.cpp:319
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "指定標籤"
 
-#: core/app/main/digikamapp_setup.cpp:323
+#: core/app/main/digikamapp_setup.cpp:327
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "檢視"
 
-#: core/app/main/digikamapp_setup.cpp:327
+#: core/app/main/digikamapp_setup.cpp:331
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "縮圖"
 
-#: core/app/main/digikamapp_setup.cpp:334
+#: core/app/main/digikamapp_setup.cpp:338
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "預覽"
 
-#: core/app/main/digikamapp_setup.cpp:344
+#: core/app/main/digikamapp_setup.cpp:348
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "地圖"
 
-#: core/app/main/digikamapp_setup.cpp:353
+#: core/app/main/digikamapp_setup.cpp:357
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "表格"
 
-#: core/app/main/digikamapp_setup.cpp:362
+#: core/app/main/digikamapp_setup.cpp:366
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "開啟..."
 
-#: core/app/main/digikamapp_setup.cpp:363
+#: core/app/main/digikamapp_setup.cpp:367
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "開啟選取的項目。"
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:373
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "在預設應用程式開啟"
 
-#: core/app/main/digikamapp_setup.cpp:370
+#: core/app/main/digikamapp_setup.cpp:374
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "用預設指派的應用程式開啟選取的項目。"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/app/main/digikamapp_setup.cpp:377
+#: core/app/main/digikamapp_setup.cpp:381
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "開啟影像編輯器。"
 
-#: core/app/main/digikamapp_setup.cpp:384
+#: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/app/main/digikamapp_setup.cpp:390
+#: core/app/main/digikamapp_setup.cpp:394
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "放到數位光桌上"
 
-#: core/app/main/digikamapp_setup.cpp:391
+#: core/app/main/digikamapp_setup.cpp:395
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "將選取的項目放到數位光桌縮圖列上。"
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:401
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "加入到數位光桌"
 
-#: core/app/main/digikamapp_setup.cpp:398
+#: core/app/main/digikamapp_setup.cpp:402
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "將選取的項目加入到數位光桌縮圖列。"
 
-#: core/app/main/digikamapp_setup.cpp:406
+#: core/app/main/digikamapp_setup.cpp:410
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "批次佇列管理器"
 
-#: core/app/main/digikamapp_setup.cpp:412
+#: core/app/main/digikamapp_setup.cpp:416
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "加入到目前佇列"
 
-#: core/app/main/digikamapp_setup.cpp:413
+#: core/app/main/digikamapp_setup.cpp:417
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "將選取的項目加入到批次管理器中目前的佇列。"
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:423
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "加入到新的佇列"
 
-#: core/app/main/digikamapp_setup.cpp:420
+#: core/app/main/digikamapp_setup.cpp:424
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "將選取的項目加入到批次管理器中新的佇列。"
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:431
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "匯入"
 
-#: core/app/main/digikamapp_setup.cpp:434
+#: core/app/main/digikamapp_setup.cpp:438
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "將中繼資料寫入到選取的檔案"
 
-#: core/app/main/digikamapp_setup.cpp:445
+#: core/app/main/digikamapp_setup.cpp:449
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "從選取的檔案中重新讀取中繼資料"
 
-#: core/app/main/digikamapp_setup.cpp:456
+#: core/app/main/digikamapp_setup.cpp:460
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "掃描臉孔"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:465
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "辨識臉孔"
 
-#: core/app/main/digikamapp_setup.cpp:466
+#: core/app/main/digikamapp_setup.cpp:470
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "移除所有臉孔"
 
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:477
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "尋找相似..."
 
-#: core/app/main/digikamapp_setup.cpp:474
+#: core/app/main/digikamapp_setup.cpp:478
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "尋找類似選取的項目的影像。"
 
-#: core/app/main/digikamapp_setup.cpp:482
+#: core/app/main/digikamapp_setup.cpp:486
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "變更目前選取項目的檔案名稱。"
 
-#: core/app/main/digikamapp_setup.cpp:492
+#: core/app/main/digikamapp_setup.cpp:496
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "移到垃圾桶"
 
-#: core/app/main/digikamapp_setup.cpp:506
+#: core/app/main/digikamapp_setup.cpp:510
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "永久刪除"
 
-#: core/app/main/digikamapp_setup.cpp:517
+#: core/app/main/digikamapp_setup.cpp:521
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "不用確認直接永久刪除"
 
-#: core/app/main/digikamapp_setup.cpp:525
+#: core/app/main/digikamapp_setup.cpp:529
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "不用確認直接移至垃圾桶"
 
-#: core/app/main/digikamapp_setup.cpp:532
+#: core/app/main/digikamapp_setup.cpp:536
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "相簿排序(&S)"
 
-#: core/app/main/digikamapp_setup.cpp:533
+#: core/app/main/digikamapp_setup.cpp:537
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "在樹狀檢視為相簿排序。"
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:556
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "依資料夾"
 
-#: core/app/main/digikamapp_setup.cpp:553
+#: core/app/main/digikamapp_setup.cpp:557
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "依分類"
 
-#: core/app/main/digikamapp_setup.cpp:554
+#: core/app/main/digikamapp_setup.cpp:558
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "依日期"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "包含相簿子目錄"
 
-#: core/app/main/digikamapp_setup.cpp:561
+#: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "啟用這個選項會顯示目前相簿下面所有的子相簿。"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "包含標籤子樹"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1966,442 +1966,442 @@ msgid ""
 "sub-tags."
 msgstr "啟用此選項來顯示指定標籤與其子標籤所標示的所有影像。"
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "將所有群組化的項目以開啟方式顯示"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "啟用此選項來開啟顯示所有群組化項目。"
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:585
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "項目排序(&S)"
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:586
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "此數值用於縮圖檢視中一本相簿的影像排序方式"
 
-#: core/app/main/digikamapp_setup.cpp:587
+#: core/app/main/digikamapp_setup.cpp:591
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "依名稱"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:592
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "依路徑"
 
-#: core/app/main/digikamapp_setup.cpp:589
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "依建立日期"
 
-#: core/app/main/digikamapp_setup.cpp:590
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "依修改日期"
 
-#: core/app/main/digikamapp_setup.cpp:591
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "依檔案大小"
 
-#: core/app/main/digikamapp_setup.cpp:592
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "依評等"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "依影像大小"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "依外觀比例"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "顯示臉孔類型"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "依相似度"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "依手動及名稱"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "依手動及日期"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:647
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "項目排列順序(&O)"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "定義影像排序方向是遞增還是遞減。"
 
-#: core/app/main/digikamapp_setup.cpp:648
-#: core/app/main/digikamapp_setup.cpp:703
+#: core/app/main/digikamapp_setup.cpp:652
+#: core/app/main/digikamapp_setup.cpp:707
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "遞增"
 
-#: core/app/main/digikamapp_setup.cpp:650
-#: core/app/main/digikamapp_setup.cpp:705
+#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "遞減"
 
-#: core/app/main/digikamapp_setup.cpp:660
+#: core/app/main/digikamapp_setup.cpp:664
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "分割項目"
 
-#: core/app/main/digikamapp_setup.cpp:661
+#: core/app/main/digikamapp_setup.cpp:665
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "縮圖檢視中影像所顯示在其中的分類"
 
-#: core/app/main/digikamapp_setup.cpp:666
+#: core/app/main/digikamapp_setup.cpp:670
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "不分割"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:671
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "依相簿"
 
-#: core/app/main/digikamapp_setup.cpp:668
+#: core/app/main/digikamapp_setup.cpp:672
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "依格式"
 
-#: core/app/main/digikamapp_setup.cpp:669
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "依月份"
 
-#: core/app/main/digikamapp_setup.cpp:670
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "依臉孔"
 
-#: core/app/main/digikamapp_setup.cpp:698
+#: core/app/main/digikamapp_setup.cpp:702
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "項目分割順序(&O)"
 
-#: core/app/main/digikamapp_setup.cpp:699
+#: core/app/main/digikamapp_setup.cpp:703
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "分割後各組項目的順序"
 
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:724
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "全部選取"
 
-#: core/app/main/digikamapp_setup.cpp:727
+#: core/app/main/digikamapp_setup.cpp:731
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "全部不選"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "反轉選取"
 
-#: core/app/main/digikamapp_setup.cpp:742
+#: core/app/main/digikamapp_setup.cpp:746
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "顯示縮圖列"
 
-#: core/app/main/digikamapp_setup.cpp:773
+#: core/app/main/digikamapp_setup.cpp:777
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "縮放至 100%"
 
-#: core/app/main/digikamapp_setup.cpp:781
+#: core/app/main/digikamapp_setup.cpp:785
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "符合視窗(&W)"
 
-#: core/app/main/digikamapp_setup.cpp:794
+#: core/app/main/digikamapp_setup.cpp:798
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "顏色管理檢視"
 
-#: core/app/main/digikamapp_setup.cpp:812
+#: core/app/main/digikamapp_setup.cpp:816
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "搜尋..."
 
-#: core/app/main/digikamapp_setup.cpp:820
+#: core/app/main/digikamapp_setup.cpp:824
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "進階搜尋..."
 
-#: core/app/main/digikamapp_setup.cpp:828
+#: core/app/main/digikamapp_setup.cpp:832
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "尋找重複項目..."
 
-#: core/app/main/digikamapp_setup.cpp:838
+#: core/app/main/digikamapp_setup.cpp:842
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "資料庫遷移..."
 
-#: core/app/main/digikamapp_setup.cpp:847
+#: core/app/main/digikamapp_setup.cpp:851
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "維護..."
 
-#: core/app/main/digikamapp_setup.cpp:854
+#: core/app/main/digikamapp_setup.cpp:858
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "掃描新項目"
 
-#: core/app/main/digikamapp_setup.cpp:860
+#: core/app/main/digikamapp_setup.cpp:864
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "手動加入相機..."
 
-#: core/app/main/digikamapp_setup.cpp:871
+#: core/app/main/digikamapp_setup.cpp:875
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "載入相機中..."
 
-#: core/app/main/digikamapp_setup.cpp:905
+#: core/app/main/digikamapp_setup.cpp:909
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "離開預覽模式"
 
-#: core/app/main/digikamapp_setup.cpp:910
+#: core/app/main/digikamapp_setup.cpp:914
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "下一張影像"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:920
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "上一張影像"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:926
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "第一張影像"
 
-#: core/app/main/digikamapp_setup.cpp:927
+#: core/app/main/digikamapp_setup.cpp:931
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "最後一張影像"
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:936
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "剪下(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "將選取內容剪下到剪貼簿"
 
-#: core/app/main/digikamapp_setup.cpp:953
+#: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "編輯標題"
 
-#: core/app/main/digikamapp_setup.cpp:958
+#: core/app/main/digikamapp_setup.cpp:962
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "編輯註解"
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:967
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "顯示已指定的標籤"
 
-#: core/app/main/digikamapp_setup.cpp:972
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "調整 Exif 方向標籤"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "普通"
 
-#: core/app/main/digikamapp_setup.cpp:977
+#: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "已水平翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "已旋轉 180 度"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "已垂直翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "已向右旋轉/水平翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "已向右旋轉"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "已向右旋轉/垂直翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "已向左旋轉"
 
-#: core/app/main/digikamapp_setup.cpp:1050
+#: core/app/main/digikamapp_setup.cpp:1054
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "已旋轉"
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1058
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "向左"
 
-#: core/app/main/digikamapp_setup.cpp:1061
+#: core/app/main/digikamapp_setup.cpp:1065
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "向右"
 
-#: core/app/main/digikamapp_setup.cpp:1071
+#: core/app/main/digikamapp_setup.cpp:1075
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:1075
+#: core/app/main/digikamapp_setup.cpp:1079
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "水平"
 
-#: core/app/main/digikamapp_setup.cpp:1082
+#: core/app/main/digikamapp_setup.cpp:1086
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "垂直"
 
-#: core/app/main/digikamapp_setup.cpp:1092
+#: core/app/main/digikamapp_setup.cpp:1096
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "使用 Exif 資訊自動旋轉/翻轉"
 
-#: core/app/main/digikamapp_setup.cpp:1103
+#: core/app/main/digikamapp_setup.cpp:1107
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "正在載入佈景主題..."
 
-#: core/app/main/digikamapp_setup.cpp:1106
+#: core/app/main/digikamapp_setup.cpp:1110
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "佈景主題(&T)"
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2494,21 +2494,21 @@ msgid "Main Tools"
 msgstr "主工具"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "後期處理"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "匯出"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -10806,7 +10806,7 @@ msgstr "掃描影像"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1823
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1827
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -10845,8 +10845,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2316
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15536,7 +15536,7 @@ msgstr "調整時間與日期"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
-#: core/utilities/imageeditor/editor/editorwindow.cpp:566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -48781,7 +48781,7 @@ msgid "Delete File"
 msgstr "刪除檔案"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -51116,7 +51116,7 @@ msgstr "套用臉孔改變"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:560
+#: core/utilities/imageeditor/editor/editorwindow.cpp:564
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -57377,56 +57377,56 @@ msgctxt "@action"
 msgid "Undo"
 msgstr "復原"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:355
+#: core/utilities/imageeditor/editor/editorwindow.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "取消復原"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:381
+#: core/utilities/imageeditor/editor/editorwindow.cpp:385
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "全部選取"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:386
+#: core/utilities/imageeditor/editor/editorwindow.cpp:390
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "全部不選"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:400
+#: core/utilities/imageeditor/editor/editorwindow.cpp:404
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "縮放至 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:406
+#: core/utilities/imageeditor/editor/editorwindow.cpp:410
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "符合視窗(&W)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "符合選擇區域(&S)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:422
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr "這個選項可將影像顯示縮放為目前選擇的區域。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:447
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "曝光不足指示功能"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57434,13 +57434,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr "設定這個選項會在影像上顯示黑色層疊。這會幫助您避免影像曝光不足。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "曝光過度指示功能"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:455
+#: core/utilities/imageeditor/editor/editorwindow.cpp:459
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57448,32 +57448,32 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr "設定這個選項會在影像上顯示白色層疊。這會幫助您避免影像曝光過度。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:463
+#: core/utilities/imageeditor/editor/editorwindow.cpp:467
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "顏色管理檢視"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "螢幕校樣選項..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:479
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "螢幕校樣檢視"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:487
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "裁剪選擇區域外的影像"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:490
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57481,33 +57481,33 @@ msgid ""
 "enable this action."
 msgstr "這個選項可裁剪此影像。選擇一個影像區域來執行這個動作。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:498
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "水平翻轉"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "垂直翻轉"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:512
+#: core/utilities/imageeditor/editor/editorwindow.cpp:516
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "向左旋轉"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:520
+#: core/utilities/imageeditor/editor/editorwindow.cpp:524
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "向右旋轉"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:556
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -57515,37 +57515,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "上一張影像"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:586
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "無選取區域"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:589
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "關於目前選擇影像的資訊"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:590
+#: core/utilities/imageeditor/editor/editorwindow.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "影像大小的資訊"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1105
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "儲存影像中..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1106
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1110
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "請稍候，正在儲存影像..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1127
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57555,13 +57555,13 @@ msgstr ""
 "即將覆寫檔案「%1」\n"
 "您是否確定？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1136
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1242
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57571,7 +57571,7 @@ msgstr ""
 "影像 \"%1\" 已經修改。\n"
 "您要儲存它嗎？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1393
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1397
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57581,25 +57581,25 @@ msgstr ""
 "影像 \"%1\" 已經修改。\n"
 "會喪失所有變更。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1475
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "無選取區域"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1495
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "載入："
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1519
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "無法載入 \"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1561
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1565
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57610,13 +57610,13 @@ msgstr ""
 "無法開啟指定的正在使用的色彩空間描述檔 (「%1」)。不會套用任何色彩轉換。請檢查"
 "在 digiKam 設定中的色彩管理。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1622
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "儲存中："
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57630,31 +57630,31 @@ msgstr ""
 "儲存到\n"
 "「%2」失敗。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1773
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1777
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1969
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1973
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "無法決定用來儲存目標影像的格式。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1976
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1980
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "無法儲存：找到的檔案路徑 \"%1\" 無效。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2223
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2227
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2298
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57662,32 +57662,32 @@ msgid ""
 "you want to overwrite it?"
 msgstr "您沒有寫入名稱為「%1」檔案的權限。您確定要覆寫嗎？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2321
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "已經存在名稱為「%1」的檔案。您確定想要覆寫嗎？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "覆寫原始檔案失敗"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2423
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "色彩管理檢視已啟用。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2431
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "色彩管理檢視已停用。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2436
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57695,74 +57695,74 @@ msgid ""
 "available."
 msgstr "未設定色彩管理，所以無法使用色彩管理檢視。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "曝光不足指示功能已啟用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2469
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2473
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "曝光不足指示功能已停用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "曝光過度指示功能已啟用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2484
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "曝光過度指示功能已停用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2579
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "變形"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2593
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "裝飾"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "效果"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "顏色"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2610
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "增強"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2827
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2780
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2831
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "開啟方式"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2788
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2792
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "其他..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2797
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2801
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."

@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 01:49+0000\n"
+"POT-Creation-Date: 2024-07-31 01:47+0000\n"
 "PO-Revision-Date: 2024-07-12 21:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1605,94 +1605,94 @@ msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&Bakåt"
 
-#: core/app/main/digikamapp_setup.cpp:158
+#: core/app/main/digikamapp_setup.cpp:160
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Framåt"
 
-#: core/app/main/digikamapp_setup.cpp:181
+#: core/app/main/digikamapp_setup.cpp:185
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Uppdatera"
 
-#: core/app/main/digikamapp_setup.cpp:182
+#: core/app/main/digikamapp_setup.cpp:186
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Uppdatera aktuellt innehåll."
 
-#: core/app/main/digikamapp_setup.cpp:209
+#: core/app/main/digikamapp_setup.cpp:213
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Nytt..."
 
-#: core/app/main/digikamapp_setup.cpp:210
+#: core/app/main/digikamapp_setup.cpp:214
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Skapar ett nytt tomt album i samlingen."
 
-#: core/app/main/digikamapp_setup.cpp:218
+#: core/app/main/digikamapp_setup.cpp:222
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Flytta till album"
 
-#: core/app/main/digikamapp_setup.cpp:219
+#: core/app/main/digikamapp_setup.cpp:223
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Flytta markerade bilder till ett album."
 
-#: core/app/main/digikamapp_setup.cpp:226
+#: core/app/main/digikamapp_setup.cpp:230
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "&Kopiera till..."
 
-#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:231
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Kopiera markerade bilder till ett album."
 
-#: core/app/main/digikamapp_setup.cpp:234
+#: core/app/main/digikamapp_setup.cpp:238
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Ta bort album"
 
-#: core/app/main/digikamapp_setup.cpp:241
-#: core/app/main/digikamapp_setup.cpp:481
+#: core/app/main/digikamapp_setup.cpp:245
+#: core/app/main/digikamapp_setup.cpp:485
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Byt namn..."
 
-#: core/app/main/digikamapp_setup.cpp:249
-#: core/app/main/digikamapp_setup.cpp:301
+#: core/app/main/digikamapp_setup.cpp:253
+#: core/app/main/digikamapp_setup.cpp:305
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: core/app/main/digikamapp_setup.cpp:250
+#: core/app/main/digikamapp_setup.cpp:254
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Redigera albumegenskaper och samlingsinformation."
 
-#: core/app/main/digikamapp_setup.cpp:258
+#: core/app/main/digikamapp_setup.cpp:262
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Skriv metadata till filer"
 
-#: core/app/main/digikamapp_setup.cpp:259
-#: core/app/main/digikamapp_setup.cpp:435
+#: core/app/main/digikamapp_setup.cpp:263
+#: core/app/main/digikamapp_setup.cpp:439
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1702,14 +1702,14 @@ msgstr ""
 "Uppdaterar metadata för filer i nuvarande album med innehållet i Digikams "
 "databas (filernas metadata skrivs över med information från databasen)."
 
-#: core/app/main/digikamapp_setup.cpp:269
+#: core/app/main/digikamapp_setup.cpp:273
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Läs metadata från filer igen"
 
-#: core/app/main/digikamapp_setup.cpp:270
-#: core/app/main/digikamapp_setup.cpp:446
+#: core/app/main/digikamapp_setup.cpp:274
+#: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1720,292 +1720,292 @@ msgstr ""
 "Uppdaterar Digikams databas från bildernas metadata i nuvarande album "
 "(information i databasen skrivs över med data från bildernas metadata)."
 
-#: core/app/main/digikamapp_setup.cpp:280
+#: core/app/main/digikamapp_setup.cpp:284
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Öppna i filhanterare"
 
-#: core/app/main/digikamapp_setup.cpp:287
+#: core/app/main/digikamapp_setup.cpp:291
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Etiketthantering"
 
-#: core/app/main/digikamapp_setup.cpp:294
+#: core/app/main/digikamapp_setup.cpp:298
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "N&y..."
 
-#: core/app/main/digikamapp_setup.cpp:308
+#: core/app/main/digikamapp_setup.cpp:312
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: core/app/main/digikamapp_setup.cpp:315
+#: core/app/main/digikamapp_setup.cpp:319
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Tilldela etikett"
 
-#: core/app/main/digikamapp_setup.cpp:323
+#: core/app/main/digikamapp_setup.cpp:327
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Vyer"
 
-#: core/app/main/digikamapp_setup.cpp:327
+#: core/app/main/digikamapp_setup.cpp:331
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Miniatyrbilder"
 
-#: core/app/main/digikamapp_setup.cpp:334
+#: core/app/main/digikamapp_setup.cpp:338
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Förhandsgranskning"
 
-#: core/app/main/digikamapp_setup.cpp:344
+#: core/app/main/digikamapp_setup.cpp:348
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Karta"
 
-#: core/app/main/digikamapp_setup.cpp:353
+#: core/app/main/digikamapp_setup.cpp:357
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Tabell"
 
-#: core/app/main/digikamapp_setup.cpp:362
+#: core/app/main/digikamapp_setup.cpp:366
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Öppna..."
 
-#: core/app/main/digikamapp_setup.cpp:363
+#: core/app/main/digikamapp_setup.cpp:367
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Öppnar markerat objekt."
 
-#: core/app/main/digikamapp_setup.cpp:369
+#: core/app/main/digikamapp_setup.cpp:373
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Öppna med förvalt program"
 
-#: core/app/main/digikamapp_setup.cpp:370
+#: core/app/main/digikamapp_setup.cpp:374
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Öppnar markerat objekt med tilldelat förvalt program."
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Bildeditor"
 
-#: core/app/main/digikamapp_setup.cpp:377
+#: core/app/main/digikamapp_setup.cpp:381
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Öppna bildeditorn."
 
-#: core/app/main/digikamapp_setup.cpp:384
+#: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Ljusbord"
 
-#: core/app/main/digikamapp_setup.cpp:390
+#: core/app/main/digikamapp_setup.cpp:394
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Placera på ljusbordet"
 
-#: core/app/main/digikamapp_setup.cpp:391
+#: core/app/main/digikamapp_setup.cpp:395
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "Placera markerade objekt i ljusbordets miniatyrbildsrad."
 
-#: core/app/main/digikamapp_setup.cpp:397
+#: core/app/main/digikamapp_setup.cpp:401
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Lägg till på ljusbordet"
 
-#: core/app/main/digikamapp_setup.cpp:398
+#: core/app/main/digikamapp_setup.cpp:402
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "Infoga markerade objekt i ljusbordets miniatyrbildsrad."
 
-#: core/app/main/digikamapp_setup.cpp:406
+#: core/app/main/digikamapp_setup.cpp:410
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Köhantering för bakgrundsbehandling"
 
-#: core/app/main/digikamapp_setup.cpp:412
+#: core/app/main/digikamapp_setup.cpp:416
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Lägg till i nuvarande kö"
 
-#: core/app/main/digikamapp_setup.cpp:413
+#: core/app/main/digikamapp_setup.cpp:417
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Infoga markerade objekt i nuvarande kö från bakgrundshanteraren."
 
-#: core/app/main/digikamapp_setup.cpp:419
+#: core/app/main/digikamapp_setup.cpp:423
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Lägg till i ny kö"
 
-#: core/app/main/digikamapp_setup.cpp:420
+#: core/app/main/digikamapp_setup.cpp:424
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Infoga markerade objekt i en ny kö från bakgrundshanteraren."
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:431
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importera"
 
-#: core/app/main/digikamapp_setup.cpp:434
+#: core/app/main/digikamapp_setup.cpp:438
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Skriv metadata till markerade filer"
 
-#: core/app/main/digikamapp_setup.cpp:445
+#: core/app/main/digikamapp_setup.cpp:449
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Läs metadata från markerade filer igen"
 
-#: core/app/main/digikamapp_setup.cpp:456
+#: core/app/main/digikamapp_setup.cpp:460
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Sök efter ansikten"
 
-#: core/app/main/digikamapp_setup.cpp:461
+#: core/app/main/digikamapp_setup.cpp:465
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Känn igen ansikten"
 
-#: core/app/main/digikamapp_setup.cpp:466
+#: core/app/main/digikamapp_setup.cpp:470
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Ta bort alla ansikten"
 
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:477
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Sök efter liknande..."
 
-#: core/app/main/digikamapp_setup.cpp:474
+#: core/app/main/digikamapp_setup.cpp:478
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Sök efter liknande bilder med markerat objekt som referens."
 
-#: core/app/main/digikamapp_setup.cpp:482
+#: core/app/main/digikamapp_setup.cpp:486
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Byt filnamn på objektet som för närvarande är markerat."
 
-#: core/app/main/digikamapp_setup.cpp:492
+#: core/app/main/digikamapp_setup.cpp:496
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
-#: core/app/main/digikamapp_setup.cpp:506
+#: core/app/main/digikamapp_setup.cpp:510
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Ta bort permanent"
 
-#: core/app/main/digikamapp_setup.cpp:517
+#: core/app/main/digikamapp_setup.cpp:521
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Ta bort fullständigt utan bekräftelse"
 
-#: core/app/main/digikamapp_setup.cpp:525
+#: core/app/main/digikamapp_setup.cpp:529
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Flytta till papperskorg utan bekräftelse"
 
-#: core/app/main/digikamapp_setup.cpp:532
+#: core/app/main/digikamapp_setup.cpp:536
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Sortera album"
 
-#: core/app/main/digikamapp_setup.cpp:533
+#: core/app/main/digikamapp_setup.cpp:537
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Sortera album i en trädvy."
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:556
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Enligt katalog"
 
-#: core/app/main/digikamapp_setup.cpp:553
+#: core/app/main/digikamapp_setup.cpp:557
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Enligt kategori"
 
-#: core/app/main/digikamapp_setup.cpp:554
+#: core/app/main/digikamapp_setup.cpp:558
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Enligt datum"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Inkludera albumets underkataloger"
 
-#: core/app/main/digikamapp_setup.cpp:561
+#: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
 "Aktivera alternativet för att visa alla delalbum inne i nuvarande album."
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Inkludera etikettens deletiketter"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2015,442 +2015,442 @@ msgstr ""
 "Aktivera alternativet för att visa alla bilder markerade med given etikett "
 "och alla dess deletiketter."
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Visa alla grupperade objekt som öppna"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Aktivera alternativet för att visa alla grupperade objekt som öppna."
 
-#: core/app/main/digikamapp_setup.cpp:581
+#: core/app/main/digikamapp_setup.cpp:585
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Sortera objekt"
 
-#: core/app/main/digikamapp_setup.cpp:582
+#: core/app/main/digikamapp_setup.cpp:586
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Värdet som bilderna i ett album sorteras enligt i miniatyrbildsvyn"
 
-#: core/app/main/digikamapp_setup.cpp:587
+#: core/app/main/digikamapp_setup.cpp:591
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Enligt namn"
 
-#: core/app/main/digikamapp_setup.cpp:588
+#: core/app/main/digikamapp_setup.cpp:592
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Enligt sökväg"
 
-#: core/app/main/digikamapp_setup.cpp:589
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Enligt skapad datum"
 
-#: core/app/main/digikamapp_setup.cpp:590
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Enligt ändringsdatum"
 
-#: core/app/main/digikamapp_setup.cpp:591
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Enligt filstorlek"
 
-#: core/app/main/digikamapp_setup.cpp:592
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Enligt betyg"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Enligt bildstorlek"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Enligt proportion"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Enligt ansiktstyp"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Enligt likhet"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Enligt manuellt och namn"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Enligt manuellt och datum"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:647
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sorterings&ordning för objekt"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Definierar om bilder sorteras i stigande eller fallande ordning."
 
-#: core/app/main/digikamapp_setup.cpp:648
-#: core/app/main/digikamapp_setup.cpp:703
+#: core/app/main/digikamapp_setup.cpp:652
+#: core/app/main/digikamapp_setup.cpp:707
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Stigande"
 
-#: core/app/main/digikamapp_setup.cpp:650
-#: core/app/main/digikamapp_setup.cpp:705
+#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Fallande"
 
-#: core/app/main/digikamapp_setup.cpp:660
+#: core/app/main/digikamapp_setup.cpp:664
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Separera objekt"
 
-#: core/app/main/digikamapp_setup.cpp:661
+#: core/app/main/digikamapp_setup.cpp:665
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategorierna som bilderna i miniatyrbildsvyn visas med"
 
-#: core/app/main/digikamapp_setup.cpp:666
+#: core/app/main/digikamapp_setup.cpp:670
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Enkel lista"
 
-#: core/app/main/digikamapp_setup.cpp:667
+#: core/app/main/digikamapp_setup.cpp:671
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Enligt album"
 
-#: core/app/main/digikamapp_setup.cpp:668
+#: core/app/main/digikamapp_setup.cpp:672
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Enligt format"
 
-#: core/app/main/digikamapp_setup.cpp:669
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Enligt månad"
 
-#: core/app/main/digikamapp_setup.cpp:670
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Enligt ansikten"
 
-#: core/app/main/digikamapp_setup.cpp:698
+#: core/app/main/digikamapp_setup.cpp:702
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Separationsordning för objekt"
 
-#: core/app/main/digikamapp_setup.cpp:699
+#: core/app/main/digikamapp_setup.cpp:703
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Sorteringsordning för grupper av separata objekt"
 
-#: core/app/main/digikamapp_setup.cpp:720
+#: core/app/main/digikamapp_setup.cpp:724
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Markera alla"
 
-#: core/app/main/digikamapp_setup.cpp:727
+#: core/app/main/digikamapp_setup.cpp:731
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Avmarkera alla"
 
-#: core/app/main/digikamapp_setup.cpp:734
+#: core/app/main/digikamapp_setup.cpp:738
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Invertera markering"
 
-#: core/app/main/digikamapp_setup.cpp:742
+#: core/app/main/digikamapp_setup.cpp:746
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Visa miniatyrbildsrad"
 
-#: core/app/main/digikamapp_setup.cpp:773
+#: core/app/main/digikamapp_setup.cpp:777
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zooma till 100 %"
 
-#: core/app/main/digikamapp_setup.cpp:781
+#: core/app/main/digikamapp_setup.cpp:785
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Anpassa till &fönster"
 
-#: core/app/main/digikamapp_setup.cpp:794
+#: core/app/main/digikamapp_setup.cpp:798
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Färghanterad vy"
 
-#: core/app/main/digikamapp_setup.cpp:812
+#: core/app/main/digikamapp_setup.cpp:816
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Sök..."
 
-#: core/app/main/digikamapp_setup.cpp:820
+#: core/app/main/digikamapp_setup.cpp:824
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Avancerad sökning..."
 
-#: core/app/main/digikamapp_setup.cpp:828
+#: core/app/main/digikamapp_setup.cpp:832
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Sök efter dubbletter..."
 
-#: core/app/main/digikamapp_setup.cpp:838
+#: core/app/main/digikamapp_setup.cpp:842
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Databasöverföring..."
 
-#: core/app/main/digikamapp_setup.cpp:847
+#: core/app/main/digikamapp_setup.cpp:851
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Underhåll..."
 
-#: core/app/main/digikamapp_setup.cpp:854
+#: core/app/main/digikamapp_setup.cpp:858
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Sök efter nya objekt"
 
-#: core/app/main/digikamapp_setup.cpp:860
+#: core/app/main/digikamapp_setup.cpp:864
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Lägg till kamera manuellt..."
 
-#: core/app/main/digikamapp_setup.cpp:871
+#: core/app/main/digikamapp_setup.cpp:875
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Läser in kameror..."
 
-#: core/app/main/digikamapp_setup.cpp:905
+#: core/app/main/digikamapp_setup.cpp:909
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Avsluta förhandsgranskning"
 
-#: core/app/main/digikamapp_setup.cpp:910
+#: core/app/main/digikamapp_setup.cpp:914
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Nästa bild"
 
-#: core/app/main/digikamapp_setup.cpp:916
+#: core/app/main/digikamapp_setup.cpp:920
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Föregående bild"
 
-#: core/app/main/digikamapp_setup.cpp:922
+#: core/app/main/digikamapp_setup.cpp:926
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Första bilden"
 
-#: core/app/main/digikamapp_setup.cpp:927
+#: core/app/main/digikamapp_setup.cpp:931
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Sista bilden"
 
-#: core/app/main/digikamapp_setup.cpp:932
+#: core/app/main/digikamapp_setup.cpp:936
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Klipp u&t"
 
-#: core/app/main/digikamapp_setup.cpp:934
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Klipp ut markering till klippbord"
 
-#: core/app/main/digikamapp_setup.cpp:953
+#: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Redigera titlar"
 
-#: core/app/main/digikamapp_setup.cpp:958
+#: core/app/main/digikamapp_setup.cpp:962
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Redigera kommentarer"
 
-#: core/app/main/digikamapp_setup.cpp:963
+#: core/app/main/digikamapp_setup.cpp:967
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Visa tilldelade etiketter"
 
-#: core/app/main/digikamapp_setup.cpp:972
+#: core/app/main/digikamapp_setup.cpp:976
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Korrigera Exif-orienteringstagg"
 
-#: core/app/main/digikamapp_setup.cpp:975
+#: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:977
+#: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Vänd horisontellt"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Roterad uppochner"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Vänd vertikalt"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Roterad åt höger och vänd horisontellt"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Roterad åt höger"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Roterad åt höger och vänd vertikalt"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Roterad åt vänster"
 
-#: core/app/main/digikamapp_setup.cpp:1050
+#: core/app/main/digikamapp_setup.cpp:1054
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Rotera"
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1058
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Vänster"
 
-#: core/app/main/digikamapp_setup.cpp:1061
+#: core/app/main/digikamapp_setup.cpp:1065
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Vänster"
 
-#: core/app/main/digikamapp_setup.cpp:1071
+#: core/app/main/digikamapp_setup.cpp:1075
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Vänd"
 
-#: core/app/main/digikamapp_setup.cpp:1075
+#: core/app/main/digikamapp_setup.cpp:1079
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horisontellt"
 
-#: core/app/main/digikamapp_setup.cpp:1082
+#: core/app/main/digikamapp_setup.cpp:1086
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Vertikalt"
 
-#: core/app/main/digikamapp_setup.cpp:1092
+#: core/app/main/digikamapp_setup.cpp:1096
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Rotera eller vänd automatiskt med EXIF-information"
 
-#: core/app/main/digikamapp_setup.cpp:1103
+#: core/app/main/digikamapp_setup.cpp:1107
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Läser in teman..."
 
-#: core/app/main/digikamapp_setup.cpp:1106
+#: core/app/main/digikamapp_setup.cpp:1110
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Teman"
 
-#: core/app/main/digikamapp_setup.cpp:1118
+#: core/app/main/digikamapp_setup.cpp:1122
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2543,21 +2543,21 @@ msgid "Main Tools"
 msgstr "Huvudverktyg"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2617
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Efterbehandling"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Export"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2641
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11269,7 +11269,7 @@ msgstr "Läs in bilder"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1823
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1827
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -11309,8 +11309,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2316
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2301
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2320
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -15845,7 +15845,7 @@ msgstr "Justera tid och datum"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
-#: core/utilities/imageeditor/editor/editorwindow.cpp:566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -49096,7 +49096,7 @@ msgid "Delete File"
 msgstr "Ta bort fil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2347
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -51491,7 +51491,7 @@ msgstr "Verkställer ansiktsändringar"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:560
+#: core/utilities/imageeditor/editor/editorwindow.cpp:564
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -57856,43 +57856,43 @@ msgctxt "@action"
 msgid "Undo"
 msgstr "Ångra"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:355
+#: core/utilities/imageeditor/editor/editorwindow.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "Gör om"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:381
+#: core/utilities/imageeditor/editor/editorwindow.cpp:385
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Markera alla"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:386
+#: core/utilities/imageeditor/editor/editorwindow.cpp:390
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "Avmarkera alla"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:400
+#: core/utilities/imageeditor/editor/editorwindow.cpp:404
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Zooma till 100 %"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:406
+#: core/utilities/imageeditor/editor/editorwindow.cpp:410
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Anpassa till &fönster"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:417
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "Anpassa till &markering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:422
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57901,13 +57901,13 @@ msgstr ""
 "Det här alternativet kan användas för att zooma bilden till nuvarande "
 "markerat område."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:443
+#: core/utilities/imageeditor/editor/editorwindow.cpp:447
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Indikering av underexponering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:445
+#: core/utilities/imageeditor/editor/editorwindow.cpp:449
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57917,13 +57917,13 @@ msgstr ""
 "Aktivera alternativet för att visa svart överlagrat på bilden. Det hjälper "
 "dig att undvika underexponering av den."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:453
+#: core/utilities/imageeditor/editor/editorwindow.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Indikering av överexponering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:455
+#: core/utilities/imageeditor/editor/editorwindow.cpp:459
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57933,32 +57933,32 @@ msgstr ""
 "Aktivera alternativet för att visa vitt överlagrat i bilden. Det hjälper "
 "till att undvika överexponering av den."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:463
+#: core/utilities/imageeditor/editor/editorwindow.cpp:467
 #: core/utilities/import/main/importui.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Färghanterad vy"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:474
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Alternativ för bildskärmskorrektur..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:475
+#: core/utilities/imageeditor/editor/editorwindow.cpp:479
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Vy för bildskärmskorrektur"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:487
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Beskär till markering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:490
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57968,33 +57968,33 @@ msgstr ""
 "Det här alternativet kan användas för att beskära bilden. Markera ett område "
 "för att aktivera åtgärden."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:498
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Vänd horisontellt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:502
+#: core/utilities/imageeditor/editor/editorwindow.cpp:506
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Vänd vertikalt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:512
+#: core/utilities/imageeditor/editor/editorwindow.cpp:516
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Rotera åt vänster"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:520
+#: core/utilities/imageeditor/editor/editorwindow.cpp:524
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Rotera åt höger"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:552
+#: core/utilities/imageeditor/editor/editorwindow.cpp:556
 #: core/utilities/import/main/importui.cpp:551
 #: core/utilities/import/main/importui.cpp:794
 #, kde-format
@@ -58002,37 +58002,37 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Föregående bild"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:586
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "Ingen markering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:585
+#: core/utilities/imageeditor/editor/editorwindow.cpp:589
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Information om nuvarande bildmarkering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:590
+#: core/utilities/imageeditor/editor/editorwindow.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Information om bildstorlek"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1105
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1109
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Sparar bild..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1106
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1110
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Vänta medan bilden sparas..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1127
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1131
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58042,13 +58042,13 @@ msgstr ""
 "Ska just skriva över filen \"%1\"\n"
 "Är du säker?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1132
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1136
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Varning"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1242
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58058,7 +58058,7 @@ msgstr ""
 "Bilden \"%1\" har ändrats.\n"
 "Vill du spara den?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1393
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1397
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58068,25 +58068,25 @@ msgstr ""
 "Bilden \"%1\" har ändrats.\n"
 "Alla ändringar kommer att gå förlorade."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1475
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "Ingen markering"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1491
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1495
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Läser in: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1519
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Kan inte läsa in \"%1\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1561
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1565
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58098,13 +58098,13 @@ msgstr ""
 "färgtransformering görs inte. Kontrollera inställningen av färghantering i "
 "Digikams inställningar."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1618
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1622
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Sparar: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1640
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1644
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58118,32 +58118,32 @@ msgstr ""
 "i\n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1773
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1777
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Kunde inte öppna tillfällig fil i katalogen \"%1\": %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1969
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1973
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Kunde inte bestämma format att spara resultatbilden med."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1976
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1980
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Kan inte spara: Filens sökväg \"%1\" är ogiltig."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2223
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2227
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Kan inte spara filen \"%1\" till den föreslagna versionens filnamn \"%2\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2298
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58153,7 +58153,7 @@ msgstr ""
 "Du har inte skrivrättigheter för filen med namnet \"%1\". Är du säker på att "
 "du vill skriva över den?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2321
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58162,25 +58162,25 @@ msgstr ""
 "En fil med namnet \"%1\" finns redan. Är du säker på att du vill skriva över "
 "den?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Misslyckades skriva över originalfilen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2423
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Färghanterad vy är aktiv."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2427
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2431
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Färghanterad vy är inaktiv."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2432
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2436
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58189,74 +58189,74 @@ msgid ""
 msgstr ""
 "Färghantering är inte inställd, alltså är inte färghanterad vy tillgänglig."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2468
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2472
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Indikering av underexponering är aktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2469
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2473
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Indikering av underexponering är inaktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2483
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2487
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Indikering av överexponering är aktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2484
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2488
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Indikering av överexponering är inaktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2579
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Transformera"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2593
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekorera"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Effekter"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Färger"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2610
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Förbättra"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2827
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2780
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2831
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Öppna med"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2788
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2792
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Annat..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2797
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2801
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
