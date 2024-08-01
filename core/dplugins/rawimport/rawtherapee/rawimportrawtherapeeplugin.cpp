@@ -125,7 +125,7 @@ QString RawTherapeeRawImportPlugin::getRawProgram() const
 
 #ifdef Q_OS_MACOS
 
-    hints << QLatin1String("/Applications/rawtherapee.app/Contents/MacOS");
+    hints << QLatin1String("/Applications/RawTherapee.app/Contents/MacOS");
 
 #endif
 
