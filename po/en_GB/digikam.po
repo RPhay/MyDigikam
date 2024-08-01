@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2024-06-29 11:34+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -26255,7 +26255,7 @@ msgstr "Web Service Settings"
 msgid "Export by Web Service"
 msgstr "Export by Web Service"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26264,12 +26264,12 @@ msgstr ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART Raw Conversion"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26278,7 +26278,7 @@ msgstr ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialogue to load RAW image with native import tool"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable Raw Conversion"
@@ -26467,7 +26467,7 @@ msgstr "Use Default"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr "Use general Raw decoding settings to load this image in editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26476,7 +26476,7 @@ msgstr ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialogue to load RAW image with native import tool"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee Raw Conversion"

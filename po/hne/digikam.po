@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -25725,26 +25725,26 @@ msgstr "कैप्चर उपकरन सेटिंग"
 msgid "Export by Web Service"
 msgstr "दरजा आयातित"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, fuzzy, kde-format
 msgid "ART Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, fuzzy, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "रंग जगह"
@@ -25927,14 +25927,14 @@ msgstr "डिफाल्ट उपयोग करव"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, fuzzy, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "रंग जगह"

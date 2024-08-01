@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2024-07-12 08:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -26841,7 +26841,7 @@ msgstr "Параметри вебслужби"
 msgid "Export by Web Service"
 msgstr "Експортувати за допомогою вебслужби"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26851,12 +26851,12 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Перетворення цифрових негативів ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26866,7 +26866,7 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Перетворення цифрових негативів DarkTable"
@@ -27061,7 +27061,7 @@ msgstr ""
 "Використати загальні параметри Raw для завантаження цього зображення до "
 "редактора."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27072,7 +27072,7 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Перетворення цифрових негативів RawTherapee"

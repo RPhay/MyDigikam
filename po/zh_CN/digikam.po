@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25582,7 +25582,7 @@ msgstr "在线服务设置"
 msgid "Export by Web Service"
 msgstr "导出到在线服务"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -25591,12 +25591,12 @@ msgstr ""
 "使用 ART 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART RAW 转换"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -25605,7 +25605,7 @@ msgstr ""
 "使用 DarkTable 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable RAW 转换"
@@ -25791,7 +25791,7 @@ msgstr "使用默认值"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr "使用常规 RAW 解码设置将此图像加载到图像编辑器。"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -25800,7 +25800,7 @@ msgstr ""
 "使用 RawTherapee 导入RAW 图像时出错。\n"
 "请关闭此对话框，并使用内建的导入工具加载 RAW 图像"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee RAW 转换"

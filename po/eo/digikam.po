@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2024-07-16 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -26342,7 +26342,7 @@ msgstr "Agordoj de Reteja Servo"
 msgid "Export by Web Service"
 msgstr "Eksporto per Reta Servo"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26351,12 +26351,12 @@ msgstr ""
 "Eraro por importi RAW-bildon per ART\n"
 "Fermu ĉi tiun dialogon por ŝargi RAW-bildon per denaska importilo"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART Kruda Konvertiĝo"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26365,7 +26365,7 @@ msgstr ""
 "Eraro por importi RAW-bildon per DarkTable\n"
 "Fermu ĉi tiun dialogon por ŝargi RAW-bildon per denaska importilo"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable Kruda Konvertiĝo"
@@ -26553,7 +26553,7 @@ msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 "Uzu ĝeneralajn Raw-malkodajn agordojn por ŝargi ĉi tiun bildon en redaktilo."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26562,7 +26562,7 @@ msgstr ""
 "Eraro por importi RAW-bildon per RawTherapee\n"
 "Fermu ĉi tiun dialogon por ŝargi RAW-bildon per denaska importa ilo"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee Kruda Konvertiĝo"

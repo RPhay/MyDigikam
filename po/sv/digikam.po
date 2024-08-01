@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 01:47+0000\n"
+"POT-Creation-Date: 2024-08-01 01:53+0000\n"
 "PO-Revision-Date: 2024-07-12 21:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -26435,7 +26435,7 @@ msgstr "Inställningar av webbtjänst"
 msgid "Export by Web Service"
 msgstr "Exportera enligt webbtjänst"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26444,12 +26444,12 @@ msgstr ""
 "Fel vid import av obehandlad bild med ART\n"
 "Stäng dialogrutan för att läsa in obehandlad bild med inbyggt importverktyg"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:240
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Konvertering av obehandlade bilder med ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:285
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26458,7 +26458,7 @@ msgstr ""
 "Fel vid import av obehandlad bild med DarkTable\n"
 "Stäng dialogrutan för att läsa in obehandlad bild med inbyggt importverktyg"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:300
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable konvertering av obehandlade bilder"
@@ -26653,7 +26653,7 @@ msgstr ""
 "Använd allmänna inställningar för avkodning av obehandlad bild för att läsa "
 "in bilden i editorn."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:224
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26662,7 +26662,7 @@ msgstr ""
 "Fel vid import av obehandlad bild med RawTherapee\n"
 "Stäng dialogrutan för att läsa in obehandlad bild med inbyggt importverktyg"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:239
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee konvertering av obehandlade bilder"
