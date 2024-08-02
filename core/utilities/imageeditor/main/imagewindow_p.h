@@ -263,7 +263,6 @@ public:
     DatabaseVersionManager       versionManager;
 
     QList<FaceTagsIface>         facesList;
-    QSize                        faceImageSize;
 };
 
 } // namespace Digikam

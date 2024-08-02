@@ -116,6 +116,8 @@ public:
     int     origHeight()                                                                            const;
     int     bytesDepth()                                                                            const;
 
+    QSize   loadedSize()                                                                            const;
+
     /**
      * Image transforms
      */

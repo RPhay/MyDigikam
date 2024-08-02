@@ -281,6 +281,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
         d->origHeight = d->image.height();
         d->width      = d->origWidth;
         d->height     = d->origHeight;
+        d->loadedSize = d->image.size();
         d->image.setAttribute(QLatin1String("originalSize"), d->image.size());
     }
     else
@@ -610,6 +611,11 @@ bool EditorCore::isReadOnly() const
     {
         return d->image.isReadOnly();
     }
+}
+
+QSize EditorCore::loadedSize() const
+{
+    return d->loadedSize;
 }
 
 void EditorCore::setSelectedArea(const QRect& rect)

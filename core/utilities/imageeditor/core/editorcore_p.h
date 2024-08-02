@@ -99,6 +99,8 @@ public:
     int                        selW                     = 0;
     int                        selH                     = 0;
 
+    QSize                      loadedSize;
+
     double                     zoom                     = 1.0;
 
     QWidget*                   displayingWidget         = nullptr;

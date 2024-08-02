@@ -658,6 +658,10 @@ void ImageWindow::saveAsIsComplete()
         derivedFilePaths << m_savingContext.destinationURL.toLocalFile();
     }
 
+    // Save new face tags to the image
+
+    saveFaceTagsToImage(d->currentItemInfo);
+
     // Will ensure files are scanned, and then copy attributes in a thread
 
     FileActionMngr::instance()->copyAttributes(sourceInfo, derivedFilePaths);
@@ -665,10 +669,6 @@ void ImageWindow::saveAsIsComplete()
     // The model updates asynchronously, so we need to force addition of the main entry
 
     d->ensureModelContains(d->currentItemInfo);
-
-    // Save new face tags to the image
-
-    saveFaceTagsToImage(d->currentItemInfo);
 
     // set origin of EditorCore: "As if" the last saved image was loaded directly
 
@@ -709,8 +709,7 @@ void ImageWindow::prepareImageToSave()
     if (!d->currentItemInfo.isNull())
     {
         FaceTagsEditor editor;
-        d->faceImageSize = d->currentItemInfo.dimensions();
-        d->facesList     = editor.databaseFaces(d->currentItemInfo.id());
+        d->facesList = editor.databaseFaces(d->currentItemInfo.id());
 
         // Ensure there is a UUID for the source image in the database,
         // even if not in the source image's metadata
@@ -737,7 +736,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
         Q_FOREACH (const FaceTagsIface& dface, d->facesList)
         {
             QRect faceRect = dface.region().toRect();
-            QSize tempSize = d->faceImageSize;
+            QSize tempSize = m_canvas->interface()->loadedSize();
 
             // Start transform each face rect
 
