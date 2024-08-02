@@ -19,7 +19,6 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QMetaType>
-#include <QVariantList>
 
 // Local includes
 
@@ -39,7 +38,6 @@ public:
 
     DbEngineSqlQuery& operator=(const DbEngineSqlQuery& other);
 
-    void addBindValueList(const QVariantList& values);
     bool prepare(const QString& query);
     QString lastQuery()                                 const;
 

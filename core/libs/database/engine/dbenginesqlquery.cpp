@@ -35,14 +35,6 @@ DbEngineSqlQuery& DbEngineSqlQuery::operator=(const DbEngineSqlQuery& other)
     return *this;
 }
 
-void DbEngineSqlQuery::addBindValueList(const QVariantList& values)
-{
-    Q_FOREACH (const QVariant& val, values)
-    {
-        QSqlQuery::addBindValue(val);
-    }
-}
-
 bool DbEngineSqlQuery::prepare(const QString& query)
 {
     bool result = QSqlQuery::prepare(query);
