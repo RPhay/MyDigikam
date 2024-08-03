@@ -795,12 +795,6 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 
             editor.addManually(face);
         }
-
-        MetadataHub hub;
-        hub.load(info);
-
-        ScanController::FileMetadataWrite writeScope(info);
-        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
     }
 
     m_transformQue.clear();

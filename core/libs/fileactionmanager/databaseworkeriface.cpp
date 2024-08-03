@@ -373,6 +373,8 @@ void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& 
 {
     if (infos.size() == 1)
     {
+        QList<ItemInfo> destInfos;
+
         Q_FOREACH (const QString& path, derivedPaths)
         {
             if (state() == WorkerObject::Deactivating)
@@ -382,9 +384,19 @@ void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& 
 
             ItemInfo dest = ScanController::instance()->scannedInfo(path);
             CollectionScanner::copyFileProperties(infos.first(), dest);
+            destInfos << dest;
         }
 
         infos.dbProcessedOne();
+
+        FileActionItemInfoList writeInfos = FileActionItemInfoList::create(destInfos);
+
+        writeInfos.schedulingForWrite(writeInfos.size(), i18n("Writing metadata to files"), d->fileProgressCreator());
+
+        for (ItemInfoTaskSplitter splitter(writeInfos) ; splitter.hasNext() ; )
+        {
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_ALL);
+        }
     }
 
     infos.dbFinished();
