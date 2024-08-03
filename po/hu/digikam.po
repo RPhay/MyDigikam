@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 01:53+0000\n"
+"POT-Creation-Date: 2024-08-03 01:49+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -995,9 +995,9 @@ msgstr ""
 "képeket áthelyezi. </p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1152
-#: core/utilities/imageeditor/main/imagewindow.cpp:1184
+#: core/utilities/imageeditor/main/imagewindow.cpp:1126
+#: core/utilities/imageeditor/main/imagewindow.cpp:1151
+#: core/utilities/imageeditor/main/imagewindow.cpp:1183
 #, kde-format
 msgid "Album \"%1\""
 msgstr "„%1” album"
@@ -57916,21 +57916,21 @@ msgstr "Ismeretlen"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpixel)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:954
 #, fuzzy, kde-format
 #| msgid "Rebuild Thumbnails In Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Előnézeti képek újragenerálása a jelenlegi albumban"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1228
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -57938,7 +57938,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "A fájl nem érhető el"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

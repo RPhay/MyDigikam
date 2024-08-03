@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 01:53+0000\n"
+"POT-Creation-Date: 2024-08-03 01:49+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1066,9 +1066,9 @@ msgid ""
 msgstr "<p>ਡਿਜਿਕੈਮ ਲਾਇਬਰੇਰੀ ਵਿੱਚੋਂ ਟਿਕਾਣਾ ਐਲਬਮ ਚੁਣੋ, ਜਿਸ ਵਿੱਚ ਚੁਣੇ ਚਿੱਤਰਾਂ ਨੂੰ ਭੇਜਣਾ ਹੈ।</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1152
-#: core/utilities/imageeditor/main/imagewindow.cpp:1184
+#: core/utilities/imageeditor/main/imagewindow.cpp:1126
+#: core/utilities/imageeditor/main/imagewindow.cpp:1151
+#: core/utilities/imageeditor/main/imagewindow.cpp:1183
 #, kde-format
 msgid "Album \"%1\""
 msgstr "ਐਲਬਮ \"%1\""
@@ -59114,14 +59114,14 @@ msgstr "ਅਣਜਾਣ"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:954
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "ਮੌਜੂਦਾ ਐਲਬਮ ਵਿੱਚ ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59130,7 +59130,7 @@ msgstr ""
 "ਮੌਜੂਦਾ ਐਲਬਮ 'ਚ ਵੇਖਾਉਣ ਲਈ ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ ਹੈ।\n"
 "ਚਿੱਤਰ ਐਡੀਟਰ ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕੇਗਾ।"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1228
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -59138,7 +59138,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "ਫਾਇਲ ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

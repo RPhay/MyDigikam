@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 01:53+0000\n"
+"POT-Creation-Date: 2024-08-03 01:49+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1094,9 +1094,9 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1152
-#: core/utilities/imageeditor/main/imagewindow.cpp:1184
+#: core/utilities/imageeditor/main/imagewindow.cpp:1126
+#: core/utilities/imageeditor/main/imagewindow.cpp:1151
+#: core/utilities/imageeditor/main/imagewindow.cpp:1183
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Albam \"%1\""
@@ -60481,28 +60481,28 @@ msgstr "Anaithnid"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3Mpct)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:954
 #, fuzzy, kde-format
 #| msgid "Rebuild Thumbnails In Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Atóg na Mionsamhlacha san Albam Reatha"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1228
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Níl ar Fáil"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

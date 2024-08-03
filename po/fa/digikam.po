@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 01:53+0000\n"
+"POT-Creation-Date: 2024-08-03 01:49+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -1370,9 +1370,9 @@ msgstr ""
 "برگزینید.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1152
-#: core/utilities/imageeditor/main/imagewindow.cpp:1184
+#: core/utilities/imageeditor/main/imagewindow.cpp:1126
+#: core/utilities/imageeditor/main/imagewindow.cpp:1151
+#: core/utilities/imageeditor/main/imagewindow.cpp:1183
 #, kde-format
 msgid "Album \"%1\""
 msgstr "آلبوم »%1«"
@@ -57835,14 +57835,14 @@ msgstr "ناشناخته"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:954
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "تصویری در آلبوم جاری وجود ندارد"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -57851,13 +57851,13 @@ msgstr ""
 "برای نمایش در آلبوم جاری هیچ تصویری وجود ندارد.\n"
 "ویرایشگر تصویر بسته می‌شود."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1228
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "هیچ profile موجود نیست..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

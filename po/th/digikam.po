@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 01:53+0000\n"
+"POT-Creation-Date: 2024-08-03 01:49+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1020,9 +1020,9 @@ msgstr ""
 "<p>โปรดเลือกอัลบั้มปลายทางจากคลังภาพของ 'ดิจิแคม' เพื่อย้ายภาพต่าง ๆ ที่เลือกไปเก็บไว้</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1152
-#: core/utilities/imageeditor/main/imagewindow.cpp:1184
+#: core/utilities/imageeditor/main/imagewindow.cpp:1126
+#: core/utilities/imageeditor/main/imagewindow.cpp:1151
+#: core/utilities/imageeditor/main/imagewindow.cpp:1183
 #, kde-format
 msgid "Album \"%1\""
 msgstr "อัลบั้ม \"%1\""
@@ -59842,14 +59842,14 @@ msgstr "ไม่ทราบ"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 x %2 (%3 ล้านพิกเซล)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:954
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "ยังไม่มีภาพใด ๆ ในอัลบั้มปัจจุบัน"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:956
+#: core/utilities/imageeditor/main/imagewindow.cpp:955
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59858,13 +59858,13 @@ msgstr ""
 "ไม่มีภาพที่แสดงอยู่ในอัลบั้มปัจจุบัน\n"
 "เครื่องมือแก้ไขภาพจะถูกปิด"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1228
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "ไม่มีโพรไฟล์ใด ๆ ให้เลือกใช้งาน"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1230
+#: core/utilities/imageeditor/main/imagewindow.cpp:1229
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
