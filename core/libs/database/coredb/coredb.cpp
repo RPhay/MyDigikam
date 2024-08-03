@@ -1731,14 +1731,18 @@ void CoreDB::addItemInformation(qlonglong imageID, const QVariantList& infos,
 
     if ((fields & DatabaseFields::CreationDate))
     {
-        int index          = fieldNames.indexOf(QLatin1String("creationDate"));
+        // We have the imageID added to the list, therefore index + 1
+
+        int index          = fieldNames.indexOf(QLatin1String("creationDate")) + 1;
         QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
 
     if ((fields & DatabaseFields::DigitizationDate))
     {
-        int index          = fieldNames.indexOf(QLatin1String("digitizationDate"));
+        // We have the imageID added to the list, therefore index + 1
+
+        int index          = fieldNames.indexOf(QLatin1String("digitizationDate")) + 1;
         QDateTime dateTime = asDateTimeLocal(boundValues.at(index).toDateTime());
         boundValues[index] = QVariant(dateTime);
     }
