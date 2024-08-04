@@ -166,9 +166,9 @@ void SetupDatabase::upgradeUniqueHashes()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18nc("@info",
-                                            "The process of updating the file hashes takes a few minutes.\n"
+                                            "The process of updating the file hashes takes a few minutes or hours.\n"
                                             "Please ensure that any important collections on removable media are connected.\n"
-                                            "After the upgrade you cannot use your database with a digiKam version prior to 2.0.\n"
+                                            "After the upgrade you cannot use your database with a digiKam version prior to 8.5.0.\n"
                                             "Do you want to begin the update?"),
                                             QMessageBox::Yes | QMessageBox::No);
 
@@ -190,7 +190,7 @@ void SetupDatabase::createUpdateBox()
                                         "The old algorithm, though, still works quite well, so it is recommended to "
                                         "carry out this upgrade, but not required.\n"
                                         "After the upgrade you cannot use your database with a digiKam version "
-                                        "prior to 2.0."));
+                                        "prior to 8.5.0."));
 
     QPushButton* const infoHash     = new QPushButton;
     infoHash->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));

@@ -57,7 +57,7 @@ int CoreDbSchemaUpdater::filterSettingsVersion()
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
 {
-    return 2;
+    return 3;
 }
 
 bool CoreDbSchemaUpdater::isUniqueHashUpToDate()
