@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 01:49+0000\n"
+"POT-Creation-Date: 2024-08-04 01:49+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -971,9 +971,9 @@ msgid ""
 msgstr "<p>請選擇要移動資料夾到 digiKam 相簿櫃之目的相簿。</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1126
-#: core/utilities/imageeditor/main/imagewindow.cpp:1151
-#: core/utilities/imageeditor/main/imagewindow.cpp:1183
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
 msgstr "相簿 \"%1\""
@@ -34124,6 +34124,7 @@ msgstr ""
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
+#: core/libs/fileactionmanager/databaseworkeriface.cpp:394
 #, kde-format
 msgid "Writing metadata to files"
 msgstr "將中繼資料寫入檔案中"
@@ -57789,13 +57790,13 @@ msgstr "不明"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2（%3 百萬畫素）"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:954
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "目前相簿中沒有影像"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -57804,13 +57805,13 @@ msgstr ""
 "目前相簿中沒有可顯示的影像。\n"
 "影像編輯器將關閉。"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1228
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "檔案無法使用"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

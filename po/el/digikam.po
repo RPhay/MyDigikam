@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 01:49+0000\n"
+"POT-Creation-Date: 2024-08-04 01:49+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1018,9 +1018,9 @@ msgstr ""
 "μετακίνηση των επιλεγμένων εικόνων σε αυτό.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1126
-#: core/utilities/imageeditor/main/imagewindow.cpp:1151
-#: core/utilities/imageeditor/main/imagewindow.cpp:1183
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Λεύκωμα \"%1\""
@@ -36597,6 +36597,7 @@ msgstr ""
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
+#: core/libs/fileactionmanager/databaseworkeriface.cpp:394
 #, kde-format
 msgid "Writing metadata to files"
 msgstr "Εγγραφή μεταδεδομένων σε αρχεία"
@@ -62646,14 +62647,14 @@ msgstr "Άγνωστο"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:954
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Χωρίς εικόνα στο τρέχον λεύκωμα"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -62662,7 +62663,7 @@ msgstr ""
 "Δεν υπάρχει καμία εικόνα για εμφάνιση στο τρέχον λεύκωμα.\n"
 "Ο επεξεργαστής εικόνας θα κλείσει."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1228
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -62670,7 +62671,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Το αρχείο δεν είναι διαθέσιμο"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

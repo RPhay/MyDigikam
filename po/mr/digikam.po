@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 01:49+0000\n"
+"POT-Creation-Date: 2024-08-04 01:49+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -1030,9 +1030,9 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1126
-#: core/utilities/imageeditor/main/imagewindow.cpp:1151
-#: core/utilities/imageeditor/main/imagewindow.cpp:1183
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, fuzzy, kde-format
 msgid "Album \"%1\""
 msgstr "अल्बम"
@@ -33107,6 +33107,7 @@ msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
+#: core/libs/fileactionmanager/databaseworkeriface.cpp:394
 #, kde-format
 msgid "Writing metadata to files"
 msgstr ""
@@ -57345,27 +57346,27 @@ msgstr "अपरिचीत"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:954
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1228
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "उपलब्ध नाही"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

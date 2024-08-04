@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 01:49+0000\n"
+"POT-Creation-Date: 2024-08-04 01:49+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1072,9 +1072,9 @@ msgstr ""
 "p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1126
-#: core/utilities/imageeditor/main/imagewindow.cpp:1151
-#: core/utilities/imageeditor/main/imagewindow.cpp:1183
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
@@ -36732,6 +36732,7 @@ msgstr ""
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
+#: core/libs/fileactionmanager/databaseworkeriface.cpp:394
 #, kde-format
 msgid "Writing metadata to files"
 msgstr "Metaandmete kirjutamine failidesse"
@@ -62832,14 +62833,14 @@ msgstr "Tundmatu"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:954
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Aktiivses albumis pole pilte"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -62848,7 +62849,7 @@ msgstr ""
 "Aktiivses albumis pole ühtki pilti näidata.\n"
 "Pildiredaktor pannakse kinni."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1228
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -62856,7 +62857,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Fail pole kättesaadav"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

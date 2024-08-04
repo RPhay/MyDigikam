@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-03 01:49+0000\n"
+"POT-Creation-Date: 2024-08-04 01:49+0000\n"
 "PO-Revision-Date: 2024-07-16 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -978,9 +978,9 @@ msgstr ""
 "elektitajn bildojn enen.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1126
-#: core/utilities/imageeditor/main/imagewindow.cpp:1151
-#: core/utilities/imageeditor/main/imagewindow.cpp:1183
+#: core/utilities/imageeditor/main/imagewindow.cpp:1120
+#: core/utilities/imageeditor/main/imagewindow.cpp:1145
+#: core/utilities/imageeditor/main/imagewindow.cpp:1177
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Albumo \"%1\""
@@ -34376,6 +34376,7 @@ msgstr ""
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:194
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:244
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:360
+#: core/libs/fileactionmanager/databaseworkeriface.cpp:394
 #, kde-format
 msgid "Writing metadata to files"
 msgstr "Skribante metadatenojn al dosieroj"
@@ -58144,13 +58145,13 @@ msgstr "Nekonata"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:954
+#: core/utilities/imageeditor/main/imagewindow.cpp:948
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Neniu Bildo en Nuna Albumo"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:955
+#: core/utilities/imageeditor/main/imagewindow.cpp:949
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -58159,13 +58160,13 @@ msgstr ""
 "Ne estas bildo por montri en la nuna albumo.\n"
 "La bildredaktilo estos fermita."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1228
+#: core/utilities/imageeditor/main/imagewindow.cpp:1222
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Dosiero Ne Disponebla"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1229
+#: core/utilities/imageeditor/main/imagewindow.cpp:1223
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
