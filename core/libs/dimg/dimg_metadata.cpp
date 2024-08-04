@@ -605,24 +605,22 @@ QByteArray DImg::createUniqueHashV3(const QString& filePath)
     const qint64 firstSize = 100 * 1024;         // 100 kB
     const qint64 nextSize  = 25  * 1024;         //  25 kB
     const qint64 fsize     = qMin(file.size(), firstSize);
-    const qint64 bsize     = file.size() - fsize;
 
-    const qint64 block     = (bsize < nextSize) ? bsize
-                                                : nextSize;
-    const qint64 step      = qMax(bsize - block, (qint64)5) / 5;
+    const qint64 bsize     = file.size() - fsize;
+    const qint64 block     = qMin(bsize, nextSize);
+    const qint64 step      = (bsize - block) / 5 + 1;
 
     if (fsize)
     {
         QScopedArrayPointer<char> databuf(new char[fsize]);
         qint64 read;
 
-        for (int i = 0 ; i < 6 ; ++i)
+        for (int sp = 0 ; sp < 6 ; ++sp)
         {
-            qint64 rsize = (i == 0) ? fsize : block;
-            qint64 rstep = (i == 5) ? file.size() - rsize
-                                    : step * i + firstSize;
+            qint64 rsize = !sp ? fsize : block;
+            qint64 rstep = !sp ? 0 : step * sp + fsize;
 
-            file.seek(qMin((i == 0) ? 0 : rstep, file.size() - rsize));
+            file.seek(qMin(rstep, file.size() - rsize));
 
             if ((read = file.read(databuf.data(), rsize)) > 0)
             {
