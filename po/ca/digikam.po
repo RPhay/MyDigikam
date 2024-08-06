@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-05 01:45+0000\n"
-"PO-Revision-Date: 2024-07-12 08:32+0200\n"
+"PO-Revision-Date: 2024-08-05 12:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -66811,15 +66811,7 @@ msgstr ""
 "Personalitza el comportament de les altres parts del digiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -66829,11 +66821,12 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"El procés d'actualitzar els resums dels fitxers triga alguns minuts.\n"
+"El procés d'actualitzar els resums dels fitxers triga alguns minuts o "
+"hores.\n"
 "Comproveu que estan connectades les col·leccions importants en suports "
 "extraïbles.\n"
 "Després de l'actualització no podreu usar la base de dades amb una versió "
-"del digiKam anterior a la 2.0.\n"
+"del digiKam anterior a la 8.5.0.\n"
 "Voleu començar l'actualització?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
@@ -66849,15 +66842,7 @@ msgid "Update File Hashes"
 msgstr "Actualitza els resums dels fitxers"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66872,7 +66857,7 @@ msgstr ""
 "crear el resum. L'algorisme antic encara funciona força bé, però es recomana "
 "que porteu a terme aquesta actualització, tot i que no es requereix.\n"
 "Després de l'actualització no podreu fer servir la base de dades amb una "
-"versió del digiKam anterior a la 2.0."
+"versió del digiKam anterior a la 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format

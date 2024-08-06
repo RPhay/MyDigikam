@@ -64118,15 +64118,7 @@ msgid ""
 msgstr "其他设置"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -64136,10 +64128,6 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"更新文件的哈希值需要耗时数分钟。 请确保所有包含重要相册集合的可移动存储设备已"
-"经连接。\n"
-"升级完成后您的数据库将无法在 2.0 版之前的 digiKam 中使用。\n"
-"您想要开始更新吗？"
 
 #: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
@@ -64154,15 +64142,7 @@ msgid "Update File Hashes"
 msgstr "更新文件哈希值"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -64172,9 +64152,6 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 8.5.0."
 msgstr ""
-"文件的哈希值可用于识别相同文件和显示缩略图。新版 digiKam 改良了哈希值算法，但"
-"旧版算法依然能堪使用。我们推荐您进行升级，但这并非强制要求。\n"
-"升级完成后您的数据库将无法在 2.0 版之前的 digiKam 中使用。"
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
