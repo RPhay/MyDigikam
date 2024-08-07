@@ -44,14 +44,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-05 01:45+0000\n"
-"PO-Revision-Date: 2024-07-12 21:09+0200\n"
+"PO-Revision-Date: 2024-08-06 07:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -66090,15 +66090,7 @@ msgstr ""
 "Anpassa beteendet hos andra delar av Digikam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -66108,10 +66100,11 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"Processen för att uppdatera filernas kontrollsummor tar några minuter.\n"
+"Processen för att uppdatera filernas kontrollsummor tar några minuter eller "
+"timmar.\n"
 "Kontrollera att viktiga samlingar på flyttbara media är anslutna.\n"
 "Efter uppgraderingen kan du inte använda din databas med en version av "
-"Digikam äldre än 2.0.\n"
+"Digikam äldre än 8.5.0.\n"
 "Vill du påbörja uppdateringen?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
@@ -66127,15 +66120,7 @@ msgid "Update File Hashes"
 msgstr "Uppdatera filernas kontrollsummor"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66150,7 +66135,7 @@ msgstr ""
 "kontrollsumman är nu i bruk. Den gamla algoritmen fungerar dock fortfarande "
 "bra, så uppgraderingen är bara rekommenderad, inte obligatorisk.\n"
 "Efter uppgraderingen kan du inte använda databasen med en version av Digikam "
-"äldre än 2.0."
+"äldre än 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format

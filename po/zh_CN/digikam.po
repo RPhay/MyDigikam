@@ -64128,6 +64128,10 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
+"更新文件的哈希值需要耗时数分钟到数小时不等。\n"
+"请确保所有包含重要相册集合的可移动存储设备已经连接。\n"
+"升级完成后您的数据库将无法在 8.5.0 版之前的 digiKam 中使用。\n"
+"您想要开始更新吗？"
 
 #: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
@@ -64152,6 +64156,10 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 8.5.0."
 msgstr ""
+"文件的哈希值可用于识别相同文件和显示缩略图。新版 digiKam 改良了哈希值算法，而"
+"旧版算法仍然足以应付使用。因此我们推荐您进行升级到新版算法，但这不作为一个强"
+"制性的要求。\n"
+"升级完成后，您的数据库将无法在 8.5.0 版之前的 digiKam 中使用。"
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
