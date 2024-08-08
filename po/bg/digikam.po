@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-05 01:45+0000\n"
-"PO-Revision-Date: 2024-07-15 08:59+0200\n"
+"PO-Revision-Date: 2024-08-07 08:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -66783,15 +66783,7 @@ msgstr ""
 "Персонализиране на поведението на други функции на digiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -66801,11 +66793,12 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"Процесът на актуализиране на хешовете на файловете отнема няколко минути.\n"
+"Процесът на актуализиране на хешовете на файловете отнема няколко минути или "
+"часа.\n"
 "Моля, уверете се, че всички важни колекции на сменяеми носители са "
 "свързани.\n"
 "След обновяването не можете да използвате базата данни с версия на digiKam "
-"преди 2.0.\n"
+"преди 8.5.0.\n"
 "Искате ли да започнете обновяването?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
@@ -66821,15 +66814,7 @@ msgid "Update File Hashes"
 msgstr "Обновяване на файловите хешове"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -66844,7 +66829,7 @@ msgstr ""
 "създаване на хеш. Старият алгоритъм обаче все още работи доста добре, така "
 "че е препоръчително да се извърши това обновяване, но не е задължително.\n"
 "След обновяването не можете да използвате базата данни с версия на digiKam "
-"преди 2.0."
+"преди 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
