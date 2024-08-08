@@ -274,7 +274,8 @@ void DImgChildItem::updatePos()
     }
 
     QSizeF imageSize = parentItem()->boundingRect().size();
-    QGraphicsObject::setPos(imageSize.width() * d->relativePos.x(), imageSize.height() * d->relativePos.y());
+    QGraphicsObject::setPos(imageSize.width()  * d->relativePos.x(),
+                            imageSize.height() * d->relativePos.y());
 
     Q_EMIT positionChanged();
     Q_EMIT geometryChanged();
