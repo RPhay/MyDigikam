@@ -101,7 +101,7 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
 {
     Q_D(GraphicsDImgItem);
 
-    dd->drawRect      = option->exposedRect.intersected(boundingRect()).toAlignedRect();
+    dd->drawRect         = option->exposedRect.intersected(boundingRect()).toAlignedRect();
     QRect   pixSourceRect;
     QPixmap pix;
     QSize   completeSize = boundingRect().size().toSize();

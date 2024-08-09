@@ -35,8 +35,8 @@ BUGFIXES:
 023 ==> 490912 - digiKam 8.4 can't find exiftool on Windows.
 024 ==> 491007 - When Undo is scrolled over the undo choices do not appear.
 025 ==> 488662 - Incorrect Thumbnails showing on scanned Tiff files.
-026 ==> 
-027 ==> 
+026 ==> 491499 - ExifTool shipped with 8.4.0 is invalid.
+027 ==> 490866 - digiKam 8.4.0 ignores KDE font settings and scale factor.
 028 ==> 
 029 ==> 
 030 ==> 

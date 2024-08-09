@@ -14,6 +14,10 @@
 
 #include "imagepreviewitem.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QStyleOptionGraphicsItem>
@@ -49,6 +53,7 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
     QRect   pixSourceRect;
     QPixmap pix;
     QSize   completeSize = boundingRect().size().toSize();
+    qreal   dpr          = widget->devicePixelRatio();
 
     /*
      * For high resolution ("retina") displays, Mac OS X / Qt
@@ -70,23 +75,27 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
      * pixmap.
      */
 
-    qreal dpr             = widget->devicePixelRatio();
-
-    QRect  scaledDrawRect = QRectF(dpr * drawRect.x(),
-                                   dpr * drawRect.y(),
-                                   dpr * drawRect.width(),
-                                   dpr * drawRect.height()).toRect();
+    QRect scaledDrawRect(
+                         floor(dpr * drawRect.x()),
+                         floor(dpr * drawRect.y()),
+                         floor(dpr * drawRect.width()),
+                         floor(dpr * drawRect.height())
+                        );
 
     // scale "as if" scaling to whole image, but clip output to our exposed region
 
-    QSize scaledCompleteSize = QSizeF(dpr * completeSize.width(),
-                                      dpr * completeSize.height()).toSize();
-    DImg scaledImage         = d->image.smoothScaleClipped(scaledCompleteSize.width(),
-                                                           scaledCompleteSize.height(),
-                                                           scaledDrawRect.x(),
-                                                           scaledDrawRect.y(),
-                                                           scaledDrawRect.width(),
-                                                           scaledDrawRect.height());
+    QSize scaledCompleteSize(
+                             floor(dpr * completeSize.width()),
+                             floor(dpr * completeSize.height())
+                            );
+    DImg scaledImage = d->image.smoothScaleClipped(
+                                                   scaledCompleteSize.width(),
+                                                   scaledCompleteSize.height(),
+                                                   scaledDrawRect.x(),
+                                                   scaledDrawRect.y(),
+                                                   scaledDrawRect.width(),
+                                                   scaledDrawRect.height()
+                                                  );
 
     if (d->cachedPixmaps.find(scaledDrawRect, &pix, &pixSourceRect))
     {
@@ -130,7 +139,6 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
         }
 
         d->cachedPixmaps.insert(scaledDrawRect, pix);
-
         painter->drawPixmap(drawRect, pix);
     }
 

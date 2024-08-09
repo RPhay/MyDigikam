@@ -167,8 +167,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #endif
 
-    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::RoundPreferFloor);
-
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 
     QApplication app(argc, argv);

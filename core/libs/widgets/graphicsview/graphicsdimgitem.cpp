@@ -16,6 +16,10 @@
 #include "graphicsdimgitem.h"
 #include "dimgitems_p.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QStyleOptionGraphicsItem>
@@ -213,6 +217,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
     QRect   pixSourceRect;
     QPixmap pix;
     QSize   completeSize = boundingRect().size().toSize();
+    qreal   dpr          = widget->devicePixelRatio();
 
     /* For high resolution ("retina") displays, Mac OS X / Qt
      * report only half of the physical resolution in terms of
@@ -233,12 +238,12 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
      * pixmap.
      */
 
-    qreal dpr             = widget->devicePixelRatio();
-
-    QRect  scaledDrawRect = QRectF(dpr * drawRect.x(),
-                                   dpr * drawRect.y(),
-                                   dpr * drawRect.width(),
-                                   dpr * drawRect.height()).toRect();
+    QRect scaledDrawRect(
+                         floor(dpr * drawRect.x()),
+                         floor(dpr * drawRect.y()),
+                         floor(dpr * drawRect.width()),
+                         floor(dpr * drawRect.height())
+                        );
 
     if (d->cachedPixmaps.find(scaledDrawRect, &pix, &pixSourceRect))
     {
@@ -255,15 +260,21 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
     {
         // scale "as if" scaling to whole image, but clip output to our exposed region
 
-        QSize scaledCompleteSize = QSizeF(dpr * completeSize.width(),
-                                          dpr * completeSize.height()).toSize();
-        DImg scaledImage         = d->image.smoothScaleClipped(scaledCompleteSize.width(),
-                                                               scaledCompleteSize.height(),
-                                                               scaledDrawRect.x(),
-                                                               scaledDrawRect.y(),
-                                                               scaledDrawRect.width(),
-                                                               scaledDrawRect.height());
-        pix                      = scaledImage.convertToPixmap();
+        QSize scaledCompleteSize(
+                                 floor(dpr * completeSize.width()),
+                                 floor(dpr * completeSize.height())
+                                );
+        DImg scaledImage = d->image.smoothScaleClipped(
+                                                       scaledCompleteSize.width(),
+                                                       scaledCompleteSize.height(),
+                                                       scaledDrawRect.x(),
+                                                       scaledDrawRect.y(),
+                                                       scaledDrawRect.width(),
+                                                       scaledDrawRect.height()
+                                                      );
+
+        pix              = scaledImage.convertToPixmap();
+
         d->cachedPixmaps.insert(scaledDrawRect, pix);
         painter->drawPixmap(drawRect, pix);
     }
