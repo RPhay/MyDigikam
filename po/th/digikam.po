@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-05 01:45+0000\n"
+"POT-Creation-Date: 2024-08-10 01:53+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2794,7 +2794,7 @@ msgstr "&ช่วยเหลือ"
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/main.cpp:205 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2804,47 +2804,47 @@ msgstr "แถบเครื่องมือหลัก"
 msgid "digiKam"
 msgstr "ดิจิแคม"
 
-#: core/app/main/main.cpp:214 core/showfoto/main/main.cpp:200
+#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: core/app/main/main.cpp:215 core/showfoto/main/main.cpp:201
+#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:221
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "เปิดกล่องกล้องที่ <path>"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:224
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "เปิดกล่องกล้องสำหรับอุปกรณ์พร้อมด้วยค่า Solid UDI <udi>"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "ตรวจจับอุปกรณ์กล้องที่เชื่อมต่อผ่าน gphoto2 และเปิดอัตโนมัติ"
 
-#: core/app/main/main.cpp:231
+#: core/app/main/main.cpp:229
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:232
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:261
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2854,7 +2854,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "ทั้งนี้ยังไม่พบว่ามีการติดตั้งมอดูลสำหรับใช้งานฐานข้อมูลใด ๆ บนเครื่องของคุณ"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:270
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2864,7 +2864,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "มอดูลสำหรับใช้งานฐานข้อมูลต่าง ๆ ที่ถูกติดตั้งไว้แล้วคือ:"
 
-#: core/app/main/main.cpp:316
+#: core/app/main/main.cpp:314
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -50341,13 +50341,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "โฟลเดอร์: "
 
-#: core/showfoto/main/main.cpp:191
+#: core/showfoto/main/main.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:209
+#: core/showfoto/main/main.cpp:207
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-05 01:45+0000\n"
+"POT-Creation-Date: 2024-08-10 01:53+0000\n"
 "PO-Revision-Date: 2024-07-05 15:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2611,7 +2611,7 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:205 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2621,14 +2621,14 @@ msgstr "主工具列"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:214 core/showfoto/main/main.cpp:200
+#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Funda Wang, Wei-Lun Chao, Dongjun Wu, Franklin Weng, pan93412, Kisaragi Hiu"
 
-#: core/app/main/main.cpp:215 core/showfoto/main/main.cpp:201
+#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2636,33 +2636,33 @@ msgstr ""
 "fundawang@linux.net.cn, william.chao@ossii.com.tw, ziyawu@gmail.com, "
 "franklin@goodhorse.idv.tw, pan93412@gmail.com, mail@kisaragi-hiu.com"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:221
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "在 \"path\" 開啟相機對話框"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:224
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "為 Solid UDI 是 \"udi\" 的裝置開啟相機對話框"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自動偵測並開啟已連線的 gphoto2 相機"
 
-#: core/app/main/main.cpp:231
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "用在目錄 \"dir\" 中找到的 SQLite 資料庫檔案啟動 digikam"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "用設定檔案 \"config\" 啟動 digikam"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2672,7 +2672,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "您的電腦上沒有安裝資料庫外掛程式。"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2682,7 +2682,7 @@ msgstr ""
 "無法使用執行時的 Qt SQLite 或 MySQL 資料庫外掛程式。請安裝它。\n"
 "以下列出您的電腦上安裝的資料庫外掛程式。"
 
-#: core/app/main/main.cpp:316
+#: core/app/main/main.cpp:314
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -48736,13 +48736,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "資料夾"
 
-#: core/showfoto/main/main.cpp:191
+#: core/showfoto/main/main.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:209
+#: core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"

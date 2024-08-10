@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-05 01:45+0000\n"
+"POT-Creation-Date: 2024-08-10 01:53+0000\n"
 "PO-Revision-Date: 2024-08-06 00:52+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2697,7 +2697,7 @@ msgstr "&Ayuda"
 msgid "Main Toolbar"
 msgstr "Barra de herramientas principal"
 
-#: core/app/main/main.cpp:205 core/app/views/stack/welcomepageview.cpp:226
+#: core/app/main/main.cpp:203 core/app/views/stack/welcomepageview.cpp:226
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
@@ -2707,47 +2707,47 @@ msgstr "Barra de herramientas principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:214 core/showfoto/main/main.cpp:200
+#: core/app/main/main.cpp:212 core/showfoto/main/main.cpp:198
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Eloy Cuadra,Pablo Pita Leira,Aitor Morant"
 
-#: core/app/main/main.cpp:215 core/showfoto/main/main.cpp:201
+#: core/app/main/main.cpp:213 core/showfoto/main/main.cpp:199
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net,pablo.pita@gmail.com,fromhell091@gmail.com"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:221
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Abrir diálogo de cámara en «ruta»"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:224
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 "Abrir el diálogo de la cámara para el dispositivo con el UDI de Solid «udi»"
 
-#: core/app/main/main.cpp:229
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detectar y abrir automáticamente cuando se conecte una cámara gphoto2"
 
-#: core/app/main/main.cpp:231
+#: core/app/main/main.cpp:229
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Iniciar digiKam con el archivo de base de datos de SQLite en la carpeta «dir»"
 
-#: core/app/main/main.cpp:234
+#: core/app/main/main.cpp:232
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Iniciar digiKam con el archivo de configuración «config»"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:261
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2758,7 +2758,7 @@ msgstr ""
 "MySQL no está disponible. Instálelo.\n"
 "No ha instalado ningún complemento de base de datos en su equipo."
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2770,7 +2770,7 @@ msgstr ""
 "Los complementos de bases de datos instalados en su equipo se muestran a "
 "continuación."
 
-#: core/app/main/main.cpp:316
+#: core/app/main/main.cpp:314
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49621,13 +49621,13 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Carpetas"
 
-#: core/showfoto/main/main.cpp:191
+#: core/showfoto/main/main.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:209
+#: core/showfoto/main/main.cpp:207
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
