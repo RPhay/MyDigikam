@@ -37,7 +37,7 @@ BUGFIXES:
 025 ==> 488662 - Incorrect Thumbnails showing on scanned Tiff files.
 026 ==> 491499 - ExifTool shipped with 8.4.0 is invalid.
 027 ==> 490866 - digiKam 8.4.0 ignores KDE font settings and scale factor.
-028 ==> 
+028 ==> 491551 - XMP field (from the right panel) empty for jxl files.
 029 ==> 
 030 ==> 
 031 ==> 
