@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-10 01:53+0000\n"
-"PO-Revision-Date: 2024-08-07 21:40+0200\n"
+"PO-Revision-Date: 2024-08-10 12:17+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3574,7 +3574,7 @@ msgid ""
 "Documentation: <a href=\"https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Documentación: <a href=\"https://docs.digikam.org/en/index.html\">Rescribir "
+"Documentación: <a href=\"https://docs.digikam.org/en/index.html\">Reescribir "
 "o manual</a> de DocBook á infraestrutura Sphinx con reStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:132
@@ -3691,7 +3691,7 @@ msgid ""
 "where your files are stored, and are identical to the folders on your hard "
 "disk."
 msgstr ""
-"Nestes momentos está no modo da vista de álbum de digiKam. Os álbumos son "
+"Nestes momentos está no modo da vista de álbum de digiKam. Os álbums son "
 "lugares nos que gardar os ficheiros, e equivalen aos cartafoles do disco "
 "duro."
 
@@ -4520,7 +4520,7 @@ msgstr "Normalizar"
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:265
 #, kde-format
 msgid "Equalize"
-msgstr "Ecualizar"
+msgstr "Nivelar"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:58
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:139
@@ -5030,7 +5030,7 @@ msgstr ""
 "un sistema de codificación de imaxes. Creouno o comité Joint Photographic "
 "Experts Group en 2000 coa intención de substituír o estándar JPEG orixinal "
 "(creado en 1992) baseado en transformacións de coseno discreto por un método "
-"de novo deseño baseado en onduleta.</para><para>Pode consultar os detalles "
+"de novo deseño baseado en ondiña.</para><para>Pode consultar os detalles "
 "deste formato <a href='https://en.wikipedia.org/wiki/JPEG_2000'>nesta "
 "páxina</a>.</para>"
 
@@ -5119,8 +5119,8 @@ msgid ""
 msgstr ""
 "<para>Esta ferramenta de xestor da fila do lote pode converter datos de "
 "imaxes ao formato PGF.</para><para>Progressive Graphics File é un formato de "
-"imaxe con mapa de bits e baseado en onduleta que usa compresión de datos con "
-"e sen perda.</para><para>Pode consultar os detalles deste formato <a "
+"imaxe con mapa de bits e baseado en ondiña que usa compresión de datos con e "
+"sen perda.</para><para>Pode consultar os detalles deste formato <a "
 "href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>nesta páxina</"
 "a>.</para>"
 
@@ -5816,7 +5816,7 @@ msgid ""
 "matrix radius that determines how much to blur the image."
 msgstr ""
 "Unha suavidade de 0 non ten efecto ningún, 1 e superiores determinan o raio "
-"da matriz de borrón gausiano que estabelece cando desenfocar a imaxe."
+"da matriz de borrón gaussiano que estabelece cando desenfocar a imaxe."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:42
 #, kde-format
@@ -5949,7 +5949,7 @@ msgstr "Redución de ruído"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
-msgstr "Unha ferramenta para retirar o ruído das fotografías usando onduleta"
+msgstr "Unha ferramenta para retirar o ruído das fotografías usando ondiña."
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
 #, kde-kuit-format
@@ -7990,10 +7990,10 @@ msgid ""
 "gives garbage. It is a very powerful operation, which can either work "
 "miracles on an image or destroy it.</p>"
 msgstr ""
-"<b>Ecualizar</b>:<p>Esta opción axusta o brillo das cores da imaxe de tal "
+"<b>Nivelar</b>:<p>Esta opción axusta o brillo das cores da imaxe de tal "
 "maneira que o histograma da canle de valor resulte o máis chan posíbel, é "
 "dicir, que cada posíbel valor de brillo apareza máis ou menos o mesmo número "
-"de píxeles que o resto de valores. Ás veces Ecualizar funciona "
+"de píxeles que o resto de valores. Ás veces Nivelar funciona "
 "marabillosamente para mellorar os contrastes nunha imaxe. Outras veces xera "
 "lavaduras. É unha operación moi poderosa que pode ou facer milagres ou "
 "destruír unha imaxe.</p>"
@@ -8264,8 +8264,8 @@ msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
 "Standard values are 1.8 or 2.2."
 msgstr ""
-"Os escaneos crus lineais dos negativos fotográficos requiren a aplicación "
-"dunha curva de gamma. Os valores estándar son 1,8 ou 2,2."
+"Os escaneamentos crus lineais dos negativos fotográficos requiren a "
+"aplicación dunha curva de gamma. Os valores estándar son 1,8 ou 2,2."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:642
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:353
@@ -8628,13 +8628,13 @@ msgstr "Aplicar unha textura…"
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
 #, kde-format
 msgid "Vignetting Correction"
-msgstr "Corrección do viñeteado"
+msgstr "Corrección do viñetado"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Vignetting Correction"
-msgstr "Corrección do viñeteado"
+msgstr "Corrección do viñetado"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:55
 #, kde-format
@@ -8652,12 +8652,12 @@ msgstr "Esta ferramenta de editor de imaxes pode corrixir viñetas nunha imaxe."
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
-msgstr "Corrección de viñeteado…"
+msgstr "Corrección de viñetado…"
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
 msgid "Gaussian Blur"
-msgstr "Desenfoque gausiano"
+msgstr "Desenfoque gaussiano"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:40
 #, kde-format
@@ -9157,14 +9157,14 @@ msgstr "Focalizar"
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:276
 #, kde-format
 msgid "Unsharp Mask"
-msgstr "Máscara de desfocalización"
+msgstr "Máscara de desenfoque"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:285
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:117
 #, kde-format
 msgid "Refocus"
-msgstr "Refocalizar"
+msgstr "Enfocar de novo"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:40
 #, kde-format
@@ -9724,21 +9724,20 @@ msgstr ""
 "proxecta a fotografía arredor dun cilindro horizontal.</p><p><b>Cilindro "
 "vert.</b>: proxecta a fotografía arredor dun cilindro vertical.</"
 "p><p><b>Cilindro H/V</b>: proxecta a fotografía arredor de dous cilindros, "
-"un vertical e o outro horizontal.</p><p><b>Caricatura</b>: distorsiona a "
+"un vertical e o outro horizontal.</p><p><b>Caricatura</b>: distorce a "
 "fotografía cun efecto de «Ollo de peixe» inverso.</p><p><b>Varios cantos</"
 "b>: divide a fotografía como un padrón de varios cantos.</p><p><b>Ondas "
-"horizontais</b>: distorsiona a fotografía con ondas horizontais.</"
-"p><p><b>Ondas verticais</b>: distorsiona a fotografía con ondas verticais.</"
-"p><p><b>Ondas en bloque 1</b>: divide a imaxe en celas e fai que teña un "
-"aspecto como se fose visto a través de bloques de vidros.</p><p><b>Ondas en "
-"bloque 2</b>: como Ondas en bloque 1 pero con outra versión da distorsión "
-"dos bloques de vidro.</p><p><b>Ondas circulares 1</b>: distorsiona a "
-"fotografía con ondas circulares.</p><p><b>Ondas circulares 2</b>: unha "
-"variación do efecto de Ondas circulares.</p><p><b>Coordenadas polares</b>: "
-"converte a fotografía de coordenadas polares a rectangulares.</"
-"p><p><b>Coordenadas non polares</b>: o inverso do efecto de Coordenadas "
-"polares.</p><p><b>Teselado</b>: divide a fotografía en bloques cadrados e "
-"móveos aleatoriamente dentro da imaxe.</p>"
+"horizontais</b>: distorce a fotografía con ondas horizontais.</p><p><b>Ondas "
+"verticais</b>: distorce a fotografía con ondas verticais.</p><p><b>Ondas en "
+"bloque 1</b>: divide a imaxe en celas e fai que teña un aspecto como se fose "
+"visto a través de bloques de vidros.</p><p><b>Ondas en bloque 2</b>: como "
+"Ondas en bloque 1 pero con outra versión da distorsión dos bloques de vidro."
+"</p><p><b>Ondas circulares 1</b>: distorce a fotografía con ondas circulares."
+"</p><p><b>Ondas circulares 2</b>: unha variación do efecto de Ondas "
+"circulares.</p><p><b>Coordenadas polares</b>: converte a fotografía de "
+"coordenadas polares a rectangulares.</p><p><b>Coordenadas non polares</b>: o "
+"inverso do efecto de Coordenadas polares.</p><p><b>Teselado</b>: divide a "
+"fotografía en bloques cadrados e móveos aleatoriamente dentro da imaxe.</p>"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:139
 #, kde-format
@@ -10219,11 +10218,11 @@ msgid ""
 "coordinate between each two successive points, elevated to the power of 1.5, "
 "and summed up for the whole seam."
 msgstr ""
-"Use este valor para dar un sesgo negativo ás liñas que non sexan rectas. "
+"Use este valor para dar un nesgo negativo ás liñas que non sexan rectas. "
 "Pode ser útil para evitar distorsións nalgunhas situacións ou para evitar "
 "artefactos derivados de saltar píxeles (é mellor usar valores baixos nestes "
 "casos). Estes parámetros aplícanse a toda a capa escollida se non se usa "
-"unha máscara de rixidez. Nota: o sesgo é proporcional á diferenza na "
+"unha máscara de rixidez. Nota: o nesgo é proporcional á diferenza na "
 "coordenada transversal entre cada dous puntos sucesivos, elevada a 1,5 e "
 "sumada para toda a liña."
 
@@ -11280,7 +11279,7 @@ msgstr ""
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:93
 #, kde-format
 msgid "Anti-Aliasing"
-msgstr "Antialiasing"
+msgstr "Suavizado"
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:136
 #, kde-format
@@ -11288,8 +11287,8 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
 "To smooth the target image, it will be blurred a little."
 msgstr ""
-"Active esta opción para procesar un filtro de antialiasing (suavizado) na "
-"imaxe inclinada. Cando a suavice, a imaxe quedará lixeiramente esvaída."
+"Active esta opción para procesar un filtro de suavizado na imaxe inclinada. "
+"Cando a suavice, a imaxe quedará lixeiramente esvaída."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
 #: core/libs/dimg/filters/transform/shearfilter.cpp:83
@@ -12783,8 +12782,8 @@ msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
 "characters."
 msgstr ""
-"Insira o proprietario do copyright da imaxe. Este campo está limitado a "
-"caracteres ASCII."
+"Escriba a quen corresponden os dereitos de copia da imaxe. Este campo está "
+"limitado a caracteres ASCII."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
 #, kde-format
@@ -13146,7 +13145,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
 #, kde-format
 msgid "Exposure bias (APEX):"
-msgstr "Sesgo da exposición (APEX):"
+msgstr "Nesgo da exposición (APEX):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
 #, kde-format
@@ -13154,7 +13153,7 @@ msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
 "picture."
 msgstr ""
-"Indique aquí o valor do sesgo da exposición (en unidades APEX) usado pola "
+"Indique aquí o valor do nesgo da exposición (en unidades APEX) usado pola "
 "cámara para tomar a imaxe."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:196
@@ -14407,7 +14406,7 @@ msgstr "MPEG 2 capa de son 3, ISO/IEC"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
 #, kde-format
 msgid "Portable Document File [*.PDF] Adobe"
-msgstr "Ficheiro de documento portábel [*.PDF] de Adobe"
+msgstr "Ficheiro de documento portátil [*.PDF] de Adobe"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
 #, kde-format
@@ -16726,7 +16725,7 @@ msgid ""
 "low number trades off quality of results for faster execution time and lower "
 "memory usage."
 msgstr ""
-"Indique o número de niveis para a fusión piramidal. Equilibria cara "
+"Indique o número de niveis para a fusión piramidal. Equilibra cara "
 "características locais (número baixo) ou globais (número alto). Un número "
 "baixo compromete a calidade dos resultados en beneficio dun tempo de "
 "execución máis rápido e un uso da memoria menor."
@@ -16978,7 +16977,7 @@ msgstr "Procesando a vista previa das imaxes de «bracketing»…"
 #, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
-msgstr "Procesando a sañida das imaxes de «bracketing»…"
+msgstr "Procesando a saída das imaxes de «bracketing»…"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:575
 #, kde-format
@@ -18517,7 +18516,7 @@ msgstr "Tratar a imaxe como un único carácter."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
-msgstr "Texto esparexido. Atopa todo o texto posíbel sen unha orde concrerta."
+msgstr "Texto esparexido. Atopa todo o texto posíbel sen unha orde concreta."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:75
 #, kde-format
@@ -20827,7 +20826,7 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/Time-lapse_photography'>serie temporal</"
 "a> a partir de imaxes</p> <p>capturadas cunha cámara montada nun trípode e "
 "controlada cun <a href='https://en.wikipedia.org/wiki/"
-"Intervalometer#Photography'>intervalometro</a>.</p> <p></p> <p>Tamén pode "
+"Intervalometer#Photography'>intervalómetro</a>.</p> <p></p> <p>Tamén pode "
 "crear unha presentación en vídeo con efectos</p> <p>de transición e pistas "
 "de son para amosar nunha pantalla de televisión.</p></qt>"
 
@@ -21577,7 +21576,7 @@ msgstr "&Controis"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:63
 #, kde-format
 msgid "Enable mouse wheel to move between slides."
-msgstr "Activar a roda do rato para pasar as diapostivas."
+msgstr "Activar a roda do rato para pasar as diapositivas."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_enableMouseWheelCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:66
@@ -21613,7 +21612,7 @@ msgstr "Desactivar o &aparecer/esvaer"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:123
 #, kde-format
 msgid "Disable &cross-fade"
-msgstr "Desactivar o &crossfade"
+msgstr "Desa&ctivar a aparición e desaparición"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_enableKenBurnsSameSpeed)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:130
@@ -21875,7 +21874,7 @@ msgstr "Esvaer"
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
-msgstr "Aleteo"
+msgstr "Axitación"
 
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:535
 #, kde-format
@@ -22234,7 +22233,7 @@ msgstr "Amosar a lenda da imaxe de non ter título"
 #, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "Amosar a lenda da imaxe no fondo da pantalla de non exitiren títulos."
+msgstr "Amosar a lenda da imaxe no fondo da pantalla de non existiren títulos."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:144
 #, kde-format
@@ -22370,7 +22369,7 @@ msgstr ""
 "elemento:</td><td>Tecla <i>Abaixo</i></td></tr><tr><td></td><td>Tecla "
 "<i>AvPáx</i></td><tr><td></td><td>Tecla <i>Dereita</i></td><tr><td></"
 "td><td>Roda do rato cara abaixo</td><tr><td></td><td>Botón secundario</"
-"td><tr><td>Pausa ou inicio:</td><td><i>Barra espaciadora</i></td></"
+"td><tr><td>Pausa ou inicio:</td><td><i>Espazador</i></td></"
 "tr><tr><td>Configuración da presentación:</td><td>Tecla <i>F2</i></td></"
 "tr><tr><td>Agochar ou amosar as superposicións:</td><td>Tecla <i>F4</i></"
 "td></tr><tr><td>Saír:</td><td>Tecla <i>Esc</i><td></tr><tr><td colspan="
@@ -23419,7 +23418,7 @@ msgstr "A chamada a un método de XML-RPC é incorrecta"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:793
 #, kde-format
 msgid "The POST method is now required for all setters"
-msgstr "Agora requírese o método POST para todos os asignadores"
+msgstr "Agora requírese o método POST para todos os definidores."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:586
@@ -23712,7 +23711,7 @@ msgstr "Fallou o acceso / O token de autorización é incorrecto"
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:580
 #, kde-format
 msgid "The POST method is now required for all setters."
-msgstr "Agora requírese o método POST para todos os asignadores."
+msgstr "Agora requírese o método POST para todos os definidores."
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:591
 #, kde-format
@@ -23918,7 +23917,7 @@ msgstr "Quebrar as etiquetas"
 #, kde-format
 msgid "Export the leaf tag and all ancestors as single tags."
 msgstr ""
-"Exportar a etiqueta de folla e todos os ancestros como etiquetas simples."
+"Exportar a etiqueta de folla e todos os antecesores como etiquetas simples."
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:60
 #, kde-format
@@ -25250,7 +25249,7 @@ msgstr "O autor morreu hai máis de cen anos"
 msgctxt "@item"
 msgid ""
 "Photo of a two-dimensional work whose author died more than 100 years ago"
-msgstr "Foto dunha obra bidemensional cuxo autor morreu hai máis de 100 anos"
+msgstr "Foto dunha obra bidimensional cuxo autor morreu hai máis de 100 anos"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
 #, kde-format
@@ -25657,7 +25656,7 @@ msgstr "Non foi posíbel listar os álbums"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:686
 #, kde-format
 msgid "Photo '%1' already exists."
-msgstr "Xa existe a fonto «%1»."
+msgstr "Xa existe a foto «%1»."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:795
 #, kde-format
@@ -27073,8 +27072,8 @@ msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr ""
-"Non realizar ningunha acción agora. Gostaríame resolver o problema máis "
-"tarde usando o diálogo de configuración"
+"Non realizar ningunha acción agora. Gustaríame resolver o problema máis "
+"tarde usando o diálogo de configuración."
 
 #: core/libs/album/manager/albummanager_database.cpp:368
 #, kde-format
@@ -29315,7 +29314,7 @@ msgid ""
 msgstr ""
 "A base de datos de miniaturas é onde digiKam almacena\n"
 "miniaturas de imaxes como imaxes comprimidas mediante\n"
-"transformación de onduleta. Esta base de datos pode chegar a\n"
+"transformación de ondiña. Esta base de datos pode chegar a\n"
 "ocupar moito espazo, especialmente se a súa colección de\n"
 "imaxes é enorme.\n"
 "Escolla un cartafol local para usar unha base de datos de SQLite."
@@ -29338,7 +29337,7 @@ msgid ""
 "This one can use quickly a lots of space, especially\n"
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
-"A base de datos de caras é onde digiKam almacena historiogramas\n"
+"A base de datos de caras é onde digiKam almacena histogramas\n"
 "de imaxes para o proceso de recoñecemento facial.\n"
 "Esta base de datos pode chegar a ocupar moito espazo,\n"
 "especialmente se ten moitas imaxes con caras de persoas\n"
@@ -29469,10 +29468,11 @@ msgstr ""
 "ficheiros das bases de datos en soporte físico rápido (como <a href="
 "\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a>) con espazo "
 "libre dabondo, especialmente para a base de datos de miniaturas, aínda que "
-"estean comprimida mediante transformacións wavelet usando o formato de imaxe "
-"<a href=\"https://en.wikipedia.org/wiki/Progressive_Graphics_File\">PGF</a>."
-"</p> <p>O administrador debe crear as bases de datos previamente no servidor "
-"remoto. Para máis información, consulte o separador de <b>Requisitos</b>.</p>"
+"estean comprimida mediante transformacións de ondiña usando o formato de "
+"imaxe <a href=\"https://en.wikipedia.org/wiki/Progressive_Graphics_File"
+"\">PGF</a>.</p> <p>O administrador debe crear as bases de datos previamente "
+"no servidor remoto. Para máis información, consulte o separador de "
+"<b>Requisitos</b>.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:359
 #, kde-format
@@ -30343,7 +30343,7 @@ msgstr "Descoñecido"
 #: core/libs/dimg/filters/auto/equalizefilter.cpp:51
 #, kde-format
 msgid "Auto Equalize"
-msgstr "Ecualizar automaticamente"
+msgstr "Nivelar automaticamente"
 
 #: core/libs/dimg/filters/auto/normalizefilter.cpp:51
 #, kde-format
@@ -30565,7 +30565,7 @@ msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
 "</p>"
 msgstr ""
-"<b>Kodak TriX</b>:<p>Simula o filme branco e negro Kodak Tmax de 400 ISO.</p>"
+"<b>Kodak TriX</b>:<p>Simula o filme branco e negro Kodak TriX de 400 ISO.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
 #, kde-format
@@ -30718,7 +30718,7 @@ msgstr ""
 "branco e negro usando un filtro amarelo-verde. Os filtros amarelo-verde son "
 "moi efectivos nos retratos en exteriores porque o vermello aparece escuro "
 "mentres que o verde aparece máis claro. É excelente para corrixir os tons da "
-"pel, resaltar as expresións faciais nos primeiros planos e enfatizar a "
+"pel, resaltar as expresións faciais nos primeiros planos e realzar a "
 "sensación de viveza. Este filtro é moi efectivo nos retratos en interiores "
 "cun luz de tungsteno.</p>"
 
@@ -30736,7 +30736,7 @@ msgid ""
 msgstr ""
 "<b>Branco e negro con filtro azul</b>:<p>Simula a exposición dun filme de "
 "branco e negro usando un filtro azul. Isto acentúa a brétema. Úsase nos "
-"efectos de transferencia de tintes e contraste</p>"
+"efectos de transferencia de tintas e contraste.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:259
 #, kde-format
@@ -30773,7 +30773,7 @@ msgid ""
 msgstr ""
 "<b>Branco e negro con ton sepia</b>:<p>Dá un realzado cálido e de medios "
 "tons á vez que engade un pouco de frío nas sombras, moi similar ao proceso "
-"de lixiviar unha foto e desenvolvela de novo nun tóner sepia.</p>"
+"de descorar unha foto e desenvolvela de novo nun tóner sepia.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:286
 #, kde-format
@@ -30968,7 +30968,7 @@ msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr ""
-"Reinicia os axustes de gañancia dos canais de cor a partir da canle "
+"Reinicia os axustes de ganancia dos canais de cor a partir da canle "
 "escollida."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:142
@@ -31016,26 +31016,26 @@ msgstr "Total: %1 (%)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
-msgstr "Escolla o ficheiro de gañancias do mesturador de Gimp a cargar"
+msgstr "Escolla o ficheiro de ganancias do mesturador de Gimp a cargar"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:596
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr ""
-"Non é posíbel cargar a configuración do ficheiro de gañancias do mesturador."
+"Non é posíbel cargar a configuración do ficheiro de ganancias do mesturador."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:606
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
-msgstr "Ficheiro de gañancias do mesturador de Gimp onde gardar"
+msgstr "Ficheiro de ganancias do mesturador de Gimp onde gardar"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:685
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
-msgstr "Non é posíbel gardar o ficheiro de texto de gañancias do mesturador."
+msgstr "Non é posíbel gardar o ficheiro de texto de ganancias do mesturador."
 
 #: core/libs/dimg/filters/bw/tonalityfilter.cpp:54
 #, kde-format
@@ -31057,7 +31057,7 @@ msgstr "Cian"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the cyan/red color adjustment of the image."
-msgstr "Escolla aquí o axuste das cores cian e vermello na imaxe."
+msgstr "Escolla aquí o axuste das cores ciano e vermello na imaxe."
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:75
 #, kde-format
@@ -31452,7 +31452,7 @@ msgstr "Tecido"
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Burlap"
-msgstr "Serapilleira"
+msgstr "Tea de saco"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:79
 #, kde-format
@@ -31985,7 +31985,7 @@ msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
-"A preservación dos detalles para definir o nivel de afiamento dos pequenos "
+"A preservación dos detalles para definir o nivel de afiadura dos pequenos "
 "detalles na imaxe de destino. Os valores máis altos deixan os detalles ben "
 "definidos."
 
@@ -32000,8 +32000,8 @@ msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
-"Modificador anisotrópico (direccional) dos detalles. Déixeo baixo para obter "
-"un ruído gausiano."
+"Modificador anisótropo (direccional) dos detalles. Déixeo baixo para obter "
+"un ruído gaussiano."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
@@ -32085,12 +32085,12 @@ msgstr "Defina aquí o paso de integración espacial."
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
-msgstr "Gausiano:"
+msgstr "Gaussiano:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
-msgstr "Defina aquí a precisión da función gausiana."
+msgstr "Defina aquí a precisión da función gaussiana."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
@@ -32223,7 +32223,7 @@ msgstr "Lineal"
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
-msgstr "Cadrático"
+msgstr "Cuadrático"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:82
 #, kde-format
@@ -32312,7 +32312,7 @@ msgstr "Escolla aquí o axuste da saturación da imaxe."
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
 msgid "Vibrance:"
-msgstr "Vibrancia:"
+msgstr "Intensidade:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
@@ -32320,7 +32320,7 @@ msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
-"Axuste aquí a vibrancia da imaxe. A vibrancia realiza unha saturación "
+"Axuste aquí a intensidade da imaxe. A intensidade realiza unha saturación "
 "selectiva das cores con menor saturación evitando os tons da pel."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:103
@@ -32402,7 +32402,7 @@ msgid ""
 "It is applied before the tonemapping process."
 msgstr ""
 "<b>Maximizar o contraste</b>: Isto aumenta o contraste da imaxe orixinal. "
-"Aplícase antes do proceso de mapeado de tons."
+"Aplícase antes do proceso de asociación de tons."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:139
 #, kde-format
@@ -32470,7 +32470,7 @@ msgid ""
 "original image and with the tonemapping function."
 msgstr ""
 "<b>Desenfoque</b>: A forza coa que se esvae a imaxe antes de a combinar coa "
-"imaxe orixinal coa función de mapeado de tons."
+"imaxe orixinal coa función de asociación de tons."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:299
 #, kde-format
@@ -32537,7 +32537,7 @@ msgstr "Ferramenta anti-viñetas"
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:82
 #, kde-format
 msgid "Add vignetting"
-msgstr "Engadir viñeteado"
+msgstr "Engadir viñetado"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:83
 #, kde-format
@@ -32545,7 +32545,7 @@ msgid ""
 "This option adds vignetting to the image instead of removing it. Use it for "
 "creative effects."
 msgstr ""
-"Esta opción engade viñeteado á imaxe no canto de retirala. Úsea para efectos "
+"Esta opción engade viñetado á imaxe no canto de retirala. Úsea para efectos "
 "creativos."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:92
@@ -32553,7 +32553,8 @@ msgstr ""
 msgid ""
 "You can see here a thumbnail preview of the anti-vignetting mask applied to "
 "the image."
-msgstr "Aquí amósase unha vista previa da máscara antiviñeta aplicada á imaxe."
+msgstr ""
+"Aquí amósase unha vista previa da máscara anti-viñeta aplicada á imaxe."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:97
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:168
@@ -32849,7 +32850,7 @@ msgid ""
 "natural vignetting can be canceled out with this option, whereas mechanical "
 "vignetting will not be cured."
 msgstr ""
-"O efecto de viñeteado refírese ao escurecemento da imaxe polos cantos. Este "
+"O efecto de viñetado refírese ao escurecemento da imaxe polos cantos. Este "
 "efecto óptico natural pode anularse mediante esta opción, mentres que se a "
 "orixe é mecánica non ten arranxo."
 
@@ -33093,7 +33094,7 @@ msgid ""
 "range from 0.0 (none) to 10.0. The threshold is the value below which "
 "everything is considered noise."
 msgstr ""
-"<b>Limiar</b>: Axusta o limiarpara quitar o ruída da imaxe nun intervalo de "
+"<b>Limiar</b>: Axusta o limiar para quitar o ruído da imaxe nun intervalo de "
 "0,0 (nada) a 10,0. O limiar é o valor por baixo do cal todo se considera "
 "ruído."
 
@@ -33218,7 +33219,7 @@ msgstr "Focalización simple"
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:113
 #, kde-format
 msgid "Unsharp mask"
-msgstr "Máscara de desfocalización"
+msgstr "Máscara de desenfoque"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:122
 #, kde-format
@@ -33245,7 +33246,7 @@ msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
 "much to blur the image."
 msgstr ""
-"O valor do raio é o raio da matriz do borrón gausiano usada para determinar "
+"O valor do raio é o raio da matriz do borrón gaussiano usada para determinar "
 "canto difundir a imaxe."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
@@ -33339,7 +33340,7 @@ msgstr ""
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:240
 #, kde-format
 msgid "Gaussian sharpness:"
-msgstr "Focalización gausiana:"
+msgstr "Focalización gaussiana:"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:245
 #, kde-format
@@ -33350,9 +33351,9 @@ msgid ""
 "values, you will probably also have to increase the correlation and/or noise "
 "filter parameters."
 msgstr ""
-"Esta é a focalización da convolución gausiana. Use este parámetro se o seu "
-"borrón é do tipo gausiano. Na maioría dos casos debe pór este parámetro a 0, "
-"porque causa artefactos molestos. Se usa valores non nulos probabelmente "
+"Esta é a focalización da convolución gaussiana. Use este parámetro se o seu "
+"borrón é do tipo gaussiano. Na maioría dos casos debe pór este parámetro a "
+"0, porque causa artefactos molestos. Se usa valores non nulos probabelmente "
 "tamén terá que aumentar os parámetros de correlación e/ou filtro de ruído."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:250
@@ -33369,13 +33370,13 @@ msgid ""
 msgstr ""
 "Este parámetro determina o tamaño da matriz de transformación. Aumentar o "
 "tamaño da matriz pode dar mellores resultados, especialmente se escolleu "
-"valores grandes para a focalización circular ou gausiana."
+"valores grandes para a focalización circular ou gaussiana."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:487
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr "Ficheiro de configuración da refocalización de fotografías a cargar"
+msgstr "Ficheiro de configuración do reenfoque de fotografías a cargar"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:505
 #, kde-format
@@ -33387,26 +33388,25 @@ msgstr ""
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
-"Non é posíbel cargar a configuración con este ficheiro de refocalizado de "
+"Non é posíbel cargar a configuración con este ficheiro de reenfoque de "
 "fotografías."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:536
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr "Ficheiro de configuración da Refocalización onde gardar"
+msgstr "Ficheiro de configuración da reenfoque onde gardar"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:566
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
-"Non é posíbel gardar a configuración no ficheiro de refocalizado de "
-"fotografías."
+"Non é posíbel gardar a configuración no ficheiro de reenfoque de fotografías."
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
 #, kde-format
 msgid "Unsharp Mask Tool"
-msgstr "Ferramenta de máscara de desfocalización"
+msgstr "Ferramenta de máscara de desenfoque"
 
 #: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
 #, kde-format
@@ -33447,8 +33447,8 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the rotated image. "
 "In order to smooth the target image, it will be blurred a little."
 msgstr ""
-"Active esta opción para aplicar o filtro de antialiasing na imaxe rotada. "
-"Para suavizar a imaxe obxectivo, desenfocarase un chisco."
+"Active esta opción para aplicar o filtro de suavizado na imaxe rotada. Para "
+"suavizar a imaxe obxectivo, desenfocarase un chisco."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:98
 #, kde-format
@@ -33507,7 +33507,7 @@ msgstr "Indique aquí a temperatura da cor do balance de brancos en Kelvin."
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Preset:"
-msgstr "Preconfiguración:"
+msgstr "Predefinición:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, kde-format
@@ -33671,13 +33671,13 @@ msgstr "temperatura do sol efectiva"
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
-msgstr "lámpada de xenón ou arco luminoso"
+msgstr "lámpada de xenon ou arco luminoso"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
-msgstr "luz de ceo anubado"
+msgstr "luz de ceo anubrado"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, kde-format
@@ -34651,11 +34651,11 @@ msgid ""
 "p><p><b>PPM</b>: output the processed image in PPM format. This generates "
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
-"<p>Configue aquí o formato de saída do ficheiro:</p><p><b>JPEG</b>: producir "
-"a imaxe procesada no formato JPEG. Este formato dá ficheiros de menor tamaño."
-"</p><p><b>Aviso: Debido ao algoritmo de compresión destrutivo, JPEG é un "
-"formato de calidade con perdas.</b></p><p><b>TIFF</b>: producir a imaxe "
-"procesada no formato TIFF. Isto xera imaxes máis grandes sen perder "
+"<p>Configure aquí o formato de saída do ficheiro:</p><p><b>JPEG</b>: "
+"producir a imaxe procesada no formato JPEG. Este formato dá ficheiros de "
+"menor tamaño.</p><p><b>Aviso: Debido ao algoritmo de compresión destrutivo, "
+"JPEG é un formato de calidade con perdas.</b></p><p><b>TIFF</b>: producir a "
+"imaxe procesada no formato TIFF. Isto xera imaxes máis grandes sen perder "
 "calidade. A imaxe está comprimida.</p><p><b>PNG</b>: producir a imaxe "
 "procesada no formato PNG. Isto xera ficheiros grandes sen perder calidade. A "
 "imaxe está comprimida.</p><p><b>PPM</b>: producir a imaxe procesada no "
@@ -34805,12 +34805,12 @@ msgstr "Non foi posíbel transformar estes ficheiros:"
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
-msgstr "Aplicar os cambios pendenres aos metadatos"
+msgstr "Aplicar os cambios pendentes aos metadatos"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:58
 #, kde-format
 msgid "Apply pending changes to metadata"
-msgstr "Aplicar os cambios pendenres aos metadatos"
+msgstr "Aplicar os cambios pendentes aos metadatos"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:67
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:127
@@ -35228,8 +35228,8 @@ msgid ""
 "Low quality images detected by blur, noise, and compression analysis will be "
 "assigned to Rejected label."
 msgstr ""
-"Ás imaxes de baixa calidade detectadas polas análises de desenfoque, ruído "
-"ecompresión ha asignárselles a etiqueta «Rexeitado»."
+"Ás imaxes de baixa calidade detectadas polas análises de desenfoque, ruído e "
+"compresión ha asignárselles a etiqueta «Rexeitado»."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
@@ -35244,8 +35244,8 @@ msgid ""
 "Medium quality images detected by blur, noise, and compression analysis will "
 "be assigned to Pending label."
 msgstr ""
-"Ás imaxes de calidade media detectadas polas análises de desenfoque, ruído "
-"ecompresión ha asignárselles a etiqueta «Pendente»."
+"Ás imaxes de calidade media detectadas polas análises de desenfoque, ruído e "
+"compresión ha asignárselles a etiqueta «Pendente»."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
@@ -35260,8 +35260,8 @@ msgid ""
 "High quality images detected by blur, noise, and compression analysis will "
 "be assigned to Accepted label."
 msgstr ""
-"Ás imaxes de alta calidade detectadas polas análises de desenfoque, ruído "
-"ecompresión ha asignárselles a etiqueta «Aceptada»."
+"Ás imaxes de alta calidade detectadas polas análises de desenfoque, ruído e "
+"compresión ha asignárselles a etiqueta «Aceptada»."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
@@ -35401,7 +35401,7 @@ msgstr "O peso asignado ao algoritmo da compresión."
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
-msgstr "Detectar infraexposición sobreexposición"
+msgstr "Detectar infraexposición e sobreexposición"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
@@ -35562,7 +35562,7 @@ msgstr "Invertida na horizontal"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
-msgstr "Rotada 180 graus"
+msgstr "Rotada 180 graos"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, kde-format
@@ -35720,7 +35720,7 @@ msgstr "Bashkir"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Byelorussian"
-msgstr "Bieloruso"
+msgstr "Bielorruso"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:343
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:491
@@ -35874,7 +35874,7 @@ msgstr "Finlandés"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr "Fixiano"
+msgstr "Fidxiano"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
@@ -36098,7 +36098,7 @@ msgstr "Kurdo"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kirghiz"
-msgstr "Quirguiz"
+msgstr "Kirguiz"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:397
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:545
@@ -36119,7 +36119,7 @@ msgstr "Lingala"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Laothian"
-msgstr "Iaosiano"
+msgstr "Laosiano"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:400
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:548
@@ -36288,7 +36288,7 @@ msgstr "Quechua"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Rhaeto-romance"
-msgstr "Retorromance"
+msgstr "Retorrománico"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:424
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:572
@@ -36400,7 +36400,7 @@ msgstr "Serbio"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Siswati"
-msgstr "Swazi"
+msgstr "Suazi"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:440
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:588
@@ -38481,11 +38481,10 @@ msgstr ""
 "dirección da interpolación de tal xeito que se maximice unha métrica de "
 "homoxeneidade, polo que xeralmente se minimizan os artefactos das cores.</"
 "item> <item><emphasis strong='true'>DCB</emphasis>: usa unha interpolación "
-"DCB do proxecto LinuxPhoto (linuxphoto.org).</item><item><emphasis "
-"strong='true'>DHT</emphasis>: Interpolación de DHT. Consulte https://www."
-"libraw.org/node/2306 para máis información.</item><item><emphasis "
-"strong='true'>AAHD</emphasis>: Interpolación de AHD modificada.</item></"
-"list></para>"
+"DCB do proxecto linuxphoto.org.</item><item><emphasis strong='true'>DHT</"
+"emphasis>: Interpolación de DHT. Consulte https://www.libraw.org/node/2306 "
+"para máis información.</item><item><emphasis strong='true'>AAHD</emphasis>: "
+"Interpolación de AHD modificada.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:297
 #, kde-format
@@ -38759,9 +38758,9 @@ msgid ""
 "accurately, without 'pink clouds' (and blue highlights under tungsten lamps)."
 "</para>"
 msgstr ""
-"<para>Se activa esta opción as imaxes en canles sobrevalorizados procésanse "
-"moito máis eficientemente, sen «nubeiros arrosados» (nin realces azuis baixo "
-"as lámpadas de tungsteno).</para>"
+"<para>Se activa esta opción as imaxes en canles esaxeradas procésanse moito "
+"máis eficientemente, sen «nubeiros rosa» (nin realces azuis baixo as "
+"lámpadas de tungsteno).</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:418
 #, kde-format
@@ -38873,7 +38872,7 @@ msgstr "Ningunha"
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "Wavelets"
-msgstr "Onduleta"
+msgstr "Ondiñas"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:508
 #, kde-format
@@ -38897,12 +38896,12 @@ msgstr ""
 "<title>Redución de ruído</title><para> Escolle o método de redución de ruído "
 "para aplicar durante a descodificación de RAW.</"
 "para><para><list><item><emphasis strong='true'>Ningunha</emphasis>: sen "
-"redución de ruído.</item><item><emphasis strong='true'>Onduleta</emphasis>: "
-"corrección de onduleta correction para borrar o ruído pero preservando o "
-"detalle real. Aplícase despois da interpolación.</item><item><emphasis "
-"strong='true'>FBDD</emphasis>: simular a redución de ruído antes por "
-"eliminación de mosaicos (Fake Before Demosaicing Denoising). Aplícase "
-"despois da interpolación.</item></list></para>"
+"redución de ruído.</item><item><emphasis strong='true'>Ondiña</emphasis>: "
+"corrección de ondiña para borrar o ruído pero preservando o detalle real. "
+"Aplícase despois da interpolación.</item><item><emphasis strong='true'>FBDD</"
+"emphasis>: simular a redución de ruído antes por eliminación de mosaicos "
+"(Fake Before Demosaicing Denoising). Aplícase despois da interpolación.</"
+"item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:535
 #, kde-format
@@ -40170,8 +40169,8 @@ msgstr ""
 "<p>Este campo debería conter a designación dos cargos dos autores. Os "
 "exemplos poderían incluír cargos como: fotógrafo de empresa, fotógrafo "
 "autónomo ou fotógrafo comercial independente. Dado que isto é un "
-"cualificador para o campo Autor, estoutro tamén debería preencherse.</"
-"p><p>Con IPTC, este campo só pode ter 32 caracteres.</p>"
+"cualificador para o campo Autor, estoutro tamén debería encherse previamente."
+"</p><p>Con IPTC, este campo só pode ter 32 caracteres.</p>"
 
 #: core/libs/template/templatepanel.cpp:117
 #, kde-format
@@ -40237,14 +40236,14 @@ msgstr ""
 "actuais donos dos dereitos de autor da fotografía. Polo xeral, isto será o "
 "fotógrafo, pero se a imaxe foi feita por un empregado ou un contratado, "
 "entón a axencia ou a empresa deben citarse. Use a forma axeitada para o seu "
-"país. USA: &copy; {data da primeira publicación} nome do proprietario dos "
-"dereitos, como en «&copy;2005 John Doe.» Lembre que pode usar a palabra "
-"«copyright» ou a abreviación «copr» no canto do símbolo &copy;. Nalgúns "
-"outros países só se recoñece o símbolo de copyright e non se acepta a "
-"abreviatura. Alén disto, o símbolo de copyright debe ser un círculo completo "
-"cun «c» dentro; usar algo como (c) onde os parénteses forman un círculo "
-"parcial non abonda. Para unha protección mundial adicional, recoméndase usar "
-"a frase «all rights reserved» despois da nota anterior. \n"
+"país. USA: &copy; {data da primeira publicación} nome de quen ten os "
+"dereitos de copia, como en «&copy;2005 John Doe.» Lembre que pode usar a "
+"palabra «copyright» ou a abreviación «copr» no canto do símbolo &copy;. "
+"Nalgúns outros países só se recoñece o símbolo de copyright e non se acepta "
+"a abreviatura. Alén disto, o símbolo de copyright debe ser un círculo "
+"completo cun «c» dentro; usar algo como (c) onde os parénteses forman un "
+"círculo parcial non abonda. Para unha protección mundial adicional, "
+"recoméndase usar a frase «all rights reserved» despois da nota anterior. \n"
 "En Europa debera usar: Copyright {Ano} {Dono dos dereitos de autor}, all "
 "rights reserved. \n"
 "No Xapón, para a máxima protección, deben aparecer os seguintes tres "
@@ -40365,7 +40364,7 @@ msgid ""
 "<p>This field should contain the sublocation of the city where the "
 "photograph was taken.</p>"
 msgstr ""
-"<p>Este campo debería conter a sublocación da cidade na que se tirou a "
+"<p>Este campo debería conter a sublocalización da cidade na que se tirou a "
 "fotografía.</p>"
 
 #: core/libs/template/templatepanel.cpp:240
@@ -40403,7 +40402,7 @@ msgstr ""
 #: core/libs/template/templatepanel.cpp:294
 #, kde-format
 msgid "Enter the country name of the lead author here."
-msgstr "Insira aquí o onome do país do autor principal."
+msgstr "Insira aquí o nome do país do autor principal."
 
 #: core/libs/template/templatepanel.cpp:296
 #, kde-format
@@ -41620,7 +41619,7 @@ msgstr "Amosar a lenda da imaxe de non ter título"
 msgctxt "@info"
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "Amosar a lenda da imaxe no fondo da pantalla de non exitiren títulos."
+msgstr "Amosar a lenda da imaxe no fondo da pantalla de non existiren títulos."
 
 #: core/libs/video/osd/frameosdwidget.cpp:85
 #, kde-format
@@ -42151,11 +42150,11 @@ msgid ""
 "color.</p></li></ul>"
 msgstr ""
 "<ul><li><p><b>Propósito perceptivo</b> fai que toda a gama da imaxe se "
-"comprima ou expanda para preencher a gama do dispositivo de destino, polo "
-"que se conserva o balance de gris, pero pode que non se conserva a "
-"exactitude colorimétrica.</p><p>Con outras palabras, se algunhas cores dunha "
-"imaxe quedan fóra da gama de cores que pode debuxar o dispositivo de saída, "
-"o propósito da imaxe fará que todas as cores da imaxe se axusten de maneira "
+"comprima ou expanda para encher a gama do dispositivo de destino, polo que "
+"se conserva o balance de gris, pero pode que non se conserva a exactitude "
+"colorimétrica.</p><p>Con outras palabras, se algunhas cores dunha imaxe "
+"quedan fóra da gama de cores que pode debuxar o dispositivo de saída, o "
+"propósito da imaxe fará que todas as cores da imaxe se axusten de maneira "
 "que cada cor da imaxe caia dentro da gama que pode debuxarse e que as "
 "relacións entre as cores se conserven na medida do posíbel.</p><p>Este "
 "propósito é axeitado maiormente para fotografías e imaxes, e é o "
@@ -42665,7 +42664,7 @@ msgid ""
 msgstr ""
 "Mentorización, migrar as ferramentas de servizos web a OAuth, facer melloras "
 "internos nas ferramentas de servizos web, e migrar o motor de recoñecemento "
-"de caras á rede neuronal de OpenCV."
+"de caras á rede neural de OpenCV."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:121
 #, kde-format
@@ -42770,8 +42769,8 @@ msgstr "Ahmed Fathi"
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
-"Ferramenta para exportar mediante UPnP e DLNA, e ferramenta de clonación "
-"«Sandación» para o editor de imaxes"
+"Ferramenta para exportar mediante UPnP e DLNA, e ferramenta de clonación de "
+"curación para o editor de imaxes"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
@@ -43020,7 +43019,7 @@ msgstr "Risto Saukonpaa"
 #: core/libs/widgets/mainview/daboutdata.cpp:340
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
-msgstr "Deseño, iconas, logotipo, cartaz, maqueta, probador beta."
+msgstr "Deseño, iconas, logotipo, cartel, maqueta, probador beta."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:344
 #, kde-format
@@ -43082,7 +43081,7 @@ msgstr "Oliver Doerr"
 #: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Beta tester"
-msgstr "Avaliador de versións beta."
+msgstr "Probas."
 
 #: core/libs/widgets/mainview/daboutdata.cpp:389
 #, kde-format
@@ -43330,7 +43329,7 @@ msgstr "Visor de EXIF"
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:220
 #, kde-format
 msgid "Makernotes viewer"
-msgstr "Visor de Makernote"
+msgstr "Visor de Makernotes"
 
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:224
 #, kde-format
@@ -45245,7 +45244,7 @@ msgstr "Fidxiano (Fidxi)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 msgctxt "@info: country code"
 msgid "Faeroese (Faero Islands)"
-msgstr "Feroés (Illas Feroes)"
+msgstr "Feroés (Illas Feroe)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:210
 msgctxt "@info: country code"
@@ -45400,7 +45399,7 @@ msgstr "Francés (Polinesia Francesa)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:240
 msgctxt "@info: country code"
 msgid "French (St. Pierre and Miquelon)"
-msgstr "Francés (San Pedro e Miguelón)"
+msgstr "Francés (Saint-Pierre-et-Miquelon)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:241
 msgctxt "@info: country code"
@@ -45470,7 +45469,7 @@ msgstr "Galego (Galicia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:254
 msgctxt "@info: country code"
 msgid "Gujarati (India)"
-msgstr "Guxaratí (India)"
+msgstr "Guxarati (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:255
 msgctxt "@info: country code"
@@ -45705,7 +45704,7 @@ msgstr "Macedonio (Macedonia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:301
 msgctxt "@info: country code"
 msgid "Malayalam (India)"
-msgstr "Malaialam (India)"
+msgstr "Malayalam (India)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:302
 msgctxt "@info: country code"
@@ -45835,7 +45834,7 @@ msgstr "Polaco (Polonia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:327
 msgctxt "@info: country code"
 msgid "Pashto (Afghanistan)"
-msgstr "Paxtún (Afganistán)"
+msgstr "Paxto (Afganistán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:328
 msgctxt "@info: country code"
@@ -46298,7 +46297,7 @@ msgstr "Bahamas"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bahrain"
-msgstr "Barein"
+msgstr "Bahrain"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:64
 #, kde-format
@@ -46610,7 +46609,7 @@ msgstr "Etiopía"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Faeroe Islands"
-msgstr "Illas Feroes"
+msgstr "Illas Feroe"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:116
 #, kde-format
@@ -46892,7 +46891,7 @@ msgstr "Kuwait"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kyrgyz Republic"
-msgstr "República Quirguiz"
+msgstr "Kirguizistán"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:163
 #, kde-format
@@ -47288,7 +47287,7 @@ msgstr "Santa Lucia"
 #, kde-format
 msgctxt "@info: country code"
 msgid "St. Pierre and Miquelon"
-msgstr "San Pedro e Miguelón"
+msgstr "Saint-Pierre-et-Miquelon"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:230
 #, kde-format
@@ -47420,7 +47419,7 @@ msgstr "Illas Svalbard e Jan Mayen"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swaziland"
-msgstr "Suazilandia"
+msgstr "Eswatini"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:252
 #, kde-format
@@ -48080,7 +48079,7 @@ msgstr "Grego"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Gujarati"
-msgstr "Guxaratí"
+msgstr "Guxarati"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:211
 #, kde-format
@@ -50986,7 +50985,7 @@ msgstr "Valor predeterminado…"
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:74
 #, kde-format
 msgid "Set a default value for empty strings"
-msgstr "Definir o valor predeterminado de WheelScrollLines"
+msgstr "Definir un valor predeterminado para as cadeas baleiras."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/fillmodifierdialogwidget.ui:19
@@ -51597,8 +51596,8 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-"Nome do directorio pai. Os caracteres \".\" adidicionais soben na xerarquía "
-"de directorios"
+"Nome do directorio pai. Os caracteres \".\" adicionais soben na xerarquía de "
+"directorios"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:40
 #, kde-format
@@ -52118,7 +52117,7 @@ msgstr "<b>Configurar onde gardar as bases de datos</b>"
 #: core/utilities/firstrun/metadatapage.cpp:51
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
-msgstr "<b>Configurar o almacenamento de metatados nos ficheiros</b>"
+msgstr "<b>Configurar o almacenamento de metadatos nos ficheiros</b>"
 
 #: core/utilities/firstrun/metadatapage.cpp:59
 #, kde-format
@@ -54199,7 +54198,7 @@ msgstr "Lugar de culto"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1119
 #, kde-format
 msgid "Bahai"
-msgstr "Fe bahá'í"
+msgstr "Bahá'í"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1122
 #, kde-format
@@ -54234,7 +54233,7 @@ msgstr "Xudía"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1140
 #, kde-format
 msgid "Shinto"
-msgstr "Xinto"
+msgstr "Xintoísta"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1143
 #, kde-format
@@ -54989,7 +54988,7 @@ msgstr "Un complemento para amosar a atmosfera arredor da Terra."
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:14
 #, kde-format
 msgid "Configure Compass Plugin"
-msgstr "Configurar o complemento Brúxula"
+msgstr "Configurar o complemento de compás"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassConfigWidget.ui:20
@@ -55777,12 +55776,12 @@ msgid ""
 msgstr ""
 "<p><b>Proxección gnomónica</b> (\"rectilínea\")</p> <p>Aplicacións: úsase "
 "para amosar fotografías panorámicas. Tamén se usa para navegación, e "
-"traballo de raio e seísmico.</p>"
+"traballo de raio e sísmico.</p>"
 
 #: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:78
 #, kde-format
 msgid "Lambert Azimuthal Equal-Area"
-msgstr "Equiárea acimutal de Lambert"
+msgstr "Acimutal equivalente de Lambert"
 
 #: core/utilities/geolocation/engine/projections/LambertAzimuthalProjection.cpp:83
 #, kde-format
@@ -55790,8 +55789,8 @@ msgid ""
 "<p><b>Lambert Azimuthal Equal-Area Projection</b></p><p>Applications: Used "
 "in structural geology to plot directional data.</p>"
 msgstr ""
-"<p><b>Proxección equiárea acimutal de Lambert</b></p> <p>Aplicacións: úsase "
-"en xeoloxía estrutural para debuxar datos direccionais.</p>"
+"<p><b>Proxección acimutal equivalente de Lambert</b></p> <p>Aplicacións: "
+"úsase en xeoloxía estrutural para debuxar datos direccionais.</p>"
 
 #: core/utilities/geolocation/engine/projections/MercatorProjection.cpp:56
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
@@ -55805,7 +55804,7 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
-"<p><b>Proxeción de Mercator</b></p> <p>Aplicacións: proxección estándar "
+"<p><b>Proxección de Mercator</b></p> <p>Aplicacións: proxección estándar "
 "popular para navegación.</p>"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
@@ -56482,7 +56481,7 @@ msgstr "Esférico"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
 #, kde-format
 msgid "Equirectangular"
-msgstr "Equirrectangular"
+msgstr "Cilíndrica equidistante"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
 #, kde-format
@@ -57668,7 +57667,7 @@ msgstr "Cores sen corrixir:"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:309
 #, kde-format
 msgid "Raw Colors:"
-msgstr "Cores cruas:"
+msgstr "Cores crúas:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:324
 #, kde-format
@@ -57753,7 +57752,7 @@ msgid ""
 "Please select the input color profile of the device (camera) used to create "
 "this image:"
 msgstr ""
-"Seleccione o perfil de cores de entrada do dispositivo (cámera) que se usou "
+"Seleccione o perfil de cores de entrada do dispositivo (cámara) que se usou "
 "para crear esta imaxe:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
@@ -57806,7 +57805,7 @@ msgstr "<b>Configurar a visualización das probas de resultado</b>"
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:92
 #, kde-format
 msgid "Profile of the output device to simulate:"
-msgstr "Permil do dispositivo de saída que quere simular:"
+msgstr "Perfil do dispositivo de saída que quere simular:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #: core/utilities/setup/setupicc.cpp:387
@@ -60045,9 +60044,9 @@ msgid ""
 msgstr ""
 "<p>Pódense usar estas expresións para personalizar o formato da data:</"
 "p><p><b>d</b>: O día como número sen cero precedéndoo (1 a 31)</p><p><b>dd</"
-"b>: O díacomo número cun cero precedéndoo (01 a 31)</p><p><b>ddd</b>: O nome "
-"do día localizado abreviado (p.ex. «Lun» a «Dom»)</p><p><b>dddd</b>: O nome "
-"do día localizado (p.ex. «Luns» a «Domingo».</p><p><b>M</b>: O mes como "
+"b>: O día como número cun cero precedéndoo (01 a 31)</p><p><b>ddd</b>: O "
+"nome do día localizado abreviado (p.ex. «Lun» a «Dom»)</p><p><b>dddd</b>: O "
+"nome do día localizado (p.ex. «Luns» a «Domingo».</p><p><b>M</b>: O mes como "
 "número sen cero precedéndoo 81 a 12)</p><p><b>MM</b>: O mes como número con "
 "cero precedéndoo (01 a 12)</p><p><b>MMM</b>: O nome do mes localizado "
 "abreviado (p.ex. «Xan» a «Dec»)</p><p><b>MMMM</b>: O nome do mes localizado "
@@ -60577,7 +60576,7 @@ msgstr "Mantemento"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:44
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
-msgstr "<qt><b>Escolla as operacións de mantemento para procesor</b></qt>"
+msgstr "<qt><b>Escolla as operacións de mantemento para procesar</b></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:50
 #, kde-format
@@ -64422,7 +64421,7 @@ msgid ""
 "turned on when one of the color components matches the condition."
 msgstr ""
 "Ao activar esta opción aparecen indicadores de subexposición e de "
-"sobrexposición só cando coincidan as cores branco puro e negro puro, dado "
+"sobreexposición só cando coincidan as cores branco puro e negro puro, dado "
 "que todas as compoñentes da cor coinciden ao mesmo tempo. De non ser así, os "
 "indicadores actívanse cando unha das compoñentes da cor coincida."
 
@@ -64958,8 +64957,8 @@ msgid ""
 msgstr ""
 "<p>Para crear novos espazos de nomes, debe indicar os seguintes parámetros:</"
 "p> <p><ul> <li>Nome do espazo de nomes con puntos.<br/>Por exemplo, «<i>Xmp."
-"digiKam.ListaDeEtiquetas</i>».</li> <li>Parámetro de separación, usado polas "
-"rutas de etiquetas.<br/>Por exemplo, «Cidade/parís» ou «Cidade|París».</li> "
+"digiKam.TagsList</i>».</li> <li>Parámetro de separación, usado polas rutas "
+"de etiquetas.<br/>Por exemplo, «Cidade/París» ou «Cidade|París».</li> "
 "<li>Indicar se escribir só a palabra clave ou a ruta completa.</li> </ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
@@ -64973,7 +64972,7 @@ msgid ""
 msgstr ""
 "<p>Para crear novos espazos de nomes de cualificacións, debe indicar os "
 "seguintes parámetros:</p> <p><ul> <li>Nome do espazo de nomes con puntos.<br/"
-">Por exemplo, «<i>Xmp.xmp.Cualificacion</i>».</li> <li>Asociacións de "
+">Por exemplo, «<i>Xmp.xmp.Rating</i>».</li> <li>Asociacións de "
 "cualificacións, se o espazo de nomes necesita valores distintos de 0-5.<br/"
 ">Por exemplo, Microsoft usa 0 1 25 50 75 99.</li> <li>Seleccione a opción de "
 "espazo de nomes correcta da lista.</li> </ul></p>"
@@ -65621,7 +65620,7 @@ msgid ""
 msgstr ""
 "Nalgúns formatos de ficheiro que aplican compresión con perdas pérdense "
 "datos cada vez que se rota o contido. Marque esta opción para permitir o "
-"roto con perdas. Se non se activa, estes fichieros rótanse exclusivamente "
+"roto con perdas. Se non se activa, estes ficheiros rótanse exclusivamente "
 "con bandeiras."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:81
@@ -66049,7 +66048,7 @@ msgstr "Detectar caras nas imaxes novas que se engadan"
 #, kde-format
 msgid "Remove obsolete core database objects (makes startup slower)"
 msgstr ""
-"Retirar os obxectos obsoletos da base de datos principal (ralentiza o inicio)"
+"Retirar os obxectos obsoletos da base de datos principal (lentifica o inicio)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
@@ -66548,7 +66547,7 @@ msgid ""
 "IEC61966-2.1</b></p>"
 msgstr ""
 "<p>Este é o espazo de cores ao que se converten todas as imaxes cando se "
-"abren (se escolle convertelas) e o permil que se incorpora ao gardalas. "
+"abren (se escolle convertelas) e o perfil que se incorpora ao gardalas. "
 "Unhas escollas boas e seguras son <b>Adobe RGB (1998)</b> e <b>sRGB "
 "IEC61966-2.1</b></p>"
 
@@ -67402,7 +67401,7 @@ msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
-"Nota: estas opcións requiren a opción «Usar os metatados do ficheiro» da "
+"Nota: estas opcións requiren a opción «Usar os metadatos do ficheiro» da "
 "páxina de configuración do comportamento da cámara."
 
 #: core/utilities/setup/setuptooltip.cpp:406
