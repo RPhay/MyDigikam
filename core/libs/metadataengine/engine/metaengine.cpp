@@ -116,7 +116,11 @@ bool MetaEngine::initializeExiv2()
 
 #endif // _XMP_SUPPORT_
 
-#if EXIV2_TEST_VERSION(0,27,4)
+#if EXIV2_TEST_VERSION(0,28,3) && defined EXV_ENABLE_BMFF
+
+    s_metaEngineSupportBmff = true;
+
+#elif EXIV2_TEST_VERSION(0,27,4) && defined EXV_ENABLE_BMFF
 
     // For Base Media File Format (aka CR3, HEIF, HEIC, and AVIF)
 
