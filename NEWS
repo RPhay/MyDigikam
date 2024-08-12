@@ -38,7 +38,7 @@ BUGFIXES:
 026 ==> 491499 - ExifTool shipped with 8.4.0 is invalid.
 027 ==> 490866 - digiKam 8.4.0 ignores KDE font settings and scale factor.
 028 ==> 491551 - XMP field (from the right panel) empty for jxl files.
-029 ==> 
+029 ==> 491599 - Scroll index resets to item 0 in Similarity list window on delete of any list deletion.
 030 ==> 
 031 ==> 
 032 ==> 

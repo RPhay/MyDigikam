@@ -143,6 +143,8 @@ void FindDuplicatesAlbum::slotThumbnailLoaded(const LoadingDescription& desc,
 void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                                      const QList<qlonglong>& deletedImages)
 {
+    FindDuplicatesAlbumItem* currentItem = nullptr;
+
     Q_FOREACH (QTreeWidgetItem* const selectedItem, selectedItems())
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(selectedItem);
@@ -150,7 +152,55 @@ void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbu
         if (item && sAlbumsToRebuild.contains(item->album()))
         {
             item->calculateInfos(deletedImages);
+
+            if (item->itemCount() == 1)
+            {
+                FindDuplicatesAlbumItem* beforeItem = nullptr;
+                QTreeWidgetItemIterator it(this);
+
+                while (*it)
+                {
+                    FindDuplicatesAlbumItem* const item2 = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+
+                    if      (item2 && (item2->refUrl() == item->refUrl()))
+                    {
+                        ++it;
+
+                        while (*it)
+                        {
+                            FindDuplicatesAlbumItem* const item3 = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+
+                            if (item3 && !item3->isHidden())
+                            {
+                                currentItem = item3;
+
+                                break;
+                            }
+
+                            ++it;
+                        }
+
+                        if (!currentItem)
+                        {
+                            currentItem = beforeItem;
+                        }
+
+                        break;
+                    }
+                    else if (item2 && !item2->isHidden())
+                    {
+                        beforeItem = item2;
+                    }
+
+                    ++it;
+                }
+            }
         }
+    }
+
+    if (currentItem)
+    {
+        setCurrentItem(currentItem);
     }
 }
 
