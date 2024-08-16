@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-10 01:53+0000\n"
-"PO-Revision-Date: 2024-07-13 11:14+0200\n"
+"PO-Revision-Date: 2024-08-15 22:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -696,12 +696,10 @@ msgid "Group Selected By Filename"
 msgstr "Taldekatu fitxategi-izenaren arabera hautatuak"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Group Selected By Time"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "Taldekatu denboraren arabera hautatuak"
+msgstr "Taldea timelapse / kliskatu jarrituaren arabera hautatu da"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -906,7 +904,7 @@ msgstr "Ez dago esportatzeko tresna erabilgarririk"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "Agindu-sorta ilara kudeatzailea"
+msgstr "Sorta-ilara kudeatzailea"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, kde-format
@@ -1852,7 +1850,7 @@ msgstr "Gehitu hautatutako elementuak argi-mahaiaren koadro txikien barrara."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
-msgstr "Agindu-sorta ilara kudeatzailea"
+msgstr "Sorta-ilara kudeatzailea"
 
 #: core/app/main/digikamapp_setup.cpp:416
 #, kde-format
@@ -3328,6 +3326,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Gehitu JPEG-XL; WEBP, eta AVIF bihurtzaileak sortakako ilara kudeatzailean."
 
 #: core/app/views/stack/welcomepageview.cpp:104
 #, kde-format
@@ -4391,7 +4390,7 @@ msgstr "LibOpenCV"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
-msgstr ""
+msgstr "Qt SQL gidariak"
 
 #: core/app/views/utils/componentsinfodlg.cpp:198
 #, kde-format
@@ -4424,10 +4423,9 @@ msgstr "Bideo deskodetzaileak"
 #: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:534 core/libs/dialogs/libsinfodlg.cpp:540
 #: core/libs/dialogs/libsinfodlg.cpp:615
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "no entry"
-msgstr "Herrialdea:"
+msgstr "sarrerarik ez"
 
 #: core/app/views/utils/componentsinfodlg.cpp:234
 #, kde-format
@@ -4513,17 +4511,14 @@ msgid "A tool to fix colors automatically"
 msgstr "Koloreak automatikoki finkatzeko tresna bat"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako koloreak "
-"automatikoki doitu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako koloreak automatikoki "
+"doitu ditzake.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:40
@@ -4540,17 +4535,14 @@ msgid "A tool to fix Brightness / Contrast / Gamma"
 msgstr "Distira / Kontrastea / Gamma doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
-#| "from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako distira / "
-"kontrastea / gamma doitu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako Distira / Kontrastea / "
+"Gamma doitu ditzake.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
 #, kde-format
@@ -4566,13 +4558,14 @@ msgid "A tool to convert to black and white"
 msgstr "Zuri-beltzera bihurtzeko tresna bat"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "A tool to convert to black and white."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"<para>Sorta-ilara kudeatzeko tresna honek irudiak zuri-beltzera bihur "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:40
@@ -4589,16 +4582,14 @@ msgid "A tool to mix color channel"
 msgstr "Koloreen kanalak nahasteko tresna bat"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can mix color channels from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako kolore-kanalak "
-"nahastu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako kolore-kanalak nahastu "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
@@ -4627,17 +4618,14 @@ msgid "A tool to adjust color balance"
 msgstr "Kolore-oreka doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust color balance from images.</"
 "para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako koloreak "
-"automatikoki doitu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako kolore-oreka doitu "
+"dezake.</para>"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:32
 #, kde-format
@@ -4663,13 +4651,14 @@ msgid "A tool to convert color depth to 8 bits"
 msgstr "Kolorearen sakonera 8 bitera bihurtzeko tresna bat"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "A tool to convert to black and white."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert image color depth to 8 bits."
 "</para>"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"<para>Sorta-ilara kudeatzeko tresna honek irudiko kolore sakonera 8 bitera "
+"bihur dezake.</para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:40
@@ -4686,13 +4675,14 @@ msgid "A tool to convert color depth to 16 bits"
 msgstr "Kolore sakonera 16 bitera bihurtzeko tresna bat"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "A tool to convert to black and white."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
 "bits.</para>"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako kolore sakonera 16 "
+"bitera bihur dezake.</para>"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:42
@@ -4763,17 +4753,14 @@ msgid "A tool to adjust color curves"
 msgstr "Kolore-kurbak doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the color curves from images."
 "</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako koloreak "
-"automatikoki doitu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako kolore-kurbak doitu "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:40
@@ -4790,13 +4777,14 @@ msgid "A tool to fix Hue / Saturation / Lightness"
 msgstr "Tonua / Asetasuna / Argitasuna doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako Tonua / Asetasuna / "
+"Argitasuna doitu ditzake.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:46
@@ -4812,13 +4800,14 @@ msgid "A tool to convert images to a color space"
 msgstr "Irudiak kolore-eremu batera bihurtzeko tresna bat"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "A tool to convert to black and white."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to a different color "
 "space.</para>"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"<para>Sorta-ilara kudeatzeko tresna honek irudiak beste kolore-eremu batera "
+"bihur ditzake.</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:40
@@ -4835,15 +4824,13 @@ msgid "A tool to invert image colors"
 msgstr "Irudiaren koloreak alderantzikatzeko tresna bat"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can mix color channels from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzeko tresna honek irudietako kolore-kanalak "
-"nahastu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako koloreak alderantzika "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:40
@@ -4860,15 +4847,14 @@ msgid "A tool to adjust white balance"
 msgstr "Zurien oreka doitzeko tresna bat"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudietako denbora-"
-"zigiluadoitu dezake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako zuriaren oreka doitu "
+"dezake.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
 #, kde-format
@@ -5282,8 +5268,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can add decorative border around images."
 "</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudien inguruan ertz bat "
-"gehi dezake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudien inguruan ertz apaingarri "
+"bat gehi dezake.</para>"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
 #, kde-format
@@ -5303,8 +5289,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudien gainean ehundura "
-"bat ezar dezake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudien gainean ehundura bat "
+"erabil dezake.</para>"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
 #, kde-format
@@ -5648,13 +5634,14 @@ msgid "A tool to overlay an image or text as a visible watermark"
 msgstr "Irudi edo testu bat ur-marka ikusgai gisa gainjartzeko tresna."
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "A tool to convert to black and white."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add a text watermark over images.</"
 "para>"
-msgstr "Zuri-beltzera bihurtzeko tresna."
+msgstr ""
+"<para>Sorta-ilara kudeatzeko tresna honek irudien gainean testu-filigrana "
+"bat gehi dezake.</para>"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, fuzzy, kde-format
@@ -5677,7 +5664,7 @@ msgid ""
 "<para>This Batch Queue Manager tool remove or add vignettings to images.</"
 "para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudien gainean emultsio-"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietan  gainean emultsio-"
 "pikorra gehi dezake.</p>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
@@ -5713,8 +5700,7 @@ msgstr "Irudiak lausotzeko tresna bat"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudiak lausotu ditzake.</"
-"para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudiak lausotu ditzake.</para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
@@ -5736,8 +5722,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudietako pixel "
-"distiratsuak konpon ditzake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako pixel erreakzuzen "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
@@ -6293,8 +6279,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply metadata template over images."
 "</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudien gainean metadatuen "
-"txantiloiak ezar ditzake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudien gainean metadatuak "
+"aplikatu ditzake.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
 #, fuzzy, kde-format
@@ -6325,7 +6311,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign a pick label metadata value "
 "by parsing image and estimate the quality.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudien gainean metadatuen "
+"<para>Sorta-ilara kudeatzeko tresna honek irudien gainean metadatuen "
 "txantiloiak ezar ditzake.</para>"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:96
@@ -6389,10 +6375,10 @@ msgid "Caption"
 msgstr "Epigrafea"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Aurreko irudia"
+msgstr "Aurreikusi irudia"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
@@ -6420,18 +6406,16 @@ msgid "digiKam completely"
 msgstr "digiKamen propietateak"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr "DigiKam-en irudi-historiala"
+msgstr "digiKam-en irudi-historia"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Aurreko irudia"
+msgstr "digiKam irudi aurreikuspegia"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
@@ -6452,12 +6436,10 @@ msgid "Video"
 msgstr "Bideoa"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "Epigrafea, iruzkina eta azalpena"
+msgstr "Epigrafea, iruzkina eta deskribapena"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:215
 #, kde-format
@@ -6484,8 +6466,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or "
 "Xmp from images.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudietatik Exif, Iptc, edo "
-"Xmp metadatuak ken ditzake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek Exif, Iptc, edo Xmp bezalako "
+"metadatuak ken ditzake irudietatik.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:40
@@ -6505,77 +6487,66 @@ msgstr "Irudietako data eta ordu-zigilua doitzeko tresna bat"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudietako denbora-zigilua "
-"doitu dezake.</para>"
+"<para>Sorta-ilara kudeatzeko tresna honek ordua doitu dezake irudietan.</"
+"para>"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titulua"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Epigrafea"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:95
-#, fuzzy, kde-format
-#| msgid "Copyright"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
-msgstr "Copyright-a"
+msgstr "Egile-eskubideak - Copyright"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:96
-#, fuzzy, kde-format
-#| msgid "Right Usage Terms:"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
-msgstr "Erabilpenaren eskubideen terminoak:"
+msgstr "Erabilera-baldintzak"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:99
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@label"
 msgid "Translate to:"
-msgstr "Nabigatu %1(e)ra"
+msgstr "Itzuli honetara:"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:137
-#, fuzzy, kde-format
-#| msgid "Hungarian translations"
+#, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
-msgstr "Hungarierako itzulpenak"
+msgstr "%1(e)rekin itzultzeko sarrerak:"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Use Metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Translate Metadata"
-msgstr "Erabili metadatuak"
+msgstr "Itzuli metadatuak"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:57
-#, fuzzy, kde-format
-#| msgid "A tool to sharpen images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
-msgstr "Irudiak enfokatzeko tresna"
+msgstr "Irudien metadatuetako kateak itzultzeko tresna bat"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudietako denbora-"
-"zigiluadoitu dezake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudietako XMP metadatuetan "
+"hizkuntza alternatiboetako kateak itzul ditzake.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
 #, kde-format
@@ -6625,18 +6596,18 @@ msgid "Crop"
 msgstr "Moztu"
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
-msgstr "Irudiak luzera pertsonalizatuarekin tamainaz aldatzeko tresna."
+msgstr "Irudiak eskualde batera mozteko tresna bat"
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can sharp images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudiak enfokatu ditzake.</p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudiak eskualde batera moztu "
+"ditzake.</para>"
 
 #: core/dplugins/bqm/transform/flip/flip.cpp:53
 #, kde-format
@@ -6663,22 +6634,20 @@ msgid "Flip"
 msgstr "Irauli"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:57
-#, fuzzy, kde-format
-#| msgid "A tool to flip images horizontally or vertically"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr "Irudiak horizontalki edo bertikalki iraultzeko tresna"
+msgstr "Irudiak horizontalki edo bertikalki iraultzeko tresna bat"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can resize images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudien tamaina alda dezake.</"
-"p>"
+"<para>Sorta-ilara kudeatzeko tresna honek erabiltzaileen oskoleko gidoak "
+"exekuta ditzake lan-fluxuaren etapa gisa.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:141
 #, kde-format
@@ -6755,20 +6724,17 @@ msgid "Resize"
 msgstr "Neurria aldatu"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:57
-#, fuzzy, kde-format
-#| msgid "A tool to resize images with a customized length"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
-msgstr "Irudiak luzera pertsonalizatuarekin tamainaz aldatzeko tresna bat"
+msgstr "Irudiak neurrira ipinitako luzeran tamainaz aldatzeko tresna bat"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can resize images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
-"<p>Agindu-sorta ilara kudeatzaile tresna honek irudien tamaina alda dezake.</"
-"p>"
+"<para>Sorta-ilara kudeatzeko tresna honek irudien tamaina alda dezake.</para>"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:79
 #, kde-format
@@ -6822,8 +6788,7 @@ msgstr "Irudiak biratzeko tresna bat"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
-msgstr ""
-"<para>Agindu-sorta ilara kudeatzeko tresna honek irudiak bira ditzake.</para>"
+msgstr "<para>Sorta-ilara kudeatzeko tresna honek irudiak bira ditzake.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
@@ -6831,16 +6796,14 @@ msgid "Lossless HEIF files"
 msgstr "Galerarik gabeko HEIF fitxategiak"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
-#| "enabled, a lossless method will be used to compress PGF pictures.</p>"
+#, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
-"<p>Aldatu PGF irudien galerarik gabeko konpresioa.</p><p>Aukera hau gaitzen "
-"bada, galerarik gabeko metodo bat erabiliko da PGF irudiak konprimitzeko.</p>"
+"<p>Txandakatu HEIF irudietarako galerarik gabeko konpresioa.</p><p>Aukera "
+"hau gaituta badago, HEIF irudiak konprimatzeko galerarik gabeko metodo bat "
+"erabiliko da.</p>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
@@ -21235,6 +21198,10 @@ msgid ""
 "effects, the duration can depend of random values and can change while the "
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
+"<i>Trantsizio bat bi irudien artean erabilitako ikus-efektu bat da. Efektu "
+"batzuetan, iraupena ausazko balioen araberakoa izan daiteke eta diapositiba "
+"emanaldian zehar alda daiteke. Timelapse baterako, utzi ezarpen hauek batere "
+"ez gisa.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:302
 #, kde-format
@@ -28094,15 +28061,14 @@ msgstr "Album guztiak analizatzen"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
-#, fuzzy, kde-format
+#, kde-format
 msgid "Collapse Selected Recursively"
-msgstr "Ez da albumik hautatu"
+msgstr "Tolestu hautatutako errekurtsiboki"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:209
-#, fuzzy, kde-format
-#| msgid "Parsing all albums"
+#, kde-format
 msgid "Collapse all Albums"
-msgstr "Album guztiak analizatzen"
+msgstr "Tolestu album guztiak"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
@@ -40239,7 +40205,7 @@ msgstr "Argi-mahaia"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:196
 #, kde-format
 msgid "Batch Queue Manager"
-msgstr "Agindu-sorta ilara kudeatzailea"
+msgstr "Sorta-ilara kudeatzailea"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
@@ -40270,10 +40236,9 @@ msgid "Adding items to the Light Table"
 msgstr "Gehitu argi-mahaiari"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:500
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Batch erako ilaren kudeatzailea"
+msgstr "Sorta-ilara kudeatzailean elementuak gehitzen"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
@@ -40543,10 +40508,9 @@ msgstr "Sartu etiketen azpi-zuhaitza"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
 #: core/libs/tags/manager/tagsmanager.cpp:717
-#, fuzzy, kde-format
-#| msgid "Parsing all albums"
+#, kde-format
 msgid "Collapse Tag Tree"
-msgstr "Album guztiak analizatzen"
+msgstr "Tolestu etiketa-zuhaitza"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
 #: core/libs/tags/manager/tagsmanager.cpp:720
@@ -40767,10 +40731,9 @@ msgid "Expand tag tree completely"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
 #: core/libs/tags/manager/tagsmanager.cpp:746
-#, fuzzy, kde-format
-#| msgid "Download is completed..."
+#, kde-format
 msgid "Collapse tag tree completely"
-msgstr "Deskarga burutu da..."
+msgstr "Tolestu erabat etiketa-zuhaitza"
 
 #: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
@@ -40936,10 +40899,9 @@ msgid "Expand all Tags"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:143
-#, fuzzy, kde-format
-#| msgid "Parsing all albums"
+#, kde-format
 msgid "Collapse all Tags"
-msgstr "Album guztiak analizatzen"
+msgstr "Tolestu etiketa guztiak"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:231
 #, fuzzy, kde-format
@@ -44044,8 +44006,7 @@ msgstr "Pankaj Kumar"
 #: core/libs/widgets/mainview/daboutdata.cpp:240
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
-msgstr ""
-"Agindu-sorta ilara-kudeatzailean nukleo anizkoitzen euskarria eta tutoretza"
+msgstr "Nukleo-anizkoitzen euskarria Sorta-ilara kudeatzailean eta Mentoretzan"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:245
 #, kde-format
@@ -54085,10 +54046,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
-msgstr "Doitu &leihora"
+msgstr "Lan-fluxua"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
@@ -63251,8 +63212,8 @@ msgid ""
 "the items with no assigned tag.</p>"
 msgstr ""
 "<p><b>Garbitu dena eta berriz esleitu</b>: garbitu jada esleitutako etiketa "
-"denak eta berriz hutsetik miatu.</p><p>Miatu esleitu gabekoak bakarrik<b>: "
-"miatu etiketarik esleitu gabeko elementuak bakarrik.</b>"
+"denak eta berriz hutsetik miatu.</p><p><b>Miatu esleitu gabekoak bakarrik</"
+"b>: miatu etiketarik esleitu gabeko elementuak bakarrik.</p>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:200
 #, kde-format
@@ -63494,19 +63455,19 @@ msgstr ""
 "Jarraitu nahi duzu?"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgid "Synchronizing image metadata with database"
-msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
+msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Updating database from image metadata"
-msgstr "Datu-basea irudiaren metadatuetatik eguneratzen. Itxaron..."
+msgstr "Datu-basea irudiaren metadatuetatik eguneratzen"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thumbs"
-msgstr "Koadro txikiak"
+msgstr "Koadro txikiakv"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:127
 #, kde-format
@@ -63519,7 +63480,7 @@ msgid "Queue Settings"
 msgstr "Ilararen ezarpenak"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "Control Panel"
 msgstr "Aginte panela"
 
@@ -63541,7 +63502,7 @@ msgstr "Exekutatu"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:287
 #, kde-format
 msgid "Run all"
-msgstr ""
+msgstr "Exekutatu dena"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:299
 #, kde-format
@@ -63556,7 +63517,7 @@ msgstr "Kendu ilara"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:309
 #, kde-format
 msgid "Save Workflow"
-msgstr ""
+msgstr "Gorde lan-fluxua"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:313
 #, kde-format
@@ -63614,14 +63575,13 @@ msgstr[0] "Ataza 1"
 msgstr[1] "%1 ataza"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:470
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
-msgstr "%1 (%2)"
+msgstr "Guztira: "
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:508
-#, fuzzy, kde-format
-#| msgid "Ready"
+#, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Prest"
@@ -63637,6 +63597,8 @@ msgstr "Inprimatzea eta frogatzea"
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
+"Sorta-ilara kudeatzailea ibiltzen ari da. Uneko lana bertan behera utzi nahi "
+"duzu?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:646
 #, fuzzy, kde-format
@@ -64064,14 +64026,14 @@ msgid "Base Tools"
 msgstr "Oinarrizko tresnak"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "This is the list of your customized workflow settings."
-msgstr "Batch-eko esleitutako tresnen zerrenda da."
+msgstr "Hau da neurrira ipinitako zure lan-fluxuen ezarpenen zerrenda."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "Workflow"
-msgstr "Doitu &leihora"
+msgstr "Lan-fluxua"
 
 #: core/utilities/queuemanager/views/toolsview.cpp:78
 #, kde-format
@@ -64084,71 +64046,66 @@ msgid "History"
 msgstr "Historia"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
-msgstr "Doitu &leihora"
+msgstr "Lan-fluxu berria"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr "Doitu &leihora"
+msgstr "Editatu lan-fluxua"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
-msgstr "<qt><b>Sortu album berria hemen:</b>%1</qt>"
+msgstr "<qt><b>Sortu lan-fluxu berria</b></qt>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
-msgstr "<qt><b><i>%1</i> Propietateak</b></qt>"
+msgstr "<qt><b>Lan-fluxuaren propietateak</b></qt>"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:89
-#, fuzzy, kde-format
-#| msgid "&Title:"
+#, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Titulua:"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Description:"
-msgstr "Azalpena:"
+msgstr "Deskribapena:"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:130
 #, kde-format
 msgid "New Workflow"
-msgstr ""
+msgstr "Lan-fluxu berria"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:100
-#, fuzzy, kde-format
-#| msgid "Title"
+#, kde-format
 msgctxt "@title: batch workflow name"
 msgid "Title"
 msgstr "Titulua"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:101
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@title: batch workflow tools list"
 msgid "Tools"
 msgstr "Tresnak"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:102
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: batch workflow description"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:125
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "Agindu-sorta ilara kudeatzailea"
+msgstr "Sorta-ilara kudeatzailea"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
@@ -69393,7 +69350,7 @@ msgstr "Irudi editorea"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr "Sorta ilara kudeatzailea"
+msgstr "Sorta-ilara kudeatzailea"
 
 #: core/utilities/setup/setupplugins.cpp:84
 #, kde-format
