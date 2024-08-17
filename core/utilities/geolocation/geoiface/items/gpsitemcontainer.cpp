@@ -635,7 +635,7 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
 
         case ColumnFilename:
         {
-            return (m_url < otherItem->m_url);
+            return (m_url.fileName() < otherItem->m_url.fileName());
         }
 
         case ColumnDateTime:
