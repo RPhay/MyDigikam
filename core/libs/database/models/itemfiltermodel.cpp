@@ -1152,7 +1152,12 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByMonth:
         {
-            return info.dateTime().date().toString(QLatin1String("yyyyMM"));
+            if (!info.dateTime().isValid())
+            {
+                return QLatin1String("INVALIDDATE");
+            }
+
+            return info.dateTime().toString(QLatin1String("yyyyMM"));
         }
 
         case ItemSortSettings::CategoryByFaces:

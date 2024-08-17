@@ -280,7 +280,8 @@ void ItemCategoryDrawer::textForFormat(const QModelIndex& index, QString* header
 void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header, QString* subLine) const
 {
     QDate date = index.data(ItemFilterModel::CategoryDateRole).toDate();
-    *header    = date.toString(QLatin1String("MMM yyyy"));
+    *header    = date.isValid() ? date.toString(QLatin1String("MMM yyyy"))
+                                : i18n("Invalid date");
     int count  = d->view->categoryRange(index).height();
     *subLine   = i18np("1 Item", "%1 Items", count);
 }
