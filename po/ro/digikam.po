@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -958,10 +958,10 @@ msgid "Add to Existing Queue"
 msgstr "Adaugă la coada existentă"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -972,7 +972,13 @@ msgstr[0] "1 element"
 msgstr[1] "%1 elemente"
 msgstr[2] "%1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+#| msgid "Filename"
+msgid "Invalid date"
+msgstr "Denumire fișier"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -981,7 +987,7 @@ msgstr[0] "Data albumului: %2 %3 %4 - 1 element"
 msgstr[1] "Data albumului: %2 %3 %4 - %1 elemente"
 msgstr[2] "Data albumului: %2 %3 %4 - %1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -990,7 +996,7 @@ msgstr[0] "%2 incuzând 1 subetichetă"
 msgstr[1] "%2 incuzând %1 subetichete"
 msgstr[2] "%2 incuzând %1 de subetichete"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -1001,7 +1007,7 @@ msgstr[0] "%2 - 1 element"
 msgstr[1] "%2 - %1 elemente"
 msgstr[2] "%2 - %1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
@@ -1009,7 +1015,7 @@ msgstr[0] "%2 - 1 element"
 msgstr[1] "%2 - %1 elemente"
 msgstr[2] "%2 - %1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
@@ -1017,7 +1023,7 @@ msgstr[0] "Căutare cu cuvinte cheie - 1 element"
 msgstr[1] "Căutare cu cuvinte cheie - %1 elemente"
 msgstr[2] "Căutare cu cuvinte cheie - %1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
@@ -1025,7 +1031,7 @@ msgstr[0] "Căutare avansată - 1 element"
 msgstr[1] "Căutare avansată - %1 elemente"
 msgstr[2] "Căutare avansată - %1 de elemente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"

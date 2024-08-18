@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2024-06-26 23:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -909,10 +909,10 @@ msgid "Add to Existing Queue"
 msgstr "أضف إلى الطّابور الموجود"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -926,7 +926,13 @@ msgstr[3] "%1 عناصر"
 msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+#| msgid "invalid name"
+msgid "Invalid date"
+msgstr "الاسم غير صالح"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -938,7 +944,7 @@ msgstr[3] "تاريخ الألبوم: %2 %3 %4 - %1 عناصر"
 msgstr[4] "تاريخ الألبوم: %2 %3 %4 - %1 عنصرًا"
 msgstr[5] "تاريخ الألبوم: %2 %3 %4 - %1 عنصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -950,7 +956,7 @@ msgstr[3] "%2 يتضمّن %1 وسوم فرعيّة"
 msgstr[4] "%2 يتضمّن %1 وسمًا فرعيًّا"
 msgstr[5] "%2 يتضمّن %1 وسم فرعيّ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -964,7 +970,7 @@ msgstr[3] "%2 - %1 عناصر"
 msgstr[4] "%2 - %1 عنصرًا"
 msgstr[5] "%2 - %1 عناصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
@@ -975,7 +981,7 @@ msgstr[3] "%2 - %1 عناصر"
 msgstr[4] "%2 - %1 عنصرًا"
 msgstr[5] "%2 - %1 عنصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
@@ -986,7 +992,7 @@ msgstr[3] "بحث عن كلمات مفتاحيّة - %1 عناصر"
 msgstr[4] "بحث عن كلمات مفتاحيّة - %1 عنصرًا"
 msgstr[5] "بحث عن كلمات مفتاحيّة - %1 عنصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
@@ -997,7 +1003,7 @@ msgstr[3] "بحث متقدّم - %1 عناصر"
 msgstr[4] "بحث متقدّم - %1 عنصرًا"
 msgstr[5] "بحث متقدّم - %1 عنصر"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -69226,12 +69232,6 @@ msgstr "استورد عناصر"
 #~ msgctxt "@option"
 #~ msgid "Aspect ratio"
 #~ msgstr "النّسبة الباعيّة"
-
-#, fuzzy
-#~| msgid "invalid name"
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "الاسم غير صالح"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"

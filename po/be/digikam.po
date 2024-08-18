@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -891,10 +891,10 @@ msgid "Add to Existing Queue"
 msgstr "Дадаць у наяўную чаргу"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -906,7 +906,13 @@ msgstr[1] "%1 элементы"
 msgstr[2] "%1 элементаў"
 msgstr[3] "%1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+#| msgid "Invalid signature"
+msgid "Invalid date"
+msgstr "Хібны подпіс"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -916,7 +922,7 @@ msgstr[1] "Дата альбома: %2 %3 %4 — %1 элементы"
 msgstr[2] "Дата альбома: %2 %3 %4 — %1 элементаў"
 msgstr[3] "Дата альбома: %2 %3 %4 — %1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -926,7 +932,7 @@ msgstr[1] "%2 уключаючы %1 даччыныя тэгі"
 msgstr[2] "%2 уключаючы %1 даччыных тэгаў"
 msgstr[3] "%2 уключаючы %1 даччыныя тэгі"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -938,7 +944,7 @@ msgstr[1] "%2 - %1 элементы"
 msgstr[2] "%2 - %1 элементаў"
 msgstr[3] "%2 - %1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
@@ -947,7 +953,7 @@ msgstr[1] "%2 - %1 элементы"
 msgstr[2] "%2 - %1 элементаў"
 msgstr[3] "%2 - %1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
@@ -956,7 +962,7 @@ msgstr[1] "Пошук па ключавым слове - %1 элементы"
 msgstr[2] "Пошук па ключавым слове - %1 элементаў"
 msgstr[3] "Пошук па ключавым слове - %1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
@@ -965,7 +971,7 @@ msgstr[1] "Пашыраны пошук - %1 элементы"
 msgstr[2] "Пашыраны пошук - %1 элементаў"
 msgstr[3] "Пашыраны пошук - %1 элементы"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
