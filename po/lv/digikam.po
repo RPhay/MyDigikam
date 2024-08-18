@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -912,10 +912,10 @@ msgid "Add to Existing Queue"
 msgstr "Pievienot esošā rindā"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -926,7 +926,13 @@ msgstr[0] "%1 attēls"
 msgstr[1] "%1 attēli"
 msgstr[2] "%1 attēlu"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+#| msgid "Invalid Profile"
+msgid "Invalid date"
+msgstr "Nederīgs profils"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -935,7 +941,7 @@ msgstr[0] "Albuma datums: %4.g. %2. %3 - %1 vienība"
 msgstr[1] "Albuma datums: %4.g. %2. %3 - %1 vienības"
 msgstr[2] "Albuma datums: %4.g. %2. %3 - %1 vienību"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -944,7 +950,7 @@ msgstr[0] "%2, ieskaitot %1 apakštagu"
 msgstr[1] "%2, ieskaitot %1 apakštagus"
 msgstr[2] "%2, ieskaitot %1 apakštagu"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -955,7 +961,7 @@ msgstr[0] "%2 - %1 vienība"
 msgstr[1] "%2 - %1 vienības"
 msgstr[2] "%2 - %1 vienību"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
@@ -963,7 +969,7 @@ msgstr[0] "%2 - %1 vienība"
 msgstr[1] "%2 - %1 vienības"
 msgstr[2] "%2 - %1 vienību"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
@@ -971,7 +977,7 @@ msgstr[0] "Meklēšana pēc atslēgvārda - %1 vienība"
 msgstr[1] "Meklēšana pēc atslēgvārda - %1 vienības"
 msgstr[2] "Meklēšana pēc atslēgvārda - %1 vienību"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
@@ -979,7 +985,7 @@ msgstr[0] "Izvērstā meklēšana - %1 vienība"
 msgstr[1] "Izvērstā meklēšana - %1 vienības"
 msgstr[2] "Izvērstā meklēšana - %1 vienību"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -69005,12 +69011,6 @@ msgstr "&Kārtot attēlus"
 #~ msgctxt "@option"
 #~ msgid "Aspect ratio"
 #~ msgstr "Malu attiecība"
-
-#, fuzzy
-#~| msgid "Invalid Profile"
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "Nederīgs profils"
 
 #, fuzzy
 #~| msgid "Loading..."

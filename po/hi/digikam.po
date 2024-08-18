@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -911,10 +911,10 @@ msgid "Add to Existing Queue"
 msgstr "लाइट तालिका में जोड़ें"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -924,7 +924,12 @@ msgid_plural "%1 Items"
 msgstr[0] "16 बिट्स"
 msgstr[1] "16 बिट्स"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+msgid "Invalid date"
+msgstr "नया छवि फ़ाइल नाम"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, fuzzy, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -932,7 +937,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "जुलाई 2007 - 10 वस्तुएं"
 msgstr[1] "जुलाई 2007 - 10 वस्तुएं"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -940,7 +945,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, fuzzy, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -950,28 +955,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "जुलाई 2007 - 10 वस्तुएं"
 msgstr[1] "जुलाई 2007 - 10 वस्तुएं"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, fuzzy, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "जुलाई 2007 - 10 वस्तुएं"
 msgstr[1] "जुलाई 2007 - 10 वस्तुएं"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, fuzzy, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "विस्तृत खोज"
 msgstr[1] "विस्तृत खोज"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, fuzzy, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"

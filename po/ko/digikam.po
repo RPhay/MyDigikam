@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-10 01:53+0000\n"
+"POT-Creation-Date: 2024-08-18 01:48+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -877,10 +877,10 @@ msgid "Add to Existing Queue"
 msgstr "기존 대기열에 추가"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:277
-#: core/app/items/utils/itemcategorydrawer.cpp:285
-#: core/app/items/utils/itemcategorydrawer.cpp:292
-#: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:286
+#: core/app/items/utils/itemcategorydrawer.cpp:293
+#: core/app/items/utils/itemcategorydrawer.cpp:378
+#: core/app/items/utils/itemcategorydrawer.cpp:396
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -889,21 +889,27 @@ msgid "1 Item"
 msgid_plural "%1 Items"
 msgstr[0] "항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:321
+#: core/app/items/utils/itemcategorydrawer.cpp:284
+#, fuzzy, kde-format
+#| msgid "Invalid signature"
+msgid "Invalid date"
+msgstr "서명 잘못됨"
+
+#: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "앨범 날짜: %4 %3 %2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:348
+#: core/app/items/utils/itemcategorydrawer.cpp:349
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2, 하위 태그 %1개 포함"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:352
+#: core/app/items/utils/itemcategorydrawer.cpp:353
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -912,25 +918,25 @@ msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:357
+#: core/app/items/utils/itemcategorydrawer.cpp:358
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "키워드 검색 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:374
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "고급 검색 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:387
+#: core/app/items/utils/itemcategorydrawer.cpp:388
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -70274,12 +70280,6 @@ msgstr "최근 태그"
 #~ msgctxt "@option"
 #~ msgid "Aspect ratio"
 #~ msgstr "종횡 비율"
-
-#, fuzzy
-#~| msgid "Invalid signature"
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "서명 잘못됨"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"
