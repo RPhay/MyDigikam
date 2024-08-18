@@ -62,7 +62,7 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
 
 #ifdef Q_OS_MACOS
 
-    // Work aroung Qt bug under MacOS. See bug #414117
+    // Work around Qt bug under MacOS. See bug #414117
 
     if (set)
     {
