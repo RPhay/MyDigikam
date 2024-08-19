@@ -41,7 +41,7 @@ BUGFIXES:
 029 ==> 491599 - Scroll index resets to item 0 in Similarity list window on delete of any list deletion.
 030 ==> 491809 - Sort view bug/behavior at Geolocation editor.
 031 ==> 491804 - Sorting by Creation Date and Group by Month Creating Multiple Month/Yr Groups.
-032 ==> 
+032 ==> 491878 - Modifying a saved search show more than saved.
 033 ==> 
 034 ==> 
 035 ==> 
