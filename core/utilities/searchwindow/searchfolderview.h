@@ -61,6 +61,13 @@ Q_SIGNALS:
     void newSearch();
 
     /**
+     * Emitted if the given search shall be copied.
+     *
+     * @param album search to copy
+     */
+    void copySearch(SAlbum* album);
+
+    /**
      * Emitted if the given search shall be edited.
      *
      * @param album search to edit

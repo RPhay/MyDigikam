@@ -88,6 +88,9 @@ SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,
     connect(d->searchTreeView, SIGNAL(newSearch()),
             d->searchTabHeader, SLOT(newAdvancedSearch()));
 
+    connect(d->searchTreeView, SIGNAL(copySearch(SAlbum*)),
+            d->searchTabHeader, SLOT(copySearch(SAlbum*)));
+
     connect(d->searchTreeView, SIGNAL(editSearch(SAlbum*)),
             d->searchTabHeader, SLOT(editSearch(SAlbum*)));
 

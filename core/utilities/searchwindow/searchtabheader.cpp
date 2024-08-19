@@ -453,6 +453,30 @@ void SearchTabHeader::selectedSearchChanged(Album* a)
     }
 }
 
+void SearchTabHeader::copySearch(SAlbum* album)
+{
+    if (!album)
+    {
+        return;
+    }
+
+    if  (album->isAdvancedSearch())
+    {
+        SAlbum* const salbum = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
+
+        if (salbum)
+        {
+            AlbumManager::instance()->updateSAlbum(salbum, album->query());
+            SearchWindow* const window = searchWindow();
+
+            window->reset();
+            window->readSearch(salbum->id(), salbum->query());
+            window->show();
+            window->raise();
+        }
+    }
+}
+
 void SearchTabHeader::editSearch(SAlbum* album)
 {
     if (!album)

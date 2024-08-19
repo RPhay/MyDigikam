@@ -41,6 +41,7 @@ public:
 public Q_SLOTS:
 
     void selectedSearchChanged(Album* album);
+    void copySearch(SAlbum* album);
     void editSearch(SAlbum* album);
     void newKeywordSearch();
     void newAdvancedSearch();

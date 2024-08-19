@@ -41,7 +41,9 @@ public:
     Private() = default;
 
     QAction* newAction  = nullptr;
+    QAction* copyAction = nullptr;
     QAction* editAction = nullptr;
+
 };
 
 NormalSearchTreeView::NormalSearchTreeView(QWidget* const parent,
@@ -52,6 +54,7 @@ NormalSearchTreeView::NormalSearchTreeView(QWidget* const parent,
 {
 
     d->newAction  = new QAction(QIcon::fromTheme(QLatin1String("document-new")), i18nc("Create new search",    "New..."),  this);
+    d->copyAction = new QAction(QIcon::fromTheme(QLatin1String("edit-copy")),    i18nc("Copy as new search",   "Copy..."), this);
     d->editAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find")),    i18nc("Edit selected search", "Edit..."), this);
 }
 
@@ -62,14 +65,17 @@ NormalSearchTreeView::~NormalSearchTreeView()
 
 void NormalSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)
 {
+    SAlbum* const salbum        = dynamic_cast<SAlbum*>(album);
+    const bool isAdvancedSearch = (salbum && salbum->isAdvancedSearch());
+
     cmh.addAction(d->newAction);
+    d->copyAction->setEnabled(isAdvancedSearch);
+    cmh.addAction(d->copyAction);
     cmh.addSeparator();
 
     EditableSearchTreeView::addCustomContextMenuActions(cmh, album);
 
-    SAlbum* const salbum = dynamic_cast<SAlbum*>(album);
-
-    d->editAction->setEnabled(salbum);
+    d->editAction->setEnabled(isAdvancedSearch);
     cmh.addAction(d->editAction);
 }
 
@@ -81,6 +87,10 @@ void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, const 
     if      ((action == d->newAction) && salbum)
     {
         Q_EMIT newSearch();
+    }
+    else if ((action == d->copyAction) && salbum)
+    {
+        Q_EMIT copySearch(salbum);
     }
     else if ((action == d->editAction) && salbum)
     {
