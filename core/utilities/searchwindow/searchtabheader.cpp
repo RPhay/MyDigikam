@@ -608,6 +608,7 @@ void SearchTabHeader::editStoredAdvancedSearch()
     if (d->currentAlbum)
     {
         SearchWindow* const window = searchWindow();
+        window->reset();
         window->readSearch(d->currentAlbum->id(), d->currentAlbum->query());
         window->show();
         window->raise();
