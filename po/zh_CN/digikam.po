@@ -886,10 +886,9 @@ msgid_plural "%1 Items"
 msgstr[0] "%1 张图像"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "无效签名"
+msgstr ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format

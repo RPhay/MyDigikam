@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-18 01:48+0000\n"
-"PO-Revision-Date: 2024-08-05 13:49+0300\n"
+"PO-Revision-Date: 2024-08-18 20:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -938,10 +938,9 @@ msgstr[0] "1 Öge"
 msgstr[1] "%1 Öge"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "Geçersiz imza"
+msgstr "Geçersiz tarih"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format

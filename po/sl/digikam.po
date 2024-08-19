@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-18 01:48+0000\n"
-"PO-Revision-Date: 2024-08-05 06:33+0200\n"
+"PO-Revision-Date: 2024-08-18 06:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -935,11 +935,9 @@ msgstr[2] "%1 predmeti"
 msgstr[3] "%1 predmetov"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "Neveljavni medij"
+msgstr "Neveljaven datum"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format

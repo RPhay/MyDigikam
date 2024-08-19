@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-18 01:48+0000\n"
-"PO-Revision-Date: 2024-08-06 00:52+0200\n"
+"PO-Revision-Date: 2024-08-18 04:32+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -948,11 +948,9 @@ msgstr[0] "1 elemento"
 msgstr[1] "%1 elementos"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "Medio no válido"
+msgstr "Fecha no válida"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
