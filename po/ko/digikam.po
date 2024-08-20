@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2904,7 +2904,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "사람"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -58760,7 +58760,7 @@ msgstr "선택 반전"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -58769,7 +58769,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -63719,13 +63719,21 @@ msgstr ""
 msgid "Portrait orientation"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "새로 만들기..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "&Copy to..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "다음으로 복사(&C)..."
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

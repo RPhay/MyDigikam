@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2939,7 +2939,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "Emberek"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -56925,7 +56925,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -56936,7 +56936,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -61731,13 +61731,21 @@ msgstr "Fekvő orientáció"
 msgid "Portrait orientation"
 msgstr "Álló tájolás"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "Új…"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "&Copy to..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "Másolás ide…"
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

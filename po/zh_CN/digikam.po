@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -888,7 +888,7 @@ msgstr[0] "%1 张图像"
 #: core/app/items/utils/itemcategorydrawer.cpp:284
 #, kde-format
 msgid "Invalid date"
-msgstr ""
+msgstr "无效日期"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -2876,7 +2876,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "人物"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -55656,7 +55656,7 @@ msgstr "显示不含地理信息的项目"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -55667,7 +55667,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -60521,13 +60521,21 @@ msgstr "横向"
 msgid "Portrait orientation"
 msgstr "纵向"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "新建..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "&Copy to..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "复制到(&C)..."
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

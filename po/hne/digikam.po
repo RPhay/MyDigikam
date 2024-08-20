@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -3002,7 +3002,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "बदलव (&R)"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, fuzzy, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -56769,7 +56769,7 @@ msgstr "डुप्लीकेट खोजव"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -56780,7 +56780,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -61658,13 +61658,20 @@ msgstr "दिसा निर्धारन"
 msgid "Portrait orientation"
 msgstr "दिसा निर्धारन"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, fuzzy, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "नवा... (&N)"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgid "New Tag..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "नवा टैग..."
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, fuzzy, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

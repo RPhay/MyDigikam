@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -3180,7 +3180,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "Daoine"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "Advanced search images, access stored searches"
@@ -59421,7 +59421,7 @@ msgstr "Taispeáin dáta cruthaithe na híomhá"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -59430,7 +59430,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -64448,13 +64448,20 @@ msgstr ""
 msgid "Portrait orientation"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "Nua..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgid "Copyright"
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "Cóipcheart"
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

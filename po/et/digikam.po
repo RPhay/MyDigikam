@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3204,7 +3204,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "Inimesed"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -61719,7 +61719,7 @@ msgstr "Geolokatsiooniga hõlmamata elementide näitamine"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -61730,7 +61730,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -67031,13 +67031,20 @@ msgstr "Rõhtorientatsioon"
 msgid "Portrait orientation"
 msgstr "Püstorientatsioon"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "Uus..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgid "Copy Tags..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "Siltide kopeerimine..."
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-18 01:48+0000\n"
+"POT-Creation-Date: 2024-08-20 02:01+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2943,7 +2943,7 @@ msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "बदलें (&R)"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:141
+#: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
@@ -56417,7 +56417,7 @@ msgstr "/छवियाँ"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
-#: core/utilities/searchwindow/searchtabheader.cpp:561
+#: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -56428,7 +56428,7 @@ msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
-#: core/utilities/searchwindow/searchtabheader.cpp:565
+#: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -61267,13 +61267,20 @@ msgstr "दिशा निर्धारणः"
 msgid "Portrait orientation"
 msgstr "दिशा निर्धारणः"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:54
+#: core/utilities/searchwindow/searchfolderview.cpp:56
 #, fuzzy, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "नया... (&N)"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:55
+#: core/utilities/searchwindow/searchfolderview.cpp:57
+#, fuzzy, kde-format
+#| msgid "New Tag..."
+msgctxt "Copy as new search"
+msgid "Copy..."
+msgstr "नया टैग..."
+
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, fuzzy, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
