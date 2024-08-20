@@ -85,8 +85,6 @@ void DIO::cleanUp()
 
 bool DIO::itemsUnderProcessing()
 {
-    qCDebug(DIGIKAM_DATABASE_LOG) << "DIO::itemsUnderProcessing()" << instance()->m_processingCount;
-
     return instance()->m_processingCount;
 }
 
