@@ -45,9 +45,9 @@ BUGFIXES:
 033 ==> 491905 - Ability to define new search from a already saved search.
 034 ==> 490611 - Rating missing in thumbnails.
 035 ==> 472918 - Preview mode becomes unresponsive.
-036 ==> 
-037 ==> 
-038 ==> 
+036 ==> 491997 - Remember the size of subwindows.
+037 ==> 491999 - Tagging images can change the sorted view.
+038 ==> 491983 - At start the initial zoom percent shown for preview is false.
 039 ==> 
 040 ==> 
 041 ==> 

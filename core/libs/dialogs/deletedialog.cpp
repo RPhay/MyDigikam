@@ -39,13 +39,15 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "applicationsettings.h"
-#include "coredburl.h"
 #include "dxmlguiwindow.h"
+#include "coredburl.h"
 
 namespace Digikam
 {
@@ -251,11 +253,7 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
 {
     setObjectName(QLatin1String("DeleteDialogBase"));
 
-    resize(540, 370);
-    setMinimumSize(QSize(420, 320));
-
     const int spacing  = layoutSpacing();
-
 
     d->checkBoxStack   = new QStackedWidget(this);
     QLabel* const logo = new QLabel(this);
@@ -484,8 +482,6 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
     vbx->addWidget(d->page);
     vbx->addWidget(d->buttons);
     setLayout(vbx);
-
-    setMinimumSize(410, 326);
     adjustSize();
 
     slotShouldDelete(shouldDelete());
@@ -502,10 +498,22 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
 
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
+
+    winId();
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
 }
 
 DeleteDialog::~DeleteDialog()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Delete Dialog"));
+    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+    config->sync();
+
     delete d;
 }
 
