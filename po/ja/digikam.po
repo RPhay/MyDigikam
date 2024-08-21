@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 02:01+0000\n"
+"POT-Creation-Date: 2024-08-21 01:57+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3238,7 +3238,7 @@ msgid "Selection"
 msgstr "選択|/|$[~setProps ~full 'スライドショー: 選択した画像']"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:900
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -27140,7 +27140,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "カラースペースの変換"
 
 #: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:905
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27751,7 +27751,7 @@ msgid "Context menu"
 msgstr "コンテキストメニュー"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:915
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -29222,14 +29222,14 @@ msgstr ""
 "データベーススキーマのバージョンを確認できません。空のデータベースで開始して"
 "みてください。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "ファイル名フィルタ:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29242,64 +29242,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:869
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "アルバムで"
 
-#: core/libs/database/utils/ifaces/dio.cpp:874
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, fuzzy, kde-format
 #| msgid "Sort Images"
 msgid "Copy Images"
 msgstr "画像をソート"
 
-#: core/libs/database/utils/ifaces/dio.cpp:880
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "プリセットなし"
 
-#: core/libs/database/utils/ifaces/dio.cpp:885
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "アルバムへ移動(&M)..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:890
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "画像の保存"
 
-#: core/libs/database/utils/ifaces/dio.cpp:895
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "動画ファイル"
 
-#: core/libs/database/utils/ifaces/dio.cpp:910
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "復元"

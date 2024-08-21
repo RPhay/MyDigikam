@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 02:01+0000\n"
-"PO-Revision-Date: 2024-08-06 11:20+0200\n"
+"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"PO-Revision-Date: 2024-08-20 15:07+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -897,10 +897,9 @@ msgstr[1] "%1 položky"
 msgstr[2] "%1 položek"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgid "Invalid signature"
+#, kde-format
 msgid "Invalid date"
-msgstr "Neplatný podpis"
+msgstr "Neplatné datum"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -3237,7 +3236,7 @@ msgid "Selection"
 msgstr "Výběr"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:900
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -19000,7 +18999,7 @@ msgstr "Fotomřížka:"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:304
 #, kde-format
 msgid "Automatic layout:"
-msgstr "Automatické rozložení:"
+msgstr "Automatické rozvržení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:316
@@ -19309,7 +19308,7 @@ msgstr "Výběr alb"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:99
 #, kde-format
 msgid "Select Page Layout"
-msgstr "Vyberte rozložení stránky"
+msgstr "Vyberte rozvržení stránky"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:100
 #, kde-format
@@ -25648,7 +25647,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Převod RAW UFRaw"
 
 #: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:905
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Koš"
@@ -26214,7 +26213,7 @@ msgid "Context menu"
 msgstr "Místní nabídka"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:915
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vyprázdnit koš"
@@ -27593,13 +27592,13 @@ msgstr ""
 "Databáze je neplatná: nastavení \"DBThumbnailsVersion\" neexistuje. Současné "
 "schéma databáze nešlo ověřit. Zkuste začít s prázdnou databází. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Konflikt souborů"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27612,55 +27611,55 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Přejmenovat automaticky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automaticky přepsat"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automaticky přeskočit"
 
-#: core/libs/database/utils/ifaces/dio.cpp:869
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopírovat album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:874
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopírovat obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:880
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopírovat soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:885
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Album"
 msgstr "Přesunout album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:890
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Images"
 msgstr "Přesunout obrázky"
 
-#: core/libs/database/utils/ifaces/dio.cpp:895
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Files"
 msgstr "Přesunout soubory"
 
-#: core/libs/database/utils/ifaces/dio.cpp:910
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Restore Trash"
 msgstr "Obnovit koš"
@@ -60679,12 +60678,10 @@ msgid "New..."
 msgstr "Nové..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Kopírovat do..."
+msgstr "Kopírovat..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 02:01+0000\n"
+"POT-Creation-Date: 2024-08-21 01:57+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3315,7 +3315,7 @@ msgid "Selection"
 msgstr "Iezīmētais"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:900
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -26227,7 +26227,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Krāsu telpas pārveide"
 
 #: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:905
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -26834,7 +26834,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:915
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -28247,14 +28247,14 @@ msgstr ""
 "Datubāze nav derīga: Nav \"DBVersion\" parametra. Nevar iegūt esošās "
 "datubāzes shēmas versiju. Mēģiniet sākt jaunu datubāzi. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, fuzzy, kde-format
 #| msgid "File conflict"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Failu sadursme"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28267,64 +28267,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Rename automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automātiski pārdēvēt"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automātiski pārrakstīt"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automātiski pārrakstīt"
 
-#: core/libs/database/utils/ifaces/dio.cpp:869
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "Mani albumi"
 
-#: core/libs/database/utils/ifaces/dio.cpp:874
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "Pievienot attēlus..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:880
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "nav sākumuzstādījuma vērtības"
 
-#: core/libs/database/utils/ifaces/dio.cpp:885
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "Pārvietot uz albu&mu..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:890
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Attēlu saglabāšana"
 
-#: core/libs/database/utils/ifaces/dio.cpp:895
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Video faili"
 
-#: core/libs/database/utils/ifaces/dio.cpp:910
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Atjaunošana"

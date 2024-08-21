@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-20 02:01+0000\n"
-"PO-Revision-Date: 2024-08-18 04:32+0200\n"
+"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"PO-Revision-Date: 2024-08-20 12:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3317,7 +3317,7 @@ msgid "Selection"
 msgstr "Selección"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:900
+#: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -27019,7 +27019,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversión RAW de UFRaw"
 
 #: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:905
+#: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Trash"
 msgstr "Papelera"
@@ -27613,7 +27613,7 @@ msgid "Context menu"
 msgstr "Menú de contexto"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:915
+#: core/libs/database/utils/ifaces/dio.cpp:913
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vaciar la papelera"
@@ -29023,13 +29023,13 @@ msgstr ""
 "existe. No se puede verificar la versión del esquema de base de datos "
 "actual. Intente arrancar con una base de datos vacía. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:348
+#: core/libs/database/utils/ifaces/dio.cpp:346
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflicto de archivo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:349
+#: core/libs/database/utils/ifaces/dio.cpp:347
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29053,55 +29053,55 @@ msgstr ""
 "conflictos.\n"
 " * Omitir automáticamente: se omiten los archivos con conflictos."
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Cambiar de nombre automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Sobrescribir automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:362
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omitir automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:869
+#: core/libs/database/utils/ifaces/dio.cpp:867
 #, kde-format
 msgid "Copy Album"
 msgstr "Copiar álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:874
+#: core/libs/database/utils/ifaces/dio.cpp:872
 #, kde-format
 msgid "Copy Images"
 msgstr "Copiar imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:880
+#: core/libs/database/utils/ifaces/dio.cpp:878
 #, kde-format
 msgid "Copy Files"
 msgstr "Copiar archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:885
+#: core/libs/database/utils/ifaces/dio.cpp:883
 #, kde-format
 msgid "Move Album"
 msgstr "Mover álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:890
+#: core/libs/database/utils/ifaces/dio.cpp:888
 #, kde-format
 msgid "Move Images"
 msgstr "Mover imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:895
+#: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Move Files"
 msgstr "Mover archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:910
+#: core/libs/database/utils/ifaces/dio.cpp:908
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaurar la papelera"
@@ -62915,12 +62915,10 @@ msgid "New..."
 msgstr "Nueva..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "&Copy to..."
+#, kde-format
 msgctxt "Copy as new search"
 msgid "Copy..."
-msgstr "&Copiar en..."
+msgstr "Copiar..."
 
 #: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
