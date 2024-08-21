@@ -44,7 +44,7 @@ BUGFIXES:
 032 ==> 491878 - Modifying a saved search show more than saved.
 033 ==> 491905 - Ability to define new search from a already saved search.
 034 ==> 490611 - Rating missing in thumbnails.
-035 ==> 
+035 ==> 472918 - Preview mode becomes unresponsive.
 036 ==> 
 037 ==> 
 038 ==> 
