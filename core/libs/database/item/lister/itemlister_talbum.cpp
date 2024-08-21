@@ -70,9 +70,9 @@ void ItemLister::listTag(ItemListerReceiver* const receiver,
             ++it2;
             record.format            = (*it2).toString();
             ++it2;
-            record.creationDate      = (*it2).toDateTime();
+            record.creationDate      = asDateTimeUTC((*it2).toDateTime());
             ++it2;
-            record.modificationDate  = (*it2).toDateTime();
+            record.modificationDate  = asDateTimeUTC((*it2).toDateTime());
             ++it2;
             record.fileSize          = (*it2).toLongLong();
             ++it2;
