@@ -171,9 +171,11 @@ preload_shared_library libsmime3.so
 
 preload_shared_library libgmodule-2.0.so.0
 
-# See bug #216915
+# See bug #216915 and #492040
 
-preload_shared_library libgnutls.so.30
+if [[ $OS_NAME != "manjarolinux" && $OS_VERSION != "24.7" ]] ; then
+    preload_shared_library libgnutls.so.30
+fi
 
 # See bug #261634
 
