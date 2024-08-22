@@ -51,8 +51,8 @@ BUGFIXES:
 037 ==> 491999 - Tagging images can change the sorted view.
 038 ==> 491983 - At start the initial zoom percent shown for preview is false.
 039 ==> 492020 - Accessibility: Mouse cursor too small.
-040 ==> 
-041 ==> 
+040 ==> 490897 - QT6 reports errors on startup while downloading face models.
+041 ==> 492040 - APPIMAGE : symbol lookup error: /usr/lib64/libgnutls.so.30: undefined symbol: nettle_rsa_oaep_sha384_decrypt, version HOGWEED_6.
 042 ==> 
 043 ==> 
 044 ==> 
