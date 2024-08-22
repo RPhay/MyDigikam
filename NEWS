@@ -3,9 +3,11 @@ digiKam 8.5.0 - Release date: 2024-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundles:  update to last Exiv2 version 0.28.3.
-Bundles:  update to last ExifTool version 12.89.
-Database: update to new unique file hash V3 added.
+Bundles:   update to last Exiv2 version 0.28.3.
+Bundles:   update to last ExifTool version 12.89.
+Database:  update to new unique file hash V3 added.
+RawEngine: Update internal libraw to last 20240820 upstream.
+Video:     Update internal QtAVPlayer to last 20240820 upstream (Qt5 only).
 
 *****************************************************************************************************
 BUGFIXES:
@@ -48,7 +50,7 @@ BUGFIXES:
 036 ==> 491997 - Remember the size of subwindows.
 037 ==> 491999 - Tagging images can change the sorted view.
 038 ==> 491983 - At start the initial zoom percent shown for preview is false.
-039 ==> 
+039 ==> 492020 - Accessibility: Mouse cursor too small.
 040 ==> 
 041 ==> 
 042 ==> 
