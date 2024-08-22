@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2024-07-16 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -3932,7 +3932,7 @@ msgstr "Dosiernomo"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13707,7 +13707,7 @@ msgstr "&Aldoni"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "&Forigi"
@@ -29456,22 +29456,22 @@ msgstr ""
 "Ĉi tiu binara dosiero estas uzata por eldonpromocii la datumbazon al aktuala "
 "versio de servilo."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "Dikfingro"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Listo de eroj forigotaj."
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Ĉi tio estas la listo de aĵoj kiuj estas forigotaj."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29480,7 +29480,7 @@ msgstr ""
 "Se markite, dosieroj estos porĉiame forigitaj anstataŭ esti metitaj en la "
 "Rubujon."
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29492,17 +29492,17 @@ msgstr ""
 "em>: plej multaj dosiersistemoj ne kapablas fidinde reforigi forigitajn "
 "erojn.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Forigi erojn anstataŭ movi ilin al la rubujo"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ne &demandi denove"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29511,7 +29511,7 @@ msgstr ""
 "Se markite, ĉi tiu dialogo ne plu estos montrita, kaj eroj estos rekte kaj "
 "porĉiame forigitaj."
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29520,7 +29520,7 @@ msgstr ""
 "Se ĉi tiu skatolo estas markita, ĉi tiu dialogo ne plu estos montrita, kaj "
 "eroj estos rekte kaj porĉiame forigitaj."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29529,7 +29529,7 @@ msgstr ""
 "Se markite, ĉi tiu dialogo ne plu estos montrita, kaj eroj estos rekte "
 "movitaj al la Rubujo."
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29538,42 +29538,42 @@ msgstr ""
 "Se ĉi tiu skatolo estas markita, ĉi tiu dialogo ne plu estos montrita, kaj "
 "eroj estos rekte movitaj al la Rubujo."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ĉi tiuj eroj estos <b>porĉiame forigitaj</b> de via malmola disko."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ĉi tiuj aĵoj estos movitaj al Rubujo."
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> ero elektita."
 msgstr[1] "<b>%1</b> eroj elektitaj."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ĉi tiuj albumoj estos <b>porĉiame forigitaj</b> de via malmola disko."
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ĉi tiuj albumoj estos movitaj al Rubujo."
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> albumo elektita."
 msgstr[1] "<b>%1</b> albumoj elektitaj."
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29584,7 +29584,7 @@ msgstr ""
 "p><p>Rimarku, ke <b>ĉiuj subalbumoj</b> estas inkluzivitaj en ĉi tiu listo "
 "kaj estos forigitaj porĉiame kiel nu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29594,18 +29594,18 @@ msgstr ""
 "subalbumoj</b> estas inkluzivitaj en ĉi tiu listo kaj ankaŭ estos movitaj al "
 "Rubujo.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Movi al rubujo"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Pri Forigo de Elektitaj Eroj"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"

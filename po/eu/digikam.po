@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2024-08-15 22:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3946,7 +3946,7 @@ msgstr "Fitxategi-izena"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13841,7 +13841,7 @@ msgstr "&Gehitu"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "&Ezabatu"
@@ -30332,22 +30332,22 @@ msgstr ""
 "Fitxategi bitar hau erabiltzen da MariaDB zerbitzariaren instantzia dedikatu "
 "bat abiatzeko."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "Koadro txikia"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Ezabatzeko zorian dauden elementuen zerrenda."
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Ezabatzeko zorian dauden elementuen zerrenda da hau."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30356,7 +30356,7 @@ msgstr ""
 "Markatua badago, fitxategiak betirako ezabatuko dira (zakarrontzira eraman "
 "ordez)."
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30368,17 +30368,17 @@ msgstr ""
 "fitxategi-sistema gehienetan ezin dira ezabatutako fitxategiak modu "
 "fidagarrian berreskuratu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Ezabatu elementuak zakarrontzira eraman ordez"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ez g&aldetu berriz"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30387,7 +30387,7 @@ msgstr ""
 "Markatua badago, elkarrizketa-koadro hau ez da gehiago erakutsiko, eta "
 "elementuak zuzenean eta betirako ezabatuko dira."
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30396,7 +30396,7 @@ msgstr ""
 "Koadro hau markatzen bada, elkarrizketa-koadro hau ez da gehiago erakutsiko, "
 "eta fitxategiak zuzenean eta betirako ezabatuko dira."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30405,7 +30405,7 @@ msgstr ""
 "Markatua badago, elkarrizketa-koadro hau ez da gehiago erakutsiko, eta "
 "elementuak zuzenean zakarrontzira eramango dira."
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30414,42 +30414,42 @@ msgstr ""
 "Koadro hau markatua badago, elkarrizketa-koadro hau ez da gehiago "
 "erakutsiko, eta fitxategiak zuzenean zakarrontzira eramango dira."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Elementu hauek <b>betirako ezabatuko</b> dira zure disko zurrunetik."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Elementu hauek zakarrontzira eramango dira."
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "Elementu <b>1</b> hautatu da."
 msgstr[1] "<b>%1</b> elementu hautatu dira."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Album hauek <b>betirako ezabatuko</b> dira zure disko zurrunetik."
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Album hauek zakarrontzira botako dira."
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "Album <b>1</b> hautatu da."
 msgstr[1] "<b>%1</b> album hautatu dira."
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30460,7 +30460,7 @@ msgstr ""
 "p><p>Jakizu <b>azpi-album guztiak</b> zerrenda honetan sartuta daudela eta "
 "haiek ere betirako ezabatuko direla.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30470,19 +30470,19 @@ msgstr ""
 "guztiak</b> zerrenda honetan sartuta daudela eta haiek ere betirako "
 "ezabatuko direla.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Era&man zakarrontzira"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, fuzzy, kde-format
 #| msgid "About to delete selected items"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Hautatutako elementuak ezabatzear"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"

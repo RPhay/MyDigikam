@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2024-08-20 22:55+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3999,7 +3999,7 @@ msgstr "Bestandsnaam"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13937,7 +13937,7 @@ msgstr "&Toevoegen"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "Verwij&deren"
@@ -29899,23 +29899,23 @@ msgstr ""
 "Dit binaire bestand wordt gebruikt om de database naar de huidige versie op "
 "te waarderen."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatuur"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Lijst met items die op het punt staan verwijderd te worden."
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr ""
 "Dit is de lijst met bestanden die op het punt staan verwijderd te worden."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29924,7 +29924,7 @@ msgstr ""
 "Bij geactiveerd worden de bestanden verwijderd in plaats van verplaatst naar "
 "de prullenbak."
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29936,17 +29936,17 @@ msgstr ""
 "voorzichtig</em>: de meeste bestandssystemen zijn niet in staat om "
 "betrouwbaar verwijderde items terug te halen.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Verwij&der items in plaats van naar de prullenbak verplaatsen"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Niet opnieuw vr&agen"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29955,7 +29955,7 @@ msgstr ""
 "Indien geactiveerd zal dit dialoogvenster niet langer getoond worden en "
 "zullen items direct en permanent verwijderd worden."
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29964,7 +29964,7 @@ msgstr ""
 "Als dit vakje is geactiveerd zal dit dialoogvenster niet langer getoond "
 "worden en zullen items direct en permanent verwijderd worden."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29973,7 +29973,7 @@ msgstr ""
 "Indien geactiveerd zal dit dialoogvenster niet langer getoond worden en "
 "zullen items direct naar de prullenbak gaan."
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29982,44 +29982,44 @@ msgstr ""
 "Als dit vakje is geactiveerd zal dit dialoogvenster niet langer getoond "
 "worden en zullen items direct naar de prullenbak gaan."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Deze items zullen <b>blijvend verwijderd</b> worden van uw harde schijf."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Deze albums worden naar de Prullenbak verplaatst."
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> item geselecteerd."
 msgstr[1] "<b>%1</b> items geselecteerd."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Deze albums zullen <b>blijvend verwijderd</b> worden van uw harde schijf."
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Deze albums worden naar de prullenbak verplaatst."
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> album geselecteerd."
 msgstr[1] "<b>%1</b> albums geselecteerd."
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30030,7 +30030,7 @@ msgstr ""
 "p><p>Let op dat <b>alle subalbums</b> ook in deze lijst begrepen zijn en dus "
 "ook blijvend verwijderd worden.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30040,18 +30040,18 @@ msgstr ""
 "<b>alle subalbums</b> in deze lijst zijn begrepen en ook naar de prullenbak "
 "gaan.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Naar prullenbak &verplaatsen"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Op het punt om de geselecteerde items te verwijderen"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"

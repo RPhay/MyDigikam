@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
-"PO-Revision-Date: 2024-07-13 10:35+0200\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"PO-Revision-Date: 2024-08-20 09:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -960,11 +960,9 @@ msgstr[0] "1 élément"
 msgstr[1] "%1 éléments"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "Média non valable"
+msgstr "Date non valable"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -4055,7 +4053,7 @@ msgstr "Nom de fichier"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -4400,7 +4398,7 @@ msgstr "LibGphoto2"
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
-msgstr "Prise en charge de « LibGphoto2 »"
+msgstr "Prise en charge de la bibliothèque « libgphoto2 »"
 
 #: core/app/views/utils/componentsinfodlg.cpp:88
 #: core/app/views/utils/componentsinfodlg.cpp:100
@@ -5863,7 +5861,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
-msgstr "Antivignettage"
+msgstr "Anti-vignettage"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
 #, kde-format
@@ -7362,7 +7360,7 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 "<para> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « Libjasper ».</para><para>Le standard "
+"des images en utilisant le codec « libjasper ».</para><para>Le standard "
 "« JPEG 2000 » (Joint Photographic Experts Group), finalisé en 2001, propose "
 "un schéma d'encodage d'image utilisant des techniques de pointe pour la "
 "compression à partir de la technologie des ondelettes. Cette architecture de "
@@ -7492,7 +7490,7 @@ msgid ""
 "a> for details.</para>"
 msgstr ""
 "<para> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « Libpgf ».</para><para>Le format "
+"des images en utilisant le codec « libpgf ».</para><para>Le format "
 "« Progressive Graphics File » (PGF) est un puissant format de fichier "
 "d'images, reposant sur une transformation rapide et discrète en ondelettes "
 "avec des fonctionnalités progressives d'encodage. Le format « PGF » peut "
@@ -7554,7 +7552,7 @@ msgid ""
 "Network Graphics documentation</a> for details.</para>"
 msgstr ""
 "<p> Ce module externe permet aux utilisateurs de charger et d'enregistrer "
-"des images en utilisant le codec « Libpng ».</p><p>Le format "
+"des images en utilisant le codec « libpng ».</p><p>Le format "
 "« PNG » (Portable Network Graphics) est un format matriciel de fichier "
 "d'image prenant en charge la compression de données sans perte. Le format "
 "« PNG » a été développé comme une amélioration pour le remplacement sans "
@@ -14059,7 +14057,7 @@ msgstr "&Ajouter"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "&Supprimer"
@@ -20689,7 +20687,7 @@ msgstr "Balsa"
 #, kde-format
 msgctxt "Mail client: CLAWSMAIL"
 msgid "Clawsmail"
-msgstr "Clawsmail"
+msgstr "ClawsMail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:99
 #, kde-format
@@ -20803,7 +20801,7 @@ msgstr "Client de messagerie Outlook."
 #: core/dplugins/generic/tools/sendbymail/tools/thunderbirdbinary.cpp:31
 #, kde-format
 msgid "Mozilla Foundation Mail Client."
-msgstr "Client de messagerie de la Mozilla Foundation."
+msgstr "Client de messagerie de la fondation Mozilla."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:124
 #, kde-format
@@ -24501,7 +24499,7 @@ msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Impossible d'envoyer une photo vers Imageshack : %1\n"
+"Impossible d'envoyer une photo vers ImageShack : %1\n"
 "Voulez-vous continuer ?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
@@ -25159,7 +25157,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
-msgstr "Exporter vers &Ipfs…"
+msgstr "Exporter vers &IPFS…"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:119
 #, kde-format
@@ -27159,7 +27157,7 @@ msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Erreur lors de l'importation d'une image « Raw » avec « RawTheraphee ».\n"
+"Erreur lors de l'importation d'une image « Raw » avec « RawTherapee ».\n"
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
@@ -30144,22 +30142,22 @@ msgstr ""
 "Ce fichier binaire est utilisé pour mettre à niveau la base de données vers "
 "la version actuelle du serveur."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "Vignette"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Liste des éléments sur le point d'être supprimés."
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Il s'agit de la liste des éléments sur le point d'être supprimés."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30168,7 +30166,7 @@ msgstr ""
 "Si cette case est cochée, les fichiers seront définitivement supprimés au "
 "lieu d'être mis à la corbeille."
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30180,17 +30178,17 @@ msgstr ""
 "option avec prudence </em> : la plupart des systèmes de fichiers sont "
 "incapables de restaurer de manière fiable les fichiers supprimés.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Supprimer les fichiers au lieu de les mettre à la corbeille"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ne plus poser l&a question"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30199,7 +30197,7 @@ msgstr ""
 "Si la case est cochée, cette boîte de dialogue ne sera plus affichée, et les "
 "éléments seront directement et définitivement supprimés."
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30208,7 +30206,7 @@ msgstr ""
 "Si la case est cochée, cette boîte de dialogue ne sera plus affichée, et les "
 "éléments seront directement et définitivement supprimés."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30217,7 +30215,7 @@ msgstr ""
 "Si la case est cochée, cette boîte de dialogue ne sera plus affichée, et les "
 "éléments seront directement mis à la corbeille."
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30226,43 +30224,43 @@ msgstr ""
 "Si la case est cochée, cette boîte de dialogue ne sera plus affichée, et les "
 "éléments seront directement mis à la corbeille."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Ces éléments seront <b>définitivement supprimés</b> de votre disque dur."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ces éléments seront mis à la corbeille."
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>%1</b> élément sélectionné."
 msgstr[1] "<b>%1</b> éléments sélectionnés."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ces albums seront <b>définitivement supprimés</b> de votre disque dur."
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ces albums seront mis à la corbeille."
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> album sélectionné."
 msgstr[1] "<b>%1</b> albums sélectionnés."
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30273,7 +30271,7 @@ msgstr ""
 "p><p>Notez que <b>tous les sous-albums</b> sont inclus dans cette liste et "
 "seront supprimés également.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30283,18 +30281,18 @@ msgstr ""
 "albums</b> sont inclus dans cette liste et seront mis à la corbeille "
 "également.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Mettre à la corbeille"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "À propos de la suppression des éléments sélectionnés"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -30520,11 +30518,11 @@ msgstr[1] "Utilisation de la version %2 de LibRaw<br/>%1 modèles dans la list
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] ""
-"Utilisation de la version %2 de LibRaw<br/>Un modèle dans la liste (trouvé : "
-"%3)"
+"Utilisation de la version %2 de la bibliothèque « libraw »<br/>Un modèle "
+"dans la liste (trouvé : %3)"
 msgstr[1] ""
-"Utilisation de la version %2 de LibRaw<br/>%1 modèles dans la liste (trouvé :"
-"%3)"
+"Utilisation de la version %2 de la bibliothèque « libraw »<br/>%1 modèles "
+"dans la liste (trouvé :%3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
@@ -38837,7 +38835,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Visit LibRaw project website"
-msgstr "Visitez le site web du projet LibRaw"
+msgstr "Visitez le site web du projet de la bibliothèque « libraw »"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:224
 #, kde-format
@@ -39078,7 +39076,7 @@ msgstr ""
 "RAW :</para><para><list><item><emphasis strong='true'>Défaut D65</"
 "emphasis> : utiliser la balance des blancs de lumière du jour standard D65.</"
 "item><item><emphasis strong='true'>Appareil photo</emphasis> : utiliser la "
-"balance des blancs spécifiée par l'appareil photo. Si elle nest pas "
+"balance des blancs spécifiée par l'appareil photo. Si elle n'est pas "
 "disponible, se rabattre sur une valeur neutre.</item><item><emphasis "
 "strong='true'>Automatique</emphasis> : calculer une balance des blancs "
 "automatiquement à partir de la moyenne de l'image toute entière.</"
@@ -41124,7 +41122,7 @@ msgstr "Message d'erreur : %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
-msgstr "Déterminer la différence de temps avec Clock Photo"
+msgstr "Déterminer la différence de temps avec ClockPhoto"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:84
 #, kde-format
@@ -41969,7 +41967,7 @@ msgstr "H.264 AVC/MPEG-4 AVC haute qualité"
 #, kde-format
 msgctxt "Video Codec MPEG4"
 msgid "DivX/XVid/MPEG-4"
-msgstr "DivX / XVid / MPEG-4"
+msgstr "DivX / XviD / MPEG-4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:782
 #, kde-format
@@ -67037,7 +67035,7 @@ msgstr "Moteur de décodage vidéo utilisé :"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
 msgid "FFmpeg (Default)"
-msgstr "FFmpeg (Par défaut)"
+msgstr "FFMpeg (Par défaut)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:103
 #, kde-format
@@ -67274,15 +67272,7 @@ msgstr ""
 "Personnalisez le comportement des autres composants de DigiKam"
 
 #: core/utilities/setup/setupdatabase.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -67292,12 +67282,12 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"Le processus de mise à jour des hachages de fichiers prend quelques "
-"minutes.\n"
+"Le processus de mise à jour des hachages de fichiers prend quelques minutes "
+"ou quelques heures.\n"
 "Veuillez vérifier que toute collection importante se trouvant sur des média "
-"amovibles est accessible. Après la mise à jour, il n'est pas possible "
-"d'employer votre base de données avec une version de DigiKam antérieure à la "
-"version 2.0.\n"
+"amovibles est accessible.\n"
+"Après la mise à jour, il vous sera impossible d'utiliser votre base de "
+"données avec une version de DigiKam antérieure à la version 8.5.0.\n"
 " Voulez-vous vraiment lancer la mise à jour ?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
@@ -67313,15 +67303,7 @@ msgid "Update File Hashes"
 msgstr "Mettre à jour les hachages de fichiers"
 
 #: core/utilities/setup/setupdatabase.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -67332,12 +67314,12 @@ msgid ""
 "to 8.5.0."
 msgstr ""
 "Les hachages de fichiers servent à identifier les fichiers identiques et à "
-"afficher des vignettes. Un algorithme nouveau et amélioré pour créer le "
-"hachage est désormais utilisé. L'ancien algorithme, cependant, fonctionnant "
-"encore parfaitement bien, il est recommandé de procéder à cette mise à "
-"niveau, mais sans obligation.<br/>Après la mise à niveau, il n'est pas "
-"possible d'utiliser votre base de données avec une version de DigiKam "
-"antérieure à la version 2.0."
+"afficher les vignettes. Un nouvel algorithme amélioré pour la création du "
+"hachage est désormais utilisé. L'ancien algorithme, cependant, fonctionne "
+"encore parfaitement bien, aussi, il est recommandé de procéder à cette mise "
+"à niveau, mais sans obligation.\n"
+"Après la mise à niveau, il vous sera impossible d'utiliser votre base de "
+"données avec une version de DigiKam antérieure à la version 8.5.0."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format

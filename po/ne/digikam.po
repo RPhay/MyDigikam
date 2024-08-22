@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -3842,7 +3842,7 @@ msgstr "नयाँ छवि फाइलनाम"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13235,7 +13235,7 @@ msgstr "थप्नुहोस्"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "मेट्नुहोस्"
@@ -28343,29 +28343,29 @@ msgstr ""
 "यो विकल्प छवि काँटछाँट गर्न प्रयोग गरिन्छ । यो कार्यलाई सक्षम पार्न छविको क्षेत्र चयन "
 "गर्नुहोस् ।"
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "मेट्न लागेको फाइलको सूची"
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "यो मेट्न लागेको वस्तुको सूची हो ।"
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, fuzzy, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "यदि चेक गरिएमा, फाइलहरू रद्दीटोकरीमा राख्नुको सट्टा सदाका लागि मेटिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28378,73 +28378,73 @@ msgstr ""
 "    <p><em>यो विकल्प सावधानीपूर्वक प्रयोग गर्नुहोस्</em>: धेरै जसो फाइलप्रणालीले मेटेको "
 "फाइल फेरि फर्काउन सक्षम हुँदैनन् ।</p></qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "फाइलहरूलाई रद्दीटोरकीमा सार्नुको सट्टा तिनिहरूलाई मेट्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "फेरि नसोध्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, fuzzy, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति वस्तुहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, fuzzy, kde-format
 msgid "These items will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, fuzzy, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति एल्बमहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, fuzzy, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, fuzzy, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -28455,7 +28455,7 @@ msgstr[1] ""
 "<b>१</b> एल्बम चयन गरिएको छ ।\n"
 "<b>%n</b> एल्बम चयन गरिएको छ ।"
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28466,7 +28466,7 @@ msgstr ""
 "सहायक एल्बम</b> समाविष्ट हुन्छन् र तिनिहरू पनि सदाका लागि मेटिनेछ भनी याद राख्नुहोस् ।</"
 "qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28475,18 +28475,18 @@ msgstr ""
 "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।<br>यो सूचीमा <b>सबै सहायक एल्बम</b> समाविष्ट "
 "हुन्छन् र तिनिहरू पनि सदाका लागि रद्दीटोकरीमा सारिन्छ भनी याद राख्नुहोस् ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, fuzzy, kde-format
 msgid "&Move to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "चयन गरेको फाइल मेट्ने बारेमा"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"

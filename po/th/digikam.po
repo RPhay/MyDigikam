@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -4018,7 +4018,7 @@ msgstr "ชื่อแฟ้ม"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13756,7 +13756,7 @@ msgstr "เ&พิ่ม"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "&ลบ"
@@ -29749,22 +29749,22 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr "ตัวเลือกนี้ สามารถใช้เพื่อย่อหรือขยายขนาดภาพของส่วนพื้นที่ที่เลือก"
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "ภาพตัวอย่าง"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "รายการของแฟ้มที่กำลังจะทำการลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "นี่เป็นรายการของแฟ้มภาพที่จะทำการลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29772,7 +29772,7 @@ msgid ""
 msgstr ""
 "หากกาเลือกตัวเลือกนี้ แฟ้มที่ถูกสั่งลบจะถูกลบออกไปจากเครื่องจริง ๆ แทนการทิ้งลงโฟลเดอร์ถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29783,17 +29783,17 @@ msgstr ""
 "แทนการทิ้งลงโฟลเดอร์ถังขยะ</p><p><em>โปรดใช้ตัวเลือกนี้อย่างระมัดระวัง</em>: "
 "เนื่องจากระบบแฟ้มส่วนใหญ่ จะไม่สามารถทำการกู้คืนแฟ้มที่โดนลบไปแล้วได้</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "ทำการ&ลบแฟ้มจริง ๆ แทนการทิ้งลงถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "ไม่ต้องทำการ&ถามอีก"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29801,7 +29801,7 @@ msgid ""
 msgstr ""
 "หากกาเลือก จะไม่มีการแสดงกล่องโต้ตอบนี้อีก และแฟ้มจะถูกลบทิ้งไปอย่างถาวรทันทีเมื่อมีการสั่งลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29810,14 +29810,14 @@ msgstr ""
 "หากกาเลือกตัวเลือกนี้ จะไม่มีการแสดงกล่องโต้ตอบนี้อีก "
 "และแฟ้มจะถูกลบทิ้งอย่างถาวรโดยตรงเมื่อมีการสั่งลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "หากกาเลือก จะไม่มีการแสดงกล่องโต้ตอบนี้อีก และแฟ้มจะถูกทิ้งลงถังขยะทันทีเมื่อมีการสั่งลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29825,40 +29825,40 @@ msgid ""
 msgstr ""
 "หากกาตัวเลือกนี้ จะไม่มีการแสดงกล่องโต้ตอบนี้อีก และแฟ้มจะถูกทิ้งลงถังขยะทันทีเมื่อมีการสั่งลบ"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "รายการเหล่านี้จะถูก<b>ลบออกไปอย่างถาวร</b>จากฮาร์ดดิสก์ของคุณ"
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "รายการเหล่านี้จะถูกทิ้งลงในถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "เลือกไว้ทั้งหมด <b>%1</b> แฟ้ม"
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "อัลบั้มเหล่านี้จะถูก<b>ลบออกไปอย่างถาวร</b>จากฮาร์ดดิสก์ของคุณ"
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "อัลบั้มเหล่านี้จะถูกทิ้งลงในถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "เลือกไว้ทั้งหมด <b>%1</b> อัลบั้ม"
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29868,7 +29868,7 @@ msgstr ""
 "<p>อัลบั้มเหล่านี้จะถูก<b>ลบออกไปอย่างถาวร</b>จากฮาร์ดดิสก์ของคุณ</p><p>ควรทราบไว้ว่า "
 "<b>อัลบั้มย่อยทั้งหมด</b>ที่อยู่ภายในรายการเหล่านี้ จะถูกลบออกไปอย่างถาวรเช่นเดียวกัน</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29877,18 +29877,18 @@ msgstr ""
 "<p>อัลบั้มเหล่านี้จะถูกทิ้งลงในถังขยะ</p><p>ควรทราบไว้ว่า <b>อัลบั้มย่อยทั้งหมด</"
 "b>ที่อยู่ภายในรายการเหล่านี้ จะถูกทิ้งลงถังขยะเช่นเดียวกัน</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "ทิ้งลง&ถังขยะ"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "ทำการลบแฟ้มต่าง ๆ ที่เลือกไว้"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"

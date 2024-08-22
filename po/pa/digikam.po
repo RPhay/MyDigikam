@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -4078,7 +4078,7 @@ msgstr "ਫਾਇਲ ਨਾਂ"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13645,7 +13645,7 @@ msgstr "ਸ਼ਾਮਲ(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "ਹਟਾਓ(&D)"
@@ -29388,29 +29388,29 @@ msgid ""
 msgstr ""
 "ਇਹ ਚੋਣ ਚਿੱਤਰ ਭਾਗ ਨੂੰ ਫੈਲਾਉਣ ਲਈ ਵਰਤੀ ਜਾ ਸਕਦੀ ਹੈ। ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਚਿੱਤਰ ਖੇਤਰ ਦੀ ਚੋਣ ਕਰੋ।"
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "ਥੰਮ"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "ਫਾਇਲਾਂ ਦੀ ਲਿਸਟ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "ਜੇਕਰ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਫਾਇਲਾਂ ਨੂੰ ਰੱਦੀ 'ਚ ਰੱਖਣ ਦੀ ਬਜਾਏ ਹਮੇਸ਼ਾਂ ਲਈ ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29418,17 +29418,17 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "ਫਾਇਲਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਣ ਦੀ ਬਜਾਏ ਹਟਾ ਦਿਓ(&D)"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "ਮੁੜ ਨਾ ਪੁੱਛੋ(&a)"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29437,7 +29437,7 @@ msgstr ""
 "ਜੇ ਇਹ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਰੱਦੀ ਵਿੱਚ  ਭੇਜਿਆ "
 "ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29446,7 +29446,7 @@ msgstr ""
 "ਜੇ ਇਹ ਬਕਸਾ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਫੇਰ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ, ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਹੀ ਰੱਦੀ "
 "ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29455,7 +29455,7 @@ msgstr ""
 "ਜੇ ਇਹ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਰੱਦੀ ਵਿੱਚ  ਭੇਜਿਆ "
 "ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29464,42 +29464,42 @@ msgstr ""
 "ਜੇ ਇਹ ਬਕਸਾ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਫੇਰ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ, ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਹੀ ਰੱਦੀ "
 "ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "ਇਹ ਆਈਟਮਾਂ ਨੂੰ ਤੁਹਾਡੀ ਹਾਰਡ ਡਿਸਕ ਤੋਂ <b>ਹਮੇਸ਼ਾ ਲਈ ਹਟਾ ਦਿੱਤਾ</b> ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "ਇਨ੍ਹਾਂ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਟੋਕਰੀ 'ਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> ਫਾਇਲ ਚੁਣੀ।"
 msgstr[1] "<b>%1</b> ਫਾਇਲਾਂ ਚੁਣੀਆਂ।"
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਤੁਹਾਡੀ ਹਾਰਡ ਡਿਸਕ ਤੋਂ <b>ਹਮੇਸ਼ਾਂ ਲਈ ਹਟਾ</b> ਦਿੱਤਾ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> ਐਲਬਮ ਚੁਣੀ ਗਈ।"
 msgstr[1] "<b>%1</b> ਐਲਬਮਾਂ ਚੁਣੀਆਂ ਗਈਆਂ।"
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29510,7 +29510,7 @@ msgstr ""
 "ਇਸ ਲਿਸਟ ਵਿੱਚ ਮੌਜੂਦ <b>ਸਭ ਸਬ-ਐਲਬਮਾਂ</b> ਵੀ ਸ਼ਾਮਲ ਹਨ ਅਤੇ ਉਹ ਵੀ ਪੱਕੇ ਤੌਰ ਉੱਤੇ ਹਟਾਈਆਂ ਜਾਣਗੀਆਂ।"
 "</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29519,18 +29519,18 @@ msgstr ""
 "<p>ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।</p><p>ਯਾਦ ਰੱਖੋ ਕਿ ਇਸ ਲਿਸਟ ਵਿੱਚ <b>ਸਭ ਸਬ-"
 "ਐਲਬਮਾਂ</b> ਨੂੰ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ ਹੈ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "ਰੱਦੀ ਵਿੱਚ ਭੇਜੋ(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "ਚੁਣੀਆਂ ਫਾਇਲਾਂ ਹਟਾਉਣ ਬਾਰੇ"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"

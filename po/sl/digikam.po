@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 01:57+0000\n"
+"POT-Creation-Date: 2024-08-22 01:53+0000\n"
 "PO-Revision-Date: 2024-08-20 06:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3989,7 +3989,7 @@ msgstr "Ime datoteke"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:573
 #, kde-format
 msgid "Path"
@@ -13805,7 +13805,7 @@ msgstr "Dodaj"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:595
 #, kde-format
 msgid "&Delete"
 msgstr "Izbriši"
@@ -29591,22 +29591,22 @@ msgstr ""
 "Ta binarna datoteka se uporablja za nadgradnjo baze podatkov na trenutno "
 "različico strežnika."
 
-#: core/libs/dialogs/deletedialog.cpp:174
+#: core/libs/dialogs/deletedialog.cpp:176
 #, kde-format
 msgid "Thumb"
 msgstr "Sličica"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:179
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Seznam predmetov, ki bodo pravkar izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:178
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "To je seznam predmetov, ki bodo pravkar izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:289
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29615,7 +29615,7 @@ msgstr ""
 "Če to označite, bodo datoteke trajno odstranjene, namesto da bi bile "
 "prestavljene v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:293
+#: core/libs/dialogs/deletedialog.cpp:291
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29627,17 +29627,17 @@ msgstr ""
 "večina datotečnih sistemov ne more zanesljivo obnoviti izbrisanih datotek.</"
 "p>"
 
-#: core/libs/dialogs/deletedialog.cpp:299
+#: core/libs/dialogs/deletedialog.cpp:297
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Izbriši predmete, namesto premikanja v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:306
+#: core/libs/dialogs/deletedialog.cpp:304
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ne vpr&ašaj več"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:363
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29646,7 +29646,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno in trajno izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:367
+#: core/libs/dialogs/deletedialog.cpp:365
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29655,7 +29655,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno in trajno izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:370
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29664,7 +29664,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:374
+#: core/libs/dialogs/deletedialog.cpp:372
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29673,17 +29673,17 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ti predmeti bodo <b>trajno izbrisani</b> s trdega diska."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:390
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ti predmeti bodo premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:394
+#: core/libs/dialogs/deletedialog.cpp:392
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -29692,18 +29692,18 @@ msgstr[1] "<b>%1</b> izbran predmet."
 msgstr[2] "<b>%1</b> izbrana predmeta."
 msgstr[3] "<b>%1</b> izbrani predmeti."
 
-#: core/libs/dialogs/deletedialog.cpp:407
+#: core/libs/dialogs/deletedialog.cpp:405
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ti albumi bodo <b>trajno izbrisani</b> s trdega diska."
 
-#: core/libs/dialogs/deletedialog.cpp:413
+#: core/libs/dialogs/deletedialog.cpp:411
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ti albumi bodo premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:417
-#: core/libs/dialogs/deletedialog.cpp:444
+#: core/libs/dialogs/deletedialog.cpp:415
+#: core/libs/dialogs/deletedialog.cpp:442
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -29712,7 +29712,7 @@ msgstr[1] "<b>%1</b> izbran album."
 msgstr[2] "<b>%1</b> izbrana albuma."
 msgstr[3] "<b>%1</b> izbrani albumi."
 
-#: core/libs/dialogs/deletedialog.cpp:428
+#: core/libs/dialogs/deletedialog.cpp:426
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29722,7 +29722,7 @@ msgstr ""
 "<p>Ti albumi bodo <b>trajno zbrisani</b> z vašega trdega diska.</p><p>Prav "
 "tako bodo trajno zbrisani tudi <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:437
+#: core/libs/dialogs/deletedialog.cpp:435
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29731,18 +29731,18 @@ msgstr ""
 "<p>Ti albumi bodo premaknjeni v Smeti.</p><p>Prav tako bodo premaknjeni v "
 "Smeti <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:588
+#: core/libs/dialogs/deletedialog.cpp:596
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Pre&makni v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:648
+#: core/libs/dialogs/deletedialog.cpp:656
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Izbrani predmeti bodo pravkar izbrisani"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:663
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
