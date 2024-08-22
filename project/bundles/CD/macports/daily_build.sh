@@ -19,6 +19,6 @@ do
 
     fi
 
-    sleep 20s
+    sleep 20
 
 done
