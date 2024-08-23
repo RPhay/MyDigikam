@@ -473,7 +473,7 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
                                                   QDialogButtonBox::Cancel |
                                                   QDialogButtonBox::Help,
                                                   this);
-    d->buttons->button(QDialogButtonBox::Apply)->setDefault(true);
+    d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
     d->page                = new DeleteWidget(this);
     d->page->setMinimumSize(400, 300);
