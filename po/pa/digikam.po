@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -35081,25 +35081,25 @@ msgstr "ਐਲਬਮ ਨਾਂ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹ
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Could not move image %1 to collection trash"
 msgstr "%1: ਫਾਇਲ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "ਇਸੇ ਟੈਗ ਨਾਲ ਪਹਿਲਾਂ ਵੀ ਐਲਬਮ ਮੌਜੂਦ ਹੈ\n"
 "ਹੋਰ ਨਾਂ ਦੀ ਚੋਣ ਕਰੋ ਜੀ।"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"

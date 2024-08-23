@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2024-08-20 09:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -35715,23 +35715,23 @@ msgstr "No s'ha pogut eliminar l'àlbum %1"
 msgid "Image %1 could not be removed"
 msgstr "No s'ha pogut eliminar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ja hi ha una imatge amb el mateix nom %1"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No s'ha pogut canviar de nom la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No s'ha pogut restaurar el fitxer %1 des de la paperera"

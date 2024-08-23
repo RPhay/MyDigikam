@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2024-08-20 12:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -35751,22 +35751,22 @@ msgstr "No se ha podido eliminar el álbum %1"
 msgid "Image %1 could not be removed"
 msgstr "No se ha podido eliminar la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "No se ha podido mover la imagen %1 a la papelera de la colección"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ya existe allí una imagen con el mismo nombre %1"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No se ha podido cambiar el nombre de la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No se ha podido restaurar el archivo «%1» de la papelera"

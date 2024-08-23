@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -35538,24 +35538,24 @@ msgstr "Ní cheadaítear ainm folamh ar an albam."
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Tá clib eile leis an ainm céanna ann.\n"
 "Roghnaigh ainm eile."
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"

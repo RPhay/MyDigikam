@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2024-08-20 09:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -35984,22 +35984,22 @@ msgstr "Impossible de supprimer l'album « %1 »"
 msgid "Image %1 could not be removed"
 msgstr "L'image « %1 » n'a pas pu être supprimée"
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Impossible de déplacer l'image « %1 » dans la corbeille"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Une image avec le même nom « %1 » existe déjà"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "L'image « %1 » n'a pas pu être renommée"
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Impossible de restaurer le fichier « %1 » à partir de la corbeille"

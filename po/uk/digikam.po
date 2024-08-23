@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2024-08-20 07:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -35845,22 +35845,22 @@ msgstr "Не вдалося вилучити альбом %1"
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"

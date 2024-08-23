@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -37555,23 +37555,23 @@ msgstr "Não foi possível remover o álbum %1"
 msgid "Image %1 could not be removed"
 msgstr "Não foi possível remover a imagem %1"
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, fuzzy, kde-format
 #| msgid "Couldn't move image %1 to collection trash"
 msgid "Could not move image %1 to collection trash"
 msgstr "Não foi possível mover a imagem %1 para a lixeira de coleções"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Já existe outra imagem com o nome %1"
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Não foi possível renomear a imagem %1"
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, fuzzy, kde-format
 #| msgid "Could not open file '%1' for writing"
 msgid "Could not restore file %1 from trash"

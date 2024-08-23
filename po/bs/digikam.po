@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -37609,25 +37609,25 @@ msgstr "Ime albuma ne može biti prazno."
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Could not move image %1 to collection trash"
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Druga oznaka sa istim imenom već postoji.\n"
 "Molimo Vas, odaberite drugo ime."
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Ne mogu otvoriti: %1"

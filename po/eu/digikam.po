@@ -1,5 +1,5 @@
 # Translation for digikam.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2023 This file is copyright:
+# Copyright (C) 2005-2024 This file is copyright:
 # This package is distributed under the same license as the digikam package.
 # SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
@@ -32,14 +32,14 @@
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2006.
 # Marcos <marcos@euskalgnu.org>, 2006, 2011.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007, 2010.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022, 2023, 2024.
 # Enbata <urazpian@hotmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 01:53+0000\n"
-"PO-Revision-Date: 2024-08-15 22:39+0200\n"
+"POT-Creation-Date: 2024-08-23 01:45+0000\n"
+"PO-Revision-Date: 2024-08-22 13:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -927,11 +927,9 @@ msgstr[0] "Elementu 1"
 msgstr[1] "%1 elementu"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Invalid media"
+#, kde-format
 msgid "Invalid date"
-msgstr "Euskarri baliogabea"
+msgstr "Data baliogabea"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:322
 #, kde-format
@@ -3350,12 +3348,12 @@ msgstr ""
 "tresna-barran."
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Gaitu aukera hau fitxategien data-zigilua eguneratzeko metadatuak gordetzen "
-"direnean."
+"Metadatuak: ExifTool bizkarraldekoarekin fitxategietan metadatuak idazteko "
+"aukera berria gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:107
 #, fuzzy, kde-format
@@ -36377,24 +36375,24 @@ msgstr "Ezin da albumaren izena hutsik utzi."
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:385
+#: core/libs/iojobs/iojob.cpp:379
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Ezin izan da '%1' irudia hemen gorde: '%2'"
 
-#: core/libs/iojobs/iojob.cpp:397
+#: core/libs/iojobs/iojob.cpp:391
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Izen bereko beste album bat badago lehendik ere.\n"
 "Hautatu beste izen bat."
 
-#: core/libs/iojobs/iojob.cpp:414
+#: core/libs/iojobs/iojob.cpp:408
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:493
+#: core/libs/iojobs/iojob.cpp:487
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"
@@ -60293,10 +60291,9 @@ msgstr "Tresna honi buruz..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:102
-#, fuzzy, kde-format
-#| msgid "Online Handbook..."
+#, kde-format
 msgid "Tool online handbook..."
-msgstr "Lerroko eskuliburua..."
+msgstr "Tresnaren lerroko eskuliburua..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
 #, kde-format
@@ -60456,25 +60453,25 @@ msgstr "JPEG 2000"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
-msgstr ""
+msgstr "HEIF"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
-msgstr ""
+msgstr "JXL"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
-msgstr ""
+msgstr "WEBP"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
-msgstr ""
+msgstr "AVIF"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, kde-format
@@ -60555,18 +60552,15 @@ msgid "Fit to &Selection"
 msgstr "Doitu &hautapenera"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:422
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option can be used to zoom the image to the current selection area."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ""
-"Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
+"Aukera hau, irudiari uneko hautapen azalerara zoom egiteko erabil daiteke."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:447
-#, fuzzy, kde-format
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Azpi-esposizioaren adierazlea"
@@ -68847,6 +68841,13 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
+"Fitxategien hash-ak eguneratzeko prozesuak minutu edo ordu batzuk behar "
+"ditu.\n"
+"Mesedez, ziurtatu hedabide aldagarrietako bilduma garrantzitsu guztiak "
+"konektatuta daudela.\n"
+"Bertsio-berritu ondoren zure datu-basea ezingo duzu erabili digiKam 8.5.0 "
+"aurreko bertsioekin.\n"
+"Eguneratzea hasi nahi duzu?"
 
 #: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
@@ -68855,10 +68856,10 @@ msgid "Updates"
 msgstr "Eguneratzeak"
 
 #: core/utilities/setup/setupdatabase.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
-msgstr "Datu-basearen fitxategiaren bide-izena"
+msgstr "Eguneratu fitxateen hash-ak"
 
 #: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
@@ -68871,12 +68872,20 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 8.5.0."
 msgstr ""
+"Fitxategien hash-ak fitxategi berdin-berdinak antzemateko eta koadro-txikiak "
+"azaltzeko erabiltzen dira. Orain, hash-a sortzeko algoritmo berri hobetu bat "
+"erabiltzen du. Algoritmo zaharra nahiko ondo dabil, eta beraz, bertsio-"
+"berritzea egitea gomendatzen da, baino ez da derrigor egin beharrekoa.\n"
+"Bertsio-berritu ondoren zure datu-basea ezingo duzu erabili digiKam 8.5.0 "
+"aurreko bertsioekin."
 
 #: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
+"Lortu <interface>Eguneratu fitxategien hash-ak</interface>eri buruzko "
+"informazioa"
 
 #: core/utilities/setup/setupgeolocation.cpp:104
 #, kde-format
