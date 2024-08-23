@@ -39,6 +39,7 @@
 // KDE includes
 
 #include <kconfiggroup.h>
+#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -143,6 +144,10 @@ TagsManager::~TagsManager()
 {
     StateSavingObject::saveState();
 
+    KConfigGroup group = getConfigGroup();
+    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+    group.sync();
+
     delete d;
 }
 
@@ -158,47 +163,53 @@ TagsManager* TagsManager::instance()
 
 void TagsManager::setupUi()
 {
-     resize(970, 720);
-     setWindowTitle(i18nc("@title:window", "Tags Manager"));
+    setWindowTitle(i18nc("@title:window", "Tags Manager"));
 
-     d->tagPixmap   = new QLabel();
-     d->tagPixmap->setText(QLatin1String("Tag Pixmap"));
-     d->tagPixmap->setMaximumWidth(40);
-     d->tagPixmap->setPixmap(QIcon::fromTheme(QLatin1String("tag")).pixmap(30, 30));
+    d->tagPixmap   = new QLabel();
+    d->tagPixmap->setText(QLatin1String("Tag Pixmap"));
+    d->tagPixmap->setMaximumWidth(40);
+    d->tagPixmap->setPixmap(QIcon::fromTheme(QLatin1String("tag")).pixmap(30, 30));
 
-     d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
-     d->tagMngrView->setConfigGroup(getConfigGroup());
+    d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
+    d->tagMngrView->setConfigGroup(getConfigGroup());
 
-     d->searchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
-     d->searchBar->setHighlightOnResult(true);
-     d->searchBar->setModel(d->tagMngrView->filteredModel(),
-                            AbstractAlbumModel::AlbumIdRole,
-                            AbstractAlbumModel::AlbumTitleRole);
-     d->searchBar->setMaximumWidth(200);
-     d->searchBar->setFilterModel(d->tagMngrView->albumFilterModel());
+    d->searchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
+    d->searchBar->setHighlightOnResult(true);
+    d->searchBar->setModel(d->tagMngrView->filteredModel(),
+                           AbstractAlbumModel::AlbumIdRole,
+                           AbstractAlbumModel::AlbumTitleRole);
+    d->searchBar->setMaximumWidth(200);
+    d->searchBar->setFilterModel(d->tagMngrView->albumFilterModel());
 
-     setupActions();
+    setupActions();
 
-     // Tree Widget + Actions + Tag Properties
+    // Tree Widget + Actions + Tag Properties
 
-     d->tagPropWidget = new TagPropWidget(this);
-     d->listView      = new TagList(d->tagMngrView, this);
+    d->tagPropWidget = new TagPropWidget(this);
+    d->listView      = new TagList(d->tagMngrView, this);
 
-     d->splitter      = new QSplitter(Qt::Horizontal, this);
-     d->splitter->addWidget(d->listView);
-     d->splitter->addWidget(d->tagMngrView);
-     d->splitter->addWidget(d->tagPropWidget);
+    d->splitter      = new QSplitter(Qt::Horizontal, this);
+    d->splitter->addWidget(d->listView);
+    d->splitter->addWidget(d->tagMngrView);
+    d->splitter->addWidget(d->tagPropWidget);
 
-     connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
-             this, SLOT(slotTitleEditReady()));
+    connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
+            this, SLOT(slotTitleEditReady()));
 
-     d->splitter->setStretchFactor(d->splitter->indexOf(d->tagMngrView), 10);
+    d->splitter->setStretchFactor(d->splitter->indexOf(d->tagMngrView), 10);
 
-     QWidget* const centralView    = new QWidget(this);
-     QHBoxLayout* const mainLayout = new QHBoxLayout(centralView);
-     mainLayout->addWidget(d->splitter);
-     centralView->setLayout(mainLayout);
-     setCentralWidget(centralView);
+    QWidget* const centralView    = new QWidget(this);
+    QHBoxLayout* const mainLayout = new QHBoxLayout(centralView);
+    mainLayout->addWidget(d->splitter);
+    centralView->setLayout(mainLayout);
+    setCentralWidget(centralView);
+
+    KConfigGroup group = getConfigGroup();
+
+    winId();
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
 }
 
 void TagsManager::slotSelectionChanged()

@@ -285,8 +285,8 @@ DigikamApp::~DigikamApp()
 
     if (TagsManager::isCreated())
     {
-        TagsManager::instance()->setAttribute(Qt::WA_DeleteOnClose, true);
         TagsManager::instance()->close();
+        delete TagsManager::internalPtr;
     }
 
     if (MetadataHubMngr::isCreated())
