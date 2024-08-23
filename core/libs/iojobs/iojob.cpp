@@ -372,28 +372,38 @@ void RenameFileJob::run()
 
         if (QFileInfo::exists(destUrl.toLocalFile()))
         {
-            if (m_data->fileConflict() == IOJobData::Overwrite)
+            QFileInfo fileInfo(destUrl.toLocalFile());
+            QDir dir(fileInfo.dir());
+
+            const QStringList& dirList = dir.entryList(QDir::Dirs    |
+                                                       QDir::Files   |
+                                                       QDir::NoDotAndDotDot);
+
+            if (dirList.contains(fileInfo.fileName()))
             {
-                if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
+                if (m_data->fileConflict() == IOJobData::Overwrite)
                 {
-                    Q_EMIT signalError(i18n("Could not move image %1 to collection trash",
+                    if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
+                    {
+                        Q_EMIT signalError(i18n("Could not move image %1 to collection trash",
+                                                QDir::toNativeSeparators(destUrl.toLocalFile())));
+
+                        Q_EMIT signalRenameFailed(renameUrl);
+
+                        continue;
+                    }
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_IOJOB_LOG) << "File with the same name exists!";
+
+                    Q_EMIT signalError(i18n("Image with the same name %1 already there",
                                             QDir::toNativeSeparators(destUrl.toLocalFile())));
 
                     Q_EMIT signalRenameFailed(renameUrl);
 
                     continue;
                 }
-            }
-            else
-            {
-                qCDebug(DIGIKAM_IOJOB_LOG) << "File with the same name exists!";
-
-                Q_EMIT signalError(i18n("Image with the same name %1 already there",
-                                        QDir::toNativeSeparators(destUrl.toLocalFile())));
-
-                Q_EMIT signalRenameFailed(renameUrl);
-
-                continue;
             }
         }
 
