@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-24 01:46+0000\n"
+"POT-Creation-Date: 2024-08-25 01:46+0000\n"
 "PO-Revision-Date: 2024-08-20 09:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3168,7 +3168,7 @@ msgid "Tools"
 msgstr "Eines"
 
 #: core/app/views/stack/trashview.cpp:107
-#: core/libs/tags/manager/tagsmanager.cpp:841
+#: core/libs/tags/manager/tagsmanager.cpp:840
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
@@ -27707,7 +27707,7 @@ msgstr "Retola l'àlbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:155
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:721
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -39773,38 +39773,38 @@ msgid "Delete Tags"
 msgstr "Suprimeix les etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:145
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edita el títol de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:149
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reinicia la icona de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:152
-#: core/libs/tags/manager/tagsmanager.cpp:719
+#: core/libs/tags/manager/tagsmanager.cpp:718
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:158
-#: core/libs/tags/manager/tagsmanager.cpp:725
+#: core/libs/tags/manager/tagsmanager.cpp:724
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Desplega l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:161
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:727
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Redueix l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:164
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:730
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Elimina les etiquetes de les imatges"
@@ -39878,13 +39878,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Les etiquetes anteriors han canviat. Deso els canvis? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:166
+#: core/libs/tags/manager/tagsmanager.cpp:165
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestor d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:332
+#: core/libs/tags/manager/tagsmanager.cpp:331
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39900,7 +39900,7 @@ msgstr[1] ""
 "Les etiquetes %2 tenen una o més subetiquetes. La seva supressió també "
 "suprimirà les subetiquetes. Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:355
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39911,7 +39911,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Les etiquetes %2 estan assignades a un o més elements. Les voleu suprimir?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:365
+#: core/libs/tags/manager/tagsmanager.cpp:364
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39919,7 +39919,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Suprimeixo l'etiqueta %2?"
 msgstr[1] "Suprimeixo les etiquetes %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:371
+#: core/libs/tags/manager/tagsmanager.cpp:370
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39927,7 +39927,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Supressió d'etiqueta"
 msgstr[1] "Supressió d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:497
+#: core/libs/tags/manager/tagsmanager.cpp:496
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39939,8 +39939,8 @@ msgstr ""
 "llegiu abans (crideu «Llegeix les etiquetes de la imatge»).<br/>Voleu "
 "continuar?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:509
-#: core/libs/tags/manager/tagsmanager.cpp:528
+#: core/libs/tags/manager/tagsmanager.cpp:508
+#: core/libs/tags/manager/tagsmanager.cpp:527
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39949,7 +39949,7 @@ msgstr ""
 "Aquesta operació pot trigar molt de temps segons la mida de la col·lecció.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:548
+#: core/libs/tags/manager/tagsmanager.cpp:547
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39961,7 +39961,7 @@ msgstr ""
 "metadades al fitxer.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:612
+#: core/libs/tags/manager/tagsmanager.cpp:611
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39970,36 +39970,36 @@ msgstr[0] ""
 msgstr[1] ""
 "Realment voleu eliminar les etiquetes seleccionades de totes les imatges?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:693
+#: core/libs/tags/manager/tagsmanager.cpp:692
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:696
+#: core/libs/tags/manager/tagsmanager.cpp:695
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronitza l'&exportació"
 
-#: core/libs/tags/manager/tagsmanager.cpp:713
+#: core/libs/tags/manager/tagsmanager.cpp:712
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
 
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagsmanager.cpp:715
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marca les etiquetes sense assignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:736
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Afegeix una etiqueta nova a l'etiqueta actual. L'etiqueta actual és la "
 "darrera etiqueta clicada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:739
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40008,78 +40008,78 @@ msgstr ""
 "Suprimeix els elements seleccionats. També funciona amb elements múltiples, "
 "però no suprimeix l'etiqueta arrel."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Edita el títol de l'etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:745
+#: core/libs/tags/manager/tagsmanager.cpp:744
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Reinicia la icona de les etiquetes seleccionades. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marca totes les etiquetes no assignades a les imatges."
 
-#: core/libs/tags/manager/tagsmanager.cpp:750
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverteix la selecció. Només se seleccionaran els elements visibles"
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Els elements seleccionats es desplegaran"
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Desplega l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Redueix l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Suprimeix les etiquetes seleccionades de les imatges. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:807
+#: core/libs/tags/manager/tagsmanager.cpp:806
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escriu les etiquetes de la base de dades a la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:810
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Llegeix les etiquetes de la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:813
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Esborra totes les etiquetes només de la base de dades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:815
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escriu les metadades de les etiquetes a la imatge."
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Llegeix les etiquetes de la imatge cap a la base de dades. Les etiquetes "
 "existents no quedaran afectades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40088,7 +40088,7 @@ msgstr ""
 "Suprimeix totes les etiquetes només de la base de dades. No se sincronitzarà "
 "amb els fitxers. Procediu amb precaució."
 
-#: core/libs/tags/manager/tagsmanager.cpp:842
+#: core/libs/tags/manager/tagsmanager.cpp:841
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
