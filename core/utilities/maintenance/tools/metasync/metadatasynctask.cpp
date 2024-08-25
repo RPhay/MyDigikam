@@ -21,6 +21,7 @@
 #include "metadatahub.h"
 #include "digikam_debug.h"
 #include "maintenancedata.h"
+#include "metadatahubmngr.h"
 
 namespace Digikam
 {
@@ -105,6 +106,11 @@ void MetadataSyncTask::run()
             }
             else
             {
+                if (MetadataHubMngr::isCreated())
+                {
+                    MetadataHubMngr::instance()->delPending(item);
+                }
+
                 ScanController::FileMetadataWrite writeScope(item);
                 writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_ALL, true));
             }

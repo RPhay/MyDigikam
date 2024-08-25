@@ -38,6 +38,7 @@ public:
 
     void addPendingIds(const QList<qlonglong>& imageIds);
     void addPending(const ItemInfo& info);
+    void delPending(const ItemInfo& info);
     void requestShutDown();
 
 Q_SIGNALS:
