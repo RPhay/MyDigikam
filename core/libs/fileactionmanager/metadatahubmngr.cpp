@@ -98,6 +98,23 @@ void MetadataHubMngr::addPending(const ItemInfo& info)
     Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
 }
 
+void MetadataHubMngr::delPending(const ItemInfo& info)
+{
+    QMutexLocker locker(&d->mutex);
+
+    if (d->pendingItemIds.isEmpty())
+    {
+        return;
+    }
+
+    if (d->pendingItemIds.contains(info.id()))
+    {
+        d->pendingItemIds.removeAll(info.id());
+    }
+
+    Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+}
+
 void MetadataHubMngr::slotApplyPending()
 {
     QMutexLocker lock(&d->mutex);
