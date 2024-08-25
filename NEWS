@@ -55,7 +55,7 @@ BUGFIXES:
 041 ==> 492040 - APPIMAGE : symbol lookup error: /usr/lib64/libgnutls.so.30: undefined symbol: nettle_rsa_oaep_sha384_decrypt, version HOGWEED_6.
 042 ==> 492054 - Default button to NO in confirmation box.
 043 ==> 490484 - Writing Meta Data to Images deletes randomly Meta Data both from Images and Database.
-044 ==> 
+044 ==> 492148 - UI flicker when rating images or rescanning collection.
 045 ==> 
 046 ==> 
 047 ==> 
