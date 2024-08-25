@@ -54,7 +54,7 @@ BUGFIXES:
 040 ==> 490897 - QT6 reports errors on startup while downloading face models.
 041 ==> 492040 - APPIMAGE : symbol lookup error: /usr/lib64/libgnutls.so.30: undefined symbol: nettle_rsa_oaep_sha384_decrypt, version HOGWEED_6.
 042 ==> 492054 - Default button to NO in confirmation box.
-043 ==> 
+043 ==> 490484 - Writing Meta Data to Images deletes randomly Meta Data both from Images and Database.
 044 ==> 
 045 ==> 
 046 ==> 
