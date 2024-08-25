@@ -80,10 +80,10 @@ void MetadataHubMngr::addPendingIds(const QList<qlonglong>& imageIds)
         if (!d->pendingItemIds.contains(id))
         {
             d->pendingItemIds.append(id);
+
+            Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
         }
    }
-
-   Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
 }
 
 void MetadataHubMngr::addPending(const ItemInfo& info)
@@ -93,9 +93,9 @@ void MetadataHubMngr::addPending(const ItemInfo& info)
     if (!d->pendingItemIds.contains(info.id()))
     {
         d->pendingItemIds.append(info.id());
-    }
 
-    Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+        Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+    }
 }
 
 void MetadataHubMngr::delPending(const ItemInfo& info)
@@ -110,9 +110,9 @@ void MetadataHubMngr::delPending(const ItemInfo& info)
     if (d->pendingItemIds.contains(info.id()))
     {
         d->pendingItemIds.removeAll(info.id());
-    }
 
-    Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+        Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
+    }
 }
 
 void MetadataHubMngr::slotApplyPending()
