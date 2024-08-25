@@ -56,7 +56,7 @@ BUGFIXES:
 042 ==> 492054 - Default button to NO in confirmation box.
 043 ==> 490484 - Writing Meta Data to Images deletes randomly Meta Data both from Images and Database.
 044 ==> 492148 - UI flicker when rating images or rescanning collection.
-045 ==> 
+045 ==> 492164 - Wish : Map view : display not complete when two identical photos selected (groups).
 046 ==> 
 047 ==> 
 048 ==> 
