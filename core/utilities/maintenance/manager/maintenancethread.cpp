@@ -84,6 +84,9 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
         connect(t, SIGNAL(signalFinished(QImage)),
                 this, SIGNAL(signalAdvance(QImage)));
 
+        connect(t, SIGNAL(signalRemovePending(ItemInfo)),
+                this, SIGNAL(signalRemovePending(ItemInfo)));
+
         collection.insert(t, 0);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a metadata task for synchronizing metadata";

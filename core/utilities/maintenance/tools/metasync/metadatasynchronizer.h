@@ -62,6 +62,10 @@ public:
 
     void setUseMultiCoreCPU(bool b) override;
 
+Q_SIGNALS:
+
+    void signalRemovePending(const ItemInfo& info);
+
 private Q_SLOTS:
 
     void slotStart()                override;

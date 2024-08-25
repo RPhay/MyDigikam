@@ -38,7 +38,6 @@ public:
 
     void addPendingIds(const QList<qlonglong>& imageIds);
     void addPending(const ItemInfo& info);
-    void delPending(const ItemInfo& info);
     void requestShutDown();
 
 Q_SIGNALS:
@@ -47,6 +46,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
+    void slotRemovePending(const ItemInfo& info);
     void slotApplyPending();
 
 private:

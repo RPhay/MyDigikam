@@ -348,6 +348,14 @@ void ItemIconView::slotAlbumWriteMetadata()
     }
 
     MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList() << album, MetadataSynchronizer::WriteFromDatabaseToFile);
+
+    if (MetadataHubMngr::isCreated())
+    {
+        connect (tool, SIGNAL(signalRemovePending(ItemInfo)),
+                 MetadataHubMngr::instance(), SLOT(slotRemovePending(ItemInfo)),
+                 Qt::QueuedConnection);
+    }
+
     tool->start();
 }
 

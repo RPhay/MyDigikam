@@ -76,6 +76,7 @@
 #include "metaenginesettings.h"
 #include "metadatasynchronizer.h"
 #include "metadataremover.h"
+#include "metadatahubmngr.h"
 #include "newitemsfinder.h"
 #include "queuemgrwindow.h"
 #include "scancontroller.h"

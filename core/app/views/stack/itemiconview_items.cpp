@@ -227,6 +227,14 @@ void ItemIconView::slotImageWriteMetadata()
 {
     const ItemInfoList& selected     = selectedInfoList(MetadataOps);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
+
+    if (MetadataHubMngr::isCreated())
+    {
+        connect (tool, SIGNAL(signalRemovePending(ItemInfo)),
+                 MetadataHubMngr::instance(), SLOT(slotRemovePending(ItemInfo)),
+                 Qt::QueuedConnection);
+    }
+
     tool->start();
 }
 

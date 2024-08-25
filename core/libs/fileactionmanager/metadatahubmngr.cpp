@@ -17,7 +17,6 @@
 // Qt includes
 
 #include <QMutex>
-#include <QDebug>
 #include <QProgressDialog>
 
 // KDE includes
@@ -98,7 +97,7 @@ void MetadataHubMngr::addPending(const ItemInfo& info)
     }
 }
 
-void MetadataHubMngr::delPending(const ItemInfo& info)
+void MetadataHubMngr::slotRemovePending(const ItemInfo& info)
 {
     QMutexLocker locker(&d->mutex);
 

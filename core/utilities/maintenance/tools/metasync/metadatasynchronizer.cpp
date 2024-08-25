@@ -99,6 +99,9 @@ void MetadataSynchronizer::init(SyncDirection direction)
 
     connect(d->thread, SIGNAL(signalAdvance(QImage)),
             this, SLOT(slotAdvance()));
+
+    connect(d->thread, SIGNAL(signalRemovePending(ItemInfo)),
+            this, SIGNAL(signalRemovePending(ItemInfo)));
 }
 
 void MetadataSynchronizer::setUseMultiCoreCPU(bool b)

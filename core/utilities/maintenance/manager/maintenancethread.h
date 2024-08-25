@@ -99,6 +99,11 @@ Q_SIGNALS:
     void signalAddItemsToProcess(int count);
 
     /**
+     * Signal to remove pending item from lazy sync.
+     */
+    void signalRemovePending(const ItemInfo& info);
+
+    /**
      * Signal to emit after processing with info if the processing was done
      * and if yes, without errors.
      */
