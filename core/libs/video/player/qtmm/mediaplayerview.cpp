@@ -17,10 +17,12 @@
 // Qt includes
 
 #include <QApplication>
+#include <QActionGroup>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QProxyStyle>
 #include <QPushButton>
+#include <QToolButton>
 #include <QFileInfo>
 #include <QToolBar>
 #include <QAction>
@@ -28,6 +30,7 @@
 #include <QLabel>
 #include <QFrame>
 #include <QStyle>
+#include <QMenu>
 #include <QTransform>
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -166,6 +169,8 @@ public:
     QAction*             backAction         = nullptr;
     QAction*             forwAction         = nullptr;
 
+    QToolButton*         rateButton         = nullptr;
+
     QPushButton*         loopPlay           = nullptr;
 
     QToolBar*            toolBar            = nullptr;
@@ -287,6 +292,52 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"),         this);
 
+    d->rateButton          = new QToolButton(this);
+    d->rateButton->setIcon(QIcon::fromTheme(QLatin1String("filename-bpm-amarok")));
+    d->rateButton->setPopupMode(QToolButton::InstantPopup);
+    d->rateButton->setArrowType(Qt::NoArrow);
+
+    QMenu* const rateMenu         = new QMenu(this);
+    QActionGroup* const rateGroup = new QActionGroup(this);
+    rateGroup->setExclusionPolicy(QActionGroup::ExclusionPolicy::Exclusive);
+
+    QAction* const rate05         = rateGroup->addAction(i18nc("video play speed", "0.5x"));
+    rate05->setCheckable(true);
+    rate05->setData(0.5);
+    QAction* const rate10         = rateGroup->addAction(i18nc("video play speed", "1.0x"));
+    rate10->setCheckable(true);
+    rate10->setData(1.0);
+    QAction* const rate15         = rateGroup->addAction(i18nc("video play speed", "1.5x"));
+    rate15->setCheckable(true);
+    rate15->setData(1.5);
+    QAction* const rate20         = rateGroup->addAction(i18nc("video play speed", "2.0x"));
+    rate20->setCheckable(true);
+    rate20->setData(2.0);
+    QAction* const rate25         = rateGroup->addAction(i18nc("video play speed", "2.5x"));
+    rate25->setCheckable(true);
+    rate25->setData(2.5);
+    QAction* const rate30         = rateGroup->addAction(i18nc("video play speed", "3.0x"));
+    rate30->setCheckable(true);
+    rate30->setData(3.0);
+    QAction* const rate40         = rateGroup->addAction(i18nc("video play speed", "4.0x"));
+    rate40->setCheckable(true);
+    rate40->setData(4.0);
+    QAction* const rate50         = rateGroup->addAction(i18nc("video play speed", "5.0x"));
+    rate50->setCheckable(true);
+    rate50->setData(5.0);
+
+    rate10->setChecked(true);
+
+    rateMenu->addAction(rate05);
+    rateMenu->addAction(rate10);
+    rateMenu->addAction(rate15);
+    rateMenu->addAction(rate20);
+    rateMenu->addAction(rate25);
+    rateMenu->addAction(rate30);
+    rateMenu->addAction(rate40);
+    rateMenu->addAction(rate50);
+    d->rateButton->setMenu(rateMenu);
+
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
 
@@ -360,6 +411,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->backAction);
     d->toolBar->addAction(d->playAction);
     d->toolBar->addAction(d->forwAction);
+    d->toolBar->addWidget(d->rateButton);
     d->toolBar->addAction(d->grabAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
@@ -428,6 +480,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->videoItem, SIGNAL(nativeSizeChanged(QSizeF)),
             this, SLOT(slotNativeSizeChanged()));
+
+    connect(rateMenu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotPlaybackRate(QAction*)));
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -854,6 +909,14 @@ void MediaPlayerView::slotDurationChanged(qint64 duration)
 {
     qint64 max = qMax((qint64)1, duration);
     d->slider->setRange(0, max);
+}
+
+void MediaPlayerView::slotPlaybackRate(QAction* action)
+{
+    if (action)
+    {
+        d->player->setPlaybackRate(action->data().toReal());
+    }
 }
 
 void MediaPlayerView::slotPosition(int position)
