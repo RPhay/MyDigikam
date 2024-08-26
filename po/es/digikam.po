@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2024-08-20 12:46+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3129,7 +3129,7 @@ msgstr ""
 "izquierda."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Línea de tiempo"
@@ -3159,7 +3159,7 @@ msgstr "Filtros"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "No se puede abrir el álbum raíz. No es una ubicación física."
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3168,22 +3168,22 @@ msgstr ""
 "La consulta actual de la base de datos no ha devuelto resultados. Cambie los "
 "ajustes de la búsqueda o seleccione un álbum con contenido."
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Búsqueda imprecisa de esbozos"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Búsqueda imprecisa de imágenes"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Búsqueda en el mapa"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -35029,7 +35029,7 @@ msgstr "No se ha podido revisar la orientación Exif de estos archivos:"
 msgid "Failed to transform these files:"
 msgstr "Fallo al transformar estos archivos:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -61390,12 +61390,12 @@ msgstr ""
 "Se eliminan todas las etiquetas de %1 imágenes seleccionadas.\n"
 "¿Desea continuar?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Sincronizando metadatos de las imágenes con la base de datos"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Actualizando la base de datos con metadatos de las imágenes"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -3051,7 +3051,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, fuzzy, kde-format
 msgid "Timeline"
 msgstr "शीर्षक"
@@ -3081,29 +3081,29 @@ msgstr "फिल्टर"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "खोजी मेट्नुहोस्"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "खोजी मेट्नुहोस्"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, fuzzy, kde-format
 msgid "Map Search"
 msgstr "मेरो खोजीहरू"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -33201,7 +33201,7 @@ msgstr "%1 फाइलका लागि Exif अभिमुखीकरण �
 msgid "Failed to transform these files:"
 msgstr "%1 फाइलका लागि Exif अभिमुखीकरण सुधार गर्न असफल"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -59039,12 +59039,12 @@ msgstr ""
 "'%1' ट्यागमा %n सहायक ट्याग छ । यसलाई मेट्दा त्यसका सबै सहायक ट्यागहरू मेटिन्छ । तपाईँले "
 "जारी राख्न यकिन हुनुहुन्छ ?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "डाटाबेससँग तस्विर मेटाडाटा सिन्क गर्नुहोस् । कृपया प्रतिक्षा गर्नुहोस्..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "<b>थम्बनेल अद्यावधिक हुँदैछ । कृपया प्रतिक्षा गर्नुहोस्...</b>"

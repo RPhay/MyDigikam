@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3273,7 +3273,7 @@ msgstr ""
 "den Naam links as en nieg virtuell Söökalbum sekert."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Tietreeg"
@@ -3304,29 +3304,29 @@ msgstr "Filtern"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Skizzenliekheit-Söök"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Bildliekheit-Söök"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Koort-Söök"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -35553,7 +35553,7 @@ msgstr "Fehler bi't Nakieken vun de EXIF-Utrichten för disse Dateien:"
 msgid "Failed to transform these files:"
 msgstr "Fehler bi't Nakieken vun de EXIF-Utrichten för disse Dateien:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -63213,13 +63213,13 @@ msgid ""
 msgstr ""
 "Dat Slötelwoort \"%2\" is een Indrag towiest. Wullt Du redig wiedermaken?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr ""
 "De Biller ehr Metadaten warrt mit de Datenbank synkroniseert, tööv bitte..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "De Utrichten-Datenbank warrt opfrischt, tööv bitte..."

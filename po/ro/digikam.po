@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3256,7 +3256,7 @@ msgstr ""
 "căutarea unui nou album virtual utilizând numele definit în stânga."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Cronologie"
@@ -3288,29 +3288,29 @@ msgstr "Filtre"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Căutare aproximativă de schițe"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Căutare aproximativă de imagini"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Căutare pe hartă"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -34508,7 +34508,7 @@ msgstr "Revizuirea orientării Exif a eșuat pentru fișierele:"
 msgid "Failed to transform these files:"
 msgstr "Transformarea a eșuat pentru fișierele:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -61524,12 +61524,12 @@ msgid ""
 "Do you want to continue?"
 msgstr "Eticheta „%2” este atribuită unui element. Doriți să continuați?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Se sincronizează metadatele imaginii cu baza de date. Așteptați..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "Se actualizează baza de date din metadatele imaginii. Așteptați..."

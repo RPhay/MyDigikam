@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -3128,7 +3128,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "टाइम-लाइन"
@@ -3158,29 +3158,29 @@ msgstr "फिल्टर (&i)"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "अभी हाल के फजी स्केच खोज"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "अभी हाल के फजी फोटू खोज"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, fuzzy, kde-format
 msgid "Map Search"
 msgstr "मैप खोज"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -33558,7 +33558,7 @@ msgstr "ए फाइल मन बर एक्जइफ ओरिएन्ट�
 msgid "Failed to transform these files:"
 msgstr "ए फाइल मन बर एक्जइफ ओरिएन्टेसन सुधारने मं फेल:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -60123,12 +60123,12 @@ msgid ""
 "Do you want to continue?"
 msgstr "टैग '%2' ह एक वस्तु मं संबंधित हे. का आप मन जारी रखना चाहथो?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "फाइल मन मं मेटाडाटा लिखत हे. किरपा करके, अगोरव..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "<b>फिंगरप्रिंट डाटाबेस ल अपडेट करत हे. किरपा करके, अगोरव...</b>"

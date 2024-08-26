@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -3081,7 +3081,7 @@ msgstr ""
 "gespeichert. Dabei wird der Name auf der linken Seite benutzt."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Zeitleiste"
@@ -3112,7 +3112,7 @@ msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 "Das Basisalbum kann nicht geöffnet werden. Dies ist kein physikalischer Ort."
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3121,22 +3121,22 @@ msgstr ""
 "Die aktuelle Datenbankabfrage erbrachte kein Ergebnis. Ändern Sie die "
 "Suchkriterien oder wählen Sie ein Album mit Inhalt aus."
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Ungenaue Skizzensuche"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Ungenaue Bildersuche"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Karten-Suche"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -35117,7 +35117,7 @@ msgstr "Fehler bei der Bereinigung der Exif-Ausrichtung für diese Dateien:"
 msgid "Failed to transform these files:"
 msgstr "Fehler bei der Umwandlung dieser Dateien:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -62422,12 +62422,12 @@ msgstr ""
 "Beim Hochladen des Fotos ist ein Fehler aufgetreten %1\n"
 "Möchten Sie fortfahren?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Die Bild-Metadaten werden mit der Datenbank abgeglichen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Die Aktualisierung der Datenbank anhand der Bild-Metadaten läuft."

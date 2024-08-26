@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3055,7 +3055,7 @@ msgstr ""
 "hiện thời sẽ bị đặt lại thành giá trị mặc định."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, fuzzy, kde-format
 msgid "Timeline"
 msgstr "Lát"
@@ -3084,29 +3084,29 @@ msgstr "Bộ &lọc"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Xoá tìm kiếm"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Xoá tìm kiếm"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, fuzzy, kde-format
 msgid "Map Search"
 msgstr "Tìm kiếm của tôì"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -33682,7 +33682,7 @@ msgstr "Lỗi xem lại hướng EXIF cho tệp %1."
 msgid "Failed to transform these files:"
 msgstr "Lỗi xem lại hướng EXIF cho tệp %1."
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -59535,12 +59535,12 @@ msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Đang đồng bộ hoá siêu dữ liệu của ảnh với cơ sở dữ liệu. Hãy đợi..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "<b>Đang cập nhật cơ sở dữ liệu ảnh mẫu. Hãy đợi...</b>"

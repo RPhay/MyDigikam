@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3267,7 +3267,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "ਟਾਈਮ-ਲਾਈਨ"
@@ -3298,29 +3298,29 @@ msgstr "ਫਿਲਟਰ"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "ਖੋਜ ਹਟਾਓ"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "ਖੋਜ ਹਟਾਓ"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "ਨਕਸ਼ਾ ਖੋਜ"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -34404,7 +34404,7 @@ msgstr "ਇੰਨ੍ਹਾਂ ਫਾਇਲਾਂ ਲਈ Exif ਸਥਿਤੀ ਰ
 msgid "Failed to transform these files:"
 msgstr "ਇੰਨ੍ਹਾਂ ਫਾਇਲਾਂ ਲਈ Exif ਸਥਿਤੀ ਰੱਖਣ ਲਈ ਫੇਲ੍ਹ:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -61485,12 +61485,12 @@ msgstr ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "ਤਸਵੀਰ ਮੇਟਾਡਾਟਾ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕੀਤਾ ਜਾਂਦਾ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਸਥਿਤੀ ਅੱਪਡੇਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ। ਉਡੀਕੋ ਜੀ..."

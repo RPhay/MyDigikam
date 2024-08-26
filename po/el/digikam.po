@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3138,7 +3138,7 @@ msgstr ""
 "στην αριστερή πλευρά."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Χρονοδιάγραμμα"
@@ -3168,7 +3168,7 @@ msgstr "Φίλτρα"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Αδυναμία ανοίγματος του λευκώματος ρίζας. Δεν είναι φυσική θέση."
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3177,22 +3177,22 @@ msgstr ""
 "Το τρέχον ερώτημα από τη βάση δεδομένων δεν επέστρεψε αποτελέσματα. Αλλάξτε "
 "τις ρυθμίσεις αναζήτησης ή επιλέξτε ένα άλμπουμ με περιεχόμενο."
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Ασαφής αναζήτηση σκίτσου"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Ασαφής αναζήτηση εικόνας"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Αναζήτηση χάρτη"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -36687,7 +36687,7 @@ msgstr "Αποτυχία διόρθωσης του προσανατολισμο�
 msgid "Failed to transform these files:"
 msgstr "Αποτυχία στο μετασχηματισμό αυτών των αρχείων:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -65206,12 +65206,12 @@ msgid ""
 "Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Συγχρονισμός μεταδεδομένων εικόνων με τη βάση δεδομένων"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Ενημέρωση βάσης δεδομένων από μεταδεδομένα εικόνας σε εξέλιξη"

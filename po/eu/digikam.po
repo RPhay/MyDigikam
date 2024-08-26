@@ -38,15 +38,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-25 01:46+0000\n"
-"PO-Revision-Date: 2024-08-22 13:12+0200\n"
+"POT-Creation-Date: 2024-08-26 01:58+0000\n"
+"PO-Revision-Date: 2024-08-25 23:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:492
@@ -3093,7 +3093,7 @@ msgstr ""
 "album berri batean gordeko dira, ezkerrean ezarritako izena erabiliz."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:380
-#: core/app/views/stack/itemiconview_p.h:143
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Denbora-lerroa"
@@ -3123,7 +3123,7 @@ msgstr "Iragazkiak"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Ezin ireki erroko albuma. Ez da kokaleku fisikoa."
 
-#: core/app/views/stack/itemiconview_items.cpp:734
+#: core/app/views/stack/itemiconview_items.cpp:742
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3132,22 +3132,22 @@ msgstr ""
 "Datu-baseko uneko itaunak ez du emaitzarik itzuli. Aldatu bilaketa ezarpenak "
 "edo hautatu edukia duen album bat."
 
-#: core/app/views/stack/itemiconview_p.h:124
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Zirriborroen bilaketa lausoa"
 
-#: core/app/views/stack/itemiconview_p.h:128
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Irudien bilaketa lausoa"
 
-#: core/app/views/stack/itemiconview_p.h:132
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Mapa bilaketa"
 
-#: core/app/views/stack/itemiconview_p.h:139
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
@@ -3339,6 +3339,8 @@ msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
+"Bertsiogintza: gehitu euskarria JPEG-XL, HEIF, WEBP, eta AVIF galerarik "
+"gabeko irudi formatu gisa editorean egindako bertsio irudi gisa gordetzeko."
 
 #: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
@@ -3356,20 +3358,21 @@ msgstr ""
 "aukera berria gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:107
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Gaitu aukera hau metadatuak RAW TIFF/EP fitxategietan idazteko. Eginbide "
-"honek Exiv2 liburutegi partekatua eskatzen du, bertsioa >= 0.18.0. Oraindik "
-"esperimentala denez, lehenetsi gisa desgaituta dago."
+"Metadatuak: DNG eta RAW fitxategietan metadatuak idazteko aukerako "
+"eragiketak orain ExifTool bizkarraldekoari eskuordetu zaizkio."
 
 #: core/app/views/stack/welcomepageview.cpp:108
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Metadatuak: metadatuak editatzeko pluginaren antolaera optimizatu "
+"erabilgarritasun hoberako."
 
 #: core/app/views/stack/welcomepageview.cpp:109
 #, kde-format
@@ -3377,6 +3380,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadatuak: metadatuen ezarpen aurreratuen panelean konfigurazio profilak "
+"gordetzeko eta zamatzeko aukera berriak gehitu."
 
 #: core/app/views/stack/welcomepageview.cpp:110
 #, kde-format
@@ -3384,11 +3389,15 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"Berrizendatze aurreratua: gehitu zenbaketa sekuentziatzeko fitxategi "
+"gehikuntza zenbatzailea [c] edo [c,step] aukerarekin"
 
 #: core/app/views/stack/welcomepageview.cpp:111
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
+"Berrizendatze aurreratua: gehitu ausazko testu sekuentzia zenbaketa [r] "
+"aukerarekin."
 
 #: core/app/views/stack/welcomepageview.cpp:112
 #, kde-format
@@ -3396,12 +3405,15 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Berrizendatze aurreratua: gehitu aldatzaile bakarrerako lehenengo karaktere "
+"konfiguragarria {unique:n,c} erabiliz."
 
 #: core/app/views/stack/welcomepageview.cpp:113
-#, fuzzy, kde-format
-#| msgid "Return pictures whose file name contains"
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Itzuli irudiak, haien fitxategi-izenek hau badute"
+msgstr ""
+"Bilaketa aurreratua: gehitu elementuetarako bilaketa aurpegi azalera "
+"neurrien arabera."
 
 #: core/app/views/stack/welcomepageview.cpp:114
 #, fuzzy, kde-format
@@ -3590,7 +3602,7 @@ msgstr "<li>%1</li>\n"
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid "New Features"
-msgstr "Eginbide berriak"
+msgstr "Ezaugarri berriak"
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3598,16 +3610,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
-"digiKamen argitalpen berri honek (digiKam 6.x-rekiko) dituen ezaugarri "
-"berrietako batzuk:"
+"digiKam-en kaleratze berri honetako ezaugarri berrietako batzuk dira "
+"(digiKam 7rekiko):"
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
@@ -3648,30 +3657,22 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:178
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
-#| "\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"digiKamen eginbide ahaltsu asko ditu eta <a href=\"https://docs.kde.org/"
-"trunk5/en/extragear-graphics/digikam/index.html\">documentazion</a> azalduta "
-"datoz"
+"digiKam-ek ezaugarri ahaltsu asko ditu, <a href=\"https://docs.digikam.org/"
+"en/index.html\">dokumentazioa</a>n azalduta datozenak"
 
 #: core/app/views/stack/welcomepageview.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
-#| "information about new versions of digiKam."
+#, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 msgstr ""
-"<a href=\"http://www.digikam.org\">digiKamen orri nagusiak</a> digiKam-en "
-"bertsio berrien inguruko informazioa hornitzen du."
+"<a href=\"http://www.digikam.org\">digiKam-en atariko orriak</a> digiKam-en "
+"bertsio berrien inguruko informazioa ematen du."
 
 #: core/app/views/stack/welcomepageview.cpp:234
 #: core/utilities/firstrun/welcomepage.cpp:34
@@ -35680,7 +35681,7 @@ msgstr "Errorea \"%1\" fitxategiaren Exif orientazioa berrikustean."
 msgid "Failed to transform these files:"
 msgstr "Errorea \"%1\" fitxategiaren Exif orientazioa berrikustean."
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
@@ -63455,12 +63456,12 @@ msgstr ""
 "Huts egin du %1 irudia zama-igotzea\n"
 "Jarraitu nahi duzu?"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:186
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:189
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:191
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:194
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Datu-basea irudiaren metadatuetatik eguneratzen"
