@@ -301,28 +301,28 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     QActionGroup* const rateGroup = new QActionGroup(this);
     rateGroup->setExclusionPolicy(QActionGroup::ExclusionPolicy::Exclusive);
 
-    QAction* const rate05         = rateGroup->addAction(i18nc("video play speed", "0.5x"));
+    QAction* const rate05         = rateGroup->addAction(i18nc("video play rate", "0.5x"));
     rate05->setCheckable(true);
     rate05->setData(0.5);
-    QAction* const rate10         = rateGroup->addAction(i18nc("video play speed", "1.0x"));
+    QAction* const rate10         = rateGroup->addAction(i18nc("video play rate", "1.0x"));
     rate10->setCheckable(true);
     rate10->setData(1.0);
-    QAction* const rate15         = rateGroup->addAction(i18nc("video play speed", "1.5x"));
+    QAction* const rate15         = rateGroup->addAction(i18nc("video play rate", "1.5x"));
     rate15->setCheckable(true);
     rate15->setData(1.5);
-    QAction* const rate20         = rateGroup->addAction(i18nc("video play speed", "2.0x"));
+    QAction* const rate20         = rateGroup->addAction(i18nc("video play rate", "2.0x"));
     rate20->setCheckable(true);
     rate20->setData(2.0);
-    QAction* const rate25         = rateGroup->addAction(i18nc("video play speed", "2.5x"));
+    QAction* const rate25         = rateGroup->addAction(i18nc("video play rate", "2.5x"));
     rate25->setCheckable(true);
     rate25->setData(2.5);
-    QAction* const rate30         = rateGroup->addAction(i18nc("video play speed", "3.0x"));
+    QAction* const rate30         = rateGroup->addAction(i18nc("video play rate", "3.0x"));
     rate30->setCheckable(true);
     rate30->setData(3.0);
-    QAction* const rate40         = rateGroup->addAction(i18nc("video play speed", "4.0x"));
+    QAction* const rate40         = rateGroup->addAction(i18nc("video play rate", "4.0x"));
     rate40->setCheckable(true);
     rate40->setData(4.0);
-    QAction* const rate50         = rateGroup->addAction(i18nc("video play speed", "5.0x"));
+    QAction* const rate50         = rateGroup->addAction(i18nc("video play rate", "5.0x"));
     rate50->setCheckable(true);
     rate50->setData(5.0);
 
