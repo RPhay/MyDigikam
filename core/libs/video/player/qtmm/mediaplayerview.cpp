@@ -293,13 +293,12 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
                                          i18nc("capture video frame", "Capture"),         this);
 
     d->rateButton          = new QToolButton(this);
-    d->rateButton->setIcon(QIcon::fromTheme(QLatin1String("filename-bpm-amarok")));
+    d->rateButton->setToolTip(i18nc("@info", "Change video playback rate"));
+    d->rateButton->setIcon(QIcon::fromTheme(QLatin1String("player-time")));
     d->rateButton->setPopupMode(QToolButton::InstantPopup);
     d->rateButton->setArrowType(Qt::NoArrow);
 
     QMenu* const rateMenu         = new QMenu(this);
-    rateMenu->setToolTip(i18nc("@info", "Change video playback rate"));
-
     QActionGroup* const rateGroup = new QActionGroup(rateMenu);
 
     QAction* const rate05         = rateGroup->addAction(i18nc("video play rate", "0.5x"));
