@@ -53,7 +53,7 @@ MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
     // We only need the "SearchBar" control element.
     // We also need to reset the default selections.
 
-    Q_FOREACH (MetadataSelectorView* const viewer, metadataPanel->viewers())
+    for (MetadataSelectorView* const viewer : metadataPanel->viewers())
     {
         viewer->setControlElements(MetadataSelectorView::SearchBar);
         viewer->clearSelection();
@@ -129,7 +129,7 @@ void MetadataOption::slotTokenTriggered(const QString& token)
     {
         QStringList checkedTags = dlg->metadataPanel->getAllCheckedTags();
 
-        Q_FOREACH (const QString& tag, checkedTags)
+        for (const QString& tag : checkedTags)
         {
             tags << QString::fromUtf8("[meta:%1]").arg(tag);
         }
@@ -138,6 +138,7 @@ void MetadataOption::slotTokenTriggered(const QString& token)
     if (!tags.isEmpty())
     {
         QString tokenStr = tags.join(dlg->separatorLineEdit->text());
+
         Q_EMIT signalTokenTriggered(tokenStr);
     }
 
@@ -198,7 +199,7 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         dataMap = m_xmpMetadataCache.value(settings.fileUrl);
     }
 
-    Q_FOREACH (const QString& key, dataMap.keys())
+    for (const QString& key : dataMap.keys())
     {
         if (key.toLower().contains(keyword))
         {   // cppcheck-suppress useStlAlgorithm

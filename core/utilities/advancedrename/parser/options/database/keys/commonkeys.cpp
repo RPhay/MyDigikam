@@ -97,7 +97,7 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
 
         if (!authors.isEmpty())
         {
-            Q_FOREACH (const QString& author, authors)
+            for (const QString& author : authors)
             {
                 // cppcheck-suppress useStlAlgorithm
                 result += author + QLatin1Char(',');

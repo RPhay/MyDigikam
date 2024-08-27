@@ -86,12 +86,12 @@ Parser::~Parser()
 
 void Parser::reset()
 {
-    Q_FOREACH (Rule* const option, d->options)
+    for (Rule* const option : d->options)
     {
         option->reset();
     }
 
-    Q_FOREACH (Rule* const modifier, d->modifiers)
+    for (Rule* const modifier : d->modifiers)
     {
         modifier->reset();
     }
@@ -182,13 +182,13 @@ ParseResults Parser::results(ParseSettings& settings)
 {
     ParseResults results;
 
-    Q_FOREACH (Rule* const option, d->options)
+    for (Rule* const option : d->options)
     {
         ParseResults r = option->parse(settings);
         results.append(r);
     }
 
-    Q_FOREACH (Rule* const modifier, d->modifiers)
+    for (Rule* const modifier : d->modifiers)
     {
         ParseResults r = modifier->parse(settings);
         results.append(r);
@@ -215,7 +215,7 @@ QString Parser::parse(ParseSettings& settings)
 
     ParseResults results;
 
-    Q_FOREACH (Rule* const option, d->options)
+    for (Rule* const option : d->options)
     {
         ParseResults r = option->parse(settings);
         results.append(r);
@@ -227,7 +227,7 @@ QString Parser::parse(ParseSettings& settings)
 
     // remove invalid modifiers from the new name
 
-    Q_FOREACH (Rule* const mod, d->modifiers)
+    for (Rule* const mod : d->modifiers)
     {
         newName.remove(mod->regExp());
     }
@@ -291,7 +291,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
     QMap<ParseResults::ResultsKey, Rule*> modifierMap;
 
-    Q_FOREACH (Rule* const modifier, d->modifiers)
+    for (Rule* const modifier : d->modifiers)
     {
         QRegularExpression regExp = modifier->regExp();
         int pos                   = 0;
@@ -319,7 +319,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
     // We need to create a second ParseResults object with modified keys, otherwise the final parsing step will not
     // remove the modifier tokens from the result.
 
-    Q_FOREACH (const ParseResults::ResultsKey& key, results.keys())
+    for (const ParseResults::ResultsKey& key : results.keys())
     {
         int off  = results.offset(key);
         int diff = 0;

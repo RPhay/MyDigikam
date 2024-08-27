@@ -80,7 +80,7 @@ Highlighter::~Highlighter()
 
 void Highlighter::highlightBlock(const QString& text)
 {
-    Q_FOREACH (const Private::HighlightingRule& rule, d->highlightingRules)
+    for (const Private::HighlightingRule& rule : d->highlightingRules)
     {
         QRegularExpression      expression(rule.pattern);
         QRegularExpressionMatch match;
@@ -140,7 +140,7 @@ void Highlighter::highlightBlock(const QString& text)
     settings.parseString = text;
     ParseResults invalid = d->parser->invalidModifiers(settings);
 
-    Q_FOREACH (const ParseResults::ResultsKey& key, invalid.keys())
+    for (const ParseResults::ResultsKey& key : invalid.keys())
     {
         setFormat(key.first, key.second, d->errorFormat);
     }
@@ -157,7 +157,7 @@ void Highlighter::highlightBlock(const QString& text)
             QString fullmatched = match.captured(0);
             int qlength         = match.capturedLength();
             setFormat(index, qlength, d->quotationFormat);
-            index = text.indexOf(expression, index + qlength, &match);
+            index               = text.indexOf(expression, index + qlength, &match);
         }
     }
 }
@@ -175,7 +175,7 @@ void Highlighter::setupHighlightingGrammar()
 
     d->optionFormat.setForeground(Qt::red);
 
-    Q_FOREACH (Rule* const option, d->parser->options())
+    for (Rule* const option : d->parser->options())
     {
         QRegularExpression r    = option->regExp();
         rule.type               = Private::OptionPattern;
@@ -188,7 +188,7 @@ void Highlighter::setupHighlightingGrammar()
 
     d->modifierFormat.setForeground(Qt::darkGreen);
 
-    Q_FOREACH (Rule* const modifier, d->parser->modifiers())
+    for (Rule* const modifier : d->parser->modifiers())
     {
         QRegularExpression r    = modifier->regExp();
         rule.type               = Private::ModifierPattern;

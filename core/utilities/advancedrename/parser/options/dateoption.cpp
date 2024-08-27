@@ -89,7 +89,7 @@ QVariant DateFormat::format(const QString& identifier)
         return m_map.at(Standard).second;
     }
 
-    Q_FOREACH (const DateFormatDescriptor& desc, m_map)
+    for (const DateFormatDescriptor& desc : m_map)
     {
         if (desc.first == identifier)
         {   // cppcheck-suppress useStlAlgorithm
@@ -125,7 +125,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
 
     DateFormat df;
 
-    Q_FOREACH (const DateFormat::DateFormatDescriptor& desc, df.map())
+    for (const DateFormat::DateFormatDescriptor& desc : df.map())
     {
         ui->dateFormatPicker->addItem(desc.first);
     }

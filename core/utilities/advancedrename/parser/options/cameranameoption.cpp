@@ -68,7 +68,7 @@ QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegular
             MetaEngine::MetaDataMap dataMap;
             dataMap = meta->getExifTagsDataList(QStringList(), true);
 
-            Q_FOREACH (const QString& key, dataMap.keys())
+            for (const QString& key : dataMap.keys())
             {
                 if      (key.toLower().contains(QLatin1String("exif.image.model")))
                 {
