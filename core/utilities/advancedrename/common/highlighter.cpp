@@ -80,7 +80,7 @@ Highlighter::~Highlighter()
 
 void Highlighter::highlightBlock(const QString& text)
 {
-    for (const Private::HighlightingRule& rule : d->highlightingRules)
+    for (const Private::HighlightingRule& rule : qAsConst(d->highlightingRules))
     {
         QRegularExpression      expression(rule.pattern);
         QRegularExpressionMatch match;

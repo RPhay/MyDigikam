@@ -232,7 +232,7 @@ QList<QUrl> AdvancedRenameProcessDialog::failedUrls() const
 {
     QList<QUrl> failedUrls;
 
-    for (const NewNameInfo& info : std::as_const(d->failedList))
+    for (const NewNameInfo& info : qAsConst(d->failedList))
     {
         failedUrls << info.first;
     }

@@ -31,7 +31,7 @@ ImportRenameParser::ImportRenameParser()
 
     RulesList oplist = options();
 
-    for (Rule* const option : oplist)
+    for (Rule* const option : qAsConst(oplist))
     {
         if (dynamic_cast<DatabaseOption*>(option))
         {

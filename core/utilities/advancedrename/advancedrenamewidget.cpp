@@ -193,7 +193,7 @@ QMenu* AdvancedRenameWidget::createControlsMenu(QWidget* const parent, const Rul
     QMenu* const menu = new QMenu(parent);
     QAction* action   = nullptr;
 
-    for (Rule* const rule : std::as_const(rules))
+    for (Rule* const rule : qAsConst(rules))
     {
         action = rule->registerMenu(menu);
 
