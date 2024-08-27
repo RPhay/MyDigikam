@@ -62,7 +62,7 @@ BUGFIXES:
 048 ==> 204487 - HUB : caption not saved when moving images after entering caption.
 049 ==> 491778 - Add tag and move image bug.
 050 ==> 492163 - Creation of orphan sidecars.
-051 ==> 
+051 ==> 492257 - Showfoto symlink is broken in AppImage - Typo missing "w".
 052 ==> 
 053 ==> 
 054 ==> 
