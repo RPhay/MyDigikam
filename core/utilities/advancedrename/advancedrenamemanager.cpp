@@ -126,7 +126,7 @@ void AdvancedRenameManager::setSortAction(SortAction action)
 
     QList<QUrl> list;
 
-    for (const QString& file : d->files)
+    for (const QString& file : std::as_const(d->files))
     {
         list << QUrl::fromLocalFile(file);
     }
@@ -146,7 +146,7 @@ void AdvancedRenameManager::setSortDirection(SortDirection direction)
 
     QList<QUrl> list;
 
-    for (const QString& file : d->files)
+    for (const QString& file : std::as_const(d->files))
     {
         list << QUrl::fromLocalFile(file);
     }
@@ -251,7 +251,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString)
 
     d->parser->reset();
 
-    for (const QString& file : d->files)
+    for (const QString& file : std::as_const(d->files))
     {
         QUrl url              = QUrl::fromLocalFile(file);
         ParseSettings settings;
@@ -274,7 +274,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString, const ParseSe
 
     d->parser->reset();
 
-    for (const QString& file : d->files)
+    for (const QString& file : std::as_const(d->files))
     {
         QUrl url               = QUrl::fromLocalFile(file);
         ParseSettings settings = _settings;
@@ -289,7 +289,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString, const ParseSe
 
 void AdvancedRenameManager::addFiles(const QList<ParseSettings>& files)
 {
-    for (const ParseSettings& ps : files)
+    for (const ParseSettings& ps : std::as_const(files))
     {
         addFile(ps.fileUrl.toLocalFile(), ps.creationTime);
     }
@@ -405,7 +405,7 @@ bool AdvancedRenameManager::initialize()
     {
         int counter = 1;
 
-        for (const QString& file : d->files)
+        for (const QString& file : std::as_const(d->files))
         {
             QString random = QUuid::createUuid().toString();
             random.remove(QLatin1Char('-'));
@@ -420,7 +420,7 @@ bool AdvancedRenameManager::initialize()
     {
         int counter = 1;
 
-        for (const QString& file : d->files)
+        for (const QString& file : std::as_const(d->files))
         {
             if (!d->fileGroupIndexMap.contains(fileGroupKey(file)))
             {
@@ -434,7 +434,7 @@ bool AdvancedRenameManager::initialize()
     QMap<QString, QList<QString> > dirMap;
 
     {
-        for (const QString& file : d->files)
+        for (const QString& file : std::as_const(d->files))
         {
             QFileInfo fi(file);
             QString path = fi.absolutePath();
@@ -454,7 +454,7 @@ bool AdvancedRenameManager::initialize()
         {
             int index = 0;
 
-            for (const QString& f : dirMap[dir])
+            for (const QString& f : std::as_const(dirMap[dir]))
             {
                 if (!d->folderIndexMap.contains(f))
                 {
