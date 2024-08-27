@@ -641,7 +641,7 @@ cp ${ORIG_WD}/data/AppRun ./
 # desktop integration files
 
 ln -s ./usr/share/applications/org.kde.digikam.desktop  ./
-ln -s ./usr/share/applications/org.kde.shofoto.desktop  ./
+ln -s ./usr/share/applications/org.kde.showfoto.desktop  ./
 
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./digikam.png
 cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./.DirIcon
