@@ -96,7 +96,7 @@ int ParseResults::offset(const ResultsKey& key) const
 
 ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
 {
-    Q_FOREACH (const ResultsKey& key, m_results.keys())
+    for (const ResultsKey& key : m_results.keys())
     {
         if (pos == key.first)
         {
@@ -117,7 +117,7 @@ bool ParseResults::hasKeyAtPosition(int pos) const
 
 ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
 {
-    Q_FOREACH (const ResultsKey& key, m_results.keys())
+    for (const ResultsKey& key : m_results.keys())
     {
         int start  = key.first;
         int length = key.second;
@@ -190,7 +190,7 @@ QString ParseResults::resultValuesAsString() const
 {
     QString valuesString;
 
-    Q_FOREACH (const ResultsKey& key, m_results.keys())
+    for (const ResultsKey& key : m_results.keys())
     {
         valuesString += result(key);
     }
@@ -200,7 +200,7 @@ QString ParseResults::resultValuesAsString() const
 
 void ParseResults::debug() const
 {
-    Q_FOREACH (const ResultsKey& key, m_results.keys())
+    for (const ResultsKey& key : m_results.keys())
     {
         QString _token  = token(key);
         QString _result = result(key);

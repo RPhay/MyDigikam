@@ -135,7 +135,7 @@ QPushButton* Rule::registerButton(QWidget* parent)
     {
         QMenu* const menu = new QMenu(button);
 
-        Q_FOREACH (Token* const token, d->tokens)
+        for (Token* const token : d->tokens)
         {
             actions << token->action();
         }
@@ -165,7 +165,7 @@ QAction* Rule::registerMenu(QMenu* parent)
         QMenu* const menu = new QMenu(parent);
         QList<QAction*> actions;
 
-        Q_FOREACH (Token* const token, d->tokens)
+        for (Token* const token : d->tokens)
         {
             actions << token->action();
         }

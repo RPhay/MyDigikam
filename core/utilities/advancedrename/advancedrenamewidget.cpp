@@ -193,7 +193,7 @@ QMenu* AdvancedRenameWidget::createControlsMenu(QWidget* const parent, const Rul
     QMenu* const menu = new QMenu(parent);
     QAction* action   = nullptr;
 
-    Q_FOREACH (Rule* const rule, rules)
+    for (Rule* const rule : rules)
     {
         action = rule->registerMenu(menu);
 
@@ -230,7 +230,7 @@ void AdvancedRenameWidget::registerParserControls()
 
             DynamicLayout* const layout = new DynamicLayout(cmargin, cmargin);
 
-            Q_FOREACH (Rule* const p, d->parser->options())
+            for (Rule* const p : d->parser->options())
             {
                 btn = p->registerButton(this);
 
