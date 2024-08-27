@@ -82,6 +82,7 @@ Q_SIGNALS:
     void signalPrevItem();
     void signalNextItem();
     void signalLastItem();
+    void signalAllApplied(bool b);
 
 public Q_SLOTS:
 

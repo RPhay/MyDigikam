@@ -454,4 +454,16 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
     cmhelper.exec(event->globalPos());
 }
 
+void ItemIconView::slotSideBarEnabled(bool b)
+{
+    d->leftSideBar->setEnabled(b);
+    d->albumFolderSideBar->setEnabled(b);
+    d->tagViewSideBar->setEnabled(b);
+    d->labelsSideBar->setEnabled(b);
+    d->dateViewSideBar->setEnabled(b);
+    d->timelineSideBar->setEnabled(b);
+    d->searchSideBar->setEnabled(b);
+    d->fuzzySearchSideBar->setEnabled(b);
+}
+
 } // namespace Digikam

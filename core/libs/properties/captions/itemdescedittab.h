@@ -75,6 +75,7 @@ Q_SIGNALS:
     void signalProgressMessageChanged(const QString& actionDescription);
     void signalProgressValueChanged(float percent);
     void signalProgressFinished();
+    void signalAllApplied(bool b);
 
     void signalPrevItem();
     void signalNextItem();

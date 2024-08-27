@@ -113,6 +113,9 @@ void ItemDescEditTab::Private::reset()
     hub->resetChanged();
     applyBtn->setEnabled(false);
     revertBtn->setEnabled(false);
+
+    Q_EMIT q->signalAllApplied(!modified);
+
     applyToAllVersionsButton->setEnabled(false);
 }
 

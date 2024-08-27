@@ -59,9 +59,9 @@ BUGFIXES:
 045 ==> 492164 - Wish : Map view : display not complete when two identical photos selected (groups).
 046 ==> 492191 - digiKam 8.4.0 crashes when accessing Settings->Configure digiKam.
 047 ==> 492200 - Ability to increase video playing speed when preview.
-048 ==> 
-049 ==> 
-050 ==> 
+048 ==> 204487 - HUB : caption not saved when moving images after entering caption.
+049 ==> 491778 - Add tag and move image bug.
+050 ==> 492163 - Creation of orphan sidecars.
 051 ==> 
 052 ==> 
 053 ==> 

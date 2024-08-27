@@ -429,6 +429,8 @@ void ItemDescEditTab::slotRevertAllChanges()
     }
 
     d->setInfos(d->currInfos);
+
+    Q_EMIT signalAllApplied(!d->modified);
 }
 
 void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
@@ -497,6 +499,8 @@ void ItemDescEditTab::slotModified()
     d->modified = true;
     d->applyBtn->setEnabled(true);
     d->revertBtn->setEnabled(true);
+
+    Q_EMIT signalAllApplied(!d->modified);
 
     if (d->currInfos.size() == 1)
     {
@@ -634,6 +638,9 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
     d->hub->resetChanged();
     d->applyBtn->setEnabled(false);
     d->revertBtn->setEnabled(false);
+
+    Q_EMIT signalAllApplied(!d->modified);
+
     d->applyToAllVersionsButton->setEnabled(false);
 }
 
