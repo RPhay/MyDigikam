@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-26 01:58+0000\n"
-"PO-Revision-Date: 2024-08-25 23:13+0200\n"
+"POT-Creation-Date: 2024-08-27 01:49+0000\n"
+"PO-Revision-Date: 2024-08-26 12:25+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2835,7 +2835,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:278
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:283
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2843,7 +2843,7 @@ msgstr "Atzera"
 
 #: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:280
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:285
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3416,20 +3416,23 @@ msgstr ""
 "neurrien arabera."
 
 #: core/app/views/stack/welcomepageview.cpp:114
-#, fuzzy, kde-format
-#| msgid "Return pictures with tag"
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Itzuli irudiak etiketekin"
+msgstr ""
+"Bilaketa aurreratua: gehitu bilaketa aurpegi azalerak ez dituzten "
+"elementuetarako."
 
 #: core/app/views/stack/welcomepageview.cpp:115
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
+"Bildumak: gehitu plataforma-gurutzatuko sareko bide-izenetarako euskarria."
 
 #: core/app/views/stack/welcomepageview.cpp:116
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Datu-basea: gehitu SQLite WAL (Write-Ahead-Logging) modurako euskarria."
 
 #: core/app/views/stack/welcomepageview.cpp:117
 #, kde-format
@@ -3437,6 +3440,8 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Gehitu ortografia zuzentzeko euskarria epigrafe-testu trepetan KF5::Sonnet "
+"osagaia erabiliz."
 
 #: core/app/views/stack/welcomepageview.cpp:118
 #, kde-format
@@ -3444,12 +3449,16 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"Gehitu ortografia aztertzeko konfigurazio panel bat Ezarpenak/Hainbat-en "
+"digiKam-erako eta Showfoto-rako."
 
 #: core/app/views/stack/welcomepageview.cpp:119
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Gehitu lerroko itzulpenetarako euskarria Hizkuntza alternatiboko testua "
+"editatzeko trepetan."
 
 #: core/app/views/stack/welcomepageview.cpp:120
 #, kde-format
@@ -42808,44 +42817,98 @@ msgstr ""
 "%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:192
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:284
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Etenaldia/Jo"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:194
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:293
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Atzeman"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Errore bat gertatu da euskarri jotzailearekin..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:228
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:386
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Txandakatu begiztan jotzea"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:282
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:287
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:286
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:291
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Aurrera"
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#, kde-format
+msgctxt "@info"
+msgid "Change video playback rate"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
+#, kde-format
+msgctxt "video play rate"
+msgid "0.5x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
+#, kde-format
+msgctxt "video play rate"
+msgid "1.0x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
+#, kde-format
+msgctxt "video play rate"
+msgid "1.5x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#, kde-format
+msgctxt "video play rate"
+msgid "2.0x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
+#, kde-format
+msgctxt "video play rate"
+msgid "2.5x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
+#, kde-format
+msgctxt "video play rate"
+msgid "3.0x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
+#, kde-format
+msgctxt "video play rate"
+msgid "4.0x"
+msgstr ""
+
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:325
+#, kde-format
+msgctxt "video play rate"
+msgid "5.0x"
+msgstr ""
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
@@ -51641,8 +51704,7 @@ msgstr ""
 "diren atzigarri interfaze nagusian</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Hainbat"
@@ -68566,7 +68628,7 @@ msgstr "Taldekatzea"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
-msgstr ""
+msgstr "Erabili DPI altuko eskalatzea pantailaren faktoretik"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format
@@ -68606,7 +68668,7 @@ msgstr "Windows (Sistemarena)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:107
 #, kde-format
 msgid "Enable internal debug logging"
-msgstr ""
+msgstr "Gaitu araztearen barneko erregistroa"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:108
 #, kde-format
