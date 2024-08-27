@@ -114,7 +114,7 @@ void ItemDescEditTab::Private::reset()
     applyBtn->setEnabled(false);
     revertBtn->setEnabled(false);
 
-    Q_EMIT q->signalAllApplied(!modified);
+    Q_EMIT q->signalRightSideBarBusy(modified);
 
     applyToAllVersionsButton->setEnabled(false);
 }

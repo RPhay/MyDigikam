@@ -78,11 +78,11 @@ public:
 
 Q_SIGNALS:
 
+    void signalRightSideBarBusy(bool busy);
     void signalFirstItem();
     void signalPrevItem();
     void signalNextItem();
     void signalLastItem();
-    void signalAllApplied(bool b);
 
 public Q_SLOTS:
 

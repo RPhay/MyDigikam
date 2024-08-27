@@ -113,8 +113,8 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     connect(d->desceditTab, SIGNAL(signalPrevItem()),
             this, SIGNAL(signalPrevItem()));
 
-    connect(d->desceditTab, SIGNAL(signalAllApplied(bool)),
-            this, SIGNAL(signalAllApplied(bool)));
+    connect(d->desceditTab, SIGNAL(signalRightSideBarBusy(bool)),
+            this, SIGNAL(signalRightSideBarBusy(bool)));
 
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
             this, SLOT(slotImageChangeDatabase(ImageChangeset)));

@@ -430,7 +430,7 @@ void ItemDescEditTab::slotRevertAllChanges()
 
     d->setInfos(d->currInfos);
 
-    Q_EMIT signalAllApplied(!d->modified);
+    Q_EMIT signalRightSideBarBusy(d->modified);
 }
 
 void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
@@ -500,7 +500,7 @@ void ItemDescEditTab::slotModified()
     d->applyBtn->setEnabled(true);
     d->revertBtn->setEnabled(true);
 
-    Q_EMIT signalAllApplied(!d->modified);
+    Q_EMIT signalRightSideBarBusy(d->modified);
 
     if (d->currInfos.size() == 1)
     {
@@ -639,7 +639,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
     d->applyBtn->setEnabled(false);
     d->revertBtn->setEnabled(false);
 
-    Q_EMIT signalAllApplied(!d->modified);
+    Q_EMIT signalRightSideBarBusy(d->modified);
 
     d->applyToAllVersionsButton->setEnabled(false);
 }
