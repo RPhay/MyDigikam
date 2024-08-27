@@ -92,13 +92,13 @@ QDateTime TimeAdjustContainer::getDateTimeFromString(const QString& dateStr) con
 
     // Do not change the order of the list.
 
-    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/]?[0-9]{2}[-_:\\/]?[0-9]{2})"
+    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/ ]?[0-9]{2}[-_:\\/ ]?[0-9]{2})"
                                    "(.+)?([0-9]{2}[hH][0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{8}[T-_ ][0-9]{6})(.+)?");
-    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/]?[0-9]{2}[-_:\\/]?[0-9]{2})"
+    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/ ]?[0-9]{2}[-_:\\/ ]?[0-9]{2})"
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2}[-_:.]?[0-9]{2}"
                                    "[-_:.]?[0-9]{3})(.+)?");
-    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/]?[0-9]{2}[-_:\\/]?[0-9]{2})"
+    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/ ]?[0-9]{2}[-_:\\/ ]?[0-9]{2})"
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2}[-_:.]?[0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{2}[-_:\\/.]?[0-9]{2}[-_:\\/.]?[0-9]{4})"
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2}[-_:.]?[0-9]{2})(.+)?");
@@ -106,7 +106,7 @@ QDateTime TimeAdjustContainer::getDateTimeFromString(const QString& dateStr) con
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{2}-[0-9]{2}-[0-9]{2})"
                                    "[ -]?([0-9]{2}[0-9]{2})(.+)?");
-    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/]?[0-9]{2}[-_:\\/]?[0-9]{2})(.+)?");
+    regExpStrings << QLatin1String("(.*?)([0-9]{4}[-_:\\/ ]?[0-9]{2}[-_:\\/ ]?[0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{2}[-_:\\/.]?[0-9]{2}[-_:\\/.]?[0-9]{4})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{2}[0-9]{2}[0-9]{4})([0-9]{3})(.+)?");
     regExpStrings << QLatin1String("(.*?)([0-9]{2}_[0-9]{2} [0-9]{2})(.+)?");
