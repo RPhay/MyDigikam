@@ -288,6 +288,7 @@ port install jpeg
 port install tiff
 port install eigen3
 port install gettext
+port install vala -valadoc      # See bug https://trac.macports.org/ticket/70643
 port install wget +ssl
 port install jasper
 port install lcms2
