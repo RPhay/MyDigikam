@@ -199,7 +199,9 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         dataMap = m_xmpMetadataCache.value(settings.fileUrl);
     }
 
-    for (const QString& key : dataMap.keys())
+    const auto keys = dataMap.keys();
+
+    for (const QString& key : keys)
     {
         if (key.toLower().contains(keyword))
         {   // cppcheck-suppress useStlAlgorithm

@@ -96,7 +96,9 @@ int ParseResults::offset(const ResultsKey& key) const
 
 ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
 {
-    for (const ResultsKey& key : m_results.keys())
+    const auto keys = m_results.keys();
+
+    for (const ResultsKey& key : keys)
     {
         if (pos == key.first)
         {
@@ -117,7 +119,9 @@ bool ParseResults::hasKeyAtPosition(int pos) const
 
 ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
 {
-    for (const ResultsKey& key : m_results.keys())
+    const auto keys = m_results.keys();
+
+    for (const ResultsKey& key : keys)
     {
         int start  = key.first;
         int length = key.second;
@@ -189,8 +193,9 @@ QString ParseResults::replaceTokens(const QString& markedString) const
 QString ParseResults::resultValuesAsString() const
 {
     QString valuesString;
+    const auto keys = m_results.keys();
 
-    for (const ResultsKey& key : m_results.keys())
+    for (const ResultsKey& key : keys)
     {
         valuesString += result(key);
     }
@@ -200,7 +205,9 @@ QString ParseResults::resultValuesAsString() const
 
 void ParseResults::debug() const
 {
-    for (const ResultsKey& key : m_results.keys())
+    const auto keys = m_results.keys();
+
+    for (const ResultsKey& key : keys)
     {
         QString _token  = token(key);
         QString _result = result(key);

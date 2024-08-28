@@ -373,8 +373,9 @@ QMap<QString, QString> AdvancedRenameManager::newFileList(bool checkFileSystem) 
     if (checkFileSystem)
     {
         QMap<QString, QString> renamedFiles;
+        const auto keys = d->renamedFiles.keys();
 
-        for (const QString& fileName : d->renamedFiles.keys())
+        for (const QString& fileName : keys)
         {
             renamedFiles[fileName] = newName(fileName);
         }
@@ -450,7 +451,9 @@ bool AdvancedRenameManager::initialize()
             }
         }
 
-        for (const QString& dir : dirMap.keys())
+        const auto keys = dirMap.keys();
+
+        for (const QString& dir : keys)
         {
             int index = 0;
 
@@ -469,13 +472,15 @@ bool AdvancedRenameManager::initialize()
     {
         QString regExp(QLatin1String("(.*?)(\\d+)((_v\\d+[.])|[.])(.*)?"));
         QRegularExpression counterRegExp(QRegularExpression::anchoredPattern(regExp));
+        const auto keys = dirMap.keys();
 
-        for (const QString& path : dirMap.keys())
+        for (const QString& path : keys)
         {
             QDir dir(path);
             d->fileCounterIndexMap[path] = 0;
+            const auto list              = dir.entryList(QDir::Files);
 
-            for (const QString& file : dir.entryList(QDir::Files))
+            for (const QString& file : list)
             {
                 if (d->files.contains(dir.filePath(file)) ||
                     file.endsWith(QLatin1String(".xmp")))
