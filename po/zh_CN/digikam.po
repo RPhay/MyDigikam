@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-27 01:49+0000\n"
+"POT-Creation-Date: 2024-08-28 01:55+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -35866,38 +35866,38 @@ msgctxt "@info"
 msgid "Apply changes?"
 msgstr "应用更改吗？"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:438
+#: core/libs/properties/captions/itemdescedittab.cpp:440
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr "正在读取文件元数据。请稍候..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:470
+#: core/libs/properties/captions/itemdescedittab.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr "正在写入元数据到文件。请稍候..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:513
+#: core/libs/properties/captions/itemdescedittab.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr "读取文件元数据到数据库"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:515
-#: core/libs/properties/captions/itemdescedittab.cpp:534
+#: core/libs/properties/captions/itemdescedittab.cpp:519
+#: core/libs/properties/captions/itemdescedittab.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr "写入元数据到每个文件"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:531
+#: core/libs/properties/captions/itemdescedittab.cpp:535
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr "读取每个文件的元数据到数据库"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:539
+#: core/libs/properties/captions/itemdescedittab.cpp:543
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
@@ -35982,7 +35982,7 @@ msgctxt "@title"
 msgid "Information"
 msgstr "信息"
 
-#: core/libs/properties/captions/itemdescedittab_p.cpp:209
+#: core/libs/properties/captions/itemdescedittab_p.cpp:212
 #, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
@@ -36382,7 +36382,7 @@ msgstr "未更改"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36393,10 +36393,10 @@ msgstr "不可用"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:691
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:796
-#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:694
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:799
+#: core/libs/properties/itempropertiessidebardb.cpp:801
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -36408,10 +36408,10 @@ msgstr "否"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:690
-#: core/libs/properties/itempropertiessidebardb.cpp:692
-#: core/libs/properties/itempropertiessidebardb.cpp:795
-#: core/libs/properties/itempropertiessidebardb.cpp:797
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:800
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -36642,8 +36642,8 @@ msgstr "未校准"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:667
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:670
+#: core/libs/properties/itempropertiessidebardb.cpp:683
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36656,21 +36656,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 位/像素"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:726
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:728
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -36688,7 +36688,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "版本"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:672
+#: core/libs/properties/itempropertiessidebardb.cpp:675
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-27 01:49+0000\n"
+"POT-Creation-Date: 2024-08-28 01:55+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -36872,43 +36872,43 @@ msgctxt "@info"
 msgid "Apply changes?"
 msgstr "ਕੀ ਤਬਦੀਲੀਆਂ ਲਾਗੂ?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:438
+#: core/libs/properties/captions/itemdescedittab.cpp:440
 #, fuzzy, kde-format
 #| msgid "Reading metadata from files. Please wait..."
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr "ਫਾਇਲਾਂ ਤੋਂ ਮੇਟਾਡਾਟਾ ਪੜ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:470
+#: core/libs/properties/captions/itemdescedittab.cpp:472
 #, fuzzy, kde-format
 #| msgid "Writing metadata to files. Please wait..."
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr "ਫਾਇਲਾਂ ਉੱਤੇ ਮੇਟਾਡਾਟਾ ਲਿਖਿਆ ਜਾ ਰਿਹਾ ਹੈ। ਉਡੀਕੋ ਜੀ..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:513
+#: core/libs/properties/captions/itemdescedittab.cpp:517
 #, fuzzy, kde-format
 #| msgid "Read metadata from file to database"
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr "ਡਾਟਾਬੇਸ ਵਾਸਤੇ ਫਾਇਲ ਤੋਂ ਮੇਟਾਡਾਟਾ ਪੜ੍ਹੋ"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:515
-#: core/libs/properties/captions/itemdescedittab.cpp:534
+#: core/libs/properties/captions/itemdescedittab.cpp:519
+#: core/libs/properties/captions/itemdescedittab.cpp:538
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr "ਹਰੇਕ ਫਾਇਲ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:531
+#: core/libs/properties/captions/itemdescedittab.cpp:535
 #, fuzzy, kde-format
 #| msgid "Read metadata from each file to database"
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr "ਹਰੇਕ ਫਾਇਲ ਲਈ ਮੇਟਾਡਾਟਾ ਡਾਟਾਬੇਸ ਨਾਲ ਪੜ੍ਹੋ"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:539
+#: core/libs/properties/captions/itemdescedittab.cpp:543
 #, fuzzy, kde-format
 #| msgid "Assign Tags to &Selected Items"
 msgctxt "@action"
@@ -37003,7 +37003,7 @@ msgctxt "@title"
 msgid "Information"
 msgstr "ਜਾਣਕਾਰੀ"
 
-#: core/libs/properties/captions/itemdescedittab_p.cpp:209
+#: core/libs/properties/captions/itemdescedittab_p.cpp:212
 #, fuzzy, kde-format
 #| msgid "Select item language here."
 msgctxt "@info"
@@ -37442,7 +37442,7 @@ msgstr "<i>ਅਣ-ਤਬਦੀਲ</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -37454,10 +37454,10 @@ msgstr "ਨਾ-ਉਪਲੱਬਧ"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:691
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:796
-#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:694
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:799
+#: core/libs/properties/itempropertiessidebardb.cpp:801
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -37470,10 +37470,10 @@ msgstr "ਨਹੀਂ"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:690
-#: core/libs/properties/itempropertiessidebardb.cpp:692
-#: core/libs/properties/itempropertiessidebardb.cpp:795
-#: core/libs/properties/itempropertiessidebardb.cpp:797
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:800
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -37736,8 +37736,8 @@ msgstr "ਅਣ-ਕੈਲੀਬਰੇਟ"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:667
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:670
+#: core/libs/properties/itempropertiessidebardb.cpp:683
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -37752,7 +37752,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -37760,7 +37760,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:726
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -37768,7 +37768,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:728
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -37789,7 +37789,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "ਵਰਜਨ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:672
+#: core/libs/properties/itempropertiessidebardb.cpp:675
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

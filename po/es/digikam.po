@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-27 01:49+0000\n"
-"PO-Revision-Date: 2024-08-20 12:46+0200\n"
+"POT-Creation-Date: 2024-08-28 01:55+0000\n"
+"PO-Revision-Date: 2024-08-27 12:23+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -37514,38 +37514,38 @@ msgctxt "@info"
 msgid "Apply changes?"
 msgstr "¿Aplicar cambios?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:438
+#: core/libs/properties/captions/itemdescedittab.cpp:440
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr "Leyendo metadatos de archivos. Espere un momento..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:470
+#: core/libs/properties/captions/itemdescedittab.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr "Escribiendo metadatos en los archivos. Espere un momento..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:513
+#: core/libs/properties/captions/itemdescedittab.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr "Leer metadatos desde archivo a base de datos"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:515
-#: core/libs/properties/captions/itemdescedittab.cpp:534
+#: core/libs/properties/captions/itemdescedittab.cpp:519
+#: core/libs/properties/captions/itemdescedittab.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr "Escribir metadatos en cada archivo"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:531
+#: core/libs/properties/captions/itemdescedittab.cpp:535
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr "Leer metadatos desde cada archivo a la base de datos"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:539
+#: core/libs/properties/captions/itemdescedittab.cpp:543
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
@@ -37630,7 +37630,7 @@ msgctxt "@title"
 msgid "Information"
 msgstr "Información"
 
-#: core/libs/properties/captions/itemdescedittab_p.cpp:209
+#: core/libs/properties/captions/itemdescedittab_p.cpp:212
 #, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
@@ -38032,7 +38032,7 @@ msgstr "sin cambios"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38043,10 +38043,10 @@ msgstr "no disponible"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:691
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:796
-#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:694
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:799
+#: core/libs/properties/itempropertiessidebardb.cpp:801
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -38058,10 +38058,10 @@ msgstr "No"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:690
-#: core/libs/properties/itempropertiessidebardb.cpp:692
-#: core/libs/properties/itempropertiessidebardb.cpp:795
-#: core/libs/properties/itempropertiessidebardb.cpp:797
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:798
+#: core/libs/properties/itempropertiessidebardb.cpp:800
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38297,8 +38297,8 @@ msgstr "Sin calibrar"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:667
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:670
+#: core/libs/properties/itempropertiessidebardb.cpp:683
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38311,21 +38311,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:692
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:723
+#: core/libs/properties/itempropertiessidebardb.cpp:726
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:728
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38343,7 +38343,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versiones"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:672
+#: core/libs/properties/itempropertiessidebardb.cpp:675
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -41994,55 +41994,55 @@ msgstr "Avanzar fotograma"
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
-msgstr ""
+msgstr "Cambiar la tasa de reproducción de vídeo"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "0,5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1,0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1,5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2,0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "2,5x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "3,0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "4,0x"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "5,0x"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
