@@ -20,7 +20,7 @@ if(JPEG_FOUND)
 
     if (${JPEG_LIB_VERSION} LESS 80)
 
-        set(JPEG8_FOUND FALSE)
+        message(ERROR "The Libjpeg API is less than 8.0. At least libjpeg >= 8 is required to support DNG compression.")
 
     else()
 
