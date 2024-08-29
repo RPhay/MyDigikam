@@ -394,7 +394,6 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
         return;
     }
 
-    d->gpsCopyBtn->setEnabled(false);
     d->mapView->setCurrentIndex(0);
     setEnabled(true);
 
@@ -416,6 +415,10 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
         d->latitude->setAdjustedText(QLocale().toString(coordinates.lat(), 'g', 7));
         d->longitude->setAdjustedText(QLocale().toString(coordinates.lon(), 'g', 7));
         d->date->setAdjustedText(QLocale().toString(info.dateTime, QLocale::ShortFormat));
+    }
+    else
+    {
+        d->gpsCopyBtn->setEnabled(false);
     }
 
     for (int i = 0 ; i < d->gpsInfoList.count() ; ++i)
