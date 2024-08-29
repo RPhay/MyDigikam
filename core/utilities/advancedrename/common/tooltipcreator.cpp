@@ -62,7 +62,7 @@ QString TooltipCreator::additionalInformation()
     information += QString::fromUtf8("<tr><td style='vertical-align:top;'>") + getInfoIconBase64() + QString::fromUtf8("</td>");
     information += QString::fromUtf8("<td><ol>");
 
-    for (const QString& infoItem : qAsConst(infoItems))
+    for (const QString& infoItem : std::as_const(infoItems))
     {
         // cppcheck-suppress useStlAlgorithm
         information += QString::fromUtf8("<li>") + infoItem + QString::fromUtf8("</li>");
@@ -168,9 +168,9 @@ QString TooltipCreator::createEntries(const RulesList& data)
 {
     QString result;
 
-    for (Rule* const t : qAsConst(data))
+    for (Rule* const t : std::as_const(data))
     {
-        for (Token* const token : qAsConst(t->tokens()))
+        for (Token* const token : std::as_const(t->tokens()))
         {
             // cppcheck-suppress useStlAlgorithm
             result += QString::fromUtf8("<tr>"

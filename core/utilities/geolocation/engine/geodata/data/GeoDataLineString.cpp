@@ -1068,7 +1068,7 @@ QVariantList GeoDataLineString::toVariantList() const
 
     QVariantList variantList;
 
-    for (const GeoDataCoordinates& itCoords : qAsConst(d->m_vector))
+    for (const GeoDataCoordinates& itCoords : std::as_const(d->m_vector))
     {
         QVariantMap map;
         map.insert(QLatin1String("lon"), itCoords.longitude(GeoDataCoordinates::Degree));

@@ -86,12 +86,12 @@ Parser::~Parser()
 
 void Parser::reset()
 {
-    for (Rule* const option : qAsConst(d->options))
+    for (Rule* const option : std::as_const(d->options))
     {
         option->reset();
     }
 
-    for (Rule* const modifier : qAsConst(d->modifiers))
+    for (Rule* const modifier : std::as_const(d->modifiers))
     {
         modifier->reset();
     }
@@ -182,13 +182,13 @@ ParseResults Parser::results(ParseSettings& settings)
 {
     ParseResults results;
 
-    for (Rule* const option : qAsConst(d->options))
+    for (Rule* const option : std::as_const(d->options))
     {
         ParseResults r = option->parse(settings);
         results.append(r);
     }
 
-    for (Rule* const modifier : qAsConst(d->modifiers))
+    for (Rule* const modifier : std::as_const(d->modifiers))
     {
         ParseResults r = modifier->parse(settings);
         results.append(r);
@@ -215,7 +215,7 @@ QString Parser::parse(ParseSettings& settings)
 
     ParseResults results;
 
-    for (Rule* const option : qAsConst(d->options))
+    for (Rule* const option : std::as_const(d->options))
     {
         ParseResults r = option->parse(settings);
         results.append(r);
@@ -227,7 +227,7 @@ QString Parser::parse(ParseSettings& settings)
 
     // remove invalid modifiers from the new name
 
-    for (Rule* const mod : qAsConst(d->modifiers))
+    for (Rule* const mod : std::as_const(d->modifiers))
     {
         newName.remove(mod->regExp());
     }
@@ -291,7 +291,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
     QMap<ParseResults::ResultsKey, Rule*> modifierMap;
 
-    for (Rule* const modifier : qAsConst(d->modifiers))
+    for (Rule* const modifier : std::as_const(d->modifiers))
     {
         QRegularExpression regExp = modifier->regExp();
         int pos                   = 0;

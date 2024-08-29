@@ -89,7 +89,7 @@ QVariant DateFormat::format(const QString& identifier)
         return m_map.at(Standard).second;
     }
 
-    for (const DateFormatDescriptor& desc : qAsConst(m_map))
+    for (const DateFormatDescriptor& desc : std::as_const(m_map))
     {
         if (desc.first == identifier)
         {   // cppcheck-suppress useStlAlgorithm
@@ -125,7 +125,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
 
     DateFormat df;
 
-    for (const DateFormat::DateFormatDescriptor& desc : qAsConst(df.map()))
+    for (const DateFormat::DateFormatDescriptor& desc : std::as_const(df.map()))
     {
         ui->dateFormatPicker->addItem(desc.first);
     }

@@ -129,7 +129,7 @@ void MetadataOption::slotTokenTriggered(const QString& token)
     {
         QStringList checkedTags = dlg->metadataPanel->getAllCheckedTags();
 
-        for (const QString& tag : qAsConst(checkedTags))
+        for (const QString& tag : std::as_const(checkedTags))
         {
             tags << QString::fromUtf8("[meta:%1]").arg(tag);
         }
