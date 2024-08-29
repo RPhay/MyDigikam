@@ -84,23 +84,32 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container1/"),          // krazy:exclude=insecurenet
-                         QLatin1String("GContainer"));
-
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item1/"),     // krazy:exclude=insecurenet
-                         QLatin1String("GContainerItem"));
-
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/"),           // krazy:exclude=insecurenet
                          QLatin1String("Container"));
-
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),      // krazy:exclude=insecurenet
-                         QLatin1String("Item"));
 
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container_1_/"),        // krazy:exclude=insecurenet
                          QLatin1String("Container_1_"));
 
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container2/"),          // krazy:exclude=insecurenet
+                         QLatin1String("GContainer"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),      // krazy:exclude=insecurenet
+                         QLatin1String("Item"));
+
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),   // krazy:exclude=insecurenet
                          QLatin1String("Item_1_"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item2/"),     // krazy:exclude=insecurenet
+                         QLatin1String("GItem"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item3/"),     // krazy:exclude=insecurenet
+                         QLatin1String("GContainerItem"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/camera/"),              // krazy:exclude=insecurenet
+                         QLatin1String("GCamera"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.adobe.com/hdr-gain-map/1.0/"),                // krazy:exclude=insecurenet
+                         QLatin1String("hdrgm"));
 
     registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),                    // krazy:exclude=insecurenet
                          QLatin1String("apple-fi"));

@@ -64,7 +64,7 @@ BUGFIXES:
 050 ==> 492163 - Creation of orphan sidecars.
 051 ==> 492257 - Showfoto symlink is broken in AppImage - Typo missing "w".
 052 ==> 492313 - New face tag shuts program.
-053 ==> 
+053 ==> 492366 - digiKam does not write anymore xmp data to files from Pixel devices : debug shows an Exiv2 error.
 054 ==> 
 055 ==> 
 056 ==> 
