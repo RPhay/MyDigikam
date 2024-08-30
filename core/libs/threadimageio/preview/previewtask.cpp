@@ -526,24 +526,28 @@ void PreviewLoadingTask::convertQImageToDImg()
 
     QScopedPointer<DMetadata> metadata(new DMetadata(m_loadingDescription.filePath));
     QSize orgSize = metadata->getPixelSize();
+    bool metaSize = orgSize.isValid();
 
     if ((format == DImg::RAW) && LoadSaveThread::infoProvider())
     {
-        orgSize = LoadSaveThread::infoProvider()->dimensionsHint(m_loadingDescription.filePath);
+        orgSize  = LoadSaveThread::infoProvider()->dimensionsHint(m_loadingDescription.filePath);
+        metaSize = false;
     }
 
     // In case we don't get the original size from the metadata.
 
     if (orgSize.isNull())
     {
-        orgSize = QSize(m_img.width(), m_img.height());
+        orgSize  = QSize(m_img.width(), m_img.height());
+        metaSize = false;
     }
 
     // Set the ratio of width and height of the
     // original size to the same ratio of the loaded image.
     // Because a half RAW preview was probably already rotated.
+    // Or the original size comes from the metadata and may no longer be correct.
 
-    if ((format == DImg::RAW) && !m_fromRawEmbeddedPreview)
+    if (((format == DImg::RAW) && !m_fromRawEmbeddedPreview) || metaSize)
     {
         if (
             ((m_img.width() < m_img.height()) && (orgSize.width() > orgSize.height())) ||
@@ -554,7 +558,7 @@ void PreviewLoadingTask::convertQImageToDImg()
         }
     }
 
-    m_img.setAttribute(QLatin1String("originalSize"),   orgSize);
+    m_img.setAttribute(QLatin1String("originalSize"), orgSize);
 
     m_img.setMetadata(metadata->data());
 

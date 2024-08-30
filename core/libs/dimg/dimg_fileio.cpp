@@ -222,6 +222,12 @@ QString DImg::formatToMimeType(FORMAT frm)
             break;
         }
 
+        case (HEIF):
+        {
+            format = QLatin1String("HEIC");
+            break;
+        }
+
         default:
         {
             // For QImage or ImageMagick based.

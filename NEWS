@@ -66,8 +66,8 @@ BUGFIXES:
 052 ==> 492313 - New face tag shuts program.
 053 ==> 492366 - digiKam does not write anymore xmp data to files from Pixel devices : debug shows an Exiv2 error.
 054 ==> 491888 - DNG files misread as TIFF.
-055 ==> 
-056 ==> 
+055 ==> 492412 - In the installation I noticed there is Exiftool.exe embedded in the digiKam install, but not the libraries.
+056 ==> 492259 - Face recognition is working well but RECURRENT ISSUE on Photos that have been set in "portrait" mode.
 057 ==> 
 058 ==> 
 059 ==> 
