@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:55+0000\n"
-"PO-Revision-Date: 2024-08-20 16:20+0200\n"
+"PO-Revision-Date: 2024-08-29 18:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -41720,55 +41720,55 @@ msgstr "Adiantar un fotograma"
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
-msgstr ""
+msgstr "Cambiar a velocidade de reprodución do vídeo."
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
-msgstr ""
+msgstr "½"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
-msgstr ""
+msgstr "1"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
-msgstr ""
+msgstr "1½"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
-msgstr ""
+msgstr "2"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
-msgstr ""
+msgstr "2½"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
-msgstr ""
+msgstr "3"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
-msgstr ""
+msgstr "4"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:325
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
-msgstr ""
+msgstr "5"
 
 #: core/libs/widgets/combo/dcombobox.cpp:60
 #: core/libs/widgets/range/dnuminput.cpp:67
