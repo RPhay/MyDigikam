@@ -306,19 +306,28 @@ bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& date
 
     d->prepareProcess();
 
+    QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-m");
     cmdArgs << QByteArray("-wm");
     cmdArgs << QByteArray("w");
 
-    if (dateTime.timeSpec() == Qt::UTC)
+    bool isVideo = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
+
+    if (isVideo)
     {
         cmdArgs << QByteArray("-api");
         cmdArgs << QByteArray("QuickTimeUTC");
-    }
 
-    cmdArgs << (QByteArray("-time:all=") +
-                dateTime.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")).toLatin1());
+
+        cmdArgs << (QByteArray("-time:all=") +
+                    dateTime.toString(QLatin1String("yyyy-MM-ddThh:mm:ssttt")).toLatin1());
+    }
+    else
+    {
+        cmdArgs << (QByteArray("-time:all=") +
+                    dateTime.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")).toLatin1());
+    }
 
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << QByteArray("@");
