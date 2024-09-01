@@ -68,7 +68,7 @@ BUGFIXES:
 054 ==> 491888 - DNG files misread as TIFF.
 055 ==> 492412 - In the installation I noticed there is Exiftool.exe embedded in the digiKam install, but not the libraries.
 056 ==> 492259 - Face recognition is working well but RECURRENT ISSUE on Photos that have been set in "portrait" mode.
-057 ==> 
+057 ==> 492271 - 8.3.0 -> 8.4.0 Upgrade Fails.
 058 ==> 
 059 ==> 
 060 ==> 
