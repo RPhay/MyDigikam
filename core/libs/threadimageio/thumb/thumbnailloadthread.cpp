@@ -370,6 +370,38 @@ void ThumbnailLoadThread::findGroup(const QList<QPair<ThumbnailIdentifier, QRect
     ManagedLoadSaveThread::prependThumbnailGroup(descriptions);
 }
 
+bool ThumbnailLoadThread::findBuffered(const ThumbnailIdentifier& identifier,
+                                       const QRect& rect, QPixmap& pixmap, int size)
+{
+    LoadingDescription description;
+
+    if (rect.isNull())
+    {
+        description = d->createLoadingDescription(identifier, size);
+    }
+    else
+    {
+        description = d->createLoadingDescription(identifier, size, rect);
+    }
+
+    QString cacheKey = description.cacheKey();
+
+    {
+        LoadingCache* const cache = LoadingCache::cache();
+        LoadingCache::CacheLock lock(cache);
+        const QPixmap* pix        = cache->retrieveBufferedTPixmap(cacheKey);
+
+        if (pix)
+        {
+            pixmap = *pix;
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
 // --- Preloading ---
 
 void ThumbnailLoadThread::preload(const ThumbnailIdentifier& identifier)

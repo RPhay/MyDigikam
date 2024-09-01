@@ -228,16 +228,26 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 
         if (!d->detailRect.isNull())
         {
-            if (d->storageThread->find(info.thumbnailIdentifier(),
-                                       d->detailRect, thumbnail, thumbSize, true))
+            if      (d->storageThread->find(info.thumbnailIdentifier(),
+                                            d->detailRect, thumbnail, thumbSize, true))
+            {
+                return thumbnail;
+            }
+            else if (d->storageThread->findBuffered(info.thumbnailIdentifier(),
+                                                    d->detailRect, thumbnail, thumbSize))
             {
                 return thumbnail;
             }
         }
         else
         {
-            if (d->storageThread->find(info.thumbnailIdentifier(),
-                                       thumbnail, thumbSize, true))
+            if      (d->storageThread->find(info.thumbnailIdentifier(),
+                                            thumbnail, thumbSize, true))
+            {
+                return thumbnail;
+            }
+            else if (d->storageThread->findBuffered(info.thumbnailIdentifier(),
+                                                    QRect(), thumbnail, thumbSize))
             {
                 return thumbnail;
             }

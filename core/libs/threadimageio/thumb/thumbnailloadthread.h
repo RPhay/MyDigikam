@@ -112,6 +112,13 @@ public:
     void findGroup(const QList<QPair<ThumbnailIdentifier, QRect> >& filePathsAndRects, int size);
 
     /**
+     * Find the thumbnail pixmap in the buffered cache to
+     * avoid flickering while loading a new thumbnail.
+     */
+    bool findBuffered(const ThumbnailIdentifier& identifier,
+                      const QRect& rect, QPixmap& pixmap, int size);
+
+    /**
      * Preload the thumbnail or thumbnail group.
      * This is essentially the same as loading, but with a lower priority.
      */

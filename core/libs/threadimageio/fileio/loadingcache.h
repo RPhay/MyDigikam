@@ -219,6 +219,7 @@ public:
      */
     const QImage* retrieveThumbnail(const QString& cacheKey) const;
     const QPixmap* retrieveThumbnailPixmap(const QString& cacheKey) const;
+    const QPixmap* retrieveBufferedTPixmap(const QString& cacheKey) const;
     bool  hasThumbnailPixmap(const QString& cacheKey) const;
 
     /**
