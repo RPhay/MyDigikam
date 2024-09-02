@@ -27,7 +27,7 @@ QString ApplicationSettings::getImageFileFilter() const
     CoreDbAccess().db()->getFilterSettings(&imageSettings, nullptr, nullptr);
     QStringList wildcards;
 
-    Q_FOREACH (const QString& suffix, imageSettings)
+    for (const QString& suffix : std::as_const(imageSettings))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -41,7 +41,7 @@ QString ApplicationSettings::getMovieFileFilter() const
     CoreDbAccess().db()->getFilterSettings(nullptr, &movieSettings, nullptr);
     QStringList wildcards;
 
-    Q_FOREACH (const QString& suffix, movieSettings)
+    for (const QString& suffix : std::as_const(movieSettings))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -55,7 +55,7 @@ QString ApplicationSettings::getAudioFileFilter() const
     CoreDbAccess().db()->getFilterSettings(nullptr, nullptr, &audioSettings);
     QStringList wildcards;
 
-    Q_FOREACH (const QString& suffix, audioSettings)
+    for (const QString& suffix : std::as_const(audioSettings))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -85,7 +85,7 @@ QString ApplicationSettings::getRawFileFilter() const
 
     QStringList wildcards;
 
-    Q_FOREACH (const QString& suffix, supportedRaws)
+    for (const QString& suffix : std::as_const(supportedRaws))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -99,17 +99,17 @@ QString ApplicationSettings::getAllFileFilter() const
     CoreDbAccess().db()->getFilterSettings(&imageFilter, &videoFilter, &audioFilter);
     QStringList wildcards;
 
-    Q_FOREACH (const QString& suffix, imageFilter)
+    for (const QString& suffix : std::as_const(imageFilter))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
 
-    Q_FOREACH (const QString& suffix, audioFilter)
+    for (const QString& suffix : std::as_const(audioFilter))
     {
         wildcards << QLatin1String("*.") + suffix;
     }
 
-    Q_FOREACH (const QString& suffix, videoFilter)
+    for (const QString& suffix : std::as_const(videoFilter))
     {
         wildcards << QLatin1String("*.") + suffix;
     }

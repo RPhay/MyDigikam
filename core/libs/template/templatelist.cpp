@@ -89,7 +89,7 @@ void TemplateList::readSettings()
     {
         QList<Template> list = tm->templateList();
 
-        Q_FOREACH (const Template& t, list)
+        for (const Template& t : std::as_const(list))
         {
             new TemplateListItem(this, t);
         }

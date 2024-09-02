@@ -305,7 +305,7 @@ bool TemplateManager::save()
     {
         QMutexLocker lock(&d->mutex);
 
-        Q_FOREACH (const Template& t, d->pList)
+        for (const Template& t : std::as_const(d->pList))
         {
             QDomElement elem = doc.createElement(QLatin1String("template"));
 
@@ -332,7 +332,9 @@ bool TemplateManager::save()
             QDomElement authors = doc.createElement(QLatin1String("authors"));
             elem.appendChild(authors);
 
-            Q_FOREACH (const QString& name, t.authors())
+            const auto list = t.authors();
+
+            for (const QString& name : list)
             {
                 QDomElement e = doc.createElement(QLatin1String("name"));
                 e.setAttribute(QLatin1String("value"), name);
@@ -420,7 +422,9 @@ bool TemplateManager::save()
             QDomElement subjects = doc.createElement(QLatin1String("subjects"));
             elem.appendChild(subjects);
 
-            Q_FOREACH (const QString& subject, t.IptcSubjects())
+            const auto list2 = t.IptcSubjects();
+
+            for (const QString& subject : list2)
             {
                 QDomElement e = doc.createElement(QLatin1String("subject"));
                 e.setAttribute(QLatin1String("value"), subject);
@@ -522,7 +526,7 @@ void TemplateManager::clear()
         d->pList.clear();
     }
 
-    Q_FOREACH (const Template& t, d->pList)
+    for (const Template& t : std::as_const(d->pList))
     {
         Q_EMIT signalTemplateRemoved(t);
     }
@@ -537,7 +541,7 @@ Template TemplateManager::findByTitle(const QString& title) const
 {
     QMutexLocker lock(&d->mutex);
 
-    Q_FOREACH (const Template& t, d->pList)
+    for (const Template& t : std::as_const(d->pList))
     {
         if (t.templateTitle() == title)
         {    // cppcheck-suppress useStlAlgorithm
@@ -552,7 +556,7 @@ Template TemplateManager::findByContents(const Template& tref) const
 {
     QMutexLocker lock(&d->mutex);
 
-    Q_FOREACH (const Template& t, d->pList)
+    for (const Template& t : std::as_const(d->pList))
     {
         if (t == tref)
         {   // cppcheck-suppress useStlAlgorithm

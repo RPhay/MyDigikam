@@ -111,7 +111,7 @@ void TemplateSelector::populateTemplates()
         int i                 = DONTCHANGE + 2;
         QList<Template> list  = tm->templateList();
 
-        Q_FOREACH (const Template& t, list)
+        for (const Template& t : std::as_const(list))
         {
             d->templateCombo->insertSqueezedItem(t.templateTitle(), i);
             ++i;
