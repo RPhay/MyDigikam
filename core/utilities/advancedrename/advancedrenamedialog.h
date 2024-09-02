@@ -55,16 +55,16 @@ public:
     ~AdvancedRenameListItem() override;
 
     void setImageUrl(const QUrl& url);
-    QUrl imageUrl() const;
+    QUrl imageUrl()     const;
 
     void setName(const QString& name);
-    QString name() const;
+    QString name()      const;
 
     void setNewName(const QString& name);
-    QString newName() const;
+    QString newName()   const;
 
     void markInvalid(bool invalid);
-    bool isNameEqual() const;
+    bool isNameEqual()  const;
 
 private:
 
@@ -117,9 +117,9 @@ private:
     void initDialog();
     void readSettings();
     void writeSettings();
-    bool checkNewNames() const;
+    bool checkNewNames()            const;
 
-    NewNamesList filterNewNames() const;
+    NewNamesList filterNewNames()   const;
 
 private:
 

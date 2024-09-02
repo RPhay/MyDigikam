@@ -79,7 +79,7 @@ AdvancedRenameListItem::AdvancedRenameListItem(QTreeWidget* const view, const QU
     setImageUrl(url);
 }
 
-AdvancedRenameListItem:: ~AdvancedRenameListItem()
+AdvancedRenameListItem::~AdvancedRenameListItem()
 {
     delete d;
 }
@@ -140,9 +140,13 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                   = QLatin1String("AdvancedRename Dialog");
     const QString configLastUsedRenamePatternEntry  = QLatin1String("Last Used Rename Pattern");
     const QString configDialogSizeEntry             = QLatin1String("Dialog Size");
+
+public:
 
     QString                singleFileModeOldFilename;
 
@@ -196,7 +200,9 @@ AdvancedRenameDialog::~AdvancedRenameDialog()
 
 void AdvancedRenameDialog::setupWidgets()
 {
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help |
+                                      QDialogButtonBox::Ok   |
+                                      QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     d->advancedRenameManager = new AdvancedRenameManager();
@@ -432,16 +438,16 @@ void AdvancedRenameDialog::slotParseStringChanged(const QString& parseString)
 
     d->newNamesList.clear();
 
-    // generate new file names
+    // Generate new file names
 
     ParseSettings settings;
     settings.useOriginalFileExtension = true;
-
-    // settings.useOriginalFileExtension = d->singleFileMode ? false : true;
-
+/*
+    settings.useOriginalFileExtension = d->singleFileMode ? false : true;
+*/
     d->advancedRenameManager->parseFiles(parseString, settings);
 
-    // fill the tree widget with the updated files
+    // Fill the tree widget with the updated files
 
     QTreeWidgetItemIterator it(d->listView);
 
@@ -459,7 +465,7 @@ void AdvancedRenameDialog::slotParseStringChanged(const QString& parseString)
         ++it;
     }
 
-    bool enableBtn = checkNewNames() && !parseString.isEmpty();
+    bool enableBtn = (checkNewNames() && !parseString.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enableBtn);
 
     d->listView->viewport()->update();

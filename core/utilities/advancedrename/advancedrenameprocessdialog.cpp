@@ -57,7 +57,8 @@ public:
     QString              infoLabel;
 };
 
-AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& list, QWidget* const parent)
+AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& list,
+                                                         QWidget* const parent)
     : DProgressDlg(parent),
       d           (new Private)
 {
@@ -83,6 +84,7 @@ AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& lis
 
     getNextThumbnail();
     setMaximum(d->newNameList.count());
+
     QTimer::singleShot(500, this, SLOT(slotRenameImages()));
 }
 
@@ -185,6 +187,7 @@ void AdvancedRenameProcessDialog::slotRenameFinished()
                 getNextThumbnail();
                 setLabel(d->infoLabel);
                 setMaximum(d->newNameList.count());
+
                 QTimer::singleShot(500, this, SLOT(slotRenameImages()));
             }
             else

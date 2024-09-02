@@ -41,8 +41,12 @@ public:
 
     Private() = default;
 
+public:
+
     const quint8 INVALID            = -1;
     const QString DUMMY_TEXT        = QLatin1String("DUMMY_TEXT_y_fjqp|");
+
+public:
 
     bool    allowDirectoryCreation  = false;
     int     verticalSliderPosition  = INVALID;
@@ -244,11 +248,15 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("AdvancedRename Input");
     const QString configPatternHistoryListEntry = QLatin1String("Pattern History List");
 
     const int               maxVisibleItems     = 10;
     const int               maxHistoryItems     = 30;
+
+public:
 
     AdvancedRenameLineEdit* lineEdit            = nullptr;
     ProxyLineEdit*          proxy               = nullptr;

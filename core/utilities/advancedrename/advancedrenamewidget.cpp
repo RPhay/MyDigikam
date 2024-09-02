@@ -53,8 +53,12 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                   = QLatin1String("AdvancedRename Widget");
     const QString configExpandedStateEntry          = QLatin1String("Options are expanded");
+
+public:
 
     bool                 configExpandedStateDefault = true;
 
@@ -413,8 +417,8 @@ void AdvancedRenameWidget::setupWidgets()
 
 void AdvancedRenameWidget::slotTokenMarked(bool marked)
 {
-    bool enable    = marked && d->parser;
-    bool enableMod = enable && !(d->parser->modifiers().isEmpty());
+    bool enable    = (marked && d->parser);
+    bool enableMod = (enable && !(d->parser->modifiers().isEmpty()));
 
     if (d->layoutStyle == LayoutNormal)
     {

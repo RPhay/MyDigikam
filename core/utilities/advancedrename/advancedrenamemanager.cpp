@@ -558,9 +558,11 @@ QString AdvancedRenameManager::newName(const QString& filename) const
     QString newName   = d->renamedFiles.value(filename, filename);
     QString sysType   = QString::fromLatin1(info.fileSystemType()).toUpper();
 
-    if (sysType.contains(QLatin1String("FAT"))  ||
+    if (
+        sysType.contains(QLatin1String("FAT"))  ||
         sysType.contains(QLatin1String("NTFS")) ||
-        sysType.contains(QLatin1String("FUSEBLK")))
+        sysType.contains(QLatin1String("FUSEBLK"))
+       )
     {
         regExpStr.append(QLatin1String("<>:=\"|\\\\/"));
 
