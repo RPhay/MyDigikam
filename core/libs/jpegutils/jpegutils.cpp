@@ -440,7 +440,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         PhotoInfoContainer photoInfo = m_metadata->getPhotographInformation();
         QStringList unsupportedModels({ QLatin1String("Redmi Note 6 Pro") });
 
-        Q_FOREACH (const QString& model, unsupportedModels)
+        for (const QString& model : std::as_const(unsupportedModels))
         {
             if (model == photoInfo.model)
             {
@@ -560,7 +560,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         }
     }
 
-    Q_FOREACH (const QString& temp, removeLater)
+    for (const QString& temp : std::as_const(removeLater))
     {
         QFile::remove(temp);
     }

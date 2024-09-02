@@ -267,7 +267,7 @@ public:
     {
         QList<QScreen*> screens = QGuiApplication::screens();
 
-        Q_FOREACH (const QScreen* screen, screens)
+        for (const QScreen* screen : screens)
         {
             if (screen->geometry().contains(point))
             {   // cppcheck-suppress useStlAlgorithm

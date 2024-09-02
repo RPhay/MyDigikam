@@ -119,7 +119,7 @@ public:
                 }
             }
 
-            Q_FOREACH (const TodoPair& pair, copyTodo)
+            for (const TodoPair& pair : std::as_const(copyTodo))
             {
                 pair.first->moveToThread(pair.second);
             }

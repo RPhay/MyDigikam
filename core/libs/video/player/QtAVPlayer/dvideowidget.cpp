@@ -161,7 +161,9 @@ int DVideoWidget::videoMediaOrientation() const
         qCDebug(DIGIKAM_GENERAL_LOG) << "---";
         qCDebug(DIGIKAM_GENERAL_LOG) << "Video Streams Available:" << d->player->availableVideoStreams().count();
 
-        Q_FOREACH (const QAVStream& vstream, d->player->availableVideoStreams())
+        const auto list = d->player->availableVideoStreams();
+
+        for (const QAVStream& vstream : list)
         {
             QMap<QString, QString> vals = vstream.metadata();
 

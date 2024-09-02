@@ -129,7 +129,7 @@ QMap<QString, QString> FFmpegLauncher::supportedCodecs()
     QString out        = output().section(QLatin1String("-------"), -1);
     QStringList codecs = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& line, codecs)
+    for (const QString& line : std::as_const(codecs))
     {
         QStringList sections = line.simplified().split(QLatin1Char(' '), Qt::SkipEmptyParts);
 
@@ -164,7 +164,7 @@ QMap<QString, QString> FFmpegLauncher::supportedFormats()
     QString out         = output().section(QLatin1String("--"), -1);
     QStringList formats = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& line, formats)
+    for (const QString& line : std::as_const(formats))
     {
         QStringList sections = line.simplified().split(QLatin1Char(' '), Qt::SkipEmptyParts);
 
@@ -196,7 +196,7 @@ QTime FFmpegLauncher::soundTrackLength(const QString& audioPath)
 
     QStringList lines = output().split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& line, lines)
+    for (const QString& line : std::as_const(lines))
     {
         if (line.contains(QLatin1String("Duration")))
         {

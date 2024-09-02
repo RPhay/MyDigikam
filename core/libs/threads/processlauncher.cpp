@@ -176,7 +176,9 @@ void ProcessLauncher::slotReadyRead()
 
         if (d->consoleTraces)
         {
-            Q_FOREACH (const QString& str, txt.split(QLatin1Char('\n')))
+            const auto list = txt.split(QLatin1Char('\n'));
+
+            for (const QString& str : list)
             {
                 if (!str.isEmpty())
                 {
