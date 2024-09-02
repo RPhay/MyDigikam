@@ -66,7 +66,7 @@ void PreviewLoadingTask::execute()
 
         lookupKeys.prepend(m_loadingDescription.cacheKey());
 
-        Q_FOREACH (const QString& key, lookupKeys)
+        for (const QString& key : std::as_const(lookupKeys))
         {
             if ((cachedImg = cache->retrieveImage(key)))
             {

@@ -562,7 +562,7 @@ void ThumbnailLoadThread::slotThumbnailsAvailable()
         d->notifiedForResults = false;
     }
 
-    Q_FOREACH (const ThumbnailResult& result, results)
+    for (const ThumbnailResult& result : std::as_const(results))
     {
         slotThumbnailLoaded(result.loadingDescription, result.image);
     }
@@ -673,7 +673,7 @@ void ThumbnailLoadThread::deleteThumbnail(const QString& filePath)
         LoadingCache::CacheLock lock(cache);
         QStringList possibleKeys  = LoadingDescription::possibleThumbnailCacheKeys(filePath);
 
-        Q_FOREACH (const QString& cacheKey, possibleKeys)
+        for (const QString& cacheKey : std::as_const(possibleKeys))
         {
             cache->removeThumbnail(cacheKey);
         }
@@ -808,7 +808,7 @@ int ThumbnailImageCatcher::enqueue()
 
     QMutexLocker lock(&d->mutex);
 
-    Q_FOREACH (const LoadingDescription& description, descriptions)
+    for (const LoadingDescription& description : std::as_const(descriptions))
     {
         d->tasks << Private::CatcherResult(description);
     }
@@ -828,7 +828,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
 
     // first, handle results received between request and calling this method
 
-    Q_FOREACH (const Private::CatcherResult& result, d->intermediate)
+    for (const Private::CatcherResult& result : std::as_const(d->intermediate))
     {
         d->harvest(result.description, result.image);
     }
@@ -844,7 +844,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
 
     QList<QImage> result;
 
-    Q_FOREACH (const Private::CatcherResult& task, d->tasks)
+    for (const Private::CatcherResult& task : std::as_const(d->tasks))
     {
         result << task.image;
     }
