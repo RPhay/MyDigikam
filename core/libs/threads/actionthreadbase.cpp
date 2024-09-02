@@ -92,7 +92,9 @@ ActionThreadBase::~ActionThreadBase()
 
     // Cleanup all jobs from memory
 
-    for (ActionJob* const job : d->processed.keys())
+    const auto keys = d->processed.keys();
+
+    for (ActionJob* const job : keys)
     {
         delete job;
     }
@@ -155,12 +157,16 @@ void ActionThreadBase::cancel(bool isCancel)
 
     QMutexLocker lock(&d->mutex);
 
-    for (ActionJob* const job : d->todo.keys())
+    const auto keys  = d->todo.keys();
+
+    for (ActionJob* const job : keys)
     {
         delete job;
     }
 
-    for (ActionJob* const job : d->pending.keys())
+    const auto keys2 = d->pending.keys();
+
+    for (ActionJob* const job : keys2)
     {
         job->cancel();
         d->processed.insert(job, 0);

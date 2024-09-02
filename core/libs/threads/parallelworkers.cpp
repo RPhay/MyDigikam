@@ -34,7 +34,7 @@ namespace Digikam
 
 ParallelWorkers::~ParallelWorkers()
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         delete object;
     }
@@ -54,7 +54,7 @@ bool ParallelWorkers::optimalWorkerCountReached() const
 
 void ParallelWorkers::schedule()
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->schedule();
     }
@@ -62,7 +62,7 @@ void ParallelWorkers::schedule()
 
 void ParallelWorkers::deactivate(WorkerObject::DeactivatingMode mode)
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->deactivate(mode);
     }
@@ -70,7 +70,7 @@ void ParallelWorkers::deactivate(WorkerObject::DeactivatingMode mode)
 
 void ParallelWorkers::wait()
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->wait();
     }
@@ -78,7 +78,7 @@ void ParallelWorkers::wait()
 
 void ParallelWorkers::setPriority(QThread::Priority priority)
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->setPriority(priority);
     }
@@ -110,7 +110,7 @@ bool ParallelWorkers::connect(const QObject* sender, const char* signal,
                               const char* method,
                               Qt::ConnectionType type) const
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         if (!WorkerObject::connect(sender, signal, object, method, type))
         {
@@ -127,7 +127,7 @@ bool ParallelWorkers::connect(const char* const signal,
                               const char* const method,
                               Qt::ConnectionType type) const
 {
-    for (WorkerObject* const object : m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         if (!QObject::connect(object, signal, receiver, method, type))
         {
