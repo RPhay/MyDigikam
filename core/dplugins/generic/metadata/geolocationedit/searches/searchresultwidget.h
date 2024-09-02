@@ -45,9 +45,9 @@ class SearchResultWidget : public QWidget
 public:
 
     explicit SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
-                          GPSItemModel* const gpsItemModel,
-                          QItemSelectionModel* const gpsImageSelectionModel,
-                          QWidget* const parent);
+                                GPSItemModel* const gpsItemModel,
+                                QItemSelectionModel* const gpsImageSelectionModel,
+                                QWidget* const parent);
     ~SearchResultWidget()                                                         override;
 
     GeoModelHelper* getModelHelper()                                        const;

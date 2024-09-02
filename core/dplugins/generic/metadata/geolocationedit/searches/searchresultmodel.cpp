@@ -302,7 +302,7 @@ void SearchResultModel::removeRowsByIndexes(const QModelIndexList& rowsList)
 
     QList<int> rowNumbers;
 
-    Q_FOREACH (const QModelIndex& index, rowsList)
+    for (const QModelIndex& index : std::as_const(rowsList))
     {
         if (index.isValid())
         {
@@ -337,7 +337,7 @@ void SearchResultModel::removeRowsBySelection(const QItemSelection& selectionLis
 
     QList<QPair<int, int> > rowRanges;
 
-    Q_FOREACH (const QItemSelectionRange& range, selectionList)
+    for (const QItemSelectionRange& range : std::as_const(selectionList))
     {
         rowRanges << QPair<int, int>(range.top(), range.bottom());
     }

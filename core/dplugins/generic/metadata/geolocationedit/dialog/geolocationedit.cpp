@@ -567,7 +567,7 @@ void GeolocationEdit::setImages(const QList<QUrl>& images)
 {
     QList<GPSItemContainer*> items;
 
-    Q_FOREACH (const QUrl& u, images)
+    for (const QUrl& u : std::as_const(images))
     {
         items << new GPSItemContainer(u);
     }
@@ -577,7 +577,7 @@ void GeolocationEdit::setImages(const QList<QUrl>& images)
 
 void GeolocationEdit::setItems(const QList<GPSItemContainer*>& items)
 {
-    Q_FOREACH (GPSItemContainer* const newItem, items)
+    for (GPSItemContainer* const newItem : items)
     {
         newItem->loadImageData();
         d->imageModel->addItem(newItem);

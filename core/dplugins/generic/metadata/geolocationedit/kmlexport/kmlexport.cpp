@@ -537,7 +537,7 @@ bool KmlExport::copyDir(const QString& srcFilePath, const QString& dstFilePath)
 
         QStringList files = srcDir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
 
-        Q_FOREACH (const QString& file, files)
+        for (const QString& file : std::as_const(files))
         {
             const QString newSrcFilePath = srcDir.absolutePath() + QLatin1Char('/') + file;
             const QString newDstFilePath = dstDir.absolutePath() + QLatin1Char('/') + file;

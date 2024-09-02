@@ -97,14 +97,14 @@ public:
     QAction*                 actionMoveImagesToThisResult                   = nullptr;
     QAction*                 actionRemovedSelectedSearchResultsFromList     = nullptr;
     bool                     searchInProgress                               = false;
-    QIcon                    actionToggleAllResultsVisibilityIconUnchecked  = QIcon::fromTheme(QLatin1String("layer-visible-off"));;
+    QIcon                    actionToggleAllResultsVisibilityIconUnchecked  = QIcon::fromTheme(QLatin1String("layer-visible-off"));
     QIcon                    actionToggleAllResultsVisibilityIconChecked    = QIcon::fromTheme(QLatin1String("layer-visible-on"));
 };
 
 SearchResultWidget::SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
-                           GPSItemModel* const gpsItemModel,
-                           QItemSelectionModel* const gosImageSelectionModel,
-                           QWidget* const parent)
+                                       GPSItemModel* const gpsItemModel,
+                                       QItemSelectionModel* const gosImageSelectionModel,
+                                       QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
@@ -353,7 +353,9 @@ bool SearchResultWidget::eventFilter(QObject *watched, QEvent *event)
             menu->addAction(d->actionCopyCoordinates);
             menu->addAction(d->actionMoveImagesToThisResult);
             menu->addAction(d->actionRemovedSelectedSearchResultsFromList);
-//          menu->addAction(d->actionBookmark);
+/*
+            menu->addAction(d->actionBookmark);
+*/
             d->gpsBookmarkOwner->changeAddBookmark(true);
 
             QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(event);
