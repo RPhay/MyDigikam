@@ -40,6 +40,7 @@ no-qstring-insensitive-allocation,\
 no-qstring-ref,\
 no-function-args-by-value,\
 no-qproperty-without-notify \
+no-fully-qualified-moc-types \
 qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
