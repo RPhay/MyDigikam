@@ -328,7 +328,7 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData, const QStringLi
 
         // Exif metadata ----------------------------------
 
-        for (const QString& exTag : std::as_const(exclude))
+        for (const QString& exTag : qAsConst(exclude))
         {
             Exiv2::ExifKey exifKey(exTag.toLatin1().constData());
             Exiv2::ExifData::iterator it1 = image->exifData().findKey(exifKey);

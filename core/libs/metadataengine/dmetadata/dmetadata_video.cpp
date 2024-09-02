@@ -90,7 +90,7 @@ QString s_setXmpTagStringFromEntry(const DMetadata* const meta,
                                    const DMetadata::MetaDataMap& map,
                                    const QStringList& xmpTags = QStringList())
 {
-    for (const QString& tag : std::as_const(lst))
+    for (const QString& tag : qAsConst(lst))
     {
         DMetadata::MetaDataMap::const_iterator it = map.find(tag);
 
@@ -101,7 +101,7 @@ QString s_setXmpTagStringFromEntry(const DMetadata* const meta,
                 !xmpTags.isEmpty()          // If xmpTags is empty, we only return the matching value from the map.
                )
             {
-                for (const QString& tag2 : std::as_const(xmpTags))
+                for (const QString& tag2 : qAsConst(xmpTags))
                 {
                     // Only register the tag value if it doesn't exists yet.
 

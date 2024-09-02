@@ -722,7 +722,7 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
     KConfigGroup namespacesGroup = group.group(name);
     int index                    = 0;
 
-    for (const NamespaceEntry& e : std::as_const(container))
+    for (const NamespaceEntry& e : qAsConst(container))
     {
         QString groupNumber = QString::fromLatin1("#%1")
                               .arg(index++, 4, 10, QLatin1Char('0'));

@@ -227,7 +227,7 @@ MetaEngineRotation& MetaEngineRotation::operator*=(TransformationAction action)
 
 MetaEngineRotation& MetaEngineRotation::operator*=(const QList<TransformationAction>& actions)
 {
-    for (const TransformationAction& action : std::as_const(actions))
+    for (const TransformationAction& action : qAsConst(actions))
     {
         *this *= Matrix::matrix(action);
     }

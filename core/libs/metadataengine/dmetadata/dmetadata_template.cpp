@@ -204,7 +204,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
         QStringList list = t.IptcSubjects();
         QStringList newList;
 
-        for (QString str : std::as_const(list))
+        for (QString str : qAsConst(list))
         {
             if (str.startsWith(QLatin1String("XMP")))
             {

@@ -141,7 +141,7 @@ QString DMetadata::getExifTagStringFromTagsList(const QStringList& tagsList) con
 {
     QString val;
 
-    for (const QString& tag : std::as_const(tagsList))
+    for (const QString& tag : qAsConst(tagsList))
     {
         val = getExifTagString(tag.toLatin1().constData());
 

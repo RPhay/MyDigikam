@@ -95,7 +95,7 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
     QStringList keys = tagsDb.keys();
     keys.sort();
 
-    for (const QString& tag : std::as_const(keys))
+    for (const QString& tag : qAsConst(keys))
     {
         /**
          * Tag are formatted like this:
