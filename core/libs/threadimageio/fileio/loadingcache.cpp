@@ -304,6 +304,8 @@ void LoadingCache::putThumbnail(const QString& cacheKey, const QPixmap& thumb, c
     if (d->thumbnailPixmapCache.insert(cacheKey, new QPixmap(thumb), cost))
     {
         d->mapThumbnailFilePath(filePath, cacheKey);
+
+        d->bufferedTPixmapCache.remove(cacheKey);
     }
 }
 
