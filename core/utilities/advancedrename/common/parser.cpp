@@ -318,6 +318,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
     // parse result.
     // We need to create a second ParseResults object with modified keys, otherwise the final parsing step will not
     // remove the modifier tokens from the result.
+
     const auto keys = results.keys();
 
     for (const ParseResults::ResultsKey& key : keys)

@@ -53,7 +53,9 @@ MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
     // We only need the "SearchBar" control element.
     // We also need to reset the default selections.
 
-    for (MetadataSelectorView* const viewer : metadataPanel->viewers())
+    const auto list = metadataPanel->viewers();
+
+    for (MetadataSelectorView* const viewer : list)
     {
         viewer->setControlElements(MetadataSelectorView::SearchBar);
         viewer->clearSelection();

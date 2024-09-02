@@ -175,8 +175,9 @@ void Highlighter::setupHighlightingGrammar()
     // --------------------------------------------------------
 
     d->optionFormat.setForeground(Qt::red);
+    const auto list = d->parser->options();
 
-    for (Rule* const option : d->parser->options())
+    for (Rule* const option : list)
     {
         QRegularExpression r    = option->regExp();
         rule.type               = Private::OptionPattern;
@@ -188,8 +189,9 @@ void Highlighter::setupHighlightingGrammar()
     // --------------------------------------------------------
 
     d->modifierFormat.setForeground(Qt::darkGreen);
+    const auto list2 = d->parser->modifiers();
 
-    for (Rule* const modifier : d->parser->modifiers())
+    for (Rule* const modifier : list2)
     {
         QRegularExpression r    = modifier->regExp();
         rule.type               = Private::ModifierPattern;

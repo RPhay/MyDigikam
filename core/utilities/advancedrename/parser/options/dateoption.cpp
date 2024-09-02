@@ -96,6 +96,7 @@ QVariant DateFormat::format(const QString& identifier)
             return desc.second;
         }
     }
+
     return QVariant();
 }
 

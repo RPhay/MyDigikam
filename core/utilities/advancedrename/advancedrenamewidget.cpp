@@ -233,8 +233,9 @@ void AdvancedRenameWidget::registerParserControls()
                                                style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
 
             DynamicLayout* const layout = new DynamicLayout(cmargin, cmargin);
+            const auto list             = d->parser->options();
 
-            for (Rule* const p : d->parser->options())
+            for (Rule* const p : list)
             {
                 btn = p->registerButton(this);
 
