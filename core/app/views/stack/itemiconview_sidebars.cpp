@@ -139,6 +139,26 @@ void ItemIconView::slotSidebarTabTitleStyleChanged()
     //d->rightSideBar->applySettings();
 }
 
+void ItemIconView::slotLeftSideBarEnabled(bool busy)
+{
+    d->leftSideBar->setEnabled(!busy);
+    d->albumFolderSideBar->setEnabled(!busy);
+    d->tagViewSideBar->setEnabled(!busy);
+    d->labelsSideBar->setEnabled(!busy);
+    d->dateViewSideBar->setEnabled(!busy);
+    d->timelineSideBar->setEnabled(!busy);
+    d->searchSideBar->setEnabled(!busy);
+    d->fuzzySearchSideBar->setEnabled(!busy);
+
+#ifdef HAVE_GEOLOCATION
+
+    d->gpsSearchSideBar->setEnabled(!busy);
+
+#endif // HAVE_GEOLOCATION
+
+    d->peopleSideBar->setEnabled(!busy);
+}
+
 void ItemIconView::slotPopupFiltersView()
 {
     d->rightSideBar->setActiveTab(d->filterWidget);
