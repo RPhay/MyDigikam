@@ -496,6 +496,19 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             break;
         }
 
+        case NamespaceEntry::PICKLABEL:
+        {
+            d->tagTipLabel->hide();
+            d->ratingTipLabel->hide();
+            d->isPath->hide();
+            d->isTagLabel->hide();
+            d->separatorLabel->hide();
+            d->nameSpaceSeparator->hide();
+            d->ratingMappings->hide();
+
+            break;
+        }
+
         case NamespaceEntry::COLORLABEL:
         {
             d->tagTipLabel->hide();
@@ -649,6 +662,11 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
         }
 
         case NamespaceEntry::COMMENT:
+        {
+            break;
+        }
+
+        case NamespaceEntry::PICKLABEL:
         {
             break;
         }

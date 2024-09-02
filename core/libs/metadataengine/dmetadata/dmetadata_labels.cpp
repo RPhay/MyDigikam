@@ -30,13 +30,45 @@
 namespace Digikam
 {
 
-int DMetadata::getItemPickLabel() const
+int DMetadata::getItemPickLabel(const DMetadataSettingsContainer& settings) const
 {
-    if (hasXmp())
-    {
-        QString value = getXmpTagString("Xmp.digiKam.PickLabel", false);
+    bool xmpSupported = hasXmp();
 
-        if (!value.isEmpty())
+    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER())))
+    {
+        if (entry.isDisabled)
+        {
+            continue;
+        }
+
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
+        QString value;
+
+        switch (entry.subspace)
+        {
+            case NamespaceEntry::XMP:
+            {
+                if (xmpSupported)
+                {
+                    value = getXmpTagString(nameSpace, false);
+                }
+
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
+        }
+
+        if (value.isNull())
+        {
+            continue;
+        }
+
+        if      (QLatin1String(nameSpace) == QLatin1String("Xmp.digiKam.PickLabel"))
         {
             bool ok     = false;
             long pickId = value.toLong(&ok);
@@ -44,6 +76,31 @@ int DMetadata::getItemPickLabel() const
             if (ok && (pickId >= NoPickLabel) && (pickId <= AcceptedLabel))
             {
                 return pickId;
+            }
+        }
+        else if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmpDM.pick"))
+        {
+            bool ok     = false;
+            long pickId = value.toLong(&ok);
+
+            if      (ok && (pickId == 1))
+            {
+                return AcceptedLabel;
+            }
+            else if (ok && (pickId == -1))
+            {
+                return RejectedLabel;
+            }
+        }
+        else if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmpDM.good"))
+        {
+            if      (value.compare(QLatin1String("True"), Qt::CaseInsensitive) == 0)
+            {
+                return AcceptedLabel;
+            }
+            else if (value.compare(QLatin1String("False"), Qt::CaseInsensitive) == 0)
+            {
+                return RejectedLabel;
             }
         }
     }
@@ -240,7 +297,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     return -1;
 }
 
-bool DMetadata::setItemPickLabel(int pickId) const
+bool DMetadata::setItemPickLabel(int pickId, const DMetadataSettingsContainer& settings) const
 {
     if ((pickId < NoPickLabel) || (pickId > AcceptedLabel))
     {
@@ -250,18 +307,94 @@ bool DMetadata::setItemPickLabel(int pickId) const
 /*
     qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Pick Label: " << pickId;
 */
-    if (supportXmp())
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER());
+
+    if (!settings.unifyReadWrite())
     {
-        if (pickId > NoPickLabel)
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER());
+    }
+
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    {
+        if (entry.isDisabled)
         {
-            if (!setXmpTagString("Xmp.digiKam.PickLabel", QString::number(pickId)))
-            {
-                return false;
-            }
+            continue;
         }
-        else
+
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
+
+        switch (entry.subspace)
         {
-            removeXmpTag("Xmp.digiKam.PickLabel");
+            case NamespaceEntry::XMP:
+            {
+                if (!supportXmp())
+                {
+                    continue;
+                }
+
+                if      (QLatin1String(nameSpace) == QLatin1String("Xmp.digiKam.PickLabel"))
+                {
+                    if (pickId > NoPickLabel)
+                    {
+                        if (!setXmpTagString(nameSpace, QString::number(pickId)))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        removeXmpTag("Xmp.digiKam.PickLabel");
+                    }
+                }
+                else if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmpDM.pick"))
+                {
+                    if      (pickId == AcceptedLabel)
+                    {
+                        if (!setXmpTagString(nameSpace, QString::number(1)))
+                        {
+                            return false;
+                        }
+                    }
+                    else if (pickId == RejectedLabel)
+                    {
+                        if (!setXmpTagString(nameSpace, QString::number(-1)))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        removeXmpTag("Xmp.xmpDM.pick");
+                    }
+                }
+                else if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmpDM.good"))
+                {
+                    if      (pickId == AcceptedLabel)
+                    {
+                        if (!setXmpTagString(nameSpace, QLatin1String("True")))
+                        {
+                            return false;
+                        }
+                    }
+                    else if (pickId == RejectedLabel)
+                    {
+                        if (!setXmpTagString(nameSpace, QLatin1String("False")))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        removeXmpTag("Xmp.xmpDM.good");
+                    }
+                }
+            }
+
+            default:
+            {
+                break;
+            }
         }
     }
 

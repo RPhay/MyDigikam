@@ -225,6 +225,7 @@ DMetadataSettingsContainer::DMetadataSettingsContainer()
     addMapping(NamespaceEntry::DM_TITLE_CONTAINER());
     addMapping(NamespaceEntry::DM_RATING_CONTAINER());
     addMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
+    addMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER());
     addMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
 }
 
@@ -347,6 +348,7 @@ void DMetadataSettingsContainer::defaultValues()
     defaultTitleValues();
     defaultRatingValues();
     defaultCommentValues();
+    defaultPickLabelValues();
     defaultColorLabelValues();
 }
 
@@ -628,6 +630,37 @@ void DMetadataSettingsContainer::defaultCommentValues()
 
     d->writeMappings[NamespaceEntry::DM_COMMENT_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));
+}
+
+void DMetadataSettingsContainer::defaultPickLabelValues()
+{
+    NamespaceEntry pickNs1;
+    pickNs1.namespaceName   = QLatin1String("Xmp.digiKam.PickLabel");
+    pickNs1.nsType          = NamespaceEntry::PICKLABEL;
+    pickNs1.specialOpts     = NamespaceEntry::NO_OPTS;
+    pickNs1.index           = 0;
+    pickNs1.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry pickNs2;
+    pickNs2.namespaceName   = QLatin1String("Xmp.xmpDM.pick");
+    pickNs2.nsType          = NamespaceEntry::PICKLABEL;
+    pickNs2.specialOpts     = NamespaceEntry::NO_OPTS;
+    pickNs2.index           = 1;
+    pickNs2.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry pickNs3;
+    pickNs3.namespaceName   = QLatin1String("Xmp.xmpDM.good");
+    pickNs3.nsType          = NamespaceEntry::PICKLABEL;
+    pickNs3.specialOpts     = NamespaceEntry::NO_OPTS;
+    pickNs3.index           = 2;
+    pickNs3.subspace        = NamespaceEntry::XMP;
+
+    getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER()) << pickNs1
+                                                             << pickNs2
+                                                             << pickNs3;
+
+    d->writeMappings[NamespaceEntry::DM_PICKLABEL_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::defaultColorLabelValues()

@@ -137,6 +137,39 @@ specialOpts=0
 subspace=2
 tagPaths=1
 
+[Metadata][readPick labelNamespaces][#0000]
+index=0
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.digiKam.PickLabel
+nsType=4
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
+[Metadata][readPick labelNamespaces][#0001]
+index=1
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.xmpDM.pick
+nsType=4
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
+[Metadata][readPick labelNamespaces][#0002]
+index=2
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.xmpDM.good
+nsType=4
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
 [Metadata][readRatingNamespaces][#0000]
 convertRatio=0,1,2,3,4,5
 index=0
@@ -464,6 +497,39 @@ isDefault=true
 isDisabled=false
 namespaceName=Xmp.photoshop.Urgency
 nsType=5
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
+[Metadata][writePick labelNamespaces][#0000]
+index=0
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.digiKam.PickLabel
+nsType=4
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
+[Metadata][writePick labelNamespaces][#0001]
+index=1
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.xmpDM.Pick
+nsType=4
+secondNameOpts=0
+specialOpts=0
+subspace=2
+tagPaths=1
+
+[Metadata][writePick labelNamespaces][#0002]
+index=2
+isDefault=true
+isDisabled=false
+namespaceName=Xmp.xmpDM.Good
+nsType=4
 secondNameOpts=0
 specialOpts=0
 subspace=2

@@ -181,6 +181,7 @@ private:
     void defaultTitleValues();
     void defaultRatingValues();
     void defaultCommentValues();
+    void defaultPickLabelValues();
     void defaultColorLabelValues();
     void readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container);
     void writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)  const;

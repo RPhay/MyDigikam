@@ -152,8 +152,9 @@ public: // Labels helpers
     bool setItemRating(int rating,
                        const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())          const;
 
-    int  getItemPickLabel()                                                                                             const;
-    bool setItemPickLabel(int pickId)                                                                                   const;
+    int  getItemPickLabel(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())       const;
+    bool setItemPickLabel(int pickId,
+                          const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())       const;
 
     int  getItemColorLabel(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())      const;
     bool setItemColorLabel(int colorId,

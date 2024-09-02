@@ -243,6 +243,10 @@ void AdvancedMetadataTab::slotAddNewNamespace()
     {
         entry.nsType = NamespaceEntry::COMMENT;
     }
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_PICKLABEL_CONTAINER())
+    {
+        entry.nsType = NamespaceEntry::PICKLABEL;
+    }
     else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_COLORLABEL_CONTAINER())
     {
         entry.nsType = NamespaceEntry::COLORLABEL;
