@@ -39,6 +39,7 @@ no-qstring-arg,\
 no-qstring-insensitive-allocation,\
 no-qstring-ref,\
 no-function-args-by-value,\
+no-qproperty-without-notify \
 qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
