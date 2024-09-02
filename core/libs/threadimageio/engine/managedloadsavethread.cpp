@@ -411,7 +411,7 @@ void ManagedLoadSaveThread::preloadThumbnailGroup(const QList<LoadingDescription
     QMutexLocker lock(threadMutex());
     QList<LoadSaveTask*> todo;
 
-    Q_FOREACH (const LoadingDescription& description, descriptions)
+    for (const LoadingDescription& description : std::as_const(descriptions))
     {
         LoadingTask* const existingTask = findExistingTask(description);
 
@@ -558,7 +558,7 @@ void ManagedLoadSaveThread::stopAllTasks()
         }
     }
 
-    Q_FOREACH (LoadSaveTask* const task, m_todo)
+    for (LoadSaveTask* const task : std::as_const(m_todo))
     {
         delete task;
     }

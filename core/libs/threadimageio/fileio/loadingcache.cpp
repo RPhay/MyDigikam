@@ -345,14 +345,14 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 {
     QList<QString> keys = d->imageFilePathHash.values(filePath);
 
-    Q_FOREACH (const QString& cacheKey, keys)
+    for (const QString& cacheKey : std::as_const(keys))
     {
         d->imageCache.remove(cacheKey);
     }
 
     keys = d->thumbnailFilePathHash.values(filePath);
 
-    Q_FOREACH (const QString& cacheKey, keys)
+    for (const QString& cacheKey : std::as_const(keys))
     {
         if (d->thumbnailPixmapCache.contains(cacheKey))
         {

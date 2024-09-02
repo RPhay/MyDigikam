@@ -159,7 +159,7 @@ void DFileOperations::openFilesWithDefaultApplication(const QList<QUrl>& urls)
 
 #endif
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         QDesktopServices::openUrl(url);
     }
@@ -269,7 +269,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     QUrl first   = urls.first();
     first        = first.adjusted(QUrl::RemoveFilename);
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         if (first != url.adjusted(QUrl::RemoveFilename))
         {
@@ -370,7 +370,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     {
         QStringList uris;
 
-        Q_FOREACH (const QUrl& url, fileUrls)
+        for (const QUrl& url : std::as_const(fileUrls))
         {
             uris << url.toString();
         }
@@ -429,7 +429,9 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    Q_FOREACH (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
+    const auto list = srcDir.entryInfoList(QDir::Files);
+
+    for (const QFileInfo& fileInfo : list)
     {
         QString copyPath = newCopyPath + QLatin1Char('/') + fileInfo.fileName();
 
@@ -454,7 +456,9 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    Q_FOREACH (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
+    const auto list2 = srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+
+    for (const QFileInfo& fileInfo : list2)
     {
         if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, itemId, cancel, false))
         {   // cppcheck-suppress useStlAlgorithm
@@ -468,7 +472,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
 bool DFileOperations::copyFiles(const QStringList& srcPaths,
                                 const QString& dstPath)
 {
-    Q_FOREACH (const QString& path, srcPaths)
+    for (const QString& path : std::as_const(srcPaths))
     {
         QFileInfo fileInfo(path);
         QString copyPath = dstPath + QLatin1Char('/') + fileInfo.fileName();
@@ -727,7 +731,7 @@ bool DFileOperations::sidecarFiles(const QString& srcFile,
 
     QFileInfo srcInfo(srcFile);
 
-    Q_FOREACH (const QString& ext, sidecarExtensions)
+    for (const QString& ext : std::as_const(sidecarExtensions))
     {
         QString suffix(QLatin1Char('.') + ext);
 

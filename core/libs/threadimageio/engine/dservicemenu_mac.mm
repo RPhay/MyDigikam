@@ -142,7 +142,7 @@ bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, cons
     LSLaunchURLSpec lspec      = { nullptr, nullptr, nullptr, 0, nullptr };
     CFMutableArrayRef arrayref = CFArrayCreateMutable(nullptr, 0, nullptr);
 
-    Q_FOREACH (const QUrl& fileUrl, fileUrls)
+    for (const QUrl& fileUrl : std::as_const(fileUrls))
     {
         CFURLRef furl = fileUrl.toCFURL();
         CFArrayAppendValue(arrayref, furl);
@@ -180,12 +180,12 @@ QList<QUrl> DServiceMenu::MacApplicationsForFiles(const QList<QUrl>& files)
     QString suffix            = QFileInfo(files.first().toLocalFile()).suffix();
     QList<QUrl> commonAppUrls = DServiceMenu::MacApplicationForFileExtension(suffix);
 
-    Q_FOREACH (const QUrl& file, files)
+    for (const QUrl& file : std::as_const(files))
     {
         suffix            = QFileInfo(file.toLocalFile()).suffix();
         QList<QUrl> aurls = DServiceMenu::MacApplicationForFileExtension(suffix);
 
-        Q_FOREACH (const QUrl& url, aurls)
+        for (const QUrl& url : std::as_const(aurls))
         {
             if (!commonAppUrls.contains(url))
             {

@@ -136,13 +136,13 @@ bool DServiceMenu::runFiles(const QString& appCmd,
     QProcess* const process = new QProcess();
     QProcessEnvironment env = adjustedEnvironmentForAppImage();
 
-    Q_FOREACH (const QUrl& url, urlList)
+    for (const QUrl& url : std::as_const(urlList))
     {
         dirs  << QDir::toNativeSeparators(url.adjusted(QUrl::RemoveFilename).toLocalFile());
         files << QDir::toNativeSeparators(url.toLocalFile());
     }
 
-    Q_FOREACH (const QString& cmdString, cmdList)
+    for (const QString& cmdString : std::as_const(cmdList))
     {
         QString cmd = cmdString;
 
@@ -255,7 +255,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
     QStringList    mimeTypes;
     KService::List offers;
 
-    Q_FOREACH (const QUrl& item, urls)
+    for (const QUrl& item : std::as_const(urls))
     {
         const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
                                                                  QMimeDatabase::MatchExtension).name();
@@ -274,7 +274,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
         const QString constraintTemplate = QLatin1String("'%1' in ServiceTypes");
         QStringList constraints;
 
-        Q_FOREACH (const QString& mimeType, mimeTypes)
+        for (const QString& mimeType : std::as_const(mimeTypes))
         {
             constraints << constraintTemplate.arg(mimeType);
         }
@@ -318,7 +318,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 {
     QStringList neededMimeTypes;
 
-    Q_FOREACH (const QUrl& item, urls)
+    for (const QUrl& item : std::as_const(urls))
     {
         QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
                                                            QMimeDatabase::MatchExtension).name();
@@ -335,11 +335,13 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
     QStringList appFolders = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
                                                        QLatin1String("applications"), QStandardPaths::LocateDirectory);
 
-    Q_FOREACH (const QString& path, appFolders)
+    for (const QString& path : std::as_const(appFolders))
     {
         QDir appDir(path, QLatin1String("*.desktop"), QDir::NoSort, QDir::Files | QDir::NoDotAndDotDot);
 
-        Q_FOREACH (const QString& file, appDir.entryList())
+        const auto list = appDir.entryList();
+
+        for (const QString& file : list)
         {
             KConfig config(path + QLatin1Char('/') + file);
             KConfigGroup group = config.group(QLatin1String("Desktop Entry"));
