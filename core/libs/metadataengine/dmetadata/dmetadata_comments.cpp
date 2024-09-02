@@ -70,7 +70,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()))
+    for (const NamespaceEntry& entry : std::as_const(settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -408,7 +408,7 @@ CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings)
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()))
+    for (const NamespaceEntry& entry : std::as_const(settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER())))
     {
         if (entry.isDisabled)
         {

@@ -66,7 +66,7 @@ public:
      */
     void mergeFields(const Data& src, Data& dest)
     {
-        Q_FOREACH (const KeyString& keyString, keys)
+        for (const KeyString& keyString : std::as_const(keys))
         {
             Key key(keyString.latin1());
             typename Data::const_iterator it = src.findKey(key);
@@ -76,7 +76,7 @@ public:
                 continue;
             }
 
-            typename Data::iterator destIt = dest.findKey(key);
+            typename Data::iterator destIt   = dest.findKey(key);
 
             if (destIt == dest.end())
             {
@@ -98,7 +98,7 @@ public:
      */
     void exclusiveMerge(const Data& src, Data& dest)
     {
-        Q_FOREACH (const KeyString& keyString, keys)
+        for (const KeyString& keyString : std::as_const(keys))
         {
             Key key(keyString.latin1());
             typename Data::const_iterator it = src.findKey(key);

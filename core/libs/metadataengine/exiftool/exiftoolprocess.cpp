@@ -321,8 +321,9 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
                                     << exitCode << "and status" << exitStatus;
 
     QMutexLocker locker(&d->mutex);
+    const auto keys = d->resultMap.keys();
 
-    Q_FOREACH (int cmdId, d->resultMap.keys())
+    for (int cmdId : keys)
     {
         d->resultMap[cmdId].cmdStatus = FINISH_RESULT;
     }

@@ -101,7 +101,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
             float xShift  = imageWidth.toInt()  / 6.5F;
             float yShift  = imageHeight.toInt() / 7.0F;
 
-            Q_FOREACH (const QString& np, afPointUsed)
+            for (const QString& np : std::as_const(afPointUsed))
             {
                 if (np.size() < 2)
                 {

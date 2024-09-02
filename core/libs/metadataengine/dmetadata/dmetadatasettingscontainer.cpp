@@ -271,8 +271,9 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     bool valid                   = true;
     const QString readNameSpace  = QLatin1String("read%1Namespaces");
     const QString writeNameSpace = QLatin1String("write%1Namespaces");
+    const auto keys              = mappingKeys();
 
-    Q_FOREACH (const QString& str, mappingKeys())
+    for (const QString& str : keys)
     {
         if (!group.hasGroup(readNameSpace.arg(str)))
         {
@@ -291,9 +292,11 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
 
     if (valid)
     {
-        Q_FOREACH (const QString& str, mappingKeys())
+        const auto keys2 = mappingKeys();
+
+        for (const QString& str : keys2)
         {
-            readOneGroup(group, readNameSpace.arg(str), getReadMapping(str));
+            readOneGroup(group, readNameSpace.arg(str),  getReadMapping(str));
             readOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
         }
     }
@@ -313,12 +316,16 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
 
     // Remove all old group elements.
 
-    Q_FOREACH (const QString& groupKey, group.groupList())
+    const auto list = group.groupList();
+
+    for (const QString& groupKey : list)
     {
         group.deleteGroup(groupKey);
     }
 
-    Q_FOREACH (const QString& str, mappingKeys())
+    const auto keys = mappingKeys();
+
+    for (const QString& str : keys)
     {
         writeOneGroup(group, readNameSpace.arg(str), getReadMapping(str));
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
@@ -657,8 +664,9 @@ void DMetadataSettingsContainer::defaultColorLabelValues()
 void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)
 {
     KConfigGroup myItems = group.group(name);
+    const auto list      = myItems.groupList();
 
-    Q_FOREACH (const QString& element, myItems.groupList())
+    for (const QString& element : list)
     {
         KConfigGroup gr      = myItems.group(element);
         NamespaceEntry ns;
@@ -686,7 +694,9 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
 
         if (!conversion.isEmpty() || (ns.nsType == NamespaceEntry::RATING))
         {
-            Q_FOREACH (const QString& str, conversion.split(QLatin1String(",")))
+            const auto list2 = conversion.split(QLatin1String(","));
+
+            for (const QString& str : list2)
             {
                 ns.convertRatio.append(str.toInt());
             }
@@ -712,7 +722,7 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
     KConfigGroup namespacesGroup = group.group(name);
     int index                    = 0;
 
-    Q_FOREACH (const NamespaceEntry& e, container)
+    for (const NamespaceEntry& e : std::as_const(container))
     {
         QString groupNumber = QString::fromLatin1("#%1")
                               .arg(index++, 4, 10, QLatin1Char('0'));
@@ -820,14 +830,18 @@ QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)
 {
     dbg.nospace() << "[DMetadataSettingsContainer] readMappings(";
 
-    Q_FOREACH (const QString& str, inf.mappingKeys())
+    const auto keys = inf.mappingKeys();
+
+    for (const QString& str : keys)
     {
         dbg.nospace() << inf.getReadMapping(str) << "), ";
     }
 
     dbg.nospace() << "writeMappings(";
 
-    Q_FOREACH (const QString& str, inf.mappingKeys())
+    const auto keys2 = inf.mappingKeys();
+
+    for (const QString& str : keys2)
     {
         dbg.nospace() << inf.getWriteMapping(str) << "), ";
     }

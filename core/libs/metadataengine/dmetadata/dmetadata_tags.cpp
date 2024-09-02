@@ -33,7 +33,7 @@ namespace Digikam
 bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                                 const DMetadataSettingsContainer& settings) const
 {
-    Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()))
+    for (const NamespaceEntry& entry : std::as_const(settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -347,7 +347,7 @@ bool DMetadata::getACDSeeTagsPath(QStringList& tagsPath) const
         QStringList xmlTags = xmlACDSee.split(QLatin1String("<Category Assigned"));
         int category        = 0;
 
-        Q_FOREACH (const QString& tags, xmlTags)
+        for (const QString& tags : std::as_const(xmlTags))
         {
             if (!tags.isEmpty())
             {
@@ -393,7 +393,7 @@ bool DMetadata::setACDSeeTagsPath(const QStringList& tagsPath) const
     QStringList splitTags;
     QStringList xmlTags;
 
-    Q_FOREACH (const QString& tags, tagsPath)
+    for (const QString& tags : std::as_const(tagsPath))
     {
         splitTags   = tags.split(QLatin1Char('/'));
         int current = 0;

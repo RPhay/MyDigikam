@@ -244,7 +244,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
             QString key;
             QString val;
 
-            Q_FOREACH (const QString& tupple, lines)
+            for (const QString& tupple : std::as_const(lines))
             {
                 key = tupple.section(QLatin1Char('='), 0, 0);
                 val = tupple.section(QLatin1Char('='), 1, 1);

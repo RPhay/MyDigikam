@@ -232,7 +232,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             QStringList lst;
             QString s;
 
-            Q_FOREACH (const QString& ln, lines)
+            for (const QString& ln : std::as_const(lines))
             {
                 s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
@@ -257,7 +257,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             QStringList lst;
             QString s;
 
-            Q_FOREACH (const QString& ln, lines)
+            for (const QString& ln : std::as_const(lines))
             {
                 s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
@@ -280,7 +280,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
             QStringList lst;
 
-            Q_FOREACH (const QString& ln, lines)
+            for (const QString& ln : std::as_const(lines))
             {
                 lst << ln.simplified().section(QLatin1String(" - "), 0, 0);
             }

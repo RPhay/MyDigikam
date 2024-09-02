@@ -101,7 +101,7 @@ QVariant DMetadata::fromExifOrXmpList(const QStringList& tagList) const
 {
     QVariant var;
 
-    Q_FOREACH (const QString& tagName, tagList)
+    for (const QString& tagName : std::as_const(tagList))
     {
         if      (tagName.startsWith(QLatin1String("Exif")))
         {
@@ -817,7 +817,7 @@ QVariantList DMetadata::getMetadataFields(const MetadataFields& fields) const
 {
     QVariantList list;
 
-    Q_FOREACH (MetadataInfo::Field field, fields) // krazy:exclude=foreach
+    for (MetadataInfo::Field field : std::as_const(fields))
     {
         list << getMetadataField(field);
     }

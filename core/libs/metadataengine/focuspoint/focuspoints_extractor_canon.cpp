@@ -207,7 +207,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     // If we have focus points in AFPointsInFocus,
     // remove them from AFPointsSelected
 
-    Q_FOREACH (const QString& key, af_infocus)
+    for (const QString& key : std::as_const(af_infocus))
     {
         af_selected.removeAll(key);
     }
