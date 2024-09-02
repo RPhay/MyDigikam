@@ -28,6 +28,7 @@ export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
 # --- Checkers to include on Clazy static analysis.
 
 export CLAZY_CHECKS="\
+level2,\
 no-fully-qualified-moc-types,\
 no-qproperty-without-notify,\
 no-old-style-connect,\
@@ -38,8 +39,8 @@ no-qstring-arg,\
 no-qstring-insensitive-allocation,\
 no-qstring-ref,\
 no-function-args-by-value,\
-no-qproperty-without-notify \
-no-fully-qualified-moc-types \
+no-qproperty-without-notify,\
+no-fully-qualified-moc-types,\
 qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
@@ -49,7 +50,6 @@ signal-with-return-value,\
 raw-environment-function,\
 qt-keywords,\
 missing-qobject-macro\
-level2,\
 "
 
 #qt6-qlatin1stringchar-to-u         What is that exactly ???
