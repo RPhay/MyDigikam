@@ -173,7 +173,7 @@ void AdvancedMetadataTab::slotLoadProfile()
     DMetadataSettingsContainer container;
     container.readFromConfig(group2);
 
-    if (container.mappingKeys().size() != 5)
+    if (container.mappingKeys().size() != 6)
     {
         return;
     }
