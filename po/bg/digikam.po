@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:55+0000\n"
+"POT-Creation-Date: 2024-09-03 01:45+0000\n"
 "PO-Revision-Date: 2024-08-07 08:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3282,7 +3282,7 @@ msgstr "Селекция"
 #: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
@@ -12311,7 +12311,7 @@ msgstr ""
 "Търсенето ви се провали:\n"
 "%1"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:432
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
@@ -21514,7 +21514,7 @@ msgstr "Предварителен преглед..."
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:183
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:126
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:372
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:199
@@ -36841,12 +36841,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Бинарни данни %1 байта"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:377
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool не съществува или липсва разрешение за изпълнение"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:391
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl не съществува или липсва разрешение за изпълнение"
@@ -51009,44 +51009,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "създаден: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:208
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By Name"
 msgstr "По име"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:209
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
 #, kde-format
 msgid "By Date"
 msgstr "По дата"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:210
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
 #, kde-format
 msgid "By File Size"
 msgstr "По големина"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:224
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Възходящо"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:246
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
 #, kde-format
 msgid "Current Name"
 msgstr "Текущо име"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:246
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
 #, kde-format
 msgid "New Name"
 msgstr "Ново име"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:256
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -51057,43 +51057,43 @@ msgstr ""
 "елементи показват колизия на имена, защото новото име е еднакво с текущото "
 "име или защото името вече е присвоено на друг елемент."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:306
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:312
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "Преименуване"
 msgstr[1] "Преименуване (%1 изображения)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:408
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:414
 #, kde-format
 msgid "Sort Images"
 msgstr "Сортиране на изображения"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Преименуване на изображения. Моля, изчакайте...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Прекъсване"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Processing..."
 msgstr "Обработване…"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Преименуване на изображения"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51111,24 +51111,24 @@ msgstr[1] ""
 "Искате ли да преименувате тези изображения отново или да преименувате тези "
 "изображения чрез презаписване?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Преименувайте отново"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Презапис"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Преименуване на изображения. Грешки: %1</b>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:326
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:331
 #, kde-format
 msgid ""
 "<p>Enter your renaming pattern here. Use the access buttons to quickly add "
@@ -51139,19 +51139,19 @@ msgstr ""
 "да добавите бързо опции за преименуване и модификатори. За допълнителни "
 "обяснения използвайте бутона за информация.</p>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:333
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:338
 #: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
 msgstr "Показване на списък с всички налични опции"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:337
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, kde-format
 msgid "Modifiers"
 msgstr "Модификатори"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:339
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:344
 #, kde-format
 msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
@@ -51161,12 +51161,12 @@ msgstr ""
 "бутон, поставете курсора зад опция за преименуване или вече зададен "
 "модификатор.</p>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:353
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:358
 #, kde-format
 msgid "Renaming Options"
 msgstr "Опции за преименуване"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:374
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:379
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr "<p>Добавяне на опции за преименуване към низа за обработване.</p>"
@@ -51807,7 +51807,7 @@ msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "Потребителска"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:115
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -51816,44 +51816,44 @@ msgstr "Изображение"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:121
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "Фиксирана дата"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:146
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "Въведете персонализиран формат"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
 #, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "пример: "
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "Дата и час..."
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "Добавяне на информация за дата и час"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
 #, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Дата и час (стандартен формат)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:266
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"
@@ -51951,12 +51951,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Група"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
 #, kde-format
 msgid "Metadata..."
 msgstr "Метаданни..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, kde-format
 msgid "Add metadata information"
 msgstr "Добавяне на информация за метаданни"
@@ -55224,7 +55224,7 @@ msgstr "Нова връзка"
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
 msgid "Edit"
 msgstr "Редактиране"
@@ -65251,7 +65251,7 @@ msgstr ""
 "Всички ваши промени ще бъдат загубени.\n"
 " Искате ли да продължите?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:389
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:393
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -65263,57 +65263,57 @@ msgstr ""
 "тагове, оценка и коментари. <br/> <b> Забележка: </b> Редът на представяне е "
 "важна при четене на метаданни"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:399
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
 #, kde-format
 msgid "Read Options"
 msgstr "Опции за четене"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:400
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:404
 #, kde-format
 msgid "Write Options"
 msgstr "Опции за запис"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:402
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
 #, kde-format
 msgid "Unify read and write"
 msgstr "Обединяване на четенето и писането"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Прочитане на всички метаданни за тагове"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:423
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:427
 #, kde-format
 msgid "Add"
 msgstr "Добавяне"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:436
 #, kde-format
 msgid "Move Up"
 msgstr "Придвижване нагоре"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:439
 #, kde-format
 msgid "Move Down"
 msgstr "Придвижване надолу"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:442
 #, kde-format
 msgid "Revert Changes"
 msgstr "Връщане на промените"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:448
 #, kde-format
 msgid "Save Profile"
 msgstr "Запазване на профил"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:451
 #, kde-format
 msgid "Load Profile"
 msgstr "Зареждане на профил"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:454
 #, kde-format
 msgid "Reset to Default"
 msgstr "Връщане към подразбиране"
@@ -65419,58 +65419,58 @@ msgstr "Задаване на таг за път:"
 msgid "Rating Mapping:"
 msgstr "Съпоставяне на оценки:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:521
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:534
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Това е пространство от имена по подразбиране. Пространствата от имена по "
 "подразбиране могат да бъдат само деактивирани"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:548
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:561
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Името на пространството от имена е задължително"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:559
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:572
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "Име от пространството с имена EXIF трябва да започва с \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:567
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 "Името на алтернативното пространство от имена EXIF трябва да започва с \"Exif"
 "\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:579
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:592
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC namespace name must start with \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:600
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "IPTC alternative namespace name must start with \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:599
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:612
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "Име от пространството с имена XMP трябва да започва с \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:620
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 "Името на алтернативното пространство от имена XMP трябва да започва с \"Xmp"
 "\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:641
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Изисква се разделител на пътя на тага"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:634
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:647
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Вече се поддържа само един символ като разделител на пътя към тага"

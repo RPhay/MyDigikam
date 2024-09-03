@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:55+0000\n"
+"POT-Creation-Date: 2024-09-03 01:45+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3274,7 +3274,7 @@ msgstr "בחירה"
 #: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:898
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
 msgid "Delete"
 msgstr "מחיקה"
@@ -11553,7 +11553,7 @@ msgid ""
 "%1"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:432
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
@@ -20175,7 +20175,7 @@ msgstr "תצוגה מקדימה"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:183
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:126
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:372
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:377
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:199
@@ -34738,12 +34738,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:376
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:377
 #, fuzzy, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "התיקייה שנבחרה אינה קיימת או שאינה ניתנת לקריאה"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:390
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:391
 #, fuzzy, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "התיקייה שנבחרה אינה קיימת או שאינה ניתנת לקריאה"
@@ -48788,44 +48788,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "נוצר ב: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:208
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By Name"
 msgstr "לפי שם"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:209
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
 #, kde-format
 msgid "By Date"
 msgstr "לפי תאריך"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:210
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
 #, kde-format
 msgid "By File Size"
 msgstr "לפי גודל קובץ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:224
 #, fuzzy, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "מקודד RAW"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
 #, fuzzy, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "מקודד RAW"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:246
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
 #, fuzzy, kde-format
 msgid "Current Name"
 msgstr "ספירה:"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:246
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:252
 #, fuzzy, kde-format
 msgid "New Name"
 msgstr "שם חדש:"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:256
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -48833,44 +48833,44 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:306
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:312
 #, fuzzy, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "שינוי שם..."
 msgstr[1] "שינוי שם..."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:408
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:414
 #, fuzzy, kde-format
 msgid "Sort Images"
 msgstr "סידור תמונות"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:67
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "מסיר תוויות מתמונות. אנא המתינו..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&ביטול"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Processing..."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:157
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "אפשרויות שינוי שם קובץ"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:158
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -48882,25 +48882,25 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "אפשרויות שינוי שם קובץ"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "לשכתב את הקובץ?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:218
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "מסיר תוויות מתמונות. אנא המתינו..."
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:326
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:331
 #, kde-format
 msgid ""
 "<p>Enter your renaming pattern here. Use the access buttons to quickly add "
@@ -48908,31 +48908,31 @@ msgid ""
 "button.</p>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:333
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:338
 #: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:337
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, fuzzy, kde-format
 msgid "Modifiers"
 msgstr "שונה:"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:339
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:344
 #, kde-format
 msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:353
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:358
 #, fuzzy, kde-format
 msgid "Renaming Options"
 msgstr "אפשרויות שינוי שם קובץ"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:374
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:379
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr ""
@@ -49550,7 +49550,7 @@ msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "מותאם אישית"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:115
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:116
 #, fuzzy, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -49559,45 +49559,45 @@ msgstr "&תמונה"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:121
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:122
 #, fuzzy, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "תאריך תמונה"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:146
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:147
 #, fuzzy, kde-format
 #| msgid "Custom ratio:"
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "יחס מותאם אישית:"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:254
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr "שם:"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "הוספת תאריך וזמן"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "גודל הקובץ"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "גודל הקובץ"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:265
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:266
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:267
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Date and time"
@@ -49691,12 +49691,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "ק&יבוץ"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:96
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
 #, fuzzy, kde-format
 msgid "Metadata..."
 msgstr "מידע-נוסף"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:99
 #, fuzzy, kde-format
 msgid "Add metadata information"
 msgstr "גודל הקובץ"
@@ -52864,7 +52864,7 @@ msgstr "תרגום להולנדית"
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
 #: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:430
 #, kde-format
 msgid "Edit"
 msgstr "עריכה"
@@ -62324,7 +62324,7 @@ msgstr ""
 "בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
 "האם להמשיך?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:389
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:393
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -62332,57 +62332,57 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:399
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "אפשרויות שינוי שם קובץ"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:400
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:404
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "אפשרויות תצוגת תיקייה"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:402
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:406
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, fuzzy, kde-format
 msgid "Read all metadata for tags"
 msgstr "קריאה של נתוניי מידע-נוסף מקובץ למסד הנתונים"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:423
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:427
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "ה&וספה"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:436
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "הזז"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:439
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "הזז"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:442
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "שחזור כל השינויים"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:448
 #, fuzzy, kde-format
 msgid "Save Profile"
 msgstr "קובצי תמונת"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:451
 #, fuzzy, kde-format
 msgid "Load Profile"
 msgstr "מספר מזהה של הפרופיל"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:454
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "איפוס הכל מאפייני המסנן לערכי ברירת מחדל."
@@ -62474,52 +62474,52 @@ msgstr "נתיב התווית"
 msgid "Rating Mapping:"
 msgstr "דירוג:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:521
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:534
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:548
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:561
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:559
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:572
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:567
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:579
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:592
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:600
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:599
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:612
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:620
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:628
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:641
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:634
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:647
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""
