@@ -702,9 +702,11 @@ QString MetaEngine::Private::detectEncodingAndDecode(const std::string& value) c
 
     for (int i = 0 ; i < localString.size() ; ++i)
     {
-        if (!localString.at(i).isPrint()             &&
+        if (
+            !localString.at(i).isPrint()             &&
             (localString.at(i) != QLatin1Char('\n')) &&
-            (localString.at(i) != QLatin1Char('\r')))
+            (localString.at(i) != QLatin1Char('\r'))
+           )
         {
             localString[i] = QLatin1Char('_');
         }

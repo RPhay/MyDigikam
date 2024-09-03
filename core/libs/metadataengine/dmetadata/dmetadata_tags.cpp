@@ -215,7 +215,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
 
         // Get keywords from tags path, for type tag
 
-        for (const QString& tagPath : tagsPath)
+        for (const QString& tagPath : qAsConst(tagsPath))
         {
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }

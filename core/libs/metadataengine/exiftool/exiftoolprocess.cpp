@@ -270,7 +270,7 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 
     QByteArray cmdStr;
 
-    for (const QByteArray& arg : args)
+    for (const QByteArray& arg : qAsConst(args))
     {
         cmdStr.append(arg + '\n');
     }
@@ -323,7 +323,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
     QMutexLocker locker(&d->mutex);
     const auto keys = d->resultMap.keys();
 
-    for (int cmdId : keys)
+    for (int cmdId : qAsConst(keys))
     {
         d->resultMap[cmdId].cmdStatus = FINISH_RESULT;
     }

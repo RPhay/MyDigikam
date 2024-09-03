@@ -274,7 +274,7 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     const QString writeNameSpace = QLatin1String("write%1Namespaces");
     const auto keys              = mappingKeys();
 
-    for (const QString& str : keys)
+    for (const QString& str : qAsConst(keys))
     {
         if (!group.hasGroup(readNameSpace.arg(str)))
         {
@@ -295,7 +295,7 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     {
         const auto keys2 = mappingKeys();
 
-        for (const QString& str : keys2)
+        for (const QString& str : qAsConst(keys2))
         {
             readOneGroup(group, readNameSpace.arg(str),  getReadMapping(str));
             readOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
@@ -319,16 +319,16 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
 
     const auto list = group.groupList();
 
-    for (const QString& groupKey : list)
+    for (const QString& groupKey : qAsConst(list))
     {
         group.deleteGroup(groupKey);
     }
 
     const auto keys = mappingKeys();
 
-    for (const QString& str : keys)
+    for (const QString& str : qAsConst(keys))
     {
-        writeOneGroup(group, readNameSpace.arg(str), getReadMapping(str));
+        writeOneGroup(group, readNameSpace.arg(str),  getReadMapping(str));
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
 
@@ -699,7 +699,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
     KConfigGroup myItems = group.group(name);
     const auto list      = myItems.groupList();
 
-    for (const QString& element : list)
+    for (const QString& element : qAsConst(list))
     {
         KConfigGroup gr      = myItems.group(element);
         NamespaceEntry ns;
@@ -729,7 +729,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         {
             const auto list2 = conversion.split(QLatin1String(","));
 
-            for (const QString& str : list2)
+            for (const QString& str : qAsConst(list2))
             {
                 ns.convertRatio.append(str.toInt());
             }
@@ -865,7 +865,7 @@ QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)
 
     const auto keys = inf.mappingKeys();
 
-    for (const QString& str : keys)
+    for (const QString& str : qAsConst(keys))
     {
         dbg.nospace() << inf.getReadMapping(str) << "), ";
     }
@@ -874,7 +874,7 @@ QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)
 
     const auto keys2 = inf.mappingKeys();
 
-    for (const QString& str : keys2)
+    for (const QString& str : qAsConst(keys2))
     {
         dbg.nospace() << inf.getWriteMapping(str) << "), ";
     }
