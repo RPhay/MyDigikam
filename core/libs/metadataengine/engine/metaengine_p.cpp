@@ -385,7 +385,7 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
                 pairedTags << qMakePair(QLatin1String("Xmp.dc.subject"),
                                         QLatin1String("Iptc.Application2.Keywords"));
 
-                for (const StringPair& pair : qAsConst(pairedTags))
+                for (const StringPair& pair : EXIV2_AS_CONST(pairedTags))
                 {
                     Exiv2::XmpKey xmpKey(pair.first.toLatin1().constData());
                     Exiv2::XmpData::const_iterator it1 = image->xmpData().findKey(xmpKey);

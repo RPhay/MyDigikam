@@ -244,7 +244,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
             QString key;
             QString val;
 
-            for (const QString& tupple : qAsConst(lines))
+            for (const QString& tupple : EXIV2_AS_CONST(lines))
             {
                 key = tupple.section(QLatin1Char('='), 0, 0);
                 val = tupple.section(QLatin1Char('='), 1, 1);

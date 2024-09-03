@@ -34,7 +34,7 @@ int DMetadata::getItemPickLabel(const DMetadataSettingsContainer& settings) cons
 {
     bool xmpSupported = hasXmp();
 
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -113,7 +113,7 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
     bool xmpSupported  = hasXmp();
     bool exivSupported = hasExif();
 
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -205,7 +205,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -314,7 +314,7 @@ bool DMetadata::setItemPickLabel(int pickId, const DMetadataSettingsContainer& s
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_PICKLABEL_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -419,7 +419,7 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -543,7 +543,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {

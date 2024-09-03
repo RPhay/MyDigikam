@@ -9,3 +9,6 @@ The file Metadata manipulation Qt wrapper:
                This class must be used everywhere in digiKam.
 - exiftool   : classes to wrap exiftool command line tool.
 - focuspoint : classes,to hanlde focus point information from camera.
+
+NOTE: with Exiv2 less than 0.28, C++11 must be used instead C++17. A definition EXIV2_AS_CONST is
+set to constify containers to loop with for() operator.

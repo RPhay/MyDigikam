@@ -101,7 +101,7 @@ QVariant DMetadata::fromExifOrXmpList(const QStringList& tagList) const
 {
     QVariant var;
 
-    for (const QString& tagName : qAsConst(tagList))
+    for (const QString& tagName : EXIV2_AS_CONST(tagList))
     {
         if      (tagName.startsWith(QLatin1String("Exif")))
         {
@@ -817,7 +817,7 @@ QVariantList DMetadata::getMetadataFields(const MetadataFields& fields) const
 {
     QVariantList list;
 
-    for (MetadataInfo::Field field : qAsConst(fields))
+    for (MetadataInfo::Field field : EXIV2_AS_CONST(fields))
     {
         list << getMetadataField(field);
     }

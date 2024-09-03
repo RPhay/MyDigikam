@@ -33,7 +33,7 @@ namespace Digikam
 bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                                 const DMetadataSettingsContainer& settings) const
 {
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -201,7 +201,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -215,7 +215,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
 
         // Get keywords from tags path, for type tag
 
-        for (const QString& tagPath : qAsConst(tagsPath))
+        for (const QString& tagPath : EXIV2_AS_CONST(tagsPath))
         {
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }
@@ -347,7 +347,7 @@ bool DMetadata::getACDSeeTagsPath(QStringList& tagsPath) const
         QStringList xmlTags = xmlACDSee.split(QLatin1String("<Category Assigned"));
         int category        = 0;
 
-        for (const QString& tags : qAsConst(xmlTags))
+        for (const QString& tags : EXIV2_AS_CONST(xmlTags))
         {
             if (!tags.isEmpty())
             {
@@ -393,7 +393,7 @@ bool DMetadata::setACDSeeTagsPath(const QStringList& tagsPath) const
     QStringList splitTags;
     QStringList xmlTags;
 
-    for (const QString& tags : qAsConst(tagsPath))
+    for (const QString& tags : EXIV2_AS_CONST(tagsPath))
     {
         splitTags   = tags.split(QLatin1Char('/'));
         int current = 0;

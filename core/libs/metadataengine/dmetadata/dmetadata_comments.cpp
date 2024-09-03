@@ -70,7 +70,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -225,7 +225,7 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -408,7 +408,7 @@ CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings)
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (const NamespaceEntry& entry : qAsConst(settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER())))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER())))
     {
         if (entry.isDisabled)
         {
@@ -512,7 +512,7 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_TITLE_CONTAINER());
     }
 
-    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    for (const NamespaceEntry& entry : EXIV2_AS_CONST(toWrite))
     {
         if (entry.isDisabled)
         {

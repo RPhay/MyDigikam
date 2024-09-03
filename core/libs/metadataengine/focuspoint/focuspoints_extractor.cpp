@@ -125,7 +125,7 @@ QVariant FocusPointsExtractor::findValue(const QString& tagNameRoot, const QStri
 
 QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNames, bool isList) const
 {
-    for (const QString& tagName : qAsConst(listTagNames))
+    for (const QString& tagName : EXIV2_AS_CONST(listTagNames))
     {
         QVariant tmp = findValue(tagName, isList);
 
@@ -140,7 +140,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNam
 
 QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot, const QStringList& keys, bool isList) const
 {
-    for (const QString& key : qAsConst(keys))
+    for (const QString& key : EXIV2_AS_CONST(keys))
     {
         QVariant tmp = findValue(tagNameRoot, key, isList);
 
@@ -207,7 +207,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points(FocusPoin
 {
     ListAFPoints points;
 
-    for (const auto& point : qAsConst(d->af_points))
+    for (const auto& point : EXIV2_AS_CONST(d->af_points))
     {
         if (type == FocusPoint::TypePoint::Inactive)
         {

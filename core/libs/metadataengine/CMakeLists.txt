@@ -131,6 +131,11 @@ target_compile_definitions(core_dmetadata_obj
                            digikamcore_EXPORTS
 )
 
+target_compile_definitions(core_dmetadata_obj
+                           PRIVATE
+                           ${EXIV2_AS_CONST_DEFINITION}
+)
+
 if(NOT Qt6_FOUND)
 
     set_target_properties(core_dmetadata_obj

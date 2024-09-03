@@ -45,10 +45,12 @@ endif()
 
 if(("${exiv2_VERSION}" VERSION_GREATER "0.27.99") OR ("${LibExiv2_VERSION}" VERSION_GREATER "0.27.99"))
 
-    set(EXIV2_CXX_STANDARD 17)
+    set(EXIV2_CXX_STANDARD        17)
+    set(EXIV2_AS_CONST_DEFINITION -DEXIV2_AS_CONST=std::as_const)
 
 else()
 
-    set(EXIV2_CXX_STANDARD 11)
+    set(EXIV2_CXX_STANDARD        11)
+    set(EXIV2_AS_CONST_DEFINITION -DEXIV2_AS_CONST=qAsConst)
 
 endif()
