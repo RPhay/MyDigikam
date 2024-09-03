@@ -94,11 +94,11 @@ int DMetadata::getItemPickLabel(const DMetadataSettingsContainer& settings) cons
         }
         else if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmpDM.good"))
         {
-            if      (value.compare(QLatin1String("True"), Qt::CaseInsensitive) == 0)
+            if      (value.compare(QLatin1String("true"), Qt::CaseInsensitive) == 0)
             {
                 return AcceptedLabel;
             }
-            else if (value.compare(QLatin1String("False"), Qt::CaseInsensitive) == 0)
+            else if (value.compare(QLatin1String("false"), Qt::CaseInsensitive) == 0)
             {
                 return RejectedLabel;
             }
@@ -372,14 +372,14 @@ bool DMetadata::setItemPickLabel(int pickId, const DMetadataSettingsContainer& s
                 {
                     if      (pickId == AcceptedLabel)
                     {
-                        if (!setXmpTagString(nameSpace, QLatin1String("True")))
+                        if (!setXmpTagString(nameSpace, QLatin1String("true")))
                         {
                             return false;
                         }
                     }
                     else if (pickId == RejectedLabel)
                     {
-                        if (!setXmpTagString(nameSpace, QLatin1String("False")))
+                        if (!setXmpTagString(nameSpace, QLatin1String("false")))
                         {
                             return false;
                         }
