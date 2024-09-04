@@ -47,10 +47,11 @@ void ColorLabelFilter::reset()
 QList<TAlbum*> ColorLabelFilter::getCheckedColorLabelTags()
 {
     QList<TAlbum*> list;
-    int tagId   = 0;
-    TAlbum* tag = nullptr;
+    int tagId         = 0;
+    TAlbum* tag       = nullptr;
+    const auto labels = colorLabels();
 
-    Q_FOREACH (const ColorLabel& cl, colorLabels())
+    for (const ColorLabel& cl : labels)
     {
         tagId = TagsCache::instance()->tagForColorLabel(cl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);

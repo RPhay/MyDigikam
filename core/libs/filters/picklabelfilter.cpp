@@ -47,10 +47,11 @@ void PickLabelFilter::reset()
 QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
 {
     QList<TAlbum*> list;
-    int tagId   = 0;
-    TAlbum* tag = nullptr;
+    int tagId         = 0;
+    TAlbum* tag       = nullptr;
+    const auto labels = pickLabels();
 
-    Q_FOREACH (const PickLabel& pl, pickLabels())
+    for (const PickLabel& pl : labels)
     {
         tagId = TagsCache::instance()->tagForPickLabel(pl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
