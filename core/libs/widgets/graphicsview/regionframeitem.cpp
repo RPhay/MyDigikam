@@ -166,7 +166,7 @@ CropHandle RegionFrameItem::Private::handleAt(const QPointF& pos) const
 {
     if (flags & ShowResizeHandles)
     {
-        Q_FOREACH (const CropHandle& handle, cropHandleList)
+        for (const CropHandle& handle : std::as_const(cropHandleList))
         {
             QRectF rect = handleRect(handle);
 
@@ -559,8 +559,9 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
     QRect imageRect                 = imageView()->rect();
     static const QColor outerColor  = QColor::fromHsvF(0, 0, 0, 0.5);
     QRegion outerRegion             = QRegion(imageRect) - QRegion(rect);
+    const auto rects                = outerRegion.rects();
 
-    Q_FOREACH (const QRect& outerRect, outerRegion.rects())
+    for (const QRect& outerRect : rects)
     {
         painter->fillRect(outerRect, outerColor);
     }
@@ -585,7 +586,7 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
             painter->setOpacity(d->resizeHandleVisibility->opacity());
             painter->setBrush(fillColor);
 
-            Q_FOREACH (const CropHandle& handle, d->cropHandleList)
+            for (const CropHandle& handle : std::as_const(d->cropHandleList))
             {
                 QRectF rect = d->handleRect(handle);
                 painter->drawRect(rect);

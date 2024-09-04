@@ -213,7 +213,9 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
 
     if (!b)
     {
-        Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
+        const auto btns = d->colorBtns->buttons();
+
+        for (QAbstractButton* const btn : btns)
         {
             ColorLabel id = (ColorLabel)(d->colorBtns->id(btn));
             btn->setToolTip(labelColorName(id));
@@ -352,7 +354,9 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
 void ColorLabelWidget::setColorLabels(const QList<ColorLabel>& list)
 {
-    Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
+    const auto btns = d->colorBtns->buttons();
+
+    for (QAbstractButton* const btn : btns)
     {
         ColorLabel id = (ColorLabel)(d->colorBtns->id(btn));
         btn->setChecked(list.contains(id));
@@ -364,7 +368,9 @@ QList<ColorLabel> ColorLabelWidget::colorLabels() const
 {
     QList<ColorLabel> list;
 
-    Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
+    const auto btns = d->colorBtns->buttons();
+
+    for (QAbstractButton* const btn : btns)
     {
         if (btn && btn->isChecked())
         {

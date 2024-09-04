@@ -228,7 +228,7 @@ void AltLangStrEdit::populateLangAltListEntries()
 
     if (!list.isEmpty())
     {
-        Q_FOREACH (const QString& lg, list)
+        for (const QString& lg : std::as_const(list))
         {
             d->languageCB->addItem(lg);
             d->languageCB->setItemIcon(d->languageCB->count() - 1,
@@ -244,7 +244,7 @@ void AltLangStrEdit::populateLangAltListEntries()
     LocalizeContainer set = LocalizeSettings::instance()->settings();
     QStringList lang      = set.alternativeLang;
 
-    Q_FOREACH (const QString& lg, lang)
+    for (const QString& lg : std::as_const(lang))
     {
         if (!list.contains(lg))
         {

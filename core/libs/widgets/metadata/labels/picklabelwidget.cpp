@@ -165,7 +165,9 @@ void PickLabelWidget::setDescriptionBoxVisible(bool b)
 
     if (!b)
     {
-        Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
+        const auto btns = d->pickBtns->buttons();
+
+        for (QAbstractButton* const btn : btns)
         {
             PickLabel id = (PickLabel)(d->pickBtns->id(btn));
             btn->setToolTip(labelPickName(id));
@@ -244,7 +246,9 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
 void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
 {
-    Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
+    const auto btns = d->pickBtns->buttons();
+
+    for (QAbstractButton* const btn : btns)
     {
         PickLabel id = (PickLabel)(d->pickBtns->id(btn));
         btn->setChecked(list.contains(id));
@@ -256,7 +260,9 @@ QList<PickLabel> PickLabelWidget::pickLabels() const
 {
     QList<PickLabel> list;
 
-    Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
+    const auto btns = d->pickBtns->buttons();
+
+    for (QAbstractButton* const btn : btns)
     {
         if (btn && btn->isChecked())
         {
