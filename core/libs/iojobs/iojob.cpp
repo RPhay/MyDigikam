@@ -447,8 +447,9 @@ void DTrashItemsListingJob::run()
     qCDebug(DIGIKAM_IOJOB_LOG) << "Collection trash files path:" << collectionTrashFilesPath;
 
     QDir filesDir(collectionTrashFilesPath);
+    const auto list = filesDir.entryInfoList(QDir::Files);
 
-    Q_FOREACH (const QFileInfo& fileInfo, filesDir.entryInfoList(QDir::Files))
+    for (const QFileInfo& fileInfo : list)
     {
         if (m_cancel)
         {
@@ -480,7 +481,9 @@ void RestoreDTrashItemsJob::run()
         return;
     }
 
-    Q_FOREACH (const DTrashItemInfo& item, m_data->trashItems())
+    const auto list = m_data->trashItems();
+
+    for (const DTrashItemInfo& item : list)
     {
         QUrl srcToRename = QUrl::fromLocalFile(item.collectionPath);
         QUrl newName     = DFileOperations::getUniqueFileUrl(srcToRename);
@@ -524,8 +527,9 @@ void EmptyDTrashItemsJob::run()
 
     QList<int> albumsFromImages;
     QList<qlonglong> imagesToRemove;
+    const auto list = m_data->trashItems();
 
-    Q_FOREACH (const DTrashItemInfo& item, m_data->trashItems())
+    for (const DTrashItemInfo& item : list)
     {
         QFile::remove(item.trashPath);
         QFile::remove(item.jsonFilePath);
@@ -557,7 +561,7 @@ void BuildTrashCountersJob::run()
     QMap<QString, int> trashCountersMap;
     QList<CollectionLocation> allLocations = CollectionManager::instance()->allAvailableLocations();
 
-    Q_FOREACH (const CollectionLocation& location, allLocations)
+    for (const CollectionLocation& location : std::as_const(allLocations))
     {
         QString path = location.albumRootPath() + QLatin1Char('/') +
                        DTrash::TRASH_FOLDER     + QLatin1Char('/') +
