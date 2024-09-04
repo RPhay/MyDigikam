@@ -9,10 +9,9 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "1100" ]] ; then
+    if [[ $DATE == "0000" || $DATE == "0600" || $DATE == "1200" || $DATE == "1800" ]] ; then
 
         echo "Linux bundle started at $(date)"
-        cd /home/gilles/Documents/7.x/project/bundles/appimage
         git pull
         ./update.sh
         echo "Linux bundle completed at $(date)"

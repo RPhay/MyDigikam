@@ -9,10 +9,9 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "1500" ]] ; then
+    if [[ $DATE == "0300" || $DATE == "0900" || $DATE == "1500" || $DATE == "2100"  ]] ; then
 
         echo "Windows bundle started at $(date)"
-        cd /mnt/data/7.x/project/bundles/mxe
         git pull
         ./update.sh
         echo "Windows bundle completed at $(date)"

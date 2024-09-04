@@ -9,10 +9,9 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "1300" ]] ; then
+    if [[ $DATE == "0000" || $DATE == "0600" || $DATE == "1200" || $DATE == "1800" ]] ; then
 
         echo "macOS bundle started at $(date)"
-        cd /Users/gilles/Documents/7.x/project/bundles/macports
         git pull
         ./update.sh
         echo "macOS bundle completed at $(date)"
