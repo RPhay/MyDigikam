@@ -281,7 +281,7 @@ QList<QRectF> FaceDetector::toRelativeRects(const QList<QRect>& absoluteRects, c
 {
     QList<QRectF> result;
 
-    Q_FOREACH (const QRect& r, absoluteRects)
+    for (const QRect& r : std::as_const(absoluteRects))
     {
         result << toRelativeRect(r, size);
     }
@@ -293,7 +293,7 @@ QList<QRect> FaceDetector::toAbsoluteRects(const QList<QRectF>& relativeRects, c
 {
     QList<QRect> result;
 
-    Q_FOREACH (const QRectF& r, relativeRects)
+    for (const QRectF& r : std::as_const(relativeRects))
     {
         result << toAbsoluteRect(r, size);
     }

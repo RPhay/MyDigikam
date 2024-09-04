@@ -24,7 +24,7 @@ void FacialRecognitionWrapper::Private::trainIdentityBatch(const QList<Identity>
                                                            TrainingDataProvider* const data,
                                                            const QString&              trainingContext)
 {
-    Q_FOREACH (const Identity& identity, identitiesToBeTrained)
+    for (const Identity& identity : std::as_const(identitiesToBeTrained))
     {
         ImageListProvider* const imageList = data->newImages(identity);
         QList<QImage*> images              = imageList->images();
@@ -125,7 +125,7 @@ void FacialRecognitionWrapper::clearTraining(const QList<Identity>& identitiesTo
     QMutexLocker lock(&d->mutex);
     QList<int>   ids;
 
-    Q_FOREACH (const Identity& id, identitiesToClean)
+    for (const Identity& id : std::as_const(identitiesToClean))
     {
         ids << id.id();
     }
