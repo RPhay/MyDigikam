@@ -124,7 +124,7 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
 QString DBinaryIface::findHeader(const QStringList& output, const QString& header) const
 {
-    Q_FOREACH (const QString& s, output)
+    for (const QString& s : std::as_const(output))
     {
         if (s.startsWith(header))
         {   // cppcheck-suppress useStlAlgorithm
@@ -363,7 +363,7 @@ bool DBinaryIface::recheckDirectories()
         return true;
     }
 
-    Q_FOREACH (const QString& dir, m_searchPaths)
+    for (const QString& dir : std::as_const(m_searchPaths))
     {
         checkDirForPath(dir);
 

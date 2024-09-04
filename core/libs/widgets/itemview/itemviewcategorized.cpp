@@ -306,7 +306,7 @@ void ItemViewCategorized::setSelectedIndexes(const QList<QModelIndex>& indexes)
 
     QItemSelection mySelection;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         mySelection.select(index, index);
     }
@@ -1014,7 +1014,7 @@ void ItemViewCategorized::keyPressEvent(QKeyEvent* event)
     {
         const QModelIndexList indexList = selModel->selectedIndexes();
 
-        Q_FOREACH (const QModelIndex& index, indexList)
+        for (const QModelIndex& index : std::as_const(indexList))
         {
             Q_EMIT itemTriggered(itemForIndex(index));
         }

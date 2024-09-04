@@ -138,7 +138,7 @@ void LocalizeSelector::populateTranslationEntries()
     QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
     LocalizeContainer set   = LocalizeSettings::instance()->settings();
 
-    Q_FOREACH (const QString& lg, set.translatorLang)
+    for (const QString& lg : std::as_const(set.translatorLang))
     {
         QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
         item->setText(lg);

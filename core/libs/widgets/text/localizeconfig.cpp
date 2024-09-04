@@ -273,8 +273,9 @@ LocalizeConfig::~LocalizeConfig()
 void LocalizeConfig::populateAltLanguages()
 {
     d->altLangList->clear();
+    const auto langs = AltLangStrEdit::allLanguagesRFC3066();
 
-    Q_FOREACH (const QString& code, AltLangStrEdit::allLanguagesRFC3066())
+    for (const QString& code : langs)
     {
         new QTreeWidgetItem(d->altLangList,
                             QStringList() << code
@@ -285,8 +286,9 @@ void LocalizeConfig::populateAltLanguages()
 void LocalizeConfig::populateTranslatorLanguages()
 {
     d->trLangList->clear();
+    const auto langs = DOnlineTranslator::supportedRFC3066((DOnlineTranslator::Engine)d->translatorCB->currentIndex());
 
-    Q_FOREACH (const QString& code, DOnlineTranslator::supportedRFC3066((DOnlineTranslator::Engine)d->translatorCB->currentIndex()))
+    for (const QString& code : langs)
     {
         new QTreeWidgetItem(d->trLangList,
                             QStringList() << code

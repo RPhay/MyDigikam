@@ -124,7 +124,7 @@ QModelIndex DCategorizedView::categoryAt(const QPoint& point) const
     int lastY = 0;
     QString lastCategory;
 
-    Q_FOREACH (const QString& category, d->categories)
+    for (const QString& category : std::as_const(d->categories))
     {
         y = d->categoryVisualRect(category).top();
 
@@ -299,7 +299,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
         alternate = (dirtyIndexes[0].row() % 2);
     }
 
-    Q_FOREACH (const QModelIndex& index, dirtyIndexes)
+    for (const QModelIndex& index : std::as_const(dirtyIndexes))
     {
         if      (alternatingRows && alternate)
         {
@@ -373,7 +373,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
     QStyleOptionViewItem otherOption;
     bool                 intersectedInThePast = false;
 
-    Q_FOREACH (const QString& category, d->categories)
+    for (const QString& category : std::as_const(d->categories))
     {
         otherOption        = option;
         otherOption.rect   = d->categoryVisualRect(category);
@@ -774,7 +774,7 @@ void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
 
     // Redraw categories
 
-    Q_FOREACH (const QString& category, d->categories)
+    for (const QString& category : std::as_const(d->categories))
     {
         if      (d->categoryVisualRect(category).intersects(QRect(event->pos(), event->pos())))
         {
@@ -870,7 +870,7 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
         (initPressPos == d->initialPressPosition)
        )
     {
-        Q_FOREACH (const QString& category, d->categories)
+        for (const QString& category : std::as_const(d->categories))
         {
             if (
                 d->categoryVisualRect(category).contains(event->pos()) &&
@@ -880,7 +880,7 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
                 QItemSelection selection      = selectionModel()->selection();
                 const QVector<int>& indexList = d->categoriesIndexes[category];
 
-                Q_FOREACH (int row, indexList)
+                for (int row : std::as_const(indexList))
                 {
                     QModelIndex selectIndex = d->proxyModel->index(row, 0);
 
@@ -1115,7 +1115,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
     QString afterCategory = d->categories.first();
     bool hasToBreak       = false;
 
-    Q_FOREACH (const QString& category, d->categories)
+    for (const QString& category : std::as_const(d->categories))
     {
         // cppcheck-suppress knownConditionTrueFalse
         if (hasToBreak)

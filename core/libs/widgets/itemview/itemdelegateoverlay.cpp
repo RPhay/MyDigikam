@@ -150,9 +150,10 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
 
     // scales better than selectedIndexes().count()
 
-    int count = 0;
+    int count       = 0;
+    const auto sels = view()->selectionModel()->selection();
 
-    Q_FOREACH (const QItemSelectionRange& range, view()->selectionModel()->selection())
+    for (const QItemSelectionRange& range : sels)
     {
         // cppcheck-suppress useStlAlgorithm
         count += range.height();
@@ -703,7 +704,7 @@ void ItemDelegateOverlayContainer::removeOverlay(ItemDelegateOverlay* overlay)
 
 void ItemDelegateOverlayContainer::setAllOverlaysActive(bool active)
 {
-    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
+    for (ItemDelegateOverlay* const overlay : std::as_const(m_overlays))
     {
         overlay->setActive(active);
     }
@@ -711,7 +712,7 @@ void ItemDelegateOverlayContainer::setAllOverlaysActive(bool active)
 
 void ItemDelegateOverlayContainer::setViewOnAllOverlays(QAbstractItemView* view)
 {
-    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
+    for (ItemDelegateOverlay* const overlay : std::as_const(m_overlays))
     {
         overlay->setView(view);
     }
@@ -719,7 +720,7 @@ void ItemDelegateOverlayContainer::setViewOnAllOverlays(QAbstractItemView* view)
 
 void ItemDelegateOverlayContainer::removeAllOverlays()
 {
-    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
+    for (ItemDelegateOverlay* const overlay : std::as_const(m_overlays))
     {
         overlay->setActive(false);
         overlay->setDelegate(nullptr);
@@ -743,7 +744,7 @@ void ItemDelegateOverlayContainer::mouseMoved(QMouseEvent* e,
                                               const QRect& visualRect,
                                               const QModelIndex& index)
 {
-    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
+    for (ItemDelegateOverlay* const overlay : std::as_const(m_overlays))
     {
         overlay->mouseMoved(e, visualRect, index);
     }
@@ -753,7 +754,7 @@ void ItemDelegateOverlayContainer::drawOverlays(QPainter* p,
                                                 const QStyleOptionViewItem& option,
                                                 const QModelIndex& index) const
 {
-    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
+    for (ItemDelegateOverlay* const overlay : std::as_const(m_overlays))
     {
         overlay->paint(p, option, index);
     }

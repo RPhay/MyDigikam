@@ -112,7 +112,9 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     d->languageCB->setItemData(0, i18nc("@info", "Detect automatically the language by parsing string content"), Qt::ToolTipRole);
     d->languageCB->insertSeparator(d->languageCB->count());
 
-    Q_FOREACH (const QString& lg, AltLangStrEdit::allLanguagesRFC3066())
+    const auto langs = AltLangStrEdit::allLanguagesRFC3066();
+
+    for (const QString& lg : langs)
     {
         d->languageCB->addItem(lg, lg);
         d->languageCB->setItemData(d->languageCB->findText(lg), AltLangStrEdit::languageNameRFC3066(lg), Qt::ToolTipRole);
@@ -224,7 +226,9 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
         new QTreeWidgetItem(d->dictList, QStringList() << it.value() << it.key());
     }
 
-    Q_FOREACH (const QString& b, dict.availableBackends())
+    const auto backs = dict.availableBackends();
+
+    for (const QString& b : backs)
     {
         new QTreeWidgetItem(d->backList, QStringList() << b);
     }

@@ -154,7 +154,7 @@ bool DBinarySearch::allBinariesFound()
 {
     bool ret = true;
 
-    Q_FOREACH (DBinaryIface* const binary, d->binaryIfaces)
+    for (DBinaryIface* const binary : std::as_const(d->binaryIfaces))
     {
         int index = d->binaryIfaces.indexOf(binary);
 

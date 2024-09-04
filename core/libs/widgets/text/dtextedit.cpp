@@ -361,7 +361,7 @@ void DTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
 
     d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
 
-    Q_FOREACH (const QString& word, d->container.ignoredWords)
+    for (const QString& word : std::as_const(d->container.ignoredWords))
     {
         d->spellChecker->highlighter()->ignoreWord(word);
     }

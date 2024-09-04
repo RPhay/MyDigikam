@@ -351,7 +351,7 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
         (filters.at(0) != QLatin1String("FULL")) &&
         filters.at(0).contains(QLatin1Char('.')))
     {
-        Q_FOREACH (const QString& key, filters)
+        for (const QString& key : std::as_const(filters))
         {
             QString grp                  = key.section(QLatin1Char('.'), 0, 0)
                                               .replace(QLatin1Char('_'), QLatin1Char(' '));

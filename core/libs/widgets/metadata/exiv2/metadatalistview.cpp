@@ -225,7 +225,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         filters.at(0).contains(QLatin1Char('.'))
        )
     {
-        Q_FOREACH (const QString& key, filters)
+        for (const QString& key : std::as_const(filters))
         {
             MdKeyListViewItem* pitem = findMdKeyItem(key);
 
@@ -356,7 +356,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         filters.at(0).contains(QLatin1Char('.'))
        )
     {
-        Q_FOREACH (const QString& key, filters)
+        for (const QString& key : std::as_const(filters))
         {
             MdKeyListViewItem* pitem = findMdKeyItem(key);
 
