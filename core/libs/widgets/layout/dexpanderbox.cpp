@@ -159,10 +159,11 @@ void DAdjustableLabel::adjustTextToLabel()
 {
     QFontMetrics fm(fontMetrics());
     QStringList adjustedLines;
-    int lblW      = size().width();
-    bool adjusted = false;
+    int lblW         = size().width();
+    bool adjusted    = false;
+    const auto alist = d->ajdText.split(QLatin1Char('\n'));
 
-    Q_FOREACH (const QString& line, d->ajdText.split(QLatin1Char('\n')))
+    for (const QString& line : alist)
     {
         int lineW = fm.horizontalAdvance(line);
 

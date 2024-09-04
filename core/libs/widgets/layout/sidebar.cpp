@@ -115,7 +115,7 @@ void Sidebar::backup(const QList<QWidget*>& thirdWidgetsToBackup, QList<int>* co
 {
     sizes->clear();
 
-    Q_FOREACH (QWidget* const widget, thirdWidgetsToBackup)
+    for (QWidget* const widget : std::as_const(thirdWidgetsToBackup))
     {
         *sizes << d->splitter->size(widget);
     }

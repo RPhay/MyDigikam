@@ -42,7 +42,7 @@ SidebarSplitter::~SidebarSplitter()
 {
     // retreat cautiously from sidebars that live longer
 
-    Q_FOREACH (Sidebar* const sidebar, d->sidebars)
+    for (Sidebar* const sidebar : std::as_const(d->sidebars))
     {
         sidebar->d->splitter = nullptr;
     }
@@ -152,7 +152,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
     {
         QWidget* const w = widget(index-1);
 
-        Q_FOREACH (Sidebar* const sidebar, d->sidebars)
+        for (Sidebar* const sidebar : std::as_const(d->sidebars))
         {
             if (w == sidebar->d->stack)
             {    // cppcheck-suppress useStlAlgorithm
@@ -173,7 +173,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
     {
         QWidget* const w = widget(index);
 
-        Q_FOREACH (Sidebar* const sidebar, d->sidebars)
+        for (Sidebar* const sidebar : std::as_const(d->sidebars))
         {
             if (w == sidebar->d->stack)
             {   // cppcheck-suppress useStlAlgorithm
