@@ -74,7 +74,7 @@ void MetadataHubMngr::addPendingIds(const QList<qlonglong>& imageIds)
 {
     QMutexLocker locker(&d->mutex);
 
-    Q_FOREACH (const qlonglong& id, imageIds)
+    for (const qlonglong& id : std::as_const(imageIds))
     {
         if (!d->pendingItemIds.contains(id))
         {
@@ -125,7 +125,7 @@ void MetadataHubMngr::slotApplyPending()
 
     ItemInfoList infos;
 
-    Q_FOREACH (const qlonglong& id, d->pendingItemIds)
+    for (const qlonglong& id : std::as_const(d->pendingItemIds))
     {
         ItemInfo info(id);
 
@@ -160,7 +160,7 @@ void MetadataHubMngr::requestShutDown()
 
     ItemInfoList infos;
 
-    Q_FOREACH (const qlonglong& id, d->pendingItemIds)
+    for (const qlonglong& id : std::as_const(d->pendingItemIds))
     {
         ItemInfo info(id);
 

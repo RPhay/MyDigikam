@@ -43,7 +43,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
 {
     QStringList failedItems;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (state() == WorkerObject::Deactivating)
         {
@@ -84,7 +84,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList
 
     ScanController::instance()->suspendCollectionScan();
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (state() == WorkerObject::Deactivating)
         {
@@ -120,7 +120,7 @@ void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos
 
     ScanController::instance()->suspendCollectionScan();
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (state() == WorkerObject::Deactivating)
         {
@@ -159,7 +159,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
     QStringList failedItems;
     ScanController::instance()->suspendCollectionScan();
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (state() == WorkerObject::Deactivating)
         {

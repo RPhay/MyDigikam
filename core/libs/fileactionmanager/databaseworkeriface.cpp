@@ -52,7 +52,7 @@ void FileActionMngrDatabaseWorker::changeTags(const FileActionItemInfoList& info
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -113,7 +113,7 @@ void FileActionMngrDatabaseWorker::assignPickLabel(const FileActionItemInfoList&
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -162,7 +162,7 @@ void FileActionMngrDatabaseWorker::assignColorLabel(const FileActionItemInfoList
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -212,7 +212,7 @@ void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& in
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -258,7 +258,7 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& constInfo, infos)
+        for (const ItemInfo& constInfo : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -302,7 +302,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoLi
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (ItemInfo info, infos)
+        for (ItemInfo info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -336,7 +336,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& i
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -375,7 +375,7 @@ void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& 
     {
         QList<ItemInfo> destInfos;
 
-        Q_FOREACH (const QString& path, derivedPaths)
+        for (const QString& path : std::as_const(derivedPaths))
         {
             if (state() == WorkerObject::Deactivating)
             {

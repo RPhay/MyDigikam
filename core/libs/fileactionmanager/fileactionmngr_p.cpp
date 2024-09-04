@@ -143,7 +143,7 @@ void FileActionMngr::Private::startingToWrite(const QList<ItemInfo>& infos)
 {
     QMutexLocker lock(&mutex);
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         scheduledToWrite.remove(info.id());
     }

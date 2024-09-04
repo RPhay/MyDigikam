@@ -144,7 +144,7 @@ void MetadataHub::loadTags(const QList<int>& loadedTags)
 {
     d->tags.clear();
 
-    Q_FOREACH (int tagId, loadedTags)
+    for (int tagId : std::as_const(loadedTags))
     {
         if (TagsCache::instance()->isInternalTag(tagId))
         {
@@ -481,7 +481,7 @@ bool MetadataHub::writeTags(const DMetadata& metadata, bool saveTags)
 
         QList<int> keys = d->tags.keys();
 
-        Q_FOREACH (int tagId, keys)
+        for (int tagId : std::as_const(keys))
         {
             if (!TagsCache::instance()->canBeWrittenToMetadata(tagId))
             {
@@ -546,7 +546,7 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 
     // Add confirmed face regions from the database.
 
-    Q_FOREACH (const FaceTagsIface& face, d->facesList)
+    for (const FaceTagsIface& face : std::as_const(d->facesList))
     {
         if (face.isConfirmedName())
         {
@@ -564,7 +564,9 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
     // Add person tags to which no region is
     // assigned to Microsoft Photo Region schema.
 
-    Q_FOREACH (int tagId, d->tags.keys())
+    const auto keys = d->tags.keys();
+
+    for (int tagId : keys)
     {
         if ((d->tags.value(tagId) == MetadataAvailable) && FaceTags::isPerson(tagId))
         {
