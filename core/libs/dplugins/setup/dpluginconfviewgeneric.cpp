@@ -34,7 +34,9 @@ void DPluginConfViewGeneric::loadPlugins()
 
     if (loader)
     {
-        Q_FOREACH (DPlugin* const tool, loader->allPlugins())
+        const auto all = loader->allPlugins();
+
+        for (DPlugin* const tool : all)
         {
             DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(tool);
 

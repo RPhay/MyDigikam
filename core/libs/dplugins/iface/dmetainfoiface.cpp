@@ -327,8 +327,9 @@ void DMetaInfoIface::deleteImage(const QUrl& url)
 QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
+    const auto sel = currentSelectedItems();
 
-    Q_FOREACH (const QUrl& url, currentSelectedItems())
+    for (const QUrl& url : sel)
     {
         items << new GPSItemContainer(url);
     }

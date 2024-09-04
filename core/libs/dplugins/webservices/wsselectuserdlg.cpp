@@ -113,8 +113,9 @@ void WSSelectUserDlg::reactivate()
     KSharedConfigPtr config = KSharedConfig::openConfig();
 
     d->userComboBox->clear();
+    const auto glist = config->groupList();
 
-    Q_FOREACH (const QString& group, config->groupList())
+    for (const QString& group : glist)
     {
         if (!(group.contains(d->serviceName)))
         {

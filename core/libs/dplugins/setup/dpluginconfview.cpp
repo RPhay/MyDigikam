@@ -177,7 +177,7 @@ void DPluginConfView::apply()
         KSharedConfigPtr config = KSharedConfig::openConfig();
         KConfigGroup group      = config->group(loader->configGroupName());
 
-        Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+        for (DPluginCB* const item : std::as_const(d->plugBoxes))
         {
             if (item->m_plugin->hasVisibilityProperty())
             {
@@ -194,7 +194,7 @@ void DPluginConfView::apply()
 
 void DPluginConfView::selectAll()
 {
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         item->setCheckState(0, Qt::Checked);
     }
@@ -202,7 +202,7 @@ void DPluginConfView::selectAll()
 
 void DPluginConfView::clearAll()
 {
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         item->setCheckState(0, Qt::Unchecked);
     }
@@ -217,7 +217,7 @@ int DPluginConfView::actived() const
 {
     int actived = 0;
 
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         if (item->checkState(0) == Qt::Checked)
         {
@@ -232,7 +232,7 @@ int DPluginConfView::itemsVisible() const
 {
     int visible = 0;
 
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         if (!item->isHidden())
         {
@@ -247,7 +247,7 @@ int DPluginConfView::itemsWithVisiblyProperty() const
 {
     int vp = 0;
 
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         if (!item->isHidden() && item->m_plugin->hasVisibilityProperty())
         {
@@ -263,7 +263,7 @@ void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
     d->filter = filter;
     int found = 0;
 
-    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
+    for (DPluginCB* const item : std::as_const(d->plugBoxes))
     {
         if (item->contains(filter, cs))
         {

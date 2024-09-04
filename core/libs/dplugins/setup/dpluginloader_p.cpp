@@ -102,7 +102,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
     QFileInfoList allFiles;
     QStringList   dupFiles;
 
-    Q_FOREACH (const QString& path, pathList)
+    for (const QString& path : std::as_const(pathList))
     {
         QDir dir(path, filter, QDir::Unsorted,
                  QDir::Files | QDir::NoDotAndDotDot);
@@ -180,7 +180,9 @@ void DPluginLoader::Private::loadPlugins()
 
     Q_ASSERT(allPlugins.isEmpty());
 
-    Q_FOREACH (const QFileInfo& info, pluginEntriesList())
+    const auto plist = pluginEntriesList();
+
+    for (const QFileInfo& info : plist)
     {
         if (!whitelist.isEmpty() && !whitelist.contains(info.baseName()))
         {

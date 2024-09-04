@@ -106,8 +106,9 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     authors->setFocusPolicy(Qt::NoFocus);
 
     QString alist;
+    const auto ats = tool->authors();
 
-    Q_FOREACH (const DPluginAuthor& auth, tool->authors())
+    for (const DPluginAuthor& auth : ats)
     {
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"

@@ -66,8 +66,9 @@ QIcon DPlugin::icon() const
 QStringList DPlugin::pluginAuthors() const
 {
     QStringList list;
+    const auto auths = authors();
 
-    Q_FOREACH (const DPluginAuthor& au, authors())
+    for (const DPluginAuthor& au : auths)
     {
         if (!list.contains(au.name))
         {

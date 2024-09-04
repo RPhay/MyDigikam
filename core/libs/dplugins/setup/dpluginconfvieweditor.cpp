@@ -34,7 +34,9 @@ void DPluginConfViewEditor::loadPlugins()
 
     if (loader)
     {
-        Q_FOREACH (DPlugin* const tool, loader->allPlugins())
+        const auto all = loader->allPlugins();
+
+        for (DPlugin* const tool : all)
         {
             DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(tool);
 

@@ -755,7 +755,7 @@ void DItemsList::slotProgressTimerDone()
 {
     if (!d->processItems.isEmpty())
     {
-        Q_FOREACH (const QUrl& url, d->processItems)
+        for (const QUrl& url : std::as_const(d->processItems))
         {
             DItemsListViewItem* const item = listView()->findItem(url);
 
@@ -810,7 +810,7 @@ void DItemsList::processed(const QUrl& url, bool success)
 
 void DItemsList::cancelProcess()
 {
-    Q_FOREACH (const QUrl& url, d->processItems)
+    for (const QUrl& url : std::as_const(d->processItems))
     {
         processed(url, false);
     }
