@@ -231,7 +231,7 @@ void AnimationControl::clear()
     m_animation      = nullptr;
     m_animationGroup = nullptr; // the same pointer as animation
 
-    Q_FOREACH (QObject* const item, m_items)
+    for (QObject* const item : std::as_const(m_items))
     {
         disconnect(item);
     }
@@ -336,7 +336,7 @@ void AnimationControl::moveTo(AnimationControl* const other, QObject* const item
 
 void AnimationControl::moveAllTo(AnimationControl* const other)
 {
-    Q_FOREACH (QObject* const item, m_items)
+    for (QObject* const item : std::as_const(m_items))
     {
         moveTo(other, item);
     }
@@ -369,9 +369,9 @@ bool AnimationControl::hasVisibleItems(ItemVisibilityController::IncludeFadingOu
 
 void AnimationControl::setVisibleProperty(bool value)
 {
-    Q_FOREACH (QObject* const o, m_items)
+    for (QObject* const item : std::as_const(m_items))
     {
-        o->setProperty("visible", value);
+        item->setProperty("visible", value);
     }
 }
 
@@ -540,7 +540,7 @@ public:
 
 AnimationControl* ItemVisibilityController::Private::findInChildren(QObject* const item) const
 {
-    Q_FOREACH (AnimationControl* const child, childControls)
+    for (AnimationControl* const child : std::as_const(childControls))
     {
         if (child->hasItem(item))
         {   // cppcheck-suppress useStlAlgorithm
@@ -589,7 +589,7 @@ void ItemVisibilityController::Private::cleanupChildren(QAbstractAnimation* cons
         }
         else if ((child->m_animation == finishedAnimation) && (child->m_situation == AnimationControl::RemovingControl))
         {
-            Q_FOREACH (QObject* const item, child->m_items)
+            for (QObject* const item : std::as_const(child->m_items))
             {
                 Q_EMIT q->hiddenAndRemoved(item);
             }
@@ -615,7 +615,7 @@ void ItemVisibilityController::Private::setVisible(bool v, bool immediately)
         control->transitionToVisible(shallBeShown && visible, immediately);
     }
 
-    Q_FOREACH (AnimationControl* const child, childControls)
+    for (AnimationControl* const child : std::as_const(childControls))
     {
         if (child->m_situation == AnimationControl::IndependentControl)
         {
@@ -720,7 +720,7 @@ void ItemVisibilityController::clear()
         d->control->clear();
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         child->clear();
     }
@@ -739,7 +739,7 @@ QList<QObject*> ItemVisibilityController::items() const
         items = d->control->m_items;
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         // cppcheck-suppress useStlAlgorithm
         items += child->m_items;
@@ -757,7 +757,7 @@ QList<QObject*> ItemVisibilityController::visibleItems(IncludeFadingOutMode mode
         items = d->control->m_items;
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         if (child->hasVisibleItems(mode))
         {
@@ -791,7 +791,7 @@ bool ItemVisibilityController::hasVisibleItems(IncludeFadingOutMode mode) const
         return true;
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         if (child->hasVisibleItems(mode))
         {   // cppcheck-suppress useStlAlgorithm
@@ -811,7 +811,7 @@ void ItemVisibilityController::setEasingCurve(const QEasingCurve& easing)
         d->control->setEasingCurve(easing);
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         child->setEasingCurve(easing);
     }
@@ -826,7 +826,7 @@ void ItemVisibilityController::setAnimationDuration(int msecs)
         d->control->setAnimationDuration(msecs);
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         child->setAnimationDuration(msecs);
     }
@@ -925,13 +925,13 @@ void ItemVisibilityController::animationFinished()
         Q_EMIT propertiesAssigned(d->control->m_state == Visible);
     }
 
-    Q_FOREACH (AnimationControl* const child, d->childControls)
+    for (AnimationControl* const child : std::as_const(d->childControls))
     {
         if (child->m_animation == animation)
         {
             child->animationFinished();
 
-            Q_FOREACH (QObject* const item, child->m_items)
+            for (QObject* const item : std::as_const(child->m_items))
             {
                 if (d->control)
                 {
