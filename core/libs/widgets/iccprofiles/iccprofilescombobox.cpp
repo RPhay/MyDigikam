@@ -74,7 +74,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
     QList<IccProfile> profiles;
     QSet<QString>     filePaths;
 
-    Q_FOREACH (IccProfile profile, givenProfiles) // krazy:exclude=foreach
+    for (IccProfile profile : std::as_const(givenProfiles))
     {
         QString filePath = profile.filePath();
 
@@ -87,7 +87,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
 
     std::sort(profiles.begin(), profiles.end(), iccProfileLessThan);
 
-    Q_FOREACH (IccProfile profile, profiles) // krazy:exclude=foreach
+    for (IccProfile profile : std::as_const(profiles))
     {
         QString description = profileUserString(profile);
 
