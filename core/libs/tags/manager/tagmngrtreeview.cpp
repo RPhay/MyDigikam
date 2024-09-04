@@ -68,7 +68,7 @@ void TagMngrTreeView::contextMenuEvent(QContextMenuEvent* event)
     std::sort(selectedItems.begin(), selectedItems.end());
     QList<TAlbum*> items;
 
-    Q_FOREACH (const QModelIndex& mIndex, selectedItems)
+    for (const QModelIndex& mIndex : std::as_const(selectedItems))
     {
         TAlbum* const temp = static_cast<TAlbum*>(albumForIndex(mIndex));
         items.append(temp);

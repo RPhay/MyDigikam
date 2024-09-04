@@ -866,7 +866,7 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
 {
     QList<QAction*> actionList = actions();
 
-    Q_FOREACH (QAction* const action, actionList)
+    for (QAction* const action : std::as_const(actionList))
     {
         if (action->data().toInt() == album->id())
         {    // cppcheck-suppress useStlAlgorithm

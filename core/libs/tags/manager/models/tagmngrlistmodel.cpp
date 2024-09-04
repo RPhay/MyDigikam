@@ -158,7 +158,7 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {

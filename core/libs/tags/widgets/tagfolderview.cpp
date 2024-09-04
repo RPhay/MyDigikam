@@ -252,7 +252,7 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
 
         QList<TAlbum*> toFaceTags;
 
-        Q_FOREACH (TAlbum* const tag, albums)
+        for (TAlbum* const tag : std::as_const(albums))
         {
             if (!FaceTags::isPerson(tag->id()))
             {
@@ -301,7 +301,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
     std::sort(selectedItems.begin(), selectedItems.end());
     QList<TAlbum*> items;
 
-    Q_FOREACH (const QModelIndex& mIndex, selectedItems)
+    for (const QModelIndex& mIndex : std::as_const(selectedItems))
     {
         TAlbum* const temp = static_cast<TAlbum*>(albumForIndex(mIndex));
         items.append(temp);
@@ -323,7 +323,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
     setContexMenuItems(cmhelper, items);
 
 /*
-    Q_FOREACH (ContextMenuElement* const element, d->contextMenuElements)
+    for (ContextMenuElement* const element : std::as_const(d->contextMenuElements))
     {
         element->addActions(this, cmhelper, album);
     }
