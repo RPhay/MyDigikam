@@ -127,7 +127,7 @@ void TagList::restoreSettings()
         return;
     }
 
-    Q_FOREACH (const QString& item, itemList)
+    for (const QString& item : std::as_const(itemList))
     {
         QList<QVariant> itemData;
         itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
@@ -170,7 +170,7 @@ void TagList::slotAddPressed()
     QList<QVariant> itemData;
     itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
 
-    Q_FOREACH (const QModelIndex& index, selected)
+    for (const QModelIndex& index : std::as_const(selected))
     {
         TAlbum* const album = static_cast<TAlbum*>(d->treeView->albumForIndex(index));
         itemData << album->id();
@@ -193,7 +193,7 @@ void TagList::slotSelectionChanged()
     QModelIndexList indexList = d->tagList->mySelectedIndexes();
     QSet<int> mySet;
 
-    Q_FOREACH (const QModelIndex& index, indexList)
+    for (const QModelIndex& index : std::as_const(indexList))
     {
         ListItem* const item = static_cast<ListItem*>(index.internalPointer());
 
@@ -227,7 +227,7 @@ void TagList::slotTagDeleted(Album* album)
 
     QList<ListItem*> items = d->tagMap[delId];
 
-    Q_FOREACH (ListItem* const item, items)
+    for (ListItem* const item : std::as_const(items))
     {
         item->removeTagId(delId);
 
@@ -249,7 +249,7 @@ void TagList::slotDeleteSelected()
         return;
     }
 
-    Q_FOREACH (const QModelIndex& index, sel)
+    for (const QModelIndex& index : std::as_const(sel))
     {
         ListItem* const item = static_cast<ListItem*>(index.internalPointer());
         d->tagListModel->deleteItem(item);

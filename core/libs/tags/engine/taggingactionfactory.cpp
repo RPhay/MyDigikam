@@ -195,7 +195,7 @@ QList<TaggingAction> TaggingActionFactory::actions() const
         }
     }
 
-    Q_FOREACH (int id, completionEntries)
+    for (int id : std::as_const(completionEntries))
     {
         if (d->constraintInterface && !d->constraintInterface->matches(id))
         {
@@ -215,7 +215,7 @@ QList<TaggingAction> TaggingActionFactory::actions() const
             // a tag is currently selected in the listbox, we have the choice of toplevel and underparent for a new tag
             // the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
 
-            Q_FOREACH (const TaggingAction& assignAction, assignActions)
+            for (const TaggingAction& assignAction : std::as_const(assignActions))
             {
                 actions << assignAction;
             }
@@ -232,7 +232,7 @@ QList<TaggingAction> TaggingActionFactory::actions() const
             // no tag is currently selected in the listbox, only toplevel choice for a new tag
             // the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
 
-            Q_FOREACH (const TaggingAction& assignAction, assignActions)
+            for (const TaggingAction& assignAction : std::as_const(assignActions))
             {
                 actions << assignAction;
             }
@@ -245,7 +245,7 @@ QList<TaggingAction> TaggingActionFactory::actions() const
         // Case C
         // the entire text currently written by the user exists as a tag
 
-        Q_FOREACH (const TaggingAction& assignAction, assignActions)
+        for (const TaggingAction& assignAction : std::as_const(assignActions))
         {
             actions << assignAction;
 
@@ -448,7 +448,7 @@ TaggingAction TaggingActionFactory::defaultTaggingAction(const QString& tagName,
 
                 QMap<QString, int> map;
 
-                Q_FOREACH (int id, tagIds)
+                for (int id : std::as_const(tagIds))
                 {
                     map[TagsCache::instance()->tagPath(id, TagsCache::NoLeadingSlash)] = id;
                 }

@@ -265,7 +265,7 @@ void TagsManager::slotDeleteAction()
     QStringList tagsWithImages;
     QMultiMap<int, TAlbum*> sortedTags;
 
-    Q_FOREACH (const QModelIndex& index, selected)
+    for (const QModelIndex& index : std::as_const(selected))
     {
         if (!index.isValid())
         {
@@ -618,7 +618,7 @@ void TagsManager::slotRemoveTagsFromImgs()
         return;
     }
 
-    Q_FOREACH (const QModelIndex& index, selList)
+    for (const QModelIndex& index : std::as_const(selList))
     {
         TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(index));
 
@@ -871,7 +871,7 @@ void TagsManager::setHelpText(QAction* const action, const QString& text)
 
 void TagsManager::enableRootTagActions(bool value)
 {
-    Q_FOREACH (QAction* const action, d->rootDisabledOptions)
+    for (QAction* const action : std::as_const(d->rootDisabledOptions))
     {
         if (value)
         {
@@ -963,7 +963,7 @@ void TagsManager::slotMarkNotAssignedTags()
     model->clearSelection();
     QList<int> toMark;
 
-    Q_FOREACH (const QModelIndex& index, redNodes)
+    for (const QModelIndex& index : std::as_const(redNodes))
     {
         QModelIndex current = index;
 
@@ -971,10 +971,12 @@ void TagsManager::slotMarkNotAssignedTags()
         {
             TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
-            if (t                                     &&
+            if (
+                t                                     &&
                 !t->isRoot()                          &&
                 !t->isInternalTag()                   &&
-                !FaceTags::isSystemPersonTagId(t->id()))
+                !FaceTags::isSystemPersonTagId(t->id())
+               )
             {
                 QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(t->id());
 
