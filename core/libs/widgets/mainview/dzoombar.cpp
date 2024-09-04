@@ -115,7 +115,7 @@ DZoomBar::DZoomBar(QWidget* const parent)
     zoomLevels << 800.0;
     zoomLevels << 1200.0;
 
-    Q_FOREACH (const double zoom, zoomLevels)
+    for (const double zoom : std::as_const(zoomLevels))
     {
         d->zoomCombo->addItem(QString::fromLatin1("%1%").arg((int)zoom), QVariant(zoom));
     }

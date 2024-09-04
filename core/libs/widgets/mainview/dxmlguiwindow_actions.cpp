@@ -26,7 +26,7 @@ void DXmlGuiWindow::registerPluginsActions()
 
     QList<DPluginAction*> actions = dpl->pluginsActions(DPluginAction::Generic, this);
 
-    Q_FOREACH (DPluginAction* const ac, actions)
+    for (DPluginAction* const ac : std::as_const(actions))
     {
         actionCollection()->addActions(QList<QAction*>() << ac);
         actionCollection()->setDefaultShortcuts(ac, ac->shortcuts());
@@ -112,7 +112,9 @@ void DXmlGuiWindow::cleanupActions()
     if (ac) actionCollection()->removeAction(ac);
 
 /*
-    Q_FOREACH (QAction* const act, actionCollection()->actions())
+    const auto acol = actionCollection()->actions();
+
+    for (QAction* const act : acol)
     {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "action: " << act->objectName();
     }
