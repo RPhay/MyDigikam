@@ -55,7 +55,7 @@ void CollectionScanner::safelyRemoveAlbums(const QList<int>& albumIds)
     CoreDbAccess access;
     CoreDbTransaction transaction(&access);
 
-    Q_FOREACH (int albumId, albumIds)
+    for (int albumId : std::as_const(albumIds))
     {
         QList<qlonglong> ids = access.db()->getItemIDsInAlbum(albumId);
         access.db()->removeItemsFromAlbum(albumId, ids);
@@ -129,7 +129,9 @@ void CollectionScanner::copyFileProperties(const ItemInfo& source, const ItemInf
 
     // Copy public tags
 
-    Q_FOREACH (int tagId, TagsCache::instance()->publicTags(source.tagIds()))
+    const auto ids = TagsCache::instance()->publicTags(source.tagIds());
+
+    for (int tagId : ids)
     {
         dest.setTag(tagId);
     }
@@ -183,7 +185,7 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
 
     if (d->recordHistoryIds)
     {
-        Q_FOREACH (const qlonglong& id, relatedImages)
+        for (const qlonglong& id : std::as_const(relatedImages))
         {
             d->needTaggingHistorySet << id;
         }
@@ -465,7 +467,7 @@ void CollectionScanner::scanAlbums()
         QStringList fileList(dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot));
         CoreDbTransaction transaction;
 
-        Q_FOREACH (const QString& dir, fileList)
+        for (const QString& dir : std::as_const(fileList))
         {
             scanAlbum(*it, QLatin1Char('/') + dir);
         }

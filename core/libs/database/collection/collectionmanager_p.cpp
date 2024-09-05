@@ -67,7 +67,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
         udisToWatch.clear();
     }
 
-    Q_FOREACH (const Solid::Device& accessDevice, devices)
+    for (const Solid::Device& accessDevice : std::as_const(devices))
     {
         // check for StorageAccess
 
@@ -251,7 +251,7 @@ QString CollectionManager::Private::networkShareIdentifier(const QStringList& pa
 
     QUrlQuery q(url);
 
-    Q_FOREACH (const QString& path, paths)
+    for (const QString& path : std::as_const(paths))
     {
         q.addQueryItem(QLatin1String("mountpath"), path);
     }
@@ -296,7 +296,7 @@ QString CollectionManager::Private::directoryHash(const QString& path)
         QStringList entries = dir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
         QCryptographicHash md5(QCryptographicHash::Md5);
 
-        Q_FOREACH (const QString& entry, entries)
+        for (const QString& entry : std::as_const(entries))
         {
             md5.addData(entry.toUtf8());
         }
@@ -323,7 +323,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         QString uuid = QUrlQuery(url).queryItemValue(QLatin1String("uuid"));
         QList<SolidVolumeInfo> candidateVolumes;
 
-        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
+        for (const SolidVolumeInfo& volume : std::as_const(volumes))
         {
             QString volPath = volume.path;
             volPath.chop(1);
@@ -355,7 +355,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
     if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
     {
-        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
+        for (const SolidVolumeInfo& volume : std::as_const(volumes))
         {
             if (volume.uuid.compare(queryItem, Qt::CaseInsensitive) == 0)
             {    // cppcheck-suppress useStlAlgorithm
@@ -374,7 +374,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
         QList<SolidVolumeInfo> candidateVolumes;
 
-        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
+        for (const SolidVolumeInfo& volume : std::as_const(volumes))
         {
             if (volume.label == queryItem)
             {
@@ -391,7 +391,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
         bool hasOtherLocation = false;
 
-        Q_FOREACH (AlbumRootLocation* const otherLocation, locations)
+        for (AlbumRootLocation* const otherLocation : std::as_const(locations))
         {
             if (otherLocation == location)
             {
@@ -433,7 +433,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
             // match against directory hash
 
-            Q_FOREACH (const SolidVolumeInfo& volume, candidateVolumes)
+            for (const SolidVolumeInfo& volume : std::as_const(candidateVolumes))
             {
                 QString volumeDirHash = directoryHash(volume.path);
 
@@ -448,7 +448,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
     }
     else if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("mountpath"))).isNull())
     {
-        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
+        for (const SolidVolumeInfo& volume : std::as_const(volumes))
         {
             if (volume.isMounted && (volume.path == queryItem))
             {    // cppcheck-suppress useStlAlgorithm
@@ -514,7 +514,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForUrl(const QUrl& fileUrl
     // FIXME: Network shares! Here we get only the volume of the mount path...
     // This is probably not really clean. But Solid does not help us.
 
-    Q_FOREACH (const SolidVolumeInfo& v, volumes)
+    for (const SolidVolumeInfo& v : std::as_const(volumes))
     {
         if (v.isMounted && !v.path.isEmpty() && path.startsWith(v.path))
         {
@@ -542,7 +542,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
 
     QReadLocker readLocker(&lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, locations)
+    for (AlbumRootLocation* const location : std::as_const(locations))
     {
         const QUrl locationPathUrl = QUrl::fromLocalFile(location->albumRootPath());
 /*
@@ -561,7 +561,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
         {
             bool isDeleted = false;
 
-            Q_FOREACH (const CollectionLocation& deletedLoc, assumeDeleted)
+            for (const CollectionLocation& deletedLoc : std::as_const(assumeDeleted))
             {
                 if (deletedLoc.id() == location->id())
                 {   // cppcheck-suppress useStlAlgorithm

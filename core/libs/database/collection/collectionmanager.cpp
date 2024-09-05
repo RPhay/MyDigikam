@@ -127,10 +127,11 @@ void CollectionManager::clearLocations()
         d->locations.clear();
     }
 
-    Q_FOREACH (AlbumRootLocation* const location, oldLocations)
+    for (AlbumRootLocation* const location : std::as_const(oldLocations))
     {
         CollectionLocation::Status statusOld = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
+
         Q_EMIT locationStatusChanged(*location, statusOld);
 
         delete location;

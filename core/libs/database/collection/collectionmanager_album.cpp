@@ -23,7 +23,7 @@ QStringList CollectionManager::allAvailableAlbumRootPaths()
 
     QStringList list;
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {
@@ -76,7 +76,7 @@ QString CollectionManager::albumRootPath(const QString& givenPath)
 {
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         QString rootPath = location->albumRootPath();
         QString filePath = QDir::fromNativeSeparators(givenPath);
@@ -104,7 +104,7 @@ bool CollectionManager::isAlbumRoot(const QString& filePath)
 {
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (filePath == location->albumRootPath())
         {   // cppcheck-suppress useStlAlgorithm
@@ -124,7 +124,7 @@ QString CollectionManager::album(const QString& filePath)
 {
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         QString rootPath = location->albumRootPath();
 
@@ -193,7 +193,7 @@ QString CollectionManager::oneAlbumRootPath()
 {
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {   // cppcheck-suppress useStlAlgorithm
@@ -234,7 +234,7 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
                 {
                     QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
 
-                    Q_FOREACH (const AlbumRootInfo& info, infos)
+                    for (const AlbumRootInfo& info : std::as_const(infos))
                     {
                         if (info.id == location->id())
                         {    // cppcheck-suppress useStlAlgorithm
