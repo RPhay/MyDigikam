@@ -245,7 +245,7 @@ void AbstractAlbumTreeView::slotSearchTextSettingsAboutToChange(bool searched, b
         // selection is ignored here because the user may have changed this
         // while searching
 
-        Q_FOREACH (const int& expandedId, expansion)
+        for (const int& expandedId : std::as_const(expansion))
         {
             d->searchBackup[expandedId].expanded = true;
         }
@@ -654,7 +654,7 @@ void AbstractAlbumTreeView::doLoadState()
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "selection: " << selection;
 */
-    Q_FOREACH (const QString& key, selection)
+    for (const QString& key : std::as_const(selection))
     {
         bool validId;
         const int id = key.toInt(&validId);
@@ -677,7 +677,7 @@ void AbstractAlbumTreeView::doLoadState()
     {
         QList<AlbumRootInfo> roots = CoreDbAccess().db()->getAlbumRoots();
 
-        Q_FOREACH (const AlbumRootInfo& info, roots)
+        for (const AlbumRootInfo& info : std::as_const(roots))
         {
             int albumId = CoreDbAccess().db()->getAlbumForPath(info.id, QLatin1String("/"), false);
 
@@ -689,7 +689,7 @@ void AbstractAlbumTreeView::doLoadState()
     }
     else
     {
-        Q_FOREACH (const QString& key, expansion)
+        for (const QString& key : std::as_const(expansion))
         {
             bool validId;
             const int id = key.toInt(&validId);
@@ -883,7 +883,7 @@ void AbstractAlbumTreeView::slotExpandNode()
     QItemSelectionModel* const model = selectionModel();
     QModelIndexList selected         = model->selectedIndexes();
 
-    Q_FOREACH (const QModelIndex& index, selected)
+    for (const QModelIndex& index : std::as_const(selected))
     {
         expandRecursively(index);
     }
@@ -896,7 +896,7 @@ void AbstractAlbumTreeView::slotCollapseNode()
 
     QQueue<QModelIndex> greyNodes;
 
-    Q_FOREACH (const QModelIndex& index, selected)
+    for (const QModelIndex& index : std::as_const(selected))
     {
         greyNodes.append(index);
         collapse(index);
@@ -1134,7 +1134,7 @@ void AbstractAlbumTreeView::contextMenuEvent(QContextMenuEvent* event)
 
     addCustomContextMenuActions(cmhelper, album);
 
-    Q_FOREACH (ContextMenuElement* const element, d->contextMenuElements)
+    for (ContextMenuElement* const element : std::as_const(d->contextMenuElements))
     {
         element->addActions(this, cmhelper, album);
     }

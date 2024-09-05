@@ -317,8 +317,9 @@ void AlbumSelectionTreeView::slotRepairHiddenItems()
     }
 
     int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
+    const auto ids = CoreDbAccess().db()->getItemIDsInAlbum(album->id());
 
-    Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
+    for (const qlonglong& id : ids)
     {
         ItemInfo info(id);
 

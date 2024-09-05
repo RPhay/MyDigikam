@@ -129,8 +129,9 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
     writer.setFieldOperator(SearchXml::standardFieldOperator());
     QList<int>      ratings;
     QList<int>      colorsAndPicks;
+    const auto rates = selectedLabels[LabelsTreeView::Ratings];
 
-    Q_FOREACH (int rate, selectedLabels[LabelsTreeView::Ratings])
+    for (int rate : rates)
     {
         if (rate == RatingMin)
         {
@@ -140,12 +141,16 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
         ratings << rate;
     }
 
-    Q_FOREACH (int color, selectedLabels[LabelsTreeView::Colors])
+    const auto cols = selectedLabels[LabelsTreeView::Colors];
+
+    for (int color : cols)
     {
         colorsAndPicks << TagsCache::instance()->tagForColorLabel(color);
     }
 
-    Q_FOREACH (int pick, selectedLabels[LabelsTreeView::Picks])
+    const auto picks = selectedLabels[LabelsTreeView::Picks];
+
+    for (int pick : std::as_const(picks))
     {
         colorsAndPicks << TagsCache::instance()->tagForPickLabel(pick);
     }
@@ -159,7 +164,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
 
     if (!ratings.isEmpty())
     {
-        Q_FOREACH (int rate, ratings)
+        for (int rate : std::as_const(ratings))
         {
             writer.writeGroup();
             writer.writeField(QLatin1String("rating"), SearchXml::Equal);
@@ -570,7 +575,7 @@ void AlbumLabelsSearchHandler::slotData(const QList<ItemListerRecord>& data)
 
     QList<QUrl> urlList;
 
-    Q_FOREACH (const ItemListerRecord& record, data)
+    for (const ItemListerRecord& record : std::as_const(data))
     {
         ItemInfo info(record);
         urlList << info.fileUrl();

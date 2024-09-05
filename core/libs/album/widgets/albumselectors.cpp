@@ -344,7 +344,7 @@ QList<int> AlbumSelectors::selectedAlbumIds() const
     QList<int> albumIds;
     AlbumList  albums = selectedAlbums();
 
-    Q_FOREACH (Album* const album, albums)
+    for (Album* const album : std::as_const(albums))
     {
         albumIds << album->id();
     }
@@ -378,7 +378,7 @@ QList<int> AlbumSelectors::selectedTagIds() const
     QList<int> tagIds;
     AlbumList  tags = selectedTags();
 
-    Q_FOREACH (Album* const tag, tags)
+    for (Album* const tag : std::as_const(tags))
     {
         tagIds << tag->id();
     }

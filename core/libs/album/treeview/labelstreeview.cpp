@@ -244,7 +244,9 @@ QHash<LabelsTreeView::Labels, QList<int> > LabelsTreeView::selectedLabels()
     }
     else
     {
-        Q_FOREACH (QTreeWidgetItem* const item, selectedItems())
+        const auto items = selectedItems();
+
+        for (QTreeWidgetItem* const item : items)
         {
             if      (item->parent() == d->ratings)
             {
@@ -281,7 +283,7 @@ void LabelsTreeView::doLoadState()
     d->picks->setExpanded(true);
     d->colors->setExpanded(true);
 
-    Q_FOREACH (int parent, expansion)
+    for (int parent : std::as_const(expansion))
     {
         switch (parent)
         {
@@ -309,7 +311,7 @@ void LabelsTreeView::doLoadState()
         }
     }
 
-    Q_FOREACH (int rating, selectedRatings)
+    for (int rating : std::as_const(selectedRatings))
     {
         if (d->isCheckableTreeView)
         {
@@ -321,7 +323,7 @@ void LabelsTreeView::doLoadState()
         }
     }
 
-    Q_FOREACH (int pick, selectedPicks)
+    for (int pick : std::as_const(selectedPicks))
     {
         if (d->isCheckableTreeView)
         {
@@ -333,7 +335,7 @@ void LabelsTreeView::doLoadState()
         }
     }
 
-    Q_FOREACH (int color, selectedColors)
+    for (int color : std::as_const(selectedColors))
     {
         if (d->isCheckableTreeView)
         {
@@ -455,7 +457,7 @@ void LabelsTreeView::initPicksTree()
                  << QLatin1String("flag-yellow")
                  << QLatin1String("flag-green");
 
-    Q_FOREACH (const QString& pick, pickSetNames)
+    for (const QString& pick : std::as_const(pickSetNames))
     {
         QTreeWidgetItem* const pickWidgetItem = getOrCreateItem(d->picks);
         pickWidgetItem->setText(0, pick);
@@ -490,7 +492,7 @@ void LabelsTreeView::initColorsTree()
                   << i18nc("@item: color tree", "Gray")   << i18nc("@item: color tree", "Black")
                   << i18nc("@item: color tree", "White");
 
-    Q_FOREACH (const QString& color, colorSet)
+    for (const QString& color : std::as_const(colorSet))
     {
         QTreeWidgetItem* const colorWidgetItem = getOrCreateItem(d->colors);
         colorWidgetItem->setText(0, colorSetNames.at(colorSet.indexOf(color)));
@@ -540,17 +542,17 @@ void LabelsTreeView::restoreSelectionFromHistory(QHash<Labels, QList<int> > need
         ++it;
     }
 
-    Q_FOREACH (int rateItemIndex, neededLabels[Ratings])
+    for (int rateItemIndex : std::as_const(neededLabels[Ratings]))
     {
         d->ratings->child(rateItemIndex)->setSelected(true);
     }
 
-    Q_FOREACH (int pickItemIndex, neededLabels[Picks])
+    for (int pickItemIndex : std::as_const(neededLabels[Picks]))
     {
         d->picks->child(pickItemIndex)->setSelected(true);
     }
 
-    Q_FOREACH (int colorItemIndex, neededLabels[Colors])
+    for (int colorItemIndex : std::as_const(neededLabels[Colors]))
     {
         d->colors->child(colorItemIndex)->setSelected(true);
     }
