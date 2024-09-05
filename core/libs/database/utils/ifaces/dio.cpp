@@ -338,7 +338,9 @@ void DIO::createJob(IOJobData* const data)
                                                             QDir::Files   |
                                                             QDir::NoDotAndDotDot);
 
-        Q_FOREACH (const QUrl& url, data->sourceUrls())
+        const auto urls = data->sourceUrls();
+
+        for (const QUrl& url : urls)
         {
             if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName(), caseSensitivity))
             {
@@ -476,7 +478,9 @@ void DIO::slotResult()
             (operation == IOJobData::MoveImage)
            )
         {
-            Q_FOREACH (int albumID, data->srcAlbumIds())
+            const auto ids = data->srcAlbumIds();
+
+            for (int albumID : ids)
             {
                 updateAlbumDate(albumID);
             }
@@ -614,7 +618,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 addAlbumChildrenToList(albumsToCopy, data->srcAlbum());
 
-                Q_FOREACH (int albumId, albumsToCopy)
+                for (int albumId : std::as_const(albumsToCopy))
                 {
                     QString relativePath = access.db()->getAlbumRelativePath(albumId);
                     relativePath         = relativePath.section(basePath, 1, -1);
@@ -625,7 +629,7 @@ void DIO::slotOneProccessed(const QUrl& url)
                     access.db()->copyAlbumProperties(albumId, copyId);
                     const QList<qlonglong>& imageIds = access.db()->getItemIDsInAlbum(albumId);
 
-                    Q_FOREACH (const qlonglong& id, imageIds)
+                    for (const qlonglong& id : std::as_const(imageIds))
                     {
                         QString name     = access.db()->getItemName(id);
                         qlonglong itemId = access.db()->copyItem(albumId, name, copyId, name);
@@ -658,7 +662,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 addAlbumChildrenToList(albumsToMove, data->srcAlbum());
 
-                Q_FOREACH (int albumId, albumsToMove)
+                for (int albumId : std::as_const(albumsToMove))
                 {
                     QString relativePath = access.db()->getAlbumRelativePath(albumId);
                     relativePath         = relativePath.section(basePath, 1, -1);
@@ -690,12 +694,12 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 addAlbumChildrenToList(albumsToDelete, album);
 
-                Q_FOREACH (int albumId, albumsToDelete)
+                for (int albumId : std::as_const(albumsToDelete))
                 {
                     imagesToRemove << access.db()->getItemIDsInAlbum(albumId);
                 }
 
-                Q_FOREACH (const qlonglong& removeId, imagesToRemove)
+                for (const qlonglong& removeId : std::as_const(imagesToRemove))
                 {
                     ItemInfo info(removeId);
 
@@ -721,14 +725,14 @@ void DIO::slotOneProccessed(const QUrl& url)
                                                             QList<int>() << info.albumId());
                     }
 
-                    Q_FOREACH (const qlonglong& id, imageIdsFrom)
+                    for (const qlonglong& id : std::as_const(imageIdsFrom))
                     {
                         ItemScanner::resolveImageHistory(id);
                         ItemScanner::tagItemHistoryGraph(id);
                     }
                 }
 
-                Q_FOREACH (int albumId, albumsToDelete)
+                for (int albumId : std::as_const(albumsToDelete))
                 {
                     if (operation == IOJobData::Trash)
                     {
@@ -765,7 +769,7 @@ void DIO::slotOneProccessed(const QUrl& url)
                                                             QList<int>() << info.albumId());
                     }
 
-                    Q_FOREACH (const qlonglong& id, imageIdsFrom)
+                    for (const qlonglong& id : std::as_const(imageIdsFrom))
                     {
                         ItemScanner::resolveImageHistory(id);
                         ItemScanner::tagItemHistoryGraph(id);
