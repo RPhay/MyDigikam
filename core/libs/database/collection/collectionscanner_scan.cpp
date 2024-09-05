@@ -45,7 +45,7 @@ void CollectionScanner::completeScan()
 
         int count = 0;
 
-        Q_FOREACH (const CollectionLocation& location, allLocations)
+        for (const CollectionLocation& location : std::as_const(allLocations))
         {
             // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(location.albumRootPath());
@@ -82,7 +82,7 @@ void CollectionScanner::completeScan()
         Q_EMIT startScanningAlbumRoots();
     }
 
-    Q_FOREACH (const CollectionLocation& location, allLocations)
+    for (const CollectionLocation& location : std::as_const(allLocations))
     {
         scanAlbumRoot(location);
     }
@@ -160,7 +160,7 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
         int count = 0;
 
-        Q_FOREACH (const QString& path, sortedPaths)
+        for (const QString& path : std::as_const(sortedPaths))
         {
             // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(path);
@@ -169,7 +169,7 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
         Q_EMIT totalFilesToScan(count);
     }
 
-    Q_FOREACH (const QString& path, sortedPaths)
+    for (const QString& path : std::as_const(sortedPaths))
     {
         CollectionLocation location = CollectionManager::instance()->locationForPath(path);
         QString album               = CollectionManager::instance()->album(path);
@@ -214,7 +214,7 @@ void CollectionScanner::completeScanCleanupPart()
         CoreDbAccess access;
         QList<qlonglong> trashedItems = access.db()->getImageIds(DatabaseItem::Status::Trashed);
 
-        Q_FOREACH (const qlonglong& item, trashedItems)
+        for (const qlonglong& item : std::as_const(trashedItems))
         {
             access.db()->setItemStatus(item, DatabaseItem::Status::Obsolete);
         }
@@ -523,7 +523,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<CollectionLocation>& loca
 {
     QList<int> locationIdsToScan;
 
-    Q_FOREACH (const CollectionLocation& location, locations)
+    for (const CollectionLocation& location : std::as_const(locations))
     {
         locationIdsToScan << location.id();
     }
@@ -755,7 +755,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     QDate albumDateNew   = albumDateTime.date();
     const QString xmpExt(QLatin1String(".xmp"));
 
-    Q_FOREACH (const QFileInfo& info, list)
+    for (const QFileInfo& info : std::as_const(list))
     {
         if (!d->checkObserver())
         {
@@ -1266,7 +1266,7 @@ void CollectionScanner::finishHistoryScanning()
 
 void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
 {
-    Q_FOREACH (const qlonglong& id, ids)
+    for (const qlonglong& id : std::as_const(ids))
     {
         if (!d->checkObserver())
         {
@@ -1280,7 +1280,7 @@ void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
             QList<qlonglong> needTaggingIds;
             ItemScanner::resolveImageHistory(id, &needTaggingIds);
 
-            Q_FOREACH (const qlonglong& needTag, needTaggingIds)
+            for (const qlonglong& needTag : std::as_const(needTaggingIds))
             {
                 d->needTaggingHistorySet << needTag;
             }
@@ -1294,7 +1294,7 @@ void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
 
 void CollectionScanner::historyScanningStage3(const QList<qlonglong>& ids)
 {
-    Q_FOREACH (const qlonglong& id, ids)
+    for (const qlonglong& id : std::as_const(ids))
     {
         if (!d->checkObserver())
         {

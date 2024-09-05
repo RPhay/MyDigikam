@@ -310,7 +310,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
             {
                 bool hasOtherLocation = false;
 
-                Q_FOREACH (AlbumRootLocation* const otherLocation, d->locations)
+                for (AlbumRootLocation* const otherLocation : std::as_const(d->locations))
                 {
                     QUrl otherUrl(otherLocation->identifier);
 
@@ -529,7 +529,7 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
 
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         // Hardwired and unavailable?
 
@@ -572,7 +572,7 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
 
     // Find possible new volumes where the specific path is found.
 
-    Q_FOREACH (const SolidVolumeInfo& info, volumes)
+    for (const SolidVolumeInfo& info : std::as_const(volumes))
     {
         if (info.isMounted && !info.path.isEmpty())
         {
@@ -674,7 +674,7 @@ QList<CollectionLocation> CollectionManager::allLocations()
 
     QList<CollectionLocation> list;
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         list << *location;
     }
@@ -688,7 +688,7 @@ QList<CollectionLocation> CollectionManager::allAvailableLocations()
 
     QList<CollectionLocation> list;
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {
@@ -734,7 +734,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
 
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->albumRootPath() == albumRootPath)
         {   // cppcheck-suppress useStlAlgorithm
@@ -754,7 +754,7 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 {
     QReadLocker readLocker(&d->lock);
 
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
+    for (AlbumRootLocation* const location : std::as_const(d->locations))
     {
         QString rootPath = location->albumRootPath();
         QString filePath = QDir::fromNativeSeparators(givenPath);
@@ -789,7 +789,9 @@ void CollectionManager::updateLocations()
 
     // read information from database
 
-    Q_FOREACH (const AlbumRootInfo& info, CoreDbAccess().db()->getAlbumRoots())
+    const auto infos = CoreDbAccess().db()->getAlbumRoots();
+
+    for (const AlbumRootInfo& info : infos)
     {
         if (oldLocations.contains(info.id))
         {
@@ -809,7 +811,7 @@ void CollectionManager::updateLocations()
 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
 
-    Q_FOREACH (AlbumRootLocation* const location, newLocations)
+    for (AlbumRootLocation* const location : std::as_const(newLocations))
     {
         oldStatus << location->status();
         bool available = false;
@@ -817,7 +819,9 @@ void CollectionManager::updateLocations()
 
         if (location->type() == CollectionLocation::Network)
         {
-            Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
+            const auto pathes = d->networkShareMountPathsFromIdentifier(location);
+
+            for (const QString& path : pathes)
             {
                 QUrl url(location->identifier);
                 QString uuidValue = d->getCollectionUUID(path);
@@ -946,7 +950,7 @@ void CollectionManager::updateLocations()
 
     // Emit deleted old locations
 
-    Q_FOREACH (AlbumRootLocation* const location, oldLocations)
+    for (AlbumRootLocation* const location : std::as_const(oldLocations))
     {
         CollectionLocation::Status statusOld = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
@@ -960,7 +964,7 @@ void CollectionManager::updateLocations()
 
     int i = 0;
 
-    Q_FOREACH (AlbumRootLocation* const location, newLocations)
+    for (AlbumRootLocation* const location : std::as_const(newLocations))
     {
         if (oldStatus.at(i) != location->status())
         {
