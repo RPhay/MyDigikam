@@ -206,10 +206,7 @@ void Album::clear()
 
     while (!m_childCache.isEmpty())
     {
-        Album* const child = m_childCache.takeLast();
-        child->m_parent    = nullptr;
-
-        delete child;
+        delete m_childCache.takeLast();
     }
 }
 
