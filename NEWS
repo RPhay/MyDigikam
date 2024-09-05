@@ -70,7 +70,7 @@ BUGFIXES:
 056 ==> 492259 - Face recognition is working well but RECURRENT ISSUE on Photos that have been set in "portrait" mode.
 057 ==> 492271 - 8.3.0 -> 8.4.0 Upgrade Fails.
 058 ==> 492542 - Build failed with : metaengine.cpp:331:42: error: ‘as_const’ is not a member of ‘std’.
-059 ==> 
+059 ==> 490657 - AppImage: No system integration possible with AppImageLauncher.
 060 ==> 
 061 ==> 
 062 ==> 
