@@ -116,7 +116,9 @@ ScanControllerLoadingCacheFileWatch::ScanControllerLoadingCacheFileWatch()
 
 void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset& changeset)
 {
-    Q_FOREACH (const qlonglong& imageId, changeset.ids())
+    const auto ids = changeset.ids();
+
+    for (const qlonglong& imageId : ids)
     {
         DatabaseFields::Set changes = changeset.changes();
 

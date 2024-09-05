@@ -39,11 +39,11 @@ SidecarFinder::SidecarFinder(const QList<QUrl>& files)
     sidecarExtensions << QLatin1String("xmp");
     sidecarExtensions << MetaEngineSettings::instance()->settings().sidecarExtensions;
 
-    Q_FOREACH (const QUrl& url, files)
+    for (const QUrl& url : std::as_const(files))
     {
         QFileInfo info(url.toLocalFile());
 
-        Q_FOREACH (const QString& ext, sidecarExtensions)
+        for (const QString& ext : std::as_const(sidecarExtensions))
         {
             QString suffix(QLatin1Char('.') + ext);
 
@@ -77,7 +77,7 @@ SidecarFinder::SidecarFinder(const QList<QUrl>& files)
 
     // Now the files, if the user has selected sidecars, these are ignored.
 
-    Q_FOREACH (const QUrl& url, files)
+    for (const QUrl& url : std::as_const(files))
     {
         if (!localFiles.contains(url))
         {
@@ -98,20 +98,22 @@ GroupedImagesFinder::GroupedImagesFinder(const QList<ItemInfo>& source)
 {
     QSet<qlonglong> ids;
 
-    Q_FOREACH (const ItemInfo& info, source)
+    for (const ItemInfo& info : std::as_const(source))
     {
         ids << info.id();
     }
 
     infos.reserve(source.size());
 
-    Q_FOREACH (const ItemInfo& info, source)
+    for (const ItemInfo& info : std::as_const(source))
     {
         infos << info;
 
         if (info.hasGroupedImages())
         {
-            Q_FOREACH (const ItemInfo& groupedImage, info.groupedImages())
+            const auto imgs = info.groupedImages();
+
+            for (const ItemInfo& groupedImage : imgs)
             {
                 if (ids.contains(groupedImage.id()))
                 {

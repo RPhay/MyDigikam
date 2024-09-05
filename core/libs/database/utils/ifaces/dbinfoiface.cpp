@@ -174,7 +174,7 @@ public:
             QList<int> list;
             list << reader.valueToIntList();
 
-            Q_FOREACH (int imageId, list)
+            for (int imageId : std::as_const(list))
             {
                 ItemInfo imageInfo(imageId);
 
@@ -217,7 +217,7 @@ public:
             {
                 // if there were no error, fetch and process the results.
 
-                Q_FOREACH (const ItemListerRecord &record, receiver.records)
+                for (const ItemListerRecord& record : std::as_const(receiver.records))
                 {
                     ItemInfo imageInfo(record);
                     QUrl imageUrl = imageInfo.fileUrl();
@@ -245,7 +245,7 @@ public:
 
         if (!(withGroupedIsSet && withGrouped))
         {
-            Q_FOREACH (const QUrl& url, urlList)
+            for (const QUrl& url : std::as_const(urlList))
             {
                 ItemInfo info = ItemInfo::fromUrl(url);
 
@@ -262,7 +262,9 @@ public:
                         }
                     }
 
-                    Q_FOREACH (const ItemInfo& i, info.groupedImages())
+                    const auto imgs = info.groupedImages();
+
+                    for (const ItemInfo& i : imgs)
                     {
                         lst.removeOne(i.fileUrl());
                     }
@@ -676,7 +678,7 @@ QList<QUrl> DBInfoIface::albumsItems(const DAlbumIDs& lst) const
 {
     QList<QUrl> imageList;
 
-    Q_FOREACH (int gid, lst)
+    for (int gid : std::as_const(lst))
     {
         imageList << albumItems(gid);
     }
@@ -707,7 +709,7 @@ DBInfoIface::DAlbumIDs DBInfoIface::albumChooserItems() const
     AlbumList lst = d->albumsChooser->selectedAlbums();
     DAlbumIDs ids;
 
-    Q_FOREACH (Album* const a, lst)
+    for (Album* const a : std::as_const(lst))
     {
         if (a)
         {
@@ -802,8 +804,9 @@ QAbstractItemModel* DBInfoIface::tagFilterModel()
 QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
+    const auto urls = currentSelectedItems();
 
-    Q_FOREACH (const QUrl& url, currentSelectedItems())
+    for (const QUrl& url : urls)
     {
         ItemInfo info = ItemInfo::fromUrl(url);
         items << new ItemGPS(info);
