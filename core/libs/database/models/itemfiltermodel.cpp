@@ -160,7 +160,7 @@ QList<QModelIndex> ImageSortFilterModel::mapListToSource(const QList<QModelIndex
 {
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         sourceIndexes << mapToSourceItemModel(index);
     }
@@ -172,7 +172,7 @@ QList<QModelIndex> ImageSortFilterModel::mapListFromSource(const QList<QModelInd
 {
     QList<QModelIndex> indexes;
 
-    Q_FOREACH (const QModelIndex& index, sourceIndexes)
+    for (const QModelIndex& index : std::as_const(sourceIndexes))
     {
         indexes << mapFromSourceItemModel(index);
     }
@@ -195,7 +195,7 @@ QList<ItemInfo> ImageSortFilterModel::imageInfos(const QList<QModelIndex>& index
     QList<ItemInfo> infos;
     ItemModel* const model = sourceItemModel();
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << model->imageInfo(mapToSourceItemModel(index));
     }
@@ -208,7 +208,7 @@ QList<qlonglong> ImageSortFilterModel::imageIds(const QList<QModelIndex>& indexe
     QList<qlonglong> ids;
     ItemModel* const model = sourceItemModel();
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ids << model->imageId(mapToSourceItemModel(index));
     }
@@ -783,7 +783,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
 
     if (needPrepareComments)
     {
-        Q_FOREACH (const ItemInfo& info, package.infos)
+        for (const ItemInfo& info : std::as_const(package.infos))
         {
             info.comment();
         }
@@ -817,7 +817,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
         infoList.loadGroupImageIds();
     }
 
-    Q_FOREACH (ItemFilterModelPrepareHook* const hook, prepareHooks)
+    for (ItemFilterModelPrepareHook* const hook : std::as_const(prepareHooks))
     {
         hook->prepare(package.infos);
     }
@@ -855,7 +855,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 
     if      (hasOneMatch && hasOneMatchForText)
     {
-        Q_FOREACH (const ItemInfo& info, package.infos)
+        for (const ItemInfo& info : std::as_const(package.infos))
         {
             package.filterResults[info.id()] = (
                                                 localFilter.matches(info)        &&
@@ -868,7 +868,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     {
         bool matchForText;
 
-        Q_FOREACH (const ItemInfo& info, package.infos)
+        for (const ItemInfo& info : std::as_const(package.infos))
         {
             package.filterResults[info.id()] = (
                                                 localFilter.matches(info, &matchForText) &&
@@ -886,7 +886,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     {
         bool result, matchForText;
 
-        Q_FOREACH (const ItemInfo& info, package.infos)
+        for (const ItemInfo& info : std::as_const(package.infos))
         {
             result                           = (
                                                 localFilter.matches(info, &matchForText) &&
@@ -1250,7 +1250,9 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
     // is one of our images affected?
 
-    Q_FOREACH (const qlonglong& id, changeset.ids())
+    const auto ids = changeset.ids();
+
+    for (const qlonglong& id : ids)
     {
         // if one matching image id is found, trigger a refresh
 
@@ -1293,8 +1295,9 @@ void ItemFilterModel::slotImageChange(const ImageChangeset& changeset)
     // is one of our images affected?
 
     bool imageAffected = false;
+    const auto ids     = changeset.ids();
 
-    Q_FOREACH (const qlonglong& id, changeset.ids())
+    for (const qlonglong& id : ids)
     {
         // if one matching image id is found, trigger a refresh
 
