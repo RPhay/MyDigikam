@@ -297,7 +297,7 @@ void FieldQueryBuilder::addChoiceIntField(const QString& name)
             sql += QLatin1String(") ");
         }
 
-        Q_FOREACH (int v, values)
+        for (int v : std::as_const(values))
         {
             *boundValues << v;
         }
@@ -319,7 +319,7 @@ void FieldQueryBuilder::addLongListField(const QString& name)
         CoreDB::addBoundValuePlaceholders(sql, values.size());
         sql += QLatin1String(") ");
 
-        Q_FOREACH (const qlonglong& v, values)
+        for (const qlonglong& v : std::as_const(values))
         {
             *boundValues << v;
         }
@@ -357,7 +357,7 @@ void FieldQueryBuilder::addIntBitmaskField(const QString& name)
             sql += QLatin1String("OR ") + name + QLatin1String(" IS NULL ");
         }
 
-        Q_FOREACH (int v, values)
+        for (int v : std::as_const(values))
         {
             *boundValues << v;
         }
@@ -393,7 +393,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
 
         QStringList simpleValues, wildcards;
 
-        Q_FOREACH (const QString& value, values)
+        for (const QString& value : std::as_const(values))
         {
             if (value.contains(QLatin1Char('*')))
             {
@@ -414,7 +414,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
             sql           += name + QLatin1String(" IN (");
             CoreDB::addBoundValuePlaceholders(sql, simpleValues.size());
 
-            Q_FOREACH (const QString& value, simpleValues)
+            for (const QString& value : std::as_const(simpleValues))
             {
                 *boundValues << value;
             }
@@ -424,7 +424,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
 
         if (!wildcards.isEmpty())
         {
-            Q_FOREACH (QString wildcard, wildcards) // krazy:exclude=foreach
+            for (QString wildcard : std::as_const(wildcards))
             {
                 ItemQueryBuilder::addSqlOperator(sql, SearchXml::Or, firstCondition);
                 firstCondition = false;

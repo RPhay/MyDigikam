@@ -24,7 +24,7 @@ namespace Digikam
 
 ItemQueryPostHooks::~ItemQueryPostHooks()
 {
-    Q_FOREACH (const ItemQueryPostHook* const hook, m_postHooks)
+    for (const ItemQueryPostHook* const hook : std::as_const(m_postHooks))
     {
         delete hook;
     }
@@ -37,7 +37,7 @@ void ItemQueryPostHooks::addHook(ItemQueryPostHook* const hook)
 
 bool ItemQueryPostHooks::checkPosition(double latitudeNumber, double longitudeNumber)
 {
-    Q_FOREACH (ItemQueryPostHook* const hook, m_postHooks)
+    for (ItemQueryPostHook* const hook : std::as_const(m_postHooks))
     {
         if (!hook->checkPosition(latitudeNumber, longitudeNumber))
         {   // cppcheck-suppress useStlAlgorithm
