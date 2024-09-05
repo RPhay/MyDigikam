@@ -197,14 +197,16 @@ void AlbumManager::updateChangedPAlbums()
 
     // scan db and get a list of all albums
 
-    QList<AlbumInfo> currentAlbums = CoreDbAccess().db()->scanAlbums();
-    bool needScanPAlbums           = false;
+    const auto currentAlbums = CoreDbAccess().db()->scanAlbums();
+    const auto changedList   = d->changedPAlbums;
+    bool needScanPAlbums     = false;
+
 
     // Find the AlbumInfo for each id in changedPAlbums
 
-    for (int id : std::as_const(d->changedPAlbums))
+    for (int id : changedList)
     {
-        for (const AlbumInfo& info : std::as_const(currentAlbums))
+        for (const AlbumInfo& info : currentAlbums)
         {
             if (info.id == id)
             {
