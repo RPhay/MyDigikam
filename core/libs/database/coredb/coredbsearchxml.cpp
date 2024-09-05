@@ -680,7 +680,7 @@ void SearchXmlWriter::writeValue(const QList<int>& valueList)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (int i, valueList)
+    for (int i : std::as_const(valueList))
     {
         writeTextElement(listitem, QString::number(i));
     }
@@ -690,7 +690,7 @@ void SearchXmlWriter::writeValue(const QList<qlonglong>& valueList)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (int i, valueList)
+    for (int i : std::as_const(valueList))
     {
         writeTextElement(listitem, QString::number(i));
     }
@@ -700,7 +700,7 @@ void SearchXmlWriter::writeValue(const QList<float>& valueList, int precision)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (double i, valueList)
+    for (double i : std::as_const(valueList))
     {
         writeTextElement(listitem, QString::number(i, 'g', precision));
     }
@@ -710,7 +710,7 @@ void SearchXmlWriter::writeValue(const QList<double>& valueList, int precision)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (double i, valueList)
+    for (double i : std::as_const(valueList))
     {
         writeTextElement(listitem, QString::number(i, 'g', precision));
     }
@@ -720,7 +720,7 @@ void SearchXmlWriter::writeValue(const QList<QDateTime>& valueList)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (const QDateTime& dt, valueList)
+    for (const QDateTime& dt : std::as_const(valueList))
     {
         writeTextElement(listitem, dt.toString(Qt::ISODate));
     }
@@ -730,7 +730,7 @@ void SearchXmlWriter::writeValue(const QStringList& valueList)
 {
     QString listitem(QLatin1String("listitem"));
 
-    Q_FOREACH (const QString& str, valueList)
+    for (const QString& str : std::as_const(valueList))
     {
         writeTextElement(listitem, str);
     }
@@ -911,7 +911,7 @@ QStringList KeywordSearch::split(const QString& keywords)
     QStringList keywordList;
     int quotationMarkCount = (keywords.startsWith(QLatin1Char('"')) ? 1 : 0);
 
-    Q_FOREACH (const QString& group, quotationMarkList)
+    for (const QString& group : std::as_const(quotationMarkList))
     {
         if (quotationMarkCount % 2)
         {
@@ -1127,7 +1127,7 @@ QString KeywordSearchWriter::xml(const QStringList& keywordList)
 {
     writeGroup();
 
-    Q_FOREACH (const QString& keyword, keywordList)
+    for (const QString& keyword : std::as_const(keywordList))
     {
         writeField(QLatin1String("keyword"), SearchXml::Like);
         writeValue(keyword);
@@ -1255,7 +1255,7 @@ QList<int> SearchXmlCachingReader::valueToIntList()
     QStringList list = valueToStringList();
     QList<int> intList;
 
-    Q_FOREACH (const QString& s, list)
+    for (const QString& s : std::as_const(list))
     {
         double val = s.toDouble();
         intList << (int)val;
@@ -1272,7 +1272,7 @@ QList<qlonglong> SearchXmlCachingReader::valueToLongLongList()
     QStringList list = valueToStringList();
     QList<qlonglong> qlonglongList;
 
-    Q_FOREACH (const QString& s, list)
+    for (const QString& s : std::as_const(list))
     {
         double val = s.toDouble();
         qlonglongList << (qlonglong)val;
@@ -1289,7 +1289,7 @@ QList<double> SearchXmlCachingReader::valueToDoubleList()
     QStringList list = valueToStringList();
     QList<double> doubleList;
 
-    Q_FOREACH (const QString& s, list)
+    for (const QString& s : std::as_const(list))
     {
         doubleList << s.toDouble();
     }
@@ -1305,7 +1305,7 @@ QList<QDateTime> SearchXmlCachingReader::valueToDateTimeList()
     QStringList list = valueToStringList();
     QList<QDateTime> doubleList;
 
-    Q_FOREACH (const QString& s, list)
+    for (const QString& s : std::as_const(list))
     {
         doubleList << QDateTime::fromString(s, Qt::ISODate);
     }
@@ -1331,7 +1331,7 @@ QList<int> SearchXmlCachingReader::valueToIntOrIntList()
         QList<int> intList = SearchXmlReader::valueToIntOrIntList();
         QList<QVariant> varList;
 
-        Q_FOREACH (int v, intList)
+        for (int v : std::as_const(intList))
         {
             varList << v;
         }
@@ -1345,7 +1345,7 @@ QList<int> SearchXmlCachingReader::valueToIntOrIntList()
     QList<int> intList;
     QList<QVariant> varList = m_value.toList();
 
-    Q_FOREACH (const QVariant& var, varList)
+    for (const QVariant& var : std::as_const(varList))
     {
         intList << var.toInt();
     }
@@ -1360,7 +1360,7 @@ QList<double> SearchXmlCachingReader::valueToDoubleOrDoubleList()
         QList<double> doubleList = SearchXmlReader::valueToDoubleOrDoubleList();
         QList<QVariant> varList;
 
-        Q_FOREACH (double v, doubleList)
+        for (double v : std::as_const(doubleList))
         {
             varList << v;
         }
@@ -1374,7 +1374,7 @@ QList<double> SearchXmlCachingReader::valueToDoubleOrDoubleList()
     QList<double> doubleList;
     QList<QVariant> varList = m_value.toList();
 
-    Q_FOREACH (const QVariant& var, varList)
+    for (const QVariant& var : std::as_const(varList))
     {
         doubleList << var.toDouble();
     }
@@ -1386,10 +1386,10 @@ QList<QString> SearchXmlCachingReader::valueToStringOrStringList()
 {
     if (!m_readValue)
     {
-        QList<QString> QStringList = SearchXmlReader::valueToStringOrStringList();
+        QList<QString> strList = SearchXmlReader::valueToStringOrStringList();
         QList<QVariant> varList;
 
-        Q_FOREACH (const QString& v, QStringList)
+        for (const QString& v : std::as_const(strList))
         {
             varList << v;
         }
@@ -1397,13 +1397,13 @@ QList<QString> SearchXmlCachingReader::valueToStringOrStringList()
         m_value     = varList;
         m_readValue = true;
 
-        return QStringList;
+        return strList;
     }
 
     QList<QString> lst;
     QList<QVariant> varList = m_value.toList();
 
-    Q_FOREACH (const QVariant& var, varList)
+    for (const QVariant& var : std::as_const(varList))
     {
         lst << var.toString();
     }
