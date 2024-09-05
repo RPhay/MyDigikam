@@ -152,8 +152,9 @@ public:
     static DPluginDImg* pluginForFile(const QFileInfo& fileInfo, bool magic)
     {
         QMultiMap<int, DPluginDImg*> pluginMap;
+        const auto plugins = DPluginLoader::instance()->allPlugins();
 
-        Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+        for (DPlugin* const p : plugins)
         {
             int prio;
             DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
@@ -183,7 +184,9 @@ public:
 
         if (!format.isNull())
         {
-            Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            const auto plugins = DPluginLoader::instance()->allPlugins();
+
+            for (DPlugin* const p : plugins)
             {
                 int prio;
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);

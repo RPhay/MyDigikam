@@ -142,7 +142,9 @@ QList<IccProfile> IccSettings::profilesForDescription(const QString& description
         return profiles;
     }
 
-    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    const auto pros = allProfiles();
+
+    for (IccProfile profile : pros)
     {
         if (profile.description() == description)
         {
@@ -157,7 +159,9 @@ QList<IccProfile> IccSettings::outputProfiles()
 {
     QList<IccProfile> profiles;
 
-    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    const auto pros = allProfiles();
+
+    for (IccProfile profile : pros)
     {
         if (profile.type() == IccProfile::Output)
         {
@@ -171,8 +175,9 @@ QList<IccProfile> IccSettings::outputProfiles()
 QList<IccProfile> IccSettings::inputProfiles()
 {
     QList<IccProfile> profiles;
+    const auto pros = allProfiles();
 
-    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    for (IccProfile profile : pros)
     {
         switch (profile.type())
         {
@@ -196,8 +201,9 @@ QList<IccProfile> IccSettings::inputProfiles()
 QList<IccProfile> IccSettings::displayProfiles()
 {
     QList<IccProfile> profiles;
+    const auto pros = allProfiles();
 
-    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    for (IccProfile profile : pros)
     {
         if (profile.type() == IccProfile::Display)
         {
@@ -211,8 +217,9 @@ QList<IccProfile> IccSettings::displayProfiles()
 QList<IccProfile> IccSettings::workspaceProfiles()
 {
     QList<IccProfile> profiles;
+    const auto pros = allProfiles();
 
-    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    for (IccProfile profile : pros)
     {
         switch (profile.type())
         {

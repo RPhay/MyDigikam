@@ -236,7 +236,7 @@ public:
 
     bool isRunning() const
     {
-        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
+        for (GreycstorationWorkingThread* const thread : std::as_const(threads))
         {
             if (thread->isRunning())
             {
@@ -248,7 +248,7 @@ public:
 
     void wait()
     {
-        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
+        for (GreycstorationWorkingThread* const thread : std::as_const(threads))
         {
             thread->wait();
         }
@@ -268,7 +268,7 @@ public:
 
     void stop()
     {
-        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
+        for (GreycstorationWorkingThread* const thread : std::as_const(threads))
         {
             thread->stop();
         }
