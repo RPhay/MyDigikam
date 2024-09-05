@@ -435,13 +435,7 @@ void ItemPropertiesTab::setTemplate(const Template& t)
 
     if (!t.credit().isEmpty())
     {
-        Q_FOREACH (const QString& s, t.credit())
-        {
-            if (!s.isEmpty())
-            {
-                rights << s;
-            }
-        }
+        rights << t.credit();
     }
 
     if (!t.copyright().contains(QLatin1String("x-default")))
