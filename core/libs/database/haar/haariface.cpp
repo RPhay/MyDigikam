@@ -672,7 +672,7 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 
     // Get all items DB id from all albums and all collections
 
-    Q_FOREACH (int albumId, albums2Scan)
+    for (int albumId : std::as_const(albums2Scan))
     {
         const auto list = CoreDbAccess().db()->getItemIDsInAlbum(albumId);
         imagesFromAlbums.unite(QSet<qlonglong>(list.begin(), list.end()));
@@ -680,7 +680,7 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 
     // Get all items DB id from all tags
 
-    Q_FOREACH (int albumId, tags2Scan)
+    for (int albumId : std::as_const(tags2Scan))
     {
         const auto list = CoreDbAccess().db()->getItemIDsInTag(albumId);
         imagesFromTags.unite(QSet<qlonglong>(list.begin(), list.end()));
@@ -880,7 +880,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 {
                     DEBUG_DUPLICATES("\tChecking Duplicates")
 
-                    Q_FOREACH (const qlonglong& refId, duplicates)
+                    for (const qlonglong& refId : std::as_const(duplicates))
                     {
 
 #if ENABLE_DEBUG_DUPLICATES
