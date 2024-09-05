@@ -328,7 +328,7 @@ void DistortionFXFilter::fisheye(DImg* orgImage, DImg* destImage, double Coeff, 
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -481,7 +481,7 @@ void DistortionFXFilter::twirl(DImg* orgImage, DImg* destImage, int dist, bool A
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -630,7 +630,7 @@ void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coe
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -747,7 +747,7 @@ void DistortionFXFilter::multipleCorners(DImg* orgImage, DImg* destImage, int Fa
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -883,7 +883,7 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -914,7 +914,7 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1028,7 +1028,7 @@ void DistortionFXFilter::blockWaves(DImg* orgImage, DImg* destImage,
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1147,7 +1147,7 @@ void DistortionFXFilter::circularWaves(DImg* orgImage, DImg* destImage, int X, i
                                           ));
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1275,7 +1275,7 @@ void DistortionFXFilter::polarCoordinates(DImg* orgImage, DImg* destImage, bool 
                                           ));
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1386,7 +1386,7 @@ void DistortionFXFilter::tile(DImg* orgImage, DImg* destImage,
         );
     }
 
-    Q_FOREACH (QFuture<void> t, tasks)
+    for (QFuture<void> t : std::as_const(tasks))
     {
         t.waitForFinished();
     }

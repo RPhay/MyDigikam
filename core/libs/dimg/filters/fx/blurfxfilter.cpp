@@ -310,7 +310,7 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -494,7 +494,7 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -717,7 +717,7 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
                                           ));
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -875,7 +875,7 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1025,7 +1025,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1066,7 +1066,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1283,7 +1283,7 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1535,7 +1535,7 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1578,7 +1578,7 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -1780,7 +1780,7 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
                                           ));
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -2159,7 +2159,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -2202,7 +2202,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }

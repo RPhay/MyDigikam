@@ -101,14 +101,14 @@ bool DImageHistory::isValid() const
     }
     else
     {
-        Q_FOREACH (const Entry& e, d->entries)
+        for (const Entry& e : std::as_const(d->entries))
         {
             if (!e.action.isNull())
             {
                 return true;
             }
 
-            Q_FOREACH (const HistoryImageId& id, e.referredImages)
+            for (const HistoryImageId& id : std::as_const(e.referredImages))
             {
                 if (id.isValid() && !id.isCurrentFile())
                 {   // cppcheck-suppress useStlAlgorithm
@@ -248,7 +248,7 @@ QList<FilterAction> DImageHistory::allActions() const
 {
     QList<FilterAction> actions;
 
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
         if (!entry.action.isNull())
         {
@@ -263,7 +263,7 @@ int DImageHistory::actionCount() const
 {
     int count = 0;
 
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
         if (!entry.action.isNull())
         {
@@ -276,7 +276,7 @@ int DImageHistory::actionCount() const
 
 bool DImageHistory::hasActions() const
 {
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
         if (!entry.action.isNull())
         {   // cppcheck-suppress useStlAlgorithm
@@ -301,7 +301,7 @@ QList<HistoryImageId> DImageHistory::allReferredImages() const
 {
     QList<HistoryImageId> ids;
 
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
         ids << entry.referredImages;
     }
@@ -311,7 +311,7 @@ QList<HistoryImageId> DImageHistory::allReferredImages() const
 
 bool DImageHistory::hasReferredImages() const
 {
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
         if (!entry.referredImages.isEmpty())
         {   // cppcheck-suppress useStlAlgorithm
@@ -324,9 +324,9 @@ bool DImageHistory::hasReferredImages() const
 
 bool DImageHistory::hasReferredImageOfType(HistoryImageId::Type type) const
 {
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
-        Q_FOREACH (const HistoryImageId& id, entry.referredImages)
+        for (const HistoryImageId& id : std::as_const(entry.referredImages))
         {
             if (id.m_type == type)
             {   // cppcheck-suppress useStlAlgorithm
@@ -352,9 +352,9 @@ QList<HistoryImageId> DImageHistory::referredImagesOfType(HistoryImageId::Type t
 {
     QList<HistoryImageId> ids;
 
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
-        Q_FOREACH (const HistoryImageId& id, entry.referredImages)
+        for (const HistoryImageId& id : std::as_const(entry.referredImages))
         {
             if (id.m_type == type)
             {
@@ -368,9 +368,9 @@ QList<HistoryImageId> DImageHistory::referredImagesOfType(HistoryImageId::Type t
 
 HistoryImageId DImageHistory::currentReferredImage() const
 {
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
-        Q_FOREACH (const HistoryImageId& id, entry.referredImages)
+        for (const HistoryImageId& id : std::as_const(entry.referredImages))
         {
             if (id.isCurrentFile())
             {    // cppcheck-suppress useStlAlgorithm
@@ -384,9 +384,9 @@ HistoryImageId DImageHistory::currentReferredImage() const
 
 HistoryImageId DImageHistory::originalReferredImage() const
 {
-    Q_FOREACH (const Entry& entry, d->entries)
+    for (const Entry& entry : std::as_const(d->entries))
     {
-        Q_FOREACH (const HistoryImageId& id, entry.referredImages)
+        for (const HistoryImageId& id : std::as_const(entry.referredImages))
         {
             if (id.isOriginalFile())
             {   // cppcheck-suppress useStlAlgorithm
@@ -535,7 +535,7 @@ QString DImageHistory::toXml() const
                 QList<QString> keys = params.keys();
                 std::sort(keys.begin(), keys.end());
 
-                Q_FOREACH (const QString& key, keys)
+                for (const QString& key : std::as_const(keys))
                 {
                     QHash<QString, QVariant>::const_iterator it;
 
@@ -555,7 +555,7 @@ QString DImageHistory::toXml() const
 
         if (!step.referredImages.isEmpty())
         {
-            Q_FOREACH (const HistoryImageId& imageId, step.referredImages)
+            for (const HistoryImageId& imageId : std::as_const(step.referredImages))
             {
                 if (!imageId.isValid())
                 {

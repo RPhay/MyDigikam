@@ -270,8 +270,9 @@ QString DImg::lastSavedFilePath() const
 QVariant DImg::fileOriginData() const
 {
     QVariantMap map;
+    const auto keys = DImgStaticPriv::fileOriginAttributes();
 
-    Q_FOREACH (const QString& key, DImgStaticPriv::fileOriginAttributes())
+    for (const QString& key : keys)
     {
         QVariant attr = attribute(key);
 
@@ -328,8 +329,9 @@ QVariant DImg::lastSavedFileOriginData() const
 void DImg::setFileOriginData(const QVariant& data)
 {
     QVariantMap map = data.toMap();
+    const auto keys = DImgStaticPriv::fileOriginAttributes();
 
-    Q_FOREACH (const QString& key, DImgStaticPriv::fileOriginAttributes())
+    for (const QString& key : keys)
     {
         removeAttribute(key);
         QVariant attr = map.value(key);

@@ -416,7 +416,7 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }
@@ -452,7 +452,7 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
             );
         }
 
-        Q_FOREACH (QFuture<void> t, tasks)
+        for (QFuture<void> t : std::as_const(tasks))
         {
             t.waitForFinished();
         }

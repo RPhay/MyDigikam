@@ -153,7 +153,7 @@ void OilPaintFilter::filterImage()
         );
     }
 
-    Q_FOREACH (QFuture<void> t, tasks)
+    for (QFuture<void> t : std::as_const(tasks))
     {
         t.waitForFinished();
     }
