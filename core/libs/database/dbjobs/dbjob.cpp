@@ -82,7 +82,7 @@ void DatesJob::run()
         QHash<QDateTime, int> dateNumberHash;
         QHash<QDateTime, int>::iterator it;
 
-        Q_FOREACH (const QVariant& value, values)
+        for (const QVariant& value : std::as_const(values))
         {
             if (!value.isNull())
             {
@@ -213,10 +213,11 @@ void TagsJob::run()
 
         facesNumberMap.insert(property, counts);
 
-        property = ImageTagPropertyName::tagRegion();
-        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+        property        = ImageTagPropertyName::tagRegion();
+        counts          = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+        const auto tags = FaceTags::allPersonTags();
 
-        Q_FOREACH (int tagId, FaceTags::allPersonTags())
+        for (int tagId : tags)
         {
             if (!counts.contains(tagId))
             {
@@ -287,8 +288,9 @@ void SearchesJob::run()
 void SearchesJob::runSearches()
 {
     QList<SearchInfo> infos;
+    const auto ids = m_jobInfo.searchIds();
 
-    Q_FOREACH (int id, m_jobInfo.searchIds())
+    for (int id : ids)
     {
         infos << CoreDbAccess().db()->getSearchInfo(id);
     }
@@ -300,7 +302,7 @@ void SearchesJob::runSearches()
 
     ItemListerJobPartsSendingReceiver receiver(this, 200);
 
-    Q_FOREACH (const SearchInfo& info, infos)
+    for (const SearchInfo& info : std::as_const(infos))
     {
         if (info.type == DatabaseSearch::HaarSearch)
         {
