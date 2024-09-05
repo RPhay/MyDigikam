@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 01:45+0000\n"
+"POT-Creation-Date: 2024-09-05 01:44+0000\n"
 "PO-Revision-Date: 2024-08-30 23:19+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -7047,8 +7047,8 @@ msgstr "High efficiency image coding"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:54
-#: core/libs/dplugins/core/dplugindimg.cpp:66
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, kde-format
 msgctxt "@info: can read file format"
 msgid "yes"
@@ -7069,8 +7069,8 @@ msgstr "sì"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:57
-#: core/libs/dplugins/core/dplugindimg.cpp:69
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "yes"
@@ -7079,8 +7079,8 @@ msgstr "sì"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
 msgctxt "@info: cannot write file format"
 msgid "no"
@@ -7336,8 +7336,8 @@ msgstr ""
 "ImageMagick'>documentazione di ImageMagick</a>.</para>"
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:55
-#: core/libs/dplugins/core/dplugindimg.cpp:67
+#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:68
 #, kde-format
 msgctxt "@info: cannot read file format"
 msgid "no"
@@ -27634,63 +27634,63 @@ msgid "No Color"
 msgstr "Nessun colore"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rosso"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Arancione"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Giallo"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Verde"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Blu"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Grigio"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Nero"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -27709,21 +27709,21 @@ msgid "No Pick"
 msgstr "Non prelevare"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Rifiutata"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "In sospeso"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -34193,37 +34193,37 @@ msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr "Non valido"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:52
+#: core/libs/dplugins/core/dplugindimg.cpp:53
 #, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "Immagine %1"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:81
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "Estensione"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:82
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "Descrizione"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:83
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "Lettura"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:84
+#: core/libs/dplugins/core/dplugindimg.cpp:85
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "Scrittura"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:89
+#: core/libs/dplugins/core/dplugindimg.cpp:90
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
@@ -34249,69 +34249,69 @@ msgctxt "@title"
 msgid "Details"
 msgstr "Dettagli"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:125
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Autori"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Valore"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "ID interfaccia"
 
 # Lasciare il plurale. È il testo del pannello laterale delle opzioni.
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "ID strumenti"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Libreria"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Dimensione del file"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Data del file"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Proprietario del file"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:148
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Gruppo del file"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, kde-format
 msgctxt "@title"
 msgid "Properties"
@@ -35777,7 +35777,7 @@ msgstr "Esiste già un'altra immagine con lo stesso nome %1 in quella posizione"
 msgid "Image %1 could not be renamed"
 msgstr "Impossibile rinominare l'immagine %1"
 
-#: core/libs/iojobs/iojob.cpp:497
+#: core/libs/iojobs/iojob.cpp:500
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Impossibile ripristinare il file %1 dal cestino"
@@ -39706,7 +39706,7 @@ msgstr "I tag «%1» sono assegnati a uno o più elementi. Vuoi continuare?"
 msgid "Delete '%1' tag(s)?"
 msgstr "Eliminare «%1» tag?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:572
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39725,7 +39725,7 @@ msgstr[1] ""
 "anche i figli.\n"
 "Vuoi continuare?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:594
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39735,14 +39735,14 @@ msgstr[0] "Il tag «%2» è assegnato ad almeno un elemento. Vuoi continuare?"
 msgstr[1] ""
 "I tag volto «%2» sono assegnati ad almeno un elemento. Vuoi continuare?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:602
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Rimuovere il tag volto?"
 msgstr[1] "Rimuovere i tag volto?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:613
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39751,22 +39751,22 @@ msgstr[0] "Rimuovere il tag corrispondente a questo tag volto dalle immagini?"
 msgstr[1] ""
 "Rimuovere i tag %1 corrispondenti a questi tag volto dalle immagini?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:211
+#: core/libs/tags/engine/tagsactionmngr.cpp:215
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Assegna valutazione «%1 stella»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:230
+#: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Assegna un'etichetta di scelta «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:249
+#: core/libs/tags/engine/tagsactionmngr.cpp:253
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Assegna etichetta colorata «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:297
+#: core/libs/tags/engine/tagsactionmngr.cpp:301
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Assegna tag «%1»"
@@ -42846,7 +42846,7 @@ msgid_plural "%1 Images"
 msgstr[0] "Un'immagine"
 msgstr[1] "%1 Immagini"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:332
 #, kde-format
 msgctxt "@info: item overlay"
 msgid ""
@@ -43544,37 +43544,37 @@ msgstr "Verifica la disponibilità di una nuova versione..."
 msgid "Database Statistics"
 msgstr "Statistiche della banca dati"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Attiva/disattiva barra laterale sinistra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Attiva/disattiva barra laterale destra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Scheda barra laterale sinistra precedente"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Scheda barra laterale sinistra successiva"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Scheda barra laterale destra precedente"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Scheda barra laterale destra successiva"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostra la barra di stato"
@@ -43759,14 +43759,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "Descrizione"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:186
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "sì"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:187
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
@@ -44659,19 +44659,19 @@ msgstr "File XMP da salvare"
 msgid "XMP text Files (*.xmp)"
 msgstr "File di testo XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Nessuno"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Etichetta colorata: %1 "
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
@@ -44679,19 +44679,19 @@ msgstr "Colore"
 
 # ML XXX Controllare!
 # se si riferisce a "Sotto-campionatura cromatica:" ci vuole "Nessuna"
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Nessuno"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "Etichetta di scelta: %1"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
@@ -49051,7 +49051,7 @@ msgstr ""
 "in base alla lingua di destinazione scelta, in quanto non tutte le lingue "
 "attualmente esistenti sono supportate dai servizi web in linea.</para>"
 
-#: core/libs/widgets/text/localizeconfig.cpp:318
+#: core/libs/widgets/text/localizeconfig.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
@@ -49156,44 +49156,44 @@ msgid "Detect automatically the language by parsing string content"
 msgstr ""
 "Rileva automaticamente la lingua analizzando il contenuto della stringa"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:123
+#: core/libs/widgets/text/spellcheckconfig.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Dizionari linguistici disponibili"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:136
+#: core/libs/widgets/text/spellcheckconfig.cpp:138
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Codice"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:137
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:144
+#: core/libs/widgets/text/spellcheckconfig.cpp:146
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Motori disponibili"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:165
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Parole ignorate"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:169
+#: core/libs/widgets/text/spellcheckconfig.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 "Imposta qui una nuova parola da ignorare durante il controllo ortografico"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:172
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
@@ -49201,19 +49201,19 @@ msgstr ""
 "Puoi aggiungere o rimuovere parole da ignorare durante la correzione "
 "ortografica."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:177
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Aggiungi..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:178
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Rimuovi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 01:45+0000\n"
+"POT-Creation-Date: 2024-09-05 01:44+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -6753,8 +6753,8 @@ msgstr "छवि क़िस्म दिखाएं"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:54
-#: core/libs/dplugins/core/dplugindimg.cpp:66
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@info: status"
 #| msgid "yes"
@@ -6777,8 +6777,8 @@ msgstr "हाँ"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:57
-#: core/libs/dplugins/core/dplugindimg.cpp:69
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@info: status"
 #| msgid "yes"
@@ -6789,8 +6789,8 @@ msgstr "हाँ"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "@info: status"
 #| msgid "no"
@@ -6996,8 +6996,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:55
-#: core/libs/dplugins/core/dplugindimg.cpp:67
+#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@info: status"
 #| msgid "no"
@@ -26343,21 +26343,21 @@ msgid "No Color"
 msgstr "रंग"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "लाल"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "सीमा:"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -26365,7 +26365,7 @@ msgid "Yellow"
 msgstr "पीला"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -26373,7 +26373,7 @@ msgid "Green"
 msgstr "हरा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -26381,7 +26381,7 @@ msgid "Blue"
 msgstr "नीला"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -26389,21 +26389,21 @@ msgid "Magenta"
 msgstr "मजेंटा"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "श्वेत-श्याम"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "पीछे"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -26422,21 +26422,21 @@ msgid "No Pick"
 msgstr "ईंटें"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "रीसेट"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "रॉ डिकोडिंग"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -32442,38 +32442,38 @@ msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr ""
 
-#: core/libs/dplugins/core/dplugindimg.cpp:52
+#: core/libs/dplugins/core/dplugindimg.cpp:53
 #, fuzzy, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "छवि (&I)"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:81
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "रवि"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:82
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "वर्णन"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:83
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "तैयार"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:84
+#: core/libs/dplugins/core/dplugindimg.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "<b>लिखनेयोग्य</b>:"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:89
+#: core/libs/dplugins/core/dplugindimg.cpp:90
 #, fuzzy, kde-format
 #| msgid "Use Filters"
 msgctxt "@title"
@@ -32501,72 +32501,72 @@ msgctxt "@title"
 msgid "Details"
 msgstr "विवरण"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:125
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "लेखकः"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Interface Options"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "इंटरफ़ेस विकल्प"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid "Tool Tip"
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "औज़ार नुस्खा"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@item"
 msgid "Library"
 msgstr "जिब्राल्टर"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "फ़ाइल आकार से"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "नया छवि फ़ाइल नाम"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "नया छवि फ़ाइल नाम"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:148
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "फ़ाइल (&F)"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title"
@@ -33997,7 +33997,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:497
+#: core/libs/iojobs/iojob.cpp:500
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not restore file %1 from trash"
@@ -37800,7 +37800,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 msgid "Delete '%1' tag(s)?"
 msgstr "टैग '%1' मिटाएँ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:572
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -37813,7 +37813,7 @@ msgid_plural ""
 msgstr[0] "क्या आप जारी रखना चाहते हैं?"
 msgstr[1] "क्या आप जारी रखना चाहते हैं?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:594
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -37822,7 +37822,7 @@ msgid_plural ""
 msgstr[0] "क्या आप जारी रखना चाहते हैं?"
 msgstr[1] "क्या आप जारी रखना चाहते हैं?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:602
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove face tag?"
@@ -37830,7 +37830,7 @@ msgid_plural "Remove face tags?"
 msgstr[0] "टैग हटाएँ"
 msgstr[1] "टैग हटाएँ"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:613
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
@@ -37839,22 +37839,22 @@ msgid_plural ""
 msgstr[0] "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 msgstr[1] "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:211
+#: core/libs/tags/engine/tagsactionmngr.cpp:215
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "दर्जा दें \"No Star\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:230
+#: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:249
+#: core/libs/tags/engine/tagsactionmngr.cpp:253
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "आबंटित टैग"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:297
+#: core/libs/tags/engine/tagsactionmngr.cpp:301
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "टैग आवंटित करें"
@@ -40811,7 +40811,7 @@ msgid_plural "%1 Images"
 msgstr[0] "छवि (&I)"
 msgstr[1] "छवि (&I)"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:332
 #, fuzzy, kde-format
 msgctxt "@info: item overlay"
 msgid ""
@@ -41488,37 +41488,37 @@ msgstr "ऐसे सहेजें... (&S)"
 msgid "Database Statistics"
 msgstr "आंकड़े"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
 #, fuzzy, kde-format
 msgid "Show Statusbar"
 msgstr "लघुछवियाँ दिखाएँ"
@@ -41692,14 +41692,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "वर्णन"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:186
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "हाँ"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:187
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
@@ -42624,39 +42624,39 @@ msgstr "सहेजने के लिए एक्सएमपी फ़ा�
 msgid "XMP text Files (*.xmp)"
 msgstr "एक्सएमपी पाठ फ़ाइलें (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
 #, fuzzy, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "रंग गहराईः"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
 #, fuzzy, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "रंग"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, fuzzy, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "पिक्सेल्स:"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, fuzzy, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
@@ -47879,7 +47879,7 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:318
+#: core/libs/widgets/text/localizeconfig.cpp:320
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
@@ -47976,65 +47976,65 @@ msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:123
+#: core/libs/widgets/text/spellcheckconfig.cpp:125
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "मैकबाइनरी II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:136
+#: core/libs/widgets/text/spellcheckconfig.cpp:138
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:137
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:144
+#: core/libs/widgets/text/spellcheckconfig.cpp:146
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "उपलब्ध:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:165
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "मॉनीटर:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:169
+#: core/libs/widgets/text/spellcheckconfig.cpp:171
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "<p>यहाँ पर लकीर रंग सेट करें."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:172
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:177
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "जोड़ें...(&A)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:178
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "मिटाएँ (&R)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
