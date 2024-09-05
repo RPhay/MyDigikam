@@ -86,7 +86,7 @@ void ItemInfoList::loadTagIds() const
 {
     ItemInfoList infoList;
 
-    Q_FOREACH (const ItemInfo& info, *this)
+    for (const ItemInfo& info : std::as_const(*this))
     {
         if (info.m_data && !info.m_data->tagIdsCached)
         {

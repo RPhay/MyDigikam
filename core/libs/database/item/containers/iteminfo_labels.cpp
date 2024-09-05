@@ -92,7 +92,7 @@ void ItemInfo::setPickLabel(int pickId)
     {
         CoreDbAccess access;
 
-        Q_FOREACH (int tagId, currentTagIds)
+        for (int tagId : std::as_const(currentTagIds))
         {
             if (pickLabelTags.contains(tagId))
             {
@@ -126,7 +126,7 @@ void ItemInfo::setColorLabel(int colorId)
     {
         CoreDbAccess access;
 
-        Q_FOREACH (int tagId, currentTagIds)
+        for (int tagId : std::as_const(currentTagIds))
         {
             if (colorLabelTags.contains(tagId))
             {

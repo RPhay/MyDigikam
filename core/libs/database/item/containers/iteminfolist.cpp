@@ -28,7 +28,7 @@ ItemInfoList::ItemInfoList(const QList<ItemInfo>& list)
 
 ItemInfoList::ItemInfoList(const QList<qlonglong>& idList)
 {
-    Q_FOREACH (const qlonglong& id, idList)
+    for (const qlonglong& id : std::as_const(idList))
     {
         append(ItemInfo(id));
     }
@@ -38,7 +38,7 @@ QList<qlonglong> ItemInfoList::toImageIdList() const
 {
     QList<qlonglong> idList;
 
-    Q_FOREACH (const ItemInfo& info, *this)
+    for (const ItemInfo& info : std::as_const(*this))
     {
         idList << info.id();
     }
@@ -50,7 +50,7 @@ QList<QUrl> ItemInfoList::toImageUrlList() const
 {
     QList<QUrl> urlList;
 
-    Q_FOREACH (const ItemInfo& info, *this)
+    for (const ItemInfo& info : std::as_const(*this))
     {
         urlList << info.fileUrl();
     }
@@ -93,7 +93,7 @@ ItemInfo ItemInfoList::singleGroupMainItem() const
 
     grouped << mainItem << mainItem.groupedImages();
 
-    Q_FOREACH (const ItemInfo& info, *this)
+    for (const ItemInfo& info : std::as_const(*this))
     {
         if (!grouped.contains(info))
         {

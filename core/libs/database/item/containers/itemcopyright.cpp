@@ -107,7 +107,7 @@ void ItemCopyright::replaceFrom(const ItemCopyright& source)
 
     QList<CopyrightInfo> infos = access.db()->getItemCopyright(source.m_id, QString());
 
-    Q_FOREACH (const CopyrightInfo& info, infos)
+    for (const CopyrightInfo& info : std::as_const(infos))
     {
         access.db()->setItemCopyrightProperty(m_id, info.property, info.value,
                                               info.extraValue, CoreDB::PropertyNoConstraint);
@@ -119,7 +119,7 @@ QStringList ItemCopyright::creator() const
     QList<CopyrightInfo> infos = copyrightInfos(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreCreator));
     QStringList list;
 
-    Q_FOREACH (const CopyrightInfo& info, infos)
+    for (const CopyrightInfo& info : std::as_const(infos))
     {
         list << info.value;
     }
@@ -304,7 +304,9 @@ void ItemCopyright::fillTemplate(Template& t)
 
 void ItemCopyright::setFromTemplate(const Template& t)
 {
-    Q_FOREACH (const QString& author, t.authors()) // krazy:exclude=foreach
+    const auto auths = t.authors();
+
+    for (const QString& author : auths)
     {
         setAuthor(author, ItemCopyright::AddEntryToExisting);
     }
@@ -351,7 +353,7 @@ CopyrightInfo ItemCopyright::copyrightInfo(const QString& property) const
 {
     if (m_cache)
     {
-        Q_FOREACH (const CopyrightInfo& info, m_cache->infos)
+        for (const CopyrightInfo& info : std::as_const(m_cache->infos))
         {
             if (info.property == property)
             {    // cppcheck-suppress useStlAlgorithm
@@ -378,7 +380,7 @@ QList<CopyrightInfo> ItemCopyright::copyrightInfos(const QString& property) cons
     {
         QList<CopyrightInfo> infos;
 
-        Q_FOREACH (const CopyrightInfo& info, m_cache->infos)
+        for (const CopyrightInfo& info : std::as_const(m_cache->infos))
         {
             if (info.property == property)
             {
@@ -424,7 +426,7 @@ MetaEngine::AltLangMap ItemCopyright::readLanguageProperties(const QString& prop
     MetaEngine::AltLangMap map;
     QList<CopyrightInfo> infos = copyrightInfos(property);
 
-    Q_FOREACH (const CopyrightInfo& info, infos)
+    for (const CopyrightInfo& info : std::as_const(infos))
     {
         map[info.extraValue] = info.value;
     }

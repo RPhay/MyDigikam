@@ -107,7 +107,7 @@ public:
     {
         QSet<int> newSet;
 
-        Q_FOREACH (int index, set)
+        for (int index : std::as_const(set))
         {
             if      (index > removedIndex)
             {
@@ -487,7 +487,7 @@ void ItemComments::replaceFrom(const ItemComments& source)
         return;
     }
 
-    Q_FOREACH (const CommentInfo& info, source.d->infos)
+    for (const CommentInfo& info : std::as_const(source.d->infos))
     {
         addComment(info.comment, info.language, info.author, info.date, info.type);
     }
@@ -568,7 +568,7 @@ void ItemComments::removeAll()
         return;
     }
 
-    Q_FOREACH (const CommentInfo& info, d->infos)
+    for (const CommentInfo& info : std::as_const(d->infos))
     {
         d->idsToRemove << info.id;
     }
@@ -651,14 +651,14 @@ void ItemComments::apply(CoreDbAccess& access)
         return;
     }
 
-    Q_FOREACH (int commentId, d->idsToRemove)
+    for (int commentId : std::as_const(d->idsToRemove))
     {
         access.db()->removeImageComment(commentId, d->id);
     }
 
     d->idsToRemove.clear();
 
-    Q_FOREACH (int index, d->newIndices)
+    for (int index : std::as_const(d->newIndices))
     {
         CommentInfo& info = d->infos[index];
         info.id           = access.db()->setImageComment(d->id, info.comment, info.type, info.language, info.author, info.date);
@@ -667,7 +667,7 @@ void ItemComments::apply(CoreDbAccess& access)
     d->dirtyIndices.subtract(d->newIndices);
     d->newIndices.clear();
 
-    Q_FOREACH (int index, d->dirtyIndices)
+    for (int index : std::as_const(d->dirtyIndices))
     {
         QVariantList values;
         const CommentInfo& info = d->infos[index];
@@ -684,7 +684,7 @@ CaptionsMap ItemComments::toCaptionsMap(DatabaseComment::Type type) const
 
     if (d)
     {
-        Q_FOREACH (const CommentInfo& info, d->infos)
+        for (const CommentInfo& info : std::as_const(d->infos))
         {
             if (info.type == type)
             {

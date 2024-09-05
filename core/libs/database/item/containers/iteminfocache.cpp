@@ -237,8 +237,9 @@ void ItemInfoCache::invalidate()
 void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
 {
     ItemInfoWriteLocker lock;
+    const auto ids = changeset.ids();
 
-    Q_FOREACH (const qlonglong& imageId, changeset.ids())
+    for (const qlonglong& imageId : ids)
     {
         QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 
@@ -359,8 +360,9 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
     if (changeset.propertiesWereChanged())
     {
         ItemInfoWriteLocker lock;
+        const auto ids = changeset.ids();
 
-        Q_FOREACH (const qlonglong& imageId, changeset.ids())
+        for (const qlonglong& imageId : ids)
         {
             QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 
@@ -376,8 +378,9 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
     }
 
     ItemInfoWriteLocker lock;
+    const auto ids = changeset.ids();
 
-    Q_FOREACH (const qlonglong& imageId, changeset.ids())
+    for (const qlonglong& imageId : ids)
     {
         QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 

@@ -61,7 +61,7 @@ void ItemInfoList::loadGroupImageIds() const
 {
     ItemInfoList infoList;
 
-    Q_FOREACH (const ItemInfo& info, *this)
+    for (const ItemInfo& info : std::as_const(*this))
     {
         if (info.m_data && !info.m_data->groupImageCached)
         {
@@ -173,7 +173,7 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
 
     idsToBeGrouped << m_data->id;
 
-    Q_FOREACH (const qlonglong& ids, idsToBeGrouped)
+    for (const qlonglong& ids : std::as_const(idsToBeGrouped))
     {
         // remove current grouping
 
