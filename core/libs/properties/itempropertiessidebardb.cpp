@@ -560,8 +560,9 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             {
                 QVector<int> colorLabelTags = TagsCache::instance()->colorLabelTags();
                 QVector<int> pickLabelTags  = TagsCache::instance()->pickLabelTags();
+                const auto ctags            = changeset.tags();
 
-                Q_FOREACH (int ctag, changeset.tags())
+                for (int ctag : ctags)
                 {
                     if (colorLabelTags.contains(ctag))
                     {
@@ -570,7 +571,9 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
                     }
                 }
 
-                Q_FOREACH (int ptag, changeset.tags())
+                const auto ptags            = changeset.tags();
+
+                for (int ptag : ptags)
                 {
                     if (pickLabelTags.contains(ptag))
                     {
@@ -628,7 +631,7 @@ void ItemPropertiesSideBarDB::refreshTagsView()
 
 void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 {
-    Q_FOREACH (const ItemInfo& info, d->currentInfos)
+    for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         if (info.fileUrl() == url)
         {   // cppcheck-suppress useStlAlgorithm
@@ -774,7 +777,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             QList<int> regularTagIds;
             QList<int> peopleTagIds;
 
-            Q_FOREACH (int t, allTagIds)
+            for (int t : std::as_const(allTagIds))
             {
                 if (TagsCache::instance()->properties(t).contains(QLatin1String("person")))
                 {
@@ -815,7 +818,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     qint64 selectionFileSize = 0;
 
-    Q_FOREACH (const ItemInfo& info, d->currentInfos)
+    for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
@@ -829,7 +832,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     qint64 totalFileSize = 0;
 
-    Q_FOREACH (const ItemInfo& info, d->allInfos)
+    for (const ItemInfo& info : std::as_const(d->allInfos))
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();

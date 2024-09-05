@@ -125,7 +125,9 @@ void ItemDescEditTab::activateAssignedTagsButton()
 
 void ItemDescEditTab::slotUnifyPartiallyTags()
 {
-    Q_FOREACH (Album* const album, d->tagModel->partiallyCheckedAlbums())
+    const auto albums = d->tagModel->partiallyCheckedAlbums();
+
+    for (Album* const album : albums)
     {
         d->tagModel->setChecked(album, true);
     }

@@ -157,7 +157,7 @@ void ItemDescEditTab::Private::setInfos(const ItemInfoList& infos)
 
     currInfos.loadTagIds();
 
-    Q_FOREACH (const ItemInfo& info, currInfos)
+    for (const ItemInfo& info : std::as_const(currInfos))
     {
         hub->load(info);
     }

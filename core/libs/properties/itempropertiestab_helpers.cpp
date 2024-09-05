@@ -54,7 +54,7 @@ QStringList ItemPropertiesTab::shortenedTagPaths(const QStringList& tagPaths, QL
     QStringList tagsShortened;
     QString previous;
 
-    Q_FOREACH (const PathValuePair& pair, tagsSorted)
+    for (const PathValuePair& pair : std::as_const(tagsSorted))
     {
         const QString& tagPath   = pair.first;
         QString shortenedPath    = tagPath;

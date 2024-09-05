@@ -446,7 +446,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 
     CollectionScanner scanner;
 
-    Q_FOREACH (const ItemInfo& info, d->currInfos)
+    for (const ItemInfo& info : std::as_const(d->currInfos))
     {
         scanner.scanFile(info, CollectionScanner::CleanScan);
 
@@ -473,7 +473,7 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 
     int i = 0;
 
-    Q_FOREACH (const ItemInfo& info, d->currInfos)
+    for (const ItemInfo& info : std::as_const(d->currInfos))
     {
         MetadataHub hub;
 
@@ -585,7 +585,7 @@ void ItemDescEditTab::slotReloadForMetadataChange()
     {
         // if image id is in our list, update
 
-        Q_FOREACH (const ItemInfo& info, d->currInfos)
+        for (const ItemInfo& info : std::as_const(d->currInfos))
         {
             if (d->metadataChangeIds.contains(info.id()))
             {   // cppcheck-suppress useStlAlgorithm
@@ -611,7 +611,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
     QSet<qlonglong>                     tmpSet;
     QList<QPair<qlonglong, qlonglong> > relations;
 
-    Q_FOREACH (const ItemInfo& info, d->currInfos)
+    for (const ItemInfo& info : std::as_const(d->currInfos))
     {
         // Collect all ids in all image's relations.
 

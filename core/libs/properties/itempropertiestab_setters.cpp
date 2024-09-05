@@ -422,7 +422,9 @@ void ItemPropertiesTab::setTemplate(const Template& t)
 
     if (!t.authors().isEmpty())
     {
-        Q_FOREACH (const QString& s, t.authors())
+        const auto auths = t.authors();
+
+        for (const QString& s : auths)
         {
             if (!s.isEmpty())
             {

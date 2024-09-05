@@ -416,7 +416,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     {
         QList<int> keys = d->tags.keys();
 
-        Q_FOREACH (int key, keys)
+        for (int key : std::as_const(keys))
         {
             if (d->tags.value(key) == DisjointMetadataDataFields::DisjointMetadataDataFields::MetadataAvailable)
             {
@@ -429,8 +429,9 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
                 if (FaceTags::isPerson(key))
                 {
                     FaceTagsEditor editor;
+                    const auto faces = editor.databaseFaces(info.id());
 
-                    Q_FOREACH (const FaceTagsIface& face, editor.databaseFaces(info.id()))
+                    for (const FaceTagsIface& face : faces)
                     {
                         if (face.tagId() == key)
                         {
@@ -572,7 +573,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
 {
     QList<int> loadedTagIds;
 
-    Q_FOREACH (int tagId, tagIds)
+    for (int tagId : std::as_const(tagIds))
     {
         if (!TagsCache::instance()->isInternalTag(tagId))
         {
@@ -601,7 +602,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
 
     if (d->tags.isEmpty())
     {
-        Q_FOREACH (int tagId, loadedTagIds)
+        for (int tagId : std::as_const(loadedTagIds))
         {
             if (d->withoutTags)
             {
@@ -638,7 +639,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
     // new tags which are not yet in the set,
     // are added as Disjoint
 
-    Q_FOREACH (int tagId, loadedTagIds)
+    for (int tagId : std::as_const(loadedTagIds))
     {
         if (!d->tags.contains(tagId))
         {
@@ -678,7 +679,7 @@ void DisjointMetadata::applyChangeNotifications()
         d->tagIds.clear();
     }
 
-    Q_FOREACH (int tagId, tagIds)
+    for (int tagId : std::as_const(tagIds))
     {
         notifyTagDeleted(tagId);
     }
@@ -833,7 +834,7 @@ QStringList DisjointMetadata::keywords() const
 
     QList<int> keys = d->tags.keys();
 
-    Q_FOREACH (int key, keys)
+    for (int key : std::as_const(keys))
     {
         if (d->tags.value(key) == DisjointMetadataDataFields::MetadataAvailable)
         {
