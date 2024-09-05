@@ -339,7 +339,7 @@ QMimeData* AbstractAlbumModel::mimeData(const QModelIndexList& indexes) const
 
     QList<Album*> albums;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         Album* const a = albumForIndex(index);
 

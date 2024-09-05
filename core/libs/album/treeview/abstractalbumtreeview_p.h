@@ -61,7 +61,7 @@ static QList<A*> selectedAlbums(const QItemSelectionModel* const selModel,
     const QList<QModelIndex> indexes = selModel->selectedIndexes();
     QList<A*> albums;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         albums << static_cast<A*>(filterModel->albumForIndex(index));
     }

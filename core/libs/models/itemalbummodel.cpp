@@ -174,7 +174,7 @@ void ItemAlbumModel::openAlbum(const QList<Album*>& albums)
      * Extra safety, ensure that no null pointers are added
      */
 
-    Q_FOREACH (Album* const a, albums)
+    for (Album* const a : std::as_const(albums))
     {
         if (a)
         {
@@ -440,7 +440,7 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
     {
         QList<QVariant> extraValues;
 
-        Q_FOREACH (const ItemListerRecord& record, records)
+        for (const ItemListerRecord& record : std::as_const(records))
         {
             ItemInfo info(record);
             newItemsList << info;
@@ -473,7 +473,7 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
     }
     else
     {
-        Q_FOREACH (const ItemListerRecord& record, records)
+        for (const ItemListerRecord& record : std::as_const(records))
         {
             ItemInfo info(record);
             newItemsList << info;
@@ -556,7 +556,9 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
 
             if (needCheckRefresh)
             {
-                Q_FOREACH (const qlonglong& id, changeset.ids())
+                const auto ids = changeset.ids();
+
+                for (const qlonglong& id : ids)
                 {
                     // if one matching image id is found, trigger a refresh
 
@@ -598,7 +600,9 @@ void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
             if (!doRefresh && d->recurseTags)
             {
-                Q_FOREACH (int tagId, changeset.tags())
+                const auto ids = changeset.tags();
+
+                for (int tagId : ids)
                 {
                     Album* const a = AlbumManager::instance()->findTAlbum(tagId);
 
@@ -657,7 +661,9 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
 
                         if (!doRefresh && d->recurseAlbums)
                         {
-                            Q_FOREACH (int albumId, changeset.albums())
+                            const auto ids = changeset.albums();
+
+                            for (int albumId : ids)
                             {
                                 Album* const a = AlbumManager::instance()->findPAlbum(albumId);
 
@@ -690,7 +696,9 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
             {
                 // is one of our images affected?
 
-                Q_FOREACH (const qlonglong& id, changeset.ids())
+                const auto ids = changeset.ids();
+
+                for (const qlonglong& id : ids )
                 {
                     // if one matching image id is found, trigger a refresh
 

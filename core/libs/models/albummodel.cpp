@@ -93,7 +93,9 @@ QVariant AlbumModel::albumData(Album* a, int role) const
 
 void AlbumModel::slotUpdateTrashCounters()
 {
-    Q_FOREACH (Album* const album, AlbumManager::instance()->allPAlbums())
+    const auto albums = AlbumManager::instance()->allPAlbums();
+
+    for (Album* const album : albums)
     {
         if (album->isTrashAlbum())
         {

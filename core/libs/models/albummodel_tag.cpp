@@ -131,7 +131,7 @@ void TagModel::activateFaceTagModel()
             setCountHash(faceCount);
             m_unconfirmedFaceCount = uFaceCount;
 
-            Q_FOREACH (int id, toUpdatedFaces)
+            for (int id : std::as_const(toUpdatedFaces))
             {
                 Album* const album = albumForId(id);
 

@@ -83,12 +83,16 @@ ItemAlbumFilterModel::ItemAlbumFilterModel(QObject* const parent)
     connect(d->delayedTagNamesTimer, SIGNAL(timeout()),
             this, SLOT(slotDelayedTagNamesTimer()));
 
-    Q_FOREACH (Album* const a, AlbumManager::instance()->allPAlbums())
+    const auto palbums = AlbumManager::instance()->allPAlbums();
+
+    for (Album* const a : palbums)
     {
         albumChange(a);
     }
 
-    Q_FOREACH (Album* const a, AlbumManager::instance()->allTAlbums())
+    const auto talbums = AlbumManager::instance()->allTAlbums();
+
+    for (Album* const a : talbums)
     {
         albumChange(a);
     }

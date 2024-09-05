@@ -116,7 +116,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
 
     TAlbum* const talbum = static_cast<TAlbum*>(album);
 
-    Q_FOREACH (const QString& prop, m_propertiesBlackList)
+    for (const QString& prop : std::as_const(m_propertiesBlackList))
     {
         if (talbum->hasProperty(prop))
         {   // cppcheck-suppress useStlAlgorithm
@@ -124,7 +124,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
         }
     }
 
-    Q_FOREACH (const QString& prop, m_propertiesWhiteList)
+    for (const QString& prop : std::as_const(m_propertiesWhiteList))
     {
         if (!talbum->hasProperty(prop))
         {   // cppcheck-suppress useStlAlgorithm

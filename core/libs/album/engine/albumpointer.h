@@ -132,7 +132,7 @@ public:
 
     AlbumPointerList<T>& operator=(const QList<T*>& list)
     {
-        Q_FOREACH (T* const t, list)
+        for (T* const t : std::as_const(list))
         {
             this->append(AlbumPointer<T>(t));
         }

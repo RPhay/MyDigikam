@@ -110,7 +110,7 @@ public:
     {
         int categorySortStartIndex = model->rowCount();
 
-        Q_FOREACH (QAction* const a, actions)
+        for (QAction* const a : std::as_const(actions))
         {
             QAction* categoryAction = nullptr;
 
@@ -151,7 +151,9 @@ protected:
 
     void enumerateActions(const QWidget* const w, QAction* const widgetAction)
     {
-        Q_FOREACH (QAction* const a, w->actions())
+        const auto acs = w->actions();
+
+        for (QAction* const a : acs)
         {
             if      (a->menu())
             {

@@ -107,7 +107,7 @@ public:
 
         void sendOut()
         {
-            Q_FOREACH (const T& changeset, changesets)
+            for (const T& changeset : std::as_const(changesets))
             {
                 d->sendToWatch(changeset);
             }

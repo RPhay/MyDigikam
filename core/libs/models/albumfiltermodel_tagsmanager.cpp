@@ -28,7 +28,7 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
 {
     m_keywords.clear();
 
-    Q_FOREACH (int tag, tags)
+    for (int tag : std::as_const(tags))
     {
         m_keywords << tag;
     }
