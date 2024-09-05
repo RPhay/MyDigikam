@@ -73,12 +73,15 @@ QList<FaceTagsIface> FaceTagsEditor::databaseFaces(qlonglong imageid, FaceTagsIf
 {
     QList<FaceTagsIface> faces;
     QStringList          attributes = FaceTagsIface::attributesForFlags(flags);
+    const auto pairs                = faceItemTagPairs(imageid, flags);
 
-    Q_FOREACH (const ItemTagPair& pair, faceItemTagPairs(imageid, flags))
+    for (const ItemTagPair& pair : pairs)
     {
-        Q_FOREACH (const QString& attribute, attributes)
+        for (const QString& attribute : std::as_const(attributes))
         {
-            Q_FOREACH (const QString& regionString, pair.values(attribute))
+            const auto regions = pair.values(attribute);
+
+            for (const QString& regionString : regions)
             {
                 TagRegion region(regionString);
 /*
@@ -101,8 +104,9 @@ QList<ItemTagPair> FaceTagsEditor::faceItemTagPairs(qlonglong imageid, FaceTagsI
 {
     QList<ItemTagPair> pairs;
     QStringList        attributes = FaceTagsIface::attributesForFlags(flags);
+    const auto images              = ItemTagPair::availablePairs(imageid);
 
-    Q_FOREACH (const ItemTagPair& pair, ItemTagPair::availablePairs(imageid))
+    for (const ItemTagPair& pair : images)
     {
 /*
         qCDebug(DIGIKAM_DATABASE_LOG) << pair.tagId() << pair.properties();
@@ -135,11 +139,11 @@ QList< QRect > FaceTagsEditor::getTagRects(qlonglong imageid) const
     QList<QRect>       rectList;
     QList<ItemTagPair> pairs = ItemTagPair::availablePairs(imageid);
 
-    Q_FOREACH (const ItemTagPair& pair, pairs)
+    for (const ItemTagPair& pair : std::as_const(pairs))
     {
         QStringList regions = pair.values(ImageTagPropertyName::tagRegion());
 
-        Q_FOREACH (const QString& region, regions)
+        for (const QString& region : std::as_const(regions))
         {
             QRect rect = TagRegion(region).toRect();
 
@@ -160,7 +164,7 @@ int FaceTagsEditor::numberOfFaces(qlonglong imageid) const
     int                count = 0;
     QList<ItemTagPair> pairs = ItemTagPair::availablePairs(imageid);
 
-    Q_FOREACH (const ItemTagPair& pair, pairs)
+    for (const ItemTagPair& pair : std::as_const(pairs))
     {
         QStringList regions = pair.values(ImageTagPropertyName::tagRegion());
         count              += regions.size();
@@ -249,10 +253,13 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
 QMap<QString, QString> FaceTagsEditor::getSuggestedNames(qlonglong id) const
 {
     QMap<QString, QString> suggestedNames;
+    const auto pairs = ItemTagPair::availablePairs(id);
 
-    Q_FOREACH (const ItemTagPair& pair, ItemTagPair::availablePairs(id))
+    for (const ItemTagPair& pair : pairs)
     {
-        Q_FOREACH (const QString& regionString, pair.values(ImageTagPropertyName::autodetectedPerson()))
+        const auto regions = pair.values(ImageTagPropertyName::autodetectedPerson());
+
+        for (const QString& regionString : regions)
         {
             /**
              * For Unconfirmed Results, the value is stored as a tuple of
@@ -347,7 +354,7 @@ void FaceTagsEditor::addFaceAndTag(ItemTagPair& pair,
     FaceTags::ensureIsPerson(face.tagId());
     QString region = face.region().toXml();
 
-    Q_FOREACH (const QString& property, properties)
+    for (const QString& property : std::as_const(properties))
     {
         pair.addProperty(property, region);
     }
@@ -364,10 +371,11 @@ void FaceTagsEditor::removeAllFaces(qlonglong imageid)
 {
     QList<int>  tagsToRemove;
     QStringList attributes = FaceTagsIface::attributesForFlags(FaceTagsIface::AllTypes);
+    const auto pairs       = faceItemTagPairs(imageid, FaceTagsIface::AllTypes);
 
-    Q_FOREACH (ItemTagPair pair, faceItemTagPairs(imageid, FaceTagsIface::AllTypes))
+    for (ItemTagPair pair : pairs)
     {
-        Q_FOREACH (const QString& attribute, attributes)
+        for (const QString& attribute : std::as_const(attributes))
         {
             pair.removeProperties(attribute);
         }
@@ -385,12 +393,15 @@ void FaceTagsEditor::removeFace(qlonglong imageid, const QRect& rect)
 {
     QList<int>  tagsToRemove;
     QStringList attributes = FaceTagsIface::attributesForFlags(FaceTagsIface::AllTypes);
+    const auto pairs       = faceItemTagPairs(imageid, FaceTagsIface::AllTypes);
 
-    Q_FOREACH (ItemTagPair pair, faceItemTagPairs(imageid, FaceTagsIface::AllTypes))
+    for (ItemTagPair pair : pairs)
     {
-        Q_FOREACH (const QString& attribute, attributes)
+        for (const QString& attribute : std::as_const(attributes))
         {
-            Q_FOREACH (const QString& regionString, pair.values(attribute))
+            const auto regions = pair.values(attribute);
+
+            for (const QString& regionString : regions)
             {
                 if (rect == TagRegion(regionString).toRect())
                 {
@@ -421,7 +432,7 @@ void FaceTagsEditor::removeFace(const FaceTagsIface& face, bool touchTags)
 
 void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
 {
-    Q_FOREACH (const FaceTagsIface& face, faces)
+    for (const FaceTagsIface& face : std::as_const(faces))
     {
         if (face.isNull())
         {
@@ -560,7 +571,7 @@ bool FaceTagsEditor::rotateFaces(qlonglong imageId, const QSize& size,
 
     QSize newSize = size;
 
-    Q_FOREACH (const FaceTagsIface& face, facesList)
+    for (const FaceTagsIface& face : std::as_const(facesList))
     {
         hasConfirmed  |= face.isConfirmedName();
         QRect faceRect = face.region().toRect();
@@ -595,7 +606,7 @@ void FaceTagsEditor::removeNormalTags(qlonglong imageId, const QList<int>& tagId
     group.setMaximumTime(200);
     ItemInfo info(imageId);
 
-    Q_FOREACH (int tagId, tagIds)
+    for (int tagId : std::as_const(tagIds))
     {
         info.removeTag(tagId);
         group.allowLift();

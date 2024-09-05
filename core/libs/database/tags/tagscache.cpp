@@ -105,7 +105,7 @@ public:
             QWriteLocker locker(&lock);
             nameHash.clear();
 
-            Q_FOREACH (const TagShortInfo& info, infos)
+            for (const TagShortInfo& info : std::as_const(infos))
             {
                 nameHash.insert(info.name, info.id);
             }
@@ -130,7 +130,7 @@ public:
 
             QLatin1String internalProp = TagsCache::propertyNameDigikamInternalTag();
 
-            Q_FOREACH (const TagProperty& property, tagProperties)
+            for (const TagProperty& property : std::as_const(tagProperties))
             {
                 if (property.property == internalProp)
                 {
@@ -430,7 +430,7 @@ QStringList TagsCache::tagNames(const QList<int>& ids, HiddenTagsPolicy hiddenTa
 
     if (!ids.isEmpty())
     {
-        Q_FOREACH (int id, ids)
+        for (int id : std::as_const(ids))
         {
             if ((hiddenTagsPolicy == IncludeHiddenTags) || !isInternalTag(id))
             {
@@ -484,7 +484,7 @@ QStringList TagsCache::tagPaths(const QList<int>& ids, LeadingSlashPolicy slashP
 
     if (!ids.isEmpty())
     {
-        Q_FOREACH (int id, ids)
+        for (int id : std::as_const(ids))
         {
             if ((hiddenTagsPolicy == IncludeHiddenTags) || !isInternalTag(id))
             {
@@ -529,8 +529,9 @@ int TagsCache::tagForName(const QString& tagName, int parentId) const
     QReadLocker locker(&d->lock);
 
     QList<TagShortInfo>::const_iterator tag;
+    const auto ids = d->nameHash.values(tagName);
 
-    Q_FOREACH (int id, d->nameHash.values(tagName))
+    for (int id : ids)
     {
         tag = d->find(id);
 
@@ -647,7 +648,7 @@ QList<int> TagsCache::tagsForPaths(const QStringList& tagPaths) const
 
     if (!tagPaths.isEmpty())
     {
-        Q_FOREACH (const QString& path, tagPaths)
+        for (const QString& path : std::as_const(tagPaths))
         {
             ids << tagForPath(path);
         }
@@ -680,7 +681,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 
         // Traverse hierarchy from top to bottom
 
-        Q_FOREACH (const QString& tagName, tagHierarchy)
+        for (const QString& tagName : std::as_const(tagHierarchy))
         {
             tagID = 0;
 
@@ -694,7 +695,9 @@ int TagsCache::createTag(const QString& tagPathToCreate)
                 // and parent ID identical to the ID of the tag we found in
                 // the previous run.
 
-                Q_FOREACH (int id, d->nameHash.values(tagName))
+                const auto ids = d->nameHash.values(tagName);
+
+                for (int id : ids)
                 {
                     tag = d->find(id);
 
@@ -733,7 +736,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
     {
         CoreDbAccess access;
 
-        Q_FOREACH (const QString& tagName, tagsToCreate)
+        for (const QString& tagName : std::as_const(tagsToCreate))
         {
             tagID = access.db()->addTag(parentTagIDForCreation, tagName, QString(), 0);
 
@@ -764,7 +767,7 @@ QList<int> TagsCache::createTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        Q_FOREACH (const QString& path, tagPaths)
+        for (const QString& path : std::as_const(tagPaths))
         {
             ids << createTag(path);
         }
@@ -779,7 +782,7 @@ QList<int> TagsCache::getOrCreateTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        Q_FOREACH (const QString& path, tagPaths)
+        for (const QString& path : std::as_const(tagPaths))
         {
             ids << getOrCreateTag(path);
         }
@@ -1007,7 +1010,7 @@ bool TagsCache::containsPublicTags(const QList<int>& tagIds) const
     d->checkProperties();
     QReadLocker locker(&d->lock);
 
-    Q_FOREACH (int id, tagIds)
+    for (int id : std::as_const(tagIds))
     {
         if (!d->internalTags.contains(id))
         {
@@ -1104,7 +1107,7 @@ int TagsCache::colorLabelFromTags(const QList<int>& tagIds)
     d->checkLabelTags();
     QReadLocker locker(&d->lock);
 
-    Q_FOREACH (int tagId, tagIds)
+    for (int tagId : std::as_const(tagIds))
     {
         for (int i = FirstColorLabel ; i <= LastColorLabel ; ++i)
         {
@@ -1152,7 +1155,7 @@ int TagsCache::pickLabelFromTags(const QList<int>& tagIds)
     d->checkLabelTags();
     QReadLocker locker(&d->lock);
 
-    Q_FOREACH (int tagId, tagIds)
+    for (int tagId : std::as_const(tagIds))
     {
         for (int i = FirstPickLabel ; i <= LastPickLabel ; ++i)
         {
@@ -1176,7 +1179,7 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
 
     // duplicates tagPath(), but we need the additional list of tag ids
 
-    Q_FOREACH (int id, ids)
+    for (int id : std::as_const(ids))
     {
         if ((hiddenTagsPolicy == IncludeHiddenTags) || !isInternalTag(id))
         {
@@ -1189,7 +1192,7 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
 
     QStringList shortenedPaths = ItemPropertiesTab::shortenedTagPaths(paths, &variantIds);
 
-    Q_FOREACH (const QVariant& var, variantIds)
+    for (const QVariant& var : std::as_const(variantIds))
     {
         (*sortedIds) << var.toInt();
     }

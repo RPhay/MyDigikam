@@ -95,7 +95,7 @@ TagProperties::TagProperties(int tagId)
     d->tagId                      = tagId;
     QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(tagId);
 
-    Q_FOREACH (const TagProperty& p, properties)
+    for (const TagProperty& p : std::as_const(properties))
     {
         d->properties.insert(p.property, p.value);
     }
