@@ -290,7 +290,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     QList<CollectionLocation> disappearedLocations = CollectionManager::instance()->checkHardWiredLocations();
 
-    Q_FOREACH (const CollectionLocation& loc, disappearedLocations)
+    for (const CollectionLocation& loc : std::as_const(disappearedLocations))
     {
         QString locDescription;
         QStringList candidateIds, candidateDescriptions;

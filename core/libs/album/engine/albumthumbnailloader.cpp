@@ -457,7 +457,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
     {
         QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(id);
 
-        Q_FOREACH (const FaceTagsIface& face, faces)
+        for (const FaceTagsIface& face : std::as_const(faces))
         {
             if (face.tagId() == album->id())
             {

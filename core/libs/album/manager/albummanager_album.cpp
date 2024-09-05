@@ -31,7 +31,7 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
     /**
      * Filter out the null pointers
      */
-    Q_FOREACH (Album* const album, albums)
+    for (Album* const album : std::as_const(albums))
     {
         if (album)
         {

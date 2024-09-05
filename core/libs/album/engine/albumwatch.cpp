@@ -60,7 +60,7 @@ bool AlbumWatch::Private::inBlackList(const QString& path) const
 {
     // Filter out dirty signals triggered by changes on the database file
 
-    Q_FOREACH (const QString& bannedFile, fileNameBlackList)
+    for (const QString& bannedFile : std::as_const(fileNameBlackList))
     {
         if (path.endsWith(bannedFile))
         {
@@ -127,7 +127,7 @@ QList<QDateTime> AlbumWatch::Private::buildDirectoryModList(const QFileInfo& dbF
 
     // Build the list
 
-    Q_FOREACH (const QFileInfo& info, fileInfoList)
+    for (const QFileInfo& info : std::as_const(fileInfoList))
     {
         // Ignore digikam4.db and journal and other temporary files
 
@@ -196,7 +196,9 @@ void AlbumWatch::removeWatchedPAlbums(const PAlbum* const album)
         return;
     }
 
-    Q_FOREACH (const QString& dir, d->dirWatch->directories())
+    const auto dirs = d->dirWatch->directories();
+
+    for (const QString& dir : dirs)
     {
         if (dir.startsWith(album->folderPath()))
         {

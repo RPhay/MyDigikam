@@ -64,7 +64,7 @@ void AlbumManager::scanSAlbums()
 
     // go through all the Albums and see which ones are already present
 
-    Q_FOREACH (const SearchInfo& info, currentSearches)
+    for (const SearchInfo& info : std::as_const(currentSearches))
     {
         if (oldSearches.contains(info.id))
         {
@@ -99,7 +99,7 @@ void AlbumManager::scanSAlbums()
 
     // remove old albums that have been deleted
 
-    Q_FOREACH (SAlbum* const album, oldSearches)
+    for (SAlbum* const album : std::as_const(oldSearches))
     {
         Q_EMIT signalAlbumAboutToBeDeleted(album);
 
@@ -116,7 +116,7 @@ void AlbumManager::scanSAlbums()
 
     // add new albums
 
-    Q_FOREACH (const SearchInfo& info, newSearches)
+    for (const SearchInfo& info : std::as_const(newSearches))
     {
         SAlbum* const album                   = new SAlbum(info.name, info.id);
         album->setSearch(info.type, info.query);

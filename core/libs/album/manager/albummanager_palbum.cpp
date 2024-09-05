@@ -47,7 +47,7 @@ void AlbumManager::scanPAlbums()
 
     // go through all the Albums and see which ones are already present
 
-    Q_FOREACH (const AlbumInfo& info, currentAlbums)
+    for (const AlbumInfo& info : std::as_const(currentAlbums))
     {
         // check that location of album is available
 
@@ -80,7 +80,7 @@ void AlbumManager::scanPAlbums()
 
     QSet<PAlbum*> topMostOldAlbums;
 
-    Q_FOREACH (PAlbum* const album, oldAlbums)
+    for (PAlbum* const album : std::as_const(oldAlbums))
     {
         if (album->isTrashAlbum())
         {
@@ -93,7 +93,7 @@ void AlbumManager::scanPAlbums()
         }
     }
 
-    Q_FOREACH (PAlbum* const album, topMostOldAlbums)
+    for (PAlbum* const album : std::as_const(topMostOldAlbums))
     {
         // recursively removes all children and the album
 
@@ -106,7 +106,7 @@ void AlbumManager::scanPAlbums()
 
     // create all new albums
 
-    Q_FOREACH (const AlbumInfo& info, newAlbums)
+    for (const AlbumInfo& info : std::as_const(newAlbums))
     {
         if (info.relativePath.isEmpty())
         {
@@ -202,9 +202,9 @@ void AlbumManager::updateChangedPAlbums()
 
     // Find the AlbumInfo for each id in changedPAlbums
 
-    Q_FOREACH (int id, d->changedPAlbums)
+    for (int id : std::as_const(d->changedPAlbums))
     {
-        Q_FOREACH (const AlbumInfo& info, currentAlbums)
+        for (const AlbumInfo& info : std::as_const(currentAlbums))
         {
             if (info.id == id)
             {

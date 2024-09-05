@@ -96,7 +96,7 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QHash<int, int> >& face
     {
         typedef QHash<int, int> IntIntHash;
 
-        Q_FOREACH (const IntIntHash& counts, facesStatHash)
+        for (const IntIntHash& counts : std::as_const(facesStatHash))
         {
             QHash<int, int>::const_iterator it;
 

@@ -397,7 +397,9 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
     {
         // Recursively from all tags to delete.
 
-        Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInTag(album->id(), true))
+        const auto ids = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
+
+        for (const qlonglong& id : ids)
         {
             if (!imageIds->contains(id))
             {
@@ -406,17 +408,17 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
         }
     }
 
-    Q_FOREACH (int tagId, toBeDeletedTagIds)
+    for (int tagId : std::as_const(toBeDeletedTagIds))
     {
         if (FaceTags::isPerson(tagId))
         {
             const QList<qlonglong>& imgListIds = CoreDbAccess().db()->getItemIDsInTag(tagId);
 
-            Q_FOREACH (const qlonglong& imageId, imgListIds)
+            for (const qlonglong& imageId : std::as_const(imgListIds))
             {
                 const QList<FaceTagsIface>& facesList = FaceTagsEditor().databaseFaces(imageId);
 
-                Q_FOREACH (const FaceTagsIface& face, facesList)
+                for (const FaceTagsIface& face : std::as_const(facesList))
                 {
                     if (face.tagId() == tagId)
                     {
@@ -437,7 +439,7 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
         CoreDbAccess access;
         ChangingDB changing(d);
 
-        Q_FOREACH (int tagId, toBeDeletedTagIds)
+        for (int tagId : std::as_const(toBeDeletedTagIds))
         {
             access.db()->deleteTag(tagId);
         }
@@ -653,12 +655,12 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        Q_FOREACH (const qlonglong& imageId, imageIds)
+        for (const qlonglong& imageId : std::as_const(imageIds))
         {
             QList<FaceTagsIface> facesList = FaceTagsEditor().databaseFaces(imageId);
             bool foundFace                 = false;
 
-            Q_FOREACH (const FaceTagsIface& face, facesList)
+            for (const FaceTagsIface& face : std::as_const(facesList))
             {
                 if (face.tagId() == oldId)
                 {
@@ -770,7 +772,7 @@ QStringList AlbumManager::tagNames(const QList<int>& tagIDs, bool includeInterna
 {
     QStringList tagNames;
 
-    Q_FOREACH (int id, tagIDs)
+    for (int id : std::as_const(tagIDs))
     {
         TAlbum* const album = findTAlbum(id);
 
@@ -862,7 +864,7 @@ AlbumList AlbumManager::findTagsWithProperty(const QString& property)
 
     QList<int> ids = TagsCache::instance()->tagsWithProperty(property);
 
-    Q_FOREACH (int id, ids)
+    for (int id : std::as_const(ids))
     {
         TAlbum* const album = findTAlbum(id);
 
@@ -1070,7 +1072,9 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
 
         case ImageTagChangeset::PropertiesChanged:
         {
-            Q_FOREACH (int id, changeset.tags())
+            const auto ids = changeset.tags();
+
+            for (int id : ids)
             {
                 if (!d->toUpdatedFaces.contains(id))
                 {

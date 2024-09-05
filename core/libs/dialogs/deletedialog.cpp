@@ -329,7 +329,7 @@ void DeleteWidget::setUrls(const QList<QUrl>& urls)
 {
     d->fileList->clear();
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         new DeleteItem(d->fileList, url);
     }

@@ -199,7 +199,9 @@ void AlbumManager::startScan()
 
     // Create albums for album roots. Reuse logic implemented in the method
 
-    Q_FOREACH (const CollectionLocation& location, CollectionManager::instance()->allLocations())
+    const auto locs = CollectionManager::instance()->allLocations();
+
+    for (const CollectionLocation& location : locs)
     {
         handleCollectionStatusChange(location, CollectionLocation::LocationNull);
     }
@@ -262,7 +264,9 @@ void AlbumManager::setShowOnlyAvailableAlbums(bool onlyAvailable)
     // We need to update the unavailable locations.
     // We assume the handleCollectionStatusChange does the right thing (even though old status == current status)
 
-    Q_FOREACH (const CollectionLocation& location, CollectionManager::instance()->allLocations())
+    const auto locs = CollectionManager::instance()->allLocations();
+
+    for (const CollectionLocation& location : locs)
     {
         if (location.status() == CollectionLocation::LocationUnavailable)
         {
@@ -298,7 +302,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
 
     QList<SAlbum*> sAlbums = findSAlbumsBySearchType(DatabaseSearch::DuplicatesSearch);
 
-    Q_FOREACH (SAlbum* const sAlbum, sAlbums)
+    for (SAlbum* const sAlbum : std::as_const(sAlbums))
     {
         // Read the search query XML and save the image ids
 
