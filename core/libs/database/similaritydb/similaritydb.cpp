@@ -131,7 +131,7 @@ QSet<qlonglong> SimilarityDb::registeredImageIds() const
     d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix;"),
                    &values);
 
-    Q_FOREACH (const QVariant& var, values)
+    for (const QVariant& var : std::as_const(values))
     {
         imageIds << var.toLongLong();
     }
@@ -228,7 +228,7 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
 
     if (algorithm == FuzzyAlgorithm::Haar)
     {
-        Q_FOREACH (const ItemInfo& info, imageInfos)
+        for (const ItemInfo& info : std::as_const(imageInfos))
         {
             QList<QVariant> values;
 
@@ -272,7 +272,7 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
 
     if (algorithm == FuzzyAlgorithm::Haar)
     {
-        Q_FOREACH (const ItemInfo& info, imageInfos)
+        for (const ItemInfo& info : std::as_const(imageInfos))
         {
             QList<QVariant> values;
 
@@ -467,7 +467,7 @@ QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong image
 
     QList<FuzzyAlgorithm> algorithms;
 
-    Q_FOREACH (const QVariant& var, values)
+    for (const QVariant& var : std::as_const(values))
     {
         int algorithmId = var.toInt();
 
