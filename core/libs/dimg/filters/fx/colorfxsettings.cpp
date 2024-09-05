@@ -340,7 +340,7 @@ void ColorFXSettings::findLuts()
                                           QLatin1String("digikam/data/lut3d"),
                                           QStandardPaths::LocateDirectory);
 
-    Q_FOREACH (const QString& dirpath, dirpaths)
+    for (const QString& dirpath : std::as_const(dirpaths))
     {
         QDirIterator dirIt(dirpath, QDirIterator::Subdirectories);
 

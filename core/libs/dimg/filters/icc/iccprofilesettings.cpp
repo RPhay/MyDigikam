@@ -130,7 +130,7 @@ void IccProfilesSettings::readSettings(KConfigGroup& group)
 {
     QStringList lastProfiles = group.readPathEntry(d->configRecentlyUsedProfilesEntry, QStringList());
 
-    Q_FOREACH (const QString& path, lastProfiles)
+    for (const QString& path : std::as_const(lastProfiles))
     {
         d->favoriteProfiles.insert(path, new bool(true));
     }

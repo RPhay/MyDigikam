@@ -32,7 +32,7 @@ void IccSettings::Private::scanDirectory(const QString& path, const QStringList&
     infos << dir.entryInfoList(filter, QDir::Files | QDir::Readable);
     infos << dir.entryInfoList(QDir::Dirs | QDir::Readable | QDir::NoDotAndDotDot);
 
-    Q_FOREACH (const QFileInfo& info, infos)
+    for (const QFileInfo& info : std::as_const(infos))
     {
         if      (info.isFile())
         {
@@ -65,7 +65,7 @@ QList<IccProfile> IccSettings::Private::scanDirectories(const QStringList& dirs)
     filters << QLatin1String("*.icc") << QLatin1String("*.icm");
     qCDebug(DIGIKAM_DIMG_LOG) << dirs;
 
-    Q_FOREACH (const QString& dirPath, dirs)
+    for (const QString& dirPath : std::as_const(dirs))
     {
         QDir dir(dirPath);
 

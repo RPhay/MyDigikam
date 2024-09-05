@@ -158,8 +158,9 @@ void RedEyeCorrectionFilter::filterImage()
     {
         QList<QRect> qrectdets;
         std::vector<cv::Rect> dets;
+        const auto rects = FaceDetector::toAbsoluteRects(qrectfdets, m_orgImage.size());
 
-        Q_FOREACH (const QRect& rect, FaceDetector::toAbsoluteRects(qrectfdets, m_orgImage.size()))
+        for (const QRect& rect : rects)
         {
             int margin = qMax(rect.width(), rect.height());
             margin    /= 10;

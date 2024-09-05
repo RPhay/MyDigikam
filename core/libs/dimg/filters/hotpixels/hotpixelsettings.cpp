@@ -185,7 +185,7 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
 
     setSettings(prm);
 
-    Q_FOREACH (const QUrl& url, d->allBlackFrameUrls)
+    for (const QUrl& url : std::as_const(d->allBlackFrameUrls))
     {
         if (url.isValid() && !d->blackFrameListView->contains(url))
         {

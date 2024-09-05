@@ -86,7 +86,7 @@ bool IccSettings::monitorProfileFromSystem() const
     {
         QMutexLocker lock(&d->mutex);
 
-        Q_FOREACH (const IccProfile& profile, d->screenProfiles)
+        for (const IccProfile& profile : std::as_const(d->screenProfiles))
         {
             if (!profile.isNull())
             {   // cppcheck-suppress useStlAlgorithm
@@ -99,7 +99,7 @@ bool IccSettings::monitorProfileFromSystem() const
 
     QList<QWidget*> topLevels = qApp->topLevelWidgets();
 
-    Q_FOREACH (QWidget* const widget, topLevels)
+    for (QWidget* const widget : std::as_const(topLevels))
     {
         if (!d->profileFromWindowSystem(widget).isNull())
         {

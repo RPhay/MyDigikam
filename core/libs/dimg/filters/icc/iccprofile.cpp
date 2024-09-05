@@ -528,7 +528,7 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << macOSBundlePrefix() + QLatin1String("share");
     }
 
-    Q_FOREACH (const QString& dataDir, dataDirs)
+    for (const QString& dataDir : std::as_const(dataDirs))
     {
         candidates << dataDir + QLatin1String("/color/icc");
     }
@@ -565,7 +565,7 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << QLatin1String("/usr/local/share");
     }
 
-    Q_FOREACH (const QString& dataDir, dataDirs)
+    for (const QString& dataDir : std::as_const(dataDirs))
     {
         candidates << dataDir + QLatin1String("/color/icc");
     }
@@ -588,7 +588,7 @@ QStringList IccProfile::defaultSearchPaths()
 
 #endif
 
-    Q_FOREACH (const QString& candidate, candidates)
+    for (const QString& candidate : std::as_const(candidates))
     {
         QDir dir(candidate);
 
