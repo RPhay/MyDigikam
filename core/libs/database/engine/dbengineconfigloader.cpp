@@ -245,7 +245,7 @@ bool DbEngineConfigSettingsLoader::readConfig(const QString& filepath, int xmlVe
 /*
     qCDebug(DIGIKAM_DBENGINE_LOG) << "Found entries: " << databaseConfigs.size();
 
-    Q_FOREACH (const DbEngineConfigSettings& configElement, databaseConfigs )
+    for (const DbEngineConfigSettings& configElement : std::as_const(databaseConfigs))
     {
         qCDebug(DIGIKAM_DBENGINE_LOG) << "DatabaseID: "          << configElement.databaseID;
         qCDebug(DIGIKAM_DBENGINE_LOG) << "HostName: "            << configElement.hostName;
@@ -257,13 +257,14 @@ bool DbEngineConfigSettingsLoader::readConfig(const QString& filepath, int xmlVe
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Database Server CMD: " << configElement.dbServerCmd;
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Database Init CMD: "   << configElement.dbInitCmd;
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Statements:";
+        const auto keys = configElement.sqlStatements.keys();
 
-        Q_FOREACH (const QString& actionKey, configElement.sqlStatements.keys())
+        for (const QString& actionKey : keys)
         {
             QList<databaseActionElement> l_DBActionElement = configElement.sqlStatements[actionKey].dBActionElements;
             qCDebug(DIGIKAM_DBENGINE_LOG) << "DBAction [" << actionKey << "] has [" << l_DBActionElement.size() << "] actions";
 
-            Q_FOREACH (const databaseActionElement statement, l_DBActionElement)
+            for (const databaseActionElement statement : std::as_const(l_DBActionElement))
             {
                 qCDebug(DIGIKAM_DBENGINE_LOG) << "\tMode ["<< statement.mode <<"] Value ["<< statement.statement <<"]";
             }

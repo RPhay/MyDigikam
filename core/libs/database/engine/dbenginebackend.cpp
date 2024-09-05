@@ -738,7 +738,7 @@ BdEngineBackend::QueryState BdEngineBackend::execDBAction(const DbEngineAction& 
         beginTransaction();
     }
 
-    Q_FOREACH (const DbEngineActionElement& actionElement, action.dbActionElements)
+    for (const DbEngineActionElement& actionElement : std::as_const(action.dbActionElements))
     {
         BdEngineBackend::QueryState result;
 
@@ -805,7 +805,7 @@ QSqlQuery BdEngineBackend::execDBActionQuery(const DbEngineAction& action, const
 */
     QSqlQuery result;
 
-    Q_FOREACH (const DbEngineActionElement& actionElement, action.dbActionElements)
+    for (const DbEngineActionElement& actionElement : std::as_const(action.dbActionElements))
     {
         if (actionElement.mode == QLatin1String("query"))
         {
@@ -1844,7 +1844,7 @@ DbEngineSqlQuery BdEngineBackend::copyQuery(const DbEngineSqlQuery& old)
 
 #endif
 
-    Q_FOREACH (const QVariant& value, boundValues)
+    for (const QVariant& value : std::as_const(boundValues))
     {
 /*
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Bind value to query ["<<value<<"]";
