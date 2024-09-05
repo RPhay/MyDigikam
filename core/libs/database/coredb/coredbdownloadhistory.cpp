@@ -29,7 +29,7 @@ CamItemInfo::DownloadStatus CoreDbDownloadHistory::status(const QString& identif
     QList<qint64> seconds;
     seconds << 0 << 3600 << -3600;
 
-    Q_FOREACH (const qint64 secound, seconds)
+    for (const qint64 secound : std::as_const(seconds))
     {
         QDateTime dt = date.addSecs(secound);
 

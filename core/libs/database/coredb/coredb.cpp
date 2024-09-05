@@ -742,7 +742,7 @@ QList<int> CoreDB::getTagsWithProperty(const QString& property) const
 
     QList<int> tagIds;
 
-    Q_FOREACH (const QVariant& var, values)
+    for (const QVariant& var : std::as_const(values))
     {
         tagIds << var.toInt();
     }
@@ -890,7 +890,7 @@ static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& 
     filterList     = filter.split(sep, Qt::SkipEmptyParts);
     userFilterList = userFilter.split(sep, Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& userFormat, userFilterList)
+    for (const QString& userFormat : std::as_const(userFilterList))
     {
         if (userFormat.startsWith(QLatin1Char('-')))
         {
@@ -1103,7 +1103,7 @@ QList<qlonglong> CoreDB::getImageIds(DatabaseItem::Status status) const
 
     QList<qlonglong> imageIds;
 
-    Q_FOREACH (const QVariant& object, values)
+    for (const QVariant& object : std::as_const(values))
     {
         imageIds << object.toLongLong();
     }
@@ -1120,7 +1120,7 @@ QList<qlonglong> CoreDB::getImageIds(DatabaseItem::Status status, DatabaseItem::
 
     QList<qlonglong> imageIds;
 
-    Q_FOREACH (const QVariant& object, values)
+    for (const QVariant& object : std::as_const(values))
     {
         imageIds << object.toLongLong();
     }
@@ -1232,7 +1232,7 @@ QVector<QList<int> > CoreDB::getItemsTagIDs(const QList<qlonglong>& imageIds) co
         d->db->execSql(query, imageIds[i], &values);
         QList<int>& tagIds = results[i];
 
-        Q_FOREACH (const QVariant& v, values)
+        for (const QVariant& v : std::as_const(values))
         {
             tagIds << v.toInt();
         }
@@ -1648,7 +1648,7 @@ QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, Database
 
         DbEngineSqlQuery query = d->db->prepareQuery(sql);
 
-        Q_FOREACH (const qlonglong& imageid, imageIDs)
+        for (const qlonglong& imageid : std::as_const(imageIDs))
         {
             QVariantList singleValueList;
             d->db->execSql(query, imageid, &singleValueList);
@@ -2226,7 +2226,7 @@ QList<qlonglong> CoreDB::findByNameAndCreationDate(const QString& fileName, cons
 
     QList<qlonglong> ids;
 
-    Q_FOREACH (const QVariant& var, values)
+    for (const QVariant& var : std::as_const(values))
     {
         ids << var.toLongLong();
     }
@@ -2569,7 +2569,7 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
     QSet<qlonglong>  result;
     QList<QVariant>  values;
 
-    Q_FOREACH (const qlonglong& id, ids)
+    for (const qlonglong& id : std::as_const(ids))
     {
         if (type == DatabaseRelation::UndefinedType)
         {
@@ -3237,9 +3237,9 @@ void CoreDB::addTagsToItems(const QList<qlonglong>& imageIDs, const QList<int>& 
     QVariantList images;
     QVariantList tags;
 
-    Q_FOREACH (const qlonglong& imageid, imageIDs)
+    for (const qlonglong& imageid : std::as_const(imageIDs))
     {
-        Q_FOREACH (int tagid, tagIDs)
+        for (int tagid : std::as_const(tagIDs))
         {
             images << imageid;
             tags   << tagid;
@@ -3286,9 +3286,9 @@ void CoreDB::removeTagsFromItems(const QList<qlonglong>& imageIDs, const QList<i
     QVariantList     images;
     QVariantList     tags;
 
-    Q_FOREACH (const qlonglong& imageid, imageIDs)
+    for (const qlonglong& imageid : std::as_const(imageIDs))
     {
-        Q_FOREACH (int tagid, tagIDs)
+        for (int tagid : std::as_const(tagIDs))
         {
             images << imageid;
             tags   << tagid;
@@ -3372,7 +3372,7 @@ QList<qlonglong> CoreDB::getObsoleteItemIds() const
 
     QList<qlonglong> imageIds;
 
-    Q_FOREACH (const QVariant& object, values)
+    for (const QVariant& object : std::as_const(values))
     {
         imageIds << object.toLongLong();
     }
@@ -4057,7 +4057,7 @@ QList<qlonglong> CoreDB::getAllItems() const
 
     QList<qlonglong> items;
 
-    Q_FOREACH (const QVariant& item, values)
+    for (const QVariant& item : std::as_const(values))
     {
         items << item.toLongLong();
     }
@@ -4334,7 +4334,7 @@ QDate CoreDB::getAlbumAverageDate(int albumID) const
 
     qint64 julianDays = 0;
 
-    Q_FOREACH (const QDate& date, dates)
+    for (const QDate& date : std::as_const(dates))
     {
         // cppcheck-suppress useStlAlgorithm
         julianDays += date.toJulianDay();
@@ -4385,7 +4385,7 @@ void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albu
     QVariantList imageIds;
     QVariantList status;
 
-    Q_FOREACH (const qlonglong& id, itemIDs)
+    for (const qlonglong& id : std::as_const(itemIDs))
     {
         status << (int)DatabaseItem::Trashed;
         imageIds << id;
@@ -4405,7 +4405,7 @@ void CoreDB::removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList
     QVariantList imageIds;
     QVariantList status;
 
-    Q_FOREACH (const qlonglong& id, itemIDs)
+    for (const qlonglong& id : std::as_const(itemIDs))
     {
         status   << (int)DatabaseItem::Obsolete;
         imageIds << id;

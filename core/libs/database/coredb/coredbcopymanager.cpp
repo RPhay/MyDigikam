@@ -261,7 +261,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
         QMap<QString, QVariant> tempBindingMap;
         int i = 0;
 
-        Q_FOREACH (QString columnName, columnNames) // krazy:exclude=foreach
+        for (QString columnName : std::as_const(columnNames))
         {
             columnName.remove(QLatin1String(" COLLATE utf8_general_ci"));
 
