@@ -327,6 +327,8 @@ private:
 
 private:
 
+    mutable QReadWriteLock   m_cacheLock;
+
     bool                     m_root                 = false;
     bool                     m_usedByLabelsTree     = false;
 
@@ -338,7 +340,6 @@ private:
     QMap<const void*, void*> m_extraMap;
 
     QList<Album*>            m_childCache;
-    mutable QReadWriteLock   m_cacheLock;
 
     Type                     m_type                 = PHYSICAL;
 
