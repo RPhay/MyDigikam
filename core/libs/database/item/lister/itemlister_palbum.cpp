@@ -43,7 +43,7 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
             return;
         }
 
-        Q_FOREACH (int id, intAlbumIds)
+        for (int id : std::as_const(intAlbumIds))
         {
             albumIds << id;
         }
@@ -147,7 +147,7 @@ QSet<int> ItemLister::albumRootsToList() const
     QList<CollectionLocation> locations = CollectionManager::instance()->allAvailableLocations();
     QSet<int>                 ids;
 
-    Q_FOREACH (const CollectionLocation& location, locations)
+    for (const CollectionLocation& location : std::as_const(locations))
     {
         ids << location.id();
     }

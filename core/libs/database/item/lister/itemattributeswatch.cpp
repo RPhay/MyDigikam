@@ -75,15 +75,19 @@ void ItemAttributesWatch::slotImageChange(const ImageChangeset& changeset)
         (set & DatabaseFields::Rating)
        )
     {
-        Q_FOREACH (const qlonglong& imageId, changeset.ids())
+        const auto ids = changeset.ids();
+
+        for (const qlonglong& imageId : ids)
         {
             if (set & DatabaseFields::ItemCommentsAll)
             {
                 Q_EMIT signalImageCaptionChanged(imageId);
             }
 
-            if ((set & DatabaseFields::CreationDate) ||
-                (set & DatabaseFields::ModificationDate))
+            if (
+                (set & DatabaseFields::CreationDate) ||
+                (set & DatabaseFields::ModificationDate)
+               )
             {
                 Q_EMIT signalImageDateChanged(imageId);
             }
@@ -98,7 +102,9 @@ void ItemAttributesWatch::slotImageChange(const ImageChangeset& changeset)
 
 void ItemAttributesWatch::slotImageTagChange(const ImageTagChangeset& changeset)
 {
-    Q_FOREACH (const qlonglong& imageId, changeset.ids())
+    const auto ids = changeset.ids();
+
+    for (const qlonglong& imageId : ids)
     {
         Q_EMIT signalImageTagsChanged(imageId);
     }

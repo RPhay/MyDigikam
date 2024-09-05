@@ -249,7 +249,7 @@ QString ItemLister::tagSearchXml(int tagId,
         properties << ImageTagPropertyName::ignoredFace();
         properties << ImageTagPropertyName::tagRegion();
 
-        Q_FOREACH (const QString& property, properties)
+        for (const QString& property : std::as_const(properties))
         {
             writer.writeField(QLatin1String("imagetagproperty"), includeChildTags ? SearchXml::InTree : SearchXml::Equal);
 
