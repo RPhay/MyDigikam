@@ -33,7 +33,6 @@ no-fully-qualified-moc-types,\
 no-qproperty-without-notify,\
 no-old-style-connect,\
 no-rule-of-three,\
-no-inefficient-qlist-soft,\
 no-qstring-allocations,\
 no-qstring-arg,\
 no-qstring-insensitive-allocation,\
