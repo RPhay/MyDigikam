@@ -204,8 +204,9 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
 DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bool mustBeAvailable)
 {
     DImageHistory h;
+    const auto entries = history.entries();
 
-    Q_FOREACH (const DImageHistory::Entry& e, history.entries())
+    for (const DImageHistory::Entry& e : entries)
     {
         // Copy entry, without referredImages
 
@@ -214,13 +215,13 @@ DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bo
 
         // resolve referredImages
 
-        Q_FOREACH (const HistoryImageId& id, e.referredImages)
+        for (const HistoryImageId& id : std::as_const(e.referredImages))
         {
             QList<qlonglong> imageIds = resolveHistoryImageId(id);
 
             // append each image found in collection to referredImages
 
-            Q_FOREACH (const qlonglong& imageId, imageIds)
+            for (const qlonglong& imageId : std::as_const(imageIds))
             {
                 ItemInfo info(imageId);
 
@@ -333,7 +334,7 @@ static QList<qlonglong> mergedIdLists(const HistoryImageId& referenceId,
     // Add a candidate if it has the same UUID, or either reference or candidate  have a UUID
     // (other way round: do not add a candidate which positively has a different UUID)
 
-    Q_FOREACH (const qlonglong& candidate, candidates)
+    for (const qlonglong& candidate : std::as_const(candidates))
     {
         if (results.contains(candidate))
         {
@@ -379,7 +380,7 @@ QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& histor
         {
             QList<qlonglong> ids;
 
-            Q_FOREACH (const ItemScanInfo& info, infos)
+            for (const ItemScanInfo& info : std::as_const(infos))
             {
                 if (info.status != DatabaseItem::Status::Trashed && info.status != DatabaseItem::Status::Obsolete)
                 {

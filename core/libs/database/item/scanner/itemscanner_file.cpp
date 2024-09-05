@@ -280,7 +280,7 @@ bool ItemScanner::scanFromIdenticalFile()
 
         // Prefer item found in the same album
 
-        Q_FOREACH (const ItemScanInfo& info, candidates)
+        for (const ItemScanInfo& info : std::as_const(candidates))
         {
             if (info.albumID == d->scanInfo.albumID)
             {

@@ -514,7 +514,7 @@ void ItemScanner::commitTags()
 
     if (d->commit.hasColorTag || d->commit.hasPickTag)
     {
-        Q_FOREACH (int tag, currentTags)
+        for (int tag : std::as_const(currentTags))
         {
             if (colorTags.contains(tag) || pickTags.contains(tag))
             {

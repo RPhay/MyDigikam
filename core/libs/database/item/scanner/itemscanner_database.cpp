@@ -257,7 +257,9 @@ void ItemScanner::cleanDatabaseMetadata()
 
     if (settings.saveTags)
     {
-        Q_FOREACH (int tag, CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id))
+        const auto tags = CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id);
+
+        for (int tag : tags)
         {
             if (!TagsCache::instance()->isInternalTag(tag))
             {
@@ -289,7 +291,9 @@ void ItemScanner::cleanDatabaseMetadata()
 
     if (settings.saveFaceTags)
     {
-        Q_FOREACH (const ImageTagProperty& property, CoreDbAccess().db()->getImageTagProperties(d->scanInfo.id))
+        const auto props = CoreDbAccess().db()->getImageTagProperties(d->scanInfo.id);
+
+        for (const ImageTagProperty& property : props)
         {
             if (property.property == ImageTagPropertyName::tagRegion())
             {
