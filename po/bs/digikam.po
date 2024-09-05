@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 01:45+0000\n"
+"POT-Creation-Date: 2024-09-05 01:44+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -7417,8 +7417,8 @@ msgstr "Prikažite format slike"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:54
-#: core/libs/dplugins/core/dplugindimg.cpp:66
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can read file format"
@@ -7440,8 +7440,8 @@ msgstr "da"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:57
-#: core/libs/dplugins/core/dplugindimg.cpp:69
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can write file format"
@@ -7451,8 +7451,8 @@ msgstr "da"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
@@ -7675,8 +7675,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:55
-#: core/libs/dplugins/core/dplugindimg.cpp:67
+#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:68
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot read file format"
@@ -29093,7 +29093,7 @@ msgid "No Color"
 msgstr "Bez boje"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -29101,7 +29101,7 @@ msgid "Red"
 msgstr "Crvena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -29109,7 +29109,7 @@ msgid "Orange"
 msgstr "Narandžasta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -29117,7 +29117,7 @@ msgid "Yellow"
 msgstr "Žuta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -29125,7 +29125,7 @@ msgid "Green"
 msgstr "Zelena"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -29133,7 +29133,7 @@ msgid "Blue"
 msgstr "Plava"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -29141,7 +29141,7 @@ msgid "Magenta"
 msgstr "Purpurna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -29149,7 +29149,7 @@ msgid "Gray"
 msgstr "Siva"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -29157,7 +29157,7 @@ msgid "Black"
 msgstr "Crna"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -29179,7 +29179,7 @@ msgid "No Pick"
 msgstr "Bez izbora"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 #| msgid "Rejected"
 msgctxt "@info: pick label name"
@@ -29187,7 +29187,7 @@ msgid "Rejected"
 msgstr "Odbijen"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: pick label name"
@@ -29195,7 +29195,7 @@ msgid "Pending"
 msgstr "Na čekanju"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: pick label name"
@@ -35935,7 +35935,7 @@ msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr ""
 
-#: core/libs/dplugins/core/dplugindimg.cpp:52
+#: core/libs/dplugins/core/dplugindimg.cpp:53
 #, fuzzy, kde-format
 #| msgid "1 Image"
 #| msgid_plural "%1 Images"
@@ -35943,7 +35943,7 @@ msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "%1 slika"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:81
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, fuzzy, kde-format
 #| msgctxt "File extension"
 #| msgid "Extension"
@@ -35951,14 +35951,14 @@ msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "Ekstenzija"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:82
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "Opis"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:83
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -35966,14 +35966,14 @@ msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "Spreman"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:84
+#: core/libs/dplugins/core/dplugindimg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Writable: "
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "Moguće zapisati: "
 
-#: core/libs/dplugins/core/dplugindimg.cpp:89
+#: core/libs/dplugins/core/dplugindimg.cpp:90
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
@@ -36001,7 +36001,7 @@ msgctxt "@title"
 msgid "Details"
 msgstr "Detalji"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:125
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "Authors"
@@ -36009,69 +36009,69 @@ msgctxt "@title"
 msgid "Authors"
 msgstr "Autori"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Interface Options"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "Opcije interfejsa"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid "Tool Tip"
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "Savjet"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@item"
 msgid "Library"
 msgstr "Biblioteka albuma"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@item"
 msgid "File Size"
 msgstr "Veličina datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@item"
 msgid "File Date"
 msgstr "Ime datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Ime datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:148
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@item"
 msgid "File Group"
 msgstr "Datoteka"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title"
@@ -37627,7 +37627,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:497
+#: core/libs/iojobs/iojob.cpp:500
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Ne mogu otvoriti: %1"
@@ -41631,7 +41631,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "Izbriši '%1' oznaku(e)?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:572
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -41651,7 +41651,7 @@ msgstr[2] ""
 "Oznaka '%2' ima %1 podoznaka. Brisanje oznake će obrisati i podoznake. Da li "
 "želite da nastavite?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:594
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -41663,7 +41663,7 @@ msgstr[0] "Oznaka '%2' je pridružena na %1 stavku. Da li želite nastaviti?"
 msgstr[1] "Oznaka '%2' je pridružena na %1 stavkw. Da li želite nastaviti?"
 msgstr[2] "Oznaka '%2' je pridružena na %1 stavki. Da li želite nastaviti?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:602
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove face tag?"
@@ -41672,7 +41672,7 @@ msgstr[0] "Ukloni odabranu oznaku"
 msgstr[1] "Ukloni odabranu oznaku"
 msgstr[2] "Ukloni odabranu oznaku"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:613
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
@@ -41682,22 +41682,22 @@ msgstr[0] "Ukloni trenutno odabranu vrijednost sa liste"
 msgstr[1] "Ukloni trenutno odabranu vrijednost sa liste"
 msgstr[2] "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:211
+#: core/libs/tags/engine/tagsactionmngr.cpp:215
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Pridruži ocjenu \"%1 Zvijezda\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:230
+#: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Dodijeli Pick labelu \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:249
+#: core/libs/tags/engine/tagsactionmngr.cpp:253
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Dodijeli Color labelu \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:297
+#: core/libs/tags/engine/tagsactionmngr.cpp:301
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Pridruži oznaku \"%1\""
@@ -45039,7 +45039,7 @@ msgstr[0] "%1 slika"
 msgstr[1] "%1 slike"
 msgstr[2] "%1 slika"
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "<i>Applying operation to<br/>the selected picture</i>"
@@ -45739,37 +45739,37 @@ msgstr "Sačuvajte novu verziju kao..."
 msgid "Database Statistics"
 msgstr "Statistike baze podataka"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Lijeva preklopna traka"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Desna preklopna traka"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Kartica prethodne lijeve trake"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Kartica sljedeće lijeve trake"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Kartica prethodne desne trake"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Kartica sljedeće desne trake"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgid "Show Statusbar"
@@ -45960,15 +45960,15 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "Opis"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:186
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: status"
 msgid "yes"
 msgstr "da"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:187
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: status"
@@ -46950,42 +46950,42 @@ msgstr "Sačuvajte XMP datoteku"
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP tekstualne datoteke (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Bez"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
 #, fuzzy, kde-format
 #| msgid "Color Label: %1"
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Oznaka boje: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Boja"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Bez"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, fuzzy, kde-format
 #| msgid "Pick Label: %1"
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "Odaberi labelu:%1"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@title: pick label menu"
@@ -52348,7 +52348,7 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:318
+#: core/libs/widgets/text/localizeconfig.cpp:320
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
@@ -52449,28 +52449,28 @@ msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:123
+#: core/libs/widgets/text/spellcheckconfig.cpp:125
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "MacBinary II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:136
+#: core/libs/widgets/text/spellcheckconfig.cpp:138
 #, fuzzy, kde-format
 #| msgid "Codec"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Kodek"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:137
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:144
+#: core/libs/widgets/text/spellcheckconfig.cpp:146
 #, fuzzy, kde-format
 #| msgctxt "@info Storage"
 #| msgid "Available:"
@@ -52478,41 +52478,41 @@ msgctxt "@title"
 msgid "Available Backends"
 msgstr "Dostupno:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:165
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Profil monitora:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:169
+#: core/libs/widgets/text/spellcheckconfig.cpp:171
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Postavite ovdje broj predmeta koje bi pronašli pomoću skice."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:172
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:177
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "Dod&aj..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:178
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Ukloni"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"

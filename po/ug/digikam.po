@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 01:45+0000\n"
+"POT-Creation-Date: 2024-09-05 01:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -6980,8 +6980,8 @@ msgstr "سۈرەت ئۇچۇرى"
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/libs/dplugins/core/dplugindimg.cpp:54
-#: core/libs/dplugins/core/dplugindimg.cpp:66
+#: core/libs/dplugins/core/dplugindimg.cpp:55
+#: core/libs/dplugins/core/dplugindimg.cpp:67
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can read file format"
@@ -7003,8 +7003,8 @@ msgstr "ھەئە"
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/libs/dplugins/core/dplugindimg.cpp:57
-#: core/libs/dplugins/core/dplugindimg.cpp:69
+#: core/libs/dplugins/core/dplugindimg.cpp:58
+#: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: can write file format"
@@ -7014,8 +7014,8 @@ msgstr "ھەئە"
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:58
-#: core/libs/dplugins/core/dplugindimg.cpp:70
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot write file format"
@@ -7219,8 +7219,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
-#: core/libs/dplugins/core/dplugindimg.cpp:55
-#: core/libs/dplugins/core/dplugindimg.cpp:67
+#: core/libs/dplugins/core/dplugindimg.cpp:56
+#: core/libs/dplugins/core/dplugindimg.cpp:68
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: cannot read file format"
@@ -26890,7 +26890,7 @@ msgid "No Color"
 msgstr "رەڭ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -26898,7 +26898,7 @@ msgid "Red"
 msgstr "قىزىل"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -26906,7 +26906,7 @@ msgid "Orange"
 msgstr "قىزغۇچ سېرىق"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -26914,7 +26914,7 @@ msgid "Yellow"
 msgstr "سېرىق"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -26922,7 +26922,7 @@ msgid "Green"
 msgstr "يېشىل"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -26930,7 +26930,7 @@ msgid "Blue"
 msgstr "كۆك"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -26938,7 +26938,7 @@ msgid "Magenta"
 msgstr "ھال رەڭ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -26946,7 +26946,7 @@ msgid "Gray"
 msgstr "كۈلرەڭ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -26954,7 +26954,7 @@ msgid "Black"
 msgstr "قارا"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -26974,7 +26974,7 @@ msgid "No Pick"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 #| msgid "Rejected"
 msgctxt "@info: pick label name"
@@ -26982,7 +26982,7 @@ msgid "Rejected"
 msgstr "رەت قىلىندى"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: pick label name"
@@ -26990,7 +26990,7 @@ msgid "Pending"
 msgstr "كۈتۈۋاتىدۇ"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: pick label name"
@@ -33027,13 +33027,13 @@ msgctxt "@action: dplugin"
 msgid "Invalid"
 msgstr ""
 
-#: core/libs/dplugins/core/dplugindimg.cpp:52
+#: core/libs/dplugins/core/dplugindimg.cpp:53
 #, fuzzy, kde-format
 msgctxt "@info: type of image"
 msgid "%1 image"
 msgstr "%1 (%2)"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:81
+#: core/libs/dplugins/core/dplugindimg.cpp:82
 #, fuzzy, kde-format
 #| msgctxt "File extension"
 #| msgid "Extension"
@@ -33041,27 +33041,27 @@ msgctxt "@title: DPlugin properties"
 msgid "Extension"
 msgstr "كېڭەيتىلمە"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:82
+#: core/libs/dplugins/core/dplugindimg.cpp:83
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: DPlugin properties"
 msgid "Description"
 msgstr "چۈشەندۈرۈش"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:83
+#: core/libs/dplugins/core/dplugindimg.cpp:84
 #, fuzzy, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "تەييار"
 
-#: core/libs/dplugins/core/dplugindimg.cpp:84
+#: core/libs/dplugins/core/dplugindimg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Writable: "
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "يازغىلى بولىدۇ: "
 
-#: core/libs/dplugins/core/dplugindimg.cpp:89
+#: core/libs/dplugins/core/dplugindimg.cpp:90
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
@@ -33089,7 +33089,7 @@ msgctxt "@title"
 msgid "Details"
 msgstr "تەپسىلاتلار"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:125
 #: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "Authors"
@@ -33097,69 +33097,69 @@ msgctxt "@title"
 msgid "Authors"
 msgstr "ئاپتورلار"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "ئاتى"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Interpolate"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "تولۇقلاش"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "قوراللار"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@item"
 msgid "Library"
 msgstr "جەبىلتارىق"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@item"
 msgid "File Size"
 msgstr "ھۆججەت چوڭلۇقى"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@item"
 msgid "File Date"
 msgstr "ھۆججەت ئاتى"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@item"
 msgid "File Owner"
 msgstr "ھۆججەت ئاتى"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:148
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@item"
 msgid "File Group"
 msgstr "ھۆججەت"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title"
@@ -34605,7 +34605,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:497
+#: core/libs/iojobs/iojob.cpp:500
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Could not restore file %1 from trash"
@@ -38504,7 +38504,7 @@ msgstr ""
 msgid "Delete '%1' tag(s)?"
 msgstr "خەتكۈش ئۆچۈرۈش"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:572
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38516,7 +38516,7 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:594
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38524,36 +38524,36 @@ msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:602
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:613
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:211
+#: core/libs/tags/engine/tagsactionmngr.cpp:215
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:230
+#: core/libs/tags/engine/tagsactionmngr.cpp:234
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:249
+#: core/libs/tags/engine/tagsactionmngr.cpp:253
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:297
+#: core/libs/tags/engine/tagsactionmngr.cpp:301
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr ""
@@ -41530,7 +41530,7 @@ msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] ""
 
-#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:331
+#: core/libs/widgets/itemview/itemdelegateoverlay.cpp:332
 #, fuzzy, kde-format
 msgctxt "@info: item overlay"
 msgid ""
@@ -42206,37 +42206,37 @@ msgstr ""
 msgid "Database Statistics"
 msgstr "ساندان ستاتىستىكا"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:127
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:132
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:137
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:142
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:147
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:152
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:176
 #, fuzzy, kde-format
 #| msgid "Status"
 msgid "Show Statusbar"
@@ -42418,15 +42418,15 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "چۈشەندۈرۈش"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:186
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: status"
 msgid "yes"
 msgstr "ھەئە"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:187
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: status"
@@ -43350,41 +43350,41 @@ msgstr ""
 msgid "XMP text Files (*.xmp)"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:531
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "يوق"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:600
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "رەڭگى: "
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:611
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "رەڭ"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:332
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "يوق"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:401
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:412
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
@@ -48695,7 +48695,7 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:318
+#: core/libs/widgets/text/localizeconfig.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
@@ -48795,65 +48795,65 @@ msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:123
+#: core/libs/widgets/text/spellcheckconfig.cpp:125
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:136
+#: core/libs/widgets/text/spellcheckconfig.cpp:138
 #, fuzzy, kde-format
 #| msgid "Codec"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "كود يەشكۈچ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:137
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "ئاتى"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:144
+#: core/libs/widgets/text/spellcheckconfig.cpp:146
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "ئىشلىتىلىشى:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:165
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:169
+#: core/libs/widgets/text/spellcheckconfig.cpp:171
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:172
+#: core/libs/widgets/text/spellcheckconfig.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:177
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "قوش(&A)…"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:178
+#: core/libs/widgets/text/spellcheckconfig.cpp:180
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "چىقىرىۋەت(&R)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
