@@ -262,7 +262,7 @@ void ItemFilterSettings::setIdWhitelist(const QList<qlonglong>& idList, const QS
 template <class ContainerA, class ContainerB>
 bool containsAnyOf(const ContainerA& listA, const ContainerB& listB)
 {
-    Q_FOREACH (const typename ContainerA::value_type& a, listA)
+    for (const typename ContainerA::value_type& a : std::as_const(listA))
     {
         if (listB.contains(a))
         {
@@ -276,7 +276,7 @@ bool containsAnyOf(const ContainerA& listA, const ContainerB& listB)
 template <class ContainerA, typename Value, class ContainerB>
 bool containsNoneOfExcept(const ContainerA& list, const ContainerB& noneOfList, const Value& exception)
 {
-    Q_FOREACH (const typename ContainerB::value_type& n, noneOfList)
+    for (const typename ContainerB::value_type& n : std::as_const(noneOfList))
     {
         if (n != exception && list.contains(n))
         {
@@ -718,7 +718,9 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
         // Tag names
 
-        Q_FOREACH (int id, info.tagIds())
+        const auto ids = info.tagIds();
+
+        for (int id : ids)
         {
             if (
                 (m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
@@ -935,7 +937,7 @@ bool VersionItemFilterSettings::isHiddenBySettings(const ItemInfo& info) const
 {
     QList<int> tagIds = info.tagIds();
 
-    Q_FOREACH (int tagId, m_excludeTagFilter)
+    for (int tagId : std::as_const(m_excludeTagFilter))
     {
         if (tagIds.contains(tagId))
         {

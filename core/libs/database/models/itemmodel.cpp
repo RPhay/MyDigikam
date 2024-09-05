@@ -215,7 +215,7 @@ QList<ItemInfo> ItemModel::imageInfos(const QList<QModelIndex>& indexes) const
 {
     QList<ItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << imageInfo(index);
     }
@@ -227,7 +227,7 @@ QList<qlonglong> ItemModel::imageIds(const QList<QModelIndex>& indexes) const
 {
     QList<qlonglong> ids;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ids << imageId(index);
     }
@@ -451,7 +451,7 @@ ItemInfo ItemModel::imageInfo(const QString& filePath) const
     }
     else
     {
-        Q_FOREACH (const ItemInfo& info, d->infos)
+        for (const ItemInfo& info : std::as_const(d->infos))
         {
             if (info.filePath() == filePath)
             {    // cppcheck-suppress useStlAlgorithm
@@ -473,7 +473,9 @@ QList<ItemInfo> ItemModel::imageInfos(const QString& filePath) const
 
         if (id != -1)
         {
-            Q_FOREACH (int index, d->idHash.values(id))
+            const auto ids = d->idHash.values(id);
+
+            for (int index : ids)
             {
                 infos << d->infos.at(index);
             }
@@ -481,7 +483,7 @@ QList<ItemInfo> ItemModel::imageInfos(const QString& filePath) const
     }
     else
     {
-        Q_FOREACH (const ItemInfo& info, d->infos)
+        for (const ItemInfo& info : std::as_const(d->infos))
         {
             if (info.filePath() == filePath)
             {
@@ -689,7 +691,7 @@ void ItemModel::emitDataChangedForSelection(const QItemSelection& selection)
 {
     if (!selection.isEmpty())
     {
-        Q_FOREACH (const QItemSelectionRange& range, selection)
+        for (const QItemSelectionRange& range : std::as_const(selection))
         {
             Q_EMIT dataChanged(range.topLeft(), range.bottomRight());
         }
@@ -752,7 +754,7 @@ void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVa
     {
         QList<ItemInfo> checkedInfos;
 
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             if (!hasImage(info))
             {
@@ -933,7 +935,7 @@ void ItemModel::removeIndexes(const QList<QModelIndex>& indexes)
 {
     QList<int> listIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (d->isValid(index))
         {
@@ -958,7 +960,7 @@ void ItemModel::removeItemInfos(const QList<ItemInfo>& infos)
 {
     QList<int> listIndexes;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         QModelIndex index = indexForImageId(info.id());
 
@@ -1057,7 +1059,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;            // to make foreach macro happy
 
-    Q_FOREACH (const IntPair& pair, toRemove)
+    for (const IntPair& pair : std::as_const(toRemove))
     {
         const int begin = pair.first  - offset;
         const int end   = pair.second - offset; // inclusive
@@ -1157,7 +1159,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
 {
     if (extraValues.isEmpty())
     {
-        Q_FOREACH (const ItemInfo& info, infos)
+        for (const ItemInfo& info : std::as_const(infos))
         {
             QMultiHash<qlonglong, int>::iterator it = oldIds.find(info.id());
 
@@ -1218,12 +1220,12 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
     // first, apply all changes to indexes by direct removal in model
     // while the updater was active
 
-    Q_FOREACH (const IntPairList& list, modelRemovals)
+    for (const IntPairList& list : std::as_const(modelRemovals))
     {
         int removedRows = 0;
         int offset      = 0;
 
-        Q_FOREACH (const IntPair& pair, list)
+        for (const IntPair& pair : std::as_const(list))
         {
             const int begin = pair.first  - offset;
             const int end   = pair.second - offset; // inclusive
@@ -1410,7 +1412,7 @@ void ItemModel::slotAlbumChange(const AlbumChangeset& changeset)
 
     if (changeset.operation() & AlbumChangeset::Renamed)
     {
-        Q_FOREACH (const ItemInfo& info, d->infos)
+        for (const ItemInfo& info : std::as_const(d->infos))
         {
             if (changeset.albumId() == info.albumId())
             {
@@ -1434,7 +1436,9 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
         {
             if (d->keepFilePathCache)
             {
-                Q_FOREACH (const qlonglong& id, changeset.ids())
+                const auto ids = changeset.ids();
+
+                for (const qlonglong& id : ids)
                 {
                     d->filePathHash.remove(d->filePathHash.key(id));
                     int index = d->idHash.value(id, -1);
@@ -1451,8 +1455,9 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
         }
 
         QItemSelection items;
+        const auto ids = changeset.ids();
 
-        Q_FOREACH (const qlonglong& id, changeset.ids())
+        for (const qlonglong& id : ids)
         {
             QModelIndex index = indexForImageId(id);
 
@@ -1479,8 +1484,9 @@ void ItemModel::slotImageTagChange(const ImageTagChangeset& changeset)
     }
 
     QItemSelection items;
+    const auto ids = changeset.ids();
 
-    Q_FOREACH (const qlonglong& id, changeset.ids())
+    for (const qlonglong& id : ids)
     {
         QModelIndex index = indexForImageId(id);
 
