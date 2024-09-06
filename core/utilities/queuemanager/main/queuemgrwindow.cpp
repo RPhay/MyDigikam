@@ -629,7 +629,7 @@ void QueueMgrWindow::populateToolsList()
 {
     BatchToolsList list = BatchToolsFactory::instance()->toolsList();
 
-    Q_FOREACH (BatchTool* const tool, list)
+    for (BatchTool* const tool : std::as_const(list))
     {
         d->toolsView->addTool(tool);
     }
@@ -749,7 +749,7 @@ void QueueMgrWindow::processOneQueue()
 
     QList<AssignedBatchTools> tools4Items;
 
-    Q_FOREACH (const ItemInfoSet& item, itemsList)
+    for (const ItemInfoSet& item : std::as_const(itemsList))
     {
         AssignedBatchTools one         = d->queuePool->currentQueue()->assignedTools();
         one.m_itemUrl                  = item.info.fileUrl();

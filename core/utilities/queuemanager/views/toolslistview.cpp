@@ -370,7 +370,7 @@ QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*>&
 {
     QMultiMap<int, QString> map;
 
-    Q_FOREACH (QTreeWidgetItem* const itm, items)
+    for (QTreeWidgetItem* const itm : std::as_const(items))
     {
         ToolListViewItem* const tlwi = dynamic_cast<ToolListViewItem*>(itm);
 

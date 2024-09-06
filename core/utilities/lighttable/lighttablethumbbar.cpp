@@ -214,7 +214,7 @@ LightTableThumbBar::~LightTableThumbBar()
 
 void LightTableThumbBar::setItems(const ItemInfoList& list)
 {
-    Q_FOREACH (const ItemInfo& info, list)
+    for (const ItemInfo& info : std::as_const(list))
     {
         if (!d->imageInfoModel->hasImage(info))
         {

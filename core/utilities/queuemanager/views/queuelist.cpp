@@ -376,7 +376,7 @@ QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const   
     QList<int> albumIDs;
     QList<qlonglong> imageIDs;
 
-    Q_FOREACH (QTreeWidgetItem* const itm, items)
+    for (QTreeWidgetItem* const itm : std::as_const(items))
     {
         QueueListViewItem* const vitem = dynamic_cast<QueueListViewItem*>(itm);
 
@@ -514,7 +514,7 @@ void QueueListView::dropEvent(QDropEvent* e)
 
             if (vitem && vitem != this)
             {
-                Q_FOREACH (const ItemInfo& info, imageInfoList)
+                for (const ItemInfo& info : std::as_const(imageInfoList))
                 {
                     vitem->removeItemByInfo(info);
                 }
@@ -1193,7 +1193,9 @@ void QueueListView::slotCollectionImageChange(const CollectionImageChangeset& ch
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:
         {
-            Q_FOREACH (const qlonglong& id, changeset.ids())
+            const auto ids = changeset.ids();
+
+            for (const qlonglong& id : ids)
             {
                 removeItemById(id);
             }

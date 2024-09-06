@@ -112,8 +112,9 @@ WorkflowList::WorkflowList(QWidget* const parent)
     WorkflowManager* const mngr = WorkflowManager::instance();
     QStringList failed;
     mngr->load(failed);
+    const auto qs = mngr->queueSettingsList();
 
-    Q_FOREACH (const Workflow& q, mngr->queueSettingsList())
+    for (const Workflow& q : qs)
     {
         slotAddQueueSettings(q.title);
     }

@@ -165,7 +165,9 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
 
 ToolSettingsView::~ToolSettingsView()
 {
-    Q_FOREACH (BatchTool* const tool, BatchToolsFactory::instance()->toolsList())
+    const auto ts = BatchToolsFactory::instance()->toolsList();
+
+    for (BatchTool* const tool : ts)
     {
         tool->deleteSettingsWidget();
     }

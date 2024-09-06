@@ -87,7 +87,7 @@ void ActionTask::slotCancel()
 
 void ActionTask::removeTempFiles(const QList<QUrl>& tmpList)
 {
-    Q_FOREACH (const QUrl& url, tmpList)
+    for (const QUrl& url : std::as_const(tmpList))
     {
         QString tmpPath(url.toLocalFile());
         QFile::remove(tmpPath);
@@ -144,7 +144,7 @@ void ActionTask::run()
     bool noWriteMetadata = false;
     bool timeAdjust      = false;
 
-    Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
+    for (const BatchToolSet& set : std::as_const(d->tools.m_toolsList))
     {
         BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 

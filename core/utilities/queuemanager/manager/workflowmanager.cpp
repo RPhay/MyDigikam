@@ -148,7 +148,7 @@ Workflow WorkflowManager::findByTitle(const QString& title) const
 {
     QMutexLocker lock(&d->mutex);
 
-    Q_FOREACH (const Workflow& q, d->qList)
+    for (const Workflow& q : std::as_const(d->qList))
     {
         if (q.title == title)
         {    // cppcheck-suppress useStlAlgorithm
@@ -168,7 +168,7 @@ void WorkflowManager::clear()
         d->qList.clear();
     }
 
-    Q_FOREACH (const Workflow& q, d->qList)
+    for (const Workflow& q : std::as_const(d->qList))
     {
         Q_EMIT signalQueueSettingsRemoved(q.title);
     }
@@ -195,7 +195,7 @@ bool WorkflowManager::save()
     {
         QMutexLocker lock(&d->mutex);
 
-        Q_FOREACH (const Workflow& q, d->qList)
+        for (const Workflow& q : std::as_const(d->qList))
         {
             QDomElement elm = doc.createElement(QLatin1String("queue"));
             QDomElement data;
@@ -280,7 +280,7 @@ bool WorkflowManager::save()
 
             // ----------------------
 
-            Q_FOREACH (const BatchToolSet& set, q.aTools)
+            for (const BatchToolSet& set : std::as_const(q.aTools))
             {
                 QDomElement batchtool = doc.createElement(QLatin1String("tool"));
                 elm.appendChild(batchtool);

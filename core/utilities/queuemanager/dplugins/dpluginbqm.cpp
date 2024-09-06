@@ -61,7 +61,7 @@ QList<BatchTool*> DPluginBqm::tools(QObject* const parent) const
 {
     QList<BatchTool*> list;
 
-    Q_FOREACH (BatchTool* const t, d->tools)
+    for (BatchTool* const t : std::as_const(d->tools))
     {
         if (t && (t->parent() == parent))
         {
@@ -74,7 +74,9 @@ QList<BatchTool*> DPluginBqm::tools(QObject* const parent) const
 
 BatchTool* DPluginBqm::findToolByName(const QString& name, QObject* const parent) const
 {
-    Q_FOREACH (BatchTool* const t, tools(parent))
+    const auto ts = tools(parent);
+
+    for (BatchTool* const t : ts)
     {
         if (t && (t->objectName() == name))
         {   // cppcheck-suppress useStlAlgorithm
@@ -108,7 +110,7 @@ QStringList DPluginBqm::categories() const
 {
     QStringList list;
 
-    Q_FOREACH (BatchTool* const t, d->tools)
+    for (BatchTool* const t : std::as_const(d->tools))
     {
         QString cat = t->toolGroupToString();
 

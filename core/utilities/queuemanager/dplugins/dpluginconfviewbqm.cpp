@@ -34,7 +34,9 @@ void DPluginConfViewBqm::loadPlugins()
 
     if (loader)
     {
-        Q_FOREACH (DPlugin* const tool, loader->allPlugins())
+        const auto tools = loader->allPlugins();
+
+        for (DPlugin* const tool : tools)
         {
             DPluginBqm* const bqm = dynamic_cast<DPluginBqm*>(tool);
 

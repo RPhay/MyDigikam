@@ -357,7 +357,7 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << (qint32)items.count();
 
-    Q_FOREACH (QTreeWidgetItem* const itm, items)
+    for (QTreeWidgetItem* const itm : std::as_const(items))
     {
         AssignedListViewItem* const alwi = dynamic_cast<AssignedListViewItem*>(itm);
 
@@ -511,7 +511,7 @@ void AssignedListView::slotQueueSelected(int, const QueueSettings&, const Assign
     {
         blockSignals(true);
 
-        Q_FOREACH (const BatchToolSet& set, tools.m_toolsList)
+        for (const BatchToolSet& set : std::as_const(tools.m_toolsList))
         {
             addTool(set);
         }
