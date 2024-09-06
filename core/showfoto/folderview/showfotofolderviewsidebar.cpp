@@ -455,7 +455,7 @@ void ShowfotoFolderViewSideBar::registerPluginActions(const QList<DPluginAction*
 
 void ShowfotoFolderViewSideBar::slotPluginActionTriggered(QAction* act)
 {
-    Q_FOREACH (QAction* const dpact, d->pluginActions)
+    for (QAction* const dpact : std::as_const(d->pluginActions))
     {
         if (act->objectName() == dpact->objectName())
         {

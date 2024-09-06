@@ -248,7 +248,7 @@ QMimeData* ShowfotoFolderViewBookmarkList::mimeData(const QList<QTreeWidgetItem*
 {
     QList<QUrl> urls;
 
-    Q_FOREACH (QTreeWidgetItem* const itm, items)
+    for (QTreeWidgetItem* const itm : std::as_const(items))
     {
         ShowfotoFolderViewBookmarkItem* const vitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itm);
 

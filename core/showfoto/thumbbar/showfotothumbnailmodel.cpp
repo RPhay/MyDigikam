@@ -261,7 +261,9 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
 
-    Q_FOREACH (const QModelIndex& index, indexesForUrl(QUrl::fromLocalFile(loadingDescription.filePath)))
+    const auto idx = indexesForUrl(QUrl::fromLocalFile(loadingDescription.filePath));
+
+    for (const QModelIndex& index : idx)
     {
         if (thumb.isNull())
         {
@@ -401,7 +403,9 @@ void ShowfotoThumbnailModel::slotThumbInfoLoaded(const ShowfotoItemInfo& info, c
         thumbnail = QImage();
     }
 
-    Q_FOREACH (const QModelIndex& index, indexesForUrl(info.url))
+    const auto idx = indexesForUrl(info.url);
+
+    for (const QModelIndex& index : idx)
     {
         if (thumbnail.isNull())
         {

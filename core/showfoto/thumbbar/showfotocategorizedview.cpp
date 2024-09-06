@@ -226,7 +226,7 @@ QList<ShowfotoItemInfo> ShowfotoCategorizedView::selectedShowfotoItemInfosCurren
     QModelIndex        current = currentIndex();
     QList<ShowfotoItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ShowfotoItemInfo info = d->filterModel->showfotoItemInfo(index);
 
@@ -253,7 +253,7 @@ QList<QUrl> ShowfotoCategorizedView::urls() const
     QList<ShowfotoItemInfo> infos = showfotoItemInfos();
     QList<QUrl>             urls;
 
-    Q_FOREACH (const ShowfotoItemInfo& info, infos)
+    for (const ShowfotoItemInfo& info : std::as_const(infos))
     {
         urls << info.url;
     }
@@ -266,7 +266,7 @@ QList<QUrl> ShowfotoCategorizedView::selectedUrls() const
     QList<ShowfotoItemInfo> infos = selectedShowfotoItemInfos();
     QList<QUrl>             urls;
 
-    Q_FOREACH (const ShowfotoItemInfo& info, infos)
+    for (const ShowfotoItemInfo& info : std::as_const(infos))
     {
         urls << info.url;
     }
@@ -310,7 +310,7 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
             int minDiff                                   = d->filterModel->rowCount();
             QList<QModelIndex> indexesForShowfotoItemInfo = d->filterModel->mapListFromSource(d->model->indexesForShowfotoItemInfo(info));
 
-            Q_FOREACH (const QModelIndex& index, indexesForShowfotoItemInfo)
+            for (const QModelIndex& index : std::as_const(indexesForShowfotoItemInfo))
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -426,7 +426,7 @@ void ShowfotoCategorizedView::setSelectedShowfotoItemInfos(const QList<ShowfotoI
 {
     QItemSelection mySelection;
 
-    Q_FOREACH (const ShowfotoItemInfo& info, infos)
+    for (const ShowfotoItemInfo& info : std::as_const(infos))
     {
         QModelIndex index = d->filterModel->indexForShowfotoItemInfo(info);
         mySelection.select(index, index);

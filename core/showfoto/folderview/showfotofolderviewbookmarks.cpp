@@ -174,7 +174,7 @@ ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
 
 QAction* ShowfotoFolderViewBookmarks::toolBarAction(const QString& name) const
 {
-    Q_FOREACH (QAction* const act, d->actionsList)
+    for (QAction* const act : std::as_const(d->actionsList))
     {
         if (act && (act->objectName() == name))
         {

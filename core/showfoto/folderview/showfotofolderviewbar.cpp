@@ -316,7 +316,7 @@ void ShowfotoFolderViewBar::slotTypeMimesChanged(int index)
 
 QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
 {
-    Q_FOREACH (QAction* const act, d->actionsList)
+    for (QAction* const act : std::as_const(d->actionsList))
     {
         if (act && (act->objectName() == name))
         {
@@ -331,7 +331,7 @@ QList<QAction*> ShowfotoFolderViewBar::pluginActions() const
 {
     QList<QAction*> lst;
 
-    Q_FOREACH (QAction* const act, d->actionsList)
+    for (QAction* const act : std::as_const(d->actionsList))
     {
         if (act && (act->data() == d->pluginFingerPrint))
         {
@@ -481,7 +481,7 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
         connect(d->runMenu, SIGNAL(triggered(QAction*)),
                 this, SIGNAL(signalPluginActionTriggered(QAction*)));
 
-        Q_FOREACH (QAction* const dpact, actions)
+        for (QAction* const dpact : std::as_const(actions))
         {
             QAction* const act = d->runMenu->addAction(dpact->text());
             act->setObjectName(dpact->objectName());

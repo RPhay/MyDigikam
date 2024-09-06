@@ -93,7 +93,7 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QList<QModelI
 {
     QList<ShowfotoItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << showfotoItemInfo(index);
     }
@@ -190,7 +190,7 @@ QList<QModelIndex> ShowfotoItemModel::indexesForUrl(const QUrl& fileUrl) const
 
 ShowfotoItemInfo ShowfotoItemModel::showfotoItemInfo(const QUrl& fileUrl) const
 {
-    Q_FOREACH (const ShowfotoItemInfo& info, d->infos)
+    for (const ShowfotoItemInfo& info : std::as_const(d->infos))
     {
         if (info.url == fileUrl)
         {   // cppcheck-suppress useStlAlgorithm
@@ -205,7 +205,7 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QUrl& fileUrl
 {
     QList<ShowfotoItemInfo> infos;
 
-    Q_FOREACH (const ShowfotoItemInfo& info, d->infos)
+    for (const ShowfotoItemInfo& info : std::as_const(d->infos))
     {
         if (info.url == fileUrl)
         {
@@ -307,7 +307,7 @@ void ShowfotoItemModel::emitDataChangedForSelections(const QItemSelection& selec
 {
     if (!selection.isEmpty())
     {
-        Q_FOREACH (const QItemSelectionRange& range, selection)
+        for (const QItemSelectionRange& range : std::as_const(selection))
         {
             Q_EMIT dataChanged(range.topLeft(), range.bottomRight());
         }
@@ -423,7 +423,7 @@ void ShowfotoItemModel::removeShowfotoItemInfo(const ShowfotoItemInfo& info)
 
 void ShowfotoItemModel::removeShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos)
 {
-    Q_FOREACH (const ShowfotoItemInfo& inf, infos)
+    for (const ShowfotoItemInfo& inf : std::as_const(infos))
     {
         removeIndex(indexForShowfotoItemInfo(inf));
     }
@@ -438,7 +438,7 @@ void ShowfotoItemModel::removeIndexs(const QList<QModelIndex>& indexes)
 {
     QList<int> indexesList;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (d->isValid(index))
         {
@@ -475,7 +475,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;
 
-    Q_FOREACH (const IntPair& pair, toRemove)
+    for (const IntPair& pair : std::as_const(toRemove))
     {
         const int begin = pair.first  - offset;
         const int end   = pair.second - offset;

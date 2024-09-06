@@ -122,7 +122,7 @@ QList<QModelIndex> ShowfotoSortFilterModel::mapListToSource(const QList<QModelIn
 {
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         sourceIndexes << mapToSourceShowfotoModel(index);
     }
@@ -134,7 +134,7 @@ QList<QModelIndex> ShowfotoSortFilterModel::mapListFromSource(const QList<QModel
 {
     QList<QModelIndex> indexes;
 
-    Q_FOREACH (const QModelIndex& index, sourceIndexes)
+    for (const QModelIndex& index : std::as_const(sourceIndexes))
     {
         indexes << mapFromSourceShowfotoModel(index);
     }
@@ -151,7 +151,7 @@ QList<ShowfotoItemInfo> ShowfotoSortFilterModel::showfotoItemInfos(const QList<Q
 {
     QList<ShowfotoItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << showfotoItemInfo(index);
     }

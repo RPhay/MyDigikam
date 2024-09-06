@@ -88,7 +88,7 @@ QMimeData* ShowfotoDragDropHandler::createMimeData(const QList<QModelIndex>& ind
     QList<ShowfotoItemInfo> infos = model()->showfotoItemInfos(indexes);
     QList<QUrl> urls;
 
-    Q_FOREACH (const ShowfotoItemInfo& info, infos)
+    for (const ShowfotoItemInfo& info : std::as_const(infos))
     {
         qCDebug(DIGIKAM_SHOWFOTO_LOG) << info.url.toLocalFile();
         urls.append(info.url);
