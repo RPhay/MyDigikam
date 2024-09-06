@@ -78,7 +78,7 @@ TableViewModel::Item* TableViewModel::Item::findChildWithImageId(const qlonglong
         return this;
     }
 
-    Q_FOREACH (Item* const item, children)
+    for (Item* const item : std::as_const(children))
     {
         Item* const iItem = item->findChildWithImageId(searchImageId);
 
@@ -662,7 +662,9 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
         needToResort                            = sortColumnObject->columnAffectedByChangeset(imageChangeset);
     }
 
-    Q_FOREACH (const qlonglong& id, imageChangeset.ids())
+    const auto ids = imageChangeset.ids();
+
+    for (const qlonglong& id : ids)
     {
         // first clear the item's cached values
         /// @todo Clear only the fields which were changed
@@ -924,7 +926,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
             beginInsertRows(groupLeaderIndex, 0, groupedImages.count()-1);
         }
 
-        Q_FOREACH (const ItemInfo& groupedInfo, groupedImages)
+        for (const ItemInfo& groupedInfo : std::as_const(groupedImages))
         {
             /// @todo Grouped items are currently not filtered. Should they?
 
@@ -1013,7 +1015,7 @@ ItemInfoList TableViewModel::infosFromItems(const QList<TableViewModel::Item*>& 
 {
     ItemInfoList infos;
 
-    Q_FOREACH (TableViewModel::Item* const item, items)
+    for (TableViewModel::Item* const item : std::as_const(items))
     {
         infos << infoFromItem(item);
     }
@@ -1076,7 +1078,7 @@ QList<qlonglong> TableViewModel::imageIds(const QModelIndexList& indexList) cons
 {
     QList<qlonglong> idList;
 
-    Q_FOREACH (const QModelIndex& index, indexList)
+    for (const QModelIndex& index : std::as_const(indexList))
     {
         ASSERT_MODEL(index, this);
 
@@ -1102,7 +1104,7 @@ QList<ItemInfo> TableViewModel::imageInfos(const QModelIndexList& indexList) con
 {
     QList<ItemInfo> infoList;
 
-    Q_FOREACH (const QModelIndex& index, indexList)
+    for (const QModelIndex& index : std::as_const(indexList))
     {
         ASSERT_MODEL(index, this);
 
@@ -1198,7 +1200,7 @@ void TableViewModel::sort(int column, Qt::SortOrder order)
     {
         Item* const itemToSort = itemsRequiringSorting.takeFirst();
 
-        Q_FOREACH (Item* const itemToCheck, itemToSort->children)
+        for (Item* const itemToCheck : std::as_const(itemToSort->children))
         {
             if (!itemToCheck->children.isEmpty())
             {
@@ -1257,7 +1259,7 @@ QMimeData* TableViewModel::mimeData(const QModelIndexList& indexes) const
 
     QModelIndexList imageModelIndexList;
 
-    Q_FOREACH (const QModelIndex& i, indexes)
+    for (const QModelIndex& i : std::as_const(indexes))
     {
         if (i.column() > 0)
         {

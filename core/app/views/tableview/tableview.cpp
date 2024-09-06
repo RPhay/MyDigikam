@@ -232,7 +232,7 @@ void TableView::setThumbnailSize(const ThumbnailSize& size)
     d->thumbnailSize                            = size;
     const QList<TableViewColumn*> columnObjects = s->tableViewModel->getColumnObjects();
 
-    Q_FOREACH (TableViewColumn* const iColumn, columnObjects)
+    for (TableViewColumn* const iColumn : std::as_const(columnObjects))
     {
         iColumn->updateThumbnailSize();
     }
@@ -447,7 +447,9 @@ ItemInfo TableView::previousInfo() const
 
 void TableView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
 {
-    Q_FOREACH (const ItemInfo& info, allItemInfos())
+    const auto infs = allItemInfos();
+
+    for (const ItemInfo& info : infs)
     {
         if (info.fileUrl() == url)
         {    // cppcheck-suppress useStlAlgorithm
@@ -567,7 +569,7 @@ void TableView::invertSelection()
 
     s->tableViewSelectionModel->clearSelection();
 
-    Q_FOREACH (const int i, rowsToSelect)
+    for (const int i : std::as_const(rowsToSelect))
     {
         const QModelIndex iIndex = s->tableViewModel->deepRowIndex(i);
         const QItemSelection is  = s->tableViewSelectionModelSyncer->targetIndexToRowItemSelection(iIndex);
