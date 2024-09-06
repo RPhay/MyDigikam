@@ -253,7 +253,7 @@ void RawTherapeeRawImportPlugin::slotProcessReadyRead()
     QByteArray data   = d->rawtherapee->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& one, lines)
+    for (const QString& one : std::as_const(lines))
     {
         qCDebug(DIGIKAM_DPLUGIN_RAWIMPORT_LOG) << "RawTherapee ::" << one;
     }

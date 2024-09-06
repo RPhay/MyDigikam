@@ -214,7 +214,7 @@ QString DImgImageMagickPlugin::typeMimes() const
 
     QString ret;
 
-    Q_FOREACH (const QString& str, formats)
+    for (const QString& str : std::as_const(formats))
     {
         if (!ret.contains(str))
         {

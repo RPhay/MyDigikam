@@ -164,7 +164,7 @@ void Translate::slotAssignSettings2Widget()
 
     d->trSelectorList->clearLanguages();
 
-    Q_FOREACH (const QString& lg, langs)
+    for (const QString& lg : std::as_const(langs))
     {
         d->trSelectorList->addLanguage(lg);
     }
@@ -213,7 +213,7 @@ bool Translate::toolOperations()
     bool usageTermsStage = settings()[QLatin1String("UsageTerms")].toBool();
     QStringList langs    = settings()[QLatin1String("TrLangs")].toStringList();
 
-    Q_FOREACH (const QString& trLang, langs)
+    for (const QString& trLang : std::as_const(langs))
     {
         if (titleStage)
         {

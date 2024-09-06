@@ -140,7 +140,7 @@ void AssignTags::slotAssignSettings2Widget()
 
     d->trSelectorList->clearLanguages();
 
-    Q_FOREACH (const QString& lg, langs)
+    for (const QString& lg : std::as_const(langs))
     {
         d->trSelectorList->addLanguage(lg);
     }
@@ -210,7 +210,7 @@ bool AssignTags::toolOperations()
             {
                 if (!langs.isEmpty())
                 {
-                    Q_FOREACH (const QString& trLang, langs)
+                    for (const QString& trLang : std::as_const(langs))
                     {
                         QString trOut;
                         QString error;
