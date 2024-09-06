@@ -582,7 +582,7 @@ void ImportUI::updateActions()
 
         bool haveNotDownloadedItem = false;
 
-        Q_FOREACH (const CamItemInfo& info, list)
+        for (const CamItemInfo& info : std::as_const(list))
         {
             haveNotDownloadedItem = !(info.downloaded == CamItemInfo::DownloadedYes);
 
@@ -1593,7 +1593,9 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
 
 void ImportUI::slotMarkAsDownloaded()
 {
-    Q_FOREACH (const CamItemInfo& info, d->view->selectedCamItemInfos())
+    const auto infs = d->view->selectedCamItemInfos();
+
+    for (const CamItemInfo& info : infs)
     {
         setDownloaded(d->view->camItemInfoRef(info.folder, info.name), CamItemInfo::DownloadedYes);
 
@@ -1616,7 +1618,7 @@ void ImportUI::slotToggleLock()
         d->statusProgressBar->setProgressBarMode(StatusProgressBar::ProgressBarMode);
     }
 
-    Q_FOREACH (const CamItemInfo& info, list)
+    for (const CamItemInfo& info : std::as_const(list))
     {
         QString folder = info.folder;
         QString file   = info.name;
@@ -1762,8 +1764,9 @@ void ImportUI::slotUpdateRenamePreview()
 void ImportUI::slotSelectNew()
 {
     CamItemInfoList toBeSelected;
+    const auto infs = d->view->allItems();
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    for (const CamItemInfo& info: infs)
     {
         if (info.downloaded == CamItemInfo::DownloadedNo)
         {
@@ -1777,8 +1780,9 @@ void ImportUI::slotSelectNew()
 void ImportUI::slotSelectLocked()
 {
     CamItemInfoList toBeSelected;
+    const auto infs = d->view->allItems();
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    for (const CamItemInfo& info : infs)
     {
         if (info.writePermissions == 0)
         {
@@ -1811,8 +1815,9 @@ QMap<QString, int> ImportUI::countItemsByFolders() const
     QString                      path;
     QMap<QString, int>           map;
     QMap<QString, int>::iterator it;
+    const auto infs = d->view->allItems();
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    for (const CamItemInfo& info : infs)
     {
         path = info.folder;
 
@@ -1863,8 +1868,9 @@ void ImportUI::itemsSelectionSizeInfo(qint64& fSizeBytes, qint64& dSizeBytes)
 
     const QList<QUrl>& selected = d->view->selectedUrls();
     DownloadSettings settings   = downloadSettings();
+    const auto infs = d->view->allItems();
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    for (const CamItemInfo& info : infs)
     {
         if (selected.contains(info.url()))
         {
@@ -1945,7 +1951,7 @@ void ImportUI::deleteItems(bool onlySelected, bool onlyDownloaded)
     const CamItemInfoList& list = onlySelected ? d->view->selectedCamItemInfos()
                                                : d->view->allItems();
 
-    Q_FOREACH (const CamItemInfo& info, list)
+    for (const CamItemInfo& info : std::as_const(list))
     {
         if (onlyDownloaded)
         {
@@ -2058,7 +2064,7 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
 
     // -- Download camera items -------------------------------
 
-    Q_FOREACH (const CamItemInfo& info, list)
+    for (const CamItemInfo& info : std::as_const(list))
     {
         settings.folder     = info.folder;
         settings.file       = info.name;
@@ -2377,7 +2383,7 @@ void ImportUI::postProcessAfterDownload()
     QList<ParseSettings> renameFiles;
     QStringList renamedItemsList;
 
-    Q_FOREACH (const QString& srcFile, d->downloadedItemList)
+    for (const QString& srcFile : std::as_const(d->downloadedItemList))
     {
         ParseSettings parseSettings;
 
@@ -2391,7 +2397,7 @@ void ImportUI::postProcessAfterDownload()
     d->renameCustomizer->renameManager()->addFiles(renameFiles);
     d->renameCustomizer->renameManager()->parseFiles();
 
-    Q_FOREACH (const QString& srcFile, d->downloadedItemList)
+    for (const QString& srcFile : std::as_const(d->downloadedItemList))
     {
         QFileInfo srcInfo(srcFile);
 
@@ -2513,7 +2519,7 @@ void ImportUI::postProcessAfterDownload()
             {
                 ItemInfoList infoList;
 
-                Q_FOREACH (const QString& dstFile, renamedItemsList)
+                for (const QString& dstFile : std::as_const(renamedItemsList))
                 {
                     ItemInfo itemInfo = ItemInfo::fromLocalFile(dstFile);
 
@@ -2596,8 +2602,9 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
     // Create the album, with any parent albums required for the structure
 
     QUrl albumUrl(parentURL);
+    const auto dirs = sub.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
-    Q_FOREACH (const QString& folder, sub.split(QLatin1Char('/'), Qt::SkipEmptyParts))
+    for (const QString& folder : dirs)
     {
         albumUrl      = albumUrl.adjusted(QUrl::StripTrailingSlash);
         albumUrl.setPath(albumUrl.path() + QLatin1Char('/') + folder);

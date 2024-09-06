@@ -276,7 +276,7 @@ void ImportIconView::slotRotateLeft(const QList<QModelIndex>& /*indexes*/)
 /*
     QList<ItemInfo> imageInfos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ItemInfo imageInfo(importFilterModel()->camItemInfo(index).url());
         imageInfos << imageInfo;
@@ -291,7 +291,7 @@ void ImportIconView::slotRotateRight(const QList<QModelIndex>& /*indexes*/)
 /*
     QList<ItemInfo> imageInfos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ItemInfo imageInfo(importFilterModel()->camItemInfo(index).url());
         imageInfos << imageInfo;
@@ -331,7 +331,7 @@ void ImportIconView::showContextMenuOnInfo(QContextMenuEvent* event, const CamIt
     QList<CamItemInfo> selectedInfos = selectedCamItemInfosCurrentFirst();
     QList<qlonglong>   selectedItemIDs;
 
-    Q_FOREACH (const CamItemInfo& info, selectedInfos)
+    for (const CamItemInfo& info : std::as_const(selectedInfos))
     {
         selectedItemIDs << info.id;
     }
@@ -445,7 +445,7 @@ void ImportIconView::assignTagToSelected(int tagID)
 {
     CamItemInfoList infos = selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         importItemModel()->camItemInfoRef(importItemModel()->indexForCamItemInfo(info)).tagIds.append(tagID);
     }
@@ -455,7 +455,7 @@ void ImportIconView::removeTagFromSelected(int tagID)
 {
     CamItemInfoList infos = selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         importItemModel()->camItemInfoRef(importItemModel()->indexForCamItemInfo(info)).tagIds.removeAll(tagID);
     }
@@ -470,7 +470,7 @@ void ImportIconView::assignPickLabelToSelected(int pickId)
 {
     CamItemInfoList infos = selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         importItemModel()->camItemInfoRef(importItemModel()->indexForCamItemInfo(info)).pickLabel = pickId;
     }
@@ -485,7 +485,7 @@ void ImportIconView::assignColorLabelToSelected(int colorId)
 {
     CamItemInfoList infos = selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         importItemModel()->camItemInfoRef(importItemModel()->indexForCamItemInfo(info)).colorLabel = colorId;
     }
@@ -493,7 +493,7 @@ void ImportIconView::assignColorLabelToSelected(int colorId)
 
 void ImportIconView::assignRating(const QList<QModelIndex>& indexes, int rating)
 {
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -506,7 +506,7 @@ void ImportIconView::assignRatingToSelected(int rating)
 {
     CamItemInfoList infos = selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         importItemModel()->camItemInfoRef(importItemModel()->indexForCamItemInfo(info)).rating = rating;
     }
