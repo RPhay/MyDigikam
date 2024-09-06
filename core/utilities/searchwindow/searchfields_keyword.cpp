@@ -33,7 +33,7 @@ void SearchFieldKeyword::write(SearchXmlWriter& writer)
 {
     QStringList keywordList = KeywordSearch::split(m_edit->text());
 
-    Q_FOREACH (const QString& keyword, keywordList)
+    for (const QString& keyword : std::as_const(keywordList))
     {
         if (!keyword.isEmpty())
         {

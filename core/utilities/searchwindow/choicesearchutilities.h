@@ -164,7 +164,7 @@ template <typename T> void ChoiceSearchModel::setChecked(const T& value, SearchX
 
 template <typename T> void ChoiceSearchModel::setChecked(const QList<T>& keys, bool checked)
 {
-    Q_FOREACH (T key, keys)
+    for (T key : std::as_const(keys))
     {
         setChecked(key, checked);
     }

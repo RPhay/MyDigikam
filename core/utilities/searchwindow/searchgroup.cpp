@@ -280,8 +280,10 @@ void SearchGroup::read(SearchXmlCachingReader& reader)
             SearchField* field           = nullptr;
             SearchFieldGroup* fieldGroup = nullptr;
 
-            Q_FOREACH (fieldGroup, m_fieldGroups)
+            for (SearchFieldGroup* const fg : std::as_const(m_fieldGroups))
             {
+                fieldGroup = fg;
+
                 if (fieldGroup)
                 {
                     if ((field = fieldGroup->fieldForName(name)))
@@ -332,7 +334,7 @@ void SearchGroup::write(SearchXmlWriter& writer)
     writer.setGroupOperator(m_label->groupOperator());
     writer.setDefaultFieldOperator(m_label->defaultFieldOperator());
 
-    Q_FOREACH (SearchFieldGroup* const fieldGroup, m_fieldGroups)
+    for (SearchFieldGroup* const fieldGroup : std::as_const(m_fieldGroups))
     {
         fieldGroup->write(writer);
     }
@@ -346,7 +348,7 @@ void SearchGroup::write(SearchXmlWriter& writer)
 
 void SearchGroup::reset()
 {
-    Q_FOREACH (SearchFieldGroup* const fieldGroup, m_fieldGroups)
+    for (SearchFieldGroup* const fieldGroup : std::as_const(m_fieldGroups))
     {
         fieldGroup->reset();
     }
@@ -370,7 +372,7 @@ QList<QRect> SearchGroup::startupAnimationArea() const
 
     // field groups
 
-    Q_FOREACH (SearchFieldGroup* fieldGroup, m_fieldGroups)
+    for (SearchFieldGroup* const fieldGroup : std::as_const(m_fieldGroups))
     {
         // cppcheck-suppress useStlAlgorithm
         rects += fieldGroup->areaOfMarkedFields();

@@ -258,27 +258,42 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("File Format"), i18n("Return items with the file format"));
         QStringList formats;
 
-        Q_FOREACH (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys())
         {
-            formats << fmt << i18nc("@label: file format", "%1 [Image]", fmt);
+            const auto fmts = CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys();
+
+            for (const QString& fmt : fmts)
+            {
+                formats << fmt << i18nc("@label: file format", "%1 [Image]", fmt);
+            }
         }
 
-        Q_FOREACH (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys())
         {
-            formats << fmt << i18nc("@label: file format", "%1 [Video]", fmt);
+            const auto fmts = CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys();
+
+            for (const QString& fmt : fmts)
+            {
+                formats << fmt << i18nc("@label: file format", "%1 [Video]", fmt);
+            }
         }
 
-        Q_FOREACH (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys())
         {
-            formats << fmt << i18nc("@label: file format", "%1 [Audio]", fmt);
-        }
+            const auto fmts = CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys();
 
+            for (const QString& fmt : fmts)
+            {
+                formats << fmt << i18nc("@label: file format", "%1 [Audio]", fmt);
+            }
+        }
 /*
         FIXME: This can report 2 times JPG : one as image, one as other. Where is the problem ?
 
-        Q_FOREACH (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Other).keys())
         {
-            formats << fmt << i18n("%1 [Other]", fmt);
+            const auto fmts = CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Other).keys();
+
+            for (const QString& fmt : fmts)
+            {
+                formats << fmt << i18n("%1 [Other]", fmt);
+            }
         }
 */
         formats.sort();
