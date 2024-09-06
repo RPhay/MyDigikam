@@ -54,7 +54,7 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
 
     QString txt;
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
 
 #ifdef Q_OS_WIN
@@ -103,7 +103,9 @@ QStringList DItemDrag::mimeTypes()
 
 bool DItemDrag::canDecode(const QMimeData* e)
 {
-    Q_FOREACH (const QString& mimeType, mimeTypes())
+    const auto mimes = mimeTypes();
+
+    for (const QString& mimeType : mimes)
     {
         if (!e->hasFormat(mimeType))
         {
@@ -199,7 +201,9 @@ bool DAlbumDrag::canDecode(const QMimeData* e)
         return false;
     }
 
-    Q_FOREACH (const QString& mimeType, mimeTypes())
+    const auto mimes = mimeTypes();
+
+    for (const QString& mimeType : mimes)
     {
         if (!e->hasFormat(mimeType))
         {

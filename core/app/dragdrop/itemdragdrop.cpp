@@ -877,7 +877,7 @@ QMimeData* ItemDragDropHandler::createMimeData(const QList<QModelIndex>& indexes
     QList<int>       albumIDs;
     QList<qlonglong> imageIDs;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         urls.append(info.fileUrl());
         albumIDs.append(info.albumId());
