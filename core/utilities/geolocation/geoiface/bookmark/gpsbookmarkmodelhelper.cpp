@@ -67,7 +67,7 @@ void GPSBookmarkModelHelper::Private::addBookmarkGroupToModel(BookmarkNode* cons
         return;
     }
 
-    Q_FOREACH (BookmarkNode* const currentBookmark, list)
+    for (BookmarkNode* const currentBookmark : std::as_const(list))
     {
         if (currentBookmark)
         {

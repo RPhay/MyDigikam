@@ -522,7 +522,7 @@ void GPSMarkerTiler::slotMapImagesJobData(const QList<ItemListerRecord>& records
         return;
     }
 
-    Q_FOREACH (const ItemListerRecord &record, records)
+    for (const ItemListerRecord& record : std::as_const(records))
     {
         if (record.extraValues.count() < 2)
         {
@@ -672,7 +672,9 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
         return;
     }
 
-    Q_FOREACH (const qlonglong& id, changeset.ids())
+    const auto ids = changeset.ids();
+
+    for (const qlonglong& id : ids)
     {
         const ItemInfo newItemInfo(id);
 
@@ -794,7 +796,7 @@ void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
 
     QList<qlonglong> clickedImagesId;
 
-    Q_FOREACH (const TileIndex& tileIndex, clickInfo.tileIndicesList)
+    for (const TileIndex& tileIndex : std::as_const(clickInfo.tileIndicesList))
     {
         clickedImagesId << getTileMarkerIds(tileIndex);
     }

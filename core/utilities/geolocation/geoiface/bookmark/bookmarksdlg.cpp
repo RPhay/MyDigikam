@@ -373,7 +373,7 @@ void BookmarksDialog::slotOpenInMap(const QModelIndex& index)
     QModelIndexList list = d->tree->selectionModel()->selectedIndexes();
     GPSItemInfo::List ilst;
 
-    Q_FOREACH (const QModelIndex& item, list)
+    for (const QModelIndex& item : std::as_const(list))
     {
         QUrl url                  = item.sibling(index.row(), 1)
                                         .data(BookmarksModel::UrlRole).toUrl();

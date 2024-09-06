@@ -127,7 +127,7 @@ void MapWidget::setTrackManager(TrackManager* const trackManager)
     // Some backends track the track manager activity even when not active
     // therefore they have to be notified.
 
-    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
+    for (MapBackend* const backend : std::as_const(d->loadedBackends))
     {
         backend->slotTrackManagerChanged();
     }

@@ -1438,7 +1438,7 @@ void BackendGoogleMaps::slotTrackManagerChanged()
 
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
 
-        Q_FOREACH (const TrackManager::Track& t, trackList)
+        for (const TrackManager::Track& t : std::as_const(trackList))
         {
             storeTrackChanges(TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd));
         }
@@ -1456,7 +1456,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
 
     if (needToTrackChanges)
     {
-        Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
+        for (const TrackManager::TrackChanges& tc : std::as_const(trackChanges))
         {
             storeTrackChanges(tc);
         }
@@ -1479,7 +1479,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         return;
     }
 
-    Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
+    for (const TrackManager::TrackChanges& tc : std::as_const(trackChanges))
     {
         if (tc.second & TrackManager::ChangeRemoved)
         {
@@ -1566,7 +1566,7 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
         QList<TrackManager::TrackChanges> trackChanges;
 
-        Q_FOREACH (const TrackManager::Track& t, trackList)
+        for (const TrackManager::Track& t : std::as_const(trackList))
         {
             trackChanges << TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd);
         }

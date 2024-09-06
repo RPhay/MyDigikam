@@ -320,7 +320,7 @@ bool BookmarksMenu::prePopulated()
 
     // initial actions
 
-    Q_FOREACH (QAction* const ac, d->initActions)
+    for (QAction* const ac : std::as_const(d->initActions))
     {
         if (ac)
         {
@@ -342,7 +342,7 @@ void BookmarksMenu::setInitialActions(const QList<QAction*>& actions)
 {
     d->initActions = actions;
 
-    Q_FOREACH (QAction* const ac, d->initActions)
+    for (QAction* const ac : std::as_const(d->initActions))
     {
         if (ac)
         {

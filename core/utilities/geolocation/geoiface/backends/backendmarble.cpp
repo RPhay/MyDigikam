@@ -2013,7 +2013,7 @@ void BackendMarble::slotTracksChanged(const QList<TrackManager::TrackChanges>& t
 {
     // invalidate the cache for all changed tracks
 
-    Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
+    for (const TrackManager::TrackChanges& tc : std::as_const(trackChanges))
     {
         if (tc.second & (TrackManager::ChangeTrackPoints | TrackManager::ChangeRemoved))
         {

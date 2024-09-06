@@ -93,9 +93,10 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     authors->setOpenLinks(false);
     authors->setFocusPolicy(Qt::NoFocus);
 
-    QString alist = i18n("<p>Copyright %1</p>", m_tool->copyrightYears());
+    QString alist    = i18n("<p>Copyright %1</p>", m_tool->copyrightYears());
+    const auto auths = m_tool->pluginAuthors();
 
-    Q_FOREACH (const PluginAuthor& auth, m_tool->pluginAuthors())
+    for (const PluginAuthor& auth : auths)
     {
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"

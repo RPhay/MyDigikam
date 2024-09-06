@@ -244,7 +244,7 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
 
         const QIntList& currentRequestIndexes = currentMergedRequest.groupedRequestIndices.at(i).second;
 
-        Q_FOREACH (const int requestIndex, currentRequestIndexes)
+        for (const int requestIndex : std::as_const(currentRequestIndexes))
         {
             if (haveAltitude)
             {

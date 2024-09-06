@@ -269,7 +269,7 @@ void GPSCorrelatorWidget::slotLoadTrackFiles()
 
     QList<QUrl> list;
 
-    Q_FOREACH (const QString& str, gpxFiles)
+    for (const QString& str : std::as_const(gpxFiles))
     {
         list << QUrl::fromLocalFile(str);
     }

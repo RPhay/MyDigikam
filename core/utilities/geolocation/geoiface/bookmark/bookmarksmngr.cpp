@@ -551,7 +551,7 @@ QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
     QByteArray data;
     QDataStream stream(&data, QIODevice::WriteOnly);
 
-    Q_FOREACH (QModelIndex index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if ((index.column() != 0) || !index.isValid())
         {

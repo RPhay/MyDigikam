@@ -147,7 +147,7 @@ void MarblePluginSettingsWidget::setRunnerPlugins(const QList<const ParseRunnerP
 {
     d->runnerPluginList = list;
 
-    Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
+    for (const ParseRunnerPlugin* plug : std::as_const(d->runnerPluginList))
     {
         QTreeWidgetItem* const item = new QTreeWidgetItem(d->runnerListView);
         item->setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
@@ -199,7 +199,7 @@ void MarblePluginSettingsWidget::slotAboutRunnerPlugin()
         return;
     }
 
-    Q_FOREACH (const ParseRunnerPlugin* plug, d->runnerPluginList)
+    for (const ParseRunnerPlugin* plug : std::as_const(d->runnerPluginList))
     {
         if (plug->name() == item->text(0))
         {

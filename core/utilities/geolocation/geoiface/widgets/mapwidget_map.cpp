@@ -23,7 +23,7 @@ QStringList MapWidget::availableBackends() const
 {
     QStringList result;
 
-    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
+    for (MapBackend* const backend : std::as_const(d->loadedBackends))
     {
         result.append(backend->backendName());
     }
@@ -81,7 +81,7 @@ bool MapWidget::setBackend(const QString& backendName)
                    this, SLOT(slotNewSelectionFromMap(Digikam::GeoCoordinates::Pair)));
     }
 
-    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
+    for (MapBackend* const backend : std::as_const(d->loadedBackends))
     {
         if (backend->backendName() == backendName)
         {   // cppcheck-suppress useStlAlgorithm

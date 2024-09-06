@@ -110,7 +110,7 @@ public:
 
     bool assertSelectionValid(const QItemSelection& selection) const
     {
-        Q_FOREACH (const QItemSelectionRange& range, selection)
+        for (const QItemSelectionRange& range : std::as_const(selection))
         {
             if (!range.isValid())
             {
@@ -330,7 +330,7 @@ public:
     // cppcheck-suppress unusedPrivateFunction
     bool assertSelectionValid(const QItemSelection& selection) const
     {
-        Q_FOREACH (const QItemSelectionRange& range, selection)
+        for (const QItemSelectionRange& range : std::as_const(selection))
         {
             if (!range.isValid())
             {
@@ -366,12 +366,12 @@ public:
  */
 void GPSModelIndexProxyMapperPrivate::createProxyChain()
 {
-    Q_FOREACH (auto p, m_proxyChainUp)
+    for (auto p : std::as_const(m_proxyChainUp))
     {
         p->disconnect(q_ptr);
     }
 
-    Q_FOREACH (auto p, m_proxyChainDown)
+    for (auto p : std::as_const(m_proxyChainDown))
     {
         p->disconnect(q_ptr);
     }

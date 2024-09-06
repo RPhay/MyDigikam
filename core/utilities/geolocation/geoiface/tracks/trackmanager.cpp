@@ -142,7 +142,7 @@ void TrackManager::slotTrackFilesFinished()
     d->trackList << d->trackPendingList;
     QList<TrackChanges> trackChanges;
 
-    Q_FOREACH (const Track& track, d->trackPendingList)
+    for (const Track& track : std::as_const(d->trackPendingList))
     {
         trackChanges << TrackChanges(track.id, ChangeAdd);
     }
@@ -181,7 +181,7 @@ quint64 TrackManager::getNextFreeTrackId()
 
 TrackManager::Track TrackManager::getTrackById(const quint64 trackId) const
 {
-    Q_FOREACH (const Track& track, d->trackList)
+    for (const Track& track : std::as_const(d->trackList))
     {
         if (track.id == trackId)
         {   // cppcheck-suppress useStlAlgorithm

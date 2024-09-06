@@ -94,7 +94,9 @@ void GeolocationSettings::Private::applySettingsToWidget(MapWidget* const w,
 {
     if (w)
     {
-        Q_FOREACH (MapBackend* const b, w->backends())
+        const auto backs = w->backends();
+
+        for (MapBackend* const b : backs)
         {
             BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
 
@@ -181,7 +183,7 @@ void GeolocationSettings::unregisterWidget(MapWidget* const widget)
 
 void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContainer& settings)
 {
-    Q_FOREACH (MapWidget* const w, d->widgets)
+    for (MapWidget* const w : std::as_const(d->widgets))
     {
         d->applySettingsToWidget(w, settings);
     }
@@ -189,11 +191,13 @@ void GeolocationSettings::applySettingsToWidgets(const GeolocationSettingsContai
 
 MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 {
-    Q_FOREACH (MapWidget* const w, d->widgets)
+    for (MapWidget* const w : std::as_const(d->widgets))
     {
         if (w)
         {
-            Q_FOREACH (MapBackend* const b, w->backends())
+            const auto backs = w->backends();
+
+            for (MapBackend* const b : backs)
             {
                 BackendMarble* const mb = dynamic_cast<BackendMarble*>(b);
 
@@ -210,11 +214,13 @@ MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 
 void GeolocationSettings::reloadGoogleMaps()
 {
-    Q_FOREACH (MapWidget* const w, d->widgets)
+    for (MapWidget* const w : std::as_const(d->widgets))
     {
         if (w)
         {
-            Q_FOREACH (MapBackend* const b, w->backends())
+            const auto backs = w->backends();
+
+            for (MapBackend* const b : backs)
             {
                 BackendGoogleMaps* const gb = dynamic_cast<BackendGoogleMaps*>(b);
 

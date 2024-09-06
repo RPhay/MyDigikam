@@ -413,7 +413,7 @@ void MapWidget::slotUpdateActionsEnabled()
 
     const QList<QAction*> mouseModeActions = d->mouseModeActionGroup->actions();
 
-    Q_FOREACH (QAction* const action, mouseModeActions)
+    for (QAction* const action : std::as_const(mouseModeActions))
     {
         if (action->data().value<GeoMouseModes>() == s->currentMouseMode)
         {   // cppcheck-suppress useStlAlgorithm
