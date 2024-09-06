@@ -125,7 +125,7 @@ void PreviewThreadWrapper::slotFilterProgress(int /*progress*/)
 
 void PreviewThreadWrapper::startFilters()
 {
-    Q_FOREACH (DImgThreadedFilter* const filter, d->map)
+    for (DImgThreadedFilter* const filter : std::as_const(d->map))
     {
         filter->startFilter();
     }
@@ -133,7 +133,7 @@ void PreviewThreadWrapper::startFilters()
 
 void PreviewThreadWrapper::stopFilters()
 {
-    Q_FOREACH (DImgThreadedFilter* const filter, d->map)
+    for (DImgThreadedFilter* const filter : std::as_const(d->map))
     {
         filter->cancelFilter();
         filter->deleteLater();

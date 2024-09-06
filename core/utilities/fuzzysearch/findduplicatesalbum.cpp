@@ -144,8 +144,9 @@ void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbu
                                                      const QList<qlonglong>& deletedImages)
 {
     FindDuplicatesAlbumItem* currentItem = nullptr;
+    const auto sels = selectedItems();
 
-    Q_FOREACH (QTreeWidgetItem* const selectedItem, selectedItems())
+    for (QTreeWidgetItem* const selectedItem : sels)
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(selectedItem);
 
@@ -243,7 +244,7 @@ void FindDuplicatesAlbum::removeDuplicates()
     // Buffer the urls for deletion and imageids
     // for notification of the AlbumManager
 
-    Q_FOREACH (const ItemInfo& info, duplicatedItems)
+    for (const ItemInfo& info : std::as_const(duplicatedItems))
     {
         urlList  << info.fileUrl();
     }

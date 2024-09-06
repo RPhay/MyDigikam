@@ -426,14 +426,14 @@ void EditorWindow::setupStandardActions()
 
     QList<DPluginAction*> gactions = DPluginLoader::instance()->pluginsActions(DPluginAction::Generic, this);
 
-    Q_FOREACH (DPluginAction* const gac, gactions)
+    for (DPluginAction* const gac : std::as_const(gactions))
     {
         gac->setEnabled(false);
     }
 
     QList<DPluginAction*> eactions = DPluginLoader::instance()->pluginsActions(DPluginAction::Editor, this);
 
-    Q_FOREACH (DPluginAction* const eac, eactions)
+    for (DPluginAction* const eac : std::as_const(eactions))
     {
         eac->setEnabled(false);
     }
@@ -1017,7 +1017,7 @@ void EditorWindow::toggleStandardActions(bool val)
 
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::Generic, this);
 
-    Q_FOREACH (DPluginAction* const ac, actions)
+    for (DPluginAction* const ac : std::as_const(actions))
     {
         ac->setEnabled(val);
     }
@@ -1047,7 +1047,7 @@ void EditorWindow::toggleStandardActions(bool val)
 
     QList<DPluginAction*> actions2 = DPluginLoader::instance()->pluginsActions(DPluginAction::Editor, this);
 
-    Q_FOREACH (DPluginAction* const ac, actions2)
+    for (DPluginAction* const ac : std::as_const(actions2))
     {
         ac->setEnabled(val);
     }
@@ -1838,7 +1838,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     const QString optionLastExtension = QLatin1String("LastSavedImageExtension");
     QString ext                       = group.readEntry(optionLastExtension, "png");
 
-    Q_FOREACH (const QString& s, list)
+    for (const QString& s : std::as_const(list))
     {
         if (s.contains(QString::fromLatin1("*.%1").arg(ext)))
         {   // cppcheck-suppress useStlAlgorithm
@@ -2585,68 +2585,106 @@ void EditorWindow::setupSelectToolsAction()
     actionModel->addAction(d->flipVertAction,    transformCategory);
     actionModel->addAction(d->cropAction,        transformCategory);
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorTransform, this))
+    const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorTransform, this);
+
+    for (DPluginAction* const ac : acs)
     {
         actionModel->addAction(ac, transformCategory);
     }
 
     QString decorateCategory  = i18nc("@title Image Decorate",        "Decorate");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorDecorate, this))
     {
-        actionModel->addAction(ac, decorateCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorDecorate, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, decorateCategory);
+        }
     }
 
     QString effectsCategory   = i18nc("@title Image Effect",          "Effects");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorFilters, this))
     {
-        actionModel->addAction(ac, effectsCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorFilters, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, effectsCategory);
+        }
     }
 
     QString colorsCategory    = i18nc("@title Image Colors",          "Colors");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorColors, this))
     {
-        actionModel->addAction(ac, effectsCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorColors, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, effectsCategory);
+        }
     }
 
     QString enhanceCategory   = i18nc("@title Image Enhance",         "Enhance");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorEnhance, this))
     {
-        actionModel->addAction(ac, effectsCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorEnhance, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, effectsCategory);
+        }
     }
 
     QString postCategory      = i18nc("@title Post Processing Tools", "Post-Processing");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericTool, this))
     {
-        actionModel->addAction(ac, postCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericTool, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, postCategory);
+        }
     }
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorFile, this))
     {
-        actionModel->addAction(ac, postCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::EditorFile, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, postCategory);
+        }
     }
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
     {
-        actionModel->addAction(ac, postCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, postCategory);
+        }
     }
 
     QString exportCategory    = i18nc("@title Export Tools",          "Export");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport, this))
     {
-        actionModel->addAction(ac, exportCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, exportCategory);
+        }
     }
 
     QString importCategory    = i18nc("@title Import Tools",          "Import");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericImport, this))
     {
-        actionModel->addAction(ac, importCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericImport, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, importCategory);
+        }
     }
 
     // setup categorized view
@@ -2779,7 +2817,7 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
         QAction* const serviceAction = m_servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action", "Open With"));
 
-        Q_FOREACH (const KService::Ptr& service, offers)
+        for (const KService::Ptr& service : std::as_const(offers))
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = m_servicesMenu->addAction(name);
@@ -2830,7 +2868,7 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
         QAction* const serviceAction = m_servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action", "Open With"));
 
-        Q_FOREACH (const DServiceInfo& sinfo, offers)
+        for (const DServiceInfo& sinfo : std::as_const(offers))
         {
             QAction* const action = m_servicesMenu->addAction(sinfo.name);
             action->setIcon(DServiceMenu::getIconFromService(sinfo));
@@ -2947,7 +2985,7 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
 
     QList<DPluginAction*> actions = dpl->pluginsActions(DPluginAction::Editor, this);
 
-    Q_FOREACH (DPluginAction* const ac, actions)
+    for (DPluginAction* const ac : std::as_const(actions))
     {
         actionCollection()->addActions(QList<QAction*>() << ac);
         actionCollection()->setDefaultShortcuts(ac, ac->shortcuts());

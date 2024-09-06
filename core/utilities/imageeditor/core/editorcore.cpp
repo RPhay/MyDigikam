@@ -109,7 +109,9 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
 
             if (!d->rawPlugin)
             {
-                Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+                const auto plugs = DPluginLoader::instance()->allPlugins();
+
+                for (DPlugin* const p : plugs)
                 {
                     DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 

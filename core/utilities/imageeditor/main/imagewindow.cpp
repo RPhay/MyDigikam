@@ -295,7 +295,7 @@ void ImageWindow::slotDroppedOnThumbbar(const QList<ItemInfo>& infos)
 
     QList<ItemInfo> toAdd;
 
-    Q_FOREACH (const ItemInfo& it, infos)
+    for (const ItemInfo& it : std::as_const(infos))
     {
         QModelIndex index(d->imageFilterModel->indexForItemInfo(it));
 
@@ -733,7 +733,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
         FaceTagsEditor editor;
         editor.removeAllFaces(info.id());
 
-        Q_FOREACH (const FaceTagsIface& dface, d->facesList)
+        for (const FaceTagsIface& dface : std::as_const(d->facesList))
         {
             QRect faceRect = dface.region().toRect();
             QSize tempSize = m_canvas->interface()->loadedSize();
@@ -1227,7 +1227,7 @@ void ImageWindow::slotOpenOriginal()
 
     QList<ItemInfo> imageInfos;
 
-    Q_FOREACH (const HistoryImageId& id, originals)
+    for (const HistoryImageId& id : std::as_const(originals))
     {
         QUrl url = QUrl::fromLocalFile(id.m_filePath);
         url      = url.adjusted(QUrl::StripTrailingSlash);

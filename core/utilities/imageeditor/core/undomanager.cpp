@@ -543,7 +543,7 @@ QStringList UndoManager::getUndoHistory() const
 {
     QStringList titles;
 
-    Q_FOREACH (UndoAction* const action, d->undoActions)
+    for (UndoAction* const action : std::as_const(d->undoActions))
     {
         titles.prepend(action->getTitle());
     }
@@ -555,7 +555,7 @@ QStringList UndoManager::getRedoHistory() const
 {
     QStringList titles;
 
-    Q_FOREACH (UndoAction* const action, d->redoActions)
+    for (UndoAction* const action : std::as_const(d->redoActions))
     {
         titles.prepend(action->getTitle());
     }

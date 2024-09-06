@@ -328,7 +328,7 @@ void FuzzySearchView::slotTabChanged(int tab)
         {
             QList<SAlbum*> sAlbums = d->findDuplicatesPanel->currentFindDuplicatesAlbums();
 
-            Q_FOREACH (SAlbum* const album, sAlbums)
+            for (SAlbum* const album : std::as_const(sAlbums))
             {
                 albums << album;
             }

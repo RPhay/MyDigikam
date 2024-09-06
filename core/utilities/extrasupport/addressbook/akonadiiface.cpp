@@ -101,7 +101,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     QStringList names;
 
-    Q_FOREACH (const KContacts::Addressee& addr, contacts)
+    for (const KContacts::Addressee& addr : std::as_const(contacts))
     {
         if (!addr.realName().isNull())
         {
@@ -120,7 +120,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     m_ABCmenu->clear();
 
-    Q_FOREACH (const QString& name, names)
+    for (const QString& name : std::as_const(names))
     {
         m_ABCmenu->addAction(QIcon::fromTheme(QLatin1String("im-user")), name);
     }

@@ -195,7 +195,9 @@ void PreviewToolBar::registerMenuActionGroup(EditorWindow* const editor)
     connect(d->actionsGroup, SIGNAL(triggered(QAction*)),
             this, SLOT(slotActionTriggered(QAction*)));
 
-    Q_FOREACH (QAbstractButton* const btn, d->previewButtons->buttons())
+    const auto btns = d->previewButtons->buttons();
+
+    for (QAbstractButton* const btn : btns)
     {
         QAction* const ac = new QAction(btn->toolTip(), d->actionsGroup);
         ac->setData(QVariant(d->previewButtons->id(btn)));
@@ -226,9 +228,14 @@ void PreviewToolBar::slotButtonReleased(int id)
 
 void PreviewToolBar::setCheckedAction(int id)
 {
-    if (!d->actionsGroup) return;
+    if (!d->actionsGroup)
+    {
+        return;
+    }
 
-    Q_FOREACH (QAction* const ac, d->actionsGroup->actions())
+    const auto acs = d->actionsGroup->actions();
+
+    for (QAction* const ac : acs)
     {
         if (ac->data().toInt() == id)
         {   // cppcheck-suppress useStlAlgorithm
@@ -269,7 +276,9 @@ void PreviewToolBar::setPreviewModeMask(int mask)
 
     if (d->actionsGroup)
     {
-        Q_FOREACH (QAction* const ac, d->actionsGroup->actions())
+        const auto acs = d->actionsGroup->actions();
+
+        for (QAction* const ac : acs)
         {
             ac->setEnabled(mask & ac->data().toInt());
         }
@@ -285,7 +294,7 @@ void PreviewToolBar::setPreviewModeMask(int mask)
         {
             QList<QAbstractButton*> btns = d->previewButtons->buttons();
 
-            Q_FOREACH (QAbstractButton* const btn, btns)
+            for (QAbstractButton* const btn : std::as_const(btns))
             {
                 if (btn && btn->isEnabled())
                 {   // cppcheck-suppress useStlAlgorithm
