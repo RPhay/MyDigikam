@@ -37,28 +37,44 @@ void DigikamApp::setupSelectToolsAction()
 
     QString postCategory   = i18nc("@title Post Processing Tools", "Post-Processing");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericTool, this))
     {
-        actionModel->addAction(ac, postCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericTool, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, postCategory);
+        }
     }
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
     {
-        actionModel->addAction(ac, postCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, postCategory);
+        }
     }
 
     QString exportCategory = i18nc("@title Export Tools",          "Export");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport, this))
     {
-        actionModel->addAction(ac, exportCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericExport, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, exportCategory);
+        }
     }
 
     QString importCategory = i18nc("@title Import Tools",          "Import");
 
-    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericImport, this))
     {
-        actionModel->addAction(ac, importCategory);
+        const auto acs = DPluginLoader::instance()->pluginsActions(DPluginAction::GenericImport, this);
+
+        for (DPluginAction* const ac : acs)
+        {
+            actionModel->addAction(ac, importCategory);
+        }
     }
 
     // setup categorized view

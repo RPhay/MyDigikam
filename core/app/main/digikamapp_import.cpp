@@ -26,19 +26,31 @@ void DigikamApp::updateQuickImportAction()
 {
     d->quickImportMenu->clear();
 
-    Q_FOREACH (QAction* const action, d->solidCameraActionGroup->actions())
     {
-        d->quickImportMenu->addAction(action);
+        const auto acs = d->solidCameraActionGroup->actions();
+
+        for (QAction* const action : acs)
+        {
+            d->quickImportMenu->addAction(action);
+        }
     }
 
-    Q_FOREACH (QAction* const action, d->solidUsmActionGroup->actions())
     {
-        d->quickImportMenu->addAction(action);
+        const auto acs = d->solidUsmActionGroup->actions();
+
+        for (QAction* const action : acs)
+        {
+            d->quickImportMenu->addAction(action);
+        }
     }
 
-    Q_FOREACH (QAction* const action, d->manualCameraActionGroup->actions())
     {
-        d->quickImportMenu->addAction(action);
+        const auto acs = d->manualCameraActionGroup->actions();
+
+        for (QAction* const action : acs)
+        {
+            d->quickImportMenu->addAction(action);
+        }
     }
 
     if (d->quickImportMenu->actions().isEmpty())
@@ -52,8 +64,9 @@ void DigikamApp::updateQuickImportAction()
 
         QAction*  primaryAction = nullptr;
         QDateTime latest;
+        const auto acs          = d->quickImportMenu->actions();
 
-        Q_FOREACH (QAction* const action, d->quickImportMenu->actions())
+        for (QAction* const action : acs)
         {
             QDateTime appearanceTime = d->cameraAppearanceTimes.value(action->data().toString());
 
@@ -160,7 +173,7 @@ void DigikamApp::slotImportAddFolders()
 
     QString albumRootPath = pAlbum->albumRootPath() + QLatin1Char('/');
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         QString destPath = url.toLocalFile() + QLatin1Char('/');
 
