@@ -286,7 +286,9 @@ void MapWidgetView::slotModelChanged()
     {
         case ApplicationDigikam:
         {
-            Q_FOREACH (const ItemInfo& info, d->imageModel->imageInfos())
+            const auto infs = d->imageModel->imageInfos();
+
+            for (const ItemInfo& info : infs)
             {
                 if (info.hasCoordinates())
                 {
@@ -300,7 +302,9 @@ void MapWidgetView::slotModelChanged()
 
         case ApplicationImportUI:
         {
-            Q_FOREACH (const CamItemInfo& info, d->importModel->camItemInfos())
+            const auto infs = d->importModel->camItemInfos();
+
+            for (const CamItemInfo& info : infs)
             {
                 QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
                 double lat, lng;
@@ -359,7 +363,9 @@ void MapWidgetView::slotLoadTracksFromAlbums()
 
     QList<QUrl> fileUrls;
 
-    Q_FOREACH (const ItemInfo& info, d->imageModel->imageInfos())
+    const auto infs = d->imageModel->imageInfos();
+
+    for (const ItemInfo& info : infs)
     {
         if (info.hasCoordinates())
         {
@@ -383,11 +389,12 @@ void MapWidgetView::slotLoadTracksFromAlbums()
     QList<QUrl> gpxList;
     const QStringList filter({QLatin1String("*.gpx")});
 
-    Q_FOREACH (const QUrl& url, fileUrls)
+    for (const QUrl& url : std::as_const(fileUrls))
     {
         QDir dir(url.toLocalFile());
+        const auto infs = dir.entryInfoList(filter, QDir::Files);
 
-        Q_FOREACH (const QFileInfo& finfo, dir.entryInfoList(filter, QDir::Files))
+        for (const QFileInfo& finfo : infs)
         {
             gpxList << QUrl::fromLocalFile(finfo.filePath());
         }
@@ -636,7 +643,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             const QList<ItemInfo> imageInfoList = d->model->imageInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
-            Q_FOREACH (const ItemInfo& imageInfo, imageInfoList)
+            for (const ItemInfo& imageInfo : std::as_const(imageInfoList))
             {
                 GPSItemInfo gpsItemInfo;
 
@@ -681,7 +688,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             const QList<CamItemInfo> imageInfoList =  d->importModel->camItemInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
-            Q_FOREACH (const CamItemInfo& imageInfo, imageInfoList)
+            for (const CamItemInfo& imageInfo : std::as_const(imageInfoList))
             {
                 QScopedPointer<DMetadata> meta(new DMetadata(imageInfo.url().toLocalFile()));
                 double          lat, lng;
@@ -846,7 +853,9 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
         (changes & DatabaseFields::Altitude)
        )
     {
-        Q_FOREACH (const qlonglong& id, changeset.ids())
+        const auto ids = changeset.ids();
+
+        for (const qlonglong& id : ids)
         {
             const QModelIndex index = d->model->indexForImageId(id);
 

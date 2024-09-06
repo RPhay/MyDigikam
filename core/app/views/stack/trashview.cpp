@@ -234,25 +234,33 @@ void TrashView::slotUndoLastDeletedItems()
     d->selectedIndexesToRemove.clear();
     QDateTime lastDateTime = QDateTime::fromMSecsSinceEpoch(0);
 
-    Q_FOREACH (const DTrashItemInfo& item, d->model->allItems())
     {
-        if (item.deletionTimestamp > lastDateTime)
+        const auto its       = d->model->allItems();
+
+        for (const DTrashItemInfo& item : its)
         {
-            // cppcheck-suppress useStlAlgorithm
-            lastDateTime = item.deletionTimestamp;
+            if (item.deletionTimestamp > lastDateTime)
+            {
+                // cppcheck-suppress useStlAlgorithm
+                lastDateTime = item.deletionTimestamp;
+            }
         }
     }
 
-    Q_FOREACH (const DTrashItemInfo& item, d->model->allItems())
     {
-        if (item.deletionTimestamp == lastDateTime)
-        {
-            QModelIndex index = d->model->indexForItem(item);
+        const auto its = d->model->allItems();
 
-            if (index.isValid())
+        for (const DTrashItemInfo& item : its)
+        {
+            if (item.deletionTimestamp == lastDateTime)
             {
-                items << item;
-                d->selectedIndexesToRemove << index;
+                QModelIndex index = d->model->indexForItem(item);
+
+                if (index.isValid())
+                {
+                    items << item;
+                    d->selectedIndexesToRemove << index;
+                }
             }
         }
     }

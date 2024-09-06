@@ -421,7 +421,7 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
 {
     QList<qlonglong> selectedImageIDs;
 
-    Q_FOREACH (const ItemInfo& info, selectedInfos)
+    for (const ItemInfo& info : std::as_const(selectedInfos))
     {
         selectedImageIDs << info.id();
     }

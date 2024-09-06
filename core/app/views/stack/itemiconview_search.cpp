@@ -86,7 +86,9 @@ void ItemIconView::slotImageScanForFaces()
 
     // Remove possible duplicate ItemInfos.
 
-    Q_FOREACH (const ItemInfo& info, selectedInfoList(ToolsOps))
+    const auto infs = selectedInfoList(ToolsOps);
+
+    for (const ItemInfo& info : infs)
     {
         if (!settings.infos.contains(info))
         {
@@ -126,7 +128,9 @@ void ItemIconView::slotImageRecognizeFaces()
 
     // Remove possible duplicate ItemInfos.
 
-    Q_FOREACH (const ItemInfo& info, selectedInfoList(ToolsOps))
+    const auto infs = selectedInfoList(ToolsOps);
+
+    for (const ItemInfo& info : infs)
     {
         if (!settings.infos.contains(info))
         {
