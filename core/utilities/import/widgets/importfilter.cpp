@@ -89,7 +89,7 @@ bool Filter::match(const QStringList& wildcards, const QString& name)
 {
     bool match = false;
 
-    Q_FOREACH (const QString& wildcard, wildcards)
+    for (const QString& wildcard : std::as_const(wildcards))
     {
         match = regexp(wildcard).match(name).hasMatch();
 /*
@@ -111,7 +111,7 @@ const QStringList& Filter::mimeWildcards(const QString& mime)
         QStringList& wc  = mimeHash[mime];
         QStringList list = mime.split(QLatin1Char(';'));
 
-        Q_FOREACH (const QString& m, list)
+        for (const QString& m : std::as_const(list))
         {
             QMimeType mimet = QMimeDatabase().mimeTypeForName(m);
 
@@ -119,8 +119,9 @@ const QStringList& Filter::mimeWildcards(const QString& mime)
             {
                 continue;
             }
+            const auto pats = mimet.globPatterns();
 
-            Q_FOREACH (const QString& pattern, mimet.globPatterns())
+            for (const QString& pattern : pats)
             {
                 wc.append(pattern);
             }
@@ -183,7 +184,7 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
 
     if (!ignoreExtensions.isEmpty())
     {
-        Q_FOREACH (const QString& ext, ignoreExtensions)
+        for (const QString& ext : std::as_const(ignoreExtensions))
         {
             if (fname.endsWith(QLatin1Char('.') + ext))
             {

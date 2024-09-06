@@ -365,7 +365,7 @@ int ImportView::downloadedCamItemInfos() const
     QList<CamItemInfo> infos = d->iconView->camItemInfos();
     int numberOfDownloaded   = 0;
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         if (info.downloaded == CamItemInfo::DownloadedYes)
         {
@@ -380,7 +380,7 @@ bool ImportView::isSelected(const QUrl& url) const
 {
     QList<QUrl> urlsList = selectedUrls();
 
-    Q_FOREACH (const QUrl& selected, urlsList)
+    for (const QUrl& selected : std::as_const(urlsList))
     {
         if (url == selected)
         {   // cppcheck-suppress useStlAlgorithm

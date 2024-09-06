@@ -154,7 +154,7 @@ void ImportFilterComboBox::fillCombo()
 {
     clear();
 
-    Q_FOREACH (Filter* const f, d->filters)
+    for (Filter* const f : std::as_const(d->filters))
     {
         addItem(f->name);
     }

@@ -414,7 +414,7 @@ void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportC
     QItemSelection selection               = from->selectionModel()->selection();
     QItemSelection newSelection;
 
-    Q_FOREACH (const QItemSelectionRange& range, selection)
+    for (const QItemSelectionRange& range : std::as_const(selection))
     {
         QModelIndex topLeft     = toModel->indexForCamItemInfo(fromModel->camItemInfo(range.topLeft()));
         QModelIndex bottomRight = toModel->indexForCamItemInfo(fromModel->camItemInfo(range.bottomRight()));

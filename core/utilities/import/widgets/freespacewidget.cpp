@@ -175,7 +175,7 @@ void FreeSpaceWidget::addInformation(qint64 bytesSize,
     d->isValid     = false;
     d->percentUsed = -1;
 
-    Q_FOREACH (const MountPointInfo& info, d->infos)
+    for (const MountPointInfo& info : std::as_const(d->infos))
     {
         if (info.isValid)
         {
@@ -238,7 +238,7 @@ qint64 FreeSpaceWidget::bytesAvail(const QString& path) const
     int mountPointMatch = 0;
     MountPointInfo selectedInfo;
 
-    Q_FOREACH (const MountPointInfo& info, d->infos)
+    for (const MountPointInfo& info : std::as_const(d->infos))
     {
         if (info.isValid && !info.mountPoint.isEmpty() && path.startsWith(info.mountPoint))
         {
@@ -379,7 +379,7 @@ void FreeSpaceWidget::leaveEvent(QEvent* e)
 
 void FreeSpaceWidget::slotTimeout()
 {
-    Q_FOREACH (const QString& path, d->paths)
+    for (const QString& path : std::as_const(d->paths))
     {
         QStorageInfo info(path);
 

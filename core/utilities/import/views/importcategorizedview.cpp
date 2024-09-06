@@ -243,7 +243,7 @@ QList<CamItemInfo> ImportCategorizedView::selectedCamItemInfosCurrentFirst() con
     QModelIndex        current = currentIndex();
     QList<CamItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         CamItemInfo info = d->filterModel->camItemInfo(index);
 
@@ -270,7 +270,7 @@ QList<QUrl> ImportCategorizedView::urls() const
     QList<CamItemInfo> infos = camItemInfos();
     QList<QUrl>        urls;
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         urls << info.url();
     }
@@ -283,7 +283,7 @@ QList<QUrl> ImportCategorizedView::selectedUrls() const
     QList<CamItemInfo> infos = selectedCamItemInfos();
     QList<QUrl>        urls;
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         urls << info.url();
     }
@@ -327,7 +327,7 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
             int minDiff                              = d->filterModel->rowCount();
             QList<QModelIndex> indexesForCamItemInfo = d->filterModel->mapListFromSource(d->model->indexesForCamItemInfo(info));
 
-            Q_FOREACH (const QModelIndex& index, indexesForCamItemInfo)
+            for (const QModelIndex& index : std::as_const(indexesForCamItemInfo))
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -446,7 +446,7 @@ void ImportCategorizedView::setSelectedCamItemInfos(const QList<CamItemInfo>& in
 {
     QItemSelection mySelection;
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         QModelIndex index = d->filterModel->indexForCamItemInfo(info);
         mySelection.select(index, index);

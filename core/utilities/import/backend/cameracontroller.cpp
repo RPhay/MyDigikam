@@ -1196,7 +1196,7 @@ CameraCommand* CameraController::getThumbsInfo(const CamItemInfoList& list, int 
 
     QList<QVariant> itemsList;
 
-    Q_FOREACH (const CamItemInfo& info, list)
+    for (const CamItemInfo& info : std::as_const(list))
     {
         itemsList.append(QStringList() << info.folder << info.name);
     }
@@ -1266,7 +1266,7 @@ void CameraController::upload(const QFileInfo& srcFileInfo, const QString& destF
 
 void CameraController::download(const DownloadSettingsList& list)
 {
-    Q_FOREACH (const DownloadSettings& downloadSettings, list)
+    for (const DownloadSettings& downloadSettings : std::as_const(list))
     {
         download(downloadSettings);
     }

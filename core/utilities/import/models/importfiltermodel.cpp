@@ -119,7 +119,7 @@ QList<QModelIndex> ImportSortFilterModel::mapListToSource(const QList<QModelInde
 {
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         sourceIndexes << mapToSourceImportModel(index);
     }
@@ -131,7 +131,7 @@ QList<QModelIndex> ImportSortFilterModel::mapListFromSource(const QList<QModelIn
 {
     QList<QModelIndex> indexes;
 
-    Q_FOREACH (const QModelIndex& index, sourceIndexes)
+    for (const QModelIndex& index : std::as_const(sourceIndexes))
     {
         indexes << mapFromSourceImportModel(index);
     }
@@ -153,7 +153,7 @@ QList<CamItemInfo> ImportSortFilterModel::camItemInfos(const QList<QModelIndex>&
 {
     QList<CamItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << camItemInfo(index);
     }
@@ -165,7 +165,7 @@ QList<qlonglong> ImportSortFilterModel::camItemIds(const QList<QModelIndex>& ind
 {
     QList<qlonglong> ids;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ids << camItemId(index);
     }

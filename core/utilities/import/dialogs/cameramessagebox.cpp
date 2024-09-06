@@ -141,7 +141,7 @@ CameraItemList::~CameraItemList()
 
 void CameraItemList::setItems(const CamItemInfoList& items)
 {
-    Q_FOREACH (const CamItemInfo& info, items)
+    for (const CamItemInfo& info : std::as_const(items))
     {
         new CameraItem(this, info);
     }

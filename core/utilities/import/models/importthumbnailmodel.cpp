@@ -161,7 +161,9 @@ void ImportThumbnailModel::slotThumbInfoReady(const CamItemInfo& info)
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
 
-    Q_FOREACH (const QModelIndex& index, indexesForUrl(info.url()))
+    const auto idx = indexesForUrl(info.url());
+
+    for (const QModelIndex& index : idx)
     {
         if (item.second.isNull())
         {
