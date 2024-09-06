@@ -59,7 +59,7 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         }
     }
 
-    Q_FOREACH (const QByteArray& frm, supported)
+    for (const QByteArray& frm : std::as_const(supported))
     {
         if (
             QString::fromLatin1(frm).contains(QLatin1String("tif"),  Qt::CaseInsensitive) ||
