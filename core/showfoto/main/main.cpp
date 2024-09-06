@@ -229,7 +229,7 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     QList<QUrl> urlList;
     QStringList urls = parser.positionalArguments();
 
-    Q_FOREACH (const QString& url, urls)
+    for (const QString& url : std::as_const(urls))
     {
         urlList.append(QUrl::fromLocalFile(url));
     }

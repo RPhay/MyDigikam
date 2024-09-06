@@ -193,7 +193,7 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files, const QString& cu
     slotClearThumbBar();
     QList<QUrl> urls;
 
-    Q_FOREACH (const QString& path, files)
+    for (const QString& path : std::as_const(files))
     {
         urls << QUrl::fromLocalFile(path);
     }
@@ -225,7 +225,7 @@ void Showfoto::slotAppendFilesfromPath(const QStringList& files, const QString& 
 
     QList<QUrl> urls;
 
-    Q_FOREACH (const QString& file, files)
+    for (const QString& file : std::as_const(files))
     {
         urls << QUrl::fromLocalFile(file);
     }
@@ -244,7 +244,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
     QList<QUrl> imagesUrls;
     QList<QUrl> foldersUrls;
 
-    Q_FOREACH (const QUrl& drop, droppedUrls)
+    for (const QUrl& drop : std::as_const(droppedUrls))
     {
         if (drop.isValid())
         {
@@ -270,7 +270,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
 
     if (!foldersUrls.isEmpty())
     {
-        Q_FOREACH (const QUrl& fUrl, foldersUrls)
+        for (const QUrl& fUrl : std::as_const(foldersUrls))
         {
             openFolder(fUrl);
         }
@@ -341,7 +341,7 @@ void Showfoto::slotAddedDropedItems(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    Q_FOREACH (const QUrl& url, list)
+    for (const QUrl& url : std::as_const(list))
     {
         QFileInfo fi(url.toLocalFile());
 

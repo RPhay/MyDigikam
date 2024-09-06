@@ -25,7 +25,7 @@ void Showfoto::slotClearThumbBar()
 
 void Showfoto::slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos)
 {
-    Q_FOREACH (const ShowfotoItemInfo& inf, infos)
+    for (const ShowfotoItemInfo& inf : std::as_const(infos))
     {
         d->infoList.removeAll(inf);
     }
