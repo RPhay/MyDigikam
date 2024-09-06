@@ -281,7 +281,7 @@ void PresentationAudioList::dropEvent(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    Q_FOREACH (const QUrl& url, list)
+    for (const QUrl& url : std::as_const(list))
     {
         QFileInfo fi(url.toLocalFile());
 

@@ -198,7 +198,7 @@ void PresentationDlg::readSettings()
 
         QList<QUrl> playlistFiles = soundGrp.readEntry("Tracks", QList<QUrl>());
 
-        Q_FOREACH (const QUrl& playlistFile, playlistFiles)
+        for (const QUrl& playlistFile : std::as_const(playlistFiles))
         {
             QUrl file(playlistFile);
             QFileInfo fi(file.toLocalFile());

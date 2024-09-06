@@ -212,8 +212,9 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
+    const auto urls = d->listView->imageUrls();
 
-    Q_FOREACH (const QUrl& url, d->listView->imageUrls())
+    for (const QUrl& url : urls)
     {
         d->itemsUsedMap.insert(url, index);
         ++index;

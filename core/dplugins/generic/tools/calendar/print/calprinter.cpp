@@ -66,9 +66,10 @@ void CalPrinter::run()
     connect(d->painter, SIGNAL(signalProgress(int)),
             this, SIGNAL(blocksFinished(int)));
 
-    int currPage = 0;
+    int currPage    = 0;
+    const auto mths = d->months.keys();
 
-    Q_FOREACH (const int month, d->months.keys())
+    for (const int month : mths)
     {
         Q_EMIT pageChanged(currPage);
 

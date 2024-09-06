@@ -89,7 +89,9 @@ bool VidSlideAlbumsPage::validatePage()
 
         // update image list with album contents.
 
-        Q_FOREACH (const QUrl& url, d->settings->iface->albumsItems(d->settings->iface->albumChooserItems()))
+        const auto urls = d->settings->iface->albumsItems(d->settings->iface->albumChooserItems());
+
+        for (const QUrl& url : urls)
         {
             d->wizard->settings()->inputImages << url;
         }

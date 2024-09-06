@@ -118,8 +118,9 @@ void JAlbumFinalPage::slotProcess()
 
         d->progressView->addEntry(i18n("%1 albums to process:", info->m_albumList.count()),
                                   DHistoryView::ProgressEntry);
+        const auto urls = info->m_iface->albumsItems(info->m_albumList);
 
-        Q_FOREACH (const QUrl& url, info->m_iface->albumsItems(info->m_albumList))
+        for (const QUrl& url : urls)
         {
             d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                       DHistoryView::ProgressEntry);

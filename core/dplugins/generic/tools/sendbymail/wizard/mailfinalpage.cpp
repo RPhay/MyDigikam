@@ -124,7 +124,7 @@ void MailFinalPage::slotProcess()
     d->progressView->addEntry(i18n("Preparing file to export by mail..."),
                               DHistoryView::ProgressEntry);
 
-    Q_FOREACH (const QUrl& url, d->settings->inputImages)
+    for (const QUrl& url : std::as_const(d->settings->inputImages))
     {
         d->settings->setMailUrl(url, QUrl());
     }

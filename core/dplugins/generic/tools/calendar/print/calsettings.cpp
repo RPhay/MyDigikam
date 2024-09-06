@@ -337,7 +337,7 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         int counter                = 0;
         Event::List list = memCal->rawEvents(qFirst, qLast);
 
-        Q_FOREACH (const Event::Ptr event, list)
+        for (const Event::Ptr event : std::as_const(list))
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << Qt::endl << "--------";
             counter++;

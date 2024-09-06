@@ -159,7 +159,7 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
 
     int foundNumber       = 0;
 
-    Q_FOREACH (const QUrl& url, myfiles)
+    for (const QUrl& url : std::as_const(myfiles))
     {
         // find selected image in album in order to determine the first displayed image
         // in case one image was selected and the entire album was loaded
