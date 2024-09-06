@@ -126,14 +126,14 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
                                 const QList<FaceTagsIface>& databaseFaces,
                                 const DImg& image)
 {
-    Q_FOREACH (const FaceTagsIface& face, databaseFaces)
+    for (const FaceTagsIface& face : std::as_const(databaseFaces))
     {
         QList<QRect> rects;
         QRect orgRect = face.region().toRect();
         rects << orgRect;
         rects << faceRectToDisplayRect(orgRect);
 
-        Q_FOREACH (const QRect& rect, rects)
+        for (const QRect& rect : std::as_const(rects))
         {
             QRect mapped  = TagRegion::mapFromOriginalSize(image, rect);
             QImage detail = image.copyQImage(mapped);
@@ -169,7 +169,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         FaceTagsIface& newFace = newFaces[i];
         QList<FaceTagsIface> overlappingEntries;
 
-        Q_FOREACH (const FaceTagsIface& oldFace, currentFaces)
+        for (const FaceTagsIface& oldFace : std::as_const(currentFaces))
         {
             double minOverlap = oldFace.isConfirmedName() ? 0.25 : 0.5;
 

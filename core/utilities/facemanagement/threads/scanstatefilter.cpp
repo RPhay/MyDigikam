@@ -139,7 +139,7 @@ void ScanStateFilter::run()
             QList<FacePipelineExtendedPackage::Ptr> itemsToSend;
             QList<ItemInfo>                         itemsToSkip;
 
-            Q_FOREACH (const ItemInfo& info, todo)
+            for (const ItemInfo& info : std::as_const(todo))
             {
                 FacePipelineExtendedPackage::Ptr package = filter(info);
 

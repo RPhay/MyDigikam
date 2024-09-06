@@ -57,13 +57,13 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
         faces       += trueFaces;
         totalPixels += package->image.originalSize().width() * package->image.originalSize().height();
 
-        Q_FOREACH (const FaceTagsIface& trueFace, groundTruth)
+        for (const FaceTagsIface& trueFace : std::as_const(groundTruth))
         {
             ++faces;
             QRect rect  = trueFace.region().toRect();
             facePixels += rect.width() * rect.height();
 
-            Q_FOREACH (const FaceTagsIface& testedFace, testedFaces)
+            for (const FaceTagsIface& testedFace : std::as_const(testedFaces))
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
                 {   // cppcheck-suppress useStlAlgorithm
@@ -75,9 +75,9 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
             }
         }
 
-        Q_FOREACH (const FaceTagsIface& testedFace, testedFaces)
+        for (const FaceTagsIface& testedFace : std::as_const(testedFaces))
         {
-            Q_FOREACH (const FaceTagsIface& trueFace, groundTruth)
+            for (const FaceTagsIface& trueFace : std::as_const(groundTruth))
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
                 {   // cppcheck-suppress useStlAlgorithm

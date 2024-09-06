@@ -91,7 +91,7 @@ QList<RegionFrameItem*> FaceGroup::items() const
 {
     QList<RegionFrameItem*> items;
 
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
         items << item;
     }
@@ -206,7 +206,7 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
     qreal minDistance            = 0;
     qreal minCenterDistance      = 0;
 
-    Q_FOREACH (RegionFrameItem* const item, d->items)
+    for (RegionFrameItem* const item : std::as_const(d->items))
     {
         QRectF r       = item->boundingRect().translated(item->pos());
         qreal distance = (p - closestPointOfRect(p, r)).manhattanLength();
@@ -262,9 +262,9 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
 
             QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
-            Q_FOREACH (QGraphicsItem* const item2, hItems)
+            for (QGraphicsItem* const item2 : std::as_const(hItems))
             {
-                Q_FOREACH (QObject* const parent, visible)
+                for (QObject* const parent : std::as_const(visible))
                 {
                     if (static_cast<QGraphicsObject*>(parent)->isAncestorOf(item2))
                     {   // cppcheck-suppress useStlAlgorithm
@@ -300,7 +300,7 @@ void FaceGroup::enterEvent(QEvent*)
 
 bool FaceGroup::hasUnconfirmed()
 {
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
         if (item->face().isUnconfirmedType())
         {
@@ -333,7 +333,7 @@ void FaceGroup::load()
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
 
-    Q_FOREACH (const FaceTagsIface& face, faces)
+    for (const FaceTagsIface& face : std::as_const(faces))
     {
         d->addItem(face);
     }
@@ -358,7 +358,7 @@ void FaceGroup::clear()
     cancelAddItem();
     d->visibilityController->clear();
 
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
         delete item;
     }
@@ -375,10 +375,12 @@ void FaceGroup::rejectAll()
 
 void FaceGroup::markAllAsIgnored()
 {
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
-        if (item->face().isUnknownName()   ||
-            item->face().isUnconfirmedName())
+        if (
+            item->face().isUnknownName()   ||
+            item->face().isUnconfirmedName()
+           )
         {
             FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
                                                          FaceTags::ignoredPersonTagId());
@@ -412,10 +414,12 @@ void FaceGroup::slotAlbumRenamed(Album* album)
         return;
     }
 
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
-        if (!item->face().isNull() &&
-            (item->face().tagId() == album->id()))
+        if (
+            !item->face().isNull() &&
+            (item->face().tagId() == album->id())
+           )
         {
             item->updateCurrentTag();
         }
@@ -459,7 +463,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             {
                 tagId             = action.parentTagId();
 
-                Q_FOREACH (const QString& name, faceNames)
+                for (const QString& name : std::as_const(faceNames))
                 {
                     tagId = FaceTags::getOrCreateTagForPerson(name.trimmed(), tagId);
                 }
@@ -489,7 +493,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
 void FaceGroup::focusRandomFace()
 {
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
         FaceTagsIface face = item->face();
         AddTagsComboBox* comboBox = item->widget()->comboBox();
@@ -689,7 +693,7 @@ void FaceGroup::applyItemGeometryChanges()
         preview.rotateAndFlip(d->info.orientation());
     }
 
-    Q_FOREACH (FaceItem* const item, d->items)
+    for (FaceItem* const item : std::as_const(d->items))
     {
         if (item->face().isNull())
         {
@@ -722,7 +726,7 @@ void ItemPreviewView::trainFaces()
 {
     QList<Face> trainList;
 
-    Q_FOREACH (Face f, d->currentFaces)
+    for (Face f : std::as_const(d->currentFaces))
     {
         if (f.name() != "" && !d->faceIface->isFaceTrained(getItemInfo().id(), f.toRect(), f.name()))
         {
@@ -745,7 +749,7 @@ void ItemPreviewView::suggestFaces()
 
     QList<Face> recogList;
 
-    Q_FOREACH (Face f, d->currentFaces)
+    for (Face f : std::as_const(d->currentFaces))
     {
         if (!d->faceIface->isFaceRecognized(getItemInfo().id(), f.toRect(), f.name()) && f.name().isEmpty())
         {

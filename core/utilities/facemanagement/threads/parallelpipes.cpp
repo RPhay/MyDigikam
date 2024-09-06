@@ -23,7 +23,7 @@ namespace Digikam
 
 ParallelPipes::~ParallelPipes()
 {
-    Q_FOREACH (WorkerObject* const object, m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         delete object;
     }
@@ -31,7 +31,7 @@ ParallelPipes::~ParallelPipes()
 
 void ParallelPipes::schedule()
 {
-    Q_FOREACH (WorkerObject* const object, m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->schedule();
     }
@@ -39,7 +39,7 @@ void ParallelPipes::schedule()
 
 void ParallelPipes::deactivate(WorkerObject::DeactivatingMode mode)
 {
-    Q_FOREACH (WorkerObject* const object, m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->deactivate(mode);
     }
@@ -47,7 +47,7 @@ void ParallelPipes::deactivate(WorkerObject::DeactivatingMode mode)
 
 void ParallelPipes::wait()
 {
-    Q_FOREACH (WorkerObject* const object, m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->wait();
     }
@@ -55,7 +55,7 @@ void ParallelPipes::wait()
 
 void ParallelPipes::setPriority(QThread::Priority priority)
 {
-    Q_FOREACH (WorkerObject* const object, m_workers)
+    for (WorkerObject* const object : std::as_const(m_workers))
     {
         object->setPriority(priority);
     }

@@ -92,7 +92,7 @@ void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
     QList<Identity>      identitySet;
     FaceUtils            utils;
 
-    Q_FOREACH (const FacePipelineFaceTagsIface& face, package->databaseFaces)
+    for (const FacePipelineFaceTagsIface& face : std::as_const(package->databaseFaces))
     {
         if (face.roles & FacePipelineFaceTagsIface::ForTraining)
         {
