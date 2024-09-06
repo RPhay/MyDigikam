@@ -157,8 +157,9 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
         // get the largest size hint for the icon/text of all category entries
 
         int maxStyledWidth = 0;
+        const auto idx     = static_cast<const SetupCollectionModel*>(index.model())->categoryIndexes();
 
-        Q_FOREACH (const QModelIndex& catIndex, static_cast<const SetupCollectionModel*>(index.model())->categoryIndexes())
+        for (const QModelIndex& catIndex : idx)
         {
             maxStyledWidth = qMax(maxStyledWidth, m_styledDelegate->sizeHint(option, catIndex).width());
         }
@@ -459,7 +460,7 @@ void SetupCollectionModel::loadCollections()
     m_collections.clear();
     QList<CollectionLocation> locations = CollectionManager::instance()->allLocations();
 
-    Q_FOREACH (const CollectionLocation& location, locations)
+    for (const CollectionLocation& location : std::as_const(locations))
     {
         m_collections << Item(location);
         int idx = m_collections.size() - 1;
@@ -470,9 +471,10 @@ void SetupCollectionModel::loadCollections()
 
             if (url.scheme() == QLatin1String("networkshareid"))
             {
-               QUrlQuery q(url);
+                QUrlQuery q(url);
+                const auto pathes = q.allQueryItemValues(QLatin1String("mountpath"));
 
-                Q_FOREACH (const QString& path, q.allQueryItemValues(QLatin1String("mountpath")))
+                for (const QString& path : pathes)
                 {
                     if (location.albumRootPath() != path)
                     {
@@ -534,7 +536,7 @@ void SetupCollectionModel::apply()
 
     // Delete deleted items
 
-    Q_FOREACH (int i, deletedItems)
+    for (int i : std::as_const(deletedItems))
     {
         Item& item    = m_collections[i];
         CollectionManager::instance()->removeLocation(item.location);
@@ -545,7 +547,7 @@ void SetupCollectionModel::apply()
 
     QList<Item> failedItems;
 
-    Q_FOREACH (int i, newItems)
+    for (int i : std::as_const(newItems))
     {
         Item& item = m_collections[i];
         CollectionLocation location;
@@ -573,7 +575,7 @@ void SetupCollectionModel::apply()
 
     // Update collections
 
-    Q_FOREACH (int i, updatedItems)
+    for (int i : std::as_const(updatedItems))
     {
         Item& item  = m_collections[i];
         CollectionLocation location;
@@ -608,7 +610,7 @@ void SetupCollectionModel::apply()
 
     // Rename collections
 
-    Q_FOREACH (int i, renamedItems)
+    for (int i : std::as_const(renamedItems))
     {
         Item& item = m_collections[i];
         CollectionManager::instance()->setLabel(item.location, item.label);
@@ -621,7 +623,7 @@ void SetupCollectionModel::apply()
     {
         QStringList failedPaths;
 
-        Q_FOREACH (const Item& item, failedItems)
+        for (const Item& item : std::as_const(failedItems))
         {
             failedPaths << QDir::toNativeSeparators(item.path);
         }
@@ -669,7 +671,7 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
 
     bool foundPath = false;
 
-    Q_FOREACH (const Item& item, m_collections)
+    for (const Item& item : std::as_const(m_collections))
     {
         if (!item.deleted)
         {
@@ -1302,7 +1304,7 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
     int parentId = parent.row();
     int rowCount = 0;
 
-    Q_FOREACH (const Item& item, m_collections)
+    for (const Item& item : std::as_const(m_collections))
     {
         if (!item.deleted && (item.parentId == parentId))
         {
@@ -1522,7 +1524,7 @@ bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QS
     QString messageFromManager, deviceIcon;
     QList<CollectionLocation> assumeDeleted;
 
-    Q_FOREACH (const Item& item, m_collections)
+    for (const Item& item : std::as_const(m_collections))
     {
         if (item.deleted && !item.location.isNull())
         {
@@ -1547,7 +1549,7 @@ bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QS
 
     // If there are other added collections then CollectionManager does not know about them. Check here.
 
-    Q_FOREACH (const Item& item, m_collections)
+    for (const Item& item : std::as_const(m_collections))
     {
         if (!item.deleted && item.location.isNull())
         {

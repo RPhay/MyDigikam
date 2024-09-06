@@ -228,10 +228,12 @@ void SetupMime::applySettings()
 
     QString imageFilter = d->imageFileFilterEdit->text();
 
-    Q_FOREACH (const QString& format, coreImageFormats)
+    for (const QString& format : std::as_const(coreImageFormats))
     {
-        if (imageFilter.contains(QLatin1Char('-')     + format) ||
-            imageFilter.contains(QLatin1String("-*.") + format))
+        if (
+            imageFilter.contains(QLatin1Char('-')     + format) ||
+            imageFilter.contains(QLatin1String("-*.") + format)
+           )
         {
             removedImageFormats << format;
         }

@@ -85,7 +85,9 @@ void DWItemDelegatePrivate::slotDWDataChanged(const QModelIndex& topLeft, const 
 
 void DWItemDelegatePrivate::slotDWLayoutChanged()
 {
-    Q_FOREACH (QWidget* const widget, widgetPool->invalidIndexesWidgets())
+    const auto wdgs = widgetPool->invalidIndexesWidgets();
+
+    for (QWidget* const widget : wdgs)
     {
         widget->setVisible(false);
     }
@@ -101,14 +103,22 @@ void DWItemDelegatePrivate::slotDWModelReset()
 
 void DWItemDelegatePrivate::slotDWSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
-    Q_FOREACH (const QModelIndex& index, selected.indexes())
     {
-        widgetPool->findWidgets(index, optionView(index));
+        const auto idx = selected.indexes();
+
+        for (const QModelIndex& index : idx)
+        {
+            widgetPool->findWidgets(index, optionView(index));
+        }
     }
 
-    Q_FOREACH (const QModelIndex& index, deselected.indexes())
     {
-        widgetPool->findWidgets(index, optionView(index));
+        const auto idx = deselected.indexes();
+
+        for (const QModelIndex& index : idx)
+        {
+            widgetPool->findWidgets(index, optionView(index));
+        }
     }
 }
 
