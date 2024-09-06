@@ -162,7 +162,7 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QList<QModelIndex>& index
 {
     QList<CamItemInfo> infos;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         infos << camItemInfo(index);
     }
@@ -174,7 +174,7 @@ QList<qlonglong> ImportItemModel::camItemIds(const QList<QModelIndex>& indexes) 
 {
     QList<qlonglong> ids;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         ids << camItemId(index);
     }
@@ -369,7 +369,7 @@ CamItemInfo ImportItemModel::camItemInfo(const QUrl& fileUrl) const
     }
     else
     {
-        Q_FOREACH (const CamItemInfo& info, d->infos)
+        for (const CamItemInfo& info : std::as_const(d->infos))
         {
             if (info.url() == fileUrl)
             {   // cppcheck-suppress useStlAlgorithm
@@ -391,7 +391,9 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QUrl& fileUrl) const
 
         if (id != -1)
         {
-            Q_FOREACH (int index, d->idHash.values(id))
+            const auto idx = d->idHash.values(id);
+
+            for (int index : idx)
             {
                 infos << d->infos.at(index);
             }
@@ -399,7 +401,7 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QUrl& fileUrl) const
     }
     else
     {
-        Q_FOREACH (const CamItemInfo& info, d->infos)
+        for (const CamItemInfo& info : std::as_const(d->infos))
         {
             if (info.url() == fileUrl)
             {
@@ -531,7 +533,7 @@ void ImportItemModel::emitDataChangedForSelections(const QItemSelection& selecti
 {
     if (!selection.isEmpty())
     {
-        Q_FOREACH (const QItemSelectionRange& range, selection)
+        for (const QItemSelectionRange& range : std::as_const(selection))
         {
             Q_EMIT dataChanged(range.topLeft(), range.bottomRight());
         }
@@ -740,7 +742,7 @@ void ImportItemModel::removeIndexs(const QList<QModelIndex>& indexes)
 {
     QList<int> indexesList;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (d->isValid(index))
         {
@@ -765,7 +767,7 @@ void ImportItemModel::removeCamItemInfos(const QList<CamItemInfo>& infos)
 {
     QList<int> indexesList;
 
-    Q_FOREACH (const CamItemInfo& info, infos)
+    for (const CamItemInfo& info : std::as_const(infos))
     {
         QModelIndex index = indexForCamItemId(info.id);
 
@@ -808,7 +810,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     int              offset      = 0;
     QList<qlonglong> removeFileUrls;
 
-    Q_FOREACH (const IntPair& pair, toRemove)
+    for (const IntPair& pair : std::as_const(toRemove))
     {
         const int begin = pair.first  - offset;
         const int end   = pair.second - offset;
@@ -970,12 +972,12 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::oldIndexes()
     // first, apply all changes to indexes by direct removal in model
     // while the updater was active
 
-    Q_FOREACH (const IntPairList& list, modelRemovals)
+    for (const IntPairList& list : std::as_const(modelRemovals))
     {
         int removedRows = 0;
         int offset      = 0;
 
-        Q_FOREACH (const IntPair& pair, list)
+        for (const IntPair& pair : std::as_const(list))
         {
             const int begin = pair.first  - offset;
             const int end   = pair.second - offset; // inclusive
