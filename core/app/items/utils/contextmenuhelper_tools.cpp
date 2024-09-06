@@ -77,7 +77,7 @@ void ContextMenuHelper::addImportMenu()
 
     if (!actions.isEmpty())
     {
-        Q_FOREACH (DPluginAction* const ac, actions)
+        for (DPluginAction* const ac : std::as_const(actions))
         {
             menuImport->addActions(QList<QAction*>() << ac);
         }
@@ -106,7 +106,7 @@ void ContextMenuHelper::addExportMenu()
 
     if (!actions.isEmpty())
     {
-        Q_FOREACH (DPluginAction* const ac, actions)
+        for (DPluginAction* const ac : std::as_const(actions))
         {
             ac->setData((int)DPluginAction::AlbumData);
             menuExport->addActions(QList<QAction*>() << ac);

@@ -21,8 +21,9 @@ namespace Digikam
 QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
 {
     QAction* const choice = d->parent->exec(pos, at);
+    const auto acs        = d->exportPluginActions();
 
-    Q_FOREACH (DPluginAction* const ac, d->exportPluginActions())
+    for (DPluginAction* const ac : acs)
     {
         ac->setData((int)DPluginAction::NoData);
     }

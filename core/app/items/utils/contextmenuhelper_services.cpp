@@ -34,7 +34,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        Q_FOREACH (const QUrl& aurl, appUrls)
+        for (const QUrl& aurl : std::as_const(appUrls))
         {
             QAction* const action = servicesMenu->addAction(DServiceMenu::MacApplicationBundleName(aurl));
             action->setIcon(DServiceMenu::MacApplicationBundleIcon(aurl));
@@ -61,7 +61,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        Q_FOREACH (const KService::Ptr& service, offers)
+        for (const KService::Ptr& service : std::as_const(offers))
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = servicesMenu->addAction(name);
@@ -99,7 +99,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        Q_FOREACH (const DServiceInfo& sinfo, offers)
+        for (const DServiceInfo& sinfo : std::as_const(offers))
         {
             QAction* const action = servicesMenu->addAction(sinfo.name);
             action->setIcon(DServiceMenu::getIconFromService(sinfo));

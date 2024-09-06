@@ -373,7 +373,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
             int minDiff                           = d->filterModel->rowCount();
             QList<QModelIndex> indexesForItemInfo = d->filterModel->mapListFromSource(d->model->indexesForItemInfo(info));
 
-            Q_FOREACH (const QModelIndex& index, indexesForItemInfo)
+            for (const QModelIndex& index : std::as_const(indexesForItemInfo))
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -386,10 +386,10 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
                 {
                     minDiff = distance;
                     hint    = index;
-
-/*                  qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
-
-*/                }
+/*
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
+*/
+                }
             }
         }
     }
@@ -527,7 +527,7 @@ void ItemCategorizedView::setSelectedItemInfos(const QList<ItemInfo>& infos)
 {
     QItemSelection mySelection;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         QModelIndex index = d->filterModel->indexForItemInfo(info);
         mySelection.select(index, index);

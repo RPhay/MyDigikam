@@ -342,7 +342,7 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
         {
             tagId             = -1;
 
-            Q_FOREACH (const QString& name, faceNames)
+            for (const QString& name : std::as_const(faceNames))
             {
                 tagId = FaceTags::getOrCreateTagForPerson(name.trimmed(), tagId);
             }

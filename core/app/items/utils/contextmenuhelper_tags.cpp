@@ -149,7 +149,7 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
         QList<int> tagIDs = CoreDbAccess().db()->getItemCommonTagIDs(ids);
         bool enable       = false;
 
-        Q_FOREACH (int tag, tagIDs)
+        for (int tag : std::as_const(tagIDs))
         {
             if (
                 (TagsCache::instance()->colorLabelForTag(tag) == -1)    &&

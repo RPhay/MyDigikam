@@ -230,11 +230,11 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
     CoreDbOperationGroup group;
     group.setMaximumTime(200);
 
-    Q_FOREACH (ItemInfo info, infoList)
+    for (ItemInfo info : std::as_const(infoList))
     {
         if      (!found && info.id() == pick.id())
         {
-            Q_FOREACH (ItemInfo dropInfo, infos)
+            for (ItemInfo dropInfo : std::as_const(infos))
             {
                 dropInfo.setManualOrder(counter);
                 counter += (order ? 1 : -1);
@@ -245,8 +245,10 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
         }
         else if (found && !infos.contains(info))
         {
-            if (( order && info.manualOrder() > counter) ||
-                (!order && info.manualOrder() < counter))
+            if (
+                ( order && info.manualOrder() > counter) ||
+                (!order && info.manualOrder() < counter)
+               )
             {
                 break;
             }
@@ -418,7 +420,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         needFastRemove = (d->faceMode && (tagId != album->id()));
     }
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -448,7 +450,7 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -474,7 +476,7 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -501,7 +503,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -544,7 +546,7 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {
@@ -569,7 +571,7 @@ QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
 {
     QList<int> ids;
 
-    Q_FOREACH (const QModelIndex& index, indexes)
+    for (const QModelIndex& index : std::as_const(indexes))
     {
         if (index.isValid())
         {

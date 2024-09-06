@@ -57,12 +57,14 @@ bool ContextMenuHelper::imageIdsHaveSameCategory(const imageIds& ids, DatabaseIt
     bool sameCategory = true;
     QVariantList varList;
 
-    Q_FOREACH (const qlonglong& id, ids)
+    for (const qlonglong& id : std::as_const(ids))
     {
         varList = CoreDbAccess().db()->getImagesFields(id, DatabaseFields::Category);
 
-        if (varList.isEmpty() ||
-            ((DatabaseItem::Category)varList.first().toInt() != category))
+        if (
+            varList.isEmpty() ||
+            ((DatabaseItem::Category)varList.first().toInt() != category)
+           )
         {
             sameCategory = false;
             break;

@@ -41,7 +41,7 @@ void ContextMenuHelper::addGroupMenu(const imageIds& ids, const QList<QAction*>&
 
     QMenu* const menu = new QMenu(i18nc("@action: group items", "Group"));
 
-    Q_FOREACH (QAction* const action, actions)
+    for (QAction* const action : std::as_const(actions))
     {
         menu->addAction(action);
     }
@@ -51,7 +51,9 @@ void ContextMenuHelper::addGroupMenu(const imageIds& ids, const QList<QAction*>&
 
 void ContextMenuHelper::addGroupActions(const imageIds& ids)
 {
-    Q_FOREACH (QAction* const action, groupMenuActions(ids))
+    const auto acs = groupMenuActions(ids);
+
+    for (QAction* const action : acs)
     {
         d->parent->addAction(action);
     }
@@ -195,7 +197,7 @@ void ContextMenuHelper::setGroupsOpen(bool open)
 
     GroupItemFilterSettings settings = d->imageFilterModel->groupItemFilterSettings();
 
-    Q_FOREACH (const qlonglong& id, d->selectedIds)
+    for (const qlonglong& id : std::as_const(d->selectedIds))
     {
         ItemInfo info(id);
 

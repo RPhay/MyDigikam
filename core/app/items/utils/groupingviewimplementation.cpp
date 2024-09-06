@@ -34,7 +34,7 @@ bool GroupingViewImplementation::needGroupResolving(OperationType type, const It
         return false;
     }
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (hasHiddenGroupedImages(info))
         {
@@ -54,7 +54,7 @@ ItemInfoList GroupingViewImplementation::resolveGrouping(const ItemInfoList& inf
 {
     ItemInfoList outInfos;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         outInfos << info;
 
@@ -71,7 +71,7 @@ ItemInfoList GroupingViewImplementation::getHiddenGroupedInfos(const ItemInfoLis
 {
     ItemInfoList outInfos;
 
-    Q_FOREACH (const ItemInfo& info, infos)
+    for (const ItemInfo& info : std::as_const(infos))
     {
         if (hasHiddenGroupedImages(info))
         {
