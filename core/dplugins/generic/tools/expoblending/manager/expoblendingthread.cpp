@@ -186,7 +186,7 @@ void ExpoBlendingThread::cleanUpResultFiles()
 
     QMutexLocker locker(&d->enfuseTmpUrlsMutex);
 
-    Q_FOREACH (const QUrl& url, d->enfuseTmpUrls)
+    for (const QUrl& url : std::as_const(d->enfuseTmpUrls))
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Removing temp file" << url.toLocalFile();
         QFile(url.toLocalFile()).remove();
@@ -202,7 +202,7 @@ void ExpoBlendingThread::setPreProcessingSettings(bool align)
 
 void ExpoBlendingThread::identifyFiles(const QList<QUrl>& urlList)
 {
-    Q_FOREACH (const QUrl& url, urlList)
+    for (const QUrl& url : std::as_const(urlList))
     {
         Private::Task* const t = new Private::Task;
         t->action              = EXPOBLENDING_IDENTIFY;
@@ -664,7 +664,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         args << QLatin1String("-a");
         args << QLatin1String("aligned");
 
-        Q_FOREACH (const QUrl& url, d->mixedUrls)
+        for (const QUrl& url : std::as_const(d->mixedUrls))
         {
             args << url.toLocalFile();
         }
@@ -703,7 +703,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         QString temp;
         d->preProcessedUrlsMap.clear();
 
-        Q_FOREACH (const QUrl& url, inUrls)
+        for (const QUrl& url : std::as_const(inUrls))
         {
             QUrl previewUrl;
             QUrl alignedUrl = QUrl::fromLocalFile(d->preprocessingTmpDir->path()                         +
@@ -721,7 +721,9 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
             ++i;
         }
 
-        Q_FOREACH (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
+        const auto urls = d->preProcessedUrlsMap.keys();
+
+        for (const QUrl& inputUrl : urls)
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Pre-processed output urls map:"
                                                  << inputUrl << "=>"
@@ -733,7 +735,9 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
     }
     else
     {
-        Q_FOREACH (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
+        const auto urls = d->preProcessedUrlsMap.keys();
+
+        for (const QUrl& inputUrl : urls)
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Pre-processed output urls map:"
                                                  << inputUrl << "=>"
@@ -903,7 +907,7 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
     args << QLatin1String("-o");
     args << outUrl.toLocalFile();
 
-    Q_FOREACH (const QUrl& url, inUrls)
+    for (const QUrl& url : std::as_const(inUrls))
     {
         args << url.toLocalFile();
     }

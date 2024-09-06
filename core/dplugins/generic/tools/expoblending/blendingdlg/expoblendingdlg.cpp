@@ -425,7 +425,7 @@ void ExpoBlendingDlg::slotPreview()
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
 
-    Q_FOREACH (const QUrl& url, selectedUrl)
+    for (const QUrl& url : std::as_const(selectedUrl))
     {
         ExpoBlendingItemPreprocessedUrls preprocessedUrls = map.value(url);
         preprocessedList.append(preprocessedUrls.previewUrl);
@@ -454,11 +454,11 @@ void ExpoBlendingDlg::slotProcess()
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
 
-    Q_FOREACH (const EnfuseSettings& settings, list)
+    for (const EnfuseSettings& settings : std::as_const(list))
     {
         preprocessedList.clear();
 
-        Q_FOREACH (const QUrl& url, settings.inputUrls)
+        for (const QUrl& url : std::as_const(settings.inputUrls))
         {
             ExpoBlendingItemPreprocessedUrls preprocessedUrls = map.value(url);
             preprocessedList.append(preprocessedUrls.preprocessedUrl);

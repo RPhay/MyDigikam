@@ -195,7 +195,7 @@ void BracketStackList::addItems(const QList<QUrl>& list)
         }
     }
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         ThumbnailLoadThread::defaultThread()->find(ThumbnailIdentifier(url.toLocalFile()));
     }

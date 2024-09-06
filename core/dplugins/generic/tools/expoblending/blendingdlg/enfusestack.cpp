@@ -255,7 +255,7 @@ void EnfuseStackList::clearSelected()
         ++it;
     }
 
-    Q_FOREACH (QTreeWidgetItem* const item, list)
+    for (QTreeWidgetItem* const item : std::as_const(list))
     {
         delete item;
     }
