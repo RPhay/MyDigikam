@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 01:44+0000\n"
+"POT-Creation-Date: 2024-09-06 02:00+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2708,7 +2708,7 @@ msgstr "Główny pasek narzędzi"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:983
+#: core/libs/album/manager/albummanager_talbum.cpp:985
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
@@ -2925,7 +2925,7 @@ msgstr "Wyświetl na całym ekranie"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3019,7 +3019,7 @@ msgid "No Tags Album"
 msgstr "Brak albumu znaczników"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3319,7 +3319,7 @@ msgid "Selection"
 msgstr "Zaznaczenie"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:902
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
@@ -26762,38 +26762,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Przekształcenie Raw UFRaw"
 
-#: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/album/engine/album.cpp:410
+#: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr "Kosz"
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Bieżące wyszukiwanie osi czasu"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Bieżące wyszukiwanie rozmyte"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Bieżące wyszukiwanie rozmyte wg szkicu"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Map Search"
 msgstr "Bieżące wyszukiwanie geograficzne"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Search"
 msgstr "Bieżące wyszukiwanie"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Bieżące wyszukiwanie powieleń"
@@ -27143,77 +27143,77 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "Nowa baza danych"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:349
+#: core/libs/album/manager/albummanager_palbum.cpp:351
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr "Podane położenie zbioru jest nieprawidłowe lub obecnie niedostępne."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:357
+#: core/libs/album/manager/albummanager_palbum.cpp:359
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr "Brak albumu w miejscu zbioru: Błąd wewnętrzny"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:373
+#: core/libs/album/manager/albummanager_palbum.cpp:375
 #, kde-format
 msgid "No parent found for album."
 msgstr "Brak rodzica dla albumu."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:381
+#: core/libs/album/manager/albummanager_palbum.cpp:383
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "Nazwa albumu nie może być pusta."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:387
+#: core/libs/album/manager/albummanager_palbum.cpp:389
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "Nazwa albumu nie może zawierać \"/\"."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:393
+#: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr "createPAlbum nie akceptuje albumu źródłowego jako rodzica."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:409
+#: core/libs/album/manager/albummanager_palbum.cpp:411
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "Album z tą samą nazwą już istnieje."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:425
+#: core/libs/album/manager/albummanager_palbum.cpp:427
 #, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "Nieudane tworzenie katalogu '%1'"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:434
+#: core/libs/album/manager/albummanager_palbum.cpp:436
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "Nieudana próba dodania albumu do bazy"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:461
-#: core/libs/album/manager/albummanager_palbum.cpp:548
+#: core/libs/album/manager/albummanager_palbum.cpp:463
+#: core/libs/album/manager/albummanager_palbum.cpp:550
 #: core/libs/album/manager/albummanager_talbum.cpp:366
-#: core/libs/album/manager/albummanager_talbum.cpp:459
-#: core/libs/album/manager/albummanager_talbum.cpp:499
-#: core/libs/album/manager/albummanager_talbum.cpp:588
+#: core/libs/album/manager/albummanager_talbum.cpp:461
+#: core/libs/album/manager/albummanager_talbum.cpp:501
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "No such album"
 msgstr "Album nie istnieje"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:467
+#: core/libs/album/manager/albummanager_palbum.cpp:469
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "Nie można zmienić nazwy albumu podstawowego"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:473
+#: core/libs/album/manager/albummanager_palbum.cpp:475
 #, kde-format
 msgid "Cannot rename album root album"
 msgstr "Nie można zmienić nazwy albumu podstawowego"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:479
+#: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "Nazwa albumu nie może zawierać \"/\""
 
-#: core/libs/album/manager/albummanager_palbum.cpp:487
+#: core/libs/album/manager/albummanager_palbum.cpp:489
 #, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -27222,12 +27222,12 @@ msgstr ""
 "Istnieje już album o tej nazwie.\n"
 "Podaj inną nazwę."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:506
+#: core/libs/album/manager/albummanager_palbum.cpp:508
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "Nie powiodła się zmiana nazwy albumu"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:554
+#: core/libs/album/manager/albummanager_palbum.cpp:556
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "Nie można edytować albumu podstawowego"
@@ -27243,7 +27243,7 @@ msgid "Tag name cannot be empty"
 msgstr "Nazwa znacznika nie może być pusta"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:304
-#: core/libs/album/manager/albummanager_talbum.cpp:471
+#: core/libs/album/manager/albummanager_talbum.cpp:473
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Nazwa znacznika nie może zawierać \"/\""
@@ -27269,13 +27269,13 @@ msgstr "Nie można usunąć znacznika podstawowego"
 msgid "Cannot delete required face tag"
 msgstr "Nie można usunąć wymaganego znacznika twarzy"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:465
-#: core/libs/album/manager/albummanager_talbum.cpp:704
+#: core/libs/album/manager/albummanager_talbum.cpp:467
+#: core/libs/album/manager/albummanager_talbum.cpp:706
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Nie można edytować znacznika podstawowego"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:479
+#: core/libs/album/manager/albummanager_talbum.cpp:481
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27284,17 +27284,17 @@ msgstr ""
 "Inny znacznik o tej samej nazwie już istnieje.\n"
 "Podaj inną nazwę."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:505
+#: core/libs/album/manager/albummanager_talbum.cpp:507
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Próba przeniesienia albumu donikąd"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:511
+#: core/libs/album/manager/albummanager_talbum.cpp:513
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Nie można przenieść znacznika podstawowego"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:519
+#: core/libs/album/manager/albummanager_talbum.cpp:521
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27303,38 +27303,38 @@ msgstr ""
 "Inny znacznik o tej samej nazwie już istnieje.\n"
 "Czy chcesz scalić znaczniki?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:594
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Nie można scalić głównego znacznika"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:600
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Nie można scalić wymaganego znacznika twarzy"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:606
+#: core/libs/album/manager/albummanager_talbum.cpp:608
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Scalić można tylko znaczniki bez rzeczy podrzędnych!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:620
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Czy chcesz scalić znacznik '%1' ze znacznikiem '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1134
+#: core/libs/album/manager/albummanager_talbum.cpp:624
+#: core/libs/album/manager/albummanager_talbum.cpp:1138
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Nie pytaj do zamknięcia programu"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:698
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "No such tag"
 msgstr "Brak podanego znacznika"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1129
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27349,138 +27349,138 @@ msgid "Context menu"
 msgstr "Menu podręczne"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
 msgstr "Opróżnij kosz"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:274
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "Ocena: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:284
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "Brak oceny"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:300
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "Barwy: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:310
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:315
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "Brak barwy"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Czerwony"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Pomarańczowy"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Żółty"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Zielony"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Niebieski"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Purpurowy"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Szary"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Czarny"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "Biały"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:388
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "Wybory: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:393
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Brak wyboru"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Odrzucone"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Oczekujące"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "Zatwierdzone"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:479
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:484
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "Etykiety eksportowanych"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:483
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:488
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
@@ -27549,109 +27549,109 @@ msgctxt "@title"
 msgid "Labels"
 msgstr "Etykiety"
 
-#: core/libs/album/treeview/labelstreeview.cpp:401
+#: core/libs/album/treeview/labelstreeview.cpp:403
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Ocena"
 
-#: core/libs/album/treeview/labelstreeview.cpp:406
+#: core/libs/album/treeview/labelstreeview.cpp:408
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Brak oceny"
 
-#: core/libs/album/treeview/labelstreeview.cpp:442
+#: core/libs/album/treeview/labelstreeview.cpp:444
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Wybór"
 
-#: core/libs/album/treeview/labelstreeview.cpp:447
+#: core/libs/album/treeview/labelstreeview.cpp:449
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Brak wyboru"
 
-#: core/libs/album/treeview/labelstreeview.cpp:448
+#: core/libs/album/treeview/labelstreeview.cpp:450
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Odrzucona rzecz"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:451
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Oczekująca rzecz"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:452
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Zatwierdzona rzecz"
 
-#: core/libs/album/treeview/labelstreeview.cpp:470
+#: core/libs/album/treeview/labelstreeview.cpp:472
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Barwa"
 
-#: core/libs/album/treeview/labelstreeview.cpp:475
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "Brak barwy"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Red"
 msgstr "Czerwony"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Orange"
 msgstr "Pomarańczowy"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Yellow"
 msgstr "Żółty"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Green"
 msgstr "Zielony"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Blue"
 msgstr "Niebieski"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Magenta"
 msgstr "Purpurowy"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Gray"
 msgstr "Szary"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Black"
 msgstr "Czarny"
 
-#: core/libs/album/treeview/labelstreeview.cpp:491
+#: core/libs/album/treeview/labelstreeview.cpp:493
 #, kde-format
 msgctxt "@item: color tree"
 msgid "White"
@@ -28743,13 +28743,13 @@ msgstr ""
 "istnieje. Bieżący schemat bazy danych nie może zostać zweryfikowany. Spróbuj "
 "ponownie z pustą bazą danych. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Sprzeczne pliki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28770,55 +28770,55 @@ msgstr ""
 "Zastąp samoczynnie: plik o sprzecznej nazwie zastąpi. \n"
 "Pomiń samoczynnie: plik o sprzecznej nazwie zostanie pominięty."
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Sam przemianuj"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Zastąp samoczynnie"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Sam pomiń"
 
-#: core/libs/database/utils/ifaces/dio.cpp:867
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Copy Album"
 msgstr "Skopiuj albumy"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Copy Images"
 msgstr "Skopiuj obrazy"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:882
 #, kde-format
 msgid "Copy Files"
 msgstr "Skopiuj pliki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:887
 #, kde-format
 msgid "Move Album"
 msgstr "Przenieś albumy"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:892
 #, kde-format
 msgid "Move Images"
 msgstr "Przenieś obrazy"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:897
 #, kde-format
 msgid "Move Files"
 msgstr "Przenieś pliki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:912
 #, kde-format
 msgid "Restore Trash"
 msgstr "Przywróć kosz"
@@ -31492,7 +31492,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Przekształć głębię"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:426
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
 #, kde-format
 msgid "Unknown filter"
 msgstr "Nieznany filtr"
@@ -31502,12 +31502,12 @@ msgstr "Nieznany filtr"
 msgid "Color Negative Inverter"
 msgstr "Inwerter kolorowych negatywów"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:190
+#: core/libs/dimg/filters/filteractionfilter.cpp:194
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Wbudowane przekształcenie nieobsługiwane"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:212
+#: core/libs/dimg/filters/filteractionfilter.cpp:216
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Identyfikator filtra lub wersja nieobsługiwana"
@@ -37313,7 +37313,7 @@ msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Ostatnio używane znaczniki"
 
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
 #: core/libs/properties/captions/tagsedit.cpp:280
 #, kde-format
 msgctxt "@action"
@@ -37668,7 +37668,7 @@ msgstr "niezmienny"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:639
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37679,10 +37679,10 @@ msgstr "niedostępne"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:694
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:799
-#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebardb.cpp:802
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -37694,10 +37694,10 @@ msgstr "Nie"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:695
-#: core/libs/properties/itempropertiessidebardb.cpp:798
-#: core/libs/properties/itempropertiessidebardb.cpp:800
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:803
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37930,8 +37930,8 @@ msgstr "Nieskalibrowany"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:670
-#: core/libs/properties/itempropertiessidebardb.cpp:683
+#: core/libs/properties/itempropertiessidebardb.cpp:673
+#: core/libs/properties/itempropertiessidebardb.cpp:686
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37944,21 +37944,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 megapikseli)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:729
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -37976,7 +37976,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Wersje"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:675
+#: core/libs/properties/itempropertiessidebardb.cpp:678
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

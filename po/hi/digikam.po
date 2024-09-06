@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 01:44+0000\n"
+"POT-Creation-Date: 2024-09-06 02:00+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2687,7 +2687,7 @@ msgstr "मुख्य औज़ार पट्टी"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:983
+#: core/libs/album/manager/albummanager_talbum.cpp:985
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
@@ -2880,7 +2880,7 @@ msgstr "पूर्ण स्क्रीन मोड से बाहर ह�
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2970,7 +2970,7 @@ msgid "No Tags Album"
 msgstr "मेरे एलबम"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3250,7 +3250,7 @@ msgid "Selection"
 msgstr "चयन"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:902
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
@@ -25778,38 +25778,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "रंग जगह"
 
-#: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/album/engine/album.cpp:410
+#: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, fuzzy, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, fuzzy, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, fuzzy, kde-format
 msgid "Current Map Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, fuzzy, kde-format
 msgid "Current Search"
 msgstr "खोज मिटाएँ"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, fuzzy, kde-format
 msgid "Current Duplicates Search"
 msgstr "खोज मिटाएँ"
@@ -26105,77 +26105,77 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "डाटाबेस फ़ाइल नक़ल बनाया"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:349
+#: core/libs/album/manager/albummanager_palbum.cpp:351
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_palbum.cpp:357
+#: core/libs/album/manager/albummanager_palbum.cpp:359
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_palbum.cpp:373
+#: core/libs/album/manager/albummanager_palbum.cpp:375
 #, kde-format
 msgid "No parent found for album."
 msgstr "एलबम के लिए कोई पेरेंट नहीं मिला"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:381
+#: core/libs/album/manager/albummanager_palbum.cpp:383
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "एलबम नाम रिक्त नहीं हो सकता."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:387
+#: core/libs/album/manager/albummanager_palbum.cpp:389
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "एलबम नाम में '/' नहीं हो सकता."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:393
+#: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_palbum.cpp:409
+#: core/libs/album/manager/albummanager_palbum.cpp:411
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "इसी नाम के साथ एक मौजूदा एलबम है."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:425
+#: core/libs/album/manager/albummanager_palbum.cpp:427
 #, fuzzy, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "एलबम का नाम बदलने में असफल"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:434
+#: core/libs/album/manager/albummanager_palbum.cpp:436
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "डाटाबेस में एलबम जोड़ने में असफल"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:461
-#: core/libs/album/manager/albummanager_palbum.cpp:548
+#: core/libs/album/manager/albummanager_palbum.cpp:463
+#: core/libs/album/manager/albummanager_palbum.cpp:550
 #: core/libs/album/manager/albummanager_talbum.cpp:366
-#: core/libs/album/manager/albummanager_talbum.cpp:459
-#: core/libs/album/manager/albummanager_talbum.cpp:499
-#: core/libs/album/manager/albummanager_talbum.cpp:588
+#: core/libs/album/manager/albummanager_talbum.cpp:461
+#: core/libs/album/manager/albummanager_talbum.cpp:501
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "No such album"
 msgstr "ऐसा कोई एलबम नहीं है"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:467
+#: core/libs/album/manager/albummanager_palbum.cpp:469
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "रूट एलबम का नाम बदला नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:473
+#: core/libs/album/manager/albummanager_palbum.cpp:475
 #, fuzzy, kde-format
 msgid "Cannot rename album root album"
 msgstr "रूट एलबम का नाम बदला नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:479
+#: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "एलबम नाम में '/' नहीं हो सकता"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:487
+#: core/libs/album/manager/albummanager_palbum.cpp:489
 #, fuzzy, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -26184,12 +26184,12 @@ msgstr ""
 "इस नाम का एक अन्य एलबम पहले ही मौज़ूद है.\n"
 "कृपया एक भिन्न नाम चुनें."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:506
+#: core/libs/album/manager/albummanager_palbum.cpp:508
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "एलबम का नाम बदलने में असफल"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:554
+#: core/libs/album/manager/albummanager_palbum.cpp:556
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "रूट एलबम को संपादित नहीं किया जा सकता"
@@ -26205,7 +26205,7 @@ msgid "Tag name cannot be empty"
 msgstr "टैग नाम रिक्त नहीं हो सकता"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:304
-#: core/libs/album/manager/albummanager_talbum.cpp:471
+#: core/libs/album/manager/albummanager_talbum.cpp:473
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "टैग नाम में '/' नहीं हो सकता"
@@ -26233,13 +26233,13 @@ msgstr "रूट टैग को मिटाया नहीं जा सक
 msgid "Cannot delete required face tag"
 msgstr "रूट टैग को मिटाया नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:465
-#: core/libs/album/manager/albummanager_talbum.cpp:704
+#: core/libs/album/manager/albummanager_talbum.cpp:467
+#: core/libs/album/manager/albummanager_talbum.cpp:706
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "रूट टैग को संपादित नहीं किया जा सकता"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:479
+#: core/libs/album/manager/albummanager_talbum.cpp:481
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26248,17 +26248,17 @@ msgstr ""
 "इस नाम का एक अन्य एलबम पहले ही मौज़ूद है.\n"
 "कृपया एक भिन्न नाम चुनें."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:505
+#: core/libs/album/manager/albummanager_talbum.cpp:507
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:511
+#: core/libs/album/manager/albummanager_talbum.cpp:513
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "रूट टैग को खिसकाया नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:519
+#: core/libs/album/manager/albummanager_talbum.cpp:521
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26267,40 +26267,40 @@ msgstr ""
 "इस नाम का एक अन्य एलबम पहले ही मौज़ूद है.\n"
 "कृपया एक भिन्न नाम चुनें."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:594
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "रूट टैग को खिसकाया नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:600
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "रूट टैग को खिसकाया नहीं जा सकता"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:606
+#: core/libs/album/manager/albummanager_talbum.cpp:608
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:620
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1134
+#: core/libs/album/manager/albummanager_talbum.cpp:624
+#: core/libs/album/manager/albummanager_talbum.cpp:1138
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "दोबारा मत पूछें (&a)"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:698
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "No such tag"
 msgstr "ऐसा कोई टैग नहीं है"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1129
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -26313,50 +26313,50 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:274
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "रेटिंग:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:284
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
 #, fuzzy, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "रेटिंग"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:300
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "रंग:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:310
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:315
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "रंग"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "लाल"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "सीमा:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 #| msgid "Yellow"
@@ -26364,7 +26364,7 @@ msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "पीला"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Green"
@@ -26372,7 +26372,7 @@ msgctxt "@info: color label name"
 msgid "Green"
 msgstr "हरा"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Blue"
@@ -26380,7 +26380,7 @@ msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "नीला"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Magenta"
@@ -26388,67 +26388,67 @@ msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "मजेंटा"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "श्वेत-श्याम"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "पीछे"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "शीर्षक"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:388
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "ईंटें"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:393
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "ईंटें"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "रीसेट"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "रॉ डिकोडिंग"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "देहलीज:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:479
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:484
 #, fuzzy, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "निर्यात"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:483
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:488
 #, fuzzy, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
@@ -26521,114 +26521,114 @@ msgctxt "@title"
 msgid "Labels"
 msgstr "लैब"
 
-#: core/libs/album/treeview/labelstreeview.cpp:401
+#: core/libs/album/treeview/labelstreeview.cpp:403
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "रेटिंग"
 
-#: core/libs/album/treeview/labelstreeview.cpp:406
+#: core/libs/album/treeview/labelstreeview.cpp:408
 #, fuzzy, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "रेटिंग"
 
-#: core/libs/album/treeview/labelstreeview.cpp:442
+#: core/libs/album/treeview/labelstreeview.cpp:444
 #, fuzzy, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "ईंटें"
 
-#: core/libs/album/treeview/labelstreeview.cpp:447
+#: core/libs/album/treeview/labelstreeview.cpp:449
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "ईंटें"
 
-#: core/libs/album/treeview/labelstreeview.cpp:448
+#: core/libs/album/treeview/labelstreeview.cpp:450
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "रीसेट"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:451
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "रॉ डिकोडिंग"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:452
 #, fuzzy, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "देहलीज:"
 
-#: core/libs/album/treeview/labelstreeview.cpp:470
+#: core/libs/album/treeview/labelstreeview.cpp:472
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "रंग"
 
-#: core/libs/album/treeview/labelstreeview.cpp:475
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "रंग"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Red"
 msgstr "लाल"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "Orange"
 msgstr "सीमा:"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@item: color tree"
 msgid "Yellow"
 msgstr "पीला"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@item: color tree"
 msgid "Green"
 msgstr "हरा"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@item: color tree"
 msgid "Blue"
 msgstr "नीला"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@item: color tree"
 msgid "Magenta"
 msgstr "मजेंटा"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "Gray"
 msgstr "श्वेत-श्याम"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "Black"
 msgstr "पीछे"
 
-#: core/libs/album/treeview/labelstreeview.cpp:491
+#: core/libs/album/treeview/labelstreeview.cpp:493
 #, fuzzy, kde-format
 msgctxt "@item: color tree"
 msgid "White"
@@ -27629,13 +27629,13 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "नया छवि फ़ाइल नाम"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27648,60 +27648,60 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "फ़ाइल को मिटाकर लिखें?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "फ़ाइल को मिटाकर लिखें?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "फ़ाइल को मिटाकर लिखें?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:867
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "मेरे एलबम"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "छवियाँ जोड़ें..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:882
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "यहाँ नक़ल करें (&C)"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:887
 #, fuzzy, kde-format
 msgid "Move Album"
 msgstr "नया एलबम..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:892
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "छवियाँ सहेजें"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:897
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "मूवी फ़ाइलें"
 
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:912
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "रीस्टोरेशन"
@@ -30205,7 +30205,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "बदलें"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:426
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
 #, fuzzy, kde-format
 msgid "Unknown filter"
 msgstr "अज्ञात त्रुटि"
@@ -30215,12 +30215,12 @@ msgstr "अज्ञात त्रुटि"
 msgid "Color Negative Inverter"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:190
+#: core/libs/dimg/filters/filteractionfilter.cpp:194
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:212
+#: core/libs/dimg/filters/filteractionfilter.cpp:216
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr ""
@@ -35908,7 +35908,7 @@ msgctxt "@info"
 msgid "Recent Tags"
 msgstr "हाल ही के टैग"
 
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
 #: core/libs/properties/captions/tagsedit.cpp:280
 #, fuzzy, kde-format
 #| msgid "No Recently Assigned Tags"
@@ -36265,7 +36265,7 @@ msgstr "<i>अपरिवर्तित</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:639
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -36277,10 +36277,10 @@ msgstr "अनुपलब्ध "
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:694
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:799
-#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebardb.cpp:802
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -36292,10 +36292,10 @@ msgstr "नहीं"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:695
-#: core/libs/properties/itempropertiessidebardb.cpp:798
-#: core/libs/properties/itempropertiessidebardb.cpp:800
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:803
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -36542,8 +36542,8 @@ msgstr "अनकेलिब्रेटेड"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:670
-#: core/libs/properties/itempropertiessidebardb.cpp:683
+#: core/libs/properties/itempropertiessidebardb.cpp:673
+#: core/libs/properties/itempropertiessidebardb.cpp:686
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -36558,7 +36558,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -36566,7 +36566,7 @@ msgid "%1 bpp"
 msgstr " %1 बीपीपी"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:729
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -36574,7 +36574,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -36593,7 +36593,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "<b>अनुमतियाँ</b>:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:675
+#: core/libs/properties/itempropertiessidebardb.cpp:678
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

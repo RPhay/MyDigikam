@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-05 01:44+0000\n"
+"POT-Creation-Date: 2024-09-06 02:00+0000\n"
 "PO-Revision-Date: 2024-07-23 11:05+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -2657,7 +2657,7 @@ msgstr "Aðalverkfæraslá"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
-#: core/libs/album/manager/albummanager_talbum.cpp:983
+#: core/libs/album/manager/albummanager_talbum.cpp:985
 #: core/libs/timeadjust/timeadjustsettings.cpp:134
 #, kde-format
 msgid "digiKam"
@@ -2872,7 +2872,7 @@ msgstr "Birta á öllum skjánum"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:484
+#: core/libs/album/engine/album.cpp:485
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2967,7 +2967,7 @@ msgid "No Tags Album"
 msgstr "Ekkert merkingaalbúm"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
-#: core/libs/album/engine/album.cpp:551
+#: core/libs/album/engine/album.cpp:552
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3263,7 +3263,7 @@ msgid "Selection"
 msgstr "Val"
 
 #: core/app/views/stack/trashview.cpp:441
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:902
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
 #, kde-format
@@ -26608,38 +26608,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"
 
-#: core/libs/album/engine/album.cpp:409
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/album/engine/album.cpp:410
+#: core/libs/database/utils/ifaces/dio.cpp:907
 #, kde-format
 msgid "Trash"
 msgstr "Rusl"
 
-#: core/libs/album/engine/album.cpp:748
+#: core/libs/album/engine/album.cpp:749
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Núverandi tímalínuleit"
 
-#: core/libs/album/engine/album.cpp:755
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Núverandi loðin myndaleit"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:760
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Núverandi loðin skissuleit"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Map Search"
 msgstr "Núverandi kortaleit"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Search"
 msgstr "Núverandi leit"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Núverandi tvítakaleit"
@@ -26989,77 +26989,77 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "Nýr gagnagrunnur"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:349
+#: core/libs/album/manager/albummanager_palbum.cpp:351
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr "Staðsetning safnsins sem gefin var upp er ógild eða ekki tiltæk núna."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:357
+#: core/libs/album/manager/albummanager_palbum.cpp:359
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr "Ekkert albúm fyrir staðsetningu safns: innri villa"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:373
+#: core/libs/album/manager/albummanager_palbum.cpp:375
 #, kde-format
 msgid "No parent found for album."
 msgstr "Fann ekki yfiralbúm."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:381
+#: core/libs/album/manager/albummanager_palbum.cpp:383
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "Nafn albúms má ekki vera tómt."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:387
+#: core/libs/album/manager/albummanager_palbum.cpp:389
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "Nafn albúms má ekki innihalda '/'."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:393
+#: core/libs/album/manager/albummanager_palbum.cpp:395
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr "createPAlbum samþykkir ekki að nota rótaralbúmið sem yfirmöppu."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:409
+#: core/libs/album/manager/albummanager_palbum.cpp:411
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "Annað albúm með sama nafn er þegar til staðar."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:425
+#: core/libs/album/manager/albummanager_palbum.cpp:427
 #, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "Mistókst að búa til möppu '%1'"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:434
+#: core/libs/album/manager/albummanager_palbum.cpp:436
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "Mistókst að bæta albúmi í gagnagrunn"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:461
-#: core/libs/album/manager/albummanager_palbum.cpp:548
+#: core/libs/album/manager/albummanager_palbum.cpp:463
+#: core/libs/album/manager/albummanager_palbum.cpp:550
 #: core/libs/album/manager/albummanager_talbum.cpp:366
-#: core/libs/album/manager/albummanager_talbum.cpp:459
-#: core/libs/album/manager/albummanager_talbum.cpp:499
-#: core/libs/album/manager/albummanager_talbum.cpp:588
+#: core/libs/album/manager/albummanager_talbum.cpp:461
+#: core/libs/album/manager/albummanager_talbum.cpp:501
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "No such album"
 msgstr "Albúmið er ekki til"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:467
+#: core/libs/album/manager/albummanager_palbum.cpp:469
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "Get ekki endurnefnt grunnalbúm"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:473
+#: core/libs/album/manager/albummanager_palbum.cpp:475
 #, kde-format
 msgid "Cannot rename album root album"
 msgstr "Get ekki endurnefnt grunnalbúm"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:479
+#: core/libs/album/manager/albummanager_palbum.cpp:481
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "Nafn albúms má ekki innihalda '/'"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:487
+#: core/libs/album/manager/albummanager_palbum.cpp:489
 #, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -27068,12 +27068,12 @@ msgstr ""
 "Annað albúm með sama nafni er þegar til staðar.\n"
 "Veldu annað nafn."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:506
+#: core/libs/album/manager/albummanager_palbum.cpp:508
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "Mistókst að endurnefna albúm"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:554
+#: core/libs/album/manager/albummanager_palbum.cpp:556
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "Get ekki átt við grunnalbúm"
@@ -27089,7 +27089,7 @@ msgid "Tag name cannot be empty"
 msgstr "Nafn merkis má ekki vera tómt"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:304
-#: core/libs/album/manager/albummanager_talbum.cpp:471
+#: core/libs/album/manager/albummanager_talbum.cpp:473
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Nafn merkis má ekki innihalda '/'"
@@ -27115,13 +27115,13 @@ msgstr "Get ekki eytt grunnmerki"
 msgid "Cannot delete required face tag"
 msgstr "Get ekki eytt nauðsynlegu andlitsmerki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:465
-#: core/libs/album/manager/albummanager_talbum.cpp:704
+#: core/libs/album/manager/albummanager_talbum.cpp:467
+#: core/libs/album/manager/albummanager_talbum.cpp:706
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Get ekki breytt grunnmerki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:479
+#: core/libs/album/manager/albummanager_talbum.cpp:481
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27130,17 +27130,17 @@ msgstr ""
 "Annað merki með sama nafn er þegar til staðar.\n"
 "Veldu annað nafn."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:505
+#: core/libs/album/manager/albummanager_talbum.cpp:507
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Tilraun til að færa TAlbúm út í loftið"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:511
+#: core/libs/album/manager/albummanager_talbum.cpp:513
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Get ekki fært grunnmerki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:519
+#: core/libs/album/manager/albummanager_talbum.cpp:521
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27149,38 +27149,38 @@ msgstr ""
 "Annað merki með sama nafn er þegar til staðar.\n"
 "Viltu sameina þessi merki?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:594
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Get ekki sameinað grunnmerki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:600
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Get ekki sameinað nauðsynlegt andlitsmerki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:606
+#: core/libs/album/manager/albummanager_talbum.cpp:608
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Aðeins er hægt að sameina merki án afleiða (undirmerkja)!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:620
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Viltu sameina merkið '%1' inn í merkið '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:622
-#: core/libs/album/manager/albummanager_talbum.cpp:1134
+#: core/libs/album/manager/albummanager_talbum.cpp:624
+#: core/libs/album/manager/albummanager_talbum.cpp:1138
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ekki spyrja aftur í þessari setu"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:698
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "No such tag"
 msgstr "Ekkert slíkt merki"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1129
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27195,138 +27195,138 @@ msgid "Context menu"
 msgstr "Samhengisvalmynd"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1104
-#: core/libs/database/utils/ifaces/dio.cpp:913
+#: core/libs/database/utils/ifaces/dio.cpp:917
 #, kde-format
 msgid "Empty Trash"
 msgstr "Tæma rusl"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:274
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "Einkunn: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:284
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "Engin einkunn"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:300
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "Litir:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:310
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:315
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "Enginn litur"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:316
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:321
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rautt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:327
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Appelsínugult"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:328
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:333
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Gult"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:339
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Grænt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:340
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:345
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Blátt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:351
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Blárautt (magenta)"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:352
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:357
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Grátt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:358
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:363
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Svart"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:364
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:369
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "Hvítt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:388
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "Sérmerki:"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:393
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:398
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Ekkert sérmerki"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:399
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:404
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Hafnað"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:405
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:410
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Í bið"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:411
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:416
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "Samþykkt"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:479
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:484
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "Útfluttar merkingar"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:483
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:488
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
@@ -27395,109 +27395,109 @@ msgctxt "@title"
 msgid "Labels"
 msgstr "Merkingar"
 
-#: core/libs/album/treeview/labelstreeview.cpp:401
+#: core/libs/album/treeview/labelstreeview.cpp:403
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
 msgstr "Einkunn"
 
-#: core/libs/album/treeview/labelstreeview.cpp:406
+#: core/libs/album/treeview/labelstreeview.cpp:408
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
 msgstr "Engin einkunn"
 
-#: core/libs/album/treeview/labelstreeview.cpp:442
+#: core/libs/album/treeview/labelstreeview.cpp:444
 #, kde-format
 msgctxt "@title: pick tree"
 msgid "Pick"
 msgstr "Sérmerki"
 
-#: core/libs/album/treeview/labelstreeview.cpp:447
+#: core/libs/album/treeview/labelstreeview.cpp:449
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "No Pick"
 msgstr "Ekkert sérmerki"
 
-#: core/libs/album/treeview/labelstreeview.cpp:448
+#: core/libs/album/treeview/labelstreeview.cpp:450
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
 msgstr "Hafnað atriði"
 
-#: core/libs/album/treeview/labelstreeview.cpp:449
+#: core/libs/album/treeview/labelstreeview.cpp:451
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
 msgstr "Atriði í bið"
 
-#: core/libs/album/treeview/labelstreeview.cpp:450
+#: core/libs/album/treeview/labelstreeview.cpp:452
 #, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
 msgstr "Samþykkt atriði"
 
-#: core/libs/album/treeview/labelstreeview.cpp:470
+#: core/libs/album/treeview/labelstreeview.cpp:472
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Color"
 msgstr "Litur"
 
-#: core/libs/album/treeview/labelstreeview.cpp:475
+#: core/libs/album/treeview/labelstreeview.cpp:477
 #, kde-format
 msgctxt "@item: color tree"
 msgid "No Color"
 msgstr "Enginn litur"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Red"
 msgstr "Rautt"
 
-#: core/libs/album/treeview/labelstreeview.cpp:487
+#: core/libs/album/treeview/labelstreeview.cpp:489
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Orange"
 msgstr "Appelsínugult"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Yellow"
 msgstr "Gult"
 
-#: core/libs/album/treeview/labelstreeview.cpp:488
+#: core/libs/album/treeview/labelstreeview.cpp:490
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Green"
 msgstr "Grænt"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Blue"
 msgstr "Blátt"
 
-#: core/libs/album/treeview/labelstreeview.cpp:489
+#: core/libs/album/treeview/labelstreeview.cpp:491
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Magenta"
 msgstr "Blárautt (magenta)"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Gray"
 msgstr "Grátt"
 
-#: core/libs/album/treeview/labelstreeview.cpp:490
+#: core/libs/album/treeview/labelstreeview.cpp:492
 #, kde-format
 msgctxt "@item: color tree"
 msgid "Black"
 msgstr "Svart"
 
-#: core/libs/album/treeview/labelstreeview.cpp:491
+#: core/libs/album/treeview/labelstreeview.cpp:493
 #, kde-format
 msgctxt "@item: color tree"
 msgid "White"
@@ -28587,13 +28587,13 @@ msgstr ""
 "staðar. Ekki er hægt að yfirfara núverandi gagnagrunnsskema. Reyndu að ræsa "
 "með tómum gagnagrunni. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Árekstrar milli skráa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:349
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28614,55 +28614,55 @@ msgstr ""
 "Yfirskrifa sjálfvirkt: skrifað verður yfir skrár sem rekast á.\n"
 "Sleppa sjálfvirkt: skrám sem rekast á verður sleppt."
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Endurnefna sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:360
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Skrifa yfir sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:362
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Sleppa henni sjálfkrafa"
 
-#: core/libs/database/utils/ifaces/dio.cpp:867
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Copy Album"
 msgstr "Afrita albúm"
 
-#: core/libs/database/utils/ifaces/dio.cpp:872
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Copy Images"
 msgstr "Afrita myndir"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:882
 #, kde-format
 msgid "Copy Files"
 msgstr "Afrita skrár"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:887
 #, kde-format
 msgid "Move Album"
 msgstr "Færa albúm"
 
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:892
 #, kde-format
 msgid "Move Images"
 msgstr "Færa myndir"
 
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:897
 #, kde-format
 msgid "Move Files"
 msgstr "Færa skrár"
 
-#: core/libs/database/utils/ifaces/dio.cpp:908
+#: core/libs/database/utils/ifaces/dio.cpp:912
 #, kde-format
 msgid "Restore Trash"
 msgstr "Endurheimta úr ruslinu"
@@ -31337,7 +31337,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Umbreyta litadýpt"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:426
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:427
 #, kde-format
 msgid "Unknown filter"
 msgstr "Óþekkt sía"
@@ -31347,12 +31347,12 @@ msgstr "Óþekkt sía"
 msgid "Color Negative Inverter"
 msgstr "Viðsnúningur litnegatívu"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:190
+#: core/libs/dimg/filters/filteractionfilter.cpp:194
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Ekki stuðningur við innbyggða umbreytingu"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:212
+#: core/libs/dimg/filters/filteractionfilter.cpp:216
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Auðkenni síu eða útgáfa er ekki studd"
@@ -37129,7 +37129,7 @@ msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Nýleg merki"
 
-#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
+#: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
 #: core/libs/properties/captions/tagsedit.cpp:280
 #, kde-format
 msgctxt "@action"
@@ -37483,7 +37483,7 @@ msgstr "óbreytt"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:335
 #: core/libs/properties/itempropertiessidebar.cpp:207
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:639
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37494,10 +37494,10 @@ msgstr "ekki tiltækt"
 #: core/libs/properties/import/importitempropertiestab.cpp:451
 #: core/libs/properties/itempropertiessidebar.cpp:268
 #: core/libs/properties/itempropertiessidebar.cpp:271
-#: core/libs/properties/itempropertiessidebardb.cpp:694
-#: core/libs/properties/itempropertiessidebardb.cpp:696
-#: core/libs/properties/itempropertiessidebardb.cpp:799
-#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebardb.cpp:802
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -37509,10 +37509,10 @@ msgstr "Nei"
 #: core/libs/properties/import/importitempropertiestab.cpp:447
 #: core/libs/properties/itempropertiessidebar.cpp:267
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:693
-#: core/libs/properties/itempropertiessidebardb.cpp:695
-#: core/libs/properties/itempropertiessidebardb.cpp:798
-#: core/libs/properties/itempropertiessidebardb.cpp:800
+#: core/libs/properties/itempropertiessidebardb.cpp:696
+#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:801
+#: core/libs/properties/itempropertiessidebardb.cpp:803
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37745,8 +37745,8 @@ msgstr "Ókvarðað"
 
 #: core/libs/properties/itempropertiessidebar.cpp:250
 #: core/libs/properties/itempropertiessidebar.cpp:257
-#: core/libs/properties/itempropertiessidebardb.cpp:670
-#: core/libs/properties/itempropertiessidebardb.cpp:683
+#: core/libs/properties/itempropertiessidebardb.cpp:673
+#: core/libs/properties/itempropertiessidebardb.cpp:686
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37759,21 +37759,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:266
-#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:302
-#: core/libs/properties/itempropertiessidebardb.cpp:726
+#: core/libs/properties/itempropertiessidebardb.cpp:729
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:307
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -37791,7 +37791,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Útgáfur"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:675
+#: core/libs/properties/itempropertiessidebardb.cpp:678
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
