@@ -259,7 +259,9 @@ void DatabaseTask::run()
 
         // Remove item ids to be deleted from the core DB.
 
-        Q_FOREACH (const qlonglong& item, CoreDbAccess().db()->getAllItems())
+        const auto items = CoreDbAccess().db()->getAllItems();
+
+        for (const qlonglong& item : items)
         {
             if (!staleImageIds.contains(item))
             {
@@ -309,7 +311,7 @@ void DatabaseTask::run()
 
             FaceTagsEditor editor;
 
-            Q_FOREACH (const qlonglong& item, coredbItems)
+            for (const qlonglong& item : std::as_const(coredbItems))
             {
                 if (m_cancel)
                 {
@@ -339,14 +341,14 @@ void DatabaseTask::run()
 
                     QList<FaceTagsIface> faces = editor.databaseFaces(item);
 
-                    Q_FOREACH (const FaceTagsIface& face, faces)
+                    for (const FaceTagsIface& face : std::as_const(faces))
                     {
                         QList<QRect> rects;
                         QRect orgRect = face.region().toRect();
                         rects << orgRect;
                         rects << FaceUtils::faceRectToDisplayRect(orgRect);
 
-                        Q_FOREACH (const QRect& rect, rects)
+                        for (const QRect& rect : std::as_const(rects))
                         {
                             QString r = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
                                                                           .arg(rect.y())
@@ -395,7 +397,7 @@ void DatabaseTask::run()
             QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(TagPropertyName::faceEngineUuid());
             QSet<QString> uuidSet;
 
-            Q_FOREACH (const TagProperty& prop, properties)
+            for (const TagProperty& prop : std::as_const(properties))
             {
                 uuidSet << prop.value;
             }
@@ -404,7 +406,7 @@ void DatabaseTask::run()
 
             // Get all identities to remove. Don't remove now in order to make sure no side effects occur.
 
-            Q_FOREACH (const Identity& identity, identities)
+            for (const Identity& identity : std::as_const(identities))
             {
                 QString value = identity.attribute(QLatin1String("uuid"));
 
@@ -436,7 +438,7 @@ void DatabaseTask::run()
 
             // Remove all image ids that are existent in the core db
 
-            Q_FOREACH (const qlonglong& imageId, coredbItems)
+            for (const qlonglong& imageId : std::as_const(coredbItems))
             {
                 similarityDbItems.remove(imageId);
 

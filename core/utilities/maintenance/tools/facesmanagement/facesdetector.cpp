@@ -349,7 +349,7 @@ void FacesDetector::slotStart()
     bool hasPAlbums = false;
     bool hasTAlbums = false;
 
-    Q_FOREACH (Album* const album, d->albumTodoList)
+    for (Album* const album : std::as_const(d->albumTodoList))
     {
         if (album->type() == Album::PHYSICAL)
         {
@@ -382,7 +382,7 @@ void FacesDetector::slotStart()
 
     QHash<Album*, int> progressValueMap;
 
-    Q_FOREACH (Album* const album, d->albumTodoList)
+    for (Album* const album : std::as_const(d->albumTodoList))
     {
         if (album->type() == Album::PHYSICAL)
         {
@@ -401,7 +401,7 @@ void FacesDetector::slotStart()
 
     int total = 0;
 
-    Q_FOREACH (int count, progressValueMap)
+    for (int count : std::as_const(progressValueMap))
     {
         // cppcheck-suppress useStlAlgorithm
         total += count;

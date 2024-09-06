@@ -120,7 +120,9 @@ void MaintenanceDlg::readSettings()
         d->modelSelectionMode->setCurrentIndex(tagSelection);
         d->trSelectorList->clearLanguages();
 
-        Q_FOREACH (const QString& lg, group.readEntry(d->configAutotagsLanguages,                               prm.autotagsLanguages))
+        const auto lgs = group.readEntry(d->configAutotagsLanguages,                                            prm.autotagsLanguages);
+
+        for (const QString& lg : lgs)
         {
             d->trSelectorList->addLanguage(lg);
         }

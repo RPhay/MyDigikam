@@ -107,7 +107,9 @@ void FingerPrintsGenerator::slotStart()
     {
         if      ((*it)->type() == Album::PHYSICAL)
         {
-            Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum((*it)->id()))
+            const auto ids = CoreDbAccess().db()->getItemIDsInAlbum((*it)->id());
+
+            for (const qlonglong& id : ids)
             {
                 if (!itemIds.contains(id))
                 {
@@ -117,7 +119,9 @@ void FingerPrintsGenerator::slotStart()
         }
         else if ((*it)->type() == Album::TAG)
         {
-            Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInTag((*it)->id()))
+            const auto ids = CoreDbAccess().db()->getItemIDsInTag((*it)->id());
+
+            for (const qlonglong& id : ids)
             {
                 if (!itemIds.contains(id))
                 {

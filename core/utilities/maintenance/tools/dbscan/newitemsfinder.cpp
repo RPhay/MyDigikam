@@ -126,7 +126,7 @@ void NewItemsFinder::slotStart()
 
             setTotalItems(d->foldersToScan.count());
 
-            Q_FOREACH (const QString& folder, d->foldersToScan)
+            for (const QString& folder : std::as_const(d->foldersToScan))
             {
                 if (d->cancel)
                 {

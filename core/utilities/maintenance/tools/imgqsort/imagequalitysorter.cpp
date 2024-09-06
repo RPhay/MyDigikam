@@ -116,7 +116,9 @@ void ImageQualitySorter::slotStart()
 
         if      ((*it)->type() == Album::PHYSICAL)
         {
-            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInAlbum((*it)->id()))
+            const auto pathes = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
+
+            for (const QString& path : pathes)
             {
                 if (!aPaths.contains(path))
                 {
@@ -126,7 +128,9 @@ void ImageQualitySorter::slotStart()
         }
         else if ((*it)->type() == Album::TAG)
         {
-            Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInTag((*it)->id()))
+            const auto pathes = CoreDbAccess().db()->getItemURLsInTag((*it)->id());
+
+            for (const QString& path : pathes)
             {
                 if (!aPaths.contains(path))
                 {
@@ -137,7 +141,7 @@ void ImageQualitySorter::slotStart()
 
         if (d->mode == NonAssignedItems)
         {
-            Q_FOREACH (const QString& path, aPaths)
+            for (const QString& path : std::as_const(aPaths))
             {
                 if (dirty.contains(path))
                 {

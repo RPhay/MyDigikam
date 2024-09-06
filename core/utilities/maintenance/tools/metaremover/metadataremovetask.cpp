@@ -98,10 +98,11 @@ void MetadataRemoveTask::run()
 
             if (!tagIds.isEmpty())
             {
-                bool tagRemoved = false;
+                bool tagRemoved  = false;
                 QList<int> confirmedFaceTags;
+                const auto faces = FaceTagsEditor().confirmedFaceTagsIfaces(item.id());
 
-                Q_FOREACH (const FaceTagsIface& face, FaceTagsEditor().confirmedFaceTagsIfaces(item.id()))
+                for (const FaceTagsIface& face : faces)
                 {
                     confirmedFaceTags << face.tagId();
                 }
@@ -110,10 +111,12 @@ void MetadataRemoveTask::run()
                     CoreDbOperationGroup group;
                     group.setMaximumTime(200);
 
-                    Q_FOREACH (int tag, tagIds)
+                    for (int tag : std::as_const(tagIds))
                     {
-                        if (!confirmedFaceTags.contains(tag)  &&
-                            !FaceTags::isSystemPersonTagId(tag))
+                        if (
+                            !confirmedFaceTags.contains(tag)  &&
+                            !FaceTags::isSystemPersonTagId(tag)
+                           )
                         {
                             item.removeTag(tag);
                             group.allowLift();

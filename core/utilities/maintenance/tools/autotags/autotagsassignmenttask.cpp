@@ -83,7 +83,9 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
 
     // Clear auto-tags
 
-    Q_FOREACH (int tid, info.tagIds())
+    const auto ids = info.tagIds();
+
+    for (int tid : ids)
     {
         if (tagsCache->parentTags(tid).contains(rootTagId))
         {
@@ -98,7 +100,7 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
 
         if (!d->langs.isEmpty())
         {
-            Q_FOREACH (const QString& trLang, d->langs)
+            for (const QString& trLang : std::as_const(d->langs))
             {
                 QString trOut;
                 QString error;
