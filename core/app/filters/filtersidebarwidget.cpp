@@ -400,19 +400,27 @@ void FilterSideBarWidget::checkFilterChanges()
 
     if (!showUntagged || (d->tagMatchCond == ItemFilterSettings::OrCondition))
     {
-        Q_FOREACH (TAlbum* const tag, d->tagFilterView->getCheckedTags())
         {
-            if (tag)
+            const auto tags = d->tagFilterView->getCheckedTags();
+
+            for (TAlbum* const tag : tags)
             {
-                includedTagIds << tag->id();
+                if (tag)
+                {
+                    includedTagIds << tag->id();
+                }
             }
         }
 
-        Q_FOREACH (TAlbum* const tag, d->tagFilterView->getPartiallyCheckedTags())
         {
-            if (tag)
+            const auto tags = d->tagFilterView->getPartiallyCheckedTags();
+
+            for (TAlbum* const tag : tags)
             {
-                excludedTagIds << tag->id();
+                if (tag)
+                {
+                    excludedTagIds << tag->id();
+                }
             }
         }
 
@@ -422,19 +430,27 @@ void FilterSideBarWidget::checkFilterChanges()
         }
     }
 
-    Q_FOREACH (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
     {
-        if (tag)
+        const auto tags = d->colorLabelFilter->getCheckedColorLabelTags();
+
+        for (TAlbum* const tag : tags)
         {
-            clTagIds << tag->id();
+            if (tag)
+            {
+                clTagIds << tag->id();
+            }
         }
     }
 
-    Q_FOREACH (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
     {
-        if (tag)
+        const auto tags = d->pickLabelFilter->getCheckedPickLabelTags();
+
+        for (TAlbum* const tag : tags)
         {
-            plTagIds << tag->id();
+            if (tag)
+            {
+                plTagIds << tag->id();
+            }
         }
     }
 
