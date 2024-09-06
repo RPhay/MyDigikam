@@ -135,7 +135,7 @@ void DWItemDelegatePrivate::updateRowRange(const QModelIndex& parent, int start,
                                                                                                       : DWItemDelegatePool::UpdateWidgets);
             if (isRemoving)
             {
-                Q_FOREACH (QWidget* const widget, widgetList)
+                for (QWidget* const widget : std::as_const(widgetList))
                 {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
                     widgetPool->d->usedWidgets.remove(idx);
@@ -274,7 +274,9 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
         {
             if (qobject_cast<QAbstractItemView*>(watched))
             {
-                Q_FOREACH (const QModelIndex& index, selectionModel->selectedIndexes())
+                const auto idx = selectionModel->selectedIndexes();
+
+                for (const QModelIndex& index : idx)
                 {
                     if (index.isValid())
                     {

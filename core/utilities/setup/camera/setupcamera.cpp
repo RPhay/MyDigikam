@@ -604,7 +604,7 @@ void SetupCamera::readSettings()
     {
         QList<CameraType*>* const cl = clist->cameraList();
 
-        Q_FOREACH (CameraType* const ctype, *cl)
+        for (CameraType* const ctype : std::as_const(*cl))
         {
             new SetupCameraItem(d->listView, ctype);
         }
@@ -645,7 +645,7 @@ void SetupCamera::readSettings()
 
     ImportFilterComboBox::defaultFilters(&d->filters);
 
-    Q_FOREACH (Filter* const f, d->filters)
+    for (Filter* const f : std::as_const(d->filters))
     {
         new QListWidgetItem(f->name, d->importListView);
     }

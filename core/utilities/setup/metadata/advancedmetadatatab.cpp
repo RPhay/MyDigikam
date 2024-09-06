@@ -546,7 +546,7 @@ void AdvancedMetadataTab::setModels()
 
     QList<QString> keys = d->container.mappingKeys();
 
-    Q_FOREACH (const QString& str, keys)
+    for (const QString& str : std::as_const(keys))
     {
         d->metadataType->addItem(d->container.translateMappingKey(str), str);
     }
@@ -567,12 +567,12 @@ void AdvancedMetadataTab::setModels()
 
     int index = 0;
 
-    Q_FOREACH (const QString& str, keys)
+    for (const QString& str : std::as_const(keys))
     {
         setModelData(d->models.at(index++), d->container.getReadMapping(str));
     }
 
-    Q_FOREACH (const QString& str, keys)
+    for (const QString& str : std::as_const(keys))
     {
         setModelData(d->models.at(index++), d->container.getWriteMapping(str));
     }
@@ -588,13 +588,13 @@ void AdvancedMetadataTab::updateContainer()
     QList<QString> keys = d->container.mappingKeys();
     int index           = 0;
 
-    Q_FOREACH (const QString& str, keys)
+    for (const QString& str : std::as_const(keys))
     {
         d->container.getReadMapping(str).clear();
         saveModelData(d->models.at(index++), d->container.getReadMapping(str));
     }
 
-    Q_FOREACH (const QString& str, keys)
+    for (const QString& str : std::as_const(keys))
     {
         d->container.getWriteMapping(str).clear();
         saveModelData(d->models.at(index++), d->container.getWriteMapping(str));

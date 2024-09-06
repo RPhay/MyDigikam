@@ -115,7 +115,7 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
         result                = d->delegate->createItemWidgets(index);
         d->usedWidgets[index] = result;
 
-        Q_FOREACH (QWidget* const widget, result)
+        for (QWidget* const widget : std::as_const(result))
         {
             d->widgetInIndex[widget] = index;
             widget->setParent(d->delegate->d->itemView->viewport());
@@ -126,14 +126,14 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
 
     if (updateWidgets == UpdateWidgets)
     {
-        Q_FOREACH (QWidget* const widget, result)
+        for (QWidget* const widget : std::as_const(result))
         {
             widget->setVisible(true);
         }
 
         d->delegate->updateItemWidgets(result, option, idx);
 
-        Q_FOREACH (QWidget* const widget, result)
+        for (QWidget* const widget : std::as_const(result))
         {
             widget->move(widget->x() + option.rect.left(), widget->y() + option.rect.top());
         }
@@ -145,8 +145,9 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
 QList<QWidget*> DWItemDelegatePool::invalidIndexesWidgets() const
 {
     QList<QWidget*> result;
+    const auto wdgs = d->widgetInIndex.keys();
 
-    Q_FOREACH (QWidget* const widget, d->widgetInIndex.keys())
+    for (QWidget* const widget : wdgs)
     {
         const QAbstractProxyModel* const proxyModel = qobject_cast<const QAbstractProxyModel*>(d->delegate->d->model);
         QModelIndex index;

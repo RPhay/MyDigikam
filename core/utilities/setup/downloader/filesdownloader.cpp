@@ -108,7 +108,7 @@ bool FilesDownloader::checkDownloadFiles() const
         return false;
     }
 
-    Q_FOREACH (const DownloadInfo& info, d->files)
+    for (const DownloadInfo& info : std::as_const(d->files))
     {
         QFileInfo fileInfo(path + QLatin1Char('/') + info.name);
 
@@ -536,7 +536,7 @@ void FilesDownloader::slotUpdateDownloadInfo()
     qint64 size = 0;
     d->total    = 0;
 
-    Q_FOREACH (const DownloadInfo& info, d->files)
+    for (const DownloadInfo& info : std::as_const(d->files))
     {
         if (!downloadExists(info))
         {

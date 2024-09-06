@@ -111,8 +111,9 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
                                             "Always open the Raw Import Tool to customize settings"));
 
     d->rawImportTool = new QComboBox;
+    const auto plugs = DPluginLoader::instance()->allPlugins();
 
-    Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    for (DPlugin* const p : plugs )
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
@@ -291,8 +292,9 @@ void SetupRaw::readSettings()
 void SetupRaw::slotAboutRawImportPlugin()
 {
     QString iid = d->rawImportTool->itemData(d->rawImportTool->currentIndex()).toString();
+    const auto plugs = DPluginLoader::instance()->allPlugins();
 
-    Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    for (DPlugin* const p : plugs)
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 

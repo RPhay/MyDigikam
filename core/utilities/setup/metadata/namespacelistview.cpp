@@ -97,7 +97,7 @@ void NamespaceListView::slotDeleteSelected()
         return;
     }
 
-    Q_FOREACH (const QModelIndex& index, sel)
+    for (const QModelIndex& index : std::as_const(sel))
     {
         QStandardItem* const root = model->invisibleRootItem();
         root->removeRow(index.row());

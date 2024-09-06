@@ -158,7 +158,7 @@ bool CameraList::save()
 
     QDomElement docElem = doc.documentElement();
 
-    Q_FOREACH (CameraType* const ctype, d->clist)
+    for (CameraType* const ctype : std::as_const(d->clist))
     {
         QDomElement elem = doc.createElement(QLatin1String("item"));
         elem.setAttribute(QLatin1String("title"),          ctype->title());
@@ -263,7 +263,7 @@ QList<CameraType*>* CameraList::cameraList() const
 
 CameraType* CameraList::find(const QString& title) const
 {
-    Q_FOREACH (CameraType* const ctype, d->clist)
+    for (CameraType* const ctype : std::as_const(d->clist))
     {
         if (ctype->title() == title)
         {   // cppcheck-suppress useStlAlgorithm
@@ -295,7 +295,7 @@ CameraType* CameraList::autoDetect(bool& retry)
 
     // Check if the camera is already in the list
 
-    Q_FOREACH (CameraType* const ctype, d->clist)
+    for (CameraType* const ctype : std::as_const(d->clist))
     {
         // We can get away with checking only the model, as the auto-detection
         // works only for usb cameras. so the port is always usb:
