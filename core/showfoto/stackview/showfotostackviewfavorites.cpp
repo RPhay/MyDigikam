@@ -214,7 +214,7 @@ ShowfotoStackViewFavorites::~ShowfotoStackViewFavorites()
 
 QAction* ShowfotoStackViewFavorites::toolBarAction(const QString& name) const
 {
-    Q_FOREACH (QAction* const act, d->actionsList)
+    for (QAction* const act : std::as_const(d->actionsList))
     {
         if (act && (act->objectName() == name))
         {
@@ -546,7 +546,9 @@ bool ShowfotoStackViewFavorites::saveSettings()
             QDomElement urls = doc.createElement(QLatin1String("UrlsList"));
             elem.appendChild(urls);
 
-            Q_FOREACH (const QUrl& url, item->urls())
+            const auto curls = item->urls();
+
+            for (const QUrl& url : curls)
             {
                 QDomElement e = doc.createElement(QLatin1String("Url"));
                 e.setAttribute(QLatin1String("value"), url.toLocalFile());

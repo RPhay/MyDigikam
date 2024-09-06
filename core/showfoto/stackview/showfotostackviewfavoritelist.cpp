@@ -214,7 +214,7 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
         QList<QUrl> mimeurls = e->mimeData()->urls();
         QList<QUrl> urls;
 
-        Q_FOREACH (const QUrl& url, mimeurls)
+        for (const QUrl& url : std::as_const(mimeurls))
         {
             if (isReadableImageFile(url.toLocalFile()))
             {
@@ -284,7 +284,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
         QList<QUrl> mimeurls = e->mimeData()->urls();
         QList<QUrl> urls;
 
-        Q_FOREACH (const QUrl& url, mimeurls)
+        for (const QUrl& url : std::as_const(mimeurls))
         {
             if (isReadableImageFile(url.toLocalFile()))
             {
@@ -320,7 +320,7 @@ QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*>
 {
     QList<QUrl> urls;
 
-    Q_FOREACH (QTreeWidgetItem* const itm, items)
+    for (QTreeWidgetItem* const itm : std::as_const(items))
     {
         ShowfotoStackViewFavoriteItem* const vitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itm);
 

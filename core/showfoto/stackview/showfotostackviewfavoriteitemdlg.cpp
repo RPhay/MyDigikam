@@ -725,7 +725,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotDateAverageButtonClicked()
     QList<QDate> dates = getItemDates();
     qint64 julianDays  = 0;
 
-    Q_FOREACH (const QDate& date, dates)
+    for (const QDate& date : std::as_const(dates))
     {
         julianDays += date.toJulianDay();
     }

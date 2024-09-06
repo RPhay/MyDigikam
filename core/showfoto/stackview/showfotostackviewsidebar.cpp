@@ -163,7 +163,7 @@ void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>
 {
    d->dpluginActions = actions;
 
-   Q_FOREACH (QAction* const dpact, d->dpluginActions)
+   for (QAction* const dpact : std::as_const(d->dpluginActions))
    {
        QAction* const act = new QAction(dpact->text(), this);
        act->setObjectName(dpact->objectName());
@@ -184,7 +184,7 @@ void ShowfotoStackViewSideBar::slotPluginActionTriggered()
 
     if (act)
     {
-        Q_FOREACH (QAction* const dpact, d->dpluginActions)
+        for (QAction* const dpact : std::as_const(d->dpluginActions))
         {
             if (act->objectName() == dpact->objectName())
             {

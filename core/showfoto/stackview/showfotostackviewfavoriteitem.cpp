@@ -200,7 +200,9 @@ QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
 {
     QStringList files;
 
-    Q_FOREACH (const QUrl& url, urls())
+    const auto curls = urls();
+
+    for (const QUrl& url : curls)
     {
         files << url.toLocalFile();
     }

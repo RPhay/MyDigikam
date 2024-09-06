@@ -151,7 +151,7 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 
 void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
 {
-    Q_FOREACH (const ShowfotoItemInfo& info, items)
+    for (const ShowfotoItemInfo& info : std::as_const(items))
     {
         ShowfotoStackViewItem* const it = new ShowfotoStackViewItem(this);
         it->setInfo(info);
@@ -181,7 +181,7 @@ void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& item
         ++iter;
     }
 
-    Q_FOREACH (ShowfotoStackViewItem* const it, list)
+    for (ShowfotoStackViewItem* const it : std::as_const(list))
     {
         delete it;
     }
@@ -457,7 +457,7 @@ void ShowfotoStackViewList::slotRemoveItems()
 
     QList<ShowfotoItemInfo> infos;
 
-    Q_FOREACH (QTreeWidgetItem* const item, sel)
+    for (QTreeWidgetItem* const item : std::as_const(sel))
     {
         ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
 
