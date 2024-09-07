@@ -984,7 +984,39 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
 
         if (it != xmpData.end())
         {
-            switch (it->typeId())
+            // We get the Exiv2::xmpText type for all XMP.exif.* metadata.
+            // Check XMP tag names and set the correct type.
+            // Possibly an Exiv2 bug?
+
+            Exiv2::TypeId xmpTypeId = it->typeId();
+            QString tagName         = QLatin1String(xmpTagName);
+
+            if      (
+                     (tagName == QLatin1String("Xmp.exif.ExposureTime")) ||
+                     (tagName == QLatin1String("Xmp.exif.FocalLength"))  ||
+                     (tagName == QLatin1String("Xmp.exif.FNumber"))
+                    )
+            {
+                xmpTypeId            = Exiv2::unsignedRational;
+                rationalAsListOfInts = false;
+            }
+            else if (
+                     (tagName == QLatin1String("Xmp.exif.FocalLengthIn35mmFilm")) ||
+                     (tagName == QLatin1String("Xmp.exif.SubjectDistanceRange"))  ||
+                     (tagName == QLatin1String("Xmp.exif.ExposureProgram"))       ||
+                     (tagName == QLatin1String("Xmp.exif.ISOSpeedRatings"))       ||
+                     (tagName == QLatin1String("Xmp.exif.Flash/exif:Mode"))       ||
+                     (tagName == QLatin1String("Xmp.exif.SubjectDistance"))       ||
+                     (tagName == QLatin1String("Xmp.exif.ISOSpeedRatings"))       ||
+                     (tagName == QLatin1String("Xmp.exif.ExposureMode"))          ||
+                     (tagName == QLatin1String("Xmp.exif.WhiteBalance"))          ||
+                     (tagName == QLatin1String("Xmp.exif.MeteringMode"))
+                    )
+            {
+                xmpTypeId = Exiv2::unsignedShort;
+            }
+
+            switch (xmpTypeId)
             {
                 case Exiv2::unsignedByte:
                 case Exiv2::unsignedShort:

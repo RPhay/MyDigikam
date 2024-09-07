@@ -72,7 +72,7 @@ BUGFIXES:
 058 ==> 492542 - Build failed with : metaengine.cpp:331:42: error: ‘as_const’ is not a member of ‘std’.
 059 ==> 490657 - AppImage: No system integration possible with AppImageLauncher.
 060 ==> 492686 - digiKam crash when adding a new image and refresh or auto scan.
-061 ==> 
+061 ==> 492715 - digiKam displays the metadata of JXL files incomplete and/or altered.
 062 ==> 
 063 ==> 
 064 ==> 
