@@ -16,6 +16,7 @@ remove_definitions(
     -DQT_NO_CAST_FROM_BYTEARRAY
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
     -DQT_NO_KEYWORDS
+    -DQT_NO_FOREACH
 )
 
 # Remove unwanted warnings from O2 library

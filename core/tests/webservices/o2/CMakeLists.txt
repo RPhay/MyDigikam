@@ -14,6 +14,7 @@ remove_definitions(
     -DQT_NO_CAST_FROM_BYTEARRAY
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
     -DQT_NO_KEYWORDS
+    -DQT_NO_FOREACH
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src)
