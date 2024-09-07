@@ -356,8 +356,9 @@ void DOnlineTranslator::resetData(TranslationError error, const QString& errorSt
     d->translationOptions.clear();
 
     d->stateMachine->stop();
+    const auto states = d->stateMachine->findChildren<QAbstractState*>();
 
-    for (QAbstractState* state : d->stateMachine->findChildren<QAbstractState*>())
+    for (QAbstractState* const state : states)
     {
         if (!d->stateMachine->configuration().contains(state))
         {
