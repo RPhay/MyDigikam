@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-06 02:00+0000\n"
+"POT-Creation-Date: 2024-09-07 01:44+0000\n"
 "PO-Revision-Date: 2024-08-27 14:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -248,7 +248,7 @@ msgstr "Buraya &Kopyala"
 #: core/app/dragdrop/importdragdrop.cpp:184
 #: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
-#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
+#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:397
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
@@ -354,7 +354,7 @@ msgstr "İçe aktarılıyor"
 msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
+#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:393
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Künye Küçük Görseli Olarak Ayarla"
@@ -366,7 +366,7 @@ msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "'%2' olan yüz adını '%3' olarak değiştir"
 msgstr[1] "'%2' olan yüz adlarını '%3' olarak değiştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:387
+#: core/app/dragdrop/tagdragdrop.cpp:388
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Ögelere '%1' Künyelerini Ata"
@@ -568,19 +568,19 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Ögeyi Seç"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:142
+#: core/app/items/utils/contextmenuhelper_actions.cpp:143
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
 msgstr "Albüm Küçük Görseli Olarak Ayarla"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:146
+#: core/app/items/utils/contextmenuhelper_actions.cpp:147
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
 msgstr "Künye Küçük Görseli Olarak Ayarla"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:183
+#: core/app/items/utils/contextmenuhelper_actions.cpp:184
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
@@ -588,7 +588,7 @@ msgid_plural "Move %1 Files to Trash"
 msgstr[0] "Çöp Kutusuna Taşı"
 msgstr[1] "%1 Dosyayı Çöp Kutusuna Taşı"
 
-#: core/app/items/utils/contextmenuhelper_actions.cpp:195
+#: core/app/items/utils/contextmenuhelper_actions.cpp:196
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
@@ -652,75 +652,75 @@ msgctxt "@action: group items"
 msgid "Group"
 msgstr "Grupla"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:72
+#: core/app/items/utils/contextmenuhelper_groups.cpp:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open All Groups"
 msgstr "Tüm Grupları Aç"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:79
+#: core/app/items/utils/contextmenuhelper_groups.cpp:81
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Groups"
 msgstr "Tüm Grupları Kapat"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:99
-#: core/app/items/utils/contextmenuhelper_groups.cpp:160
+#: core/app/items/utils/contextmenuhelper_groups.cpp:101
+#: core/app/items/utils/contextmenuhelper_groups.cpp:162
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Grouped Images"
 msgstr "Gruplanmış Görselleri Göster"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:106
-#: core/app/items/utils/contextmenuhelper_groups.cpp:165
+#: core/app/items/utils/contextmenuhelper_groups.cpp:108
+#: core/app/items/utils/contextmenuhelper_groups.cpp:167
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide Grouped Images"
 msgstr "Gruplanmış Görselleri Gizle"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:117
+#: core/app/items/utils/contextmenuhelper_groups.cpp:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup"
 msgstr "Gruplamayı Kaldır"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:124
+#: core/app/items/utils/contextmenuhelper_groups.cpp:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove From Group"
 msgstr "Gruptan Kaldır"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:134
+#: core/app/items/utils/contextmenuhelper_groups.cpp:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
 msgstr "Seçiliyi Burada Grupla"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:139
+#: core/app/items/utils/contextmenuhelper_groups.cpp:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
 msgstr "Seçiliyi Zamana Göre Grupla"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:144
+#: core/app/items/utils/contextmenuhelper_groups.cpp:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
 msgstr "Seçiliyi Dosya Adına Göre Gruplandır"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:149
+#: core/app/items/utils/contextmenuhelper_groups.cpp:151
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
 msgstr "Seçiliyi Hızlandırılmış Çekime Göre Grupla"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:175
+#: core/app/items/utils/contextmenuhelper_groups.cpp:177
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Selected From Groups"
 msgstr "Seçiliyi Gruplardan Kaldır"
 
-#: core/app/items/utils/contextmenuhelper_groups.cpp:180
+#: core/app/items/utils/contextmenuhelper_groups.cpp:182
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
@@ -1403,7 +1403,7 @@ msgstr ""
 "kullanılabilirliğini denetleyin.\n"
 "Hata iletisi: %1"
 
-#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:501
+#: core/app/main/digikamapp.cpp:704 core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1481,14 +1481,14 @@ msgid_plural "%1 items hidden"
 msgstr[0] "%1 öge gizli"
 msgstr[1] "%1 öge gizli"
 
-#: core/app/main/digikamapp.cpp:875
+#: core/app/main/digikamapp.cpp:876
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Dosyaya Üst Veri Yaz"
 msgstr[1] "Seçili Dosyalara Üst Veri Yaz"
 
-#: core/app/main/digikamapp.cpp:877
+#: core/app/main/digikamapp.cpp:878
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1541,7 +1541,7 @@ msgstr "Klasörler Ekle..."
 msgid "Adds new folders to Album library."
 msgstr "Albüm kitaplığına yeni klasörler ekler."
 
-#: core/app/main/digikamapp_camera.cpp:224
+#: core/app/main/digikamapp_camera.cpp:229
 #, kde-format
 msgid "Images found in %1"
 msgstr "%1 içinde bulunan görseller"
@@ -1577,19 +1577,19 @@ msgstr ""
 "Koyu bir renk şeması seçtiniz. Parlak bir simge temasına geçiyoruz. Simge "
 "teması, digiKam yeniden başlatıldıktan sonra kullanılabilir."
 
-#: core/app/main/digikamapp_import.cpp:82
+#: core/app/main/digikamapp_import.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Ayrıştırılacak Klasör Seç"
 
-#: core/app/main/digikamapp_import.cpp:102
+#: core/app/main/digikamapp_import.cpp:115
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Albüme İçe Aktarılacak Klasörler Seç"
 
-#: core/app/main/digikamapp_import.cpp:144
+#: core/app/main/digikamapp_import.cpp:157
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to import "
@@ -1598,7 +1598,7 @@ msgstr ""
 "<p>Lütfen klasörleri içe aktarmak için digiKam kitaplığından hedef albümü "
 "seçin.</p>"
 
-#: core/app/main/digikamapp_import.cpp:173
+#: core/app/main/digikamapp_import.cpp:186
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -1635,76 +1635,76 @@ msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Geçerli içeriği yenileyin."
 
-#: core/app/main/digikamapp_setup.cpp:213
+#: core/app/main/digikamapp_setup.cpp:215
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Yeni..."
 
-#: core/app/main/digikamapp_setup.cpp:214
+#: core/app/main/digikamapp_setup.cpp:216
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Koleksiyonda yeni bir boş albüm oluşturur."
 
-#: core/app/main/digikamapp_setup.cpp:222
+#: core/app/main/digikamapp_setup.cpp:224
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "Albüme &Taşı..."
 
-#: core/app/main/digikamapp_setup.cpp:223
+#: core/app/main/digikamapp_setup.cpp:225
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Seçili görselleri albümün içine taşı."
 
-#: core/app/main/digikamapp_setup.cpp:230
+#: core/app/main/digikamapp_setup.cpp:232
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "Şuraya Ko&pyala..."
 
-#: core/app/main/digikamapp_setup.cpp:231
+#: core/app/main/digikamapp_setup.cpp:233
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Seçili görselleri bir hedef klasöre kopyalayın."
 
-#: core/app/main/digikamapp_setup.cpp:238
+#: core/app/main/digikamapp_setup.cpp:240
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Albümü Sil"
 
-#: core/app/main/digikamapp_setup.cpp:245
-#: core/app/main/digikamapp_setup.cpp:485
+#: core/app/main/digikamapp_setup.cpp:247
+#: core/app/main/digikamapp_setup.cpp:487
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Yeniden Adlandır..."
 
-#: core/app/main/digikamapp_setup.cpp:253
-#: core/app/main/digikamapp_setup.cpp:305
+#: core/app/main/digikamapp_setup.cpp:255
+#: core/app/main/digikamapp_setup.cpp:307
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Özellikler"
 
-#: core/app/main/digikamapp_setup.cpp:254
+#: core/app/main/digikamapp_setup.cpp:256
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Albüm özelliklerini ve koleksiyon bilgisini düzenleyin."
 
-#: core/app/main/digikamapp_setup.cpp:262
+#: core/app/main/digikamapp_setup.cpp:264
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Dosyalara Üst Veri Yaz"
 
-#: core/app/main/digikamapp_setup.cpp:263
-#: core/app/main/digikamapp_setup.cpp:439
+#: core/app/main/digikamapp_setup.cpp:265
+#: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1715,14 +1715,14 @@ msgstr ""
 "günceller (veritabanından alınan veri ile dosya üst verisinin üzerine "
 "yazılır)."
 
-#: core/app/main/digikamapp_setup.cpp:273
+#: core/app/main/digikamapp_setup.cpp:275
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Dosyalardan Üst Veriyi Yeniden Oku"
 
-#: core/app/main/digikamapp_setup.cpp:274
-#: core/app/main/digikamapp_setup.cpp:450
+#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:452
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1733,279 +1733,279 @@ msgstr ""
 "Geçerli albümdeki dosyaların üst verisi ile digiKam veritabanını günceller "
 "(dosya üst verisi ile veritabanındaki bilginin üzerine yazılır)."
 
-#: core/app/main/digikamapp_setup.cpp:284
+#: core/app/main/digikamapp_setup.cpp:286
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Dosya Yöneticisinde Aç"
 
-#: core/app/main/digikamapp_setup.cpp:291
+#: core/app/main/digikamapp_setup.cpp:293
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Künye Yöneticisi"
 
-#: core/app/main/digikamapp_setup.cpp:298
+#: core/app/main/digikamapp_setup.cpp:300
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "&Yeni..."
 
-#: core/app/main/digikamapp_setup.cpp:312
+#: core/app/main/digikamapp_setup.cpp:314
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Sil"
 
-#: core/app/main/digikamapp_setup.cpp:319
+#: core/app/main/digikamapp_setup.cpp:321
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Künye Ata"
 
-#: core/app/main/digikamapp_setup.cpp:327
+#: core/app/main/digikamapp_setup.cpp:329
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Görünümler"
 
-#: core/app/main/digikamapp_setup.cpp:331
+#: core/app/main/digikamapp_setup.cpp:333
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Küçük Görseller"
 
-#: core/app/main/digikamapp_setup.cpp:338
+#: core/app/main/digikamapp_setup.cpp:340
 #: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Önizleme"
 
-#: core/app/main/digikamapp_setup.cpp:348
+#: core/app/main/digikamapp_setup.cpp:350
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Harita"
 
-#: core/app/main/digikamapp_setup.cpp:357
+#: core/app/main/digikamapp_setup.cpp:359
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Tablo"
 
-#: core/app/main/digikamapp_setup.cpp:366
+#: core/app/main/digikamapp_setup.cpp:368
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Aç..."
 
-#: core/app/main/digikamapp_setup.cpp:367
+#: core/app/main/digikamapp_setup.cpp:369
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Seçili ögeyi açın."
 
-#: core/app/main/digikamapp_setup.cpp:373
+#: core/app/main/digikamapp_setup.cpp:375
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Öntanımlı Uygulamayla Aç"
 
-#: core/app/main/digikamapp_setup.cpp:374
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Seçili ögeyi, öntanımlı olarak atanmış uygulama ile açın."
 
-#: core/app/main/digikamapp_setup.cpp:380
+#: core/app/main/digikamapp_setup.cpp:382
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Görsel Düzenleyicisi"
 
-#: core/app/main/digikamapp_setup.cpp:381
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Görsel düzenleyicisini açın."
 
-#: core/app/main/digikamapp_setup.cpp:388
+#: core/app/main/digikamapp_setup.cpp:390
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Işık Tablası"
 
-#: core/app/main/digikamapp_setup.cpp:394
+#: core/app/main/digikamapp_setup.cpp:396
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Işık Tablası Üzerine Yerleştir"
 
-#: core/app/main/digikamapp_setup.cpp:395
+#: core/app/main/digikamapp_setup.cpp:397
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "Seçili ögeleri ışık tablası küçük görsel çubuğuna yerleştirin."
 
-#: core/app/main/digikamapp_setup.cpp:401
+#: core/app/main/digikamapp_setup.cpp:403
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Işık Tablasına Ekle"
 
-#: core/app/main/digikamapp_setup.cpp:402
+#: core/app/main/digikamapp_setup.cpp:404
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "Seçili ögeleri ışık tablası küçük görsel çubuğuna ekleyin."
 
-#: core/app/main/digikamapp_setup.cpp:410
+#: core/app/main/digikamapp_setup.cpp:412
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Toplu İş Kuyruk Yöneticisi"
 
-#: core/app/main/digikamapp_setup.cpp:416
+#: core/app/main/digikamapp_setup.cpp:418
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Geçerli Kuyruğa Ekle"
 
-#: core/app/main/digikamapp_setup.cpp:417
+#: core/app/main/digikamapp_setup.cpp:419
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Seçili ögeleri, toplu iş yöneticisindeki geçerli kuyruğa ekleyin."
 
-#: core/app/main/digikamapp_setup.cpp:423
+#: core/app/main/digikamapp_setup.cpp:425
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Yeni Kuyruğa Ekle"
 
-#: core/app/main/digikamapp_setup.cpp:424
+#: core/app/main/digikamapp_setup.cpp:426
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Seçili ögeleri, toplu iş yöneticisindeki yeni kuyruğa ekleyin."
 
-#: core/app/main/digikamapp_setup.cpp:431
+#: core/app/main/digikamapp_setup.cpp:433
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "İçe Aktar"
 
-#: core/app/main/digikamapp_setup.cpp:438
+#: core/app/main/digikamapp_setup.cpp:440
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Seçili Dosyalara Üst Veri Yaz"
 
-#: core/app/main/digikamapp_setup.cpp:449
+#: core/app/main/digikamapp_setup.cpp:451
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Seçili Dosyalardan Üst Veriyi Yeniden Oku"
 
-#: core/app/main/digikamapp_setup.cpp:460
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Yüzleri Tara"
 
-#: core/app/main/digikamapp_setup.cpp:465
+#: core/app/main/digikamapp_setup.cpp:467
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Yüzleri Tanı"
 
-#: core/app/main/digikamapp_setup.cpp:470
+#: core/app/main/digikamapp_setup.cpp:472
 #, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
 msgstr "Tüm Yüzleri Kaldır"
 
-#: core/app/main/digikamapp_setup.cpp:477
+#: core/app/main/digikamapp_setup.cpp:479
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Benzerleri Bul..."
 
-#: core/app/main/digikamapp_setup.cpp:478
+#: core/app/main/digikamapp_setup.cpp:480
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Seçilen ögeyi temel alarak benzer görselleri bulun."
 
-#: core/app/main/digikamapp_setup.cpp:486
+#: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Seçili ögenin dosya adını değiştirin."
 
-#: core/app/main/digikamapp_setup.cpp:496
+#: core/app/main/digikamapp_setup.cpp:498
 #: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Çöp Kutusuna Taşı"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:512
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Kalıcı Olarak Sil"
 
-#: core/app/main/digikamapp_setup.cpp:521
+#: core/app/main/digikamapp_setup.cpp:523
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Onay olmadan kalıcı olarak silin."
 
-#: core/app/main/digikamapp_setup.cpp:529
+#: core/app/main/digikamapp_setup.cpp:531
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Onay olmadan çöp kutusuna taşıyın."
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:538
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Albümleri &Sırala"
 
-#: core/app/main/digikamapp_setup.cpp:537
+#: core/app/main/digikamapp_setup.cpp:539
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Albümleri ağaç görünümünde sıralayın."
 
-#: core/app/main/digikamapp_setup.cpp:556
+#: core/app/main/digikamapp_setup.cpp:558
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Klasöre Göre"
 
-#: core/app/main/digikamapp_setup.cpp:557
+#: core/app/main/digikamapp_setup.cpp:559
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Kategoriye Göre"
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:560
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Tarihe Göre"
 
-#: core/app/main/digikamapp_setup.cpp:563
+#: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Albüm Alt Ağacını İçer"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:567
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
@@ -2013,13 +2013,13 @@ msgstr ""
 "Geçerli albüm altındaki tüm alt albümleri göstermek için bu seçeneği "
 "etkinleştirin."
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Künye Alt Ağacını İçer"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2029,443 +2029,443 @@ msgstr ""
 "Verilen künye ve onun tüm alt künyeleri ile imlenen görselleri göstermek "
 "için bu seçeneği etkinleştirin."
 
-#: core/app/main/digikamapp_setup.cpp:577
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Tüm Gruplanan Ögeleri Açık Olarak Göster"
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:581
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 "Tüm gruplanan ögeleri açık olarak göstermek için bu seçeneği etkinleştirin."
 
-#: core/app/main/digikamapp_setup.cpp:585
+#: core/app/main/digikamapp_setup.cpp:587
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "Ögeleri &Sırala"
 
-#: core/app/main/digikamapp_setup.cpp:586
+#: core/app/main/digikamapp_setup.cpp:588
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Küçük görsel görünümünde bir albümdeki görsellerin sıralandığı değer"
 
-#: core/app/main/digikamapp_setup.cpp:591
+#: core/app/main/digikamapp_setup.cpp:593
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Ada Göre"
 
-#: core/app/main/digikamapp_setup.cpp:592
+#: core/app/main/digikamapp_setup.cpp:594
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Yola Göre"
 
-#: core/app/main/digikamapp_setup.cpp:593
+#: core/app/main/digikamapp_setup.cpp:595
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Oluşturulma Tarihine Göre"
 
-#: core/app/main/digikamapp_setup.cpp:594
+#: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Değişiklik Tarihine Göre"
 
-#: core/app/main/digikamapp_setup.cpp:595
+#: core/app/main/digikamapp_setup.cpp:597
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Dosya Boyutuna Göre"
 
-#: core/app/main/digikamapp_setup.cpp:596
+#: core/app/main/digikamapp_setup.cpp:598
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Derecelendirmeye Göre"
 
-#: core/app/main/digikamapp_setup.cpp:597
+#: core/app/main/digikamapp_setup.cpp:599
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Görsel Boyutuna Göre"
 
-#: core/app/main/digikamapp_setup.cpp:598
+#: core/app/main/digikamapp_setup.cpp:600
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "En-Boy Oranına Göre"
 
-#: core/app/main/digikamapp_setup.cpp:599
+#: core/app/main/digikamapp_setup.cpp:601
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Yüz Türüne Göre"
 
-#: core/app/main/digikamapp_setup.cpp:600
+#: core/app/main/digikamapp_setup.cpp:602
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Benzerliğe Göre"
 
-#: core/app/main/digikamapp_setup.cpp:601
+#: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Elle ve Ada Göre"
 
-#: core/app/main/digikamapp_setup.cpp:602
+#: core/app/main/digikamapp_setup.cpp:604
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Elle ve Tarihe Göre"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:649
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Öge Sı&ralaması"
 
-#: core/app/main/digikamapp_setup.cpp:648
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Görsellerin artan veya azalan biçimde sıralanmasını tanımlar."
 
-#: core/app/main/digikamapp_setup.cpp:652
-#: core/app/main/digikamapp_setup.cpp:707
+#: core/app/main/digikamapp_setup.cpp:654
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Artan"
 
-#: core/app/main/digikamapp_setup.cpp:654
-#: core/app/main/digikamapp_setup.cpp:709
+#: core/app/main/digikamapp_setup.cpp:656
+#: core/app/main/digikamapp_setup.cpp:711
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Azalan"
 
-#: core/app/main/digikamapp_setup.cpp:664
+#: core/app/main/digikamapp_setup.cpp:666
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Ögeleri Ayır"
 
-#: core/app/main/digikamapp_setup.cpp:665
+#: core/app/main/digikamapp_setup.cpp:667
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Küçük görsel görünümündeki görsellerin gösterildiği kategoriler"
 
-#: core/app/main/digikamapp_setup.cpp:670
+#: core/app/main/digikamapp_setup.cpp:672
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Düz Liste"
 
-#: core/app/main/digikamapp_setup.cpp:671
+#: core/app/main/digikamapp_setup.cpp:673
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Albüme Göre"
 
-#: core/app/main/digikamapp_setup.cpp:672
+#: core/app/main/digikamapp_setup.cpp:674
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Biçime Göre"
 
-#: core/app/main/digikamapp_setup.cpp:673
+#: core/app/main/digikamapp_setup.cpp:675
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Aya Göre"
 
-#: core/app/main/digikamapp_setup.cpp:674
+#: core/app/main/digikamapp_setup.cpp:676
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Yüzlere göre"
 
-#: core/app/main/digikamapp_setup.cpp:702
+#: core/app/main/digikamapp_setup.cpp:704
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Öge Ayırma Sırası"
 
-#: core/app/main/digikamapp_setup.cpp:703
+#: core/app/main/digikamapp_setup.cpp:705
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Ayrılmış ögelerin gruplarının sıralandırılması"
 
-#: core/app/main/digikamapp_setup.cpp:724
+#: core/app/main/digikamapp_setup.cpp:726
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: core/app/main/digikamapp_setup.cpp:731
+#: core/app/main/digikamapp_setup.cpp:733
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Tümünün Seçimini Kaldır"
 
-#: core/app/main/digikamapp_setup.cpp:738
+#: core/app/main/digikamapp_setup.cpp:740
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Seçimi Ters Çevir"
 
-#: core/app/main/digikamapp_setup.cpp:746
+#: core/app/main/digikamapp_setup.cpp:748
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Küçük Görsel Çubuğunu Göster"
 
-#: core/app/main/digikamapp_setup.cpp:777
+#: core/app/main/digikamapp_setup.cpp:779
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "%​100'e Yakınlaştır"
 
-#: core/app/main/digikamapp_setup.cpp:785
+#: core/app/main/digikamapp_setup.cpp:787
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "&Pencereye Sığdır"
 
-#: core/app/main/digikamapp_setup.cpp:798
+#: core/app/main/digikamapp_setup.cpp:800
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Renk Yönetimli Görünüm"
 
-#: core/app/main/digikamapp_setup.cpp:816
+#: core/app/main/digikamapp_setup.cpp:818
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Ara..."
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:826
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Gelişmiş Arama..."
 
-#: core/app/main/digikamapp_setup.cpp:832
+#: core/app/main/digikamapp_setup.cpp:834
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Yinelenmişleri Bul..."
 
-#: core/app/main/digikamapp_setup.cpp:842
+#: core/app/main/digikamapp_setup.cpp:844
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Veritabanı Göçü..."
 
-#: core/app/main/digikamapp_setup.cpp:851
+#: core/app/main/digikamapp_setup.cpp:853
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Bakım..."
 
-#: core/app/main/digikamapp_setup.cpp:858
+#: core/app/main/digikamapp_setup.cpp:860
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Yeni Ögeleri Tara"
 
-#: core/app/main/digikamapp_setup.cpp:864
+#: core/app/main/digikamapp_setup.cpp:866
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Kamerayı Elle Ekle..."
 
-#: core/app/main/digikamapp_setup.cpp:875
+#: core/app/main/digikamapp_setup.cpp:877
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Kameralar yükleniyor..."
 
-#: core/app/main/digikamapp_setup.cpp:909
+#: core/app/main/digikamapp_setup.cpp:911
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Önizleme Kipinden Çık"
 
-#: core/app/main/digikamapp_setup.cpp:914
+#: core/app/main/digikamapp_setup.cpp:916
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Sonraki Görsel"
 
-#: core/app/main/digikamapp_setup.cpp:920
+#: core/app/main/digikamapp_setup.cpp:922
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Önceki Görsel"
 
-#: core/app/main/digikamapp_setup.cpp:926
+#: core/app/main/digikamapp_setup.cpp:928
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "İlk Görsel"
 
-#: core/app/main/digikamapp_setup.cpp:931
+#: core/app/main/digikamapp_setup.cpp:933
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Son Görsel"
 
-#: core/app/main/digikamapp_setup.cpp:936
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "&Kes"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:940
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Seçimi Panoya Kes"
 
-#: core/app/main/digikamapp_setup.cpp:957
+#: core/app/main/digikamapp_setup.cpp:959
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Başlıkları Düzenle"
 
-#: core/app/main/digikamapp_setup.cpp:962
+#: core/app/main/digikamapp_setup.cpp:964
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Yorumları Düzenle"
 
-#: core/app/main/digikamapp_setup.cpp:967
+#: core/app/main/digikamapp_setup.cpp:969
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Atanmış Künyeleri Göster"
 
-#: core/app/main/digikamapp_setup.cpp:976
+#: core/app/main/digikamapp_setup.cpp:978
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Exif Yönelim Künyesini Ayarla"
 
-#: core/app/main/digikamapp_setup.cpp:979
+#: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:981
+#: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Yatay Ters Çevrilmiş"
 
-#: core/app/main/digikamapp_setup.cpp:983
+#: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Yukarıdan Aşağıya Döndürülmüş"
 
-#: core/app/main/digikamapp_setup.cpp:985
+#: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Dikey Ters Çevrilmiş"
 
-#: core/app/main/digikamapp_setup.cpp:987
+#: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Sağa Döndürülmüş / Yatay Ters Çevrilmiş"
 
-#: core/app/main/digikamapp_setup.cpp:989
+#: core/app/main/digikamapp_setup.cpp:991
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Sağa Döndürülmüş"
 
-#: core/app/main/digikamapp_setup.cpp:991
+#: core/app/main/digikamapp_setup.cpp:993
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Sağa Döndürülmüş / Dikey Ters Çevrilmiş"
 
-#: core/app/main/digikamapp_setup.cpp:993
+#: core/app/main/digikamapp_setup.cpp:995
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Sola Döndürülmüş"
 
-#: core/app/main/digikamapp_setup.cpp:1054
+#: core/app/main/digikamapp_setup.cpp:1056
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Döndür"
 
-#: core/app/main/digikamapp_setup.cpp:1058
+#: core/app/main/digikamapp_setup.cpp:1060
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Sol"
 
-#: core/app/main/digikamapp_setup.cpp:1065
+#: core/app/main/digikamapp_setup.cpp:1067
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Sağ"
 
-#: core/app/main/digikamapp_setup.cpp:1075
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Ters Çevir"
 
-#: core/app/main/digikamapp_setup.cpp:1079
+#: core/app/main/digikamapp_setup.cpp:1081
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Yatay Olarak"
 
-#: core/app/main/digikamapp_setup.cpp:1086
+#: core/app/main/digikamapp_setup.cpp:1088
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Dikey Olarak"
 
-#: core/app/main/digikamapp_setup.cpp:1096
+#: core/app/main/digikamapp_setup.cpp:1098
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Exif Bilgisi ile Otomatik Döndür/Ters Çevir"
 
-#: core/app/main/digikamapp_setup.cpp:1107
+#: core/app/main/digikamapp_setup.cpp:1109
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Temalar yükleniyor..."
 
-#: core/app/main/digikamapp_setup.cpp:1110
+#: core/app/main/digikamapp_setup.cpp:1112
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Temalar"
 
-#: core/app/main/digikamapp_setup.cpp:1122
+#: core/app/main/digikamapp_setup.cpp:1124
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -2558,21 +2558,21 @@ msgid "Main Tools"
 msgstr "Ana Araçlar"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2639
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Süreç Sonrası İşleme"
 
-#: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2638
+#: core/app/main/digikamapp_tools.cpp:58
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2668
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Dışa Aktar"
 
-#: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
+#: core/app/main/digikamapp_tools.cpp:69
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2679
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -3152,13 +3152,13 @@ msgid "Last Search"
 msgstr "Son Arama"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:107
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid "FacesDetector"
 msgstr "Yüz Algılayıcısı"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:109
+#: core/app/views/stack/itemiconview_search.cpp:111
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -3236,48 +3236,48 @@ msgstr "Seçili Ögeleri Kalıcı Olarak"
 msgid "All Items Permanently"
 msgstr "Tüm Ögeleri Kalıcı Olarak"
 
-#: core/app/views/stack/trashview.cpp:265
+#: core/app/views/stack/trashview.cpp:273
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Geri Almayı Onayla"
 
-#: core/app/views/stack/trashview.cpp:266
-#: core/app/views/stack/trashview.cpp:291
+#: core/app/views/stack/trashview.cpp:274
+#: core/app/views/stack/trashview.cpp:299
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:290
+#: core/app/views/stack/trashview.cpp:298
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Geri Yüklemeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:319
-#: core/app/views/stack/trashview.cpp:369
+#: core/app/views/stack/trashview.cpp:327
+#: core/app/views/stack/trashview.cpp:377
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Silmeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:320
+#: core/app/views/stack/trashview.cpp:328
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:370
+#: core/app/views/stack/trashview.cpp:378
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "TÜM ögeleri kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:447
 #, kde-format
 msgid "Selection"
 msgstr "Seçim"
 
-#: core/app/views/stack/trashview.cpp:441
+#: core/app/views/stack/trashview.cpp:449
 #: core/libs/database/utils/ifaces/dio.cpp:902
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:433
@@ -3285,7 +3285,7 @@ msgstr "Seçim"
 msgid "Delete"
 msgstr "Sil"
 
-#: core/app/views/stack/trashview.cpp:508
+#: core/app/views/stack/trashview.cpp:516
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçili"
@@ -3749,7 +3749,7 @@ msgstr "Ses Kanalı Türü"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:973
 #: core/utilities/setup/setuptooltip.cpp:263
 #, kde-format
 msgid "Audio Codec"
@@ -3757,7 +3757,7 @@ msgstr "Ses Kodlayıcısı"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:815
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgid "Duration"
 msgstr "Süre"
@@ -8335,7 +8335,7 @@ msgstr "Renk Yönetimi Devre Dışı..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:71
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:198
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "White Balance"
 msgstr "Beyaz Dengesi"
@@ -15894,13 +15894,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Her bir görsel için düzeltilmiş tarihi ve zamanı yaz"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:372
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Tarihi ve zamanı ayarla"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:665
 #: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #, kde-format
@@ -15908,21 +15908,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "İptal"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:667
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Geçerli işlemi iptal et"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:658
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Kapat"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:411
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #, kde-format
 msgctxt "@info"
@@ -16471,8 +16471,8 @@ msgstr "Hedef Dosya"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:339
-#: core/utilities/searchwindow/searchfields_createfield.cpp:370
+#: core/utilities/searchwindow/searchfields_createfield.cpp:354
+#: core/utilities/searchwindow/searchfields_createfield.cpp:385
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
@@ -16962,7 +16962,7 @@ msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "bilinmiyor"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:949
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:953
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -17523,35 +17523,35 @@ msgstr "Galeri üretimine başlanıyor..."
 msgid "%1 albums to process:"
 msgstr "%1 albüm işlenecek:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:133
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:130
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:135
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:131
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:144
 #, kde-format
 msgid "%1 items to process"
 msgstr "%1 öge işlenecek"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:137
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:134
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:139
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:135
 #, kde-format
 msgid "Output directory: %1"
 msgstr "Çıktı dizini: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:151
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:153
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
 msgstr "Galeri tamamlandı; ancak bazı uyarılar oluştu."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:158
 #, kde-format
 msgid "Gallery completed."
 msgstr "Galeri tamamlandı."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:170
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
 msgstr "Galeri, öntanımlı masaüstü tarayıcısı ile açılıyor..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:177
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:179
 #, kde-format
 msgid "Opening gallery with internal browser..."
 msgstr "Galeri, dahili tarayıcı ile açılıyor..."
@@ -17815,12 +17815,12 @@ msgstr "jAlbum galerisi üreteci."
 msgid "Starting to generate jAlbum..."
 msgstr "jAlbum üretimine başlanıyor..."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:148
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:149
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
 msgstr "jAlbum tamamlandı; ancak bazı uyarılar oluştu."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:153
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:154
 #, kde-format
 msgid "Jalbum completed."
 msgstr "jAlbum tamamlandı."
@@ -19544,7 +19544,7 @@ msgstr ""
 "kullanılabilir.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:731
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Author"
 msgstr "Yazar"
@@ -26670,9 +26670,9 @@ msgid "Reset curve to linear"
 msgstr "Eğriyi doğrusala sıfırla"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:473
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:488
+#: core/utilities/searchwindow/searchfields_createfield.cpp:509
+#: core/utilities/searchwindow/searchfields_createfield.cpp:521
 #, kde-format
 msgid "Exposure"
 msgstr "Pozlandırma"
@@ -33853,7 +33853,7 @@ msgid "Details"
 msgstr "Ayrıntılar"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:125
-#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:110
+#: core/utilities/geolocation/geoiface/core/geopluginaboutdlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
@@ -37212,7 +37212,7 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1976
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -49737,116 +49737,116 @@ msgstr ""
 "Öntanımlı pencere dekorasyonu ve görünümünü seçmek için bu seçeneği "
 "ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:249
-#: core/utilities/setup/misc/setupmisc.cpp:235
+#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Simge teması (yeniden başlatma gerekir):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
-#: core/utilities/setup/misc/setupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:253
+#: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Öntanımlı simge temasını seçmek için bu seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
-#: core/utilities/setup/misc/setupmisc.cpp:241
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:256
-#: core/utilities/setup/misc/setupmisc.cpp:242
+#: core/showfoto/setup/showfotosetupmisc.cpp:258
+#: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Esinti"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:243
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
+#: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Esinti Koyu"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:258
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
+#: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:259
-#: core/utilities/setup/misc/setupmisc.cpp:245
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
+#: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiyans"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:260
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/showfoto/setup/showfotosetupmisc.cpp:262
+#: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "İnsanlık"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:261
-#: core/utilities/setup/misc/setupmisc.cpp:247
+#: core/showfoto/setup/showfotosetupmisc.cpp:263
+#: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oksijen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:284
-#: core/utilities/setup/misc/setupmisc.cpp:270
+#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Sistem Simge Temasını Kullan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:291
-#: core/utilities/setup/misc/setupmisc.cpp:277
+#: core/showfoto/setup/showfotosetupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Application font:"
 msgstr "Uygulama yazıtipi:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:292
-#: core/utilities/setup/misc/setupmisc.cpp:278
+#: core/showfoto/setup/showfotosetupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc.cpp:280
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Tüm uygulamada metin görüntülemek için kullanılan yazıtipini burada seçin."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:306
-#: core/utilities/setup/misc/setupmisc.cpp:293
+#: core/showfoto/setup/showfotosetupmisc.cpp:310
+#: core/utilities/setup/misc/setupmisc.cpp:295
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Görünüş"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
-#: core/utilities/setup/misc/setupmisc.cpp:360
+#: core/showfoto/setup/showfotosetupmisc.cpp:318
+#: core/utilities/setup/misc/setupmisc.cpp:362
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Yazım Denetimi"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:320
-#: core/utilities/setup/misc/setupmisc.cpp:366
+#: core/showfoto/setup/showfotosetupmisc.cpp:324
+#: core/utilities/setup/misc/setupmisc.cpp:368
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Yerel Ayarlar"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:326
-#: core/utilities/setup/misc/setupmisc.cpp:372
+#: core/showfoto/setup/showfotosetupmisc.cpp:330
+#: core/utilities/setup/misc/setupmisc.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistem"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:360
-#: core/utilities/setup/misc/setupmisc.cpp:405
+#: core/showfoto/setup/showfotosetupmisc.cpp:364
+#: core/utilities/setup/misc/setupmisc.cpp:407
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -50074,55 +50074,55 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr "Sık Kullanılanlarım"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Sık Kullanılanlar Klasörü Özellikleri"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Ad:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:237
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hiyerarşi:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Sık Kullanılan Öge Özellikleri"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:255
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Ad:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:256
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:258
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Oluşturulma:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:261
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hiyerarşi:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:264
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Ögeler:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:265
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:267
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -50449,7 +50449,7 @@ msgstr ""
 "\"%1\" ögesini ve varsa tüm iç içe geçmiş öğelerini\n"
 "kaldırmak istediğinizden emin misiniz?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -51131,14 +51131,14 @@ msgid "Lens of the camera"
 msgstr "Kameranın merceği"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:415
+#: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
 msgid "Aperture"
 msgstr "Diyafram açıklığı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:435
-#: core/utilities/searchwindow/searchfields_createfield.cpp:454
+#: core/utilities/searchwindow/searchfields_createfield.cpp:450
+#: core/utilities/searchwindow/searchfields_createfield.cpp:469
 #, kde-format
 msgid "Focal length"
 msgstr "Odak uzaklığı"
@@ -51149,7 +51149,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Odak uzunluğu (35 mm eşdeğeri)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:473
+#: core/utilities/searchwindow/searchfields_createfield.cpp:488
 #, kde-format
 msgid "Exposure time"
 msgstr "Pozlandırma süresi"
@@ -51165,7 +51165,7 @@ msgid "Exposure mode"
 msgstr "Pozlandırma kipi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:532
 #, kde-format
 msgid "Sensitivity"
 msgstr "Duyarlılık"
@@ -51176,7 +51176,7 @@ msgid "Flash mode"
 msgstr "Flaş kipi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:564
+#: core/utilities/searchwindow/searchfields_createfield.cpp:579
 #, kde-format
 msgid "White balance"
 msgstr "Beyaz dengesi"
@@ -51207,14 +51207,14 @@ msgid "Display Aspect Ratio"
 msgstr "Görüntü En-Boy Oranı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #: core/utilities/setup/setuptooltip.cpp:257
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Ses Bit Hızı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:954
 #: core/utilities/setup/setuptooltip.cpp:260
 #, kde-format
 msgid "Audio Channel Type"
@@ -52841,7 +52841,7 @@ msgstr "Ulusal Başkent"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:428
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:440
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:495
-#: core/utilities/searchwindow/searchfields_createfield.cpp:685
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "City"
 msgstr "Şehir"
@@ -57389,7 +57389,7 @@ msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/utilities/imageeditor/core/undocache.cpp:131
+#: core/utilities/imageeditor/core/undocache.cpp:132
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -58339,44 +58339,44 @@ msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Dönüştür"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2593
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2595
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Süsle"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2606
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efektler"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2617
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Renkler"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Pekiştir"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2780
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2831
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2818
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Birlikte Aç"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2792
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2830
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Diğer..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2801
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2839
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -58681,7 +58681,7 @@ msgstr "<filename>%1</filename> dosyasının üst verisi alınamadı"
 
 #: core/utilities/import/backend/cameracontroller.cpp:642
 #: core/utilities/import/backend/cameracontroller.cpp:1013
-#: core/utilities/import/main/importui.cpp:2487
+#: core/utilities/import/main/importui.cpp:2493
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename> indirilemedi"
@@ -59514,7 +59514,7 @@ msgstr "<filename>%1</filename> için olan sepet dosyası taşınamadı"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> için olan dosya taşınamadı"
 
-#: core/utilities/import/main/importui.cpp:1967
+#: core/utilities/import/main/importui.cpp:1973
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59526,7 +59526,7 @@ msgstr ""
 "ögeler silinmeyecek. Bu ögeleri gerçekten silmek istiyorsanız lütfen "
 "bunların kilidini açın ve yeniden deneyin."
 
-#: core/utilities/import/main/importui.cpp:1978
+#: core/utilities/import/main/importui.cpp:1984
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59546,19 +59546,19 @@ msgstr[1] ""
 "Silinen dosyalar geri yüklenemezler.\n"
 "Emin misiniz?"
 
-#: core/utilities/import/main/importui.cpp:1988
+#: core/utilities/import/main/importui.cpp:1994
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: core/utilities/import/main/importui.cpp:2032
+#: core/utilities/import/main/importui.cpp:2038
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Yetersiz Disk Alanı"
 
-#: core/utilities/import/main/importui.cpp:2033
+#: core/utilities/import/main/importui.cpp:2039
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59578,8 +59578,8 @@ msgstr ""
 "\n"
 "Yine de denemek ister misiniz?"
 
-#: core/utilities/import/main/importui.cpp:2301
-#: core/utilities/import/main/importui.cpp:2327
+#: core/utilities/import/main/importui.cpp:2307
+#: core/utilities/import/main/importui.cpp:2333
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -59587,13 +59587,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Seçili öge yok (%1 öge)"
 msgstr[1] "Seçili öge yok (%1 öge)"
 
-#: core/utilities/import/main/importui.cpp:2320
+#: core/utilities/import/main/importui.cpp:2326
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2/%3)"
 
-#: core/utilities/import/main/importui.cpp:2337
+#: core/utilities/import/main/importui.cpp:2343
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -59601,22 +59601,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 öge seçili"
 msgstr[1] "%2/%1 öge seçili"
 
-#: core/utilities/import/main/importui.cpp:2422
+#: core/utilities/import/main/importui.cpp:2428
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "<filename>%1</filename> dosyası atlandı"
 
-#: core/utilities/import/main/importui.cpp:2444
+#: core/utilities/import/main/importui.cpp:2450
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Dosyayı <filename>%1</filename> olarak yeniden adlandır"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2473
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> için sepet dosyası kaydedilemedi"
 
-#: core/utilities/import/main/importui.cpp:2544
+#: core/utilities/import/main/importui.cpp:2550
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -59626,19 +59626,19 @@ msgstr ""
 "Görsellerin indirilmesi tamamlandı, görseller kendiliğinden döndürülürken "
 "artık kameranızı çıkarabilirsiniz"
 
-#: core/utilities/import/main/importui.cpp:2552
+#: core/utilities/import/main/importui.cpp:2558
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Görsellerin indirilmesi tamamlandı"
 
-#: core/utilities/import/main/importui.cpp:2578
+#: core/utilities/import/main/importui.cpp:2584
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "\"%2\" klasöründe aynı adda (\"%1\") bir dosya halihazırda var."
 
-#: core/utilities/import/main/importui.cpp:2591
+#: core/utilities/import/main/importui.cpp:2597
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -61471,13 +61471,13 @@ msgctxt "@title: batch workflow description"
 msgid "Description"
 msgstr "Açıklama"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:125
+#: core/utilities/queuemanager/views/workflowlist.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Toplu Kuyruk Yöneticisi"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:126
+#: core/utilities/queuemanager/views/workflowlist.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61487,37 +61487,37 @@ msgstr ""
 "Bazı iş akışları, bir aracın uyumsuz sürümü nedeniyle yapılandırma "
 "dosyanızdan yüklenemiyor."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:280
+#: core/utilities/queuemanager/views/workflowlist.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Geçerli Kuyruğa İş Akışı Ata"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:281
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "İş Akışını Düzenle"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:282
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "İş Akışını Güncelle"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:283
+#: core/utilities/queuemanager/views/workflowlist.cpp:284
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "İş Akışını Sil"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:335
+#: core/utilities/queuemanager/views/workflowlist.cpp:336
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "İş Akışını Sil?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:336
+#: core/utilities/queuemanager/views/workflowlist.cpp:337
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
@@ -61806,530 +61806,530 @@ msgstr "Dosya Biçimi"
 msgid "Return items with the file format"
 msgstr "Şu dosya biçimine uyan ögeleri bul"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:263
+#: core/utilities/searchwindow/searchfields_createfield.cpp:266
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [Görsel]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:268
+#: core/utilities/searchwindow/searchfields_createfield.cpp:275
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [Video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:273
+#: core/utilities/searchwindow/searchfields_createfield.cpp:284
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [Ses]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:298
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
 #, kde-format
 msgid "Color Depth"
 msgstr "Renk Derinliği"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:298
+#: core/utilities/searchwindow/searchfields_createfield.cpp:313
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Şuna uyan ögeleri bul"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
+#: core/utilities/searchwindow/searchfields_createfield.cpp:323
 #, kde-format
 msgid "Color Model"
 msgstr "Renk Modeli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:308
+#: core/utilities/searchwindow/searchfields_createfield.cpp:323
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Şu renk modeline uyan ögeleri bul"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:313
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
-#: core/utilities/searchwindow/searchfields_createfield.cpp:315
-#: core/utilities/searchwindow/searchfields_createfield.cpp:316
-#: core/utilities/searchwindow/searchfields_createfield.cpp:317
-#: core/utilities/searchwindow/searchfields_createfield.cpp:318
-#: core/utilities/searchwindow/searchfields_createfield.cpp:319
-#: core/utilities/searchwindow/searchfields_createfield.cpp:320
-#: core/utilities/searchwindow/searchfields_createfield.cpp:321
+#: core/utilities/searchwindow/searchfields_createfield.cpp:328
+#: core/utilities/searchwindow/searchfields_createfield.cpp:329
+#: core/utilities/searchwindow/searchfields_createfield.cpp:330
+#: core/utilities/searchwindow/searchfields_createfield.cpp:331
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
+#: core/utilities/searchwindow/searchfields_createfield.cpp:333
+#: core/utilities/searchwindow/searchfields_createfield.cpp:334
+#: core/utilities/searchwindow/searchfields_createfield.cpp:335
+#: core/utilities/searchwindow/searchfields_createfield.cpp:336
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [Görsel]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:325
-#: core/utilities/searchwindow/searchfields_createfield.cpp:326
-#: core/utilities/searchwindow/searchfields_createfield.cpp:327
-#: core/utilities/searchwindow/searchfields_createfield.cpp:328
+#: core/utilities/searchwindow/searchfields_createfield.cpp:340
+#: core/utilities/searchwindow/searchfields_createfield.cpp:341
+#: core/utilities/searchwindow/searchfields_createfield.cpp:342
+#: core/utilities/searchwindow/searchfields_createfield.cpp:343
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [Video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:339
+#: core/utilities/searchwindow/searchfields_createfield.cpp:354
 #, kde-format
 msgid "The make of the camera"
 msgstr "Kameranın yapımcısı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:370
+#: core/utilities/searchwindow/searchfields_createfield.cpp:385
 #, kde-format
 msgid "The model of the camera"
 msgstr "Kameranın modeli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:401
+#: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
 msgid "Lens"
 msgstr "Mercek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:401
+#: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
 msgid "The type of the lens"
 msgstr "Merceğin türü"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:415
+#: core/utilities/searchwindow/searchfields_createfield.cpp:430
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "F numarası türünden mercek açıklığı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:416
+#: core/utilities/searchwindow/searchfields_createfield.cpp:431
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:435
+#: core/utilities/searchwindow/searchfields_createfield.cpp:450
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Merceğin odak uzunluğu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:436
+#: core/utilities/searchwindow/searchfields_createfield.cpp:451
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:454
+#: core/utilities/searchwindow/searchfields_createfield.cpp:469
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35 mm'ye eşdeğer odak uzunluğu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:455
+#: core/utilities/searchwindow/searchfields_createfield.cpp:470
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:474
+#: core/utilities/searchwindow/searchfields_createfield.cpp:489
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:509
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Kendiliğinden pozlandırma programı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:506
+#: core/utilities/searchwindow/searchfields_createfield.cpp:521
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Kendiliğinden veya elle pozlama"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:532
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO film hızı (doğrusal ölçek, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:518
+#: core/utilities/searchwindow/searchfields_createfield.cpp:533
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:556
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flaş"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:541
+#: core/utilities/searchwindow/searchfields_createfield.cpp:556
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Flaş kipi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:553
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Kendiliğinden veya elle beyaz dengesi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:564
+#: core/utilities/searchwindow/searchfields_createfield.cpp:579
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Beyaz dengesi içim kullanılan renk sıcaklığı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:565
+#: core/utilities/searchwindow/searchfields_createfield.cpp:580
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgid "Metering Mode"
 msgstr "Ölçüm kipi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Pozlamayı algılama yöntemi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:589
-#: core/utilities/searchwindow/searchfields_createfield.cpp:602
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Subject Distance"
 msgstr "Özne uzaklığı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:589
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Öznenin mercekten uzaklığı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:590
+#: core/utilities/searchwindow/searchfields_createfield.cpp:605
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:602
+#: core/utilities/searchwindow/searchfields_createfield.cpp:617
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makro, yakın veya uzak görünüm"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:634
+#: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:634
 #, kde-format
 msgid "Altitude range"
 msgstr "Rakım erimi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:635
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Ögenin GPS bilgisi yok"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:643
+#: core/utilities/searchwindow/searchfields_createfield.cpp:658
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Coğrafi konumlandırılmamış"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:653
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Country"
 msgstr "Ülke"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:653
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Ögede gösterilen ülke"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "Province"
 msgstr "İl"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:684
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Ögede gösterilen il"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:685
+#: core/utilities/searchwindow/searchfields_createfield.cpp:700
 #, kde-format
 msgid "City shown in the item"
 msgstr "Ögede gösterilen şehir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:701
+#: core/utilities/searchwindow/searchfields_createfield.cpp:716
 #, kde-format
 msgid "Sublocation"
 msgstr "Alt konum"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:701
+#: core/utilities/searchwindow/searchfields_createfield.cpp:716
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Ögede gösterilen alt konum"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:715
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Oluşturan"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:715
+#: core/utilities/searchwindow/searchfields_createfield.cpp:730
 #, kde-format
 msgid "Return items created by"
 msgstr "Şu kişinin oluşturduğu ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Alt yazı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:723
+#: core/utilities/searchwindow/searchfields_createfield.cpp:738
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Şu yorumu içeren ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:731
+#: core/utilities/searchwindow/searchfields_createfield.cpp:746
 #, kde-format
 msgid "Return items commented by"
 msgstr "Şu kişinin yorum yaptığı ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Headline"
 msgstr "Manşet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "IPTC manşeti olan ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:747
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:747
+#: core/utilities/searchwindow/searchfields_createfield.cpp:762
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "IPTC başlığı olan ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:770
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Şu sözcüklerle ilişkilendirilen ögeleri bul"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Empty Text"
 msgstr "Boş metin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:763
+#: core/utilities/searchwindow/searchfields_createfield.cpp:778
 #, kde-format
 msgid "Return items without text in:"
 msgstr "Şu metin kısmı boş olan ögeleri döndür:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Oluşturan"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:781
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Alt yazı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:782
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Yazar/Fotoğrafçı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:768
+#: core/utilities/searchwindow/searchfields_createfield.cpp:783
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Manşet"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:769
+#: core/utilities/searchwindow/searchfields_createfield.cpp:784
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
-#: core/utilities/searchwindow/searchfields_createfield.cpp:798
+#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "En-boy oranı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:794
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Şu en-boy oranına sahip ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Pixel Size"
 msgstr "Piksel boyutu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Şu aralıktaki (Yükseklik * Genişlik) değeri"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:788
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:798
+#: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Şu kare en-boy oranına sahip videoları döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:815
+#: core/utilities/searchwindow/searchfields_createfield.cpp:830
 #, kde-format
 msgid "Length of the video"
 msgstr "Videonun uzunluğu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:816
+#: core/utilities/searchwindow/searchfields_createfield.cpp:831
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:817
+#: core/utilities/searchwindow/searchfields_createfield.cpp:832
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "sn"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:833
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Frame Rate"
 msgstr "Kare hızı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:833
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Şu kare hızına sahip videoları döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:834
+#: core/utilities/searchwindow/searchfields_createfield.cpp:849
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:835
+#: core/utilities/searchwindow/searchfields_createfield.cpp:850
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, kde-format
 msgid "Codec"
 msgstr "Kodlayıcı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:851
+#: core/utilities/searchwindow/searchfields_createfield.cpp:866
 #, kde-format
 msgid "Return video codec"
 msgstr "Şu video kodlayıcısını döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:921
+#: core/utilities/searchwindow/searchfields_createfield.cpp:936
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Ses bit hızını döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:922
+#: core/utilities/searchwindow/searchfields_createfield.cpp:937
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:938
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:954
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Ses kanal türünü döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:941
+#: core/utilities/searchwindow/searchfields_createfield.cpp:956
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:942
+#: core/utilities/searchwindow/searchfields_createfield.cpp:957
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:944
+#: core/utilities/searchwindow/searchfields_createfield.cpp:959
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:945
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 kanallı dizi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:946
+#: core/utilities/searchwindow/searchfields_createfield.cpp:961
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Diğer kanal türü"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:958
+#: core/utilities/searchwindow/searchfields_createfield.cpp:973
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Video kodlayıcısını getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1057
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
 #, kde-format
 msgid "Faces"
 msgstr "Yüzler"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1057
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1072
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Yüz bölgesi sayısına göre ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1058
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1073
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1082
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Yüz bölgesi olmayan ögeleri döndür"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1068
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1083
 #, kde-format
 msgid "No Face Regions"
 msgstr "Yüz bölgesi yok"
@@ -63187,7 +63187,7 @@ msgstr ""
 msgid "Enter additional audio file extensions."
 msgstr "Ek ses dosyası uzantıları gir…"
 
-#: core/utilities/setup/album/setupmime.cpp:243
+#: core/utilities/setup/album/setupmime.cpp:245
 #, kde-format
 msgid ""
 "<p>You have chosen to remove the following image formats from the list of "
@@ -63204,7 +63204,7 @@ msgstr ""
 "bilgileri kaybedeceksiniz.</p><p>Değişikliklerinizi uygulayıp bu biçimlere "
 "yönelik desteği kaybetmek istediğinizden emin misiniz?</p>"
 
-#: core/utilities/setup/album/setupmime.cpp:296
+#: core/utilities/setup/album/setupmime.cpp:298
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
@@ -63213,7 +63213,7 @@ msgstr ""
 "<p>Bu uzantılara sahip dosyalar görsel olarak tanınacak ve veritabanına "
 "eklenecektir:<br/><code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:306
+#: core/utilities/setup/album/setupmime.cpp:308
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as video files and "
@@ -63222,7 +63222,7 @@ msgstr ""
 "<p>Bu uzantılara sahip dosyalar video dosyaları olarak tanınacak ve "
 "veritabanına eklenecektir:<br/><code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:316
+#: core/utilities/setup/album/setupmime.cpp:318
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
@@ -63844,177 +63844,177 @@ msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Koleksiyonu digiKam'dan kaldırır."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:632
+#: core/utilities/setup/collections/setupcollectionview.cpp:634
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Aşağıdaki yollar için koleksiyon eklenemedi:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:660
-#: core/utilities/setup/collections/setupcollectionview.cpp:1508
+#: core/utilities/setup/collections/setupcollectionview.cpp:662
+#: core/utilities/setup/collections/setupcollectionview.cpp:1510
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Koleksiyon Klasörü Seçimi"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:699
+#: core/utilities/setup/collections/setupcollectionview.cpp:701
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Koleksiyon Eklemede Sorun"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:700
+#: core/utilities/setup/collections/setupcollectionview.cpp:702
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "\"%1\" yoluna sahip bir koleksiyon halihazırda var."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:865
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Yolu Koleksiyondar Kaldır?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:866
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr ""
 "Eklenen \"%1\" yolunu \"%2\" koleksiyonundan kaldırmak istiyor musunuz?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:871
+#: core/utilities/setup/collections/setupcollectionview.cpp:873
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Koleksiyonu Kaldır?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:872
+#: core/utilities/setup/collections/setupcollectionview.cpp:874
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr ""
 "\"%1\" koleksiyonunu koleksiyonlar listenizden kaldırmak istiyor musunuz?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:937
-#: core/utilities/setup/collections/setupcollectionview.cpp:1727
+#: core/utilities/setup/collections/setupcollectionview.cpp:939
+#: core/utilities/setup/collections/setupcollectionview.cpp:1729
 #, kde-format
 msgid "Local Collections"
 msgstr "Yerel Koleksiyonlar"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:942
-#: core/utilities/setup/collections/setupcollectionview.cpp:1728
+#: core/utilities/setup/collections/setupcollectionview.cpp:944
+#: core/utilities/setup/collections/setupcollectionview.cpp:1730
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kaldırılabilir Ortamdaki Koleksiyonlar"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:947
-#: core/utilities/setup/collections/setupcollectionview.cpp:1729
+#: core/utilities/setup/collections/setupcollectionview.cpp:949
+#: core/utilities/setup/collections/setupcollectionview.cpp:1731
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Ağ Paylaşımlarındaki Koleksiyonlar"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:984
+#: core/utilities/setup/collections/setupcollectionview.cpp:986
 #, kde-format
 msgid "Add Collection"
 msgstr "Koleksiyon Ekle"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1034
+#: core/utilities/setup/collections/setupcollectionview.cpp:1036
 #, kde-format
 msgid "Col. %1"
 msgstr "Koleksiyon %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1130
+#: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Bu koleksiyon şu anda kullanılabilir değil."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1135
+#: core/utilities/setup/collections/setupcollectionview.cpp:1137
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Hiç hata bulunmadı, koleksiyonun tadını çıkarın."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1140
+#: core/utilities/setup/collections/setupcollectionview.cpp:1142
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Bu koleksiyon gizli."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1159
+#: core/utilities/setup/collections/setupcollectionview.cpp:1161
 #, kde-format
 msgid "Append network path"
 msgstr "Ağ yolu ekle"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1187
+#: core/utilities/setup/collections/setupcollectionview.cpp:1189
 #, kde-format
 msgid "Update collection"
 msgstr "Koleksiyonu güncelle"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1215
+#: core/utilities/setup/collections/setupcollectionview.cpp:1217
 #, kde-format
 msgid "Remove collection"
 msgstr "Koleksiyonu kaldır"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1250
+#: core/utilities/setup/collections/setupcollectionview.cpp:1252
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Ad"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1255
+#: core/utilities/setup/collections/setupcollectionview.cpp:1257
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Yol"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1260
+#: core/utilities/setup/collections/setupcollectionview.cpp:1262
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Durum"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1558
+#: core/utilities/setup/collections/setupcollectionview.cpp:1560
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Daha önce \"%1\" yolunu içeren bir koleksiyon eklediniz."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1596
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Koleksiyon Eklemede Sorun"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1601
+#: core/utilities/setup/collections/setupcollectionview.cpp:1603
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Koleksiyonu Güncellemede Sorun"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1618
+#: core/utilities/setup/collections/setupcollectionview.cpp:1620
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Koleksiyon Ekleniyor"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1622
+#: core/utilities/setup/collections/setupcollectionview.cpp:1624
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Koleksiyonu Güncelle"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1630
+#: core/utilities/setup/collections/setupcollectionview.cpp:1632
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Yeni koleksiyonunuz, şu adla oluşturulacak:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1634
+#: core/utilities/setup/collections/setupcollectionview.cpp:1636
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "Koleksiyonunuzun adı şuna güncellenecek:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1717
+#: core/utilities/setup/collections/setupcollectionview.cpp:1719
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Kategori Seç"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1721
+#: core/utilities/setup/collections/setupcollectionview.cpp:1723
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Yeni koleksiyonunuz şu kategoriyi kullanacak:"
@@ -64333,25 +64333,25 @@ msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Ayarları özelleştirmek için her zaman RAW içe aktarma aracını aç"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (öntanımlı)"
 
-#: core/utilities/setup/editor/setupraw.cpp:154
+#: core/utilities/setup/editor/setupraw.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Bu RAW içe aktarma aracı hakkında..."
 
-#: core/utilities/setup/editor/setupraw.cpp:188
+#: core/utilities/setup/editor/setupraw.cpp:189
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "RAW Davranışı"
 
-#: core/utilities/setup/editor/setupraw.cpp:189
+#: core/utilities/setup/editor/setupraw.cpp:190
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -65934,12 +65934,12 @@ msgstr ""
 "çözünürlüğü kullanıyorsanız \"Yalnızca etkin sekme için\" seçeneğini "
 "kullanın."
 
-#: core/utilities/setup/misc/setupmisc.cpp:300
+#: core/utilities/setup/misc/setupmisc.cpp:302
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Tüm grup üyeleri üzerinde aşağıdaki işlemleri gerçekleştirin:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:301
+#: core/utilities/setup/misc/setupmisc.cpp:303
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -65952,25 +65952,25 @@ msgstr ""
 "gerçekleştirilir.<br/>Eğer Sor seçilirse bu işlem her yürütüldüğünde<br/>bir "
 "uyarı verilir."
 
-#: core/utilities/setup/misc/setupmisc.cpp:307
+#: core/utilities/setup/misc/setupmisc.cpp:309
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Hayır"
 
-#: core/utilities/setup/misc/setupmisc.cpp:308
+#: core/utilities/setup/misc/setupmisc.cpp:310
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/utilities/setup/misc/setupmisc.cpp:309
+#: core/utilities/setup/misc/setupmisc.cpp:311
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Sor"
 
-#: core/utilities/setup/misc/setupmisc.cpp:352
+#: core/utilities/setup/misc/setupmisc.cpp:354
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
