@@ -94,18 +94,24 @@ void OsmRelationManagerWidgetPrivate::populateDropMenu()
     m_addRelation->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
 
     // The new relation adder
+
     m_relationDropMenu->addAction(i18n("New Relation"));
     m_relationDropMenu->addSeparator();
 
     // This shouldn't happen
+
     Q_ASSERT(m_allRelations);
 
     // Suggesting existing relations
-    for (const OsmPlacemarkData& relationData : m_allRelations->values())
+
+    const auto values = m_allRelations->values();
+
+    for (const OsmPlacemarkData& relationData : values)
     {
         const QString relationText = relationData.tagValue(QString::fromUtf8("name")) + QLatin1String(" (") + relationData.tagValue(QString::fromUtf8("type")) + QLatin1Char(')');
 
         // Don't suggest relations the placemark is already part of
+
         if (m_placemark->hasOsmData() && m_placemark->osmData().containsRelation(relationData.id()))
         {
             continue;

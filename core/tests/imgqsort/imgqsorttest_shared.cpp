@@ -122,7 +122,9 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesCore(const ImageQualityContainer
 
     qCInfo(DIGIKAM_TESTS_LOG) << "Quality Results (0:None, 1:Rejected, 2:Pending, 3:Accepted):";
 
-    for (const auto& image_name: results.keys())
+    const auto keys = results.keys();
+
+    for (const auto& image_name : keys)
     {
         qCInfo(DIGIKAM_TESTS_LOG) << "==>" << image_name << ":" << results.value(image_name);
     }

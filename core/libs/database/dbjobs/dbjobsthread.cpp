@@ -267,7 +267,9 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
         return m_results.end();
     };
 
-    for (const auto& referenceImage : incoming.keys())
+    const auto keys = incoming.keys();
+
+    for (const auto& referenceImage : keys)
     {
         if (searchResults(referenceImage) == m_results.end())
         {

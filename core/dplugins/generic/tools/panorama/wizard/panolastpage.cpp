@@ -186,7 +186,9 @@ void PanoLastPage::checkFiles()
 
     if (d->savePtoCheckBox->isChecked())
     {
-        for (auto& input : d->mngr->preProcessedMap().keys())
+        const auto keys = d->mngr->preProcessedMap().keys();
+
+        for (auto& input : keys)
         {
             if (input != d->mngr->preProcessedMap()[input].preprocessedUrl)
             {

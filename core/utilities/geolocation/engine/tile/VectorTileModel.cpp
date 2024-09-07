@@ -207,7 +207,9 @@ int VectorTileModel::cachedDocuments() const
 
 void VectorTileModel::reload()
 {
-    for (auto const& tile : m_documents.keys())
+    const auto keys = m_documents.keys();
+
+    for (auto const& tile : keys)
     {
         m_loader->downloadTile(m_layer, tile, DownloadBrowse);
     }
