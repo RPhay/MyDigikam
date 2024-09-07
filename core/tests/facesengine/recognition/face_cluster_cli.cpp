@@ -104,7 +104,7 @@ QList<QImage> toImages(const QStringList& paths)
 {
     QList<QImage> images;
 
-    Q_FOREACH (const QString& path, paths)
+    for (const QString& path : std::as_const(paths))
     {
         images << QImage(path);
     }
@@ -166,7 +166,7 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
     QList<QImage> faces;
     unsigned index = 0;
 
-    Q_FOREACH (const QRectF& rect, rects)
+    for (const QRectF& rect : std::as_const(rects))
     {
         DImg temp(images.at(index));
         faces << temp.copyQImage(rect);
@@ -339,7 +339,7 @@ int main(int argc, char* argv[])
     QList<QRectF> bboxes;
     QList<QImage> rawImages    = toImages(dataset);
 
-    Q_FOREACH (const QImage& image, rawImages)
+    for (const QImage& image : std::as_const(rawImages))
     {
         QString imagePath                 = dataset.takeFirst();
         QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
@@ -382,7 +382,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)"
              << " faces cannot be detected";
 
-    Q_FOREACH (const QString& path, undetectedFaces)
+    for (const QString& path : std::as_const(undetectedFaces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
@@ -393,7 +393,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
              << " faces were wrongly clustered";
 
-    Q_FOREACH (const QString& imagePath, falsePositiveCases)
+    for (const QString& imagePath : std::as_const(falsePositiveCases))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << imagePath;
     }

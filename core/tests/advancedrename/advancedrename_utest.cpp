@@ -625,7 +625,7 @@ void AdvancedRenameTest::sequencenumber_tests()
 
     QList<ParseSettings> files2;
 
-    Q_FOREACH (const QString& file, files)
+    for (const QString& file : std::as_const(files))
     {
         ps.fileUrl = QUrl::fromLocalFile(file);
         files2 << ps;
@@ -692,7 +692,7 @@ void AdvancedRenameTest::newFileList_tests()
 
     QList<ParseSettings> files2;
 
-    Q_FOREACH (const QString& file, files)
+    for (const QString& file : std::as_const(files))
     {
         ps.fileUrl = QUrl::fromLocalFile(file);
         files2 << ps;
@@ -757,7 +757,7 @@ void AdvancedRenameTest::indexOfFile_sorting()
 
     QList<ParseSettings> files2;
 
-    Q_FOREACH (const QString& file, files)
+    for (const QString& file : std::as_const(files))
     {
         ps.fileUrl = QUrl::fromLocalFile(file);
         files2 << ps;
@@ -848,7 +848,7 @@ void AdvancedRenameTest::sequencenumber_tests_startIndex()
 
     QList<ParseSettings> files2;
 
-    Q_FOREACH (const QString& file, files)
+    for (const QString& file : std::as_const(files))
     {
         ps.fileUrl = QUrl::fromLocalFile(file);
         files2 << ps;
@@ -876,7 +876,7 @@ void AdvancedRenameTest::sortAction_custom_asc_should_not_sort()
               << filePath4 << filePath5 << filePath6
               << filePath7 << filePath8 << filePath9;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -903,7 +903,7 @@ void AdvancedRenameTest::sortAction_custom_desc_should_not_sort()
               << filePath4 << filePath5 << filePath6
               << filePath7 << filePath8 << filePath9;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -931,7 +931,7 @@ void AdvancedRenameTest::sortAction_name_asc()
               << filePath4 << filePath5 << filePath6
               << filePath7 << filePath8 << filePath9;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -961,7 +961,7 @@ void AdvancedRenameTest::sortAction_name_desc()
               << filePath4 << filePath5 << filePath6
               << filePath7 << filePath8 << filePath9;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -993,7 +993,7 @@ void AdvancedRenameTest::sortAction_size_asc()
               << filePath3 << filePath << filePath2
               << filePath5 << filePath4 << filePath6;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -1021,7 +1021,7 @@ void AdvancedRenameTest::sortAction_size_desc()
               << filePath2 << filePath  << filePath3
               << filePath9 << filePath8 << filePath7;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -1051,7 +1051,7 @@ void AdvancedRenameTest::sortAction_date_asc()
               << filePath2 << filePath9 << filePath7
               << filePath8 << filePath6 << filePath5;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;
@@ -1079,7 +1079,7 @@ void AdvancedRenameTest::sortAction_date_desc()
               << filePath7 << filePath9 << filePath2
               << filePath  << filePath3 << filePath4;
 
-    Q_FOREACH (const QString& fpath, filePaths)
+    for (const QString& fpath : std::as_const(filePaths))
     {
         ps.fileUrl = QUrl::fromLocalFile(fpath);
         files << ps;

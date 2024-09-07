@@ -110,7 +110,7 @@ void AlbumModelTest::initTestCase()
     AlbumList all = AlbumManager::instance()->allPAlbums();
     qCDebug(DIGIKAM_TESTS_LOG) << "PAlbum registered : " << all.size();
 
-    Q_FOREACH (Album* const a, all)
+    for (Album* const a : std::as_const(all))
     {
         if (a)
         {
@@ -221,7 +221,9 @@ void AlbumModelTest::init()
 
     qCDebug(DIGIKAM_TESTS_LOG) << "AlbumManager now knows these PAlbums:";
 
-    Q_FOREACH (Album* const a, AlbumManager::instance()->allPAlbums())
+    const auto palbums = AlbumManager::instance()->allPAlbums();
+
+    for (Album* const a : palbums)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "\t" << a->title();
     }
@@ -252,7 +254,7 @@ void AlbumModelTest::init()
     qCDebug(DIGIKAM_TESTS_LOG) << "copying images " << imageFiles << " to "
                                << palbumChild0Root0->fileUrl();
 
-    Q_FOREACH (const QString& imageFile, imageFiles)
+    for (const QString& imageFile : std::as_const(imageFiles))
     {
         QString src = imagesPath + imageFile;
         QString dst = palbumChild0Root0->fileUrl().toLocalFile() + QLatin1Char('/') + imageFile;
@@ -279,7 +281,9 @@ void AlbumModelTest::init()
     QVERIFY(rootFromAlbumManager);
     DAlbum* rootFromList               = nullptr;
 
-    Q_FOREACH (Album* const album, AlbumManager::instance()->allDAlbums())
+    const auto dalbums = AlbumManager::instance()->allDAlbums();
+
+    for (Album* const album : dalbums)
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);
@@ -543,7 +547,9 @@ void AlbumModelTest::testDAlbumContainsAlbums()
 
     QVERIFY(albumModel->rootAlbum());
 
-    Q_FOREACH (Album* const album, AlbumManager::instance()->allDAlbums())
+    const auto dalbums = AlbumManager::instance()->allDAlbums();
+
+    for (Album* const album : dalbums)
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);

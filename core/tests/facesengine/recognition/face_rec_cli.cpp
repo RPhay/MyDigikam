@@ -57,7 +57,7 @@ QList<QImage> toImages(const QStringList& paths)
 {
     QList<QImage> images;
 
-    Q_FOREACH (const QString& path, paths)
+    for (const QString& path : std::as_const(paths))
     {
         images << QImage(path);
     }
@@ -160,7 +160,7 @@ QList<QImage*> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& r
     QList<QImage*> faces;
     unsigned index = 0;
 
-    Q_FOREACH (const QRectF& rect, rects)
+    for (const QRectF& rect : std::as_const(rects))
     {
         DImg temp(images.at(index));
         QImage* croppedFace = new QImage();
@@ -321,9 +321,9 @@ int main(int argc, char* argv[])
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first() << " is identity " << results.first().id();
 
-        Q_FOREACH (const Identity& foundId, results)
+        for (const Identity& foundId : std::as_const(results))
         {
-            if (foundId.isNull())
+            if      (foundId.isNull())
             {
                 ++notRecognized;
             }
@@ -360,7 +360,7 @@ int main(int argc, char* argv[])
         QList<QImage> rawImages = toImages(imagePaths);
         qCDebug(DIGIKAM_TESTS_LOG) << "Training directory " << it.key();
 
-        Q_FOREACH (const QImage& image, rawImages)
+        for (const QImage& image : std::as_const(rawImages))
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -407,7 +407,7 @@ int main(int argc, char* argv[])
         QList<QImage> detectedFaces;
         QList<QRectF> bboxes;
 
-        Q_FOREACH (const QImage& image, rawImages)
+        for (const QImage& image : std::as_const(rawImages))
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -445,11 +445,11 @@ int main(int argc, char* argv[])
 
         // qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first() << " is identity " << results.first().id();
 
-        Q_FOREACH (const Identity& foundId, results)
+        for (const Identity& foundId : std::as_const(results))
         {
             QString imagePath = imagePaths.takeFirst();
 
-            if (foundId.isNull())
+            if      (foundId.isNull())
             {
                 ++notRecognized;
             }
@@ -474,7 +474,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)"
              << " faces cannot be detected for training";
 
-    Q_FOREACH (const QString& path, undetectedTrainedFaces)
+    for (const QString& path : std::as_const(undetectedTrainedFaces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
@@ -491,7 +491,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)"
              << " faces cannot be detected for testing";
 
-    Q_FOREACH (const QString& path, undetectedTestedFaces)
+    for (const QString& path : std::as_const(undetectedTestedFaces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
@@ -510,7 +510,7 @@ int main(int argc, char* argv[])
 
     qCDebug(DIGIKAM_TESTS_LOG) << "\nFalse positive faces";
 
-    Q_FOREACH (const QString& path, falsePositiveFaces)
+    for (const QString& path : std::as_const(falsePositiveFaces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
