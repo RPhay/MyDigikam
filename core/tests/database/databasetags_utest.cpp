@@ -103,7 +103,7 @@ void DatabaseTagsTest::initTestCase()
     AlbumList all = AlbumManager::instance()->allPAlbums();
     qCDebug(DIGIKAM_TESTS_LOG) << "PAlbum registered : " << all.size();
 
-    Q_FOREACH (Album* const a, all)
+    for (Album* const a : std::as_const(all))
     {
         if (a)
         {
@@ -172,6 +172,7 @@ void DatabaseTagsTest::init()
 
     // ensure that this model is empty in the beginning except for the root
     // album and the collection that include trash
+
     QCOMPARE(startModel->rowCount(), 1);
     QModelIndex rootIndex = startModel->index(0, 0);
     QCOMPARE(startModel->rowCount(rootIndex), 1);
@@ -183,6 +184,7 @@ void DatabaseTagsTest::init()
     // physical albums
 
     // create two of them by creating directories and scanning
+
     QDir dir(dbPath);
     dir.mkdir(QLatin1String("root0"));
     dir.mkdir(QLatin1String("root1"));
@@ -199,6 +201,7 @@ void DatabaseTagsTest::init()
     QVERIFY2(palbumRoot1, "Error having PAlbum root1 in AlbumManager");
 
     // Create some more through AlbumManager
+
     palbumRoot2 = AlbumManager::instance()->createPAlbum(dbPath, QLatin1String("root2"),
                   QLatin1String("root album 2"), QDate::currentDate(), albumCategory, error);
     QVERIFY2(palbumRoot2, QString::fromUtf8("Error creating PAlbum for test: %1").arg(error).toLatin1().constData());
@@ -212,7 +215,9 @@ void DatabaseTagsTest::init()
 
     qCDebug(DIGIKAM_TESTS_LOG) << "AlbumManager now knows these PAlbums:";
 
-    Q_FOREACH (Album* const a, AlbumManager::instance()->allPAlbums())
+    const auto palbums = AlbumManager::instance()->allPAlbums();
+
+    for (Album* const a : palbums)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "\t" << a->title();
     }
@@ -243,7 +248,7 @@ void DatabaseTagsTest::init()
     qCDebug(DIGIKAM_TESTS_LOG) << "copying images " << imageFiles << " to "
              << palbumChild0Root0->fileUrl();
 
-    Q_FOREACH (const QString& imageFile, imageFiles)
+    for (const QString& imageFile : std::as_const(imageFiles))
     {
         QString src = filesPath + QLatin1Char('/') + imageFile;
         QString dst = palbumChild0Root0->fileUrl().toLocalFile() + QLatin1Char('/') + imageFile;
@@ -261,13 +266,17 @@ void DatabaseTagsTest::init()
     qCDebug(DIGIKAM_TESTS_LOG) << "date albums: " << AlbumManager::instance()->allDAlbums();
 
     // root + 2 years + 2 and 3 months per year + (1997 as test year for date ordering with 12 months) = 21
+
     QCOMPARE(AlbumManager::instance()->allDAlbums().size(), 21);
+
     // ensure that there is a root date album
+
     DAlbum* const rootFromAlbumManager = AlbumManager::instance()->findDAlbum(0);
     QVERIFY(rootFromAlbumManager);
     DAlbum* rootFromList               = 0;
+    const auto dalbums = AlbumManager::instance()->allDAlbums();
 
-    Q_FOREACH (Album* const album, AlbumManager::instance()->allDAlbums())
+    for (Album* const album : dalbums)
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);
@@ -332,23 +341,31 @@ void DatabaseTagsTest::testStartAlbumModel()
     // verify that the start album model got all these changes
 
     // one root
+
     QCOMPARE(startModel->rowCount(), 1);
+
     // one collection
+
     QModelIndex rootIndex = startModel->index(0, 0);
     QCOMPARE(startModel->rowCount(rootIndex), 1);
+
     // two albums in the collection
+
     QModelIndex collectionIndex = startModel->index(0, 0, rootIndex);
     QCOMPARE(startModel->rowCount(collectionIndex), 3);
+
     // this is should be enough for now
 
     // We must have received an added notation for everything except album root
     // and collection
+
     QCOMPARE(addedIds.size(), 7);
 }
 
 void DatabaseTagsTest::ensureItemCounts()
 {
     // trigger listing job
+
     QEventLoop dAlbumLoop;
 
     connect(AlbumManager::instance(), SIGNAL(signalAllDAlbumsLoaded()),
@@ -376,7 +393,7 @@ void DatabaseTagsTest::slotStartModelRowsInserted(const QModelIndex& parent, int
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "called, parent:" << parent << ", start:" << start << ", end:" << end;
 
-    for (int row = start; row <= end; ++row)
+    for (int row = start ; row <= end ; ++row)
     {
         QModelIndex child = startModel->index(row, 0, parent);
         QVERIFY(child.isValid());
@@ -392,7 +409,7 @@ void DatabaseTagsTest::slotStartModelRowsInserted(const QModelIndex& parent, int
 
 void DatabaseTagsTest::slotStartModelDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
-    for (int row = topLeft.row(); row <= bottomRight.row(); ++row)
+    for (int row = topLeft.row() ; row <= bottomRight.row() ; ++row)
     {
         QModelIndex index = startModel->index(row, topLeft.column(), topLeft.parent());
 
@@ -459,11 +476,12 @@ void DatabaseTagsTest::testDisablePAlbumCount()
     QVERIFY(!countRegEx.exactMatch(QLatin1String("te st (10) bla")));
 
     // ensure that all albums except the root album have a count attached
+
     QModelIndex rootIndex = albumModel.index(0, 0, QModelIndex());
     QString rootTitle     = albumModel.data(rootIndex, Qt::DisplayRole).toString();
     QVERIFY(!countRegEx.exactMatch(rootTitle));
 
-    for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
+    for (int collectionRow = 0 ; collectionRow < albumModel.rowCount(rootIndex) ; ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
@@ -475,7 +493,6 @@ void DatabaseTagsTest::testDisablePAlbumCount()
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
             QVERIFY2(countRegEx.exactMatch(albumTitle), QString::fromUtf8("%1 matching error").arg(albumTitle).toLatin1().constData());
         }
-
     }
 
     // now disable showing the count
@@ -485,13 +502,13 @@ void DatabaseTagsTest::testDisablePAlbumCount()
     rootTitle = albumModel.data(rootIndex, Qt::DisplayRole).toString();
     QVERIFY(!countRegEx.exactMatch(rootTitle));
 
-    for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
+    for (int collectionRow = 0 ; collectionRow < albumModel.rowCount(rootIndex) ; ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle     = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
         QVERIFY2(!countRegEx.exactMatch(collectionTitle), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
 
-        for (int albumRow = 0; albumRow < albumModel.rowCount(collectionIndex); ++albumRow)
+        for (int albumRow = 0 ; albumRow < albumModel.rowCount(collectionIndex) ; ++albumRow)
         {
             QModelIndex albumIndex = albumModel.index(albumRow, 0, collectionIndex);
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
@@ -520,7 +537,9 @@ void DatabaseTagsTest::testDAlbumContainsAlbums()
 
     QVERIFY(albumModel->rootAlbum());
 
-    Q_FOREACH (Album* const album, AlbumManager::instance()->allDAlbums())
+    const auto dalbums = AlbumManager::instance()->allDAlbums();
+
+    for (Album* const album : dalbums)
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);

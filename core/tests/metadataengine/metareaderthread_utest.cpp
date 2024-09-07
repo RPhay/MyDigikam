@@ -155,7 +155,7 @@ void MetaReaderThread::readMetadata(const QList<QUrl>& list,
 {
     ActionJobCollection collection;
 
-    Q_FOREACH (const QUrl& url, list)
+    for (const QUrl& url : std::as_const(list))
     {
         Mytask* const job = new Mytask();
         job->url          = url;
@@ -194,14 +194,15 @@ QString MetaReaderThread::stats(const QStringList& mimeTypes)
 {
     QString out;
     QStringList list;
-    int count = 0;
+    int count       = 0;
+    const auto urls = m_stats.keys();
 
-    Q_FOREACH (const QUrl& url, m_stats.keys())
+    for (const QUrl& url : urls)
     {
         list << QFileInfo(url.path()).suffix();
     }
 
-    Q_FOREACH (QString mt, mimeTypes)
+    for (QString mt : std::as_const(mimeTypes))
     {
         mt.remove(QLatin1String("*."));
         count  = list.count(mt);

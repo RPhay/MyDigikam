@@ -78,7 +78,9 @@ int main(int argc, char* argv[])
 
     if      (parser.isSet(QString::fromLatin1("list")))
     {
-        Q_FOREACH (DPlugin* const p, dpl->allPlugins())
+        const auto dpls = dpl->allPlugins();
+
+        for (DPlugin* const p : dpls)
         {
             DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
@@ -91,8 +93,9 @@ int main(int argc, char* argv[])
                 qCDebug(DIGIKAM_TESTS_LOG) << "Desc   :" << p->description();
 
                 QString authors;
+                const auto auths = p->authors();
 
-                Q_FOREACH (const DPluginAuthor& au, p->authors())
+                for (const DPluginAuthor& au : auths)
                 {
                     authors.append(au.toString());
                     authors.append(QLatin1String(" ; "));
@@ -101,8 +104,9 @@ int main(int argc, char* argv[])
                 qCDebug(DIGIKAM_TESTS_LOG) << "Authors:" << authors;
 
                 QString actions;
+                const auto acs = gene->actions(&iface);
 
-                Q_FOREACH (DPluginAction* const ac, gene->actions(&iface))
+                for (DPluginAction* const ac : acs)
                 {
                     actions.append(ac->toString());
                     actions.append(QLatin1String(" ; "));
@@ -131,8 +135,9 @@ int main(int argc, char* argv[])
         }
 
         MetaEngine::initializeExiv2();
+        const auto dpls = dpl->allPlugins();
 
-        Q_FOREACH (DPlugin* const p, dpl->allPlugins())
+        for (DPlugin* const p : dpls)
         {
             if (p->iid() == name)
             {
@@ -157,8 +162,9 @@ int main(int argc, char* argv[])
                         qCDebug(DIGIKAM_TESTS_LOG) << action << "action not found in plugin!";
 
                         QString actions;
+                        const auto gacs = gene->actions(&iface);
 
-                        Q_FOREACH (DPluginAction* const gac, gene->actions(&iface))
+                        for (DPluginAction* const gac : gacs)
                         {
                             actions.append(gac->toString());
                             actions.append(QLatin1String(" ; "));

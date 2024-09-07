@@ -45,7 +45,7 @@ int main(int argc, char** argv)
     {
         int id = 1;
 
-        Q_FOREACH (const FocusPoint& fp, points)
+        for (const FocusPoint& fp : std::as_const(points))
         {
             qCDebug(DIGIKAM_TESTS_LOG) << id << "AF Focus region found in" << argv[1] << ":" << fp;
             qCDebug(DIGIKAM_TESTS_LOG) << id << "AF Focus coordinates in image" << argv[1] << ":" << fp.getRectBySize(fpreader->originalSize());

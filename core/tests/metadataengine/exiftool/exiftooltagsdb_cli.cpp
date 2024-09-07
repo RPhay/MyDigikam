@@ -66,7 +66,7 @@ int main(int argc, char** argv)
                << sep
                << Qt::endl;
 
-        Q_FOREACH (const QString& tag, keys)
+        for (const QString& tag : std::as_const(keys))
         {
             ExifToolParser::ExifToolData::iterator it = parsed.find(tag);
 
@@ -86,7 +86,7 @@ int main(int argc, char** argv)
             }
         }
 
-        Q_FOREACH (const QString& tag, tagsLst)
+        for (const QString& tag : std::as_const(tagsLst))
         {
             stream << tag << Qt::endl;
         }

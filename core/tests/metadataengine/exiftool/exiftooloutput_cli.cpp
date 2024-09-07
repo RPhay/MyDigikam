@@ -96,7 +96,7 @@ int main(int argc, char** argv)
 
     tagsLst.sort();
 
-    Q_FOREACH (const QString& tag, tagsLst)
+    for (const QString& tag : std::as_const(tagsLst))
     {
         stream << tag << Qt::endl;
     }

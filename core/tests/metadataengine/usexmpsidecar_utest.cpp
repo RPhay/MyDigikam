@@ -114,7 +114,7 @@ void UseXmpSidecarTest::useXmpSidecar(const QString& file,
 
     int count = tags.count();
 
-    Q_FOREACH (const QString& tag, newTags)
+    for (const QString& tag : std::as_const(newTags))
     {
         if (tags.contains(tag))
         {

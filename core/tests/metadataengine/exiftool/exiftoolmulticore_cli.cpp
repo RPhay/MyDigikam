@@ -101,7 +101,7 @@ bool s_exifToolParseThreaded(const QString& file)
 
     tagsLst.sort();
 
-    Q_FOREACH (const QString& tag, tagsLst)
+    for (const QString& tag : std::as_const(tagsLst))
     {
         stream << tag << Qt::endl;
     }
@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 
     QList <QFuture<bool> > tasks;
 
-    Q_FOREACH (const QString& imageFile, imageFiles)
+    for (const QString& imageFile : std::as_const(imageFiles))
     {
         tasks.append(QtConcurrent::run(
                                        &s_exifToolParseThreaded,
@@ -146,7 +146,7 @@ int main(int argc, char** argv)
 
     bool result = false;
 
-    Q_FOREACH (QFuture<bool> t, tasks)
+    for (QFuture<bool> t : std::as_const(tasks))
     {
         t.waitForFinished();
         result |= t.result();
