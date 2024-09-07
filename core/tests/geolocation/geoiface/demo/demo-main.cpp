@@ -38,9 +38,11 @@ int main(int argc, char* argv[])
     parser.process(app);
 
     // get the list of images to load on startup:
-    QList<QUrl> imagesList;
 
-    Q_FOREACH (const QString& file, parser.positionalArguments())
+    QList<QUrl> imagesList;
+    const auto files = parser.positionalArguments();
+
+    for (const QString& file : files)
     {
         const QUrl argUrl = QUrl::fromLocalFile(file);
         qCDebug(DIGIKAM_TESTS_LOG) << argUrl;

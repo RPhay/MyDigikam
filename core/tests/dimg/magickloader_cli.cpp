@@ -212,7 +212,7 @@ int main(int argc, char** argv)
 
     if (!list.isEmpty())
     {
-        Q_FOREACH (const QString& path, list)
+        for (const QString& path : std::as_const(list))
         {
             QImage qimg;
             bool ret = loadWithImageMagick(path, qimg);

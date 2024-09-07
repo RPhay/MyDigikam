@@ -45,7 +45,7 @@ QList<cv::Mat> toImages(const QStringList& paths)
 {
     QList<cv::Mat> images;
 
-    Q_FOREACH (const QString& path, paths)
+    for (const QString& path : std::as_const(paths))
     {
         QByteArray s = path.toLocal8Bit();
         images << cv::imread(std::string(s.data()));
@@ -61,8 +61,8 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 public:
 
     explicit OpenCVSideBySideDisplay(int rows, int uiSize = 200)
-        : bigImage(cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3)),
-          uiSize(uiSize),
+        : bigImage  (cv::Mat::zeros(uiSize * rows, 2 * uiSize, CV_8UC3)),
+          uiSize    (uiSize),
           currentRow(0)
     {
     }
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
 
     OpenCVSideBySideDisplay display(images.size());
 
-    Q_FOREACH (const cv::Mat& image, images)
+    for (const cv::Mat& image : std::as_const(images))
     {
         cv::Mat aligned = funnel.align(image);
         display.add(image, aligned);

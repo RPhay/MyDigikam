@@ -81,12 +81,12 @@ void TimeStampUpdateTest::initTestCase()
     QVERIFY(albums.size() == 1);
     QStringList readOnlyImages;
 
-    Q_FOREACH (const AlbumShortInfo& album, albums)
+    for (const AlbumShortInfo& album : std::as_const(albums))
     {
         readOnlyImages << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
     }
 
-    Q_FOREACH (const QString& file, readOnlyImages)
+    for (const QString& file : std::as_const(readOnlyImages))
     {
         ids << ItemInfo::fromLocalFile(file).id();
     }

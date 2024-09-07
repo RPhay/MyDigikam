@@ -46,7 +46,7 @@ QList<cv::Mat> toImages(const QStringList& paths)
 {
     QList<cv::Mat> images;
 
-    Q_FOREACH (const QString& path, paths)
+    for (const QString& path : std::as_const(paths))
     {
         QByteArray s = path.toLocal8Bit();
         images << cv::imread(std::string(s.data()),
@@ -145,7 +145,7 @@ int main(int argc, char** argv)
     TanTriggsPreprocessor preprocessor;
     OpenCVSideBySideDisplay display(images.size());
 
-    Q_FOREACH (const cv::Mat& image, images)
+    for (const cv::Mat& image : std::as_const(images))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "channels " << image.channels();
         cv::Mat processed = preprocessor.preprocess(image);

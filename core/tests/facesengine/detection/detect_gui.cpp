@@ -61,7 +61,7 @@ void detectFaces(const QString& imagePath)
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
-    Q_FOREACH (const QRectF& r, faces)
+    for (const QRectF& r : std::as_const(faces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
@@ -82,7 +82,7 @@ void detectFaces(const QString& imagePath)
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    Q_FOREACH (const QRectF& rr, faces)
+    for (const QRectF& rr : std::as_const(faces))
     {
         QLabel* const label = new QLabel;
         label->setScaledContents(false);
@@ -97,6 +97,7 @@ void detectFaces(const QString& imagePath)
     }
 
     // Only setPixmap after finishing drawing bboxes around detected faces
+
     fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 
     scrollArea->show();

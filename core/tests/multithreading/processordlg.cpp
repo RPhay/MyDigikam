@@ -110,7 +110,7 @@ ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
     grid->addWidget(d->items,        3, 0, 1, 1);
     grid->addWidget(d->progressView, 4, 0, 1, 1);
 
-    Q_FOREACH (const QUrl& url, d->list)
+    for (const QUrl& url : std::as_const(d->list))
     {
         QProgressBar* const bar = new QProgressBar(progressbox);
         QString file            = url.toLocalFile();
@@ -182,7 +182,7 @@ QProgressBar* ProcessorDlg::findProgressBar(const QUrl& url) const
 {
     QList<QProgressBar*> bars = findChildren<QProgressBar*>();
 
-    Q_FOREACH (QProgressBar* const b, bars)
+    for (QProgressBar* const b : std::as_const(bars))
     {
         if (b->objectName() == url.toLocalFile())
         {   // cppcheck-suppress useStlAlgorithm
@@ -191,6 +191,7 @@ QProgressBar* ProcessorDlg::findProgressBar(const QUrl& url) const
     }
 
     qCWarning(DIGIKAM_TESTS_LOG) << "Cannot found relevant progress bar for " << url.toLocalFile();
+
     return nullptr;
 }
 

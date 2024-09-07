@@ -112,7 +112,7 @@ void ActionThread::rotate(const QList<QUrl>& list)
 {
     ActionJobCollection collection;
 
-    Q_FOREACH (const QUrl& url, list)
+    for (const QUrl& url : std::as_const(list))
     {
         Task* const job = new Task();
         job->fileUrl    = url;

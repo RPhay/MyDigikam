@@ -127,7 +127,7 @@ void RAWToPNGConverterThread::convertRAWtoPNG(const QList<QUrl>& list, const DRa
 {
     ActionJobCollection collection;
 
-    Q_FOREACH (const QUrl& url, list)
+    for (const QUrl& url : std::as_const(list))
     {
         Mytask* const job = new Mytask();
         job->fileUrl      = url;

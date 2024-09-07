@@ -199,12 +199,12 @@ void MainWindow::slotDetectFaces()
     qCDebug(DIGIKAM_TESTS_LOG) << "FacesEngine detected : " << currentFaces.size() << " faces.";
     qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
-    Q_FOREACH (const QRectF& r, currentFaces)
+    for (const QRectF& r : std::as_const(currentFaces))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
-    Q_FOREACH (FaceItem* const item, d->faceitems)
+    for (FaceItem* const item : std::as_const(d->faceitems))
     {
         item->setVisible(false);
     }
@@ -242,7 +242,7 @@ void MainWindow::slotRecognise()
 
     int i = 0;
 
-    Q_FOREACH (FaceItem* const item, d->faceitems)
+    for (FaceItem* const item : std::as_const(d->faceitems))
     {
         QElapsedTimer timer;
         timer.start();
@@ -279,7 +279,7 @@ void MainWindow::slotUpdateDatabase()
 
     int i = 0;
 
-    Q_FOREACH (FaceItem* const item, d->faceitems)
+    for (FaceItem* const item : std::as_const(d->faceitems))
     {
         if (item->text() != QString::fromLatin1("?"))
         {

@@ -121,7 +121,7 @@ int main(int argc, char** argv)
 
     if (!list.isEmpty())
     {
-        Q_FOREACH (const Identity& id, list)
+        for (const Identity& id : std::as_const(list))
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
         }

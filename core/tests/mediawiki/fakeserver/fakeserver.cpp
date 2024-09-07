@@ -184,7 +184,7 @@ bool FakeServer::isAllScenarioDone() const
 {
     QMutexLocker locker(&m_mutex);
 
-    Q_FOREACH (const QString& scenario, m_scenarios)
+    for (const QString& scenario : std::as_const(m_scenarios))
     {
         if (!scenario.isEmpty())
         {   // cppcheck-suppress useStlAlgorithm

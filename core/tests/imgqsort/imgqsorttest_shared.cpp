@@ -102,7 +102,7 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesCore(const ImageQualityContainer
 
     QHash<QString, int> results;
 
-    Q_FOREACH (const QFileInfo& inf, list)
+    for (const QFileInfo& inf : std::as_const(list))
     {
         QString path = inf.filePath();
         qCDebug(DIGIKAM_TESTS_LOG) << path;

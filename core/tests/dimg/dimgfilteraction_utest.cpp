@@ -75,7 +75,7 @@ void DImgFilterActionTest::testActions()
     DImg original(imageDir().filePath(originalImage()));
     QVERIFY(!original.isNull());
 
-    Q_FOREACH (const QString& fileName, files)
+    for (const QString& fileName : std::as_const(files))
     {
         DImg ref(imageDir().filePath(fileName));
         QVERIFY(!ref.isNull());
