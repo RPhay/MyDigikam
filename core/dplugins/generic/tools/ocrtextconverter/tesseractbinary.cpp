@@ -85,7 +85,7 @@ QStringList TesseractBinary::tesseractLanguages() const
 
         bool found        = false;
 
-        Q_FOREACH (const QString& l, lines)
+        for (const QString& l : std::as_const(lines))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << l;
 

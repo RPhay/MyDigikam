@@ -254,7 +254,7 @@ void FlickrTalker::slotLinkingSucceeded()
         QStringList keys = d->settings->allKeys();
         d->settings->endGroup();
 
-        Q_FOREACH (const QString& key, keys)
+        for (const QString& key : std::as_const(keys))
         {
             d->settings->beginGroup(d->serviceName);
             QVariant value = d->settings->value(key);

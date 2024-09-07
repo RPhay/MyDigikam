@@ -1116,7 +1116,7 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
     }
     else
     {
-        Q_FOREACH (const QString& photoId, listPhotoId)
+        for (const QString& photoId : std::as_const(listPhotoId))
         {
             // Remove image from upload list and from UI
 

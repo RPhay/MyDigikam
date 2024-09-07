@@ -118,7 +118,7 @@ QMap<QString, QString> WSAuthenticationPageView::parseUrlFragment(const QString&
     QMap<QString, QString> result;
     QStringList listArgs = urlFragment.split(QLatin1Char('&'));
 
-    Q_FOREACH (const QString& arg, listArgs)
+    for (const QString& arg : std::as_const(listArgs))
     {
         QStringList pair = arg.split(QLatin1Char('='));
         result.insert(pair.first(), pair.last());

@@ -235,7 +235,7 @@ void OcrTesseractEngine::translate(MetaEngine::AltLangMap& commentsMap,
 {
     QString text = commentsMap[QLatin1String("x-default")];
 
-    Q_FOREACH (const QString& lg, langs)
+    for (const QString& lg : std::as_const(langs))
     {
         QString tr;
         QString error;
@@ -257,7 +257,9 @@ void OcrTesseractEngine::saveTextFile(const QString& inFile,
                                       QString& outFile,
                                       const MetaEngine::AltLangMap& commentsMap)
 {
-    Q_FOREACH (const QString& lg, commentsMap.keys())
+    const auto lgs = commentsMap.keys();
+
+    for (const QString& lg : lgs)
     {
         QFileInfo fi(inFile);
         outFile = fi.absolutePath()  +
@@ -285,8 +287,9 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
 
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
+    const auto lgs = commentsMap.keys();
 
-    Q_FOREACH (const QString& lg, commentsMap.keys())
+    for (const QString& lg : lgs)
     {
         datesMap.insert(lg,   dt.toString(Qt::ISODate));
         authorsMap.insert(lg, author);

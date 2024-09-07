@@ -133,7 +133,7 @@ WSIntroPage::WSIntroPage(QWizard* const dialog, const QString& title)
     QStringList accounts        = QStringList(QString())
                                   << d->settings->allUserNames(map.constBegin().value());
 
-    Q_FOREACH (const QString& account, accounts)
+    for (const QString& account : std::as_const(accounts))
     {
         d->accountOption->addItem(account);
     }
@@ -202,7 +202,7 @@ void WSIntroPage::slotWebServiceOptionChanged(const QString& serviceName)
     QStringList accounts = QStringList(QString())
                            << d->settings->allUserNames(serviceName);
 
-    Q_FOREACH (const QString& account, accounts)
+    for (const QString& account : std::as_const(accounts))
     {
         d->accountOption->addItem(account);
     }

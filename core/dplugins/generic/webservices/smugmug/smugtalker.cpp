@@ -988,7 +988,7 @@ void SmugTalker::parseResponseListAlbums(const QByteArray& data)
 
     QList<SmugAlbum> albumList;
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj = value.toObject();
 
@@ -1046,7 +1046,7 @@ void SmugTalker::parseResponseListPhotos(const QByteArray& data)
 
     QList<SmugPhoto> photosList;
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj = value.toObject();
 
@@ -1092,7 +1092,7 @@ void SmugTalker::parseResponseListAlbumTmpl(const QByteArray& data)
 
     QList<SmugAlbumTmpl> albumTmplList;
 
-    Q_FOREACH (const QJsonValue &value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj = value.toObject();
 

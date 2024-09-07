@@ -462,7 +462,7 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
     d->foldersList.clear();
     d->foldersList.append(qMakePair(QLatin1String("0"), QLatin1String("root")));
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QString folderName;
         QString type;

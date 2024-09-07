@@ -392,8 +392,9 @@ void FlickrWindow::slotLinkingSucceeded()
     d->userNameDisplayLabel->setText(QString::fromLatin1("<b>%1</b>").arg(d->username));
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
+    const auto grps         = config->groupList();
 
-    Q_FOREACH (const QString& group, config->groupList())
+    for (const QString& group : grps)
     {
         if (!(group.contains(d->serviceName)))
         {
@@ -473,7 +474,7 @@ QString FlickrWindow::guessSensibleSetName(const QList<QUrl>& urlList) const
 
     // Extract last component of directory
 
-    Q_FOREACH (const QUrl& url, urlList)
+    for (const QUrl& url : std::as_const(urlList))
     {
         QString dir      = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile();
         QStringList list = dir.split(QLatin1Char('/'));

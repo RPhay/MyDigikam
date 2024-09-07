@@ -467,7 +467,7 @@ void DBTalker::parseResponseListFolders(const QByteArray& data)
         d->folderList.append(qMakePair(QLatin1String(""), QLatin1String("root")));
     }
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QString path;
         QString folder;

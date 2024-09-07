@@ -714,7 +714,7 @@ void FbTalker::parseResponseListAlbums(const QByteArray& data)
     {
         QJsonArray jsonArray = jsonObject[QLatin1String("data")].toArray();
 
-        Q_FOREACH (const QJsonValue& value, jsonArray)
+        for (const QJsonValue& value : std::as_const(jsonArray))
         {
             QJsonObject obj   = value.toObject();
             WSAlbum album; //FbAlbum album;

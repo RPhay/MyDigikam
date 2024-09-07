@@ -527,7 +527,7 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
     QList<QPair<QString, QString> > list;
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QString boardID;
         QString boardName;

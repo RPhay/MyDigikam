@@ -207,7 +207,7 @@ void WSAuthentication::parseTreeFromListAlbums(const QList <WSAlbum>& albumsList
                                                QMap<QString, AlbumSimplified>& albumTree,
                                                QStringList& rootAlbums)
 {
-    Q_FOREACH (const WSAlbum& album, albumsList)
+    for (const WSAlbum& album : std::as_const(albumsList))
     {
         if (albumTree.contains(album.id))
         {
@@ -271,7 +271,7 @@ void WSAuthentication::prepareForUpload()
 
     if (d->wizard->settings()->imagesChangeProp)
     {
-        Q_FOREACH (const QUrl& imgUrl, d->transferQueue)
+        for (const QUrl& imgUrl : std::as_const(d->transferQueue))
         {
             QString imgPath = imgUrl.toLocalFile();
             QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
@@ -400,7 +400,7 @@ void WSAuthentication::slotListAlbumsDone(int errCode, const QString& errMsg, co
 {
     QString albumDebug = QLatin1String("");
 
-    Q_FOREACH (const WSAlbum &album, albumsList)
+    for (const WSAlbum& album : std::as_const(albumsList))
     {
         albumDebug.append(QString::fromLatin1("%1: %2\n").arg(album.id).arg(album.title));
     }

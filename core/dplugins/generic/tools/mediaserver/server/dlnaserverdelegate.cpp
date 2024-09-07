@@ -197,9 +197,11 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
     NPT_Reference<NPT_List<NPT_String> > entries;
     NPT_TimeStamp                        cached_entries_time;
 
-    if (!d->useCache                                                          ||
+    if (
+        !d->useCache                                                          ||
         NPT_FAILED(d->dirCache.Get(uuid, dir, entries, &cached_entries_time)) ||
-        cached_entries_time < info.m_ModificationTime)
+        (cached_entries_time < info.m_ModificationTime)
+       )
     {
         // if not found in cache or if current dir has newer modified time fetch fresh new list from source
 
@@ -207,7 +209,9 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
 
         if (dir == "/")
         {
-            Q_FOREACH (const QString& s, d->map.keys())
+            const auto keys = d->map.keys();
+
+            for (const QString& s : keys)
             {
                 list << s + QLatin1Char('/');
             }
@@ -217,7 +221,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
             QString container = QString::fromUtf8(dir.GetChars());
             QList<QUrl> urls  = d->map.value(container.remove(QLatin1Char('/')));
 
-            Q_FOREACH (const QUrl& u, urls)
+            for (const QUrl& u : std::as_const(urls))
             {
                 // Internal URL separator between container path and local file path.
                 // Ex: Linux => "/country/town/Paris/?file:/mnt/data/travel/Paris/eiffeltower.jpg
@@ -233,7 +237,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
 
         entries = new NPT_List<NPT_String>();
 
-        Q_FOREACH (const QString& path, list)
+        for (const QString& path : std::as_const(list))
         {
             qCDebug(DIGIKAM_MEDIASRV_LOG) << "=>" << path;
             entries->Add(NPT_String(path.toUtf8().data(), path.toUtf8().size()));

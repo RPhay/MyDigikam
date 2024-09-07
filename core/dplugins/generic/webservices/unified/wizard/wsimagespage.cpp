@@ -204,7 +204,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
         return;
     }
 
-    Q_FOREACH (const QString& albumId, childrenAlbums)
+    for (const QString& albumId : std::as_const(childrenAlbums))
     {
         QTreeWidgetItem* const item = new QTreeWidgetItem(parent);
         item->setText(0, albumTree[albumId].title);
@@ -265,7 +265,7 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
         d->currentAlbumId = currentAlbumId;
     }
 
-    Q_FOREACH (const QString& albumId, rootAlbums)
+    for (const QString& albumId : std::as_const(rootAlbums))
     {
         QTreeWidgetItem* const item = new QTreeWidgetItem(d->albumView);
         item->setText(0, albumTree[albumId].title);

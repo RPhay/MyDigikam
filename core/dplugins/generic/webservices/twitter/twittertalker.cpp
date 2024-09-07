@@ -187,8 +187,9 @@ void TwTalker::link()
     // Discard the first line
 
     response = response.mid(response.indexOf('\n') + 1).trimmed();
+    const auto lines = response.split('\n');
 
-    Q_FOREACH (QString line, response.split('\n'))
+    for (QString line : lines)
     {
         int colon = line.indexOf(':');
         QString headerName = line.left(colon).trimmed();
@@ -291,8 +292,9 @@ void TwTalker::slotLinkingSucceeded()
         //Q_EMIT extraTokensReady(extraTokens);
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Extra tokens in response:";
+        const auto keys = extraTokens.keys();
 
-        Q_FOREACH (const QString& key, extraTokens.keys())
+        for (const QString& key : keys)
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "\t"
                                              << key
@@ -950,7 +952,7 @@ void TwTalker::parseResponseListFolders(const QByteArray& data)
     QList<QPair<QString, QString> > list;
     list.append(qMakePair(QLatin1String(""), QLatin1String("root")));
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QString path;
         QString folderName;

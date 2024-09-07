@@ -623,7 +623,7 @@ void AdvPrintPhotoPage::slotRemovingItems(const QList<int>& list)
 
     d->photoUi->mPrintList->blockSignals(true);
 
-    Q_FOREACH (int itemIndex, list)
+    for (int itemIndex : std::as_const(list))
     {
         if (d->settings->photos.size() && itemIndex >= 0)
         {
@@ -1275,7 +1275,7 @@ void AdvPrintPhotoPage::initPhotoSizes(const QSizeF& pageSize)
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Template XML files list: "
                                          << list;
 
-    Q_FOREACH (const QString& fn, list)
+    for (const QString& fn : std::as_const(list))
     {
         parseTemplateFile(dir.absolutePath() + QLatin1Char('/') + fn, pageSize);
     }

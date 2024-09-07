@@ -530,8 +530,9 @@ void INatWindow::slotLinkingSucceeded(const QString& username,
 
     d->widget->updateLabels(username);
     KSharedConfigPtr config = KSharedConfig::openConfig();
+    const auto grps         = config->groupList();
 
-    Q_FOREACH (const QString& group, config->groupList())
+    for (const QString& group : grps)
     {
         if (!(group.contains(d->serviceName)))
         {

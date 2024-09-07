@@ -255,7 +255,7 @@ public:
 
         QList<GalleryElement> imageElementList;
 
-        Q_FOREACH (const QUrl& url, imageList)
+        for (const QUrl& url : std::as_const(imageList))
         {
             const QString path = remoteUrlHash.value(url, url.toLocalFile());
 
@@ -303,7 +303,7 @@ public:
 
         // Generate xml
 
-        Q_FOREACH (const GalleryElement& element, imageElementList)
+        for (const GalleryElement& element : std::as_const(imageElementList))
         {
             element.appendToXML(xmlWriter, info->copyOriginalImage());
         }
@@ -391,7 +391,7 @@ public:
 
         QList<QUrl> list;
 
-        Q_FOREACH (const QUrl& url, _list)
+        for (const QUrl& url : std::as_const(_list))
         {
             if (!url.isLocalFile())
             {
@@ -409,7 +409,7 @@ public:
         pbar->setMaximum(list.count());
         int count = 0;
 
-        Q_FOREACH (const QUrl& url, list)
+        for (const QUrl& url : std::as_const(list))
         {
             if (cancel)
             {

@@ -179,10 +179,11 @@ void RajceWidget::updateLabels(const QString&, const QString&)
 
     d->albumsCoB->clear();
     RajceAlbum album;
-    int   selIdx = 0;
-    int   i      = 0;
+    int   selIdx      = 0;
+    int   i           = 0;
+    const auto albums = d->talker->session().albums();
 
-    Q_FOREACH (album, d->talker->session().albums())
+    for (album : albums)
     {
         d->albumsCoB->addItem(album.name, QVariant::fromValue(album));
 
@@ -363,8 +364,9 @@ void RajceWidget::slotStartUpload()
     setEnabledWidgets(false);
 
     d->uploadQueue.clear();
+    const auto imgs = d->imgList->imageUrls(true);
 
-    Q_FOREACH (const QUrl& image, d->imgList->imageUrls(true))
+    for (const QUrl& image : imgs)
     {
         QString imagePath = image.toLocalFile();
         d->uploadQueue.append(imagePath);
@@ -381,8 +383,9 @@ void RajceWidget::slotStartUpload()
 
     QString albumName = d->albumsCoB->currentText();
     RajceAlbum album;
+    const auto albums = d->talker->session().albums();
 
-    Q_FOREACH (RajceAlbum a, d->talker->session().albums())
+    for (RajceAlbum a : albums)
     {
         if (a.name == albumName)
         { // cppcheck-suppress useStlAlgorithm

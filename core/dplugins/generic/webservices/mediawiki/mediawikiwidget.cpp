@@ -814,7 +814,7 @@ void MediaWikiWidget::slotRemoveImagesDesc()
         }
     }
 
-    Q_FOREACH (const QString& path, toRemove)
+    for (const QString& path : std::as_const(toRemove))
     {
         d->imagesDescInfo.remove(path);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Remove" << path << "; new length:" << d->imagesDescInfo.size();

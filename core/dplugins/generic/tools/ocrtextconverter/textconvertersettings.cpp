@@ -207,7 +207,7 @@ void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
     d->saveTextFile->setChecked(opt.isSaveTextFile);
     d->saveXMP->setChecked(opt.isSaveXMP);
 
-    Q_FOREACH (const QString& lg, opt.translations)
+    for (const QString& lg : std::as_const(opt.translations))
     {
         d->localizeList->addLanguage(lg);
     }
@@ -293,7 +293,7 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
 
     DMetadata::CountryCodeMap codes = DMetadata::countryCodeMap2();
 
-    Q_FOREACH (const QString& lg, tlanguages)
+    for (const QString& lg : std::as_const(tlanguages))
     {
          d->ocrTesseractLanguageMode->addItem(codes.value(lg, lg), lg);
     }

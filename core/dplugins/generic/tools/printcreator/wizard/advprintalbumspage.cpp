@@ -86,7 +86,9 @@ bool AdvPrintAlbumsPage::validatePage()
 
     // update image list with album contents.
 
-    Q_FOREACH (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
+    const auto urls = d->iface->albumsItems(d->iface->albumChooserItems());
+
+    for (const QUrl& url : urls)
     {
         d->wizard->settings()->inputImages << url;
     }

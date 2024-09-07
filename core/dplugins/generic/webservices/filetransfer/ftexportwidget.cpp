@@ -137,7 +137,7 @@ void FTExportWidget::setHistory(const QList<QUrl>& urls)
 {
     d->targetLabel->comboBox()->clear();
 
-    Q_FOREACH (const QUrl& url, urls)
+    for (const QUrl& url : std::as_const(urls))
     {
         d->targetLabel->comboBox()->addUrl(url);
     }

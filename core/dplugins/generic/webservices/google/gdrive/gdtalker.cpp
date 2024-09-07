@@ -372,7 +372,7 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
     fps.title = d->rootfoldername;
     albumList.append(fps);
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj      = value.toObject();
 

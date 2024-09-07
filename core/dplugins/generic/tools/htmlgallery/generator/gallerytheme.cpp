@@ -205,11 +205,15 @@ const GalleryTheme::List& GalleryTheme::getList()
                                                                  QLatin1String("digikam/themes"),
                                                                  QStandardPaths::LocateDirectory);
 
-        Q_FOREACH (const QString& themeDir, themesDirs)
+        for (const QString& themeDir : std::as_const(themesDirs))
         {
-            Q_FOREACH (const QFileInfo& themeInfo, QDir(themeDir).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
+            const auto infs = QDir(themeDir).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+
+            for (const QFileInfo& themeInfo : infs)
             {
-                Q_FOREACH (const QFileInfo& deskFile, QDir(themeInfo.absoluteFilePath()).entryInfoList(filter))
+                const auto files = QDir(themeInfo.absoluteFilePath()).entryInfoList(filter);
+
+                for (const QFileInfo& deskFile : files)
                 {
                     list << deskFile.absoluteFilePath();
                 }

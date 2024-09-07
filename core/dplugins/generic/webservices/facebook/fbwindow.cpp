@@ -337,7 +337,7 @@ void FbWindow::slotListAlbumsDone(int errCode,
 {
     QString albumDebug = QLatin1String("");
 
-    Q_FOREACH (const FbAlbum& album, albumsList)
+    for (const FbAlbum& album : std::as_const(albumsList))
     {
         albumDebug.append(QString::fromLatin1("%1: %2\n").arg(album.id).arg(album.title));
     }

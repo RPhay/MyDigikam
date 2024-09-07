@@ -44,7 +44,7 @@ void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
 {
     ActionJobCollection collection;
 
-    Q_FOREACH (const QUrl& srcUrl, itemsList)
+    for (const QUrl& srcUrl : std::as_const(itemsList))
     {
         FCTask* const t = new FCTask(srcUrl, settings);
 

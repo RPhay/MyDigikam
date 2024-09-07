@@ -819,7 +819,7 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
         d->albumList.append(mainPage);
     }
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         GSFolder album;
 
@@ -865,7 +865,7 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
     QJsonObject jsonObject  = doc.object();
     QJsonArray jsonArray    = jsonObject[QLatin1String("mediaItems")].toArray();
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj = value.toObject();
 
@@ -987,7 +987,7 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 
     QStringList listPhotoId;
 
-    Q_FOREACH (const QJsonValue& value, jsonArray)
+    for (const QJsonValue& value : std::as_const(jsonArray))
     {
         QJsonObject obj = value.toObject();
 

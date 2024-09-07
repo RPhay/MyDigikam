@@ -169,7 +169,7 @@ QList<QUrl> DMediaServerMngr::itemsList() const
     {
         QList<QList<QUrl> > ulst = d->collectionMap.values();
 
-        Q_FOREACH (const QList<QUrl>& urls, ulst)
+        for (const QList<QUrl>& urls : std::as_const(ulst))
         {
             ret << urls;
         }
@@ -250,8 +250,9 @@ bool DMediaServerMngr::save()
         // ----------------------
 
         QDomElement data;
+        const auto urls = it.value();
 
-        Q_FOREACH (const QUrl& url, it.value())
+        for (const QUrl& url : urls)
         {
             data = doc.createElement(QLatin1String("path"));
             data.setAttribute(QLatin1String("value"), url.toLocalFile());

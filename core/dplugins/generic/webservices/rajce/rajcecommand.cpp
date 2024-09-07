@@ -140,8 +140,9 @@ QString RajceCommand::getXml() const
     ret.append(QLatin1String("<request>\n"));
     ret.append(QLatin1String("  <command>")).append(d->name).append(QLatin1String("</command>\n"));
     ret.append(QLatin1String("  <parameters>\n"));
+    const auto keys = d->parameters.keys();
 
-    Q_FOREACH (QString key, d->parameters.keys())
+    for (const QString& key : keys)
     {
         ret.append(QLatin1String("    <")).append(key).append(QLatin1String(">"));
         ret.append(d->parameters[key]);
@@ -524,8 +525,9 @@ QString AddPhotoCommand::additionalXml() const
     QString id = QString::number(QRandomGenerator::global()->generate());
     QString ret(QLatin1String("  <objectInfo>\n    <Item id=\""));
     ret.append(id).append(QLatin1String("\">\n"));
+    const auto keys = metadata.keys();
 
-    Q_FOREACH (const QString& key, metadata.keys())
+    for (const QString& key : keys)
     {
         ret.append(QLatin1String("      <")).append(key);
         QString value = metadata[key];
