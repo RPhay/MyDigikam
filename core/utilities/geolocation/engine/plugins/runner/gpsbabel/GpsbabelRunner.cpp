@@ -43,10 +43,11 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
 {
     // Check and see if the file exists
 
-    if (!QFileInfo(fileName).exists())
+    if (!QFileInfo::exists(fileName))
     {
         error = QStringLiteral("File %1 does not exist").arg(fileName);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
+
         return nullptr;
     }
 
@@ -81,7 +82,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
 
     // Set up gpsbabel command line
 
-    const QString command = QLatin1String("gpsbabel");
+    const QString command  = QLatin1String("gpsbabel");
     const QStringList args = QStringList()
                              << QLatin1String("-i")
                              << inputFileType
@@ -108,10 +109,12 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
         {
             error = parser.errorString();
             qCDebug(DIGIKAM_MARBLE_LOG) << error;
+
             return nullptr;
         }
 
         document->setDocumentRole(role);
+
         return document;
     }
 
@@ -119,6 +122,7 @@ GeoDataDocument* GpsbabelRunner::parseFile(const QString& fileName, DocumentRole
     {
         error = QStringLiteral("Gpsbabel returned error code %1").arg(exitStatus);
         qCDebug(DIGIKAM_MARBLE_LOG) << error;
+
         return nullptr;
     }
 }
