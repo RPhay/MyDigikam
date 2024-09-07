@@ -290,7 +290,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
             else if (propertyKey == QStringLiteral("marker-size"))
             {
                 // TODO: Implement marker-size handling
-                if (propertyValue == QStringLiteral(""))
+                if (propertyValue == QString())
                 {
                     // Use the default value
                     ;
@@ -305,7 +305,7 @@ bool JsonParser::parseGeoJsonTopLevel(const QJsonObject& jsonObject)
             else if (propertyKey == QStringLiteral("marker-symbol"))
             {
                 // TODO: Implement marker-symbol handling
-                if (propertyValue == QStringLiteral(""))
+                if (propertyValue == QString())
                 {
                     // Use the default value
                     ;
@@ -676,7 +676,7 @@ bool JsonParser::parseGeoJsonSubLevel(const QJsonObject& jsonObject,
 
     }
 
-    else if (jsonObjectType == QStringLiteral(""))
+    else if (jsonObjectType == QString())
     {
         // Unlocated Feature objects have a null value for "geometry" (RFC7946 section 3.2)
         return true;
