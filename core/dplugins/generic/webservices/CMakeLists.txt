@@ -22,10 +22,6 @@ add_subdirectory(onedrive)
 add_subdirectory(pinterest)
 add_subdirectory(piwigo)
 
-# Deprecated
-add_subdirectory(facebook)
-#add_subdirectory(ipfs)
-
 if(NOT Qt6_FOUND AND Qt5XmlPatterns_FOUND)
 
     add_subdirectory(rajce)
@@ -41,5 +37,9 @@ if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
 endif()
 
+# Deprecated
+#add_subdirectory(facebook)
+#add_subdirectory(ipfs)
+
 # Not yet finalized
-add_subdirectory(unified)
+#add_subdirectory(unified)
