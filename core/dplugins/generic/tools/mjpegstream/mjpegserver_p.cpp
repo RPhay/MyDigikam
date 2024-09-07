@@ -242,7 +242,7 @@ void MjpegServer::Private::writerThread()
         {
             mutexClients.lock();
             {
-                Q_FOREACH (QTcpSocket* const client, clients)
+                for (QTcpSocket* const client : std::as_const(clients))
                 {
                     sockTasks.append(QtConcurrent::run(
 
@@ -263,7 +263,7 @@ void MjpegServer::Private::writerThread()
             }
             mutexClients.unlock();
 
-            Q_FOREACH (QFuture<void> t, sockTasks)
+            for (QFuture<void> t : std::as_const(sockTasks))
             {
                 t.waitForFinished();
             }
