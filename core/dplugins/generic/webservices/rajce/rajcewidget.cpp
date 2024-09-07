@@ -178,12 +178,12 @@ void RajceWidget::updateLabels(const QString&, const QString&)
                this, SLOT(slotSelectedAlbumChanged(QString)));
 
     d->albumsCoB->clear();
-    RajceAlbum album;
+
     int   selIdx      = 0;
     int   i           = 0;
     const auto albums = d->talker->session().albums();
 
-    for (album : albums)
+    for (const RajceAlbum& album : albums)
     {
         d->albumsCoB->addItem(album.name, QVariant::fromValue(album));
 
@@ -385,7 +385,7 @@ void RajceWidget::slotStartUpload()
     RajceAlbum album;
     const auto albums = d->talker->session().albums();
 
-    for (RajceAlbum a : albums)
+    for (const RajceAlbum& a : albums)
     {
         if (a.name == albumName)
         { // cppcheck-suppress useStlAlgorithm
