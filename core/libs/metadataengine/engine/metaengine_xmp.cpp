@@ -992,8 +992,10 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
             QString tagName         = QLatin1String(xmpTagName);
 
             if      (
-                     (tagName == QLatin1String("Xmp.exif.ExposureTime")) ||
-                     (tagName == QLatin1String("Xmp.exif.FocalLength"))  ||
+                     (tagName == QLatin1String("Xmp.exif.ShutterSpeedValue")) ||
+                     (tagName == QLatin1String("Xmp.exif.ApertureValue"))     ||
+                     (tagName == QLatin1String("Xmp.exif.ExposureTime"))      ||
+                     (tagName == QLatin1String("Xmp.exif.FocalLength"))       ||
                      (tagName == QLatin1String("Xmp.exif.FNumber"))
                     )
             {
