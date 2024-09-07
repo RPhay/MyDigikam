@@ -22,8 +22,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 )
 
 set(unifiedplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/wsauthentication.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/wstalker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/unifiedplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wsalbumspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wsfinalpage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wsimagespage.cpp
@@ -31,7 +30,8 @@ set(unifiedplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wssettingspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wsauthenticationpage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/wswizard.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/unifiedplugin.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/wsauthentication.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/wstalker.cpp
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Unified

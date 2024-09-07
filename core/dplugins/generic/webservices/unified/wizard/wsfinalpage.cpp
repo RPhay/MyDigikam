@@ -35,6 +35,7 @@
 
 #include "wswizard.h"
 #include "dlayoutbox.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "dprogresswdg.h"
 #include "dhistoryview.h"

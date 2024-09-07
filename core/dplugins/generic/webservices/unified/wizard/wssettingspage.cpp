@@ -38,6 +38,7 @@
 #include "wswizard.h"
 #include "dfileselector.h"
 #include "filesaveconflictbox.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 
 namespace DigikamGenericUnifiedPlugin
